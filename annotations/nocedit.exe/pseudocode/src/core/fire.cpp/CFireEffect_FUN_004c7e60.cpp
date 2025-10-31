@@ -6,20 +6,18 @@
 // Cross-references:
 //   core_emitter.cpp_FUN_004a8070 (004a8070) at 004a846f [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_02d655a8
+//   CFireball* g_CFireEffectFireballsEnd
 // Function calls:
 //   core_fire.cpp_FUN_004c17c0
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c7e60(CFireEffect *this_ptr)
 
 {
-  _DAT_02d655a8 = _DAT_02d655a8 + 1;
-  if (0x3f < _DAT_02d655a8) {
-    _DAT_02d655a8 = 0;
+  g_CFireEffectFireballsEnd = (CFireball *)((int)&(g_CFireEffectFireballsEnd->base).position.x + 1);
+  if (0x3f < (int)g_CFireEffectFireballsEnd) {
+    g_CFireEffectFireballsEnd = (CFireball *)0x0;
   }
   core_fire_cpp_FUN_004c17c0();
   return;

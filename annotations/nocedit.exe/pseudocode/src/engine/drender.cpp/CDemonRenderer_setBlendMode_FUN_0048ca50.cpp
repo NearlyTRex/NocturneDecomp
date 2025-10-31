@@ -17,7 +17,7 @@
 //   core_fire.cpp_CExplosion_FUN_004c3b10 (004c3b10) at 004c3e45 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CGlassParticle_render_FUN_004c1ef0 (004c1ef0) at 004c20bb [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CGunFlame_FUN_004c50b0 (004c50b0) at 004c55b6 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CLaserBeam_FUN_004c25c0 (004c25c0) at 004c289c [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (004c25c0) at 004c289c [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CLightningBolt_FUN_004c5720 (004c5720) at 004c585e [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CPopcorn_render_FUN_004c64c0 (004c64c0) at 004c67a6 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CRainDrop_render_FUN_004c6830 (004c6830) at 004c6b50 [UNCONDITIONAL_CALL]

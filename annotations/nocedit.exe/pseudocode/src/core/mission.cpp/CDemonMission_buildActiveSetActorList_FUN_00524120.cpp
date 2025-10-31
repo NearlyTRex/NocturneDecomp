@@ -12,7 +12,7 @@
 //   TerminatedCString s_none_0063920f
 //   TerminatedCString s_core_mission_cpp_00639214
 //   TerminatedCString s_CDemonMission_buildActiv_00639228
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 DAT_02d05310
 //   char* g_CurrentFilename
@@ -55,7 +55,7 @@ core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(CDemonMissio
           iVar2 = crt_string_c_stricmp_FUN_005fe7f0(this_ptr_00->create_event,"none");
           if ((iVar2 != 0) &&
              (iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                                (g_CEventListInstance,this_ptr_00->create_event), iVar2 == 0))
+                                (g_CEventListPtr,this_ptr_00->create_event), iVar2 == 0))
           goto LAB_0052422f;
         }
         iVar2 = core_actor_cpp_FUN_0040cd10();

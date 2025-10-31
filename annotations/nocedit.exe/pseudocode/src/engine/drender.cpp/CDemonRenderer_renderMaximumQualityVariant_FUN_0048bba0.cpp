@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
 // Cross-references:
-//   core_fire.cpp_CLaserBeam_FUN_004c25c0 (004c25c0) at 004c337e [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (004c25c0) at 004c337e [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_00509d50 (00509d50) at 0050a184 [UNCONDITIONAL_CALL]
 //   core_path.cpp_FUN_00547fc0 (00547fc0) at 0054837e [UNCONDITIONAL_CALL]
 //   core_path.cpp_debugRenderGridQuad_FUN_00547dd0 (00547dd0) at 00547fab [UNCONDITIONAL_CALL]

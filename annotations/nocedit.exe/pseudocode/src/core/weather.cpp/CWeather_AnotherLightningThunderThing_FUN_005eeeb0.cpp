@@ -74,7 +74,7 @@ void core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
   if (param_7 != 0) {
     core_fire_cpp_CFireEffect_FUN_004c8f50(g_CFireEffectPtr);
   }
-  this_ptr = g_CEventListInstance;
+  this_ptr = g_CEventListPtr;
   *(float *)(param_5 + 0x30) =
        (float)g_CDemonCameraInstance.corona_blend_factor * (float)_DAT_00657bfc;
   iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0

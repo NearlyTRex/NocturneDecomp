@@ -9,6 +9,6 @@ typedef struct CSmokeParticle {
     float drag_factor; // 0x14
     float age; // 0x18
     CVector3f wind_influence; // 0x1c
-    int field_40; // 0x28
+    int alpha_value; // 0x28
 } CSmokeParticle;
 

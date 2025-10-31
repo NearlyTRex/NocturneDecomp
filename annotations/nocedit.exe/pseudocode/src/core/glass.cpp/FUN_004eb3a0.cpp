@@ -11,7 +11,7 @@
 //   core_tommygun.cpp_FUN_005ddb30 (005ddb30) at 005de24d [UNCONDITIONAL_CALL]
 //   core_turret.cpp_FUN_005e3750 (005e3750) at 005e3bdf [UNCONDITIONAL_CALL]
 // Globals:
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 // Function calls:
 //   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
@@ -24,7 +24,7 @@ void core_glass_cpp_FUN_004eb3a0(void)
   int in_stack_00000004;
   
   core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-            (g_CEventListInstance,(char *)(in_stack_00000004 + 0x30c));
+            (g_CEventListPtr,(char *)(in_stack_00000004 + 0x30c));
   return;
 }
 

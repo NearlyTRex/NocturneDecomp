@@ -291,7 +291,7 @@
 //   undefined4 DAT_00662638
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CGame* g_CGamePtr = 02d81a9c
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   CNetGame* g_CNetGameInstance = 02f7c740
@@ -860,7 +860,7 @@ LAB_0055bb9d:
                 }
                 if (DAT_0310ec9c == 0) {
                   iVar8 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                                    (g_CEventListInstance,local_958);
+                                    (g_CEventListPtr,local_958);
                   g_CGamePtr->allow_enemy_attack_flag = iVar8;
                 }
               }
@@ -874,7 +874,7 @@ LAB_0055bb9d:
                   if (pcVar18 != (char *)0x0) goto LAB_0055bb9d;
                   if (DAT_0310ec9c == 0) {
                     iVar8 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                                      (g_CEventListInstance,local_bb0);
+                                      (g_CEventListPtr,local_bb0);
                     DAT_0310f4a4 = (uint)(iVar8 == 0);
                     g_CGamePtr->allow_hero_controls_flag = DAT_0310f4a4;
                   }
@@ -889,7 +889,7 @@ LAB_0055bb9d:
                     if (pcVar18 != (char *)0x0) goto LAB_0055bb9d;
                     if (DAT_0310ec9c == 0) {
                       iVar8 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                                        (g_CEventListInstance,local_a84);
+                                        (g_CEventListPtr,local_a84);
                       g_CGamePtr->allow_damage_flag = iVar8;
                     }
                   }
@@ -1361,7 +1361,7 @@ joined_r0x0055f6da:
                                                   if (DAT_0310ec9c == 0) {
                                                                                                         
                                                   core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                                                            (g_CEventListInstance,local_2d5c);
+                                                            (g_CEventListPtr,local_2d5c);
                                                   core_set_cpp_CDemonSet_FUN_00570ea0
                                                             (g_CDemonSetPtr);
                                                   }
@@ -1409,7 +1409,7 @@ joined_r0x0055f6da:
                                                     if (DAT_0310ec9c == 0) {
                                                                                                             
                                                   core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                                                            (g_CEventListInstance,local_1dbc);
+                                                            (g_CEventListPtr,local_1dbc);
                                                   core_set_cpp_CDemonSet_FUN_00570ec0
                                                             (g_CDemonSetPtr);
                                                   }
@@ -1821,7 +1821,7 @@ LAB_0055a97f:
                                                     if (DAT_0310ec9c == 0) {
                                                       local_c0 = 
                                                   core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                                                            (g_CEventListInstance,
+                                                            (g_CEventListPtr,
                                                              (char *)(abStack_fad + 1));
                                                   }
                                                   else {
@@ -1865,8 +1865,8 @@ LAB_0055a97f:
                                                   if ((DAT_0310ec9c == 0) &&
                                                      (iVar8 = 
                                                   core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                                                            (g_CEventListInstance,local_444),
-                                                  iVar8 == 0)) {
+                                                            (g_CEventListPtr,local_444), iVar8 == 0)
+                                                  ) {
                                                     iVar8 = core_script_cpp_FUN_005601c0();
                                                     if (iVar8 < 0) {
                                                       crt_stdio_c_sprintf_FUN_005fdbd0
@@ -2012,7 +2012,7 @@ LAB_0055d708:
                                                     if (DAT_0310ec9c == 0) {
                                                       iVar8 = 
                                                   core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                                                            (g_CEventListInstance,local_570);
+                                                            (g_CEventListPtr,local_570);
                                                   in_stack_00000004[5] = iVar8;
                                                   }
                                                   }
@@ -3321,8 +3321,8 @@ LAB_0055f91c:
                                                   if ((DAT_0310ec9c == 0) &&
                                                      (iVar8 = 
                                                   core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                                                            (g_CEventListInstance,local_37c),
-                                                  iVar8 == 0)) {
+                                                            (g_CEventListPtr,local_37c), iVar8 == 0)
+                                                  ) {
                                                     local_114 = 0;
                                                   }
                                                   }

@@ -10,7 +10,7 @@
 //   TerminatedCString s_son_00645fdb
 //   TerminatedCString s_soff_00645fe0
 //   TerminatedCString s_moon_00645fe6
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 //   CDemonLight*[96] g_MasterLightList
 //   int g_ActiveLightCount
@@ -58,13 +58,13 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_0056f940(CDemonSet *this_ptr)
         core_setutil_cpp_C3DSLight_process_FUN_00586cb0(this_ptr_00,g_MasterLightList[0],local_18);
         crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffeec,"%son",this_ptr_00->name);
         iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                          (g_CEventListInstance,&stack0xfffffef0);
+                          (g_CEventListPtr,&stack0xfffffef0);
         if (iVar2 != 0) {
           pCVar1->light_enabled_flag = 1;
         }
         crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef4,"%soff");
         iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                          (g_CEventListInstance,&stack0xfffffef8);
+                          (g_CEventListPtr,&stack0xfffffef8);
         if (iVar2 != 0) {
           pCVar1->light_enabled_flag = 0;
         }

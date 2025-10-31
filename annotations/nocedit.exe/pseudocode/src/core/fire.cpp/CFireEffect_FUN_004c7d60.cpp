@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_fire.cpp_CFireEffect_FUN_004c7d60(CFireEffect * this_ptr)
 // Globals:
-//   undefined4 DAT_02d62d38
+//   CGlassParticle* g_CFireEffectGlassParticlesEnd
 //   CBulletTrail[10] g_CFireEffectBulletTrails
 // Function calls:
 //   core_fire.cpp_FUN_004c2170
@@ -14,9 +14,10 @@
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c7d60(CFireEffect *this_ptr)
 
 {
-  DAT_02d62d38 = DAT_02d62d38 + 1;
-  if (9 < DAT_02d62d38) {
-    DAT_02d62d38 = 0;
+  g_CFireEffectGlassParticlesEnd =
+       (CGlassParticle *)((int)&(g_CFireEffectGlassParticlesEnd->base).position.x + 1);
+  if (9 < (int)g_CFireEffectGlassParticlesEnd) {
+    g_CFireEffectGlassParticlesEnd = (CGlassParticle *)0x0;
   }
   core_fire_cpp_FUN_004c2170();
   return;

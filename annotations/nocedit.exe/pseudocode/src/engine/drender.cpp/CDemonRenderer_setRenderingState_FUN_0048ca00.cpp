@@ -15,7 +15,7 @@
 //   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980 (00477980) at 00477a89 [UNCONDITIONAL_CALL]
 //   core_dpart.cpp_CDemonPart_renderFaces_FUN_004828b0 (004828b0) at 004828c4 [UNCONDITIONAL_CALL]
 //   core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70 (00496e70) at 00497261 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CLaserBeam_FUN_004c25c0 (004c25c0) at 004c2827 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (004c25c0) at 004c2827 [UNCONDITIONAL_CALL]
 //   core_ground.cpp_CGround_render_FUN_004efc90 (004efc90) at 004efd01 [UNCONDITIONAL_CALL]
 //   core_mirror.cpp_renderMirrorQuad_FUN_00522670 (00522670) at 0052278a [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052b160 (0052b160) at 0052b185 [UNCONDITIONAL_CALL]

@@ -14,7 +14,7 @@
 //   float FLOAT_0062a10e = -8
 //   double DOUBLE_0062a116 = -0.5
 //   double DOUBLE_0062a11e = 0.25
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CSound* g_CSoundPtr = 03f6af64
@@ -74,8 +74,7 @@ void core_flame_cpp_FUN_004c9c00(void)
   
   if (((*(char *)(in_stack_00000004 + 0x1b8) != '\0') && (*(int *)(in_stack_00000004 + 0x1b4) == 0))
      && (iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                           (g_CEventListInstance,(char *)(in_stack_00000004 + 0x1b8)), iVar3 != 0))
-  {
+                           (g_CEventListPtr,(char *)(in_stack_00000004 + 0x1b8)), iVar3 != 0)) {
     if ((*(int *)(in_stack_00000004 + 0x1a8) != 1) && (*(int *)(in_stack_00000004 + 0x1a8) != 3)) {
       iVar3 = 0;
       do {
@@ -88,9 +87,9 @@ void core_flame_cpp_FUN_004c9c00(void)
   }
   if (((*(char *)(in_stack_00000004 + 0x21c) != '\0') && (*(int *)(in_stack_00000004 + 0x1b4) != 0))
      && ((iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                            (g_CEventListInstance,(char *)(in_stack_00000004 + 0x21c)), iVar3 != 0
-         && (*(undefined4 *)(in_stack_00000004 + 0x1b4) = 0,
-            *(int *)(in_stack_00000004 + 0x1a8) != 3)))) {
+                            (g_CEventListPtr,(char *)(in_stack_00000004 + 0x21c)), iVar3 != 0 &&
+         (*(undefined4 *)(in_stack_00000004 + 0x1b4) = 0, *(int *)(in_stack_00000004 + 0x1a8) != 3))
+        )) {
     core_fire_cpp_CFireEffect_FUN_004c7b20(g_CFireEffectPtr);
   }
   if (*(int *)(in_stack_00000004 + 0x1b4) != 0) {

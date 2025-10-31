@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_conveyor.cpp_FUN_00441df0()
 // Globals:
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 DAT_02d05310
 //   CDemonSet g_CDemonSetInstance
@@ -39,12 +39,12 @@ void core_conveyor_cpp_FUN_00441df0(void)
   float local_14;
   
   iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                    (g_CEventListInstance,in_stack_00000004[5].create_event + 0x14);
+                    (g_CEventListPtr,in_stack_00000004[5].create_event + 0x14);
   if (iVar1 != 0) {
     in_stack_00000004[5].metadata.vtable = (CDemonActor_vtable *)&DAT_00000001;
   }
   iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                    (g_CEventListInstance,(char *)&in_stack_00000004[5].field_236.y);
+                    (g_CEventListPtr,(char *)&in_stack_00000004[5].field_236.y);
   if (iVar1 == 0) {
     if (in_stack_00000004[5].metadata.vtable != (CDemonActor_vtable *)0x0) {
       iVar3 = 0;

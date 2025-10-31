@@ -5,7 +5,7 @@
 // Signature: undefined core_event.cpp_FUN_004aa3c0()
 // Globals:
 //   TerminatedCString s_d_00624449
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 // Function calls:
 //   core_event.cpp_FUN_004b0830

@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055be43 [UNCONDITIONAL_CALL]
 // Globals:
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 //   undefined4 DAT_0310ec9c
 // Function calls:

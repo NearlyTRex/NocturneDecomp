@@ -6,7 +6,7 @@
 // Globals:
 //   TerminatedCString s_Capture_006243ba
 //   undefined4 DAT_0065d7c8
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CGame* g_CGamePtr = 02d81a9c
 //   undefined4 DAT_02d05310
 //   CGame g_CGameInstance
@@ -51,7 +51,7 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy *this_ptr)
   if (iVar5 == 0) {
     if (((g_CGamePtr->field54_0x1d4 != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
        (iVar5 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                          (g_CEventListInstance,"Capture"), iVar5 != 0)) {
+                          (g_CEventListPtr,"Capture"), iVar5 != 0)) {
       this_ptr->field4_0xbe30 = 0;
       this_ptr->field6_0xbe38[8] = '\0';
       this_ptr->field6_0xbe38[9] = '\0';

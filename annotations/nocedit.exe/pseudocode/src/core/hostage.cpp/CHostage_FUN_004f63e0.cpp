@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_hostage.cpp_CHostage_FUN_004f63e0(CHostage * this_ptr)
 // Globals:
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 // Function calls:
 //   core_event.cpp_FUN_004aabe0

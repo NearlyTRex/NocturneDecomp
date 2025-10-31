@@ -5,7 +5,7 @@
 // Signature: void engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
 // Cross-references:
 //   core_curtain.cpp_FUN_0044b060 (0044b060) at 0044b20a [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CLaserBeam_FUN_004c25c0 (004c25c0) at 004c3415 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (004c25c0) at 004c3415 [UNCONDITIONAL_CALL]
 //   core_glass.cpp_CGlass_FUN_004e9930 (004e9930) at 004e9aba [UNCONDITIONAL_CALL]
 //   core_glass.cpp_CGlass_FUN_004e9af0 (004e9af0) at 004e9c69 [UNCONDITIONAL_CALL]
 //   core_water.cpp_CWater_render_FUN_005ea320 (005ea320) at 005ea767 [UNCONDITIONAL_CALL]

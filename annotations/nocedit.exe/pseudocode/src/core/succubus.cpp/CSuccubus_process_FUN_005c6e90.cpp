@@ -19,7 +19,7 @@
 //   undefined4 DAT_00663934
 //   undefined4 DAT_00663938
 //   CConsole* g_CConsolePtr = 0083b1a4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   CConsole g_ConsolePtr
 //   undefined4 DAT_02d05310
@@ -313,7 +313,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
       core_cloth_cpp_FUN_0043c2d0();
     }
     iVar10 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                       (g_CEventListInstance,"succubusShutUp");
+                       (g_CEventListPtr,"succubusShutUp");
     if (iVar10 != 0) {
       sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
       return;

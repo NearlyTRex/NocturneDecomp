@@ -43,7 +43,7 @@
 //   undefined4 DAT_0066e30c
 //   undefined4 DAT_0066e314
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   char[256] g_CharacterClassificationTable
 //   CEditorTools g_CEditorToolsPtr

@@ -172,7 +172,7 @@
 //   double DOUBLE_00625a79 = 0.00555555555555555
 //   double DOUBLE_00625a81 = 30
 //   undefined4 DAT_0065d95c
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CGame* g_CGamePtr = 02d81a9c
 //   CNetGame* g_CNetGameInstance = 02f7c740
 //   CDemonSet* g_CDemonSetPtr = 03114278

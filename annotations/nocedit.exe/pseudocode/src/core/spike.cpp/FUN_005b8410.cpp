@@ -5,7 +5,7 @@
 // Signature: undefined core_spike.cpp_FUN_005b8410()
 // Globals:
 //   undefined4 DAT_00652e00
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 // Function calls:
 //   core_actor.cpp_CDemonActor_FUN_00408e80
@@ -38,12 +38,12 @@ void core_spike_cpp_FUN_005b8410(void)
   fVar9 = in_stack_00000004[2].location.position.y;
   if ((fVar9 == 0.0) || (fVar9 == 1.4013e-45)) {
     iVar7 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,(char *)&in_stack_00000004[2].orient_matrix.m[0].y);
+                      (g_CEventListPtr,(char *)&in_stack_00000004[2].orient_matrix.m[0].y);
     if (iVar7 != 0) {
       in_stack_00000004[2].location.area_id = 1;
     }
     iVar7 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,in_stack_00000004[2].create_event + 0x2c);
+                      (g_CEventListPtr,in_stack_00000004[2].create_event + 0x2c);
     if (iVar7 == 0) goto LAB_005b85e2;
     in_stack_00000004[2].location.area_id = 0;
 LAB_005b8479:
@@ -57,12 +57,12 @@ LAB_005b8479:
   }
   else {
     iVar7 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,(char *)&in_stack_00000004[2].scale);
+                      (g_CEventListPtr,(char *)&in_stack_00000004[2].scale);
     if (iVar7 != 0) {
       in_stack_00000004[2].location.area_id = 1;
     }
     iVar7 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,in_stack_00000004[3].actor_name + 0x14);
+                      (g_CEventListPtr,in_stack_00000004[3].actor_name + 0x14);
     if (iVar7 == 0) {
 LAB_005b85e2:
       if (in_stack_00000004[2].location.area_id == 0) goto LAB_005b8479;

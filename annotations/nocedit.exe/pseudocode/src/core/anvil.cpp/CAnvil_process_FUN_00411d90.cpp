@@ -6,7 +6,7 @@
 // Globals:
 //   undefined4 DAT_00614d2b
 //   undefined4 DAT_00614d33
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 //   CHero*[4] g_HeroActors
 //   int g_LocalHeroIndex
@@ -32,7 +32,7 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr)
   CAnvil *pCStack_8;
   
   iVar4 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                    (g_CEventListInstance,this_ptr->drop_condition);
+                    (g_CEventListPtr,this_ptr->drop_condition);
   iVar3 = g_LocalHeroIndex;
   if (iVar4 != 0) {
     this_ptr->triggered = 1;

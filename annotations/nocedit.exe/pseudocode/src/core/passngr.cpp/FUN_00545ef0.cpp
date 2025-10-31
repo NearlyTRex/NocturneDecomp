@@ -5,7 +5,7 @@
 // Signature: undefined core_passngr.cpp_FUN_00545ef0()
 // Globals:
 //   undefined4 DAT_00661f58
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   undefined4 DAT_02d05310
 //   CDemonMission g_CDemonMissionInstance
@@ -62,7 +62,7 @@ void core_passngr_cpp_FUN_00545ef0(void)
   }
   else {
     iVar4 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,in_stack_00000004[2].cloth_data + 0x5028);
+                      (g_CEventListPtr,in_stack_00000004[2].cloth_data + 0x5028);
     if (iVar4 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
       if (in_stack_00000004[2].cloth_data[0x50cc] != '\0') {

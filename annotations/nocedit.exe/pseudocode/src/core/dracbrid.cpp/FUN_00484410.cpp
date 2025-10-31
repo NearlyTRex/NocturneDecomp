@@ -36,7 +36,7 @@
 //   undefined4 DAT_0065cd88
 //   undefined4 DAT_0065cd8c
 //   CConsole* g_CConsolePtr = 0083b1a4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CGore* g_CGorePtr = 02d83364
 //   CDemonSet* g_CDemonSetPtr = 03114278
@@ -529,7 +529,7 @@ LAB_004852f8:
                hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffb6c);
     if ((iVar11 == 0) &&
        (iVar11 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                           (g_CEventListInstance,
+                           (g_CEventListPtr,
                             (char *)&param_5[1].base_character.base_actor.location.area_id),
        iVar11 != 0)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
@@ -598,7 +598,7 @@ LAB_004852f8:
     break;
   case 0xf:
     iVar11 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                       (g_CEventListInstance,
+                       (g_CEventListPtr,
                         (char *)&param_5[1].base_character.base_actor.location.area_id);
     if (iVar11 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
@@ -617,7 +617,7 @@ LAB_004852f8:
                hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffb6c);
     if ((iVar11 == 0) &&
        (iVar11 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                           (g_CEventListInstance,
+                           (g_CEventListPtr,
                             (char *)&param_5[1].base_character.base_actor.location.area_id),
        iVar11 != 0)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
@@ -812,7 +812,7 @@ LAB_004852f8:
     break;
   case 0x1a:
     iVar11 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                       (g_CEventListInstance,
+                       (g_CEventListPtr,
                         (char *)&param_5[1].base_character.base_actor.location.area_id);
     if (iVar11 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();

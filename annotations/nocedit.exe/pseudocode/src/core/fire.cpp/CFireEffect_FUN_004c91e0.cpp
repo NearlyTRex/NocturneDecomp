@@ -4,23 +4,24 @@
 // Convention: __cdecl
 // Signature: void core_fire.cpp_CFireEffect_FUN_004c91e0(CFireEffect * this_ptr)
 // Globals:
-//   undefined4 DAT_02d72588
+//   CTrail* g_CFireEffectTrailsEnd
 // Function calls:
 //   core_fire.cpp_FUN_004c6170
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c91e0(CFireEffect *this_ptr)
 
 {
+  char *pcVar1;
+  
   core_fire_cpp_FUN_004c6170();
-  _DAT_02d72588 = _DAT_02d72588 + 1;
-  if (_DAT_02d72588 < 0x32) {
+  pcVar1 = g_CFireEffectTrailsEnd->field0_0x0;
+  g_CFireEffectTrailsEnd = (CTrail *)(pcVar1 + 1);
+  if ((int)(pcVar1 + 1) < 0x32) {
     return;
   }
-  _DAT_02d72588 = 0;
+  g_CFireEffectTrailsEnd = (CTrail *)0x0;
   return;
 }
 

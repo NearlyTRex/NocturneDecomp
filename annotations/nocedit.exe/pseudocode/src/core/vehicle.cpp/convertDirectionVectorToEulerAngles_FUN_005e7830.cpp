@@ -23,7 +23,7 @@
 //   core_emitter.cpp_FUN_004a8fe0 (004a8fe0) at 004a9295 [UNCONDITIONAL_CALL]
 //   core_event.cpp_CEvent_EventReadingFromFile_FUN_004ae140 (004ae140) at 004af8ec [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CBulletTrail_FUN_004c21f0 (004c21f0) at 004c22f1 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CLaserBeam_FUN_004c25c0 (004c25c0) at 004c261c [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (004c25c0) at 004c261c [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d2ea0 (004d2ea0) at 004d3951 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d4190 (004d4190) at 004d42ef [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d5c60 (004d5c60) at 004d5d87 [UNCONDITIONAL_CALL]

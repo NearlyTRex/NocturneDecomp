@@ -13,7 +13,7 @@
 //   undefined4 DAT_0064f312
 //   undefined4 DAT_0064f31a
 //   undefined4 DAT_00662f68
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CGore* g_CGorePtr = 02d83364
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CConsole g_ConsolePtr
@@ -189,7 +189,7 @@ void core_smiley_cpp_FUN_005a2800(void)
     switch(iVar5) {
     case 1:
       iVar5 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                        (g_CEventListInstance,"Capture");
+                        (g_CEventListPtr,"Capture");
       if (iVar5 == 0) {
         (*(in_stack_00000004->base_actor).metadata.vtable[1].getAllowedMeleeAttackTypes)
                   (&in_stack_00000004->base_actor);
@@ -225,7 +225,7 @@ void core_smiley_cpp_FUN_005a2800(void)
       break;
     case 2:
       iVar5 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                        (g_CEventListInstance,"Capture");
+                        (g_CEventListPtr,"Capture");
       if (iVar5 == 0) {
         (*(in_stack_00000004->base_actor).metadata.vtable[1].getAllowedMeleeAttackTypes)
                   (&in_stack_00000004->base_actor);

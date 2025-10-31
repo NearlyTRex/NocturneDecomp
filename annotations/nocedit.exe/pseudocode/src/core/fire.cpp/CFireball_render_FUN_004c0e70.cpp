@@ -23,8 +23,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
 
 {
@@ -107,12 +105,12 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
     g_RenderVertexBuffer[3].u = 7.34684e-40;
     g_RenderVertexBuffer[3].v = 7.34684e-40;
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
-              (g_CDemonRendererPtr,(CVector3i *)&DAT_02d12db4,(CVector3i *)0x0);
+              (g_CDemonRendererPtr,&g_BillboardCameraRight,(CVector3i *)0x0);
     local_50 = -local_20;
     local_48 = 0;
-    local_74.x = (int)ROUND(local_50 * _DAT_0065dca8);
-    local_74.y = (int)ROUND(local_50 * _DAT_0065dca8);
-    local_74.z = (int)ROUND(_DAT_0065dca8 * 0.0);
+    local_74.x = (int)ROUND(local_50 * FLOAT_0065dca8);
+    local_74.y = (int)ROUND(local_50 * FLOAT_0065dca8);
+    local_74.z = (int)ROUND(FLOAT_0065dca8 * 0.0);
     local_4c = local_50;
     local_28 = local_50;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
@@ -120,35 +118,35 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
     local_48 = 0;
     local_50 = local_20;
     local_4c = local_28;
-    local_98.x = (int)ROUND(local_20 * _DAT_0065dca8);
-    local_98.y = (int)ROUND(local_28 * _DAT_0065dca8);
-    local_98.z = (int)ROUND(_DAT_0065dca8 * 0.0);
+    local_98.x = (int)ROUND(local_20 * FLOAT_0065dca8);
+    local_98.y = (int)ROUND(local_28 * FLOAT_0065dca8);
+    local_98.z = (int)ROUND(FLOAT_0065dca8 * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_98);
     local_50 = local_20;
     local_4c = local_20;
     local_48 = 0;
-    local_bc.x = (int)ROUND(local_20 * _DAT_0065dca8);
-    local_bc.y = (int)ROUND(local_20 * _DAT_0065dca8);
-    local_bc.z = (int)ROUND(_DAT_0065dca8 * 0.0);
+    local_bc.x = (int)ROUND(local_20 * FLOAT_0065dca8);
+    local_bc.y = (int)ROUND(local_20 * FLOAT_0065dca8);
+    local_bc.z = (int)ROUND(FLOAT_0065dca8 * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_bc);
     local_50 = local_28;
     local_4c = local_20;
     local_48 = 0;
-    local_8c.x = (int)ROUND(local_28 * _DAT_0065dca8);
-    local_8c.y = (int)ROUND(local_20 * _DAT_0065dca8);
-    local_8c.z = (int)ROUND(_DAT_0065dca8 * 0.0);
+    local_8c.x = (int)ROUND(local_28 * FLOAT_0065dca8);
+    local_8c.y = (int)ROUND(local_20 * FLOAT_0065dca8);
+    local_8c.z = (int)ROUND(FLOAT_0065dca8 * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_8c);
     if (this_ptr->lighting_active == 1) {
-      texture = &DAT_0067a7f4;
+      texture = &g_FireEffectRedSparkTexture;
     }
     else if (this_ptr->lighting_active == 2) {
-      texture = &DAT_0067a7dc;
+      texture = &g_FireEffectGreenSparkTexture;
     }
     else {
-      texture = &DAT_0067a7ac;
+      texture = &g_FireEffectSparkTexture;
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,texture);
     lVar2 = (longlong)this_ptr->timer * (longlong)(0xffff - (int)g_PerspectiveReciprocal);
@@ -171,7 +169,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
     g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
     engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-              (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&DAT_02d12dcc);
+              (g_CDemonRendererPtr,&g_BillboardPrimitive.base);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     if ((this_ptr->lighting_active != 1) && (this_ptr->lighting_active != 2)) {
@@ -197,12 +195,12 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                   (g_CDemonRendererPtr,&local_b0);
         engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
-                  (g_CDemonRendererPtr,(CVector3i *)&DAT_02d12db4,(CVector3i *)0x0);
+                  (g_CDemonRendererPtr,&g_BillboardCameraRight,(CVector3i *)0x0);
         local_50 = -local_20 * local_e8;
         local_48 = 0;
-        local_44[0].x = (int)ROUND(local_50 * _DAT_0065dca8);
-        local_44[0].y = (int)ROUND(local_50 * _DAT_0065dca8);
-        local_44[0].z = (int)ROUND(_DAT_0065dca8 * 0.0);
+        local_44[0].x = (int)ROUND(local_50 * FLOAT_0065dca8);
+        local_44[0].y = (int)ROUND(local_50 * FLOAT_0065dca8);
+        local_44[0].z = (int)ROUND(FLOAT_0065dca8 * 0.0);
         local_4c = local_50;
         local_1c = local_50;
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
@@ -210,26 +208,26 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
         local_50 = local_20 * local_e8;
         local_48 = 0;
         local_4c = local_1c;
-        local_5c.x = (int)ROUND(local_50 * _DAT_0065dca8);
-        local_5c.y = (int)ROUND(local_1c * _DAT_0065dca8);
-        local_5c.z = (int)ROUND(_DAT_0065dca8 * 0.0);
+        local_5c.x = (int)ROUND(local_50 * FLOAT_0065dca8);
+        local_5c.y = (int)ROUND(local_1c * FLOAT_0065dca8);
+        local_5c.z = (int)ROUND(FLOAT_0065dca8 * 0.0);
         local_18 = local_50;
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_5c);
         local_48 = 0;
         local_50 = local_18;
         local_4c = local_18;
-        local_80.x = (int)ROUND(local_18 * _DAT_0065dca8);
-        local_80.y = (int)ROUND(local_18 * _DAT_0065dca8);
-        local_80.z = (int)ROUND(_DAT_0065dca8 * 0.0);
+        local_80.x = (int)ROUND(local_18 * FLOAT_0065dca8);
+        local_80.y = (int)ROUND(local_18 * FLOAT_0065dca8);
+        local_80.z = (int)ROUND(FLOAT_0065dca8 * 0.0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_80);
         local_50 = local_1c;
         local_4c = local_18;
         local_48 = 0;
-        local_c8.x = (int)ROUND(local_1c * _DAT_0065dca8);
-        local_c8.y = (int)ROUND(local_18 * _DAT_0065dca8);
-        local_c8.z = (int)ROUND(_DAT_0065dca8 * 0.0);
+        local_c8.x = (int)ROUND(local_1c * FLOAT_0065dca8);
+        local_c8.y = (int)ROUND(local_18 * FLOAT_0065dca8);
+        local_c8.z = (int)ROUND(FLOAT_0065dca8 * 0.0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_c8);
         (*(code *)((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
@@ -253,7 +251,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
         g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;
         engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&DAT_02d12dcc);
+                  (g_CDemonRendererPtr,&g_BillboardPrimitive.base);
         engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
         iVar4 = iVar4 + 1;
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();

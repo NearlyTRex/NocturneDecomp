@@ -78,7 +78,7 @@
 //   TerminatedCString s_world_0062d22e
 //   TerminatedCString s_Select_mission_to_play_0062d234
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_0067b718
 //   undefined4 PTR_s_hq_act1_msn_0067b750
 //   undefined4 PTR_s_hq_act1_msn_0067b750+1
@@ -607,7 +607,7 @@ code_r0x004e1f00:
   } while (cVar1 != '\0');
   g_OverlayDisplayTimer = 8.0;
 LAB_004e1fac:
-  chapter_name = g_CEventListInstance;
+  chapter_name = g_CEventListPtr;
   core_event_cpp_FUN_004b0460();
   iVar7 = 1;
   iVar8 = crt_string_c_stricmp_FUN_005fe7f0(&g_CurrentSaveFile,acStack_124);

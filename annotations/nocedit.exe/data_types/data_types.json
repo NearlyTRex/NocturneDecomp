@@ -281,10 +281,6 @@
       "type":"struct"
     },
     {
-      "name":"CBulletHole",
-      "type":"struct"
-    },
-    {
       "name":"CBulletTrail",
       "type":"struct"
     },
@@ -1254,6 +1250,10 @@
     },
     {
       "name":"CBoxActor",
+      "type":"struct"
+    },
+    {
+      "name":"CBulletHole",
       "type":"struct"
     },
     {
@@ -16273,10 +16273,46 @@
       "desc":"",
       "fields":[
         {
-          "len":60,
-          "name":"field_0",
+          "len":12,
+          "name":"position",
           "offset":0,
-          "type":"char[60]"
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"active",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"actor_ptr",
+          "offset":16,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":12,
+          "name":"surface_normal",
+          "offset":20,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"texture_index",
+          "offset":32,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"transformed_pos",
+          "offset":36,
+          "type":"CVector3f"
+        },
+        {
+          "len":12,
+          "name":"actor_local_space",
+          "offset":48,
+          "type":"CVector3f"
         }
       ],
       "importable":true,
@@ -28115,7 +28151,7 @@
         },
         {
           "len":4,
-          "name":"field_40",
+          "name":"alpha_value",
           "offset":40,
           "type":"int"
         }

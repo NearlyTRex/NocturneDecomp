@@ -9,7 +9,7 @@
 //   core_set.cpp_FUN_00571380 (00571380) at 005713a6 [UNCONDITIONAL_CALL]
 //   core_set.cpp_FUN_005713c0 (005713c0) at 005713fe [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_02d2a1ec
+//   CSmokeParticle* g_CFireEffectSmokeParticlesEnd
 //   CBulletHole[256] g_CFireEffectBulletHoles
 //   undefined4 DAT_02d2a200
 //   undefined4 DAT_02d2a204
@@ -27,9 +27,9 @@
 //   undefined4 DAT_02d6c718
 //   undefined4 DAT_02d6cf64
 // Function calls:
-//   core_fire.cpp_CBulletHole_FUN_004bfa40
+//   core_fire.cpp_CBulletHole_initRender_FUN_004bfa40
+//   core_fire.cpp_CBulletHole_render_FUN_004bfac0
 //   core_fire.cpp_CCrater_FUN_004c4620
-//   core_fire.cpp_FUN_004bfac0
 //   core_fire.cpp_FUN_004c0140
 
 #include "nocturne.h"
@@ -47,32 +47,34 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c74a0(CFireEffect *this_ptr)
   CStake *pCVar4;
   int in_stack_0000000c;
   
-  core_fire_cpp_CBulletHole_FUN_004bfa40(g_CFireEffectBulletHoles);
+  core_fire_cpp_CBulletHole_initRender_FUN_004bfa40(g_CFireEffectBulletHoles);
   if (in_stack_0000000c == 0) {
     iVar3 = 0;
-    if (0 < DAT_02d2a1ec) {
+    if (0 < (int)g_CFireEffectSmokeParticlesEnd) {
       iVar2 = 0;
       do {
-        if ((*(int *)(g_CFireEffectBulletHoles[0].field0_0x0 + iVar2 + 0xc) != 0) &&
-           (*(int *)(g_CFireEffectBulletHoles[0].field0_0x0 + iVar2 + 0x10) == 0)) {
-          core_fire_cpp_FUN_004bfac0();
+        if ((*(int *)((int)&g_CFireEffectBulletHoles[0].active + iVar2) != 0) &&
+           (*(int *)((int)&g_CFireEffectBulletHoles[0].actor_ptr + iVar2) == 0)) {
+          core_fire_cpp_CBulletHole_render_FUN_004bfac0
+                    ((CBulletHole *)((int)&g_CFireEffectBulletHoles[0].position.x + iVar2));
         }
         iVar3 = iVar3 + 1;
         iVar2 = iVar2 + 0x3c;
-      } while (iVar3 < DAT_02d2a1ec);
+      } while (iVar3 < (int)g_CFireEffectSmokeParticlesEnd);
     }
   }
   else {
     iVar3 = 0;
-    if (0 < DAT_02d2a1ec) {
+    if (0 < (int)g_CFireEffectSmokeParticlesEnd) {
       iVar2 = 0;
       do {
-        if (*(int *)(g_CFireEffectBulletHoles[0].field0_0x0 + iVar2 + 0x10) == 0) {
-          core_fire_cpp_FUN_004bfac0();
+        if (*(int *)((int)&g_CFireEffectBulletHoles[0].actor_ptr + iVar2) == 0) {
+          core_fire_cpp_CBulletHole_render_FUN_004bfac0
+                    ((CBulletHole *)((int)&g_CFireEffectBulletHoles[0].position.x + iVar2));
         }
         iVar3 = iVar3 + 1;
         iVar2 = iVar2 + 0x3c;
-      } while (iVar3 < DAT_02d2a1ec);
+      } while (iVar3 < (int)g_CFireEffectSmokeParticlesEnd);
     }
   }
   if ((in_stack_0000000c != 0) && (iVar3 = 0, 0 < DAT_02d2ddf4)) {
@@ -124,7 +126,7 @@ LAB_004c7525:
 //   XREF to: Stack[0xc] (READ)
 // 004c74a8: PUSH 0x2d2a1f4
 //   XREF to: 02d2a1f4 (DATA)
-// 004c74ad: CALL core_fire.cpp_CBulletHole_FUN_004bfa40
+// 004c74ad: CALL core_fire.cpp_CBulletHole_initRender_FUN_004bfa40
 //   XREF to: 004bfa40 (UNCONDITIONAL_CALL)
 // 004c74b2: ADD ESP,0x4
 // 004c74b5: CMP dword ptr [ESP + 0x18],0x0
@@ -152,7 +154,7 @@ LAB_004c7525:
 // 004c74de: PUSH EAX
 //   XREF to: 02d2a1f4 (DATA)
 //   XREF to: 02d2a230 (DATA)
-// 004c74df: CALL core_fire.cpp_FUN_004bfac0
+// 004c74df: CALL core_fire.cpp_CBulletHole_render_FUN_004bfac0
 //   XREF to: 004bfac0 (UNCONDITIONAL_CALL)
 // 004c74e4: ADD ESP,0x4
 // 004c74e7: MOV EAX,[0x02d2a1ec]
@@ -269,7 +271,7 @@ LAB_004c7525:
 // 004c75b0: PUSH EAX
 //   XREF to: 02d2a1f4 (DATA)
 //   XREF to: 02d2a230 (DATA)
-// 004c75b1: CALL core_fire.cpp_FUN_004bfac0
+// 004c75b1: CALL core_fire.cpp_CBulletHole_render_FUN_004bfac0
 //   XREF to: 004bfac0 (UNCONDITIONAL_CALL)
 // 004c75b6: ADD ESP,0x4
 // 004c75b9: TEST EBP,EBP

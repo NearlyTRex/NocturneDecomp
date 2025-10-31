@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_fire.cpp_CFireEffect_FUN_004c76a0 (004c76a0) at 004c7852 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_02d2a1ec
+//   CSmokeParticle* g_CFireEffectSmokeParticlesEnd
 //   undefined4 DAT_02d2a1f0
 //   CBulletHole[256] g_CFireEffectBulletHoles
 
@@ -23,9 +23,10 @@ CBulletHole * core_fire_cpp_FUN_004c6c10(void)
   if (0xff < iVar2) {
     iVar2 = 0;
   }
-  DAT_02d2a1ec = DAT_02d2a1ec + 1;
-  if (0x100 < DAT_02d2a1ec) {
-    DAT_02d2a1ec = 0x100;
+  g_CFireEffectSmokeParticlesEnd =
+       (CSmokeParticle *)((int)&g_CFireEffectSmokeParticlesEnd->active + 1);
+  if (0x100 < (int)g_CFireEffectSmokeParticlesEnd) {
+    g_CFireEffectSmokeParticlesEnd = (CSmokeParticle *)0x100;
   }
   DAT_02d2a1f0 = iVar2;
   return pCVar1;

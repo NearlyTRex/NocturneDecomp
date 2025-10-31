@@ -161,7 +161,7 @@
 //   undefined4 DAT_0062c925
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   int g_WindowHeight = 0xc8
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_0067b5f0
 //   CGame* g_CGamePtr = 02d81a9c
 //   float g_MovieRecordingTargetFPS = 30
@@ -457,7 +457,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
   bVar20 = 0;
   if (g_CheatSystemEnabled == 0) {
     iVar11 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                       (g_CEventListInstance,"headOfHorror");
+                       (g_CEventListPtr,"headOfHorror");
     if ((iVar11 != 0) && (g_CGamePtr->head_of_horror_cheat != 0x29a)) {
       fVar21 = 5.0;
       g_CGamePtr->head_of_horror_cheat = 0x29a;

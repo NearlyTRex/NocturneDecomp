@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_event.cpp_FUN_004b18e0 (004b18e0) at 004b18e5 [UNCONDITIONAL_CALL]
 // Globals:
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 // Function calls:
 //   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
@@ -28,7 +28,7 @@ int core_event_cpp_FUN_004b1890(void)
     n1 = in_stack_00000004 + 1;
     do {
       iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                        (g_CEventListInstance,(char *)n1);
+                        (g_CEventListPtr,(char *)n1);
       if (iVar1 != 0) {
         return iVar2;
       }

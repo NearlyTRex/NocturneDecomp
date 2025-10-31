@@ -5,7 +5,7 @@
 // Signature: undefined core_bugs.cpp_FUN_004250f0()
 // Globals:
 //   void* switchdataD_004250d4 = 0042512b
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 // Function calls:
 //   core_bugs.cpp_FUN_00425cc0
@@ -30,7 +30,7 @@ void core_bugs_cpp_FUN_004250f0(void)
   if (iVar2 != 0) {
     if ((*(int *)(in_stack_00000004[2].model.padding_0x0 + 0x1af8) == 0) &&
        (iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                          (g_CEventListInstance,in_stack_00000004[2].model.padding_0x0 + 0x1b00),
+                          (g_CEventListPtr,in_stack_00000004[2].model.padding_0x0 + 0x1b00),
        iVar2 != 0)) {
       pCVar1 = in_stack_00000004 + 2;
       (pCVar1->model).padding_0x0[0x1af8] = '\x01';
@@ -40,7 +40,7 @@ void core_bugs_cpp_FUN_004250f0(void)
     }
     if ((*(int *)(in_stack_00000004[2].model.padding_0x0 + 0x1afc) == 0) &&
        (iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                          (g_CEventListInstance,in_stack_00000004[2].model.padding_0x0 + 0x1b64),
+                          (g_CEventListPtr,in_stack_00000004[2].model.padding_0x0 + 0x1b64),
        iVar2 != 0)) {
       pCVar1 = in_stack_00000004 + 2;
       (pCVar1->model).padding_0x0[0x1afc] = '\x01';

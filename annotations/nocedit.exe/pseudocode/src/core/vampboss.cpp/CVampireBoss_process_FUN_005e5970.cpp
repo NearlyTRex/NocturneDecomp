@@ -26,7 +26,7 @@
 //   undefined4 DAT_00664e80
 //   undefined4 DAT_00664e84
 //   undefined4 DAT_00664e88
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CGame* g_CGamePtr = 02d81a9c
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 DAT_02d05310
@@ -559,7 +559,7 @@ LAB_005e649b:
   case 0:
     *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
          _DAT_00664e84 * in_stack_00000008;
-    this_ptr_00 = g_CEventListInstance;
+    this_ptr_00 = g_CEventListPtr;
     if (pCVar6->letterbox_mode == 0) {
       *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x28) =
            _DAT_00664e80 * in_stack_00000008;
@@ -669,7 +669,7 @@ LAB_005e6560:
     break;
   case 2:
     iVar14 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                       (g_CEventListInstance,"flyout");
+                       (g_CEventListPtr,"flyout");
     if (iVar14 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
     }

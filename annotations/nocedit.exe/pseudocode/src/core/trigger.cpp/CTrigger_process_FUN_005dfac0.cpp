@@ -10,7 +10,7 @@
 //   undefined4 DAT_0065562c
 //   undefined4 DAT_00655634
 //   undefined4 DAT_00664a00
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   CDemonSet* g_CDemonSetPtr = 03114278

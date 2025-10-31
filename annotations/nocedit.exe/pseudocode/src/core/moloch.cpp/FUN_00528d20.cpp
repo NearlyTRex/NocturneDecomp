@@ -19,7 +19,7 @@
 //   undefined4 DAT_00639e3d
 //   undefined4 DAT_00661938
 //   CConsole* g_CConsolePtr = 0083b1a4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CGame* g_CGamePtr = 02d81a9c
 //   CConsole g_ConsolePtr
 //   undefined4 DAT_02d05310
@@ -219,7 +219,7 @@ LAB_00528f8e:
   if (*(int *)(in_stack_00000004[2].cloth_data + 0x77ac) == 0) {
     if (*(int *)(in_stack_00000004[2].cloth_data + 0x77a8) == 0) {
       iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                        (g_CEventListInstance,in_stack_00000004[2].cloth_data + 0x7818);
+                        (g_CEventListPtr,in_stack_00000004[2].cloth_data + 0x7818);
       if (iVar2 != 0) {
         core_moloch_cpp_PlaySoundAbtMolochMorphing_FUN_00529900();
         return;
@@ -227,7 +227,7 @@ LAB_00528f8e:
     }
     else {
       iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                        (g_CEventListInstance,in_stack_00000004[2].cloth_data + 0x77b4);
+                        (g_CEventListPtr,in_stack_00000004[2].cloth_data + 0x77b4);
       if (iVar2 != 0) {
         core_moloch_cpp_PlaySoundAbtMolochMorphing_FUN_00529900();
         return;

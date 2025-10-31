@@ -9,7 +9,7 @@
 //   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0 (00474ad0) at 00474ebd [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CExplosion_FUN_004c3b10 (004c3b10) at 004c3b8a [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CGunFlame_FUN_004c50b0 (004c50b0) at 004c512a [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CLaserBeam_FUN_004c25c0 (004c25c0) at 004c29eb [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (004c25c0) at 004c29eb [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CLightningBolt_FUN_004c5720 (004c5720) at 004c5893 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CTrail_FUN_004c5e90 (004c5e90) at 004c5f37 [UNCONDITIONAL_CALL]
 //   core_flame.cpp_FUN_004ca110 (004ca110) at 004ca6a5 [UNCONDITIONAL_CALL]

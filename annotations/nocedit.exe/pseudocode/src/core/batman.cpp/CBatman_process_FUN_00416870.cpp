@@ -19,7 +19,7 @@
 //   undefined4 DAT_006158e5
 //   undefined4 DAT_0065a76c
 //   undefined4 DAT_0065a778
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CGore* g_CGorePtr = 02d83364
 //   CDemonSet* g_CDemonSetPtr = 03114278
@@ -321,7 +321,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
         getAllowedMeleeAttackTypes)((CDemonActor *)this_ptr);
       if ((*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) != 0) ||
          (iVar11 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                             (g_CEventListInstance,this_ptr->field1_0xbeb4 + 8), iVar11 != 0)) {
+                             (g_CEventListPtr,this_ptr->field1_0xbeb4 + 8), iVar11 != 0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
         iVar11 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
         if ((iVar11 == 0) &&

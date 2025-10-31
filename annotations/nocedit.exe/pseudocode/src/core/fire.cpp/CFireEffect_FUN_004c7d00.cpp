@@ -7,7 +7,7 @@
 //   core_glass.cpp_FUN_004ea1c0 (004ea1c0) at 004ea362 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0 (0059cec0) at 0059d424 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_02d59134
+//   CMuzzleFlash* g_CFireEffectMuzzleFlashesEnd
 //   CGlassParticle[256] g_CFireEffectGlassParticles
 // Function calls:
 //   core_fire.cpp_FUN_004c1c00
@@ -17,9 +17,9 @@
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c7d00(CFireEffect *this_ptr)
 
 {
-  DAT_02d59134 = DAT_02d59134 + 1;
-  if (0xff < DAT_02d59134) {
-    DAT_02d59134 = 0;
+  g_CFireEffectMuzzleFlashesEnd = (CMuzzleFlash *)(g_CFireEffectMuzzleFlashesEnd->field0_0x0 + 1);
+  if (0xff < (int)g_CFireEffectMuzzleFlashesEnd) {
+    g_CFireEffectMuzzleFlashesEnd = (CMuzzleFlash *)0x0;
   }
   core_fire_cpp_FUN_004c1c00();
   return;

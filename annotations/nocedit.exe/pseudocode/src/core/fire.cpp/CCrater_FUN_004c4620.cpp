@@ -7,9 +7,9 @@
 //   core_fire.cpp_CCrater_FUN_004c4200 (004c4200) at 004c422a [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireEffect_FUN_004c74a0 (004c74a0) at 004c7564 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0065dca8
+//   float FLOAT_0065dca8 = 256
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
-//   SMRGLTextureBasic DAT_0067addc
+//   SMRGLTextureBasic g_FireEffectBlastTexture
 //   SRenderVertex[16] g_RenderVertexBuffer
 //   undefined4 g_RenderVertexBuffer[0].u
 //   undefined4 g_RenderVertexBuffer[0].v
@@ -45,8 +45,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CCrater_FUN_004c4620(CCrater *this_ptr)
 
 {
@@ -69,23 +67,24 @@ void __cdecl core_fire_cpp_CCrater_FUN_004c4620(CCrater *this_ptr)
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr,(CVector3f *)(this_ptr->field0_0x0 + 0xc));
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,&DAT_0067addc);
-  local_18.x = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x40) * _DAT_0065dca8);
-  local_18.y = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x44) * _DAT_0065dca8);
-  local_18.z = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x48) * _DAT_0065dca8);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
+            (g_CDemonRendererPtr,&g_FireEffectBlastTexture);
+  local_18.x = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x40) * FLOAT_0065dca8);
+  local_18.y = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x44) * FLOAT_0065dca8);
+  local_18.z = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x48) * FLOAT_0065dca8);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[0].projected_vertex,&local_18);
-  local_28._8_4_ = (undefined4)ROUND(*(float *)(this_ptr->field0_0x0 + 0x4c) * _DAT_0065dca8);
-  local_1c = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x50) * _DAT_0065dca8);
-  local_18.x = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x54) * _DAT_0065dca8);
+  local_28._8_4_ = (undefined4)ROUND(*(float *)(this_ptr->field0_0x0 + 0x4c) * FLOAT_0065dca8);
+  local_1c = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x50) * FLOAT_0065dca8);
+  local_18.x = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x54) * FLOAT_0065dca8);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[1].projected_vertex,(CVector3i *)(local_28 + 8));
-  local_28._0_4_ = (undefined4)ROUND(*(float *)(this_ptr->field0_0x0 + 0x58) * _DAT_0065dca8);
-  local_28._4_4_ = (undefined4)ROUND(*(float *)(this_ptr->field0_0x0 + 0x5c) * _DAT_0065dca8);
-  local_28._8_4_ = (undefined4)ROUND(*(float *)(this_ptr->field0_0x0 + 0x60) * _DAT_0065dca8);
+  local_28._0_4_ = (undefined4)ROUND(*(float *)(this_ptr->field0_0x0 + 0x58) * FLOAT_0065dca8);
+  local_28._4_4_ = (undefined4)ROUND(*(float *)(this_ptr->field0_0x0 + 0x5c) * FLOAT_0065dca8);
+  local_28._8_4_ = (undefined4)ROUND(*(float *)(this_ptr->field0_0x0 + 0x60) * FLOAT_0065dca8);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[2].projected_vertex,(CVector3i *)local_28);
-  iStack00000008 = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x6c) * _DAT_0065dca8);
+  iStack00000008 = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x6c) * FLOAT_0065dca8);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[3].projected_vertex,(CVector3i *)&stack0x00000000);
   g_RenderVertexBuffer[0].light = 9.18341e-41;

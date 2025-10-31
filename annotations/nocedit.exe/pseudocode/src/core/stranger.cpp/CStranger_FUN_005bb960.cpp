@@ -64,7 +64,7 @@
 //   undefined4 DAT_00663768
 //   undefined4 DAT_0066376c
 //   CConsole* g_CConsolePtr = 0083b1a4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CGame* g_CGamePtr = 02d81a9c
 //   undefined4 g_CAmmoBoxClassInfo.name_hash
 //   undefined4 g_CBoxActorClassInfo.name_hash
@@ -274,7 +274,7 @@ void core_stranger_cpp_CStranger_FUN_005bb960(void)
   
   fVar18 = (float)((ulonglong)in_stack_fffffd18 >> 0x20);
   local_1c = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                       (g_CEventListInstance,"?DebugActionPending" + 1);
+                       (g_CEventListPtr,"?DebugActionPending" + 1);
   pCVar20 = in_stack_00000004->carry_hands[1].carry_actor;
   if ((pCVar20 != (CDemonActor *)0x0) &&
      (*(float *)(in_stack_00000004[2].cloth_data + 0x55d0) < _DAT_006535dc)) {

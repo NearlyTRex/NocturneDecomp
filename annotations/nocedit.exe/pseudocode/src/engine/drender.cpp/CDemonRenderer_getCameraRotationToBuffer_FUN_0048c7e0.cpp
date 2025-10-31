@@ -4,11 +4,11 @@
 // Convention: __cdecl
 // Signature: void engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
 // Cross-references:
-//   core_fire.cpp_CFireball_FUN_004c0d80 (004c0d80) at 004c0de1 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CFireball_initRender_FUN_004c0d80 (004c0d80) at 004c0de1 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CPopcorn_render_FUN_004c64c0 (004c64c0) at 004c654c [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CRainDrop_render_FUN_004c6830 (004c6830) at 004c68bf [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CSmokeParticle_FUN_004bf1f0 (004bf1f0) at 004bf251 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CSpark_FUN_004c0300 (004c0300) at 004c039b [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0 (004bf1f0) at 004bf251 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CSpark_initRender_FUN_004c0300 (004c0300) at 004c039b [UNCONDITIONAL_CALL]
 //   core_flame.cpp_FUN_004ca110 (004ca110) at 004ca219 [UNCONDITIONAL_CALL]
 //   core_gore.cpp_FUN_004eb9d0 (004eb9d0) at 004eba31 [UNCONDITIONAL_CALL]
 // Function calls:

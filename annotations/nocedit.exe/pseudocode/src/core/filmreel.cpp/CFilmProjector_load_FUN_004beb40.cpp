@@ -11,7 +11,7 @@
 //   TerminatedCString s_s_35_end_wav_00629bb5
 //   double DOUBLE_00629bc5 = 3.14159265350000
 //   CFilterFx* g_CFilterFXPtr = 020a570c
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CFilterFx g_CFilterFXInstance
 //   undefined4 DAT_02d05310
 //   undefined4 g_CFilmReelClassInfo.name_hash

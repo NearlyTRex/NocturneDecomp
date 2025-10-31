@@ -22,7 +22,7 @@
 //   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0 (00474ad0) at 00474b65 [UNCONDITIONAL_CALL]
 //   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (004781d0) at 00478534 [UNCONDITIONAL_CALL]
 //   core_door.cpp_CDoor_process_FUN_004800c0 (004800c0) at 004804c7 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CLaserBeam_FUN_004c25c0 (004c25c0) at 004c3127 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (004c25c0) at 004c3127 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_00509330 (00509330) at 00509580 [UNCONDITIONAL_CALL]
 //   core_pendulum.cpp_FUN_005495c0 (005495c0) at 0054972b [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_FUN_0056d4a0 (0056d4a0) at 0056d707 [UNCONDITIONAL_CALL]

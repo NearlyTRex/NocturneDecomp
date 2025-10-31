@@ -15,7 +15,7 @@
 //   TerminatedCString s_Reloading_mission_from_s_0063c2a3
 //   TerminatedCString s_world_s_0063c2bd
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CGame* g_CGamePtr = 02d81a9c
 //   TerminatedCString s_PLAYMSN_TMP_00680820
 //   undefined4 s_YMSN.TMP_00680824

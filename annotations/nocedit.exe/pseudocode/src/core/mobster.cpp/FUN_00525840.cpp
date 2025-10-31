@@ -17,7 +17,7 @@
 //   undefined4 DAT_0066177c
 //   undefined4 DAT_00661788
 //   CConsole* g_CConsolePtr = 0083b1a4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CGore* g_CGorePtr = 02d83364
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CConsole g_ConsolePtr
@@ -207,7 +207,7 @@ void core_mobster_cpp_FUN_00525840(void)
   }
   if ((in_stack_00000004[1].base_character.base_actor.orient.bank == 0.0) &&
      (iVar7 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                        (g_CEventListInstance,
+                        (g_CEventListPtr,
                          (char *)&in_stack_00000004[1].base_character.base_actor.orient.heading),
      iVar7 != 0)) {
     in_stack_00000004[1].base_character.base_actor.orient.bank = 1.4013e-45;

@@ -21,7 +21,7 @@
 //   undefined4 DAT_0065af5c
 //   undefined4 DAT_0065af68
 //   CConsole* g_CConsolePtr = 0083b1a4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 DAT_00822944
@@ -154,7 +154,7 @@ void core_boneguy_cpp_FUN_0041bf90(void)
   
   bVar13 = 0;
   iVar7 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                    (g_CEventListInstance,
+                    (g_CEventListPtr,
                      in_stack_00000004[1].base_character.base_actor.actor_name + 0x1c);
   if (iVar7 != 0) {
     (in_stack_00000004->base_character).hit_points = 0.0;

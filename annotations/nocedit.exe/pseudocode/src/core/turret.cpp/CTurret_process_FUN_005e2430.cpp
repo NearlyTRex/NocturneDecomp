@@ -12,7 +12,7 @@
 //   TerminatedCString s_turret_loop_wav_f_00656654
 //   TerminatedCString s_turret_tail_wav_00656669
 //   undefined4 DAT_00656680
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -82,7 +82,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
       (this_ptr->base_weapon).base_actor.orient.heading = *(float *)(this_ptr->field1_0x578 + 8);
     }
     iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,this_ptr->field3_0x704);
+                      (g_CEventListPtr,this_ptr->field3_0x704);
     if (iVar3 == 0) {
       this_ptr->timer = 0.0;
       break;
@@ -106,7 +106,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
     break;
   case 2:
     (this_ptr->base_weapon).field6_0x2f4[0] = -1;
-    pCVar2 = g_CEventListInstance;
+    pCVar2 = g_CEventListPtr;
     (this_ptr->base_weapon).field6_0x2f4[1] = '\0';
     (this_ptr->base_weapon).field6_0x2f4[2] = '\0';
     (this_ptr->base_weapon).field6_0x2f4[3] = '\0';
@@ -131,7 +131,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
     break;
   case 3:
     (this_ptr->base_weapon).field6_0x2f4[0] = '\0';
-    pCVar2 = g_CEventListInstance;
+    pCVar2 = g_CEventListPtr;
     (this_ptr->base_weapon).field6_0x2f4[1] = '\0';
     (this_ptr->base_weapon).field6_0x2f4[2] = '\0';
     (this_ptr->base_weapon).field6_0x2f4[3] = '\0';

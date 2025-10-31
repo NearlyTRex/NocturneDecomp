@@ -19,7 +19,7 @@
 //   undefined4 DAT_02d141e8
 //   CSmokeParticle[2048] g_CFireEffectSmokeParticles
 // Function calls:
-//   core_fire.cpp_CSmokeParticle_FUN_004bf2f0
+//   core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0
 
 #include "nocturne.h"
 
@@ -28,6 +28,10 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7b20(CFireEffect *this_ptr)
 {
   CSmokeParticle *this_ptr_00;
   int iVar1;
+  CVector3f *in_stack_00000008;
+  float in_stack_0000000c;
+  CVector3f *in_stack_00000010;
+  int in_stack_00000014;
   
   iVar1 = DAT_02d141e8 + 1;
   this_ptr_00 = g_CFireEffectSmokeParticles + DAT_02d141e8;
@@ -35,7 +39,8 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7b20(CFireEffect *this_ptr)
   if (0x7ff < iVar1) {
     DAT_02d141e8 = 0;
   }
-  core_fire_cpp_CSmokeParticle_FUN_004bf2f0(this_ptr_00);
+  core_fire_cpp_CSmokeParticle_init_FUN_004bf2f0
+            (this_ptr_00,in_stack_00000008,in_stack_0000000c,in_stack_00000010,in_stack_00000014);
   return;
 }
 
@@ -78,7 +83,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7b20(CFireEffect *this_ptr)
 //   XREF to: Stack[0xc] (READ)
 // 004c7b6a: PUSH EBP
 // 004c7b6b: PUSH EAX
-// 004c7b6c: CALL core_fire.cpp_CSmokeParticle_FUN_004bf2f0
+// 004c7b6c: CALL core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0
 //   XREF to: 004bf2f0 (UNCONDITIONAL_CALL)
 // 004c7b71: ADD ESP,0x14
 // 004c7b74: POP EBP

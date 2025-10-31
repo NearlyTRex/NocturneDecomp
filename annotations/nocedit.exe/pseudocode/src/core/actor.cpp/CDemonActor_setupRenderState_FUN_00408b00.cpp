@@ -33,7 +33,7 @@
 //   core_drip.cpp_FUN_0048e6c0 (0048e6c0) at 0048e6d4 [UNCONDITIONAL_CALL]
 //   core_emitter.cpp_FUN_004a8a80 (004a8a80) at 004a8a95 [UNCONDITIONAL_CALL]
 //   core_filmreel.cpp_FUN_004bed00 (004bed00) at 004bed0b [UNCONDITIONAL_CALL]
-//   core_fire.cpp_FUN_004bfac0 (004bfac0) at 004bfada [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CBulletHole_render_FUN_004bfac0 (004bfac0) at 004bfada [UNCONDITIONAL_CALL]
 //   core_flame.cpp_FUN_004ca110 (004ca110) at 004ca175 [UNCONDITIONAL_CALL]
 //   core_flame.cpp_FUN_004caa80 (004caa80) at 004caac7 [UNCONDITIONAL_CALL]
 //   core_flies.cpp_FUN_004cc300 (004cc300) at 004cc339 [UNCONDITIONAL_CALL]

@@ -19,7 +19,7 @@
 //   TerminatedCString s_CGasMask_00630a8a
 //   TerminatedCString s_CBoxActor_00630a93
 //   double DOUBLE_00630aa2 = 98
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CGame* g_CGamePtr = 02d81a9c
 //   undefined4 g_CAmmoClassInfo.name_hash
 //   undefined4 g_CBoxActorClassInfo.name_hash

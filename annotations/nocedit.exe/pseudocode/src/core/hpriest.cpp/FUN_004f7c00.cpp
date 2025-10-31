@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_hpriest.cpp_FUN_004f7c00()
 // Globals:
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 // Function calls:
 //   core_charactr.cpp_CCharacter_FUN_0042b9e0
@@ -24,7 +24,7 @@ void core_hpriest_cpp_FUN_004f7c00(void)
   
   core_npc_cpp_CNPC_process_FUN_005448b0(in_stack_00000004);
   iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                    (g_CEventListInstance,(char *)(in_stack_00000004 + 1));
+                    (g_CEventListPtr,(char *)(in_stack_00000004 + 1));
   if (iVar1 == 0) {
     return;
   }

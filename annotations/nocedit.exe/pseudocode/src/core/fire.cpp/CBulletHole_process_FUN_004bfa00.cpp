@@ -15,14 +15,12 @@ void __cdecl core_fire_cpp_CBulletHole_process_FUN_004bfa00(CBulletHole *this_pt
 {
   CBulletHole *pCVar1;
   
-  if (*(CDemonActor **)(this_ptr->field0_0x0 + 0x10) != (CDemonActor *)0x0) {
-    pCVar1 = (CBulletHole *)
-             core_actor_cpp_CDemonActor_FUN_00408ec0(*(CDemonActor **)(this_ptr->field0_0x0 + 0x10))
-    ;
+  if (this_ptr->actor_ptr != (CDemonActor *)0x0) {
+    pCVar1 = (CBulletHole *)core_actor_cpp_CDemonActor_FUN_00408ec0(this_ptr->actor_ptr);
     if (this_ptr != pCVar1) {
-      *(float *)this_ptr->field0_0x0 = *(float *)pCVar1->field0_0x0;
-      *(float *)(this_ptr->field0_0x0 + 4) = *(float *)(pCVar1->field0_0x0 + 4);
-      *(float *)(this_ptr->field0_0x0 + 8) = *(float *)(pCVar1->field0_0x0 + 8);
+      (this_ptr->position).x = (pCVar1->position).x;
+      (this_ptr->position).y = (pCVar1->position).y;
+      (this_ptr->position).z = (pCVar1->position).z;
       return;
     }
   }

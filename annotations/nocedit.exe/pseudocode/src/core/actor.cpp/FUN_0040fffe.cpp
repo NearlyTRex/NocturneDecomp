@@ -7,7 +7,7 @@
 //   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040ffe7 [CONDITIONAL_JUMP]
 // Globals:
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CEditorTools g_CEditorToolsPtr
 //   undefined4 DAT_02d05310
 // Function calls:

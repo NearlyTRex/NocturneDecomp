@@ -144,7 +144,7 @@
 //   double DOUBLE_00625299 = 0.0174532925194444
 //   double DOUBLE_006252a1 = 0.0100000000000000
 //   undefined4 DAT_0065d95c
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_006793d8
 //   undefined4 DAT_006793dc
 //   undefined4 DAT_006794a0
@@ -1596,7 +1596,7 @@ LAB_004aaf38:
                                                 else {
                                                   iVar4 = 
                                                   core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                                                            (g_CEventListInstance,local_1475 + 1);
+                                                            (g_CEventListPtr,local_1475 + 1);
                                                   if (iVar4 == 0) {
                                                     uStack_f8 = 0;
                                                   }

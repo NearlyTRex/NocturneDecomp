@@ -6,7 +6,7 @@
 // Globals:
 //   TerminatedCString s_armour_wav_00614dcb
 //   double DOUBLE_00614dd8 = 3.14159265350000
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 // Function calls:
 //   core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0
@@ -70,7 +70,7 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr)
     core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020();
     core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
     iVar4 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,this_ptr->field1_0xbeb4 + 8);
+                      (g_CEventListPtr,this_ptr->field1_0xbeb4 + 8);
     if (iVar4 != 0) {
       (*((this_ptr->base_enemy).base_character.base_actor.metadata.vtable)->playSound)
                 ((CDemonActor *)this_ptr,"armour.wav");

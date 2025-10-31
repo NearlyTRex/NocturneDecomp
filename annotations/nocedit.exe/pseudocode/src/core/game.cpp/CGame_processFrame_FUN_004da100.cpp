@@ -34,7 +34,7 @@
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   int g_WindowWidth = 0x140
 //   int g_WindowHeight = 0xc8
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CGame* g_CGamePtr = 02d81a9c
 //   void* PTR_s_Off_0067b658 = 0062d671
 //   undefined4 DAT_0067b664

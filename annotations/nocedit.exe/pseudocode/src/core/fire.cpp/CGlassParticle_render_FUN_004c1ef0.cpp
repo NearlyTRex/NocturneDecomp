@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_fire.cpp_CGlassParticle_render_FUN_004c1ef0(CGlassParticle * this_ptr)
 // Globals:
-//   undefined4 DAT_0065dca8
+//   float FLOAT_0065dca8 = 256
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 g_RenderVertexBuffer[0].u
@@ -27,8 +27,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004c1ef0(CGlassParticle *this_ptr)
 
 {
@@ -41,17 +39,17 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004c1ef0(CGlassParticle *th
             (g_CDemonRendererPtr,(CVector3f *)this_ptr);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr,(CVector3i *)(this_ptr->field1_0x38 + 0x1c),(CVector3i *)0x0);
-  local_24._0_4_ = (undefined4)ROUND(*(float *)(this_ptr->field1_0x38 + 0x40) * _DAT_0065dca8);
-  local_24._4_4_ = (undefined4)ROUND(*(float *)(this_ptr->field1_0x38 + 0x44) * _DAT_0065dca8);
-  local_1c = (int)ROUND(*(float *)(this_ptr->field1_0x38 + 0x48) * _DAT_0065dca8);
+  local_24._0_4_ = (undefined4)ROUND(*(float *)(this_ptr->field1_0x38 + 0x40) * FLOAT_0065dca8);
+  local_24._4_4_ = (undefined4)ROUND(*(float *)(this_ptr->field1_0x38 + 0x44) * FLOAT_0065dca8);
+  local_1c = (int)ROUND(*(float *)(this_ptr->field1_0x38 + 0x48) * FLOAT_0065dca8);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,(CVector3i *)(local_24 + 4));
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,
              (CVector3i *)&stack0xfffffff0);
-  local_24._0_4_ = (undefined4)ROUND(*(float *)(this_ptr->field1_0x38 + 0x58) * _DAT_0065dca8);
-  local_24._4_4_ = (undefined4)ROUND(*(float *)(this_ptr->field1_0x38 + 0x5c) * _DAT_0065dca8);
-  local_1c = (int)ROUND(*(float *)(this_ptr->field1_0x38 + 0x60) * _DAT_0065dca8);
+  local_24._0_4_ = (undefined4)ROUND(*(float *)(this_ptr->field1_0x38 + 0x58) * FLOAT_0065dca8);
+  local_24._4_4_ = (undefined4)ROUND(*(float *)(this_ptr->field1_0x38 + 0x5c) * FLOAT_0065dca8);
+  local_1c = (int)ROUND(*(float *)(this_ptr->field1_0x38 + 0x60) * FLOAT_0065dca8);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,(CVector3i *)local_24);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -64,9 +62,9 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004c1ef0(CGlassParticle *th
   SStack_44.surface_normal.D = 2;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
             (g_CDemonRendererPtr,*(int *)this_ptr->field1_0x38);
-  local_24._0_4_ = (undefined4)ROUND((this_ptr->base).position.x * _DAT_0065dca8);
-  local_24._4_4_ = (undefined4)ROUND((this_ptr->base).position.y * _DAT_0065dca8);
-  local_1c = (int)ROUND((this_ptr->base).position.z * _DAT_0065dca8);
+  local_24._0_4_ = (undefined4)ROUND((this_ptr->base).position.x * FLOAT_0065dca8);
+  local_24._4_4_ = (undefined4)ROUND((this_ptr->base).position.y * FLOAT_0065dca8);
+  local_1c = (int)ROUND((this_ptr->base).position.z * FLOAT_0065dca8);
   core_set_cpp_CDemonSet_CallLightVertexColor_FUN_0056e110(g_CDemonSetPtr);
   g_RenderVertexBuffer[0].u = *(float *)(this_ptr->field1_0x38 + 0x28);
   g_RenderVertexBuffer[0].v = *(float *)(this_ptr->field1_0x38 + 0x34);

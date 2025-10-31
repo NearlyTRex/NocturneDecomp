@@ -57,7 +57,7 @@
 //   undefined4 DAT_00658815
 //   undefined4 DAT_006659c8
 //   CConsole* g_CConsolePtr = 0083b1a4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CGame* g_CGamePtr = 02d81a9c
 //   CGore* g_CGorePtr = 02d83364
 //   CDemonSet* g_CDemonSetPtr = 03114278
@@ -839,7 +839,7 @@ LAB_005fac96:
         if (0xd < uVar8) {
           if (uVar8 < 0xf) {
             iVar7 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                              (g_CEventListInstance,this_ptr->field1_0xbeb4 + 0x28);
+                              (g_CEventListPtr,this_ptr->field1_0xbeb4 + 0x28);
             if ((iVar7 != 0) &&
                (fVar9 = *(float *)(this_ptr->field4_0xbf48 + 0x5c) - in_stack_00000008,
                *(float *)(this_ptr->field4_0xbf48 + 0x5c) = fVar9, fVar9 < 0.0)) {

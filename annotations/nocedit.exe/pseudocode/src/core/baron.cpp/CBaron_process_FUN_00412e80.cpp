@@ -11,7 +11,7 @@
 //   undefined4 DAT_00615039
 //   SMRGLTextureBasic DAT_0066e460
 //   CConsole* g_CConsolePtr = 0083b1a4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CGame* g_CGamePtr = 02d81a9c
 //   undefined4 DAT_00822498
@@ -90,7 +90,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr)
   bVar10 = 0;
   if (*(int *)(this_ptr->field1_0x1fbd4 + 0xf8) == 0) {
     iVar6 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,this_ptr->field1_0x1fbd4);
+                      (g_CEventListPtr,this_ptr->field1_0x1fbd4);
     if (iVar6 != 0) {
       this_ptr->field1_0x1fbd4[0xf8] = '\x01';
       this_ptr->field1_0x1fbd4[0xf9] = '\0';
@@ -105,7 +105,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr)
   }
   else {
     iVar6 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,this_ptr->field1_0x1fbd4 + 100);
+                      (g_CEventListPtr,this_ptr->field1_0x1fbd4 + 100);
     if (iVar6 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
     }

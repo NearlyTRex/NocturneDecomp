@@ -6,7 +6,7 @@
 // Globals:
 //   TerminatedCString s_disableBodyPartDamage_00615def
 //   undefined4 DAT_00615e0c
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 //   CVector3f g_ZeroVector
 //   undefined4 g_ZeroVector.y
@@ -102,8 +102,7 @@ void core_bodypart_cpp_CBodyPart_process_FUN_00419be0(void)
                   (float)in_stack_00000004[9].field14_0xf8 *
                   (float)in_stack_00000004[9].field14_0xf8)) &&
            (iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                              (g_CEventListInstance,"disableBodyPartDamage"), iVar3 == 0))
-        {
+                              (g_CEventListPtr,"disableBodyPartDamage"), iVar3 == 0)) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffffbc);
           fStack_38 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
           core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0

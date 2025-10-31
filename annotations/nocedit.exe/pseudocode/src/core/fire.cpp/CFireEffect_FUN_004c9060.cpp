@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_fire.cpp_CFireEffect_FUN_004c90c0 (004c90c0) at 004c9184 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_02d71774
+//   CLightningBolt* g_CFireEffectLightningBoltsEnd
 //   CTrail[100] g_CFireEffectTrails
 // Function calls:
 //   core_fire.cpp_CTrail_FUN_004c5df0
@@ -16,12 +16,15 @@
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c9060(CFireEffect *this_ptr)
 
 {
-  core_fire_cpp_CTrail_FUN_004c5df0(g_CFireEffectTrails + DAT_02d71774);
-  DAT_02d71774 = DAT_02d71774 + 1;
-  if (DAT_02d71774 < 100) {
+  char *pcVar1;
+  
+  core_fire_cpp_CTrail_FUN_004c5df0(g_CFireEffectTrails + (int)g_CFireEffectLightningBoltsEnd);
+  pcVar1 = g_CFireEffectLightningBoltsEnd->field0_0x0;
+  g_CFireEffectLightningBoltsEnd = (CLightningBolt *)(pcVar1 + 1);
+  if ((int)(pcVar1 + 1) < 100) {
     return;
   }
-  DAT_02d71774 = 0;
+  g_CFireEffectLightningBoltsEnd = (CLightningBolt *)0x0;
   return;
 }
 

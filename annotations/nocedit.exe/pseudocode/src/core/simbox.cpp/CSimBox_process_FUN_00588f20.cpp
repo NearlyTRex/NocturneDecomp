@@ -8,7 +8,7 @@
 //   double DOUBLE_00649c0a = -0.5
 //   double DOUBLE_00649c12 = 3.14159265350000
 //   double DOUBLE_00649c1a = 2
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CKeys* g_CKeysPtr = 02dcd7d4
 //   undefined4 DAT_02d05310
 //   void* g_CKeysPtr
@@ -33,7 +33,7 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr)
   if ((*(int *)(this_ptr->field1_0x158 + 0x17c) == 1) &&
      (*(int *)(this_ptr->field1_0x158 + 0x454) == 0)) {
     iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,this_ptr->field1_0x158 + 0x184);
+                      (g_CEventListPtr,this_ptr->field1_0x158 + 0x184);
     if (iVar3 != 0) {
       this_ptr->field1_0x158[0x454] = '\x01';
       this_ptr->field1_0x158[0x455] = '\0';

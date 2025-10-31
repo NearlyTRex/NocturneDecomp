@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0 (005eeaf0) at 005eebb0 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_02d76ec0
+//   CPopcorn* g_CFireEffectPopcornsEnd
 //   CRainDrop[256] g_CFireEffectRainDrops
 //   undefined4 DAT_02d76edc
 //   undefined4 DAT_02d76ef8
@@ -16,18 +16,19 @@
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c9290(CFireEffect *this_ptr)
 
 {
-  int iVar1;
+  CPopcorn *pCVar1;
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
   
-  (*(g_CFireEffectRainDrops[DAT_02d76ec0].base.vtable)->setup)
-            (&g_CFireEffectRainDrops[DAT_02d76ec0].base,in_stack_00000008,in_stack_0000000c);
-  iVar1 = DAT_02d76ec0 + 1;
-  g_CFireEffectRainDrops[DAT_02d76ec0].base.lifetime_remaining = 0.25;
-  if (0xff < iVar1) {
-    iVar1 = 0;
+  (*(g_CFireEffectRainDrops[(int)g_CFireEffectPopcornsEnd].base.vtable)->setup)
+            (&g_CFireEffectRainDrops[(int)g_CFireEffectPopcornsEnd].base,in_stack_00000008,
+             in_stack_0000000c);
+  pCVar1 = (CPopcorn *)((int)&(g_CFireEffectPopcornsEnd->base).position.x + 1);
+  g_CFireEffectRainDrops[(int)g_CFireEffectPopcornsEnd].base.lifetime_remaining = 0.25;
+  if (0xff < (int)pCVar1) {
+    pCVar1 = (CPopcorn *)0x0;
   }
-  DAT_02d76ec0 = iVar1;
+  g_CFireEffectPopcornsEnd = pCVar1;
   return;
 }
 

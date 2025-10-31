@@ -8,7 +8,7 @@
 //   core_lever.cpp_FUN_00504920 (00504920) at 00504a71 [UNCONDITIONAL_CALL]
 //   core_lever.cpp_FUN_005051a0 (005051a0) at 00505200 [UNCONDITIONAL_CALL]
 // Globals:
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 DAT_02d05310

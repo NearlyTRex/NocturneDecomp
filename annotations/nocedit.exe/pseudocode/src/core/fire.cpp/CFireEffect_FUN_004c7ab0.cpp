@@ -7,9 +7,9 @@
 //   core_game.cpp_CGame_FUN_004e07a0 (004e07a0) at 004e07b7 [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
-//   SMRGLTextureBasic DAT_0067a794
-//   SMRGLTextureBasic DAT_0067a7ac
-//   SMRGLTextureBasic DAT_0067a7c4
+//   SMRGLTextureBasic g_FireEffectBlackHoleTexture
+//   SMRGLTextureBasic g_FireEffectSparkTexture
+//   SMRGLTextureBasic g_FireEffectBlueSparkTexture
 //   CDemonRenderer g_CDemonRendererInstance
 // Function calls:
 //   core_fire.cpp_Debris_FUN_004c38d0
@@ -35,9 +35,12 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7ab0(CFireEffect *this_ptr)
   undefined4 uStack0000001c;
   undefined4 uStack00000020;
   
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,&DAT_0067a794);
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,&DAT_0067a7ac);
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,&DAT_0067a7c4);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
+            (g_CDemonRendererPtr,&g_FireEffectBlackHoleTexture);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
+            (g_CDemonRendererPtr,&g_FireEffectSparkTexture);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
+            (g_CDemonRendererPtr,&g_FireEffectBlueSparkTexture);
   core_fire_cpp_flamingstake_FUN_004bfe00();
   uStack00000008 = 0x4c7af7;
   core_fire_cpp_FireBalls_FUN_004c0ad0();

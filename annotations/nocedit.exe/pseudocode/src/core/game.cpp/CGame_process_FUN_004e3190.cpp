@@ -20,7 +20,7 @@
 //   double DOUBLE_0062d4bd = 1000
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   CFilterFx* g_CFilterFXPtr = 020a570c
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CGame* g_CGamePtr = 02d81a9c
 //   CGore* g_CGorePtr = 02d83364
@@ -170,7 +170,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
     pcStack00000034 = (char *)0x4e34d0;
     g_ProfileStartTime = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   }
-  pcStack00000034 = (char *)g_CEventListInstance;
+  pcStack00000034 = (char *)g_CEventListPtr;
   core_event_cpp_CEventList_process_FUN_004aaac0();
   if (g_CGamePtr->profile_mode == 1) {
     wincore_winrun_cpp_getTime_FUN_005f2dc0();

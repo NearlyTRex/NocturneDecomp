@@ -24,7 +24,7 @@
 //   core_zombie.cpp_CZombie_process_FUN_005f9470 (005f9470) at 005fa69b [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_Capture_006243da
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CGame* g_CGamePtr = 02d81a9c
 //   undefined4 DAT_02d05310
 //   CGame g_CGameInstance
@@ -42,7 +42,7 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9fd0(CEnemy *this_ptr)
   
   if (g_CGamePtr->field54_0x1d4 == 0) {
     iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,"Capture");
+                      (g_CEventListPtr,"Capture");
     if (iVar1 == 0) {
       core_charactr_cpp_CCharacter_FUN_0042e050(&this_ptr->base_character);
       return;

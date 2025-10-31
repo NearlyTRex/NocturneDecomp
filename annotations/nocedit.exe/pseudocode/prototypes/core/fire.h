@@ -11,17 +11,17 @@ void staticInit(void);
 // Address: 004bf1a0
 undefined FUN_004bf1a0();
 
-// Original: core_fire.cpp_CSmokeParticle_FUN_004bf1f0
+// Original: core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0
 // Address: 004bf1f0
-int CSmokeParticle(CSmokeParticle * this_ptr);
+int CSmokeParticle::initRender(CSmokeParticle * this_ptr);
 
 // Original: core_fire.cpp_CSmokeParticle_ctor_FUN_004bf2e0
 // Address: 004bf2e0
 void CSmokeParticle::ctor(CSmokeParticle * this_ptr);
 
-// Original: core_fire.cpp_CSmokeParticle_FUN_004bf2f0
+// Original: core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0
 // Address: 004bf2f0
-void CSmokeParticle(CSmokeParticle * this_ptr);
+void CSmokeParticle::init(CSmokeParticle * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, int alpha_value);
 
 // Original: core_fire.cpp_CSmokeParticle_process_FUN_004bf390
 // Address: 004bf390
@@ -39,13 +39,13 @@ undefined FUN_004bf7f0();
 // Address: 004bfa00
 void CBulletHole::process(CBulletHole * this_ptr);
 
-// Original: core_fire.cpp_CBulletHole_FUN_004bfa40
+// Original: core_fire.cpp_CBulletHole_initRender_FUN_004bfa40
 // Address: 004bfa40
-void CBulletHole(CBulletHole * this_ptr);
+void CBulletHole::initRender(CBulletHole * this_ptr);
 
-// Original: core_fire.cpp_FUN_004bfac0
+// Original: core_fire.cpp_CBulletHole_render_FUN_004bfac0
 // Address: 004bfac0
-void FUN_004bfac0(void);
+void CBulletHole::render(CBulletHole * this_ptr);
 
 // Original: core_fire.cpp_flamingstake_FUN_004bfe00
 // Address: 004bfe00
@@ -71,9 +71,9 @@ void CStake::process(CStake * this_ptr);
 // Address: 004c0240
 void CSpark::process(CSpark * this_ptr);
 
-// Original: core_fire.cpp_CSpark_FUN_004c0300
+// Original: core_fire.cpp_CSpark_initRender_FUN_004c0300
 // Address: 004c0300
-int CSpark(CSpark * this_ptr);
+int CSpark::initRender(CSpark * this_ptr);
 
 // Original: core_fire.cpp_CSpark_render_FUN_004c0420
 // Address: 004c0420
@@ -91,9 +91,9 @@ undefined FireBalls();
 // Address: 004c0b30
 void CFireball::process(CFireball * this_ptr);
 
-// Original: core_fire.cpp_CFireball_FUN_004c0d80
+// Original: core_fire.cpp_CFireball_initRender_FUN_004c0d80
 // Address: 004c0d80
-int CFireball(CFireball * this_ptr);
+int CFireball::initRender(CFireball * this_ptr);
 
 // Original: core_fire.cpp_CFireball_render_FUN_004c0e70
 // Address: 004c0e70
@@ -171,9 +171,9 @@ void CLaserBeam(CLaserBeam * this_ptr);
 // Address: 004c24d0
 undefined FUN_004c24d0();
 
-// Original: core_fire.cpp_CLaserBeam_FUN_004c25c0
+// Original: core_fire.cpp_CLaserBeam_render_FUN_004c25c0
 // Address: 004c25c0
-void CLaserBeam(CLaserBeam * this_ptr);
+void CLaserBeam::render(CLaserBeam * this_ptr);
 
 // Original: core_fire.cpp_FUN_004c3870
 // Address: 004c3870

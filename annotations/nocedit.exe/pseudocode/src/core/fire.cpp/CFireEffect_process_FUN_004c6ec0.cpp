@@ -10,7 +10,7 @@
 // Globals:
 //   CSmokeParticle[2048] g_CFireEffectSmokeParticles
 //   undefined4 DAT_02d14218
-//   undefined4 DAT_02d2a1ec
+//   CSmokeParticle* g_CFireEffectSmokeParticlesEnd
 //   CBulletHole[256] g_CFireEffectBulletHoles
 //   undefined4 DAT_02d2a230
 //   undefined4 DAT_02d2ddf4
@@ -22,56 +22,56 @@
 //   undefined4 DAT_02d53e18
 //   undefined4 DAT_02d53e4c
 //   undefined4 DAT_02d53e64
-//   undefined4 DAT_02d58a00
+//   CSpark* g_CFireEffectSparksEnd
 //   CMuzzleFlash[20] g_CFireEffectMuzzleFlashes
 //   undefined4 DAT_02d58a60
-//   undefined4 DAT_02d59134
+//   CMuzzleFlash* g_CFireEffectMuzzleFlashesEnd
 //   CGlassParticle[256] g_CFireEffectGlassParticles
 //   undefined4 DAT_02d59150
 //   undefined4 DAT_02d591d4
 //   undefined4 DAT_02d591ec
-//   undefined4 DAT_02d62d38
+//   CGlassParticle* g_CFireEffectGlassParticlesEnd
 //   CBulletTrail[10] g_CFireEffectBulletTrails
 //   undefined4 DAT_02d62d5c
 //   undefined4 DAT_02d62d60
 //   undefined4 DAT_02d62d80
-//   undefined4 DAT_02d62ea4
+//   CBulletTrail* g_CFireEffectBulletTrailsEnd
 //   CFireball[64] g_CFireEffectFireballs
 //   undefined4 DAT_02d62ec0
 //   undefined4 DAT_02d62f44
 //   undefined4 DAT_02d62f5c
-//   undefined4 DAT_02d655a8
+//   CFireball* g_CFireEffectFireballsEnd
 //   CRock[64] g_CFireEffectRocks
 //   undefined4 DAT_02d655c4
 //   undefined4 DAT_02d655f4
 //   undefined4 DAT_02d6560c
-//   undefined4 DAT_02d667ac
+//   CRock* g_CFireEffectRocksEnd
 //   CExplosion[10] g_CFireEffectExplosions
 //   undefined4 DAT_02d677d0
-//   undefined4 DAT_02d678cc
+//   CExplosion* g_CFireEffectExplosionsEnd
 //   CToss[20] g_CFireEffectTosses
 //   undefined4 DAT_02d67cb4
-//   undefined4 DAT_02d6c6a0
+//   CToss* g_CFireEffectTossesEnd
 //   CCrater[20] g_CFireEffectCraters
 //   undefined4 DAT_02d6c714
 //   undefined4 DAT_02d6cf64
 //   CGunFlame[500] g_CFireEffectGunFlames
 //   undefined4 DAT_02d6cf8c
-//   undefined4 DAT_02d715b8
+//   CGunFlame* g_CFireEffectGunFlamesEnd
 //   CLightningBolt[10] g_CFireEffectLightningBolts
 //   undefined4 DAT_02d715e8
-//   undefined4 DAT_02d71774
+//   CLightningBolt* g_CFireEffectLightningBoltsEnd
 //   CTrail[100] g_CFireEffectTrails
 //   undefined4 DAT_02d7179c
-//   undefined4 DAT_02d72588
+//   CTrail* g_CFireEffectTrailsEnd
 //   CShell[50] g_CFireEffectShells
 //   undefined4 DAT_02d725e4
-//   undefined4 DAT_02d736bc
+//   CShell* g_CFireEffectShellsEnd
 //   CPopcorn[256] g_CFireEffectPopcorns
 //   undefined4 DAT_02d736d8
 //   undefined4 DAT_02d736f8
 //   undefined4 DAT_02d73710
-//   undefined4 DAT_02d76ec0
+//   CPopcorn* g_CFireEffectPopcornsEnd
 //   CRainDrop[256] g_CFireEffectRainDrops
 //   undefined4 DAT_02d76edc
 //   undefined4 DAT_02d76efc
@@ -120,28 +120,28 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_004c6ec0(CFireEffect *this_pt
   CGunFlame *unaff_EDI;
   
   this_ptr_00 = g_CFireEffectSmokeParticles;
-  DAT_02d667ac = 0;
+  g_CFireEffectRocksEnd = (CRock *)0x0;
   core_fire_cpp_FUN_004c3870();
   do {
     if (this_ptr_00->active != 0) {
       core_fire_cpp_CSmokeParticle_process_FUN_004bf390(this_ptr_00);
     }
     this_ptr_00 = this_ptr_00 + 1;
-  } while (this_ptr_00 != (CSmokeParticle *)&DAT_02d2a1ec);
+  } while (this_ptr_00 != (CSmokeParticle *)&g_CFireEffectSmokeParticlesEnd);
   this_ptr_01 = g_CFireEffectSparks;
   do {
     if (0.0 < (this_ptr_01->base).lifetime_remaining) {
       (*((this_ptr_01->base).vtable)->process)(&this_ptr_01->base);
     }
     this_ptr_01 = this_ptr_01 + 1;
-  } while (this_ptr_01 != (CSpark *)&DAT_02d58a00);
+  } while (this_ptr_01 != (CSpark *)&g_CFireEffectSparksEnd);
   this_ptr_02 = g_CFireEffectMuzzleFlashes;
   do {
     if (*(int *)this_ptr_02->field0_0x0 != 0) {
       core_fire_cpp_CMuzzleFlash_process_FUN_004c1a00(this_ptr_02);
     }
     this_ptr_02 = this_ptr_02 + 1;
-  } while (this_ptr_02 != (CMuzzleFlash *)&DAT_02d59134);
+  } while (this_ptr_02 != (CMuzzleFlash *)&g_CFireEffectMuzzleFlashesEnd);
   iVar2 = 0;
   if (0 < DAT_02d2ddf4) {
     this_ptr_03 = g_CFireEffectStakes;
@@ -159,47 +159,47 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_004c6ec0(CFireEffect *this_pt
       (*((this_ptr_04->base).vtable)->process)(&this_ptr_04->base);
     }
     this_ptr_04 = this_ptr_04 + 1;
-  } while (this_ptr_04 != (CGlassParticle *)&DAT_02d62d38);
+  } while (this_ptr_04 != (CGlassParticle *)&g_CFireEffectGlassParticlesEnd);
   this_ptr_05 = g_CFireEffectBulletTrails;
   do {
     if (*(int *)(this_ptr_05->field0_0x0 + 0x20) != 0) {
       core_fire_cpp_CBulletTrail_process_FUN_004c21d0(this_ptr_05);
     }
     this_ptr_05 = this_ptr_05 + 1;
-  } while (this_ptr_05 != (CBulletTrail *)&DAT_02d62ea4);
+  } while (this_ptr_05 != (CBulletTrail *)&g_CFireEffectBulletTrailsEnd);
   this_ptr_06 = g_CFireEffectFireballs;
   do {
     if (0.0 < (this_ptr_06->base).lifetime_remaining) {
       (*((this_ptr_06->base).vtable)->process)(&this_ptr_06->base);
     }
     this_ptr_06 = this_ptr_06 + 1;
-  } while (this_ptr_06 != (CFireball *)&DAT_02d655a8);
+  } while (this_ptr_06 != (CFireball *)&g_CFireEffectFireballsEnd);
   this_ptr_07 = g_CFireEffectRocks;
   do {
     if (0.0 < (this_ptr_07->base).lifetime_remaining) {
       (*((this_ptr_07->base).vtable)->process)(&this_ptr_07->base);
     }
     this_ptr_07 = this_ptr_07 + 1;
-  } while (this_ptr_07 != (CRock *)&DAT_02d667ac);
+  } while (this_ptr_07 != (CRock *)&g_CFireEffectRocksEnd);
   iVar2 = 0;
-  if (0 < DAT_02d2a1ec) {
+  if (0 < (int)g_CFireEffectSmokeParticlesEnd) {
     this_ptr_17 = g_CFireEffectBulletHoles;
     do {
       core_fire_cpp_CBulletHole_process_FUN_004bfa00(this_ptr_17);
       iVar2 = iVar2 + 1;
       this_ptr_17 = this_ptr_17 + 1;
-    } while (iVar2 < DAT_02d2a1ec);
+    } while (iVar2 < (int)g_CFireEffectSmokeParticlesEnd);
   }
   this_ptr_08 = g_CFireEffectExplosions;
   do {
     core_fire_cpp_CExplosion_process_FUN_004c3ac0(this_ptr_08);
     this_ptr_08 = this_ptr_08 + 1;
-  } while (this_ptr_08 != (CExplosion *)&DAT_02d678cc);
+  } while (this_ptr_08 != (CExplosion *)&g_CFireEffectExplosionsEnd);
   this_ptr_09 = g_CFireEffectTosses;
   do {
     core_fire_cpp_CToss_process_FUN_004c4000(this_ptr_09);
     this_ptr_09 = this_ptr_09 + 1;
-  } while (this_ptr_09 != (CToss *)&DAT_02d6c6a0);
+  } while (this_ptr_09 != (CToss *)&g_CFireEffectTossesEnd);
   this_ptr_10 = g_CFireEffectCraters;
   do {
     core_fire_cpp_CCrater_process_FUN_004c4550(this_ptr_10);
@@ -216,29 +216,29 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_004c6ec0(CFireEffect *this_pt
       core_fire_cpp_CGunFlame_process_FUN_004c4f60(this_ptr_11);
     }
     this_ptr_11 = this_ptr_11 + 1;
-  } while (this_ptr_11 != (CGunFlame *)&DAT_02d715b8);
+  } while (this_ptr_11 != (CGunFlame *)&g_CFireEffectGunFlamesEnd);
   this_ptr_12 = g_CFireEffectLightningBolts;
   do {
     core_fire_cpp_CLightningBolt_process_FUN_004c56e0(this_ptr_12);
     this_ptr_12 = this_ptr_12 + 1;
-  } while (this_ptr_12 != (CLightningBolt *)&DAT_02d71774);
+  } while (this_ptr_12 != (CLightningBolt *)&g_CFireEffectLightningBoltsEnd);
   this_ptr_13 = g_CFireEffectTrails;
   do {
     core_fire_cpp_CTrail_process_FUN_004c5e40(this_ptr_13);
     this_ptr_13 = this_ptr_13 + 1;
-  } while (this_ptr_13 != (CTrail *)&DAT_02d72588);
+  } while (this_ptr_13 != (CTrail *)&g_CFireEffectTrailsEnd);
   this_ptr_14 = g_CFireEffectShells;
   do {
     (*((this_ptr_14->base).vtable)->process)(&this_ptr_14->base);
     this_ptr_14 = this_ptr_14 + 1;
-  } while (this_ptr_14 != (CShell *)&DAT_02d736bc);
+  } while (this_ptr_14 != (CShell *)&g_CFireEffectShellsEnd);
   this_ptr_15 = g_CFireEffectPopcorns;
   do {
     if (0.0 < (this_ptr_15->base).lifetime_remaining) {
       (*((this_ptr_15->base).vtable)->process)(&this_ptr_15->base);
     }
     this_ptr_15 = (CPopcorn *)(&this_ptr_15->base + 1);
-  } while ((CParticle *)this_ptr_15 != (CParticle *)&DAT_02d76ec0);
+  } while (this_ptr_15 != (CPopcorn *)&g_CFireEffectPopcornsEnd);
   this_ptr_16 = g_CFireEffectRainDrops;
   do {
     if (0.0 < (this_ptr_16->base).lifetime_remaining) {

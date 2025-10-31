@@ -7,7 +7,7 @@
 //   double DOUBLE_006310a0 = 6
 //   double DOUBLE_006310a8 = 0.100000000000000
 //   double DOUBLE_006310b0 = 0.900000000000000
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 DAT_02d05310
 //   undefined4 g_CLeverClassInfo.name_hash

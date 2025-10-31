@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_fire.cpp_CFireball_onCollision_FUN_004c1690 (004c1690) at 004c16be [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_02d62ea4
+//   CBulletTrail* g_CFireEffectBulletTrailsEnd
 //   CFireball[64] g_CFireEffectFireballs
 //   undefined4 DAT_02d62edc
 //   undefined4 DAT_02d62ee0
@@ -24,9 +24,10 @@
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c7db0(CFireEffect *this_ptr)
 
 {
-  int iVar1;
-  int iVar2;
+  char *pcVar1;
+  CBulletTrail *pCVar2;
   int iVar3;
+  int iVar4;
   CFireball *this_ptr_00;
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
@@ -35,31 +36,31 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7db0(CFireEffect *this_ptr)
   int in_stack_00000030;
   int in_stack_00000034;
   
-  iVar1 = DAT_02d62ea4;
-  iVar3 = DAT_02d62ea4 * 0x9c;
-  iVar2 = DAT_02d62ea4 + 1;
-  this_ptr_00 = g_CFireEffectFireballs + DAT_02d62ea4;
-  DAT_02d62ea4 = iVar2;
-  if (0x3f < iVar2) {
-    DAT_02d62ea4 = 0;
+  pCVar2 = g_CFireEffectBulletTrailsEnd;
+  iVar4 = (int)g_CFireEffectBulletTrailsEnd * 0x9c;
+  pcVar1 = g_CFireEffectBulletTrailsEnd->field0_0x0;
+  this_ptr_00 = g_CFireEffectFireballs + (int)g_CFireEffectBulletTrailsEnd;
+  g_CFireEffectBulletTrailsEnd = (CBulletTrail *)(pcVar1 + 1);
+  if (0x3f < (int)(pcVar1 + 1)) {
+    g_CFireEffectBulletTrailsEnd = (CBulletTrail *)0x0;
   }
-  (*(g_CFireEffectFireballs[iVar1].base.vtable)->setup)
+  (*(g_CFireEffectFireballs[(int)pCVar2].base.vtable)->setup)
             (&this_ptr_00->base,in_stack_00000008,in_stack_0000000c);
-  iVar2 = core_actor_cpp_FUN_0040cc70();
-  g_CFireEffectFireballs[iVar1].timer = iVar2;
+  iVar3 = core_actor_cpp_FUN_0040cc70();
+  g_CFireEffectFireballs[(int)pCVar2].timer = iVar3;
   if (in_stack_00000030 == 0) {
-    g_CFireEffectFireballs[iVar1].fade_rate = 0x2000;
+    g_CFireEffectFireballs[(int)pCVar2].fade_rate = 0x2000;
   }
   else {
-    g_CFireEffectFireballs[iVar1].fade_rate = 0x8000;
+    g_CFireEffectFireballs[(int)pCVar2].fade_rate = 0x8000;
   }
-  g_CFireEffectFireballs[iVar1].lighting_active = in_stack_00000030;
-  g_CFireEffectFireballs[iVar1].first_update_flag = 0;
-  g_CFireEffectFireballs[iVar1].field9_0x58 = in_stack_00000034;
+  g_CFireEffectFireballs[(int)pCVar2].lighting_active = in_stack_00000030;
+  g_CFireEffectFireballs[(int)pCVar2].first_update_flag = 0;
+  g_CFireEffectFireballs[(int)pCVar2].field9_0x58 = in_stack_00000034;
   pCStack00000010 = this_ptr_00;
   sound_sndmain_cpp_YetAnother2ComputingDelayCall_FUN_005a98b0();
-  iStack00000014 = iVar3 + 0x2d62eb4;
-  pCStack00000010 = (CFireball *)g_CFireEffectFireballs[iVar1].field9_0x58;
+  iStack00000014 = iVar4 + 0x2d62eb4;
+  pCStack00000010 = (CFireball *)g_CFireEffectFireballs[(int)pCVar2].field9_0x58;
   sound_sndmain_cpp_SoundDelayComputeThing_FUN_005a9a00();
   return;
 }

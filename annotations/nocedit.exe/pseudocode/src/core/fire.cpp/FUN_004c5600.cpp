@@ -6,9 +6,9 @@
 // Cross-references:
 //   core_fire.cpp_CFireEffect_FUN_004c7ab0 (004c7ab0) at 004c7b0b [UNCONDITIONAL_CALL]
 // Globals:
-//   SMRGLTextureBasic DAT_0067adf4
-//   SMRGLTextureBasic DAT_0067ae0c
-//   SMRGLTextureBasic DAT_0067ae84
+//   SMRGLTextureBasic[6] g_FireEffectLightningBoltTextures
+//   undefined4 DAT_0067ae0c
+//   SMRGLTextureBasic g_FireEffectPopcornTexture
 //   CDemonRenderer g_CDemonRendererInstance
 // Function calls:
 //   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -20,11 +20,11 @@ void core_fire_cpp_FUN_004c5600(void)
 {
   SMRGLTextureBasic *texture;
   
-  texture = &DAT_0067adf4;
+  texture = g_FireEffectLightningBoltTextures;
   do {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,texture);
     texture = texture + 1;
-  } while (texture != &DAT_0067ae84);
+  } while (texture != &g_FireEffectPopcornTexture);
   return;
 }
 

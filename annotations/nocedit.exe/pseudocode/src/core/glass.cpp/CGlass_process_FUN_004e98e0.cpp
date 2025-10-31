@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_glass.cpp_CGlass_process_FUN_004e98e0(CGlass * this_ptr)
 // Globals:
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 // Function calls:
 //   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
@@ -19,7 +19,7 @@ void __cdecl core_glass_cpp_CGlass_process_FUN_004e98e0(CGlass *this_ptr)
   
   if (this_ptr->shattered == 0) {
     iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,this_ptr->break_event);
+                      (g_CEventListPtr,this_ptr->break_event);
     if (iVar1 != 0) {
       core_glass_cpp_FUN_004eaef0();
       return;

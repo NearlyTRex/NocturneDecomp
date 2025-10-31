@@ -10,7 +10,7 @@
 //   TerminatedCString s_CWaterActor_process_Bad__006572cc
 //   undefined4 DAT_006572ef
 //   undefined4 DAT_006572f7
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -53,7 +53,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
       this_ptr->field21_0x298[0x2af93] = '\0';
     }
   }
-  this_ptr_00 = g_CEventListInstance;
+  this_ptr_00 = g_CEventListPtr;
   *(float *)(this_ptr->field21_0x298 + 0x7d04) = 1.0 / in_stack_0000000c;
   iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
                     (this_ptr_00,(char *)&this_ptr->move_event);
@@ -61,7 +61,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
     this_ptr->state = 1;
   }
   iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                    (g_CEventListInstance,(char *)&this_ptr->move_down_event);
+                    (g_CEventListPtr,(char *)&this_ptr->move_down_event);
   if (iVar2 != 0) {
     this_ptr->state = 3;
   }

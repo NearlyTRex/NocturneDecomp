@@ -4,13 +4,11 @@
 // Convention: unknown
 // Signature: undefined core_fire.cpp_FUN_004c9400()
 // Globals:
-//   undefined4 DAT_0065dca8
+//   float FLOAT_0065dca8 = 256
 // Function calls:
 //   wincore_windll.cpp_transformPoint_FUN_005b5a25
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_fire_cpp_FUN_004c9400(void)
 
@@ -20,9 +18,9 @@ void core_fire_cpp_FUN_004c9400(void)
   float *in_stack_0000000c;
   CVector3i local_10;
   
-  local_10.x = (int)ROUND(*in_stack_0000000c * _DAT_0065dca8);
-  local_10.y = (int)ROUND(in_stack_0000000c[1] * _DAT_0065dca8);
-  local_10.z = (int)ROUND(in_stack_0000000c[2] * _DAT_0065dca8);
+  local_10.x = (int)ROUND(*in_stack_0000000c * FLOAT_0065dca8);
+  local_10.y = (int)ROUND(in_stack_0000000c[1] * FLOAT_0065dca8);
+  local_10.z = (int)ROUND(in_stack_0000000c[2] * FLOAT_0065dca8);
   wincore_windll_cpp_transformPoint_FUN_005b5a25(in_stack_00000008,&local_10);
   return;
 }

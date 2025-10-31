@@ -27,7 +27,7 @@
 //   core_elephant.cpp_FUN_004a79f0 (004a79f0) at 004a7a5a [UNCONDITIONAL_CALL]
 //   core_emitter.cpp_FUN_004a8070 (004a8070) at 004a86ec [UNCONDITIONAL_CALL]
 //   core_emitter.cpp_FUN_004a8860 (004a8860) at 004a89a7 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_FUN_004bfac0 (004bfac0) at 004bfd64 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CBulletHole_render_FUN_004bfac0 (004bfac0) at 004bfd64 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d2ea0 (004d2ea0) at 004d4129 [UNCONDITIONAL_CALL]
 //   core_gun.cpp_FUN_004f0350 (004f0350) at 004f03cb [UNCONDITIONAL_CALL]
 //   core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0 (004f4bd0) at 004f5075 [UNCONDITIONAL_CALL]

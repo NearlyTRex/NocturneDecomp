@@ -5,7 +5,7 @@
 // Signature: undefined core_flamecan.cpp_FUN_004cb390()
 // Globals:
 //   float FLOAT_0062a2e8 = 0.5
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   undefined4 DAT_02d05310
@@ -31,7 +31,7 @@ void core_flamecan_cpp_FUN_004cb390(void)
   float in_stack_00000008;
   
   iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                    (g_CEventListInstance,(char *)(in_stack_00000004 + 0x2dc));
+                    (g_CEventListPtr,(char *)(in_stack_00000004 + 0x2dc));
   if (iVar1 == 0) {
     if (*(int *)(in_stack_00000004 + 0x2d4) == 0) {
       return;

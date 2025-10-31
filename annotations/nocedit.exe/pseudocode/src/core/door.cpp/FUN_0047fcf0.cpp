@@ -8,7 +8,7 @@
 //   core_hero.cpp_FUN_004f2d70 (004f2d70) at 004f2e9a [UNCONDITIONAL_CALL]
 //   core_hero.cpp_FUN_004f2ed0 (004f2ed0) at 004f2f11 [UNCONDITIONAL_CALL]
 // Globals:
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 // Function calls:
 //   core_event.cpp_FUN_004aabe0

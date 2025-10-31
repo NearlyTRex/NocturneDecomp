@@ -21,7 +21,7 @@
 //   core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20 (00499c20) at 00499c41 [UNCONDITIONAL_CALL]
 //   core_elephant.cpp_FUN_004a7070 (004a7070) at 004a7107 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireEffect_FUN_004c7bb0 (004c7bb0) at 004c7bdc [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CLaserBeam_FUN_004c25c0 (004c25c0) at 004c2659 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (004c25c0) at 004c2659 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CStake_FUN_004bfe20 (004bfe20) at 004bfe53 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CStake_FUN_004bfe90 (004bfe90) at 004bfead [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d2ea0 (004d2ea0) at 004d40ed [UNCONDITIONAL_CALL]

@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_grave.cpp_FUN_004ee5c0()
 // Globals:
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 // Function calls:
 //   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
@@ -29,7 +29,7 @@ void core_grave_cpp_FUN_004ee5c0(void)
   if (*(int *)(in_stack_00000004 + 0x2dc) == 0) {
     if (*(int *)(in_stack_00000004 + 0x2e0) == 0) {
       iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                        (g_CEventListInstance,(char *)(in_stack_00000004 + 0x2e8));
+                        (g_CEventListPtr,(char *)(in_stack_00000004 + 0x2e8));
       if (iVar3 != 0) {
         core_grave_cpp_FUN_004ee790();
       }

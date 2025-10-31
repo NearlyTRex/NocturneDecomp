@@ -12,9 +12,9 @@
 //   double DOUBLE_00629dc3 = 148
 //   float FLOAT_00629dcb = 143
 //   double DOUBLE_00629dd3 = 113
-//   undefined4 DAT_0065dca8
+//   float FLOAT_0065dca8 = 256
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
-//   SMRGLTextureBasic DAT_0067a86c
+//   SMRGLTextureBasic[54] g_FireEffectExplosionTextures
 //   undefined4 DAT_00fe0000
 //   CDemonRenderer g_CDemonRendererInstance
 // Function calls:
@@ -29,8 +29,6 @@
 //   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_fire_cpp_CExplosion_FUN_004c3b10(CExplosion *this_ptr)
 
@@ -65,7 +63,7 @@ void __cdecl core_fire_cpp_CExplosion_FUN_004c3b10(CExplosion *this_ptr)
   crt_math_c_round_FUN_005fe6b0((double)CONCAT44(in_EDX,in_EAX));
   local_1c.y = (int)ROUND(fVar3);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr,&DAT_0067a86c + local_1c.y * 2);
+            (g_CDemonRendererPtr,g_FireEffectExplosionTextures + local_1c.y * 2);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr,(CVector3f *)this_ptr);
   engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
@@ -90,29 +88,29 @@ void __cdecl core_fire_cpp_CExplosion_FUN_004c3b10(CExplosion *this_ptr)
   local_1c.z = (int)(*(float *)(this_ptr->field0_0x0 + 0x10) * FLOAT_00629dcb *
                     (float)DOUBLE_00629dbb);
   local_10 = 0.0;
-  local_c = (float)(int)ROUND((float)local_1c.y * _DAT_0065dca8);
-  fVar1 = (float)local_1c.z * _DAT_0065dca8;
-  fVar2 = _DAT_0065dca8 * 0.0;
+  local_c = (float)(int)ROUND((float)local_1c.y * FLOAT_0065dca8);
+  fVar1 = (float)local_1c.z * FLOAT_0065dca8;
+  fVar2 = FLOAT_0065dca8 * 0.0;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,(CVector3i *)&local_c);
   fStack00000014 = fStack00000010;
   local_1c.z = (int)(float)(int)fStack00000010;
-  local_2c.x = (int)ROUND((float)local_1c.z * _DAT_0065dca8);
-  local_2c.y = (int)ROUND(local_10 * _DAT_0065dca8);
-  local_2c.z = (int)ROUND(local_c * _DAT_0065dca8);
+  local_2c.x = (int)ROUND((float)local_1c.z * FLOAT_0065dca8);
+  local_2c.y = (int)ROUND(local_10 * FLOAT_0065dca8);
+  local_2c.z = (int)ROUND(local_c * FLOAT_0065dca8);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_2c);
   local_c = -*(float *)(this_ptr->field0_0x0 + 0x10) * (float)DOUBLE_00629dd3 *
             (float)DOUBLE_00629dbb;
-  local_1c.x = (int)ROUND(local_10 * _DAT_0065dca8);
-  local_1c.y = (int)ROUND(local_c * _DAT_0065dca8);
-  local_1c.z = (int)ROUND((float)(int)ROUND(fVar1) * _DAT_0065dca8);
+  local_1c.x = (int)ROUND(local_10 * FLOAT_0065dca8);
+  local_1c.y = (int)ROUND(local_c * FLOAT_0065dca8);
+  local_1c.z = (int)ROUND((float)(int)ROUND(fVar1) * FLOAT_0065dca8);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_1c);
   local_c = fStack00000010;
-  local_3c.x = (int)ROUND(fStack00000010 * _DAT_0065dca8);
-  local_3c.y = (int)ROUND((float)(int)ROUND(fVar1) * _DAT_0065dca8);
-  local_3c.z = (int)ROUND((float)(int)ROUND(fVar2) * _DAT_0065dca8);
+  local_3c.x = (int)ROUND(fStack00000010 * FLOAT_0065dca8);
+  local_3c.y = (int)ROUND((float)(int)ROUND(fVar1) * FLOAT_0065dca8);
+  local_3c.z = (int)ROUND((float)(int)ROUND(fVar2) * FLOAT_0065dca8);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_3c);
   this_ptr_00 = g_CDemonRendererPtr;

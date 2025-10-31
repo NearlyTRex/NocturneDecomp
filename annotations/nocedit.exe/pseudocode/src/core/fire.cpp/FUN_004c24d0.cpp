@@ -4,12 +4,12 @@
 // Convention: unknown
 // Signature: undefined core_fire.cpp_FUN_004c24d0()
 // Cross-references:
-//   core_fire.cpp_CLaserBeam_FUN_004c25c0 (004c25c0) at 004c2e1d [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (004c25c0) at 004c2e1d [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_00629d03 = 0.00390625
 //   double DOUBLE_00629d0b = 0.0000152587890625
 //   float FLOAT_00629d13 = 0.2000000
-//   undefined4 DAT_0065dca8
+//   float FLOAT_0065dca8 = 256
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   int g_ProjectionScale = 0x10000
 //   CDemonRenderer g_CDemonRendererInstance
@@ -19,8 +19,6 @@
 //   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 float core_fire_cpp_FUN_004c24d0(void)
 
@@ -39,9 +37,9 @@ float core_fire_cpp_FUN_004c24d0(void)
   local_28 = 0;
   local_24 = 0;
   local_20 = in_stack_00000004;
-  local_34.x = (int)ROUND(_DAT_0065dca8 * 0.0);
-  local_34.y = (int)ROUND(_DAT_0065dca8 * 0.0);
-  local_34.z = (int)ROUND(in_stack_00000004 * _DAT_0065dca8);
+  local_34.x = (int)ROUND(FLOAT_0065dca8 * 0.0);
+  local_34.y = (int)ROUND(FLOAT_0065dca8 * 0.0);
+  local_34.z = (int)ROUND(in_stack_00000004 * FLOAT_0065dca8);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_34);
   fVar2 = (float)DOUBLE_00629d0b;

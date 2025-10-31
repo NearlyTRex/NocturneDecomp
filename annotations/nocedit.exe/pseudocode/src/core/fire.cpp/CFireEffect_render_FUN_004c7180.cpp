@@ -14,7 +14,7 @@
 //   CDemonRenderer g_CDemonRendererInstance
 //   CSmokeParticle[2048] g_CFireEffectSmokeParticles
 //   undefined4 DAT_02d14218
-//   undefined4 DAT_02d2a1ec
+//   CSmokeParticle* g_CFireEffectSmokeParticlesEnd
 //   CBulletHole[256] g_CFireEffectBulletHoles
 //   undefined4 DAT_02d2a204
 //   undefined4 DAT_02d2a230
@@ -26,55 +26,55 @@
 //   undefined4 DAT_02d53e18
 //   undefined4 DAT_02d53e4c
 //   undefined4 DAT_02d53e64
-//   undefined4 DAT_02d58a00
+//   CSpark* g_CFireEffectSparksEnd
 //   CMuzzleFlash[20] g_CFireEffectMuzzleFlashes
 //   undefined4 DAT_02d58a60
-//   undefined4 DAT_02d59134
+//   CMuzzleFlash* g_CFireEffectMuzzleFlashesEnd
 //   CGlassParticle[256] g_CFireEffectGlassParticles
 //   undefined4 DAT_02d59150
 //   undefined4 DAT_02d591d4
 //   undefined4 DAT_02d591ec
-//   undefined4 DAT_02d62d38
+//   CGlassParticle* g_CFireEffectGlassParticlesEnd
 //   CBulletTrail[10] g_CFireEffectBulletTrails
 //   undefined4 DAT_02d62d5c
 //   undefined4 DAT_02d62d60
 //   undefined4 DAT_02d62d80
-//   undefined4 DAT_02d62ea4
+//   CBulletTrail* g_CFireEffectBulletTrailsEnd
 //   CFireball[64] g_CFireEffectFireballs
 //   undefined4 DAT_02d62ec0
 //   undefined4 DAT_02d62f44
 //   undefined4 DAT_02d62f5c
-//   undefined4 DAT_02d655a8
+//   CFireball* g_CFireEffectFireballsEnd
 //   CRock[64] g_CFireEffectRocks
 //   undefined4 DAT_02d655c4
 //   undefined4 DAT_02d655f4
 //   undefined4 DAT_02d6560c
-//   undefined4 DAT_02d667ac
+//   CRock* g_CFireEffectRocksEnd
 //   CLaserBeam[64] g_CFireEffectLaserBeams
 //   undefined4 DAT_02d667f0
 //   CExplosion[10] g_CFireEffectExplosions
 //   undefined4 DAT_02d677d0
-//   undefined4 DAT_02d678cc
+//   CExplosion* g_CFireEffectExplosionsEnd
 //   CToss[20] g_CFireEffectTosses
 //   undefined4 DAT_02d67cb4
-//   undefined4 DAT_02d6c6a0
+//   CToss* g_CFireEffectTossesEnd
 //   CGunFlame[500] g_CFireEffectGunFlames
 //   undefined4 DAT_02d6cf8c
-//   undefined4 DAT_02d715b8
+//   CGunFlame* g_CFireEffectGunFlamesEnd
 //   CLightningBolt[10] g_CFireEffectLightningBolts
 //   undefined4 DAT_02d715e8
-//   undefined4 DAT_02d71774
+//   CLightningBolt* g_CFireEffectLightningBoltsEnd
 //   CTrail[100] g_CFireEffectTrails
 //   undefined4 DAT_02d7179c
-//   undefined4 DAT_02d72588
+//   CTrail* g_CFireEffectTrailsEnd
 //   CShell[50] g_CFireEffectShells
 //   undefined4 DAT_02d725e4
-//   undefined4 DAT_02d736bc
+//   CShell* g_CFireEffectShellsEnd
 //   CPopcorn[256] g_CFireEffectPopcorns
 //   undefined4 DAT_02d736d8
 //   undefined4 DAT_02d736f8
 //   undefined4 DAT_02d73710
-//   undefined4 DAT_02d76ec0
+//   CPopcorn* g_CFireEffectPopcornsEnd
 //   CRainDrop[256] g_CFireEffectRainDrops
 //   undefined4 DAT_02d76edc
 //   undefined4 DAT_02d76efc
@@ -82,20 +82,20 @@
 //   CDemonActorType g_CFlameClassInfo
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
-//   core_fire.cpp_CBulletHole_FUN_004bfa40
+//   core_fire.cpp_CBulletHole_initRender_FUN_004bfa40
+//   core_fire.cpp_CBulletHole_render_FUN_004bfac0
 //   core_fire.cpp_CBulletTrail_FUN_004c21f0
 //   core_fire.cpp_CExplosion_FUN_004c3b10
-//   core_fire.cpp_CFireball_FUN_004c0d80
+//   core_fire.cpp_CFireball_initRender_FUN_004c0d80
 //   core_fire.cpp_CGunFlame_FUN_004c50b0
-//   core_fire.cpp_CLaserBeam_FUN_004c25c0
+//   core_fire.cpp_CLaserBeam_render_FUN_004c25c0
 //   core_fire.cpp_CLightningBolt_FUN_004c5720
 //   core_fire.cpp_CMuzzleFlash_render_FUN_004c1a30
-//   core_fire.cpp_CSmokeParticle_FUN_004bf1f0
+//   core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0
 //   core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0
-//   core_fire.cpp_CSpark_FUN_004c0300
+//   core_fire.cpp_CSpark_initRender_FUN_004c0300
 //   core_fire.cpp_CToss_FUN_004c4160
 //   core_fire.cpp_CTrail_FUN_004c5e90
-//   core_fire.cpp_FUN_004bfac0
 //   core_fire.cpp_FUN_004c0140
 //   core_set.cpp_CDemonSet_FUN_0056d380
 //   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
@@ -141,113 +141,114 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
       (*((this_ptr_00->base).vtable)->render)(&this_ptr_00->base);
     }
     this_ptr_00 = this_ptr_00 + 1;
-  } while (this_ptr_00 != (CRock *)&DAT_02d667ac);
+  } while (this_ptr_00 != (CRock *)&g_CFireEffectRocksEnd);
   this_ptr_01 = g_CFireEffectFireballs;
-  core_fire_cpp_CFireball_FUN_004c0d80(g_CFireEffectFireballs);
+  core_fire_cpp_CFireball_initRender_FUN_004c0d80(g_CFireEffectFireballs);
   do {
     if (0.0 < (this_ptr_01->base).lifetime_remaining) {
       (*((this_ptr_01->base).vtable)->render)(&this_ptr_01->base);
     }
     this_ptr_01 = this_ptr_01 + 1;
-  } while (this_ptr_01 != (CFireball *)&DAT_02d655a8);
+  } while (this_ptr_01 != (CFireball *)&g_CFireEffectFireballsEnd);
   this_ptr_02 = g_CFireEffectShells;
   do {
     (*((this_ptr_02->base).vtable)->render)(&this_ptr_02->base);
     this_ptr_02 = this_ptr_02 + 1;
-  } while (this_ptr_02 != (CShell *)&DAT_02d736bc);
+  } while (this_ptr_02 != (CShell *)&g_CFireEffectShellsEnd);
   iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
   if (iVar2 == 0) {
     core_set_cpp_CDemonSet_FUN_0056d380(g_CDemonSetPtr);
     iVar2 = 0;
-    core_fire_cpp_CBulletHole_FUN_004bfa40(g_CFireEffectBulletHoles);
-    if (0 < DAT_02d2a1ec) {
+    core_fire_cpp_CBulletHole_initRender_FUN_004bfa40(g_CFireEffectBulletHoles);
+    if (0 < (int)g_CFireEffectSmokeParticlesEnd) {
       iVar1 = 0;
       do {
-        if (*(int *)(g_CFireEffectBulletHoles[0].field0_0x0 + iVar1 + 0x10) != 0) {
-          core_fire_cpp_FUN_004bfac0();
+        if (*(int *)((int)&g_CFireEffectBulletHoles[0].actor_ptr + iVar1) != 0) {
+          core_fire_cpp_CBulletHole_render_FUN_004bfac0
+                    ((CBulletHole *)((int)&g_CFireEffectBulletHoles[0].position.x + iVar1));
         }
         iVar2 = iVar2 + 1;
         iVar1 = iVar1 + 0x3c;
-      } while (iVar2 < DAT_02d2a1ec);
+      } while (iVar2 < (int)g_CFireEffectSmokeParticlesEnd);
     }
     this_ptr_03 = g_CFireEffectSmokeParticles;
-    core_fire_cpp_CSmokeParticle_FUN_004bf1f0(g_CFireEffectSmokeParticles);
+    core_fire_cpp_CSmokeParticle_initRender_FUN_004bf1f0(g_CFireEffectSmokeParticles);
     do {
       if (this_ptr_03->active != 0) {
         core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(this_ptr_03);
       }
       this_ptr_03 = this_ptr_03 + 1;
-    } while (this_ptr_03 != (CSmokeParticle *)&DAT_02d2a1ec);
+    } while (this_ptr_03 != (CSmokeParticle *)&g_CFireEffectSmokeParticlesEnd);
     this_ptr_04 = g_CFireEffectMuzzleFlashes;
     do {
       if (*(int *)this_ptr_04->field0_0x0 != 0) {
         core_fire_cpp_CMuzzleFlash_render_FUN_004c1a30(this_ptr_04);
       }
       this_ptr_04 = this_ptr_04 + 1;
-    } while (this_ptr_04 != (CMuzzleFlash *)&DAT_02d59134);
+    } while (this_ptr_04 != (CMuzzleFlash *)&g_CFireEffectMuzzleFlashesEnd);
     iVar2 = 0;
-    if (0 < DAT_02d667ac) {
+    if (0 < (int)g_CFireEffectRocksEnd) {
       this_ptr_15 = g_CFireEffectLaserBeams;
       do {
-        core_fire_cpp_CLaserBeam_FUN_004c25c0(this_ptr_15);
+        core_fire_cpp_CLaserBeam_render_FUN_004c25c0(this_ptr_15);
         iVar2 = iVar2 + 1;
         this_ptr_15 = this_ptr_15 + 1;
-      } while (iVar2 < DAT_02d667ac);
+      } while (iVar2 < (int)g_CFireEffectRocksEnd);
     }
     this_ptr_05 = g_CFireEffectSparks;
-    core_fire_cpp_CSpark_FUN_004c0300(g_CFireEffectSparks);
+    core_fire_cpp_CSpark_initRender_FUN_004c0300(g_CFireEffectSparks);
     do {
       if (0.0 < (this_ptr_05->base).lifetime_remaining) {
         (*((this_ptr_05->base).vtable)->render)(&this_ptr_05->base);
       }
       this_ptr_05 = this_ptr_05 + 1;
-    } while (this_ptr_05 != (CSpark *)&DAT_02d58a00);
+    } while (this_ptr_05 != (CSpark *)&g_CFireEffectSparksEnd);
     this_ptr_06 = g_CFireEffectGlassParticles;
     do {
       if (0.0 < (this_ptr_06->base).lifetime_remaining) {
         (*((this_ptr_06->base).vtable)->render)(&this_ptr_06->base);
       }
       this_ptr_06 = this_ptr_06 + 1;
-    } while (this_ptr_06 != (CGlassParticle *)&DAT_02d62d38);
+    } while (this_ptr_06 != (CGlassParticle *)&g_CFireEffectGlassParticlesEnd);
     this_ptr_07 = g_CFireEffectBulletTrails;
     do {
       if (*(int *)(this_ptr_07->field0_0x0 + 0x20) != 0) {
         core_fire_cpp_CBulletTrail_FUN_004c21f0(this_ptr_07);
       }
       this_ptr_07 = this_ptr_07 + 1;
-    } while (this_ptr_07 != (CBulletTrail *)&DAT_02d62ea4);
+    } while (this_ptr_07 != (CBulletTrail *)&g_CFireEffectBulletTrailsEnd);
     this_ptr_08 = g_CFireEffectExplosions;
     do {
       core_fire_cpp_CExplosion_FUN_004c3b10(this_ptr_08);
       this_ptr_08 = this_ptr_08 + 1;
-    } while (this_ptr_08 != (CExplosion *)&DAT_02d678cc);
+    } while (this_ptr_08 != (CExplosion *)&g_CFireEffectExplosionsEnd);
     this_ptr_09 = g_CFireEffectTosses;
     do {
       core_fire_cpp_CToss_FUN_004c4160(this_ptr_09);
       this_ptr_09 = this_ptr_09 + 1;
-    } while (this_ptr_09 != (CToss *)&DAT_02d6c6a0);
+    } while (this_ptr_09 != (CToss *)&g_CFireEffectTossesEnd);
     this_ptr_10 = g_CFireEffectGunFlames;
     do {
       core_fire_cpp_CGunFlame_FUN_004c50b0(this_ptr_10);
       this_ptr_10 = this_ptr_10 + 1;
-    } while (this_ptr_10 != (CGunFlame *)&DAT_02d715b8);
+    } while (this_ptr_10 != (CGunFlame *)&g_CFireEffectGunFlamesEnd);
     this_ptr_11 = g_CFireEffectLightningBolts;
     do {
       core_fire_cpp_CLightningBolt_FUN_004c5720(this_ptr_11);
       this_ptr_11 = this_ptr_11 + 1;
-    } while (this_ptr_11 != (CLightningBolt *)&DAT_02d71774);
+    } while (this_ptr_11 != (CLightningBolt *)&g_CFireEffectLightningBoltsEnd);
     this_ptr_12 = g_CFireEffectTrails;
     do {
       core_fire_cpp_CTrail_FUN_004c5e90(this_ptr_12);
       this_ptr_12 = this_ptr_12 + 1;
-    } while (this_ptr_12 != (CTrail *)&DAT_02d72588);
+    } while (this_ptr_12 != (CTrail *)&g_CFireEffectTrailsEnd);
     this_ptr_13 = g_CFireEffectPopcorns;
     do {
       if (0.0 < (this_ptr_13->base).lifetime_remaining) {
         (*((this_ptr_13->base).vtable)->render)(&this_ptr_13->base);
       }
       this_ptr_13 = (CPopcorn *)(&this_ptr_13->base + 1);
-    } while ((CParticle *)this_ptr_13 != (CParticle *)&DAT_02d76ec0);
+    } while (this_ptr_13 != (CPopcorn *)&g_CFireEffectPopcornsEnd);
     this_ptr_14 = g_CFireEffectRainDrops;
     do {
       if (0.0 < (this_ptr_14->base).lifetime_remaining) {
@@ -321,7 +322,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
 //   XREF to: 02d62ea8 (DATA)
 // 004c71e2: MOV EBX,0x2d62ea8
 //   XREF to: 02d62ea8 (PARAM)
-// 004c71e7: CALL core_fire.cpp_CFireball_FUN_004c0d80
+// 004c71e7: CALL core_fire.cpp_CFireball_initRender_FUN_004c0d80
 //   XREF to: 004c0d80 (UNCONDITIONAL_CALL)
 // 004c71ec: ADD ESP,0x4
 // 004c71ef: LEA ESI,[EBX + 0x2700]
@@ -394,7 +395,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
 // 004c725b: PUSH 0x2d2a1f4
 //   XREF to: 02d2a1f4 (DATA)
 // 004c7260: XOR ESI,ESI
-// 004c7262: CALL core_fire.cpp_CBulletHole_FUN_004bfa40
+// 004c7262: CALL core_fire.cpp_CBulletHole_initRender_FUN_004bfa40
 //   XREF to: 004bfa40 (UNCONDITIONAL_CALL)
 // 004c7267: MOV ECX,dword ptr [0x02d2a1ec]
 //   XREF to: 02d2a1ec (READ)
@@ -417,7 +418,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
 // 004c7286: PUSH EAX
 //   XREF to: 02d2a1f4 (DATA)
 //   XREF to: 02d2a230 (DATA)
-// 004c7287: CALL core_fire.cpp_FUN_004bfac0
+// 004c7287: CALL core_fire.cpp_CBulletHole_render_FUN_004bfac0
 //   XREF to: 004bfac0 (UNCONDITIONAL_CALL)
 // 004c728c: ADD ESP,0x4
 // 004c728f: MOV EDI,dword ptr [0x02d2a1ec]
@@ -433,7 +434,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
 //   XREF to: 02d141ec (DATA)
 // 004c72a2: MOV EBX,0x2d141ec
 //   XREF to: 02d141ec (PARAM)
-// 004c72a7: CALL core_fire.cpp_CSmokeParticle_FUN_004bf1f0
+// 004c72a7: CALL core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0
 //   XREF to: 004bf1f0 (UNCONDITIONAL_CALL)
 // 004c72ac: ADD ESP,0x4
 // 004c72af: LEA ESI,[EBX + 0x16000]
@@ -492,7 +493,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
 //   Label: LAB_004c72fd
 //   XREF to: 02d667b0 (DATA)
 //   XREF to: 02d667f0 (DATA)
-// 004c72fe: CALL core_fire.cpp_CLaserBeam_FUN_004c25c0
+// 004c72fe: CALL core_fire.cpp_CLaserBeam_render_FUN_004c25c0
 //   XREF to: 004c25c0 (UNCONDITIONAL_CALL)
 // 004c7303: INC EBX
 // 004c7304: MOV ECX,dword ptr [0x02d667ac]
@@ -509,7 +510,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
 //   XREF to: 02d53e00 (DATA)
 // 004c7325: MOV EBX,0x2d53e00
 //   XREF to: 02d53e00 (PARAM)
-// 004c732a: CALL core_fire.cpp_CSpark_FUN_004c0300
+// 004c732a: CALL core_fire.cpp_CSpark_initRender_FUN_004c0300
 //   XREF to: 004c0300 (UNCONDITIONAL_CALL)
 // 004c732f: ADD ESP,0x4
 // 004c7332: LEA ESI,[EBX + 0x4c00]

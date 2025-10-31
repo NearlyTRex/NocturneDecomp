@@ -17,7 +17,7 @@
 //   TerminatedCString s_Hero_doesn_t_exist_006415f4
 //   TerminatedCString s_Actor_s_does_not_exist_0064160b
 //   TerminatedCString s_Actor_s_is_of_type_s_thi_00641626
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   CNetGame* g_CNetGameInstance = 02f7c740
 //   undefined4 DAT_02d05310

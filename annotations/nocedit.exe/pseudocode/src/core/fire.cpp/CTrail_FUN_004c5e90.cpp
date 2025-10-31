@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_fire.cpp_CFireEffect_render_FUN_004c7180 (004c7180) at 004c741d [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0065dca8
+//   float FLOAT_0065dca8 = 256
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   undefined4 g_RenderVertexBuffer[0].u
 //   undefined4 g_RenderVertexBuffer[0].v
@@ -42,8 +42,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CTrail_FUN_004c5e90(CTrail *this_ptr)
 
 {
@@ -75,30 +73,30 @@ void __cdecl core_fire_cpp_CTrail_FUN_004c5e90(CTrail *this_ptr)
   local_2c.z = 0;
   local_2c.x = (int)(*(float *)(this_ptr->field0_0x0 + 0xc) *
                     *(float *)(this_ptr->field0_0x0 + 0x14));
-  auStack_18._4_4_ = (undefined4)ROUND((float)local_2c.x * _DAT_0065dca8);
-  local_10 = (float)(int)ROUND((float)local_2c.x * _DAT_0065dca8);
-  local_c = (int)ROUND(_DAT_0065dca8 * 0.0);
+  auStack_18._4_4_ = (undefined4)ROUND((float)local_2c.x * FLOAT_0065dca8);
+  local_10 = (float)(int)ROUND((float)local_2c.x * FLOAT_0065dca8);
+  local_c = (int)ROUND(FLOAT_0065dca8 * 0.0);
   local_2c.y = local_2c.x;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,(CVector3i *)(auStack_18 + 4)
             );
   local_2c.y = (int)-(float)local_2c.y;
-  iStack00000008 = (int)ROUND((float)local_2c.y * _DAT_0065dca8);
-  iStack0000000c = (int)ROUND((float)local_2c.z * _DAT_0065dca8);
-  iStack00000010 = (int)ROUND(local_20 * _DAT_0065dca8);
+  iStack00000008 = (int)ROUND((float)local_2c.y * FLOAT_0065dca8);
+  iStack0000000c = (int)ROUND((float)local_2c.z * FLOAT_0065dca8);
+  iStack00000010 = (int)ROUND(local_20 * FLOAT_0065dca8);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,
              (CVector3i *)&stack0x00000008);
   local_20 = -local_20;
-  auStack_18._0_4_ = (undefined4)ROUND((float)local_2c.z * _DAT_0065dca8);
-  auStack_18._4_4_ = (undefined4)ROUND(local_20 * _DAT_0065dca8);
-  local_10 = (float)(int)ROUND(fStack_1c * _DAT_0065dca8);
+  auStack_18._0_4_ = (undefined4)ROUND((float)local_2c.z * FLOAT_0065dca8);
+  auStack_18._4_4_ = (undefined4)ROUND(local_20 * FLOAT_0065dca8);
+  local_10 = (float)(int)ROUND(fStack_1c * FLOAT_0065dca8);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,(CVector3i *)auStack_18);
   local_20 = -local_20;
-  local_2c.x = (int)ROUND(local_20 * _DAT_0065dca8);
-  local_2c.y = (int)ROUND(fStack_1c * _DAT_0065dca8);
-  local_2c.z = (int)ROUND((float)auStack_18._0_4_ * _DAT_0065dca8);
+  local_2c.x = (int)ROUND(local_20 * FLOAT_0065dca8);
+  local_2c.y = (int)ROUND(fStack_1c * FLOAT_0065dca8);
+  local_2c.z = (int)ROUND((float)auStack_18._0_4_ * FLOAT_0065dca8);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_2c);
   g_RenderVertexBuffer[0].u = 7.34684e-40;

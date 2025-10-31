@@ -10,7 +10,7 @@
 //   undefined4 DAT_006240aa
 //   undefined4 DAT_006240b2
 //   undefined4 DAT_006240ba
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CGame* g_CGamePtr = 02d81a9c
 //   CDemonSet* g_CDemonSetPtr = 03114278
@@ -87,7 +87,7 @@ void core_emitter_cpp_FUN_004a8070(void)
   iVar4 = crt_string_c_strcmp_FUN_005fef20((char *)(in_stack_00000004 + 0x16c),"none");
   if ((iVar4 != 0) &&
      (iVar4 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                        (g_CEventListInstance,(char *)(in_stack_00000004 + 0x16c)),
+                        (g_CEventListPtr,(char *)(in_stack_00000004 + 0x16c)),
      pCVar3 = g_CDemonSetPtr, iVar4 != 0)) {
     iVar7 = 1;
     *(undefined4 *)(in_stack_00000004 + 0x168) = 1;
@@ -95,7 +95,7 @@ void core_emitter_cpp_FUN_004a8070(void)
     core_set_cpp_CDemonSet_FUN_0056ade0(pCVar3);
   }
   iVar4 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                    (g_CEventListInstance,(char *)(in_stack_00000004 + 0x1d0));
+                    (g_CEventListPtr,(char *)(in_stack_00000004 + 0x1d0));
   if (iVar4 != 0) {
     *(undefined4 *)(in_stack_00000004 + 0x168) = 0;
   }

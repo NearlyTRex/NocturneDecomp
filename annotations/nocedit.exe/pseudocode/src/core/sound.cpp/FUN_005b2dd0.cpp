@@ -8,7 +8,7 @@
 //   core_game.cpp_CGame_runGameSession_FUN_004daf80 (004daf80) at 004dbba1 [UNCONDITIONAL_CALL]
 //   core_game.cpp_SaveRelated_FUN_004dcee0 (004dcee0) at 004dd448 [UNCONDITIONAL_CALL]
 // Globals:
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 DAT_02d05310
 //   CDemonSet g_CDemonSetInstance

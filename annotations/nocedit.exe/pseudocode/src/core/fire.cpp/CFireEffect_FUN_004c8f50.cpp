@@ -8,7 +8,7 @@
 //   core_emitter.cpp_FUN_004a8070 (004a8070) at 004a85a6 [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonSet* g_CDemonSetPtr = 03114278
-//   undefined4 DAT_02d715b8
+//   CGunFlame* g_CFireEffectGunFlamesEnd
 //   CLightningBolt[10] g_CFireEffectLightningBolts
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
@@ -22,15 +22,16 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8f50(CFireEffect *this_ptr)
 {
   int in_stack_00000014;
   
-  core_fire_cpp_CLightningBolt_FUN_004c5640(g_CFireEffectLightningBolts + DAT_02d715b8);
-  DAT_02d715b8 = DAT_02d715b8 + 1;
-  if (DAT_02d715b8 < 10) {
+  core_fire_cpp_CLightningBolt_FUN_004c5640
+            (g_CFireEffectLightningBolts + (int)g_CFireEffectGunFlamesEnd);
+  g_CFireEffectGunFlamesEnd = (CGunFlame *)(g_CFireEffectGunFlamesEnd->field0_0x0 + 1);
+  if ((int)g_CFireEffectGunFlamesEnd < 10) {
     if (in_stack_00000014 == 0) {
       return;
     }
   }
   else {
-    DAT_02d715b8 = 0;
+    g_CFireEffectGunFlamesEnd = (CGunFlame *)0x0;
     if (in_stack_00000014 == 0) {
       return;
     }

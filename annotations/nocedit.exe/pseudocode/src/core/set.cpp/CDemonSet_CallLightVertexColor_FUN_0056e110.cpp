@@ -5,11 +5,11 @@
 // Signature: int core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110(CDemonSet * this_ptr)
 // Cross-references:
 //   core_chain.cpp_FUN_004308f0 (004308f0) at 00430e36 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CBulletHole_render_FUN_004bfac0 (004bfac0) at 004bfdd2 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CGlassParticle_render_FUN_004c1ef0 (004c1ef0) at 004c207a [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CPopcorn_render_FUN_004c64c0 (004c64c0) at 004c6795 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CRainDrop_render_FUN_004c6830 (004c6830) at 004c6b3f [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0 (004bf4c0) at 004bf784 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_FUN_004bfac0 (004bfac0) at 004bfdd2 [UNCONDITIONAL_CALL]
 //   core_gore.cpp_FUN_004ebac0 (004ebac0) at 004ebd83 [UNCONDITIONAL_CALL]
 //   core_weather.cpp_CWeather_FUN_005ef190 (005ef190) at 005ef3ae [UNCONDITIONAL_CALL]
 // Globals:

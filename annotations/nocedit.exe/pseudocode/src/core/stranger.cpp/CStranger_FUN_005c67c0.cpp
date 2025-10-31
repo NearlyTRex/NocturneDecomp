@@ -5,7 +5,7 @@
 // Signature: undefined core_stranger.cpp_CStranger_FUN_005c67c0()
 // Globals:
 //   TerminatedCString s_strangerCannotDie_00653fa7
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 // Function calls:
 //   core_charactr.cpp_CCharacter_FUN_0042c580
@@ -22,7 +22,7 @@ int core_stranger_cpp_CStranger_FUN_005c67c0(void)
   CCharacter *in_stack_00000008;
   
   iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                    (g_CEventListInstance,"strangerCannotDie");
+                    (g_CEventListPtr,"strangerCannotDie");
   if (iVar1 != 0) {
     return 0;
   }

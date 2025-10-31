@@ -9,7 +9,7 @@
 //   TerminatedCString s_voicudeath_wav_2_5_00656c80
 //   undefined4 DAT_00656c9b
 //   undefined4 DAT_00656ca3
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   CSound* g_CSoundPtr = 03f6af64

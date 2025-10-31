@@ -10,7 +10,7 @@
 //   undefined4 DAT_00619c32
 //   undefined4 DAT_00619c3a
 //   undefined4 DAT_00619c42
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 DAT_008879bc
 //   CVector3f[100] DAT_008879c0
@@ -91,7 +91,7 @@ void core_curtain_cpp_FUN_0044a920(void)
   if (((*(int *)(in_stack_00000004 + 0x65b30) != 0) || (*(int *)(in_stack_00000004 + 400) != 0)) &&
      (*(undefined4 *)(in_stack_00000004 + 0x65b30) = 0, *(int *)(in_stack_00000004 + 0x1f8) != 0)) {
     iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,(char *)(in_stack_00000004 + 0x194));
+                      (g_CEventListPtr,(char *)(in_stack_00000004 + 0x194));
     if (iVar3 != 0) {
       *(undefined4 *)(in_stack_00000004 + 400) = 1;
     }

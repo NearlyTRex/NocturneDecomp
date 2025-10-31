@@ -1,14 +1,14 @@
-// Name: core_fire.cpp_FUN_004bfac0
+// Name: core_fire.cpp_CBulletHole_render_FUN_004bfac0
 // Address: 004bfac0
 // Address Range: [[004bfac0, 004bfd2c] [004bfd38, 004bfdf2]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_FUN_004bfac0(void)
+// Signature: void core_fire.cpp_CBulletHole_render_FUN_004bfac0(CBulletHole * this_ptr)
 // Cross-references:
 //   core_fire.cpp_CFireEffect_FUN_004c74a0 (004c74a0) at 004c75b1 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireEffect_render_FUN_004c7180 (004c7180) at 004c7287 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0065dca8
-//   undefined4 DAT_0065dcac
+//   float FLOAT_0065dca8 = 256
+//   float FLOAT_0065dcac = 65536
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 g_RenderVertexBuffer[0].u
@@ -33,7 +33,7 @@
 //   undefined4 g_RenderVertexBuffer[3].fog
 //   undefined4 DAT_00780000
 //   CDemonRenderer g_CDemonRendererInstance
-//   undefined4 DAT_02d12dcc
+//   SMRGLPrimitiveQuadIndex g_BillboardPrimitive
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
 //   core_actor.cpp_CDemonActor_FUN_00408e80
@@ -48,43 +48,40 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void __cdecl core_fire_cpp_FUN_004bfac0(void)
+void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr)
 
 {
   float fVar1;
   int iVar2;
   int iVar3;
   BADSPACEBASE *in_ESP;
-  CVector3f *in_stack_00000004;
-  CVector3f *rotation;
+  CVector3i *rotation;
   CVector3i local_38;
   int local_2c;
   int local_28;
   float local_18;
   float local_14;
   
-  if ((CDemonActor *)in_stack_00000004[1].y == (CDemonActor *)0x0) {
+  if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr,in_stack_00000004);
-    rotation = (CVector3f *)0x0;
+              (g_CDemonRendererPtr,&this_ptr->position);
+    rotation = (CVector3i *)0x0;
   }
   else {
-    core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)in_stack_00000004[1].y);
-    rotation = in_stack_00000004 + 3;
+    core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(this_ptr->actor_ptr);
+    rotation = (CVector3i *)&this_ptr->transformed_pos;
   }
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)&in_stack_00000004[1].z,(CVector3i *)rotation);
-  iVar3 = ((uint)in_stack_00000004[2].z & 1) * 0x800000;
+            (g_CDemonRendererPtr,(CVector3i *)&this_ptr->surface_normal,rotation);
+  iVar3 = (this_ptr->texture_index & 1U) * 0x800000;
   g_RenderVertexBuffer[0].u = (float)(iVar3 + 0x80000);
-  iVar2 = ((uint)in_stack_00000004[2].z & 2) * 0x400000;
+  iVar2 = (this_ptr->texture_index & 2U) * 0x400000;
   g_RenderVertexBuffer[1].u = (float)(iVar3 + 0x780000);
   g_RenderVertexBuffer[0].v = (float)(iVar2 + 0x780000);
   g_RenderVertexBuffer[2].v = (float)(iVar2 + 0x80000);
-  local_38.x = (int)ROUND(_DAT_0065dca8 * -0.17);
-  local_38.y = (int)ROUND(_DAT_0065dca8 * -0.17);
-  local_38.z = (int)ROUND(_DAT_0065dca8 * 0.0);
+  local_38.x = (int)ROUND(FLOAT_0065dca8 * -0.17);
+  local_38.y = (int)ROUND(FLOAT_0065dca8 * -0.17);
+  local_38.z = (int)ROUND(FLOAT_0065dca8 * 0.0);
   g_RenderVertexBuffer[1].v = g_RenderVertexBuffer[0].v;
   g_RenderVertexBuffer[2].u = g_RenderVertexBuffer[1].u;
   g_RenderVertexBuffer[3].u = g_RenderVertexBuffer[0].u;
@@ -97,11 +94,11 @@ void __cdecl core_fire_cpp_FUN_004bfac0(void)
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,
              (CVector3i *)&stack0xfffffff4);
-  local_14 = (float)(int)ROUND(_DAT_0065dca8 * -0.17);
-  fVar1 = _DAT_0065dca8 * 0.17;
+  local_14 = (float)(int)ROUND(FLOAT_0065dca8 * -0.17);
+  fVar1 = FLOAT_0065dca8 * 0.17;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)&local_14);
-  if (in_stack_00000004[1].y == 0.0) {
+  if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     g_RenderVertexBuffer[0].color = 0xffff;
     g_RenderVertexBuffer[0].fog = 9.18341e-41;
     g_RenderVertexBuffer[1].light = 9.18341e-41;
@@ -116,19 +113,19 @@ void __cdecl core_fire_cpp_FUN_004bfac0(void)
     g_RenderVertexBuffer[0].light = 9.18341e-41;
   }
   else {
-    core_actor_cpp_CDemonActor_FUN_00408e80((CDemonActor *)in_stack_00000004[1].y);
-    local_38.z = (int)ROUND(local_18 * _DAT_0065dcac);
-    local_2c = (int)ROUND(local_14 * _DAT_0065dcac);
-    local_28 = (int)ROUND((float)(int)ROUND(fVar1) * _DAT_0065dcac);
+    core_actor_cpp_CDemonActor_FUN_00408e80(this_ptr->actor_ptr);
+    local_38.z = (int)ROUND(local_18 * FLOAT_0065dcac);
+    local_2c = (int)ROUND(local_14 * FLOAT_0065dcac);
+    local_28 = (int)ROUND((float)(int)ROUND(fVar1) * FLOAT_0065dcac);
     core_set_cpp_CDemonSet_CallLightVertexColor_FUN_0056e110(g_CDemonSetPtr);
   }
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-            (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&DAT_02d12dcc);
-  if ((CDemonActor *)in_stack_00000004[1].y == (CDemonActor *)0x0) {
+            (g_CDemonRendererPtr,&g_BillboardPrimitive.base);
+  if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     return;
   }
-  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)in_stack_00000004[1].y);
+  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(this_ptr->actor_ptr);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   return;
 }
@@ -136,7 +133,7 @@ void __cdecl core_fire_cpp_FUN_004bfac0(void)
 
 // Assembly code:
 // 004bfac0: PUSH EBX
-//   Label: core_fire.cpp_FUN_004bfac0
+//   Label: core_fire.cpp_CBulletHole_render_FUN_004bfac0
 // 004bfac1: PUSH ESI
 // 004bfac2: PUSH EDI
 // 004bfac3: PUSH EBP

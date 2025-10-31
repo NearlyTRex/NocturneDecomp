@@ -14,7 +14,7 @@
 //   double DOUBLE_0062ec0e = 4
 //   double DOUBLE_0062ec16 = 5
 //   double DOUBLE_0062ec1e = 0.349065850388889
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 DAT_02d05310
 //   undefined4 g_CDemonSetInstance.damage_listener_count

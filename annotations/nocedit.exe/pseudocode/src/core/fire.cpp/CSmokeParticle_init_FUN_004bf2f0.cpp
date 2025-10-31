@@ -1,8 +1,8 @@
-// Name: core_fire.cpp_CSmokeParticle_FUN_004bf2f0
+// Name: core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0
 // Address: 004bf2f0
 // Address Range: [[004bf2f0, 004bf33e] [004bf35f, 004bf382]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CSmokeParticle_FUN_004bf2f0(CSmokeParticle * this_ptr)
+// Signature: void core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0(CSmokeParticle * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, int alpha_value)
 // Cross-references:
 //   core_fire.cpp_CFireEffect_FUN_004c76a0 (004c76a0) at 004c77d4 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireEffect_FUN_004c7b20 (004c7b20) at 004c7b6c [UNCONDITIONAL_CALL]
@@ -11,45 +11,45 @@
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_CSmokeParticle_FUN_004bf2f0(CSmokeParticle *this_ptr)
+void __cdecl
+core_fire_cpp_CSmokeParticle_init_FUN_004bf2f0
+          (CSmokeParticle *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,
+          int alpha_value)
 
 {
   CVector3f *pCVar1;
   float fVar2;
-  float *in_stack_00000008;
-  float in_stack_0000000c;
-  float *in_stack_00000010;
   int in_stack_00000018;
   
-  if (&this_ptr->position != (CVector3f *)in_stack_00000008) {
-    (this_ptr->position).x = *in_stack_00000008;
-    (this_ptr->position).y = in_stack_00000008[1];
-    (this_ptr->position).z = in_stack_00000008[2];
+  if (&this_ptr->position != position) {
+    (this_ptr->position).x = position->x;
+    (this_ptr->position).y = position->y;
+    (this_ptr->position).z = position->z;
   }
   pCVar1 = &this_ptr->wind_influence;
-  if (in_stack_00000010 == (float *)0x0) {
+  if (wind_influence == (CVector3f *)0x0) {
     (this_ptr->wind_influence).z = 0.0;
     (this_ptr->wind_influence).y = (this_ptr->wind_influence).z;
     pCVar1->x = (this_ptr->wind_influence).y;
   }
-  else if (pCVar1 != (CVector3f *)in_stack_00000010) {
-    pCVar1->x = *in_stack_00000010;
-    (this_ptr->wind_influence).y = in_stack_00000010[1];
-    (this_ptr->wind_influence).z = in_stack_00000010[2];
+  else if (pCVar1 != wind_influence) {
+    pCVar1->x = wind_influence->x;
+    (this_ptr->wind_influence).y = wind_influence->y;
+    (this_ptr->wind_influence).z = wind_influence->z;
   }
   this_ptr->age = 0.0;
-  this_ptr->drag_factor = in_stack_0000000c;
+  this_ptr->drag_factor = drag_factor;
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.95,1.05);
   this_ptr->active = 1;
   this_ptr->vertical_accel = fVar2;
-  this_ptr->field6_0x28 = in_stack_00000018;
+  this_ptr->alpha_value = in_stack_00000018;
   return;
 }
 
 
 // Assembly code:
 // 004bf2f0: PUSH EBX
-//   Label: core_fire.cpp_CSmokeParticle_FUN_004bf2f0
+//   Label: core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0
 // 004bf2f1: SUB ESP,0x4
 // 004bf2f4: MOV EBX,dword ptr [ESP + 0xc]
 // 004bf2f8: MOV ECX,dword ptr [ESP + 0x10]

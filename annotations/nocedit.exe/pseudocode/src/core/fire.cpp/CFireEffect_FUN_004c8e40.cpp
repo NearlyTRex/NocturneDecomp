@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_fire.cpp_CFireEffect_FUN_004c8dd0 (004c8dd0) at 004c8e05 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_02d678cc
+//   CExplosion* g_CFireEffectExplosionsEnd
 //   CToss[20] g_CFireEffectTosses
 // Function calls:
 //   core_fire.cpp_CToss_create_FUN_004c3ee0
@@ -16,16 +16,18 @@
 int __cdecl core_fire_cpp_CFireEffect_FUN_004c8e40(CFireEffect *this_ptr)
 
 {
-  int iVar1;
+  char *pcVar1;
+  CExplosion *pCVar2;
   
-  iVar1 = DAT_02d678cc;
-  core_fire_cpp_CToss_create_FUN_004c3ee0(g_CFireEffectTosses + DAT_02d678cc);
-  DAT_02d678cc = DAT_02d678cc + 1;
-  if (DAT_02d678cc < 0x14) {
-    return iVar1;
+  pCVar2 = g_CFireEffectExplosionsEnd;
+  core_fire_cpp_CToss_create_FUN_004c3ee0(g_CFireEffectTosses + (int)g_CFireEffectExplosionsEnd);
+  pcVar1 = g_CFireEffectExplosionsEnd->field0_0x0;
+  g_CFireEffectExplosionsEnd = (CExplosion *)(pcVar1 + 1);
+  if ((int)(pcVar1 + 1) < 0x14) {
+    return (int)pCVar2;
   }
-  DAT_02d678cc = 0;
-  return iVar1;
+  g_CFireEffectExplosionsEnd = (CExplosion *)0x0;
+  return (int)pCVar2;
 }
 
 

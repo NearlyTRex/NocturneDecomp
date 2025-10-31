@@ -9,7 +9,7 @@
 //   undefined4 DAT_00615b11
 //   undefined4 DAT_0065ac10
 //   CConsole* g_CConsolePtr = 0083b1a4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CConsole g_ConsolePtr
 //   undefined4 DAT_02d05310
 // Function calls:
@@ -119,7 +119,7 @@ void __cdecl core_biggs_cpp_CBiggs_FUN_00418700(CBiggs *this_ptr)
     core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020();
     core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
     iVar5 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,this_ptr->field4_0xc040 + 0xc2c);
+                      (g_CEventListPtr,this_ptr->field4_0xc040 + 0xc2c);
     if (iVar5 != 0) {
       this_ptr->morph_timer = 0.0;
       this_ptr->morphing = 1;

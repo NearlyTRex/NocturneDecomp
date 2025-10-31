@@ -1,8 +1,8 @@
-// Name: core_fire.cpp_CSpark_FUN_004c0300
+// Name: core_fire.cpp_CSpark_initRender_FUN_004c0300
 // Address: 004c0300
 // Address Range: [[004c0300, 004c041c]]
 // Convention: __cdecl
-// Signature: int core_fire.cpp_CSpark_FUN_004c0300(CSpark * this_ptr)
+// Signature: int core_fire.cpp_CSpark_initRender_FUN_004c0300(CSpark * this_ptr)
 // Cross-references:
 //   core_fire.cpp_CFireEffect_render_FUN_004c7180 (004c7180) at 004c732a [UNCONDITIONAL_CALL]
 // Globals:
@@ -19,30 +19,28 @@
 //   CDemonCamera* g_CurrentSceneCamera
 //   undefined4 DAT_00f80000
 //   CDemonRenderer g_CDemonRendererInstance
-//   undefined4 DAT_02d12db4
-//   undefined4 DAT_02d12db8
+//   CVector3i g_BillboardCameraRight
+//   undefined4 g_BillboardCameraRight.y
 //   undefined4 DAT_02d12dbc
-//   undefined4 DAT_02d12dc0
-//   undefined4 DAT_02d12dc4
-//   undefined4 DAT_02d12dc8
-//   undefined4 DAT_02d12dd0
-//   undefined4 DAT_02d12dd4
-//   undefined4 DAT_02d12dd8
-//   undefined4 DAT_02d12ddc
-//   undefined4 DAT_02d12de0
-//   undefined4 DAT_02d12de4
-//   undefined4 DAT_02d12de8
-//   undefined4 DAT_02d12dec
-//   undefined4 DAT_02d12df0
+//   CVector3i g_BillboardCameraUp
+//   undefined4 g_BillboardCameraUp.y
+//   undefined4 g_BillboardCameraUp.z
+//   undefined4 g_BillboardPrimitive.base.base.count
+//   undefined4 g_BillboardPrimitive.base.surface_normal.A
+//   undefined4 g_BillboardPrimitive.base.surface_normal.B
+//   undefined4 g_BillboardPrimitive.base.surface_normal.C
+//   undefined4 g_BillboardPrimitive.base.surface_normal.D
+//   undefined4 g_BillboardPrimitive.vertices[0]
+//   undefined4 g_BillboardPrimitive.vertices[1]
+//   undefined4 g_BillboardPrimitive.vertices[2]
+//   undefined4 g_BillboardPrimitive.vertices[3]
 // Function calls:
 //   crt_math.c_round_FUN_005fe6b0
 //   engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-int __cdecl core_fire_cpp_CSpark_FUN_004c0300(CSpark *this_ptr)
+int __cdecl core_fire_cpp_CSpark_initRender_FUN_004c0300(CSpark *this_ptr)
 
 {
   undefined4 extraout_EAX;
@@ -57,7 +55,7 @@ int __cdecl core_fire_cpp_CSpark_FUN_004c0300(CSpark *this_ptr)
   float10 fVar7;
   float10 fVar8;
   double dVar9;
-  int aiStackY_ffc [996];
+  float afStackY_ffc [996];
   CVector3i *in_stack_ffffff98;
   int iStack_64;
   undefined4 local_60;
@@ -65,17 +63,17 @@ int __cdecl core_fire_cpp_CSpark_FUN_004c0300(CSpark *this_ptr)
   float fStack_50;
   float fStack_44;
   int aiStack_3c [10];
-  undefined4 uStack_14;
+  int iStack_14;
   undefined4 uStack_10;
   
   bVar5 = 0;
-  _DAT_02d12dd0 = 4;
-  _DAT_02d12dd4 = 0;
-  _DAT_02d12dd8 = 0;
-  _DAT_02d12ddc = 0;
-  _DAT_02d12de0 = 0;
-  _DAT_02d12de4 = 0;
-  _DAT_02d12de8 = 1;
+  g_BillboardPrimitive.base.base.count = 4;
+  g_BillboardPrimitive.base.surface_normal.A = 0;
+  g_BillboardPrimitive.base.surface_normal.B = 0;
+  g_BillboardPrimitive.base.surface_normal.C = 0;
+  g_BillboardPrimitive.base.surface_normal.D = 0;
+  g_BillboardPrimitive.vertices[0] = 0;
+  g_BillboardPrimitive.vertices[1] = 1;
   g_RenderVertexBuffer[0].u = 7.34684e-40;
   g_RenderVertexBuffer[0].v = 2.2775203e-38;
   g_RenderVertexBuffer[1].u = 2.2775203e-38;
@@ -84,15 +82,16 @@ int __cdecl core_fire_cpp_CSpark_FUN_004c0300(CSpark *this_ptr)
   g_RenderVertexBuffer[2].v = 7.34684e-40;
   g_RenderVertexBuffer[3].u = 7.34684e-40;
   g_RenderVertexBuffer[3].v = 7.34684e-40;
-  _DAT_02d12dec = 2;
-  _DAT_02d12df0 = 3;
+  g_BillboardPrimitive.vertices[2] = 2;
+  g_BillboardPrimitive.vertices[3] = 3;
   engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
             (g_CDemonRendererPtr,in_stack_ffffff98);
-  DAT_02d12db4 = uStack_14;
-  (&DAT_02d12db8)[(uint)bVar5 * -2] = (&uStack_10)[(uint)bVar5 * -2];
-  (&DAT_02d12dbc)[(uint)bVar5 * -2 + (uint)bVar5 * -2] =
+  g_BillboardCameraRight.x = iStack_14;
+  *(undefined4 *)((int)&g_BillboardCameraRight + (uint)bVar5 * -8 + 4) =
+       (&uStack_10)[(uint)bVar5 * -2];
+  *(undefined4 *)((uint)bVar5 * -8 + 0x2d12dbc + (uint)bVar5 * -8) =
        *(undefined4 *)(&stack0xfffffff4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-  DAT_02d12db8 = 0;
+  g_BillboardCameraRight.y = 0;
   pCVar2 = &(g_CurrentSceneCamera->base).rotation_matrix;
   piVar3 = aiStack_3c;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -116,16 +115,16 @@ int __cdecl core_fire_cpp_CSpark_FUN_004c0300(CSpark *this_ptr)
   dVar9 = crt_math_c_round_FUN_005fe6b0(dVar9);
   local_60 = 0x4c0400;
   dVar9 = crt_math_c_round_FUN_005fe6b0(dVar9);
-  _DAT_02d12dc0 = (int)ROUND(fVar7);
-  _DAT_02d12dc4 = (int)ROUND(fVar8);
-  _DAT_02d12dc8 = (int)ROUND(fVar6);
+  g_BillboardCameraUp.x = (int)ROUND(fVar7);
+  g_BillboardCameraUp.y = (int)ROUND(fVar8);
+  g_BillboardCameraUp.z = (int)ROUND(fVar6);
   return SUB84(dVar9,0);
 }
 
 
 // Assembly code:
 // 004c0300: PUSH EBX
-//   Label: core_fire.cpp_CSpark_FUN_004c0300
+//   Label: core_fire.cpp_CSpark_initRender_FUN_004c0300
 // 004c0301: PUSH ESI
 // 004c0302: PUSH EDI
 // 004c0303: SUB ESP,0x5c

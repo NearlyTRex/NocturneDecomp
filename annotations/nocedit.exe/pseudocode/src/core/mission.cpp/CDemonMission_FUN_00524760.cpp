@@ -14,7 +14,7 @@
 //   TerminatedCString s_Can_t_run_mission_no_loc_00639363
 //   TerminatedCString s_Loading_script_00639385
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CGame* g_CGamePtr = 02d81a9c
 //   CLevelLoader* g_CLevelLoaderPtr = 02dcd850
 //   CScript* g_CScriptPtr = 0310f858

@@ -6,7 +6,7 @@
 // Globals:
 //   double DOUBLE_0063ed01 = -1
 //   double DOUBLE_0063ed09 = 0.100000000000000
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 g_CEnemyClassInfo.name_hash
 //   undefined4 DAT_02d05310
@@ -41,14 +41,14 @@ void core_pendulum_cpp_FUN_0054a180(void)
   
   if (*(int *)(in_stack_00000004 + 0x39c) == 0) {
     iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,(char *)(in_stack_00000004 + 0x2d4));
+                      (g_CEventListPtr,(char *)(in_stack_00000004 + 0x2d4));
     if (iVar1 == 0) {
       return;
     }
     *(undefined4 *)(in_stack_00000004 + 0x39c) = 1;
   }
   iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                    (g_CEventListInstance,(char *)(in_stack_00000004 + 0x338));
+                    (g_CEventListPtr,(char *)(in_stack_00000004 + 0x338));
   if ((iVar1 != 0) && (*(int *)(in_stack_00000004 + 0x430) != 0x3f800000)) {
     *(undefined4 *)(in_stack_00000004 + 0x434) = 0;
     *(undefined4 *)(in_stack_00000004 + 0x430) = 0x3f800000;

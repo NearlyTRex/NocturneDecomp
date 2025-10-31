@@ -10,7 +10,7 @@
 //   double DOUBLE_0063f786 = -20
 //   double DOUBLE_0063f78e = 10
 //   double DOUBLE_0063f796 = 0.0500000000000000
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CSound* g_CSoundPtr = 03f6af64
 //   undefined4 DAT_02d05310
@@ -111,7 +111,7 @@ void core_platfrm_cpp_FUN_0054cc30(void)
   switch(in_stack_00000004[2].location.position.y) {
   case 0.0:
     iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,(char *)&in_stack_00000004[2].scale);
+                      (g_CEventListPtr,(char *)&in_stack_00000004[2].scale);
     bVar14 = iVar2 != 0;
     if (bVar14) {
       core_platfrm_cpp_FUN_0054d690();
@@ -120,7 +120,7 @@ void core_platfrm_cpp_FUN_0054cc30(void)
     break;
   case 1.4013e-45:
     iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,in_stack_00000004[2].create_event + 0x2c);
+                      (g_CEventListPtr,in_stack_00000004[2].create_event + 0x2c);
     bVar14 = iVar2 != 0;
     if (bVar14) {
       core_platfrm_cpp_FUN_0054d690();
@@ -129,10 +129,10 @@ void core_platfrm_cpp_FUN_0054cc30(void)
     break;
   case 2.8026e-45:
     iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,(char *)&in_stack_00000004[2].scale);
+                      (g_CEventListPtr,(char *)&in_stack_00000004[2].scale);
     if (iVar2 == 0) {
       iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                        (g_CEventListInstance,in_stack_00000004[2].create_event + 0x2c);
+                        (g_CEventListPtr,in_stack_00000004[2].create_event + 0x2c);
       if (iVar2 != 0) {
         core_platfrm_cpp_FUN_0054d690();
       }
@@ -143,7 +143,7 @@ void core_platfrm_cpp_FUN_0054cc30(void)
     break;
   case 4.2039e-45:
     iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,in_stack_00000004[3].actor_name + 0x14);
+                      (g_CEventListPtr,in_stack_00000004[3].actor_name + 0x14);
     if (iVar2 != 0) {
       cVar1 = in_stack_00000004[3].create_event[0x14];
       in_stack_00000004[2].location.position.y = 2.8026e-45;
@@ -177,7 +177,7 @@ LAB_0054d0a2:
     goto LAB_0054d090;
   case 5.60519e-45:
     iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,in_stack_00000004[3].actor_name + 0x14);
+                      (g_CEventListPtr,in_stack_00000004[3].actor_name + 0x14);
     if (iVar2 != 0) {
       cVar1 = in_stack_00000004[3].create_event[0x14];
       in_stack_00000004[2].location.position.y = 2.8026e-45;

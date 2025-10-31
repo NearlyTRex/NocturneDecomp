@@ -1,44 +1,43 @@
-// Name: core_fire.cpp_CBulletHole_FUN_004bfa40
+// Name: core_fire.cpp_CBulletHole_initRender_FUN_004bfa40
 // Address: 004bfa40
 // Address Range: [[004bfa40, 004bfabf]]
 // Convention: __cdecl
-// Signature: void core_fire.cpp_CBulletHole_FUN_004bfa40(CBulletHole * this_ptr)
+// Signature: void core_fire.cpp_CBulletHole_initRender_FUN_004bfa40(CBulletHole * this_ptr)
 // Cross-references:
 //   core_fire.cpp_CFireEffect_FUN_004c74a0 (004c74a0) at 004c74ad [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireEffect_render_FUN_004c7180 (004c7180) at 004c7262 [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
-//   SMRGLTextureBasic DAT_0067a794
+//   SMRGLTextureBasic g_FireEffectBlackHoleTexture
 //   CDemonRenderer g_CDemonRendererInstance
-//   undefined4 DAT_02d12dd0
-//   undefined4 DAT_02d12dd4
-//   undefined4 DAT_02d12dd8
-//   undefined4 DAT_02d12ddc
-//   undefined4 DAT_02d12de4
-//   undefined4 DAT_02d12de8
-//   undefined4 DAT_02d12dec
-//   undefined4 DAT_02d12df0
+//   undefined4 g_BillboardPrimitive.base.base.count
+//   undefined4 g_BillboardPrimitive.base.surface_normal.A
+//   undefined4 g_BillboardPrimitive.base.surface_normal.B
+//   undefined4 g_BillboardPrimitive.base.surface_normal.C
+//   undefined4 g_BillboardPrimitive.vertices[0]
+//   undefined4 g_BillboardPrimitive.vertices[1]
+//   undefined4 g_BillboardPrimitive.vertices[2]
+//   undefined4 g_BillboardPrimitive.vertices[3]
 // Function calls:
 //   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 //   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void __cdecl core_fire_cpp_CBulletHole_FUN_004bfa40(CBulletHole *this_ptr)
+void __cdecl core_fire_cpp_CBulletHole_initRender_FUN_004bfa40(CBulletHole *this_ptr)
 
 {
-  _DAT_02d12dd0 = 4;
-  _DAT_02d12de4 = 0;
-  _DAT_02d12de8 = 1;
-  _DAT_02d12dec = 2;
-  _DAT_02d12df0 = 3;
-  _DAT_02d12dd4 = 0;
-  _DAT_02d12dd8 = 0;
-  _DAT_02d12de0 = 0;
-  _DAT_02d12ddc = 0xffff;
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,&DAT_0067a794);
+  g_BillboardPrimitive.base.base.count = 4;
+  g_BillboardPrimitive.vertices[0] = 0;
+  g_BillboardPrimitive.vertices[1] = 1;
+  g_BillboardPrimitive.vertices[2] = 2;
+  g_BillboardPrimitive.vertices[3] = 3;
+  g_BillboardPrimitive.base.surface_normal.A = 0;
+  g_BillboardPrimitive.base.surface_normal.B = 0;
+  g_BillboardPrimitive.base.surface_normal.D = 0;
+  g_BillboardPrimitive.base.surface_normal.C = 0xffff;
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
+            (g_CDemonRendererPtr,&g_FireEffectBlackHoleTexture);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0x8000);
   return;
 }
@@ -46,7 +45,7 @@ void __cdecl core_fire_cpp_CBulletHole_FUN_004bfa40(CBulletHole *this_ptr)
 
 // Assembly code:
 // 004bfa40: PUSH EBX
-//   Label: core_fire.cpp_CBulletHole_FUN_004bfa40
+//   Label: core_fire.cpp_CBulletHole_initRender_FUN_004bfa40
 // 004bfa41: PUSH ESI
 // 004bfa42: PUSH EDI
 // 004bfa43: MOV EDX,0x4

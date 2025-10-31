@@ -8,7 +8,7 @@
 // Globals:
 //   undefined4 DAT_0061e3a2
 //   double DOUBLE_0061e3aa = 0.100000000000000
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 DAT_02d05310
 //   CDemonSet g_CDemonSetInstance

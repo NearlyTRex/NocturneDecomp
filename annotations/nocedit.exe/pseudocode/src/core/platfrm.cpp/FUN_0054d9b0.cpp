@@ -6,7 +6,7 @@
 // Globals:
 //   undefined4 DAT_00662280
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CDemonCamera* g_CurrentSceneCamera
 //   int g_FlatShadingLightLevel
@@ -55,12 +55,12 @@ void core_platfrm_cpp_FUN_0054d9b0(void)
       return;
     }
     iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,(char *)&in_stack_00000004[2].scale);
+                      (g_CEventListPtr,(char *)&in_stack_00000004[2].scale);
     if (iVar2 != 0) {
       return;
     }
     iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,in_stack_00000004[2].create_event + 0x2c);
+                      (g_CEventListPtr,in_stack_00000004[2].create_event + 0x2c);
     if (iVar2 != 0) {
       return;
     }

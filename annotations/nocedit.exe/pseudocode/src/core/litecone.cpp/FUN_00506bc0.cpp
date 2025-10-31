@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_litecone.cpp_FUN_00506bc0()
 // Globals:
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   undefined4 DAT_02d05310
 // Function calls:
 //   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
@@ -21,7 +21,7 @@ void core_litecone_cpp_FUN_00506bc0(void)
   
   if (*(int *)(in_stack_00000004 + 0x160) == 0) {
     iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,(char *)(in_stack_00000004 + 0x164));
+                      (g_CEventListPtr,(char *)(in_stack_00000004 + 0x164));
     if (iVar1 != 0) {
       *(undefined4 *)(in_stack_00000004 + 0x160) = 1;
       return;
@@ -29,7 +29,7 @@ void core_litecone_cpp_FUN_00506bc0(void)
   }
   else {
     iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,(char *)(in_stack_00000004 + 0x1c8));
+                      (g_CEventListPtr,(char *)(in_stack_00000004 + 0x1c8));
     if (iVar1 != 0) {
       *(undefined4 *)(in_stack_00000004 + 0x160) = 0;
       return;

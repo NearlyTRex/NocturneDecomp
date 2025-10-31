@@ -38,7 +38,7 @@
 //   double DOUBLE_0062f0da = 0.350000000000000
 //   double DOUBLE_0062f0e2 = 5
 //   CConsole* g_CConsolePtr = 0083b1a4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CGore* g_CGorePtr = 02d83364
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CConsole g_ConsolePtr
@@ -319,8 +319,7 @@ LAB_004f4dd2:
                 (*(float *)(in_stack_00000004[2].cloth_data + 0x5028) <=
                  SQRT(CStack_c0.y * CStack_c0.y + fStack_c4 * fStack_c4 + CStack_c0.x * CStack_c0.x)
                 )) || (iVar9 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                                         (g_CEventListInstance,
-                                          in_stack_00000004[2].cloth_data + 0x502c),
+                                         (g_CEventListPtr,in_stack_00000004[2].cloth_data + 0x502c),
                       pCVar8 = g_CConsolePtr, iVar9 == 0)) goto LAB_004f54c2;
             in_stack_00000004[2].cloth_data[0x53dc] = '\x01';
             in_stack_00000004[2].cloth_data[0x53dd] = '\0';
@@ -777,7 +776,7 @@ LAB_004f50f1:
                            (in_stack_00000004->carry_hands[1].carry_actor,
                             g_CWeaponClassInfo.name_hash), pCVar11 != (CDemonActor *)0x0)) &&
      (iVar9 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                        (g_CEventListInstance,"deputeFireShotgun"), iVar9 != 0)) {
+                        (g_CEventListPtr,"deputeFireShotgun"), iVar9 != 0)) {
     in_stack_00000004[2].cloth_data[0x5400] = '\n';
     in_stack_00000004[2].cloth_data[0x5401] = -0x29;
     in_stack_00000004[2].cloth_data[0x5402] = '#';

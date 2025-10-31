@@ -5,7 +5,7 @@
 // Signature: void core_door.cpp_CDoor_process_FUN_004800c0(CDoor * this_ptr)
 // Globals:
 //   void* switchdataD_004800b0 = 0048011a
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 DAT_02d05310
 //   CDemonSet g_CDemonSetInstance
@@ -74,7 +74,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr)
   switch(this_ptr->door_state) {
   case 0:
     iVar7 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,this_ptr->field7_0x2e8);
+                      (g_CEventListPtr,this_ptr->field7_0x2e8);
     if (iVar7 != 0) {
       cVar1 = this_ptr->field9_0x47c[1000];
       this_ptr->door_state = 1;
@@ -107,7 +107,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr)
     break;
   case 2:
     iVar7 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,this_ptr->field7_0x2e8 + 100);
+                      (g_CEventListPtr,this_ptr->field7_0x2e8 + 100);
     if ((iVar7 != 0) &&
        (cVar1 = this_ptr->field9_0x47c[0x44c], this_ptr->door_state = 3, cVar1 != '\0')) {
       (*((this_ptr->base_actor).metadata.vtable)->playSound)

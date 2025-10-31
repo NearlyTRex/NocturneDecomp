@@ -44,7 +44,7 @@
 //   TerminatedCString s_core_game_cpp_0062cc60
 //   int g_DefaultStreamBufferSize = 0x1a4
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   TerminatedCString s_save_SAVE_TMP_0067b670
 //   undefined1 g_MagicNumEFD

@@ -12,7 +12,7 @@
 //   undefined4 DAT_00657bc4
 //   undefined4 DAT_00657bcc
 //   undefined4 DAT_00657bd4
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CGame* g_CGamePtr = 02d81a9c
 //   CSound* g_CSoundPtr = 03f6af64
@@ -74,7 +74,7 @@ void core_weather_cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0(void)
     in_stack_00000004[10] = (int)fVar1;
     if (0.0 <= fVar1) {
       iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                        (g_CEventListInstance,"noLightningFlash");
+                        (g_CEventListPtr,"noLightningFlash");
       if (iVar2 == 0) {
         local_14 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)_DAT_00657bb4 -
                    local_18;
@@ -137,7 +137,7 @@ LAB_005eeb1c:
       in_stack_00000004[0xb] = (int)(fVar1 - local_28);
       if (fVar1 - local_28 < 0.0) {
         fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,(float)in_stack_00000004[0xd]);
-        this_ptr = g_CEventListInstance;
+        this_ptr = g_CEventListPtr;
         in_stack_00000004[0xb] = (int)fVar1;
         iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
                           (this_ptr,"noLightningFlash");

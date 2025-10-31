@@ -5,7 +5,7 @@
 // Signature: undefined core_hiram.cpp_FUN_004f4550()
 // Globals:
 //   TerminatedCString s_GlassHiram_0062edfc
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   undefined4 DAT_02d05310
 //   undefined4 g_CGlassClassInfo.name_hash
@@ -48,7 +48,7 @@ void core_hiram_cpp_FUN_004f4550(void)
   iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0();
   if (*(int *)(iVar1 + 0x24) != 1) {
     iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (g_CEventListInstance,in_stack_00000004[2].cloth_data + 0x5028);
+                      (g_CEventListPtr,in_stack_00000004[2].cloth_data + 0x5028);
     if (iVar1 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
       pCVar2 = (CDemonActor *)core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);

@@ -6,7 +6,7 @@
 // Globals:
 //   TerminatedCString s_core_mimic_cpp_006386f9
 //   TerminatedCString s_CMimic_setup_can_t_use_m_0063870b
-//   CEventList* g_CEventListInstance = 02d05310
+//   CEventList* g_CEventListPtr = 02d05310
 //   CNetGame* g_CNetGameInstance = 02f7c740
 //   undefined4 DAT_02d05310
 //   CHero*[4] g_HeroActors
@@ -60,16 +60,15 @@ void core_mimic_cpp_CMimic_setup2_FUN_0051f780(void)
     if (*(int *)(in_stack_00000004[6].cloth_data + 0x1e84) < 2) {
       if ((*(int *)(in_stack_00000004[6].cloth_data + 0x1e84) < 1) &&
          (iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                            (g_CEventListInstance,
-                             (char *)&in_stack_00000004[1].base_actor.is_transparent), iVar3 != 0))
-      {
+                            (g_CEventListPtr,(char *)&in_stack_00000004[1].base_actor.is_transparent
+                            ), iVar3 != 0)) {
         in_stack_00000004[6].cloth_data[0x1e84] = '\x01';
         in_stack_00000004[6].cloth_data[0x1e85] = '\0';
         in_stack_00000004[6].cloth_data[0x1e86] = '\0';
         in_stack_00000004[6].cloth_data[0x1e87] = '\0';
       }
       iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                        (g_CEventListInstance,in_stack_00000004[1].base_actor.create_event + 0x20);
+                        (g_CEventListPtr,in_stack_00000004[1].base_actor.create_event + 0x20);
       if ((iVar3 != 0) &&
          (core_mimic_cpp_FUN_0051f930(), *(int *)(in_stack_00000004[6].cloth_data + 0x1e84) == 1)) {
         iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0();
