@@ -1,0 +1,20 @@
+// Name: core_flame.cpp_FUN_004cb0e0
+// Address: 004cb0e0
+// Address Range: [[004cb0e0, 004cb0e0]]
+// Convention: unknown
+// Signature: undefined core_flame.cpp_FUN_004cb0e0()
+
+#include "nocturne.h"
+
+/* Signature: undefined1 actors_other_flame.cpp_FUN_004cb0e0() */
+
+void core_flame_cpp_FUN_004cb0e0(void)
+
+{
+  return;
+}
+
+
+// Assembly code:
+// 004cb0e0: RET
+//   Label: core_flame.cpp_FUN_004cb0e0

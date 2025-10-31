@@ -1,0 +1,11 @@
+#pragma once
+
+// Function Definition: PHANDLER_ROUTINE_FUNC
+typedef BOOL (*PHANDLER_ROUTINE_FUNC)(DWORD CtrlType);
+
+// Function Definition: PTHREAD_START_ROUTINE_FUNC
+typedef DWORD (*PTHREAD_START_ROUTINE_FUNC)(LPVOID lpThreadParameter);
+
+// Function Definition: PTOP_LEVEL_EXCEPTION_FILTER_FUNC
+typedef LONG (*PTOP_LEVEL_EXCEPTION_FILTER_FUNC)(_EXCEPTION_POINTERS* ExceptionInfo);
+

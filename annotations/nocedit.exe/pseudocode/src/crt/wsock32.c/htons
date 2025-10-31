@@ -1,0 +1,28 @@
+// Name: crt_wsock32.c_htons
+// Address: 00610f2e
+// Address Range: [[00610f2e, 00610f33]]
+// Convention: __stdcall
+// Signature: ushort crt_wsock32.c_htons(ushort hostshort)
+// Cross-references:
+//   support_trisock.cpp_buildSockaddrIn_FUN_005e19d0 (005e19d0) at 005e19eb [UNCONDITIONAL_CALL]
+
+
+#include "nocturne.h"
+
+ushort __stdcall crt_wsock32_c_htons(ushort hostshort)
+
+{
+  ushort uVar1;
+  
+                    /* WARNING: Could not recover jumptable at 0x00610f2e. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  uVar1 = (*PTR_htons_006116c4)(hostshort);
+  return uVar1;
+}
+
+
+// Assembly code:
+// 00610f2e: JMP dword ptr [0x006116c4]
+//   Label: crt_wsock32.c_htons
+//   XREF to: EXTERNAL:000000ba (COMPUTED_JUMP)
+//   XREF to: 006116c4 (INDIRECTION)

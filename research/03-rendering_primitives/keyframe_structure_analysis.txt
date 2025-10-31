@@ -1,0 +1,117 @@
+# SMRGLKeyframe Structure Analysis
+
+## Evidence from loadAndInterpolateKeyframes_FUN_00501d40:
+
+### 1. Keyframe pointer + 0x10 = vertex_count
+Line 327 assembly:
+```asm
+MOV EAX,dword ptr [EDI + 0x10]  ; EDI = keyframe pointer
+TEST EAX,EAX                     ; Check if vertex_count > 0
+```
+
+### 2. Keyframe pointer + 0x14 = first vertex
+Line 329 assembly:
+```asm
+ADD ECX,0x14  ; ECX now points to first vertex
+```
+
+Line 104 pseudocode:
+```c
+puVar7 = (uint *)(*(int *)(iVar3 + 0x118) + 0x14);
+```
+This is: `loaded_frames[i] + 0x14` = vertices
+
+### 3. Vertices are 12 bytes each (CVector3i)
+Line 351 assembly:
+```asm
+ADD ECX,0xc  ; Move to next vertex
+```
+
+Lines 335-348 access three 4-byte values per vertex:
+```asm
+MOV EDX,dword ptr [ECX]      ; vertex.x
+MOV EDX,dword ptr [ECX + 0x4] ; vertex.y
+MOV EDX,dword ptr [ECX + 0x8] ; vertex.z
+```
+
+### 4. Field at +0x4 is compared between keyframes
+Lines 266-268 assembly:
+```asm
+MOV EAX,dword ptr [EAX + 0x4]  ; Get size from base keyframe
+MOV ESI,dword ptr [EBX + 0x4]  ; Get size from loaded keyframe
+CMP EAX,ESI                     ; Compare sizes
+```
+
+This is the standard MRGL size field.
+
+### 5. Field at +0x8 is checked against 2
+Lines 203-205 assembly:
+```asm
+MOV EAX,dword ptr [EDI + 0x8]
+CMP EAX,0x2
+JZ valid
+```
+
+This checks if child_count == 2 (keyframes must have 2 children?)
+
+## Proposed Structure:
+
+Since vertices start at +0x14 (20 bytes), and we know:
+- +0x00: type (int)
+- +0x04: size (int)
+- +0x08: child_count (int) - must be 2
+- +0x0C: ??? (int) - unknown purpose
+- +0x10: vertex_count (int)
+- +0x14: vertices[] (CVector3i array)
+
+We should define it as:
+
+```c
+// Keyframe data header (20 bytes)
+typedef struct SMRGLKeyframeHeader {
+    int type;         // 0x00 - MRGL type identifier
+    int size;         // 0x04 - Total size in bytes
+    int child_count;  // 0x08 - Number of child blocks (always 2 for keyframes?)
+    int unknown_0C;   // 0x0C - Purpose unknown
+    int vertex_count; // 0x10 - Number of vertices in this keyframe
+} SMRGLKeyframeHeader; // 20 bytes (0x14)
+
+// Keyframe vertex data entry
+typedef struct SMRGLKeyframeVertexData {
+    SMRGLKeyframeHeader header; // 0x00
+    CVector3i vertices[1];      // 0x14 - Actually variable length based on vertex_count
+} SMRGLKeyframeVertexData;
+```
+
+Better approach following primitive pattern:
+```c
+typedef struct SMRGLKeyframeData {
+    SMRGLKeyframeHeader header; // 0x00 (20 bytes)
+    CVector3i vertex;           // 0x14 (12 bytes) - single vertex entry
+} SMRGLKeyframeData; // 32 bytes per vertex entry
+
+// To access multiple vertices, cast to SMRGLKeyframeHeader* and use:
+// CVector3i* vertices = (CVector3i*)((char*)header + 0x14);
+```
+
+## SMRGLKeyframeModel Structure
+
+Current definition appears correct:
+```c
+typedef struct SMRGLKeyframeModel {
+    int type;                    // 0x00
+    int size;                    // 0x04
+    int keyframe_count;          // 0x08
+    int cycle_length;            // 0x0C
+    int current_position;        // 0x10
+    SMRGLKeyframe* base_keyframes; // 0x14
+    char filenames[16][16];      // 0x18 (256 bytes)
+    SMRGLKeyframe* loaded_frames[16]; // 0x118 (64 bytes)
+} SMRGLKeyframeModel; // 344 bytes (0x158)
+```
+
+This matches the assembly accesses:
+- +0x08: keyframe_count ✓
+- +0x14: base_keyframes pointer ✓
+- +0x18: filenames array ✓
+- +0x118: loaded_frames array ✓

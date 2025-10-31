@@ -1,0 +1,52 @@
+#pragma once
+
+// Function prototypes for core/crossbow.cpp
+// Generated from Ghidra function signatures
+
+// Original: core_crossbow.cpp_staticInit_FUN_00448c00
+// Address: 00448c00
+CDemonActorType * staticInit(void);
+
+// Original: core_crossbow.cpp_FUN_00448c30
+// Address: 00448c30
+undefined FUN_00448c30();
+
+// Original: core_crossbow.cpp_FUN_00448c60
+// Address: 00448c60
+undefined FUN_00448c60();
+
+// Original: core_crossbow.cpp_FUN_00448c70
+// Address: 00448c70
+CCrossbow * FUN_00448c70(CCrossbow * this_ptr);
+
+// Original: core_crossbow.cpp_FUN_00448d30
+// Address: 00448d30
+undefined FUN_00448d30();
+
+// Original: core_crossbow.cpp_FUN_00448e00
+// Address: 00448e00
+undefined FUN_00448e00();
+
+// Original: core_crossbow.cpp_FUN_00448e80
+// Address: 00448e80
+undefined FUN_00448e80();
+
+// Original: core_crossbow.cpp_FUN_00448eb0
+// Address: 00448eb0
+undefined FUN_00448eb0();
+
+// Original: core_crossbow.cpp_FUN_00448f20
+// Address: 00448f20
+undefined FUN_00448f20();
+
+// Original: core_crossbow.cpp_FUN_00449540
+// Address: 00449540
+undefined FUN_00449540();
+
+// Original: core_crossbow.cpp_FUN_00449570
+// Address: 00449570
+undefined FUN_00449570();
+
+// Original: core_crossbow.cpp_FUN_004495a0
+// Address: 004495a0
+CCrossbow * FUN_004495a0(CCrossbow * this_ptr, uint d1, uint d2, uint d3);

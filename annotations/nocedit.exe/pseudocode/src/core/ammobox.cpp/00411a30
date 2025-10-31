@@ -1,0 +1,154 @@
+// Name: core_ammobox.cpp_00411a30
+// Address: 00411a30
+// Address Range: [[00411a30, 00411a99]]
+// Convention: unknown
+// Signature: undefined core_ammobox.cpp_00411a30()
+// Cross-references:
+//   core_ammobox.cpp_CAmmoBox_getPropertyList_FUN_00411b30 (00411b30) at 00411be4 [DATA]
+// Globals:
+//   void* switchdataD_00411a1c
+//   TerminatedCString s_Generic_00614c6f
+//   undefined4 s_eneric_00614c70
+//   TerminatedCString s_Holy_00614c77
+//   undefined4 s_oly_00614c78
+//   TerminatedCString s_Wood_00614c7c
+//   undefined4 s_ood_00614c7d
+//   TerminatedCString s_Silver_00614c81
+//   undefined4 s_ilver_00614c82
+//   TerminatedCString s_Gold_00614c88
+//   undefined4 s_old_00614c89
+//   undefined4 s_ld_00614c8a
+//   undefined4 s_d_00614c8b
+//   undefined4 g_CAmmoBoxClassInfo.name_hash
+// Function calls:
+//   core_actor.cpp_CDemonActor_GetWeaponClassTypeMaybe_FUN_0040c790
+
+#include "nocturne.h"
+
+void core_ammobox_cpp_00411a30(void)
+
+{
+  char cVar1;
+  int iVar2;
+  char *pcVar3;
+  char *in_stack_0000000c;
+  
+  iVar2 = core_actor_cpp_CDemonActor_GetWeaponClassTypeMaybe_FUN_0040c790();
+  switch(*(undefined4 *)(iVar2 + 0x318)) {
+  case 0:
+    pcVar3 = "Generic";
+    break;
+  case 1:
+    pcVar3 = "Holy";
+    break;
+  case 2:
+    pcVar3 = "Wood";
+    break;
+  case 3:
+    pcVar3 = "Silver";
+    break;
+  case 4:
+    pcVar3 = "Gold";
+    break;
+  default:
+    goto switchD_00411a55_default;
+  }
+  do {
+    cVar1 = *pcVar3;
+    *in_stack_0000000c = cVar1;
+    if (cVar1 == '\0') {
+      return;
+    }
+    cVar1 = pcVar3[1];
+    pcVar3 = pcVar3 + 2;
+    in_stack_0000000c[1] = cVar1;
+    in_stack_0000000c = in_stack_0000000c + 2;
+  } while (cVar1 != '\0');
+switchD_00411a55_default:
+  return;
+}
+
+
+// Assembly code:
+// 00411a30: PUSH ESI
+//   Label: core_ammobox.cpp_00411a30
+// 00411a31: PUSH EDI
+// 00411a32: MOV EDI,dword ptr [ESP + 0x14]
+//   XREF to: Stack[0xc] (READ)
+// 00411a36: MOV EDX,dword ptr [0x008223e0]
+//   XREF to: 008223e0 (READ)
+// 00411a3c: PUSH EDX
+// 00411a3d: MOV ECX,dword ptr [ESP + 0x10]
+//   XREF to: Stack[0x4] (READ)
+// 00411a41: PUSH ECX
+// 00411a42: CALL core_actor.cpp_CDemonActor_GetWeaponClassTypeMaybe_FUN_0040c790
+//   XREF to: 0040c790 (UNCONDITIONAL_CALL)
+// 00411a47: MOV EAX,dword ptr [EAX + 0x318]
+// 00411a4d: ADD ESP,0x8
+// 00411a50: CMP EAX,0x4
+// 00411a53: JA 0x00411a7b
+//   XREF to: 00411a7b (CONDITIONAL_JUMP)
+// 00411a55: JMP dword ptr [EAX*0x4 + 0x411a1c]
+//   Label: switchD
+//   XREF to: 00411a5c (COMPUTED_JUMP)
+//   XREF to: 00411a7e (COMPUTED_JUMP)
+//   XREF to: 00411a85 (COMPUTED_JUMP)
+//   XREF to: 00411a8c (COMPUTED_JUMP)
+//   XREF to: 00411a93 (COMPUTED_JUMP)
+//   XREF to: 00411a1c (DATA)
+// 00411a5c: MOV ESI,0x614c6f
+//   Label: caseD_0
+//   XREF to: 00614c6f (DATA)
+// 00411a61: PUSH EDI
+//   Label: LAB_00411a61
+// 00411a62: MOV AL,byte ptr [ESI]
+//   Label: LAB_00411a62
+//   XREF to: 00614c88 (READ)
+//   XREF to: 00614c8a (READ)
+//   XREF to: 00614c81 (READ)
+//   XREF to: 00614c7c (READ)
+//   XREF to: 00614c77 (READ)
+//   XREF to: 00614c6f (READ)
+// 00411a64: MOV byte ptr [EDI],AL
+// 00411a66: CMP AL,0x0
+// 00411a68: JZ 0x00411a7a
+//   XREF to: 00411a7a (CONDITIONAL_JUMP)
+// 00411a6a: MOV AL,byte ptr [ESI + 0x1]
+//   XREF to: 00614c89 (READ)
+//   XREF to: 00614c8b (READ)
+//   XREF to: 00614c82 (READ)
+//   XREF to: 00614c7d (READ)
+//   XREF to: 00614c78 (READ)
+//   XREF to: 00614c70 (READ)
+// 00411a6d: ADD ESI,0x2
+// 00411a70: MOV byte ptr [EDI + 0x1],AL
+// 00411a73: ADD EDI,0x2
+// 00411a76: CMP AL,0x0
+// 00411a78: JNZ 0x00411a62
+//   XREF to: 00411a62 (CONDITIONAL_JUMP)
+// 00411a7a: POP EDI
+//   Label: LAB_00411a7a
+// 00411a7b: POP EDI
+//   Label: default
+// 00411a7c: POP ESI
+// 00411a7d: RET
+// 00411a7e: MOV ESI,0x614c77
+//   Label: caseD_1
+//   XREF to: 00614c77 (DATA)
+// 00411a83: JMP 0x00411a61
+//   XREF to: 00411a61 (UNCONDITIONAL_JUMP)
+// 00411a85: MOV ESI,0x614c7c
+//   Label: caseD_2
+//   XREF to: 00614c7c (DATA)
+// 00411a8a: JMP 0x00411a61
+//   XREF to: 00411a61 (UNCONDITIONAL_JUMP)
+// 00411a8c: MOV ESI,0x614c81
+//   Label: caseD_3
+//   XREF to: 00614c81 (DATA)
+// 00411a91: JMP 0x00411a61
+//   XREF to: 00411a61 (UNCONDITIONAL_JUMP)
+// 00411a93: MOV ESI,0x614c88
+//   Label: caseD_4
+//   XREF to: 00614c88 (DATA)
+// 00411a98: JMP 0x00411a61
+//   XREF to: 00411a61 (UNCONDITIONAL_JUMP)

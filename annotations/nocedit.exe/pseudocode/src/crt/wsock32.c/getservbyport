@@ -1,0 +1,28 @@
+// Name: crt_wsock32.c_getservbyport
+// Address: 00610f2e
+// Address Range: [[00610f2e, 00610f33]]
+// Convention: __stdcall
+// Signature: PSERVENT crt_wsock32.c_getservbyport(int port, char * proto)
+// Cross-references:
+//   support_trisock.cpp_FUN_005e19d0 (005e19d0) at 005e19eb [UNCONDITIONAL_CALL]
+
+
+#include "nocturne.h"
+
+PSERVENT __stdcall crt_wsock32_c_getservbyport(int port,char *proto)
+
+{
+  SERVENT *pSVar1;
+  
+                    /* WARNING: Could not recover jumptable at 0x00610f2e. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  pSVar1 = (*PTR_getservbyport_006116c4)(port,proto);
+  return pSVar1;
+}
+
+
+// Assembly code:
+// 00610f2e: JMP dword ptr [0x006116c4]
+//   Label: crt_wsock32.c_getservbyport
+//   XREF to: EXTERNAL:000000ba (COMPUTED_JUMP)
+//   XREF to: 006116c4 (INDIRECTION)

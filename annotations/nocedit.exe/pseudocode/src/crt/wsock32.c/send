@@ -1,0 +1,28 @@
+// Name: crt_wsock32.c_send
+// Address: 00610f0a
+// Address Range: [[00610f0a, 00610f0f]]
+// Convention: __stdcall
+// Signature: int crt_wsock32.c_send(SOCKET s, char * buf, int len, int flags)
+// Cross-references:
+//   support_trisock.cpp_performSocketOperation_FUN_005e1ca0 (005e1ca0) at 005e1cc1 [UNCONDITIONAL_CALL]
+
+
+#include "nocturne.h"
+
+int __stdcall crt_wsock32_c_send(SOCKET s,char *buf,int len,int flags)
+
+{
+  int iVar1;
+  
+                    /* WARNING: Could not recover jumptable at 0x00610f0a. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  iVar1 = (*PTR_send_006116ac)(s,buf,len,flags);
+  return iVar1;
+}
+
+
+// Assembly code:
+// 00610f0a: JMP dword ptr [0x006116ac]
+//   Label: crt_wsock32.c_send
+//   XREF to: EXTERNAL:000000b4 (COMPUTED_JUMP)
+//   XREF to: 006116ac (INDIRECTION)

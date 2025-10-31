@@ -1,0 +1,75 @@
+#pragma once
+
+// Structure: CEventList
+// Ghidra size: 0x3ac8 (15048 bytes)
+typedef struct CEventList {
+    int eventCount; // 0x0
+    CEvent eventList[100]; // 0x4
+    char padding_0x68[3100]; // 0x68
+    int currentEventCount; // 0xc84
+    CEvent currentEventList[100]; // 0xc88
+    char padding_0xcec[3100]; // 0xcec
+    int gameFlagCount; // 0x1908
+    CEvent gameFlagList[100]; // 0x190c
+    char padding_0x1970[3100]; // 0x1970
+    int persistentEventCount; // 0x258c
+    CEvent persistentEventList[100]; // 0x2590
+    char padding_0x25f4[3100]; // 0x25f4
+    int timerCount; // 0x3210
+    int timerList; // 0x3214
+    char padding_0x3218[356]; // 0x3218
+    int counterCount; // 0x337c
+    char padding_0x3380[360]; // 0x3380
+    int actorVarCount; // 0x34e8
+    char variablesVarName1[30]; // 0x34ec
+    char variablesVarName2[30]; // 0x350a
+    char variablesVarName3[30]; // 0x3528
+    char variablesVarName4[30]; // 0x3546
+    char variablesVarName5[30]; // 0x3564
+    char variablesVarName6[30]; // 0x3582
+    char variablesVarName7[30]; // 0x35a0
+    char variablesVarName8[30]; // 0x35be
+    char variablesVarName9[30]; // 0x35dc
+    char variablesVarName10[30]; // 0x35fa
+    char variablesVarName11[30]; // 0x3618
+    char variablesVarName12[30]; // 0x3636
+    char variablesVarName13[30]; // 0x3654
+    char variablesVarName14[30]; // 0x3672
+    char variablesVarName15[30]; // 0x3690
+    char variablesVarName16[30]; // 0x36ae
+    char variablesVarName17[30]; // 0x36cc
+    char variablesVarName18[30]; // 0x36ea
+    char variablesVarName19[30]; // 0x3708
+    char variablesVarName20[30]; // 0x3726
+    char variablesVarName21[30]; // 0x3744
+    char variablesVarName22[30]; // 0x3762
+    char variablesVarName23[30]; // 0x3780
+    char variablesVarName24[30]; // 0x379e
+    char variablesVarName25[30]; // 0x37bc
+    char variablesActorName1[30]; // 0x37da
+    char variablesActorName2[30]; // 0x37f8
+    char variablesActorName3[30]; // 0x3816
+    char variablesActorName4[30]; // 0x3834
+    char variablesActorName5[30]; // 0x3852
+    char variablesActorName6[30]; // 0x3870
+    char variablesActorName7[30]; // 0x388e
+    char variablesActorName8[30]; // 0x38ac
+    char variablesActorName9[30]; // 0x38ca
+    char variablesActorName10[30]; // 0x38e8
+    char variablesActorName11[30]; // 0x3906
+    char variablesActorName12[30]; // 0x3924
+    char variablesActorName13[30]; // 0x3942
+    char variablesActorName14[30]; // 0x3960
+    char variablesActorName15[30]; // 0x397e
+    char variablesActorName16[30]; // 0x399c
+    char variablesActorName17[30]; // 0x39ba
+    char variablesActorName18[30]; // 0x39d8
+    char variablesActorName19[30]; // 0x39f6
+    char variablesActorName20[30]; // 0x3a14
+    char variablesActorName21[30]; // 0x3a32
+    char variablesActorName22[30]; // 0x3a50
+    char variablesActorName23[30]; // 0x3a6e
+    char variablesActorName24[30]; // 0x3a8c
+    char variablesActorName25[30]; // 0x3aaa
+} CEventList;
+

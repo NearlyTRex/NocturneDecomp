@@ -1,0 +1,30 @@
+// Name: crt_dsound.c_DirectSoundCreate
+// Address: 00610f40
+// Address Range: [[00610f40, 00610f45]]
+// Convention: __stdcall
+// Signature: HRESULT crt_dsound.c_DirectSoundCreate(LPGUID lpGuid, LPDIRECTSOUND * ppDS, LPUNKNOWN pUnkOuter)
+// Cross-references:
+//   sound_snddx.cpp_CreatePrimaryBufferMaybe_FUN_005b0440 (005b0440) at 005b04ad [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_FUN_005b0120 (005b0120) at 005b015a [UNCONDITIONAL_CALL]
+
+
+#include "nocturne.h"
+
+HRESULT __stdcall
+crt_dsound_c_DirectSoundCreate(LPGUID lpGuid,LPDIRECTSOUND *ppDS,LPUNKNOWN pUnkOuter)
+
+{
+  HRESULT HVar1;
+  
+                    /* WARNING: Could not recover jumptable at 0x00610f40. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  HVar1 = (*PTR_DirectSoundCreate_006116d4)(lpGuid,ppDS,pUnkOuter);
+  return HVar1;
+}
+
+
+// Assembly code:
+// 00610f40: JMP dword ptr [0x006116d4]
+//   Label: crt_dsound.c_DirectSoundCreate
+//   XREF to: EXTERNAL:000000bd (COMPUTED_JUMP)
+//   XREF to: 006116d4 (INDIRECTION)

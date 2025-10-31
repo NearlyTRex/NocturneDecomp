@@ -1,0 +1,28 @@
+// Name: crt_wsock32.c_gethostname
+// Address: 00610f16
+// Address Range: [[00610f16, 00610f1b]]
+// Convention: __stdcall
+// Signature: int crt_wsock32.c_gethostname(char * name, int namelen)
+// Cross-references:
+//   support_trisock.cpp_FUN_005e1c20 (005e1c20) at 005e1c41 [UNCONDITIONAL_CALL]
+
+
+#include "nocturne.h"
+
+int __stdcall crt_wsock32_c_gethostname(char *name,int namelen)
+
+{
+  int iVar1;
+  
+                    /* WARNING: Could not recover jumptable at 0x00610f16. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  iVar1 = (*PTR_gethostname_006116b4)(name,namelen);
+  return iVar1;
+}
+
+
+// Assembly code:
+// 00610f16: JMP dword ptr [0x006116b4]
+//   Label: crt_wsock32.c_gethostname
+//   XREF to: EXTERNAL:000000b6 (COMPUTED_JUMP)
+//   XREF to: 006116b4 (INDIRECTION)

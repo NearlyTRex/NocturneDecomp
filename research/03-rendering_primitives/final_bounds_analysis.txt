@@ -1,0 +1,54 @@
+# Final SMRGLModelBounds Analysis - ORIGINAL STRUCT WAS CORRECT
+
+## My Error:
+I initially misidentified which registers held min vs max values, leading me to believe
+the struct order was wrong. Upon re-examining the comparison logic, I discovered:
+
+### Correct Register Assignments (from vertex loop):
+- ESI = MAX X (CMP ESI,EBP; JGE skip; MOV ESI,EBP means "if vertex >= ESI, update")
+- EDI = MAX Y
+- ESP+0x13c = MAX Z
+- EBX = MIN X (CMP EBX,EBP; JLE skip; MOV EBX,EBP means "if vertex <= EBX, update")
+- ECX = MIN Y
+- ESP+0x140 = MIN Z
+
+### Storage Order (lines 314-416):
+ESP+0xB8: scale(EBX) = min_x_scaled
+ESP+0xBC: scale(ECX) = min_y_scaled
+ESP+0xC0: scale(ESP+0x140) = min_z_scaled
+ESP+0xC4: scale(ESI) = max_x_scaled
+ESP+0xC8: scale(EDI) = max_y_scaled
+ESP+0xCC: scale(ESP+0x13c) = max_z_scaled
+
+## Usage Verification (CDSEModel_fitToExistingBIN):
+```
+[EBP-0x40] - [EBP-0x4c] = struct[3] - struct[0] = max_x - min_x = X dimension ✓
+[EBP-0x38] - [EBP-0x44] = struct[5] - struct[2] = max_z - min_z = Z dimension ✓
+[EBP-0x3c] - [EBP-0x48] = struct[4] - struct[1] = max_y - min_y = Y dimension ✓
+```
+
+All dimensions are positive, which makes sense!
+
+## Conclusion:
+The ORIGINAL SMRGLModelBounds structure is CORRECT as-is:
+```c
+typedef struct SMRGLModelBounds {
+    int min_x_scaled;    // 0x00
+    int min_y_scaled;    // 0x04
+    int min_z_scaled;    // 0x08
+    int max_x_scaled;    // 0x0C
+    int max_y_scaled;    // 0x10
+    int max_z_scaled;    // 0x14
+    int center_x_scaled; // 0x18
+    int center_y_scaled; // 0x1C
+    int center_z_scaled; // 0x20
+    ...
+} SMRGLModelBounds;
+```
+
+## However, remaining questions:
+- Field at 0x24: labeled "scale_factor" but is actually radius_scaled
+- Fields at 0x28, 0x2C, 0x30: labeled "radius_scaled", "unknown_2C", "unknown_30"
+  but are actually extent_x, extent_y, extent_z
+
+The min/max order is CORRECT, but the last 4 fields need renaming!

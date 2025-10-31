@@ -1,0 +1,66 @@
+# SMRGLModelBounds Field Mapping from Assembly
+
+## Assembly trace of ESP+0xb8 region (source for final copy):
+
+Lines 378-416 show scaled min/max values being stored:
+- ESP+0xC4 = min_x_scaled (line 378)
+- ESP+0xC8 = min_y_scaled (line 387)
+- ESP+0xCC = min_z_scaled (line 393)
+- ESP+0xB8 = max_x_scaled (line 401)
+- ESP+0xBC = max_y_scaled (line 410)
+- ESP+0xC0 = max_z_scaled (line 416)
+
+Lines 454-480 show center values being stored:
+- ESP+0xD0 = center_x_scaled (line 454)
+- ESP+0xD4 = center_y_scaled (line 468)
+- ESP+0xD8 = center_z_scaled (line 480)
+
+Line 583-584 shows radius being stored:
+- ESP+0xDC = radius_scaled (line 584)
+
+## Key assembly: Lines 514-585
+Line 514-518: LEA EDI,[ESP + 0x50]  ; destination for intermediate copy
+Line 518-585: LEA ESI,[ESP + 0xb8]  ; source
+Line 585: MOVSD.REP ES:EDI,ESI with ECX=0xd (13 dwords)
+
+This copies FROM ESP+0xb8 TO ESP+0x50
+
+## Order in memory starting at ESP+0xb8:
++0x00 (0xB8): max_x_scaled
++0x04 (0xBC): max_y_scaled
++0x08 (0xC0): max_z_scaled
++0x0C (0xC4): min_x_scaled
++0x10 (0xC8): min_y_scaled
++0x14 (0xCC): min_z_scaled
++0x18 (0xD0): center_x_scaled
++0x1C (0xD4): center_y_scaled
++0x20 (0xD8): center_z_scaled
++0x24 (0xDC): radius_scaled
+
+That's only 10 fields = 40 bytes!
+
+But we're copying 13 dwords (52 bytes)...
+
+Let me check what else is in that region...
+ESP+0xE0, ESP+0xE4, ESP+0xE8 are written later (lines 487, 510, 534, 548)
+But those are AFTER 0xDC, so they'd be part of the copy!
+
+Actually wait - the copy starts at ESP+0xB8 and goes for 13 dwords:
+0xB8, 0xBC, 0xC0, 0xC4, 0xC8, 0xCC, 0xD0, 0xD4, 0xD8, 0xDC, 0xE0, 0xE4, 0xE8
+
+So the structure includes:
+ESP+0xE0 (written at line 487, 500)
+ESP+0xE4 (written at line 510, 525)
+ESP+0xE8 (written at line 534, 548)
+
+## What are these extra fields?
+
+Lines 482-500: Absolute value calculations of min_x, stored at ESP+0xE0
+Lines 502-525: Max of abs(min_y) and abs(max_y), stored at ESP+0xE4
+Lines 526-548: Max of abs(min_z) and abs(max_z), stored at ESP+0xE8
+
+These look like extents (half-widths) along each axis!
+
+## Wait, I need to look for scale_factor too...
+
+Let me search for ESP+0x134 which is used repeatedly as a multiplier.

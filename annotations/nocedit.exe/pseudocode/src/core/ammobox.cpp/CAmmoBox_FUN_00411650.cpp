@@ -1,0 +1,25 @@
+// Name: core_ammobox.cpp_CAmmoBox_FUN_00411650
+// Address: 00411650
+// Address Range: [[00411650, 00411650]]
+// Convention: __cdecl
+// Signature: void core_ammobox.cpp_CAmmoBox_FUN_00411650(CAmmoBox * this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411650(CAmmoBox *this_ptr)
+
+{
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
+            ((CKeyFramedModelInstance *)this_ptr->model_name);
+  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base_actor);
+  this_ptr->open_sound[0x20] = '\0';
+  this_ptr->open_sound[0x21] = '\0';
+  this_ptr->open_sound[0x22] = '\0';
+  this_ptr->open_sound[0x23] = '\0';
+  return;
+}
+
+
+// Assembly code:
+// 00411650: PUSH EBX
+//   Label: core_ammobox.cpp_CAmmoBox_FUN_00411650

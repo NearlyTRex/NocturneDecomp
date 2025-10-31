@@ -1,0 +1,96 @@
+# SMRGLModelBounds Usage Analysis
+
+## Function: shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0
+
+This function uses getMRGLBounds to calculate model dimensions for scaling.
+
+### Assembly Evidence:
+
+Bounds structure starts at EBP-0x4c
+
+#### First subtraction (X dimension):
+```asm
+0048ff5e: MOV EAX,dword ptr [EBP + -0x40]  ; EBP-0x4c + 0x0C = min_x_scaled
+0048ff61: SUB EAX,dword ptr [EBP + -0x4c]  ; EBP-0x4c + 0x00 = max_x_scaled
+0048ff64: MOV dword ptr [EBP + 0xffffff48],EAX
+```
+Calculates: max_x_scaled - min_x_scaled = X dimension
+
+#### Second subtraction (Y dimension):
+```asm
+0048ff79: MOV EAX,dword ptr [EBP + -0x38]  ; EBP-0x4c + 0x14 = min_z_scaled
+0048ff7c: SUB EAX,dword ptr [EBP + -0x44]  ; EBP-0x4c + 0x08 = max_z_scaled
+```
+Wait, this is: max_z_scaled - min_z_scaled = Z dimension
+
+Let me recalculate:
+EBP-0x4c = base (offset 0x00)
+EBP-0x48 = base + 0x04
+EBP-0x44 = base + 0x08
+EBP-0x40 = base + 0x0C
+EBP-0x3C = base + 0x10
+EBP-0x38 = base + 0x14
+
+With corrected structure:
++0x00: max_x_scaled
++0x04: max_y_scaled
++0x08: max_z_scaled
++0x0C: min_x_scaled
++0x10: min_y_scaled
++0x14: min_z_scaled
+
+#### First calculation:
+EBP-0x40 (offset +0x0C) = min_x_scaled
+EBP-0x4c (offset +0x00) = max_x_scaled
+Result = min_x_scaled - max_x_scaled = -(X dimension)
+
+Wait that's backwards! Let me check the SUB direction...
+
+```asm
+SUB EAX,dword ptr [EBP + -0x4c]
+```
+
+This is: EAX = EAX - [EBP-0x4c]
+So: EAX = [EBP-0x40] - [EBP-0x4c]
+    EAX = min_x - max_x
+
+That would give negative dimension... unless the OLD struct order is correct?
+
+Let me re-examine the getMRGLBounds output order...
+
+Actually wait - I need to check if the function READS from offset -0x40 relative to where the struct STARTS.
+
+Line 154: LEA EDI,[EBP + -0x4c]  - This is the DESTINATION for copy
+Line 159: MOV EAX,dword ptr [EBP + -0x40]
+
+So -0x40 is NOT relative to -0x4c, it's a separate absolute offset!
+
+Let me recalculate properly:
+If bounds copied to EBP-0x4c, that means:
+- EBP-0x4c = +0x00 (first field)
+- EBP-0x48 = +0x04
+- EBP-0x44 = +0x08
+- EBP-0x40 = +0x0C
+- EBP-0x3c = +0x10
+- EBP-0x38 = +0x14
+
+Reading at -0x40 = struct offset +0x0C
+Reading at -0x4c = struct offset +0x00
+
+With MY corrected structure:
++0x00 = max_x_scaled
++0x0C = min_x_scaled
+
+So it computes: min_x - max_x = negative!
+
+Unless... the OLD structure order is CORRECT for actual usage?
+
+Let me check what actually makes sense: if you want model dimensions,
+you compute max - min (positive value).
+
+If field at 0x00 is min_x and field at 0x0C is max_x:
+Then max_x - min_x = positive dimension ✓
+
+This suggests the ORIGINAL struct order might be correct after all!
+
+I need to re-examine my assembly analysis...

@@ -1,0 +1,106 @@
+# DEFINITIVE SMRGLModelBounds Layout from Assembly
+
+## Key Assembly Facts:
+
+1. Line 514-585: First MOVSD.REP copies 13 dwords from ESP+0xB8 to ESP+0x50
+   ```asm
+   0052850f: MOV ECX,0xd
+   00528514: LEA EDI,[ESP + 0x50]
+   00528518: LEA ESI,[ESP + 0xB8]
+   0052852b: MOVSD.REP ES:EDI,ESI
+   ```
+
+2. Line 587-592: Second MOVSD.REP copies 13 dwords from ESP+0x50 to output
+   ```asm
+   0052852d: MOV ECX,0xd
+   00528532: MOV EDI,dword ptr [ESP + 0x130]  ; output parameter
+   00528539: LEA ESI,[ESP + 0x50]
+   0052853d: MOVSD.REP ES:EDI,ESI
+   ```
+
+So the structure is exactly what's at ESP+0xB8 through ESP+0xEC (13 dwords).
+
+## What Gets Written to ESP+0xB8 Region:
+
+I need to list EVERY write to this memory range in order.
+
+Let me trace all MOV instructions that write to [ESP + 0xB8] through [ESP + 0xEC]:
+
+### Writes to ESP+0xB8 (offset +0x00):
+Line 401: MOV dword ptr [ESP + 0xb8],EAX  ; max_x_scaled
+
+### Writes to ESP+0xBC (offset +0x04):
+Line 410: MOV dword ptr [ESP + 0xbc],EAX  ; max_y_scaled
+
+### Writes to ESP+0xC0 (offset +0x08):
+Line 416: MOV dword ptr [ESP + 0xc0],EAX  ; max_z_scaled
+
+### Writes to ESP+0xC4 (offset +0x0C):
+Line 378: MOV dword ptr [ESP + 0xc4],EAX  ; min_x_scaled
+
+### Writes to ESP+0xC8 (offset +0x10):
+Line 387: MOV dword ptr [ESP + 0xc8],EAX  ; min_y_scaled
+
+### Writes to ESP+0xCC (offset +0x14):
+Line 393: MOV dword ptr [ESP + 0xcc],EAX  ; min_z_scaled
+
+### Writes to ESP+0xD0 (offset +0x18):
+Line 454: MOV dword ptr [ESP + 0xd0],EAX  ; center_x_scaled
+
+### Writes to ESP+0xD4 (offset +0x1C):
+Line 468: MOV dword ptr [ESP + 0xd4],EAX  ; center_y_scaled
+
+### Writes to ESP+0xD8 (offset +0x20):
+Line 480: MOV dword ptr [ESP + 0xd8],EAX  ; center_z_scaled
+
+### Writes to ESP+0xDC (offset +0x24):
+Line 584: FISTP dword ptr [ESP + 0xdc]  ; radius_scaled (from FPU)
+
+### Writes to ESP+0xE0 (offset +0x28):
+Lines 487, 500: MOV dword ptr [ESP + 0xe0],EAX  ; extent_x (abs max)
+
+### Writes to ESP+0xE4 (offset +0x2C):
+Lines 510, 525: MOV dword ptr [ESP + 0xe4],EAX  ; extent_y (abs max)
+
+### Writes to ESP+0xE8 (offset +0x30):
+Lines 534, 548: MOV dword ptr [ESP + 0xe8],EAX  ; extent_z (abs max)
+
+## CONCLUSION:
+
+The structure is 52 bytes with 13 fields:
++0x00: max_x_scaled     (int)
++0x04: max_y_scaled     (int)
++0x08: max_z_scaled     (int)
++0x0C: min_x_scaled     (int)
++0x10: min_y_scaled     (int)
++0x14: min_z_scaled     (int)
++0x18: center_x_scaled  (int)
++0x1C: center_y_scaled  (int)
++0x20: center_z_scaled  (int)
++0x24: radius_scaled    (int)
++0x28: extent_x         (int) - maximum absolute value along X axis
++0x2C: extent_y         (int) - maximum absolute value along Y axis
++0x30: extent_z         (int) - maximum absolute value along Z axis
+
+## Current struct definition vs Reality:
+
+Current SMRGLModelBounds:
+```c
+typedef struct SMRGLModelBounds {
+    int min_x_scaled;      // ❌ Wrong order! Should be at +0x0C
+    int min_y_scaled;      // ❌ Wrong order! Should be at +0x10
+    int min_z_scaled;      // ❌ Wrong order! Should be at +0x14
+    int max_x_scaled;      // ❌ Wrong order! Should be at +0x00
+    int max_y_scaled;      // ❌ Wrong order! Should be at +0x04
+    int max_z_scaled;      // ❌ Wrong order! Should be at +0x08
+    int center_x_scaled;   // ✓ Correct name and offset +0x18
+    int center_y_scaled;   // ✓ Correct name and offset +0x1C
+    int center_z_scaled;   // ✓ Correct name and offset +0x20
+    int scale_factor;      // ❌ WRONG! This is radius_scaled at +0x24
+    int radius_scaled;     // ❌ Wrong offset! Should be at +0x24
+    int unknown_2C;        // ❌ This is extent_y
+    int unknown_30;        // ❌ This is extent_z
+} SMRGLModelBounds; // 52 bytes
+```
+
+The structure has the min/max order BACKWARDS and misidentifies scale_factor!

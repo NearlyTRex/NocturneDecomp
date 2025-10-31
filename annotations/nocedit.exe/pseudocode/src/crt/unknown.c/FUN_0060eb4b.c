@@ -1,0 +1,29 @@
+// Name: crt_unknown.c_FUN_0060eb4b
+// Address: 0060eb4b
+// Address Range: [[0060eb4b, 0060eb56]]
+// Convention: unknown
+// Signature: undefined crt_unknown.c_FUN_0060eb4b()
+// Cross-references:
+//   crt_unknown.c_FUN_0060dcf6 (0060dcf6) at 0060dcfe [UNCONDITIONAL_CALL]
+// Function calls:
+//   crt_unknown.c_FUN_0060fa80
+
+#include "nocturne.h"
+
+ulonglong crt_unknown_c_FUN_0060eb4b(void)
+
+{
+  uint uVar1;
+  
+  uVar1 = crt_unknown_c_FUN_0060fa80(0x83);
+  return (ulonglong)(uVar1 & 0x80000000) << 0x20 | 0x7ff0000000000000;
+}
+
+
+// Assembly code:
+// 0060eb4b: MOV EAX,0x83
+//   Label: crt_unknown.c_FUN_0060eb4b
+// 0060eb50: CALL crt_unknown.c_FUN_0060fa80
+//   XREF to: 0060fa80 (UNCONDITIONAL_CALL)
+// 0060eb55: JMP 0x0060eb68
+//   XREF to: 0060eb68 (UNCONDITIONAL_JUMP)

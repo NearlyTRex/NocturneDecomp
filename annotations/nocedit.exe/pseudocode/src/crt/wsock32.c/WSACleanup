@@ -1,0 +1,28 @@
+// Name: crt_wsock32.c_WSACleanup
+// Address: 00610ed4
+// Address Range: [[00610ed4, 00610ed9]]
+// Convention: __stdcall
+// Signature: int crt_wsock32.c_WSACleanup(void)
+// Cross-references:
+//   support_trisock.cpp_cleanupWinsock_FUN_005e1ee0 (005e1ee0) at 005e1ee0 [UNCONDITIONAL_JUMP]
+
+
+#include "nocturne.h"
+
+int __stdcall crt_wsock32_c_WSACleanup(void)
+
+{
+  int iVar1;
+  
+                    /* WARNING: Could not recover jumptable at 0x00610ed4. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  iVar1 = (*PTR_WSACleanup_00611688)();
+  return iVar1;
+}
+
+
+// Assembly code:
+// 00610ed4: JMP dword ptr [0x00611688]
+//   Label: crt_wsock32.c_WSACleanup
+//   XREF to: EXTERNAL:000000ab (COMPUTED_JUMP)
+//   XREF to: 00611688 (INDIRECTION)

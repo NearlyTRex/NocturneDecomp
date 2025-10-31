@@ -1,0 +1,28 @@
+// Name: crt_wsock32.c_ioctlsocket
+// Address: 00610f04
+// Address Range: [[00610f04, 00610f09]]
+// Convention: __stdcall
+// Signature: int crt_wsock32.c_ioctlsocket(SOCKET s, long cmd, ulong * argp)
+// Cross-references:
+//   support_trisock.cpp_FUN_005e1ca0 (005e1ca0) at 005e1d08 [UNCONDITIONAL_CALL]
+
+
+#include "nocturne.h"
+
+int __stdcall crt_wsock32_c_ioctlsocket(SOCKET s,long cmd,ulong *argp)
+
+{
+  int iVar1;
+  
+                    /* WARNING: Could not recover jumptable at 0x00610f04. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  iVar1 = (*PTR_ioctlsocket_006116a8)(s,cmd,argp);
+  return iVar1;
+}
+
+
+// Assembly code:
+// 00610f04: JMP dword ptr [0x006116a8]
+//   Label: crt_wsock32.c_ioctlsocket
+//   XREF to: EXTERNAL:000000b3 (COMPUTED_JUMP)
+//   XREF to: 006116a8 (INDIRECTION)

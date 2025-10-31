@@ -1,0 +1,96 @@
+#pragma once
+
+// =============================================================================
+// CONSTANTS
+// =============================================================================
+
+// void* constants
+const void* DAT_004E49EC = 0x004E5042;
+const void* DAT_004E49F0 = 0x004E5042;
+const void* DAT_004E49F4 = 0x004E4D60;
+const void* DAT_004E49F8 = 0x004E4B2D;
+const void* DAT_004E49FC = 0x004E4DDF;
+const void* DAT_004E551C = 0x004E5715;
+const void* DAT_004E5520 = 0x004E5720;
+const void* DAT_004E5524 = 0x004E572B;
+const void* DAT_004E5528 = 0x004E5736;
+const void* DAT_004E552C = 0x004E5741;
+const void* DAT_004E6584 = 0x004E6F71;
+const void* DAT_004E6588 = 0x004E6F71;
+const void* DAT_004E658C = 0x004E6F71;
+const void* DAT_004E6590 = 0x004E6F71;
+const void* DAT_004E6594 = 0x004E6B67;
+const void* DAT_004E6598 = 0x004E6D81;
+const void* DAT_004E659C = 0x004E6D81;
+const void* DAT_004E65A0 = 0x004E6E1C;
+const void* DAT_004E65A4 = 0x004E665C;
+const void* DAT_004E65A8 = 0x004E6F71;
+const void* DAT_004E65AC = 0x004E6EA7;
+const void* DAT_004E65B0 = 0x004E665C;
+const void* DAT_004E65B4 = 0x004E665C;
+const void* DAT_004E65BC = 0x004E760C;
+const void* DAT_004E65C0 = 0x004E7C0A;
+const void* DAT_004E65C4 = 0x004E70A3;
+const void* DAT_004E65C8 = 0x004E70A3;
+const void* DAT_004E65CC = 0x004E70A3;
+const void* DAT_004E65D0 = 0x004E70A3;
+const void* DAT_004E65D4 = 0x004E70A3;
+const void* DAT_004E65D8 = 0x004E70A3;
+const void* DAT_004E65DC = 0x004E70A3;
+const void* DAT_004E65E0 = 0x004E6FE5;
+const void* DAT_004E65E4 = 0x004E7EEA;
+const void* DAT_004E65E8 = 0x004E7D7C;
+const void* DAT_004E65EC = 0x004E7F49;
+const void* DAT_004E65F0 = 0x004E7F49;
+const void* DAT_004E65F4 = 0x004E70A3;
+const void* DAT_004E65F8 = 0x004E70A3;
+const void* DAT_004E65FC = 0x004E760C;
+const void* DAT_004E8508 = 0x004E871E;
+const void* DAT_004E850C = 0x004E8729;
+const void* DAT_004E8510 = 0x004E8734;
+const void* DAT_004E8514 = 0x004E873F;
+const void* DAT_004E8518 = 0x004E874A;
+const void* DAT_004E8BA8 = 0x004E8D03;
+const void* DAT_004E8BAC = 0x004E8D23;
+const void* DAT_004E8BB0 = 0x004E8D6B;
+const void* DAT_004E8E24 = 0x004E8E7C;
+const void* DAT_004E8E28 = 0x004E8E92;
+const void* DAT_004E8E2C = 0x004E8EA8;
+const void* DAT_004E8E30 = 0x004E8EBE;
+const void* DAT_004EECA4 = 0x004EECF7;
+const void* DAT_004EECA8 = 0x004EECFD;
+const void* DAT_004EECAC = 0x004EED03;
+const void* DAT_004EECB0 = 0x004EED09;
+const void* DAT_004EECB4 = 0x004EED0F;
+const void* DAT_004EECB8 = 0x004EED15;
+const void* DAT_004EECBC = 0x004EED1B;
+const void* DAT_004EECC0 = 0x004EED21;
+const void* DAT_004EECC4 = 0x004EED27;
+const void* DAT_004EECC8 = 0x004EED2D;
+const void* DAT_004EECCC = 0x004EED33;
+const void* DAT_004EECD0 = 0x004EED39;
+const void* DAT_004EED4C = 0x004EED97;
+const void* DAT_004EED50 = 0x004EED9D;
+const void* DAT_004EED54 = 0x004EEDA3;
+const void* DAT_004EED58 = 0x004EEDA9;
+const void* DAT_004EED5C = 0x004EEDAF;
+const void* DAT_004EED60 = 0x004EEDB5;
+const void* DAT_004EED64 = 0x004EEDBB;
+const void* DAT_004EED68 = 0x004EEDC1;
+const void* DAT_004EED6C = 0x004EEDC7;
+const void* DAT_004EED70 = 0x004EEDD9;
+const void* DAT_004EED74 = 0x004EEDCD;
+const void* DAT_004EED78 = 0x004EEDD3;
+const void* DAT_004EEDE4 = 0x004EEE37;
+const void* DAT_004EEDE8 = 0x004EEE3D;
+const void* DAT_004EEDEC = 0x004EEE43;
+const void* DAT_004EEDF0 = 0x004EEE37;
+const void* DAT_004EEDF4 = 0x004EEE49;
+const void* DAT_004EEDF8 = 0x004EEE4F;
+const void* DAT_004EEDFC = 0x004EEE55;
+const void* DAT_004EEE00 = 0x004EEE5B;
+const void* DAT_004EEE04 = 0x004EEE61;
+const void* DAT_004EEE08 = 0x004EEE5B;
+const void* DAT_004EEE0C = 0x004EEE67;
+const void* DAT_004EEE10 = 0x004EEE6D;
+

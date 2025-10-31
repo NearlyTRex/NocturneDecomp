@@ -1,0 +1,82 @@
+# CORRECTED Register Mapping for getMRGLBounds
+
+## Vertex Loop Comparisons (lines 235-285):
+
+### X coordinate comparisons:
+```asm
+00528235: CMP ESI,EBP
+00528237: JGE skip
+00528239: MOV ESI,EBP  ; if (vertex_x >= ESI) ESI = vertex_x
+```
+ESI = MAX X (starts at -0x80000000)
+
+```asm
+00528259: CMP EBX,EBP
+0052825b: JLE skip
+0052825d: MOV EBX,EBP  ; if (vertex_x <= EBX) EBX = vertex_x
+```
+EBX = MIN X (starts at 0x7FFFFFFF)
+
+### Y coordinate comparisons:
+```asm
+0052823e: CMP EDI,EBP
+00528240: JGE skip
+00528242: MOV EDI,EBP  ; if (vertex_y >= EDI) EDI = vertex_y
+```
+EDI = MAX Y (starts at -0x80000000)
+
+```asm
+00528261: CMP ECX,EBP
+00528263: JLE skip
+00528266: MOV ECX,EBP  ; if (vertex_y <= ECX) ECX = vertex_y
+```
+ECX = MIN Y (starts at 0x7FFFFFFF)
+
+### Z coordinate comparisons:
+ESP+0x13c = MAX Z (starts at -0x80000000)
+ESP+0x140 = MIN Z (starts at 0x7FFFFFFF)
+
+## Storage to Output Buffer (lines 374-416):
+
+Line 374-378: scale_factor * ESI >> 16 → ESP+0xC4
+ESI = max_x, so ESP+0xC4 = max_x_scaled ❌ WRONG!
+
+Wait, let me re-check line 374...
+```asm
+005282d2: MOV EDX,ESI
+005282d4: IMUL EDX        ; EDX:EAX = scale_factor * ESI
+005282d6: SHRD EAX,EDX,0x10  ; EAX = result >> 16
+005282da: MOV ESI,EAX      ; ESI = scaled value (overwrites old ESI!)
+005282dc: MOV dword ptr [ESP + 0xc4],EAX
+```
+
+So ESI gets OVERWRITTEN with the scaled max_x!
+
+Let me continue tracing...
+
+Line 380-388: scale_factor * EDI >> 16 → ESP+0xC8
+EDI = max_y, ESP+0xC8 = max_y_scaled, then EDI gets overwritten
+
+Line 389-393: scale_factor * ESP+0x13c >> 16 → ESP+0xCC
+ESP+0x13c = max_z, so ESP+0xCC = max_z_scaled
+
+Line 395-401: scale_factor * EBX >> 16 → ESP+0xB8
+EBX = min_x, so ESP+0xB8 = min_x_scaled, EBX gets overwritten
+
+Line 403-410: scale_factor * ECX >> 16 → ESP+0xBC
+ECX = min_y, so ESP+0xBC = min_y_scaled
+
+Line 412-416: scale_factor * ESP+0x140 >> 16 → ESP+0xC0
+ESP+0x140 = min_z, so ESP+0xC0 = min_z_scaled
+
+## So the ACTUAL memory layout starting at ESP+0xB8:
+ESP+0xB8 (+0x00): min_x_scaled
+ESP+0xBC (+0x04): min_y_scaled
+ESP+0xC0 (+0x08): min_z_scaled
+ESP+0xC4 (+0x0C): max_x_scaled
+ESP+0xC8 (+0x10): max_y_scaled
+ESP+0xCC (+0x14): max_z_scaled
+...
+
+The ORIGINAL struct definition was CORRECT!
+My "corrected" analysis was WRONG!

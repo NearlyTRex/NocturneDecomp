@@ -1,0 +1,80 @@
+# Complete SMRGLModelBounds Structure Analysis
+
+## Scale Factor Calculation (Line 243-250):
+```asm
+0052818c: MOV EAX,0x7fffffff
+00528191: MOV EDX,EAX
+00528193: MOV ECX,dword ptr [EBX + 0x4]  ; ECX = header->count
+00528196: SAR EDX,0x1f
+00528199: IDIV ECX                        ; EAX = 0x7fffffff / count
+0052819b: ADD EAX,EAX                     ; EAX *= 2
+0052819d: MOV dword ptr [ESP + 0x134],EAX ; store scale_factor
+```
+scale_factor = (0x7fffffff / vertex_count) * 2
+
+## Memory Layout Starting at ESP+0xB8 (source for copy):
+
+Lines 514-585: MOVSD.REP copies 13 dwords from ESP+0xB8
+
+ESP+0xB8 (+0x00): max_x_scaled    (line 401) - EBX
+ESP+0xBC (+0x04): max_y_scaled    (line 410) - ECX
+ESP+0xC0 (+0x08): max_z_scaled    (line 416) - from ESP+0x140
+ESP+0xC4 (+0x0C): min_x_scaled    (line 378) - ESI
+ESP+0xC8 (+0x10): min_y_scaled    (line 387) - EDI
+ESP+0xCC (+0x14): min_z_scaled    (line 393) - from ESP+0x13C
+ESP+0xD0 (+0x18): center_x_scaled (line 454) - computed from average
+ESP+0xD4 (+0x1C): center_y_scaled (line 468) - computed from average
+ESP+0xD8 (+0x20): center_z_scaled (line 480) - computed from average
+ESP+0xDC (+0x24): radius_scaled   (line 584) - computed from extents
+ESP+0xE0 (+0x28): extent_x        (lines 487, 500) - abs(min_x) or abs(max_x)
+ESP+0xE4 (+0x2C): extent_y        (lines 510, 525) - max(abs(min_y), abs(max_y))
+ESP+0xE8 (+0x30): extent_z        (lines 534, 548) - max(abs(min_z), abs(max_z))
+
+Total: 13 dwords = 52 bytes ✓
+
+## BUT WAIT - Where is scale_factor in the output?
+
+Scale factor is at ESP+0x134, but the copy is from ESP+0xB8...
+ESP+0x134 is NOT in the range ESP+0xB8 to ESP+0xEC!
+
+Let me check if scale_factor gets copied somewhere else...
+
+Looking at line 107 in pseudocode:
+"iVar5 = (int)(0x7fffffff / (longlong)(header->base).count) * 2;"
+
+This matches the assembly calculation of scale_factor.
+
+But where does it get written to the output structure?
+
+## Checking decompiled variable mapping:
+Line 161-162 shows:
+```
+local_a4 = uVar3;    // This is min_x_scaled
+local_98 = uVar2;    // This is max_x_scaled
+```
+
+Lines 197-198:
+```
+puVar9 = &local_98;   // Source pointer
+puVar10 = &uStack_100; // Destination in local buffer
+```
+
+Line 200-204: First copy loop (13 dwords from local_98 to uStack_100)
+Line 206-210: Second copy loop (13 dwords from auStack_fc to output)
+
+The variable "iVar5" holds the scale factor and is used in calculations
+but I don't see it being directly copied!
+
+## Let me check if iVar5 (scale_factor) is stored in the structure...
+
+Actually wait - I need to map local variable names to stack offsets.
+Let me check the Ghidra variable mappings more carefully.
+
+Looking at pseudocode line 107: "iVar5 = ..."
+This is the scale factor calculation.
+
+But on line 191: "iVar5 = 0xd;" - it gets OVERWRITTEN with 13 (loop counter)!
+
+So the scale factor calculation result must be stored somewhere else before line 191.
+
+Let me search for where ESP+0x134 value is READ after being written...

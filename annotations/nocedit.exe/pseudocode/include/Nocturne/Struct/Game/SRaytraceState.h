@@ -1,0 +1,28 @@
+#pragma once
+
+// Structure: SRaytraceState
+// Ghidra size: 0xa0 (160 bytes)
+typedef struct SRaytraceState {
+    int ray_type; // 0x0
+    float color_r; // 0x4
+    float color_g; // 0x8
+    float color_b; // 0xc
+    float color_a; // 0x10
+    int ignore_list_count; // 0x14
+    int collision_flag; // 0x18
+    CDemonActor* ignore_list[10]; // 0x1c
+    CVector3f saved_ray_origin; // 0x44
+    CVector3f saved_ray_target; // 0x50
+    float raycast_distance; // 0x5c
+    int voxel_distance; // 0x60
+    CVector3f voxel_hit_point; // 0x64
+    int voxel_surface_type; // 0x70
+    int field_116; // 0x74
+    CVector3f saved_collision_normal; // 0x78
+    int saved_ground_type; // 0x84
+    CVector3f saved_collision_point; // 0x88
+    CDemonActor* saved_collision_actor; // 0x94
+    int field_152; // 0x98
+    int field_156; // 0x9c
+} SRaytraceState;
+

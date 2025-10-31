@@ -1,0 +1,56 @@
+# Nocturne Engine 3D Render Functions Flag Analysis
+# Generated for creating proper Ghidra equates and better function names
+# All "quality" names are generic guesses - true names based on technical flags
+
+## C Header Equates for Ghidra Import
+
+```c
+// g_RenderStateFlags Bit Definitions
+#define RENDER_TEXTURE_ENABLE       0x001  // Basic texture mapping enable
+#define RENDER_ALPHA_BLEND          0x002  // Alpha blending enable
+#define RENDER_VERTEX_LIGHTING      0x003  // Vertex-based lighting (TEXTURE_ENABLE | ALPHA_BLEND)
+#define RENDER_PRIMITIVE_SPECIAL    0x004  // Special primitive processing
+#define RENDER_UV_WRAP_U            0x005  // D3DRENDERSTATE_WRAPU - U coordinate wrapping
+#define RENDER_PLANEMASK            0x00D  // D3DRENDERSTATE_PLANEMASK - Plane masking for decals
+#define RENDER_LASTPIXEL            0x010  // D3DRENDERSTATE_LASTPIXEL - Line last pixel
+#define RENDER_ALPHA_CHANNEL        0x020  // Alpha channel processing enable
+#define RENDER_DEPTH_TEST           0x040  // Z-buffer testing enable
+#define RENDER_DEPTH_WRITE          0x080  // Z-buffer writing enable
+#define RENDER_TEXTURE_BASE         0x0C0  // Base texture operations (D3DRENDERSTATE_WRAP0)
+#define RENDER_ENGINE_BASE          0x100  // Engine-specific processing layer
+#define RENDER_ENGINE_ENHANCED      0x200  // Enhanced engine processing layer
+#define RENDER_ENGINE_PREMIUM       0x300  // Premium engine processing layer
+
+// Composite Flags (commonly used combinations)
+#define RENDER_TEXTURE_LIT          0x0C1  // TEXTURE_BASE | TEXTURE_ENABLE - Basic textured+lit
+#define RENDER_TEXTURE_PERSPECTIVE  0x0C3  // TEXTURE_BASE | VERTEX_LIGHTING - Perspective correct
+#define RENDER_TEXTURE_COMPLEX      0x0C4  // TEXTURE_BASE | PRIMITIVE_SPECIAL - Complex texture mode
+#define RENDER_TEXTURE_UV_WRAPPED   0x0C5  // TEXTURE_BASE | UV_WRAP_U - UV coordinate wrapping
+#define RENDER_TEXTURE_ENHANCED     0x0CD  // TEXTURE_BASE | PLANEMASK - Enhanced with plane mask
+#define RENDER_DEPTH_TEXTURED       0x081  // DEPTH_WRITE | TEXTURE_ENABLE - Basic depth+texture
+#define RENDER_DEPTH_TEXTURED_LIT   0x083  // DEPTH_WRITE | VERTEX_LIGHTING - Depth+texture+lighting
+#define RENDER_DEPTH_TEXTURED_ADV   0x085  // DEPTH_WRITE | UV_WRAP_U - Advanced depth+texture
+#define RENDER_COMPLEX_EFFECTS      0x08D  // DEPTH_WRITE | PLANEMASK - Complex effects/decals
+#define RENDER_PLANE_MASKED         0x0D0  // Plane masking base (exact bit pattern needs verification)
+#define RENDER_PLANE_MASKED_LIT     0x0D1  // PLANE_MASKED | TEXTURE_ENABLE - Plane masked+textured
+#define RENDER_FULL_FEATURED        0x0D9  // Full featured rendering (complex bit pattern)
+#define RENDER_ENGINE_HIGH_QUAL     0x163  // ENGINE_BASE | depth+texture+lighting
+#define RENDER_ENGINE_PREMIUM_QUAL  0x1E7  // ENGINE_BASE | premium texture combination
+#define RENDER_ENGINE_ULTRA_QUAL    0x267  // ENGINE_ENHANCED | ultra rendering combination
+#define RENDER_SPECIAL_EFFECTS      0x28D  // ENGINE_ENHANCED | COMPLEX_EFFECTS - Special FX
+#define RENDER_ENGINE_ADVANCED_QUAL 0x367  // ENGINE_PREMIUM | advanced rendering
+
+// g_RenderStateFlag2 Preprocessing Modes
+#define PREPROCESS_NONE                    0  // No preprocessing
+#define PREPROCESS_DEPTH_BUFFER_PREP       1  // Z-buffer preparation (most common)
+#define PREPROCESS_TEXTURE_COORD_NORMALIZE 2  // Texture coordinate normalization
+#define PREPROCESS_NEAR_PLANE_CORRECT      3  // Near-plane texture correction
+#define PREPROCESS_PRIMITIVE_SPECIAL       4  // Special primitive processing
+#define PREPROCESS_TEXTURE_NORMALIZE_ALT   5  // Alternative texture normalization
+#define PREPROCESS_W_DEPTH_REPLACEMENT     6  // W-coordinate depth replacement
+```
+
+## Function Analysis Table
+# Format: Address | Current_Name | Flags | Flag2 | New_Technical_Name | Ghidra_Equate_Name
+
+# ANALYZED FUNCTIONS:

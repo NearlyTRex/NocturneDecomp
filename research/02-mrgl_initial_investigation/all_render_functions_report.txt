@@ -1,0 +1,651 @@
+# Complete Nocturne Render Functions Analysis
+# ALL functions that manipulate g_RenderStateFlags, g_RenderStateFlag2, or g_ScanlineRenderFunc
+
+SUMMARY:
+- Total render functions found: 97
+- Functions setting g_RenderStateFlags: 77
+- Functions setting g_RenderStateFlag2: 79
+- Functions setting g_ScanlineRenderFunc: 78
+
+FUNCTIONS BY MODULE:
+
+src/engine:
+  3d.c (56 functions):
+    00403ad0 | renderLitPolygonBasic
+      File: src/engine/3d.c/renderLitPolygonBasic_FUN_00403ad0.c
+      Flags: 0x10
+      Flag2: 0
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00403cc0 | renderPolygonBasic
+      File: src/engine/3d.c/renderPolygonBasic_FUN_00403cc0.c
+      Flags: 1
+      Flag2: 0
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00403d60 | renderPrimitiveBasic
+      File: src/engine/3d.c/renderPrimitiveBasic_FUN_00403d60.c
+      Flags: 5
+      Flag2: 4
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00403f20 | renderPolygonSimple
+      File: src/engine/3d.c/renderPolygonSimple_FUN_00403f20.c
+      Flags: 1
+      Flag2: 2
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00404020 | renderOverlayBasic
+      File: src/engine/3d.c/renderOverlayBasic_FUN_00404020.c
+      Flags: 1
+      Flag2: 0
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00404120 | renderPolygonEnhanced
+      File: src/engine/3d.c/renderPolygonEnhanced_FUN_00404120.c
+      Flags: 3
+      Flag2: 0
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00404220 | renderPolygonLitDetailed
+      File: src/engine/3d.c/renderPolygonLitDetailed_FUN_00404220.c
+      Flags: 0x13, 0x33
+      Flag2: 0
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
+
+    004044a0 | renderPolygonBasicEnhanced
+      File: src/engine/3d.c/renderPolygonBasicEnhanced_FUN_004044a0.c
+      Flags: 1
+      Flag2: 2
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    004046c0 | renderPrimitiveFullFeatured
+      File: src/engine/3d.c/renderPrimitiveFullFeatured_FUN_004046c0.c
+      Flags: 0xd9
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00404840 | renderPrimitiveAdaptive
+      File: src/engine/3d.c/renderPrimitiveAdaptive_FUN_00404840.c
+      Flags: 0xd1, 0xd0, 0
+      Flag2: 3, 1, 0
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00404a40 | renderPolygon
+      File: src/engine/3d.c/renderPolygon_FUN_00404a40.c
+      Flags: 0xd1
+      Flag2: 3
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00404ae0 | renderPolygonAdaptive
+      File: src/engine/3d.c/renderPolygonAdaptive_FUN_00404ae0.c
+      Flags: 0x10, 0xd0, 0
+      Flag2: 0, 1, 0
+      Scanline: pcVar2, pcVar2, pcVar2
+
+    00404c60 | renderPolygonFullFeatured
+      File: src/engine/3d.c/renderPolygonFullFeatured_FUN_00404c60.c
+      Flags: 0xd9
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00404d50 | renderPolygonUVMappedComplex
+      File: src/engine/3d.c/renderPolygonUVMappedComplex_FUN_00404d50.c
+      Flags: 0xc4
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00404e40 | renderPolygonAdvancedPrimitive
+      File: src/engine/3d.c/renderPolygonAdvancedPrimitive_FUN_00404e40.c
+      Flags: 9
+      Flag2: 3
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00404ee0 | renderPolygonBasicAdvanced
+      File: src/engine/3d.c/renderPolygonBasicAdvanced_FUN_00404ee0.c
+      Flags: 1
+      Flag2: 3
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00404f80 | renderPolygonAdvancedEnhanced
+      File: src/engine/3d.c/renderPolygonAdvancedEnhanced_FUN_00404f80.c
+      Flags: 9
+      Flag2: 2
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00405020 | renderPolygonAdvancedStandard
+      File: src/engine/3d.c/renderPolygonAdvancedStandard_FUN_00405020.c
+      Flags: 9
+      Flag2: 2
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00405170 | renderPolygonUVBasic
+      File: src/engine/3d.c/renderPolygonUVBasic_FUN_00405170.c
+      Flags: 1
+      Flag2: 0
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    004052b0 | renderPolygonLitComplex
+      File: src/engine/3d.c/renderPolygonLitComplex_FUN_004052b0.c
+      Flags: 0x23
+      Flag2: 0
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00405350 | renderPolygonUVSimple
+      File: src/engine/3d.c/renderPolygonUVSimple_FUN_00405350.c
+      Flags: 1
+      Flag2: 0
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00405430 | renderPolygonUVEnhanced
+      File: src/engine/3d.c/renderPolygonUVEnhanced_FUN_00405430.c
+      Flags: 1
+      Flag2: 2
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00405510 | renderPolygonUVAdvanced
+      File: src/engine/3d.c/renderPolygonUVAdvanced_FUN_00405510.c
+      Flags: 9
+      Flag2: 2
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    004055b0 | renderPolygonPerspectiveBasic
+      File: src/engine/3d.c/renderPolygonPerspectiveBasic_FUN_004055b0.c
+      Flags: 1
+      Flag2: 2
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00405690 | renderPolygonPerspectiveEffect
+      File: src/engine/3d.c/renderPolygonPerspectiveEffect_FUN_00405690.c
+      Flags: 0x20d, 0xd
+      Flag2: 0, 4
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    004057b0 | renderPolygonPerspectiveAdvanced
+      File: src/engine/3d.c/renderPolygonPerspectiveAdvanced_FUN_004057b0.c
+      Flags: 0x20d, 0xd
+      Flag2: 5, 5
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    004058d0 | renderPolygonPerspectiveSpecial
+      File: src/engine/3d.c/renderPolygonPerspectiveSpecial_FUN_004058d0.c
+      Flags: 5
+      Flag2: 5
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00405960 | renderPolygonTexturedBasic
+      File: src/engine/3d.c/renderPolygonTexturedBasic_FUN_00405960.c
+      Flags: 0x80
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00405a00 | renderPolygonUVHighQuality
+      File: src/engine/3d.c/renderPolygonUVHighQuality_FUN_00405a00.c
+      Flags: 1
+      Flag2: 0
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00405aa0 | renderPolygonUVEnhancedQuality
+      File: src/engine/3d.c/renderPolygonUVEnhancedQuality_FUN_00405aa0.c
+      Flags: 3
+      Flag2: 0
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00405b50 | renderPolygonUVMapped
+      File: src/engine/3d.c/renderPolygonUVMapped_FUN_00405b50.c
+      Flags: 0xc5, 0xcd
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00405ce0 | renderPolygonUVMappedStandard
+      File: src/engine/3d.c/renderPolygonUVMappedStandard_FUN_00405ce0.c
+      Flags: 0xc5
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00405d80 | renderPolygonTexturedLit
+      File: src/engine/3d.c/renderPolygonTexturedLit_FUN_00405d80.c
+      Flags: 0x81
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00405e20 | renderPolygonTexturedAdvanced
+      File: src/engine/3d.c/renderPolygonTexturedAdvanced_FUN_00405e20.c
+      Flags: 0x85
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00405ec0 | renderPolygonTexturedSimple
+      File: src/engine/3d.c/renderPolygonTexturedSimple_FUN_00405ec0.c
+      Flags: 1
+      Flag2: 0
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00405f60 | renderPolygonTexturedOverlay
+      File: src/engine/3d.c/renderPolygonTexturedOverlay_FUN_00405f60.c
+      Flags: 1
+      Flag2: 0
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00406000 | renderPolygonTexturedLitBasic
+      File: src/engine/3d.c/renderPolygonTexturedLitBasic_FUN_00406000.c
+      Flags: 0x81
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    004060a0 | renderPolygonUVPerspectiveCorrect
+      File: src/engine/3d.c/renderPolygonUVPerspectiveCorrect_FUN_004060a0.c
+      Flags: 0xc3
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00406150 | renderPolygonUVMappedLit
+      File: src/engine/3d.c/renderPolygonUVMappedLit_FUN_00406150.c
+      Flags: 0xc1
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    004061f0 | renderPolygonUVMappedEnhanced
+      File: src/engine/3d.c/renderPolygonUVMappedEnhanced_FUN_004061f0.c
+      Flags: 1
+      Flag2: 2
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00406290 | renderPolygonUVPerspective
+      File: src/engine/3d.c/renderPolygonUVPerspective_FUN_00406290.c
+      Flags: 0xc3
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00406430 | renderPolygonUVAdaptive
+      File: src/engine/3d.c/renderPolygonUVAdaptive_FUN_00406430.c
+      Flags: 0xc1, 0xc1, 0xc0, 0
+      Flag2: 0, 1, 1, 0
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    004066d0 | renderPolygonLitStandard
+      File: src/engine/3d.c/renderPolygonLitStandard_FUN_004066d0.c
+      Flags: 0x10
+      Flag2: 0
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    004067a0 | renderPolygonUVPerspectiveSpecial
+      File: src/engine/3d.c/renderPolygonUVPerspectiveSpecial_FUN_004067a0.c
+      Flags: 0xc3, 0xe3
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00406860 | renderPolygonDetailedComplex
+      File: src/engine/3d.c/renderPolygonDetailedComplex_FUN_00406860.c
+      Flags: 0xd3
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00406a20 | renderPolygonLitDetailedBasic
+      File: src/engine/3d.c/renderPolygonLitDetailedBasic_FUN_00406a20.c
+      Flags: 0x13
+      Flag2: 0
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00406b40 | renderPolygonDynamicQuality
+      File: src/engine/3d.c/renderPolygonDynamicQuality_FUN_00406b40.c
+      Flags: 499
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00406be0 | renderPolygonHighQuality
+      File: src/engine/3d.c/renderPolygonHighQuality_FUN_00406be0.c
+      Flags: 0x163
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00406c80 | renderPolygonUltraDetail
+      File: src/engine/3d.c/renderPolygonUltraDetail_FUN_00406c80.c
+      Flags: 0x267, 0x67
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00406de0 | renderPolygonComplexEffect
+      File: src/engine/3d.c/renderPolygonComplexEffect_FUN_00406de0.c
+      Flags: 0x28d, 0x8d
+      Flag2: 0, 4
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00406f20 | renderPolygonAdvancedEffect
+      File: src/engine/3d.c/renderPolygonAdvancedEffect_FUN_00406f20.c
+      Flags: 0x28d, 0x8d
+      Flag2: 5, 5
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    004070c0 | renderPolygonPremium
+      File: src/engine/3d.c/renderPolygonPremium_FUN_004070c0.c
+      Flags: 0x1e7
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00407290 | renderPolygonPremiumQuality
+      File: src/engine/3d.c/renderPolygonPremiumQuality_FUN_00407290.c
+      Flags: 0x1e7
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00407470 | renderPolygon
+      File: src/engine/3d.c/renderPolygon_FUN_00407470.c
+      Flags: 0x1e7
+      Flag2: 1
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00407620 | renderPolygon
+      File: src/engine/3d.c/renderPolygon_FUN_00407620.c
+      Flags: None
+      Flag2: 1, 5
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+    00407720 | renderPolygon
+      File: src/engine/3d.c/renderPolygon_FUN_00407720.c
+      Flags: None
+      Flag2: 1, 5
+      Scanline: wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec, wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+
+  clipper.c (3 functions):
+    004366e0 | clipPolygonToViewFrustum
+      File: src/engine/clipper.c/clipPolygonToViewFrustum_FUN_004366e0.c
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+    00437ca0 | clipPolygonToViewFrustumAdvanced
+      File: src/engine/clipper.c/clipPolygonToViewFrustumAdvanced_FUN_00437ca0.c
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+    00438420 | clipPolygonToViewport
+      File: src/engine/clipper.c/clipPolygonToViewport_FUN_00438420.c
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+  drender.cpp (26 functions):
+    0048a740 | CDemonRenderer_clipAndFillPolygon
+      File: src/engine/drender.cpp/CDemonRenderer_clipAndFillPolygon_FUN_0048a740.cpp
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+    0048a820 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048a820.cpp
+      Flags: 0xc0, 0
+      Flag2: 6, 0
+      Scanline: core_dtrace_cpp_FUN_00490a58, core_dtrace_cpp_FUN_0049072f
+
+    0048a8a0 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048a8a0.cpp
+      Flags: 0xc0, 0
+      Flag2: 6, 0
+      Scanline: core_dtrace_cpp_FUN_00490a58, core_dtrace_cpp_FUN_0049072f
+
+    0048a950 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048a950.cpp
+      Flags: 0x90, 0
+      Flag2: 6, 0
+      Scanline: core_dtrace_cpp_FUN_00490902, core_dtrace_cpp_FUN_0049077d
+
+    0048aa50 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048aa50.cpp
+      Flags: 0xc0
+      Flag2: 6
+      Scanline: core_dtrace_cpp_FUN_00490d35
+
+    0048ab50 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048ab50.cpp
+      Flags: 0xc0, 0
+      Flag2: 6, 0
+      Scanline: core_dtrace_cpp_FUN_00490c37, core_dtrace_cpp_FUN_00490cb5
+
+    0048ac40 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048ac40.cpp
+      Flags: 0xc1, 0
+      Flag2: 3, 0
+      Scanline: core_dtrace_cpp_FUN_00490ec0, core_dtrace_cpp_FUN_0049072f
+
+    0048ae10 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048ae10.cpp
+      Flags: 0
+      Flag2: 6, 0
+      Scanline: wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, core_dtrace_cpp_FUN_0049072f
+
+    0048aeb0 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048aeb0.cpp
+      Flags: 0
+      Flag2: 6, 0
+      Scanline: wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, core_dtrace_cpp_FUN_0049072f
+
+    0048b030 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048b030.cpp
+      Flags: 0
+      Flag2: 6, 0
+      Scanline: wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, core_dtrace_cpp_FUN_0049072f
+
+    0048b1e0 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048b1e0.cpp
+      Flags: 0x2cd, 0
+      Flag2: 6, 0
+      Scanline: wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, core_dtrace_cpp_FUN_0049072f
+
+    0048b320 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048b320.cpp
+      Flags: 0x2cd, 0
+      Flag2: 6, 0
+      Scanline: wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, core_dtrace_cpp_FUN_0049072f
+
+    0048b420 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048b420.cpp
+      Flags: 0x41, 0
+      Flag2: 6, 0
+      Scanline: core_dtrace_cpp_FUN_0049169d, core_dtrace_cpp_FUN_0049072f
+
+    0048b550 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048b550.cpp
+      Flags: 0xc3, 1
+      Flag2: 6, 0
+      Scanline: wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, core_dtrace_cpp_FUN_004907e7
+
+    0048b970 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048b970.cpp
+      Flags: 0x2e7, 1
+      Flag2: 6, 0
+      Scanline: wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, core_dtrace_cpp_FUN_004907e7
+
+    0048bad0 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048bad0.cpp
+      Flags: 0x367, 0
+      Flag2: 6, 0
+      Scanline: wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, core_dtrace_cpp_FUN_0049072f
+
+    0048bba0 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048bba0.cpp
+      Flags: 0x367, 0
+      Flag2: 6, 0
+      Scanline: wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, core_dtrace_cpp_FUN_0049072f
+
+    0048bcf0 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048bcf0.cpp
+      Flags: 0x267, 0
+      Flag2: 6, 0
+      Scanline: wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, core_dtrace_cpp_FUN_0049072f
+
+    0048bdc0 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048bdc0.cpp
+      Flags: 0x267, 0
+      Flag2: 6, 0
+      Scanline: wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, core_dtrace_cpp_FUN_0049072f
+
+    0048bf10 | CDemonRenderer_renderPrim
+      File: src/engine/drender.cpp/CDemonRenderer_renderPrim_FUN_0048bf10.cpp
+      Flags: 0x327, 0
+      Flag2: 0
+      Scanline: wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, core_dtrace_cpp_FUN_0049072f
+
+    0048c8d0 | CDemonRenderer_renderLitObject
+      File: src/engine/drender.cpp/CDemonRenderer_renderLitObject_FUN_0048c8d0.cpp
+      Flags: 0xc4
+      Flag2: 6
+      Scanline: None
+
+    0048cf00 | CDemonRenderer_demonGZFacetList1
+      File: src/engine/drender.cpp/CDemonRenderer_demonGZFacetList1_FUN_0048cf00.cpp
+      Flags: 0
+      Flag2: 6
+      Scanline: wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, core_dtrace_cpp_FUN_0049072f
+
+    0048d170 | CDemonRenderer_demonGZFacetList2
+      File: src/engine/drender.cpp/CDemonRenderer_demonGZFacetList2_FUN_0048d170.cpp
+      Flags: 0
+      Flag2: 6, 0
+      Scanline: wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, core_dtrace_cpp_FUN_0049072f
+
+    0048d410 | CDemonRenderer
+      File: src/engine/drender.cpp/CDemonRenderer_FUN_0048d410.cpp
+      Flags: 0
+      Flag2: 6, 0
+      Scanline: core_dtrace_cpp_FUN_004906e9, wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031, wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823, core_dtrace_cpp_FUN_0049072f
+
+    005fcfc0 | unkVertProcessing
+      File: src/engine/drender.cpp/unkVertProcessing_FUN_005fcfc0.cpp
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+    005fd4e0 | renderClippedPolygons
+      File: src/engine/drender.cpp/renderClippedPolygons_FUN_005fd4e0.cpp
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+  prim.c (6 functions):
+    00551d60 | setupSoftwareEdgeWithZMode
+      File: src/engine/prim.c/setupSoftwareEdgeWithZMode_FUN_00551d60.c
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+    00552510 | renderPolygonSoftware
+      File: src/engine/prim.c/renderPolygonSoftware_FUN_00552510.c
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+    00552a40 | renderIndexedPolygonSoftware
+      File: src/engine/prim.c/renderIndexedPolygonSoftware_FUN_00552a40.c
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+    00553190 | setupColoredSoftwareEdge
+      File: src/engine/prim.c/setupColoredSoftwareEdge_FUN_00553190.c
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+    00553470 | renderScanlinePolygon
+      File: src/engine/prim.c/renderScanlinePolygon_FUN_00553470.c
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+    00553b10 | renderIndexedPolygonAdvanced
+      File: src/engine/prim.c/renderIndexedPolygonAdvanced_FUN_00553b10.c
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+
+src/wincore:
+  windll.cpp (6 functions):
+    005b4031 | renderMMXPerspectiveScanline32
+      File: src/wincore/windll.cpp/renderMMXPerspectiveScanline32_FUN_005b4031.cpp
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+    005b4823 | renderMMXPerspectiveScanline16
+      File: src/wincore/windll.cpp/renderMMXPerspectiveScanline16_FUN_005b4823.cpp
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+    005b50ec | renderPerspectiveCorrectScanline32
+      File: src/wincore/windll.cpp/renderPerspectiveCorrectScanline32_FUN_005b50ec.cpp
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+    005b5322 | renderPerspectiveCorrectScanline16
+      File: src/wincore/windll.cpp/renderPerspectiveCorrectScanline16_FUN_005b5322.cpp
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+    005b5710 | renderScanline
+      File: src/wincore/windll.cpp/renderScanline_FUN_005b5710.cpp
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+    005b5716 | renderScanline
+      File: src/wincore/windll.cpp/renderScanline_FUN_005b5716.cpp
+      Flags: None
+      Flag2: None
+      Scanline: None
+
+
+UNIQUE FLAG VALUES:
+g_RenderStateFlags values found:
+  0
+  1
+  3
+  5
+  9
+  0xd
+  0x10
+  0x13
+  0x23
+  0x33
+  0x41
+  0x67
+  0x80
+  0x81
+  0x85
+  0x8d
+  0x90
+  0xc0
+  0xc1
+  0xc3
+  0xc4
+  0xc5
+  0xcd
+  0xd0
+  0xd1
+  0xd3
+  0xd9
+  0xe3
+  0x163
+  0x1e7
+  499
+  0x20d
+  0x267
+  0x28d
+  0x2cd
+  0x2e7
+  0x327
+  0x367
+
+g_RenderStateFlag2 values found:
+  0
+  1
+  2
+  3
+  4
+  5
+  6

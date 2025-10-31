@@ -1,0 +1,52 @@
+// Name: engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0
+// Address: 00402a80
+// Address Range: [[00402a80, 00402a84]]
+// Convention: __cdecl
+// Signature: void engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0(void)
+// Cross-references:
+//   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0 (004daed0) at 004daed4 [UNCONDITIONAL_CALL]
+
+#include "nocturne.h"
+
+void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_005ed4b0(void)
+
+{
+  HRESULT HVar1;
+  undefined4 uStack0000000c;
+  
+  g_GraphicsResetFlag = 0;
+  if (g_FullscreenMode == 0) {
+    return;
+  }
+  wincore_windll_cpp_restoreVideoMode_FUN_005b75b0();
+  if (g_DirectDrawUnknown != (IUnknown *)0x0) {
+    (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
+    g_DirectDrawUnknown = (IUnknown *)0x0;
+  }
+  if (g_SoftwareRenderSurface != (IDirectDrawSurface *)0x0) {
+    (*g_SoftwareRenderSurface->vtable->Release)((IUnknown *)g_SoftwareRenderSurface);
+    g_SoftwareRenderSurface = (IDirectDrawSurface *)0x0;
+  }
+  if (g_DirectDrawSurface != (IDirectDrawSurface *)0x0) {
+    (*g_DirectDrawSurface->vtable->Release)((IUnknown *)g_DirectDrawSurface);
+    g_DirectDrawSurface = (IDirectDrawSurface *)0x0;
+  }
+  if (g_DirectDrawObject != (IDirectDraw *)0x0) {
+    (*g_DirectDrawObject->vtable->RestoreDisplayMode)(g_DirectDrawObject);
+    (*g_DirectDrawObject->vtable->Release)((IUnknown *)g_DirectDrawObject);
+    g_DirectDrawObject = (IDirectDraw *)0x0;
+  }
+  HVar1 = crt_ddraw_c_DirectDrawCreate((GUID *)0x0,&g_DirectDrawObject,(IUnknown *)0x0);
+  if (HVar1 == 0) {
+    (*g_DirectDrawObject->vtable->SetCooperativeLevel)(g_DirectDrawObject,g_MainWindowHandle,0x11);
+  }
+  uStack0000000c = 0x5ed576;
+  wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
+  return;
+}
+
+
+// Assembly code:
+// 00402a80: JMP 0x005ed4b0
+//   Label: engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0
+//   XREF to: 005ed4b0 (UNCONDITIONAL_JUMP)

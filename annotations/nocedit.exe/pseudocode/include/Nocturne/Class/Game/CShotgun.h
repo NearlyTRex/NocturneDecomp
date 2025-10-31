@@ -1,0 +1,9 @@
+#pragma once
+
+// Structure: CShotgun
+// Ghidra size: 0x584 (1412 bytes)
+typedef struct CShotgun {
+    CWeapon base_weapon; // 0x0
+    char field_1400[12]; // 0x578
+} CShotgun;
+

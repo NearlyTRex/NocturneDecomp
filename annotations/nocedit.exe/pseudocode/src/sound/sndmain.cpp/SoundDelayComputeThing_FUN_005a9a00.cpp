@@ -1,0 +1,95 @@
+// Name: sound_sndmain.cpp_SoundDelayComputeThing_FUN_005a9a00
+// Address: 005a9a00
+// Address Range: [[005a9a00, 005a9a61]]
+// Convention: unknown
+// Signature: undefined sound_sndmain.cpp_SoundDelayComputeThing_FUN_005a9a00()
+// Cross-references:
+//   core_fire.cpp_CFireEffect_FUN_004c7db0 (004c7db0) at 004c7e44 [UNCONDITIONAL_CALL]
+// Globals:
+//   CSound* g_CSoundInstance
+// Function calls:
+//   sound_sndmain.cpp_ComputingDelay_FUN_005a7100
+//   sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
+//   sound_sndmain.cpp_unlockSound_FUN_005abdc0
+
+#include "nocturne.h"
+
+/* Signature: undefined1 sound_sndmain.cpp_SoundDelayComputeThing(undefined4 param_1, undefined4
+   param_2) */
+
+undefined4 sound_sndmain_cpp_SoundDelayComputeThing_FUN_005a9a00(void)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  undefined4 in_stack_00000008;
+  
+  iVar1 = sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
+  if (iVar1 == 0) {
+    return 0;
+  }
+  *(undefined4 *)(iVar1 + 0x40) = 1;
+  uVar2 = 1;
+  *(undefined4 *)(iVar1 + 0x3c) = in_stack_00000008;
+  sound_sndmain_cpp_ComputingDelay_FUN_005a7100();
+  if ((*(int *)(iVar1 + 0x70) != 0) && (g_CSoundInstance != (CSound *)0x0)) {
+    uVar2 = (*(code *)g_CSoundInstance->vtable[1].func2)();
+  }
+  sound_sndmain_cpp_unlockSound_FUN_005abdc0();
+  return uVar2;
+}
+
+
+// Assembly code:
+// 005a9a00: PUSH EBX
+//   Label: sound_sndmain.cpp_SoundDelayComputeThing_FUN_005a9a00
+// 005a9a01: PUSH 0x1
+// 005a9a03: MOV EDX,dword ptr [ESP + 0xc]
+//   XREF to: Stack[0x4] (READ)
+// 005a9a07: PUSH EDX
+// 005a9a08: CALL sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
+//   XREF to: 005a5d00 (UNCONDITIONAL_CALL)
+// 005a9a0d: MOV EBX,EAX
+// 005a9a0f: ADD ESP,0x8
+// 005a9a12: TEST EAX,EAX
+// 005a9a14: JNZ 0x005a9a18
+//   XREF to: 005a9a18 (CONDITIONAL_JUMP)
+// 005a9a16: POP EBX
+// 005a9a17: RET
+// 005a9a18: PUSH EDI
+//   Label: LAB_005a9a18
+// 005a9a19: PUSH ESI
+// 005a9a1a: PUSH 0x0
+// 005a9a1c: MOV dword ptr [EAX + 0x40],0x1
+// 005a9a23: PUSH EBX
+// 005a9a24: MOV EAX,dword ptr [ESP + 0x1c]
+//   XREF to: Stack[0x8] (READ)
+// 005a9a28: MOV ESI,0x1
+// 005a9a2d: MOV dword ptr [EBX + 0x3c],EAX
+// 005a9a30: CALL sound_sndmain.cpp_ComputingDelay_FUN_005a7100
+//   XREF to: 005a7100 (UNCONDITIONAL_CALL)
+// 005a9a35: MOV ECX,dword ptr [EBX + 0x70]
+// 005a9a38: ADD ESP,0x8
+// 005a9a3b: TEST ECX,ECX
+// 005a9a3d: JZ 0x005a9a57
+//   XREF to: 005a9a57 (CONDITIONAL_JUMP)
+// 005a9a3f: MOV EDI,dword ptr [0x03f69268]
+//   XREF to: 03f69268 (READ)
+// 005a9a45: TEST EDI,EDI
+// 005a9a47: JZ 0x005a9a57
+//   XREF to: 005a9a57 (CONDITIONAL_JUMP)
+// 005a9a49: PUSH 0x4
+// 005a9a4b: PUSH EBX
+// 005a9a4c: MOV ESI,dword ptr [EDI]
+// 005a9a4e: PUSH EDI
+// 005a9a4f: CALL dword ptr [ESI + 0x40]
+// 005a9a52: ADD ESP,0xc
+// 005a9a55: MOV ESI,EAX
+// 005a9a57: CALL sound_sndmain.cpp_unlockSound_FUN_005abdc0
+//   Label: LAB_005a9a57
+//   XREF to: 005abdc0 (UNCONDITIONAL_CALL)
+// 005a9a5c: MOV EAX,ESI
+// 005a9a5e: POP ESI
+// 005a9a5f: POP EDI
+// 005a9a60: POP EBX
+// 005a9a61: RET

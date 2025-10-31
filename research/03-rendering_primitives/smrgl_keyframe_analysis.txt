@@ -1,0 +1,66 @@
+# SMRGLKeyframe Structure Analysis
+
+## Current Definition:
+```c
+typedef struct SMRGLKeyframe {
+    SMRGLHeaderExtended header; // 0x0 (12 bytes)
+    CVector3i vertices[0];      // 0xc (flexible array)
+} SMRGLKeyframe;
+```
+
+## Assembly Evidence from loadAndInterpolateKeyframes_FUN_00501d40:
+
+### Vertex count access (line 327):
+```asm
+MOV EAX,dword ptr [EDI + 0x10]  ; Read vertex count
+```
+EDI points to keyframe base, so vertex_count is at +0x10
+
+### Vertex data start (line 329):
+```asm
+ADD ECX,0x14  ; ECX = keyframe + 0x14 (first vertex)
+```
+Vertices start at +0x14
+
+### Vertex stride (line 351):
+```asm
+ADD ECX,0xc  ; Move to next vertex (+12 bytes)
+```
+Each vertex is 12 bytes (CVector3i with 3 ints)
+
+## Actual Structure Layout:
+
++0x00: type (int) - from SMRGLHeaderBasic
++0x04: count/size (int) - from SMRGLHeaderBasic
++0x08: child_count (int) - from SMRGLHeaderExtended
++0x0C: ??? (int) - UNKNOWN FIELD
++0x10: vertex_count (int)
++0x14: vertices[] (CVector3i array)
+
+## The header is actually 20 bytes (0x14), not 12 bytes!
+
+The structure should be:
+```c
+typedef struct SMRGLKeyframe {
+    int type;           // 0x00
+    int size;           // 0x04
+    int child_count;    // 0x08
+    int unknown_0C;     // 0x0C - purpose unclear
+    int vertex_count;   // 0x10
+    CVector3i vertices[0]; // 0x14
+} SMRGLKeyframe;
+```
+
+OR if there's a different header type:
+```c
+typedef struct SMRGLKeyframeHeader {
+    SMRGLHeaderExtended base;  // 0x00 (12 bytes)
+    int unknown_0C;             // 0x0C
+    int vertex_count;           // 0x10
+} SMRGLKeyframeHeader;
+
+typedef struct SMRGLKeyframe {
+    SMRGLKeyframeHeader header; // 0x00 (20 bytes)
+    CVector3i vertices[0];      // 0x14
+} SMRGLKeyframe;
+```

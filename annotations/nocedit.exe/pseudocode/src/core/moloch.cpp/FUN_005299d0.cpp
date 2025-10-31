@@ -1,0 +1,20 @@
+// Name: core_moloch.cpp_FUN_005299d0
+// Address: 005299d0
+// Address Range: [[005299d0, 005299d0]]
+// Convention: unknown
+// Signature: undefined core_moloch.cpp_FUN_005299d0()
+
+#include "nocturne.h"
+
+/* Signature: undefined1 actors_hero_moloch.cpp_FUN_005299d0() */
+
+void core_moloch_cpp_FUN_005299d0(void)
+
+{
+  return;
+}
+
+
+// Assembly code:
+// 005299d0: RET
+//   Label: core_moloch.cpp_FUN_005299d0

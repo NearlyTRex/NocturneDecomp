@@ -1,0 +1,11 @@
+#pragma once
+
+// Structure: SEdgeTableEntry
+// Ghidra size: 0x10 (16 bytes)
+typedef struct SEdgeTableEntry {
+    int x_start; // 0x0
+    int y_start; // 0x4
+    int x_fixed_point; // 0x8
+    int x_increment; // 0xc
+} SEdgeTableEntry;
+

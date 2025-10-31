@@ -1,0 +1,78 @@
+#pragma once
+
+// Structure: CDemonSet
+// Ghidra size: 0x16166c (1447532 bytes)
+typedef struct CDemonSet {
+    int camera_count; // 0x0
+    C3DSCamera cameras[250]; // 0x4
+    int light_count; // 0x19a2c
+    C3DSLight lights[200]; // 0x19a30
+    char geometry_filename[32]; // 0x14d0f0
+    CVector3f collision_result_vec1; // 0x14d110
+    CVector3f collision_result_vec2; // 0x14d11c
+    CVector3f collision_normal; // 0x14d128
+    int ground_type; // 0x14d134
+    CVector3f collision_result_vec3; // 0x14d138
+    CDemonActor* collision_actor; // 0x14d144
+    int field_1364296; // 0x14d148
+    int field_1364300; // 0x14d14c
+    float min_ambient_value; // 0x14d150
+    void* actor_list_ptr; // 0x14d154
+    char actor_list_data[96]; // 0x14d158
+    char field_1364408[7904]; // 0x14d1b8
+    int damage_listener_count; // 0x14f098
+    void** damage_listeners; // 0x14f09c
+    char field_1372320[48088]; // 0x14f0a0
+    int per_pixel_lighting_enabled; // 0x15ac78
+    int default_master_reverb; // 0x15ac7c
+    char field_1420416[20]; // 0x15ac80
+    int use_enviro_model; // 0x15ac94
+    char enviro_model_name[16]; // 0x15ac98
+    int field_1420456; // 0x15aca8
+    int set_file_version; // 0x15acac
+    int actor_list_capacity; // 0x15acb0
+    int actor_list_count; // 0x15acb4
+    CDemonActor* actor_list_maybe[100]; // 0x15acb8
+    int last_switch_area_invalid; // 0x15ae48
+    int use_world_geometry_flag; // 0x15ae4c
+    char world_geometry_name[32]; // 0x15ae50
+    int rendering_mode; // 0x15ae70
+    char field_1420916[16]; // 0x15ae74
+    char field_1420932[16]; // 0x15ae84
+    float set_scale_factor; // 0x15ae94
+    int camera_selection_field1; // 0x15ae98
+    int camera_selection_field2; // 0x15ae9c
+    int camera_enabled_flag; // 0x15aea0
+    int selected_camera_index; // 0x15aea4
+    int previous_best_camera_index; // 0x15aea8
+    float previous_best_camera_timer; // 0x15aeac
+    int pending_camera_index; // 0x15aeb0
+    float camera_switch_cooldown; // 0x15aeb4
+    int room_reverb_type; // 0x15aeb8
+    int room_count; // 0x15aebc
+    SRoom rooms[20]; // 0x15aec0
+    int vdir_box_count; // 0x15b410
+    SVDBox vdir_boxes[250]; // 0x15b414
+    int default_ground_type; // 0x15f67c
+    int ray_type; // 0x15f680
+    float field_1439364; // 0x15f684
+    float field_1439368; // 0x15f688
+    float field_1439372; // 0x15f68c
+    float field_1439376; // 0x15f690
+    int ignore_list_count; // 0x15f694
+    int collision_flag; // 0x15f698
+    CDemonActor* ignore_list[10]; // 0x15f69c
+    float raycast_distance; // 0x15f6c4
+    int voxel_distance; // 0x15f6c8
+    CVector3f voxel_hit_point; // 0x15f6cc
+    int voxel_surface_type; // 0x15f6d8
+    int field_1439452; // 0x15f6dc
+    char field_1439456[8008]; // 0x15f6e0
+    int has_sky; // 0x161628
+    char sky_texture_name[32]; // 0x16162c
+    int sky_type; // 0x16164c
+    SMirror* active_mirror; // 0x161650
+    char field_1447508[20]; // 0x161654
+    int weather_type; // 0x161668
+} CDemonSet;
+

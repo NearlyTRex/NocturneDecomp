@@ -1,0 +1,42 @@
+// Name: core_dest.cpp_FUN_0046f970
+// Address: 0046f970
+// Address Range: [[0046f970, 0046f97a]]
+// Convention: unknown
+// Signature: undefined core_dest.cpp_FUN_0046f970()
+// Cross-references:
+//   core_filmreel.cpp_FUN_004beb00 (004beb00) at 004beb06 [UNCONDITIONAL_CALL]
+// Function calls:
+//   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
+
+#include "nocturne.h"
+
+/* Signature: undefined1 actors_other_dest.cpp_FUN_0046f970(undefined4 param_1) */
+
+void core_dest_cpp_FUN_0046f970(void)
+
+{
+  int iVar1;
+  CDemonMission *pCVar2;
+  CDemonActor *in_stack_00000004;
+  
+  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);
+  pCVar2 = g_CDemonMissionPtr;
+  in_stack_00000004->field14_0xf8 = 0;
+  iVar1 = *(int *)(pCVar2->field0_0x0 + 4);
+  in_stack_00000004[1].location.area_id = 0;
+  in_stack_00000004[1].create_event[0x20] = '\x01';
+  in_stack_00000004[1].create_event[0x21] = '\0';
+  in_stack_00000004[1].create_event[0x22] = '\0';
+  in_stack_00000004[1].create_event[0x23] = '\0';
+  in_stack_00000004->is_transparent = iVar1;
+  return;
+}
+
+
+// Assembly code:
+// 0046f970: PUSH EBX
+//   Label: core_dest.cpp_FUN_0046f970
+// 0046f971: MOV EBX,dword ptr [ESP + 0x8]
+// 0046f975: PUSH EBX
+// 0046f976: CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0
+//   XREF to: 00408bb0 (UNCONDITIONAL_CALL)

@@ -1,0 +1,28 @@
+// Name: crt_wsock32.c_bind
+// Address: 00610efe
+// Address Range: [[00610efe, 00610f03]]
+// Convention: __stdcall
+// Signature: int crt_wsock32.c_bind(SOCKET s, PSOCKADDR name, int namelen)
+// Cross-references:
+//   support_trisock.cpp_FUN_005e1d20 (005e1d20) at 005e1d3c [UNCONDITIONAL_CALL]
+
+
+#include "nocturne.h"
+
+int __stdcall crt_wsock32_c_bind(SOCKET s,PSOCKADDR name,int namelen)
+
+{
+  int iVar1;
+  
+                    /* WARNING: Could not recover jumptable at 0x00610efe. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  iVar1 = (*PTR_bind_006116a4)(s,name,namelen);
+  return iVar1;
+}
+
+
+// Assembly code:
+// 00610efe: JMP dword ptr [0x006116a4]
+//   Label: crt_wsock32.c_bind
+//   XREF to: EXTERNAL:000000b2 (COMPUTED_JUMP)
+//   XREF to: 006116a4 (INDIRECTION)

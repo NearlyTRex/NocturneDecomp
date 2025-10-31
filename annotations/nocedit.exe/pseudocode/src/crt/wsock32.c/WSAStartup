@@ -1,0 +1,28 @@
+// Name: crt_wsock32.c_WSAStartup
+// Address: 00610eda
+// Address Range: [[00610eda, 00610edf]]
+// Convention: __stdcall
+// Signature: int crt_wsock32.c_WSAStartup(WORD wVersionRequested, LPWSADATA lpWSAData)
+// Cross-references:
+//   support_trisock.cpp_startupWinsock_FUN_005e1ec0 (005e1ec0) at 005e1ece [UNCONDITIONAL_CALL]
+
+
+#include "nocturne.h"
+
+int __stdcall crt_wsock32_c_WSAStartup(WORD wVersionRequested,LPWSADATA lpWSAData)
+
+{
+  int iVar1;
+  
+                    /* WARNING: Could not recover jumptable at 0x00610eda. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  iVar1 = (*PTR_WSAStartup_0061168c)(wVersionRequested,lpWSAData);
+  return iVar1;
+}
+
+
+// Assembly code:
+// 00610eda: JMP dword ptr [0x0061168c]
+//   Label: crt_wsock32.c_WSAStartup
+//   XREF to: EXTERNAL:000000ac (COMPUTED_JUMP)
+//   XREF to: 0061168c (INDIRECTION)
