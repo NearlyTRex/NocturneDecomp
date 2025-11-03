@@ -20,7 +20,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042bf40(CCharacter *this_ptr)
     return in_EAX;
   }
   this_ptr->grabbed_by = (CDemonActor *)0x0;
-  iVar1 = (*(this_ptr_00->metadata).vtable[1].playSound)(this_ptr_00,(char *)this_ptr);
+  iVar1 = (*this_ptr_00->vtable[1].playSound)(this_ptr_00,(char *)this_ptr);
   return iVar1;
 }
 

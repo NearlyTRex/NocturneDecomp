@@ -67,7 +67,7 @@ undefined4 core_ladder_cpp_FUN_00502620(void)
   iStack_88 = 0x502635;
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
   iStack_88 = 0x50264d;
-  this_ptr = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+  this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
                        (in_stack_00000004,(CBoundingBox3D *)&fStack_70);
   fStack_70 = 7.360592e-39;
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);

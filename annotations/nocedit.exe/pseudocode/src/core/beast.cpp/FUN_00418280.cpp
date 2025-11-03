@@ -5,7 +5,7 @@
 // Signature: undefined core_beast.cpp_FUN_00418280()
 // Function calls:
 //   core_enemy.cpp_CEnemy_FUN_004a9650
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 
 #include "nocturne.h"
 
@@ -14,9 +14,11 @@
 void core_beast_cpp_FUN_00418280(void)
 
 {
+  int in_stack_00000004;
   CEnemy *in_stack_00000008;
   
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450
+            ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
   core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000008);
   return;
 }
@@ -28,7 +30,7 @@ void core_beast_cpp_FUN_00418280(void)
 //   XREF to: Stack[0x4] (READ)
 // 00418284: ADD EAX,0x158
 // 00418289: PUSH EAX
-// 0041828a: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 0041828a: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0041828f: ADD ESP,0x4
 // 00418292: MOV EDX,dword ptr [ESP + 0x4]

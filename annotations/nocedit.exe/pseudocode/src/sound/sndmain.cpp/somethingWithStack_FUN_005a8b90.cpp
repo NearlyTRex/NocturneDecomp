@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_somethingWithStack_FUN_005a8b90()
 // Cross-references:
-//   core_event.cpp_FUN_004b0f00 (004b0f00) at 004b0f50 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004b0f00 (004b0f00) at 004b0f50 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830 (005b3830) at 005b3949 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bdc6e [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a9550 (005a9550) at 005a9558 [UNCONDITIONAL_CALL]

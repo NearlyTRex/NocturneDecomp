@@ -97,7 +97,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                          (pCVar5->items[0],g_CLightGunClassInfo.name_hash);
       if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.position.y != 2.8026e-45)) {
-        (*((pCVar3->metadata).vtable)->process)(pCVar3);
+        (*pCVar3->vtable->process)(pCVar3);
       }
       iVar4 = iVar4 + 1;
       pCVar5 = (CInventory *)&pCVar5->owner;

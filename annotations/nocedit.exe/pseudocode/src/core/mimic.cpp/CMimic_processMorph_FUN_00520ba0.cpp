@@ -52,10 +52,12 @@ void core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(void)
   }
   else {
     while (0.0 < in_stack_00000008) {
-      core_motion_cpp_CMotionController_advance_FUN_0052d610();
+      core_motion_cpp_CMotionController_advance_FUN_0052d610
+                ((CMotionController *)(in_stack_00000004 + 0x158));
     }
     while (0.0 < in_stack_00000008) {
-      core_motion_cpp_CMotionController_advance_FUN_0052d610();
+      core_motion_cpp_CMotionController_advance_FUN_0052d610
+                ((CMotionController *)(*(int *)(in_stack_00000004 + 0x4ca54) + 0x158));
     }
     core_morph_cpp_FUN_0052b600();
     core_morph_cpp_FUN_0052b600();

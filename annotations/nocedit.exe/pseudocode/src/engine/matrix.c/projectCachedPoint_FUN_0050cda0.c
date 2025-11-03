@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void engine_matrix.c_projectCachedPoint_FUN_0050cda0(int cacheIndex)
 // Cross-references:
-//   core_mirror.cpp_reflectAndClipPrimitive_FUN_00522310 (00522310) at 0052252f [UNCONDITIONAL_CALL]
+//   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 (00522310) at 0052252f [UNCONDITIONAL_CALL]
 //   engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0 (004ce2d0) at 004ce5c5 [UNCONDITIONAL_CALL]
 // Globals:
 //   SRenderVertex[16] g_RenderVertexBuffer

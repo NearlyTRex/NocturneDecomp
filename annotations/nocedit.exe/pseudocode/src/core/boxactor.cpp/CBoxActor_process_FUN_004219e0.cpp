@@ -15,10 +15,10 @@
 //   CDemonSet g_CDemonSetInstance
 //   CSound g_CSoundInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
-//   core_actor.cpp_CDemonActor_FUN_00408e80
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_box.cpp_CBox_process_FUN_0041e2f0
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 //   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
@@ -60,9 +60,7 @@ void core_boxactor_cpp_CBoxActor_process_FUN_004219e0(void)
   float local_34;
   float local_30;
   float local_2c;
-  float local_28;
-  float fStack_24;
-  float local_20;
+  CVector3f local_28;
   float local_1c;
   int local_18;
   int local_14;
@@ -91,17 +89,17 @@ void core_boxactor_cpp_CBoxActor_process_FUN_004219e0(void)
   local_30 = in_stack_00000004[2].orient_matrix.m[1].z * in_stack_00000008;
   local_2c = in_stack_00000004[2].orient_matrix.m[2].x * in_stack_00000008;
   local_84._0_4_ = local_30 * FLOAT_00616643;
-  local_28 = in_stack_00000004[2].orient_matrix.m[2].y * in_stack_00000008;
+  local_28.x = in_stack_00000004[2].orient_matrix.m[2].y * in_stack_00000008;
   local_84._4_4_ = local_2c * FLOAT_00616643;
-  local_84._8_4_ = local_28 * FLOAT_00616643;
+  local_84._8_4_ = local_28.x * FLOAT_00616643;
   (in_stack_00000004->orient).pitch = (in_stack_00000004->orient).pitch + (float)local_84._0_4_;
   (in_stack_00000004->orient).bank = (in_stack_00000004->orient).bank + (float)local_84._4_4_;
   (in_stack_00000004->orient).heading = (in_stack_00000004->orient).heading + (float)local_84._8_4_;
-  fVar7 = core_actor_cpp_FUN_0040cd70((in_stack_00000004->orient).pitch);
+  fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((in_stack_00000004->orient).pitch);
   (in_stack_00000004->orient).pitch = fVar7;
-  fVar7 = core_actor_cpp_FUN_0040cd70((in_stack_00000004->orient).heading);
+  fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((in_stack_00000004->orient).heading);
   (in_stack_00000004->orient).heading = fVar7;
-  fVar7 = core_actor_cpp_FUN_0040cd70((in_stack_00000004->orient).bank);
+  fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((in_stack_00000004->orient).bank);
   cVar5 = *(char *)&in_stack_00000004[2].location.position.y;
   (in_stack_00000004->orient).bank = fVar7;
   if (cVar5 != '\0') {
@@ -110,47 +108,48 @@ void core_boxactor_cpp_CBoxActor_process_FUN_004219e0(void)
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       in_stack_00000008 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
       sound_sndmain_cpp_FUN_005a8be0();
-      fVar7 = (float)(*((in_stack_00000004->metadata).vtable)->playSound)
+      fVar7 = (float)(*in_stack_00000004->vtable->playSound)
                                (in_stack_00000004,(char *)&in_stack_00000004[2].location.position.y)
       ;
       in_stack_00000004[2].orient_matrix.m[1].y = fVar7;
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     }
   }
-  if ((in_stack_00000004[2].field6_0x68 == 0) && (0.0 < in_stack_00000004[2].field_224.x)) {
+  if ((in_stack_00000004[2].field6_0x68 == 0) && (0.0 < in_stack_00000004[2].field12_0xe0.x)) {
     fStack_38 = (in_stack_00000004->location).position.x;
     local_34 = (in_stack_00000004->location).position.y;
     local_30 = (in_stack_00000004->location).position.z;
     core_box_cpp_CBox_process_FUN_0041e2f0
-              ((CBox *)&in_stack_00000004[2].field_224.y,in_stack_00000008);
-    pfVar1 = &in_stack_00000004[2].field_236.y;
+              ((CBox *)&in_stack_00000004[2].field12_0xe0.y,in_stack_00000008);
+    pfVar1 = &in_stack_00000004[2].field13_0xec.y;
     if (&in_stack_00000004->orient != (COrientation *)pfVar1) {
       (in_stack_00000004->orient).pitch = *pfVar1;
-      (in_stack_00000004->orient).bank = in_stack_00000004[2].field_236.z;
+      (in_stack_00000004->orient).bank = in_stack_00000004[2].field13_0xec.z;
       (in_stack_00000004->orient).heading = (float)in_stack_00000004[2].field14_0xf8;
     }
-    core_actor_cpp_CDemonActor_FUN_00408c10(in_stack_00000004);
-    pCVar9 = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
+    pCVar9 = (*in_stack_00000004->vtable->getBoundingBox)
                        (in_stack_00000004,(CBoundingBox3D *)(local_84 + 0x24));
-    local_28 = -(((pCVar9->min).x + (pCVar9->max).x) * FLOAT_00616647);
-    fStack_24 = -(((pCVar9->min).y + (pCVar9->max).y) * FLOAT_00616647);
-    local_20 = -(((pCVar9->min).z + (pCVar9->max).z) * FLOAT_00616647);
-    pCVar10 = core_actor_cpp_CDemonActor_FUN_00408e80(in_stack_00000004);
-    fVar7 = in_stack_00000004[2].field_224.z;
+    local_28.x = -(((pCVar9->min).x + (pCVar9->max).x) * FLOAT_00616647);
+    local_28.y = -(((pCVar9->min).y + (pCVar9->max).y) * FLOAT_00616647);
+    local_28.z = -(((pCVar9->min).z + (pCVar9->max).z) * FLOAT_00616647);
+    pCVar10 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                        (in_stack_00000004,(CVector3f *)&stack0x00000014,&local_28);
+    fVar7 = in_stack_00000004[2].field12_0xe0.z;
     fVar2 = pCVar10->y;
-    fVar3 = in_stack_00000004[2].field_236.x;
+    fVar3 = in_stack_00000004[2].field13_0xec.x;
     fVar4 = pCVar10->z;
-    (in_stack_00000004->location).position.x = in_stack_00000004[2].field_224.y + pCVar10->x;
+    (in_stack_00000004->location).position.x = in_stack_00000004[2].field12_0xe0.y + pCVar10->x;
     (in_stack_00000004->location).position.y = fVar7 + fVar2;
     (in_stack_00000004->location).position.z = fVar3 + fVar4;
-    fVar7 = in_stack_00000004[2].metadata.runtime_vector1.x;
-    fVar2 = in_stack_00000004[2].metadata.runtime_vector1.y;
+    fVar7 = in_stack_00000004[2].previous_transform_state.position.x;
+    fVar2 = in_stack_00000004[2].previous_transform_state.position.y;
     if ((float)DOUBLE_0061664f <
         SQRT(fVar2 * fVar2 +
              (float)in_stack_00000004[2].field23_0x124 * (float)in_stack_00000004[2].field23_0x124 +
              fVar7 * fVar7)) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)local_84);
-      local_84._8_4_ = (float)local_84._0_4_ * in_stack_00000004[2].field_224.x * FLOAT_00616657;
+      local_84._8_4_ = (float)local_84._0_4_ * in_stack_00000004[2].field12_0xe0.x * FLOAT_00616657;
       pCStack_4c = in_stack_00000004;
       pCStack_48 = in_stack_00000004;
       core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
@@ -260,21 +259,21 @@ void core_boxactor_cpp_CBoxActor_process_FUN_004219e0(void)
 // 00421b3f: FADD float ptr [ESP + 0x60]
 // 00421b43: FSTP float ptr [EAX + 0x8]
 // 00421b46: PUSH dword ptr [EBX + 0x30]
-// 00421b49: CALL core_actor.cpp_FUN_0040cd70
+// 00421b49: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 00421b4e: MOV dword ptr [ESP + 0xd0],EAX
 // 00421b55: FLD float ptr [ESP + 0xd0]
 // 00421b5c: ADD ESP,0x4
 // 00421b5f: PUSH dword ptr [EBX + 0x38]
 // 00421b62: FSTP float ptr [EBX + 0x30]
-// 00421b65: CALL core_actor.cpp_FUN_0040cd70
+// 00421b65: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 00421b6a: MOV dword ptr [ESP + 0xd0],EAX
 // 00421b71: FLD float ptr [ESP + 0xd0]
 // 00421b78: ADD ESP,0x4
 // 00421b7b: PUSH dword ptr [EBX + 0x34]
 // 00421b7e: FSTP float ptr [EBX + 0x38]
-// 00421b81: CALL core_actor.cpp_FUN_0040cd70
+// 00421b81: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 00421b86: MOV dword ptr [ESP + 0xd0],EAX
 // 00421b8d: FLD float ptr [ESP + 0xd0]
@@ -360,7 +359,7 @@ void core_boxactor_cpp_CBoxActor_process_FUN_004219e0(void)
 // 00421c91: MOV dword ptr [EDX + 0x8],ECX
 // 00421c94: PUSH EBX
 //   Label: LAB_00421c94
-// 00421c95: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 00421c95: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 00421c9a: ADD ESP,0x4
 // 00421c9d: LEA EDX,[ESP + 0x40]
@@ -410,7 +409,7 @@ void core_boxactor_cpp_CBoxActor_process_FUN_004219e0(void)
 // 00421d30: PUSH EBX
 // 00421d31: FCHS
 // 00421d33: FSTP float ptr [ESP + 0x78]
-// 00421d37: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 00421d37: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 00421d3c: LEA EDX,[EBX + 0x394]
 // 00421d42: FLD float ptr [EDX]

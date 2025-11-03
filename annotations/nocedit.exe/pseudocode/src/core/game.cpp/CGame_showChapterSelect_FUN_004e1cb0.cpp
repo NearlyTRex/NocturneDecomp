@@ -91,7 +91,7 @@
 //   CBitFont* g_ThemeFont
 //   CBitFont* g_EditorFont
 //   CEditorTools g_CEditorToolsPtr
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   char g_CurrentSaveFile
 //   undefined1 DAT_02d82c81
 //   undefined1 DAT_02d82c82
@@ -105,7 +105,7 @@
 //   CLevelLoader g_CLevelLoaderInstance
 //   CDemonMission g_CDemonMissionInstance
 // Function calls:
-//   core_event.cpp_FUN_004b0460
+//   core_event.cpp_CEventList_FUN_004b0460
 //   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0
 //   core_level.cpp_CLevelLoader_show_FUN_00503dc0
 //   core_mission.cpp_CDemonMission_createHeros_FUN_00524a80
@@ -608,7 +608,7 @@ code_r0x004e1f00:
   g_OverlayDisplayTimer = 8.0;
 LAB_004e1fac:
   chapter_name = g_CEventListPtr;
-  core_event_cpp_FUN_004b0460();
+  core_event_cpp_CEventList_FUN_004b0460(g_CEventListPtr);
   iVar7 = 1;
   iVar8 = crt_string_c_stricmp_FUN_005fe7f0(&g_CurrentSaveFile,acStack_124);
   if (iVar8 != 0) {
@@ -931,7 +931,7 @@ LAB_004e1fac:
 //   XREF to: 006793d0 (READ)
 // 004e1fb2: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 004e1fb3: CALL core_event.cpp_FUN_004b0460
+// 004e1fb3: CALL core_event.cpp_CEventList_FUN_004b0460
 //   XREF to: 004b0460 (UNCONDITIONAL_CALL)
 // 004e1fb8: ADD ESP,0x4
 // 004e1fbb: LEA EAX,[ESP + 0x5a8]

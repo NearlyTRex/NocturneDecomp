@@ -24,7 +24,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_004285d0(CCharacter *this_ptr)
   CVector3f *in_stack_0000002c;
   CVector3f *in_stack_00000030;
   
-  (*(this_ptr->base_actor).metadata.vtable[1].handleFootstep)
+  (*(this_ptr->base_actor).vtable[1].handleFootstep)
             (&this_ptr->base_actor,unaff_EBX,unaff_retaddr,(float)this_ptr);
   uStack00000010 = 0x4285f5;
   core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0

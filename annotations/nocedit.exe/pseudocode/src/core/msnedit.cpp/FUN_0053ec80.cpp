@@ -61,10 +61,9 @@ void core_msnedit_cpp_FUN_0053ec80(void)
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Finding sound files in mission...");
   for (this_ptr = in_stack_00000004->first_actor; this_ptr != (CDemonActor *)0x0;
-      this_ptr = (this_ptr->metadata).next_actor) {
+      this_ptr = this_ptr->next_actor) {
     core_actor_cpp_FUN_0040e130();
-    (*((this_ptr->metadata).vtable)->getPropertyList)
-              (this_ptr,(CActorPropertyList *)&stack0xffffd54c);
+    (*this_ptr->vtable->getPropertyList)(this_ptr,(CActorPropertyList *)&stack0xffffd54c);
     iVar2 = 0;
     if (0 < in_stack_ffffd564) {
       piVar1 = (int *)&stack0xffffd568;

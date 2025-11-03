@@ -8,7 +8,7 @@
 //   WatcomTypeInfo g_CMolochTypeInfo
 // Function calls:
 //   core_hero.cpp_CHero_dtor_FUN_004f2470
-//   core_morph.cpp_FUN_0052b330
+//   core_morph.cpp_CMorphModel_FUN_0052b330
 //   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40
 //   crt_memory.c_free_FUN_005fe659
 //   crt_memory.c_freeSingleInstance_FUN_005fe632
@@ -20,8 +20,8 @@ CMoloch * __cdecl
 core_moloch_cpp_CMoloch_dtor_FUN_00528bf0(CMoloch *this_ptr,uint d1,uint d2,uint d3,uint d4)
 
 {
-  int iVar1;
-  CDeformableModelInstance *pCVar2;
+  int extraout_EAX;
+  CDeformableModelInstance *pCVar1;
   CMoloch *ptr;
   void *ptr_00;
   uint unaff_retaddr;
@@ -33,14 +33,14 @@ core_moloch_cpp_CMoloch_dtor_FUN_00528bf0(CMoloch *this_ptr,uint d1,uint d2,uint
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base_hero).base_character.base_actor.metadata.vtable =
+  (this_ptr->base_hero).base_character.base_actor.vtable =
        &PTR_core_moloch_cpp_FUN_00528c70_00661944;
-  iVar1 = core_morph_cpp_FUN_0052b330();
-  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-                     ((CDeformableModelInstance *)(iVar1 + -0x2388),0,unaff_retaddr,(uint)this_ptr,
-                      d1);
+  core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)(this_ptr->field5_0x21e94 + 200));
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
+                     ((CDeformableModelInstance *)(extraout_EAX + -0x2388),0,unaff_retaddr,
+                      (uint)this_ptr,d1);
   core_hero_cpp_CHero_dtor_FUN_004f2470
-            ((CHero *)(pCVar2[-0xf].padding_0x0 + 0xcb8),1,(uint)this_ptr,d1,d2,d3,d4,
+            ((CHero *)(pCVar1[-0xf].field3_0x508 + 0x7b0),1,(uint)this_ptr,d1,d2,d3,d4,
              in_stack_00000018,in_stack_0000001c);
   if ((d4 & 2) == 0) {
     return ptr;
@@ -64,7 +64,7 @@ core_moloch_cpp_CMoloch_dtor_FUN_00528bf0(CMoloch *this_ptr,uint d1,uint d2,uint
 // 00528c04: PUSH EBX
 // 00528c05: MOV dword ptr [EBX + 0xfffde1f8],0x661944
 //   XREF to: 00661944 (DATA)
-// 00528c0f: CALL core_morph.cpp_FUN_0052b330
+// 00528c0f: CALL core_morph.cpp_CMorphModel_FUN_0052b330
 //   XREF to: 0052b330 (UNCONDITIONAL_CALL)
 // 00528c14: ADD ESP,0x8
 // 00528c17: PUSH 0x0

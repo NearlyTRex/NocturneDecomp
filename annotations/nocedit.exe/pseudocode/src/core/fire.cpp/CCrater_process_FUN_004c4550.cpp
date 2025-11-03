@@ -13,14 +13,16 @@
 //   CFireEffect g_CFireEffectInstance
 //   undefined4 g_CGameInstance.delta_time_float
 // Function calls:
-//   core_fire.cpp_CFireEffect_FUN_004c7b20
+//   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 
 #include "nocturne.h"
 
 void __cdecl core_fire_cpp_CCrater_process_FUN_004c4550(CCrater *this_ptr)
 
 {
-  char *pcVar1;
+  CVector3f *position;
+  BADSPACEBASE *in_ESP;
+  CVector3f local_18;
   
   if (*(int *)this_ptr->field0_0x0 != 0) {
     if ((0.0 < *(float *)(this_ptr->field0_0x0 + 8)) &&
@@ -41,11 +43,15 @@ void __cdecl core_fire_cpp_CCrater_process_FUN_004c4550(CCrater *this_ptr)
     if ((float)DOUBLE_00629e43 < *(float *)(this_ptr->field0_0x0 + 0x18)) {
       *(float *)(this_ptr->field0_0x0 + 0x18) =
            *(float *)(this_ptr->field0_0x0 + 0x18) + FLOAT_00629e4b;
-      pcVar1 = this_ptr->field0_0x0 + 0x1c;
+      local_18.x = 0.0;
+      local_18.y = 1.0;
+      position = (CVector3f *)(this_ptr->field0_0x0 + 0x1c);
+      local_18.z = 0.0;
       do {
-        core_fire_cpp_CFireEffect_FUN_004c7b20(g_CFireEffectPtr);
-        pcVar1 = pcVar1 + 0xc;
-      } while (pcVar1 != this_ptr->field0_0x0 + 0x40);
+        core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
+                  (g_CFireEffectPtr,position,1.0,&local_18,0xffff);
+        position = position + 1;
+      } while (position != (CVector3f *)(this_ptr->field0_0x0 + 0x40));
     }
   }
   return;
@@ -111,7 +117,7 @@ void __cdecl core_fire_cpp_CCrater_process_FUN_004c4550(CCrater *this_ptr)
 //   XREF to: 0067a3d0 (READ)
 // 004c45d0: PUSH EBP
 //   XREF to: 02d12db0 (DATA)
-// 004c45d1: CALL core_fire.cpp_CFireEffect_FUN_004c7b20
+// 004c45d1: CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 //   XREF to: 004c7b20 (UNCONDITIONAL_CALL)
 // 004c45d6: ADD EBX,0xc
 // 004c45d9: ADD ESP,0x14

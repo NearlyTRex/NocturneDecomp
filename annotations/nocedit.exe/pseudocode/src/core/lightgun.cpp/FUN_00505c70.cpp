@@ -36,8 +36,8 @@
 //   undefined4 g_CTriggerClassInfo.name_hash
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408e80
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   core_actor.cpp_CVector_ctor_FUN_00410340
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
@@ -65,6 +65,7 @@ undefined4 core_lightgun_cpp_FUN_00505c70(void)
 
 {
   CDemonSet *this_ptr;
+  CVector3f *input_local_point;
   float fVar1;
   CBoundingBox3D *pCVar2;
   CDemonActor *pCVar3;
@@ -94,7 +95,7 @@ undefined4 core_lightgun_cpp_FUN_00505c70(void)
   CBoundingBox3D *in_stack_ffffff38;
   float in_stack_ffffff84;
   CDemonActor *pCStack_70;
-  float fStack_58;
+  CVector3f CStack_60;
   float fVar8;
   float fStack_1c;
   float fStack_18;
@@ -106,11 +107,13 @@ undefined4 core_lightgun_cpp_FUN_00505c70(void)
   fVar8 = in_stack_00000004[2].orient.heading;
   in_stack_00000004[4].location.position.x = 0.0;
   in_stack_00000004[4].location.area_id = (int)fVar8;
-  (*(in_stack_00000004->metadata).vtable[1].renderOpaque)(in_stack_00000004);
-  core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-  core_actor_cpp_CDemonActor_FUN_00408e80(in_stack_00000004);
+  input_local_point = (CVector3f *)(*in_stack_00000004->vtable[1].renderOpaque)(in_stack_00000004);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (in_stack_00000004,&CStack_60,input_local_point);
+  core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+            (in_stack_00000004,(CVector3f *)&stack0xffffff80,(CVector3f *)&stack0xffffffbc);
   fStack_1c = (float)DOUBLE_006314ee / in_stack_00000004[2].orient.heading;
-  fVar8 = fStack_58 - in_stack_ffffff84 * fStack_1c;
+  fVar8 = CStack_60.z - in_stack_ffffff84 * fStack_1c;
   core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
   core_setcolid_cpp_CDemonSet_FUN_00574170(g_CDemonSetPtr);
@@ -130,15 +133,14 @@ undefined4 core_lightgun_cpp_FUN_00505c70(void)
     pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
     if (pCVar3 != (CDemonActor *)0x0) {
-      (*(pCVar3->metadata).vtable[1].hasCollision)
-                (pCVar3,(SCollisionInfo *)((ulonglong)dVar7 >> 0x20));
+      (*pCVar3->vtable[1].hasCollision)(pCVar3,(SCollisionInfo *)((ulonglong)dVar7 >> 0x20));
     }
     pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (g_CDemonSetPtr->collision_actor,g_CGlassClassInfo.name_hash);
     pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
     if (in_stack_00000034 != (CDemonActor *)0x0) {
-      iVar5 = (*(in_stack_00000034->metadata).vtable[1].renderOpaque)(in_stack_00000034);
+      iVar5 = (*in_stack_00000034->vtable[1].renderOpaque)(in_stack_00000034);
       this_ptr = g_CDemonSetPtr;
       if ((iVar5 != 0) && (iVar6 == 0)) {
         in_stack_00000004[4].location.position.x = DAT_00660a40;
@@ -154,8 +156,7 @@ undefined4 core_lightgun_cpp_FUN_00505c70(void)
         iVar6 = core_trigger_cpp_FUN_005e0ac0();
         if (iVar6 != 0) {
           in_stack_00000058 =
-               (*(in_stack_00000004->metadata).vtable[1].getBoundingBox)
-                         (in_stack_00000004,in_stack_ffffff38);
+               (*in_stack_00000004->vtable[1].getBoundingBox)(in_stack_00000004,in_stack_ffffff38);
           core_trigger_cpp_SomethingReceivedDamage_FUN_005e0b00();
         }
         core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000044);
@@ -185,7 +186,7 @@ undefined4 core_lightgun_cpp_FUN_00505c70(void)
       return 1;
     }
     pCVar3 = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + (int)in_stack_00000058 + -4);
-    iVar6 = (*(pCVar3->metadata).vtable[1].renderOpaque)(pCVar3);
+    iVar6 = (*pCVar3->vtable[1].renderOpaque)(pCVar3);
     if (((iVar6 == 0) &&
         ((((iVar6 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar3,"CGhoul"), iVar6 != 0 ||
            (iVar6 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar3,"CTVBat"), iVar6 != 0)) ||
@@ -200,7 +201,7 @@ undefined4 core_lightgun_cpp_FUN_00505c70(void)
                 iVar6 != 0)) ||
             (iVar6 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar3,"CBride"), iVar6 != 0))))
        )) {
-      (*((pCVar3->metadata).vtable)->getBoundingBox)(pCVar3,(CBoundingBox3D *)&stack0xffffffc4);
+      (*pCVar3->vtable->getBoundingBox)(pCVar3,(CBoundingBox3D *)&stack0xffffffc4);
       iVar6 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
                         (&g_CDemonLightInstance.base,&(pCVar3->location).position,
                          (CVector3f *)&pCVar3->orient,(CVector3f *)&stack0xffffffd8);
@@ -211,9 +212,9 @@ undefined4 core_lightgun_cpp_FUN_00505c70(void)
         pCStack_70 = (CDemonActor *)0x505f8a;
         core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(g_CDemonSetPtr);
         pCStack_70 = (CDemonActor *)0x505f9c;
-        pCVar2 = (*((pCVar3->metadata).vtable)->getBoundingBox)
-                           (pCVar3,(CBoundingBox3D *)&stack0xfffffffc);
+        pCVar2 = (*pCVar3->vtable->getBoundingBox)(pCVar3,(CBoundingBox3D *)&stack0xfffffffc);
         in_stack_000000bc = &pCVar2->max;
+        CStack_60.z = 7.381177e-39;
         core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)&stack0x00000070);
         in_stack_00000074 = (pCVar2->min).x + *in_stack_000000c0;
         in_stack_00000078 = (pCVar2->min).y + in_stack_000000c0[1];
@@ -222,7 +223,9 @@ undefined4 core_lightgun_cpp_FUN_00505c70(void)
         in_stack_00000090 = in_stack_00000078 * FLOAT_006314f6;
         in_stack_00000094 = in_stack_0000007c * FLOAT_006314f6;
         in_stack_00000098 = in_stack_00000080 * FLOAT_006314f6;
-        core_actor_cpp_CDemonActor_FUN_00408ec0(pCVar3);
+        CStack_60.z = 7.381377e-39;
+        core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                  (pCVar3,(CVector3f *)&stack0x00000054,(CVector3f *)&stack0x00000090);
         iVar6 = 0;
         in_stack_000000b4 = 0;
         do {
@@ -246,9 +249,8 @@ undefined4 core_lightgun_cpp_FUN_00505c70(void)
           fStack_14 = 0.0;
           fStack_18 = 0.0;
           fStack_1c = 0.0;
-          (*((in_stack_00000004->metadata).vtable)->getCarrier)(in_stack_00000004);
-          (*(pCVar3->metadata).vtable[1].playAmbientSoundWithVolume)
-                    (pCVar3,(char *)&fStack_1c,fVar8);
+          (*in_stack_00000004->vtable->getCarrier)(in_stack_00000004);
+          (*pCVar3->vtable[1].playAmbientSoundWithVolume)(pCVar3,(char *)&fStack_1c,fVar8);
         }
       }
     }
@@ -304,7 +306,7 @@ undefined4 core_lightgun_cpp_FUN_00505c70(void)
 // 00505cd9: MOV ECX,dword ptr [EBP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 00505cdc: PUSH ECX
-// 00505cdd: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00505cdd: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 00505ce2: ADD ESP,0xc
 // 00505ce5: MOV EAX,dword ptr [EBP + 0x14]
@@ -321,7 +323,7 @@ undefined4 core_lightgun_cpp_FUN_00505c70(void)
 // 00505d0a: PUSH EDI
 // 00505d0b: MOV dword ptr [ESP + 0xd8],EBX
 // 00505d12: MOV dword ptr [ESP + 0xdc],EBX
-// 00505d19: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 00505d19: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 00505d1e: ADD ESP,0xc
 // 00505d21: FLD float ptr [ESP + 0xb4]
@@ -577,7 +579,7 @@ undefined4 core_lightgun_cpp_FUN_00505c70(void)
 // 00506033: FSTP float ptr [ESP + 0xe4]
 // 0050603a: PUSH ESI
 // 0050603b: FSTP float ptr [ESP + 0xec]
-// 00506042: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00506042: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 00506047: ADD ESP,0xc
 // 0050604a: XOR EDX,EDX

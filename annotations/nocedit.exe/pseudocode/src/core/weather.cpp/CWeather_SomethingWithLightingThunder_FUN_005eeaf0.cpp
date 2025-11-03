@@ -16,7 +16,7 @@
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CGame* g_CGamePtr = 02d81a9c
 //   CSound* g_CSoundPtr = 03f6af64
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CFireEffect g_CFireEffectInstance
 //   undefined4 g_CGameInstance.delta_time_float
 //   CDemonCamera g_CDemonCameraInstance
@@ -32,10 +32,10 @@
 //   undefined1 DAT_03f96a79
 //   undefined4 DAT_03f96b40
 // Function calls:
-//   core_actor.cpp_FUN_0040cd10
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_fire.cpp_CFireEffect_FUN_004c9290
 //   core_sound.cpp_CSound_playSfx_FUN_005b3a20
 //   core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
@@ -73,7 +73,7 @@ void core_weather_cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0(void)
     fVar1 = (float)in_stack_00000004[10] - g_CGamePtr->delta_time_float;
     in_stack_00000004[10] = (int)fVar1;
     if (0.0 <= fVar1) {
-      iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+      iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,"noLightningFlash");
       if (iVar2 == 0) {
         local_14 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)_DAT_00657bb4 -
@@ -124,7 +124,7 @@ LAB_005eeb1c:
     fVar1 = (float)in_stack_00000004[8];
     in_stack_00000004[8] = (int)(fVar1 - local_28);
     if (fVar1 - local_28 < 0.0) {
-      iVar2 = core_actor_cpp_FUN_0040cd10();
+      iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.4);
       if (iVar2 == 0) {
         core_weather_cpp_CWeather_SomethingWithThunder_FUN_005ef140();
       }
@@ -139,7 +139,7 @@ LAB_005eeb1c:
         fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,(float)in_stack_00000004[0xd]);
         this_ptr = g_CEventListPtr;
         in_stack_00000004[0xb] = (int)fVar1;
-        iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+        iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                           (this_ptr,"noLightningFlash");
         if (iVar2 == 0) {
           in_stack_00000004[9] = 1;
@@ -404,7 +404,7 @@ LAB_005eeb1c:
 //   XREF to: 006793d0 (READ)
 // 005eed05: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 005eed06: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 005eed06: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 005eed0b: ADD ESP,0x8
 // 005eed0e: TEST EAX,EAX
@@ -467,7 +467,7 @@ LAB_005eeb1c:
 // 005eeda7: RET
 // 005eeda8: PUSH 0x3ecccccd
 //   Label: LAB_005eeda8
-// 005eedad: CALL core_actor.cpp_FUN_0040cd10
+// 005eedad: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 005eedb2: ADD ESP,0x4
 // 005eedb5: TEST EAX,EAX

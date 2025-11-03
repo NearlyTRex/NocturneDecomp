@@ -58,13 +58,13 @@ int core_hero_cpp_FUN_004f3960(void)
     if (pCVar4 == (CDemonActor *)0x0) {
       pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CMobsterClassInfo.name_hash);
       if ((pCVar4 == (CDemonActor *)0x0) || (*(int *)(pCVar4[0x8e].actor_name + 0x10) == 0)) {
-        iVar5 = (*(actor_ptr->metadata).vtable[1].hasCollision)(actor_ptr,in_stack_ffffff60);
+        iVar5 = (*actor_ptr->vtable[1].hasCollision)(actor_ptr,in_stack_ffffff60);
         if (iVar5 == 0) {
-          iVar5 = (*((actor_ptr->metadata).vtable)->shouldIgnoreForTargeting)(actor_ptr);
+          iVar5 = (*actor_ptr->vtable->shouldIgnoreForTargeting)(actor_ptr);
           if (iVar5 == 0) {
             crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
                       (&stack0xffffff80,10,&g_CVectorTypeInfo);
-            iVar5 = (*((actor_ptr->metadata).vtable)->getTargetPoints)(actor_ptr,aCStack_7c);
+            iVar5 = (*actor_ptr->vtable->getTargetPoints)(actor_ptr,aCStack_7c);
             if (0 < iVar5) {
               fVar1 = *in_stack_0000002c - (actor_ptr->location).position.x;
               fVar2 = (in_stack_0000002c[1] - (actor_ptr->location).position.y) *

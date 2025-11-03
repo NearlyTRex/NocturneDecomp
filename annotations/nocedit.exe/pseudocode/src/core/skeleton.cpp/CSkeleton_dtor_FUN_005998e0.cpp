@@ -4,23 +4,22 @@
 // Convention: __cdecl
 // Signature: CSkeleton * core_skeleton.cpp_CSkeleton_dtor_FUN_005998e0(CSkeleton * this_ptr)
 // Function calls:
-//   core_curtain.cpp_FUN_0044baf0
+//   core_curtain.cpp_freeVectors_FUN_0044baf0
 //   core_skeleton.cpp_CSkeleton_free_FUN_00599a50
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: this_ptr */
-
 CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_dtor_FUN_005998e0(CSkeleton *this_ptr)
 
 {
-  int iVar1;
+  int extraout_EAX;
+  CSkeleton *in_stack_0000000c;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x10);
-  core_skeleton_cpp_CSkeleton_free_FUN_00599a50();
-  iVar1 = core_curtain_cpp_FUN_0044baf0();
-  return (CSkeleton *)(iVar1 + -0x2937c);
+  core_skeleton_cpp_CSkeleton_free_FUN_00599a50(in_stack_0000000c);
+  core_curtain_cpp_freeVectors_FUN_0044baf0((CVector3f **)in_stack_0000000c->bone_scales);
+  return (CSkeleton *)(extraout_EAX + -0x2937c);
 }
 
 
@@ -39,7 +38,7 @@ CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_dtor_FUN_005998e0(CSkeleton *thi
 // 005998f8: PUSH 0x0
 // 005998fa: ADD EBX,0x2937c
 // 00599900: PUSH EBX
-// 00599901: CALL core_curtain.cpp_FUN_0044baf0
+// 00599901: CALL core_curtain.cpp_freeVectors_FUN_0044baf0
 //   XREF to: 0044baf0 (UNCONDITIONAL_CALL)
 // 00599906: ADD ESP,0x8
 // 00599909: SUB EAX,0x2937c

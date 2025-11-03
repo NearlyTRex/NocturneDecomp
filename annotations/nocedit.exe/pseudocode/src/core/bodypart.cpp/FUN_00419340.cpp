@@ -38,8 +38,12 @@ void core_bodypart_cpp_FUN_00419340(void)
   int in_stack_00000014;
   
   core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
-            (g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x174));
-  core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(g_CDemonSetPtr);
+            (g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x174),*(int **)(in_stack_00000004 + 0x178)
+            );
+  core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
+            (g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x174),*(int *)(in_stack_00000004 + 0x180),
+             *(SInputFace **)(in_stack_00000004 + 0x184),*(int *)(in_stack_00000004 + 0x178),3,
+             *(int *)(in_stack_00000004 + 0x17c));
   if ((*(int *)(in_stack_00000004 + 0x18c) == 1) ||
      (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
      iVar2 != 0)) {

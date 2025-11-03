@@ -18,7 +18,7 @@ CTeleportDest * __cdecl core_teleport_cpp_CTeleportDest_ctor_FUN_005da770(CTelep
   CDemonActor *pCVar1;
   
   pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
-  (pCVar1->metadata).vtable = &g_CTeleportDestVTable;
+  pCVar1->vtable = &g_CTeleportDestVTable;
   return (CTeleportDest *)pCVar1;
 }
 

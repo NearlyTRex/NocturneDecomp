@@ -10,7 +10,7 @@
 //   int g_ClipLeft
 // Function calls:
 //   core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150
-//   core_actor.cpp_SomethingElseWithStrings1_FUN_0040d1e0
+//   core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
 //   engine_2d.c_drawText_FUN_00401fd0
 
 #include "nocturne.h"
@@ -28,7 +28,8 @@ void __cdecl core_teleport_cpp_CTeleport_FUN_005dadc0(CTeleport *this_ptr)
   *in_stack_00000008 = iVar1 + 0xb;
   engine_2d_c_drawText_FUN_00401fd0("With CTRL held down, use slew keys to size box.",x_pos,iVar1 + 0xb);
   *in_stack_00000008 = *in_stack_00000008 + 0x16;
-  core_actor_cpp_SomethingElseWithStrings1_FUN_0040d1e0();
+  core_actor_cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
+            (in_stack_00000008,"T","Select my CTeleportDest actor.");
   return;
 }
 
@@ -67,7 +68,7 @@ void __cdecl core_teleport_cpp_CTeleport_FUN_005dadc0(CTeleport *this_ptr)
 // 005dadfd: ADD EBP,0x16
 // 005dae00: PUSH EBX
 // 005dae01: MOV dword ptr [EBX],EBP
-// 005dae03: CALL core_actor.cpp_SomethingElseWithStrings1_FUN_0040d1e0
+// 005dae03: CALL core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
 //   XREF to: 0040d1e0 (UNCONDITIONAL_CALL)
 // 005dae08: ADD ESP,0xc
 // 005dae0b: POP EBP

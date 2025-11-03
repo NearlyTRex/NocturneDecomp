@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_weapon.cpp_FUN_005ee6e0()
 // Cross-references:
-//   core_crossbow.cpp_FUN_00448f20 (00448f20) at 00448f5d [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_FUN_00448f20 (00448f20) at 00448f5d [UNCONDITIONAL_CALL]
 //   core_dynamite.cpp_FUN_0049ce70 (0049ce70) at 0049ce76 [UNCONDITIONAL_CALL]
 //   core_elephant.cpp_FUN_004a7160 (004a7160) at 004a719d [UNCONDITIONAL_CALL]
 //   core_gun.cpp_FUN_004f0350 (004f0350) at 004f038d [UNCONDITIONAL_CALL]

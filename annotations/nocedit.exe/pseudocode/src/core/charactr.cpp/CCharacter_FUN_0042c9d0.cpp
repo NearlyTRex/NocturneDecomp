@@ -22,7 +22,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c9d0(CCharacter *this_ptr)
   this_ptr->field11_0x25a0[6] = -0x80;
   this_ptr->field11_0x25a0[7] = -0x41;
   *(undefined4 *)this_ptr->field11_0x25a0 = in_stack_00000008;
-  pCVar1 = (this_ptr->base_actor).metadata.vtable;
+  pCVar1 = (this_ptr->base_actor).vtable;
   this_ptr->field11_0x25a0[8] = -0x36;
   this_ptr->field11_0x25a0[9] = -0xe;
   this_ptr->field11_0x25a0[10] = 'I';

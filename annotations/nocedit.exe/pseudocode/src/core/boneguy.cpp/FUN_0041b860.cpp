@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float * core_boneguy_cpp_FUN_0041b860(void)
 
 {
@@ -49,19 +47,19 @@ float * core_boneguy_cpp_FUN_0041b860(void)
     fStack_34 = 0.0;
   }
   else {
-    fStack_38 = fStack_38 * (float)_DAT_00615f45;
+    fStack_38 = fStack_38 * (float)DAT_00615f45;
     if (fVar1 == local_30) {
       local_20 = (fVar2 - fVar3) / local_20;
     }
     else if (fVar2 == local_30) {
-      local_20 = (float)_DAT_00615f55 - (fVar3 - fVar1) / local_20;
+      local_20 = (float)DAT_00615f55 - (fVar3 - fVar1) / local_20;
     }
     else {
-      local_20 = (fVar1 - fVar2) / local_20 + (float)_DAT_00615f4d;
+      local_20 = (fVar1 - fVar2) / local_20 + (float)DAT_00615f4d;
     }
-    fStack_34 = local_20 * (float)_DAT_00615f5d;
+    fStack_34 = local_20 * (float)DAT_00615f5d;
     if (fStack_34 < 0.0) {
-      fStack_34 = fStack_34 + _DAT_00615f65;
+      fStack_34 = fStack_34 + DAT_00615f65;
     }
   }
   *in_stack_00000004 = fStack_34;

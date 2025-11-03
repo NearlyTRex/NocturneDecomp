@@ -7,17 +7,17 @@
 //   TerminatedCString s_GlassHiram_0062edfc
 //   CEventList* g_CEventListPtr = 02d05310
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   undefined4 g_CGlassClassInfo.name_hash
 //   CDemonMission g_CDemonMissionInstance
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0
 //   core_charactr.cpp_CCharacter_FUN_00429870
 //   core_charactr.cpp_CCharacter_FUN_0042ec40
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-//   core_glass.cpp_FUN_004eaef0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
+//   core_glass.cpp_CGlass_shatter_FUN_004eaef0
 //   core_mission.cpp_CDemonMission_FUN_00524030
 //   core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
@@ -35,7 +35,8 @@ void core_hiram_cpp_FUN_004f4550(void)
 {
   CCharacter *this_ptr;
   int iVar1;
-  CDemonActor *pCVar2;
+  CDemonActor *actor_ptr;
+  CGlass *this_ptr_00;
   uint unaff_ESI;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
@@ -45,31 +46,37 @@ void core_hiram_cpp_FUN_004f4550(void)
   if (iVar1 == 0) {
     return;
   }
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0();
+  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
+                    (&(in_stack_00000004->model).motion_controller);
   if (*(int *)(iVar1 + 0x24) != 1) {
-    iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,in_stack_00000004[2].cloth_data + 0x5028);
     if (iVar1 != 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
-      pCVar2 = (CDemonActor *)core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
-      pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar2,unaff_ESI);
-      if (pCVar2 != (CDemonActor *)0x0) {
-        core_glass_cpp_FUN_004eaef0();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                (&(in_stack_00000004->model).motion_controller);
+      actor_ptr = (CDemonActor *)core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
+      this_ptr_00 = (CGlass *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,unaff_ESI);
+      if (this_ptr_00 != (CGlass *)0x0) {
+        core_glass_cpp_CGlass_shatter_FUN_004eaef0
+                  (this_ptr_00,&(this_ptr_00->base).location.position);
       }
     }
   }
   in_stack_00000004 = (CCharacter *)in_stack_00000008;
-  (this_ptr->model).padding_0x0[0x225c] = '\0';
-  (this_ptr->model).padding_0x0[0x225d] = '\0';
-  (this_ptr->model).padding_0x0[0x225e] = '\0';
-  (this_ptr->model).padding_0x0[0x225f] = '\0';
-  *(undefined4 *)((this_ptr->model).padding_0x0 + 0x2258) =
-       *(undefined4 *)((this_ptr->model).padding_0x0 + 0x225c);
-  *(undefined4 *)((this_ptr->model).padding_0x0 + 0x2254) =
-       *(undefined4 *)((this_ptr->model).padding_0x0 + 0x2258);
+  (this_ptr->model).field10_0x2254[8] = '\0';
+  (this_ptr->model).field10_0x2254[9] = '\0';
+  (this_ptr->model).field10_0x2254[10] = '\0';
+  (this_ptr->model).field10_0x2254[0xb] = '\0';
+  *(undefined4 *)((this_ptr->model).field10_0x2254 + 4) =
+       *(undefined4 *)((this_ptr->model).field10_0x2254 + 8);
+  *(undefined4 *)(this_ptr->model).field10_0x2254 =
+       *(undefined4 *)((this_ptr->model).field10_0x2254 + 4);
   while( true ) {
     if ((float)in_stack_00000004 <= 0.0) break;
-    in_stack_00000004 = (CCharacter *)core_motion_cpp_CMotionController_advance_FUN_0052d610();
+    in_stack_00000004 =
+         (CCharacter *)
+         core_motion_cpp_CMotionController_advance_FUN_0052d610
+                   (&(this_ptr->model).motion_controller);
     if (in_stack_00000004 == (CCharacter *)0x29a) {
       in_stack_00000004 = (CCharacter *)0x1;
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(g_CDemonMissionPtr);
@@ -79,7 +86,7 @@ void core_hiram_cpp_FUN_004f4550(void)
     }
   }
   core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020();
-  core_actor_cpp_CDemonActor_FUN_00408c10(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base_actor);
   core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020();
   core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(this_ptr);
   return;
@@ -171,7 +178,7 @@ void core_hiram_cpp_FUN_004f4550(void)
 //   XREF to: 006793d0 (READ)
 // 004f45f9: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 004f45fa: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 004f45fa: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 004f45ff: ADD ESP,0x8
 // 004f4602: TEST EAX,EAX
@@ -205,7 +212,7 @@ void core_hiram_cpp_FUN_004f4550(void)
 // 004f463f: LEA ESI,[EAX + 0x20]
 // 004f4642: PUSH ESI
 // 004f4643: PUSH EAX
-// 004f4644: CALL core_glass.cpp_FUN_004eaef0
+// 004f4644: CALL core_glass.cpp_CGlass_shatter_FUN_004eaef0
 //   XREF to: 004eaef0 (UNCONDITIONAL_CALL)
 // 004f4649: ADD ESP,0x8
 // 004f464c: JMP 0x004f458d
@@ -224,7 +231,7 @@ void core_hiram_cpp_FUN_004f4550(void)
 //   XREF to: 0059e020 (UNCONDITIONAL_CALL)
 // 004f4666: ADD ESP,0x4
 // 004f4669: PUSH EBX
-// 004f466a: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 004f466a: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 004f466f: ADD ESP,0x4
 // 004f4672: PUSH ESI

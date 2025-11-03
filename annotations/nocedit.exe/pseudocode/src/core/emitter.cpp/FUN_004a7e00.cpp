@@ -22,7 +22,7 @@ void core_emitter_cpp_FUN_004a7e00(void)
   in_stack_00000004[3].orient_matrix.m[0].y = (float)in_stack_00000004[1].field11_0xdc;
   if (iVar1 == 4) {
     core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-              ((CKeyFramedModelInstance *)&in_stack_00000004[1].field_236.y);
+              ((CKeyFramedModelInstance *)&in_stack_00000004[1].field13_0xec.y);
   }
   if (in_stack_00000004[2].field22_0x120 == 0) {
     in_stack_00000004[2].field22_0x120 = (int)g_HeroActors[g_LocalHeroIndex];

@@ -27,7 +27,7 @@
 //   core_flies.cpp_FUN_004ccaa0 (004ccaa0) at 004ccaab [UNCONDITIONAL_CALL]
 //   core_frankgen.cpp_FUN_004d2500 (004d2500) at 004d250e [UNCONDITIONAL_CALL]
 //   core_gasmask.cpp_CGasMask_FUN_004e5eb0 (004e5eb0) at 004e5ebb [UNCONDITIONAL_CALL]
-//   core_glass.cpp_FUN_004eb3c0 (004eb3c0) at 004eb3cc [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_getPropertyList_FUN_004eb3c0 (004eb3c0) at 004eb3cc [UNCONDITIONAL_CALL]
 //   core_grave.cpp_FUN_004ee9e0 (004ee9e0) at 004ee9ec [UNCONDITIONAL_CALL]
 //   core_health.cpp_FUN_004f2040 (004f2040) at 004f204c [UNCONDITIONAL_CALL]
 //   core_hero.cpp_CHeroPlaceholder_FUN_004f3f60 (004f3f60) at 004f3f6b [UNCONDITIONAL_CALL]
@@ -73,7 +73,7 @@ core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290
 {
   int iVar1;
   
-  *(CDemonActor **)property_list->padding_0x0 = this_ptr;
+  property_list->field0_0x0 = (int)this_ptr;
   core_actor_cpp_CActorPropertyList_FUN_0040e290(property_list);
   core_actor_cpp_CActorPropertyList_FUN_0040e260(property_list);
   core_actor_cpp_CActorPropertyList_FUN_0040e260(property_list);

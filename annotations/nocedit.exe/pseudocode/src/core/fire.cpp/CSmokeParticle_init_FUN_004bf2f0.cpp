@@ -5,7 +5,7 @@
 // Signature: void core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0(CSmokeParticle * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, int alpha_value)
 // Cross-references:
 //   core_fire.cpp_CFireEffect_FUN_004c76a0 (004c76a0) at 004c77d4 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CFireEffect_FUN_004c7b20 (004c7b20) at 004c7b6c [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20 (004c7b20) at 004c7b6c [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 

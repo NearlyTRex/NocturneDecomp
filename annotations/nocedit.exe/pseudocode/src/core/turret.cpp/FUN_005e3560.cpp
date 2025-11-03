@@ -21,50 +21,60 @@
 void core_turret_cpp_FUN_005e3560(void)
 
 {
-  float *pfVar1;
+  CVector3f *input_local_point;
+  float fVar1;
   float fVar2;
   float fVar3;
   float fVar4;
   float fVar5;
-  int iVar6;
-  float fVar7;
-  float *pfVar8;
+  float fVar6;
+  int iVar7;
+  CVector3f *pCVar8;
+  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   float fStack_54;
   undefined4 uStack_50;
   float fStack_4c;
   float fStack_48;
   float fStack_40;
+  CVector3f CStack_30;
+  float fStack_24;
+  float fStack_14;
   
   if (*(float *)(in_stack_00000004 + 0x86c) <= 0.0) {
     if (*(int *)(in_stack_00000004 + 0x780) != 0) {
-      pfVar1 = (float *)(in_stack_00000004 + 0x84c);
-      iVar6 = core_turret_cpp_FUN_005e3280();
-      if (iVar6 != 0) {
+      input_local_point = (CVector3f *)(in_stack_00000004 + 0x84c);
+      iVar7 = core_turret_cpp_FUN_005e3280();
+      if (iVar7 != 0) {
         (**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x780) + 0x154) + 0x14))();
-        fVar2 = *pfVar1;
-        fVar3 = *(float *)(in_stack_00000004 + 0x850);
-        iVar6 = 0;
-        fVar4 = *(float *)(in_stack_00000004 + 0x854);
+        fVar1 = input_local_point->x;
+        fVar2 = *(float *)(in_stack_00000004 + 0x850);
+        iVar7 = 0;
+        fVar3 = *(float *)(in_stack_00000004 + 0x854);
         while( true ) {
-          fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,0.9);
-          *(float *)(in_stack_00000004 + 0x84c) = fStack_54 * fVar7 + (1.0 - fVar7) * fStack_48;
-          fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,0.9);
-          *(float *)(in_stack_00000004 + 0x854) = fStack_4c * fVar7 + (1.0 - fVar7) * fStack_40;
+          fStack_24 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,0.9);
+          *(float *)(in_stack_00000004 + 0x84c) =
+               fStack_54 * fStack_24 + (1.0 - fStack_24) * fStack_48;
+          fStack_14 = fStack_24;
+          fStack_24 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,0.9);
+          *(float *)(in_stack_00000004 + 0x854) =
+               fStack_4c * fStack_24 + (1.0 - fStack_24) * fStack_40;
           *(undefined4 *)(in_stack_00000004 + 0x850) = uStack_50;
-          pfVar8 = core_actor_cpp_CDemonActor_FUN_00408ec0
-                             (*(CDemonActor **)(in_stack_00000004 + 0x780));
-          if (pfVar1 != pfVar8) {
-            *pfVar1 = *pfVar8;
-            *(float *)(in_stack_00000004 + 0x850) = pfVar8[1];
-            *(float *)(in_stack_00000004 + 0x854) = pfVar8[2];
+          fStack_14 = fStack_24;
+          pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                             (*(CDemonActor **)(in_stack_00000004 + 0x780),&CStack_30,
+                              input_local_point);
+          if (input_local_point != pCVar8) {
+            input_local_point->x = pCVar8->x;
+            *(float *)(in_stack_00000004 + 0x850) = pCVar8->y;
+            *(float *)(in_stack_00000004 + 0x854) = pCVar8->z;
           }
-          fVar5 = *(float *)(in_stack_00000004 + 0x850) - fVar3;
-          fVar7 = *(float *)(in_stack_00000004 + 0x854) - fVar4;
-          if (_DAT_006567a0 < fVar7 * fVar7 + fVar5 * fVar5 + (*pfVar1 - fVar2) * (*pfVar1 - fVar2))
-          break;
-          iVar6 = iVar6 + 1;
-          if (4 < iVar6) {
+          fVar4 = input_local_point->x - fVar1;
+          fVar6 = *(float *)(in_stack_00000004 + 0x850) - fVar2;
+          fVar5 = *(float *)(in_stack_00000004 + 0x854) - fVar3;
+          if (_DAT_006567a0 < fVar5 * fVar5 + fVar6 * fVar6 + fVar4 * fVar4) break;
+          iVar7 = iVar7 + 1;
+          if (4 < iVar7) {
             return;
           }
         }

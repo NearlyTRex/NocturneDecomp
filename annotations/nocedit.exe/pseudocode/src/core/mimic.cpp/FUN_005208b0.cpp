@@ -8,7 +8,7 @@
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 //   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 //   core_cloth.cpp_FUN_0043bae0
-//   core_skeleton.cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
 
 #include "nocturne.h"
 
@@ -24,25 +24,19 @@ void core_mimic_cpp_FUN_005208b0(void)
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
   float fStack_18;
-  CDemonActor *pCStack_14;
-  float fStack_10;
-  float fStack_c;
   
   if (*(int *)(in_stack_00000004[0x8d].create_event + 0x38) != 0) {
     if (in_stack_00000008 != 0) {
       in_stack_00000004[0x1a].field21_0x11c = 1;
     }
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-    this_ptr = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+    this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
                          (in_stack_00000004,(CBoundingBox3D *)&fStack_18);
-    fStack_c = 7.533718e-39;
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
     if (iVar1 != 0) {
-      fStack_c = -NAN;
-      fStack_10 = -NAN;
-      pCStack_14 = in_stack_00000004 + 1;
       fStack_18 = 7.533756e-39;
-      core_skeleton_cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150();
+      core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150
+                ((CDeformableModelInstance *)(in_stack_00000004 + 1));
       core_cloth_cpp_FUN_0043bae0();
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
@@ -89,7 +83,7 @@ void core_mimic_cpp_FUN_005208b0(void)
 // 005208fe: PUSH -0x1
 // 00520900: LEA EAX,[EBX + 0x158]
 // 00520906: PUSH EAX
-// 00520907: CALL core_skeleton.cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150
+// 00520907: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
 //   XREF to: 005a0150 (UNCONDITIONAL_CALL)
 // 0052090c: ADD ESP,0x14
 // 0052090f: PUSH 0x0

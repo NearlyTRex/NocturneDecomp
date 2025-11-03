@@ -1,14 +1,14 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
 // Address: 005a1800
 // Address Range: [[005a1800, 005a194d]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800()
+// Convention: __cdecl
+// Signature: void core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance * this_ptr)
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042af60 (0042af60) at 0042b061 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_skeleton_cpp_0064efd4
 //   TerminatedCString s_CDeformableModelInstance_0064efe9
-//   undefined4 DAT_0064f030
+//   double DOUBLE_0064f030 = 2670176.85779676
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   undefined4 DAT_01000000
 //   CDemonRenderer g_CDemonRendererInstance
@@ -22,85 +22,83 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs(undefined4
-   param_1, undefined4 param_2, undefined4 param_3) */
-
-void core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(void)
+void __cdecl
+core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
+          (CDeformableModelInstance *this_ptr)
 
 {
   int iVar1;
   int iVar2;
-  SRenderVertex *pSVar3;
-  int iVar4;
+  CDeformableModel *pCVar3;
+  SRenderVertex *pSVar4;
+  int iVar5;
   int extraout_ECX;
-  int *piVar5;
+  int *piVar6;
   undefined4 extraout_EDX;
-  int iVar6;
   int iVar7;
   int iVar8;
   int iVar9;
-  float10 fVar10;
-  double dVar11;
-  int in_stack_00000004;
-  int in_stack_00000008;
+  int iVar10;
+  float10 fVar11;
+  double dVar12;
+  CDeformableModelInstance *in_stack_00000008;
   int in_stack_0000000c;
   int in_stack_00000010;
   int in_stack_00000014;
   
-  if (*(int *)(in_stack_00000004 + 0x2230) < 0) {
+  if (this_ptr->field6_0x2230 < 0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0xfa7;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModelInstance::computeCylindricalUVs - points not generated");
   }
-  iVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-  iVar2 = *(int *)(iVar2 + 0x2c + *(int *)(in_stack_00000008 + 0x2230) * 4);
-  iVar4 = *(int *)(in_stack_00000008 + 0x2234);
-  iVar8 = 1;
-  iVar6 = *(int *)(iVar4 + 4);
-  iVar7 = iVar6;
-  iVar9 = iVar6;
-  if (1 < iVar2) {
+  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(in_stack_00000008);
+  iVar1 = pCVar3->vertex_count[in_stack_00000008->field6_0x2230];
+  iVar5 = in_stack_00000008->field7_0x2234;
+  iVar9 = 1;
+  iVar7 = *(int *)(iVar5 + 4);
+  iVar8 = iVar7;
+  iVar10 = iVar7;
+  if (1 < iVar1) {
     do {
-      iVar1 = *(int *)(iVar4 + 0x10);
-      iVar7 = iVar1;
-      if ((iVar9 <= iVar1) && (iVar7 = iVar9, iVar6 < iVar1)) {
-        iVar6 = iVar1;
+      iVar2 = *(int *)(iVar5 + 0x10);
+      iVar8 = iVar2;
+      if ((iVar10 <= iVar2) && (iVar8 = iVar10, iVar7 < iVar2)) {
+        iVar7 = iVar2;
       }
-      iVar8 = iVar8 + 1;
-      iVar9 = iVar7;
-      iVar4 = iVar4 + 0xc;
-    } while (iVar8 < iVar2);
+      iVar9 = iVar9 + 1;
+      iVar10 = iVar8;
+      iVar5 = iVar5 + 0xc;
+    } while (iVar9 < iVar1);
   }
-  iVar6 = iVar6 - iVar7;
-  if (iVar6 < 1) {
-    iVar6 = 1;
+  iVar7 = iVar7 - iVar8;
+  if (iVar7 < 1) {
+    iVar7 = 1;
   }
-  if (0 < iVar2) {
-    iVar9 = 0;
-    iVar4 = 0;
+  if (0 < iVar1) {
+    iVar10 = 0;
+    iVar5 = 0;
     do {
-      piVar5 = (int *)(*(int *)(in_stack_0000000c + 0x2234) + iVar9);
-      if ((*piVar5 == 0) && (piVar5[2] == 0)) {
-        pSVar3 = g_CDemonRendererPtr->vertex_buffer_ptr;
-        iVar8 = in_stack_00000010;
+      piVar6 = (int *)(*(int *)(in_stack_0000000c + 0x2234) + iVar10);
+      if ((*piVar6 == 0) && (piVar6[2] == 0)) {
+        pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
+        iVar9 = in_stack_00000010;
       }
       else {
-        fVar10 = crt_math_c_atan2_FUN_006013b1((float10)*piVar5,(float10)piVar5[2]);
-        fVar10 = fVar10 * (float10)_DAT_0064f030;
-        dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,in_stack_0000000c));
-        piVar5 = (int *)((ulonglong)dVar11 >> 0x20);
-        iVar8 = SUB84(dVar11,0) + (int)ROUND(fVar10);
-        pSVar3 = g_CDemonRendererPtr->vertex_buffer_ptr;
-        iVar4 = extraout_ECX;
+        fVar11 = crt_math_c_atan2_FUN_006013b1((float10)*piVar6,(float10)piVar6[2]);
+        fVar11 = fVar11 * (float10)DOUBLE_0064f030;
+        dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,in_stack_0000000c));
+        piVar6 = (int *)((ulonglong)dVar12 >> 0x20);
+        iVar9 = SUB84(dVar12,0) + (int)ROUND(fVar11);
+        pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
+        iVar5 = extraout_ECX;
       }
-      *(int *)((int)&pSVar3->u + iVar4) = iVar8;
-      iVar8 = iVar4 + 0x30;
-      *(int *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->v + iVar4) =
-           in_stack_00000014 + (int)(((longlong)(piVar5[1] - iVar7) * 0x1000000) / (longlong)iVar6);
-      iVar9 = iVar9 + 0xc;
-      iVar4 = iVar8;
-    } while (iVar8 < iVar2 * 0x30);
+      *(int *)((int)&pSVar4->u + iVar5) = iVar9;
+      iVar9 = iVar5 + 0x30;
+      *(int *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->v + iVar5) =
+           in_stack_00000014 + (int)(((longlong)(piVar6[1] - iVar8) * 0x1000000) / (longlong)iVar7);
+      iVar10 = iVar10 + 0xc;
+      iVar5 = iVar9;
+    } while (iVar9 < iVar1 * 0x30);
   }
   return;
 }

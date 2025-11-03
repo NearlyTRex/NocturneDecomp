@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_setutil.cpp_C3DSLight_setFilterFrame_FUN_00586f00(C3DSLight * this_ptr, int frame_index, CDemonLight * light)
 // Cross-references:
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004acb86 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004acb86 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_setutil_cpp_006496ff
 //   TerminatedCString s_C3DSLight_advanceFilter__00649713

@@ -11,9 +11,9 @@
 //   CGore* g_CGorePtr = 02d83364
 //   CGore g_CGoreInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408e80
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_FUN_0040cd10
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_gore.cpp_FUN_004edaa0
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
 
@@ -23,14 +23,24 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b760(CCharacter *this_ptr)
 
 {
   int iVar1;
+  CVector3f *input_local_point;
+  BADSPACEBASE *in_ESP;
   int in_stack_00000008;
+  float in_stack_00000010;
+  CVector3f local_28 [2];
+  CVector3f local_10;
   
-  if (*(int *)((this_ptr->model).padding_0x0 + in_stack_00000008 * 4 + 0x2140) == 0) {
-    iVar1 = core_actor_cpp_FUN_0040cd10();
+  if ((this_ptr->model).part_visibility_flags[in_stack_00000008] == 0) {
+    iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(in_stack_00000010);
     if (iVar1 != 0) {
-      core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-      core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr->base_actor);
-      core_actor_cpp_CDemonActor_FUN_00408e80(&this_ptr->base_actor);
+      input_local_point = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                (&this_ptr->base_actor,(CVector3f *)&local_10.z,input_local_point);
+      local_28[0].x = -3.0;
+      local_28[0].y = 0.0;
+      local_28[0].z = 0.0;
+      core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                (&this_ptr->base_actor,&local_10,local_28);
       core_gore_cpp_FUN_004edaa0();
       return;
     }
@@ -57,7 +67,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b760(CCharacter *this_ptr)
 // 0042b77b: PUSH dword ptr [ESP + 0x44]
 //   Label: LAB_0042b77b
 //   XREF to: Stack[0x10] (READ)
-// 0042b77f: CALL core_actor.cpp_FUN_0040cd10
+// 0042b77f: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 0042b784: ADD ESP,0x4
 // 0042b787: TEST EAX,EAX
@@ -81,7 +91,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b760(CCharacter *this_ptr)
 //   XREF to: Stack[-0x10] (DATA)
 // 0042b7ab: PUSH EAX
 // 0042b7ac: PUSH EBX
-// 0042b7ad: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0042b7ad: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0042b7b2: ADD ESP,0xc
 // 0042b7b5: LEA EAX,[ESP + 0x8]
@@ -99,7 +109,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b760(CCharacter *this_ptr)
 //   XREF to: Stack[-0x30] (WRITE)
 // 0042b7cf: MOV dword ptr [ESP + 0x1c],EDI
 //   XREF to: Stack[-0x2c] (WRITE)
-// 0042b7d3: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 0042b7d3: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 0042b7d8: ADD ESP,0xc
 // 0042b7db: MOV EAX,dword ptr [EBX + 0x2610]

@@ -7,7 +7,7 @@
 //   core_emitter.cpp_FUN_004a8070 (004a8070) at 004a8540 [UNCONDITIONAL_CALL]
 // Globals:
 //   CShell* g_CFireEffectShellsEnd
-//   CPopcorn[256] g_CFireEffectPopcorns
+//   CPopcorn[256] g_PopcornPool
 //   undefined4 DAT_02d736f4
 
 #include "nocturne.h"
@@ -18,9 +18,8 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c9240(CFireEffect *this_ptr)
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
   
-  (*(g_CFireEffectPopcorns[(int)g_CFireEffectShellsEnd].base.vtable)->setup)
-            (&g_CFireEffectPopcorns[(int)g_CFireEffectShellsEnd].base,in_stack_00000008,
-             in_stack_0000000c);
+  (*(g_PopcornPool[(int)g_CFireEffectShellsEnd].base.vtable)->setup)
+            (&g_PopcornPool[(int)g_CFireEffectShellsEnd].base,in_stack_00000008,in_stack_0000000c);
   g_CFireEffectShellsEnd = (CShell *)((int)&(g_CFireEffectShellsEnd->base).position.x + 1);
   if ((int)g_CFireEffectShellsEnd < 0x100) {
     return;

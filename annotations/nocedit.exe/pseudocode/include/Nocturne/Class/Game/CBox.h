@@ -8,7 +8,7 @@ typedef struct CBox {
     CMatrix3x3f rotation_matrix; // 0x18
     int field_60; // 0x3c
     CVector3f linear_velocity; // 0x40
-    CVector3f external_force; // 0x4c
+    CVector3f linear_velocity_local; // 0x4c
     CVector3f linear_velocity_temp; // 0x58
     CVector3f linear_momentum; // 0x64
     CVector3f angular_velocity; // 0x70

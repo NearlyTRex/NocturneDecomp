@@ -4,12 +4,12 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x2D60000
 // =============================================================================
 
-CBulletTrail[10] g_CFireEffectBulletTrails = {};
-CFireball[64] g_CFireEffectFireballs = {};
-CRock[64] g_CFireEffectRocks = {};
-CLaserBeam[64] g_CFireEffectLaserBeams = {};
-CExplosion[10] g_CFireEffectExplosions = {};
-CToss[20] g_CFireEffectTosses = {};
-CCrater[20] g_CFireEffectCraters = {};
-CGunFlame[500] g_CFireEffectGunFlames = {};
+CBulletTrail[10] g_BulletTrailPool = {};
+CFireball[64] g_FireballPool = {};
+CRock[64] g_RockPool = {};
+CLaserBeam[64] g_LaserBeamPool = {};
+CExplosion[10] g_ExplosionPool = {};
+CToss[20] g_TossPool = {};
+CCrater[20] g_CraterPool = {};
+CGunFlame[500] g_GunFlamePool = {};
 

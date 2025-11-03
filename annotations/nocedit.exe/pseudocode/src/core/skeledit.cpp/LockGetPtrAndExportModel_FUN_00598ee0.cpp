@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_skeledit.cpp_LockGetPtrAndExportModel_FUN_00598ee0()
 // Cross-references:
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 005988f5 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005988f5 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_skeledit.cpp_ExportModel_FUN_00595fc0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
@@ -18,8 +18,10 @@
 void core_skeledit_cpp_LockGetPtrAndExportModel_FUN_00598ee0(void)
 
 {
+  CDeformableModelInstance *in_stack_0000000c;
+  
   crt_stack_c_stack_probe_FUN_005ff9f3(0x14);
-  core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
+  core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(in_stack_0000000c);
   core_skeledit_cpp_ExportModel_FUN_00595fc0();
   return;
 }

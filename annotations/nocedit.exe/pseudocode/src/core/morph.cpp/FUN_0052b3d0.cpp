@@ -5,15 +5,20 @@
 // Signature: undefined core_morph.cpp_FUN_0052b3d0()
 // Function calls:
 //   core_morph.cpp_CMorphModel_addPart_FUN_0052a580
-//   core_morph.cpp_CMorphModel_FreeSomething1_FUN_0052a510
+//   core_morph.cpp_CMorphModel_free_FUN_0052a510
 
 #include "nocturne.h"
 
 void core_morph_cpp_FUN_0052b3d0(void)
 
 {
-  core_morph_cpp_CMorphModel_FreeSomething1_FUN_0052a510();
-  core_morph_cpp_CMorphModel_addPart_FUN_0052a580();
+  CMorphModel *this_ptr;
+  int in_stack_00000004;
+  int in_stack_00000008;
+  
+  this_ptr = (CMorphModel *)(in_stack_00000004 + in_stack_00000008 * 0x608);
+  core_morph_cpp_CMorphModel_free_FUN_0052a510(this_ptr);
+  core_morph_cpp_CMorphModel_addPart_FUN_0052a580(this_ptr);
   return;
 }
 
@@ -35,7 +40,7 @@ void core_morph_cpp_FUN_0052b3d0(void)
 // 0052b3ea: SHL EAX,0x3
 // 0052b3ed: ADD EBX,EAX
 // 0052b3ef: PUSH EBX
-// 0052b3f0: CALL core_morph.cpp_CMorphModel_FreeSomething1_FUN_0052a510
+// 0052b3f0: CALL core_morph.cpp_CMorphModel_free_FUN_0052a510
 //   XREF to: 0052a510 (UNCONDITIONAL_CALL)
 // 0052b3f5: ADD ESP,0x4
 // 0052b3f8: MOV EDX,dword ptr [ESP + 0x30]

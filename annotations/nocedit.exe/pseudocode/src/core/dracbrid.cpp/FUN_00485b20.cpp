@@ -18,20 +18,20 @@
 void core_dracbrid_cpp_FUN_00485b20(void)
 
 {
-  char *pcVar1;
+  int *piVar1;
   int iVar2;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
   
-  if (((in_stack_00000004->model).padding_0x0[0x2260] != '\0') &&
-     (*(int *)((in_stack_00000004->model).padding_0x0 + in_stack_00000008 * 4 + 0x2140) != 0)) {
+  if (((in_stack_00000004->model).field11_0x2260[0] != '\0') &&
+     ((in_stack_00000004->model).part_visibility_flags[in_stack_00000008] != 0)) {
     iVar2 = core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
     core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
     core_bodypart_cpp_FUN_0041a050();
-    *(int *)(in_stack_00000004[1].base_actor.metadata.field3_0x1c +
-            *(int *)in_stack_00000004[1].base_actor.metadata.field3_0x1c * 4 + 4) = iVar2;
-    pcVar1 = in_stack_00000004[1].base_actor.metadata.field3_0x1c;
-    *(int *)pcVar1 = *(int *)pcVar1 + 1;
+    *(int *)(in_stack_00000004[1].model.motion_controller.current_motion_name +
+            in_stack_00000004[1].base_actor.field25_0x144 * 4 + -0x40) = iVar2;
+    piVar1 = &in_stack_00000004[1].base_actor.field25_0x144;
+    *piVar1 = *piVar1 + 1;
     *(undefined4 *)(iVar2 + 0xfc) = 1;
     *(undefined4 *)(iVar2 + 0xcb4) = 1;
     *(undefined4 *)(iVar2 + 0xcc0) = 0xffff;

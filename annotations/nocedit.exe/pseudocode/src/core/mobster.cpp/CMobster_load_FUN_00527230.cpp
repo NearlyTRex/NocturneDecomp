@@ -44,7 +44,7 @@ void core_mobster_cpp_CMobster_load_FUN_00527230(void)
               (&in_stack_00000004->guard_distance,"guardDistance");
   }
   core_actor_cpp_serializeMotionState_FUN_0040b9f0
-            (&(in_stack_00000004->base_character).model,"motion state");
+            (&(in_stack_00000004->base_character).model.motion_controller,"motion state");
   if (g_CMobsterClassVersion == 2) {
     core_actor_cpp_serializeClothList_FUN_0040be60
               ((CClothList *)&(in_stack_00000004->base_character).cloth_count,"clothList");

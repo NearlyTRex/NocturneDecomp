@@ -13,7 +13,7 @@
 //   CDemonCamera g_CDemonCameraInstance
 //   CDemonRaytrace g_CDemonRaytraceInstance
 //   CKeyFramedModel g_CKeyFramedModelInstance
-//   CVector3f[4000] DAT_032c1ccc
+//   CVector3f[4000] g_FaceNormalArray
 // Function calls:
 //   core_dcamera.cpp_CDemonCamera_ctor_FUN_0044c030
 //   core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0
@@ -35,7 +35,8 @@ void __cdecl core_set_cpp_staticInit_FUN_00569040(void)
   crt_stdlib_c_atexit_FUN_005ff060(&g_CDemonRaytraceDestructorNode);
   core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(&g_CKeyFramedModelInstance);
   crt_stdlib_c_atexit_FUN_005ff060(&g_CKeyFramedModelDestructorNode);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(DAT_032c1ccc,4000,&g_CVectorTypeInfo);
+  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
+            (g_FaceNormalArray,4000,&g_CVectorTypeInfo);
   return;
 }
 

@@ -12,8 +12,8 @@
 //   undefined4 DAT_00664b6c
 //   undefined4 DAT_00664b70
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 
 #include "nocturne.h"
@@ -39,8 +39,9 @@ undefined4 core_turret_cpp_FUN_005e3280(void)
   local_24[0].z = in_stack_00000008[2] - (in_stack_00000004->location).position.z;
   core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
             ((CVector3f *)&stack0xffffffd0,local_24);
-  core_actor_cpp_FUN_0040cd70(fStack_28 - (in_stack_00000004->orient).bank);
-  local_2c = core_actor_cpp_FUN_0040cd70(fStack_28 - (in_stack_00000004->orient).pitch);
+  core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(fStack_28 - (in_stack_00000004->orient).bank);
+  local_2c = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                       (fStack_28 - (in_stack_00000004->orient).pitch);
   in_stack_0000000c =
        in_stack_0000000c *
        *(float *)(in_stack_00000004[5].create_event + 0x48) * (float)_DAT_00656788;
@@ -59,7 +60,7 @@ undefined4 core_turret_cpp_FUN_005e3280(void)
   }
   (in_stack_00000004->orient).bank = (in_stack_00000004->orient).bank + fStack_28;
   (in_stack_00000004->orient).pitch = (in_stack_00000004->orient).pitch + local_2c;
-  core_actor_cpp_CDemonActor_FUN_00408c10(in_stack_00000004);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
   if (((float10)0 != ABS((float10)(local_24[0].x < (float)_DAT_00656790))) &&
      ((float10)0 != ABS((float10)(fStack_28 < (float)_DAT_00656790)))) {
     return 1;
@@ -129,7 +130,7 @@ undefined4 core_turret_cpp_FUN_005e3280(void)
 // 005e32f3: SUB ESP,0x4
 // 005e32f6: FSTP float ptr [ESP]
 //   XREF to: Stack[-0x3c] (DATA)
-// 005e32f9: CALL core_actor.cpp_FUN_0040cd70
+// 005e32f9: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 005e32fe: MOV dword ptr [ESP + 0x30],EAX
 //   XREF to: Stack[-0xc] (WRITE)
@@ -145,7 +146,7 @@ undefined4 core_turret_cpp_FUN_005e3280(void)
 // 005e3316: SUB ESP,0x4
 // 005e3319: FSTP float ptr [ESP]
 //   XREF to: Stack[-0x3c] (DATA)
-// 005e331c: CALL core_actor.cpp_FUN_0040cd70
+// 005e331c: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 005e3321: FLD float ptr [EBX + 0x778]
 // 005e3327: MOV dword ptr [ESP + 0x30],EAX
@@ -236,7 +237,7 @@ undefined4 core_turret_cpp_FUN_005e3280(void)
 // 005e33bb: FXCH
 // 005e33bd: FSTP float ptr [EBX + 0x34]
 // 005e33c0: FSTP float ptr [EBX + 0x30]
-// 005e33c3: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 005e33c3: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 005e33c8: ADD ESP,0x4
 // 005e33cb: FLD float ptr [ESP + 0x4]

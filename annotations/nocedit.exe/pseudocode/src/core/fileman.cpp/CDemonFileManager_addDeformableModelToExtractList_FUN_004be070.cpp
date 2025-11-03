@@ -51,7 +51,7 @@ core_fileman_cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070
     g_CurrentLineNumber = 0x144;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory.");
   }
-  core_skeleton_cpp_CDeformableModel_load_FUN_0059b8d0();
+  core_skeleton_cpp_CDeformableModel_load_FUN_0059b8d0(pCVar1,model_filename);
   core_skeledit_cpp_FUN_0058a2b0();
   g_CurrentDebugLine = 0x147;
   g_CurrentDebugFilename = "..\\core\\fileman.cpp";

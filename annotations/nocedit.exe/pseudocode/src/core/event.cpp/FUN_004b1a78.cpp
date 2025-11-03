@@ -1,8 +1,8 @@
 // Name: core_event.cpp_FUN_004b1a78
 // Address: 004b1a78
 // Address Range: [[004b1a78, 004b1a95] [004b1a98, 004b1ab2] [004b1ab4, 004b1ad1] [004b1ad4, 004b1ae9] [004b1aec, 004b1b13]]
-// Convention: unknown
-// Signature: undefined core_event.cpp_FUN_004b1a78()
+// Convention: __cdecl
+// Signature: void core_event.cpp_FUN_004b1a78(void)
 // Cross-references:
 //   core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80 (0044cb80) at 0044cbfe [UNCONDITIONAL_CALL]
 //   core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130 (00451130) at 004511b3 [UNCONDITIONAL_CALL]
@@ -15,77 +15,79 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_event.cpp_FUN_004b1a78(undefined4 param_1) */
-
-void core_event_cpp_FUN_004b1a78
-               (undefined4 param_1,longlong *param_2,undefined4 unaff_EBX,int param_4,uint param_5)
+void __cdecl core_event_cpp_FUN_004b1a78(void)
 
 {
   longlong lVar1;
   uint uVar2;
+  int in_ECX;
   longlong *plVar3;
-  uint uVar4;
-  bool bVar5;
+  int in_EDX;
+  longlong *plVar4;
+  undefined4 unaff_EBX;
+  uint uVar5;
   bool bVar6;
+  bool bVar7;
+  uint in_stack_00000004;
   
-  uVar2 = param_5 - 8;
-  if (7 < param_5 && uVar2 != 0) {
-    uVar4 = -param_4 & 7;
-    plVar3 = (longlong *)(param_4 + uVar4);
-    param_2 = (longlong *)((int)param_2 + uVar4);
-    bVar5 = uVar2 < uVar4;
-    uVar2 = uVar2 - uVar4;
-    bVar6 = uVar2 == 0;
-    switch(uVar4) {
+  uVar2 = in_stack_00000004 - 8;
+  if (7 < in_stack_00000004 && uVar2 != 0) {
+    uVar5 = -in_ECX & 7;
+    plVar3 = (longlong *)(in_ECX + uVar5);
+    plVar4 = (longlong *)(in_EDX + uVar5);
+    bVar6 = uVar2 < uVar5;
+    uVar2 = uVar2 - uVar5;
+    bVar7 = uVar2 == 0;
+    switch(uVar5) {
     case 1:
-      *(undefined1 *)((int)plVar3 + -1) = *(undefined1 *)((int)param_2 + -1);
-      if (bVar5 || bVar6) {
+      *(undefined1 *)((int)plVar3 + -1) = *(undefined1 *)((int)plVar4 + -1);
+      if (bVar6 || bVar7) {
                     /* WARNING: Could not recover jumptable at 0x004b1b0d. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        (**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,param_2,unaff_EBX);
+        (**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,plVar4,unaff_EBX);
         return;
       }
       break;
     case 3:
-      *(undefined1 *)((int)plVar3 + -3) = *(undefined1 *)((int)param_2 + -3);
+      *(undefined1 *)((int)plVar3 + -3) = *(undefined1 *)((int)plVar4 + -3);
     case 2:
-      *(undefined2 *)((int)plVar3 + -2) = *(undefined2 *)((int)param_2 + -2);
-      if (bVar5 || bVar6) {
+      *(undefined2 *)((int)plVar3 + -2) = *(undefined2 *)((int)plVar4 + -2);
+      if (bVar6 || bVar7) {
                     /* WARNING: Could not recover jumptable at 0x004b1afd. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        (**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,param_2,unaff_EBX);
+        (**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,plVar4,unaff_EBX);
         return;
       }
       break;
     case 5:
-      *(undefined1 *)((int)plVar3 + -5) = *(undefined1 *)((int)param_2 + -5);
-      *(undefined4 *)((int)plVar3 + -4) = *(undefined4 *)((int)param_2 + -4);
-      if (bVar5 || bVar6) {
+      *(undefined1 *)((int)plVar3 + -5) = *(undefined1 *)((int)plVar4 + -5);
+      *(undefined4 *)((int)plVar3 + -4) = *(undefined4 *)((int)plVar4 + -4);
+      if (bVar6 || bVar7) {
                     /* WARNING: Could not recover jumptable at 0x004b1ae3. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        (**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,param_2,unaff_EBX);
+        (**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,plVar4,unaff_EBX);
         return;
       }
       break;
     case 7:
-      *(undefined1 *)((int)plVar3 + -7) = *(undefined1 *)((int)param_2 + -7);
+      *(undefined1 *)((int)plVar3 + -7) = *(undefined1 *)((int)plVar4 + -7);
     case 6:
-      *(undefined2 *)((int)plVar3 + -6) = *(undefined2 *)((int)param_2 + -6);
+      *(undefined2 *)((int)plVar3 + -6) = *(undefined2 *)((int)plVar4 + -6);
     case 4:
-      *(undefined4 *)((int)plVar3 + -4) = *(undefined4 *)((int)param_2 + -4);
-      if (bVar5 || bVar6) {
+      *(undefined4 *)((int)plVar3 + -4) = *(undefined4 *)((int)plVar4 + -4);
+      if (bVar6 || bVar7) {
                     /* WARNING: Could not recover jumptable at 0x004b1acb. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        (**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,param_2,unaff_EBX);
+        (**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,plVar4,unaff_EBX);
         return;
       }
     }
     while( true ) {
-      lVar1 = *param_2;
-      param_2 = param_2 + 1;
-      bVar5 = uVar2 < 8;
+      lVar1 = *plVar4;
+      plVar4 = plVar4 + 1;
+      bVar6 = uVar2 < 8;
       uVar2 = uVar2 - 8;
-      if (bVar5 || uVar2 == 0) break;
+      if (bVar6 || uVar2 == 0) break;
       *plVar3 = (longlong)ROUND((float10)lVar1);
       plVar3 = plVar3 + 1;
     }
@@ -93,7 +95,7 @@ void core_event_cpp_FUN_004b1a78
   }
                     /* WARNING: Could not recover jumptable at 0x004b1aac. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,param_2,unaff_EBX);
+  (**(code **)(&DAT_00679d94 + uVar2 * 4))();
   return;
 }
 

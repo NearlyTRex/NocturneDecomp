@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_weather.cpp_CWeather_FUN_005ef8c0()
 // Cross-references:
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ad2b5 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ad2b5 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (004ddaf0) at 004dfda9 [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_initScene_FUN_0056aa10 (0056aa10) at 0056ac2e [UNCONDITIONAL_CALL]
 //   core_weather.cpp_CWeather_ctor_FUN_005eead0 (005eead0) at 005eead8 [UNCONDITIONAL_CALL]

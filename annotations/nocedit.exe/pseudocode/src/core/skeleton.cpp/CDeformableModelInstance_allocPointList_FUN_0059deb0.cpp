@@ -1,8 +1,8 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0
 // Address: 0059deb0
 // Address Range: [[0059deb0, 0059df33]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0()
+// Convention: __cdecl
+// Signature: void core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0(CDeformableModelInstance * this_ptr)
 // Cross-references:
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0480 (005a0480) at 005a0583 [UNCONDITIONAL_CALL]
 // Globals:
@@ -13,35 +13,34 @@
 //   int g_CurrentLineNumber
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
+//   core_skeleton.cpp_CDeformableModelInstance_free_FUN_0059df40
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-//   core_skeleton.cpp_CDeformableModelInstance_UnknownSomethingFreeMem2_FUN_0059df40
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_skeleton.cpp_CDeformableModelInstance_allocPointList(undefined4
-   param_1) */
-
-void core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0(void)
+void __cdecl
+core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0
+          (CDeformableModelInstance *this_ptr)
 
 {
   int iVar1;
-  void *pvVar2;
-  int in_stack_00000004;
+  CDeformableModel *pCVar2;
+  void *pvVar3;
   
-  core_skeleton_cpp_CDeformableModelInstance_UnknownSomethingFreeMem2_FUN_0059df40();
-  iVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-  iVar1 = *(int *)(iVar1 + 0x2c);
-  pvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0(iVar1 * 0xc,"..\\core\\skeleton.cpp",0x8f9);
-  *(void **)(in_stack_00000004 + 0x2234) = pvVar2;
-  if (pvVar2 != (void *)0x0) {
-    *(undefined4 *)(in_stack_00000004 + 0x2230) = 0xffffffff;
+  core_skeleton_cpp_CDeformableModelInstance_free_FUN_0059df40(this_ptr);
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
+  iVar1 = pCVar2->vertex_count[0];
+  pvVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0(iVar1 * 0xc,"..\\core\\skeleton.cpp",0x8f9);
+  this_ptr->field7_0x2234 = (int)pvVar3;
+  if (pvVar3 != (void *)0x0) {
+    this_ptr->field6_0x2230 = -1;
     return;
   }
   g_CurrentFilename = "..\\core\\skeleton.cpp";
   g_CurrentLineNumber = 0x8fa;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModelInstance::allocPointList out of memory for %d points!",iVar1);
-  *(undefined4 *)(in_stack_00000004 + 0x2230) = 0xffffffff;
+  this_ptr->field6_0x2230 = -1;
   return;
 }
 
@@ -53,7 +52,7 @@ void core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0(void
 // 0059deb2: MOV EBX,dword ptr [ESP + 0xc]
 //   XREF to: Stack[0x4] (READ)
 // 0059deb6: PUSH EBX
-// 0059deb7: CALL core_skeleton.cpp_CDeformableModelInstance_UnknownSomethingFreeMem2_FUN_0059df40
+// 0059deb7: CALL core_skeleton.cpp_CDeformableModelInstance_free_FUN_0059df40
 //   XREF to: 0059df40 (UNCONDITIONAL_CALL)
 // 0059debc: ADD ESP,0x4
 // 0059debf: PUSH EBX

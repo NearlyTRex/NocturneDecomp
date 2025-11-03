@@ -13,7 +13,7 @@
 //   undefined4 g_CDemonSetInstance.damage_listeners
 //   undefined4 DAT_03263318
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
@@ -28,16 +28,19 @@ void core_icepick_cpp_FUN_004f9490(void)
 
 {
   CDemonActor *this_ptr;
+  CVector3f *input_local_point;
   int iVar1;
   BADSPACEBASE *in_ESP;
   int iVar2;
   int iVar3;
   CDemonActor *in_stack_00000004;
+  CVector3f CStack_2c;
   char acStack_20 [16];
   
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+  input_local_point = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
   iVar3 = 0;
-  core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (in_stack_00000004,&CStack_2c,input_local_point);
   iVar2 = 0;
   do {
     while( true ) {
@@ -52,7 +55,9 @@ LAB_004f94e9:
     }
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff9c);
     core_actor_cpp_getRandomFloat_FUN_0040cc10(90.0,130.0);
-    iVar1 = (*(this_ptr->metadata).vtable[1].playAmbientSound)(this_ptr,acStack_20);
+    CStack_2c.y = (float)in_stack_00000004;
+    CStack_2c.z = (float)in_stack_00000004;
+    iVar1 = (*this_ptr->vtable[1].playAmbientSound)(this_ptr,acStack_20);
     if (iVar1 == 0) goto LAB_004f94e9;
     iVar3 = iVar3 + 1;
     iVar2 = iVar2 + 4;
@@ -82,7 +87,7 @@ LAB_004f94e9:
 // 004f94b9: PUSH EAX
 // 004f94ba: PUSH ESI
 // 004f94bb: XOR EDI,EDI
-// 004f94bd: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 004f94bd: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 004f94c2: ADD ESP,0xc
 // 004f94c5: XOR ECX,ECX

@@ -13,7 +13,7 @@
 //   CDemonActor_vtable PTR_core_werewolf.cpp_FUN_00665784
 // Function calls:
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -29,9 +29,9 @@ CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_ctor_FUN_005efc10(CWerewolf *thi
   CWerewolf *pCVar5;
   
   pCVar5 = (CWerewolf *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
-  (pCVar5->base_enemy).base_character.base_actor.metadata.vtable =
-       &PTR_core_werewolf_cpp_FUN_00665784;
-  core_skeleton_cpp_FUN_005a0840();
+  (pCVar5->base_enemy).base_character.base_actor.vtable = &PTR_core_werewolf_cpp_FUN_00665784;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            (&(pCVar5->base_enemy).base_character.model);
   pCVar1 = &pCVar5->base_enemy;
   (pCVar1->base_character).cloth_data[0x344] = '\0';
   (pCVar1->base_character).cloth_data[0x345] = '\0';
@@ -84,7 +84,7 @@ CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_ctor_FUN_005efc10(CWerewolf *thi
 // 005efc2a: PUSH EAX
 // 005efc2b: MOV dword ptr [EAX + -0x4],0x665784
 //   XREF to: 00665784 (DATA)
-// 005efc32: CALL core_skeleton.cpp_FUN_005a0840
+// 005efc32: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005efc37: MOV dword ptr [EBX + 0x2ddc],0x3f800000
 // 005efc41: MOV dword ptr [EBX + 0x2de0],0x40000000

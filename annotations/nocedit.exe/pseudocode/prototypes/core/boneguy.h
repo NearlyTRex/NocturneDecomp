@@ -37,7 +37,7 @@ CBoneGuy * CBoneGuy::ctor(CBoneGuy * this_ptr);
 
 // Original: core_boneguy.cpp_CBoneGuy_explode_FUN_0041bd90
 // Address: 0041bd90
-undefined CBoneGuy::explode();
+void CBoneGuy::explode(CBoneGuy * this_ptr);
 
 // Original: core_boneguy.cpp_FUN_0041bf90
 // Address: 0041bf90
@@ -75,9 +75,9 @@ undefined ExplodeAndSoundSomething();
 // Address: 0041d550
 undefined FUN_0041d550();
 
-// Original: core_boneguy.cpp_CBoneGuy_explode2_FUN_0041d680
+// Original: core_boneguy.cpp_CBoneGuy_FUN_0041d680
 // Address: 0041d680
-undefined CBoneGuy::explode2();
+void CBoneGuy(CBoneGuy * this_ptr);
 
 // Original: core_boneguy.cpp_FUN_0041d8a0
 // Address: 0041d8a0

@@ -32,7 +32,8 @@ core_set_cpp_CDemonSet_FUN_00570960(CDemonSet *this_ptr,SMRGLHeaderPrimitive *pr
       if (0 < count) {
         do {
           iVar1 = iVar1 + 1;
-          core_mirror_cpp_renderMirroredPrimitive_FUN_005225e0(this_ptr->active_mirror,prim);
+          core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_005225e0(this_ptr->active_mirror,prim)
+          ;
           prim = prim + 3;
         } while (iVar1 < count);
       }

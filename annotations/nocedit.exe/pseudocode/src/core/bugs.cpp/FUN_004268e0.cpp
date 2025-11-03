@@ -32,7 +32,7 @@ void core_bugs_cpp_FUN_004268e0(void)
   float fVar3;
   int *piVar4;
   CVector3f *pCVar5;
-  int iVar6;
+  CDeformableModel *pCVar6;
   ushort *puVar7;
   int iVar8;
   BADSPACEBASE *in_ESP;
@@ -153,8 +153,9 @@ void core_bugs_cpp_FUN_004268e0(void)
     local_cc = fStack_24 - local_78;
     local_c8 = fStack_20 - local_74;
     iVar8 = *(int *)(in_stack_00000004 + 0x12b3c + *(int *)(in_stack_00000008 + 0x2c) * 0x28);
-    iVar6 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-    puVar7 = (ushort *)(*(int *)(iVar6 + unaff_EDI + 0x7c) + iVar8 * 0x12);
+    pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+                       (*(CDeformableModelInstance **)(in_stack_00000004 + 0x12afc));
+    puVar7 = (ushort *)(*(int *)((int)pCVar6->tri_data_ptr + unaff_EDI) + iVar8 * 0x12);
     piVar4 = (int *)((uint)*puVar7 * 0xc + *(int *)(*(int *)(in_stack_00000004 + 0x12afc) + 0x2234))
     ;
     local_78 = (float)*piVar4 * _DAT_0065b5b8;

@@ -21,9 +21,9 @@
 //   undefined4 DAT_02f33744
 //   undefined4 DAT_02f33768
 // Function calls:
+//   core_actor.cpp_CDemonActor_FUN_0040dec0
 //   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
-//   core_actor.cpp_FUN_0040dec0
 //   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 //   crt_math.c_round_FUN_005fe6b0
 //   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -82,7 +82,7 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
      (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
      iVar1 == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-    this_ptr_00 = (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
+    this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
                             (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffff64);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base_actor);
@@ -133,8 +133,7 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
       if (*(int *)(this_ptr->field1_0x158 + 0x18) == 1) {
         core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
         crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,this_ptr));
-        (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
-                  (&this_ptr->base_actor,&CStack_60);
+        (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&CStack_60);
         CStack_28.x = 0;
         CStack_28.z = 0;
         CStack_28.y = iStack_48;
@@ -249,7 +248,7 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
         core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base_actor);
         return in_stack_00000038;
       }
-      core_actor_cpp_FUN_0040dec0(&this_ptr->base_actor);
+      core_actor_cpp_CDemonActor_FUN_0040dec0(&this_ptr->base_actor);
       return (int)this_ptr;
     }
   }
@@ -770,7 +769,7 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
 // 005e060b: PUSH ESI
 // 005e060c: PUSH EAX
 // 005e060d: PUSH EDX
-// 005e060e: CALL core_actor.cpp_FUN_0040dec0
+// 005e060e: CALL core_actor.cpp_CDemonActor_FUN_0040dec0
 //   XREF to: 0040dec0 (UNCONDITIONAL_CALL)
 // 005e0613: ADD ESP,0x14
 // 005e0616: MOV EAX,dword ptr [ESP + 0xb4]

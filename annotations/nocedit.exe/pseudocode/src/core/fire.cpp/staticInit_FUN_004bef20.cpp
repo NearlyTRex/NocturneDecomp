@@ -35,34 +35,34 @@
 //   WatcomStaticDestructorNode g_CFireEffectPopcornsDestructorNode
 //   WatcomStaticDestructorNode g_CFireEffectRainDropsDestructorNode
 //   CFireEffect g_CFireEffectInstance
-//   CKeyFramedModelInstance DAT_02d12df4
-//   CKeyFramedModelInstance DAT_02d12f70
-//   CKeyFramedModelInstance DAT_02d130ec
-//   CKeyFramedModelInstance DAT_02d13268
-//   CKeyFramedModelInstance DAT_02d133e4
-//   CKeyFramedModelInstance[5] g_CFireEffectKeyFramedModels
-//   CSmokeParticle[2048] g_CFireEffectSmokeParticles
-//   CBulletHole[256] g_CFireEffectBulletHoles
-//   CStake[256] g_CFireEffectStakes
-//   CSpark[256] g_CFireEffectSparks
-//   CMuzzleFlash[20] g_CFireEffectMuzzleFlashes
-//   CGlassParticle[256] g_CFireEffectGlassParticles
-//   CBulletTrail[10] g_CFireEffectBulletTrails
-//   CFireball[64] g_CFireEffectFireballs
-//   CRock[64] g_CFireEffectRocks
-//   CLaserBeam[64] g_CFireEffectLaserBeams
-//   CExplosion[10] g_CFireEffectExplosions
-//   CToss[20] g_CFireEffectTosses
-//   CCrater[20] g_CFireEffectCraters
-//   CGunFlame[500] g_CFireEffectGunFlames
-//   CLightningBolt[10] g_CFireEffectLightningBolts
-//   CTrail[100] g_CFireEffectTrails
-//   CShell[50] g_CFireEffectShells
-//   CPopcorn[256] g_CFireEffectPopcorns
-//   CRainDrop[256] g_CFireEffectRainDrops
+//   CKeyFramedModelInstance g_FireEffectFlamingStakeModel
+//   CKeyFramedModelInstance g_FireEffectFireballModel
+//   CKeyFramedModelInstance g_FireEffectFireballSmallModel
+//   CKeyFramedModelInstance g_FireEffectFireballGreenModel
+//   CKeyFramedModelInstance g_FireEffectGunFlashModel
+//   CKeyFramedModelInstance[5] g_CFireEffectDebrisModels
+//   CSmokeParticle[2048] g_SmokeParticlePool
+//   CBulletHole[256] g_BulletHolePool
+//   CStake[256] g_StakePool
+//   CSpark[256] g_SparkPool
+//   CMuzzleFlash[20] g_MuzzleFlashPool
+//   CGlassParticle[256] g_GlassParticlePool
+//   CBulletTrail[10] g_BulletTrailPool
+//   CFireball[64] g_FireballPool
+//   CRock[64] g_RockPool
+//   CLaserBeam[64] g_LaserBeamPool
+//   CExplosion[10] g_ExplosionPool
+//   CToss[20] g_TossPool
+//   CCrater[20] g_CraterPool
+//   CGunFlame[500] g_GunFlamePool
+//   CLightningBolt[10] g_LightningBoltPool
+//   CTrail[100] g_TrailPool
+//   CShell[50] g_ShellPool
+//   CPopcorn[256] g_PopcornPool
+//   CRainDrop[256] g_RainDropPool
 // Function calls:
 //   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-//   core_fire.cpp_CFireEffect_FUN_004c6c60
+//   core_fire.cpp_CFireEffect_ctor_FUN_004c6c60
 //   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
 //   crt_stdlib.c_atexit_FUN_005ff060
 
@@ -71,61 +71,54 @@
 void __cdecl core_fire_cpp_staticInit_FUN_004bef20(void)
 
 {
-  core_fire_cpp_CFireEffect_FUN_004c6c60(&g_CFireEffectInstance);
-  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&DAT_02d12df4);
-  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&DAT_02d12f70);
-  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&DAT_02d130ec);
-  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&DAT_02d13268);
-  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&DAT_02d133e4);
+  core_fire_cpp_CFireEffect_ctor_FUN_004c6c60(&g_CFireEffectInstance);
+  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&g_FireEffectFlamingStakeModel);
+  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&g_FireEffectFireballModel);
+  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&g_FireEffectFireballSmallModel);
+  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&g_FireEffectFireballGreenModel);
+  core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&g_FireEffectGunFlashModel);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectKeyFramedModels,5,&g_CKeyFramedModelInstanceTypeInfo);
+            (g_CFireEffectDebrisModels,5,&g_CKeyFramedModelInstanceTypeInfo);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectSmokeParticles,0x800,&g_CSmokeParticleTypeInfo);
+            (g_SmokeParticlePool,0x800,&g_CSmokeParticleTypeInfo);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectBulletHoles,0x100,&g_CBulletHoleTypeInfo);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectStakes,0x100,&g_CStakeTypeInfo);
+            (g_BulletHolePool,0x100,&g_CBulletHoleTypeInfo);
+  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(g_StakePool,0x100,&g_CStakeTypeInfo);
   crt_stdlib_c_atexit_FUN_005ff060(&g_CFireEffectStakesDestructorNode);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectSparks,0x100,&g_CSparkTypeInfo);
+  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(g_SparkPool,0x100,&g_CSparkTypeInfo);
   crt_stdlib_c_atexit_FUN_005ff060(&g_CFireEffectSparksDestructorNode);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectMuzzleFlashes,0x14,&g_CMuzzleFlashTypeInfo);
+            (g_MuzzleFlashPool,0x14,&g_CMuzzleFlashTypeInfo);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectGlassParticles,0x100,&g_CGlassParticleTypeInfo);
+            (g_GlassParticlePool,0x100,&g_CGlassParticleTypeInfo);
   crt_stdlib_c_atexit_FUN_005ff060(&g_CFireEffectGlassParticlesDestructorNode);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectBulletTrails,10,&g_CBulletTrailTypeInfo);
+            (g_BulletTrailPool,10,&g_CBulletTrailTypeInfo);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectFireballs,0x40,&g_CFireballTypeInfo);
+            (g_FireballPool,0x40,&g_CFireballTypeInfo);
   crt_stdlib_c_atexit_FUN_005ff060(&g_CFireEffectFireballsDestructorNode);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectRocks,0x40,&g_CRockTypeInfo);
+  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(g_RockPool,0x40,&g_CRockTypeInfo);
   crt_stdlib_c_atexit_FUN_005ff060(&g_CFireEffectRocksDestructorNode);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectLaserBeams,0x40,&g_CLaserBeamTypeInfo);
+            (g_LaserBeamPool,0x40,&g_CLaserBeamTypeInfo);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectExplosions,10,&g_CExplosionTypeInfo);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectTosses,0x14,&g_CTossTypeInfo);
+            (g_ExplosionPool,10,&g_CExplosionTypeInfo);
+  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(g_TossPool,0x14,&g_CTossTypeInfo);
   crt_stdlib_c_atexit_FUN_005ff060(&g_CFireEffectTossesDestructorNodes);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectCraters,0x14,&g_CCraterTypeInfo);
+  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(g_CraterPool,0x14,&g_CCraterTypeInfo);
   crt_stdlib_c_atexit_FUN_005ff060(&g_CFireEffectCratersDestructorNodes);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectGunFlames,500,&g_CGunFlameTypeInfo);
+            (g_GunFlamePool,500,&g_CGunFlameTypeInfo);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectLightningBolts,10,&g_CLightningBoltTypeInfo);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectTrails,100,&g_CTrailTypeInfo);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectShells,0x32,&g_CShellTypeInfo);
+            (g_LightningBoltPool,10,&g_CLightningBoltTypeInfo);
+  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(g_TrailPool,100,&g_CTrailTypeInfo);
+  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(g_ShellPool,0x32,&g_CShellTypeInfo);
   crt_stdlib_c_atexit_FUN_005ff060(&g_CFireEffectShellsDestructorNode);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectPopcorns,0x100,&g_CPopcornTypeInfo);
+            (g_PopcornPool,0x100,&g_CPopcornTypeInfo);
   crt_stdlib_c_atexit_FUN_005ff060(&g_CFireEffectPopcornsDestructorNode);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (g_CFireEffectRainDrops,0x100,&g_CRainDropTypeInfo);
+            (g_RainDropPool,0x100,&g_CRainDropTypeInfo);
   crt_stdlib_c_atexit_FUN_005ff060(&g_CFireEffectRainDropsDestructorNode);
   return;
 }
@@ -135,7 +128,7 @@ void __cdecl core_fire_cpp_staticInit_FUN_004bef20(void)
 // 004bef20: PUSH 0x2d12db0
 //   Label: core_fire.cpp_staticInit_FUN_004bef20
 //   XREF to: 02d12db0 (DATA)
-// 004bef25: CALL core_fire.cpp_CFireEffect_FUN_004c6c60
+// 004bef25: CALL core_fire.cpp_CFireEffect_ctor_FUN_004c6c60
 //   XREF to: 004c6c60 (UNCONDITIONAL_CALL)
 // 004bef2a: ADD ESP,0x4
 // 004bef2d: PUSH 0x2d12df4

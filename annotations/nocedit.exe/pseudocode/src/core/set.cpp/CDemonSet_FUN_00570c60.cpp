@@ -4,17 +4,14 @@
 // Convention: __cdecl
 // Signature: void core_set.cpp_CDemonSet_FUN_00570c60(CDemonSet * this_ptr)
 // Cross-references:
-//   core_glass.cpp_FUN_004eaef0 (004eaef0) at 004eb1f7 [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_shatter_FUN_004eaef0 (004eaef0) at 004eb1f7 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
 void __cdecl core_set_cpp_CDemonSet_FUN_00570c60(CDemonSet *this_ptr)
 
 {
-  this_ptr->field69_0x161654[0] = '\x01';
-  this_ptr->field69_0x161654[1] = '\0';
-  this_ptr->field69_0x161654[2] = '\0';
-  this_ptr->field69_0x161654[3] = '\0';
+  this_ptr->mirror_render_flag = 1;
   return;
 }
 

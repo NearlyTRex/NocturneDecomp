@@ -1,20 +1,20 @@
 // Name: core_morph.cpp_CMorphModel_animate_FUN_0052a920
 // Address: 0052a920
 // Address Range: [[0052a920, 0052a9f4]]
-// Convention: unknown
-// Signature: undefined core_morph.cpp_CMorphModel_animate_FUN_0052a920()
+// Convention: __cdecl
+// Signature: void core_morph.cpp_CMorphModel_animate_FUN_0052a920(CMorphModel * this_ptr)
 // Cross-references:
-//   core_morph.cpp_CMorphModel_addPart2_FUN_0052a710 (0052a710) at 0052a801 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_CMorphModel_FUN_0052a710 (0052a710) at 0052a801 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_CMorphModel_FUN_0052aa00 (0052aa00) at 0052aa1d [UNCONDITIONAL_CALL]
 //   core_morph.cpp_CMorphModel_addPart_FUN_0052a580 (0052a580) at 0052a69b [UNCONDITIONAL_CALL]
-//   core_morph.cpp_CallToMorphModelAnimate_FUN_0052aa80 (0052aa80) at 0052aaa8 [UNCONDITIONAL_CALL]
-//   core_morph.cpp_FUN_0052aa00 (0052aa00) at 0052aa1d [UNCONDITIONAL_CALL]
-//   core_morph.cpp_GetSkeletonPtrAndAnimate_FUN_0052aa30 (0052aa30) at 0052aa71 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052aa30 (0052aa30) at 0052aa71 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052aa80 (0052aa80) at 0052aaa8 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_morph_cpp_0063a229
 //   TerminatedCString s_CMorphModel_animate_inva_0063a23b
 //   TerminatedCString s_core_morph_cpp_0063a265
 //   TerminatedCString s_CMorphModel_animate_inva_0063a277
-//   undefined4 DAT_00661b48
+//   float FLOAT_00661b48 = 0.00390625
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
@@ -22,22 +22,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 core_morph.cpp_CMorphModel_animate(CMorphModel* param_1, undefined4
-   param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5) */
-
-void core_morph_cpp_CMorphModel_animate_FUN_0052a920(void)
+void __cdecl core_morph_cpp_CMorphModel_animate_FUN_0052a920(CMorphModel *this_ptr)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
-  int *in_stack_00000004;
   int in_stack_00000008;
   int *in_stack_00000010;
   int in_stack_00000014;
   
-  if ((in_stack_00000008 < 0) || (*in_stack_00000004 <= in_stack_00000008)) {
+  if ((in_stack_00000008 < 0) || (*(int *)this_ptr->field0_0x0 <= in_stack_00000008)) {
     g_CurrentFilename = "..\\core\\morph.cpp";
     g_CurrentLineNumber = 0x112;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::animate - invalid part index");
@@ -55,9 +50,9 @@ void core_morph_cpp_CMorphModel_animate_FUN_0052a920(void)
     do {
       iVar2 = *(int *)(in_stack_00000008 + 0x58) + iVar3;
       iVar1 = iVar1 + 1;
-      *(float *)(iVar2 + 4) = (float)*in_stack_00000010 * _DAT_00661b48;
-      *(float *)(iVar2 + 8) = (float)in_stack_00000010[1] * _DAT_00661b48;
-      *(float *)(iVar2 + 0xc) = (float)in_stack_00000010[2] * _DAT_00661b48;
+      *(float *)(iVar2 + 4) = (float)*in_stack_00000010 * FLOAT_00661b48;
+      *(float *)(iVar2 + 8) = (float)in_stack_00000010[1] * FLOAT_00661b48;
+      *(float *)(iVar2 + 0xc) = (float)in_stack_00000010[2] * FLOAT_00661b48;
       iVar3 = iVar3 + 0x10;
       in_stack_00000010 = in_stack_00000010 + 3;
     } while (iVar1 < in_stack_00000014);

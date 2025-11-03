@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CDemonActor * core_inv.cpp_CInventory_findItemByName_FUN_004fe9d0(CInventory * this_ptr, char * item_name)
 // Cross-references:
-//   core_event.cpp_CEvent_EventReadingFromFile_FUN_004ae140 (004ae140) at 004aea3d [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004ae140 (004ae140) at 004aea3d [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (004ddaf0) at 004de559 [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055e440 [UNCONDITIONAL_CALL]
 //   core_vampboss.cpp_FUN_005e7030 (005e7030) at 005e71de [UNCONDITIONAL_CALL]

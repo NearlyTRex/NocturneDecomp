@@ -31,7 +31,7 @@ void core_pendulum_cpp_FUN_005494a0(void)
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);
-  pCVar3 = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+  pCVar3 = (*in_stack_00000004->vtable->getBoundingBox)
                      (in_stack_00000004,(CBoundingBox3D *)(auStack_30 + 4));
   if ((CBoundingBox3D *)auStack_30 != pCVar3) {
     auStack_30._0_4_ = (pCVar3->min).x;
@@ -43,7 +43,7 @@ void core_pendulum_cpp_FUN_005494a0(void)
     fStack_20 = (pCVar3->max).y;
     fStack_1c = (pCVar3->max).z;
   }
-  in_stack_00000004[2].field_236.z =
+  in_stack_00000004[2].field13_0xec.z =
        SQRT((fStack_20 - (float)auStack_30._4_4_) * (float)DOUBLE_0063ec89) * (float)DOUBLE_0063ec91
   ;
   fVar1 = ((float)auStack_30._4_4_ + fStack_20) * FLOAT_0063ec99;

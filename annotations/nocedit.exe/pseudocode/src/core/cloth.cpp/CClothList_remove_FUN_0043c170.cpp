@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_cloth.cpp_CClothList_remove_FUN_0043c170(CClothList * this_ptr)
 // Cross-references:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040fcab [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040fcab [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_cloth_cpp_0061860f
 //   TerminatedCString s_CClothList_remove_invali_00618621

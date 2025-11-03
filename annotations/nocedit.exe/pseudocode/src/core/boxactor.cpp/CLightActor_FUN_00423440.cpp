@@ -19,7 +19,7 @@
 
 undefined4
 core_boxactor_cpp_CLightActor_FUN_00423440
-          (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4,
+          (undefined4 param_1,undefined4 param_2,int unaff_EBX,undefined4 param_4,
           CDemonActor *param_5,undefined4 param_6)
 
 {
@@ -35,7 +35,7 @@ core_boxactor_cpp_CLightActor_FUN_00423440
   if (iVar2 == 0) {
     return 0;
   }
-  *(undefined4 *)(pCVar1[4].metadata.field3_0x1c + 4) = unaff_EBX;
+  pCVar1[4].field26_0x148 = unaff_EBX;
   return 1;
 }
 

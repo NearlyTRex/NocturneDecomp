@@ -34,9 +34,9 @@
 //   core_flame.cpp_FUN_004ca110 (004ca110) at 004ca147 [UNCONDITIONAL_CALL]
 //   core_flame.cpp_FUN_004caa80 (004caa80) at 004caaaa [UNCONDITIONAL_CALL]
 //   core_flies.cpp_FUN_004cc300 (004cc300) at 004cc316 [UNCONDITIONAL_CALL]
-//   core_glass.cpp_CGlass_FUN_004e9930 (004e9930) at 004e9972 [UNCONDITIONAL_CALL]
-//   core_glass.cpp_CGlass_FUN_004e9af0 (004e9af0) at 004e9b23 [UNCONDITIONAL_CALL]
-//   core_glass.cpp_CGlass_FUN_004e9ca0 (004e9ca0) at 004e9ce4 [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0 (004e9ca0) at 004e9ce4 [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_renderOpaque_FUN_004e9930 (004e9930) at 004e9972 [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_renderTransparent_FUN_004e9af0 (004e9af0) at 004e9b23 [UNCONDITIONAL_CALL]
 //   core_gore.cpp_CGore_FUN_004ed7b0 (004ed7b0) at 004ed7d0 [UNCONDITIONAL_CALL]
 //   core_hero.cpp_CHeroPlaceholder_FUN_004f3c90 (004f3c90) at 004f3cb1 [UNCONDITIONAL_CALL]
 //   core_hostage.cpp_FUN_004f4b40 (004f4b40) at 004f4b55 [UNCONDITIONAL_CALL]
@@ -60,8 +60,8 @@
 //   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (005751d0) at 00575267 [UNCONDITIONAL_CALL]
 //   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 (00574910) at 005749ba [UNCONDITIONAL_CALL]
 //   core_shotgun.cpp_FUN_005888f0 (005888f0) at 00588905 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModel_FUN_0059abf0 (0059abf0) at 0059ac06 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModel_FUN_0059ce40 (0059ce40) at 0059ce50 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 (0059abf0) at 0059ac06 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40 (0059ce40) at 0059ce50 [UNCONDITIONAL_CALL]
 //   core_stairs.cpp_FUN_005b9c10 (005b9c10) at 005b9c33 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c3150 (005c3150) at 005c351e [UNCONDITIONAL_CALL]
 //   core_succubus.cpp_CSuccubus_FUN_005c7590 (005c7590) at 005c7636 [UNCONDITIONAL_CALL]
@@ -75,7 +75,7 @@
 //   core_wateract.cpp_CWaterActor_FUN_005eb280 (005eb280) at 005eb290 [UNCONDITIONAL_CALL]
 //   core_waypoint.cpp_CWaypoint_FUN_005ebf70 (005ebf70) at 005ebfa0 [UNCONDITIONAL_CALL]
 //   core_weapon.cpp_CWeapon_FUN_005ee030 (005ee030) at 005ee08e [UNCONDITIONAL_CALL]
-//   core_weapon.cpp_FUN_005ee830 (005ee830) at 005ee84c [UNCONDITIONAL_CALL]
+//   core_weapon.cpp_CWeapon_FUN_005ee830 (005ee830) at 005ee84c [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

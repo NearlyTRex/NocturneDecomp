@@ -29,7 +29,7 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e2240(CTurret *this_ptr)
             ((CKeyFramedModelInstance *)(this_ptr->field1_0x578 + 0xc));
   core_weapon_cpp_CWeapon_FUN_005edff0(&this_ptr->base_weapon);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                          ((CKeyFramedModelInstance *)&(this_ptr->base_weapon).model_instance);
+                          (&(this_ptr->base_weapon).model);
   pCVar2 = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00477890
                      (this_ptr_00,this_ptr_00->frame_count + -1);
   fVar4 = -1e+30;

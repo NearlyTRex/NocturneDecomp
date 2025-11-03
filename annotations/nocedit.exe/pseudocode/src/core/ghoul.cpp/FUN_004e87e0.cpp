@@ -4,16 +4,16 @@
 // Convention: unknown
 // Signature: undefined core_ghoul.cpp_FUN_004e87e0()
 // Globals:
-//   undefined4 s_go_berzerk_0062de82
+//   TerminatedCString s_go_berzerk_0062de82
 //   TerminatedCString s_ghoul_die_wav_1_6_0062de8e
 //   TerminatedCString s_guul_flinch_d_0062dea5
 //   TerminatedCString s_ghoul_mad_wav_0062deb3
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   CConsole g_ConsolePtr
 // Function calls:
-//   core_actor.cpp_FUN_0040cc70
-//   core_actor.cpp_FUN_0040cd10
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_charactr.cpp_CCharacter_FUN_0042b8e0
 //   core_enemy.cpp_FUN_004a9f10
 //   core_ghoul.cpp_FUN_004e8520
@@ -28,7 +28,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_ghoul.cpp_FUN_004e87e0(undefined4 param_1, undefined4 param_2)
     */
 
@@ -41,12 +40,12 @@ void core_ghoul_cpp_FUN_004e87e0(void)
   CCharacter *pCVar4;
   int iVar5;
   float fVar6;
-  undefined4 uVar7;
+  CMotionList *this_ptr;
   undefined4 extraout_EDX;
   BADSPACEBASE *in_ESP;
-  bool bVar8;
-  float10 fVar9;
-  double dVar10;
+  bool bVar7;
+  float10 fVar8;
+  double dVar9;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
   CCharacter *local_78;
@@ -55,7 +54,9 @@ void core_ghoul_cpp_FUN_004e87e0(void)
   
   sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
   if ((in_stack_00000004[1].base_actor.field14_0xf8 != 0) &&
-     (iVar5 = core_motion_cpp_CMotionController_FUN_0052dab0(), *(int *)(iVar5 + 0x24) == 0)) {
+     (iVar5 = core_motion_cpp_CMotionController_FUN_0052dab0
+                        (&(in_stack_00000004->model).motion_controller), *(int *)(iVar5 + 0x24) == 0
+     )) {
     in_stack_00000004[1].base_actor.is_transparent = 0x41f00000;
     in_stack_00000004[1].base_actor.field14_0xf8 = 0;
     pCVar3 = &in_stack_00000004[1].base_actor.scale;
@@ -69,10 +70,10 @@ void core_ghoul_cpp_FUN_004e87e0(void)
       in_stack_00000004[1].base_actor.scale.z =
            (int)(in_stack_00000004->base_actor).location.position.z;
     }
-    engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"@go berzerk\n" + 1);
+    engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"go berzerk\n");
   }
   if (*(int *)(in_stack_00000008 + 0x30) == 0x6c) {
-    in_stack_00000004[1].base_actor.field_236.z = 4.0;
+    in_stack_00000004[1].base_actor.field13_0xec.z = 4.0;
   }
   core_ghoul_cpp_FUN_004e8520();
   iVar5 = *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18);
@@ -82,9 +83,9 @@ void core_ghoul_cpp_FUN_004e87e0(void)
     (**(code **)(*(int *)(*(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18) + 0x154) +
                 0x104))();
   }
-  fVar6 = in_stack_00000004[1].base_actor.field_224.y;
+  fVar6 = in_stack_00000004[1].base_actor.field12_0xe0.y;
   in_stack_00000004->hit_points = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
-  if (*(int *)((in_stack_00000004->model).padding_0x0 + (int)fVar6 * 4 + 0x2140) == 0) {
+  if ((in_stack_00000004->model).part_visibility_flags[(int)fVar6] == 0) {
     in_stack_00000004->hit_points = 0.0;
   }
   if (in_stack_00000004->hit_points <= 0.0) {
@@ -95,10 +96,11 @@ void core_ghoul_cpp_FUN_004e87e0(void)
       core_enemy_cpp_FUN_004a9f10();
       return;
     }
-    iVar5 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    iVar5 = core_motion_cpp_CMotionController_FUN_0052dab0
+                      (&(in_stack_00000004->model).motion_controller);
     if ((*(int *)(iVar5 + 0x24) != 10) && (*(int *)(iVar5 + 0x24) != 9)) {
-      if (*(int *)((in_stack_00000004->model).padding_0x0 +
-                  (int)in_stack_00000004[1].base_actor.field_224.y * 4 + 0x2140) == 0) {
+      if ((in_stack_00000004->model).part_visibility_flags
+          [(int)in_stack_00000004[1].base_actor.field12_0xe0.y] == 0) {
         pCVar4 = in_stack_00000004 + 1;
         (pCVar4->base_actor).create_event[0x3c] = '\0';
         (pCVar4->base_actor).create_event[0x3d] = '\0';
@@ -110,67 +112,70 @@ void core_ghoul_cpp_FUN_004e87e0(void)
         *(int *)pcVar2 = *(int *)pcVar2 + -1;
       }
       if (*(int *)(in_stack_00000004->cloth_data + 0x35c) < 1) {
-        core_actor_cpp_FUN_0040cd10();
+        core_actor_cpp_randomChance_FUN_0040cd10(0.5);
       }
       else {
         iVar5 = 0;
         pCVar4 = in_stack_00000004;
         if (0 < *(int *)(in_stack_00000004->cloth_data + 0x35c)) {
           do {
-            bVar8 = *(float *)(pCVar4->cloth_data + 0x360) ==
-                    in_stack_00000004[1].base_actor.field_224.x;
-            if ((bVar8) || (bVar8)) break;
+            bVar7 = *(float *)(pCVar4->cloth_data + 0x360) ==
+                    in_stack_00000004[1].base_actor.field12_0xe0.x;
+            if ((bVar7) || (bVar7)) break;
             iVar5 = iVar5 + 1;
             pCVar4 = (CCharacter *)&(pCVar4->base_actor).orient.heading;
           } while (iVar5 < *(int *)(in_stack_00000004->cloth_data + 0x35c));
         }
       }
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                (&(in_stack_00000004->model).motion_controller);
       iVar5 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
       if (iVar5 == 0) {
-        fVar6 = (float)(*((in_stack_00000004->base_actor).metadata.vtable)->playSound)
+        fVar6 = (float)(*((in_stack_00000004->base_actor).vtable)->playSound)
                                  (&in_stack_00000004->base_actor,"ghoul-die-!-?.wav @1.6");
-        in_stack_00000004[1].base_actor.field_236.y = fVar6;
+        in_stack_00000004[1].base_actor.field13_0xec.y = fVar6;
       }
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(4.0,10.0);
-      fVar9 = (float10)local_14 * (float10)_DAT_0062deca;
+      fVar8 = (float10)local_14 * (float10)DOUBLE_0062deca;
       pCVar4 = in_stack_00000004 + 1;
       (pCVar4->base_actor).create_event[0x2c] = '\0';
       (pCVar4->base_actor).create_event[0x2d] = '\0';
       (pCVar4->base_actor).create_event[0x2e] = '\n';
       (pCVar4->base_actor).create_event[0x2f] = '\0';
-      dVar10 = crt_math_c_round_FUN_005fe6b0
-                         ((double)CONCAT44(extraout_EDX,
-                                           (in_stack_00000004->base_actor).metadata.vtable));
-      *(int *)(in_stack_00000004[1].base_actor.create_event + 0x28) = (int)ROUND(fVar9);
-      (**(code **)(SUB84(dVar10,0) + 0xa0))(SUB84(dVar10,0),(int)((ulonglong)dVar10 >> 0x20));
+      dVar9 = crt_math_c_round_FUN_005fe6b0
+                        ((double)CONCAT44(extraout_EDX,(in_stack_00000004->base_actor).vtable));
+      *(int *)(in_stack_00000004[1].base_actor.create_event + 0x28) = (int)ROUND(fVar8);
+      (**(code **)(SUB84(dVar9,0) + 0xa0))(SUB84(dVar9,0),(int)((ulonglong)dVar9 >> 0x20));
     }
   }
   else {
-    iVar5 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    iVar5 = core_motion_cpp_CMotionController_FUN_0052dab0
+                      (&(in_stack_00000004->model).motion_controller);
     iVar5 = *(int *)(iVar5 + 0x24);
     if (((iVar5 == 0) || (iVar5 == 0xb || (iVar5 == 0xc || iVar5 == 2))) ||
-       (iVar5 = core_actor_cpp_FUN_0040cd10(), iVar5 != 0)) {
-      core_actor_cpp_FUN_0040cd10();
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+       (iVar5 = core_actor_cpp_randomChance_FUN_0040cd10(0.25), iVar5 != 0)) {
+      core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                (&(in_stack_00000004->model).motion_controller);
     }
     else {
-      uVar7 = core_actor_cpp_FUN_0040cc70();
-      crt_stdio_c_sprintf_FUN_005fdbd0((char *)&local_78,"guul flinch%d",uVar7);
-      core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
-      uVar7 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460();
+      iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,2);
+      crt_stdio_c_sprintf_FUN_005fdbd0((char *)&local_78,"guul flinch%d",iVar5);
+      this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                           (&(in_stack_00000004->model).motion_controller);
+      iVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr);
       pCVar4 = in_stack_00000004 + 1;
       (pCVar4->base_actor).create_event[0x34] = '\0';
       (pCVar4->base_actor).create_event[0x35] = '\0';
       (pCVar4->base_actor).create_event[0x36] = -0x80;
       (pCVar4->base_actor).create_event[0x37] = '?';
-      *(undefined4 *)(in_stack_00000004[1].base_actor.create_event + 0x38) = uVar7;
+      *(int *)(in_stack_00000004[1].base_actor.create_event + 0x38) = iVar5;
     }
     iVar5 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
     if (iVar5 == 0) {
-      fVar6 = (float)(*((in_stack_00000004->base_actor).metadata.vtable)->playSound)
+      fVar6 = (float)(*((in_stack_00000004->base_actor).vtable)->playSound)
                                (&in_stack_00000004->base_actor,"ghoul-mad-!-?.wav");
-      in_stack_00000004[1].base_actor.field_236.x = fVar6;
+      in_stack_00000004[1].base_actor.field13_0xec.x = fVar6;
       iStack_74 = in_stack_00000008;
       local_78 = in_stack_00000004;
       core_enemy_cpp_FUN_004a9f10();
@@ -402,7 +407,7 @@ void core_ghoul_cpp_FUN_004e87e0(void)
 //   XREF to: 004e8922 (UNCONDITIONAL_JUMP)
 // 004e8a7b: PUSH 0x3f000000
 //   Label: LAB_004e8a7b
-// 004e8a80: CALL core_actor.cpp_FUN_0040cd10
+// 004e8a80: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 004e8a85: ADD ESP,0x4
 // 004e8a88: TEST EAX,EAX
@@ -440,7 +445,7 @@ void core_ghoul_cpp_FUN_004e87e0(void)
 // 004e8acc: PUSH 0x1
 //   Label: LAB_004e8acc
 // 004e8ace: PUSH 0x3f000000
-// 004e8ad3: CALL core_actor.cpp_FUN_0040cd10
+// 004e8ad3: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 004e8ad8: ADD ESP,0x4
 // 004e8adb: TEST EAX,EAX
@@ -485,7 +490,7 @@ void core_ghoul_cpp_FUN_004e87e0(void)
 // 004e8b3a: JNZ 0x004e8acc
 //   XREF to: 004e8acc (CONDITIONAL_JUMP)
 // 004e8b3c: PUSH 0x3e800000
-// 004e8b41: CALL core_actor.cpp_FUN_0040cd10
+// 004e8b41: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 004e8b46: ADD ESP,0x4
 // 004e8b49: TEST EAX,EAX
@@ -493,7 +498,7 @@ void core_ghoul_cpp_FUN_004e87e0(void)
 //   XREF to: 004e8acc (CONDITIONAL_JUMP)
 // 004e8b51: PUSH 0x2
 // 004e8b53: PUSH 0x1
-// 004e8b55: CALL core_actor.cpp_FUN_0040cc70
+// 004e8b55: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 004e8b5a: ADD ESP,0x8
 // 004e8b5d: PUSH EAX

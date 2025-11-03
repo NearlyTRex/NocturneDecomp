@@ -7,12 +7,12 @@
 //   undefined4 DAT_00614d2b
 //   undefined4 DAT_00614d33
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CHero*[4] g_HeroActors
 //   int g_LocalHeroIndex
 // Function calls:
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 
 #include "nocturne.h"
 
@@ -31,7 +31,7 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr)
   SDamageInfo local_44;
   CAnvil *pCStack_8;
   
-  iVar4 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+  iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,this_ptr->drop_condition);
   iVar3 = g_LocalHeroIndex;
   if (iVar4 != 0) {
@@ -66,7 +66,7 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr)
       local_44.attacker = (CDemonActor *)&DAT_00000008;
       local_44.wielder = &this_ptr->base_actor;
       pCStack_8 = this_ptr;
-      (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.metadata.vtable[1].
+      (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].
         playAmbientSoundWithVolume)
                 ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],(char *)&local_44.damage_amount,
                  unaff_EDI);
@@ -90,7 +90,7 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr)
 //   XREF to: 006793d0 (READ)
 // 00411da5: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 00411da6: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 00411da6: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 00411dab: ADD ESP,0x8
 // 00411dae: TEST EAX,EAX

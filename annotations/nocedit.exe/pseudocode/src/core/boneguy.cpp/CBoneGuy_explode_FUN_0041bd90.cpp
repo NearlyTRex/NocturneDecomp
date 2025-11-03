@@ -1,10 +1,10 @@
 // Name: core_boneguy.cpp_CBoneGuy_explode_FUN_0041bd90
 // Address: 0041bd90
 // Address Range: [[0041bd90, 0041bf6c]]
-// Convention: unknown
-// Signature: undefined core_boneguy.cpp_CBoneGuy_explode_FUN_0041bd90()
+// Convention: __cdecl
+// Signature: void core_boneguy.cpp_CBoneGuy_explode_FUN_0041bd90(CBoneGuy * this_ptr)
 // Globals:
-//   undefined4 s_Bip01_Head_00615f99
+//   TerminatedCString s_Bip01_Head_00615f99
 //   TerminatedCString s_Bip01_L_ForeArm_00615fa4
 //   TerminatedCString s_Bip01_R_ForeArm_00615fb4
 //   TerminatedCString s_Bip01_L_UpperArm_00615fc4
@@ -38,9 +38,9 @@
 // Function calls:
 //   core_enemy.cpp_CEnemy_FUN_004a9650
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -48,47 +48,67 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_boneguy.cpp_CBoneGuy_explode(undefined4 param_1) */
 
-void core_boneguy_cpp_CBoneGuy_explode_FUN_0041bd90(void)
+void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041bd90(CBoneGuy *this_ptr)
 
 {
-  CCharacter *pCVar1;
-  int iVar2;
-  CEnemy *in_stack_00000004;
+  CDeformableModelInstance *this_ptr_00;
+  int iVar1;
+  CSkeleton *this_ptr_01;
+  CDeformableModel *pCVar2;
+  undefined4 uStack00000034;
   
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
-  core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-  DAT_00822944 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_00822950 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_00822954 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  DAT_00822958 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  DAT_0082295c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_00822960 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_00822964 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  DAT_00822948 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  DAT_0082294c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  DAT_00822968 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  DAT_0082296c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  DAT_00822944 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  DAT_00822958 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  DAT_0082295c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  DAT_00822968 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  DAT_0082296c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  iVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-  iVar2 = *(int *)(iVar2 + 0x7140);
-  *(int *)(in_stack_00000004[1].base_character.base_actor.create_event + 0xc) = iVar2;
-  if (0x14 < iVar2) {
+  this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr_00);
+  DAT_00822944 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_01,"Bip01 Head");
+  _DAT_00822950 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L ForeArm");
+  _DAT_00822954 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R ForeArm");
+  DAT_00822958 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_01,"Bip01 L UpperArm");
+  DAT_0082295c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_01,"Bip01 R UpperArm");
+  _DAT_00822960 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L Foot");
+  _DAT_00822964 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R Foot");
+  DAT_00822948 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_01,"Bip01 L Hand");
+  DAT_0082294c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_01,"Bip01 R Hand");
+  DAT_00822968 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_01,"Bip01 Spine");
+  DAT_0082296c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_01,"Bip01 Spine2");
+  DAT_00822944 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_01,"Bip01 Head");
+  DAT_00822958 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_01,"Bip01 L UpperArm");
+  DAT_0082295c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_01,"Bip01 R UpperArm");
+  DAT_00822968 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_01,"Bip01 Spine");
+  uStack00000034 = 1;
+  DAT_0082296c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_01,"Bip01 Spine2");
+  uStack00000034 = 0x41bf07;
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
+  iVar1 = pCVar2->num_parts;
+  this_ptr->box_count = iVar1;
+  if (0x14 < iVar1) {
     g_CurrentFilename = "..\\core\\boneguy.cpp";
     g_CurrentLineNumber = 0x12f;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CBoneGuy::explode - Not enough containers");
   }
-  *(undefined4 *)(in_stack_00000004->base_character).carry_hands[0].field0_0x0 = DAT_00822948;
-  *(undefined4 *)(in_stack_00000004->base_character).carry_hands[1].field0_0x0 = DAT_0082294c;
-  core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
-  pCVar1 = &in_stack_00000004[1].base_character;
-  (pCVar1->base_actor).actor_name[0x18] = '\0';
-  (pCVar1->base_actor).actor_name[0x19] = '\0';
-  (pCVar1->base_actor).actor_name[0x1a] = '\0';
-  (pCVar1->base_actor).actor_name[0x1b] = '\0';
+  *(int *)(this_ptr->base_enemy).base_character.carry_hands[0].field0_0x0 = DAT_00822948;
+  *(int *)(this_ptr->base_enemy).base_character.carry_hands[1].field0_0x0 = DAT_0082294c;
+  core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base_enemy);
+  this_ptr->field1_0xbeb4[0x18] = '\0';
+  this_ptr->field1_0xbeb4[0x19] = '\0';
+  this_ptr->field1_0xbeb4[0x1a] = '\0';
+  this_ptr->field1_0xbeb4[0x1b] = '\0';
   return;
 }
 
@@ -102,11 +122,11 @@ void core_boneguy_cpp_CBoneGuy_explode_FUN_0041bd90(void)
 //   XREF to: Stack[0x4] (READ)
 // 0041bd97: LEA EDI,[ESI + 0x158]
 // 0041bd9d: PUSH EDI
-// 0041bd9e: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 0041bd9e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0041bda3: ADD ESP,0x4
 // 0041bda6: PUSH EDI
-// 0041bda7: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 0041bda7: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0041bdac: ADD ESP,0x4
 // 0041bdaf: PUSH 0x1

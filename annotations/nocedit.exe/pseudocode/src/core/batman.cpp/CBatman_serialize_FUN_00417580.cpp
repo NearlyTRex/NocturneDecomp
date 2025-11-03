@@ -32,7 +32,8 @@ void __cdecl core_batman_cpp_CBatman_serialize_FUN_00417580(CBatman *this_ptr)
   core_actor_cpp_serializeFloat_FUN_0040b770(&(this_ptr->base_enemy).speed,"?speed" + 1);
   model_ptr = &(this_ptr->base_enemy).base_character.model;
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
-  core_actor_cpp_serializeMotionState_FUN_0040b9f0(model_ptr,"motion state");
+  core_actor_cpp_serializeMotionState_FUN_0040b9f0
+            (&model_ptr->motion_controller,"motion state");
   if (g_CBatmanClassVersion < 2) {
     if (g_CBatmanClassVersion < 3) {
       return;

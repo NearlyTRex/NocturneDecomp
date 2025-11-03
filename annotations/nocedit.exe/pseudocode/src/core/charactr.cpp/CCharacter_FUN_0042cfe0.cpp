@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_stranger.cpp_FUN_005c67f0 (005c67f0) at 005c681b [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408e80
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 
 #include "nocturne.h"
 
@@ -23,7 +23,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042cfe0(CCharacter *this_ptr)
   
   if (this_ptr->carry_hands[in_stack_00000008].carry_actor != (CDemonActor *)0x0) {
     if (in_stack_0000000c != (CVector3f *)0x0) {
-      pCVar1 = core_actor_cpp_CDemonActor_FUN_00408e80(&this_ptr->base_actor);
+      pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                         (&this_ptr->base_actor,(CVector3f *)&stack0xffffffe4,in_stack_0000000c);
       if ((CVector3f *)&local_c != pCVar1) {
         local_c = pCVar1->x;
         local_8 = pCVar1->y;
@@ -31,7 +32,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042cfe0(CCharacter *this_ptr)
       in_stack_0000000c = (CVector3f *)&local_c;
     }
     this_ptr_00 = this_ptr->carry_hands[in_stack_00000008].carry_actor;
-    (*((this_ptr_00->metadata).vtable)->onDropped)(this_ptr_00,in_stack_0000000c);
+    (*this_ptr_00->vtable->onDropped)(this_ptr_00,in_stack_0000000c);
     this_ptr->carry_hands[in_stack_00000008].carry_actor = (CDemonActor *)0x0;
   }
   return;
@@ -65,7 +66,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042cfe0(CCharacter *this_ptr)
 //   XREF to: Stack[-0x1c] (DATA)
 // 0042d011: PUSH EAX
 // 0042d012: PUSH ECX
-// 0042d013: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 0042d013: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 0042d018: MOV EDX,EAX
 // 0042d01a: LEA EAX,[ESP + 0x18]

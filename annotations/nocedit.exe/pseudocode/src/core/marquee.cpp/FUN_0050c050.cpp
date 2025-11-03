@@ -10,7 +10,7 @@
 //   CDemonRenderer g_CDemonRendererInstance
 //   undefined4 DAT_02f33744
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_course.cpp_CCourse_FUN_00442710
 //   core_marquee.cpp_FUN_0050bec0
 //   crt_math.c_round_FUN_005fe6b0
@@ -26,25 +26,26 @@ undefined4 core_marquee_cpp_FUN_0050c050(void)
 
 {
   float fVar1;
-  float *pfVar2;
-  float *pfVar3;
+  CVector3f *pCVar2;
   BADSPACEBASE *in_ESP;
   CCourse *unaff_EBP;
+  float *pfVar3;
   int iVar4;
   int iVar5;
   float10 fVar6;
   double dVar7;
   CDemonActor *in_stack_00000004;
-  float local_70;
+  undefined1 auStack_74 [8];
   float fStack_6c;
   float fStack_68;
-  float local_4c;
+  CVector3f local_5c;
+  undefined1 auStack_50 [8];
   float local_48;
   float local_44;
-  float local_34;
+  undefined1 auStack_38 [8];
   float fStack_30;
-  float fStack_2c;
-  float local_18;
+  CVector3f CStack_2c;
+  CVector3f local_20;
   float local_14;
   float local_10;
   float *local_c;
@@ -54,22 +55,23 @@ undefined4 core_marquee_cpp_FUN_0050c050(void)
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xffff);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,&DAT_0067d150)
     ;
-    pfVar2 = &in_stack_00000004[1].orient_matrix.m[1].y;
+    pfVar3 = &in_stack_00000004[1].orient_matrix.m[1].y;
     if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) == 0) {
       fVar1 = in_stack_00000004[1].orient_matrix.m[1].x;
       if (fVar1 == 1.4013e-45) {
         fVar6 = (float10)in_stack_00000004[1].location.position.y;
-        dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(1,pfVar2));
+        dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(1,pfVar3));
         iVar4 = 0;
         if (0 < (int)ROUND(fVar6)) {
           do {
             local_14 = (float)iVar4;
             core_course_cpp_CCourse_FUN_00442710(SUB84(dVar7,0));
-            pfVar2 = core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-            if (&local_4c != pfVar2) {
-              local_4c = *pfVar2;
-              local_48 = pfVar2[1];
-              local_44 = pfVar2[2];
+            pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                               (in_stack_00000004,&local_5c,(CVector3f *)auStack_50);
+            if ((CVector3f *)(auStack_50 + 4) != pCVar2) {
+              auStack_50._4_4_ = pCVar2->x;
+              local_48 = pCVar2->y;
+              local_44 = pCVar2->z;
             }
             iVar4 = iVar4 + 1;
             core_marquee_cpp_FUN_0050bec0();
@@ -78,47 +80,49 @@ undefined4 core_marquee_cpp_FUN_0050c050(void)
       }
       else if (fVar1 == 0.0) {
         fVar6 = (float10)in_stack_00000004[1].location.position.y;
-        dVar7 = crt_math_c_round_FUN_005fe6b0((double)ZEXT48(pfVar2));
+        dVar7 = crt_math_c_round_FUN_005fe6b0((double)ZEXT48(pfVar3));
         iVar4 = SUB84(dVar7,0)->len;
         iVar5 = 0;
-        pfVar2 = (float *)(int)ROUND(fVar6);
-        local_c = pfVar2;
+        pfVar3 = (float *)(int)ROUND(fVar6);
+        local_c = pfVar3;
         if (0 < iVar4) {
           do {
-            if ((int)pfVar2 % (int)in_stack_00000004[1].location.position.z != 0) {
+            if ((int)pfVar3 % (int)in_stack_00000004[1].location.position.z != 0) {
               local_10 = (float)iVar5;
               core_course_cpp_CCourse_FUN_00442710(SUB84(dVar7,0));
-              pfVar3 = core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-              if (&local_70 != pfVar3) {
-                local_70 = *pfVar3;
-                fStack_6c = pfVar3[1];
-                fStack_68 = pfVar3[2];
+              pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                                 (in_stack_00000004,&CStack_2c,(CVector3f *)auStack_74);
+              if ((CVector3f *)(auStack_74 + 4) != pCVar2) {
+                auStack_74._4_4_ = pCVar2->x;
+                fStack_6c = pCVar2->y;
+                fStack_68 = pCVar2->z;
               }
               core_marquee_cpp_FUN_0050bec0();
             }
             iVar5 = iVar5 + 1;
-            pfVar2 = (float *)((int)pfVar2 + 1);
+            pfVar3 = (float *)((int)pfVar3 + 1);
           } while (iVar5 < iVar4);
         }
       }
     }
     else {
-      fVar1 = *pfVar2;
+      fVar1 = *pfVar3;
       iVar4 = 0;
       if (0 < (int)fVar1) {
         do {
-          local_c = pfVar2;
-          local_18 = (float)iVar4;
+          local_c = pfVar3;
+          local_20.z = (float)iVar4;
           core_course_cpp_CCourse_FUN_00442710(unaff_EBP);
-          pfVar2 = core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-          if (&local_34 != pfVar2) {
-            local_34 = *pfVar2;
-            fStack_30 = pfVar2[1];
-            fStack_2c = pfVar2[2];
+          pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                             (in_stack_00000004,&local_20,(CVector3f *)auStack_38);
+          if ((CVector3f *)(auStack_38 + 4) != pCVar2) {
+            auStack_38._4_4_ = pCVar2->x;
+            fStack_30 = pCVar2->y;
+            CStack_2c.x = pCVar2->z;
           }
           iVar4 = iVar4 + 1;
           core_marquee_cpp_FUN_0050bec0();
-          pfVar2 = local_c;
+          pfVar3 = local_c;
         } while (iVar4 < (int)fVar1);
       }
     }
@@ -217,7 +221,7 @@ undefined4 core_marquee_cpp_FUN_0050c050(void)
 //   XREF to: Stack[-0x34] (DATA)
 // 0050c113: PUSH EAX
 // 0050c114: PUSH EBX
-// 0050c115: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0050c115: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0050c11a: MOV ESI,EAX
 // 0050c11c: LEA EAX,[ESP + 0x5c]
@@ -309,7 +313,7 @@ undefined4 core_marquee_cpp_FUN_0050c050(void)
 //   XREF to: Stack[-0x70] (DATA)
 // 0050c1de: PUSH EAX
 // 0050c1df: PUSH EBX
-// 0050c1e0: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0050c1e0: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0050c1e5: MOV EDX,EAX
 // 0050c1e7: LEA EAX,[ESP + 0x44]
@@ -405,7 +409,7 @@ undefined4 core_marquee_cpp_FUN_0050c050(void)
 //   XREF to: Stack[-0x40] (DATA)
 // 0050c2b3: PUSH EAX
 // 0050c2b4: PUSH EBX
-// 0050c2b5: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0050c2b5: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0050c2ba: MOV EDX,EAX
 // 0050c2bc: LEA EAX,[ESP + 0x20]

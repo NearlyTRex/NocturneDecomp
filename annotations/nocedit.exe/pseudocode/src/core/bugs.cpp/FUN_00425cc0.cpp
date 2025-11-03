@@ -67,9 +67,9 @@ void core_bugs_cpp_FUN_00425cc0(void)
   float fStack_18;
   float fStack_14;
   
-  (*(in_stack_00000004->base_actor).metadata.vtable[1].getAllowedMeleeAttackTypes)
+  (*(in_stack_00000004->base_actor).vtable[1].getAllowedMeleeAttackTypes)
             (&in_stack_00000004->base_actor);
-  if ((*(int *)(in_stack_00000004[2].model.padding_0x0 + 0x1afc) != 0) &&
+  if ((*(int *)(in_stack_00000004[2].model.field3_0x508 + 0x15f4) != 0) &&
      (iVar5 = *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18), iVar5 != 0)) {
     fStack_70 = (in_stack_00000004->base_actor).location.position.x - *(float *)(iVar5 + 0x20);
     fStack_6c = (in_stack_00000004->base_actor).location.position.y - *(float *)(iVar5 + 0x24);
@@ -86,7 +86,7 @@ void core_bugs_cpp_FUN_00425cc0(void)
       goto LAB_00425d86;
     }
   }
-  if ((*(int *)(in_stack_00000004[2].model.padding_0x0 + 0x1af8) != 0) &&
+  if ((*(int *)(in_stack_00000004[2].model.field3_0x508 + 0x15f0) != 0) &&
      (iVar5 = *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18), iVar5 != 0)) {
     this_ptr = (CPathMap *)(**(code **)(*(int *)(iVar5 + 0x154) + 0xbc))();
     if (this_ptr == (CPathMap *)0x0) {
@@ -116,22 +116,22 @@ void core_bugs_cpp_FUN_00425cc0(void)
       (in_stack_00000004->base_actor).location.position.z = fStack_5c;
       fStack_40 = fStack_34 - (dest_position->position).x;
       fStack_38 = fStack_2c - (in_stack_00000004->base_actor).location.position.z;
-      pcVar3 = in_stack_00000004[2].model.padding_0x0 + 0x1c2c;
-      fStack_1c = *(float *)pcVar3 + *(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c38);
-      fStack_18 = *(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c30) +
-                  *(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c3c);
+      pcVar3 = in_stack_00000004[2].model.field3_0x508 + 0x1724;
+      fStack_1c = *(float *)pcVar3 + *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1730);
+      fStack_18 = *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1728) +
+                  *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1734);
       fStack_58 = fStack_1c * FLOAT_00616dfb;
-      fStack_14 = *(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c34) +
-                  *(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c40);
+      fStack_14 = *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x172c) +
+                  *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1738);
       fStack_54 = fStack_18 * FLOAT_00616dfb;
       fStack_50 = fStack_14 * FLOAT_00616dfb;
       fStack_3c = fStack_54;
       if ((((*(float *)pcVar3 <= fStack_40) &&
-           (*(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c30) <= fStack_54)) &&
-          (*(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c34) <= fStack_38)) &&
-         (((fStack_40 <= *(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c38) &&
-           (fStack_54 <= *(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c3c))) &&
-          (fStack_38 <= *(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c40))))) {
+           (*(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1728) <= fStack_54)) &&
+          (*(float *)(in_stack_00000004[2].model.field3_0x508 + 0x172c) <= fStack_38)) &&
+         (((fStack_40 <= *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1730) &&
+           (fStack_54 <= *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1734))) &&
+          (fStack_38 <= *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1738))))) {
         core_bugs_cpp_FUN_004276c0();
       }
     }

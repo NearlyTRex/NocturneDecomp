@@ -45,7 +45,8 @@ void core_drip_cpp_FUN_0048e2a0(void)
   CDemonActor *pCStack_70;
   CDemonActor *pCStack_6c;
   float fStack_60;
-  CVector3f local_54;
+  undefined1 local_54 [8];
+  float fStack_4c;
   CVector3f local_48 [2];
   float fStack_2c;
   float fStack_28;
@@ -57,14 +58,14 @@ void core_drip_cpp_FUN_0048e2a0(void)
     local_48[0].z = in_stack_00000004[2].orient_matrix.m[1].z;
     local_48[0].y = in_stack_00000004[2].orient_matrix.m[1].y + FLOAT_006222a3;
     core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_00495aa0
-              (&g_CDemonRaytraceInstance,&local_54,ray_start,local_48);
+              (&g_CDemonRaytraceInstance,(CVector3f *)local_54,ray_start,local_48);
     in_stack_00000004[2].orient_matrix.m[0].x = 1.4013e-45;
-    in_stack_00000004[2].orient_matrix.m[0].y = local_54.y;
+    in_stack_00000004[2].orient_matrix.m[0].y = (float)local_54._4_4_;
   }
   if ((in_stack_00000004[2].location.area_id & 0x7fffffffU) == 0) {
     fVar3 = in_stack_00000004[2].orient_matrix.m[2].y - in_stack_00000008 * (float)DOUBLE_006222a7;
     in_stack_00000004[2].orient_matrix.m[2].y = fVar3;
-    pCVar1 = (in_stack_00000004->metadata).vtable;
+    pCVar1 = in_stack_00000004->vtable;
     (in_stack_00000004->location).position.y =
          fVar3 * in_stack_00000008 + (in_stack_00000004->location).position.y;
     (*pCVar1->getBoundingBox)(in_stack_00000004,(CBoundingBox3D *)(auStack_a4 + 0x2c));
@@ -73,7 +74,7 @@ void core_drip_cpp_FUN_0048e2a0(void)
         (fStack_60 - (float)pCStack_6c) * (float)DOUBLE_006222af) {
       if (*(int *)(in_stack_00000004[2].create_event + 0x10) != 0) {
         core_set_cpp_CDemonSet_FUN_00570fa0(g_CDemonSetPtr);
-        (*((in_stack_00000004->metadata).vtable)->playSound)
+        (*in_stack_00000004->vtable->playSound)
                   (in_stack_00000004,(char *)&in_stack_00000004[2].health);
       }
       iVar5 = *(int *)(in_stack_00000004[2].create_event + 0xc);
@@ -81,13 +82,14 @@ void core_drip_cpp_FUN_0048e2a0(void)
       if (iVar5 == 0) {
         iVar5 = 0;
         do {
-          local_54.y = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.5,0.5);
-          local_54.z = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.5,0.5);
+          local_54._4_4_ = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.5,0.5);
+          fStack_4c = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.5,0.5);
           local_48[0].x = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.5,0.5);
-          local_54.y = local_54.y + (in_stack_00000004->location).position.x;
-          local_54.z = local_54.z + (in_stack_00000004->location).position.y;
+          local_54._4_4_ = (float)local_54._4_4_ + (in_stack_00000004->location).position.x;
+          fStack_4c = fStack_4c + (in_stack_00000004->location).position.y;
           local_48[0].x = local_48[0].x + (in_stack_00000004->location).position.z;
-          core_fire_cpp_CFireEffect_FUN_004c7b20(g_CFireEffectPtr);
+          core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
+                    (g_CFireEffectPtr,(CVector3f *)(local_54 + 4),0.5,(CVector3f *)0x0,0xffff);
           fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.7853982,1.5707964);
           fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
           fVar7 = (float10)fcos((float10)fVar4);

@@ -11,8 +11,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_enemy_draculabride.cpp_FUN_00486320(undefined4 param_1) */
-
 undefined4 core_dracbrid_cpp_FUN_00486320(void)
 
 {
@@ -22,7 +20,8 @@ undefined4 core_dracbrid_cpp_FUN_00486320(void)
   if (*(int *)(in_stack_00000004 + 0x70) == 2) {
     return 2;
   }
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0();
+  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
+                    ((CMotionController *)(in_stack_00000004 + 0x158));
   switch(*(undefined4 *)(iVar1 + 0x24)) {
   case 7:
   case 10:

@@ -38,7 +38,7 @@
 //   core_conveyor.cpp_dtor_FUN_00442310 (00442310) at 00442369 [UNCONDITIONAL_CALL]
 //   core_cow.cpp_FUN_00444cd0 (00444cd0) at 00444d7d [UNCONDITIONAL_CALL]
 //   core_crate.cpp_FUN_00448bb0 (00448bb0) at 00448bf2 [UNCONDITIONAL_CALL]
-//   core_crossbow.cpp_FUN_004495a0 (004495a0) at 004495f9 [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_dtor_FUN_004495a0 (004495a0) at 004495f9 [UNCONDITIONAL_CALL]
 //   core_curtain.cpp_FUN_0044ba30 (0044ba30) at 0044ba89 [UNCONDITIONAL_CALL]
 //   core_dcamera.cpp_CDemonCamera_dtor_FUN_0044c090 (0044c090) at 0044c0e2 [UNCONDITIONAL_CALL]
 //   core_dest.cpp_FUN_0046ff00 (0046ff00) at 0046ff42 [UNCONDITIONAL_CALL]

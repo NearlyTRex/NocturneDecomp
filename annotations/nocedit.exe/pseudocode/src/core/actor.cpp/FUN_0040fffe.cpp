@@ -4,15 +4,15 @@
 // Convention: unknown
 // Signature: undefined core_actor.cpp_FUN_0040fffe()
 // Cross-references:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040ffe7 [CONDITIONAL_JUMP]
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040ffe7 [CONDITIONAL_JUMP]
 // Globals:
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   CEventList* g_CEventListPtr = 02d05310
 //   CEditorTools g_CEditorToolsPtr
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 // Function calls:
+//   core_event.cpp_CEventList_FUN_004add40
 //   core_event.cpp_CRuleList_insert_FUN_004b1680
-//   core_event.cpp_FUN_004add40
 //   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 
 #include "nocturne.h"
@@ -37,7 +37,7 @@ undefined4 core_actor_cpp_FUN_0040fffe(undefined4 param_1,undefined4 param_2,int
   
   bVar10 = 0;
 code_r0x0040fffe:
-  pcVar4 = (char *)core_event_cpp_FUN_004add40();
+  pcVar4 = (char *)core_event_cpp_CEventList_FUN_004add40(g_CEventListPtr);
   if (pcVar4 != (char *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar4);
     do {
@@ -48,8 +48,8 @@ code_r0x0040fffe:
           return 0;
         }
         if (in_stack_000033b4 == '\0') {
-          if (*(int *)(unaff_EBX + 0x5c) < **(int **)(unaff_EBX + 0x68)) {
-            core_event_cpp_CRuleList_remove_FUN_004b17c0();
+          if (*(int *)(unaff_EBX + 0x5c) < (*(CRuleList **)(unaff_EBX + 0x68))->list_size) {
+            core_event_cpp_CRuleList_remove_FUN_004b17c0(*(CRuleList **)(unaff_EBX + 0x68));
           }
           return 1;
         }
@@ -126,7 +126,7 @@ code_r0x0040fffe:
         crt_string_c_memmove_FUN_005fe5e0(&stack0x00003688,&stack0x00003689,SVar6);
         SVar6 = SVar6 - 1;
       }
-      pcVar4 = (char *)core_event_cpp_FUN_004add00();
+      pcVar4 = (char *)core_event_cpp_CEventList_FUN_004add00(g_CEventListPtr);
       if (pcVar4 == (char *)0x0) goto code_r0x0040fffe;
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar4);
     } while( true );
@@ -173,7 +173,7 @@ code_r0x0040fffe:
 //   XREF to: 006793d0 (READ)
 // 0041000c: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 0041000d: CALL core_event.cpp_FUN_004add40
+// 0041000d: CALL core_event.cpp_CEventList_FUN_004add40
 //   XREF to: 004add40 (UNCONDITIONAL_CALL)
 // 00410012: ADD ESP,0x8
 // 00410015: TEST EAX,EAX

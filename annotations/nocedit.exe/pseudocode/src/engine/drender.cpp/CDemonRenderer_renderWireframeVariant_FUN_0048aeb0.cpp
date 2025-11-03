@@ -7,7 +7,7 @@
 //   core_bodypart.cpp_FUN_00419340 (00419340) at 00419485 [UNCONDITIONAL_CALL]
 //   core_dskybox.cpp_renderSkyDome_FUN_004901f0 (004901f0) at 0049064d [UNCONDITIONAL_CALL]
 //   core_flies.cpp_FUN_004cc300 (004cc300) at 004cc6a0 [UNCONDITIONAL_CALL]
-//   core_glass.cpp_FUN_004e9e90 (004e9e90) at 004e9fc3 [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_renderBackground_FUN_004e9e90 (004e9e90) at 004e9fc3 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052b160 (0052b160) at 0052b229 [UNCONDITIONAL_CALL]
 //   core_wateract.cpp_CWaterActor_FUN_005eb280 (005eb280) at 005eb48f [UNCONDITIONAL_CALL]
 //   engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 (0048cf00) at 0048cf27 [UNCONDITIONAL_CALL]

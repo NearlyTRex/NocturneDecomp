@@ -4,14 +4,14 @@
 // Convention: unknown
 // Signature: undefined core_lever.cpp_FUN_00504b20()
 // Cross-references:
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004acde5 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004acde5 [UNCONDITIONAL_CALL]
 //   core_lever.cpp_FUN_00504920 (00504920) at 00504a71 [UNCONDITIONAL_CALL]
 //   core_lever.cpp_FUN_005051a0 (005051a0) at 00505200 [UNCONDITIONAL_CALL]
 // Globals:
 //   CEventList* g_CEventListPtr = 02d05310
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   CDemonSet* g_CDemonSetPtr = 03114278
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   undefined4 g_CLeverClassInfo.name_hash
 //   undefined4 DAT_02f33744
 //   CDemonSet g_CDemonSetInstance
@@ -19,7 +19,7 @@
 //   undefined4 g_CDemonSetInstance.actor_list_data[0]
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_event.cpp_FUN_004aabe0
+//   core_event.cpp_CEventList_FUN_004aabe0
 
 #include "nocturne.h"
 
@@ -38,10 +38,10 @@ void core_lever_cpp_FUN_00504b20(void)
   if (*(float *)(in_stack_00000004 + 0x2dc) != in_stack_00000008) {
     if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) == 0) {
       if ((in_stack_00000008 <= 0.0) && (0.0 < *(float *)(in_stack_00000004 + 0x2dc))) {
-        core_event_cpp_FUN_004aabe0();
+        core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
       }
       if ((1.0 <= in_stack_00000008) && (*(float *)(in_stack_00000004 + 0x2dc) < 1.0)) {
-        core_event_cpp_FUN_004aabe0();
+        core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
       }
     }
     if (((0.0 < in_stack_00000008) && (*(float *)(in_stack_00000004 + 0x2dc) <= 0.0)) ||
@@ -159,7 +159,7 @@ void core_lever_cpp_FUN_00504b20(void)
 //   XREF to: 006793d0 (READ)
 // 00504bd3: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 00504bd4: CALL core_event.cpp_FUN_004aabe0
+// 00504bd4: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 00504bd9: ADD ESP,0x8
 // 00504bdc: FLD float ptr [ESP + 0x18]
@@ -185,7 +185,7 @@ void core_lever_cpp_FUN_00504b20(void)
 //   XREF to: 006793d0 (READ)
 // 00504c0d: PUSH EBX
 //   XREF to: 02d05310 (DATA)
-// 00504c0e: CALL core_event.cpp_FUN_004aabe0
+// 00504c0e: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 00504c13: ADD ESP,0x8
 // 00504c16: JMP 0x00504b42

@@ -12,8 +12,8 @@
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408e80
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 
 #include "nocturne.h"
@@ -29,35 +29,39 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
   BADSPACEBASE *in_ESP;
   float *in_stack_00000008;
   float *in_stack_0000000c;
-  float local_5c;
-  float local_58;
-  float local_54;
+  CVector3f *in_stack_00000010;
+  CVector3f CStack_64;
+  CVector3f local_58;
   float local_48 [3];
   float local_3c;
   float local_38;
   float local_34;
   float local_30;
+  CVector3f local_2c;
+  CVector3f CStack_1c;
   
-  local_5c = *in_stack_0000000c;
-  local_58 = in_stack_0000000c[1];
-  local_54 = in_stack_0000000c[2];
-  if (local_54 < 0.0) {
-    local_38 = -local_5c;
-    local_34 = -local_58;
-    local_30 = -local_54;
-    if (&local_5c != &local_38) {
-      local_5c = local_38;
-      local_58 = local_34;
-      local_54 = local_30;
+  CStack_64.z = *in_stack_0000000c;
+  local_58.x = in_stack_0000000c[1];
+  local_58.y = in_stack_0000000c[2];
+  if (local_58.y < 0.0) {
+    local_38 = -CStack_64.z;
+    local_34 = -local_58.x;
+    local_30 = -local_58.y;
+    if (&CStack_64.z != &local_38) {
+      CStack_64.z = local_38;
+      local_58.x = local_34;
+      local_58.y = local_30;
     }
   }
   switch(this_ptr->door_type) {
   case 0:
   case 1:
   case 2:
-    pCVar5 = core_actor_cpp_CDemonActor_FUN_00408f10(&this_ptr->base_actor);
+    pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                       (&this_ptr->base_actor,&local_2c,in_stack_00000010);
     if (pCVar5->z <= 0.0) {
-      pCVar5 = core_actor_cpp_CDemonActor_FUN_00408e80(&this_ptr->base_actor);
+      pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                         (&this_ptr->base_actor,&CStack_1c,&local_58);
       fVar1 = *(float *)(this_ptr->field17_0x9bc + 4);
       fVar2 = pCVar5->y;
       fVar3 = *(float *)(this_ptr->field17_0x9bc + 8);
@@ -71,7 +75,8 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
       }
     }
     else {
-      pCVar5 = core_actor_cpp_CDemonActor_FUN_00408e80(&this_ptr->base_actor);
+      pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                         (&this_ptr->base_actor,&CStack_64,&local_58);
       fVar1 = *(float *)(this_ptr->field17_0x9bc + 4);
       fVar2 = pCVar5->y;
       fVar3 = *(float *)(this_ptr->field17_0x9bc + 8);
@@ -158,7 +163,7 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
 //   XREF to: Stack[-0x2c] (DATA)
 // 00480e7c: PUSH EAX
 // 00480e7d: PUSH EDI
-// 00480e7e: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 00480e7e: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 00480e83: FLDZ
 // 00480e85: ADD ESP,0xc
@@ -175,7 +180,7 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
 //   XREF to: Stack[-0x68] (DATA)
 // 00480ea3: PUSH EAX
 // 00480ea4: PUSH EDI
-// 00480ea5: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 00480ea5: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 00480eaa: FLD float ptr [ESI]
 // 00480eac: FADD float ptr [EAX]
@@ -274,7 +279,7 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
 //   XREF to: Stack[-0x20] (DATA)
 // 00480f61: PUSH EAX
 // 00480f62: PUSH EDI
-// 00480f63: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 00480f63: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 00480f68: FLD float ptr [ESI]
 // 00480f6a: FSUB float ptr [EAX]

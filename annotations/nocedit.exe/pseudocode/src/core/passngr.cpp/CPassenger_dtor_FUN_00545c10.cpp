@@ -15,7 +15,7 @@
 //   core_backgnd.cpp_freeFires_FUN_00412700
 //   core_backgnd.cpp_freeFlames_FUN_00412720
 //   core_cloth.cpp_FUN_0043bf80
-//   core_morph.cpp_FUN_0052b330
+//   core_morph.cpp_CMorphModel_FUN_0052b330
 //   core_path.cpp_CPathMap_dtor_FUN_005464d0
 //   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40
 //   crt_memory.c_free_FUN_005fe659
@@ -27,8 +27,9 @@
 CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *this_ptr,uint d1)
 
 {
-  int iVar1;
-  CPathMap *pCVar2;
+  int extraout_EAX;
+  CPathMap *pCVar1;
+  int iVar2;
   CDeformableModelInstance *pCVar3;
   CPassenger *ptr;
   void *ptr_00;
@@ -41,30 +42,30 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  iVar1 = *(int *)(this_ptr->field1_0x1f708 + 0x108);
-  (this_ptr->base_npc).base_character.base_actor.metadata.vtable =
+  iVar2 = *(int *)(this_ptr->field1_0x1f708 + 0x108);
+  (this_ptr->base_npc).base_character.base_actor.vtable =
        &PTR_core_passngr_cpp_FUN_00545d30_00661f64;
-  if (iVar1 != 0) {
+  if (iVar2 != 0) {
     g_CurrentDebugLine = 0x50;
     g_CurrentDebugFilename = "..\\core\\passngr.cpp";
-    if (iVar1 != 0) {
-      (**(code **)(*(int *)(iVar1 + 0x154) + 0xe4))();
+    if (iVar2 != 0) {
+      (**(code **)(*(int *)(iVar2 + 0x154) + 0xe4))();
     }
   }
-  iVar1 = core_morph_cpp_FUN_0052b330();
-  pCVar2 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)(iVar1 + -0x139f0));
-  iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720
-                    ((CFlame **)(pCVar2[-1].height_cache_tags[0xb] + 0x39));
-  iVar1 = core_backgnd_cpp_freeFires_FUN_00412700((SFire **)(iVar1 + -0x4b0));
-  iVar1 = core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0x20c));
-  core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0xb4));
-  iVar1 = core_cloth_cpp_FUN_0043bf80();
+  core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)(this_ptr->field1_0x1f708 + 0x10c));
+  pCVar1 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)(extraout_EAX + -0x139f0));
+  iVar2 = core_backgnd_cpp_freeFlames_FUN_00412720
+                    ((CFlame **)(pCVar1[-1].height_cache_tags[0xb] + 0x39));
+  iVar2 = core_backgnd_cpp_freeFires_FUN_00412700((SFire **)(iVar2 + -0x4b0));
+  iVar2 = core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar2 + -0x20c));
+  core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar2 + -0xb4));
+  iVar2 = core_cloth_cpp_FUN_0043bf80();
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-                     ((CDeformableModelInstance *)(iVar1 + -0x293c),0,unaff_ESI,unaff_EBX,
+                     ((CDeformableModelInstance *)(iVar2 + -0x293c),0,unaff_ESI,unaff_EBX,
                       unaff_retaddr);
   ptr = (CPassenger *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar3[-1].padding_0x0 + 0x215c),1);
+                  ((CDemonActor *)(pCVar3[-1].part_visibility_flags + 7),1);
   if ((d1 & 2) == 0) {
     return ptr;
   }
@@ -108,7 +109,7 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
 //   Label: LAB_00545c61
 // 00545c63: ADD EBX,0x1f814
 // 00545c69: PUSH EBX
-// 00545c6a: CALL core_morph.cpp_FUN_0052b330
+// 00545c6a: CALL core_morph.cpp_CMorphModel_FUN_0052b330
 //   XREF to: 0052b330 (UNCONDITIONAL_CALL)
 // 00545c6f: ADD ESP,0x8
 // 00545c72: PUSH 0x0

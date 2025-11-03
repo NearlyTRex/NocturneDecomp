@@ -4,7 +4,7 @@
 // Convention: __fpustack
 // Signature: float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
 // Cross-references:
-//   core_fire.cpp_FUN_004bf7f0 (004bf7f0) at 004bf8c1 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0 (004bf7f0) at 004bf8c1 [UNCONDITIONAL_CALL]
 //   core_gore.cpp_FUN_004ec390 (004ec390) at 004ec3e5 [UNCONDITIONAL_CALL]
 //   core_gore.cpp_FUN_004edbb0 (004edbb0) at 004edc90 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800 (005a1800) at 005a1920 [UNCONDITIONAL_CALL]

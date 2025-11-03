@@ -1,8 +1,8 @@
 // Name: core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0
 // Address: 0058abb0
 // Address Range: [[0058abb0, 0058ac24]]
-// Convention: unknown
-// Signature: undefined core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0()
+// Convention: __cdecl
+// Signature: void core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStructure * this_ptr)
 // Cross-references:
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 005953fa [UNCONDITIONAL_CALL]
 // Globals:
@@ -17,10 +17,7 @@
 
 #include "nocturne.h"
 
-/* Signature: void core_skeledit.cpp_CBoneStructure_skipBONframe(int* param_1, FILE* param_2,
-   undefined4 param_3) */
-
-void core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0(void)
+void __cdecl core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStructure *this_ptr)
 
 {
   int iVar1;

@@ -21,46 +21,25 @@ core_skeleton_cpp_CDeformableModel_ctor_FUN_0059a160(CDeformableModel *this_ptr)
   CDeformableModel *pCVar1;
   void *pvVar2;
   CDeformableModel *pCVar3;
-  char *pcVar4;
+  SLod *pSVar4;
   
   pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (this_ptr->field6_0x7144 + 0xb4c,100,&g_CVectorTypeInfo);
+                     (this_ptr->vertex_pool,100,&g_CVectorTypeInfo);
   pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
                      ((void *)((int)pvVar2 + 0x4bc),100,&g_CBoundingBox3DTypeInfo);
   pCVar1 = (CDeformableModel *)((int)pvVar2 + -0x814c);
   pCVar3 = pCVar1;
   do {
-    pcVar4 = pCVar3->field1_0x4;
-    pCVar3->field1_0x4[0x3c] = '\0';
-    pCVar3->field1_0x4[0x3d] = '\0';
-    pCVar3->field1_0x4[0x3e] = '\0';
-    pCVar3->field1_0x4[0x3f] = '\0';
-    pCVar3->field1_0x4[0x50] = '\0';
-    pCVar3->field1_0x4[0x51] = '\0';
-    pCVar3->field1_0x4[0x52] = '\0';
-    pCVar3->field1_0x4[0x53] = '\0';
-    pCVar3->field1_0x4[100] = '\0';
-    pCVar3->field1_0x4[0x65] = '\0';
-    pCVar3->field1_0x4[0x66] = '\0';
-    pCVar3->field1_0x4[0x67] = '\0';
-    pCVar3->field1_0x4[0x78] = '\0';
-    pCVar3->field1_0x4[0x79] = '\0';
-    pCVar3->field1_0x4[0x7a] = '\0';
-    pCVar3->field1_0x4[0x7b] = '\0';
-    pCVar3->field1_0x4[0x8c] = '\0';
-    pCVar3->field1_0x4[0x8d] = '\0';
-    pCVar3->field1_0x4[0x8e] = '\0';
-    pCVar3->field1_0x4[0x8f] = '\0';
-    pCVar3->field1_0x4[0xa0] = '\0';
-    pCVar3->field1_0x4[0xa1] = '\0';
-    pCVar3->field1_0x4[0xa2] = '\0';
-    pCVar3->field1_0x4[0xa3] = '\0';
-    pCVar3->field1_0x4[0x28] = '\0';
-    pCVar3->field1_0x4[0x29] = '\0';
-    pCVar3->field1_0x4[0x2a] = '\0';
-    pCVar3->field1_0x4[0x2b] = '\0';
-    pCVar3 = (CDeformableModel *)pcVar4;
-  } while (pcVar4 != (undefined1 *)((int)pvVar2 + -0x8138));
+    pSVar4 = pCVar3->lod_info;
+    pCVar3->vertex_data_ptr[0] = (SVert *)0x0;
+    pCVar3->tri_count[0] = 0;
+    pCVar3->cap_tri_count[0] = 0;
+    pCVar3->tri_data_ptr[0] = (SInputFace *)0x0;
+    pCVar3->index_data_ptr[0] = (int *)0x0;
+    pCVar3->cap_index_ptr[0] = (int *)0x0;
+    pCVar3->vertex_count[0] = 0;
+    pCVar3 = (CDeformableModel *)pSVar4;
+  } while (pSVar4 != (SLod *)((int)pvVar2 + -0x8138));
   *(undefined4 *)((int)pvVar2 + -0x8094) = 0;
   *(undefined4 *)((int)pvVar2 + -0x8090) = 0;
   crt_memory_c_memset_FUN_005fde40((void *)((int)pvVar2 + -0x808c),0,0x7080);

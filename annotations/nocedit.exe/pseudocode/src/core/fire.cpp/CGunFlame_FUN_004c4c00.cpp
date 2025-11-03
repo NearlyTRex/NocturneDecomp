@@ -15,7 +15,7 @@
 //   undefined4 DAT_02d13f84
 //   undefined4 DAT_02d13f88
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_charactr.cpp_CCharacter_FUN_0042b5b0
 //   core_flamecan.cpp_FUN_004cb340
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
@@ -30,8 +30,10 @@ void __cdecl core_fire_cpp_CGunFlame_FUN_004c4c00(CGunFlame *this_ptr)
   float fVar2;
   float fVar3;
   float fVar4;
+  BADSPACEBASE *in_ESP;
   int iVar5;
   int iVar6;
+  float fStack_48;
   int local_20;
   
   iVar5 = 0;
@@ -42,14 +44,17 @@ void __cdecl core_fire_cpp_CGunFlame_FUN_004c4c00(CGunFlame *this_ptr)
       if (((*(int *)(this_ptr->field0_0x0 + 0x20) == 2) ||
           (*(int *)(this_ptr_00->field13_0x2620 + 4) != 0)) &&
          (fVar2 = (this_ptr_00->base_actor).location.position.x -
-                  *(float *)(this_ptr->field0_0x0 + 4),
+                  ((CVector3f *)(this_ptr->field0_0x0 + 4))->x,
          fVar4 = (this_ptr_00->base_actor).location.position.y -
                  *(float *)(this_ptr->field0_0x0 + 8),
          fVar3 = (this_ptr_00->base_actor).location.position.z -
                  *(float *)(this_ptr->field0_0x0 + 0xc),
          fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <= FLOAT_00629f23)) {
-        core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-        core_actor_cpp_CDemonActor_FUN_00408f10(&this_ptr_00->base_actor);
+        core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(&this_ptr_00->model);
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                  (&this_ptr_00->base_actor,(CVector3f *)&fStack_48,
+                   (CVector3f *)(this_ptr->field0_0x0 + 4));
+        fStack_48 = (float)(uint)(*(int *)(this_ptr->field0_0x0 + 0x20) == 2);
         core_charactr_cpp_CCharacter_FUN_0042b5b0(this_ptr_00);
       }
       local_20 = local_20 + 4;
@@ -65,6 +70,7 @@ void __cdecl core_fire_cpp_CGunFlame_FUN_004c4c00(CGunFlame *this_ptr)
       fVar4 = *(float *)(iVar1 + 0x24) - *(float *)(this_ptr->field0_0x0 + 8);
       fVar3 = *(float *)(iVar1 + 0x28) - *(float *)(this_ptr->field0_0x0 + 0xc);
       if (fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <= (float)DOUBLE_00629f2b) {
+        fStack_48 = 7.007211e-39;
         core_flamecan_cpp_FUN_004cb340();
       }
       iVar5 = iVar5 + 1;
@@ -206,7 +212,7 @@ void __cdecl core_fire_cpp_CGunFlame_FUN_004c4c00(CGunFlame *this_ptr)
 //   XREF to: Stack[-0x40] (DATA)
 // 004c4d05: PUSH EAX
 // 004c4d06: PUSH EBX
-// 004c4d07: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 004c4d07: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 004c4d0c: ADD ESP,0xc
 // 004c4d0f: MOV EAX,dword ptr [EBP + 0x14]

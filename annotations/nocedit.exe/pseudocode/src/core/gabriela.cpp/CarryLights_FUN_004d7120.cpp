@@ -87,8 +87,7 @@ void core_gabriela_cpp_CarryLights_FUN_004d7120
   local_34._24_4_ = 0.0;
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CLightActorClassInfo.name_hash);
   if (pCVar2 == (CDemonActor *)0x0) goto LAB_004d719a;
-  (*((actor_ptr->metadata).vtable)->getBoundingBox)(actor_ptr,(CBoundingBox3D *)(auStack_b8 + 0x1c))
-  ;
+  (*actor_ptr->vtable->getBoundingBox)(actor_ptr,(CBoundingBox3D *)(auStack_b8 + 0x1c));
   local_10 = fStack_88 + local_7c;
   local_70 = local_10 * FLOAT_0062b145;
   unaff_EBP = fStack_84 + local_78;

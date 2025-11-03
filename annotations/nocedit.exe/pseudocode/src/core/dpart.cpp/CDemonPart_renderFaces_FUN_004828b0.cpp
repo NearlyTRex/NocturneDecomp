@@ -32,8 +32,10 @@ void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_004828b0(CDemonPart *this
   iStack_64 = 0x4828c9;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr,0);
+  iVar1 = this_ptr->vertex_count / this_ptr->vertex_group_size;
   core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
-            (g_CDemonSetPtr,this_ptr->vertex_count / this_ptr->vertex_group_size);
+            (g_CDemonSetPtr,iVar1,
+             &this_ptr->vertex_positions[this_ptr->current_vertex_group * iVar1].x);
   if (g_CDemonRendererPtr->advanced_culling_enabled != 0) {
     engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
   }

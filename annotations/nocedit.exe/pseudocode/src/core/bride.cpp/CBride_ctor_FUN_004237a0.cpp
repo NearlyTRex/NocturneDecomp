@@ -12,7 +12,7 @@
 //   CDemonActor_vtable g_CBrideVTable
 // Function calls:
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -27,8 +27,9 @@ CBride * __cdecl core_bride_cpp_CBride_ctor_FUN_004237a0(CBride *this_ptr)
   CBride *pCVar4;
   
   pCVar4 = (CBride *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
-  (pCVar4->base_enemy).base_character.base_actor.metadata.vtable = &g_CBrideVTable;
-  core_skeleton_cpp_FUN_005a0840();
+  (pCVar4->base_enemy).base_character.base_actor.vtable = &g_CBrideVTable;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            (&(pCVar4->base_enemy).base_character.model);
   uVar2 = _DAT_0065b410;
   pCVar1 = &pCVar4->base_enemy;
   (pCVar1->base_character).cloth_data[0x344] = '\0';
@@ -67,7 +68,7 @@ CBride * __cdecl core_bride_cpp_CBride_ctor_FUN_004237a0(CBride *this_ptr)
 // 004237ba: PUSH EAX
 // 004237bb: MOV dword ptr [EAX + -0x4],0x65b424
 //   XREF to: 0065b424 (DATA)
-// 004237c2: CALL core_skeleton.cpp_FUN_005a0840
+// 004237c2: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004237c7: FLD float ptr [0x0065b410]
 //   XREF to: 0065b410 (READ)

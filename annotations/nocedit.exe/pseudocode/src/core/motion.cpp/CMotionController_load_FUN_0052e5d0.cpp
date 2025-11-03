@@ -2,7 +2,7 @@
 // Address: 0052e5d0
 // Address Range: [[0052e5d0, 0052e663]]
 // Convention: __cdecl
-// Signature: void core_motion.cpp_CMotionController_load_FUN_0052e5d0(CMotionController * this_ptr)
+// Signature: void core_motion.cpp_CMotionController_load_FUN_0052e5d0(CMotionController * this_ptr, FILE * file_handle)
 // Cross-references:
 //   core_actor.cpp_serializeMotionState_FUN_0040b9f0 (0040b9f0) at 0040ba29 [UNCONDITIONAL_CALL]
 // Globals:
@@ -20,28 +20,28 @@
 
 #include "nocturne.h"
 
-void __cdecl core_motion_cpp_CMotionController_load_FUN_0052e5d0(CMotionController *this_ptr)
+void __cdecl
+core_motion_cpp_CMotionController_load_FUN_0052e5d0(CMotionController *this_ptr,FILE *file_handle)
 
 {
   int iVar1;
-  FILE *in_stack_00000008;
   
-  crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008," ");
-  this_ptr->currentMotionName[0] = '\0';
-  this_ptr->motionListSize = -1;
+  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle," ");
+  this_ptr->current_motion_name[0] = '\0';
+  this_ptr->current_motion_index = -1;
   iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0
-                    (in_stack_00000008,"%d,%f",&this_ptr->motionListSize,
-                     &this_ptr->curFrameNumber);
+                    (file_handle,"%d,%f",&this_ptr->current_motion_index,
+                     &this_ptr->current_frame_number);
   if ((iVar1 != 2) &&
      (iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0
-                        (in_stack_00000008,"\"%[^\"]\" , %f",this_ptr->currentMotionName,
-                         &this_ptr->curFrameNumber), iVar1 != 2)) {
+                        (file_handle,"\"%[^\"]\" , %f",this_ptr->current_motion_name,
+                         &this_ptr->current_frame_number), iVar1 != 2)) {
     g_CurrentFilename = "..\\core\\motion.cpp";
     g_CurrentLineNumber = 0x51e;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMotionController::load - error parsing file");
   }
   do {
-    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000008);
+    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
     if (iVar1 < 0) {
       return;
     }

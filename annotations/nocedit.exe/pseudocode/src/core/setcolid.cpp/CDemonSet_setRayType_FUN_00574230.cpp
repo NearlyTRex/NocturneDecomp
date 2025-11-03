@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 (0040a210) at 0040a6ed [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 (0042d5a0) at 0042d91d [UNCONDITIONAL_CALL]
-//   core_crossbow.cpp_FUN_00448f20 (00448f20) at 00449087 [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_FUN_00448f20 (00448f20) at 00449087 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d4190 (004d4190) at 004d4619 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d6260 (004d6260) at 004d6495 [UNCONDITIONAL_CALL]
 //   core_gun.cpp_FUN_004f0350 (004f0350) at 004f04cb [UNCONDITIONAL_CALL]

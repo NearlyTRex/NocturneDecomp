@@ -24,51 +24,45 @@
 int core_bodypart_cpp_FUN_004194b0(void)
 
 {
-  CDemonSet *pCVar1;
   CBoundingBox3D *this_ptr;
-  int iVar2;
+  int iVar1;
   BADSPACEBASE *in_ESP;
   CKeyFramedModelInstance *this_ptr_00;
   CVector3i *position;
   CDemonActor *in_stack_00000004;
   
   if (*(int *)in_stack_00000004[1].actor_name < 2) {
-    *(undefined4 *)(g_CDemonSetPtr->field22_0x15ac80 + 8) =
-         *(undefined4 *)(in_stack_00000004[9].create_event + 0x20);
+    g_CDemonSetPtr->unk_lighting_param2 = *(int *)(in_stack_00000004[9].create_event + 0x20);
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-    this_ptr = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+    this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
                          (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe4);
-    iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
-    in_stack_00000004[0xb].health = iVar2;
-    if (iVar2 != 0) {
+    iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
+    in_stack_00000004[0xb].health = iVar1;
+    if (iVar1 != 0) {
       if ((*(int *)(in_stack_00000004[9].create_event + 0x24) == 0) ||
-         (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
-         iVar2 != 0)) {
+         (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+         iVar1 != 0)) {
         core_bodypart_cpp_FUN_00419340();
       }
-      iVar2 = 0;
-      if (0 < (int)in_stack_00000004[1].metadata.runtime_vector2.x) {
-        this_ptr_00 = (CKeyFramedModelInstance *)in_stack_00000004[1].metadata.field5_0x28;
-        position = (CVector3i *)in_stack_00000004[1].metadata.field3_0x1c;
+      iVar1 = 0;
+      if (0 < (int)in_stack_00000004[1].previous_transform_state.orientation.x) {
+        this_ptr_00 = (CKeyFramedModelInstance *)&in_stack_00000004[1].field28_0x150;
+        position = (CVector3i *)&in_stack_00000004[1].field25_0x144;
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                     (g_CDemonRendererPtr,position,
-                     (CVector3i *)((int)in_stack_00000004 + iVar2 * 0x194 + 0x290));
+                     (CVector3i *)((int)in_stack_00000004 + iVar1 * 0x194 + 0x290));
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                     (this_ptr_00,0.0,-1);
-          iVar2 = iVar2 + 1;
+          iVar1 = iVar1 + 1;
           position = (CVector3i *)&position[0x21].z;
           this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr_00[1].part_visibility_flags + 6);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-        } while (iVar2 < (int)in_stack_00000004[1].metadata.runtime_vector2.x);
+        } while (iVar1 < (int)in_stack_00000004[1].previous_transform_state.orientation.x);
       }
     }
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-    pCVar1 = g_CDemonSetPtr;
-    pCVar1->field22_0x15ac80[8] = '\0';
-    pCVar1->field22_0x15ac80[9] = '\0';
-    pCVar1->field22_0x15ac80[10] = '\0';
-    pCVar1->field22_0x15ac80[0xb] = '\0';
+    g_CDemonSetPtr->unk_lighting_param2 = 0;
     return in_stack_00000004[0xb].health;
   }
   if ((in_stack_00000004[0xb].health != 0) &&

@@ -10,7 +10,7 @@
 //   CDemonActor_vtable PTR_core_colonel.cpp_FUN_0065bd54
 // Function calls:
 //   core_hero.cpp_FUN_004f2340
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -20,8 +20,7 @@ CColonel * __cdecl core_colonel_cpp_CColonel_ctor_FUN_0043f7e0(CColonel *this_pt
   CColonel *pCVar1;
   
   pCVar1 = (CColonel *)core_hero_cpp_FUN_004f2340();
-  (pCVar1->base_hero).base_character.base_actor.metadata.vtable = &PTR_core_colonel_cpp_FUN_0065bd54
-  ;
+  (pCVar1->base_hero).base_character.base_actor.vtable = &PTR_core_colonel_cpp_FUN_0065bd54;
   pCVar1->field1_0x1fbd4[0] = '\0';
   pCVar1->field1_0x1fbd4[1] = '\0';
   pCVar1->field1_0x1fbd4[2] = '\0';
@@ -30,7 +29,8 @@ CColonel * __cdecl core_colonel_cpp_CColonel_ctor_FUN_0043f7e0(CColonel *this_pt
   pCVar1->field1_0x1fbd4[5] = '\0';
   pCVar1->field1_0x1fbd4[6] = '\0';
   pCVar1->field1_0x1fbd4[7] = '\0';
-  core_skeleton_cpp_FUN_005a0840();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(&(pCVar1->base_hero).base_character.model)
+  ;
   pCVar1->field1_0x1fbd4[0x14] = '\0';
   pCVar1->field1_0x1fbd4[0x15] = '\0';
   pCVar1->field1_0x1fbd4[0x16] = -0x80;
@@ -63,7 +63,7 @@ CColonel * __cdecl core_colonel_cpp_CColonel_ctor_FUN_0043f7e0(CColonel *this_pt
 // 0043f801: MOV dword ptr [EAX + 0x1fa7c],0x0
 // 0043f80b: PUSH EAX
 // 0043f80c: MOV dword ptr [EAX + 0x1fa80],0x0
-// 0043f816: CALL core_skeleton.cpp_FUN_005a0840
+// 0043f816: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 0043f81b: LEA EAX,[EBX + 0x1fbdc]
 // 0043f821: MOV dword ptr [EBX + 0x1fbe8],0x3f800000

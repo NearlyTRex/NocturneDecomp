@@ -30,7 +30,7 @@
 //   core_setdir.cpp_staticInit_FUN_00574790 (00574790) at 005747ac [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_00577af0 (00577af0) at 00577d1f [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_staticInit_FUN_00576930 (00576930) at 00576942 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00596ce0 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596ce0 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_staticInit_FUN_00599670 (00599670) at 00599689 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b246e [UNCONDITIONAL_CALL]
 //   core_sound.cpp_staticInit_FUN_005b1760 (005b1760) at 005b177f [UNCONDITIONAL_CALL]

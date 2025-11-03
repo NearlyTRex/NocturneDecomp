@@ -14,9 +14,9 @@
 //   undefined4 DAT_02f33744
 //   undefined4 DAT_02f33768
 // Function calls:
+//   core_actor.cpp_CDemonActor_FUN_0040dec0
 //   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
-//   core_actor.cpp_FUN_0040dec0
 //   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 //   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 
@@ -37,13 +37,13 @@ undefined4 core_conveyor_cpp_FUN_00441f60(void)
      (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
      iVar1 == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-    this_ptr = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+    this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
                          (in_stack_00000004,(CBoundingBox3D *)&fStack_18);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
     if (iVar1 != 0) {
       fStack_18 = 6.256297e-39;
-      core_actor_cpp_FUN_0040dec0(in_stack_00000004);
+      core_actor_cpp_CDemonActor_FUN_0040dec0(in_stack_00000004);
       return 1;
     }
   }
@@ -130,7 +130,7 @@ undefined4 core_conveyor_cpp_FUN_00441f60(void)
 // 00441ff7: AND EAX,0xff
 // 00441ffc: PUSH EAX
 // 00441ffd: PUSH EBX
-// 00441ffe: CALL core_actor.cpp_FUN_0040dec0
+// 00441ffe: CALL core_actor.cpp_CDemonActor_FUN_0040dec0
 //   XREF to: 0040dec0 (UNCONDITIONAL_CALL)
 // 00442003: MOV EAX,0x1
 // 00442008: ADD ESP,0x14

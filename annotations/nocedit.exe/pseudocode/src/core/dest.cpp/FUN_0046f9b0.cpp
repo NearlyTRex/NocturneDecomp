@@ -10,14 +10,14 @@
 //   double DOUBLE_0061e3aa = 0.100000000000000
 //   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CDemonSet g_CDemonSetInstance
 //   undefined4 g_CDemonSetInstance.actor_list_ptr
 //   undefined4 g_CDemonSetInstance.actor_list_data[0]
 //   undefined4 DAT_032613d4
 // Function calls:
 //   core_dest.cpp_FUN_0046fd50
-//   core_event.cpp_FUN_004aabe0
+//   core_event.cpp_CEventList_FUN_004aabe0
 
 #include "nocturne.h"
 
@@ -72,7 +72,7 @@ void core_dest_cpp_FUN_0046f9b0(void)
     }
     if ((*(int *)(in_stack_00000004 + 0x1ec) != 0) ||
        ((*(int *)(in_stack_00000004 + 0x184) == 0 && (*(int *)(in_stack_00000004 + 0x1f0) == 0)))) {
-      core_event_cpp_FUN_004aabe0();
+      core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
     }
     *(undefined4 *)(in_stack_00000004 + 0x184) = 1;
   }
@@ -234,7 +234,7 @@ void core_dest_cpp_FUN_0046f9b0(void)
 //   XREF to: 006793d0 (READ)
 // 0046fafa: PUSH EDI
 //   XREF to: 02d05310 (DATA)
-// 0046fafb: CALL core_event.cpp_FUN_004aabe0
+// 0046fafb: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   Label: LAB_0046fafb
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 0046fb00: ADD ESP,0x8

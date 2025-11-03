@@ -41,8 +41,8 @@
 //   core_cloth.cpp_FUN_0043dcc0
 //   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590
 //   core_cloth.cpp_ParseClothFile_FUN_00439260
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   crt_string.c_splitpath_FUN_005ff178
 //   engine_2d.c_clearInputAndWait_FUN_00403260
 //   engine_2d.c_drawText_FUN_00401fd0
@@ -119,9 +119,11 @@ void core_cloth_cpp_FUN_0043ddf0(void)
                         (g_CEditorToolsPtr,"Select deformable model","models",
                          "*.dfm",SUB41(&stack0xfffffdb4,0));
       if (iVar4 != 0) {
-        core_skeleton_cpp_FUN_005a0840();
+        core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(&g_CDeformableModelInstanceInstance)
+        ;
         in_stack_fffffdb4 = (CCloth *)0x43dfaf;
-        core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
+        core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(&g_CDeformableModelInstanceInstance)
+        ;
       }
       break;
     case 0x35:
@@ -376,12 +378,12 @@ void core_cloth_cpp_FUN_0043ddf0(void)
 // 0043df97: PUSH EAX
 // 0043df98: PUSH 0x838e58
 //   XREF to: 00838e58 (DATA)
-// 0043df9d: CALL core_skeleton.cpp_FUN_005a0840
+// 0043df9d: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 0043dfa2: ADD ESP,0x8
 // 0043dfa5: PUSH 0x838e58
 //   XREF to: 00838e58 (DATA)
-// 0043dfaa: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 0043dfaa: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0043dfaf: ADD ESP,0x4
 // 0043dfb2: JMP 0x0043df09

@@ -7,8 +7,8 @@
 //   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (004781d0) at 00478276 [UNCONDITIONAL_CALL]
 //   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0 (004778d0) at 004778ec [UNCONDITIONAL_CALL]
 //   core_frankgen.cpp_LoadModel_FUN_004d2190 (004d2190) at 004d2209 [UNCONDITIONAL_CALL]
-//   core_morph.cpp_CMorphModel_CallMorphModel_addPart1_FUN_0052a8d0 (0052a8d0) at 0052a8fa [UNCONDITIONAL_CALL]
-//   core_morph.cpp_CallToMorphModelAnimate_FUN_0052aa80 (0052aa80) at 0052aa95 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_CMorphModel_FUN_0052a8d0 (0052a8d0) at 0052a8fa [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052aa80 (0052aa80) at 0052aa95 [UNCONDITIONAL_CALL]
 //   core_turret.cpp_CTurret_FUN_005e2240 (005e2240) at 005e2285 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"

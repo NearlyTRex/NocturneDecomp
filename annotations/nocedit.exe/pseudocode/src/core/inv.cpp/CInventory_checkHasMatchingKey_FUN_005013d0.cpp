@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_inv.cpp_CInventory_checkHasMatchingKey_FUN_005013d0(CInventory * this_ptr, uint key_mask, int show_message)
 // Cross-references:
-//   core_event.cpp_CEvent_EventReadingFromFile_FUN_004ae140 (004ae140) at 004aecfa [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004ae140 (004ae140) at 004aecfa [UNCONDITIONAL_CALL]
 //   core_hero.cpp_FUN_004f2ed0 (004f2ed0) at 004f2ef9 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_You_used_a_key_00630b9a
@@ -51,7 +51,7 @@ core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0
         if (pCVar1 == (CDemonActor *)0x0) {
           return 1;
         }
-        (*((pCVar1->metadata).vtable)->playSound)(pCVar1,"key-unlock.wav");
+        (*pCVar1->vtable->playSound)(pCVar1,"key-unlock.wav");
         return 1;
       }
       iVar4 = iVar4 + 1;

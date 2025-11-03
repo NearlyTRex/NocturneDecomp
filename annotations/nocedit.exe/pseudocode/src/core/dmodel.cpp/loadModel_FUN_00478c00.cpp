@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 (00443040) at 00443328 [UNCONDITIONAL_CALL]
 //   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60 (00478d60) at 00478d68 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_FUN_004c41d0 (004c41d0) at 004c41d5 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_loadDynamiteAssets_FUN_004c41d0 (004c41d0) at 004c41d5 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_dmodel_cpp_0061f924
 //   TerminatedCString s_Can_t_load_s_because_key_0061f937

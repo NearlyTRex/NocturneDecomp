@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_fire.cpp_CBulletHole_initRender_FUN_004bfa40(CBulletHole * this_ptr)
 // Cross-references:
-//   core_fire.cpp_CFireEffect_FUN_004c74a0 (004c74a0) at 004c74ad [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CFireEffect_renderDecals_FUN_004c74a0 (004c74a0) at 004c74ad [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireEffect_render_FUN_004c7180 (004c7180) at 004c7262 [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578

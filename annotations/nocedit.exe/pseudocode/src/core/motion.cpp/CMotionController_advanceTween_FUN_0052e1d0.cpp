@@ -1,53 +1,49 @@
 // Name: core_motion.cpp_CMotionController_advanceTween_FUN_0052e1d0
 // Address: 0052e1d0
 // Address Range: [[0052e1d0, 0052e2a6]]
-// Convention: unknown
-// Signature: undefined core_motion.cpp_CMotionController_advanceTween_FUN_0052e1d0()
+// Convention: __cdecl
+// Signature: void core_motion.cpp_CMotionController_advanceTween_FUN_0052e1d0(CMotionController * this_ptr)
 // Cross-references:
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610 (0052d610) at 0052d822 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0063ab27
+//   double DOUBLE_0063ab27 = 0.00100000000000000
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 core_motion.cpp_CMotionController_advanceTween(CMotionController*
-   pMotionController, undefined4 param_2, undefined4 param_3, undefined4 param_4) */
-
-void core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(void)
+void __cdecl
+core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(CMotionController *this_ptr)
 
 {
   float fVar1;
   float fVar2;
   int iVar3;
-  int iVar4;
-  int iVar5;
-  int *in_stack_00000004;
+  SMotion *pSVar4;
+  SMotion *pSVar5;
   int in_stack_00000008;
   float in_stack_0000000c;
   float *in_stack_00000010;
   float local_20;
   
-  iVar5 = in_stack_00000008 * 0x54c + *in_stack_00000004 + 0x968;
-  fVar1 = *in_stack_00000010 * *(float *)(iVar5 + 0x20) + in_stack_0000000c;
+  pSVar5 = this_ptr->motion_list_ptr->motions + in_stack_00000008;
+  fVar1 = *in_stack_00000010 * pSVar5->fps + in_stack_0000000c;
   iVar3 = 0;
-  iVar4 = iVar5;
+  pSVar4 = pSVar5;
   local_20 = fVar1;
-  if (0 < *(int *)(iVar5 + 0x4a4)) {
+  if (0 < pSVar5->signal_count) {
     do {
-      fVar2 = (float)*(int *)(iVar4 + 0x4a8);
-      if ((in_stack_0000000c <= fVar2) && (fVar2 <= local_20 + (float)_DAT_0063ab27)) {
-        local_20 = fVar2 + (float)_DAT_0063ab27;
+      fVar2 = (float)pSVar4->signals[0].frame_number;
+      if ((in_stack_0000000c <= fVar2) && (fVar2 <= local_20 + (float)DOUBLE_0063ab27)) {
+        local_20 = fVar2 + (float)DOUBLE_0063ab27;
       }
       iVar3 = iVar3 + 1;
-      iVar4 = iVar4 + 8;
-    } while (iVar3 < *(int *)(iVar5 + 0x4a4));
+      pSVar4 = (SMotion *)(pSVar4->motion_name + 8);
+    } while (iVar3 < pSVar5->signal_count);
   }
-  if ((float)*(int *)(iVar5 + 100) < local_20) {
-    local_20 = (float)*(int *)(iVar5 + 100);
+  if ((float)pSVar5->frame_count < local_20) {
+    local_20 = (float)pSVar5->frame_count;
   }
   if (local_20 < fVar1) {
-    *in_stack_00000010 = (local_20 - in_stack_0000000c) / *(float *)(iVar5 + 0x20);
+    *in_stack_00000010 = (local_20 - in_stack_0000000c) / pSVar5->fps;
     return;
   }
   return;

@@ -9,7 +9,7 @@
 //   undefined4 DAT_0065f024
 //   undefined4 DAT_0065f028
 // Function calls:
-//   core_actor.cpp_FUN_0040cc70
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   crt_math.c_atan2_FUN_006013b1
 
 #include "nocturne.h"
@@ -21,7 +21,7 @@
 void core_gore_cpp_FUN_004ec390(void)
 
 {
-  undefined4 uVar1;
+  int iVar1;
   float10 fVar2;
   undefined4 *in_stack_00000004;
   float *in_stack_00000008;
@@ -41,8 +41,8 @@ void core_gore_cpp_FUN_004ec390(void)
   in_stack_00000004[6] = (float)-fVar2;
   fVar2 = crt_math_c_atan2_FUN_006013b1((float10)*in_stack_0000000c,(float10)in_stack_0000000c[2]);
   in_stack_00000004[7] = (float)fVar2;
-  uVar1 = core_actor_cpp_FUN_0040cc70();
-  in_stack_00000004[10] = uVar1;
+  iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,3);
+  in_stack_00000004[10] = iVar1;
   in_stack_00000004[9] = 0;
   in_stack_00000004[0xb] = (int)ROUND(*in_stack_00000008 * _DAT_0065f024);
   in_stack_00000004[0xc] = (int)ROUND(in_stack_00000008[1] * _DAT_0065f024);
@@ -100,7 +100,7 @@ void core_gore_cpp_FUN_004ec390(void)
 // 004ec3ec: LEA EBX,[ESI + 0x2c]
 // 004ec3ef: PUSH 0x0
 // 004ec3f1: FSTP float ptr [ESI + 0x1c]
-// 004ec3f4: CALL core_actor.cpp_FUN_0040cc70
+// 004ec3f4: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 004ec3f9: ADD ESP,0x8
 // 004ec3fc: MOV dword ptr [ESI + 0x28],EAX

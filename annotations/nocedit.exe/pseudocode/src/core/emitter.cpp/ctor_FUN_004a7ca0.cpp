@@ -34,7 +34,7 @@ CEmitter * __cdecl core_emitter_cpp_ctor_FUN_004a7ca0(CEmitter *this_ptr)
   
   pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                          ((CKeyFramedModelInstance *)&pCVar2[1].field_236.y);
+                          ((CKeyFramedModelInstance *)&pCVar2[1].field13_0xec.y);
   *(CDemonActor_vtable **)(this_ptr_00[-1].model_name + 0x10) = &PTR_core_emitter_cpp_FUN_0065d684;
   this_ptr_00[-0xffffffff00000001].model_name[0x18] = '\0';
   this_ptr_00[-0xffffffff00000001].model_name[0x19] = '\0';

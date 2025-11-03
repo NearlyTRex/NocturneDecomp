@@ -1,8 +1,8 @@
 // Name: core_actor.cpp_FUN_0040e130
 // Address: 0040e130
 // Address Range: [[0040e130, 0040e147]]
-// Convention: unknown
-// Signature: undefined core_actor.cpp_FUN_0040e130()
+// Convention: __cdecl
+// Signature: void core_actor.cpp_FUN_0040e130(void)
 // Cross-references:
 //   core_msnedit.cpp_FUN_00538ea0 (00538ea0) at 00538eed [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053b510 (0053b510) at 0053b5fe [UNCONDITIONAL_CALL]
@@ -17,14 +17,14 @@
 
 #include "nocturne.h"
 
-undefined4 * core_actor_cpp_FUN_0040e130(void)
+void __cdecl core_actor_cpp_FUN_0040e130(void)
 
 {
   undefined4 *in_stack_00000004;
   
   *in_stack_00000004 = 0;
   core_actor_cpp_FUN_0040e150();
-  return in_stack_00000004;
+  return;
 }
 
 

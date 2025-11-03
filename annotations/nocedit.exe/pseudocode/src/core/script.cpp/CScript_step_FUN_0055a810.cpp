@@ -309,7 +309,7 @@
 //   CEditorTools g_CEditorToolsPtr
 //   CDemonActorType g_CEnemyClassInfo
 //   undefined4 g_CEnemyClassInfo.name_hash
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CGame g_CGameInstance
 //   undefined4 DAT_02d81c88
 //   undefined4 DAT_02d81cc4
@@ -348,7 +348,7 @@
 //   undefined4 g_CTriggerClassInfo.name_hash
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_actor.cpp_CVector_ctor_FUN_00410340
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
@@ -360,13 +360,13 @@
 //   core_charactr.cpp_CCharacter_FUN_0042d390
 //   core_charactr.cpp_CCharacter_FUN_0042ddd0
 //   core_enemy.cpp_FUN_004a9ef0
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
+//   core_event.cpp_CEventList_FUN_004aabe0
+//   core_event.cpp_CEventList_FUN_004add00
+//   core_event.cpp_CEventList_FUN_004add40
+//   core_event.cpp_CEventList_FUN_004b0830
 //   core_event.cpp_CEventList_setActorVariable_FUN_004b09a0
 //   core_event.cpp_CEventList_setCounter_FUN_004b0720
-//   core_event.cpp_FUN_004aabe0
-//   core_event.cpp_FUN_004add00
-//   core_event.cpp_FUN_004add40
-//   core_event.cpp_FUN_004b0830
 //   core_event.cpp_FUN_004b1970
 //   core_gabriela.cpp_FUN_004d7650
 //   core_game.cpp_CGame_beginFadeIn_FUN_004e0920
@@ -441,6 +441,7 @@ int core_script_cpp_CScript_step_FUN_0055a810(void)
   CGame *pCVar6;
   byte *pbVar7;
   int iVar8;
+  CMotionList *this_ptr;
   undefined4 uVar9;
   CCharacter *pCVar10;
   undefined4 *puVar11;
@@ -775,10 +776,10 @@ int core_script_cpp_CScript_step_FUN_0055a810(void)
                       ((g_CharacterClassificationTable[(byte)(pcVar18[6] + 1)] & 0xe0U) == 0))))))))
             )))) {
           if (DAT_0310ec9c == 0) {
-            core_event_cpp_FUN_004aabe0();
+            core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
           }
           else {
-            pcVar18 = (char *)core_event_cpp_FUN_004add40();
+            pcVar18 = (char *)core_event_cpp_CEventList_FUN_004add40(g_CEventListPtr);
             if (pcVar18 != (char *)0x0) goto LAB_0055bb9d;
           }
           local_11c = &DAT_00641e5e;
@@ -859,7 +860,7 @@ LAB_0055bb9d:
                   return -1;
                 }
                 if (DAT_0310ec9c == 0) {
-                  iVar8 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+                  iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                     (g_CEventListPtr,local_958);
                   g_CGamePtr->allow_enemy_attack_flag = iVar8;
                 }
@@ -873,7 +874,7 @@ LAB_0055bb9d:
                   pcVar18 = (char *)core_script_cpp_FUN_005594a0();
                   if (pcVar18 != (char *)0x0) goto LAB_0055bb9d;
                   if (DAT_0310ec9c == 0) {
-                    iVar8 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+                    iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                       (g_CEventListPtr,local_bb0);
                     DAT_0310f4a4 = (uint)(iVar8 == 0);
                     g_CGamePtr->allow_hero_controls_flag = DAT_0310f4a4;
@@ -888,7 +889,7 @@ LAB_0055bb9d:
                     pcVar18 = (char *)core_script_cpp_FUN_005594a0();
                     if (pcVar18 != (char *)0x0) goto LAB_0055bb9d;
                     if (DAT_0310ec9c == 0) {
-                      iVar8 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+                      iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                         (g_CEventListPtr,local_a84);
                       g_CGamePtr->allow_damage_flag = iVar8;
                     }
@@ -1003,8 +1004,7 @@ LAB_0055bb9d:
                                                             iVar14),g_CCharacterClassInfo.name_hash)
                                       ;
                                       if (pCVar12 != (CDemonActor *)0x0) {
-                                        (*(pCVar12->metadata).vtable[1].evaluateTriggerCondition)
-                                                  (pCVar12);
+                                        (*pCVar12->vtable[1].evaluateTriggerCondition)(pCVar12);
                                       }
                                       iVar14 = iVar14 + 4;
                                     }
@@ -1079,7 +1079,8 @@ LAB_0055c37e:
                                       return -1;
                                     }
                                     if (DAT_0310ec9c == 0) {
-                                      core_event_cpp_CEventList_setActorVariable_FUN_004b09a0();
+                                      core_event_cpp_CEventList_setActorVariable_FUN_004b09a0
+                                                (g_CEventListPtr);
                                     }
                                   }
                                   else {
@@ -1360,28 +1361,30 @@ joined_r0x0055f6da:
                                                   }
                                                   if (DAT_0310ec9c == 0) {
                                                                                                         
-                                                  core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+                                                  core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                                             (g_CEventListPtr,local_2d5c);
                                                   core_set_cpp_CDemonSet_FUN_00570ea0
                                                             (g_CDemonSetPtr);
                                                   }
                                                   else {
-                                                    pcVar18 = (char *)core_event_cpp_FUN_004add00();
-                                                    if (pcVar18 != (char *)0x0) {
-                                                      pcVar20 = &DAT_0310eca0;
-                                                      do {
-                                                        cVar4 = *pcVar18;
-                                                        *pcVar20 = cVar4;
-                                                        if (cVar4 == '\0') {
-                                                          return -1;
-                                                        }
-                                                        cVar4 = pcVar18[1];
-                                                        pcVar18 = pcVar18 + 2;
-                                                        pcVar20[1] = cVar4;
-                                                        pcVar20 = pcVar20 + 2;
-                                                      } while (cVar4 != '\0');
-                                                      return -1;
-                                                    }
+                                                    pcVar18 = (char *)
+                                                  core_event_cpp_CEventList_FUN_004add00
+                                                            (g_CEventListPtr);
+                                                  if (pcVar18 != (char *)0x0) {
+                                                    pcVar20 = &DAT_0310eca0;
+                                                    do {
+                                                      cVar4 = *pcVar18;
+                                                      *pcVar20 = cVar4;
+                                                      if (cVar4 == '\0') {
+                                                        return -1;
+                                                      }
+                                                      cVar4 = pcVar18[1];
+                                                      pcVar18 = pcVar18 + 2;
+                                                      pcVar20[1] = cVar4;
+                                                      pcVar20 = pcVar20 + 2;
+                                                    } while (cVar4 != '\0');
+                                                    return -1;
+                                                  }
                                                   }
                                                 }
                                                 else {
@@ -1408,29 +1411,31 @@ joined_r0x0055f6da:
                                                     core_script_cpp_FUN_00559360();
                                                     if (DAT_0310ec9c == 0) {
                                                                                                             
-                                                  core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+                                                  core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                                             (g_CEventListPtr,local_1dbc);
                                                   core_set_cpp_CDemonSet_FUN_00570ec0
                                                             (g_CDemonSetPtr);
                                                   }
                                                   else {
-                                                    pcVar18 = (char *)core_event_cpp_FUN_004add00();
-                                                    if (pcVar18 != (char *)0x0) {
+                                                    pcVar18 = (char *)
+                                                  core_event_cpp_CEventList_FUN_004add00
+                                                            (g_CEventListPtr);
+                                                  if (pcVar18 != (char *)0x0) {
 LAB_0055cd52:
-                                                      pcVar20 = &DAT_0310eca0;
-                                                      do {
-                                                        cVar4 = *pcVar18;
-                                                        *pcVar20 = cVar4;
-                                                        if (cVar4 == '\0') {
-                                                          return -1;
-                                                        }
-                                                        cVar4 = pcVar18[1];
-                                                        pcVar18 = pcVar18 + 2;
-                                                        pcVar20[1] = cVar4;
-                                                        pcVar20 = pcVar20 + 2;
-                                                      } while (cVar4 != '\0');
-                                                      return -1;
-                                                    }
+                                                    pcVar20 = &DAT_0310eca0;
+                                                    do {
+                                                      cVar4 = *pcVar18;
+                                                      *pcVar20 = cVar4;
+                                                      if (cVar4 == '\0') {
+                                                        return -1;
+                                                      }
+                                                      cVar4 = pcVar18[1];
+                                                      pcVar18 = pcVar18 + 2;
+                                                      pcVar20[1] = cVar4;
+                                                      pcVar20 = pcVar20 + 2;
+                                                    } while (cVar4 != '\0');
+                                                    return -1;
+                                                  }
                                                   }
                                                   }
                                                   else {
@@ -1585,12 +1590,12 @@ LAB_0055cd52:
                                                   ;
                                                   }
                                                   else {
-                                                                                                        
+                                                    this_ptr = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                                                            ();
+                                                            (&(pCVar10->model).motion_controller);
                                                   iVar8 = 
                                                   core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
-                                                            ();
+                                                            (this_ptr);
                                                   uVar15 = (uint)(-1 < iVar8);
                                                   }
                                                   if (uVar15 == 0) {
@@ -1629,12 +1634,13 @@ LAB_0055cd52:
                                                               (&local_3d6c,
                                                                "system\\nocturne.ini",
                                                                0x64241a);
-                                                    local_d0 = core_event_cpp_FUN_004b0830();
-                                                    engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
-                                                              (&local_3d6c,local_113c,&local_d0);
-                                                                                                        
+                                                    local_d0 = 
+                                                  core_event_cpp_CEventList_FUN_004b0830
+                                                            (g_CEventListPtr);
+                                                  engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
+                                                            (&local_3d6c,local_113c,&local_d0);
                                                   core_event_cpp_CEventList_setCounter_FUN_004b0720
-                                                            ();
+                                                            (g_CEventListPtr);
                                                   }
                                                   }
                                                   else {
@@ -1672,7 +1678,7 @@ LAB_0055cd52:
                                                   if (DAT_0310ec9c == 0) {
                                                                                                         
                                                   core_event_cpp_CEventList_setActorVariable_FUN_004b09a0
-                                                            ();
+                                                            (g_CEventListPtr);
                                                   }
                                                   }
                                                   else {
@@ -1820,13 +1826,15 @@ LAB_0055a97f:
                                                     local_11c = pbVar7;
                                                     if (DAT_0310ec9c == 0) {
                                                       local_c0 = 
-                                                  core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+                                                  core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                                             (g_CEventListPtr,
                                                              (char *)(abStack_fad + 1));
                                                   }
                                                   else {
-                                                    pcVar18 = (char *)core_event_cpp_FUN_004add00();
-                                                    if (pcVar18 != (char *)0x0) goto LAB_0055d708;
+                                                    pcVar18 = (char *)
+                                                  core_event_cpp_CEventList_FUN_004add00
+                                                            (g_CEventListPtr);
+                                                  if (pcVar18 != (char *)0x0) goto LAB_0055d708;
                                                   }
                                                   }
                                                   if (*local_11c != 0x29) {
@@ -1864,7 +1872,7 @@ LAB_0055a97f:
                                                   if (pcVar18 != (char *)0x0) goto LAB_0055d708;
                                                   if ((DAT_0310ec9c == 0) &&
                                                      (iVar8 = 
-                                                  core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+                                                  core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                                             (g_CEventListPtr,local_444), iVar8 == 0)
                                                   ) {
                                                     iVar8 = core_script_cpp_FUN_005601c0();
@@ -2011,7 +2019,7 @@ LAB_0055d708:
                                                     if (pcVar18 != (char *)0x0) goto LAB_0055d708;
                                                     if (DAT_0310ec9c == 0) {
                                                       iVar8 = 
-                                                  core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+                                                  core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                                             (g_CEventListPtr,local_570);
                                                   in_stack_00000004[5] = iVar8;
                                                   }
@@ -2225,25 +2233,28 @@ joined_r0x0055c026:
                                                     return -1;
                                                   }
                                                   if (DAT_0310ec9c == 0) {
-                                                    core_event_cpp_FUN_004aabe0();
+                                                    core_event_cpp_CEventList_FUN_004aabe0
+                                                              (g_CEventListPtr);
                                                   }
                                                   else {
-                                                    pcVar18 = (char *)core_event_cpp_FUN_004add40();
-                                                    if (pcVar18 != (char *)0x0) {
-                                                      pcVar20 = &DAT_0310eca0;
-                                                      do {
-                                                        cVar4 = *pcVar18;
-                                                        *pcVar20 = cVar4;
-                                                        if (cVar4 == '\0') {
-                                                          return -1;
-                                                        }
-                                                        cVar4 = pcVar18[1];
-                                                        pcVar18 = pcVar18 + 2;
-                                                        pcVar20[1] = cVar4;
-                                                        pcVar20 = pcVar20 + 2;
-                                                      } while (cVar4 != '\0');
-                                                      return -1;
-                                                    }
+                                                    pcVar18 = (char *)
+                                                  core_event_cpp_CEventList_FUN_004add40
+                                                            (g_CEventListPtr);
+                                                  if (pcVar18 != (char *)0x0) {
+                                                    pcVar20 = &DAT_0310eca0;
+                                                    do {
+                                                      cVar4 = *pcVar18;
+                                                      *pcVar20 = cVar4;
+                                                      if (cVar4 == '\0') {
+                                                        return -1;
+                                                      }
+                                                      cVar4 = pcVar18[1];
+                                                      pcVar18 = pcVar18 + 2;
+                                                      pcVar20[1] = cVar4;
+                                                      pcVar20 = pcVar20 + 2;
+                                                    } while (cVar4 != '\0');
+                                                    return -1;
+                                                  }
                                                   }
                                                   }
                                                   else {
@@ -2588,7 +2599,7 @@ LAB_0055e656:
                                                   if (DAT_0310ec9c == 0) {
                                                                                                         
                                                   core_event_cpp_CEventList_setActorVariable_FUN_004b09a0
-                                                            ();
+                                                            (g_CEventListPtr);
                                                   }
                                                   else if ((iVar8 == 0) && (DAT_0310f4ac == 0)) {
                                                     return -1;
@@ -3036,7 +3047,8 @@ LAB_0055f0a8:
                                                   core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                                             (&local_160,&local_148);
                                                   (pCVar12->orient).bank = pCVar13->y;
-                                                  core_actor_cpp_CDemonActor_FUN_00408c10(pCVar12);
+                                                  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
+                                                            (pCVar12);
                                                   }
                                                   }
                                                   else {
@@ -3320,7 +3332,7 @@ LAB_0055f91c:
                                                   if (pcVar18 != (char *)0x0) goto LAB_0055f91c;
                                                   if ((DAT_0310ec9c == 0) &&
                                                      (iVar8 = 
-                                                  core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+                                                  core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                                             (g_CEventListPtr,local_37c), iVar8 == 0)
                                                   ) {
                                                     local_114 = 0;
@@ -5579,7 +5591,7 @@ LAB_0055a8d4:
 //   XREF to: 02d05310 (PARAM)
 // 0055bb70: PUSH EAX
 //   XREF to: 02d05310 (DATA)
-// 0055bb71: CALL core_event.cpp_FUN_004aabe0
+// 0055bb71: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 0055bb76: ADD ESP,0x8
 // 0055bb79: MOV dword ptr [ESP + 0x3e8c],0x641e5e
@@ -5594,7 +5606,7 @@ LAB_0055a8d4:
 //   XREF to: 02d05310 (PARAM)
 // 0055bb90: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 0055bb91: CALL core_event.cpp_FUN_004add40
+// 0055bb91: CALL core_event.cpp_CEventList_FUN_004add40
 //   XREF to: 004add40 (UNCONDITIONAL_CALL)
 // 0055bb96: ADD ESP,0x8
 // 0055bb99: TEST EAX,EAX
@@ -5864,7 +5876,7 @@ LAB_0055a8d4:
 //   XREF to: 006793d0 (READ)
 // 0055be6e: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 0055be6f: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0055be6f: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0055be74: MOV EDX,dword ptr [0x0067b654]
 //   XREF to: 0067b654 (READ)
@@ -5900,7 +5912,7 @@ LAB_0055a8d4:
 //   XREF to: 006793d0 (READ)
 // 0055bed6: PUSH EDI
 //   XREF to: 02d05310 (DATA)
-// 0055bed7: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0055bed7: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0055bedc: ADD ESP,0x8
 // 0055bedf: XOR EDX,EDX
@@ -5942,7 +5954,7 @@ LAB_0055a8d4:
 //   XREF to: 006793d0 (READ)
 // 0055bf4c: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 0055bf4d: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0055bf4d: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0055bf52: MOV EDX,dword ptr [0x0067b654]
 //   XREF to: 0067b654 (READ)
@@ -7080,7 +7092,7 @@ LAB_0055a8d4:
 //   XREF to: 006793d0 (READ)
 // 0055cc1e: PUSH ESI
 //   XREF to: 02d05310 (DATA)
-// 0055cc1f: CALL core_event.cpp_FUN_004add00
+// 0055cc1f: CALL core_event.cpp_CEventList_FUN_004add00
 //   XREF to: 004add00 (UNCONDITIONAL_CALL)
 // 0055cc24: ADD ESP,0x8
 // 0055cc27: TEST EAX,EAX
@@ -7131,7 +7143,7 @@ LAB_0055a8d4:
 //   XREF to: 006793d0 (READ)
 // 0055cc82: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 0055cc83: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0055cc83: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0055cc88: ADD ESP,0x8
 // 0055cc8b: PUSH EAX
@@ -7201,7 +7213,7 @@ LAB_0055a8d4:
 //   XREF to: 02d05310 (PARAM)
 // 0055cd41: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 0055cd42: CALL core_event.cpp_FUN_004add00
+// 0055cd42: CALL core_event.cpp_CEventList_FUN_004add00
 //   XREF to: 004add00 (UNCONDITIONAL_CALL)
 // 0055cd47: ADD ESP,0x8
 // 0055cd4a: TEST EAX,EAX
@@ -7241,7 +7253,7 @@ LAB_0055a8d4:
 //   XREF to: 006793d0 (READ)
 // 0055cd86: PUSH ESI
 //   XREF to: 02d05310 (DATA)
-// 0055cd87: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0055cd87: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0055cd8c: ADD ESP,0x8
 // 0055cd8f: PUSH EAX
@@ -7682,7 +7694,7 @@ LAB_0055a8d4:
 //   XREF to: 02d05310 (PARAM)
 // 0055d252: PUSH EAX
 //   XREF to: 02d05310 (DATA)
-// 0055d253: CALL core_event.cpp_FUN_004b0830
+// 0055d253: CALL core_event.cpp_CEventList_FUN_004b0830
 //   XREF to: 004b0830 (UNCONDITIONAL_CALL)
 // 0055d258: ADD ESP,0x8
 // 0055d25b: MOV dword ptr [ESP + 0x3ed8],EAX
@@ -8077,7 +8089,7 @@ LAB_0055a8d4:
 //   XREF to: 02d05310 (PARAM)
 // 0055d6f7: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 0055d6f8: CALL core_event.cpp_FUN_004add00
+// 0055d6f8: CALL core_event.cpp_CEventList_FUN_004add00
 //   XREF to: 004add00 (UNCONDITIONAL_CALL)
 // 0055d6fd: ADD ESP,0x8
 // 0055d700: TEST EAX,EAX
@@ -8127,7 +8139,7 @@ LAB_0055a8d4:
 //   XREF to: 006793d0 (READ)
 // 0055d752: PUSH EAX
 //   XREF to: 02d05310 (DATA)
-// 0055d753: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0055d753: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0055d758: ADD ESP,0x8
 // 0055d75b: MOV dword ptr [ESP + 0x3ee8],EAX
@@ -8183,7 +8195,7 @@ LAB_0055a8d4:
 //   XREF to: 006793d0 (READ)
 // 0055d7f6: PUSH EAX
 //   XREF to: 02d05310 (DATA)
-// 0055d7f7: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0055d7f7: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0055d7fc: ADD ESP,0x8
 // 0055d7ff: TEST EAX,EAX
@@ -8463,7 +8475,7 @@ LAB_0055a8d4:
 //   XREF to: 006793d0 (READ)
 // 0055daea: PUSH EDI
 //   XREF to: 02d05310 (DATA)
-// 0055daeb: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0055daeb: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0055daf0: ADD ESP,0x8
 // 0055daf3: MOV dword ptr [EBX + 0x14],EAX
@@ -9003,7 +9015,7 @@ LAB_0055a8d4:
 //   XREF to: 006793d0 (READ)
 // 0055e0d4: PUSH ESI
 //   XREF to: 02d05310 (DATA)
-// 0055e0d5: CALL core_event.cpp_FUN_004add40
+// 0055e0d5: CALL core_event.cpp_CEventList_FUN_004add40
 //   XREF to: 004add40 (UNCONDITIONAL_CALL)
 // 0055e0da: ADD ESP,0x8
 // 0055e0dd: TEST EAX,EAX
@@ -9054,7 +9066,7 @@ LAB_0055a8d4:
 //   XREF to: 02d05310 (PARAM)
 // 0055e131: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 0055e132: CALL core_event.cpp_FUN_004aabe0
+// 0055e132: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 0055e137: ADD ESP,0x8
 // 0055e13a: JMP 0x0055a8bb
@@ -10938,7 +10950,7 @@ LAB_0055a8d4:
 // 0055f5a8: FLD float ptr [EAX + 0x4]
 // 0055f5ab: PUSH ESI
 // 0055f5ac: FSTP float ptr [ESI + 0x34]
-// 0055f5af: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 0055f5af: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 0055f5b4: ADD ESP,0x4
 // 0055f5b7: JMP 0x0055a8bb
@@ -11582,7 +11594,7 @@ LAB_0055a8d4:
 //   XREF to: 006793d0 (READ)
 // 0055fc0b: PUSH EAX
 //   XREF to: 02d05310 (DATA)
-// 0055fc0c: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0055fc0c: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0055fc11: ADD ESP,0x8
 // 0055fc14: TEST EAX,EAX

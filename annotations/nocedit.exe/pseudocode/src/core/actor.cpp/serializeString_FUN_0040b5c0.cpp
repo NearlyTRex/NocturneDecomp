@@ -62,7 +62,7 @@
 //   TerminatedCString s_anon_00613f07
 //   TerminatedCString s_s_s_00613f0d
 //   string s_String_0066e128
-//   char* g_PropertyNamePrefix = 00000000
+//   char[104] g_PropertyNamePrefix
 //   char[256] g_CharacterClassificationTable
 //   FILE* g_ActorDataFile
 //   int g_ActorReadingMode
@@ -83,7 +83,7 @@ void __cdecl core_actor_cpp_serializeString_FUN_0040b5c0(char **string_buffer,ch
   
   if (g_ActorReadingMode != 1) {
     crt_stdio_c_fprintf_FUN_005fe6d0
-              (g_ActorDataFile,"%s\"%s\"",&g_PropertyNamePrefix,string_buffer);
+              (g_ActorDataFile,"%s\"%s\"",g_PropertyNamePrefix,string_buffer);
     core_actor_cpp_serializeDescription_FUN_0040b290("String",property_type);
     return;
   }

@@ -1,10 +1,10 @@
 // Name: core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0
 // Address: 0058adb0
 // Address Range: [[0058adb0, 0058aea1]]
-// Convention: unknown
-// Signature: undefined core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0()
+// Convention: __cdecl
+// Signature: void core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(CBoneStructure * this_ptr)
 // Cross-references:
-//   core_skeledit.cpp_FUN_0058a3d0 (0058a3d0) at 0058a467 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0 (0058a3d0) at 0058a467 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 0059549d [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_skeledit_cpp_0064a4d8
@@ -22,10 +22,7 @@
 
 #include "nocturne.h"
 
-/* Signature: void core_skeledit.cpp_CBoneStructure_fixupMatrices(int* param_1, undefined4 param_2)
-    */
-
-void core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(void)
+void __cdecl core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(CBoneStructure *this_ptr)
 
 {
   int iVar1;

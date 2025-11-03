@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_trigger.cpp_FUN_005e0aa0()
 // Cross-references:
-//   core_crossbow.cpp_FUN_00448f20 (00448f20) at 0044926d [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_FUN_00448f20 (00448f20) at 0044926d [UNCONDITIONAL_CALL]
 //   core_gun.cpp_FUN_004f0350 (004f0350) at 004f0a62 [UNCONDITIONAL_CALL]
 //   core_lightgun.cpp_FUN_00505c70 (00505c70) at 005061f3 [UNCONDITIONAL_CALL]
 //   core_tommygun.cpp_FUN_005ddb30 (005ddb30) at 005de27b [UNCONDITIONAL_CALL]

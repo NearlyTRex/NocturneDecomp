@@ -5,7 +5,7 @@
 // Signature: undefined core_bodypart.cpp_FUN_00419fd0()
 // Function calls:
 //   core_bodypart.cpp_FUN_0041b070
-//   core_box.cpp_CBox_FUN_00420180
+//   core_box.cpp_CBox_setupVelocities_FUN_00420180
 
 #include "nocturne.h"
 
@@ -15,16 +15,22 @@
 void core_bodypart_cpp_FUN_00419fd0(void)
 
 {
+  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
-  int in_stack_0000000c;
+  CVector3f *in_stack_0000000c;
+  float local_c;
+  float local_8;
   
   *(undefined4 *)(in_stack_00000004 + 0xf28) = 0;
   core_bodypart_cpp_FUN_0041b070();
-  if (in_stack_0000000c == 0) {
+  if (in_stack_0000000c == (CVector3f *)0x0) {
     *(undefined4 *)(in_stack_00000004 + 0xcbc) = 0x41200000;
     return;
   }
-  core_box_cpp_CBox_FUN_00420180((CBox *)(in_stack_00000004 + 0xccc));
+  local_8 = 0.0;
+  local_c = 9.424778;
+  core_box_cpp_CBox_setupVelocities_FUN_00420180
+            ((CBox *)(in_stack_00000004 + 0xccc),in_stack_0000000c,(CVector3f *)&local_c);
   *(undefined4 *)(in_stack_00000004 + 0xcbc) = 0x41200000;
   return;
 }
@@ -66,7 +72,7 @@ void core_bodypart_cpp_FUN_00419fd0(void)
 //   XREF to: Stack[-0xc] (WRITE)
 // 0041a01f: MOV dword ptr [ESP + 0x10],EDI
 //   XREF to: Stack[-0x10] (WRITE)
-// 0041a023: CALL core_box.cpp_CBox_FUN_00420180
+// 0041a023: CALL core_box.cpp_CBox_setupVelocities_FUN_00420180
 //   XREF to: 00420180 (UNCONDITIONAL_CALL)
 // 0041a028: ADD ESP,0xc
 // 0041a02b: POP EDI

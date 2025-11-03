@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_stranger.cpp_CStranger_serialize_FUN_005c2fe0(CStranger * this_ptr)
 // Globals:
-//   undefined4 s_objectToPickUp_00653bd4
+//   TerminatedCString s_objectToPickUp_00653bd4
 //   TerminatedCString s_doorToOpen_00653be3
 //   TerminatedCString s_leverToPull_00653bee
 //   TerminatedCString s_ladderToClimb_00653bfa
@@ -31,8 +31,7 @@ void __cdecl core_stranger_cpp_CStranger_serialize_FUN_005c2fe0(CStranger *this_
   core_hero_cpp_CHero_serialize_FUN_004f2610(&this_ptr->base_hero);
   if ((1 < g_CStrangerClassVersion) && (g_CStrangerClassVersion < 5)) {
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)((this_ptr->base_hero).field6_0x1fb9c + 4),
-               "@objectToPickUp" + 1);
+              ((CDemonActor *)((this_ptr->base_hero).field6_0x1fb9c + 4),"objectToPickUp");
     core_actor_cpp_serializeActor_FUN_0040b870
               ((CDemonActor *)(this_ptr->base_hero).field6_0x1fb9c,"doorToOpen");
     core_actor_cpp_serializeActor_FUN_0040b870

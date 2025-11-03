@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_stranger.cpp_FUN_005c6660()
 // Globals:
-//   undefined4 s_flashlit.wav_00653f94
+//   TerminatedCString s_flashlit_wav_00653f94
 //   CGame* g_CGamePtr = 02d81a9c
 //   CGame g_CGameInstance
 //   undefined4 g_CGameInstance.auto_save_blocked

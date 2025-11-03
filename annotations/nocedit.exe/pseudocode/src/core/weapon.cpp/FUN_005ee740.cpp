@@ -9,7 +9,7 @@
 //   float FLOAT_00657b2d = 0.5
 //   undefined4 DAT_0078a123
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_box.cpp_CBox_setupCorners_FUN_0041dd20
 
 #include "nocturne.h"
@@ -26,22 +26,21 @@ void core_weapon_cpp_FUN_005ee740(void)
   float fStack_2c;
   float fStack_28;
   float fStack_24;
-  float fStack_20;
-  CVector3f CStack_1c;
+  undefined1 auStack_20 [16];
   CVector3f CStack_10;
   
   if ((in_stack_00000004[2].location.position.x != 0.0) &&
      ((undefined *)in_stack_00000004->field6_0x68 == &DAT_0078a123)) {
-    (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
-              (in_stack_00000004,(CBoundingBox3D *)&fStack_4c);
+    (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,(CBoundingBox3D *)&fStack_4c);
     CStack_10.z = (in_stack_ffffffc8 + fStack_2c) * FLOAT_00657b2d;
-    core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (in_stack_00000004,(CVector3f *)auStack_20,(CVector3f *)&CStack_10.z);
     CStack_10.x = fStack_28 - fStack_34;
     CStack_10.y = fStack_24 - fStack_30;
-    CStack_10.z = fStack_20 - fStack_2c;
+    CStack_10.z = (float)auStack_20._0_4_ - fStack_2c;
     fStack_4c = 8.715802e-39;
     core_box_cpp_CBox_setupCorners_FUN_0041dd20
-              ((CBox *)&in_stack_00000004[2].orient_matrix.m[2].y,&CStack_1c,
+              ((CBox *)&in_stack_00000004[2].orient_matrix.m[2].y,(CVector3f *)(auStack_20 + 4),
                (CVector3f *)&in_stack_00000004->orient,&CStack_10,
                *(float *)(in_stack_00000004[4].actor_name + 4));
     return;
@@ -103,7 +102,7 @@ void core_weapon_cpp_FUN_005ee740(void)
 // 005ee7bd: FXCH
 // 005ee7bf: FSTP float ptr [ESP + 0x40]
 // 005ee7c3: FSTP float ptr [ESP + 0x44]
-// 005ee7c7: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005ee7c7: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005ee7cc: ADD ESP,0xc
 // 005ee7cf: LEA EAX,[ESP + 0x24]

@@ -17,7 +17,7 @@
 //   CHero*[4] g_HeroActors
 //   int g_LocalHeroIndex
 // Function calls:
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_charactr.cpp_CCharacter_FUN_00428d80
 //   core_hero.cpp_FUN_004f3960
 //   core_motion.cpp_CMotionController_FUN_0052dab0
@@ -115,7 +115,8 @@ void core_scat_cpp_FUN_005578e0(void)
   iStack_24 = 0;
   if (*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5508) + 0x2e0) == 8) {
     if (local_74 < (float)DOUBLE_006413ec) {
-      iVar5 = core_motion_cpp_CMotionController_FUN_0052dab0();
+      iVar5 = core_motion_cpp_CMotionController_FUN_0052dab0
+                        (&(in_stack_00000004->model).motion_controller);
       if ((*(int *)(iVar5 + 0x24) == 7) && (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) != 0)
          ) {
         pCVar1 = in_stack_00000004 + 1;
@@ -152,7 +153,7 @@ LAB_00557a94:
     (pCVar1->base_actor).actor_name[0xb] = '\0';
     goto LAB_00557a94;
   }
-  this_ptr = (*((this_ptr_00->base_character).base_actor.metadata.vtable)->getPathMap)
+  this_ptr = (*((this_ptr_00->base_character).base_actor.vtable)->getPathMap)
                        ((CDemonActor *)this_ptr_00);
   if (this_ptr == (CPathMap *)0x0) {
     this_ptr = (CPathMap *)core_path_cpp_FUN_00548500();
@@ -161,7 +162,7 @@ LAB_00557a94:
                     (this_ptr,&(in_stack_00000004->base_actor).location.position,aCStack_54,
                      (in_stack_00000004->base_actor).field7_0x6c);
   if (iVar5 != 0) {
-    fVar3 = core_actor_cpp_FUN_0040cd70
+    fVar3 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                       (aCStack_54[0].z - (in_stack_00000004->base_actor).orient.bank);
     fVar3 = fVar3 * (float)DOUBLE_006413f4 * (float)DOUBLE_006413fc;
     local_1c = -fStack_18;
@@ -205,7 +206,8 @@ LAB_00557b63:
     fStack_28 = pCVar4->z;
   }
   local_34._0_4_ =
-       core_actor_cpp_FUN_0040cd70(local_2c - (in_stack_00000004->base_actor).orient.bank);
+       core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                 (local_2c - (in_stack_00000004->base_actor).orient.bank);
   if (unaff_EDI < (float)local_34._0_4_) {
     local_34._0_4_ = unaff_EDI;
   }
@@ -445,7 +447,7 @@ LAB_00557b63:
 // 00557ae5: FSUB float ptr [EBX + 0x34]
 // 00557ae8: SUB ESP,0x4
 // 00557aeb: FSTP float ptr [ESP]
-// 00557aee: CALL core_actor.cpp_FUN_0040cd70
+// 00557aee: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 00557af3: MOV dword ptr [ESP + 0x7c],EAX
 // 00557af7: FLD float ptr [ESP + 0x7c]
@@ -538,7 +540,7 @@ LAB_00557b63:
 // 00557bdb: FSUB float ptr [EBX + 0x34]
 // 00557bde: SUB ESP,0x4
 // 00557be1: FSTP float ptr [ESP]
-// 00557be4: CALL core_actor.cpp_FUN_0040cd70
+// 00557be4: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 00557be9: MOV dword ptr [ESP + 0x7c],EAX
 // 00557bed: FLD float ptr [ESP + 0x7c]

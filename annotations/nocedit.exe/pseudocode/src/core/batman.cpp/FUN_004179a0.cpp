@@ -10,8 +10,8 @@
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CFireEffect g_CFireEffectInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_FUN_0040cc70
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_batman.cpp_FUN_00417660
 //   core_charactr.cpp_CCharacter_FUN_0042b5b0
 //   core_enemy.cpp_FUN_004a9f10
@@ -31,62 +31,79 @@
 void core_batman_cpp_FUN_004179a0(void)
 
 {
+  CDeformableModelInstance *this_ptr;
   float fVar1;
+  CVector3f *input_local_point;
   int iVar2;
   CDemonActor *pCVar3;
+  BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
-  int in_stack_00000008;
+  float in_stack_00000008;
+  CVector3f CStack_20;
+  CCharacter *pCStack_14;
   
   sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
   sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-  if (*(int *)(in_stack_00000008 + 0x28) == 7) {
+  if (*(int *)((int)in_stack_00000008 + 0x28) == 7) {
     iVar2 = 0;
-    *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)_DAT_0061599d;
-    core_actor_cpp_CDemonActor_FUN_00408ec0(&in_stack_00000004->base_actor);
+    *(float *)((int)in_stack_00000008 + 4) =
+         *(float *)((int)in_stack_00000008 + 4) * (float)_DAT_0061599d;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffd8,
+               (CVector3f *)((int)in_stack_00000008 + 0x1c));
     do {
       iVar2 = iVar2 + 1;
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
     } while (iVar2 < 5);
   }
-  if (*(int *)(in_stack_00000008 + 0x30) == 0x6c) {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-    core_actor_cpp_CDemonActor_FUN_00408ec0(&in_stack_00000004->base_actor);
+  if (*(int *)((int)in_stack_00000008 + 0x30) == 0x6c) {
+    input_local_point = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (&in_stack_00000004->base_actor,&CStack_20,input_local_point);
     core_charactr_cpp_CCharacter_FUN_0042b5b0(in_stack_00000004);
   }
   core_batman_cpp_FUN_00417660();
-  fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
+  fVar1 = in_stack_00000004->hit_points - *(float *)((int)in_stack_00000008 + 4);
+  this_ptr = &in_stack_00000004->model;
   in_stack_00000004->hit_points = fVar1;
   if (fVar1 <= 0.0) {
     in_stack_00000004->hit_points = 0.0;
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
     if ((*(int *)(iVar2 + 0x24) != 7) && (*(int *)(iVar2 + 0x24) != 8)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
       sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
       pCVar3 = (CDemonActor *)
-               (*((in_stack_00000004->base_actor).metadata.vtable)->playSound)
+               (*((in_stack_00000004->base_actor).vtable)->playSound)
                          (&in_stack_00000004->base_actor,"4@batman-die.wav" + 2);
-      in_stack_00000004[1].base_actor.metadata.next_actor = pCVar3;
+      in_stack_00000004[1].base_actor.next_actor = pCVar3;
+      pCStack_14 = in_stack_00000004;
+      CStack_20.z = 6.0136e-39;
       core_enemy_cpp_FUN_004a9f10();
       return;
     }
   }
   else {
-    iVar2 = core_actor_cpp_FUN_0040cc70();
+    iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
     if (iVar2 == 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
     }
     if (iVar2 == 1) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                (&(in_stack_00000004->model).motion_controller);
     }
     if (iVar2 == 2) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                (&(in_stack_00000004->model).motion_controller);
     }
     iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
     if (iVar2 == 0) {
       pCVar3 = (CDemonActor *)
-               (*((in_stack_00000004->base_actor).metadata.vtable)->playSound)
+               (*((in_stack_00000004->base_actor).vtable)->playSound)
                          (&in_stack_00000004->base_actor,"batman-hurt?.wav");
-      in_stack_00000004[1].base_actor.metadata.next_actor = pCVar3;
+      in_stack_00000004[1].base_actor.next_actor = pCVar3;
+      CStack_20.z = in_stack_00000008;
+      CStack_20.y = (float)in_stack_00000004;
+      CStack_20.x = 6.013658e-39;
       core_enemy_cpp_FUN_004a9f10();
       return;
     }
@@ -141,7 +158,7 @@ void core_batman_cpp_FUN_004179a0(void)
 //   XREF to: Stack[-0x24] (DATA)
 // 00417a01: PUSH EAX
 // 00417a02: PUSH ESI
-// 00417a03: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00417a03: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 00417a08: ADD ESP,0xc
 // 00417a0b: PUSH 0x0
@@ -173,7 +190,7 @@ void core_batman_cpp_FUN_004179a0(void)
 //   XREF to: 00417b19 (CONDITIONAL_JUMP)
 // 00417a50: PUSH 0x2
 // 00417a52: PUSH 0x0
-// 00417a54: CALL core_actor.cpp_FUN_0040cc70
+// 00417a54: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 00417a59: ADD ESP,0x8
 // 00417a5c: MOV EBP,EAX
@@ -243,7 +260,7 @@ void core_batman_cpp_FUN_004179a0(void)
 // 00417add: FSTP ST1
 // 00417adf: PUSH ESI
 // 00417ae0: FSTP float ptr [EDI + 0x4]
-// 00417ae3: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00417ae3: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 00417ae8: ADD ESP,0xc
 // 00417aeb: MOV EBP,0x4000

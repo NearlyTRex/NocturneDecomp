@@ -30,7 +30,7 @@
 //   undefined4 DAT_02d8339c
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
-//   core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+//   core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
 //   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 //   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
@@ -68,9 +68,7 @@ void core_gore_cpp_FUN_004ebac0(void)
   float fStack_9c;
   float fStack_98;
   CVector3i local_94;
-  int local_88;
-  int local_84;
-  int local_80;
+  CVector3i local_88;
   CVector3i local_7c;
   float fStack_70;
   float fStack_6c;
@@ -137,14 +135,15 @@ void core_gore_cpp_FUN_004ebac0(void)
   g_RenderVertexBuffer[1].u = (float)(iVar3 + 0x380000);
   g_RenderVertexBuffer[0].v = (float)(iVar4 + 0x80000);
   g_RenderVertexBuffer[2].v = (float)(iVar4 + 0x380000);
-  local_88 = (int)ROUND(in_stack_00000004->x * _DAT_0065f024);
-  local_84 = (int)ROUND(in_stack_00000004->y * _DAT_0065f024);
-  local_80 = (int)ROUND(in_stack_00000004->z * _DAT_0065f024);
+  local_88.x = (int)ROUND(in_stack_00000004->x * _DAT_0065f024);
+  local_88.y = (int)ROUND(in_stack_00000004->y * _DAT_0065f024);
+  local_88.z = (int)ROUND(in_stack_00000004->z * _DAT_0065f024);
   g_RenderVertexBuffer[1].v = g_RenderVertexBuffer[0].v;
   g_RenderVertexBuffer[2].u = g_RenderVertexBuffer[1].u;
   g_RenderVertexBuffer[3].u = g_RenderVertexBuffer[0].u;
   g_RenderVertexBuffer[3].v = g_RenderVertexBuffer[2].v;
-  core_set_cpp_CDemonSet_CallLightVertexColor_FUN_0056e110(g_CDemonSetPtr);
+  core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
+            (g_CDemonSetPtr,&local_88,(CVector3i *)&DAT_02d8339c,0,4);
   fVar1 = in_stack_00000004[4].z;
   if (fVar1 != 0.0) {
     if ((uint)fVar1 < 2) {
@@ -237,10 +236,11 @@ LAB_004ebdb7:
     CStack_c4.z = (int)ROUND(_DAT_0065f024 * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&CStack_c4);
-    local_88 = (int)ROUND(CStack_e8.x * _DAT_0065f024);
-    local_84 = (int)ROUND(CStack_e8.y * _DAT_0065f024);
-    local_80 = (int)ROUND(CStack_e8.z * _DAT_0065f024);
-    core_set_cpp_CDemonSet_CallLightVertexColor_FUN_0056e110(g_CDemonSetPtr);
+    local_88.x = (int)ROUND(CStack_e8.x * _DAT_0065f024);
+    local_88.y = (int)ROUND(CStack_e8.y * _DAT_0065f024);
+    local_88.z = (int)ROUND(CStack_e8.z * _DAT_0065f024);
+    core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
+              (g_CDemonSetPtr,&local_88,(CVector3i *)&DAT_02d8339c,0,4);
     iVar4 = 0;
     do {
       lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].light + iVar4);
@@ -514,7 +514,7 @@ LAB_004ebdb7:
 // 004ebd7b: PUSH EDX
 //   XREF to: 03114278 (DATA)
 // 004ebd7c: LEA EBX,[ESP + 0xec]
-// 004ebd83: CALL core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+// 004ebd83: CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   XREF to: 0056e110 (UNCONDITIONAL_CALL)
 // 004ebd88: LEA ECX,[ESP + 0xe4]
 // 004ebd8f: LEA EDX,[ESP + 0xe8]

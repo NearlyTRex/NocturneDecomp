@@ -5,7 +5,7 @@
 // Signature: void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr)
 // Cross-references:
 //   core_baron.cpp_CBaronWeapon_process_FUN_00413dc0 (00413dc0) at 00413dd6 [UNCONDITIONAL_CALL]
-//   core_crossbow.cpp_FUN_00448d30 (00448d30) at 00448d3d [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_process_FUN_00448d30 (00448d30) at 00448d3d [UNCONDITIONAL_CALL]
 //   core_dynamite.cpp_FUN_0049cfb0 (0049cfb0) at 0049cfc2 [UNCONDITIONAL_CALL]
 //   core_elephant.cpp_FUN_004a7070 (004a7070) at 004a7091 [UNCONDITIONAL_CALL]
 //   core_flamegun.cpp_FUN_004cb9b0 (004cb9b0) at 004cb9c2 [UNCONDITIONAL_CALL]
@@ -24,7 +24,7 @@
 //   int g_LocalHeroIndex
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_box.cpp_CBox_process_FUN_0041e2f0
 //   core_set.cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090
 
@@ -41,40 +41,40 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr)
   undefined4 uStack00000010;
   CDemonLight *pCStack00000018;
   
-  if ((0.0 < *(float *)(this_ptr->field6_0x2f4 + 0xc)) &&
-     (fVar3 = *(float *)(this_ptr->field6_0x2f4 + 0xc) - in_stack_00000008,
-     *(float *)(this_ptr->field6_0x2f4 + 0xc) = fVar3, fVar3 < 0.0)) {
-    this_ptr->field6_0x2f4[0xc] = '\0';
-    this_ptr->field6_0x2f4[0xd] = '\0';
-    this_ptr->field6_0x2f4[0xe] = '\0';
-    this_ptr->field6_0x2f4[0xf] = '\0';
+  if ((0.0 < *(float *)(this_ptr->field7_0x2f4 + 0xc)) &&
+     (fVar3 = *(float *)(this_ptr->field7_0x2f4 + 0xc) - in_stack_00000008,
+     *(float *)(this_ptr->field7_0x2f4 + 0xc) = fVar3, fVar3 < 0.0)) {
+    this_ptr->field7_0x2f4[0xc] = '\0';
+    this_ptr->field7_0x2f4[0xd] = '\0';
+    this_ptr->field7_0x2f4[0xe] = '\0';
+    this_ptr->field7_0x2f4[0xf] = '\0';
   }
   iVar2._0_1_ = this_ptr->carried_by_actor;
-  iVar2._1_1_ = this_ptr->field8_0x305[0];
-  iVar2._2_1_ = this_ptr->field8_0x305[1];
-  iVar2._3_1_ = this_ptr->field8_0x305[2];
+  iVar2._1_1_ = this_ptr->field9_0x305[0];
+  iVar2._2_1_ = this_ptr->field9_0x305[1];
+  iVar2._3_1_ = this_ptr->field9_0x305[2];
   if (((iVar2 == 0) && (this_ptr->weapon_state == 0)) && (0.0 < this_ptr->sim_timer)) {
     fVar3 = this_ptr->sim_timer - in_stack_00000008;
     this_ptr->sim_timer = fVar3;
     if (fVar3 < 0.0) {
       this_ptr->sim_timer = 0.0;
     }
-    core_box_cpp_CBox_process_FUN_0041e2f0((CBox *)(this_ptr->field8_0x305 + 3),in_stack_00000008);
+    core_box_cpp_CBox_process_FUN_0041e2f0((CBox *)(this_ptr->field9_0x305 + 3),in_stack_00000008);
     (this_ptr->base_actor).location.position.x =
-         (((CBox *)(this_ptr->field8_0x305 + 3))->position).x;
-    (this_ptr->base_actor).location.position.y = *(float *)(this_ptr->field8_0x305 + 7);
-    (this_ptr->base_actor).location.position.z = *(float *)(this_ptr->field8_0x305 + 0xb);
+         (((CBox *)(this_ptr->field9_0x305 + 3))->position).x;
+    (this_ptr->base_actor).location.position.y = *(float *)(this_ptr->field9_0x305 + 7);
+    (this_ptr->base_actor).location.position.z = *(float *)(this_ptr->field9_0x305 + 0xb);
     pCVar1 = &(this_ptr->base_actor).orient;
-    if (pCVar1 != (COrientation *)(this_ptr->field8_0x305 + 0xf)) {
-      pCVar1->pitch = *(float *)(this_ptr->field8_0x305 + 0xf);
-      (this_ptr->base_actor).orient.bank = *(float *)(this_ptr->field8_0x305 + 0x13);
-      (this_ptr->base_actor).orient.heading = *(float *)(this_ptr->field8_0x305 + 0x17);
+    if (pCVar1 != (COrientation *)(this_ptr->field9_0x305 + 0xf)) {
+      pCVar1->pitch = *(float *)(this_ptr->field9_0x305 + 0xf);
+      (this_ptr->base_actor).orient.bank = *(float *)(this_ptr->field9_0x305 + 0x13);
+      (this_ptr->base_actor).orient.heading = *(float *)(this_ptr->field9_0x305 + 0x17);
     }
   }
-  core_actor_cpp_CDemonActor_FUN_00408c10(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base_actor);
   if (((*(CHero **)&this_ptr->carried_by_actor == g_HeroActors[g_LocalHeroIndex]) &&
       (g_CGamePtr->auto_save_blocked != 0)) && (this_ptr->can_attach_light != 0)) {
-    (*(this_ptr->base_actor).metadata.vtable[1].processFootstepAtOffset)
+    (*(this_ptr->base_actor).vtable[1].processFootstepAtOffset)
               (&this_ptr->base_actor,unaff_retaddr,(float)this_ptr);
     if (0.0 < g_CDemonLightInstance.volumetric_intensity) {
       pCStack00000018 = &g_CDemonLightInstance;
@@ -154,7 +154,7 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr)
 // 005ee1ae: MOV dword ptr [EAX + 0x8],ECX
 // 005ee1b1: PUSH EBX
 //   Label: LAB_005ee1b1
-// 005ee1b2: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 005ee1b2: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 005ee1b7: MOV EAX,[0x02db87d0]
 //   XREF to: 02db87d0 (READ)

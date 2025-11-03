@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_boneguy.cpp_ExplodeAndSoundSomething_FUN_0041d4d0()
 // Function calls:
-//   core_boneguy.cpp_CBoneGuy_explode2_FUN_0041d680
+//   core_boneguy.cpp_CBoneGuy_FUN_0041d680
 //   core_enemy.cpp_FUN_004a9f10
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
@@ -18,19 +18,21 @@ void core_boneguy_cpp_ExplodeAndSoundSomething_FUN_0041d4d0(void)
 
 {
   float fVar1;
-  int in_stack_00000004;
+  CBoneGuy *in_stack_00000004;
   int in_stack_0000000c;
   
   sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-  fVar1 = *(float *)(in_stack_00000004 + 0x243c) - *(float *)(in_stack_0000000c + 4);
-  *(float *)(in_stack_00000004 + 0x243c) = fVar1;
+  fVar1 = (in_stack_00000004->base_enemy).base_character.hit_points -
+          *(float *)(in_stack_0000000c + 4);
+  (in_stack_00000004->base_enemy).base_character.hit_points = fVar1;
   if (fVar1 <= 0.0) {
-    *(undefined4 *)(in_stack_00000004 + 0x243c) = 0x3f800000;
-    core_boneguy_cpp_CBoneGuy_explode2_FUN_0041d680();
+    (in_stack_00000004->base_enemy).base_character.hit_points = 1.0;
+    core_boneguy_cpp_CBoneGuy_FUN_0041d680(in_stack_00000004);
     core_enemy_cpp_FUN_004a9f10();
     return;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+            (&(in_stack_00000004->base_enemy).base_character.model.motion_controller);
   core_enemy_cpp_FUN_004a9f10();
   return;
 }
@@ -59,7 +61,7 @@ void core_boneguy_cpp_ExplodeAndSoundSomething_FUN_0041d4d0(void)
 //   XREF to: 0041d523 (CONDITIONAL_JUMP)
 // 0041d500: PUSH EBX
 // 0041d501: MOV dword ptr [EBX + 0x243c],0x3f800000
-// 0041d50b: CALL core_boneguy.cpp_CBoneGuy_explode2_FUN_0041d680
+// 0041d50b: CALL core_boneguy.cpp_CBoneGuy_FUN_0041d680
 //   XREF to: 0041d680 (UNCONDITIONAL_CALL)
 // 0041d510: ADD ESP,0x4
 // 0041d513: MOV ECX,dword ptr [ESP + 0xc]

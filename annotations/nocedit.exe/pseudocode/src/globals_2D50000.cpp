@@ -4,7 +4,7 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x2D50000
 // =============================================================================
 
-CSpark[256] g_CFireEffectSparks = {};
-CMuzzleFlash[20] g_CFireEffectMuzzleFlashes = {};
-CGlassParticle[256] g_CFireEffectGlassParticles = {};
+CSpark[256] g_SparkPool = {};
+CMuzzleFlash[20] g_MuzzleFlashPool = {};
+CGlassParticle[256] g_GlassParticlePool = {};
 

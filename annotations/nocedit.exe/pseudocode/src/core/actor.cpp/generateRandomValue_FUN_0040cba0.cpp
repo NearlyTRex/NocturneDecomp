@@ -4,10 +4,10 @@
 // Convention: __cdecl
 // Signature: uint core_actor.cpp_generateRandomValue_FUN_0040cba0(void)
 // Cross-references:
-//   core_actor.cpp_FUN_0040cbc0 (0040cbc0) at 0040cbd1 [UNCONDITIONAL_CALL]
-//   core_actor.cpp_FUN_0040cc70 (0040cc70) at 0040ccea [UNCONDITIONAL_CALL]
-//   core_actor.cpp_FUN_0040cd10 (0040cd10) at 0040cd21 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_getRandomFloat_FUN_0040cbc0 (0040cbc0) at 0040cbd1 [UNCONDITIONAL_CALL]
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10 (0040cc10) at 0040cc2e [UNCONDITIONAL_CALL]
+//   core_actor.cpp_getRandomInt_FUN_0040cc70 (0040cc70) at 0040ccea [UNCONDITIONAL_CALL]
+//   core_actor.cpp_randomChance_FUN_0040cd10 (0040cd10) at 0040cd21 [UNCONDITIONAL_CALL]
 // Globals:
 //   uint g_RandomSeedValue
 

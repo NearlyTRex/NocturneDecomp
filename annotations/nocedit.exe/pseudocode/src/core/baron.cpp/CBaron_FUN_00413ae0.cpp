@@ -17,7 +17,7 @@
 //   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_motion.cpp_CMotionController_FUN_0052e700
-//   core_skeleton.cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
 //   crt_math.c_round_FUN_005fe6b0
 //   engine_3d.c_setRenderAlpha_FUN_00406d80
 //   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
@@ -35,13 +35,14 @@
 int __cdecl core_baron_cpp_CBaron_FUN_00413ae0(CBaron *this_ptr)
 
 {
-  uint uVar1;
-  int iVar2;
+  CDeformableModelInstance *pCVar1;
+  uint uVar2;
+  int iVar3;
   CBoundingBox3D *this_ptr_00;
+  undefined4 extraout_EDX;
   BADSPACEBASE *in_ESP;
   int unaff_EDI;
-  float10 fVar3;
-  double value;
+  float10 fVar4;
   int in_stack_00000014;
   float in_stack_ffffffc4;
   float fStack_2c;
@@ -51,23 +52,23 @@ int __cdecl core_baron_cpp_CBaron_FUN_00413ae0(CBaron *this_ptr)
      ) {
     return 0;
   }
-  iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0();
-  uVar1 = *(uint *)(iVar2 + 0x24);
-  value = (double)core_motion_cpp_CMotionController_FUN_0052dab0();
-  iVar2 = *(int *)(SUB84(value,0) + 100);
-  if (uVar1 < 6) {
-    if (uVar1 != 5) goto LAB_00413b59;
+  pCVar1 = &(this_ptr->field0_0x0).base_character.model;
+  iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(&pCVar1->motion_controller);
+  uVar2 = *(uint *)(iVar3 + 0x24);
+  iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(&pCVar1->motion_controller);
+  if (uVar2 < 6) {
+    if (uVar2 != 5) goto LAB_00413b59;
 LAB_00413b43:
-    fVar3 = ((float10)in_stack_ffffffc4 * (float10)_DAT_00615091) / (float10)iVar2;
+    fVar4 = ((float10)in_stack_ffffffc4 * (float10)_DAT_00615091) / (float10)*(int *)(iVar3 + 100);
   }
   else {
-    if (uVar1 < 7) goto LAB_00413b43;
-    if (uVar1 != 7) goto LAB_00413b59;
-    fVar3 = (float10)iVar2;
-    fVar3 = ((fVar3 - (float10)in_stack_ffffffec) * (float10)_DAT_00615091) / fVar3;
+    if (uVar2 < 7) goto LAB_00413b43;
+    if (uVar2 != 7) goto LAB_00413b59;
+    fVar4 = (float10)*(int *)(iVar3 + 100);
+    fVar4 = ((fVar4 - (float10)in_stack_ffffffec) * (float10)_DAT_00615091) / fVar4;
   }
-  crt_math_c_round_FUN_005fe6b0(value);
-  unaff_EDI = (int)ROUND(fVar3);
+  crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,iVar3));
+  unaff_EDI = (int)ROUND(fVar4);
 LAB_00413b59:
   if (*(int *)(this_ptr->field1_0x1fbd4 + 0xfc) != 0) {
     engine_3d_c_setRenderAlpha_FUN_00406d80((unaff_EDI * 2) / 3);
@@ -81,26 +82,27 @@ LAB_00413b59:
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-  this_ptr_00 = (*((this_ptr->field0_0x0).base_character.base_actor.metadata.vtable)->getBoundingBox
-                )((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffd0);
+  this_ptr_00 = (*((this_ptr->field0_0x0).base_character.base_actor.vtable)->getBoundingBox)
+                          ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffd0);
   fStack_2c = 5.99082e-39;
-  iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-  if (iVar2 != 0) {
+  iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
+  if (iVar3 != 0) {
     fStack_2c = 5.990856e-39;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
               (g_CDemonRendererPtr,in_stack_00000014);
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr,1);
+    pCVar1 = &(this_ptr->field0_0x0).base_character.model;
     fStack_2c = 5.990945e-39;
-    core_skeleton_cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150();
+    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150(pCVar1);
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr);
     if (DAT_02f43978 != 0) {
-      core_motion_cpp_CMotionController_FUN_0052e700();
+      core_motion_cpp_CMotionController_FUN_0052e700(&pCVar1->motion_controller);
     }
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
-  return iVar2;
+  return iVar3;
 }
 
 
@@ -253,7 +255,7 @@ LAB_00413b59:
 // 00413c43: PUSH -0x1
 // 00413c45: LEA ESI,[EBX + 0x158]
 // 00413c4b: PUSH ESI
-// 00413c4c: CALL core_skeleton.cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150
+// 00413c4c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
 //   XREF to: 005a0150 (UNCONDITIONAL_CALL)
 // 00413c51: ADD ESP,0x14
 // 00413c54: MOV EAX,[0x006703ec]

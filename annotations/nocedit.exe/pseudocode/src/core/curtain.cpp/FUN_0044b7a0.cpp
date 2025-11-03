@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_curtain.cpp_FUN_0044b7a0()
 // Globals:
-//   undefined4 DAT_00619de2
+//   double DOUBLE_00619de2 = 4
 //   CGame* g_CGamePtr = 02d81a9c
 //   CKeys* g_CKeysPtr = 02dcd7d4
 //   undefined4 g_CGameInstance.delta_time_float
@@ -14,7 +14,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_curtain.cpp_FUN_0044b7a0(undefined4 param_1) */
 
 void core_curtain_cpp_FUN_0044b7a0(void)
@@ -65,11 +64,11 @@ void core_curtain_cpp_FUN_0044b7a0(void)
     in_stack_00000004[1].actor_name[9] = -0x34;
     in_stack_00000004[1].actor_name[10] = -0x34;
     in_stack_00000004[1].actor_name[0xb] = '=';
-    (*((in_stack_00000004->metadata).vtable)->setup)(in_stack_00000004);
+    (*in_stack_00000004->vtable->setup)(in_stack_00000004);
     return;
   }
   core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(in_stack_00000004);
-  (*((in_stack_00000004->metadata).vtable)->setup)(in_stack_00000004);
+  (*in_stack_00000004->vtable->setup)(in_stack_00000004);
   return;
 }
 

@@ -1,10 +1,10 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0
 // Address: 005a03b0
 // Address Range: [[005a03b0, 005a0401]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0()
+// Convention: __cdecl
+// Signature: void core_skeleton.cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0(CDeformableModelInstance * this_ptr)
 // Cross-references:
-//   core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0 (0052bcb0) at 0052c292 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052c292 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_skeleton_cpp_0064ee91
 //   TerminatedCString s_CDeformableModelInstance_0064eea6
@@ -17,21 +17,20 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_skeleton.cpp_CDeformableModelInstance_outlinePolygons(undefined4
-   param_1) */
-
-void core_skeleton_cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0(void)
+void __cdecl
+core_skeleton_cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0
+          (CDeformableModelInstance *this_ptr)
 
 {
-  int in_stack_00000004;
+  CDeformableModel *this_ptr_00;
   
-  if (*(int *)(in_stack_00000004 + 0x2230) < 0) {
+  if (this_ptr->field6_0x2230 < 0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0xd33;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModelInstance::outlinePolygons called but LOD is not set!");
   }
-  core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-  core_skeleton_cpp_CDeformableModel_FUN_0059b5a0();
+  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
+  core_skeleton_cpp_CDeformableModel_FUN_0059b5a0(this_ptr_00);
   return;
 }
 

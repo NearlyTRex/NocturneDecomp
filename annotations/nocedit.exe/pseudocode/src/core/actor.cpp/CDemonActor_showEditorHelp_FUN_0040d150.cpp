@@ -11,7 +11,7 @@
 //   core_flame.cpp_FUN_004cb0a0 (004cb0a0) at 004cb0ad [UNCONDITIONAL_CALL]
 //   core_flies.cpp_FUN_004ccc70 (004ccc70) at 004ccc7d [UNCONDITIONAL_CALL]
 //   core_frankgen.cpp_FUN_004d2740 (004d2740) at 004d274b [UNCONDITIONAL_CALL]
-//   core_glass.cpp_FUN_004eb600 (004eb600) at 004eb60d [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_showEditorHelp_FUN_004eb600 (004eb600) at 004eb60d [UNCONDITIONAL_CALL]
 //   core_grave.cpp_FUN_004eead0 (004eead0) at 004eeadd [UNCONDITIONAL_CALL]
 //   core_ladder.cpp_FUN_00502e50 (00502e50) at 00502e5d [UNCONDITIONAL_CALL]
 //   core_lever.cpp_FUN_00505390 (00505390) at 0050539d [UNCONDITIONAL_CALL]
@@ -32,8 +32,8 @@
 //   TerminatedCString s_Position_to_ground_00614406
 //   TerminatedCString s_G_0061441a
 // Function calls:
-//   core_actor.cpp_SomethingElseWithStrings1_FUN_0040d1e0
-//   core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+//   core_actor.cpp_drawTextLine_FUN_0040d240
+//   core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
 
 #include "nocturne.h"
 
@@ -41,26 +41,17 @@ void __cdecl
 core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(CDemonActor *this_ptr,int *y_pos)
 
 {
-  char *pcStack0000000c;
-  char *pcStack00000010;
-  char *pcStack00000014;
-  
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
-  pcStack0000000c = "  Home/PgUp bank";
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
-  pcStack00000010 = "Use right mouse button to move to the mouse cursor.";
-  pcStack0000000c = (char *)y_pos;
+  core_actor_cpp_drawTextLine_FUN_0040d240(y_pos,"Use standard slew keys to move:");
+  core_actor_cpp_drawTextLine_FUN_0040d240(y_pos,"  Arrow keys move around");
+  core_actor_cpp_drawTextLine_FUN_0040d240(y_pos,"  Q/A move up/down");
+  core_actor_cpp_drawTextLine_FUN_0040d240(y_pos,"  End/PgDn rotate hozontally (heading)");
+  core_actor_cpp_drawTextLine_FUN_0040d240(y_pos,"  F5/F8 Pitch");
+  core_actor_cpp_drawTextLine_FUN_0040d240(y_pos,"  Home/PgUp bank");
   *y_pos = *y_pos + 0xb;
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
-  pcStack00000014 = "Position to ground.";
-  pcStack00000010 = "G";
-  pcStack0000000c = (char *)y_pos;
+  core_actor_cpp_drawTextLine_FUN_0040d240(y_pos,"Use right mouse button to move to the mouse cursor.");
   *y_pos = *y_pos + 0xb;
-  core_actor_cpp_SomethingElseWithStrings1_FUN_0040d1e0();
+  core_actor_cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
+            (y_pos,"G","Position to ground.");
   return;
 }
 
@@ -73,37 +64,37 @@ core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(CDemonActor *this_ptr,int
 // 0040d155: PUSH 0x614340
 //   XREF to: 00614340 (DATA)
 // 0040d15a: PUSH EBX
-// 0040d15b: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 0040d15b: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 0040d160: ADD ESP,0x8
 // 0040d163: PUSH 0x614360
 //   XREF to: 00614360 (DATA)
 // 0040d168: PUSH EBX
-// 0040d169: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 0040d169: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 0040d16e: ADD ESP,0x8
 // 0040d171: PUSH 0x614379
 //   XREF to: 00614379 (DATA)
 // 0040d176: PUSH EBX
-// 0040d177: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 0040d177: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 0040d17c: ADD ESP,0x8
 // 0040d17f: PUSH 0x61438c
 //   XREF to: 0061438c (DATA)
 // 0040d184: PUSH EBX
-// 0040d185: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 0040d185: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 0040d18a: ADD ESP,0x8
 // 0040d18d: PUSH 0x6143b3
 //   XREF to: 006143b3 (DATA)
 // 0040d192: PUSH EBX
-// 0040d193: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 0040d193: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 0040d198: ADD ESP,0x8
 // 0040d19b: PUSH 0x6143c1
 //   XREF to: 006143c1 (DATA)
 // 0040d1a0: PUSH EBX
-// 0040d1a1: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 0040d1a1: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 0040d1a6: ADD ESP,0x8
 // 0040d1a9: MOV EDX,dword ptr [EBX]
@@ -112,7 +103,7 @@ core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(CDemonActor *this_ptr,int
 // 0040d1b0: ADD EDX,0xb
 // 0040d1b3: PUSH EBX
 // 0040d1b4: MOV dword ptr [EBX],EDX
-// 0040d1b6: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 0040d1b6: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 0040d1bb: ADD ESP,0x8
 // 0040d1be: PUSH 0x614406
@@ -123,7 +114,7 @@ core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(CDemonActor *this_ptr,int
 // 0040d1ca: ADD ECX,0xb
 // 0040d1cd: PUSH EBX
 // 0040d1ce: MOV dword ptr [EBX],ECX
-// 0040d1d0: CALL core_actor.cpp_SomethingElseWithStrings1_FUN_0040d1e0
+// 0040d1d0: CALL core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
 //   XREF to: 0040d1e0 (UNCONDITIONAL_CALL)
 // 0040d1d5: ADD ESP,0xc
 // 0040d1d8: POP EBX

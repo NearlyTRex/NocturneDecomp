@@ -19,18 +19,15 @@ void __cdecl core_fire_cpp_CGlassParticle_process_FUN_004c20f0(CGlassParticle *t
   int iVar2;
   
   fVar1 = g_CGamePtr->delta_time_float;
-  *(float *)(this_ptr->field1_0x38 + 0x1c) = *(float *)(this_ptr->field1_0x38 + 0x1c) + fVar1;
-  *(float *)(this_ptr->field1_0x38 + 0x20) = *(float *)(this_ptr->field1_0x38 + 0x20) + fVar1;
+  (this_ptr->euler_angles).x = (this_ptr->euler_angles).x + fVar1;
+  (this_ptr->euler_angles).y = (this_ptr->euler_angles).y + fVar1;
   core_particle_cpp_CParticle_process_FUN_00545760(&this_ptr->base);
-  iVar2 = *(int *)this_ptr->field1_0x38 - g_GlobalDeltaTimeInt / 6;
-  *(int *)this_ptr->field1_0x38 = iVar2;
+  iVar2 = this_ptr->lifetime - g_GlobalDeltaTimeInt / 6;
+  this_ptr->lifetime = iVar2;
   if (-1 < iVar2) {
     return;
   }
-  this_ptr->field1_0x38[0] = '\0';
-  this_ptr->field1_0x38[1] = '\0';
-  this_ptr->field1_0x38[2] = '\0';
-  this_ptr->field1_0x38[3] = '\0';
+  this_ptr->lifetime = 0;
   (this_ptr->base).lifetime_remaining = 0.0;
   return;
 }

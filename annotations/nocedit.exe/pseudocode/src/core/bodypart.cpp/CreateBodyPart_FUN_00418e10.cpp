@@ -27,7 +27,7 @@
 //   int g_CurrentLineNumber
 //   CDemonMission g_CDemonMissionInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_bodypart.cpp_CBodyPart_ctor_FUN_00419010
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -79,7 +79,7 @@ CBodyPart * core_bodypart_cpp_CreateBodyPart_FUN_00418e10(void)
     (this_ptr->base_actor).orient.bank = in_stack_00000008[1];
     (this_ptr->base_actor).orient.heading = in_stack_00000008[2];
   }
-  core_actor_cpp_CDemonActor_FUN_00408c10(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base_actor);
   if (in_stack_0000000c == (float *)0x0) {
     core_actor_cpp_getRandomFloat_FUN_0040cc10(0.7853982,1.5707964);
     fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
@@ -170,7 +170,7 @@ CBodyPart * core_bodypart_cpp_CreateBodyPart_FUN_00418e10(void)
 // 00418e94: MOV dword ptr [EAX + 0x8],EDX
 // 00418e97: PUSH EBX
 //   Label: LAB_00418e97
-// 00418e98: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 00418e98: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 00418e9d: ADD ESP,0x4
 // 00418ea0: TEST ESI,ESI

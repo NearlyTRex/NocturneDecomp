@@ -12,8 +12,8 @@
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
-//   core_box.cpp_CBox_FUN_00420180
 //   core_box.cpp_CBox_setupCorners_FUN_0041dd20
+//   core_box.cpp_CBox_setupVelocities_FUN_00420180
 //   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 //   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
 //   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
@@ -25,13 +25,12 @@ void __cdecl core_fire_cpp_CToss_create_FUN_004c3ee0(CToss *this_ptr)
 
 {
   int iVar1;
-  CKeyFramedModel *pCVar2;
   BADSPACEBASE *in_ESP;
   float unaff_ESI;
   undefined4 in_stack_00000008;
   CVector3f *in_stack_00000018;
   CVector3f *in_stack_0000001c;
-  CVector3f local_20;
+  CVector3f *in_stack_00000024;
   
   *(undefined4 *)this_ptr->field0_0x0 = in_stack_00000008;
   *(CVector3f **)(this_ptr->field0_0x0 + 0x3dc) = in_stack_00000018;
@@ -57,16 +56,14 @@ void __cdecl core_fire_cpp_CToss_create_FUN_004c3ee0(CToss *this_ptr)
   }
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(this_ptr->field0_0x0 + 4));
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)(this_ptr->field0_0x0 + 4));
-  local_20.x = (pCVar2->bounds_max).x - (pCVar2->bounds_min).x;
-  local_20.y = (pCVar2->bounds_max).y - (pCVar2->bounds_min).y;
-  local_20.z = (pCVar2->bounds_max).z - (pCVar2->bounds_min).z;
+  core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
+            ((CKeyFramedModelInstance *)(this_ptr->field0_0x0 + 4));
   core_box_cpp_CBox_setupCorners_FUN_0041dd20
-            ((CBox *)(this_ptr->field0_0x0 + 0x180),in_stack_00000018,in_stack_0000001c,&local_20,
-             unaff_ESI);
-  local_20.x = (float)&stack0xfffffff0;
-  core_box_cpp_CBox_FUN_00420180((CBox *)(this_ptr->field0_0x0 + 0x180));
+            ((CBox *)(this_ptr->field0_0x0 + 0x180),in_stack_00000018,in_stack_0000001c,
+             (CVector3f *)&stack0xffffffe0,unaff_ESI);
+  core_box_cpp_CBox_setupVelocities_FUN_00420180
+            ((CBox *)(this_ptr->field0_0x0 + 0x180),in_stack_00000024,(CVector3f *)&stack0xfffffff0)
+  ;
   return;
 }
 
@@ -166,7 +163,7 @@ void __cdecl core_fire_cpp_CToss_create_FUN_004c3ee0(CToss *this_ptr)
 // 004c3fcc: PUSH EBX
 // 004c3fcd: MOV dword ptr [ESP + 0x18],ECX
 //   XREF to: Stack[-0x20] (WRITE)
-// 004c3fd1: CALL core_box.cpp_CBox_FUN_00420180
+// 004c3fd1: CALL core_box.cpp_CBox_setupVelocities_FUN_00420180
 //   XREF to: 00420180 (UNCONDITIONAL_CALL)
 // 004c3fd6: ADD ESP,0xc
 // 004c3fd9: ADD ESP,0x1c

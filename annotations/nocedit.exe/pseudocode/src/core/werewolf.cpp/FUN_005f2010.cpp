@@ -21,17 +21,15 @@ void core_werewolf_cpp_FUN_005f2010
                CDemonActor *param_5,undefined4 param_6,char *param_7)
 
 {
-  int iVar1;
-  CDemonActor *pCVar2;
+  CDemonActor *pCVar1;
   char *format;
   
-  pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790(param_5,g_CWerewolfClassInfo.name_hash);
-  iVar1 = *(int *)pCVar2[0x8d].metadata.field3_0x1c;
-  if (iVar1 == 0) {
+  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(param_5,g_CWerewolfClassInfo.name_hash);
+  if (pCVar1[0x8d].field25_0x144 == 0) {
     format = "@Train" + 1;
   }
   else {
-    if (iVar1 != 1) {
+    if (pCVar1[0x8d].field25_0x144 != 1) {
       crt_stdio_c_sprintf_FUN_005fdbd0(param_7,"Train Alpha",unaff_EBX);
       return;
     }

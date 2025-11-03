@@ -185,7 +185,7 @@ void core_platfrm_cpp_CPlatform_load_FUN_0054dbc0(void)
         if (pCVar1[3].field19_0x114 != 0) {
           in_stack_00000028 = "attach actor";
           core_actor_cpp_serializeActor_FUN_0040b870
-                    ((CDemonActor *)((int)&in_stack_00000004[3].metadata + iVar2 * 0x34 + -0x14),
+                    ((CDemonActor *)(&in_stack_00000004[3].field19_0x114 + iVar2 * 0xd),
                      "attach actor");
         }
         iVar2 = iVar2 + 1;

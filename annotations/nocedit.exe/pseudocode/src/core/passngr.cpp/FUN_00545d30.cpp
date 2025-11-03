@@ -8,17 +8,17 @@
 //   TerminatedCString s_transform_0063e7ce
 // Function calls:
 //   core_actor.cpp_createActorByName_FUN_0040c430
-//   core_morph.cpp_CallToFreeSomething1_FUN_0052b430
 //   core_morph.cpp_CMorph_getReady_FUN_0052b680
+//   core_morph.cpp_FUN_0052b430
 //   core_motion.cpp_CMotionController_FUN_0052dde0
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
 //   core_npc.cpp_CNPC_FUN_00544870
-//   core_skeleton.cpp_CDeformableModel_GetModelPtrSomethingMaybe_FUN_0059df80
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -28,10 +28,12 @@ void core_passngr_cpp_FUN_00545d30(void)
 
 {
   COrientation *pCVar1;
+  CDeformableModelInstance *this_ptr;
   char cVar2;
   int iVar3;
   CCharacter *pCVar4;
   CDemonActor *pCVar5;
+  CMotionList *this_ptr_00;
   char *pcVar6;
   CNPC *in_stack_00000004;
   
@@ -61,27 +63,39 @@ void core_passngr_cpp_FUN_00545d30(void)
       *(float *)(iVar3 + 0x34) = (in_stack_00000004->base_character).base_actor.orient.bank;
       *(float *)(iVar3 + 0x38) = (in_stack_00000004->base_character).base_actor.orient.heading;
     }
-    core_skeleton_cpp_FUN_005a0840();
+    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+              ((CDeformableModelInstance *)
+               (in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));
     *(undefined4 *)(in_stack_00000004[1].base_character.base_actor.scale.x + 0x261c) =
-         *(undefined4 *)(in_stack_00000004[1].base_character.model.padding_0x0 + 0xbe4);
+         *(undefined4 *)(in_stack_00000004[1].base_character.model.field3_0x508 + 0x6dc);
     (*(code *)**(undefined4 **)(in_stack_00000004[1].base_character.base_actor.scale.x + 0x154))();
-    core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
-    core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460();
-    core_motion_cpp_CMotionController_FUN_0052dde0();
+    this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                            ((CMotionController *)
+                             (in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));
+    core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_00);
+    core_motion_cpp_CMotionController_FUN_0052dde0
+              ((CMotionController *)(in_stack_00000004[1].base_character.base_actor.scale.x + 0x158)
+              );
   }
-  core_skeleton_cpp_CDeformableModel_GetModelPtrSomethingMaybe_FUN_0059df80();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40();
-  core_skeleton_cpp_CDeformableModel_GetModelPtrSomethingMaybe_FUN_0059df80();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40();
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
-  core_morph_cpp_CallToFreeSomething1_FUN_0052b430();
-  core_morph_cpp_CallToFreeSomething1_FUN_0052b430();
-  core_morph_cpp_CMorph_getReady_FUN_0052b680();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059df80
+            ((CDeformableModelInstance *)
+             (in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40
+            ((CDeformableModelInstance *)
+             (in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));
+  this_ptr = &(in_stack_00000004->base_character).model;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059df80(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr);
+  core_morph_cpp_FUN_0052b430();
+  core_morph_cpp_FUN_0052b430();
+  core_morph_cpp_CMorph_getReady_FUN_0052b680
+            ((CMorph *)&in_stack_00000004[1].base_character.base_actor.scale.y);
   pCVar4 = &in_stack_00000004[1].base_character;
-  (pCVar4->model).padding_0x0[0xbe0] = '\0';
-  (pCVar4->model).padding_0x0[0xbe1] = '\0';
-  (pCVar4->model).padding_0x0[0xbe2] = '\0';
-  (pCVar4->model).padding_0x0[0xbe3] = '\0';
+  (pCVar4->model).field3_0x508[0x6d8] = '\0';
+  (pCVar4->model).field3_0x508[0x6d9] = '\0';
+  (pCVar4->model).field3_0x508[0x6da] = '\0';
+  (pCVar4->model).field3_0x508[0x6db] = '\0';
   core_skeleton_cpp_CDeformableModelInstance_FUN_0059e000();
   core_skeleton_cpp_CDeformableModelInstance_FUN_0059e000();
   return;
@@ -107,7 +121,7 @@ void core_passngr_cpp_FUN_00545d30(void)
 //   Label: LAB_00545d4e
 // 00545d54: ADD EAX,0x158
 // 00545d59: PUSH EAX
-// 00545d5a: CALL core_skeleton.cpp_CDeformableModel_GetModelPtrSomethingMaybe_FUN_0059df80
+// 00545d5a: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
 //   XREF to: 0059df80 (UNCONDITIONAL_CALL)
 // 00545d5f: MOV EAX,dword ptr [EBX + 0x1f810]
 // 00545d65: ADD ESP,0x4
@@ -118,7 +132,7 @@ void core_passngr_cpp_FUN_00545d30(void)
 // 00545d73: ADD ESP,0x4
 // 00545d76: LEA ESI,[EBX + 0x158]
 // 00545d7c: PUSH ESI
-// 00545d7d: CALL core_skeleton.cpp_CDeformableModel_GetModelPtrSomethingMaybe_FUN_0059df80
+// 00545d7d: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
 //   XREF to: 0059df80 (UNCONDITIONAL_CALL)
 // 00545d82: ADD ESP,0x4
 // 00545d85: PUSH ESI
@@ -126,14 +140,14 @@ void core_passngr_cpp_FUN_00545d30(void)
 //   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
 // 00545d8b: ADD ESP,0x4
 // 00545d8e: PUSH ESI
-// 00545d8f: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 00545d8f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 00545d94: ADD ESP,0x4
 // 00545d97: PUSH ESI
 // 00545d98: PUSH 0x0
 // 00545d9a: LEA EDI,[EBX + 0x1f814]
 // 00545da0: PUSH EDI
-// 00545da1: CALL core_morph.cpp_CallToFreeSomething1_FUN_0052b430
+// 00545da1: CALL core_morph.cpp_FUN_0052b430
 //   XREF to: 0052b430 (UNCONDITIONAL_CALL)
 // 00545da6: MOV EAX,dword ptr [EBX + 0x1f810]
 // 00545dac: ADD ESP,0xc
@@ -141,7 +155,7 @@ void core_passngr_cpp_FUN_00545d30(void)
 // 00545db4: PUSH EAX
 // 00545db5: PUSH 0x1
 // 00545db7: PUSH EDI
-// 00545db8: CALL core_morph.cpp_CallToFreeSomething1_FUN_0052b430
+// 00545db8: CALL core_morph.cpp_FUN_0052b430
 //   XREF to: 0052b430 (UNCONDITIONAL_CALL)
 // 00545dbd: ADD ESP,0xc
 // 00545dc0: PUSH EDI
@@ -216,7 +230,7 @@ void core_passngr_cpp_FUN_00545d30(void)
 // 00545e70: MOV EAX,dword ptr [EBX + 0x1f810]
 // 00545e76: ADD EAX,0x158
 // 00545e7b: PUSH EAX
-// 00545e7c: CALL core_skeleton.cpp_FUN_005a0840
+// 00545e7c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00545e81: MOV EAX,dword ptr [EBX + 0x1f810]
 // 00545e87: FLD float ptr [EBX + 0x20444]

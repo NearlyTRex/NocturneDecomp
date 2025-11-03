@@ -7,12 +7,12 @@
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bc346 [UNCONDITIONAL_CALL]
 // Globals:
 //   void* switchdataD_005c5b6c = 005c5c17
-//   undefined4 s_eDoorMoveNone_returned_by_checkD_00653ddc
+//   TerminatedCString s_eDoorMoveNone_returned_b_00653ddc
 //   TerminatedCString s_eDoorMoveNone_returned_b_00653e19
 //   TerminatedCString s_CBodyPart_00653e56
 //   TerminatedCString s_CBodyPart_00653e61
-//   undefined4 DAT_00653e6c
-//   undefined4 DAT_00653e74
+//   double DOUBLE_00653e6c = 0.999900000000000
+//   double DOUBLE_00653e74 = 0.990000000000000
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   CEditorTools g_CEditorToolsPtr
 // Function calls:
@@ -35,12 +35,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 actors_hero_stranger.cpp_CStranger_FUN_005c5b90(undefined4 param_1) */
-
 void core_stranger_cpp_CStranger_FUN_005c5b90(void)
 
 {
+  CMotionController *this_ptr;
   int iVar1;
   float fVar2;
   undefined4 uVar3;
@@ -50,9 +48,10 @@ void core_stranger_cpp_CStranger_FUN_005c5b90(void)
   if ((((*(int *)(in_stack_00000004 + 0xbe38) != 0) && (*(int *)(in_stack_00000004 + 0x1fc38) == 0))
       && (iVar1 = core_stranger_cpp_CStranger_FUN_005c5e80(), iVar1 == 0)) &&
      (*(int *)(in_stack_00000004 + 0x1fbd4) == 0)) {
-    core_motion_cpp_CMotionController_FUN_0052dd20();
-    fVar2 = (float)core_motion_cpp_CMotionController_FUN_0052dd20();
-    if ((float)_DAT_00653e6c < fVar2 + unaff_ESI) {
+    this_ptr = (CMotionController *)(in_stack_00000004 + 0x158);
+    core_motion_cpp_CMotionController_FUN_0052dd20(this_ptr);
+    fVar2 = core_motion_cpp_CMotionController_FUN_0052dd20(this_ptr);
+    if ((float)DOUBLE_00653e6c < fVar2 + unaff_ESI) {
       uVar3 = core_hero_cpp_FUN_004f2d70();
       switch(uVar3) {
       case 0:
@@ -65,7 +64,7 @@ void core_stranger_cpp_CStranger_FUN_005c5b90(void)
       case 1:
         if (*(int *)(in_stack_00000004 + 0x1fb9c) != 0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                    (g_CEditorToolsPtr,"?eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s" + 1,
+                    (g_CEditorToolsPtr,"eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s",
                      *(int *)(in_stack_00000004 + 0x1fb9c));
           *(undefined4 *)(in_stack_00000004 + 0xbe38) = 0;
           return;
@@ -74,17 +73,18 @@ void core_stranger_cpp_CStranger_FUN_005c5b90(void)
         return;
       case 2:
       case 3:
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                  ((CMotionController *)(in_stack_00000004 + 0x158));
         *(undefined4 *)(in_stack_00000004 + 0x1fc38) = 5;
         *(undefined4 *)(in_stack_00000004 + 0xbe38) = 0;
         return;
       case 4:
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr);
         *(undefined4 *)(in_stack_00000004 + 0x1fc38) = 5;
         *(undefined4 *)(in_stack_00000004 + 0xbe38) = 0;
         return;
       case 5:
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr);
         *(undefined4 *)(in_stack_00000004 + 0x1fc38) = 5;
         *(undefined4 *)(in_stack_00000004 + 0xbe38) = 0;
         return;
@@ -113,16 +113,18 @@ void core_stranger_cpp_CStranger_FUN_005c5b90(void)
       }
       iVar1 = core_hero_cpp_FUN_004f3120();
       if (iVar1 != 0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                  ((CMotionController *)(in_stack_00000004 + 0x158));
         return;
       }
       if ((*(int *)(in_stack_00000004 + 0x24f8) == 0) &&
-         (fVar2 = (float)core_charactr_cpp_CCharacter_FUN_0042e840(), (float)_DAT_00653e74 < fVar2))
-      {
+         (fVar2 = (float)core_charactr_cpp_CCharacter_FUN_0042e840(), (float)DOUBLE_00653e74 < fVar2
+         )) {
         iVar1 = core_hero_cpp_FUN_004f2f50();
         if (iVar1 != 0) {
           *(undefined4 *)(in_stack_00000004 + 0xbe38) = 0;
-          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                    ((CMotionController *)(in_stack_00000004 + 0x158));
           return;
         }
         iVar1 = core_stranger_cpp_CStranger_FUN_005c1fe0();

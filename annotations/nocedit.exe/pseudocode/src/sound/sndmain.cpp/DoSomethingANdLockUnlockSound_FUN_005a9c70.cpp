@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_DoSomethingANdLockUnlockSound_FUN_005a9c70()
 // Cross-references:
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ab6ab [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ab6ab [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bdd07 [UNCONDITIONAL_CALL]
 // Function calls:
 //   sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00

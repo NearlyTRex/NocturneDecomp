@@ -4,31 +4,30 @@
 // Convention: unknown
 // Signature: undefined core_boneguy.cpp_FUN_0041b770()
 // Globals:
-//   undefined4 DAT_00615f1d
-//   undefined4 DAT_00615f25
+//   float FLOAT_00615f1d = 0.5
+//   double DOUBLE_00615f25 = 0.400000000000000
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_actor.cpp_CVector_ctor_FUN_00410340
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-undefined4 core_boneguy_cpp_FUN_0041b770(void)
+CVector3f * core_boneguy_cpp_FUN_0041b770(void)
 
 {
   BADSPACEBASE *in_ESP;
-  undefined4 in_stack_00000004;
+  CVector3f *in_stack_00000004;
   CDemonActor *in_stack_00000008;
   float fStack_34;
   
-  (*((in_stack_00000008->metadata).vtable)->getBoundingBox)
-            (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffc0);
+  (*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,(CBoundingBox3D *)&stack0xffffffc0)
+  ;
   fStack_34 = 6.035172e-39;
   core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)&stack0xfffffff8);
   core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)&stack0xfffffff0);
   fStack_34 = 6.035336e-39;
-  core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000008);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (in_stack_00000008,in_stack_00000004,(CVector3f *)&stack0xfffffff4);
   return in_stack_00000004;
 }
 
@@ -93,7 +92,7 @@ undefined4 core_boneguy_cpp_FUN_0041b770(void)
 // 0041b802: FSTP float ptr [ESP + 0x24]
 // 0041b806: PUSH ESI
 // 0041b807: FSTP float ptr [ESP + 0x2c]
-// 0041b80b: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0041b80b: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0041b810: ADD ESP,0xc
 // 0041b813: MOV EAX,EBX

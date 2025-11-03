@@ -4,15 +4,14 @@
 // Convention: unknown
 // Signature: undefined core_crossbow.cpp_FUN_00449540()
 // Cross-references:
-//   core_crossbow.cpp_FUN_00448e00 (00448e00) at 00448e45 [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_renderOpaque_FUN_00448e00 (00448e00) at 00448e45 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00619ba2
-//   undefined4 DAT_00619baa
-//   undefined4 DAT_00619bb2
+//   double DOUBLE_00619ba2 = 0.666000000000000
+//   double DOUBLE_00619baa = 1.50150150150150
+//   double DOUBLE_00619bb2 = 11
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_weapon_crossbow.cpp_FUN_00449540(undefined4 param_1) */
 
 float core_crossbow_cpp_FUN_00449540(void)
@@ -20,8 +19,8 @@ float core_crossbow_cpp_FUN_00449540(void)
 {
   int in_stack_00000004;
   
-  return ((float)_DAT_00619ba2 - *(float *)(in_stack_00000004 + 0x300)) * (float)_DAT_00619baa *
-         (float)_DAT_00619bb2;
+  return ((float)DOUBLE_00619ba2 - *(float *)(in_stack_00000004 + 0x300)) * (float)DOUBLE_00619baa *
+         (float)DOUBLE_00619bb2;
 }
 
 

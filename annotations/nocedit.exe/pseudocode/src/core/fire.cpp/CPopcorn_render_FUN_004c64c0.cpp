@@ -27,7 +27,7 @@
 //   CVector3i g_BillboardCameraUp
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
-//   core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+//   core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
 //   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 //   engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50
@@ -66,9 +66,7 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
   undefined4 local_30;
   undefined4 local_2c;
   undefined4 local_28;
-  int iStack_24;
-  int iStack_20;
-  int iStack_1c;
+  CVector3i CStack_24;
   CVector3i local_18;
   
   bVar2 = 0;
@@ -136,13 +134,14 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
   g_RenderVertexBuffer[3].u = 7.34684e-40;
   g_RenderVertexBuffer[0].w_recip = (float)(0xffff - (int)g_PerspectiveReciprocal);
   g_RenderVertexBuffer[3].v = 7.34684e-40;
-  iStack_24 = (int)ROUND((this_ptr->base).position.x * FLOAT_0065dca8);
-  iStack_20 = (int)ROUND((this_ptr->base).position.y * FLOAT_0065dca8);
-  iStack_1c = (int)ROUND((this_ptr->base).position.z * FLOAT_0065dca8);
+  CStack_24.x = (int)ROUND((this_ptr->base).position.x * FLOAT_0065dca8);
+  CStack_24.y = (int)ROUND((this_ptr->base).position.y * FLOAT_0065dca8);
+  CStack_24.z = (int)ROUND((this_ptr->base).position.z * FLOAT_0065dca8);
   g_RenderVertexBuffer[1].w_recip = g_RenderVertexBuffer[0].w_recip;
   g_RenderVertexBuffer[2].w_recip = g_RenderVertexBuffer[0].w_recip;
   g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;
-  core_set_cpp_CDemonSet_CallLightVertexColor_FUN_0056e110(g_CDemonSetPtr);
+  core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
+            (g_CDemonSetPtr,&CStack_24,&g_BillboardCameraUp,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
   SStack_a0.surface_normal.D = 0;
   SStack_a0.surface_normal.C = 0;
@@ -432,7 +431,7 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
 //   XREF to: 006810c8 (READ)
 // 004c6794: PUSH ESI
 //   XREF to: 03114278 (DATA)
-// 004c6795: CALL core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+// 004c6795: CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   XREF to: 0056e110 (UNCONDITIONAL_CALL)
 // 004c679a: ADD ESP,0x14
 // 004c679d: PUSH 0x1

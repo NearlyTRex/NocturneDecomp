@@ -29,7 +29,7 @@ CLightCone * __cdecl core_litecone_cpp_FUN_00506b10(CLightCone *this_ptr)
   char *pcVar4;
   
   pCVar2 = (CLightCone *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
-  (pCVar2->base_actor).metadata.vtable = &PTR_core_litecone_cpp_FUN_00660bb4;
+  (pCVar2->base_actor).vtable = &PTR_core_litecone_cpp_FUN_00660bb4;
   pcVar3 = "none";
   pCVar2->field1_0x158[0] = '\0';
   pCVar2->field1_0x158[1] = '\0';

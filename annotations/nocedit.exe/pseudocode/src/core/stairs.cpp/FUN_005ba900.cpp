@@ -12,8 +12,8 @@
 //   undefined4 g_CGameInstance.delta_time_float
 //   void* g_CKeysPtr
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
 //   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_stairs.cpp_FUN_005ba700
 
 #include "nocturne.h"
@@ -134,7 +134,7 @@ void core_stairs_cpp_FUN_005ba900(void)
        (in_stack_0000008c - *(float *)(in_stack_00000004[1].actor_name + 4)) +
        (in_stack_00000004->location).position.z;
   (in_stack_00000004->location).position.y = (in_stack_00000090 - fVar1) + fVar2;
-  core_actor_cpp_CDemonActor_FUN_00408c10(in_stack_00000004);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
   core_stairs_cpp_FUN_005ba700();
   return;
 }
@@ -257,7 +257,7 @@ void core_stairs_cpp_FUN_005ba900(void)
 // 005baa4c: FXCH
 // 005baa4e: FSTP float ptr [EBX + 0x28]
 // 005baa51: FSTP float ptr [EBX + 0x24]
-// 005baa54: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 005baa54: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 005baa59: ADD ESP,0x4
 // 005baa5c: PUSH EBX

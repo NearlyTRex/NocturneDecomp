@@ -20,7 +20,7 @@
 //   core_dest.cpp_FUN_0046fd50 (0046fd50) at 0046fd89 [UNCONDITIONAL_CALL]
 //   core_dracbrid.cpp_FUN_00484410 (00484410) at 004855f1 [UNCONDITIONAL_CALL]
 //   core_enemy.cpp_FUN_004aa0f0 (004aa0f0) at 004aa130 [UNCONDITIONAL_CALL]
-//   core_event.cpp_CEvent_EventReadingFromFile_FUN_004ae140 (004ae140) at 004af58f [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004ae140 (004ae140) at 004af58f [UNCONDITIONAL_CALL]
 //   core_filmreel.cpp_FUN_004be7b0 (004be7b0) at 004be7ba [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d4d80 (004d4d80) at 004d4ff4 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d5550 (004d5550) at 004d56cd [UNCONDITIONAL_CALL]
@@ -83,7 +83,7 @@ int __cdecl core_actor_cpp_isOfClass_FUN_0040c6d0(CDemonActor *actor_ptr,char *c
   if (actor_ptr == (CDemonActor *)0x0) {
     return (int)actor_ptr;
   }
-  type_ptr = (*((actor_ptr->metadata).vtable)->getActorType)(actor_ptr);
+  type_ptr = (*actor_ptr->vtable->getActorType)(actor_ptr);
   iVar1 = core_actor_cpp_matchesClassName_FUN_0040c740(type_ptr,class_name);
   return iVar1;
 }

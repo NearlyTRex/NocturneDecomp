@@ -14,8 +14,8 @@
 //   undefined4 g_CDemonCameraInstance.base.position.y
 //   undefined4 g_CDemonCameraInstance.base.position.z
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ea0
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
 //   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
 //   core_dcamera.cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480
@@ -38,45 +38,46 @@ CDemonActor * core_msnedit_cpp_FUN_0053c340(void)
   int in_stack_0000000c;
   float in_stack_00000010;
   undefined8 local_4c;
-  CBoundingBox3D local_44;
-  int local_28;
-  int local_24;
-  CVector3f local_20;
+  undefined1 local_44 [28];
+  undefined1 local_28 [20];
   float local_14;
   
   if ((((in_stack_00000004[5] < in_stack_00000008) && (in_stack_00000004[6] < in_stack_0000000c)) &&
       (in_stack_00000008 < in_stack_00000004[7] + -1)) &&
      (in_stack_0000000c < in_stack_00000004[8] + -1)) {
-    local_28 = g_CDemonCameraInstance.base.position.x;
-    local_24 = g_CDemonCameraInstance.base.position.y;
-    local_20.x = (float)g_CDemonCameraInstance.base.position.z;
+    local_28._0_4_ = g_CDemonCameraInstance.base.position.x;
+    local_28._4_4_ = g_CDemonCameraInstance.base.position.y;
+    local_28._8_4_ = g_CDemonCameraInstance.base.position.z;
     core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480
               (&g_CDemonCameraInstance,(CVector3f *)&local_4c,in_stack_00000008,in_stack_0000000c);
     local_14 = (float)_DAT_0063c86c /
-               SQRT(local_44.min.y * local_44.min.y +
-                    local_4c._4_4_ * local_4c._4_4_ + local_44.min.x * local_44.min.x);
-    local_44.min.x = local_44.min.x * local_14;
-    local_44.min.y = local_44.min.y * local_14;
+               SQRT((float)local_44._4_4_ * (float)local_44._4_4_ +
+                    local_4c._4_4_ * local_4c._4_4_ + (float)local_44._0_4_ * (float)local_44._0_4_)
+    ;
+    local_44._0_4_ = (float)local_44._0_4_ * local_14;
+    local_44._4_4_ = (float)local_44._4_4_ * local_14;
     pCVar2 = (CDemonActor *)0x0;
     local_4c = (double)CONCAT44(local_4c._4_4_ * local_14,(float)local_4c);
     for (actor_ptr = (CDemonActor *)in_stack_00000004[0x152]; actor_ptr != (CDemonActor *)0x0;
-        actor_ptr = (actor_ptr->metadata).next_actor) {
-      if (((*in_stack_00000004 == (actor_ptr->location).area_id) &&
-          (*(int *)((actor_ptr->metadata).field3_0x1c + 4) == 0)) &&
-         ((g_DisableMouseHitOnBarrier == 0 ||
-          (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CBarrier"), iVar1 == 0)
-          ))) {
-        (*((actor_ptr->metadata).vtable)->getBoundingBox)
-                  (actor_ptr,(CBoundingBox3D *)&stack0xffffffa0);
-        core_actor_cpp_CDemonActor_FUN_00408f10(actor_ptr);
-        core_actor_cpp_CDemonActor_FUN_00408ea0(actor_ptr);
-        local_44.min.x =
+        actor_ptr = actor_ptr->next_actor) {
+      if (((*in_stack_00000004 == (actor_ptr->location).area_id) && (actor_ptr->field26_0x148 == 0))
+         && ((g_DisableMouseHitOnBarrier == 0 ||
+             (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CBarrier"),
+             iVar1 == 0)))) {
+        (*actor_ptr->vtable->getBoundingBox)(actor_ptr,(CBoundingBox3D *)&stack0xffffffa0);
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                  (actor_ptr,(CVector3f *)local_28,(CVector3f *)&stack0xfffffff0);
+        core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+                  (actor_ptr,(CVector3f *)(local_28 + 0x10),(CVector3f *)(local_44 + 0x14));
+        local_44._0_4_ =
              core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
-                       (&local_44,&local_20,(CVector3f *)&local_14,(CVector3f *)0x0);
-        local_4c = (double)local_44.min.x;
-        if (((0.0 < local_4c) && (local_44.min.x <= in_stack_00000010)) && (local_4c <= 1.0)) {
+                       ((CBoundingBox3D *)local_44,(CVector3f *)(local_28 + 8),
+                        (CVector3f *)&local_14,(CVector3f *)0x0);
+        local_4c = (double)(float)local_44._0_4_;
+        if (((0.0 < local_4c) && ((float)local_44._0_4_ <= in_stack_00000010)) && (local_4c <= 1.0))
+        {
           pCVar2 = actor_ptr;
-          in_stack_00000010 = local_44.min.x;
+          in_stack_00000010 = (float)local_44._0_4_;
         }
       }
     }
@@ -244,7 +245,7 @@ CDemonActor * core_msnedit_cpp_FUN_0053c340(void)
 // 0053c461: LEA EAX,[ESP + 0x34]
 // 0053c465: PUSH EAX
 // 0053c466: PUSH EBX
-// 0053c467: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 0053c467: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 0053c46c: ADD ESP,0xc
 // 0053c46f: LEA EAX,[ESP + 0x24]
@@ -252,7 +253,7 @@ CDemonActor * core_msnedit_cpp_FUN_0053c340(void)
 // 0053c474: LEA EAX,[ESP + 0x40]
 // 0053c478: PUSH EAX
 // 0053c479: PUSH EBX
-// 0053c47a: CALL core_actor.cpp_CDemonActor_FUN_00408ea0
+// 0053c47a: CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 //   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
 // 0053c47f: ADD ESP,0xc
 // 0053c482: PUSH 0x0

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void shape_edittool.cpp_CStrList_sort_FUN_004a2ec0(CStrList * this_ptr)
 // Cross-references:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040f749 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040f749 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_DeleteActors_FUN_0053df90 (0053df90) at 0053e05f [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053b510 (0053b510) at 0053b753 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053b9f0 (0053b9f0) at 0053ba3f [UNCONDITIONAL_CALL]

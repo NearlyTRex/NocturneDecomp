@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90(CDemonActor * this_ptr)
 // Cross-references:
-//   core_actor.cpp_CDemonActor_FUN_0040b050 (0040b050) at 0040b062 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CDemonActor_load_FUN_0040b050 (0040b050) at 0040b062 [UNCONDITIONAL_CALL]
 //   core_actor.cpp_CDemonActor_save_FUN_0040af30 (0040af30) at 0040af45 [UNCONDITIONAL_CALL]
 //   core_actor.cpp_handleActorPropertyParseError_FUN_0040b210 (0040b210) at 0040b27e [UNCONDITIONAL_CALL]
 //   core_enemy.cpp_FUN_004aa0f0 (004aa0f0) at 004aa100 [UNCONDITIONAL_CALL]
@@ -29,7 +29,7 @@ char * __cdecl core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(CDemonA
 {
   CDemonActorType *pCVar1;
   
-  pCVar1 = (*((this_ptr->metadata).vtable)->getActorType)(this_ptr);
+  pCVar1 = (*this_ptr->vtable->getActorType)(this_ptr);
   return pCVar1->class_name;
 }
 

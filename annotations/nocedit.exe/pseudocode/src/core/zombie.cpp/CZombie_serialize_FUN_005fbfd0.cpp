@@ -42,7 +42,8 @@ void __cdecl core_zombie_cpp_CZombie_serialize_FUN_005fbfd0(CZombie *this_ptr)
                 (&(this_ptr->base_enemy).guard_distance,"guardDistance");
     }
     core_actor_cpp_serializeMotionState_FUN_0040b9f0
-              (&(this_ptr->base_enemy).base_character.model,"motion state");
+              (&(this_ptr->base_enemy).base_character.model.motion_controller,
+               "motion state");
   }
   if (2 < g_CZombieClassVersion) {
     core_actor_cpp_serializePartStatus_FUN_0040bae0

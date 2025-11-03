@@ -17,11 +17,11 @@
 //   undefined4 g_CWayPointClassInfo.name_hash
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 //   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
-//   core_actor.cpp_renderActorBoundingBox_FUN_0040d940
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_path.cpp_CPathMap_CallToQueuePop_FUN_00548750
 //   core_path.cpp_FUN_00547fc0
 //   core_path.cpp_FUN_00548500
@@ -50,13 +50,9 @@ int __cdecl core_waypoint_cpp_CWaypoint_FUN_005ebf70(CWayPoint *this_ptr)
   CLocation *pCStack_84;
   CVector3i CStack_5c;
   undefined1 auStack_4c [12];
-  float fStack_40;
-  float fStack_3c;
-  float fStack_38;
+  CVector3f aCStack_40 [2];
   float fStack_28;
-  float fStack_24;
-  float fStack_20;
-  float fStack_1c;
+  CVector3f CStack_24;
   float fStack_18;
   float local_14;
   
@@ -69,19 +65,19 @@ int __cdecl core_waypoint_cpp_CWaypoint_FUN_005ebf70(CWayPoint *this_ptr)
     if (pCVar2 == (CDemonActor *)0x0) {
       return 0;
     }
-    core_actor_cpp_renderActorBoundingBox_FUN_0040d940((CDemonActor *)this_ptr,3);
+    core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940((CDemonActor *)this_ptr,3);
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-    pCVar3 = (*((this_ptr->base_trigger).base_actor.metadata.vtable)->getBoundingBox)
+    pCVar3 = (*((this_ptr->base_trigger).base_actor.vtable)->getBoundingBox)
                        ((CDemonActor *)this_ptr,(CBoundingBox3D *)&pCStack_84);
     fStack_28 = (pCVar3->min).x + (pCVar3->max).x;
-    fStack_24 = (pCVar3->min).y + (pCVar3->max).y;
-    fStack_40 = fStack_28 * FLOAT_00657583;
-    fStack_20 = (pCVar3->min).z + (pCVar3->max).z;
-    fStack_3c = fStack_24 * FLOAT_00657583;
-    fStack_38 = fStack_20 * FLOAT_00657583;
-    auStack_4c._0_4_ = (undefined4)ROUND(fStack_40 * _DAT_00665460);
-    auStack_4c._4_4_ = (undefined4)ROUND(fStack_3c * _DAT_00665460);
-    auStack_4c._8_4_ = (undefined4)ROUND(fStack_38 * _DAT_00665460);
+    CStack_24.x = (pCVar3->min).y + (pCVar3->max).y;
+    aCStack_40[0].x = fStack_28 * FLOAT_00657583;
+    CStack_24.y = (pCVar3->min).z + (pCVar3->max).z;
+    aCStack_40[0].y = CStack_24.x * FLOAT_00657583;
+    aCStack_40[0].z = CStack_24.y * FLOAT_00657583;
+    auStack_4c._0_4_ = (undefined4)ROUND(aCStack_40[0].x * _DAT_00665460);
+    auStack_4c._4_4_ = (undefined4)ROUND(aCStack_40[0].y * _DAT_00665460);
+    auStack_4c._8_4_ = (undefined4)ROUND(aCStack_40[0].z * _DAT_00665460);
     iVar1 = 0;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,(CVector3i *)auStack_4c);
@@ -94,24 +90,26 @@ int __cdecl core_waypoint_cpp_CWaypoint_FUN_005ebf70(CWayPoint *this_ptr)
           if ((this_ptr == in_stack_00000014) || (this_ptr_00 == in_stack_00000014)) {
             g_ActiveRenderColor = 0xfa;
           }
-          pCVar3 = (*((this_ptr_00->base_trigger).base_actor.metadata.vtable)->getBoundingBox)
+          pCVar3 = (*((this_ptr_00->base_trigger).base_actor.vtable)->getBoundingBox)
                              ((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&pCStack_84);
-          fStack_1c = (pCVar3->min).x + (pCVar3->max).x;
+          CStack_24.z = (pCVar3->min).x + (pCVar3->max).x;
           fStack_18 = (pCVar3->min).y + (pCVar3->max).y;
-          fStack_40 = fStack_1c * FLOAT_00657583;
-          fStack_3c = fStack_18 * FLOAT_00657583;
+          aCStack_40[0].x = CStack_24.z * FLOAT_00657583;
+          aCStack_40[0].y = fStack_18 * FLOAT_00657583;
           local_14 = (pCVar3->min).z + (pCVar3->max).z;
-          fStack_38 = local_14 * FLOAT_00657583;
-          core_actor_cpp_CDemonActor_FUN_00408ec0((CDemonActor *)this_ptr_00);
-          pCVar4 = core_actor_cpp_CDemonActor_FUN_00408f10((CDemonActor *)this_ptr);
+          aCStack_40[0].z = local_14 * FLOAT_00657583;
+          pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                             ((CDemonActor *)this_ptr_00,(CVector3f *)&stack0xfffffff0,aCStack_40);
+          pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                             ((CDemonActor *)this_ptr,&CStack_24,pCVar4);
           if ((CVector3f *)(auStack_4c + 8) != pCVar4) {
             auStack_4c._8_4_ = pCVar4->x;
-            fStack_40 = pCVar4->y;
-            fStack_3c = pCVar4->z;
+            aCStack_40[0].x = pCVar4->y;
+            aCStack_40[0].y = pCVar4->z;
           }
           CStack_5c.x = (int)ROUND((float)auStack_4c._8_4_ * _DAT_00665460);
-          CStack_5c.y = (int)ROUND(fStack_40 * _DAT_00665460);
-          CStack_5c.z = (int)ROUND(fStack_3c * _DAT_00665460);
+          CStack_5c.y = (int)ROUND(aCStack_40[0].x * _DAT_00665460);
+          CStack_5c.z = (int)ROUND(aCStack_40[0].y * _DAT_00665460);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&CStack_5c);
           engine_3d_c_drawLine2DFromIndices_FUN_00407cf0(0,1);
@@ -200,7 +198,7 @@ int __cdecl core_waypoint_cpp_CWaypoint_FUN_005ebf70(CWayPoint *this_ptr)
 //   XREF to: 005ebf8e (CONDITIONAL_JUMP)
 // 005ebfcf: PUSH 0x3
 // 005ebfd1: PUSH ESI
-// 005ebfd2: CALL core_actor.cpp_renderActorBoundingBox_FUN_0040d940
+// 005ebfd2: CALL core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 //   XREF to: 0040d940 (UNCONDITIONAL_CALL)
 // 005ebfd7: ADD ESP,0x8
 // 005ebfda: PUSH ESI
@@ -390,14 +388,14 @@ int __cdecl core_waypoint_cpp_CWaypoint_FUN_005ebf70(CWayPoint *this_ptr)
 // 005ec1c9: FSTP float ptr [ESP + 0x60]
 // 005ec1cd: PUSH EBX
 // 005ec1ce: FSTP float ptr [ESP + 0x68]
-// 005ec1d2: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005ec1d2: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005ec1d7: ADD ESP,0xc
 // 005ec1da: PUSH EAX
 // 005ec1db: LEA EAX,[ESP + 0x70]
 // 005ec1df: PUSH EAX
 // 005ec1e0: PUSH ESI
-// 005ec1e1: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 005ec1e1: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 005ec1e6: MOV EBX,EAX
 // 005ec1e8: LEA EAX,[ESP + 0x54]

@@ -31,7 +31,7 @@
 //   CVector3i g_BillboardCameraUp
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
-//   core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+//   core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   crt_math.c_round_FUN_005fe6b0
 //   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
 //   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -72,9 +72,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   CVector3i local_50;
   CVector3i local_44;
   CVector3i local_38;
-  int iStack_2c;
-  int iStack_28;
-  int iStack_24;
+  CVector3i CStack_2c;
   int local_20;
   float afStack_1c [3];
   int iStack_10;
@@ -150,14 +148,15 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
                     ((double)CONCAT44(g_CameraLoadImageReadBuffer + 0x771b0,afStack_1c[2]));
   g_RenderVertexBuffer[3].v = (float)((ulonglong)dVar4 >> 0x20);
   g_RenderVertexBuffer[0].w_recip = (float)(int)ROUND(fVar3);
-  iStack_2c = (int)ROUND((this_ptr->base).position.x * FLOAT_0065dca8);
-  iStack_28 = (int)ROUND((this_ptr->base).position.y * FLOAT_0065dca8);
-  iStack_24 = (int)ROUND((this_ptr->base).position.z * FLOAT_0065dca8);
+  CStack_2c.x = (int)ROUND((this_ptr->base).position.x * FLOAT_0065dca8);
+  CStack_2c.y = (int)ROUND((this_ptr->base).position.y * FLOAT_0065dca8);
+  CStack_2c.z = (int)ROUND((this_ptr->base).position.z * FLOAT_0065dca8);
   g_RenderVertexBuffer[1].w_recip = g_RenderVertexBuffer[0].w_recip;
   g_RenderVertexBuffer[2].w_recip = g_RenderVertexBuffer[0].w_recip;
   g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;
   afStack_1c[2] = g_RenderVertexBuffer[0].w_recip;
-  core_set_cpp_CDemonSet_CallLightVertexColor_FUN_0056e110(g_CDemonSetPtr);
+  core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
+            (g_CDemonSetPtr,&CStack_2c,&g_BillboardCameraUp,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
   SStack_a8.surface_normal.D = 0;
   SStack_a8.surface_normal.C = 0;
@@ -463,7 +462,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
 //   XREF to: 006810c8 (READ)
 // 004c6b3e: PUSH ESI
 //   XREF to: 03114278 (DATA)
-// 004c6b3f: CALL core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+// 004c6b3f: CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   XREF to: 0056e110 (UNCONDITIONAL_CALL)
 // 004c6b44: ADD ESP,0x14
 // 004c6b47: PUSH 0x1

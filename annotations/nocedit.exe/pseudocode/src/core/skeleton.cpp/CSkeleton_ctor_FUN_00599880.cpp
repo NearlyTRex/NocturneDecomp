@@ -6,7 +6,7 @@
 // Globals:
 //   WatcomTypeInfo g_CVectorTypeInfo
 // Function calls:
-//   core_morph.cpp_FUN_0052cd50
+//   core_motion.cpp_CMotionList_ctor_FUN_0052cd50
 //   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 
@@ -15,21 +15,22 @@
 CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_ctor_FUN_00599880(CSkeleton *this_ptr)
 
 {
-  int iVar1;
-  undefined4 *puVar2;
+  int extraout_EAX;
+  undefined4 *puVar1;
+  CMotionList *in_stack_0000000c;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x10);
-  iVar1 = core_morph_cpp_FUN_0052cd50();
-  puVar2 = (undefined4 *)
+  core_motion_cpp_CMotionList_ctor_FUN_0052cd50(in_stack_0000000c);
+  puVar1 = (undefined4 *)
            crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     ((void *)(iVar1 + 0x2937c),100,&g_CVectorTypeInfo);
-  puVar2[-0x389] = 0;
-  puVar2[-4] = 0;
-  puVar2[-3] = 0;
-  puVar2[-2] = 0;
-  puVar2[-1] = 0;
-  *puVar2 = 0xc7c34f80;
-  return (CSkeleton *)(puVar2 + -0xa4df);
+                     ((void *)(extraout_EAX + 0x2937c),100,&g_CVectorTypeInfo);
+  puVar1[-0x389] = 0;
+  puVar1[-4] = 0;
+  puVar1[-3] = 0;
+  puVar1[-2] = 0;
+  puVar1[-1] = 0;
+  *puVar1 = 0xc7c34f80;
+  return (CSkeleton *)(puVar1 + -0xa4df);
 }
 
 
@@ -41,7 +42,7 @@ CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_ctor_FUN_00599880(CSkeleton *thi
 // 0059988a: MOV EAX,dword ptr [ESP + 0x4]
 //   XREF to: Stack[0x4] (READ)
 // 0059988e: PUSH EAX
-// 0059988f: CALL core_morph.cpp_FUN_0052cd50
+// 0059988f: CALL core_motion.cpp_CMotionList_ctor_FUN_0052cd50
 //   XREF to: 0052cd50 (UNCONDITIONAL_CALL)
 // 00599894: ADD ESP,0x4
 // 00599897: PUSH 0x6598c0

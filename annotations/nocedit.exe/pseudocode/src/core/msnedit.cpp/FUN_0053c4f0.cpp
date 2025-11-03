@@ -46,7 +46,6 @@
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 core_msnedit.cpp_FUN_0053c4f0(undefined4 param_1) */
 
 void core_msnedit_cpp_FUN_0053c4f0(void)
 
@@ -80,7 +79,7 @@ void core_msnedit_cpp_FUN_0053c4f0(void)
               ((CEdScrollBar *)&DAT_02f797e4,iVar1 + -0xb,1,iVar1 + -1,0xee);
     _DAT_02f797ec = 0xf0;
     _DAT_02f797e8 = DAT_02f7c510;
-    _DAT_02f797f0 = DAT_02f7c510 / DAT_02f7a028;
+    _DAT_02f797f0 = DAT_02f7c510 / _DAT_02f7a028;
     shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&DAT_02f797e4);
     core_actor_cpp_CActorPropertyList_FUN_0040e770();
     if ((((g_ActiveButton == (CEdButton *)0x0) && (0x140 < g_MouseX)) && (g_MouseX <= iVar1 + -0xc))

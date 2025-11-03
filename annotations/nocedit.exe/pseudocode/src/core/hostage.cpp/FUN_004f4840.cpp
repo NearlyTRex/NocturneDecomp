@@ -14,7 +14,7 @@
 //   CDemonActor_vtable PTR_core_hostage.cpp_NPCSFromZombieTown_FUN_0065fb34
 // Function calls:
 //   core_npc.cpp_FUN_005447e0
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -27,9 +27,9 @@ CHostage * __cdecl core_hostage_cpp_FUN_004f4840(CHostage *this_ptr)
   char *pcVar4;
   
   pCVar2 = (CHostage *)core_npc_cpp_FUN_005447e0(&this_ptr->base_npc);
-  (pCVar2->base_npc).base_character.base_actor.metadata.vtable =
+  (pCVar2->base_npc).base_character.base_actor.vtable =
        &PTR_core_hostage_cpp_NPCSFromZombieTown_FUN_0065fb34;
-  core_skeleton_cpp_FUN_005a0840();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(&(pCVar2->base_npc).base_character.model);
   pCVar2->follow_state = 0;
   pCVar2->hostage_state = 0;
   pcVar3 = "true";
@@ -107,7 +107,7 @@ CHostage * __cdecl core_hostage_cpp_FUN_004f4840(CHostage *this_ptr)
 // 004f485d: PUSH EDI
 // 004f485e: MOV dword ptr [EAX + 0x154],0x65fb34
 //   XREF to: 0065fb34 (DATA)
-// 004f4868: CALL core_skeleton.cpp_FUN_005a0840
+// 004f4868: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004f486d: MOV dword ptr [EBX + 0x1fab4],0x0
 // 004f4877: MOV dword ptr [EBX + 0x1fabc],0x0

@@ -10,7 +10,7 @@
 //   CKeys* g_CKeysPtr = 02dcd7d4
 //   void* g_CKeysPtr
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 
 #include "nocturne.h"
 
@@ -34,7 +34,7 @@ void core_manpuz_cpp_FUN_0050b1d0(void)
   if (iVar1 != 0) {
     (in_stack_00000004->orient).bank = (in_stack_00000004->orient).bank + in_stack_0000002c;
   }
-  core_actor_cpp_CDemonActor_FUN_00408c10(in_stack_00000004);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
   return;
 }
 
@@ -106,7 +106,7 @@ void core_manpuz_cpp_FUN_0050b1d0(void)
 // 0050b244: FSTP float ptr [EBX + 0x34]
 // 0050b247: PUSH EBX
 //   Label: LAB_0050b247
-// 0050b248: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 0050b248: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 0050b24d: ADD ESP,0x4
 // 0050b250: MOV ESP,EBP

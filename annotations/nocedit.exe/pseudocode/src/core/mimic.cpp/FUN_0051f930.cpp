@@ -9,7 +9,7 @@
 //   CHero*[4] g_HeroActors
 //   int g_LocalHeroIndex
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
 //   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
 //   core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0
@@ -19,6 +19,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* Signature: undefined1 actors_enemy_mimic.cpp_FUN_0051f930(undefined4 param_1) */
 
 void core_mimic_cpp_FUN_0051f930(void)
@@ -26,22 +27,22 @@ void core_mimic_cpp_FUN_0051f930(void)
 {
   CHero *pCVar1;
   int iVar2;
+  int extraout_EAX;
   int iVar3;
   CVector3f *pCVar4;
   uint uVar5;
   int iVar6;
-  undefined4 *puVar7;
+  float *pfVar7;
   BADSPACEBASE *in_ESP;
   float fVar8;
   char *pcVar9;
   char *pcVar10;
   float fVar11;
-  float *pfVar12;
   undefined4 unaff_EDI;
-  undefined4 *puVar13;
+  undefined4 *puVar12;
+  float *pfVar13;
   undefined4 *puVar14;
-  float *pfVar15;
-  byte bVar16;
+  byte bVar15;
   float in_stack_00000004;
   float in_stack_00000008;
   float in_stack_0000000c;
@@ -75,62 +76,63 @@ void core_mimic_cpp_FUN_0051f930(void)
   undefined4 uStack_1c;
   int local_14;
   
-  bVar16 = 0;
-  iVar3 = core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-  local_14 = *(int *)(iVar3 + 0x28558);
-  puVar7 = (undefined4 *)((int)in_stack_00000008 + 0x1b0);
+  bVar15 = 0;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820
+            ((CDeformableModelInstance *)((int)in_stack_00000004 + 0x158));
+  local_14 = *(int *)(extraout_EAX + 0x28558);
+  pfVar7 = (float *)((int)in_stack_00000008 + 0x1b0);
   fVar8 = in_stack_00000008;
   fVar11 = in_stack_00000008;
   for (iVar3 = 0; iVar2 = g_LocalHeroIndex, iVar3 < local_14; iVar3 = iVar3 + 1) {
-    pcVar10 = (g_HeroActors[g_LocalHeroIndex]->base_character).model.padding_0x0 +
-              iVar3 * 0x10 + 0x6b0;
-    puVar13 = (undefined4 *)((int)fVar8 + 0x80c + (uint)bVar16 * -8);
-    pcVar9 = pcVar10 + ((uint)bVar16 * -2 + 1) * 4;
+    pcVar10 = (g_HeroActors[g_LocalHeroIndex]->base_character).model.field3_0x508 +
+              iVar3 * 0x10 + 0x1a8;
+    puVar12 = (undefined4 *)((int)fVar8 + 0x80c + (uint)bVar15 * -8);
+    pcVar9 = pcVar10 + ((uint)bVar15 * -2 + 1) * 4;
     *(undefined4 *)((int)fVar8 + 0x808) = *(undefined4 *)pcVar10;
-    puVar14 = puVar13 + (uint)bVar16 * -2 + 1;
-    *puVar13 = *(undefined4 *)pcVar9;
-    *puVar14 = *(undefined4 *)(pcVar9 + ((uint)bVar16 * -2 + 1) * 4);
-    puVar14[(uint)bVar16 * -2 + 1] =
-         *(undefined4 *)(pcVar9 + ((uint)bVar16 * -2 + 1) * 4 + ((uint)bVar16 * -2 + 1) * 4);
-    pcVar10 = (g_HeroActors[iVar2]->base_character).model.padding_0x0 + iVar3 * 0x30 + 0xe80;
-    puVar13 = (undefined4 *)((int)fVar11 + 0xfd8);
+    puVar14 = puVar12 + (uint)bVar15 * -2 + 1;
+    *puVar12 = *(undefined4 *)pcVar9;
+    *puVar14 = *(undefined4 *)(pcVar9 + ((uint)bVar15 * -2 + 1) * 4);
+    puVar14[(uint)bVar15 * -2 + 1] =
+         *(undefined4 *)(pcVar9 + ((uint)bVar15 * -2 + 1) * 4 + ((uint)bVar15 * -2 + 1) * 4);
+    pcVar10 = (g_HeroActors[iVar2]->base_character).model.field3_0x508 + iVar3 * 0x30 + 0x978;
+    puVar12 = (undefined4 *)((int)fVar11 + 0xfd8);
     for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar13 = *(undefined4 *)pcVar10;
-      pcVar10 = pcVar10 + ((uint)bVar16 * -2 + 1) * 4;
-      puVar13 = puVar13 + (uint)bVar16 * -2 + 1;
+      *puVar12 = *(undefined4 *)pcVar10;
+      pcVar10 = pcVar10 + ((uint)bVar15 * -2 + 1) * 4;
+      puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
     }
-    pcVar10 = (g_HeroActors[iVar2]->base_character).model.padding_0x0 + iVar3 * 0xc + 0x58;
-    if ((char *)puVar7 != pcVar10) {
-      *puVar7 = *(undefined4 *)pcVar10;
-      puVar7[1] = *(undefined4 *)(pcVar10 + 4);
-      puVar7[2] = *(undefined4 *)(pcVar10 + 8);
+    pCVar4 = (g_HeroActors[iVar2]->base_character).model.transformed_vertices + iVar3;
+    if ((CVector3f *)pfVar7 != pCVar4) {
+      *pfVar7 = pCVar4->x;
+      pfVar7[1] = pCVar4->y;
+      pfVar7[2] = pCVar4->z;
     }
     fVar8 = (float)((int)fVar8 + 0x10);
     fVar11 = (float)((int)fVar11 + 0x30);
-    puVar7 = puVar7 + 3;
+    pfVar7 = pfVar7 + 3;
   }
   pCVar1 = g_HeroActors[g_LocalHeroIndex];
-  pcVar10 = (pCVar1->base_character).model.padding_0x0 + 0x6a4;
+  pcVar10 = (pCVar1->base_character).model.field3_0x508 + 0x19c;
   if ((char *)((int)in_stack_00000008 + 0x7fc) != pcVar10) {
     *(undefined4 *)((int)in_stack_00000008 + 0x7fc) = *(undefined4 *)pcVar10;
     *(undefined4 *)((int)in_stack_00000008 + 0x800) =
-         *(undefined4 *)((pCVar1->base_character).model.padding_0x0 + 0x6a8);
+         *(undefined4 *)((pCVar1->base_character).model.field3_0x508 + 0x1a0);
     *(undefined4 *)((int)in_stack_00000008 + 0x804) =
-         *(undefined4 *)((pCVar1->base_character).model.padding_0x0 + 0x6ac);
+         *(undefined4 *)((pCVar1->base_character).model.field3_0x508 + 0x1a4);
   }
   *(undefined4 *)((int)in_stack_00000008 + 0x2388) = 0xffffffff;
   iVar3 = *(int *)((g_HeroActors[g_LocalHeroIndex]->base_character).cloth_data + 400);
-  puVar7 = *(undefined4 **)(iVar3 + 0x10c);
-  puVar13 = *(undefined4 **)((int)in_stack_00000008 + 0xc090);
+  puVar12 = *(undefined4 **)(iVar3 + 0x10c);
+  puVar14 = *(undefined4 **)((int)in_stack_00000008 + 0xc090);
   for (uVar5 = (uint)(*(int *)(iVar3 + 0x104) * 0xc) >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-    *puVar13 = *puVar7;
-    puVar7 = puVar7 + (uint)bVar16 * -2 + 1;
-    puVar13 = puVar13 + (uint)bVar16 * -2 + 1;
+    *puVar14 = *puVar12;
+    puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
+    puVar14 = puVar14 + (uint)bVar15 * -2 + 1;
   }
   for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined1 *)puVar13 = *(undefined1 *)puVar7;
-    puVar7 = (undefined4 *)((int)puVar7 + (uint)bVar16 * -2 + 1);
-    puVar13 = (undefined4 *)((int)puVar13 + (uint)bVar16 * -2 + 1);
+    *(undefined1 *)puVar14 = *(undefined1 *)puVar12;
+    puVar12 = (undefined4 *)((int)puVar12 + (uint)bVar15 * -2 + 1);
+    puVar14 = (undefined4 *)((int)puVar14 + (uint)bVar15 * -2 + 1);
   }
   iVar3 = *(int *)((int)in_stack_00000008 + 0x4bdf8);
   if (iVar3 != 0) {
@@ -144,54 +146,54 @@ void core_mimic_cpp_FUN_0051f930(void)
                &(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.location.position,
                (CVector3f *)&(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.orient);
     core_xform_cpp_buildZFlipMatrix_FUN_005f6fa0((CMatrix3x4f *)0x0,(float)&CStack_b8.m[0].y);
-    puVar7 = auStack_7c;
-    puVar13 = &uStack_290;
+    puVar12 = auStack_7c;
+    puVar14 = &uStack_290;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar13 = *puVar7;
-      puVar7 = puVar7 + (uint)bVar16 * -2 + 1;
-      puVar13 = puVar13 + (uint)bVar16 * -2 + 1;
+      *puVar14 = *puVar12;
+      puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
+      puVar14 = puVar14 + (uint)bVar15 * -2 + 1;
     }
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               ((CMatrix3x4f *)(auStack_e4 + 8),(CMatrix3x4f *)(auStack_11c + 0x10),&CStack_28c);
-    pfVar12 = &CStack_21c.m[2].x;
-    pfVar15 = (float *)&stack0xfffffd44;
+    pfVar7 = &CStack_21c.m[2].x;
+    pfVar13 = (float *)&stack0xfffffd44;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *pfVar15 = *pfVar12;
-      pfVar12 = pfVar12 + (uint)bVar16 * -2 + 1;
-      pfVar15 = pfVar15 + (uint)bVar16 * -2 + 1;
+      *pfVar13 = *pfVar7;
+      pfVar7 = pfVar7 + (uint)bVar15 * -2 + 1;
+      pfVar13 = pfVar13 + (uint)bVar15 * -2 + 1;
     }
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               ((CMatrix3x4f *)&stack0xfffffd48,in_stack_fffffd40,in_stack_fffffd44);
-    puVar7 = auStack_1c4;
-    puVar13 = &uStack_258;
+    puVar12 = auStack_1c4;
+    puVar14 = &uStack_258;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar13 = *puVar7;
-      puVar7 = puVar7 + (uint)bVar16 * -2 + 1;
-      puVar13 = puVar13 + (uint)bVar16 * -2 + 1;
+      *puVar14 = *puVar12;
+      puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
+      puVar14 = puVar14 + (uint)bVar15 * -2 + 1;
     }
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_254,in_stack_fffffd48,in_stack_fffffd4c);
-    puVar7 = auStack_190;
-    puVar13 = &local_44;
+    puVar12 = auStack_190;
+    puVar14 = &local_44;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar13 = *puVar7;
-      puVar7 = puVar7 + (uint)bVar16 * -2 + 1;
-      puVar13 = puVar13 + (uint)bVar16 * -2 + 1;
+      *puVar14 = *puVar12;
+      puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
+      puVar14 = puVar14 + (uint)bVar15 * -2 + 1;
     }
     core_xform_cpp_buildXFlipMatrix_FUN_005f6ee0((CMatrix3x4f *)0x0,(float)auStack_40);
-    puVar7 = auStack_15c;
-    puVar13 = &uStack_220;
+    puVar12 = auStack_15c;
+    puVar14 = &uStack_220;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar13 = *puVar7;
-      puVar7 = puVar7 + (uint)bVar16 * -2 + 1;
-      puVar13 = puVar13 + (uint)bVar16 * -2 + 1;
+      *puVar14 = *puVar12;
+      puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
+      puVar14 = puVar14 + (uint)bVar15 * -2 + 1;
     }
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_21c,in_stack_fffffd50,in_stack_fffffd54);
-    puVar7 = auStack_128;
-    puVar13 = &uStack_3c;
+    puVar12 = auStack_128;
+    puVar14 = &uStack_3c;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar13 = *puVar7;
-      puVar7 = puVar7 + (uint)bVar16 * -2 + 1;
-      puVar13 = puVar13 + (uint)bVar16 * -2 + 1;
+      *puVar14 = *puVar12;
+      puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
+      puVar14 = puVar14 + (uint)bVar15 * -2 + 1;
     }
     *(undefined4 *)(in_stack_0000002c + 0x20) = local_2c;
     *(undefined4 *)(in_stack_0000002c + 0x24) = uStack_1c;
@@ -220,7 +222,7 @@ void core_mimic_cpp_FUN_0051f930(void)
 //   XREF to: Stack[0x4] (READ)
 // 0051f941: ADD EAX,0x158
 // 0051f946: PUSH EAX
-// 0051f947: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 0051f947: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0051f94c: ADD ESP,0x4
 // 0051f94f: MOV EAX,dword ptr [EAX + 0x28558]

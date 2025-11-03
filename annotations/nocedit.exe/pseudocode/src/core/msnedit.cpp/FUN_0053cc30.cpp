@@ -28,7 +28,7 @@ void core_msnedit_cpp_FUN_0053cc30(void)
   
   sort_type = in_stack_00000008->item_count;
   for (actor_ptr = *(CDemonActor **)(in_stack_00000004 + 0x548); actor_ptr != (CDemonActor *)0x0;
-      actor_ptr = (actor_ptr->metadata).next_actor) {
+      actor_ptr = actor_ptr->next_actor) {
     if ((((in_stack_00000010 == (char *)0x0) || (*in_stack_00000010 == '\0')) ||
         (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,in_stack_00000010), iVar1 != 0)) &&
        ((in_stack_00000014 == (code *)0x0 || (iVar1 = (*in_stack_00000014)(), iVar1 != 0)))) {

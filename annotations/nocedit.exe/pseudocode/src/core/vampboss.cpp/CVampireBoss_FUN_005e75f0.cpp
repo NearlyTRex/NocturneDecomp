@@ -16,7 +16,7 @@ int __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e75f0(CVampireBoss *this_ptr)
   int *in_stack_00000008;
   
   if (*in_stack_00000008 != 2) {
-    iVar1 = (*(this_ptr->base_enemy).base_character.base_actor.metadata.vtable[1].hasCollision)
+    iVar1 = (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].hasCollision)
                       ((CDemonActor *)this_ptr,unaff_ESI);
     if (iVar1 < 2) {
       if (((*in_stack_00000008 == 1) || (*in_stack_00000008 == 3)) && (this_ptr->form == 2)) {

@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: void core_set.cpp_CDemonSet_FUN_00570f10(CDemonSet * this_ptr)
 // Cross-references:
-//   core_event.cpp_CEvent_EventReadingFromFile_FUN_004ae140 (004ae140) at 004af998 [UNCONDITIONAL_CALL]
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004aaf08 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004aaf08 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004ae140 (004ae140) at 004af998 [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055bd84 [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonLight*[96] g_MasterLightList

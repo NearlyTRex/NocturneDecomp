@@ -25,8 +25,8 @@
 //   TerminatedCString s_Cancel_LOD_selection_006384ca
 //   TerminatedCString s_Oops_go_back_to_editing__006384e0
 //   TerminatedCString s_Accept_or_Cancel_00638503
-//   undefined4 DAT_00638515
-//   undefined4 DAT_0063851d
+//   float FLOAT_00638515 = 0.5
+//   double DOUBLE_0063851d = 0.75
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   int g_WindowWidth = 0x140
@@ -80,8 +80,6 @@
 //   wincore_windll.cpp_clearZBuffer_FUN_005b3ed4
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 undefined4 shape_meshlod_cpp_FUN_0051d990(void)
 
@@ -212,11 +210,11 @@ undefined4 shape_meshlod_cpp_FUN_0051d990(void)
     local_64 = pfVar4[2];
   }
   local_30 = local_78 + fStack_6c;
-  local_60 = local_30 * _DAT_00638515;
+  local_60 = local_30 * FLOAT_00638515;
   local_2c = local_74 + fStack_68;
   fStack_28 = local_70 + local_64;
-  local_5c.min.x = local_2c * _DAT_00638515;
-  local_5c.min.y = fStack_28 * _DAT_00638515;
+  local_5c.min.x = local_2c * FLOAT_00638515;
+  local_5c.min.y = fStack_28 * FLOAT_00638515;
   if (&fStack_9c != &local_60) {
     fStack_9c = local_60;
     local_98 = local_5c.min.x;

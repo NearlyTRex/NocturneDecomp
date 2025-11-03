@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_skeledit.cpp_FUN_0058e3e0()
 // Cross-references:
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00597f44 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597f44 [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 

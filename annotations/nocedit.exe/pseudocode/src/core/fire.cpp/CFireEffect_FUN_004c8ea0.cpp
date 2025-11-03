@@ -7,8 +7,8 @@
 //   core_baron.cpp_FUN_004136b0 (004136b0) at 00413796 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireEffect_FUN_004c8c10 (004c8c10) at 004c8c79 [UNCONDITIONAL_CALL]
 // Globals:
-//   CToss* g_CFireEffectTossesEnd
-//   CCrater[20] g_CFireEffectCraters
+//   CToss* g_TossActiveListHead
+//   CCrater[20] g_CraterPool
 // Function calls:
 //   core_fire.cpp_CCrater_FUN_004c4200
 
@@ -19,13 +19,13 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8ea0(CFireEffect *this_ptr)
 {
   char *pcVar1;
   
-  core_fire_cpp_CCrater_FUN_004c4200(g_CFireEffectCraters + (int)g_CFireEffectTossesEnd);
-  pcVar1 = g_CFireEffectTossesEnd->field0_0x0;
-  g_CFireEffectTossesEnd = (CToss *)(pcVar1 + 1);
+  core_fire_cpp_CCrater_FUN_004c4200(g_CraterPool + (int)g_TossActiveListHead);
+  pcVar1 = g_TossActiveListHead->field0_0x0;
+  g_TossActiveListHead = (CToss *)(pcVar1 + 1);
   if ((int)(pcVar1 + 1) < 0x14) {
     return;
   }
-  g_CFireEffectTossesEnd = (CToss *)0x0;
+  g_TossActiveListHead = (CToss *)0x0;
   return;
 }
 

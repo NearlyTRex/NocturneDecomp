@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined shape_meshlod.cpp_FUN_0051c070()
 // Globals:
-//   undefined4 s_Exporting_%s_00637e25
+//   TerminatedCString s_Exporting_s_00637e25
 //   TerminatedCString s_shape_meshlod_cpp_00637e32
 //   TerminatedCString s_wt_00637e47
 //   TerminatedCString s_shape_meshlod_cpp_00637e4a
@@ -30,7 +30,7 @@ void shape_meshlod_cpp_FUN_0051c070(void)
   char *in_stack_00000008;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"p@Exporting %s" + 2);
+            (g_CEditorToolsPtr,"Exporting %s");
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (in_stack_00000008,(char *)0x0,"wt","..\\shape\\meshlod.cpp",
                         0x133e);

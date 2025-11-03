@@ -18,11 +18,11 @@ core_actor_cpp_CDemonActor_onActorDeleted_FUN_0040d000
   CDemonActor *pCVar1;
   CDemonActor *in_stack_00000014;
   
-  pCVar1 = (*((this_ptr->metadata).vtable)->getCarrier)(this_ptr);
+  pCVar1 = (*this_ptr->vtable->getCarrier)(this_ptr);
   if (pCVar1 != in_stack_00000014) {
     return;
   }
-  (*((this_ptr->metadata).vtable)->onDropped)(this_ptr,(CVector3f *)0x0);
+  (*this_ptr->vtable->onDropped)(this_ptr,(CVector3f *)0x0);
   return;
 }
 

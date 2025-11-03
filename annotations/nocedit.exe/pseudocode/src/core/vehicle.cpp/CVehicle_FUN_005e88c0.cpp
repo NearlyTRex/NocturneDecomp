@@ -9,7 +9,7 @@
 //   CDemonRenderer g_CDemonRendererInstance
 //   undefined4 g_CGameInstance.block_auto_save
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 //   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
@@ -35,6 +35,7 @@ int __cdecl core_vehicle_cpp_CVehicle_FUN_005e88c0(CVehicle *this_ptr)
   CKeyFramedModelInstance *this_ptr_00;
   CDemonActor *in_stack_00000008;
   undefined4 uStack0000000c;
+  char *in_stack_00000010;
   CVector3i *in_stack_00000014;
   int in_stack_00000020;
   CDemonActor *in_stack_00000024;
@@ -45,9 +46,10 @@ int __cdecl core_vehicle_cpp_CVehicle_FUN_005e88c0(CVehicle *this_ptr)
   float in_stack_ffffffa8;
   float in_stack_ffffffac;
   float in_stack_ffffffb0;
+  CVector3f CStack_1c;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-  pCVar2 = (*((in_stack_00000008->metadata).vtable)->getBoundingBox)
+  pCVar2 = (*in_stack_00000008->vtable->getBoundingBox)
                      (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffa4);
   iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar2);
   *(int *)(in_stack_00000020 + 0x106c) = iVar3;
@@ -57,8 +59,10 @@ int __cdecl core_vehicle_cpp_CVehicle_FUN_005e88c0(CVehicle *this_ptr)
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                 ((CKeyFramedModelInstance *)(in_stack_00000024 + 1),0.0,-1);
       iVar3 = 0;
-      if (0 < (int)in_stack_00000028[6].metadata.runtime_vector1.x) {
-        this_ptr_00 = (CKeyFramedModelInstance *)&in_stack_00000028[6].metadata.runtime_flags;
+      if (0 < (int)in_stack_00000028[6].previous_transform_state.position.x) {
+        this_ptr_00 = (CKeyFramedModelInstance *)
+                      &in_stack_00000028[6].previous_transform_state.dirty_flags;
+        in_stack_00000010 = in_stack_00000028[8].actor_name + 0xc;
         pCVar1 = &in_stack_00000028[8].location.position;
         rotation = (CVector3i *)(in_stack_00000028[8].actor_name + 0x18);
         do {
@@ -79,7 +83,7 @@ int __cdecl core_vehicle_cpp_CVehicle_FUN_005e88c0(CVehicle *this_ptr)
       }
     }
     else {
-      pCVar2 = (*((in_stack_00000024->metadata).vtable)->getBoundingBox)
+      pCVar2 = (*in_stack_00000024->vtable->getBoundingBox)
                          (in_stack_00000024,(CBoundingBox3D *)&stack0xffffffa8);
       core_box_cpp_CBoundingBox3D_render_FUN_004210b0
                 (pCVar2,(int)in_stack_ffffffa8,(int)in_stack_ffffffac,(int)in_stack_ffffffb0);
@@ -89,11 +93,14 @@ int __cdecl core_vehicle_cpp_CVehicle_FUN_005e88c0(CVehicle *this_ptr)
   if ((*(int *)(in_stack_0000002c + 0x106c) != 0) &&
      (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
      iVar3 == 0)) {
+    in_stack_00000010 = (char *)0x40c00000;
     uStack0000000c = 0xbe27ef9e;
-    core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000030);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (in_stack_00000030,&CStack_1c,(CVector3f *)&stack0xfffffffc);
     core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
-              ((CVector3f *)&stack0xffffffe8,(CVector3i *)&in_stack_00000030->orient,56.0,10.0);
-    core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000030);
+              ((CVector3f *)&CStack_1c.y,(CVector3i *)&in_stack_00000030->orient,56.0,10.0);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (in_stack_00000030,(CVector3f *)&stack0xfffffff8,(CVector3f *)&stack0x00000010);
     core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
               ((CVector3f *)&stack0xfffffff0,(CVector3i *)(in_stack_0000003c + 0x30),56.0,10.0);
     return (int)in_stack_00000024;
@@ -261,7 +268,7 @@ int __cdecl core_vehicle_cpp_CVehicle_FUN_005e88c0(CVehicle *this_ptr)
 // 005e8aa3: PUSH ESI
 // 005e8aa4: MOV dword ptr [ESP + 0x60],EDX
 // 005e8aa8: MOV dword ptr [ESP + 0x64],EBP
-// 005e8aac: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005e8aac: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005e8ab1: ADD ESP,0xc
 // 005e8ab4: PUSH 0x41200000
@@ -278,7 +285,7 @@ int __cdecl core_vehicle_cpp_CVehicle_FUN_005e88c0(CVehicle *this_ptr)
 // 005e8ad4: LEA EAX,[ESP + 0x40]
 // 005e8ad8: PUSH EAX
 // 005e8ad9: PUSH ESI
-// 005e8ada: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005e8ada: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005e8adf: MOV EBX,EAX
 // 005e8ae1: LEA EAX,[ESP + 0x3c]

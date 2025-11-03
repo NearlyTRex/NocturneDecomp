@@ -10,7 +10,7 @@
 //   TerminatedCString s_Up_Down_adjusts_run_00653125
 // Function calls:
 //   core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150
-//   core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+//   core_actor.cpp_drawTextLine_FUN_0040d240
 
 #include "nocturne.h"
 
@@ -25,10 +25,10 @@ void core_stairs_cpp_FUN_005bab90(void)
   
   core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(in_stack_00000004,in_stack_00000008);
   *in_stack_00000008 = *in_stack_00000008 + 0xb;
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
+  core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"?With CTRL held down:" + 1);
+  core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"  Left/right adjusts width");
+  core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"  Q/A adjusts rise");
+  core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"  Up/Down adjusts run");
   return;
 }
 
@@ -51,25 +51,25 @@ void core_stairs_cpp_FUN_005bab90(void)
 // 005babaa: ADD ECX,0xb
 // 005babad: PUSH EBX
 // 005babae: MOV dword ptr [EBX],ECX
-// 005babb0: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 005babb0: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 005babb5: ADD ESP,0x8
 // 005babb8: PUSH 0x6530f7
 //   XREF to: 006530f7 (DATA)
 // 005babbd: PUSH EBX
-// 005babbe: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 005babbe: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 005babc3: ADD ESP,0x8
 // 005babc6: PUSH 0x653112
 //   XREF to: 00653112 (DATA)
 // 005babcb: PUSH EBX
-// 005babcc: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 005babcc: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 005babd1: ADD ESP,0x8
 // 005babd4: PUSH 0x653125
 //   XREF to: 00653125 (DATA)
 // 005babd9: PUSH EBX
-// 005babda: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 005babda: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 005babdf: ADD ESP,0x8
 // 005babe2: POP EBX

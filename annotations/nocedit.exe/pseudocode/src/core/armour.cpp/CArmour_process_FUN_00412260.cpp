@@ -7,13 +7,13 @@
 //   TerminatedCString s_armour_wav_00614dcb
 //   double DOUBLE_00614dd8 = 3.14159265350000
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 // Function calls:
 //   core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0
 //   core_charactr.cpp_CCharacter_FUN_00429870
 //   core_charactr.cpp_CCharacter_FUN_0042b9e0
 //   core_charactr.cpp_CCharacter_FUN_0042ca70
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
@@ -23,6 +23,7 @@
 void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr)
 
 {
+  CDeformableModelInstance *this_ptr_00;
   float fVar1;
   float fVar2;
   CCharacter *pCVar3;
@@ -35,44 +36,44 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr)
   iVar4 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
   if (iVar4 != 0) {
     pCVar3 = &(this_ptr->base_enemy).base_character;
-    (pCVar3->model).padding_0x0[0x225c] = '\0';
-    (pCVar3->model).padding_0x0[0x225d] = '\0';
-    (pCVar3->model).padding_0x0[0x225e] = '\0';
-    (pCVar3->model).padding_0x0[0x225f] = '\0';
-    *(undefined4 *)((this_ptr->base_enemy).base_character.model.padding_0x0 + 0x2258) =
-         *(undefined4 *)((this_ptr->base_enemy).base_character.model.padding_0x0 + 0x225c);
-    *(undefined4 *)((this_ptr->base_enemy).base_character.model.padding_0x0 + 0x2254) =
-         *(undefined4 *)((this_ptr->base_enemy).base_character.model.padding_0x0 + 0x2258);
+    (pCVar3->model).field10_0x2254[8] = '\0';
+    (pCVar3->model).field10_0x2254[9] = '\0';
+    (pCVar3->model).field10_0x2254[10] = '\0';
+    (pCVar3->model).field10_0x2254[0xb] = '\0';
+    *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4) =
+         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 8);
+    *(undefined4 *)(this_ptr->base_enemy).base_character.model.field10_0x2254 =
+         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4);
     fVar1 = (this_ptr->base_enemy).speed;
-    while( true ) {
-      if (in_stack_00000008 * fVar1 <= 0.0) break;
-      core_motion_cpp_CMotionController_advance_FUN_0052d610();
+    this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
+    while (0.0 < in_stack_00000008 * fVar1) {
+      core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
     }
     fVar1 = (this_ptr->base_enemy).speed;
     fVar2 = (float)DOUBLE_00614dd8;
     *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x28) =
-         *(undefined4 *)((this_ptr->base_enemy).base_character.model.padding_0x0 + 0x225c);
+         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 8);
     *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
          in_stack_00000008 * fVar2 * fVar1;
-    core_motion_cpp_CMotionController_FUN_0052dab0();
+    core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr_00->motion_controller);
     iVar4 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
     if (iVar4 != 0) {
       pCVar3 = &(this_ptr->base_enemy).base_character;
-      (pCVar3->model).padding_0x0[0x225c] = '\0';
-      (pCVar3->model).padding_0x0[0x225d] = '\0';
-      (pCVar3->model).padding_0x0[0x225e] = '\0';
-      (pCVar3->model).padding_0x0[0x225f] = '\0';
-      *(undefined4 *)((this_ptr->base_enemy).base_character.model.padding_0x0 + 0x2258) =
-           *(undefined4 *)((this_ptr->base_enemy).base_character.model.padding_0x0 + 0x225c);
-      *(undefined4 *)((this_ptr->base_enemy).base_character.model.padding_0x0 + 0x2254) =
-           *(undefined4 *)((this_ptr->base_enemy).base_character.model.padding_0x0 + 0x2258);
+      (pCVar3->model).field10_0x2254[8] = '\0';
+      (pCVar3->model).field10_0x2254[9] = '\0';
+      (pCVar3->model).field10_0x2254[10] = '\0';
+      (pCVar3->model).field10_0x2254[0xb] = '\0';
+      *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4) =
+           *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 8);
+      *(undefined4 *)(this_ptr->base_enemy).base_character.model.field10_0x2254 =
+           *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4);
     }
     core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020();
     core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
-    iVar4 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->field1_0xbeb4 + 8);
     if (iVar4 != 0) {
-      (*((this_ptr->base_enemy).base_character.base_actor.metadata.vtable)->playSound)
+      (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
                 ((CDemonActor *)this_ptr,"armour.wav");
       uStack00000010 = 0;
       uStack00000014 = 0;
@@ -173,7 +174,7 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr)
 //   XREF to: 006793d0 (READ)
 // 00412339: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 0041233a: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0041233a: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0041233f: ADD ESP,0x8
 // 00412342: TEST EAX,EAX

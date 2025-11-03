@@ -8,7 +8,7 @@
 //   TerminatedCString s_anon_0062ac24
 // Function calls:
 //   core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150
-//   core_actor.cpp_SomethingElseWithStrings1_FUN_0040d1e0
+//   core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
 
 #include "nocturne.h"
 
@@ -23,7 +23,8 @@ void core_frankgen_cpp_FUN_004d2740(void)
   
   core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(in_stack_00000004,in_stack_00000008);
   *in_stack_00000008 = *in_stack_00000008 + 0xb;
-  core_actor_cpp_SomethingElseWithStrings1_FUN_0040d1e0();
+  core_actor_cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
+            (in_stack_00000008,"</>","Move bat along course.");
   return;
 }
 
@@ -48,7 +49,7 @@ void core_frankgen_cpp_FUN_004d2740(void)
 // 004d275f: ADD ECX,0xb
 // 004d2762: PUSH EBX
 // 004d2763: MOV dword ptr [EBX],ECX
-// 004d2765: CALL core_actor.cpp_SomethingElseWithStrings1_FUN_0040d1e0
+// 004d2765: CALL core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
 //   XREF to: 0040d1e0 (UNCONDITIONAL_CALL)
 // 004d276a: ADD ESP,0xc
 // 004d276d: POP EBX

@@ -8,7 +8,7 @@
 //   core_game.cpp_CGame_processFrame_FUN_004da100 (004da100) at 004dab06 [UNCONDITIONAL_CALL]
 //   core_main.c_showDeveloperToolsMenu_FUN_005073a0 (005073a0) at 0050770d [UNCONDITIONAL_CALL]
 //   core_main.c_showLicenseAgreement_FUN_005070f0 (005070f0) at 005072d2 [UNCONDITIONAL_CALL]
-//   core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0 (0052bcb0) at 0052c9be [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052c9be [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_MasterEditorKeysHelpScreen_FUN_00535e70 (00535e70) at 00536a97 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 (0053e220) at 0053e536 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 (005390f0) at 0053998b [UNCONDITIONAL_CALL]

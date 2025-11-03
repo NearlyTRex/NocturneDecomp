@@ -13,7 +13,7 @@
 //   CGore g_CGoreInstance
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
-//   core_fire.cpp_CFireEffect_FUN_004c7ab0
+//   core_fire.cpp_CFireEffect_loadAssets_FUN_004c7ab0
 //   core_gore.cpp_CGore_FUN_004ede60
 //   core_inv.cpp_loadInventory_FUN_004fd220
 //   core_set.cpp_CDemonSet_FUN_0056fb80
@@ -24,7 +24,7 @@ void __cdecl core_game_cpp_CGame_FUN_004e07a0(CGame *this_ptr)
 
 {
   core_set_cpp_CDemonSet_FUN_0056fb80(g_CDemonSetPtr);
-  core_fire_cpp_CFireEffect_FUN_004c7ab0(g_CFireEffectPtr);
+  core_fire_cpp_CFireEffect_loadAssets_FUN_004c7ab0(g_CFireEffectPtr);
   core_gore_cpp_CGore_FUN_004ede60(g_CGorePtr);
   core_inv_cpp_loadInventory_FUN_004fd220();
   return;
@@ -47,7 +47,7 @@ void __cdecl core_game_cpp_CGame_FUN_004e07a0(CGame *this_ptr)
 //   XREF to: 0067a3d0 (READ)
 // 004e07b6: PUSH ECX
 //   XREF to: 02d12db0 (DATA)
-// 004e07b7: CALL core_fire.cpp_CFireEffect_FUN_004c7ab0
+// 004e07b7: CALL core_fire.cpp_CFireEffect_loadAssets_FUN_004c7ab0
 //   XREF to: 004c7ab0 (UNCONDITIONAL_CALL)
 // 004e07bc: ADD ESP,0x4
 // 004e07bf: MOV EBX,dword ptr [0x0067b9a0]

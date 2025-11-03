@@ -16,8 +16,8 @@
 //   CFireEffect g_CFireEffectInstance
 //   undefined4 g_CGameInstance.delta_time_float
 // Function calls:
-//   core_actor.cpp_FUN_0040cd10
-//   core_fire.cpp_CFireEffect_FUN_004c7b20
+//   core_actor.cpp_randomChance_FUN_0040cd10
+//   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 //   core_fire.cpp_CGunFlame_FUN_004c4c00
 
 #include "nocturne.h"
@@ -28,6 +28,7 @@ void __cdecl core_fire_cpp_CGunFlame_process_FUN_004c4f60(CGunFlame *this_ptr)
 
 {
   char *pcVar1;
+  CVector3f *position;
   float fVar2;
   float fVar3;
   float fVar4;
@@ -35,39 +36,42 @@ void __cdecl core_fire_cpp_CGunFlame_process_FUN_004c4f60(CGunFlame *this_ptr)
   int iVar6;
   float unaff_ESI;
   
-  fVar2 = g_CGamePtr->delta_time_float;
-  fVar3 = *(float *)this_ptr->field0_0x0 - fVar2;
-  *(float *)this_ptr->field0_0x0 = fVar3;
-  if (0.0 < fVar3) {
+  fVar5 = g_CGamePtr->delta_time_float;
+  fVar2 = *(float *)this_ptr->field0_0x0 - fVar5;
+  *(float *)this_ptr->field0_0x0 = fVar2;
+  if (0.0 < fVar2) {
     pcVar1 = this_ptr->field0_0x0 + 0x10;
-    *(float *)(this_ptr->field0_0x0 + 4) =
-         *(float *)(this_ptr->field0_0x0 + 4) + *(float *)pcVar1 * fVar2;
-    *(float *)(this_ptr->field0_0x0 + 8) =
-         *(float *)(this_ptr->field0_0x0 + 8) + *(float *)(this_ptr->field0_0x0 + 0x14) * fVar2;
-    fVar3 = (float)DOUBLE_00629f4b;
-    *(float *)(this_ptr->field0_0x0 + 0xc) =
-         *(float *)(this_ptr->field0_0x0 + 0xc) + *(float *)(this_ptr->field0_0x0 + 0x18) * fVar2;
-    fVar4 = *(float *)(this_ptr->field0_0x0 + 0x14) * FLOAT_00629f43;
-    fVar5 = *(float *)(this_ptr->field0_0x0 + 0x18) * FLOAT_00629f43;
+    fVar2 = *(float *)(this_ptr->field0_0x0 + 0x14);
+    fVar3 = *(float *)(this_ptr->field0_0x0 + 0x18);
+    position = (CVector3f *)(this_ptr->field0_0x0 + 4);
+    fVar4 = *(float *)(this_ptr->field0_0x0 + 8);
+    position->x = position->x + *(float *)pcVar1 * fVar5;
+    *(float *)(this_ptr->field0_0x0 + 8) = fVar4 + fVar2 * fVar5;
+    fVar4 = (float)DOUBLE_00629f4b;
+    *(float *)(this_ptr->field0_0x0 + 0xc) = *(float *)(this_ptr->field0_0x0 + 0xc) + fVar3 * fVar5;
+    fVar2 = *(float *)(this_ptr->field0_0x0 + 0x14) * FLOAT_00629f43;
+    fVar3 = *(float *)(this_ptr->field0_0x0 + 0x18) * FLOAT_00629f43;
     *(float *)pcVar1 = *(float *)pcVar1 * FLOAT_00629f43;
-    *(float *)(this_ptr->field0_0x0 + 0x14) = fVar4;
-    *(float *)(this_ptr->field0_0x0 + 0x18) = fVar5;
+    *(float *)(this_ptr->field0_0x0 + 0x14) = fVar2;
+    *(float *)(this_ptr->field0_0x0 + 0x18) = fVar3;
+    fVar2 = (float)DOUBLE_00629f53;
     *(float *)(this_ptr->field0_0x0 + 0x14) =
-         fVar2 * fVar3 + *(float *)(this_ptr->field0_0x0 + 0x14);
-    iVar6 = core_actor_cpp_FUN_0040cd10();
+         fVar5 * fVar4 + *(float *)(this_ptr->field0_0x0 + 0x14);
+    iVar6 = core_actor_cpp_randomChance_FUN_0040cd10(fVar5 * fVar2);
     if (iVar6 != 0) {
-      core_fire_cpp_CFireEffect_FUN_004c7b20(g_CFireEffectPtr);
+      core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
+                (g_CFireEffectPtr,position,0.5,(CVector3f *)0x0,0xffff);
     }
     if ((*(int *)(this_ptr->field0_0x0 + 0x20) != 0) &&
-       (iVar6 = core_actor_cpp_FUN_0040cd10(), iVar6 != 0)) {
+       (iVar6 = core_actor_cpp_randomChance_FUN_0040cd10(unaff_ESI), iVar6 != 0)) {
       core_fire_cpp_CGunFlame_FUN_004c4c00(this_ptr);
     }
     *(float *)(this_ptr->field0_0x0 + 0x1c) =
          unaff_ESI * _DAT_0065dcc8 + *(float *)(this_ptr->field0_0x0 + 0x1c);
-    fVar2 = FLOAT_00629f5b;
+    fVar5 = FLOAT_00629f5b;
     if (0x419fffff < *(int *)(this_ptr->field0_0x0 + 0x1c)) {
       do {
-        *(float *)(this_ptr->field0_0x0 + 0x1c) = *(float *)(this_ptr->field0_0x0 + 0x1c) + fVar2;
+        *(float *)(this_ptr->field0_0x0 + 0x1c) = *(float *)(this_ptr->field0_0x0 + 0x1c) + fVar5;
       } while (0x419fffff < *(int *)(this_ptr->field0_0x0 + 0x1c));
       return;
     }
@@ -178,7 +182,7 @@ void __cdecl core_fire_cpp_CGunFlame_process_FUN_004c4f60(CGunFlame *this_ptr)
 // 004c5021: FSTP float ptr [EBX + 0x14]
 // 004c5024: FSTP float ptr [ESP]
 //   XREF to: Stack[-0x34] (DATA)
-// 004c5027: CALL core_actor.cpp_FUN_0040cd10
+// 004c5027: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 004c502c: ADD ESP,0x4
 // 004c502f: TEST EAX,EAX
@@ -193,7 +197,7 @@ void __cdecl core_fire_cpp_CGunFlame_process_FUN_004c4f60(CGunFlame *this_ptr)
 //   XREF to: 0067a3d0 (READ)
 // 004c5046: PUSH EDX
 //   XREF to: 02d12db0 (DATA)
-// 004c5047: CALL core_fire.cpp_CFireEffect_FUN_004c7b20
+// 004c5047: CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 //   XREF to: 004c7b20 (UNCONDITIONAL_CALL)
 // 004c504c: ADD ESP,0x14
 // 004c504f: CMP dword ptr [EBX + 0x20],0x0
@@ -202,7 +206,7 @@ void __cdecl core_fire_cpp_CGunFlame_process_FUN_004c4f60(CGunFlame *this_ptr)
 //   XREF to: 004c506e (CONDITIONAL_JUMP)
 // 004c5055: PUSH dword ptr [ESP + 0x20]
 //   XREF to: Stack[-0x10] (READ)
-// 004c5059: CALL core_actor.cpp_FUN_0040cd10
+// 004c5059: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 004c505e: ADD ESP,0x4
 // 004c5061: TEST EAX,EAX

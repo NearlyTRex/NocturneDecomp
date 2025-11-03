@@ -8,8 +8,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_event.cpp_FUN_004b1970(undefined4 param_1) */
-
 undefined4 core_event_cpp_FUN_004b1970(void)
 
 {

@@ -6,11 +6,11 @@
 // Cross-references:
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bc110 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0065389c
-//   undefined4 DAT_006538a4
-//   undefined4 DAT_006538ac
-//   undefined4 DAT_006538b4
-//   undefined4 DAT_006538bc
+//   double DOUBLE_0065389c = 10
+//   double DOUBLE_006538a4 = 0.200000000000000
+//   double DOUBLE_006538ac = 0.5
+//   double DOUBLE_006538b4 = 0.318309886192889
+//   double DOUBLE_006538bc = 0.00100000000000000
 //   undefined4 DAT_03f6bb1c
 //   undefined4 DAT_03f6bb20
 // Function calls:
@@ -18,7 +18,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_hero_stranger.cpp_CStranger_FUN_005bf800(CStranger* param_1,
    undefined4 param_2) */
 
@@ -35,7 +34,8 @@ void core_stranger_cpp_CStranger_FUN_005bf800(void)
   *(undefined4 *)(in_stack_00000004 + 0x1fc80) = 0;
   *(undefined4 *)(in_stack_00000004 + 0x1fc7c) = *(undefined4 *)(in_stack_00000004 + 0x1fc80);
   *(undefined4 *)(in_stack_00000004 + 0x1fc78) = *(undefined4 *)(in_stack_00000004 + 0x1fc7c);
-  fVar3 = (float)core_motion_cpp_CMotionController_FUN_0052dd20();
+  fVar3 = core_motion_cpp_CMotionController_FUN_0052dd20
+                    ((CMotionController *)(in_stack_00000004 + 0x158));
   if ((fVar3 <= 0.0) || (1.0 <= *(float *)(in_stack_00000004 + 0x1fc54))) {
     *(undefined4 *)(in_stack_00000004 + 0x1fc50) = 0;
     *(undefined4 *)(in_stack_00000004 + 0x1fc84) = 0xffffffff;
@@ -45,7 +45,7 @@ void core_stranger_cpp_CStranger_FUN_005bf800(void)
     return;
   }
   if (fVar3 < 1.0) {
-    fVar3 = (1.0 - fVar3) * in_stack_00000008 * (float)_DAT_0065389c;
+    fVar3 = (1.0 - fVar3) * in_stack_00000008 * (float)DOUBLE_0065389c;
     if (fVar3 <= ABS(*(float *)(in_stack_00000004 + 0x1fc50))) {
       if (0.0 <= *(float *)(in_stack_00000004 + 0x1fc50)) {
         *(float *)(in_stack_00000004 + 0x1fc50) = *(float *)(in_stack_00000004 + 0x1fc50) - fVar3;
@@ -63,7 +63,7 @@ void core_stranger_cpp_CStranger_FUN_005bf800(void)
   if (*(float *)(in_stack_00000004 + 0x1fc50) < 0.0) {
     *(undefined4 *)(in_stack_00000004 + 0x1fc84) = DAT_03f6bb20;
   }
-  if (*(float *)(in_stack_00000004 + 0x1fc54) <= (float)_DAT_006538a4) {
+  if (*(float *)(in_stack_00000004 + 0x1fc54) <= (float)DOUBLE_006538a4) {
     *(undefined4 *)(in_stack_00000004 + 0x1fc5c) = 0;
   }
   else {
@@ -71,12 +71,12 @@ void core_stranger_cpp_CStranger_FUN_005bf800(void)
          *(float *)(in_stack_00000004 + 0x1fc5c) + in_stack_00000008;
   }
   if ((*(float *)(in_stack_00000004 + 0x1fc58) <= 0.0) &&
-     (((float)_DAT_006538ac <= *(float *)(in_stack_00000004 + 0x1fc54) ||
+     (((float)DOUBLE_006538ac <= *(float *)(in_stack_00000004 + 0x1fc54) ||
       (1.0 < *(float *)(in_stack_00000004 + 0x1fc5c))))) {
     *(float *)(in_stack_00000004 + 0x1fc58) = (1.0 - *(float *)(in_stack_00000004 + 0x1fc54)) * 1.6;
   }
   if (*(float *)(in_stack_00000004 + 0x1fc58) <= 0.0) {
-    local_30 = ABS(*(float *)(in_stack_00000004 + 0x1fc50) * (float)_DAT_006538b4);
+    local_30 = ABS(*(float *)(in_stack_00000004 + 0x1fc50) * (float)DOUBLE_006538b4);
     if (iVar1 != *(int *)(in_stack_00000004 + 0x1fc84)) {
       local_30 = 0.0;
     }
@@ -86,7 +86,7 @@ void core_stranger_cpp_CStranger_FUN_005bf800(void)
     fVar3 = (local_30 - *(float *)(in_stack_00000004 + 0x1fc54)) +
             *(float *)(in_stack_00000004 + 0x1fc54);
     *(float *)(in_stack_00000004 + 0x1fc54) = fVar3;
-    if ((float)_DAT_006538bc < fVar3) {
+    if ((float)DOUBLE_006538bc < fVar3) {
       *(int *)(in_stack_00000004 + 0x1fc84) = iVar1;
       return;
     }

@@ -5,9 +5,9 @@
 // Signature: undefined core_litecone.cpp_FUN_00506bc0()
 // Globals:
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 // Function calls:
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 
 #include "nocturne.h"
 
@@ -20,7 +20,7 @@ void core_litecone_cpp_FUN_00506bc0(void)
   int in_stack_00000004;
   
   if (*(int *)(in_stack_00000004 + 0x160) == 0) {
-    iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,(char *)(in_stack_00000004 + 0x164));
     if (iVar1 != 0) {
       *(undefined4 *)(in_stack_00000004 + 0x160) = 1;
@@ -28,7 +28,7 @@ void core_litecone_cpp_FUN_00506bc0(void)
     }
   }
   else {
-    iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,(char *)(in_stack_00000004 + 0x1c8));
     if (iVar1 != 0) {
       *(undefined4 *)(in_stack_00000004 + 0x160) = 0;
@@ -54,7 +54,7 @@ void core_litecone_cpp_FUN_00506bc0(void)
 //   XREF to: 006793d0 (READ)
 // 00506bdc: PUSH ESI
 //   XREF to: 02d05310 (DATA)
-// 00506bdd: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 00506bdd: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 00506be2: ADD ESP,0x8
 // 00506be5: TEST EAX,EAX
@@ -77,7 +77,7 @@ void core_litecone_cpp_FUN_00506bc0(void)
 //   XREF to: 006793d0 (READ)
 // 00506c06: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 00506c07: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 00506c07: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 00506c0c: ADD ESP,0x8
 // 00506c0f: TEST EAX,EAX

@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0()
 // Cross-references:
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ac2bc [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ac2bc [UNCONDITIONAL_CALL]
 //   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 (00506450) at 005065b6 [UNCONDITIONAL_CALL]
 //   core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0 (005eeaf0) at 005eedc3 [UNCONDITIONAL_CALL]
 // Function calls:
@@ -77,7 +77,7 @@ void core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
   this_ptr = g_CEventListPtr;
   *(float *)(param_5 + 0x30) =
        (float)g_CDemonCameraInstance.corona_blend_factor * (float)_DAT_00657bfc;
-  iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+  iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (this_ptr,"BnoLightningFlash" + 1);
   if (iVar3 == 0) {
     fStack_78 = fStack_78 + _DAT_00657c04;

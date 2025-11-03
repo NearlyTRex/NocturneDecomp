@@ -24,7 +24,8 @@ void __cdecl core_batcreat_cpp_CBatCreature_serialize_FUN_00415d70(CBatCreature 
   core_actor_cpp_serializeFloat_FUN_0040b770(&(this_ptr->base_enemy).speed,"@@speed" + 2);
   model_ptr = &(this_ptr->base_enemy).base_character.model;
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
-  core_actor_cpp_serializeMotionState_FUN_0040b9f0(model_ptr,"motion state");
+  core_actor_cpp_serializeMotionState_FUN_0040b9f0
+            (&model_ptr->motion_controller,"motion state");
   return;
 }
 

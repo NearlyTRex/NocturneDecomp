@@ -8,7 +8,7 @@
 //   CDemonMission g_CDemonMissionInstance
 //   undefined4 DAT_02f33744
 // Function calls:
-//   core_actor.cpp_renderActorBoundingBox_FUN_0040d940
+//   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 //   core_charactr.cpp_CCharacter_FUN_0042a2c0
 
 #include "nocturne.h"
@@ -18,13 +18,13 @@ int __cdecl core_tentacle_cpp_CTentacle_FUN_005db840(CTentacle *this_ptr)
 {
   int iVar1;
   
-  iVar1 = (*((this_ptr->base_enemy).base_character.base_actor.metadata.vtable)->
-            shouldIgnoreForTargeting)((CDemonActor *)this_ptr);
+  iVar1 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->shouldIgnoreForTargeting)
+                    ((CDemonActor *)this_ptr);
   if (iVar1 != 0) {
     if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) == 0) {
       return 0;
     }
-    core_actor_cpp_renderActorBoundingBox_FUN_0040d940((CDemonActor *)this_ptr,3);
+    core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940((CDemonActor *)this_ptr,3);
   }
   iVar1 = core_charactr_cpp_CCharacter_FUN_0042a2c0((CCharacter *)this_ptr);
   return iVar1;
@@ -52,7 +52,7 @@ int __cdecl core_tentacle_cpp_CTentacle_FUN_005db840(CTentacle *this_ptr)
 //   XREF to: 005db877 (CONDITIONAL_JUMP)
 // 005db861: PUSH 0x3
 // 005db863: PUSH EBX
-// 005db864: CALL core_actor.cpp_renderActorBoundingBox_FUN_0040d940
+// 005db864: CALL core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 //   XREF to: 0040d940 (UNCONDITIONAL_CALL)
 // 005db869: ADD ESP,0x8
 // 005db86c: PUSH EBX

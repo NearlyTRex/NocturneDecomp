@@ -4,10 +4,10 @@
 // Convention: unknown
 // Signature: undefined core_skeleton.cpp_FUN_005a1950()
 // Cross-references:
-//   core_skeleton.cpp_FUN_005a08a0 (005a08a0) at 005a096a [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a08a0 (005a08a0) at 005a096a [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_FUN_005a1b70 (005a1b70) at 005a1cca [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 
@@ -17,11 +17,13 @@ void core_skeleton_cpp_FUN_005a1950(void)
 
 {
   float fVar1;
+  float extraout_EAX;
   float *pfVar2;
   BADSPACEBASE *in_ESP;
   int iVar3;
   float *pfVar4;
   float *in_stack_00000004;
+  CDeformableModelInstance *in_stack_00000008;
   int in_stack_0000000c;
   int in_stack_00000010;
   CVector3f local_34;
@@ -33,17 +35,17 @@ void core_skeleton_cpp_FUN_005a1950(void)
   CQuaternion4f *local_14;
   int iVar5;
   
-  local_28 = (float)core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
-                              ();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(in_stack_00000008);
   iVar5 = 0;
-  if (0 < *(int *)((int)local_28 + 0x28558)) {
+  if (0 < *(int *)((int)extraout_EAX + 0x28558)) {
     local_24 = (CVector3f *)(in_stack_00000004 + 0x1f7);
     local_14 = (CQuaternion4f *)(in_stack_00000004 + 3);
     local_34.z = (float)(in_stack_0000000c + 0x58);
     iVar3 = 0;
     pfVar2 = in_stack_00000004;
     pfVar4 = in_stack_00000004;
-    local_1c = local_28;
+    local_28 = extraout_EAX;
+    local_1c = extraout_EAX;
     local_18 = local_24;
     do {
       local_20 = iVar5 * 0x30;
@@ -107,7 +109,7 @@ void core_skeleton_cpp_FUN_005a1950(void)
 // 005a195b: MOV EDX,dword ptr [ESP + 0x44]
 //   XREF to: Stack[0x8] (READ)
 // 005a195f: PUSH EDX
-// 005a1960: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 005a1960: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005a1965: ADD ESP,0x4
 // 005a1968: MOV EBX,dword ptr [EAX + 0x28558]

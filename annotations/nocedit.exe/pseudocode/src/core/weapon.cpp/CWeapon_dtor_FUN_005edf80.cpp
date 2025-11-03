@@ -5,7 +5,7 @@
 // Signature: CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_005edf80(CWeapon * this_ptr, uint d1, uint d2, uint d3)
 // Cross-references:
 //   core_baron.cpp_CBaronWeapon_dtor_FUN_004140b0 (004140b0) at 004140bf [UNCONDITIONAL_CALL]
-//   core_crossbow.cpp_FUN_004495a0 (004495a0) at 004495c6 [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_dtor_FUN_004495a0 (004495a0) at 004495c6 [UNCONDITIONAL_CALL]
 //   core_dynamite.cpp_dtor_FUN_0049d120 (0049d120) at 0049d12f [UNCONDITIONAL_CALL]
 //   core_elephant.cpp_dtor_FUN_004a7be0 (004a7be0) at 004a7bef [UNCONDITIONAL_CALL]
 //   core_flamegun.cpp_FUN_004cbb00 (004cbb00) at 004cbb0f [UNCONDITIONAL_CALL]
@@ -42,8 +42,8 @@ core_weapon_cpp_CWeapon_dtor_FUN_005edf80(CWeapon *this_ptr,uint d1,uint d2,uint
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base_actor).metadata.vtable = &g_CWeaponVTable;
-  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00((CBox *)(this_ptr->field8_0x305 + 3));
+  (this_ptr->base_actor).vtable = &g_CWeaponVTable;
+  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00((CBox *)(this_ptr->field9_0x305 + 3));
   ptr = (CWeapon *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)&pCVar1[-2].scrape_points[4].raytrace_intersection,1);

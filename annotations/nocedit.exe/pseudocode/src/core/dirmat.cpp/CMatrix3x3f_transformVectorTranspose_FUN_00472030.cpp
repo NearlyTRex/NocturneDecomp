@@ -4,12 +4,12 @@
 // Convention: __cdecl
 // Signature: CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * matrix, CVector3f * output, CVector3f * input)
 // Cross-references:
-//   core_actor.cpp_CDemonActor_FUN_00408ea0 (00408ea0) at 00408eb3 [UNCONDITIONAL_CALL]
-//   core_actor.cpp_CDemonActor_FUN_00408f10 (00408f10) at 00408f46 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0 (00408ea0) at 00408eb3 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10 (00408f10) at 00408f46 [UNCONDITIONAL_CALL]
 //   core_bodypart.cpp_FUN_0041a050 (0041a050) at 0041a57a [UNCONDITIONAL_CALL]
 //   core_bodypart.cpp_FUN_0041a630 (0041a630) at 0041a90e [UNCONDITIONAL_CALL]
-//   core_box.cpp_CBox_FUN_00420180 (00420180) at 004201b9 [UNCONDITIONAL_CALL]
 //   core_box.cpp_CBox_processPhysics_FUN_0041e350 (0041e350) at 0041ef23 [UNCONDITIONAL_CALL]
+//   core_box.cpp_CBox_setupVelocities_FUN_00420180 (00420180) at 004201b9 [UNCONDITIONAL_CALL]
 //   core_cloth.cpp_FUN_0043abb0 (0043abb0) at 0043b02f [UNCONDITIONAL_CALL]
 //   core_cloth.cpp_FUN_0043e1a0 (0043e1a0) at 0043e230 [UNCONDITIONAL_CALL]
 //   core_curtain.cpp_FUN_00449f10 (00449f10) at 00449f7e [UNCONDITIONAL_CALL]

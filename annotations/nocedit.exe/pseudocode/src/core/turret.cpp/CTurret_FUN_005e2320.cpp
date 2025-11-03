@@ -35,7 +35,7 @@ int __cdecl core_turret_cpp_CTurret_FUN_005e2320(CTurret *this_ptr)
   CTurret *pCStack_18;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-  this_ptr_00 = (*((this_ptr->base_weapon).base_actor.metadata.vtable)->getBoundingBox)
+  this_ptr_00 = (*((this_ptr->base_weapon).base_actor.vtable)->getBoundingBox)
                           ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffdc);
   pCStack_18 = (CTurret *)0x5e2349;
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
@@ -45,8 +45,7 @@ int __cdecl core_turret_cpp_CTurret_FUN_005e2320(CTurret *this_ptr)
     animation_frame = (float)core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30();
     pCStack_18 = (CTurret *)0x5e2379;
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-              ((CKeyFramedModelInstance *)&(this_ptr->base_weapon).model_instance,animation_frame,
-               unaff_EBP);
+              (&(this_ptr->base_weapon).model,animation_frame,unaff_EBP);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   if (iVar1 != 0) {

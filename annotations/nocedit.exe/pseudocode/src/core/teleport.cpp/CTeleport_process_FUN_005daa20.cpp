@@ -9,7 +9,7 @@
 //   int g_LocalHeroIndex
 //   CDemonMission g_CDemonMissionInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_mission.cpp_CDemonMission_FUN_00524070
 
 #include "nocturne.h"
@@ -21,10 +21,14 @@ void __cdecl core_teleport_cpp_CTeleport_process_FUN_005daa20(CTeleport *this_pt
   CBoundingBox3D *pCVar2;
   BADSPACEBASE *in_ESP;
   float fStack_20;
+  CVector3f local_14;
   
   if (*(int *)(this_ptr->field1_0x158 + 0xc) != 0) {
-    pCVar1 = core_actor_cpp_CDemonActor_FUN_00408f10(&this_ptr->base_actor);
-    pCVar2 = (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
+    pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                       (&this_ptr->base_actor,&local_14,
+                        &(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.location.
+                         position);
+    pCVar2 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
                        (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffd8);
     if (((((pCVar2->min).x <= pCVar1->x) && ((pCVar2->min).y <= pCVar1->y)) &&
         ((pCVar2->min).z <= pCVar1->z)) &&
@@ -65,7 +69,7 @@ void __cdecl core_teleport_cpp_CTeleport_process_FUN_005daa20(CTeleport *this_pt
 //   XREF to: Stack[-0x14] (DATA)
 // 005daa4d: PUSH EAX
 // 005daa4e: PUSH ESI
-// 005daa4f: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 005daa4f: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 005daa54: ADD ESP,0xc
 // 005daa57: MOV EDX,ESP

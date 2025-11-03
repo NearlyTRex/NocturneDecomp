@@ -5,7 +5,7 @@
 // Signature: int crt_ctype.c_toupper_FUN_005ff9e0(int c)
 // Cross-references:
 //   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 (00443040) at 00443157 [UNCONDITIONAL_CALL]
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004aae5c [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004aae5c [UNCONDITIONAL_CALL]
 //   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 (004be270) at 004be3ca [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (004ddaf0) at 004dee80 [UNCONDITIONAL_CALL]
 //   core_game.cpp_FUN_004dd7f0 (004dd7f0) at 004dd828 [UNCONDITIONAL_CALL]

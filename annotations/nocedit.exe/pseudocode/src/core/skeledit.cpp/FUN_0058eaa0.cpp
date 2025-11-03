@@ -6,7 +6,7 @@
 // Globals:
 //   TerminatedCString s_Optimizing_deformable_mo_0064b072
 //   TerminatedCString s_Optimized_deformable_mod_0064b09a
-//   undefined4 DAT_0064b0c2
+//   double DOUBLE_0064b0c2 = 0.0100000000000000
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   CEditorTools g_CEditorToolsPtr
 // Function calls:
@@ -14,8 +14,6 @@
 //   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_skeledit_cpp_FUN_0058eaa0(void)
 
@@ -58,7 +56,7 @@ void core_skeledit_cpp_FUN_0058eaa0(void)
           local_14 = pfVar1;
           while( true ) {
             if ((int)(uint)*(byte *)pfVar1 <= iVar4) break;
-            if ((float)_DAT_0064b0c2 < pfVar5[1]) {
+            if ((float)DOUBLE_0064b0c2 < pfVar5[1]) {
               if (iStack_10 < iVar4) {
                 *(undefined1 *)((int)local_20 + 1) = *(undefined1 *)((int)local_1c + 1);
                 local_14[1] = pfVar5[1];

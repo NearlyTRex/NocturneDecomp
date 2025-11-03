@@ -31,7 +31,7 @@ void core_sentinel_cpp_CSentinel_load_FUN_00568c70(void)
               (&in_stack_00000004->guard_distance,"guardDistance");
   }
   core_actor_cpp_serializeMotionState_FUN_0040b9f0
-            (&(in_stack_00000004->base_character).model,"motion state");
+            (&(in_stack_00000004->base_character).model.motion_controller,"motion state");
   return;
 }
 

@@ -12,7 +12,7 @@
 //   undefined4 DAT_02db8734
 //   undefined4 DAT_02db8738
 // Function calls:
-//   core_actor.cpp_FUN_0040cd10
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_charactr.cpp_CCharacter_FUN_0042ec40
 //   core_haystack.cpp_FUN_004f1ab0
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
@@ -26,39 +26,39 @@
 void core_haystack_cpp_FUN_004f1970(void)
 
 {
-  undefined4 uVar1;
-  int iVar2;
+  int iVar1;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
   
   do {
-    uVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610();
-    switch(uVar1) {
+    iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&(in_stack_00000004->model).motion_controller);
+    switch(iVar1) {
     case 0x65:
       core_haystack_cpp_FUN_004f1ab0();
-      iVar2 = *(int *)(in_stack_00000004[2].cloth_data + 0x54f8);
+      iVar1 = *(int *)(in_stack_00000004[2].cloth_data + 0x54f8);
       goto LAB_004f19bc;
     case 0x66:
       core_haystack_cpp_FUN_004f1ab0();
-      iVar2 = *(int *)(in_stack_00000004[2].cloth_data + 0x54f8);
+      iVar1 = *(int *)(in_stack_00000004[2].cloth_data + 0x54f8);
 LAB_004f19bc:
-      *(uint *)(in_stack_00000004[2].cloth_data + 0x54f8) = (uint)(iVar2 == 0);
+      *(uint *)(in_stack_00000004[2].cloth_data + 0x54f8) = (uint)(iVar1 == 0);
       break;
     case 0x67:
     case 0x69:
     case 0x6b:
-      iVar2 = sound_sndmain_cpp_FUN_005aa290();
-      if (iVar2 != 0) {
-        (*((in_stack_00000004->base_actor).metadata.vtable)->playSound)
+      iVar1 = sound_sndmain_cpp_FUN_005aa290();
+      if (iVar1 != 0) {
+        (*((in_stack_00000004->base_actor).vtable)->playSound)
                   (&in_stack_00000004->base_actor,"box-swing?.wav");
       }
       break;
     case 0x68:
     case 0x6a:
     case 0x6c:
-      iVar2 = sound_sndmain_cpp_FUN_005aa290();
-      if ((iVar2 != 0) && (iVar2 = core_actor_cpp_FUN_0040cd10(), iVar2 != 0)) {
-        (*((in_stack_00000004->base_actor).metadata.vtable)->playSound)
+      iVar1 = sound_sndmain_cpp_FUN_005aa290();
+      if ((iVar1 != 0) && (iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.4), iVar1 != 0)) {
+        (*((in_stack_00000004->base_actor).vtable)->playSound)
                   (&in_stack_00000004->base_actor,"box-punch?.wav");
       }
       break;
@@ -195,7 +195,7 @@ LAB_004f19bc:
 // 004f1a65: JZ 0x004f19ca
 //   XREF to: 004f19ca (CONDITIONAL_JUMP)
 // 004f1a6b: PUSH 0x3ecccccd
-// 004f1a70: CALL core_actor.cpp_FUN_0040cd10
+// 004f1a70: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 004f1a75: ADD ESP,0x4
 // 004f1a78: TEST EAX,EAX

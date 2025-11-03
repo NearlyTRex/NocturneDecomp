@@ -51,7 +51,8 @@ void core_mimic_cpp_CMimic_load_FUN_00520930(void)
     }
   }
   else {
-    core_actor_cpp_serializeMotionState_FUN_0040b9f0(model_ptr,"motion state");
+    core_actor_cpp_serializeMotionState_FUN_0040b9f0
+              (&model_ptr->motion_controller,"motion state");
     core_actor_cpp_serializeString_FUN_0040b5c0
               ((char **)(in_stack_00000004[6].base_character.cloth_data + 0x1b2c),
                "morphActorType");

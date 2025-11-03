@@ -8,13 +8,13 @@
 //   undefined4 DAT_0065d7c8
 //   CEventList* g_CEventListPtr = 02d05310
 //   CGame* g_CGamePtr = 02d81a9c
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CGame g_CGameInstance
 //   undefined4 DAT_02d81c70
 //   undefined4 DAT_02d81ccc
 // Function calls:
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 
 #include "nocturne.h"
 
@@ -50,7 +50,7 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy *this_ptr)
   iVar5 = *(int *)this_ptr[1].base_character.base_actor.actor_name;
   if (iVar5 == 0) {
     if (((g_CGamePtr->field54_0x1d4 != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
-       (iVar5 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+       (iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                           (g_CEventListPtr,"Capture"), iVar5 != 0)) {
       this_ptr->field4_0xbe30 = 0;
       this_ptr->field6_0xbe38[8] = '\0';
@@ -247,7 +247,7 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy *this_ptr)
 //   XREF to: 006793d0 (READ)
 // 004a9b9e: PUSH ESI
 //   XREF to: 02d05310 (DATA)
-// 004a9b9f: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 004a9b9f: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 004a9ba4: ADD ESP,0x8
 // 004a9ba7: TEST EAX,EAX

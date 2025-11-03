@@ -26,7 +26,7 @@
 //   undefined1 DAT_03f96a78
 //   undefined1 DAT_03f96a79
 // Function calls:
-//   core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+//   core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   core_set.cpp_CDemonSet_FUN_0056d380
 //   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 //   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -71,7 +71,7 @@ void core_weather_cpp_CWeather_FUN_005ef190(void)
   int local_9c;
   CVector3i local_90 [2];
   CVector3i local_78;
-  CVector3i local_64;
+  undefined1 local_64 [12];
   int local_58;
   int local_54;
   CVector3i local_3c;
@@ -126,10 +126,11 @@ void core_weather_cpp_CWeather_FUN_005ef190(void)
                 (g_CDemonRendererPtr,world_position);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr,local_90,(CVector3i *)0x0);
-      local_64.z = (int)ROUND(world_position->x * _DAT_00665700);
+      local_64._8_4_ = (undefined4)ROUND(world_position->x * _DAT_00665700);
       local_58 = (int)ROUND(world_position->y * _DAT_00665700);
       local_54 = (int)ROUND(world_position->z * _DAT_00665700);
-      core_set_cpp_CDemonSet_CallLightVertexColor_FUN_0056e110(g_CDemonSetPtr);
+      core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
+                (g_CDemonSetPtr,(CVector3i *)(local_64 + 8),(CVector3i *)0x0,0,4);
       pCVar1 = g_CDemonRendererPtr;
       if (*in_stack_0000002c == 2) {
         iVar2 = (uVar7 & 3) * 0x400000;
@@ -148,11 +149,11 @@ void core_weather_cpp_CWeather_FUN_005ef190(void)
         pCVar1->vertex_buffer_ptr[3].v = fVar6;
       }
       local_18.z = in_stack_00000014;
-      local_64.x = (int)ROUND(in_stack_00000014 * _DAT_00665700);
-      local_64.y = (int)ROUND(-(float)in_stack_00000018 * _DAT_00665700);
-      local_64.z = (int)ROUND(_DAT_00665700 * 0.0);
+      local_64._0_4_ = (undefined4)ROUND(in_stack_00000014 * _DAT_00665700);
+      local_64._4_4_ = (undefined4)ROUND(-(float)in_stack_00000018 * _DAT_00665700);
+      local_64._8_4_ = (undefined4)ROUND(_DAT_00665700 * 0.0);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_64);
+                (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,(CVector3i *)local_64);
       local_3c.x = (int)ROUND(--(float)in_stack_00000018 * _DAT_00665700);
       local_3c.y = (int)ROUND(_DAT_00665700 * 0.0);
       local_3c.z = (int)ROUND(fVar9 * _DAT_00665700);
@@ -164,11 +165,11 @@ void core_weather_cpp_CWeather_FUN_005ef190(void)
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_2c);
       fVar9 = --fVar9;
-      local_64.x = (int)ROUND(fVar9 * _DAT_00665700);
-      local_64.y = (int)ROUND(unaff_retaddr * _DAT_00665700);
-      local_64.z = (int)ROUND((float)in_stack_00000004 * _DAT_00665700);
+      local_64._0_4_ = (undefined4)ROUND(fVar9 * _DAT_00665700);
+      local_64._4_4_ = (undefined4)ROUND(unaff_retaddr * _DAT_00665700);
+      local_64._8_4_ = (undefined4)ROUND((float)in_stack_00000004 * _DAT_00665700);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_64);
+                (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)local_64);
       engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
                 (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)local_b8);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
@@ -456,7 +457,7 @@ void core_weather_cpp_CWeather_FUN_005ef190(void)
 //   XREF to: 03114278 (PARAM)
 // 005ef3ad: PUSH ECX
 //   XREF to: 03114278 (DATA)
-// 005ef3ae: CALL core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+// 005ef3ae: CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   XREF to: 0056e110 (UNCONDITIONAL_CALL)
 // 005ef3b3: ADD ESP,0x14
 // 005ef3b6: MOV EAX,dword ptr [ESP + 0xf8]

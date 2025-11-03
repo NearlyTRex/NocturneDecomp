@@ -11,7 +11,7 @@
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   CConsole g_ConsolePtr
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_charactr.cpp_CCharacter_FUN_00428f40
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 //   engine_console.cpp_CConsole_printf_FUN_00441890
@@ -30,12 +30,12 @@ void core_werewolf_cpp_FUN_005f1e40(void)
   CCharacter *in_stack_00000004;
   double dVar3;
   float fVar4;
-  float local_68;
-  float local_64;
-  float local_60;
+  CVector3f local_68;
   CVector3f local_5c;
   CVector3f local_50;
+  float local_44;
   undefined4 local_40;
+  float local_3c;
   float local_38;
   float local_34;
   float local_30;
@@ -54,18 +54,22 @@ void core_werewolf_cpp_FUN_005f1e40(void)
     core_xform_cpp_transformVector3x4_FUN_005f4dc0
               (&local_5c,&local_50,
                (CMatrix3x4f *)
-               ((in_stack_00000004->model).padding_0x0 +
-               *(int *)(in_stack_00000004[1].base_actor.create_event + 0x34) * 0x30 + 0xe80));
-    core_actor_cpp_CDemonActor_FUN_00408f10(&in_stack_00000004->base_actor);
-    if (local_64 < (float)_DAT_00657e84) {
+               ((in_stack_00000004->model).field3_0x508 +
+               *(int *)(in_stack_00000004[1].base_actor.create_event + 0x34) * 0x30 + 0x978));
+    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+              (&in_stack_00000004->base_actor,&local_68,
+               (CVector3f *)(*(int *)(in_stack_00000004[1].base_actor.create_event + 0x4c) + 0x20));
+    if (local_68.y < (float)_DAT_00657e84) {
+      local_44 = local_68.x;
+      local_3c = local_68.z;
       local_40 = 0;
       core_charactr_cpp_CCharacter_FUN_00428f40(in_stack_00000004);
       return;
     }
-    fVar2 = local_60 - local_5c.z;
+    fVar2 = local_68.z - local_5c.z;
     local_1c = SQRT(fVar2 * fVar2 +
-                    (local_68 - local_5c.x) * (local_68 - local_5c.x) +
-                    (local_64 - local_5c.y) * (local_64 - local_5c.y));
+                    (local_68.x - local_5c.x) * (local_68.x - local_5c.x) +
+                    (local_68.y - local_5c.y) * (local_68.y - local_5c.y));
     dVar3 = (double)local_1c;
     engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Chain stretched to %f\n");
     if ((*(float *)(in_stack_00000004[1].base_actor.create_event + 0x50) < local_1c) &&
@@ -144,7 +148,7 @@ void core_werewolf_cpp_FUN_005f1e40(void)
 //   XREF to: Stack[-0x68] (DATA)
 // 005f1ead: PUSH EAX
 // 005f1eae: PUSH EBX
-// 005f1eaf: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 005f1eaf: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 005f1eb4: FLD float ptr [EBP + -0x54]
 //   XREF to: Stack[-0x64] (READ)

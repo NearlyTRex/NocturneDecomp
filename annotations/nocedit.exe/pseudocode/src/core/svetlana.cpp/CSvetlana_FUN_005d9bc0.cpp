@@ -28,81 +28,58 @@ int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9bc0(CSvetlana *this_ptr)
 
 {
   char **ppcVar1;
-  char *pcVar2;
-  CHero *pCVar3;
-  CCharacter *pCVar4;
-  CDemonSet *pCVar5;
+  CHero *pCVar2;
   CDemonRenderer *this_ptr_00;
-  int iVar6;
-  int iVar7;
-  CSvetlana *pCVar8;
+  int iVar3;
+  int iVar4;
+  CSvetlana *pCVar5;
   BADSPACEBASE *in_ESP;
   char *apcStack_70 [2];
-  CSvetlana *pCVar9;
+  CSvetlana *pCVar6;
   
-  pCVar5 = g_CDemonSetPtr;
-  pCVar5->field35_0x15ae84[0] = '\x01';
-  pCVar5->field35_0x15ae84[1] = '\0';
-  pCVar5->field35_0x15ae84[2] = '\0';
-  pCVar5->field35_0x15ae84[3] = '\0';
-  iVar6 = 0;
-  pCVar8 = this_ptr;
+  g_CDemonSetPtr->field40_0x15ae84 = 1;
+  iVar3 = 0;
+  pCVar5 = this_ptr;
   do {
-    iVar6 = iVar6 + 1;
-    pCVar3 = &pCVar8->base_hero;
-    pCVar8 = (CSvetlana *)((pCVar8->base_hero).base_character.base_actor.actor_name + 4);
-    *(undefined4 *)(&stack0xffffff78 + iVar6 * 4) =
-         *(undefined4 *)((pCVar3->base_character).model.padding_0x0 + 0x2140);
-  } while (iVar6 < 0x1e);
-  iVar6 = core_charactr_cpp_CCharacter_FUN_0042a2c0((CCharacter *)this_ptr);
-  iVar7 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
-  if ((iVar7 == 0) && ((int)g_PerspectiveReciprocal < 0x4000)) {
-    pCVar8 = this_ptr;
+    iVar3 = iVar3 + 1;
+    pCVar2 = &pCVar5->base_hero;
+    pCVar5 = (CSvetlana *)((pCVar5->base_hero).base_character.base_actor.actor_name + 4);
+    *(int *)(&stack0xffffff78 + iVar3 * 4) = (pCVar2->base_character).model.part_visibility_flags[0]
+    ;
+  } while (iVar3 < 0x1e);
+  iVar3 = core_charactr_cpp_CCharacter_FUN_0042a2c0((CCharacter *)this_ptr);
+  iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+  if ((iVar4 == 0) && ((int)g_PerspectiveReciprocal < 0x4000)) {
+    pCVar5 = this_ptr;
     do {
-      pCVar9 = (CSvetlana *)((pCVar8->base_hero).base_character.base_actor.actor_name + 4);
-      pCVar4 = &(pCVar8->base_hero).base_character;
-      (pCVar4->model).padding_0x0[0x2140] = '\0';
-      (pCVar4->model).padding_0x0[0x2141] = '\0';
-      (pCVar4->model).padding_0x0[0x2142] = '\0';
-      (pCVar4->model).padding_0x0[0x2143] = '\0';
-      pCVar8 = pCVar9;
-    } while (pCVar9 != (CSvetlana *)(this_ptr->base_hero).base_character.base_actor.create_event);
-    pcVar2 = (this_ptr->base_hero).base_character.model.padding_0x0 +
-             *(int *)(this_ptr->field1_0x1fbd4 + 0x7fcfc) * 4 + 0x2140;
-    pcVar2[0] = '\x01';
+      pCVar6 = (CSvetlana *)((pCVar5->base_hero).base_character.base_actor.actor_name + 4);
+      (pCVar5->base_hero).base_character.model.part_visibility_flags[0] = 0;
+      pCVar5 = pCVar6;
+    } while (pCVar6 != (CSvetlana *)(this_ptr->base_hero).base_character.base_actor.create_event);
+    (this_ptr->base_hero).base_character.model.part_visibility_flags
+    [*(int *)(this_ptr->field1_0x1fbd4 + 0x7fcfc)] = 1;
     this_ptr_00 = g_CDemonRendererPtr;
-    pcVar2[1] = '\0';
-    pcVar2[2] = '\0';
-    pcVar2[3] = '\0';
-    pcVar2 = (this_ptr->base_hero).base_character.model.padding_0x0 +
-             *(int *)(this_ptr->field1_0x1fbd4 + 0x7fd00) * 4 + 0x2140;
-    pcVar2[0] = '\x01';
-    pcVar2[1] = '\0';
-    pcVar2[2] = '\0';
-    pcVar2[3] = '\0';
-    iVar7 = g_CGamePtr->field62_0x1f4;
+    (this_ptr->base_hero).base_character.model.part_visibility_flags
+    [*(int *)(this_ptr->field1_0x1fbd4 + 0x7fd00)] = 1;
+    iVar4 = g_CGamePtr->field62_0x1f4;
     g_CGamePtr->field62_0x1f4 = 2;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(this_ptr_00,0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,48000);
-    if (iVar6 != 0) {
+    if (iVar3 != 0) {
       core_charactr_cpp_CCharacter_FUN_0042a2c0((CCharacter *)this_ptr);
     }
-    g_CGamePtr->field62_0x1f4 = iVar7;
-    iVar7 = 0;
-    pCVar8 = this_ptr;
+    g_CGamePtr->field62_0x1f4 = iVar4;
+    iVar4 = 0;
+    pCVar5 = this_ptr;
     do {
-      ppcVar1 = apcStack_70 + iVar7;
-      iVar7 = iVar7 + 1;
-      *(char **)((pCVar8->base_hero).base_character.model.padding_0x0 + 0x2140) = *ppcVar1;
-      pCVar8 = (CSvetlana *)((pCVar8->base_hero).base_character.base_actor.actor_name + 4);
-    } while (iVar7 < 0x1e);
+      ppcVar1 = apcStack_70 + iVar4;
+      iVar4 = iVar4 + 1;
+      (pCVar5->base_hero).base_character.model.part_visibility_flags[0] = (int)*ppcVar1;
+      pCVar5 = (CSvetlana *)((pCVar5->base_hero).base_character.base_actor.actor_name + 4);
+    } while (iVar4 < 0x1e);
   }
-  pCVar5 = g_CDemonSetPtr;
-  pCVar5->field35_0x15ae84[0] = '\0';
-  pCVar5->field35_0x15ae84[1] = '\0';
-  pCVar5->field35_0x15ae84[2] = '\0';
-  pCVar5->field35_0x15ae84[3] = '\0';
-  if (iVar6 != 0) {
+  g_CDemonSetPtr->field40_0x15ae84 = 0;
+  if (iVar3 != 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     apcStack_70[0] = (char *)0x0;
     core_cloth_cpp_FUN_0043bae0();
@@ -111,7 +88,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9bc0(CSvetlana *this_ptr)
     core_cloth_cpp_FUN_0043bae0();
     apcStack_70[1] = (char *)0x5d9d18;
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
-    return iVar6;
+    return iVar3;
   }
   return 0;
 }

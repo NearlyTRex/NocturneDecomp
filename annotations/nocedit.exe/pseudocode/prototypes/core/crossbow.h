@@ -11,42 +11,42 @@ CDemonActorType * staticInit(void);
 // Address: 00448c30
 undefined FUN_00448c30();
 
-// Original: core_crossbow.cpp_FUN_00448c60
+// Original: core_crossbow.cpp_CCrossbow_getActorType_FUN_00448c60
 // Address: 00448c60
-undefined FUN_00448c60();
+CDemonActorType * CCrossbow::getActorType(CCrossbow * this_ptr);
 
 // Original: core_crossbow.cpp_FUN_00448c70
 // Address: 00448c70
 CCrossbow * FUN_00448c70(CCrossbow * this_ptr);
 
-// Original: core_crossbow.cpp_FUN_00448d30
+// Original: core_crossbow.cpp_CCrossbow_process_FUN_00448d30
 // Address: 00448d30
-undefined FUN_00448d30();
+void CCrossbow::process(CCrossbow * this_ptr);
 
-// Original: core_crossbow.cpp_FUN_00448e00
+// Original: core_crossbow.cpp_CCrossbow_renderOpaque_FUN_00448e00
 // Address: 00448e00
-undefined FUN_00448e00();
+int CCrossbow::renderOpaque(CCrossbow * this_ptr);
 
-// Original: core_crossbow.cpp_FUN_00448e80
+// Original: core_crossbow.cpp_CCrossbow_renderTransparent_FUN_00448e80
 // Address: 00448e80
-undefined FUN_00448e80();
+int CCrossbow::renderTransparent(CCrossbow * this_ptr);
 
-// Original: core_crossbow.cpp_FUN_00448eb0
+// Original: core_crossbow.cpp_CCrossbow_FUN_00448eb0
 // Address: 00448eb0
-undefined FUN_00448eb0();
+int CCrossbow(CCrossbow * this_ptr);
 
-// Original: core_crossbow.cpp_FUN_00448f20
+// Original: core_crossbow.cpp_CCrossbow_FUN_00448f20
 // Address: 00448f20
-undefined FUN_00448f20();
+int CCrossbow(CCrossbow * this_ptr);
 
 // Original: core_crossbow.cpp_FUN_00449540
 // Address: 00449540
 undefined FUN_00449540();
 
-// Original: core_crossbow.cpp_FUN_00449570
+// Original: core_crossbow.cpp_CCrossbow_FUN_00449570
 // Address: 00449570
-undefined FUN_00449570();
+float CCrossbow(CCrossbow * this_ptr);
 
-// Original: core_crossbow.cpp_FUN_004495a0
+// Original: core_crossbow.cpp_CCrossbow_dtor_FUN_004495a0
 // Address: 004495a0
-CCrossbow * FUN_004495a0(CCrossbow * this_ptr, uint d1, uint d2, uint d3);
+CCrossbow * CCrossbow::dtor(CCrossbow * this_ptr, uint d1, uint d2, uint d3);

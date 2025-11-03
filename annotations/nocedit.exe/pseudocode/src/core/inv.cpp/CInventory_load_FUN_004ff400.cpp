@@ -25,7 +25,7 @@
 //   undefined4 g_CWeaponClassInfo.name_hash
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_0040b050
+//   core_actor.cpp_CDemonActor_load_FUN_0040b050
 //   core_actor.cpp_createActorByName_FUN_0040c430
 //   core_inv.cpp_CInventory_clear_FUN_004fd0e0
 //   core_inv.cpp_CInventory_initialize_FUN_004fd190
@@ -128,7 +128,7 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr)
   pCVar6 = in_stack_00000038;
   if (0 < in_stack_00000038->item_count) {
     do {
-      core_actor_cpp_CDemonActor_FUN_0040b050(pCVar6->items[0]);
+      core_actor_cpp_CDemonActor_load_FUN_0040b050(pCVar6->items[0],in_stack_0000003c);
       iVar7 = iVar7 + 1;
       pCVar6 = (CInventory *)&pCVar6->owner;
     } while (iVar7 < in_stack_00000038->item_count);
@@ -342,7 +342,7 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr)
 // 004ff5c4: PUSH ECX
 // 004ff5c5: MOV EDI,dword ptr [EBX + 0xc]
 // 004ff5c8: PUSH EDI
-// 004ff5c9: CALL core_actor.cpp_CDemonActor_FUN_0040b050
+// 004ff5c9: CALL core_actor.cpp_CDemonActor_load_FUN_0040b050
 //   XREF to: 0040b050 (UNCONDITIONAL_CALL)
 // 004ff5ce: ADD ESP,0x8
 // 004ff5d1: MOV EAX,dword ptr [ESP + 0x1e0]

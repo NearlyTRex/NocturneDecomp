@@ -11,7 +11,7 @@
 //   core_moon.cpp_FUN_00529a80 (00529a80) at 00529a88 [UNCONDITIONAL_CALL]
 //   core_moon.cpp_staticInit_FUN_005299f0 (005299f0) at 00529a65 [UNCONDITIONAL_CALL]
 //   core_set.cpp_staticInit_FUN_00569040 (00569040) at 00569093 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00596cd3 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596cd3 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

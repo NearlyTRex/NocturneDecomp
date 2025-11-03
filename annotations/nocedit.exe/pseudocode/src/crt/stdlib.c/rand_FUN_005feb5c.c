@@ -4,10 +4,10 @@
 // Convention: __watcallRegister
 // Signature: int crt_stdlib.c_rand_FUN_005feb5c(void)
 // Cross-references:
-//   core_actor.cpp_FUN_0040cbc0 (0040cbc0) at 0040cbee [UNCONDITIONAL_CALL]
-//   core_actor.cpp_FUN_0040cc70 (0040cc70) at 0040cca5 [UNCONDITIONAL_CALL]
-//   core_actor.cpp_FUN_0040cd10 (0040cd10) at 0040cd4d [UNCONDITIONAL_CALL]
+//   core_actor.cpp_getRandomFloat_FUN_0040cbc0 (0040cbc0) at 0040cbee [UNCONDITIONAL_CALL]
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10 (0040cc10) at 0040cc5b [UNCONDITIONAL_CALL]
+//   core_actor.cpp_getRandomInt_FUN_0040cc70 (0040cc70) at 0040cca5 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_randomChance_FUN_0040cd10 (0040cd10) at 0040cd4d [UNCONDITIONAL_CALL]
 //   core_baron.cpp_FUN_004136b0 (004136b0) at 004138a9 [UNCONDITIONAL_CALL]
 //   core_batcreat.cpp_FUN_00415dd0 (00415dd0) at 00415df0 [UNCONDITIONAL_CALL]
 //   core_batman.cpp_FUN_00417660 (00417660) at 00417680 [UNCONDITIONAL_CALL]
@@ -19,7 +19,7 @@
 //   core_dcamera.cpp_generateFogGrid_FUN_0044bba0 (0044bba0) at 0044bbf8 [UNCONDITIONAL_CALL]
 //   core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670 (00476670) at 00476685 [UNCONDITIONAL_CALL]
 //   core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70 (00496e70) at 00497219 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CLightningBolt_FUN_004c5720 (004c5720) at 004c5745 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CLightningBolt_render_FUN_004c5720 (004c5720) at 004c5745 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_process_FUN_004e3190 (004e3190) at 004e31c0 [UNCONDITIONAL_CALL]
 //   core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530 (004e5530) at 004e5550 [UNCONDITIONAL_CALL]
 //   core_ghoul.cpp_FUN_004e8520 (004e8520) at 004e8540 [UNCONDITIONAL_CALL]

@@ -8,15 +8,15 @@
 // Globals:
 //   void* switchdataD_004e8504 = 004e855d
 //   TerminatedCString s_limb_wav_0062de5e
-//   undefined4 DAT_0062de6a
-//   undefined4 DAT_0062de72
-//   undefined4 DAT_0062de7a
+//   double DOUBLE_0062de6a = 7
+//   double DOUBLE_0062de72 = 0.5
+//   double DOUBLE_0062de7a = 2.5
 //   CGame* g_CGamePtr = 02d81a9c
 //   CGame g_CGameInstance
 //   undefined4 g_CGameInstance.blood_flag
 //   undefined4 g_CGameInstance.field57_0x1e0
 // Function calls:
-//   core_actor.cpp_FUN_0040cd10
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_bodypart.cpp_CreateBodyPart_FUN_00418e10
 //   core_bodypart.cpp_FUN_0041a050
 //   core_charactr.cpp_CCharacter_FUN_0042bcc0
@@ -26,7 +26,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_ghoul.cpp_FUN_004e8520(undefined4 param_1, undefined4 param_2)
     */
 
@@ -34,9 +33,9 @@ void core_ghoul_cpp_FUN_004e8520(void)
 
 {
   int iVar1;
-  float fVar2;
   CCharacter *in_stack_00000004;
   float *in_stack_00000008;
+  float fVar2;
   
   if ((0.0 < in_stack_00000008[0xb]) && (*in_stack_00000008 == -NAN)) {
     iVar1 = crt_stdlib_c_rand_FUN_005feb5c();
@@ -54,10 +53,10 @@ void core_ghoul_cpp_FUN_004e8520(void)
       fVar2 = *(float *)(in_stack_00000004[1].base_actor.create_event + 0x50);
       break;
     case 4:
-      fVar2 = in_stack_00000004[1].base_actor.field_224.y;
+      fVar2 = in_stack_00000004[1].base_actor.field12_0xe0.y;
       break;
     case 5:
-      fVar2 = in_stack_00000004[1].base_actor.field_224.x;
+      fVar2 = in_stack_00000004[1].base_actor.field12_0xe0.x;
       break;
     default:
       goto switchD_004e8556_default;
@@ -66,47 +65,62 @@ void core_ghoul_cpp_FUN_004e8520(void)
   }
 switchD_004e8556_default:
   fVar2 = *in_stack_00000008;
-  if ((((((fVar2 == *(float *)(in_stack_00000004[1].base_actor.create_event + 0x44)) ||
-         (fVar2 == *(float *)(in_stack_00000004[1].base_actor.create_event + 0x48))) ||
-        (fVar2 == *(float *)(in_stack_00000004[1].base_actor.create_event + 0x4c))) ||
-       ((fVar2 == *(float *)(in_stack_00000004[1].base_actor.create_event + 0x50) ||
-        (fVar2 == in_stack_00000004[1].base_actor.field_224.x)))) ||
-      (fVar2 == in_stack_00000004[1].base_actor.field_224.y)) &&
-     (iVar1 = core_actor_cpp_FUN_0040cd10(), iVar1 != 0)) {
-    core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
-    core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
-    if (*in_stack_00000008 == *(float *)(in_stack_00000004[1].base_actor.create_event + 0x44)) {
+  if (((((fVar2 == *(float *)(in_stack_00000004[1].base_actor.create_event + 0x44)) ||
+        (fVar2 == *(float *)(in_stack_00000004[1].base_actor.create_event + 0x48))) ||
+       (fVar2 == *(float *)(in_stack_00000004[1].base_actor.create_event + 0x4c))) ||
+      ((fVar2 == *(float *)(in_stack_00000004[1].base_actor.create_event + 0x50) ||
+       (fVar2 == in_stack_00000004[1].base_actor.field12_0xe0.x)))) ||
+     (fVar2 == in_stack_00000004[1].base_actor.field12_0xe0.y)) {
+    fVar2 = in_stack_00000008[0xb];
+    if (in_stack_00000004[1].base_actor.field12_0xe0.y == *in_stack_00000008) {
+      fVar2 = 0.05;
+    }
+    if (in_stack_00000004[1].base_actor.field12_0xe0.x == *in_stack_00000008) {
+      fVar2 = 0.02;
+    }
+    if (g_CGamePtr->field57_0x1e0 != 0) {
+      fVar2 = 1.0;
+    }
+    if (g_CGamePtr->blood_flag == 0) {
+      fVar2 = 0.0;
+    }
+    iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(fVar2);
+    if (iVar1 != 0) {
+      core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
+      if (*in_stack_00000008 == *(float *)(in_stack_00000004[1].base_actor.create_event + 0x44)) {
+        core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
+      }
+      if (*(float *)(in_stack_00000004[1].base_actor.create_event + 0x4c) == *in_stack_00000008) {
+        core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
+      }
+      if (in_stack_00000004[1].base_actor.field12_0xe0.x == *in_stack_00000008) {
+        core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+        core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+        core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+        core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+        core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+      }
+      core_charactr_cpp_CCharacter_FUN_0042f300(in_stack_00000004);
+      core_bodypart_cpp_FUN_0041a050();
+      if ((in_stack_00000004->model).part_visibility_flags
+          [(int)in_stack_00000004[1].base_actor.field12_0xe0.y] == 0) {
+        in_stack_00000008[1] = 9999.0;
+      }
+      in_stack_00000008[2] = in_stack_00000008[2] * (float)DOUBLE_0062de6a;
     }
-    if (*(float *)(in_stack_00000004[1].base_actor.create_event + 0x4c) == *in_stack_00000008) {
-      core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
-    }
-    if (in_stack_00000004[1].base_actor.field_224.x == *in_stack_00000008) {
-      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-    }
-    core_charactr_cpp_CCharacter_FUN_0042f300(in_stack_00000004);
-    core_bodypart_cpp_FUN_0041a050();
-    if (*(int *)((in_stack_00000004->model).padding_0x0 +
-                (int)in_stack_00000004[1].base_actor.field_224.y * 4 + 0x2140) == 0) {
-      in_stack_00000008[1] = 9999.0;
-    }
-    in_stack_00000008[2] = in_stack_00000008[2] * (float)_DAT_0062de6a;
   }
   fVar2 = *in_stack_00000008;
-  if (fVar2 != in_stack_00000004[1].base_actor.field_224.y) {
-    if ((fVar2 != (float)in_stack_00000004[1].base_actor.field11_0xdc) &&
-       (fVar2 != in_stack_00000004[1].base_actor.field_224.x)) {
-      in_stack_00000008[1] = in_stack_00000008[1] * (float)_DAT_0062de72;
-      return;
-    }
-    in_stack_00000008[1] = in_stack_00000008[1];
+  if (fVar2 == in_stack_00000004[1].base_actor.field12_0xe0.y) {
+    in_stack_00000008[1] = in_stack_00000008[1] * (float)DOUBLE_0062de7a;
     return;
   }
-  in_stack_00000008[1] = in_stack_00000008[1] * (float)_DAT_0062de7a;
+  if ((fVar2 != (float)in_stack_00000004[1].base_actor.field11_0xdc) &&
+     (fVar2 != in_stack_00000004[1].base_actor.field12_0xe0.x)) {
+    in_stack_00000008[1] = in_stack_00000008[1] * (float)DOUBLE_0062de72;
+    return;
+  }
+  in_stack_00000008[1] = in_stack_00000008[1];
   return;
 }
 
@@ -201,7 +215,7 @@ switchD_004e8556_default:
 // 004e85c6: PUSH dword ptr [ESP + 0x8]
 //   Label: LAB_004e85c6
 //   XREF to: Stack[-0x14] (READ)
-// 004e85ca: CALL core_actor.cpp_FUN_0040cd10
+// 004e85ca: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 004e85cf: ADD ESP,0x4
 // 004e85d2: TEST EAX,EAX

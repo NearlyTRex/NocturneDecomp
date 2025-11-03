@@ -9,8 +9,8 @@
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_box.cpp_CBoundingBox3D_clampPoint_FUN_00421550
 //   core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_00572510
 
@@ -23,29 +23,32 @@ bool core_enemy_cpp_FUN_004a9a50(void)
 
 {
   CDemonActor *this_ptr;
-  CVector3f *in_point;
-  int iVar1;
+  CVector3f *pCVar1;
+  int iVar2;
   BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   CDemonActor *in_stack_00000008;
   float fStack_48;
-  CVector3f CStack_14;
+  CVector3f local_2c;
+  undefined1 auStack_18 [16];
   
   this_ptr = in_stack_00000008;
   if (in_stack_00000008 == (CDemonActor *)0x0) {
     return false;
   }
-  (*(in_stack_00000004->metadata).vtable[1].shouldIgnoreForTargeting)(in_stack_00000004);
-  core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-  (*((this_ptr->metadata).vtable)->getBoundingBox)(this_ptr,(CBoundingBox3D *)&stack0xffffffb4);
+  pCVar1 = (CVector3f *)(*in_stack_00000004->vtable[1].shouldIgnoreForTargeting)(in_stack_00000004);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&local_2c,pCVar1);
+  (*this_ptr->vtable->getBoundingBox)(this_ptr,(CBoundingBox3D *)&stack0xffffffb4);
   fStack_48 = 6.851314e-39;
-  in_point = core_actor_cpp_CDemonActor_FUN_00408f10(this_ptr);
-  core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550
-            ((CBoundingBox3D *)&stack0xffffffcc,(CVector3f *)&stack0x00000008,in_point);
-  core_actor_cpp_CDemonActor_FUN_00408ec0(this_ptr);
-  iVar1 = core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_00572510
-                    (g_CDemonSetPtr,(CVector3f *)&stack0xfffffff8,&CStack_14);
-  return iVar1 == 0;
+  pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                     (this_ptr,(CVector3f *)&stack0x00000010,(CVector3f *)(auStack_18 + 4));
+  pCVar1 = core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550
+                     ((CBoundingBox3D *)&stack0xffffffcc,(CVector3f *)&stack0x00000008,pCVar1);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(this_ptr,(CVector3f *)auStack_18,pCVar1)
+  ;
+  iVar2 = core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_00572510
+                    (g_CDemonSetPtr,(CVector3f *)&stack0xfffffff8,(CVector3f *)(auStack_18 + 4));
+  return iVar2 == 0;
 }
 
 
@@ -78,7 +81,7 @@ bool core_enemy_cpp_FUN_004a9a50(void)
 // 004a9a7f: LEA EAX,[ESP + 0x28]
 // 004a9a83: PUSH EAX
 // 004a9a84: PUSH ESI
-// 004a9a85: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 004a9a85: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 004a9a8a: ADD ESP,0xc
 // 004a9a8d: MOV EDX,ESP
@@ -92,7 +95,7 @@ bool core_enemy_cpp_FUN_004a9a50(void)
 // 004a9aa2: LEA EAX,[ESP + 0x4c]
 // 004a9aa6: PUSH EAX
 // 004a9aa7: PUSH EBX
-// 004a9aa8: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 004a9aa8: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 004a9aad: ADD ESP,0xc
 // 004a9ab0: PUSH EAX
@@ -107,7 +110,7 @@ bool core_enemy_cpp_FUN_004a9a50(void)
 // 004a9ac4: LEA EAX,[ESP + 0x1c]
 // 004a9ac8: PUSH EAX
 // 004a9ac9: PUSH EBX
-// 004a9aca: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 004a9aca: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 004a9acf: ADD ESP,0xc
 // 004a9ad2: LEA EAX,[ESP + 0x18]

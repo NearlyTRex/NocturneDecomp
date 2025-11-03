@@ -25,7 +25,7 @@
 //   undefined4 g_ZeroVector.y
 //   undefined4 g_ZeroVector.z
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 //   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 //   engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
@@ -48,9 +48,10 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
   char *pcVar5;
   int iVar6;
   char *pcVar7;
-  float10 fVar8;
+  CVector3f *pCVar8;
   float10 fVar9;
-  CDemonRenderer *pCVar10;
+  float10 fVar10;
+  CDemonRenderer *pCVar11;
   int local_e4;
   SMRGLHeaderPrimitive local_d4;
   int local_bc;
@@ -58,7 +59,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
   undefined1 local_a8 [16];
   int iStack_98;
   int iStack_94;
-  float local_7c;
+  CVector3f local_90;
+  CVector3f local_84;
   float local_78;
   CVector3f local_74;
   CVector3i local_68;
@@ -68,11 +70,11 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
   float local_3c;
   char *local_38;
   float local_2c;
-  char *local_28;
+  undefined1 *local_28;
   char *local_24;
   float local_20;
-  char *local_18;
-  int iStack_14;
+  CVector3f *local_18;
+  CVector3f *pCStack_14;
   
   local_d4.base.type =
        engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
@@ -95,10 +97,10 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
             (g_CDemonRendererPtr,(SMRGLTextureBasic *)&DAT_00823a78);
   iVar6 = 0;
   do {
-    pCVar10 = g_CDemonRendererPtr;
+    pCVar11 = g_CDemonRendererPtr;
     *(undefined4 *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar6) = 0x800000;
     iVar3 = iVar6 + 0x30;
-    *(undefined4 *)((int)&pCVar10->vertex_buffer_ptr->v + iVar6) = 0x800000;
+    *(undefined4 *)((int)&pCVar11->vertex_buffer_ptr->v + iVar6) = 0x800000;
     iVar6 = iVar3;
   } while (iVar3 != 0x12c0);
   local_24 = (char *)0x267;
@@ -106,19 +108,21 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
   local_d4.surface_normal.C = 1;
   local_d4.surface_normal.D = 2;
   local_bc = 3;
-  local_18 = this_ptr->cloth_data + 0x1c4;
+  local_18 = (CVector3f *)(this_ptr->cloth_data + 0x1c4);
   local_38 = this_ptr->cloth_data + 0x278;
-  local_28 = (char *)0x28000;
+  local_28 = (undefined1 *)0x28000;
   do {
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
               (g_CDemonRendererPtr,(int)local_28 / 5);
     iVar6 = 0;
+    pCVar8 = pCStack_14;
     do {
-      pCVar10 = g_CDemonRendererPtr;
+      pCVar11 = g_CDemonRendererPtr;
       *(undefined4 *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar6) = 0;
-      *(undefined4 *)((int)&pCVar10->vertex_buffer_ptr->color + iVar6) = 0xffff;
-      *(undefined4 *)((int)&pCVar10->vertex_buffer_ptr->fog + iVar6) = 0;
-      pCVar4 = core_actor_cpp_CDemonActor_FUN_00408f10(&this_ptr->base_actor);
+      *(undefined4 *)((int)&pCVar11->vertex_buffer_ptr->color + iVar6) = 0xffff;
+      *(undefined4 *)((int)&pCVar11->vertex_buffer_ptr->fog + iVar6) = 0;
+      pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                         (&this_ptr->base_actor,&local_84,pCVar8);
       if (&local_74 != pCVar4) {
         local_74.x = pCVar4->x;
         local_74.y = pCVar4->y;
@@ -127,6 +131,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
       local_68.x = (int)ROUND(local_74.x * _DAT_0065b810);
       local_68.y = (int)ROUND(local_74.y * _DAT_0065b810);
       local_68.z = (int)ROUND(local_74.z * _DAT_0065b810);
+      pCVar8 = pCVar8 + 1;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
                  ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
@@ -136,7 +141,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
     engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
               (g_CDemonRendererPtr,&local_d4,0x267);
     unaff_ESI = unaff_ESI + 0x24;
-    local_18 = local_18 + -0x8000;
+    local_18 = (CVector3f *)((int)local_18 + -0x8000);
   } while (unaff_ESI != local_28);
   pcVar5 = this_ptr->cloth_data + 0x278;
   local_24 = this_ptr->cloth_data + 0x32c;
@@ -144,12 +149,14 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
               (g_CDemonRendererPtr,(int)local_20 / 5);
     iVar6 = 0;
+    pCVar8 = local_18;
     do {
-      pCVar10 = g_CDemonRendererPtr;
+      pCVar11 = g_CDemonRendererPtr;
       *(undefined4 *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar6) = 0;
-      *(undefined4 *)((int)&pCVar10->vertex_buffer_ptr->color + iVar6) = 0;
-      *(undefined4 *)((int)&pCVar10->vertex_buffer_ptr->fog + iVar6) = 0xffff;
-      pCVar4 = core_actor_cpp_CDemonActor_FUN_00408f10(&this_ptr->base_actor);
+      *(undefined4 *)((int)&pCVar11->vertex_buffer_ptr->color + iVar6) = 0;
+      *(undefined4 *)((int)&pCVar11->vertex_buffer_ptr->fog + iVar6) = 0xffff;
+      pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                         (&this_ptr->base_actor,&local_90,pCVar8);
       if (&local_74 != pCVar4) {
         local_74.x = pCVar4->x;
         local_74.y = pCVar4->y;
@@ -158,37 +165,38 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
       local_5c._0_4_ = (undefined4)ROUND(local_74.x * _DAT_0065b810);
       local_5c._4_4_ = (undefined4)ROUND(local_74.y * _DAT_0065b810);
       iStack_54 = (int)ROUND(local_74.z * _DAT_0065b810);
+      pCVar8 = pCVar8 + 1;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
                  ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
                  iVar6),(CVector3i *)local_5c);
       iVar6 = iVar6 + 0x30;
     } while (iVar6 != 0x90);
-    pcVar7 = local_18;
+    pCVar8 = local_18;
     engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
               (g_CDemonRendererPtr,&local_d4,(int)local_18);
     pcVar5 = pcVar5 + 0x24;
   } while (pcVar5 != local_24);
   local_20 = *(float *)(this_ptr->cloth_data + 0x358) * this_ptr->size_scale;
   if (local_20 < *(float *)(this_ptr->cloth_data + 0x354) * this_ptr->size_scale) {
-    local_20 = *(float *)((this_ptr->model).padding_0x0 + 0x2248);
+    local_20 = *(float *)((this_ptr->model).field8_0x2238 + 0x10);
   }
   local_d4.base.type = (int)(*(float *)(this_ptr->cloth_data + 0x354) * this_ptr->size_scale);
   if (local_20 < (float)local_d4.base.type) {
     local_20 = this_ptr->size_scale * (float)DOUBLE_006170aa + (float)local_d4.base.type;
   }
   local_2c = *(float *)(this_ptr->cloth_data + 0x354) * this_ptr->size_scale;
-  pCVar10 = (CDemonRenderer *)(*(float *)(this_ptr->cloth_data + 0x348) * this_ptr->size_scale);
+  pCVar11 = (CDemonRenderer *)(*(float *)(this_ptr->cloth_data + 0x348) * this_ptr->size_scale);
   iVar6 = 0x30;
   iVar3 = 0;
   do {
-    fVar8 = (float10)(iStack_14 * 2) * (float10)DOUBLE_006170b2 * (float10)DOUBLE_006170ba;
-    fVar9 = (float10)fsin(fVar8);
-    fVar8 = (float10)fcos(fVar8);
+    fVar9 = (float10)((int)pCStack_14 * 2) * (float10)DOUBLE_006170b2 * (float10)DOUBLE_006170ba;
+    fVar10 = (float10)fsin(fVar9);
+    fVar9 = (float10)fcos(fVar9);
     local_78 = local_3c;
-    local_7c = (float)(fVar9 * (float10)(float)pCVar10);
-    local_74.x = (float)(fVar8 * (float10)(float)pCVar10);
-    local_5c._4_4_ = (undefined4)ROUND(local_7c * _DAT_0065b810);
+    local_84.z = (float)(fVar10 * (float10)(float)pCVar11);
+    local_74.x = (float)(fVar9 * (float10)(float)pCVar11);
+    local_5c._4_4_ = (undefined4)ROUND(local_84.z * _DAT_0065b810);
     iStack_54 = (int)ROUND(local_3c * _DAT_0065b810);
     iStack_50 = (int)ROUND(local_74.x * _DAT_0065b810);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
@@ -200,15 +208,15 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
     *(undefined4 *)((int)&pCVar2->vertex_buffer_ptr->color + iVar3) = 0;
     *(undefined4 *)((int)&pCVar2->vertex_buffer_ptr->fog + iVar3) = 0;
     local_74.x = local_2c;
-    local_28 = pcVar7 + 1;
+    local_28 = (undefined1 *)((int)&pCVar8->x + 1);
     local_a8._0_4_ = (undefined4)ROUND(local_78 * _DAT_0065b810);
     local_a8._4_4_ = (undefined4)ROUND(local_2c * _DAT_0065b810);
     local_a8._8_4_ = (undefined4)ROUND(local_74.y * _DAT_0065b810);
-    pCVar10 = (CDemonRenderer *)local_a8;
+    pCVar11 = (CDemonRenderer *)local_a8;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
                ((int)&(pCVar2->vertex_buffer_ptr->projected_vertex).transformed_x + iVar6),
-               (CVector3i *)pCVar10);
+               (CVector3i *)pCVar11);
     pCVar2 = g_CDemonRendererPtr;
     *(undefined4 *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar6) = 0xffff;
     *(undefined4 *)((int)&pCVar2->vertex_buffer_ptr->color + iVar6) = 0;
@@ -219,35 +227,35 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
       local_b8.x = (int)local_24;
       local_d4.base.type = 4;
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(pCVar2,0x4000);
-      pCVar10 = g_CDemonRendererPtr;
-      pcVar7 = local_18;
+      pCVar11 = g_CDemonRendererPtr;
+      pCVar8 = local_18;
       engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
                 (g_CDemonRendererPtr,&local_d4,(int)local_18);
     }
     iVar3 = iVar3 + 0x60;
-    iStack_14 = iStack_14 + 1;
+    pCStack_14 = (CVector3f *)((int)&pCStack_14->x + 1);
     iVar6 = iVar6 + 0x60;
-  } while (iStack_14 < 0x19);
+  } while ((int)pCStack_14 < 0x19);
   local_b8.x = (int)ROUND(g_ZeroVector.x * _DAT_0065b810);
   local_b8.y = (int)ROUND(g_ZeroVector.y * _DAT_0065b810);
   local_b8.z = (int)ROUND(g_ZeroVector.z * _DAT_0065b810);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_b8);
-  pCVar10 = g_CDemonRendererPtr;
+  pCVar11 = g_CDemonRendererPtr;
   g_CDemonRendererPtr->vertex_buffer_ptr->light = 9.18341e-41;
   iVar3 = 0;
-  pCVar10->vertex_buffer_ptr->color = 0;
+  pCVar11->vertex_buffer_ptr->color = 0;
   iVar6 = 0x30;
   local_e4 = 0;
-  pCVar10->vertex_buffer_ptr->fog = 0.0;
+  pCVar11->vertex_buffer_ptr->fog = 0.0;
   do {
-    fVar8 = (float10)local_e4 * (float10)DOUBLE_006170b2 * (float10)DOUBLE_006170ba;
-    fVar9 = (float10)fsin(fVar8);
-    fVar8 = (float10)fcos(fVar8);
+    fVar9 = (float10)local_e4 * (float10)DOUBLE_006170b2 * (float10)DOUBLE_006170ba;
+    fVar10 = (float10)fsin(fVar9);
+    fVar9 = (float10)fcos(fVar9);
     local_78 = (float)((float10)this_ptr->size_scale *
-                      (float10)*(float *)(this_ptr->cloth_data + 0x344) * fVar9);
+                      (float10)*(float *)(this_ptr->cloth_data + 0x344) * fVar10);
     local_74.x = 0.0;
-    local_74.y = (float)(fVar8 * (float10)*(float *)(this_ptr->cloth_data + 0x344) *
+    local_74.y = (float)(fVar9 * (float10)*(float *)(this_ptr->cloth_data + 0x344) *
                         (float10)this_ptr->size_scale);
     local_a8._12_4_ = (undefined4)ROUND(local_78 * _DAT_0065b810);
     iStack_98 = (int)ROUND(_DAT_0065b810 * 0.0);
@@ -256,16 +264,16 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
               ((SProjectedVertex *)
                ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
                iVar6),(CVector3i *)(local_a8 + 0xc));
-    pCVar10 = g_CDemonRendererPtr;
+    pCVar11 = g_CDemonRendererPtr;
     *(undefined4 *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar6) = 0xffff;
-    *(undefined4 *)((int)&pCVar10->vertex_buffer_ptr->color + iVar6) = 0;
-    *(undefined4 *)((int)&pCVar10->vertex_buffer_ptr->fog + iVar6) = 0;
+    *(undefined4 *)((int)&pCVar11->vertex_buffer_ptr->color + iVar6) = 0;
+    *(undefined4 *)((int)&pCVar11->vertex_buffer_ptr->fog + iVar6) = 0;
     if (0 < iVar3) {
       local_d4.base.type = 3;
       local_d4.surface_normal.D = 0;
       local_bc = iVar3 + -1;
       local_b8.x = iVar3;
-      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(pCVar10,0x4000);
+      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(pCVar11,0x4000);
       engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
                 (g_CDemonRendererPtr,&local_d4,(int)local_18);
     }
@@ -436,7 +444,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
 // 00429c80: MOV EBX,dword ptr [EBP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 00429c83: PUSH EBX
-// 00429c84: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 00429c84: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 00429c89: MOV EDX,EAX
 // 00429c8b: LEA EAX,[ESP + 0x80]
@@ -570,7 +578,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
 // 00429dcf: MOV EAX,dword ptr [EBP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 00429dd2: PUSH EAX
-// 00429dd3: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 00429dd3: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 00429dd8: MOV EDX,EAX
 // 00429dda: LEA EAX,[ESP + 0x80]

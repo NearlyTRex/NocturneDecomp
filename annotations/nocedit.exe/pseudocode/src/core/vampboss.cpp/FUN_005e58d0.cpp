@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_vampboss.cpp_FUN_005e58d0()
 // Function calls:
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 
 #include "nocturne.h"
 
@@ -16,7 +16,7 @@ float core_vampboss_cpp_FUN_005e58d0(void)
   float in_stack_00000004;
   float in_stack_0000000c;
   
-  fVar1 = core_actor_cpp_FUN_0040cd70(in_stack_00000004);
+  fVar1 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(in_stack_00000004);
   fVar2 = -in_stack_0000000c;
   if ((-in_stack_0000000c <= fVar1) && (fVar2 = in_stack_0000000c, fVar1 <= in_stack_0000000c)) {
     return fVar1;
@@ -30,7 +30,7 @@ float core_vampboss_cpp_FUN_005e58d0(void)
 //   Label: core_vampboss.cpp_FUN_005e58d0
 // 005e58d3: PUSH dword ptr [ESP + 0x10]
 //   XREF to: Stack[0x4] (READ)
-// 005e58d7: CALL core_actor.cpp_FUN_0040cd70
+// 005e58d7: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 005e58dc: MOV dword ptr [ESP + 0xc],EAX
 //   XREF to: Stack[-0x4] (WRITE)

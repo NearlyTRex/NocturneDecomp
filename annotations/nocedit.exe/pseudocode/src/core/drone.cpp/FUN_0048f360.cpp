@@ -7,7 +7,7 @@
 //   TerminatedCString s_drone_die_wav_00622437
 //   TerminatedCString s_drone_hurt_wav_00622446
 // Function calls:
-//   core_actor.cpp_FUN_0040cc70
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_enemy.cpp_FUN_004a9f10
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -39,24 +39,29 @@ void core_drone_cpp_FUN_0048f360(void)
       uVar3 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
       *(undefined4 *)(in_stack_00000004 + 0xbec8) = uVar3;
     }
-    iVar2 = core_actor_cpp_FUN_0040cc70();
+    iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
     if (iVar2 == 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                ((CMotionController *)(in_stack_00000004 + 0x158));
     }
     if (iVar2 == 1) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                ((CMotionController *)(in_stack_00000004 + 0x158));
     }
     if (iVar2 == 2) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                ((CMotionController *)(in_stack_00000004 + 0x158));
       core_enemy_cpp_FUN_004a9f10();
       return;
     }
   }
   else {
     *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0
+                      ((CMotionController *)(in_stack_00000004 + 0x158));
     if ((*(int *)(iVar2 + 0x24) != 8) && (*(int *)(iVar2 + 0x24) != 7)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                ((CMotionController *)(in_stack_00000004 + 0x158));
     }
     sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
     sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
@@ -164,7 +169,7 @@ void core_drone_cpp_FUN_0048f360(void)
 // 0048f444: PUSH 0x2
 //   Label: LAB_0048f444
 // 0048f446: PUSH 0x0
-// 0048f448: CALL core_actor.cpp_FUN_0040cc70
+// 0048f448: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 0048f44d: ADD ESP,0x8
 // 0048f450: MOV ESI,EAX

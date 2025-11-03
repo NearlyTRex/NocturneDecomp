@@ -6,16 +6,16 @@
 // Globals:
 //   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CDemonSet g_CDemonSetInstance
 //   undefined4 g_CDemonSetInstance.actor_list_ptr
 //   undefined4 g_CDemonSetInstance.actor_list_data[0]
 //   undefined4 DAT_032613d4
 //   undefined4 DAT_032613d8
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408e80
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 
 #include "nocturne.h"
 
@@ -32,21 +32,22 @@ void core_conveyor_cpp_FUN_00441df0(void)
   int iVar3;
   CDemonActor *in_stack_00000004;
   float in_stack_00000014;
-  float local_28;
-  float local_20;
+  CVector3f local_28;
   float local_1c;
   float local_18;
   float local_14;
+  CVector3f *input;
   
-  iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+  iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,in_stack_00000004[5].create_event + 0x14);
   if (iVar1 != 0) {
-    in_stack_00000004[5].metadata.vtable = (CDemonActor_vtable *)&DAT_00000001;
+    in_stack_00000004[5].vtable = (CDemonActor_vtable *)&DAT_00000001;
   }
-  iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                    (g_CEventListPtr,(char *)&in_stack_00000004[5].field_236.y);
+  iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+                    (g_CEventListPtr,(char *)&in_stack_00000004[5].field13_0xec.y);
   if (iVar1 == 0) {
-    if (in_stack_00000004[5].metadata.vtable != (CDemonActor_vtable *)0x0) {
+    if (in_stack_00000004[5].vtable != (CDemonActor_vtable *)0x0) {
+      input = (CVector3f *)(in_stack_00000004[5].create_event + 8);
       iVar3 = 0;
       iVar1 = 0;
       while (iVar3 < (int)g_CDemonSetPtr->actor_list_ptr) {
@@ -54,17 +55,19 @@ void core_conveyor_cpp_FUN_00441df0(void)
         if (in_stack_00000004 == (CDemonActor *)actor_ptr->field11_0xdc) {
           if (((CDemonActor *)actor_ptr->field11_0xdc)[6].actor_name[0] == '\0') {
 LAB_00441e9d:
-            core_actor_cpp_CDemonActor_FUN_00408e80(in_stack_00000004);
-            local_18 = local_28 * in_stack_00000014;
-            local_14 = local_20 * in_stack_00000014;
-            if (&actor_ptr->field_224 != (CVector3f *)&local_18) {
-              (actor_ptr->field_224).x = local_18;
-              (actor_ptr->field_224).y = local_14;
-              (actor_ptr->field_224).z = local_1c * in_stack_00000014;
+            core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                      (in_stack_00000004,&local_28,input);
+            local_18 = local_28.x * in_stack_00000014;
+            local_14 = local_28.z * in_stack_00000014;
+            input = (CVector3f *)(local_1c * in_stack_00000014);
+            if (&actor_ptr->field12_0xe0 != (CVector3f *)&local_18) {
+              (actor_ptr->field12_0xe0).x = local_18;
+              (actor_ptr->field12_0xe0).y = local_14;
+              (actor_ptr->field12_0xe0).z = (float)input;
             }
-            (actor_ptr->field_236).z = 0.0;
-            (actor_ptr->field_236).y = 0.0;
-            (actor_ptr->field_236).x = 0.0;
+            (actor_ptr->field13_0xec).z = 0.0;
+            (actor_ptr->field13_0xec).y = 0.0;
+            (actor_ptr->field13_0xec).x = 0.0;
             iVar3 = iVar3 + 1;
             iVar1 = iVar1 + 4;
           }
@@ -84,7 +87,7 @@ LAB_00441e9d:
     }
   }
   else {
-    in_stack_00000004[5].metadata.vtable = (CDemonActor_vtable *)0x0;
+    in_stack_00000004[5].vtable = (CDemonActor_vtable *)0x0;
   }
   return;
 }
@@ -106,7 +109,7 @@ LAB_00441e9d:
 //   XREF to: 006793d0 (READ)
 // 00441e08: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 00441e09: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 00441e09: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 00441e0e: ADD ESP,0x8
 // 00441e11: TEST EAX,EAX
@@ -121,7 +124,7 @@ LAB_00441e9d:
 //   XREF to: 006793d0 (READ)
 // 00441e2c: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 00441e2d: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 00441e2d: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 00441e32: ADD ESP,0x8
 // 00441e35: TEST EAX,EAX
@@ -179,7 +182,7 @@ LAB_00441e9d:
 //   XREF to: Stack[-0x30] (DATA)
 // 00441ea6: PUSH EAX
 // 00441ea7: PUSH ESI
-// 00441ea8: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 00441ea8: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 00441ead: ADD ESP,0xc
 // 00441eb0: FLD float ptr [ESP + 0x38]

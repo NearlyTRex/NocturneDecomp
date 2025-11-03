@@ -8,8 +8,8 @@
 //   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 (00497e50) at 004983ff [UNCONDITIONAL_CALL]
 //   core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_004990f0 (004990f0) at 0049910a [UNCONDITIONAL_CALL]
 //   core_flies.cpp_FUN_004cc300 (004cc300) at 004cc5d9 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00597523 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModel_FUN_0059abf0 (0059abf0) at 0059b347 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597523 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 (0059abf0) at 0059b347 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d692 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051e990 (0051e990) at 0051eaba [UNCONDITIONAL_CALL]
 // Globals:

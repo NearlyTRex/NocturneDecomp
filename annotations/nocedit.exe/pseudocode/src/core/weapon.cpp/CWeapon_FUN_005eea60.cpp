@@ -14,7 +14,7 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005eea60(CWeapon *this_ptr)
   FILE *in_stack_00000008;
   
   core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
-            ((CKeyFramedModelInstance *)&this_ptr->model_instance,in_stack_00000008);
+            (&this_ptr->model,in_stack_00000008);
   return;
 }
 

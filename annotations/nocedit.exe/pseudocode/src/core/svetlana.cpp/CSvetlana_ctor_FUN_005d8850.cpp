@@ -11,7 +11,7 @@
 // Function calls:
 //   core_cloth.cpp_FUN_00438ba0
 //   core_hero.cpp_FUN_004f2340
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -26,7 +26,8 @@ CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_005d8850(CSvetlana *thi
   *(CDemonActor_vtable **)(iVar1 + -0x5f8f8) = &g_CSvetlanaVTable;
   *(undefined4 *)(iVar1 + -0x3fe78) = 0;
   *(undefined4 *)(iVar1 + -0x3fe74) = 0;
-  core_skeleton_cpp_FUN_005a0840();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            ((CDeformableModelInstance *)(iVar1 + -0x5f8f4));
   *(undefined4 *)(iVar1 + 0x3fe80) = 0x3f800000;
   *(undefined4 *)(iVar1 + 0x3fe7c) = 0;
   *(undefined4 *)(iVar1 + 0x3fe78) = *(undefined4 *)(iVar1 + 0x3fe7c);
@@ -63,7 +64,7 @@ CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_005d8850(CSvetlana *thi
 // 005d8895: MOV dword ptr [EBX + 0x1fbd4],0x0
 // 005d889f: PUSH EAX
 // 005d88a0: MOV dword ptr [EBX + 0x1fbd8],0x0
-// 005d88aa: CALL core_skeleton.cpp_FUN_005a0840
+// 005d88aa: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005d88af: LEA EAX,[EBX + 0x9f8c0]
 // 005d88b5: MOV dword ptr [EBX + 0x9f8cc],0x3f800000

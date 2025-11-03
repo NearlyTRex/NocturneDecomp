@@ -2,10 +2,10 @@
 // Address: 0056ddb0
 // Address Range: [[0056ddb0, 0056e10e]]
 // Convention: __cdecl
-// Signature: void core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet * this_ptr)
+// Signature: void core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, int skip_lighting_calculation)
 // Cross-references:
-//   core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110 (0056e110) at 0056e12d [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_FUN_00570cd0 (00570cd0) at 00570d1e [UNCONDITIONAL_CALL]
+//   core_set.cpp_CDemonSet_computeLighting_FUN_0056e110 (0056e110) at 0056e12d [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (0056eac0) at 0056f0a6 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_set_cpp_00645e2b
@@ -21,19 +21,22 @@
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 //   undefined4 g_CDemonCameraInstance.corona_blend_factor
-//   undefined4 DAT_0327d77c
+//   int[65536] g_IntensityToValueLookupTable
 //   undefined4 DAT_032bd778
-//   undefined4 DAT_032c1940
-//   undefined4 DAT_032c1cc0
-//   undefined4 DAT_032c1cc4
-//   undefined4 DAT_032c1cc8
+//   int g_ColorCorrectionEnabled
+//   int g_ColorCorrectionLightMultiplier
+//   int g_ColorCorrectionColorMultiplier
+//   int g_ColorCorrectionFogMultiplier
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_set.cpp_CDemonSet_FUN_0056db80
+//   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
 
 #include "nocturne.h"
 
-void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *this_ptr)
+void __cdecl
+core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
+          (CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int vertex_index,
+          int skip_lighting_calculation)
 
 {
   longlong lVar1;
@@ -47,20 +50,18 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *thi
   int iVar9;
   int unaff_EBP;
   uint uVar10;
-  int *in_stack_0000000c;
-  int in_stack_00000014;
   int in_stack_00000018;
   uint local_14;
   
   if (this_ptr->rendering_mode != 0) {
-    if (in_stack_0000000c == (int *)0x0) {
+    if (surface_normal == (CVector3i *)0x0) {
       g_CurrentFilename = "..\\core\\set.cpp";
       g_CurrentLineNumber = 0xba3;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::lightVertexColor - Quick light mode with no normal");
     }
-    lVar1 = (longlong)*(int *)this_ptr->field34_0x15ae74 * (longlong)*in_stack_0000000c;
-    lVar2 = (longlong)*(int *)(this_ptr->field34_0x15ae74 + 4) * (longlong)in_stack_0000000c[1];
-    lVar3 = (longlong)*(int *)(this_ptr->field34_0x15ae74 + 8) * (longlong)in_stack_0000000c[2];
+    lVar1 = (longlong)(this_ptr->light_direction).x * (longlong)surface_normal->x;
+    lVar2 = (longlong)(this_ptr->light_direction).y * (longlong)surface_normal->y;
+    lVar3 = (longlong)(this_ptr->light_direction).z * (longlong)surface_normal->z;
     iVar8 = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
             ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
             ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
@@ -68,53 +69,49 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *thi
     if (0 < iVar8) {
       iVar9 = 0;
     }
-    iVar9 = iVar9 + *(int *)(this_ptr->field34_0x15ae74 + 0xc);
+    iVar9 = iVar9 + this_ptr->ambient_base_quick;
     if (0xffff < iVar9) {
       iVar9 = 0xffff;
     }
-    lVar1 = (longlong)*(int *)(this_ptr->field35_0x15ae84 + 4) * (longlong)iVar9;
-    g_RenderVertexBuffer[in_stack_00000014].light =
+    lVar1 = (longlong)this_ptr->light_scale_factor * (longlong)iVar9;
+    g_RenderVertexBuffer[skip_lighting_calculation].light =
          (float)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    lVar1 = (longlong)*(int *)(this_ptr->field35_0x15ae84 + 8) * (longlong)iVar9;
-    g_RenderVertexBuffer[in_stack_00000014].color =
+    lVar1 = (longlong)this_ptr->color_scale_factor * (longlong)iVar9;
+    g_RenderVertexBuffer[skip_lighting_calculation].color =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)*(int *)(this_ptr->field35_0x15ae84 + 0xc) * (longlong)iVar9;
-    g_RenderVertexBuffer[in_stack_00000014].fog =
+    lVar1 = (longlong)this_ptr->fog_scale_factor * (longlong)iVar9;
+    g_RenderVertexBuffer[skip_lighting_calculation].fog =
          (float)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    g_RenderVertexBuffer[in_stack_00000014].w_recip = g_PerspectiveReciprocal;
+    g_RenderVertexBuffer[skip_lighting_calculation].w_recip = g_PerspectiveReciprocal;
     return;
   }
-  if (in_stack_00000014 == 0) {
-    iVar8 = core_set_cpp_CDemonSet_FUN_0056db80(this_ptr);
+  if (skip_lighting_calculation == 0) {
+    iVar8 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
+                      (this_ptr,world_position,surface_normal);
     unaff_EBP = g_CDemonCameraInstance.corona_blend_factor;
-    if ((0 < g_CDemonCameraInstance.corona_blend_factor) && (in_stack_0000000c != (int *)0x0)) {
+    if ((0 < g_CDemonCameraInstance.corona_blend_factor) && (surface_normal != (CVector3i *)0x0)) {
       iVar9 = g_CDemonCameraInstance.corona_blend_factor;
       if (0x1000 < g_CDemonCameraInstance.corona_blend_factor) {
         iVar9 = 0x1000;
       }
       if (g_CameraOriginX < 0) {
-        uVar4 = -((uint)((longlong)iVar9 * (longlong)*in_stack_0000000c) >> 0x10 |
-                 (int)((ulonglong)((longlong)iVar9 * (longlong)*in_stack_0000000c) >> 0x20) << 0x10)
-        ;
+        lVar1 = (longlong)iVar9 * (longlong)surface_normal->x;
+        uVar4 = -((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
       }
       else {
-        uVar4 = (uint)((longlong)iVar9 * (longlong)*in_stack_0000000c) >> 0x10 |
-                (int)((ulonglong)((longlong)iVar9 * (longlong)*in_stack_0000000c) >> 0x20) << 0x10;
+        lVar1 = (longlong)iVar9 * (longlong)surface_normal->x;
+        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
       }
       if (g_CameraOriginZ < 0) {
-        iVar8 = (iVar8 + uVar4) -
-                ((uint)((longlong)iVar9 * (longlong)in_stack_0000000c[2]) >> 0x10 |
-                (int)((ulonglong)((longlong)iVar9 * (longlong)in_stack_0000000c[2]) >> 0x20) << 0x10
-                );
+        lVar1 = (longlong)iVar9 * (longlong)surface_normal->z;
+        iVar8 = (iVar8 + uVar4) - ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         if (iVar8 < 0) {
           iVar8 = 0;
         }
       }
       else {
-        iVar8 = iVar8 + uVar4 +
-                ((uint)((longlong)iVar9 * (longlong)in_stack_0000000c[2]) >> 0x10 |
-                (int)((ulonglong)((longlong)iVar9 * (longlong)in_stack_0000000c[2]) >> 0x20) << 0x10
-                );
+        lVar1 = (longlong)iVar9 * (longlong)surface_normal->z;
+        iVar8 = iVar8 + uVar4 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         if (iVar8 < 0) {
           iVar8 = 0;
         }
@@ -124,34 +121,35 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *thi
   else {
     iVar8 = 0xffff;
   }
-  if (DAT_032c1940 < 1) {
+  if (g_ColorCorrectionEnabled < 1) {
     iVar8 = iVar8 + unaff_EBP;
-    lVar1 = (longlong)iVar8 * (longlong)*(int *)(this_ptr->field35_0x15ae84 + 4);
+    lVar1 = (longlong)iVar8 * (longlong)this_ptr->light_scale_factor;
     local_14 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)iVar8 * (longlong)*(int *)(this_ptr->field35_0x15ae84 + 8);
+    lVar1 = (longlong)iVar8 * (longlong)this_ptr->color_scale_factor;
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    iVar9 = *(int *)(this_ptr->field35_0x15ae84 + 0xc);
+    iVar9 = this_ptr->fog_scale_factor;
   }
   else {
     lVar1 = (longlong)
-            (int)(((uint)((longlong)iVar8 * (longlong)DAT_032c1cc0) >> 0x10 |
-                  (int)((ulonglong)((longlong)iVar8 * (longlong)DAT_032c1cc0) >> 0x20) << 0x10) +
-                 unaff_EBP) * (longlong)*(int *)(this_ptr->field35_0x15ae84 + 4);
+            (int)(((uint)((longlong)iVar8 * (longlong)g_ColorCorrectionLightMultiplier) >> 0x10 |
+                  (int)((ulonglong)((longlong)iVar8 * (longlong)g_ColorCorrectionLightMultiplier) >>
+                       0x20) << 0x10) + unaff_EBP) * (longlong)this_ptr->light_scale_factor;
     local_14 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)
-            (int)(((uint)((longlong)iVar8 * (longlong)DAT_032c1cc4) >> 0x10 |
-                  (int)((ulonglong)((longlong)iVar8 * (longlong)DAT_032c1cc4) >> 0x20) << 0x10) +
-                 unaff_EBP) * (longlong)*(int *)(this_ptr->field35_0x15ae84 + 8);
+            (int)(((uint)((longlong)iVar8 * (longlong)g_ColorCorrectionColorMultiplier) >> 0x10 |
+                  (int)((ulonglong)((longlong)iVar8 * (longlong)g_ColorCorrectionColorMultiplier) >>
+                       0x20) << 0x10) + unaff_EBP) * (longlong)this_ptr->color_scale_factor;
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    iVar9 = *(int *)(this_ptr->field35_0x15ae84 + 0xc);
-    iVar8 = ((uint)((longlong)iVar8 * (longlong)DAT_032c1cc8) >> 0x10 |
-            (int)((ulonglong)((longlong)iVar8 * (longlong)DAT_032c1cc8) >> 0x20) << 0x10) +
-            unaff_EBP;
+    iVar9 = this_ptr->fog_scale_factor;
+    iVar8 = ((uint)((longlong)iVar8 * (longlong)g_ColorCorrectionFogMultiplier) >> 0x10 |
+            (int)((ulonglong)((longlong)iVar8 * (longlong)g_ColorCorrectionFogMultiplier) >> 0x20)
+            << 0x10) + unaff_EBP;
   }
   uVar5 = (uint)((longlong)iVar8 * (longlong)iVar9) >> 0x10 |
           (int)((ulonglong)((longlong)iVar8 * (longlong)iVar9) >> 0x20) << 0x10;
-  if ((*(int *)this_ptr->field64_0x15f6e0 != 0) && (in_stack_00000018 == 0)) {
-    iVar8 = core_set_cpp_CDemonSet_FUN_0056db80(this_ptr);
+  if ((this_ptr->rendering_flags_ptr != (int *)0x0) && (in_stack_00000018 == 0)) {
+    iVar8 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
+                      (this_ptr,surface_normal,(CVector3i *)0x0);
     uVar10 = unaff_EBP + iVar8;
     if (0 < (int)uVar10) {
       uVar6 = local_14 ^ (int)local_14 >> 0x1f;
@@ -186,9 +184,10 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *thi
   if (0xffff < (int)uVar5) {
     uVar5 = 0xffff;
   }
-  g_RenderVertexBuffer[in_stack_00000014].light = *(float *)(&DAT_0327d77c + local_14 * 4);
-  g_RenderVertexBuffer[in_stack_00000014].color = *(int *)(&DAT_0327d77c + uVar4 * 4);
-  g_RenderVertexBuffer[in_stack_00000014].fog = *(float *)(&DAT_0327d77c + uVar5 * 4);
+  g_RenderVertexBuffer[skip_lighting_calculation].light =
+       (float)g_IntensityToValueLookupTable[local_14];
+  g_RenderVertexBuffer[skip_lighting_calculation].color = g_IntensityToValueLookupTable[uVar4];
+  g_RenderVertexBuffer[skip_lighting_calculation].fog = (float)g_IntensityToValueLookupTable[uVar5];
   return;
 }
 
@@ -360,7 +359,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *thi
 //   XREF to: Stack[0x8] (READ)
 // 0056df57: PUSH EDX
 // 0056df58: PUSH EBX
-// 0056df59: CALL core_set.cpp_CDemonSet_FUN_0056db80
+// 0056df59: CALL core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
 //   XREF to: 0056db80 (UNCONDITIONAL_CALL)
 // 0056df5e: ADD ESP,0xc
 // 0056df61: MOV ESI,dword ptr [ESP + 0x20]
@@ -477,7 +476,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *thi
 //   XREF to: Stack[0x8] (READ)
 // 0056e043: PUSH ESI
 // 0056e044: PUSH EBX
-// 0056e045: CALL core_set.cpp_CDemonSet_FUN_0056db80
+// 0056e045: CALL core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
 //   XREF to: 0056db80 (UNCONDITIONAL_CALL)
 // 0056e04a: MOV EBP,dword ptr [0x03276acc]
 //   XREF to: 03276acc (READ)

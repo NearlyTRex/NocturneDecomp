@@ -8,11 +8,11 @@
 //   CEventList* g_CEventListPtr = 02d05310
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CFireEffect g_CFireEffectInstance
 //   CDemonMission g_CDemonMissionInstance
 // Function calls:
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_fire.cpp_CFireEffect_FUN_004c8c10
 //   core_flame.cpp_FUN_004c9c00
 //   core_flamecan.cpp_FUN_004cb340
@@ -30,7 +30,7 @@ void core_flamecan_cpp_FUN_004cb390(void)
   int in_stack_00000004;
   float in_stack_00000008;
   
-  iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+  iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,(char *)(in_stack_00000004 + 0x2dc));
   if (iVar1 == 0) {
     if (*(int *)(in_stack_00000004 + 0x2d4) == 0) {
@@ -69,7 +69,7 @@ void core_flamecan_cpp_FUN_004cb390(void)
 //   XREF to: 006793d0 (READ)
 // 004cb3a5: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 004cb3a6: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 004cb3a6: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 004cb3ab: ADD ESP,0x8
 // 004cb3ae: TEST EAX,EAX

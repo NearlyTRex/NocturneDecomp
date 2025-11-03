@@ -52,16 +52,16 @@ undefined4 core_curtain_cpp_FUN_0044b060(void)
   float fStack_34;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-  pCVar2 = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+  pCVar2 = (*in_stack_00000004->vtable->getBoundingBox)
                      (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffc8);
   iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar2);
   this_ptr = g_CDemonRendererPtr;
   if (iVar3 == 0) goto LAB_0044b320;
-  in_stack_00000004[0x4ba].metadata.runtime_flags = 1;
+  in_stack_00000004[0x4ba].previous_transform_state.dirty_flags = 1;
   iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(this_ptr);
   if (((iVar3 != 0) && (in_stack_00000004[1].location.position.z != 0.0)) &&
-     (*(int *)in_stack_00000004[0x4ba].metadata.field3_0x1c == 0)) {
-    pCVar2 = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+     (in_stack_00000004[0x4ba].field25_0x144 == 0)) {
+    pCVar2 = (*in_stack_00000004->vtable->getBoundingBox)
                        (in_stack_00000004,(CBoundingBox3D *)&stack0xfffffffc);
     core_box_cpp_CBoundingBox3D_render_FUN_004210b0(pCVar2,unaff_EBP,(int)unaff_ESI,unaff_retaddr);
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
@@ -85,7 +85,8 @@ undefined4 core_curtain_cpp_FUN_0044b060(void)
     } while (iVar3 < *(int *)(in_stack_00000004[1].create_event + 0x34));
   }
   core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
-            (g_CDemonSetPtr,*(int *)(in_stack_00000004[1].create_event + 0x34));
+            (g_CDemonSetPtr,*(int *)(in_stack_00000004[1].create_event + 0x34),
+             &in_stack_00000004[0x152].field17_0x104);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,1);
   bVar1 = 0 < g_RelativeZ;
   if (in_stack_00000004[1].location.position.z == 0.0) {
@@ -93,7 +94,10 @@ undefined4 core_curtain_cpp_FUN_0044b060(void)
 LAB_0044b1a4:
     primitive_array = (SMRGLHeaderPrimitive *)&in_stack_00000004[0x175].field11_0xdc;
     fStack_34 = 6.308613e-39;
-    core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(g_CDemonSetPtr);
+    core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
+              (g_CDemonSetPtr,*(int *)(in_stack_00000004[1].create_event + 0x34),
+               in_stack_00000004[0x152].is_transparent * in_stack_00000004[0x152].field16_0x100 * 2,
+               (SInputFace *)primitive_array,(int)&in_stack_00000004[0x152].field17_0x104,4,0);
     if ((int)in_stack_00000004[1].location.position.y < 0xfde9) {
       for (iVar3 = 0;
           iVar6 = in_stack_00000004[0x152].is_transparent * in_stack_00000004[0x152].field16_0x100,
@@ -113,7 +117,10 @@ LAB_0044b1a4:
   else if (g_RelativeZ < 0) goto LAB_0044b1a4;
   if (bVar1) {
     primitive_array_00 = (SMRGLPrimitiveQuad *)(in_stack_00000004[0x318].orient_matrix.m + 2);
-    core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(g_CDemonSetPtr);
+    core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
+              (g_CDemonSetPtr,*(int *)(in_stack_00000004[1].create_event + 0x34),
+               in_stack_00000004[0x152].is_transparent * in_stack_00000004[0x152].field16_0x100 * 2,
+               (SInputFace *)primitive_array_00,(int)&in_stack_00000004[0x152].field17_0x104,4,0);
     if ((int)in_stack_00000004[1].location.position.y < 0xfde9) {
       for (iVar3 = 0;
           iVar6 = in_stack_00000004[0x152].is_transparent * in_stack_00000004[0x152].field16_0x100,

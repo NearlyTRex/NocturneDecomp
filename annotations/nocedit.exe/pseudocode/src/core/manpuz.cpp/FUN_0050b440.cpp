@@ -6,8 +6,8 @@
 // Globals:
 //   undefined4 DAT_02f0cb1c
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
 //   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_skeleton.cpp_FUN_005a2060
 //   core_skeleton.cpp_FUN_005a20b0
 
@@ -169,15 +169,15 @@ void core_manpuz_cpp_FUN_0050b440(void)
   (in_stack_00000004->orient).heading = 0.0;
   *(float *)(in_stack_00000004[0xe].create_event + 0x5c) = fVar2;
   *(undefined4 *)(in_stack_00000004[0xe].create_event + 0x60) = uVar1;
-  in_stack_00000004[0xe].field_224.x = fVar4;
-  in_stack_00000004[0xe].field_224.y = fVar6;
-  in_stack_00000004[0xe].field_224.z = fVar7;
+  in_stack_00000004[0xe].field12_0xe0.x = fVar4;
+  in_stack_00000004[0xe].field12_0xe0.y = fVar6;
+  in_stack_00000004[0xe].field12_0xe0.z = fVar7;
   fVar2 = (in_stack_00000004->orient).heading;
   *(float *)(in_stack_00000004[0xe].create_event + 0x58) = -fVar3;
   in_stack_00000004[0xe].field11_0xdc = (int)-fVar5;
   (in_stack_00000004->orient).pitch = fVar2;
-  core_actor_cpp_CDemonActor_FUN_00408c10(in_stack_00000004);
-  (*((in_stack_00000004->metadata).vtable)->setup)(in_stack_00000004);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
+  (*in_stack_00000004->vtable->setup)(in_stack_00000004);
   return;
 }
 
@@ -297,7 +297,7 @@ void core_manpuz_cpp_FUN_0050b440(void)
 // 0050b5a4: FXCH
 // 0050b5a6: FSTP float ptr [EBX + 0x13ac]
 // 0050b5ac: FSTP float ptr [EBX + 0x30]
-// 0050b5af: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 0050b5af: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 0050b5b4: ADD ESP,0x4
 // 0050b5b7: MOV EAX,dword ptr [EBX + 0x154]

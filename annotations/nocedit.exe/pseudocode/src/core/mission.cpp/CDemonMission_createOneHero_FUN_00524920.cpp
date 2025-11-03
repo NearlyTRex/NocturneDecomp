@@ -71,17 +71,18 @@ LAB_0052499a:
         core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(this_ptr_00);
       }
       else {
-        (*((in_stack_00000010->metadata).vtable)->setPositionAndOrientation)
+        (*in_stack_00000010->vtable->setPositionAndOrientation)
                   (in_stack_00000010,&(this_ptr_00->base_actor).location.position,
                    (CVector3f *)&(this_ptr_00->base_actor).orient);
         (in_stack_00000010->location).area_id = (this_ptr_00->base_actor).location.area_id;
-        core_motion_cpp_CMotionController_FUN_0052dde0();
-        (*(in_stack_00000010->metadata).vtable[1].evaluateTriggerCondition)(in_stack_00000010);
+        core_motion_cpp_CMotionController_FUN_0052dde0((CMotionController *)(in_stack_00000010 + 1))
+        ;
+        (*in_stack_00000010->vtable[1].evaluateTriggerCondition)(in_stack_00000010);
       }
       core_mission_cpp_CDemonMission_FUN_00523b70(g_CDemonMissionPtr);
       goto LAB_0052499a;
     }
-    actor_ptr = (actor_ptr->metadata).next_actor;
+    actor_ptr = actor_ptr->next_actor;
   } while( true );
 }
 

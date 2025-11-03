@@ -12,8 +12,8 @@
 //   undefined4 DAT_02f33744
 //   undefined4 DAT_02f33768
 // Function calls:
+//   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
-//   core_actor.cpp_renderActorBoundingBox_FUN_0040d940
 //   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 
 #include "nocturne.h"
@@ -39,7 +39,7 @@ int __cdecl core_teleport_cpp_CTeleportDest_FUN_005da7d0(CTeleportDest *this_ptr
           color = 0xf9;
         }
       }
-      core_actor_cpp_renderActorBoundingBox_FUN_0040d940(in_stack_00000008,color);
+      core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(in_stack_00000008,color);
       return 0;
     }
   }
@@ -108,7 +108,7 @@ int __cdecl core_teleport_cpp_CTeleportDest_FUN_005da7d0(CTeleportDest *this_ptr
 // 005da832: MOV EAX,dword ptr [ESP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 005da836: PUSH EAX
-// 005da837: CALL core_actor.cpp_renderActorBoundingBox_FUN_0040d940
+// 005da837: CALL core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 //   XREF to: 0040d940 (UNCONDITIONAL_CALL)
 // 005da83c: ADD ESP,0x8
 // 005da83f: XOR EAX,EAX

@@ -20,25 +20,24 @@ void __cdecl core_set_cpp_CDemonSet_FUN_00570cd0(CDemonSet *this_ptr)
 {
   float fVar1;
   float fVar2;
-  int in_stack_00000008;
+  BADSPACEBASE *in_ESP;
+  float *in_stack_00000008;
+  CVector3i local_10;
   
-  if (in_stack_00000008 == 0) {
-    this_ptr->field69_0x161654[4] = '\0';
-    this_ptr->field69_0x161654[5] = '\0';
-    this_ptr->field69_0x161654[6] = '\0';
-    this_ptr->field69_0x161654[7] = '\0';
+  if (in_stack_00000008 == (float *)0x0) {
+    this_ptr->mirror_render_param1 = 0;
     return;
   }
-  core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(this_ptr);
+  local_10.x = (int)ROUND(*in_stack_00000008 * FLOAT_00662850);
+  local_10.y = (int)ROUND(in_stack_00000008[1] * FLOAT_00662850);
+  local_10.z = (int)ROUND(in_stack_00000008[2] * FLOAT_00662850);
+  core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(this_ptr,&local_10,(CVector3i *)0x0,0,0);
   fVar1 = g_RenderVertexBuffer[0].light;
-  this_ptr->field69_0x161654[4] = '\x01';
+  this_ptr->mirror_render_param1 = 1;
   fVar2 = g_RenderVertexBuffer[0].fog;
-  this_ptr->field69_0x161654[5] = '\0';
-  this_ptr->field69_0x161654[6] = '\0';
-  this_ptr->field69_0x161654[7] = '\0';
-  *(float *)(this_ptr->field69_0x161654 + 8) = fVar1;
-  *(float *)(this_ptr->field69_0x161654 + 0x10) = fVar2;
-  *(int *)(this_ptr->field69_0x161654 + 0xc) = g_RenderVertexBuffer[0].color;
+  this_ptr->mirror_render_param2 = (int)fVar1;
+  this_ptr->mirror_render_param4 = (int)fVar2;
+  this_ptr->mirror_render_param3 = g_RenderVertexBuffer[0].color;
   return;
 }
 

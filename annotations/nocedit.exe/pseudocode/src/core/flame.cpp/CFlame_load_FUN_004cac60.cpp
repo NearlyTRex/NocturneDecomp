@@ -54,17 +54,18 @@ void core_flame_cpp_CFlame_load_FUN_004cac60(void)
   }
   if (5 < g_CFlameClassVersion) {
     core_actor_cpp_serializeFloat_FUN_0040b770
-              ((float *)&in_stack_00000004[1].metadata,"intensity");
+              ((float *)&in_stack_00000004[1].previous_transform_state,"intensity");
     core_actor_cpp_serializeFloat_FUN_0040b770
-              (&in_stack_00000004[1].metadata.runtime_vector1.y,"randomness");
+              (&in_stack_00000004[1].previous_transform_state.position.y,"randomness");
   }
   if (g_CFlameClassVersion < 7) {
     return;
   }
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)&in_stack_00000004[1].metadata.runtime_vector1.z,"burnHero");
+            ((int *)&in_stack_00000004[1].previous_transform_state.position.z,"burnHero");
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)&in_stack_00000004[1].metadata.runtime_vector2,"burnEnemy");
+            ((int *)&in_stack_00000004[1].previous_transform_state.orientation,"burnEnemy")
+  ;
   return;
 }
 

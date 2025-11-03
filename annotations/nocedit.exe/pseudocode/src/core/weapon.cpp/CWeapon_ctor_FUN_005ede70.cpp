@@ -46,7 +46,7 @@ CWeapon * __cdecl core_weapon_cpp_CWeapon_ctor_FUN_005ede70(CWeapon *this_ptr)
   pCVar3[-1].is_valid = 0;
   pCVar3[1].position.z = 2.8026e-44;
   pCVar3[1].orientation.x = 0.0;
-  pCVar3[-1].external_force.y = 1.4013e-45;
+  pCVar3[-1].linear_velocity_local.y = 1.4013e-45;
   pCVar3[-1].scrape_points[7].local_position.z = 0.0;
   pCVar3[-1].scrape_points[7].transformed_position.x = 0.0;
   pCVar3[-1].scrape_points[7].transformed_position.y = 0.0;

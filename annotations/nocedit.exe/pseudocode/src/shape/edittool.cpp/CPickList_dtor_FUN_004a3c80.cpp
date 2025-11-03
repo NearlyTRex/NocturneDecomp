@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6)
 // Cross-references:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040f426 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040f426 [UNCONDITIONAL_CALL]
 //   core_bodypart.cpp_FUN_0041b280 (0041b280) at 0041b425 [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_FUN_00423110 (00423110) at 004232e3 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_0042f3e0 (0042f3e0) at 0042f707 [UNCONDITIONAL_CALL]
@@ -16,7 +16,7 @@
 //   core_menu.cpp_SettingCustomKeys_FUN_005138e0 (005138e0) at 005147af [UNCONDITIONAL_CALL]
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512ce8 [UNCONDITIONAL_CALL]
 //   core_mission.cpp_FUN_00524c20 (00524c20) at 00524de6 [UNCONDITIONAL_CALL]
-//   core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0 (0052bcb0) at 0052ca0f [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052ca0f [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 (005381e0) at 00538905 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_DeleteActors_FUN_0053df90 (0053df90) at 0053e182 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_DisplayTextNoSetsDefinedAndAllowCancel_FUN_00538f90 (00538f90) at 00539018 [UNCONDITIONAL_CALL]
@@ -48,7 +48,7 @@
 //   core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0 (0057bbe0) at 0057c29b [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_UserInputCreate_FUN_0057d660 (0057d660) at 0057e304 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0 (0057c5d0) at 0057ce65 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 005981a0 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005981a0 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00589c20 (00589c20) at 00589ce9 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058afe0 (0058afe0) at 0058b0d0 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c774 [UNCONDITIONAL_CALL]

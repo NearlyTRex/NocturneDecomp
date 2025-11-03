@@ -3,24 +3,24 @@
 // Structure: CEventList
 // Ghidra size: 0x3ac8 (15048 bytes)
 typedef struct CEventList {
-    int eventCount; // 0x0
-    CEvent eventList[100]; // 0x4
-    char padding_0x68[3100]; // 0x68
-    int currentEventCount; // 0xc84
-    CEvent currentEventList[100]; // 0xc88
-    char padding_0xcec[3100]; // 0xcec
-    int gameFlagCount; // 0x1908
-    CEvent gameFlagList[100]; // 0x190c
-    char padding_0x1970[3100]; // 0x1970
-    int persistentEventCount; // 0x258c
-    CEvent persistentEventList[100]; // 0x2590
-    char padding_0x25f4[3100]; // 0x25f4
-    int timerCount; // 0x3210
-    int timerList; // 0x3214
-    char padding_0x3218[356]; // 0x3218
-    int counterCount; // 0x337c
-    char padding_0x3380[360]; // 0x3380
-    int actorVarCount; // 0x34e8
+    int event_count; // 0x0
+    CEvent event_list[100]; // 0x4
+    char field_104[3100]; // 0x68
+    int current_event_count; // 0xc84
+    CEvent current_event_list[100]; // 0xc88
+    char field_3308[3100]; // 0xcec
+    int game_flag_count; // 0x1908
+    CEvent game_flag_list[100]; // 0x190c
+    char field_6512[3100]; // 0x1970
+    int persistent_event_count; // 0x258c
+    CEvent persistent_event_list[100]; // 0x2590
+    char field_9716[3100]; // 0x25f4
+    int timer_count; // 0x3210
+    int timer_list; // 0x3214
+    char field_12824[356]; // 0x3218
+    int counter_count; // 0x337c
+    char field_13184[360]; // 0x3380
+    int actor_var_count; // 0x34e8
     char variablesVarName1[30]; // 0x34ec
     char variablesVarName2[30]; // 0x350a
     char variablesVarName3[30]; // 0x3528

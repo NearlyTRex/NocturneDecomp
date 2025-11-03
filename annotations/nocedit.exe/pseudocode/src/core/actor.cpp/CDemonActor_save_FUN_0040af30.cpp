@@ -15,14 +15,14 @@
 //   TerminatedCString s_s_s_s_00613ce0
 //   TerminatedCString s_core_actor_cpp_00613ced
 //   TerminatedCString s_IO_Error_after_writing_a_00613cff
-//   char* g_PropertyNamePrefix = 00000000
+//   char[104] g_PropertyNamePrefix
 //   FILE* g_ActorDataFile
 //   int g_ActorReadingMode
 //   CDemonActor* g_CurrentActorBeingProcessed
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_0040aee0
+//   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
 //   core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -35,7 +35,6 @@ void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040af30(CDemonActor *this_ptr,
 {
   CDemonActor *pCVar1;
   char *pcVar2;
-  int unk;
   char *pcStack0000000c;
   int in_stack_00000014;
   FILE *in_stack_00000018;
@@ -48,14 +47,14 @@ void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040af30(CDemonActor *this_ptr,
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonActor::save - tried to save actor of class %s with no name",pcVar2);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0
-            (file_handle,"%s{ %s \"%s\"\n",&g_PropertyNamePrefix,pcVar2,this_ptr);
+            (file_handle,"%s{ %s \"%s\"\n",g_PropertyNamePrefix,pcVar2,this_ptr);
   pCVar1 = g_CurrentActorBeingProcessed;
   g_ActorDataFile = file_handle;
   g_CurrentActorBeingProcessed = this_ptr;
   g_ActorReadingMode = 2;
-  core_actor_cpp_CDemonActor_FUN_0040aee0(2);
-  unk = (*((this_ptr->metadata).vtable)->serialize)(this_ptr);
-  core_actor_cpp_CDemonActor_FUN_0040aee0(unk);
+  core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(1);
+  (*this_ptr->vtable->serialize)(this_ptr);
+  core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(-1);
   crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s} %s \"%s\"\n");
   if ((file_handle->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\actor.cpp";
@@ -134,7 +133,7 @@ void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040af30(CDemonActor *this_ptr,
 //   XREF to: 0082203c (WRITE)
 // 0040afb9: MOV [0x00822038],EAX
 //   XREF to: 00822038 (WRITE)
-// 0040afbe: CALL core_actor.cpp_CDemonActor_FUN_0040aee0
+// 0040afbe: CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   XREF to: 0040aee0 (UNCONDITIONAL_CALL)
 // 0040afc3: ADD ESP,0x4
 // 0040afc6: MOV EAX,dword ptr [EBX + 0x154]
@@ -142,7 +141,7 @@ void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040af30(CDemonActor *this_ptr,
 // 0040afcd: CALL dword ptr [EAX + 0xe8]
 // 0040afd3: ADD ESP,0x4
 // 0040afd6: PUSH -0x1
-// 0040afd8: CALL core_actor.cpp_CDemonActor_FUN_0040aee0
+// 0040afd8: CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   XREF to: 0040aee0 (UNCONDITIONAL_CALL)
 // 0040afdd: ADD ESP,0x4
 // 0040afe0: PUSH EBX

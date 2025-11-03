@@ -4,19 +4,19 @@
 // Convention: __cdecl
 // Signature: void core_vessel.cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel * this_ptr)
 // Globals:
-//   undefined4 DAT_00657039
-//   undefined4 DAT_00657041
-//   undefined4 DAT_00657049
-//   undefined4 DAT_00657051
-//   undefined4 DAT_00657059
+//   double DOUBLE_00657039 = 8
+//   double DOUBLE_00657041 = 16
+//   float FLOAT_00657049 = -16
+//   double DOUBLE_00657051 = 3.14159265350000
+//   float FLOAT_00657059 = 1.700000
 //   CEventList* g_CEventListPtr = 02d05310
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CFireEffect g_CFireEffectInstance
 //   CHero*[4] g_HeroActors
 //   int g_LocalHeroIndex
 // Function calls:
-//   core_event.cpp_FUN_004aabe0
+//   core_event.cpp_CEventList_FUN_004aabe0
 //   core_fire.cpp_CFireEffect_FUN_004c8c10
 //   core_flame.cpp_FUN_004c9c00
 //   core_vessel.cpp_FUN_005e9180
@@ -24,7 +24,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr)
 
@@ -51,7 +50,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
     *(int *)(this_ptr->field14_0x3c0 + 0x30) = (this_ptr->base_actor).location.area_id;
     pCVar1 = &(this_ptr->base_actor).orient;
     *(float *)(this_ptr->field14_0x3c0 + 0x28) =
-         *(float *)(this_ptr->field14_0x3c0 + 0x28) + _DAT_00657059;
+         *(float *)(this_ptr->field14_0x3c0 + 0x28) + FLOAT_00657059;
     if ((COrientation *)(this_ptr->field14_0x3c0 + 0x34) != pCVar1) {
       *(float *)(this_ptr->field14_0x3c0 + 0x34) = pCVar1->pitch;
       *(float *)(this_ptr->field14_0x3c0 + 0x38) = (this_ptr->base_actor).orient.bank;
@@ -61,14 +60,15 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
   }
   else if (this_ptr->visual_type == 0) {
     *(float *)(this_ptr->field14_0x3c0 + 0x2a8) =
-         in_stack_00000008 * (float)_DAT_00657051 + *(float *)(this_ptr->field14_0x3c0 + 0x2a8);
+         in_stack_00000008 * (float)DOUBLE_00657051 + *(float *)(this_ptr->field14_0x3c0 + 0x2a8);
   }
   else {
-    fVar4 = in_stack_00000008 * (float)_DAT_00657039 + *(float *)(this_ptr->field14_0x3c0 + 0x42c);
+    fVar4 = in_stack_00000008 * (float)DOUBLE_00657039 + *(float *)(this_ptr->field14_0x3c0 + 0x42c)
+    ;
     *(float *)(this_ptr->field14_0x3c0 + 0x42c) = fVar4;
-    if ((float)_DAT_00657041 <= fVar4) {
+    if ((float)DOUBLE_00657041 <= fVar4) {
       *(float *)(this_ptr->field14_0x3c0 + 0x42c) =
-           *(float *)(this_ptr->field14_0x3c0 + 0x42c) + _DAT_00657049;
+           *(float *)(this_ptr->field14_0x3c0 + 0x42c) + FLOAT_00657049;
     }
   }
   if (this_ptr->field3_0x2d4 == 0) {
@@ -211,13 +211,13 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
           ))) {
         *(undefined4 *)(iVar10 + 0x3b8) = 1;
         *(undefined4 *)(this_ptr->prey + 0x3bc) = 0;
-        core_event_cpp_FUN_004aabe0();
+        core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
       }
       if (((this_ptr->prey != 0) && (this_ptr->neutral != 0)) &&
          ((*(int *)(*(int *)this_ptr->end_loc + 0x184) != 0 &&
           ((*(int *)(*(int *)(this_ptr->prey + 0x3ac) + 0x184) != 0 &&
            (*(int *)(*(int *)(this_ptr->neutral + 0x3ac) + 0x184) != 0)))))) {
-        core_event_cpp_FUN_004aabe0();
+        core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
         *(undefined4 *)(this_ptr->prey + 0x7f0) = 1;
         *(undefined4 *)(this_ptr->neutral + 0x7f0) = 1;
         this_ptr->field14_0x3c0[0x430] = '\x01';
@@ -455,7 +455,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
 //   XREF to: 006793d0 (READ)
 // 005e93ef: PUSH EDI
 //   XREF to: 02d05310 (DATA)
-// 005e93f0: CALL core_event.cpp_FUN_004aabe0
+// 005e93f0: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 005e93f5: ADD ESP,0x8
 // 005e93f8: MOV EBP,dword ptr [EBX + 0x2d8]
@@ -726,7 +726,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
 //   XREF to: 006793d0 (READ)
 // 005e9713: PUSH EDI
 //   XREF to: 02d05310 (DATA)
-// 005e9714: CALL core_event.cpp_FUN_004aabe0
+// 005e9714: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 005e9719: MOV EAX,dword ptr [EBX + 0x2d8]
 // 005e971f: MOV dword ptr [EAX + 0x7f0],0x1

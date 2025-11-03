@@ -18,11 +18,11 @@
 //   undefined4 DAT_00823c54
 //   undefined4 DAT_00823c58
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_charactr.cpp_CCharacter_FUN_0042a520
 //   core_charactr.cpp_CCharacter_FUN_0042b9e0
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 //   sound_sndmain.cpp_CallComputingDelay2_FUN_005a9ae0
 //   sound_sndmain.cpp_FUN_005a8a60
@@ -37,25 +37,28 @@
 void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
 
 {
+  CDeformableModelInstance *this_ptr_00;
   float fVar1;
   float fVar2;
-  char *pcVar3;
+  char *extraout_EAX;
+  CDeformableModel *pCVar3;
   int iVar4;
-  int iVar5;
-  float *pfVar6;
-  undefined4 uVar7;
-  uint uVar8;
-  int iVar9;
-  CCharacter *pCVar10;
+  CVector3f *pCVar5;
+  undefined4 uVar6;
+  uint uVar7;
+  int iVar8;
+  CCharacter *pCVar9;
   BADSPACEBASE *in_ESP;
   int unaff_EBP;
+  char *pcVar10;
   char *pcVar11;
   float in_stack_00000008;
+  CVector3f CStack_60;
   CVector3f CStack_54;
   CDeformableModelInstance *local_44;
   char *local_40;
   char *local_38;
-  float local_34;
+  CDeformableModel *local_34;
   int local_2c;
   int local_28;
   int local_20;
@@ -63,60 +66,59 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
   char *local_18;
   char *pcStack_14;
   
-  local_18 = (char *)core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
-                               ();
+  this_ptr_00 = &this_ptr->model;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr_00);
   if (*(int *)(this_ptr->cloth_data + 0x8d40) == 0) {
     if (0 < *(int *)(this_ptr->cloth_data + 0x478)) {
-      pcVar3 = (char *)core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
-                                 ();
-      local_38 = pcVar3;
-      iVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-      iVar9 = 0;
-      if (0 < *(int *)(pcVar3 + 0x28558)) {
-        iVar5 = 0;
+      core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr_00);
+      local_38 = extraout_EAX;
+      pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
+      iVar8 = 0;
+      if (0 < *(int *)(extraout_EAX + 0x28558)) {
+        iVar4 = 0;
         do {
-          *(undefined4 *)((int)&DAT_00823c54 + iVar5) = 0;
-          iVar9 = iVar9 + 1;
-          iVar5 = iVar5 + 4;
-        } while (iVar9 < *(int *)(local_38 + 0x28558));
+          *(undefined4 *)((int)&DAT_00823c54 + iVar4) = 0;
+          iVar8 = iVar8 + 1;
+          iVar4 = iVar4 + 4;
+        } while (iVar8 < *(int *)(local_38 + 0x28558));
       }
       fVar1 = DAT_0065b830;
-      iVar9 = 0;
+      iVar8 = 0;
       if (0 < *(int *)(this_ptr->cloth_data + 0x478)) {
         fVar2 = (float)DOUBLE_0061710a;
-        pCVar10 = this_ptr;
+        pCVar9 = this_ptr;
         do {
-          iVar9 = iVar9 + 1;
-          (&DAT_00823c54)[*(int *)(pCVar10->cloth_data + 0x488)] =
-               (float)(&DAT_00823c54)[*(int *)(pCVar10->cloth_data + 0x488)] +
-               (*(float *)(pCVar10->cloth_data + 0x498) * fVar2) / fVar1;
-          pCVar10 = (CCharacter *)((pCVar10->base_actor).actor_name + 0x18);
-        } while (iVar9 < *(int *)(this_ptr->cloth_data + 0x478));
+          iVar8 = iVar8 + 1;
+          (&DAT_00823c54)[*(int *)(pCVar9->cloth_data + 0x488)] =
+               (float)(&DAT_00823c54)[*(int *)(pCVar9->cloth_data + 0x488)] +
+               (*(float *)(pCVar9->cloth_data + 0x498) * fVar2) / fVar1;
+          pCVar9 = (CCharacter *)((pCVar9->base_actor).actor_name + 0x18);
+        } while (iVar8 < *(int *)(this_ptr->cloth_data + 0x478));
       }
-      iVar9 = 0;
+      iVar8 = 0;
       local_2c = 0;
       if (0 < *(int *)(local_38 + 0x28558)) {
         local_44 = &this_ptr->model;
-        iVar5 = 0;
-        local_34 = (float)iVar4;
+        iVar4 = 0;
+        local_34 = pCVar3;
         do {
-          if ((float)DOUBLE_0061710a <= *(float *)((int)&DAT_00823c54 + iVar5)) {
-            iVar9 = iVar9 + 1;
+          if ((float)DOUBLE_0061710a <= *(float *)((int)&DAT_00823c54 + iVar4)) {
+            iVar8 = iVar8 + 1;
           }
-          if (*(int *)((int)local_34 + 0x8dcc) == -1) {
-            iVar9 = iVar9 + 1;
+          if (local_34->farthest_child_bone[0] == -1) {
+            iVar8 = iVar8 + 1;
           }
-          iVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-          if (*(int *)((this_ptr->model).padding_0x0 + *(int *)(iVar5 + 0x8c3c + iVar4) * 4 + 0x2140
-                      ) == 0) {
-            iVar9 = iVar9 + 1;
+          pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(local_44);
+          if ((this_ptr->model).part_visibility_flags
+              [*(int *)((int)pCVar3->bone_to_part_map + iVar4)] == 0) {
+            iVar8 = iVar8 + 1;
           }
-          iVar5 = iVar5 + 4;
-          local_34 = (float)((int)local_34 + 4);
+          iVar4 = iVar4 + 4;
+          local_34 = (CDeformableModel *)local_34->lod_info;
           local_2c = local_2c + 1;
         } while (local_2c < *(int *)(local_38 + 0x28558));
       }
-      if (iVar9 == *(int *)(local_38 + 0x28558)) {
+      if (iVar8 == *(int *)(local_38 + 0x28558)) {
         this_ptr->cloth_data[0x8d44] = '\0';
         this_ptr->cloth_data[0x8d45] = '\0';
         this_ptr->cloth_data[0x8d46] = -0x80;
@@ -128,13 +130,13 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
       }
       CStack_54.z = (float)*(int *)(this_ptr->cloth_data + 0x478) * (float)DOUBLE_00617112 *
                     (float)DOUBLE_0061711a + (float)DOUBLE_00617122;
-      iVar4 = sound_sndmain_cpp_CallComputingDelay2_FUN_005a9ae0();
-      if (iVar4 == 0) {
+      iVar8 = sound_sndmain_cpp_CallComputingDelay2_FUN_005a9ae0();
+      if (iVar8 == 0) {
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
         sound_sndmain_cpp_FUN_005a8a60();
-        uVar7 = (*((this_ptr->base_actor).metadata.vtable)->playAmbientSound)
+        uVar6 = (*((this_ptr->base_actor).vtable)->playAmbientSound)
                           (&this_ptr->base_actor,"character-onfire-loop.wav");
-        *(undefined4 *)(this_ptr->cloth_data + 0x8d3c) = uVar7;
+        *(undefined4 *)(this_ptr->cloth_data + 0x8d3c) = uVar6;
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       }
     }
@@ -144,84 +146,86 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
     *(float *)(this_ptr->cloth_data + 0x8d44) = fVar1;
     if (fVar1 < 0.0) {
       sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-      (*((this_ptr->base_actor).metadata.vtable)->playSound)
+      (*((this_ptr->base_actor).vtable)->playSound)
                 (&this_ptr->base_actor,"character-onfire-fallapart.wav");
       core_charactr_cpp_CCharacter_FUN_0042b9e0(this_ptr);
     }
   }
   local_20 = 0;
   if (0 < *(int *)(this_ptr->cloth_data + 0x478)) {
-    local_38 = (this_ptr->model).padding_0x0 + 0xe80;
+    local_38 = (this_ptr->model).field3_0x508 + 0x978;
     local_40 = this_ptr->cloth_data + 0x934;
-    pcVar3 = this_ptr->cloth_data + 0x484;
+    pcVar10 = this_ptr->cloth_data + 0x484;
     local_1c = this_ptr;
     pcVar11 = this_ptr->cloth_data + 0x954;
     do {
-      if (*(int *)((this_ptr->model).padding_0x0 + *(int *)pcVar3 * 4 + 0x2140) != 0) {
+      if ((this_ptr->model).part_visibility_flags[*(int *)pcVar10] != 0) {
         (this_ptr->base_actor).is_transparent = 1;
-        core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                  (&CStack_54,(CVector3f *)(pcVar3 + 8),
-                   (CMatrix3x4f *)(local_38 + *(int *)(pcVar3 + 4) * 0x30));
-        pfVar6 = core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr->base_actor);
-        *(float *)pcVar11 = *pfVar6;
-        *(float *)(pcVar11 + 4) = pfVar6[1];
-        *(float *)(pcVar11 + 8) = pfVar6[2];
+        pCVar5 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+                           (&CStack_54,(CVector3f *)(pcVar10 + 8),
+                            (CMatrix3x4f *)(local_38 + *(int *)(pcVar10 + 4) * 0x30));
+        pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                           (&this_ptr->base_actor,&CStack_60,pCVar5);
+        *(float *)pcVar11 = pCVar5->x;
+        *(float *)(pcVar11 + 4) = pCVar5->y;
+        *(float *)(pcVar11 + 8) = pCVar5->z;
         fVar1 = (float)DOUBLE_0061712a;
-        *(float *)(local_1c->cloth_data + 0xa8c) = *(float *)(pcVar3 + 0x14) * fVar1;
-        *(int *)(local_1c->cloth_data + 0xa90) = *(int *)(pcVar3 + 0x14);
-        *(float *)(local_1c->cloth_data + 0xa94) = *(float *)(pcVar3 + 0x14) * fVar1;
+        *(float *)(local_1c->cloth_data + 0xa8c) = *(float *)(pcVar10 + 0x14) * fVar1;
+        *(int *)(local_1c->cloth_data + 0xa90) = *(int *)(pcVar10 + 0x14);
+        *(float *)(local_1c->cloth_data + 0xa94) = *(float *)(pcVar10 + 0x14) * fVar1;
         (**(code **)(*(int *)(local_40 + local_20 * 0x2a4 + 0x154) + 4))();
       }
-      pcVar3 = pcVar3 + 0x18;
+      pcVar10 = pcVar10 + 0x18;
       pcVar11 = pcVar11 + 0x2a4;
-      local_1c = (CCharacter *)((local_1c->model).padding_0x0 + 0x14c);
+      local_1c = (CCharacter *)&(local_1c->model).transformed_vertices[0x14].y;
       local_20 = local_20 + 1;
     } while (local_20 < *(int *)(this_ptr->cloth_data + 0x478));
   }
   if ((*(int *)(this_ptr->field11_0x25a0 + 0x74) == 0) &&
      (0 < *(int *)(this_ptr->cloth_data + 0x478))) {
     local_18 = this_ptr->cloth_data + 0x484;
-    local_34 = in_stack_00000008 * _DAT_0065b82c;
+    local_34 = (CDeformableModel *)(in_stack_00000008 * _DAT_0065b82c);
     local_28 = 0;
     do {
       pcStack_14 = local_18;
-      if ((*(int *)((this_ptr->model).padding_0x0 + *(int *)local_18 * 4 + 0x2140) != 0) &&
-         (fVar1 = local_34 * *(float *)(this_ptr->cloth_data + 0x480) + *(float *)(local_18 + 0x14),
-         *(float *)(local_18 + 0x14) = fVar1, DAT_0065b830 < fVar1)) {
+      if (((this_ptr->model).part_visibility_flags[*(int *)local_18] != 0) &&
+         (fVar1 = (float)local_34 * *(float *)(this_ptr->cloth_data + 0x480) +
+                  *(float *)(local_18 + 0x14), *(float *)(local_18 + 0x14) = fVar1,
+         DAT_0065b830 < fVar1)) {
         *(float *)(local_18 + 0x14) = DAT_0065b830;
-        iVar9 = 0;
-        iVar4 = unaff_EBP;
+        iVar4 = 0;
+        iVar8 = unaff_EBP;
         if (0 < *(int *)(unaff_EBP + 0x28558)) {
           do {
-            if (*(uint *)(iVar4 + 0x2857c) == *(uint *)(pcStack_14 + 4)) {
-              uVar8 = *(uint *)(iVar4 + 0x2857c) ^ *(uint *)(pcStack_14 + 4);
-              pCVar10 = this_ptr;
+            if (*(uint *)(iVar8 + 0x2857c) == *(uint *)(pcStack_14 + 4)) {
+              uVar7 = *(uint *)(iVar8 + 0x2857c) ^ *(uint *)(pcStack_14 + 4);
+              pCVar9 = this_ptr;
               if (0 < *(int *)(this_ptr->cloth_data + 0x478)) {
                 do {
-                  if (iVar9 == *(int *)(pCVar10->cloth_data + 0x488)) break;
-                  uVar8 = uVar8 + 1;
-                  pCVar10 = (CCharacter *)((pCVar10->base_actor).actor_name + 0x18);
-                } while ((int)uVar8 < *(int *)(this_ptr->cloth_data + 0x478));
+                  if (iVar4 == *(int *)(pCVar9->cloth_data + 0x488)) break;
+                  uVar7 = uVar7 + 1;
+                  pCVar9 = (CCharacter *)((pCVar9->base_actor).actor_name + 0x18);
+                } while ((int)uVar7 < *(int *)(this_ptr->cloth_data + 0x478));
               }
-              if (uVar8 == *(uint *)(this_ptr->cloth_data + 0x478)) {
+              if (uVar7 == *(uint *)(this_ptr->cloth_data + 0x478)) {
                 core_charactr_cpp_CCharacter_FUN_0042a520(this_ptr);
               }
             }
-            iVar9 = iVar9 + 1;
-            iVar4 = iVar4 + 0x24;
-          } while (iVar9 < *(int *)(unaff_EBP + 0x28558));
+            iVar4 = iVar4 + 1;
+            iVar8 = iVar8 + 0x24;
+          } while (iVar4 < *(int *)(unaff_EBP + 0x28558));
         }
-        iVar4 = 0;
+        iVar8 = 0;
         if (0 < *(int *)(this_ptr->cloth_data + 0x478)) {
-          pCVar10 = this_ptr;
+          pCVar9 = this_ptr;
           do {
             if (*(int *)(*(int *)(pcStack_14 + 4) * 0x24 + unaff_EBP + 0x2857c) ==
-                *(int *)(pCVar10->cloth_data + 0x488)) break;
-            iVar4 = iVar4 + 1;
-            pCVar10 = (CCharacter *)((pCVar10->base_actor).actor_name + 0x18);
-          } while (iVar4 < *(int *)(this_ptr->cloth_data + 0x478));
+                *(int *)(pCVar9->cloth_data + 0x488)) break;
+            iVar8 = iVar8 + 1;
+            pCVar9 = (CCharacter *)((pCVar9->base_actor).actor_name + 0x18);
+          } while (iVar8 < *(int *)(this_ptr->cloth_data + 0x478));
         }
-        if (iVar4 == *(int *)(this_ptr->cloth_data + 0x478)) {
+        if (iVar8 == *(int *)(this_ptr->cloth_data + 0x478)) {
           core_charactr_cpp_CCharacter_FUN_0042a520(this_ptr);
         }
       }
@@ -246,7 +250,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
 //   XREF to: Stack[0x4] (READ)
 // 0042a83f: LEA EDI,[EBX + 0x158]
 // 0042a845: PUSH EDI
-// 0042a846: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 0042a846: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0042a84b: ADD ESP,0x4
 // 0042a84e: MOV EDX,dword ptr [EBX + 0xb7d8]
@@ -259,7 +263,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
 // 0042a867: JLE 0x0042a9e5
 //   XREF to: 0042a9e5 (CONDITIONAL_JUMP)
 // 0042a86d: PUSH EDI
-// 0042a86e: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 0042a86e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0042a873: ADD ESP,0x4
 // 0042a876: PUSH EDI
@@ -453,7 +457,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
 //   XREF to: Stack[-0x68] (DATA)
 // 0042aa56: PUSH EAX
 // 0042aa57: PUSH EBX
-// 0042aa58: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0042aa58: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0042aa5d: ADD ESP,0xc
 // 0042aa60: IMUL EDX,dword ptr [ESP + 0x40],0x2a4

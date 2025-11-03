@@ -14,7 +14,7 @@
 //   TerminatedCString s_all_levers_in_the_group_0063141d
 // Function calls:
 //   core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150
-//   core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+//   core_actor.cpp_drawTextLine_FUN_0040d240
 
 #include "nocturne.h"
 
@@ -29,16 +29,16 @@ void core_lever_cpp_FUN_00505390(void)
   
   core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(in_stack_00000004,in_stack_00000008);
   *in_stack_00000008 = *in_stack_00000008 + 0xb;
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
+  core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"A lever will strobe the on event when the lever switches to the on state.");
+  core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"Likewise, the off event will be strobed when the lever switches to the off state.");
   *in_stack_00000008 = *in_stack_00000008 + 0xb;
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
+  core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"If the momentary flag is TRUE, then the on.off events will constantly be raised");
+  core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"as long as the lever is in the appropriate state.");
   *in_stack_00000008 = *in_stack_00000008 + 0xb;
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
-  core_actor_cpp_SomethingElseWithStrings2_FUN_0040d240();
+  core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"Linked levers behave as one.  There is no master or slave lever,");
+  core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"All linked levers always have the same value.  The first lever");
+  core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"to change in a network of linked levers will immediately update");
+  core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"all levers in the group.");
   return;
 }
 
@@ -63,13 +63,13 @@ void core_lever_cpp_FUN_00505390(void)
 // 005053ac: ADD ECX,0xb
 // 005053af: PUSH EBX
 // 005053b0: MOV dword ptr [EBX],ECX
-// 005053b2: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 005053b2: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 005053b7: ADD ESP,0x8
 // 005053ba: PUSH 0x631289
 //   XREF to: 00631289 (DATA)
 // 005053bf: PUSH EBX
-// 005053c0: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 005053c0: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 005053c5: ADD ESP,0x8
 // 005053c8: MOV ESI,dword ptr [EBX]
@@ -78,13 +78,13 @@ void core_lever_cpp_FUN_00505390(void)
 // 005053cf: ADD ESI,0xb
 // 005053d2: PUSH EBX
 // 005053d3: MOV dword ptr [EBX],ESI
-// 005053d5: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 005053d5: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 005053da: ADD ESP,0x8
 // 005053dd: PUSH 0x63132b
 //   XREF to: 0063132b (DATA)
 // 005053e2: PUSH EBX
-// 005053e3: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 005053e3: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 005053e8: ADD ESP,0x8
 // 005053eb: MOV EDI,dword ptr [EBX]
@@ -93,25 +93,25 @@ void core_lever_cpp_FUN_00505390(void)
 // 005053f2: ADD EDI,0xb
 // 005053f5: PUSH EBX
 // 005053f6: MOV dword ptr [EBX],EDI
-// 005053f8: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 005053f8: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 005053fd: ADD ESP,0x8
 // 00505400: PUSH 0x63139e
 //   XREF to: 0063139e (DATA)
 // 00505405: PUSH EBX
-// 00505406: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 00505406: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 0050540b: ADD ESP,0x8
 // 0050540e: PUSH 0x6313dd
 //   XREF to: 006313dd (DATA)
 // 00505413: PUSH EBX
-// 00505414: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 00505414: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 00505419: ADD ESP,0x8
 // 0050541c: PUSH 0x63141d
 //   XREF to: 0063141d (DATA)
 // 00505421: PUSH EBX
-// 00505422: CALL core_actor.cpp_SomethingElseWithStrings2_FUN_0040d240
+// 00505422: CALL core_actor.cpp_drawTextLine_FUN_0040d240
 //   XREF to: 0040d240 (UNCONDITIONAL_CALL)
 // 00505427: ADD ESP,0x8
 // 0050542a: POP EDI

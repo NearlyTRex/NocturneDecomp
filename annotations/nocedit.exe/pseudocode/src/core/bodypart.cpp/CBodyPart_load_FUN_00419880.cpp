@@ -39,90 +39,87 @@ void core_bodypart_cpp_CBodyPart_load_FUN_00419880(void)
 
 {
   undefined4 *puVar1;
-  float fVar2;
+  int iVar2;
   int iVar3;
   int iVar4;
-  float *pfVar5;
+  char *pcVar5;
   int iVar6;
   int iVar7;
-  CDemonActor *in_stack_00000004;
+  CBodyPart *in_stack_00000004;
   
-  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);
+  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&in_stack_00000004->base_actor);
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)(in_stack_00000004[1].actor_name + 0x1c),"vertexCount");
+            ((int *)(in_stack_00000004->field1_0x158 + 0x1c),"vertexCount");
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)&in_stack_00000004[1].location.position.z,"triCount");
+            ((int *)(in_stack_00000004->field1_0x158 + 0x28),"triCount");
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)&in_stack_00000004[1].orient.bank,"textureCount");
+            ((int *)(in_stack_00000004->field1_0x158 + 0x34),"textureCount");
   if (g_ActorReadingMode == 1) {
-    fVar2 = (float)core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0();
+    core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(in_stack_00000004);
     iVar3 = 0;
-    if (0 < *(int *)(in_stack_00000004[1].actor_name + 0x1c)) {
+    if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x1c)) {
       iVar6 = 0;
       do {
-        iVar7 = (int)in_stack_00000004[1].location.position.x + iVar6;
+        iVar7 = *(int *)(in_stack_00000004->field1_0x158 + 0x20) + iVar6;
         iVar3 = iVar3 + 1;
         iVar6 = iVar6 + 0xc;
         crt_stdio_c_fscanf_FUN_005fe7c0
                   (g_ActorDataFile,"%d,%d,%d\n","%d,%d,%d\n",iVar7,iVar7 + 4,iVar7 + 8);
-        fVar2 = *(float *)(in_stack_00000004[1].actor_name + 0x1c);
-      } while (iVar3 < (int)fVar2);
+      } while (iVar3 < *(int *)(in_stack_00000004->field1_0x158 + 0x1c));
     }
     iVar3 = 0;
-    if (0 < (int)in_stack_00000004[1].location.position.z) {
+    if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x28)) {
       iVar6 = 0;
       iVar7 = 0;
       do {
-        iVar4 = in_stack_00000004[1].location.area_id + iVar6;
+        iVar4 = *(int *)(in_stack_00000004->field1_0x158 + 0x2c) + iVar6;
         iVar6 = iVar6 + 0x3c;
-        fVar2 = (float)crt_stdio_c_fscanf_FUN_005fe7c0
-                                 (g_ActorDataFile,"\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
-                                  "\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
-                                  (int)in_stack_00000004[1].orient.pitch + iVar7,iVar4 + 0x18,
-                                  iVar4 + 0x1c,iVar4 + 0x20,iVar4 + 0x24,iVar4 + 0x28,iVar4 + 0x2c,
-                                  iVar4 + 0x30,iVar4 + 0x34,iVar4 + 0x38);
+        crt_stdio_c_fscanf_FUN_005fe7c0
+                  (g_ActorDataFile,"\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n","\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
+                   *(int *)(in_stack_00000004->field1_0x158 + 0x30) + iVar7,iVar4 + 0x18,
+                   iVar4 + 0x1c,iVar4 + 0x20,iVar4 + 0x24,iVar4 + 0x28,iVar4 + 0x2c,iVar4 + 0x30,
+                   iVar4 + 0x34,iVar4 + 0x38);
         iVar7 = iVar7 + 4;
         *(undefined4 *)(iVar4 + 4) = 3;
         iVar3 = iVar3 + 1;
-      } while (iVar3 < (int)in_stack_00000004[1].location.position.z);
+      } while (iVar3 < *(int *)(in_stack_00000004->field1_0x158 + 0x28));
     }
     iVar3 = 0;
-    if (0 < (int)in_stack_00000004[1].orient.bank) {
-      pfVar5 = &in_stack_00000004[1].orient_matrix.m[0].y;
+    if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x34)) {
+      pcVar5 = in_stack_00000004->field1_0x158 + 0x40;
       do {
         iVar3 = iVar3 + 1;
-        crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile," \"%[^\"]\"\n"," \"%[^\"]\"\n",pfVar5);
-        fVar2 = in_stack_00000004[1].orient.bank;
-        pfVar5 = pfVar5 + 6;
-      } while (iVar3 < (int)fVar2);
+        crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile," \"%[^\"]\"\n"," \"%[^\"]\"\n",pcVar5);
+        pcVar5 = pcVar5 + 0x18;
+      } while (iVar3 < *(int *)(in_stack_00000004->field1_0x158 + 0x34));
     }
-    core_bodypart_cpp_FUN_0041a050(fVar2);
+    core_bodypart_cpp_FUN_0041a050();
   }
   else {
     iVar3 = 0;
-    if (0 < *(int *)(in_stack_00000004[1].actor_name + 0x1c)) {
+    if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x1c)) {
       iVar6 = 0;
       do {
-        fVar2 = in_stack_00000004[1].location.position.x;
+        iVar2 = *(int *)(in_stack_00000004->field1_0x158 + 0x20);
         iVar7 = iVar6 + 8;
         iVar4 = iVar6 + 4;
-        puVar1 = (undefined4 *)(iVar6 + (int)fVar2);
+        puVar1 = (undefined4 *)(iVar6 + iVar2);
         iVar6 = iVar6 + 0xc;
         iVar3 = iVar3 + 1;
         crt_stdio_c_fprintf_FUN_005fe6d0
-                  (g_ActorDataFile,"\t%d,%d,%d\n",*puVar1,*(undefined4 *)(iVar4 + (int)fVar2),
-                   *(undefined4 *)(iVar7 + (int)fVar2));
-      } while (iVar3 < *(int *)(in_stack_00000004[1].actor_name + 0x1c));
+                  (g_ActorDataFile,"\t%d,%d,%d\n",*puVar1,*(undefined4 *)(iVar4 + iVar2),
+                   *(undefined4 *)(iVar7 + iVar2));
+      } while (iVar3 < *(int *)(in_stack_00000004->field1_0x158 + 0x1c));
     }
     iVar3 = 0;
-    if (0 < (int)in_stack_00000004[1].location.position.z) {
+    if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x28)) {
       iVar6 = 0;
       iVar7 = 0;
       do {
-        iVar4 = in_stack_00000004[1].location.area_id + iVar6;
+        iVar4 = *(int *)(in_stack_00000004->field1_0x158 + 0x2c) + iVar6;
         crt_stdio_c_fprintf_FUN_005fe6d0
                   (g_ActorDataFile,"\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
-                   *(undefined4 *)(iVar7 + (int)in_stack_00000004[1].orient.pitch),
+                   *(undefined4 *)(iVar7 + *(int *)(in_stack_00000004->field1_0x158 + 0x30)),
                    *(undefined4 *)(iVar4 + 0x18),*(undefined4 *)(iVar4 + 0x1c),
                    *(undefined4 *)(iVar4 + 0x20),*(undefined4 *)(iVar4 + 0x24),
                    *(undefined4 *)(iVar4 + 0x28),*(undefined4 *)(iVar4 + 0x2c),
@@ -131,40 +128,39 @@ void core_bodypart_cpp_CBodyPart_load_FUN_00419880(void)
         iVar7 = iVar7 + 4;
         iVar3 = iVar3 + 1;
         iVar6 = iVar6 + 0x3c;
-      } while (iVar3 < (int)in_stack_00000004[1].location.position.z);
+      } while (iVar3 < *(int *)(in_stack_00000004->field1_0x158 + 0x28));
     }
     iVar3 = 0;
-    if (0 < (int)in_stack_00000004[1].orient.bank) {
-      pfVar5 = &in_stack_00000004[1].orient_matrix.m[0].y;
+    if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x34)) {
+      pcVar5 = in_stack_00000004->field1_0x158 + 0x40;
       do {
         iVar3 = iVar3 + 1;
-        crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"\t\"%s\"\n",pfVar5);
-        pfVar5 = pfVar5 + 6;
-      } while (iVar3 < (int)in_stack_00000004[1].orient.bank);
+        crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"\t\"%s\"\n",pcVar5);
+        pcVar5 = pcVar5 + 0x18;
+      } while (iVar3 < *(int *)(in_stack_00000004->field1_0x158 + 0x34));
     }
   }
   if (1 < g_CBodyPartClassVersion) {
     core_actor_cpp_serializeSimBox_FUN_0040bd70
-              ((CSimBox *)(in_stack_00000004[9].create_event + 0x3c),"simBox");
+              ((CSimBox *)(in_stack_00000004->field1_0x158 + 0xb74),"simBox");
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)&in_stack_00000004[0xb].runtime_state,"carriedByActor");
+              ((CDemonActor *)(in_stack_00000004->field1_0x158 + 0xdd0),"carriedByActor");
   }
   if (2 < g_CBodyPartClassVersion) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)(in_stack_00000004[9].create_event + 0x28),"bloodType");
+              ((int *)(in_stack_00000004->field1_0x158 + 0xb60),"bloodType");
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)(in_stack_00000004[9].create_event + 0x20),"dontUseNormals");
+              ((int *)(in_stack_00000004->field1_0x158 + 0xb58),"dontUseNormals");
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)(in_stack_00000004[9].create_event + 0x24),"transparentGeometryFlag")
-    ;
+              ((int *)(in_stack_00000004->field1_0x158 + 0xb5c),"transparentGeometryFlag");
   }
   if (3 < g_CBodyPartClassVersion) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)(in_stack_00000004 + 1),"renderInBackground");
+              ((int *)in_stack_00000004->field1_0x158,"renderInBackground");
   }
   if (4 < g_CBodyPartClassVersion) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)(in_stack_00000004[9].create_event + 0x34),"dontPickMeUp");
+              ((int *)(in_stack_00000004->field1_0x158 + 0xb6c),"dontPickMeUp");
     return;
   }
   return;

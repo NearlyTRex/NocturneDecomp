@@ -7,7 +7,7 @@
 //   core_game.cpp_CGame_runGameSession_FUN_004daf80 (004daf80) at 004db29e [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055c0a6 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0062c92d
+//   float FLOAT_0062c92d = 0.5
 //   float FLOAT_0065e9b4 = 256
 //   int g_WindowWidth = 0x140
 //   int g_WindowHeight = 0xc8
@@ -18,7 +18,7 @@
 //   undefined4 DAT_02d831f8
 //   CDemonCamera g_CDemonCameraInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
 //   core_game.cpp_FUN_004e09a0
 
@@ -78,7 +78,7 @@ void __cdecl core_game_cpp_CGame_beginFadeIn_FUN_004e0920(CGame *this_ptr)
 // 004e0837: FSTP float ptr [ESP + 0x40]
 // 004e083b: MOV ECX,dword ptr [EAX + 0xc]
 // 004e083e: PUSH ECX
-// 004e083f: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 004e083f: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 004e0844: ADD ESP,0xc
 // 004e0847: LEA EBX,[ESP + 0x18]

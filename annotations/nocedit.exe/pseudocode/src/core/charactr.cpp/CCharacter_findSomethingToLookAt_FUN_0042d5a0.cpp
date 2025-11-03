@@ -30,11 +30,11 @@
 //   undefined4 DAT_03263318
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408ea0
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 //   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
@@ -55,9 +55,8 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
   int iVar3;
   CDemonActor *pCVar4;
   CVector3f *pCVar5;
-  float *pfVar6;
   float unaff_EBX;
-  float fVar7;
+  float fVar6;
   BADSPACEBASE *in_ESP;
   float unaff_ESI;
   float unaff_retaddr;
@@ -79,43 +78,44 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
   CDemonSet *in_stack_ffffff54;
   CVector3f *in_stack_ffffff58;
   CVector3f *in_stack_ffffff5c;
-  undefined1 auStack_94 [12];
-  undefined4 uStack_88;
+  undefined1 auStack_98 [8];
+  undefined1 auStack_90 [8];
+  float fStack_88;
   CVector3f CStack_84;
-  CVector3f aCStack_70 [3];
-  float fStack_44;
+  undefined1 auStack_70 [8];
+  float fStack_68;
+  CVector3f CStack_54;
+  CVector3f CStack_48;
   float fStack_34;
   float fStack_30;
-  float fStack_2c;
-  float fStack_28;
-  float fStack_24;
+  CVector3f CStack_2c;
   float fStack_1c;
   float fStack_18;
   float fStack_14;
   
-  fVar7 = in_stack_0000000c;
+  fVar6 = in_stack_0000000c;
   this_ptr_01 = this_ptr;
-  iVar2 = (*(this_ptr->base_actor).metadata.vtable[1].hasCollision)
-                    (&this_ptr->base_actor,in_stack_ffffff00);
+  iVar2 = (*(this_ptr->base_actor).vtable[1].hasCollision)(&this_ptr->base_actor,in_stack_ffffff00);
   if (iVar2 != 0) {
-    fVar7 = 1.4013e-45;
+    fVar6 = 1.4013e-45;
   }
-  if ((fVar7 == 0.0) && (*(int *)(this_ptr_01->field11_0x25a0 + 0x34) == 0)) {
+  if ((fVar6 == 0.0) && (*(int *)(this_ptr_01->field11_0x25a0 + 0x34) == 0)) {
     if (*(float *)(this_ptr_01->field11_0x25a0 + 0x48) <= 0.0) {
-      auStack_94._4_4_ = 0.0;
-      uStack_88 = 0;
-      auStack_94._8_4_ = 5.5;
-      core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr_01->base_actor);
+      auStack_90._0_4_ = 0.0;
+      fStack_88 = 0.0;
+      auStack_90._4_4_ = 5.5;
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                (&this_ptr_01->base_actor,&CStack_48,(CVector3f *)auStack_90);
       unaff_retaddr = 0.0;
       for (iVar2 = 0; iVar2 < g_CDemonSetPtr->damage_listener_count; iVar2 = iVar2 + 1) {
         this_ptr_00 = *(CCharacter **)(g_CDemonSetPtr->field19_0x14f0a0 + (int)unaff_retaddr + -4);
         if ((this_ptr_00 != this_ptr_01) &&
-           (iVar3 = (*((this_ptr_00->base_actor).metadata.vtable)->shouldIgnoreForTargeting)
+           (iVar3 = (*((this_ptr_00->base_actor).vtable)->shouldIgnoreForTargeting)
                               (&this_ptr_00->base_actor), iVar3 == 0)) {
           in_stack_0000001c =
-               (*(this_ptr_00->base_actor).metadata.vtable[1].hasCollision)
+               (*(this_ptr_00->base_actor).vtable[1].hasCollision)
                          (&this_ptr_00->base_actor,in_stack_ffffff24);
-          if ((in_stack_0000001c == 0) || ((this_ptr_00->model).padding_0x0[0x2260] == '\0')) {
+          if ((in_stack_0000001c == 0) || ((this_ptr_00->model).field11_0x2260[0] == '\0')) {
             pCVar1 = &(this_ptr_00->base_actor).location;
             if ((CLocation *)&stack0xffffff4c != pCVar1) {
               in_stack_ffffff4c = (pCVar1->position).x;
@@ -125,19 +125,22 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
             in_stack_ffffff50 = in_stack_ffffff50 + FLOAT_0061742a;
           }
           else {
-            core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+            pCVar5 = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
             in_stack_ffffff2c = (SCollisionInfo *)0x42d9c0;
-            pfVar6 = core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr_00->base_actor);
-            if ((float *)&stack0xffffff54 != pfVar6) {
-              in_stack_ffffff54 = (CDemonSet *)*pfVar6;
-              in_stack_ffffff58 = (CVector3f *)pfVar6[1];
-              in_stack_ffffff5c = (CVector3f *)pfVar6[2];
+            pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                               (&this_ptr_00->base_actor,&CStack_2c,pCVar5);
+            if ((CVector3f *)&stack0xffffff54 != pCVar5) {
+              in_stack_ffffff54 = (CDemonSet *)pCVar5->x;
+              in_stack_ffffff58 = (CVector3f *)pCVar5->y;
+              in_stack_ffffff5c = (CVector3f *)pCVar5->z;
             }
           }
-          aCStack_70[0].x = (float)in_stack_ffffff54 - fStack_1c;
-          aCStack_70[0].y = (float)in_stack_ffffff58 - fStack_18;
-          aCStack_70[0].z = (float)in_stack_ffffff5c - fStack_14;
-          core_actor_cpp_CDemonActor_FUN_00408ea0(&this_ptr_01->base_actor);
+          auStack_70._0_4_ = (float)in_stack_ffffff54 - fStack_1c;
+          auStack_70._4_4_ = (float)in_stack_ffffff58 - fStack_18;
+          fStack_68 = (float)in_stack_ffffff5c - fStack_14;
+          core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+                    (&this_ptr_01->base_actor,(CVector3f *)&stack0xfffffff0,(CVector3f *)auStack_70)
+          ;
           if ((((0.0 <= unaff_EBX) &&
                (in_stack_00000020 = unaff_EBX * unaff_EBX + unaff_ESI * unaff_ESI + 0.0,
                (int)in_stack_00000020 < 0x44610001)) &&
@@ -174,17 +177,17 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
               core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                         (g_CDemonSetPtr,&this_ptr_00->base_actor);
               core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,2);
-              in_stack_ffffff5c = (CVector3f *)(auStack_94 + 8);
+              in_stack_ffffff5c = (CVector3f *)(auStack_90 + 4);
               in_stack_ffffff58 = (CVector3f *)&this_ptr;
               in_stack_ffffff50 = 6.139075e-39;
               in_stack_ffffff54 = g_CDemonSetPtr;
               iVar3 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00572460
                                 (g_CDemonSetPtr,in_stack_ffffff58,in_stack_ffffff5c);
               if ((iVar3 == 0) &&
-                 (in_stack_00000044 = this_ptr_00, aCStack_70 != (CVector3f *)&stack0x00000020)) {
-                aCStack_70[0].x = in_stack_00000020;
-                aCStack_70[0].y = in_stack_00000024;
-                aCStack_70[0].z = in_stack_00000028;
+                 (in_stack_00000044 = this_ptr_00, (float *)auStack_70 != &stack0x00000020)) {
+                auStack_70._0_4_ = in_stack_00000020;
+                auStack_70._4_4_ = in_stack_00000024;
+                fStack_68 = in_stack_00000028;
               }
             }
           }
@@ -208,7 +211,9 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
   }
   *(float *)(this_ptr_01->field11_0x25a0 + 0x30) = unaff_retaddr;
   if (unaff_retaddr != 0.0) {
-    core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr_01->base_actor);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (&this_ptr_01->base_actor,(CVector3f *)(auStack_70 + 4),(CVector3f *)&stack0xffffff58)
+    ;
     pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (*(CDemonActor **)(this_ptr_01->field11_0x25a0 + 0x30),
                         g_CCharacterClassInfo.name_hash);
@@ -217,28 +222,29 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
       g_CurrentLineNumber = 0xda0;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::findSomethingToLookAt - Should be a character");
     }
-    iVar2 = (*(pCVar4->metadata).vtable[1].hasCollision)(pCVar4,in_stack_ffffff2c);
+    iVar2 = (*pCVar4->vtable[1].hasCollision)(pCVar4,in_stack_ffffff2c);
     if ((iVar2 == 0) || (pCVar4[0x1a].create_event[0x50] == '\0')) {
       if ((CLocation *)&fStack_34 != &pCVar4->location) {
         fStack_34 = (pCVar4->location).position.x;
         fStack_30 = (pCVar4->location).position.y;
-        fStack_2c = (pCVar4->location).position.z;
+        CStack_2c.x = (pCVar4->location).position.z;
       }
       fStack_30 = fStack_30 + FLOAT_0061742a;
     }
     else {
-      core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-      pfVar6 = core_actor_cpp_CDemonActor_FUN_00408ec0(pCVar4);
-      if (&fStack_2c != pfVar6) {
-        fStack_2c = *pfVar6;
-        fStack_28 = pfVar6[1];
-        fStack_24 = pfVar6[2];
+      pCVar5 = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+      pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(pCVar4,&CStack_54,pCVar5);
+      if (&CStack_2c != pCVar5) {
+        CStack_2c.x = pCVar5->x;
+        CStack_2c.y = pCVar5->y;
+        CStack_2c.z = pCVar5->z;
       }
     }
-    in_stack_ffffff50 = fStack_2c - fStack_44;
-    core_actor_cpp_CDemonActor_FUN_00408ea0(&this_ptr_01->base_actor);
+    in_stack_ffffff50 = CStack_2c.x - CStack_48.y;
+    core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+              (&this_ptr_01->base_actor,(CVector3f *)auStack_98,(CVector3f *)&stack0xffffff50);
     pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                       (aCStack_70,(CVector3f *)auStack_94);
+                       ((CVector3f *)auStack_70,(CVector3f *)(auStack_98 + 4));
     if (&CStack_84 != pCVar5) {
       CStack_84.x = pCVar5->x;
       CStack_84.y = pCVar5->y;
@@ -259,29 +265,29 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
     }
   }
   if (*(int *)(this_ptr_01->field11_0x25a0 + 0x30) != 0) {
-    fVar7 = in_stack_00000008 / FLOAT_00617442 + *(float *)(this_ptr_01->field11_0x25a0 + 0x40);
-    *(float *)(this_ptr_01->field11_0x25a0 + 0x40) = fVar7;
-    if (1.0 < fVar7) {
+    fVar6 = in_stack_00000008 / FLOAT_00617442 + *(float *)(this_ptr_01->field11_0x25a0 + 0x40);
+    *(float *)(this_ptr_01->field11_0x25a0 + 0x40) = fVar6;
+    if (1.0 < fVar6) {
       this_ptr_01->field11_0x25a0[0x40] = '\0';
       this_ptr_01->field11_0x25a0[0x41] = '\0';
       this_ptr_01->field11_0x25a0[0x42] = -0x80;
       this_ptr_01->field11_0x25a0[0x43] = '?';
     }
     fStack00000010 =
-         core_actor_cpp_FUN_0040cd70
+         core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                    (in_stack_ffffff50 - *(float *)(this_ptr_01->field11_0x25a0 + 0x38));
     *(float *)(this_ptr_01->field11_0x25a0 + 0x38) =
          fStack00000010 * (float)DOUBLE_0061744a + *(float *)(this_ptr_01->field11_0x25a0 + 0x38);
-    fVar7 = core_actor_cpp_FUN_0040cd70
+    fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                       (in_stack_ffffff50 - *(float *)(this_ptr_01->field11_0x25a0 + 0x3c));
     *(float *)(this_ptr_01->field11_0x25a0 + 0x3c) =
-         fVar7 * (float)DOUBLE_0061744a + *(float *)(this_ptr_01->field11_0x25a0 + 0x3c);
+         fVar6 * (float)DOUBLE_0061744a + *(float *)(this_ptr_01->field11_0x25a0 + 0x3c);
     return;
   }
 LAB_0042d603:
-  fVar7 = *(float *)(this_ptr_01->field11_0x25a0 + 0x40) - in_stack_00000008 / FLOAT_00617442;
-  *(float *)(this_ptr_01->field11_0x25a0 + 0x40) = fVar7;
-  if (fVar7 < 0.0) {
+  fVar6 = *(float *)(this_ptr_01->field11_0x25a0 + 0x40) - in_stack_00000008 / FLOAT_00617442;
+  *(float *)(this_ptr_01->field11_0x25a0 + 0x40) = fVar6;
+  if (fVar6 < 0.0) {
     this_ptr_01->field11_0x25a0[0x3c] = '\0';
     this_ptr_01->field11_0x25a0[0x3d] = '\0';
     this_ptr_01->field11_0x25a0[0x3e] = '\0';
@@ -389,7 +395,7 @@ LAB_0042d603:
 // 0042d689: PUSH ESI
 // 0042d68a: MOV dword ptr [ESP + 0x6c],EDI
 // 0042d68e: XOR EDI,EDI
-// 0042d690: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0042d690: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0042d695: ADD ESP,0xc
 // 0042d698: MOV dword ptr [ESP + 0xe8],EDI
@@ -468,7 +474,7 @@ LAB_0042d603:
 // 0042d76e: FSTP float ptr [ESP + 0x5c]
 // 0042d772: PUSH ESI
 // 0042d773: FSTP float ptr [ESP + 0x64]
-// 0042d777: CALL core_actor.cpp_CDemonActor_FUN_00408ea0
+// 0042d777: CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 //   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
 // 0042d77c: ADD ESP,0xc
 // 0042d77f: FLD float ptr [ESP + 0xb8]
@@ -679,7 +685,7 @@ LAB_0042d603:
 // 0042d9b2: LEA EAX,[ESP + 0x9c]
 // 0042d9b9: PUSH EAX
 // 0042d9ba: PUSH EBX
-// 0042d9bb: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0042d9bb: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0042d9c0: MOV EDX,EAX
 // 0042d9c2: LEA EAX,[ESP + 0x20]
@@ -716,7 +722,7 @@ LAB_0042d603:
 // 0042da32: MOV EDX,0x40b00000
 // 0042da37: PUSH ESI
 // 0042da38: MOV dword ptr [ESP + 0x48],EDX
-// 0042da3c: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0042da3c: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0042da41: ADD ESP,0xc
 // 0042da44: MOV EBX,dword ptr [0x00823c4c]
@@ -788,7 +794,7 @@ LAB_0042d603:
 // 0042db15: FSTP float ptr [ESP + 0x14]
 // 0042db19: PUSH ESI
 // 0042db1a: FSTP float ptr [ESP + 0x1c]
-// 0042db1e: CALL core_actor.cpp_CDemonActor_FUN_00408ea0
+// 0042db1e: CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 //   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
 // 0042db23: ADD ESP,0xc
 // 0042db26: LEA EAX,[ESP + 0x20]
@@ -848,7 +854,7 @@ LAB_0042d603:
 // 0042dbbe: LEA EAX,[ESP + 0x6c]
 // 0042dbc2: PUSH EAX
 // 0042dbc3: PUSH EBX
-// 0042dbc4: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0042dbc4: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0042dbc9: MOV EDX,EAX
 // 0042dbcb: LEA EAX,[ESP + 0x98]
@@ -892,7 +898,7 @@ LAB_0042d603:
 // 0042dc50: FSUB float ptr [ESI + 0x25d8]
 // 0042dc56: SUB ESP,0x4
 // 0042dc59: FSTP float ptr [ESP]
-// 0042dc5c: CALL core_actor.cpp_FUN_0040cd70
+// 0042dc5c: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 0042dc61: MOV dword ptr [ESP + 0xf0],EAX
 // 0042dc68: FLD float ptr [ESP + 0xf0]
@@ -905,7 +911,7 @@ LAB_0042d603:
 // 0042dc88: FSUB float ptr [ESI + 0x25dc]
 // 0042dc8e: SUB ESP,0x4
 // 0042dc91: FSTP float ptr [ESP]
-// 0042dc94: CALL core_actor.cpp_FUN_0040cd70
+// 0042dc94: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 0042dc99: MOV dword ptr [ESP + 0xf0],EAX
 // 0042dca0: FLD float ptr [ESP + 0xf0]

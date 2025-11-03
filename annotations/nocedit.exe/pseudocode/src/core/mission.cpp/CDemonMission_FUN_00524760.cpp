@@ -20,7 +20,7 @@
 //   CScript* g_CScriptPtr = 0310f858
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CEditorTools g_CEditorToolsPtr
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CGame g_CGameInstance
 //   undefined4 DAT_02d81cc4
 //   undefined4 DAT_02d81cd0
@@ -31,7 +31,7 @@
 //   CScript g_CScriptInstance
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
-//   core_event.cpp_FUN_004aaa70
+//   core_event.cpp_CEventList_FUN_004aaa70
 //   core_level.cpp_CLevelLoader_update_FUN_00504160
 //   core_mission.cpp_CDemonMission_FUN_005235b0
 //   core_mission.cpp_CDemonMission_FUN_00523cf0
@@ -47,6 +47,7 @@
 int __cdecl core_mission_cpp_CDemonMission_FUN_00524760(CDemonMission *this_ptr)
 
 {
+  CEventList *this_ptr_00;
   char *text;
   int extraout_EAX;
   int unaff_EBX;
@@ -60,6 +61,7 @@ int __cdecl core_mission_cpp_CDemonMission_FUN_00524760(CDemonMission *this_ptr)
   if (g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0) {
     core_mission_cpp_CDemonMission_FUN_00523cf0(this_ptr);
     this_ptr->field6_0x54c[0x10] = -1;
+    this_ptr_00 = g_CEventListPtr;
     this_ptr->field6_0x54c[0x11] = -1;
     this_ptr->field6_0x54c[0x12] = -1;
     this_ptr->field6_0x54c[0x13] = -1;
@@ -69,7 +71,7 @@ int __cdecl core_mission_cpp_CDemonMission_FUN_00524760(CDemonMission *this_ptr)
     this_ptr->field6_0x54c[0xf] = '\0';
     *(undefined4 *)(this_ptr->field6_0x54c + 8) = *(undefined4 *)(this_ptr->field6_0x54c + 0xc);
     *(undefined4 *)(this_ptr->field6_0x54c + 4) = *(undefined4 *)(this_ptr->field6_0x54c + 8);
-    core_event_cpp_FUN_004aaa70();
+    core_event_cpp_CEventList_FUN_004aaa70(this_ptr_00);
     g_CGamePtr->letterbox_mode = 0;
     core_mission_cpp_CDemonMission_FUN_00523fb0(this_ptr);
     text = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Loading script");
@@ -124,7 +126,7 @@ int __cdecl core_mission_cpp_CDemonMission_FUN_00524760(CDemonMission *this_ptr)
 // 005247b2: MOV dword ptr [EAX + 0x4],EDX
 // 005247b5: MOV EDX,dword ptr [EAX + 0x4]
 // 005247b8: MOV dword ptr [EAX],EDX
-// 005247ba: CALL core_event.cpp_FUN_004aaa70
+// 005247ba: CALL core_event.cpp_CEventList_FUN_004aaa70
 //   XREF to: 004aaa70 (UNCONDITIONAL_CALL)
 // 005247bf: MOV EAX,[0x0067b654]
 //   XREF to: 0067b654 (READ)

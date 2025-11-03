@@ -7,10 +7,10 @@
 //   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 //   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
 //   core_enemy.cpp_CEnemy_FUN_004a9650
-//   core_morph.cpp_CallToFreeSomething1_FUN_0052b430
-//   core_morph.cpp_CallToFreeSomething2_FUN_0052b470
 //   core_morph.cpp_CMorph_getReady_FUN_0052b680
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+//   core_morph.cpp_FUN_0052b430
+//   core_morph.cpp_FUN_0052b470
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 
 #include "nocturne.h"
 
@@ -24,24 +24,23 @@ void core_biggs_cpp_FUN_00418680(void)
   CEnemy *in_stack_00000004;
   
   core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450
+            (&(in_stack_00000004->base_character).model);
   this_ptr = (CKeyFramedModelInstance *)
              (in_stack_00000004[1].base_character.base_actor.actor_name + 8);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(this_ptr);
-  core_morph_cpp_CallToFreeSomething1_FUN_0052b430();
+  core_morph_cpp_FUN_0052b430();
   core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr);
-  core_morph_cpp_CallToFreeSomething2_FUN_0052b470();
-  core_morph_cpp_CMorph_getReady_FUN_0052b680();
+  core_morph_cpp_FUN_0052b470();
+  core_morph_cpp_CMorph_getReady_FUN_0052b680
+            ((CMorph *)
+             (in_stack_00000004[1].base_character.model.motion_controller.current_motion_name + 4));
+  in_stack_00000004[1].base_character.model.motion_controller.field11_0x2c = 0;
   pCVar1 = &in_stack_00000004[1].base_character;
-  (pCVar1->model).padding_0x0[0x2c] = '\0';
-  (pCVar1->model).padding_0x0[0x2d] = '\0';
-  (pCVar1->model).padding_0x0[0x2e] = '\0';
-  (pCVar1->model).padding_0x0[0x2f] = '\0';
-  pCVar1 = &in_stack_00000004[1].base_character;
-  (pCVar1->model).padding_0x0[0x30] = '\0';
-  (pCVar1->model).padding_0x0[0x31] = '\0';
-  (pCVar1->model).padding_0x0[0x32] = '\0';
-  (pCVar1->model).padding_0x0[0x33] = '\0';
+  (pCVar1->model).motion_controller.current_motion_name[0] = '\0';
+  (pCVar1->model).motion_controller.current_motion_name[1] = '\0';
+  (pCVar1->model).motion_controller.current_motion_name[2] = '\0';
+  (pCVar1->model).motion_controller.current_motion_name[3] = '\0';
   return;
 }
 
@@ -59,7 +58,7 @@ void core_biggs_cpp_FUN_00418680(void)
 // 0041868d: ADD ESP,0x4
 // 00418690: LEA ESI,[EBX + 0x158]
 // 00418696: PUSH ESI
-// 00418697: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 00418697: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0041869c: ADD ESP,0x4
 // 0041869f: LEA EDI,[EBX + 0xbebc]
@@ -71,7 +70,7 @@ void core_biggs_cpp_FUN_00418680(void)
 // 004186af: PUSH 0x0
 // 004186b1: LEA ESI,[EBX + 0xc040]
 // 004186b7: PUSH ESI
-// 004186b8: CALL core_morph.cpp_CallToFreeSomething1_FUN_0052b430
+// 004186b8: CALL core_morph.cpp_FUN_0052b430
 //   XREF to: 0052b430 (UNCONDITIONAL_CALL)
 // 004186bd: ADD ESP,0xc
 // 004186c0: PUSH 0x0
@@ -82,7 +81,7 @@ void core_biggs_cpp_FUN_00418680(void)
 // 004186cb: PUSH EAX
 // 004186cc: PUSH 0x1
 // 004186ce: PUSH ESI
-// 004186cf: CALL core_morph.cpp_CallToFreeSomething2_FUN_0052b470
+// 004186cf: CALL core_morph.cpp_FUN_0052b470
 //   XREF to: 0052b470 (UNCONDITIONAL_CALL)
 // 004186d4: ADD ESP,0x10
 // 004186d7: PUSH ESI

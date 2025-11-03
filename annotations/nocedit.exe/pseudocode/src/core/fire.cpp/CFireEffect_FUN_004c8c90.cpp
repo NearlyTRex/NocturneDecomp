@@ -9,7 +9,7 @@
 // Globals:
 //   double DOUBLE_0062a0a3 = 0.5
 //   float FLOAT_0062a0ab = 40
-//   CExplosion[10] g_CFireEffectExplosions
+//   CExplosion[10] g_ExplosionPool
 //   undefined4 DAT_02d677b8
 //   undefined4 DAT_02d677bc
 //   undefined4 DAT_02d677c0
@@ -43,7 +43,7 @@ int __cdecl core_fire_cpp_CFireEffect_FUN_004c8c90(CFireEffect *this_ptr)
   float local_3c [6];
   float local_24 [5];
   
-  pCVar5 = g_CFireEffectExplosions;
+  pCVar5 = g_ExplosionPool;
   iVar4 = 0;
   do {
     if ((float)DOUBLE_0062a0a3 < *(float *)(pCVar5->field0_0x0 + 0xc)) {

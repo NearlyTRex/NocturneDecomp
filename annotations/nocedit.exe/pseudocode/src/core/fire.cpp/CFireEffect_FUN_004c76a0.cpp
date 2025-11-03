@@ -20,24 +20,24 @@
 //   undefined4 DAT_0067aeb8
 //   undefined2 DAT_0067aebc
 //   CSound* g_CSoundPtr = 03f6af64
-//   undefined4 DAT_02d141e8
-//   CSmokeParticle[2048] g_CFireEffectSmokeParticles
-//   CSmokeParticle* g_CFireEffectSmokeParticlesEnd
-//   CBulletHole[256] g_CFireEffectBulletHoles
+//   int g_SmokeParticleAllocIndex
+//   CSmokeParticle[2048] g_SmokeParticlePool
+//   int g_BulletHoleActiveCount
+//   CBulletHole[256] g_BulletHolePool
 //   undefined4 DAT_02d2a1f8
-//   undefined4 g_CFireEffectBulletHoles[0].position.z
+//   undefined4 g_BulletHolePool[0].position.z
 //   undefined4 DAT_02d2a230
 //   undefined4 DAT_02d2a234
 //   undefined4 DAT_02d2a238
 //   CDemonCamera g_CDemonCameraInstance
 //   CSound g_CSoundInstance
 // Function calls:
-//   core_actor.cpp_FUN_0040cd10
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_00452730
+//   core_fire.cpp_allocateBulletHole_FUN_004c6c10
+//   core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
 //   core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0
-//   core_fire.cpp_FUN_004bf7f0
-//   core_fire.cpp_FUN_004c6c10
 //   core_ground.cpp_getGroundTypeCode_FUN_004eece0
 //   core_sound.cpp_CSound_FUN_005b3ae0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -52,48 +52,48 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c76a0(CFireEffect *this_ptr)
   CSmokeParticle *this_ptr_00;
   char *pcVar3;
   BADSPACEBASE *in_ESP;
+  int unaff_ESI;
   CBulletHole *pCVar4;
   undefined4 *puVar5;
-  byte bVar6;
+  undefined4 *puVar6;
+  byte bVar7;
   CVector3f *in_stack_00000008;
-  int in_stack_0000000c;
+  CVector3f *in_stack_0000000c;
   undefined4 in_stack_00000010;
-  int in_stack_00000014;
-  char acStack_60 [52];
-  float local_2c;
-  float fStack_28;
-  float fStack_24;
+  CDemonActor *in_stack_00000014;
+  undefined4 auStack_50 [2];
+  char acStack_48 [4];
+  char acStack_44 [36];
   float local_20;
   float local_1c;
   float local_18;
-  int local_14;
+  float local_14;
   
-  bVar6 = 0;
-  if ((*(float *)(in_stack_0000000c + 4) < (float)DOUBLE_0062a03b) &&
-     (DOUBLE_0062a043 < (double)*(float *)(in_stack_0000000c + 4))) {
-    pCVar4 = g_CFireEffectBulletHoles;
-    local_14 = 1;
-    if ((in_stack_00000014 == 0) ||
-       (iVar2 = (**(code **)(*(int *)(in_stack_00000014 + 0x154) + 0x44))(), iVar2 != 0)) {
-      if ((local_14 != 0) && (iVar2 = 0, 0 < (int)g_CFireEffectSmokeParticlesEnd)) {
+  bVar7 = 0;
+  if ((in_stack_0000000c->y < (float)DOUBLE_0062a03b) &&
+     (DOUBLE_0062a043 < (double)in_stack_0000000c->y)) {
+    pCVar4 = g_BulletHolePool;
+    local_14 = 1.4013e-45;
+    if ((in_stack_00000014 == (CDemonActor *)0x0) ||
+       (iVar2 = (*in_stack_00000014->vtable->allowBulletHoles)(in_stack_00000014), iVar2 != 0)) {
+      if ((unaff_ESI != 0) && (iVar2 = 0, 0 < g_BulletHoleActiveCount)) {
         do {
-          local_20 = in_stack_00000008->x - (pCVar4->position).x;
-          local_1c = in_stack_00000008->y - (pCVar4->position).y;
-          local_18 = in_stack_00000008->z - (pCVar4->position).z;
-          if (&local_2c != &local_20) {
-            local_2c = local_20;
-            fStack_28 = local_1c;
-            fStack_24 = local_18;
+          local_14 = in_stack_00000008->x - (pCVar4->position).x;
+          if (&local_20 != &local_14) {
+            local_20 = local_14;
+            local_1c = in_stack_00000008->y - (pCVar4->position).y;
+            local_18 = in_stack_00000008->z - (pCVar4->position).z;
           }
-          if (fStack_24 * fStack_24 + local_2c * local_2c + fStack_28 * fStack_28 <
+          if (local_18 * local_18 + local_20 * local_20 + local_1c * local_1c <
               (float)DOUBLE_0062a04b) goto LAB_004c7785;
           iVar2 = iVar2 + 1;
           pCVar4 = pCVar4 + 1;
-        } while (iVar2 < (int)g_CFireEffectSmokeParticlesEnd);
+        } while (iVar2 < g_BulletHoleActiveCount);
       }
-      if (local_14 != 0) {
-        core_fire_cpp_FUN_004c6c10();
-        core_fire_cpp_FUN_004bf7f0();
+      if (unaff_ESI != 0) {
+        pCVar4 = core_fire_cpp_allocateBulletHole_FUN_004c6c10();
+        core_fire_cpp_CBulletHole_ctor_FUN_004bf7f0
+                  (pCVar4,in_stack_00000008,in_stack_0000000c,in_stack_00000014);
       }
     }
   }
@@ -103,11 +103,11 @@ LAB_004c7785:
   if (iVar2 != 0) {
     iVar2 = 0;
     do {
-      iVar1 = DAT_02d141e8 + 1;
-      this_ptr_00 = g_CFireEffectSmokeParticles + DAT_02d141e8;
-      DAT_02d141e8 = iVar1;
+      iVar1 = g_SmokeParticleAllocIndex + 1;
+      this_ptr_00 = g_SmokeParticlePool + g_SmokeParticleAllocIndex;
+      g_SmokeParticleAllocIndex = iVar1;
       if (0x7ff < iVar1) {
-        DAT_02d141e8 = 0;
+        g_SmokeParticleAllocIndex = 0;
       }
       iVar2 = iVar2 + 1;
       core_fire_cpp_CSmokeParticle_init_FUN_004bf2f0
@@ -125,21 +125,21 @@ LAB_004c7785:
     }
   }
   puVar5 = &DAT_0067aeb8;
-  pcVar3 = acStack_60;
+  puVar6 = auStack_50;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(undefined4 *)pcVar3 = *puVar5;
-    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
-    pcVar3 = pcVar3 + ((uint)bVar6 * -2 + 1) * 4;
+    *puVar6 = *puVar5;
+    puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
+    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
   }
-  *(undefined2 *)pcVar3 = *(undefined2 *)puVar5;
+  *(undefined2 *)puVar6 = *(undefined2 *)puVar5;
   switch(in_stack_00000010) {
   case 2:
   case 8:
-    iVar2 = core_actor_cpp_FUN_0040cd10();
+    iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.16666667);
     if (iVar2 != 0) {
       pcVar3 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(2);
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_60,"ric-%s!?.wav",pcVar3);
-      if (acStack_60[0] == '\0') {
+      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_48,"ric-%s!?.wav",pcVar3);
+      if (acStack_44[0] == '\0') {
         return;
       }
       goto LAB_004c79a0;
@@ -147,43 +147,44 @@ LAB_004c7785:
     break;
   case 3:
   case 4:
-    iVar2 = core_actor_cpp_FUN_0040cd10();
+    iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.16666667);
     if (iVar2 != 0) {
       pcVar3 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(3);
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_60,"ric-%s.wav",pcVar3);
-      if (acStack_60[0] == '\0') {
+      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_48,"ric-%s.wav",pcVar3);
+      if (acStack_44[0] == '\0') {
         return;
       }
       goto LAB_004c79a0;
     }
     break;
   case 5:
-    iVar2 = core_actor_cpp_FUN_0040cd10();
+    iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.16666667);
     if (iVar2 != 0) {
       pcVar3 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(5);
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_60,"ric-%s!?.wav",pcVar3);
-      if (acStack_60[0] == '\0') {
+      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_48,"ric-%s!?.wav",pcVar3);
+      if (acStack_44[0] == '\0') {
         return;
       }
       goto LAB_004c79a0;
     }
     break;
   case 7:
-    iVar2 = core_actor_cpp_FUN_0040cd10();
+    iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.16666667);
     if (iVar2 != 0) {
       pcVar3 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(7);
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_60,"ric-%s!?.wav",pcVar3);
-      if (acStack_60[0] == '\0') {
+      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_48,"ric-%s!?.wav",pcVar3);
+      if (acStack_44[0] == '\0') {
         return;
       }
       goto LAB_004c79a0;
     }
   }
-  if (acStack_60[0] == '\0') {
+  if ((char)auStack_50[0] == '\0') {
     return;
   }
 LAB_004c79a0:
-  core_sound_cpp_CSound_FUN_005b3ae0(g_CSoundPtr,(char *)0x0,acStack_60);
+  auStack_50[0] = 0x3e2e147b;
+  core_sound_cpp_CSound_FUN_005b3ae0(g_CSoundPtr,(char *)0x0,acStack_44);
   return;
 }
 
@@ -394,7 +395,7 @@ LAB_004c79a0:
 //   Label: LAB_004c7847
 // 004c784c: JZ 0x004c7785
 //   XREF to: 004c7785 (CONDITIONAL_JUMP)
-// 004c7852: CALL core_fire.cpp_FUN_004c6c10
+// 004c7852: CALL core_fire.cpp_allocateBulletHole_FUN_004c6c10
 //   XREF to: 004c6c10 (UNCONDITIONAL_CALL)
 // 004c7857: MOV EDX,dword ptr [EBP + 0x24]
 //   XREF to: Stack[0x14] (READ)
@@ -404,7 +405,7 @@ LAB_004c79a0:
 // 004c785e: PUSH ECX
 // 004c785f: PUSH EBX
 // 004c7860: PUSH EAX
-// 004c7861: CALL core_fire.cpp_FUN_004bf7f0
+// 004c7861: CALL core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0
 //   XREF to: 004bf7f0 (UNCONDITIONAL_CALL)
 // 004c7866: ADD ESP,0x10
 // 004c7869: JMP 0x004c7785
@@ -430,7 +431,7 @@ LAB_004c79a0:
 //   XREF to: 004c7800 (UNCONDITIONAL_JUMP)
 // 004c7898: PUSH 0x3e2aaaab
 //   Label: caseD_8
-// 004c789d: CALL core_actor.cpp_FUN_0040cd10
+// 004c789d: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 004c78a2: ADD ESP,0x4
 // 004c78a5: TEST EAX,EAX
@@ -459,7 +460,7 @@ LAB_004c79a0:
 // 004c78db: RET
 // 004c78dc: PUSH 0x3e2aaaab
 //   Label: caseD_5
-// 004c78e1: CALL core_actor.cpp_FUN_0040cd10
+// 004c78e1: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 004c78e6: ADD ESP,0x4
 // 004c78e9: TEST EAX,EAX
@@ -488,7 +489,7 @@ LAB_004c79a0:
 // 004c791f: RET
 // 004c7920: PUSH 0x3e2aaaab
 //   Label: caseD_7
-// 004c7925: CALL core_actor.cpp_FUN_0040cd10
+// 004c7925: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 004c792a: ADD ESP,0x4
 // 004c792d: TEST EAX,EAX
@@ -517,7 +518,7 @@ LAB_004c79a0:
 // 004c795f: RET
 // 004c7960: PUSH 0x3e2aaaab
 //   Label: caseD_4
-// 004c7965: CALL core_actor.cpp_FUN_0040cd10
+// 004c7965: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 004c796a: ADD ESP,0x4
 // 004c796d: TEST EAX,EAX

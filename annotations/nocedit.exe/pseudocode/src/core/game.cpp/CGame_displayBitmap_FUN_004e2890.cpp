@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_game.cpp_CGame_displayBitmap_FUN_004e2890()
 // Cross-references:
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ab47c [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ab47c [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_game_cpp_0062d24b
 //   TerminatedCString s_CGame_displayBitmap_trie_0062d25c

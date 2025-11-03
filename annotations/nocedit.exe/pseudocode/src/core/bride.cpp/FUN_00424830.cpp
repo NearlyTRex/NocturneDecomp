@@ -10,8 +10,8 @@
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CFireEffect g_CFireEffectInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_FUN_0040cd10
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_bride.cpp_FUN_00424600
 //   core_charactr.cpp_CCharacter_FUN_0042b5b0
 //   core_enemy.cpp_FUN_004a9f10
@@ -30,50 +30,60 @@
 void core_bride_cpp_FUN_00424830(void)
 
 {
+  CDeformableModelInstance *this_ptr;
+  CVector3f *input_local_point;
   int iVar1;
   undefined4 uVar2;
+  BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
+  float local_30;
   char *sound_name;
   
   sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
   if (*(int *)(in_stack_00000008 + 0x28) == 7) {
     iVar1 = 0;
     *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)DOUBLE_00616cb5;
-    core_actor_cpp_CDemonActor_FUN_00408ec0(&in_stack_00000004->base_actor);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffc4,
+               (CVector3f *)(in_stack_00000008 + 0x1c));
     do {
       iVar1 = iVar1 + 1;
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
     } while (iVar1 < 5);
   }
   if (*(int *)(in_stack_00000008 + 0x30) == 0x6c) {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-    core_actor_cpp_CDemonActor_FUN_00408ec0(&in_stack_00000004->base_actor);
+    input_local_point = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (&in_stack_00000004->base_actor,(CVector3f *)&local_30,input_local_point);
     core_charactr_cpp_CCharacter_FUN_0042b5b0(in_stack_00000004);
   }
   core_bride_cpp_FUN_00424600();
   iVar1 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x40);
   in_stack_00000004->hit_points = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
-  if (*(int *)((in_stack_00000004->model).padding_0x0 + iVar1 * 4 + 0x2140) == 0) {
+  if ((in_stack_00000004->model).part_visibility_flags[iVar1] == 0) {
     in_stack_00000004->hit_points = 0.0;
   }
+  this_ptr = &in_stack_00000004->model;
   if (0.0 < in_stack_00000004->hit_points) {
-    core_actor_cpp_FUN_0040cd10();
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+    core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
+    local_30 = 6.087675e-39;
     iVar1 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
     if (iVar1 != 0) goto LAB_00424955;
     sound_name = "ub-hurt?.wav";
   }
   else {
     in_stack_00000004->hit_points = 0.0;
-    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
     if ((*(int *)(iVar1 + 0x24) == 0xe) || (*(int *)(iVar1 + 0x24) == 0xd)) goto LAB_00424955;
-    core_actor_cpp_FUN_0040cd10();
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+    core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
     sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
     sound_name = "ub-die?.wav";
   }
-  uVar2 = (*((in_stack_00000004->base_actor).metadata.vtable)->playSound)
+  local_30 = 6.087437e-39;
+  uVar2 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                     (&in_stack_00000004->base_actor,sound_name);
   *(undefined4 *)(in_stack_00000004[1].base_actor.create_event + 0x48) = uVar2;
 LAB_00424955:
@@ -122,7 +132,7 @@ LAB_00424955:
 //   XREF to: Stack[-0x30] (DATA)
 // 0042487f: PUSH EAX
 // 00424880: PUSH ESI
-// 00424881: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00424881: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 00424886: ADD ESP,0xc
 // 00424889: PUSH 0x0
@@ -173,7 +183,7 @@ LAB_00424955:
 //   XREF to: 00424955 (CONDITIONAL_JUMP)
 // 00424908: PUSH 0x1
 // 0042490a: PUSH 0x3f000000
-// 0042490f: CALL core_actor.cpp_FUN_0040cd10
+// 0042490f: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 00424914: ADD ESP,0x4
 // 00424917: TEST EAX,EAX
@@ -224,7 +234,7 @@ LAB_00424955:
 // 0042497b: FSTP ST1
 // 0042497d: PUSH ESI
 // 0042497e: FSTP float ptr [EDI + 0x4]
-// 00424981: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00424981: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 00424986: ADD ESP,0xc
 // 00424989: PUSH 0xffff
@@ -257,7 +267,7 @@ LAB_00424955:
 // 004249c4: PUSH 0x1
 //   Label: LAB_004249c4
 // 004249c6: PUSH 0x3f000000
-// 004249cb: CALL core_actor.cpp_FUN_0040cd10
+// 004249cb: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 004249d0: ADD ESP,0x4
 // 004249d3: TEST EAX,EAX

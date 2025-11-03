@@ -1,18 +1,18 @@
 // Name: core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
 // Address: 0052d460
 // Address Range: [[0052d460, 0052d4e2]]
-// Convention: unknown
-// Signature: undefined core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460()
+// Convention: __cdecl
+// Signature: int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042d390 (0042d390) at 0042d3b6 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_0042e670 (0042e670) at 0042e6f8 [UNCONDITIONAL_CALL]
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ad5a6 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ad5a6 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d2c40 (004d2c40) at 004d2e50 [UNCONDITIONAL_CALL]
 //   core_ghoul.cpp_FUN_004e87e0 (004e87e0) at 004e8b85 [UNCONDITIONAL_CALL]
 //   core_hostage.cpp_NPCSFromZombieTown_FUN_004f4970 (004f4970) at 004f4b2a [UNCONDITIONAL_CALL]
 //   core_icepick.cpp_FUN_004f8810 (004f8810) at 004f8872 [UNCONDITIONAL_CALL]
-//   core_motion.cpp_CMotionController_FUN_0052ddb0 (0052ddb0) at 0052ddbf [UNCONDITIONAL_CALL]
-//   core_motion.cpp_CallToFindMotionInSomethign2_FUN_0052dcb0 (0052dcb0) at 0052dccc [UNCONDITIONAL_CALL]
+//   core_motion.cpp_FUN_0052dcb0 (0052dcb0) at 0052dccc [UNCONDITIONAL_CALL]
+//   core_motion.cpp_FUN_0052ddb0 (0052ddb0) at 0052ddbf [UNCONDITIONAL_CALL]
 //   core_passngr.cpp_FUN_00545d30 (00545d30) at 00545ec4 [UNCONDITIONAL_CALL]
 //   core_scat.cpp_FUN_005582c0 (005582c0) at 0055841f [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055d121 [UNCONDITIONAL_CALL]
@@ -34,38 +34,33 @@
 
 #include "nocturne.h"
 
-/* Signature: int core_motion.cpp_CMotionList_findMotionIndex(CMotionList* pMotionList, char* sName,
-   int param_3) */
-
-int core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(void)
+int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList *this_ptr)
 
 {
   int iVar1;
   int iVar2;
-  char *str1;
-  int in_stack_00000004;
+  SMotion *str1;
   char *in_stack_00000008;
   int in_stack_0000000c;
   
   iVar2 = 0;
-  if (0 < *(int *)(in_stack_00000004 + 0x964)) {
-    str1 = (char *)(in_stack_00000004 + 0x968);
+  if (0 < this_ptr->motion_count) {
+    str1 = this_ptr->motions;
     do {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,in_stack_00000008);
+      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1->motion_name,in_stack_00000008);
       if (iVar1 == 0) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      str1 = str1 + 0x54c;
-    } while (iVar2 < *(int *)(in_stack_00000004 + 0x964));
+      str1 = str1 + 1;
+    } while (iVar2 < this_ptr->motion_count);
   }
   if (in_stack_0000000c == 0) {
     return -1;
   }
   g_CurrentFilename = "..\\core\\motion.cpp";
   g_CurrentLineNumber = 0x100;
-  core_main_c_displayErrorAndQuit_FUN_00506f10
-            ("Can't find motion \"%s\" in motion list",in_stack_00000008);
+  core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find motion \"%s\" in motion list");
   return -1;
 }
 

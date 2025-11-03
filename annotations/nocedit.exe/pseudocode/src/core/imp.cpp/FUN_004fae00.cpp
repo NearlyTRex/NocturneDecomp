@@ -10,7 +10,7 @@
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CFireEffect g_CFireEffectInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_enemy.cpp_FUN_004a9f10
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
 //   core_imp.cpp_FUN_004fab60
@@ -28,43 +28,53 @@
 void core_imp_cpp_FUN_004fae00(void)
 
 {
+  CDemonActor *this_ptr;
   CDemonActor *pCVar1;
-  undefined4 uVar2;
-  int iVar3;
+  int iVar2;
+  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  int in_stack_00000008;
+  float in_stack_00000008;
+  float fStack_20;
   char *sound_name;
   
   sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-  if (*(int *)(in_stack_00000008 + 0x28) == 8) {
-    iVar3 = 0;
-    *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)_DAT_0062fa8e;
-    core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
+  if (*(int *)((int)in_stack_00000008 + 0x28) == 8) {
+    iVar2 = 0;
+    *(float *)((int)in_stack_00000008 + 4) =
+         *(float *)((int)in_stack_00000008 + 4) * (float)_DAT_0062fa8e;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (in_stack_00000004,(CVector3f *)&fStack_20,
+               (CVector3f *)((int)in_stack_00000008 + 0x1c));
     do {
-      iVar3 = iVar3 + 1;
+      fStack_20 = 9.18341e-41;
+      iVar2 = iVar2 + 1;
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
-    } while (iVar3 < 5);
+    } while (iVar2 < 5);
   }
+  fStack_20 = in_stack_00000008;
   core_imp_cpp_FUN_004fab60();
   pCVar1 = (CDemonActor *)
-           ((float)in_stack_00000004[0x1a].metadata.next_actor - *(float *)(in_stack_00000008 + 4));
-  in_stack_00000004[0x1a].metadata.next_actor = pCVar1;
+           ((float)in_stack_00000004[0x1a].next_actor - *(float *)((int)in_stack_00000008 + 4));
+  this_ptr = in_stack_00000004 + 1;
+  in_stack_00000004[0x1a].next_actor = pCVar1;
   if (0.0 < (float)pCVar1) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
-    iVar3 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
-    if (iVar3 != 0) goto LAB_004faefc;
+    fStack_20 = 7.00649e-45;
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00((CMotionController *)this_ptr);
+    iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    if (iVar2 != 0) goto LAB_004faefc;
     sound_name = "imp-hurt?.wav";
   }
   else {
-    in_stack_00000004[0x1a].metadata.next_actor = (CDemonActor *)0x0;
-    iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0();
-    if ((*(int *)(iVar3 + 0x24) == 6) || (*(int *)(iVar3 + 0x24) == 7)) goto LAB_004faefc;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+    in_stack_00000004[0x1a].next_actor = (CDemonActor *)0x0;
+    fStack_20 = 7.317681e-39;
+    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0((CMotionController *)this_ptr);
+    if ((*(int *)(iVar2 + 0x24) == 6) || (*(int *)(iVar2 + 0x24) == 7)) goto LAB_004faefc;
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00((CMotionController *)this_ptr);
     sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
     sound_name = "@imp-die?.wav" + 1;
   }
-  uVar2 = (*((in_stack_00000004->metadata).vtable)->playSound)(in_stack_00000004,sound_name);
-  *(undefined4 *)(in_stack_00000004[0x8d].metadata.field3_0x1c + 4) = uVar2;
+  iVar2 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,sound_name);
+  in_stack_00000004[0x8d].field26_0x148 = iVar2;
 LAB_004faefc:
   core_enemy_cpp_FUN_004a9f10();
   return;
@@ -104,7 +114,7 @@ LAB_004faefc:
 // 004fae3c: FSTP ST1
 // 004fae3e: PUSH ESI
 // 004fae3f: FSTP float ptr [EDI + 0x4]
-// 004fae42: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 004fae42: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 004fae47: ADD ESP,0xc
 // 004fae4a: PUSH 0xffff

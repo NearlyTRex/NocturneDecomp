@@ -16,10 +16,10 @@
 //   undefined4 g_CHeroClassInfo.name_hash
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_FUN_0040cc70
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_bugs.cpp_FUN_00425660
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething5_FUN_005a01d0
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 
 #include "nocturne.h"
@@ -31,12 +31,12 @@ void core_bugs_cpp_FUN_00427400(void)
 
 {
   int iVar1;
-  longlong lVar2;
+  undefined4 uVar2;
   uint class_name_hash;
   CDemonActor *pCVar3;
-  int iVar4;
-  undefined4 uVar5;
-  int *piVar6;
+  CDeformableModel *pCVar4;
+  int iVar5;
+  int iVar6;
   int iVar7;
   int iVar8;
   int iVar9;
@@ -67,41 +67,44 @@ void core_bugs_cpp_FUN_00427400(void)
     *(undefined4 *)(in_stack_0000000c + 0x12b30) = 0;
     *(int *)(in_stack_0000000c + 100) = iVar1 + 1;
     do {
-      iVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
+      pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+                         (*(CDeformableModelInstance **)(in_stack_0000000c + 0x12afc));
       iVar1 = *(int *)(in_stack_00000010 + 0x12b30);
-      if (*(int *)(iVar4 + 0x2c + iVar1 * 4) < 0x2bd) {
+      if (pCVar4->vertex_count[iVar1] < 0x2bd) {
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"%s swarming on %s at LOD %d\n",in_stack_00000010,
                    in_stack_00000008,iVar1);
-        core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
+        core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+                  (*(CDeformableModelInstance **)(in_stack_00000010 + 0x12afc));
         core_bugs_cpp_FUN_00425660();
-        core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething5_FUN_005a01d0();
-        iVar4 = 0;
+        core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0
+                  (*(CDeformableModelInstance **)(in_stack_00000010 + 0x12afc));
+        iVar5 = 0;
         iVar1 = *(int *)(*(int *)(in_stack_00000010 + 0x12afc) + 0x2234);
         if (0 < *(int *)(in_stack_00000010 + 0x12b34)) {
           iVar7 = 0;
           do {
-            *(int *)((int)&DAT_00822f48 + iVar7) = iVar4;
-            iVar4 = iVar4 + 1;
+            *(int *)((int)&DAT_00822f48 + iVar7) = iVar5;
+            iVar5 = iVar5 + 1;
             iVar7 = iVar7 + 4;
-          } while (iVar4 < *(int *)(in_stack_00000020 + 0x12b34));
+          } while (iVar5 < *(int *)(in_stack_00000020 + 0x12b34));
         }
-        for (iVar4 = *(int *)(in_stack_00000020 + 0x12b34) + -2; -1 < iVar4; iVar4 = iVar4 + -1) {
-          if (-1 < iVar4) {
+        for (iVar5 = *(int *)(in_stack_00000020 + 0x12b34) + -2; -1 < iVar5; iVar5 = iVar5 + -1) {
+          if (-1 < iVar5) {
             iVar7 = 0;
             do {
               if (*(int *)(*(int *)((int)&DAT_00822f4c + iVar7) * 0xc + 4 + iVar1) <
                   *(int *)(*(int *)((int)&DAT_00822f48 + iVar7) * 0xc + 4 + iVar1)) {
-                uVar5 = *(undefined4 *)((int)&DAT_00822f48 + iVar7);
+                uVar2 = *(undefined4 *)((int)&DAT_00822f48 + iVar7);
                 *(undefined4 *)((int)&DAT_00822f48 + iVar7) =
                      *(undefined4 *)((int)&DAT_00822f4c + iVar7);
-                *(undefined4 *)((int)&DAT_00822f4c + iVar7) = uVar5;
+                *(undefined4 *)((int)&DAT_00822f4c + iVar7) = uVar2;
               }
               iVar7 = iVar7 + 4;
-            } while (iVar7 <= iVar4 * 4);
+            } while (iVar7 <= iVar5 * 4);
           }
         }
-        iVar4 = *(int *)(iVar1 + 4 + DAT_00822f48 * 0xc);
+        iVar5 = *(int *)(iVar1 + 4 + DAT_00822f48 * 0xc);
         iVar9 = 0;
         iVar8 = 0;
         iVar7 = in_stack_00000020;
@@ -111,13 +114,13 @@ void core_bugs_cpp_FUN_00427400(void)
         do {
           *(undefined4 *)(iVar7 + 0xbef0) = 0xffffffff;
           *(int *)(iVar7 + 0xbef4) = (&DAT_00822f48)[iVar9];
-          lVar2 = CONCAT44(*(int *)(in_stack_00000020 + 0x12b34) >> 0x1f,
-                           *(undefined4 *)(in_stack_00000020 + 0x12b34));
-          uVar5 = core_actor_cpp_FUN_0040cc70((int)(lVar2 / 0xf),(int)(lVar2 % 0xf),iVar1,0xf,0);
-          *(undefined4 *)(iVar7 + 0xbf00) = uVar5;
+          iVar6 = core_actor_cpp_getRandomInt_FUN_0040cc70
+                            (0,(int)(CONCAT44(*(int *)(in_stack_00000020 + 0x12b34) >> 0x1f,
+                                              *(undefined4 *)(in_stack_00000020 + 0x12b34)) / 0xf));
+          *(int *)(iVar7 + 0xbf00) = iVar6;
           iVar9 = iVar9 + 1;
           if ((*(int *)(in_stack_00000024 + 0x12b34) <= iVar9) ||
-             (iVar4 + 0x2a < *(int *)(iVar1 + 4 + (&DAT_00822f48)[iVar9] * 0xc))) {
+             (iVar5 + 0x2a < *(int *)(iVar1 + 4 + (&DAT_00822f48)[iVar9] * 0xc))) {
             iVar9 = 0;
           }
           iVar8 = iVar8 + 1;
@@ -126,8 +129,9 @@ void core_bugs_cpp_FUN_00427400(void)
         return;
       }
       *(int *)(in_stack_00000010 + 0x12b30) = iVar1 + 1;
-      piVar6 = (int *)core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-    } while (*(int *)(in_stack_00000014 + 0x12b30) < *piVar6);
+      pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+                         (*(CDeformableModelInstance **)(in_stack_00000010 + 0x12afc));
+    } while (*(int *)(in_stack_00000014 + 0x12b30) < pCVar4->num_lods);
     *(undefined4 *)(in_stack_00000014 + 0x12afc) = 0;
   }
   return;
@@ -246,7 +250,7 @@ void core_bugs_cpp_FUN_00427400(void)
 // 0042752a: MOV EBP,dword ptr [EBP + 0x12afc]
 // 00427530: PUSH EBP
 // 00427531: MOV EBX,ESI
-// 00427533: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething5_FUN_005a01d0
+// 00427533: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   XREF to: 005a01d0 (UNCONDITIONAL_CALL)
 // 00427538: ADD ESP,0x8
 // 0042753b: MOV EDX,ESI
@@ -361,7 +365,7 @@ void core_bugs_cpp_FUN_00427400(void)
 // 00427636: IDIV ECX
 // 00427638: PUSH EAX
 // 00427639: PUSH 0x0
-// 0042763b: CALL core_actor.cpp_FUN_0040cc70
+// 0042763b: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 00427640: ADD ESP,0x8
 // 00427643: MOV dword ptr [EDI + 0xbf00],EAX

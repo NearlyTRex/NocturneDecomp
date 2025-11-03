@@ -17,7 +17,7 @@
 //   CHero*[4] g_HeroActors
 //   int g_LocalHeroIndex
 // Function calls:
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_charactr.cpp_CCharacter_FUN_0042ede0
 //   core_hero.cpp_FUN_004f3960
 //   core_motion.cpp_CMotionController_FUN_0052dab0
@@ -88,8 +88,8 @@ void core_svetlana_cpp_FUN_005d9260(void)
       local_30._4_4_ = 0.0;
     }
     local_24 = 20.0;
-    iVar4 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.metadata.vtable[1].
-              processMeleeHit)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_ffffff4c);
+    iVar4 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].processMeleeHit)
+                      ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_ffffff4c);
     if (iVar4 != 0) {
       unaff_EBP = 30.0;
     }
@@ -134,9 +134,9 @@ void core_svetlana_cpp_FUN_005d9260(void)
         in_stack_00000004->cloth_data[0x32f] = '\0';
       }
       else {
-        local_1c = (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.metadata.vtable)->
+        local_1c = (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable)->
                      getPathMap)((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
-        iVar4 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.metadata.vtable[1].
+        iVar4 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].
                   processMeleeHit)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_ffffff4c);
         if ((iVar4 == 0) &&
            (uVar8 = core_charactr_cpp_CCharacter_FUN_0042ede0(in_stack_00000004), uVar8 != 0)) {
@@ -166,7 +166,8 @@ void core_svetlana_cpp_FUN_005d9260(void)
                         (this_ptr,&(in_stack_00000004->base_actor).location.position,
                          (CVector3f *)(local_30 + 4),(in_stack_00000004->base_actor).field7_0x6c);
       if (iVar4 != 0) {
-        fVar7 = core_actor_cpp_FUN_0040cd70(local_24 - (in_stack_00000004->base_actor).orient.bank);
+        fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                          (local_24 - (in_stack_00000004->base_actor).orient.bank);
         fVar7 = fVar7 * (float)_DAT_00654ad2 * (float)_DAT_00654ada;
         fStack_14 = -in_stack_00000008;
         in_stack_00000004[1].base_actor.location.area_id = (int)fVar7;
@@ -203,7 +204,8 @@ void core_svetlana_cpp_FUN_005d9260(void)
           in_stack_00000004[1].base_actor.location.position.x = 1.4013e-45;
         }
         else {
-          iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0();
+          iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0
+                            (&(in_stack_00000004->model).motion_controller);
           if ((*(int *)(iVar4 + 0x24) != 2) && (*(int *)(iVar4 + 0x24) != 1)) {
             pCVar3 = in_stack_00000004 + 1;
             (pCVar3->base_actor).actor_name[0x14] = '\x01';
@@ -218,12 +220,13 @@ void core_svetlana_cpp_FUN_005d9260(void)
         in_stack_00000004->cloth_data[0x32f] = '\0';
       }
       else {
-        iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0();
+        iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0
+                          (&(in_stack_00000004->model).motion_controller);
         if ((*(int *)(iVar4 + 0x24) == 10) &&
            (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) != 0)) {
           in_stack_00000004[1].base_actor.location.position.x = 1.4013e-45;
         }
-        iVar4 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.metadata.vtable[1].
+        iVar4 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].
                   processMeleeHit)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_ffffff54);
         if ((iVar4 == 0) &&
            (uVar8 = core_charactr_cpp_CCharacter_FUN_0042ede0(in_stack_00000004), uVar8 != 0)) {
@@ -251,8 +254,8 @@ void core_svetlana_cpp_FUN_005d9260(void)
       if (bVar2) {
         pCVar6 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            ((CVector3f *)local_30,(CVector3f *)auStack_48);
-        fVar7 = core_actor_cpp_FUN_0040cd70(pCVar6->y - (in_stack_00000004->base_actor).orient.bank)
-        ;
+        fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                          (pCVar6->y - (in_stack_00000004->base_actor).orient.bank);
         fVar7 = fVar7 * (float)_DAT_00654ad2 * (float)_DAT_00654ada;
         in_stack_00000004[1].base_actor.location.area_id = (int)fVar7;
         if (fVar7 < -in_stack_00000008) {
@@ -302,7 +305,7 @@ void core_svetlana_cpp_FUN_005d9260(void)
       fStack_40 = pCVar6->y;
       fStack_3c = pCVar6->z;
     }
-    CStack_60.x = core_actor_cpp_FUN_0040cd70
+    CStack_60.x = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                             (fStack_40 - (in_stack_00000004->base_actor).orient.bank);
     if (in_stack_00000008 < CStack_60.x) {
       CStack_60.x = in_stack_00000008;
@@ -509,7 +512,7 @@ void core_svetlana_cpp_FUN_005d9260(void)
 // 005d9485: FSUB float ptr [EBX + 0x34]
 // 005d9488: SUB ESP,0x4
 // 005d948b: FSTP float ptr [ESP]
-// 005d948e: CALL core_actor.cpp_FUN_0040cd70
+// 005d948e: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 005d9493: MOV dword ptr [ESP + 0xa8],EAX
 // 005d949a: FLD float ptr [ESP + 0xa8]
@@ -616,7 +619,7 @@ void core_svetlana_cpp_FUN_005d9260(void)
 // 005d95dd: FSUB float ptr [EBX + 0x34]
 // 005d95e0: SUB ESP,0x4
 // 005d95e3: FSTP float ptr [ESP]
-// 005d95e6: CALL core_actor.cpp_FUN_0040cd70
+// 005d95e6: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 005d95eb: MOV dword ptr [ESP + 0xa8],EAX
 // 005d95f2: FLD float ptr [ESP + 0xa8]
@@ -820,7 +823,7 @@ void core_svetlana_cpp_FUN_005d9260(void)
 // 005d982f: FSUB float ptr [EBX + 0x34]
 // 005d9832: SUB ESP,0x4
 // 005d9835: FSTP float ptr [ESP]
-// 005d9838: CALL core_actor.cpp_FUN_0040cd70
+// 005d9838: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 005d983d: MOV dword ptr [ESP + 0xa8],EAX
 // 005d9844: FLD float ptr [ESP + 0xa8]

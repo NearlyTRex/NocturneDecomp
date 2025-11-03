@@ -24,7 +24,7 @@ void core_filmreel_cpp_FUN_004be720(void)
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
-  (*((in_stack_00000004->metadata).vtable)->getBoundingBox)(in_stack_00000004,&CStack_1c);
+  (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_1c);
   fVar1 = ((float)in_stack_00000004 - CStack_1c.max.z) * (float)DOUBLE_00629add;
   fVar2 = (in_stack_0000000c - unaff_retaddr) * (float)DOUBLE_00629add;
   if (fVar1 < fVar2) {

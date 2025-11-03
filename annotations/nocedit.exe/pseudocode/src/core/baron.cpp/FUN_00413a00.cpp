@@ -22,7 +22,8 @@ void core_baron_cpp_FUN_00413a00(void)
   float in_stack_00000008;
   
   do {
-    uVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610();
+    uVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      ((CMotionController *)(in_stack_00000004 + 0x158));
     if (99 < uVar1) {
       if (uVar1 < 0x65) {
         core_baron_cpp_FUN_004136b0();

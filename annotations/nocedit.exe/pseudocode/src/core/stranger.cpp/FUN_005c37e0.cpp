@@ -4,15 +4,13 @@
 // Convention: unknown
 // Signature: undefined core_stranger.cpp_FUN_005c37e0()
 // Globals:
-//   undefined4 DAT_00653c8c
+//   double DOUBLE_00653c8c = 0.0100000000000000
 // Function calls:
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 //   crt_math.c_acos_FUN_00600162
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 CVector3f * core_stranger_cpp_FUN_005c37e0(void)
 
@@ -32,10 +30,10 @@ CVector3f * core_stranger_cpp_FUN_005c37e0(void)
   local_28 = SQRT(in_stack_00000008->z * in_stack_00000008->z +
                   in_stack_00000008->x * in_stack_00000008->x +
                   in_stack_00000008->y * in_stack_00000008->y);
-  if ((float)_DAT_00653c8c < local_28) {
+  if ((float)DOUBLE_00653c8c < local_28) {
     fVar2 = -*in_stack_0000000c;
     pfVar1 = &in_stack_00000004->y;
-    if ((((float)_DAT_00653c8c <= local_28) &&
+    if ((((float)DOUBLE_00653c8c <= local_28) &&
         (dVar4 = (double)(SQRT(local_28 * local_28 - fVar2 * fVar2) / local_28), dVar4 < 1.0)) &&
        (0.0 <= dVar4)) {
       dVar4 = crt_math_c_acos_FUN_00600162(dVar4);
@@ -47,10 +45,10 @@ CVector3f * core_stranger_cpp_FUN_005c37e0(void)
         fVar3 = *pfVar1 - local_28;
       }
       *pfVar1 = fVar3;
-      fVar3 = core_actor_cpp_FUN_0040cd70(*pfVar1);
+      fVar3 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(*pfVar1);
       *pfVar1 = fVar3;
     }
-    if (((_DAT_00653c8c <= (double)local_28) &&
+    if (((DOUBLE_00653c8c <= (double)local_28) &&
         (dVar4 = (double)(SQRT(local_28 * local_28 - in_stack_0000000c[1] * in_stack_0000000c[1]) /
                          local_28), dVar4 < 1.0)) && (0.0 <= dVar4)) {
       dVar4 = crt_math_c_acos_FUN_00600162(dVar4);
@@ -61,7 +59,7 @@ CVector3f * core_stranger_cpp_FUN_005c37e0(void)
         fVar2 = in_stack_00000004->x - (float)dVar4;
       }
       in_stack_00000004->x = fVar2;
-      fVar2 = core_actor_cpp_FUN_0040cd70(in_stack_00000004->x);
+      fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(in_stack_00000004->x);
       in_stack_00000004->x = fVar2;
     }
   }
@@ -186,7 +184,7 @@ CVector3f * core_stranger_cpp_FUN_005c37e0(void)
 // 005c38b8: FSTP float ptr [EBX]
 //   Label: LAB_005c38b8
 // 005c38ba: PUSH dword ptr [ESI]
-// 005c38bc: CALL core_actor.cpp_FUN_0040cd70
+// 005c38bc: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 005c38c1: MOV dword ptr [ESP + 0x3c],EAX
 //   XREF to: Stack[-0x18] (WRITE)
@@ -250,7 +248,7 @@ CVector3f * core_stranger_cpp_FUN_005c37e0(void)
 // 005c392f: FSTP float ptr [ESI]
 //   Label: LAB_005c392f
 // 005c3931: PUSH dword ptr [EDI]
-// 005c3933: CALL core_actor.cpp_FUN_0040cd70
+// 005c3933: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 005c3938: MOV dword ptr [ESP + 0x3c],EAX
 //   XREF to: Stack[-0x18] (WRITE)

@@ -48,7 +48,7 @@
 //   int g_CurrentLineNumber
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_0040b050
+//   core_actor.cpp_CDemonActor_load_FUN_0040b050
 //   core_actor.cpp_createActorByName_FUN_0040c430
 //   core_actor.cpp_getActorClassByName_FUN_0040c3c0
 //   core_actor.cpp_resetActorTypeInfo_FUN_0040c7f0
@@ -284,9 +284,9 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
         g_CurrentLineNumber = 0x142;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::load - actor list count mismatch #1!");
       }
-      core_actor_cpp_CDemonActor_FUN_0040b050(pCVar7);
+      core_actor_cpp_CDemonActor_load_FUN_0040b050(pCVar7,in_stack_00000034);
       iVar3 = iVar3 + 1;
-      pCVar7 = (pCVar7->metadata).next_actor;
+      pCVar7 = pCVar7->next_actor;
     } while (iVar3 < in_stack_00000008);
   }
   if (*(int *)this_ptr_00->field2_0xc != 0) {
@@ -305,7 +305,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
                     ((CInventory *)(pCVar5[0x176].create_event + 0x30));
         }
         iVar3 = iVar3 + 1;
-        pCVar7 = (pCVar7->metadata).next_actor;
+        pCVar7 = pCVar7->next_actor;
       } while (iVar3 < in_stack_00000008);
     }
     this_ptr_00->field2_0xc[0] = '\0';
@@ -746,7 +746,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
 //   XREF to: Stack[0x8] (READ)
 // 00523245: PUSH ECX
 // 00523246: PUSH ESI
-// 00523247: CALL core_actor.cpp_CDemonActor_FUN_0040b050
+// 00523247: CALL core_actor.cpp_CDemonActor_load_FUN_0040b050
 //   XREF to: 0040b050 (UNCONDITIONAL_CALL)
 // 0052324c: ADD ESP,0x8
 // 0052324f: INC EBP

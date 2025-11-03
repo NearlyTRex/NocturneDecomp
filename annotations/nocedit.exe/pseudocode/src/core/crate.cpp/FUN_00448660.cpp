@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_crate.cpp_FUN_00448660()
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 
 #include "nocturne.h"
 
@@ -24,23 +24,23 @@ void core_crate_cpp_FUN_00448660(void)
     return;
   }
   (in_stack_00000004->location).position.x =
-       (in_stack_00000004->field_224).x + (in_stack_00000004->location).position.x;
+       (in_stack_00000004->field12_0xe0).x + (in_stack_00000004->location).position.x;
   (in_stack_00000004->location).position.y =
-       (in_stack_00000004->field_224).y + (in_stack_00000004->location).position.y;
+       (in_stack_00000004->field12_0xe0).y + (in_stack_00000004->location).position.y;
   (in_stack_00000004->location).position.z =
-       (in_stack_00000004->field_224).z + (in_stack_00000004->location).position.z;
-  (in_stack_00000004->field_224).z = 0.0;
-  (in_stack_00000004->field_224).y = (in_stack_00000004->field_224).z;
-  (in_stack_00000004->field_224).x = (in_stack_00000004->field_224).y;
+       (in_stack_00000004->field12_0xe0).z + (in_stack_00000004->location).position.z;
+  (in_stack_00000004->field12_0xe0).z = 0.0;
+  (in_stack_00000004->field12_0xe0).y = (in_stack_00000004->field12_0xe0).z;
+  (in_stack_00000004->field12_0xe0).x = (in_stack_00000004->field12_0xe0).y;
   (in_stack_00000004->orient).pitch =
-       (in_stack_00000004->field_236).x + (in_stack_00000004->orient).pitch;
+       (in_stack_00000004->field13_0xec).x + (in_stack_00000004->orient).pitch;
   (in_stack_00000004->orient).bank =
-       (in_stack_00000004->field_236).y + (in_stack_00000004->orient).bank;
+       (in_stack_00000004->field13_0xec).y + (in_stack_00000004->orient).bank;
   (in_stack_00000004->orient).heading =
-       (in_stack_00000004->field_236).z + (in_stack_00000004->orient).heading;
-  (in_stack_00000004->field_236).z = 0.0;
-  (in_stack_00000004->field_236).y = (in_stack_00000004->field_236).z;
-  (in_stack_00000004->field_236).x = (in_stack_00000004->field_236).y;
+       (in_stack_00000004->field13_0xec).z + (in_stack_00000004->orient).heading;
+  (in_stack_00000004->field13_0xec).z = 0.0;
+  (in_stack_00000004->field13_0xec).y = (in_stack_00000004->field13_0xec).z;
+  (in_stack_00000004->field13_0xec).x = (in_stack_00000004->field13_0xec).y;
   if (((((in_stack_00000004[2].orient.pitch != (in_stack_00000004->location).position.x) ||
         (in_stack_00000004[2].orient.bank != (in_stack_00000004->location).position.y)) ||
        (in_stack_00000004[2].orient.heading != (in_stack_00000004->location).position.z)) ||
@@ -48,7 +48,7 @@ void core_crate_cpp_FUN_00448660(void)
        (in_stack_00000004[2].orient_matrix.m[0].y != (in_stack_00000004->orient).bank)))) ||
      (in_stack_00000004[2].orient_matrix.m[0].z != (in_stack_00000004->orient).heading)) {
     unaff_retaddr =
-         (*((in_stack_00000004->metadata).vtable)->cylinderGroundCheck)
+         (*in_stack_00000004->vtable->cylinderGroundCheck)
                    (in_stack_00000004,in_stack_00000004[2].location.position.z,(CVector3f *)0x0);
     if ((CLocation *)&in_stack_00000004[2].orient != &in_stack_00000004->location) {
       in_stack_00000004[2].orient.pitch = (in_stack_00000004->location).position.x;
@@ -68,7 +68,7 @@ void core_crate_cpp_FUN_00448660(void)
   iVar1 = in_stack_00000004[2].location.area_id;
   if (iVar1 == 0) {
     (in_stack_00000004->location).position.y = unaff_retaddr;
-    core_actor_cpp_CDemonActor_FUN_00408c10(in_stack_00000004);
+    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
     return;
   }
   in_stack_00000004->field11_0xdc = iVar1;
@@ -85,7 +85,7 @@ void core_crate_cpp_FUN_00448660(void)
   (**(code **)(*(int *)(in_stack_00000004->field11_0xdc + 0x154) + 0x14))();
   (in_stack_00000004->location).position.y =
        (fStack_8 - fStack_14) + (in_stack_00000004->location).position.y;
-  core_actor_cpp_CDemonActor_FUN_00408c10(in_stack_00000004);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
   return;
 }
 
@@ -231,7 +231,7 @@ void core_crate_cpp_FUN_00448660(void)
 // 004487eb: FADD float ptr [EBX + 0x24]
 // 004487ee: FSTP float ptr [EBX + 0x24]
 // 004487f1: PUSH EBX
-// 004487f2: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 004487f2: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 004487f7: ADD ESP,0x4
 // 004487fa: POP ESI
@@ -278,7 +278,7 @@ void core_crate_cpp_FUN_00448660(void)
 //   Label: LAB_00448867
 // 0044886b: MOV dword ptr [EBX + 0x24],EAX
 // 0044886e: PUSH EBX
-// 0044886f: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 0044886f: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 00448874: ADD ESP,0x4
 // 00448877: POP ESI

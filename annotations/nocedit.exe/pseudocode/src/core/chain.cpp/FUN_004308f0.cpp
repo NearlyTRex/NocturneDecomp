@@ -14,7 +14,7 @@
 //   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 //   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
-//   core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+//   core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 //   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 //   engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
@@ -54,8 +54,7 @@ undefined4 core_chain_cpp_FUN_004308f0(void)
   undefined1 auStack_50 [20];
   int iStack_3c;
   int iStack_38;
-  int iStack_28;
-  int iStack_24;
+  undefined1 auStack_28 [8];
   int iStack_20;
   int iStack_1c;
   
@@ -63,7 +62,7 @@ undefined4 core_chain_cpp_FUN_004308f0(void)
   if (iVar3 == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000008);
     this_ptr = in_stack_0000000c;
-    this_ptr_00 = (*((in_stack_0000000c->metadata).vtable)->getBoundingBox)
+    this_ptr_00 = (*in_stack_0000000c->vtable->getBoundingBox)
                             (in_stack_0000000c,(CBoundingBox3D *)&stack0xffffff78);
     iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     *(int *)(this_ptr[4].actor_name + 0x14) = iVar3;
@@ -116,14 +115,16 @@ undefined4 core_chain_cpp_FUN_004308f0(void)
         pCVar2->vertex_buffer_ptr[2].v = 2.2775203e-38;
         pCVar2->vertex_buffer_ptr[3].u = 2.2775203e-38;
         pCVar2->vertex_buffer_ptr[3].v = 7.34684e-40;
-        iStack_28 = (int)ROUND(*pfVar5 * _DAT_0065b9e0);
-        iStack_24 = (int)ROUND(pfVar5[1] * _DAT_0065b9e0);
+        auStack_28._0_4_ = (undefined4)ROUND(*pfVar5 * _DAT_0065b9e0);
+        auStack_28._4_4_ = (undefined4)ROUND(pfVar5[1] * _DAT_0065b9e0);
         iStack_20 = (int)ROUND(pfVar5[2] * _DAT_0065b9e0);
-        core_set_cpp_CDemonSet_CallLightVertexColor_FUN_0056e110(g_CDemonSetPtr);
-        iStack_24 = (int)ROUND(*pfVar4 * _DAT_0065b9e0);
+        core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
+                  (g_CDemonSetPtr,(CVector3i *)auStack_28,(CVector3i *)0x0,0,2);
+        auStack_28._4_4_ = (undefined4)ROUND(*pfVar4 * _DAT_0065b9e0);
         iStack_20 = (int)ROUND(pfVar4[1] * _DAT_0065b9e0);
         iStack_1c = (int)ROUND(pfVar4[2] * _DAT_0065b9e0);
-        core_set_cpp_CDemonSet_CallLightVertexColor_FUN_0056e110(g_CDemonSetPtr);
+        core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
+                  (g_CDemonSetPtr,(CVector3i *)(auStack_28 + 4),(CVector3i *)0x0,2,2);
         engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
                   (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff94);
         in_stack_0000001c = (int)ROUND(*pfVar5 * _DAT_0065b9e0);
@@ -168,8 +169,10 @@ undefined4 core_chain_cpp_FUN_004308f0(void)
         pCVar2->vertex_buffer_ptr[2].v = 2.2775203e-38;
         pCVar2->vertex_buffer_ptr[3].u = 2.2775203e-38;
         pCVar2->vertex_buffer_ptr[3].v = 7.34684e-40;
-        core_set_cpp_CDemonSet_CallLightVertexColor_FUN_0056e110(g_CDemonSetPtr);
-        core_set_cpp_CDemonSet_CallLightVertexColor_FUN_0056e110(g_CDemonSetPtr);
+        core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
+                  (g_CDemonSetPtr,(CVector3i *)&stack0xfffffff4,(CVector3i *)0x0,0,2);
+        core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
+                  (g_CDemonSetPtr,(CVector3i *)&stack0xfffffff8,(CVector3i *)0x0,2,2);
         pfVar5 = pfVar5 + 9;
         pfVar4 = pfVar4 + 9;
         engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
@@ -477,7 +480,7 @@ undefined4 core_chain_cpp_FUN_004308f0(void)
 //   XREF to: 006810c8 (READ)
 // 00430bfd: PUSH EBX
 //   XREF to: 03114278 (DATA)
-// 00430bfe: CALL core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+// 00430bfe: CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   XREF to: 0056e110 (UNCONDITIONAL_CALL)
 // 00430c03: ADD ESP,0x14
 // 00430c06: LEA EBX,[ESP + 0x50]
@@ -504,7 +507,7 @@ undefined4 core_chain_cpp_FUN_004308f0(void)
 //   XREF to: 006810c8 (READ)
 // 00430c3e: PUSH EAX
 //   XREF to: 03114278 (DATA)
-// 00430c3f: CALL core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+// 00430c3f: CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   XREF to: 0056e110 (UNCONDITIONAL_CALL)
 // 00430c44: ADD ESP,0x14
 // 00430c47: LEA EAX,[ESP + 0x4]
@@ -694,7 +697,7 @@ undefined4 core_chain_cpp_FUN_004308f0(void)
 //   XREF to: 006810c8 (READ)
 // 00430e35: PUSH ECX
 //   XREF to: 03114278 (DATA)
-// 00430e36: CALL core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+// 00430e36: CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   XREF to: 0056e110 (UNCONDITIONAL_CALL)
 // 00430e3b: ADD ESP,0x14
 // 00430e3e: LEA EBX,[ESP + 0x50]
@@ -721,7 +724,7 @@ undefined4 core_chain_cpp_FUN_004308f0(void)
 //   XREF to: 006810c8 (READ)
 // 00430e77: PUSH EBX
 //   XREF to: 03114278 (DATA)
-// 00430e78: CALL core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+// 00430e78: CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   XREF to: 0056e110 (UNCONDITIONAL_CALL)
 // 00430e7d: ADD ESP,0x14
 // 00430e80: LEA EAX,[ESP + 0x4]

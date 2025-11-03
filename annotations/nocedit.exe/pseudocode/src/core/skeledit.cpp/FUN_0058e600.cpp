@@ -4,10 +4,10 @@
 // Convention: unknown
 // Signature: undefined core_skeledit.cpp_FUN_0058e600()
 // Cross-references:
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00597c17 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597c17 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058e4e0 (0058e4e0) at 0058e5bc [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_skeleton.cpp_CDeformableModel_SkeletonPtrNotSet_FUN_0059a810
+//   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 
 #include "nocturne.h"
@@ -18,36 +18,36 @@
 void core_skeledit_cpp_FUN_0058e600(void)
 
 {
-  int iVar1;
-  float *pfVar2;
+  CSkeleton *pCVar1;
+  CVector3f *pCVar2;
   int iVar3;
-  int iVar4;
-  int in_stack_0000000c;
+  CSkeleton *pCVar4;
+  CDeformableModel *in_stack_0000000c;
   float *in_stack_00000010;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x18);
-  iVar1 = core_skeleton_cpp_CDeformableModel_SkeletonPtrNotSet_FUN_0059a810();
+  pCVar1 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(in_stack_0000000c);
   iVar3 = 0;
-  if (0 < *(int *)(iVar1 + 0x28558)) {
-    pfVar2 = (float *)(in_stack_0000000c + 0x7c90);
-    iVar4 = iVar1;
+  if (0 < pCVar1->bone_count) {
+    pCVar2 = in_stack_0000000c->vertex_pool;
+    pCVar4 = pCVar1;
     do {
-      if (*(int *)(iVar4 + 0x2857c) < 0) {
-        *pfVar2 = *in_stack_00000010 + *pfVar2;
-        pfVar2[1] = in_stack_00000010[1] + pfVar2[1];
-        pfVar2[2] = in_stack_00000010[2] + pfVar2[2];
+      if (pCVar4->bone_list[0].parent_index < 0) {
+        pCVar2->x = *in_stack_00000010 + pCVar2->x;
+        pCVar2->y = in_stack_00000010[1] + pCVar2->y;
+        pCVar2->z = in_stack_00000010[2] + pCVar2->z;
       }
-      iVar4 = iVar4 + 0x24;
+      pCVar4 = (CSkeleton *)((pCVar4->motion_list).state_names[1] + 2);
       iVar3 = iVar3 + 1;
-      pfVar2 = pfVar2 + 3;
-    } while (iVar3 < *(int *)(iVar1 + 0x28558));
+      pCVar2 = pCVar2 + 1;
+    } while (iVar3 < pCVar1->bone_count);
   }
-  *(float *)(in_stack_0000000c + 0x8140) =
-       *in_stack_00000010 + *(float *)(in_stack_0000000c + 0x8140);
-  *(float *)(in_stack_0000000c + 0x8144) =
-       in_stack_00000010[1] + *(float *)(in_stack_0000000c + 0x8144);
-  *(float *)(in_stack_0000000c + 0x8148) =
-       in_stack_00000010[2] + *(float *)(in_stack_0000000c + 0x8148);
+  in_stack_0000000c->bbox_pool[0].min.x = *in_stack_00000010 + in_stack_0000000c->bbox_pool[0].min.x
+  ;
+  in_stack_0000000c->bbox_pool[0].min.y =
+       in_stack_00000010[1] + in_stack_0000000c->bbox_pool[0].min.y;
+  in_stack_0000000c->bbox_pool[0].min.z =
+       in_stack_00000010[2] + in_stack_0000000c->bbox_pool[0].min.z;
   return;
 }
 
@@ -66,7 +66,7 @@ void core_skeledit_cpp_FUN_0058e600(void)
 // 0058e612: MOV EBX,dword ptr [ESP + 0x18]
 //   XREF to: Stack[0x8] (READ)
 // 0058e616: PUSH EDI
-// 0058e617: CALL core_skeleton.cpp_CDeformableModel_SkeletonPtrNotSet_FUN_0059a810
+// 0058e617: CALL core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810
 //   XREF to: 0059a810 (UNCONDITIONAL_CALL)
 // 0058e61c: ADD ESP,0x4
 // 0058e61f: MOV ESI,EAX

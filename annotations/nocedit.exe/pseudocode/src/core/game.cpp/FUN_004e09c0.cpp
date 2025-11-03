@@ -6,8 +6,8 @@
 // Cross-references:
 //   core_game.cpp_CGame_process_FUN_004e3190 (004e3190) at 004e31cf [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0062c935
-//   undefined4 DAT_0062c93d
+//   double DOUBLE_0062c935 = 31457280
+//   double DOUBLE_0062c93d = 256
 //   int g_WindowWidth = 0x140
 //   int g_WindowHeight = 0xc8
 //   undefined4 DAT_02d831ec
@@ -15,7 +15,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 core_game.cpp_FUN_004e09c0(undefined4 param_1) */
 
 void core_game_cpp_FUN_004e09c0(void)
@@ -26,13 +25,13 @@ void core_game_cpp_FUN_004e09c0(void)
   if (DAT_02d831ec != 0) {
     if (DAT_02d831ec < 4) {
       if ((DAT_02d831ec != 2) ||
-         (DAT_02d831f0 = ((float)*(int *)(in_stack_00000004 + 0x260) * (float)_DAT_0062c93d) /
-                         ((float)_DAT_0062c935 / (float)g_WindowHeight) + DAT_02d831f0,
+         (DAT_02d831f0 = ((float)*(int *)(in_stack_00000004 + 0x260) * (float)DOUBLE_0062c93d) /
+                         ((float)DOUBLE_0062c935 / (float)g_WindowHeight) + DAT_02d831f0,
          DAT_02d831f0 <= (float)g_WindowWidth)) {
         if ((DAT_02d831ec == 3) &&
            (DAT_02d831f0 = DAT_02d831f0 -
-                           ((float)*(int *)(in_stack_00000004 + 0x260) * (float)_DAT_0062c93d) /
-                           ((float)_DAT_0062c935 / (float)g_WindowHeight), DAT_02d831f0 < 0.0)) {
+                           ((float)*(int *)(in_stack_00000004 + 0x260) * (float)DOUBLE_0062c93d) /
+                           ((float)DOUBLE_0062c935 / (float)g_WindowHeight), DAT_02d831f0 < 0.0)) {
           DAT_02d831f0 = 0.0;
           DAT_02d831ec = 4;
           return;

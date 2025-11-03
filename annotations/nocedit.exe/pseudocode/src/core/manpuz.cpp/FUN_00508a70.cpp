@@ -91,16 +91,16 @@ void core_manpuz_cpp_FUN_00508a70(void)
   local_b8 = (pCVar8->bounds_max).x;
   local_b4 = (pCVar8->bounds_max).y;
   local_b0 = (pCVar8->bounds_max).z;
-  in_stack_00000004[0xf].field_224.y = 12.1391;
+  in_stack_00000004[0xf].field12_0xe0.y = 12.1391;
   fVar17 = (float10)fcos((float10)_DAT_00660d8c * (float10)DOUBLE_006356d5);
   fVar1 = *(float *)(in_stack_00000004[4].create_event + 0x10);
   fVar2 = *(float *)(in_stack_00000004[4].create_event + 0xc);
   fVar3 = *(float *)(in_stack_00000004[4].create_event + 0x14);
-  in_stack_00000004[0xf].field_224.x =
-       (float)(((float10)in_stack_00000004[0xf].field_224.y + (float10)local_b0) / fVar17);
-  in_stack_00000004[0xf].field_224.z = local_b4 - local_c0;
+  in_stack_00000004[0xf].field12_0xe0.x =
+       (float)(((float10)in_stack_00000004[0xf].field12_0xe0.y + (float10)local_b0) / fVar17);
+  in_stack_00000004[0xf].field12_0xe0.z = local_b4 - local_c0;
   if (SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) == 0.0) {
-    fVar1 = in_stack_00000004[0xf].field_224.z;
+    fVar1 = in_stack_00000004[0xf].field12_0xe0.z;
     in_stack_00000004[4].create_event[0xc] = '\0';
     in_stack_00000004[4].create_event[0xd] = '\0';
     in_stack_00000004[4].create_event[0xe] = '\0';
@@ -132,10 +132,10 @@ void core_manpuz_cpp_FUN_00508a70(void)
   local_a0 = (pCVar8->bounds_max).x;
   local_9c = (pCVar8->bounds_max).y;
   local_98 = (pCVar8->bounds_max).z;
-  local_34 = &in_stack_00000004[7].metadata.runtime_vector2.y;
+  local_34 = &in_stack_00000004[7].previous_transform_state.orientation.y;
   local_28 = in_stack_00000004[8].actor_name + 4;
-  local_2c = &in_stack_00000004[7].metadata.runtime_vector2.z;
-  local_30 = &in_stack_00000004[7].metadata.runtime_flags;
+  local_2c = &in_stack_00000004[7].previous_transform_state.orientation.z;
+  local_30 = &in_stack_00000004[7].previous_transform_state.dirty_flags;
   local_38 = 0;
   do {
     iVar12 = local_38;
@@ -157,7 +157,7 @@ void core_manpuz_cpp_FUN_00508a70(void)
     local_94.x = 0.0;
     local_94.z = 0.0;
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_ec,&local_94);
-    local_88.z = in_stack_00000004[0xf].field_224.y;
+    local_88.z = in_stack_00000004[0xf].field12_0xe0.y;
     local_88.x = 0.0;
     local_88.y = 0.0;
     pCVar9 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(&local_ec,&local_7c,&local_88)
@@ -231,12 +231,12 @@ void core_manpuz_cpp_FUN_00508a70(void)
   fVar1 = (float)in_stack_00000004[4].was_created;
   fVar7 = (float)DOUBLE_006356e5;
   fVar19 = (float10)DOUBLE_006356d5;
-  fVar2 = in_stack_00000004[0xf].field_224.y;
+  fVar2 = in_stack_00000004[0xf].field12_0xe0.y;
   pcVar11 = in_stack_00000004[0xe].create_event + 4;
   fVar3 = *(float *)(in_stack_00000004[4].create_event + 0x10);
   fVar5 = (float)DOUBLE_006356ed;
   *(float *)(in_stack_00000004[0xe].create_event + 0xc) =
-       (float)(fVar17 * (float10)in_stack_00000004[0xf].field_224.y * fVar19);
+       (float)(fVar17 * (float10)in_stack_00000004[0xf].field12_0xe0.y * fVar19);
   *(float *)pcVar11 = (float)((float10)fVar2 * fVar18 * fVar19);
   *(float *)(in_stack_00000004[0xe].create_event + 8) = fVar3 * fVar5 + fVar1 * fVar7;
   if (&in_stack_00000004[0xe].was_created != (int *)pcVar11) {
@@ -269,8 +269,8 @@ void core_manpuz_cpp_FUN_00508a70(void)
   iVar6 = *(int *)(in_stack_00000004[0xe].create_event + 0x28);
   *(undefined4 *)(in_stack_00000004[0xe].create_event + 0x60) = uVar4;
   fVar7 = *(float *)(in_stack_00000004[0xe].create_event + 0x24);
-  in_stack_00000004[0xe].field_224.x = fVar2;
-  in_stack_00000004[0xe].field_224.y = fVar5;
+  in_stack_00000004[0xe].field12_0xe0.x = fVar2;
+  in_stack_00000004[0xe].field12_0xe0.y = fVar5;
   in_stack_00000004[0xe].field14_0xf8 = iVar12;
   in_stack_00000004[0xe].field16_0x100 = iVar6;
   *(float *)(in_stack_00000004[0xe].create_event + 0x58) = -fVar1;

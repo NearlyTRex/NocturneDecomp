@@ -15,19 +15,19 @@
 void __cdecl core_charactr_cpp_CCharacter_FUN_0042d530(CCharacter *this_ptr)
 
 {
-  undefined4 *puVar1;
+  CBoundingBox3D *pCVar1;
   
-  if ((this_ptr->model).padding_0x0[0x2260] != '\0') {
-    puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_005a16c0();
-    if (this_ptr->field11_0x25a0 + 0x58 != (char *)puVar1) {
-      *(undefined4 *)(this_ptr->field11_0x25a0 + 0x58) = *puVar1;
-      *(undefined4 *)(this_ptr->field11_0x25a0 + 0x5c) = puVar1[1];
-      *(undefined4 *)(this_ptr->field11_0x25a0 + 0x60) = puVar1[2];
+  if ((this_ptr->model).field11_0x2260[0] != '\0') {
+    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_FUN_005a16c0(&this_ptr->model);
+    if ((CBoundingBox3D *)(this_ptr->field11_0x25a0 + 0x58) != pCVar1) {
+      (((CBoundingBox3D *)(this_ptr->field11_0x25a0 + 0x58))->min).x = (pCVar1->min).x;
+      *(float *)(this_ptr->field11_0x25a0 + 0x5c) = (pCVar1->min).y;
+      *(float *)(this_ptr->field11_0x25a0 + 0x60) = (pCVar1->min).z;
     }
-    if (this_ptr->field11_0x25a0 + 100 != (char *)(puVar1 + 3)) {
-      *(undefined4 *)(this_ptr->field11_0x25a0 + 100) = puVar1[3];
-      *(undefined4 *)(this_ptr->field11_0x25a0 + 0x68) = puVar1[4];
-      *(undefined4 *)(this_ptr->field11_0x25a0 + 0x6c) = puVar1[5];
+    if ((CVector3f *)(this_ptr->field11_0x25a0 + 100) != &pCVar1->max) {
+      *(float *)(this_ptr->field11_0x25a0 + 100) = (pCVar1->max).x;
+      *(float *)(this_ptr->field11_0x25a0 + 0x68) = (pCVar1->max).y;
+      *(float *)(this_ptr->field11_0x25a0 + 0x6c) = (pCVar1->max).z;
       return;
     }
   }

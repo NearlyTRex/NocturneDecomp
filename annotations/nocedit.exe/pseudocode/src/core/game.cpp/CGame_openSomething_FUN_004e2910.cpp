@@ -9,10 +9,10 @@
 //   TerminatedCString s_art_0062d29d
 //   TerminatedCString s_Can_t_open_s_0062d2a1
 //   TerminatedCString s_s_is_d_bytes_but_expecte_0062d2af
-//   undefined1 DAT_0062d2df
-//   undefined1 DAT_0062d2e0
-//   undefined1 DAT_0062d2e1
-//   undefined1 DAT_0062d2e2
+//   TerminatedCString s_act_0062d2df
+//   undefined4 DAT_0062d2e0
+//   undefined4 DAT_0062d2e1
+//   undefined4 DAT_0062d2e2
 //   TerminatedCString s_rb_0062d2e4
 //   TerminatedCString s_art_0062d2e7
 //   TerminatedCString s_Can_t_open_s_0062d2eb
@@ -126,7 +126,7 @@ void __cdecl core_game_cpp_CGame_openSomething_FUN_004e2910(CGame *this_ptr)
   }
   crt_string_c_splitpath_FUN_005ff178
             (this_ptr->field101_0x38c + 0x528,(char *)0x0,(char *)0x0,acStack_12c,(char *)0x0);
-  pcVar10 = &DAT_0062d2df;
+  pcVar10 = ".act";
   iVar3 = -1;
   pcVar14 = acStack_128;
   do {

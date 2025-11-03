@@ -5,7 +5,7 @@
 // Signature: undefined sound_sndmain.cpp_CallComputingDelay2_FUN_005a9ae0()
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042a830 (0042a830) at 0042a9d5 [UNCONDITIONAL_CALL]
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ab6bc [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ab6bc [UNCONDITIONAL_CALL]
 //   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 (00506450) at 00506541 [UNCONDITIONAL_CALL]
 //   core_lightgun.cpp_FUN_00505c70 (00505c70) at 0050641b [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_0050a4f0 (0050a4f0) at 0050a589 [UNCONDITIONAL_CALL]

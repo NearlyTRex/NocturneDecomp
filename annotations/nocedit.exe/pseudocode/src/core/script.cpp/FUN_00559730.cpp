@@ -12,7 +12,7 @@
 //   undefined1 DAT_0310eca0
 // Function calls:
 //   core_script.cpp_FUN_00567d30
-//   core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
+//   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   crt_stdio.c_sscanf_FUN_0060013c
@@ -26,37 +26,36 @@ undefined4 core_script_cpp_FUN_00559730(void)
 
 {
   undefined4 *puVar1;
-  undefined4 uVar2;
-  int iVar3;
+  CDeformableModel *this_ptr;
+  int iVar2;
   BADSPACEBASE *in_ESP;
   int unaff_ESI;
+  int in_stack_00000004;
   char *in_stack_00000008;
   undefined4 *in_stack_0000000c;
-  undefined4 in_stack_00000014;
-  undefined4 uStack_70;
-  undefined1 *puStack_6c;
+  undefined1 *apuStack_6c [24];
   
   puVar1 = in_stack_0000000c;
   do {
     *puVar1 = 0;
     puVar1 = puVar1 + 1;
   } while (puVar1 != in_stack_0000000c + 0x1e);
-  uVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
+  this_ptr = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+                       ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
   while( true ) {
-    crt_stdio_c_sscanf_FUN_0060013c(in_stack_00000008," %[^ \t),]%n",&uStack_70,&stack0xfffffff4);
+    crt_stdio_c_sscanf_FUN_0060013c
+              (in_stack_00000008," %[^ \t),]%n",&stack0xffffff90,&stack0xfffffff4);
     if (unaff_ESI < 1) {
       return 1;
     }
-    uStack_70 = 0;
     in_stack_00000008 = in_stack_00000008 + unaff_ESI;
-    iVar3 = core_skeleton_cpp_CDeformableModel_FindPartInModel_FUN_0059c240();
-    puStack_6c = (undefined1 *)&uStack_70;
-    if (iVar3 < 0) break;
-    in_stack_0000000c[iVar3] = 1;
+    iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+                      (this_ptr,(char *)apuStack_6c,0);
+    apuStack_6c[0] = &stack0xffffff90;
+    if (iVar2 < 0) break;
+    in_stack_0000000c[iVar2] = 1;
   }
-  uStack_70 = uVar2;
-  puStack_6c = (undefined1 *)core_script_cpp_FUN_00567d30();
-  uStack_70 = in_stack_00000014;
+  apuStack_6c[0] = (undefined1 *)core_script_cpp_FUN_00567d30();
   crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310eca0,"Character %s model %s does not have a part '%s'");
   return 0;
 }
@@ -122,7 +121,7 @@ undefined4 core_script_cpp_FUN_00559730(void)
 // 005597a3: PUSH EAX
 // 005597a4: PUSH ESI
 // 005597a5: ADD EBX,ECX
-// 005597a7: CALL core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
+// 005597a7: CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   XREF to: 0059c240 (UNCONDITIONAL_CALL)
 // 005597ac: ADD ESP,0xc
 // 005597af: TEST EAX,EAX

@@ -39,7 +39,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_serialize_FUN_005f1980(CWerewolf *this_
               (&(this_ptr->base_enemy).guard_distance,"guardDistance");
   }
   core_actor_cpp_serializeMotionState_FUN_0040b9f0
-            (&(this_ptr->base_enemy).base_character.model,"motion state");
+            (&(this_ptr->base_enemy).base_character.model.motion_controller,"motion state")
+  ;
   if (1 < g_CWerewolfClassVersion) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->light_up_eyes,"lightUpEyes");
   }

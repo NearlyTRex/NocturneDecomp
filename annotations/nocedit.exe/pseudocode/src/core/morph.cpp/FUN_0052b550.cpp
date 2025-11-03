@@ -4,14 +4,18 @@
 // Convention: unknown
 // Signature: undefined core_morph.cpp_FUN_0052b550()
 // Function calls:
-//   core_morph.cpp_CallToAddpartAgain_FUN_0052a870
+//   core_morph.cpp_CMorphModel_FUN_0052a870
 
 #include "nocturne.h"
 
 void core_morph_cpp_FUN_0052b550(void)
 
 {
-  core_morph_cpp_CallToAddpartAgain_FUN_0052a870();
+  int in_stack_00000004;
+  int in_stack_00000008;
+  
+  core_morph_cpp_CMorphModel_FUN_0052a870
+            ((CMorphModel *)(in_stack_00000008 * 0x608 + in_stack_00000004));
   return;
 }
 
@@ -32,7 +36,7 @@ void core_morph_cpp_FUN_0052b550(void)
 // 0052b56b: SHL EAX,0x3
 // 0052b56e: ADD EAX,ECX
 // 0052b570: PUSH EAX
-// 0052b571: CALL core_morph.cpp_CallToAddpartAgain_FUN_0052a870
+// 0052b571: CALL core_morph.cpp_CMorphModel_FUN_0052a870
 //   XREF to: 0052a870 (UNCONDITIONAL_CALL)
 // 0052b576: ADD ESP,0x8
 // 0052b579: RET

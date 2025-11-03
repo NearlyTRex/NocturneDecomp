@@ -7,19 +7,19 @@
 //   TerminatedCString s_disableBodyPartDamage_00615def
 //   undefined4 DAT_00615e0c
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CVector3f g_ZeroVector
 //   undefined4 g_ZeroVector.y
 //   undefined4 g_ZeroVector.z
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
 //   core_bodypart.cpp_FUN_00419e10
 //   core_bodypart.cpp_FUN_0041b1b0
 //   core_box.cpp_CBox_process_FUN_0041e2f0
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 
 #include "nocturne.h"
 
@@ -30,11 +30,13 @@
 void core_bodypart_cpp_CBodyPart_process_FUN_00419be0(void)
 
 {
-  CVector3f *pCVar1;
-  float fVar2;
-  int iVar3;
+  CLocation *pCVar1;
+  COrientation *pCVar2;
+  CVector3f *pCVar3;
+  float fVar4;
+  int iVar5;
   BADSPACEBASE *in_ESP;
-  CDemonActor *in_stack_00000004;
+  CBodyPart *in_stack_00000004;
   float in_stack_0000000c;
   undefined1 auStack_3c [4];
   float fStack_38;
@@ -42,82 +44,87 @@ void core_bodypart_cpp_CBodyPart_process_FUN_00419be0(void)
   CDemonActor *local_10;
   CDemonActor *local_c;
   
-  if ((*(int *)(in_stack_00000004[1].actor_name + 0x1c) < 3) ||
-     ((int)in_stack_00000004[1].location.position.z < 1)) {
-    in_stack_00000004->was_created = 2;
-    core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0();
-    pCVar1 = (CVector3f *)(in_stack_00000004[1].actor_name + 0x10);
-    if (pCVar1 != &g_ZeroVector) {
-      pCVar1->x = g_ZeroVector.x;
-      *(float *)(in_stack_00000004[1].actor_name + 0x14) = g_ZeroVector.y;
-      *(float *)(in_stack_00000004[1].actor_name + 0x18) = g_ZeroVector.z;
+  if ((*(int *)(in_stack_00000004->field1_0x158 + 0x1c) < 3) ||
+     (*(int *)(in_stack_00000004->field1_0x158 + 0x28) < 1)) {
+    (in_stack_00000004->base_actor).was_created = 2;
+    core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(in_stack_00000004);
+    pCVar3 = (CVector3f *)(in_stack_00000004->field1_0x158 + 0x10);
+    if (pCVar3 != &g_ZeroVector) {
+      pCVar3->x = g_ZeroVector.x;
+      *(float *)(in_stack_00000004->field1_0x158 + 0x14) = g_ZeroVector.y;
+      *(float *)(in_stack_00000004->field1_0x158 + 0x18) = g_ZeroVector.z;
     }
-    if ((CVector3f *)(in_stack_00000004[1].actor_name + 4) != pCVar1) {
-      ((CVector3f *)(in_stack_00000004[1].actor_name + 4))->x = pCVar1->x;
-      *(undefined4 *)(in_stack_00000004[1].actor_name + 8) =
-           *(undefined4 *)(in_stack_00000004[1].actor_name + 0x14);
-      *(undefined4 *)(in_stack_00000004[1].actor_name + 0xc) =
-           *(undefined4 *)(in_stack_00000004[1].actor_name + 0x18);
+    if ((CVector3f *)(in_stack_00000004->field1_0x158 + 4) != pCVar3) {
+      ((CVector3f *)(in_stack_00000004->field1_0x158 + 4))->x = pCVar3->x;
+      *(undefined4 *)(in_stack_00000004->field1_0x158 + 8) =
+           *(undefined4 *)(in_stack_00000004->field1_0x158 + 0x14);
+      *(undefined4 *)(in_stack_00000004->field1_0x158 + 0xc) =
+           *(undefined4 *)(in_stack_00000004->field1_0x158 + 0x18);
       return;
     }
   }
   else {
-    if ((*(int *)in_stack_00000004[1].actor_name != 0) &&
-       (in_stack_00000004[0xb].orient_matrix.m[2].y == 0.0)) {
+    if ((*(int *)in_stack_00000004->field1_0x158 != 0) &&
+       (*(int *)(in_stack_00000004->field1_0x158 + 0xdc8) == 0)) {
       core_bodypart_cpp_FUN_00419e10();
       return;
     }
-    if ((in_stack_00000004[0xb].runtime_state != 0) ||
-       (in_stack_00000004[0xb].orient_matrix.m[2].y != 0.0)) {
+    if ((*(int *)(in_stack_00000004->field1_0x158 + 0xdd0) != 0) ||
+       (*(int *)(in_stack_00000004->field1_0x158 + 0xdc8) != 0)) {
       core_bodypart_cpp_FUN_0041b1b0();
     }
-    if (in_stack_00000004[0xb].runtime_state == 0) {
-      fVar2 = *(float *)(in_stack_00000004[9].create_event + 0x2c) - in_stack_0000000c;
-      *(float *)(in_stack_00000004[9].create_event + 0x2c) = fVar2;
-      if (0.0 <= fVar2) {
-        local_14 = (in_stack_00000004->location).position.x;
-        local_10 = (CDemonActor *)(in_stack_00000004->location).position.y;
-        local_c = (CDemonActor *)(in_stack_00000004->location).position.z;
+    if (*(int *)(in_stack_00000004->field1_0x158 + 0xdd0) == 0) {
+      fVar4 = *(float *)(in_stack_00000004->field1_0x158 + 0xb64) - in_stack_0000000c;
+      *(float *)(in_stack_00000004->field1_0x158 + 0xb64) = fVar4;
+      if (0.0 <= fVar4) {
+        pCVar1 = &(in_stack_00000004->base_actor).location;
+        local_14 = (pCVar1->position).x;
+        local_10 = (CDemonActor *)(in_stack_00000004->base_actor).location.position.y;
+        local_c = (CDemonActor *)(in_stack_00000004->base_actor).location.position.z;
         core_box_cpp_CBox_process_FUN_0041e2f0
-                  ((CBox *)(in_stack_00000004[9].create_event + 0x3c),in_stack_0000000c);
-        (in_stack_00000004->location).position.x =
-             (((CBox *)(in_stack_00000004[9].create_event + 0x3c))->position).x;
-        (in_stack_00000004->location).position.y =
-             *(float *)(in_stack_00000004[9].create_event + 0x40);
-        (in_stack_00000004->location).position.z =
-             *(float *)(in_stack_00000004[9].create_event + 0x44);
-        if (&in_stack_00000004->orient != (COrientation *)(in_stack_00000004[9].create_event + 0x48)
-           ) {
-          (in_stack_00000004->orient).pitch = *(float *)(in_stack_00000004[9].create_event + 0x48);
-          (in_stack_00000004->orient).bank = *(float *)(in_stack_00000004[9].create_event + 0x4c);
-          (in_stack_00000004->orient).heading = *(float *)(in_stack_00000004[9].create_event + 0x50)
-          ;
+                  ((CBox *)(in_stack_00000004->field1_0x158 + 0xb74),in_stack_0000000c);
+        (pCVar1->position).x = (((CBox *)(in_stack_00000004->field1_0x158 + 0xb74))->position).x;
+        (in_stack_00000004->base_actor).location.position.y =
+             *(float *)(in_stack_00000004->field1_0x158 + 0xb78);
+        (in_stack_00000004->base_actor).location.position.z =
+             *(float *)(in_stack_00000004->field1_0x158 + 0xb7c);
+        pCVar2 = &(in_stack_00000004->base_actor).orient;
+        if (pCVar2 != (COrientation *)(in_stack_00000004->field1_0x158 + 0xb80)) {
+          pCVar2->pitch = *(float *)(in_stack_00000004->field1_0x158 + 0xb80);
+          (in_stack_00000004->base_actor).orient.bank =
+               *(float *)(in_stack_00000004->field1_0x158 + 0xb84);
+          (in_stack_00000004->base_actor).orient.heading =
+               *(float *)(in_stack_00000004->field1_0x158 + 0xb88);
         }
-        core_actor_cpp_CDemonActor_FUN_00408c10(in_stack_00000004);
-        fVar2 = in_stack_00000004[9].field_236.z;
+        core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
+                  (&in_stack_00000004->base_actor);
         if (((float)_DAT_00615e0c <
-             SQRT((float)in_stack_00000004[9].is_transparent *
-                  (float)in_stack_00000004[9].is_transparent +
-                  fVar2 * fVar2 +
-                  (float)in_stack_00000004[9].field14_0xf8 *
-                  (float)in_stack_00000004[9].field14_0xf8)) &&
-           (iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                              (g_CEventListPtr,"disableBodyPartDamage"), iVar3 == 0)) {
+             SQRT(*(float *)(in_stack_00000004->field1_0x158 + 0xbbc) *
+                  *(float *)(in_stack_00000004->field1_0x158 + 0xbbc) +
+                  *(float *)(in_stack_00000004->field1_0x158 + 0xbb4) *
+                  *(float *)(in_stack_00000004->field1_0x158 + 0xbb4) +
+                  *(float *)(in_stack_00000004->field1_0x158 + 3000) *
+                  *(float *)(in_stack_00000004->field1_0x158 + 3000))) &&
+           (iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+                              (g_CEventListPtr,"disableBodyPartDamage"), iVar5 == 0)) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffffbc);
           fStack_38 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
           core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
                     (g_CDemonSetPtr,(SDamageInfo *)&stack0x00000000,
-                     &(in_stack_00000004->location).position,auStack_3c);
+                     &(in_stack_00000004->base_actor).location.position,auStack_3c);
           core_bodypart_cpp_FUN_00419e10();
           return;
         }
       }
       else {
-        in_stack_00000004[0xb].orient_matrix.m[2].y = 0.0;
-        in_stack_00000004[9].create_event[0x2c] = '\0';
-        in_stack_00000004[9].create_event[0x2d] = '\0';
-        in_stack_00000004[9].create_event[0x2e] = '\0';
-        in_stack_00000004[9].create_event[0x2f] = '\0';
+        in_stack_00000004->field1_0x158[0xdc8] = '\0';
+        in_stack_00000004->field1_0x158[0xdc9] = '\0';
+        in_stack_00000004->field1_0x158[0xdca] = '\0';
+        in_stack_00000004->field1_0x158[0xdcb] = '\0';
+        in_stack_00000004->field1_0x158[0xb64] = '\0';
+        in_stack_00000004->field1_0x158[0xb65] = '\0';
+        in_stack_00000004->field1_0x158[0xb66] = '\0';
+        in_stack_00000004->field1_0x158[0xb67] = '\0';
       }
     }
     core_bodypart_cpp_FUN_00419e10();
@@ -271,7 +278,7 @@ void core_bodypart_cpp_CBodyPart_process_FUN_00419be0(void)
 // 00419d4d: MOV dword ptr [ESI + 0x8],EDX
 // 00419d50: PUSH EBX
 //   Label: LAB_00419d50
-// 00419d51: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 00419d51: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 00419d56: LEA EAX,[EBX + 0xd0c]
 // 00419d5c: FLD float ptr [EAX + 0x4]
@@ -296,7 +303,7 @@ void core_bodypart_cpp_CBodyPart_process_FUN_00419be0(void)
 //   XREF to: 006793d0 (READ)
 // 00419d8d: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 00419d8e: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 00419d8e: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 00419d93: ADD ESP,0x8
 // 00419d96: TEST EAX,EAX

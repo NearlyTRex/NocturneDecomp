@@ -7,7 +7,7 @@
 //   float FLOAT_0062a422 = 0.5
 //   double DOUBLE_0062a426 = 2
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ea0
+//   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 //   core_flies.cpp_FUN_004cc760
 //   core_flies.cpp_FUN_004cc820
 //   crt_math.c_floor_FUN_005feb90
@@ -38,47 +38,46 @@ void core_flies_cpp_FUN_004cbf00(void)
   float in_stack_00000008;
   float local_40;
   float local_3c;
-  float local_38;
-  float local_34;
-  float local_30;
-  float local_2c;
+  CVector3f local_38;
+  CVector3f local_2c [2];
   int iStack_14;
   
   if (in_stack_00000004[0x1f].create_prob != 0.0) {
     iVar8 = in_stack_00000004[0x1f].runtime_state;
     if (iVar8 != 0) {
-      local_38 = *(float *)(iVar8 + 0x20) - (in_stack_00000004->location).position.x;
-      local_34 = *(float *)(iVar8 + 0x24) - (in_stack_00000004->location).position.y;
-      local_30 = *(float *)(iVar8 + 0x28) - (in_stack_00000004->location).position.z;
-      if (0.0 < SQRT(local_30 * local_30 + local_38 * local_38 + local_34 * local_34)) {
-        pCVar4 = core_actor_cpp_CDemonActor_FUN_00408ea0(in_stack_00000004);
+      local_38.x = *(float *)(iVar8 + 0x20) - (in_stack_00000004->location).position.x;
+      local_38.y = *(float *)(iVar8 + 0x24) - (in_stack_00000004->location).position.y;
+      local_38.z = *(float *)(iVar8 + 0x28) - (in_stack_00000004->location).position.z;
+      if (0.0 < SQRT(local_38.z * local_38.z + local_38.x * local_38.x + local_38.y * local_38.y)) {
+        pCVar4 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+                           (in_stack_00000004,local_2c,&local_38);
         local_40 = pCVar4->x * FLOAT_0062a422;
         local_3c = pCVar4->y * FLOAT_0062a422;
-        local_38 = FLOAT_0062a422 * pCVar4->z;
-        if (&local_34 != &local_40) {
-          local_34 = local_40;
-          local_30 = local_3c;
-          local_2c = local_38;
+        local_38.x = FLOAT_0062a422 * pCVar4->z;
+        if (&local_38.y != &local_40) {
+          local_38.y = local_40;
+          local_38.z = local_3c;
+          local_2c[0].x = local_38.x;
         }
         iVar8 = 0;
         if (0 < *(int *)(in_stack_00000004[1].actor_name + 0xc)) {
           pCVar4 = (CVector3f *)(in_stack_00000004[1].actor_name + 0x14);
           piVar5 = &in_stack_00000004[1].location.area_id;
           do {
-            pCVar4->x = pCVar4->x - local_34;
-            pCVar4->y = pCVar4->y - local_30;
+            pCVar4->x = pCVar4->x - local_38.y;
+            pCVar4->y = pCVar4->y - local_38.z;
             fVar1 = pCVar4[1].x;
-            pCVar4->z = pCVar4->z - local_2c;
-            pCVar4[1].x = fVar1 - local_34;
-            *(float *)((int)(pCVar4 + 1) + 4) = *(float *)((int)(pCVar4 + 1) + 4) - local_30;
-            *(float *)((int)(pCVar4 + 1) + 8) = *(float *)((int)(pCVar4 + 1) + 8) - local_2c;
-            *piVar5 = (int)((float)*piVar5 - local_34);
-            piVar5[1] = (int)((float)piVar5[1] - local_30);
-            piVar5[2] = (int)((float)piVar5[2] - local_2c);
-            piVar5[3] = (int)((float)piVar5[3] - local_34);
-            piVar5[4] = (int)((float)piVar5[4] - local_30);
+            pCVar4->z = pCVar4->z - local_2c[0].x;
+            pCVar4[1].x = fVar1 - local_38.y;
+            *(float *)((int)(pCVar4 + 1) + 4) = *(float *)((int)(pCVar4 + 1) + 4) - local_38.z;
+            *(float *)((int)(pCVar4 + 1) + 8) = *(float *)((int)(pCVar4 + 1) + 8) - local_2c[0].x;
+            *piVar5 = (int)((float)*piVar5 - local_38.y);
+            piVar5[1] = (int)((float)piVar5[1] - local_38.z);
+            piVar5[2] = (int)((float)piVar5[2] - local_2c[0].x);
+            piVar5[3] = (int)((float)piVar5[3] - local_38.y);
+            piVar5[4] = (int)((float)piVar5[4] - local_38.z);
             iVar8 = iVar8 + 1;
-            piVar5[5] = (int)((float)piVar5[5] - local_2c);
+            piVar5[5] = (int)((float)piVar5[5] - local_2c[0].x);
             pCVar4 = (CVector3f *)((int)(pCVar4 + 4) + 4);
             piVar5 = piVar5 + 0xd;
           } while (iVar8 < *(int *)(in_stack_00000004[1].actor_name + 0xc));
@@ -274,7 +273,7 @@ void core_flies_cpp_FUN_004cbf00(void)
 //   XREF to: Stack[-0x2c] (DATA)
 // 004cc012: PUSH EAX
 // 004cc013: PUSH EDI
-// 004cc014: CALL core_actor.cpp_CDemonActor_FUN_00408ea0
+// 004cc014: CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 //   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
 // 004cc019: FLD float ptr [0x0062a422]
 //   XREF to: 0062a422 (READ)

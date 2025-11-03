@@ -11,7 +11,7 @@
 //   core_stranger.cpp_CStranger_FUN_005c5270 (005c5270) at 005c5457 [UNCONDITIONAL_CALL]
 //   core_vampboss.cpp_FUN_005e7030 (005e7030) at 005e71ee [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_actor.cpp_CDemonActor_deleteActor_FUN_00408820
+//   core_actor.cpp_deleteActor_FUN_00408820
 //   crt_string.c_memmove_FUN_005fe5e0
 
 #include "nocturne.h"
@@ -21,7 +21,7 @@ core_inv_cpp_CInventory_removeItem_FUN_004fea70
           (CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor)
 
 {
-  CDemonActor *this_ptr_00;
+  CDemonActor *actor_ptr;
   int iVar1;
   CInventory *pCVar2;
   int iVar3;
@@ -37,8 +37,8 @@ core_inv_cpp_CInventory_removeItem_FUN_004fea70
   pCVar2 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      this_ptr_00 = pCVar2->items[0];
-      if (item_to_remove == this_ptr_00) {
+      actor_ptr = pCVar2->items[0];
+      if (item_to_remove == actor_ptr) {
         iVar3 = this_ptr->item_count + -1;
         this_ptr->item_count = iVar3;
         crt_string_c_memmove_FUN_005fe5e0
@@ -46,7 +46,7 @@ core_inv_cpp_CInventory_removeItem_FUN_004fea70
         if (in_stack_00000010 == 0) {
           return;
         }
-        core_actor_cpp_CDemonActor_deleteActor_FUN_00408820(this_ptr_00);
+        core_actor_cpp_deleteActor_FUN_00408820(actor_ptr);
         return;
       }
       iVar1 = iVar1 + 1;
@@ -126,7 +126,7 @@ core_inv_cpp_CInventory_removeItem_FUN_004fea70
 // 004feaf7: JZ 0x004feaba
 //   XREF to: 004feaba (CONDITIONAL_JUMP)
 // 004feaf9: PUSH EDI
-// 004feafa: CALL core_actor.cpp_CDemonActor_deleteActor_FUN_00408820
+// 004feafa: CALL core_actor.cpp_deleteActor_FUN_00408820
 //   XREF to: 00408820 (UNCONDITIONAL_CALL)
 // 004feaff: ADD ESP,0x4
 // 004feb02: POP EBP

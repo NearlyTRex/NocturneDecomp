@@ -5,8 +5,8 @@
 // Signature: undefined core_motion.cpp_CMotionController_FUN_0052e4c0()
 // Cross-references:
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e0a0 (0059e0a0) at 0059e0dd [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50 (0059eb50) at 0059eb92 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_FUN_005a0ad0 (005a0ad0) at 005a0b06 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50 (0059eb50) at 0059eb92 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0ad0 (005a0ad0) at 005a0b06 [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_math.c_round_FUN_005fe6b0
 

@@ -33,8 +33,8 @@
 //   CDemonMission g_CDemonMissionInstance
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_0040b050
 //   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
+//   core_actor.cpp_CDemonActor_load_FUN_0040b050
 //   core_actor.cpp_CDemonActor_save_FUN_0040af30
 //   core_actor.cpp_createActorByName_FUN_0040c430
 //   core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0
@@ -116,7 +116,7 @@ void core_msnedit_cpp_DuplicateActorCheckMaybe_FUN_0053bd80(void)
     g_CurrentLineNumber = 0x974;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't reopen %s",&stack0xfffffffc);
   }
-  core_actor_cpp_CDemonActor_FUN_0040b050(this_ptr);
+  core_actor_cpp_CDemonActor_load_FUN_0040b050(this_ptr,pFVar2);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\msnedit.cpp",0x976);
   crt_io_c_deleteFile_FUN_005ff9d0(&stack0x00000008);
   pcVar10 = &stack0xffffff88;
@@ -174,7 +174,7 @@ void core_msnedit_cpp_DuplicateActorCheckMaybe_FUN_0053bd80(void)
           g_CurrentDebugLine = 0x994;
           return;
         }
-        (*((this_ptr->metadata).vtable)->dtor)
+        (*this_ptr->vtable->dtor)
                   (this_ptr,2,in_stack_ffffff90,in_stack_ffffff94,in_stack_ffffff98,
                    in_stack_ffffff9c,in_stack_ffffffa0,in_stack_ffffffa4,in_stack_ffffffa8);
         return;
@@ -204,8 +204,8 @@ void core_msnedit_cpp_DuplicateActorCheckMaybe_FUN_0053bd80(void)
       pCVar6 = (CDemonActor *)pfVar7;
     } while (pfVar7 != (float *)(pCVar5->create_event + 0x10));
   }
-  (*((this_ptr->metadata).vtable)->setup)(this_ptr);
-  (*((this_ptr->metadata).vtable)->onDropped)(this_ptr,(CVector3f *)0x0);
+  (*this_ptr->vtable->setup)(this_ptr);
+  (*this_ptr->vtable->onDropped)(this_ptr,(CVector3f *)0x0);
   core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
   return;
 }
@@ -322,7 +322,7 @@ void core_msnedit_cpp_DuplicateActorCheckMaybe_FUN_0053bd80(void)
 // 0053be79: PUSH EBX
 //   Label: LAB_0053be79
 // 0053be7a: PUSH EBP
-// 0053be7b: CALL core_actor.cpp_CDemonActor_FUN_0040b050
+// 0053be7b: CALL core_actor.cpp_CDemonActor_load_FUN_0040b050
 //   XREF to: 0040b050 (UNCONDITIONAL_CALL)
 // 0053be80: ADD ESP,0x8
 // 0053be83: PUSH 0x976

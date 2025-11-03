@@ -107,17 +107,17 @@ void CDemonSet(CDemonSet * this_ptr);
 // Address: 0056d4a0
 int CDemonSet(CDemonSet * this_ptr);
 
-// Original: core_set.cpp_CDemonSet_FUN_0056db80
+// Original: core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
 // Address: 0056db80
-int CDemonSet(CDemonSet * this_ptr);
+int CDemonSet::calculateSpatialLighting(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal);
 
 // Original: core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
 // Address: 0056ddb0
-void CDemonSet::lightVertexColor(CDemonSet * this_ptr);
+void CDemonSet::lightVertexColor(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, int skip_lighting_calculation);
 
-// Original: core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+// Original: core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 // Address: 0056e110
-int CDemonSet::CallLightVertexColor(CDemonSet * this_ptr);
+int CDemonSet::computeLighting(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, int vertex_count);
 
 // Original: core_set.cpp_FUN_0056e180
 // Address: 0056e180
@@ -137,7 +137,7 @@ void CDemonSet(CDemonSet * this_ptr);
 
 // Original: core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0
 // Address: 0056e7c0
-void CDemonSet::rotateVertices(CDemonSet * this_ptr, int vertex_count);
+void CDemonSet::rotateVertices(CDemonSet * this_ptr, int vertex_count, int * input_vertices);
 
 // Original: core_set.cpp_FUN_0056e890
 // Address: 0056e890
@@ -149,7 +149,7 @@ undefined FUN_0056e960();
 
 // Original: core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
 // Address: 0056eac0
-float CDemonSet::lightVerticies(CDemonSet * this_ptr);
+float CDemonSet::lightVerticies(CDemonSet * this_ptr, int vertex_count, int tri_count, SInputFace * tri_data_ptr, int render_flags, int lighting_mode, int flags);
 
 // Original: core_set.cpp_CDemonSet_process_FUN_0056f940
 // Address: 0056f940

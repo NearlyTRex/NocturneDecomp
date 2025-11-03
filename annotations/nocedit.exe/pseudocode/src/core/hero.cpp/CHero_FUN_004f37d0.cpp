@@ -14,7 +14,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f37d0(CHero *this_ptr)
   int iVar1;
   SCollisionInfo *unaff_EBX;
   
-  iVar1 = (*(this_ptr->base_character).base_actor.metadata.vtable[1].hasCollision)
+  iVar1 = (*(this_ptr->base_character).base_actor.vtable[1].hasCollision)
                     ((CDemonActor *)this_ptr,unaff_EBX);
   if (iVar1 < 2) {
     if (iVar1 == 1) {

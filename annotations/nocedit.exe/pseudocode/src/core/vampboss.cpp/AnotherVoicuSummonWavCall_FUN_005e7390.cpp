@@ -14,7 +14,7 @@
 //   undefined4 g_CDemonSetInstance.actor_list_data[0]
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_FUN_0040cd10
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_drip.cpp_FUN_0048e6b0
 
 #include "nocturne.h"
@@ -37,7 +37,7 @@ void core_vampboss_cpp_AnotherVoicuSummonWavCall_FUN_005e7390(void)
                        (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar4),
                         g_CDripClassInfo.name_hash);
     if ((pCVar1 != (CDemonActor *)0x0) && (pCVar1[2].location.position.y == 2.8026e-45)) {
-      iVar2 = core_actor_cpp_FUN_0040cd10();
+      iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
       if (iVar2 == 0) {
         core_drip_cpp_FUN_0048e6b0();
       }
@@ -95,7 +95,7 @@ void core_vampboss_cpp_AnotherVoicuSummonWavCall_FUN_005e7390(void)
 // 005e73e5: JNZ 0x005e7401
 //   XREF to: 005e7401 (CONDITIONAL_JUMP)
 // 005e73e7: PUSH 0x3f000000
-// 005e73ec: CALL core_actor.cpp_FUN_0040cd10
+// 005e73ec: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 005e73f1: ADD ESP,0x4
 // 005e73f4: TEST EAX,EAX

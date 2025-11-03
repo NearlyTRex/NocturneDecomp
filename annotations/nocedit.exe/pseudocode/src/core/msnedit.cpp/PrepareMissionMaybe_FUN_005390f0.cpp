@@ -98,10 +98,10 @@
 //   CDemonSet g_CDemonSetInstance
 //   undefined4 g_CDemonSetInstance.actor_list_ptr
 //   undefined4 g_CDemonSetInstance.actor_list_data[0]
-//   undefined4 g_CDemonSetInstance.field22_0x15ac80[0]
-//   undefined4 g_CDemonSetInstance.field22_0x15ac80[4]
-//   undefined4 g_CDemonSetInstance.field22_0x15ac80[12]
-//   undefined4 g_CDemonSetInstance.field22_0x15ac80[16]
+//   undefined4 g_CDemonSetInstance.lighting_quality_mode
+//   undefined4 g_CDemonSetInstance.unk_lighting_param1
+//   undefined4 g_CDemonSetInstance.unk_lighting_param3
+//   undefined4 g_CDemonSetInstance.unk_lighting_param4
 //   undefined4 g_CDemonSetInstance.selected_camera_index
 //   CDemonCamera g_CDemonCameraInstance
 //   undefined4 DAT_032758e8
@@ -114,12 +114,12 @@
 //   undefined4 g_CDemonCameraInstance.corona_blend_factor
 //   CDemonRaytrace g_CDemonRaytraceInstance
 // Function calls:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
 //   core_actor.cpp_CActorProperty_FUN_0040ea50
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_actor.cpp_FUN_0040e150
-//   core_actor.cpp_renderActorBoundingBox_FUN_0040d940
 //   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430
 //   core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80
 //   core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860
@@ -127,7 +127,7 @@
 //   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
 //   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 //   core_dlight.cpp_CDemonLight_init_FUN_004727c0
-//   core_fire.cpp_CFireEffect_FUN_004c6c80
+//   core_fire.cpp_CFireEffect_init_FUN_004c6c80
 //   core_fire.cpp_CFireEffect_process_FUN_004c6ec0
 //   core_fire.cpp_CFireEffect_render_FUN_004c7180
 //   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
@@ -214,14 +214,12 @@
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 core_msnedit.cpp_PrepareMissionMaybe(undefined4 param_1, undefined4
-   param_2) */
 
 undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
 
 {
-  CDemonSet *pCVar1;
   CGame *this_ptr;
+  CDemonSet *pCVar1;
   uchar uVar2;
   undefined3 extraout_var;
   float *pfVar3;
@@ -382,7 +380,7 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
     }
   }
   core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
-  core_fire_cpp_CFireEffect_FUN_004c6c80(g_CFireEffectPtr);
+  core_fire_cpp_CFireEffect_init_FUN_004c6c80(g_CFireEffectPtr);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff64c);
   core_skeleton_cpp_FUN_005a2060();
   local_7c.x = 0.0;
@@ -570,48 +568,26 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
       if (DAT_02f7c53c == 0) {
         if (*(int *)(in_stack_00000004->field2_0xc + 0x2c) == 0) {
           g_CDemonCameraInstance.corona_blend_factor = local_5c;
-          pCVar1->field22_0x15ac80[0] = '\0';
-          pCVar1->field22_0x15ac80[1] = '\0';
-          pCVar1->field22_0x15ac80[2] = '\0';
-          pCVar1->field22_0x15ac80[3] = '\0';
-          pCVar1->field22_0x15ac80[4] = '\0';
-          pCVar1->field22_0x15ac80[5] = '\0';
-          pCVar1->field22_0x15ac80[6] = '\0';
-          pCVar1->field22_0x15ac80[7] = '\0';
+          g_CDemonSetPtr->lighting_quality_mode = 0;
+          pCVar1->unk_lighting_param1 = 0;
         }
         else {
           g_CDemonCameraInstance.corona_blend_factor = 0xffff;
-          pCVar1->field22_0x15ac80[0] = '\x01';
-          pCVar1->field22_0x15ac80[1] = '\0';
-          pCVar1->field22_0x15ac80[2] = '\0';
-          pCVar1->field22_0x15ac80[3] = '\0';
-          pCVar1->field22_0x15ac80[4] = '\x01';
-          pCVar1->field22_0x15ac80[5] = '\0';
-          pCVar1->field22_0x15ac80[6] = '\0';
-          pCVar1->field22_0x15ac80[7] = '\0';
+          g_CDemonSetPtr->lighting_quality_mode = 1;
+          pCVar1->unk_lighting_param1 = 1;
         }
         pCVar1 = g_CDemonSetPtr;
-        *(uint *)(g_CDemonSetPtr->field22_0x15ac80 + 0xc) =
+        g_CDemonSetPtr->unk_lighting_param3 =
              (uint)(*(int *)(in_stack_00000004->field2_0xc + 0x24) == 0);
-        *(uint *)(pCVar1->field22_0x15ac80 + 0x10) =
-             (uint)(*(int *)(in_stack_00000004->field2_0xc + 0x28) == 0);
+        pCVar1->unk_lighting_param4 = (uint)(*(int *)(in_stack_00000004->field2_0xc + 0x28) == 0);
         core_set_cpp_CDemonSet_FUN_0056c1a0(pCVar1);
         core_set_cpp_CDemonSet_FUN_0056be80(g_CDemonSetPtr);
         core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860(&g_CDemonCameraInstance);
       }
       else {
-        pCVar1->field22_0x15ac80[0] = '\x01';
-        pCVar1->field22_0x15ac80[1] = '\0';
-        pCVar1->field22_0x15ac80[2] = '\0';
-        pCVar1->field22_0x15ac80[3] = '\0';
-        pCVar1->field22_0x15ac80[0xc] = '\0';
-        pCVar1->field22_0x15ac80[0xd] = '\0';
-        pCVar1->field22_0x15ac80[0xe] = '\0';
-        pCVar1->field22_0x15ac80[0xf] = '\0';
-        pCVar1->field22_0x15ac80[0x10] = '\0';
-        pCVar1->field22_0x15ac80[0x11] = '\0';
-        pCVar1->field22_0x15ac80[0x12] = '\0';
-        pCVar1->field22_0x15ac80[0x13] = '\0';
+        g_CDemonSetPtr->lighting_quality_mode = 1;
+        pCVar1->unk_lighting_param3 = 0;
+        pCVar1->unk_lighting_param4 = 0;
         g_CDemonRaytraceInstance.rendering_mode = g_DynamicRenderMode;
         if (*(int *)(in_stack_00000004->field2_0xc + 0x18) == 0) {
           wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -649,7 +625,7 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
         if (iVar10 != 0) {
           uVar2 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                             (g_CEditorToolsPtr);
-          core_actor_cpp_renderActorBoundingBox_FUN_0040d940
+          core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940
                     (*(CDemonActor **)(in_stack_00000004->field2_0xc + 0x20),
                      CONCAT31(extraout_var_01,uVar2));
         }
@@ -663,7 +639,7 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
       if (*(int *)(in_stack_00000004->field2_0xc + 0x1c) != 0) {
         uVar2 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                           (g_CEditorToolsPtr);
-        core_actor_cpp_renderActorBoundingBox_FUN_0040d940
+        core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940
                   (*(CDemonActor **)(in_stack_00000004->field2_0xc + 0x1c),
                    CONCAT31(extraout_var,uVar2));
         pfVar3 = (float *)(**(code **)(*(int *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) +
@@ -854,7 +830,7 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
       }
       else if (*(int *)(in_stack_00000004->field2_0xc + 0x1c) != 0) {
         (**(code **)(*(int *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) + 0x154) + 0xd0))();
-        core_actor_cpp_CDemonActor_FUN_00408c10
+        core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
                   (*(CDemonActor **)(in_stack_00000004->field2_0xc + 0x1c));
       }
       iVar10 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0xe);
@@ -955,22 +931,10 @@ LAB_00539e00:
       core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(g_CGamePtr);
       iVar10 = local_60;
       pCVar1 = g_CDemonSetPtr;
-      pCVar1->field22_0x15ac80[0] = '\0';
-      pCVar1->field22_0x15ac80[1] = '\0';
-      pCVar1->field22_0x15ac80[2] = '\0';
-      pCVar1->field22_0x15ac80[3] = '\0';
-      pCVar1->field22_0x15ac80[4] = '\0';
-      pCVar1->field22_0x15ac80[5] = '\0';
-      pCVar1->field22_0x15ac80[6] = '\0';
-      pCVar1->field22_0x15ac80[7] = '\0';
-      pCVar1->field22_0x15ac80[0xc] = '\0';
-      pCVar1->field22_0x15ac80[0xd] = '\0';
-      pCVar1->field22_0x15ac80[0xe] = '\0';
-      pCVar1->field22_0x15ac80[0xf] = '\0';
-      pCVar1->field22_0x15ac80[0x10] = '\0';
-      pCVar1->field22_0x15ac80[0x11] = '\0';
-      pCVar1->field22_0x15ac80[0x12] = '\0';
-      pCVar1->field22_0x15ac80[0x13] = '\0';
+      g_CDemonSetPtr->lighting_quality_mode = 0;
+      pCVar1->unk_lighting_param1 = 0;
+      pCVar1->unk_lighting_param3 = 0;
+      pCVar1->unk_lighting_param4 = 0;
       crt_io_c_deleteFile_FUN_005ff9d0("$$UNDO$$.TMP");
       if (iVar10 == 0) {
         return 0;
@@ -1064,8 +1028,8 @@ LAB_00539e00:
           while( true ) {
             shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff64c);
             for (pCVar4 = in_stack_00000004->first_actor; pCVar4 != (CDemonActor *)0x0;
-                pCVar4 = (pCVar4->metadata).next_actor) {
-              if (*(int *)((pCVar4->metadata).field3_0x1c + 4) != 0) {
+                pCVar4 = pCVar4->next_actor) {
+              if (pCVar4->field26_0x148 != 0) {
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80
                           ((CStrList *)&stack0xfffff64c,pCVar4->actor_name);
               }
@@ -1103,11 +1067,8 @@ LAB_0053a88c:
         }
         else {
           for (pCVar4 = in_stack_00000004->first_actor; pCVar4 != (CDemonActor *)0x0;
-              pCVar4 = (pCVar4->metadata).next_actor) {
-            (pCVar4->metadata).field3_0x1c[4] = '\0';
-            (pCVar4->metadata).field3_0x1c[5] = '\0';
-            (pCVar4->metadata).field3_0x1c[6] = '\0';
-            (pCVar4->metadata).field3_0x1c[7] = '\0';
+              pCVar4 = pCVar4->next_actor) {
+            pCVar4->field26_0x148 = 0;
           }
         }
       }
@@ -1236,7 +1197,9 @@ LAB_0053aea7:
             iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
             if (iVar10 == 0) {
               if (*(int *)(&DAT_02f7a080 + iVar6) == 0) goto LAB_0053ad72;
-              core_actor_cpp_AnotherActorParser_FUN_0040eed0();
+              core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
+                        ((CActorProperty *)(&DAT_02f7a02c + iVar6),
+                         *(CDemonActor **)(in_stack_00000004->field2_0xc + 0x1c));
               engine_2d_c_clearInputAndWait_FUN_00403260();
               local_30 = 0;
               DAT_00680818 = 1e+10;
@@ -1472,7 +1435,7 @@ LAB_0053ad72:
 //   XREF to: 0067a3d0 (READ)
 // 005392bb: PUSH EDI
 //   XREF to: 02d12db0 (DATA)
-// 005392bc: CALL core_fire.cpp_CFireEffect_FUN_004c6c80
+// 005392bc: CALL core_fire.cpp_CFireEffect_init_FUN_004c6c80
 //   XREF to: 004c6c80 (UNCONDITIONAL_CALL)
 // 005392c1: ADD ESP,0x4
 // 005392c4: MOV EAX,[0x0067b654]
@@ -1886,7 +1849,7 @@ LAB_0053ad72:
 //   XREF to: Stack[0x4] (READ)
 // 00539655: MOV EDX,dword ptr [EAX + 0x28]
 // 00539658: PUSH EDX
-// 00539659: CALL core_actor.cpp_renderActorBoundingBox_FUN_0040d940
+// 00539659: CALL core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 //   XREF to: 0040d940 (UNCONDITIONAL_CALL)
 // 0053965e: ADD ESP,0x8
 // 00539661: LEA ESI,[EBP + 0xffffff6a]
@@ -3581,7 +3544,7 @@ LAB_0053ad72:
 // 0053a403: PUSH EAX
 // 0053a404: MOV EBX,dword ptr [EBX + 0x2c]
 // 0053a407: PUSH EBX
-// 0053a408: CALL core_actor.cpp_renderActorBoundingBox_FUN_0040d940
+// 0053a408: CALL core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 //   XREF to: 0040d940 (UNCONDITIONAL_CALL)
 // 0053a40d: ADD ESP,0x8
 // 0053a410: JMP 0x0053962f
@@ -3629,7 +3592,7 @@ LAB_0053ad72:
 // 0053a46f: ADD ESP,0x4
 // 0053a472: MOV EDI,dword ptr [EAX + 0x28]
 // 0053a475: PUSH EDI
-// 0053a476: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 0053a476: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 0053a47b: JMP 0x00539c95
 //   XREF to: 00539c95 (UNCONDITIONAL_JUMP)
@@ -4817,7 +4780,7 @@ LAB_0053ad72:
 // 0053adfe: MOV EDI,dword ptr [EAX + 0x28]
 // 0053ae01: PUSH EDI
 // 0053ae02: PUSH EBX
-// 0053ae03: CALL core_actor.cpp_AnotherActorParser_FUN_0040eed0
+// 0053ae03: CALL core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
 //   XREF to: 0040eed0 (UNCONDITIONAL_CALL)
 // 0053ae08: ADD ESP,0x8
 // 0053ae0b: CALL engine_2d.c_clearInputAndWait_FUN_00403260

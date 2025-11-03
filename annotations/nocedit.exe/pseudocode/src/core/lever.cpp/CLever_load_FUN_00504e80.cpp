@@ -97,7 +97,7 @@ void core_lever_cpp_CLever_load_FUN_00504e80(void)
   }
   if (6 < g_CLeverClassVersion) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)&in_stack_00000004[5].metadata.vtable,"allowedSides");
+              ((int *)&in_stack_00000004[5].vtable,"allowedSides");
   }
   if (g_CLeverClassVersion < 8) {
     return;

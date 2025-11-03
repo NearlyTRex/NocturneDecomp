@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_set.cpp_CDemonSet_FUN_0056c990 (0056c990) at 0056cbfc [UNCONDITIONAL_CALL]
 // Globals:
-//   CMuzzleFlash[20] g_CFireEffectMuzzleFlashes
+//   CMuzzleFlash[20] g_MuzzleFlashPool
 //   undefined4 DAT_02d58a60
 //   undefined4 DAT_02d58abc
 
@@ -19,12 +19,12 @@ int __cdecl core_fire_cpp_CFireEffect_FUN_004c93d0(CFireEffect *this_ptr)
   int iVar2;
   
   iVar2 = 0;
-  if (g_CFireEffectMuzzleFlashes[0].field0_0x0._0_4_ != 1) {
+  if (g_MuzzleFlashPool[0].field0_0x0._0_4_ != 1) {
     do {
       if (0x72f < iVar2 + 0x5c) {
         return 0;
       }
-      pcVar1 = g_CFireEffectMuzzleFlashes[1].field0_0x0 + iVar2;
+      pcVar1 = g_MuzzleFlashPool[1].field0_0x0 + iVar2;
       iVar2 = iVar2 + 0x5c;
     } while (*(int *)pcVar1 != 1);
   }

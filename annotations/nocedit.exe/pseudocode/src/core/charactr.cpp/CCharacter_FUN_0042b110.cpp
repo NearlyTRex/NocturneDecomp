@@ -6,33 +6,32 @@
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042b0e0 (0042b0e0) at 0042b100 [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 
 #include "nocturne.h"
 
 void __cdecl core_charactr_cpp_CCharacter_FUN_0042b110(CCharacter *this_ptr)
 
 {
-  int iVar1;
-  char *pcVar2;
-  CCharacter *pCVar3;
-  int iVar4;
+  int extraout_EAX;
+  char *pcVar1;
+  CCharacter *pCVar2;
+  int iVar3;
   
-  iVar4 = 0;
-  iVar1 = core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
+  iVar3 = 0;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(&this_ptr->model);
   if (0 < *(int *)(this_ptr->cloth_data + 0x478)) {
-    pcVar2 = this_ptr->cloth_data + 0x934;
-    pCVar3 = this_ptr;
+    pcVar1 = this_ptr->cloth_data + 0x934;
+    pCVar2 = this_ptr;
     do {
-      if ((*(int *)((this_ptr->model).padding_0x0 +
-                   *(int *)(pCVar3->cloth_data + 0x484) * 4 + 0x2140) != 0) &&
-         (*(int *)(*(int *)(pCVar3->cloth_data + 0x488) * 0x24 + iVar1 + 0x2857c) != -1)) {
-        (**(code **)(*(int *)(pcVar2 + 0x154) + 0xc))();
+      if (((this_ptr->model).part_visibility_flags[*(int *)(pCVar2->cloth_data + 0x484)] != 0) &&
+         (*(int *)(*(int *)(pCVar2->cloth_data + 0x488) * 0x24 + extraout_EAX + 0x2857c) != -1)) {
+        (**(code **)(*(int *)(pcVar1 + 0x154) + 0xc))();
       }
-      pCVar3 = (CCharacter *)((pCVar3->base_actor).actor_name + 0x18);
-      iVar4 = iVar4 + 1;
-      pcVar2 = pcVar2 + 0x2a4;
-    } while (iVar4 < *(int *)(this_ptr->cloth_data + 0x478));
+      pCVar2 = (CCharacter *)((pCVar2->base_actor).actor_name + 0x18);
+      iVar3 = iVar3 + 1;
+      pcVar1 = pcVar1 + 0x2a4;
+    } while (iVar3 < *(int *)(this_ptr->cloth_data + 0x478));
   }
   return;
 }
@@ -50,7 +49,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b110(CCharacter *this_ptr)
 // 0042b11b: LEA EAX,[EBP + 0x158]
 // 0042b121: PUSH EAX
 // 0042b122: XOR EDI,EDI
-// 0042b124: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 0042b124: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0042b129: ADD ESP,0x4
 // 0042b12c: MOV EDX,dword ptr [EBP + 0x2f10]

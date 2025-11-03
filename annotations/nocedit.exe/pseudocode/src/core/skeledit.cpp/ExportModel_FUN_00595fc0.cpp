@@ -45,7 +45,7 @@
 //   int g_CurrentDebugLine
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_skeleton.cpp_FUN_0059aa00
+//   core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00
 //   crt_memory.c_free_FUN_005fe659
 //   crt_memory.c_memset_FUN_005fde40
 //   crt_stack.c_stack_probe_FUN_005ff9f3
@@ -64,44 +64,44 @@
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: void core_skeledit.cpp_ExportModel(int param_1, char* param_2, int param_3, undefined4
-   param_4, undefined4 param_5) */
 
 void core_skeledit_cpp_ExportModel_FUN_00595fc0(void)
 
 {
   FILE *pFVar1;
   int *dest;
-  int iVar2;
-  ushort *puVar3;
-  int iVar4;
+  ushort *puVar2;
+  int iVar3;
   BADSPACEBASE *in_ESP;
-  int iVar5;
-  int *piVar6;
-  int in_stack_0000000c;
+  int iVar4;
+  int *piVar5;
+  int iVar6;
+  CDeformableModel *in_stack_0000000c;
   char *in_stack_00000010;
   int in_stack_00000014;
+  CMatrix3x4f *in_stack_00000018;
   uint in_stack_fffffd10;
   uint in_stack_fffffd14;
   int aiStack_138 [30];
   CStrList CStack_c0;
   CStrList CStack_b0;
+  CVector3f local_a0;
   int local_94;
   int local_90;
   int local_8c;
-  int local_88;
+  SPart *local_88;
   int local_84;
   int local_80;
   int local_7c;
-  int local_78;
+  CDeformableModel *local_78;
   int local_74;
   int local_70;
   int local_6c;
   FILE *local_68;
   int local_64;
   int local_60;
-  int local_5c;
-  int local_58;
+  CDeformableModel *local_5c;
+  CDeformableModel *local_58;
   int local_54;
   int local_50;
   int local_4c;
@@ -132,7 +132,7 @@ void core_skeledit_cpp_ExportModel_FUN_00595fc0(void)
     return;
   }
   dest = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                          (*(int *)(in_stack_00000014 * 4 + in_stack_0000000c + 0x2c) << 2,
+                          (in_stack_0000000c->vertex_count[in_stack_00000014] << 2,
                            "..\\core\\skeledit.cpp",0x1565);
   if (dest == (int *)0x0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
@@ -143,21 +143,21 @@ void core_skeledit_cpp_ExportModel_FUN_00595fc0(void)
                        (g_CEditorToolsPtr,"Export capped faces?");
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&CStack_b0);
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&CStack_c0);
-  iVar5 = in_stack_00000014 * 4;
+  iVar4 = in_stack_00000014 * 4;
   local_34 = 0;
-  iVar2 = in_stack_0000000c + iVar5;
-  local_38 = *(int *)(iVar2 + 0x54);
+  iVar6 = (int)in_stack_0000000c->lod_info + iVar4 + -4;
+  local_38 = *(int *)(iVar6 + 0x54);
   local_7c = 0;
-  if (0 < *(int *)(in_stack_0000000c + 0x7140)) {
+  if (0 < in_stack_0000000c->num_parts) {
     local_78 = in_stack_0000000c;
     local_70 = 0;
-    local_90 = iVar2;
-    local_74 = iVar2;
-    local_6c = iVar2;
-    local_50 = iVar2;
-    local_4c = iVar5;
-    local_48 = iVar5;
-    local_10 = iVar2;
+    local_90 = iVar6;
+    local_74 = iVar6;
+    local_6c = iVar6;
+    local_50 = iVar6;
+    local_4c = iVar4;
+    local_48 = iVar4;
+    local_10 = iVar6;
     do {
       crt_memory_c_memset_FUN_005fde40(dest,0,*(int *)(local_90 + 0x2c) << 2);
       local_3c = local_34;
@@ -166,12 +166,12 @@ void core_skeledit_cpp_ExportModel_FUN_00595fc0(void)
       local_28 = 0;
       if (0 < *(int *)(local_74 + 0x7164)) {
         do {
-          iVar5 = 0;
+          iVar4 = 0;
           do {
-            puVar3 = (ushort *)(*(int *)(local_10 + 0x7c) + local_1c + iVar5);
-            iVar5 = iVar5 + 2;
-            dest[*puVar3] = 1;
-          } while (iVar5 != 6);
+            puVar2 = (ushort *)(*(int *)(local_10 + 0x7c) + local_1c + iVar4);
+            iVar4 = iVar4 + 2;
+            dest[*puVar2] = 1;
+          } while (iVar4 != 6);
           local_28 = local_28 + 1;
           local_3c = local_3c + 1;
           local_1c = local_1c + 0x12;
@@ -184,12 +184,12 @@ void core_skeledit_cpp_ExportModel_FUN_00595fc0(void)
         local_2c = local_38 * 0x12;
         if (0 < *(int *)(local_6c + 0x7178)) {
           do {
-            iVar5 = 0;
+            iVar4 = 0;
             do {
-              puVar3 = (ushort *)(*(int *)(iVar2 + 0x7c) + local_2c + iVar5);
-              iVar5 = iVar5 + 2;
-              dest[*puVar3] = 1;
-            } while (iVar5 != 6);
+              puVar2 = (ushort *)(*(int *)(iVar6 + 0x7c) + local_2c + iVar4);
+              iVar4 = iVar4 + 2;
+              dest[*puVar2] = 1;
+            } while (iVar4 != 6);
             local_18 = local_18 + 1;
             local_40 = local_40 + 1;
             local_2c = local_2c + 0x12;
@@ -200,34 +200,37 @@ void core_skeledit_cpp_ExportModel_FUN_00595fc0(void)
       local_14 = 0;
       if (0 < *(int *)(local_50 + 0x2c)) {
         local_44 = local_70;
-        piVar6 = dest;
+        piVar5 = dest;
         do {
-          if (*piVar6 == 0) {
-            *piVar6 = -1;
+          if (*piVar5 == 0) {
+            *piVar5 = -1;
           }
           else {
             *(int *)((int)aiStack_138 + local_44) = *(int *)((int)aiStack_138 + local_44) + 1;
-            *piVar6 = CStack_b0.item_count;
-            core_skeleton_cpp_FUN_0059aa00();
+            *piVar5 = CStack_b0.item_count;
+            core_skeleton_cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00
+                      (in_stack_0000000c,&local_a0,in_stack_00000014,local_14,in_stack_00000018);
             crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffcc8,"%g,%g,%g");
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_b0,&stack0xfffffcc8);
           }
           local_14 = local_14 + 1;
-          piVar6 = piVar6 + 1;
+          piVar5 = piVar5 + 1;
         } while (local_14 < *(int *)(local_50 + 0x2c));
       }
       local_58 = local_78;
       local_20 = local_34 << 2;
       local_24 = local_34 * 0x12;
-      for (iVar5 = 0; iVar5 < *(int *)(local_58 + local_48 + 0x7164); iVar5 = iVar5 + 1) {
-        puVar3 = (ushort *)(*(int *)(in_stack_0000000c + local_48 + 0x7c) + local_24);
-        uStack_c = (uint)puVar3[3];
+      for (iVar4 = 0; iVar4 < *(int *)((int)local_58->parts[0].tri_counts + local_48);
+          iVar4 = iVar4 + 1) {
+        puVar2 = (ushort *)(*(int *)((int)in_stack_0000000c->tri_data_ptr + local_48) + local_24);
+        uStack_c = (uint)puVar2[3];
         crt_stdio_c_sprintf_FUN_005fdbd0
                   (&stack0xfffffcc8,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
-                   *(undefined4 *)(*(int *)(in_stack_0000000c + local_48 + 0x90) + local_20),
-                   dest[*puVar3],(double)uStack_c * _DAT_0064d8e2,(double)puVar3[6] * _DAT_0064d8e2,
-                   dest[puVar3[1]],(double)puVar3[4] * _DAT_0064d8e2,
-                   (double)puVar3[7] * _DAT_0064d8e2);
+                   *(undefined4 *)
+                    (*(int *)((int)in_stack_0000000c->index_data_ptr + local_48) + local_20),
+                   dest[*puVar2],(double)uStack_c * _DAT_0064d8e2,(double)puVar2[6] * _DAT_0064d8e2,
+                   dest[puVar2[1]],(double)puVar2[4] * _DAT_0064d8e2,
+                   (double)puVar2[7] * _DAT_0064d8e2);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_c0,&stack0xfffffcc8);
         local_20 = local_20 + 4;
         local_24 = local_24 + 0x12;
@@ -242,15 +245,17 @@ void core_skeledit_cpp_ExportModel_FUN_00595fc0(void)
         local_64 = local_34 << 2;
         local_5c = local_78;
         local_30 = local_38 * 0x12;
-        for (iVar5 = 0; iVar5 < *(int *)(local_5c + local_4c + 0x7178); iVar5 = iVar5 + 1) {
-          puVar3 = (ushort *)(*(int *)(in_stack_0000000c + local_4c + 0x7c) + local_30);
-          uStack_c = (uint)puVar3[3];
+        for (iVar4 = 0; iVar4 < *(int *)((int)local_5c->parts[0].cap_tri_counts + local_4c);
+            iVar4 = iVar4 + 1) {
+          puVar2 = (ushort *)(*(int *)((int)in_stack_0000000c->tri_data_ptr + local_4c) + local_30);
+          uStack_c = (uint)puVar2[3];
           crt_stdio_c_sprintf_FUN_005fdbd0
                     (&stack0xfffffcc8,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
-                     *(undefined4 *)(*(int *)(in_stack_0000000c + local_4c + 0x90) + local_64),
-                     dest[*puVar3],(double)uStack_c * _DAT_0064d8e2,
-                     (double)puVar3[6] * _DAT_0064d8e2,dest[puVar3[1]],
-                     (double)puVar3[4] * _DAT_0064d8e2,(double)puVar3[7] * _DAT_0064d8e2);
+                     *(undefined4 *)
+                      (*(int *)((int)in_stack_0000000c->index_data_ptr + local_4c) + local_64),
+                     dest[*puVar2],(double)uStack_c * _DAT_0064d8e2,
+                     (double)puVar2[6] * _DAT_0064d8e2,dest[puVar2[1]],
+                     (double)puVar2[4] * _DAT_0064d8e2,(double)puVar2[7] * _DAT_0064d8e2);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_c0,&stack0xfffffcc8);
           local_30 = local_30 + 0x12;
           local_38 = local_38 + 1;
@@ -264,9 +269,9 @@ void core_skeledit_cpp_ExportModel_FUN_00595fc0(void)
       local_74 = local_74 + 0x60;
       local_6c = local_6c + 0x60;
       local_70 = local_70 + 4;
-      local_78 = local_78 + 0x60;
+      local_78 = (CDeformableModel *)(local_78->tri_count + 3);
       local_7c = local_7c + 1;
-    } while (local_7c < *(int *)(in_stack_0000000c + 0x7140));
+    } while (local_7c < in_stack_0000000c->num_parts);
   }
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0x15b9;
@@ -278,49 +283,49 @@ void core_skeledit_cpp_ExportModel_FUN_00595fc0(void)
   local_80 = 0;
   crt_stdio_c_fprintf_FUN_005fe6d0(local_68,"// partList: firstVert,numVerts,firstTri,numTris,\"name\"\n");
   local_84 = 0;
-  iVar2 = 0;
-  if (0 < *(int *)(in_stack_0000000c + 0x7140)) {
-    local_88 = in_stack_0000000c + 0x7144;
-    iVar4 = in_stack_00000014 * 4 + in_stack_0000000c;
-    iVar5 = 0;
+  iVar6 = 0;
+  if (0 < in_stack_0000000c->num_parts) {
+    local_88 = in_stack_0000000c->parts;
+    iVar3 = (int)in_stack_0000000c->lod_info + in_stack_00000014 * 4 + -4;
+    iVar4 = 0;
     do {
-      local_94 = *(int *)(iVar4 + 0x7164) + *(int *)(iVar4 + 0x7178);
-      iVar4 = iVar4 + 0x60;
-      iVar2 = iVar2 + 1;
+      local_94 = *(int *)(iVar3 + 0x7164) + *(int *)(iVar3 + 0x7178);
+      iVar3 = iVar3 + 0x60;
+      iVar6 = iVar6 + 1;
       crt_stdio_c_fprintf_FUN_005fe6d0(local_68,"%d,%d,%d,%d,\"%s\"\n");
-      local_80 = local_80 + *(int *)((int)aiStack_138 + iVar5);
+      local_80 = local_80 + *(int *)((int)aiStack_138 + iVar4);
       local_84 = local_84 + local_94;
-      local_88 = local_88 + 0x60;
-      iVar5 = iVar5 + 4;
-    } while (iVar2 < *(int *)(in_stack_0000000c + 0x7140));
+      local_88 = local_88 + 1;
+      iVar4 = iVar4 + 4;
+    } while (iVar6 < in_stack_0000000c->num_parts);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(local_68,"// texture list: name\n");
-  iVar2 = 0;
-  if (0 < *(int *)(in_stack_0000000c + 0xbc)) {
+  iVar6 = 0;
+  if (0 < in_stack_0000000c->num_textures) {
     do {
       crt_stdio_c_fprintf_FUN_005fe6d0(local_68,"%s\n");
-      iVar2 = iVar2 + 1;
-    } while (iVar2 < *(int *)(in_stack_0000000c + 0xbc));
+      iVar6 = iVar6 + 1;
+    } while (iVar6 < in_stack_0000000c->num_textures);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(local_68,"// triList: materialIndex,vertices(index, texX, texY)\n");
   pFVar1 = local_68;
-  iVar2 = 0;
+  iVar6 = 0;
   if (0 < CStack_c0.item_count) {
     do {
-      shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_c0,iVar2);
-      iVar2 = iVar2 + 1;
+      shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_c0,iVar6);
+      iVar6 = iVar6 + 1;
       crt_stdio_c_fprintf_FUN_005fe6d0(pFVar1,"%s\n");
-    } while (iVar2 < CStack_c0.item_count);
+    } while (iVar6 < CStack_c0.item_count);
   }
-  iVar2 = 0;
+  iVar6 = 0;
   crt_stdio_c_fprintf_FUN_005fe6d0(local_68,"// vertList: x,y,z\n");
   pFVar1 = local_68;
   if (0 < CStack_b0.item_count) {
     do {
-      shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_b0,iVar2);
-      iVar2 = iVar2 + 1;
+      shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_b0,iVar6);
+      iVar6 = iVar6 + 1;
       crt_stdio_c_fprintf_FUN_005fe6d0(pFVar1,"%s\n");
-    } while (iVar2 < CStack_b0.item_count);
+    } while (iVar6 < CStack_b0.item_count);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(local_68,"// lightList: \"name\", type, x,y,z, r,g,b, (type-specific info)\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(local_68,"// cameraList: \"name\", x,y,z, p,b,h, fov(rad)\n");
@@ -635,7 +640,7 @@ void core_skeledit_cpp_ExportModel_FUN_00595fc0(void)
 // 00596233: MOV ECX,dword ptr [EBP + 0x86]
 //   XREF to: Stack[0x4] (READ)
 // 00596239: PUSH ECX
-// 0059623a: CALL core_skeleton.cpp_FUN_0059aa00
+// 0059623a: CALL core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00
 //   XREF to: 0059aa00 (UNCONDITIONAL_CALL)
 // 0059623f: ADD ESP,0x14
 // 00596242: SUB ESP,0x8

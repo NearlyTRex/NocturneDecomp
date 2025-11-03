@@ -5,11 +5,11 @@
 // Signature: undefined core_curtain.cpp_FUN_0044a920()
 // Globals:
 //   TerminatedCString s_none_00619c1a
-//   undefined4 DAT_00619c22
-//   undefined4 DAT_00619c2a
-//   undefined4 DAT_00619c32
-//   undefined4 DAT_00619c3a
-//   undefined4 DAT_00619c42
+//   double DOUBLE_00619c22 = 0.850000000000000
+//   double DOUBLE_00619c2a = 4
+//   double DOUBLE_00619c32 = 0.03125
+//   float FLOAT_00619c3a = 0.05000000
+//   double DOUBLE_00619c42 = 0.100000000000000
 //   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 DAT_008879bc
@@ -19,19 +19,18 @@
 //   SCollisionInfo[100] DAT_00887e70
 //   undefined4 DAT_00887e88
 //   undefined4 DAT_00887e8c
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   undefined4 g_CDemonSetInstance.damage_listener_count
 //   undefined4 g_CDemonSetInstance.damage_listeners
 //   undefined4 DAT_03263318
 // Function calls:
 //   core_curtain.cpp_FUN_00449f10
 //   core_curtain.cpp_FUN_00449fc0
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   crt_string.c_strcmp_FUN_005fef20
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_curtain.cpp_FUN_0044a920(undefined4 param_1, undefined4
    param_2) */
 
@@ -90,7 +89,7 @@ void core_curtain_cpp_FUN_0044a920(void)
   
   if (((*(int *)(in_stack_00000004 + 0x65b30) != 0) || (*(int *)(in_stack_00000004 + 400) != 0)) &&
      (*(undefined4 *)(in_stack_00000004 + 0x65b30) = 0, *(int *)(in_stack_00000004 + 0x1f8) != 0)) {
-    iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,(char *)(in_stack_00000004 + 0x194));
     if (iVar3 != 0) {
       *(undefined4 *)(in_stack_00000004 + 400) = 1;
@@ -148,11 +147,11 @@ void core_curtain_cpp_FUN_0044a920(void)
         pSVar7->ray_type = 0;
         iVar4 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x34))();
         if (((iVar4 == 2) && (*(float *)(iVar6 + 0x24) <= local_78)) &&
-           ((local_a8 <= *(float *)(iVar6 + 0x24) + DAT_00887e70[iVar3].cylinder_bottom_y &&
-            ((((local_ac <= *(float *)(iVar6 + 0x20) + DAT_00887e70[iVar3].cylinder_top_y &&
-               (*(float *)(iVar6 + 0x20) - DAT_00887e70[iVar3].cylinder_top_y <= local_7c)) &&
-              (local_a4 <= *(float *)(iVar6 + 0x28) + DAT_00887e70[iVar3].cylinder_top_y)) &&
-             (*(float *)(iVar6 + 0x28) - DAT_00887e70[iVar3].cylinder_top_y <= local_74)))))) {
+           ((local_a8 <= *(float *)(iVar6 + 0x24) + DAT_00887e70[iVar3].cylinder_top_y &&
+            ((((local_ac <= *(float *)(iVar6 + 0x20) + DAT_00887e70[iVar3].cylinder_radius &&
+               (*(float *)(iVar6 + 0x20) - DAT_00887e70[iVar3].cylinder_radius <= local_7c)) &&
+              (local_a4 <= *(float *)(iVar6 + 0x28) + DAT_00887e70[iVar3].cylinder_radius)) &&
+             (*(float *)(iVar6 + 0x28) - DAT_00887e70[iVar3].cylinder_radius <= local_74)))))) {
           DAT_008879bc = DAT_008879bc + 1;
         }
         iStack_28 = iStack_28 + 4;
@@ -165,7 +164,7 @@ void core_curtain_cpp_FUN_0044a920(void)
           iVar3 = 0;
           do {
             if (pfVar5[0x1a] == 0.0) {
-              if ((float)_DAT_00619c42 <
+              if ((float)DOUBLE_00619c42 <
                   SQRT(pfVar5[0xd] * pfVar5[0xd] +
                        pfVar5[0xb] * pfVar5[0xb] + pfVar5[0xc] * pfVar5[0xc])) {
                 *(undefined4 *)(in_stack_00000004 + 0x65b34) = 1;
@@ -174,7 +173,7 @@ void core_curtain_cpp_FUN_0044a920(void)
               fStack_b8 = pfVar5[3] - *pfVar5;
               fStack_b4 = pfVar5[4] - pfVar5[1];
               fStack_b0 = pfVar5[5] - pfVar5[2];
-              if ((float)_DAT_00619c42 <
+              if ((float)DOUBLE_00619c42 <
                   SQRT(fStack_b0 * fStack_b0 + fStack_b8 * fStack_b8 + fStack_b4 * fStack_b4)) {
                 *(undefined4 *)(in_stack_00000004 + 0x65b34) = 1;
                 goto LAB_0044ac09;
@@ -203,17 +202,17 @@ LAB_0044ac09:
         iVar3 = in_stack_00000004 + 0x208;
         do {
           if (*(int *)(iVar3 + 0x68) == 0) {
-            fVar2 = (float)_DAT_00619c22;
+            fVar2 = (float)DOUBLE_00619c22;
             *(float *)(iVar3 + 0x2c) = *(float *)(iVar3 + 0x2c) * fVar2;
             fVar1 = *(float *)(in_stack_00000004 + 0x65b18);
             *(float *)(iVar3 + 0x34) = fVar2 * *(float *)(iVar3 + 0x34);
             *(float *)(iVar3 + 0x30) = fVar1 * *(float *)(iVar3 + 0x30);
             fStack_e0 = *(float *)(in_stack_00000004 + 0x65b14);
             if (*(int *)(iVar3 + 0x70) != 0) {
-              fStack_e0 = fStack_e0 * (float)_DAT_00619c2a;
+              fStack_e0 = fStack_e0 * (float)DOUBLE_00619c2a;
             }
             fStack_44 = 1.0 / in_stack_00000008;
-            fStack_18 = fStack_e0 * (float)_DAT_00619c32;
+            fStack_18 = fStack_e0 * (float)DOUBLE_00619c32;
             fStack_64 = -*(float *)(iVar3 + 0x2c);
             fStack_60 = -*(float *)(iVar3 + 0x30);
             fStack_4c = fStack_64 * fStack_44;
@@ -224,10 +223,10 @@ LAB_0044ac09:
             fStack_94 = fStack_4c * fStack_18;
             fStack_90 = fStack_48 * fStack_18;
             fStack_8c = fStack_44 * fStack_18;
-            fStack_70 = fStack_94 * _DAT_00619c3a + 0.0;
+            fStack_70 = fStack_94 * FLOAT_00619c3a + 0.0;
             fStack_58 = fStack_70 * fStack_50;
-            fStack_6c = (0.0 - fStack_e0) + fStack_90 * _DAT_00619c3a;
-            fStack_68 = fStack_8c * _DAT_00619c3a + 0.0;
+            fStack_6c = (0.0 - fStack_e0) + fStack_90 * FLOAT_00619c3a;
+            fStack_68 = fStack_8c * FLOAT_00619c3a + 0.0;
             fStack_54 = fStack_6c * fStack_50;
             fStack_50 = fStack_68 * fStack_50;
             if (&fStack_c4 != &fStack_58) {
@@ -340,7 +339,7 @@ LAB_0044ac09:
 //   XREF to: 006793d0 (READ)
 // 0044a96d: PUSH ESI
 //   XREF to: 02d05310 (DATA)
-// 0044a96e: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0044a96e: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0044a973: ADD ESP,0x8
 // 0044a976: TEST EAX,EAX

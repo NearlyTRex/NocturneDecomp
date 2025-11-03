@@ -21,7 +21,7 @@
 // Function calls:
 //   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
 //   core_hero.cpp_FUN_004f2340
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -34,8 +34,9 @@ CBaron * __cdecl core_baron_cpp_CBaron_ctor_FUN_00412bc0(CBaron *this_ptr)
   char *pcVar4;
   
   pCVar2 = (CBaron *)core_hero_cpp_FUN_004f2340();
-  (pCVar2->field0_0x0).base_character.base_actor.metadata.vtable = &g_CBaronVTable;
-  core_skeleton_cpp_FUN_005a0840();
+  (pCVar2->field0_0x0).base_character.base_actor.vtable = &g_CBaronVTable;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            (&(pCVar2->field0_0x0).base_character.model);
   pCVar2->field1_0x1fbd4[0xd4] = '\0';
   pCVar2->field1_0x1fbd4[0xd5] = '\0';
   pCVar2->field1_0x1fbd4[0xd6] = -0x80;
@@ -109,7 +110,7 @@ CBaron * __cdecl core_baron_cpp_CBaron_ctor_FUN_00412bc0(CBaron *this_ptr)
 // 00412bdc: PUSH EAX
 // 00412bdd: MOV dword ptr [EAX + -0x4],0x65a074
 //   XREF to: 0065a074 (DATA)
-// 00412be4: CALL core_skeleton.cpp_FUN_005a0840
+// 00412be4: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00412be9: LEA EAX,[EBX + 0x1fc9c]
 // 00412bef: MOV dword ptr [EBX + 0x1fca8],0x3f800000

@@ -17,7 +17,7 @@ int core_boneguy_cpp_FUN_0041d970(void)
   int iVar1;
   CCharacter *in_stack_00000004;
   
-  if (*(int *)(in_stack_00000004[1].model.padding_0x0 + 0x560) != 0) {
+  if (*(int *)(in_stack_00000004[1].model.field3_0x508 + 0x58) != 0) {
     return 0;
   }
   iVar1 = core_charactr_cpp_CCharacter_FUN_0042bc20(in_stack_00000004);

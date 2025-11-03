@@ -12,8 +12,9 @@ undefined4 core_colonel_cpp_FUN_00440650(void)
 
 {
   int iVar1;
+  CMotionController *in_stack_00000004;
   
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0();
+  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0(in_stack_00000004);
   return *(undefined4 *)(iVar1 + 0x24);
 }
 

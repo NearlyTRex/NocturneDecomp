@@ -7,7 +7,7 @@
 //   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d94f [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051e571 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00638529
+//   float FLOAT_00638529 = 65535
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonRenderer g_CDemonRendererInstance
 //   undefined4 DAT_02f31240
@@ -28,7 +28,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 shape_meshlod.cpp_FUN_0051ead0(undefined4 param_1, undefined4 param_2) */
 
 void shape_meshlod_cpp_FUN_0051ead0(void)
@@ -101,8 +100,8 @@ void shape_meshlod_cpp_FUN_0051ead0(void)
             fVar2 = extraout_EAX;
             iVar3 = extraout_EDX;
           }
-          fVar9 = (float10)local_30 * (float10)_DAT_00638529;
-          fVar10 = (float10)local_2c[0] * (float10)_DAT_00638529;
+          fVar9 = (float10)local_30 * (float10)FLOAT_00638529;
+          fVar10 = (float10)local_2c[0] * (float10)FLOAT_00638529;
           piVar7 = piVar7 + 2;
           dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(iVar3,fVar2));
           dVar11 = crt_math_c_round_FUN_005fe6b0(dVar11);

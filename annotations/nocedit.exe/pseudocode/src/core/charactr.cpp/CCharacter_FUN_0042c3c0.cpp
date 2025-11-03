@@ -22,7 +22,7 @@
 //   CHero*[4] g_HeroActors
 //   int g_LocalHeroIndex
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_charactr.cpp_CCharacter_FUN_0042b190
 //   core_charactr.cpp_CCharacter_FUN_0042b5b0
 //   core_charactr.cpp_CCharacter_FUN_0042b8e0
@@ -39,39 +39,44 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c3c0(CCharacter *this_ptr)
 
 {
   uint uVar1;
-  int extraout_EDX;
-  int iVar2;
-  int extraout_EDX_00;
-  int extraout_EDX_01;
-  int extraout_EDX_02;
-  int extraout_EDX_03;
+  undefined4 *extraout_EDX;
+  undefined4 *puVar2;
+  undefined4 *extraout_EDX_00;
+  undefined4 *extraout_EDX_01;
+  undefined4 *extraout_EDX_02;
+  undefined4 *extraout_EDX_03;
   BADSPACEBASE *in_ESP;
   float10 fVar3;
-  int in_stack_00000008;
+  undefined4 *in_stack_00000008;
+  CCharacter *in_stack_ffffffc8;
+  CVector3f *input_local_point;
+  CVector3f CStack_24;
   undefined1 auStack_18 [4];
   int iStack_14;
   
-  if (*(float *)(in_stack_00000008 + 4) <= 0.0) {
+  if ((float)in_stack_00000008[1] <= 0.0) {
     return;
   }
-  iVar2 = in_stack_00000008 + 0xc;
-  uVar1 = *(uint *)(in_stack_00000008 + 0x30);
+  puVar2 = in_stack_00000008 + 3;
+  uVar1 = in_stack_00000008[0xc];
   if (uVar1 < 6) {
     if (uVar1 < 4) {
       if (uVar1 == 3) {
+        in_stack_ffffffc8 = (CCharacter *)0x42c426;
         core_charactr_cpp_CCharacter_FUN_0042b930(this_ptr);
-        iVar2 = extraout_EDX;
+        puVar2 = extraout_EDX;
       }
       goto LAB_0042c429;
     }
     if (4 < uVar1) {
       core_charactr_cpp_CCharacter_FUN_0042b8e0(this_ptr);
-      iVar2 = extraout_EDX_03;
+      puVar2 = extraout_EDX_03;
       goto LAB_0042c429;
     }
 LAB_0042c50c:
+    in_stack_ffffffc8 = this_ptr;
     core_charactr_cpp_CCharacter_FUN_0042b9e0(this_ptr);
-    iVar2 = extraout_EDX_01;
+    puVar2 = extraout_EDX_01;
   }
   else {
     if (6 < uVar1) {
@@ -81,7 +86,7 @@ LAB_0042c50c:
       }
       if (uVar1 < 0x69) {
         core_charactr_cpp_CCharacter_FUN_0042b190(this_ptr);
-        iVar2 = extraout_EDX_02;
+        puVar2 = extraout_EDX_02;
         goto LAB_0042c429;
       }
       if (uVar1 != 0x6a) goto LAB_0042c429;
@@ -92,16 +97,20 @@ LAB_0042c50c:
     this_ptr->cloth_data[0x8d4b] = '@';
   }
 LAB_0042c429:
-  if (*(int *)(in_stack_00000008 + 0x28) == 5) {
-    core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr->base_actor);
+  if (in_stack_00000008[10] == 5) {
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (&this_ptr->base_actor,&CStack_24,(CVector3f *)(in_stack_00000008 + 7));
+    in_stack_ffffffc8 = (CCharacter *)*in_stack_00000008;
     core_charactr_cpp_CCharacter_FUN_0042b5b0(this_ptr);
-    iVar2 = extraout_EDX_00;
+    puVar2 = extraout_EDX_00;
   }
-  if (0.0 < *(float *)(in_stack_00000008 + 8)) {
-    fVar3 = (float10)*(float *)(in_stack_00000008 + 4) * (float10)*(float *)(in_stack_00000008 + 8);
-    crt_math_c_round_FUN_005fe6b0((double)CONCAT44(iVar2,auStack_18));
+  if (0.0 < (float)in_stack_00000008[2]) {
+    fVar3 = (float10)(float)in_stack_00000008[1] * (float10)(float)in_stack_00000008[2];
+    input_local_point = (CVector3f *)0x42c47c;
+    crt_math_c_round_FUN_005fe6b0((double)CONCAT44(puVar2,auStack_18));
     iStack_14 = (int)ROUND(fVar3);
-    core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr->base_actor);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (&this_ptr->base_actor,(CVector3f *)in_stack_ffffffc8,input_local_point);
     core_gore_cpp_FUN_004edbb0();
   }
   if ((this_ptr->health_bar_mode == 1) && ((CHero *)this_ptr != g_HeroActors[g_LocalHeroIndex])) {
@@ -177,7 +186,7 @@ LAB_0042c429:
 //   XREF to: Stack[-0x28] (DATA)
 // 0042c437: PUSH EAX
 // 0042c438: PUSH EBX
-// 0042c439: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0042c439: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0042c43e: ADD ESP,0xc
 // 0042c441: PUSH 0x0
@@ -215,7 +224,7 @@ LAB_0042c429:
 //   XREF to: Stack[-0x10] (WRITE)
 // 0042c481: MOV EDI,dword ptr [ESP + 0x28]
 //   XREF to: Stack[-0x10] (READ)
-// 0042c485: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0042c485: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0042c48a: ADD ESP,0xc
 // 0042c48d: MOV EBP,dword ptr [EBX + 0x2610]

@@ -88,8 +88,8 @@ void core_msnedit_cpp_HideActors_FUN_0053dcf0(void)
       if (config_param1_00 == 0) {
         shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffc5c);
         for (pCVar1 = in_stack_00000004->first_actor; pCVar1 != (CDemonActor *)0x0;
-            pCVar1 = (pCVar1->metadata).next_actor) {
-          if (*(int *)((pCVar1->metadata).field3_0x1c + 4) == 0) {
+            pCVar1 = pCVar1->next_actor) {
+          if (pCVar1->field26_0x148 == 0) {
             shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)auStack_3a0,pCVar1->actor_name)
             ;
           }
@@ -130,14 +130,11 @@ void core_msnedit_cpp_HideActors_FUN_0053dcf0(void)
                           );
         if (iVar3 != 0) {
           for (pCVar1 = in_stack_00000004->first_actor; pCVar1 != (CDemonActor *)0x0;
-              pCVar1 = (pCVar1->metadata).next_actor) {
-            if ((*(int *)((pCVar1->metadata).field3_0x1c + 4) == 0) &&
+              pCVar1 = pCVar1->next_actor) {
+            if ((pCVar1->field26_0x148 == 0) &&
                (iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
                                   (&DAT_00680660,pCVar1->actor_name,0), iVar3 != 0)) {
-              (pCVar1->metadata).field3_0x1c[4] = '\x01';
-              (pCVar1->metadata).field3_0x1c[5] = '\0';
-              (pCVar1->metadata).field3_0x1c[6] = '\0';
-              (pCVar1->metadata).field3_0x1c[7] = '\0';
+              pCVar1->field26_0x148 = 1;
             }
           }
           in_stack_fffff8b4 = &g_CEditorToolsPtr->field0_0x0;
@@ -159,13 +156,10 @@ LAB_0053deb7:
                       (g_CEditorToolsPtr,"Hide actors by type",&DAT_006806c8,100,1);
     if (iVar3 == 0) goto LAB_0053deb7;
     for (pCVar1 = in_stack_00000004->first_actor; pCVar1 != (CDemonActor *)0x0;
-        pCVar1 = (pCVar1->metadata).next_actor) {
-      if ((*(int *)((pCVar1->metadata).field3_0x1c + 4) == 0) &&
+        pCVar1 = pCVar1->next_actor) {
+      if ((pCVar1->field26_0x148 == 0) &&
          (iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar1,&DAT_006806c8), iVar3 != 0)) {
-        (pCVar1->metadata).field3_0x1c[4] = '\x01';
-        (pCVar1->metadata).field3_0x1c[5] = '\0';
-        (pCVar1->metadata).field3_0x1c[6] = '\0';
-        (pCVar1->metadata).field3_0x1c[7] = '\0';
+        pCVar1->field26_0x148 = 1;
       }
     }
     in_stack_fffff8b8 = (CStrList_vtable *)0x53df3d;

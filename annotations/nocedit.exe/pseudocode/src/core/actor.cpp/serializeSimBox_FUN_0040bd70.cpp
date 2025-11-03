@@ -11,11 +11,11 @@
 //   TerminatedCString s_sim_box_state_info_closi_0061404f
 //   TerminatedCString s_s_s_00614070
 //   TerminatedCString s_s_0061407b
-//   char* g_PropertyNamePrefix = 00000000
+//   char[104] g_PropertyNamePrefix
 //   FILE* g_ActorDataFile
 //   int g_ActorReadingMode
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_0040aee0
+//   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   core_actor.cpp_handleActorPropertyParseError_FUN_0040b210
 //   core_box.cpp_CBox_loadFromFile_FUN_0041fe90
 //   core_box.cpp_CBox_saveToFile_FUN_00420020
@@ -28,16 +28,15 @@ void __cdecl core_actor_cpp_serializeSimBox_FUN_0040bd70(CSimBox *simbox_ptr,cha
 
 {
   int iVar1;
-  int unk;
   CBox *in_stack_0000000c;
   
   if (g_ActorReadingMode != 1) {
-    iVar1 = crt_stdio_c_fprintf_FUN_005fe6d0
-                      (g_ActorDataFile,"%s{ // %s\n",&g_PropertyNamePrefix,property_name);
-    core_actor_cpp_CDemonActor_FUN_0040aee0(iVar1);
+    crt_stdio_c_fprintf_FUN_005fe6d0
+              (g_ActorDataFile,"%s{ // %s\n",g_PropertyNamePrefix,property_name);
+    core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(1);
     core_box_cpp_CBox_saveToFile_FUN_00420020(in_stack_0000000c,g_ActorDataFile);
-    core_actor_cpp_CDemonActor_FUN_0040aee0(unk);
-    crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s}\n",&g_PropertyNamePrefix);
+    core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(-1);
+    crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s}\n",g_PropertyNamePrefix);
     return;
   }
   do {
@@ -153,7 +152,7 @@ void __cdecl core_actor_cpp_serializeSimBox_FUN_0040bd70(CSimBox *simbox_ptr,cha
 //   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
 // 0040be0e: ADD ESP,0x10
 // 0040be11: PUSH 0x1
-// 0040be13: CALL core_actor.cpp_CDemonActor_FUN_0040aee0
+// 0040be13: CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   XREF to: 0040aee0 (UNCONDITIONAL_CALL)
 // 0040be18: ADD ESP,0x4
 // 0040be1b: PUSH 0x66e178
@@ -168,7 +167,7 @@ void __cdecl core_actor_cpp_serializeSimBox_FUN_0040bd70(CSimBox *simbox_ptr,cha
 //   XREF to: 00420020 (UNCONDITIONAL_CALL)
 // 0040be31: ADD ESP,0xc
 // 0040be34: PUSH -0x1
-// 0040be36: CALL core_actor.cpp_CDemonActor_FUN_0040aee0
+// 0040be36: CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   XREF to: 0040aee0 (UNCONDITIONAL_CALL)
 // 0040be3b: ADD ESP,0x4
 // 0040be3e: PUSH 0x66e178

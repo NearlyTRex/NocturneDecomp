@@ -14,14 +14,7 @@ void __cdecl
 core_dlight_cpp_CDemonLight_initializeVisibilityBuffer_FUN_00475fc0(CDemonLight *this_ptr)
 
 {
-  int iVar1;
-  int iVar2;
-  
-  iVar1 = this_ptr->shadow_map_width * this_ptr->shadow_map_height;
-  iVar2 = iVar1 >> 0x1f;
-  iVar1 = (int)((iVar1 + iVar2 * -8) - (uint)(iVar2 << 2 < 0)) >> 3;
-  core_event_cpp_FUN_004b19d0
-            (iVar1,0,this_ptr->shadow_map_height,this_ptr->lightmap_visibility_bits,iVar1);
+  core_event_cpp_FUN_004b19d0();
   return;
 }
 

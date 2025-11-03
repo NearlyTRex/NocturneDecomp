@@ -4,8 +4,8 @@
 // Convention: unknown
 // Signature: undefined core_boneguy.cpp_FUN_0041ca40()
 // Globals:
-//   undefined4 DAT_00616165
-//   undefined4 DAT_0061616d
+//   float FLOAT_00616165 = 0.5
+//   double DOUBLE_0061616d = 0.400000000000000
 //   CVector3f g_ZeroVector
 // Function calls:
 //   core_actor.cpp_CVector_ctor_FUN_00410340
@@ -15,7 +15,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_boneguy.cpp_FUN_0041ca40(undefined4 param_1, undefined4
    param_2) */
 
@@ -68,9 +67,9 @@ void core_boneguy_cpp_FUN_0041ca40(void)
   local_54.y = local_8c + local_80;
   local_54.z = local_88 + local_7c;
   core_actor_cpp_CVector_ctor_FUN_00410340(&local_30);
-  local_30.x = local_54.x * _DAT_00616165;
-  local_30.y = local_54.y * _DAT_00616165;
-  local_30.z = local_88 + (float)_DAT_0061616d;
+  local_30.x = local_54.x * FLOAT_00616165;
+  local_30.y = local_54.y * FLOAT_00616165;
+  local_30.z = local_88 + (float)DOUBLE_0061616d;
   if (&local_48 != &local_30) {
     local_48.x = local_30.x;
     local_48.y = local_30.y;

@@ -7,14 +7,13 @@
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bc4ff [UNCONDITIONAL_CALL]
 // Globals:
 //   void* switchdataD_005c5ee4 = 005c6004
-//   undefined4 DAT_00653e7c
+//   double DOUBLE_00653e7c = 0.990000000000000
 // Function calls:
 //   core_charactr.cpp_CCharacter_FUN_0042e840
 //   core_stranger.cpp_CStranger_FUN_005c06b0
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_hero_stranger.cpp_CStranger_FUN_005c5f10(undefined4 param_1) */
 
 void core_stranger_cpp_CStranger_FUN_005c5f10(void)
@@ -114,7 +113,7 @@ switchD_005c5ffd_caseD_8:
     }
   }
   fVar1 = (float)core_charactr_cpp_CCharacter_FUN_0042e840();
-  if ((float)_DAT_00653e7c <= fVar1) {
+  if ((float)DOUBLE_00653e7c <= fVar1) {
     iVar4 = in_stack_00000004 + 0x1fbe8;
     if ((*(int *)(in_stack_00000004 + 0x1fc30) != 0) &&
        (*(int *)(*(int *)(in_stack_00000004 + 0x1fc2c) + 0x2e0) == 0)) {

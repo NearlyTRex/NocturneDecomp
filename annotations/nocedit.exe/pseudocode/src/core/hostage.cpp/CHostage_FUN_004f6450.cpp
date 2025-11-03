@@ -15,6 +15,7 @@
 void __cdecl core_hostage_cpp_CHostage_FUN_004f6450(CHostage *this_ptr)
 
 {
+  CDeformableModelInstance *this_ptr_00;
   float fVar1;
   int iVar2;
   undefined4 uVar3;
@@ -26,18 +27,20 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6450(CHostage *this_ptr)
     *(undefined4 *)(in_stack_00000008 + 4) = 0;
   }
   fVar1 = (this_ptr->base_npc).base_character.hit_points - *(float *)(in_stack_00000008 + 4);
+  this_ptr_00 = &(this_ptr->base_npc).base_character.model;
   (this_ptr->base_npc).base_character.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base_npc).base_character.hit_points = 0.0;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
-    (*((this_ptr->base_npc).base_character.base_actor.metadata.vtable)->spawnFlies)
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_00->motion_controller);
+    (*((this_ptr->base_npc).base_character.base_actor.vtable)->spawnFlies)
               ((CDemonActor *)this_ptr,0x32,25.0);
-    (*((this_ptr->base_npc).base_character.base_actor.metadata.vtable)->playSound)
+    (*((this_ptr->base_npc).base_character.base_actor.vtable)->playSound)
               ((CDemonActor *)this_ptr,this_ptr->field2_0x1f70c + 0x340);
   }
   else if (0.0 < *(float *)(in_stack_00000008 + 4)) {
     if ((this_ptr->base_npc).base_character.grabbed_by == (CDemonActor *)0x0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                (&this_ptr_00->motion_controller);
       uVar3 = DAT_00821ff4;
       this_ptr->field8_0x1fae0[0xc] = '\0';
       this_ptr->field8_0x1fae0[0xd] = '\0';
@@ -49,7 +52,7 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6450(CHostage *this_ptr)
     iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
     if (iVar2 == 0) {
       uStack0000001c = 0x4f6539;
-      uVar3 = (*((this_ptr->base_npc).base_character.base_actor.metadata.vtable)->playSound)
+      uVar3 = (*((this_ptr->base_npc).base_character.base_actor.vtable)->playSound)
                         ((CDemonActor *)this_ptr,this_ptr->field2_0x1f70c + 0x2dc);
       *(undefined4 *)(this_ptr->field2_0x1f70c + 0x3a4) = uVar3;
       uStack00000030 = 0x4f6549;

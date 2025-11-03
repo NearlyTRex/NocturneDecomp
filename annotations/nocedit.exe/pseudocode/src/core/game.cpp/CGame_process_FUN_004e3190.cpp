@@ -34,7 +34,7 @@
 //   CWeather* g_CWeatherPtr = 03f95dc0
 //   CConsole g_ConsolePtr
 //   CFilterFx g_CFilterFXInstance
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CFireEffect g_CFireEffectInstance
 //   CGame g_CGameInstance
 //   undefined4 DAT_02d81ca8
@@ -87,7 +87,6 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
   int iVar4;
   int unaff_ESI;
   CGame *in_stack_00000014;
-  char *pcStack00000034;
   CWeather *pCStack00000044;
   int iStack00000070;
   
@@ -167,14 +166,11 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
     engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s : %3.2f ms\n");
   }
   if (g_CGamePtr->profile_mode == 1) {
-    pcStack00000034 = (char *)0x4e34d0;
     g_ProfileStartTime = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   }
-  pcStack00000034 = (char *)g_CEventListPtr;
-  core_event_cpp_CEventList_process_FUN_004aaac0();
+  core_event_cpp_CEventList_process_FUN_004aaac0(g_CEventListPtr);
   if (g_CGamePtr->profile_mode == 1) {
     wincore_winrun_cpp_getTime_FUN_005f2dc0();
-    pcStack00000034 = "gEventList->process()";
     engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s : %3.2f ms\n");
   }
   core_terrain_cpp_CTerrain_process_FUN_005e2050(g_CTerrainPtr);

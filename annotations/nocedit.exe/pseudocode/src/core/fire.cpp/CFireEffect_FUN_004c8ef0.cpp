@@ -8,8 +8,8 @@
 //   core_emitter.cpp_FUN_004a8070 (004a8070) at 004a849e [UNCONDITIONAL_CALL]
 //   core_flamegun.cpp_FUN_004cb920 (004cb920) at 004cb971 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_02d6cf64
-//   CGunFlame[500] g_CFireEffectGunFlames
+//   CCrater* g_CraterActiveListHead
+//   CGunFlame[500] g_GunFlamePool
 // Function calls:
 //   core_fire.cpp_CGunFlame_FUN_004c4db0
 
@@ -22,10 +22,10 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8ef0(CFireEffect *this_ptr)
   
   if (0 < in_stack_00000010) {
     do {
-      core_fire_cpp_CGunFlame_FUN_004c4db0(g_CFireEffectGunFlames + DAT_02d6cf64);
-      DAT_02d6cf64 = DAT_02d6cf64 + 1;
-      if (499 < DAT_02d6cf64) {
-        DAT_02d6cf64 = 0;
+      core_fire_cpp_CGunFlame_FUN_004c4db0(g_GunFlamePool + (int)g_CraterActiveListHead);
+      g_CraterActiveListHead = (CCrater *)(g_CraterActiveListHead->field0_0x0 + 1);
+      if (499 < (int)g_CraterActiveListHead) {
+        g_CraterActiveListHead = (CCrater *)0x0;
       }
       in_stack_00000010 = in_stack_00000010 + -1;
     } while (0 < in_stack_00000010);

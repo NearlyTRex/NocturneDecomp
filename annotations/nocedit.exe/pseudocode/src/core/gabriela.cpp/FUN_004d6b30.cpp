@@ -25,6 +25,7 @@
 void core_gabriela_cpp_FUN_004d6b30(void)
 
 {
+  CDeformableModelInstance *this_ptr;
   CDemonActor_vtable *pCVar1;
   int iVar2;
   float fVar3;
@@ -42,14 +43,16 @@ void core_gabriela_cpp_FUN_004d6b30(void)
   }
   *(undefined4 *)in_stack_00000004[1].base_actor.actor_name = DAT_0065e7c4;
   fVar3 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
+  this_ptr = &in_stack_00000004->model;
   in_stack_00000004->hit_points = fVar3;
   if (0.0 < fVar3) {
     if (0.0 < *(float *)(in_stack_00000008 + 4)) {
       if (*(int *)(in_stack_00000004[2].cloth_data + 0x54cc) == 0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller)
+        ;
       }
       if (g_CGamePtr->hero_number != 2) {
-        pCVar1 = (in_stack_00000004->base_actor).metadata.vtable;
+        pCVar1 = (in_stack_00000004->base_actor).vtable;
         fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.25,0.4);
         (*pCVar1->playSoundWithVolume)
                   (&in_stack_00000004->base_actor,"gb-hit[1,6].wav",fVar3);
@@ -58,15 +61,16 @@ void core_gabriela_cpp_FUN_004d6b30(void)
   }
   else {
     in_stack_00000004->hit_points = 0.0;
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
     if (*(int *)(iVar2 + 0x24) != 0xc) {
-      iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0();
+      iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
       if (*(int *)(iVar2 + 0x24) != 0xb) {
         in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
         core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,100.0);
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                  (&(in_stack_00000004->model).motion_controller);
         if (g_CGamePtr->hero_number != 2) {
-          pCVar1 = (in_stack_00000004->base_actor).metadata.vtable;
+          pCVar1 = (in_stack_00000004->base_actor).vtable;
           fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.25,0.4);
           (*pCVar1->playSoundWithVolume)
                     (&in_stack_00000004->base_actor,"gb-die[1,6].wav",fVar3);

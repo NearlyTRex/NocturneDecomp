@@ -4,5 +4,7 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x32C0000
 // =============================================================================
 
-CVector3f[4000] DAT_032c1ccc = {};
+CDemonLight*[32] g_SecondaryDirectionalLights = {};
+CVector3f[4000] g_FaceNormalArray = {};
+CVector3i[20000] g_TransformedVertexArray = {};
 

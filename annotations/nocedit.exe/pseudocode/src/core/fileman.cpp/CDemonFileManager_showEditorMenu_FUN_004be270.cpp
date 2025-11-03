@@ -32,8 +32,8 @@
 //   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20
 //   core_fileman.cpp_CDemonFileManager_moveSetIntoPod_FUN_004bd930
 //   core_fileman.cpp_refreshSoundDirectory_FUN_004be590
-//   core_skeleton.cpp_CDeformableModel_freeAllModels_FUN_005a1dc0
-//   core_skeleton.cpp_CSkeleton_freeAllSkeletons_FUN_005a1ea0
+//   core_skeleton.cpp_freeAllModels_FUN_005a1dc0
+//   core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0
 //   crt_ctype.c_toupper_FUN_005ff9e0
 //   engine_2d.c_clearInputAndWait_FUN_00403260
 //   engine_2d.c_drawText_FUN_00401fd0
@@ -89,8 +89,8 @@ core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(CDemonFileManager
     uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
     uVar1 = crt_ctype_c_toupper_FUN_005ff9e0(uVar1 & 0xff);
     core_dmodel_cpp_freeAllModels_FUN_00478cb0();
-    core_skeleton_cpp_CDeformableModel_freeAllModels_FUN_005a1dc0();
-    core_skeleton_cpp_CSkeleton_freeAllSkeletons_FUN_005a1ea0();
+    core_skeleton_cpp_freeAllModels_FUN_005a1dc0();
+    core_skeleton_cpp_freeAllSkeletons_FUN_005a1ea0();
     if (uVar1 < 0x43) {
       if (uVar1 < 0x35) {
         if (uVar1 < 0x32) {
@@ -321,9 +321,9 @@ core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(CDemonFileManager
 // 004be3d4: MOV EDI,EAX
 // 004be3d6: CALL core_dmodel.cpp_freeAllModels_FUN_00478cb0
 //   XREF to: 00478cb0 (UNCONDITIONAL_CALL)
-// 004be3db: CALL core_skeleton.cpp_CDeformableModel_freeAllModels_FUN_005a1dc0
+// 004be3db: CALL core_skeleton.cpp_freeAllModels_FUN_005a1dc0
 //   XREF to: 005a1dc0 (UNCONDITIONAL_CALL)
-// 004be3e0: CALL core_skeleton.cpp_CSkeleton_freeAllSkeletons_FUN_005a1ea0
+// 004be3e0: CALL core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0
 //   XREF to: 005a1ea0 (UNCONDITIONAL_CALL)
 // 004be3e5: MOV EAX,EBX
 // 004be3e7: CMP EBX,0x43

@@ -1,8 +1,8 @@
 // Name: core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 // Address: 0052db00
 // Address Range: [[0052db00, 0052db87]]
-// Convention: unknown
-// Signature: undefined core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00()
+// Convention: __cdecl
+// Signature: void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr)
 // Cross-references:
 //   core_baron.cpp_CBaron_process_FUN_00412e80 (00412e80) at 00412ebf [UNCONDITIONAL_CALL]
 //   core_baron.cpp_FUN_00413470 (00413470) at 0041355b [UNCONDITIONAL_CALL]
@@ -29,7 +29,7 @@
 //   core_dracbrid.cpp_FUN_00486070 (00486070) at 0048613f [UNCONDITIONAL_CALL]
 //   core_drone.cpp_FUN_0048ec70 (0048ec70) at 0048ed5c [UNCONDITIONAL_CALL]
 //   core_drone.cpp_FUN_0048f360 (0048f360) at 0048f461 [UNCONDITIONAL_CALL]
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004acfc9 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004acfc9 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d2ea0 (004d2ea0) at 004d3b8b [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d4890 (004d4890) at 004d49a8 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d5c60 (004d5c60) at 004d5ea7 [UNCONDITIONAL_CALL]
@@ -66,7 +66,7 @@
 //   core_mobster.cpp_FUN_00526d90 (00526d90) at 0052705c [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_FUN_00527740 (00527740) at 005277e6 [UNCONDITIONAL_CALL]
 //   core_moloch.cpp_FUN_00528d20 (00528d20) at 00528f86 [UNCONDITIONAL_CALL]
-//   core_motion.cpp_CMotionController_FUN_0052db90 (0052db90) at 0052dbb3 [UNCONDITIONAL_CALL]
+//   core_motion.cpp_FUN_0052db90 (0052db90) at 0052dbb3 [UNCONDITIONAL_CALL]
 //   core_npc.cpp_CNPC_process_FUN_005448b0 (005448b0) at 00544b4b [UNCONDITIONAL_CALL]
 //   core_npc.cpp_FUN_00544c50 (00544c50) at 00544d11 [UNCONDITIONAL_CALL]
 //   core_passngr.cpp_FUN_00545ef0 (00545ef0) at 00545fa6 [UNCONDITIONAL_CALL]
@@ -102,7 +102,7 @@
 //   core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530 (005fb530) at 005fba98 [UNCONDITIONAL_CALL]
 //   core_zombie.cpp_CZombie_process_FUN_005f9470 (005f9470) at 005fa15a [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\motion.cpp_0063aa47
+//   TerminatedCString s_core_motion_cpp_0063aa47
 //   TerminatedCString s_CMotionController_setDes_0063aa5a
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -113,39 +113,36 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_motion.cpp_CMotionController_setDesiredState(CMotionController*
-   pMotionController, int nStateIndex, undefined4 param_3) */
-
-void core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(void)
+void __cdecl
+core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController *this_ptr)
 
 {
-  undefined4 *in_stack_00000004;
   int in_stack_00000008;
   int in_stack_00000010;
   
   if (in_stack_00000008 < 0) {
-    in_stack_00000004[10] = 0xffffffff;
+    this_ptr->state_index = -1;
     return;
   }
-  if (*(int *)*in_stack_00000004 <= in_stack_00000008) {
-    g_CurrentFilename = "?..\\core\\motion.cpp" + 1;
+  if (this_ptr->motion_list_ptr->state_count <= in_stack_00000008) {
+    g_CurrentFilename = "..\\core\\motion.cpp";
     g_CurrentLineNumber = 0x274;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMotionController::setDesiredState - invalid state index");
   }
-  if (in_stack_00000008 != in_stack_00000004[10]) {
-    if (in_stack_00000004[0xb] != 0) {
-      if (in_stack_00000004[8] == 0) {
-        core_motion_cpp_CMotionController_FUN_0052da50();
+  if (in_stack_00000008 != this_ptr->state_index) {
+    if (this_ptr->field11_0x2c != 0) {
+      if (this_ptr->tween_direction == 0) {
+        core_motion_cpp_CMotionController_FUN_0052da50(this_ptr);
       }
-      in_stack_00000004[0xb] = 0;
+      this_ptr->field11_0x2c = 0;
     }
-    in_stack_00000004[9] = 0;
-    in_stack_00000004[10] = in_stack_00000008;
+    this_ptr->tween_set_new_state = 0;
+    this_ptr->state_index = in_stack_00000008;
   }
   if (in_stack_00000010 == 0) {
     return;
   }
-  core_motion_cpp_CMotionController_FUN_0052d950();
+  core_motion_cpp_CMotionController_FUN_0052d950(this_ptr);
   return;
 }
 

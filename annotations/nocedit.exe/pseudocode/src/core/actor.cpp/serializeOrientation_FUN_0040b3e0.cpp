@@ -12,7 +12,7 @@
 //   TerminatedCString s_f_f_f_00613ebf
 //   TerminatedCString s_s_g_g_g_00613ec8
 //   string s_Euler_PBH_orientation_0066e0f0
-//   char* g_PropertyNamePrefix = 00000000
+//   char[104] g_PropertyNamePrefix
 //   FILE* g_ActorDataFile
 //   int g_ActorReadingMode
 // Function calls:
@@ -39,7 +39,7 @@ core_actor_cpp_serializeOrientation_FUN_0040b3e0(COrientation *orient_ptr,char *
   }
   else {
     crt_stdio_c_fprintf_FUN_005fe6d0
-              (g_ActorDataFile,"%s%g,%g,%g",&g_PropertyNamePrefix,(double)orient_ptr->pitch,
+              (g_ActorDataFile,"%s%g,%g,%g",g_PropertyNamePrefix,(double)orient_ptr->pitch,
                (double)orient_ptr->heading,(double)orient_ptr->bank);
   }
   core_actor_cpp_serializeDescription_FUN_0040b290

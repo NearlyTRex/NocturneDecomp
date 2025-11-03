@@ -9,16 +9,16 @@
 //   core_hero.cpp_FUN_004f2ed0 (004f2ed0) at 004f2f11 [UNCONDITIONAL_CALL]
 // Globals:
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 // Function calls:
-//   core_event.cpp_FUN_004aabe0
+//   core_event.cpp_CEventList_FUN_004aabe0
 
 #include "nocturne.h"
 
 void core_door_cpp_FUN_0047fcf0(void)
 
 {
-  core_event_cpp_FUN_004aabe0();
+  core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
   return;
 }
 
@@ -34,7 +34,7 @@ void core_door_cpp_FUN_0047fcf0(void)
 //   XREF to: 006793d0 (READ)
 // 0047fd00: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 0047fd01: CALL core_event.cpp_FUN_004aabe0
+// 0047fd01: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 0047fd06: ADD ESP,0x8
 // 0047fd09: RET

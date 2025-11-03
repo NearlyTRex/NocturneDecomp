@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c367 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\skeledit.cpp_0064b0ca
+//   TerminatedCString s_core_skeledit_cpp_0064b0ca
 //   TerminatedCString s_CDeformableModel_removeU_0064b0df
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -35,7 +35,7 @@ void core_skeledit_cpp_FUN_0058ec60(void)
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x34);
   if (*(int *)(in_stack_0000000c + 0xb8) != 1) {
-    g_CurrentFilename = "?..\\core\\skeledit.cpp" + 1;
+    g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0xa72;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::removeUnusedTextures() - textureSetCount must be 1.");
   }

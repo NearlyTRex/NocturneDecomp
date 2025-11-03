@@ -52,7 +52,7 @@
 void __cdecl core_hero_cpp_CHero_serialize_FUN_004f2610(CHero *this_ptr)
 
 {
-  CDeformableModelInstance *motion;
+  CDeformableModelInstance *motion_controller;
   CHero *pCVar1;
   int iVar2;
   BADSPACEBASE *in_ESP;
@@ -60,11 +60,12 @@ void __cdecl core_hero_cpp_CHero_serialize_FUN_004f2610(CHero *this_ptr)
   char acStack_60 [88];
   
   pCVar1 = this_ptr;
-  motion = &(this_ptr->base_character).model;
+  motion_controller = &(this_ptr->base_character).model;
   if (g_CHeroPlaceholderClassVersion < 4) {
     core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0((CDemonActor *)this_ptr);
     if (1 < g_CHeroPlaceholderClassVersion) {
-      core_actor_cpp_serializeMotionState_FUN_0040b9f0(motion,"motion state");
+      core_actor_cpp_serializeMotionState_FUN_0040b9f0
+                (&motion_controller->motion_controller,"motion state");
     }
     if (2 < g_CHeroPlaceholderClassVersion) {
       core_actor_cpp_serializePartStatus_FUN_0040bae0
@@ -77,8 +78,9 @@ void __cdecl core_hero_cpp_CHero_serialize_FUN_004f2610(CHero *this_ptr)
   }
   else {
     core_charactr_cpp_CCharacter_serialize_FUN_004283a0(&this_ptr->base_character);
-    core_actor_cpp_serializeMotionState_FUN_0040b9f0(motion,"motion state");
-    core_actor_cpp_serializePartStatus_FUN_0040bae0(motion,"partStatus");
+    core_actor_cpp_serializeMotionState_FUN_0040b9f0
+              (&motion_controller->motion_controller,"motion state");
+    core_actor_cpp_serializePartStatus_FUN_0040bae0(motion_controller,"partStatus");
     if (g_CHeroPlaceholderClassVersion < 8) {
       core_actor_cpp_serializeActor_FUN_0040b870
                 ((CDemonActor *)&(pCVar1->base_character).grabbed_by,"grabbedBy");

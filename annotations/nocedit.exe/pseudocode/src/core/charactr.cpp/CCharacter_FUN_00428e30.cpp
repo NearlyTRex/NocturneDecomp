@@ -24,8 +24,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428e30(CCharacter *this_ptr)
   float fStack_18;
   float fStack_14;
   
-  iVar1 = (*(this_ptr->base_actor).metadata.vtable[1].hasCollision)
-                    (&this_ptr->base_actor,in_stack_ffffffbc);
+  iVar1 = (*(this_ptr->base_actor).vtable[1].hasCollision)(&this_ptr->base_actor,in_stack_ffffffbc);
   if (0 < iVar1) {
     return;
   }
@@ -36,7 +35,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428e30(CCharacter *this_ptr)
     fStack_18 = in_stack_0000000c[1];
     fStack_14 = in_stack_0000000c[2];
   }
-  (*(this_ptr->base_actor).metadata.vtable[1].playAmbientSoundWithVolume)
+  (*(this_ptr->base_actor).vtable[1].playAmbientSoundWithVolume)
             (&this_ptr->base_actor,&stack0xffffffd8,in_stack_ffffffd8);
   fStack_14 = 6.112374e-39;
   core_charactr_cpp_CCharacter_FUN_0042d060(this_ptr);

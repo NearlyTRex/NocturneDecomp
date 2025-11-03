@@ -30,7 +30,7 @@
 //   core_conveyor.cpp_dtor_FUN_00442310 (00442310) at 00442336 [UNCONDITIONAL_CALL]
 //   core_cow.cpp_FUN_00444cd0 (00444cd0) at 00444d4a [UNCONDITIONAL_CALL]
 //   core_crate.cpp_FUN_00448bb0 (00448bb0) at 00448bbf [UNCONDITIONAL_CALL]
-//   core_crossbow.cpp_FUN_004495a0 (004495a0) at 004495b5 [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_dtor_FUN_004495a0 (004495a0) at 004495b5 [UNCONDITIONAL_CALL]
 //   core_curtain.cpp_FUN_0044ba30 (0044ba30) at 0044ba56 [UNCONDITIONAL_CALL]
 //   core_dest.cpp_FUN_0046ff00 (0046ff00) at 0046ff0f [UNCONDITIONAL_CALL]
 //   core_dog.cpp_CZombieDog_dtor_FUN_0047f9a0 (0047f9a0) at 0047fa1a [UNCONDITIONAL_CALL]
@@ -117,7 +117,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor *
     return this_ptr;
   }
   this_ptr->field6_0x68 = 0x495fd67;
-  (this_ptr->metadata).vtable = &g_CDemonActorVTable;
+  this_ptr->vtable = &g_CDemonActorVTable;
   if ((d1 & 2) == 0) {
     return this_ptr;
   }

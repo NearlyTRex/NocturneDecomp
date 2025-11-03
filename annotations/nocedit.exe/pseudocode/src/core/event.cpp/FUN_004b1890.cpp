@@ -7,33 +7,31 @@
 //   core_event.cpp_FUN_004b18e0 (004b18e0) at 004b18e5 [UNCONDITIONAL_CALL]
 // Globals:
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 // Function calls:
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 
 #include "nocturne.h"
-
-/* Signature: undefined1 core_event.cpp_FUN_004b1890(undefined4 param_1) */
 
 int core_event_cpp_FUN_004b1890(void)
 
 {
   int iVar1;
   int iVar2;
-  int *n1;
+  int *condition_expression;
   int *in_stack_00000004;
   
   iVar2 = 0;
   if (0 < *in_stack_00000004) {
-    n1 = in_stack_00000004 + 1;
+    condition_expression = in_stack_00000004 + 1;
     do {
-      iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                        (g_CEventListPtr,(char *)n1);
+      iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+                        (g_CEventListPtr,(char *)condition_expression);
       if (iVar1 != 0) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      n1 = n1 + 0x19;
+      condition_expression = condition_expression + 0x19;
     } while (iVar2 < *in_stack_00000004);
   }
   return -1;
@@ -60,7 +58,7 @@ int core_event_cpp_FUN_004b1890(void)
 //   XREF to: 006793d0 (READ)
 // 004b18aa: PUSH EBP
 //   XREF to: 02d05310 (DATA)
-// 004b18ab: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 004b18ab: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 004b18b0: ADD ESP,0x8
 // 004b18b3: TEST EAX,EAX

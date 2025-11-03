@@ -73,7 +73,7 @@ core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
     this_ptr_00 = this_ptr->selected_weapon;
     if (this_ptr_00 != unaff_ESI) {
       if (this_ptr_00 != (CWeapon *)0x0) {
-        (*((this_ptr_00->base_actor).metadata.vtable)->process)(&this_ptr_00->base_actor);
+        (*((this_ptr_00->base_actor).vtable)->process)(&this_ptr_00->base_actor);
       }
       this_ptr->selected_weapon = (CWeapon *)this_ptr;
       core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(this_ptr);

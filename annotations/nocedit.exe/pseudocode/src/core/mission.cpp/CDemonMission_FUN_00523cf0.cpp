@@ -63,7 +63,7 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00523cf0(CDemonMission *this_ptr
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
                 (this_ptr_00,"..\\core\\mission.cpp",0x33f);
       iVar4 = iVar4 + 1;
-      (*((this_ptr_00->metadata).vtable)->setup)(this_ptr_00);
+      (*this_ptr_00->vtable->setup)(this_ptr_00);
       if (iVar4 == (int)((iVar5 + (iVar5 >> 0x1f) * -4) - (uint)((iVar5 >> 0x1f) << 1 < 0)) >> 2) {
         pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Setting up actors");
         core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,pcVar2,(int)pcVar1);
@@ -78,7 +78,7 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00523cf0(CDemonMission *this_ptr
         pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Setting up actors");
         core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,pcVar1,(int)pcVar2);
       }
-      this_ptr_00 = (this_ptr_00->metadata).next_actor;
+      this_ptr_00 = this_ptr_00->next_actor;
     } while (this_ptr_00 != (CDemonActor *)0x0);
   }
   *(undefined4 *)(in_stack_00000010 + 0x884) = 1;

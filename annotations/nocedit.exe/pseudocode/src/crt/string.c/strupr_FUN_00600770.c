@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: char * crt_string.c_strupr_FUN_00600770(char * string)
 // Cross-references:
-//   core_event.cpp_EventChecker2_FUN_004b0470 (004b0470) at 004b051b [UNCONDITIONAL_CALL]
-//   core_event.cpp_EventChecker_FUN_004b0330 (004b0330) at 004b03db [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004b0330 (004b0330) at 004b03db [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004b0470 (004b0470) at 004b051b [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 (00584940) at 00584e21 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 (0057e7c0) at 0057ecfd [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_DementedFogEditor_FUN_00580730 (00580730) at 00580eb5 [UNCONDITIONAL_CALL]

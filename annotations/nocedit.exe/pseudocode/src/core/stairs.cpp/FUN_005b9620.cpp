@@ -6,9 +6,9 @@
 // Cross-references:
 //   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 (0043c880) at 0043c8f5 [UNCONDITIONAL_CALL]
 //   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 (0043d590) at 0043d5c8 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052bdf3 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052ca90 (0052ca90) at 0052caae [UNCONDITIONAL_CALL]
-//   core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0 (0052bcb0) at 0052bdf3 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00596a02 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596a02 [UNCONDITIONAL_CALL]
 //   core_stairs.cpp_FUN_005b95c0 (005b95c0) at 005b9612 [UNCONDITIONAL_CALL]
 //   core_stairs.cpp_FUN_005b9670 (005b9670) at 005b9937 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051da03 [UNCONDITIONAL_CALL]

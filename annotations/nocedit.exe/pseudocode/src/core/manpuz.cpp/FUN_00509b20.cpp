@@ -9,7 +9,7 @@
 // Globals:
 //   undefined4 DAT_00660d8c
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 //   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 
@@ -26,19 +26,16 @@ void core_manpuz_cpp_FUN_00509b20(void)
   float fVar2;
   int iVar3;
   CVector3f *pCVar4;
-  float *pfVar5;
-  float *pfVar6;
   BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  int in_stack_00000008;
-  CVector3f local_30;
+  float in_stack_00000008;
   CVector3f CStack_24;
-  int local_10;
+  float local_10;
   
-  iVar3 = in_stack_00000008 * 100;
+  iVar3 = (int)in_stack_00000008 * 100;
   local_10 = in_stack_00000008;
-  fVar2 = ((float)in_stack_00000008 + *(float *)(in_stack_00000004[4].create_event + iVar3 + 0x1c))
-          * _DAT_00660d8c;
+  fVar2 = ((float)(int)in_stack_00000008 +
+          *(float *)(in_stack_00000004[4].create_event + iVar3 + 0x1c)) * _DAT_00660d8c;
   pcVar1 = in_stack_00000004[4].create_event + iVar3 + 0x30;
   pcVar1[0] = '\0';
   pcVar1[1] = '\0';
@@ -53,26 +50,23 @@ void core_manpuz_cpp_FUN_00509b20(void)
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             ((CMatrix3x3f *)(in_stack_00000004[4].create_event + iVar3 + 0x3c),
              (CVector3f *)(in_stack_00000004[4].create_event + iVar3 + 0x30));
-  local_30.z = in_stack_00000004[0xf].field_224.y;
-  local_30.x = 0.0;
-  local_30.y = 0.0;
   pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                      ((CMatrix3x3f *)(in_stack_00000004[4].create_event + iVar3 + 0x3c),&CStack_24,
-                      &local_30);
+                      (CVector3f *)&stack0xffffffd0);
   if ((CVector3f *)(in_stack_00000004[4].create_event + iVar3 + 0x24) != pCVar4) {
     ((CVector3f *)(in_stack_00000004[4].create_event + iVar3 + 0x24))->x = pCVar4->x;
     *(float *)(in_stack_00000004[4].create_event + iVar3 + 0x28) = pCVar4->y;
     *(float *)(in_stack_00000004[4].create_event + iVar3 + 0x2c) = pCVar4->z;
   }
-  local_30.x = (float)(in_stack_00000004[4].create_event + iVar3 + 0x24);
-  pfVar6 = (float *)((int)&in_stack_00000004[4].metadata + iVar3 + -0x40);
-  pfVar5 = core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-  if (pfVar6 == pfVar5) {
+  pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                     (in_stack_00000004,(CVector3f *)&stack0xffffffec,
+                      (CVector3f *)(in_stack_00000004[4].create_event + iVar3 + 0x24));
+  if ((CVector3f *)(in_stack_00000004[4].create_event + iVar3 + 0x70) == pCVar4) {
     return;
   }
-  *pfVar6 = *pfVar5;
-  *(float *)((int)&in_stack_00000004[4].metadata + iVar3 + -0x3c) = pfVar5[1];
-  *(float *)((int)&in_stack_00000004[4].metadata + iVar3 + -0x38) = pfVar5[2];
+  ((CVector3f *)(in_stack_00000004[4].create_event + iVar3 + 0x70))->x = pCVar4->x;
+  *(float *)(in_stack_00000004[4].create_event + iVar3 + 0x74) = pCVar4->y;
+  *(float *)(in_stack_00000004[4].create_event + iVar3 + 0x78) = pCVar4->z;
   return;
 }
 
@@ -146,7 +140,7 @@ void core_manpuz_cpp_FUN_00509b20(void)
 // 00509bbd: PUSH EAX
 // 00509bbe: PUSH EDI
 // 00509bbf: ADD EBX,0x58
-// 00509bc2: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00509bc2: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 00509bc7: ADD ESP,0xc
 // 00509bca: CMP EBX,EAX

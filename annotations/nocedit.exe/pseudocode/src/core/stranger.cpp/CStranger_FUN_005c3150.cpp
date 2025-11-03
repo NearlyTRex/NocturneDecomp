@@ -5,8 +5,8 @@
 // Signature: int core_stranger.cpp_CStranger_FUN_005c3150(CStranger * this_ptr)
 // Globals:
 //   void* switchdataD_005c3128 = 005c3326
-//   undefined4 DAT_00653c74
-//   undefined4 DAT_00653c7c
+//   double DOUBLE_00653c74 = 0.990000000000000
+//   double DOUBLE_00653c7c = 0.950000000000000
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CDemonSet* g_CDemonSetPtr = 03114278
@@ -18,9 +18,9 @@
 //   undefined4 DAT_03f6bb04
 //   undefined4 DAT_03f6bb24
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408e80
 //   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   core_charactr.cpp_CCharacter_FUN_0042a2c0
 //   core_charactr.cpp_CCharacter_FUN_0042e840
 //   core_cloth.cpp_FUN_0043c070
@@ -43,7 +43,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
 
@@ -51,6 +50,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
   CDemonActor *pCVar1;
   bool bVar2;
   int iVar3;
+  CVector3f *input;
   BADSPACEBASE *in_ESP;
   CVector3f *pCVar4;
   float *pfVar5;
@@ -80,8 +80,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
   if (iVar3 == 0) {
     return 0;
   }
-  if (*(int *)((this_ptr->base_hero).base_character.model.padding_0x0 + DAT_03f6bb24 * 4 + 0x2140)
-      != 0) {
+  if ((this_ptr->base_hero).base_character.model.part_visibility_flags[DAT_03f6bb24] != 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     local_40.m[1].y = 3.1415927;
     local_40.m[1].x = 0.0;
@@ -94,8 +93,8 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               (&local_16c,
                (CMatrix3x4f *)
-               ((this_ptr->base_hero).base_character.model.padding_0x0 + DAT_03f6bacc * 0x30 + 0xe80
-               ),in_stack_fffffdd4);
+               ((this_ptr->base_hero).base_character.model.field3_0x508 +
+               DAT_03f6bacc * 0x30 + 0x978),in_stack_fffffdd4);
     pfVar5 = (float *)&stack0xfffffdd4;
     pCVar4 = local_13c;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -113,7 +112,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   }
   local_14 = (float)core_charactr_cpp_CCharacter_FUN_0042e840();
-  if ((float)_DAT_00653c74 < local_14) {
+  if ((float)DOUBLE_00653c74 < local_14) {
     pCVar1 = (this_ptr->base_hero).base_character.carry_hands[1].carry_actor;
     pCVar4 = (CVector3f *)0x0;
     if (pCVar1 != (CDemonActor *)0x0) {
@@ -130,8 +129,9 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
                 (g_CDemonSetPtr,*(CDemonActor **)(this_ptr->field2_0x1fbd8 + 0x54));
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                 (g_CDemonSetPtr,(this_ptr->base_hero).base_character.carry_hands[1].carry_actor);
-      core_stranger_cpp_CStranger_FUN_005c51c0();
-      core_actor_cpp_CDemonActor_FUN_00408e80((CDemonActor *)this_ptr);
+      input = (CVector3f *)core_stranger_cpp_CStranger_FUN_005c51c0();
+      core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                ((CDemonActor *)this_ptr,local_94.m + 2,input);
       local_14 = core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800
                            (g_CDemonSetPtr,pCVar4,local_94.m + 2);
       local_18 = local_14;
@@ -146,8 +146,8 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
   if ((((pCVar1 == (CDemonActor *)0x0) ||
        (pCVar1 == (this_ptr->base_hero).base_character.carry_hands[0].carry_actor)) ||
       (pCVar1 == (this_ptr->base_hero).base_character.carry_hands[1].carry_actor)) ||
-     (*(int *)((this_ptr->base_hero).base_character.model.padding_0x0 + DAT_03f6bb24 * 4 + 0x2140)
-      == 0)) goto LAB_005c33d7;
+     ((this_ptr->base_hero).base_character.model.part_visibility_flags[DAT_03f6bb24] == 0))
+  goto LAB_005c33d7;
   (**(code **)(*(int *)(*(int *)(this_ptr->field2_0x1fbd8 + 0x54) + 0x154) + 8))();
   if (*(int *)(this_ptr->field2_0x1fbd8 + 0x54) == 0) {
 switchD_005c331f_caseD_3:
@@ -169,7 +169,7 @@ switchD_005c331f_caseD_3:
     }
   }
   local_14 = (float)core_charactr_cpp_CCharacter_FUN_0042e840();
-  bVar2 = (float)_DAT_00653c7c < local_14;
+  bVar2 = (float)DOUBLE_00653c7c < local_14;
   if ((*(int *)(*(int *)(this_ptr->field2_0x1fbd8 + 0x54) + 0x2e0) == 1) &&
      (*(int *)((this_ptr->base_hero).base_character.field13_0x2620 + 0x46c) == 8)) {
     bVar2 = true;
@@ -187,8 +187,7 @@ LAB_005c336f:
   core_stranger_cpp_CStranger_FUN_005c06b0();
 LAB_005c33d7:
   if ((((this_ptr->base_hero).is_wearing_gas_mask != 0) &&
-      (*(int *)((this_ptr->base_hero).base_character.model.padding_0x0 + DAT_03f6bb24 * 4 + 0x2140)
-       != 0)) &&
+      ((this_ptr->base_hero).base_character.model.part_visibility_flags[DAT_03f6bb24] != 0)) &&
      (local_1c = (this_ptr->base_hero).inventory.light_gun_ptr, local_1c != (CLightGun *)0x0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     if ((this_ptr->base_hero).is_wearing_gas_mask == 2) {
@@ -203,8 +202,8 @@ LAB_005c33d7:
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 (&local_1cc,
                  (CMatrix3x4f *)
-                 ((this_ptr->base_hero).base_character.model.padding_0x0 +
-                 DAT_03f6bacc * 0x30 + 0xe80),in_stack_fffffdd4);
+                 ((this_ptr->base_hero).base_character.model.field3_0x508 +
+                 DAT_03f6bacc * 0x30 + 0x978),in_stack_fffffdd4);
       pfVar5 = local_10c;
     }
     else {
@@ -219,8 +218,8 @@ LAB_005c33d7:
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 (&local_1fc,
                  (CMatrix3x4f *)
-                 ((this_ptr->base_hero).base_character.model.padding_0x0 +
-                 DAT_03f6bb04 * 0x30 + 0xe80),in_stack_fffffdd4);
+                 ((this_ptr->base_hero).base_character.model.field3_0x508 +
+                 DAT_03f6bb04 * 0x30 + 0x978),in_stack_fffffdd4);
       pfVar5 = local_19c;
     }
     pCVar4 = local_dc;
@@ -234,12 +233,11 @@ LAB_005c33d7:
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
               (g_CDemonRendererPtr,(CVector3i *)&local_40,(CVector3i *)local_4c);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-              ((CKeyFramedModelInstance *)&(local_1c->base_weapon).model_instance,0.0,-1);
+              (&(local_1c->base_weapon).model,0.0,-1);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   }
-  if (((*(int *)((this_ptr->base_hero).base_character.model.padding_0x0 + DAT_03f6bb24 * 4 + 0x2140)
-        == 0) &&
+  if ((((this_ptr->base_hero).base_character.model.part_visibility_flags[DAT_03f6bb24] == 0) &&
       (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
       iVar3 == 0)) && (0 < (this_ptr->base_hero).base_character.cloth_count)) {
     core_cloth_cpp_FUN_0043c070();
@@ -360,7 +358,7 @@ LAB_005c33d7:
 //   XREF to: Stack[-0x7c] (DATA)
 // 005c3238: PUSH EAX
 // 005c3239: PUSH EBX
-// 005c323a: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 005c323a: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 005c323f: ADD ESP,0xc
 // 005c3242: LEA EAX,[EBP + 0x12]

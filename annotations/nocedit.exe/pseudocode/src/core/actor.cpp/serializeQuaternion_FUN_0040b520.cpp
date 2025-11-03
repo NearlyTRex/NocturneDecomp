@@ -10,7 +10,7 @@
 //   TerminatedCString s_f_f_f_f_00613eed
 //   TerminatedCString s_s_g_g_g_g_00613ef9
 //   string s_Quaternion_0066e118
-//   char* g_PropertyNamePrefix = 00000000
+//   char[104] g_PropertyNamePrefix
 //   FILE* g_ActorDataFile
 //   int g_ActorReadingMode
 // Function calls:
@@ -38,7 +38,7 @@ core_actor_cpp_serializeQuaternion_FUN_0040b520(CQuaternion4f *quat_ptr,char *pr
   }
   else {
     crt_stdio_c_fprintf_FUN_005fe6d0
-              (g_ActorDataFile,"%s%g,%g,%g,%g",&g_PropertyNamePrefix,(double)quat_ptr->w,
+              (g_ActorDataFile,"%s%g,%g,%g,%g",g_PropertyNamePrefix,(double)quat_ptr->w,
                (double)quat_ptr->x,(double)quat_ptr->y,(double)quat_ptr->z);
   }
   core_actor_cpp_serializeDescription_FUN_0040b290("Quaternion",in_stack_0000000c);

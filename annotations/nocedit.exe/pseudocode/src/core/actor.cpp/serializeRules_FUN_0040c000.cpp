@@ -18,11 +18,11 @@
 //   TerminatedCString s_s_d_ruleCount_00614184
 //   TerminatedCString s_s_s_s_00614197
 //   TerminatedCString s_s_006141a7
-//   char* g_PropertyNamePrefix = 00000000
+//   char[104] g_PropertyNamePrefix
 //   FILE* g_ActorDataFile
 //   int g_ActorReadingMode
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_0040aee0
+//   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   core_actor.cpp_handleActorPropertyParseError_FUN_0040b210
 //   core_actor.cpp_serializeDescription_FUN_0040b290
 //   crt_stdio.c_fgetc_FUN_005fe840
@@ -42,26 +42,26 @@ void __cdecl core_actor_cpp_serializeRules_FUN_0040c000(void *rules,char *proper
   int *in_stack_00000010;
   
   if (g_ActorReadingMode != 1) {
-    iVar1 = crt_stdio_c_fprintf_FUN_005fe6d0
-                      (g_ActorDataFile,"%s{ // %s\n",&g_PropertyNamePrefix,property_name);
-    core_actor_cpp_CDemonActor_FUN_0040aee0(iVar1);
     crt_stdio_c_fprintf_FUN_005fe6d0
-              (g_ActorDataFile,"%s%d // ruleCount\n",&g_PropertyNamePrefix,*in_stack_0000000c);
+              (g_ActorDataFile,"%s{ // %s\n",g_PropertyNamePrefix,property_name);
+    core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(1);
+    crt_stdio_c_fprintf_FUN_005fe6d0
+              (g_ActorDataFile,"%s%d // ruleCount\n",g_PropertyNamePrefix,*in_stack_0000000c);
     iVar1 = 0;
     if (0 < *in_stack_00000010) {
       piVar3 = in_stack_00000010 + 0x7e;
       piVar4 = in_stack_00000010 + 1;
       do {
         crt_stdio_c_fprintf_FUN_005fe6d0
-                  (g_ActorDataFile,"%s\"%s\" => \"%s\"\n","%s\"%s\" => \"%s\"\n",&g_PropertyNamePrefix,piVar4,
+                  (g_ActorDataFile,"%s\"%s\" => \"%s\"\n","%s\"%s\" => \"%s\"\n",g_PropertyNamePrefix,piVar4,
                    piVar3);
         iVar1 = iVar1 + 1;
         piVar3 = piVar3 + 0x19;
         piVar4 = piVar4 + 0x19;
       } while (iVar1 < *in_stack_00000010);
     }
-    core_actor_cpp_CDemonActor_FUN_0040aee0((int)in_stack_00000010);
-    crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s}\n",&g_PropertyNamePrefix);
+    core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(-1);
+    crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s}\n",g_PropertyNamePrefix);
     return;
   }
   do {
@@ -254,7 +254,7 @@ void __cdecl core_actor_cpp_serializeRules_FUN_0040c000(void *rules,char *proper
 //   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
 // 0040c11c: ADD ESP,0x10
 // 0040c11f: PUSH 0x1
-// 0040c121: CALL core_actor.cpp_CDemonActor_FUN_0040aee0
+// 0040c121: CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   XREF to: 0040aee0 (UNCONDITIONAL_CALL)
 // 0040c126: ADD ESP,0x4
 // 0040c129: MOV EAX,dword ptr [ESP + 0x14]
@@ -306,7 +306,7 @@ void __cdecl core_actor_cpp_serializeRules_FUN_0040c000(void *rules,char *proper
 // 0040c18f: NOP
 // 0040c190: PUSH -0x1
 //   Label: LAB_0040c190
-// 0040c192: CALL core_actor.cpp_CDemonActor_FUN_0040aee0
+// 0040c192: CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   XREF to: 0040aee0 (UNCONDITIONAL_CALL)
 // 0040c197: ADD ESP,0x4
 // 0040c19a: PUSH 0x66e178

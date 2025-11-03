@@ -1,8 +1,8 @@
 // Name: core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910
 // Address: 00599910
 // Address Range: [[00599910, 00599a4d]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910()
+// Convention: __cdecl
+// Signature: void core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910(CSkeleton * this_ptr, int bone_count, int frame_count)
 // Cross-references:
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 00592b10 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0 (00599bb0) at 00599c9e [UNCONDITIONAL_CALL]
@@ -23,52 +23,52 @@
 
 #include "nocturne.h"
 
-/* Signature: int core_skeleton.cpp_CSkeleton_allocMemory(CSkeleton* pSkeleton, int nBoneCount, int
-   nFrameCount) */
-
-void core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(void)
+void __cdecl
+core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910
+          (CSkeleton *this_ptr,int bone_count,int frame_count)
 
 {
-  int iVar1;
-  void *pvVar2;
-  int *piVar3;
-  int *piVar4;
-  int in_stack_00000004;
-  int in_stack_00000008;
-  undefined4 in_stack_00000014;
+  float fVar1;
+  CQuaternion4f *pCVar2;
+  CVector3f *pCVar3;
+  CVector3f *pCVar4;
+  int in_stack_00000014;
   
-  core_skeleton_cpp_CSkeleton_free_FUN_00599a50();
-  if (100 < in_stack_00000008) {
+  core_skeleton_cpp_CSkeleton_free_FUN_00599a50(this_ptr);
+  if (100 < bone_count) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0xc6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too bony!");
   }
-  *(int *)(in_stack_00000004 + 0x28558) = in_stack_00000008;
-  *(undefined4 *)(in_stack_00000004 + 0x2936c) = in_stack_00000014;
-  pvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                     (*(int *)(in_stack_00000004 + 0x28558) * *(int *)(in_stack_00000004 + 0x2936c)
-                      * 0x10,"..\\core\\skeleton.cpp",0xcf);
-  iVar1 = *(int *)(in_stack_00000004 + 0x2936c);
-  *(void **)(in_stack_00000004 + 0x29370) = pvVar2;
-  piVar3 = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                            (iVar1 * 0xc + 4,"..\\core\\skeleton.cpp",0xd0);
-  piVar4 = piVar3;
-  if (piVar3 != (int *)0x0) {
-    piVar4 = piVar3 + 1;
-    *piVar3 = iVar1;
+  this_ptr->bone_count = bone_count;
+  this_ptr->frame_count = in_stack_00000014;
+  pCVar2 = (CQuaternion4f *)
+           shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                     (this_ptr->bone_count * this_ptr->frame_count * 0x10,
+                      "..\\core\\skeleton.cpp",0xcf);
+  fVar1 = (float)this_ptr->frame_count;
+  this_ptr->bone_angle_frames = pCVar2;
+  pCVar3 = (CVector3f *)
+           shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                     ((int)fVar1 * 0xc + 4,"..\\core\\skeleton.cpp",0xd0);
+  pCVar4 = pCVar3;
+  if (pCVar3 != (CVector3f *)0x0) {
+    pCVar4 = (CVector3f *)&pCVar3->y;
+    pCVar3->x = fVar1;
   }
-  iVar1 = *(int *)(in_stack_00000004 + 0x2936c);
-  *(int **)(in_stack_00000004 + 0x29374) = piVar4;
-  piVar3 = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                            (iVar1 * 0xc + 4,"..\\core\\skeleton.cpp",0xd1);
-  piVar4 = piVar3;
-  if (piVar3 != (int *)0x0) {
-    piVar4 = piVar3 + 1;
-    *piVar3 = iVar1;
+  fVar1 = (float)this_ptr->frame_count;
+  this_ptr->frame_positions_1 = pCVar4;
+  pCVar3 = (CVector3f *)
+           shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                     ((int)fVar1 * 0xc + 4,"..\\core\\skeleton.cpp",0xd1);
+  pCVar4 = pCVar3;
+  if (pCVar3 != (CVector3f *)0x0) {
+    pCVar4 = (CVector3f *)&pCVar3->y;
+    pCVar3->x = fVar1;
   }
-  *(int **)(in_stack_00000004 + 0x29378) = piVar4;
-  if (((*(int *)(in_stack_00000004 + 0x29370) != 0) && (*(int *)(in_stack_00000004 + 0x29374) != 0))
-     && (piVar4 != (int *)0x0)) {
+  this_ptr->frame_positions_2 = pCVar4;
+  if (((this_ptr->bone_angle_frames != (CQuaternion4f *)0x0) &&
+      (this_ptr->frame_positions_1 != (CVector3f *)0x0)) && (pCVar4 != (CVector3f *)0x0)) {
     return;
   }
   g_CurrentFilename = "..\\core\\skeleton.cpp";

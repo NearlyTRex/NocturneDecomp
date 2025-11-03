@@ -79,7 +79,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
   core_dlight_cpp_resetRestoreMemoryAllocator_FUN_004729c0();
   core_dfilter_cpp_CFilterCache_free_FUN_00470000(g_CFilterCachePtr);
   g_DynamicLightCount = 0;
-  this_ptr->actor_list_count = 0;
+  this_ptr->mirror_glass_count = 0;
   core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_0044c0f0(&g_CDemonCameraInstance);
   core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_00453640
             (&g_CDemonCameraInstance,(SFog *)(this_ptr->field19_0x14f0a0 + 0xbb90));

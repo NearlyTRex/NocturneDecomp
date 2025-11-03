@@ -15,31 +15,20 @@
 undefined4 core_werewolf_cpp_FUN_005f2070(void)
 
 {
-  int iVar1;
-  CDemonActor *pCVar2;
+  CDemonActor *pCVar1;
   CDemonActor *in_stack_00000004;
   
-  pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
+  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (in_stack_00000004,g_CWerewolfClassInfo.name_hash);
-  iVar1 = *(int *)pCVar2[0x8d].metadata.field3_0x1c;
-  if (iVar1 == 0) {
-    pCVar2[0x8d].metadata.field3_0x1c[0] = '\x01';
-    pCVar2[0x8d].metadata.field3_0x1c[1] = '\0';
-    pCVar2[0x8d].metadata.field3_0x1c[2] = '\0';
-    pCVar2[0x8d].metadata.field3_0x1c[3] = '\0';
+  if (pCVar1[0x8d].field25_0x144 == 0) {
+    pCVar1[0x8d].field25_0x144 = 1;
   }
   else {
-    if (iVar1 != 1) {
-      pCVar2[0x8d].metadata.field3_0x1c[0] = '\0';
-      pCVar2[0x8d].metadata.field3_0x1c[1] = '\0';
-      pCVar2[0x8d].metadata.field3_0x1c[2] = '\0';
-      pCVar2[0x8d].metadata.field3_0x1c[3] = '\0';
+    if (pCVar1[0x8d].field25_0x144 != 1) {
+      pCVar1[0x8d].field25_0x144 = 0;
       return 1;
     }
-    pCVar2[0x8d].metadata.field3_0x1c[0] = '\x02';
-    pCVar2[0x8d].metadata.field3_0x1c[1] = '\0';
-    pCVar2[0x8d].metadata.field3_0x1c[2] = '\0';
-    pCVar2[0x8d].metadata.field3_0x1c[3] = '\0';
+    pCVar1[0x8d].field25_0x144 = 2;
   }
   return 1;
 }

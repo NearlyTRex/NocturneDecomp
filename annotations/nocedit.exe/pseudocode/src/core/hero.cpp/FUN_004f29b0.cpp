@@ -9,10 +9,10 @@
 //   undefined4 DAT_0078a123
 // Function calls:
 //   core_charactr.cpp_CCharacter_FUN_0042bf40
-//   core_motion.cpp_CMotionController_FUN_0052db90
 //   core_motion.cpp_CMotionController_FUN_0052dd20
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
+//   core_motion.cpp_FUN_0052db90
 
 #include "nocturne.h"
 
@@ -21,18 +21,21 @@
 void core_hero_cpp_FUN_004f29b0(void)
 
 {
+  CMotionList *this_ptr;
   int iVar1;
   float fVar2;
   CCharacter *in_stack_00000004;
   
   if (((undefined *)(in_stack_00000004->base_actor).field6_0x68 == &DAT_0078a123) &&
-     ((in_stack_00000004->model).modelPtr != (CDeformableModel *)0x0)) {
-    core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
-    iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0();
+     ((in_stack_00000004->model).model_ptr != (CDeformableModel *)0x0)) {
+    this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                         (&(in_stack_00000004->model).motion_controller);
+    iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr);
     if (-1 < iVar1) {
-      fVar2 = (float)core_motion_cpp_CMotionController_FUN_0052dd20();
+      fVar2 = core_motion_cpp_CMotionController_FUN_0052dd20
+                        (&(in_stack_00000004->model).motion_controller);
       if (0.0 < fVar2) {
-        core_motion_cpp_CMotionController_FUN_0052db90();
+        core_motion_cpp_FUN_0052db90();
       }
     }
   }
@@ -90,7 +93,7 @@ void core_hero_cpp_FUN_004f29b0(void)
 // 004f2a11: PUSH 0x62ebd3
 //   XREF to: 0062ebd3 (DATA)
 // 004f2a16: PUSH EBX
-// 004f2a17: CALL core_motion.cpp_CMotionController_FUN_0052db90
+// 004f2a17: CALL core_motion.cpp_FUN_0052db90
 //   XREF to: 0052db90 (UNCONDITIONAL_CALL)
 // 004f2a1c: ADD ESP,0xc
 // 004f2a1f: PUSH ESI

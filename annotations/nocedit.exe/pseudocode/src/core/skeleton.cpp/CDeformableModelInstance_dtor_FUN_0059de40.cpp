@@ -45,11 +45,11 @@
 //   core_zombie.cpp_CZombie_dtor_FUN_005fcc50 (005fcc50) at 005fccb9 [UNCONDITIONAL_CALL]
 // Globals:
 //   WatcomTypeInfo g_CDeformableModelInstanceTypeInfo
-//   void* PTR_core_skeleton.cpp_CDeformableModelInstance_FreeSomething_FUN_0059de40_00662ec4 = 0059de40
+//   CMotionController_vtable g_CDeformableModelInstanceVTable
 // Function calls:
-//   core_curtain.cpp_FUN_0044baf0
+//   core_curtain.cpp_freeVectors_FUN_0044baf0
 //   core_motion.cpp_CMotionController_dtor_FUN_0052d5a0
-//   core_skeleton.cpp_CDeformableModelInstance_UnknownSomethingFreeMem2_FUN_0059df40
+//   core_skeleton.cpp_CDeformableModelInstance_free_FUN_0059df40
 //   crt_memory.c_free_FUN_005fe659
 //   crt_memory.c_freeSingleInstance_FUN_005fe632
 //   shape_memdbg.cpp_debugFree_FUN_0050f210
@@ -61,7 +61,7 @@ core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
           (CDeformableModelInstance *this_ptr,uint d1,uint d2,uint d3,uint d4)
 
 {
-  int iVar1;
+  int extraout_EAX;
   CDeformableModelInstance *ptr;
   void *ptr_00;
   
@@ -71,12 +71,12 @@ core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  *(void ***)(this_ptr->padding_0x0 + 0x50) =
-       &PTR_core_skeleton_cpp_CDeformableModelInstance_FreeSomething_FUN_0059de40_00662ec4;
-  core_skeleton_cpp_CDeformableModelInstance_UnknownSomethingFreeMem2_FUN_0059df40();
-  iVar1 = core_curtain_cpp_FUN_0044baf0();
+  (this_ptr->motion_controller).vtable = &g_CDeformableModelInstanceVTable;
+  core_skeleton_cpp_CDeformableModelInstance_free_FUN_0059df40(this_ptr);
+  core_curtain_cpp_freeVectors_FUN_0044baf0((CVector3f **)this_ptr->transformed_vertices);
   ptr = (CDeformableModelInstance *)
-        core_motion_cpp_CMotionController_dtor_FUN_0052d5a0((CMotionController *)(iVar1 + -0x58),1);
+        core_motion_cpp_CMotionController_dtor_FUN_0052d5a0
+                  ((CMotionController *)(extraout_EAX + -0x58),1);
   if ((d4 & 2) == 0) {
     return ptr;
   }
@@ -97,13 +97,13 @@ core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
 // 0059de4c: PUSH EBX
 // 0059de4d: MOV dword ptr [EBX + 0x50],0x662ec4
 //   XREF to: 00662ec4 (DATA)
-// 0059de54: CALL core_skeleton.cpp_CDeformableModelInstance_UnknownSomethingFreeMem2_FUN_0059df40
+// 0059de54: CALL core_skeleton.cpp_CDeformableModelInstance_free_FUN_0059df40
 //   XREF to: 0059df40 (UNCONDITIONAL_CALL)
 // 0059de59: ADD ESP,0x4
 // 0059de5c: PUSH 0x0
 // 0059de5e: ADD EBX,0x58
 // 0059de61: PUSH EBX
-// 0059de62: CALL core_curtain.cpp_FUN_0044baf0
+// 0059de62: CALL core_curtain.cpp_freeVectors_FUN_0044baf0
 //   XREF to: 0044baf0 (UNCONDITIONAL_CALL)
 // 0059de67: ADD ESP,0x8
 // 0059de6a: PUSH 0x1

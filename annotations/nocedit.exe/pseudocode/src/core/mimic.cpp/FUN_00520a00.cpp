@@ -34,7 +34,8 @@ undefined4 core_mimic_cpp_FUN_00520a00(void)
   else {
     in_stack_00000008[5] = 0x40000000;
   }
-  iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0();
+  iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0
+                    ((CMotionController *)(in_stack_00000004 + 0x158));
   if (*(int *)(iVar2 + 0x24) == 0xc) {
     return 0;
   }

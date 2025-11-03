@@ -25,8 +25,8 @@
 //   core_vampboss.cpp_FUN_005e7030 (005e7030) at 005e7116 [UNCONDITIONAL_CALL]
 //   core_werewolf.cpp_FUN_005f1ac0 (005f1ac0) at 005f1c4a [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_02d53dfc
-//   CSpark[256] g_CFireEffectSparks
+//   CStake* g_StakeActiveListHead
+//   CSpark[256] g_SparkPool
 //   undefined4 DAT_02d53e34
 //   undefined4 DAT_02d53e38
 //   undefined4 DAT_02d53e3c
@@ -34,15 +34,16 @@
 //   undefined4 DAT_02d53e44
 //   undefined4 DAT_02d53e48
 // Function calls:
-//   core_actor.cpp_FUN_0040cc70
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
 
 #include "nocturne.h"
 
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c79d0(CFireEffect *this_ptr)
 
 {
-  int iVar1;
+  CStake *pCVar1;
   int iVar2;
+  CStake *pCVar3;
   CSpark *this_ptr_00;
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
@@ -51,23 +52,23 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c79d0(CFireEffect *this_ptr)
   int in_stack_00000038;
   int in_stack_0000003c;
   
-  iVar1 = DAT_02d53dfc;
-  iVar2 = DAT_02d53dfc + 1;
-  this_ptr_00 = g_CFireEffectSparks + DAT_02d53dfc;
-  DAT_02d53dfc = iVar2;
-  if (0xff < iVar2) {
-    DAT_02d53dfc = 0;
+  pCVar1 = g_StakeActiveListHead;
+  pCVar3 = (CStake *)((int)&g_StakeActiveListHead->active + 1);
+  this_ptr_00 = g_SparkPool + (int)g_StakeActiveListHead;
+  g_StakeActiveListHead = pCVar3;
+  if (0xff < (int)pCVar3) {
+    g_StakeActiveListHead = (CStake *)0x0;
   }
-  (*(g_CFireEffectSparks[iVar1].base.vtable)->setup)
+  (*(g_SparkPool[(int)pCVar1].base.vtable)->setup)
             (&this_ptr_00->base,in_stack_00000008,in_stack_0000000c);
-  iVar2 = core_actor_cpp_FUN_0040cc70();
-  g_CFireEffectSparks[iVar1].first_update_flag = 0;
-  g_CFireEffectSparks[iVar1].intensity_current =
+  iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc70(0xc000,0xffff);
+  g_SparkPool[(int)pCVar1].first_update_flag = 0;
+  g_SparkPool[(int)pCVar1].intensity_current =
        (uint)((longlong)in_stack_00000034 * (longlong)iVar2) >> 0x10 |
        (int)((ulonglong)((longlong)in_stack_00000034 * (longlong)iVar2) >> 0x20) << 0x10;
-  g_CFireEffectSparks[iVar1].intensity_target = in_stack_00000030;
-  g_CFireEffectSparks[iVar1].field4_0x44 = in_stack_00000038;
-  g_CFireEffectSparks[iVar1].fade_rate = in_stack_0000003c;
+  g_SparkPool[(int)pCVar1].intensity_target = in_stack_00000030;
+  g_SparkPool[(int)pCVar1].field4_0x44 = in_stack_00000038;
+  g_SparkPool[(int)pCVar1].fade_rate = in_stack_0000003c;
   return;
 }
 
@@ -112,7 +113,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c79d0(CFireEffect *this_ptr)
 // 004c7a1a: ADD ESP,0xc
 // 004c7a1d: PUSH 0xffff
 // 004c7a22: PUSH 0xc000
-// 004c7a27: CALL core_actor.cpp_FUN_0040cc70
+// 004c7a27: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 004c7a2c: ADD ESP,0x8
 // 004c7a2f: MOV EDX,EAX

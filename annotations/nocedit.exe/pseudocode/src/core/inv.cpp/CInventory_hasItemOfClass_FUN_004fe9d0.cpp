@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_inv.cpp_CInventory_hasItemOfClass_FUN_004fe9d0(CInventory * this_ptr, char * class_name)
 // Cross-references:
-//   core_event.cpp_CEvent_EventReadingFromFile_FUN_004ae140 (004ae140) at 004aec31 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004ae140 (004ae140) at 004aec31 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
 

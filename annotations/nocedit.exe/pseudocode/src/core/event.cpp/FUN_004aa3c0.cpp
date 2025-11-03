@@ -6,28 +6,27 @@
 // Globals:
 //   TerminatedCString s_d_00624449
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 // Function calls:
-//   core_event.cpp_FUN_004b0830
+//   core_event.cpp_CEventList_FUN_004b0830
 //   crt_stdio.c_sscanf_FUN_0060013c
 
 #include "nocturne.h"
 
-undefined4 core_event_cpp_FUN_004aa3c0(void)
+int core_event_cpp_FUN_004aa3c0(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   BADSPACEBASE *in_ESP;
-  undefined4 unaff_retaddr;
+  int unaff_retaddr;
   char *in_stack_00000004;
   
   iVar1 = crt_stdio_c_sscanf_FUN_0060013c(in_stack_00000004,"%d",&stack0xfffffffc);
   if (iVar1 == 1) {
     return unaff_retaddr;
   }
-  uVar2 = core_event_cpp_FUN_004b0830();
-  return uVar2;
+  iVar1 = core_event_cpp_CEventList_FUN_004b0830(g_CEventListPtr);
+  return iVar1;
 }
 
 
@@ -61,7 +60,7 @@ undefined4 core_event_cpp_FUN_004aa3c0(void)
 //   XREF to: 02d05310 (PARAM)
 // 004aa3f0: PUSH EBX
 //   XREF to: 02d05310 (DATA)
-// 004aa3f1: CALL core_event.cpp_FUN_004b0830
+// 004aa3f1: CALL core_event.cpp_CEventList_FUN_004b0830
 //   XREF to: 004b0830 (UNCONDITIONAL_CALL)
 // 004aa3f6: ADD ESP,0x8
 // 004aa3f9: POP EBX

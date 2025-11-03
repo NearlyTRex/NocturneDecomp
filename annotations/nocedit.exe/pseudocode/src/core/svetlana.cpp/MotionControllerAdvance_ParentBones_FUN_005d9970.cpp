@@ -27,7 +27,8 @@ void core_svetlana_cpp_MotionControllerAdvance_ParentBones_FUN_005d9970(void)
   float in_stack_00000008;
   
   do {
-    uVar2 = core_motion_cpp_CMotionController_advance_FUN_0052d610();
+    uVar2 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&(in_stack_00000004->model).motion_controller);
     if (uVar2 < 100) {
       core_charactr_cpp_CCharacter_FUN_0042ec40(in_stack_00000004);
     }

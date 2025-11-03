@@ -18,11 +18,11 @@
 //   undefined4 DAT_03263318
 //   undefined4 DAT_0326331c
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 
 #include "nocturne.h"
 
@@ -34,55 +34,59 @@ void core_svetlana_cpp_AttackWithParentBone_FUN_005d9a10(void)
 
 {
   CDemonActor *this_ptr;
-  int iVar1;
-  int iVar2;
-  BADSPACEBASE *in_ESP;
+  float fVar1;
+  int extraout_EAX;
+  CVector3f *pCVar2;
   int iVar3;
-  int iVar4;
+  float fVar4;
+  BADSPACEBASE *in_ESP;
+  int iVar5;
+  int iVar6;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
   SDamageInfo SStack_6c;
-  undefined1 auStack_20 [12];
-  int local_14;
+  CVector3f CStack_28;
+  float local_14;
   
-  iVar2 = 0;
-  iVar1 = core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-  local_14 = -1;
-  iVar3 = iVar1;
-  iVar4 = local_14;
-  if (0 < *(int *)(iVar1 + 0x28558)) {
+  fVar4 = 0.0;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820
+            ((CDeformableModelInstance *)(in_stack_00000004 + 1));
+  local_14 = -NAN;
+  iVar5 = extraout_EAX;
+  fVar1 = local_14;
+  if (0 < *(int *)(extraout_EAX + 0x28558)) {
     do {
-      iVar4 = iVar2;
-      if (in_stack_00000008 == *(int *)(iVar3 + 0x2857c)) break;
-      iVar2 = iVar2 + 1;
-      iVar3 = iVar3 + 0x24;
-      iVar4 = local_14;
-    } while (iVar2 < *(int *)(iVar1 + 0x28558));
+      fVar1 = fVar4;
+      if (in_stack_00000008 == *(int *)(iVar5 + 0x2857c)) break;
+      fVar4 = (float)((int)fVar4 + 1);
+      iVar5 = iVar5 + 0x24;
+      fVar1 = local_14;
+    } while ((int)fVar4 < *(int *)(extraout_EAX + 0x28558));
   }
-  local_14 = iVar4;
-  if (local_14 == -1) {
+  local_14 = fVar1;
+  if (local_14 == -NAN) {
     g_CurrentFilename = "..\\core\\svetlana.cpp";
     g_CurrentLineNumber = 0x2f0;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find svetlana's parent bone");
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  iVar3 = 0;
-  core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-  iVar4 = 0;
+  pCVar2 = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (in_stack_00000004,(CVector3f *)&stack0xffffffe8,pCVar2);
+  pCVar2 = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+  iVar5 = 0;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&CStack_28,pCVar2);
+  iVar6 = 0;
   do {
     while( true ) {
-      if (g_CDemonSetPtr->damage_listener_count <= iVar4) {
-        (*((in_stack_00000004->metadata).vtable)->playSound)
-                  (in_stack_00000004,"svetlana-miss?.wav");
+      if (g_CDemonSetPtr->damage_listener_count <= iVar6) {
+        (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"svetlana-miss?.wav");
         return;
       }
-      this_ptr = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar3 + -4);
+      this_ptr = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar5 + -4);
       if (this_ptr != in_stack_00000004) break;
 LAB_005d9adc:
-      iVar4 = iVar4 + 1;
-      iVar3 = iVar3 + 4;
+      iVar6 = iVar6 + 1;
+      iVar5 = iVar5 + 4;
     }
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_6c);
     SStack_6c.damage_flags = 0x41700000;
@@ -90,11 +94,11 @@ LAB_005d9adc:
     SStack_6c.weapon_damage_modifier = 3;
     SStack_6c.damage_type = 0x3f333333;
     SStack_6c.attacker = (CDemonActor *)0x67;
-    iVar1 = (*(this_ptr->metadata).vtable[1].playSoundWithVolume)
-                      (this_ptr,&stack0xfffffff8,(float)auStack_20);
-    if (iVar1 == 0) goto LAB_005d9adc;
-    iVar4 = iVar4 + 1;
-    iVar3 = iVar3 + 4;
+    iVar3 = (*this_ptr->vtable[1].playSoundWithVolume)
+                      (this_ptr,&stack0xfffffff8,(float)&CStack_28.z);
+    if (iVar3 == 0) goto LAB_005d9adc;
+    iVar6 = iVar6 + 1;
+    iVar5 = iVar5 + 4;
   } while( true );
 }
 
@@ -113,7 +117,7 @@ LAB_005d9adc:
 // 005d9a25: LEA EAX,[EBP + 0x158]
 // 005d9a2b: PUSH EAX
 // 005d9a2c: XOR EBX,EBX
-// 005d9a2e: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 005d9a2e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005d9a33: MOV EDX,0xffffffff
 // 005d9a38: MOV ESI,EAX
@@ -154,7 +158,7 @@ LAB_005d9adc:
 //   XREF to: Stack[-0x24] (DATA)
 // 005d9a8a: PUSH EAX
 // 005d9a8b: PUSH EBP
-// 005d9a8c: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005d9a8c: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005d9a91: ADD ESP,0xc
 // 005d9a94: MOV EDX,dword ptr [ESP + 0x6c]
@@ -173,7 +177,7 @@ LAB_005d9adc:
 // 005d9aac: PUSH EAX
 // 005d9aad: PUSH EBP
 // 005d9aae: XOR ESI,ESI
-// 005d9ab0: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005d9ab0: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005d9ab5: ADD ESP,0xc
 // 005d9ab8: XOR ECX,ECX

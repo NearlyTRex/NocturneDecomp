@@ -44,12 +44,12 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fc720(CZombie *this_ptr)
   do {
     switch((iStack_14 + (this_ptr->base_enemy).base_character.base_actor.field7_0x6c) % 4) {
     case 0:
-      iVar1 = *(int *)((this_ptr->base_enemy).base_character.model.padding_0x0 +
-                      *(int *)(this_ptr->field4_0xbf48 + 0x30) * 4 + 0x2140);
+      iVar1 = (this_ptr->base_enemy).base_character.model.part_visibility_flags
+              [*(int *)(this_ptr->field4_0xbf48 + 0x30)];
       goto joined_r0x005fc871;
     case 1:
-      iVar1 = *(int *)((this_ptr->base_enemy).base_character.model.padding_0x0 +
-                      *(int *)(this_ptr->field4_0xbf48 + 0x38) * 4 + 0x2140);
+      iVar1 = (this_ptr->base_enemy).base_character.model.part_visibility_flags
+              [*(int *)(this_ptr->field4_0xbf48 + 0x38)];
 joined_r0x005fc871:
       if (iVar1 != 0) {
         pfVar2 = (float *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
@@ -71,8 +71,8 @@ LAB_005fc82e:
       }
       break;
     case 2:
-      if (*(int *)((this_ptr->base_enemy).base_character.model.padding_0x0 +
-                  *(int *)(this_ptr->field4_0xbf48 + 0x48) * 4 + 0x2140) == 0) break;
+      if ((this_ptr->base_enemy).base_character.model.part_visibility_flags
+          [*(int *)(this_ptr->field4_0xbf48 + 0x48)] == 0) break;
       puVar3 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
       puVar4 = in_stack_00000008 + iVar5 * 3;
       if (puVar4 != puVar3) {
@@ -82,8 +82,8 @@ LAB_005fc82e:
       }
       goto LAB_005fc82e;
     case 3:
-      if (*(int *)((this_ptr->base_enemy).base_character.model.padding_0x0 +
-                  *(int *)(this_ptr->field4_0xbf48 + 0x44) * 4 + 0x2140) != 0) {
+      if ((this_ptr->base_enemy).base_character.model.part_visibility_flags
+          [*(int *)(this_ptr->field4_0xbf48 + 0x44)] != 0) {
         puVar3 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
         puVar4 = in_stack_00000008 + iVar5 * 3;
         if (puVar4 != puVar3) {

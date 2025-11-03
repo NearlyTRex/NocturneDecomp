@@ -15,7 +15,7 @@
 //   undefined4 DAT_02d7b88c
 //   CVector3f g_ZeroVector
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
 //   core_charactr.cpp_CCharacter_FUN_0042d090
 //   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
@@ -80,8 +80,8 @@ void core_gabriela_cpp_FUN_004d5550(void)
     pCVar7 = &local_34c;
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               (&local_22c,
-               (CMatrix3x4f *)((in_stack_00000004->model).padding_0x0 + DAT_02d7b870 * 0x30 + 0xe80)
-               ,pCVar7);
+               (CMatrix3x4f *)
+               ((in_stack_00000004->model).field3_0x508 + DAT_02d7b870 * 0x30 + 0x978),pCVar7);
     pfVar4 = local_1cc;
     pCVar6 = &local_1fc;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -96,7 +96,7 @@ void core_gabriela_cpp_FUN_004d5550(void)
     (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5388) + 0x154) + 0xf0))();
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_13c,(CVector3f *)&DAT_02d7b814,&g_ZeroVector);
-    matrix_b = (in_stack_00000004->model).padding_0x0 + DAT_02d7b88c * 0x30 + 0xe80;
+    matrix_b = (in_stack_00000004->model).field3_0x508 + DAT_02d7b88c * 0x30 + 0x978;
     pCVar7 = &local_13c;
     core_xform_cpp_buildRotationX_FUN_005f6c40((CMatrix3x4f *)0x3fc90fdb,(float)pCVar7);
     pCVar6 = &local_28c;
@@ -173,7 +173,7 @@ void core_gabriela_cpp_FUN_004d5550(void)
     *(float *)(iVar3 + 0x34) = pCVar2->y;
     *(float *)(iVar3 + 0x38) = pCVar2->z;
   }
-  core_actor_cpp_CDemonActor_FUN_00408c10
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
             (*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x5388));
   return;
 }
@@ -426,7 +426,7 @@ void core_gabriela_cpp_FUN_004d5550(void)
 //   Label: LAB_004d57b5
 // 004d57bb: MOV EAX,dword ptr [EAX + 0x330]
 // 004d57c1: PUSH EAX
-// 004d57c2: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 004d57c2: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 004d57c7: ADD ESP,0x4
 // 004d57ca: LEA ESP,[EBP + 0x7e]

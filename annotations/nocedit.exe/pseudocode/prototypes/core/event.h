@@ -5,7 +5,7 @@
 
 // Original: core_event.cpp_staticInit_FUN_004aa260
 // Address: 004aa260
-undefined staticInit();
+void staticInit(void);
 
 // Original: core_event.cpp_FUN_004aa270
 // Address: 004aa270
@@ -55,133 +55,133 @@ undefined DifferentWaysToDie();
 // Address: 004aa960
 undefined DifferentWaysToDie2();
 
-// Original: core_event.cpp_FUN_004aaa50
+// Original: core_event.cpp_CEventList_ctor_FUN_004aaa50
 // Address: 004aaa50
-undefined FUN_004aaa50();
+CEventList * CEventList::ctor(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004aaa70
+// Original: core_event.cpp_CEventList_FUN_004aaa70
 // Address: 004aaa70
-undefined FUN_004aaa70();
+void CEventList(CEventList * this_ptr);
 
 // Original: core_event.cpp_CEventList_process_FUN_004aaac0
 // Address: 004aaac0
-undefined CEventList::process();
+void CEventList::process(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004aabe0
+// Original: core_event.cpp_CEventList_FUN_004aabe0
 // Address: 004aabe0
-undefined FUN_004aabe0();
+void CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004aac00
+// Original: core_event.cpp_CEventList_FUN_004aac00
 // Address: 004aac00
-undefined FUN_004aac00();
+int CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_LargeEventHandler_FUN_004aacc0
+// Original: core_event.cpp_CEventList_FUN_004aacc0
 // Address: 004aacc0
-undefined LargeEventHandler();
+CDemonActor * CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004adc10
+// Original: core_event.cpp_CEventList_FUN_004adc10
 // Address: 004adc10
-undefined FUN_004adc10();
+int CEventList(CEventList * this_ptr, char * str);
 
-// Original: core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// Original: core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 // Address: 004adca0
-int CEvent::LoggingSomethingToConsole(CEventList * this_ptr, char * n1);
+int CEventList::evaluateCondition(CEventList * this_ptr, char * condition_expression);
 
-// Original: core_event.cpp_FUN_004add00
+// Original: core_event.cpp_CEventList_FUN_004add00
 // Address: 004add00
-undefined FUN_004add00();
+int CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004add40
+// Original: core_event.cpp_CEventList_FUN_004add40
 // Address: 004add40
-undefined FUN_004add40();
+int CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_CEvent_SyntaxErrorSomething_FUN_004add80
+// Original: core_event.cpp_CEventList_FUN_004add80
 // Address: 004add80
-undefined CEvent::SyntaxErrorSomething();
+int CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004addf0
+// Original: core_event.cpp_CEventList_FUN_004addf0
 // Address: 004addf0
-undefined FUN_004addf0();
+void CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_CEvent_EventReadingFromFile_FUN_004ae140
+// Original: core_event.cpp_CEventList_FUN_004ae140
 // Address: 004ae140
-undefined CEvent::EventReadingFromFile();
+int CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_CEvent_EventReadingFromFileInMultiLoops_FUN_004b0270
+// Original: core_event.cpp_CEventList_FUN_004b0270
 // Address: 004b0270
-undefined CEvent::EventReadingFromFileInMultiLoops();
+int CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_EventChecker_FUN_004b0330
+// Original: core_event.cpp_CEventList_FUN_004b0330
 // Address: 004b0330
-undefined EventChecker();
+void CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004b0460
+// Original: core_event.cpp_CEventList_FUN_004b0460
 // Address: 004b0460
-undefined FUN_004b0460();
+void CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_EventChecker2_FUN_004b0470
+// Original: core_event.cpp_CEventList_FUN_004b0470
 // Address: 004b0470
-undefined EventChecker2();
+void CEventList(CEventList * this_ptr);
 
 // Original: core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0
 // Address: 004b05a0
-undefined CEventList::setTimerEvent();
+void CEventList::setTimerEvent(CEventList * this_ptr);
 
 // Original: core_event.cpp_CEventList_setCounter_FUN_004b0720
 // Address: 004b0720
-undefined CEventList::setCounter();
+void CEventList::setCounter(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004b0830
+// Original: core_event.cpp_CEventList_FUN_004b0830
 // Address: 004b0830
-undefined FUN_004b0830();
+int CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004b0860
+// Original: core_event.cpp_CEventList_FUN_004b0860
 // Address: 004b0860
-undefined FUN_004b0860();
+int CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004b08b0
+// Original: core_event.cpp_CEventList_FUN_004b08b0
 // Address: 004b08b0
-undefined FUN_004b08b0();
+int CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004b0900
+// Original: core_event.cpp_CEventList_FUN_004b0900
 // Address: 004b0900
-undefined FUN_004b0900();
+int CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004b0950
+// Original: core_event.cpp_CEventList_FUN_004b0950
 // Address: 004b0950
-undefined FUN_004b0950();
+int CEventList(CEventList * this_ptr);
 
 // Original: core_event.cpp_CEventList_setActorVariable_FUN_004b09a0
 // Address: 004b09a0
-undefined CEventList::setActorVariable();
+void CEventList::setActorVariable(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004b0b80
+// Original: core_event.cpp_CEventList_FUN_004b0b80
 // Address: 004b0b80
-undefined FUN_004b0b80();
+int CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004b0bf0
+// Original: core_event.cpp_CEventList_FUN_004b0bf0
 // Address: 004b0bf0
-undefined FUN_004b0bf0();
+int CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004b0c40
+// Original: core_event.cpp_CEventList_FUN_004b0c40
 // Address: 004b0c40
-undefined FUN_004b0c40();
+int CEventList(CEventList * this_ptr);
 
 // Original: core_event.cpp_CEventList_setSfxHandle_FUN_004b0c80
 // Address: 004b0c80
-undefined CEventList::setSfxHandle();
+void CEventList::setSfxHandle(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004b0d60
+// Original: core_event.cpp_CEventList_FUN_004b0d60
 // Address: 004b0d60
-undefined FUN_004b0d60();
+int CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004b0db0
+// Original: core_event.cpp_CEventList_FUN_004b0db0
 // Address: 004b0db0
-undefined FUN_004b0db0();
+void CEventList(CEventList * this_ptr);
 
-// Original: core_event.cpp_FUN_004b0f00
+// Original: core_event.cpp_CEventList_FUN_004b0f00
 // Address: 004b0f00
-undefined FUN_004b0f00();
+void CEventList(CEventList * this_ptr);
 
 // Original: core_event.cpp_FUN_004b0f90
 // Address: 004b0f90
@@ -189,11 +189,11 @@ undefined FUN_004b0f90();
 
 // Original: core_event.cpp_CEventList_loadState_FUN_004b0fc0
 // Address: 004b0fc0
-undefined CEventList::loadState();
+int CEventList::loadState(CEventList * this_ptr);
 
-// Original: core_event.cpp_WritingEventFile_FUN_004b1380
+// Original: core_event.cpp_CEventList_saveState_FUN_004b1380
 // Address: 004b1380
-undefined WritingEventFile();
+int CEventList::saveState(CEventList * this_ptr, FILE * file_handle);
 
 // Original: core_event.cpp_FUN_004b1670
 // Address: 004b1670
@@ -205,7 +205,7 @@ void CRuleList::insert(CRuleList * this_ptr);
 
 // Original: core_event.cpp_CRuleList_remove_FUN_004b17c0
 // Address: 004b17c0
-undefined CRuleList::remove();
+void CRuleList::remove(CRuleList * this_ptr);
 
 // Original: core_event.cpp_FUN_004b1890
 // Address: 004b1890
@@ -241,7 +241,7 @@ undefined FUN_004b19c1();
 
 // Original: core_event.cpp_FUN_004b19d0
 // Address: 004b19d0
-undefined FUN_004b19d0();
+void FUN_004b19d0(void);
 
 // Original: core_event.cpp_FUN_004b1a49
 // Address: 004b1a49
@@ -253,7 +253,7 @@ undefined FUN_004b1a59();
 
 // Original: core_event.cpp_FUN_004b1a78
 // Address: 004b1a78
-undefined FUN_004b1a78();
+void FUN_004b1a78(void);
 
 // Original: core_event.cpp_FUN_004b1b1c
 // Address: 004b1b1c

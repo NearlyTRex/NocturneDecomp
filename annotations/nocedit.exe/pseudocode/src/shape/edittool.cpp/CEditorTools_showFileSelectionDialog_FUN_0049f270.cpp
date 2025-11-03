@@ -14,14 +14,14 @@
 //   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 (004e12b0) at 004e179c [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 (004e1cb0) at 004e2856 [UNCONDITIONAL_CALL]
 //   core_game.cpp_FUN_004e2f10 (004e2f10) at 004e2f49 [UNCONDITIONAL_CALL]
-//   core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0 (0052bcb0) at 0052bceb [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052bceb [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 (005381e0) at 005384c2 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0 (0053ccf0) at 0053cd6f [UNCONDITIONAL_CALL]
 //   core_platfrm.cpp_FUN_0054e530 (0054e530) at 0054e66a [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_00562920 (00562920) at 00563573 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 (00584940) at 00584b40 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 (0057e7c0) at 0057f5ee [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00598410 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00598410 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_viewModel_FUN_00598fc0 (00598fc0) at 005991ad [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_No_files_found_006230e2

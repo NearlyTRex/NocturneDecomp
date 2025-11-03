@@ -1,11 +1,11 @@
 // Name: core_motion.cpp_CMotionController_FUN_0052dab0
 // Address: 0052dab0
 // Address Range: [[0052dab0, 0052dac4]]
-// Convention: unknown
-// Signature: undefined core_motion.cpp_CMotionController_FUN_0052dab0()
+// Convention: __cdecl
+// Signature: int core_motion.cpp_CMotionController_FUN_0052dab0(CMotionController * this_ptr)
 // Cross-references:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040fae2 [UNCONDITIONAL_CALL]
 //   core_actor.cpp_CActorProperty_FUN_0040ea50 (0040ea50) at 0040ec43 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040fae2 [UNCONDITIONAL_CALL]
 //   core_armour.cpp_CArmour_process_FUN_00412260 (00412260) at 004122e1 [UNCONDITIONAL_CALL]
 //   core_baron.cpp_CBaronWeapon_FUN_00413e30 (00413e30) at 00413e73 [UNCONDITIONAL_CALL]
 //   core_baron.cpp_CBaron_FUN_00413ae0 (00413ae0) at 00413b0c [UNCONDITIONAL_CALL]
@@ -35,7 +35,7 @@
 //   core_dracbrid.cpp_FUN_00486320 (00486320) at 00486341 [UNCONDITIONAL_CALL]
 //   core_drone.cpp_FUN_0048ec70 (0048ec70) at 0048ed14 [UNCONDITIONAL_CALL]
 //   core_drone.cpp_FUN_0048f360 (0048f360) at 0048f3b7 [UNCONDITIONAL_CALL]
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ad5cb [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ad5cb [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d2ea0 (004d2ea0) at 004d3d86 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d4190 (004d4190) at 004d46b3 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d6540 (004d6540) at 004d665c [UNCONDITIONAL_CALL]
@@ -84,7 +84,7 @@
 //   core_scat.cpp_FUN_00558720 (00558720) at 0055891d [UNCONDITIONAL_CALL]
 //   core_sentinel.cpp_FUN_00568030 (00568030) at 005680c0 [UNCONDITIONAL_CALL]
 //   core_sentinel.cpp_SentinelBehavior_FUN_00568cd0 (00568cd0) at 00568d04 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00596dd7 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596dd7 [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a2800 (005a2800) at 005a2a53 [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a3580 (005a3580) at 005a35f8 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bc686 [UNCONDITIONAL_CALL]
@@ -113,14 +113,10 @@
 
 #include "nocturne.h"
 
-/* Signature: char* core_motion.cpp_CMotionController_FUN_0052dab0(CMotionController* param_1) */
-
-int core_motion_cpp_CMotionController_FUN_0052dab0(void)
+int __cdecl core_motion_cpp_CMotionController_FUN_0052dab0(CMotionController *this_ptr)
 
 {
-  int *in_stack_00000004;
-  
-  return *in_stack_00000004 + 0x968 + in_stack_00000004[1] * 0x54c;
+  return (int)(this_ptr->motion_list_ptr->motions + this_ptr->current_motion_index);
 }
 
 

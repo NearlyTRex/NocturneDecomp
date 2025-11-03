@@ -58,15 +58,15 @@
 //   core_cloth.cpp_FUN_00439710
 //   core_enemy.cpp_CEnemy_FUN_004a9650
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_morph.cpp_CallToFreeSomething1_FUN_0052b430
 //   core_morph.cpp_CMorph_getReady_FUN_0052b680
-//   core_skeleton.cpp_CDeformableModel_GetModelPtrSomethingMaybe_FUN_0059df80
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+//   core_morph.cpp_FUN_0052b430
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
-//   core_skeleton.cpp_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -76,115 +76,141 @@
 void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
 
 {
-  undefined4 *puVar1;
-  int iVar2;
-  CDemonActor *pCVar3;
-  int iVar4;
+  CDeformableModelInstance *pCVar1;
+  undefined4 *puVar2;
+  int iVar3;
+  CSkeleton *this_ptr;
+  CDemonActor *pCVar4;
   int iVar5;
+  int iVar6;
   BADSPACEBASE *in_ESP;
-  undefined4 *puVar6;
-  byte bVar7;
+  undefined4 *puVar7;
+  byte bVar8;
   CEnemy *in_stack_00000004;
-  undefined4 auStackY_1010 [1016];
+  undefined4 auStackY_1010 [1015];
   uint class_name_hash;
   undefined4 uStack_28;
   undefined4 uStack_1c;
   
-  bVar7 = 0;
+  bVar8 = 0;
   if (g_CNetGameInstance->connection_type != 0) {
     g_CurrentFilename = "..\\core\\mimic.cpp";
     g_CurrentLineNumber = 0xb6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMimic::setup - can't use mimic in multi-player!");
   }
-  core_skeleton_cpp_FUN_005a0840();
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
-  core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-  DAT_02f33378 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02f3337c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02f33380 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02f33384 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02f33388 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02f3338c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02f33390 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  DAT_02f33394 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  DAT_02f33398 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02f3339c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02f333a0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02f333a4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02f333a8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02f333b8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02f333bc = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02f333c0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02f333c4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            (&(in_stack_00000004->base_character).model);
+  pCVar1 = &(in_stack_00000004->base_character).model;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(pCVar1);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(pCVar1);
+  DAT_02f33378 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 head");
+  _DAT_02f3337c =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L Clavicle");
+  _DAT_02f33380 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 R Clavicle");
+  _DAT_02f33384 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L UpperArm");
+  _DAT_02f33388 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 R UpperArm");
+  _DAT_02f3338c =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L ForeArm");
+  _DAT_02f33390 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 R ForeArm");
+  DAT_02f33394 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L Foot")
+  ;
+  DAT_02f33398 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 R Foot")
+  ;
+  _DAT_02f3339c =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L Thigh");
+  _DAT_02f333a0 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 R Thigh");
+  _DAT_02f333a4 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L Calf");
+  _DAT_02f333a8 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 R Calf");
+  _DAT_02f333b8 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L Hand");
+  _DAT_02f333bc =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 R Hand");
+  _DAT_02f333c0 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 Spine2");
+  _DAT_02f333c4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 Spine")
+  ;
   core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
   core_cloth_cpp_CCloth_load_FUN_00438cf0
             ((CCloth *)(in_stack_00000004[1].base_character.base_actor.create_event + 0x58),
              "strcoat.cth");
   core_cloth_cpp_FUN_00439710();
   class_name_hash = g_CEnemyClassInfo.name_hash;
-  pCVar3 = core_actor_cpp_createActorByName_FUN_0040c430
+  pCVar4 = core_actor_cpp_createActorByName_FUN_0040c430
                      (in_stack_00000004[6].base_character.cloth_data + 0x1b2c);
-  pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar3,class_name_hash);
-  *(CDemonActor **)(in_stack_00000004[6].base_character.cloth_data + 0x2784) = pCVar3;
-  if (pCVar3 == (CDemonActor *)0x0) {
+  pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar4,class_name_hash);
+  *(CDemonActor **)(in_stack_00000004[6].base_character.cloth_data + 0x2784) = pCVar4;
+  if (pCVar4 == (CDemonActor *)0x0) {
     g_CurrentFilename = "..\\core\\mimic.cpp";
     g_CurrentLineNumber = 0x101;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMimic failed to create morph target actor!");
   }
   (*(code *)**(undefined4 **)
               (*(int *)(in_stack_00000004[6].base_character.cloth_data + 0x2784) + 0x154))();
-  core_skeleton_cpp_CDeformableModel_GetModelPtrSomethingMaybe_FUN_0059df80();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40();
-  core_morph_cpp_CallToFreeSomething1_FUN_0052b430();
+  pCVar1 = &(in_stack_00000004->base_character).model;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059df80(pCVar1);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40(pCVar1);
+  core_morph_cpp_FUN_0052b430();
   core_skeleton_cpp_CDeformableModelInstance_FUN_0059e000();
-  iVar5 = 0;
+  iVar6 = 0;
   if (0 < *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1ba8)) {
-    iVar4 = 0;
+    iVar5 = 0;
     do {
-      iVar2 = *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1bac);
-      iVar5 = iVar5 + 1;
-      *(float *)(iVar2 + 4 + iVar4) = -*(float *)(iVar2 + 4 + iVar4);
-      iVar4 = iVar4 + 0x10;
-    } while (iVar5 < *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1ba8));
+      iVar3 = *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1bac);
+      iVar6 = iVar6 + 1;
+      *(float *)(iVar3 + 4 + iVar5) = -*(float *)(iVar3 + 4 + iVar5);
+      iVar5 = iVar5 + 0x10;
+    } while (iVar6 < *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1ba8));
   }
-  iVar5 = 0;
+  iVar6 = 0;
   if (0 < *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1bb0)) {
-    iVar4 = 0;
+    iVar5 = 0;
     do {
-      iVar2 = *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1bb4);
-      puVar1 = (undefined4 *)(iVar4 + 0x30 + iVar2);
-      puVar6 = puVar1 + (uint)bVar7 * -2 + 1;
-      uStack_1c = *puVar1;
-      *(undefined4 *)(&stack0xffffffe8 + (uint)bVar7 * -8) = *puVar6;
-      *(undefined4 *)(&stack0xffffffec + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-           puVar6[(uint)bVar7 * -2 + 1];
-      puVar1 = (undefined4 *)(iVar4 + 0x18 + iVar2);
-      puVar6 = puVar1 + (uint)bVar7 * -2 + 1;
-      uStack_28 = *puVar1;
-      *(undefined4 *)(&stack0xffffffdc + (uint)bVar7 * -8) = *puVar6;
-      *(undefined4 *)(&stack0xffffffe0 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-           puVar6[(uint)bVar7 * -2 + 1];
-      puVar1 = (undefined4 *)(iVar4 + 0x18 + iVar2);
-      puVar6 = puVar1 + (uint)bVar7 * -2 + 1;
-      *puVar1 = uStack_1c;
-      *puVar6 = *(undefined4 *)(&stack0xffffffe8 + (uint)bVar7 * -8);
-      puVar6[(uint)bVar7 * -2 + 1] =
-           *(undefined4 *)(&stack0xffffffec + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-      puVar1 = (undefined4 *)(iVar4 + 0x30 + iVar2);
-      puVar6 = puVar1 + (uint)bVar7 * -2 + 1;
-      *puVar1 = uStack_28;
-      *puVar6 = *(undefined4 *)(&stack0xffffffdc + (uint)bVar7 * -8);
-      puVar6[(uint)bVar7 * -2 + 1] =
-           *(undefined4 *)(&stack0xffffffe0 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-      iVar5 = iVar5 + 1;
-      iVar4 = iVar4 + 0x3c;
-    } while (iVar5 < *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1bb0));
+      iVar3 = *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1bb4);
+      puVar2 = (undefined4 *)(iVar5 + 0x30 + iVar3);
+      puVar7 = puVar2 + (uint)bVar8 * -2 + 1;
+      uStack_1c = *puVar2;
+      *(undefined4 *)(&stack0xffffffe8 + (uint)bVar8 * -8) = *puVar7;
+      *(undefined4 *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+           puVar7[(uint)bVar8 * -2 + 1];
+      puVar2 = (undefined4 *)(iVar5 + 0x18 + iVar3);
+      puVar7 = puVar2 + (uint)bVar8 * -2 + 1;
+      uStack_28 = *puVar2;
+      *(undefined4 *)(&stack0xffffffdc + (uint)bVar8 * -8) = *puVar7;
+      *(undefined4 *)(&stack0xffffffe0 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+           puVar7[(uint)bVar8 * -2 + 1];
+      puVar2 = (undefined4 *)(iVar5 + 0x18 + iVar3);
+      puVar7 = puVar2 + (uint)bVar8 * -2 + 1;
+      *puVar2 = uStack_1c;
+      *puVar7 = *(undefined4 *)(&stack0xffffffe8 + (uint)bVar8 * -8);
+      puVar7[(uint)bVar8 * -2 + 1] =
+           *(undefined4 *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8);
+      puVar2 = (undefined4 *)(iVar5 + 0x30 + iVar3);
+      puVar7 = puVar2 + (uint)bVar8 * -2 + 1;
+      *puVar2 = uStack_28;
+      *puVar7 = *(undefined4 *)(&stack0xffffffdc + (uint)bVar8 * -8);
+      puVar7[(uint)bVar8 * -2 + 1] =
+           *(undefined4 *)(&stack0xffffffe0 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
+      iVar6 = iVar6 + 1;
+      iVar5 = iVar5 + 0x3c;
+    } while (iVar6 < *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1bb0));
   }
-  core_skeleton_cpp_CDeformableModel_GetModelPtrSomethingMaybe_FUN_0059df80();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40();
-  core_morph_cpp_CallToFreeSomething1_FUN_0052b430();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059df80
+            ((CDeformableModelInstance *)
+             (*(int *)(in_stack_00000004[6].base_character.cloth_data + 0x2784) + 0x158));
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40
+            ((CDeformableModelInstance *)
+             (*(int *)(in_stack_00000004[6].base_character.cloth_data + 0x2784) + 0x158));
+  core_morph_cpp_FUN_0052b430();
   core_skeleton_cpp_CDeformableModelInstance_FUN_0059e000();
-  core_morph_cpp_CMorph_getReady_FUN_0052b680();
+  core_morph_cpp_CMorph_getReady_FUN_0052b680
+            ((CMorph *)(in_stack_00000004[6].base_character.cloth_data + 0x1b54));
   return;
 }
 
@@ -219,16 +245,16 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
 // 0051f41b: PUSH EAX
 // 0051f41c: PUSH EDX
 //   Label: LAB_0051f41c
-// 0051f41d: CALL core_skeleton.cpp_FUN_005a0840
+// 0051f41d: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 0051f422: ADD ESP,0x8
 // 0051f425: LEA EDI,[EBX + 0x158]
 // 0051f42b: PUSH EDI
-// 0051f42c: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 0051f42c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0051f431: ADD ESP,0x4
 // 0051f434: PUSH EDI
-// 0051f435: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 0051f435: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0051f43a: ADD ESP,0x4
 // 0051f43d: PUSH 0x1
@@ -441,7 +467,7 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
 // 0051f62e: ADD ESP,0x4
 // 0051f631: LEA ESI,[EBX + 0x158]
 // 0051f637: PUSH ESI
-// 0051f638: CALL core_skeleton.cpp_CDeformableModel_GetModelPtrSomethingMaybe_FUN_0059df80
+// 0051f638: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
 //   XREF to: 0059df80 (UNCONDITIONAL_CALL)
 // 0051f63d: ADD ESP,0x4
 // 0051f640: PUSH ESI
@@ -452,7 +478,7 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
 // 0051f64a: PUSH 0x0
 // 0051f64c: LEA EAX,[EBX + 0x4be24]
 // 0051f652: PUSH EAX
-// 0051f653: CALL core_morph.cpp_CallToFreeSomething1_FUN_0052b430
+// 0051f653: CALL core_morph.cpp_FUN_0052b430
 //   XREF to: 0052b430 (UNCONDITIONAL_CALL)
 // 0051f658: ADD ESP,0xc
 // 0051f65b: PUSH ESI
@@ -516,7 +542,7 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
 //   Label: LAB_0051f6e0
 // 0051f6e6: ADD EAX,0x158
 // 0051f6eb: PUSH EAX
-// 0051f6ec: CALL core_skeleton.cpp_CDeformableModel_GetModelPtrSomethingMaybe_FUN_0059df80
+// 0051f6ec: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
 //   XREF to: 0059df80 (UNCONDITIONAL_CALL)
 // 0051f6f1: MOV EAX,dword ptr [EBX + 0x4ca54]
 // 0051f6f7: ADD ESP,0x4
@@ -531,7 +557,7 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
 // 0051f714: PUSH 0x1
 // 0051f716: LEA ESI,[EBX + 0x4be24]
 // 0051f71c: PUSH ESI
-// 0051f71d: CALL core_morph.cpp_CallToFreeSomething1_FUN_0052b430
+// 0051f71d: CALL core_morph.cpp_FUN_0052b430
 //   XREF to: 0052b430 (UNCONDITIONAL_CALL)
 // 0051f722: MOV EAX,dword ptr [EBX + 0x4ca54]
 // 0051f728: ADD ESP,0xc

@@ -4,14 +4,12 @@
 // Convention: unknown
 // Signature: undefined core_stranger.cpp_FUN_005c3750()
 // Globals:
-//   undefined4 DAT_00653c84
+//   double DOUBLE_00653c84 = 0.0100000000000000
 // Function calls:
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   crt_math.c_acos_FUN_00600162
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_stranger_cpp_FUN_005c3750(void)
 
@@ -22,7 +20,7 @@ void core_stranger_cpp_FUN_005c3750(void)
   float in_stack_00000008;
   float in_stack_0000000c;
   
-  if ((((float)_DAT_00653c84 <= in_stack_00000008) &&
+  if ((((float)DOUBLE_00653c84 <= in_stack_00000008) &&
       (dVar2 = (double)(SQRT(in_stack_00000008 * in_stack_00000008 -
                              in_stack_0000000c * in_stack_0000000c) / in_stack_00000008),
       dVar2 < 1.0)) && (0.0 <= dVar2)) {
@@ -34,7 +32,7 @@ void core_stranger_cpp_FUN_005c3750(void)
       fVar1 = *in_stack_00000004 + (float)dVar2;
     }
     *in_stack_00000004 = fVar1;
-    fVar1 = core_actor_cpp_FUN_0040cd70(*in_stack_00000004);
+    fVar1 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(*in_stack_00000004);
     *in_stack_00000004 = fVar1;
   }
   return;
@@ -107,7 +105,7 @@ void core_stranger_cpp_FUN_005c3750(void)
 // 005c37b8: FSTP float ptr [EBX]
 //   Label: LAB_005c37b8
 // 005c37ba: PUSH dword ptr [EBX]
-// 005c37bc: CALL core_actor.cpp_FUN_0040cd70
+// 005c37bc: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 005c37c1: MOV dword ptr [ESP + 0x18],EAX
 //   XREF to: Stack[-0xc] (WRITE)

@@ -7,9 +7,9 @@
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CDemonRenderer g_CDemonRendererInstance
-//   CKeyFramedModelInstance DAT_02d12f70
-//   CKeyFramedModelInstance DAT_02d130ec
-//   CKeyFramedModelInstance DAT_02d13268
+//   CKeyFramedModelInstance g_FireEffectFireballModel
+//   CKeyFramedModelInstance g_FireEffectFireballSmallModel
+//   CKeyFramedModelInstance g_FireEffectFireballGreenModel
 //   CDemonSet g_CDemonSetInstance
 //   CVector3f g_ZeroVector
 // Function calls:
@@ -71,13 +71,13 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
             (g_CDemonRendererPtr,(CVector3i *)&this_ptr->rotation_angle1,(CVector3i *)0x0);
   if (this_ptr->lighting_active == 0) {
-    this_ptr_00 = &DAT_02d12f70;
+    this_ptr_00 = &g_FireEffectFireballModel;
   }
   else if (this_ptr->lighting_active == 1) {
-    this_ptr_00 = &DAT_02d130ec;
+    this_ptr_00 = &g_FireEffectFireballSmallModel;
   }
   else {
-    this_ptr_00 = &DAT_02d13268;
+    this_ptr_00 = &g_FireEffectFireballGreenModel;
   }
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);
   pCVar1 = pCVar3->frame_bounds;

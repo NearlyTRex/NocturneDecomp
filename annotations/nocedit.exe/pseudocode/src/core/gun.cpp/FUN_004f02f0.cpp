@@ -20,30 +20,23 @@ CGun * __cdecl core_gun_cpp_FUN_004f02f0(CGun *this_ptr)
   CWeapon *pCVar1;
   
   pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base_weapon);
-  (pCVar1->base_actor).metadata.vtable =
-       &PTR_core_weapon_cpp_ActorModelSomething_FUN_005edff0_0065f2a4;
+  (pCVar1->base_actor).vtable = &PTR_core_weapon_cpp_ActorModelSomething_FUN_005edff0_0065f2a4;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            ((CKeyFramedModelInstance *)&pCVar1->model_instance,"gat.kfm");
-  pCVar1->field4_0x2d8[0] = '\0';
-  pCVar1->field4_0x2d8[1] = '\0';
-  pCVar1->field4_0x2d8[2] = '\0';
-  pCVar1->field4_0x2d8[3] = '\0';
-  pCVar1->field4_0x2d8[4] = '\x01';
-  pCVar1->field4_0x2d8[5] = '\0';
-  pCVar1->field4_0x2d8[6] = '\0';
-  pCVar1->field4_0x2d8[7] = '\0';
-  pCVar1->field4_0x2d8[0xc] = '\x01';
-  pCVar1->field4_0x2d8[0xd] = '\0';
-  pCVar1->field4_0x2d8[0xe] = '\0';
-  pCVar1->field4_0x2d8[0xf] = '\0';
-  pCVar1->field4_0x2d8[0x10] = '\0';
-  pCVar1->field4_0x2d8[0x11] = '\0';
-  pCVar1->field4_0x2d8[0x12] = 'H';
-  pCVar1->field4_0x2d8[0x13] = 'B';
-  pCVar1->field4_0x2d8[0x14] = '\0';
-  pCVar1->field4_0x2d8[0x15] = '\0';
-  pCVar1->field4_0x2d8[0x16] = '\0';
-  pCVar1->field4_0x2d8[0x17] = '\0';
+            (&pCVar1->model,"gat.kfm");
+  pCVar1->field3_0x2d8[0] = '\0';
+  pCVar1->field3_0x2d8[1] = '\0';
+  pCVar1->field3_0x2d8[2] = '\0';
+  pCVar1->field3_0x2d8[3] = '\0';
+  pCVar1->field3_0x2d8[4] = '\x01';
+  pCVar1->field3_0x2d8[5] = '\0';
+  pCVar1->field3_0x2d8[6] = '\0';
+  pCVar1->field3_0x2d8[7] = '\0';
+  pCVar1->field3_0x2d8[0xc] = '\x01';
+  pCVar1->field3_0x2d8[0xd] = '\0';
+  pCVar1->field3_0x2d8[0xe] = '\0';
+  pCVar1->field3_0x2d8[0xf] = '\0';
+  pCVar1->bolt_velocity = 50.0;
+  pCVar1->fire_cooldown = 0.0;
   return (CGun *)pCVar1;
 }
 

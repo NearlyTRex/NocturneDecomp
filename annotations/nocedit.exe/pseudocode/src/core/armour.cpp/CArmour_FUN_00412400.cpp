@@ -18,7 +18,7 @@ void __cdecl core_armour_cpp_CArmour_FUN_00412400(CArmour *this_ptr)
   CArmour *pCStack0000000c;
   
   core_charactr_cpp_CCharacter_FUN_0042b9e0((CCharacter *)this_ptr);
-  (*((this_ptr->base_enemy).base_character.base_actor.metadata.vtable)->playSound)
+  (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
             ((CDemonActor *)this_ptr,"armour.wav");
   pCStack0000000c = this_ptr;
   uStack00000008 = 0x412434;

@@ -1,39 +1,47 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340
 // Address: 005a0340
 // Address Range: [[005a0340, 005a03ab]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340()
+// Convention: __cdecl
+// Signature: void core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(CDeformableModelInstance * this_ptr)
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042af60 (0042af60) at 0042b0a5 [UNCONDITIONAL_CALL]
-//   core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0 (0052bcb0) at 0052c8ab [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150 (005a0150) at 005a018b [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052c8ab [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150 (005a0150) at 005a018b [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\skeleton.cpp_0064ee38
+//   TerminatedCString s_core_skeleton_cpp_0064ee38
 //   TerminatedCString s_CDeformableModelInstance_0064ee4d
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_skeleton.cpp_CDeformableModel_FUN_0059abf0
+//   core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_skeleton.cpp_CDeformableModelInstance_renderPolygons(undefined4
-   param_1, undefined4 param_2, undefined4 param_3) */
-
-void core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(void)
+void __cdecl
+core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340
+          (CDeformableModelInstance *this_ptr)
 
 {
-  int in_stack_00000004;
+  CDeformableModel *this_ptr_00;
+  int unaff_EDI;
+  int *in_stack_0000000c;
+  int in_stack_00000010;
+  int *lod_index;
+  int *part_visibility_flags;
   
-  if (*(int *)(in_stack_00000004 + 0x2230) < 0) {
-    g_CurrentFilename = ">..\\core\\skeleton.cpp" + 1;
+  if (this_ptr->field6_0x2230 < 0) {
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0xd23;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModelInstance::renderPolygons called but LOD is not set!");
   }
-  core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-  core_skeleton_cpp_CDeformableModel_FUN_0059abf0();
+  part_visibility_flags = this_ptr->texture_set_indices;
+  lod_index = this_ptr->part_visibility_flags;
+  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
+  core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0
+            (this_ptr_00,(int)lod_index,(byte *)part_visibility_flags,in_stack_0000000c,
+             in_stack_00000010,unaff_EDI);
   return;
 }
 
@@ -66,7 +74,7 @@ void core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(void
 //   XREF to: 005a07a0 (UNCONDITIONAL_CALL)
 // 005a0375: ADD ESP,0x4
 // 005a0378: PUSH EAX
-// 005a0379: CALL core_skeleton.cpp_CDeformableModel_FUN_0059abf0
+// 005a0379: CALL core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0
 //   XREF to: 0059abf0 (UNCONDITIONAL_CALL)
 // 005a037e: ADD ESP,0x18
 // 005a0381: POP EBP

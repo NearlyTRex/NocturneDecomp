@@ -156,9 +156,9 @@
 //   undefined4 DAT_0062c8a0
 //   TerminatedCString s_CGun_0062c8d5
 //   SEncryptedMessage DAT_0062c8da
-//   undefined4 DAT_0062c915
-//   undefined4 DAT_0062c91d
-//   undefined4 DAT_0062c925
+//   double DOUBLE_0062c915 = 0.0555555555555556
+//   double DOUBLE_0062c91d = 0.0000152587890625
+//   double DOUBLE_0062c925 = 50
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   int g_WindowHeight = 0xc8
 //   CEventList* g_CEventListPtr = 02d05310
@@ -174,7 +174,7 @@
 //   CWeather* g_CWeatherPtr = 03f95dc0
 //   undefined4 g_ColorMagenta
 //   CEditorTools g_CEditorToolsPtr
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CGame g_CGameInstance
 //   undefined4 DAT_02d81cb0
 //   int g_CheatSystemEnabled
@@ -214,9 +214,9 @@
 //   core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
 //   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
 //   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-//   core_event.cpp_FUN_004aabe0
-//   core_event.cpp_FUN_004add40
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
+//   core_event.cpp_CEventList_FUN_004aabe0
+//   core_event.cpp_CEventList_FUN_004add40
 //   core_game.cpp_CGame_displayMessage_FUN_004d7f20
 //   core_game.cpp_CGame_FUN_004dda80
 //   core_game.cpp_FUN_004dd930
@@ -226,7 +226,7 @@
 //   core_inv.cpp_CInventory_findItemByName_FUN_004fe9d0
 //   core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700
 //   core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 //   core_sound.cpp_CSound_playSfx_FUN_005b3a20
 //   core_weather.cpp_CWeather_FUN_005ef8c0
@@ -268,20 +268,23 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
   char *pcVar12;
   undefined3 extraout_var;
   uint uVar13;
-  byte *pbVar14;
+  int iVar14;
+  byte *pbVar15;
   undefined3 extraout_var_00;
   undefined3 extraout_var_01;
   undefined3 extraout_var_02;
-  CDemonActor *pCVar15;
+  CDemonActor *pCVar16;
   CDemonActor *this_ptr_01;
-  CGasMask *this_ptr_02;
-  int iVar16;
+  CSkeleton *this_ptr_02;
+  CGasMask *this_ptr_03;
   int iVar17;
-  BADSPACEBASE *in_ESP;
   int iVar18;
-  byte *pbVar19;
-  byte bVar20;
-  float fVar21;
+  BADSPACEBASE *in_ESP;
+  CSkeleton *pCVar19;
+  CSkeleton *pCVar20;
+  byte *pbVar21;
+  byte bVar22;
+  float fVar23;
   byte abStack_358 [100];
   SDamageInfo SStack_2f4;
   float fStack_2b8;
@@ -379,15 +382,15 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
   int iStack_144;
   int iStack_140;
   float fStack_13c;
-  CGame *pCStack_138;
-  int iStack_134;
-  CGame *pCStack_130;
+  CDeformableModelInstance *pCStack_138;
+  CSkeleton *pCStack_134;
+  CDeformableModelInstance *pCStack_130;
   float fStack_12c;
   int iStack_128;
-  CGame *pCStack_124;
+  CDeformableModelInstance *pCStack_124;
   float fStack_120;
   int iStack_11c;
-  CGame *pCStack_118;
+  CDeformableModelInstance *pCStack_118;
   float fStack_114;
   int iStack_110;
   int iStack_10c;
@@ -454,33 +457,33 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
   int local_18;
   int iStack_14;
   
-  bVar20 = 0;
+  bVar22 = 0;
   if (g_CheatSystemEnabled == 0) {
-    iVar11 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar11 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                        (g_CEventListPtr,"headOfHorror");
     if ((iVar11 != 0) && (g_CGamePtr->head_of_horror_cheat != 0x29a)) {
-      fVar21 = 5.0;
+      fVar23 = 5.0;
       g_CGamePtr->head_of_horror_cheat = 0x29a;
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                           ("The horror has been unleashed.");
-      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
       core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
     }
     if ((this_ptr->subtitle_system_enabled == 0) &&
        (iVar11 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x44), iVar11 != 0)) {
-      iVar16 = 0;
+      iVar17 = 0;
       iVar11 = 100;
-      pbVar19 = abStack_358;
+      pbVar21 = abStack_358;
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Enter cheat code");
       iVar11 = shape_edittool_cpp_CEditorTools_showCheatInputDialog_FUN_004a0400
-                         (g_CEditorToolsPtr,pcVar12,(char *)pbVar19,iVar11,iVar16);
+                         (g_CEditorToolsPtr,pcVar12,(char *)pbVar21,iVar11,iVar17);
       if (iVar11 != 0) {
         iVar11 = 0;
         while (abStack_358[0] != 0) {
           wincore_winrun_cpp_enqueueInput_FUN_005f2f30((uint)abStack_358[iVar11]);
-          iVar16 = iVar11 + 1;
+          iVar17 = iVar11 + 1;
           iVar11 = iVar11 + 1;
-          abStack_358[0] = abStack_358[iVar16];
+          abStack_358[0] = abStack_358[iVar17];
         }
       }
     }
@@ -490,23 +493,23 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       if (CONCAT31(extraout_var,bVar10) == 0) break;
       uVar13 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
       iVar11 = (uVar13 & 0xff) << 8;
-      iVar16 = 0x13;
+      iVar17 = 0x13;
       do {
-        iVar18 = iVar11;
-        iVar17 = iVar16 + -1;
-        g_InputHistory[iVar16 + 1] = g_InputHistory[iVar16];
-        iVar11 = CONCAT31((int3)((uint)iVar18 >> 8),g_InputHistory[iVar16]);
-        iVar16 = iVar17;
-      } while (0 < iVar17);
-      g_InputHistory[1] = (char)((uint)iVar18 >> 8);
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062ba32);
+        iVar14 = iVar11;
+        iVar18 = iVar17 + -1;
+        g_InputHistory[iVar17 + 1] = g_InputHistory[iVar17];
+        iVar11 = CONCAT31((int3)((uint)iVar14 >> 8),g_InputHistory[iVar17]);
+        iVar17 = iVar18;
+      } while (0 < iVar18);
+      g_InputHistory[1] = (char)((uint)iVar14 >> 8);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062ba32);
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       local_29c = 0;
@@ -515,19 +518,19 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         local_cc = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             local_29c = local_29c + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (local_cc < iVar11);
       }
       if (local_29c == local_2a0) {
-        fVar21 = 5.0;
+        fVar23 = 5.0;
         g_InputHistory[1] = '\0';
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Buy Fly! today!");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
         uVar13 = (uint)(this_ptr->velocity_debug_enabled == 0);
         this_ptr->velocity_debug_enabled = uVar13;
         if (uVar13 != 0) {
@@ -535,15 +538,15 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           ;
         }
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062ba90);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062ba90);
       local_294 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       local_298 = iVar11;
@@ -551,12 +554,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         local_2a4 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             local_294 = local_294 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (local_2a4 < iVar11);
       }
       if (local_294 == local_298) {
@@ -569,9 +572,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         }
         else {
           iVar11 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-          dVar7 = (double)(iVar11 - this_ptr->timing_related_flag) * _DAT_0062c915;
+          dVar7 = (double)(iVar11 - this_ptr->timing_related_flag) * DOUBLE_0062c915;
           this_ptr->field67_0x208 = 0;
-          dVar7 = (double)this_ptr->frame_counter / (dVar7 * _DAT_0062c91d);
+          dVar7 = (double)this_ptr->frame_counter / (dVar7 * DOUBLE_0062c91d);
           local_2ac._4_4_ = (undefined4)((ulonglong)dVar7 >> 0x20);
           uVar8 = local_2ac._4_4_;
           local_2ac._0_4_ = SUB84(dVar7,0);
@@ -582,15 +585,15 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         }
       }
       if (this_ptr->velocity_debug_enabled != 0) {
-        pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bad0);
+        pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bad0);
         local_28c = 0;
         uVar13 = 0xffffffff;
-        pbVar19 = pbVar14;
+        pbVar21 = pbVar15;
         do {
           if (uVar13 == 0) break;
           uVar13 = uVar13 - 1;
-          bVar3 = *pbVar19;
-          pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+          bVar3 = *pbVar21;
+          pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
         } while (bVar3 != 0);
         iVar11 = ~uVar13 - 1;
         local_290 = iVar11;
@@ -598,12 +601,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           local_c8 = 0;
           do {
             bVar3 = g_InputHistory[iVar11];
-            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
             if (bVar3 == uVar13) {
               local_28c = local_28c + 1;
             }
             iVar11 = iVar11 + -1;
-            pbVar14 = pbVar14 + 1;
+            pbVar15 = pbVar15 + 1;
           } while (local_c8 < iVar11);
         }
         if (local_28c == local_290) {
@@ -616,15 +619,15 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         }
       }
       if (this_ptr->velocity_debug_enabled != 0) {
-        pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bb05);
+        pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bb05);
         local_284 = 0;
         uVar13 = 0xffffffff;
-        pbVar19 = pbVar14;
+        pbVar21 = pbVar15;
         do {
           if (uVar13 == 0) break;
           uVar13 = uVar13 - 1;
-          bVar3 = *pbVar19;
-          pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+          bVar3 = *pbVar21;
+          pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
         } while (bVar3 != 0);
         iVar11 = ~uVar13 - 1;
         local_288 = iVar11;
@@ -632,12 +635,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           local_c4 = 0;
           do {
             bVar3 = g_InputHistory[iVar11];
-            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
             if (bVar3 == uVar13) {
               local_284 = local_284 + 1;
             }
             iVar11 = iVar11 + -1;
-            pbVar14 = pbVar14 + 1;
+            pbVar15 = pbVar15 + 1;
           } while (local_c4 < iVar11);
         }
         if (local_284 == local_288) {
@@ -650,21 +653,21 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           else {
             pcVar12 = "Event debug on";
           }
-          fVar21 = 5.0;
+          fVar23 = 5.0;
           pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar12);
-          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
           core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
         }
       }
       if (this_ptr->velocity_debug_enabled != 0) {
-        pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bb63);
+        pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bb63);
         uVar13 = 0xffffffff;
-        pbVar19 = pbVar14;
+        pbVar21 = pbVar15;
         do {
           if (uVar13 == 0) break;
           uVar13 = uVar13 - 1;
-          bVar3 = *pbVar19;
-          pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+          bVar3 = *pbVar21;
+          pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
         } while (bVar3 != 0);
         iVar11 = ~uVar13 - 1;
         local_27c = 0;
@@ -673,12 +676,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           local_c0 = 0;
           do {
             bVar3 = g_InputHistory[iVar11];
-            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
             if (bVar3 == uVar13) {
               local_27c = local_27c + 1;
             }
             iVar11 = iVar11 + -1;
-            pbVar14 = pbVar14 + 1;
+            pbVar15 = pbVar15 + 1;
           } while (local_c0 < iVar11);
         }
         if (local_27c == local_280) {
@@ -686,17 +689,17 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           uVar13 = (uint)(this_ptr->subtitle_system_enabled == 0);
           this_ptr->subtitle_system_enabled = uVar13;
           if (uVar13 == 0) {
-            fVar21 = 5.0;
+            fVar23 = 5.0;
             pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                 ("Script debug off");
-            core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+            core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
             this_ptr->screen_clear_enabled = 0;
           }
           else {
-            fVar21 = 5.0;
+            fVar23 = 5.0;
             pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Script debug on")
             ;
-            core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+            core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
             this_ptr->screen_clear_enabled = 1;
           }
           core_set_cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0();
@@ -704,15 +707,15 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         }
       }
       if (this_ptr->velocity_debug_enabled != 0) {
-        pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bbc4);
+        pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bbc4);
         local_274 = 0;
         uVar13 = 0xffffffff;
-        pbVar19 = pbVar14;
+        pbVar21 = pbVar15;
         do {
           if (uVar13 == 0) break;
           uVar13 = uVar13 - 1;
-          bVar3 = *pbVar19;
-          pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+          bVar3 = *pbVar21;
+          pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
         } while (bVar3 != 0);
         iVar11 = ~uVar13 - 1;
         local_278 = iVar11;
@@ -720,12 +723,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           local_bc = 0;
           do {
             bVar3 = g_InputHistory[iVar11];
-            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
             if (bVar3 == uVar13) {
               local_274 = local_274 + 1;
             }
             iVar11 = iVar11 + -1;
-            pbVar14 = pbVar14 + 1;
+            pbVar15 = pbVar15 + 1;
           } while (local_bc < iVar11);
         }
         if (local_274 == local_278) {
@@ -738,21 +741,21 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           else {
             pcVar12 = "Memory debugging on";
           }
-          fVar21 = 5.0;
+          fVar23 = 5.0;
           pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar12);
-          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
           core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
         }
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bc2d);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bc2d);
       local_26c = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       local_270 = iVar11;
@@ -760,32 +763,32 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         local_b8 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             local_26c = local_26c + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (local_b8 < iVar11);
       }
       if (local_26c == local_270) {
-        fVar21 = 5.0;
+        fVar23 = 5.0;
         g_InputHistory[1] = '\0';
         this_ptr->aim_mode = 2;
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Manual aim enabled");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
         core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
         *(int *)(g_HeroActors[g_LocalHeroIndex]->field3_0xbe2c + 0x13908) = this_ptr->aim_mode;
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bc80);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bc80);
       local_264 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       local_268 = iVar11;
@@ -793,33 +796,33 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         local_b4 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             local_264 = local_264 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (local_b4 < iVar11);
       }
       if (local_264 == local_268) {
-        fVar21 = 5.0;
+        fVar23 = 5.0;
         g_InputHistory[1] = '\0';
         this_ptr->aim_mode = 0;
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Auto aim enabled");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
         core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
         *(int *)(g_HeroActors[g_LocalHeroIndex]->field3_0xbe2c + 0x13908) = this_ptr->aim_mode;
       }
       if (this_ptr->velocity_debug_enabled != 0) {
-        pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bccf);
+        pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bccf);
         local_25c = 0;
         uVar13 = 0xffffffff;
-        pbVar19 = pbVar14;
+        pbVar21 = pbVar15;
         do {
           if (uVar13 == 0) break;
           uVar13 = uVar13 - 1;
-          bVar3 = *pbVar19;
-          pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+          bVar3 = *pbVar21;
+          pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
         } while (bVar3 != 0);
         iVar11 = ~uVar13 - 1;
         local_260 = iVar11;
@@ -827,12 +830,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           local_b0 = 0;
           do {
             bVar3 = g_InputHistory[iVar11];
-            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
             if (bVar3 == uVar13) {
               local_25c = local_25c + 1;
             }
             iVar11 = iVar11 + -1;
-            pbVar14 = pbVar14 + 1;
+            pbVar15 = pbVar15 + 1;
           } while (local_b0 < iVar11);
         }
         if (local_25c == local_260) {
@@ -860,15 +863,15 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         }
       }
       if (this_ptr->velocity_debug_enabled != 0) {
-        pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bd02);
+        pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bd02);
         local_254 = 0;
         uVar13 = 0xffffffff;
-        pbVar19 = pbVar14;
+        pbVar21 = pbVar15;
         do {
           if (uVar13 == 0) break;
           uVar13 = uVar13 - 1;
-          bVar3 = *pbVar19;
-          pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+          bVar3 = *pbVar21;
+          pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
         } while (bVar3 != 0);
         iVar11 = ~uVar13 - 1;
         local_258 = iVar11;
@@ -876,12 +879,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           iStack_ac = 0;
           do {
             bVar3 = g_InputHistory[iVar11];
-            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
             if (bVar3 == uVar13) {
               local_254 = local_254 + 1;
             }
             iVar11 = iVar11 + -1;
-            pbVar14 = pbVar14 + 1;
+            pbVar15 = pbVar15 + 1;
           } while (iStack_ac < iVar11);
         }
         if (local_254 == local_258) {
@@ -889,15 +892,15 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           this_ptr->field72_0x21c = (uint)(this_ptr->field72_0x21c == 0);
         }
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bd39);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bd39);
       iStack_24c = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_250 = iVar11;
@@ -905,51 +908,51 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_a8 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_24c = iStack_24c + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_a8 < iVar11);
       }
       if (iStack_24c == iStack_250) {
         g_InputHistory[1] = '\0';
-        pCVar15 = core_inv_cpp_CInventory_findItemByName_FUN_004fe9d0
+        pCVar16 = core_inv_cpp_CInventory_findItemByName_FUN_004fe9d0
                             (&g_HeroActors[g_LocalHeroIndex]->inventory,"Skeleton_key");
-        if (pCVar15 == (CDemonActor *)0x0) {
+        if (pCVar16 == (CDemonActor *)0x0) {
           this_ptr_01 = core_actor_cpp_createActorByName_FUN_0040c430("CKeyActor");
           pcVar12 = "Skeleton_key";
-          (*((this_ptr_01->metadata).vtable)->setup)(this_ptr_01);
+          (*this_ptr_01->vtable->setup)(this_ptr_01);
           this_ptr_01[2].location.position.y = -NAN;
-          pCVar15 = this_ptr_01;
+          pCVar16 = this_ptr_01;
           do {
             cVar4 = *pcVar12;
-            pCVar15->actor_name[0] = cVar4;
+            pCVar16->actor_name[0] = cVar4;
             if (cVar4 == '\0') break;
             cVar4 = pcVar12[1];
             pcVar12 = pcVar12 + 2;
-            pCVar15->actor_name[1] = cVar4;
-            pCVar15 = (CDemonActor *)(pCVar15->actor_name + 2);
+            pCVar16->actor_name[1] = cVar4;
+            pCVar16 = (CDemonActor *)(pCVar16->actor_name + 2);
           } while (cVar4 != '\0');
           core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
           core_inv_cpp_CInventory_addItem_FUN_004fd600
                     (&g_HeroActors[g_LocalHeroIndex]->inventory,this_ptr_01,1);
-          fVar21 = 5.0;
+          fVar23 = 5.0;
           pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                               ("You have the skeleton key");
-          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
         }
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bdbc);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bdbc);
       iStack_244 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_248 = iVar11;
@@ -957,12 +960,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_a4 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_244 = iStack_244 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_a4 < iVar11);
       }
       if (iStack_244 == iStack_248) {
@@ -970,42 +973,42 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         uVar13 = (uint)(this_ptr->field53_0x1d0 == 0);
         this_ptr->field53_0x1d0 = uVar13;
         if (uVar13 == 0) {
-          fVar21 = 5.0;
+          fVar23 = 5.0;
           pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("God mode disabled")
           ;
-          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
         }
         else {
-          fVar21 = 5.0;
+          fVar23 = 5.0;
           pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("God mode enabled");
-          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
           (g_HeroActors[g_LocalHeroIndex]->base_character).hit_points = 100.0;
         }
         core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062be21);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062be21);
       iVar11 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
-      iVar16 = ~uVar13 - 1;
-      iStack_240 = iVar16;
-      if (0 < iVar16) {
+      iVar17 = ~uVar13 - 1;
+      iStack_240 = iVar17;
+      if (0 < iVar17) {
         iStack_a0 = 0;
         do {
-          bVar3 = g_InputHistory[iVar16];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          bVar3 = g_InputHistory[iVar17];
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (uVar13 == bVar3) {
             iVar11 = iVar11 + 1;
           }
-          iVar16 = iVar16 + -1;
-          pbVar14 = pbVar14 + 1;
-        } while (iStack_a0 < iVar16);
+          iVar17 = iVar17 + -1;
+          pbVar15 = pbVar15 + 1;
+        } while (iStack_a0 < iVar17);
       }
       if (iVar11 == iStack_240) {
         g_InputHistory[1] = '\0';
@@ -1017,22 +1020,22 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         else {
           pcVar12 = "Enemies frozen";
         }
-        fVar21 = 5.0;
+        fVar23 = 5.0;
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar12);
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
         core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
       }
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("You have the shotgun");
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062be9e);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062be9e);
       pcStack_23c = "CShotgun";
       iStack_230 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       pcStack_238 = pcVar12;
@@ -1041,12 +1044,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_9c = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_230 = iStack_230 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_9c < iVar11);
       }
       if (iStack_230 == iStack_234) {
@@ -1057,15 +1060,15 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       }
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("You have the crossbow")
       ;
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bef3);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bef3);
       pcStack_22c = "CCrossbow";
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_220 = 0;
@@ -1075,12 +1078,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_98 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_220 = iStack_220 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_98 < iVar11);
       }
       if (iStack_220 == iStack_224) {
@@ -1090,16 +1093,16 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
       }
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("DY-NO-MITE");
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bf3e);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bf3e);
       iStack_210 = 0;
       pcStack_21c = "CDynamite";
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       pcStack_218 = pcVar12;
@@ -1108,12 +1111,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_94 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_210 = iStack_210 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_94 < iVar11);
       }
       if (iStack_210 == iStack_214) {
@@ -1123,16 +1126,16 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
       }
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Fire! Fire! Fire!");
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bf92);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bf92);
       pcStack_20c = "CFlameThrower";
       iStack_200 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       pcStack_208 = pcVar12;
@@ -1141,12 +1144,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_90 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_200 = iStack_200 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_90 < iVar11);
       }
       if (iStack_200 == iStack_204) {
@@ -1157,15 +1160,15 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       }
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                           ("You have the tommy gun");
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bfe9);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bfe9);
       pcStack_1fc = "CTommyGun";
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_1f0 = 0;
@@ -1175,12 +1178,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_8c = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_1f0 = iStack_1f0 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_8c < iVar11);
       }
       if (iStack_1f0 == iStack_1f4) {
@@ -1191,16 +1194,16 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       }
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                           ("You can now summon the baron");
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c04b);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c04b);
       iStack_1e0 = 0;
       pcStack_1ec = "CBaronWeapon";
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       pcStack_1e8 = pcVar12;
@@ -1209,12 +1212,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_88 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_1e0 = iStack_1e0 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_88 < iVar11);
       }
       if (iStack_1e0 == iStack_1e4) {
@@ -1225,16 +1228,16 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       }
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                           ("You have the elephant gun");
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c0a8);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c0a8);
       pcStack_1dc = "CElephantGun";
       iStack_1d0 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       pcStack_1d8 = pcVar12;
@@ -1243,12 +1246,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_84 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_1d0 = iStack_1d0 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_84 < iVar11);
       }
       if (iStack_1d0 == iStack_1d4) {
@@ -1259,15 +1262,15 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       }
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                           ("You have the charged radiance emitter");
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c10c);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c10c);
       pcStack_1cc = "CLightGun";
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_1c0 = 0;
@@ -1277,12 +1280,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_80 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_1c0 = iStack_1c0 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_80 < iVar11);
       }
       if (iStack_1c0 == iStack_1c4) {
@@ -1291,15 +1294,15 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcStack_1c8,5.0);
         core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c141);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c141);
       iStack_1b8 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_1bc = iVar11;
@@ -1307,12 +1310,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_7c = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_1b8 = iStack_1b8 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_7c < iVar11);
       }
       if (iStack_1b8 == iStack_1bc) {
@@ -1328,25 +1331,25 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         core_game_cpp_giveHeroWeapon_FUN_004dd870("CTommyGun");
         core_game_cpp_giveHeroWeapon_FUN_004dd870("CElephantGun");
         core_game_cpp_giveHeroWeapon_FUN_004dd870("CLightGun");
-        fVar21 = 5.0;
+        fVar23 = 5.0;
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             ("You've got all the weapons");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
         iVar11 = g_LocalHeroIndex;
         this_ptr->field53_0x1d0 = 1;
         this_ptr_00 = g_CSoundPtr;
         (g_HeroActors[iVar11]->base_character).hit_points = 100.0;
         core_sound_cpp_CSound_playSfx_FUN_005b3a20(this_ptr_00,0,"cheat-1.wav");
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c203);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c203);
       iStack_1b0 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_1b4 = iVar11;
@@ -1354,12 +1357,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iStack_78 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_1b0 = iStack_1b0 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_78 < iVar11);
       }
       if (iStack_1b0 == iStack_1b4) {
@@ -1369,22 +1372,22 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           piVar1 = &pCVar5->ammo_count;
           *piVar1 = *piVar1 + 100;
         }
-        fVar21 = 5.0;
+        fVar23 = 5.0;
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             ("You just got 100 more bullets");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
         core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
       }
       if (this_ptr->velocity_debug_enabled != 0) {
-        pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c263);
+        pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c263);
         iStack_1a8 = 0;
         uVar13 = 0xffffffff;
-        pbVar19 = pbVar14;
+        pbVar21 = pbVar15;
         do {
           if (uVar13 == 0) break;
           uVar13 = uVar13 - 1;
-          bVar3 = *pbVar19;
-          pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+          bVar3 = *pbVar21;
+          pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
         } while (bVar3 != 0);
         iVar11 = ~uVar13 - 1;
         iStack_1ac = iVar11;
@@ -1392,12 +1395,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           iStack_74 = 0;
           do {
             bVar3 = g_InputHistory[iVar11];
-            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
             if (bVar3 == uVar13) {
               iStack_1a8 = iStack_1a8 + 1;
             }
             iVar11 = iVar11 + -1;
-            pbVar14 = pbVar14 + 1;
+            pbVar15 = pbVar15 + 1;
           } while (iStack_74 < iVar11);
         }
         if (iStack_1a8 == iStack_1ac) {
@@ -1413,23 +1416,23 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         while (iVar11 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                                   (g_CEditorToolsPtr,"Raise an event",&DAT_0067b5f0,100,1),
               iVar11 != 0) {
-          pcVar12 = (char *)core_event_cpp_FUN_004add40();
+          pcVar12 = (char *)core_event_cpp_CEventList_FUN_004add40(g_CEventListPtr);
           if (pcVar12 == (char *)0x0) {
-            core_event_cpp_FUN_004aabe0();
+            core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
             break;
           }
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar12);
         }
       }
 LAB_004df408:
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c2b1);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c2b1);
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_1a0 = 0;
@@ -1438,12 +1441,12 @@ LAB_004df408:
         iStack_70 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_1a0 = iStack_1a0 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_70 < iVar11);
       }
       if (iStack_1a0 == iStack_1a4) {
@@ -1452,31 +1455,31 @@ LAB_004df408:
         iStack_6c = 0;
         for (iVar11 = 0; iVar11 < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c);
             iVar11 = iVar11 + 1) {
-          iVar16 = *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_6c + 8000);
+          iVar17 = *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_6c + 8000);
           pCVar6 = g_HeroActors[g_LocalHeroIndex];
           fStack_2b8 = (pCVar6->base_character).base_actor.location.position.x -
-                       *(float *)(iVar16 + 0x20);
+                       *(float *)(iVar17 + 0x20);
           local_2b4 = (pCVar6->base_character).base_actor.location.position.y -
-                      *(float *)(iVar16 + 0x24);
+                      *(float *)(iVar17 + 0x24);
           fStack_2b0 = (pCVar6->base_character).base_actor.location.position.z -
-                       *(float *)(iVar16 + 0x28);
+                       *(float *)(iVar17 + 0x28);
           if (SQRT(fStack_2b0 * fStack_2b0 + fStack_2b8 * fStack_2b8 + local_2b4 * local_2b4) <=
-              (float)_DAT_0062c925) {
+              (float)DOUBLE_0062c925) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_2f4);
             SStack_2f4.damage_amount = 100.0;
-            (**(code **)(*(int *)(iVar16 + 0x154) + 0x11c))();
+            (**(code **)(*(int *)(iVar17 + 0x154) + 0x11c))();
           }
           iStack_6c = iStack_6c + 4;
         }
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c2f2);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c2f2);
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_198 = 0;
@@ -1485,12 +1488,12 @@ LAB_004df408:
         iStack_68 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_198 = iStack_198 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_68 < iVar11);
       }
       if (iStack_198 == iStack_19c) {
@@ -1503,21 +1506,21 @@ LAB_004df408:
         else {
           pcVar12 = "Gratuitous dismemberment enabled";
         }
-        fVar21 = 5.0;
+        fVar23 = 5.0;
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar12);
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
         core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
       }
       if (this_ptr->velocity_debug_enabled != 0) {
-        pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c377);
+        pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c377);
         iStack_190 = 0;
         uVar13 = 0xffffffff;
-        pbVar19 = pbVar14;
+        pbVar21 = pbVar15;
         do {
           if (uVar13 == 0) break;
           uVar13 = uVar13 - 1;
-          bVar3 = *pbVar19;
-          pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+          bVar3 = *pbVar21;
+          pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
         } while (bVar3 != 0);
         iVar11 = ~uVar13 - 1;
         local_194 = iVar11;
@@ -1525,12 +1528,12 @@ LAB_004df408:
           iStack_64 = 0;
           do {
             bVar3 = g_InputHistory[iVar11];
-            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
             if (bVar3 == uVar13) {
               iStack_190 = iStack_190 + 1;
             }
             iVar11 = iVar11 + -1;
-            pbVar14 = pbVar14 + 1;
+            pbVar15 = pbVar15 + 1;
           } while (iStack_64 < iVar11);
         }
         if (iStack_190 == local_194) {
@@ -1540,44 +1543,44 @@ LAB_004df408:
                     (g_CEditorToolsPtr,"Enter time factor",pfStack_18c,true,0.01,4.0,true);
         }
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c3c7);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c3c7);
       iVar11 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
-      iVar16 = ~uVar13 - 1;
-      iStack_188 = iVar16;
-      if (0 < iVar16) {
+      iVar17 = ~uVar13 - 1;
+      iStack_188 = iVar17;
+      if (0 < iVar17) {
         iStack_60 = 0;
         do {
-          bVar3 = g_InputHistory[iVar16];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          bVar3 = g_InputHistory[iVar17];
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (uVar13 == bVar3) {
             iVar11 = iVar11 + 1;
           }
-          iVar16 = iVar16 + -1;
-          pbVar14 = pbVar14 + 1;
-        } while (iStack_60 < iVar16);
+          iVar17 = iVar17 + -1;
+          pbVar15 = pbVar15 + 1;
+        } while (iStack_60 < iVar17);
       }
       if (iVar11 == iStack_188) {
         g_InputHistory[1] = '\0';
         core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
         this_ptr->scripted_sequence_active = (uint)(this_ptr->scripted_sequence_active == 0);
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c406);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c406);
       iStack_180 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_184 = iVar11;
@@ -1585,12 +1588,12 @@ LAB_004df408:
         iStack_5c = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_180 = iStack_180 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_5c < iVar11);
       }
       if (iStack_180 == iStack_184) {
@@ -1598,15 +1601,15 @@ LAB_004df408:
         core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
         this_ptr->field62_0x1f4 = (uint)(this_ptr->field62_0x1f4 == 0);
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c445);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c445);
       iStack_178 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_17c = iVar11;
@@ -1614,21 +1617,21 @@ LAB_004df408:
         iStack_58 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_178 = iStack_178 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_58 < iVar11);
       }
       if (iStack_178 == iStack_17c) {
         g_InputHistory[1] = (byte)iStack_178 ^ (byte)iStack_17c;
         pCVar5 = (g_HeroActors[g_LocalHeroIndex]->inventory).selected_weapon;
         if (pCVar5 != (CWeapon *)0x0) {
-          if (*(int *)(pCVar5->field8_0x305 + 0x25b + 0xc) == 5) {
-            fVar21 = 5.0;
-            *(int *)(pCVar5->field8_0x305 + 0x25b + 0xc) = 0;
+          if (*(int *)(pCVar5->field9_0x305 + 0x25b + 0xc) == 5) {
+            fVar23 = 5.0;
+            *(int *)(pCVar5->field9_0x305 + 0x25b + 0xc) = 0;
             pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                 ("Flaming ammo disabled");
           }
@@ -1636,31 +1639,31 @@ LAB_004df408:
             iVar11 = core_actor_cpp_isOfClass_FUN_0040c6d0(&pCVar5->base_actor,"CCrossbow")
             ;
             if (iVar11 == 0) {
-              fVar21 = 5.0;
+              fVar23 = 5.0;
               pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                   ("You can only use flaming ammo on the crossbow.");
             }
             else {
-              fVar21 = 5.0;
-              *(int *)(pCVar5->field8_0x305 + 0x25b + 0xc) = 5;
+              fVar23 = 5.0;
+              *(int *)(pCVar5->field9_0x305 + 0x25b + 0xc) = 5;
               pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                   ("Flaming ammo enabled.");
             }
           }
-          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
         }
         core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
       }
       if (this_ptr->velocity_debug_enabled != 0) {
-        pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c4f0);
+        pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c4f0);
         iStack_170 = 0;
         uVar13 = 0xffffffff;
-        pbVar19 = pbVar14;
+        pbVar21 = pbVar15;
         do {
           if (uVar13 == 0) break;
           uVar13 = uVar13 - 1;
-          bVar3 = *pbVar19;
-          pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+          bVar3 = *pbVar21;
+          pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
         } while (bVar3 != 0);
         iVar11 = ~uVar13 - 1;
         iStack_174 = iVar11;
@@ -1668,12 +1671,12 @@ LAB_004df408:
           iStack_54 = 0;
           do {
             bVar3 = g_InputHistory[iVar11];
-            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
             if (bVar3 == uVar13) {
               iStack_170 = iStack_170 + 1;
             }
             iVar11 = iVar11 + -1;
-            pbVar14 = pbVar14 + 1;
+            pbVar15 = pbVar15 + 1;
           } while (iStack_54 < iVar11);
         }
         if (iStack_170 == iStack_174) {
@@ -1684,15 +1687,15 @@ LAB_004df408:
         }
       }
       if (this_ptr->velocity_debug_enabled != 0) {
-        pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c52f);
+        pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c52f);
         iStack_168 = 0;
         uVar13 = 0xffffffff;
-        pbVar19 = pbVar14;
+        pbVar21 = pbVar15;
         do {
           if (uVar13 == 0) break;
           uVar13 = uVar13 - 1;
-          bVar3 = *pbVar19;
-          pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+          bVar3 = *pbVar21;
+          pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
         } while (bVar3 != 0);
         iVar11 = ~uVar13 - 1;
         iStack_16c = iVar11;
@@ -1700,12 +1703,12 @@ LAB_004df408:
           iStack_50 = 0;
           do {
             bVar3 = g_InputHistory[iVar11];
-            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
             if (bVar3 == uVar13) {
               iStack_168 = iStack_168 + 1;
             }
             iVar11 = iVar11 + -1;
-            pbVar14 = pbVar14 + 1;
+            pbVar15 = pbVar15 + 1;
           } while (iStack_50 < iVar11);
         }
         if (iStack_168 == iStack_16c) {
@@ -1716,14 +1719,14 @@ LAB_004df408:
         }
       }
       if (this_ptr->velocity_debug_enabled != 0) {
-        pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c561);
+        pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c561);
         uVar13 = 0xffffffff;
-        pbVar19 = pbVar14;
+        pbVar21 = pbVar15;
         do {
           if (uVar13 == 0) break;
           uVar13 = uVar13 - 1;
-          bVar3 = *pbVar19;
-          pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+          bVar3 = *pbVar21;
+          pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
         } while (bVar3 != 0);
         iVar11 = ~uVar13 - 1;
         iStack_160 = 0;
@@ -1732,12 +1735,12 @@ LAB_004df408:
           iStack_4c = 0;
           do {
             bVar3 = g_InputHistory[iVar11];
-            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
             if (bVar3 == uVar13) {
               iStack_160 = iStack_160 + 1;
             }
             iVar11 = iVar11 + -1;
-            pbVar14 = pbVar14 + 1;
+            pbVar15 = pbVar15 + 1;
           } while (iStack_4c < iVar11);
         }
         if (iStack_160 == iStack_164) {
@@ -1750,19 +1753,19 @@ LAB_004df408:
           else {
             pcVar12 = "Single step enabled";
           }
-          fVar21 = 5.0;
+          fVar23 = 5.0;
           pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar12);
-          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
         }
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c5bc);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c5bc);
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_158 = 0;
@@ -1771,32 +1774,32 @@ LAB_004df408:
         iStack_48 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_158 = iStack_158 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_48 < iVar11);
       }
       if (iStack_158 == iStack_15c) {
-        fVar21 = 5.0;
+        fVar23 = 5.0;
         g_InputHistory[1] = '\0';
         (g_HeroActors[g_LocalHeroIndex]->inventory).battery_charge = 100.0;
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             ("Flashlight battery restored");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
         core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c61a);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c61a);
       iStack_150 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_154 = iVar11;
@@ -1804,27 +1807,27 @@ LAB_004df408:
         iStack_44 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_150 = iStack_150 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_44 < iVar11);
       }
       if (iStack_150 == iStack_154) {
         g_InputHistory[1] = '\0';
         core_weather_cpp_CWeather_FUN_005ef8c0();
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c654);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c654);
       iStack_148 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_14c = iVar11;
@@ -1832,26 +1835,26 @@ LAB_004df408:
         iStack_40 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_148 = iStack_148 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_40 < iVar11);
       }
       if (iStack_148 == iStack_14c) {
         g_InputHistory[1] = '\0';
         core_weather_cpp_CWeather_FUN_005ef8c0();
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c68b);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c68b);
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_140 = 0;
@@ -1860,12 +1863,12 @@ LAB_004df408:
         iStack_3c = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_140 = iStack_140 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_3c < iVar11);
       }
       if (iStack_140 == iStack_144) {
@@ -1884,80 +1887,81 @@ LAB_004df408:
         iStack_38 = 0;
         for (iStack_14 = 0; iStack_14 < g_CDemonSetPtr->damage_listener_count;
             iStack_14 = iStack_14 + 1) {
-          pCStack_138 = (CGame *)(*(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_38 + -4) +
-                                 0x158);
+          pCStack_138 = (CDeformableModelInstance *)
+                        (*(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_38 + -4) + 0x158);
           if (*(char *)(*(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_38 + -4) + 0x23b8) !=
               '\0') {
-            iVar11 = core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
-                               ();
-            iStack_134 = iVar11;
-            iVar16 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-            if (iVar16 != -1) {
+            core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(pCStack_138);
+            pCStack_134 = this_ptr_02;
+            iVar11 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                               (this_ptr_02,"Bip01 head");
+            if (iVar11 != -1) {
               pCStack_130 = pCStack_138;
               fStack_12c = fStack_13c;
-              *(float *)(pCStack_138->field101_0x38c + iVar16 * 4 + 0x188) =
-                   *(float *)(pCStack_138->field101_0x38c + iVar16 * 4 + 0x188) * fStack_13c;
+              *(float *)(pCStack_138->field3_0x508 + iVar11 * 4 + 0xc) =
+                   *(float *)(pCStack_138->field3_0x508 + iVar11 * 4 + 0xc) * fStack_13c;
               iVar17 = 0;
-              iVar18 = iVar11;
-              iStack_128 = iVar16;
-              if (0 < *(int *)(iVar11 + 0x28558)) {
+              pCVar20 = this_ptr_02;
+              iStack_128 = iVar11;
+              if (0 < this_ptr_02->bone_count) {
                 do {
-                  if (iStack_128 == *(int *)(iVar18 + 0x2857c)) {
-                    core_game_cpp_CGame_FUN_004dda80(pCStack_130);
+                  if (iStack_128 == pCVar20->bone_list[0].parent_index) {
+                    core_game_cpp_CGame_FUN_004dda80((CGame *)pCStack_130);
                   }
                   iVar17 = iVar17 + 1;
-                  iVar18 = iVar18 + 0x24;
-                } while (iVar17 < *(int *)(iVar11 + 0x28558));
+                  pCVar20 = (CSkeleton *)((pCVar20->motion_list).state_names[1] + 2);
+                } while (iVar17 < this_ptr_02->bone_count);
               }
             }
-            iVar16 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-            iVar11 = iStack_134;
-            if (iVar16 != -1) {
+            iVar11 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                               (pCStack_134,"bipltit02");
+            pCVar20 = pCStack_134;
+            if (iVar11 != -1) {
               pCStack_124 = pCStack_138;
               fStack_120 = fStack_13c;
-              *(float *)(pCStack_138->field101_0x38c + iVar16 * 4 + 0x188) =
-                   *(float *)(pCStack_138->field101_0x38c + iVar16 * 4 + 0x188) * fStack_13c;
+              *(float *)(pCStack_138->field3_0x508 + iVar11 * 4 + 0xc) =
+                   *(float *)(pCStack_138->field3_0x508 + iVar11 * 4 + 0xc) * fStack_13c;
               iVar17 = 0;
-              iVar18 = iStack_134;
-              iStack_11c = iVar16;
-              if (0 < *(int *)(iStack_134 + 0x28558)) {
+              pCVar19 = pCStack_134;
+              iStack_11c = iVar11;
+              if (0 < pCStack_134->bone_count) {
                 do {
-                  if (iStack_11c == *(int *)(iVar18 + 0x2857c)) {
-                    core_game_cpp_CGame_FUN_004dda80(pCStack_124);
+                  if (iStack_11c == pCVar19->bone_list[0].parent_index) {
+                    core_game_cpp_CGame_FUN_004dda80((CGame *)pCStack_124);
                   }
                   iVar17 = iVar17 + 1;
-                  iVar18 = iVar18 + 0x24;
-                } while (iVar17 < *(int *)(iVar11 + 0x28558));
+                  pCVar19 = (CSkeleton *)((pCVar19->motion_list).state_names[1] + 2);
+                } while (iVar17 < pCVar20->bone_count);
               }
             }
-            iVar16 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-            iVar11 = iStack_134;
-            if (iVar16 != -1) {
+            iVar11 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                               (pCStack_134,"biprtit02");
+            if (iVar11 != -1) {
               pCStack_118 = pCStack_138;
               fStack_114 = fStack_13c;
-              *(float *)(pCStack_138->field101_0x38c + iVar16 * 4 + 0x188) =
-                   *(float *)(pCStack_138->field101_0x38c + iVar16 * 4 + 0x188) * fStack_13c;
+              *(float *)(pCStack_138->field3_0x508 + iVar11 * 4 + 0xc) =
+                   *(float *)(pCStack_138->field3_0x508 + iVar11 * 4 + 0xc) * fStack_13c;
               iVar17 = 0;
-              iVar18 = iStack_134;
-              iStack_110 = iVar16;
-              if (0 < *(int *)(iStack_134 + 0x28558)) {
+              pCVar20 = pCStack_134;
+              iStack_110 = iVar11;
+              if (0 < pCStack_134->bone_count) {
                 do {
-                  if (iStack_110 == *(int *)(iVar18 + 0x2857c)) {
-                    core_game_cpp_CGame_FUN_004dda80(pCStack_118);
+                  if (iStack_110 == pCVar20->bone_list[0].parent_index) {
+                    core_game_cpp_CGame_FUN_004dda80((CGame *)pCStack_118);
                   }
                   iVar17 = iVar17 + 1;
-                  iVar18 = iVar18 + 0x24;
-                } while (iVar17 < *(int *)(iVar11 + 0x28558));
+                  pCVar20 = (CSkeleton *)((pCVar20->motion_list).state_names[1] + 2);
+                } while (iVar17 < pCStack_134->bone_count);
               }
             }
           }
           iStack_38 = iStack_38 + 4;
         }
-        pCVar15 = core_actor_cpp_castToClassHash_FUN_0040c790
+        pCVar16 = core_actor_cpp_castToClassHash_FUN_0040c790
                             ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],
                              g_CStrangerClassInfo.name_hash);
-        if (pCVar15 != (CDemonActor *)0x0) {
-          pfVar2 = &pCVar15[0x17a].field_224.z;
+        if (pCVar16 != (CDemonActor *)0x0) {
+          pfVar2 = &pCVar16[0x17a].field12_0xe0.z;
           if (this_ptr->field66_0x204 == 0) {
             pcVar12 = "stranger-hat.kfm";
           }
@@ -1971,15 +1975,15 @@ LAB_004df408:
         }
       }
       if (this_ptr->velocity_debug_enabled != 0) {
-        pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c710);
+        pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c710);
         iStack_108 = 0;
         uVar13 = 0xffffffff;
-        pbVar19 = pbVar14;
+        pbVar21 = pbVar15;
         do {
           if (uVar13 == 0) break;
           uVar13 = uVar13 - 1;
-          bVar3 = *pbVar19;
-          pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+          bVar3 = *pbVar21;
+          pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
         } while (bVar3 != 0);
         iVar11 = ~uVar13 - 1;
         iStack_10c = iVar11;
@@ -1987,12 +1991,12 @@ LAB_004df408:
           iStack_34 = 0;
           do {
             bVar3 = g_InputHistory[iVar11];
-            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
             if (bVar3 == uVar13) {
               iStack_108 = iStack_108 + 1;
             }
             iVar11 = iVar11 + -1;
-            pbVar14 = pbVar14 + 1;
+            pbVar15 = pbVar15 + 1;
           } while (iStack_34 < iVar11);
         }
         if (iStack_108 == iStack_10c) {
@@ -2000,15 +2004,15 @@ LAB_004df408:
           this_ptr->field71_0x218 = (uint)(this_ptr->field71_0x218 == 0);
         }
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c744);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c744);
       iStack_100 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_104 = iVar11;
@@ -2016,40 +2020,40 @@ LAB_004df408:
         iStack_30 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_100 = iStack_100 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_30 < iVar11);
       }
       if (iStack_100 == iStack_104) {
         g_InputHistory[1] = '\0';
-        this_ptr_02 = (CGasMask *)
+        this_ptr_03 = (CGasMask *)
                       shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2d8,"..\\core\\game.cpp",0xbb0)
         ;
-        if (this_ptr_02 != (CGasMask *)0x0) {
-          this_ptr_02 = core_gasmask_cpp_CGasMask_ctor_FUN_004e5d00(this_ptr_02);
+        if (this_ptr_03 != (CGasMask *)0x0) {
+          this_ptr_03 = core_gasmask_cpp_CGasMask_ctor_FUN_004e5d00(this_ptr_03);
         }
         core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
-        (*((this_ptr_02->base_actor).metadata.vtable)->setup)(&this_ptr_02->base_actor);
+        (*((this_ptr_03->base_actor).vtable)->setup)(&this_ptr_03->base_actor);
         core_inv_cpp_CInventory_addItem_FUN_004fd600
-                  (&g_HeroActors[g_LocalHeroIndex]->inventory,&this_ptr_02->base_actor,1);
-        fVar21 = 5.0;
+                  (&g_HeroActors[g_LocalHeroIndex]->inventory,&this_ptr_03->base_actor,1);
+        fVar23 = 5.0;
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             ("You've got a gasmask!");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c7a0);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c7a0);
       iStack_f8 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_fc = iVar11;
@@ -2057,30 +2061,30 @@ LAB_004df408:
         iStack_2c = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_f8 = iStack_f8 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_2c < iVar11);
       }
       if (iStack_f8 == iStack_fc) {
-        fVar21 = 5.0;
+        fVar23 = 5.0;
         g_InputHistory[1] = '\0';
         (g_HeroActors[g_LocalHeroIndex]->base_character).hit_points = 100.0;
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Health restored.");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar21);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c7e5);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c7e5);
       iStack_f0 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_f4 = iVar11;
@@ -2088,21 +2092,21 @@ LAB_004df408:
         iStack_28 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_f0 = iStack_f0 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_28 < iVar11);
       }
       if (iStack_f0 == iStack_f4) {
         g_InputHistory[1] = '\0';
-        pCVar15 = core_actor_cpp_castToClassHash_FUN_0040c790
+        pCVar16 = core_actor_cpp_castToClassHash_FUN_0040c790
                             ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],
                              g_CStrangerClassInfo.name_hash);
-        if (pCVar15 != (CDemonActor *)0x0) {
-          pfVar2 = &pCVar15[0x17a].field_224.z;
+        if (pCVar16 != (CDemonActor *)0x0) {
+          pfVar2 = &pCVar16[0x17a].field12_0xe0.z;
           core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
                     ((CKeyFramedModelInstance *)pfVar2,"oldhat.kfm");
           core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
@@ -2110,15 +2114,15 @@ LAB_004df408:
           core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
         }
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c830);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c830);
       iStack_e8 = 0;
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_ec = iVar11;
@@ -2126,26 +2130,26 @@ LAB_004df408:
         iStack_24 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_e8 = iStack_e8 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_24 < iVar11);
       }
       if (iStack_e8 == iStack_ec) {
         g_InputHistory[1] = '\0';
         core_game_cpp_FUN_004dd930("CGun",3);
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c869);
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c869);
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_e0 = 0;
@@ -2154,27 +2158,27 @@ LAB_004df408:
         iStack_20 = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_e0 = iStack_e0 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_20 < iVar11);
       }
       if (iStack_e0 == iStack_e4) {
         g_InputHistory[1] = (byte)iStack_e0 ^ (byte)iStack_e4;
         core_game_cpp_FUN_004dd930("CGun",7);
       }
-      pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270
+      pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270
                                   ((SEncryptedMessage *)&DAT_0062c8a0);
       uVar13 = 0xffffffff;
-      pbVar19 = pbVar14;
+      pbVar21 = pbVar15;
       do {
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        bVar3 = *pbVar19;
-        pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+        bVar3 = *pbVar21;
+        pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
       iVar11 = ~uVar13 - 1;
       iStack_d8 = 0;
@@ -2183,12 +2187,12 @@ LAB_004df408:
         iStack_1c = 0;
         do {
           bVar3 = g_InputHistory[iVar11];
-          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+          uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (bVar3 == uVar13) {
             iStack_d8 = iStack_d8 + 1;
           }
           iVar11 = iVar11 + -1;
-          pbVar14 = pbVar14 + 1;
+          pbVar15 = pbVar15 + 1;
         } while (iStack_1c < iVar11);
       }
       if (iStack_d8 == iStack_dc) {
@@ -2196,15 +2200,15 @@ LAB_004df408:
         core_game_cpp_FUN_004dd930("CGun",8);
       }
       if (this_ptr->velocity_debug_enabled != 0) {
-        pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c8da);
+        pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c8da);
         local_d0 = 0;
         uVar13 = 0xffffffff;
-        pbVar19 = pbVar14;
+        pbVar21 = pbVar15;
         do {
           if (uVar13 == 0) break;
           uVar13 = uVar13 - 1;
-          bVar3 = *pbVar19;
-          pbVar19 = pbVar19 + (uint)bVar20 * -2 + 1;
+          bVar3 = *pbVar21;
+          pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
         } while (bVar3 != 0);
         iVar11 = ~uVar13 - 1;
         local_d4 = iVar11;
@@ -2212,12 +2216,12 @@ LAB_004df408:
           local_18 = 0;
           do {
             bVar3 = g_InputHistory[iVar11];
-            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar14);
+            uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
             if (bVar3 == uVar13) {
               local_d0 = local_d0 + 1;
             }
             iVar11 = iVar11 + -1;
-            pbVar14 = pbVar14 + 1;
+            pbVar15 = pbVar15 + 1;
           } while (local_18 < iVar11);
         }
         if (local_d0 == local_d4) {
@@ -2259,7 +2263,7 @@ LAB_004df408:
 //   XREF to: 006793d0 (READ)
 // 004ddb1a: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 004ddb1b: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 004ddb1b: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 004ddb20: ADD ESP,0x8
 // 004ddb23: TEST EAX,EAX
@@ -4751,7 +4755,7 @@ LAB_004df408:
 //   XREF to: 006793d0 (READ)
 // 004df21c: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 004df21d: CALL core_event.cpp_FUN_004add40
+// 004df21d: CALL core_event.cpp_CEventList_FUN_004add40
 //   XREF to: 004add40 (UNCONDITIONAL_CALL)
 // 004df222: ADD ESP,0x8
 // 004df225: TEST EAX,EAX
@@ -5080,7 +5084,7 @@ LAB_004df408:
 //   XREF to: 006793d0 (READ)
 // 004df54e: PUSH EBX
 //   XREF to: 02d05310 (DATA)
-// 004df54f: CALL core_event.cpp_FUN_004aabe0
+// 004df54f: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 004df554: ADD ESP,0x8
 // 004df557: JMP 0x004df408
@@ -6136,7 +6140,7 @@ LAB_004df408:
 //   XREF to: 004dfe81 (UNCONDITIONAL_JUMP)
 // 004dff7e: PUSH ECX
 //   Label: LAB_004dff7e
-// 004dff7f: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 004dff7f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 004dff84: ADD ESP,0x4
 // 004dff87: PUSH 0x0

@@ -46,11 +46,11 @@ float __cdecl core_setcolid_cpp_CDemonSet_refinedRaycast_FUN_005726c0(CDemonSet 
       fVar6 = *pfVar1;
       fVar7 = (this_ptr->collision_result_vec1).y;
       fVar8 = (this_ptr->collision_result_vec1).z;
-      if (&this_ptr->collision_result_vec3 != (CVector3f *)local_2c) {
-        (this_ptr->collision_result_vec3).x =
+      if (&this_ptr->collision_impact_position != (CVector3f *)local_2c) {
+        (this_ptr->collision_impact_position).x =
              ray_origin->x + ((this_ptr->collision_result_vec2).x - ray_origin->x) * *pfVar1;
-        (this_ptr->collision_result_vec3).y = fVar7 + (fVar9 - fVar2) * fVar5;
-        (this_ptr->collision_result_vec3).z = fVar8 + (fVar3 - fVar4) * fVar6;
+        (this_ptr->collision_impact_position).y = fVar7 + (fVar9 - fVar2) * fVar5;
+        (this_ptr->collision_impact_position).z = fVar8 + (fVar3 - fVar4) * fVar6;
       }
     }
     return this_ptr->raycast_distance;

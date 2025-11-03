@@ -16,8 +16,7 @@ int * __cdecl core_weapon_cpp_CWeapon_FUN_005ee670(CWeapon *this_ptr)
   CKeyFramedModel *pCVar3;
   int *in_stack_00000008;
   
-  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)&this_ptr->model_instance);
+  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   fVar1 = (pCVar3->bounds_max).y;
   fVar2 = (pCVar3->bounds_max).z;
   *in_stack_00000008 = 0;

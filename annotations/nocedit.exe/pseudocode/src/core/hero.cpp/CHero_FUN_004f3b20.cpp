@@ -46,7 +46,7 @@ void __cdecl core_hero_cpp_CHero_FUN_004f3b20(CHero *this_ptr)
   this_ptr->field6_0x1fb9c[0x1b] = '\0';
   (this_ptr->base_character).grabbed_by = (CDemonActor *)0x0;
   core_inv_cpp_CInventory_removeMatchingKeys_FUN_005014a0(&this_ptr->inventory,0xffffffff);
-  (*(this_ptr->base_character).base_actor.metadata.vtable[1].getAllowedMeleeAttackTypes)
+  (*(this_ptr->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
             ((CDemonActor *)this_ptr);
   pCVar1 = this_ptr;
   do {

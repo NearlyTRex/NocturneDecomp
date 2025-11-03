@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: char * crt_string.c_strstr_FUN_005fedd0(char * haystack_str, char * needle_str)
 // Cross-references:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040fe68 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040fe68 [UNCONDITIONAL_CALL]
 //   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 (004bda20) at 004bdb57 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_005592c0 (005592c0) at 00559305 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c8e7 [UNCONDITIONAL_CALL]

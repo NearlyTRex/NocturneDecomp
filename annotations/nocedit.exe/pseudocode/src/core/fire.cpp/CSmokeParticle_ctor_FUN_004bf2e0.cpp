@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_fire.cpp_CSmokeParticle_ctor_FUN_004bf2e0(CSmokeParticle * this_ptr)
 // Cross-references:
-//   core_fire.cpp_CFireEffect_FUN_004c6c80 (004c6c80) at 004c6c97 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CFireEffect_init_FUN_004c6c80 (004c6c80) at 004c6c97 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

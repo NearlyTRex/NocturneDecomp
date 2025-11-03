@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10 (0040ca10) at 0040cb45 [UNCONDITIONAL_CALL]
 //   core_actor.cpp_CDemonActor_playSound_FUN_00408f60 (00408f60) at 00408f76 [UNCONDITIONAL_CALL]
-//   core_crossbow.cpp_FUN_00448f20 (00448f20) at 00449193 [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_FUN_00448f20 (00448f20) at 00449193 [UNCONDITIONAL_CALL]
 //   core_elephant.cpp_FUN_004a7160 (004a7160) at 004a7461 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireEffect_FUN_004c8c10 (004c8c10) at 004c8c6b [UNCONDITIONAL_CALL]
 //   core_gun.cpp_FUN_004f0350 (004f0350) at 004f05b3 [UNCONDITIONAL_CALL]

@@ -20,8 +20,8 @@ void __cdecl core_charactr_cpp_staticInit_FUN_00427d80(void)
 {
   core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&DAT_00823a98);
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CCharacterClassInfo,"CCharacter",(void *)0x0,&g_CCharacterClassVersion,6,
-             &g_CDemonActorClassInfo);
+            (&g_CCharacterClassInfo,"CCharacter",(CDemonActorFactoryFunction *)0x0,
+             &g_CCharacterClassVersion,6,&g_CDemonActorClassInfo);
   return;
 }
 

@@ -5,12 +5,10 @@
 // Signature: undefined core_skeleton.cpp_FUN_005a0430()
 // Cross-references:
 //   core_actor.cpp_serializePartStatus_FUN_0040bae0 (0040bae0) at 0040bb95 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00597181 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_FUN_005a0840 (005a0840) at 005a087f [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597181 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840 (005a0840) at 005a087f [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
-
-/* Signature: undefined1 core_skeleton.cpp_FUN_005a0430(undefined4 param_1) */
 
 void core_skeleton_cpp_FUN_005a0430(void)
 

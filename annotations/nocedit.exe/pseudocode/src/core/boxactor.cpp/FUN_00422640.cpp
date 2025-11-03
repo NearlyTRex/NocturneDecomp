@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_boxactor.cpp_FUN_00422640()
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_boxactor.cpp_FUN_004218d0
 
 #include "nocturne.h"
@@ -28,17 +28,17 @@ void core_boxactor_cpp_FUN_00422640(void)
     (in_stack_00000004->orient).bank = in_stack_0000000c[1];
     (in_stack_00000004->orient).heading = in_stack_0000000c[2];
   }
-  core_actor_cpp_CDemonActor_FUN_00408c10(in_stack_00000004);
-  pfVar1 = &in_stack_00000004[2].field_224.y;
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
+  pfVar1 = &in_stack_00000004[2].field12_0xe0.y;
   if (pfVar1 != in_stack_00000008) {
     *pfVar1 = *in_stack_00000008;
-    in_stack_00000004[2].field_224.z = in_stack_00000008[1];
-    in_stack_00000004[2].field_236.x = in_stack_00000008[2];
+    in_stack_00000004[2].field12_0xe0.z = in_stack_00000008[1];
+    in_stack_00000004[2].field13_0xec.x = in_stack_00000008[2];
   }
-  pfVar1 = &in_stack_00000004[2].field_236.y;
+  pfVar1 = &in_stack_00000004[2].field13_0xec.y;
   if (pfVar1 != in_stack_0000000c) {
     *pfVar1 = *in_stack_0000000c;
-    in_stack_00000004[2].field_236.z = in_stack_0000000c[1];
+    in_stack_00000004[2].field13_0xec.z = in_stack_0000000c[1];
     in_stack_00000004[2].field14_0xf8 = (int)in_stack_0000000c[2];
   }
   core_boxactor_cpp_FUN_004218d0();
@@ -76,7 +76,7 @@ void core_boxactor_cpp_FUN_00422640(void)
 // 00422676: MOV dword ptr [EAX + 0x8],EDX
 // 00422679: PUSH EDI
 //   Label: LAB_00422679
-// 0042267a: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 0042267a: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 0042267f: LEA EAX,[EDI + 0x394]
 // 00422685: ADD ESP,0x4

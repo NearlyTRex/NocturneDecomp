@@ -8,7 +8,7 @@
 // Globals:
 //   double DOUBLE_0062f0ea = 1.5
 // Function calls:
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 
@@ -32,24 +32,26 @@ undefined4 core_hostage_cpp_FUN_004f5ff0(void)
   }
   in_stack_00000008 = *(float *)(in_stack_00000004 + 0x1faec) - in_stack_00000008;
   *(float *)(in_stack_00000004 + 0x1faec) = in_stack_00000008;
-  if (0.0 < in_stack_00000008) {
-    if (*(float *)(in_stack_00000004 + 0x2dd4) <= (float)DOUBLE_0062f0ea) {
-      pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                         (&local_14,(CVector3f *)&stack0xffffffe0);
-      fVar2 = core_actor_cpp_FUN_0040cd70(pCVar1->y - *(float *)(in_stack_00000004 + 0x34));
-      *(float *)(in_stack_00000004 + 0x2418) = fVar2;
-      if (*(float *)(in_stack_00000004 + 0x2418) < -*(float *)(in_stack_00000004 + 0x2438)) {
-        *(undefined4 *)(in_stack_00000004 + 0x2418) = *(undefined4 *)(in_stack_00000004 + 0x2438);
-      }
-      if (*(float *)(in_stack_00000004 + 0x2438) < *(float *)(in_stack_00000004 + 0x2418)) {
-        *(undefined4 *)(in_stack_00000004 + 0x2418) = *(undefined4 *)(in_stack_00000004 + 0x2438);
-      }
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
-      return 1;
+  if ((0.0 < in_stack_00000008) &&
+     (*(float *)(in_stack_00000004 + 0x2dd4) <= (float)DOUBLE_0062f0ea)) {
+    pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+                       (&local_14,(CVector3f *)&stack0xffffffe0);
+    fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                      (pCVar1->y - *(float *)(in_stack_00000004 + 0x34));
+    *(float *)(in_stack_00000004 + 0x2418) = fVar2;
+    if (*(float *)(in_stack_00000004 + 0x2418) < -*(float *)(in_stack_00000004 + 0x2438)) {
+      *(undefined4 *)(in_stack_00000004 + 0x2418) = *(undefined4 *)(in_stack_00000004 + 0x2438);
     }
+    if (*(float *)(in_stack_00000004 + 0x2438) < *(float *)(in_stack_00000004 + 0x2418)) {
+      *(undefined4 *)(in_stack_00000004 + 0x2418) = *(undefined4 *)(in_stack_00000004 + 0x2438);
+    }
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              ((CMotionController *)(in_stack_00000004 + 0x158));
+    return 1;
   }
   *(undefined4 *)(in_stack_00000004 + 0x1fae8) = 0;
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+            ((CMotionController *)(in_stack_00000004 + 0x158));
   return 0;
 }
 
@@ -107,7 +109,7 @@ undefined4 core_hostage_cpp_FUN_004f5ff0(void)
 // 004f6072: SUB ESP,0x4
 // 004f6075: FSTP float ptr [ESP]
 //   XREF to: Stack[-0x24] (DATA)
-// 004f6078: CALL core_actor.cpp_FUN_0040cd70
+// 004f6078: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 004f607d: FLD float ptr [EBX + 0x2438]
 // 004f6083: MOV dword ptr [ESP + 0x1c],EAX

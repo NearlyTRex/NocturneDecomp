@@ -10,8 +10,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CGunFlame_FUN_004c4db0(CGunFlame *this_ptr)
 
 {
@@ -30,7 +28,7 @@ void __cdecl core_fire_cpp_CGunFlame_FUN_004c4db0(CGunFlame *this_ptr)
     *(undefined4 *)(this_ptr->field0_0x0 + 0xc) = in_stack_00000008[2];
   }
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.0);
-  *(float *)this_ptr->field0_0x0 = _DAT_0065dcc4 * fVar1;
+  *(float *)this_ptr->field0_0x0 = FLOAT_0065dcc4 * fVar1;
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,19.0);
   *(float *)(this_ptr->field0_0x0 + 0x1c) = fVar1;
   local_20.z = *in_stack_0000000c;

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int * core_mirror.cpp_transformMirrorVertex_FUN_005229b0(SMirrorReflection * reflection, CVector3f * input_vertex, CVector3f * output_vertex)
 // Cross-references:
-//   core_set.cpp_CDemonSet_FUN_0056db80 (0056db80) at 0056dcb9 [UNCONDITIONAL_CALL]
+//   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80 (0056db80) at 0056dcb9 [UNCONDITIONAL_CALL]
 // Globals:
 //   float g_MirrorProjectionScale = 256
 //   float g_MirrorIntToFloat_Coarse = 0.00390625

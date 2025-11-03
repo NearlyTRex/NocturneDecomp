@@ -2167,7 +2167,7 @@ const TerminatedCString s_CDeformableModel_calcRoo_0064b01a = "CDeformableModel:
 const TerminatedCString s_core_skeledit_cpp_0064b051 = "..\\core\\skeledit.cpp";
 const TerminatedCString s_Optimizing_deformable_mo_0064b072 = "Optimizing deformable model vertices...";
 const TerminatedCString s_Optimized_deformable_mod_0064b09a = "Optimized deformable model vertices OK";
-const TerminatedCString s_core_skeledit_cpp_0064b0c9 = "?..\\core\\skeledit.cpp";
+const TerminatedCString s_core_skeledit_cpp_0064b0ca = "..\\core\\skeledit.cpp";
 const TerminatedCString s_CDeformableModel_removeU_0064b0df = "CDeformableModel::removeUnusedTextures() - textureSetCount must be 1.";
 const TerminatedCString s_Searching_for_duplicate__0064b125 = "Searching for duplicate faces.";
 const TerminatedCString s_d_duplicate_faces_remove_0064b144 = "%d duplicate faces removed.";
@@ -2762,19 +2762,19 @@ const TerminatedCString s_CDeformableModelInstance_0064ed68 = "CDeformableModelI
 const TerminatedCString s_core_skeleton_cpp_0064edae = "..\\core\\skeleton.cpp";
 const TerminatedCString s_MbP_core_skeleton_cpp_0064edcc = "MbP?..\\core\\skeleton.cpp";
 const TerminatedCString s_Write_me_0064ede5 = "Write me!";
-const TerminatedCString s_MbP_core_skeleton_cpp_0064edf4 = "MbP?..\\core\\skeleton.cpp";
+const TerminatedCString s_core_skeleton_cpp_0064edf8 = "..\\core\\skeleton.cpp";
 const TerminatedCString s_Write_me_0064ee0d = "Write me!";
-const TerminatedCString s_core_skeleton_cpp_0064ee37 = ">..\\core\\skeleton.cpp";
+const TerminatedCString s_core_skeleton_cpp_0064ee38 = "..\\core\\skeleton.cpp";
 const TerminatedCString s_CDeformableModelInstance_0064ee4d = "CDeformableModelInstance::renderPolygons called but LOD is not set!";
 const TerminatedCString s_core_skeleton_cpp_0064ee91 = "..\\core\\skeleton.cpp";
 const TerminatedCString s_CDeformableModelInstance_0064eea6 = "CDeformableModelInstance::outlinePolygons called but LOD is not set!";
-const TerminatedCString s_L_core_skeleton_cpp_0064eeee = "L=..\\core\\skeleton.cpp";
+const TerminatedCString s_core_skeleton_cpp_0064eef0 = "..\\core\\skeleton.cpp";
 const TerminatedCString s_CDeformableModelInstance_0064ef05 = "CDeformableModelInstance::getModelPtr - modelPtr=NULL, and no name specified.";
 const TerminatedCString s_core_skeleton_cpp_0064ef53 = "..\\core\\skeleton.cpp";
 const TerminatedCString s_Tried_to_do_something_wi_0064ef68 = "Tried to do something with model %s, but modelPtr not set.  (CDeformableModelInstance::preCache not called.";
 const TerminatedCString s_core_skeleton_cpp_0064efd4 = "..\\core\\skeleton.cpp";
 const TerminatedCString s_CDeformableModelInstance_0064efe9 = "CDeformableModelInstance::computeCylindricalUVs - points not generated";
-const TerminatedCString s_m0_DA_core_skeleton_cpp_0064f033 = "m0_DA..\\core\\skeleton.cpp";
+const TerminatedCString s_core_skeleton_cpp_0064f038 = "..\\core\\skeleton.cpp";
 const TerminatedCString s_Can_t_load_s_because_def_0064f04d = "Can't load %s because deformable model manager is full.  (Size is %d)";
 const TerminatedCString s_core_skeleton_cpp_0064f093 = "..\\core\\skeleton.cpp";
 const TerminatedCString s_Can_t_load_s_because_ske_0064f0a8 = "Can't load %s because skeleton manager is full.  (Size is %d)";
@@ -3087,6 +3087,21 @@ const double DOUBLE_00649b77 = 0.0055555555555555497;
 const double DOUBLE_00649c0a = -0.5;
 const double DOUBLE_00649c12 = 3.1415926535000001;
 const double DOUBLE_00649c1a = 2;
+const double DOUBLE_0064b06a = -9999;
+const double DOUBLE_0064b0c2 = 0.01;
+const double g_NormalVisualizationScale = 127;
+const double DOUBLE_0064edf0 = 0.001;
+const double DOUBLE_0064ee18 = 0.001;
+const double DOUBLE_0064ee20 = 0.001;
+const double DOUBLE_0064ee28 = 0.001;
+const double DOUBLE_0064ee30 = 1.0000000000000001e-05;
+const double DOUBLE_0064f030 = 2670176.8577967598;
+const double DOUBLE_0064f112 = 10;
+const double DOUBLE_0064f11a = 0.050000000000000003;
+const double DOUBLE_0064f122 = 3.1415926535000001;
+const double DOUBLE_0064f12a = 8;
+const double DOUBLE_0064f132 = 30;
+const double DOUBLE_0064f13a = -1.57079632675;
 const double DOUBLE_0064f142 = 1.57079632675;
 
 // float constants
@@ -3127,6 +3142,8 @@ const float FLOAT_00649acb = 0.25f;
 const float FLOAT_00649adb = 255f;
 const float FLOAT_00649b37 = -0.125f;
 const float FLOAT_00649c02 = 3.051851e-05f;
+const float g_NormalVisualizationBias = 127f;
+const float FLOAT_0064eeec = 0.05f;
 
 // string constants
 const string s_Bip01_L_Clavicle_00641256 = "Bip01 L Clavicle";

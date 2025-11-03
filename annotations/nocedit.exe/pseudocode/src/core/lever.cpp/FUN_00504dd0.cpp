@@ -8,7 +8,7 @@
 // Globals:
 //   undefined4 DAT_006608f8
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 //   crt_math.c_round_FUN_005fe6b0
 
@@ -18,22 +18,30 @@
 /* Signature: undefined1 actors_other_lever.cpp_FUN_00504dd0(undefined4 param_1, undefined4 param_2)
     */
 
-undefined4 core_lever_cpp_FUN_00504dd0(void)
+CVector3f * core_lever_cpp_FUN_00504dd0(void)
 
 {
-  CKeyFramedModel *pCVar1;
+  CVector3i **ppCVar1;
+  CKeyFramedModel *pCVar2;
   undefined4 extraout_EDX;
+  BADSPACEBASE *in_ESP;
+  int unaff_ESI;
   CDemonActor *in_stack_00000004;
-  undefined4 in_stack_00000008;
+  CVector3f *in_stack_00000008;
   CKeyFramedModelInstance *in_stack_ffffffe4;
+  float local_14;
   
-  core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-            ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,pCVar1->frame_count + -1));
-  core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(in_stack_ffffffe4);
-  core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
+  ppCVar1 = pCVar2->vertex_list;
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
+                     ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
+  crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,pCVar2->frame_count + -1));
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(in_stack_ffffffe4);
+  local_14 = (float)(int)ppCVar1[(*(int *)(in_stack_00000004[3].actor_name + 0xc) +
+                                 pCVar2->vertex_count * unaff_ESI) * 3] * _DAT_006608f8;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (in_stack_00000004,in_stack_00000008,(CVector3f *)&local_14);
   return in_stack_00000008;
 }
 
@@ -103,7 +111,7 @@ undefined4 core_lever_cpp_FUN_00504dd0(void)
 // 00504e6b: PUSH EAX
 // 00504e6c: PUSH EBP
 // 00504e6d: PUSH ESI
-// 00504e6e: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00504e6e: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 00504e73: ADD ESP,0xc
 // 00504e76: MOV EAX,EBP

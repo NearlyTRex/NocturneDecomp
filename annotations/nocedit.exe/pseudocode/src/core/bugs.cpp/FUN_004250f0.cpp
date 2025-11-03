@@ -6,13 +6,13 @@
 // Globals:
 //   void* switchdataD_004250d4 = 0042512b
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 // Function calls:
 //   core_bugs.cpp_FUN_00425cc0
 //   core_bugs.cpp_FUN_00425fe0
 //   core_bugs.cpp_FUN_00426410
 //   core_charactr.cpp_CCharacter_FUN_00429870
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 
 #include "nocturne.h"
 
@@ -28,25 +28,25 @@ void core_bugs_cpp_FUN_004250f0(void)
   
   iVar2 = core_charactr_cpp_CCharacter_FUN_00429870(in_stack_00000004);
   if (iVar2 != 0) {
-    if ((*(int *)(in_stack_00000004[2].model.padding_0x0 + 0x1af8) == 0) &&
-       (iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                          (g_CEventListPtr,in_stack_00000004[2].model.padding_0x0 + 0x1b00),
+    if ((*(int *)(in_stack_00000004[2].model.field3_0x508 + 0x15f0) == 0) &&
+       (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+                          (g_CEventListPtr,in_stack_00000004[2].model.field3_0x508 + 0x15f8),
        iVar2 != 0)) {
       pCVar1 = in_stack_00000004 + 2;
-      (pCVar1->model).padding_0x0[0x1af8] = '\x01';
-      (pCVar1->model).padding_0x0[0x1af9] = '\0';
-      (pCVar1->model).padding_0x0[0x1afa] = '\0';
-      (pCVar1->model).padding_0x0[0x1afb] = '\0';
+      (pCVar1->model).field3_0x508[0x15f0] = '\x01';
+      (pCVar1->model).field3_0x508[0x15f1] = '\0';
+      (pCVar1->model).field3_0x508[0x15f2] = '\0';
+      (pCVar1->model).field3_0x508[0x15f3] = '\0';
     }
-    if ((*(int *)(in_stack_00000004[2].model.padding_0x0 + 0x1afc) == 0) &&
-       (iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                          (g_CEventListPtr,in_stack_00000004[2].model.padding_0x0 + 0x1b64),
+    if ((*(int *)(in_stack_00000004[2].model.field3_0x508 + 0x15f4) == 0) &&
+       (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+                          (g_CEventListPtr,in_stack_00000004[2].model.field3_0x508 + 0x165c),
        iVar2 != 0)) {
       pCVar1 = in_stack_00000004 + 2;
-      (pCVar1->model).padding_0x0[0x1afc] = '\x01';
-      (pCVar1->model).padding_0x0[0x1afd] = '\0';
-      (pCVar1->model).padding_0x0[0x1afe] = '\0';
-      (pCVar1->model).padding_0x0[0x1aff] = '\0';
+      (pCVar1->model).field3_0x508[0x15f4] = '\x01';
+      (pCVar1->model).field3_0x508[0x15f5] = '\0';
+      (pCVar1->model).field3_0x508[0x15f6] = '\0';
+      (pCVar1->model).field3_0x508[0x15f7] = '\0';
     }
     switch(*(undefined4 *)(in_stack_00000004[1].base_actor.create_event + 0x20)) {
     case 0:
@@ -117,7 +117,7 @@ void core_bugs_cpp_FUN_004250f0(void)
 //   XREF to: 006793d0 (READ)
 // 00425148: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 00425149: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 00425149: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0042514e: ADD ESP,0x8
 // 00425151: TEST EAX,EAX
@@ -133,7 +133,7 @@ void core_bugs_cpp_FUN_004250f0(void)
 //   XREF to: 006793d0 (READ)
 // 0042516e: PUSH EDI
 //   XREF to: 02d05310 (DATA)
-// 0042516f: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0042516f: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 00425174: ADD ESP,0x8
 // 00425177: TEST EAX,EAX

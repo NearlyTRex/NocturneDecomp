@@ -7,12 +7,12 @@
 //   core_stranger.cpp_CStranger_FUN_005c06b0 (005c06b0) at 005c0706 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_FUN_005c5170 (005c5170) at 005c5196 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\stranger.cpp_0065394c
+//   TerminatedCString s_core_stranger_cpp_0065394c
 //   TerminatedCString s_Don_t_know_how_to_carry__00653961
-//   undefined4 DAT_00653984
-//   undefined4 DAT_0065398c
-//   undefined4 DAT_00653994
-//   undefined4 DAT_0065399c
+//   float FLOAT_00653984 = 0.5
+//   double DOUBLE_0065398c = 0.700000000000000
+//   double DOUBLE_00653994 = 0.300000000000000
+//   float FLOAT_0065399c = 0.3330000
 //   undefined4 g_CLightActorClassInfo.name_hash
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -39,7 +39,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_hero_stranger.cpp_CStranger_FUN_005c07b0(CStranger* param_1,
    undefined4 param_2, undefined4 param_3) */
 
@@ -418,12 +417,12 @@ float * core_stranger_cpp_CStranger_FUN_005c07b0(void)
                        (&local_90,&g_ZeroVector,(CMatrix3x4f *)(DAT_03f6bb00 * 0x30 + iVar6));
     local_198 = pCVar5->x + pCVar4->x;
     local_194 = pCVar5->y + pCVar4->y;
-    local_108 = local_198 * _DAT_00653984;
+    local_108 = local_198 * FLOAT_00653984;
     local_190 = pCVar5->z + pCVar4->z;
-    local_104 = local_194 * _DAT_00653984;
-    local_100 = local_190 * _DAT_00653984;
-    (*((in_stack_00000008->metadata).vtable)->getBoundingBox)(in_stack_00000008,&local_204);
-    local_100 = local_100 + _DAT_0065399c;
+    local_104 = local_194 * FLOAT_00653984;
+    local_100 = local_190 * FLOAT_00653984;
+    (*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,&local_204);
+    local_100 = local_100 + FLOAT_0065399c;
     local_104 = local_104 - (local_204.max.y - local_204.min.y);
     fVar2 = (float)core_stranger_cpp_FUN_005bb010();
     local_104 = fVar2 + local_104;
@@ -457,13 +456,13 @@ float * core_stranger_cpp_CStranger_FUN_005c07b0(void)
   pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (in_stack_00000008,g_CLightActorClassInfo.name_hash);
   if (pCVar3 != (CDemonActor *)0x0) {
-    (*((in_stack_00000008->metadata).vtable)->getBoundingBox)(in_stack_00000008,&local_21c);
+    (*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,&local_21c);
     local_138 = local_21c.min.x + local_21c.max.x;
-    local_150.x = local_138 * _DAT_00653984;
+    local_150.x = local_138 * FLOAT_00653984;
     local_134 = local_21c.min.y + local_21c.max.y;
     local_130 = local_21c.min.z + local_21c.max.z;
-    local_150.y = local_134 * _DAT_00653984;
-    local_150.z = local_130 * _DAT_00653984;
+    local_150.y = local_134 * FLOAT_00653984;
+    local_150.z = local_130 * FLOAT_00653984;
     if (&local_180 != &local_150) {
       local_180.x = local_150.x;
       local_180.y = local_150.y;
@@ -509,12 +508,12 @@ LAB_005c1504:
           local_84.y = pCVar4->y;
           local_84.z = pCVar4->z;
         }
-        local_180.z = local_21c.max.z * (float)_DAT_00653994 +
-                      local_21c.min.z * (float)_DAT_0065398c;
+        local_180.z = local_21c.max.z * (float)DOUBLE_00653994 +
+                      local_21c.min.z * (float)DOUBLE_0065398c;
         goto LAB_005c10ab;
       }
       if (iVar6 != 3) {
-        g_CurrentFilename = "?..\\core\\stranger.cpp" + 1;
+        g_CurrentFilename = "..\\core\\stranger.cpp";
         g_CurrentLineNumber = 0xc4d;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Don't know how to carry light %s");
         goto LAB_005c10ab;
@@ -523,7 +522,7 @@ LAB_005c1504:
     local_180.y = local_21c.max.y;
   }
 LAB_005c10ab:
-  iVar6 = (*((in_stack_00000008->metadata).vtable)->getAllowedMeleeAttackTypes)(in_stack_00000008);
+  iVar6 = (*in_stack_00000008->vtable->getAllowedMeleeAttackTypes)(in_stack_00000008);
   if (iVar6 != 0) {
     local_12c.x = -0.0900813;
     local_12c.z = 0.649052;

@@ -1,10 +1,10 @@
 // Name: core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
 // Address: 0058aa10
 // Address Range: [[0058aa10, 0058aba8]]
-// Convention: unknown
-// Signature: undefined core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10()
+// Convention: __cdecl
+// Signature: void core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStructure * this_ptr)
 // Cross-references:
-//   core_skeledit.cpp_FUN_0058a3d0 (0058a3d0) at 0058a44b [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0 (0058a3d0) at 0058a44b [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c245 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 0059548b [UNCONDITIONAL_CALL]
 // Globals:
@@ -28,10 +28,7 @@
 
 #include "nocturne.h"
 
-/* Signature: void core_skeledit.cpp_CBoneStructure_readBONframe(int* param_1, FILE* param_2, int
-   param_3, undefined4 param_4) */
-
-void core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10(void)
+void __cdecl core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStructure *this_ptr)
 
 {
   CMatrix3x4f *matrix;

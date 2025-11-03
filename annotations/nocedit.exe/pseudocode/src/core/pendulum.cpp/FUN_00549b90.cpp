@@ -20,8 +20,8 @@
 //   CSound* g_CSoundPtr = 03f6af64
 //   CSound g_CSoundInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_sound.cpp_CSound_FUN_005b3a70
 //   crt_math.c_floor_FUN_005feb90
 
@@ -36,8 +36,9 @@ void core_pendulum_cpp_FUN_00549b90(void)
   float fVar1;
   float fVar2;
   undefined4 extraout_EAX;
-  float *pfVar3;
+  CVector3f *pCVar3;
   undefined4 extraout_EDX;
+  BADSPACEBASE *in_ESP;
   float10 in_ST0;
   float10 fVar4;
   float10 fVar5;
@@ -54,19 +55,23 @@ void core_pendulum_cpp_FUN_00549b90(void)
   float local_40;
   float local_3c;
   float local_38;
-  float local_30;
+  CVector3f local_34;
+  float fStack_28;
+  double local_24;
   
+  local_24 = (double)in_stack_00000004[2].field13_0xec.y;
   input_value = crt_math_c_floor_FUN_005feb90((double)in_ST0);
   fVar2 = in_stack_00000004[3].orient.bank;
-  in_stack_00000004[2].field_236.y =
-       in_stack_00000008 / in_stack_00000004[2].field_236.z + in_stack_00000004[2].field_236.y;
-  if ((fVar2 != 0.0) && (1.0 < in_stack_00000004[2].field_236.y)) {
-    in_stack_00000004[2].field_236.y = in_stack_00000004[2].field_236.y + FLOAT_0063ecb5;
+  in_stack_00000004[2].field13_0xec.y =
+       in_stack_00000008 / in_stack_00000004[2].field13_0xec.z + in_stack_00000004[2].field13_0xec.y
+  ;
+  if ((fVar2 != 0.0) && (1.0 < in_stack_00000004[2].field13_0xec.y)) {
+    in_stack_00000004[2].field13_0xec.y = in_stack_00000004[2].field13_0xec.y + FLOAT_0063ecb5;
   }
   crt_math_c_floor_FUN_005feb90(input_value);
-  fVar4 = (float10)in_stack_00000004[2].field_236.y -
+  fVar4 = (float10)in_stack_00000004[2].field13_0xec.y -
           (float10)(double)CONCAT44(extraout_EDX,extraout_EAX);
-  in_stack_00000004[2].field_236.y = (float)fVar4;
+  in_stack_00000004[2].field13_0xec.y = (float)fVar4;
   fVar5 = (float10)fsin(fVar4 * (float10)DOUBLE_0063ecb9 * (float10)DOUBLE_0063ecc1);
   fVar2 = (float)in_stack_00000004[2].field14_0xf8;
   fVar6 = (float10)(float)in_stack_00000004[3].location.area_id + (float10)in_stack_00000008;
@@ -78,12 +83,14 @@ void core_pendulum_cpp_FUN_00549b90(void)
   fVar6 = (float10)f2xm1(fVar7 - (fVar7 / fVar4) * fVar4);
   fVar4 = (float10)fscale(fVar6 + fVar4,fVar7);
   (in_stack_00000004->orient).heading = (float)(fVar4 * fVar5 * (float10)fVar2);
-  core_actor_cpp_CDemonActor_FUN_00408c10(in_stack_00000004);
-  pfVar3 = core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-  if ((float *)(in_stack_00000004[3].actor_name + 0x14) != pfVar3) {
-    *(float *)(in_stack_00000004[3].actor_name + 0x14) = *pfVar3;
-    *(float *)(in_stack_00000004[3].actor_name + 0x18) = pfVar3[1];
-    *(float *)(in_stack_00000004[3].actor_name + 0x1c) = pfVar3[2];
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
+  pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                     (in_stack_00000004,&local_34,(CVector3f *)(in_stack_00000004[3].actor_name + 8)
+                     );
+  if ((CVector3f *)(in_stack_00000004[3].actor_name + 0x14) != pCVar3) {
+    ((CVector3f *)(in_stack_00000004[3].actor_name + 0x14))->x = pCVar3->x;
+    *(float *)(in_stack_00000004[3].actor_name + 0x18) = pCVar3->y;
+    *(float *)(in_stack_00000004[3].actor_name + 0x1c) = pCVar3->z;
   }
   fVar4 = (float10)1;
   fVar7 = (float10)1.4426950408889634 *
@@ -93,7 +100,8 @@ void core_pendulum_cpp_FUN_00549b90(void)
   fVar4 = (float10)fscale(fVar5 + fVar4,fVar7);
   if ((0.0 < in_stack_00000008) && ((float)DOUBLE_0063ecd1 < (float)fVar4)) {
     local_48 = local_44;
-    local_40 = in_stack_00000004[2].field_236.y;
+    local_40 = in_stack_00000004[2].field13_0xec.y;
+    local_34.x = 0.0;
     if (local_44 < (float)DOUBLE_0063ecd9) {
       local_48 = local_44 + 1.0;
     }
@@ -114,20 +122,20 @@ void core_pendulum_cpp_FUN_00549b90(void)
         local_40 = local_40 + FLOAT_0063ece9;
       }
       if (0.0 < local_40) {
-        (*((in_stack_00000004->metadata).vtable)->playSound)
+        (*in_stack_00000004->vtable->playSound)
                   (in_stack_00000004,(char *)&in_stack_00000004[2].field22_0x120);
       }
     }
-    fVar2 = (float)in_stack_00000004[2].field21_0x11c + (float)DOUBLE_0063ecf1;
-    local_40 = local_30;
-    local_50 = in_stack_00000004[2].field_236.y;
-    if (local_30 < fVar2 + (float)DOUBLE_0063ecd9) {
-      local_40 = local_30 + 1.0;
+    fStack_28 = (float)in_stack_00000004[2].field21_0x11c + (float)DOUBLE_0063ecf1;
+    local_40 = local_34.y;
+    local_50 = in_stack_00000004[2].field13_0xec.y;
+    if (local_34.y < fStack_28 + (float)DOUBLE_0063ecd9) {
+      local_40 = local_34.y + 1.0;
     }
-    if (fVar2 + (float)DOUBLE_0063ece1 < local_40) {
+    if (fStack_28 + (float)DOUBLE_0063ece1 < local_40) {
       local_40 = local_40 + FLOAT_0063ece9;
     }
-    if (local_40 <= fVar2) {
+    if (local_40 <= fStack_28) {
       if (local_50 < local_40) {
         local_50 = local_50 + 1.0;
       }
@@ -140,16 +148,16 @@ void core_pendulum_cpp_FUN_00549b90(void)
       if (local_40 + 1.0 < local_50) {
         local_50 = local_50 + FLOAT_0063ece9;
       }
-      if (fVar2 < local_50) {
+      if (fStack_28 < local_50) {
         core_sound_cpp_CSound_FUN_005b3a70
                   (g_CSoundPtr,in_stack_00000004->actor_name,
                    (char *)&in_stack_00000004[2].is_transparent);
       }
     }
-    local_38 = local_30;
-    local_4c = in_stack_00000004[2].field_236.y;
-    if (local_30 < 0.0) {
-      local_38 = local_30 + 1.0;
+    local_38 = local_34.y;
+    local_4c = in_stack_00000004[2].field13_0xec.y;
+    if (local_34.y < 0.0) {
+      local_38 = local_34.y + 1.0;
     }
     if ((float)DOUBLE_0063ece1 + 0.5 < local_38) {
       local_38 = local_38 + FLOAT_0063ece9;
@@ -168,20 +176,21 @@ void core_pendulum_cpp_FUN_00549b90(void)
         local_4c = local_4c + FLOAT_0063ece9;
       }
       if (0.5 < local_4c) {
-        (*((in_stack_00000004->metadata).vtable)->playSound)
-                  (in_stack_00000004,(char *)&in_stack_00000004[2].metadata.runtime_flags);
+        (*in_stack_00000004->vtable->playSound)
+                  (in_stack_00000004,
+                   (char *)&in_stack_00000004[2].previous_transform_state.dirty_flags);
       }
     }
-    fVar2 = (float)in_stack_00000004[2].field21_0x11c + (float)DOUBLE_0063ecf9;
-    local_3c = local_30;
-    local_54 = in_stack_00000004[2].field_236.y;
-    if (local_30 < fVar2 + (float)DOUBLE_0063ecd9) {
-      local_3c = local_30 + 1.0;
+    local_24._0_4_ = (float)in_stack_00000004[2].field21_0x11c + (float)DOUBLE_0063ecf9;
+    local_3c = local_34.y;
+    local_54 = in_stack_00000004[2].field13_0xec.y;
+    if (local_34.y < local_24._0_4_ + (float)DOUBLE_0063ecd9) {
+      local_3c = local_34.y + 1.0;
     }
-    if (fVar2 + (float)DOUBLE_0063ece1 < local_3c) {
+    if (local_24._0_4_ + (float)DOUBLE_0063ece1 < local_3c) {
       local_3c = local_3c + FLOAT_0063ece9;
     }
-    if (local_3c <= fVar2) {
+    if (local_3c <= local_24._0_4_) {
       if (local_54 < local_3c) {
         local_54 = local_54 + 1.0;
       }
@@ -194,7 +203,7 @@ void core_pendulum_cpp_FUN_00549b90(void)
       if (local_3c + 1.0 < local_54) {
         local_54 = local_54 + FLOAT_0063ece9;
       }
-      if (fVar2 < local_54) {
+      if (local_24._0_4_ < local_54) {
         core_sound_cpp_CSound_FUN_005b3a70
                   (g_CSoundPtr,in_stack_00000004->actor_name,
                    (char *)&in_stack_00000004[2].is_transparent);
@@ -305,7 +314,7 @@ void core_pendulum_cpp_FUN_00549b90(void)
 // 00549c86: FMULP
 // 00549c88: PUSH EBX
 // 00549c89: FSTP float ptr [EBX + 0x38]
-// 00549c8c: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 00549c8c: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 00549c91: ADD ESP,0x4
 // 00549c94: LEA EAX,[EBX + 0x410]
@@ -314,7 +323,7 @@ void core_pendulum_cpp_FUN_00549b90(void)
 //   XREF to: Stack[-0x30] (DATA)
 // 00549c9f: PUSH EAX
 // 00549ca0: PUSH EBX
-// 00549ca1: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00549ca1: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 00549ca6: LEA EDX,[EBX + 0x41c]
 // 00549cac: ADD ESP,0xc

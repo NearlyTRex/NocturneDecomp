@@ -7,10 +7,10 @@
 //   TerminatedCString s_ART_s_00619e8b
 //   TerminatedCString s_core_curtain_cpp_00619e93
 //   TerminatedCString s_Cannot_find_curtain_text_00619ea7
-//   undefined1 DAT_00619ecd
-//   undefined1 DAT_00619ece
-//   undefined1 DAT_00619ecf
-//   undefined1 DAT_00619ed0
+//   TerminatedCString s_ACT_00619ecd
+//   undefined4 DAT_00619ece
+//   undefined4 DAT_00619ecf
+//   undefined4 DAT_00619ed0
 //   TerminatedCString s_ART_s_00619ed2
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -65,7 +65,7 @@ LAB_0044b9c3:
     g_CurrentLineNumber = 0x438;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Cannot find curtain texture extension",unaff_EBX);
   }
-  pcVar2 = &DAT_00619ecd;
+  pcVar2 = ".ACT";
   do {
     cVar1 = *pcVar2;
     *pcVar4 = cVar1;

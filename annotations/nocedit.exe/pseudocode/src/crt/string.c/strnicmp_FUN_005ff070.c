@@ -7,7 +7,7 @@
 //   core_charactr.cpp_CCharacter_FUN_00428f40 (00428f40) at 004294c3 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_0042c580 (0042c580) at 0042c5a8 [UNCONDITIONAL_CALL]
 //   core_emitter.cpp_FUN_004a8070 (004a8070) at 004a82c0 [UNCONDITIONAL_CALL]
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ab860 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ab860 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 (004e12b0) at 004e171e [UNCONDITIONAL_CALL]
 //   core_mission.cpp_FUN_00524660 (00524660) at 0052468f [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055aa37 [UNCONDITIONAL_CALL]

@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_batman.cpp_CBatman_process_FUN_00416870 (00416870) at 004170ad [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_actor.cpp_FUN_0040cd10
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 
 #include "nocturne.h"
@@ -17,13 +17,16 @@ void core_batman_cpp_FUN_004167f0(void)
 
 {
   int iVar1;
+  int in_stack_00000008;
   
-  iVar1 = core_actor_cpp_FUN_0040cd10();
+  iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
   if (iVar1 != 0) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              ((CMotionController *)(in_stack_00000008 + 0x158));
     return;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+            ((CMotionController *)(in_stack_00000008 + 0x158));
   return;
 }
 
@@ -31,7 +34,7 @@ void core_batman_cpp_FUN_004167f0(void)
 // Assembly code:
 // 004167f0: PUSH 0x3f000000
 //   Label: core_batman.cpp_FUN_004167f0
-// 004167f5: CALL core_actor.cpp_FUN_0040cd10
+// 004167f5: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 004167fa: ADD ESP,0x4
 // 004167fd: MOV EDX,dword ptr [ESP + 0x4]

@@ -56,14 +56,14 @@ void core_emitter_cpp_CEmitter_load_FUN_004a8b30(void)
   }
   if (*(int *)in_stack_00000004[1].actor_name == 3) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)&in_stack_00000004[1].field_224.y,"laserR");
+              ((int *)&in_stack_00000004[1].field12_0xe0.y,"laserR");
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)&in_stack_00000004[1].field_224.z,"laserG");
+              ((int *)&in_stack_00000004[1].field12_0xe0.z,"laserG");
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)&in_stack_00000004[1].field_236,"laserB");
+              ((int *)&in_stack_00000004[1].field13_0xec,"laserB");
     if (2 < g_CEmitterClassVersion) {
       core_actor_cpp_serializeInteger_FUN_0040b7f0
-                ((int *)&in_stack_00000004[1].field_224,"laserType");
+                ((int *)&in_stack_00000004[1].field12_0xe0,"laserType");
     }
   }
   if (2 < g_CEmitterClassVersion) {
@@ -74,7 +74,8 @@ void core_emitter_cpp_CEmitter_load_FUN_004a8b30(void)
   }
   if (3 < g_CEmitterClassVersion) {
     core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
-              ((CKeyFramedModelInstance *)&in_stack_00000004[1].field_236.y,"modelName");
+              ((CKeyFramedModelInstance *)&in_stack_00000004[1].field13_0xec.y,"modelName")
+    ;
     core_actor_cpp_serializeFloat_FUN_0040b770
               ((float *)&in_stack_00000004[2].field19_0x114,"rockSpeed");
   }

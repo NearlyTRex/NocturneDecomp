@@ -28,8 +28,8 @@ void core_pendulum_cpp_FUN_0054a5a0(void)
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (in_stack_00000004,g_CPendulumClassInfo.name_hash);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (in_stack_00000010,"%f",(double)(pCVar1[2].field_236.z * (float)DOUBLE_0063edb9)
-            );
+            (in_stack_00000010,"%f",
+             (double)(pCVar1[2].field13_0xec.z * (float)DOUBLE_0063edb9));
   return;
 }
 

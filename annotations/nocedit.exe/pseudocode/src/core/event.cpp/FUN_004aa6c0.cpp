@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_event.cpp_FUN_004aa6c0()
 // Cross-references:
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ab821 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ab821 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_No_opening_parenthesis_00624532
 //   TerminatedCString s_Argument_too_long_00624549
@@ -14,9 +14,6 @@
 //   crt_string.c_memmove_FUN_005fe5e0
 
 #include "nocturne.h"
-
-/* Signature: undefined1 core_event.cpp_FUN_004aa6c0(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3) */
 
 char * core_event_cpp_FUN_004aa6c0(void)
 

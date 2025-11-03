@@ -21,8 +21,8 @@
 //   core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 (00574ba0) at 00574d6a [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_00581aa0 (00581aa0) at 00581cb6 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_00583170 (00583170) at 0058341d [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModel_FUN_0059abf0 (0059abf0) at 0059af03 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_FUN_0059b5a0 (0059b5a0) at 0059b5c3 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 (0059abf0) at 0059af03 [UNCONDITIONAL_CALL]
 // Globals:
 //   uint g_VertexProcessingEnabled = 0x1
 

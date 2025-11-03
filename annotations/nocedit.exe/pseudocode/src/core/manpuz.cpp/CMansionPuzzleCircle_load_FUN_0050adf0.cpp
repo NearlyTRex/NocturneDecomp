@@ -45,9 +45,9 @@ void core_manpuz_cpp_CMansionPuzzleCircle_load_FUN_0050adf0(void)
                "pEmitterPos");
   }
   if (2 < g_CMansionPuzzleCircleClassVersion) {
-    int_ptr = &(((CDemonActor *)((int)in_stack_00000004 + 0x560))->field_224).y;
+    int_ptr = &(((CDemonActor *)((int)in_stack_00000004 + 0x560))->field12_0xe0).y;
     iVar1 = 0;
-    int_ptr_01 = &((CDemonActor *)((int)in_stack_00000004 + 0x560))->field_224;
+    int_ptr_01 = &((CDemonActor *)((int)in_stack_00000004 + 0x560))->field12_0xe0;
     int_ptr_00 = &((CDemonActor *)((int)in_stack_00000004 + 0x560))->field11_0xdc;
     in_stack_00000004 = ((CDemonActor *)((int)in_stack_00000004 + 0x560))->create_event + 0x18;
     do {

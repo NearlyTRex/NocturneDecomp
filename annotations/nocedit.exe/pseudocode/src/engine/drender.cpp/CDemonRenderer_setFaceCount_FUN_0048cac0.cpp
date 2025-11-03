@@ -8,7 +8,7 @@
 //   core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80 (00472a80) at 00472bf2 [UNCONDITIONAL_CALL]
 //   core_dlight.cpp_CDemonLight_endBackgroundScene_FUN_00472f30 (00472f30) at 00472f72 [UNCONDITIONAL_CALL]
 //   core_dlight.cpp_CDemonLight_endScene_FUN_00472d30 (00472d30) at 00472da3 [UNCONDITIONAL_CALL]
-//   core_glass.cpp_CGlass_FUN_004e9ca0 (004e9ca0) at 004e9d07 [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0 (004e9ca0) at 004e9d07 [UNCONDITIONAL_CALL]
 //   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (005751d0) at 00575637 [UNCONDITIONAL_CALL]
 //   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 (00574910) at 00574ae0 [UNCONDITIONAL_CALL]
 //   engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50 (0048ab50) at 0048aba6 [UNCONDITIONAL_CALL]

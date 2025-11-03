@@ -1,8 +1,8 @@
 // Name: core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
 // Address: 004191d0
 // Address Range: [[004191d0, 0041933d]]
-// Convention: unknown
-// Signature: undefined core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0()
+// Convention: __cdecl
+// Signature: void core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart * this_ptr)
 // Cross-references:
 //   core_bodypart.cpp_CBodyPart_dtor_FUN_00419130 (00419130) at 0041914b [UNCONDITIONAL_CALL]
 //   core_bodypart.cpp_CBodyPart_load_FUN_00419880 (00419880) at 00419aa7 [UNCONDITIONAL_CALL]
@@ -27,44 +27,46 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_other_bodypart.cpp_CBodyPart_setCounts(CBodyPart* param_1,
-   undefined4 param_2, undefined4 param_3) */
-
-void core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(void)
+void __cdecl core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart *this_ptr)
 
 {
   void *pvVar1;
-  int in_stack_00000004;
   undefined4 in_stack_00000008;
   undefined4 in_stack_0000000c;
   
-  *(undefined4 *)(in_stack_00000004 + 0x174) = in_stack_00000008;
-  *(undefined4 *)(in_stack_00000004 + 0x180) = in_stack_0000000c;
+  *(undefined4 *)(this_ptr->field1_0x158 + 0x1c) = in_stack_00000008;
+  *(undefined4 *)(this_ptr->field1_0x158 + 0x28) = in_stack_0000000c;
   pvVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (*(void **)(in_stack_00000004 + 0x178),
-                      *(int *)(in_stack_00000004 + 0x174) * 0xc,"..\\core\\bodypart.cpp",0xa8);
-  *(void **)(in_stack_00000004 + 0x178) = pvVar1;
+                     (*(void **)(this_ptr->field1_0x158 + 0x20),
+                      *(int *)(this_ptr->field1_0x158 + 0x1c) * 0xc,"..\\core\\bodypart.cpp",
+                      0xa8);
+  *(void **)(this_ptr->field1_0x158 + 0x20) = pvVar1;
   pvVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (*(void **)(in_stack_00000004 + 0x17c),
-                      *(int *)(in_stack_00000004 + 0x174) * 0xc,"..\\core\\bodypart.cpp",0xa9);
-  *(void **)(in_stack_00000004 + 0x17c) = pvVar1;
+                     (*(void **)(this_ptr->field1_0x158 + 0x24),
+                      *(int *)(this_ptr->field1_0x158 + 0x1c) * 0xc,"..\\core\\bodypart.cpp",
+                      0xa9);
+  *(void **)(this_ptr->field1_0x158 + 0x24) = pvVar1;
   pvVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (*(void **)(in_stack_00000004 + 0x184),
-                      *(int *)(in_stack_00000004 + 0x180) * 0x3c,"..\\core\\bodypart.cpp",0xab);
-  *(void **)(in_stack_00000004 + 0x184) = pvVar1;
+                     (*(void **)(this_ptr->field1_0x158 + 0x2c),
+                      *(int *)(this_ptr->field1_0x158 + 0x28) * 0x3c,"..\\core\\bodypart.cpp",
+                      0xab);
+  *(void **)(this_ptr->field1_0x158 + 0x2c) = pvVar1;
   pvVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (*(void **)(in_stack_00000004 + 0x188),*(int *)(in_stack_00000004 + 0x180) << 2
-                      ,"..\\core\\bodypart.cpp",0xac);
-  *(void **)(in_stack_00000004 + 0x188) = pvVar1;
-  if ((0 < *(int *)(in_stack_00000004 + 0x174)) &&
-     ((*(int *)(in_stack_00000004 + 0x178) == 0 || (*(int *)(in_stack_00000004 + 0x17c) == 0)))) {
+                     (*(void **)(this_ptr->field1_0x158 + 0x30),
+                      *(int *)(this_ptr->field1_0x158 + 0x28) << 2,"..\\core\\bodypart.cpp",0xac
+                     );
+  *(void **)(this_ptr->field1_0x158 + 0x30) = pvVar1;
+  if ((0 < *(int *)(this_ptr->field1_0x158 + 0x1c)) &&
+     ((*(int *)(this_ptr->field1_0x158 + 0x20) == 0 ||
+      (*(int *)(this_ptr->field1_0x158 + 0x24) == 0)))) {
     g_CurrentFilename = "..\\core\\bodypart.cpp";
     g_CurrentLineNumber = 0xb2;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("CBodyPart::setCounts - out of memory for vertices - vertexCount = %d",*(undefined4 *)(in_stack_00000004 + 0x174));
+              ("CBodyPart::setCounts - out of memory for vertices - vertexCount = %d",*(undefined4 *)(this_ptr->field1_0x158 + 0x1c));
   }
-  if ((0 < *(int *)(in_stack_00000004 + 0x180)) &&
-     ((*(int *)(in_stack_00000004 + 0x184) == 0 || (*(int *)(in_stack_00000004 + 0x188) == 0)))) {
+  if ((0 < *(int *)(this_ptr->field1_0x158 + 0x28)) &&
+     ((*(int *)(this_ptr->field1_0x158 + 0x2c) == 0 ||
+      (*(int *)(this_ptr->field1_0x158 + 0x30) == 0)))) {
     g_CurrentFilename = "..\\core\\bodypart.cpp";
     g_CurrentLineNumber = 0xb7;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CBodyPart::setCounts - out of memory for triangles - triCount = %d");

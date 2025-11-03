@@ -29,7 +29,7 @@ CConveyor * __cdecl core_conveyor_cpp_ctor_FUN_00441ca0(CConveyor *this_ptr)
   char *pcVar4;
   
   pCVar2 = (CConveyor *)core_platfrm_cpp_FUN_0054c850(&this_ptr->base_platform);
-  (pCVar2->base_platform).base_actor.metadata.vtable = &PTR_core_conveyor_cpp_FUN_0065bf34;
+  (pCVar2->base_platform).base_actor.vtable = &PTR_core_conveyor_cpp_FUN_0065bf34;
   pcVar3 = "none";
   pCVar2->field1_0x72c[0] = '\0';
   pCVar2->field1_0x72c[1] = '\0';

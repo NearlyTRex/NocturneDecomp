@@ -18,7 +18,7 @@
 //   TerminatedCString s_core_game_cpp_0062d639
 //   TerminatedCString s_faded_remix_mp3_0062d64a
 //   TerminatedCString s_core_game_cpp_0062d65a
-//   undefined4 DAT_0062d66d
+//   float FLOAT_0062d66d = 32
 //   CKeys* g_CKeysPtr = 02dcd7d4
 //   CBitFont* g_ThemeFont
 //   void* g_CKeysPtr
@@ -58,8 +58,6 @@
 //   wincore_windll.cpp_clearScreen_FUN_005b3e70
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
 
@@ -243,7 +241,7 @@ LAB_004e43c1:
     iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
     if (iVar8 != 0) goto LAB_004e43c1;
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(in_stack_00000074);
-    in_stack_0000005c = in_stack_0000005c - *(float *)(in_stack_00000078 + 0x264) * _DAT_0062d66d;
+    in_stack_0000005c = in_stack_0000005c - *(float *)(in_stack_00000078 + 0x264) * FLOAT_0062d66d;
     iVar8 = in_stack_00000078;
   } while( true );
 }

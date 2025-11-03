@@ -42,9 +42,9 @@
 //   core_motion.cpp_CMotionController_FUN_0052e3a0
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e0a0
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059f750
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20
-//   core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
 //   core_xform.cpp_eulerToQuaternion_FUN_005f7b20
 //   core_xform.cpp_multiplyQuaternion_FUN_005f7640
 //   core_xform.cpp_quaternionFromAngleX_FUN_005f79b0
@@ -67,14 +67,14 @@ void core_gabriela_cpp_FUN_004d4d80(void)
   undefined4 *puVar3;
   byte bVar4;
   int in_stack_00000004;
-  float afStackY_19d0 [1527];
-  float fVar5;
+  float afStackY_19d0 [1525];
+  CDeformableModelInstance *this_ptr;
   CVector3f *in_stack_fffffe10;
   float in_stack_fffffe18;
-  undefined4 uVar6;
+  undefined4 uVar5;
   CQuaternion4f *in_stack_fffffe24;
   CQuaternion4f *in_stack_fffffe28;
-  undefined4 *puVar7;
+  undefined4 *puVar6;
   CQuaternion4f *in_stack_fffffe2c;
   CQuaternion4f *in_stack_fffffe30;
   CQuaternion4f *in_stack_fffffe34;
@@ -107,9 +107,9 @@ void core_gabriela_cpp_FUN_004d4d80(void)
   float local_68;
   float local_64;
   double local_58;
-  int local_50;
+  CDeformableModelInstance *local_50;
   float local_4c;
-  int local_44;
+  CDeformableModelInstance *local_44;
   float local_40;
   undefined4 local_3c;
   undefined4 local_38;
@@ -119,9 +119,9 @@ void core_gabriela_cpp_FUN_004d4d80(void)
   float local_28;
   float local_24;
   float local_20;
-  int local_1c;
-  int local_18;
-  float local_14;
+  CDeformableModelInstance *local_1c;
+  CDeformableModelInstance *local_18;
+  CDeformableModelInstance *local_14;
   
   bVar4 = 0;
   core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020();
@@ -160,9 +160,10 @@ void core_gabriela_cpp_FUN_004d4d80(void)
         if (1.0 < local_24) {
           local_24 = 1.0;
         }
-        local_50 = core_motion_cpp_CMotionController_FUN_0052e3a0();
-        local_14 = (float)local_50;
-        core_skeleton_cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50();
+        local_50 = (CDeformableModelInstance *)core_motion_cpp_CMotionController_FUN_0052e3a0();
+        local_14 = local_50;
+        core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50
+                  ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
         if (DAT_0065e7b8 <= *(float *)(in_stack_00000004 + 0x1fbdc)) {
           local_2c = ((*(float *)(in_stack_00000004 + 0x1fbdc) - DAT_0065e7b8) /
                      (1.0 - DAT_0065e7b8)) * *(float *)(in_stack_00000004 + 0x1fc10);
@@ -175,8 +176,8 @@ void core_gabriela_cpp_FUN_004d4d80(void)
             if (0.0 < local_58) {
               local_34 = 1.0 - *(float *)(in_stack_00000004 + 0x1fc0c);
             }
-            local_14 = (float)(in_stack_00000004 + 0x158);
-            core_skeleton_cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50();
+            local_14 = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);
+            core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50(local_14);
             local_84 = _DAT_02d7b838 * FLOAT_0062af8d;
             local_78._12_4_ = local_84 / FLOAT_0062af91;
             local_80 = _DAT_02d7b83c * FLOAT_0062af8d;
@@ -208,9 +209,9 @@ void core_gabriela_cpp_FUN_004d4d80(void)
                  (CQuaternion4f *)(DAT_02d7b860 * 0x10 + in_stack_00000004 + 0x808),
                  (CQuaternion4f *)(*(float *)(in_stack_00000004 + 0x1fbdc) / _DAT_0065e7b4),
                  (float)in_stack_fffffe30);
-      puVar7 = (undefined4 *)(DAT_02d7b88c * 0x10 + 0x808 + in_stack_00000004);
-      puVar3 = puVar7 + (uint)bVar4 * -2 + 1;
-      *puVar7 = local_1b4;
+      puVar6 = (undefined4 *)(DAT_02d7b88c * 0x10 + 0x808 + in_stack_00000004);
+      puVar3 = puVar6 + (uint)bVar4 * -2 + 1;
+      *puVar6 = local_1b4;
       *puVar3 = *(undefined4 *)(&stack0xfffffe50 + (uint)bVar4 * -8);
       puVar3[(uint)bVar4 * -2 + 1] =
            afStack_190[(uint)bVar4 * 0xfffffffe + (uint)bVar4 * 0xfffffffe + 0xfffffff9];
@@ -219,8 +220,8 @@ void core_gabriela_cpp_FUN_004d4d80(void)
            [(uint)bVar4 * -2 + 1];
       if (0.0 < *(float *)(in_stack_00000004 + 0x1fc0c)) {
         *(undefined4 *)(in_stack_00000004 + 0x23a8) = 2;
-        local_1c = core_motion_cpp_CMotionController_FUN_0052e3a0();
-        local_14 = (float)local_1c;
+        local_1c = (CDeformableModelInstance *)core_motion_cpp_CMotionController_FUN_0052e3a0();
+        local_14 = local_1c;
         core_skeleton_cpp_CDeformableModelInstance_FUN_0059e0a0();
         *(undefined4 *)(in_stack_00000004 + 0x23a8) = 0;
       }
@@ -231,9 +232,9 @@ void core_gabriela_cpp_FUN_004d4d80(void)
                  (CQuaternion4f *)(DAT_02d7b860 * 0x10 + in_stack_00000004 + 0x808),
                  (CQuaternion4f *)(*(float *)(in_stack_00000004 + 0x1fbdc) / _DAT_0065e7b4),
                  in_stack_fffffe18);
-      puVar7 = (undefined4 *)(in_stack_00000004 + 0x808 + DAT_02d7b88c * 0x10);
-      puVar3 = puVar7 + (uint)bVar4 * -2 + 1;
-      *puVar7 = in_stack_fffffe3c;
+      puVar6 = (undefined4 *)(in_stack_00000004 + 0x808 + DAT_02d7b88c * 0x10);
+      puVar3 = puVar6 + (uint)bVar4 * -2 + 1;
+      *puVar6 = in_stack_fffffe3c;
       *puVar3 = *(undefined4 *)(&stack0xfffffe40 + (uint)bVar4 * -8);
       puVar3[(uint)bVar4 * -2 + 1] =
            *(undefined4 *)(&stack0xfffffe44 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
@@ -253,11 +254,11 @@ void core_gabriela_cpp_FUN_004d4d80(void)
         if (1.0 < local_20) {
           local_20 = 1.0;
         }
-        fVar5 = (float)(in_stack_00000004 + 0x158);
-        local_44 = core_motion_cpp_CMotionController_FUN_0052e3a0();
-        uVar6 = DAT_02d7b858;
-        local_14 = (float)local_44;
-        core_skeleton_cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50();
+        this_ptr = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);
+        local_44 = (CDeformableModelInstance *)core_motion_cpp_CMotionController_FUN_0052e3a0();
+        uVar5 = DAT_02d7b858;
+        local_14 = local_44;
+        core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50(this_ptr);
         if ((DAT_0065e7b8 <= *(float *)(in_stack_00000004 + 0x1fbdc)) &&
            (local_40 = ((*(float *)(in_stack_00000004 + 0x1fbdc) - DAT_0065e7b8) /
                        (1.0 - DAT_0065e7b8)) * *(float *)(in_stack_00000004 + 0x1fc10),
@@ -266,7 +267,7 @@ void core_gabriela_cpp_FUN_004d4d80(void)
             DAT_02d7b804 = DAT_02d7b804 | 1;
             core_xform_cpp_quaternionFromAngleZ_FUN_005f7a30
                       ((CQuaternion4f *)0xbfc90fdb,(float)in_stack_fffffe28);
-            puVar7 = &local_a4;
+            puVar6 = &local_a4;
             local_a4 = local_e4;
             afStack_a0[(uint)bVar4 * -2] = afStack_150[(uint)bVar4 * -2 + 0x1c];
             afStack_a0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
@@ -274,19 +275,19 @@ void core_gabriela_cpp_FUN_004d4d80(void)
             (afStack_a0 + (uint)bVar4 * -2 + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =
                  (afStack_150 + (uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x1d)[(uint)bVar4 * -2 + 1];
             core_xform_cpp_quaternionFromAngleY_FUN_005f79f0
-                      ((CQuaternion4f *)0xbfc90fdb,(float)puVar7);
-            local_b4.w = fVar5;
-            puVar7 = (undefined4 *)((int)&local_b4 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+                      ((CQuaternion4f *)0xbfc90fdb,(float)puVar6);
+            local_b4.w = (float)this_ptr;
+            puVar6 = (undefined4 *)((int)&local_b4 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
             *(undefined4 *)((int)&local_b4 + (uint)bVar4 * -8 + 4) =
                  *(undefined4 *)(&stack0xfffffe10 + (uint)bVar4 * -8);
-            *puVar7 = *(undefined4 *)(&stack0xfffffe14 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-            puVar7[(uint)bVar4 * -2 + 1] =
+            *puVar6 = *(undefined4 *)(&stack0xfffffe14 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+            puVar6[(uint)bVar4 * -2 + 1] =
                  *(undefined4 *)
                   ((int)(&stack0xfffffe14 + (uint)bVar4 * -8 + (uint)bVar4 * -8) +
                   ((uint)bVar4 * -2 + 1) * 4);
             core_xform_cpp_multiplyQuaternion_FUN_005f7640
                       (&local_b4,in_stack_fffffe2c,in_stack_fffffe30);
-            DAT_02d7b7f4 = uVar6;
+            DAT_02d7b7f4 = uVar5;
             (&DAT_02d7b7f8)[(uint)bVar4 * -2] = *(undefined4 *)(&stack0xfffffe20 + (uint)bVar4 * -8)
             ;
             (&DAT_02d7b7fc)[(uint)bVar4 * -2 + (uint)bVar4 * -2] =
@@ -310,8 +311,8 @@ void core_gabriela_cpp_FUN_004d4d80(void)
       }
       if (0.0 < *(float *)(in_stack_00000004 + 0x1fc0c)) {
         *(undefined4 *)(in_stack_00000004 + 0x23a8) = 2;
-        local_18 = core_motion_cpp_CMotionController_FUN_0052e3a0();
-        local_14 = (float)local_18;
+        local_18 = (CDeformableModelInstance *)core_motion_cpp_CMotionController_FUN_0052e3a0();
+        local_14 = local_18;
         core_skeleton_cpp_CDeformableModelInstance_FUN_0059e0a0();
         *(undefined4 *)(in_stack_00000004 + 0x23a8) = 0;
       }
@@ -344,10 +345,10 @@ void core_gabriela_cpp_FUN_004d4d80(void)
        (afStack_150 + (uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x25)[(uint)bVar4 * -2 + 1];
   core_skeleton_cpp_CDeformableModelInstance_FUN_0059f750();
   local_4c = (float)core_gabriela_cpp_FUN_004d4c90();
-  local_14 = local_4c;
-  local_14 = (float)core_gabriela_cpp_FUN_004d4ce0();
+  local_14 = (CDeformableModelInstance *)local_4c;
+  local_14 = (CDeformableModelInstance *)core_gabriela_cpp_FUN_004d4ce0();
   _DAT_02d7b844 =
-       (1.0 - (*(float *)(in_stack_00000004 + 0x1fbe8) - local_4c) / (local_14 - local_4c)) *
+       (1.0 - (*(float *)(in_stack_00000004 + 0x1fbe8) - local_4c) / ((float)local_14 - local_4c)) *
        (float)DOUBLE_0062af9d;
   if (1.0 < _DAT_02d7b844) {
     _DAT_02d7b844 = 1.0;
@@ -357,14 +358,14 @@ void core_gabriela_cpp_FUN_004d4d80(void)
   core_xform_cpp_quaternionFromAngleX_FUN_005f79b0
             (*(CQuaternion4f **)(in_stack_00000004 + 0x1fbe8),
              *(float *)(in_stack_00000004 + 0x1fbe4));
-  puVar7 = &local_154;
+  puVar6 = &local_154;
   local_154 = local_d4;
   afStack_150[(uint)bVar4 * -2] = afStack_150[(uint)bVar4 * -2 + 0x20];
   afStack_150[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
        afStack_150[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x21];
   (afStack_150 + (uint)bVar4 * -2 + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =
        (afStack_150 + (uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x21)[(uint)bVar4 * -2 + 1];
-  core_xform_cpp_quaternionFromAngleY_FUN_005f79f0((CQuaternion4f *)0x3fc90fdb,(float)puVar7);
+  core_xform_cpp_quaternionFromAngleY_FUN_005f79f0((CQuaternion4f *)0x3fc90fdb,(float)puVar6);
   local_164.w = local_134;
   pfVar2 = (float *)((int)&local_164 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   *(float *)((int)&local_164 + (uint)bVar4 * -8 + 4) = afStack_150[(uint)bVar4 * -2 + 8];
@@ -799,7 +800,7 @@ void core_gabriela_cpp_FUN_004d4d80(void)
 //   XREF to: Stack[-0x44] (READ)
 // 004d50fa: PUSH EAX
 // 004d50fb: PUSH ESI
-// 004d50fc: CALL core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+// 004d50fc: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 004d5101: FLD float ptr [EBX + 0x1fbdc]
 // 004d5107: ADD ESP,0x18
@@ -1053,7 +1054,7 @@ void core_gabriela_cpp_FUN_004d4d80(void)
 //   XREF to: Stack[-0x50] (READ)
 // 004d5327: PUSH ECX
 // 004d5328: PUSH ESI
-// 004d5329: CALL core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+// 004d5329: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 004d532e: FLD float ptr [EBX + 0x1fbdc]
 // 004d5334: ADD ESP,0x18
@@ -1130,7 +1131,7 @@ void core_gabriela_cpp_FUN_004d4d80(void)
 // 004d53d3: PUSH EAX
 // 004d53d4: MOV dword ptr [EBP + 0x7a],EAX
 //   XREF to: Stack[-0x14] (WRITE)
-// 004d53d7: CALL core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+// 004d53d7: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 004d53dc: FLD float ptr [0x0062af8d]
 //   XREF to: 0062af8d (READ)

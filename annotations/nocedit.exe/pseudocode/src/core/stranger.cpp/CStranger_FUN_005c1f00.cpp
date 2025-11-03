@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_stranger.cpp_CStranger_FUN_005bdd20 (005bdd20) at 005be2ce [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_actionPending_=_%d_stranger.cpp_l_00653aac
+//   TerminatedCString s_actionPending_d_stranger_00653aac
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   undefined4 g_CAmmoBoxClassInfo.name_hash
 //   CEditorTools g_CEditorToolsPtr
@@ -28,7 +28,7 @@ void core_stranger_cpp_CStranger_FUN_005c1f00(void)
   if (*(int *)(in_stack_00000004 + 0x1fba0) != 0) {
     if (*(int *)(in_stack_00000004 + 0x1fc38) != 4) {
       shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
-                (g_CEditorToolsPtr,"@actionPending = %d\nstranger.cpp line %d" + 1,
+                (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",
                  *(int *)(in_stack_00000004 + 0x1fc38),0xd52);
     }
     pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790

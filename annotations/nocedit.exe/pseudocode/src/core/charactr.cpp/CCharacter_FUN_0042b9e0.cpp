@@ -18,7 +18,7 @@
 //   CGore* g_CGorePtr = 02d83364
 //   CGore g_CGoreInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_charactr.cpp_CCharacter_FUN_0042bcc0
 //   core_gore.cpp_FUN_004edbb0
@@ -31,7 +31,7 @@
 void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
 
 {
-  int iVar1;
+  CDeformableModel *pCVar1;
   CBoundingBox3D *pCVar2;
   BADSPACEBASE *in_ESP;
   float fVar3;
@@ -42,8 +42,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
   undefined1 auStack_7c [20];
   float local_68;
   float local_64;
-  undefined1 local_48 [16];
-  float local_38;
+  undefined1 local_48 [8];
+  undefined1 auStack_40 [12];
   CVector3f CStack_34;
   float fStack_28;
   float local_20;
@@ -52,9 +52,9 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
   
   max_value = 6.127877e-39;
   sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-  if ((this_ptr->model).padding_0x0[0x2260] != '\0') {
-    iVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-    local_1c = *(float *)(iVar1 + 0x7140);
+  if ((this_ptr->model).field11_0x2260[0] != '\0') {
+    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(&this_ptr->model);
+    local_1c = (float)pCVar1->num_parts;
     if (1 < (int)local_1c) {
       if (fStack_a8 < 0.0) {
         fStack_a8 = 20.0;
@@ -68,11 +68,11 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
             CStack_34.z = -(float)in_stack_ffffff44;
             local_20 = core_actor_cpp_getRandomFloat_FUN_0040cc10
                                  (CStack_34.z,(float)in_stack_ffffff44);
-            local_48._8_4_ = local_20 + (float)local_48._8_4_;
+            auStack_40._0_4_ = local_20 + (float)auStack_40._0_4_;
             local_1c = core_actor_cpp_getRandomFloat_FUN_0040cc10(fStack_28,max_value);
-            local_48._8_4_ = local_1c + (float)local_48._8_4_;
+            auStack_40._0_4_ = local_1c + (float)auStack_40._0_4_;
             core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                      ((CMatrix3x3f *)&stack0xffffff50,(CVector3f *)(local_48 + 8));
+                      ((CMatrix3x3f *)&stack0xffffff50,(CVector3f *)auStack_40);
             local_64 = SQRT(in_stack_00000008->z * in_stack_00000008->z +
                             in_stack_00000008->x * in_stack_00000008->x +
                             in_stack_00000008->y * in_stack_00000008->y);
@@ -91,13 +91,14 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
       }
     }
   }
-  pCVar2 = (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
+  pCVar2 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
                      (&this_ptr->base_actor,(CBoundingBox3D *)auStack_7c);
   fStack_14 = (pCVar2->min).x + (pCVar2->max).x;
-  local_38 = fStack_14 * FLOAT_0061715a;
+  auStack_40._8_4_ = fStack_14 * FLOAT_0061715a;
   CStack_34.x = ((pCVar2->min).y + (pCVar2->max).y) * FLOAT_0061715a;
   CStack_34.y = ((pCVar2->min).z + (pCVar2->max).z) * FLOAT_0061715a;
-  core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (&this_ptr->base_actor,(CVector3f *)(local_48 + 4),(CVector3f *)(auStack_40 + 8));
   if (*(int *)(this_ptr->cloth_data + 0x8d40) == 0) {
     core_gore_cpp_FUN_004edbb0();
     (this_ptr->base_actor).was_created = 2;
@@ -213,7 +214,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
 // 0042bad8: FSTP float ptr [ESP + 0x68]
 // 0042badc: PUSH EDI
 // 0042badd: FSTP float ptr [ESP + 0x70]
-// 0042bae1: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0042bae1: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0042bae6: MOV ESI,dword ptr [EDI + 0xb7d8]
 // 0042baec: ADD ESP,0xc

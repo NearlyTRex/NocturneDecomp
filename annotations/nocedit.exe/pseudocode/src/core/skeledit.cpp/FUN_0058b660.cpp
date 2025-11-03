@@ -30,7 +30,7 @@
 //   core_skeledit.cpp_FUN_0058f790
 //   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510
 //   core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0
-//   core_skeleton.cpp_CDeformableModel_FUN_0059a2b0
+//   core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 //   crt_stdio.c_fgetc_FUN_005fe840
 //   crt_stdio.c_fscanf_FUN_005fe7c0
@@ -43,27 +43,28 @@
 void core_skeledit_cpp_FUN_0058b660(void)
 
 {
-  FILE *file;
+  CDeformableModel *file;
   int iVar1;
   BADSPACEBASE *in_ESP;
+  int unaff_EBP;
   int iVar2;
   int unaff_ESI;
-  char *in_stack_0000000c;
+  CDeformableModel *in_stack_0000000c;
   char *in_stack_00000010;
   int in_stack_00000020;
-  char *local_2c;
-  char *local_28;
   int in_stack_ffffffdc;
-  char *local_18;
-  FILE *file_00;
+  CDeformableModel *in_stack_ffffffec;
+  CDeformableModel *in_stack_fffffff4;
+  CDeformableModel *file_00;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x6c);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Importing deformable model from %s...");
-  core_skeleton_cpp_CDeformableModel_FUN_0059a2b0();
-  file = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  core_skeleton_cpp_CDeformableModel_free_FUN_0059a2b0(in_stack_0000000c);
+  file = (CDeformableModel *)
+         shape_memdbg_cpp_openFile_FUN_0050f7a0
                    (in_stack_00000010,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x4ba);
-  if (file == (FILE *)0x0) {
+  if (file == (CDeformableModel *)0x0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x4bb;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",in_stack_00000010);
@@ -71,64 +72,57 @@ void core_skeledit_cpp_FUN_0058b660(void)
   iVar2 = 1;
   file_00 = file;
   do {
-    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_00);
-    local_2c = (char *)&local_2c;
+    iVar1 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)file_00);
     if (iVar1 < 0) break;
   } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
-  crt_stdio_c_fscanf_FUN_005fe7c0(file,"%d\n");
+  crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)file,"%d\n");
   if ((in_stack_ffffffdc < 0x65) || (0x67 < in_stack_ffffffdc)) {
-    local_2c = in_stack_00000010;
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x4c2;
     core_main_c_displayErrorAndQuit_FUN_00506f10("%s has incorrect S3D version %d in CDeformableModel::importGeometryS3D");
   }
   iVar2 = 1;
   do {
-    local_28 = (char *)0x58b736;
-    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file);
+    iVar1 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)file);
     if (iVar1 < 0) break;
   } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
-  local_28 = &stack0xfffffff8;
-  local_2c = &stack0xfffffff4;
   iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
-                    (file,"%d,%d,%d,%d,%d,%d,%d\n",&local_18,&stack0xffffffec,&stack0xfffffff0);
+                    ((FILE *)file,"%d,%d,%d,%d,%d,%d,%d\n",&stack0xffffffe8,&stack0xffffffec,
+                     &stack0xfffffff0);
   if (iVar2 == 7) goto LAB_0058b7a0;
   do {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x4ca;
-    local_28 = (char *)0x58b79d;
     core_main_c_displayErrorAndQuit_FUN_00506f10("%s is corrupt!");
 LAB_0058b7a0:
-    local_28 = (char *)0x1;
-    local_2c = in_stack_0000000c;
-    core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0();
-    local_18 = (char *)0x0;
-    local_28 = in_stack_0000000c;
-    local_2c = (char *)0x58b7c8;
-    core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510();
+    core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0
+              (in_stack_0000000c,1,1,(int)in_stack_ffffffec,1);
+    core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510
+              (in_stack_0000000c,0,unaff_EBP,(int)in_stack_fffffff4,0);
     iVar2 = 1;
     do {
-      local_18 = (char *)0x58b7de;
-      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file);
+      iVar1 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)file);
       if (iVar1 < 0) break;
     } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
 LAB_0058b7f5:
     if (in_stack_00000020 < unaff_ESI) {
       iVar2 = 1;
       do {
-        local_18 = (char *)0x58b812;
-        iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file);
+        iVar1 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)file);
         if (iVar1 < 0) break;
       } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
       goto LAB_0058b7f5;
     }
-    local_18 = in_stack_0000000c;
+    in_stack_ffffffec = file;
     iVar2 = core_skeledit_cpp_FUN_0058b8e0();
-    if (iVar2 != 0) {
-      local_18 = (char *)0x58b879;
-      iVar2 = core_skeledit_cpp_FUN_0058b9b0();
-      if ((iVar2 != 0) && (iVar2 = core_skeledit_cpp_FUN_0058bc40(), iVar2 != 0)) {
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",0x4e7);
+    if ((iVar2 != 0) &&
+       (in_stack_ffffffec = in_stack_0000000c, iVar2 = core_skeledit_cpp_FUN_0058b9b0(), iVar2 != 0)
+       ) {
+      in_stack_ffffffec = (CDeformableModel *)0x58b88b;
+      in_stack_fffffff4 = file;
+      iVar2 = core_skeledit_cpp_FUN_0058bc40();
+      if (iVar2 != 0) {
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0((FILE *)file,"..\\core\\skeledit.cpp",0x4e7);
         core_skeledit_cpp_FUN_0058f790();
         core_skeledit_cpp_FUN_0058e240();
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -165,7 +159,7 @@ LAB_0058b7f5:
 //   XREF to: 0049e790 (UNCONDITIONAL_CALL)
 // 0058b68b: ADD ESP,0xc
 // 0058b68e: PUSH ESI
-// 0058b68f: CALL core_skeleton.cpp_CDeformableModel_FUN_0059a2b0
+// 0058b68f: CALL core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0
 //   XREF to: 0059a2b0 (UNCONDITIONAL_CALL)
 // 0058b694: ADD ESP,0x4
 // 0058b697: PUSH 0x4ba

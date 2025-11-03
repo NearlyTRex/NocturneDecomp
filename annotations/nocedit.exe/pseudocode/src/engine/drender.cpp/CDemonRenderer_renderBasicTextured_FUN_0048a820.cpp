@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: void engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
 // Cross-references:
-//   core_mirror.cpp_clipAndRenderReflectedPrimitive_FUN_00522560 (00522560) at 00522589 [UNCONDITIONAL_CALL]
-//   core_mirror.cpp_renderMirroredPrimitive_FUN_005225e0 (005225e0) at 0052265c [UNCONDITIONAL_CALL]
+//   core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560 (00522560) at 00522589 [UNCONDITIONAL_CALL]
+//   core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_005225e0 (005225e0) at 0052265c [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0 (005708e0) at 00570946 [UNCONDITIONAL_CALL]
 // Globals:
 //   RenderScanlineFunc* g_ScanlineRenderFunc

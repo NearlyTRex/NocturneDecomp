@@ -12,7 +12,7 @@
 //   CDemonActor_vtable PTR_core_sentinel.cpp_FUN_00662694
 // Function calls:
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -27,9 +27,9 @@ CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_00567db0(CSentinel *thi
   CSentinel *pCVar4;
   
   pCVar4 = (CSentinel *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
-  (pCVar4->base_enemy).base_character.base_actor.metadata.vtable =
-       &PTR_core_sentinel_cpp_FUN_00662694;
-  core_skeleton_cpp_FUN_005a0840();
+  (pCVar4->base_enemy).base_character.base_actor.vtable = &PTR_core_sentinel_cpp_FUN_00662694;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            (&(pCVar4->base_enemy).base_character.model);
   uVar2 = _DAT_0066267c;
   pCVar1 = &pCVar4->base_enemy;
   (pCVar1->base_character).cloth_data[0x344] = -0x66;
@@ -68,7 +68,7 @@ CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_00567db0(CSentinel *thi
 // 00567dca: PUSH EAX
 // 00567dcb: MOV dword ptr [EAX + -0x4],0x662694
 //   XREF to: 00662694 (DATA)
-// 00567dd2: CALL core_skeleton.cpp_FUN_005a0840
+// 00567dd2: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00567dd7: FLD float ptr [0x0066267c]
 //   XREF to: 0066267c (READ)

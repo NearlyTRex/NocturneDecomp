@@ -1,29 +1,24 @@
 // Name: core_motion.cpp_CMotionController_FUN_0052dad0
 // Address: 0052dad0
 // Address Range: [[0052dad0, 0052daf9]]
-// Convention: unknown
-// Signature: undefined core_motion.cpp_CMotionController_FUN_0052dad0()
+// Convention: __cdecl
+// Signature: void core_motion.cpp_CMotionController_FUN_0052dad0(CMotionController * this_ptr)
 // Cross-references:
-//   core_motion.cpp_CMotionController_FUN_ctor_0052d570 (0052d570) at 0052d587 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00596ae9 [UNCONDITIONAL_CALL]
+//   core_motion.cpp_CMotionController_ctor_FUN_0052d570 (0052d570) at 0052d587 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596ae9 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_motion.cpp_CMotionController_FUN_0052de40
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_motion.cpp_CMotionController_FUN_0052dad0(CMotionController*
-   pMotionController) */
-
-void core_motion_cpp_CMotionController_FUN_0052dad0(void)
+void __cdecl core_motion_cpp_CMotionController_FUN_0052dad0(CMotionController *this_ptr)
 
 {
-  int in_stack_00000004;
-  
-  *(undefined4 *)(in_stack_00000004 + 4) = 0;
-  *(undefined4 *)(in_stack_00000004 + 8) = 0;
-  *(undefined4 *)(in_stack_00000004 + 0x2c) = 0;
-  *(undefined4 *)(in_stack_00000004 + 0x28) = 0xffffffff;
-  core_motion_cpp_CMotionController_FUN_0052de40();
+  this_ptr->current_motion_index = 0;
+  this_ptr->current_frame_number = 0.0;
+  this_ptr->field11_0x2c = 0;
+  this_ptr->state_index = -1;
+  core_motion_cpp_CMotionController_FUN_0052de40(this_ptr);
   return;
 }
 

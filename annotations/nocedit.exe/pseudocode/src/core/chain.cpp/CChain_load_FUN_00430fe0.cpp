@@ -44,7 +44,7 @@ void core_chain_cpp_CChain_load_FUN_00430fe0(void)
   core_actor_cpp_serializeInteger_FUN_0040b7f0
             ((int *)(in_stack_00000004[1].actor_name + 0x10),"targetBone");
   core_actor_cpp_serializeFloat_FUN_0040b770
-            ((float *)&in_stack_00000004[3].metadata.vtable,"weight");
+            ((float *)&in_stack_00000004[3].vtable,"weight");
   core_actor_cpp_serializeFloat_FUN_0040b770
             ((float *)(in_stack_00000004[4].actor_name + 8),"dampen");
   core_actor_cpp_serializeFloat_FUN_0040b770((float *)(in_stack_00000004 + 4),"friction");
@@ -64,7 +64,8 @@ void core_chain_cpp_CChain_load_FUN_00430fe0(void)
     return;
   }
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)&in_stack_00000004[1].metadata.runtime_vector1.z,"groundCollideFlag");
+            ((int *)&in_stack_00000004[1].previous_transform_state.position.z,
+             "groundCollideFlag");
   return;
 }
 

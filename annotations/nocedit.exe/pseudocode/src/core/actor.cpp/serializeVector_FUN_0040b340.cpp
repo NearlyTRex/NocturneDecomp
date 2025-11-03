@@ -32,7 +32,7 @@
 //   TerminatedCString s_f_f_f_00613eab
 //   TerminatedCString s_s_g_g_g_00613eb4
 //   string s_3D_vector_0066e0e0
-//   char* g_PropertyNamePrefix = 00000000
+//   char[104] g_PropertyNamePrefix
 //   FILE* g_ActorDataFile
 //   int g_ActorReadingMode
 // Function calls:
@@ -57,7 +57,7 @@ void __cdecl core_actor_cpp_serializeVector_FUN_0040b340(CVector3f *vector_ptr,c
   }
   else {
     crt_stdio_c_fprintf_FUN_005fe6d0
-              (g_ActorDataFile,"%s%g,%g,%g",&g_PropertyNamePrefix,(double)vector_ptr->x,
+              (g_ActorDataFile,"%s%g,%g,%g",g_PropertyNamePrefix,(double)vector_ptr->x,
                (double)vector_ptr->y,(double)vector_ptr->z);
   }
   core_actor_cpp_serializeDescription_FUN_0040b290("3D vector",in_stack_0000000c);

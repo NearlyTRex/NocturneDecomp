@@ -105,13 +105,13 @@ LAB_005379f3:
       }
       if (config_param1 == 0) {
         for (pCVar1 = *(CDemonActor **)(in_stack_00000004 + 0x548); pCVar1 != (CDemonActor *)0x0;
-            pCVar1 = (pCVar1->metadata).next_actor) {
+            pCVar1 = pCVar1->next_actor) {
           this_ptr = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar1,g_CEnemyClassInfo.name_hash)
           ;
           if ((this_ptr != (CDemonActor *)0x0) &&
              (*(int *)(this_ptr[0x8d].create_event + 0x3c) != 0)) {
-            (*(this_ptr->metadata).vtable[1].processMeleeHit)(this_ptr,in_stack_fffff2f0);
-            (*((this_ptr->metadata).vtable)->setup)(this_ptr);
+            (*this_ptr->vtable[1].processMeleeHit)(this_ptr,in_stack_fffff2f0);
+            (*this_ptr->vtable->setup)(this_ptr);
           }
         }
       }
@@ -189,7 +189,7 @@ LAB_00537aa5:
             DAT_02f797e0 = iVar3;
             shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff330);
             for (pCVar1 = *(CDemonActor **)(in_stack_00000004 + 0x548); pCVar1 != (CDemonActor *)0x0
-                ; pCVar1 = (pCVar1->metadata).next_actor) {
+                ; pCVar1 = pCVar1->next_actor) {
               actor_ptr = (CPickList *)
                           core_actor_cpp_castToClassHash_FUN_0040c790
                                     (pCVar1,g_CEnemyClassInfo.name_hash);

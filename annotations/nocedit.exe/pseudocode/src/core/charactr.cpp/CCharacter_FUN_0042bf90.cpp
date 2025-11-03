@@ -27,7 +27,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bf90(CCharacter *this_ptr)
   pSVar1 = this_ptr->carry_hands;
   do {
     while (in_stack_00000008 == pSVar1->carry_actor) {
-      (*((pSVar1->carry_actor->metadata).vtable)->onDropped)(in_stack_00000008,in_stack_0000000c);
+      (*pSVar1->carry_actor->vtable->onDropped)(in_stack_00000008,in_stack_0000000c);
       pSVar1->carry_actor = (CDemonActor *)0x0;
       pSVar1 = pSVar1 + 1;
       if (pSVar1 == (SCarryHand *)this_ptr->talk_to_me_event) {

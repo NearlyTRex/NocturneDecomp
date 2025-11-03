@@ -4,14 +4,18 @@
 // Convention: unknown
 // Signature: undefined core_morph.cpp_FUN_0052b5c0()
 // Function calls:
-//   core_morph.cpp_FUN_0052aa00
+//   core_morph.cpp_CMorphModel_FUN_0052aa00
 
 #include "nocturne.h"
 
 void core_morph_cpp_FUN_0052b5c0(void)
 
 {
-  core_morph_cpp_FUN_0052aa00();
+  int in_stack_00000004;
+  int in_stack_00000008;
+  
+  core_morph_cpp_CMorphModel_FUN_0052aa00
+            ((CMorphModel *)(in_stack_00000008 * 0x608 + in_stack_00000004));
   return;
 }
 
@@ -36,7 +40,7 @@ void core_morph_cpp_FUN_0052b5c0(void)
 // 0052b5e3: PUSH ECX
 // 0052b5e4: ADD EAX,EBX
 // 0052b5e6: PUSH EAX
-// 0052b5e7: CALL core_morph.cpp_FUN_0052aa00
+// 0052b5e7: CALL core_morph.cpp_CMorphModel_FUN_0052aa00
 //   XREF to: 0052aa00 (UNCONDITIONAL_CALL)
 // 0052b5ec: ADD ESP,0xc
 // 0052b5ef: POP EBX

@@ -37,9 +37,12 @@ void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e4a0(CActorPropertyList *
 
 {
   int iVar1;
+  char *in_stack_00000008;
+  void *in_stack_0000000c;
   undefined4 in_stack_00000014;
   
-  iVar1 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0(this_ptr);
+  iVar1 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
+                    (this_ptr,7,in_stack_00000008,in_stack_0000000c,(void *)0x0);
   *(undefined4 *)(iVar1 + 0x58) = 1;
   *(undefined4 *)(iVar1 + 0x5c) = in_stack_00000014;
   return;

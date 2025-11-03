@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_actor.cpp_CDemonActor_playSoundWithVolume_FUN_00408fa0 (00408fa0) at 00408fba [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireEffect_FUN_004c76a0 (004c76a0) at 004c79b3 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CFireEffect_FUN_004c7bb0 (004c7bb0) at 004c7cb3 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CFireEffect_createStake_FUN_004c7bb0 (004c7bb0) at 004c7cb3 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0
 //   sound_sndmain.cpp_FUN_005a8b40

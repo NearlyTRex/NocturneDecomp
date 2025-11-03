@@ -90,6 +90,9 @@ const WatcomThunkedDestructor DAT_00665b70 = {0x48, 0x00, 0x00, 0x00, 0x0C, 0x00
 const WatcomVirtualBaseDescriptor DAT_00665b68 = {0x00, 0x00, 0x00, 0x00, 0x54, 0x00, 0x00, 0x00};
 const WatcomVirtualBaseDescriptor DAT_00665d60 = {0x00, 0x00, 0x00, 0x00, 0x4C, 0x00, 0x00, 0x00};
 
+// char[104] constants
+const char[104] g_PropertyNamePrefix = "";
+
 // char[300] constants
 const char[300] g_LocalizationTemplate = "";
 
@@ -106,12 +109,17 @@ const float g_MirrorProjectionScale = 256f;
 const float g_MirrorFloatToInt = 65536f;
 const float g_MirrorIntToFloat_Coarse = 0.00390625f;
 const float g_MirrorIntToFloat_Fine = 1.525879e-05f;
+const float FLOAT_00661b40 = 256f;
+const float FLOAT_00661b48 = 0.00390625f;
+const float FLOAT_00661ba0 = 256f;
 const float FLOAT_00662850 = 256f;
 const float g_VDCoordinateScaleFactor = 256f;
 const float g_VDCameraDistanceRadius = 200f;
 const float g_VDNearbyActorRadius = 100f;
 const float FLOAT_00662a28 = 256f;
 const float FLOAT_00662a40 = 256f;
+const float FLOAT_00662e98 = 256f;
+const float FLOAT_00662ea0 = 0.00390625f;
 const float FLOAT_006652cc = 256f;
 
 // int constants
@@ -129,9 +137,6 @@ const string s_Integer_value_0066e148 = "Integer value";
 // uchar[8] constants
 const uchar[8] g_VoxelGridBitmasks = "";
 const uchar[8] g_LightBitMaskLookup = "";
-
-// undefined1 constants
-const undefined1 DAT_0066e177 = {0x30};
 
 // undefined4 constants
 const undefined4 DAT_00660028 = {0x30, 0x78, 0x34, 0x30};
@@ -192,10 +197,6 @@ const undefined4 DAT_0066eeac = {0x30, 0x78, 0x33, 0x00};
 const void* DAT_006605C0 = 0x00502430;
 const void* DAT_006605C4 = 0x00502450;
 const void* DAT_006618F4 = 0x00527360;
-const void* DAT_00661BC8 = 0x0052DC80;
-const void* DAT_00661BCC = 0x0052E570;
-const void* DAT_00662EC8 = 0x005A08A0;
-const void* DAT_00662ECC = 0x005A0C90;
 const void* DAT_006630E4 = 0x005A3280;
 const void* DAT_00663208 = 0x005AE340;
 const void* DAT_0066320C = 0x005AE4B0;

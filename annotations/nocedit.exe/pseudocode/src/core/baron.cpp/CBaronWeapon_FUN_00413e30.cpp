@@ -17,11 +17,12 @@ int __cdecl core_baron_cpp_CBaronWeapon_FUN_00413e30(CBaronWeapon *this_ptr)
   int iVar1;
   
   core_baron_cpp_FUN_00413f20();
-  if (this_ptr->field1_0x578 != 0) {
-    if (*(int *)(this_ptr->field1_0x578 + 0xbe38) != 0) {
+  iVar1 = this_ptr->field1_0x578;
+  if (iVar1 != 0) {
+    if (*(int *)(iVar1 + 0xbe38) != 0) {
       return 0;
     }
-    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0((CMotionController *)(iVar1 + 0x158));
     switch(*(undefined4 *)(iVar1 + 0x24)) {
     case 0:
     case 1:

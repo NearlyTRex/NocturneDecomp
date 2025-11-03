@@ -7,7 +7,7 @@
 //   shape_meshlod.cpp_FUN_005173f0 (005173f0) at 0051743c [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051b8a0 (0051b8a0) at 0051b90d [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\shape\meshlod.cpp_006380d5
+//   TerminatedCString s_shape_meshlod_cpp_006380d5
 //   TerminatedCString s_d_006380ea
 //   TerminatedCString s_shape_meshlod_cpp_006380ee
 //   TerminatedCString s_shape_meshlod_cpp_00638103
@@ -35,7 +35,7 @@ void shape_meshlod_cpp_FUN_0051d180
   
   if (*(void **)(param_5 + 0x50) != (void *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
-              (*(void **)(param_5 + 0x50),"?..\\shape\\meshlod.cpp" + 1,0x1441);
+              (*(void **)(param_5 + 0x50),"..\\shape\\meshlod.cpp",0x1441);
   }
   crt_stdio_c_fscanf_FUN_005fe7c0(param_6,"%d\n",param_5 + 0x4c);
   pvVar1 = shape_memdbg_cpp_debugCalloc_FUN_0050f350

@@ -8,14 +8,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_curtain.cpp_FUN_00449810(undefined4 param_1) */
 
 void core_curtain_cpp_FUN_00449810(void)
 
 {
-  CDemonActorClassMetadata *pCVar1;
+  CDemonActorTransformState *pCVar1;
   float fVar2;
   float fVar3;
   float fVar4;
@@ -29,7 +27,7 @@ void core_curtain_cpp_FUN_00449810(void)
   undefined4 extraout_EDX;
   undefined4 uVar11;
   float fVar12;
-  CDemonActorClassMetadata *pCVar13;
+  CDemonActorTransformState *pCVar13;
   char *pcVar14;
   CVector3f *pCVar15;
   int unaff_EBP;
@@ -48,7 +46,7 @@ void core_curtain_cpp_FUN_00449810(void)
   float local_6c;
   int local_68;
   int local_64;
-  CDemonActorClassMetadata *local_5c;
+  CDemonActorTransformState *local_5c;
   float local_30;
   int local_2c;
   int local_28;
@@ -80,14 +78,14 @@ void core_curtain_cpp_FUN_00449810(void)
     *(int *)(in_stack_00000004[1].create_event + 0x34) = iVar7;
     if (iVar7 < 0x3e9) break;
     *(float *)(in_stack_00000004[1].create_event + 0x2c) =
-         *(float *)(in_stack_00000004[1].create_event + 0x2c) * (float)_DAT_00619bea;
+         *(float *)(in_stack_00000004[1].create_event + 0x2c) * (float)DOUBLE_00619bea;
   }
   fVar2 = *(float *)in_stack_00000004[1].actor_name;
   fVar16 = 0.0;
   if (0 < (int)fVar6) {
     do {
       fVar3 = *(float *)in_stack_00000004[1].actor_name;
-      fVar4 = (float)_DAT_00619bf2;
+      fVar4 = (float)DOUBLE_00619bf2;
       fVar12 = 0.0;
       if (0 < local_2c) {
         local_14 = local_1c * 0x74 + local_68;
@@ -131,9 +129,9 @@ void core_curtain_cpp_FUN_00449810(void)
             *(int *)(local_14 + 0x48 + *(int *)(local_14 + 0x44) * 4) = local_1c + 1;
             *(int *)(local_14 + 0x44) = *(int *)(local_14 + 0x44) + 1;
           }
-          fVar23 = (float10)_DAT_00619bfa;
-          fVar24 = (float10)_DAT_00619c02;
-          fVar22 = (((float10)*(float *)in_stack_00000004[1].actor_name * (float10)_DAT_00619bf2 +
+          fVar23 = (float10)DOUBLE_00619bfa;
+          fVar24 = (float10)DOUBLE_00619c02;
+          fVar22 = (((float10)*(float *)in_stack_00000004[1].actor_name * (float10)DOUBLE_00619bf2 +
                     (float10)*(float *)(local_14 + 0xc)) /
                    (float10)*(float *)in_stack_00000004[1].actor_name) * fVar23 * fVar24;
           dVar25 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(fVar12,local_14));
@@ -158,26 +156,24 @@ void core_curtain_cpp_FUN_00449810(void)
   }
   local_64 = 0;
   if (0 < *(int *)(in_stack_00000004[1].create_event + 0x34)) {
-    pCVar1 = (CDemonActorClassMetadata *)(in_stack_00000004[1].create_event + 0x38);
+    pCVar1 = (CDemonActorTransformState *)(in_stack_00000004[1].create_event + 0x38);
     local_5c = pCVar1;
     do {
       iVar7 = 0;
-      if (0 < *(int *)((int)(local_5c + 1) + 0x14)) {
+      if (0 < *(int *)((int)(local_5c + 2) + 0xc)) {
         pCVar13 = local_5c;
         do {
-          iVar10 = *(int *)((int)(pCVar13 + 1) + 0x18);
-          fVar17 = (local_5c->runtime_vector2).x - *(float *)((int)pCVar1 + iVar10 * 0x74 + 0xc);
-          fVar5 = ((CVector3f *)((int)&local_5c->runtime_vector2 + 4))->x -
-                  *(float *)((int)pCVar1 + iVar10 * 0x74 + 0x10);
-          fVar6 = *(float *)((int)&local_5c->runtime_vector2 + 8) -
-                  *(float *)((int)pCVar1 + iVar10 * 0x74 + 0x14);
+          iVar10 = *(int *)((int)(pCVar13 + 2) + 0x10);
+          fVar17 = (local_5c->orientation).x - *(float *)((int)pCVar1 + iVar10 * 0x74 + 0xc);
+          fVar5 = (local_5c->orientation).y - *(float *)((int)pCVar1 + iVar10 * 0x74 + 0x10);
+          fVar6 = (local_5c->orientation).z - *(float *)((int)pCVar1 + iVar10 * 0x74 + 0x14);
           iVar7 = iVar7 + 1;
-          ((CVector3i *)((int)(pCVar13 + 1) + 0x28))->x =
+          ((CVector3i *)((int)(pCVar13 + 3) + 4))->x =
                (int)SQRT(fVar6 * fVar6 + fVar17 * fVar17 + fVar5 * fVar5);
-          pCVar13 = (CDemonActorClassMetadata *)((int)&pCVar13->runtime_vector1 + 4);
-        } while (iVar7 < *(int *)((int)(local_5c + 1) + 0x14));
+          pCVar13 = (CDemonActorTransformState *)((int)&pCVar13->position + 4);
+        } while (iVar7 < *(int *)((int)(local_5c + 2) + 0xc));
       }
-      local_5c = (CDemonActorClassMetadata *)((int)(local_5c + 2) + 0x14);
+      local_5c = (CDemonActorTransformState *)((int)(local_5c + 4) + 4);
       local_64 = local_64 + 1;
     } while (local_64 < *(int *)(in_stack_00000004[1].create_event + 0x34));
   }
@@ -227,9 +223,11 @@ void core_curtain_cpp_FUN_00449810(void)
           piVar9[7] = *(int *)(in_stack_00000004[1].create_event + (int)fVar17 * 0x74 + 0x50);
           piVar9[8] = *(int *)(in_stack_00000004[1].create_event + (int)fVar17 * 0x74 + 0x54);
           piVar9[9] = (int)fVar17 + 1;
-          piVar9[10] = *(int *)((int)&in_stack_00000004[1].metadata + (int)fVar17 * 0x74 + 0x14);
+          piVar9[10] = *(int *)((int)&in_stack_00000004[1].previous_transform_state +
+                               (int)fVar17 * 0x74 + 0x14);
           ((CVector3i *)(piVar9 + 0xb))->x =
-               *(int *)((int)&in_stack_00000004[1].metadata + (int)fVar17 * 0x74 + 0x18);
+               *(int *)((int)&in_stack_00000004[1].previous_transform_state +
+                       (int)fVar17 * 0x74 + 0x18);
           iVar7 = in_stack_00000004[0x152].is_transparent;
           piVar9[0xc] = (int)fVar17 + 1 + iVar7 + 1;
           iVar7 = local_18 * 0x74 + iVar10 * 0x74 + iVar7 * 0x74 + 0xe8;
@@ -248,7 +246,7 @@ void core_curtain_cpp_FUN_00449810(void)
           *(int *)(pCVar15 + 4) = piVar9[6];
           *piVar20 = piVar9[(uint)bVar21 * -2 + 7];
           piVar20[(uint)bVar21 * -2 + 1] = (piVar9 + (uint)bVar21 * -2 + 7)[(uint)bVar21 * -2 + 1];
-          (((CDemonActorClassMetadata *)(piVar9 + 0x13))->runtime_vector1).x = 4.2039e-45;
+          (((CDemonActorTransformState *)(piVar9 + 0x13))->position).x = 4.2039e-45;
           piVar9[0x17] = 0;
           fVar17 = (float)piVar9[0x17];
           ((CVector3f *)(piVar9 + 0x16))->x = fVar17;
@@ -264,19 +262,20 @@ void core_curtain_cpp_FUN_00449810(void)
           fVar17 = (float)(iVar18 + local_18);
           piVar9[0x18] = (int)fVar17;
           piVar9[0x19] = *(int *)(in_stack_00000004[1].create_event + (int)fVar17 * 0x74 + 0x50);
-          piVar9[0x1a] = *(undefined4 *)
-                          (in_stack_00000004[1].create_event + (int)fVar17 * 0x74 + 0x54);
+          piVar9[0x1a] = *(int *)(in_stack_00000004[1].create_event + (int)fVar17 * 0x74 + 0x54);
           iVar7 = in_stack_00000004[0x152].is_transparent;
           iVar19 = (int)fVar17 + iVar7 + 2;
           piVar9[0x1b] = iVar19;
           iVar10 = iVar18 * 0x74 + local_18 * 0x74 + iVar7 * 0x74 + 0xe8;
           piVar9[0x1c] = (int)*(CDemonActor **)
                                ((int)&in_stack_00000004[2].orient_matrix + iVar10 + -0xcc);
-          piVar9[0x1d] = *(undefined4 *)(in_stack_00000004[2].create_event + iVar10 + -0x104);
+          piVar9[0x1d] = *(int *)(in_stack_00000004[2].create_event + iVar10 + -0x104);
           piVar9[0x1e] = (int)(iVar19 + -1);
           iVar7 = iVar18 * 0x74 + local_18 * 0x74 + iVar7 * 0x74;
-          piVar9[0x1f] = *(undefined4 *)((int)&in_stack_00000004[1].metadata + iVar7 + 0x14);
-          piVar9[0x20] = *(undefined4 *)((int)&in_stack_00000004[1].metadata + iVar7 + 0x18);
+          piVar9[0x1f] = *(undefined4 *)
+                          ((int)&in_stack_00000004[1].previous_transform_state + iVar7 + 0x14);
+          piVar9[0x20] = *(undefined4 *)
+                          ((int)&in_stack_00000004[1].previous_transform_state + iVar7 + 0x18);
           piVar20 = (int *)((int)pCVar15 + (uint)bVar21 * -8 + 100);
           *(CDemonActor_vtable **)(pCVar15 + 8) = (CDemonActor_vtable *)piVar9[0x1e];
           *piVar20 = piVar9[(uint)bVar21 * -2 + 0x1f];

@@ -29,35 +29,29 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005fca80(CZombie *this_ptr)
 
 {
   int iVar1;
+  CMotionList *this_ptr_00;
   CActorPropertyList *in_stack_00000008;
-  char *pcStack0000000c;
-  char *pcStack00000010;
   char *pcStack00000018;
   int *piStack0000001c;
   
   core_enemy_cpp_CEnemy_FUN_004aa170(&this_ptr->base_enemy);
   core_actor_cpp_CActorPropertyList_FUN_0040e4a0(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e4d0(in_stack_00000008);
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0();
+  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
+                    (&(this_ptr->base_enemy).base_character.model.motion_controller);
   if (*(int *)(iVar1 + 0x24) == 0xe) {
     core_actor_cpp_CActorPropertyList_FUN_0040e460(in_stack_00000008);
-    pcStack0000000c = (char *)0x0;
     core_actor_cpp_CActorPropertyList_FUN_0040e350(in_stack_00000008);
   }
-  pcStack00000010 = (char *)&this_ptr->is_miner_zombie;
-  pcStack0000000c = "IsMinerZombie";
   core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);
-  pcStack00000010 = "CHASE_2";
-  pcStack0000000c = (this_ptr->base_enemy).base_character.model.padding_0x0;
-  pcStack00000010 = (char *)core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
-  pcStack0000000c = (char *)0x5fcb30;
-  iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0();
+  this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                          (&(this_ptr->base_enemy).base_character.model.motion_controller);
+  iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
   if (iVar1 != 0x16) {
     return;
   }
   piStack0000001c = &this_ptr->always_chase_fast;
   pcStack00000018 = "Always fast";
-  pcStack00000010 = (char *)0x5fcb4e;
   core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);
   return;
 }

@@ -10,7 +10,7 @@
 //   CGore g_CGoreInstance
 //   CVector3f g_ZeroVector
 // Function calls:
-//   core_actor.cpp_FUN_0040cd10
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_gore.cpp_FUN_004edaa0
 
 #include "nocturne.h"
@@ -22,7 +22,7 @@ void core_bodypart_cpp_FUN_0041b1b0(void)
 {
   int iVar1;
   
-  iVar1 = core_actor_cpp_FUN_0040cd10();
+  iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.08);
   if (iVar1 == 0) {
     return;
   }
@@ -34,7 +34,7 @@ void core_bodypart_cpp_FUN_0041b1b0(void)
 // Assembly code:
 // 0041b1b0: PUSH 0x3da3d70a
 //   Label: core_bodypart.cpp_FUN_0041b1b0
-// 0041b1b5: CALL core_actor.cpp_FUN_0040cd10
+// 0041b1b5: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 0041b1ba: ADD ESP,0x4
 // 0041b1bd: TEST EAX,EAX

@@ -83,7 +83,7 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
   local_20 = 0.0;
   local_1c = 0;
   local_24 = 0.0;
-  for (; actor_ptr != (CDemonActor *)0x0; actor_ptr = (actor_ptr->metadata).next_actor) {
+  for (; actor_ptr != (CDemonActor *)0x0; actor_ptr = actor_ptr->next_actor) {
     pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CEnemyClassInfo.name_hash);
     if (pCVar1 != (CDemonActor *)0x0) {
       local_14 = (CDemonActor *)0x3f800000;
@@ -100,15 +100,15 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
           local_14 = pCVar2;
         }
       }
-      fVar4 = (float10)(float)pCVar1[0x1a].metadata.next_actor * (float10)(float)local_14;
+      fVar4 = (float10)(float)pCVar1[0x1a].next_actor * (float10)(float)local_14;
       fVar5 = (float10)(float)local_14 * (float10)_DAT_0063ccf0;
       crt_math_c_round_FUN_005fe6b0((double)CONCAT44(uVar3,pCVar2));
       local_28 = (int)ROUND(fVar5);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (local_224,"%s\t%g hp\tx\t%i%%\t=\t%g hp",pCVar1,
-                 (double)(float)pCVar1[0x1a].metadata.next_actor,local_28,(double)fVar4);
+                (local_224,"%s\t%g hp\tx\t%i%%\t=\t%g hp",pCVar1,(double)(float)pCVar1[0x1a].next_actor,
+                 local_28,(double)fVar4);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_d1c.base_strlist,local_224);
-      local_20 = (float)pCVar1[0x1a].metadata.next_actor * (float)local_14 + local_20;
+      local_20 = (float)pCVar1[0x1a].next_actor * (float)local_14 + local_20;
     }
     pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CAmmoClassInfo.name_hash);
     if (pCVar1 != (CDemonActor *)0x0) {

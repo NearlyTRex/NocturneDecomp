@@ -15,7 +15,8 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fc9e0(CZombie *this_ptr)
   int iVar1;
   CDemonActor *in_stack_00000008;
   
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0();
+  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
+                    (&(this_ptr->base_enemy).base_character.model.motion_controller);
   if (*(int *)(iVar1 + 0x24) == 0xe) {
     return 1;
   }

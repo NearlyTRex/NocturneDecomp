@@ -9,7 +9,7 @@
 // Globals:
 //   TerminatedCString s_glass_1_wav_2_0_00617144
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndShatter_FUN_005a14b0
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a14b0
 
 #include "nocturne.h"
 
@@ -19,15 +19,14 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b8e0(CCharacter *this_ptr)
   COrientation *pCStack00000008;
   undefined4 uStack0000000c;
   
-  (*((this_ptr->base_actor).metadata.vtable)->playSound)
-            (&this_ptr->base_actor,"glass-1.wav@2.0");
-  if ((this_ptr->model).padding_0x0[0x2260] == '\0') {
+  (*((this_ptr->base_actor).vtable)->playSound)(&this_ptr->base_actor,"glass-1.wav@2.0");
+  if ((this_ptr->model).field11_0x2260[0] == '\0') {
     (this_ptr->base_actor).was_created = 2;
     return;
   }
   uStack0000000c = 0;
   pCStack00000008 = &(this_ptr->base_actor).orient;
-  core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndShatter_FUN_005a14b0();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a14b0(&this_ptr->model);
   (this_ptr->base_actor).was_created = 2;
   return;
 }
@@ -60,7 +59,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b8e0(CCharacter *this_ptr)
 // 0042b918: LEA EAX,[EBX + 0x20]
 // 0042b91b: PUSH EAX
 // 0042b91c: PUSH EDX
-// 0042b91d: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndShatter_FUN_005a14b0
+// 0042b91d: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a14b0
 //   XREF to: 005a14b0 (UNCONDITIONAL_CALL)
 // 0042b922: ADD ESP,0x10
 // 0042b925: MOV dword ptr [EBX + 0x70],0x2

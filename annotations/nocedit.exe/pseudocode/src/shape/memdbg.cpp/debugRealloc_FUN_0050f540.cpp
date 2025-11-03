@@ -8,7 +8,7 @@
 //   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190 (0054b190) at 0054b2c2 [UNCONDITIONAL_CALL]
 //   core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0 (004191d0) at 00419242 [UNCONDITIONAL_CALL]
 //   core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0 (00498fb0) at 00499000 [UNCONDITIONAL_CALL]
-//   core_morph.cpp_CMorphModel_addPart2_FUN_0052a710 (0052a710) at 0052a78c [UNCONDITIONAL_CALL]
+//   core_morph.cpp_CMorphModel_FUN_0052a710 (0052a710) at 0052a78c [UNCONDITIONAL_CALL]
 //   core_morph.cpp_CMorphModel_addPart_FUN_0052a580 (0052a580) at 0052a625 [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_LoadingScriptFile_FUN_0055a370 (0055a370) at 0055a3e4 [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_ReallocSomething_FUN_00567510 (00567510) at 00567539 [UNCONDITIONAL_CALL]

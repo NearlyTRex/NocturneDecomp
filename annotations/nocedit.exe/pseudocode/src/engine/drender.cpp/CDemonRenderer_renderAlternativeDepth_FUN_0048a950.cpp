@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
 // Cross-references:
-//   core_mirror.cpp_renderMirrorQuadDepth_FUN_00522800 (00522800) at 0052298e [UNCONDITIONAL_CALL]
+//   core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_00522800 (00522800) at 0052298e [UNCONDITIONAL_CALL]
 // Globals:
 //   int[16] g_VertexIndexBuffer
 //   undefined4 g_VertexIndexBuffer[1]

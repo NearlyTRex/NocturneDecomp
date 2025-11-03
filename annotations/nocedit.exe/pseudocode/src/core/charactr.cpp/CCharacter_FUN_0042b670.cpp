@@ -11,9 +11,9 @@
 //   CGore* g_CGorePtr = 02d83364
 //   CGore g_CGoreInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408e80
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_FUN_0040cd10
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_gore.cpp_FUN_004edaa0
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 
@@ -28,36 +28,34 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b670(CCharacter *this_ptr)
   char *pcVar2;
   int iVar3;
   CMatrix3x4f *in_stack_ffffffa8;
-  CVector3f local_50 [2];
-  undefined4 local_38;
-  undefined4 local_34;
-  undefined4 local_30;
+  CVector3f local_44;
+  CVector3f local_38;
   CVector3f local_2c;
   CVector3f local_20;
   char *local_14;
   
   iVar3 = 0;
   if (0 < *(int *)(this_ptr->cloth_data + 0x35c)) {
-    local_14 = (this_ptr->model).padding_0x0 + 0xe80;
+    local_14 = (this_ptr->model).field3_0x508 + 0x978;
     pcVar2 = this_ptr->cloth_data + 0x360;
     do {
-      if (*(int *)((this_ptr->model).padding_0x0 + *(int *)pcVar2 * 4 + 0x2140) != 0) {
-        iVar1 = core_actor_cpp_FUN_0040cd10();
+      if ((this_ptr->model).part_visibility_flags[*(int *)pcVar2] != 0) {
+        iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.1);
         if (iVar1 != 0) {
           local_2c.x = 0.0;
           local_2c.y = 0.0;
           local_2c.z = -0.2;
           input_vector = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                                   (local_50,&local_2c,(CMatrix3x4f *)(pcVar2 + 8));
+                                   ((CVector3f *)&stack0xffffffb0,&local_2c,
+                                    (CMatrix3x4f *)(pcVar2 + 8));
           core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_20,input_vector,in_stack_ffffffa8);
-          core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr->base_actor);
-          local_34 = 0;
-          local_30 = 0;
-          local_50[0].x = (float)&local_38;
-          local_38 = 0x40400000;
-          core_actor_cpp_CDemonActor_FUN_00408e80(&this_ptr->base_actor);
-          local_50[0].y = *(float *)(this_ptr->field11_0x25a0 + 0x70);
-          local_50[0].x = (float)&stack0xffffffa4;
+          core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                    (&this_ptr->base_actor,&local_44,&local_20);
+          local_38.y = 0.0;
+          local_38.z = 0.0;
+          local_38.x = 3.0;
+          core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                    (&this_ptr->base_actor,(CVector3f *)&stack0xffffffa4,&local_38);
           in_stack_ffffffa8 = (CMatrix3x4f *)g_CGorePtr;
           core_gore_cpp_FUN_004edaa0();
         }
@@ -110,7 +108,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b670(CCharacter *this_ptr)
 // 0042b6b7: RET
 // 0042b6b8: PUSH 0x3dcccccd
 //   Label: LAB_0042b6b8
-// 0042b6bd: CALL core_actor.cpp_FUN_0040cd10
+// 0042b6bd: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 0042b6c2: ADD ESP,0x4
 // 0042b6c5: TEST EAX,EAX
@@ -153,7 +151,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b670(CCharacter *this_ptr)
 //   XREF to: Stack[-0x44] (DATA)
 // 0042b709: PUSH EAX
 // 0042b70a: PUSH EBX
-// 0042b70b: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0042b70b: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0042b710: XOR EAX,EAX
 // 0042b712: ADD ESP,0xc
@@ -171,7 +169,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b670(CCharacter *this_ptr)
 // 0042b728: PUSH EBX
 // 0042b729: MOV dword ptr [EBP + -0x28],ECX
 //   XREF to: Stack[-0x38] (WRITE)
-// 0042b72c: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 0042b72c: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 0042b731: ADD ESP,0xc
 // 0042b734: MOV ECX,dword ptr [EBX + 0x2610]

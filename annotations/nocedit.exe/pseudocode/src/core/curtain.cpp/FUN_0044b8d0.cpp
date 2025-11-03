@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_curtain.cpp_FUN_0044b8d0()
 // Globals:
-//   undefined4 s_With_CTRL_held_down,_use_slew_ke_00619dea
+//   TerminatedCString s_With_CTRL_held_down_use__00619dea
 //   TerminatedCString s_Left_Right_changes_width_00619e1a
 //   TerminatedCString s_Up_Down_changes_height_y_00619e3e
 //   TerminatedCString s_You_cannot_change_the_th_00619e60
@@ -30,7 +30,7 @@ void core_curtain_cpp_FUN_0044b8d0(void)
   iVar2 = g_ClipLeft;
   iVar1 = *in_stack_00000008;
   *in_stack_00000008 = iVar1 + 0xb;
-  engine_2d_c_drawText_FUN_00401fd0("@With CTRL held down, use slew keys to size box:" + 1,iVar2,iVar1 + 0xb);
+  engine_2d_c_drawText_FUN_00401fd0("With CTRL held down, use slew keys to size box:",iVar2,iVar1 + 0xb);
   iVar2 = g_ClipLeft;
   iVar1 = *in_stack_00000008;
   *in_stack_00000008 = iVar1 + 0xb;

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format, ...)
 // Cross-references:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040ff25 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040ff25 [UNCONDITIONAL_CALL]
 //   core_actor.cpp_FUN_0040fffe (0040fffe) at 00410059 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_0042f3e0 (0042f3e0) at 0042f583 [UNCONDITIONAL_CALL]
 //   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 (0043d590) at 0043d928 [UNCONDITIONAL_CALL]
@@ -25,7 +25,7 @@
 //   core_mission.cpp_CDemonMission_FUN_00524760 (00524760) at 0052484e [UNCONDITIONAL_CALL]
 //   core_mission.cpp_CDemonMission_createOneHero_FUN_00524920 (00524920) at 00524a6d [UNCONDITIONAL_CALL]
 //   core_mission.cpp_CDemonMission_loadActor_FUN_00523990 (00523990) at 00523ab0 [UNCONDITIONAL_CALL]
-//   core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0 (0052bcb0) at 0052c937 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052c937 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 (005381e0) at 005385b6 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_DisplayTextNoSetsDefinedAndAllowCancel_FUN_00538f90 (00538f90) at 0053903e [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_DuplicateActorCheckMaybe_FUN_0053bd80 (0053bd80) at 0053bfc6 [UNCONDITIONAL_CALL]
@@ -58,7 +58,7 @@
 //   core_setedit.cpp_OpenSomethingBackdropThumbs_FUN_005769a0 (005769a0) at 00576d5d [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0 (0057bbe0) at 0057c398 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_UserInputCreate_FUN_0057d660 (0057d660) at 0057e38b [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00598e12 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00598e12 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_ExportModel_FUN_00595fc0 (00595fc0) at 005963e5 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00589c20 (00589c20) at 00589df6 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 005927e6 [UNCONDITIONAL_CALL]

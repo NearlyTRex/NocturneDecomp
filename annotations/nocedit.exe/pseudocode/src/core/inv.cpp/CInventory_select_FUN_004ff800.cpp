@@ -23,7 +23,7 @@
 //   CGame* g_CGamePtr = 02d81a9c
 //   undefined4 g_CAmmoClassInfo.name_hash
 //   undefined4 g_CBoxActorClassInfo.name_hash
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CGame g_CGameInstance
 //   undefined4 g_CGasMaskClassInfo.name_hash
 //   undefined4 DAT_02db8780.name_hash
@@ -34,7 +34,7 @@
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
-//   core_event.cpp_FUN_004aabe0
+//   core_event.cpp_CEventList_FUN_004aabe0
 //   core_game.cpp_CGame_displayMessage_FUN_004d7f20
 //   core_health.cpp_FUN_004f1fd0
 //   core_inv.cpp_CInventory_removeItem_FUN_004fea70
@@ -81,7 +81,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
       iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CBoxActor");
       if (iVar2 != 0) {
         core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CBoxActorClassInfo.name_hash);
-        core_event_cpp_FUN_004aabe0();
+        core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
         return 0;
       }
     }
@@ -482,7 +482,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
 //   XREF to: 006793d0 (READ)
 // 004ffa95: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 004ffa96: CALL core_event.cpp_FUN_004aabe0
+// 004ffa96: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 004ffa9b: ADD ESP,0x8
 // 004ffa9e: XOR EAX,EAX

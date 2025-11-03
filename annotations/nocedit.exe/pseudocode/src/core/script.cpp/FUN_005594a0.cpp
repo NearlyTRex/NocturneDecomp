@@ -7,10 +7,10 @@
 //   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055be43 [UNCONDITIONAL_CALL]
 // Globals:
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   undefined4 DAT_0310ec9c
 // Function calls:
-//   core_event.cpp_FUN_004add00
+//   core_event.cpp_CEventList_FUN_004add00
 //   core_script.cpp_FUN_005593f0
 
 #include "nocturne.h"
@@ -24,7 +24,7 @@ void core_script_cpp_FUN_005594a0(void)
   
   iVar1 = core_script_cpp_FUN_005593f0();
   if ((iVar1 == 0) && (DAT_0310ec9c != 0)) {
-    core_event_cpp_FUN_004add00();
+    core_event_cpp_CEventList_FUN_004add00(g_CEventListPtr);
     return;
   }
   return;
@@ -62,7 +62,7 @@ void core_script_cpp_FUN_005594a0(void)
 //   XREF to: 006793d0 (READ)
 // 005594cf: PUSH EDI
 //   XREF to: 02d05310 (DATA)
-// 005594d0: CALL core_event.cpp_FUN_004add00
+// 005594d0: CALL core_event.cpp_CEventList_FUN_004add00
 //   XREF to: 004add00 (UNCONDITIONAL_CALL)
 // 005594d5: ADD ESP,0x8
 // 005594d8: POP ESI

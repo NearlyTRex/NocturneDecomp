@@ -1,19 +1,19 @@
 // Name: core_morph.cpp_CMorph_getReady_FUN_0052b680
 // Address: 0052b680
 // Address Range: [[0052b680, 0052bad7]]
-// Convention: unknown
-// Signature: undefined core_morph.cpp_CMorph_getReady_FUN_0052b680()
+// Convention: __cdecl
+// Signature: void core_morph.cpp_CMorph_getReady_FUN_0052b680(CMorph * this_ptr)
 // Cross-references:
 //   core_biggs.cpp_FUN_00418680 (00418680) at 004186d8 [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_CMimic_setup_FUN_0051f3e0 (0051f3e0) at 0051f73a [UNCONDITIONAL_CALL]
 //   core_moloch.cpp_FUN_00528c70 (00528c70) at 00528cf0 [UNCONDITIONAL_CALL]
 //   core_moloch.cpp_FUN_00528d20 (00528d20) at 00529345 [UNCONDITIONAL_CALL]
-//   core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0 (0052bcb0) at 0052c4ab [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052c4ab [UNCONDITIONAL_CALL]
 //   core_passngr.cpp_FUN_00545d30 (00545d30) at 00545dc1 [UNCONDITIONAL_CALL]
 //   core_succubus.cpp_CSuccubus_FUN_005c6b60 (005c6b60) at 005c6e24 [UNCONDITIONAL_CALL]
 //   core_vampboss.cpp_CVampireBoss_FUN_005e56c0 (005e56c0) at 005e5865 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\morph.cpp_0063a443
+//   TerminatedCString s_core_morph_cpp_0063a443
 //   TerminatedCString s_CMorph_getReady_can_t_do_0063a455
 //   WatcomTypeInfo g_CBoundingBox3DTypeInfo
 //   char* g_CurrentFilename
@@ -26,9 +26,7 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_morph.cpp_CMorph_getReady(CMorph* param_1) */
-
-void core_morph_cpp_CMorph_getReady_FUN_0052b680(void)
+void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
 
 {
   int iVar1;
@@ -42,7 +40,6 @@ void core_morph_cpp_CMorph_getReady_FUN_0052b680(void)
   BADSPACEBASE *in_ESP;
   int unaff_ESI;
   int iVar9;
-  int in_stack_00000004;
   int in_stack_0000000c;
   CBoundingBox3D local_c0;
   float local_9c [3];
@@ -79,8 +76,8 @@ void core_morph_cpp_CMorph_getReady_FUN_0052b680(void)
   CVector3f *local_18;
   float *local_14;
   
-  if ((*(int *)(in_stack_00000004 + 0x54) < 3) || (*(int *)(in_stack_00000004 + 0x65c) < 3)) {
-    g_CurrentFilename = "@..\\core\\morph.cpp" + 1;
+  if ((*(int *)(this_ptr + 0x54) < 3) || (*(int *)(this_ptr + 0x65c) < 3)) {
+    g_CurrentFilename = "..\\core\\morph.cpp";
     g_CurrentLineNumber = 799;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorph::getReady - can't do this unless we have setup both models!");
   }

@@ -16,14 +16,14 @@
 // Function calls:
 //   core_charactr.cpp_CCharacter_FUN_00428140
 //   core_inv.cpp_CInventory_setupItems_FUN_004ff780
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 
 #include "nocturne.h"
 
 void __cdecl core_hero_cpp_CHero_FUN_004f2540(CHero *this_ptr)
 
 {
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(&(this_ptr->base_character).model);
   core_charactr_cpp_CCharacter_FUN_00428140(&this_ptr->base_character);
   this_ptr->field1_0xbe24 = 0;
   core_inv_cpp_CInventory_setupItems_FUN_004ff780(&this_ptr->inventory);
@@ -38,7 +38,7 @@ void __cdecl core_hero_cpp_CHero_FUN_004f2540(CHero *this_ptr)
 //   XREF to: Stack[0x4] (READ)
 // 004f2545: LEA EAX,[EBX + 0x158]
 // 004f254b: PUSH EAX
-// 004f254c: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 004f254c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 004f2551: ADD ESP,0x4
 // 004f2554: PUSH EBX

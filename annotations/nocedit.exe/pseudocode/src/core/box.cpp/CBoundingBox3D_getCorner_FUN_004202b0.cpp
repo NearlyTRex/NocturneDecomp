@@ -4,10 +4,10 @@
 // Convention: __cdecl
 // Signature: CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0(CBoundingBox3D * this_ptr, CVector3f * out_point, uint corner_index)
 // Cross-references:
-//   core_actor.cpp_CDemonActor_FUN_00409270 (00409270) at 004092b4 [UNCONDITIONAL_CALL]
-//   core_actor.cpp_FUN_0040d470 (0040d470) at 0040d49a [UNCONDITIONAL_CALL]
-//   core_actor.cpp_FUN_0040dec0 (0040dec0) at 0040df32 [UNCONDITIONAL_CALL]
-//   core_actor.cpp_renderActorBoundingBox_FUN_0040d940 (0040d940) at 0040d9a3 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CDemonActor_FUN_0040dec0 (0040dec0) at 0040df32 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270 (00409270) at 004092b4 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 (0040d940) at 0040d9a3 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_drawBoundingBox_FUN_0040d470 (0040d470) at 0040d49a [UNCONDITIONAL_CALL]
 //   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680 (00420680) at 004206a5 [UNCONDITIONAL_CALL]
 //   core_box.cpp_CBoundingBox3D_render_FUN_004210b0 (004210b0) at 004210d6 [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 (0056ae50) at 0056b234 [UNCONDITIONAL_CALL]

@@ -59,19 +59,10 @@ void core_moon_cpp_FUN_0052a2c0(void)
        *(undefined4 *)(&stack0xffffffec + (uint)bVar3 * -8);
   *(undefined4 *)(&stack0xfffffff8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
        *(undefined4 *)(&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-  *(int *)g_CDemonSetPtr->field34_0x15ae74 = iVar2;
-  pCVar1->field34_0x15ae74[4] = '\0';
-  pCVar1->field34_0x15ae74[5] = -0x80;
-  pCVar1->field34_0x15ae74[6] = '\0';
-  pCVar1->field34_0x15ae74[7] = '\0';
-  pCVar1->field34_0x15ae74[8] = '\0';
-  pCVar1->field34_0x15ae74[9] = '\0';
-  pCVar1->field34_0x15ae74[10] = '\0';
-  pCVar1->field34_0x15ae74[0xb] = '\0';
-  pCVar1->field34_0x15ae74[0xc] = -0x80;
-  pCVar1->field34_0x15ae74[0xd] = '\x02';
-  pCVar1->field34_0x15ae74[0xe] = '\0';
-  pCVar1->field34_0x15ae74[0xf] = '\0';
+  (g_CDemonSetPtr->light_direction).x = iVar2;
+  (pCVar1->light_direction).y = 0x8000;
+  (pCVar1->light_direction).z = 0;
+  pCVar1->ambient_base_quick = 0x280;
   core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
             ((CKeyFramedModel *)(in_stack_00000020 + 8),(CKeyFramedModelInstance *)0x0,0,0x205);
   g_CDemonSetPtr->rendering_mode = 0;

@@ -1,16 +1,16 @@
 // Name: core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
 // Address: 0052d4f0
 // Address Range: [[0052d4f0, 0052d564]]
-// Convention: unknown
-// Signature: undefined core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0()
+// Convention: __cdecl
+// Signature: int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr)
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042c920 (0042c920) at 0042c9a5 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_0042de50 (0042de50) at 0042de9e [UNCONDITIONAL_CALL]
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004acfaf [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004acfaf [UNCONDITIONAL_CALL]
 //   core_hero.cpp_FUN_004f2890 (004f2890) at 004f28bf [UNCONDITIONAL_CALL]
 //   core_hero.cpp_FUN_004f28d0 (004f28d0) at 004f2916 [UNCONDITIONAL_CALL]
 //   core_hero.cpp_FUN_004f29b0 (004f29b0) at 004f29e8 [UNCONDITIONAL_CALL]
-//   core_motion.cpp_CMotionController_FUN_0052db90 (0052db90) at 0052dba0 [UNCONDITIONAL_CALL]
+//   core_motion.cpp_FUN_0052db90 (0052db90) at 0052dba0 [UNCONDITIONAL_CALL]
 //   core_npc.cpp_CNPC_process_FUN_005448b0 (005448b0) at 00544b37 [UNCONDITIONAL_CALL]
 //   core_npc.cpp_FUN_00544c50 (00544c50) at 00544ccf [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 00592dd6 [UNCONDITIONAL_CALL]
@@ -28,38 +28,33 @@
 
 #include "nocturne.h"
 
-/* Signature: int core_motion.cpp_CMotionList_findStateIndex(CMotionList* pMotionList, char* sName,
-   int param_3) */
-
-int core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(void)
+int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList *this_ptr)
 
 {
   int iVar1;
   int iVar2;
-  int *str1;
-  int *in_stack_00000004;
+  char (*str1) [30];
   char *in_stack_00000008;
   int in_stack_0000000c;
   
   iVar2 = 0;
-  if (0 < *in_stack_00000004) {
-    str1 = in_stack_00000004 + 1;
+  if (0 < this_ptr->state_count) {
+    str1 = this_ptr->state_names;
     do {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0((char *)str1,in_stack_00000008);
+      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(*str1,in_stack_00000008);
       if (iVar1 == 0) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      str1 = (int *)((int)str1 + 0x1e);
-    } while (iVar2 < *in_stack_00000004);
+      str1 = str1 + 1;
+    } while (iVar2 < this_ptr->state_count);
   }
   if (in_stack_0000000c == 0) {
     return -1;
   }
   g_CurrentFilename = "..\\core\\motion.cpp";
   g_CurrentLineNumber = 0x113;
-  core_main_c_displayErrorAndQuit_FUN_00506f10
-            ("Can't find state \"%s\" in motion list",in_stack_00000008);
+  core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find state \"%s\" in motion list");
   return -1;
 }
 

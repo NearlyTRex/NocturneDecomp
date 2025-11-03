@@ -10,12 +10,12 @@
 // Globals:
 //   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CDemonSet g_CDemonSetInstance
 //   undefined4 DAT_0326eed8
 //   undefined4 DAT_0326eedc
 //   undefined4 DAT_0326eee0
-//   undefined4 g_CDemonSetInstance.field25_0x15aca8
+//   undefined4 g_CDemonSetInstance.field29_0x15aca8
 //   undefined4 DAT_03f6af70
 //   undefined4 DAT_03f6af74
 //   undefined4 DAT_03f6af78
@@ -36,7 +36,7 @@
 //   undefined4 DAT_03f6b864
 //   undefined4 DAT_03f6b86c
 // Function calls:
-//   core_event.cpp_FUN_004b0f00
+//   core_event.cpp_CEventList_FUN_004b0f00
 //   core_sound.cpp_CSound_playSfx_FUN_005b3a20
 //   core_sound.cpp_FUN_005b1870
 //   sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20
@@ -96,7 +96,7 @@ void core_sound_cpp_FUN_005b2dd0(void)
   core_sound_cpp_CSound_playSfx_FUN_005b3a20(in_stack_00000028,(int)g_CDemonSetPtr,&DAT_03f6b780);
   DAT_03f6b7a8 = extraout_EAX;
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
-  if (g_CDemonSetPtr->field25_0x15aca8 != 0) {
+  if (g_CDemonSetPtr->field29_0x15aca8 != 0) {
     if (&stack0x00000000 != STrainNoise_ARRAY_03f6b7bc[8].field0_0x0 + 8) {
       _DAT_03f6b85c = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc0);
       _DAT_03f6b860 = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc4);
@@ -104,7 +104,7 @@ void core_sound_cpp_FUN_005b2dd0(void)
     }
     DAT_03f6b86c = 0xffffffff;
   }
-  core_event_cpp_FUN_004b0f00();
+  core_event_cpp_CEventList_FUN_004b0f00(g_CEventListPtr);
   DAT_03f6b7ac = 1;
   return;
 }
@@ -273,7 +273,7 @@ void core_sound_cpp_FUN_005b2dd0(void)
 //   XREF to: 006793d0 (READ)
 // 005b2f3f: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 005b2f40: CALL core_event.cpp_FUN_004b0f00
+// 005b2f40: CALL core_event.cpp_CEventList_FUN_004b0f00
 //   XREF to: 004b0f00 (UNCONDITIONAL_CALL)
 // 005b2f45: MOV ECX,0x1
 // 005b2f4a: ADD ESP,0x4

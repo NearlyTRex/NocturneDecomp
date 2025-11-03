@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_set.cpp_CDemonSet_FUN_00570870(CDemonSet * this_ptr)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModel_FUN_0059abf0 (0059abf0) at 0059ad25 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 (0059abf0) at 0059ad25 [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CGame* g_CGamePtr = 02d81a9c

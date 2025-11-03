@@ -20,7 +20,8 @@ undefined4 core_icepick_cpp_FUN_004f8ad0(void)
   if (*(int *)(in_stack_00000004 + 0x1fbf4) == 0) {
     return 0;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+            ((CMotionController *)(in_stack_00000004 + 0x158));
   return 1;
 }
 

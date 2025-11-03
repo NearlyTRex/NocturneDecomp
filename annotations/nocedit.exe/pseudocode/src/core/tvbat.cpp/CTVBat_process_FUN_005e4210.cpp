@@ -34,9 +34,9 @@
 //   undefined4 DAT_0326525c
 //   CDemonRaytrace g_CDemonRaytraceInstance
 // Function calls:
-//   core_actor.cpp_FUN_0040cd70
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 //   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 //   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
@@ -302,7 +302,7 @@ LAB_005e4342:
       local_8c = local_ec;
       local_88 = fStack_e8;
     }
-    if (((local_130.field5_0x14 <= local_8c) && (local_8c <= local_130.cylinder_bottom_y)) &&
+    if (((local_130.cylinder_bottom_y <= local_8c) && (local_8c <= local_130.cylinder_top_y)) &&
        (local_178 < (float)_DAT_0065699a)) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_16c);
       local_16c.damage_amount = 1.0;
@@ -323,14 +323,14 @@ LAB_005e4342:
   fStack_38 = (float)-fVar18;
   local_3c = (float)(fVar20 * fVar17);
   fStack_44 = (float)(fVar19 * fVar17);
-  local_24 = core_actor_cpp_FUN_0040cd70
+  local_24 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                        (local_24 - (this_ptr->base_enemy).base_character.base_actor.orient.bank);
   fVar13 = (this_ptr->base_enemy).base_character.base_actor.orient.pitch;
   (this_ptr->base_enemy).base_character.base_actor.orient.bank =
        local_24 * in_stack_00000008 * this_ptr->rot_speed +
        (this_ptr->base_enemy).base_character.base_actor.orient.bank;
   local_20 = local_24;
-  local_28 = core_actor_cpp_FUN_0040cd70(local_28 - fVar13);
+  local_28 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_28 - fVar13);
   fVar13 = this_ptr->move_speed;
   fVar3 = this_ptr->move_speed;
   fVar4 = this_ptr->move_speed;
@@ -391,8 +391,8 @@ LAB_005e4342:
      *(float *)(this_ptr->field16_0xc0e8 + 4) = fVar13, fVar13 <= 0.0)) {
     iVar14 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
     if ((iVar14 == 0) && (iVar14 = sound_sndmain_cpp_FUN_005aa290(), iVar14 != 0)) {
-      uVar12 = (*((this_ptr->base_enemy).base_character.base_actor.metadata.vtable)->
-                 playAmbientSound)((CDemonActor *)this_ptr,this_ptr->field13_0xc07c);
+      uVar12 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playAmbientSound)
+                         ((CDemonActor *)this_ptr,this_ptr->field13_0xc07c);
       *(undefined4 *)this_ptr->field16_0xc0e8 = uVar12;
     }
     fVar13 = core_actor_cpp_getRandomFloat_FUN_0040cc10
@@ -797,7 +797,7 @@ LAB_005e4342:
 // 005e4716: FSTP float ptr [ESP + 0x13c]
 // 005e471d: SUB ESP,0x4
 // 005e4720: FSTP float ptr [ESP]
-// 005e4723: CALL core_actor.cpp_FUN_0040cd70
+// 005e4723: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 005e4728: MOV dword ptr [ESP + 0x164],EAX
 // 005e472f: FLD float ptr [ESP + 0x164]
@@ -812,7 +812,7 @@ LAB_005e4342:
 // 005e4758: SUB ESP,0x4
 // 005e475b: FSTP float ptr [EBX + 0x34]
 // 005e475e: FSTP float ptr [ESP]
-// 005e4761: CALL core_actor.cpp_FUN_0040cd70
+// 005e4761: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 005e4766: MOV dword ptr [ESP + 0x164],EAX
 // 005e476d: FLD float ptr [ESP + 0x164]

@@ -8,7 +8,7 @@
 //   core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (00523600) at 00523983 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_s_s_s_0063093f
-//   char* g_PropertyNamePrefix = 00000000
+//   char[104] g_PropertyNamePrefix
 // Function calls:
 //   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
 //   crt_stdio.c_fprintf_FUN_005fe6d0
@@ -28,7 +28,7 @@ void __cdecl core_inv_cpp_CInventory_saveItems_FUN_004ff3b0(CInventory *this_ptr
     do {
       pcVar1 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(pCVar2->items[0]);
       iVar3 = iVar3 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s%s \"%s\"\n",&g_PropertyNamePrefix,pcVar1);
+      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s%s \"%s\"\n",g_PropertyNamePrefix,pcVar1);
       pCVar2 = (CInventory *)&pCVar2->owner;
     } while (iVar3 < this_ptr->item_count);
   }

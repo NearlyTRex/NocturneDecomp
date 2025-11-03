@@ -4,12 +4,12 @@
 // Convention: unknown
 // Signature: undefined core_gargoyle.cpp_CGargoyle_unk3_FUN_004e57d0()
 // Globals:
-//   undefined4 s_gargoyle-shatter.wav_0062da1f
+//   TerminatedCString s_gargoyle_shatter_wav_0062da1f
 //   TerminatedCString s_gargoyle_hurt_wav_0062da34
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CFireEffect g_CFireEffectInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_charactr.cpp_CCharacter_FUN_0042b9e0
 //   core_enemy.cpp_FUN_004a9f10
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
@@ -27,19 +27,24 @@
 void core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void)
 
 {
+  CDeformableModelInstance *this_ptr;
   float fVar1;
   undefined4 uVar2;
   int iVar3;
+  BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
   
   iVar3 = 0;
-  core_actor_cpp_CDemonActor_FUN_00408ec0(&in_stack_00000004->base_actor);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffe4,
+             (CVector3f *)(in_stack_00000008 + 0x1c));
   do {
     iVar3 = iVar3 + 1;
     core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
   } while (iVar3 < 3);
-  iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0();
+  this_ptr = &in_stack_00000004->model;
+  iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
   if (*(int *)(iVar3 + 0x24) != 5) {
     core_gargoyle_cpp_CGargoyle_unk4_FUN_004e5530();
     fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
@@ -47,7 +52,7 @@ void core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void)
     if (0.0 < fVar1) {
       iVar3 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
       if (iVar3 == 0) {
-        uVar2 = (*((in_stack_00000004->base_actor).metadata.vtable)->playSound)
+        uVar2 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                           (&in_stack_00000004->base_actor,"gargoyle-hurt?.wav");
         *(undefined4 *)(in_stack_00000004[1].base_actor.create_event + 0x60) = uVar2;
         core_enemy_cpp_FUN_004a9f10();
@@ -57,11 +62,12 @@ void core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void)
     else {
       sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
       in_stack_00000004->hit_points = 0.0;
-      iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0();
+      iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
       if (*(int *)(iVar3 + 0x24) != 8) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
-        (*((in_stack_00000004->base_actor).metadata.vtable)->playSound)
-                  (&in_stack_00000004->base_actor,"@gargoyle-shatter.wav" + 1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller)
+        ;
+        (*((in_stack_00000004->base_actor).vtable)->playSound)
+                  (&in_stack_00000004->base_actor,"gargoyle-shatter.wav");
         core_charactr_cpp_CCharacter_FUN_0042b9e0(in_stack_00000004);
       }
     }
@@ -92,7 +98,7 @@ void core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void)
 // 004e57e7: PUSH EAX
 // 004e57e8: PUSH ESI
 // 004e57e9: XOR EBX,EBX
-// 004e57eb: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 004e57eb: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 004e57f0: ADD ESP,0xc
 // 004e57f3: PUSH 0xffff

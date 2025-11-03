@@ -63,7 +63,7 @@ CFlies * core_gore_cpp_CreateFlies_FUN_004edf30
     *(undefined4 *)(this_ptr->field1_0x158 + 4) = param_9[1];
     *(undefined4 *)(this_ptr->field1_0x158 + 8) = param_9[2];
   }
-  (*((this_ptr->base_actor).metadata.vtable)->setup)(&this_ptr->base_actor);
+  (*((this_ptr->base_actor).vtable)->setup)(&this_ptr->base_actor);
   core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
   core_mission_cpp_CDemonMission_FUN_00523b70(g_CDemonMissionPtr);
   return this_ptr;

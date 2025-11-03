@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_flame.cpp_FUN_004caa70()
 // Cross-references:
-//   core_crossbow.cpp_FUN_00448d30 (00448d30) at 00448de0 [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_process_FUN_00448d30 (00448d30) at 00448de0 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

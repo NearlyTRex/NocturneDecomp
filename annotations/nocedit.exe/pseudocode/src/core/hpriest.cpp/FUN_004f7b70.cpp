@@ -14,7 +14,7 @@
 //   CDemonActor_vtable PTR_core_npc.cpp_FUN_0065fe94
 // Function calls:
 //   core_npc.cpp_FUN_005447e0
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -27,8 +27,8 @@ CHighPriestOfGardath * __cdecl core_hpriest_cpp_FUN_004f7b70(CHighPriestOfGardat
   char *pcVar4;
   
   pCVar2 = (CHighPriestOfGardath *)core_npc_cpp_FUN_005447e0(&this_ptr->base_npc);
-  (pCVar2->base_npc).base_character.base_actor.metadata.vtable = &PTR_core_npc_cpp_FUN_0065fe94;
-  core_skeleton_cpp_FUN_005a0840();
+  (pCVar2->base_npc).base_character.base_actor.vtable = &PTR_core_npc_cpp_FUN_0065fe94;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(&(pCVar2->base_npc).base_character.model);
   pcVar3 = "killPriest";
   pcVar4 = pCVar2->field1_0x1f708;
   do {
@@ -64,7 +64,7 @@ CHighPriestOfGardath * __cdecl core_hpriest_cpp_FUN_004f7b70(CHighPriestOfGardat
 // 004f7b8d: PUSH EDI
 // 004f7b8e: MOV dword ptr [EAX + 0x154],0x65fe94
 //   XREF to: 0065fe94 (DATA)
-// 004f7b98: CALL core_skeleton.cpp_FUN_005a0840
+// 004f7b98: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004f7b9d: ADD ESP,0x8
 // 004f7ba0: MOV ESI,0x62f568

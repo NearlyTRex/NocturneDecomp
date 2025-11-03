@@ -16,8 +16,8 @@
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890
 //   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 //   core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430
@@ -37,7 +37,7 @@ void core_frankgen_cpp_LoadModel_FUN_004d2190(void)
   undefined4 extraout_EAX;
   CKeyFramedModel *this_ptr;
   CVector3i *pCVar2;
-  float *pfVar3;
+  CVector3f *pCVar3;
   undefined4 extraout_EDX;
   BADSPACEBASE *in_ESP;
   undefined4 *puVar4;
@@ -45,6 +45,8 @@ void core_frankgen_cpp_LoadModel_FUN_004d2190(void)
   CDemonActor *in_stack_00000004;
   undefined4 auStackY_1004 [1010];
   int in_stack_ffffffd4;
+  CVector3f local_24;
+  undefined4 local_18 [2];
   
   bVar5 = 0;
   switch(*(undefined4 *)in_stack_00000004[1].actor_name) {
@@ -77,7 +79,7 @@ LAB_004d21b9:
     g_CurrentLineNumber = 0x1bb;
     core_main_c_displayErrorAndQuit_FUN_00506f10("WTF!");
   }
-  core_actor_cpp_CDemonActor_FUN_00408c10(in_stack_00000004);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
   crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,extraout_EAX));
   iVar1 = *(int *)(in_stack_00000004[3].create_event + 8);
   this_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
@@ -85,14 +87,15 @@ LAB_004d21b9:
   pCVar2 = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00477890(this_ptr,in_stack_ffffffd4)
   ;
   puVar4 = (undefined4 *)((int)(pCVar2 + iVar1) + (uint)bVar5 * -8 + 4);
-  *(undefined4 *)(&stack0xffffffe8 + (uint)bVar5 * -8) = *puVar4;
-  *(undefined4 *)(&stack0xffffffec + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-       puVar4[(uint)bVar5 * -2 + 1];
-  pfVar3 = core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-  if ((float *)(in_stack_00000004[3].create_event + 0x10) != pfVar3) {
-    *(float *)(in_stack_00000004[3].create_event + 0x10) = *pfVar3;
-    *(float *)(in_stack_00000004[3].create_event + 0x14) = pfVar3[1];
-    *(float *)(in_stack_00000004[3].create_event + 0x18) = pfVar3[2];
+  local_24.z = (float)pCVar2[iVar1].x;
+  local_18[(uint)bVar5 * -2] = *puVar4;
+  local_18[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] = puVar4[(uint)bVar5 * -2 + 1];
+  pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                     (in_stack_00000004,&local_24,(CVector3f *)&stack0xfffffff4);
+  if ((CVector3f *)(in_stack_00000004[3].create_event + 0x10) != pCVar3) {
+    ((CVector3f *)(in_stack_00000004[3].create_event + 0x10))->x = pCVar3->x;
+    *(float *)(in_stack_00000004[3].create_event + 0x14) = pCVar3->y;
+    *(float *)(in_stack_00000004[3].create_event + 0x18) = pCVar3->z;
     return;
   }
   return;
@@ -135,7 +138,7 @@ LAB_004d21b9:
 //   Label: LAB_004d21bf
 // 004d21c2: PUSH EBP
 //   Label: LAB_004d21c2
-// 004d21c3: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 004d21c3: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 004d21c8: FLD float ptr [EBP + 0x180]
 // 004d21ce: ADD ESP,0x4
@@ -194,7 +197,7 @@ LAB_004d21b9:
 //   XREF to: Stack[-0x38] (DATA)
 // 004d2245: PUSH EAX
 // 004d2246: PUSH EBP
-// 004d2247: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 004d2247: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 004d224c: ADD EBP,0x490
 // 004d2252: ADD ESP,0xc

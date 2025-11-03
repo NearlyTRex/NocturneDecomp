@@ -5,8 +5,8 @@
 // Signature: int engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
 // Cross-references:
 //   core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500 (00497500) at 00497cca [UNCONDITIONAL_CALL]
-//   core_mirror.cpp_renderMirrorQuad_FUN_00522670 (00522670) at 005227d6 [UNCONDITIONAL_CALL]
-//   core_mirror.cpp_renderReflectedPrimitive_FUN_005225a0 (005225a0) at 005225c9 [UNCONDITIONAL_CALL]
+//   core_mirror.cpp_CMirror_renderMirrorQuad_FUN_00522670 (00522670) at 005227d6 [UNCONDITIONAL_CALL]
+//   core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_005225a0 (005225a0) at 005225c9 [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_FUN_00570df0 (00570df0) at 00570e17 [UNCONDITIONAL_CALL]
 //   core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70 (005e9e70) at 005ea2be [UNCONDITIONAL_CALL]
 // Globals:

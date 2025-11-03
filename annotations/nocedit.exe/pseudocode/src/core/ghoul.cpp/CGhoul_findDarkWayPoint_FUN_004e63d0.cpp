@@ -58,7 +58,7 @@ void core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(void)
           iVar2 = iVar2 + 4;
         }
         if (local_14 != 0.0) {
-          this_ptr_00 = (*((this_ptr->metadata).vtable)->getPathMap)(this_ptr);
+          this_ptr_00 = (*this_ptr->vtable->getPathMap)(this_ptr);
           if (this_ptr_00 == (CPathMap *)0x0) {
             this_ptr_00 = (CPathMap *)core_path_cpp_FUN_00548500();
           }

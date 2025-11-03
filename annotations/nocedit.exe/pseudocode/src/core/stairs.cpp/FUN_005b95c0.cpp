@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CSpotView * core_stairs.cpp_FUN_005b95c0(CSpotView * this_ptr)
 // Cross-references:
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00596926 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596926 [UNCONDITIONAL_CALL]
 //   core_stairs.cpp_staticInit_FUN_005b95b0 (005b95b0) at 005b95b5 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051d9f1 [UNCONDITIONAL_CALL]
 // Globals:

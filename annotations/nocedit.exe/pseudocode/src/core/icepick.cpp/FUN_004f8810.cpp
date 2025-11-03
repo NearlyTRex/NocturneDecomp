@@ -15,8 +15,8 @@
 // Function calls:
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20
-//   core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
 //   core_xform.cpp_quaternionFromAngleX_FUN_005f79b0
 
 #include "nocturne.h"
@@ -29,12 +29,14 @@ void core_icepick_cpp_FUN_004f8810(void)
 
 {
   float fVar1;
+  CMotionList *this_ptr;
   BADSPACEBASE *in_ESP;
   byte bVar2;
   int in_stack_00000004;
   float in_stack_00000008;
   float in_stack_00000014;
-  undefined4 auStackY_17fc [1521];
+  int aiStackY_17fc [1517];
+  int iStack_3c;
   float in_stack_ffffffd4;
   undefined4 local_20;
   undefined4 uStack_10;
@@ -55,9 +57,13 @@ void core_icepick_cpp_FUN_004f8810(void)
         *(undefined4 *)(in_stack_00000004 + 0x1fbfc) = 0x3f800000;
       }
     }
-    core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
-    core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460();
-    core_skeleton_cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50();
+    iStack_3c = 1;
+    this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                         ((CMotionController *)(in_stack_00000004 + 0x158));
+    core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr);
+    iStack_3c = *(undefined4 *)(in_stack_00000004 + 0x1fbfc);
+    core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50
+              ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
     fVar1 = *(float *)(in_stack_00000004 + 0xbe54) * (float)_DAT_0062f73b * (float)_DAT_0062f733 *
             in_stack_00000014 + *(float *)(in_stack_00000004 + 0x1fc00);
     *(float *)(in_stack_00000004 + 0x1fc00) = fVar1;
@@ -79,6 +85,7 @@ void core_icepick_cpp_FUN_004f8810(void)
          *(undefined4 *)
           ((int)(&stack0xffffffe8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) +
           ((uint)bVar2 * -2 + 1) * 4);
+    iStack_3c = in_stack_00000004 + 0x158;
     core_skeleton_cpp_CDeformableModelInstance_FUN_0059ff20();
   }
   return;
@@ -136,7 +143,7 @@ void core_icepick_cpp_FUN_004f8810(void)
 // 004f888c: PUSH 0x0
 // 004f888e: PUSH EAX
 // 004f888f: PUSH ESI
-// 004f8890: CALL core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+// 004f8890: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 004f8895: FLD float ptr [EBX + 0xbe54]
 // 004f889b: FMUL double ptr [0x0062f73b]

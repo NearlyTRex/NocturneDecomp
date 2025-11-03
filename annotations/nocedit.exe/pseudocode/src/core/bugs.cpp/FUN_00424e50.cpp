@@ -9,8 +9,8 @@
 //   double DOUBLE_00616d23 = 0.5
 //   undefined4 DAT_0065b5c8
 // Function calls:
-//   core_actor.cpp_FUN_0040cc70
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_bugs.cpp_FUN_004272f0
 //   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
 //   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
@@ -27,16 +27,15 @@ void core_bugs_cpp_FUN_00424e50(void)
   float min_value;
   CEnemy *pCVar1;
   CCharacter *pCVar2;
-  undefined4 uVar3;
-  float fVar4;
+  float fVar3;
+  int iVar4;
   int iVar5;
-  int iVar6;
-  float *pfVar7;
-  char *pcVar8;
-  COrientation *pCVar9;
+  float *pfVar6;
+  char *pcVar7;
+  COrientation *pCVar8;
   CEnemy *in_stack_00000004;
+  float fVar9;
   float fVar10;
-  float fVar11;
   float *local_28;
   int local_24;
   CKeyFramedModelInstance *local_1c;
@@ -47,103 +46,104 @@ void core_bugs_cpp_FUN_00424e50(void)
        (in_stack_00000004->base_character).base_actor.orient.heading;
   (in_stack_00000004->base_character).base_actor.orient.pitch =
        (in_stack_00000004->base_character).base_actor.orient.bank;
-  fVar10 = 6.089292e-39;
+  fVar9 = 6.089292e-39;
   core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
   pCVar1 = in_stack_00000004 + 1;
   (pCVar1->base_character).cloth_data[0x3978] = '\x04';
   (pCVar1->base_character).cloth_data[0x3979] = '\0';
   (pCVar1->base_character).cloth_data[0x397a] = '\0';
   (pCVar1->base_character).cloth_data[0x397b] = '\0';
-  iVar6 = 0;
+  iVar5 = 0;
   if (0 < *(int *)(in_stack_00000004[1].base_character.cloth_data + 0x3978)) {
-    pcVar8 = in_stack_00000004[1].base_character.cloth_data + 0x39f4;
+    pcVar7 = in_stack_00000004[1].base_character.cloth_data + 0x39f4;
     do {
-      if (*pcVar8 == '\0') {
-        iVar5 = *(int *)(in_stack_00000004[1].base_character.cloth_data + 0x3978) + -1;
-        *(int *)(in_stack_00000004[1].base_character.cloth_data + 0x3978) = iVar5;
-        if (iVar6 < iVar5) {
+      if (*pcVar7 == '\0') {
+        iVar4 = *(int *)(in_stack_00000004[1].base_character.cloth_data + 0x3978) + -1;
+        *(int *)(in_stack_00000004[1].base_character.cloth_data + 0x3978) = iVar4;
+        if (iVar5 < iVar4) {
           local_1c = (CKeyFramedModelInstance *)
-                     (in_stack_00000004[1].base_character.cloth_data + iVar6 * 0x17c + 0x397c);
-          local_18 = in_stack_00000004[1].base_character.cloth_data + iVar6 * 0x17c + 0x3b70;
-          iVar5 = iVar6;
+                     (in_stack_00000004[1].base_character.cloth_data + iVar5 * 0x17c + 0x397c);
+          local_18 = in_stack_00000004[1].base_character.cloth_data + iVar5 * 0x17c + 0x3b70;
+          iVar4 = iVar5;
           do {
-            fVar10 = 6.08947e-39;
+            fVar9 = 6.08947e-39;
             core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(local_1c,local_18);
-            iVar5 = iVar5 + 1;
+            iVar4 = iVar4 + 1;
             local_1c = local_1c + 1;
             local_18 = local_18 + 0x17c;
-          } while (iVar5 < *(int *)(in_stack_00000004[1].base_character.cloth_data + 0x3978));
+          } while (iVar4 < *(int *)(in_stack_00000004[1].base_character.cloth_data + 0x3978));
         }
       }
       else {
-        fVar10 = 6.090116e-39;
+        fVar9 = 6.090116e-39;
         core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
                   ((CKeyFramedModelInstance *)
-                   (in_stack_00000004[1].base_character.cloth_data + iVar6 * 0x17c + 0x397c));
-        pcVar8 = pcVar8 + 0x17c;
-        iVar6 = iVar6 + 1;
+                   (in_stack_00000004[1].base_character.cloth_data + iVar5 * 0x17c + 0x397c));
+        pcVar7 = pcVar7 + 0x17c;
+        iVar5 = iVar5 + 1;
       }
-    } while (iVar6 < *(int *)(in_stack_00000004[1].base_character.cloth_data + 0x3978));
+    } while (iVar5 < *(int *)(in_stack_00000004[1].base_character.cloth_data + 0x3978));
   }
   local_24 = 0;
   if (0 < *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc)) {
     min_value = _DAT_0065b5c8 * FLOAT_00616d1f;
-    pCVar9 = &in_stack_00000004[1].base_character.base_actor.orient;
-    pfVar7 = &in_stack_00000004[1].base_character.base_actor.location.position.y;
+    pCVar8 = &in_stack_00000004[1].base_character.base_actor.orient;
+    pfVar6 = &in_stack_00000004[1].base_character.base_actor.location.position.y;
     local_28 = (float *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x18);
     do {
-      pcVar8 = in_stack_00000004[1].base_character.base_actor.actor_name + local_24 * 0x40 + 0x10;
-      pcVar8[0] = '\0';
-      pcVar8[1] = '\0';
-      pcVar8[2] = '\0';
-      pcVar8[3] = '\0';
-      fVar11 = 0.0;
-      uVar3 = core_actor_cpp_FUN_0040cc70();
-      fVar4 = (float)DOUBLE_00616d23;
-      fVar11 = fVar11 * fVar4;
-      *(undefined4 *)(pcVar8 + 4) = uVar3;
-      fVar10 = core_actor_cpp_getRandomFloat_FUN_0040cc10(fVar11,fVar10 * fVar4);
-      pcVar8[0xc] = '\0';
-      pcVar8[0xd] = '\0';
-      pcVar8[0xe] = '\0';
-      pcVar8[0xf] = '\0';
-      *(float *)(pcVar8 + 8) = fVar10;
-      fVar10 = core_actor_cpp_getRandomFloat_FUN_0040cc10(min_value,fVar11);
-      *(float *)(pcVar8 + 0x10) = fVar10;
-      pfVar7[2] = 0.0;
-      fVar10 = -3.1415927;
-      pfVar7[1] = pfVar7[2];
-      *pfVar7 = pfVar7[1];
-      fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
-      *(float *)(pcVar8 + 0x18) = fVar4;
-      if (pCVar9 != (COrientation *)local_28) {
-        pCVar9->pitch = pfVar7[-3];
-        pCVar9->bank = pfVar7[-2];
-        pCVar9->heading = ((CVector3f *)(pfVar7 + -1))->x;
+      pcVar7 = in_stack_00000004[1].base_character.base_actor.actor_name + local_24 * 0x40 + 0x10;
+      pcVar7[0] = '\0';
+      pcVar7[1] = '\0';
+      pcVar7[2] = '\0';
+      pcVar7[3] = '\0';
+      fVar10 = 0.0;
+      iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc70
+                        (0,*(int *)(in_stack_00000004[1].base_character.cloth_data + 0x3978) + -1);
+      fVar3 = (float)DOUBLE_00616d23;
+      fVar10 = fVar10 * fVar3;
+      *(int *)(pcVar7 + 4) = iVar5;
+      fVar9 = core_actor_cpp_getRandomFloat_FUN_0040cc10(fVar10,fVar9 * fVar3);
+      pcVar7[0xc] = '\0';
+      pcVar7[0xd] = '\0';
+      pcVar7[0xe] = '\0';
+      pcVar7[0xf] = '\0';
+      *(float *)(pcVar7 + 8) = fVar9;
+      fVar9 = core_actor_cpp_getRandomFloat_FUN_0040cc10(min_value,fVar10);
+      *(float *)(pcVar7 + 0x10) = fVar9;
+      pfVar6[2] = 0.0;
+      fVar9 = -3.1415927;
+      pfVar6[1] = pfVar6[2];
+      *pfVar6 = pfVar6[1];
+      fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
+      *(float *)(pcVar7 + 0x18) = fVar3;
+      if (pCVar8 != (COrientation *)local_28) {
+        pCVar8->pitch = pfVar6[-3];
+        pCVar8->bank = pfVar6[-2];
+        pCVar8->heading = ((CVector3f *)(pfVar6 + -1))->x;
       }
-      pCVar9 = (COrientation *)((int)(pCVar9 + 5) + 4);
-      pfVar7 = pfVar7 + 0x10;
+      pCVar8 = (COrientation *)((int)(pCVar8 + 5) + 4);
+      pfVar6 = pfVar6 + 0x10;
       local_28 = local_28 + 0x10;
       local_24 = local_24 + 1;
     } while (local_24 < *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc));
   }
   core_bugs_cpp_FUN_004272f0();
   pCVar2 = &in_stack_00000004[2].base_character;
-  (pCVar2->model).padding_0x0[0x1b24] = -0xf;
-  (pCVar2->model).padding_0x0[0x1b25] = -0x28;
-  (pCVar2->model).padding_0x0[0x1b26] = -1;
-  (pCVar2->model).padding_0x0[0x1b27] = -1;
+  (pCVar2->model).field3_0x508[0x161c] = -0xf;
+  (pCVar2->model).field3_0x508[0x161d] = -0x28;
+  (pCVar2->model).field3_0x508[0x161e] = -1;
+  (pCVar2->model).field3_0x508[0x161f] = -1;
   pCVar2 = &in_stack_00000004[2].base_character;
-  (pCVar2->model).padding_0x0[0x1b28] = -0xf;
-  (pCVar2->model).padding_0x0[0x1b29] = -0x28;
-  (pCVar2->model).padding_0x0[0x1b2a] = -1;
-  (pCVar2->model).padding_0x0[0x1b2b] = -1;
+  (pCVar2->model).field3_0x508[0x1620] = -0xf;
+  (pCVar2->model).field3_0x508[0x1621] = -0x28;
+  (pCVar2->model).field3_0x508[0x1622] = -1;
+  (pCVar2->model).field3_0x508[0x1623] = -1;
   (in_stack_00000004->base_character).base_actor.field16_0x100 = 1;
   pCVar2 = &in_stack_00000004[2].base_character;
-  (pCVar2->model).padding_0x0[0x1b34] = '\0';
-  (pCVar2->model).padding_0x0[0x1b35] = '\0';
-  (pCVar2->model).padding_0x0[0x1b36] = '\0';
-  (pCVar2->model).padding_0x0[0x1b37] = '\0';
+  (pCVar2->model).field3_0x508[0x162c] = '\0';
+  (pCVar2->model).field3_0x508[0x162d] = '\0';
+  (pCVar2->model).field3_0x508[0x162e] = '\0';
+  (pCVar2->model).field3_0x508[0x162f] = '\0';
   return;
 }
 
@@ -262,7 +262,7 @@ void core_bugs_cpp_FUN_00424e50(void)
 // 00424fab: DEC EAX
 // 00424fac: PUSH EAX
 // 00424fad: PUSH 0x0
-// 00424faf: CALL core_actor.cpp_FUN_0040cc70
+// 00424faf: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 00424fb4: ADD ESP,0x8
 // 00424fb7: FLD double ptr [0x00616d23]

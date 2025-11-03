@@ -18,6 +18,7 @@
 void __cdecl core_dog_cpp_CZombieDog_FUN_0047f820(CZombieDog *this_ptr)
 
 {
+  CDeformableModelInstance *this_ptr_00;
   float fVar1;
   int iVar2;
   undefined4 uVar3;
@@ -25,17 +26,18 @@ void __cdecl core_dog_cpp_CZombieDog_FUN_0047f820(CZombieDog *this_ptr)
   CZombieDog *pCStack0000000c;
   
   fVar1 = (this_ptr->base_enemy).base_character.hit_points - *(float *)(in_stack_00000008 + 4);
+  this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
   (this_ptr->base_enemy).base_character.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base_enemy).base_character.hit_points = 0.0;
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr_00->motion_controller);
     if ((*(int *)(iVar2 + 0x24) == 7) || (*(int *)(iVar2 + 0x24) == 6)) goto LAB_0047f855;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_00->motion_controller);
 LAB_0047f855:
   iVar2 = core_sound_cpp_FUN_005b3b80();
   if (iVar2 == 0) {
-    uVar3 = (*((this_ptr->base_enemy).base_character.base_actor.metadata.vtable)->playSound)
+    uVar3 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
                       ((CDemonActor *)this_ptr,"dog2.wav");
     *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x10) = uVar3;
     pCStack0000000c = this_ptr;

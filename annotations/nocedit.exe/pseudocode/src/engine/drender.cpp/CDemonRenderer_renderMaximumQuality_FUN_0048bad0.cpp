@@ -4,13 +4,13 @@
 // Convention: __cdecl
 // Signature: void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
 // Cross-references:
-//   core_actor.cpp_FUN_0040dec0 (0040dec0) at 0040e020 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CDemonActor_FUN_0040dec0 (0040dec0) at 0040e020 [UNCONDITIONAL_CALL]
 //   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0 (004715e0) at 00471752 [UNCONDITIONAL_CALL]
 //   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20 (00473a20) at 00473f32 [UNCONDITIONAL_CALL]
 //   core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210 (00475210) at 00475834 [UNCONDITIONAL_CALL]
 //   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0 (00474ad0) at 004751d5 [UNCONDITIONAL_CALL]
 //   core_dlight.cpp_renderConeLightGeometry_FUN_004760d0 (004760d0) at 00476590 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CGunFlame_FUN_004c50b0 (004c50b0) at 004c55ca [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CGunFlame_render_FUN_004c50b0 (004c50b0) at 004c55ca [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (004c25c0) at 004c2d37 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CPopcorn_render_FUN_004c64c0 (004c64c0) at 004c67f4 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CRainDrop_render_FUN_004c6830 (004c6830) at 004c6b9e [UNCONDITIONAL_CALL]

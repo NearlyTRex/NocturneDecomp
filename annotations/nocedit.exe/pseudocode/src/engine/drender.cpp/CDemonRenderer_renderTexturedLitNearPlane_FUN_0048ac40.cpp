@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
 // Cross-references:
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00597538 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597538 [UNCONDITIONAL_CALL]
 // Globals:
 //   int[16] g_VertexIndexBuffer
 //   undefined4 g_VertexIndexBuffer[1]

@@ -1,30 +1,30 @@
 // Name: core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0
 // Address: 0059cba0
 // Address Range: [[0059cba0, 0059ce3e]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0()
+// Convention: __cdecl
+// Signature: float core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0(CDeformableModel * this_ptr, int lod_index, CVector3f * ray_origin, CVector3f * ray_direction, CVector3i * skinned_vertices, byte * part_visibility_flags)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_GetPtrsAndDoSomething1_FUN_005a10e0 (005a10e0) at 005a1128 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a10e0 (005a10e0) at 005a1128 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_skeleton_cpp_0064ec1b
 //   TerminatedCString s_CDeformableModel_exactRa_0064ec30
 //   WatcomTypeInfo g_CVectorTypeInfo
-//   undefined4 DAT_00662ea0
+//   float FLOAT_00662ea0 = 0.00390625
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   CVector3f[5000] DAT_0367517c
+//   CVector3f[5000] g_FloatVertexArray
 //   undefined4 DAT_03675180
 //   undefined4 DAT_03675184
 //   undefined4 DAT_03675188
 //   undefined4 DAT_0367518c
 //   undefined4 DAT_03675190
-//   undefined1 DAT_03683bdc
-//   undefined4 DAT_0368c884
-//   undefined4 DAT_0368c888
-//   undefined4 DAT_0368c88c
-//   undefined4 DAT_0368c890
-//   undefined4 DAT_0368c894
-//   undefined4 DAT_0368c898
+//   uchar g_FloatVertexArrayInitialized
+//   int g_DeformableModelRayHitPartIndex
+//   CVector3f g_DeformableModelRayHitNormal
+//   undefined4 g_DeformableModelRayHitNormal.y
+//   undefined4 g_DeformableModelRayHitNormal.z
+//   int g_DeformableModelRayHitLodIndex
+//   int g_DeformableModelRayHitTriangleIndex
 // Function calls:
 //   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790
 //   core_dtri.cpp_rayTriangleIntersection_FUN_0049a800
@@ -33,27 +33,19 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 core_skeleton.cpp_CDeformableModel_exactRayTrace(CDeformableModel* param_1,
-   undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4
-   param_6) */
-
-float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0(void)
+float __cdecl
+core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0
+          (CDeformableModel *this_ptr,int lod_index,CVector3f *ray_origin,CVector3f *ray_direction,
+          CVector3i *skinned_vertices,byte *part_visibility_flags)
 
 {
   float fVar1;
   CVector3f *pCVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   int iVar4;
+  BADSPACEBASE *in_ESP;
   int iVar5;
   int iVar6;
-  int in_stack_00000004;
-  int in_stack_00000008;
-  CVector3f *in_stack_0000000c;
-  CVector3f *in_stack_00000010;
-  int *in_stack_00000014;
-  byte *in_stack_00000018;
   undefined1 auStack_68 [36];
   float local_44;
   float local_40;
@@ -67,75 +59,73 @@ float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0(void)
   int local_18;
   float local_14;
   
-  if ((DAT_03683bdc & 1) == 0) {
-    DAT_03683bdc = DAT_03683bdc | 1;
-    crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(DAT_0367517c,5000,&g_CVectorTypeInfo)
-    ;
+  if ((g_FloatVertexArrayInitialized & 1) == 0) {
+    g_FloatVertexArrayInitialized = g_FloatVertexArrayInitialized | 1;
+    crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
+              (g_FloatVertexArray,5000,&g_CVectorTypeInfo);
   }
-  if (5000 < *(int *)(in_stack_00000008 * 4 + in_stack_00000004 + 0x2c)) {
+  if (5000 < this_ptr->vertex_count[lod_index]) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0x6d2;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::exactRayTrace - too many vertices!");
   }
-  iVar6 = in_stack_00000008 * 4 + in_stack_00000004;
-  pCVar2 = DAT_0367517c;
-  iVar4 = 0;
-  if (0 < *(int *)(iVar6 + 0x2c)) {
+  pCVar2 = g_FloatVertexArray;
+  iVar5 = 0;
+  if (0 < this_ptr->vertex_count[lod_index]) {
     do {
-      pCVar2->x = (float)*in_stack_00000014 * _DAT_00662ea0;
-      pCVar2->y = (float)in_stack_00000014[1] * _DAT_00662ea0;
-      pCVar2->z = (float)in_stack_00000014[2] * _DAT_00662ea0;
-      iVar4 = iVar4 + 1;
+      pCVar2->x = (float)skinned_vertices->x * FLOAT_00662ea0;
+      pCVar2->y = (float)skinned_vertices->y * FLOAT_00662ea0;
+      pCVar2->z = (float)skinned_vertices->z * FLOAT_00662ea0;
+      iVar5 = iVar5 + 1;
       pCVar2 = pCVar2 + 1;
-      in_stack_00000014 = in_stack_00000014 + 3;
-    } while (iVar4 < *(int *)(iVar6 + 0x2c));
+      skinned_vertices = skinned_vertices + 1;
+    } while (iVar5 < this_ptr->vertex_count[lod_index]);
   }
   local_14 = 1.01;
   local_18 = 0;
-  iVar4 = 0;
-  if (0 < *(int *)(in_stack_00000004 + 0x7140)) {
-    local_1c = in_stack_00000004 + in_stack_00000008 * 4;
-    local_20 = in_stack_00000008 * 4 + in_stack_00000004;
-    local_24 = in_stack_00000018;
+  iVar5 = 0;
+  if (0 < this_ptr->num_parts) {
+    local_1c = (int)this_ptr->lod_info + lod_index * 4 + -4;
+    local_20 = (int)this_ptr->lod_info + lod_index * 4 + -4;
+    local_24 = part_visibility_flags;
     do {
-      iVar6 = *(int *)(local_20 + 0x7164) + local_18;
-      if (((*local_24 & 1) != 0) && (local_18 < iVar6)) {
-        iVar5 = local_18 * 0x12;
-        iVar3 = local_18;
-        local_18 = iVar6;
+      iVar3 = *(int *)(local_20 + 0x7164) + local_18;
+      if (((*local_24 & 1) != 0) && (local_18 < iVar3)) {
+        iVar6 = local_18 * 0x12;
+        iVar4 = local_18;
+        local_18 = iVar3;
         do {
-          iVar6 = *(int *)(local_1c + 0x7c);
+          iVar3 = *(int *)(local_1c + 0x7c);
           core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
-                    ((CDemonTriangle *)auStack_68,DAT_0367517c + *(ushort *)(iVar6 + iVar5),
-                     DAT_0367517c + *(ushort *)(iVar6 + 2 + iVar5),
-                     DAT_0367517c + *(ushort *)(iVar6 + 4 + iVar5));
+                    ((CDemonTriangle *)auStack_68,g_FloatVertexArray + *(ushort *)(iVar3 + iVar6),
+                     g_FloatVertexArray + *(ushort *)(iVar3 + 2 + iVar6),
+                     g_FloatVertexArray + *(ushort *)(iVar3 + 4 + iVar6));
           fVar1 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
-                            ((CDemonTriangle *)(auStack_68 + 4),in_stack_0000000c,in_stack_00000010)
-          ;
+                            ((CDemonTriangle *)(auStack_68 + 4),ray_origin,ray_direction);
           if (((fVar1 < local_14) && (0.0 <= fVar1)) && (fVar1 <= 1.0)) {
             local_30 = -local_44;
             local_2c = -local_40;
             local_28 = -fStack_3c;
-            if (&stack0x00000000 != g_DeformableModelPool[0].field1_0x4 + 0x14) {
-              DAT_0368c888 = local_30;
-              DAT_0368c88c = local_2c;
-              DAT_0368c890 = local_28;
+            if ((int *)&stack0x00000000 != &g_DeformableModelPool[0].lod_info[2].shadow_only_flag) {
+              g_DeformableModelRayHitNormal.x = local_30;
+              g_DeformableModelRayHitNormal.y = local_2c;
+              g_DeformableModelRayHitNormal.z = local_28;
             }
-            DAT_0368c894 = in_stack_00000008;
-            DAT_0368c884 = iVar4;
-            DAT_0368c898 = iVar3;
+            g_DeformableModelRayHitLodIndex = lod_index;
+            g_DeformableModelRayHitPartIndex = iVar5;
+            g_DeformableModelRayHitTriangleIndex = iVar4;
             local_14 = fVar1;
           }
-          iVar3 = iVar3 + 1;
-          iVar5 = iVar5 + 0x12;
-          iVar6 = local_18;
-        } while (iVar3 < local_18);
+          iVar4 = iVar4 + 1;
+          iVar6 = iVar6 + 0x12;
+          iVar3 = local_18;
+        } while (iVar4 < local_18);
       }
-      local_18 = iVar6;
-      iVar4 = iVar4 + 1;
+      local_18 = iVar3;
+      iVar5 = iVar5 + 1;
       local_24 = local_24 + 4;
       local_20 = local_20 + 0x60;
-    } while (iVar4 < *(int *)(in_stack_00000004 + 0x7140));
+    } while (iVar5 < this_ptr->num_parts);
   }
   return local_14;
 }

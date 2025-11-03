@@ -32,7 +32,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_FUN_005e9750(CCryptVessel *this_ptr)
   position = &(this_ptr->base_actor).orient;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr,(CVector3i *)position,(CVector3i *)0x0);
-  this_ptr_00 = (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
+  this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
                           (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffd8);
   fStack_24 = 8.686928e-39;
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);

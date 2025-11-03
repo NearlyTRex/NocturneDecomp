@@ -24,14 +24,17 @@ void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e1a0(CActorPropertyList *
 
 {
   int iVar1;
+  char *in_stack_00000008;
+  void *in_stack_0000000c;
   undefined4 in_stack_00000014;
-  undefined4 in_stack_00000018;
+  void *in_stack_00000018;
   
-  iVar1 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0(this_ptr);
+  iVar1 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
+                    (this_ptr,1,in_stack_00000008,in_stack_0000000c,in_stack_00000018);
   *(undefined4 *)(iVar1 + 0x5c) = 1;
   *(undefined4 *)(iVar1 + 0x6c) = 0x3f800000;
   *(undefined4 *)(iVar1 + 0x60) = in_stack_00000014;
-  *(undefined4 *)(iVar1 + 100) = in_stack_00000018;
+  *(void **)(iVar1 + 100) = in_stack_00000018;
   return;
 }
 

@@ -29,7 +29,7 @@ CBodyPart * CBodyPart::dtor(CBodyPart * this_ptr, uint d1, uint d2, uint d3, uin
 
 // Original: core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
 // Address: 004191d0
-undefined CBodyPart::setCounts();
+void CBodyPart::setCounts(CBodyPart * this_ptr);
 
 // Original: core_bodypart.cpp_FUN_00419340
 // Address: 00419340
@@ -107,9 +107,9 @@ undefined FUN_0041add0();
 // Address: 0041ae50
 undefined FUN_0041ae50();
 
-// Original: core_bodypart.cpp_TooManyBodyPartTexturesCheck_FUN_0041af90
+// Original: core_bodypart.cpp_CBodyPart_FUN_0041af90
 // Address: 0041af90
-undefined TooManyBodyPartTexturesCheck();
+int CBodyPart(CBodyPart * this_ptr);
 
 // Original: core_bodypart.cpp_FUN_0041b070
 // Address: 0041b070

@@ -55,7 +55,7 @@ int __cdecl core_wateract_cpp_CWaterActor_FUN_005eb280(CWaterActor *this_ptr)
   iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
   if (iVar3 == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-    this_ptr_00 = (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
+    this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
                             (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe4);
     iStack00000014 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     if (iStack00000014 != 0) {
@@ -80,7 +80,7 @@ int __cdecl core_wateract_cpp_CWaterActor_FUN_005eb280(CWaterActor *this_ptr)
       }
       iVar3 = 0;
       core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
-                (g_CDemonSetPtr,*(int *)this_ptr->field21_0x298);
+                (g_CDemonSetPtr,*(int *)this_ptr->field21_0x298,&DAT_03f90a88);
       if (0 < *(int *)this_ptr->field21_0x298) {
         iVar6 = 0;
         do {

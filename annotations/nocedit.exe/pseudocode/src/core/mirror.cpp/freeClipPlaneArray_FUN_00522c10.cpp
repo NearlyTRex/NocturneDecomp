@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_mirror.cpp_freeClipPlaneArray_FUN_00522c10(SClipPlane * * array_ptr)
 // Cross-references:
-//   core_mirror.cpp_freeMirrorClipPlanes_FUN_005213e0 (005213e0) at 005213ec [UNCONDITIONAL_CALL]
+//   core_mirror.cpp_CMirror_dtor_FUN_005213e0 (005213e0) at 005213ec [UNCONDITIONAL_CALL]
 // Globals:
 //   WatcomTypeInfo g_SClipPlaneTypeInfo
 // Function calls:

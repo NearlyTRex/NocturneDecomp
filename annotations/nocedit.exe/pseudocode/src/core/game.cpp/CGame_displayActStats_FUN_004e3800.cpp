@@ -8,20 +8,20 @@
 // Globals:
 //   TerminatedCString s_stats_0062d4ed
 //   TerminatedCString s_Level_time_0062d4f3
-//   undefined1 DAT_0062d4fe
-//   undefined1 DAT_0062d4ff
-//   undefined1 DAT_0062d500
+//   TerminatedCString s_anon_0062d4fe
+//   undefined4 DAT_0062d4ff
+//   undefined4 DAT_0062d500
 //   TerminatedCString s_s_2d_2d_2d_2d_0062d501
 //   TerminatedCString s_Body_count_0062d513
-//   undefined1 DAT_0062d51e
-//   undefined1 DAT_0062d51f
-//   undefined1 DAT_0062d520
+//   TerminatedCString s_anon_0062d51e
+//   undefined4 DAT_0062d51f
+//   undefined4 DAT_0062d520
 //   TerminatedCString s_d_0062d521
-//   undefined4 DAT_0062d52d
-//   undefined4 DAT_0062d535
-//   undefined4 DAT_0062d53d
-//   undefined4 DAT_0062d545
-//   undefined4 DAT_0062d54d
+//   double DOUBLE_0062d52d = 0.000277777777777778
+//   double DOUBLE_0062d535 = 3600
+//   double DOUBLE_0062d53d = 0.0166666666666667
+//   double DOUBLE_0062d545 = 60
+//   double DOUBLE_0062d54d = 100
 //   CBitFont* g_ThemeFont
 //   undefined4 DAT_02d7c2f0
 //   undefined4 DAT_02d7c3f0
@@ -40,8 +40,6 @@
 //   wincore_windll.cpp_clearScreen_FUN_005b3e70
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
 
@@ -87,17 +85,17 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
   *(float *)(in_stack_00000014 + 0x248) =
        *(float *)(in_stack_00000014 + 0x250) + *(float *)(in_stack_00000014 + 0x248);
   fVar12 = (float10)*(float *)(in_stack_00000014 + 0x250);
-  fVar13 = fVar12 * (float10)_DAT_0062d52d;
+  fVar13 = fVar12 * (float10)DOUBLE_0062d52d;
   dVar14 = crt_math_c_round_FUN_005fe6b0
                      ((double)CONCAT44(*(int *)(in_stack_00000014 + 0x254) +
                                        *(int *)(in_stack_00000014 + 0x24c),
                                        *(int *)(in_stack_00000014 + 0x24c)));
   iVar5 = (int)ROUND(fVar13);
-  fVar12 = fVar12 - (float10)iVar5 * (float10)_DAT_0062d535;
-  fVar13 = fVar12 * (float10)_DAT_0062d53d;
+  fVar12 = fVar12 - (float10)iVar5 * (float10)DOUBLE_0062d535;
+  fVar13 = fVar12 * (float10)DOUBLE_0062d53d;
   dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44((int)((ulonglong)dVar14 >> 0x20),iVar5));
   iVar7 = (int)ROUND(fVar13);
-  fVar12 = fVar12 - (float10)iVar7 * (float10)_DAT_0062d545;
+  fVar12 = fVar12 - (float10)iVar7 * (float10)DOUBLE_0062d545;
   *(float *)(extraout_ECX + 0x250) = (float)fVar12;
   local_14 = iVar7;
   dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44((int)((ulonglong)dVar14 >> 0x20),iVar7));
@@ -105,7 +103,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
   iStack00000008 = (int)ROUND(fVar12);
   fVar13 = (float10)*(float *)(extraout_ECX_00 + 0x250) - (float10)iStack00000008;
   *(float *)(extraout_ECX_00 + 0x250) = (float)fVar13;
-  fVar13 = fVar13 * (float10)_DAT_0062d54d;
+  fVar13 = fVar13 * (float10)DOUBLE_0062d54d;
   *(undefined4 *)(extraout_ECX_00 + 0x254) = uVar6;
   crt_math_c_round_FUN_005fe6b0((double)CONCAT44(uVar6,iStack00000008));
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(in_stack_fffffad4);
@@ -119,7 +117,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
     pcVar9[1] = cVar1;
     pcVar9 = pcVar9 + 2;
   } while (cVar1 != '\0');
-  pcVar9 = &DAT_0062d4fe;
+  pcVar9 = "\n\n";
   iVar3 = -1;
   pcVar2 = &stack0xfffffadc;
   do {
@@ -200,7 +198,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
     pcVar10[1] = cVar1;
     pcVar10 = pcVar10 + 2;
   } while (cVar1 != '\0');
-  pcVar9 = &DAT_0062d51e;
+  pcVar9 = "\n\n";
   iVar5 = -1;
   pcVar2 = &stack0xfffffae4;
   do {

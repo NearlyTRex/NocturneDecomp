@@ -74,31 +74,19 @@ core_inv_cpp_CInventory_renderItemModel_FUN_004fee00
   pCVar4 = g_CDemonSetPtr;
   if (item != (CDemonActor *)0x0) {
     g_CDemonSetPtr->rendering_mode = 1;
-    pCVar4->field34_0x15ae74[0] = -0x2b;
-    pCVar4->field34_0x15ae74[1] = -0x49;
-    pCVar4->field34_0x15ae74[2] = -1;
-    pCVar4->field34_0x15ae74[3] = -1;
-    pCVar4->field34_0x15ae74[4] = -0x2b;
-    pCVar4->field34_0x15ae74[5] = -0x49;
-    pCVar4->field34_0x15ae74[6] = -1;
-    pCVar4->field34_0x15ae74[7] = -1;
-    pCVar4->field34_0x15ae74[8] = '+';
-    pCVar4->field34_0x15ae74[9] = 'H';
-    pCVar4->field34_0x15ae74[10] = '\0';
-    pCVar4->field34_0x15ae74[0xb] = '\0';
-    pCVar4->field34_0x15ae74[0xc] = '\0';
-    pCVar4->field34_0x15ae74[0xd] = '}';
-    pCVar4->field34_0x15ae74[0xe] = '\0';
-    pCVar4->field34_0x15ae74[0xf] = '\0';
+    (pCVar4->light_direction).x = -0x482b;
+    (pCVar4->light_direction).y = -0x482b;
+    (pCVar4->light_direction).z = 0x482b;
+    pCVar4->ambient_base_quick = 32000;
     INT_02dcd794 = INT_02dcd794 +
                    ((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -
                          (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);
     iVar5 = engine_matrix_c_interpolatedSin_FUN_0050c5c0((ushort)INT_02dcd794);
     iVar6 = engine_matrix_c_interpolatedCos_FUN_0050c600((ushort)INT_02dcd794);
-    *(uint *)g_CDemonSetPtr->field34_0x15ae74 =
+    (g_CDemonSetPtr->light_direction).x =
          (uint)((longlong)iVar5 * 0x482b) >> 0x10 |
          (int)((ulonglong)((longlong)iVar5 * 0x482b) >> 0x20) << 0x10;
-    *(uint *)(g_CDemonSetPtr->field34_0x15ae74 + 8) =
+    (g_CDemonSetPtr->light_direction).z =
          (uint)((longlong)iVar6 * 0x482b) >> 0x10 |
          (int)((ulonglong)((longlong)iVar6 * 0x482b) >> 0x20) << 0x10;
     engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890

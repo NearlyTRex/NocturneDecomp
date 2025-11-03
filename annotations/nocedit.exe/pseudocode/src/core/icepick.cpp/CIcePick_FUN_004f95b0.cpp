@@ -28,6 +28,7 @@
 void core_icepick_cpp_CIcePick_FUN_004f95b0(void)
 
 {
+  CDeformableModelInstance *this_ptr;
   float fVar1;
   int iVar2;
   undefined4 uVar3;
@@ -46,29 +47,31 @@ void core_icepick_cpp_CIcePick_FUN_004f95b0(void)
   }
   *(undefined4 *)in_stack_00000004[1].base_actor.actor_name = DAT_00660028;
   fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
+  this_ptr = &in_stack_00000004->model;
   in_stack_00000004->hit_points = fVar1;
   if (fVar1 <= 0.0) {
     in_stack_00000004->hit_points = 0.0;
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
     if ((*(int *)(iVar2 + 0x24) != 9) &&
-       (iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(), *(int *)(iVar2 + 0x24) != 8)) {
+       (iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller),
+       *(int *)(iVar2 + 0x24) != 8)) {
       in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
-      (*(in_stack_00000004->base_actor).metadata.vtable[1].renderTargetPoints)
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
+      (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)
                 (&in_stack_00000004->base_actor);
       core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);
       sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-      (*((in_stack_00000004->base_actor).metadata.vtable)->playSound)
+      (*((in_stack_00000004->base_actor).vtable)->playSound)
                 (&in_stack_00000004->base_actor,"icepick_die01.wav");
       core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
       return;
     }
   }
   else if (0.0 < *(float *)(in_stack_00000008 + 4)) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
     iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
     if (iVar2 == 0) {
-      uVar3 = (*((in_stack_00000004->base_actor).metadata.vtable)->playSound)
+      uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                         (&in_stack_00000004->base_actor,"icepick_injured??.wav");
       *(undefined4 *)(in_stack_00000004[2].cloth_data + 0x5500) = uVar3;
       core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);

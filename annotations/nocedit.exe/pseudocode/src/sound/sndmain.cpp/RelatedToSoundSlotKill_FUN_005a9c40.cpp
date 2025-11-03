@@ -17,7 +17,7 @@
 //   core_drone.cpp_FUN_0048ec70 (0048ec70) at 0048ef20 [UNCONDITIONAL_CALL]
 //   core_drone.cpp_FUN_0048f360 (0048f360) at 0048f3e0 [UNCONDITIONAL_CALL]
 //   core_emitter.cpp_FUN_004a8070 (004a8070) at 004a82d9 [UNCONDITIONAL_CALL]
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ab382 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ab382 [UNCONDITIONAL_CALL]
 //   core_filmreel.cpp_CFilmProjector_load_FUN_004beb40 (004beb40) at 004beca8 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireball_onCollision_FUN_004c1690 (004c1690) at 004c169c [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CToss_process_FUN_004c4000 (004c4000) at 004c407c [UNCONDITIONAL_CALL]

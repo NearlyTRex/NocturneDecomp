@@ -21,7 +21,7 @@ void core_hostage_cpp_RelatedToScatDazzle_FUN_004f6120
   int iVar1;
   int in_stack_00000020;
   
-  iVar1 = (*(param_5->base_character).base_actor.metadata.vtable[1].hasCollision)
+  iVar1 = (*(param_5->base_character).base_actor.vtable[1].hasCollision)
                     ((CDemonActor *)param_5,unaff_EBX);
   if (0 < iVar1) {
     iVar1 = crt_string_c_stricmp_FUN_005fe7f0((char *)param_5,"ScatDazzle");

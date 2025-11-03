@@ -6,8 +6,8 @@
 // Cross-references:
 //   core_fire.cpp_CFireEffect_FUN_004c8dd0 (004c8dd0) at 004c8e05 [UNCONDITIONAL_CALL]
 // Globals:
-//   CExplosion* g_CFireEffectExplosionsEnd
-//   CToss[20] g_CFireEffectTosses
+//   CExplosion* g_ExplosionActiveListHead
+//   CToss[20] g_TossPool
 // Function calls:
 //   core_fire.cpp_CToss_create_FUN_004c3ee0
 
@@ -19,14 +19,14 @@ int __cdecl core_fire_cpp_CFireEffect_FUN_004c8e40(CFireEffect *this_ptr)
   char *pcVar1;
   CExplosion *pCVar2;
   
-  pCVar2 = g_CFireEffectExplosionsEnd;
-  core_fire_cpp_CToss_create_FUN_004c3ee0(g_CFireEffectTosses + (int)g_CFireEffectExplosionsEnd);
-  pcVar1 = g_CFireEffectExplosionsEnd->field0_0x0;
-  g_CFireEffectExplosionsEnd = (CExplosion *)(pcVar1 + 1);
+  pCVar2 = g_ExplosionActiveListHead;
+  core_fire_cpp_CToss_create_FUN_004c3ee0(g_TossPool + (int)g_ExplosionActiveListHead);
+  pcVar1 = g_ExplosionActiveListHead->field0_0x0;
+  g_ExplosionActiveListHead = (CExplosion *)(pcVar1 + 1);
   if ((int)(pcVar1 + 1) < 0x14) {
     return (int)pCVar2;
   }
-  g_CFireEffectExplosionsEnd = (CExplosion *)0x0;
+  g_ExplosionActiveListHead = (CExplosion *)0x0;
   return (int)pCVar2;
 }
 

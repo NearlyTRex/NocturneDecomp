@@ -16,7 +16,7 @@ SVert * __cdecl core_skeleton_cpp_SVert_ctor_FUN_005a1f70(SVert *this_ptr)
   void *pvVar1;
   
   pvVar1 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (this_ptr->field1_0x10,3,&g_CVectorTypeInfo);
+                     (&this_ptr->position,3,&g_CVectorTypeInfo);
   return (SVert *)((int)pvVar1 + -0x10);
 }
 

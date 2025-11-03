@@ -17,7 +17,7 @@
 //   TerminatedCString s_shape_meshlod_cpp_00638057
 //   TerminatedCString s_LodMesh_eqLoad_EQ_is_not_0063806c
 //   TerminatedCString s_shape_meshlod_cpp_00638098
-//   undefined4 DAT_006380ad
+//   double DOUBLE_006380ad = 0.950000000000000
 //   undefined4 DAT_00661388
 //   undefined4 DAT_0066138c
 //   char* g_CurrentFilename
@@ -32,8 +32,6 @@
 //   shape_meshlod.cpp_FUN_00519710
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void shape_meshlod_cpp_FUN_0051cdf0(void)
 
@@ -69,7 +67,7 @@ void shape_meshlod_cpp_FUN_0051cdf0(void)
   local_18 = 0;
   if (0 < (int)pvVar2) {
     local_20 = (int)local_28 + 4;
-    dVar1 = (double)CONCAT44(DAT_0066138c,DAT_00661388) * _DAT_006380ad;
+    dVar1 = (double)CONCAT44(DAT_0066138c,DAT_00661388) * DOUBLE_006380ad;
     local_1c = (int)local_28 + 8;
     iVar7 = 0;
     do {

@@ -11,7 +11,7 @@
 //   core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 (0057ae50) at 0057b260 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_FUN_00581590 (00581590) at 005817bc [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_FUN_00582f30 (00582f30) at 0058315c [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00598de0 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00598de0 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 (0049fb70) at 0049fe5c [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_showTextInputDialog_FUN_0049db10 (0049db10) at 0049ddba [UNCONDITIONAL_CALL]
 // Function calls:

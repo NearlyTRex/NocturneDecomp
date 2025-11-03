@@ -8,20 +8,18 @@
 //   void* PTR_caseD_3_005eb0f8 = 005eb203
 //   TerminatedCString s_core_wateract_cpp_006572b7
 //   TerminatedCString s_CWaterActor_process_Bad__006572cc
-//   undefined4 DAT_006572ef
-//   undefined4 DAT_006572f7
+//   double DOUBLE_006572ef = 65536
+//   double DOUBLE_006572f7 = 8
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   crt_math.c_round_FUN_005fe6b0
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *this_ptr)
 
@@ -37,7 +35,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
   float in_stack_0000000c;
   float in_stack_00000014;
   
-  fVar4 = (float10)in_stack_00000008 * (float10)_DAT_006572ef * (float10)_DAT_006572f7;
+  fVar4 = (float10)in_stack_00000008 * (float10)DOUBLE_006572ef * (float10)DOUBLE_006572f7;
   dVar5 = crt_math_c_round_FUN_005fe6b0
                     ((double)CONCAT44(*(undefined4 *)(this_ptr->field21_0x298 + 0x2af94),in_EAX));
   iVar2 = (int)((ulonglong)dVar5 >> 0x20) + (int)ROUND(fVar4);
@@ -55,12 +53,12 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
   }
   this_ptr_00 = g_CEventListPtr;
   *(float *)(this_ptr->field21_0x298 + 0x7d04) = 1.0 / in_stack_0000000c;
-  iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+  iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (this_ptr_00,(char *)&this_ptr->move_event);
   if (iVar2 != 0) {
     this_ptr->state = 1;
   }
-  iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+  iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,(char *)&this_ptr->move_down_event);
   if (iVar2 != 0) {
     this_ptr->state = 3;
@@ -141,7 +139,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
 // 005eb177: PUSH EAX
 //   XREF to: 02d05310 (DATA)
 // 005eb178: FSTP float ptr [EBX + 0x7f9c]
-// 005eb17e: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 005eb17e: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 005eb183: ADD ESP,0x8
 // 005eb186: TEST EAX,EAX
@@ -156,7 +154,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
 //   XREF to: 006793d0 (READ)
 // 005eb1a1: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 005eb1a2: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 005eb1a2: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 005eb1a7: ADD ESP,0x8
 // 005eb1aa: TEST EAX,EAX

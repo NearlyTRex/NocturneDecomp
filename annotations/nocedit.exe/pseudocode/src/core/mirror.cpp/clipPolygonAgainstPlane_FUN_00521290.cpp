@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_mirror.cpp_clipPolygonAgainstPlane_FUN_00521290(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, int * output_count)
 // Cross-references:
-//   core_mirror.cpp_reflectAndClipPrimitive_FUN_00522310 (00522310) at 00522441 [UNCONDITIONAL_CALL]
+//   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 (00522310) at 00522441 [UNCONDITIONAL_CALL]
 // Globals:
 //   void* PTR_caseD_1_00521278 = 00521365
 //   void* PTR_caseD_3_00521280 = 00521347

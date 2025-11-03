@@ -1,8 +1,8 @@
 // Name: core_event.cpp_CEventList_setActorVariable_FUN_004b09a0
 // Address: 004b09a0
 // Address Range: [[004b09a0, 004b0b7a]]
-// Convention: unknown
-// Signature: undefined core_event.cpp_CEventList_setActorVariable_FUN_004b09a0()
+// Convention: __cdecl
+// Signature: void core_event.cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList * this_ptr)
 // Cross-references:
 //   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055c3da [UNCONDITIONAL_CALL]
 // Globals:
@@ -14,98 +14,93 @@
 //   int g_CurrentLineNumber
 // Function calls:
 //   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
-//   core_event.cpp_FUN_004b0bf0
+//   core_event.cpp_CEventList_FUN_004b0bf0
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   crt_string.c_memmove_FUN_005fe5e0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_event.cpp_CEventList_setActorVariable(CEventList* pEventList,
-   undefined4 sActorVariable, undefined4 pActor) */
-
-void core_event_cpp_CEventList_setActorVariable_FUN_004b09a0
-               (undefined4 param_1,undefined4 param_2,void *unaff_EBX,undefined4 param_4,int param_5
-               ,char *param_6,CDemonActor *param_7)
+void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList *this_ptr)
 
 {
   char cVar1;
   int iVar2;
+  void *unaff_EBX;
   char *pcVar3;
-  int iVar4;
-  char *pcVar5;
-  int iVar6;
+  char *pcVar4;
+  int iVar5;
+  char *in_stack_00000008;
+  CDemonActor *in_stack_0000000c;
   
-  if ((param_7 != (CDemonActor *)0x0) && (param_7->actor_name[0] == '\0')) {
+  if ((in_stack_0000000c != (CDemonActor *)0x0) && (in_stack_0000000c->actor_name[0] == '\0')) {
     g_CurrentFilename = "..\\core\\event.cpp";
     g_CurrentLineNumber = 0xb2b;
-    pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(param_7);
-    core_main_c_displayErrorAndQuit_FUN_00506f10("Tried to assign actor var %s an actor of type %s with no name",param_6,pcVar3)
-    ;
+    core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(in_stack_0000000c);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("Tried to assign actor var %s an actor of type %s with no name");
   }
-  iVar4 = core_event_cpp_FUN_004b0bf0();
-  if (iVar4 < 0) {
-    if (param_7 != (CDemonActor *)0x0) {
-      if (0x18 < *(int *)(param_5 + 0x34e8)) {
+  iVar2 = core_event_cpp_CEventList_FUN_004b0bf0(this_ptr);
+  if (iVar2 < 0) {
+    if (in_stack_0000000c != (CDemonActor *)0x0) {
+      if (0x18 < this_ptr->actor_var_count) {
         g_CurrentFilename = "..\\core\\event.cpp";
         g_CurrentLineNumber = 0xb38;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setActorVariable - already too many actor variables.  Max is %d.",0x19);
       }
-      pcVar3 = (char *)(param_5 + 0x34ec + *(int *)(param_5 + 0x34e8) * 0x1e);
+      pcVar3 = this_ptr->variablesVarName1 + this_ptr->actor_var_count * 0x1e;
       do {
-        cVar1 = *param_6;
+        cVar1 = *in_stack_00000008;
         *pcVar3 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = param_6[1];
-        param_6 = param_6 + 2;
+        cVar1 = in_stack_00000008[1];
+        in_stack_00000008 = in_stack_00000008 + 2;
         pcVar3[1] = cVar1;
         pcVar3 = pcVar3 + 2;
       } while (cVar1 != '\0');
-      pcVar3 = (char *)(param_5 + 0x37da + *(int *)(param_5 + 0x34e8) * 0x1e);
+      pcVar3 = this_ptr->variablesActorName1 + this_ptr->actor_var_count * 0x1e;
       do {
-        cVar1 = param_7->actor_name[0];
+        cVar1 = in_stack_0000000c->actor_name[0];
         *pcVar3 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = param_7->actor_name[1];
-        param_7 = (CDemonActor *)(param_7->actor_name + 2);
+        cVar1 = in_stack_0000000c->actor_name[1];
+        in_stack_0000000c = (CDemonActor *)(in_stack_0000000c->actor_name + 2);
         pcVar3[1] = cVar1;
         pcVar3 = pcVar3 + 2;
       } while (cVar1 != '\0');
-      *(int *)(param_5 + 0x34e8) = *(int *)(param_5 + 0x34e8) + 1;
+      this_ptr->actor_var_count = this_ptr->actor_var_count + 1;
       return;
     }
   }
   else {
-    pcVar5 = (char *)(param_5 + 0x37da + iVar4 * 0x1e);
-    pcVar3 = (char *)(param_5 + 0x34ec + iVar4 * 0x1e);
-    if (param_7 == (CDemonActor *)0x0) {
-      iVar6 = *(int *)(param_5 + 0x34e8) + -1;
-      *(int *)(param_5 + 0x34e8) = iVar6;
-      iVar2 = (iVar4 + 1) * 0x1e;
+    pcVar4 = this_ptr->variablesActorName1 + iVar2 * 0x1e;
+    pcVar3 = this_ptr->variablesVarName1 + iVar2 * 0x1e;
+    if (in_stack_0000000c == (CDemonActor *)0x0) {
+      iVar5 = this_ptr->actor_var_count + -1;
+      this_ptr->actor_var_count = iVar5;
       crt_string_c_memmove_FUN_005fe5e0
-                (pcVar3,(void *)(param_5 + 0x34ec + iVar2),(iVar6 - iVar4) * 0x1e);
+                (pcVar3,this_ptr->variablesVarName2 + iVar2 * 0x1e,(iVar5 - iVar2) * 0x1e);
       crt_string_c_memmove_FUN_005fe5e0
-                (unaff_EBX,pcVar5 + iVar2,(*(int *)(param_5 + 0x34e8) - iVar4) * 0x1e);
+                (unaff_EBX,pcVar4 + iVar2 * 0x1e + 0x1e,(this_ptr->actor_var_count - iVar2) * 0x1e);
       return;
     }
     do {
-      cVar1 = *param_6;
+      cVar1 = *in_stack_00000008;
       *pcVar3 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = param_6[1];
-      param_6 = param_6 + 2;
+      cVar1 = in_stack_00000008[1];
+      in_stack_00000008 = in_stack_00000008 + 2;
       pcVar3[1] = cVar1;
       pcVar3 = pcVar3 + 2;
     } while (cVar1 != '\0');
     do {
-      cVar1 = param_7->actor_name[0];
-      *pcVar5 = cVar1;
+      cVar1 = in_stack_0000000c->actor_name[0];
+      *pcVar4 = cVar1;
       if (cVar1 == '\0') {
         return;
       }
-      cVar1 = param_7->actor_name[1];
-      param_7 = (CDemonActor *)(param_7->actor_name + 2);
-      pcVar5[1] = cVar1;
-      pcVar5 = pcVar5 + 2;
+      cVar1 = in_stack_0000000c->actor_name[1];
+      in_stack_0000000c = (CDemonActor *)(in_stack_0000000c->actor_name + 2);
+      pcVar4[1] = cVar1;
+      pcVar4 = pcVar4 + 2;
     } while (cVar1 != '\0');
   }
   return;
@@ -152,7 +147,7 @@ void core_event_cpp_CEventList_setActorVariable_FUN_004b09a0
 // 004b09eb: PUSH EDI
 //   Label: LAB_004b09eb
 // 004b09ec: PUSH EBX
-// 004b09ed: CALL core_event.cpp_FUN_004b0bf0
+// 004b09ed: CALL core_event.cpp_CEventList_FUN_004b0bf0
 //   XREF to: 004b0bf0 (UNCONDITIONAL_CALL)
 // 004b09f2: MOV ESI,EAX
 // 004b09f4: ADD ESP,0x8

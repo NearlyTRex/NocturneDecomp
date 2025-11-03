@@ -14,7 +14,7 @@
 //   undefined4 s_aracter_006565ea
 //   CDemonActor_vtable g_CTurretVTable
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
 //   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
 //   core_weapon.cpp_CWeapon_ctor_FUN_005ede70
@@ -27,7 +27,8 @@ CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005e20f0(CTurret *this_ptr)
   char cVar1;
   CWeapon *pCVar2;
   CKeyFramedModelInstance *this_ptr_00;
-  float *pfVar3;
+  CVector3f *pCVar3;
+  BADSPACEBASE *in_ESP;
   char *pcVar4;
   char *pcVar5;
   
@@ -70,12 +71,13 @@ CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005e20f0(CTurret *this_ptr)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  pfVar3 = core_actor_cpp_CDemonActor_FUN_00408ec0
-                     ((CDemonActor *)(this_ptr_00[-4].part_visibility_flags + 0x1b));
-  if ((float *)(this_ptr_00[1].animation_state + 0x70) != pfVar3) {
-    *(float *)(this_ptr_00[1].animation_state + 0x70) = *pfVar3;
-    *(float *)(this_ptr_00[1].animation_state + 0x74) = pfVar3[1];
-    *(float *)(this_ptr_00[1].animation_state + 0x78) = pfVar3[2];
+  pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                     ((CDemonActor *)(this_ptr_00[-4].part_visibility_flags + 0x1b),
+                      (CVector3f *)&stack0xffffffec,(CVector3f *)&stack0xfffffff8);
+  if ((CVector3f *)(this_ptr_00[1].animation_state + 0x70) != pCVar3) {
+    ((CVector3f *)(this_ptr_00[1].animation_state + 0x70))->x = pCVar3->x;
+    *(float *)(this_ptr_00[1].animation_state + 0x74) = pCVar3->y;
+    *(float *)(this_ptr_00[1].animation_state + 0x78) = pCVar3->z;
   }
   this_ptr_00[1].animation_state[0x80] = '\0';
   this_ptr_00[1].animation_state[0x81] = '\0';
@@ -175,7 +177,7 @@ CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005e20f0(CTurret *this_ptr)
 //   XREF to: Stack[-0x14] (WRITE)
 // 005e21e9: MOV dword ptr [ESP + 0x20],ESI
 //   XREF to: Stack[-0x10] (WRITE)
-// 005e21ed: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005e21ed: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005e21f2: LEA EDX,[EBX + 0x84c]
 // 005e21f8: ADD ESP,0xc

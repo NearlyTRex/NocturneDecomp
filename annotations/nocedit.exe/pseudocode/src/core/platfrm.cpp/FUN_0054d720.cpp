@@ -11,9 +11,9 @@
 //   undefined4 DAT_02f33744
 //   undefined4 DAT_02f33768
 // Function calls:
+//   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 //   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
-//   core_actor.cpp_renderActorBoundingBox_FUN_0040d940
 //   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 //   core_box.cpp_CBoundingBox3D_render_FUN_004210b0
 //   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
@@ -67,14 +67,14 @@ int core_platfrm_cpp_FUN_0054d720(void)
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-  pCVar4 = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+  pCVar4 = (*in_stack_00000004->vtable->getBoundingBox)
                      (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffb8);
   iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar4);
   if (iVar3 != 0) {
     if (in_stack_00000004[3].field17_0x104 != 0) {
       iVar5 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
       if (iVar5 != 0) {
-        pCVar4 = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+        pCVar4 = (*in_stack_00000004->vtable->getBoundingBox)
                            (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffbc);
         core_box_cpp_CBoundingBox3D_render_FUN_004210b0
                   (pCVar4,(int)in_stack_ffffffd0,in_stack_ffffffd4,in_stack_ffffffd8);
@@ -106,7 +106,7 @@ LAB_0054d802:
       (pCVar2->orient).bank = pCVar6->y;
       (pCVar2->orient).heading = pCVar6->z;
     }
-    core_actor_cpp_renderActorBoundingBox_FUN_0040d940(in_stack_00000004,0xfa);
+    core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(in_stack_00000004,0xfa);
     (in_stack_00000004->location).position.x = *(float *)in_stack_00000004[2].create_event;
     (in_stack_00000004->location).position.y = *(float *)(in_stack_00000004[2].create_event + 4);
     (in_stack_00000004->location).position.z = *(float *)(in_stack_00000004[2].create_event + 8);
@@ -118,7 +118,7 @@ LAB_0054d802:
       (in_stack_00000004->orient).bank = pCVar6->y;
       (in_stack_00000004->orient).heading = pCVar6->z;
     }
-    core_actor_cpp_renderActorBoundingBox_FUN_0040d940(in_stack_00000004,0xf9);
+    core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(in_stack_00000004,0xf9);
     (in_stack_00000004->location).position.x = in_stack_00000040;
     (in_stack_00000004->location).position.y = in_stack_00000044;
     (in_stack_00000004->location).position.z = in_stack_00000048;
@@ -311,7 +311,7 @@ LAB_0054d802:
 // 0054d8c4: PUSH 0xfa
 //   Label: LAB_0054d8c4
 // 0054d8c9: PUSH EBX
-// 0054d8ca: CALL core_actor.cpp_renderActorBoundingBox_FUN_0040d940
+// 0054d8ca: CALL core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 //   XREF to: 0040d940 (UNCONDITIONAL_CALL)
 // 0054d8cf: LEA EDX,[EBX + 0x20]
 // 0054d8d2: LEA EAX,[EBX + 0x328]
@@ -342,7 +342,7 @@ LAB_0054d802:
 // 0054d916: PUSH 0xf9
 //   Label: LAB_0054d916
 // 0054d91b: PUSH EBX
-// 0054d91c: CALL core_actor.cpp_renderActorBoundingBox_FUN_0040d940
+// 0054d91c: CALL core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 //   XREF to: 0040d940 (UNCONDITIONAL_CALL)
 // 0054d921: ADD ESP,0x8
 // 0054d924: LEA EDX,[EBX + 0x20]

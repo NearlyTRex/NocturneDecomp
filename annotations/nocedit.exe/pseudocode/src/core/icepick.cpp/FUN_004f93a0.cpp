@@ -25,19 +25,19 @@
 void core_icepick_cpp_FUN_004f93a0(void)
 
 {
-  undefined4 uVar1;
-  int iVar2;
-  uint uVar3;
+  int iVar1;
+  uint uVar2;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
   
   do {
-    uVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610();
-    switch(uVar1) {
+    iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&(in_stack_00000004->model).motion_controller);
+    switch(iVar1) {
     case 100:
-      iVar2 = *(int *)(in_stack_00000004[2].cloth_data + 0x54f8) + 1;
-      *(int *)(in_stack_00000004[2].cloth_data + 0x54f8) = iVar2;
-      if (4 < iVar2) {
+      iVar1 = *(int *)(in_stack_00000004[2].cloth_data + 0x54f8) + 1;
+      *(int *)(in_stack_00000004[2].cloth_data + 0x54f8) = iVar1;
+      if (4 < iVar1) {
         in_stack_00000004[2].cloth_data[0x54f8] = '\0';
         in_stack_00000004[2].cloth_data[0x54f9] = '\0';
         in_stack_00000004[2].cloth_data[0x54fa] = '\0';
@@ -51,9 +51,10 @@ void core_icepick_cpp_FUN_004f93a0(void)
       core_icepick_cpp_FUN_004f9490();
       break;
     case 0x67:
-      uVar3 = crt_stdlib_c_rand_FUN_005feb5c();
-      if ((uVar3 & 3) == 0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      uVar2 = crt_stdlib_c_rand_FUN_005feb5c();
+      if ((uVar2 & 3) == 0) {
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                  (&(in_stack_00000004->model).motion_controller);
       }
       break;
     case 0x68:
@@ -66,7 +67,7 @@ void core_icepick_cpp_FUN_004f93a0(void)
       }
       break;
     case 0x69:
-      (*(in_stack_00000004->base_actor).metadata.vtable[1].renderTargetPoints)
+      (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)
                 (&in_stack_00000004->base_actor);
       break;
     default:

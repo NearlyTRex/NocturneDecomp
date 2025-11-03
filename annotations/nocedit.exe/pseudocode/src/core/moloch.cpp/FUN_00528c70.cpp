@@ -10,10 +10,10 @@
 //   TerminatedCString s_moloch_h_dfm_00639d98
 // Function calls:
 //   core_hero.cpp_CHero_FUN_004f2540
-//   core_morph.cpp_CallToFreeSomething1_FUN_0052b430
 //   core_morph.cpp_CMorph_getReady_FUN_0052b680
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
-//   core_skeleton.cpp_FUN_005a0840
+//   core_morph.cpp_FUN_0052b430
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -22,26 +22,32 @@
 void core_moloch_cpp_FUN_00528c70(void)
 
 {
+  CDeformableModelInstance *this_ptr;
   CHero *pCVar1;
   CHero *in_stack_00000004;
   
-  if (*(int *)(in_stack_00000004[1].base_character.model.padding_0x0 + 0x215c) == 0) {
-    core_skeleton_cpp_FUN_005a0840();
+  this_ptr = &(in_stack_00000004->base_character).model;
+  if (in_stack_00000004[1].base_character.model.part_visibility_flags[7] == 0) {
+    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(this_ptr);
   }
   else {
-    core_skeleton_cpp_FUN_005a0840();
+    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(this_ptr);
   }
-  core_skeleton_cpp_FUN_005a0840();
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            ((CDeformableModelInstance *)(in_stack_00000004 + 1));
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450
+            (&(in_stack_00000004->base_character).model);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450
+            ((CDeformableModelInstance *)(in_stack_00000004 + 1));
   pCVar1 = in_stack_00000004 + 1;
   (pCVar1->base_character).cloth_data[0x518] = '\0';
   (pCVar1->base_character).cloth_data[0x519] = '\0';
   (pCVar1->base_character).cloth_data[0x51a] = '\0';
   (pCVar1->base_character).cloth_data[0x51b] = '\0';
-  core_morph_cpp_CallToFreeSomething1_FUN_0052b430();
-  core_morph_cpp_CallToFreeSomething1_FUN_0052b430();
-  core_morph_cpp_CMorph_getReady_FUN_0052b680();
+  core_morph_cpp_FUN_0052b430();
+  core_morph_cpp_FUN_0052b430();
+  core_morph_cpp_CMorph_getReady_FUN_0052b680
+            ((CMorph *)&in_stack_00000004[1].base_character.model.field6_0x2230);
   core_hero_cpp_CHero_FUN_004f2540(in_stack_00000004);
   return;
 }
@@ -63,24 +69,24 @@ void core_moloch_cpp_FUN_00528c70(void)
 // 00528c8d: PUSH 0x639d71
 //   XREF to: 00639d71 (DATA)
 // 00528c92: PUSH EAX
-// 00528c93: CALL core_skeleton.cpp_FUN_005a0840
+// 00528c93: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00528c98: ADD ESP,0x8
 // 00528c9b: PUSH 0x639d7e
 //   XREF to: 00639d7e (DATA)
 // 00528ca0: PUSH ESI
 //   Label: LAB_00528ca0
-// 00528ca1: CALL core_skeleton.cpp_FUN_005a0840
+// 00528ca1: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00528ca6: ADD ESP,0x8
 // 00528ca9: LEA ESI,[EBX + 0x158]
 // 00528caf: PUSH ESI
-// 00528cb0: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 00528cb0: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 00528cb5: ADD ESP,0x4
 // 00528cb8: LEA EDI,[EBX + 0x1fbd4]
 // 00528cbe: PUSH EDI
-// 00528cbf: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 00528cbf: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 00528cc4: ADD ESP,0x4
 // 00528cc7: PUSH ESI
@@ -88,13 +94,13 @@ void core_moloch_cpp_FUN_00528c70(void)
 // 00528cca: LEA ESI,[EBX + 0x21f5c]
 // 00528cd0: PUSH ESI
 // 00528cd1: MOV dword ptr [EBX + 0x22b84],0x0
-// 00528cdb: CALL core_morph.cpp_CallToFreeSomething1_FUN_0052b430
+// 00528cdb: CALL core_morph.cpp_FUN_0052b430
 //   XREF to: 0052b430 (UNCONDITIONAL_CALL)
 // 00528ce0: ADD ESP,0xc
 // 00528ce3: PUSH EDI
 // 00528ce4: PUSH 0x1
 // 00528ce6: PUSH ESI
-// 00528ce7: CALL core_morph.cpp_CallToFreeSomething1_FUN_0052b430
+// 00528ce7: CALL core_morph.cpp_FUN_0052b430
 //   XREF to: 0052b430 (UNCONDITIONAL_CALL)
 // 00528cec: ADD ESP,0xc
 // 00528cef: PUSH ESI
@@ -113,7 +119,7 @@ void core_moloch_cpp_FUN_00528c70(void)
 //   Label: LAB_00528d05
 //   XREF to: 00639d8b (DATA)
 // 00528d0a: PUSH EAX
-// 00528d0b: CALL core_skeleton.cpp_FUN_005a0840
+// 00528d0b: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00528d10: ADD ESP,0x8
 // 00528d13: PUSH 0x639d98

@@ -5,7 +5,7 @@
 // Signature: undefined core_flame.cpp_FUN_004c9c00()
 // Cross-references:
 //   core_bodypart.cpp_FUN_00419e10 (00419e10) at 00419efd [UNCONDITIONAL_CALL]
-//   core_crossbow.cpp_FUN_00448d30 (00448d30) at 00448dc0 [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_process_FUN_00448d30 (00448d30) at 00448dc0 [UNCONDITIONAL_CALL]
 //   core_flamecan.cpp_FUN_004cb390 (004cb390) at 004cb3e2 [UNCONDITIONAL_CALL]
 //   core_vessel.cpp_CCryptVessel_process_FUN_005e91a0 (005e91a0) at 005e94a3 [UNCONDITIONAL_CALL]
 // Globals:
@@ -18,7 +18,7 @@
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CSound* g_CSoundPtr = 03f6af64
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CFireEffect g_CFireEffectInstance
 //   CHero*[4] g_HeroActors
 //   int g_LocalHeroIndex
@@ -29,9 +29,9 @@
 // Function calls:
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_charactr.cpp_CCharacter_FUN_0042b5b0
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
+//   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
-//   core_fire.cpp_CFireEffect_FUN_004c7b20
 //   core_flamecan.cpp_FUN_004cad90
 //   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 //   core_sound.cpp_FUN_005b3b80
@@ -73,7 +73,7 @@ void core_flame_cpp_FUN_004c9c00(void)
   float local_14;
   
   if (((*(char *)(in_stack_00000004 + 0x1b8) != '\0') && (*(int *)(in_stack_00000004 + 0x1b4) == 0))
-     && (iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+     && (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                            (g_CEventListPtr,(char *)(in_stack_00000004 + 0x1b8)), iVar3 != 0)) {
     if ((*(int *)(in_stack_00000004 + 0x1a8) != 1) && (*(int *)(in_stack_00000004 + 0x1a8) != 3)) {
       iVar3 = 0;
@@ -86,11 +86,14 @@ void core_flame_cpp_FUN_004c9c00(void)
     *(undefined4 *)(in_stack_00000004 + 0x1b4) = 1;
   }
   if (((*(char *)(in_stack_00000004 + 0x21c) != '\0') && (*(int *)(in_stack_00000004 + 0x1b4) != 0))
-     && ((iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+     && ((iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                             (g_CEventListPtr,(char *)(in_stack_00000004 + 0x21c)), iVar3 != 0 &&
          (*(undefined4 *)(in_stack_00000004 + 0x1b4) = 0, *(int *)(in_stack_00000004 + 0x1a8) != 3))
         )) {
-    core_fire_cpp_CFireEffect_FUN_004c7b20(g_CFireEffectPtr);
+    core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
+              (g_CFireEffectPtr,(CVector3f *)(in_stack_00000004 + 0x20),
+               *(float *)(in_stack_00000004 + 0x15c) * (float)DOUBLE_0062a0fe,(CVector3f *)0x0,
+               0xffff);
   }
   if (*(int *)(in_stack_00000004 + 0x1b4) != 0) {
     *(float *)(in_stack_00000004 + 0x164) =
@@ -126,8 +129,8 @@ void core_flame_cpp_FUN_004c9c00(void)
     }
     if (*(int *)(in_stack_00000004 + 0x288) != 0) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_94);
-      iVar3 = (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.metadata.vtable)->
-                hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_94);
+      iVar3 = (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable)->hasCollision)
+                        ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_94);
       if (iVar3 == 2) {
         this_ptr = g_HeroActors[g_LocalHeroIndex];
         pCVar1 = &(this_ptr->base_character).base_actor.location;
@@ -136,20 +139,20 @@ void core_flame_cpp_FUN_004c9c00(void)
                     *(float *)(in_stack_00000004 + 0x24);
         fStack_34 = (this_ptr->base_character).base_actor.location.position.z -
                     *(float *)(in_stack_00000004 + 0x28);
-        if (((float)DOUBLE_0062a116 < fStack_38) && (fStack_38 < local_94.cylinder_radius_sq)) {
+        if (((float)DOUBLE_0062a116 < fStack_38) && (fStack_38 < (float)local_94.result_ptr)) {
           fVar5 = ((float10)*(float *)(in_stack_00000004 + 0x158) +
                   (float10)*(float *)(in_stack_00000004 + 0x160)) * (float10)DOUBLE_0062a11e;
           crt_math_c_round_FUN_005fe6b0
                     ((double)CONCAT44(extraout_EDX,
                                       CONCAT22((short)((uint)pCVar1 >> 0x10),
-                                               (ushort)(fStack_38 < local_94.cylinder_radius_sq) <<
-                                               8 | (ushort)(NAN(fStack_38) ||
-                                                           NAN(local_94.cylinder_radius_sq)) << 10 |
-                                               (ushort)(fStack_38 == local_94.cylinder_radius_sq) <<
+                                               (ushort)(fStack_38 < (float)local_94.result_ptr) << 8
+                                               | (ushort)(NAN(fStack_38) ||
+                                                         NAN((float)local_94.result_ptr)) << 10 |
+                                               (ushort)(fStack_38 == (float)local_94.result_ptr) <<
                                                0xe)));
           local_14 = (float)(int)ROUND(fVar5);
-          if ((ABS(fStack_3c) < (float)local_94.result_ptr + local_14) &&
-             (ABS(fStack_34) < (float)local_94.result_ptr + local_14)) {
+          if ((ABS(fStack_3c) < (float)local_94.field9_0x24 + local_14) &&
+             (ABS(fStack_34) < (float)local_94.field9_0x24 + local_14)) {
             core_charactr_cpp_CCharacter_FUN_0042b5b0(&this_ptr->base_character);
           }
         }
@@ -168,7 +171,7 @@ void core_flame_cpp_FUN_004c9c00(void)
                        (g_CDemonSetPtr->field19_0x14f0a0 +
                        *(int *)(in_stack_00000004 + 0x29c) * 4 + 8000);
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_6c);
-        iVar3 = (*((this_ptr_00->base_actor).metadata.vtable)->hasCollision)
+        iVar3 = (*((this_ptr_00->base_actor).vtable)->hasCollision)
                           (&this_ptr_00->base_actor,&SStack_6c);
         if (iVar3 == 2) {
           pCVar1 = &(this_ptr_00->base_actor).location;
@@ -182,9 +185,9 @@ void core_flame_cpp_FUN_004c9c00(void)
           fVar5 = (float10)fStack_2c;
           crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX_00,pCVar1));
           iStack_18 = (int)ROUND(fVar6);
-          if (((float10)DOUBLE_0062a116 < fVar5) && (fStack_2c < SStack_6c.cylinder_radius_sq)) {
+          if (((float10)DOUBLE_0062a116 < fVar5) && (fStack_2c < (float)SStack_6c.result_ptr)) {
             fStack_1c = (float)iStack_18;
-            fVar2 = (float)SStack_6c.result_ptr + fStack_1c;
+            fVar2 = (float)SStack_6c.field9_0x24 + fStack_1c;
             local_f8[0] = (double)fVar2;
             if ((ABS(fStack_30) < fVar2) && (ABS(fStack_28) < fVar2)) {
               core_charactr_cpp_CCharacter_FUN_0042b5b0(this_ptr_00);
@@ -222,7 +225,7 @@ void core_flame_cpp_FUN_004c9c00(void)
 //   XREF to: 006793d0 (READ)
 // 004c9c39: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 004c9c3a: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 004c9c3a: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 004c9c3f: ADD ESP,0x8
 // 004c9c42: TEST EAX,EAX
@@ -275,7 +278,7 @@ void core_flame_cpp_FUN_004c9c00(void)
 //   XREF to: 006793d0 (READ)
 // 004c9cc3: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 004c9cc4: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 004c9cc4: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 004c9cc9: ADD ESP,0x8
 // 004c9ccc: TEST EAX,EAX
@@ -299,7 +302,7 @@ void core_flame_cpp_FUN_004c9c00(void)
 //   XREF to: 0067a3d0 (READ)
 // 004c9d08: PUSH EDI
 //   XREF to: 02d12db0 (DATA)
-// 004c9d09: CALL core_fire.cpp_CFireEffect_FUN_004c7b20
+// 004c9d09: CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 //   XREF to: 004c7b20 (UNCONDITIONAL_CALL)
 // 004c9d0e: ADD ESP,0x14
 // 004c9d11: CMP dword ptr [ESI + 0x1b4],0x0

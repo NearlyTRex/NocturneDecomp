@@ -8,8 +8,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_vehicle_cpp_CVehicle_FUN_005e7b90(CVehicle *this_ptr)
 
 {
@@ -50,9 +48,9 @@ void __cdecl core_vehicle_cpp_CVehicle_FUN_005e7b90(CVehicle *this_ptr)
     *(float *)(this_ptr->field1_0x158 + 0x7d8) = fVar4 - fVar2;
     *(float *)(this_ptr->field1_0x158 + 0x7dc) = fVar5 - fVar3;
   }
-  fVar2 = *(float *)(this_ptr->field1_0x158 + 0x7c0) * (float)_DAT_00656e16;
+  fVar2 = *(float *)(this_ptr->field1_0x158 + 0x7c0) * (float)DOUBLE_00656e16;
   *(float *)(this_ptr->field1_0x158 + 0x7c4) = fVar2;
-  fVar3 = (float)_DAT_00656e1e;
+  fVar3 = (float)DOUBLE_00656e1e;
   *(float *)(this_ptr->field1_0x158 + 0x7c8) =
        fVar2 * fVar3 *
        (*(float *)(this_ptr->field1_0x158 + 0x7dc) * *(float *)(this_ptr->field1_0x158 + 0x7dc) +

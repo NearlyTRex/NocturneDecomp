@@ -32,7 +32,7 @@
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+//   core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   crt_math.c_round_FUN_005fe6b0
 //   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
 //   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -61,9 +61,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
   float local_54;
   undefined4 local_50;
   CVector3i local_4c;
-  int local_40;
-  int local_3c;
-  int local_38;
+  CVector3i local_40;
   CVector3i local_34;
   CVector3i local_28;
   float local_1c;
@@ -133,10 +131,11 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
     g_RenderVertexBuffer[2].v = 7.34684e-40;
     g_RenderVertexBuffer[3].u = 7.34684e-40;
     g_RenderVertexBuffer[3].v = 7.34684e-40;
-    local_40 = (int)ROUND((this_ptr->position).x * FLOAT_0065dca8);
-    local_3c = (int)ROUND((this_ptr->position).y * FLOAT_0065dca8);
-    local_38 = (int)ROUND((this_ptr->position).z * FLOAT_0065dca8);
-    core_set_cpp_CDemonSet_CallLightVertexColor_FUN_0056e110(g_CDemonSetPtr);
+    local_40.x = (int)ROUND((this_ptr->position).x * FLOAT_0065dca8);
+    local_40.y = (int)ROUND((this_ptr->position).y * FLOAT_0065dca8);
+    local_40.z = (int)ROUND((this_ptr->position).z * FLOAT_0065dca8);
+    core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
+              (g_CDemonSetPtr,&local_40,&g_BillboardCameraUp,0,4);
     (*(code *)((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
     lVar1 = (longlong)(0xffff - (int)g_PerspectiveReciprocal) * (longlong)this_ptr->alpha_value;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
@@ -418,7 +417,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
 //   XREF to: 03114278 (PARAM)
 // 004bf783: PUSH EAX
 //   XREF to: 03114278 (DATA)
-// 004bf784: CALL core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+// 004bf784: CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   XREF to: 0056e110 (UNCONDITIONAL_CALL)
 // 004bf789: ADD ESP,0x14
 // 004bf78c: PUSH EBP

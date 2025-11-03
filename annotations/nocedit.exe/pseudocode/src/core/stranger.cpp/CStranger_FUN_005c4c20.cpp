@@ -6,10 +6,10 @@
 // Cross-references:
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bc3a6 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00653d74
-//   undefined4 DAT_00653d7c
-//   undefined4 DAT_00653d84
-//   undefined4 DAT_00653d8c
+//   double DOUBLE_00653d74 = 0.400000000000000
+//   double DOUBLE_00653d7c = 1.5
+//   double DOUBLE_00653d84 = 4
+//   double DOUBLE_00653d8c = -1.5
 //   undefined4 DAT_0066373c
 //   undefined4 DAT_00663740
 //   CDemonSet* g_CDemonSetPtr = 03114278
@@ -20,9 +20,9 @@
 //   undefined4 DAT_03f6bad0
 //   undefined4 DAT_03f6bad4
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408e80
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 //   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
 //   core_setcolid.cpp_CDemonSet_raycast_FUN_00572530
@@ -50,22 +50,25 @@ void core_stranger_cpp_CStranger_FUN_005c4c20(void)
   int in_stack_0000000c;
   SCollisionInfo *in_stack_fffffef4;
   float local_f4;
-  undefined1 auStack_cc [8];
-  float fStack_c4;
+  undefined1 auStack_d0 [8];
+  undefined1 auStack_c8 [8];
   float fStack_c0;
   float local_bc;
   undefined1 auStack_ac [8];
-  float local_a4;
-  CVector3f local_a0;
+  void *local_a4;
+  undefined1 local_a0 [12];
   float local_94;
   float local_90;
   float local_8c;
-  float local_88;
+  void *local_88;
   void *local_84;
-  float local_80;
-  CVector3f local_70;
-  CVector3f local_64 [3];
-  CVector3f CStack_40;
+  void *local_80;
+  undefined1 local_70 [12];
+  CVector3f local_64;
+  CVector3f local_50;
+  float fStack_40;
+  float fStack_3c;
+  float local_38;
   float local_30;
   float local_2c;
   float local_28;
@@ -81,82 +84,87 @@ void core_stranger_cpp_CStranger_FUN_005c4c20(void)
     iVar5 = 0;
     while (iVar4 < g_CDemonSetPtr->damage_listener_count) {
       this_ptr = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar5 + -4);
-      core_actor_cpp_CDemonActor_FUN_00408f10(in_stack_00000004);
-      if ((((((float)_DAT_00653d7c < ABS(local_64[0].x)) ||
-            ((float)_DAT_00653d84 < ABS(local_64[0].y))) || (local_64[0].z < 0.0)) ||
-          ((0x40c00000 < (int)local_64[0].z || (this_ptr == in_stack_00000004)))) ||
-         (iVar2 = (*(this_ptr->metadata).vtable[1].hasCollision)(this_ptr,in_stack_fffffef4),
-         iVar2 != 0)) {
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                (in_stack_00000004,(CVector3f *)(local_70 + 8),&(this_ptr->location).position);
+      if ((((((float)DOUBLE_00653d7c < ABS(local_64.x)) ||
+            ((float)DOUBLE_00653d84 < ABS(local_64.y))) || (local_64.z < 0.0)) ||
+          ((0x40c00000 < (int)local_64.z || (this_ptr == in_stack_00000004)))) ||
+         (iVar2 = (*this_ptr->vtable[1].hasCollision)(this_ptr,in_stack_fffffef4), iVar2 != 0)) {
 LAB_005c4c95:
         iVar4 = iVar4 + 1;
         iVar5 = iVar5 + 4;
       }
       else {
-        core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)auStack_cc);
-        iVar2 = (*((this_ptr->metadata).vtable)->hasCollision)
-                          (this_ptr,(SCollisionInfo *)(auStack_cc + 4));
+        core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)(auStack_d0 + 4));
+        iVar2 = (*this_ptr->vtable->hasCollision)(this_ptr,(SCollisionInfo *)auStack_c8);
         if ((iVar2 != 2) ||
-           (fStack_c0 = 1.0 - ((local_30 - local_a0.z) + (float)_DAT_00653d8c) *
-                              (float)_DAT_00653d74, fStack_c0 < (float)auStack_cc._4_4_))
+           (fStack_c0 = 1.0 - ((local_30 - (float)local_a0._8_4_) + (float)DOUBLE_00653d8c) *
+                              (float)DOUBLE_00653d74, fStack_c0 < (float)auStack_c8._0_4_))
         goto LAB_005c4c95;
         if (fStack_c0 < 0.0) {
           fStack_c0 = 0.0;
         }
-        auStack_cc._4_4_ = fStack_c0;
+        auStack_c8._0_4_ = fStack_c0;
         iVar4 = iVar4 + 1;
         iVar5 = iVar5 + 4;
       }
     }
     core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
     core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000004);
-    fStack_c4 = 0.0;
+    auStack_c8._4_4_ = 0.0;
     fStack_c0 = 0.0;
-    CStack_40.x = 3.5;
-    CStack_40.y = 1.5;
+    fStack_40 = 3.5;
+    fStack_3c = 1.5;
     local_bc = 3.5;
-    pCVar3 = core_actor_cpp_CDemonActor_FUN_00408e80(in_stack_00000004);
+    pCVar3 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                       (in_stack_00000004,(CVector3f *)auStack_d0,(CVector3f *)(auStack_c8 + 4));
     if ((CVector3f *)(auStack_ac + 4) != pCVar3) {
       auStack_ac._4_4_ = pCVar3->x;
-      local_a4 = pCVar3->y;
-      local_a0.x = pCVar3->z;
+      local_a4 = (void *)pCVar3->y;
+      local_a0._0_4_ = pCVar3->z;
     }
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20();
-    pCVar3 = (CVector3f *)core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-    if (&local_70 != pCVar3) {
-      local_70.x = pCVar3->x;
-      local_70.y = pCVar3->y;
-      local_70.z = pCVar3->z;
+    pCVar3 = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20
+                       ((CDeformableModelInstance *)(in_stack_00000004 + 1));
+    pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                       (in_stack_00000004,(CVector3f *)(local_a0 + 8),pCVar3);
+    if ((CVector3f *)local_70 != pCVar3) {
+      local_70._0_4_ = pCVar3->x;
+      local_70._4_4_ = pCVar3->y;
+      local_70._8_4_ = pCVar3->z;
     }
-    local_88 = local_70.x + local_a0.x;
-    local_84 = (void *)(local_70.y + local_a0.y);
-    local_80 = local_70.z + local_a0.z;
-    if ((float *)auStack_ac != &local_88) {
+    local_88 = (void *)((float)local_70._0_4_ + (float)local_a0._0_4_);
+    local_84 = (void *)((float)local_70._4_4_ + (float)local_a0._4_4_);
+    local_80 = (void *)((float)local_70._8_4_ + (float)local_a0._8_4_);
+    if ((void **)auStack_ac != &local_88) {
       auStack_ac._0_4_ = local_88;
       auStack_ac._4_4_ = local_84;
       local_a4 = local_80;
     }
     local_28 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
-                         (g_CDemonSetPtr,&local_70,(CVector3f *)auStack_ac);
+                         (g_CDemonSetPtr,(CVector3f *)local_70,(CVector3f *)auStack_ac);
     local_f4 = local_28;
     if ((0.0 <= local_28) && (local_28 < 1.0)) {
       local_f4 = 1.0 - (local_28 * local_30 - local_2c) / (local_30 - local_2c);
     }
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20();
-    pCVar3 = (CVector3f *)core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-    if (local_64 != pCVar3) {
-      local_64[0].x = pCVar3->x;
-      local_64[0].y = pCVar3->y;
-      local_64[0].z = pCVar3->z;
+    pCVar3 = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20
+                       ((CDeformableModelInstance *)(in_stack_00000004 + 1));
+    pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                       (in_stack_00000004,&local_50,pCVar3);
+    if (&local_64 != pCVar3) {
+      local_64.x = pCVar3->x;
+      local_64.y = pCVar3->y;
+      local_64.z = pCVar3->z;
     }
-    CStack_40.x = local_64[0].x + local_94;
-    CStack_40.y = local_64[0].y + local_90;
-    CStack_40.z = local_64[0].z + local_8c;
-    if (&local_a0 != &CStack_40) {
-      local_a0.x = CStack_40.x;
-      local_a0.y = CStack_40.y;
-      local_a0.z = CStack_40.z;
+    fStack_40 = local_64.x + local_94;
+    fStack_3c = local_64.y + local_90;
+    local_38 = local_64.z + local_8c;
+    if ((float *)local_a0 != &fStack_40) {
+      local_a0._0_4_ = fStack_40;
+      local_a0._4_4_ = fStack_3c;
+      local_a0._8_4_ = local_38;
     }
-    local_1c = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,local_64,&local_a0);
+    local_1c = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
+                         (g_CDemonSetPtr,&local_64,(CVector3f *)local_a0);
     core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
   }
   if (1.0 < local_f4) {
@@ -226,7 +234,7 @@ LAB_005c4c95:
 // 005c4c75: MOV EAX,dword ptr [EBP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 005c4c78: PUSH EAX
-// 005c4c79: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 005c4c79: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 005c4c7e: ADD ESP,0xc
 // 005c4c81: FLD float ptr [ESP + 0xa8]
@@ -364,7 +372,7 @@ LAB_005c4c95:
 //   XREF to: Stack[-0x1c] (WRITE)
 // 005c4dae: MOV dword ptr [ESP + 0x80],ESI
 //   XREF to: Stack[-0x9c] (WRITE)
-// 005c4db5: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 005c4db5: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 005c4dba: MOV EDX,EAX
 // 005c4dbc: LEA EAX,[ESP + 0x90]
@@ -403,7 +411,7 @@ LAB_005c4c95:
 // 005c4e0d: MOV EDI,dword ptr [EBP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 005c4e10: PUSH EDI
-// 005c4e11: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005c4e11: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005c4e16: MOV EDX,EAX
 // 005c4e18: LEA EAX,[ESP + 0xc0]
@@ -549,7 +557,7 @@ LAB_005c4c95:
 // 005c4f65: MOV ECX,dword ptr [EBP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 005c4f68: PUSH ECX
-// 005c4f69: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005c4f69: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005c4f6e: MOV EDX,EAX
 // 005c4f70: LEA EAX,[ESP + 0xc0]

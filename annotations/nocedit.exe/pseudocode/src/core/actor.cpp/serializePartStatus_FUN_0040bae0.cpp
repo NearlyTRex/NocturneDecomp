@@ -31,11 +31,11 @@
 //   TerminatedCString s_d_00614023
 //   TerminatedCString s_anon_00614027
 //   TerminatedCString s_s_00614029
-//   char* g_PropertyNamePrefix = 00000000
+//   char[104] g_PropertyNamePrefix
 //   FILE* g_ActorDataFile
 //   int g_ActorReadingMode
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_0040aee0
+//   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   core_actor.cpp_handleActorPropertyParseError_FUN_0040b210
 //   core_skeleton.cpp_FUN_005a0410
 //   core_skeleton.cpp_FUN_005a0430
@@ -54,12 +54,12 @@ void __cdecl core_actor_cpp_serializePartStatus_FUN_0040bae0(void *part,char *pr
   int unaff_EBX;
   BADSPACEBASE *in_ESP;
   int unaff_EDI;
-  char **ppcStack0000000c;
+  char *pcStack0000000c;
   
   if (g_ActorReadingMode != 1) {
-    iVar2 = crt_stdio_c_fprintf_FUN_005fe6d0
-                      (g_ActorDataFile,"%s{ // %s\n",&g_PropertyNamePrefix,property_name);
-    core_actor_cpp_CDemonActor_FUN_0040aee0(iVar2);
+    crt_stdio_c_fprintf_FUN_005fe6d0
+              (g_ActorDataFile,"%s{ // %s\n",g_PropertyNamePrefix,property_name);
+    core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(1);
     crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s%d\n");
     crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s");
     pvVar1 = (void *)((int)part + 0x78);
@@ -74,9 +74,9 @@ void __cdecl core_actor_cpp_serializePartStatus_FUN_0040bae0(void *part,char *pr
       iVar2 = iVar2 + 1;
       crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%d ");
     } while (iVar2 < 0x1e);
-    iVar2 = crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"\n");
-    core_actor_cpp_CDemonActor_FUN_0040aee0(iVar2);
-    ppcStack0000000c = &g_PropertyNamePrefix;
+    crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"\n");
+    core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(-1);
+    pcStack0000000c = g_PropertyNamePrefix;
     crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s}\n");
     return;
   }
@@ -321,7 +321,7 @@ void __cdecl core_actor_cpp_serializePartStatus_FUN_0040bae0(void *part,char *pr
 //   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
 // 0040bc5e: ADD ESP,0x10
 // 0040bc61: PUSH 0x1
-// 0040bc63: CALL core_actor.cpp_CDemonActor_FUN_0040aee0
+// 0040bc63: CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   XREF to: 0040aee0 (UNCONDITIONAL_CALL)
 // 0040bc68: ADD ESP,0x4
 // 0040bc6b: MOV EDI,0x1e
@@ -415,7 +415,7 @@ void __cdecl core_actor_cpp_serializePartStatus_FUN_0040bae0(void *part,char *pr
 //   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
 // 0040bd41: ADD ESP,0x8
 // 0040bd44: PUSH -0x1
-// 0040bd46: CALL core_actor.cpp_CDemonActor_FUN_0040aee0
+// 0040bd46: CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   XREF to: 0040aee0 (UNCONDITIONAL_CALL)
 // 0040bd4b: ADD ESP,0x4
 // 0040bd4e: PUSH 0x66e178

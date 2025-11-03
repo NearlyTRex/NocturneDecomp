@@ -5,9 +5,9 @@
 // Signature: undefined core_skeleton.cpp_LoadSkeletonDeformable_FUN_005a1cf0()
 // Cross-references:
 //   core_baron.cpp_CBaronWeapon_FUN_00413da0 (00413da0) at 00413db2 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450 (005a0450) at 005a045a [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450 (005a0450) at 005a045a [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\skeleton.cpp_0064f038
+//   TerminatedCString s_core_skeleton_cpp_0064f038
 //   TerminatedCString s_Can_t_load_s_because_def_0064f04d
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -17,26 +17,24 @@
 //   undefined4 DAT_0369e850
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
+//   core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780
 //   core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0
-//   core_skeleton.cpp_CDeformableModel_LoadSkeletonAndRenderTexture_FUN_0059a780
 //   crt_string.c_stricmp_FUN_005fe7f0
 
 #include "nocturne.h"
-
-/* Signature: undefined1 core_skeleton.cpp_LoadSkeletonDeformable(undefined4 param_1) */
 
 CDeformableModel * core_skeleton_cpp_LoadSkeletonDeformable_FUN_005a1cf0(void)
 
 {
   int iVar1;
   int iVar2;
-  CDeformableModel *pCVar3;
+  CDeformableModel *this_ptr;
   char *str1;
   char *in_stack_00000004;
   
   iVar2 = 0;
   if (0 < g_DeformableModelCount) {
-    str1 = g_DeformableModelPool[0].field6_0x7144 + 0x1e6c;
+    str1 = g_DeformableModelPool[0].model_identifier;
     do {
       iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,in_stack_00000004);
       if (iVar1 == 0) {
@@ -47,16 +45,16 @@ CDeformableModel * core_skeleton_cpp_LoadSkeletonDeformable_FUN_005a1cf0(void)
     } while (iVar2 < g_DeformableModelCount);
   }
   if (0x3f < g_DeformableModelCount) {
-    g_CurrentFilename = "m0_DA..\\core\\skeleton.cpp" + 5;
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0x1057;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Can't load %s because deformable model manager is full.  (Size is %d)",in_stack_00000004,0x40);
   }
-  pCVar3 = g_DeformableModelPool + g_DeformableModelCount;
+  this_ptr = g_DeformableModelPool + g_DeformableModelCount;
   g_DeformableModelCount = g_DeformableModelCount + 1;
-  core_skeleton_cpp_CDeformableModel_load_FUN_0059b8d0();
-  core_skeleton_cpp_CDeformableModel_LoadSkeletonAndRenderTexture_FUN_0059a780();
-  return pCVar3;
+  core_skeleton_cpp_CDeformableModel_load_FUN_0059b8d0(this_ptr,in_stack_00000004);
+  core_skeleton_cpp_CDeformableModel_captureTextures_FUN_0059a780(this_ptr);
+  return this_ptr;
 }
 
 
@@ -143,7 +141,7 @@ CDeformableModel * core_skeleton_cpp_LoadSkeletonDeformable_FUN_005a1cf0(void)
 //   XREF to: 0059b8d0 (UNCONDITIONAL_CALL)
 // 005a1da2: ADD ESP,0x8
 // 005a1da5: PUSH EBX
-// 005a1da6: CALL core_skeleton.cpp_CDeformableModel_LoadSkeletonAndRenderTexture_FUN_0059a780
+// 005a1da6: CALL core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780
 //   XREF to: 0059a780 (UNCONDITIONAL_CALL)
 // 005a1dab: ADD ESP,0x4
 // 005a1dae: MOV EAX,EBX

@@ -9,7 +9,7 @@
 //   core_game.cpp_PleaseEnterValidInteger_FUN_004d7730 (004d7730) at 004d778e [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_Unk20_FUN_00565130 (00565130) at 00565442 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_00562920 (00562920) at 005629a6 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 0059820d [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 0059820d [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058cb1a [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051e148 [UNCONDITIONAL_CALL]
 // Globals:

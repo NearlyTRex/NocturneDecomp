@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_melee.cpp_FUN_0050ecd0()
 // Function calls:
-//   core_weapon.cpp_FUN_005ee640
+//   core_weapon.cpp_CWeapon_FUN_005ee640
 
 #include "nocturne.h"
 
@@ -14,10 +14,15 @@
 void core_melee_cpp_FUN_0050ecd0(void)
 
 {
-  int in_stack_00000004;
+  CWeapon *pCVar1;
+  CWeapon *in_stack_00000004;
   
-  *(undefined4 *)(in_stack_00000004 + 0x590) = 0;
-  core_weapon_cpp_FUN_005ee640();
+  pCVar1 = in_stack_00000004 + 1;
+  (pCVar1->base_actor).actor_name[0x18] = '\0';
+  (pCVar1->base_actor).actor_name[0x19] = '\0';
+  (pCVar1->base_actor).actor_name[0x1a] = '\0';
+  (pCVar1->base_actor).actor_name[0x1b] = '\0';
+  core_weapon_cpp_CWeapon_FUN_005ee640(in_stack_00000004);
   return;
 }
 
@@ -31,7 +36,7 @@ void core_melee_cpp_FUN_0050ecd0(void)
 // 0050ecd8: PUSH EDX
 // 0050ecd9: PUSH EAX
 // 0050ecda: MOV dword ptr [EAX + 0x590],0x0
-// 0050ece4: CALL core_weapon.cpp_FUN_005ee640
+// 0050ece4: CALL core_weapon.cpp_CWeapon_FUN_005ee640
 //   XREF to: 005ee640 (UNCONDITIONAL_CALL)
 // 0050ece9: ADD ESP,0x8
 // 0050ecec: RET

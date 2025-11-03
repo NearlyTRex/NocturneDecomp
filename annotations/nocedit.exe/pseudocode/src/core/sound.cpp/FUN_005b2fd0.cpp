@@ -46,7 +46,7 @@
 //   undefined4 g_CGameInstance.delta_time_float
 //   CDemonSet g_CDemonSetInstance
 //   undefined4 DAT_03261368
-//   undefined4 g_CDemonSetInstance.field25_0x15aca8
+//   undefined4 g_CDemonSetInstance.field29_0x15aca8
 //   undefined4 g_CDemonSetInstance.selected_camera_index
 //   CSound g_CSoundInstance
 //   undefined4 DAT_03f6af68
@@ -209,7 +209,7 @@ CDemonSet * core_sound_cpp_FUN_005b2fd0(void)
     sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0();
   }
   pCVar5 = g_CDemonSetPtr;
-  if (g_CDemonSetPtr->field25_0x15aca8 != 0) {
+  if (g_CDemonSetPtr->field29_0x15aca8 != 0) {
     if (g_CGamePtr->block_auto_save == 0) {
       if (DAT_03f6b86c != g_CDemonSetPtr->selected_camera_index) {
         core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);

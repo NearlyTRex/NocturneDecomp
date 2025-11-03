@@ -80,9 +80,9 @@
 //   undefined4 g_CWeaponClassInfo.name_hash
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_deleteActor_FUN_00408820
 //   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
 //   core_actor.cpp_createActorByName_FUN_0040c430
+//   core_actor.cpp_deleteActor_FUN_00408820
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
 //   core_ammo.cpp_CAmmo_FUN_00410fd0
 //   core_game.cpp_CGame_displayMessage_FUN_004d7f20
@@ -178,12 +178,12 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
   if (99 < this_ptr->item_count) {
     return 0;
   }
-  pCVar5 = (*((item_actor->metadata).vtable)->getCarrier)(item_actor);
+  pCVar5 = (*item_actor->vtable->getCarrier)(item_actor);
   if (pCVar5 != this_ptr->owner) {
     in_stack_fffffcd4 = 0;
-    (*((in_stack_00000014->metadata).vtable)->onDropped)(in_stack_00000014,(CVector3f *)0x0);
+    (*in_stack_00000014->vtable->onDropped)(in_stack_00000014,(CVector3f *)0x0);
     if (this_ptr->owner != (CDemonActor *)0x0) {
-      (*((in_stack_00000014->metadata).vtable)->pickup)(in_stack_00000014,this_ptr->owner);
+      (*in_stack_00000014->vtable->pickup)(in_stack_00000014,this_ptr->owner);
     }
   }
   if ((((CHero *)this_ptr->owner == g_HeroActors[g_LocalHeroIndex]) && (in_stack_00000040 != 0)) &&
@@ -918,7 +918,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
       g_CurrentDebugFilename = "..\\core\\inv.cpp";
       g_CurrentDebugLine = 0x219;
       if (pCVar5 != (CDemonActor *)0x0) {
-        (*((pCVar5->metadata).vtable)->dtor)
+        (*pCVar5->vtable->dtor)
                   (pCVar5,2,in_stack_fffffcd4,in_stack_fffffc8c,in_stack_fffffc90,in_stack_fffffc94,
                    in_stack_fffffc98,in_stack_fffffc9c,in_stack_fffffca0);
       }
@@ -1154,11 +1154,11 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
             pCVar5 = core_actor_cpp_createActorByName_FUN_0040c430
                                ((char *)(in_stack_00000018 + 0x2d4));
             core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
-            (*((pCVar5->metadata).vtable)->setup)(pCVar5);
+            (*pCVar5->vtable->setup)(pCVar5);
             *(undefined4 *)(pCVar5[4].actor_name + 8) = *(undefined4 *)(in_stack_0000002c + 0x314);
             *(undefined4 *)(pCVar5[4].actor_name + 0xc) = *(undefined4 *)(in_stack_0000002c + 0x318)
             ;
-            (*((pCVar5->metadata).vtable)->pickup)(pCVar5,this_ptr->owner);
+            (*pCVar5->vtable->pickup)(pCVar5,this_ptr->owner);
             this_ptr->items[this_ptr->item_count] = pCVar5;
             pCVar3 = g_CDemonMissionPtr;
             this_ptr->item_count = this_ptr->item_count + 1;
@@ -1177,10 +1177,10 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
     if (iVar10 == 0) {
       pCVar5 = core_actor_cpp_createActorByName_FUN_0040c430("CDynamite");
       core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
-      (*((pCVar5->metadata).vtable)->setup)(pCVar5);
+      (*pCVar5->vtable->setup)(pCVar5);
       *(undefined4 *)(pCVar5[4].actor_name + 8) = *(undefined4 *)((int)in_stack_00000030 + 0x314);
-      (*((pCVar5->metadata).vtable)->pickup)(pCVar5,this_ptr->owner);
-      core_actor_cpp_CDemonActor_deleteActor_FUN_00408820(in_stack_00000070);
+      (*pCVar5->vtable->pickup)(pCVar5,this_ptr->owner);
+      core_actor_cpp_deleteActor_FUN_00408820(in_stack_00000070);
       engine_console_cpp_CConsole_printf_FUN_00441890
                 (g_CConsolePtr,"Found dynamite.  Creating weapon for it.\n");
       core_inv_cpp_CInventory_addItem_FUN_004fd600(this_ptr,pCVar5,1);
@@ -1196,8 +1196,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
       pCVar3 = g_CDemonMissionPtr;
       this_ptr->item_count = this_ptr->item_count + 1;
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(pCVar3);
-      (*((in_stack_00000054->metadata).vtable)->onPickup)(in_stack_00000054,(CDemonActor *)this_ptr)
-      ;
+      (*in_stack_00000054->vtable->onPickup)(in_stack_00000054,(CDemonActor *)this_ptr);
       return 1;
     }
     iVar10 = 0;
@@ -1246,13 +1245,12 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
             pcVar6 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(pCVar5);
             pCVar9 = core_actor_cpp_createActorByName_FUN_0040c430(pcVar6);
             core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
-            (*((pCVar9->metadata).vtable)->setup)(pCVar9);
+            (*pCVar9->vtable->setup)(pCVar9);
             *(int *)(pCVar9[4].actor_name + 8) = pCVar7[2].health;
             *(int *)(pCVar9[4].actor_name + 0xc) = pCVar7[2].field6_0x68;
-            (*((pCVar9->metadata).vtable)->pickup)(pCVar9,this_ptr->owner);
-            (*((pCVar9->metadata).vtable)->onPickup)(pCVar9,(CDemonActor *)this_ptr);
-            core_actor_cpp_CDemonActor_deleteActor_FUN_00408820
-                      (*(CDemonActor **)(in_stack_00000024 + 0xc));
+            (*pCVar9->vtable->pickup)(pCVar9,this_ptr->owner);
+            (*pCVar9->vtable->onPickup)(pCVar9,(CDemonActor *)this_ptr);
+            core_actor_cpp_deleteActor_FUN_00408820(*(CDemonActor **)(in_stack_00000024 + 0xc));
             *(CDemonActor **)((int)in_stack_00000028 + 0xc) = pCVar9;
             core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(pCVar5);
             bVar2 = true;
@@ -1273,7 +1271,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
   pCVar3 = g_CDemonMissionPtr;
   this_ptr->item_count = this_ptr->item_count + 1;
   core_mission_cpp_CDemonMission_setupActorMaybe_FUN_00523be0(pCVar3,in_stack_00000050);
-  (*((in_stack_00000050->metadata).vtable)->onPickup)(in_stack_00000050,(CDemonActor *)this_ptr);
+  (*in_stack_00000050->vtable->onPickup)(in_stack_00000050,(CDemonActor *)this_ptr);
   if ((pCVar5 != (CDemonActor *)0x0) && (this_ptr->selected_weapon == (CWeapon *)0x0)) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10(this_ptr,pCVar5,5,1);
   }
@@ -3138,7 +3136,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
 // 004fe5f6: ADD ESP,0x8
 // 004fe5f9: MOV EAX,dword ptr [ESP + 0x33c]
 // 004fe600: PUSH EAX
-// 004fe601: CALL core_actor.cpp_CDemonActor_deleteActor_FUN_00408820
+// 004fe601: CALL core_actor.cpp_deleteActor_FUN_00408820
 //   XREF to: 00408820 (UNCONDITIONAL_CALL)
 // 004fe606: ADD ESP,0x4
 // 004fe609: PUSH 0x630764
@@ -3410,7 +3408,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
 // 004fe8b0: MOV EAX,dword ptr [ESP + 0x31c]
 // 004fe8b7: MOV EDX,dword ptr [EAX + 0xc]
 // 004fe8ba: PUSH EDX
-// 004fe8bb: CALL core_actor.cpp_CDemonActor_deleteActor_FUN_00408820
+// 004fe8bb: CALL core_actor.cpp_deleteActor_FUN_00408820
 //   XREF to: 00408820 (UNCONDITIONAL_CALL)
 // 004fe8c0: ADD ESP,0x4
 // 004fe8c3: MOV EAX,dword ptr [ESP + 0x31c]

@@ -25,15 +25,14 @@
 int core_boxactor_cpp_FUN_00421ef0(void)
 
 {
-  CDemonSet *pCVar1;
-  CKeyFramedModel *pCVar2;
+  CKeyFramedModel *pCVar1;
   CBoundingBox3D *this_ptr;
-  int iVar3;
+  int iVar2;
   int in_stack_00000004;
   
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158));
-  if (pCVar2->poly_count < 1) {
+  if (pCVar1->poly_count < 1) {
     return 0;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
@@ -41,29 +40,21 @@ int core_boxactor_cpp_FUN_00421ef0(void)
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr,(CVector3i *)(in_stack_00000004 + 0x30),(CVector3i *)0x0);
   this_ptr = (CBoundingBox3D *)(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();
-  iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
+  iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xffff);
   if (*(int *)(in_stack_00000004 + 0x5fc) != 0) {
-    pCVar1 = g_CDemonSetPtr;
-    pCVar1->field22_0x15ac80[8] = '\x01';
-    pCVar1->field22_0x15ac80[9] = '\0';
-    pCVar1->field22_0x15ac80[10] = '\0';
-    pCVar1->field22_0x15ac80[0xb] = '\0';
+    g_CDemonSetPtr->unk_lighting_param2 = 1;
   }
-  if (iVar3 != 0) {
+  if (iVar2 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),
                *(float *)(in_stack_00000004 + 0x310),-1);
   }
   if (*(int *)(in_stack_00000004 + 0x5fc) != 0) {
-    pCVar1 = g_CDemonSetPtr;
-    pCVar1->field22_0x15ac80[8] = '\0';
-    pCVar1->field22_0x15ac80[9] = '\0';
-    pCVar1->field22_0x15ac80[10] = '\0';
-    pCVar1->field22_0x15ac80[0xb] = '\0';
+    g_CDemonSetPtr->unk_lighting_param2 = 0;
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-  return iVar3;
+  return iVar2;
 }
 
 

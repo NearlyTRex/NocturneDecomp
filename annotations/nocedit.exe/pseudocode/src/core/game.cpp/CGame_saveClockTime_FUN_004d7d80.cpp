@@ -18,8 +18,8 @@
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00511e6f [UNCONDITIONAL_CALL]
 //   core_menu.cpp_ShowOptionsScreen_FUN_00512d30 (00512d30) at 00512d54 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 00513008 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052be09 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052ca90 (0052ca90) at 0052cabd [UNCONDITIONAL_CALL]
-//   core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0 (0052bcb0) at 0052be09 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 (0053e220) at 0053e337 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 (005390f0) at 005392ca [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_00581aa0 (00581aa0) at 00581b12 [UNCONDITIONAL_CALL]
@@ -27,7 +27,7 @@
 //   core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940 (0057a940) at 0057a98b [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 (0057ae50) at 0057aeda [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_UserInputCreate_FUN_0057d660 (0057d660) at 0057d952 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00596907 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596907 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d546 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051db1e [UNCONDITIONAL_CALL]
 // Function calls:

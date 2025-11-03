@@ -28,20 +28,20 @@ int __cdecl core_weapon_cpp_CWeapon_FUN_005ee030(CWeapon *this_ptr)
   float fStack_14;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-  this_ptr_01 = (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
+  this_ptr_01 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
                           (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe4);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
   if (iVar1 != 0) {
     fStack_14 = 8.713051e-39;
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-              ((CKeyFramedModelInstance *)&this_ptr->model_instance,0.0,-1);
+              (&this_ptr->model,0.0,-1);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base_actor);
   this_ptr_00 = g_CDemonRendererPtr;
-  this_ptr->field12_0x574 = 0;
+  this_ptr->field13_0x574 = 0;
   iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(this_ptr_00);
   if ((iVar2 == 0) && (iVar1 != 0)) {
-    this_ptr->field12_0x574 = 1;
+    this_ptr->field13_0x574 = 1;
     return iVar1;
   }
   return iVar1;

@@ -14,8 +14,8 @@
 //   undefined4 DAT_032690e4
 //   CVector3f g_ZeroVector
 // Function calls:
-//   core_actor.cpp_FUN_0040cc70
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 //   core_waypoint.cpp_FUN_005ec320
 //   shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20
@@ -117,7 +117,7 @@ LAB_0042e0ee:
       iVar5 = 0;
       do {
         while( true ) {
-          iVar4 = core_actor_cpp_FUN_0040cc70();
+          iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,local_2c);
           if (local_1f80[iVar4] != 0) break;
           iVar5 = iVar5 + 1;
           if (9 < iVar5) goto LAB_0042e1d9;
@@ -346,7 +346,7 @@ LAB_0042e20c:
 //   Label: LAB_0042e29b
 // 0042e2a2: PUSH EAX
 // 0042e2a3: PUSH 0x0
-// 0042e2a5: CALL core_actor.cpp_FUN_0040cc70
+// 0042e2a5: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 0042e2aa: LEA EBX,[EAX*0x4 + 0x0]
 // 0042e2b1: ADD ESP,0x8

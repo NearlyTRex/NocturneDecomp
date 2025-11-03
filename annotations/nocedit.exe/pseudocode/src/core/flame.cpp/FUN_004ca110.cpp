@@ -5,7 +5,7 @@
 // Signature: undefined core_flame.cpp_FUN_004ca110()
 // Cross-references:
 //   core_bodypart.cpp_FUN_00419740 (00419740) at 004197dd [UNCONDITIONAL_CALL]
-//   core_crossbow.cpp_FUN_00448e80 (00448e80) at 00448e96 [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_renderTransparent_FUN_00448e80 (00448e80) at 00448e96 [UNCONDITIONAL_CALL]
 //   core_flamecan.cpp_FUN_004cb550 (004cb550) at 004cb56d [UNCONDITIONAL_CALL]
 //   core_vessel.cpp_FUN_005e98b0 (005e98b0) at 005e9a11 [UNCONDITIONAL_CALL]
 // Globals:
@@ -135,13 +135,12 @@ float core_flame_cpp_FUN_004ca110(void)
                  ((*(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c))[1].actor_name + 0x10));
     }
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-    if (in_stack_00000004[1].metadata.runtime_flags != 0) {
-      this_ptr_00 = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
-                              (in_stack_00000004,&local_f4);
+    if (in_stack_00000004[1].previous_transform_state.dirty_flags != 0) {
+      this_ptr_00 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_f4);
       fVar4 = (float)core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-      in_stack_00000004[1].metadata.runtime_vector2.y = fVar4;
+      in_stack_00000004[1].previous_transform_state.orientation.y = fVar4;
     }
-    if ((in_stack_00000004[1].metadata.runtime_vector2.y != 0.0) &&
+    if ((in_stack_00000004[1].previous_transform_state.orientation.y != 0.0) &&
        (1.0 < SQRT(*(float *)(in_stack_00000004[1].actor_name + 8) *
                    *(float *)(in_stack_00000004[1].actor_name + 8) +
                    *(float *)in_stack_00000004[1].actor_name *
@@ -151,7 +150,7 @@ float core_flame_cpp_FUN_004ca110(void)
               in_stack_00000004[1].orient_matrix.m[2].x)) {
       core_set_cpp_CDemonSet_FUN_0056d140(g_CDemonSetPtr);
     }
-    if ((in_stack_00000004[1].metadata.runtime_vector2.y != 0.0) &&
+    if ((in_stack_00000004[1].previous_transform_state.orientation.y != 0.0) &&
        (in_stack_00000004[1].orient_matrix.m[1].z != 4.2039e-45)) {
       engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
                 (g_CDemonRendererPtr,unaff_ESI);
@@ -235,7 +234,7 @@ float core_flame_cpp_FUN_004ca110(void)
           g_RenderVertexBuffer[3].light = 9.18341e-41;
           g_RenderVertexBuffer[3].color = 0xffff;
           g_RenderVertexBuffer[3].fog = 9.18341e-41;
-          if (in_stack_00000004[1].metadata.runtime_vector2.z == 0.0) {
+          if (in_stack_00000004[1].previous_transform_state.orientation.z == 0.0) {
             g_RenderVertexBuffer[0].u = 7.34684e-40;
             g_RenderVertexBuffer[1].u = 7.34684e-40;
             g_RenderVertexBuffer[2].u = 2.2775203e-38;
@@ -284,7 +283,7 @@ float core_flame_cpp_FUN_004ca110(void)
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
     if ((in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) &&
        (fStack_14 = *(float *)(in_stack_00000004[1].actor_name + 4) * (float)DOUBLE_0062a12e,
-       in_stack_00000004[1].metadata.runtime_vector2.y != 0.0)) {
+       in_stack_00000004[1].previous_transform_state.orientation.y != 0.0)) {
       engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
                 (g_CDemonRendererPtr,(float *)&CStack_80);
       CStack_20.y = (int)(*(float *)(in_stack_00000004[1].actor_name + 4) * (float)DOUBLE_0062a136);
@@ -365,7 +364,7 @@ float core_flame_cpp_FUN_004ca110(void)
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     }
-    return in_stack_00000004[1].metadata.runtime_vector2.y;
+    return in_stack_00000004[1].previous_transform_state.orientation.y;
   }
   return 0.0;
 }

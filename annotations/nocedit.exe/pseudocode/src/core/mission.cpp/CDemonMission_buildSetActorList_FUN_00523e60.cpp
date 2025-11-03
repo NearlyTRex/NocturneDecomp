@@ -41,7 +41,7 @@ void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(CDemo
   
   g_CDemonSetPtr->actor_list_ptr = (void *)0x0;
   for (this_ptr_00 = this_ptr->first_actor; this_ptr_00 != (CDemonActor *)0x0;
-      this_ptr_00 = (this_ptr_00->metadata).next_actor) {
+      this_ptr_00 = this_ptr_00->next_actor) {
     core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
               (this_ptr_00,"..\\core\\mission.cpp",0x365);
     if ((this_ptr_00->location).area_id == *(int *)this_ptr->field0_0x0) {

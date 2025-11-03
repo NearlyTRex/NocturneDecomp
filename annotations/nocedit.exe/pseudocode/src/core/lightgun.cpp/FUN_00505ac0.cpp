@@ -19,7 +19,7 @@
 //   undefined4 g_CDemonLightInstance.field17_0x1cbc
 //   undefined4 g_CDemonLightInstance.antialiasing_enabled
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 //   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
 
@@ -33,11 +33,13 @@ void core_lightgun_cpp_FUN_00505ac0
                CDemonActor *param_5)
 
 {
+  CVector3f *input_local_point;
   BADSPACEBASE *in_ESP;
   int unaff_retaddr;
   
-  (*(param_5->metadata).vtable[1].renderOpaque)(param_5);
-  core_actor_cpp_CDemonActor_FUN_00408ec0(param_5);
+  input_local_point = (CVector3f *)(*param_5->vtable[1].renderOpaque)(param_5);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (param_5,(CVector3f *)&stack0xfffffff8,input_local_point);
   g_CDemonLightInstance.light_enabled_flag = 1;
   g_CDemonLightInstance.field17_0x1cbc = 0;
   if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.position.y) {
@@ -73,7 +75,7 @@ void core_lightgun_cpp_FUN_00505ac0
 // 00505add: LEA EAX,[ESP + 0x10]
 // 00505ae1: PUSH EAX
 // 00505ae2: PUSH EBX
-// 00505ae3: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00505ae3: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 00505ae8: MOV EDX,0x1
 // 00505aed: LEA EAX,[ESP + 0x18]

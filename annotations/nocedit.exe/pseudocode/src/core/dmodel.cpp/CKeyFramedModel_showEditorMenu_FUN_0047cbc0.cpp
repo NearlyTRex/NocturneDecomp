@@ -371,22 +371,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xf8);
     pCVar6 = g_CDemonSetPtr;
     g_CDemonSetPtr->rendering_mode = 1;
-    pCVar6->field34_0x15ae74[0] = -0x44;
-    pCVar6->field34_0x15ae74[1] = -0x49;
-    pCVar6->field34_0x15ae74[2] = -1;
-    pCVar6->field34_0x15ae74[3] = -1;
-    pCVar6->field34_0x15ae74[4] = -0x44;
-    pCVar6->field34_0x15ae74[5] = -0x49;
-    pCVar6->field34_0x15ae74[6] = -1;
-    pCVar6->field34_0x15ae74[7] = -1;
-    pCVar6->field34_0x15ae74[8] = 'D';
-    pCVar6->field34_0x15ae74[9] = 'H';
-    pCVar6->field34_0x15ae74[10] = '\0';
-    pCVar6->field34_0x15ae74[0xb] = '\0';
-    pCVar6->field34_0x15ae74[0xc] = '\0';
-    pCVar6->field34_0x15ae74[0xd] = '}';
-    pCVar6->field34_0x15ae74[0xe] = '\0';
-    pCVar6->field34_0x15ae74[0xf] = '\0';
+    (pCVar6->light_direction).x = -0x4844;
+    (pCVar6->light_direction).y = -0x4844;
+    (pCVar6->light_direction).z = 0x4844;
+    pCVar6->ambient_base_quick = 32000;
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
     iVar11 = g_WindowWidth / 2 + -0x28;
     if (this_ptr->frame_count < 1) {

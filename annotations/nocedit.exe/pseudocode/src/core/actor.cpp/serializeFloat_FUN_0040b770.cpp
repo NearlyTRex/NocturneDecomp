@@ -75,7 +75,7 @@
 //   TerminatedCString s_f_00613f20
 //   TerminatedCString s_s_g_00613f23
 //   string s_Floating_point_value_0066e130
-//   char* g_PropertyNamePrefix = 00000000
+//   char[104] g_PropertyNamePrefix
 //   FILE* g_ActorDataFile
 //   int g_ActorReadingMode
 // Function calls:
@@ -101,7 +101,7 @@ void __cdecl core_actor_cpp_serializeFloat_FUN_0040b770(float *float_ptr,char *p
   }
   else {
     crt_stdio_c_fprintf_FUN_005fe6d0
-              (g_ActorDataFile,"%s%g",&g_PropertyNamePrefix,(double)*float_ptr);
+              (g_ActorDataFile,"%s%g",g_PropertyNamePrefix,(double)*float_ptr);
   }
   core_actor_cpp_serializeDescription_FUN_0040b290
             ("Floating point value",in_stack_0000000c);

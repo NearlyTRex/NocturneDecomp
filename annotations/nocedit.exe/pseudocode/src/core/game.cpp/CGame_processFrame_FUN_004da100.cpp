@@ -55,7 +55,7 @@
 //   undefined4 g_ScreenBufferArray[1]
 //   undefined4 UCHAR_ARRAY_02d00c20
 //   int g_UseExternalRenderer
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   undefined4 DAT_02d7c2e0
 //   undefined4 DAT_02d7c2e4
 //   undefined4 DAT_02d7c2e8
@@ -86,7 +86,7 @@
 // Function calls:
 //   core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
 //   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
-//   core_event.cpp_FUN_004addf0
+//   core_event.cpp_CEventList_FUN_004addf0
 //   core_game.cpp_CGame_drawScreenBorder_FUN_004d7e50
 //   core_game.cpp_CGame_process_FUN_004e3190
 //   core_game.cpp_CGame_renderOverlay_FUN_004d8040
@@ -240,7 +240,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         local_a4.z = (pCVar4->base_character).base_actor.orient.heading;
       }
       core_skeleton_cpp_FUN_005a20b0();
-      (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.metadata.vtable)->
+      (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable)->
         setPositionAndOrientation)
                 ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_b0,&local_a4);
       if (((byte)g_MouseButtonFlags & 1) != 0) {
@@ -262,7 +262,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         local_7c.y = (float)local_70[0].y * FLOAT_0065e9bc;
         local_7c.z = (float)local_70[0].z * FLOAT_0065e9bc;
         pCVar4 = g_HeroActors[g_LocalHeroIndex];
-        (*((pCVar4->base_character).base_actor.metadata.vtable)->setPositionAndOrientation)
+        (*((pCVar4->base_character).base_actor.vtable)->setPositionAndOrientation)
                   ((CDemonActor *)pCVar4,&local_7c,
                    (CVector3f *)&(pCVar4->base_character).base_actor.orient);
         g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;
@@ -473,7 +473,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         }
       }
       if (this_ptr->event_processing_enabled != 0) {
-        core_event_cpp_FUN_004addf0();
+        core_event_cpp_CEventList_FUN_004addf0(g_CEventListPtr);
       }
       if ((this_ptr->subtitle_system_enabled != 0) && (this_ptr->screen_clear_enabled != 0)) {
         core_script_cpp_CScript_RelatedToSubtitles_FUN_00559d80();
@@ -483,8 +483,8 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
                   (g_CEditorToolsPtr,local_2dc);
         engine_2d_c_drawText_FUN_00401fd0(local_2dc,0,g_WindowHeight + -0x42);
       }
-      iVar10 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.metadata.vtable[1].
-                 hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],collision_info);
+      iVar10 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision)
+                         ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],collision_info);
       if (iVar10 == 2) {
         pcVar15 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             ("You're dead.  Game over.");
@@ -1501,7 +1501,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 //   XREF to: 006793d0 (READ)
 // 004da996: PUSH EBX
 //   XREF to: 02d05310 (DATA)
-// 004da997: CALL core_event.cpp_FUN_004addf0
+// 004da997: CALL core_event.cpp_CEventList_FUN_004addf0
 //   XREF to: 004addf0 (UNCONDITIONAL_CALL)
 // 004da99c: ADD ESP,0x4
 // 004da99f: MOV EAX,dword ptr [EBP + 0x92]

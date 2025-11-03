@@ -43,7 +43,7 @@
 // Function calls:
 //   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
 //   core_hero.cpp_CHero_FUN_004f2540
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -53,102 +53,54 @@
 void __cdecl core_baron_cpp_CBaron_FUN_00412cb0(CBaron *this_ptr)
 
 {
-  undefined4 uVar1;
-  char *pcStack00000008;
-  char *pcStack0000000c;
-  char *pcStack00000010;
-  char *pcStack00000014;
-  char *pcStack00000018;
-  char *pcStack0000001c;
-  char *pcStack00000020;
-  char *pcStack00000024;
-  char *pcStack00000028;
-  char *pcStack0000002c;
-  char *pcStack00000030;
-  char *pcStack00000034;
-  char *pcStack00000038;
-  char *pcStack0000003c;
+  CSkeleton *this_ptr_00;
+  int iVar1;
   undefined4 uStack00000040;
   
   core_hero_cpp_CHero_FUN_004f2540(&this_ptr->field0_0x0);
-  uVar1 = core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-  DAT_00822498 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_0082249c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_008224a0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000008 = (char *)0x1;
-  _DAT_008224a4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack0000000c = (char *)0x1;
-  pcStack00000008 = "Bip01 R UpperArm";
-  _DAT_008224a8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000010 = (char *)0x1;
-  pcStack0000000c = "Bip01 L ForeArm";
-  pcStack00000008 = (char *)uVar1;
-  _DAT_008224ac = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000014 = (char *)0x1;
-  pcStack00000010 = "Bip01 R ForeArm";
-  pcStack00000008 = (char *)0x412d5b;
-  pcStack0000000c = (char *)uVar1;
-  _DAT_008224b0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000018 = (char *)0x1;
-  pcStack00000014 = "Bip01 L Foot";
-  pcStack0000000c = (char *)0x412d70;
-  pcStack00000010 = (char *)uVar1;
-  _DAT_008224b4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack0000001c = (char *)0x1;
-  pcStack00000018 = "Bip01 R Foot";
-  pcStack00000010 = (char *)0x412d85;
-  pcStack00000014 = (char *)uVar1;
-  _DAT_008224b8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000020 = (char *)0x1;
-  pcStack0000001c = "Bip01 L Thigh";
-  pcStack00000014 = (char *)0x412d9a;
-  pcStack00000018 = (char *)uVar1;
-  _DAT_008224bc = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000024 = (char *)0x1;
-  pcStack00000020 = "Bip01 R Thigh";
-  pcStack00000018 = (char *)0x412daf;
-  pcStack0000001c = (char *)uVar1;
-  _DAT_008224c0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000028 = (char *)0x1;
-  pcStack00000024 = "Bip01 L Calf";
-  pcStack0000001c = (char *)0x412dc4;
-  pcStack00000020 = (char *)uVar1;
-  _DAT_008224c4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack0000002c = (char *)0x1;
-  pcStack00000028 = "Bip01 R Calf";
-  pcStack00000020 = (char *)0x412dd9;
-  pcStack00000024 = (char *)uVar1;
-  _DAT_008224c8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000030 = (char *)0x1;
-  pcStack0000002c = "Bip01 L Hand";
-  pcStack00000024 = (char *)0x412dee;
-  pcStack00000028 = (char *)uVar1;
-  DAT_008224cc = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000034 = (char *)0x1;
-  pcStack00000030 = "Bip01 R Hand";
-  pcStack00000028 = (char *)0x412e03;
-  pcStack0000002c = (char *)uVar1;
-  DAT_008224d0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000038 = (char *)0x1;
-  pcStack00000034 = "Bip01 Spine2";
-  pcStack0000002c = (char *)0x412e18;
-  pcStack00000030 = (char *)uVar1;
-  _DAT_008224d4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack0000003c = (char *)0x1;
-  pcStack00000038 = "Bip01 Spine";
-  pcStack00000030 = (char *)0x412e2d;
-  pcStack00000034 = (char *)uVar1;
-  _DAT_008224d8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820
+            (&(this_ptr->field0_0x0).base_character.model);
+  DAT_00822498 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_00,"Bip01 head");
+  _DAT_0082249c =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 L Clavicle");
+  _DAT_008224a0 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 R Clavicle");
+  _DAT_008224a4 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 L UpperArm");
+  _DAT_008224a8 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 R UpperArm");
+  _DAT_008224ac =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 L ForeArm");
+  _DAT_008224b0 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 R ForeArm");
+  _DAT_008224b4 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 L Foot");
+  _DAT_008224b8 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 R Foot");
+  _DAT_008224bc =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 L Thigh");
+  _DAT_008224c0 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 R Thigh");
+  _DAT_008224c4 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 L Calf");
+  _DAT_008224c8 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 R Calf");
+  DAT_008224cc = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_00,"Bip01 L Hand");
+  DAT_008224d0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_00,"Bip01 R Hand");
+  _DAT_008224d4 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 Spine2");
+  _DAT_008224d8 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 Spine");
   uStack00000040 = 1;
-  pcStack0000003c = "Bip01 Spine1";
-  pcStack00000034 = (char *)0x412e42;
-  pcStack00000038 = (char *)uVar1;
-  uVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 Spine1");
   this_ptr->field1_0x1fbd4[0xd8] = '\0';
   this_ptr->field1_0x1fbd4[0xd9] = '\0';
   this_ptr->field1_0x1fbd4[0xda] = '\0';
   this_ptr->field1_0x1fbd4[0xdb] = '\0';
-  *(undefined4 *)((this_ptr->field0_0x0).base_character.field11_0x25a0 + 0x24) = uVar1;
+  *(int *)((this_ptr->field0_0x0).base_character.field11_0x25a0 + 0x24) = iVar1;
   uStack00000040 = 0x412e5f;
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&g_CKeyFramedModelInstanceInstance);
   return;
@@ -167,7 +119,7 @@ void __cdecl core_baron_cpp_CBaron_FUN_00412cb0(CBaron *this_ptr)
 // 00412cbc: ADD ESP,0x4
 // 00412cbf: LEA EAX,[ESI + 0x158]
 // 00412cc5: PUSH EAX
-// 00412cc6: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 00412cc6: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 00412ccb: ADD ESP,0x4
 // 00412cce: PUSH 0x1

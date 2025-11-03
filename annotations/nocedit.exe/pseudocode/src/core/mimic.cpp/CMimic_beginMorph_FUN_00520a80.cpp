@@ -54,7 +54,8 @@ void core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(void)
     *(undefined4 *)(iVar1 + 0x38) = *(undefined4 *)(in_stack_00000004 + 0x38);
   }
   *(undefined4 *)(in_stack_00000004 + 0x4ca50) = 0;
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+            ((CMotionController *)(in_stack_00000004 + 0x158));
   core_mimic_cpp_CMimic_processMorph_FUN_00520ba0();
   this_ptr = g_CConsolePtr;
   *(undefined4 *)(in_stack_00000004 + 0xfc) = 1;

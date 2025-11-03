@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_waypoint.cpp_staticInit_FUN_005ebd10 (005ebd10) at 005ebd1c [DATA]
 // Globals:
-//   undefined4 s_..\core\waypoint.cpp_00657527
+//   TerminatedCString s_core_waypoint_cpp_00657527
 // Function calls:
 //   core_waypoint.cpp_CWayPoint_ctor_FUN_005ebe70
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
@@ -19,8 +19,7 @@ void core_waypoint_cpp_FUN_005ebe30(void)
   CWayPoint *this_ptr;
   
   this_ptr = (CWayPoint *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
-                       (0x558,"9@..\\core\\waypoint.cpp" + 2,0x53);
+             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x558,"..\\core\\waypoint.cpp",0x53);
   if (this_ptr == (CWayPoint *)0x0) {
     return;
   }

@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_startSfx_FUN_005a8e90()
 // Cross-references:
-//   core_event.cpp_FUN_004b0f00 (004b0f00) at 004b0f59 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004b0f00 (004b0f00) at 004b0f59 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireball_onCollision_FUN_004c1690 (004c1690) at 004c1736 [UNCONDITIONAL_CALL]
 //   core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 (004d1f20) at 004d1f5f [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_rollCredits_FUN_004e4010 (004e4010) at 004e43a8 [UNCONDITIONAL_CALL]

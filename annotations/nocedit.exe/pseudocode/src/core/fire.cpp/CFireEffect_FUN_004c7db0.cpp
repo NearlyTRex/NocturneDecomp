@@ -6,8 +6,8 @@
 // Cross-references:
 //   core_fire.cpp_CFireball_onCollision_FUN_004c1690 (004c1690) at 004c16be [UNCONDITIONAL_CALL]
 // Globals:
-//   CBulletTrail* g_CFireEffectBulletTrailsEnd
-//   CFireball[64] g_CFireEffectFireballs
+//   CBulletTrail* g_BulletTrailActiveListHead
+//   CFireball[64] g_FireballPool
 //   undefined4 DAT_02d62edc
 //   undefined4 DAT_02d62ee0
 //   undefined4 DAT_02d62ee4
@@ -15,7 +15,7 @@
 //   undefined4 DAT_02d62eec
 //   undefined4 DAT_02d62f00
 // Function calls:
-//   core_actor.cpp_FUN_0040cc70
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   sound_sndmain.cpp_SoundDelayComputeThing_FUN_005a9a00
 //   sound_sndmain.cpp_YetAnother2ComputingDelayCall_FUN_005a98b0
 
@@ -36,31 +36,31 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7db0(CFireEffect *this_ptr)
   int in_stack_00000030;
   int in_stack_00000034;
   
-  pCVar2 = g_CFireEffectBulletTrailsEnd;
-  iVar4 = (int)g_CFireEffectBulletTrailsEnd * 0x9c;
-  pcVar1 = g_CFireEffectBulletTrailsEnd->field0_0x0;
-  this_ptr_00 = g_CFireEffectFireballs + (int)g_CFireEffectBulletTrailsEnd;
-  g_CFireEffectBulletTrailsEnd = (CBulletTrail *)(pcVar1 + 1);
+  pCVar2 = g_BulletTrailActiveListHead;
+  iVar4 = (int)g_BulletTrailActiveListHead * 0x9c;
+  pcVar1 = g_BulletTrailActiveListHead->field0_0x0;
+  this_ptr_00 = g_FireballPool + (int)g_BulletTrailActiveListHead;
+  g_BulletTrailActiveListHead = (CBulletTrail *)(pcVar1 + 1);
   if (0x3f < (int)(pcVar1 + 1)) {
-    g_CFireEffectBulletTrailsEnd = (CBulletTrail *)0x0;
+    g_BulletTrailActiveListHead = (CBulletTrail *)0x0;
   }
-  (*(g_CFireEffectFireballs[(int)pCVar2].base.vtable)->setup)
+  (*(g_FireballPool[(int)pCVar2].base.vtable)->setup)
             (&this_ptr_00->base,in_stack_00000008,in_stack_0000000c);
-  iVar3 = core_actor_cpp_FUN_0040cc70();
-  g_CFireEffectFireballs[(int)pCVar2].timer = iVar3;
+  iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc70(0xc000,0xffff);
+  g_FireballPool[(int)pCVar2].timer = iVar3;
   if (in_stack_00000030 == 0) {
-    g_CFireEffectFireballs[(int)pCVar2].fade_rate = 0x2000;
+    g_FireballPool[(int)pCVar2].fade_rate = 0x2000;
   }
   else {
-    g_CFireEffectFireballs[(int)pCVar2].fade_rate = 0x8000;
+    g_FireballPool[(int)pCVar2].fade_rate = 0x8000;
   }
-  g_CFireEffectFireballs[(int)pCVar2].lighting_active = in_stack_00000030;
-  g_CFireEffectFireballs[(int)pCVar2].first_update_flag = 0;
-  g_CFireEffectFireballs[(int)pCVar2].field9_0x58 = in_stack_00000034;
+  g_FireballPool[(int)pCVar2].lighting_active = in_stack_00000030;
+  g_FireballPool[(int)pCVar2].first_update_flag = 0;
+  g_FireballPool[(int)pCVar2].field9_0x58 = in_stack_00000034;
   pCStack00000010 = this_ptr_00;
   sound_sndmain_cpp_YetAnother2ComputingDelayCall_FUN_005a98b0();
   iStack00000014 = iVar4 + 0x2d62eb4;
-  pCStack00000010 = (CFireball *)g_CFireEffectFireballs[(int)pCVar2].field9_0x58;
+  pCStack00000010 = (CFireball *)g_FireballPool[(int)pCVar2].field9_0x58;
   sound_sndmain_cpp_SoundDelayComputeThing_FUN_005a9a00();
   return;
 }
@@ -105,7 +105,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7db0(CFireEffect *this_ptr)
 // 004c7df7: ADD ESP,0xc
 // 004c7dfa: PUSH 0xffff
 // 004c7dff: PUSH 0xc000
-// 004c7e04: CALL core_actor.cpp_FUN_0040cc70
+// 004c7e04: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 004c7e09: ADD ESP,0x8
 // 004c7e0c: MOV dword ptr [EBX + 0x38],EAX

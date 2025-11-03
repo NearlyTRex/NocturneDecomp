@@ -15,7 +15,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c6850(CStranger *this_ptr)
   int in_stack_00000008;
   
   if (in_stack_00000008 == *(int *)(this_ptr->field2_0x1fbd8 + 0x54)) {
-    pCVar1 = (this_ptr->base_hero).base_character.base_actor.metadata.vtable;
+    pCVar1 = (this_ptr->base_hero).base_character.base_actor.vtable;
     this_ptr->field2_0x1fbd8[0x54] = '\0';
     this_ptr->field2_0x1fbd8[0x55] = '\0';
     this_ptr->field2_0x1fbd8[0x56] = '\0';

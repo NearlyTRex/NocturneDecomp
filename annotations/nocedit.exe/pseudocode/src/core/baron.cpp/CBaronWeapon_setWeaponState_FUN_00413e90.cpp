@@ -13,7 +13,7 @@
 //   core_baron.cpp_FUN_004135a0
 //   core_baron.cpp_FUN_00413f20
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_weapon.cpp_FUN_005ee640
+//   core_weapon.cpp_CWeapon_FUN_005ee640
 
 #include "nocturne.h"
 
@@ -23,9 +23,8 @@ void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_00413e90(CBaronWeapo
   CDemonActor *pCVar1;
   CDemonActor *pCStack00000008;
   
-  core_weapon_cpp_FUN_005ee640();
-  pCVar1 = (*((this_ptr->base_weapon).base_actor.metadata.vtable)->getCarrier)
-                     ((CDemonActor *)this_ptr);
+  core_weapon_cpp_CWeapon_FUN_005ee640(&this_ptr->base_weapon);
+  pCVar1 = (*((this_ptr->base_weapon).base_actor.vtable)->getCarrier)((CDemonActor *)this_ptr);
   if ((this_ptr->base_weapon).weapon_state == 2) {
     if (pCVar1 == (CDemonActor *)0x0) {
       g_CurrentFilename = "..\\core\\baron.cpp";
@@ -55,7 +54,7 @@ void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_00413e90(CBaronWeapo
 //   XREF to: Stack[0x8] (READ)
 // 00413e9b: PUSH EDX
 // 00413e9c: PUSH EBX
-// 00413e9d: CALL core_weapon.cpp_FUN_005ee640
+// 00413e9d: CALL core_weapon.cpp_CWeapon_FUN_005ee640
 //   XREF to: 005ee640 (UNCONDITIONAL_CALL)
 // 00413ea2: ADD ESP,0x8
 // 00413ea5: MOV EAX,dword ptr [EBX + 0x154]

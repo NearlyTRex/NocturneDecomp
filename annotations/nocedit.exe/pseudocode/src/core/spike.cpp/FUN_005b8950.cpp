@@ -17,10 +17,10 @@
 //   undefined4 g_CDemonSetInstance.damage_listeners
 //   undefined4 DAT_03263318
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408e80
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_box.cpp_CBoundingBox3D_expand_FUN_00420240
 //   core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0
 //   core_box.cpp_CBoundingBox3D_reset_FUN_00420fb0
@@ -49,69 +49,68 @@ void core_spike_cpp_FUN_005b8950(void)
   CDemonActor *in_stack_00000004;
   int iStack00000008;
   int iStack00000010;
-  float *pfStack_1b4;
+  int in_stack_00000024;
   undefined1 auStack_118 [24];
   undefined1 auStack_100 [28];
-  CDemonActor *pCStack_e4;
-  CDemonActor *pCStack_e0;
-  CDemonActor *pCStack_dc;
-  float fStack_d8;
-  float fStack_d4;
-  undefined1 auStack_d0 [20];
-  float fStack_bc;
-  CBoundingBox3D CStack_b0;
+  undefined1 auStack_e4 [24];
+  float fStack_cc;
+  float fStack_c8;
+  void *pvStack_c4;
+  undefined1 auStack_c0 [28];
+  float fStack_a4;
+  float fStack_a0;
   float fStack_98;
-  float afStack_94 [7];
-  undefined4 uStack_78;
-  undefined4 uStack_74;
-  undefined4 uStack_70;
-  float fStack_60;
-  float fStack_5c;
-  float fStack_58;
-  float fStack_4c;
+  CVector3f CStack_94;
+  CBoundingBox3D CStack_88;
+  CVector3f CStack_70;
+  CVector3f CStack_60;
+  undefined1 auStack_54 [12];
   float fStack_48;
   float fStack_44;
   float fStack_40;
-  CVector3f CStack_34;
+  undefined1 auStack_38 [8];
+  float fStack_30;
+  float fStack_2c;
   float fStack_28;
-  float fStack_20;
+  undefined1 auStack_24 [8];
   float fStack_1c;
   undefined4 uStack_18;
   
-  (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+  (*in_stack_00000004->vtable->getBoundingBox)
             (in_stack_00000004,(CBoundingBox3D *)(auStack_100 + 0x14));
-  uStack_78 = 0x3dcccccd;
-  uStack_74 = 0x3dcccccd;
-  uStack_70 = 0;
-  fStack_d8 = fStack_d8 + _DAT_00652ebc;
-  fStack_d4 = fStack_d4 + _DAT_00652ebc;
-  auStack_d0._4_4_ = (float)auStack_d0._4_4_ + _DAT_00652ec0;
-  auStack_d0._8_4_ = (float)auStack_d0._8_4_ + _DAT_00652ec0;
-  core_box_cpp_CBoundingBox3D_reset_FUN_00420fb0((CBoundingBox3D *)(auStack_d0 + 0x10));
+  CStack_88.max.y = 0.1;
+  CStack_88.max.z = 0.1;
+  CStack_70.x = 0.0;
+  auStack_e4._12_4_ = (float)auStack_e4._12_4_ + _DAT_00652ebc;
+  auStack_e4._16_4_ = (float)auStack_e4._16_4_ + _DAT_00652ebc;
+  fStack_cc = fStack_cc + _DAT_00652ec0;
+  fStack_c8 = fStack_c8 + _DAT_00652ec0;
+  core_box_cpp_CBoundingBox3D_reset_FUN_00420fb0((CBoundingBox3D *)auStack_c0);
   corner_index = 0;
-  point = (CVector3f *)&pfStack_1b4;
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&pfStack_1b4,8,&g_CVectorTypeInfo);
+  point = (CVector3f *)&stack0xfffffe4c;
+  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&stack0xfffffe4c,8,&g_CVectorTypeInfo);
   do {
-    core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
-              ((CBoundingBox3D *)auStack_d0,&CStack_34,corner_index);
-    pCVar3 = (CVector3f *)core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
+    pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
+                       ((CBoundingBox3D *)(auStack_e4 + 0x14),(CVector3f *)(auStack_38 + 4),
+                        corner_index);
+    pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                       (in_stack_00000004,(CVector3f *)auStack_54,pCVar3);
     if (point != pCVar3) {
       point->x = pCVar3->x;
       point->y = pCVar3->y;
       point->z = pCVar3->z;
     }
     corner_index = corner_index + 1;
-    core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&CStack_b0,point);
+    core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)(auStack_c0 + 0x10),point);
     point = point + 1;
   } while ((int)corner_index < 8);
-  fStack_1c = SQRT(fStack_bc * fStack_bc +
-                   (float)auStack_d0._12_4_ * (float)auStack_d0._12_4_ +
-                   (float)auStack_d0._16_4_ * (float)auStack_d0._16_4_);
-  afStack_94[2] = CStack_b0.min.x - fStack_bc;
-  pfStack_1b4 = afStack_94;
-  afStack_94[0] = 0.0;
-  afStack_94[1] = 0.0;
-  core_actor_cpp_CDemonActor_FUN_00408e80(in_stack_00000004);
+  fStack_1c = SQRT((float)auStack_c0._4_4_ * (float)auStack_c0._4_4_ +
+                   (float)pvStack_c4 * (float)pvStack_c4 +
+                   (float)auStack_c0._0_4_ * (float)auStack_c0._0_4_);
+  CStack_94.z = (float)auStack_c0._16_4_ - (float)auStack_c0._4_4_;
+  CStack_94.x = 0.0;
+  CStack_94.y = 0.0;
+  core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(in_stack_00000004,&CStack_70,&CStack_94);
   iStack00000008 = 0;
   for (iStack00000010 = 0; iStack00000010 < g_CDemonSetPtr->damage_listener_count;
       iStack00000010 = iStack00000010 + 1) {
@@ -120,47 +119,49 @@ void core_spike_cpp_FUN_005b8950(void)
     fVar2 = (in_stack_00000004->location).position.y - (this_ptr->location).position.y;
     fVar1 = (in_stack_00000004->location).position.z - (this_ptr->location).position.z;
     if (fVar1 * fVar1 + fVar2 * fVar2 + fVar5 * fVar5 <= unaff_retaddr) {
-      pfStack_1b4 = (float *)0x5b8c0b;
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)(auStack_118 + 0x14));
       auStack_100._0_4_ = 0.0;
-      pfStack_1b4 = (float *)0x5b8c29;
-      iVar4 = (*((this_ptr->metadata).vtable)->hasCollision)(this_ptr,(SCollisionInfo *)auStack_100)
-      ;
+      iVar4 = (*this_ptr->vtable->hasCollision)(this_ptr,(SCollisionInfo *)auStack_100);
       if (iVar4 != 0) {
-        fStack_d8 = 0.0;
-        core_actor_cpp_CDemonActor_FUN_00408f10(in_stack_00000004);
-        if (fStack_20 < CStack_b0.max.x) {
-          fStack_20 = CStack_b0.max.x;
+        auStack_e4._12_4_ = 0.0;
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                  (in_stack_00000004,(CVector3f *)auStack_24,&(this_ptr->location).position);
+        if ((float)auStack_24._4_4_ < fStack_a4) {
+          auStack_24._4_4_ = fStack_a4;
         }
-        if (fStack_98 < fStack_20) {
-          fStack_20 = fStack_98;
+        if (fStack_98 < (float)auStack_24._4_4_) {
+          auStack_24._4_4_ = fStack_98;
         }
-        if (fStack_1c < CStack_b0.max.y) {
-          fStack_1c = CStack_b0.max.y;
+        if (fStack_1c < fStack_a0) {
+          fStack_1c = fStack_a0;
         }
-        if (afStack_94[0] < fStack_1c) {
-          fStack_1c = afStack_94[0];
+        if (CStack_94.x < fStack_1c) {
+          fStack_1c = CStack_94.x;
         }
         uStack_18 = 0;
-        core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-        fVar5 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(this_ptr);
+        core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                  (in_stack_00000004,(CVector3f *)auStack_38,(CVector3f *)(auStack_24 + 4));
+        fVar5 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
+                          (this_ptr,(CVector3f *)(auStack_38 + 4),(CVector3f *)(auStack_54 + 8),
+                           (CVector3f *)(auStack_c0 + 4),(SCollisionInfo *)auStack_e4,
+                           in_stack_00000024,&CStack_88);
         if ((0.0 <= fVar5) && (fVar5 <= 1.0)) {
-          fStack_60 = CStack_34.y + fStack_48 * fVar5;
-          fStack_5c = CStack_34.z + fStack_44 * fVar5;
-          fStack_58 = fStack_28 + fStack_40 * fVar5;
-          core_actor_cpp_CDemonActor_FUN_00408f10(this_ptr);
+          CStack_60.x = fStack_30 + fStack_48 * fVar5;
+          CStack_60.y = fStack_2c + fStack_44 * fVar5;
+          CStack_60.z = fStack_28 + fStack_40 * fVar5;
+          core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                    (this_ptr,(CVector3f *)auStack_54,&CStack_60);
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_118);
-          auStack_118._8_4_ = *(undefined4 *)in_stack_00000004[3].metadata.field5_0x28;
-          pCStack_e4 = (CDemonActor *)0x67;
-          if ((float *)(auStack_100 + 8) != &fStack_4c) {
-            auStack_100._8_4_ = fStack_4c;
+          auStack_118._8_4_ = in_stack_00000004[3].field28_0x150;
+          auStack_e4._0_4_ = (CDemonActor *)0x67;
+          if (auStack_100 + 8 != auStack_54 + 8) {
+            auStack_100._8_4_ = auStack_54._8_4_;
             auStack_100._12_4_ = fStack_48;
             auStack_100._16_4_ = fStack_44;
           }
-          pCStack_e0 = in_stack_00000004;
-          pCStack_dc = in_stack_00000004;
-          (*(this_ptr->metadata).vtable[1].playAmbientSoundWithVolume)
-                    (this_ptr,auStack_118 + 4,fVar5);
+          auStack_e4._4_4_ = in_stack_00000004;
+          auStack_e4._8_4_ = in_stack_00000004;
+          (*this_ptr->vtable[1].playAmbientSoundWithVolume)(this_ptr,auStack_118 + 4,fVar5);
         }
       }
     }
@@ -245,7 +246,7 @@ void core_spike_cpp_FUN_005b8950(void)
 // 005b8a33: LEA EAX,[ESP + 0x168]
 // 005b8a3a: PUSH EAX
 // 005b8a3b: PUSH ESI
-// 005b8a3c: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005b8a3c: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005b8a41: ADD ESP,0xc
 // 005b8a44: CMP EBX,EAX
@@ -321,7 +322,7 @@ void core_spike_cpp_FUN_005b8950(void)
 // 005b8b43: MOV dword ptr [ESP + 0x128],EDI
 // 005b8b4a: PUSH ESI
 // 005b8b4b: FSTP float ptr [ESP + 0x1b8]
-// 005b8b52: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 005b8b52: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 005b8b57: ADD ESP,0xc
 // 005b8b5a: LEA EAX,[ESI + 0x20]
@@ -398,7 +399,7 @@ void core_spike_cpp_FUN_005b8950(void)
 // 005b8c40: XOR EDX,EDX
 // 005b8c42: PUSH ESI
 // 005b8c43: MOV dword ptr [ESP + 0xc8],EDX
-// 005b8c4a: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 005b8c4a: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 005b8c4f: ADD ESP,0xc
 // 005b8c52: FLD float ptr [ESP + 0x170]
@@ -444,7 +445,7 @@ void core_spike_cpp_FUN_005b8950(void)
 // 005b8ce6: XOR ECX,ECX
 // 005b8ce8: PUSH ESI
 // 005b8ce9: MOV dword ptr [ESP + 0x184],ECX
-// 005b8cf0: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005b8cf0: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005b8cf5: ADD ESP,0xc
 // 005b8cf8: LEA EAX,[ESP + 0x104]
@@ -511,7 +512,7 @@ void core_spike_cpp_FUN_005b8950(void)
 // 005b8de7: FSTP float ptr [ESP + 0x134]
 // 005b8dee: PUSH EBX
 // 005b8def: FSTP float ptr [ESP + 0x13c]
-// 005b8df6: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 005b8df6: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 005b8dfb: ADD ESP,0xc
 // 005b8dfe: LEA EAX,[ESP + 0x6c]

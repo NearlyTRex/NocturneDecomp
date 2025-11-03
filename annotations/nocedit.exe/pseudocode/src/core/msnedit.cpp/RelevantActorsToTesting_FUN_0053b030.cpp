@@ -139,8 +139,7 @@ void core_msnedit_cpp_RelevantActorsToTesting_FUN_0053b030(void)
       return;
     }
     core_actor_cpp_FUN_0040e130();
-    (*((pCStack_20->metadata).vtable)->getPropertyList)
-              (pCStack_20,(CActorPropertyList *)&stack0xffffd448);
+    (*pCStack_20->vtable->getPropertyList)(pCStack_20,(CActorPropertyList *)&stack0xffffd448);
     index = 0;
     if (0 < (int)auStack_2c._0_4_) {
       do {

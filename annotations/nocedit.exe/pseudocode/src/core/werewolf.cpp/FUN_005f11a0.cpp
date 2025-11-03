@@ -16,9 +16,11 @@ void core_werewolf_cpp_FUN_005f11a0(void)
 
 {
   int iVar1;
+  int in_stack_00000004;
   CCharacter *in_stack_00000008;
   
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0();
+  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
+                    ((CMotionController *)(in_stack_00000004 + 0x158));
   if (*(int *)(iVar1 + 0x24) == 0x13) {
     return;
   }

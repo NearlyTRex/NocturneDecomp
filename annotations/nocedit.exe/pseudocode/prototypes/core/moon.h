@@ -47,6 +47,14 @@ SBat * SBat::ctor(SBat * this_ptr);
 // Address: 0052a420
 SBat * SBat::dtor(SBat * this_ptr);
 
-// Original: core_moon.cpp_FUN_0052a430
+// Original: core_moon.cpp_freeBats_FUN_0052a430
 // Address: 0052a430
-undefined FUN_0052a430();
+void freeBats(SBat * * array);
+
+// Original: core_moon.cpp_freeCourses_FUN_0052a450
+// Address: 0052a450
+void freeCourses(CCourse * * array);
+
+// Original: core_moon.cpp_freeAlphaBitmaps_FUN_0052a470
+// Address: 0052a470
+void freeAlphaBitmaps(CAlphaBitmap * * array);

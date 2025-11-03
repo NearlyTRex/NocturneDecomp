@@ -21,7 +21,7 @@
 //   undefined4 g_CGameInstance.delta_time_float
 //   void* g_CKeysPtr
 //   CDemonSet g_CDemonSetInstance
-//   undefined4 g_CDemonSetInstance.field22_0x15ac80[0]
+//   undefined4 g_CDemonSetInstance.lighting_quality_mode
 //   CDemonRaytrace g_CDemonRaytraceInstance
 // Function calls:
 //   core_course.cpp_CCourse_FUN_00442710
@@ -54,21 +54,20 @@
 void core_course_cpp_FUN_00443bc0(void)
 
 {
-  CDemonSet *pCVar1;
-  uint uVar2;
+  uint uVar1;
   undefined4 extraout_EAX;
   undefined4 extraout_EAX_00;
-  int iVar3;
+  int iVar2;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
   BADSPACEBASE *in_ESP;
+  SRenderVertex *pSVar3;
   SRenderVertex *pSVar4;
-  SRenderVertex *pSVar5;
-  double *pdVar6;
-  int *piVar7;
-  byte bVar8;
-  float10 fVar9;
-  double dVar10;
+  double *pdVar5;
+  int *piVar6;
+  byte bVar7;
+  float10 fVar8;
+  double dVar9;
   CCourse *in_stack_00000004;
   CKeyFramedModel *in_stack_00000008;
   SRenderVertex *in_stack_fffffe6c;
@@ -105,17 +104,13 @@ void core_course_cpp_FUN_00443bc0(void)
   float local_18;
   int local_14;
   
-  bVar8 = 0;
+  bVar7 = 0;
   local_18 = 0.0;
-  pCVar1 = g_CDemonSetPtr;
-  pCVar1->field22_0x15ac80[0] = '\x01';
-  pCVar1->field22_0x15ac80[1] = '\0';
-  pCVar1->field22_0x15ac80[2] = '\0';
-  pCVar1->field22_0x15ac80[3] = '\0';
+  g_CDemonSetPtr->lighting_quality_mode = 1;
   local_28 = 0;
   local_2c = 0;
   local_24 = 0;
-  fVar9 = (float10)core_skeleton_cpp_FUN_005a2060();
+  fVar8 = (float10)core_skeleton_cpp_FUN_005a2060();
   local_cc.z = local_cc.z + _DAT_0061943b;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffed0);
   while( true ) {
@@ -126,8 +121,8 @@ void core_course_cpp_FUN_00443bc0(void)
     local_3c = (double)local_18;
     local_20 = (float)local_14;
     if (local_3c < 0.0) {
-      dVar10 = crt_math_c_floor_FUN_005feb90((double)fVar9);
-      fVar9 = (float10)dVar10;
+      dVar9 = crt_math_c_floor_FUN_005feb90((double)fVar8);
+      fVar8 = (float10)dVar9;
       local_1c = (float)(double)CONCAT44(extraout_EDX_00,extraout_EAX_00) * local_20 +
                  (float)local_3c;
       if (local_1c < 0.0) {
@@ -135,15 +130,15 @@ void core_course_cpp_FUN_00443bc0(void)
       }
     }
     else {
-      dVar10 = crt_math_c_floor_FUN_005feb90((double)fVar9);
-      fVar9 = (float10)dVar10;
+      dVar9 = crt_math_c_floor_FUN_005feb90((double)fVar8);
+      fVar8 = (float10)dVar9;
       local_1c = (float)local_3c - (float)(double)CONCAT44(extraout_EDX,extraout_EAX) * local_20;
     }
-    uVar2 = local_24;
+    uVar1 = local_24;
     local_18 = local_1c;
     uStack_14c = (double)CONCAT44(0x443c8b,(undefined4)uStack_14c);
     core_course_cpp_CCourse_FUN_00442710(in_stack_00000004);
-    if (uVar2 != 0) {
+    if (uVar1 != 0) {
       if (&local_cc != &local_80) {
         local_cc.x = local_80.x;
         local_cc.y = local_80.y;
@@ -164,7 +159,7 @@ void core_course_cpp_FUN_00443bc0(void)
       local_50 = local_b0[0].x;
       local_4c = local_b0[0].y;
       local_48 = local_b0[0].z;
-      fVar9 = (float10)core_course_cpp_FUN_00443760();
+      fVar8 = (float10)core_course_cpp_FUN_00443760();
     }
     else {
       g_CDemonRaytraceInstance.rendering_mode = 1;
@@ -191,19 +186,19 @@ void core_course_cpp_FUN_00443bc0(void)
       local_74.z = (int)ROUND(local_60 * FLOAT_0065c060);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_74);
-      pSVar5 = g_CDemonRendererPtr->vertex_buffer_ptr;
-      pSVar4 = pSVar5 + 1;
-      pdVar6 = &dStack_164;
-      for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *(int *)pdVar6 = (pSVar4->projected_vertex).transformed_x;
-        pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar8 * -2 + 1) * 4);
-        pdVar6 = (double *)((int)pdVar6 + ((uint)bVar8 * -2 + 1) * 4);
+      pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
+      pSVar3 = pSVar4 + 1;
+      pdVar5 = &dStack_164;
+      for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+        *(int *)pdVar5 = (pSVar3->projected_vertex).transformed_x;
+        pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar7 * -2 + 1) * 4);
+        pdVar5 = (double *)((int)pdVar5 + ((uint)bVar7 * -2 + 1) * 4);
       }
-      piVar7 = (int *)&stack0xfffffe6c;
-      for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *piVar7 = (pSVar5->projected_vertex).transformed_x;
-        pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);
-        piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
+      piVar6 = (int *)&stack0xfffffe6c;
+      for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+        *piVar6 = (pSVar4->projected_vertex).transformed_x;
+        pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);
+        piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
       }
       engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe6c,in_stack_fffffe70);
       if (&local_8c == &local_68) {
@@ -235,30 +230,30 @@ void core_course_cpp_FUN_00443bc0(void)
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     local_30 = g_CGamePtr->delta_time_float;
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
-    if (iVar3 != 0) break;
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x19);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    if (iVar2 != 0) break;
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x19);
+    if (iVar2 != 0) {
       local_28 = (uint)(local_28 == 0);
     }
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x13);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x13);
+    if (iVar2 != 0) {
       local_24 = (uint)(local_24 == 0);
     }
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1f);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1f);
+    if (iVar2 != 0) {
       local_2c = (uint)(local_2c == 0);
     }
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x34);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x34);
+    if (iVar2 != 0) {
       local_18 = local_18 + 1.0;
     }
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x33);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x33);
+    if (iVar2 != 0) {
       local_18 = local_18 + _DAT_0061944b;
     }
     if (local_24 == 0) {
-      fVar9 = (float10)core_skeleton_cpp_FUN_005a20b0();
+      fVar8 = (float10)core_skeleton_cpp_FUN_005a20b0();
     }
     if (local_28 == 0) {
       local_18 = local_30 * (float)_DAT_00619443 + local_18;
@@ -266,11 +261,7 @@ void core_course_cpp_FUN_00443bc0(void)
   }
   engine_2d_c_clearInputAndWait_FUN_00403260();
   g_CDemonRaytraceInstance.rendering_mode = 0;
-  pCVar1 = g_CDemonSetPtr;
-  pCVar1->field22_0x15ac80[0] = '\0';
-  pCVar1->field22_0x15ac80[1] = '\0';
-  pCVar1->field22_0x15ac80[2] = '\0';
-  pCVar1->field22_0x15ac80[3] = '\0';
+  g_CDemonSetPtr->lighting_quality_mode = 0;
   return;
 }
 

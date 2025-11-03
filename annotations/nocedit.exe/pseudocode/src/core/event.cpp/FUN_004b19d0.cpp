@@ -1,8 +1,8 @@
 // Name: core_event.cpp_FUN_004b19d0
 // Address: 004b19d0
 // Address Range: [[004b19d0, 004b1a29] [004b1a2c, 004b1a36] [004b1a38, 004b1a3e]]
-// Convention: unknown
-// Signature: undefined core_event.cpp_FUN_004b19d0()
+// Convention: __cdecl
+// Signature: void core_event.cpp_FUN_004b19d0(void)
 // Cross-references:
 //   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0 (0044f3e0) at 0044fae2 [UNCONDITIONAL_CALL]
 //   core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130 (00451130) at 0045116c [UNCONDITIONAL_CALL]
@@ -15,26 +15,27 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_event.cpp_FUN_004b19d0(undefined4 param_1) */
-
-void core_event_cpp_FUN_004b19d0
-               (undefined4 param_1,uint param_2,undefined4 unaff_EBX,int param_4,uint param_5)
+void __cdecl core_event_cpp_FUN_004b19d0(void)
 
 {
   longlong lVar1;
   undefined4 uVar2;
   uint uVar3;
+  int in_ECX;
   longlong *plVar4;
   undefined1 uVar5;
+  uint in_EDX;
+  undefined4 unaff_EBX;
   uint uVar6;
   bool bVar7;
+  uint in_stack_00000004;
   
-  lVar1 = *(longlong *)(&g_CharacterSet + (param_2 & 0xff) * 8);
-  uVar2 = *(undefined4 *)(&g_CharacterSet + (param_2 & 0xff) * 8);
-  uVar3 = param_5 - 8;
-  if (param_5 < 8 || uVar3 == 0) goto LAB_004b1a18;
-  uVar6 = -param_4 & 7;
-  plVar4 = (longlong *)(param_4 + uVar6);
+  lVar1 = *(longlong *)(&g_CharacterSet + (in_EDX & 0xff) * 8);
+  uVar2 = *(undefined4 *)(&g_CharacterSet + (in_EDX & 0xff) * 8);
+  uVar3 = in_stack_00000004 - 8;
+  if (in_stack_00000004 < 8 || uVar3 == 0) goto LAB_004b1a18;
+  uVar6 = -in_ECX & 7;
+  plVar4 = (longlong *)(in_ECX + uVar6);
   bVar7 = uVar3 < uVar6;
   uVar3 = uVar3 - uVar6;
   uVar5 = (undefined1)uVar2;

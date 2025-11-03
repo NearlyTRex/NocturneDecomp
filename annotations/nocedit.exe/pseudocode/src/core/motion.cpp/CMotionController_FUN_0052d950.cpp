@@ -1,8 +1,8 @@
 // Name: core_motion.cpp_CMotionController_FUN_0052d950
 // Address: 0052d950
 // Address Range: [[0052d950, 0052da44]]
-// Convention: unknown
-// Signature: undefined core_motion.cpp_CMotionController_FUN_0052d950()
+// Convention: __cdecl
+// Signature: int core_motion.cpp_CMotionController_FUN_0052d950(CMotionController * this_ptr)
 // Cross-references:
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610 (0052d610) at 0052d674 [UNCONDITIONAL_CALL]
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 (0052db00) at 0052db7d [UNCONDITIONAL_CALL]
@@ -16,32 +16,27 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_motion.cpp_CMotionController_FUN_0052d950(undefined4
-   pMotionController) */
-
-undefined4 core_motion_cpp_CMotionController_FUN_0052d950(void)
+int __cdecl core_motion_cpp_CMotionController_FUN_0052d950(CMotionController *this_ptr)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
   int iVar4;
-  int in_stack_00000004;
   
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0();
-  iVar4 = *(int *)(in_stack_00000004 + 0x28);
+  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
+  iVar4 = this_ptr->state_index;
   if ((iVar4 < 0) || (iVar4 == *(int *)(iVar1 + 0x24))) {
-    *(undefined4 *)(in_stack_00000004 + 0x2c) = 0;
+    this_ptr->field11_0x2c = 0;
     return 0;
   }
-  if ((*(int **)(in_stack_00000004 + 0x2c) == (int *)0x0) ||
-     (iVar4 != **(int **)(in_stack_00000004 + 0x2c))) {
+  if (((int *)this_ptr->field11_0x2c == (int *)0x0) || (iVar4 != *(int *)this_ptr->field11_0x2c)) {
     iVar2 = 0;
     iVar4 = 0;
     iVar3 = iVar1;
     if (0 < *(int *)(iVar1 + 0x68)) {
       do {
-        if (*(int *)(iVar3 + 0x6c) == *(int *)(in_stack_00000004 + 0x28)) {
+        if (*(int *)(iVar3 + 0x6c) == this_ptr->state_index) {
           iVar4 = iVar1 + 0x6c + iVar2 * 0x18;
           break;
         }
@@ -49,26 +44,26 @@ undefined4 core_motion_cpp_CMotionController_FUN_0052d950(void)
         iVar3 = iVar3 + 0x18;
       } while (iVar2 < *(int *)(iVar1 + 0x68));
     }
-    if ((iVar4 != 0) && (iVar4 != *(int *)(in_stack_00000004 + 0x2c))) {
-      *(undefined4 *)(in_stack_00000004 + 0x2c) = 0;
-      core_motion_cpp_CMotionController_FUN_0052de40();
+    if ((iVar4 != 0) && (iVar4 != this_ptr->field11_0x2c)) {
+      this_ptr->field11_0x2c = 0;
+      core_motion_cpp_CMotionController_FUN_0052de40(this_ptr);
       switch(*(undefined4 *)(iVar4 + 4)) {
       case 1:
-        core_motion_cpp_CMotionController_FUN_0052dde0();
+        core_motion_cpp_CMotionController_FUN_0052dde0(this_ptr);
         if (*(int *)(iVar4 + 0x14) != 0) {
-          iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0();
-          *(undefined4 *)(in_stack_00000004 + 0x28) = *(undefined4 *)(iVar4 + 0x24);
+          iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
+          this_ptr->state_index = *(int *)(iVar4 + 0x24);
         }
         return 1;
       case 2:
-        *(int *)(in_stack_00000004 + 0x2c) = iVar4;
+        this_ptr->field11_0x2c = iVar4;
         return 0;
       case 3:
       case 4:
       case 5:
       case 6:
-        *(int *)(in_stack_00000004 + 0x2c) = iVar4;
-        core_motion_cpp_CMotionController_FUN_0052dbc0();
+        this_ptr->field11_0x2c = iVar4;
+        core_motion_cpp_CMotionController_FUN_0052dbc0(this_ptr);
         return 0;
       }
     }

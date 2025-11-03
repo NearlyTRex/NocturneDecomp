@@ -21,7 +21,7 @@
 //   core_enemy.cpp_CEnemy_FUN_004aa170 (004aa170) at 004aa1b2 [UNCONDITIONAL_CALL]
 //   core_flame.cpp_FUN_004cae70 (004cae70) at 004caf46 [UNCONDITIONAL_CALL]
 //   core_flamecan.cpp_FUN_004cb6e0 (004cb6e0) at 004cb72f [UNCONDITIONAL_CALL]
-//   core_glass.cpp_FUN_004eb3c0 (004eb3c0) at 004eb424 [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_getPropertyList_FUN_004eb3c0 (004eb3c0) at 004eb424 [UNCONDITIONAL_CALL]
 //   core_grave.cpp_FUN_004ee9e0 (004ee9e0) at 004eea36 [UNCONDITIONAL_CALL]
 //   core_hostage.cpp_FUN_004f69c0 (004f69c0) at 004f6ae0 [UNCONDITIONAL_CALL]
 //   core_lever.cpp_FUN_00505240 (00505240) at 00505364 [UNCONDITIONAL_CALL]
@@ -46,7 +46,11 @@
 void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList *this_ptr)
 
 {
-  core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0(this_ptr);
+  char *in_stack_00000008;
+  void *in_stack_0000000c;
+  
+  core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
+            (this_ptr,4,in_stack_00000008,in_stack_0000000c,(void *)0x0);
   return;
 }
 

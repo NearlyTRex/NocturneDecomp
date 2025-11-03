@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: undefined4 core_game.cpp_CGame_fadeIn_FUN_004e0b90(CGame * this_ptr)
 // Cross-references:
-//   core_event.cpp_CEvent_EventReadingFromFile_FUN_004ae140 (004ae140) at 004af173 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004ae140 (004ae140) at 004af173 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_runGameSession_FUN_004daf80 (004daf80) at 004dbb43 [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055cf8e [UNCONDITIONAL_CALL]
 // Globals:

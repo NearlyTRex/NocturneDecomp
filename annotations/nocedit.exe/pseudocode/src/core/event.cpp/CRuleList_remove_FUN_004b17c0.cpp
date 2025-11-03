@@ -1,10 +1,10 @@
 // Name: core_event.cpp_CRuleList_remove_FUN_004b17c0
 // Address: 004b17c0
 // Address Range: [[004b17c0, 004b1884]]
-// Convention: unknown
-// Signature: undefined core_event.cpp_CRuleList_remove_FUN_004b17c0()
+// Convention: __cdecl
+// Signature: void core_event.cpp_CRuleList_remove_FUN_004b17c0(CRuleList * this_ptr)
 // Cross-references:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040fe51 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040fe51 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_event_cpp_00625fc1
 //   TerminatedCString s_CRuleList_remove_invalid_00625fd3
@@ -16,30 +16,26 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_event.cpp_CRuleList_remove(undefined4 param_1, undefined4 param_2) */
-
-void core_event_cpp_CRuleList_remove_FUN_004b17c0(void)
+void __cdecl core_event_cpp_CRuleList_remove_FUN_004b17c0(CRuleList *this_ptr)
 
 {
   int iVar1;
-  int *in_stack_00000004;
   int in_stack_00000008;
   
-  if ((in_stack_00000008 < 0) || (*in_stack_00000004 <= in_stack_00000008)) {
+  if ((in_stack_00000008 < 0) || (this_ptr->list_size <= in_stack_00000008)) {
     g_CurrentFilename = "..\\core\\event.cpp";
     g_CurrentLineNumber = 0xcef;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CRuleList::remove - invalid index");
   }
-  iVar1 = *in_stack_00000004;
-  *in_stack_00000004 = iVar1 + -1;
+  iVar1 = this_ptr->list_size + -1;
+  this_ptr->list_size = iVar1;
   crt_string_c_memmove_FUN_005fe5e0
-            (in_stack_00000004 + in_stack_00000008 * 0x19 + 1,
-             in_stack_00000004 + (in_stack_00000008 + 1) * 0x19 + 1,
-             ((iVar1 + -1) - in_stack_00000008) * 100);
+            (this_ptr + in_stack_00000008 * 0x19 + 1,this_ptr + (in_stack_00000008 + 1) * 0x19 + 1,
+             (iVar1 - in_stack_00000008) * 100);
   crt_string_c_memmove_FUN_005fe5e0
-            (in_stack_00000004 + in_stack_00000008 * 0x19 + 0x7e,
-             in_stack_00000004 + (in_stack_00000008 + 1) * 0x19 + 0x7e,
-             (*in_stack_00000004 - in_stack_00000008) * 100);
+            (this_ptr + in_stack_00000008 * 0x19 + 0x7e,
+             this_ptr + (in_stack_00000008 + 1) * 0x19 + 0x7e,
+             (this_ptr->list_size - in_stack_00000008) * 100);
   return;
 }
 

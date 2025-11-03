@@ -1,8 +1,8 @@
 // Name: core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0
 // Address: 0059b8d0
 // Address Range: [[0059b8d0, 0059b960]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0()
+// Convention: __cdecl
+// Signature: void core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0(CDeformableModel * this_ptr, char * filename)
 // Cross-references:
 //   core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070 (004be070) at 004be0e9 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_LoadSkeletonDeformable_FUN_005a1cf0 (005a1cf0) at 005a1d9d [UNCONDITIONAL_CALL]
@@ -22,21 +22,18 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_skeleton.cpp_CDeformableModel_load(CDeformableModel* pModel,
-   undefined4 sFilename) */
-
-void core_skeleton_cpp_CDeformableModel_load_FUN_0059b8d0(void)
+void __cdecl
+core_skeleton_cpp_CDeformableModel_load_FUN_0059b8d0(CDeformableModel *this_ptr,char *filename)
 
 {
   char cVar1;
-  FILE *file_ptr;
+  FILE *file_handle;
   char *pcVar2;
   char *pcVar3;
-  int in_stack_00000004;
-  char *in_stack_00000008;
+  CDeformableModel *in_stack_0000000c;
   
-  pcVar3 = (char *)(in_stack_00000004 + 0x8fb0);
-  pcVar2 = in_stack_00000008;
+  pcVar3 = this_ptr->model_identifier;
+  pcVar2 = filename;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;
@@ -46,15 +43,14 @@ void core_skeleton_cpp_CDeformableModel_load_FUN_0059b8d0(void)
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  file_ptr = engine_dosio_c_getFile_FUN_00481a50("models",in_stack_00000008,"rt");
-  if (file_ptr == (FILE *)0x0) {
+  file_handle = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rt");
+  if (file_handle == (FILE *)0x0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0x4b2;
-    core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("CDeformableModel::load - Can't open %s",in_stack_00000008);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::load - Can't open %s",filename);
   }
-  core_skeleton_cpp_CDeformableModel_loadStream_FUN_0059b970();
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\skeleton.cpp",0x4b4);
+  core_skeleton_cpp_CDeformableModel_loadStream_FUN_0059b970(in_stack_0000000c,file_handle);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\skeleton.cpp",0x4b4);
   return;
 }
 

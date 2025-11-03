@@ -17,9 +17,9 @@
 //   undefined4 DAT_02f33744
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
+//   core_actor.cpp_CDemonActor_FUN_0040dec0
 //   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
-//   core_actor.cpp_FUN_0040dec0
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
 //   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 //   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
@@ -49,7 +49,7 @@ undefined4 core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void)
                           (*(CDemonActor **)in_stack_00000004[1].actor_name,"CBoxActor");
         if (iVar1 != 0) {
           core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-          pCVar2 = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+          pCVar2 = (*in_stack_00000004->vtable->getBoundingBox)
                              (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd0);
           iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar2);
           if (iVar1 != 0) {
@@ -71,13 +71,13 @@ undefined4 core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void)
         }
       }
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-      pCVar2 = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+      pCVar2 = (*in_stack_00000004->vtable->getBoundingBox)
                          (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe8);
       iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar2);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
       if (iVar1 != 0) {
         fStack_2c = 6.518866e-39;
-        core_actor_cpp_FUN_0040dec0(in_stack_00000004);
+        core_actor_cpp_CDemonActor_FUN_0040dec0(in_stack_00000004);
         return 1;
       }
     }
@@ -153,7 +153,7 @@ undefined4 core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void)
 // 0046fbe5: PUSH 0x0
 // 0046fbe7: PUSH 0xff
 // 0046fbec: PUSH EBX
-// 0046fbed: CALL core_actor.cpp_FUN_0040dec0
+// 0046fbed: CALL core_actor.cpp_CDemonActor_FUN_0040dec0
 //   XREF to: 0040dec0 (UNCONDITIONAL_CALL)
 // 0046fbf2: ADD ESP,0x14
 // 0046fbf5: MOV EAX,0x1

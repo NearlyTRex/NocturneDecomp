@@ -2,7 +2,7 @@
 // Address: 004e8fd0
 // Address Range: [[004e8fd0, 004e8ff3]]
 // Convention: __cdecl
-// Signature: CDemonActorType * core_glass.cpp_staticInit_FUN_004e8fd0(void)
+// Signature: void core_glass.cpp_staticInit_FUN_004e8fd0(void)
 // Globals:
 //   TerminatedCString s_CGlass_0062df49
 //   int g_CGlassClassVersion = 0x6
@@ -13,15 +13,13 @@
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl core_glass_cpp_staticInit_FUN_004e8fd0(void)
+void __cdecl core_glass_cpp_staticInit_FUN_004e8fd0(void)
 
 {
-  CDemonActorType *pCVar1;
-  
-  pCVar1 = core_actor_cpp_registerActorClass_FUN_0040c2e0
-                     (&g_CGlassClassInfo,"CGlass",core_glass_cpp_CGlass_ctor_FUN_004e9000,
-                      &g_CGlassClassVersion,6,&g_CDemonActorClassInfo);
-  return pCVar1;
+  core_actor_cpp_registerActorClass_FUN_0040c2e0
+            (&g_CGlassClassInfo,"CGlass",core_glass_cpp_CGlass_factoryFunc_FUN_004e9000,
+             &g_CGlassClassVersion,6,&g_CDemonActorClassInfo);
+  return;
 }
 
 

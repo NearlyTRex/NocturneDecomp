@@ -11,7 +11,7 @@
 //   CDemonRenderer g_CDemonRendererInstance
 //   undefined4 DAT_02c6d590
 // Function calls:
-//   core_mirror.cpp_renderReflectedPrimitive_FUN_005225a0
+//   core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_005225a0
 //   engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
 
 #include "nocturne.h"
@@ -21,7 +21,8 @@ core_set_cpp_CDemonSet_FUN_00570df0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *pr
 
 {
   if (g_CDemonRendererPtr->advanced_culling_enabled != 0) {
-    core_mirror_cpp_renderReflectedPrimitive_FUN_005225a0(this_ptr->active_mirror,primitive);
+    core_mirror_cpp_CMirror_renderReflectedPrimitive_FUN_005225a0(this_ptr->active_mirror,primitive)
+    ;
     return;
   }
   engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50(g_CDemonRendererPtr,primitive);
@@ -46,7 +47,7 @@ core_set_cpp_CDemonSet_FUN_00570df0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *pr
 // 00570e04: PUSH ECX
 // 00570e05: MOV EDX,dword ptr [EAX + 0x161650]
 // 00570e0b: PUSH EDX
-// 00570e0c: CALL core_mirror.cpp_renderReflectedPrimitive_FUN_005225a0
+// 00570e0c: CALL core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_005225a0
 //   XREF to: 005225a0 (UNCONDITIONAL_CALL)
 // 00570e11: ADD ESP,0x8
 // 00570e14: RET

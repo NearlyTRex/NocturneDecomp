@@ -7,7 +7,7 @@
 //   shape_meshlod.cpp_FUN_00516d50 (00516d50) at 00516de0 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051cdf0 (0051cdf0) at 0051d0c9 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_Computing_initial_edge_collapse_c_006379ed
+//   TerminatedCString s_Computing_initial_edge_c_006379ed
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   CEditorTools g_CEditorToolsPtr
 // Function calls:
@@ -36,7 +36,7 @@ void shape_meshlod_cpp_FUN_00519710(void)
     } while (iVar2 < *(int *)(in_stack_00000004 + 0x44));
   }
   shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
-            (g_CEditorToolsPtr,"?Computing initial edge collapse costs..." + 1);
+            (g_CEditorToolsPtr,"Computing initial edge collapse costs...");
   iVar2 = 0;
   if (0 < *(int *)(in_stack_00000004 + 0x44)) {
     do {

@@ -1,8 +1,8 @@
 // Name: core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510
 // Address: 0059a510
 // Address Range: [[0059a510, 0059a731]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510()
+// Convention: __cdecl
+// Signature: void core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510(CDeformableModel * this_ptr, int lod_index, int vertex_count, int tri_count, int cap_tri_count)
 // Cross-references:
 //   core_skeledit.cpp_FUN_0058b660 (0058b660) at 0058b7c3 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c304 [UNCONDITIONAL_CALL]
@@ -28,7 +28,7 @@
 //   int g_CurrentDebugLine
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_skeleton.cpp_CDeformableModel_FUN_0059a2b0
+//   core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0
 //   crt_memory.c_constructTypedObjectArray_FUN_00601272
 //   crt_memory.c_free_FUN_005fe659
 //   crt_memory.c_freeSingleInstance_FUN_005fe632
@@ -36,79 +36,77 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_skeleton.cpp_CDeformableModel_allocLOD(CDeformableModel*
-   pDeformableModel, undefined4 nNumLods, undefined4 param_3, undefined4 param_4, undefined4
-   param_5) */
-
-void core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510(void)
+void __cdecl
+core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510
+          (CDeformableModel *this_ptr,int lod_index,int vertex_count,int tri_count,int cap_tri_count
+          )
 
 {
-  int iVar1;
-  void *pvVar2;
-  int *in_stack_00000004;
-  WatcomTypeInfo *in_stack_00000008;
+  void *pvVar1;
+  SVert *pSVar2;
+  SInputFace *pSVar3;
+  int *piVar4;
+  int *piStack0000001c;
   int in_stack_00000024;
   int in_stack_00000028;
   int in_stack_0000002c;
   
-  if (((int)in_stack_00000008 < 0) || (*in_stack_00000004 <= (int)in_stack_00000008)) {
+  if ((lod_index < 0) || (this_ptr->num_lods <= lod_index)) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0x28a;
-    core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("CDeformableModel::allocLOD - invalid lod number %d",in_stack_00000008);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::allocLOD - invalid lod number %d",lod_index);
   }
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
   g_CurrentDebugLine = 0x28f;
-  pvVar2 = crt_memory_c_freeSingleInstance_FUN_005fe632
-                     ((void *)in_stack_00000004[(int)&in_stack_00000008->instance_size],
-                      &g_SVertTypeInfo);
-  crt_memory_c_free_FUN_005fe659(pvVar2);
+  pvVar1 = crt_memory_c_freeSingleInstance_FUN_005fe632
+                     (this_ptr->vertex_data_ptr[lod_index],&g_SVertTypeInfo);
+  crt_memory_c_free_FUN_005fe659(pvVar1);
   g_CurrentDebugLine = 0x290;
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
-  crt_memory_c_free_FUN_005fe659
-            ((void *)in_stack_00000004[(int)((int)&in_stack_00000008[1].ctor + 3)]);
+  crt_memory_c_free_FUN_005fe659(this_ptr->tri_data_ptr[lod_index]);
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
   g_CurrentDebugLine = 0x291;
-  crt_memory_c_free_FUN_005fe659((void *)in_stack_00000004[(int)&in_stack_00000008[1].dtor]);
+  crt_memory_c_free_FUN_005fe659(this_ptr->index_data_ptr[lod_index]);
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
   g_CurrentDebugLine = 0x292;
-  crt_memory_c_free_FUN_005fe659
-            ((void *)in_stack_00000004[(int)((int)&in_stack_00000008[1].instance_size + 1)]);
-  in_stack_00000004[(int)((int)&in_stack_00000008->copy + 3)] = in_stack_00000024;
-  in_stack_00000004[(int)((int)&in_stack_00000008->class_name + 1)] = in_stack_00000028;
-  in_stack_00000004[(int)((int)&in_stack_00000008[1].type_flags + 2)] = in_stack_0000002c;
-  pvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                     (in_stack_00000004[(int)((int)&in_stack_00000008->copy + 3)] * 0x34 + 4,
-                      "..\\core\\skeleton.cpp",0x29c);
-  pvVar2 = crt_memory_c_constructTypedObjectArray_FUN_00601272(pvVar2,0x662ed0,in_stack_00000008);
-  in_stack_00000004[(int)&in_stack_00000008->instance_size] = (int)pvVar2;
-  pvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                     ((in_stack_00000004[(int)((int)&in_stack_00000008[1].type_flags + 2)] +
-                      in_stack_00000004[(int)((int)&in_stack_00000008->class_name + 1)]) * 0x12,
+  crt_memory_c_free_FUN_005fe659(this_ptr->cap_index_ptr[lod_index]);
+  this_ptr->vertex_count[lod_index] = in_stack_00000024;
+  this_ptr->tri_count[lod_index] = in_stack_00000028;
+  this_ptr->cap_tri_count[lod_index] = in_stack_0000002c;
+  pvVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                     (this_ptr->vertex_count[lod_index] * 0x34 + 4,"..\\core\\skeleton.cpp",
+                      0x29c);
+  pSVar2 = (SVert *)crt_memory_c_constructTypedObjectArray_FUN_00601272
+                              (pvVar1,0x662ed0,(WatcomTypeInfo *)lod_index);
+  this_ptr->vertex_data_ptr[lod_index] = pSVar2;
+  pSVar3 = (SInputFace *)
+           shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                     ((this_ptr->cap_tri_count[lod_index] + this_ptr->tri_count[lod_index]) * 0x12,
                       "..\\core\\skeleton.cpp",0x29d);
-  in_stack_00000004[(int)((int)&in_stack_00000008[1].ctor + 3)] = (int)pvVar2;
-  pvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                     ((in_stack_00000004[(int)((int)&in_stack_00000008->class_name + 1)] +
-                      in_stack_00000004[(int)((int)&in_stack_00000008[1].type_flags + 2)]) * 4,
-                      "..\\core\\skeleton.cpp",0x29e);
-  iVar1 = in_stack_00000004[(int)((int)&in_stack_00000008[1].type_flags + 2)];
-  in_stack_00000004[(int)&in_stack_00000008[1].dtor] = (int)pvVar2;
-  if (iVar1 < 1) {
-    in_stack_00000004[(int)((int)&in_stack_00000008[1].instance_size + 1)] = 0;
+  this_ptr->tri_data_ptr[lod_index] = pSVar3;
+  piVar4 = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                            ((this_ptr->tri_count[lod_index] + this_ptr->cap_tri_count[lod_index]) *
+                             4,"..\\core\\skeleton.cpp",0x29e);
+  this_ptr->index_data_ptr[lod_index] = piVar4;
+  if (this_ptr->cap_tri_count[lod_index] < 1) {
+    this_ptr->cap_index_ptr[lod_index] = (int *)0x0;
   }
   else {
-    pvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0(iVar1 * 4,"..\\core\\skeleton.cpp",0x2a0);
-    in_stack_00000004[(int)((int)&in_stack_00000008[1].instance_size + 1)] = (int)pvVar2;
+    piVar4 = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                              (this_ptr->cap_tri_count[lod_index] * 4,"..\\core\\skeleton.cpp",
+                               0x2a0);
+    this_ptr->cap_index_ptr[lod_index] = piVar4;
   }
-  if ((((in_stack_00000004[(int)&in_stack_00000008->instance_size] != 0) &&
-       (in_stack_00000004[(int)((int)&in_stack_00000008[1].ctor + 3)] != 0)) &&
-      (in_stack_00000004[(int)&in_stack_00000008[1].dtor] != 0)) &&
-     ((in_stack_00000004[(int)((int)&in_stack_00000008[1].type_flags + 2)] < 1 ||
-      (in_stack_00000004[(int)((int)&in_stack_00000008[1].instance_size + 1)] != 0)))) {
+  if ((((this_ptr->vertex_data_ptr[lod_index] != (SVert *)0x0) &&
+       (this_ptr->tri_data_ptr[lod_index] != (SInputFace *)0x0)) &&
+      (this_ptr->index_data_ptr[lod_index] != (int *)0x0)) &&
+     ((this_ptr->cap_tri_count[lod_index] < 1 || (this_ptr->cap_index_ptr[lod_index] != (int *)0x0))
+     )) {
     return;
   }
-  core_skeleton_cpp_CDeformableModel_FUN_0059a2b0();
+  core_skeleton_cpp_CDeformableModel_free_FUN_0059a2b0(this_ptr);
   g_CurrentFilename = "..\\core\\skeleton.cpp";
+  piStack0000001c = this_ptr->cap_tri_count;
   g_CurrentLineNumber = 0x2ae;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Out of hunk in CDeformableModel::allocMemory.  vertexCount=%d, triCount=%d, capTriCount=%d");
   return;
@@ -302,7 +300,7 @@ void core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510(void)
 //   XREF to: 0059a6b8 (UNCONDITIONAL_JUMP)
 // 0059a6f6: PUSH ESI
 //   Label: LAB_0059a6f6
-// 0059a6f7: CALL core_skeleton.cpp_CDeformableModel_FUN_0059a2b0
+// 0059a6f7: CALL core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0
 //   XREF to: 0059a2b0 (UNCONDITIONAL_CALL)
 // 0059a6fc: MOV EAX,0x64e787
 //   XREF to: 0064e787 (DATA)

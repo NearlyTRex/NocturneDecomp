@@ -24,10 +24,9 @@
 int core_boneguy_cpp_FUN_0041d1b0(void)
 
 {
-  CDemonSet *pCVar1;
-  CDemonRenderer *pCVar2;
+  CDemonRenderer *pCVar1;
   CBoundingBox3D *this_ptr;
-  int iVar3;
+  int iVar2;
   BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
   float fStack_18;
@@ -36,30 +35,22 @@ int core_boneguy_cpp_FUN_0041d1b0(void)
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&in_stack_00000004->base_actor);
-  this_ptr = (*((in_stack_00000004->base_actor).metadata.vtable)->getBoundingBox)
+  this_ptr = (*((in_stack_00000004->base_actor).vtable)->getBoundingBox)
                        (&in_stack_00000004->base_actor,(CBoundingBox3D *)&stack0xffffffe4);
-  iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
-  if (iVar3 != 0) {
+  iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
+  if (iVar2 != 0) {
     fStack_18 = 6.044647e-39;
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr,0);
-    pCVar2 = g_CDemonRendererPtr;
-    pCVar1 = g_CDemonSetPtr;
-    pCVar1->field22_0x15ac80[8] = '\x01';
-    pCVar1->field22_0x15ac80[9] = '\0';
-    pCVar1->field22_0x15ac80[10] = '\0';
-    pCVar1->field22_0x15ac80[0xb] = '\0';
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(pCVar2,0xffff);
+    pCVar1 = g_CDemonRendererPtr;
+    g_CDemonSetPtr->unk_lighting_param2 = 1;
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(pCVar1,0xffff);
     core_charactr_cpp_CCharacter_FUN_00429aa0(in_stack_00000004);
-    pCVar2 = g_CDemonRendererPtr;
-    pCVar1 = g_CDemonSetPtr;
-    pCVar1->field22_0x15ac80[8] = '\0';
-    pCVar1->field22_0x15ac80[9] = '\0';
-    pCVar1->field22_0x15ac80[10] = '\0';
-    pCVar1->field22_0x15ac80[0xb] = '\0';
-    engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(pCVar2);
+    pCVar1 = g_CDemonRendererPtr;
+    g_CDemonSetPtr->unk_lighting_param2 = 0;
+    engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(pCVar1);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&in_stack_00000004->base_actor);
-  return iVar3;
+  return iVar2;
 }
 
 

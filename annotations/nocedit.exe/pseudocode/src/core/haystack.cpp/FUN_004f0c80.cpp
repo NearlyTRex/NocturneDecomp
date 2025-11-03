@@ -40,7 +40,7 @@
 //   undefined4 DAT_02db8740
 // Function calls:
 //   core_hero.cpp_CHero_FUN_004f2540
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -51,27 +51,45 @@
 void core_haystack_cpp_FUN_004f0c80(void)
 
 {
+  CSkeleton *this_ptr;
   CHero *in_stack_00000004;
   
   core_hero_cpp_CHero_FUN_004f2540(in_stack_00000004);
-  core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-  DAT_02db8700 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02db8704 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02db8708 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02db870c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02db8710 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02db8714 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02db8718 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02db871c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02db8720 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02db8724 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02db8728 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02db872c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02db8730 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  DAT_02db8734 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  DAT_02db8738 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02db873c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_02db8740 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820
+            (&(in_stack_00000004->base_character).model);
+  DAT_02db8700 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 head");
+  _DAT_02db8704 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L Clavicle");
+  _DAT_02db8708 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 R Clavicle");
+  _DAT_02db870c =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L UpperArm");
+  _DAT_02db8710 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 R UpperArm");
+  _DAT_02db8714 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L ForeArm");
+  _DAT_02db8718 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 R ForeArm");
+  _DAT_02db871c =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L Foot");
+  _DAT_02db8720 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 R Foot");
+  _DAT_02db8724 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L Thigh");
+  _DAT_02db8728 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 R Thigh");
+  _DAT_02db872c =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L Calf");
+  _DAT_02db8730 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 R Calf");
+  DAT_02db8734 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L Hand")
+  ;
+  DAT_02db8738 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 R Hand")
+  ;
+  _DAT_02db873c =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 Spine2");
+  _DAT_02db8740 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 Spine")
+  ;
   in_stack_00000004 = in_stack_00000004 + 1;
   (in_stack_00000004->base_character).base_actor.actor_name[0] = '\0';
   (in_stack_00000004->base_character).base_actor.actor_name[1] = '\0';
@@ -93,7 +111,7 @@ void core_haystack_cpp_FUN_004f0c80(void)
 // 004f0c8c: ADD ESP,0x4
 // 004f0c8f: LEA EAX,[ESI + 0x158]
 // 004f0c95: PUSH EAX
-// 004f0c96: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 004f0c96: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 004f0c9b: ADD ESP,0x4
 // 004f0c9e: PUSH 0x1

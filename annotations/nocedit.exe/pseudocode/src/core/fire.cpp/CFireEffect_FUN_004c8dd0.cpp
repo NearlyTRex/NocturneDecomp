@@ -7,7 +7,7 @@
 //   core_dynamite.cpp_FUN_0049ce70 (0049ce70) at 0049cea8 [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_0062a0b3 = 0.000100000000000000
-//   CToss[20] g_CFireEffectTosses
+//   CToss[20] g_TossPool
 //   undefined4 DAT_02d67cb0
 // Function calls:
 //   core_fire.cpp_CFireEffect_FUN_004c8e40
@@ -22,7 +22,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8dd0(CFireEffect *this_ptr)
   undefined4 in_stack_0000001c;
   
   iVar1 = core_fire_cpp_CFireEffect_FUN_004c8e40(this_ptr);
-  *(undefined4 *)(g_CFireEffectTosses[iVar1].field0_0x0 + 0x3e0) = in_stack_0000001c;
+  *(undefined4 *)(g_TossPool[iVar1].field0_0x0 + 0x3e0) = in_stack_0000001c;
   sound_sndmain_cpp_YetAnother2ComputingDelayCall_FUN_005a98b0();
   return;
 }

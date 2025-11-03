@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
 // Cross-references:
-//   core_glass.cpp_CGlass_FUN_004e9ca0 (004e9ca0) at 004e9e31 [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0 (004e9ca0) at 004e9e31 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_BitsPerPixel = 0x8
 //   int[16] g_VertexIndexBuffer

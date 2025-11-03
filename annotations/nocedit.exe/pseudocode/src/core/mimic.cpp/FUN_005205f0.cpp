@@ -27,10 +27,10 @@
 //   core_charactr.cpp_CCharacter_FUN_0042a420
 //   core_cloth.cpp_FUN_0043bae0
 //   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-//   core_morph.cpp_MorphModelRotatePointsTwice_FUN_0052bae0
+//   core_morph.cpp_CMorphModel_FUN_0052bae0
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_motion.cpp_CMotionController_FUN_0052e700
-//   core_skeleton.cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
 //   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
 //   core_xform.cpp_getTranslation_FUN_005f6110
 //   core_xform.cpp_matrixToEulerAngles_FUN_005f5690
@@ -65,7 +65,7 @@ int core_mimic_cpp_FUN_005205f0(void)
   bVar4 = 0;
   if (*(int *)in_stack_00000004->field2_0x240c == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&in_stack_00000004->base_actor);
-    this_ptr = (*((in_stack_00000004->base_actor).metadata.vtable)->getBoundingBox)
+    this_ptr = (*((in_stack_00000004->base_actor).vtable)->getBoundingBox)
                          (&in_stack_00000004->base_actor,&local_64);
     local_34.m[2].x = (float)core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
     if (local_34.m[2].x != 0.0) {
@@ -79,7 +79,7 @@ int core_mimic_cpp_FUN_005205f0(void)
         g_TransformMatrix.m[0][0] = -g_TransformMatrix.m[0][0];
         g_TransformMatrix.m[0][1] = -g_TransformMatrix.m[0][1];
         g_TransformMatrix.m[0][2] = -g_TransformMatrix.m[0][2];
-        core_skeleton_cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150();
+        core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150(&in_stack_00000004->model);
         core_cloth_cpp_FUN_0043bae0();
         local_34.m[2].z =
              (float)core_actor_cpp_castToClassHash_FUN_0040c790
@@ -97,7 +97,7 @@ int core_mimic_cpp_FUN_005205f0(void)
           core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                     ((CMatrix3x4f *)&stack0xffffff3c,
                      (CMatrix3x4f *)
-                     ((in_stack_00000004->model).padding_0x0 + DAT_02f33378 * 0x30 + 0xe80),
+                     ((in_stack_00000004->model).field3_0x508 + DAT_02f33378 * 0x30 + 0x978),
                      in_stack_ffffff40);
           puVar2 = (undefined4 *)&stack0xffffff0c;
           puVar3 = (undefined4 *)&stack0xffffff6c;
@@ -113,22 +113,25 @@ int core_mimic_cpp_FUN_005205f0(void)
                     (g_CDemonRendererPtr,(CVector3i *)&local_34,(CVector3i *)local_4c);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                     ((CKeyFramedModelInstance *)
-                     &(((CDemonActor *)((int)local_34.m[2].z + 0x1fbf0))->field_224).z,0.0,-1);
+                     &(((CDemonActor *)((int)local_34.m[2].z + 0x1fbf0))->field12_0xe0).z,0.0,-1);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
         }
         core_charactr_cpp_CCharacter_FUN_0042a420(in_stack_00000004);
         if ((DAT_02f43978 != 0) &&
            (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr)
            , iVar1 == 0)) {
-          core_motion_cpp_CMotionController_FUN_0052e700();
-          core_motion_cpp_CMotionController_FUN_0052dab0();
+          core_motion_cpp_CMotionController_FUN_0052e700
+                    (&(in_stack_00000004->model).motion_controller);
+          core_motion_cpp_CMotionController_FUN_0052dab0
+                    (&(in_stack_00000004->model).motion_controller);
         }
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
         engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10
                   (g_CDemonRendererPtr,(int)local_34.m[2].y);
       }
       else {
-        core_morph_cpp_MorphModelRotatePointsTwice_FUN_0052bae0();
+        core_morph_cpp_CMorphModel_FUN_0052bae0
+                  ((CMorphModel *)(in_stack_00000004[6].cloth_data + 0x1eb4));
       }
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&in_stack_00000004->base_actor);
@@ -187,7 +190,7 @@ int core_mimic_cpp_FUN_005205f0(void)
 // 00520651: LEA EAX,[EBX + 0x4be24]
 // 00520657: PUSH dword ptr [EBX + 0x4ca50]
 // 0052065d: PUSH EAX
-// 0052065e: CALL core_morph.cpp_MorphModelRotatePointsTwice_FUN_0052bae0
+// 0052065e: CALL core_morph.cpp_CMorphModel_FUN_0052bae0
 //   XREF to: 0052bae0 (UNCONDITIONAL_CALL)
 // 00520663: ADD ESP,0x8
 //   Label: LAB_00520663
@@ -253,7 +256,7 @@ int core_mimic_cpp_FUN_005205f0(void)
 //   XREF to: 02d052ec (WRITE)
 // 005206f1: MOV dword ptr [0x02d052f0],ECX
 //   XREF to: 02d052f0 (WRITE)
-// 005206f7: CALL core_skeleton.cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150
+// 005206f7: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
 //   XREF to: 005a0150 (UNCONDITIONAL_CALL)
 // 005206fc: ADD ESP,0x14
 // 005206ff: PUSH 0x0

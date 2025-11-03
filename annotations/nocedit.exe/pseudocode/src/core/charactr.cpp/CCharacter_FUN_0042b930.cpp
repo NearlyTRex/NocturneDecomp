@@ -10,7 +10,7 @@
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CFireEffect g_CFireEffectInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_charactr.cpp_CCharacter_FUN_0042b9e0
 //   core_fire.cpp_CFireEffect_FUN_004c8c10
 
@@ -24,12 +24,17 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b930(CCharacter *this_ptr)
   float fStack00000008;
   float fStack0000000c;
   float fStack_40;
+  CVector3f CStack_14;
   
-  pCVar1 = (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
+  pCVar1 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
                      (&this_ptr->base_actor,(CBoundingBox3D *)&fStack_40);
   fStack00000008 = (pCVar1->min).y + (pCVar1->max).y;
+  CStack_14.x = ((pCVar1->min).x + (pCVar1->max).x) * FLOAT_00617156;
+  CStack_14.y = fStack00000008 * FLOAT_00617156;
   fStack0000000c = (pCVar1->min).z + (pCVar1->max).z;
-  core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr->base_actor);
+  CStack_14.z = fStack0000000c * FLOAT_00617156;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (&this_ptr->base_actor,(CVector3f *)&stack0xfffffff8,&CStack_14);
   fStack_40 = 6.127772e-39;
   core_fire_cpp_CFireEffect_FUN_004c8c10(g_CFireEffectPtr);
   core_charactr_cpp_CCharacter_FUN_0042b9e0(this_ptr);
@@ -77,7 +82,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b930(CCharacter *this_ptr)
 // 0042b98b: FSTP float ptr [ESP + 0x24]
 // 0042b98f: PUSH EBX
 // 0042b990: FSTP float ptr [ESP + 0x2c]
-// 0042b994: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0042b994: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0042b999: ADD ESP,0xc
 // 0042b99c: PUSH 0x40800000

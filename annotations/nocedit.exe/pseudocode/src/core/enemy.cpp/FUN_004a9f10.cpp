@@ -49,7 +49,7 @@ void core_enemy_cpp_FUN_004a9f10
   CVector3f *unaff_EBP;
   int unaff_ESI;
   
-  (*(param_5->base_actor).metadata.vtable[1].handleFootstep)
+  (*(param_5->base_actor).vtable[1].handleFootstep)
             (&param_5->base_actor,unaff_EBP,unaff_ESI,unaff_EBX);
   core_charactr_cpp_CCharacter_FUN_0042c3c0(param_5);
   if (0.0 < *(float *)(param_6 + 4)) {

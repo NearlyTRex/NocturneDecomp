@@ -12,7 +12,7 @@
 int __cdecl core_charactr_cpp_CCharacter_FUN_0042f9e0(CCharacter *this_ptr)
 
 {
-  return *(int *)((this_ptr->model).padding_0x0 + 0x10c);
+  return (int)(this_ptr->model).transformed_vertices[0xf].x;
 }
 
 

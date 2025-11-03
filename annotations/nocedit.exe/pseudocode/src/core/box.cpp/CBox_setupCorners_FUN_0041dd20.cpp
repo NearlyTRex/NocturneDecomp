@@ -7,7 +7,7 @@
 //   core_bodypart.cpp_FUN_0041b070 (0041b070) at 0041b19d [UNCONDITIONAL_CALL]
 //   core_box.cpp_CBox_loadFromFile_FUN_0041fe90 (0041fe90) at 0041ff8b [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_FUN_004218d0 (004218d0) at 004219ca [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CStake_FUN_004bfe90 (004bfe90) at 004c009e [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CStake_spawn_FUN_004bfe90 (004bfe90) at 004c009e [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CToss_create_FUN_004c3ee0 (004c3ee0) at 004c3fab [UNCONDITIONAL_CALL]
 //   core_weapon.cpp_FUN_005ee740 (005ee740) at 005ee817 [UNCONDITIONAL_CALL]
 // Globals:

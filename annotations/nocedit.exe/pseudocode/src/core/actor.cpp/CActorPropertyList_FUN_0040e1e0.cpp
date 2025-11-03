@@ -12,7 +12,7 @@
 //   core_dracbrid.cpp_FUN_00486c90 (00486c90) at 00486cef [UNCONDITIONAL_CALL]
 //   core_emitter.cpp_FUN_004a8db0 (004a8db0) at 004a8e64 [UNCONDITIONAL_CALL]
 //   core_gargoyle.cpp_CGargoyle_getPropertyList_FUN_004e5af0 (004e5af0) at 004e5b68 [UNCONDITIONAL_CALL]
-//   core_glass.cpp_FUN_004eb3c0 (004eb3c0) at 004eb43b [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_getPropertyList_FUN_004eb3c0 (004eb3c0) at 004eb43b [UNCONDITIONAL_CALL]
 //   core_health.cpp_FUN_004f2040 (004f2040) at 004f207a [UNCONDITIONAL_CALL]
 //   core_keyactor.cpp_FUN_00501940 (00501940) at 0050197a [UNCONDITIONAL_CALL]
 //   core_lever.cpp_FUN_00505240 (00505240) at 0050531c [UNCONDITIONAL_CALL]
@@ -32,8 +32,12 @@ void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e1e0(CActorPropertyList *
 
 {
   int iVar1;
+  char *in_stack_00000008;
+  void *in_stack_0000000c;
+  void *in_stack_00000010;
   
-  iVar1 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0(this_ptr);
+  iVar1 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
+                    (this_ptr,0,in_stack_00000008,in_stack_0000000c,in_stack_00000010);
   *(undefined4 *)(iVar1 + 0x5c) = 0;
   *(undefined4 *)(iVar1 + 0x6c) = 1;
   return;

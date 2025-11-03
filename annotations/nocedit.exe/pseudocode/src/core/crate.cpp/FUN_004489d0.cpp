@@ -4,11 +4,10 @@
 // Convention: unknown
 // Signature: undefined core_crate.cpp_FUN_004489d0()
 // Globals:
-//   undefined4 DAT_00619b2a
+//   float FLOAT_00619b2a = 0.5
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_crate.cpp_FUN_004489d0(undefined4 param_1, undefined4 param_2)
     */
 
@@ -24,12 +23,12 @@ undefined4 core_crate_cpp_FUN_004489d0(void)
   float afStack_10 [3];
   
   pfVar3 = (float *)(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();
-  fVar1 = (pfVar3[1] + pfVar3[4]) * _DAT_00619b2a;
-  fVar2 = (pfVar3[2] + pfVar3[5]) * _DAT_00619b2a;
+  fVar1 = (pfVar3[1] + pfVar3[4]) * FLOAT_00619b2a;
+  fVar2 = (pfVar3[2] + pfVar3[5]) * FLOAT_00619b2a;
   if (in_stack_00000008 == afStack_10) {
     return 1;
   }
-  *in_stack_00000008 = (*pfVar3 + pfVar3[3]) * _DAT_00619b2a;
+  *in_stack_00000008 = (*pfVar3 + pfVar3[3]) * FLOAT_00619b2a;
   in_stack_00000008[1] = fVar1;
   in_stack_00000008[2] = fVar2;
   return 1;

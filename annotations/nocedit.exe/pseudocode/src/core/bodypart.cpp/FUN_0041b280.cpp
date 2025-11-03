@@ -16,13 +16,13 @@
 //   CEditorTools g_CEditorToolsPtr
 // Function calls:
 //   core_bodypart.cpp_FUN_0041a050
-//   core_skeleton.cpp_CDeformableModel_FUN_0059c220
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModel_getPartPtr_FUN_0059c220
 //   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
 //   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a1040
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-//   core_skeleton.cpp_FUN_005a0840
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
 //   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
@@ -39,16 +39,16 @@ undefined4 core_bodypart_cpp_FUN_0041b280(void)
 {
   bool bVar1;
   int iVar2;
+  CDeformableModel *config_param1;
   int iVar3;
   int iVar4;
-  undefined1 *puVar5;
-  int iVar6;
   BADSPACEBASE *in_ESP;
-  uint in_stack_ffffd7dc;
-  uint in_stack_ffffd7e0;
-  uint in_stack_ffffd7e4;
-  uint in_stack_ffffd7e8;
-  uint in_stack_ffffd7ec;
+  CDeformableModel *in_stack_00000004;
+  float in_stack_ffffd7dc;
+  CMotionList *in_stack_ffffd7e0;
+  CMotionList *in_stack_ffffd7e4;
+  float in_stack_ffffd7e8;
+  float in_stack_ffffd7ec;
   uint auStack_6ec [93];
   undefined1 auStack_578 [8];
   CPickList CStack_570;
@@ -63,76 +63,86 @@ undefined4 core_bodypart_cpp_FUN_0041b280(void)
   }
   core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
             ((CDeformableModelInstance *)&stack0xffffd7c4);
-  core_skeleton_cpp_FUN_005a0840();
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
-  iVar3 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-  iVar2 = *(int *)(iVar3 + 0x7140);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            ((CDeformableModelInstance *)&stack0xffffd7c8);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450
+            ((CDeformableModelInstance *)&stack0xffffd7cc);
+  config_param1 =
+       core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+                 ((CDeformableModelInstance *)&stack0xffffd7d0);
+  iVar2 = config_param1->num_parts;
   if (0 < iVar2) {
-    iVar6 = 0;
+    iVar4 = 0;
     do {
-      iVar4 = iVar6 + 4;
-      *(undefined4 *)((int)auStack_6ec + iVar6) = 0;
-      iVar6 = iVar4;
-    } while (iVar4 < iVar2 * 4);
+      iVar3 = iVar4 + 4;
+      *(undefined4 *)((int)auStack_6ec + iVar4) = 0;
+      iVar4 = iVar3;
+    } while (iVar3 < iVar2 * 4);
   }
   while( true ) {
     bVar1 = false;
-    iVar6 = 0;
+    iVar4 = 0;
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)auStack_578);
     if (0 < iVar2) {
-      iVar4 = 0;
+      iVar3 = 0;
       do {
-        if (*(int *)((int)auStack_6ec + iVar4 + 4) != 0) {
+        if (*(int *)((int)auStack_6ec + iVar3 + 4) != 0) {
           bVar1 = true;
         }
-        core_skeleton_cpp_CDeformableModel_FUN_0059c220();
+        core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220(in_stack_00000004,iVar4);
         crt_stdio_c_sprintf_FUN_005fdbd0(acStack_d0,"%s\t%s");
-        iVar4 = iVar4 + 4;
-        iVar6 = iVar6 + 1;
+        iVar3 = iVar3 + 4;
+        iVar4 = iVar4 + 1;
         shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)auStack_578,acStack_cc);
-      } while (iVar6 < iVar2);
+      } while (iVar4 < iVar2);
     }
     if (bVar1) {
       shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)(auStack_578 + 4),"(Done)");
     }
-    puVar5 = (undefined1 *)
-             shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                       ((CPickList *)(auStack_578 + 4),"Select which part(s) to dismember",iVar3,0);
-    if ((int)puVar5 < 0) break;
+    in_stack_00000004 =
+         (CDeformableModel *)
+         shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                   ((CPickList *)(auStack_578 + 4),"Select which part(s) to dismember",
+                    (int)config_param1,0);
+    if ((int)in_stack_00000004 < 0) break;
     if ((bVar1) &&
-       (puVar5 == ((CDeformableModel *)(CStack_570.base_strlist.item_count + -0x9000))->
-                  field6_0x7144 + 0x1ebb)) {
-      iVar3 = 0;
+       (in_stack_00000004 ==
+        (CDeformableModel *)
+        (((CDeformableModel *)(CStack_570.base_strlist.item_count + -0x9000))->model_identifier +
+        0x4f))) {
+      iVar4 = 0;
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&CStack_570,0,in_stack_ffffd7dc,in_stack_ffffd7e0,in_stack_ffffd7e4,
-                 in_stack_ffffd7e8,in_stack_ffffd7ec);
+                (&CStack_570,0,(uint)in_stack_ffffd7dc,(uint)in_stack_ffffd7e0,
+                 (uint)in_stack_ffffd7e4,(uint)in_stack_ffffd7e8,(uint)in_stack_ffffd7ec);
       if (0 < iVar2) {
-        iVar6 = 0;
+        iVar3 = 0;
         do {
-          if (*(int *)((int)auStack_6ec + iVar6 + 0xc) != 0) {
-            core_skeleton_cpp_CDeformableModelInstance_FUN_005a1040();
+          if (*(int *)((int)auStack_6ec + iVar3 + 0xc) != 0) {
+            core_skeleton_cpp_CDeformableModelInstance_FUN_005a1040
+                      ((CDeformableModelInstance *)&stack0xffffd7e0);
           }
-          iVar3 = iVar3 + 1;
-          iVar6 = iVar6 + 4;
-        } while (iVar3 < iVar2);
+          iVar4 = iVar4 + 1;
+          iVar3 = iVar3 + 4;
+        } while (iVar4 < iVar2);
       }
       core_bodypart_cpp_FUN_0041a050();
       core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-                ((CDeformableModelInstance *)&stack0xffffd7e4,0,in_stack_ffffd7e4,in_stack_ffffd7e8,
-                 in_stack_ffffd7ec);
+                ((CDeformableModelInstance *)&stack0xffffd7e4,0,(uint)in_stack_ffffd7e4,
+                 (uint)in_stack_ffffd7e8,(uint)in_stack_ffffd7ec);
       return 1;
     }
-    auStack_6ec[(int)(puVar5 + 2)] = (uint)(auStack_6ec[(int)(puVar5 + 2)] == 0);
+    auStack_6ec[(int)((int)&in_stack_00000004->num_lods + 2)] =
+         (uint)(auStack_6ec[(int)((int)&in_stack_00000004->num_lods + 2)] == 0);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (&CStack_570,0,in_stack_ffffd7dc,in_stack_ffffd7e0,in_stack_ffffd7e4,in_stack_ffffd7e8
-               ,in_stack_ffffd7ec);
+              (&CStack_570,0,(uint)in_stack_ffffd7dc,(uint)in_stack_ffffd7e0,(uint)in_stack_ffffd7e4
+               ,(uint)in_stack_ffffd7e8,(uint)in_stack_ffffd7ec);
   }
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            (&CStack_570,0,in_stack_ffffd7dc,in_stack_ffffd7e0,in_stack_ffffd7e4,in_stack_ffffd7e8,
-             in_stack_ffffd7ec);
+            (&CStack_570,0,(uint)in_stack_ffffd7dc,(uint)in_stack_ffffd7e0,(uint)in_stack_ffffd7e4,
+             (uint)in_stack_ffffd7e8,(uint)in_stack_ffffd7ec);
   core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-            ((CDeformableModelInstance *)&stack0xffffd7e0,0,in_stack_ffffd7e0,in_stack_ffffd7e4,
-             in_stack_ffffd7e8);
+            ((CDeformableModelInstance *)&stack0xffffd7e0,0,(uint)in_stack_ffffd7e0,
+             (uint)in_stack_ffffd7e4,(uint)in_stack_ffffd7e8);
   return 0;
 }
 
@@ -185,12 +195,12 @@ undefined4 core_bodypart_cpp_FUN_0041b280(void)
 // 0041b2d8: LEA EAX,[ESP + 0x4]
 //   XREF to: Stack[-0x2840] (DATA)
 // 0041b2dc: PUSH EAX
-// 0041b2dd: CALL core_skeleton.cpp_FUN_005a0840
+// 0041b2dd: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 0041b2e2: ADD ESP,0x8
 // 0041b2e5: MOV EAX,ESP
 // 0041b2e7: PUSH EAX
-// 0041b2e8: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 0041b2e8: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0041b2ed: ADD ESP,0x4
 // 0041b2f0: MOV EAX,ESP
@@ -253,7 +263,7 @@ undefined4 core_bodypart_cpp_FUN_0041b280(void)
 // 0041b36f: MOV EAX,dword ptr [ESP + 0x2834]
 //   XREF to: Stack[-0x14] (READ)
 // 0041b376: PUSH EAX
-// 0041b377: CALL core_skeleton.cpp_CDeformableModel_FUN_0059c220
+// 0041b377: CALL core_skeleton.cpp_CDeformableModel_getPartPtr_FUN_0059c220
 //   XREF to: 0059c220 (UNCONDITIONAL_CALL)
 // 0041b37c: ADD ESP,0x8
 // 0041b37f: PUSH EAX

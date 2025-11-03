@@ -13,8 +13,8 @@
 //   core_motion.cpp_CMotionController_FUN_0052e3a0
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
 //   core_scat.cpp_FUN_005584a0
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
-//   core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 
 #include "nocturne.h"
 
@@ -23,25 +23,30 @@
 void core_scat_cpp_FUN_005582c0(void)
 
 {
+  CMotionController *this_ptr;
   float fVar1;
   float fVar2;
+  CMotionList *this_ptr_00;
   int in_stack_00000004;
   float local_14;
   
-  local_14 = (float)core_motion_cpp_CMotionController_FUN_0052dd20();
-  core_motion_cpp_CMotionController_FUN_0052dd20();
-  core_motion_cpp_CMotionController_FUN_0052dd20();
-  fVar1 = (float)core_motion_cpp_CMotionController_FUN_0052dd20();
-  fVar2 = (float)core_motion_cpp_CMotionController_FUN_0052dd20();
+  this_ptr = (CMotionController *)(in_stack_00000004 + 0x158);
+  local_14 = core_motion_cpp_CMotionController_FUN_0052dd20(this_ptr);
+  core_motion_cpp_CMotionController_FUN_0052dd20(this_ptr);
+  core_motion_cpp_CMotionController_FUN_0052dd20(this_ptr);
+  fVar1 = core_motion_cpp_CMotionController_FUN_0052dd20(this_ptr);
+  fVar2 = core_motion_cpp_CMotionController_FUN_0052dd20(this_ptr);
   local_14 = (1.0 - (fVar2 + fVar1)) * local_14;
   if (local_14 < 0.0) {
     local_14 = 0.0;
   }
   if ((float)DOUBLE_00641444 < local_14) {
-    core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-    core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460();
+    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820
+              ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
+    core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_00);
     core_motion_cpp_CMotionController_FUN_0052e3a0();
-    core_skeleton_cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50();
+    core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50
+              ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
     if (*(int *)(in_stack_00000004 + 0x2a8c) == 1) {
       core_scat_cpp_FUN_005584a0();
       return;
@@ -204,7 +209,7 @@ void core_scat_cpp_FUN_005582c0(void)
 // 0055840e: PUSH EAX
 // 0055840f: LEA ESI,[EBX + 0x158]
 // 00558415: PUSH ESI
-// 00558416: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 00558416: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0055841b: ADD ESP,0x4
 // 0055841e: PUSH EAX
@@ -235,7 +240,7 @@ void core_scat_cpp_FUN_005582c0(void)
 //   XREF to: Stack[-0x1c] (READ)
 // 00558459: PUSH EDI
 // 0055845a: PUSH ESI
-// 0055845b: CALL core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+// 0055845b: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 00558460: MOV ECX,dword ptr [EBX + 0x2a8c]
 // 00558466: ADD ESP,0x18

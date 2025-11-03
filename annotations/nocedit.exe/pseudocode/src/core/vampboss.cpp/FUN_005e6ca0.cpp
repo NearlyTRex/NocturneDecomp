@@ -8,14 +8,13 @@
 // Globals:
 //   TerminatedCString s_wing_wav_f_00656bcb
 //   TerminatedCString s_wing_wav_1_5_1_2_00656bd9
-//   undefined4 DAT_00656bf3
+//   double DOUBLE_00656bf3 = 2.5
 // Function calls:
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_vampboss.cpp_FUN_005e6ca0(undefined4 param_1, undefined4
    param_2) */
 
@@ -29,35 +28,43 @@ void core_vampboss_cpp_FUN_005e6ca0(void)
   float local_78;
   char local_74 [104];
   
-  do {
-    if (in_stack_00000008 <= 0.0) {
-      return;
-    }
-    while (uVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610(), 0x65 < uVar1) {
-      if ((uVar1 < 0x67) || (uVar1 == 0x67)) goto LAB_005e6d59;
-      if (in_stack_00000008 <= 0.0) {
-        return;
+  if (0.0 < in_stack_00000008) {
+LAB_005e6cc2:
+    do {
+      uVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                        ((CMotionController *)(in_stack_00000004 + 0xbebc));
+      if (uVar1 < 0x66) {
+        if (uVar1 == 0x65) {
+          local_78 = 0.0;
+          if (*(int *)(in_stack_00000004 + 0xcdcc0) == 1) {
+            local_78 = *(float *)(in_stack_00000004 + 0xce8f0);
+          }
+          if (*(int *)(in_stack_00000004 + 0xcdcc0) == 2) {
+            local_78 = 1.0;
+          }
+          if (*(int *)(in_stack_00000004 + 0xcdcc0) == 3) {
+            local_78 = *(float *)(in_stack_00000004 + 0xce8f0);
+          }
+          if (0.0 < (double)local_78) {
+            crt_stdio_c_sprintf_FUN_005fdbd0
+                      (local_74,"wing?.wav @%f",(double)local_78 * DOUBLE_00656bf3);
+            goto LAB_005e6d59;
+          }
+        }
       }
-    }
-    if (uVar1 == 0x65) {
-      local_78 = 0.0;
-      if (*(int *)(in_stack_00000004 + 0xcdcc0) == 1) {
-        local_78 = *(float *)(in_stack_00000004 + 0xce8f0);
-      }
-      if (*(int *)(in_stack_00000004 + 0xcdcc0) == 2) {
-        local_78 = 1.0;
-      }
-      if (*(int *)(in_stack_00000004 + 0xcdcc0) == 3) {
-        local_78 = *(float *)(in_stack_00000004 + 0xce8f0);
-      }
-      if (0.0 < (double)local_78) {
-        crt_stdio_c_sprintf_FUN_005fdbd0
-                  (local_74,"wing?.wav @%f",(double)local_78 * _DAT_00656bf3);
+      else {
+        if ((0x66 < uVar1) && (uVar1 != 0x67)) {
+          if (in_stack_00000008 <= 0.0) {
+            return;
+          }
+          goto LAB_005e6cc2;
+        }
 LAB_005e6d59:
         (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
       }
-    }
-  } while( true );
+    } while (0.0 < in_stack_00000008);
+  }
+  return;
 }
 
 

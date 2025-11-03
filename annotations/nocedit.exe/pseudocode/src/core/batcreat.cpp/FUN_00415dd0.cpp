@@ -14,7 +14,7 @@
 //   undefined4 g_CGameInstance.blood_flag
 //   undefined4 g_CGameInstance.field57_0x1e0
 // Function calls:
-//   core_actor.cpp_FUN_0040cd10
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_bodypart.cpp_CreateBodyPart_FUN_00418e10
 //   core_bodypart.cpp_FUN_0041a050
 //   core_charactr.cpp_CCharacter_FUN_0042bcc0
@@ -34,6 +34,7 @@ void core_batcreat_cpp_FUN_00415dd0(void)
   int iVar1;
   CCharacter *in_stack_00000004;
   int *in_stack_00000008;
+  float probability_threshold;
   
   if ((0.0 < (float)in_stack_00000008[0xb]) && (*in_stack_00000008 == -1)) {
     iVar1 = crt_stdlib_c_rand_FUN_005feb5c();
@@ -71,32 +72,45 @@ switchD_00415e06_default:
       (iVar1 != *(int *)(in_stack_00000004[1].base_actor.create_event + 0x20))))) {
     return;
   }
-  iVar1 = core_actor_cpp_FUN_0040cd10();
-  if (iVar1 == 0) {
-    return;
-  }
-  core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
-  core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
-  if (*in_stack_00000008 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x40)) {
-    core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
-  }
-  if (*(int *)(in_stack_00000004[1].base_actor.create_event + 0x48) == *in_stack_00000008) {
-    core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
+  probability_threshold = (float)in_stack_00000008[0xb];
+  if (*(int *)(in_stack_00000004[1].base_actor.create_event + 0x20) == *in_stack_00000008) {
+    probability_threshold = 0.05;
   }
   if (*(int *)(in_stack_00000004[1].base_actor.create_event + 0x24) == *in_stack_00000008) {
-    core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-    core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-    core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-    core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-    core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+    probability_threshold = 0.02;
   }
-  core_charactr_cpp_CCharacter_FUN_0042f300(in_stack_00000004);
-  core_bodypart_cpp_FUN_0041a050();
-  if (*(int *)((in_stack_00000004->model).padding_0x0 +
-              *(int *)(in_stack_00000004[1].base_actor.create_event + 0x20) * 4 + 0x2140) == 0) {
-    in_stack_00000008[1] = 0x461c3c00;
+  if (g_CGamePtr->field57_0x1e0 != 0) {
+    probability_threshold = 1.0;
   }
-  in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)_DAT_00615689);
+  if (g_CGamePtr->blood_flag == 0) {
+    probability_threshold = 0.0;
+  }
+  iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(probability_threshold);
+  if (iVar1 != 0) {
+    core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
+    core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
+    if (*in_stack_00000008 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x40)) {
+      core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
+    }
+    if (*(int *)(in_stack_00000004[1].base_actor.create_event + 0x48) == *in_stack_00000008) {
+      core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
+    }
+    if (*(int *)(in_stack_00000004[1].base_actor.create_event + 0x24) == *in_stack_00000008) {
+      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+    }
+    core_charactr_cpp_CCharacter_FUN_0042f300(in_stack_00000004);
+    core_bodypart_cpp_FUN_0041a050();
+    if ((in_stack_00000004->model).part_visibility_flags
+        [*(int *)(in_stack_00000004[1].base_actor.create_event + 0x20)] == 0) {
+      in_stack_00000008[1] = 0x461c3c00;
+    }
+    in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)_DAT_00615689);
+    return;
+  }
   return;
 }
 
@@ -191,7 +205,7 @@ switchD_00415e06_default:
 // 00415e76: PUSH dword ptr [ESP + 0x8]
 //   Label: LAB_00415e76
 //   XREF to: Stack[-0x14] (READ)
-// 00415e7a: CALL core_actor.cpp_FUN_0040cd10
+// 00415e7a: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 00415e7f: ADD ESP,0x4
 // 00415e82: TEST EAX,EAX

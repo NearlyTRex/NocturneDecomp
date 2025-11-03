@@ -41,21 +41,21 @@
 //   int g_CurrentLineNumber
 //   undefined4 DAT_02f7c634
 //   CDemonSet g_CDemonSetInstance
-//   undefined4 g_CDemonSetInstance.field22_0x15ac80[0]
-//   undefined4 g_CDemonSetInstance.field22_0x15ac80[4]
-//   undefined4 g_CDemonSetInstance.field22_0x15ac80[12]
-//   undefined4 g_CDemonSetInstance.field22_0x15ac80[16]
+//   undefined4 g_CDemonSetInstance.lighting_quality_mode
+//   undefined4 g_CDemonSetInstance.unk_lighting_param1
+//   undefined4 g_CDemonSetInstance.unk_lighting_param3
+//   undefined4 g_CDemonSetInstance.unk_lighting_param4
 //   undefined4 g_CDemonSetInstance.selected_camera_index
 //   CDemonCamera g_CDemonCameraInstance
 //   undefined4 g_CDemonCameraInstance.corona_blend_factor
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_boxactor.cpp_CBoxActor_ctor_FUN_00421700
 //   core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
 //   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
 //   core_dlight.cpp_CDemonLight_init_FUN_004727c0
 //   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-//   core_fire.cpp_CFireEffect_FUN_004c6c80
+//   core_fire.cpp_CFireEffect_init_FUN_004c6c80
 //   core_fire.cpp_CFireEffect_process_FUN_004c6ec0
 //   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 //   core_game.cpp_CGame_setGameRes_FUN_004dade0
@@ -102,8 +102,8 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
 
 {
   float fVar1;
-  CDemonSet *pCVar2;
   CGame *this_ptr;
+  CDemonSet *pCVar2;
   CBoxActor *pCVar3;
   CBoxActor *pCVar4;
   CDemonActor *actor;
@@ -170,7 +170,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_00000004);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  core_fire_cpp_CFireEffect_FUN_004c6c80(g_CFireEffectPtr);
+  core_fire_cpp_CFireEffect_init_FUN_004c6c80(g_CFireEffectPtr);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffff30);
   core_skeleton_cpp_FUN_005a2060();
   CStack_28.x = g_CDemonCameraInstance.corona_blend_factor;
@@ -196,7 +196,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
   (pCStack_1c->base_actor).orient.heading = 0.0;
   (pCStack_1c->base_actor).orient.bank = (pCStack_1c->base_actor).orient.heading;
   (pCStack_1c->base_actor).orient.pitch = (pCStack_1c->base_actor).orient.bank;
-  (*((pCStack_1c->base_actor).metadata.vtable)->setup)(&pCStack_1c->base_actor);
+  (*((pCStack_1c->base_actor).vtable)->setup)(&pCStack_1c->base_actor);
   core_mission_cpp_CDemonMission_FUN_00523b70(in_stack_00000004);
   pCStack_1c = (CBoxActor *)&(pCVar4->base_actor).orient;
   CStack_28.z = (int)&(pCVar3->base_actor).location;
@@ -212,38 +212,25 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
       *(float *)((int)pCStack_1c + 4) = (float)((ulonglong)in_stack_ffffff54 >> 0x20);
       *(float *)((int)pCStack_1c + 8) = fStack_a4;
     }
-    core_actor_cpp_CDemonActor_FUN_00408c10(pCStack_18);
+    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(pCStack_18);
     core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(g_CDemonSetPtr,actor,0);
     core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_00000004);
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     pCVar2 = g_CDemonSetPtr;
     if (*(int *)(in_stack_00000004->field2_0xc + 0x2c) == 0) {
       g_CDemonCameraInstance.corona_blend_factor = CStack_28.y;
-      pCVar2->field22_0x15ac80[0] = '\0';
-      pCVar2->field22_0x15ac80[1] = '\0';
-      pCVar2->field22_0x15ac80[2] = '\0';
-      pCVar2->field22_0x15ac80[3] = '\0';
-      pCVar2->field22_0x15ac80[4] = '\0';
-      pCVar2->field22_0x15ac80[5] = '\0';
-      pCVar2->field22_0x15ac80[6] = '\0';
-      pCVar2->field22_0x15ac80[7] = '\0';
+      g_CDemonSetPtr->lighting_quality_mode = 0;
+      pCVar2->unk_lighting_param1 = 0;
     }
     else {
       g_CDemonCameraInstance.corona_blend_factor = 0xffff;
-      pCVar2->field22_0x15ac80[0] = '\x01';
-      pCVar2->field22_0x15ac80[1] = '\0';
-      pCVar2->field22_0x15ac80[2] = '\0';
-      pCVar2->field22_0x15ac80[3] = '\0';
-      pCVar2->field22_0x15ac80[4] = '\x01';
-      pCVar2->field22_0x15ac80[5] = '\0';
-      pCVar2->field22_0x15ac80[6] = '\0';
-      pCVar2->field22_0x15ac80[7] = '\0';
+      g_CDemonSetPtr->lighting_quality_mode = 1;
+      pCVar2->unk_lighting_param1 = 1;
     }
     pCVar2 = g_CDemonSetPtr;
-    *(uint *)(g_CDemonSetPtr->field22_0x15ac80 + 0xc) =
+    g_CDemonSetPtr->unk_lighting_param3 =
          (uint)(*(int *)(in_stack_00000004->field2_0xc + 0x24) == 0);
-    *(uint *)(pCVar2->field22_0x15ac80 + 0x10) =
-         (uint)(*(int *)(in_stack_00000004->field2_0xc + 0x28) == 0);
+    pCVar2->unk_lighting_param4 = (uint)(*(int *)(in_stack_00000004->field2_0xc + 0x28) == 0);
     core_set_cpp_CDemonSet_FUN_0056c1a0(pCVar2);
     core_fire_cpp_CFireEffect_process_FUN_004c6ec0(g_CFireEffectPtr);
     core_gore_cpp_CGore_process_FUN_004ed9e0();
@@ -349,22 +336,10 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
   engine_2d_c_clearInputAndWait_FUN_00403260();
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(g_CGamePtr);
   pCVar2 = g_CDemonSetPtr;
-  pCVar2->field22_0x15ac80[0] = '\0';
-  pCVar2->field22_0x15ac80[1] = '\0';
-  pCVar2->field22_0x15ac80[2] = '\0';
-  pCVar2->field22_0x15ac80[3] = '\0';
-  pCVar2->field22_0x15ac80[4] = '\0';
-  pCVar2->field22_0x15ac80[5] = '\0';
-  pCVar2->field22_0x15ac80[6] = '\0';
-  pCVar2->field22_0x15ac80[7] = '\0';
-  pCVar2->field22_0x15ac80[0xc] = '\0';
-  pCVar2->field22_0x15ac80[0xd] = '\0';
-  pCVar2->field22_0x15ac80[0xe] = '\0';
-  pCVar2->field22_0x15ac80[0xf] = '\0';
-  pCVar2->field22_0x15ac80[0x10] = '\0';
-  pCVar2->field22_0x15ac80[0x11] = '\0';
-  pCVar2->field22_0x15ac80[0x12] = '\0';
-  pCVar2->field22_0x15ac80[0x13] = '\0';
+  g_CDemonSetPtr->lighting_quality_mode = 0;
+  pCVar2->unk_lighting_param1 = 0;
+  pCVar2->unk_lighting_param3 = 0;
+  pCVar2->unk_lighting_param4 = 0;
   return;
 }
 
@@ -492,7 +467,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
 //   XREF to: 0067a3d0 (READ)
 // 0053e328: PUSH EDI
 //   XREF to: 02d12db0 (DATA)
-// 0053e329: CALL core_fire.cpp_CFireEffect_FUN_004c6c80
+// 0053e329: CALL core_fire.cpp_CFireEffect_init_FUN_004c6c80
 //   XREF to: 004c6c80 (UNCONDITIONAL_CALL)
 // 0053e32e: ADD ESP,0x4
 // 0053e331: MOV EAX,[0x0067b654]
@@ -606,7 +581,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
 // 0053e471: MOV ESI,dword ptr [ESP + 0xb4]
 //   Label: LAB_0053e471
 // 0053e478: PUSH ESI
-// 0053e479: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 0053e479: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 0053e47e: ADD ESP,0x4
 // 0053e481: PUSH 0x0

@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_CallToLockDoSomethingAndUnlockSound2_FUN_005a96e0()
 // Cross-references:
-//   core_event.cpp_FUN_004b0db0 (004b0db0) at 004b0e8e [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004b0db0 (004b0db0) at 004b0e8e [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_processFrame_FUN_004da100 (004da100) at 004da951 [UNCONDITIONAL_CALL]
 //   core_tommygun.cpp_CTommyGun_process_FUN_005de360 (005de360) at 005de4d8 [UNCONDITIONAL_CALL]
 // Function calls:

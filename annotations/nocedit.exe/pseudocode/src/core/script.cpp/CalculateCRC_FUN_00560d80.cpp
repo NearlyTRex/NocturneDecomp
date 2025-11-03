@@ -7,37 +7,42 @@
 //   core_script.cpp_CScript_WriteScriptFile_FUN_00560b50 (00560b50) at 00560d5f [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_loadState_FUN_00560820 (00560820) at 00560b17 [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_actor.cpp_FUN_0040ce30
+//   core_actor.cpp_crc32ProcessByte_FUN_0040ce30
 
 #include "nocturne.h"
 
 /* Signature: int core_script.cpp_CalculateCRC(CScript* param_1) */
 
-undefined4 core_script_cpp_CalculateCRC_FUN_00560d80(void)
+uint core_script_cpp_CalculateCRC_FUN_00560d80(void)
 
 {
-  char cVar1;
-  char *pcVar2;
-  int iVar3;
+  byte bVar1;
+  byte *pbVar2;
+  byte *pbVar3;
+  BADSPACEBASE *in_ESP;
   int iVar4;
+  int iVar5;
   int in_stack_00000004;
+  uint local_14;
   
-  iVar4 = 0;
+  local_14 = 0;
+  iVar5 = 0;
   if (0 < *(int *)(in_stack_00000004 + 0x30)) {
-    iVar3 = 0;
+    iVar4 = 0;
     do {
-      pcVar2 = *(char **)(iVar3 + 4 + *(int *)(in_stack_00000004 + 0x34));
-      cVar1 = *pcVar2;
-      while (cVar1 != '\0') {
-        pcVar2 = pcVar2 + 1;
-        core_actor_cpp_FUN_0040ce30();
-        cVar1 = *pcVar2;
+      pbVar2 = *(byte **)(iVar4 + 4 + *(int *)(in_stack_00000004 + 0x34));
+      bVar1 = *pbVar2;
+      while (pbVar3 = pbVar2, bVar1 != 0) {
+        bVar1 = *pbVar3;
+        pbVar3 = pbVar3 + 1;
+        core_actor_cpp_crc32ProcessByte_FUN_0040ce30(&local_14,bVar1);
+        bVar1 = *pbVar3;
       }
-      iVar4 = iVar4 + 1;
-      iVar3 = iVar3 + 8;
-    } while (iVar4 < *(int *)(in_stack_00000004 + 0x30));
+      iVar5 = iVar5 + 1;
+      iVar4 = iVar4 + 8;
+    } while (iVar5 < *(int *)(in_stack_00000004 + 0x30));
   }
-  return 0;
+  return local_14;
 }
 
 
@@ -73,7 +78,7 @@ undefined4 core_script_cpp_CalculateCRC_FUN_00560d80(void)
 //   XREF to: Stack[-0x14] (DATA)
 // 00560db0: PUSH EAX
 // 00560db1: INC EBX
-// 00560db2: CALL core_actor.cpp_FUN_0040ce30
+// 00560db2: CALL core_actor.cpp_crc32ProcessByte_FUN_0040ce30
 //   XREF to: 0040ce30 (UNCONDITIONAL_CALL)
 // 00560db7: MOV DL,byte ptr [EBX]
 // 00560db9: ADD ESP,0x8

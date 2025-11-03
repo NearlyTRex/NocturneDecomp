@@ -2,7 +2,7 @@
 // Address: 0040b9f0
 // Address Range: [[0040b9f0, 0040badb]]
 // Convention: __cdecl
-// Signature: void core_actor.cpp_serializeMotionState_FUN_0040b9f0(void * motion, char * property_name)
+// Signature: void core_actor.cpp_serializeMotionState_FUN_0040b9f0(CMotionController * motion_controller, char * property_name)
 // Cross-references:
 //   core_armour.cpp_CArmour_serialize_FUN_004123a0 (004123a0) at 004123dd [UNCONDITIONAL_CALL]
 //   core_batcreat.cpp_CBatCreature_serialize_FUN_00415d70 (00415d70) at 00415dad [UNCONDITIONAL_CALL]
@@ -38,11 +38,11 @@
 //   TerminatedCString s_motion_state_info_closin_00613f53
 //   TerminatedCString s_s_s_00613f73
 //   TerminatedCString s_s_00613f7e
-//   char* g_PropertyNamePrefix = 00000000
+//   char[104] g_PropertyNamePrefix
 //   FILE* g_ActorDataFile
 //   int g_ActorReadingMode
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_0040aee0
+//   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   core_actor.cpp_handleActorPropertyParseError_FUN_0040b210
 //   core_motion.cpp_CMotionController_load_FUN_0052e5d0
 //   core_motion.cpp_CMotionController_save_FUN_0052e670
@@ -51,20 +51,21 @@
 
 #include "nocturne.h"
 
-void __cdecl core_actor_cpp_serializeMotionState_FUN_0040b9f0(void *motion,char *property_name)
+void __cdecl
+core_actor_cpp_serializeMotionState_FUN_0040b9f0
+          (CMotionController *motion_controller,char *property_name)
 
 {
   int iVar1;
-  int unk;
   CMotionController *in_stack_0000000c;
   
   if (g_ActorReadingMode != 1) {
-    iVar1 = crt_stdio_c_fprintf_FUN_005fe6d0
-                      (g_ActorDataFile,"%s{ // %s\n",&g_PropertyNamePrefix,property_name);
-    core_actor_cpp_CDemonActor_FUN_0040aee0(iVar1);
-    core_motion_cpp_CMotionController_save_FUN_0052e670(in_stack_0000000c);
-    core_actor_cpp_CDemonActor_FUN_0040aee0(unk);
-    crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s}\n",&g_PropertyNamePrefix);
+    crt_stdio_c_fprintf_FUN_005fe6d0
+              (g_ActorDataFile,"%s{ // %s\n",g_PropertyNamePrefix,property_name);
+    core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(1);
+    core_motion_cpp_CMotionController_save_FUN_0052e670(in_stack_0000000c,g_ActorDataFile);
+    core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(-1);
+    crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s}\n",g_PropertyNamePrefix);
     return;
   }
   do {
@@ -74,7 +75,7 @@ void __cdecl core_actor_cpp_serializeMotionState_FUN_0040b9f0(void *motion,char 
                 ("motion state info opening brace",property_name);
     }
   } while (iVar1 != 10);
-  core_motion_cpp_CMotionController_load_FUN_0052e5d0((CMotionController *)motion);
+  core_motion_cpp_CMotionController_load_FUN_0052e5d0(motion_controller,g_ActorDataFile);
   do {
     while( true ) {
       iVar1 = crt_stdio_c_fgetc_FUN_005fe840(g_ActorDataFile);
@@ -180,7 +181,7 @@ void __cdecl core_actor_cpp_serializeMotionState_FUN_0040b9f0(void *motion,char 
 //   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
 // 0040ba8e: ADD ESP,0x10
 // 0040ba91: PUSH 0x1
-// 0040ba93: CALL core_actor.cpp_CDemonActor_FUN_0040aee0
+// 0040ba93: CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   XREF to: 0040aee0 (UNCONDITIONAL_CALL)
 // 0040ba98: ADD ESP,0x4
 // 0040ba9b: PUSH 0x66e178
@@ -195,7 +196,7 @@ void __cdecl core_actor_cpp_serializeMotionState_FUN_0040b9f0(void *motion,char 
 //   XREF to: 0052e670 (UNCONDITIONAL_CALL)
 // 0040bab1: ADD ESP,0xc
 // 0040bab4: PUSH -0x1
-// 0040bab6: CALL core_actor.cpp_CDemonActor_FUN_0040aee0
+// 0040bab6: CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   XREF to: 0040aee0 (UNCONDITIONAL_CALL)
 // 0040babb: ADD ESP,0x4
 // 0040babe: PUSH 0x66e178

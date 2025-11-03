@@ -21,7 +21,8 @@ void core_tbplayer_cpp_FUN_005da240(void)
     return;
   }
   *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+            ((CMotionController *)(in_stack_00000004 + 0x158));
   return;
 }
 

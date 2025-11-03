@@ -15,10 +15,10 @@ core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00574270
 
 {
   this_ptr->ray_type = 3;
-  this_ptr->field52_0x15f684 = f1;
-  this_ptr->field53_0x15f688 = f2;
-  this_ptr->field54_0x15f68c = f3;
-  this_ptr->field55_0x15f690 = f4;
+  this_ptr->field60_0x15f684 = f1;
+  this_ptr->field61_0x15f688 = f2;
+  this_ptr->field62_0x15f68c = f3;
+  this_ptr->field63_0x15f690 = f4;
   return;
 }
 

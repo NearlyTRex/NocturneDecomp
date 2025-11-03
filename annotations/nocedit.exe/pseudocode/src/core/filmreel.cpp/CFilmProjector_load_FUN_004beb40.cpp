@@ -13,7 +13,7 @@
 //   CFilterFx* g_CFilterFXPtr = 020a570c
 //   CEventList* g_CEventListPtr = 02d05310
 //   CFilterFx g_CFilterFXInstance
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   undefined4 g_CFilmReelClassInfo.name_hash
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -21,7 +21,7 @@
 //   core_actor.cpp_castToClassHash_FUN_0040c790
 //   core_dest.cpp_FUN_0046f9b0
 //   core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730
-//   core_event.cpp_FUN_004aabe0
+//   core_event.cpp_CEventList_FUN_004aabe0
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
 //   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
@@ -78,7 +78,7 @@ void core_filmreel_cpp_CFilmProjector_load_FUN_004beb40(void)
       }
     }
     if (*(int *)(in_stack_00000004 + 0x370) == *(int *)(in_stack_00000004 + 0x158)) {
-      core_event_cpp_FUN_004aabe0();
+      core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
     }
   }
   *(undefined4 *)(in_stack_00000004 + 0x3dc) = *(undefined4 *)(in_stack_00000004 + 0x184);
@@ -157,7 +157,7 @@ void core_filmreel_cpp_CFilmProjector_load_FUN_004beb40(void)
 //   XREF to: 006793d0 (READ)
 // 004bebe9: PUSH ESI
 //   XREF to: 02d05310 (DATA)
-// 004bebea: CALL core_event.cpp_FUN_004aabe0
+// 004bebea: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 004bebef: ADD ESP,0x8
 // 004bebf2: JMP 0x004beb62

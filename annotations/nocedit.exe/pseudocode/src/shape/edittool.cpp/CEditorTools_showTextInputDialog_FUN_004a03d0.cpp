@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, int dialog_flags)
 // Cross-references:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040f180 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040f180 [UNCONDITIONAL_CALL]
 //   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 (00479330) at 00479790 [UNCONDITIONAL_CALL]
 //   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (0047cbc0) at 0047e684 [UNCONDITIONAL_CALL]
 //   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 (004bda20) at 004bdaeb [UNCONDITIONAL_CALL]
@@ -27,7 +27,7 @@
 //   core_setedit.cpp_FUN_0057b410 (0057b410) at 0057b492 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_FUN_0057b600 (0057b600) at 0057b837 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0 (0057bbe0) at 0057c105 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00598883 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00598883 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c484 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058f810 (0058f810) at 0058fdf2 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b3de0 (005b3de0) at 005b3df6 [UNCONDITIONAL_CALL]

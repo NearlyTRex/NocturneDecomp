@@ -4,11 +4,9 @@
 // Convention: __cdecl
 // Signature: int core_vampboss.cpp_CVampireBoss_FUN_005e7280(CVampireBoss * this_ptr)
 // Globals:
-//   undefined4 DAT_00656cab
+//   float FLOAT_00656cab = 0.5
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e7280(CVampireBoss *this_ptr)
 
@@ -20,14 +18,14 @@ int __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e7280(CVampireBoss *this_ptr)
   CVampireBoss **in_stack_00000008;
   CBoundingBox3D aCStack_34 [2];
   
-  pCVar3 = (*((this_ptr->base_enemy).base_character.base_actor.metadata.vtable)->getBoundingBox)
+  pCVar3 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->getBoundingBox)
                      ((CDemonActor *)this_ptr,aCStack_34);
-  pCVar1 = (CVampireBoss *)(((pCVar3->min).y + (pCVar3->max).y) * _DAT_00656cab);
-  pCVar2 = (CVampireBoss *)(((pCVar3->min).z + (pCVar3->max).z) * _DAT_00656cab);
+  pCVar1 = (CVampireBoss *)(((pCVar3->min).y + (pCVar3->max).y) * FLOAT_00656cab);
+  pCVar2 = (CVampireBoss *)(((pCVar3->min).z + (pCVar3->max).z) * FLOAT_00656cab);
   if (in_stack_00000008 == &this_ptr) {
     return 1;
   }
-  *in_stack_00000008 = (CVampireBoss *)(((pCVar3->min).x + (pCVar3->max).x) * _DAT_00656cab);
+  *in_stack_00000008 = (CVampireBoss *)(((pCVar3->min).x + (pCVar3->max).x) * FLOAT_00656cab);
   in_stack_00000008[1] = pCVar1;
   in_stack_00000008[2] = pCVar2;
   return 1;

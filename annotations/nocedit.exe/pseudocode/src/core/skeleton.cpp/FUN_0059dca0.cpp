@@ -8,9 +8,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_skeleton.cpp_FUN_0059dca0(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3) */
-
 int core_skeleton_cpp_FUN_0059dca0(void)
 
 {

@@ -9,7 +9,7 @@
 //   undefined4 DAT_00639826
 //   undefined4 DAT_0063982e
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 
 #include "nocturne.h"
 
@@ -20,46 +20,42 @@ void core_mobster_cpp_FUN_00525650(void)
 
 {
   float fVar1;
-  float *pfVar2;
+  CVector3f *pCVar2;
   BADSPACEBASE *in_ESP;
   int in_stack_00000004;
-  undefined4 local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
-  undefined4 local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
+  CVector3f local_3c;
+  CVector3f local_30;
+  CVector3f local_24;
+  CVector3f local_18;
   
   if (*(int *)(in_stack_00000004 + 0xbee4) == 0) {
-    local_38 = 0xc0166666;
-    local_34 = 0xbfcccccd;
-    local_3c = 0x400ccccd;
+    local_3c.y = -2.35;
+    local_3c.z = -1.6;
+    local_3c.x = 2.2;
     if (&local_24 != &local_3c) {
-      local_20 = 0xc0166666;
-      local_1c = 0xbfcccccd;
-      local_24 = 0x400ccccd;
+      local_24.y = -2.35;
+      local_24.z = -1.6;
+      local_24.x = 2.2;
     }
     fVar1 = *(float *)(*(int *)(in_stack_00000004 + 0xbee0) + 0x34) + (float)_DAT_00639826;
   }
   else {
-    local_14 = 0xc0166666;
-    local_10 = 0xbfcccccd;
-    local_18 = 0xc00ccccd;
+    local_18.y = -2.35;
+    local_18.z = -1.6;
+    local_18.x = -2.2;
     if (&local_24 != &local_18) {
-      local_20 = 0xc0166666;
-      local_1c = 0xbfcccccd;
-      local_24 = 0xc00ccccd;
+      local_24.y = -2.35;
+      local_24.z = -1.6;
+      local_24.x = -2.2;
     }
     fVar1 = *(float *)(*(int *)(in_stack_00000004 + 0xbee0) + 0x34) + (float)_DAT_0063982e;
   }
   *(float *)(in_stack_00000004 + 0x34) = fVar1;
-  pfVar2 = core_actor_cpp_CDemonActor_FUN_00408ec0(*(CDemonActor **)(in_stack_00000004 + 0xbee0));
-  *(float *)(in_stack_00000004 + 0x20) = *pfVar2;
-  *(float *)(in_stack_00000004 + 0x24) = pfVar2[1];
-  *(float *)(in_stack_00000004 + 0x28) = pfVar2[2];
+  pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                     (*(CDemonActor **)(in_stack_00000004 + 0xbee0),&local_30,&local_24);
+  *(float *)(in_stack_00000004 + 0x20) = pCVar2->x;
+  *(float *)(in_stack_00000004 + 0x24) = pCVar2->y;
+  *(float *)(in_stack_00000004 + 0x28) = pCVar2->z;
   return;
 }
 
@@ -112,7 +108,7 @@ void core_mobster_cpp_FUN_00525650(void)
 // 005256b1: PUSH EAX
 // 005256b2: MOV ECX,dword ptr [EBX + 0xbee0]
 // 005256b8: PUSH ECX
-// 005256b9: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005256b9: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005256be: FLD float ptr [EAX]
 // 005256c0: ADD ESP,0xc

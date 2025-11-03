@@ -15,7 +15,7 @@
 //   CDemonRenderer g_CDemonRendererInstance
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
-//   core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+//   core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 //   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 //   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
@@ -38,22 +38,22 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004c1ef0(CGlassParticle *th
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr,(CVector3f *)this_ptr);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)(this_ptr->field1_0x38 + 0x1c),(CVector3i *)0x0);
-  local_24._0_4_ = (undefined4)ROUND(*(float *)(this_ptr->field1_0x38 + 0x40) * FLOAT_0065dca8);
-  local_24._4_4_ = (undefined4)ROUND(*(float *)(this_ptr->field1_0x38 + 0x44) * FLOAT_0065dca8);
-  local_1c = (int)ROUND(*(float *)(this_ptr->field1_0x38 + 0x48) * FLOAT_0065dca8);
+            (g_CDemonRendererPtr,(CVector3i *)&this_ptr->euler_angles,(CVector3i *)0x0);
+  local_24._0_4_ = (undefined4)ROUND((this_ptr->triangle_delta).vertices[0].x * FLOAT_0065dca8);
+  local_24._4_4_ = (undefined4)ROUND((this_ptr->triangle_delta).vertices[0].y * FLOAT_0065dca8);
+  local_1c = (int)ROUND((this_ptr->triangle_delta).vertices[0].z * FLOAT_0065dca8);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,(CVector3i *)(local_24 + 4));
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,
              (CVector3i *)&stack0xfffffff0);
-  local_24._0_4_ = (undefined4)ROUND(*(float *)(this_ptr->field1_0x38 + 0x58) * FLOAT_0065dca8);
-  local_24._4_4_ = (undefined4)ROUND(*(float *)(this_ptr->field1_0x38 + 0x5c) * FLOAT_0065dca8);
-  local_1c = (int)ROUND(*(float *)(this_ptr->field1_0x38 + 0x60) * FLOAT_0065dca8);
+  local_24._0_4_ = (undefined4)ROUND((this_ptr->triangle_delta).vertices[2].x * FLOAT_0065dca8);
+  local_24._4_4_ = (undefined4)ROUND((this_ptr->triangle_delta).vertices[2].y * FLOAT_0065dca8);
+  local_1c = (int)ROUND((this_ptr->triangle_delta).vertices[2].z * FLOAT_0065dca8);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,(CVector3i *)local_24);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr,(SMRGLTextureBasic *)(this_ptr->field1_0x38 + 4));
+            (g_CDemonRendererPtr,&this_ptr->texture);
   SStack_44.surface_normal.A = 0;
   SStack_44.base.count = 0;
   SStack_44.base.type = 0;
@@ -61,17 +61,18 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004c1ef0(CGlassParticle *th
   SStack_44.surface_normal.C = 1;
   SStack_44.surface_normal.D = 2;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
-            (g_CDemonRendererPtr,*(int *)this_ptr->field1_0x38);
+            (g_CDemonRendererPtr,this_ptr->lifetime);
   local_24._0_4_ = (undefined4)ROUND((this_ptr->base).position.x * FLOAT_0065dca8);
   local_24._4_4_ = (undefined4)ROUND((this_ptr->base).position.y * FLOAT_0065dca8);
   local_1c = (int)ROUND((this_ptr->base).position.z * FLOAT_0065dca8);
-  core_set_cpp_CDemonSet_CallLightVertexColor_FUN_0056e110(g_CDemonSetPtr);
-  g_RenderVertexBuffer[0].u = *(float *)(this_ptr->field1_0x38 + 0x28);
-  g_RenderVertexBuffer[0].v = *(float *)(this_ptr->field1_0x38 + 0x34);
-  g_RenderVertexBuffer[1].u = *(float *)(this_ptr->field1_0x38 + 0x2c);
-  g_RenderVertexBuffer[1].v = *(float *)(this_ptr->field1_0x38 + 0x38);
-  g_RenderVertexBuffer[2].u = *(float *)(this_ptr->field1_0x38 + 0x30);
-  g_RenderVertexBuffer[2].v = *(float *)(this_ptr->field1_0x38 + 0x3c);
+  core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
+            (g_CDemonSetPtr,(CVector3i *)local_24,(CVector3i *)0x0,0,3);
+  g_RenderVertexBuffer[0].u = (this_ptr->uv_u_per_vertex).x;
+  g_RenderVertexBuffer[0].v = (this_ptr->uv_v_per_vertex).x;
+  g_RenderVertexBuffer[1].u = (this_ptr->uv_u_per_vertex).y;
+  g_RenderVertexBuffer[1].v = (this_ptr->uv_v_per_vertex).y;
+  g_RenderVertexBuffer[2].u = (this_ptr->uv_u_per_vertex).z;
+  g_RenderVertexBuffer[2].v = (this_ptr->uv_v_per_vertex).z;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
             (g_CDemonRendererPtr,&SStack_44);
@@ -235,7 +236,7 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004c1ef0(CGlassParticle *th
 //   XREF to: 03114278 (PARAM)
 // 004c2079: PUSH ECX
 //   XREF to: 03114278 (DATA)
-// 004c207a: CALL core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+// 004c207a: CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   XREF to: 0056e110 (UNCONDITIONAL_CALL)
 // 004c207f: MOV EAX,dword ptr [ESI + 0x60]
 // 004c2082: MOV [0x0068802c],EAX

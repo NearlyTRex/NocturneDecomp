@@ -14,8 +14,8 @@
 //   undefined4 DAT_03f6cd14
 // Function calls:
 //   core_enemy.cpp_CEnemy_FUN_004a9650
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -23,20 +23,20 @@
 void __cdecl core_tentacle_cpp_CTentacle_FUN_005dafc0(CTentacle *this_ptr)
 
 {
+  CSkeleton *this_ptr_00;
+  CDeformableModelInstance *this_ptr_01;
   CEnemy *in_stack_00000008;
-  char *pcStack0000000c;
   undefined4 uStack00000010;
   
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
+  this_ptr_01 = &(this_ptr->base_enemy).base_character.model;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr_01);
   core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000008);
-  core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-  DAT_03f6cd08 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  DAT_03f6cd0c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack0000000c = (char *)0x1;
-  DAT_03f6cd10 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr_01);
+  DAT_03f6cd08 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"bipp02");
+  DAT_03f6cd0c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"bipp05");
+  DAT_03f6cd10 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"bipp06");
   uStack00000010 = 1;
-  pcStack0000000c = "bipp09";
-  DAT_03f6cd14 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
+  DAT_03f6cd14 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"bipp09");
   return;
 }
 
@@ -48,7 +48,7 @@ void __cdecl core_tentacle_cpp_CTentacle_FUN_005dafc0(CTentacle *this_ptr)
 //   XREF to: Stack[0x4] (READ)
 // 005dafc5: ADD EBX,0x158
 // 005dafcb: PUSH EBX
-// 005dafcc: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 005dafcc: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 005dafd1: ADD ESP,0x4
 // 005dafd4: MOV EDX,dword ptr [ESP + 0x8]
@@ -58,7 +58,7 @@ void __cdecl core_tentacle_cpp_CTentacle_FUN_005dafc0(CTentacle *this_ptr)
 //   XREF to: 004a9650 (UNCONDITIONAL_CALL)
 // 005dafde: ADD ESP,0x4
 // 005dafe1: PUSH EBX
-// 005dafe2: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 005dafe2: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005dafe7: ADD ESP,0x4
 // 005dafea: PUSH 0x1

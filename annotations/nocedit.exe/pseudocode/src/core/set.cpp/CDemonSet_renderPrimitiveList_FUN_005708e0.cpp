@@ -12,7 +12,7 @@
 //   undefined4 DAT_02c6d590
 //   undefined4 DAT_02d81c8c
 // Function calls:
-//   core_mirror.cpp_clipAndRenderReflectedPrimitive_FUN_00522560
+//   core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560
 //   engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820
 
 #include "nocturne.h"
@@ -42,7 +42,7 @@ core_set_cpp_CDemonSet_renderPrimitiveList_FUN_005708e0
       if (0 < primitive_count) {
         do {
           iVar1 = iVar1 + 1;
-          core_mirror_cpp_clipAndRenderReflectedPrimitive_FUN_00522560
+          core_mirror_cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560
                     (this_ptr->active_mirror,primitive_array);
           primitive_array = (SMRGLHeaderPrimitive *)&primitive_array[1].surface_normal.C;
         } while (iVar1 < primitive_count);
@@ -88,7 +88,7 @@ core_set_cpp_CDemonSet_renderPrimitiveList_FUN_005708e0
 // 00570915: MOV EAX,dword ptr [EBP + 0x161650]
 // 0057091b: PUSH EAX
 // 0057091c: INC EBX
-// 0057091d: CALL core_mirror.cpp_clipAndRenderReflectedPrimitive_FUN_00522560
+// 0057091d: CALL core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560
 //   XREF to: 00522560 (UNCONDITIONAL_CALL)
 // 00570922: ADD ESI,0x28
 // 00570925: ADD ESP,0x8

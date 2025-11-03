@@ -1,10 +1,10 @@
 // Name: core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
 // Address: 0058a4a0
 // Address Range: [[0058a4a0, 0058aa01]]
-// Convention: unknown
-// Signature: undefined core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0()
+// Convention: __cdecl
+// Signature: void core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneStructure * this_ptr)
 // Cross-references:
-//   core_skeledit.cpp_FUN_0058a3d0 (0058a3d0) at 0058a43f [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0 (0058a3d0) at 0058a43f [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c235 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 00592f26 [UNCONDITIONAL_CALL]
 // Globals:
@@ -35,10 +35,7 @@
 
 #include "nocturne.h"
 
-/* Signature: void core_skeledit.cpp_CBoneStructure_readBONheader(int* param_1, FILE* param_2,
-   undefined4 param_3, undefined4 param_4) */
-
-void core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(void)
+void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneStructure *this_ptr)
 
 {
   char cVar1;
@@ -60,7 +57,6 @@ void core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(void)
   byte bVar16;
   streambuf **str2;
   streambuf **ppsVar17;
-  int iStack00000008;
   FILE *in_stack_00000010;
   FILE *in_stack_00000014;
   int *in_stack_00000018;
@@ -168,7 +164,7 @@ void core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(void)
     local_14 = (streambuf **)(in_stack_00000020 + 1);
     ppsStack_c = (streambuf **)(in_stack_00000020 + 1);
     do {
-      iStack00000008 = 0;
+      this_ptr = (CBoneStructure *)0x0;
       if (0 < iVar5) {
         piVar7 = (int *)(ppsStack_c + 9);
         piVar8 = aiStack_22c;
@@ -179,12 +175,12 @@ void core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(void)
           ppsVar17 = ppsVar17 + 0x21;
           str2 = str2 + 0x21;
           puVar9 = piVar8 + 1;
-          iVar4 = aiStack_22c[iStack00000008] - aiStack_22c[iStack00000008 + 1];
+          iVar4 = aiStack_22c[(int)this_ptr] - aiStack_22c[(int)(this_ptr + 1)];
           if (iVar4 == 0) {
             iVar4 = crt_string_c_stricmp_FUN_005fe7f0((char *)str1,(char *)str2);
           }
           if (0 < iVar4) {
-            ppsVar15 = ppsStack_c + iStack00000008 * 0x21;
+            ppsVar15 = ppsStack_c + (int)this_ptr * 0x21;
             ppsVar11 = ppsVar15;
             piVar12 = aiStack_9c;
             for (iVar4 = 7; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -237,9 +233,9 @@ void core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(void)
           }
           piVar7 = piVar7 + 0x21;
           str1 = str1 + 0x21;
-          iStack00000008 = iStack00000008 + 1;
+          this_ptr = this_ptr + 1;
           piVar8 = puVar9;
-        } while (iStack00000008 < iVar5);
+        } while ((int)this_ptr < iVar5);
       }
       iVar5 = iVar5 + -1;
     } while (-1 < iVar5);

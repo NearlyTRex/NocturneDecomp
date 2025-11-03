@@ -62,7 +62,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
         if (0.0 < (double)iStack_1d0) {
           sound_sndmain_cpp_FUN_005a8be0();
         }
-        uVar2 = (*((this_ptr->base_weapon).base_actor.metadata.vtable)->playSound)
+        uVar2 = (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
                           ((CDemonActor *)this_ptr,"m-gun-t.wav");
         *(undefined4 *)(this_ptr->field1_0x578 + 8) = uVar2;
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
@@ -83,7 +83,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
   crt_stdio_c_sprintf_FUN_005fdbd0(acStack_7c,"$@m-gun1.wav @ 2.3 * %f" + 2,(double)fStack_1d4);
   sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-  uVar2 = (*((this_ptr->base_weapon).base_actor.metadata.vtable)->playAmbientSound)
+  uVar2 = (*((this_ptr->base_weapon).base_actor.vtable)->playAmbientSound)
                     ((CDemonActor *)this_ptr,acStack_74);
   *(undefined4 *)(this_ptr->field1_0x578 + 4) = uVar2;
   return;

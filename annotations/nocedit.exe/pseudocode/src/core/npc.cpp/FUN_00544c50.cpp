@@ -9,7 +9,7 @@
 //   TerminatedCString s_s_d_0063e3ac
 //   TerminatedCString s_s_d_0063e3b2
 // Function calls:
-//   core_actor.cpp_FUN_0040cc70
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
@@ -23,42 +23,46 @@ undefined4 core_npc_cpp_FUN_00544c50(void)
 
 {
   char cVar1;
+  CMotionList *this_ptr;
   int iVar2;
-  int iVar3;
+  int max_value;
   BADSPACEBASE *in_ESP;
-  char *pcVar4;
+  char *pcVar3;
+  CMotionController *in_stack_00000004;
   char *in_stack_00000008;
+  CMotionController *in_stack_0000001c;
   int aiStack_c8 [46];
   
-  iVar3 = 0;
-  core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
+  max_value = 0;
+  this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(in_stack_00000004);
   while( true ) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,"%s_%d",in_stack_00000008,iVar3 + 1);
-    iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0();
-    pcVar4 = &stack0xffffff2c;
+    crt_stdio_c_sprintf_FUN_005fdbd0
+              (&stack0xffffff2c,"%s_%d",in_stack_00000008,max_value + 1);
+    iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr);
+    pcVar3 = &stack0xffffff2c;
     if (iVar2 < 0) break;
-    iVar3 = iVar3 + 1;
+    max_value = max_value + 1;
   }
-  if (iVar3 == 0) {
+  if (max_value == 0) {
     do {
       cVar1 = *in_stack_00000008;
-      *pcVar4 = cVar1;
+      *pcVar3 = cVar1;
       if (cVar1 == '\0') break;
       cVar1 = in_stack_00000008[1];
       in_stack_00000008 = in_stack_00000008 + 2;
-      pcVar4[1] = cVar1;
-      pcVar4 = pcVar4 + 2;
+      pcVar3[1] = cVar1;
+      pcVar3 = pcVar3 + 2;
     } while (cVar1 != '\0');
   }
   else {
-    core_actor_cpp_FUN_0040cc70();
+    core_actor_cpp_getRandomInt_FUN_0040cc70(1,max_value);
     crt_stdio_c_sprintf_FUN_005fdbd0((char *)aiStack_c8,"%s_%d");
   }
   aiStack_c8[0] = 0;
-  aiStack_c8[0] = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0();
+  aiStack_c8[0] = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr);
   if (-1 < aiStack_c8[0]) {
     aiStack_c8[1] = 1;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(in_stack_0000001c);
     return 1;
   }
   return 0;
@@ -115,7 +119,7 @@ undefined4 core_npc_cpp_FUN_00544c50(void)
 //   XREF to: 00544ce8 (CONDITIONAL_JUMP)
 // 00544ca8: PUSH EBX
 // 00544ca9: PUSH 0x1
-// 00544cab: CALL core_actor.cpp_FUN_0040cc70
+// 00544cab: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 00544cb0: ADD ESP,0x8
 // 00544cb3: PUSH EAX

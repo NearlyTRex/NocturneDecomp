@@ -9,7 +9,7 @@
 //   undefined4 g_CCharacterClassInfo.name_hash
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408e80
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   core_baron.cpp_FUN_004135a0
 
 #include "nocturne.h"
@@ -22,13 +22,19 @@ void core_baron_cpp_FUN_004135e0(void)
   CVector3f *pCVar1;
   CDemonActor *this_ptr;
   int iVar2;
+  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   SCollisionInfo *collision_info;
+  CVector3f local_28;
+  CVector3f local_1c;
   
   if (*(int *)(in_stack_00000004 + 0x1fcac) != 0) {
     iVar2 = *(int *)(in_stack_00000004 + 0x154);
-    pCVar1 = core_actor_cpp_CDemonActor_FUN_00408e80(*(CDemonActor **)(in_stack_00000004 + 0x1fcac))
-    ;
+    local_1c.z = -2.0;
+    local_1c.x = 0.0;
+    local_1c.y = 0.0;
+    pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                       (*(CDemonActor **)(in_stack_00000004 + 0x1fcac),&local_28,&local_1c);
     collision_info =
          (SCollisionInfo *)(*(float *)(*(int *)(in_stack_00000004 + 0x1fcac) + 0x20) + pCVar1->x);
     (**(code **)(iVar2 + 0x60))();
@@ -36,7 +42,7 @@ void core_baron_cpp_FUN_004135e0(void)
                          (*(CDemonActor **)(in_stack_00000004 + 0x1fcac),
                           g_CCharacterClassInfo.name_hash);
     if (this_ptr != (CDemonActor *)0x0) {
-      iVar2 = (*(this_ptr->metadata).vtable[1].hasCollision)(this_ptr,collision_info);
+      iVar2 = (*this_ptr->vtable[1].hasCollision)(this_ptr,collision_info);
       if (iVar2 == 2) {
         core_baron_cpp_FUN_004135a0();
         return;
@@ -88,7 +94,7 @@ void core_baron_cpp_FUN_004135e0(void)
 // 0041361e: PUSH EAX
 // 0041361f: MOV EDX,dword ptr [EBX + 0x1fcac]
 // 00413625: PUSH EDX
-// 00413626: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 00413626: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 0041362b: MOV EDX,dword ptr [EBX + 0x1fcac]
 // 00413631: FLD float ptr [EDX + 0x20]

@@ -16,7 +16,7 @@
 //   undefined4 g_CGameInstance.blood_flag
 //   undefined4 g_CGameInstance.field57_0x1e0
 // Function calls:
-//   core_actor.cpp_FUN_0040cd10
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_bodypart.cpp_CreateBodyPart_FUN_00418e10
 //   core_bodypart.cpp_FUN_0041a050
 //   core_charactr.cpp_CCharacter_FUN_0042bcc0
@@ -36,6 +36,7 @@ void core_cow_cpp_FUN_004448c0(void)
   int iVar1;
   CCharacter *in_stack_00000004;
   int *in_stack_00000008;
+  float probability_threshold;
   
   if ((0.0 < (float)in_stack_00000008[0xb]) && (*in_stack_00000008 == -1)) {
     iVar1 = crt_stdlib_c_rand_FUN_005feb5c();
@@ -59,42 +60,51 @@ void core_cow_cpp_FUN_004448c0(void)
   }
 switchD_004448f6_default:
   iVar1 = *in_stack_00000008;
-  if (((((iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x48)) ||
-        (iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x4c))) ||
-       (iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x50))) ||
-      ((iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c) ||
-       (iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x44))))) &&
-     (iVar1 = core_actor_cpp_FUN_0040cd10(), iVar1 != 0)) {
-    core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
-    core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
-    if (*in_stack_00000008 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x44)) {
-      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-      core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+  if ((((iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x48)) ||
+       (iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x4c))) ||
+      (iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x50))) ||
+     ((iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c) ||
+      (iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x44))))) {
+    probability_threshold = (float)in_stack_00000008[0xb];
+    if (g_CGamePtr->field57_0x1e0 != 0) {
+      probability_threshold = 1.0;
     }
-    core_charactr_cpp_CCharacter_FUN_0042f300(in_stack_00000004);
-    core_bodypart_cpp_FUN_0041a050();
-    if (*(int *)((in_stack_00000004->model).padding_0x0 +
-                *(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c) * 4 + 0x2140) == 0) {
-      in_stack_00000008[1] = 0x461c3c00;
+    if (g_CGamePtr->blood_flag == 0) {
+      probability_threshold = 0.0;
     }
-    if (*(int *)((in_stack_00000004->model).padding_0x0 +
-                *(int *)(in_stack_00000004[1].base_actor.create_event + 0x48) * 4 + 0x2140) == 0) {
-      in_stack_00000008[1] = 0x461c3c00;
+    iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(probability_threshold);
+    if (iVar1 != 0) {
+      core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
+      core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
+      if (*in_stack_00000008 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x44)) {
+        core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+        core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+        core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+        core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+        core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+        core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+        core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+        core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+        core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
+      }
+      core_charactr_cpp_CCharacter_FUN_0042f300(in_stack_00000004);
+      core_bodypart_cpp_FUN_0041a050();
+      if ((in_stack_00000004->model).part_visibility_flags
+          [*(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c)] == 0) {
+        in_stack_00000008[1] = 0x461c3c00;
+      }
+      if ((in_stack_00000004->model).part_visibility_flags
+          [*(int *)(in_stack_00000004[1].base_actor.create_event + 0x48)] == 0) {
+        in_stack_00000008[1] = 0x461c3c00;
+      }
+      in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)_DAT_00619595);
     }
-    in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)_DAT_00619595);
   }
-  if (*(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c) == *in_stack_00000008) {
-    in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)_DAT_006195a5);
+  if (*(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c) != *in_stack_00000008) {
+    in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)_DAT_0061959d);
     return;
   }
-  in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)_DAT_0061959d);
+  in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)_DAT_006195a5);
   return;
 }
 
@@ -173,7 +183,7 @@ switchD_004448f6_default:
 // 00444942: PUSH dword ptr [ESP + 0x8]
 //   Label: LAB_00444942
 //   XREF to: Stack[-0x14] (READ)
-// 00444946: CALL core_actor.cpp_FUN_0040cd10
+// 00444946: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 0044494b: ADD ESP,0x4
 // 0044494e: TEST EAX,EAX

@@ -12,7 +12,7 @@
 //   float FLOAT_0061663f = 0.5
 //   undefined4 DAT_0078a123
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_box.cpp_CBox_setupCorners_FUN_0041dd20
 
 #include "nocturne.h"
@@ -35,34 +35,32 @@ void core_boxactor_cpp_FUN_004218d0(void)
   float fStack_2c;
   float fStack_28;
   float fStack_24;
-  float fStack_20;
-  CVector3f CStack_1c;
-  float fStack_10;
-  float fStack_c;
+  undefined1 auStack_20 [12];
+  CVector3f CStack_14;
   float fStack_8;
   
-  fVar1 = in_stack_00000004[2].field_224.x;
+  fVar1 = in_stack_00000004[2].field12_0xe0.x;
   in_stack_00000004[4].create_event[0x10] = '\0';
   in_stack_00000004[4].create_event[0x11] = '\0';
   in_stack_00000004[4].create_event[0x12] = '\0';
   in_stack_00000004[4].create_event[0x13] = '\0';
   if ((0.0 < fVar1) && ((undefined *)in_stack_00000004->field6_0x68 == &DAT_0078a123)) {
     if (in_stack_00000004[2].location.position.x != 0.0) {
-      (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
-                (in_stack_00000004,(CBoundingBox3D *)&fStack_4c);
+      (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,(CBoundingBox3D *)&fStack_4c);
       fStack_8 = in_stack_ffffffc8 + fStack_2c;
-      CStack_1c.z = fStack_8 * FLOAT_0061663f;
-      fStack_10 = (fStack_34 + fStack_28) * FLOAT_0061663f;
-      fStack_c = (fStack_30 + fStack_24) * FLOAT_0061663f;
-      core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
+      CStack_14.x = fStack_8 * FLOAT_0061663f;
+      CStack_14.y = (fStack_34 + fStack_28) * FLOAT_0061663f;
+      CStack_14.z = (fStack_30 + fStack_24) * FLOAT_0061663f;
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                (in_stack_00000004,(CVector3f *)auStack_20,&CStack_14);
       in_stack_00000008 = fStack_28 - fStack_34;
       in_stack_0000000c = fStack_24 - fStack_30;
-      in_stack_00000010 = fStack_20 - fStack_2c;
+      in_stack_00000010 = (float)auStack_20._0_4_ - fStack_2c;
       fStack_4c = 6.070401e-39;
       core_box_cpp_CBox_setupCorners_FUN_0041dd20
-                ((CBox *)&in_stack_00000004[2].field_224.y,&CStack_1c,
+                ((CBox *)&in_stack_00000004[2].field12_0xe0.y,(CVector3f *)(auStack_20 + 4),
                  (CVector3f *)&in_stack_00000004->orient,(CVector3f *)&stack0x00000008,
-                 in_stack_00000004[2].field_224.x);
+                 in_stack_00000004[2].field12_0xe0.x);
       return;
     }
     in_stack_00000004[4].create_event[0x10] = -1;
@@ -136,7 +134,7 @@ void core_boxactor_cpp_FUN_004218d0(void)
 // 00421970: FXCH
 // 00421972: FSTP float ptr [ESP + 0x34]
 // 00421976: FSTP float ptr [ESP + 0x38]
-// 0042197a: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0042197a: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0042197f: ADD ESP,0xc
 // 00421982: LEA EAX,[ESP + 0x3c]

@@ -50,7 +50,7 @@ CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_005da610(CBassPlaye
                       in_stack_00000018,in_stack_0000001c);
   ptr = (CBassPlayer *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar3[-1].padding_0x0 + 0x215c),1);
+                  ((CDemonActor *)(pCVar3[-1].part_visibility_flags + 7),1);
   if ((in_stack_00000028 & 2) == 0) {
     return ptr;
   }

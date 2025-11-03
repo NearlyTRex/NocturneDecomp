@@ -13,14 +13,14 @@
 //   core_cloth.cpp_CCloth_load_FUN_00438cf0
 //   core_cloth.cpp_FUN_00439710
 //   core_enemy.cpp_CEnemy_FUN_004a9650
-//   core_morph.cpp_CallToFreeSomething1_FUN_0052b430
 //   core_morph.cpp_CMorph_getReady_FUN_0052b680
+//   core_morph.cpp_FUN_0052b430
 //   core_morph.cpp_FUN_0052b580
-//   core_skeleton.cpp_CDeformableModel_GetModelPtrSomethingMaybe_FUN_0059df80
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -28,26 +28,25 @@
 void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e56c0(CVampireBoss *this_ptr)
 
 {
-  CDeformableModelInstance *pCVar1;
-  char *pcVar2;
-  CCharacter *pCVar3;
-  undefined4 uVar4;
-  char *pcStack00000008;
-  char *pcStack0000000c;
+  CDeformableModelInstance *this_ptr_00;
+  CDeformableModelInstance *this_ptr_01;
+  char *this_ptr_02;
+  CCharacter *pCVar1;
+  CSkeleton *this_ptr_03;
+  int iVar2;
   CDeformableModelInstance *pCStack00000010;
   char *pcStack00000014;
   undefined4 uStack00000018;
   char *pcStack0000001c;
   char *pcStack00000020;
   undefined4 uStack0000002c;
-  char *pcStack00000030;
-  char *pcStack0000003c;
   undefined4 uStack00000040;
   
   core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base_enemy);
-  pCVar1 = &(this_ptr->base_enemy).base_character.model;
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
+  this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr_00);
+  this_ptr_01 = (CDeformableModelInstance *)(this_ptr->field1_0xbeb4 + 8);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr_01);
   core_cloth_cpp_CCloth_load_FUN_00438cf0
             ((CCloth *)(this_ptr->field1_0xbeb4 + 0x22bc),"batwing.cth");
   core_cloth_cpp_FUN_00439710();
@@ -57,78 +56,64 @@ void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e56c0(CVampireBoss *this_ptr)
   core_cloth_cpp_CCloth_load_FUN_00438cf0
             ((CCloth *)(this_ptr->field1_0xbeb4 + 0x81f9c),"nosskirt.cth");
   core_cloth_cpp_FUN_00439710();
-  core_skeleton_cpp_CDeformableModel_GetModelPtrSomethingMaybe_FUN_0059df80();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40();
-  pcStack00000008 = this_ptr->field1_0xbeb4 + 8;
-  core_skeleton_cpp_CDeformableModel_GetModelPtrSomethingMaybe_FUN_0059df80();
-  pcStack00000008 = (char *)0x5e579d;
-  pcStack0000000c = this_ptr->field1_0xbeb4 + 8;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40();
-  pcStack0000000c = (char *)0x0;
-  pcVar2 = this_ptr->field3_0xcdcc4;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059df80(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059df80(this_ptr_01);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40(this_ptr_01);
+  this_ptr_02 = this_ptr->field3_0xcdcc4;
   DAT_02f43974 = 0;
-  pcStack00000008 = pcVar2;
-  pCStack00000010 = pCVar1;
-  core_morph_cpp_CallToFreeSomething1_FUN_0052b430();
+  pCStack00000010 = this_ptr_00;
+  core_morph_cpp_FUN_0052b430();
   pcStack00000014 = (char *)0x0;
-  pcStack0000000c = (char *)0x0;
-  pcStack00000008 = pcVar2;
   core_morph_cpp_FUN_0052b580();
   uStack00000018 = 0;
   pCStack00000010 = (CDeformableModelInstance *)0x0;
   DAT_02f43974 = 1;
-  pcStack00000008 = (char *)0x5e57e4;
-  pcStack0000000c = pcVar2;
   core_morph_cpp_FUN_0052b580();
   pcStack0000001c = (char *)0x0;
   pcStack00000014 = (char *)0x0;
   DAT_02f43974 = 0;
-  pcStack0000000c = (char *)0x5e57fc;
-  pCStack00000010 = (CDeformableModelInstance *)pcVar2;
+  pCStack00000010 = (CDeformableModelInstance *)this_ptr_02;
   core_morph_cpp_FUN_0052b580();
   pcStack00000020 = (char *)0x0;
   uStack00000018 = 0;
   DAT_02f43974 = 1;
   pCStack00000010 = (CDeformableModelInstance *)0x5e5818;
-  pcStack00000014 = pcVar2;
+  pcStack00000014 = this_ptr_02;
   core_morph_cpp_FUN_0052b580();
   pcStack00000020 = (char *)0x1;
   DAT_02f43974 = 0;
   uStack00000018 = 0x5e582c;
-  pcStack0000001c = pcVar2;
-  core_morph_cpp_CallToFreeSomething1_FUN_0052b430();
+  pcStack0000001c = this_ptr_02;
+  core_morph_cpp_FUN_0052b430();
   pcStack00000020 = (char *)0x1;
   uStack00000018 = 0x5e583e;
-  pcStack0000001c = pcVar2;
+  pcStack0000001c = this_ptr_02;
   core_morph_cpp_FUN_0052b580();
   uStack0000002c = 0;
   DAT_02f43974 = 1;
   pcStack0000001c = (char *)0x5e585a;
-  pcStack00000020 = pcVar2;
+  pcStack00000020 = this_ptr_02;
   core_morph_cpp_FUN_0052b580();
   DAT_02f43974 = 0;
   uStack0000002c = 0x5e586a;
-  pcStack00000030 = pcVar2;
-  core_morph_cpp_CMorph_getReady_FUN_0052b680();
-  pcStack00000030 = (char *)0x5e5873;
+  core_morph_cpp_CMorph_getReady_FUN_0052b680((CMorph *)this_ptr_02);
   core_skeleton_cpp_CDeformableModelInstance_FUN_0059e000();
   core_skeleton_cpp_CDeformableModelInstance_FUN_0059e000();
   (this_ptr->base_enemy).base_character.base_actor.is_transparent = 1;
-  pcStack0000003c = pCVar1->padding_0x0;
-  core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr_00);
   uStack00000040 = 1;
-  pcStack0000003c = "Bip01 Spine2";
-  uVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pCVar3 = &(this_ptr->base_enemy).base_character;
-  pCVar3->carry_hands[0].field0_0x0[4] = '\0';
-  pCVar3->carry_hands[0].field0_0x0[5] = '\0';
-  pCVar3->carry_hands[0].field0_0x0[6] = '\0';
-  pCVar3->carry_hands[0].field0_0x0[7] = '\0';
+  iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_03,"Bip01 Spine2");
+  pCVar1 = &(this_ptr->base_enemy).base_character;
+  pCVar1->carry_hands[0].field0_0x0[4] = '\0';
+  pCVar1->carry_hands[0].field0_0x0[5] = '\0';
+  pCVar1->carry_hands[0].field0_0x0[6] = '\0';
+  pCVar1->carry_hands[0].field0_0x0[7] = '\0';
   this_ptr->field5_0xce8f4[0xc] = '\0';
   this_ptr->field5_0xce8f4[0xd] = '\0';
   this_ptr->field5_0xce8f4[0xe] = '\0';
   this_ptr->field5_0xce8f4[0xf] = '\0';
-  *(undefined4 *)(this_ptr->base_enemy).base_character.carry_hands[0].field0_0x0 = uVar4;
+  *(int *)(this_ptr->base_enemy).base_character.carry_hands[0].field0_0x0 = iVar2;
   return;
 }
 
@@ -148,12 +133,12 @@ void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e56c0(CVampireBoss *this_ptr)
 // 005e56d1: ADD ESP,0x4
 // 005e56d4: LEA EDI,[EBX + 0x158]
 // 005e56da: PUSH EDI
-// 005e56db: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 005e56db: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 005e56e0: ADD ESP,0x4
 // 005e56e3: LEA EBP,[EBX + 0xbebc]
 // 005e56e9: PUSH EBP
-// 005e56ea: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 005e56ea: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 005e56ef: ADD ESP,0x4
 // 005e56f2: PUSH 0x656adc
@@ -219,7 +204,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e56c0(CVampireBoss *this_ptr)
 //   XREF to: 00439710 (UNCONDITIONAL_CALL)
 // 005e5779: ADD ESP,0x10
 // 005e577c: PUSH EDI
-// 005e577d: CALL core_skeleton.cpp_CDeformableModel_GetModelPtrSomethingMaybe_FUN_0059df80
+// 005e577d: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
 //   XREF to: 0059df80 (UNCONDITIONAL_CALL)
 // 005e5782: ADD ESP,0x4
 // 005e5785: PUSH EDI
@@ -227,7 +212,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e56c0(CVampireBoss *this_ptr)
 //   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
 // 005e578b: ADD ESP,0x4
 // 005e578e: PUSH EBP
-// 005e578f: CALL core_skeleton.cpp_CDeformableModel_GetModelPtrSomethingMaybe_FUN_0059df80
+// 005e578f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
 //   XREF to: 0059df80 (UNCONDITIONAL_CALL)
 // 005e5794: ADD ESP,0x4
 // 005e5797: PUSH EBP
@@ -241,7 +226,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e56c0(CVampireBoss *this_ptr)
 // 005e57aa: PUSH ESI
 // 005e57ab: MOV [0x02f43974],EAX
 //   XREF to: 02f43974 (WRITE)
-// 005e57b0: CALL core_morph.cpp_CallToFreeSomething1_FUN_0052b430
+// 005e57b0: CALL core_morph.cpp_FUN_0052b430
 //   XREF to: 0052b430 (UNCONDITIONAL_CALL)
 // 005e57b5: ADD ESP,0xc
 // 005e57b8: PUSH 0x0
@@ -295,7 +280,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e56c0(CVampireBoss *this_ptr)
 // 005e5820: PUSH ESI
 // 005e5821: MOV dword ptr [0x02f43974],ECX
 //   XREF to: 02f43974 (WRITE)
-// 005e5827: CALL core_morph.cpp_CallToFreeSomething1_FUN_0052b430
+// 005e5827: CALL core_morph.cpp_FUN_0052b430
 //   XREF to: 0052b430 (UNCONDITIONAL_CALL)
 // 005e582c: ADD ESP,0xc
 // 005e582f: PUSH 0x0
@@ -336,7 +321,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e56c0(CVampireBoss *this_ptr)
 // 005e587c: ADD ESP,0x4
 // 005e587f: PUSH EDI
 // 005e5880: MOV dword ptr [EBX + 0xfc],0x1
-// 005e588a: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 005e588a: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005e588f: ADD ESP,0x4
 // 005e5892: PUSH 0x1

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840(CDemonActor * this_ptr, SSurfaceInfo * surface_info)
 // Cross-references:
-//   core_glass.cpp_FUN_004eb250 (004eb250) at 004eb261 [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_getSurfaceProperties_FUN_004eb250 (004eb250) at 004eb261 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_005097e0 (005097e0) at 005097f4 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_0050b2c0 (0050b2c0) at 0050b2cb [UNCONDITIONAL_CALL]
 //   core_trigger.cpp_CTrigger_FUN_005e0a50 (005e0a50) at 005e0a5c [UNCONDITIONAL_CALL]

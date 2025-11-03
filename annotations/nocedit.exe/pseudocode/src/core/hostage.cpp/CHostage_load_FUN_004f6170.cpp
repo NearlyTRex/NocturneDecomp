@@ -50,18 +50,19 @@ void core_hostage_cpp_CHostage_load_FUN_004f6170(void)
   
   core_npc_cpp_CNPC_serialize_FUN_00544ba0(in_stack_00000004);
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)(in_stack_00000004[1].base_character.model.padding_0x0 + 0x254),
+            ((int *)&in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].y,
              "followState");
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)(in_stack_00000004[1].base_character.model.padding_0x0 + 0x25c),
+            ((int *)(in_stack_00000004[1].base_character.model.transformed_vertices + 0x2b),
              "hostageState");
   core_actor_cpp_serializeActor_FUN_0040b870
-            ((CDemonActor *)(in_stack_00000004[1].base_character.model.padding_0x0 + 0x260),
+            ((CDemonActor *)&in_stack_00000004[1].base_character.model.transformed_vertices[0x2b].y,
              "goalWayPoint");
   if (g_CHostageClassVersion < 10) {
     model_ptr = &(in_stack_00000004->base_character).model;
     core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
-    core_actor_cpp_serializeMotionState_FUN_0040b9f0(model_ptr,"motion state");
+    core_actor_cpp_serializeMotionState_FUN_0040b9f0
+              (&model_ptr->motion_controller,"motion state");
   }
   core_actor_cpp_serializePartStatus_FUN_0040bae0
             (&(in_stack_00000004->base_character).model,"partStatus");
@@ -84,26 +85,26 @@ void core_hostage_cpp_CHostage_load_FUN_004f6170(void)
               ((char **)(in_stack_00000004[1].base_character.base_actor.create_event + 0x10),
                "heroFoundMeEvent");
     core_actor_cpp_serializeString_FUN_0040b5c0
-              ((char **)&in_stack_00000004[1].base_character.base_actor.field_236,
+              ((char **)&in_stack_00000004[1].base_character.base_actor.field13_0xec,
                "heroLeftMeEvent");
     core_actor_cpp_serializeString_FUN_0040b5c0
-              ((char **)in_stack_00000004[1].base_character.base_actor.metadata.field5_0x28,
+              ((char **)&in_stack_00000004[1].base_character.base_actor.field28_0x150,
                "heroCameBackEvent");
     core_actor_cpp_serializeString_FUN_0040b5c0
-              ((char **)(in_stack_00000004[1].base_character.model.padding_0x0 + 0xc0),
+              ((char **)&in_stack_00000004[1].base_character.model.transformed_vertices[8].z,
                "goingToSitDownEvent");
     core_actor_cpp_serializeString_FUN_0040b5c0
-              ((char **)(in_stack_00000004[1].base_character.model.padding_0x0 + 0x124),
+              ((char **)(in_stack_00000004[1].base_character.model.transformed_vertices + 0x11),
                "sitDownEvent");
   }
   if (5 < g_CHostageClassVersion) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)(in_stack_00000004[1].base_character.model.padding_0x0 + 0x27c),
+              ((int *)&in_stack_00000004[1].base_character.model.transformed_vertices[0x2d].z,
                "noShadowsWhenSaved");
   }
   if (6 < g_CHostageClassVersion) {
     core_actor_cpp_serializeString_FUN_0040b5c0
-              ((char **)(in_stack_00000004[1].base_character.model.padding_0x0 + 0x5c),
+              ((char **)&in_stack_00000004[1].base_character.model.transformed_vertices[0].y,
                "getEatenEvent");
   }
   if ((7 < g_CHostageClassVersion) && (g_CHostageClassVersion < 0xc)) {
@@ -113,17 +114,18 @@ void core_hostage_cpp_CHostage_load_FUN_004f6170(void)
   }
   if (8 < g_CHostageClassVersion) {
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)(in_stack_00000004[1].base_character.model.padding_0x0 + 0x264),
+              ((CDemonActor *)
+               &in_stack_00000004[1].base_character.model.transformed_vertices[0x2b].z,
                "sitDownWayPoint");
   }
   if (g_CHostageClassVersion < 0xb) {
     return;
   }
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)(in_stack_00000004[1].base_character.model.padding_0x0 + 0x188),
+            ((char **)&in_stack_00000004[1].base_character.model.transformed_vertices[0x19].y,
              "damageSound");
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)(in_stack_00000004[1].base_character.model.padding_0x0 + 0x1ec),
+            ((char **)&in_stack_00000004[1].base_character.model.transformed_vertices[0x21].z,
              "dieSound");
   return;
 }

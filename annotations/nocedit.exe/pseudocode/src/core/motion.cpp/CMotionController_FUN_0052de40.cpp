@@ -1,8 +1,8 @@
 // Name: core_motion.cpp_CMotionController_FUN_0052de40
 // Address: 0052de40
 // Address Range: [[0052de40, 0052de52]]
-// Convention: unknown
-// Signature: undefined core_motion.cpp_CMotionController_FUN_0052de40()
+// Convention: __cdecl
+// Signature: void core_motion.cpp_CMotionController_FUN_0052de40(CMotionController * this_ptr)
 // Cross-references:
 //   core_motion.cpp_CMotionController_FUN_0052d950 (0052d950) at 0052d9b5 [UNCONDITIONAL_CALL]
 //   core_motion.cpp_CMotionController_FUN_0052dad0 (0052dad0) at 0052daf1 [UNCONDITIONAL_CALL]
@@ -11,16 +11,11 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_motion.cpp_CMotionController_FUN_0052de40(CMotionController*
-   pMotionController) */
-
-void core_motion_cpp_CMotionController_FUN_0052de40(void)
+void __cdecl core_motion_cpp_CMotionController_FUN_0052de40(CMotionController *this_ptr)
 
 {
-  int in_stack_00000004;
-  
-  *(undefined4 *)(in_stack_00000004 + 0x14) = 0xbf800000;
-  *(undefined4 *)(in_stack_00000004 + 0xc) = 0;
+  this_ptr->tween_progress = -1.0;
+  this_ptr->tween_type = 0;
   return;
 }
 

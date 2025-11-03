@@ -7,7 +7,7 @@
 //   core_gabriela.cpp_FUN_004d2ea0 (004d2ea0) at 004d3525 [UNCONDITIONAL_CALL]
 //   core_ghoul.cpp_CGhoul_FUN_004e6600 (004e6600) at 004e7c72 [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_FUN_0051fcc0 (0051fcc0) at 005201b9 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00597644 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597644 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bc3f0 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bfb60 (005bfb60) at 005bfcbd [UNCONDITIONAL_CALL]
 //   core_zombie.cpp_CZombie_process_FUN_005f9470 (005f9470) at 005fada1 [UNCONDITIONAL_CALL]

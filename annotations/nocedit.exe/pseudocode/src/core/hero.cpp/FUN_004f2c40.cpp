@@ -16,14 +16,14 @@
 //   double DOUBLE_0062ec1e = 0.349065850388889
 //   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   undefined4 g_CDemonSetInstance.damage_listener_count
 //   undefined4 g_CDemonSetInstance.damage_listeners
 //   undefined4 DAT_03263318
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ea0
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_event.cpp_FUN_004aabe0
+//   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_event.cpp_CEventList_FUN_004aabe0
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 
 #include "nocturne.h"
@@ -38,32 +38,33 @@ undefined4 core_hero_cpp_FUN_004f2c40(void)
   BADSPACEBASE *in_ESP;
   int iVar3;
   CDemonActor *in_stack_00000004;
-  CVector3f aCStack_3c [2];
-  float local_1c;
-  undefined4 local_18;
-  float local_14;
+  undefined1 auStack_3c [20];
+  CVector3f CStack_28;
+  CVector3f local_1c;
   int iVar4;
   
   iVar3 = 0;
-  core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (in_stack_00000004,(CVector3f *)(auStack_3c + 4),(CVector3f *)&stack0xffffffb0);
   iVar4 = 0;
   do {
     if (g_CDemonSetPtr->damage_listener_count <= iVar3) {
       return 0;
     }
     pCVar1 = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar4 + -4);
-    if ((*(char *)&pCVar1[0x1b].field_236.x != '\0') && (pCVar1 != in_stack_00000004)) {
-      local_1c = (pCVar1->location).position.x - (in_stack_00000004->location).position.x;
-      local_14 = (pCVar1->location).position.z - (in_stack_00000004->location).position.z;
+    if ((*(char *)&pCVar1[0x1b].field13_0xec.x != '\0') && (pCVar1 != in_stack_00000004)) {
+      local_1c.x = (pCVar1->location).position.x - (in_stack_00000004->location).position.x;
+      local_1c.z = (pCVar1->location).position.z - (in_stack_00000004->location).position.z;
       if (ABS((pCVar1->location).position.y - (in_stack_00000004->location).position.y) <=
           (float)DOUBLE_0062ec0e) {
-        local_18 = 0;
-        if (SQRT(local_14 * local_14 + local_1c * local_1c) <= (float)DOUBLE_0062ec16) {
-          pCVar2 = core_actor_cpp_CDemonActor_FUN_00408ea0(in_stack_00000004);
+        local_1c.y = 0.0;
+        if (SQRT(local_1c.z * local_1c.z + local_1c.x * local_1c.x) <= (float)DOUBLE_0062ec16) {
+          pCVar2 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+                             (in_stack_00000004,&CStack_28,&local_1c);
           pCVar2 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                             (aCStack_3c,pCVar2);
+                             ((CVector3f *)auStack_3c,pCVar2);
           if (ABS(pCVar2->y) <= (float)DOUBLE_0062ec1e) {
-            core_event_cpp_FUN_004aabe0();
+            core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
             return 1;
           }
         }
@@ -101,7 +102,7 @@ undefined4 core_hero_cpp_FUN_004f2c40(void)
 //   XREF to: Stack[-0x4c] (WRITE)
 // 004f2c69: MOV dword ptr [ESP + 0x14],EBX
 //   XREF to: Stack[-0x48] (WRITE)
-// 004f2c6d: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 004f2c6d: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 004f2c72: ADD ESP,0xc
 // 004f2c75: ADD ESI,0x20
@@ -184,7 +185,7 @@ undefined4 core_hero_cpp_FUN_004f2c40(void)
 // 004f2d0e: MOV ECX,dword ptr [EBP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 004f2d11: PUSH ECX
-// 004f2d12: CALL core_actor.cpp_CDemonActor_FUN_00408ea0
+// 004f2d12: CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 //   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
 // 004f2d17: ADD ESP,0xc
 // 004f2d1a: PUSH EAX
@@ -209,7 +210,7 @@ undefined4 core_hero_cpp_FUN_004f2c40(void)
 //   XREF to: 006793d0 (READ)
 // 004f2d49: PUSH EBX
 //   XREF to: 02d05310 (DATA)
-// 004f2d4a: CALL core_event.cpp_FUN_004aabe0
+// 004f2d4a: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 004f2d4f: MOV EAX,0x1
 // 004f2d54: ADD ESP,0x8

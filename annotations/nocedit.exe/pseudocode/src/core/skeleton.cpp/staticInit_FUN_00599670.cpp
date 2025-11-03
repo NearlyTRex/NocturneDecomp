@@ -1,8 +1,8 @@
 // Name: core_skeleton.cpp_staticInit_FUN_00599670
 // Address: 00599670
 // Address Range: [[00599670, 005996b2]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_staticInit_FUN_00599670()
+// Convention: __cdecl
+// Signature: void core_skeleton.cpp_staticInit_FUN_00599670(void)
 // Globals:
 //   WatcomTypeInfo g_CDeformableModelTypeInfo
 //   WatcomTypeInfo g_CSkeletonTypeInfo
@@ -16,7 +16,7 @@
 
 #include "nocturne.h"
 
-void core_skeleton_cpp_staticInit_FUN_00599670(void)
+void __cdecl core_skeleton_cpp_staticInit_FUN_00599670(void)
 
 {
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667

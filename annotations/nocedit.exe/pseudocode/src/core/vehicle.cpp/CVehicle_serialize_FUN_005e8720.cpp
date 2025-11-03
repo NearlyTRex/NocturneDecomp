@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_vehicle.cpp_CVehicle_serialize_FUN_005e8720(CVehicle * this_ptr)
 // Globals:
-//   undefined4 s_modelName_00656efe
+//   TerminatedCString s_modelName_00656efe
 //   TerminatedCString s_tireCount_00656f08
 //   TerminatedCString s_static_bpos_00656f12
 //   TerminatedCString s_radius_00656f1e
@@ -43,7 +43,7 @@ void __cdecl core_vehicle_cpp_CVehicle_serialize_FUN_005e8720(CVehicle *this_ptr
   
   core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
   core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
-            ((CKeyFramedModelInstance *)(in_stack_00000008 + 0x158),">@modelName" + 2);
+            ((CKeyFramedModelInstance *)(in_stack_00000008 + 0x158),"modelName");
   core_actor_cpp_serializeInteger_FUN_0040b7f0
             ((int *)(in_stack_0000000c + 0x938),"tireCount");
   iVar1 = 0;

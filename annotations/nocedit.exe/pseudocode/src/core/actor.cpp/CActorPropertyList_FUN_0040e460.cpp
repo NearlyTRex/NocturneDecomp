@@ -20,7 +20,7 @@
 //   core_filmreel.cpp_CFilmReel_FUN_004bee30 (004bee30) at 004bee6f [UNCONDITIONAL_CALL]
 //   core_flame.cpp_FUN_004cae70 (004cae70) at 004caec4 [UNCONDITIONAL_CALL]
 //   core_flamecan.cpp_FUN_004cb6e0 (004cb6e0) at 004cb744 [UNCONDITIONAL_CALL]
-//   core_glass.cpp_FUN_004eb3c0 (004eb3c0) at 004eb40f [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_getPropertyList_FUN_004eb3c0 (004eb3c0) at 004eb40f [UNCONDITIONAL_CALL]
 //   core_grave.cpp_FUN_004ee9e0 (004ee9e0) at 004eea4b [UNCONDITIONAL_CALL]
 //   core_hiram.cpp_FUN_004f46a0 (004f46a0) at 004f46c7 [UNCONDITIONAL_CALL]
 //   core_hostage.cpp_FUN_004f69c0 (004f69c0) at 004f6a34 [UNCONDITIONAL_CALL]
@@ -46,7 +46,11 @@
 void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList *this_ptr)
 
 {
-  core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0(this_ptr);
+  char *in_stack_00000008;
+  void *in_stack_0000000c;
+  
+  core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
+            (this_ptr,0xb,in_stack_00000008,in_stack_0000000c,(void *)0x0);
   return;
 }
 

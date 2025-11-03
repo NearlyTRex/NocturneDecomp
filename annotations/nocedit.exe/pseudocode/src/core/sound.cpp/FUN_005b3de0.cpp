@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_sound.cpp_FUN_005b3de0()
 // Cross-references:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040f629 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040f629 [UNCONDITIONAL_CALL]
 // Globals:
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   CEditorTools g_CEditorToolsPtr

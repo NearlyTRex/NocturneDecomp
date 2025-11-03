@@ -4,9 +4,9 @@
 // Convention: unknown
 // Signature: undefined core_event.cpp_FUN_004aa400()
 // Cross-references:
-//   core_event.cpp_CEvent_EventReadingFromFile_FUN_004ae140 (004ae140) at 004af765 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ad941 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004ae140 (004ae140) at 004af765 [UNCONDITIONAL_CALL]
 //   core_event.cpp_FUN_004aa530 (004aa530) at 004aa5ce [UNCONDITIONAL_CALL]
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ad941 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_Must_specify_actor_name_0062444c
 //   undefined4 s_ust_specify_actor_name_0062444d
@@ -19,7 +19,7 @@
 //   CEventList* g_CEventListPtr = 02d05310
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   CNetGame* g_CNetGameInstance = 02f7c740
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   undefined1 DAT_02d0a460
 //   undefined1 DAT_02d0a461
 //   undefined1 DAT_02d0a462
@@ -31,15 +31,12 @@
 // Function calls:
 //   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
 //   core_actor.cpp_isOfClassHash_FUN_0040c760
-//   core_event.cpp_FUN_004b0b80
+//   core_event.cpp_CEventList_FUN_004b0b80
 //   core_mission.cpp_CDemonMission_FUN_00524030
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   crt_string.c_stricmp_FUN_005fe7f0
 
 #include "nocturne.h"
-
-/* Signature: undefined1 core_event.cpp_FUN_004aa400(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3) */
 
 CHero * core_event_cpp_FUN_004aa400
                   (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4,
@@ -69,7 +66,7 @@ CHero * core_event_cpp_FUN_004aa400
     return (CHero *)0x0;
   }
   if (*param_5 == '@') {
-    actor_ptr = (CHero *)core_event_cpp_FUN_004b0b80();
+    actor_ptr = (CHero *)core_event_cpp_CEventList_FUN_004b0b80(g_CEventListPtr);
   }
   else {
     iVar2 = crt_string_c_stricmp_FUN_005fe7f0(param_5,"$");
@@ -128,7 +125,7 @@ LAB_004aa48f:
 //   XREF to: 006793d0 (READ)
 // 004aa41e: PUSH ESI
 //   XREF to: 02d05310 (DATA)
-// 004aa41f: CALL core_event.cpp_FUN_004b0b80
+// 004aa41f: CALL core_event.cpp_CEventList_FUN_004b0b80
 //   XREF to: 004b0b80 (UNCONDITIONAL_CALL)
 // 004aa424: ADD ESP,0x8
 // 004aa427: MOV ESI,EAX

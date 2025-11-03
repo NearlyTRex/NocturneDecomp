@@ -5,10 +5,10 @@
 // Signature: undefined core_hpriest.cpp_FUN_004f7c00()
 // Globals:
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 // Function calls:
 //   core_charactr.cpp_CCharacter_FUN_0042b9e0
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_npc.cpp_CNPC_process_FUN_005448b0
 
 #include "nocturne.h"
@@ -23,7 +23,7 @@ void core_hpriest_cpp_FUN_004f7c00(void)
   CNPC *in_stack_00000004;
   
   core_npc_cpp_CNPC_process_FUN_005448b0(in_stack_00000004);
-  iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+  iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,(char *)(in_stack_00000004 + 1));
   if (iVar1 == 0) {
     return;
@@ -51,7 +51,7 @@ void core_hpriest_cpp_FUN_004f7c00(void)
 //   XREF to: 006793d0 (READ)
 // 004f7c1f: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 004f7c20: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 004f7c20: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 004f7c25: ADD ESP,0x8
 // 004f7c28: TEST EAX,EAX

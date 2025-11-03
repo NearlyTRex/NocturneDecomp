@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 (005e5970) at 005e6692 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_voicusummon.wav_00656caf
+//   TerminatedCString s_voicusummon_wav_00656caf
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CDemonSet g_CDemonSetInstance
 //   undefined4 g_CDemonSetInstance.actor_list_ptr

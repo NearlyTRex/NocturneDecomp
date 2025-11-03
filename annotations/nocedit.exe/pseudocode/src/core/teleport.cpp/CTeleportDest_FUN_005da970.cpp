@@ -8,7 +8,7 @@
 //   TerminatedCString s_T_00654cc0
 // Function calls:
 //   core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150
-//   core_actor.cpp_SomethingElseWithStrings1_FUN_0040d1e0
+//   core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
 
 #include "nocturne.h"
 
@@ -19,7 +19,8 @@ void __cdecl core_teleport_cpp_CTeleportDest_FUN_005da970(CTeleportDest *this_pt
   
   core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(&this_ptr->base_actor,in_stack_00000008);
   *in_stack_00000008 = *in_stack_00000008 + 0xb;
-  core_actor_cpp_SomethingElseWithStrings1_FUN_0040d1e0();
+  core_actor_cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
+            (in_stack_00000008,"T","Show list of teleporters which go to this teleport dest.");
   return;
 }
 
@@ -44,7 +45,7 @@ void __cdecl core_teleport_cpp_CTeleportDest_FUN_005da970(CTeleportDest *this_pt
 // 005da98f: ADD ECX,0xb
 // 005da992: PUSH EBX
 // 005da993: MOV dword ptr [EBX],ECX
-// 005da995: CALL core_actor.cpp_SomethingElseWithStrings1_FUN_0040d1e0
+// 005da995: CALL core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
 //   XREF to: 0040d1e0 (UNCONDITIONAL_CALL)
 // 005da99a: ADD ESP,0xc
 // 005da99d: POP EBX

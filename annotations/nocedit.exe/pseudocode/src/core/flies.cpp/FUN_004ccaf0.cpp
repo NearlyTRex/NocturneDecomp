@@ -80,7 +80,7 @@ void core_flies_cpp_FUN_004ccaf0(void)
       in_stack_00000004[1].actor_name[0xb] = '?';
     }
   }
-  (*((in_stack_00000004->metadata).vtable)->process)(in_stack_00000004);
+  (*in_stack_00000004->vtable->process)(in_stack_00000004);
   return;
 }
 

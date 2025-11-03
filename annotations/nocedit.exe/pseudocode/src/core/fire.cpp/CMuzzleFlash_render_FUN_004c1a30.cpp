@@ -18,50 +18,44 @@
 void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_004c1a30(CMuzzleFlash *this_ptr)
 
 {
-  CDemonSet *pCVar1;
-  CMuzzleFlash *pCVar2;
-  uint uVar3;
+  CMuzzleFlash *pCVar1;
+  uint uVar2;
   BADSPACEBASE *in_ESP;
   int iStack00000008;
   int iStack0000000c;
   
-  pCVar2 = this_ptr;
+  pCVar1 = this_ptr;
   if (*(int *)this_ptr->field0_0x0 != 2) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr,(CVector3f *)(this_ptr->field0_0x0 + 4));
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)(pCVar2->field0_0x0 + 0x10),(CVector3i *)0x0);
+            (g_CDemonRendererPtr,(CVector3i *)(pCVar1->field0_0x0 + 0x10),(CVector3i *)0x0);
   core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr,(CVector3i *)&stack0xffffffe4,(CVector3i *)0x0);
-  pCVar1 = g_CDemonSetPtr;
-  pCVar1->field22_0x15ac80[0] = '\x01';
-  pCVar1->field22_0x15ac80[1] = '\0';
-  pCVar1->field22_0x15ac80[2] = '\0';
-  pCVar1->field22_0x15ac80[3] = '\0';
+  g_CDemonSetPtr->lighting_quality_mode = 1;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
-  uVar3 = crt_stdlib_c_rand_FUN_005feb5c();
+  uVar2 = crt_stdlib_c_rand_FUN_005feb5c();
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
-            (g_CDemonRendererPtr,(uVar3 & 0x3fff) + 0x1800);
-  core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(&DAT_02d133e4,0.0,99);
+            (g_CDemonRendererPtr,(uVar2 & 0x3fff) + 0x1800);
+  core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
+            (&g_FireEffectGunFlashModel,0.0,99);
   this_ptr = (CMuzzleFlash *)0x0;
   iStack00000008 = 0;
   iStack0000000c = 0x3fc90fdb;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr,(CVector3i *)&this_ptr,(CVector3i *)0x0);
-  core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(&DAT_02d133e4,0.0,99);
+  core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
+            (&g_FireEffectGunFlashModel,0.0,99);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr,(CVector3i *)&stack0xfffffff8,(CVector3i *)0x0);
-  core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(&DAT_02d133e4,0.0,99);
+  core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
+            (&g_FireEffectGunFlashModel,0.0,99);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-  pCVar1 = g_CDemonSetPtr;
-  pCVar1->field22_0x15ac80[0] = '\0';
-  pCVar1->field22_0x15ac80[1] = '\0';
-  pCVar1->field22_0x15ac80[2] = '\0';
-  pCVar1->field22_0x15ac80[3] = '\0';
+  g_CDemonSetPtr->lighting_quality_mode = 0;
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);

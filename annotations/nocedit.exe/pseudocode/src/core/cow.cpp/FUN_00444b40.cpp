@@ -33,10 +33,12 @@ void core_cow_cpp_FUN_00444b40(void)
   *(float *)(in_stack_00000004 + 0x243c) = fVar1;
   if (fVar1 <= 0.0) {
     *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0
+                      ((CMotionController *)(in_stack_00000004 + 0x158));
     if ((*(int *)(iVar2 + 0x24) == 5) || (*(int *)(iVar2 + 0x24) == 4)) goto LAB_00444b80;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+            ((CMotionController *)(in_stack_00000004 + 0x158));
 LAB_00444b80:
   iVar2 = core_sound_cpp_FUN_005b3b80();
   if (iVar2 == 0) {

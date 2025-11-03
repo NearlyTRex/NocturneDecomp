@@ -14,7 +14,7 @@
 //   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 (0053e220) at 0053e973 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_ReallyDeleteActorQuestion_FUN_0053bc80 (0053bc80) at 0053bcb1 [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_actor.cpp_CDemonActor_deleteActor_FUN_00408820
+//   core_actor.cpp_deleteActor_FUN_00408820
 //   core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0
 
 #include "nocturne.h"
@@ -28,7 +28,7 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00523f20(CDemonMission *this_ptr
   if (in_stack_00000008 != (CDemonActor *)0x0) {
     core_mission_cpp_CDemonMission_setupActorMaybe_FUN_00523be0(this_ptr,in_stack_00000008);
     if (in_stack_00000010 != 0) {
-      core_actor_cpp_CDemonActor_deleteActor_FUN_00408820(in_stack_00000008);
+      core_actor_cpp_deleteActor_FUN_00408820(in_stack_00000008);
       return;
     }
   }
@@ -60,7 +60,7 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00523f20(CDemonMission *this_ptr
 // 00523f3e: JZ 0x00523f29
 //   XREF to: 00523f29 (CONDITIONAL_JUMP)
 // 00523f40: PUSH EBX
-// 00523f41: CALL core_actor.cpp_CDemonActor_deleteActor_FUN_00408820
+// 00523f41: CALL core_actor.cpp_deleteActor_FUN_00408820
 //   XREF to: 00408820 (UNCONDITIONAL_CALL)
 // 00523f46: ADD ESP,0x4
 // 00523f49: POP EBX

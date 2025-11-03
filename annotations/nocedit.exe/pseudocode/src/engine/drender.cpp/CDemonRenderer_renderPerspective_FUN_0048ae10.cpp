@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_box.cpp_CBoundingBox3D_render_FUN_004210b0 (004210b0) at 00421463 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_00429b40 (00429b40) at 00429e6a [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CExplosion_FUN_004c3b10 (004c3b10) at 004c3e5d [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CExplosion_render_FUN_004c3b10 (004c3b10) at 004c3e5d [UNCONDITIONAL_CALL]
 //   core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004ef970 (004ef970) at 004ef981 [UNCONDITIONAL_CALL]
 //   core_inv.cpp_drawItemIconBackground_FUN_005001e0 (005001e0) at 00500318 [UNCONDITIONAL_CALL]
 //   core_inv.cpp_drawWeaponIconBackground_FUN_00500050 (00500050) at 00500188 [UNCONDITIONAL_CALL]

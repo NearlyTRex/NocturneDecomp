@@ -4,12 +4,10 @@
 // Convention: __cdecl
 // Signature: void core_wateract.cpp_CWaterActor_FUN_005eb4b0(CWaterActor * this_ptr)
 // Globals:
-//   undefined4 DAT_006572ff
-//   undefined4 DAT_00657307
+//   double DOUBLE_006572ff = 0.5
+//   double DOUBLE_00657307 = 0.100000000000000
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_wateract_cpp_CWaterActor_FUN_005eb4b0(CWaterActor *this_ptr)
 
@@ -19,12 +17,12 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005eb4b0(CWaterActor *this_ptr)
   float *in_stack_00000008;
   
   fVar1 = (this_ptr->size).x;
-  fVar2 = (float)_DAT_006572ff;
+  fVar2 = (float)DOUBLE_006572ff;
   in_stack_00000008[1] = -0.1;
   *in_stack_00000008 = -fVar1 * fVar2;
   in_stack_00000008[2] = -(this_ptr->size).z * fVar2;
   in_stack_00000008[3] = (this_ptr->size).x * fVar2;
-  in_stack_00000008[4] = (this_ptr->size).y + (float)_DAT_00657307;
+  in_stack_00000008[4] = (this_ptr->size).y + (float)DOUBLE_00657307;
   in_stack_00000008[5] = fVar2 * (this_ptr->size).z;
   return;
 }

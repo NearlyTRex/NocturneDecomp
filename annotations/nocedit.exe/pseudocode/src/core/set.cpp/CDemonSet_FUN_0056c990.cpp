@@ -42,7 +42,7 @@
 //   CDemonRaytrace g_CDemonRaytraceInstance
 //   undefined4 DAT_03f95de4
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 //   core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80
 //   core_dlight.cpp_CDemonLight_clearCircularShadowMapEdges_FUN_004735c0
@@ -52,12 +52,12 @@
 //   core_fire.cpp_CFireEffect_FUN_004c93d0
 //   core_fire.cpp_CFireEffect_render_FUN_004c7180
 //   core_gore.cpp_CGore_FUN_004ed7b0
+//   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
 //   core_set.cpp_CDemonSet_FUN_0056aca0
 //   core_set.cpp_CDemonSet_FUN_0056d380
-//   core_set.cpp_CDemonSet_FUN_0056db80
 //   core_set.cpp_CDemonSet_FUN_0056fbd0
 //   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 //   core_xform.cpp_matrixToEulerAngles_FUN_005f5690
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
@@ -80,10 +80,13 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
   int iVar2;
   CVector3f *euler_out;
   CDemonLight *this_ptr_01;
+  CSkeleton *this_ptr_02;
   int iVar3;
+  CVector3f *input_local_point;
   int iVar4;
   CDemonSet *pCVar5;
   BADSPACEBASE *in_ESP;
+  CVector3i local_5c;
   CVector3f local_50;
   CVector3f local_44;
   CMatrix3x3f local_38;
@@ -91,14 +94,17 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
   
   this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
   local_14 = &g_CDemonLightInstance;
-  core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-  iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  euler_out = (CVector3f *)((this_ptr_00->base_character).model.padding_0x0 + iVar3 * 0x30 + 0xe80);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(&(this_ptr_00->base_character).model);
+  iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_02,"Bip01 Head");
+  euler_out = (CVector3f *)((this_ptr_00->base_character).model.field3_0x508 + iVar3 * 0x30 + 0x978)
+  ;
   local_44.y = 0.338;
   local_44.x = 0.0;
   local_44.z = 0.75;
-  core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_50,&local_44,(CMatrix3x4f *)euler_out);
-  core_actor_cpp_CDemonActor_FUN_00408ec0((CDemonActor *)this_ptr_00);
+  input_local_point =
+       core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_50,&local_44,(CMatrix3x4f *)euler_out);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            ((CDemonActor *)this_ptr_00,local_38.m + 1,input_local_point);
   core_xform_cpp_matrixToEulerAngles_FUN_005f5690(euler_out,&local_38);
   local_38.m[2].z = 0.0;
   local_38.m[2].x = local_38.m[0].x + (float)DOUBLE_00645dbb;
@@ -133,19 +139,23 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
     iVar3 = 0;
     core_set_cpp_CDemonSet_FUN_0056fbd0(this_ptr);
     pCVar5 = this_ptr;
-    if (0 < *(int *)(this_ptr->field64_0x15f6e0 + 4)) {
+    if (0 < *(int *)this_ptr->field73_0x15f6e4) {
       do {
-        (**(code **)(*(int *)(*(int *)(pCVar5->field64_0x15f6e0 + 8) + 0x154) + 8))();
+        (**(code **)(*(int *)(*(int *)(pCVar5->field73_0x15f6e4 + 4) + 0x154) + 8))();
         iVar3 = iVar3 + 1;
         engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
         pCVar5 = (CDemonSet *)pCVar5->cameras;
-      } while (iVar3 < *(int *)(this_ptr->field64_0x15f6e0 + 4));
+      } while (iVar3 < *(int *)this_ptr->field73_0x15f6e4);
     }
     core_gore_cpp_CGore_FUN_004ed7b0(g_CGorePtr);
     core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);
     core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(local_14);
+    local_5c.x = (int)ROUND(local_38.m[1].x * FLOAT_00662850);
+    local_5c.y = (int)ROUND(local_38.m[1].y * FLOAT_00662850);
+    local_5c.z = (int)ROUND(local_38.m[1].z * FLOAT_00662850);
     core_set_cpp_CDemonSet_FUN_0056d380(this_ptr);
-    iVar3 = core_set_cpp_CDemonSet_FUN_0056db80(this_ptr);
+    iVar3 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
+                      (this_ptr,&local_5c,(CVector3i *)0x0);
     iVar4 = core_fire_cpp_CFireEffect_FUN_004c93d0(g_CFireEffectPtr);
     if (g_WindowHeight < 0xf1) {
       iVar1 = -local_14->shadow_map_width;
@@ -200,7 +210,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
 // 0056c9b5: MOV dword ptr [EBP + -0x4],EDX
 //   XREF to: Stack[-0x14] (WRITE)
 //   XREF to: 02d7eaf0 (DATA)
-// 0056c9b8: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 0056c9b8: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0056c9bd: ADD ESP,0x4
 // 0056c9c0: PUSH 0x0
@@ -240,7 +250,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
 //   XREF to: Stack[-0x2c] (DATA)
 // 0056ca0c: PUSH EAX
 // 0056ca0d: PUSH EBX
-// 0056ca0e: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0056ca0e: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0056ca13: ADD ESP,0xc
 // 0056ca16: LEA EAX,[EBP + -0x28]
@@ -475,7 +485,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
 //   XREF to: Stack[-0x5c] (DATA)
 // 0056cbdc: PUSH EAX
 // 0056cbdd: PUSH EDI
-// 0056cbde: CALL core_set.cpp_CDemonSet_FUN_0056db80
+// 0056cbde: CALL core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
 //   XREF to: 0056db80 (UNCONDITIONAL_CALL)
 // 0056cbe3: MOV EDX,EAX
 // 0056cbe5: SAR EDX,0x1f

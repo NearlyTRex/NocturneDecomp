@@ -7,7 +7,7 @@
 //   core_succubus.cpp_CSuccubus_FUN_005c6b60 (005c6b60) at 005c6e0d [UNCONDITIONAL_CALL]
 //   core_vampboss.cpp_CVampireBoss_FUN_005e56c0 (005e56c0) at 005e57c2 [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_morph.cpp_CMorphModel_CallMorphModel_addPart1_FUN_0052a8d0
+//   core_morph.cpp_CMorphModel_FUN_0052a8d0
 
 #include "nocturne.h"
 
@@ -17,7 +17,11 @@
 void core_morph_cpp_FUN_0052b580(void)
 
 {
-  core_morph_cpp_CMorphModel_CallMorphModel_addPart1_FUN_0052a8d0();
+  int in_stack_00000004;
+  int in_stack_00000008;
+  
+  core_morph_cpp_CMorphModel_FUN_0052a8d0
+            ((CMorphModel *)(in_stack_00000008 * 0x608 + in_stack_00000004));
   return;
 }
 
@@ -42,7 +46,7 @@ void core_morph_cpp_FUN_0052b580(void)
 // 0052b5a3: PUSH ECX
 // 0052b5a4: ADD EAX,EBX
 // 0052b5a6: PUSH EAX
-// 0052b5a7: CALL core_morph.cpp_CMorphModel_CallMorphModel_addPart1_FUN_0052a8d0
+// 0052b5a7: CALL core_morph.cpp_CMorphModel_FUN_0052a8d0
 //   XREF to: 0052a8d0 (UNCONDITIONAL_CALL)
 // 0052b5ac: ADD ESP,0xc
 // 0052b5af: POP EBX

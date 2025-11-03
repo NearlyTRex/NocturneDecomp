@@ -19,7 +19,7 @@
 //   CHero*[4] g_HeroActors
 //   int g_LocalHeroIndex
 // Function calls:
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_hero.cpp_FUN_004f3960
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
@@ -104,7 +104,7 @@ void core_colonel_cpp_FUN_0043ff20(void)
     if ((float)_DAT_00618d01 <= local_28) {
       this_ptr = (CPathMap *)0x0;
       if (!bVar1) {
-        this_ptr = (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.metadata.vtable)->
+        this_ptr = (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable)->
                      getPathMap)((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
       }
       if (this_ptr == (CPathMap *)0x0) {
@@ -114,7 +114,8 @@ void core_colonel_cpp_FUN_0043ff20(void)
                         (this_ptr,(CVector3f *)(in_stack_00000004 + 0x20),&CStack_7c,
                          *(int *)(in_stack_00000004 + 0x6c));
       if (iVar5 != 0) {
-        fVar4 = core_actor_cpp_FUN_0040cd70(CStack_7c.z - *(float *)(in_stack_00000004 + 0x34));
+        fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                          (CStack_7c.z - *(float *)(in_stack_00000004 + 0x34));
         fVar4 = fVar4 * (float)_DAT_00618d09 * (float)_DAT_00618d11;
         local_18 = -unaff_EDI;
         *(float *)(in_stack_00000004 + 0xbe50) = fVar4;
@@ -139,19 +140,22 @@ void core_colonel_cpp_FUN_0043ff20(void)
           *(undefined4 *)(in_stack_00000004 + 0xbe44) = 1;
         }
         else {
-          iVar5 = core_motion_cpp_CMotionController_FUN_0052dab0();
+          iVar5 = core_motion_cpp_CMotionController_FUN_0052dab0
+                            ((CMotionController *)(in_stack_00000004 + 0x158));
           if ((*(int *)(iVar5 + 0x24) != 2) && (*(int *)(iVar5 + 0x24) != 1)) {
             *(undefined4 *)(in_stack_00000004 + 0xbe38) = 1;
           }
         }
       }
       else {
-        core_motion_cpp_CMotionController_FUN_0052dab0();
+        core_motion_cpp_CMotionController_FUN_0052dab0
+                  ((CMotionController *)(in_stack_00000004 + 0x158));
       }
       if (bVar1) {
         pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&CStack_34,(CVector3f *)local_4c);
-        fVar4 = core_actor_cpp_FUN_0040cd70(pCVar3->y - *(float *)(in_stack_00000004 + 0x34));
+        fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                          (pCVar3->y - *(float *)(in_stack_00000004 + 0x34));
         fVar4 = fVar4 * (float)_DAT_00618d09 * (float)_DAT_00618d11;
         unaff_ESI = -unaff_EDI;
         *(float *)(in_stack_00000004 + 0xbe50) = fVar4;
@@ -186,7 +190,8 @@ void core_colonel_cpp_FUN_0043ff20(void)
       CStack_40.y = pCVar3->y;
       CStack_40.z = pCVar3->z;
     }
-    CStack_34.z = core_actor_cpp_FUN_0040cd70(CStack_40.y - *(float *)(in_stack_00000004 + 0x34));
+    CStack_34.z = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                            (CStack_40.y - *(float *)(in_stack_00000004 + 0x34));
     if (unaff_ESI < CStack_34.z) {
       CStack_34.z = unaff_ESI;
     }
@@ -387,7 +392,7 @@ void core_colonel_cpp_FUN_0043ff20(void)
 // 004400c7: SUB ESP,0x4
 // 004400ca: FSTP float ptr [ESP]
 //   XREF to: Stack[-0xac] (DATA)
-// 004400cd: CALL core_actor.cpp_FUN_0040cd70
+// 004400cd: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 004400d2: MOV dword ptr [ESP + 0x98],EAX
 //   XREF to: Stack[-0x14] (WRITE)
@@ -511,7 +516,7 @@ void core_colonel_cpp_FUN_0043ff20(void)
 // 004401ef: SUB ESP,0x4
 // 004401f2: FSTP float ptr [ESP]
 //   XREF to: Stack[-0xac] (DATA)
-// 004401f5: CALL core_actor.cpp_FUN_0040cd70
+// 004401f5: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 004401fa: MOV dword ptr [ESP + 0x98],EAX
 //   XREF to: Stack[-0x14] (WRITE)
@@ -688,7 +693,7 @@ void core_colonel_cpp_FUN_0043ff20(void)
 // 00440370: SUB ESP,0x4
 // 00440373: FSTP float ptr [ESP]
 //   XREF to: Stack[-0xac] (DATA)
-// 00440376: CALL core_actor.cpp_FUN_0040cd70
+// 00440376: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 0044037b: MOV dword ptr [ESP + 0x98],EAX
 //   XREF to: Stack[-0x14] (WRITE)

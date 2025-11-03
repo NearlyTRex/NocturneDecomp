@@ -25,7 +25,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042f300(CCharacter *this_ptr)
   if (0.0 < *(float *)(this_ptr->cloth_data + 0x340)) {
     return;
   }
-  pCVar1 = (this_ptr->base_actor).metadata.vtable;
+  pCVar1 = (this_ptr->base_actor).vtable;
   this_ptr->cloth_data[0x340] = -0x33;
   this_ptr->cloth_data[0x341] = -0x34;
   this_ptr->cloth_data[0x342] = -0x34;

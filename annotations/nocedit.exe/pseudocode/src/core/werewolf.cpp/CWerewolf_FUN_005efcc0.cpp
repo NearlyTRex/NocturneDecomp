@@ -12,8 +12,8 @@
 // Function calls:
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_enemy.cpp_CEnemy_FUN_004a9650
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -21,25 +21,28 @@
 void __cdecl core_werewolf_cpp_CWerewolf_FUN_005efcc0(CWerewolf *this_ptr)
 
 {
+  CDeformableModelInstance *this_ptr_00;
   CEnemy *pCVar1;
-  undefined4 uVar2;
+  CSkeleton *this_ptr_01;
+  int iVar2;
   float fVar3;
   undefined4 uStack00000008;
   float fStack00000018;
   
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
-  core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-  uVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  *(undefined4 *)this_ptr->field4_0xbec0 = uVar2;
-  uVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  *(undefined4 *)(this_ptr->field4_0xbec0 + 4) = uVar2;
-  uVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  *(undefined4 *)(this_ptr->field4_0xbec0 + 8) = uVar2;
-  uVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
+  this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr_00);
+  iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine3");
+  *(int *)this_ptr->field4_0xbec0 = iVar2;
+  iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L Finger1");
+  *(int *)(this_ptr->field4_0xbec0 + 4) = iVar2;
+  iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R Finger1");
+  *(int *)(this_ptr->field4_0xbec0 + 8) = iVar2;
+  iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01jaw2");
   uStack00000008 = 1;
-  *(undefined4 *)(this_ptr->field4_0xbec0 + 0xc) = uVar2;
-  uVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  *(undefined4 *)(this_ptr->field4_0xbec0 + 0x10) = uVar2;
+  *(int *)(this_ptr->field4_0xbec0 + 0xc) = iVar2;
+  iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Head");
+  *(int *)(this_ptr->field4_0xbec0 + 0x10) = iVar2;
   uStack00000008 = 0x5efd57;
   core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base_enemy);
   (this_ptr->base_enemy).base_character.base_actor.is_transparent = this_ptr->light_up_eyes;
@@ -79,11 +82,11 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005efcc0(CWerewolf *this_ptr)
 // 005efcc5: MOV EBX,dword ptr [ESP + 0x10]
 // 005efcc9: LEA ESI,[EBX + 0x158]
 // 005efccf: PUSH ESI
-// 005efcd0: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 005efcd0: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 005efcd5: ADD ESP,0x4
 // 005efcd8: PUSH ESI
-// 005efcd9: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 005efcd9: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005efcde: ADD ESP,0x4
 // 005efce1: PUSH 0x1

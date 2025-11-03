@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CVector3i * core_mirror.cpp_transformMirrorEdgeToIntegerSpace_FUN_00522a50(CVector3i * output, SMirrorReflection * reflection, CVector3i * point_a, CVector3i * point_b)
 // Cross-references:
-//   core_set.cpp_CDemonSet_FUN_0056db80 (0056db80) at 0056dd84 [UNCONDITIONAL_CALL]
+//   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80 (0056db80) at 0056dd84 [UNCONDITIONAL_CALL]
 // Globals:
 //   float g_MirrorFloatToInt = 65536
 //   float g_MirrorIntToFloat_Coarse = 0.00390625

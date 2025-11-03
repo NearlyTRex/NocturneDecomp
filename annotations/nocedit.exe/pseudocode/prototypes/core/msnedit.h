@@ -5,7 +5,7 @@
 
 // Original: core_msnedit.cpp_staticInit_FUN_00535c30
 // Address: 00535c30
-undefined staticInit();
+void staticInit(void);
 
 // Original: core_msnedit.cpp_FUN_00535c60
 // Address: 00535c60

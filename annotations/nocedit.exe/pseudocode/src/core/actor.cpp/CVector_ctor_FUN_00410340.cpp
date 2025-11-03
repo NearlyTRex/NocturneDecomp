@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CVector3f * core_actor.cpp_CVector_ctor_FUN_00410340(CVector3f * this_ptr)
 // Cross-references:
-//   core_actor.cpp_renderActorBoundingBox_FUN_0040d940 (0040d940) at 0040dc20 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 (0040d940) at 0040dc20 [UNCONDITIONAL_CALL]
 //   core_boneguy.cpp_FUN_0041b770 (0041b770) at 0041b796 [UNCONDITIONAL_CALL]
 //   core_boneguy.cpp_FUN_0041ca40 (0041ca40) at 0041cae9 [UNCONDITIONAL_CALL]
 //   core_lightgun.cpp_FUN_00505c70 (00505c70) at 00505fef [UNCONDITIONAL_CALL]

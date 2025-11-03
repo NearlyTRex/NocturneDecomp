@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_vehicle.cpp_CVehicle_process_FUN_005e7e80(CVehicle * this_ptr)
 // Globals:
-//   undefined4 s_model-t-horn?.wav_00656e26
+//   TerminatedCString s_model_t_horn_wav_00656e26
 //   TerminatedCString s_core_vehicle_cpp_00656e38
 //   TerminatedCString s_core_vehicle_cpp_00656e4c
 //   TerminatedCString s_core_vehicle_cpp_00656e60
@@ -13,12 +13,12 @@
 //   TerminatedCString s_mobster4_dfm_00656ea4
 //   TerminatedCString s_ext_modelt_fast_wav_00656eb1
 //   TerminatedCString s_skid_wav_00656ec8
-//   undefined4 DAT_00656ed6
-//   undefined4 DAT_00656eda
-//   undefined4 DAT_00656ede
-//   undefined4 DAT_00656ee6
-//   undefined4 DAT_00656eee
-//   undefined4 DAT_00656ef6
+//   float FLOAT_00656ed6 = 2
+//   float FLOAT_00656eda = 3.700000
+//   float FLOAT_00656ede = 1.570796
+//   double DOUBLE_00656ee6 = 200
+//   double DOUBLE_00656eee = 0.200000000000000
+//   double DOUBLE_00656ef6 = 30
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CHero*[4] g_HeroActors
@@ -39,9 +39,9 @@
 //   undefined4 g_ZeroVector.z
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408ea0
-//   core_actor.cpp_CDemonActor_FUN_00408f10
-//   core_actor.cpp_FUN_0040cd10
+//   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 //   core_course.cpp_CCourse_FUN_00442710
@@ -50,7 +50,7 @@
 //   core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700
 //   core_mobster.cpp_CMobster_ctor_FUN_00525200
 //   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90
 //   core_vehicle.cpp_FUN_005e8b50
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
@@ -58,8 +58,6 @@
 //   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
 
@@ -91,8 +89,9 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
   float local_70;
   float local_6c;
   float local_68;
-  CVector3f local_58;
-  float local_4c;
+  undefined1 local_58 [8];
+  float local_50;
+  CVector3f local_4c;
   float fStack_38;
   float local_34;
   float local_30;
@@ -126,14 +125,14 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
     }
   }
   else {
-    local_58.z = 1.0 / in_stack_00000008;
-    local_58.x = local_88 * local_58.z;
-    local_58.y = local_84 * local_58.z;
-    local_58.z = local_80 * local_58.z;
-    if (pCVar6 != &local_58) {
-      pCVar6->x = local_58.x;
-      *(float *)(this_ptr->field1_0x158 + 0x770) = local_58.y;
-      *(float *)(this_ptr->field1_0x158 + 0x774) = local_58.z;
+    local_50 = 1.0 / in_stack_00000008;
+    local_58._0_4_ = local_88 * local_50;
+    local_58._4_4_ = local_84 * local_50;
+    local_50 = local_80 * local_50;
+    if (pCVar6 != (CVector3f *)local_58) {
+      pCVar6->x = (float)local_58._0_4_;
+      *(undefined4 *)(this_ptr->field1_0x158 + 0x770) = local_58._4_4_;
+      *(float *)(this_ptr->field1_0x158 + 0x774) = local_50;
     }
     local_24 = SQRT(*(float *)(this_ptr->field1_0x158 + 0x774) *
                     *(float *)(this_ptr->field1_0x158 + 0x774) +
@@ -142,15 +141,17 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
                     *(float *)(this_ptr->field1_0x158 + 0x770) *
                     *(float *)(this_ptr->field1_0x158 + 0x770));
   }
-  local_34 = *(float *)(this_ptr->field1_0x158 + 0x76c) * _DAT_00656ed6;
-  local_30 = *(float *)(this_ptr->field1_0x158 + 0x770) * _DAT_00656ed6;
-  local_2c = _DAT_00656ed6 * *(float *)(this_ptr->field1_0x158 + 0x774);
+  local_34 = *(float *)(this_ptr->field1_0x158 + 0x76c) * FLOAT_00656ed6;
+  local_30 = *(float *)(this_ptr->field1_0x158 + 0x770) * FLOAT_00656ed6;
+  local_2c = FLOAT_00656ed6 * *(float *)(this_ptr->field1_0x158 + 0x774);
   if ((float *)(this_ptr->field6_0x1034 + 0x2c) != &local_34) {
     *(float *)(this_ptr->field6_0x1034 + 0x2c) = local_34;
     *(float *)(this_ptr->field6_0x1034 + 0x30) = local_30;
     *(float *)(this_ptr->field6_0x1034 + 0x34) = local_2c;
   }
-  pCVar6 = core_actor_cpp_CDemonActor_FUN_00408ea0(&this_ptr->base_actor);
+  pCVar6 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+                     (&this_ptr->base_actor,&local_4c,(CVector3f *)(this_ptr->field1_0x158 + 0x76c))
+  ;
   if ((CVector3f *)(this_ptr->field1_0x158 + 0x778) != pCVar6) {
     ((CVector3f *)(this_ptr->field1_0x158 + 0x778))->x = pCVar6->x;
     *(float *)(this_ptr->field1_0x158 + 0x77c) = pCVar6->y;
@@ -170,9 +171,9 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
   fVar14 = (this_ptr->base_actor).location.position.y;
   fVar3 = (this_ptr->base_actor).orient.bank;
   (this_ptr->base_actor).orient.pitch = 0.0;
-  pCVar4 = (this_ptr->base_actor).metadata.vtable;
-  fVar3 = fVar3 + _DAT_00656ede;
-  (this_ptr->base_actor).location.position.y = fVar14 + _DAT_00656eda;
+  pCVar4 = (this_ptr->base_actor).vtable;
+  fVar3 = fVar3 + FLOAT_00656ede;
+  (this_ptr->base_actor).location.position.y = fVar14 + FLOAT_00656eda;
   (this_ptr->base_actor).orient.bank = fVar3;
   (*pCVar4->getBoundingBox)(&this_ptr->base_actor,&local_a0);
   iVar12 = 0;
@@ -182,24 +183,25 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
     if ((pCVar8 == (CDemonActor *)0x0) ||
        (this_ptr != *(CVehicle **)(pCVar8[0x8e].actor_name + 0x10))) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)(auStack_f4 + 0x34));
-      iVar9 = (*((pCVar11->metadata).vtable)->hasCollision)
-                        (pCVar11,(SCollisionInfo *)(auStack_f4 + 0x34));
+      iVar9 = (*pCVar11->vtable->hasCollision)(pCVar11,(SCollisionInfo *)(auStack_f4 + 0x34));
       if ((iVar9 == 2) &&
          (((((pCVar11->location).position.y <= (this_ptr->base_actor).location.position.y + local_80
             && ((this_ptr->base_actor).location.position.y + local_a0.max.z <=
                 (pCVar11->location).position.y + local_a0.min.x)) &&
-           (core_actor_cpp_CDemonActor_FUN_00408f10(&this_ptr->base_actor),
-           local_a0.max.y <= local_58.y + local_a0.min.y)) &&
-          ((local_58.y - local_a0.min.y <= local_84 && (local_88 <= local_4c + local_a0.min.y))))))
-      {
-        fVar14 = local_4c - local_a0.min.y;
+           (core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                      (&this_ptr->base_actor,(CVector3f *)(local_58 + 4),
+                       &(pCVar11->location).position),
+           local_a0.max.y <= (float)local_58._4_4_ + local_a0.min.y)) &&
+          (((float)local_58._4_4_ - local_a0.min.y <= local_84 &&
+           (local_88 <= local_4c.x + local_a0.min.y)))))) {
+        fVar14 = local_4c.x - local_a0.min.y;
         if (fVar14 <= local_7c) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_f4);
           auStack_f4._48_4_ = 4;
           auStack_f4._4_4_ = 999.0;
-          (*(pCVar11->metadata).vtable[1].playAmbientSoundWithVolume)(pCVar11,auStack_f4,fVar14);
+          (*pCVar11->vtable[1].playAmbientSoundWithVolume)(pCVar11,auStack_f4,fVar14);
         }
-        else if ((fVar14 < local_7c + (float)_DAT_00656ef6) &&
+        else if ((fVar14 < local_7c + (float)DOUBLE_00656ef6) &&
                 (iVar9 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar9 == 0)) {
           uVar10 = core_vehicle_cpp_FUN_005e8b50();
           *(undefined4 *)(this_ptr->field6_0x1034 + 0x20) = uVar10;
@@ -217,7 +219,7 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
   local_30 = (this_ptr->base_actor).location.position.z -
              (pCVar5->base_character).base_actor.location.position.z;
   if ((SQRT(local_30 * local_30 + fStack_38 * fStack_38 + local_34 * local_34) <=
-       (float)_DAT_00656ee6) || (0x671 < (int)g_CDemonSetPtr->actor_list_ptr)) goto LAB_005e82f4;
+       (float)DOUBLE_00656ee6) || (0x671 < (int)g_CDemonSetPtr->actor_list_ptr)) goto LAB_005e82f4;
   iVar12 = 0;
   iStack_18 = 0;
   local_14 = 0;
@@ -266,8 +268,9 @@ joined_r0x005e8664:
     g_CurrentLineNumber = 0x161;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMobster::process - Out of memory!");
   }
-  core_actor_cpp_FUN_0040cd10();
-  core_skeleton_cpp_FUN_005a0840();
+  core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            (&(this_ptr_00->base_enemy).base_character.model);
   *(CVehicle **)(this_ptr_00->field3_0xbedc + 4) = this_ptr;
   if (local_14 == 0) {
     this_ptr_00->side_of_car = 0;
@@ -310,9 +313,9 @@ joined_r0x005e8664:
     (this_ptr_01->base_weapon).base_actor.orient.bank = (this_ptr->base_actor).orient.bank;
     (this_ptr_01->base_weapon).base_actor.orient.heading = (this_ptr->base_actor).orient.heading;
   }
-  (*((this_ptr_00->base_enemy).base_character.base_actor.metadata.vtable)->setup)
-            ((CDemonActor *)this_ptr_00);
-  (*((this_ptr_01->base_weapon).base_actor.metadata.vtable)->setup)((CDemonActor *)this_ptr_01);
+  (*((this_ptr_00->base_enemy).base_character.base_actor.vtable)->setup)((CDemonActor *)this_ptr_00)
+  ;
+  (*((this_ptr_01->base_weapon).base_actor.vtable)->setup)((CDemonActor *)this_ptr_01);
   core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0((CCharacter *)this_ptr_00);
   core_mission_cpp_CDemonMission_FUN_00523b70(g_CDemonMissionPtr);
   core_mission_cpp_CDemonMission_FUN_00523b70(g_CDemonMissionPtr);
@@ -323,7 +326,7 @@ LAB_005e82f4:
     *(undefined4 *)(this_ptr->field6_0x1034 + 0x24) = uVar10;
   }
   sound_sndmain_cpp_CallComputingDelay_FUN_005a9b40();
-  if (((float)_DAT_00656eee < ABS(*(float *)(this_ptr->field1_0x158 + 0x778))) &&
+  if (((float)DOUBLE_00656eee < ABS(*(float *)(this_ptr->field1_0x158 + 0x778))) &&
      (iVar12 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar12 == 0)) {
     uVar10 = core_vehicle_cpp_FUN_005e8b50();
     *(undefined4 *)(this_ptr->field6_0x1034 + 0x28) = uVar10;
@@ -517,7 +520,7 @@ LAB_005e82f4:
 //   XREF to: Stack[-0x4c] (DATA)
 // 005e8092: PUSH EAX
 // 005e8093: PUSH EBX
-// 005e8094: CALL core_actor.cpp_CDemonActor_FUN_00408ea0
+// 005e8094: CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 //   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
 // 005e8099: LEA EDX,[EBX + 0x8d0]
 // 005e809f: ADD ESP,0xc
@@ -657,7 +660,7 @@ LAB_005e82f4:
 // 005e81f9: LEA EAX,[ESP + 0xa8]
 // 005e8200: PUSH EAX
 // 005e8201: PUSH EBX
-// 005e8202: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 005e8202: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 005e8207: ADD ESP,0xc
 // 005e820a: FLD float ptr [ESP + 0xa4]
@@ -884,7 +887,7 @@ LAB_005e82f4:
 // 005e8484: ADD ESP,0x4
 // 005e8487: PUSH 0x3f000000
 //   Label: LAB_005e8487
-// 005e848c: CALL core_actor.cpp_FUN_0040cd10
+// 005e848c: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 005e8491: MOV EDX,EAX
 // 005e8493: ADD ESP,0x4
@@ -896,7 +899,7 @@ LAB_005e82f4:
 //   XREF to: 00656e97 (DATA)
 // 005e84a9: PUSH EAX
 //   Label: LAB_005e84a9
-// 005e84aa: CALL core_skeleton.cpp_FUN_005a0840
+// 005e84aa: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005e84af: ADD ESP,0x8
 // 005e84b2: MOV ECX,dword ptr [ESP + 0xec]

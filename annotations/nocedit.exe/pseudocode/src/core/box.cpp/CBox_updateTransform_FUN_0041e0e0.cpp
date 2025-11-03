@@ -74,9 +74,9 @@ core_box_cpp_CBox_updateTransform_FUN_0041e0e0
   (this_ptr->angular_momentum).z = 0.0;
   (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).z;
   (this_ptr->angular_momentum).x = (this_ptr->angular_momentum).y;
-  (this_ptr->external_force).z = 0.0;
-  (this_ptr->external_force).y = (this_ptr->external_force).z;
-  (this_ptr->external_force).x = (this_ptr->external_force).y;
+  (this_ptr->linear_velocity_local).z = 0.0;
+  (this_ptr->linear_velocity_local).y = (this_ptr->linear_velocity_local).z;
+  (this_ptr->linear_velocity_local).x = (this_ptr->linear_velocity_local).y;
   (this_ptr->angular_velocity).z = 0.0;
   (this_ptr->angular_velocity).y = (this_ptr->angular_velocity).z;
   (this_ptr->angular_velocity).x = (this_ptr->angular_velocity).y;

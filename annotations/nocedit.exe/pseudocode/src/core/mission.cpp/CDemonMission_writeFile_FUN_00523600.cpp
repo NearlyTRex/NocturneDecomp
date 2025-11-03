@@ -113,15 +113,14 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
   core_mission_cpp_CDemonMission_FUN_00523cc0(this_ptr);
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000040,"%d\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000044,"// inventory actor count\n");
-  for (pCVar4 = this_ptr->first_actor; pCVar4 != (CDemonActor *)0x0;
-      pCVar4 = (pCVar4->metadata).next_actor) {
+  for (pCVar4 = this_ptr->first_actor; pCVar4 != (CDemonActor *)0x0; pCVar4 = pCVar4->next_actor) {
     core_actor_cpp_castToClassHash_FUN_0040c790(pCVar4,g_CHeroClassInfo.name_hash);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000048,"%d\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000048,"// actor name list\n");
   pCVar4 = this_ptr->first_actor;
   this_ptr->actorCountMaybe = 0;
-  for (; pCVar4 != (CDemonActor *)0x0; pCVar4 = (pCVar4->metadata).next_actor) {
+  for (; pCVar4 != (CDemonActor *)0x0; pCVar4 = pCVar4->next_actor) {
     core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(pCVar4);
     crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000048,"%s \"%s\"\n");
     if (1999 < this_ptr->actorCountMaybe) {
@@ -132,8 +131,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
     *(CDemonActor **)(this_ptr->field8_0x890 + this_ptr->actorCountMaybe * 4) = pCVar4;
     this_ptr->actorCountMaybe = this_ptr->actorCountMaybe + 1;
   }
-  for (pCVar4 = this_ptr->first_actor; pCVar4 != (CDemonActor *)0x0;
-      pCVar4 = (pCVar4->metadata).next_actor) {
+  for (pCVar4 = this_ptr->first_actor; pCVar4 != (CDemonActor *)0x0; pCVar4 = pCVar4->next_actor) {
     pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar4,g_CHeroClassInfo.name_hash);
     if (pCVar1 != (CDemonActor *)0x0) {
       pCVar3 = (CInventory *)(pCVar1[0x176].create_event + 0x30);
@@ -153,8 +151,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
     }
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000050,"// actor data list\n");
-  for (pCVar4 = this_ptr->first_actor; pCVar4 != (CDemonActor *)0x0;
-      pCVar4 = (pCVar4->metadata).next_actor) {
+  for (pCVar4 = this_ptr->first_actor; pCVar4 != (CDemonActor *)0x0; pCVar4 = pCVar4->next_actor) {
     core_actor_cpp_CDemonActor_save_FUN_0040af30(pCVar4,in_stack_00000054);
   }
   core_gore_cpp_FUN_004ee290(g_CGorePtr);

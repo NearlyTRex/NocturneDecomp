@@ -27,7 +27,7 @@
 //   TerminatedCString s_is_hardwired_into_the_co_00640137
 //   int g_ClipLeft
 // Function calls:
-//   core_actor.cpp_SomethingElseWithStrings1_FUN_0040d1e0
+//   core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
 //   engine_2d.c_drawText_FUN_00401fd0
 
 #include "nocturne.h"
@@ -42,7 +42,8 @@ void core_platfrm_cpp_FUN_0054f060(void)
   int iVar2;
   int *in_stack_00000008;
   
-  core_actor_cpp_SomethingElseWithStrings1_FUN_0040d1e0();
+  core_actor_cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
+            (in_stack_00000008,"</>","Move platform forward/back on course.");
   *in_stack_00000008 = *in_stack_00000008 + 0xb;
   if ((char)in_stack_00000008[0xbc] == '\0') {
     engine_2d_c_drawText_FUN_00401fd0
@@ -80,7 +81,8 @@ void core_platfrm_cpp_FUN_0054f060(void)
     *in_stack_00000008 = iVar1 + 0xb;
     engine_2d_c_drawText_FUN_00401fd0("to slew, either by pressing Y, or clicking on the \"Editor slew mode\" property.",iVar2,iVar1 + 0xb);
     *in_stack_00000008 = *in_stack_00000008 + 0x16;
-    core_actor_cpp_SomethingElseWithStrings1_FUN_0040d1e0();
+    core_actor_cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
+              (in_stack_00000008,"CTRL+HOME","Slam the start and end position to the current location of the platform");
     iVar2 = g_ClipLeft;
     iVar1 = *in_stack_00000008;
     *in_stack_00000008 = iVar1 + 0xb;
@@ -132,7 +134,7 @@ void core_platfrm_cpp_FUN_0054f060(void)
 // 0054f06d: PUSH 0x63fca4
 //   XREF to: 0063fca4 (DATA)
 // 0054f072: PUSH EBX
-// 0054f073: CALL core_actor.cpp_SomethingElseWithStrings1_FUN_0040d1e0
+// 0054f073: CALL core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
 //   XREF to: 0040d1e0 (UNCONDITIONAL_CALL)
 // 0054f078: MOV EDX,dword ptr [EBX]
 // 0054f07a: ADD ESP,0xc
@@ -257,7 +259,7 @@ void core_platfrm_cpp_FUN_0054f060(void)
 // 0054f191: ADD EDX,0x16
 // 0054f194: PUSH EBX
 // 0054f195: MOV dword ptr [EBX],EDX
-// 0054f197: CALL core_actor.cpp_SomethingElseWithStrings1_FUN_0040d1e0
+// 0054f197: CALL core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
 //   XREF to: 0040d1e0 (UNCONDITIONAL_CALL)
 // 0054f19c: MOV ECX,dword ptr [EBX]
 // 0054f19e: ADD ESP,0xc

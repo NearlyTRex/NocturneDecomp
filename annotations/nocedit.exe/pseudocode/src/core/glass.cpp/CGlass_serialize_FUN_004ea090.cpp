@@ -25,10 +25,10 @@
 void __cdecl core_glass_cpp_CGlass_serialize_FUN_004ea090(CGlass *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base);
   core_actor_cpp_serializeVector_FUN_0040b340(&this_ptr->glass_size,"glassSize");
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)this_ptr->glass_texture,"glassTexture");
+            ((char **)(this_ptr->glass_texture).texture_name,"glassTexture");
   if (1 < g_CGlassClassVersion) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->opacity,"opacity");
   }
@@ -50,7 +50,7 @@ void __cdecl core_glass_cpp_CGlass_serialize_FUN_004ea090(CGlass *this_ptr)
   core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->background_flag,"backgroundFlag")
   ;
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)this_ptr->broken_texture,"brokenTexture");
+            ((char **)(this_ptr->broken_texture).texture_name,"brokenTexture");
   return;
 }
 

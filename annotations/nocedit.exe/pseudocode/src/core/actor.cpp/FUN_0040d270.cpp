@@ -1,8 +1,8 @@
 // Name: core_actor.cpp_FUN_0040d270
 // Address: 0040d270
 // Address Range: [[0040d270, 0040d28b]]
-// Convention: unknown
-// Signature: undefined core_actor.cpp_FUN_0040d270()
+// Convention: __cdecl
+// Signature: void core_actor.cpp_FUN_0040d270(void)
 // Cross-references:
 //   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 (0040d290) at 0040d29b [DATA]
 // Globals:
@@ -13,7 +13,7 @@
 
 #include "nocturne.h"
 
-void core_actor_cpp_FUN_0040d270(void)
+void __cdecl core_actor_cpp_FUN_0040d270(void)
 
 {
   core_msnedit_cpp_FUN_0053d220(g_CDemonMissionPtr);

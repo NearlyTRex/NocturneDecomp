@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042b5b0 (0042b5b0) at 0042b5f8 [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 
 #include "nocturne.h"
 
@@ -25,33 +25,33 @@ int core_skeleton_cpp_CDeformableModelInstance_FUN_005a1160(void)
   float fVar7;
   float fVar8;
   float fVar9;
-  int iVar10;
-  int iVar11;
+  int extraout_EAX;
+  char *pcVar10;
+  char *pcVar11;
   int iVar12;
-  int iVar13;
-  int in_stack_00000004;
+  CDeformableModelInstance *in_stack_00000004;
   float *in_stack_00000008;
   int local_48;
   float local_3c;
   int local_38;
   
-  iVar13 = 0;
-  iVar10 = core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
+  iVar12 = 0;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(in_stack_00000004);
   local_3c = 1e+30;
   local_48 = 0;
-  if (0 < *(int *)(iVar10 + 0x28558)) {
-    iVar12 = in_stack_00000004 + 0xe80;
-    local_38 = iVar10;
+  if (0 < *(int *)(extraout_EAX + 0x28558)) {
+    pcVar10 = in_stack_00000004->field3_0x508 + 0x978;
+    pcVar11 = pcVar10;
+    local_38 = extraout_EAX;
     do {
       iVar1 = *(int *)(local_38 + 0x2857c);
       if (-1 < iVar1) {
-        fVar2 = *(float *)(iVar12 + 0xc);
-        fVar3 = *(float *)(iVar12 + 0x1c);
-        fVar4 = *(float *)(iVar12 + 0x2c);
-        iVar11 = iVar1 * 0x30 + in_stack_00000004 + 0xe80;
-        fVar5 = *(float *)(iVar11 + 0xc) - fVar2;
-        fVar6 = *(float *)(iVar11 + 0x1c) - fVar3;
-        fVar8 = *(float *)(iVar11 + 0x2c) - fVar4;
+        fVar2 = *(float *)(pcVar11 + 0xc);
+        fVar3 = *(float *)(pcVar11 + 0x1c);
+        fVar4 = *(float *)(pcVar11 + 0x2c);
+        fVar5 = *(float *)(pcVar10 + iVar1 * 0x30 + 0xc) - fVar2;
+        fVar6 = *(float *)(pcVar10 + iVar1 * 0x30 + 0x1c) - fVar3;
+        fVar8 = *(float *)(pcVar10 + iVar1 * 0x30 + 0x2c) - fVar4;
         fVar7 = SQRT(fVar8 * fVar8 + fVar5 * fVar5 + fVar6 * fVar6);
         if (fVar7 <= 0.0) {
 LAB_005a1348:
@@ -75,10 +75,10 @@ LAB_005a1348:
             fVar4 = in_stack_00000008[2] - (fVar4 + fVar8 * fVar9);
           }
           else {
-            fVar2 = *in_stack_00000008 - *(float *)(iVar11 + 0xc);
-            fVar3 = in_stack_00000008[1] - *(float *)(iVar11 + 0x1c);
+            fVar2 = *in_stack_00000008 - *(float *)(pcVar10 + iVar1 * 0x30 + 0xc);
+            fVar3 = in_stack_00000008[1] - *(float *)(pcVar10 + iVar1 * 0x30 + 0x1c);
             fVar2 = fVar3 * fVar3 + fVar2 * fVar2;
-            fVar4 = in_stack_00000008[2] - *(float *)(iVar11 + 0x2c);
+            fVar4 = in_stack_00000008[2] - *(float *)(pcVar10 + iVar1 * 0x30 + 0x2c);
           }
         }
         fVar2 = SQRT(fVar4 * fVar4 + fVar2);
@@ -88,9 +88,9 @@ LAB_005a1348:
         }
       }
       local_38 = local_38 + 0x24;
-      iVar13 = iVar13 + 1;
-      iVar12 = iVar12 + 0x30;
-    } while (iVar13 < *(int *)(iVar10 + 0x28558));
+      iVar12 = iVar12 + 1;
+      pcVar11 = pcVar11 + 0x30;
+    } while (iVar12 < *(int *)(extraout_EAX + 0x28558));
   }
   return local_48;
 }
@@ -111,7 +111,7 @@ LAB_005a1348:
 //   XREF to: Stack[0x4] (READ)
 // 005a1175: PUSH EDX
 // 005a1176: XOR ESI,ESI
-// 005a1178: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 005a1178: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005a117d: MOV ECX,0x7149f2ca
 // 005a1182: ADD ESP,0x4

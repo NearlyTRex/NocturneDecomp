@@ -23,7 +23,7 @@
 // Function calls:
 //   core_morph.cpp_FUN_0052b310
 //   core_npc.cpp_FUN_005447e0
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -62,7 +62,8 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_00545b30(CPassenger *t
   } while (cVar1 != '\0');
   pcVar3 = "nameMePlease";
   *(undefined4 *)(iVar2 + -4) = 0;
-  core_skeleton_cpp_FUN_005a0840();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            ((CDeformableModelInstance *)(iVar2 + -0x1f6bc));
   pcVar4 = (char *)(iVar2 + -0x88);
   *(undefined4 *)(iVar2 + 0xc30) = 0x3f800000;
   do {
@@ -151,7 +152,7 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_00545b30(CPassenger *t
 // 00545bb4: MOV ESI,0x63e7a3
 //   XREF to: 0063e7a3 (DATA)
 // 00545bb9: MOV dword ptr [EBX + 0x1f810],0x0
-// 00545bc3: CALL core_skeleton.cpp_FUN_005a0840
+// 00545bc3: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00545bc8: ADD ESP,0x8
 // 00545bcb: LEA EDI,[EBX + 0x1f78c]

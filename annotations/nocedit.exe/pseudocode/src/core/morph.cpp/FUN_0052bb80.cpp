@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_morph.cpp_FUN_0052bb80()
 // Cross-references:
-//   core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0 (0052bcb0) at 0052c2ea [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052c2ea [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_WindowWidth = 0x140
 //   int g_WindowHeight = 0xc8

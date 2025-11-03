@@ -13,8 +13,8 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_005248a0(CDemonMission *this_ptr
   uint *in_stack_00000008;
   
   for (this_ptr_00 = this_ptr->first_actor; this_ptr_00 != (CDemonActor *)0x0;
-      this_ptr_00 = (this_ptr_00->metadata).next_actor) {
-    (*((this_ptr_00->metadata).vtable)->calculateChecksum)(this_ptr_00,in_stack_00000008);
+      this_ptr_00 = this_ptr_00->next_actor) {
+    (*this_ptr_00->vtable->calculateChecksum)(this_ptr_00,in_stack_00000008);
   }
   return;
 }

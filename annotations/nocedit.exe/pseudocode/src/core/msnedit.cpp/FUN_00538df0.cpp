@@ -27,15 +27,15 @@ void core_msnedit_cpp_FUN_00538df0(void)
     pCVar1 = in_stack_00000004->first_actor;
     while (pCVar1 != (CDemonActor *)0x0) {
       pCVar2 = &pCVar1->location;
-      pCVar1 = (pCVar1->metadata).next_actor;
+      pCVar1 = pCVar1->next_actor;
       if (in_stack_00000008 == pCVar2->area_id) {
         core_msnedit_cpp_FUN_00538ea0();
         core_mission_cpp_CDemonMission_FUN_00523f20(in_stack_00000004);
       }
     }
     for (pCVar1 = in_stack_00000004->first_actor; pCVar1 != (CDemonActor *)0x0;
-        pCVar1 = (pCVar1->metadata).next_actor) {
-      (*((pCVar1->metadata).vtable)->onAreaDeleted)(pCVar1,in_stack_00000008);
+        pCVar1 = pCVar1->next_actor) {
+      (*pCVar1->vtable->onAreaDeleted)(pCVar1,in_stack_00000008);
     }
     pvVar3 = (void *)((int)in_stack_00000004->set_list + -1);
     in_stack_00000004->set_list = pvVar3;

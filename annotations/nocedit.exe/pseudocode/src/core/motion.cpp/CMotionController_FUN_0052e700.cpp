@@ -1,8 +1,8 @@
 // Name: core_motion.cpp_CMotionController_FUN_0052e700
 // Address: 0052e700
 // Address Range: [[0052e700, 0052e8ca]]
-// Convention: unknown
-// Signature: undefined core_motion.cpp_CMotionController_FUN_0052e700()
+// Convention: __cdecl
+// Signature: void core_motion.cpp_CMotionController_FUN_0052e700(CMotionController * this_ptr)
 // Cross-references:
 //   core_baron.cpp_CBaron_FUN_00413ae0 (00413ae0) at 00413c6e [UNCONDITIONAL_CALL]
 //   core_batman.cpp_CBatman_FUN_004173b0 (004173b0) at 00417482 [UNCONDITIONAL_CALL]
@@ -16,7 +16,7 @@
 // Globals:
 //   TerminatedCString s_s_s_0063ac46
 //   TerminatedCString s_s_5_2f_0063ac4f
-//   undefined4 DAT_00661ba0
+//   float FLOAT_00661ba0 = 256
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonRenderer g_CDemonRendererInstance
 //   undefined4 DAT_02f43978
@@ -31,24 +31,18 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 core_motion.cpp_CMotionController_FUN_0052e700(undefined4 param_1,
-   undefined4 param_2) */
-
-void core_motion_cpp_CMotionController_FUN_0052e700(void)
+void __cdecl core_motion_cpp_CMotionController_FUN_0052e700(CMotionController *this_ptr)
 
 {
   char cVar1;
   SRenderVertex *pSVar2;
   int iVar3;
   int iVar4;
-  undefined4 uVar5;
-  char *pcVar6;
+  char *pcVar5;
   BADSPACEBASE *in_ESP;
-  char *pcVar7;
-  int in_stack_00000004;
+  char *pcVar6;
   char *in_stack_00000008;
-  double dVar8;
+  double dVar7;
   char local_a8 [124];
   CVector3i local_2c;
   float local_20;
@@ -62,9 +56,9 @@ void core_motion_cpp_CMotionController_FUN_0052e700(void)
     iVar3 = (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x14))();
     local_1c = *(float *)(iVar3 + 0x10);
     local_18 = 0;
-    local_2c.x = (int)ROUND(local_20 * _DAT_00661ba0);
-    local_2c.y = (int)ROUND(local_1c * _DAT_00661ba0);
-    local_2c.z = (int)ROUND(_DAT_00661ba0 * 0.0);
+    local_2c.x = (int)ROUND(local_20 * FLOAT_00661ba0);
+    local_2c.y = (int)ROUND(local_1c * FLOAT_00661ba0);
+    local_2c.z = (int)ROUND(FLOAT_00661ba0 * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr->vertex_buffer_ptr[19999].projected_vertex,&local_2c);
     pSVar2 = g_CDemonRendererPtr->vertex_buffer_ptr;
@@ -72,30 +66,30 @@ void core_motion_cpp_CMotionController_FUN_0052e700(void)
       iVar3 = pSVar2[19999].projected_vertex.screen_y >> 0x10;
       local_14 = (pSVar2[19999].projected_vertex.screen_x >> 0x10) + -0x23;
       engine_2d_c_drawText_FUN_00401fd0(in_stack_00000008,local_14,iVar3 + -0x21);
-      if ((*(int *)(in_stack_00000004 + 0x28) < 0) ||
-         (iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0(),
-         *(int *)(iVar4 + 0x24) == *(int *)(in_stack_00000004 + 0x28))) {
-        pcVar6 = (char *)core_motion_cpp_CMotionController_FUN_0052dcf0();
-        pcVar7 = local_a8;
+      if ((this_ptr->state_index < 0) ||
+         (iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr),
+         *(int *)(iVar4 + 0x24) == this_ptr->state_index)) {
+        pcVar5 = (char *)core_motion_cpp_CMotionController_FUN_0052dcf0(this_ptr);
+        pcVar6 = local_a8;
         do {
-          cVar1 = *pcVar6;
-          *pcVar7 = cVar1;
+          cVar1 = *pcVar5;
+          *pcVar6 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar6[1];
+          cVar1 = pcVar5[1];
+          pcVar5 = pcVar5 + 2;
+          pcVar6[1] = cVar1;
           pcVar6 = pcVar6 + 2;
-          pcVar7[1] = cVar1;
-          pcVar7 = pcVar7 + 2;
         } while (cVar1 != '\0');
       }
       else {
-        core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
-        uVar5 = core_motion_cpp_CMotionController_FUN_0052dcf0();
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_a8,"%s -> %s",uVar5);
+        core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(this_ptr);
+        iVar4 = core_motion_cpp_CMotionController_FUN_0052dcf0(this_ptr);
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_a8,"%s -> %s",iVar4);
       }
       engine_2d_c_drawText_FUN_00401fd0(local_a8,local_14,iVar3 + -0x16);
-      dVar8 = (double)*(float *)(in_stack_00000004 + 8);
-      uVar5 = core_motion_cpp_CMotionController_FUN_0052dab0();
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_a8,"%s : %5.2f",uVar5,dVar8);
+      dVar7 = (double)this_ptr->current_frame_number;
+      iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_a8,"%s : %5.2f",iVar4,dVar7);
       engine_2d_c_drawText_FUN_00401fd0(local_a8,local_14,iVar3 + -0xb);
       return;
     }

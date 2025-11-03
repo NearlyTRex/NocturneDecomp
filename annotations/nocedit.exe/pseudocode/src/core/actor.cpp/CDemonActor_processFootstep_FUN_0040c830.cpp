@@ -40,7 +40,7 @@ core_actor_cpp_CDemonActor_processFootstep_FUN_0040c830(CDemonActor *this_ptr,fl
   core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
             (g_CDemonSetPtr,&position->position,0.0);
   core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
-  iVar4 = (*((this_ptr->metadata).vtable)->handleFootstep)
+  iVar4 = (*this_ptr->vtable->handleFootstep)
                     (this_ptr,&position->position,g_CDemonSetPtr->ground_type,in_stack_00000014);
   return iVar4;
 }

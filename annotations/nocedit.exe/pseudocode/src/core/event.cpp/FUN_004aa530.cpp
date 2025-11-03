@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_event.cpp_FUN_004aa530()
 // Cross-references:
-//   core_event.cpp_CEvent_EventReadingFromFile_FUN_004ae140 (004ae140) at 004af2a7 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004ae140 (004ae140) at 004af2a7 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_f_f_f_n_006244f4
 //   TerminatedCString s_n_00624506
@@ -19,9 +19,6 @@
 //   crt_stdio.c_sscanf_FUN_0060013c
 
 #include "nocturne.h"
-
-/* Signature: undefined1 core_event.cpp_FUN_004aa530(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3) */
 
 undefined4 core_event_cpp_FUN_004aa530(void)
 

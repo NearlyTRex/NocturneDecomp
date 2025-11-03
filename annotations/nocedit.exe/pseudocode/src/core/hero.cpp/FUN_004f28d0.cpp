@@ -12,10 +12,10 @@
 //   TerminatedCString s_GETGRABBED_BACK_0062ebad
 //   TerminatedCString s_GETGRABBED_0062ebbd
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408f10
-//   core_motion.cpp_CMotionController_FUN_0052db90
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
+//   core_motion.cpp_FUN_0052db90
 
 #include "nocturne.h"
 
@@ -25,36 +25,43 @@
 undefined4 core_hero_cpp_FUN_004f28d0(void)
 
 {
-  int iVar1;
-  CVector3f *pCVar2;
+  CMotionList *pCVar1;
+  int iVar2;
+  CVector3f *pCVar3;
+  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   int in_stack_0000000c;
-  undefined4 in_stack_0000001c;
+  int in_stack_00000018;
+  int in_stack_0000001c;
   CDemonActor_vtable *in_stack_00000020;
   
   if (in_stack_0000000c == 0) {
-    core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
-    iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0();
-    if (iVar1 < 0) {
+    pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                       ((CMotionController *)(in_stack_00000004 + 1));
+    iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(pCVar1);
+    if (iVar2 < 0) {
       return 0;
     }
-    core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
-    iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0();
-    if (iVar1 < 0) {
-      core_motion_cpp_CMotionController_FUN_0052db90();
+    pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                       ((CMotionController *)(in_stack_00000004 + 1));
+    iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(pCVar1);
+    if (iVar2 < 0) {
+      core_motion_cpp_FUN_0052db90();
     }
     else {
-      pCVar2 = core_actor_cpp_CDemonActor_FUN_00408f10(in_stack_00000004);
-      if (pCVar2->z <= 0.0) {
-        core_motion_cpp_CMotionController_FUN_0052db90();
+      pCVar3 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                         (in_stack_00000004,(CVector3f *)&stack0xfffffffc,
+                          (CVector3f *)(in_stack_00000018 + 0x20));
+      if (pCVar3->z <= 0.0) {
+        core_motion_cpp_FUN_0052db90();
       }
       else {
-        core_motion_cpp_CMotionController_FUN_0052db90();
+        core_motion_cpp_FUN_0052db90();
       }
     }
   }
-  *(undefined4 *)in_stack_00000004[0x1b].metadata.field5_0x28 = in_stack_0000001c;
-  in_stack_00000004[0x1b].metadata.vtable = in_stack_00000020;
+  in_stack_00000004[0x1b].field28_0x150 = in_stack_0000001c;
+  in_stack_00000004[0x1b].vtable = in_stack_00000020;
   return 1;
 }
 
@@ -127,7 +134,7 @@ undefined4 core_hero_cpp_FUN_004f28d0(void)
 //   XREF to: Stack[-0x14] (DATA)
 // 004f2953: PUSH EAX
 // 004f2954: PUSH ESI
-// 004f2955: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 004f2955: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 004f295a: FLDZ
 // 004f295c: ADD ESP,0xc
@@ -140,7 +147,7 @@ undefined4 core_hero_cpp_FUN_004f28d0(void)
 // 004f2969: PUSH 0x62eb9c
 //   XREF to: 0062eb9c (DATA)
 // 004f296e: PUSH EBX
-// 004f296f: CALL core_motion.cpp_CMotionController_FUN_0052db90
+// 004f296f: CALL core_motion.cpp_FUN_0052db90
 //   XREF to: 0052db90 (UNCONDITIONAL_CALL)
 // 004f2974: ADD ESP,0xc
 // 004f2977: JMP 0x004f28e1
@@ -150,7 +157,7 @@ undefined4 core_hero_cpp_FUN_004f28d0(void)
 // 004f297e: PUSH 0x62ebad
 //   XREF to: 0062ebad (DATA)
 // 004f2983: PUSH EBX
-// 004f2984: CALL core_motion.cpp_CMotionController_FUN_0052db90
+// 004f2984: CALL core_motion.cpp_FUN_0052db90
 //   XREF to: 0052db90 (UNCONDITIONAL_CALL)
 // 004f2989: ADD ESP,0xc
 // 004f298c: JMP 0x004f28e1
@@ -160,7 +167,7 @@ undefined4 core_hero_cpp_FUN_004f28d0(void)
 // 004f2993: PUSH 0x62ebbd
 //   XREF to: 0062ebbd (DATA)
 // 004f2998: PUSH EBX
-// 004f2999: CALL core_motion.cpp_CMotionController_FUN_0052db90
+// 004f2999: CALL core_motion.cpp_FUN_0052db90
 //   XREF to: 0052db90 (UNCONDITIONAL_CALL)
 // 004f299e: ADD ESP,0xc
 // 004f29a1: JMP 0x004f28e1

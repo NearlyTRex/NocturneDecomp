@@ -1,10 +1,10 @@
 // Name: core_event.cpp_CEventList_setSfxHandle_FUN_004b0c80
 // Address: 004b0c80
 // Address Range: [[004b0c80, 004b0d5d]]
-// Convention: unknown
-// Signature: undefined core_event.cpp_CEventList_setSfxHandle_FUN_004b0c80()
+// Convention: __cdecl
+// Signature: void core_event.cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList * this_ptr)
 // Cross-references:
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ac5a2 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ac5a2 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_event_cpp_00625ca8
 //   TerminatedCString s_CEventList_setSfxHandle__00625cba
@@ -13,67 +13,60 @@
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
-//   core_event.cpp_FUN_004b0d60
-//   core_event.cpp_FUN_004b0db0
+//   core_event.cpp_CEventList_FUN_004b0d60
+//   core_event.cpp_CEventList_FUN_004b0db0
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_event.cpp_CEventList_setSfxHandle(undefined4 param_1, undefined4
-   param_2, undefined4 param_3) */
-
-void core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80
-               (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4,
-               int param_5,char *param_6)
+void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *this_ptr)
 
 {
-  char cVar1;
+  CEvent CVar1;
   int iVar2;
   uint uVar3;
-  undefined4 *puVar4;
-  char *pcVar5;
-  byte bVar6;
+  CEvent *pCVar4;
+  byte bVar5;
+  CEvent *in_stack_00000008;
   undefined4 in_stack_00000018;
   
-  bVar6 = 0;
-  core_event_cpp_FUN_004b0db0();
-  iVar2 = core_event_cpp_FUN_004b0d60();
+  bVar5 = 0;
+  core_event_cpp_CEventList_FUN_004b0db0(this_ptr);
+  iVar2 = core_event_cpp_CEventList_FUN_004b0d60(this_ptr);
   if (iVar2 < 0) {
-    if (0x13 < *(int *)(param_5 + 0x3ac8)) {
+    if (0x13 < this_ptr[1].event_count) {
       g_CurrentFilename = "..\\core\\event.cpp";
       g_CurrentLineNumber = 0xba6;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setSfxHandle - too many sfx!");
     }
-    iVar2 = *(int *)(param_5 + 0x3ac8);
-    *(int *)(param_5 + 0x3ac8) = iVar2 + 1;
+    iVar2 = this_ptr[1].event_count;
+    this_ptr[1].event_count = iVar2 + 1;
   }
-  puVar4 = (undefined4 *)(param_5 + 0x3acc + iVar2 * 0x120);
   uVar3 = 0xffffffff;
-  pcVar5 = param_6;
+  pCVar4 = in_stack_00000008;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
-  } while (cVar1 != '\0');
+    CVar1 = *pCVar4;
+    pCVar4 = pCVar4 + (uint)bVar5 * -2 + 1;
+  } while (CVar1 != (CEvent)0x0);
   if (0x13 < ~uVar3 - 1) {
     g_CurrentFilename = "..\\core\\event.cpp";
     g_CurrentLineNumber = 0xbae;
-    core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("CEventList::setSfxHandle - sfx handle name %s is too long - max %d characters",param_6,0x13,unaff_EBX);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setSfxHandle - sfx handle name %s is too long - max %d characters");
   }
-  pcVar5 = (char *)(puVar4 + 1);
+  pCVar4 = this_ptr[1].event_list + iVar2 * 0x120 + 4;
   do {
-    cVar1 = *param_6;
-    *pcVar5 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = param_6[1];
-    param_6 = param_6 + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
-  } while (cVar1 != '\0');
-  *puVar4 = in_stack_00000018;
-  core_event_cpp_FUN_004b0db0();
+    CVar1 = *in_stack_00000008;
+    *pCVar4 = CVar1;
+    if (CVar1 == (CEvent)0x0) break;
+    CVar1 = in_stack_00000008[1];
+    in_stack_00000008 = in_stack_00000008 + 2;
+    pCVar4[1] = CVar1;
+    pCVar4 = pCVar4 + 2;
+  } while (CVar1 != (CEvent)0x0);
+  *(undefined4 *)(this_ptr[1].event_list + iVar2 * 0x120) = in_stack_00000018;
+  core_event_cpp_CEventList_FUN_004b0db0(this_ptr);
   return;
 }
 
@@ -89,12 +82,12 @@ void core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80
 // 004b0c88: MOV ESI,dword ptr [ESP + 0x18]
 //   XREF to: Stack[0x8] (READ)
 // 004b0c8c: PUSH EBX
-// 004b0c8d: CALL core_event.cpp_FUN_004b0db0
+// 004b0c8d: CALL core_event.cpp_CEventList_FUN_004b0db0
 //   XREF to: 004b0db0 (UNCONDITIONAL_CALL)
 // 004b0c92: ADD ESP,0x4
 // 004b0c95: PUSH ESI
 // 004b0c96: PUSH EBX
-// 004b0c97: CALL core_event.cpp_FUN_004b0d60
+// 004b0c97: CALL core_event.cpp_CEventList_FUN_004b0d60
 //   XREF to: 004b0d60 (UNCONDITIONAL_CALL)
 // 004b0c9c: ADD ESP,0x8
 // 004b0c9f: MOV EDX,EAX
@@ -158,7 +151,7 @@ void core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80
 //   XREF to: Stack[0xc] (READ)
 // 004b0d26: PUSH EBX
 // 004b0d27: MOV dword ptr [EBP],EAX
-// 004b0d2a: CALL core_event.cpp_FUN_004b0db0
+// 004b0d2a: CALL core_event.cpp_CEventList_FUN_004b0db0
 //   XREF to: 004b0db0 (UNCONDITIONAL_CALL)
 // 004b0d2f: ADD ESP,0x4
 // 004b0d32: POP EBP

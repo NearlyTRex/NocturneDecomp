@@ -84,8 +84,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b190(CCharacter *this_ptr)
     iVar3 = pCVar1->field12_0x14d14c;
     *(int *)(local_18 + 4) = iVar3;
     if (iVar3 < 0) {
-      iVar3 = (*(this_ptr->base_actor).metadata.vtable[1].getBlockVirtualDirectorFlag)
-                        (&this_ptr->base_actor);
+      iVar3 = (*(this_ptr->base_actor).vtable[1].getBlockVirtualDirectorFlag)(&this_ptr->base_actor)
+      ;
       *(int *)(unaff_EDI + 4) = iVar3;
     }
     local_40 = (g_CDemonSetPtr->collision_result_vec2).x - (g_CDemonSetPtr->collision_result_vec1).x
@@ -110,8 +110,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b190(CCharacter *this_ptr)
     local_24 = local_24 * fVar2;
     local_20 = local_20 * fVar2;
     local_1c = local_1c * fVar2;
-    local_18 = (char *)((g_CDemonSetPtr->collision_result_vec3).x - local_24);
-    local_14 = (g_CDemonSetPtr->collision_result_vec3).y - local_20;
+    local_18 = (char *)((g_CDemonSetPtr->collision_impact_position).x - local_24);
+    local_14 = (g_CDemonSetPtr->collision_impact_position).y - local_20;
     euler_angles = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                              (&local_30,&CStack_3c);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
@@ -157,7 +157,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b190(CCharacter *this_ptr)
                (CVector3f *)&(this_ptr->base_actor).orient);
     core_xform_cpp_inverse_FUN_005f6210
               ((CMatrix3x4f *)
-               ((this_ptr->model).padding_0x0 + *(int *)(in_stack_0000001c + 4) * 0x30 + 0xe80),
+               ((this_ptr->model).field3_0x508 + *(int *)(in_stack_0000001c + 4) * 0x30 + 0x978),
                in_stack_fffffd44);
     puVar5 = (undefined4 *)&stack0xfffffd4c;
     puVar7 = &uStack_1f8;

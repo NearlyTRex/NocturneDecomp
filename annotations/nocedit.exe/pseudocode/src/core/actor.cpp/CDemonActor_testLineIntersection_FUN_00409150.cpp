@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_hero.cpp_CHero_FUN_004f25c0 (004f25c0) at 004f25f5 [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408340
+//   core_actor.cpp_rayCylinderIntersect_FUN_00408340
 //   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 
 #include "nocturne.h"
@@ -30,14 +30,13 @@ core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150
   CVector3f CStack_1c;
   
   core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)&stack0xffffff94);
-  iVar7 = (*((this_ptr->metadata).vtable)->hasCollision)
-                    (this_ptr,(SCollisionInfo *)&stack0xffffff98);
+  iVar7 = (*this_ptr->vtable->hasCollision)(this_ptr,(SCollisionInfo *)&stack0xffffff98);
   if (iVar7 == 2) {
     fVar1 = line_end->y;
     fVar2 = line_start->y;
     fVar3 = line_end->z;
     fVar4 = line_start->z;
-    fVar8 = core_actor_cpp_CDemonActor_FUN_00408340
+    fVar8 = core_actor_cpp_rayCylinderIntersect_FUN_00408340
                       (&SStack_54,line_start,(CVector3f *)&stack0xfffffff8,(CVector3f *)&CStack_1c.z
                       );
     if ((0.0 <= fVar8) && (fVar8 <= 1.0)) {
@@ -120,7 +119,7 @@ core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150
 // 004091c2: FSUB float ptr [EBX + 0x8]
 // 004091c5: PUSH EAX
 // 004091c6: FSTP float ptr [ESP + 0x70]
-// 004091ca: CALL core_actor.cpp_CDemonActor_FUN_00408340
+// 004091ca: CALL core_actor.cpp_rayCylinderIntersect_FUN_00408340
 //   XREF to: 00408340 (UNCONDITIONAL_CALL)
 // 004091cf: MOV dword ptr [ESP + 0x74],EAX
 // 004091d3: FLD float ptr [ESP + 0x74]

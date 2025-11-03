@@ -12,8 +12,8 @@
 //   CFireEffect g_CFireEffectInstance
 //   CSound g_CSoundInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_FUN_0040cd10
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
 //   core_sound.cpp_FUN_005b3b90
 //   core_weapon.cpp_CWeapon_process_FUN_005ee110
@@ -31,14 +31,11 @@ void core_dynamite_cpp_FUN_0049cfb0(void)
   CWeapon *pCVar2;
   int iVar3;
   CBoundingBox3D *pCVar4;
-  float *pfVar5;
+  CVector3f *pCVar5;
   BADSPACEBASE *in_ESP;
   CWeapon *in_stack_00000004;
   float in_stack_00000008;
   float in_stack_0000000c;
-  CBoundingBox3D CStack_40;
-  float fStack_14;
-  float fStack_10;
   
   pCVar2 = in_stack_00000004;
   core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004);
@@ -58,26 +55,22 @@ void core_dynamite_cpp_FUN_0049cfb0(void)
       (pCVar2->base_actor).actor_name[0x13] = '\0';
     }
     else {
-      iVar3 = core_actor_cpp_FUN_0040cd10();
+      iVar3 = core_actor_cpp_randomChance_FUN_0040cd10
+                        ((in_stack_00000008 * (float)DOUBLE_00622ea2 * fVar1) / _DAT_0065d30c);
       if (iVar3 != 0) {
-        pCVar4 = (*((pCVar2->base_actor).metadata.vtable)->getBoundingBox)
-                           (&pCVar2->base_actor,&CStack_40);
-        fStack_14 = ((pCVar4->min).x + (pCVar4->max).x) * FLOAT_00622eaa;
-        fStack_10 = ((pCVar4->min).y + (pCVar4->max).y) * FLOAT_00622eaa;
-        pCVar4 = (*((pCVar2->base_actor).metadata.vtable)->getBoundingBox)
+        (*((pCVar2->base_actor).vtable)->getBoundingBox)
+                  (&pCVar2->base_actor,(CBoundingBox3D *)&stack0xffffffc0);
+        pCVar4 = (*((pCVar2->base_actor).vtable)->getBoundingBox)
                            (&pCVar2->base_actor,(CBoundingBox3D *)&stack0xffffffbc);
         in_stack_00000008 = (pCVar4->max).z;
-        CStack_40.min.x = (float)&stack0x00000018;
-        CStack_40.min.y = (float)in_ESP;
-        pfVar5 = core_actor_cpp_CDemonActor_FUN_00408ec0(&pCVar2->base_actor);
-        if (&stack0x00000004 != (CWeapon **)pfVar5) {
-          in_stack_00000004 = (CWeapon *)*pfVar5;
-          in_stack_00000008 = pfVar5[1];
-          in_stack_0000000c = pfVar5[2];
+        pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                           (&pCVar2->base_actor,(CVector3f *)&stack0x00000018,
+                            (CVector3f *)&stack0x00000000);
+        if ((CVector3f *)&stack0x00000004 != pCVar5) {
+          in_stack_00000004 = (CWeapon *)pCVar5->x;
+          in_stack_00000008 = pCVar5->y;
+          in_stack_0000000c = pCVar5->z;
         }
-        CStack_40.min.z = 9.18341e-41;
-        CStack_40.min.y = 0.0;
-        CStack_40.min.x = 9.18355e-41;
         core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
         return;
       }
@@ -135,7 +128,7 @@ void core_dynamite_cpp_FUN_0049cfb0(void)
 // 0049d009: SUB ESP,0x4
 // 0049d00c: FSTP float ptr [ESP]
 //   XREF to: Stack[-0x6c] (DATA)
-// 0049d00f: CALL core_actor.cpp_FUN_0040cd10
+// 0049d00f: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 0049d014: ADD ESP,0x4
 // 0049d017: TEST EAX,EAX
@@ -207,7 +200,7 @@ void core_dynamite_cpp_FUN_0049cfb0(void)
 // 0049d0c2: LEA EAX,[ESP + 0x54]
 // 0049d0c6: PUSH EAX
 // 0049d0c7: PUSH EBX
-// 0049d0c8: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0049d0c8: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0049d0cd: MOV EBX,EAX
 // 0049d0cf: LEA EAX,[ESP + 0x44]

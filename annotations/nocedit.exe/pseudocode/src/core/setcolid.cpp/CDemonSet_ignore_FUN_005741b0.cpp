@@ -12,7 +12,7 @@
 //   core_charactr.cpp_CCharacter_FUN_00428f40 (00428f40) at 00429083 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 (0042d5a0) at 0042d8fd [UNCONDITIONAL_CALL]
 //   core_cow.cpp_FUN_00444310 (00444310) at 00444469 [UNCONDITIONAL_CALL]
-//   core_crossbow.cpp_FUN_00448f20 (00448f20) at 00449096 [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_FUN_00448f20 (00448f20) at 00449096 [UNCONDITIONAL_CALL]
 //   core_dog.cpp_CZombieDog_process_FUN_0047f140 (0047f140) at 0047f2b0 [UNCONDITIONAL_CALL]
 //   core_dracbrid.cpp_FUN_00484410 (00484410) at 0048477a [UNCONDITIONAL_CALL]
 //   core_drone.cpp_FUN_0048ec70 (0048ec70) at 0048ee2d [UNCONDITIONAL_CALL]
@@ -38,7 +38,7 @@
 //   core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370 (005c4370) at 005c4484 [UNCONDITIONAL_CALL]
 //   core_tommygun.cpp_FUN_005ddb30 (005ddb30) at 005ddcf2 [UNCONDITIONAL_CALL]
 //   core_turret.cpp_FUN_005e3750 (005e3750) at 005e3ae3 [UNCONDITIONAL_CALL]
-//   core_weapon.cpp_FUN_005ee830 (005ee830) at 005ee8d5 [UNCONDITIONAL_CALL]
+//   core_weapon.cpp_CWeapon_FUN_005ee830 (005ee830) at 005ee8d5 [UNCONDITIONAL_CALL]
 //   core_werewolf.cpp_CWerewolf_process_FUN_005efde0 (005efde0) at 005f00f4 [UNCONDITIONAL_CALL]
 //   core_zombie.cpp_CZombie_process_FUN_005f9470 (005f9470) at 005f96e3 [UNCONDITIONAL_CALL]
 // Globals:

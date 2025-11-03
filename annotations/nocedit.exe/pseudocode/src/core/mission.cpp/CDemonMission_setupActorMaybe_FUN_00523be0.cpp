@@ -38,11 +38,11 @@ core_mission_cpp_CDemonMission_setupActorMaybe_FUN_00523be0
     core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
               (pCVar1,"..\\core\\mission.cpp",0x2ce);
     if (pCVar1 == actor_ptr) break;
-    pCVar1 = (pCVar1->metadata).next_actor;
+    pCVar1 = pCVar1->next_actor;
   }
-  iVar2 = *(int *)(actor_ptr->metadata).field5_0x28;
+  iVar2 = actor_ptr->field28_0x150;
   if (iVar2 == 0) {
-    pCVar1 = (actor_ptr->metadata).next_actor;
+    pCVar1 = actor_ptr->next_actor;
     if (pCVar1 == (CDemonActor *)0x0) {
       this_ptr->first_actor = (CDemonActor *)0x0;
       this_ptr->field6_0x54c[0] = '\0';
@@ -52,29 +52,22 @@ core_mission_cpp_CDemonMission_setupActorMaybe_FUN_00523be0
     }
     else {
       this_ptr->first_actor = pCVar1;
-      (pCVar1->metadata).field5_0x28[0] = '\0';
-      (pCVar1->metadata).field5_0x28[1] = '\0';
-      (pCVar1->metadata).field5_0x28[2] = '\0';
-      (pCVar1->metadata).field5_0x28[3] = '\0';
+      pCVar1->field28_0x150 = 0;
     }
   }
   else {
-    pCVar1 = (actor_ptr->metadata).next_actor;
+    pCVar1 = actor_ptr->next_actor;
     if (pCVar1 == (CDemonActor *)0x0) {
       *(int *)this_ptr->field6_0x54c = iVar2;
       *(undefined4 *)(iVar2 + 0x14c) = 0;
     }
     else {
       *(CDemonActor **)(iVar2 + 0x14c) = pCVar1;
-      *(undefined4 *)(pCVar1->metadata).field5_0x28 =
-           *(undefined4 *)(actor_ptr->metadata).field5_0x28;
+      pCVar1->field28_0x150 = actor_ptr->field28_0x150;
     }
   }
-  (actor_ptr->metadata).next_actor = (CDemonActor *)0x0;
-  (actor_ptr->metadata).field5_0x28[0] = '\0';
-  (actor_ptr->metadata).field5_0x28[1] = '\0';
-  (actor_ptr->metadata).field5_0x28[2] = '\0';
-  (actor_ptr->metadata).field5_0x28[3] = '\0';
+  actor_ptr->next_actor = (CDemonActor *)0x0;
+  actor_ptr->field28_0x150 = 0;
   return;
 }
 

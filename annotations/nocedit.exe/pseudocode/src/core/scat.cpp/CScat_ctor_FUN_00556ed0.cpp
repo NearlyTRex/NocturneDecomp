@@ -14,7 +14,7 @@
 //   core_charactr.cpp_CCharacter_addLayerAction_FUN_0042e5d0
 //   core_hero.cpp_FUN_004f2340
 //   core_scat.cpp_FUN_00557150
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -25,13 +25,13 @@ CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_00556ed0(CScat *this_ptr)
   undefined4 uStack00000008;
   
   this_ptr_00 = (CScat *)core_hero_cpp_FUN_004f2340();
-  (this_ptr_00->base_hero).base_character.base_actor.metadata.vtable =
-       &PTR_core_scat_cpp_FUN_00662464;
+  (this_ptr_00->base_hero).base_character.base_actor.vtable = &PTR_core_scat_cpp_FUN_00662464;
   this_ptr_00->field1_0x1fbd4[0] = '\0';
   this_ptr_00->field1_0x1fbd4[1] = '\0';
   this_ptr_00->field1_0x1fbd4[2] = '\0';
   this_ptr_00->field1_0x1fbd4[3] = '\0';
-  core_skeleton_cpp_FUN_005a0840();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            (&(this_ptr_00->base_hero).base_character.model);
   this_ptr_00->field1_0x1fbd4[0x10] = '\0';
   this_ptr_00->field1_0x1fbd4[0x11] = '\0';
   this_ptr_00->field1_0x1fbd4[0x12] = -0x80;
@@ -87,7 +87,7 @@ CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_00556ed0(CScat *this_ptr)
 //   XREF to: 00662464 (DATA)
 // 00556ef1: PUSH EAX
 // 00556ef2: MOV dword ptr [EAX + 0x1fa7c],0x0
-// 00556efc: CALL core_skeleton.cpp_FUN_005a0840
+// 00556efc: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00556f01: LEA EAX,[EBX + 0x1fbd8]
 // 00556f07: MOV dword ptr [EBX + 0x1fbe4],0x3f800000

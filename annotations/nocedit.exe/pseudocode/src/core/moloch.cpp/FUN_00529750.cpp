@@ -13,8 +13,8 @@
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 //   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 //   core_charactr.cpp_CCharacter_FUN_00429aa0
+//   core_morph.cpp_CMorphModel_FUN_0052bae0
 //   core_morph.cpp_FUN_0052b600
-//   core_morph.cpp_MorphModelRotatePointsTwice_FUN_0052bae0
 //   core_motion.cpp_CMotionController_FUN_0052e700
 //   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00
 //   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
@@ -43,7 +43,7 @@ int core_moloch_cpp_FUN_00529750(void)
   }
   if (*(int *)in_stack_00000004->field2_0x240c == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&in_stack_00000004->base_actor);
-    this_ptr = (*((in_stack_00000004->base_actor).metadata.vtable)->getBoundingBox)
+    this_ptr = (*((in_stack_00000004->base_actor).vtable)->getBoundingBox)
                          (&in_stack_00000004->base_actor,(CBoundingBox3D *)&pCStack_14);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
     if (iVar1 != 0) {
@@ -60,15 +60,17 @@ int core_moloch_cpp_FUN_00529750(void)
         core_morph_cpp_FUN_0052b600();
         pCStack_14 = (CCharacter *)0x1;
         core_morph_cpp_FUN_0052b600();
-        core_morph_cpp_MorphModelRotatePointsTwice_FUN_0052bae0();
+        core_morph_cpp_CMorphModel_FUN_0052bae0
+                  ((CMorphModel *)(in_stack_00000004[2].cloth_data + 0x787c));
       }
       if (DAT_02f43978 != 0) {
         iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
         if (iVar2 == 0) {
           pCStack_14 = in_stack_00000004;
-          core_motion_cpp_CMotionController_FUN_0052e700();
+          core_motion_cpp_CMotionController_FUN_0052e700
+                    (&(in_stack_00000004->model).motion_controller);
           pCStack_14 = (CCharacter *)0x529842;
-          (*((in_stack_00000004->base_actor).metadata.vtable)->renderTargetPoints)
+          (*((in_stack_00000004->base_actor).vtable)->renderTargetPoints)
                     (&in_stack_00000004->base_actor);
         }
       }
@@ -150,7 +152,7 @@ int core_moloch_cpp_FUN_00529750(void)
 // 005297fe: SUB ESP,0x4
 // 00529801: FSTP float ptr [ESP]
 // 00529804: PUSH ESI
-// 00529805: CALL core_morph.cpp_MorphModelRotatePointsTwice_FUN_0052bae0
+// 00529805: CALL core_morph.cpp_CMorphModel_FUN_0052bae0
 //   XREF to: 0052bae0 (UNCONDITIONAL_CALL)
 // 0052980a: ADD ESP,0x8
 // 0052980d: CMP dword ptr [0x02f43978],0x0

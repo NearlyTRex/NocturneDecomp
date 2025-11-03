@@ -10,7 +10,7 @@
 // Globals:
 //   undefined4 DAT_0065dcc0
 //   CRock* g_CFireEffectRocksEnd
-//   CLaserBeam[64] g_CFireEffectLaserBeams
+//   CLaserBeam[64] g_LaserBeamPool
 // Function calls:
 //   core_fire.cpp_CLaserBeam_FUN_004c2420
 
@@ -22,7 +22,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7f20(CFireEffect *this_ptr)
   if (0x3f < (int)g_CFireEffectRocksEnd) {
     return;
   }
-  core_fire_cpp_CLaserBeam_FUN_004c2420(g_CFireEffectLaserBeams + (int)g_CFireEffectRocksEnd);
+  core_fire_cpp_CLaserBeam_FUN_004c2420(g_LaserBeamPool + (int)g_CFireEffectRocksEnd);
   g_CFireEffectRocksEnd = (CRock *)((int)&(g_CFireEffectRocksEnd->base).position.x + 1);
   return;
 }

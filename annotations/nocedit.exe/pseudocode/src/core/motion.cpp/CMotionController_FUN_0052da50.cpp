@@ -1,39 +1,36 @@
 // Name: core_motion.cpp_CMotionController_FUN_0052da50
 // Address: 0052da50
 // Address Range: [[0052da50, 0052daaf]]
-// Convention: unknown
-// Signature: undefined core_motion.cpp_CMotionController_FUN_0052da50()
+// Convention: __cdecl
+// Signature: void core_motion.cpp_CMotionController_FUN_0052da50(CMotionController * this_ptr)
 // Cross-references:
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610 (0052d610) at 0052d877 [UNCONDITIONAL_CALL]
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 (0052db00) at 0052db72 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_motion.cpp_CMotionController_FUN_0052da50(CMotionController* param_1)
-    */
-
-void core_motion_cpp_CMotionController_FUN_0052da50(void)
+void __cdecl core_motion_cpp_CMotionController_FUN_0052da50(CMotionController *this_ptr)
 
 {
-  undefined4 uVar1;
-  int in_stack_00000004;
+  int iVar1;
+  float fVar2;
   
-  *(undefined4 *)(in_stack_00000004 + 0x20) = 1;
-  uVar1 = *(undefined4 *)(in_stack_00000004 + 4);
-  *(undefined4 *)(in_stack_00000004 + 4) = *(undefined4 *)(in_stack_00000004 + 0x18);
-  *(undefined4 *)(in_stack_00000004 + 0x18) = uVar1;
-  uVar1 = *(undefined4 *)(in_stack_00000004 + 8);
-  *(undefined4 *)(in_stack_00000004 + 8) = *(undefined4 *)(in_stack_00000004 + 0x1c);
-  *(undefined4 *)(in_stack_00000004 + 0x1c) = uVar1;
-  if (*(int *)(in_stack_00000004 + 0xc) == 5) {
-    *(undefined4 *)(in_stack_00000004 + 0xc) = 4;
+  this_ptr->tween_direction = 1;
+  iVar1 = this_ptr->current_motion_index;
+  this_ptr->current_motion_index = this_ptr->tween_target_motion;
+  this_ptr->tween_target_motion = iVar1;
+  fVar2 = this_ptr->current_frame_number;
+  this_ptr->current_frame_number = this_ptr->tween_target_frame;
+  this_ptr->tween_target_frame = fVar2;
+  if (this_ptr->tween_type == 5) {
+    this_ptr->tween_type = 4;
   }
-  else if (*(int *)(in_stack_00000004 + 0xc) == 4) {
-    *(undefined4 *)(in_stack_00000004 + 0xc) = 5;
-    *(float *)(in_stack_00000004 + 0x14) = 1.0 - *(float *)(in_stack_00000004 + 0x14);
+  else if (this_ptr->tween_type == 4) {
+    this_ptr->tween_type = 5;
+    this_ptr->tween_progress = 1.0 - this_ptr->tween_progress;
     return;
   }
-  *(float *)(in_stack_00000004 + 0x14) = 1.0 - *(float *)(in_stack_00000004 + 0x14);
+  this_ptr->tween_progress = 1.0 - this_ptr->tween_progress;
   return;
 }
 

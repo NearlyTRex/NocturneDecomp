@@ -25,11 +25,11 @@ CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_0052a4c0(CMorphModel *
   this_ptr->field2_0x58[0xd] = '\0';
   this_ptr->field2_0x58[0xe] = '\0';
   this_ptr->field2_0x58[0xf] = '\0';
-  this_ptr->padding_0x0[0] = '\0';
-  this_ptr->padding_0x0[1] = '\0';
-  this_ptr->padding_0x0[2] = '\0';
-  this_ptr->padding_0x0[3] = '\0';
-  this_ptr->numPoints = 0;
+  this_ptr->field0_0x0[0] = '\0';
+  this_ptr->field0_0x0[1] = '\0';
+  this_ptr->field0_0x0[2] = '\0';
+  this_ptr->field0_0x0[3] = '\0';
+  this_ptr->num_points = 0;
   return this_ptr;
 }
 

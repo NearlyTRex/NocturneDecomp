@@ -20,12 +20,13 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428140(CCharacter *this_ptr)
   char cVar1;
   CDemonActor *this_ptr_00;
   undefined4 uVar2;
+  CSkeleton *this_ptr_01;
   int iVar3;
+  int extraout_EAX;
   CCharacter *pCVar4;
   CCharacter *pCVar5;
   char *pcVar6;
-  int iVar7;
-  char *pcVar8;
+  char *pcVar7;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base_actor);
   uVar2 = _DAT_0065b834;
@@ -43,9 +44,9 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428140(CCharacter *this_ptr)
     if (this_ptr_00 != (CDemonActor *)0x0) {
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
                 (this_ptr_00,"..\\core\\charactr.cpp",0x106);
-      pCVar5 = (CCharacter *)(*((this_ptr_00->metadata).vtable)->getCarrier)(this_ptr_00);
+      pCVar5 = (CCharacter *)(*this_ptr_00->vtable->getCarrier)(this_ptr_00);
       if (pCVar5 == (CCharacter *)0x0) {
-        (*((this_ptr_00->metadata).vtable)->pickup)(this_ptr_00,&this_ptr->base_actor);
+        (*this_ptr_00->vtable->pickup)(this_ptr_00,&this_ptr->base_actor);
       }
       else if (pCVar5 != this_ptr) {
         g_CurrentFilename = "..\\core\\charactr.cpp";
@@ -56,26 +57,27 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428140(CCharacter *this_ptr)
     }
     pCVar4 = (CCharacter *)&(pCVar4->base_actor).orient_matrix.m[0].z;
   } while (pCVar4 != (CCharacter *)((this_ptr->base_actor).create_event + 0x10));
-  if ((this_ptr->model).padding_0x0[0x2260] != '\0') {
-    *(float *)((this_ptr->model).padding_0x0 + 0x54) = this_ptr->size_scale;
-    core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
-    core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-    uVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-    *(undefined4 *)(this_ptr->field11_0x25a0 + 0x44) = uVar2;
+  if ((this_ptr->model).field11_0x2260[0] != '\0') {
+    (this_ptr->model).scale_factor = this_ptr->size_scale;
+    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(&this_ptr->model);
+    pcVar7 = (char *)0x0;
+    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(&this_ptr->model);
+    iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,pcVar7);
+    *(int *)(this_ptr->field11_0x25a0 + 0x44) = iVar3;
   }
   core_charactr_cpp_CCharacter_FUN_0042d530(this_ptr);
   if (*(int *)(this_ptr->field11_0x25a0 + 0x74) != 0) {
-    iVar7 = 0;
-    iVar3 = core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
+    iVar3 = 0;
+    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(&this_ptr->model);
     this_ptr->cloth_data[0x47c] = '\x04';
     this_ptr->cloth_data[0x47d] = '\0';
     this_ptr->cloth_data[0x47e] = '\0';
     this_ptr->cloth_data[0x47f] = '\0';
-    if (0 < *(int *)(iVar3 + 0x28558)) {
+    if (0 < *(int *)(extraout_EAX + 0x28558)) {
       do {
-        iVar7 = iVar7 + 1;
+        iVar3 = iVar3 + 1;
         core_charactr_cpp_CCharacter_FUN_0042a520(this_ptr);
-      } while (iVar7 < *(int *)(iVar3 + 0x28558));
+      } while (iVar3 < *(int *)(extraout_EAX + 0x28558));
     }
     iVar3 = 0;
     pCVar4 = this_ptr;
@@ -92,7 +94,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428140(CCharacter *this_ptr)
         pCVar4->cloth_data[0x49b] = '@';
         iVar3 = iVar3 + 1;
         pCVar4 = (CCharacter *)((pCVar4->base_actor).actor_name + 0x18);
-        pCVar5 = (CCharacter *)((pCVar5->model).padding_0x0 + 0x14c);
+        pCVar5 = (CCharacter *)&(pCVar5->model).transformed_vertices[0x14].y;
       } while (iVar3 < *(int *)(this_ptr->cloth_data + 0x478));
     }
   }
@@ -107,17 +109,17 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428140(CCharacter *this_ptr)
     this_ptr->cloth_data[0x8d3f] = '\0';
     return;
   }
-  pcVar6 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(&this_ptr->base_actor);
-  pcVar6 = pcVar6 + 1;
-  pcVar8 = this_ptr->descriptive_name;
+  pcVar7 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(&this_ptr->base_actor);
+  pcVar7 = pcVar7 + 1;
+  pcVar6 = this_ptr->descriptive_name;
   do {
-    cVar1 = *pcVar6;
-    *pcVar8 = cVar1;
+    cVar1 = *pcVar7;
+    *pcVar6 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar6[1];
+    cVar1 = pcVar7[1];
+    pcVar7 = pcVar7 + 2;
+    pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
-    pcVar8[1] = cVar1;
-    pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
   this_ptr->cloth_data[0x8d3c] = '\0';
   this_ptr->cloth_data[0x8d3d] = '\0';

@@ -68,7 +68,7 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr)
       if (iVar2 == 0) {
         iVar2 = sound_sndmain_cpp_FUN_005aa290();
         if (iVar2 != 0) {
-          uVar3 = (*((this_ptr->base_actor).metadata.vtable)->playAmbientSound)
+          uVar3 = (*((this_ptr->base_actor).vtable)->playAmbientSound)
                             (&this_ptr->base_actor,this_ptr->unused);
           *(undefined4 *)this_ptr->field10_0x380 = uVar3;
         }

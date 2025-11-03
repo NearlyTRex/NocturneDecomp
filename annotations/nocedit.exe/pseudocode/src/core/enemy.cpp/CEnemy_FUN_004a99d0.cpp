@@ -24,7 +24,7 @@ float * __cdecl core_enemy_cpp_CEnemy_FUN_004a99d0(CEnemy *this_ptr)
   float fStack_10;
   float fStack_c;
   
-  (*((this_ptr->base_character).base_actor.metadata.vtable)->getBoundingBox)
+  (*((this_ptr->base_character).base_actor.vtable)->getBoundingBox)
             ((CDemonActor *)this_ptr,&CStack_30);
   fVar1 = _DAT_006243aa;
   *in_stack_00000008 = (CStack_30.max.z + fStack_10) * _DAT_006243aa;

@@ -25,7 +25,7 @@
 //   CConsole g_ConsolePtr
 //   CVector3f g_ZeroVector
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 //   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 //   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
@@ -40,6 +40,7 @@
 int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
 
 {
+  CLocation *input_world_point;
   bool bVar1;
   char *pcVar2;
   CCharacter *pCVar3;
@@ -56,7 +57,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
   float fStack_f4;
   float fStack_f0;
   CMatrix3x3f CStack_e8;
-  CMatrix3x3f CStack_c0;
+  undefined1 auStack_c0 [36];
   CVector3f CStack_9c;
   CVector3f local_8c;
   CVector3f CStack_80;
@@ -73,19 +74,21 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
   
   pCVar3 = this_ptr;
   if (0.0 <= *(float *)(this_ptr->cloth_data + 0x32c)) {
+    input_world_point = &(this_ptr->base_actor).location;
     this_ptr_00 = (CDemonActor *)core_hero_cpp_closestHeroToPoint_FUN_004f2170();
     local_2c[0].y = (float)this_ptr_00;
-    core_actor_cpp_CDemonActor_FUN_00408f10(this_ptr_00);
+    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+              (this_ptr_00,(CVector3f *)(auStack_c0 + 0x20),&input_world_point->position);
     pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                       (CStack_c0.m + 1,&CStack_9c);
+                       ((CVector3f *)(auStack_c0 + 0xc),&CStack_9c);
     fVar6 = ABS(pCVar5->y);
-    CStack_38.x = (this_ptr->base_actor).location.position.x - (this_ptr_00->location).position.x;
+    CStack_38.x = (input_world_point->position).x - (this_ptr_00->location).position.x;
     CStack_38.y = (this_ptr->base_actor).location.position.y - (this_ptr_00->location).position.y;
     CStack_38.z = (this_ptr->base_actor).location.position.z - (this_ptr_00->location).position.z;
     pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                        (&CStack_80,&CStack_38);
     fStack_14 = pCVar5->y;
-    iVar4 = (*(this_ptr_00->metadata).vtable[1].processMeleeHit)(this_ptr_00,(int)fVar6);
+    iVar4 = (*this_ptr_00->vtable[1].processMeleeHit)(this_ptr_00,(int)fVar6);
     if ((iVar4 != 0) && (fStack_f0 < (float)_DAT_00617662)) {
       bVar1 = CStack_80.x < 0.0;
       in_stack_00000008 = 0.0;
@@ -151,11 +154,12 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
         CStack_38.x = 0.0;
         CStack_38.z = 0.0;
         CStack_38.y = fStack00000010;
-        core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&CStack_c0,&CStack_38);
+        core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
+                  ((CMatrix3x3f *)auStack_c0,&CStack_38);
         while ((float)_DAT_006176a2 < fStack_f4) {
           fStack_14 = 0.0;
           pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                             (&CStack_c0,local_2c,(CVector3f *)&fStack_14);
+                             ((CMatrix3x3f *)auStack_c0,local_2c,(CVector3f *)&fStack_14);
           fStack_70 = *(float *)(unaff_ESI + 0x20) + pCVar5->x;
           fStack_6c = *(float *)(unaff_ESI + 0x24) + pCVar5->y;
           fStack_68 = *(float *)(unaff_ESI + 0x28) + pCVar5->z;
@@ -285,7 +289,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
 //   XREF to: Stack[-0xa4] (DATA)
 // 0042ee7d: PUSH EAX
 // 0042ee7e: PUSH EBX
-// 0042ee7f: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 0042ee7f: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 0042ee84: ADD ESP,0xc
 // 0042ee87: LEA EAX,[ESP + 0x74]

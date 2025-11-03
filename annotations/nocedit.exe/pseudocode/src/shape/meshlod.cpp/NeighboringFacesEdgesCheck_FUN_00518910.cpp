@@ -7,7 +7,7 @@
 //   shape_meshlod.cpp_FUN_00519680 (00519680) at 005196e4 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_00519710 (00519710) at 0051975f [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_Too_many_neighboring_edges!_00637921
+//   TerminatedCString s_Too_many_neighboring_edg_00637921
 //   TerminatedCString s_shape_meshlod_cpp_0063793d
 //   TerminatedCString s_Too_many_neighboring_edg_00637952
 //   TerminatedCString s_Too_many_neighboring_fac_0063796e
@@ -15,9 +15,9 @@
 //   TerminatedCString s_Too_many_neighboring_fac_0063799f
 //   TerminatedCString s_shape_meshlod_cpp_006379bb
 //   TerminatedCString s_Bug_006379d0
-//   undefined4 DAT_006379d5
-//   undefined4 DAT_006379d9
-//   undefined4 DAT_006379dd
+//   float FLOAT_006379d5 = 0.25
+//   float FLOAT_006379d9 = 0.5
+//   float FLOAT_006379dd = 2
 //   undefined4 DAT_00661388
 //   WatcomTypeInfo g_LodFaceTypeInfo
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
@@ -181,7 +181,7 @@ void shape_meshlod_cpp_NeighboringFacesEdgesCheck_FUN_00518910(void)
           if (iVar8 != in_stack_00000008) {
             if (199 < local_28) {
               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                        (g_CEditorToolsPtr,">Too many neighboring edges!" + 1);
+                        (g_CEditorToolsPtr,"Too many neighboring edges!");
               g_CurrentFilename = "..\\shape\\meshlod.cpp";
               g_CurrentLineNumber = 0xbca;
               core_main_c_displayErrorAndQuit_FUN_00506f10("Too many neighboring edges!");
@@ -271,7 +271,7 @@ LAB_0051919d:
         if ((DAT_02f33330 != 0) ||
            (((local_50 == 0 || (local_70 == 0)) && ((local_50 == 4 || (local_6c == 0)))))) {
           iVar8 = local_44[1] * 0x4c4;
-          local_54 = (float)local_50 * _DAT_006379d5;
+          local_54 = (float)local_50 * FLOAT_006379d5;
           local_5c = 1.0 - local_54;
           iVar17 = *(int *)(in_stack_00000004 + 4);
           local_9c = *(float *)(iVar17 + iVar8) * local_54;
@@ -300,9 +300,9 @@ LAB_0051919d:
                 pfVar13 = (float *)(*(int *)((int)&DAT_02f2a1b0 + iVar17) * 0x4c4 +
                                    *(int *)(in_stack_00000004 + 4));
                 pfVar12 = (float *)(*(int *)(in_stack_00000004 + 4) + *local_44 * 0x4c4);
-                local_c0.x = (*pfVar12 + *pfVar13) / _DAT_006379dd;
-                local_c0.y = (pfVar12[1] + pfVar13[1]) * _DAT_006379d9;
-                local_c0.z = (pfVar12[2] + pfVar13[2]) * _DAT_006379d9;
+                local_c0.x = (*pfVar12 + *pfVar13) / FLOAT_006379dd;
+                local_c0.y = (pfVar12[1] + pfVar13[1]) * FLOAT_006379d9;
+                local_c0.z = (pfVar12[2] + pfVar13[2]) * FLOAT_006379d9;
                 iVar10 = DAT_02f313ec + 1;
                 pCVar9 = CVector3f_ARRAY_02f313f0 + DAT_02f313ec;
                 DAT_02f313ec = iVar10;
@@ -340,11 +340,11 @@ LAB_0051919d:
                 pCVar9 = local_64;
                 do {
                   local_b4 = CVector3f_ARRAY_02f313f0[0].x + pCVar9->x;
-                  local_a8 = local_b4 / _DAT_006379dd;
+                  local_a8 = local_b4 / FLOAT_006379dd;
                   local_b0 = CVector3f_ARRAY_02f313f0[0].y + pCVar9->y;
                   local_ac = CVector3f_ARRAY_02f313f0[0].z + pCVar9->z;
-                  local_a4 = local_b0 * _DAT_006379d9;
-                  local_a0 = local_ac * _DAT_006379d9;
+                  local_a4 = local_b0 * FLOAT_006379d9;
+                  local_a0 = local_ac * FLOAT_006379d9;
                   local_40 = local_40 + 1;
                   pfVar12 = (float *)((int)&CVector3f_ARRAY_02f313f0[0].x + iVar8);
                   if (pfVar12 != &local_a8) {

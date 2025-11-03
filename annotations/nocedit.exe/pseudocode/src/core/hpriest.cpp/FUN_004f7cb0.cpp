@@ -47,7 +47,7 @@ core_hpriest_cpp_FUN_004f7cb0
                      ((CDeformableModelInstance *)(iVar2 + -0x293c),0,d4,d5,d6);
   ptr = (CHighPriestOfGardath *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar3[-1].padding_0x0 + 0x215c),1);
+                  ((CDemonActor *)(pCVar3[-1].part_visibility_flags + 7),1);
   if ((d9 & 2) == 0) {
     return ptr;
   }

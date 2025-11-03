@@ -1,13 +1,13 @@
 // Name: core_morph.cpp_FUN_0052b160
 // Address: 0052b160
 // Address Range: [[0052b160, 0052b270]]
-// Convention: unknown
-// Signature: undefined core_morph.cpp_FUN_0052b160()
+// Convention: __cdecl
+// Signature: void core_morph.cpp_FUN_0052b160(void)
 // Cross-references:
-//   core_morph.cpp_MorphModelCallToRotatePoints_FUN_0052af30 (0052af30) at 0052af60 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_CMorphModel_FUN_0052af30 (0052af30) at 0052af60 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0063a437
-//   undefined4 DAT_0063a43f
+//   double DOUBLE_0063a437 = 65535
+//   float FLOAT_0063a43f = 2
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonRenderer g_CDemonRendererInstance
 //   float g_PerspectiveReciprocal
@@ -23,10 +23,7 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 core_morph.cpp_FUN_0052b160(undefined4 param_1, undefined4 param_2) */
-
-void core_morph_cpp_FUN_0052b160(void)
+void __cdecl core_morph_cpp_FUN_0052b160(void)
 
 {
   int iVar1;
@@ -43,8 +40,8 @@ void core_morph_cpp_FUN_0052b160(void)
   
   engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr,0);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,1);
-  fVar5 = (float10)in_stack_00000010 * (float10)_DAT_0063a437 *
-          ((float10)_DAT_0063a43f - (float10)in_stack_00000010);
+  fVar5 = (float10)in_stack_00000010 * (float10)DOUBLE_0063a437 *
+          ((float10)FLOAT_0063a43f - (float10)in_stack_00000010);
   dVar6 = crt_math_c_round_FUN_005fe6b0
                     ((double)CONCAT44(extraout_EDX,0xffff - (int)g_PerspectiveReciprocal));
   lVar2 = (longlong)SUB84(dVar6,0) * (longlong)(int)ROUND(fVar5);

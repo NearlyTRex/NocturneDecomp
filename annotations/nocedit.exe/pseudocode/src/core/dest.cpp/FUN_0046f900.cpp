@@ -28,7 +28,7 @@ CActorDestination * __cdecl core_dest_cpp_FUN_0046f900(CActorDestination *this_p
   pcVar3 = "none";
   pCVar2 = (CActorDestination *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
   pcVar4 = pCVar2->what_event;
-  (pCVar2->base_actor).metadata.vtable = &PTR_core_dest_cpp_FUN_0065c724;
+  (pCVar2->base_actor).vtable = &PTR_core_dest_cpp_FUN_0065c724;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

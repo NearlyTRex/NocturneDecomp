@@ -33,8 +33,8 @@ core_bodypart_cpp_CBodyPart_dtor_FUN_00419130
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base_actor).metadata.vtable = &g_CBodyPartVTable;
-  core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0();
+  (this_ptr->base_actor).vtable = &g_CBodyPartVTable;
+  core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(this_ptr);
   pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00((CBox *)(this_ptr->field1_0x158 + 0xb74));
   iVar2 = core_bodypart_cpp_freeBodyPartFires_FUN_0041b6b0
                     ((SBodyPartFire **)&pCVar1[-3].scrape_points[4].local_position.z);

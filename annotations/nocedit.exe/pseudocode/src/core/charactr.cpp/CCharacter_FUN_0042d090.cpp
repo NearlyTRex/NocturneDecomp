@@ -10,7 +10,7 @@
 //   core_gabriela.cpp_FUN_004d5550 (004d5550) at 004d556c [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_FUN_00525840 (00525840) at 00525889 [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
 //   core_xform.cpp_getTranslation_FUN_005f6110
 //   core_xform.cpp_inverse_FUN_005f6210
@@ -66,12 +66,12 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
   local_28 = &(this_ptr->base_actor).orient;
   local_24 = &(this_ptr->base_actor).location;
   local_18 = 0.0;
-  local_20 = (this_ptr->model).padding_0x0 + 0xe80;
+  local_20 = (this_ptr->model).field3_0x508 + 0x978;
   pSVar4 = this_ptr->carry_hands;
   do {
     if (pSVar4->carry_actor != (CDemonActor *)0x0) {
       local_1c = pSVar4;
-      (*(this_ptr->base_actor).metadata.vtable[1].isActiveTarget)(&this_ptr->base_actor);
+      (*(this_ptr->base_actor).vtable[1].isActiveTarget)(&this_ptr->base_actor);
       puVar5 = auStack_1b4;
       puVar6 = &uStack_214;
       for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -162,7 +162,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
         *(float *)(iVar3 + 0x34) = pCVar2->y;
         *(float *)(iVar3 + 0x38) = pCVar2->z;
       }
-      core_actor_cpp_CDemonActor_FUN_00408c10(*(CDemonActor **)(in_stack_00000010 + 8));
+      core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
+                (*(CDemonActor **)(in_stack_00000010 + 8));
     }
     local_18 = (float)((int)local_18 + 1);
     pSVar4 = pSVar4 + 1;
@@ -321,7 +322,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
 //   Label: LAB_0042d21d
 // 0042d224: MOV ECX,dword ptr [EAX + 0x8]
 // 0042d227: PUSH ECX
-// 0042d228: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 0042d228: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 0042d22d: ADD ESP,0x4
 // 0042d230: JMP 0x0042d0e8

@@ -6,15 +6,15 @@
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042b930 (0042b930) at 0042b9b7 [UNCONDITIONAL_CALL]
 //   core_crate.cpp_FUN_00448a70 (00448a70) at 00448af4 [UNCONDITIONAL_CALL]
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ab1f7 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ab1f7 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CToss_process_FUN_004c4000 (004c4000) at 004c406d [UNCONDITIONAL_CALL]
 //   core_flamecan.cpp_FUN_004cb390 (004cb390) at 004cb4af [UNCONDITIONAL_CALL]
 //   core_vessel.cpp_CCryptVessel_process_FUN_005e91a0 (005e91a0) at 005e9660 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_xplode_wav_6_0_0062a08b
 //   CSound* g_CSoundPtr = 03f6af64
-//   undefined4 DAT_02d677b0
-//   CExplosion[10] g_CFireEffectExplosions
+//   CLaserBeam* g_LaserBeamActiveListHead
+//   CExplosion[10] g_ExplosionPool
 //   CSound g_CSoundInstance
 // Function calls:
 //   core_fire.cpp_CExplosion_FUN_004c3970
@@ -28,10 +28,10 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8c10(CFireEffect *this_ptr)
 {
   CFireEffect *in_stack_00000008;
   
-  core_fire_cpp_CExplosion_FUN_004c3970(g_CFireEffectExplosions + DAT_02d677b0);
-  DAT_02d677b0 = DAT_02d677b0 + 1;
-  if (9 < DAT_02d677b0) {
-    DAT_02d677b0 = 0;
+  core_fire_cpp_CExplosion_FUN_004c3970(g_ExplosionPool + (int)g_LaserBeamActiveListHead);
+  g_LaserBeamActiveListHead = (CLaserBeam *)(g_LaserBeamActiveListHead->field0_0x0 + 1);
+  if (9 < (int)g_LaserBeamActiveListHead) {
+    g_LaserBeamActiveListHead = (CLaserBeam *)0x0;
   }
   core_sound_cpp_CSound_FUN_005b3a40
             (g_CSoundPtr,(char *)in_stack_00000008,"xplode?.wav @ 6.0");

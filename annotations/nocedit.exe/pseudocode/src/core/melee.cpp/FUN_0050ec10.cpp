@@ -9,7 +9,7 @@
 //   CGore g_CGoreInstance
 //   CVector3f g_ZeroVector
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_gore.cpp_FUN_004edaa0
 //   core_weapon.cpp_CWeapon_process_FUN_005ee110
 
@@ -23,6 +23,8 @@ void core_melee_cpp_FUN_0050ec10(void)
 {
   CDemonActor_vtable *pCVar1;
   float fVar2;
+  CVector3f *input_local_point;
+  BADSPACEBASE *in_ESP;
   CWeapon *in_stack_00000004;
   float in_stack_0000000c;
   
@@ -33,13 +35,14 @@ void core_melee_cpp_FUN_0050ec10(void)
      *(float *)(in_stack_00000004[1].base_actor.actor_name + 0x1c) = in_stack_0000000c,
      in_stack_0000000c <= 0.0)) {
     fVar2 = in_stack_00000004[1].base_actor.location.position.x * (float)DOUBLE_00635ce5;
-    pCVar1 = (in_stack_00000004->base_actor).metadata.vtable;
+    pCVar1 = (in_stack_00000004->base_actor).vtable;
     *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18) =
          *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18) + -1;
     in_stack_00000004[1].base_actor.location.position.x = fVar2;
     *(float *)(in_stack_00000004[1].base_actor.actor_name + 0x1c) = fVar2;
-    (*pCVar1[1].renderOpaque)(&in_stack_00000004->base_actor);
-    core_actor_cpp_CDemonActor_FUN_00408ec0(&in_stack_00000004->base_actor);
+    input_local_point = (CVector3f *)(*pCVar1[1].renderOpaque)(&in_stack_00000004->base_actor);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (&in_stack_00000004->base_actor,(CVector3f *)&stack0xfffffff8,input_local_point);
     core_gore_cpp_FUN_004edaa0();
     return;
   }
@@ -101,7 +104,7 @@ void core_melee_cpp_FUN_0050ec10(void)
 // 0050ec8e: LEA EAX,[ESP + 0x18]
 // 0050ec92: PUSH EAX
 // 0050ec93: PUSH EBX
-// 0050ec94: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0050ec94: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0050ec99: ADD ESP,0xc
 // 0050ec9c: MOV ESI,dword ptr [EBX + 0x58c]

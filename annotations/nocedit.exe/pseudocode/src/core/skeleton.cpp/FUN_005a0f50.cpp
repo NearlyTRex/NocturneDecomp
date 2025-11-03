@@ -5,17 +5,18 @@
 // Signature: undefined core_skeleton.cpp_FUN_005a0f50()
 // Function calls:
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
-//   core_skeleton.cpp_FUN_005a0d10
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0d10
 
 #include "nocturne.h"
 
-undefined4 core_skeleton_cpp_FUN_005a0f50(void)
+CDeformableModelInstance * core_skeleton_cpp_FUN_005a0f50(void)
 
 {
-  undefined4 in_stack_00000008;
+  CMotionController *in_stack_00000004;
+  CDeformableModelInstance *in_stack_00000008;
   
-  core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
-  core_skeleton_cpp_FUN_005a0d10();
+  core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(in_stack_00000004);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0d10(in_stack_00000008);
   return in_stack_00000008;
 }
 
@@ -80,7 +81,7 @@ undefined4 core_skeleton_cpp_FUN_005a0f50(void)
 // 005a0fbc: MOV EDI,dword ptr [ESP + 0x20]
 //   XREF to: Stack[0x4] (READ)
 // 005a0fc0: PUSH EDI
-// 005a0fc1: CALL core_skeleton.cpp_FUN_005a0d10
+// 005a0fc1: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0d10
 //   XREF to: 005a0d10 (UNCONDITIONAL_CALL)
 // 005a0fc6: ADD ESP,0x10
 // 005a0fc9: MOV EAX,EBX

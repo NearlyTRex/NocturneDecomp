@@ -59,9 +59,9 @@ int CWeapon(CWeapon * this_ptr);
 // Address: 005ee4a0
 void CWeapon(CWeapon * this_ptr);
 
-// Original: core_weapon.cpp_FUN_005ee640
+// Original: core_weapon.cpp_CWeapon_FUN_005ee640
 // Address: 005ee640
-undefined FUN_005ee640();
+void CWeapon(CWeapon * this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_FUN_005ee650
 // Address: 005ee650
@@ -75,9 +75,9 @@ int * CWeapon(CWeapon * this_ptr);
 // Address: 005ee6e0
 undefined FUN_005ee6e0();
 
-// Original: core_weapon.cpp_FUN_005ee710
+// Original: core_weapon.cpp_CWeapon_FUN_005ee710
 // Address: 005ee710
-undefined FUN_005ee710();
+int CWeapon(CWeapon * this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_FUN_005ee730
 // Address: 005ee730
@@ -87,9 +87,9 @@ int CWeapon(CWeapon * this_ptr);
 // Address: 005ee740
 undefined FUN_005ee740();
 
-// Original: core_weapon.cpp_FUN_005ee830
+// Original: core_weapon.cpp_CWeapon_FUN_005ee830
 // Address: 005ee830
-undefined FUN_005ee830();
+void CWeapon(CWeapon * this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_FUN_005ee860
 // Address: 005ee860

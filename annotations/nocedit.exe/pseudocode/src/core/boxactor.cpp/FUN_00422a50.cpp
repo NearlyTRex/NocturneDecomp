@@ -9,9 +9,9 @@
 //   CDemonSet g_CDemonSetInstance
 //   CVector3f g_ZeroVector
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_FUN_0040cc70
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_boxactor.cpp_CBoxActor_process_FUN_004219e0
 //   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
 //   core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310
@@ -54,26 +54,26 @@ void core_boxactor_cpp_FUN_00422a50
   this_ptr = param_5;
   bVar6 = 0;
   core_boxactor_cpp_CBoxActor_process_FUN_004219e0();
-  if (param_5[4].scale.y == 2) {
-    param_7 = param_5[0x28].create_prob - param_7;
-    param_5[0x28].create_prob = param_7;
-    if (param_7 <= 0.0) {
-      filter_pos_x = 0;
-      filter_index = 0;
-      iVar3 = core_actor_cpp_FUN_0040cc70();
-      core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
-                ((CDemonLight *)&param_5[4].scale.z,CDemonFilter_ARRAY_008229ec + iVar3,filter_index
-                 ,filter_pos_x,in_stack_ffffff20);
-      pCVar1 = (CDemonActor *)core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,0.15);
-      param_5[0x28].create_prob = (float)pCVar1;
-      param_5 = pCVar1;
-    }
+  if ((param_5[4].scale.y == 2) &&
+     (param_7 = param_5[0x28].create_prob - param_7, param_5[0x28].create_prob = param_7,
+     param_7 <= 0.0)) {
+    filter_pos_x = 0;
+    filter_index = 0;
+    iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,7);
+    core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
+              ((CDemonLight *)&param_5[4].scale.z,CDemonFilter_ARRAY_008229ec + iVar3,filter_index,
+               filter_pos_x,in_stack_ffffff20);
+    pCVar1 = (CDemonActor *)core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,0.15);
+    param_5[0x28].create_prob = (float)pCVar1;
+    param_5 = pCVar1;
   }
   if (this_ptr[4].scale.y != 3) {
     if (this_ptr[0x1a].orient.bank == 0.0) {
       return;
     }
-    core_actor_cpp_CDemonActor_FUN_00408ec0(this_ptr);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (this_ptr,(CVector3f *)&stack0xfffffff8,
+               (CVector3f *)&this_ptr[0x28].orient_matrix.m[2].z);
     if (&this_ptr[4].field19_0x114 != (int *)&stack0xfffffffc) {
       this_ptr[4].field19_0x114 = unaff_EBX;
       this_ptr[4].field20_0x118 = (int)unaff_retaddr;
@@ -156,7 +156,7 @@ void core_boxactor_cpp_FUN_00422a50
 // 00422abd: PUSH 0x0
 // 00422abf: PUSH 0x7
 // 00422ac1: PUSH 0x0
-// 00422ac3: CALL core_actor.cpp_FUN_0040cc70
+// 00422ac3: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 00422ac8: MOV EDX,EAX
 // 00422aca: SHL EAX,0x2
@@ -225,7 +225,7 @@ void core_boxactor_cpp_FUN_00422a50
 // 00422b8c: LEA EAX,[ESP + 0xd0]
 // 00422b93: PUSH EAX
 // 00422b94: PUSH EBX
-// 00422b95: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00422b95: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 00422b9a: LEA EAX,[ESP + 0xd8]
 // 00422ba1: LEA EDX,[EBX + 0x674]

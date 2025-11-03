@@ -14,7 +14,7 @@
 //   core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060 (00470060) at 00470079 [UNCONDITIONAL_CALL]
 //   core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0 (004825c0) at 004826cd [UNCONDITIONAL_CALL]
 //   core_emitter.cpp_FUN_004a8070 (004a8070) at 004a8094 [UNCONDITIONAL_CALL]
-//   core_event.cpp_CEvent_EventReadingFromFile_FUN_004ae140 (004ae140) at 004ae611 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004ae140 (004ae140) at 004ae611 [UNCONDITIONAL_CALL]
 //   core_event.cpp_FUN_004aa320 (004aa320) at 004aa32b [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_rollCredits_FUN_004e4010 (004e4010) at 004e40d1 [UNCONDITIONAL_CALL]
 //   core_inv.cpp_CInventory_addItem_FUN_004fd600 (004fd600) at 004fe789 [UNCONDITIONAL_CALL]

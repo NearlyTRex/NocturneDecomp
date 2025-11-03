@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_boneguy.cpp_FUN_0041bf90 (0041bf90) at 0041c5b0 [UNCONDITIONAL_CALL]
 //   core_drone.cpp_FUN_0048ec70 (0048ec70) at 0048f2ad [UNCONDITIONAL_CALL]
-//   core_event.cpp_FUN_004b0f00 (004b0f00) at 004b0f46 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004b0f00 (004b0f00) at 004b0f46 [UNCONDITIONAL_CALL]
 //   core_tommygun.cpp_CTommyGun_process_FUN_005de360 (005de360) at 005de540 [UNCONDITIONAL_CALL]
 // Globals:
 //   undefined4 g_SfxLastSlot

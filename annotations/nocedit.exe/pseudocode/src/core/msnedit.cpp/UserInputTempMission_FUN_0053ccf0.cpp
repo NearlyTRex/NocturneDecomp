@@ -172,7 +172,7 @@ LAB_0053ce9f:
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Cleaning up.");
       for (pCVar4 = in_stack_00000034->first_actor; pCVar4 != (CDemonActor *)0x0;
-          pCVar4 = (pCVar4->metadata).next_actor) {
+          pCVar4 = pCVar4->next_actor) {
         core_msnedit_cpp_FUN_00538ea0();
       }
       g_CDemonMissionPtr = in_stack_00000034;
@@ -245,7 +245,7 @@ LAB_0053d103:
       if (in_stack_fffffbf0 != (CPickList *)0x0) {
         pCVar4 = in_stack_00000018->first_actor;
         while ((actor_ptr = pCVar4, actor_ptr != (CDemonActor *)0x0 &&
-               (pCVar4 = (actor_ptr->metadata).next_actor, actor_ptr != (CDemonActor *)0x0))) {
+               (pCVar4 = actor_ptr->next_actor, actor_ptr != (CDemonActor *)0x0))) {
           iVar1 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
                             (acStack_60,actor_ptr->actor_name,0);
           if (iVar1 != 0) {

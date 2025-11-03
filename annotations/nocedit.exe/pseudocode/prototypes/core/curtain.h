@@ -103,6 +103,6 @@ SCollisionInfo * SCollisionInfo::dtor(SCollisionInfo * this_ptr);
 // Address: 0044bad0
 undefined FUN_0044bad0();
 
-// Original: core_curtain.cpp_FUN_0044baf0
+// Original: core_curtain.cpp_freeVectors_FUN_0044baf0
 // Address: 0044baf0
-undefined FUN_0044baf0();
+void freeVectors(CVector3f * * array);

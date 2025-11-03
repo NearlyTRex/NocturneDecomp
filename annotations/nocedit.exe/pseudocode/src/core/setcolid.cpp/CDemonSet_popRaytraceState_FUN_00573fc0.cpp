@@ -69,10 +69,10 @@ void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00573fc0(CDemonSet
   pSVar2 = g_RaytraceStateStack + iVar5;
   g_RaytraceStateStackDepth = iVar5;
   this_ptr->ray_type = pSVar2->ray_type;
-  this_ptr->field52_0x15f684 = g_RaytraceStateStack[iVar5].color_r;
-  this_ptr->field53_0x15f688 = g_RaytraceStateStack[iVar5].color_g;
-  this_ptr->field54_0x15f68c = g_RaytraceStateStack[iVar5].color_b;
-  this_ptr->field55_0x15f690 = g_RaytraceStateStack[iVar5].color_a;
+  this_ptr->field60_0x15f684 = g_RaytraceStateStack[iVar5].color_r;
+  this_ptr->field61_0x15f688 = g_RaytraceStateStack[iVar5].color_g;
+  this_ptr->field62_0x15f68c = g_RaytraceStateStack[iVar5].color_b;
+  this_ptr->field63_0x15f690 = g_RaytraceStateStack[iVar5].color_a;
   iVar1 = g_RaytraceStateStack[iVar5].ignore_list_count;
   iVar3 = 0;
   this_ptr->ignore_list_count = iVar1;
@@ -110,15 +110,15 @@ void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00573fc0(CDemonSet
     (this_ptr->collision_normal).z = g_RaytraceStateStack[iVar5].saved_collision_normal.z;
   }
   this_ptr->ground_type = g_RaytraceStateStack[iVar5].saved_ground_type;
-  if (&this_ptr->collision_result_vec3 != &g_RaytraceStateStack[iVar5].saved_collision_point) {
-    (this_ptr->collision_result_vec3).x = g_RaytraceStateStack[iVar5].saved_collision_point.x;
-    (this_ptr->collision_result_vec3).y = g_RaytraceStateStack[iVar5].saved_collision_point.y;
-    (this_ptr->collision_result_vec3).z = g_RaytraceStateStack[iVar5].saved_collision_point.z;
+  if (&this_ptr->collision_impact_position != &g_RaytraceStateStack[iVar5].saved_collision_point) {
+    (this_ptr->collision_impact_position).x = g_RaytraceStateStack[iVar5].saved_collision_point.x;
+    (this_ptr->collision_impact_position).y = g_RaytraceStateStack[iVar5].saved_collision_point.y;
+    (this_ptr->collision_impact_position).z = g_RaytraceStateStack[iVar5].saved_collision_point.z;
   }
   this_ptr->collision_actor = g_RaytraceStateStack[iVar5].saved_collision_actor;
   this_ptr->field11_0x14d148 = g_RaytraceStateStack[iVar5].field19_0x98;
   this_ptr->field12_0x14d14c = g_RaytraceStateStack[iVar5].field20_0x9c;
-  this_ptr->field63_0x15f6dc = g_RaytraceStateStack[iVar5].field14_0x74;
+  this_ptr->field71_0x15f6dc = g_RaytraceStateStack[iVar5].field14_0x74;
   return;
 }
 

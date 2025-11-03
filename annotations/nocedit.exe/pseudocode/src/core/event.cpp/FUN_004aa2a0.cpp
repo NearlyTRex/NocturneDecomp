@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_event.cpp_FUN_004aa2a0()
 // Cross-references:
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ad7a2 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ad7a2 [UNCONDITIONAL_CALL]
 // Globals:
 //   undefined1 DAT_02d0a460
 // Function calls:

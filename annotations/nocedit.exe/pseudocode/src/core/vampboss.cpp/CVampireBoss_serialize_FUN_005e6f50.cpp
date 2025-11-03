@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_vampboss.cpp_CVampireBoss_serialize_FUN_005e6f50(CVampireBoss * this_ptr)
 // Globals:
-//   undefined4 s_human_model_motion_state_00656bfb
+//   TerminatedCString s_human_model_motion_state_00656bfb
 //   TerminatedCString s_bat_model_motion_state_00656c14
 //   TerminatedCString s_wayPoint0_00656c2b
 //   TerminatedCString s_wayPoint1_00656c35
@@ -28,10 +28,11 @@ void __cdecl core_vampboss_cpp_CVampireBoss_serialize_FUN_005e6f50(CVampireBoss 
   core_enemy_cpp_CEnemy_serialize_FUN_004a9660(&this_ptr->base_enemy);
   if (1 < g_CVampireBossVersion) {
     core_actor_cpp_serializeMotionState_FUN_0040b9f0
-              (&(this_ptr->base_enemy).base_character.model,"@human model motion state" + 1)
-    ;
+              (&(this_ptr->base_enemy).base_character.model.motion_controller,
+               "human model motion state");
     core_actor_cpp_serializeMotionState_FUN_0040b9f0
-              (this_ptr->field1_0xbeb4 + 8,"bat model motion state");
+              ((CMotionController *)(this_ptr->field1_0xbeb4 + 8),"bat model motion state")
+    ;
   }
   if (2 < g_CVampireBossVersion) {
     core_actor_cpp_serializeActor_FUN_0040b870

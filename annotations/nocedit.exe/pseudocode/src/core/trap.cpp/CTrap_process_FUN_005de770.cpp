@@ -11,7 +11,7 @@
 //   undefined4 g_CWerewolfClassInfo.name_hash
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 //   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 
@@ -46,7 +46,7 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_005de770(CTrap *this_ptr)
       this_ptr->wolf_in_trap = 0;
     }
     iVar2 = 0;
-    (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
+    (*((this_ptr->base_actor).vtable)->getBoundingBox)
               (&this_ptr->base_actor,(CBoundingBox3D *)(auStack_54 + 0x20));
     for (iVar1 = 0; iVar1 < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c); iVar1 = iVar1 + 1)
     {
@@ -56,12 +56,14 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_005de770(CTrap *this_ptr)
       if ((this_ptr_00 != (CDemonActor *)0x0) &&
          (*(int *)(this_ptr_00[0x8e].actor_name + 0x18) == 0)) {
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)auStack_54);
-        (*((this_ptr_00->metadata).vtable)->hasCollision)(this_ptr_00,(SCollisionInfo *)auStack_54);
+        (*this_ptr_00->vtable->hasCollision)(this_ptr_00,(SCollisionInfo *)auStack_54);
         if (((this_ptr_00->location).position.y <=
              (this_ptr->base_actor).location.position.y + fStack_14) &&
            ((this_ptr->base_actor).location.position.y + fStack_20 <=
             (this_ptr_00->location).position.y + (float)auStack_54._32_4_)) {
-          core_actor_cpp_CDemonActor_FUN_00408f10(&this_ptr->base_actor);
+          core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                    (&this_ptr->base_actor,(CVector3f *)&stack0xfffffff4,
+                     &(this_ptr_00->location).position);
           if ((((fStack_24 <= unaff_EDI + (float)pvStack_30) &&
                (unaff_EDI - (float)pvStack_30 <= fStack_18)) &&
               (fStack_1c <= unaff_EBX + (float)pvStack_30)) &&
@@ -73,7 +75,7 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_005de770(CTrap *this_ptr)
             this_ptr_00[0x8e].actor_name[0x1f] = '@';
             *(CTrap **)(this_ptr_00[0x8e].actor_name + 0x18) = this_ptr;
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff78);
-            (*(this_ptr_00->metadata).vtable[1].playAmbientSoundWithVolume)
+            (*this_ptr_00->vtable[1].playAmbientSoundWithVolume)
                       (this_ptr_00,&stack0xffffff78,in_stack_ffffff78);
             return;
           }
@@ -194,7 +196,7 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_005de770(CTrap *this_ptr)
 // 005de866: LEA EAX,[ESP + 0x80]
 // 005de86d: PUSH EAX
 // 005de86e: PUSH ESI
-// 005de86f: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 005de86f: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 005de874: ADD ESP,0xc
 // 005de877: FLD float ptr [ESP + 0x7c]

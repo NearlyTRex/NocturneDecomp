@@ -2,9 +2,9 @@
 // Address: 00409470
 // Address Range: [[00409470, 0040983a]]
 // Convention: __cdecl
-// Signature: float core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor * this_ptr)
+// Signature: float core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_hit_normal, SCollisionInfo * collision_info, int bbox_type, CBoundingBox3D * ray_bbox)
 // Cross-references:
-//   core_actor.cpp_CDemonActor_FUN_004093f0 (004093f0) at 0040944c [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CDemonActor_testRayIntersection_FUN_004093f0 (004093f0) at 0040944c [UNCONDITIONAL_CALL]
 //   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10 (00572a10) at 00572c8e [UNCONDITIONAL_CALL]
 //   core_spike.cpp_FUN_005b8950 (005b8950) at 005b8d29 [UNCONDITIONAL_CALL]
 // Globals:
@@ -14,31 +14,35 @@
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 //   undefined4 DAT_03273954
-//   undefined4 DAT_0368c884
-//   undefined4 DAT_0368c888
-//   undefined4 DAT_0368c88c
-//   undefined4 DAT_0368c890
-//   undefined4 DAT_0368c894
-//   undefined4 DAT_0368c898
+//   int g_DeformableModelRayHitPartIndex
+//   CVector3f g_DeformableModelRayHitNormal
+//   undefined4 g_DeformableModelRayHitNormal.y
+//   undefined4 g_DeformableModelRayHitNormal.z
+//   int g_DeformableModelRayHitLodIndex
+//   int g_DeformableModelRayHitTriangleIndex
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408340
-//   core_actor.cpp_CDemonActor_FUN_00408e80
-//   core_actor.cpp_CDemonActor_FUN_00408ea0
-//   core_actor.cpp_CDemonActor_FUN_00408f10
-//   core_actor.cpp_CDemonActor_FUN_00409270
+//   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
+//   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+//   core_actor.cpp_rayCylinderIntersect_FUN_00408340
 //   core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010
 //   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
 //   core_box.cpp_CBoundingBox3D_expand_FUN_00420240
 //   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0
 //   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a10e0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-//   core_skeleton.cpp_CDeformableModelInstance_GetPtrsAndDoSomething1_FUN_005a10e0
 //   core_skeleton.cpp_FUN_0059dca0
 
 #include "nocturne.h"
 
-float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *this_ptr)
+float __cdecl
+core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
+          (CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,
+          CVector3f *out_hit_normal,SCollisionInfo *collision_info,int bbox_type,
+          CBoundingBox3D *ray_bbox)
 
 {
   CDemonSet *pCVar1;
@@ -48,14 +52,8 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *
   CVector3f *pCVar4;
   CKeyFramedModel *this_ptr_01;
   BADSPACEBASE *in_ESP;
-  float *in_stack_00000008;
-  float *in_stack_0000000c;
-  CVector3f *in_stack_00000010;
-  SCollisionInfo *in_stack_00000014;
-  uint in_stack_00000018;
-  CBoundingBox3D *in_stack_0000001c;
-  CVector3f *ray_origin;
-  float *frame_index;
+  CVector3f *ray_origin_00;
+  undefined1 *frame_index;
   CVector3f *pCVar5;
   CVector3f *in_stack_ffffff5c;
   undefined1 local_9c [12];
@@ -65,48 +63,50 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *
   undefined1 auStack_74 [16];
   float local_64;
   float local_60;
-  float local_5c;
-  float local_58;
-  float local_54;
-  undefined1 local_44 [8];
-  float local_3c;
-  CVector3f CStack_2c;
+  CVector3f local_5c;
+  undefined1 local_48 [8];
+  CVector3f local_40;
+  undefined1 auStack_34 [12];
+  undefined1 auStack_28 [8];
   undefined1 auStack_20 [16];
   
-  if (in_stack_00000018 == 0) {
+  if (bbox_type == 0) {
     return 2.0;
   }
-  core_actor_cpp_CDemonActor_FUN_00409270(this_ptr);
-  if (in_stack_0000001c == (CBoundingBox3D *)0x0) {
-    if ((float *)(auStack_74 + 0xc) != in_stack_00000008) {
-      auStack_74._12_4_ = *in_stack_00000008;
-      local_64 = in_stack_00000008[1];
-      local_60 = in_stack_00000008[2];
+  core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
+            (this_ptr,(CBoundingBox3D *)local_9c,collision_info,bbox_type);
+  if (ray_bbox == (CBoundingBox3D *)0x0) {
+    if ((CVector3f *)(auStack_74 + 0xc) != ray_origin) {
+      auStack_74._12_4_ = ray_origin->x;
+      local_64 = ray_origin->y;
+      local_60 = ray_origin->z;
     }
-    if (&local_5c != in_stack_00000008) {
-      local_5c = *in_stack_00000008;
-      local_58 = in_stack_00000008[1];
-      local_54 = in_stack_00000008[2];
+    if (&local_5c != ray_origin) {
+      local_5c.x = ray_origin->x;
+      local_5c.y = ray_origin->y;
+      local_5c.z = ray_origin->z;
     }
-    local_44._0_4_ = *in_stack_00000008 + *in_stack_0000000c;
-    local_44._4_4_ = in_stack_00000008[1] + in_stack_0000000c[1];
-    local_3c = in_stack_00000008[2] + in_stack_0000000c[2];
+    local_48._4_4_ = ray_origin->x + ray_direction->x;
+    local_40.x = ray_origin->y + ray_direction->y;
+    local_40.y = ray_origin->z + ray_direction->z;
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240
-              ((CBoundingBox3D *)(auStack_74 + 0xc),(CVector3f *)local_44);
+              ((CBoundingBox3D *)(auStack_74 + 0xc),(CVector3f *)(local_48 + 4));
     iVar2 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010
                       ((CBoundingBox3D *)(auStack_74 + 0xc),(CBoundingBox3D *)(local_9c + 4));
   }
   else {
     iVar2 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010
-                      (in_stack_0000001c,(CBoundingBox3D *)(local_9c + 4));
+                      (ray_bbox,(CBoundingBox3D *)(local_9c + 4));
   }
   if (iVar2 == 0) {
     return 2.0;
   }
-  core_actor_cpp_CDemonActor_FUN_00408f10(this_ptr);
-  core_actor_cpp_CDemonActor_FUN_00408ea0(this_ptr);
-  if (in_stack_00000018 < 2) {
-    if (in_stack_00000018 != 1) {
+  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+            (this_ptr,(CVector3f *)auStack_34,ray_origin);
+  core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+            (this_ptr,(CVector3f *)local_48,ray_direction);
+  if ((uint)bbox_type < 2) {
+    if (bbox_type != 1) {
 LAB_004096d2:
       g_CurrentFilename = "..\\core\\actor.cpp";
       g_CurrentLineNumber = 0x45b;
@@ -114,41 +114,42 @@ LAB_004096d2:
       goto LAB_004095c9;
     }
     pCVar5 = (CVector3f *)auStack_20;
-    pCVar4 = (CVector3f *)local_44;
-    ray_origin = &CStack_2c;
-    this_ptr_00 = (*((this_ptr->metadata).vtable)->getBoundingBox)
-                            (this_ptr,(CBoundingBox3D *)auStack_74);
+    pCVar4 = (CVector3f *)(local_48 + 4);
+    ray_origin_00 = (CVector3f *)(auStack_34 + 8);
+    this_ptr_00 = (*this_ptr->vtable->getBoundingBox)(this_ptr,(CBoundingBox3D *)auStack_74);
     fVar3 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
-                      (this_ptr_00,ray_origin,pCVar4,pCVar5);
+                      (this_ptr_00,ray_origin_00,pCVar4,pCVar5);
   }
-  else if (in_stack_00000018 < 3) {
-    fVar3 = core_actor_cpp_CDemonActor_FUN_00408340
-                      (in_stack_00000014,&CStack_2c,(CVector3f *)local_44,(CVector3f *)auStack_20);
+  else if ((uint)bbox_type < 3) {
+    fVar3 = core_actor_cpp_rayCylinderIntersect_FUN_00408340
+                      (collision_info,(CVector3f *)(auStack_34 + 8),(CVector3f *)(local_48 + 4),
+                       (CVector3f *)auStack_20);
   }
   else {
-    if (in_stack_00000018 != 3) goto LAB_004096d2;
-    fVar3 = (*((this_ptr->metadata).vtable)->customRayIntersect)
-                      (this_ptr,&CStack_2c,(CVector3f *)local_44,(CVector3f *)auStack_20);
+    if (bbox_type != 3) goto LAB_004096d2;
+    fVar3 = (*this_ptr->vtable->customRayIntersect)
+                      (this_ptr,(CVector3f *)(auStack_34 + 8),(CVector3f *)(local_48 + 4),
+                       (CVector3f *)auStack_20);
   }
-  uStack_90 = (double)CONCAT44(fVar3,(undefined4)uStack_90);
+  uStack_90 = (double)CONCAT44(fVar3,(float)uStack_90);
 LAB_004095c9:
   local_9c._0_8_ = (undefined8)uStack_90._4_4_;
   if (((double)local_9c._0_8_ < 0.0) || (1.0 < (double)local_9c._0_8_)) {
     return 2.0;
   }
-  in_stack_00000010[1].y = -NAN;
-  in_stack_00000010[1].z = -NAN;
-  in_stack_00000010[2].x = -NAN;
+  out_hit_normal[1].y = -NAN;
+  out_hit_normal[1].z = -NAN;
+  out_hit_normal[2].x = -NAN;
   pCVar1 = g_CDemonSetPtr;
-  in_stack_00000010[1].x = -NAN;
-  if (pCVar1->field63_0x15f6dc == 0) {
-    if (in_stack_00000014->cylinder_radius_sq == 0.0) {
-      if (in_stack_00000014->result_ptr != (void *)0x0) {
+  out_hit_normal[1].x = -NAN;
+  if (pCVar1->field71_0x15f6dc == 0) {
+    if (collision_info->result_ptr == (void *)0x0) {
+      if (collision_info->field9_0x24 != (void *)0x0) {
         pCVar5 = (CVector3f *)(auStack_20 + 4);
-        pCVar4 = (CVector3f *)(local_44 + 4);
-        frame_index = &CStack_2c.y;
+        pCVar4 = &local_40;
+        frame_index = auStack_28;
         this_ptr_01 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                                ((CKeyFramedModelInstance *)in_stack_00000014->result_ptr);
+                                ((CKeyFramedModelInstance *)collision_info->field9_0x24);
         local_84 = core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
                              (this_ptr_01,(int)frame_index,pCVar4,pCVar5,in_stack_ffffff5c);
         local_9c._0_8_ = (undefined8)local_84;
@@ -161,8 +162,8 @@ LAB_004095c9:
       }
     }
     else {
-      fStack_88 = (float)core_skeleton_cpp_CDeformableModelInstance_GetPtrsAndDoSomething1_FUN_005a10e0
-                                   ();
+      fStack_88 = (float)core_skeleton_cpp_CDeformableModelInstance_FUN_005a10e0
+                                   ((CDeformableModelInstance *)collision_info->result_ptr);
       uStack_90 = (double)fStack_88;
       if (uStack_90 < 0.0) {
         return 2.0;
@@ -170,19 +171,21 @@ LAB_004095c9:
       if (1.0 < uStack_90) {
         return 2.0;
       }
-      in_stack_00000010[1].x = DAT_0368c884;
-      in_stack_00000010[1].y = DAT_0368c894;
-      in_stack_00000010[1].z = DAT_0368c898;
-      core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
+      out_hit_normal[1].x = (float)g_DeformableModelRayHitPartIndex;
+      out_hit_normal[1].y = (float)g_DeformableModelRayHitLodIndex;
+      out_hit_normal[1].z = (float)g_DeformableModelRayHitTriangleIndex;
+      core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+                ((CDeformableModelInstance *)collision_info->result_ptr);
       fVar3 = (float)core_skeleton_cpp_FUN_0059dca0();
-      in_stack_00000010[2].x = fVar3;
+      out_hit_normal[2].x = fVar3;
     }
   }
-  pCVar4 = core_actor_cpp_CDemonActor_FUN_00408e80(this_ptr);
-  if (in_stack_00000010 != pCVar4) {
-    in_stack_00000010->x = pCVar4->x;
-    in_stack_00000010->y = pCVar4->y;
-    in_stack_00000010->z = pCVar4->z;
+  pCVar4 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                     (this_ptr,(CVector3f *)&stack0xfffffff0,(CVector3f *)(auStack_20 + 4));
+  if (out_hit_normal != pCVar4) {
+    out_hit_normal->x = pCVar4->x;
+    out_hit_normal->y = pCVar4->y;
+    out_hit_normal->z = pCVar4->z;
   }
   return fStack_88;
 }
@@ -228,7 +231,7 @@ LAB_004095c9:
 //   XREF to: Stack[-0x9c] (DATA)
 // 004094b1: PUSH EAX
 // 004094b2: PUSH EDI
-// 004094b3: CALL core_actor.cpp_CDemonActor_FUN_00409270
+// 004094b3: CALL core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
 //   XREF to: 00409270 (UNCONDITIONAL_CALL)
 // 004094b8: ADD ESP,0x10
 // 004094bb: MOV EDX,dword ptr [EBP + 0x2c]
@@ -308,7 +311,7 @@ LAB_004095c9:
 //   XREF to: Stack[-0x3c] (DATA)
 // 00409556: PUSH EAX
 // 00409557: PUSH EDI
-// 00409558: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 00409558: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 0040955d: ADD ESP,0xc
 // 00409560: MOV ECX,dword ptr [EBP + 0x1c]
@@ -318,7 +321,7 @@ LAB_004095c9:
 //   XREF to: Stack[-0x54] (DATA)
 // 00409568: PUSH EAX
 // 00409569: PUSH EDI
-// 0040956a: CALL core_actor.cpp_CDemonActor_FUN_00408ea0
+// 0040956a: CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 //   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
 // 0040956f: ADD ESP,0xc
 // 00409572: MOV ESI,dword ptr [EBP + 0x28]
@@ -393,7 +396,7 @@ LAB_004095c9:
 // 00409628: LEA EAX,[ESP + 0x98]
 // 0040962f: PUSH EAX
 // 00409630: PUSH EDI
-// 00409631: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 00409631: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 00409636: ADD ESP,0xc
 // 00409639: CMP EBX,EAX
@@ -441,7 +444,7 @@ LAB_004095c9:
 // 00409696: MOV ECX,dword ptr [EBP + 0x24]
 //   XREF to: Stack[0x14] (READ)
 // 00409699: PUSH ECX
-// 0040969a: CALL core_actor.cpp_CDemonActor_FUN_00408340
+// 0040969a: CALL core_actor.cpp_rayCylinderIntersect_FUN_00408340
 //   XREF to: 00408340 (UNCONDITIONAL_CALL)
 // 0040969f: JMP 0x004095b4
 //   XREF to: 004095b4 (UNCONDITIONAL_JUMP)
@@ -537,7 +540,7 @@ LAB_004095c9:
 //   XREF to: Stack[0x14] (READ)
 // 00409783: MOV ESI,dword ptr [EAX + 0x20]
 // 00409786: PUSH ESI
-// 00409787: CALL core_skeleton.cpp_CDeformableModelInstance_GetPtrsAndDoSomething1_FUN_005a10e0
+// 00409787: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a10e0
 //   XREF to: 005a10e0 (UNCONDITIONAL_CALL)
 // 0040978c: MOV dword ptr [ESP + 0xb0],EAX
 // 00409793: FLD float ptr [ESP + 0xb0]

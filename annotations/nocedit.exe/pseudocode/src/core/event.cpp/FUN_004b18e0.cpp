@@ -8,14 +8,12 @@
 //   core_hero.cpp_FUN_004f2f50 (004f2f50) at 004f30c3 [UNCONDITIONAL_CALL]
 // Globals:
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 // Function calls:
-//   core_event.cpp_FUN_004aabe0
+//   core_event.cpp_CEventList_FUN_004aabe0
 //   core_event.cpp_FUN_004b1890
 
 #include "nocturne.h"
-
-/* Signature: undefined1 core_event.cpp_FUN_004b18e0(undefined4 param_1) */
 
 undefined4 core_event_cpp_FUN_004b18e0(void)
 
@@ -26,7 +24,7 @@ undefined4 core_event_cpp_FUN_004b18e0(void)
   if (iVar1 < 0) {
     return 0;
   }
-  core_event_cpp_FUN_004aabe0();
+  core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
   return 1;
 }
 
@@ -61,7 +59,7 @@ undefined4 core_event_cpp_FUN_004b18e0(void)
 //   XREF to: 006793d0 (READ)
 // 004b1916: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 004b1917: CALL core_event.cpp_FUN_004aabe0
+// 004b1917: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 004b191c: MOV EAX,0x1
 // 004b1921: ADD ESP,0x8

@@ -83,21 +83,21 @@ undefined GetModelPtrOfFile();
 // Address: 0058a2b0
 undefined FUN_0058a2b0();
 
-// Original: core_skeledit.cpp_FUN_0058a3d0
+// Original: core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0
 // Address: 0058a3d0
-undefined FUN_0058a3d0();
+void CBoneStructure::importBON(CBoneStructure * this_ptr);
 
 // Original: core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
 // Address: 0058a4a0
-undefined CBoneStructure::readBONheader();
+void CBoneStructure::readBONheader(CBoneStructure * this_ptr);
 
 // Original: core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
 // Address: 0058aa10
-undefined CBoneStructure::readBONframe();
+void CBoneStructure::readBONframe(CBoneStructure * this_ptr);
 
 // Original: core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0
 // Address: 0058abb0
-undefined CBoneStructure::skipBONframe();
+void CBoneStructure::skipBONframe(CBoneStructure * this_ptr);
 
 // Original: core_skeledit.cpp_FUN_0058ac30
 // Address: 0058ac30
@@ -113,7 +113,7 @@ undefined FUN_0058ad30();
 
 // Original: core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0
 // Address: 0058adb0
-undefined CBoneStructure::fixupMatrices();
+void CBoneStructure::fixupMatrices(CBoneStructure * this_ptr);
 
 // Original: core_skeledit.cpp_FUN_0058aeb0
 // Address: 0058aeb0
@@ -203,9 +203,9 @@ undefined FUN_0058e4e0();
 // Address: 0058e600
 undefined FUN_0058e600();
 
-// Original: core_skeledit.cpp_FUN_0058e690
+// Original: core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690
 // Address: 0058e690
-undefined FUN_0058e690();
+void CDeformableModel::calcRootOffsetScale(CDeformableModel * this_ptr);
 
 // Original: core_skeledit.cpp_FUN_0058eaa0
 // Address: 0058eaa0
@@ -221,7 +221,7 @@ undefined FUN_0058ede0();
 
 // Original: core_skeledit.cpp_CDeformableModel_save_FUN_0058f040
 // Address: 0058f040
-undefined CDeformableModel::save();
+void CDeformableModel::save(CDeformableModel * this_ptr, char * filename);
 
 // Original: core_skeledit.cpp_ParseSkeletonBase_FUN_0058f120
 // Address: 0058f120
@@ -259,9 +259,9 @@ undefined ExportModel();
 // Address: 00596860
 undefined FUN_00596860();
 
-// Original: core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0
+// Original: core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0
 // Address: 005968b0
-undefined DefinitelyRelatedToEditorMode();
+void CDeformableModelInstance(CDeformableModelInstance * this_ptr);
 
 // Original: core_skeledit.cpp_LockGetPtrAndExportModel_FUN_00598ee0
 // Address: 00598ee0
@@ -269,7 +269,7 @@ undefined LockGetPtrAndExportModel();
 
 // Original: core_skeledit.cpp_FUN_00598f10
 // Address: 00598f10
-undefined FUN_00598f10();
+void FUN_00598f10(void);
 
 // Original: core_skeledit.cpp_viewModel_FUN_00598fc0
 // Address: 00598fc0

@@ -38,7 +38,7 @@ void __cdecl core_charactr_cpp_CCharacter_computePickupInLoop_FUN_0042f800(CChar
       iVar2 = iVar2 + 1;
       pCVar3 = (CCharacter *)&(pCVar3->base_actor).orient_matrix.m[0].z;
     } while (iVar2 < 2);
-    fVar1 = (*((this_ptr->base_actor).metadata.vtable)->cylinderGroundCheck)
+    fVar1 = (*((this_ptr->base_actor).vtable)->cylinderGroundCheck)
                       (&this_ptr->base_actor,*(float *)(this_ptr->cloth_data + 0x344),
                        (CVector3f *)0x0);
     *(float *)(this_ptr->field2_0x240c + 8) = fVar1;

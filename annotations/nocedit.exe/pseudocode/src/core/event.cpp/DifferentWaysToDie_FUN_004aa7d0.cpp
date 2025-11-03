@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_event.cpp_DifferentWaysToDie_FUN_004aa7d0()
 // Cross-references:
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004abe9d [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004abe9d [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_generic_0062457a
 //   TerminatedCString s_drown_00624582
@@ -22,9 +22,6 @@
 //   crt_string.c_stricmp_FUN_005fe7f0
 
 #include "nocturne.h"
-
-/* Signature: undefined1 core_event.cpp_DifferentWaysToDie(undefined4 param_1, undefined4 param_2)
-    */
 
 undefined4 core_event_cpp_DifferentWaysToDie_FUN_004aa7d0(void)
 

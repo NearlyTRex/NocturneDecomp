@@ -14,11 +14,11 @@
 //   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 //   core_charactr.cpp_CCharacter_FUN_00429aa0
 //   core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320
-//   core_morph.cpp_CallToCallToMorphAnimate_FUN_0052b640
+//   core_morph.cpp_CMorphModel_FUN_0052bae0
 //   core_morph.cpp_FUN_0052b600
-//   core_morph.cpp_MorphModelRotatePointsTwice_FUN_0052bae0
+//   core_morph.cpp_FUN_0052b640
 //   core_motion.cpp_CMotionController_FUN_0052e700
-//   core_skeleton.cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
 //   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00
 //   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 
@@ -46,8 +46,8 @@ int __cdecl core_succubus_cpp_CSuccubus_FUN_005c7590(CSuccubus *this_ptr)
   }
   if (*(int *)(this_ptr->base_enemy).base_character.field2_0x240c == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-    this_ptr_00 = (*((this_ptr->base_enemy).base_character.base_actor.metadata.vtable)->
-                    getBoundingBox)((CDemonActor *)this_ptr,(CBoundingBox3D *)&pCStack_1c);
+    this_ptr_00 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->getBoundingBox)
+                            ((CDemonActor *)this_ptr,(CBoundingBox3D *)&pCStack_1c);
     iStack00000014 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     if (iStack00000014 != 0) {
       (this_ptr->base_enemy).base_character.field13_0x2620[0] = '\x01';
@@ -64,24 +64,27 @@ int __cdecl core_succubus_cpp_CSuccubus_FUN_005c7590(CSuccubus *this_ptr)
           pCStack_1c = (CSuccubus *)fVar1;
           core_morph_cpp_FUN_0052b600();
           pCStack_1c = (CSuccubus *)fVar1;
-          core_morph_cpp_CallToCallToMorphAnimate_FUN_0052b640();
+          core_morph_cpp_FUN_0052b640();
           pCStack_1c = *(CSuccubus **)(this_ptr->field1_0xbeb4 + 0x2450);
-          core_morph_cpp_CallToCallToMorphAnimate_FUN_0052b640();
-          core_morph_cpp_MorphModelRotatePointsTwice_FUN_0052bae0();
+          core_morph_cpp_FUN_0052b640();
+          core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)(this_ptr->field1_0xbeb4 + 0x2488))
+          ;
         }
       }
       else {
         pCStack_1c = (CSuccubus *)0xffffffff;
-        core_skeleton_cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150();
+        core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150
+                  ((CDeformableModelInstance *)(this_ptr->field1_0xbeb4 + 8));
         core_cloth_cpp_MultipleCallSaveJoinedLight_FUN_0043c320();
       }
       if ((DAT_02f43978 != 0) &&
          (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
          iVar2 == 0)) {
         pCStack_1c = this_ptr;
-        core_motion_cpp_CMotionController_FUN_0052e700();
+        core_motion_cpp_CMotionController_FUN_0052e700
+                  (&(this_ptr->base_enemy).base_character.model.motion_controller);
         pCStack_1c = (CSuccubus *)0x5c765c;
-        (*((this_ptr->base_enemy).base_character.base_actor.metadata.vtable)->renderTargetPoints)
+        (*((this_ptr->base_enemy).base_character.base_actor.vtable)->renderTargetPoints)
                   ((CDemonActor *)this_ptr);
       }
     }
@@ -146,7 +149,7 @@ int __cdecl core_succubus_cpp_CSuccubus_FUN_005c7590(CSuccubus *this_ptr)
 // 005c7609: PUSH -0x1
 // 005c760b: PUSH -0x1
 // 005c760d: PUSH EDI
-// 005c760e: CALL core_skeleton.cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150
+// 005c760e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
 //   XREF to: 005a0150 (UNCONDITIONAL_CALL)
 // 005c7613: ADD ESP,0x14
 // 005c7616: PUSH EDI
@@ -230,7 +233,7 @@ int __cdecl core_succubus_cpp_CSuccubus_FUN_005c7590(CSuccubus *this_ptr)
 // 005c76be: PUSH EDI
 // 005c76bf: PUSH 0x1
 // 005c76c1: PUSH ESI
-// 005c76c2: CALL core_morph.cpp_CallToCallToMorphAnimate_FUN_0052b640
+// 005c76c2: CALL core_morph.cpp_FUN_0052b640
 //   XREF to: 0052b640 (UNCONDITIONAL_CALL)
 // 005c76c7: ADD ESP,0x14
 // 005c76ca: PUSH 0x2
@@ -239,7 +242,7 @@ int __cdecl core_succubus_cpp_CSuccubus_FUN_005c7590(CSuccubus *this_ptr)
 // 005c76d3: PUSH EBP
 // 005c76d4: PUSH 0x1
 // 005c76d6: PUSH ESI
-// 005c76d7: CALL core_morph.cpp_CallToCallToMorphAnimate_FUN_0052b640
+// 005c76d7: CALL core_morph.cpp_FUN_0052b640
 //   XREF to: 0052b640 (UNCONDITIONAL_CALL)
 // 005c76dc: FLD float ptr [EBX + 0xe338]
 // 005c76e2: FDIV float ptr [0x00663938]
@@ -248,7 +251,7 @@ int __cdecl core_succubus_cpp_CSuccubus_FUN_005c7590(CSuccubus *this_ptr)
 // 005c76eb: SUB ESP,0x4
 // 005c76ee: FSTP float ptr [ESP]
 // 005c76f1: PUSH ESI
-// 005c76f2: CALL core_morph.cpp_MorphModelRotatePointsTwice_FUN_0052bae0
+// 005c76f2: CALL core_morph.cpp_CMorphModel_FUN_0052bae0
 //   XREF to: 0052bae0 (UNCONDITIONAL_CALL)
 // 005c76f7: JMP 0x005c7623
 //   XREF to: 005c7623 (UNCONDITIONAL_JUMP)

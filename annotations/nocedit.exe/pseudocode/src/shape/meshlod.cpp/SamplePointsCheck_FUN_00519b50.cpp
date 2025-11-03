@@ -6,11 +6,11 @@
 // Cross-references:
 //   shape_meshlod.cpp_NeighboringFacesEdgesCheck_FUN_00518910 (00518910) at 00518f21 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\shape\meshlod.cpp_00637a5d
+//   TerminatedCString s_shape_meshlod_cpp_00637a5d
 //   TerminatedCString s_Too_many_sample_points_00637a72
-//   undefined4 DAT_00637a8d
-//   undefined4 DAT_00637a95
-//   undefined4 DAT_00637a9d
+//   float FLOAT_00637a8d = 0.5
+//   double DOUBLE_00637a95 = 0.5
+//   double DOUBLE_00637a9d = 16
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 //   undefined4 DAT_02f313ec
@@ -32,7 +32,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 shape_meshlod.cpp_SamplePointsCheck(undefined4 param_1) */
 
 void shape_meshlod_cpp_SamplePointsCheck_FUN_00519b50
@@ -83,7 +82,7 @@ void shape_meshlod_cpp_SamplePointsCheck_FUN_00519b50
   uint uStack_14;
   
   if (400 < DAT_02f313ec) {
-    g_CurrentFilename = "?..\\shape\\meshlod.cpp" + 1;
+    g_CurrentFilename = "..\\shape\\meshlod.cpp";
     g_CurrentLineNumber = 0xd78;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many sample points!");
     param_2 = extraout_EDX_01;
@@ -116,15 +115,15 @@ void shape_meshlod_cpp_SamplePointsCheck_FUN_00519b50
     } while (iVar9 < DAT_02f313ec);
   }
   local_50[0].x = (float)((float10)local_8c + (float10)in_stack_ffffff80);
-  fVar11 = (float10)_DAT_00637a8d;
+  fVar11 = (float10)FLOAT_00637a8d;
   local_50[0].y = (float)((float10)in_stack_ffffff78 + (float10)local_7c.min.x);
   fVar12 = ((float10)in_stack_ffffff78 + (float10)local_7c.min.x) * fVar11;
   local_50[0].z = (float)((float10)in_stack_ffffff7c + (float10)local_7c.min.y);
   fVar15 = ((float10)in_stack_ffffff7c + (float10)local_7c.min.y) * fVar11;
   local_7c.min.z = (float)(((float10)local_8c + (float10)in_stack_ffffff80) * fVar11);
   local_7c.max.x = (float)fVar12;
-  fVar11 = (float10)_DAT_00637a95;
-  fVar13 = (float10)_DAT_00637a9d;
+  fVar11 = (float10)DOUBLE_00637a95;
+  fVar13 = (float10)DOUBLE_00637a9d;
   fVar14 = ((float10)local_7c.min.z + fVar11) * fVar13;
   fVar12 = (fVar12 + fVar11) * fVar13;
   local_7c.max.y = (float)fVar15;
@@ -219,7 +218,7 @@ void shape_meshlod_cpp_SamplePointsCheck_FUN_00519b50
         pCVar3 = pCVar3 + 1;
       } while (iVar9 < DAT_02f313ec);
     }
-    fVar11 = ((float10)local_7c.min.x + (float10)_DAT_00637a95) * (float10)_DAT_00637a9d;
+    fVar11 = ((float10)local_7c.min.x + (float10)DOUBLE_00637a95) * (float10)DOUBLE_00637a9d;
     dVar16 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(uVar4,local_20));
     local_24 = (float)(int)ROUND(fVar11);
     uVar4 = SUB84(dVar16,0) - (int)local_24;
@@ -229,7 +228,7 @@ void shape_meshlod_cpp_SamplePointsCheck_FUN_00519b50
     if (-1 < iVar6) {
       iVar9 = iVar6;
     }
-    fVar11 = ((float10)local_7c.min.z + (float10)_DAT_00637a95) * (float10)_DAT_00637a9d;
+    fVar11 = ((float10)local_7c.min.z + (float10)DOUBLE_00637a95) * (float10)DOUBLE_00637a9d;
     local_7c.min.x = 7.495635e-39;
     dVar16 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(uVar5,local_20));
     local_20 = (int)ROUND(fVar11);
@@ -239,7 +238,7 @@ void shape_meshlod_cpp_SamplePointsCheck_FUN_00519b50
     if (iVar9 < iVar6) {
       iVar9 = iVar6;
     }
-    fVar11 = ((float10)local_7c.max.y + (float10)_DAT_00637a95) * (float10)_DAT_00637a9d;
+    fVar11 = ((float10)local_7c.max.y + (float10)DOUBLE_00637a95) * (float10)DOUBLE_00637a9d;
     local_7c.min.y = 7.495697e-39;
     dVar16 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(uVar5,uStack_14));
     local_1c = (int)ROUND(fVar11);
@@ -249,7 +248,7 @@ void shape_meshlod_cpp_SamplePointsCheck_FUN_00519b50
     if (iVar9 < iVar6) {
       iVar9 = iVar6;
     }
-    fVar11 = ((float10)local_64 + (float10)_DAT_00637a95) * (float10)_DAT_00637a9d;
+    fVar11 = ((float10)local_64 + (float10)DOUBLE_00637a95) * (float10)DOUBLE_00637a9d;
     local_7c.min.z = 7.495758e-39;
     dVar16 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(uVar5,uStack_14));
     local_18 = (int)ROUND(fVar11);
@@ -259,7 +258,7 @@ void shape_meshlod_cpp_SamplePointsCheck_FUN_00519b50
     if (iVar9 < iVar6) {
       iVar9 = iVar6;
     }
-    fVar11 = ((float10)local_5c + (float10)_DAT_00637a95) * (float10)_DAT_00637a9d;
+    fVar11 = ((float10)local_5c + (float10)DOUBLE_00637a95) * (float10)DOUBLE_00637a9d;
     local_7c.max.x = 7.49582e-39;
     dVar16 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(uVar5,uStack_14));
     uStack_14 = (uint)ROUND(fVar11);
@@ -269,7 +268,7 @@ void shape_meshlod_cpp_SamplePointsCheck_FUN_00519b50
     if (iVar9 < iVar6) {
       iVar9 = iVar6;
     }
-    fVar11 = ((float10)local_54 + (float10)_DAT_00637a95) * (float10)_DAT_00637a9d;
+    fVar11 = ((float10)local_54 + (float10)DOUBLE_00637a95) * (float10)DOUBLE_00637a9d;
     local_7c.max.y = 7.495882e-39;
     dVar16 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(uVar5,iVar8));
     uVar5 = SUB84(dVar16,0) - (int)ROUND(fVar11);

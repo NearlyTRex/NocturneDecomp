@@ -25,7 +25,7 @@ void core_minecar_cpp_FUN_00520e50(void)
     return;
   }
   pCVar1 = core_platfrm_cpp_FUN_0054c850(pCVar1);
-  (pCVar1->base_actor).metadata.vtable = &PTR_core_minecar_cpp_FUN_006615d4;
+  (pCVar1->base_actor).vtable = &PTR_core_minecar_cpp_FUN_006615d4;
   return;
 }
 

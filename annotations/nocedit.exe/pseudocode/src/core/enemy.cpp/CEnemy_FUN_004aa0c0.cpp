@@ -15,7 +15,7 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004aa0c0(CEnemy *this_ptr)
   if (in_stack_00000008 != *(float *)(this_ptr->field6_0xbe38 + 4)) {
     return;
   }
-  (*(this_ptr->base_character).base_actor.metadata.vtable[1].handleFootstep)
+  (*(this_ptr->base_character).base_actor.vtable[1].handleFootstep)
             ((CDemonActor *)this_ptr,unaff_retaddr,(int)this_ptr,in_stack_00000008);
   return;
 }

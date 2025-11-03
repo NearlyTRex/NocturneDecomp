@@ -1,8 +1,8 @@
 // Name: core_motion.cpp_CMotionController_FUN_0052dd20
 // Address: 0052dd20
 // Address Range: [[0052dd20, 0052dda7]]
-// Convention: unknown
-// Signature: undefined core_motion.cpp_CMotionController_FUN_0052dd20()
+// Convention: __cdecl
+// Signature: float core_motion.cpp_CMotionController_FUN_0052dd20(CMotionController * this_ptr)
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042de50 (0042de50) at 0042deac [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d2ea0 (004d2ea0) at 004d3509 [UNCONDITIONAL_CALL]
@@ -26,31 +26,29 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_motion.cpp_CMotionController_FUN_0052dd20(CMotionController* param_1,
-   undefined4 param_2) */
-
-float core_motion_cpp_CMotionController_FUN_0052dd20(void)
+float __cdecl core_motion_cpp_CMotionController_FUN_0052dd20(CMotionController *this_ptr)
 
 {
-  int *in_stack_00000004;
   int in_stack_00000008;
   float local_10;
   
-  if ((float)in_stack_00000004[5] <= 0.0) {
-    if (in_stack_00000008 != *(int *)(*in_stack_00000004 + 0x98c + in_stack_00000004[1] * 0x54c)) {
+  if (this_ptr->tween_progress <= 0.0) {
+    if (in_stack_00000008 !=
+        this_ptr->motion_list_ptr->motions[this_ptr->current_motion_index].state_index) {
       return 0.0;
     }
     local_10 = 1.0;
   }
-  else if (in_stack_00000008 == *(int *)(in_stack_00000004[6] * 0x54c + 0x98c + *in_stack_00000004))
-  {
-    local_10 = (float)in_stack_00000004[5];
+  else if (in_stack_00000008 ==
+           this_ptr->motion_list_ptr->motions[this_ptr->tween_target_motion].state_index) {
+    local_10 = this_ptr->tween_progress;
   }
   else {
-    if (in_stack_00000008 != *(int *)(in_stack_00000004[1] * 0x54c + 0x98c + *in_stack_00000004)) {
+    if (in_stack_00000008 !=
+        this_ptr->motion_list_ptr->motions[this_ptr->current_motion_index].state_index) {
       return 0.0;
     }
-    local_10 = 1.0 - (float)in_stack_00000004[5];
+    local_10 = 1.0 - this_ptr->tween_progress;
   }
   return local_10;
 }

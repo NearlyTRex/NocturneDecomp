@@ -15,7 +15,8 @@ int __cdecl core_hostage_cpp_CHostage_FUN_004f6390(CHostage *this_ptr)
   
   if (((*(int *)this_ptr->field4_0x1fab8 != 0) && (this_ptr->hostage_state != 3)) &&
      (this_ptr->hostage_state != 4)) {
-    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
+                      (&(this_ptr->base_npc).base_character.model.motion_controller);
     if (*(int *)(iVar1 + 0x24) != 10) {
       return 1;
     }

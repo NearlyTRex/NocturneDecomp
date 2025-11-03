@@ -4,10 +4,11 @@
 // Ghidra size: 0x578 (1400 bytes)
 typedef struct CWeapon {
     CDemonActor base_actor; // 0x0
-    CKeyFramedModelInstance* model_instance; // 0x158
-    char field_348[376]; // 0x15c
+    CKeyFramedModelInstance model; // 0x158
     int weapon_state; // 0x2d4
-    char field_728[24]; // 0x2d8
+    char field_728[16]; // 0x2d8
+    float bolt_velocity; // 0x2e8
+    float fire_cooldown; // 0x2ec
     int can_attach_light; // 0x2f0
     char field_756[16]; // 0x2f4
     char carried_by_actor; // 0x304

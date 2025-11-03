@@ -9,8 +9,8 @@
 //   double DOUBLE_0063f97e = 0.0100000000000000
 //   float FLOAT_0063f986 = -1
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408f10
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0
 //   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 //   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
@@ -39,34 +39,35 @@ undefined4 core_platfrm_cpp_FUN_0054df80(void)
   CVector3f CStack_40;
   CVector3f CStack_34;
   CVector3f CStack_28;
-  float fStack_1c;
-  float fStack_18;
-  float fStack_14;
+  CVector3f CStack_1c;
   
   if (in_stack_00000008 != 0) {
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_88);
     local_88._0_8_ = (ulonglong)(uint)local_88.field1_0x4 << 0x20;
     iVar1 = (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x34))();
     if (iVar1 == 2) {
-      fStack_18 = core_actor_cpp_FUN_0040cd70((in_stack_00000004->orient).pitch);
-      (in_stack_00000004->orient).pitch = fStack_18;
-      fStack_18 = core_actor_cpp_FUN_0040cd70((in_stack_00000004->orient).heading);
-      (in_stack_00000004->orient).heading = fStack_18;
+      CStack_1c.y = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                              ((in_stack_00000004->orient).pitch);
+      (in_stack_00000004->orient).pitch = CStack_1c.y;
+      CStack_1c.y = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                              ((in_stack_00000004->orient).heading);
+      (in_stack_00000004->orient).heading = CStack_1c.y;
       if ((ABS((in_stack_00000004->orient).pitch) <= (float)DOUBLE_0063f97e) &&
          (ABS((in_stack_00000004->orient).heading) <= (float)DOUBLE_0063f97e)) {
-        (*((in_stack_00000004->metadata).vtable)->getBoundingBox)(in_stack_00000004,&CStack_60);
-        core_actor_cpp_CDemonActor_FUN_00408f10(in_stack_00000004);
-        if (((CStack_60.min.z <= fStack_1c + (float)local_88.result_ptr) &&
-            (((fStack_1c - (float)local_88.result_ptr <= CStack_60.max.z &&
-              (CStack_60.max.y <= fStack_14 + (float)local_88.result_ptr)) &&
-             (fStack_14 - (float)local_88.result_ptr <= fStack_44)))) &&
-           ((CStack_60.max.x <= fStack_18 + local_88.cylinder_radius_sq &&
-            (fStack_18 + local_88.cylinder_top_y <= fStack_48)))) {
+        (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_60);
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                  (in_stack_00000004,&CStack_1c,(CVector3f *)(in_stack_00000008 + 0x20));
+        if (((CStack_60.min.z <= CStack_1c.x + (float)local_88.field9_0x24) &&
+            (((CStack_1c.x - (float)local_88.field9_0x24 <= CStack_60.max.z &&
+              (CStack_60.max.y <= CStack_1c.z + (float)local_88.field9_0x24)) &&
+             (CStack_1c.z - (float)local_88.field9_0x24 <= fStack_44)))) &&
+           ((CStack_60.max.x <= CStack_1c.y + (float)local_88.result_ptr &&
+            (CStack_1c.y + local_88.cylinder_radius <= fStack_48)))) {
           pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                              ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
           if (pCVar2->collision_triangle_list != (CDemonTriangle *)0x0) {
-            CStack_40.x = fStack_1c;
-            CStack_40.z = fStack_14;
+            CStack_40.x = CStack_1c.x;
+            CStack_40.z = CStack_1c.z;
             output_normal = &CStack_34;
             CStack_28.x = 0.0;
             ray_direction = &CStack_28;
@@ -74,7 +75,7 @@ undefined4 core_platfrm_cpp_FUN_0054df80(void)
             ray_origin = &CStack_40;
             CStack_28.z = 0.0;
             iVar1 = 0;
-            CStack_40.y = local_88.cylinder_radius_sq + FLOAT_0063f986 + fStack_18;
+            CStack_40.y = (float)local_88.result_ptr + FLOAT_0063f986 + CStack_1c.y;
             pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                                ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
             fVar3 = core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
@@ -140,14 +141,14 @@ undefined4 core_platfrm_cpp_FUN_0054df80(void)
 // 0054dfc7: JNZ 0x0054df96
 //   XREF to: 0054df96 (CONDITIONAL_JUMP)
 // 0054dfc9: PUSH dword ptr [EBX + 0x30]
-// 0054dfcc: CALL core_actor.cpp_FUN_0040cd70
+// 0054dfcc: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 0054dfd1: MOV dword ptr [ESP + 0x7c],EAX
 // 0054dfd5: FLD float ptr [ESP + 0x7c]
 // 0054dfd9: ADD ESP,0x4
 // 0054dfdc: PUSH dword ptr [EBX + 0x38]
 // 0054dfdf: FSTP float ptr [EBX + 0x30]
-// 0054dfe2: CALL core_actor.cpp_FUN_0040cd70
+// 0054dfe2: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 0054dfe7: FLD float ptr [EBX + 0x30]
 // 0054dfea: MOV dword ptr [ESP + 0x7c],EAX
@@ -180,7 +181,7 @@ undefined4 core_platfrm_cpp_FUN_0054df80(void)
 // 0054e02b: LEA EAX,[ESP + 0x70]
 // 0054e02f: PUSH EAX
 // 0054e030: PUSH EBX
-// 0054e031: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 0054e031: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 0054e036: ADD ESP,0xc
 // 0054e039: FLD float ptr [ESP + 0x6c]

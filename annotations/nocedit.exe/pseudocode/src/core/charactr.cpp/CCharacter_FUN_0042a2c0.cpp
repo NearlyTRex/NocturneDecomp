@@ -50,7 +50,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042a2c0(CCharacter *this_ptr)
   }
   if (*(int *)this_ptr->field2_0x240c == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-    this_ptr_00 = (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
+    this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
                             (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe8);
     fStack_14 = 6.119639e-39;
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
@@ -63,8 +63,8 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042a2c0(CCharacter *this_ptr)
       if (DAT_02f43978 != 0) {
         iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
         if (iVar2 == 0) {
-          core_motion_cpp_CMotionController_FUN_0052e700();
-          (*((this_ptr->base_actor).metadata.vtable)->renderTargetPoints)(&this_ptr->base_actor);
+          core_motion_cpp_CMotionController_FUN_0052e700(&(this_ptr->model).motion_controller);
+          (*((this_ptr->base_actor).vtable)->renderTargetPoints)(&this_ptr->base_actor);
         }
       }
     }

@@ -26,7 +26,7 @@ void __cdecl core_backgnd_cpp_CBackgroundActor_FUN_00412860(CBackgroundActor *th
   
   if ((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) == 0) && (in_stack_00000008 != 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-    this_ptr_00 = (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
+    this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
                             (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe8);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     if (iVar1 != 0) {

@@ -73,9 +73,9 @@
 //   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270
 //   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
+//   core_morph.cpp_CMorphModel_FUN_0052b330
 //   core_morph.cpp_FUN_0052b310
-//   core_morph.cpp_FUN_0052b330
-//   core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0
+//   core_morph.cpp_FUN_0052bcb0
 //   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0
 //   core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880
 //   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940
@@ -125,11 +125,12 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   int iVar4;
   int iVar5;
   CKeyFramedModel *pCVar6;
-  void *pvVar7;
+  CMorphModel *this_ptr;
+  void *ptr;
   FILE *output_file;
   BADSPACEBASE *in_ESP;
   int unaff_ESI;
-  byte bVar8;
+  byte bVar7;
   undefined1 uStack0000007c;
   undefined1 uStack0000007d;
   undefined1 uStack0000007e;
@@ -149,7 +150,7 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   undefined1 auStack_f8 [180];
   CEdScrollBar CStack_44;
   
-  bVar8 = 0;
+  bVar7 = 0;
   iVar1 = engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0
                     (&g_CDemonFileManagerInstance.base_filemanager);
   if (iVar1 == 0) {
@@ -229,17 +230,18 @@ LAB_0050740e:
                       (&g_CDemonFileManagerInstance);
           }
           else if (uVar2 == 0x42) {
-            pvVar7 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xc2c,"..\\core\\main.c",0x292);
-            if (pvVar7 != (void *)0x0) {
-              pvVar7 = (void *)core_morph_cpp_FUN_0052b310();
+            this_ptr = (CMorphModel *)
+                       shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xc2c,"..\\core\\main.c",0x292);
+            if (this_ptr != (CMorphModel *)0x0) {
+              this_ptr = (CMorphModel *)core_morph_cpp_FUN_0052b310();
             }
-            if (pvVar7 != (void *)0x0) {
-              core_morph_cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0();
+            if (this_ptr != (CMorphModel *)0x0) {
+              core_morph_cpp_FUN_0052bcb0();
               g_CurrentDebugLine = 0x295;
               g_CurrentDebugFilename = "..\\core\\main.c";
-              if (pvVar7 != (void *)0x0) {
-                pvVar7 = (void *)core_morph_cpp_FUN_0052b330();
-                shape_memdbg_cpp_debugFree_FUN_0050f210(pvVar7);
+              if (this_ptr != (CMorphModel *)0x0) {
+                core_morph_cpp_CMorphModel_FUN_0052b330(this_ptr);
+                shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
               }
             }
           }
@@ -264,10 +266,10 @@ LAB_0050740e:
           uStack0000007d = "memdump.txt"[1];
           uStack0000007e = "memdump.txt"[2];
           uStack0000007f = "memdump.txt"[3];
-          *(undefined4 *)(&stack0x00000080 + (uint)bVar8 * -8) =
-               *(undefined4 *)("memdump.txt" + (uint)bVar8 * -8 + 4);
-          *(undefined4 *)(&stack0x00000084 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
-               *(undefined4 *)("memdump.txt" + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+          *(undefined4 *)(&stack0x00000080 + (uint)bVar7 * -8) =
+               *(undefined4 *)("memdump.txt" + (uint)bVar7 * -8 + 4);
+          *(undefined4 *)(&stack0x00000084 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
+               *(undefined4 *)("memdump.txt" + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
           output_file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                   (pcVar3,directory,mode,source_file,iVar1);
           if (output_file == (FILE *)0x0) {
@@ -874,7 +876,7 @@ LAB_0050740e:
 //   XREF to: 00507522 (CONDITIONAL_JUMP)
 // 005078a0: PUSH EBX
 // 005078a1: MOV ESI,0x295
-// 005078a6: CALL core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0
+// 005078a6: CALL core_morph.cpp_FUN_0052bcb0
 //   XREF to: 0052bcb0 (UNCONDITIONAL_CALL)
 // 005078ab: MOV ECX,0x63521c
 //   XREF to: 0063521c (PARAM)
@@ -888,7 +890,7 @@ LAB_0050740e:
 //   XREF to: 00507522 (CONDITIONAL_JUMP)
 // 005078c7: PUSH 0x0
 // 005078c9: PUSH EBX
-// 005078ca: CALL core_morph.cpp_FUN_0052b330
+// 005078ca: CALL core_morph.cpp_CMorphModel_FUN_0052b330
 //   XREF to: 0052b330 (UNCONDITIONAL_CALL)
 // 005078cf: ADD ESP,0x8
 // 005078d2: PUSH EAX

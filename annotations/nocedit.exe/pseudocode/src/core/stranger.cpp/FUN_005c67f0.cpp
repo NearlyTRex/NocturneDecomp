@@ -20,7 +20,7 @@ void core_stranger_cpp_FUN_005c67f0(void)
   
   if (in_stack_00000004->carry_hands[in_stack_00000008].carry_actor ==
       *(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x554c)) {
-    pCVar1 = (in_stack_00000004->base_actor).metadata.vtable;
+    pCVar1 = (in_stack_00000004->base_actor).vtable;
     in_stack_00000004[2].cloth_data[0x554c] = '\0';
     in_stack_00000004[2].cloth_data[0x554d] = '\0';
     in_stack_00000004[2].cloth_data[0x554e] = '\0';

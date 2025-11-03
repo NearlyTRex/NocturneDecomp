@@ -24,7 +24,7 @@
 //   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 //   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
 //   core_path.cpp_FUN_00548500
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething5_FUN_005a01d0
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
 //   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
 //   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
@@ -141,20 +141,20 @@ void core_bugs_cpp_FUN_00425fe0(void)
     }
     if ((0 < (int)pfVar5) &&
        (in_stack_00000008 =
-             *(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c54) - in_stack_00000008,
-       *(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c54) = in_stack_00000008,
+             *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x174c) - in_stack_00000008,
+       *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x174c) = in_stack_00000008,
        class_name_hash = g_CCharacterClassInfo.name_hash, in_stack_00000008 <= 0.0)) {
       pCVar2 = *(CDemonActor **)(in_stack_00000004[1].cloth_data + 0x423c);
       pCVar3 = in_stack_00000004 + 2;
-      (pCVar3->model).padding_0x0[0x1c54] = -0x33;
-      (pCVar3->model).padding_0x0[0x1c55] = -0x34;
-      (pCVar3->model).padding_0x0[0x1c56] = 'L';
-      (pCVar3->model).padding_0x0[0x1c57] = '>';
+      (pCVar3->model).field3_0x508[0x174c] = -0x33;
+      (pCVar3->model).field3_0x508[0x174d] = -0x34;
+      (pCVar3->model).field3_0x508[0x174e] = 'L';
+      (pCVar3->model).field3_0x508[0x174f] = '>';
       pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar2,class_name_hash);
       if (pCVar2 != (CDemonActor *)0x0) {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe78);
         local_18 = pfVar5;
-        (*(pCVar2->metadata).vtable[1].playAmbientSoundWithVolume)
+        (*pCVar2->vtable[1].playAmbientSoundWithVolume)
                   (pCVar2,&stack0xfffffe78,(float)in_stack_fffffe78);
       }
     }
@@ -173,8 +173,9 @@ void core_bugs_cpp_FUN_00425fe0(void)
       pcVar6 = pcVar6 + (uint)bVar7 * -8 + 4;
     }
     if (*(int *)(in_stack_00000004[1].cloth_data + 0x4274) !=
-        *(int *)(*(int *)(in_stack_00000004[1].cloth_data + 0x4240) + 0x2230)) {
-      core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething5_FUN_005a01d0();
+        (*(CDeformableModelInstance **)(in_stack_00000004[1].cloth_data + 0x4240))->field6_0x2230) {
+      core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0
+                (*(CDeformableModelInstance **)(in_stack_00000004[1].cloth_data + 0x4240));
     }
     iVar1 = 0;
     if (0 < *(int *)(in_stack_00000004[1].base_actor.create_event + 0x24)) {
@@ -184,13 +185,13 @@ void core_bugs_cpp_FUN_00425fe0(void)
       } while (iVar1 < *(int *)(in_stack_00000004[1].base_actor.create_event + 0x24));
     }
     core_bugs_cpp_FUN_004272f0();
-    fStack_58 = *(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c2c) +
-                *(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c38);
-    fStack_54 = *(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c30) +
-                *(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c3c);
+    fStack_58 = *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1724) +
+                *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1730);
+    fStack_54 = *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1728) +
+                *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1734);
     fStack_88 = fStack_58 * FLOAT_00616e13;
-    fStack_50 = *(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c34) +
-                *(float *)(in_stack_00000004[2].model.padding_0x0 + 0x1c40);
+    fStack_50 = *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x172c) +
+                *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1738);
     fStack_84 = fStack_54 * FLOAT_00616e13;
     fStack_80 = fStack_50 * FLOAT_00616e13;
     fStack_34 = (in_stack_00000004->base_actor).location.position.x + fStack_88;
@@ -336,7 +337,7 @@ void core_bugs_cpp_FUN_00425fe0(void)
 //   XREF to: 00426133 (CONDITIONAL_JUMP)
 // 00426129: PUSH EDI
 // 0042612a: PUSH EAX
-// 0042612b: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething5_FUN_005a01d0
+// 0042612b: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   XREF to: 005a01d0 (UNCONDITIONAL_CALL)
 // 00426130: ADD ESP,0x8
 // 00426133: MOV ECX,dword ptr [EBX + 0xbec0]

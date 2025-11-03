@@ -7,10 +7,10 @@
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058d376 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051dd6e [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\shape\meshlod.cpp_00637dbd
+//   TerminatedCString s_shape_meshlod_cpp_00637dbd
 //   TerminatedCString s_LodMesh_fixupAfterCram_t_00637dd2
-//   undefined4 DAT_00637e15
-//   undefined4 DAT_00637e1d
+//   double DOUBLE_00637e15 = 0.00390625
+//   double DOUBLE_00637e1d = 256
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
@@ -25,8 +25,6 @@
 //   shape_meshlod.cpp_ReallocSomething_FUN_00518790
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void shape_meshlod_cpp_FUN_0051bac0(void)
 
@@ -62,7 +60,7 @@ void shape_meshlod_cpp_FUN_0051bac0(void)
                           ((char *)(*piVar5 * 0x48 + *(int *)(in_stack_00000004 + 0x14) + 8));
         if (iVar2 < 0) {
           g_CurrentLineNumber = 0x12c0;
-          g_CurrentFilename = "?..\\shape\\meshlod.cpp" + 1;
+          g_CurrentFilename = "..\\shape\\meshlod.cpp";
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("LodMesh::fixupAfterCram - texture %s not found in cram list.",
                      *piVar5 * 0x48 + *(int *)(in_stack_00000004 + 0x14) + 8);
@@ -82,11 +80,11 @@ void shape_meshlod_cpp_FUN_0051bac0(void)
         } while (piVar3 != piVar5 + 6);
         dVar6 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
         local_18 = (float)((float10)(double)CONCAT44(extraout_EDX,extraout_EAX) *
-                          (float10)_DAT_00637e1d);
+                          (float10)DOUBLE_00637e1d);
         dVar6 = crt_math_c_floor_FUN_005feb90(dVar6);
         in_ST0 = (float10)dVar6;
         local_18 = (float)((float10)(double)CONCAT44(extraout_EDX_00,extraout_EAX_00) *
-                          (float10)_DAT_00637e1d);
+                          (float10)DOUBLE_00637e1d);
         piVar3 = piVar5;
         do {
           pcStack_30 = (char *)((float)piVar3[7] - local_1c);

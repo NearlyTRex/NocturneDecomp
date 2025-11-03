@@ -1,31 +1,32 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_FUN_005a02a0
 // Address: 005a02a0
 // Address Range: [[005a02a0, 005a02e0]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CDeformableModelInstance_FUN_005a02a0()
+// Convention: __cdecl
+// Signature: void core_skeleton.cpp_CDeformableModelInstance_FUN_005a02a0(CDeformableModelInstance * this_ptr)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150 (005a0150) at 005a01b6 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150 (005a0150) at 005a01b6 [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_skeleton.cpp_CDeformableModel_CallDSetLightVertices_FUN_0059ab50
+//   core_skeleton.cpp_CDeformableModel_lightVertices_FUN_0059ab50
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething5_FUN_005a01d0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_skeleton.cpp_CDeformableModelInstance_FUN_005a02a0(undefined4 param_1,
-   undefined4 param_2) */
-
-void core_skeleton_cpp_CDeformableModelInstance_FUN_005a02a0(void)
+void __cdecl
+core_skeleton_cpp_CDeformableModelInstance_FUN_005a02a0(CDeformableModelInstance *this_ptr)
 
 {
-  int in_stack_00000004;
+  CDeformableModel *this_ptr_00;
+  int unaff_EBX;
   int in_stack_00000008;
+  int lod_index;
   
-  if (in_stack_00000008 != *(int *)(in_stack_00000004 + 0x2230)) {
-    core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething5_FUN_005a01d0();
+  if (in_stack_00000008 != this_ptr->field6_0x2230) {
+    core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(this_ptr);
   }
-  core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-  core_skeleton_cpp_CDeformableModel_CallDSetLightVertices_FUN_0059ab50();
+  lod_index = this_ptr->field7_0x2234;
+  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
+  core_skeleton_cpp_CDeformableModel_lightVertices_FUN_0059ab50(this_ptr_00,lod_index,unaff_EBX);
   return;
 }
 
@@ -51,7 +52,7 @@ void core_skeleton_cpp_CDeformableModelInstance_FUN_005a02a0(void)
 //   XREF to: 005a07a0 (UNCONDITIONAL_CALL)
 // 005a02c6: ADD ESP,0x4
 // 005a02c9: PUSH EAX
-// 005a02ca: CALL core_skeleton.cpp_CDeformableModel_CallDSetLightVertices_FUN_0059ab50
+// 005a02ca: CALL core_skeleton.cpp_CDeformableModel_lightVertices_FUN_0059ab50
 //   XREF to: 0059ab50 (UNCONDITIONAL_CALL)
 // 005a02cf: ADD ESP,0xc
 // 005a02d2: POP ESI
@@ -60,7 +61,7 @@ void core_skeleton_cpp_CDeformableModelInstance_FUN_005a02a0(void)
 // 005a02d5: PUSH EAX
 //   Label: LAB_005a02d5
 // 005a02d6: PUSH EBX
-// 005a02d7: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething5_FUN_005a01d0
+// 005a02d7: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   XREF to: 005a01d0 (UNCONDITIONAL_CALL)
 // 005a02dc: ADD ESP,0x8
 // 005a02df: JMP 0x005a02b2

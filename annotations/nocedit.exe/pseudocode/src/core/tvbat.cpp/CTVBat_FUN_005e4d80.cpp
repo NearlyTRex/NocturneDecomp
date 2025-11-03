@@ -54,8 +54,8 @@ int __cdecl core_tvbat_cpp_CTVBat_FUN_005e4d80(CTVBat *this_ptr)
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-  this_ptr_01 = (*((this_ptr_00->base_enemy).base_character.base_actor.metadata.vtable)->
-                  getBoundingBox)((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff8c);
+  this_ptr_01 = (*((this_ptr_00->base_enemy).base_character.base_actor.vtable)->getBoundingBox)
+                          ((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff8c);
   this_ptr = (CTVBat *)core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
   if (this_ptr != (CTVBat *)0x0) {
     fStack_6c = 8.660472e-39;

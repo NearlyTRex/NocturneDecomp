@@ -6,10 +6,10 @@
 // Globals:
 //   TerminatedCString s_strangerCannotDie_00653fa7
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 // Function calls:
 //   core_charactr.cpp_CCharacter_FUN_0042c580
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 
 #include "nocturne.h"
 
@@ -21,7 +21,7 @@ int core_stranger_cpp_CStranger_FUN_005c67c0(void)
   int iVar1;
   CCharacter *in_stack_00000008;
   
-  iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+  iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,"strangerCannotDie");
   if (iVar1 != 0) {
     return 0;
@@ -40,7 +40,7 @@ int core_stranger_cpp_CStranger_FUN_005c67c0(void)
 //   XREF to: 006793d0 (READ)
 // 005c67cb: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 005c67cc: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 005c67cc: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 005c67d1: ADD ESP,0x8
 // 005c67d4: TEST EAX,EAX

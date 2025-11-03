@@ -94,7 +94,7 @@ undefined4 core_stairs_cpp_FUN_005b9c10(void)
     uStack_f4 = 0x5b9c4f;
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000008);
     uStack_f4 = 0x5b9c61;
-    this_ptr = (*((in_stack_00000008->metadata).vtable)->getBoundingBox)
+    this_ptr = (*in_stack_00000008->vtable->getBoundingBox)
                          (in_stack_00000008,(CBoundingBox3D *)(local_bc + 8));
     iStack_24 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
     if (iStack_24 != 0) {

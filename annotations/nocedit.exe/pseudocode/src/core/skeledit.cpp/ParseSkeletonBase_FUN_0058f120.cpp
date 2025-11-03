@@ -42,14 +42,11 @@
 //   int g_CurrentLineNumber
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_skeleton.cpp_CDeformableModel_SkeletonPtrNotSet_FUN_0059a810
+//   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 //   crt_stdio.c_fprintf_FUN_005fe6d0
 
 #include "nocturne.h"
-
-/* Signature: void core_skeledit.cpp_ParseSkeletonBase(int* param_1, FILE* param_2, undefined4
-   param_3) */
 
 void core_skeledit_cpp_ParseSkeletonBase_FUN_0058f120(void)
 
@@ -64,7 +61,7 @@ void core_skeledit_cpp_ParseSkeletonBase_FUN_0058f120(void)
   int iVar8;
   int iVar9;
   uint uVar10;
-  int iVar11;
+  CSkeleton *pCVar11;
   byte *pbVar12;
   int *piVar13;
   int iVar14;
@@ -74,7 +71,9 @@ void core_skeledit_cpp_ParseSkeletonBase_FUN_0058f120(void)
   int iVar17;
   int iVar18;
   int iVar19;
-  FILE *pFVar20;
+  int iVar20;
+  FILE *pFVar21;
+  CDeformableModel *in_stack_0000000c;
   FILE *in_stack_00000014;
   FILE *in_stack_00000018;
   undefined4 *in_stack_0000001c;
@@ -93,16 +92,15 @@ void core_skeledit_cpp_ParseSkeletonBase_FUN_0058f120(void)
   undefined4 in_stack_ffffffd8;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x74);
-  iVar11 = core_skeleton_cpp_CDeformableModel_SkeletonPtrNotSet_FUN_0059a810();
-  crt_stdio_c_fprintf_FUN_005fe6d0
-            (in_stack_00000014,"// version\n",*(undefined4 *)(iVar11 + 0x28558));
+  pCVar11 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(in_stack_0000000c);
+  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000014,"// version\n",pCVar11->bone_count);
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000018,"%d\n",DAT_00681864);
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000018,"// lodCount,textureSetCount,textureCount,boneCount,partCount\n");
   crt_stdio_c_fprintf_FUN_005fe6d0
             (in_stack_00000018,"%d,%d,%d,%d,%d\n",*in_stack_0000001c,in_stack_0000001c[0x2e],
              in_stack_0000001c[0x2f],in_stack_ffffffd8);
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000018,"// Lod list: VertexCount,triCount,capTriCount,pixelHeight,shadowOnlyFlag\n");
-  iVar11 = 0;
+  iVar19 = 0;
   piVar13 = in_stack_00000024;
   piVar16 = in_stack_00000024;
   if (0 < *in_stack_00000024) {
@@ -110,26 +108,26 @@ void core_skeledit_cpp_ParseSkeletonBase_FUN_0058f120(void)
       crt_stdio_c_fprintf_FUN_005fe6d0
                 (in_stack_00000028,"%d,%d,%d,%d,%d\n","%d,%d,%d,%d,%d\n",piVar13[0xb],
                  piVar13[0x15],piVar13[0x1a],piVar16[1]);
-      iVar11 = iVar11 + 1;
+      iVar19 = iVar19 + 1;
       piVar13 = piVar13 + 1;
       piVar16 = piVar16 + 2;
-    } while (iVar11 < *in_stack_00000024);
+    } while (iVar19 < *in_stack_00000024);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000028,"// skeleton file\n");
   crt_stdio_c_fprintf_FUN_005fe6d0
             (in_stack_00000028,"%s\n",&in_stack_00000028[0x51e]._bufsize);
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000028,"// partList: \"name\", dominantBone, adjPartCount, adjpartList, lods(triCount, capTriCount)\n");
-  iVar11 = 0;
+  iVar19 = 0;
   if (0 < in_stack_00000030[0x1c50]) {
     do {
       iVar17 = 0;
       crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000034,"\"%s\", %d\n");
-      for (iVar14 = 0; iVar14 < in_stack_00000030[iVar11 * 0x18 + 0x1c63]; iVar14 = iVar14 + 1) {
-        iVar19 = iVar17 + 0x7190;
+      for (iVar14 = 0; iVar14 < in_stack_00000030[iVar19 * 0x18 + 0x1c63]; iVar14 = iVar14 + 1) {
+        iVar20 = iVar17 + 0x7190;
         iVar17 = iVar17 + 4;
         crt_stdio_c_fprintf_FUN_005fe6d0
                   (in_stack_00000034,"\t%d\n",
-                   *(undefined4 *)((int)in_stack_00000030 + iVar19 + iVar11 * 0x60));
+                   *(undefined4 *)((int)in_stack_00000030 + iVar20 + iVar19 * 0x60));
       }
       iVar14 = 0;
       if (0 < *in_stack_00000030) {
@@ -138,11 +136,11 @@ void core_skeledit_cpp_ParseSkeletonBase_FUN_0058f120(void)
           iVar14 = iVar14 + 1;
         } while (iVar14 < *in_stack_00000030);
       }
-      iVar11 = iVar11 + 1;
-    } while (iVar11 < in_stack_00000030[0x1c50]);
+      iVar19 = iVar19 + 1;
+    } while (iVar19 < in_stack_00000030[0x1c50]);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000034,"// vertexList: boneCount, boneInfo(index, weight, x,y,z)\n");
-  iVar11 = 0;
+  iVar19 = 0;
   if (0 < (int)in_stack_00000034->_ptr) {
     iVar14 = 0;
     do {
@@ -154,27 +152,27 @@ void core_skeledit_cpp_ParseSkeletonBase_FUN_0058f120(void)
         pbVar12 = (byte *)((int)&in_stack_00000014->_ptr +
                           *(int *)((int)&in_stack_00000034[2]._link + iVar14));
         crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000038,"%d\n",(uint)*pbVar12);
-        iVar19 = in_stack_00000020;
+        iVar20 = in_stack_00000020;
         for (iVar18 = 0; iVar18 < (int)(uint)*pbVar12; iVar18 = iVar18 + 1) {
-          pbVar1 = (byte *)(iVar19 + 1);
-          iVar19 = iVar19 + 1;
+          pbVar1 = (byte *)(iVar20 + 1);
+          iVar20 = iVar20 + 1;
           crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000038,"%d, %g, %g,%g,%g\n",(uint)*pbVar1);
         }
         in_stack_00000014 = (FILE *)&in_stack_00000014[1]._ungotten;
       }
       iVar14 = iVar17 + 4;
-      iVar11 = iVar11 + 1;
-    } while (iVar11 < (int)in_stack_00000034->_ptr);
+      iVar19 = iVar19 + 1;
+    } while (iVar19 < (int)in_stack_00000034->_ptr);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000038,"// triList: textureIndex, verts(index, u, v)\n");
   if (0 < (int)in_stack_00000038->_ptr) {
-    iVar11 = 0;
-    pFVar20 = in_stack_00000038;
+    iVar19 = 0;
+    pFVar21 = in_stack_00000038;
     do {
       iVar14 = 0;
       iVar17 = 0;
-      for (iVar19 = 0; iVar19 < (int)(pFVar20[3]._ptr + pFVar20[3]._bufsize); iVar19 = iVar19 + 1) {
-        uVar10 = pFVar20[4]._flag;
+      for (iVar20 = 0; iVar20 < (int)(pFVar21[3]._ptr + pFVar21[3]._bufsize); iVar20 = iVar20 + 1) {
+        uVar10 = pFVar21[4]._flag;
         iVar18 = iVar17 + 0x10;
         iVar3 = iVar17 + 10;
         iVar4 = iVar17 + 4;
@@ -184,7 +182,7 @@ void core_skeledit_cpp_ParseSkeletonBase_FUN_0058f120(void)
         iVar8 = iVar17 + 0xc;
         iVar9 = iVar17 + 6;
         puVar15 = (ushort *)(iVar17 + uVar10);
-        puVar2 = (undefined4 *)(pFVar20[5]._cnt + iVar14);
+        puVar2 = (undefined4 *)(pFVar21[5]._cnt + iVar14);
         iVar14 = iVar14 + 4;
         iVar17 = iVar17 + 0x12;
         crt_stdio_c_fprintf_FUN_005fe6d0
@@ -194,28 +192,28 @@ void core_skeledit_cpp_ParseSkeletonBase_FUN_0058f120(void)
                    (uint)*(ushort *)(iVar5 + uVar10) << 8,(uint)*(ushort *)(iVar4 + uVar10),
                    (uint)*(ushort *)(iVar3 + uVar10) << 8,(uint)*(ushort *)(iVar18 + uVar10) << 8);
       }
-      pFVar20 = (FILE *)&pFVar20->_cnt;
-      iVar11 = iVar11 + 1;
-    } while (iVar11 < (int)in_stack_00000038->_ptr);
+      pFVar21 = (FILE *)&pFVar21->_cnt;
+      iVar19 = iVar19 + 1;
+    } while (iVar19 < (int)in_stack_00000038->_ptr);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_0000003c,"// capTriList: matching part\n");
-  iVar11 = 0;
+  iVar19 = 0;
   if (0 < (int)in_stack_0000003c->_ptr) {
     iVar14 = 0;
     do {
       iVar17 = 0;
-      for (iVar19 = 0; iVar19 < *(int *)((int)&in_stack_0000003c[3]._bufsize + iVar14);
-          iVar19 = iVar19 + 1) {
+      for (iVar20 = 0; iVar20 < *(int *)((int)&in_stack_0000003c[3]._bufsize + iVar14);
+          iVar20 = iVar20 + 1) {
         puVar2 = (undefined4 *)(iVar17 + *(int *)((int)&in_stack_0000003c[5]._ungotten + iVar14));
         iVar17 = iVar17 + 4;
         crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000040,"%d\n",*puVar2);
       }
-      iVar11 = iVar11 + 1;
+      iVar19 = iVar19 + 1;
       iVar14 = iVar14 + 4;
-    } while (iVar11 < (int)in_stack_0000003c->_ptr);
+    } while (iVar19 < (int)in_stack_0000003c->_ptr);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000040,"// texture list\n");
-  iVar11 = 0;
+  iVar19 = 0;
   if (0 < in_stack_00000040[6]._handle) {
     puVar15 = &in_stack_00000040[6]._ungotten;
     do {
@@ -228,17 +226,17 @@ void core_skeledit_cpp_ParseSkeletonBase_FUN_0058f120(void)
           iVar17 = iVar17 + 0x48;
         } while (iVar14 < (int)in_stack_00000040[6]._bufsize);
       }
-      iVar11 = iVar11 + 1;
+      iVar19 = iVar19 + 1;
       puVar15 = puVar15 + 0xb40;
-    } while (iVar11 < in_stack_00000040[6]._handle);
+    } while (iVar19 < in_stack_00000040[6]._handle);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000044,"// bone origin list\n");
-  iVar11 = 0;
+  iVar19 = 0;
   if (0 < unaff_ESI) {
     do {
-      iVar11 = iVar11 + 1;
+      iVar19 = iVar19 + 1;
       crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000048,"%g,%g,%g\n");
-    } while (iVar11 < unaff_ESI);
+    } while (iVar19 < unaff_ESI);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000048,"// defaultRootOffsetScale\n");
   crt_stdio_c_fprintf_FUN_005fe6d0
@@ -255,12 +253,12 @@ void core_skeledit_cpp_ParseSkeletonBase_FUN_0058f120(void)
              (int)((ulonglong)(double)*(float *)(in_stack_00000050 + 0x8140) >> 0x20),
              SUB84((double)*(float *)(in_stack_00000050 + 0x8144),0));
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000048,"// partForBoneList\n");
-  iVar11 = 0;
+  iVar19 = 0;
   if (0 < (int)in_stack_00000014) {
     do {
       crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_0000005c,"%d\n");
-      iVar11 = iVar11 + 1;
-    } while (iVar11 < (int)in_stack_00000014);
+      iVar19 = iVar19 + 1;
+    } while (iVar19 < (int)in_stack_00000014);
   }
   if ((in_stack_0000005c->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
@@ -285,7 +283,7 @@ void core_skeledit_cpp_ParseSkeletonBase_FUN_0058f120(void)
 // 0058f131: MOV EDX,dword ptr [ESP + 0x44]
 //   XREF to: Stack[0x4] (READ)
 // 0058f135: PUSH EDX
-// 0058f136: CALL core_skeleton.cpp_CDeformableModel_SkeletonPtrNotSet_FUN_0059a810
+// 0058f136: CALL core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810
 //   XREF to: 0059a810 (UNCONDITIONAL_CALL)
 // 0058f13b: ADD ESP,0x4
 // 0058f13e: PUSH 0x64b1ef

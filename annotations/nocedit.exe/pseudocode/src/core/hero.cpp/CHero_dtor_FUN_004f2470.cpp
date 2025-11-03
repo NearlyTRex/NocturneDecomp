@@ -38,7 +38,7 @@ core_hero_cpp_CHero_dtor_FUN_004f2470
   CPathMap *pCVar2;
   CDeformableModelInstance *pCVar3;
   
-  (this_ptr->base_character).base_actor.metadata.vtable = &g_CHeroVTable;
+  (this_ptr->base_character).base_actor.vtable = &g_CHeroVTable;
   iVar1 = 0;
   do {
     if (this_ptr == *(CHero **)((int)g_HeroActors + iVar1)) {
@@ -56,7 +56,8 @@ core_hero_cpp_CHero_dtor_FUN_004f2470
   iVar1 = core_cloth_cpp_FUN_0043bf80();
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
                      ((CDeformableModelInstance *)(iVar1 + -0x293c),0,d5,d6,d7);
-  core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(pCVar3[-1].padding_0x0 + 0x215c),1);
+  core_actor_cpp_CDemonActor_dtor_FUN_00408a30
+            ((CDemonActor *)(pCVar3[-1].part_visibility_flags + 7),1);
   return;
 }
 

@@ -16,7 +16,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 core_game.cpp_CGame_beginFadeOut_FUN_004e0960() */
 
 void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
@@ -28,12 +27,8 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
   int aiStackY_1018 [1000];
   CVector3i *in_stack_ffffff94;
   CVector3i CStack_54;
-  float fStack_48;
-  float fStack_44;
-  float fStack_40;
-  float fStack_3c;
-  float fStack_38;
-  float fStack_34;
+  CVector3f CStack_48;
+  CVector3f CStack_3c;
   int iStack_30;
   int aiStack_2c [5];
   float fStack_18;
@@ -49,14 +44,15 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
     pfVar1 = (float *)(**(code **)(*(int *)(g_CScriptPtr->focusActor + 0x154) + 0x14))();
     fStack_18 = *pfVar1 + pfVar1[3];
     fStack_14 = pfVar1[1] + pfVar1[4];
-    fStack_3c = fStack_18 * _DAT_0062c92d;
+    CStack_3c.x = fStack_18 * FLOAT_0062c92d;
     fStack_10 = pfVar1[2] + pfVar1[5];
-    fStack_38 = fStack_14 * _DAT_0062c92d;
-    fStack_34 = fStack_10 * _DAT_0062c92d;
-    core_actor_cpp_CDemonActor_FUN_00408ec0((CDemonActor *)g_CScriptPtr->focusActor);
-    CStack_54.x = (int)ROUND(fStack_48 * FLOAT_0065e9b4);
-    CStack_54.y = (int)ROUND(fStack_44 * FLOAT_0065e9b4);
-    CStack_54.z = (int)ROUND(fStack_40 * FLOAT_0065e9b4);
+    CStack_3c.y = fStack_14 * FLOAT_0062c92d;
+    CStack_3c.z = fStack_10 * FLOAT_0062c92d;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              ((CDemonActor *)g_CScriptPtr->focusActor,&CStack_48,&CStack_3c);
+    CStack_54.x = (int)ROUND(CStack_48.x * FLOAT_0065e9b4);
+    CStack_54.y = (int)ROUND(CStack_48.y * FLOAT_0065e9b4);
+    CStack_54.z = (int)ROUND(CStack_48.z * FLOAT_0065e9b4);
     core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
               (&g_CDemonCameraInstance,&CStack_54,in_stack_ffffff94);
     iStack_30 = aiStack_2c[2];

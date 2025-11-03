@@ -13,7 +13,7 @@
 //   undefined4 g_CTommyGunClassInfo.name_hash
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 
 #include "nocturne.h"
@@ -26,40 +26,45 @@ undefined4 core_icepick_cpp_FUN_004f8970(void)
 {
   CDemonActor *this_ptr;
   float fVar1;
-  float fVar2;
-  CDemonActor *pCVar3;
+  CDemonActor *pCVar2;
+  BADSPACEBASE *in_ESP;
   float unaff_ESI;
+  int iVar3;
   int iVar4;
-  int iVar5;
   CDemonActor *in_stack_00000004;
   float fStack_30;
-  float local_28;
+  CVector3f local_28;
+  float local_1c;
   float fStack_18;
   
   in_stack_00000004[0x17a].actor_name[8] = '\0';
   in_stack_00000004[0x17a].actor_name[9] = '\0';
   in_stack_00000004[0x17a].actor_name[10] = '\0';
   in_stack_00000004[0x17a].actor_name[0xb] = '\0';
-  local_28 = 1.0;
-  core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-  iVar5 = 0;
-  for (iVar4 = 0; iVar4 < (int)g_CDemonSetPtr->actor_list_ptr; iVar4 = iVar4 + 1) {
-    this_ptr = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar5);
-    pCVar3 = (*((this_ptr->metadata).vtable)->getCarrier)(this_ptr);
-    if (pCVar3 == (CDemonActor *)0x0) {
-      pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790(this_ptr,g_CTommyGunClassInfo.name_hash);
-      if (pCVar3 != (CDemonActor *)0x0) {
-        fVar1 = (this_ptr->location).position.x - 2.0;
-        local_28 = (this_ptr->location).position.y - 4.0;
-        fVar2 = (this_ptr->location).position.z - fStack_18;
-        if ((ABS(local_28) <= (float)_DAT_0062f753) &&
-           (fVar1 = fVar1 * fVar1 + fVar2 * fVar2, fVar1 <= unaff_ESI)) {
+  local_1c = 4.0;
+  local_28.x = 1.0;
+  local_28.y = 0.0;
+  local_28.z = 2.0;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (in_stack_00000004,(CVector3f *)&stack0xffffffcc,&local_28);
+  iVar4 = 0;
+  for (iVar3 = 0; iVar3 < (int)g_CDemonSetPtr->actor_list_ptr; iVar3 = iVar3 + 1) {
+    this_ptr = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar4);
+    pCVar2 = (*this_ptr->vtable->getCarrier)(this_ptr);
+    if (pCVar2 == (CDemonActor *)0x0) {
+      pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790(this_ptr,g_CTommyGunClassInfo.name_hash);
+      if (pCVar2 != (CDemonActor *)0x0) {
+        fVar1 = (this_ptr->location).position.x - local_28.z;
+        local_28.x = (this_ptr->location).position.y - local_1c;
+        local_28.y = (this_ptr->location).position.z - fStack_18;
+        if ((ABS(local_28.x) <= (float)_DAT_0062f753) &&
+           (fVar1 = fVar1 * fVar1 + local_28.y * local_28.y, fVar1 <= unaff_ESI)) {
           *(CDemonActor **)(in_stack_00000004[0x17a].actor_name + 8) = this_ptr;
           unaff_ESI = fVar1;
         }
       }
     }
-    iVar5 = iVar5 + 4;
+    iVar4 = iVar4 + 4;
   }
   if (*(int *)(in_stack_00000004[0x17a].actor_name + 8) == 0) {
     return 0;
@@ -68,9 +73,10 @@ undefined4 core_icepick_cpp_FUN_004f8970(void)
        (*(float *)(*(int *)(in_stack_00000004[0x17a].actor_name + 8) + 0x20) - fStack_30) +
        (in_stack_00000004->location).position.x;
   (in_stack_00000004->location).position.z =
-       (*(float *)(*(int *)(in_stack_00000004[0x17a].actor_name + 8) + 0x28) - local_28) +
+       (*(float *)(*(int *)(in_stack_00000004[0x17a].actor_name + 8) + 0x28) - local_28.x) +
        (in_stack_00000004->location).position.z;
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+            ((CMotionController *)(in_stack_00000004 + 1));
   return 1;
 }
 
@@ -109,7 +115,7 @@ undefined4 core_icepick_cpp_FUN_004f8970(void)
 // 004f89b4: MOV dword ptr [ESP + 0x2c],ESI
 //   XREF to: Stack[-0x20] (WRITE)
 // 004f89b8: XOR ESI,ESI
-// 004f89ba: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 004f89ba: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 004f89bf: ADD ESP,0xc
 // 004f89c2: XOR EDI,EDI

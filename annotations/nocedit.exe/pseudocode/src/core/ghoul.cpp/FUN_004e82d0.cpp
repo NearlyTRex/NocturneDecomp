@@ -4,19 +4,18 @@
 // Convention: unknown
 // Signature: undefined core_ghoul.cpp_FUN_004e82d0()
 // Globals:
-//   undefined4 DAT_0062de5a
+//   float FLOAT_0062de5a = 0.5
 //   undefined4 DAT_02d83300
 //   undefined4 DAT_02d83304
 //   undefined4 DAT_02d83308
 //   undefined4 DAT_02d8330c
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_motion.cpp_CMotionController_FUN_0052dd20
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_ghoul.cpp_FUN_004e82d0(undefined4 param_1, undefined4 param_2)
     */
 
@@ -25,22 +24,54 @@ undefined4 core_ghoul_cpp_FUN_004e82d0(void)
 {
   float fVar1;
   float *pfVar2;
-  float *in_stack_00000008;
+  float *pfVar3;
+  CVector3f *pCVar4;
+  BADSPACEBASE *in_ESP;
+  int in_stack_00000004;
+  CVector3f *in_stack_00000008;
   CDemonActor *in_stack_00000018;
+  CVector3f local_5c;
+  float local_50;
+  float local_4c;
+  float fStack_48;
+  float fStack_44;
+  float local_40;
+  float fStack_3c;
+  float local_28;
+  float local_24;
+  float local_20;
+  float fStack_14;
+  float local_10;
   
-  fVar1 = (float)core_motion_cpp_CMotionController_FUN_0052dd20();
+  fVar1 = core_motion_cpp_CMotionController_FUN_0052dd20
+                    ((CMotionController *)(in_stack_00000004 + 0x158));
   if (fVar1 <= 0.0) {
     return 0;
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  pfVar2 = core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000018);
-  if (in_stack_00000008 != pfVar2) {
-    *in_stack_00000008 = *pfVar2;
-    in_stack_00000008[1] = pfVar2[1];
-    in_stack_00000008[2] = pfVar2[2];
+  pfVar2 = (float *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+  pfVar3 = (float *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+  local_28 = *pfVar3 + *pfVar2;
+  local_24 = pfVar3[1] + pfVar2[1];
+  local_4c = local_28 * FLOAT_0062de5a;
+  local_20 = pfVar3[2] + pfVar2[2];
+  fStack_48 = local_24 * FLOAT_0062de5a;
+  fStack_44 = local_20 * FLOAT_0062de5a;
+  pfVar2 = (float *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+  pfVar3 = (float *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+  local_50 = (*pfVar3 + *pfVar2) * FLOAT_0062de5a;
+  local_4c = (pfVar3[1] + pfVar2[1]) * FLOAT_0062de5a;
+  fStack_14 = fStack_44 + local_50;
+  fStack_48 = (pfVar3[2] + pfVar2[2]) * FLOAT_0062de5a;
+  local_5c.x = fStack_14 * FLOAT_0062de5a;
+  local_10 = local_40 + local_4c;
+  local_5c.y = local_10 * FLOAT_0062de5a;
+  local_5c.z = (fStack_3c + fStack_48) * FLOAT_0062de5a;
+  pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                     (in_stack_00000018,(CVector3f *)&stack0xfffffff8,&local_5c);
+  if (in_stack_00000008 != pCVar4) {
+    in_stack_00000008->x = pCVar4->x;
+    in_stack_00000008->y = pCVar4->y;
+    in_stack_00000008->z = pCVar4->z;
   }
   return 1;
 }
@@ -229,7 +260,7 @@ undefined4 core_ghoul_cpp_FUN_004e82d0(void)
 //   XREF to: Stack[-0x6c] (WRITE)
 // 004e8466: FSTP float ptr [ESP + 0x3c]
 //   XREF to: Stack[-0x68] (WRITE)
-// 004e846a: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 004e846a: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 004e846f: ADD ESP,0xc
 // 004e8472: CMP EDI,EAX

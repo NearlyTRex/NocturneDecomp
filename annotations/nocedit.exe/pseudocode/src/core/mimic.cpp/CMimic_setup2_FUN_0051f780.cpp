@@ -8,7 +8,7 @@
 //   TerminatedCString s_CMimic_setup_can_t_use_m_0063870b
 //   CEventList* g_CEventListPtr = 02d05310
 //   CNetGame* g_CNetGameInstance = 02f7c740
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CHero*[4] g_HeroActors
 //   int g_LocalHeroIndex
 //   char* g_CurrentFilename
@@ -17,7 +17,7 @@
 // Function calls:
 //   core_charactr.cpp_CCharacter_FUN_00429870
 //   core_charactr.cpp_CCharacter_FUN_0042d530
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0
 //   core_mimic.cpp_FUN_0051f930
@@ -59,7 +59,7 @@ void core_mimic_cpp_CMimic_setup2_FUN_0051f780(void)
   if (iVar3 != 0) {
     if (*(int *)(in_stack_00000004[6].cloth_data + 0x1e84) < 2) {
       if ((*(int *)(in_stack_00000004[6].cloth_data + 0x1e84) < 1) &&
-         (iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+         (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                             (g_CEventListPtr,(char *)&in_stack_00000004[1].base_actor.is_transparent
                             ), iVar3 != 0)) {
         in_stack_00000004[6].cloth_data[0x1e84] = '\x01';
@@ -67,11 +67,13 @@ void core_mimic_cpp_CMimic_setup2_FUN_0051f780(void)
         in_stack_00000004[6].cloth_data[0x1e86] = '\0';
         in_stack_00000004[6].cloth_data[0x1e87] = '\0';
       }
-      iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+      iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,in_stack_00000004[1].base_actor.create_event + 0x20);
       if ((iVar3 != 0) &&
          (core_mimic_cpp_FUN_0051f930(), *(int *)(in_stack_00000004[6].cloth_data + 0x1e84) == 1)) {
-        iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0();
+        iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0
+                          (&(g_HeroActors[g_LocalHeroIndex]->base_character).model.motion_controller
+                          );
         uVar2 = *(uint *)(iVar3 + 0x24);
         if ((uVar2 < 3) || (uVar2 < 4)) {
 LAB_0051f8da:
@@ -205,7 +207,7 @@ LAB_0051f8da:
 //   XREF to: 006793d0 (READ)
 // 0051f85e: PUSH EAX
 //   XREF to: 02d05310 (DATA)
-// 0051f85f: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0051f85f: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0051f864: ADD ESP,0x8
 // 0051f867: TEST EAX,EAX
@@ -220,7 +222,7 @@ LAB_0051f8da:
 //   XREF to: 006793d0 (READ)
 // 0051f882: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 0051f883: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0051f883: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0051f888: ADD ESP,0x8
 // 0051f88b: TEST EAX,EAX

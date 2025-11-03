@@ -5,7 +5,7 @@
 // Signature: void core_fire.cpp_CFireEffect_FUN_004c7d60(CFireEffect * this_ptr)
 // Globals:
 //   CGlassParticle* g_CFireEffectGlassParticlesEnd
-//   CBulletTrail[10] g_CFireEffectBulletTrails
+//   CBulletTrail[10] g_BulletTrailPool
 // Function calls:
 //   core_fire.cpp_FUN_004c2170
 

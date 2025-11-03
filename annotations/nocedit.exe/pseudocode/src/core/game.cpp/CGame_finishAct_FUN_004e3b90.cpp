@@ -6,23 +6,23 @@
 // Cross-references:
 //   core_mission.cpp_CDemonMission_run_FUN_00524420 (00524420) at 00524617 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_To_be_continued..._0062d555
+//   TerminatedCString s_To_be_continued_0062d555
 //   TerminatedCString s_stats_0062d568
 //   TerminatedCString s_Mission_time_0062d56e
-//   undefined1 DAT_0062d57b
-//   undefined1 DAT_0062d57c
-//   undefined1 DAT_0062d57d
+//   TerminatedCString s_anon_0062d57b
+//   undefined4 DAT_0062d57c
+//   undefined4 DAT_0062d57d
 //   TerminatedCString s_s_2d_2d_2d_2d_0062d57e
 //   TerminatedCString s_Total_body_count_0062d590
-//   undefined1 DAT_0062d5a1
-//   undefined1 DAT_0062d5a2
-//   undefined1 DAT_0062d5a3
+//   TerminatedCString s_anon_0062d5a1
+//   undefined4 DAT_0062d5a2
+//   undefined4 DAT_0062d5a3
 //   TerminatedCString s_d_0062d5a4
-//   undefined4 DAT_0062d5ad
-//   undefined4 DAT_0062d5b5
-//   undefined4 DAT_0062d5bd
-//   undefined4 DAT_0062d5c5
-//   undefined4 DAT_0062d5cd
+//   double DOUBLE_0062d5ad = 0.000277777777777778
+//   double DOUBLE_0062d5b5 = 3600
+//   double DOUBLE_0062d5bd = 0.0166666666666667
+//   double DOUBLE_0062d5c5 = 60
+//   double DOUBLE_0062d5cd = 100
 //   int g_WindowWidth = 0x140
 //   int g_WindowHeight = 0xc8
 //   CBitFont* g_ThemeFont
@@ -52,7 +52,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: int core_game.cpp_CGame_finishAct(CGame* param_1) */
 
 void core_game_cpp_CGame_finishAct_FUN_004e3b90
@@ -100,7 +99,7 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90
     core_game_cpp_CGame_saveClockTime_FUN_004d7d80(param_5,in_stack_fffffab4);
     for (fVar14 = 5.0; 0.0 < fVar14; fVar14 = fVar14 - param_5->delta_time_float) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
-      pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Y@To be continued..." + 2);
+      pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("To be continued...");
       fVar14 = 0.0;
       engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
                 (this_ptr,0,g_WindowWidth + -1,(g_WindowHeight - iVar2) / 2,0xf8,0,pcVar3);
@@ -119,23 +118,23 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(aCStack_40,0,0,0xffff);
   fVar11 = (float10)param_5->player_pos_y;
-  fVar12 = fVar11 * (float10)_DAT_0062d5ad;
+  fVar12 = fVar11 * (float10)DOUBLE_0062d5ad;
   dVar13 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,param_5));
   local_14 = (int)ROUND(fVar12);
-  fVar11 = fVar11 - (float10)local_14 * (float10)_DAT_0062d5b5;
+  fVar11 = fVar11 - (float10)local_14 * (float10)DOUBLE_0062d5b5;
   param_5->player_pos_y = (float)fVar11;
-  fVar12 = fVar11 * (float10)_DAT_0062d5bd;
+  fVar12 = fVar11 * (float10)DOUBLE_0062d5bd;
   dVar13 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44((int)((ulonglong)dVar13 >> 0x20),param_5))
   ;
   local_18 = (int)ROUND(fVar12);
-  fVar11 = fVar11 - (float10)local_18 * (float10)_DAT_0062d5c5;
+  fVar11 = fVar11 - (float10)local_18 * (float10)DOUBLE_0062d5c5;
   *(float *)(local_18 + 0x248) = (float)fVar11;
   dVar13 = crt_math_c_round_FUN_005fe6b0
                      ((double)CONCAT44((int)((ulonglong)dVar13 >> 0x20),local_18));
   iVar2 = (int)ROUND(fVar11);
   fVar12 = (float10)*(float *)(iVar2 + 0x248) - (float10)iVar2;
   *(float *)(iVar2 + 0x248) = (float)fVar12;
-  fVar12 = fVar12 * (float10)_DAT_0062d5cd;
+  fVar12 = fVar12 * (float10)DOUBLE_0062d5cd;
   crt_math_c_round_FUN_005fe6b0((double)CONCAT44((int)((ulonglong)dVar13 >> 0x20),iVar2));
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(in_stack_fffffacc);
   pcVar3 = &stack0xfffffad8;
@@ -148,7 +147,7 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = &DAT_0062d57b;
+  pcVar4 = "\n\n";
   iVar2 = -1;
   pcVar3 = &stack0xfffffad8;
   do {
@@ -229,7 +228,7 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90
     pcVar8[1] = cVar1;
     pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = &DAT_0062d5a1;
+  pcVar4 = "\n\n";
   iVar2 = -1;
   pcVar3 = &stack0xfffffae0;
   do {

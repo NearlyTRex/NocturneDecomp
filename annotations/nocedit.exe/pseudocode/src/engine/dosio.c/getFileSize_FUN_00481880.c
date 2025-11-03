@@ -7,7 +7,7 @@
 //   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40 (0054bf40) at 0054bf6e [UNCONDITIONAL_CALL]
 //   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0 (0044f3e0) at 0044f606 [UNCONDITIONAL_CALL]
 //   core_dfilter.cpp_CDemonFilter_load_FUN_004702f0 (004702f0) at 00470335 [UNCONDITIONAL_CALL]
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ab444 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ab444 [UNCONDITIONAL_CALL]
 //   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 (004bda20) at 004bdedd [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 (004e12b0) at 004e1510 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_openSomething_FUN_004e2910 (004e2910) at 004e294b [UNCONDITIONAL_CALL]

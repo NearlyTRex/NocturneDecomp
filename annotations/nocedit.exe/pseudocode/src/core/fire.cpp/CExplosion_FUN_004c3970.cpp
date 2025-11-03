@@ -9,8 +9,8 @@
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
-//   core_actor.cpp_FUN_0040cd10
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_set.cpp_CDemonSet_FUN_00570fa0
 
 #include "nocturne.h"
@@ -19,7 +19,7 @@ void __cdecl core_fire_cpp_CExplosion_FUN_004c3970(CExplosion *this_ptr)
 
 {
   CDemonSet *this_ptr_00;
-  undefined4 uVar1;
+  int iVar1;
   float fVar2;
   int iVar3;
   CExplosion *in_stack_00000008;
@@ -40,8 +40,8 @@ void __cdecl core_fire_cpp_CExplosion_FUN_004c3970(CExplosion *this_ptr)
   *(undefined4 *)(this_ptr->field0_0x0 + 0x10) = in_stack_0000000c;
   core_set_cpp_CDemonSet_FUN_00570fa0(this_ptr_00);
   iVar3 = 0;
-  uVar1 = core_actor_cpp_FUN_0040cd10();
-  *(undefined4 *)(this_ptr->field0_0x0 + 0x18) = uVar1;
+  iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+  *(int *)(this_ptr->field0_0x0 + 0x18) = iVar1;
   *(undefined4 *)(this_ptr->field0_0x0 + 0x14) = in_stack_00000018;
   do {
     core_actor_cpp_getRandomFloat_FUN_0040cc10(0.7853982,1.5707964);
@@ -51,7 +51,7 @@ void __cdecl core_fire_cpp_CExplosion_FUN_004c3970(CExplosion *this_ptr)
     fsin((float10)fVar2);
     fsin((float10)fStack_18);
     core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-              (g_CFireEffectKeyFramedModels + iVar3 % 5);
+              (g_CFireEffectDebrisModels + iVar3 % 5);
     iVar3 = iVar3 + 1;
     core_fire_cpp_CFireEffect_FUN_004c7e60(g_CFireEffectPtr);
   } while (iVar3 < 10);
@@ -96,7 +96,7 @@ void __cdecl core_fire_cpp_CExplosion_FUN_004c3970(CExplosion *this_ptr)
 // 004c39be: LEA EDI,[ESI + 0x4]
 // 004c39c1: PUSH 0x3f000000
 // 004c39c6: XOR EBX,EBX
-// 004c39c8: CALL core_actor.cpp_FUN_0040cd10
+// 004c39c8: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 004c39cd: ADD ESP,0x4
 // 004c39d0: MOV dword ptr [ESI + 0x18],EAX

@@ -120,7 +120,7 @@ void __cdecl core_mission_cpp_FUN_00524c20(void)
     pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (actor_ptr,g_CHeroPlaceholderClassInfo.name_hash);
     if ((pCVar2 != (CDemonActor *)0x0) && (*(int *)pCVar2[1].actor_name == 0)) break;
-    actor_ptr = (actor_ptr->metadata).next_actor;
+    actor_ptr = actor_ptr->next_actor;
   }
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
             ((CPickList *)&stack0xfffffc50,0,in_stack_fffffc50,(uint)in_stack_fffffc54,

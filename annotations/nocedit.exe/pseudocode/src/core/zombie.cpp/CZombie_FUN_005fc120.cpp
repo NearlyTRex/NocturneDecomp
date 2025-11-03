@@ -6,7 +6,7 @@
 // Globals:
 //   undefined4 DAT_006589b5
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_motion.cpp_CMotionController_FUN_0052dd20
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
 
@@ -20,21 +20,37 @@ undefined4 core_zombie_cpp_CZombie_FUN_005fc120(void)
 
 {
   float fVar1;
-  float *pfVar2;
+  CVector3f *pCVar2;
+  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  float *in_stack_00000008;
+  CVector3f *in_stack_00000008;
+  float local_40;
+  float fStack_3c;
+  float fStack_38;
+  CVector3f local_34;
+  float local_28;
+  float local_24;
+  float local_20;
+  CVector3f local_1c;
+  float local_10;
   
-  fVar1 = (float)core_motion_cpp_CMotionController_FUN_0052dd20();
+  fVar1 = core_motion_cpp_CMotionController_FUN_0052dd20
+                    ((CMotionController *)(in_stack_00000004 + 1));
   if (fVar1 <= 0.0) {
     return 0;
   }
   core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
   core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  pfVar2 = core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-  if (in_stack_00000008 != pfVar2) {
-    *in_stack_00000008 = *pfVar2;
-    in_stack_00000008[1] = pfVar2[1];
-    in_stack_00000008[2] = pfVar2[2];
+  local_10 = local_28 + local_40;
+  local_1c.x = local_10 * _DAT_006589b5;
+  local_1c.y = (local_24 + fStack_3c) * _DAT_006589b5;
+  local_1c.z = (local_20 + fStack_38) * _DAT_006589b5;
+  pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                     (in_stack_00000004,&local_34,&local_1c);
+  if (in_stack_00000008 != pCVar2) {
+    in_stack_00000008->x = pCVar2->x;
+    in_stack_00000008->y = pCVar2->y;
+    in_stack_00000008->z = pCVar2->z;
   }
   return 1;
 }
@@ -133,7 +149,7 @@ undefined4 core_zombie_cpp_CZombie_FUN_005fc120(void)
 //   XREF to: Stack[-0x24] (WRITE)
 // 005fc1d1: FSTP float ptr [ESP + 0x38]
 //   XREF to: Stack[-0x20] (WRITE)
-// 005fc1d5: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005fc1d5: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005fc1da: ADD ESP,0xc
 // 005fc1dd: CMP EDI,EAX

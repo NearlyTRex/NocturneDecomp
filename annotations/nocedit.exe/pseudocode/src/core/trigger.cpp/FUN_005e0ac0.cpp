@@ -5,7 +5,7 @@
 // Signature: undefined core_trigger.cpp_FUN_005e0ac0()
 // Cross-references:
 //   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 (0040a210) at 0040ab09 [UNCONDITIONAL_CALL]
-//   core_crossbow.cpp_FUN_00448f20 (00448f20) at 00449277 [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_FUN_00448f20 (00448f20) at 00449277 [UNCONDITIONAL_CALL]
 //   core_gun.cpp_FUN_004f0350 (004f0350) at 004f0a6c [UNCONDITIONAL_CALL]
 //   core_lightgun.cpp_FUN_00505c70 (00505c70) at 00506200 [UNCONDITIONAL_CALL]
 //   core_tommygun.cpp_FUN_005ddb30 (005ddb30) at 005de285 [UNCONDITIONAL_CALL]

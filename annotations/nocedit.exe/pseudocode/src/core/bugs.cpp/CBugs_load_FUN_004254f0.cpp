@@ -57,19 +57,19 @@ void core_bugs_cpp_CBugs_load_FUN_004254f0(void)
     } while (iVar2 < *(int *)(in_stack_00000004[1].base_character.cloth_data + 0x3978));
   }
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)(in_stack_00000004[2].base_character.model.padding_0x0 + 0x19d8),
+            ((int *)(in_stack_00000004[2].base_character.model.field3_0x508 + 0x14d0),
              "allowChase");
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)(in_stack_00000004[2].base_character.model.padding_0x0 + 0x19dc),
+            ((int *)(in_stack_00000004[2].base_character.model.field3_0x508 + 0x14d4),
              "allowSwarm");
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)(in_stack_00000004[2].base_character.model.padding_0x0 + 0x19e0),
+            ((char **)(in_stack_00000004[2].base_character.model.field3_0x508 + 0x14d8),
              "allowChaseEvent");
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)(in_stack_00000004[2].base_character.model.padding_0x0 + 0x1a44),
+            ((char **)(in_stack_00000004[2].base_character.model.field3_0x508 + 0x153c),
              "allowSwarmEvent");
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)(in_stack_00000004[2].base_character.model.padding_0x0 + 0x1aa8),
+            ((char **)(in_stack_00000004[2].base_character.model.field3_0x508 + 0x15a0),
              "animateEvent");
   return;
 }

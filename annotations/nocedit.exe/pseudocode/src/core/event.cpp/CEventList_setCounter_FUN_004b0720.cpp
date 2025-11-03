@@ -1,10 +1,10 @@
 // Name: core_event.cpp_CEventList_setCounter_FUN_004b0720
 // Address: 004b0720
 // Address Range: [[004b0720, 004b0824]]
-// Convention: unknown
-// Signature: undefined core_event.cpp_CEventList_setCounter_FUN_004b0720()
+// Convention: __cdecl
+// Signature: void core_event.cpp_CEventList_setCounter_FUN_004b0720(CEventList * this_ptr)
 // Cross-references:
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004abc14 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004abc14 [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055d299 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_event_cpp_00625bbb
@@ -12,16 +12,13 @@
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
-//   core_event.cpp_FUN_004b0950
+//   core_event.cpp_CEventList_FUN_004b0950
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   crt_string.c_memmove_FUN_005fe5e0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_event.cpp_CEventList_setCounter(undefined4 param_1, undefined4
-   param_2, undefined4 param_3) */
-
-void core_event_cpp_CEventList_setCounter_FUN_004b0720(void)
+void __cdecl core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_ptr)
 
 {
   int iVar1;
@@ -29,19 +26,18 @@ void core_event_cpp_CEventList_setCounter_FUN_004b0720(void)
   int iVar3;
   int iVar4;
   char *pcVar5;
-  int in_stack_00000004;
   int in_stack_0000000c;
   char *in_stack_00000010;
   
-  iVar3 = core_event_cpp_FUN_004b0950();
+  iVar3 = core_event_cpp_CEventList_FUN_004b0950(this_ptr);
   if (iVar3 < 0) {
     if (in_stack_0000000c != 0) {
-      if (9 < *(int *)(in_stack_00000004 + 0x337c)) {
+      if (9 < this_ptr->counter_count) {
         g_CurrentFilename = "..\\core\\event.cpp";
         g_CurrentLineNumber = 0xab2;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setCounter - too many counters!");
       }
-      pcVar5 = (char *)(in_stack_00000004 + 0x3380 + *(int *)(in_stack_00000004 + 0x337c) * 0x20);
+      pcVar5 = this_ptr->field16_0x3380 + this_ptr->counter_count * 0x20;
       do {
         cVar2 = *in_stack_00000010;
         *pcVar5 = cVar2;
@@ -51,27 +47,26 @@ void core_event_cpp_CEventList_setCounter_FUN_004b0720(void)
         pcVar5[1] = cVar2;
         pcVar5 = pcVar5 + 2;
       } while (cVar2 != '\0');
-      *(int *)(in_stack_00000004 + 0x34c0 + *(int *)(in_stack_00000004 + 0x337c) * 4) =
+      *(int *)(this_ptr->variablesVarName1 + this_ptr->counter_count * 4 + -0x2c) =
            in_stack_0000000c;
-      *(int *)(in_stack_00000004 + 0x337c) = *(int *)(in_stack_00000004 + 0x337c) + 1;
+      this_ptr->counter_count = this_ptr->counter_count + 1;
       return;
     }
   }
   else {
     iVar1 = iVar3 * 4;
     if (in_stack_0000000c == 0) {
-      iVar4 = *(int *)(in_stack_00000004 + 0x337c) + -1;
-      *(int *)(in_stack_00000004 + 0x337c) = iVar4;
+      iVar4 = this_ptr->counter_count + -1;
+      this_ptr->counter_count = iVar4;
       crt_string_c_memmove_FUN_005fe5e0
-                ((void *)(iVar3 * 0x20 + in_stack_00000004 + 0x3380),
-                 (void *)(iVar3 * 0x20 + 0x20 + in_stack_00000004 + 0x3380),(iVar4 - iVar3) * 0x20);
+                (this_ptr->field16_0x3380 + iVar3 * 0x20,
+                 this_ptr->field16_0x3380 + iVar3 * 0x20 + 0x20,(iVar4 - iVar3) * 0x20);
       crt_string_c_memmove_FUN_005fe5e0
-                ((void *)(in_stack_00000004 + 0x34c0 + iVar1),
-                 (void *)(iVar1 + 4 + in_stack_00000004 + 0x34c0),
-                 (*(int *)(in_stack_00000004 + 0x337c) - iVar3) * 4);
+                (this_ptr->variablesVarName1 + iVar1 + -0x2c,
+                 this_ptr->variablesVarName1 + iVar1 + -0x28,(this_ptr->counter_count - iVar3) * 4);
       return;
     }
-    *(int *)(iVar1 + 0x34c0 + in_stack_00000004) = in_stack_0000000c;
+    *(int *)(this_ptr->variablesVarName1 + iVar1 + -0x2c) = in_stack_0000000c;
   }
   return;
 }
@@ -91,7 +86,7 @@ void core_event_cpp_CEventList_setCounter_FUN_004b0720(void)
 //   XREF to: Stack[0x8] (READ)
 // 004b0730: PUSH EDX
 // 004b0731: PUSH EBX
-// 004b0732: CALL core_event.cpp_FUN_004b0950
+// 004b0732: CALL core_event.cpp_CEventList_FUN_004b0950
 //   XREF to: 004b0950 (UNCONDITIONAL_CALL)
 // 004b0737: MOV ESI,EAX
 // 004b0739: ADD ESP,0x8

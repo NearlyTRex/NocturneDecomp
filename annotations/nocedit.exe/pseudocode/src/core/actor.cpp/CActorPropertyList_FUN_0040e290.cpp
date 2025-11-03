@@ -15,7 +15,7 @@
 //   core_dest.cpp_FUN_0046fe80 (0046fe80) at 0046fed8 [UNCONDITIONAL_CALL]
 //   core_enemy.cpp_CEnemy_FUN_004aa170 (004aa170) at 004aa200 [UNCONDITIONAL_CALL]
 //   core_filmreel.cpp_FUN_004be960 (004be960) at 004be99c [UNCONDITIONAL_CALL]
-//   core_glass.cpp_FUN_004eb3c0 (004eb3c0) at 004eb3e5 [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_getPropertyList_FUN_004eb3c0 (004eb3c0) at 004eb3e5 [UNCONDITIONAL_CALL]
 //   core_hostage.cpp_FUN_004f69c0 (004f69c0) at 004f6acb [UNCONDITIONAL_CALL]
 //   core_marquee.cpp_FUN_0050c3e0 (0050c3e0) at 0050c405 [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_FUN_00520d10 (00520d10) at 00520d91 [UNCONDITIONAL_CALL]
@@ -33,11 +33,14 @@ void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e290(CActorPropertyList *
 
 {
   int iVar1;
-  undefined4 in_stack_00000014;
+  char *in_stack_00000008;
+  void *in_stack_0000000c;
+  void *in_stack_00000014;
   
-  iVar1 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0(this_ptr);
+  iVar1 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
+                    (this_ptr,3,in_stack_00000008,in_stack_0000000c,in_stack_00000014);
   *(undefined4 *)(iVar1 + 0x5c) = 1;
-  *(undefined4 *)(iVar1 + 100) = in_stack_00000014;
+  *(void **)(iVar1 + 100) = in_stack_00000014;
   return;
 }
 

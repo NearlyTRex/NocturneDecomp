@@ -27,7 +27,8 @@ void core_beast_cpp_CBeast_load_FUN_00418330(void)
   core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"speed");
   model_ptr = &(in_stack_00000004->base_character).model;
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
-  core_actor_cpp_serializeMotionState_FUN_0040b9f0(model_ptr,"motion state");
+  core_actor_cpp_serializeMotionState_FUN_0040b9f0
+            (&model_ptr->motion_controller,"motion state");
   return;
 }
 

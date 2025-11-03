@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
 // Cross-references:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040f373 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040f373 [UNCONDITIONAL_CALL]
 //   core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0 (0040b8f0) at 0040b921 [UNCONDITIONAL_CALL]
 //   core_ammo.cpp_CAmmo_FUN_00410fd0 (00410fd0) at 00411044 [UNCONDITIONAL_CALL]
 //   core_ammo.cpp_CAmmo_ctor_FUN_00410dc0 (00410dc0) at 00410dfa [UNCONDITIONAL_CALL]
@@ -31,10 +31,10 @@
 //   core_filmreel.cpp_ctor_FUN_004be6b0 (004be6b0) at 004be6ea [UNCONDITIONAL_CALL]
 //   core_filmreel.cpp_ctor_FUN_004bea40 (004bea40) at 004bea7f [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CToss_create_FUN_004c3ee0 (004c3ee0) at 004c3fef [UNCONDITIONAL_CALL]
-//   core_fire.cpp_Debris_FUN_004c38d0 (004c38d0) at 004c3922 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_FireBalls_FUN_004c0ad0 (004c0ad0) at 004c0b18 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_GunFlashModel_FUN_004c1be0 (004c1be0) at 004c1bea [UNCONDITIONAL_CALL]
-//   core_fire.cpp_flamingstake_FUN_004bfe00 (004bfe00) at 004bfe0a [UNCONDITIONAL_CALL]
+//   core_fire.cpp_loadDebrisAssets_FUN_004c38d0 (004c38d0) at 004c3922 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_loadFireBallAssets_FUN_004c0ad0 (004c0ad0) at 004c0b18 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_loadGunFlashAssets_FUN_004c1be0 (004c1be0) at 004c1bea [UNCONDITIONAL_CALL]
+//   core_fire.cpp_loadStakeAssets_FUN_004bfe00 (004bfe00) at 004bfe0a [UNCONDITIONAL_CALL]
 //   core_flamecan.cpp_FUN_004cb160 (004cb160) at 004cb1ad [UNCONDITIONAL_CALL]
 //   core_flamegun.cpp_FUN_004cb880 (004cb880) at 004cb8a2 [UNCONDITIONAL_CALL]
 //   core_flamegun.cpp_FUN_004cbbc0 (004cbbc0) at 004cbbe2 [UNCONDITIONAL_CALL]

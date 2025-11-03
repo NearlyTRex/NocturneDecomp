@@ -52,7 +52,7 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a9500(CEnemy *this_ptr)
   int *piVar8;
   
   pCVar4 = (CEnemy *)core_charactr_cpp_CCharacter_ctor_FUN_00427e20(&this_ptr->base_character);
-  (pCVar4->base_character).base_actor.metadata.vtable = &PTR_core_enemy_cpp_FUN_004a9650_0065d7d4;
+  (pCVar4->base_character).base_actor.vtable = &PTR_core_enemy_cpp_FUN_004a9650_0065d7d4;
   fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1);
   pCVar4->pool_me = 0;
   pCVar4->field8_0xbeac = 0;
@@ -88,12 +88,12 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a9500(CEnemy *this_ptr)
   (pCVar3->base_actor).actor_name[6] = '\0';
   (pCVar3->base_actor).actor_name[7] = '\0';
   pCVar4->speed = fVar5;
-  iVar6 = core_actor_cpp_FUN_0040cc70();
+  iVar6 = core_actor_cpp_getRandomInt_FUN_0040cc70(-0x1fff,0x1fff);
   (pCVar4->base_character).base_actor.scale.x = iVar6 + 0x10000;
-  iVar6 = core_actor_cpp_FUN_0040cc70();
+  iVar6 = core_actor_cpp_getRandomInt_FUN_0040cc70(-0x1fff,0x1fff);
   pcVar7 = "ene";
   (pCVar4->base_character).base_actor.scale.y = iVar6 + 0x10000;
-  iVar6 = core_actor_cpp_FUN_0040cc70();
+  iVar6 = core_actor_cpp_getRandomInt_FUN_0040cc70(-0x1fff,0x1fff);
   piVar8 = &(pCVar4->base_character).base_actor.field21_0x11c;
   (pCVar4->base_character).base_actor.scale.z = iVar6 + 0x10000;
   do {

@@ -20,9 +20,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined4 core_skeledit.cpp_LoadFileBoneStructureMaybe(char* param_1, FILE* param_2,
-   int param_3, undefined4 param_4) */
-
 undefined4 core_skeledit_cpp_LoadFileBoneStructureMaybe_FUN_005895f0(void)
 
 {

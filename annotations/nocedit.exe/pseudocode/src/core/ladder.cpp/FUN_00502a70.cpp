@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_ladder.cpp_FUN_00502610 (00502610) at 00502615 [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
 //   core_xform.cpp_matrixToEulerAngles_FUN_005f5690
 //   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
@@ -72,7 +72,7 @@ void core_ladder_cpp_FUN_00502a70(void)
     (in_stack_00000004->orient).bank = pCVar2->y;
     (in_stack_00000004->orient).heading = pCVar2->z;
   }
-  core_actor_cpp_CDemonActor_FUN_00408c10(in_stack_00000004);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
   return;
 }
 
@@ -173,7 +173,7 @@ void core_ladder_cpp_FUN_00502a70(void)
 // 00502b5f: MOV dword ptr [EDX + 0x8],ECX
 // 00502b62: PUSH EBX
 //   Label: LAB_00502b62
-// 00502b63: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 00502b63: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 00502b68: ADD ESP,0x4
 // 00502b6b: POP ESI

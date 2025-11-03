@@ -1,8 +1,8 @@
 // Name: core_skeledit.cpp_FUN_00598f10
 // Address: 00598f10
 // Address Range: [[00598f10, 00598fbb]]
-// Convention: unknown
-// Signature: undefined core_skeledit.cpp_FUN_00598f10()
+// Convention: __cdecl
+// Signature: void core_skeledit.cpp_FUN_00598f10(void)
 // Globals:
 //   undefined4 s_..\core\skeledit.cpp_0064e0d2
 //   TerminatedCString s_core_skeledit_cpp_0064e0e7
@@ -14,16 +14,16 @@
 //   int g_CurrentDebugLine
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0
 //   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 
 #include "nocturne.h"
 
-void core_skeledit_cpp_FUN_00598f10(void)
+void __cdecl core_skeledit_cpp_FUN_00598f10(void)
 
 {
   CDeformableModelInstance *this_ptr;
@@ -40,15 +40,15 @@ void core_skeledit_cpp_FUN_00598f10(void)
     g_CurrentLineNumber = 0x1b7a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("viewModel - out of memory!");
   }
-  core_skeleton_cpp_FUN_005a0840();
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
-  core_skeledit_cpp_DefinitelyRelatedToEditorMode_FUN_005968b0();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr);
+  core_skeledit_cpp_CDeformableModelInstance_FUN_005968b0(this_ptr);
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0x1b7e;
   if (this_ptr == (CDeformableModelInstance *)0x0) {
     return;
   }
-  (*(code *)**(undefined4 **)(this_ptr->padding_0x0 + 0x50))();
+  (*(code *)((this_ptr->motion_controller).vtable)->dtor)();
   return;
 }
 
@@ -94,18 +94,18 @@ void core_skeledit_cpp_FUN_00598f10(void)
 //   XREF to: Stack[0x4] (READ)
 // 00598f66: PUSH ESI
 // 00598f67: PUSH EBX
-// 00598f68: CALL core_skeleton.cpp_FUN_005a0840
+// 00598f68: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00598f6d: ADD ESP,0x8
 // 00598f70: PUSH EBX
-// 00598f71: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 00598f71: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 00598f76: ADD ESP,0x4
 // 00598f79: PUSH EBX
 // 00598f7a: MOV EDI,0x64e117
 //   XREF to: 0064e117 (DATA)
 // 00598f7f: MOV EBP,0x1b7e
-// 00598f84: CALL core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0
+// 00598f84: CALL core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0
 //   XREF to: 005968b0 (UNCONDITIONAL_CALL)
 // 00598f89: ADD ESP,0x4
 // 00598f8c: MOV dword ptr [0x0067d20c],EDI

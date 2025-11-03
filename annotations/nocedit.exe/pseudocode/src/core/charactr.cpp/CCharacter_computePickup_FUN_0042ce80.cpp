@@ -71,8 +71,8 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter 
   }
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             ((CMatrix3x4f *)
-             ((this_ptr->model).padding_0x0 + *(int *)pSVar2->field0_0x0 * 0x30 + 0xe80),&CStack_90,
-             in_stack_fffffea8);
+             ((this_ptr->model).field3_0x508 + *(int *)pSVar2->field0_0x0 * 0x30 + 0x978),&CStack_90
+             ,in_stack_fffffea8);
   puVar3 = auStack_2c;
   puVar5 = &uStack_60;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

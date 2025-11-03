@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005a9720()
 // Cross-references:
-//   core_event.cpp_FUN_004b0db0 (004b0db0) at 004b0df3 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004b0db0 (004b0db0) at 004b0df3 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053eb40 (0053eb40) at 0053ebc9 [UNCONDITIONAL_CALL]
 //   core_tommygun.cpp_CTommyGun_process_FUN_005de360 (005de360) at 005de43f [UNCONDITIONAL_CALL]
 //   core_turret.cpp_CTurret_process_FUN_005e2430 (005e2430) at 005e28bb [UNCONDITIONAL_CALL]

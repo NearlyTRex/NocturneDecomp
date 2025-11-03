@@ -26,8 +26,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d300(CCharacter *this_ptr)
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             ((CMatrix3x4f *)this_ptr->carry_hands[in_stack_00000008].field2_0xc,
              (CMatrix3x4f *)
-             ((this_ptr->model).padding_0x0 +
-             *(int *)this_ptr->carry_hands[in_stack_00000008].field0_0x0 * 0x30 + 0xe80),
+             ((this_ptr->model).field3_0x508 +
+             *(int *)this_ptr->carry_hands[in_stack_00000008].field0_0x0 * 0x30 + 0x978),
              in_stack_ffffffc8);
   puVar2 = auStack_34;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

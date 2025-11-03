@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_charactr.cpp_FUN_00428670()
 // Function calls:
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 
 #include "nocturne.h"
 
@@ -16,7 +16,7 @@ float core_charactr_cpp_FUN_00428670(void)
   float in_stack_00000004;
   float in_stack_0000000c;
   
-  fVar1 = core_actor_cpp_FUN_0040cd70(in_stack_00000004);
+  fVar1 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(in_stack_00000004);
   fVar2 = -in_stack_0000000c;
   if ((-in_stack_0000000c <= fVar1) && (fVar2 = in_stack_0000000c, fVar1 <= in_stack_0000000c)) {
     return fVar1;
@@ -30,7 +30,7 @@ float core_charactr_cpp_FUN_00428670(void)
 //   Label: core_charactr.cpp_FUN_00428670
 // 00428673: PUSH dword ptr [ESP + 0x10]
 //   XREF to: Stack[0x4] (READ)
-// 00428677: CALL core_actor.cpp_FUN_0040cd70
+// 00428677: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 0042867c: MOV dword ptr [ESP + 0xc],EAX
 //   XREF to: Stack[-0x4] (WRITE)

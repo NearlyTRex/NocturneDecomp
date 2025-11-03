@@ -12,13 +12,13 @@
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00572460
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059f820
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a1510
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a15e0
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrDoSomething20_FUN_005a1510
-//   core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 
 #include "nocturne.h"
@@ -30,6 +30,7 @@
 void core_gabriela_cpp_FUN_004d6f80(void)
 
 {
+  CVector3f *input_local_point;
   int iVar1;
   int iVar2;
   BADSPACEBASE *in_ESP;
@@ -43,19 +44,24 @@ void core_gabriela_cpp_FUN_004d6f80(void)
   undefined4 uStack_94;
   CMatrix3x4f CStack_90;
   undefined4 auStack_60 [12];
-  CVector3f local_30;
+  undefined1 local_30 [12];
   float local_24;
-  CVector3f CStack_1c;
+  undefined1 auStack_20 [16];
   
   bVar5 = 0;
-  core_skeleton_cpp_CDeformableModelInstance_GetModelPtrDoSomething20_FUN_005a1510();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a1510
+            ((CDeformableModelInstance *)(in_stack_00000004 + 1));
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20
+            ((CDeformableModelInstance *)(in_stack_00000004 + 1));
   local_24 = local_24 + FLOAT_0062b101;
-  core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (in_stack_00000004,(CVector3f *)(auStack_20 + 4),(CVector3f *)(local_30 + 8));
   iVar2 = 0;
   do {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a15e0();
-    core_skeleton_cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50();
+    core_skeleton_cpp_CDeformableModelInstance_FUN_005a15e0
+              ((CDeformableModelInstance *)(in_stack_00000004 + 1));
+    core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50
+              ((CDeformableModelInstance *)(in_stack_00000004 + 1));
     core_skeleton_cpp_CDeformableModelInstance_FUN_0059f820();
     puVar3 = auStack_60;
     puVar4 = &uStack_94;
@@ -64,11 +70,14 @@ void core_gabriela_cpp_FUN_004d6f80(void)
       puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
       puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
     }
-    core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_30,in_stack_00000018,&CStack_90);
+    input_local_point =
+         core_xform_cpp_transformVector3x4_FUN_005f4dc0
+                   ((CVector3f *)local_30,in_stack_00000018,&CStack_90);
     fVar6 = 7.111756e-39;
-    core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (in_stack_00000004,(CVector3f *)auStack_20,input_local_point);
     iVar1 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00572460
-                      (g_CDemonSetPtr,(CVector3f *)&stack0xfffffffc,&CStack_1c);
+                      (g_CDemonSetPtr,(CVector3f *)&stack0xfffffffc,(CVector3f *)(auStack_20 + 4));
     if (iVar1 == 0) {
       fVar6 = *in_stack_0000000c;
     }
@@ -98,7 +107,7 @@ void core_gabriela_cpp_FUN_004d6f80(void)
 // 004d6f96: PUSH EAX
 // 004d6f97: ADD EBX,0x158
 // 004d6f9d: PUSH EBX
-// 004d6f9e: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrDoSomething20_FUN_005a1510
+// 004d6f9e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a1510
 //   XREF to: 005a1510 (UNCONDITIONAL_CALL)
 // 004d6fa3: ADD ESP,0x8
 // 004d6fa6: MOV EDX,dword ptr [EBP + 0x24]
@@ -126,7 +135,7 @@ void core_gabriela_cpp_FUN_004d6f80(void)
 // 004d6fdb: PUSH ECX
 // 004d6fdc: FSTP float ptr [ESP + 0x1b28]
 //   XREF to: Stack[-0x2c] (WRITE)
-// 004d6fe3: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 004d6fe3: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 004d6fe8: ADD ESP,0xc
 // 004d6feb: FLD float ptr [EBP + 0x18]
@@ -176,7 +185,7 @@ void core_gabriela_cpp_FUN_004d6f80(void)
 // 004d704b: PUSH 0x0
 // 004d704d: PUSH 0x0
 // 004d704f: PUSH ESI
-// 004d7050: CALL core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+// 004d7050: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 004d7055: ADD ESP,0x18
 // 004d7058: MOV EDX,dword ptr [EBP + 0x20]
@@ -213,7 +222,7 @@ void core_gabriela_cpp_FUN_004d6f80(void)
 // 004d70a6: MOV EDI,dword ptr [EBP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 004d70a9: PUSH EDI
-// 004d70aa: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 004d70aa: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 004d70af: ADD ESP,0xc
 // 004d70b2: LEA EAX,[ESP + 0x1b0c]

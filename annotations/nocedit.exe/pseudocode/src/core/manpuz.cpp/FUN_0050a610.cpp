@@ -13,7 +13,7 @@
 //   undefined4 DAT_00660d94
 //   undefined4 DAT_00660d98
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040
 //   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0
 //   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40
@@ -43,24 +43,45 @@ void core_manpuz_cpp_FUN_0050a610(void)
   int iVar10;
   char *pcVar11;
   float *pfVar12;
+  BADSPACEBASE *in_ESP;
   float unaff_EBP;
   CDemonActor *in_stack_00000004;
-  int in_stack_00000008;
+  float in_stack_00000008;
   float in_stack_0000000c;
+  CVector3f local_3c;
+  CDemonActor *local_30;
+  CDemonActor *local_2c;
+  CDemonActor *local_28;
+  CDemonActor *local_24;
+  CDemonActor *local_20;
   float local_1c;
   float local_18;
+  float local_14;
   
-  fVar3 = (in_stack_0000000c * FLOAT_006357d1) / _DAT_00660d94;
-  pfVar12 = (float *)((int)&in_stack_00000004[7].metadata + in_stack_00000008 * 0xb8 + 0x10);
-  core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
+  local_28 = (CDemonActor *)(in_stack_0000000c * FLOAT_006357d1);
+  local_14 = (float)local_28 / _DAT_00660d94;
+  pfVar12 = (float *)((int)&in_stack_00000004[7].previous_transform_state +
+                     (int)in_stack_00000008 * 0xb8 + 0x10);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (in_stack_00000004,&local_3c,(CVector3f *)(pfVar12 + 9));
+  local_3c.x = (float)&local_3c.y;
   uVar7 = core_manpuz_cpp_FUN_0050a4f0();
+  local_3c.y = (float)&local_3c.z;
+  local_3c.x = (float)"manpuz-chargegemloop-green.wav";
   uVar8 = core_manpuz_cpp_FUN_0050a4f0();
+  local_3c.z = (float)&local_30;
+  local_3c.y = (float)"manpuz-chargegemloop-blue.wav";
+  local_3c.x = (float)(pfVar12 + 0x2d);
   uVar9 = core_manpuz_cpp_FUN_0050a4f0();
+  local_30 = (CDemonActor *)&local_14;
+  local_3c.z = (float)&local_1c;
   pfVar12[8] = 0.0;
+  local_3c.y = (float)&local_20;
   pfVar12[7] = pfVar12[8];
+  local_3c.x = in_stack_00000008;
   pfVar12[6] = pfVar12[7];
   core_manpuz_cpp_FUN_0050a420();
-  fVar3 = fVar3 / _DAT_00660d98;
+  fVar3 = local_14 / _DAT_00660d98;
   bVar6 = 1;
   if (local_1c - *pfVar12 < -fVar3) {
     fVar2 = *pfVar12 - fVar3;
@@ -106,22 +127,38 @@ LAB_0050a76e:
   bVar4 = 0;
 LAB_0050a7a0:
   if (((bool)(bVar6 & bVar5 & bVar4)) && ((uVar7 & 1 & uVar8 & uVar9) != 0)) {
-    pcVar11 = in_stack_00000004[4].create_event + in_stack_00000008 * 100 + 0x18;
+    pcVar11 = in_stack_00000004[4].create_event + (int)in_stack_00000008 * 100 + 0x18;
     if (((*(int *)pcVar11 != 0) &&
         ((((*(uint *)(pcVar11 + 8) & 0x7fffffff) == 0 &&
           ((*(uint *)(pcVar11 + 4) & 0x7fffffff) == 0)) &&
          ((float)*(int *)(pcVar11 + 0x4c) == pfVar12[3])))) &&
        ((float)*(int *)(pcVar11 + 0x50) == pfVar12[4])) {
       if ((float)*(int *)(pcVar11 + 0x54) == pfVar12[5]) {
-        core_manpuz_cpp_FUN_0050aef0();
+        local_2c = (CDemonActor *)in_stack_00000008;
+        local_30 = in_stack_00000004;
+        local_3c.z = 7.407269e-39;
+        local_28 = (CDemonActor *)core_manpuz_cpp_FUN_0050aef0();
+        local_2c = in_stack_00000004;
+        local_30 = (CDemonActor *)0x50a87e;
         iVar10 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040();
         if (iVar10 == 0) {
+          local_24 = (CDemonActor *)in_stack_00000008;
+          local_28 = in_stack_00000004;
+          local_2c = (CDemonActor *)0x50a8ba;
           core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0();
           return;
         }
-        core_manpuz_cpp_FUN_0050aee0();
+        local_24 = (CDemonActor *)in_stack_00000008;
+        local_28 = in_stack_00000004;
+        local_2c = (CDemonActor *)0x50a88c;
+        local_20 = (CDemonActor *)core_manpuz_cpp_FUN_0050aee0();
+        local_24 = in_stack_00000004;
+        local_28 = (CDemonActor *)0x50a896;
         iVar10 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040();
         if (iVar10 == 0) {
+          local_1c = in_stack_00000008;
+          local_20 = in_stack_00000004;
+          local_24 = (CDemonActor *)0x50a8a8;
           core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40();
           return;
         }
@@ -166,7 +203,7 @@ LAB_0050a7a0:
 // 0050a655: PUSH ESI
 // 0050a656: FSTP float ptr [ESP + 0x34]
 //   XREF to: Stack[-0x14] (WRITE)
-// 0050a65a: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0050a65a: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0050a65f: ADD ESP,0xc
 // 0050a662: MOV EAX,ESP

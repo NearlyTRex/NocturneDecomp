@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, char * extension)
 // Cross-references:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040f5ef [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040f5ef [UNCONDITIONAL_CALL]
 //   core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50 (0047ca50) at 0047cac7 [UNCONDITIONAL_CALL]
 //   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 (00479330) at 0047976e [UNCONDITIONAL_CALL]
 //   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (0047cbc0) at 0047db3f [UNCONDITIONAL_CALL]
@@ -13,7 +13,7 @@
 //   core_mission.cpp_CDemonMission_FUN_005235b0 (005235b0) at 005235cf [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_CheckWorldMountedAndSave_FUN_0053d190 (0053d190) at 0053d1dd [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_00562920 (00562920) at 00563546 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 005988df [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005988df [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00589530 (00589530) at 005895d2 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_005896b0 (005896b0) at 00589724 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058b8e0 (0058b8e0) at 0058b983 [UNCONDITIONAL_CALL]

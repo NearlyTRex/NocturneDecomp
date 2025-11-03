@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
 // Cross-references:
-//   core_actor.cpp_CDemonActor_FUN_00408c10 (00408c10) at 00408c62 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 (00408c10) at 00408c62 [UNCONDITIONAL_CALL]
 //   core_bodypart.cpp_FUN_0041a630 (0041a630) at 0041a651 [UNCONDITIONAL_CALL]
 //   core_bodypart.cpp_FUN_0041aa40 (0041aa40) at 0041aac2 [UNCONDITIONAL_CALL]
 //   core_box.cpp_CBox_processPhysics_FUN_0041e350 (0041e350) at 0041e758 [UNCONDITIONAL_CALL]
@@ -20,10 +20,10 @@
 //   core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest2_FUN_00499f10 (00499f10) at 00499f31 [UNCONDITIONAL_CALL]
 //   core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20 (00499c20) at 00499c41 [UNCONDITIONAL_CALL]
 //   core_elephant.cpp_FUN_004a7070 (004a7070) at 004a7107 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CFireEffect_FUN_004c7bb0 (004c7bb0) at 004c7bdc [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CFireEffect_createStake_FUN_004c7bb0 (004c7bb0) at 004c7bdc [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (004c25c0) at 004c2659 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CStake_FUN_004bfe20 (004bfe20) at 004bfe53 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CStake_FUN_004bfe90 (004bfe90) at 004bfead [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CStake_init_FUN_004bfe20 (004bfe20) at 004bfe53 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CStake_spawn_FUN_004bfe90 (004bfe90) at 004bfead [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d2ea0 (004d2ea0) at 004d40ed [UNCONDITIONAL_CALL]
 //   core_lightgun.cpp_FUN_00505ac0 (00505ac0) at 00505b37 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_005091d0 (005091d0) at 005092a8 [UNCONDITIONAL_CALL]

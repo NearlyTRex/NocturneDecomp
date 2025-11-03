@@ -10,7 +10,7 @@
 //   CDemonSet g_CDemonSetInstance
 //   undefined4 DAT_032613bc
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
 //   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 //   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00573fc0
@@ -26,37 +26,43 @@ undefined4 core_lightgun_cpp_FUN_00505b70(void)
 
 {
   CDemonActor *actor_ptr;
-  int iVar1;
+  CBoundingBox3D *pCVar1;
   int iVar2;
+  int iVar3;
   BADSPACEBASE *in_ESP;
-  undefined4 uVar3;
+  undefined4 uVar4;
   CVector3f *in_stack_00000004;
   CDemonActor *in_stack_00000008;
   float fStack_44;
+  CVector3f CStack_1c;
   
   core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(g_CDemonSetPtr);
-  (*((in_stack_00000008->metadata).vtable)->getBoundingBox)
-            (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffb8);
-  uVar3 = 0;
-  iVar2 = 0;
+  pCVar1 = (*in_stack_00000008->vtable->getBoundingBox)
+                     (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffb8);
+  CStack_1c.x = ((pCVar1->min).x + (pCVar1->max).x) * FLOAT_006314ca;
+  CStack_1c.y = ((pCVar1->min).y + (pCVar1->max).y) * FLOAT_006314ca;
+  CStack_1c.z = ((pCVar1->min).z + (pCVar1->max).z) * FLOAT_006314ca;
+  uVar4 = 0;
+  iVar3 = 0;
   fStack_44 = 7.37983e-39;
-  core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000008);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (in_stack_00000008,(CVector3f *)&stack0xfffffff0,&CStack_1c);
   do {
     core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
               (g_CDemonSetPtr,in_stack_00000004,(CVector3f *)&stack0xfffffff4);
     actor_ptr = g_CDemonSetPtr->collision_actor;
     if (actor_ptr == (CDemonActor *)0x0) break;
     if (in_stack_00000008 == actor_ptr) {
-      uVar3 = 1;
+      uVar4 = 1;
       break;
     }
-    iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CTrigger || CGlass");
-    if (iVar1 == 0) break;
-    iVar2 = iVar2 + 1;
+    iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CTrigger || CGlass");
+    if (iVar2 == 0) break;
+    iVar3 = iVar3 + 1;
     core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,g_CDemonSetPtr->collision_actor);
-  } while (iVar2 < 3);
+  } while (iVar3 < 3);
   core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00573fc0(g_CDemonSetPtr);
-  return uVar3;
+  return uVar4;
 }
 
 
@@ -117,7 +123,7 @@ undefined4 core_lightgun_cpp_FUN_00505b70(void)
 // 00505beb: XOR EBX,EBX
 // 00505bed: PUSH ESI
 // 00505bee: FSTP float ptr [ESP + 0x2c]
-// 00505bf2: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00505bf2: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 00505bf7: ADD ESP,0xc
 // 00505bfa: LEA EAX,[ESP + 0x24]

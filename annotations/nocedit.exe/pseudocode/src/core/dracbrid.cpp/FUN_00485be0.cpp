@@ -15,7 +15,7 @@
 //   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 //   core_charactr.cpp_CCharacter_FUN_00429aa0
 //   core_motion.cpp_CMotionController_FUN_0052e700
-//   core_skeleton.cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
 //   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00
 //   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 //   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
@@ -51,7 +51,7 @@ int core_dracbrid_cpp_FUN_00485be0(void)
         iVar2 == 0 || (in_stack_00000004[1].base_actor.field23_0x124 == 0)) && (iVar1 == 0)))) &&
      (*(int *)in_stack_00000004->field2_0x240c == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&in_stack_00000004->base_actor);
-    this_ptr = (*((in_stack_00000004->base_actor).metadata.vtable)->getBoundingBox)
+    this_ptr = (*((in_stack_00000004->base_actor).vtable)->getBoundingBox)
                          (&in_stack_00000004->base_actor,(CBoundingBox3D *)&fStack_20);
     fStack_20 = 6.645305e-39;
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
@@ -62,17 +62,19 @@ int core_dracbrid_cpp_FUN_00485be0(void)
       in_stack_00000004->field13_0x2620[2] = '\0';
       in_stack_00000004->field13_0x2620[3] = '\0';
       if (iVar2 == 0) {
-        if (*(int *)(in_stack_00000004[1].model.padding_0x0 + 0x68) == 0) {
+        if (in_stack_00000004[1].model.transformed_vertices[1].y == 0.0) {
           core_charactr_cpp_CCharacter_FUN_00429aa0(in_stack_00000004);
         }
       }
       else {
         if (iVar2 == 1) {
-          fVar3 = (1.0 - in_stack_00000004[1].base_actor.metadata.runtime_vector1.x) / DAT_0065cd88;
+          fVar3 = (1.0 - in_stack_00000004[1].base_actor.previous_transform_state.position.x) /
+                  DAT_0065cd88;
         }
         else {
           fVar3 = ((float)DOUBLE_00621b16 -
-                  in_stack_00000004[1].base_actor.metadata.runtime_vector1.x) / DAT_0065cd88;
+                  in_stack_00000004[1].base_actor.previous_transform_state.position.x) /
+                  DAT_0065cd88;
           if (fVar3 < 0.0) {
             fVar3 = 0.0;
           }
@@ -85,15 +87,16 @@ int core_dracbrid_cpp_FUN_00485be0(void)
           engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0
                     (g_CDemonRendererPtr,1);
           fStack_20 = 6.645678e-39;
-          core_skeleton_cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150();
+          core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150(&in_stack_00000004->model);
           engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr);
         }
       }
       if ((DAT_02f43978 != 0) &&
          (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
          iVar2 == 0)) {
-        core_motion_cpp_CMotionController_FUN_0052e700();
-        (*((in_stack_00000004->base_actor).metadata.vtable)->renderTargetPoints)
+        core_motion_cpp_CMotionController_FUN_0052e700
+                  (&(in_stack_00000004->model).motion_controller);
+        (*((in_stack_00000004->base_actor).vtable)->renderTargetPoints)
                   (&in_stack_00000004->base_actor);
       }
     }
@@ -295,7 +298,7 @@ int core_dracbrid_cpp_FUN_00485be0(void)
 // 00485d6a: PUSH -0x1
 //   Label: LAB_00485d6a
 // 00485d6c: PUSH EDX
-// 00485d6d: CALL core_skeleton.cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150
+// 00485d6d: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
 //   XREF to: 005a0150 (UNCONDITIONAL_CALL)
 // 00485d72: ADD ESP,0x14
 // 00485d75: MOV EAX,[0x006703ec]

@@ -5,9 +5,9 @@
 // Signature: int core_hostage.cpp_CHostage_FUN_004f63e0(CHostage * this_ptr)
 // Globals:
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 // Function calls:
-//   core_event.cpp_FUN_004aabe0
+//   core_event.cpp_CEventList_FUN_004aabe0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 
 #include "nocturne.h"
@@ -22,8 +22,9 @@ int __cdecl core_hostage_cpp_CHostage_FUN_004f63e0(CHostage *this_ptr)
   (this_ptr->base_npc).base_character.grabbed_type = in_stack_0000000c;
   (this_ptr->base_npc).base_character.grabbed_by = in_stack_00000008;
   if (in_stack_0000000c == 0) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
-    core_event_cpp_FUN_004aabe0();
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              (&(this_ptr->base_npc).base_character.model.motion_controller);
+    core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
   }
   this_ptr->field8_0x1fae0[0xc] = '\0';
   this_ptr->field8_0x1fae0[0xd] = '\0';
@@ -71,7 +72,7 @@ int __cdecl core_hostage_cpp_CHostage_FUN_004f63e0(CHostage *this_ptr)
 //   XREF to: 006793d0 (READ)
 // 004f6438: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 004f6439: CALL core_event.cpp_FUN_004aabe0
+// 004f6439: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 004f643e: ADD ESP,0x8
 // 004f6441: JMP 0x004f63fd

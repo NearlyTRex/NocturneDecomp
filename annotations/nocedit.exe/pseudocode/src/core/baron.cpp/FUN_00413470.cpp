@@ -9,7 +9,7 @@
 //   undefined4 g_CCharacterClassInfo.name_hash
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408e80
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   crt_memory.c_memset_FUN_005fde40
 
@@ -28,6 +28,7 @@ void core_baron_cpp_FUN_00413470(void)
   CDemonActor *this_ptr;
   CVector3f *pCVar5;
   int iVar6;
+  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   CDemonActor *in_stack_00000008;
   SCollisionInfo *in_stack_ffffffd0;
@@ -38,11 +39,11 @@ void core_baron_cpp_FUN_00413470(void)
      ((this_ptr = core_actor_cpp_castToClassHash_FUN_0040c790
                             (in_stack_00000008,g_CCharacterClassInfo.name_hash),
       this_ptr == (CDemonActor *)0x0 ||
-      (iVar6 = (*(this_ptr->metadata).vtable[1].hasCollision)(this_ptr,in_stack_ffffffd0), iVar6 < 1
-      )))) {
+      (iVar6 = (*this_ptr->vtable[1].hasCollision)(this_ptr,in_stack_ffffffd0), iVar6 < 1)))) {
     *(CDemonActor **)(in_stack_00000004 + 0x1fcac) = in_stack_00000008;
-    pCVar5 = core_actor_cpp_CDemonActor_FUN_00408e80(*(CDemonActor **)(in_stack_00000004 + 0x1fcac))
-    ;
+    pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                       (*(CDemonActor **)(in_stack_00000004 + 0x1fcac),(CVector3f *)&stack0xffffffe4
+                        ,(CVector3f *)&stack0xfffffffc);
     iVar6 = *(int *)(in_stack_00000004 + 0x1fcac);
     fVar1 = *(float *)(iVar6 + 0x24);
     fVar2 = pCVar5->y;
@@ -58,7 +59,8 @@ void core_baron_cpp_FUN_00413470(void)
       *(undefined4 *)(in_stack_00000004 + 0x38) = *(undefined4 *)(iVar6 + 0x38);
     }
     crt_memory_c_memset_FUN_005fde40((void *)(in_stack_00000004 + 0xbe2c),0,0x2c);
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              ((CMotionController *)(in_stack_00000004 + 0x158));
     *(undefined4 *)(in_stack_00000004 + 0x1fccc) = 1;
     *(undefined4 *)(in_stack_00000004 + 0x1fcd0) = 0;
     return;
@@ -124,7 +126,7 @@ void core_baron_cpp_FUN_00413470(void)
 // 004134d3: PUSH EAX
 // 004134d4: MOV ECX,dword ptr [EBX + 0x1fcac]
 // 004134da: PUSH ECX
-// 004134db: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 004134db: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 004134e0: MOV EDX,dword ptr [EBX + 0x1fcac]
 // 004134e6: FLD float ptr [EDX + 0x20]

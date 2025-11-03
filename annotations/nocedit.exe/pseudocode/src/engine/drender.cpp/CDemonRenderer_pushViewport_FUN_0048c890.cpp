@@ -9,7 +9,7 @@
 //   core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80 (00472a80) at 00472ac8 [UNCONDITIONAL_CALL]
 //   core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 (004fee00) at 004feed0 [UNCONDITIONAL_CALL]
 //   core_level.cpp_CLevelLoader_update_FUN_00504160 (00504160) at 005041b1 [UNCONDITIONAL_CALL]
-//   core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0 (0052bcb0) at 0052c032 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052c032 [UNCONDITIONAL_CALL]
 //   core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70 (00574e70) at 00574eab [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310 (00580310) at 005803dc [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 (0057ce80) at 0057cff5 [UNCONDITIONAL_CALL]

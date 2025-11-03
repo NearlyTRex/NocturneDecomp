@@ -38,7 +38,7 @@ int core_enemy_cpp_FUN_004aa0f0(void)
     iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,class_name->actor_name);
     if (iVar1 != 0) {
       class_name = actor_ptr;
-      iVar1 = (*(actor_ptr->metadata).vtable[1].hasCollision)(actor_ptr,unaff_EDI);
+      iVar1 = (*actor_ptr->vtable[1].hasCollision)(actor_ptr,unaff_EDI);
       if ((iVar1 == 0) &&
          (*(CHero **)(actor_ptr[0x8d].create_event + 0x4c) == g_HeroActors[g_LocalHeroIndex])) {
         iVar2 = iVar2 + 1;

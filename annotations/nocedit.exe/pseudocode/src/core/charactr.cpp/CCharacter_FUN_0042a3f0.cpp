@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_charactr.cpp_CCharacter_FUN_0042a3f0(CCharacter * this_ptr)
 // Function calls:
-//   core_skeleton.cpp_CDeformableModel_FUN_0059c220
+//   core_skeleton.cpp_CDeformableModel_getPartPtr_FUN_0059c220
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 
 #include "nocturne.h"
@@ -12,11 +12,14 @@
 int __cdecl core_charactr_cpp_CCharacter_FUN_0042a3f0(CCharacter *this_ptr)
 
 {
-  int iVar1;
+  CDeformableModel *this_ptr_00;
+  SPart *pSVar1;
+  int unaff_retaddr;
   
-  core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-  iVar1 = core_skeleton_cpp_CDeformableModel_FUN_0059c220();
-  return *(int *)(iVar1 + 0x5c);
+  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+                          (&this_ptr->model);
+  pSVar1 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220(this_ptr_00,unaff_retaddr);
+  return pSVar1->dominant_bone;
 }
 
 
@@ -33,7 +36,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042a3f0(CCharacter *this_ptr)
 //   XREF to: 005a07a0 (UNCONDITIONAL_CALL)
 // 0042a404: ADD ESP,0x4
 // 0042a407: PUSH EAX
-// 0042a408: CALL core_skeleton.cpp_CDeformableModel_FUN_0059c220
+// 0042a408: CALL core_skeleton.cpp_CDeformableModel_getPartPtr_FUN_0059c220
 //   XREF to: 0059c220 (UNCONDITIONAL_CALL)
 // 0042a40d: ADD ESP,0x8
 // 0042a410: MOV EAX,dword ptr [EAX + 0x5c]

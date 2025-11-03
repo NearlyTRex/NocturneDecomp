@@ -1,14 +1,14 @@
 // Name: core_skeleton.cpp_CSkeleton_free_FUN_00599a50
 // Address: 00599a50
 // Address Range: [[00599a50, 00599b0e]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CSkeleton_free_FUN_00599a50()
+// Convention: __cdecl
+// Signature: void core_skeleton.cpp_CSkeleton_free_FUN_00599a50(CSkeleton * this_ptr)
 // Cross-references:
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 005926b0 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910 (00599910) at 0059991c [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CSkeleton_dtor_FUN_005998e0 (005998e0) at 005998f0 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CSkeleton_freeAllSkeletons_FUN_005a1ea0 (005a1ea0) at 005a1eb3 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0 (00599bb0) at 00599bbc [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0 (005a1ea0) at 005a1eb3 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_skeleton_cpp_0064e25f
 //   TerminatedCString s_core_skeleton_cpp_0064e274
@@ -20,31 +20,27 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_skeleton.cpp_CSkeleton_free(CSkeleton* param_1) */
-
-void core_skeleton_cpp_CSkeleton_free_FUN_00599a50(void)
+void __cdecl core_skeleton_cpp_CSkeleton_free_FUN_00599a50(CSkeleton *this_ptr)
 
 {
-  int in_stack_00000004;
-  
-  *(undefined4 *)(in_stack_00000004 + 0x28558) = 0;
-  *(undefined4 *)(in_stack_00000004 + 0x2936c) = 0;
+  this_ptr->bone_count = 0;
+  this_ptr->frame_count = 0;
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
   g_CurrentDebugLine = 0xe6;
-  crt_memory_c_free_FUN_005fe659(*(void **)(in_stack_00000004 + 0x29370));
+  crt_memory_c_free_FUN_005fe659(this_ptr->bone_angle_frames);
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
   g_CurrentDebugLine = 0xe7;
-  if (*(int *)(in_stack_00000004 + 0x29374) != 0) {
-    crt_memory_c_free_FUN_005fe659((void *)(*(int *)(in_stack_00000004 + 0x29374) + -4));
+  if (this_ptr->frame_positions_1 != (CVector3f *)0x0) {
+    crt_memory_c_free_FUN_005fe659(&this_ptr->frame_positions_1[-1].z);
   }
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
   g_CurrentDebugLine = 0xe8;
-  if (*(int *)(in_stack_00000004 + 0x29378) != 0) {
-    crt_memory_c_free_FUN_005fe659((void *)(*(int *)(in_stack_00000004 + 0x29378) + -4));
+  if (this_ptr->frame_positions_2 != (CVector3f *)0x0) {
+    crt_memory_c_free_FUN_005fe659(&this_ptr->frame_positions_2[-1].z);
   }
-  *(undefined4 *)(in_stack_00000004 + 0x29374) = 0;
-  *(undefined4 *)(in_stack_00000004 + 0x29378) = 0;
-  *(undefined4 *)(in_stack_00000004 + 0x29370) = 0;
+  this_ptr->frame_positions_1 = (CVector3f *)0x0;
+  this_ptr->frame_positions_2 = (CVector3f *)0x0;
+  this_ptr->bone_angle_frames = (CQuaternion4f *)0x0;
   return;
 }
 

@@ -4,12 +4,10 @@
 // Convention: unknown
 // Signature: undefined core_boneguy.cpp_FUN_0041b700()
 // Globals:
-//   undefined4 DAT_00615f0d
-//   undefined4 DAT_00615f15
+//   float FLOAT_00615f0d = 0.5
+//   double DOUBLE_00615f15 = 0.400000000000000
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 float * core_boneguy_cpp_FUN_0041b700(void)
 
@@ -24,10 +22,10 @@ float * core_boneguy_cpp_FUN_0041b700(void)
   float fStack_20;
   
   (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x14))();
-  fVar1 = _DAT_00615f0d;
-  *in_stack_00000004 = (fStack_30 + fStack_24) * _DAT_00615f0d;
+  fVar1 = FLOAT_00615f0d;
+  *in_stack_00000004 = (fStack_30 + fStack_24) * FLOAT_00615f0d;
   in_stack_00000004[1] = fVar1 * (fStack_2c + fStack_20);
-  in_stack_00000004[2] = fStack_28 + (float)_DAT_00615f15;
+  in_stack_00000004[2] = fStack_28 + (float)DOUBLE_00615f15;
   return in_stack_00000004;
 }
 

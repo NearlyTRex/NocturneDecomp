@@ -19,14 +19,14 @@
 //   CHero*[4] g_HeroActors
 //   int g_LocalHeroIndex
 // Function calls:
-//   core_skeleton.cpp_CDeformableModel_FUN_0059ce40
+//   core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40
 //   core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a00f0
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0250
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a1510
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a15e0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndDunno_FUN_005a00f0
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrDoSomething20_FUN_005a1510
 //   core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340
 //   crt_math.c_round_FUN_005fe6b0
 //   crt_stdlib.c_rand_FUN_005feb5c
@@ -39,11 +39,14 @@
 void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
 
 {
+  CDeformableModelInstance *this_ptr_00;
   CDemonRenderer *pCVar1;
   int iVar2;
+  CDeformableModel *this_ptr_01;
   int iVar3;
   undefined4 extraout_EDX;
   float10 fVar4;
+  CBoundingBox3D *in_stack_ffffe570;
   
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xc000);
@@ -56,13 +59,14 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
   INT_00823a94 = iVar2 % 6;
   g_CDemonRendererPtr->field8_0x20 = 1;
   engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&DAT_0066e6b0 + iVar2 % 6);
-  core_skeleton_cpp_CDeformableModelInstance_GetModelPtrDoSomething20_FUN_005a1510();
-  core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndDunno_FUN_005a00f0();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40();
-  core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-  core_skeleton_cpp_CDeformableModel_FUN_0059ce40();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0250();
-  core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800();
+  this_ptr_00 = &this_ptr->model;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a1510(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a00f0(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40(this_ptr_00);
+  this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
+  core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_01,in_stack_ffffe570);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0250(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(this_ptr_00);
   iVar2 = 0;
   do {
     pCVar1 = g_CDemonRendererPtr;
@@ -72,9 +76,9 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
     *(undefined4 *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar2) = 0xffff;
     iVar2 = iVar3;
   } while (iVar3 != 96000);
-  core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340();
+  core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(&this_ptr->model);
   g_CDemonRendererPtr->field8_0x20 = 0;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a15e0();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a15e0(&this_ptr->model);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
   return;
 }
@@ -155,13 +159,13 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
 // 0042b00b: PUSH EAX
 // 0042b00c: LEA EBX,[ESI + 0x158]
 // 0042b012: PUSH EBX
-// 0042b013: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrDoSomething20_FUN_005a1510
+// 0042b013: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a1510
 //   XREF to: 005a1510 (UNCONDITIONAL_CALL)
 // 0042b018: ADD ESP,0x8
 // 0042b01b: PUSH -0x1
 // 0042b01d: PUSH 0x3f8ccccd
 // 0042b022: PUSH EBX
-// 0042b023: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndDunno_FUN_005a00f0
+// 0042b023: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a00f0
 //   XREF to: 005a00f0 (UNCONDITIONAL_CALL)
 // 0042b028: ADD ESP,0xc
 // 0042b02b: PUSH EBX
@@ -175,7 +179,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
 //   XREF to: 005a07a0 (UNCONDITIONAL_CALL)
 // 0042b041: ADD ESP,0x4
 // 0042b044: PUSH EAX
-// 0042b045: CALL core_skeleton.cpp_CDeformableModel_FUN_0059ce40
+// 0042b045: CALL core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40
 //   XREF to: 0059ce40 (UNCONDITIONAL_CALL)
 // 0042b04a: ADD ESP,0x8
 // 0042b04d: PUSH EAX

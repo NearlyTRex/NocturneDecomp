@@ -8,4 +8,5 @@ CDemonLight*[96] g_MasterLightList = {};
 CDemonLight*[96] g_ActiveLightList = {};
 CDemonLight*[4] g_DynamicLights = {};
 CDemonGlobe*[100] g_CoronaGlobes = {};
+int[65536] g_IntensityToValueLookupTable = {};
 

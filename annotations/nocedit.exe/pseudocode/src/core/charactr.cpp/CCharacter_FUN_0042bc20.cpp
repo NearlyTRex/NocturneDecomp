@@ -29,8 +29,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042bc20(CCharacter *this_ptr)
   int *in_stack_00000008;
   
   if (*in_stack_00000008 != 2) {
-    iVar1 = (*(this_ptr->base_actor).metadata.vtable[1].hasCollision)
-                      (&this_ptr->base_actor,unaff_ESI);
+    iVar1 = (*(this_ptr->base_actor).vtable[1].hasCollision)(&this_ptr->base_actor,unaff_ESI);
     if (iVar1 < 2) {
       if ((*in_stack_00000008 != 1) && (*in_stack_00000008 != 3)) {
         in_stack_00000008[6] =
@@ -38,7 +37,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042bc20(CCharacter *this_ptr)
         in_stack_00000008[5] =
              (int)(*(float *)(this_ptr->cloth_data + 0x354) * this_ptr->size_scale);
         if ((float)in_stack_00000008[6] < (float)in_stack_00000008[5]) {
-          in_stack_00000008[6] = *(int *)((this_ptr->model).padding_0x0 + 0x2248);
+          in_stack_00000008[6] = *(int *)((this_ptr->model).field8_0x2238 + 0x10);
         }
         in_stack_00000008[7] =
              (int)(*(float *)(this_ptr->cloth_data + 0x348) * this_ptr->size_scale);

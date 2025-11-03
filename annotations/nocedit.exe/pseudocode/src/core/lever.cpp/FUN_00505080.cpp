@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_hero.cpp_FUN_004f2f50 (004f2f50) at 004f3055 [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 
 #include "nocturne.h"
 
@@ -16,14 +16,18 @@
 undefined4 core_lever_cpp_FUN_00505080(void)
 
 {
+  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
+  CVector3f *in_stack_00000008;
+  CVector3f local_20;
   float fStack_14;
   
-  if (in_stack_00000004[5].metadata.vtable != (CDemonActor_vtable *)&DAT_00000002) {
-    core_actor_cpp_CDemonActor_FUN_00408f10(in_stack_00000004);
-    if ((in_stack_00000004[5].metadata.vtable != (CDemonActor_vtable *)0x0) || (fStack_14 <= 0.0)) {
-      if ((in_stack_00000004[5].metadata.vtable == (CDemonActor_vtable *)&DAT_00000001) &&
-         (fStack_14 < 0.0)) {
+  if (in_stack_00000004[5].vtable != (CDemonActor_vtable *)&DAT_00000002) {
+    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+              (in_stack_00000004,&local_20,in_stack_00000008);
+    if ((in_stack_00000004[5].vtable != (CDemonActor_vtable *)0x0) || (fStack_14 <= 0.0)) {
+      if ((in_stack_00000004[5].vtable == (CDemonActor_vtable *)&DAT_00000001) && (fStack_14 < 0.0))
+      {
         return 1;
       }
       return 0;
@@ -63,7 +67,7 @@ undefined4 core_lever_cpp_FUN_00505080(void)
 //   XREF to: Stack[-0x20] (DATA)
 // 005050ac: PUSH EAX
 // 005050ad: PUSH EBX
-// 005050ae: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 005050ae: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 005050b3: MOV ESI,dword ptr [EBX + 0x80c]
 // 005050b9: ADD ESP,0xc

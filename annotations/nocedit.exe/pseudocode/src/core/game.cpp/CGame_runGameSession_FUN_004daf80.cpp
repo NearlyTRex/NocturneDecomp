@@ -87,7 +87,7 @@
 //   int[513] g_MessageFlags
 // Function calls:
 //   core_dlight.cpp_CDemonLight_init_FUN_004727c0
-//   core_fire.cpp_CFireEffect_FUN_004c6c80
+//   core_fire.cpp_CFireEffect_init_FUN_004c6c80
 //   core_game.cpp_adjustFudgePosition_FUN_004d8750
 //   core_game.cpp_CGame_beginFadeIn_FUN_004e0920
 //   core_game.cpp_CGame_beginFadeOut_FUN_004e0960
@@ -259,7 +259,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   g_CDemonLightInstance.base.max_distance = 64.0;
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(g_CDemonSetPtr);
   if (DAT_02d82d80 == 0) {
-    core_fire_cpp_CFireEffect_FUN_004c6c80(g_CFireEffectPtr);
+    core_fire_cpp_CFireEffect_init_FUN_004c6c80(g_CFireEffectPtr);
   }
   else {
     DAT_02d82d80 = 0;
@@ -332,7 +332,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
         if (iVar5 != 0) {
           shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_CPickList);
           this_ptr->wait_for_keypress = 0;
-          iVar5 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.metadata.vtable[1].
+          iVar5 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].
                     hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffff830);
           if (1 < iVar5) goto LAB_004db434;
           if (g_CNetGameInstance->connection_type == 2) {
@@ -482,8 +482,8 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
         core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
                   (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);
       }
-      iVar4 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.metadata.vtable[1].
-                hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffff860);
+      iVar4 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision)
+                        ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffff860);
       if (iVar4 == 2) {
         in_stack_fffff868 = (CKeys *)0x4dbaf1;
         iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1c);
@@ -518,8 +518,8 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
     local_1c = 0;
   }
 LAB_004db434:
-  iVar4 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.metadata.vtable[1].
-            hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffff88c);
+  iVar4 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision)
+                    ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffff88c);
   if ((iVar4 == 2) && (this_ptr->need_chapter_reload == 0)) {
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_4c8);
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Load game");
@@ -1175,7 +1175,7 @@ LAB_004db434:
 //   XREF to: 0067a3d0 (READ)
 // 004db5ad: PUSH ECX
 //   XREF to: 02d12db0 (DATA)
-// 004db5ae: CALL core_fire.cpp_CFireEffect_FUN_004c6c80
+// 004db5ae: CALL core_fire.cpp_CFireEffect_init_FUN_004c6c80
 //   XREF to: 004c6c80 (UNCONDITIONAL_CALL)
 // 004db5b3: ADD ESP,0x4
 // 004db5b6: JMP 0x004db221

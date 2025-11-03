@@ -80,8 +80,8 @@ void core_msnedit_cpp_DeleteActors_FUN_0053df90
     if (iVar3 < 0) break;
     if (iVar3 == 0) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff8b0);
-      for (pCVar1 = param_5->first_actor; pCVar1 != (CDemonActor *)0x0;
-          pCVar1 = (pCVar1->metadata).next_actor) {
+      for (pCVar1 = param_5->first_actor; pCVar1 != (CDemonActor *)0x0; pCVar1 = pCVar1->next_actor)
+      {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
                   ((CStrList *)&stack0xfffff8b4,pCVar1->actor_name);
       }
@@ -122,7 +122,7 @@ void core_msnedit_cpp_DeleteActors_FUN_0053df90
       if (iVar3 != 0) {
         pCVar1 = param_5->first_actor;
         while (pCVar1 != (CDemonActor *)0x0) {
-          pCVar2 = (pCVar1->metadata).next_actor;
+          pCVar2 = pCVar1->next_actor;
           iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
                             (&DAT_00680730,pCVar1->actor_name,0);
           pCVar1 = pCVar2;
@@ -143,7 +143,7 @@ void core_msnedit_cpp_DeleteActors_FUN_0053df90
         in_stack_fffff8c0 = (CStrList_vtable *)0x0;
         pCVar1 = param_5->first_actor;
         while (pCVar1 != (CDemonActor *)0x0) {
-          pCVar2 = (pCVar1->metadata).next_actor;
+          pCVar2 = pCVar1->next_actor;
           in_stack_fffff8b0 = (char *)0x53e1cc;
           iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar1,&DAT_00680798);
           pCVar1 = pCVar2;

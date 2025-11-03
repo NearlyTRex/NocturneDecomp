@@ -48,7 +48,7 @@ void core_manpuz_cpp_FUN_005097e0(void)
       fVar1 = *(float *)pcVar4 - (in_stack_00000008->hit_position).x;
       fVar3 = *(float *)(pcVar4 + 4) - (in_stack_00000008->hit_position).y;
       fVar2 = *(float *)(pcVar4 + 8) - (in_stack_00000008->hit_position).z;
-      pfVar6 = (float *)((int)&in_stack_00000004[7].metadata + iVar7 * 0xb8 + 0x10);
+      pfVar6 = (float *)((int)&in_stack_00000004[7].previous_transform_state + iVar7 * 0xb8 + 0x10);
       if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 < (float)DOUBLE_00635705) {
         fVar1 = (float)DOUBLE_006356fd;
         pfVar6[6] = (float)(in_stack_00000008->color).r * in_stack_00000008->intensity * *pfVar6 *

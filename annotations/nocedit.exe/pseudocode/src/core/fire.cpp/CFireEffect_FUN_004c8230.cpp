@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_emitter.cpp_FUN_004a8860 (004a8860) at 004a89bb [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_0050a8d0 (0050a8d0) at 0050ab13 [UNCONDITIONAL_CALL]
-//   core_weapon.cpp_FUN_005ee830 (005ee830) at 005ee9c5 [UNCONDITIONAL_CALL]
+//   core_weapon.cpp_CWeapon_FUN_005ee830 (005ee830) at 005ee9c5 [UNCONDITIONAL_CALL]
 // Globals:
 //   float FLOAT_0062a073 = 2
 //   double DOUBLE_0062a07b = 0.25
@@ -21,8 +21,8 @@
 //   undefined4 DAT_032613bc
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408ea0
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_fire.cpp_CFireEffect_FUN_004c7eb0
 //   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 //   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
@@ -44,7 +44,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
   int iVar3;
   BADSPACEBASE *in_ESP;
   double dVar4;
-  float *in_stack_00000008;
+  CVector3f *in_stack_00000008;
   float *in_stack_0000000c;
   SSurfaceInfo *in_stack_00000010;
   int in_stack_00000014;
@@ -53,6 +53,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
   float local_128;
   float local_124;
   float local_120;
+  CVector3f local_11c;
   float local_110;
   float local_10c;
   float local_108;
@@ -69,9 +70,11 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
   float local_d4;
   float local_d0;
   float local_cc;
+  CVector3f local_c8;
   float local_bc;
   float local_b8;
   float local_b4;
+  CVector3f local_b0;
   float local_a4;
   float local_a0;
   float local_9c;
@@ -115,14 +118,14 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
     local_54 = in_stack_00000014 + 1;
     local_60 = in_stack_0000000c + 1;
     local_5c = in_stack_0000000c + 2;
-    local_80 = in_stack_00000008 + 1;
-    local_58 = in_stack_00000008 + 2;
+    local_80 = &in_stack_00000008->y;
+    local_58 = &in_stack_00000008->z;
     while( true ) {
       core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00574270
                 (g_CDemonSetPtr,(float)in_stack_00000010->field2_0x8,
                  (float)(in_stack_00000010->color).r,(float)(in_stack_00000010->color).g,
                  (float)(in_stack_00000010->color).b);
-      local_e0.x = *in_stack_00000008;
+      local_e0.x = in_stack_00000008->x;
       local_e0.y = *local_80;
       local_e0.z = *local_58;
       local_134.x = local_e0.x + *in_stack_0000000c;
@@ -157,9 +160,9 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
         local_128 = *in_stack_0000000c * (float)local_24;
         local_124 = in_stack_0000000c[1] * (float)local_24;
         local_120 = (float)local_24 * in_stack_0000000c[2];
-        local_140.x = *in_stack_00000008 + local_128;
-        local_140.y = in_stack_00000008[1] + local_124;
-        local_140.z = in_stack_00000008[2] + local_120;
+        local_140.x = in_stack_00000008->x + local_128;
+        local_140.y = in_stack_00000008->y + local_124;
+        local_140.z = in_stack_00000008->z + local_120;
         if (&local_134 != &local_140) {
           local_134.x = local_140.x;
           local_134.y = local_140.y;
@@ -177,19 +180,22 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
       in_stack_00000010->alpha_or_wetness = 0.0;
       local_14 = local_24;
       if (this_ptr_00 != (CDemonActor *)0x0) {
-        pCVar2 = core_actor_cpp_CDemonActor_FUN_00408f10(this_ptr_00);
+        pCVar2 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                           (this_ptr_00,&local_c8,in_stack_00000008);
         if (pCVar2 != local_20) {
           local_20->x = pCVar2->x;
           local_20->y = pCVar2->y;
           local_20->z = pCVar2->z;
         }
-        pCVar2 = core_actor_cpp_CDemonActor_FUN_00408f10(this_ptr_00);
+        pCVar2 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                           (this_ptr_00,&local_b0,&g_CDemonSetPtr->collision_impact_position);
         if (pCVar2 != local_1c) {
           local_1c->x = pCVar2->x;
           local_1c->y = pCVar2->y;
           local_1c->z = pCVar2->z;
         }
-        pCVar2 = core_actor_cpp_CDemonActor_FUN_00408ea0(this_ptr_00);
+        pCVar2 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+                           (this_ptr_00,&local_11c,&g_CDemonSetPtr->collision_normal);
         if (pCVar2 != local_18) {
           local_18->x = pCVar2->x;
           local_18->y = pCVar2->y;
@@ -199,7 +205,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
             (this_ptr_01 = core_actor_cpp_castToClassHash_FUN_0040c790
                                      (this_ptr_00,g_CCharacterClassInfo.name_hash),
             this_ptr_01 != (CDemonActor *)0x0)) &&
-           (iVar3 = (*(this_ptr_01->metadata).vtable[1].renderOpaque)(this_ptr_01), iVar3 != 0)) {
+           (iVar3 = (*this_ptr_01->vtable[1].renderOpaque)(this_ptr_01), iVar3 != 0)) {
           (in_stack_00000010->color).g = 0xff;
           (in_stack_00000010->color).b = 0;
           (in_stack_00000010->color).r = 0xff;
@@ -235,7 +241,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
           local_2c = 3.1415927;
         }
         in_stack_00000010->angle_or_rotation = local_2c;
-        (*((this_ptr_00->metadata).vtable)->getSurfaceProperties)(this_ptr_00,in_stack_00000010);
+        (*this_ptr_00->vtable->getSurfaceProperties)(this_ptr_00,in_stack_00000010);
       }
       local_28 = 0.0;
       if (in_stack_00000010->field5_0x1c != 0) {
@@ -522,7 +528,7 @@ LAB_004c8ae9:
 //   XREF to: Stack[-0xc8] (DATA)
 // 004c8424: PUSH EAX
 // 004c8425: PUSH EDI
-// 004c8426: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 004c8426: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 004c842b: MOV EDX,dword ptr [EBP + 0x5e]
 //   XREF to: Stack[-0x20] (READ)
@@ -546,7 +552,7 @@ LAB_004c8ae9:
 //   XREF to: Stack[-0xb0] (DATA)
 // 004c8453: PUSH EAX
 // 004c8454: PUSH EDI
-// 004c8455: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 004c8455: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 004c845a: MOV ECX,dword ptr [EBP + 0x62]
 //   XREF to: Stack[-0x1c] (READ)
@@ -570,7 +576,7 @@ LAB_004c8ae9:
 //   XREF to: Stack[-0x11c] (DATA)
 // 004c8485: PUSH EAX
 // 004c8486: PUSH EDI
-// 004c8487: CALL core_actor.cpp_CDemonActor_FUN_00408ea0
+// 004c8487: CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 //   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
 // 004c848c: MOV EDX,dword ptr [EBP + 0x66]
 //   XREF to: Stack[-0x18] (READ)

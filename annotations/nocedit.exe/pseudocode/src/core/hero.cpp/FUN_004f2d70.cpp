@@ -19,14 +19,12 @@
 //   undefined4 g_CDemonSetInstance.actor_list_data[0]
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_door.cpp_CDoor_getMoveType_FUN_00481070
 //   core_door.cpp_FUN_0047fcf0
 //   core_event.cpp_FUN_004b18e0
 
 #include "nocturne.h"
-
-/* Signature: undefined1 actors_hero_hero.cpp_FUN_004f2d70(undefined4 param_1) */
 
 int core_hero_cpp_FUN_004f2d70
               (undefined4 param_1,undefined4 param_2,int unaff_EBX,undefined4 param_4,
@@ -39,8 +37,9 @@ int core_hero_cpp_FUN_004f2d70
   CDoor *this_ptr;
   CVector3f *pCVar4;
   int iVar5;
+  BADSPACEBASE *in_ESP;
   int iVar6;
-  float fStack_20;
+  CVector3f CStack_20;
   int local_14;
   
   iVar6 = 0;
@@ -57,10 +56,11 @@ int core_hero_cpp_FUN_004f2d70
       fVar3 = (param_5->location).position.y - *(float *)(this_ptr->field17_0x9bc + 4);
       fVar1 = (param_5->location).position.z;
       fVar2 = *(float *)(this_ptr->field17_0x9bc + 8);
-      pCVar4 = core_actor_cpp_CDemonActor_FUN_00408f10(param_5);
+      pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                         (param_5,&CStack_20,&(this_ptr->base_actor).location.position);
       if ((0.0 < pCVar4->z) &&
          ((ABS(fVar1 - fVar2) <= (float)DOUBLE_0062ec26 &&
-          (SQRT(fStack_20 * fStack_20 + fVar3 * fVar3) < (float)DOUBLE_0062ec2e)))) {
+          (SQRT(CStack_20.x * CStack_20.x + fVar3 * fVar3) < (float)DOUBLE_0062ec2e)))) {
         iVar5 = core_event_cpp_FUN_004b18e0();
         if (iVar5 != 0) {
           return 1;
@@ -162,7 +162,7 @@ int core_hero_cpp_FUN_004f2d70
 // 004f2e0a: PUSH EDX
 // 004f2e0b: FSTP float ptr [ESP + 0x14]
 //   XREF to: Stack[-0x28] (WRITE)
-// 004f2e0f: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 004f2e0f: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 004f2e14: FLD float ptr [EAX + 0x8]
 // 004f2e17: FLDZ

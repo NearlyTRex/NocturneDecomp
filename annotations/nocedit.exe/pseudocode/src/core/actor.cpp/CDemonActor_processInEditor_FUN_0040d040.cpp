@@ -15,7 +15,7 @@
 //   core_flame.cpp_FUN_004caf60 (004caf60) at 004cb081 [UNCONDITIONAL_CALL]
 //   core_flies.cpp_FUN_004ccaf0 (004ccaf0) at 004ccc61 [UNCONDITIONAL_CALL]
 //   core_frankgen.cpp_FUN_004d25f0 (004d25f0) at 004d2706 [UNCONDITIONAL_CALL]
-//   core_glass.cpp_FUN_004eb490 (004eb490) at 004eb5e1 [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_processInEditor_FUN_004eb490 (004eb490) at 004eb5e1 [UNCONDITIONAL_CALL]
 //   core_grave.cpp_FUN_004eea70 (004eea70) at 004eea79 [UNCONDITIONAL_CALL]
 //   core_ladder.cpp_FUN_00502d00 (00502d00) at 00502e45 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_0050b440 (0050b440) at 0050b7b5 [UNCONDITIONAL_CALL]
@@ -46,10 +46,9 @@
 void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor *this_ptr)
 
 {
-  CDemonActor_vtable *pCVar1;
+  CDemonActor *pCVar1;
   CDemonActor *pCVar2;
-  CDemonActor *pCVar3;
-  int iVar4;
+  int iVar3;
   BADSPACEBASE *in_ESP;
   float in_stack_00000008;
   float in_stack_0000000c;
@@ -57,41 +56,40 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
   CDemonMission *in_stack_00000014;
   CDemonActor *in_stack_00000018;
   
-  pCVar2 = this_ptr;
-  pCVar1 = (this_ptr->metadata).vtable;
+  pCVar1 = this_ptr;
   this_ptr->was_created = 0;
-  pCVar3 = (*pCVar1->getCarrier)(this_ptr);
-  if (pCVar3 == (CDemonActor *)0x0) {
-    iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x29);
-    if (iVar4 == 0) {
+  pCVar2 = (*this_ptr->vtable->getCarrier)(this_ptr);
+  if (pCVar2 == (CDemonActor *)0x0) {
+    iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x29);
+    if (iVar3 == 0) {
       if ((CLocation *)&stack0x00000000 != &this_ptr->location) {
         in_stack_00000008 = (this_ptr->location).position.z;
         this_ptr = (CDemonActor *)(this_ptr->location).position.y;
       }
-      if ((COrientation *)&stack0x0000000c != &pCVar2->orient) {
-        in_stack_0000000c = (pCVar2->orient).pitch;
-        in_stack_00000010 = (CDemonMission *)(pCVar2->orient).bank;
-        in_stack_00000014 = (CDemonMission *)(pCVar2->orient).heading;
+      if ((COrientation *)&stack0x0000000c != &pCVar1->orient) {
+        in_stack_0000000c = (pCVar1->orient).pitch;
+        in_stack_00000010 = (CDemonMission *)(pCVar1->orient).bank;
+        in_stack_00000014 = (CDemonMission *)(pCVar1->orient).heading;
       }
       core_skeleton_cpp_FUN_005a20b0();
-      (pCVar2->location).position.x = (float)this_ptr;
-      (pCVar2->location).position.y = in_stack_00000008;
-      (pCVar2->location).position.z = in_stack_0000000c;
-      if (&pCVar2->orient != (COrientation *)&stack0x00000010) {
-        (pCVar2->orient).pitch = (float)in_stack_00000010;
-        (pCVar2->orient).bank = (float)in_stack_00000014;
-        (pCVar2->orient).heading = (float)in_stack_00000018;
+      (pCVar1->location).position.x = (float)this_ptr;
+      (pCVar1->location).position.y = in_stack_00000008;
+      (pCVar1->location).position.z = in_stack_0000000c;
+      if (&pCVar1->orient != (COrientation *)&stack0x00000010) {
+        (pCVar1->orient).pitch = (float)in_stack_00000010;
+        (pCVar1->orient).bank = (float)in_stack_00000014;
+        (pCVar1->orient).heading = (float)in_stack_00000018;
       }
     }
-    iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x22);
-    if (iVar4 != 0) {
-      in_stack_00000014 = (CDemonMission *)pCVar2;
+    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x22);
+    if (iVar3 != 0) {
+      in_stack_00000014 = (CDemonMission *)pCVar1;
       in_stack_00000010 = g_CDemonMissionPtr;
       in_stack_0000000c = 5.952307e-39;
       core_msnedit_cpp_IgnoreAndProcess_FUN_0053c8d0();
     }
     if (((byte)g_MouseButtonFlags & 2) != 0) {
-      in_stack_00000018 = pCVar2;
+      in_stack_00000018 = pCVar1;
       in_stack_00000014 = g_CDemonMissionPtr;
       in_stack_00000010 = (CDemonMission *)0x40d0b5;
       core_msnedit_cpp_FUN_0053ca00();

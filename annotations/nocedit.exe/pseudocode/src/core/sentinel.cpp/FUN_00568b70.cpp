@@ -11,7 +11,7 @@
 //   undefined4 DAT_03114214
 //   CVector3f g_ZeroVector
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 
 #include "nocturne.h"
@@ -28,10 +28,8 @@ undefined4 core_sentinel_cpp_FUN_00568b70(void)
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
   CVector3f local_34;
-  float local_24;
-  float local_1c;
-  float local_18;
-  float local_14;
+  CVector3f local_28;
+  CVector3f local_1c;
   CVector3f local_10;
   
   if (in_stack_00000008 == 0) {
@@ -39,17 +37,15 @@ undefined4 core_sentinel_cpp_FUN_00568b70(void)
   }
   pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                      (&local_10,&g_ZeroVector,
-                      (CMatrix3x4f *)
-                      &(&in_stack_00000004[0xb].metadata)[DAT_03114210 + -1].runtime_flags);
+                      (CMatrix3x4f *)&(&in_stack_00000004[0xb].scale)[DAT_03114210 * 4].z);
   pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                      (&local_34,&g_ZeroVector,
-                      (CMatrix3x4f *)
-                      &(&in_stack_00000004[0xb].metadata)[DAT_03114214 + -1].runtime_flags);
-  local_1c = (pCVar2->x + pCVar1->x) * FLOAT_00645882;
-  local_18 = (pCVar2->y + pCVar1->y) * FLOAT_00645882;
-  local_14 = (pCVar2->z + pCVar1->z) * FLOAT_00645882 + FLOAT_00645886;
-  core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-  local_24 = local_24 + FLOAT_0064588a;
+                      (CMatrix3x4f *)&(&in_stack_00000004[0xb].scale)[DAT_03114214 * 4].z);
+  local_1c.x = (pCVar2->x + pCVar1->x) * FLOAT_00645882;
+  local_1c.y = (pCVar2->y + pCVar1->y) * FLOAT_00645882;
+  local_1c.z = (pCVar2->z + pCVar1->z) * FLOAT_00645882 + FLOAT_00645886;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&local_28,&local_1c);
+  local_28.y = local_28.y + FLOAT_0064588a;
   (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x60))();
   return 1;
 }
@@ -146,7 +142,7 @@ undefined4 core_sentinel_cpp_FUN_00568b70(void)
 // 00568c31: PUSH EDX
 // 00568c32: FSTP float ptr [ESP + 0x40]
 //   XREF to: Stack[-0x14] (WRITE)
-// 00568c36: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00568c36: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 00568c3b: ADD ESP,0xc
 // 00568c3e: LEA EAX,[EDI + 0x30]

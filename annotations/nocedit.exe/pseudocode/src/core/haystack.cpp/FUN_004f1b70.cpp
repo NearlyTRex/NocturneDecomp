@@ -24,6 +24,7 @@
 void core_haystack_cpp_FUN_004f1b70(void)
 
 {
+  CDeformableModelInstance *this_ptr;
   float fVar1;
   int iVar2;
   CCharacter *in_stack_00000004;
@@ -40,21 +41,23 @@ void core_haystack_cpp_FUN_004f1b70(void)
   }
   *(undefined4 *)in_stack_00000004[1].base_actor.actor_name = DAT_0065f3e8;
   fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
+  this_ptr = &in_stack_00000004->model;
   in_stack_00000004->hit_points = fVar1;
   if (fVar1 <= 0.0) {
     in_stack_00000004->hit_points = 0.0;
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
     if ((*(int *)(iVar2 + 0x24) != 9) &&
-       (iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(), *(int *)(iVar2 + 0x24) != 8)) {
+       (iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller),
+       *(int *)(iVar2 + 0x24) != 8)) {
       in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
       core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);
       core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
       return;
     }
   }
   else if (0.0 < *(float *)(in_stack_00000008 + 4)) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
   }
   core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
   return;

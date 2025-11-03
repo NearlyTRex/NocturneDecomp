@@ -13,13 +13,13 @@
 //   TerminatedCString s_turret_tail_wav_00656669
 //   undefined4 DAT_00656680
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_turret.cpp_FUN_005e2d50
 //   core_turret.cpp_FUN_005e3560
@@ -69,10 +69,10 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
   
   bVar6 = 0;
   iVar3 = this_ptr->state;
-  (this_ptr->base_weapon).field6_0x2f4[0] = -1;
-  (this_ptr->base_weapon).field6_0x2f4[1] = -1;
-  (this_ptr->base_weapon).field6_0x2f4[2] = -1;
-  (this_ptr->base_weapon).field6_0x2f4[3] = -1;
+  (this_ptr->base_weapon).field7_0x2f4[0] = -1;
+  (this_ptr->base_weapon).field7_0x2f4[1] = -1;
+  (this_ptr->base_weapon).field7_0x2f4[2] = -1;
+  (this_ptr->base_weapon).field7_0x2f4[3] = -1;
   switch(iVar3) {
   case 0:
     pCVar1 = &(this_ptr->base_weapon).base_actor.orient;
@@ -81,7 +81,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
       (this_ptr->base_weapon).base_actor.orient.bank = *(float *)(this_ptr->field1_0x578 + 4);
       (this_ptr->base_weapon).base_actor.orient.heading = *(float *)(this_ptr->field1_0x578 + 8);
     }
-    iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->field3_0x704);
     if (iVar3 == 0) {
       this_ptr->timer = 0.0;
@@ -98,28 +98,27 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
     if (fVar7 <= 0.0) {
       this_ptr->timer = 0.0;
       this_ptr->state = 2;
-      (this_ptr->base_weapon).field6_0x2f4[0xc] = '\0';
-      (this_ptr->base_weapon).field6_0x2f4[0xd] = '\0';
-      (this_ptr->base_weapon).field6_0x2f4[0xe] = '\0';
-      (this_ptr->base_weapon).field6_0x2f4[0xf] = '\0';
+      (this_ptr->base_weapon).field7_0x2f4[0xc] = '\0';
+      (this_ptr->base_weapon).field7_0x2f4[0xd] = '\0';
+      (this_ptr->base_weapon).field7_0x2f4[0xe] = '\0';
+      (this_ptr->base_weapon).field7_0x2f4[0xf] = '\0';
     }
     break;
   case 2:
-    (this_ptr->base_weapon).field6_0x2f4[0] = -1;
+    (this_ptr->base_weapon).field7_0x2f4[0] = -1;
     pCVar2 = g_CEventListPtr;
-    (this_ptr->base_weapon).field6_0x2f4[1] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[2] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[3] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[4] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[5] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[6] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[7] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[8] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[9] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[10] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[0xb] = '\0';
-    iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (pCVar2,this_ptr->field3_0x704);
+    (this_ptr->base_weapon).field7_0x2f4[1] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[2] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[3] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[4] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[5] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[6] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[7] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[8] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[9] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[10] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[0xb] = '\0';
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(pCVar2,this_ptr->field3_0x704);
     if (iVar3 == 0) {
       this_ptr->state = 3;
       this_ptr->timer = this_ptr->patrol_time;
@@ -130,28 +129,27 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
     }
     break;
   case 3:
-    (this_ptr->base_weapon).field6_0x2f4[0] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[0] = '\0';
     pCVar2 = g_CEventListPtr;
-    (this_ptr->base_weapon).field6_0x2f4[1] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[2] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[3] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[4] = -1;
-    (this_ptr->base_weapon).field6_0x2f4[5] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[6] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[7] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[8] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[9] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[10] = '\0';
-    (this_ptr->base_weapon).field6_0x2f4[0xb] = '\0';
-    iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-                      (pCVar2,this_ptr->field3_0x704);
+    (this_ptr->base_weapon).field7_0x2f4[1] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[2] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[3] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[4] = -1;
+    (this_ptr->base_weapon).field7_0x2f4[5] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[6] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[7] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[8] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[9] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[10] = '\0';
+    (this_ptr->base_weapon).field7_0x2f4[0xb] = '\0';
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(pCVar2,this_ptr->field3_0x704);
     if (iVar3 != 0) {
       this_ptr->timer = 0.0;
       this_ptr->state = 2;
-      (this_ptr->base_weapon).field6_0x2f4[0xc] = '\0';
-      (this_ptr->base_weapon).field6_0x2f4[0xd] = '\0';
-      (this_ptr->base_weapon).field6_0x2f4[0xe] = '\0';
-      (this_ptr->base_weapon).field6_0x2f4[0xf] = '\0';
+      (this_ptr->base_weapon).field7_0x2f4[0xc] = '\0';
+      (this_ptr->base_weapon).field7_0x2f4[0xd] = '\0';
+      (this_ptr->base_weapon).field7_0x2f4[0xe] = '\0';
+      (this_ptr->base_weapon).field7_0x2f4[0xf] = '\0';
       break;
     }
     fVar7 = this_ptr->timer - in_stack_00000008;
@@ -165,7 +163,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
     sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
     in_stack_ffffff0c = "turret-ani?.wav";
 LAB_005e24c7:
-    uVar5 = (*((this_ptr->base_weapon).base_actor.metadata.vtable)->playSound)
+    uVar5 = (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
                       ((CDemonActor *)this_ptr,in_stack_ffffff0c);
     *(undefined4 *)(this_ptr->field12_0x85c + 0x5c) = uVar5;
     break;
@@ -209,7 +207,7 @@ LAB_005e24c7:
         (local_1c._4_4_)->y = pCVar4->y;
         (local_1c._4_4_)->z = pCVar4->z;
       }
-      core_actor_cpp_CDemonActor_FUN_00408c10((CDemonActor *)this_ptr);
+      core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
     }
     else {
       this_ptr->state = 0;
@@ -226,15 +224,15 @@ LAB_005e24c7:
     g_CurrentLineNumber = 0x15a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTurret::process - invalid state");
   }
-  if (-1 < *(int *)(this_ptr->base_weapon).field6_0x2f4) {
-    (*(this_ptr->base_weapon).base_actor.metadata.vtable[1].processFootstep)
+  if (-1 < *(int *)(this_ptr->base_weapon).field7_0x2f4) {
+    (*(this_ptr->base_weapon).base_actor.vtable[1].processFootstep)
               ((CDemonActor *)this_ptr,(float)in_stack_ffffff0c);
   }
-  fVar7 = *(float *)((this_ptr->base_weapon).field6_0x2f4 + 0xc);
+  fVar7 = *(float *)((this_ptr->base_weapon).field7_0x2f4 + 0xc);
   iVar3 = *(int *)(this_ptr->field12_0x85c + 0x54);
   *(float *)(this_ptr->field12_0x85c + 0x10) =
        *(float *)(this_ptr->field12_0x85c + 0x10) - in_stack_00000008;
-  *(float *)((this_ptr->base_weapon).field6_0x2f4 + 0xc) = fVar7 - in_stack_00000008;
+  *(float *)((this_ptr->base_weapon).field7_0x2f4 + 0xc) = fVar7 - in_stack_00000008;
   if ((0 < iVar3) || (0.0 < *(float *)(this_ptr->field12_0x85c + 0x10))) {
     *(int *)(this_ptr->field12_0x85c + 0x54) = *(int *)(this_ptr->field12_0x85c + 0x54) + -1;
     core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
@@ -242,7 +240,7 @@ LAB_005e24c7:
     if (iVar3 == 0) {
       crt_stdio_c_sprintf_FUN_005fdbd0
                 (acStack_e8,"turret-loop.wav * %f",(double)in_stack_ffffff14);
-      uVar5 = (*((this_ptr->base_weapon).base_actor.metadata.vtable)->playAmbientSound)
+      uVar5 = (*((this_ptr->base_weapon).base_actor.vtable)->playAmbientSound)
                         ((CDemonActor *)this_ptr,acStack_e4);
       *(undefined4 *)(this_ptr->field12_0x85c + 0x58) = uVar5;
       return;
@@ -252,7 +250,7 @@ LAB_005e24c7:
     local_1c = (double)sound_sndmain_cpp_FUN_005a9720();
     if (0.0 <= local_1c) {
       sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-      (*((this_ptr->base_weapon).base_actor.metadata.vtable)->playSound)
+      (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
                 ((CDemonActor *)this_ptr,"turret-tail.wav");
       return;
     }
@@ -304,7 +302,7 @@ LAB_005e24c7:
 //   XREF to: 006793d0 (READ)
 // 005e248c: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 005e248d: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 005e248d: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 005e2492: ADD ESP,0x8
 // 005e2495: TEST EAX,EAX
@@ -419,7 +417,7 @@ LAB_005e24c7:
 // 005e25f0: PUSH EAX
 //   XREF to: 02d05310 (DATA)
 // 005e25f1: MOV dword ptr [EBX + 0x2fc],0x0
-// 005e25fb: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 005e25fb: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 005e2600: ADD ESP,0x8
 // 005e2603: TEST EAX,EAX
@@ -450,7 +448,7 @@ LAB_005e24c7:
 // 005e265e: PUSH ESI
 //   XREF to: 02d05310 (DATA)
 // 005e265f: MOV dword ptr [EBX + 0x2fc],0x0
-// 005e2669: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 005e2669: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 005e266e: ADD ESP,0x8
 // 005e2671: TEST EAX,EAX
@@ -621,7 +619,7 @@ LAB_005e24c7:
 // 005e283f: MOV dword ptr [EDX + 0x8],ECX
 // 005e2842: PUSH EBX
 //   Label: LAB_005e2842
-// 005e2843: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 005e2843: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 005e2848: ADD ESP,0x4
 // 005e284b: JMP 0x005e24da

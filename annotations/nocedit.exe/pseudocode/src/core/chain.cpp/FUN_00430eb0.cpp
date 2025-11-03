@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_chain.cpp_FUN_00430eb0()
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 
 #include "nocturne.h"
 
@@ -16,27 +16,27 @@ CVector3f * core_chain_cpp_FUN_00430eb0(void)
 {
   CVector3f *pCVar1;
   int iVar2;
+  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   CVector3f *in_stack_00000008;
-  float local_40;
-  float local_3c;
-  float local_38;
-  float local_1c;
+  float fVar3;
+  undefined1 local_3c [24];
+  undefined1 auStack_24 [12];
   float local_18;
   float local_14;
   
   local_18 = 9999.0;
   local_14 = 9999.0;
-  local_40 = -9999.0;
-  local_3c = -9999.0;
-  local_38 = -9999.0;
-  local_1c = 9999.0;
+  fVar3 = -9999.0;
+  local_3c._0_4_ = -9999.0;
+  local_3c._4_4_ = -9999.0;
+  auStack_24._8_4_ = 9999.0;
   iVar2 = 0;
   if (0 < *(int *)in_stack_00000004[1].actor_name) {
-    pCVar1 = &in_stack_00000004[1].metadata.runtime_vector2;
+    pCVar1 = &in_stack_00000004[1].previous_transform_state.orientation;
     do {
-      if (pCVar1->x < local_1c) {
-        local_1c = pCVar1->x;
+      if (pCVar1->x < (float)auStack_24._8_4_) {
+        auStack_24._8_4_ = pCVar1->x;
       }
       if (pCVar1->y < local_18) {
         local_18 = pCVar1->y;
@@ -44,26 +44,28 @@ CVector3f * core_chain_cpp_FUN_00430eb0(void)
       if (pCVar1->z < local_14) {
         local_14 = pCVar1->z;
       }
-      if (local_40 < pCVar1->x) {
-        local_40 = pCVar1->x;
+      if (fVar3 < pCVar1->x) {
+        fVar3 = pCVar1->x;
       }
-      if (local_3c < pCVar1->y) {
-        local_3c = pCVar1->y;
+      if ((float)local_3c._0_4_ < pCVar1->y) {
+        local_3c._0_4_ = pCVar1->y;
       }
-      if (local_38 < pCVar1->z) {
-        local_38 = pCVar1->z;
+      if ((float)local_3c._4_4_ < pCVar1->z) {
+        local_3c._4_4_ = pCVar1->z;
       }
       iVar2 = iVar2 + 1;
       pCVar1 = pCVar1 + 3;
     } while (iVar2 < *(int *)in_stack_00000004[1].actor_name);
   }
-  pCVar1 = core_actor_cpp_CDemonActor_FUN_00408f10(in_stack_00000004);
+  pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                     (in_stack_00000004,(CVector3f *)(local_3c + 8),(CVector3f *)(auStack_24 + 8));
   if (in_stack_00000008 != pCVar1) {
     in_stack_00000008->x = pCVar1->x;
     in_stack_00000008->y = pCVar1->y;
     in_stack_00000008->z = pCVar1->z;
   }
-  pCVar1 = core_actor_cpp_CDemonActor_FUN_00408f10(in_stack_00000004);
+  pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                     (in_stack_00000004,(CVector3f *)auStack_24,(CVector3f *)local_3c);
   if (in_stack_00000008 + 1 == pCVar1) {
     return in_stack_00000008;
   }
@@ -188,7 +190,7 @@ CVector3f * core_chain_cpp_FUN_00430eb0(void)
 //   XREF to: Stack[-0x34] (DATA)
 // 00430f7d: PUSH EAX
 // 00430f7e: PUSH ESI
-// 00430f7f: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 00430f7f: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 00430f84: ADD ESP,0xc
 // 00430f87: CMP EDI,EAX
@@ -207,7 +209,7 @@ CVector3f * core_chain_cpp_FUN_00430eb0(void)
 //   XREF to: Stack[-0x28] (DATA)
 // 00430fa2: PUSH EAX
 // 00430fa3: PUSH ESI
-// 00430fa4: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 00430fa4: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 00430fa9: LEA EDX,[EDI + 0xc]
 // 00430fac: ADD ESP,0xc

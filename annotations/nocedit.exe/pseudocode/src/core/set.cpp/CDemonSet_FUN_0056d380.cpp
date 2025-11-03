@@ -8,7 +8,7 @@
 //   core_fire.cpp_CFireball_render_FUN_004c0e70 (004c0e70) at 004c0f4d [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CRock_render_FUN_004c1870 (004c1870) at 004c1919 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CShell_render_FUN_004c6200 (004c6200) at 004c62aa [UNCONDITIONAL_CALL]
-//   core_fire.cpp_FUN_004c0140 (004c0140) at 004c01f4 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CStake_render_FUN_004c0140 (004c0140) at 004c01f4 [UNCONDITIONAL_CALL]
 //   core_gore.cpp_CGore_FUN_004ed7b0 (004ed7b0) at 004ed7e8 [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_FUN_0056aca0 (0056aca0) at 0056ad28 [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_FUN_0056c990 (0056c990) at 0056cbcf [UNCONDITIONAL_CALL]
@@ -16,7 +16,7 @@
 //   core_set.cpp_CDemonSet_FUN_0056cf00 (0056cf00) at 0056cfbb [UNCONDITIONAL_CALL]
 //   core_weather.cpp_CWeather_FUN_005ef190 (005ef190) at 005ef25c [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_032c1c64
+//   int g_LightingSystemDirty
 //   undefined4 DAT_032c1c68
 //   undefined4 DAT_032c1c6c
 //   undefined4 DAT_032c1c70
@@ -55,7 +55,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056d380(CDemonSet *this_ptr)
   undefined4 *in_stack_00000018;
   
   if (in_stack_00000008 == (undefined4 *)0x0) {
-    DAT_032c1c64 = 1;
+    g_LightingSystemDirty = 1;
   }
   else {
     if (in_stack_00000008 != &DAT_032c1c68) {
@@ -88,7 +88,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056d380(CDemonSet *this_ptr)
       _DAT_032c1ca8 = 0x3f800000;
       _DAT_032c1cb8 = 0x3f800000;
       DAT_032c1c98 = 0x3f800000;
-      DAT_032c1c64 = 2;
+      g_LightingSystemDirty = 2;
       return;
     }
     puVar2 = &DAT_032c1c98;
@@ -97,7 +97,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056d380(CDemonSet *this_ptr)
       in_stack_00000018 = in_stack_00000018 + 1;
       puVar2 = puVar2 + 1;
     }
-    DAT_032c1c64 = 2;
+    g_LightingSystemDirty = 2;
   }
   return;
 }

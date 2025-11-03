@@ -4,14 +4,17 @@
 // Convention: unknown
 // Signature: undefined core_charactr.cpp_FUN_0042e570()
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 
 #include "nocturne.h"
 
 void core_charactr_cpp_FUN_0042e570(void)
 
 {
-  core_skeleton_cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50();
+  int in_stack_00000004;
+  
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50
+            ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
   return;
 }
 
@@ -45,7 +48,7 @@ void core_charactr_cpp_FUN_0042e570(void)
 // 0042e5b0: PUSH ESI
 // 0042e5b1: ADD ECX,0x158
 // 0042e5b7: PUSH ECX
-// 0042e5b8: CALL core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+// 0042e5b8: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 0042e5bd: ADD ESP,0x18
 // 0042e5c0: POP ESI

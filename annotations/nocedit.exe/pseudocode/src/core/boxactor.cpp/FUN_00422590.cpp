@@ -6,8 +6,8 @@
 // Cross-references:
 //   core_boxactor.cpp_FUN_00422390 (00422390) at 00422498 [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_box.cpp_CBoundingBox3D_clampPoint_FUN_00421550
 
 #include "nocturne.h"
@@ -19,17 +19,19 @@ void core_boxactor_cpp_FUN_00422590(void)
 {
   CBoundingBox3D *this_ptr;
   CVector3f *pCVar1;
-  float *pfVar2;
   BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   CVector3f *out_point;
+  CVector3f CStack_28;
   CVector3f local_1c;
   CVector3f local_10;
   
   if (*(CDemonActor **)(in_stack_00000004 + 0x324) == (CDemonActor *)0x0) {
     return;
   }
-  core_actor_cpp_CDemonActor_FUN_00408f10(*(CDemonActor **)(in_stack_00000004 + 0x324));
+  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+            (*(CDemonActor **)(in_stack_00000004 + 0x324),&local_1c,
+             (CVector3f *)(in_stack_00000004 + 0x20));
   pCVar1 = &local_1c;
   out_point = &local_10;
   this_ptr = (CBoundingBox3D *)
@@ -40,10 +42,11 @@ void core_boxactor_cpp_FUN_00422590(void)
     local_1c.y = pCVar1->y;
     local_1c.z = pCVar1->z;
   }
-  pfVar2 = core_actor_cpp_CDemonActor_FUN_00408ec0(*(CDemonActor **)(in_stack_00000004 + 0x324));
-  *(float *)(in_stack_00000004 + 0x20) = *pfVar2;
-  *(float *)(in_stack_00000004 + 0x24) = pfVar2[1];
-  *(float *)(in_stack_00000004 + 0x28) = pfVar2[2];
+  pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                     (*(CDemonActor **)(in_stack_00000004 + 0x324),&CStack_28,&local_1c);
+  *(float *)(in_stack_00000004 + 0x20) = pCVar1->x;
+  *(float *)(in_stack_00000004 + 0x24) = pCVar1->y;
+  *(float *)(in_stack_00000004 + 0x28) = pCVar1->z;
   return;
 }
 
@@ -68,7 +71,7 @@ void core_boxactor_cpp_FUN_00422590(void)
 //   XREF to: Stack[-0x1c] (DATA)
 // 004225af: PUSH EAX
 // 004225b0: PUSH EDX
-// 004225b1: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 004225b1: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 004225b6: ADD ESP,0xc
 // 004225b9: LEA EAX,[ESP + 0x24]
@@ -108,7 +111,7 @@ void core_boxactor_cpp_FUN_00422590(void)
 // 0042260c: PUSH EAX
 // 0042260d: MOV ESI,dword ptr [EBX + 0x324]
 // 00422613: PUSH ESI
-// 00422614: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00422614: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 00422619: FLD float ptr [EAX]
 // 0042261b: ADD ESP,0xc

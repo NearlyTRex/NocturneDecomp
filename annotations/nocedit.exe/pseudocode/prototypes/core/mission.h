@@ -51,9 +51,9 @@ void CDemonMission::writeFile(CDemonMission * this_ptr);
 // Address: 00523990
 CDemonActor * CDemonMission::loadActor(CDemonMission * this_ptr, FILE * file, CDemonActor * current_actor, char * property_description);
 
-// Original: core_mission.cpp_CDemonMission_writeActor_FUN_00523af0
+// Original: core_mission.cpp_CDemonMission_saveActor_FUN_00523af0
 // Address: 00523af0
-void CDemonMission::writeActor(CDemonMission * this_ptr, CDemonActor * actor_ptr, FILE * file, CDemonActor * current_actor, char * description);
+void CDemonMission::saveActor(CDemonMission * this_ptr, CDemonActor * actor_ptr, FILE * file, CDemonActor * current_actor, char * description);
 
 // Original: core_mission.cpp_CDemonMission_FUN_00523b70
 // Address: 00523b70

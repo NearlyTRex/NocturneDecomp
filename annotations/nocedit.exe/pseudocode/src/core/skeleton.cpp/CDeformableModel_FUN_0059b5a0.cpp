@@ -1,8 +1,8 @@
 // Name: core_skeleton.cpp_CDeformableModel_FUN_0059b5a0
 // Address: 0059b5a0
 // Address Range: [[0059b5a0, 0059b635]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CDeformableModel_FUN_0059b5a0()
+// Convention: __cdecl
+// Signature: void core_skeleton.cpp_CDeformableModel_FUN_0059b5a0(CDeformableModel * this_ptr)
 // Cross-references:
 //   core_skeleton.cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0 (005a03b0) at 005a03d0 [UNCONDITIONAL_CALL]
 // Globals:
@@ -14,35 +14,32 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_skeleton.cpp_CDeformableModel_FUN_0059b5a0(undefined4 param_1,
-   undefined4 param_2) */
-
-void core_skeleton_cpp_CDeformableModel_FUN_0059b5a0(void)
+void __cdecl core_skeleton_cpp_CDeformableModel_FUN_0059b5a0(CDeformableModel *this_ptr)
 
 {
   ushort *puVar1;
-  int iVar2;
-  int iVar3;
+  ushort *puVar2;
+  SInputFace *pSVar3;
   int iVar4;
   int iVar5;
-  int in_stack_00000004;
   int in_stack_00000008;
   
   iVar5 = 0;
-  for (iVar4 = 0; iVar3 = in_stack_00000004 + in_stack_00000008 * 4, iVar4 < *(int *)(iVar3 + 0x54);
-      iVar4 = iVar4 + 1) {
-    iVar2 = *(int *)(iVar3 + 0x7c);
+  for (iVar4 = 0; iVar4 < this_ptr->tri_count[in_stack_00000008]; iVar4 = iVar4 + 1) {
+    pSVar3 = this_ptr->tri_data_ptr[in_stack_00000008];
     engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-              (g_CDemonRendererPtr,(uint)*(ushort *)(iVar5 + iVar2),
-               (uint)*(ushort *)(iVar5 + 2 + iVar2));
+              (g_CDemonRendererPtr,
+               (uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_0 + iVar5),
+               (uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_1 + iVar5));
     engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-              (g_CDemonRendererPtr,(uint)*(ushort *)(iVar5 + 2 + iVar2),
-               (uint)*(ushort *)(iVar5 + 4 + iVar2));
-    puVar1 = (ushort *)(iVar5 + iVar2);
-    iVar3 = iVar5 + 4;
+              (g_CDemonRendererPtr,
+               (uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_1 + iVar5),
+               (uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_2 + iVar5));
+    puVar1 = (ushort *)((int)&(pSVar3->vertex_indices).vertex_index_0 + iVar5);
+    puVar2 = (ushort *)((int)&(pSVar3->vertex_indices).vertex_index_2 + iVar5);
     iVar5 = iVar5 + 0x12;
     engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-              (g_CDemonRendererPtr,(uint)*(ushort *)(iVar3 + iVar2),(uint)*puVar1);
+              (g_CDemonRendererPtr,(uint)*puVar2,(uint)*puVar1);
   }
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
   return;

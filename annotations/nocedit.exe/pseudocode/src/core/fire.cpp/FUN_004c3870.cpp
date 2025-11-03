@@ -12,8 +12,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_fire.cpp_FUN_004c3870() */
-
 void core_fire_cpp_FUN_004c3870(void)
 
 {

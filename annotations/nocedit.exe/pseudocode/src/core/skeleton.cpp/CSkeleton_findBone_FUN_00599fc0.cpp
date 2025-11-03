@@ -1,8 +1,8 @@
 // Name: core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 // Address: 00599fc0
 // Address Range: [[00599fc0, 0059a045]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0()
+// Convention: __cdecl
+// Signature: int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
 // Cross-references:
 //   core_baron.cpp_CBaron_FUN_00412cb0 (00412cb0) at 00412d80 [UNCONDITIONAL_CALL]
 //   core_batcreat.cpp_CBatCreature_FUN_00415150 (00415150) at 00415200 [UNCONDITIONAL_CALL]
@@ -32,7 +32,7 @@
 //   core_scat.cpp_FUN_00556f90 (00556f90) at 00557060 [UNCONDITIONAL_CALL]
 //   core_sentinel.cpp_FUN_00567e20 (00567e20) at 00567fa2 [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_FUN_0056c990 (0056c990) at 0056c9c8 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00596a5f [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596a5f [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a24d0 (005a24d0) at 005a2600 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb4b0 (005bb4b0) at 005bb641 [UNCONDITIONAL_CALL]
 //   core_succubus.cpp_CSuccubus_FUN_005c6b60 (005c6b60) at 005c6c80 [UNCONDITIONAL_CALL]
@@ -54,30 +54,25 @@
 
 #include "nocturne.h"
 
-/* Signature: int core_skeleton.cpp_CSkeleton_findBone(CSkeleton* param_1, char* boneName,
-   undefined4 param_3) */
-
-int core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(void)
+int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *this_ptr,char *bone_name)
 
 {
   int iVar1;
   int iVar2;
-  char *str1;
-  int in_stack_00000004;
-  char *in_stack_00000008;
+  SBone *str1;
   int in_stack_0000000c;
   
   iVar2 = 0;
-  if (0 < *(int *)(in_stack_00000004 + 0x28558)) {
-    str1 = (char *)(in_stack_00000004 + 0x2855c);
+  if (0 < this_ptr->bone_count) {
+    str1 = this_ptr->bone_list;
     do {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,in_stack_00000008);
+      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1->bone_name,bone_name);
       if (iVar1 == 0) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      str1 = str1 + 0x24;
-    } while (iVar2 < *(int *)(in_stack_00000004 + 0x28558));
+      str1 = str1 + 1;
+    } while (iVar2 < this_ptr->bone_count);
   }
   if (in_stack_0000000c == 0) {
     return -1;
@@ -85,7 +80,7 @@ int core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(void)
   g_CurrentFilename = "..\\core\\skeleton.cpp";
   g_CurrentLineNumber = 0x16d;
   core_main_c_displayErrorAndQuit_FUN_00506f10
-            ("Can't find bone %s in skeleton %s!",in_stack_00000008,in_stack_00000004 + 0x28508);
+            ("Can't find bone %s in skeleton %s!",bone_name,this_ptr->loaded_filename);
   return -1;
 }
 

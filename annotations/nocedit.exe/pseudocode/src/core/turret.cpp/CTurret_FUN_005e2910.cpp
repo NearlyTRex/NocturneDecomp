@@ -53,8 +53,8 @@ int * __cdecl core_turret_cpp_CTurret_FUN_005e2910(CTurret *this_ptr)
   pCVar1 = this_ptr;
   bVar7 = 0;
   core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30();
-  dVar9 = crt_math_c_round_FUN_005fe6b0
-                    ((double)CONCAT44(extraout_EDX,&(pCVar1->base_weapon).model_instance));
+  dVar9 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,&(pCVar1->base_weapon).model))
+  ;
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(SUB84(dVar9,0));
   pCVar3 = pCVar2->frame_bounds + unaff_retaddr * 2;
   (in_stack_00000008->min).x = pCVar3->x;

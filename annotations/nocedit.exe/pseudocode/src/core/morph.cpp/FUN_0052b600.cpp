@@ -11,17 +11,16 @@
 //   core_succubus.cpp_CSuccubus_FUN_005c7590 (005c7590) at 005c76a0 [UNCONDITIONAL_CALL]
 //   core_vampboss.cpp_CVampireBoss_FUN_005e6da0 (005e6da0) at 005e6f0e [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_morph.cpp_GetSkeletonPtrAndAnimate_FUN_0052aa30
+//   core_morph.cpp_FUN_0052aa30
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_morph.cpp_FUN_0052b600(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3, undefined4 param_4) */
-
-void core_morph_cpp_FUN_0052b600(void)
+void core_morph_cpp_FUN_0052b600
+               (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4,
+               int param_5,int param_6,undefined4 param_7,undefined4 param_8)
 
 {
-  core_morph_cpp_GetSkeletonPtrAndAnimate_FUN_0052aa30();
+  core_morph_cpp_FUN_0052aa30(param_6 * 0x608 + param_5,param_8,param_7,unaff_EBX);
   return;
 }
 
@@ -46,7 +45,7 @@ void core_morph_cpp_FUN_0052b600(void)
 // 0052b623: PUSH ECX
 // 0052b624: ADD EAX,EBX
 // 0052b626: PUSH EAX
-// 0052b627: CALL core_morph.cpp_GetSkeletonPtrAndAnimate_FUN_0052aa30
+// 0052b627: CALL core_morph.cpp_FUN_0052aa30
 //   XREF to: 0052aa30 (UNCONDITIONAL_CALL)
 // 0052b62c: ADD ESP,0xc
 // 0052b62f: POP EBX

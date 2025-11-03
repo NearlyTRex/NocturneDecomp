@@ -294,7 +294,7 @@ void core_msnedit_cpp_MasterEditorKeysHelpScreen_FUN_00535e70
       param_74 = param_74 + 0x16;
       param_8 = 0x536a00;
       param_9 = this_ptr;
-      (*((this_ptr->metadata).vtable)->showEditorHelp)(this_ptr,param_10);
+      (*this_ptr->vtable->showEditorHelp)(this_ptr,param_10);
       iVar1 = param_70;
     }
     param_70 = iVar1;

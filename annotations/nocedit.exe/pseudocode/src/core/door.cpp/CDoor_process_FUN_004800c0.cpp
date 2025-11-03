@@ -7,15 +7,15 @@
 //   void* switchdataD_004800b0 = 0048011a
 //   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CDemonSet g_CDemonSetInstance
 //   undefined4 g_CDemonSetInstance.damage_listener_count
 //   undefined4 g_CDemonSetInstance.damage_listeners
 // Function calls:
 //   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
 //   core_door.cpp_CDoor_reposition_FUN_0047fd20
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
-//   core_event.cpp_FUN_004aabe0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
+//   core_event.cpp_CEventList_FUN_004aabe0
 //   core_setcolid.cpp_CDemonSet_FUN_00574440
 //   core_setcolid.cpp_CDemonSet_FUN_005744d0
 //   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
@@ -73,13 +73,13 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr)
   }
   switch(this_ptr->door_state) {
   case 0:
-    iVar7 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->field7_0x2e8);
     if (iVar7 != 0) {
       cVar1 = this_ptr->field9_0x47c[1000];
       this_ptr->door_state = 1;
       if (cVar1 != '\0') {
-        (*((this_ptr->base_actor).metadata.vtable)->playSound)
+        (*((this_ptr->base_actor).vtable)->playSound)
                   (&this_ptr->base_actor,this_ptr->field9_0x47c + 1000);
       }
       core_setcolid_cpp_CDemonSet_FUN_005744d0(g_CDemonSetPtr);
@@ -106,11 +106,11 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr)
     }
     break;
   case 2:
-    iVar7 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->field7_0x2e8 + 100);
     if ((iVar7 != 0) &&
        (cVar1 = this_ptr->field9_0x47c[0x44c], this_ptr->door_state = 3, cVar1 != '\0')) {
-      (*((this_ptr->base_actor).metadata.vtable)->playSound)
+      (*((this_ptr->base_actor).vtable)->playSound)
                 (&this_ptr->base_actor,this_ptr->field9_0x47c + 0x44c);
     }
     this_ptr->param = this_ptr->max_param;
@@ -144,13 +144,13 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr)
     cVar1 = this_ptr->field7_0x2e8[200];
   }
   if (cVar1 != '\0') {
-    core_event_cpp_FUN_004aabe0();
+    core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
   }
 LAB_004801a8:
   core_door_cpp_CDoor_reposition_FUN_0047fd20(this_ptr);
   if ((this_ptr->param != local_50) && (this_ptr->door_type != 3)) {
     iVar6 = 0;
-    (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
+    (*((this_ptr->base_actor).vtable)->getBoundingBox)
               (&this_ptr->base_actor,(CBoundingBox3D *)(auStack_c8 + 0x20));
     iStack_4c = 0;
     pCStack_44 = &(this_ptr->base_actor).orient_matrix;
@@ -266,7 +266,7 @@ LAB_0048059d:
 //   XREF to: 006793d0 (READ)
 // 00480127: PUSH EBX
 //   XREF to: 02d05310 (DATA)
-// 00480128: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 00480128: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0048012d: ADD ESP,0x8
 // 00480130: TEST EAX,EAX
@@ -311,7 +311,7 @@ LAB_0048059d:
 //   XREF to: 006793d0 (READ)
 // 0048019f: PUSH EBP
 //   XREF to: 02d05310 (DATA)
-// 004801a0: CALL core_event.cpp_FUN_004aabe0
+// 004801a0: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   Label: LAB_004801a0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 004801a5: ADD ESP,0x8
@@ -371,7 +371,7 @@ LAB_0048059d:
 //   XREF to: 006793d0 (READ)
 // 00480234: PUSH EAX
 //   XREF to: 02d05310 (DATA)
-// 00480235: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 00480235: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0048023a: ADD ESP,0x8
 // 0048023d: TEST EAX,EAX

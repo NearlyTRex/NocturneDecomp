@@ -23,7 +23,7 @@
 //   core_game.cpp_CGame_openSomething_FUN_004e2910 (004e2910) at 004e2edf [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_rollCredits_FUN_004e4010 (004e4010) at 004e4407 [UNCONDITIONAL_CALL]
 //   core_ground.cpp_CGround_free_FUN_004eefb0 (004eefb0) at 004eeff1 [UNCONDITIONAL_CALL]
-//   core_morph.cpp_CMorphModel_FreeSomething1_FUN_0052a510 (0052a510) at 0052a563 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_CMorphModel_free_FUN_0052a510 (0052a510) at 0052a563 [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_FreeSomething1_FUN_00559870 (00559870) at 005598c2 [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_FreeSomething2_FUN_005598f0 (005598f0) at 00559920 [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_editorAction_FUN_00564820 (00564820) at 00564b87 [UNCONDITIONAL_CALL]

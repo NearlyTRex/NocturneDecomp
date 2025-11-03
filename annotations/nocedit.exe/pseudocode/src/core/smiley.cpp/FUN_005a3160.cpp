@@ -8,7 +8,7 @@
 //   undefined4 DAT_03f48fa8
 //   CVector3f g_ZeroVector
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 
 #include "nocturne.h"
@@ -21,24 +21,28 @@ undefined4 core_smiley_cpp_FUN_005a3160(void)
 
 {
   int iVar1;
+  CVector3f *input_local_point;
   BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
   SCollisionInfo *in_stack_ffffffe0;
+  CVector3f CStack_18;
   
   if (in_stack_00000008 == 0) {
     return 0;
   }
-  iVar1 = (*(in_stack_00000004->metadata).vtable[1].hasCollision)
-                    (in_stack_00000004,in_stack_ffffffe0);
+  iVar1 = (*in_stack_00000004->vtable[1].hasCollision)(in_stack_00000004,in_stack_ffffffe0);
   if (iVar1 != 0) {
     (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x104))();
     return 1;
   }
-  core_xform_cpp_transformVector3x4_FUN_005f4dc0
-            ((CVector3f *)&stack0xfffffff4,&g_ZeroVector,
-             (CMatrix3x4f *)&(&in_stack_00000004[0xb].metadata)[DAT_03f48fa8 + -1].runtime_flags);
-  core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
+  input_local_point =
+       core_xform_cpp_transformVector3x4_FUN_005f4dc0
+                 ((CVector3f *)&stack0xfffffff4,&g_ZeroVector,
+                  (CMatrix3x4f *)&(&in_stack_00000004[0xb].scale)[DAT_03f48fa8 * 4].z);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (in_stack_00000004,&CStack_18,input_local_point);
+  CStack_18.y = CStack_18.y + _DAT_0064f322;
   (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x60))();
   return 1;
 }
@@ -98,7 +102,7 @@ undefined4 core_smiley_cpp_FUN_005a3160(void)
 // 005a31d6: LEA EAX,[ESP + 0x4]
 // 005a31da: PUSH EAX
 // 005a31db: PUSH ESI
-// 005a31dc: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005a31dc: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005a31e1: ADD ESP,0xc
 // 005a31e4: LEA EAX,[EBX + 0x30]

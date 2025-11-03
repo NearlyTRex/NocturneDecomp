@@ -7,8 +7,8 @@
 //   WatcomTypeInfo g_CGlassTypeInfo
 // Function calls:
 //   core_actor.cpp_CDemonActor_dtor_FUN_00408a30
-//   core_glass.cpp_freeVectorArray25_FUN_004eb8a0
-//   core_mirror.cpp_freeMirrorClipPlanes_FUN_005213e0
+//   core_glass.cpp_freeVectors_FUN_004eb8a0
+//   core_mirror.cpp_CMirror_dtor_FUN_005213e0
 //   crt_memory.c_free_FUN_005fe659
 //   crt_memory.c_freeSingleInstance_FUN_005fe632
 //   shape_memdbg.cpp_debugFree_FUN_0050f210
@@ -20,7 +20,7 @@ core_glass_cpp_CGlass_dtor_FUN_004eb820(CGlass *this_ptr,uint d1,uint d2,uint d3
 
 {
   int extraout_EAX;
-  SMirror *pSVar1;
+  CMirror *pCVar1;
   CGlass *ptr;
   void *ptr_00;
   
@@ -29,11 +29,11 @@ core_glass_cpp_CGlass_dtor_FUN_004eb820(CGlass *this_ptr,uint d1,uint d2,uint d3
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  core_glass_cpp_freeVectorArray25_FUN_004eb8a0((CVector3f **)this_ptr->broken_vertices);
-  pSVar1 = core_mirror_cpp_freeMirrorClipPlanes_FUN_005213e0((SMirror *)(extraout_EAX + -0x1a0));
+  core_glass_cpp_freeVectors_FUN_004eb8a0((CVector3f **)this_ptr->broken_vertices);
+  pCVar1 = core_mirror_cpp_CMirror_dtor_FUN_005213e0((CMirror *)(extraout_EAX + -0x1a0));
   ptr = (CGlass *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)&pSVar1[-2].reflection.mirror_transform_matrix.m[2].x,1);
+                  ((CDemonActor *)&pCVar1[-2].reflection.mirror_transform_matrix.m[2].x,1);
   if ((d4 & 2) == 0) {
     return ptr;
   }
@@ -54,13 +54,13 @@ core_glass_cpp_CGlass_dtor_FUN_004eb820(CGlass *this_ptr,uint d1,uint d2,uint d3
 // 004eb82c: PUSH 0x0
 // 004eb82e: ADD EBX,0x38c
 // 004eb834: PUSH EBX
-// 004eb835: CALL core_glass.cpp_freeVectorArray25_FUN_004eb8a0
+// 004eb835: CALL core_glass.cpp_freeVectors_FUN_004eb8a0
 //   XREF to: 004eb8a0 (UNCONDITIONAL_CALL)
 // 004eb83a: ADD ESP,0x8
 // 004eb83d: PUSH 0x0
 // 004eb83f: SUB EAX,0x1a0
 // 004eb844: PUSH EAX
-// 004eb845: CALL core_mirror.cpp_freeMirrorClipPlanes_FUN_005213e0
+// 004eb845: CALL core_mirror.cpp_CMirror_dtor_FUN_005213e0
 //   XREF to: 005213e0 (UNCONDITIONAL_CALL)
 // 004eb84a: ADD ESP,0x8
 // 004eb84d: PUSH 0x1

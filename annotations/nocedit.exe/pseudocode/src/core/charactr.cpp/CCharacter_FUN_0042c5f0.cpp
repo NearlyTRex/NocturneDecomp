@@ -20,8 +20,8 @@
 //   CConsole g_ConsolePtr
 //   CVector3f g_ZeroVector
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ea0
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 //   engine_console.cpp_CConsole_printf_FUN_00441890
@@ -40,6 +40,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c5f0(CCharacter *this_ptr)
   float in_stack_0000000c;
   float in_stack_00000010;
   int *in_stack_00000014;
+  CVector3f local_50;
+  CVector3f local_44;
   CVector3f local_38;
   float local_2c;
   float local_20;
@@ -52,18 +54,19 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c5f0(CCharacter *this_ptr)
     *in_stack_00000014 = 3;
     return;
   }
-  fVar3 = *(float *)(in_stack_00000008 + 0x20) - (this_ptr->base_actor).location.position.x;
-  fVar2 = *(float *)(in_stack_00000008 + 0x28) - (this_ptr->base_actor).location.position.z;
+  local_50.x = *(float *)(in_stack_00000008 + 0x20) - (this_ptr->base_actor).location.position.x;
+  local_50.y = *(float *)(in_stack_00000008 + 0x24) - (this_ptr->base_actor).location.position.y;
+  local_50.z = *(float *)(in_stack_00000008 + 0x28) - (this_ptr->base_actor).location.position.z;
   if (0.0 <= in_stack_0000000c) {
-    if ((((float)DOUBLE_00617222 <
-          ABS(*(float *)(in_stack_00000008 + 0x24) - (this_ptr->base_actor).location.position.y)) ||
-        ((float)DOUBLE_0061722a < ABS(fVar3))) || ((float)DOUBLE_0061722a < ABS(fVar2))) {
+    if ((((float)DOUBLE_00617222 < ABS(local_50.y)) || ((float)DOUBLE_0061722a < ABS(local_50.x)))
+       || ((float)DOUBLE_0061722a < ABS(local_50.z))) {
       engine_console_cpp_CConsole_printf_FUN_00441890
                 (g_CConsolePtr,"%s confused while following %s\n",this_ptr);
       *in_stack_00000014 = 3;
       return;
     }
-    local_2c = SQRT(fVar2 * fVar2 + fVar3 * fVar3);
+    local_2c = SQRT(local_50.z * local_50.z + local_50.x * local_50.x);
+    local_50.y = 0.0;
     if (in_stack_00000010 < 0.0) {
       in_stack_00000010 = 1e+30;
     }
@@ -101,7 +104,9 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c5f0(CCharacter *this_ptr)
     *in_stack_00000014 = 0;
     return;
   }
-  pCVar1 = core_actor_cpp_CDemonActor_FUN_00408ea0(&this_ptr->base_actor);
+  local_50.y = 0.0;
+  pCVar1 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+                     (&this_ptr->base_actor,&local_44,&local_50);
   pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_38,pCVar1);
   *(float *)(this_ptr->field2_0x240c + 0xc) = pCVar1->y;
   if (*in_stack_00000014 == 0) {
@@ -123,21 +128,21 @@ LAB_0042c771:
   }
   local_1c = *(float *)(this_ptr->field2_0x240c + 0xc);
   local_18 = *(float *)(this_ptr->field2_0x240c + 0x2c);
-  fVar2 = core_actor_cpp_FUN_0040cd70(local_1c);
+  fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_1c);
   fVar3 = -local_18;
   if ((fVar3 <= fVar2) && (fVar3 = fVar2, local_18 < fVar2)) {
     fVar3 = local_18;
   }
   *(float *)(this_ptr->field2_0x240c + 0xc) = fVar3;
 LAB_0042c7cc:
-  (this_ptr->model).padding_0x0[0x225c] = '\0';
-  (this_ptr->model).padding_0x0[0x225d] = '\0';
-  (this_ptr->model).padding_0x0[0x225e] = '\0';
-  (this_ptr->model).padding_0x0[0x225f] = '\0';
-  *(undefined4 *)((this_ptr->model).padding_0x0 + 0x2258) =
-       *(undefined4 *)((this_ptr->model).padding_0x0 + 0x225c);
-  *(undefined4 *)((this_ptr->model).padding_0x0 + 0x2254) =
-       *(undefined4 *)((this_ptr->model).padding_0x0 + 0x2258);
+  (this_ptr->model).field10_0x2254[8] = '\0';
+  (this_ptr->model).field10_0x2254[9] = '\0';
+  (this_ptr->model).field10_0x2254[10] = '\0';
+  (this_ptr->model).field10_0x2254[0xb] = '\0';
+  *(undefined4 *)((this_ptr->model).field10_0x2254 + 4) =
+       *(undefined4 *)((this_ptr->model).field10_0x2254 + 8);
+  *(undefined4 *)(this_ptr->model).field10_0x2254 =
+       *(undefined4 *)((this_ptr->model).field10_0x2254 + 4);
   return;
 }
 
@@ -308,7 +313,7 @@ LAB_0042c7cc:
 // 0042c72c: PUSH ESI
 // 0042c72d: MOV dword ptr [ESP + 0x10],EDI
 //   XREF to: Stack[-0x4c] (WRITE)
-// 0042c731: CALL core_actor.cpp_CDemonActor_FUN_00408ea0
+// 0042c731: CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 //   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
 // 0042c736: ADD ESP,0xc
 // 0042c739: PUSH EAX
@@ -343,7 +348,7 @@ LAB_0042c7cc:
 //   XREF to: Stack[-0x1c] (READ)
 // 0042c78b: MOV dword ptr [ESP + 0x3c],EAX
 //   XREF to: Stack[-0x18] (WRITE)
-// 0042c78f: CALL core_actor.cpp_FUN_0040cd70
+// 0042c78f: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 0042c794: MOV dword ptr [ESP + 0x40],EAX
 //   XREF to: Stack[-0x14] (WRITE)

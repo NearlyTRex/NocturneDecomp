@@ -14,7 +14,7 @@
 //   CDemonRenderer g_CDemonRendererInstance
 //   float g_PerspectiveReciprocal
 //   undefined4 DAT_02d81c90
-//   undefined4 DAT_033081cc
+//   CVector3f[20000] g_VertexNormalArray
 //   undefined4 DAT_033081d0
 //   undefined4 DAT_033081d4
 // Function calls:
@@ -85,12 +85,11 @@ void __cdecl core_set_cpp_CDemonSet_FUN_00570040(CDemonSet *this_ptr)
           iVar3 = *(int *)((int)aiStack_cc + iVar8);
           iVar8 = iVar8 + 0xc;
           iVar5 = iVar5 + 1;
-          iStack_1c = (int)ROUND((float)(&DAT_033081cc)[iVar3 * 3]);
-          fVar2 = (float)(&DAT_033081d0)[iVar3 * 3];
+          iStack_1c = (int)ROUND(g_VertexNormalArray[iVar3].x);
+          fVar2 = g_VertexNormalArray[iVar3].y;
           iStack_18 = (int)ROUND(fVar2);
-          local_14 = (int)ROUND((float)(&DAT_033081d4)[iVar3 * 3]);
-          *(int *)((int)&uStack_5c + iVar6) = (int)ROUND((float)(&DAT_033081cc)[iVar3 * 3]) + 0x8000
-          ;
+          local_14 = (int)ROUND(g_VertexNormalArray[iVar3].z);
+          *(int *)((int)&uStack_5c + iVar6) = (int)ROUND(g_VertexNormalArray[iVar3].x) + 0x8000;
           *(int *)((int)&uStack_9c + iVar6) = 0x8000 - (int)ROUND(fVar2);
           iVar6 = iVar6 + 4;
         } while (iVar5 < SStack_e4.base.count);

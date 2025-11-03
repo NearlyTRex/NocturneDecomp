@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_fire.cpp_CFireEffect_FUN_004c91e0(CFireEffect * this_ptr)
 // Globals:
-//   CTrail* g_CFireEffectTrailsEnd
+//   CTrail* g_TrailActiveListHead
 // Function calls:
 //   core_fire.cpp_FUN_004c6170
 
@@ -16,12 +16,12 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c91e0(CFireEffect *this_ptr)
   char *pcVar1;
   
   core_fire_cpp_FUN_004c6170();
-  pcVar1 = g_CFireEffectTrailsEnd->field0_0x0;
-  g_CFireEffectTrailsEnd = (CTrail *)(pcVar1 + 1);
+  pcVar1 = g_TrailActiveListHead->field0_0x0;
+  g_TrailActiveListHead = (CTrail *)(pcVar1 + 1);
   if ((int)(pcVar1 + 1) < 0x32) {
     return;
   }
-  g_CFireEffectTrailsEnd = (CTrail *)0x0;
+  g_TrailActiveListHead = (CTrail *)0x0;
   return;
 }
 

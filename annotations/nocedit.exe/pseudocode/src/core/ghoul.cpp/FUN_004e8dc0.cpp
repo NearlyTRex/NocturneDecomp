@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_ghoul.cpp_FUN_004e8dc0()
 // Globals:
-//   undefined4 s_Model_0062deea
+//   TerminatedCString s_Model_0062deea
 //   TerminatedCString s_State_0062def0
 //   TerminatedCString s_Lives_left_0062def6
 // Function calls:

@@ -48,7 +48,7 @@
 //   undefined4 DAT_0064edc8
 // Function calls:
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e0a0
-//   core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 
 #include "nocturne.h"
 
@@ -59,13 +59,13 @@
 void core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020(void)
 
 {
-  int in_stack_00000004;
+  CDeformableModelInstance *in_stack_00000004;
   
   core_skeleton_cpp_CDeformableModelInstance_FUN_0059e0a0();
-  if (*(float *)(in_stack_00000004 + 0x14) <= (float)_DAT_0064edc8) {
+  if ((in_stack_00000004->motion_controller).tween_progress <= (float)_DAT_0064edc8) {
     return;
   }
-  core_skeleton_cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50(in_stack_00000004);
   return;
 }
 
@@ -101,7 +101,7 @@ void core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020(void)
 // 0059e054: PUSH dword ptr [EBX + 0x1c]
 // 0059e057: PUSH ECX
 // 0059e058: PUSH EBX
-// 0059e059: CALL core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+// 0059e059: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 0059e05e: ADD ESP,0x18
 // 0059e061: POP EBX

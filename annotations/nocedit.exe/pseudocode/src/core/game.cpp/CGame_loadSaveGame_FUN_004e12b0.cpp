@@ -15,8 +15,8 @@
 //   TerminatedCString s_Select_file_to_load_0062ca9c
 //   TerminatedCString s_rt_0062cab0
 //   TerminatedCString s_save_0062cab3
-//   undefined1 DAT_0062cab8
-//   undefined1 DAT_0062cab9
+//   TerminatedCString s_LZW_0062cab8
+//   undefined4 DAT_0062cab9
 //   TerminatedCString s_core_game_cpp_0062cabc
 //   TerminatedCString s_save_0062cacd
 //   TerminatedCString s_save_0062cad2
@@ -59,7 +59,7 @@
 //   CBitFont* g_ThemeFont
 //   CBitFont* g_EditorFont
 //   CEditorTools g_CEditorToolsPtr
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CFireEffect g_CFireEffectInstance
 //   char g_CurrentSaveFile
 //   undefined1 DAT_02d82c81
@@ -82,10 +82,10 @@
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
+//   core_event.cpp_CEventList_FUN_004b0460
 //   core_event.cpp_CEventList_loadState_FUN_004b0fc0
-//   core_event.cpp_FUN_004b0460
-//   core_fire.cpp_CFireEffect_FUN_004c6c80
-//   core_fire.cpp_CFireEffect_FUN_004c9300
+//   core_fire.cpp_CFireEffect_init_FUN_004c6c80
+//   core_fire.cpp_CFireEffect_load_FUN_004c9300
 //   core_gore.cpp_FUN_004ed760
 //   core_gore.cpp_FUN_004ee1e0
 //   core_level.cpp_CLevelLoader_show_FUN_00503dc0
@@ -268,7 +268,7 @@ LAB_004e17ac:
         pcVar9 = pcVar9 + 2;
       } while (cVar1 != '\0');
     }
-    core_event_cpp_FUN_004b0460();
+    core_event_cpp_CEventList_FUN_004b0460(g_CEventListPtr);
     core_level_cpp_CLevelLoader_show_FUN_00503dc0(g_CLevelLoaderPtr,9,0,-1);
     file_handle = engine_dosio_c_getFile_FUN_00481a50
                             ("save",&stack0xfffff960,"rt");
@@ -396,7 +396,7 @@ LAB_004e14f5:
       iVar3 = 0;
       bVar14 = true;
       pbVar8 = abStack_8c;
-      pbVar11 = &DAT_0062cab8;
+      pbVar11 = (byte *)"LZW";
       do {
         if (iVar5 == 0) break;
         iVar5 = iVar5 + -1;
@@ -466,7 +466,7 @@ LAB_004e14f5:
         }
         iVar3 = core_mission_cpp_CDemonMission_FUN_00524760(g_CDemonMissionPtr);
         if (iVar3 == 0) goto LAB_004e17ac;
-        core_event_cpp_CEventList_loadState_FUN_004b0fc0();
+        core_event_cpp_CEventList_loadState_FUN_004b0fc0(g_CEventListPtr);
         core_script_cpp_CScript_loadState_FUN_00560820();
         if (local_14 < 4) {
           core_gore_cpp_FUN_004ed760();
@@ -475,10 +475,10 @@ LAB_004e14f5:
           core_gore_cpp_FUN_004ee1e0();
         }
         if (in_stack_00000014 + 0x9c8 < 7) {
-          core_fire_cpp_CFireEffect_FUN_004c6c80(g_CFireEffectPtr);
+          core_fire_cpp_CFireEffect_init_FUN_004c6c80(g_CFireEffectPtr);
         }
         else {
-          core_fire_cpp_CFireEffect_FUN_004c9300(g_CFireEffectPtr);
+          core_fire_cpp_CFireEffect_load_FUN_004c9300(g_CFireEffectPtr,file_handle);
         }
         if (iVar2 < 6) {
           DAT_02d82d80 = 0;
@@ -658,7 +658,7 @@ LAB_004e14f5:
 //   XREF to: 006793d0 (READ)
 // 004e13f7: PUSH ESI
 //   XREF to: 02d05310 (DATA)
-// 004e13f8: CALL core_event.cpp_FUN_004b0460
+// 004e13f8: CALL core_event.cpp_CEventList_FUN_004b0460
 //   XREF to: 004b0460 (UNCONDITIONAL_CALL)
 // 004e13fd: ADD ESP,0x4
 // 004e1400: PUSH -0x1
@@ -1372,7 +1372,7 @@ LAB_004e14f5:
 //   XREF to: 0067a3d0 (READ)
 // 004e1a74: PUSH ECX
 //   XREF to: 02d12db0 (DATA)
-// 004e1a75: CALL core_fire.cpp_CFireEffect_FUN_004c6c80
+// 004e1a75: CALL core_fire.cpp_CFireEffect_init_FUN_004c6c80
 //   XREF to: 004c6c80 (UNCONDITIONAL_CALL)
 // 004e1a7a: ADD ESP,0x4
 // 004e1a7d: CMP dword ptr [ESP + 0x604],0x6
@@ -1542,7 +1542,7 @@ LAB_004e14f5:
 //   XREF to: 0067a3d0 (READ)
 // 004e1c0a: PUSH EDX
 //   XREF to: 02d12db0 (DATA)
-// 004e1c0b: CALL core_fire.cpp_CFireEffect_FUN_004c9300
+// 004e1c0b: CALL core_fire.cpp_CFireEffect_load_FUN_004c9300
 //   XREF to: 004c9300 (UNCONDITIONAL_CALL)
 // 004e1c10: ADD ESP,0x8
 // 004e1c13: JMP 0x004e1a7d

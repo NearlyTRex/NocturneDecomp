@@ -7,13 +7,13 @@
 //   TerminatedCString s_voicuhurt_wav_00656c5f
 //   TerminatedCString s_VampireBossBitesIt_00656c6d
 //   TerminatedCString s_voicudeath_wav_2_5_00656c80
-//   undefined4 DAT_00656c9b
-//   undefined4 DAT_00656ca3
+//   double DOUBLE_00656c9b = 2
+//   double DOUBLE_00656ca3 = 25
 //   CEventList* g_CEventListPtr = 02d05310
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   CSound* g_CSoundPtr = 03f6af64
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CFireEffect g_CFireEffectInstance
 //   undefined4 g_CHeroClassInfo.name_hash
 //   undefined4 g_CMeleeClassInfo.name_hash
@@ -21,10 +21,10 @@
 //   CSound g_CSoundInstance
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_FUN_0040cc70
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
-//   core_event.cpp_FUN_004aabe0
+//   core_event.cpp_CEventList_FUN_004aabe0
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
 //   core_inv.cpp_CInventory_findItemByName_FUN_004fe9d0
 //   core_inv.cpp_CInventory_removeItem_FUN_004fea70
@@ -36,7 +36,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_vampboss.cpp_FUN_005e7030(undefined4 param_1, undefined4
    param_2) */
 
@@ -49,13 +48,16 @@ void core_vampboss_cpp_FUN_005e7030(void)
   CDemonActor *this_ptr;
   CDemonActor *pCVar4;
   CDemonActor *pCVar5;
+  BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
   
   if (*(int *)(in_stack_00000008 + 0x28) == 7) {
     iVar2 = 0;
-    *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)_DAT_00656c9b;
-    core_actor_cpp_CDemonActor_FUN_00408ec0(&in_stack_00000004->base_actor);
+    *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)DOUBLE_00656c9b;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffdc,
+               (CVector3f *)(in_stack_00000008 + 0x1c));
     do {
       iVar2 = iVar2 + 1;
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
@@ -66,10 +68,11 @@ void core_vampboss_cpp_FUN_005e7030(void)
        (this_ptr = core_actor_cpp_castToClassHash_FUN_0040c790
                              (*(CDemonActor **)(in_stack_00000008 + 0x34),
                               g_CMeleeClassInfo.name_hash), this_ptr != (CDemonActor *)0x0)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
-      pCVar4 = (*((this_ptr->metadata).vtable)->getCarrier)(this_ptr);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                (&(in_stack_00000004->model).motion_controller);
+      pCVar4 = (*this_ptr->vtable->getCarrier)(this_ptr);
       if (pCVar4 != (CDemonActor *)0x0) {
-        (*((pCVar4->metadata).vtable)->drop)(pCVar4,this_ptr,(CVector3f *)0x0);
+        (*pCVar4->vtable->drop)(pCVar4,this_ptr,(CVector3f *)0x0);
         pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar4,g_CHeroClassInfo.name_hash);
         if (pCVar4 != (CDemonActor *)0x0) {
           pCVar5 = core_inv_cpp_CInventory_findItemByName_FUN_004fe9d0
@@ -83,7 +86,7 @@ void core_vampboss_cpp_FUN_005e7030(void)
         }
       }
       core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(in_stack_00000004);
-      core_event_cpp_FUN_004aabe0();
+      core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
       sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
       core_sound_cpp_CSound_playSfx_FUN_005b3a20
                 (g_CSoundPtr,(int)in_stack_00000004,"voicudeath.wav @ 2.5");
@@ -98,14 +101,15 @@ void core_vampboss_cpp_FUN_005e7030(void)
     }
     fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
     in_stack_00000004->hit_points = fVar1;
-    if (fVar1 < (float)_DAT_00656ca3) {
+    if (fVar1 < (float)DOUBLE_00656ca3) {
       in_stack_00000004->hit_points = 24.999;
     }
-    core_actor_cpp_FUN_0040cc70();
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+    core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              ((CMotionController *)(in_stack_00000004[1].base_actor.create_event + 0x20));
     iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
     if (iVar2 == 0) {
-      uVar3 = (*((in_stack_00000004->base_actor).metadata.vtable)->playSound)
+      uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                         (&in_stack_00000004->base_actor,"voicuhurt.wav");
       *(undefined4 *)(in_stack_00000004[0x11].cloth_data + 0x1e04) = uVar3;
       return;
@@ -152,7 +156,7 @@ void core_vampboss_cpp_FUN_005e7030(void)
 // 005e708b: PUSH 0x2
 //   Label: LAB_005e708b
 // 005e708d: PUSH 0x0
-// 005e708f: CALL core_actor.cpp_FUN_0040cc70
+// 005e708f: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 005e7094: ADD ESP,0x8
 // 005e7097: LEA EBX,[ESI + 0xbebc]
@@ -199,7 +203,7 @@ void core_vampboss_cpp_FUN_005e7030(void)
 // 005e70eb: FSTP ST1
 // 005e70ed: PUSH ESI
 // 005e70ee: FSTP float ptr [EDI + 0x4]
-// 005e70f1: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005e70f1: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005e70f6: ADD ESP,0xc
 // 005e70f9: MOV EBP,0x4000
@@ -338,7 +342,7 @@ void core_vampboss_cpp_FUN_005e7030(void)
 //   XREF to: 006793d0 (READ)
 // 005e7222: PUSH EDI
 //   XREF to: 02d05310 (DATA)
-// 005e7223: CALL core_event.cpp_FUN_004aabe0
+// 005e7223: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 005e7228: ADD ESP,0x8
 // 005e722b: MOV EBP,dword ptr [ESI + 0xce900]

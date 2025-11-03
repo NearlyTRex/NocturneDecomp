@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_ghoul.cpp_CGhoul_load_FUN_004e81c0()
 // Globals:
-//   undefined4 s_speed_0062ddfa
+//   TerminatedCString s_speed_0062ddfa
 //   TerminatedCString s_modelName_0062de00
 //   TerminatedCString s_guardDistance_0062de0a
 //   TerminatedCString s_livesLeft_0062de18
@@ -33,7 +33,7 @@ void core_ghoul_cpp_CGhoul_load_FUN_004e81c0(void)
   
   core_enemy_cpp_CEnemy_serialize_FUN_004a9660(in_stack_00000004);
   if (g_CGhoulClassVersion < 4) {
-    core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"?speed" + 1);
+    core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"speed");
   }
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970
             (&(in_stack_00000004->base_character).model,"modelName");
@@ -48,7 +48,8 @@ void core_ghoul_cpp_CGhoul_load_FUN_004e81c0(void)
   }
   if (4 < g_CGhoulClassVersion) {
     core_actor_cpp_serializeMotionState_FUN_0040b9f0
-              (&(in_stack_00000004->base_character).model,"motion state");
+              (&(in_stack_00000004->base_character).model.motion_controller,"motion state")
+    ;
   }
   if (g_CGhoulClassVersion < 6) {
     return;

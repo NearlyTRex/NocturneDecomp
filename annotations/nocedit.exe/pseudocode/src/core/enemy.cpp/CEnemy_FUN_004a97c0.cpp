@@ -27,7 +27,7 @@ int __cdecl core_enemy_cpp_CEnemy_FUN_004a97c0(CEnemy *this_ptr)
   float fStack_18;
   float afStack_14 [3];
   
-  (*((this_ptr->base_character).base_actor.metadata.vtable)->getBoundingBox)
+  (*((this_ptr->base_character).base_actor.vtable)->getBoundingBox)
             ((CDemonActor *)this_ptr,&CStack_40);
   fVar3 = (float)_DAT_00624382;
   fVar1 = (fStack_28 + fStack_1c) * _DAT_0062437e;

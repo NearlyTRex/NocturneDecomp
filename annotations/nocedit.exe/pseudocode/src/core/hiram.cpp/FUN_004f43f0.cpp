@@ -14,7 +14,7 @@
 //   CDemonActor_vtable PTR_core_hiram.cpp_FUN_004f4530_0065f974
 // Function calls:
 //   core_npc.cpp_FUN_005447e0
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -27,9 +27,9 @@ CHiram * __cdecl core_hiram_cpp_FUN_004f43f0(CHiram *this_ptr)
   char *pcVar4;
   
   pCVar2 = (CHiram *)core_npc_cpp_FUN_005447e0(&this_ptr->base_actor);
-  (pCVar2->base_actor).base_character.base_actor.metadata.vtable =
-       &PTR_core_hiram_cpp_FUN_004f4530_0065f974;
-  core_skeleton_cpp_FUN_005a0840();
+  (pCVar2->base_actor).base_character.base_actor.vtable = &PTR_core_hiram_cpp_FUN_004f4530_0065f974;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            (&(pCVar2->base_actor).base_character.model);
   pcVar3 = "killHiram";
   pcVar4 = pCVar2->field1_0x1f708;
   do {
@@ -65,7 +65,7 @@ CHiram * __cdecl core_hiram_cpp_FUN_004f43f0(CHiram *this_ptr)
 // 004f440d: PUSH EDI
 // 004f440e: MOV dword ptr [EAX + 0x154],0x65f974
 //   XREF to: 0065f974 (DATA)
-// 004f4418: CALL core_skeleton.cpp_FUN_005a0840
+// 004f4418: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004f441d: ADD ESP,0x8
 // 004f4420: MOV ESI,0x62edf2

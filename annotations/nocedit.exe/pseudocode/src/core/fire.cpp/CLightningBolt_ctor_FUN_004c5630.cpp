@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_fire.cpp_CLightningBolt_ctor_FUN_004c5630(CLightningBolt * this_ptr)
 // Cross-references:
-//   core_fire.cpp_CFireEffect_FUN_004c6c80 (004c6c80) at 004c6e24 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CFireEffect_init_FUN_004c6c80 (004c6c80) at 004c6e24 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

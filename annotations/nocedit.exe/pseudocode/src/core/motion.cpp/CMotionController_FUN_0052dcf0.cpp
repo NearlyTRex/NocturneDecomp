@@ -1,8 +1,8 @@
 // Name: core_motion.cpp_CMotionController_FUN_0052dcf0
 // Address: 0052dcf0
 // Address Range: [[0052dcf0, 0052dd14]]
-// Convention: unknown
-// Signature: undefined core_motion.cpp_CMotionController_FUN_0052dcf0()
+// Convention: __cdecl
+// Signature: int core_motion.cpp_CMotionController_FUN_0052dcf0(CMotionController * this_ptr)
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042c580 (0042c580) at 0042c5c1 [UNCONDITIONAL_CALL]
 //   core_motion.cpp_CMotionController_FUN_0052e700 (0052e700) at 0052e824 [UNCONDITIONAL_CALL]
@@ -12,16 +12,13 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_motion.cpp_CMotionController_FUN_0052dcf0(undefined4
-   pMotionController) */
-
-int core_motion_cpp_CMotionController_FUN_0052dcf0(void)
+int __cdecl core_motion_cpp_CMotionController_FUN_0052dcf0(CMotionController *this_ptr)
 
 {
   int iVar1;
   int *in_stack_00000008;
   
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0();
+  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
   return *(int *)(iVar1 + 0x24) * 0x1e + *in_stack_00000008 + 4;
 }
 

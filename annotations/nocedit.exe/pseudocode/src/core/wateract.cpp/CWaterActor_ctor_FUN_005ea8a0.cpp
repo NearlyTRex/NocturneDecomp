@@ -33,7 +33,7 @@ CWaterActor * __cdecl core_wateract_cpp_CWaterActor_ctor_FUN_005ea8a0(CWaterActo
   
   pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
   pvVar3 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (pCVar2[1].metadata.field3_0x1c,1000,&g_SWaterVertexTypeInfo);
+                     (&pCVar2[1].field25_0x144,1000,&g_SWaterVertexTypeInfo);
   *(CDemonActor_vtable **)((int)pvVar3 + -0x148) = &PTR_core_wateract_cpp_FUN_00665334;
   *(undefined4 *)((int)pvVar3 + -0x144) = 0x40800000;
   *(undefined4 *)((int)pvVar3 + -0x140) = 0x3dcccccd;

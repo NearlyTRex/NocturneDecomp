@@ -27,7 +27,7 @@
 //   CDemonMission g_CDemonMissionInstance
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_actor.cpp_createActorByName_FUN_0040c430
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700
@@ -98,7 +98,7 @@ LAB_004f3db9:
     (pCVar1->orient).bank = *(float *)(in_stack_0000000c + 0x34);
     (pCVar1->orient).heading = *(float *)(in_stack_0000000c + 0x38);
   }
-  core_actor_cpp_CDemonActor_FUN_00408c10(pCVar1);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(pCVar1);
   return pCVar1;
 }
 
@@ -194,7 +194,7 @@ LAB_004f3db9:
 // 004f3e28: MOV dword ptr [EAX + 0x8],ECX
 // 004f3e2b: PUSH EBX
 //   Label: LAB_004f3e2b
-// 004f3e2c: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 004f3e2c: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 004f3e31: ADD ESP,0x4
 // 004f3e34: MOV EAX,EBX

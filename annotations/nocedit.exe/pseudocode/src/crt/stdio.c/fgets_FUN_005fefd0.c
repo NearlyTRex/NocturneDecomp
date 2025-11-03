@@ -9,7 +9,7 @@
 //   core_dcamera.cpp_loadCameraFog_FUN_00453e50 (00453e50) at 00453e71 [UNCONDITIONAL_CALL]
 //   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 (00479330) at 0047980f [UNCONDITIONAL_CALL]
 //   core_event.cpp_CEventList_loadState_FUN_004b0fc0 (004b0fc0) at 004b1321 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CFireEffect_FUN_004c9300 (004c9300) at 004c9334 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CFireEffect_load_FUN_004c9300 (004c9300) at 004c9334 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 (004e12b0) at 004e1707 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_rollCredits_FUN_004e4010 (004e4010) at 004e40bc [UNCONDITIONAL_CALL]
 //   core_gore.cpp_FUN_004ee1e0 (004ee1e0) at 004ee1fc [UNCONDITIONAL_CALL]

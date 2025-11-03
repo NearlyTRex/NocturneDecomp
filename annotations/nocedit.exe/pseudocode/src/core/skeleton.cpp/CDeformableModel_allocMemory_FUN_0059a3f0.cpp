@@ -1,8 +1,8 @@
 // Name: core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0
 // Address: 0059a3f0
 // Address Range: [[0059a3f0, 0059a50e]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0()
+// Convention: __cdecl
+// Signature: void core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0(CDeformableModel * this_ptr, int num_lods, int num_texture_sets, int num_textures, int num_parts)
 // Cross-references:
 //   core_skeledit.cpp_FUN_0058b660 (0058b660) at 0058b7ac [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c2e7 [UNCONDITIONAL_CALL]
@@ -20,65 +20,58 @@
 //   int g_CurrentLineNumber
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_skeleton.cpp_CDeformableModel_FUN_0059a2b0
+//   core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_skeleton.cpp_CDeformableModel_allocMemory(CDeformableModel*
-   pDeformableModel, undefined4 nNumLods, int nNumTextureSets, undefined4 nNumTextures, undefined4
-   nNumParts) */
-
-undefined8 core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0(void)
+void __cdecl
+core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0
+          (CDeformableModel *this_ptr,int num_lods,int num_texture_sets,int num_textures,
+          int num_parts)
 
 {
-  int *piVar1;
+  CDeformableModel *pCVar1;
   int iVar2;
-  int *in_stack_00000004;
-  int in_stack_00000008;
-  int in_stack_00000010;
-  int *in_stack_00000014;
   
-  core_skeleton_cpp_CDeformableModel_FUN_0059a2b0();
-  if (5 < in_stack_00000010) {
+  core_skeleton_cpp_CDeformableModel_free_FUN_0059a2b0(this_ptr);
+  if (5 < num_textures) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0x261;
-    core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("Too many texture sets in CDeformableModel::allocMemory.  Max is %d, requested %d.",5,in_stack_00000010);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("Too many texture sets in CDeformableModel::allocMemory.  Max is %d, requested %d.",5,num_textures)
+    ;
   }
-  if (0x50 < in_stack_00000010) {
+  if (0x50 < num_textures) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0x265;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("Too many textures in CDeformableModel::allocMemory.  Max is %d, requested %d.",0x50,in_stack_00000010);
+              ("Too many textures in CDeformableModel::allocMemory.  Max is %d, requested %d.",0x50,num_textures);
   }
-  if (0x1e < (int)in_stack_00000014) {
+  if (0x1e < num_parts) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0x269;
-    core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("Too many parts in CDeformableModel::allocMemory.  Max is %d, requested %d.",0x1e,in_stack_00000014);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("Too many parts in CDeformableModel::allocMemory.  Max is %d, requested %d.",0x1e,num_parts)
+    ;
   }
-  if (5 < in_stack_00000008) {
+  if (5 < num_lods) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0x26d;
-    core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("Too many LODs in CDeformableModel::allocMemory.  Max is %d, requested %d.",5,in_stack_00000008);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("Too many LODs in CDeformableModel::allocMemory.  Max is %d, requested %d.",5,num_lods);
   }
-  in_stack_00000004[0x2f] = in_stack_00000010;
-  in_stack_00000004[0x1c50] = (int)in_stack_00000014;
-  *in_stack_00000004 = in_stack_00000008;
+  this_ptr->num_textures = num_textures;
+  this_ptr->num_parts = num_parts;
+  this_ptr->num_lods = num_lods;
   iVar2 = 0;
-  in_stack_00000004[0x2e] = (int)in_stack_00000014;
-  piVar1 = in_stack_00000004;
-  if (0 < in_stack_00000008) {
+  this_ptr->num_texture_sets = num_parts;
+  pCVar1 = this_ptr;
+  if (0 < num_lods) {
     do {
-      piVar1[1] = 1;
-      piVar1[2] = 0;
+      pCVar1->lod_info[0].pixel_height = 1;
+      pCVar1->lod_info[0].shadow_only_flag = 0;
       iVar2 = iVar2 + 1;
-      in_stack_00000014 = piVar1 + 2;
-      piVar1 = in_stack_00000014;
-    } while (iVar2 < *in_stack_00000004);
+      pCVar1 = (CDeformableModel *)&pCVar1->lod_info[0].shadow_only_flag;
+    } while (iVar2 < this_ptr->num_lods);
   }
-  return CONCAT44(iVar2,in_stack_00000014);
+  return;
 }
 
 
@@ -97,7 +90,7 @@ undefined8 core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0(void)
 // 0059a400: MOV EBP,dword ptr [ESP + 0x24]
 //   XREF to: Stack[0x14] (READ)
 // 0059a404: PUSH EBX
-// 0059a405: CALL core_skeleton.cpp_CDeformableModel_FUN_0059a2b0
+// 0059a405: CALL core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0
 //   XREF to: 0059a2b0 (UNCONDITIONAL_CALL)
 // 0059a40a: ADD ESP,0x4
 // 0059a40d: MOV EDX,dword ptr [ESP + 0x1c]

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_set.cpp_CDemonSet_FUN_0056d4a0(CDemonSet * this_ptr)
 // Cross-references:
-//   core_set.cpp_CDemonSet_FUN_0056db80 (0056db80) at 0056dbad [UNCONDITIONAL_CALL]
+//   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80 (0056db80) at 0056dbad [UNCONDITIONAL_CALL]
 // Globals:
 //   float FLOAT_00645e1b = 0.6660000
 //   double DOUBLE_00645e23 = 2
@@ -25,21 +25,21 @@
 //   undefined4 DAT_03277d80
 //   undefined4 DAT_03277d84
 //   undefined4 DAT_03277d88
-//   undefined4 DAT_032c1614
-//   undefined4 DAT_032c1618
+//   int g_SecondaryDirectionalLightCount
+//   CDemonLight*[32] g_SecondaryDirectionalLights
 //   undefined4 DAT_032c161c
-//   undefined4 DAT_032c1798
-//   undefined4 DAT_032c179c
+//   int g_PrimaryDirectionalLightCount
+//   CDemonLight* g_PrimaryDirectionalLights
 //   undefined4 DAT_032c17a0
-//   undefined4 DAT_032c17ac
-//   undefined4 DAT_032c17b0
+//   int g_GlobeLightCount
+//   CDemonGlobe* g_GlobeLights
 //   undefined4 DAT_032c17b4
-//   undefined4 DAT_032c1940
+//   int g_ColorCorrectionEnabled
 //   undefined4 DAT_032c1944
 //   undefined4 DAT_032c1948
-//   undefined4 DAT_032c1cc0
-//   undefined4 DAT_032c1cc4
-//   undefined4 DAT_032c1cc8
+//   int g_ColorCorrectionLightMultiplier
+//   int g_ColorCorrectionColorMultiplier
+//   int g_ColorCorrectionFogMultiplier
 // Function calls:
 //   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
 //   core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_00471770
@@ -87,7 +87,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
   
   iVar8 = g_DynamicLightCount;
   if (in_stack_00000008 == (CVector3f *)0x0) {
-    DAT_032c1798 = in_stack_00000008;
+    g_PrimaryDirectionalLightCount = (int)in_stack_00000008;
     if (0 < g_DynamicLightCount) {
       iVar5 = g_DynamicLightCount * 4;
       iVar4 = 0;
@@ -96,14 +96,15 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
         iVar7 = iVar9;
         if (*(int *)(*(int *)((int)g_DynamicLights + iVar4) + 0x1cb4) != 0) {
           iVar7 = iVar9 + 4;
-          DAT_032c1798 = (CVector3f *)((int)&DAT_032c1798->x + 1);
-          *(int *)((int)&DAT_032c179c + iVar9) = *(int *)((int)g_DynamicLights + iVar4);
+          g_PrimaryDirectionalLightCount = g_PrimaryDirectionalLightCount + 1;
+          *(int *)((int)&g_PrimaryDirectionalLights + iVar9) =
+               *(int *)((int)g_DynamicLights + iVar4);
         }
         iVar4 = iVar4 + 4;
         iVar9 = iVar7;
       } while (SBORROW4(iVar4,iVar5) != iVar4 + iVar8 * -4 < 0);
     }
-    DAT_032c1614 = 0;
+    g_SecondaryDirectionalLightCount = 0;
     if (0 < g_ActiveLightCount) {
       iVar9 = g_ActiveLightCount * 4;
       iVar5 = 0;
@@ -112,24 +113,25 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
         iVar4 = iVar8;
         if (*(int *)(*(int *)((int)g_ActiveLightList + iVar5) + 0x1cb4) != 0) {
           iVar4 = iVar8 + 4;
-          DAT_032c1614 = DAT_032c1614 + 1;
-          *(int *)((int)&DAT_032c1618 + iVar8) = *(int *)((int)g_ActiveLightList + iVar5);
+          g_SecondaryDirectionalLightCount = g_SecondaryDirectionalLightCount + 1;
+          *(int *)((int)g_SecondaryDirectionalLights + iVar8) =
+               *(int *)((int)g_ActiveLightList + iVar5);
         }
         iVar5 = iVar5 + 4;
         iVar8 = iVar4;
       } while (iVar5 < iVar9);
     }
-    DAT_032c17ac = g_CoronaGlobeCount;
+    g_GlobeLightCount = g_CoronaGlobeCount;
     if (0 < g_CoronaGlobeCount) {
       iVar5 = g_CoronaGlobeCount * 4;
       iVar8 = 0;
       do {
         iVar9 = iVar8 + 4;
-        *(undefined4 *)((int)&DAT_032c17b0 + iVar8) = *(undefined4 *)((int)g_CoronaGlobes + iVar8);
+        *(undefined4 *)((int)&g_GlobeLights + iVar8) = *(undefined4 *)((int)g_CoronaGlobes + iVar8);
         iVar8 = iVar9;
       } while (iVar9 < iVar5);
     }
-    DAT_032c1940 = DAT_03277d80;
+    g_ColorCorrectionEnabled = DAT_03277d80;
     local_70 = DAT_03277d80;
     if (0 < DAT_03277d80) {
       iVar5 = DAT_03277d80 * 4;
@@ -143,7 +145,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
   }
   else {
     local_24 = 0;
-    DAT_032c1798 = (CVector3f *)0x0;
+    g_PrimaryDirectionalLightCount = 0;
     if (0 < g_DynamicLightCount) {
       iVar8 = 0;
       do {
@@ -151,15 +153,16 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
            (iVar5 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
                               (*(CDemonCamera **)((int)g_DynamicLights + iVar8),in_stack_00000008,
                                in_stack_0000000c,in_stack_00000010), iVar5 != 0)) {
-          (&DAT_032c179c)[(int)DAT_032c1798] = *(undefined4 *)((int)g_DynamicLights + iVar8);
-          DAT_032c1798 = (CVector3f *)((int)&DAT_032c1798->x + 1);
+          (&g_PrimaryDirectionalLights)[g_PrimaryDirectionalLightCount] =
+               *(CDemonLight **)((int)g_DynamicLights + iVar8);
+          g_PrimaryDirectionalLightCount = g_PrimaryDirectionalLightCount + 1;
         }
         local_24 = local_24 + 1;
         iVar8 = iVar8 + 4;
       } while (local_24 < g_DynamicLightCount);
     }
     local_20 = 0;
-    DAT_032c1614 = 0;
+    g_SecondaryDirectionalLightCount = 0;
     if (0 < g_ActiveLightCount) {
       iVar8 = 0;
       do {
@@ -167,15 +170,16 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
            (iVar5 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
                               (*(CDemonCamera **)((int)g_ActiveLightList + iVar8),in_stack_00000008,
                                in_stack_0000000c,in_stack_00000010), iVar5 != 0)) {
-          (&DAT_032c1618)[DAT_032c1614] = *(undefined4 *)((int)g_ActiveLightList + iVar8);
-          DAT_032c1614 = DAT_032c1614 + 1;
+          g_SecondaryDirectionalLights[g_SecondaryDirectionalLightCount] =
+               *(CDemonLight **)((int)g_ActiveLightList + iVar8);
+          g_SecondaryDirectionalLightCount = g_SecondaryDirectionalLightCount + 1;
         }
         local_20 = local_20 + 1;
         iVar8 = iVar8 + 4;
       } while (local_20 < g_ActiveLightCount);
     }
     local_1c = 0;
-    DAT_032c1940 = 0;
+    g_ColorCorrectionEnabled = 0;
     if (0 < DAT_03277d80) {
       local_2c = 0;
       do {
@@ -196,15 +200,15 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
            (((local_64.x - *(float *)(iVar8 + 0x11d4) <= in_stack_00000014->x &&
              (local_64.y - *(float *)(iVar8 + 0x11d4) <= in_stack_00000014->y)) &&
             (local_64.z - *(float *)(iVar8 + 0x11d4) <= in_stack_00000014->z)))) {
-          (&DAT_032c1944)[DAT_032c1940] = iVar8;
-          DAT_032c1940 = DAT_032c1940 + 1;
+          (&DAT_032c1944)[g_ColorCorrectionEnabled] = iVar8;
+          g_ColorCorrectionEnabled = g_ColorCorrectionEnabled + 1;
         }
         local_2c = local_2c + 4;
         local_1c = local_1c + 1;
       } while (local_1c < DAT_03277d80);
     }
     local_28 = 0;
-    DAT_032c17ac = 0;
+    g_GlobeLightCount = 0;
     local_70 = g_CoronaGlobeCount;
     if (0 < g_CoronaGlobeCount) {
       iVar8 = 0;
@@ -213,8 +217,8 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
                           (*(CDemonGlobe **)((int)g_CoronaGlobes + iVar8),in_stack_00000008,
                            in_stack_00000018,in_stack_00000010,in_stack_00000014);
         if (iVar5 != 0) {
-          (&DAT_032c17b0)[DAT_032c17ac] = *(undefined4 *)((int)g_CoronaGlobes + iVar8);
-          DAT_032c17ac = DAT_032c17ac + 1;
+          (&g_GlobeLights)[g_GlobeLightCount] = *(CDemonGlobe **)((int)g_CoronaGlobes + iVar8);
+          g_GlobeLightCount = g_GlobeLightCount + 1;
         }
         local_70 = local_28 + 1;
         iVar8 = iVar8 + 4;
@@ -229,15 +233,15 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
                              (*(CDemonGlobe **)((int)&DAT_03277b84 + iVar8),in_stack_00000008,
                               in_stack_00000018,in_stack_00000010,in_stack_00000014);
         if (local_70 != 0) {
-          DAT_032c17ac = DAT_032c17ac + 1;
+          g_GlobeLightCount = g_GlobeLightCount + 1;
           local_70 = *(int *)((int)&DAT_03277b84 + iVar8);
-          (&DAT_032c17ac)[DAT_032c17ac] = local_70;
+          (&g_GlobeLightCount)[g_GlobeLightCount] = local_70;
         }
         local_18 = local_18 + 1;
         iVar8 = iVar8 + 4;
       } while (local_18 < DAT_03277b80);
     }
-    if (0 < DAT_032c1940) {
+    if (0 < g_ColorCorrectionEnabled) {
       local_ac.x = in_stack_00000014->x - in_stack_00000010->x;
       local_ac.y = in_stack_00000014->y - in_stack_00000010->y;
       local_ac.z = in_stack_00000014->z - in_stack_00000010->z;
@@ -250,7 +254,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
       local_ac.x = 0.0;
       local_b0 = 0.0;
       local_b4 = 0.0;
-      if (0 < DAT_032c1940) {
+      if (0 < g_ColorCorrectionEnabled) {
         iVar5 = 0;
         do {
           iVar9 = *(int *)((int)&DAT_032c1944 + iVar5);
@@ -275,7 +279,8 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
             }
           }
           iVar5 = iVar5 + 4;
-        } while (SBORROW4(iVar5,DAT_032c1940 * 4) != iVar5 + DAT_032c1940 * -4 < 0);
+        } while (SBORROW4(iVar5,g_ColorCorrectionEnabled * 4) !=
+                 iVar5 + g_ColorCorrectionEnabled * -4 < 0);
       }
       if (iVar8 == 0) {
         local_74 = 0xaaaa;
@@ -287,18 +292,18 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
         local_74 = (int)ROUND(local_b0 * FLOAT_00662850);
         local_70 = (int)ROUND(local_ac.x * FLOAT_00662850);
       }
-      DAT_032c1cc0 = (int)ROUND(local_84 * FLOAT_00662850) + local_78;
-      DAT_032c1cc4 = (int)ROUND(local_80 * FLOAT_00662850) + local_74;
+      g_ColorCorrectionLightMultiplier = (int)ROUND(local_84 * FLOAT_00662850) + local_78;
+      g_ColorCorrectionColorMultiplier = (int)ROUND(local_80 * FLOAT_00662850) + local_74;
       local_70 = (int)ROUND(local_7c * FLOAT_00662850) + local_70;
-      if (0xffff < DAT_032c1cc0) {
-        DAT_032c1cc0 = 0xffff;
+      if (0xffff < g_ColorCorrectionLightMultiplier) {
+        g_ColorCorrectionLightMultiplier = 0xffff;
       }
-      if (0xffff < DAT_032c1cc4) {
-        DAT_032c1cc4 = 0xffff;
+      if (0xffff < g_ColorCorrectionColorMultiplier) {
+        g_ColorCorrectionColorMultiplier = 0xffff;
       }
-      DAT_032c1cc8 = local_70;
+      g_ColorCorrectionFogMultiplier = local_70;
       if (0xffff < local_70) {
-        DAT_032c1cc8 = 0xffff;
+        g_ColorCorrectionFogMultiplier = 0xffff;
         return local_70;
       }
     }

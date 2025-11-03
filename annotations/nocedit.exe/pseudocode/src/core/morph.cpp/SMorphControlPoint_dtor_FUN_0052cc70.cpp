@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: SMorphControlPoint * core_morph.cpp_SMorphControlPoint_dtor_FUN_0052cc70(SMorphControlPoint * this_ptr)
 // Function calls:
-//   core_morph.cpp_FUN_0052cc90
+//   core_morph.cpp_freeVectors_FUN_0052cc90
 
 #include "nocturne.h"
 
@@ -12,10 +12,10 @@ SMorphControlPoint * __cdecl
 core_morph_cpp_SMorphControlPoint_dtor_FUN_0052cc70(SMorphControlPoint *this_ptr)
 
 {
-  int iVar1;
+  int extraout_EAX;
   
-  iVar1 = core_morph_cpp_FUN_0052cc90();
-  return (SMorphControlPoint *)(iVar1 + -8);
+  core_morph_cpp_freeVectors_FUN_0052cc90((CVector3f **)(this_ptr->field0_0x0 + 8));
+  return (SMorphControlPoint *)(extraout_EAX + -8);
 }
 
 
@@ -26,7 +26,7 @@ core_morph_cpp_SMorphControlPoint_dtor_FUN_0052cc70(SMorphControlPoint *this_ptr
 // 0052cc74: PUSH 0x0
 // 0052cc76: ADD EAX,0x8
 // 0052cc79: PUSH EAX
-// 0052cc7a: CALL core_morph.cpp_FUN_0052cc90
+// 0052cc7a: CALL core_morph.cpp_freeVectors_FUN_0052cc90
 //   XREF to: 0052cc90 (UNCONDITIONAL_CALL)
 // 0052cc7f: ADD ESP,0x8
 // 0052cc82: SUB EAX,0x8

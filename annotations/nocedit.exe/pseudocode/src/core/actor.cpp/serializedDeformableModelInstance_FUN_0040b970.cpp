@@ -35,7 +35,7 @@
 //   int g_ActorReadingMode
 // Function calls:
 //   core_actor.cpp_serializeString_FUN_0040b5c0
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -55,10 +55,10 @@ core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970
   if (g_ActorReadingMode == 1) {
     core_actor_cpp_serializeString_FUN_0040b5c0((char **)&local_d0,property_name);
     local_d0 = acStack_cc;
-    core_skeleton_cpp_FUN_005a0840();
+    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(model_ptr);
     return;
   }
-  pcVar2 = model_ptr->padding_0x0 + 0x2260;
+  pcVar2 = model_ptr->field11_0x2260;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;
@@ -96,7 +96,7 @@ core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970
 // 0040b99d: MOV ESI,ESP
 // 0040b99f: PUSH ESI
 // 0040b9a0: PUSH EDI
-// 0040b9a1: CALL core_skeleton.cpp_FUN_005a0840
+// 0040b9a1: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 0040b9a6: ADD ESP,0x8
 // 0040b9a9: ADD ESP,0xc8

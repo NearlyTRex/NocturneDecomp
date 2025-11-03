@@ -4,16 +4,14 @@
 // Convention: unknown
 // Signature: undefined core_event.cpp_FUN_004b0f90()
 // Cross-references:
-//   core_event.cpp_CEvent_EventReadingFromFile_FUN_004ae140 (004ae140) at 004ae2aa [UNCONDITIONAL_CALL]
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004aae6b [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004aae6b [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004ae140 (004ae140) at 004ae2aa [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_00567080 (00567080) at 005670f7 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_00567310 (00567310) at 00567384 [UNCONDITIONAL_CALL]
 // Globals:
 //   char[256] g_CharacterClassificationTable
 
 #include "nocturne.h"
-
-/* Signature: undefined1 core_event.cpp_FUN_004b0f90(undefined4 param_1) */
 
 undefined4 core_event_cpp_FUN_004b0f90(void)
 

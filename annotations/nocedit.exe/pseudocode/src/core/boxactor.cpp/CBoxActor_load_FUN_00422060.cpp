@@ -57,7 +57,7 @@ void core_boxactor_cpp_CBoxActor_load_FUN_00422060(void)
   core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 1),"modelName");
   core_actor_cpp_serializeFloat_FUN_0040b770
-            (&in_stack_00000004[2].field_224.x,"weightInPounds");
+            (&in_stack_00000004[2].field12_0xe0.x,"weightInPounds");
   core_actor_cpp_serializeFloat_FUN_0040b770
             (&in_stack_00000004[2].orient_matrix.m[2].z,"fps");
   core_actor_cpp_serializeVector_FUN_0040b340
@@ -99,7 +99,7 @@ void core_boxactor_cpp_CBoxActor_load_FUN_00422060(void)
   }
   else {
     core_actor_cpp_serializeSimBox_FUN_0040bd70
-              ((CSimBox *)&in_stack_00000004[2].field_224.y,"simBox");
+              ((CSimBox *)&in_stack_00000004[2].field12_0xe0.y,"simBox");
   }
   if (g_CBoxActorClassVersion < 5) {
     in_stack_00000004[4].create_event[0x1c] = '\x01';

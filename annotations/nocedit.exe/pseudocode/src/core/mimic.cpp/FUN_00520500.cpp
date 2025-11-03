@@ -16,8 +16,8 @@
 //   core_actor.cpp_castToClassHash_FUN_0040c790
 //   core_cloth.cpp_FUN_00439710
 //   core_motion.cpp_CMotionController_FUN_0052dab0
-//   core_motion.cpp_CMotionController_FUN_0052ddb0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
+//   core_motion.cpp_FUN_0052ddb0
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 
 #include "nocturne.h"
@@ -56,9 +56,11 @@ void core_mimic_cpp_FUN_00520500(void)
       piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
     }
   }
-  core_motion_cpp_CMotionController_FUN_0052dab0();
-  core_motion_cpp_CMotionController_FUN_0052ddb0();
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+  core_motion_cpp_CMotionController_FUN_0052dab0
+            (&(g_HeroActors[g_LocalHeroIndex]->base_character).model.motion_controller);
+  core_motion_cpp_FUN_0052ddb0();
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+            ((CMotionController *)(in_stack_00000004 + 0x158));
   engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"@@%s attacking hero\n" + 2);
   return;
 }
@@ -114,7 +116,7 @@ void core_mimic_cpp_FUN_00520500(void)
 // 00520576: PUSH EAX
 // 00520577: LEA ESI,[EBX + 0x158]
 // 0052057d: PUSH ESI
-// 0052057e: CALL core_motion.cpp_CMotionController_FUN_0052ddb0
+// 0052057e: CALL core_motion.cpp_FUN_0052ddb0
 //   XREF to: 0052ddb0 (UNCONDITIONAL_CALL)
 // 00520583: ADD ESP,0xc
 // 00520586: PUSH 0x1

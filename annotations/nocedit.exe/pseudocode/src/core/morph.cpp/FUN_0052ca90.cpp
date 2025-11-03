@@ -4,10 +4,10 @@
 // Convention: unknown
 // Signature: undefined core_morph.cpp_FUN_0052ca90()
 // Cross-references:
-//   core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0 (0052bcb0) at 0052c4c0 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052c4c0 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0063a537
-//   undefined4 DAT_0063a53f
+//   double DOUBLE_0063a537 = 2
+//   double DOUBLE_0063a53f = 0.333333333333333
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   int g_WindowWidth = 0x140
 //   int g_WindowHeight = 0xc8
@@ -23,7 +23,7 @@
 // Function calls:
 //   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 //   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
-//   core_morph.cpp_MorphModelRotatePointsTwice_FUN_0052bae0
+//   core_morph.cpp_CMorphModel_FUN_0052bae0
 //   core_stairs.cpp_FUN_005b9620
 //   core_stairs.cpp_FUN_005b9670
 //   core_stairs.cpp_FUN_005b9a20
@@ -35,13 +35,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 core_morph.cpp_FUN_0052ca90(undefined4 param_1) */
 
 void core_morph_cpp_FUN_0052ca90(void)
 
 {
   int iVar1;
+  CMorphModel *in_stack_00000004;
   CGame *n2;
   
   n2 = (CGame *)0x0;
@@ -53,7 +53,7 @@ void core_morph_cpp_FUN_0052ca90(void)
     core_stairs_cpp_FUN_005b9a20();
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr,&g_ZeroVector);
-    core_morph_cpp_MorphModelRotatePointsTwice_FUN_0052bae0();
+    core_morph_cpp_CMorphModel_FUN_0052bae0(in_stack_00000004);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     core_stairs_cpp_FUN_005b9670();
@@ -157,7 +157,7 @@ void core_morph_cpp_FUN_0052ca90(void)
 // 0052cb2f: PUSH dword ptr [ESP + 0x4]
 //   XREF to: Stack[-0x14] (READ)
 // 0052cb33: PUSH ESI
-// 0052cb34: CALL core_morph.cpp_MorphModelRotatePointsTwice_FUN_0052bae0
+// 0052cb34: CALL core_morph.cpp_CMorphModel_FUN_0052bae0
 //   XREF to: 0052bae0 (UNCONDITIONAL_CALL)
 // 0052cb39: ADD ESP,0x8
 // 0052cb3c: CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20

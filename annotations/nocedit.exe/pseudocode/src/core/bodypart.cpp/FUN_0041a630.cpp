@@ -9,8 +9,8 @@
 //   undefined4 DAT_00615e44
 //   CVector3f g_ZeroVector
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 //   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
 //   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
@@ -39,11 +39,11 @@ void core_bodypart_cpp_FUN_0041a630
   undefined4 extraout_EAX;
   CVector3f *pCVar5;
   CVector3f *pCVar6;
-  float *pfVar7;
   int extraout_ECX;
   undefined4 extraout_EDX;
   BADSPACEBASE *in_ESP;
-  int iVar8;
+  int iVar7;
+  float *pfVar8;
   int iVar9;
   float *pfVar10;
   CVector3f *euler_angles_00;
@@ -60,7 +60,7 @@ void core_bodypart_cpp_FUN_0041a630
   int in_stack_00000030;
   CVector3f *in_stack_00000034;
   CMatrix3x4f *in_stack_fffffe6c;
-  CMatrix3x4f *in_stack_fffffe80;
+  float *in_stack_fffffe80;
   undefined1 auStack_154 [24];
   undefined1 auStack_13c [52];
   undefined1 auStack_108 [24];
@@ -71,6 +71,7 @@ void core_bodypart_cpp_FUN_0041a630
   float fStack_80;
   float fStack_78;
   CMatrix3x3f CStack_68;
+  CVector3f local_38;
   CVector3f local_28;
   CVector3f local_1c;
   
@@ -98,32 +99,32 @@ void core_bodypart_cpp_FUN_0041a630
   dVar19 = crt_math_c_round_FUN_005fe6b0(dVar19);
   crt_math_c_round_FUN_005fe6b0(dVar19);
   if (0 < extraout_ECX) {
-    iVar8 = 0;
+    iVar7 = 0;
     do {
       fVar1 = param_5[1].location.position.x;
-      lVar2 = (longlong)unaff_EBX * (longlong)*(int *)((int)fVar1 + iVar8);
-      lVar3 = (longlong)(int)ROUND(fVar15) * (longlong)*(int *)((int)fVar1 + 4 + iVar8);
-      lVar4 = (longlong)(int)ROUND(fVar18) * (longlong)*(int *)((int)fVar1 + 8 + iVar8);
+      lVar2 = (longlong)unaff_EBX * (longlong)*(int *)((int)fVar1 + iVar7);
+      lVar3 = (longlong)(int)ROUND(fVar15) * (longlong)*(int *)((int)fVar1 + 4 + iVar7);
+      lVar4 = (longlong)(int)ROUND(fVar18) * (longlong)*(int *)((int)fVar1 + 8 + iVar7);
       local_1c.y = (float)(((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
                            ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
                           ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10));
-      lVar2 = (longlong)unaff_retaddr * (longlong)*(int *)((int)fVar1 + iVar8);
-      lVar3 = (longlong)(int)ROUND(fVar16) * (longlong)*(int *)((int)fVar1 + 4 + iVar8);
-      lVar4 = (longlong)(int)ROUND(fVar12) * (longlong)*(int *)((int)fVar1 + 8 + iVar8);
+      lVar2 = (longlong)unaff_retaddr * (longlong)*(int *)((int)fVar1 + iVar7);
+      lVar3 = (longlong)(int)ROUND(fVar16) * (longlong)*(int *)((int)fVar1 + 4 + iVar7);
+      lVar4 = (longlong)(int)ROUND(fVar12) * (longlong)*(int *)((int)fVar1 + 8 + iVar7);
       local_1c.z = (float)(((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
                            ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
                           ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10));
-      lVar2 = (longlong)(int)ROUND(fVar14) * (longlong)*(int *)((int)fVar1 + iVar8);
-      lVar3 = (longlong)(int)ROUND(fVar17) * (longlong)*(int *)((int)fVar1 + 4 + iVar8);
-      lVar4 = (longlong)(int)ROUND(fVar13) * (longlong)*(int *)((int)fVar1 + 8 + iVar8);
-      *(float *)((int)fVar1 + iVar8) = local_1c.y;
-      *(uint *)((int)fVar1 + 8 + iVar8) =
+      lVar2 = (longlong)(int)ROUND(fVar14) * (longlong)*(int *)((int)fVar1 + iVar7);
+      lVar3 = (longlong)(int)ROUND(fVar17) * (longlong)*(int *)((int)fVar1 + 4 + iVar7);
+      lVar4 = (longlong)(int)ROUND(fVar13) * (longlong)*(int *)((int)fVar1 + 8 + iVar7);
+      *(float *)((int)fVar1 + iVar7) = local_1c.y;
+      *(uint *)((int)fVar1 + 8 + iVar7) =
            ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
            ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
            ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-      *(float *)((int)fVar1 + 4 + iVar8) = local_1c.z;
+      *(float *)((int)fVar1 + 4 + iVar7) = local_1c.z;
       iVar9 = iVar9 + 1;
-      iVar8 = iVar8 + 0xc;
+      iVar7 = iVar7 + 0xc;
     } while (iVar9 < *(int *)(param_5[1].actor_name + 0x1c));
   }
   euler_angles = &param_5->orient;
@@ -133,11 +134,11 @@ void core_bodypart_cpp_FUN_0041a630
             ((CMatrix3x4f *)auStack_108,&g_ZeroVector,in_stack_00000034);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             ((CMatrix3x4f *)(auStack_13c + 8),(CMatrix3x4f *)(auStack_108 + 4),in_stack_fffffe6c);
-  pfVar7 = &local_a4.m[0].y;
+  pfVar8 = &local_a4.m[0].y;
   pfVar10 = &local_d4;
   for (iVar9 = 0xc; iVar9 != 0; iVar9 = iVar9 + -1) {
-    *pfVar10 = *pfVar7;
-    pfVar7 = pfVar7 + (uint)bVar11 * -2 + 1;
+    *pfVar10 = *pfVar8;
+    pfVar8 = pfVar8 + (uint)bVar11 * -2 + 1;
     pfVar10 = pfVar10 + (uint)bVar11 * -2 + 1;
   }
   pCVar5 = core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(aCStack_d0,(CMatrix3x3f *)&local_1c.y)
@@ -147,7 +148,7 @@ void core_bodypart_cpp_FUN_0041a630
     (param_5->orient).bank = pCVar5->y;
     (param_5->orient).heading = pCVar5->z;
   }
-  core_actor_cpp_CDemonActor_FUN_00408c10(param_5);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(param_5);
   iVar9 = 0;
   if (0 < *(int *)(param_5[5].create_event + 0x1c)) {
     pCVar5 = (CVector3f *)(param_5[5].create_event + 0x20);
@@ -160,15 +161,15 @@ void core_bodypart_cpp_FUN_0041a630
         pCVar5->z = pCVar6->z;
       }
       iVar9 = iVar9 + 1;
-      pfVar7 = core_actor_cpp_CDemonActor_FUN_00408ec0(param_5);
-      pCVar5[3].z = *pfVar7;
-      pCVar5[4].x = pfVar7[1];
-      pCVar5[4].y = pfVar7[2];
+      pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(param_5,&local_38,pCVar5);
+      pCVar5[3].z = pCVar6->x;
+      pCVar5[4].x = pCVar6->y;
+      pCVar5[4].y = pCVar6->z;
       pCVar5 = (CVector3f *)&pCVar5[0x39].y;
     } while (iVar9 < *(int *)(param_5[5].create_event + 0x1c));
   }
-  if (0 < (int)param_5[1].metadata.runtime_vector2.x) {
-    pCVar5 = (CVector3f *)&param_5[1].metadata.runtime_vector2.y;
+  if (0 < (int)param_5[1].previous_transform_state.orientation.x) {
+    pCVar5 = (CVector3f *)&param_5[1].previous_transform_state.orientation.y;
     do {
       pCVar6 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                          (&CStack_68,&local_1c,pCVar5);
@@ -181,8 +182,9 @@ void core_bodypart_cpp_FUN_0041a630
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 ((CMatrix3x4f *)auStack_154,&g_ZeroVector,euler_angles_00);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                ((CMatrix3x4f *)(auStack_154 + 4),(CMatrix3x4f *)auStack_f0,in_stack_fffffe80);
-      in_stack_fffffe80 = (CMatrix3x4f *)&stack0xffffffcc;
+                ((CMatrix3x4f *)(auStack_154 + 4),(CMatrix3x4f *)auStack_f0,
+                 (CMatrix3x4f *)in_stack_fffffe80);
+      in_stack_fffffe80 = &local_38.y;
       pCVar6 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
                          ((CVector3f *)(auStack_f0 + 4),(CMatrix3x3f *)in_stack_fffffe80);
       if (euler_angles_00 != pCVar6) {
@@ -192,7 +194,7 @@ void core_bodypart_cpp_FUN_0041a630
       }
       pCVar5 = (CVector3f *)&pCVar5[0x21].z;
       in_stack_00000030 = in_stack_00000030 + 1;
-    } while (in_stack_00000030 < (int)param_5[1].metadata.runtime_vector2.x);
+    } while (in_stack_00000030 < (int)param_5[1].previous_transform_state.orientation.x);
   }
   return;
 }
@@ -440,7 +442,7 @@ void core_bodypart_cpp_FUN_0041a630
 // 0041a8dd: MOV dword ptr [EBX + 0x8],EDX
 // 0041a8e0: PUSH EBP
 //   Label: LAB_0041a8e0
-// 0041a8e1: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 0041a8e1: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 0041a8e6: XOR EDI,EDI
 // 0041a8e8: MOV EAX,dword ptr [EBP + 0x74c]
@@ -478,7 +480,7 @@ void core_bodypart_cpp_FUN_0041a630
 // 0041a933: PUSH EBP
 // 0041a934: ADD EBX,0x2b0
 // 0041a93a: INC EDI
-// 0041a93b: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0041a93b: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0041a940: LEA ECX,[ESI + 0x2c]
 // 0041a943: MOV EDX,dword ptr [EAX]

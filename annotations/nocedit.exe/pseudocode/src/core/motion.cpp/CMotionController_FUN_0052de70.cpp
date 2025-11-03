@@ -7,13 +7,12 @@
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610 (0052d610) at 0052d749 [UNCONDITIONAL_CALL]
 // Globals:
 //   void* switchdataD_0052de54 = 0052df33
-//   undefined4 DAT_0063aaff
-//   undefined4 DAT_0063ab07
-//   undefined4 DAT_0063ab0f
+//   double DOUBLE_0063aaff = -0.000100000000000000
+//   float FLOAT_0063ab07 = -1
+//   double DOUBLE_0063ab0f = 0.00100000000000000
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 core_motion.cpp_CMotionController_FUN_0052de70(undefined4 param_1,
    undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5) */
 
@@ -40,16 +39,16 @@ undefined4 core_motion_cpp_CMotionController_FUN_0052de70(void)
   if (0 < *(int *)(iVar4 + 0x4a4)) {
     do {
       iVar1 = *(int *)(iVar2 + 0x4a8);
-      if ((*in_stack_0000000c <= (float)iVar1) && ((float)iVar1 <= local_20 + (float)_DAT_0063ab0f))
-      {
-        local_20 = (float)iVar1 + (float)_DAT_0063ab0f;
+      if ((*in_stack_0000000c <= (float)iVar1) &&
+         ((float)iVar1 <= local_20 + (float)DOUBLE_0063ab0f)) {
+        local_20 = (float)iVar1 + (float)DOUBLE_0063ab0f;
         uVar5 = *(undefined4 *)(iVar2 + 0x4ac);
       }
       iVar3 = iVar3 + 1;
       iVar2 = iVar2 + 8;
     } while (iVar3 < *(int *)(iVar4 + 0x4a4));
   }
-  if ((double)local_20 < (double)*(int *)(iVar4 + 100) + _DAT_0063aaff) {
+  if ((double)local_20 < (double)*(int *)(iVar4 + 100) + DOUBLE_0063aaff) {
     (**(code **)(in_stack_00000004[0x14] + 8))();
     *in_stack_0000000c = local_20;
     return uVar5;
@@ -64,7 +63,7 @@ undefined4 core_motion_cpp_CMotionController_FUN_0052de70(void)
     return uVar5;
   }
   fStack_18 = *(float *)(iVar4 + 0x38);
-  if (fStack_18 == _DAT_0063ab07) {
+  if (fStack_18 == FLOAT_0063ab07) {
     iVar2 = (**(code **)(in_stack_00000004[0x14] + 4))();
     fStack_18 = (float)iVar2;
   }

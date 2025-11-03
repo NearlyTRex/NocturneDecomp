@@ -8,7 +8,7 @@
 // Globals:
 //   TerminatedCString s_d_006380b5
 //   TerminatedCString s_d_d_lg_g_006380b9
-//   undefined4 DAT_006380cd
+//   double DOUBLE_006380cd = 0.990000000000000
 //   undefined4 DAT_00661388
 // Function calls:
 //   crt_stdio.c_fprintf_FUN_005fe6d0
@@ -32,7 +32,7 @@ void shape_meshlod_cpp_FUN_0051d0e0(void)
     crt_stdio_c_fprintf_FUN_005fe6d0
               (in_stack_00000008,"%d\n",*(undefined4 *)(in_stack_00000004 + 0x44));
     if (0 < *(int *)(in_stack_00000004 + 0x44)) {
-      dVar1 = _DAT_00661388 * _DAT_006380cd;
+      dVar1 = _DAT_00661388 * DOUBLE_006380cd;
       iVar4 = 0;
       do {
         puVar2 = (undefined4 *)(*(int *)(in_stack_00000004 + 0x48) + iVar4);

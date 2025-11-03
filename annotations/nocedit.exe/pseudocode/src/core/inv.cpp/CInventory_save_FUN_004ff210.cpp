@@ -10,9 +10,9 @@
 //   TerminatedCString s_s_d_006308aa
 //   TerminatedCString s_s_itemCount_006308b0
 //   TerminatedCString s_s_d_006308c0
-//   char* g_PropertyNamePrefix = 00000000
+//   char[104] g_PropertyNamePrefix
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_0040aee0
+//   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   core_actor.cpp_CDemonActor_save_FUN_0040af30
 //   core_inv.cpp_CInventory_saveItems_FUN_004ff3b0
 //   crt_stdio.c_fprintf_FUN_005fe6d0
@@ -23,20 +23,17 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,FILE
 
 {
   int iVar1;
-  int extraout_EAX;
   CInventory *pCVar2;
-  int iVar3;
   
-  iVar1 = crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s{ // Inventory\n",&g_PropertyNamePrefix)
-  ;
-  core_actor_cpp_CDemonActor_FUN_0040aee0(iVar1);
+  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s{ // Inventory\n",g_PropertyNamePrefix);
+  core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(1);
   this_ptr->save_version = 2;
-  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s// fileVersion\n",&g_PropertyNamePrefix);
+  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s// fileVersion\n",g_PropertyNamePrefix);
   crt_stdio_c_fprintf_FUN_005fe6d0
-            (file_handle,"%s%d\n",&g_PropertyNamePrefix,this_ptr->save_version);
-  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s// itemCount\n",&g_PropertyNamePrefix);
+            (file_handle,"%s%d\n",g_PropertyNamePrefix,this_ptr->save_version);
+  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s// itemCount\n",g_PropertyNamePrefix);
   crt_stdio_c_fprintf_FUN_005fe6d0
-            (file_handle,"%s%d\n",&g_PropertyNamePrefix,this_ptr->item_count);
+            (file_handle,"%s%d\n",g_PropertyNamePrefix,this_ptr->item_count);
   iVar1 = 0;
   pCVar2 = this_ptr;
   if (0 < this_ptr->item_count) {
@@ -52,19 +49,17 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,FILE
   crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s%f\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s// actor name list\n");
   core_inv_cpp_CInventory_saveItems_FUN_004ff3b0(this_ptr,file_handle);
-  iVar3 = 0;
+  iVar1 = 0;
   crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s// actor data list\n");
-  iVar1 = this_ptr->item_count;
   pCVar2 = this_ptr;
-  if (0 < iVar1) {
+  if (0 < this_ptr->item_count) {
     do {
-      iVar3 = iVar3 + 1;
+      iVar1 = iVar1 + 1;
       core_actor_cpp_CDemonActor_save_FUN_0040af30(pCVar2->items[0],file_handle);
-      iVar1 = extraout_EAX;
       pCVar2 = (CInventory *)&pCVar2->owner;
-    } while (iVar3 < this_ptr->item_count);
+    } while (iVar1 < this_ptr->item_count);
   }
-  core_actor_cpp_CDemonActor_FUN_0040aee0(iVar1);
+  core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(-1);
   crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s} // End inventory\n");
   return;
 }
@@ -95,7 +90,7 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,FILE
 //   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
 // 004ff234: ADD ESP,0xc
 // 004ff237: PUSH 0x1
-// 004ff239: CALL core_actor.cpp_CDemonActor_FUN_0040aee0
+// 004ff239: CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   XREF to: 0040aee0 (UNCONDITIONAL_CALL)
 // 004ff23e: ADD ESP,0x4
 // 004ff241: PUSH 0x66e178
@@ -241,7 +236,7 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,FILE
 // 004ff36e: MOV EAX,EAX
 // 004ff370: PUSH -0x1
 //   Label: LAB_004ff370
-// 004ff372: CALL core_actor.cpp_CDemonActor_FUN_0040aee0
+// 004ff372: CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   XREF to: 0040aee0 (UNCONDITIONAL_CALL)
 // 004ff377: ADD ESP,0x4
 // 004ff37a: MOV EBX,dword ptr [ESP + 0x4]

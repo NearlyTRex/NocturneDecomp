@@ -4,14 +4,14 @@
 // Convention: __cdecl
 // Signature: void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
 // Cross-references:
-//   core_actor.cpp_FUN_0040d330 (0040d330) at 0040d45b [UNCONDITIONAL_CALL]
-//   core_actor.cpp_FUN_0040d470 (0040d470) at 0040d5fe [UNCONDITIONAL_CALL]
-//   core_actor.cpp_renderActorBoundingBox_FUN_0040d940 (0040d940) at 0040dcef [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 (0040d940) at 0040dcef [UNCONDITIONAL_CALL]
+//   core_actor.cpp_draw3DLineSegment_FUN_0040d330 (0040d330) at 0040d45b [UNCONDITIONAL_CALL]
+//   core_actor.cpp_drawBoundingBox_FUN_0040d470 (0040d470) at 0040d5fe [UNCONDITIONAL_CALL]
 //   core_course.cpp_FUN_00443bc0 (00443bc0) at 00443e4b [UNCONDITIONAL_CALL]
 //   core_ladder.cpp_FUN_00502620 (00502620) at 00502845 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_00583170 (00583170) at 00584184 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_FUN_00582930 (00582930) at 00582cfa [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModel_FUN_0059b640 (0059b640) at 0059b734 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 (0059b640) at 0059b734 [UNCONDITIONAL_CALL]
 //   core_stairs.cpp_FUN_005b9c10 (005b9c10) at 005b9fe4 [UNCONDITIONAL_CALL]
 //   engine_3d.c_drawLine2DFromIndices_FUN_00407cf0 (00407cf0) at 00407d55 [UNCONDITIONAL_CALL]
 //   engine_3d.c_drawLineStrip2D_FUN_00404570 (00404570) at 004045f6 [UNCONDITIONAL_CALL]

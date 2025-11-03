@@ -77,11 +77,11 @@ void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_0042dcd0(CCharacter *t
           ((uint)bVar3 * -2 + 1) * 4);
     core_xform_cpp_slerpQuaternion_FUN_005f77e0
               ((CQuaternion4f *)
-               ((this_ptr->model).padding_0x0 +
-               *(int *)(this_ptr->field11_0x25a0 + 0x44) * 0x10 + 0x6b0),(CQuaternion4f *)local_54,
+               ((this_ptr->model).field3_0x508 +
+               *(int *)(this_ptr->field11_0x25a0 + 0x44) * 0x10 + 0x1a8),(CQuaternion4f *)local_54,
                *(CQuaternion4f **)(this_ptr->field11_0x25a0 + 0x40),in_stack_ffffff94);
-    pcVar1 = (this_ptr->model).padding_0x0 +
-             *(int *)(this_ptr->field11_0x25a0 + 0x44) * 0x10 + 0x6b0;
+    pcVar1 = (this_ptr->model).field3_0x508 +
+             *(int *)(this_ptr->field11_0x25a0 + 0x44) * 0x10 + 0x1a8;
     pcVar2 = pcVar1 + ((uint)bVar3 * -2 + 1) * 4;
     *(undefined4 *)pcVar1 = uStack_20;
     *(float *)pcVar2 = afStack_1c[(uint)bVar3 * -2];

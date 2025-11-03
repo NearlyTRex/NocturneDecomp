@@ -181,8 +181,8 @@ LAB_004dc4e9:
   if (g_PrevKeyboardState[iVar5] != g_KeyboardState[iVar5]) {
     ctrl->action_states[1] = (uint)(byte)g_KeyboardState[iVar5];
   }
-  iVar5 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.metadata.vtable[1].
-            hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],(SCollisionInfo *)game);
+  iVar5 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision)
+                    ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],(SCollisionInfo *)game);
   if (iVar5 == 0) {
     iVar5 = pCVar4->key_fire;
     if (g_PrevKeyboardState[iVar5] != g_KeyboardState[iVar5]) {
@@ -277,7 +277,7 @@ LAB_004dc4e9:
     uVar6 = (uint)(pCVar4->block_auto_save == 0);
     pCVar4->block_auto_save = uVar6;
     if (((uVar6 == 0) || (this_ptr = g_HeroActors[g_LocalHeroIndex], this_ptr == (CHero *)0x0)) ||
-       (iVar5 = (*(this_ptr->base_character).base_actor.metadata.vtable[1].hasCollision)
+       (iVar5 = (*(this_ptr->base_character).base_actor.vtable[1].hasCollision)
                           ((CDemonActor *)this_ptr,in_stack_00000134), iVar5 == 0)) {
       if (pCVar4->block_auto_save != 0) {
         return;

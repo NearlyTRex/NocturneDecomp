@@ -41,8 +41,7 @@ void __cdecl core_mission_cpp_FUN_00524660(void)
     cVar1 = *pcVar3;
     pcVar3 = pcVar3 + 1;
   } while (cVar1 != '\0');
-  for (str1 = in_stack_00000004->first_actor; str1 != (CDemonActor *)0x0;
-      str1 = (str1->metadata).next_actor) {
+  for (str1 = in_stack_00000004->first_actor; str1 != (CDemonActor *)0x0; str1 = str1->next_actor) {
     iVar2 = crt_string_c_strnicmp_FUN_005ff070(str1->actor_name,in_stack_0000000c,~uVar4 - 1);
     if (((iVar2 == 0) &&
         (iVar2 = crt_stdio_c_sscanf_FUN_0060013c

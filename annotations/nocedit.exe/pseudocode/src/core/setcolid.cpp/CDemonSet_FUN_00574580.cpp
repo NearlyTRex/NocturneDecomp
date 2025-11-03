@@ -13,7 +13,7 @@
 //   undefined4 g_CWaterActorClassInfo.name_hash
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 
 #include "nocturne.h"
 
@@ -30,6 +30,7 @@ int __cdecl core_setcolid_cpp_CDemonSet_FUN_00574580(CDemonSet *this_ptr)
   CDemonSet *pCVar2;
   float unaff_retaddr;
   float in_stack_00000008;
+  CVector3f *in_stack_0000000c;
   CBoundingBox3D CStack_2c;
   float fStack_14;
   
@@ -43,8 +44,9 @@ int __cdecl core_setcolid_cpp_CDemonSet_FUN_00574580(CDemonSet *this_ptr)
                                 (*(CDemonActor **)pCVar2->actor_list_data,
                                  g_CWaterActorClassInfo.name_hash);
         if (this_ptr_00 != (CDemonActor *)0x0) {
-          core_actor_cpp_CDemonActor_FUN_00408f10(this_ptr_00);
-          (*((this_ptr_00->metadata).vtable)->getBoundingBox)(this_ptr_00,&CStack_2c);
+          core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                    (this_ptr_00,(CVector3f *)&CStack_2c.max.z,in_stack_0000000c);
+          (*this_ptr_00->vtable->getBoundingBox)(this_ptr_00,&CStack_2c);
           fStack_14 = fStack_14 + FLOAT_006463fa;
           if ((((CStack_2c.max.z <= unaff_retaddr) && (fStack_14 <= (float)this_ptr)) &&
               (unaff_EBP <= in_stack_00000008)) &&
@@ -138,7 +140,7 @@ int __cdecl core_setcolid_cpp_CDemonSet_FUN_00574580(CDemonSet *this_ptr)
 //   XREF to: Stack[-0x1c] (DATA)
 // 005745f9: PUSH EAX
 // 005745fa: PUSH EBX
-// 005745fb: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 005745fb: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 00574600: ADD ESP,0xc
 // 00574603: MOV EAX,ESP

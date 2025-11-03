@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bc3af [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_Bip01_L_Forearm_00653e84
+//   TerminatedCString s_Bip01_L_Forearm_00653e84
 //   TerminatedCString s_Bip01_L_Forearm_00653e94
 //   TerminatedCString s_Bip01_L_Forearm_00653ea4
 //   TerminatedCString s_Bip01_L_Forearm_00653eb4
@@ -20,12 +20,12 @@
 //   TerminatedCString s_Bip01_R_Forearm_00653f34
 //   TerminatedCString s_Bip01_L_Forearm_00653f44
 //   TerminatedCString s_Bip01_L_Forearm_00653f54
-//   undefined4 DAT_00653f64
-//   undefined4 DAT_00653f6c
-//   undefined4 DAT_00653f74
-//   undefined4 DAT_00653f7c
-//   undefined4 DAT_00653f84
-//   undefined4 DAT_00653f8c
+//   double DOUBLE_00653f64 = 0.700000000000000
+//   double DOUBLE_00653f6c = 0.300000000000000
+//   double DOUBLE_00653f74 = 0.5
+//   double DOUBLE_00653f7c = 0.400000000000000
+//   double DOUBLE_00653f84 = 0.600000000000000
+//   double DOUBLE_00653f8c = 0.800000000000000
 // Function calls:
 //   core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0
 //   core_cloth.cpp_FUN_0043e170
@@ -33,7 +33,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_hero_stranger.cpp_CStranger_FUN_005c6220(int* param_1) */
 
 void core_stranger_cpp_CStranger_FUN_005c6220(void)
@@ -53,43 +52,43 @@ void core_stranger_cpp_CStranger_FUN_005c6220(void)
     bVar2 = false;
     if (iVar3 < 2) {
       if (*(int *)(in_stack_00000004 + 0x2a8c) == 0) {
-        if ((float)_DAT_00653f64 < *(float *)(in_stack_00000004 + 0x2a90)) {
+        if ((float)DOUBLE_00653f64 < *(float *)(in_stack_00000004 + 0x2a90)) {
           bVar2 = true;
         }
       }
       if (*(int *)(in_stack_00000004 + 0x2a8c) == 1) {
-        if (*(float *)(in_stack_00000004 + 0x2a90) < (float)_DAT_00653f6c) {
+        if (*(float *)(in_stack_00000004 + 0x2a90) < (float)DOUBLE_00653f6c) {
           bVar2 = true;
         }
       }
       if (*(int *)(in_stack_00000004 + 0x2a8c) == 2) {
-        if ((float)_DAT_00653f74 < *(float *)(in_stack_00000004 + 0x2a90)) {
+        if ((float)DOUBLE_00653f74 < *(float *)(in_stack_00000004 + 0x2a90)) {
           bVar1 = true;
         }
       }
       if (*(int *)(in_stack_00000004 + 0x2a8c) == 3) {
-        if (*(float *)(in_stack_00000004 + 0x2a90) < (float)_DAT_00653f74) {
+        if (*(float *)(in_stack_00000004 + 0x2a90) < (float)DOUBLE_00653f74) {
           bVar1 = true;
         }
       }
       if (*(int *)(in_stack_00000004 + 0x2a8c) == 4) {
-        if (*(float *)(in_stack_00000004 + 0x2a90) < (float)_DAT_00653f7c) {
+        if (*(float *)(in_stack_00000004 + 0x2a90) < (float)DOUBLE_00653f7c) {
           bVar1 = true;
         }
       }
       if (*(int *)(in_stack_00000004 + 0x2a8c) == 5) {
-        if ((float)_DAT_00653f84 < *(float *)(in_stack_00000004 + 0x2a90)) {
+        if ((float)DOUBLE_00653f84 < *(float *)(in_stack_00000004 + 0x2a90)) {
           bVar1 = true;
         }
       }
       if (*(int *)(in_stack_00000004 + 0x2a8c) == 9) {
-        if (*(float *)(in_stack_00000004 + 0x2a90) < (float)_DAT_00653f7c) {
+        if (*(float *)(in_stack_00000004 + 0x2a90) < (float)DOUBLE_00653f7c) {
           bVar1 = true;
         }
       }
       if (*(int *)(in_stack_00000004 + 0x2a8c) == 0xf) {
-        if ((float)_DAT_00653f6c < *(float *)(in_stack_00000004 + 0x2a90)) {
-          if ((double)*(float *)(in_stack_00000004 + 0x2a90) < _DAT_00653f8c) {
+        if ((float)DOUBLE_00653f6c < *(float *)(in_stack_00000004 + 0x2a90)) {
+          if ((double)*(float *)(in_stack_00000004 + 0x2a90) < DOUBLE_00653f8c) {
             bVar1 = true;
           }
         }
@@ -133,7 +132,8 @@ void core_stranger_cpp_CStranger_FUN_005c6220(void)
       core_cloth_cpp_FUN_0043e170();
     }
     pCVar4 = this_ptr + 1;
-    iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0
+                      ((CMotionController *)(in_stack_00000004 + 0x158));
     if (*(int *)(iVar3 + 0x24) == 0x2a) {
       if (pCVar4 != (CCloth *)&stack0xffffffd8) {
         this_ptr[1].padding_0x0[4] = '\0';

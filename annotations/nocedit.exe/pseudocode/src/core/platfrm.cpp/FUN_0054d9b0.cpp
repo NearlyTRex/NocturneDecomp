@@ -11,7 +11,7 @@
 //   CDemonCamera* g_CurrentSceneCamera
 //   int g_FlatShadingLightLevel
 //   CDemonRenderer g_CDemonRendererInstance
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CDemonSet g_CDemonSetInstance
 //   undefined4 DAT_0326eef0
 // Function calls:
@@ -19,7 +19,7 @@
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 //   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 //   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 
 #include "nocturne.h"
@@ -54,12 +54,12 @@ void core_platfrm_cpp_FUN_0054d9b0(void)
     if ((fVar1 == 4.2039e-45) || (fVar1 == 5.60519e-45)) {
       return;
     }
-    iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,(char *)&in_stack_00000004[2].scale);
     if (iVar2 != 0) {
       return;
     }
-    iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,in_stack_00000004[2].create_event + 0x2c);
     if (iVar2 != 0) {
       return;
@@ -78,7 +78,7 @@ void core_platfrm_cpp_FUN_0054d9b0(void)
     }
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-  this_ptr = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+  this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
                        (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd4);
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
   if (iVar2 != 0) {
@@ -154,7 +154,7 @@ void core_platfrm_cpp_FUN_0054d9b0(void)
 //   XREF to: 006793d0 (READ)
 // 0054da11: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 0054da12: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0054da12: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0054da17: ADD ESP,0x8
 // 0054da1a: TEST EAX,EAX
@@ -167,7 +167,7 @@ void core_platfrm_cpp_FUN_0054d9b0(void)
 //   XREF to: 006793d0 (READ)
 // 0054da2b: PUSH EBX
 //   XREF to: 02d05310 (DATA)
-// 0054da2c: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0054da2c: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0054da31: ADD ESP,0x8
 // 0054da34: TEST EAX,EAX

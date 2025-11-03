@@ -24,17 +24,18 @@ void core_beast_cpp_FUN_004182a0(void)
   
   iVar1 = core_charactr_cpp_CCharacter_FUN_00429870(in_stack_00000004);
   if (iVar1 != 0) {
-    (in_stack_00000004->model).padding_0x0[0x225c] = '\0';
-    (in_stack_00000004->model).padding_0x0[0x225d] = '\0';
-    (in_stack_00000004->model).padding_0x0[0x225e] = '\0';
-    (in_stack_00000004->model).padding_0x0[0x225f] = '\0';
-    *(undefined4 *)((in_stack_00000004->model).padding_0x0 + 0x2258) =
-         *(undefined4 *)((in_stack_00000004->model).padding_0x0 + 0x225c);
-    *(undefined4 *)((in_stack_00000004->model).padding_0x0 + 0x2254) =
-         *(undefined4 *)((in_stack_00000004->model).padding_0x0 + 0x2258);
+    (in_stack_00000004->model).field10_0x2254[8] = '\0';
+    (in_stack_00000004->model).field10_0x2254[9] = '\0';
+    (in_stack_00000004->model).field10_0x2254[10] = '\0';
+    (in_stack_00000004->model).field10_0x2254[0xb] = '\0';
+    *(undefined4 *)((in_stack_00000004->model).field10_0x2254 + 4) =
+         *(undefined4 *)((in_stack_00000004->model).field10_0x2254 + 8);
+    *(undefined4 *)(in_stack_00000004->model).field10_0x2254 =
+         *(undefined4 *)((in_stack_00000004->model).field10_0x2254 + 4);
     in_stack_00000008 = in_stack_00000008 * *(float *)in_stack_00000004[1].base_actor.actor_name;
     while (0.0 < in_stack_00000008) {
-      core_motion_cpp_CMotionController_advance_FUN_0052d610();
+      core_motion_cpp_CMotionController_advance_FUN_0052d610
+                (&(in_stack_00000004->model).motion_controller);
     }
     core_charactr_cpp_CCharacter_FUN_00429820(in_stack_00000004);
     core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020();

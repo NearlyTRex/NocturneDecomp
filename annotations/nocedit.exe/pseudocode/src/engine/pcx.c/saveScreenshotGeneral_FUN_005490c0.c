@@ -7,7 +7,7 @@
 //   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 (0043c880) at 0043cb3a [UNCONDITIONAL_CALL]
 //   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (0047cbc0) at 0047d57f [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_processFrame_FUN_004da100 (004da100) at 004da49b [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00597394 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597394 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_engine_pcx_c_0063ec0c
 //   TerminatedCString s_wb_0063ec1c

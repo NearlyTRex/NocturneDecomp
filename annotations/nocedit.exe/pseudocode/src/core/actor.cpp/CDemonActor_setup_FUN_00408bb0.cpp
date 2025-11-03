@@ -50,7 +50,7 @@
 //   TerminatedCString s_core_actor_cpp_0061363c
 // Function calls:
 //   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
 
 #include "nocturne.h"
@@ -63,8 +63,8 @@ void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor *this_ptr
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
             (this_ptr,"..\\core\\actor.cpp",0x23f);
   this_ptr->field19_0x114 = 0;
-  core_actor_cpp_CDemonActor_FUN_00408c10(this_ptr);
-  this_ptr_00 = (*((this_ptr->metadata).vtable)->getPathMap)(this_ptr);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(this_ptr);
+  this_ptr_00 = (*this_ptr->vtable->getPathMap)(this_ptr);
   if (this_ptr_00 == (CPathMap *)0x0) {
     return;
   }
@@ -87,7 +87,7 @@ void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor *this_ptr
 // 00408bc5: ADD ESP,0xc
 // 00408bc8: PUSH EBX
 // 00408bc9: MOV dword ptr [EBX + 0x114],0x0
-// 00408bd3: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 00408bd3: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 00408bd8: ADD ESP,0x4
 // 00408bdb: MOV EAX,dword ptr [EBX + 0x154]

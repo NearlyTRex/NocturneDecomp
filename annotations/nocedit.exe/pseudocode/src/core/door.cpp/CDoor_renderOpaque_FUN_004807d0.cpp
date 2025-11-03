@@ -14,10 +14,10 @@
 //   undefined4 DAT_02f33744
 //   undefined4 DAT_02f33768
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 //   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
-//   core_actor.cpp_renderActorBoundingBox_FUN_0040d940
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 //   core_box.cpp_CBoundingBox3D_render_FUN_004210b0
 //   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
@@ -48,7 +48,7 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_004807d0(CDoor *this_ptr)
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-  pCVar1 = (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
+  pCVar1 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
                      (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffa8);
   fStack_50 = 6.615051e-39;
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar1);
@@ -56,7 +56,7 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_004807d0(CDoor *this_ptr)
     if (this_ptr->plot_as_box_in_shadow != 0) {
       iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
       if (iVar3 != 0) {
-        pCVar1 = (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
+        pCVar1 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
                            (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffdc);
         core_box_cpp_CBoundingBox3D_render_FUN_004210b0
                   (pCVar1,in_stack_ffffffd4,in_stack_ffffffd8,(int)in_stack_ffffffdc);
@@ -76,18 +76,21 @@ LAB_0048085a:
       if (0.0 < this_ptr_00->param) {
         this_ptr_00->param = 0.0;
         core_door_cpp_CDoor_reposition_FUN_0047fd20(this_ptr_00);
-        core_actor_cpp_renderActorBoundingBox_FUN_0040d940(&this_ptr_00->base_actor,2);
+        core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(&this_ptr_00->base_actor,2);
       }
       if (in_stack_ffffffe8 < this_ptr->max_param) {
         this_ptr->param = this_ptr->max_param;
         core_door_cpp_CDoor_reposition_FUN_0047fd20(this_ptr);
-        core_actor_cpp_renderActorBoundingBox_FUN_0040d940(&this_ptr->base_actor,1);
+        core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(&this_ptr->base_actor,1);
       }
       this_ptr->param = 0.0;
       core_door_cpp_CDoor_reposition_FUN_0047fd20(this_ptr);
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
       g_ActiveRenderColor = 2;
-      pCVar4 = (CQuaternion4f *)core_actor_cpp_CDemonActor_FUN_00408f10(&this_ptr->base_actor);
+      pCVar4 = (CQuaternion4f *)
+               core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                         (&this_ptr->base_actor,(CVector3f *)&stack0x00000024,
+                          (CVector3f *)this_ptr->field17_0x9bc);
       shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0
                 (g_CEditorToolsPtr,pCVar4,(int)unaff_EBP);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base_actor);
@@ -95,7 +98,10 @@ LAB_0048085a:
       core_door_cpp_CDoor_reposition_FUN_0047fd20(this_ptr);
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
       g_ActiveRenderColor = 1;
-      pCVar4 = (CQuaternion4f *)core_actor_cpp_CDemonActor_FUN_00408f10(&this_ptr->base_actor);
+      pCVar4 = (CQuaternion4f *)
+               core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                         (&this_ptr->base_actor,(CVector3f *)&stack0x00000044,
+                          (CVector3f *)this_ptr->field17_0x9bc);
       shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0
                 (g_CEditorToolsPtr,pCVar4,(int)this_ptr);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base_actor);
@@ -220,7 +226,7 @@ LAB_0048085a:
 // 004808c6: ADD ESP,0x4
 // 004808c9: PUSH 0x2
 // 004808cb: PUSH ESI
-// 004808cc: CALL core_actor.cpp_renderActorBoundingBox_FUN_0040d940
+// 004808cc: CALL core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 //   XREF to: 0040d940 (UNCONDITIONAL_CALL)
 // 004808d1: ADD ESP,0x8
 // 004808d4: FLD float ptr [ESP]
@@ -238,7 +244,7 @@ LAB_0048085a:
 // 004808f4: ADD ESP,0x4
 // 004808f7: PUSH 0x1
 // 004808f9: PUSH EBX
-// 004808fa: CALL core_actor.cpp_renderActorBoundingBox_FUN_0040d940
+// 004808fa: CALL core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 //   XREF to: 0040d940 (UNCONDITIONAL_CALL)
 // 004808ff: ADD ESP,0x8
 // 00480902: PUSH EBX
@@ -260,7 +266,7 @@ LAB_0048085a:
 // 00480930: LEA EAX,[ESP + 0x3c]
 // 00480934: PUSH EAX
 // 00480935: PUSH EBX
-// 00480936: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 00480936: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 0048093b: ADD ESP,0xc
 // 0048093e: PUSH EAX
@@ -294,7 +300,7 @@ LAB_0048085a:
 // 00480982: PUSH EBX
 // 00480983: MOV dword ptr [0x02d02570],ECX
 //   XREF to: 02d02570 (WRITE)
-// 00480989: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 00480989: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 0048098e: ADD ESP,0xc
 // 00480991: PUSH EAX

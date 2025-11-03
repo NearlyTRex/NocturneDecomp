@@ -1,8 +1,8 @@
 // Name: core_motion.cpp_CMotionController_advance_FUN_0052d610
 // Address: 0052d610
 // Address Range: [[0052d610, 0052d936]]
-// Convention: unknown
-// Signature: undefined core_motion.cpp_CMotionController_advance_FUN_0052d610()
+// Convention: __cdecl
+// Signature: int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
 // Cross-references:
 //   core_armour.cpp_CArmour_process_FUN_00412260 (00412260) at 00412351 [UNCONDITIONAL_CALL]
 //   core_baron.cpp_FUN_00413a00 (00413a00) at 00413a16 [UNCONDITIONAL_CALL]
@@ -51,10 +51,10 @@
 //   TerminatedCString s_CMotionController_advanc_0063a97f
 //   TerminatedCString s_core_motion_cpp_0063a9c5
 //   TerminatedCString s_Invalid_transition_comma_0063a9d8
-//   undefined4 DAT_0063aa27
-//   undefined4 DAT_0063aa2f
-//   undefined4 DAT_0063aa37
-//   undefined4 DAT_0063aa3f
+//   double DOUBLE_0063aa27 = 0.0000100000000000000
+//   double DOUBLE_0063aa2f = 0.5
+//   double DOUBLE_0063aa37 = 0.499900000000000
+//   double DOUBLE_0063aa3f = 0.000100000000000000
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
@@ -70,11 +70,7 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 core_motion.cpp_CMotionController_advance(CMotionController*
-   pMotionController, undefined4 param_2) */
-
-int core_motion_cpp_CMotionController_advance_FUN_0052d610(void)
+int __cdecl core_motion_cpp_CMotionController_advance_FUN_0052d610(CMotionController *this_ptr)
 
 {
   float fVar1;
@@ -82,39 +78,38 @@ int core_motion_cpp_CMotionController_advance_FUN_0052d610(void)
   int iVar3;
   int iVar4;
   int unaff_EBP;
-  int in_stack_00000004;
   float *in_stack_00000008;
   float local_44;
   float local_40;
   undefined4 local_34;
-  undefined4 uStack_30;
-  undefined4 local_2c;
+  int iStack_30;
+  float local_2c;
   int local_14;
   
   local_14 = 0;
   do {
-    if (*in_stack_00000008 <= (float)_DAT_0063aa27) break;
-    iVar3 = core_motion_cpp_CMotionController_FUN_0052d950();
+    if (*in_stack_00000008 <= (float)DOUBLE_0063aa27) break;
+    iVar3 = core_motion_cpp_CMotionController_FUN_0052d950(this_ptr);
     if (iVar3 != 0) goto LAB_0052d663;
     local_44 = *in_stack_00000008;
     iVar3 = 0;
-    if (*(float *)(in_stack_00000004 + 0x14) < 0.0) {
-      iVar3 = core_motion_cpp_CMotionController_FUN_0052e020();
+    if (this_ptr->tween_progress < 0.0) {
+      iVar3 = core_motion_cpp_CMotionController_FUN_0052e020(this_ptr);
       switch(local_34) {
       case 1:
       case 2:
-        *(undefined4 *)(in_stack_00000004 + 4) = uStack_30;
-        *(undefined4 *)(in_stack_00000004 + 8) = local_2c;
-        if (in_stack_00000004 != -0x1c) {
-          iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0();
-          *(undefined4 *)(in_stack_00000004 + 0x28) = *(undefined4 *)(iVar4 + 0x24);
+        this_ptr->current_motion_index = iStack_30;
+        this_ptr->current_frame_number = local_2c;
+        if (this_ptr != (CMotionController *)0xffffffe4) {
+          iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
+          this_ptr->state_index = *(int *)(iVar4 + 0x24);
         }
         break;
       case 3:
       case 4:
       case 5:
       case 6:
-        core_motion_cpp_CMotionController_FUN_0052dbc0();
+        core_motion_cpp_CMotionController_FUN_0052dbc0(this_ptr);
         break;
       default:
         g_CurrentFilename = "..\\core\\motion.cpp";
@@ -123,13 +118,13 @@ int core_motion_cpp_CMotionController_advance_FUN_0052d610(void)
       }
       goto LAB_0052d782;
     }
-    if (*(int *)(in_stack_00000004 + 0x20) == 0) {
-      fVar1 = (float)_DAT_0063aa2f - *(float *)(in_stack_00000004 + 0x14);
+    if (this_ptr->tween_direction == 0) {
+      fVar1 = (float)DOUBLE_0063aa2f - this_ptr->tween_progress;
     }
     else {
-      fVar1 = *(float *)(in_stack_00000004 + 0x14);
+      fVar1 = this_ptr->tween_progress;
     }
-    local_40 = fVar1 / *(float *)(in_stack_00000004 + 0x10);
+    local_40 = fVar1 / this_ptr->tween_speed;
     if (local_40 < 0.0) {
       local_40 = 0.0;
     }
@@ -139,26 +134,26 @@ int core_motion_cpp_CMotionController_advance_FUN_0052d610(void)
     bVar2 = false;
     local_14 = 0;
     if (local_44 <= 0.0) goto switchD_0052d6ff_caseD_3;
-    switch(*(undefined4 *)(in_stack_00000004 + 0xc)) {
+    switch(this_ptr->tween_type) {
     case 3:
       break;
     case 4:
       bVar2 = true;
-      core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0();
+      core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(this_ptr);
       break;
     case 5:
-      core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0();
+      core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(this_ptr);
       goto LAB_0052d70d;
     case 6:
-      core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0();
+      core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(this_ptr);
       bVar2 = true;
-      core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0();
+      core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(this_ptr);
       goto LAB_0052d70d;
     default:
       g_CurrentFilename = "..\\core\\motion.cpp";
       g_CurrentLineNumber = 0x17e;
       core_main_c_displayErrorAndQuit_FUN_00506f10
-                ("CMotionController::advance: Tweening active but invalid tweenType: %d",*(undefined4 *)(in_stack_00000004 + 0xc));
+                ("CMotionController::advance: Tweening active but invalid tweenType: %d",this_ptr->tween_type);
     }
 switchD_0052d6ff_caseD_3:
     if (unaff_EBP != 0) {
@@ -168,30 +163,28 @@ LAB_0052d70d:
     if ((bVar2) && (iVar4 = core_motion_cpp_CMotionController_FUN_0052de70(), iVar3 == 0)) {
       iVar3 = iVar4;
     }
-    if (*(int *)(in_stack_00000004 + 0x20) == 0) {
-      fVar1 = local_40 * *(float *)(in_stack_00000004 + 0x10) + *(float *)(in_stack_00000004 + 0x14)
-      ;
-      *(float *)(in_stack_00000004 + 0x14) = fVar1;
-      if (((float)_DAT_0063aa37 < fVar1) &&
-         (core_motion_cpp_CMotionController_FUN_0052da50(), *(int *)(in_stack_00000004 + 0x24) != 0)
-         ) {
-        iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0();
-        *(undefined4 *)(in_stack_00000004 + 0x28) = *(undefined4 *)(iVar4 + 0x24);
+    if (this_ptr->tween_direction == 0) {
+      fVar1 = local_40 * this_ptr->tween_speed + this_ptr->tween_progress;
+      this_ptr->tween_progress = fVar1;
+      if (((float)DOUBLE_0063aa37 < fVar1) &&
+         (core_motion_cpp_CMotionController_FUN_0052da50(this_ptr),
+         this_ptr->tween_set_new_state != 0)) {
+        iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
+        this_ptr->state_index = *(int *)(iVar4 + 0x24);
       }
     }
     else {
-      fVar1 = *(float *)(in_stack_00000004 + 0x14) - local_40 * *(float *)(in_stack_00000004 + 0x10)
-      ;
-      *(float *)(in_stack_00000004 + 0x14) = fVar1;
-      if (fVar1 < (float)_DAT_0063aa3f) {
-        core_motion_cpp_CMotionController_FUN_0052de40();
+      fVar1 = this_ptr->tween_progress - local_40 * this_ptr->tween_speed;
+      this_ptr->tween_progress = fVar1;
+      if (fVar1 < (float)DOUBLE_0063aa3f) {
+        core_motion_cpp_CMotionController_FUN_0052de40(this_ptr);
       }
     }
 LAB_0052d782:
     *in_stack_00000008 = *in_stack_00000008 - local_40;
-    if ((*(int *)(in_stack_00000004 + 0x2c) != 0) &&
-       (*(int *)(*(int *)(in_stack_00000004 + 0x2c) + 8) == *(int *)(in_stack_00000004 + 4))) {
-      *(undefined4 *)(in_stack_00000004 + 0x2c) = 0;
+    if ((this_ptr->field11_0x2c != 0) &&
+       (*(int *)(this_ptr->field11_0x2c + 8) == this_ptr->current_motion_index)) {
+      this_ptr->field11_0x2c = 0;
     }
     if (iVar3 != 0) {
       return iVar3;

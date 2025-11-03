@@ -12,7 +12,7 @@ typedef struct CDemonSet {
     CVector3f collision_result_vec2; // 0x14d11c
     CVector3f collision_normal; // 0x14d128
     int ground_type; // 0x14d134
-    CVector3f collision_result_vec3; // 0x14d138
+    CVector3f collision_impact_position; // 0x14d138
     CDemonActor* collision_actor; // 0x14d144
     int field_1364296; // 0x14d148
     int field_1364300; // 0x14d14c
@@ -25,23 +25,31 @@ typedef struct CDemonSet {
     char field_1372320[48088]; // 0x14f0a0
     int per_pixel_lighting_enabled; // 0x15ac78
     int default_master_reverb; // 0x15ac7c
-    char field_1420416[20]; // 0x15ac80
+    int lighting_quality_mode; // 0x15ac80
+    int unk_lighting_param1; // 0x15ac84
+    int unk_lighting_param2; // 0x15ac88
+    int unk_lighting_param3; // 0x15ac8c
+    int unk_lighting_param4; // 0x15ac90
     int use_enviro_model; // 0x15ac94
     char enviro_model_name[16]; // 0x15ac98
     int field_1420456; // 0x15aca8
     int set_file_version; // 0x15acac
     int actor_list_capacity; // 0x15acb0
-    int actor_list_count; // 0x15acb4
-    CDemonActor* actor_list_maybe[100]; // 0x15acb8
+    int mirror_glass_count; // 0x15acb4
+    CGlass* mirror_glass_actors[100]; // 0x15acb8
     int last_switch_area_invalid; // 0x15ae48
     int use_world_geometry_flag; // 0x15ae4c
     char world_geometry_name[32]; // 0x15ae50
     int rendering_mode; // 0x15ae70
-    char field_1420916[16]; // 0x15ae74
-    char field_1420932[16]; // 0x15ae84
+    CVector3i light_direction; // 0x15ae74
+    int ambient_base_quick; // 0x15ae80
+    int field_1420932; // 0x15ae84
+    int light_scale_factor; // 0x15ae88
+    int color_scale_factor; // 0x15ae8c
+    int fog_scale_factor; // 0x15ae90
     float set_scale_factor; // 0x15ae94
-    int camera_selection_field1; // 0x15ae98
-    int camera_selection_field2; // 0x15ae9c
+    int field_1420952; // 0x15ae98
+    int field_1420956; // 0x15ae9c
     int camera_enabled_flag; // 0x15aea0
     int selected_camera_index; // 0x15aea4
     int previous_best_camera_index; // 0x15aea8
@@ -67,12 +75,17 @@ typedef struct CDemonSet {
     CVector3f voxel_hit_point; // 0x15f6cc
     int voxel_surface_type; // 0x15f6d8
     int field_1439452; // 0x15f6dc
-    char field_1439456[8008]; // 0x15f6e0
+    int* rendering_flags_ptr; // 0x15f6e0
+    char field_1439460[8004]; // 0x15f6e4
     int has_sky; // 0x161628
     char sky_texture_name[32]; // 0x16162c
     int sky_type; // 0x16164c
-    SMirror* active_mirror; // 0x161650
-    char field_1447508[20]; // 0x161654
+    CMirror* active_mirror; // 0x161650
+    int mirror_render_flag; // 0x161654
+    int mirror_render_param1; // 0x161658
+    int mirror_render_param2; // 0x16165c
+    int mirror_render_param3; // 0x161660
+    int mirror_render_param4; // 0x161664
     int weather_type; // 0x161668
 } CDemonSet;
 

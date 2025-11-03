@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_setdir.cpp_CDemonSet_setPendingCamera_FUN_00575b00(CDemonSet * this_ptr, int camera_index, float hold_time)
 // Cross-references:
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ad715 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ad715 [UNCONDITIONAL_CALL]
 //   core_platfrm.cpp_FUN_0054cc30 (0054cc30) at 0054cd5b [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055f85c [UNCONDITIONAL_CALL]
 

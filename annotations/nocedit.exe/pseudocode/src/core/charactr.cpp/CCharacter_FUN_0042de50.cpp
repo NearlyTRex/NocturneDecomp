@@ -19,20 +19,20 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042de50(CCharacter *this_ptr)
 
 {
   int iVar1;
+  CMotionList *this_ptr_00;
   float fVar2;
-  CDeformableModelInstance *pCStack00000008;
   int iStack0000000c;
   SCollisionInfo *in_stack_fffffff4;
   
-  iVar1 = (*(this_ptr->base_actor).metadata.vtable[1].hasCollision)
-                    (&this_ptr->base_actor,in_stack_fffffff4);
+  iVar1 = (*(this_ptr->base_actor).vtable[1].hasCollision)(&this_ptr->base_actor,in_stack_fffffff4);
   if (iVar1 < 2) {
-    if ((this_ptr->model).padding_0x0[0x2260] != '\0') {
-      core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
-      iStack0000000c = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0();
+    if ((this_ptr->model).field11_0x2260[0] != '\0') {
+      this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                              (&(this_ptr->model).motion_controller);
+      iStack0000000c = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
       if (-1 < iStack0000000c) {
-        pCStack00000008 = &this_ptr->model;
-        fVar2 = (float)core_motion_cpp_CMotionController_FUN_0052dd20();
+        fVar2 = core_motion_cpp_CMotionController_FUN_0052dd20(&(this_ptr->model).motion_controller)
+        ;
         if ((float)_DAT_006174ca < fVar2) {
           return 0;
         }

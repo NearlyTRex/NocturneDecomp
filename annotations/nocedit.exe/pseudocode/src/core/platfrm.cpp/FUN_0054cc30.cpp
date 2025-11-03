@@ -13,7 +13,7 @@
 //   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CSound* g_CSoundPtr = 03f6af64
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CDemonSet g_CDemonSetInstance
 //   undefined4 g_CDemonSetInstance.actor_list_ptr
 //   undefined4 g_CDemonSetInstance.actor_list_data[0]
@@ -23,11 +23,11 @@
 //   undefined4 g_CDemonSetInstance.selected_camera_index
 //   CSound g_CSoundInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_CDemonActor_FUN_00408f10
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_box.cpp_CBoundingBox3D_clampPoint_FUN_00421550
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_platfrm.cpp_FUN_0054cab0
 //   core_platfrm.cpp_FUN_0054d690
 //   core_platfrm.cpp_FUN_0054df80
@@ -87,10 +87,8 @@ void core_platfrm_cpp_FUN_0054cc30(void)
   CBoundingBox3D CStack_9c;
   CMatrix3x3f CStack_84;
   CVector3f CStack_60;
-  undefined4 uStack_50;
-  float fStack_48;
-  float fStack_44;
-  float fStack_40;
+  CVector3f CStack_54;
+  CVector3f CStack_48;
   CVector3f CStack_3c;
   float local_30;
   float local_2c;
@@ -110,7 +108,7 @@ void core_platfrm_cpp_FUN_0054cc30(void)
   local_2c = 0.0;
   switch(in_stack_00000004[2].location.position.y) {
   case 0.0:
-    iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,(char *)&in_stack_00000004[2].scale);
     bVar14 = iVar2 != 0;
     if (bVar14) {
@@ -119,7 +117,7 @@ void core_platfrm_cpp_FUN_0054cc30(void)
     in_stack_00000004[2].location.area_id = 0;
     break;
   case 1.4013e-45:
-    iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,in_stack_00000004[2].create_event + 0x2c);
     bVar14 = iVar2 != 0;
     if (bVar14) {
@@ -128,10 +126,10 @@ void core_platfrm_cpp_FUN_0054cc30(void)
     in_stack_00000004[2].location.area_id = 0x3f800000;
     break;
   case 2.8026e-45:
-    iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,(char *)&in_stack_00000004[2].scale);
     if (iVar2 == 0) {
-      iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+      iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,in_stack_00000004[2].create_event + 0x2c);
       if (iVar2 != 0) {
         core_platfrm_cpp_FUN_0054d690();
@@ -142,13 +140,13 @@ void core_platfrm_cpp_FUN_0054cc30(void)
     }
     break;
   case 4.2039e-45:
-    iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,in_stack_00000004[3].actor_name + 0x14);
     if (iVar2 != 0) {
       cVar1 = in_stack_00000004[3].create_event[0x14];
       in_stack_00000004[2].location.position.y = 2.8026e-45;
       if (cVar1 != '\0') {
-        (*((in_stack_00000004->metadata).vtable)->playSound)
+        (*in_stack_00000004->vtable->playSound)
                   (in_stack_00000004,in_stack_00000004[3].create_event + 0x14);
       }
       break;
@@ -176,13 +174,13 @@ LAB_0054d0a2:
     }
     goto LAB_0054d090;
   case 5.60519e-45:
-    iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,in_stack_00000004[3].actor_name + 0x14);
     if (iVar2 != 0) {
       cVar1 = in_stack_00000004[3].create_event[0x14];
       in_stack_00000004[2].location.position.y = 2.8026e-45;
       if (cVar1 != '\0') {
-        (*((in_stack_00000004->metadata).vtable)->playSound)
+        (*in_stack_00000004->vtable->playSound)
                   (in_stack_00000004,in_stack_00000004[3].create_event + 0x14);
       }
       break;
@@ -257,7 +255,7 @@ LAB_0054cd70:
   else {
     iVar2 = core_sound_cpp_FUN_005b3b80();
     if (iVar2 == 0) {
-      uVar3 = (*((in_stack_00000004->metadata).vtable)->playAmbientSound)
+      uVar3 = (*in_stack_00000004->vtable->playAmbientSound)
                         (in_stack_00000004,in_stack_00000004[3].create_event + 0x28);
       *(undefined4 *)(in_stack_00000004[3].create_event + 0x3c) = uVar3;
     }
@@ -271,7 +269,7 @@ LAB_0054cd70:
             ((CMatrix3x4f *)auStack_fc,&(in_stack_00000004->location).position,
              (CVector3f *)&in_stack_00000004->orient);
   iVar2 = 0;
-  (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+  (*in_stack_00000004->vtable->getBoundingBox)
             (in_stack_00000004,(CBoundingBox3D *)(auStack_c4 + 0x20));
   iVar11 = 0;
   do {
@@ -315,7 +313,8 @@ LAB_0054cd70:
             }
             *(undefined4 *)(iVar11 + 0xec) = 0;
             *(undefined4 *)(iVar11 + 0xf4) = 0;
-            fVar5 = core_actor_cpp_FUN_0040cd70(CStack_84.m[0].y - *(float *)(iVar11 + 0x34));
+            fVar5 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                              (CStack_84.m[0].y - *(float *)(iVar11 + 0x34));
             *(float *)(iVar11 + 0xf0) = fVar5;
           }
           iStack_14 = iStack_14 + 4;
@@ -338,7 +337,8 @@ LAB_0054d4f3:
       }
       goto LAB_0054d4f3;
     }
-    core_actor_cpp_CDemonActor_FUN_00408f10(in_stack_00000004);
+    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+              (in_stack_00000004,&CStack_3c,(CVector3f *)(iVar6 + 0x20));
     if ((CStack_9c.max.y < CStack_3c.y) || (CStack_3c.y < CStack_9c.min.y + (float)DOUBLE_0063f786))
     goto LAB_0054d4f3;
     core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550(&CStack_9c,&CStack_60,&CStack_3c);
@@ -362,11 +362,12 @@ LAB_0054d4f3:
     local_30 = local_30 * fVar5;
     local_2c = local_2c * fVar5;
     local_28 = local_28 * fVar5;
-    fStack_48 = CStack_60.x + local_30;
-    fStack_44 = CStack_60.y + local_2c;
-    fStack_40 = CStack_60.z + local_28;
-    core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-    uStack_50 = *(undefined4 *)(iVar6 + 0x24);
+    CStack_48.x = CStack_60.x + local_30;
+    CStack_48.y = CStack_60.y + local_2c;
+    CStack_48.z = CStack_60.z + local_28;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (in_stack_00000004,&CStack_54,&CStack_48);
+    CStack_54.y = *(float *)(iVar6 + 0x24);
     (**(code **)(*(int *)(iVar6 + 0x154) + 0x60))();
     iVar11 = iVar11 + 1;
     iVar2 = iVar2 + 4;
@@ -420,7 +421,7 @@ LAB_0054d4f3:
 //   XREF to: 006793d0 (READ)
 // 0054cc8f: PUSH EAX
 //   XREF to: 02d05310 (DATA)
-// 0054cc90: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0054cc90: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0054cc95: ADD ESP,0x8
 // 0054cc98: TEST EAX,EAX
@@ -684,7 +685,7 @@ LAB_0054d4f3:
 //   XREF to: 006793d0 (READ)
 // 0054cf06: PUSH ESI
 //   XREF to: 02d05310 (DATA)
-// 0054cf07: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0054cf07: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0054cf0c: ADD ESP,0x8
 // 0054cf0f: TEST EAX,EAX
@@ -719,7 +720,7 @@ LAB_0054d4f3:
 //   XREF to: 006793d0 (READ)
 // 0054cf57: PUSH EDI
 //   XREF to: 02d05310 (DATA)
-// 0054cf58: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0054cf58: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0054cf5d: ADD ESP,0x8
 // 0054cf60: TEST EAX,EAX
@@ -750,7 +751,7 @@ LAB_0054d4f3:
 //   XREF to: 006793d0 (READ)
 // 0054cf98: PUSH EAX
 //   XREF to: 02d05310 (DATA)
-// 0054cf99: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0054cf99: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0054cf9e: ADD ESP,0x8
 // 0054cfa1: TEST EAX,EAX
@@ -780,7 +781,7 @@ LAB_0054d4f3:
 //   XREF to: 006793d0 (READ)
 // 0054cfdb: PUSH EDI
 //   XREF to: 02d05310 (DATA)
-// 0054cfdc: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0054cfdc: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0054cfe1: ADD ESP,0x8
 // 0054cfe4: TEST EAX,EAX
@@ -860,7 +861,7 @@ LAB_0054d4f3:
 //   XREF to: 006793d0 (READ)
 // 0054d0c1: PUSH EDI
 //   XREF to: 02d05310 (DATA)
-// 0054d0c2: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0054d0c2: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0054d0c7: ADD ESP,0x8
 // 0054d0ca: TEST EAX,EAX
@@ -996,7 +997,7 @@ LAB_0054d4f3:
 // 0054d22f: MOV EAX,dword ptr [EBP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 0054d232: PUSH EAX
-// 0054d233: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 0054d233: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 0054d238: ADD ESP,0xc
 // 0054d23b: FLD float ptr [ESP + 0x2e8]
@@ -1145,7 +1146,7 @@ LAB_0054d4f3:
 // 0054d476: FXCH
 // 0054d478: FSTP float ptr [ESP + 0x2e8]
 // 0054d47f: FSTP float ptr [ESP + 0x2ec]
-// 0054d486: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0054d486: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0054d48b: ADD ESP,0xc
 // 0054d48e: MOV EAX,dword ptr [EBX + 0x24]
@@ -1269,7 +1270,7 @@ LAB_0054d4f3:
 // 0054d64b: FSUB float ptr [EBX + 0x34]
 // 0054d64e: SUB ESP,0x4
 // 0054d651: FSTP float ptr [ESP]
-// 0054d654: CALL core_actor.cpp_FUN_0040cd70
+// 0054d654: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 0054d659: MOV dword ptr [ESP + 0x31c],EAX
 // 0054d660: MOV EAX,dword ptr [ESP + 0x31c]

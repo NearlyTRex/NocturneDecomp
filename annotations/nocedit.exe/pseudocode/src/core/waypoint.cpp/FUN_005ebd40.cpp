@@ -7,17 +7,16 @@
 //   core_waypoint.cpp_FUN_005ec320 (005ec320) at 005ec340 [UNCONDITIONAL_CALL]
 //   core_waypoint.cpp_FUN_005ec4f0 (005ec4f0) at 005ec5a4 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00657507
-//   undefined4 DAT_0065750f
-//   undefined4 DAT_00657517
-//   undefined4 DAT_0065751f
+//   double DOUBLE_00657507 = 10
+//   double DOUBLE_0065750f = 30
+//   double DOUBLE_00657517 = 8
+//   double DOUBLE_0065751f = 25
 // Function calls:
 //   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
 //   core_path.cpp_FUN_00548500
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_waypoint.cpp_FUN_005ebd40(undefined4 param_1, undefined4
    param_2, undefined4 param_3) */
 
@@ -40,15 +39,16 @@ bool core_waypoint_cpp_FUN_005ebd40(void)
   local_20 = in_stack_00000004[1] - in_stack_00000008[1];
   local_1c = in_stack_00000004[2] - in_stack_00000008[2];
   if (in_stack_0000000c == 0) {
-    if ((ABS(local_20) <= (float)_DAT_00657507) && (ABS(CStack_2c.z) <= (float)_DAT_0065750f)) {
-      if ((float)_DAT_0065750f < ABS(local_1c)) {
+    if ((ABS(local_20) <= (float)DOUBLE_00657507) && (ABS(CStack_2c.z) <= (float)DOUBLE_0065750f)) {
+      if ((float)DOUBLE_0065750f < ABS(local_1c)) {
         return false;
       }
       goto LAB_005ebde7;
     }
   }
-  else if (((ABS(local_20) <= (float)_DAT_00657517) && (ABS(CStack_2c.z) <= (float)_DAT_0065751f))
-          && (ABS(local_1c) <= (float)_DAT_0065751f)) {
+  else if (((ABS(local_20) <= (float)DOUBLE_00657517) &&
+           (ABS(CStack_2c.z) <= (float)DOUBLE_0065751f)) &&
+          (ABS(local_1c) <= (float)DOUBLE_0065751f)) {
 LAB_005ebde7:
     local_18 = *in_stack_00000004;
     local_14.x = in_stack_00000004[1];

@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
 // Cross-references:
-//   core_actor.cpp_CDemonActor_FUN_00408e80 (00408e80) at 00408e93 [UNCONDITIONAL_CALL]
-//   core_actor.cpp_CDemonActor_FUN_00408ec0 (00408ec0) at 00408eda [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 (00408ec0) at 00408eda [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 (00408e80) at 00408e93 [UNCONDITIONAL_CALL]
 //   core_box.cpp_CBox_loadFromFile_FUN_0041fe90 (0041fe90) at 0041ffe9 [UNCONDITIONAL_CALL]
 //   core_box.cpp_CBox_processPhysics_FUN_0041e350 (0041e350) at 0041e5a6 [UNCONDITIONAL_CALL]
 //   core_box.cpp_CBox_updateTransform_FUN_0041e0e0 (0041e0e0) at 0041e26c [UNCONDITIONAL_CALL]
@@ -24,11 +24,11 @@
 //   core_door.cpp_CDoor_reposition_FUN_0047fd20 (0047fd20) at 0047fedc [UNCONDITIONAL_CALL]
 //   core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest2_FUN_00499f10 (00499f10) at 0049a0c5 [UNCONDITIONAL_CALL]
 //   core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20 (00499c20) at 00499dd5 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CFireEffect_FUN_004c7bb0 (004c7bb0) at 004c7c06 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CStake_FUN_004bfe90 (004bfe90) at 004bfee0 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CFireEffect_createStake_FUN_004c7bb0 (004c7bb0) at 004c7c06 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CStake_spawn_FUN_004bfe90 (004bfe90) at 004bfee0 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CToss_process_FUN_004c4000 (004c4000) at 004c40cd [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d2ea0 (004d2ea0) at 004d4115 [UNCONDITIONAL_CALL]
-//   core_glass.cpp_FUN_004eaef0 (004eaef0) at 004eaf71 [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_shatter_FUN_004eaef0 (004eaef0) at 004eaf71 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_00509330 (00509330) at 00509602 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_00509b20 (00509b20) at 00509b96 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_0050a8d0 (0050a8d0) at 0050aa01 [UNCONDITIONAL_CALL]

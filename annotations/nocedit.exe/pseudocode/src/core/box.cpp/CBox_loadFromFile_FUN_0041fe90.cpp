@@ -44,7 +44,7 @@ void __cdecl core_box_cpp_CBox_loadFromFile_FUN_0041fe90(CBox *this_ptr,FILE *fi
   crt_stdio_c_fscanf_FUN_005fe7c0(file_handle," %d\n");
   pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                      (&this_ptr->rotation_matrix,(CVector3f *)&stack0xfffffff4,
-                      &this_ptr->external_force);
+                      &this_ptr->linear_velocity_local);
   if (&this_ptr->linear_velocity == pCVar1) {
     return;
   }

@@ -11,7 +11,7 @@
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
-//   core_actor.cpp_FUN_0040cc70
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
 
 #include "nocturne.h"
@@ -24,15 +24,15 @@ void core_gore_cpp_FUN_004ed0d0(void)
 
 {
   CDemonSet *this_ptr;
-  undefined4 uVar1;
+  int iVar1;
   float fVar2;
   int in_stack_00000004;
   CVector3f *in_stack_00000008;
   undefined4 in_stack_00000014;
   
-  uVar1 = core_actor_cpp_FUN_0040cc70();
+  iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,3);
   this_ptr = g_CDemonSetPtr;
-  *(undefined4 *)(in_stack_00000004 + 0x14) = uVar1;
+  *(int *)(in_stack_00000004 + 0x14) = iVar1;
   *(float *)(in_stack_00000004 + 4) = in_stack_00000008->x;
   fVar2 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                     (this_ptr,in_stack_00000008,0.0);
@@ -62,7 +62,7 @@ void core_gore_cpp_FUN_004ed0d0(void)
 //   XREF to: Stack[0x8] (READ)
 // 004ed0dd: PUSH 0x3
 // 004ed0df: PUSH 0x0
-// 004ed0e1: CALL core_actor.cpp_FUN_0040cc70
+// 004ed0e1: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 004ed0e6: ADD ESP,0x8
 // 004ed0e9: MOV EDX,dword ptr [0x006810c8]

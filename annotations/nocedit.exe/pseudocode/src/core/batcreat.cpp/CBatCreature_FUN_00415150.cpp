@@ -49,10 +49,10 @@
 //   undefined4 DAT_00822778
 // Function calls:
 //   core_enemy.cpp_CEnemy_FUN_004a9650
-//   core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -62,195 +62,95 @@
 void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
 
 {
-  undefined4 uVar1;
-  undefined4 uVar2;
-  char *pcStack00000008;
-  char *pcStack0000000c;
-  char *pcStack00000010;
-  char *pcStack00000014;
-  char *pcStack00000018;
-  char *pcStack0000001c;
-  char *pcStack00000020;
-  char *pcStack00000024;
-  char *pcStack00000028;
-  char *pcStack0000002c;
-  char *pcStack00000030;
-  char *pcStack00000034;
-  char *pcStack00000038;
+  CDeformableModelInstance *this_ptr_00;
+  CSkeleton *this_ptr_01;
+  CDeformableModel *this_ptr_02;
+  int iVar1;
   undefined4 uStack0000003c;
-  CDeformableModelInstance *pCStack00000040;
-  char *pcStack00000044;
-  char *pcStack00000048;
-  char *pcStack0000004c;
-  char *pcStack00000050;
-  char *pcStack00000054;
-  char *pcStack00000058;
-  char *pcStack0000005c;
-  char *pcStack00000060;
-  char *pcStack00000064;
-  char *pcStack00000068;
-  char *pcStack0000006c;
-  char *pcStack00000070;
-  char *pcStack00000074;
-  char *pcStack00000078;
-  undefined4 uStack0000007c;
   
   core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base_enemy);
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
-  uVar1 = core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-  DAT_0082274c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_00822758 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  _DAT_0082275c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000008 = (char *)0x1;
-  _DAT_00822760 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack0000000c = (char *)0x1;
-  pcStack00000008 = "Bip01 R UpperArm";
-  _DAT_00822764 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000010 = (char *)0x1;
-  pcStack0000000c = "Bip01 L Foot";
-  pcStack00000008 = (char *)uVar1;
-  _DAT_00822768 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000014 = (char *)0x1;
-  pcStack00000010 = "Bip01 R Foot";
-  pcStack00000008 = (char *)0x415205;
-  pcStack0000000c = (char *)uVar1;
-  _DAT_0082276c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000018 = (char *)0x1;
-  pcStack00000014 = "Bip01 L Hand";
-  pcStack0000000c = (char *)0x41521a;
-  pcStack00000010 = (char *)uVar1;
-  _DAT_00822750 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack0000001c = (char *)0x1;
-  pcStack00000018 = "Bip01 R Hand";
-  pcStack00000010 = (char *)0x41522f;
-  pcStack00000014 = (char *)uVar1;
-  DAT_00822754 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000020 = (char *)0x1;
-  pcStack0000001c = "Bip01 Spine";
-  pcStack00000014 = (char *)0x415244;
-  pcStack00000018 = (char *)uVar1;
-  _DAT_00822770 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000024 = (char *)0x1;
-  pcStack00000020 = "Bip01 Spine1";
-  pcStack00000018 = (char *)0x415259;
-  pcStack0000001c = (char *)uVar1;
-  _DAT_00822774 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000028 = (char *)0x1;
-  pcStack00000024 = "Bip01 Spine2";
-  pcStack0000001c = (char *)0x41526e;
-  pcStack00000020 = (char *)uVar1;
-  _DAT_00822778 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack0000002c = (char *)0x1;
-  pcStack00000028 = "Bip01 Head";
-  pcStack00000020 = (char *)0x415283;
-  pcStack00000024 = (char *)uVar1;
-  DAT_0082274c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000030 = (char *)0x1;
-  pcStack0000002c = "Bip01 L UpperArm";
-  pcStack00000024 = (char *)0x415298;
-  pcStack00000028 = (char *)uVar1;
-  _DAT_00822760 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000034 = (char *)0x1;
-  pcStack00000030 = "Bip01 R UpperArm";
-  pcStack00000028 = (char *)0x4152ad;
-  pcStack0000002c = (char *)uVar1;
-  _DAT_00822764 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  pcStack00000038 = (char *)0x1;
-  pcStack00000034 = "Bip01 Spine";
-  pcStack0000002c = (char *)0x4152c2;
-  pcStack00000030 = (char *)uVar1;
-  _DAT_00822770 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
+  this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr_00);
+  DAT_0082274c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_01,"Bip01 Head");
+  _DAT_00822758 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L ForeArm");
+  _DAT_0082275c =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R ForeArm");
+  _DAT_00822760 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L UpperArm");
+  _DAT_00822764 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R UpperArm");
+  _DAT_00822768 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L Foot");
+  _DAT_0082276c =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R Foot");
+  _DAT_00822750 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L Hand");
+  DAT_00822754 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_01,"Bip01 R Hand");
+  _DAT_00822770 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine");
+  _DAT_00822774 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine1");
+  _DAT_00822778 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine2");
+  DAT_0082274c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_01,"Bip01 Head");
+  _DAT_00822760 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L UpperArm");
+  _DAT_00822764 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R UpperArm");
+  _DAT_00822770 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine");
   uStack0000003c = 1;
-  pcStack00000038 = "Bip01 Spine2";
-  pcStack00000030 = (char *)0x4152d7;
-  pcStack00000034 = (char *)uVar1;
-  _DAT_00822778 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
+  _DAT_00822778 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine2");
   uStack0000003c = 0x4152e5;
-  pCStack00000040 = &(this_ptr->base_enemy).base_character.model;
-  uVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-  pcStack00000048 = (char *)0x1;
-  pcStack00000044 = "head01";
+  this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
   uStack0000003c = 0x4152f8;
-  pCStack00000040 = (CDeformableModelInstance *)uVar1;
-  uVar2 = core_skeleton_cpp_CDeformableModel_FindPartInModel_FUN_0059c240();
-  pcStack0000004c = (char *)0x1;
-  pcStack00000048 = "torso01";
-  *(undefined4 *)(this_ptr->field1_0xbeb4 + 8) = uVar2;
-  pCStack00000040 = (CDeformableModelInstance *)0x41530e;
-  pcStack00000044 = (char *)uVar1;
-  uVar2 = core_skeleton_cpp_CDeformableModel_FindPartInModel_FUN_0059c240();
-  pcStack00000050 = (char *)0x1;
-  pcStack0000004c = "ass01";
-  *(undefined4 *)(this_ptr->field1_0xbeb4 + 0xc) = uVar2;
-  pcStack00000044 = (char *)0x415324;
-  pcStack00000048 = (char *)uVar1;
-  uVar2 = core_skeleton_cpp_CDeformableModel_FindPartInModel_FUN_0059c240();
-  pcStack00000054 = (char *)0x1;
-  pcStack00000050 = "tail01";
-  *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x10) = uVar2;
-  pcStack00000048 = (char *)0x41533a;
-  pcStack0000004c = (char *)uVar1;
-  uVar2 = core_skeleton_cpp_CDeformableModel_FindPartInModel_FUN_0059c240();
-  pcStack00000058 = (char *)0x1;
-  pcStack00000054 = "lthigh01";
-  *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x14) = uVar2;
-  pcStack0000004c = (char *)0x415350;
-  pcStack00000050 = (char *)uVar1;
-  uVar2 = core_skeleton_cpp_CDeformableModel_FindPartInModel_FUN_0059c240();
-  pcStack0000005c = (char *)0x1;
-  pcStack00000058 = "lshin01";
-  *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x18) = uVar2;
-  pcStack00000050 = (char *)0x415366;
-  pcStack00000054 = (char *)uVar1;
-  uVar2 = core_skeleton_cpp_CDeformableModel_FindPartInModel_FUN_0059c240();
-  pcStack00000060 = (char *)0x1;
-  pcStack0000005c = "rthigh01";
-  *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x1c) = uVar2;
-  pcStack00000054 = (char *)0x41537c;
-  pcStack00000058 = (char *)uVar1;
-  uVar2 = core_skeleton_cpp_CDeformableModel_FindPartInModel_FUN_0059c240();
-  pcStack00000064 = (char *)0x1;
-  pcStack00000060 = "rshin01";
-  *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x20) = uVar2;
-  pcStack00000058 = (char *)0x415392;
-  pcStack0000005c = (char *)uVar1;
-  uVar2 = core_skeleton_cpp_CDeformableModel_FindPartInModel_FUN_0059c240();
-  pcStack00000068 = (char *)0x1;
-  pcStack00000064 = "larm01";
-  *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x24) = uVar2;
-  pcStack0000005c = (char *)0x4153a8;
-  pcStack00000060 = (char *)uVar1;
-  uVar2 = core_skeleton_cpp_CDeformableModel_FindPartInModel_FUN_0059c240();
-  *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x28) = uVar2;
-  pcStack0000006c = (char *)0x1;
-  pcStack00000068 = "l4arm01";
-  pcStack00000060 = (char *)0x4153be;
-  pcStack00000064 = (char *)uVar1;
-  uVar2 = core_skeleton_cpp_CDeformableModel_FindPartInModel_FUN_0059c240();
-  pcStack00000070 = (char *)0x1;
-  pcStack0000006c = "rarm01";
-  *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x2c) = uVar2;
-  pcStack00000064 = (char *)0x4153d4;
-  pcStack00000068 = (char *)uVar1;
-  uVar2 = core_skeleton_cpp_CDeformableModel_FindPartInModel_FUN_0059c240();
-  pcStack00000074 = (char *)0x1;
-  pcStack00000070 = "r4arm01";
-  *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x30) = uVar2;
-  pcStack00000068 = (char *)0x4153ea;
-  pcStack0000006c = (char *)uVar1;
-  uVar2 = core_skeleton_cpp_CDeformableModel_FindPartInModel_FUN_0059c240();
-  pcStack00000078 = (char *)0x1;
-  pcStack00000074 = "lwing";
-  *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x34) = uVar2;
-  pcStack0000006c = (char *)0x415400;
-  pcStack00000070 = (char *)uVar1;
-  uVar2 = core_skeleton_cpp_CDeformableModel_FindPartInModel_FUN_0059c240();
-  uStack0000007c = 1;
-  pcStack00000078 = "rwing";
-  *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x38) = uVar2;
-  pcStack00000070 = (char *)0x415416;
-  pcStack00000074 = (char *)uVar1;
-  uVar1 = core_skeleton_cpp_CDeformableModel_FindPartInModel_FUN_0059c240();
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+                    (this_ptr_02,"head01",1);
+  *(int *)(this_ptr->field1_0xbeb4 + 8) = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+                    (this_ptr_02,"torso01",1);
+  *(int *)(this_ptr->field1_0xbeb4 + 0xc) = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+                    (this_ptr_02,"ass01",1);
+  *(int *)(this_ptr->field1_0xbeb4 + 0x10) = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+                    (this_ptr_02,"tail01",1);
+  *(int *)(this_ptr->field1_0xbeb4 + 0x14) = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+                    (this_ptr_02,"lthigh01",1);
+  *(int *)(this_ptr->field1_0xbeb4 + 0x18) = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+                    (this_ptr_02,"lshin01",1);
+  *(int *)(this_ptr->field1_0xbeb4 + 0x1c) = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+                    (this_ptr_02,"rthigh01",1);
+  *(int *)(this_ptr->field1_0xbeb4 + 0x20) = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+                    (this_ptr_02,"rshin01",1);
+  *(int *)(this_ptr->field1_0xbeb4 + 0x24) = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+                    (this_ptr_02,"larm01",1);
+  *(int *)(this_ptr->field1_0xbeb4 + 0x28) = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+                    (this_ptr_02,"l4arm01",1);
+  *(int *)(this_ptr->field1_0xbeb4 + 0x2c) = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+                    (this_ptr_02,"rarm01",1);
+  *(int *)(this_ptr->field1_0xbeb4 + 0x30) = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+                    (this_ptr_02,"r4arm01",1);
+  *(int *)(this_ptr->field1_0xbeb4 + 0x34) = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+                    (this_ptr_02,"lwing",1);
+  *(int *)(this_ptr->field1_0xbeb4 + 0x38) = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+                    (this_ptr_02,"rwing",1);
   this_ptr->field1_0xbeb4[0x40] = '\0';
   this_ptr->field1_0xbeb4[0x41] = '\0';
   this_ptr->field1_0xbeb4[0x42] = '\0';
@@ -267,7 +167,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
   this_ptr->field1_0xbeb4[0x4d] = '\0';
   this_ptr->field1_0xbeb4[0x4e] = '\0';
   this_ptr->field1_0xbeb4[0x4f] = '\0';
-  *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x3c) = uVar1;
+  *(int *)(this_ptr->field1_0xbeb4 + 0x3c) = iVar1;
   return;
 }
 
@@ -285,11 +185,11 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
 // 0041515d: ADD ESP,0x4
 // 00415160: LEA EDI,[EBX + 0x158]
 // 00415166: PUSH EDI
-// 00415167: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 00415167: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0041516c: ADD ESP,0x4
 // 0041516f: PUSH EDI
-// 00415170: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 00415170: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 00415175: ADD ESP,0x4
 // 00415178: PUSH 0x1
@@ -456,7 +356,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
 // 004152ed: PUSH 0x615565
 //   XREF to: 00615565 (DATA)
 // 004152f2: PUSH EAX
-// 004152f3: CALL core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
+// 004152f3: CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   XREF to: 0059c240 (UNCONDITIONAL_CALL)
 // 004152f8: ADD ESP,0xc
 // 004152fb: PUSH 0x1
@@ -464,7 +364,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
 //   XREF to: 0061556c (DATA)
 // 00415302: PUSH ESI
 // 00415303: MOV dword ptr [EBX + 0xbebc],EAX
-// 00415309: CALL core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
+// 00415309: CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   XREF to: 0059c240 (UNCONDITIONAL_CALL)
 // 0041530e: ADD ESP,0xc
 // 00415311: PUSH 0x1
@@ -472,7 +372,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
 //   XREF to: 00615574 (DATA)
 // 00415318: PUSH ESI
 // 00415319: MOV dword ptr [EBX + 0xbec0],EAX
-// 0041531f: CALL core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
+// 0041531f: CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   XREF to: 0059c240 (UNCONDITIONAL_CALL)
 // 00415324: ADD ESP,0xc
 // 00415327: PUSH 0x1
@@ -480,7 +380,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
 //   XREF to: 0061557a (DATA)
 // 0041532e: PUSH ESI
 // 0041532f: MOV dword ptr [EBX + 0xbec4],EAX
-// 00415335: CALL core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
+// 00415335: CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   XREF to: 0059c240 (UNCONDITIONAL_CALL)
 // 0041533a: ADD ESP,0xc
 // 0041533d: PUSH 0x1
@@ -488,7 +388,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
 //   XREF to: 00615581 (DATA)
 // 00415344: PUSH ESI
 // 00415345: MOV dword ptr [EBX + 0xbec8],EAX
-// 0041534b: CALL core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
+// 0041534b: CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   XREF to: 0059c240 (UNCONDITIONAL_CALL)
 // 00415350: ADD ESP,0xc
 // 00415353: PUSH 0x1
@@ -496,7 +396,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
 //   XREF to: 0061558a (DATA)
 // 0041535a: PUSH ESI
 // 0041535b: MOV dword ptr [EBX + 0xbecc],EAX
-// 00415361: CALL core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
+// 00415361: CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   XREF to: 0059c240 (UNCONDITIONAL_CALL)
 // 00415366: ADD ESP,0xc
 // 00415369: PUSH 0x1
@@ -504,7 +404,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
 //   XREF to: 00615592 (DATA)
 // 00415370: PUSH ESI
 // 00415371: MOV dword ptr [EBX + 0xbed0],EAX
-// 00415377: CALL core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
+// 00415377: CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   XREF to: 0059c240 (UNCONDITIONAL_CALL)
 // 0041537c: ADD ESP,0xc
 // 0041537f: PUSH 0x1
@@ -512,7 +412,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
 //   XREF to: 0061559b (DATA)
 // 00415386: PUSH ESI
 // 00415387: MOV dword ptr [EBX + 0xbed4],EAX
-// 0041538d: CALL core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
+// 0041538d: CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   XREF to: 0059c240 (UNCONDITIONAL_CALL)
 // 00415392: ADD ESP,0xc
 // 00415395: PUSH 0x1
@@ -520,7 +420,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
 //   XREF to: 006155a3 (DATA)
 // 0041539c: PUSH ESI
 // 0041539d: MOV dword ptr [EBX + 0xbed8],EAX
-// 004153a3: CALL core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
+// 004153a3: CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   XREF to: 0059c240 (UNCONDITIONAL_CALL)
 // 004153a8: ADD ESP,0xc
 // 004153ab: MOV dword ptr [EBX + 0xbedc],EAX
@@ -528,7 +428,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
 // 004153b3: PUSH 0x6155aa
 //   XREF to: 006155aa (DATA)
 // 004153b8: PUSH ESI
-// 004153b9: CALL core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
+// 004153b9: CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   XREF to: 0059c240 (UNCONDITIONAL_CALL)
 // 004153be: ADD ESP,0xc
 // 004153c1: PUSH 0x1
@@ -536,7 +436,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
 //   XREF to: 006155b2 (DATA)
 // 004153c8: PUSH ESI
 // 004153c9: MOV dword ptr [EBX + 0xbee0],EAX
-// 004153cf: CALL core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
+// 004153cf: CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   XREF to: 0059c240 (UNCONDITIONAL_CALL)
 // 004153d4: ADD ESP,0xc
 // 004153d7: PUSH 0x1
@@ -544,7 +444,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
 //   XREF to: 006155b9 (DATA)
 // 004153de: PUSH ESI
 // 004153df: MOV dword ptr [EBX + 0xbee4],EAX
-// 004153e5: CALL core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
+// 004153e5: CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   XREF to: 0059c240 (UNCONDITIONAL_CALL)
 // 004153ea: ADD ESP,0xc
 // 004153ed: PUSH 0x1
@@ -552,7 +452,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
 //   XREF to: 006155c1 (DATA)
 // 004153f4: PUSH ESI
 // 004153f5: MOV dword ptr [EBX + 0xbee8],EAX
-// 004153fb: CALL core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
+// 004153fb: CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   XREF to: 0059c240 (UNCONDITIONAL_CALL)
 // 00415400: ADD ESP,0xc
 // 00415403: PUSH 0x1
@@ -560,7 +460,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
 //   XREF to: 006155c7 (DATA)
 // 0041540a: PUSH ESI
 // 0041540b: MOV dword ptr [EBX + 0xbeec],EAX
-// 00415411: CALL core_skeleton.cpp_CDeformableModel_FindPartInModel_FUN_0059c240
+// 00415411: CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   XREF to: 0059c240 (UNCONDITIONAL_CALL)
 // 00415416: MOV dword ptr [EBX + 0xbef4],0x0
 // 00415420: MOV dword ptr [EBX + 0xbef8],0x0

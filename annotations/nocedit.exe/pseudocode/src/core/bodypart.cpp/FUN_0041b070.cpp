@@ -13,7 +13,7 @@
 //   undefined4 g_ZeroVector.y
 //   undefined4 g_ZeroVector.z
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
 //   core_box.cpp_CBox_setupCorners_FUN_0041dd20
 
@@ -26,9 +26,8 @@ void core_bodypart_cpp_FUN_0041b070(void)
 
 {
   CVector3f *pCVar1;
-  float fVar2;
   BADSPACEBASE *in_ESP;
-  CDemonActor *in_stack_00000004;
+  CBodyPart *in_stack_00000004;
   float in_stack_00000008;
   float in_stack_0000000c;
   float in_stack_00000010;
@@ -39,38 +38,49 @@ void core_bodypart_cpp_FUN_0041b070(void)
   float fStack_2c;
   float fStack_28;
   float fStack_24;
+  CVector3f CStack_20;
+  float fStack_14;
+  float fStack_10;
+  float fStack_c;
   
-  if ((2 < *(int *)(in_stack_00000004[1].actor_name + 0x1c)) &&
-     (0 < (int)in_stack_00000004[1].location.position.z)) {
-    (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
-              (in_stack_00000004,(CBoundingBox3D *)&fStack_4c);
-    fVar2 = (in_stack_ffffffc8 + fStack_2c) * _DAT_00615e9c;
-    core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
+  if ((2 < *(int *)(in_stack_00000004->field1_0x158 + 0x1c)) &&
+     (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x28))) {
+    (*((in_stack_00000004->base_actor).vtable)->getBoundingBox)
+              (&in_stack_00000004->base_actor,(CBoundingBox3D *)&fStack_4c);
+    fStack_14 = in_stack_ffffffc8 + fStack_2c;
+    fStack_10 = fStack_34 + fStack_28;
+    CStack_20.x = fStack_14 * _DAT_00615e9c;
+    CStack_20.y = fStack_10 * _DAT_00615e9c;
+    fStack_c = fStack_30 + fStack_24;
+    CStack_20.z = fStack_c * _DAT_00615e9c;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (&in_stack_00000004->base_actor,(CVector3f *)&stack0xfffffff8,&CStack_20);
     in_stack_00000008 = fStack_28 - fStack_34;
     in_stack_0000000c = fStack_24 - fStack_30;
-    in_stack_00000010 = fVar2 - fStack_2c;
+    in_stack_00000010 = CStack_20.x - fStack_2c;
     fStack_4c = 6.03303e-39;
     core_box_cpp_CBox_setupCorners_FUN_0041dd20
-              ((CBox *)(in_stack_00000004[9].create_event + 0x3c),(CVector3f *)&stack0xfffffffc,
-               (CVector3f *)&in_stack_00000004->orient,(CVector3f *)&stack0x00000008,5.0);
+              ((CBox *)(in_stack_00000004->field1_0x158 + 0xb74),(CVector3f *)&stack0xfffffffc,
+               (CVector3f *)&(in_stack_00000004->base_actor).orient,(CVector3f *)&stack0x00000008,
+               5.0);
     return;
   }
-  in_stack_00000004->was_created = 2;
-  core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0();
-  pCVar1 = (CVector3f *)(in_stack_00000004[1].actor_name + 0x10);
+  (in_stack_00000004->base_actor).was_created = 2;
+  core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(in_stack_00000004);
+  pCVar1 = (CVector3f *)(in_stack_00000004->field1_0x158 + 0x10);
   if (pCVar1 != &g_ZeroVector) {
     pCVar1->x = g_ZeroVector.x;
-    *(float *)(in_stack_00000004[1].actor_name + 0x14) = g_ZeroVector.y;
-    *(float *)(in_stack_00000004[1].actor_name + 0x18) = g_ZeroVector.z;
+    *(float *)(in_stack_00000004->field1_0x158 + 0x14) = g_ZeroVector.y;
+    *(float *)(in_stack_00000004->field1_0x158 + 0x18) = g_ZeroVector.z;
   }
-  if ((CVector3f *)(in_stack_00000004[1].actor_name + 4) == pCVar1) {
+  if ((CVector3f *)(in_stack_00000004->field1_0x158 + 4) == pCVar1) {
     return;
   }
-  ((CVector3f *)(in_stack_00000004[1].actor_name + 4))->x = pCVar1->x;
-  *(undefined4 *)(in_stack_00000004[1].actor_name + 8) =
-       *(undefined4 *)(in_stack_00000004[1].actor_name + 0x14);
-  *(undefined4 *)(in_stack_00000004[1].actor_name + 0xc) =
-       *(undefined4 *)(in_stack_00000004[1].actor_name + 0x18);
+  ((CVector3f *)(in_stack_00000004->field1_0x158 + 4))->x = pCVar1->x;
+  *(undefined4 *)(in_stack_00000004->field1_0x158 + 8) =
+       *(undefined4 *)(in_stack_00000004->field1_0x158 + 0x14);
+  *(undefined4 *)(in_stack_00000004->field1_0x158 + 0xc) =
+       *(undefined4 *)(in_stack_00000004->field1_0x158 + 0x18);
   return;
 }
 
@@ -163,7 +173,7 @@ void core_bodypart_cpp_FUN_0041b070(void)
 // 0041b143: FXCH
 // 0041b145: FSTP float ptr [ESP + 0x28]
 // 0041b149: FSTP float ptr [ESP + 0x2c]
-// 0041b14d: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0041b14d: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0041b152: ADD ESP,0xc
 // 0041b155: LEA EAX,[ESP + 0x3c]

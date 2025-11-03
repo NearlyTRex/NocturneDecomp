@@ -58,7 +58,7 @@ core_box_cpp_CBoundingBox3D_render_FUN_004210b0
     piVar5[2] = (int)ROUND(local_10 * g_BoundingBoxWorldToIntegerScale);
     piVar5 = piVar5 + 3;
   } while ((int)corner_index < 8);
-  core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0(g_CDemonSetPtr,8);
+  core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0(g_CDemonSetPtr,8,(int *)&stack0xffffff54);
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr,1);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
   local_1c.y = (float)(int)ROUND((this_ptr->min).x * g_BoundingBoxWorldToIntegerScale);

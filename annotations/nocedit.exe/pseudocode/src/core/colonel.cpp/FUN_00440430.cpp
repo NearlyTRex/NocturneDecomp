@@ -22,7 +22,8 @@ ushort core_colonel_cpp_FUN_00440430(void)
   float in_stack_00000008;
   
   do {
-    uVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610();
+    uVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&(in_stack_00000004->model).motion_controller);
     if (uVar1 < 100) {
       core_charactr_cpp_CCharacter_FUN_0042ec40(in_stack_00000004);
     }

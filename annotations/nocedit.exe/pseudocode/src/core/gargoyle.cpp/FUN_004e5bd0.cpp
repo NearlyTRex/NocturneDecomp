@@ -43,7 +43,7 @@ core_gargoyle_cpp_FUN_004e5bd0
                      ((CDeformableModelInstance *)(iVar1 + -0x293c),0,d3,d4,d5);
   ptr = (CGargoyle *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar2[-1].padding_0x0 + 0x215c),1);
+                  ((CDemonActor *)(pCVar2[-1].part_visibility_flags + 7),1);
   if ((d8 & 2) == 0) {
     return ptr;
   }

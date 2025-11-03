@@ -26,12 +26,12 @@
 //   TerminatedCString s_Capture_006243da
 //   CEventList* g_CEventListPtr = 02d05310
 //   CGame* g_CGamePtr = 02d81a9c
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CGame g_CGameInstance
 //   undefined4 DAT_02d81c70
 // Function calls:
 //   core_charactr.cpp_CCharacter_FUN_0042e050
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 
 #include "nocturne.h"
 
@@ -41,7 +41,7 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9fd0(CEnemy *this_ptr)
   int iVar1;
   
   if (g_CGamePtr->field54_0x1d4 == 0) {
-    iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,"Capture");
     if (iVar1 == 0) {
       core_charactr_cpp_CCharacter_FUN_0042e050(&this_ptr->base_character);
@@ -72,7 +72,7 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9fd0(CEnemy *this_ptr)
 //   XREF to: 006793d0 (READ)
 // 004a9fee: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 004a9fef: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 004a9fef: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 004a9ff4: ADD ESP,0x8
 // 004a9ff7: TEST EAX,EAX

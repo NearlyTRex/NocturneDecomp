@@ -114,12 +114,12 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
         pCVar4 = (CCharacter *)&(pCVar4->base_actor).orient_matrix.m[0].z;
       } while (iVar3 < 2);
     }
-    fVar2 = (this_ptr->base_actor).field_224.y;
-    (this_ptr->base_actor).field_224.y = 0.0;
+    fVar2 = (this_ptr->base_actor).field12_0xe0.y;
+    (this_ptr->base_actor).field12_0xe0.y = 0.0;
     fVar1 = *(float *)(this_ptr->field2_0x240c + 8);
     (this_ptr->base_actor).location.position.y = fVar2 + (this_ptr->base_actor).location.position.y;
     if ((fVar1 == _DAT_0065b834) || ((this_ptr->base_actor).field11_0xdc != 0)) {
-      fVar2 = (*((this_ptr->base_actor).metadata.vtable)->cylinderGroundCheck)
+      fVar2 = (*((this_ptr->base_actor).vtable)->cylinderGroundCheck)
                         (&this_ptr->base_actor,*(float *)(this_ptr->cloth_data + 0x344),
                          (CVector3f *)0x0);
       *(float *)(this_ptr->field2_0x240c + 8) = fVar2;

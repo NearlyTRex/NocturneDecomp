@@ -15,7 +15,7 @@ CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_dtor_FUN_004c9660(CGlassPa
   int iVar1;
   CGlassParticle *pCVar2;
   
-  iVar1 = core_cloth_cpp_freeVectors_FUN_0043e460((CVector3f **)(this_ptr->field1_0x38 + 0x40));
+  iVar1 = core_cloth_cpp_freeVectors_FUN_0043e460((CVector3f **)&this_ptr->triangle_delta);
   pCVar2 = (CGlassParticle *)
            core_particle_cpp_CParticle_dtor_FUN_00545670((CParticle *)(iVar1 + -0x78));
   return pCVar2;

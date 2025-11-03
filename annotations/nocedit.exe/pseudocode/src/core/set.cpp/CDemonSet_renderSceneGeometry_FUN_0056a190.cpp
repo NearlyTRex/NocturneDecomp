@@ -38,8 +38,8 @@
 //   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
 //   core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0
 //   core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50
-//   core_glass.cpp_CGlass_FUN_004e9ca0
-//   core_mirror.cpp_renderMirrorQuadDepth_FUN_00522800
+//   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
+//   core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_00522800
 //   core_set.cpp_CDemonSet_buildMirrorList_FUN_00570b70
 //   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0
 //   core_set.cpp_FUN_00570af0
@@ -111,27 +111,27 @@ LAB_0056a1fb:
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                   (&g_CKeyFramedModelInstance,(CKeyFramedModelInstance *)0x0,0,-1);
       }
-      if ((*(int *)(this_ptr->field22_0x15ac80 + 0x10) == 0) && (this_ptr->has_sky != 0)) {
+      if ((this_ptr->unk_lighting_param4 == 0) && (this_ptr->has_sky != 0)) {
         core_dskybox_cpp_renderSkyDome_FUN_004901f0
                   (g_SkyDomeTexturePtr,this_ptr->sky_texture_name,(float)this_ptr->sky_type);
       }
-      if ((*(int *)(this_ptr->field22_0x15ac80 + 0xc) == 0) &&
+      if ((this_ptr->unk_lighting_param3 == 0) &&
          (core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(g_CWaterPtr),
          g_CWaterPtr->wave_animation_enabled == 0)) {
         core_water_cpp_CWater_render_FUN_005ea320(g_CWaterPtr,1);
       }
-      if (this_ptr->field25_0x15aca8 != 0) {
+      if (this_ptr->field29_0x15aca8 != 0) {
         core_terrain_cpp_CTerrain_render_FUN_005e1f50(g_CTerrainPtr);
       }
     }
     iVar1 = 0;
     pCVar2 = this_ptr;
-    if (0 < this_ptr->actor_list_count) {
+    if (0 < this_ptr->mirror_glass_count) {
       do {
-        core_mirror_cpp_renderMirrorQuadDepth_FUN_00522800
-                  ((CVector3f *)(pCVar2->actor_list_maybe[0][1].create_event + 0x1c));
-        if (((CGlass *)pCVar2->actor_list_maybe[0])->shattered != 0) {
-          core_glass_cpp_CGlass_FUN_004e9ca0((CGlass *)pCVar2->actor_list_maybe[0]);
+        core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800
+                  (&pCVar2->mirror_glass_actors[0]->mirror);
+        if (pCVar2->mirror_glass_actors[0]->shattered != 0) {
+          core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(pCVar2->mirror_glass_actors[0]);
         }
         core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(this_ptr,iVar1,1);
         core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
@@ -139,16 +139,16 @@ LAB_0056a1fb:
         iVar1 = iVar1 + 1;
         core_set_cpp_FUN_00570af0();
         pCVar2 = (CDemonSet *)pCVar2->cameras;
-      } while (iVar1 < this_ptr->actor_list_count);
+      } while (iVar1 < this_ptr->mirror_glass_count);
     }
   }
   else if ((g_RenderMirrorsFlag != 0) &&
-          (iVar1 = 0, pCVar2 = this_ptr, 0 < this_ptr->actor_list_count)) {
+          (iVar1 = 0, pCVar2 = this_ptr, 0 < this_ptr->mirror_glass_count)) {
     do {
-      core_mirror_cpp_renderMirrorQuadDepth_FUN_00522800
-                ((CVector3f *)(pCVar2->actor_list_maybe[0][1].create_event + 0x1c));
-      if (((CGlass *)pCVar2->actor_list_maybe[0])->shattered != 0) {
-        core_glass_cpp_CGlass_FUN_004e9ca0((CGlass *)pCVar2->actor_list_maybe[0]);
+      core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800
+                (&pCVar2->mirror_glass_actors[0]->mirror);
+      if (pCVar2->mirror_glass_actors[0]->shattered != 0) {
+        core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(pCVar2->mirror_glass_actors[0]);
       }
       core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(this_ptr,iVar1,0);
       core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
@@ -156,7 +156,7 @@ LAB_0056a1fb:
       pCVar2 = (CDemonSet *)pCVar2->cameras;
       iVar1 = iVar1 + 1;
       core_set_cpp_FUN_00570af0();
-    } while (iVar1 < this_ptr->actor_list_count);
+    } while (iVar1 < this_ptr->mirror_glass_count);
   }
   return;
 }
@@ -318,7 +318,7 @@ LAB_0056a1fb:
 //   Label: LAB_0056a2e9
 // 0056a2ef: ADD EAX,0x1ec
 // 0056a2f4: PUSH EAX
-// 0056a2f5: CALL core_mirror.cpp_renderMirrorQuadDepth_FUN_00522800
+// 0056a2f5: CALL core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_00522800
 //   XREF to: 00522800 (UNCONDITIONAL_CALL)
 // 0056a2fa: MOV EAX,dword ptr [ESI + 0x15acb8]
 // 0056a300: MOV EBP,dword ptr [EAX + 0x180]
@@ -327,7 +327,7 @@ LAB_0056a1fb:
 // 0056a30b: JZ 0x0056a316
 //   XREF to: 0056a316 (CONDITIONAL_JUMP)
 // 0056a30d: PUSH EAX
-// 0056a30e: CALL core_glass.cpp_CGlass_FUN_004e9ca0
+// 0056a30e: CALL core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
 //   XREF to: 004e9ca0 (UNCONDITIONAL_CALL)
 // 0056a313: ADD ESP,0x4
 // 0056a316: PUSH 0x1
@@ -438,7 +438,7 @@ LAB_0056a1fb:
 //   Label: LAB_0056a3fc
 // 0056a402: ADD EAX,0x1ec
 // 0056a407: PUSH EAX
-// 0056a408: CALL core_mirror.cpp_renderMirrorQuadDepth_FUN_00522800
+// 0056a408: CALL core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_00522800
 //   XREF to: 00522800 (UNCONDITIONAL_CALL)
 // 0056a40d: MOV EAX,dword ptr [ESI + 0x15acb8]
 // 0056a413: MOV EDX,dword ptr [EAX + 0x180]
@@ -447,7 +447,7 @@ LAB_0056a1fb:
 // 0056a41e: JZ 0x0056a429
 //   XREF to: 0056a429 (CONDITIONAL_JUMP)
 // 0056a420: PUSH EAX
-// 0056a421: CALL core_glass.cpp_CGlass_FUN_004e9ca0
+// 0056a421: CALL core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
 //   XREF to: 004e9ca0 (UNCONDITIONAL_CALL)
 // 0056a426: ADD ESP,0x4
 // 0056a429: PUSH 0x0

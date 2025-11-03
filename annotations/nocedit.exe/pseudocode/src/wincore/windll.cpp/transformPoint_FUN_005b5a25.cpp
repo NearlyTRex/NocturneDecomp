@@ -6,8 +6,8 @@
 // Cross-references:
 //   core_chain.cpp_FUN_004308f0 (004308f0) at 00430d60 [UNCONDITIONAL_CALL]
 //   core_dcamera.cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0 (004544f0) at 0045452f [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CCrater_FUN_004c4620 (004c4620) at 004c4706 [UNCONDITIONAL_CALL]
-//   core_fire.cpp_CLightningBolt_FUN_004c5720 (004c5720) at 004c5ae2 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CCrater_render_FUN_004c4620 (004c4620) at 004c4706 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CLightningBolt_render_FUN_004c5720 (004c5720) at 004c5ae2 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CPopcorn_render_FUN_004c64c0 (004c64c0) at 004c6506 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CRainDrop_render_FUN_004c6830 (004c6830) at 004c6876 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CShell_render_FUN_004c6200 (004c6200) at 004c6251 [UNCONDITIONAL_CALL]
@@ -18,8 +18,8 @@
 //   core_gore.cpp_FUN_004ed3c0 (004ed3c0) at 004ed4b4 [UNCONDITIONAL_CALL]
 //   core_ground.cpp_CGround_transformAndStoreVertex_FUN_004ef3a0 (004ef3a0) at 004ef426 [UNCONDITIONAL_CALL]
 //   core_marquee.cpp_FUN_0050bec0 (0050bec0) at 0050beff [UNCONDITIONAL_CALL]
-//   core_mirror.cpp_renderMirrorQuadDepth_FUN_00522800 (00522800) at 00522844 [UNCONDITIONAL_CALL]
-//   core_mirror.cpp_renderMirrorQuad_FUN_00522670 (00522670) at 005226b0 [UNCONDITIONAL_CALL]
+//   core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_00522800 (00522800) at 00522844 [UNCONDITIONAL_CALL]
+//   core_mirror.cpp_CMirror_renderMirrorQuad_FUN_00522670 (00522670) at 005226b0 [UNCONDITIONAL_CALL]
 //   core_weather.cpp_CWeather_FUN_005ef190 (005ef190) at 005ef32c [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_TempX = 0x0

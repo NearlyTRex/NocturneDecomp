@@ -9,7 +9,7 @@
 //   CFireEffect g_CFireEffectInstance
 //   CGore g_CGoreInstance
 // Function calls:
-//   core_fire.cpp_CFireEffect_FUN_004c74a0
+//   core_fire.cpp_CFireEffect_renderDecals_FUN_004c74a0
 //   core_gore.cpp_FUN_004ed830
 //   core_set.cpp_CDemonSet_FUN_0056aca0
 //   core_set.cpp_CDemonSet_FUN_0056fbd0
@@ -25,7 +25,7 @@ void core_set_cpp_FUN_005713c0(void)
   core_set_cpp_CDemonSet_FUN_0056fbd0(in_stack_00000004);
   core_set_cpp_CDemonSet_FUN_0056aca0(in_stack_00000008);
   core_gore_cpp_FUN_004ed830(g_CGorePtr);
-  core_fire_cpp_CFireEffect_FUN_004c74a0(g_CFireEffectPtr);
+  core_fire_cpp_CFireEffect_renderDecals_FUN_004c74a0(g_CFireEffectPtr,1,0);
   return;
 }
 
@@ -64,7 +64,7 @@ void core_set_cpp_FUN_005713c0(void)
 //   XREF to: 0067a3d0 (READ)
 // 005713fd: PUSH ESI
 //   XREF to: 02d12db0 (DATA)
-// 005713fe: CALL core_fire.cpp_CFireEffect_FUN_004c74a0
+// 005713fe: CALL core_fire.cpp_CFireEffect_renderDecals_FUN_004c74a0
 //   XREF to: 004c74a0 (UNCONDITIONAL_CALL)
 // 00571403: ADD ESP,0xc
 // 00571406: POP ESI

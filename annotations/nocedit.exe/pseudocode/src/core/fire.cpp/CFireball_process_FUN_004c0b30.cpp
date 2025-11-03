@@ -15,8 +15,8 @@
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 //   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
 //   core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310
+//   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
-//   core_fire.cpp_CFireEffect_FUN_004c7b20
 //   core_particle.cpp_CParticle_process_FUN_00545760
 //   core_set.cpp_CDemonSet_FUN_0056d110
 
@@ -73,7 +73,8 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_004c0b30(CFireball *this_ptr)
     this_ptr_00 = g_CFireEffectPtr;
     if (0x1000 < iVar3) {
       this_ptr->spawn_timer = iVar3 + -0x1000;
-      core_fire_cpp_CFireEffect_FUN_004c7b20(this_ptr_00);
+      core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
+                (this_ptr_00,(CVector3f *)this_ptr,2.0,(CVector3f *)0x0,0xffff);
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
@@ -202,7 +203,7 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_004c0b30(CFireball *this_ptr)
 // 004c0c1b: PUSH ESI
 //   XREF to: 02d12db0 (DATA)
 // 004c0c1c: MOV dword ptr [EBP + 0x48],EDI
-// 004c0c1f: CALL core_fire.cpp_CFireEffect_FUN_004c7b20
+// 004c0c1f: CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 //   XREF to: 004c7b20 (UNCONDITIONAL_CALL)
 // 004c0c24: ADD ESP,0x14
 // 004c0c27: PUSH 0xffff

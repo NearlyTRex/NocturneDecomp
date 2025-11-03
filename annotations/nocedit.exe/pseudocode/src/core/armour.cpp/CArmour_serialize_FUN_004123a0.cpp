@@ -26,7 +26,8 @@ void __cdecl core_armour_cpp_CArmour_serialize_FUN_004123a0(CArmour *this_ptr)
   core_actor_cpp_serializeFloat_FUN_0040b770(&(this_ptr->base_enemy).speed,"speed");
   model_ptr = &(this_ptr->base_enemy).base_character.model;
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
-  core_actor_cpp_serializeMotionState_FUN_0040b9f0(model_ptr,"motion state");
+  core_actor_cpp_serializeMotionState_FUN_0040b9f0
+            (&model_ptr->motion_controller,"motion state");
   core_actor_cpp_serializeString_FUN_0040b5c0
             ((char **)(this_ptr->field1_0xbeb4 + 8),"fallApartEvent");
   return;

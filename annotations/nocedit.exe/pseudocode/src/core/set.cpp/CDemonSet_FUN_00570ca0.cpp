@@ -16,13 +16,13 @@
 void __cdecl core_set_cpp_CDemonSet_FUN_00570ca0(CDemonSet *this_ptr)
 
 {
-  undefined4 in_stack_00000008;
-  undefined4 in_stack_0000000c;
-  undefined4 in_stack_00000010;
+  int in_stack_00000008;
+  int in_stack_0000000c;
+  int in_stack_00000010;
   
-  *(undefined4 *)(this_ptr->field35_0x15ae84 + 4) = in_stack_00000008;
-  *(undefined4 *)(this_ptr->field35_0x15ae84 + 8) = in_stack_0000000c;
-  *(undefined4 *)(this_ptr->field35_0x15ae84 + 0xc) = in_stack_00000010;
+  this_ptr->light_scale_factor = in_stack_00000008;
+  this_ptr->color_scale_factor = in_stack_0000000c;
+  this_ptr->fog_scale_factor = in_stack_00000010;
   return;
 }
 

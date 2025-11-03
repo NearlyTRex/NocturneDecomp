@@ -15,10 +15,9 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005edff0(CWeapon *this_ptr)
 
 {
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base_actor);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)&this_ptr->model_instance);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   core_weapon_cpp_FUN_005ee740();
-  this_ptr->field12_0x574 = 0;
+  this_ptr->field13_0x574 = 0;
   return;
 }
 

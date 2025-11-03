@@ -53,8 +53,8 @@ void __cdecl
 core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *text,int clear_screen)
 
 {
-  CDemonSet *pCVar1;
-  CDemonRenderer *pCVar2;
+  CDemonRenderer *pCVar1;
+  CDemonSet *pCVar2;
   int iVar3;
   float fVar4;
   int iVar5;
@@ -98,24 +98,18 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
     g_CDemonSetPtr->rendering_mode = 1;
     angle = 0x8000 - (short)((this_ptr->current_frame << 0xf) / this_ptr->total_frames);
     iVar3 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(angle);
-    pCVar1 = g_CDemonSetPtr;
-    pCVar1->field34_0x15ae74[4] = 'x';
-    pCVar1->field34_0x15ae74[5] = 'o';
-    pCVar1->field34_0x15ae74[6] = -1;
-    pCVar1->field34_0x15ae74[7] = -1;
-    *(uint *)pCVar1->field34_0x15ae74 =
+    pCVar2 = g_CDemonSetPtr;
+    (g_CDemonSetPtr->light_direction).y = -37000;
+    (pCVar2->light_direction).x =
          (uint)((longlong)iVar3 * 37000) >> 0x10 |
          (int)((ulonglong)((longlong)iVar3 * 37000) >> 0x20) << 0x10;
     iVar3 = engine_matrix_c_interpolatedCos_FUN_0050c600(angle);
-    pCVar1 = g_CDemonSetPtr;
-    pCVar1->field34_0x15ae74[0xc] = -0x80;
-    pCVar1->field34_0x15ae74[0xd] = '\x02';
-    pCVar1->field34_0x15ae74[0xe] = '\0';
-    pCVar1->field34_0x15ae74[0xf] = '\0';
-    *(uint *)(pCVar1->field34_0x15ae74 + 8) =
+    pCVar2 = g_CDemonSetPtr;
+    g_CDemonSetPtr->ambient_base_quick = 0x280;
+    (pCVar2->light_direction).z =
          (uint)((longlong)iVar3 * 37000) >> 0x10 |
          (int)((ulonglong)((longlong)iVar3 * 37000) >> 0x20) << 0x10;
-    core_set_cpp_CDemonSet_FUN_00570ca0(pCVar1);
+    core_set_cpp_CDemonSet_FUN_00570ca0(pCVar2);
     local_10 = 7.25;
     local_40.x = (int)ROUND(FLOAT_006608cc * 7.25);
     local_40.y = (int)ROUND(FLOAT_006608cc * 7.25);
@@ -137,39 +131,39 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
     local_1c.z = (int)ROUND((float)this_ptr * FLOAT_006608cc);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_1c);
-    pCVar2 = g_CDemonRendererPtr;
+    pCVar1 = g_CDemonRendererPtr;
     g_CDemonRendererPtr->vertex_buffer_ptr->u = 2.3509887e-38;
-    pCVar2->vertex_buffer_ptr->v = 0.0;
-    pCVar2->vertex_buffer_ptr[1].u = 0.0;
-    pCVar2->vertex_buffer_ptr[1].v = 0.0;
-    pCVar2->vertex_buffer_ptr[2].u = 0.0;
-    pCVar2->vertex_buffer_ptr[2].v = 2.3509887e-38;
-    pCVar2->vertex_buffer_ptr[3].u = 2.3509887e-38;
-    pCVar2->vertex_buffer_ptr[3].v = 2.3509887e-38;
-    pCVar2 = g_CDemonRendererPtr;
+    pCVar1->vertex_buffer_ptr->v = 0.0;
+    pCVar1->vertex_buffer_ptr[1].u = 0.0;
+    pCVar1->vertex_buffer_ptr[1].v = 0.0;
+    pCVar1->vertex_buffer_ptr[2].u = 0.0;
+    pCVar1->vertex_buffer_ptr[2].v = 2.3509887e-38;
+    pCVar1->vertex_buffer_ptr[3].u = 2.3509887e-38;
+    pCVar1->vertex_buffer_ptr[3].v = 2.3509887e-38;
+    pCVar1 = g_CDemonRendererPtr;
     fVar4 = (float)((this_ptr->current_frame * 0xffff) / this_ptr->total_frames);
     if (0xffff < (int)fVar4) {
       fVar4 = 9.18341e-41;
     }
     g_CDemonRendererPtr->vertex_buffer_ptr->w_recip = 0.0;
-    pCVar2->vertex_buffer_ptr[1].w_recip = fVar4;
-    pCVar2->vertex_buffer_ptr[2].w_recip = 0.0;
-    pCVar2->vertex_buffer_ptr[3].w_recip = 0.0;
+    pCVar1->vertex_buffer_ptr[1].w_recip = fVar4;
+    pCVar1->vertex_buffer_ptr[2].w_recip = 0.0;
+    pCVar1->vertex_buffer_ptr[3].w_recip = 0.0;
     iVar3 = 0;
     do {
-      pCVar2 = g_CDemonRendererPtr;
+      pCVar1 = g_CDemonRendererPtr;
       *(int *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar3) =
            (this_ptr->color).r << 8;
-      *(int *)((int)&pCVar2->vertex_buffer_ptr->color + iVar3) = (this_ptr->color).g << 8;
+      *(int *)((int)&pCVar1->vertex_buffer_ptr->color + iVar3) = (this_ptr->color).g << 8;
       iVar5 = iVar3 + 0x30;
-      *(int *)((int)&pCVar2->vertex_buffer_ptr->fog + iVar3) = (this_ptr->color).b << 8;
+      *(int *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = (this_ptr->color).b << 8;
       iVar3 = iVar5;
     } while (iVar5 != 0xc0);
     local_40.x = 0;
     local_40.z = 2;
     local_34 = 3;
     local_40.y = 1;
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(pCVar2,1);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(pCVar1,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr,&g_LoadingMoonGlowTexture);
     engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10

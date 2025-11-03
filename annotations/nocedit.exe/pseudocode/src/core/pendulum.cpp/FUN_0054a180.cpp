@@ -9,7 +9,7 @@
 //   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 g_CEnemyClassInfo.name_hash
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   undefined4 g_CHeroClassInfo.name_hash
 //   CDemonSet g_CDemonSetInstance
 //   undefined4 g_CDemonSetInstance.damage_listener_count
@@ -18,7 +18,7 @@
 //   undefined4 DAT_0326331c
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_pendulum.cpp_FUN_005495c0
 //   core_pendulum.cpp_FUN_00549b90
 
@@ -40,14 +40,14 @@ void core_pendulum_cpp_FUN_0054a180(void)
   int in_stack_00000004;
   
   if (*(int *)(in_stack_00000004 + 0x39c) == 0) {
-    iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,(char *)(in_stack_00000004 + 0x2d4));
     if (iVar1 == 0) {
       return;
     }
     *(undefined4 *)(in_stack_00000004 + 0x39c) = 1;
   }
-  iVar1 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+  iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,(char *)(in_stack_00000004 + 0x338));
   if ((iVar1 != 0) && (*(int *)(in_stack_00000004 + 0x430) != 0x3f800000)) {
     *(undefined4 *)(in_stack_00000004 + 0x434) = 0;
@@ -113,7 +113,7 @@ LAB_0054a24e:
 //   XREF to: 006793d0 (READ)
 // 0054a1a2: PUSH EBX
 //   XREF to: 02d05310 (DATA)
-// 0054a1a3: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0054a1a3: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0054a1a8: ADD ESP,0x8
 // 0054a1ab: TEST EAX,EAX
@@ -191,7 +191,7 @@ LAB_0054a24e:
 //   XREF to: 006793d0 (READ)
 // 0054a261: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 0054a262: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0054a262: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0054a267: ADD ESP,0x8
 // 0054a26a: TEST EAX,EAX

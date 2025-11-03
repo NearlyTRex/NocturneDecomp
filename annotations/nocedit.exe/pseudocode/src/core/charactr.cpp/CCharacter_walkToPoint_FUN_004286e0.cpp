@@ -43,10 +43,10 @@
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   CConsole g_ConsolePtr
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408e80
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_CDemonActor_FUN_00408f10
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
 //   core_path.cpp_FUN_00548500
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
@@ -65,7 +65,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
   float fVar6;
   float fVar7;
   BADSPACEBASE *in_ESP;
-  float *in_stack_00000008;
+  CVector3f *in_stack_00000008;
   CPathMap *in_stack_0000000c;
   CVector3f *in_stack_00000010;
   float in_stack_00000014;
@@ -74,7 +74,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
   float local_fc;
   float fStack_f4;
   float local_ec;
-  float fStack_e4;
+  CVector3f CStack_e4;
   undefined1 local_d4 [12];
   float local_c8;
   undefined1 local_b8 [8];
@@ -83,7 +83,8 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
   float local_8c;
   float local_88;
   float local_84;
-  CVector3f local_80;
+  undefined1 local_80 [8];
+  float local_78;
   float local_74;
   CVector3f local_70;
   CVector3f local_64;
@@ -104,7 +105,8 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
   fVar8 = SQRT(in_stack_00000010->x * in_stack_00000010->x +
                in_stack_00000010->z * in_stack_00000010->z);
   core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_b0,in_stack_00000010);
-  core_actor_cpp_CDemonActor_FUN_00408f10(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+            (&this_ptr->base_actor,(CVector3f *)local_b8,in_stack_00000008);
   pCVar2 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                      ((CVector3f *)(local_d4 + 8),(CVector3f *)(local_b8 + 4));
   fStack_14 = pCVar2->y;
@@ -113,7 +115,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
   if (0.0 < SQRT(in_stack_00000010->z * in_stack_00000010->z +
                  in_stack_00000010->x * in_stack_00000010->x +
                  in_stack_00000010->y * in_stack_00000010->y)) {
-    fVar6 = core_actor_cpp_FUN_0040cd70(fStack_14 - local_fc);
+    fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(fStack_14 - local_fc);
     local_ec = ABS(fVar6);
   }
   if (((fStack_f4 < in_stack_00000014 + (float)DOUBLE_0061703a) &&
@@ -121,14 +123,14 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
      (ABS(local_b0.z) < (float)DOUBLE_00617042)) {
     local_3c = 1;
   }
-  (this_ptr->model).padding_0x0[0x225c] = '\0';
-  (this_ptr->model).padding_0x0[0x225d] = '\0';
-  (this_ptr->model).padding_0x0[0x225e] = '\0';
-  (this_ptr->model).padding_0x0[0x225f] = '\0';
-  *(undefined4 *)((this_ptr->model).padding_0x0 + 0x2258) =
-       *(undefined4 *)((this_ptr->model).padding_0x0 + 0x225c);
-  *(undefined4 *)((this_ptr->model).padding_0x0 + 0x2254) =
-       *(undefined4 *)((this_ptr->model).padding_0x0 + 0x2258);
+  (this_ptr->model).field10_0x2254[8] = '\0';
+  (this_ptr->model).field10_0x2254[9] = '\0';
+  (this_ptr->model).field10_0x2254[10] = '\0';
+  (this_ptr->model).field10_0x2254[0xb] = '\0';
+  *(undefined4 *)((this_ptr->model).field10_0x2254 + 4) =
+       *(undefined4 *)((this_ptr->model).field10_0x2254 + 8);
+  *(undefined4 *)(this_ptr->model).field10_0x2254 =
+       *(undefined4 *)((this_ptr->model).field10_0x2254 + 4);
   if (((float)DOUBLE_0061705a * 0.0 + (float)DOUBLE_00617062 +
        ABS(ABS(fVar7)) * (float)DOUBLE_0061704a * (float)DOUBLE_00617052 <= local_fc) ||
      (1.0 < ABS(local_b0.z))) {
@@ -147,7 +149,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
       return -1;
     }
     local_38 = -fStack_f4;
-    local_34 = 0.0 - fStack_e4;
+    local_34 = 0.0 - CStack_e4.x;
     local_28 = local_38;
     if ((local_38 <= local_34) && (local_28 = local_34, fStack_f4 < local_34)) {
       local_28 = fStack_f4;
@@ -155,7 +157,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
     *(float *)(this_ptr->field2_0x240c + 0x18) =
          *(float *)(this_ptr->field2_0x240c + 0x18) + local_28;
     fVar8 = local_54 - (this_ptr->base_actor).orient.bank;
-    fVar6 = core_actor_cpp_FUN_0040cd70(fVar8);
+    fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(fVar8);
     fVar7 = -fVar8;
     if ((fVar7 <= fVar6) && (fVar7 = fVar6, fVar8 < fVar6)) {
       fVar7 = fVar8;
@@ -172,18 +174,22 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
       }
       *(float *)(this_ptr->field2_0x240c + 0x18) =
            *(float *)(this_ptr->field2_0x240c + 0x18) + local_20;
-      core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr->base_actor);
-      pCVar2 = core_actor_cpp_CDemonActor_FUN_00408e80(&this_ptr->base_actor);
-      local_8c = *in_stack_00000008 - pCVar2->x;
-      local_88 = in_stack_00000008[1] - pCVar2->y;
-      local_80.x = local_8c - local_74;
-      local_84 = in_stack_00000008[2] - pCVar2->z;
-      local_80.y = local_88 - local_70.x;
-      local_80.z = local_84 - local_70.y;
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                (&this_ptr->base_actor,(CVector3f *)(local_80 + 4),
+                 (CVector3f *)(this_ptr->field2_0x240c + 0x10));
+      pCVar2 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                         (&this_ptr->base_actor,&CStack_e4,in_stack_00000010);
+      local_8c = in_stack_00000008->x - pCVar2->x;
+      local_88 = in_stack_00000008->y - pCVar2->y;
+      local_80._0_4_ = local_8c - local_74;
+      local_84 = in_stack_00000008->z - pCVar2->z;
+      local_80._4_4_ = local_88 - local_70.x;
+      local_78 = local_84 - local_70.y;
       pCVar2 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                         ((CVector3f *)local_d4,&local_80);
+                         ((CVector3f *)local_d4,(CVector3f *)local_80);
       pCVar4 = (CCharacter *)
-               core_actor_cpp_FUN_0040cd70(pCVar2->y - (this_ptr->base_actor).orient.bank);
+               core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                         (pCVar2->y - (this_ptr->base_actor).orient.bank);
       pCVar5 = (CCharacter *)-(float)this_ptr;
       if ((-(float)this_ptr <= (float)pCVar4) && (pCVar5 = pCVar4, (float)this_ptr < (float)pCVar4))
       {
@@ -212,7 +218,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
       local_70.z = local_a4 - *(float *)(this_ptr->field2_0x240c + 0x18);
       pCVar2 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                          ((CVector3f *)local_b8,&local_70);
-      pCVar4 = (CCharacter *)core_actor_cpp_FUN_0040cd70(pCVar2->y - local_ec);
+      pCVar4 = (CCharacter *)core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar2->y - local_ec);
       pCVar5 = (CCharacter *)-(float)this_ptr;
       if (((float)pCVar5 <= (float)pCVar4) && (pCVar5 = pCVar4, (float)this_ptr < (float)pCVar4)) {
         pCVar5 = this_ptr;
@@ -271,7 +277,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
 //   XREF to: Stack[-0xbc] (DATA)
 // 0042873a: PUSH EAX
 // 0042873b: PUSH EBX
-// 0042873c: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 0042873c: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 00428741: ADD ESP,0xc
 // 00428744: FLD float ptr [ESP + 0x64]
@@ -435,7 +441,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
 // 0042889d: SUB ESP,0x4
 // 004288a0: FSTP float ptr [ESP]
 //   XREF to: Stack[-0x11c] (DATA)
-// 004288a3: CALL core_actor.cpp_FUN_0040cd70
+// 004288a3: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 004288a8: MOV dword ptr [ESP + 0x104],EAX
 //   XREF to: Stack[-0x18] (WRITE)
@@ -583,7 +589,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
 // 004289f5: SUB ESP,0x4
 // 004289f8: FSTP float ptr [ESP]
 //   XREF to: Stack[-0x11c] (DATA)
-// 004289fb: CALL core_actor.cpp_FUN_0040cd70
+// 004289fb: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 00428a00: MOV dword ptr [ESP + 0x104],EAX
 //   XREF to: Stack[-0x18] (WRITE)
@@ -682,7 +688,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
 //   XREF to: Stack[-0x18] (WRITE)
 // 00428af2: PUSH dword ptr [ESP + 0x100]
 //   XREF to: Stack[-0x18] (READ)
-// 00428af9: CALL core_actor.cpp_FUN_0040cd70
+// 00428af9: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 00428afe: MOV dword ptr [ESP + 0x104],EAX
 //   XREF to: Stack[-0x18] (WRITE)
@@ -806,7 +812,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
 //   XREF to: Stack[-0x30] (READ)
 // 00428c2b: PUSH EBX
 // 00428c2c: FSTP float ptr [EDX]
-// 00428c2e: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00428c2e: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 00428c33: ADD ESP,0xc
 // 00428c36: PUSH ESI
@@ -814,7 +820,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
 //   XREF to: Stack[-0xf8] (DATA)
 // 00428c3b: PUSH EAX
 // 00428c3c: PUSH EBX
-// 00428c3d: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 00428c3d: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 00428c42: FLD float ptr [EDI]
 // 00428c44: FSUB float ptr [EAX]
@@ -862,7 +868,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
 // 00428cb4: SUB ESP,0x4
 // 00428cb7: FSTP float ptr [ESP]
 //   XREF to: Stack[-0x11c] (DATA)
-// 00428cba: CALL core_actor.cpp_FUN_0040cd70
+// 00428cba: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 00428cbf: MOV dword ptr [ESP + 0x104],EAX
 //   XREF to: Stack[-0x18] (WRITE)

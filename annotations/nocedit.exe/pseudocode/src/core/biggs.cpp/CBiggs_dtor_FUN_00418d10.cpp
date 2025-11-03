@@ -11,7 +11,7 @@
 //   core_backgnd.cpp_freeFires_FUN_00412700
 //   core_backgnd.cpp_freeFlames_FUN_00412720
 //   core_cloth.cpp_FUN_0043bf80
-//   core_morph.cpp_FUN_0052b330
+//   core_morph.cpp_CMorphModel_FUN_0052b330
 //   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40
 //   crt_memory.c_free_FUN_005fe659
 //   crt_memory.c_freeSingleInstance_FUN_005fe632
@@ -22,6 +22,7 @@
 CBiggs * __cdecl core_biggs_cpp_CBiggs_dtor_FUN_00418d10(CBiggs *this_ptr,uint d1)
 
 {
+  int extraout_EAX;
   int iVar1;
   CDeformableModelInstance *pCVar2;
   CBiggs *ptr;
@@ -36,8 +37,8 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_dtor_FUN_00418d10(CBiggs *this_ptr,uint d
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  iVar1 = core_morph_cpp_FUN_0052b330();
-  iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(iVar1 + -0x8c74));
+  core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)this_ptr->field4_0xc040);
+  iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(extraout_EAX + -0x8c74));
   iVar1 = core_backgnd_cpp_freeFires_FUN_00412700((SFire **)(iVar1 + -0x4b0));
   iVar1 = core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0x20c));
   core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0xb4));
@@ -47,7 +48,7 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_dtor_FUN_00418d10(CBiggs *this_ptr,uint d
                       in_stack_00000018,in_stack_0000001c);
   ptr = (CBiggs *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar2[-1].padding_0x0 + 0x215c),1);
+                  ((CDemonActor *)(pCVar2[-1].part_visibility_flags + 7),1);
   if ((in_stack_00000028 & 2) == 0) {
     return ptr;
   }
@@ -68,7 +69,7 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_dtor_FUN_00418d10(CBiggs *this_ptr,uint d
 // 00418d20: PUSH 0x0
 // 00418d22: ADD EBX,0xc040
 // 00418d28: PUSH EBX
-// 00418d29: CALL core_morph.cpp_FUN_0052b330
+// 00418d29: CALL core_morph.cpp_CMorphModel_FUN_0052b330
 //   XREF to: 0052b330 (UNCONDITIONAL_CALL)
 // 00418d2e: ADD ESP,0x8
 // 00418d31: PUSH 0x0

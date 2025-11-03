@@ -1,86 +1,83 @@
 // Name: core_motion.cpp_CMotionController_FUN_0052e020
 // Address: 0052e020
 // Address Range: [[0052e020, 0052e1cc]]
-// Convention: unknown
-// Signature: undefined core_motion.cpp_CMotionController_FUN_0052e020()
+// Convention: __cdecl
+// Signature: int core_motion.cpp_CMotionController_FUN_0052e020(CMotionController * this_ptr)
 // Cross-references:
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610 (0052d610) at 0052d91c [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0063ab17
-//   undefined4 DAT_0063ab1f
+//   double DOUBLE_0063ab17 = -0.000100000000000000
+//   double DOUBLE_0063ab1f = 0.00100000000000000
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 core_motion.cpp_CMotionController_FUN_0052e020(CMotionController* param_1,
-   undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5) */
+/* WARNING: Type propagation algorithm not settling */
 
-undefined4 core_motion_cpp_CMotionController_FUN_0052e020(void)
+int __cdecl core_motion_cpp_CMotionController_FUN_0052e020(CMotionController *this_ptr)
 
 {
   int iVar1;
   float fVar2;
-  int iVar3;
-  int iVar4;
+  SMotion *pSVar3;
+  SMotion *pSVar4;
   int iVar5;
-  undefined4 *puVar6;
-  undefined4 *puVar7;
+  int *piVar6;
+  int *piVar7;
   byte bVar8;
-  int *in_stack_00000004;
   int in_stack_00000008;
   float in_stack_0000000c;
   float *in_stack_00000010;
-  undefined4 *in_stack_00000014;
+  int *in_stack_00000014;
   float local_24;
-  undefined4 local_20;
+  int local_20;
   
   bVar8 = 0;
-  iVar4 = in_stack_00000008 * 0x54c + *in_stack_00000004 + 0x968;
+  pSVar4 = this_ptr->motion_list_ptr->motions + in_stack_00000008;
   iVar5 = 0;
-  fVar2 = *in_stack_00000010 * *(float *)(iVar4 + 0x20) + in_stack_0000000c;
+  fVar2 = *in_stack_00000010 * pSVar4->fps + in_stack_0000000c;
   local_20 = 0;
-  iVar3 = iVar4;
+  pSVar3 = pSVar4;
   local_24 = fVar2;
-  if (0 < *(int *)(iVar4 + 0x4a4)) {
+  if (0 < pSVar4->signal_count) {
     do {
-      iVar1 = *(int *)(iVar3 + 0x4a8);
-      if ((in_stack_0000000c <= (float)iVar1) && ((float)iVar1 <= local_24 + (float)_DAT_0063ab1f))
-      {
-        local_20 = *(undefined4 *)(iVar3 + 0x4ac);
-        local_24 = (float)iVar1 + (float)_DAT_0063ab1f;
+      iVar1 = pSVar3->signals[0].frame_number;
+      if ((in_stack_0000000c <= (float)iVar1) && ((float)iVar1 <= local_24 + (float)DOUBLE_0063ab1f)
+         ) {
+        local_20 = pSVar3->signals[0].value;
+        local_24 = (float)iVar1 + (float)DOUBLE_0063ab1f;
       }
       iVar5 = iVar5 + 1;
-      iVar3 = iVar3 + 8;
-    } while (iVar5 < *(int *)(iVar4 + 0x4a4));
+      pSVar3 = (SMotion *)(pSVar3->motion_name + 8);
+    } while (iVar5 < pSVar4->signal_count);
   }
-  if ((double)local_24 < (double)*(int *)(iVar4 + 0x28) + _DAT_0063ab17) {
-    (**(code **)(in_stack_00000004[0x14] + 8))();
+  if ((double)local_24 < (double)pSVar4->exit_forward_from_frame + DOUBLE_0063ab17) {
+    (*(code *)this_ptr->vtable->field2_0x8)();
     in_stack_00000014[1] = 1;
     in_stack_00000014[5] = 0;
     in_stack_00000014[2] = in_stack_00000008;
-    in_stack_00000014[3] = local_24;
+    in_stack_00000014[3] = (int)local_24;
     if (fVar2 <= (float)in_stack_00000014[3]) {
       return local_20;
     }
     fVar2 = (float)in_stack_00000014[3];
   }
   else {
-    (**(code **)(in_stack_00000004[0x14] + 8))();
-    puVar6 = (undefined4 *)(iVar4 + 0x2c);
-    puVar7 = in_stack_00000014;
-    for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar7 = *puVar6;
-      puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
-      puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
+    (*(code *)this_ptr->vtable->field2_0x8)();
+    piVar6 = &pSVar4->unused1;
+    piVar7 = in_stack_00000014;
+    for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
+      *piVar7 = *piVar6;
+      piVar6 = piVar6 + (uint)bVar8 * -2 + 1;
+      piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
     }
-    iVar3 = in_stack_00000004[0xb];
-    if ((iVar3 != 0) && (*(int *)(iVar3 + 4) == 2)) {
-      in_stack_00000014[2] = *(undefined4 *)(iVar3 + 8);
-      in_stack_00000014[3] = *(undefined4 *)(in_stack_00000004[0xb] + 0xc);
+    iVar5 = this_ptr->field11_0x2c;
+    if ((iVar5 != 0) && (*(int *)(iVar5 + 4) == 2)) {
+      in_stack_00000014[2] = *(int *)(iVar5 + 8);
+      in_stack_00000014[3] = *(int *)(this_ptr->field11_0x2c + 0xc);
     }
-    fVar2 = (float)*(int *)(iVar4 + 0x28);
+    fVar2 = (float)pSVar4->exit_forward_from_frame;
   }
-  *in_stack_00000010 = (fVar2 - in_stack_0000000c) / *(float *)(iVar4 + 0x20);
+  *in_stack_00000010 = (fVar2 - in_stack_0000000c) / pSVar4->fps;
   return local_20;
 }
 

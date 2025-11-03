@@ -42,7 +42,7 @@ void __cdecl core_inv_cpp_CInventory_clear_FUN_004fd0e0(CInventory *this_ptr)
     g_CurrentDebugFilename = "..\\core\\inv.cpp";
     g_CurrentDebugLine = 0x102;
     if (this_ptr_00 != (CAmmo *)0x0) {
-      (*((this_ptr_00->base_actor).metadata.vtable)->dtor)
+      (*((this_ptr_00->base_actor).vtable)->dtor)
                 (&this_ptr_00->base_actor,2,unaff_EBX,unaff_retaddr,(uint)this_ptr,in_stack_00000008
                  ,in_stack_0000000c,in_stack_00000010,in_stack_00000014);
       this_ptr->ammo_ptr = (CAmmo *)0x0;

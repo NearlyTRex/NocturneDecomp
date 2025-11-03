@@ -1,8 +1,8 @@
 // Name: core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970
 // Address: 0059b970
 // Address Range: [[0059b970, 0059c1ea]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970()
+// Convention: __cdecl
+// Signature: void core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970(CDeformableModel * this_ptr, FILE * file_handle)
 // Cross-references:
 //   core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0 (0059b8d0) at 0059b91c [UNCONDITIONAL_CALL]
 // Globals:
@@ -46,53 +46,55 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_skeleton.cpp_CDeformableModel_loadStream(CDeformableModel* pModel,
-   undefined4 pFilePtr) */
-
-void core_skeleton_cpp_CDeformableModel_loadStream_FUN_0059b970
-               (undefined4 param_1,undefined4 param_2,int unaff_EBX,undefined4 param_4,int *param_5,
-               FILE *param_6,int param_7)
+void __cdecl
+core_skeleton_cpp_CDeformableModel_loadStream_FUN_0059b970
+          (CDeformableModel *this_ptr,FILE *file_handle)
 
 {
-  int *piVar1;
+  CDeformableModel *this_ptr_00;
+  int iVar1;
   int iVar2;
-  int iVar3;
-  int *piVar4;
-  byte *pbVar5;
-  int iVar6;
+  SPart *pSVar3;
+  float *pfVar4;
+  int iVar5;
+  CVector3f *pCVar6;
+  int unaff_EBX;
   BADSPACEBASE *in_ESP;
-  byte unaff_BP;
-  byte *pbVar7;
+  uchar unaff_BP;
+  SVert *pSVar7;
   undefined2 *puVar8;
-  undefined4 unaff_ESI;
-  byte unaff_DI;
+  int unaff_ESI;
+  uchar unaff_DI;
+  int in_stack_0000000c;
   int *local_70;
   undefined1 local_6c [4];
   undefined1 local_68 [4];
   undefined1 local_64 [4];
   int local_60;
   undefined1 local_5c [4];
-  undefined1 local_58 [4];
+  int local_58;
   undefined2 local_54 [2];
   undefined1 local_50 [4];
-  undefined1 local_4c [4];
+  int local_4c;
   int local_48;
   int local_44;
-  undefined1 local_40 [4];
-  undefined1 local_3c [4];
-  undefined1 local_38 [16];
+  int local_40;
+  int local_3c;
+  int local_38;
+  int local_34;
   undefined1 local_28 [4];
-  undefined1 local_24 [4];
-  undefined1 local_20 [12];
+  int local_24;
+  int local_20;
+  int local_1c;
   undefined1 local_14 [4];
   
-  piVar1 = param_5;
+  this_ptr_00 = this_ptr;
   do {
-    iVar2 = crt_stdio_c_fgetc_FUN_005fe840(param_6);
-    if (iVar2 < 0) break;
-  } while (iVar2 != 10);
-  iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(param_6,"%d\n",local_64);
-  if (iVar2 == 1) goto LAB_0059b9d7;
+    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+    if (iVar1 < 0) break;
+  } while (iVar1 != 10);
+  iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",local_64);
+  if (iVar1 == 1) goto LAB_0059b9d7;
 LAB_0059b9b4:
   do {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
@@ -107,213 +109,228 @@ LAB_0059b9d7:
     }
     if (local_60 < 3) {
       do {
-        iVar2 = crt_stdio_c_fgetc_FUN_005fe840(param_6);
-        if (iVar2 < 0) break;
-      } while (iVar2 != 10);
-      iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
-                        (param_6,"%d,%d,%d,%d,%d,%d\n",&local_48,&local_44,local_40,local_3c,
-                         local_58,local_38);
-      if (iVar2 != 6) goto LAB_0059b9b4;
-      core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0();
-      core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510();
+        iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+        if (iVar1 < 0) break;
+      } while (iVar1 != 10);
+      iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0
+                        (file_handle,"%d,%d,%d,%d,%d,%d\n",&local_48,&local_44,&local_40,&local_3c,
+                         &local_58,&local_38);
+      if (iVar1 != 6) goto LAB_0059b9b4;
+      core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0(this_ptr_00,1,1,local_38,local_34)
+      ;
+      core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510
+                (this_ptr_00,0,local_40,local_3c,local_38);
     }
     else {
       if (local_60 < 5) {
         do {
-          iVar2 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)0x59bafd);
-          if (iVar2 < 0) break;
-        } while (iVar2 != 10);
-        iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
-                          (param_6,"%d,%d,%d,%d\n",local_50,&local_48,local_54,local_5c);
-        if (iVar2 != 4) goto LAB_0059b9b4;
+          iVar1 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)0x59bafd);
+          if (iVar1 < 0) break;
+        } while (iVar1 != 10);
+        iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0
+                          (file_handle,"%d,%d,%d,%d\n",local_50,&local_48,local_54,local_5c);
+        if (iVar1 != 4) goto LAB_0059b9b4;
         local_48 = 1;
       }
       else {
         do {
-          iVar2 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)0x59ba2b);
-          if (iVar2 < 0) break;
-        } while (iVar2 != 10);
-        iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
-                          (param_6,"%d,%d,%d,%d,%d\n",local_50,local_4c,&local_48,local_54,
+          iVar1 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)0x59ba2b);
+          if (iVar1 < 0) break;
+        } while (iVar1 != 10);
+        iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0
+                          (file_handle,"%d,%d,%d,%d,%d\n",local_50,&local_4c,&local_48,local_54,
                            local_5c);
-        if (iVar2 != 5) goto LAB_0059b9b4;
+        if (iVar1 != 5) goto LAB_0059b9b4;
       }
-      core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0();
+      core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0
+                (this_ptr_00,local_4c,local_48,local_44,local_58);
       do {
-        iVar2 = crt_stdio_c_fgetc_FUN_005fe840(param_6);
-        if (iVar2 < 0) break;
-      } while (iVar2 != 10);
-      for (iVar2 = 0; iVar2 < *piVar1; iVar2 = iVar2 + 1) {
-        iVar3 = crt_stdio_c_fscanf_FUN_005fe7c0
-                          (param_6,"%d,%d,%d,%d,%d\n",local_28,local_24,local_20,
-                           piVar1 + iVar2 * 2 + 1,piVar1 + iVar2 * 2 + 1 + 1);
-        if (iVar3 != 5) goto LAB_0059b9b4;
-        core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510();
+        iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+        if (iVar1 < 0) break;
+      } while (iVar1 != 10);
+      for (iVar1 = 0; iVar1 < this_ptr_00->num_lods; iVar1 = iVar1 + 1) {
+        iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
+                          (file_handle,"%d,%d,%d,%d,%d\n",local_28,&local_24,&local_20,
+                           this_ptr_00->lod_info + iVar1,
+                           &this_ptr_00->lod_info[iVar1].shadow_only_flag);
+        if (iVar2 != 5) goto LAB_0059b9b4;
+        core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510
+                  (this_ptr_00,iVar1,local_24,local_20,local_1c);
       }
     }
     do {
-      iVar2 = crt_stdio_c_fgetc_FUN_005fe840(param_6);
-      if (iVar2 < 0) break;
-    } while (iVar2 != 10);
-    iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(param_6,"%[^\n]\n",piVar1 + 0x23d7);
-    if (iVar2 != 1) goto LAB_0059b9b4;
+      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+      if (iVar1 < 0) break;
+    } while (iVar1 != 10);
+    iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%[^\n]\n",this_ptr_00->model_name);
+    if (iVar1 != 1) goto LAB_0059b9b4;
     do {
-      iVar2 = crt_stdio_c_fgetc_FUN_005fe840(param_6);
-      if (iVar2 < 0) break;
-    } while (iVar2 != 10);
+      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+      if (iVar1 < 0) break;
+    } while (iVar1 != 10);
     if (local_44 < 3) {
-      for (iVar2 = 0; iVar2 < piVar1[0x1c50]; iVar2 = iVar2 + 1) {
-        piVar4 = piVar1 + iVar2 * 0x18 + 0x1c51;
-        iVar3 = crt_stdio_c_fscanf_FUN_005fe7c0
-                          (param_6,"\"%[^\"]\",%d,%d,%d\n",piVar4,piVar4 + 8,piVar4 + 0xd,piVar4 + 0x12);
-        if (iVar3 != 4) goto LAB_0059b9b4;
-        for (iVar3 = 0; iVar3 < piVar1[iVar2 * 0x18 + 0x1c63]; iVar3 = iVar3 + 1) {
-          iVar6 = crt_stdio_c_fscanf_FUN_005fe7c0
-                            (param_6,"%d\n",piVar1 + iVar2 * 0x18 + iVar3 + 0x1c64);
-          if (iVar6 != 1) goto LAB_0059b9b4;
+      for (iVar1 = 0; iVar1 < this_ptr_00->num_parts; iVar1 = iVar1 + 1) {
+        pSVar3 = this_ptr_00->parts + iVar1;
+        iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
+                          (file_handle,"\"%[^\"]\",%d,%d,%d\n",pSVar3,pSVar3->tri_counts,
+                           pSVar3->cap_tri_counts,&pSVar3->adj_part_count);
+        if (iVar2 != 4) goto LAB_0059b9b4;
+        for (iVar2 = 0; iVar2 < this_ptr_00->parts[iVar1].adj_part_count; iVar2 = iVar2 + 1) {
+          iVar5 = crt_stdio_c_fscanf_FUN_005fe7c0
+                            (file_handle,"%d\n",
+                             this_ptr_00->parts[iVar1].adj_part_list + iVar2);
+          if (iVar5 != 1) goto LAB_0059b9b4;
         }
       }
     }
     else {
-      for (iVar2 = 0; iVar2 < piVar1[0x1c50]; iVar2 = iVar2 + 1) {
-        piVar4 = piVar1 + iVar2 * 0x18 + 0x1c51;
+      for (iVar1 = 0; iVar1 < this_ptr_00->num_parts; iVar1 = iVar1 + 1) {
+        pSVar3 = this_ptr_00->parts + iVar1;
         if (local_48 < 6) {
-          crt_stdio_c_fscanf_FUN_005fe7c0(param_6,"\"%[^\"]\", %d\n",piVar4,piVar4 + 0x12);
+          crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"\"%[^\"]\", %d\n",pSVar3,&pSVar3->adj_part_count);
         }
         else {
-          crt_stdio_c_fscanf_FUN_005fe7c0(param_6,"\"%[^\"]\", %d, %d\n",piVar4,piVar4 + 0x17,piVar4 + 0x12)
-          ;
-        }
-        for (iVar3 = 0; iVar3 < piVar1[iVar2 * 0x18 + 0x1c63]; iVar3 = iVar3 + 1) {
-          local_70 = piVar1 + iVar2 * 0x18 + iVar3 + 0x1c64;
-          crt_stdio_c_fscanf_FUN_005fe7c0(param_6,"%d\n");
-        }
-        for (iVar3 = 0; iVar3 < *piVar1; iVar3 = iVar3 + 1) {
           crt_stdio_c_fscanf_FUN_005fe7c0
-                    (param_6,"%d,%d\n",piVar1 + iVar2 * 0x18 + iVar3 + 0x1c59,
-                     piVar1 + iVar2 * 0x18 + iVar3 + 0x1c5e);
+                    (file_handle,"\"%[^\"]\", %d, %d\n",pSVar3,&pSVar3->dominant_bone,
+                     &pSVar3->adj_part_count);
+        }
+        for (iVar2 = 0; iVar2 < this_ptr_00->parts[iVar1].adj_part_count; iVar2 = iVar2 + 1) {
+          local_70 = this_ptr_00->parts[iVar1].adj_part_list + iVar2;
+          crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n");
+        }
+        for (iVar2 = 0; iVar2 < this_ptr_00->num_lods; iVar2 = iVar2 + 1) {
+          crt_stdio_c_fscanf_FUN_005fe7c0
+                    (file_handle,"%d,%d\n",this_ptr_00->parts[iVar1].tri_counts + iVar2,
+                     this_ptr_00->parts[iVar1].cap_tri_counts + iVar2);
         }
       }
     }
     do {
-      iVar2 = crt_stdio_c_fgetc_FUN_005fe840(param_6);
-      if (iVar2 < 0) break;
-    } while (iVar2 != 10);
-    for (; unaff_EBX < *piVar1; unaff_EBX = unaff_EBX + 1) {
-      for (param_5 = (int *)0x0; (int)param_5 < piVar1[unaff_EBX + 0xb];
-          param_5 = (int *)((int)param_5 + 1)) {
-        pbVar7 = (byte *)(piVar1[unaff_EBX + 0x10] + (int)param_5 * 0x34);
-        iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(param_6,"%d\n",local_14);
-        if (iVar2 != 1) goto LAB_0059b9b4;
-        *pbVar7 = unaff_BP;
-        for (iVar2 = 0; iVar2 < (int)(uint)*pbVar7; iVar2 = iVar2 + 1) {
-          pbVar5 = pbVar7 + iVar2 * 0xc + 0x10;
-          iVar3 = crt_stdio_c_fscanf_FUN_005fe7c0
-                            (param_6,"%d,%f,%f,%f,%f\n",&stack0xfffffff0,pbVar7 + iVar2 * 4 + 4,
-                             pbVar5,pbVar5 + 4,pbVar5 + 8);
-          if (iVar3 != 5) goto LAB_0059b9b4;
-          pbVar7[iVar2 + 1] = unaff_DI;
+      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+      if (iVar1 < 0) break;
+    } while (iVar1 != 10);
+    for (; unaff_EBX < this_ptr_00->num_lods; unaff_EBX = unaff_EBX + 1) {
+      for (this_ptr = (CDeformableModel *)0x0; (int)this_ptr < this_ptr_00->vertex_count[unaff_EBX];
+          this_ptr = (CDeformableModel *)((int)&this_ptr->num_lods + 1)) {
+        pSVar7 = this_ptr_00->vertex_data_ptr[unaff_EBX] + (int)this_ptr;
+        iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",local_14);
+        if (iVar1 != 1) goto LAB_0059b9b4;
+        pSVar7->num_bone_influences = unaff_BP;
+        for (iVar1 = 0; iVar1 < (int)(uint)pSVar7->num_bone_influences; iVar1 = iVar1 + 1) {
+          pfVar4 = pSVar7->bone_weights + iVar1 * 3 + 3;
+          iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
+                            (file_handle,"%d,%f,%f,%f,%f\n",&stack0xfffffff0,
+                             pSVar7->bone_weights + iVar1,pfVar4,pfVar4 + 1,pfVar4 + 2);
+          if (iVar2 != 5) goto LAB_0059b9b4;
+          pSVar7->bone_indices[iVar1] = unaff_DI;
         }
       }
     }
     do {
-      iVar2 = crt_stdio_c_fgetc_FUN_005fe840(param_6);
-      if (iVar2 < 0) break;
-    } while (iVar2 != 10);
-    for (; param_7 < *piVar1; param_7 = param_7 + 1) {
-      iVar2 = 0;
+      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+      if (iVar1 < 0) break;
+    } while (iVar1 != 10);
+    for (; in_stack_0000000c < this_ptr_00->num_lods; in_stack_0000000c = in_stack_0000000c + 1) {
+      iVar1 = 0;
       while( true ) {
-        if (piVar1[param_7 + 0x15] + piVar1[param_7 + 0x1a] <= iVar2) break;
-        iVar3 = crt_stdio_c_fscanf_FUN_005fe7c0
-                          (param_6,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",&stack0xfffffff4,local_58,local_64
-                           ,&local_70,local_54,&local_60,local_6c,local_50,local_5c,local_68);
-        if (iVar3 != 10) goto LAB_0059b9b4;
-        *(undefined4 *)(piVar1[param_7 + 0x24] + iVar2 * 4) = unaff_ESI;
-        iVar3 = 0;
+        if (this_ptr_00->tri_count[in_stack_0000000c] +
+            this_ptr_00->cap_tri_count[in_stack_0000000c] <= iVar1) break;
+        iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
+                          (file_handle,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",&stack0xfffffff4,&local_58,
+                           local_64,&local_70,local_54,&local_60,local_6c,local_50,local_5c,local_68
+                          );
+        if (iVar2 != 10) goto LAB_0059b9b4;
+        this_ptr_00->index_data_ptr[in_stack_0000000c][iVar1] = unaff_ESI;
+        iVar2 = 0;
         do {
-          puVar8 = (undefined2 *)(iVar3 * 2 + (int)param_5);
-          *puVar8 = local_54[iVar3 * 2];
-          unaff_EBX = *(int *)(local_5c + iVar3 * 4 + -4) >> 8;
-          puVar8[3] = (short)((uint)*(int *)(local_5c + iVar3 * 4 + -4) >> 8);
-          iVar6 = iVar3 * 4;
-          iVar3 = iVar3 + 1;
-          puVar8[6] = (short)((uint)*(undefined4 *)(local_6c + iVar6 + -4) >> 8);
-        } while (iVar3 < 3);
-        iVar2 = iVar2 + 1;
+          puVar8 = (undefined2 *)((int)this_ptr->lod_info + iVar2 * 2 + -4);
+          *puVar8 = local_54[iVar2 * 2];
+          unaff_EBX = *(int *)(local_5c + iVar2 * 4 + -4) >> 8;
+          puVar8[3] = (short)((uint)*(int *)(local_5c + iVar2 * 4 + -4) >> 8);
+          iVar5 = iVar2 * 4;
+          iVar2 = iVar2 + 1;
+          puVar8[6] = (short)((uint)*(undefined4 *)(local_6c + iVar5 + -4) >> 8);
+        } while (iVar2 < 3);
+        iVar1 = iVar1 + 1;
       }
     }
     do {
-      iVar2 = crt_stdio_c_fgetc_FUN_005fe840(param_6);
-      if (iVar2 < 0) break;
-    } while (iVar2 != 10);
-    for (iVar2 = 0; iVar2 < *piVar1; iVar2 = iVar2 + 1) {
-      for (iVar3 = 0; iVar3 < piVar1[iVar2 + 0x1a]; iVar3 = iVar3 + 1) {
-        iVar6 = crt_stdio_c_fscanf_FUN_005fe7c0
-                          (param_6,"%d\n",piVar1[iVar2 + 0x29] + iVar3 * 4);
-        if (iVar6 != 1) goto LAB_0059b9b4;
+      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+      if (iVar1 < 0) break;
+    } while (iVar1 != 10);
+    for (iVar1 = 0; iVar1 < this_ptr_00->num_lods; iVar1 = iVar1 + 1) {
+      for (iVar2 = 0; iVar2 < this_ptr_00->cap_tri_count[iVar1]; iVar2 = iVar2 + 1) {
+        iVar5 = crt_stdio_c_fscanf_FUN_005fe7c0
+                          (file_handle,"%d\n",this_ptr_00->cap_index_ptr[iVar1] + iVar2);
+        if (iVar5 != 1) goto LAB_0059b9b4;
       }
     }
     do {
-      iVar2 = crt_stdio_c_fgetc_FUN_005fe840(param_6);
-      if (iVar2 < 0) break;
-    } while (iVar2 != 10);
-    for (iVar2 = 0; iVar2 < piVar1[0x2e]; iVar2 = iVar2 + 1) {
-      while (0 < piVar1[0x2f]) {
-        iVar3 = crt_stdio_c_fscanf_FUN_005fe7c0
-                          (param_6,"%[^\n]\n",piVar1 + iVar2 * 0x5a0 + 0x32);
-        if (iVar3 != 1) goto LAB_0059b9b4;
-        param_7 = param_7 + 1;
+      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+      if (iVar1 < 0) break;
+    } while (iVar1 != 10);
+    for (iVar1 = 0; iVar1 < this_ptr_00->num_texture_sets; iVar1 = iVar1 + 1) {
+      while (0 < this_ptr_00->num_textures) {
+        iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
+                          (file_handle,"%[^\n]\n",
+                           this_ptr_00->texture_sets[iVar1].textures[0].texture_variants[0].
+                           texture_name);
+        if (iVar2 != 1) goto LAB_0059b9b4;
+        in_stack_0000000c = in_stack_0000000c + 1;
       }
     }
     do {
-      iVar2 = crt_stdio_c_fgetc_FUN_005fe840(param_6);
-      if (iVar2 < 0) break;
-    } while (iVar2 != 10);
-    for (iVar2 = 0; iVar2 < local_44; iVar2 = iVar2 + 1) {
-      piVar4 = piVar1 + iVar2 * 3 + 0x1f24;
-      iVar3 = crt_stdio_c_fscanf_FUN_005fe7c0(param_6,"%f,%f,%f\n",piVar4,piVar4 + 1,piVar4 + 2)
-      ;
-      if (iVar3 != 3) goto LAB_0059b9b4;
+      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+      if (iVar1 < 0) break;
+    } while (iVar1 != 10);
+    for (iVar1 = 0; iVar1 < local_44; iVar1 = iVar1 + 1) {
+      pCVar6 = this_ptr_00->vertex_pool + iVar1;
+      iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
+                        (file_handle,"%f,%f,%f\n",pCVar6,&pCVar6->y,&pCVar6->z);
+      if (iVar2 != 3) goto LAB_0059b9b4;
     }
     if (local_48 < 2) {
-      piVar1[0x1f23] = 0x3f800000;
-      piVar1[0x1f22] = piVar1[0x1f23];
-      piVar1[0x1f21] = piVar1[0x1f22];
+      (this_ptr_00->model_scale).z = 1.0;
+      (this_ptr_00->model_scale).y = (this_ptr_00->model_scale).z;
+      (this_ptr_00->model_scale).x = (this_ptr_00->model_scale).y;
       break;
     }
     do {
-      iVar2 = crt_stdio_c_fgetc_FUN_005fe840(param_6);
-      if (iVar2 < 0) break;
-    } while (iVar2 != 10);
-    iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
-                      (param_6,"%f,%f,%f\n",piVar1 + 0x1f21,piVar1 + 0x1f22,piVar1 + 0x1f23);
-  } while (iVar2 != 3);
+      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+      if (iVar1 < 0) break;
+    } while (iVar1 != 10);
+    iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0
+                      (file_handle,"%f,%f,%f\n",&this_ptr_00->model_scale,
+                       &(this_ptr_00->model_scale).y,&(this_ptr_00->model_scale).z);
+  } while (iVar1 != 3);
   if (local_48 < 4) {
-    piVar1[0x2052] = 0;
-    piVar1[0x2051] = piVar1[0x2052];
-    piVar1[0x2050] = piVar1[0x2051];
+    this_ptr_00->bbox_pool[0].min.z = 0.0;
+    this_ptr_00->bbox_pool[0].min.y = this_ptr_00->bbox_pool[0].min.z;
+    this_ptr_00->bbox_pool[0].min.x = this_ptr_00->bbox_pool[0].min.y;
   }
   else {
     do {
-      iVar2 = crt_stdio_c_fgetc_FUN_005fe840(param_6);
-      if (iVar2 < 0) break;
-    } while (iVar2 != 10);
+      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+      if (iVar1 < 0) break;
+    } while (iVar1 != 10);
     crt_stdio_c_fscanf_FUN_005fe7c0
-              (param_6,"%f,%f,%f\n",piVar1 + 0x2050,piVar1 + 0x2051,piVar1 + 0x2052);
+              (file_handle,"%f,%f,%f\n",this_ptr_00->bbox_pool,&this_ptr_00->bbox_pool[0].min.y,
+               &this_ptr_00->bbox_pool[0].min.z);
   }
   if (6 < local_48) {
     do {
-      iVar2 = crt_stdio_c_fgetc_FUN_005fe840(param_6);
-      if (iVar2 < 0) break;
-    } while (iVar2 != 10);
-    for (iVar2 = 0; iVar2 < local_44; iVar2 = iVar2 + 1) {
-      crt_stdio_c_fscanf_FUN_005fe7c0(param_6,"%d\n",piVar1 + iVar2 + 0x230f);
+      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
+      if (iVar1 < 0) break;
+    } while (iVar1 != 10);
+    for (iVar1 = 0; iVar1 < local_44; iVar1 = iVar1 + 1) {
+      crt_stdio_c_fscanf_FUN_005fe7c0
+                (file_handle,"%d\n",this_ptr_00->bone_to_part_map + iVar1);
     }
   }
   if (local_48 < 7) {
-    core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460();
+    core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(this_ptr_00);
   }
-  if ((param_6->_flag & 0x20) != 0) {
+  if ((file_handle->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0x596;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::loadStream - error reading file!");

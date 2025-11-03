@@ -32,7 +32,7 @@
 //   core_actor.cpp_serializeString_FUN_0040b5c0
 //   core_actor.cpp_serializeVector_FUN_0040b340
 //   core_enemy.cpp_CEnemy_serialize_FUN_004a9660
-//   core_motion.cpp_CMotionController_FUN_0052ddb0
+//   core_motion.cpp_FUN_0052ddb0
 
 #include "nocturne.h"
 
@@ -65,12 +65,12 @@ void core_dracbrid_cpp_CDraculaBride_load_FUN_00485dd0(void)
     if ((g_CDraculaBrideClassVersion < 4) &&
        (core_actor_cpp_serializeInteger_FUN_0040b7f0
                   ((int *)&stack0xfffffffc,"initialState"), g_ActorReadingMode == 1)) {
-      core_motion_cpp_CMotionController_FUN_0052ddb0();
+      core_motion_cpp_FUN_0052ddb0();
     }
   }
   if (3 < g_CDraculaBrideClassVersion) {
     core_actor_cpp_serializeMotionState_FUN_0040b9f0
-              (&(in_stack_00000004->base_character).model,"motionState");
+              (&(in_stack_00000004->base_character).model.motion_controller,"motionState");
   }
   if (g_CDraculaBrideClassVersion == 4) {
     iVar1 = 0;
@@ -92,15 +92,15 @@ void core_dracbrid_cpp_CDraculaBride_load_FUN_00485dd0(void)
   }
   if (7 < g_CDraculaBrideClassVersion) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)&in_stack_00000004[1].base_character.base_actor.metadata.runtime_vector1.z,
-               "exploded");
+              ((int *)&in_stack_00000004[1].base_character.base_actor.previous_transform_state.
+                       position.z,"exploded");
     core_actor_cpp_serializeInteger_FUN_0040b7f0
               ((int *)(in_stack_00000004[1].base_character.base_actor.create_event + 0x3c),
                "partCount");
     iVar1 = 0;
     core_actor_cpp_serializeFloat_FUN_0040b770
-              (&in_stack_00000004[1].base_character.base_actor.metadata.runtime_vector2.x,
-               "fadeTimer");
+              (&in_stack_00000004[1].base_character.base_actor.previous_transform_state.orientation.
+                x,"fadeTimer");
     if (0 < *(int *)(in_stack_00000004[1].base_character.base_actor.create_event + 0x3c)) {
       actor_ptr = (CDemonActor *)
                   (in_stack_00000004[1].base_character.base_actor.create_event + 0x40);
@@ -210,7 +210,7 @@ void core_dracbrid_cpp_CDraculaBride_load_FUN_00485dd0(void)
 //   XREF to: 00621b53 (DATA)
 // 00485e88: PUSH EAX
 //   Label: LAB_00485e88
-// 00485e89: CALL core_motion.cpp_CMotionController_FUN_0052ddb0
+// 00485e89: CALL core_motion.cpp_FUN_0052ddb0
 //   XREF to: 0052ddb0 (UNCONDITIONAL_CALL)
 // 00485e8e: ADD ESP,0xc
 // 00485e91: CMP dword ptr [0x006703b0],0x4

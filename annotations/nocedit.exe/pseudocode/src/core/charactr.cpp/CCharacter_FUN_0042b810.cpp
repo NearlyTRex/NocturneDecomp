@@ -11,8 +11,8 @@
 //   CGore* g_CGorePtr = 02d83364
 //   CGore g_CGoreInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_FUN_0040cd10
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_gore.cpp_FUN_004edaa0
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
 
@@ -22,13 +22,18 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b810(CCharacter *this_ptr)
 
 {
   int iVar1;
+  CVector3f *input_local_point;
+  BADSPACEBASE *in_ESP;
   int in_stack_00000008;
+  float in_stack_00000010;
+  CVector3f aCStack_20 [2];
   
-  if (*(int *)((this_ptr->model).padding_0x0 + in_stack_00000008 * 4 + 0x2140) == 0) {
-    iVar1 = core_actor_cpp_FUN_0040cd10();
+  if ((this_ptr->model).part_visibility_flags[in_stack_00000008] == 0) {
+    iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(in_stack_00000010);
     if (iVar1 != 0) {
-      core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-      core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr->base_actor);
+      input_local_point = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                (&this_ptr->base_actor,aCStack_20,input_local_point);
       core_gore_cpp_FUN_004edaa0();
       return;
     }
@@ -55,7 +60,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b810(CCharacter *this_ptr)
 // 0042b82b: PUSH dword ptr [ESP + 0x38]
 //   Label: LAB_0042b82b
 //   XREF to: Stack[0x10] (READ)
-// 0042b82f: CALL core_actor.cpp_FUN_0040cd10
+// 0042b82f: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 0042b834: ADD ESP,0x4
 // 0042b837: TEST EAX,EAX
@@ -80,7 +85,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b810(CCharacter *this_ptr)
 // 0042b85b: PUSH EAX
 // 0042b85c: PUSH EBX
 // 0042b85d: XOR ESI,ESI
-// 0042b85f: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0042b85f: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0042b864: ADD ESP,0xc
 // 0042b867: MOV EDI,0x40e00000

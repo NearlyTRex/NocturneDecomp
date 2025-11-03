@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: char * core_ground.cpp_getGroundTypeName_FUN_004eed80(int type)
 // Cross-references:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040f653 [UNCONDITIONAL_CALL]
 //   core_actor.cpp_CActorProperty_FUN_0040ea50 (0040ea50) at 0040ec06 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040f653 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (00578d80) at 005799e3 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 (00584940) at 00584a23 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630 (00578630) at 005786a6 [UNCONDITIONAL_CALL]

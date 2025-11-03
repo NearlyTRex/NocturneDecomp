@@ -11,7 +11,7 @@
 //   double DOUBLE_00646073 = 65536
 //   CDemonCamera g_CDemonCameraInstance
 //   undefined4 DAT_0327d778
-//   undefined4 DAT_0327d77c
+//   int[65536] g_IntensityToValueLookupTable
 // Function calls:
 //   core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0
 //   crt_math.c_pow_FUN_005ffd76
@@ -45,7 +45,7 @@ void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_00570d60(CDemonSet *this_ptr,in
       iVar4 = 0x100;
     }
     iVar1 = (int)((ulonglong)dVar3 >> 0x20) + 1;
-    *(int *)(&DAT_0327d77c + extraout_ECX) = iVar4;
+    *(int *)((int)g_IntensityToValueLookupTable + extraout_ECX) = iVar4;
   } while (iVar1 < 0x10000);
   return;
 }

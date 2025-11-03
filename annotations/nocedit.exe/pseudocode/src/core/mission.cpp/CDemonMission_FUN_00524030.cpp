@@ -44,7 +44,7 @@ char * __cdecl core_mission_cpp_CDemonMission_FUN_00524030(CDemonMission *this_p
     }
     iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1->actor_name,in_stack_00000008);
     if (iVar1 == 0) break;
-    str1 = (str1->metadata).next_actor;
+    str1 = str1->next_actor;
   }
   return str1->actor_name;
 }

@@ -25,10 +25,10 @@
 //   undefined4 g_CSpikeClassInfo.name_hash
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408e80
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_CDemonActor_FUN_00408f10
-//   core_actor.cpp_CDemonActor_FUN_00409270
+//   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010
 //   core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0
 //   core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_00478740
@@ -57,7 +57,7 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
   CDemonActor *pCVar6;
   uint uVar7;
   CBoundingBox3D *other;
-  float *pfVar8;
+  CVector3f *pCVar8;
   int iVar9;
   int iVar10;
   int iVar11;
@@ -71,7 +71,6 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
   int iVar19;
   CVector3f *pCVar20;
   CKeyFramedModel *this_ptr_00;
-  float *pfVar21;
   BADSPACEBASE *in_ESP;
   float in_stack_00000010;
   float in_stack_00000014;
@@ -101,8 +100,7 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
   float in_stack_000000a8;
   int in_stack_000000ac;
   float in_stack_000000b0;
-  undefined1 auStack_264 [16];
-  CVector3f CStack_254;
+  undefined1 auStack_25c [20];
   undefined1 auStack_248 [12];
   undefined1 auStack_23c [8];
   CVector3f CStack_234;
@@ -123,17 +121,15 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
   float fStack_15c;
   undefined1 auStack_154 [24];
   float fStack_13c;
-  float local_138;
-  float local_134;
-  CDemonActor *pCStack_12c;
-  CDemonActor *pCStack_128;
-  undefined1 auStack_118 [8];
-  undefined1 auStack_110 [12];
-  undefined1 auStack_104 [24];
+  undefined1 local_138 [36];
+  undefined1 auStack_114 [8];
+  undefined1 auStack_10c [16];
+  float local_fc;
+  undefined1 local_f8 [12];
   float local_ec;
   float local_e8;
-  undefined1 local_e4 [44];
-  float fStack_b8;
+  undefined1 local_e4 [36];
+  CVector3f CStack_c0;
   float fStack_b4;
   float fStack_b0;
   CVector3f CStack_9c;
@@ -150,25 +146,22 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
   float fStack_48;
   float fStack_44;
   float fStack_40;
-  undefined4 uStack_38;
-  undefined4 uStack_34;
-  CVector3f CStack_30;
-  float fStack_24;
-  float fStack_20;
-  float local_1c;
+  undefined1 auStack_38 [16];
+  float local_28;
+  CVector3f CStack_24;
   float local_18;
   CVector3f *local_14;
   
   pCVar4 = position;
   if (0.0 < radius) {
-    fStack_24 = core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00496950
-                          (&g_CDemonRaytraceInstance,position,radius,&this_ptr->ground_type,
-                           &this_ptr->collision_normal);
+    CStack_24.x = core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00496950
+                            (&g_CDemonRaytraceInstance,position,radius,&this_ptr->ground_type,
+                             &this_ptr->collision_normal);
   }
   else {
-    fStack_24 = core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0
-                          (&g_CDemonRaytraceInstance,position,&this_ptr->ground_type,
-                           &this_ptr->collision_normal);
+    CStack_24.x = core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0
+                            (&g_CDemonRaytraceInstance,position,&this_ptr->ground_type,
+                             &this_ptr->collision_normal);
   }
   if (position[0x1bc19].z == 0.0) {
     position[0x1bc19].z = position[0x1d48a].y;
@@ -184,21 +177,21 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
   fVar2 = position[0x1d48c].y;
   position[0x1bc1b].z = -NAN;
   if (-1 < (int)fVar2) {
-    if (auStack_104 + 0x14 != local_e4) {
-      auStack_104._20_4_ = local_e4._0_4_;
+    if (local_f8 + 8 != local_e4) {
+      local_f8._8_4_ = local_e4._0_4_;
       local_e8 = (float)local_e4._8_4_;
       local_ec = (float)local_e4._4_4_;
     }
-    auStack_104._20_4_ = (float)auStack_104._20_4_ + in_stack_00000010;
+    local_f8._8_4_ = (float)local_f8._8_4_ + in_stack_00000010;
     local_e8 = local_e8 + in_stack_00000010;
-    auStack_104._8_4_ = (float)auStack_104._8_4_ - in_stack_00000010;
-    auStack_104._16_4_ = (float)auStack_104._16_4_ - in_stack_00000010;
-    if (auStack_104 + 8 != auStack_104 + 0x14) {
-      auStack_104._12_4_ = local_ec;
-      auStack_104._8_4_ = auStack_104._20_4_;
-      auStack_104._16_4_ = local_e8;
+    local_fc = local_fc - in_stack_00000010;
+    local_f8._4_4_ = (float)local_f8._4_4_ - in_stack_00000010;
+    if (&local_fc != (float *)(local_f8 + 8)) {
+      local_f8._0_4_ = local_ec;
+      local_fc = (float)local_f8._8_4_;
+      local_f8._4_4_ = local_e8;
     }
-    auStack_104._12_4_ = (float)auStack_104._12_4_ + FLOAT_0064624a;
+    local_f8._0_4_ = (float)local_f8._0_4_ + FLOAT_0064624a;
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)auStack_154);
     pCVar4 = position;
     auStack_154._0_4_ = 0.0;
@@ -214,28 +207,29 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
         if (((iVar5 == 0) &&
             (pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
                                 (pCVar3,g_CSpikeClassInfo.name_hash), pCVar6 == (CDemonActor *)0x0))
-           && (pCStack_12c = pCVar6, pCStack_128 = pCVar6,
-              uVar7 = (*((pCVar3->metadata).vtable)->hasCollision)
-                                (pCVar3,(SCollisionInfo *)(auStack_154 + 8)), uVar7 != 0)) {
-          other = core_actor_cpp_CDemonActor_FUN_00409270(pCVar3);
+           && (local_138._12_4_ = pCVar6, local_138._16_4_ = pCVar6,
+              uVar7 = (*pCVar3->vtable->hasCollision)(pCVar3,(SCollisionInfo *)(auStack_154 + 8)),
+              uVar7 != 0)) {
+          other = core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
+                            (pCVar3,(CBoundingBox3D *)local_f8,(SCollisionInfo *)local_138,uVar7);
           iVar5 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010
                             ((CBoundingBox3D *)(local_e4 + 8),other);
           if (iVar5 != 0) {
             if ((pCVar20[0x1d492].y == 0.0) &&
-               ((CKeyFramedModelInstance *)auStack_110._4_4_ != (CKeyFramedModelInstance *)0x0)) {
+               ((CKeyFramedModelInstance *)auStack_10c._0_4_ != (CKeyFramedModelInstance *)0x0)) {
               this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                                      ((CKeyFramedModelInstance *)auStack_110._4_4_);
+                                      ((CKeyFramedModelInstance *)auStack_10c._0_4_);
               if (this_ptr_00->collision_triangle_list == (CDemonTriangle *)0x0) {
                 g_CurrentFilename = "..\\core\\setcolid.cpp";
                 g_CurrentLineNumber = 0xcb;
                 core_main_c_displayErrorAndQuit_FUN_00506f10("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision");
               }
-              CStack_30.z = fStack_b8 - (pCVar3->location).position.x;
-              fStack_24 = fStack_b4 - (pCVar3->location).position.y;
-              fStack_20 = fStack_b0 - (pCVar3->location).position.z;
+              local_28 = CStack_c0.z - (pCVar3->location).position.x;
+              CStack_24.x = fStack_b4 - (pCVar3->location).position.y;
+              CStack_24.y = fStack_b0 - (pCVar3->location).position.z;
               radius = (float)position - (pCVar3->location).position.y;
               iVar5 = core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740
-                                (this_ptr_00,0,(float)&CStack_30.z,in_stack_0000003c,&radius,
+                                (this_ptr_00,0,(float)&local_28,in_stack_0000003c,&radius,
                                  (CVector3f *)&pCVar3->orient);
               if (iVar5 != 0) {
                 in_stack_00000038[0x1bc1b].x = (float)pCVar3;
@@ -254,21 +248,22 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
               if (uVar7 == 1) {
                 crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
                           (&stack0xfffffd20,8,&g_CVectorTypeInfo);
-                pfVar21 = (float *)&stack0xfffffd24;
+                pCVar20 = (CVector3f *)&stack0xfffffd24;
                 uVar7 = 0;
-                (*((pCVar3->metadata).vtable)->getBoundingBox)(pCVar3,(CBoundingBox3D *)auStack_104)
-                ;
+                (*pCVar3->vtable->getBoundingBox)(pCVar3,(CBoundingBox3D *)(auStack_10c + 8));
                 do {
-                  core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
-                            ((CBoundingBox3D *)(auStack_104 + 0x14),&CStack_30,uVar7);
-                  pfVar8 = core_actor_cpp_CDemonActor_FUN_00408ec0(pCVar3);
-                  if (pfVar21 != pfVar8) {
-                    *pfVar21 = *pfVar8;
-                    pfVar21[1] = pfVar8[1];
-                    pfVar21[2] = pfVar8[2];
+                  pCVar8 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
+                                     ((CBoundingBox3D *)(local_f8 + 8),(CVector3f *)(auStack_38 + 8)
+                                      ,uVar7);
+                  pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                                     (pCVar3,(CVector3f *)auStack_38,pCVar8);
+                  if (pCVar20 != pCVar8) {
+                    pCVar20->x = pCVar8->x;
+                    pCVar20->y = pCVar8->y;
+                    pCVar20->z = pCVar8->z;
                   }
                   uVar7 = uVar7 + 1;
-                  pfVar21 = pfVar21 + 3;
+                  pCVar20 = pCVar20 + 1;
                 } while ((int)uVar7 < 8);
                 core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                           ((CDemonTriangle *)auStack_228,(CVector3f *)&stack0xfffffd40,
@@ -289,20 +284,20 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                 }
                 core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                           ((CDemonTriangle *)auStack_170,(CVector3f *)&stack0xfffffd5c,
-                           (CVector3f *)&stack0xfffffd74,(CVector3f *)(auStack_264 + 8));
+                           (CVector3f *)&stack0xfffffd74,(CVector3f *)auStack_25c);
                 iVar10 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
                                    ((CDemonTriangle *)(auStack_170 + 4),(float)auStack_8c,
                                     in_stack_00000068,(float *)&stack0x00000034);
                 core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
-                          ((CDemonTriangle *)auStack_168,(CVector3f *)&stack0xfffffd64,&CStack_254,
-                           (CVector3f *)&stack0xfffffd94);
+                          ((CDemonTriangle *)auStack_168,(CVector3f *)&stack0xfffffd64,
+                           (CVector3f *)(auStack_25c + 8),(CVector3f *)&stack0xfffffd94);
                 iVar11 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
                                    ((CDemonTriangle *)(auStack_168 + 4),(float)auStack_84,
                                     in_stack_00000070,&stack0x0000003c);
                 if (iVar10 != 0 || iVar11 != 0) {
                   in_stack_00000028 = (CDemonSet *)-fStack_13c;
-                  in_stack_0000002c = (CVector3f *)-local_138;
-                  in_stack_00000030 = -local_134;
+                  in_stack_0000002c = (CVector3f *)-(float)local_138._0_4_;
+                  in_stack_00000030 = -(float)local_138._4_4_;
                   if (&this_ptr != &stack0x00000028) {
                     this_ptr = in_stack_00000028;
                     position = in_stack_0000002c;
@@ -311,13 +306,13 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                 }
                 core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                           ((CDemonTriangle *)auStack_198,(CVector3f *)&stack0xfffffd60,
-                           (CVector3f *)&stack0xfffffd6c,(CVector3f *)auStack_264);
+                           (CVector3f *)&stack0xfffffd6c,(CVector3f *)&stack0xfffffd9c);
                 iVar12 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
                                    ((CDemonTriangle *)(auStack_198 + 4),(float)auStack_7c,
                                     in_stack_00000078,&stack0x00000044);
                 core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                           ((CDemonTriangle *)auStack_190,(CVector3f *)&stack0xfffffd68,
-                           (CVector3f *)(auStack_264 + 8),(CVector3f *)&stack0xfffffd98);
+                           (CVector3f *)auStack_25c,(CVector3f *)&stack0xfffffd98);
                 iVar13 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
                                    ((CDemonTriangle *)(auStack_190 + 4),(float)auStack_74,
                                     in_stack_00000080,(float *)&stack0x0000004c);
@@ -332,16 +327,16 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                   }
                 }
                 core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
-                          ((CDemonTriangle *)auStack_118,(CVector3f *)&stack0xfffffd88,
+                          ((CDemonTriangle *)(local_138 + 0x20),(CVector3f *)&stack0xfffffd88,
                            (CVector3f *)auStack_248,(CVector3f *)auStack_23c);
                 iVar14 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
-                                   ((CDemonTriangle *)(auStack_118 + 4),(float)auStack_6c,
+                                   ((CDemonTriangle *)auStack_114,(float)auStack_6c,
                                     in_stack_00000088,&stack0x00000054);
                 core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
-                          ((CDemonTriangle *)auStack_110,(CVector3f *)&stack0xfffffd90,&CStack_234,
-                           (CVector3f *)auStack_264);
+                          ((CDemonTriangle *)(auStack_114 + 4),(CVector3f *)&stack0xfffffd90,
+                           &CStack_234,(CVector3f *)&stack0xfffffd9c);
                 iVar15 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
-                                   ((CDemonTriangle *)(auStack_110 + 4),(float)auStack_64,
+                                   ((CDemonTriangle *)auStack_10c,(float)auStack_64,
                                     in_stack_00000090,(float *)&stack0x0000005c);
                 if (iVar14 != 0 || iVar15 != 0) {
                   fStack_54 = -(float)local_e4._0_4_;
@@ -355,13 +350,13 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                 }
                 core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                           ((CDemonTriangle *)auStack_220,(CVector3f *)&stack0xfffffd80,
-                           (CVector3f *)&stack0xfffffd98,(CVector3f *)(auStack_264 + 8));
+                           (CVector3f *)&stack0xfffffd98,(CVector3f *)auStack_25c);
                 iVar16 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
                                    ((CDemonTriangle *)(auStack_220 + 4),(float)auStack_5c,
                                     in_stack_00000098,(float *)&stack0x00000064);
                 core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
-                          ((CDemonTriangle *)auStack_218,(CVector3f *)&stack0xfffffd88,&CStack_254,
-                           (CVector3f *)&stack0xfffffd94);
+                          ((CDemonTriangle *)auStack_218,(CVector3f *)&stack0xfffffd88,
+                           (CVector3f *)(auStack_25c + 8),(CVector3f *)&stack0xfffffd94);
                 iVar17 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
                                    ((CDemonTriangle *)(auStack_218 + 4),(float)&fStack_54,
                                     in_stack_000000a0,(float *)&stack0x0000006c);
@@ -388,11 +383,11 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                                    ((CDemonTriangle *)(auStack_198 + 4),(float)&fStack_44,
                                     in_stack_000000b0,(float *)&stack0x0000007c);
                 if (iVar18 != 0 || iVar19 != 0) {
-                  local_1c = -(float)auStack_170._4_4_;
+                  CStack_24.z = -(float)auStack_170._4_4_;
                   local_18 = -(float)auStack_168._0_4_;
                   local_14 = (CVector3f *)-(float)auStack_168._4_4_;
-                  if (&stack0x00000044 != &local_1c) {
-                    in_stack_00000044 = local_1c;
+                  if (&stack0x00000044 != &CStack_24.z) {
+                    in_stack_00000044 = CStack_24.z;
                     in_stack_00000048 = local_18;
                     in_stack_0000004c = local_14;
                   }
@@ -401,8 +396,9 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                       (iVar12 != 0 || iVar13 != 0)) || (iVar14 != 0 || iVar15 != 0)) ||
                     (iVar16 != 0 || iVar17 != 0)) || (iVar18 != 0 || iVar19 != 0)) {
                   *(CDemonActor **)(in_stack_000000ac + 0x14d144) = pCVar3;
-                  auStack_264._0_4_ = &stack0x00000044;
-                  pCVar20 = core_actor_cpp_CDemonActor_FUN_00408e80(pCVar3);
+                  pCVar20 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                                      (pCVar3,(CVector3f *)&stack0xfffffff0,
+                                       (CVector3f *)&stack0x00000044);
                   if ((CVector3f *)pfVar1 != pCVar20) {
                     *pfVar1 = pCVar20->x;
                     pCVar4[0x1bc19].x = pCVar20->y;
@@ -419,18 +415,19 @@ LAB_005722ec:
             }
             else if (2 < uVar7) {
               if (uVar7 != 3) goto LAB_005722ec;
-              core_actor_cpp_CDemonActor_FUN_00408f10(pCVar3);
+              core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                        (pCVar3,&CStack_24,&CStack_c0);
               radius = (float)this_ptr - (pCVar3->location).position.y;
-              iVar5 = (*((pCVar3->metadata).vtable)->customGetFloorHeight)
-                                (pCVar3,(float)&fStack_20,(float)in_stack_00000038,&radius);
+              iVar5 = (*pCVar3->vtable->customGetFloorHeight)
+                                (pCVar3,(float)&CStack_24.y,(float)in_stack_00000038,&radius);
               if (iVar5 != 0) {
                 *(CDemonActor **)((int)in_stack_00000054 + 0x14d144) = pCVar3;
                 in_stack_00000028 = (CDemonSet *)(in_stack_00000030 + (pCVar3->location).position.y)
                 ;
-                uStack_34 = 0x3f800000;
-                uStack_38 = 0;
-                CStack_30.x = 0.0;
-                if (pfVar1 != (float *)&uStack_38) {
+                auStack_38._4_4_ = 1.0;
+                auStack_38._0_4_ = 0.0;
+                auStack_38._8_4_ = 0.0;
+                if (pfVar1 != (float *)auStack_38) {
                   *pfVar1 = 0.0;
                   pCVar4[0x1bc19].x = 1.0;
                   pCVar4[0x1bc19].y = 0.0;
@@ -445,12 +442,12 @@ LAB_005722ec:
     }
     pCVar3 = (CDemonActor *)position[0x1bc1b].x;
     if (pCVar3 != (CDemonActor *)0x0) {
-      iVar5 = (*((pCVar3->metadata).vtable)->getGroundType)(pCVar3);
+      iVar5 = (*pCVar3->vtable->getGroundType)(pCVar3);
       *(int *)((int)in_stack_00000014 + 0x14d134) = iVar5;
       return local_18;
     }
   }
-  return fStack_24;
+  return CStack_24.x;
 }
 
 
@@ -724,7 +721,7 @@ LAB_005722ec:
 // 005719bc: LEA EAX,[ESP + 0x1f8]
 // 005719c3: PUSH EAX
 // 005719c4: PUSH EDI
-// 005719c5: CALL core_actor.cpp_CDemonActor_FUN_00409270
+// 005719c5: CALL core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
 //   XREF to: 00409270 (UNCONDITIONAL_CALL)
 // 005719ca: ADD ESP,0x10
 // 005719cd: PUSH EAX
@@ -775,7 +772,7 @@ LAB_005722ec:
 // 00571a4e: LEA EAX,[ESP + 0x290]
 // 00571a55: PUSH EAX
 // 00571a56: PUSH EDI
-// 00571a57: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00571a57: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 00571a5c: ADD ESP,0xc
 // 00571a5f: CMP EBX,EAX
@@ -1241,7 +1238,7 @@ LAB_005722ec:
 // 005720c9: LEA EAX,[ESP + 0x254]
 // 005720d0: PUSH EAX
 // 005720d1: PUSH EDI
-// 005720d2: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 005720d2: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 005720d7: ADD ESP,0xc
 // 005720da: CMP EBP,EAX
@@ -1341,7 +1338,7 @@ LAB_005722ec:
 // 00572227: LEA EAX,[ESP + 0x2c0]
 // 0057222e: PUSH EAX
 // 0057222f: PUSH EDI
-// 00572230: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 00572230: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 00572235: ADD ESP,0xc
 // 00572238: LEA EAX,[ESP + 0x2e8]

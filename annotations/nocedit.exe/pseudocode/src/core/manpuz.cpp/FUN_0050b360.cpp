@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_manpuz.cpp_FUN_0050b360()
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 
 #include "nocturne.h"
 
@@ -28,7 +28,7 @@ undefined4 core_manpuz_cpp_FUN_0050b360(void)
       (in_stack_00000004->orient).bank = in_stack_00000008[1];
       (in_stack_00000004->orient).heading = in_stack_00000008[2];
     }
-    core_actor_cpp_CDemonActor_FUN_00408c10(in_stack_00000004);
+    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
     return 1;
   }
   *(undefined4 *)(in_stack_0000000c + 0x10) = 0;
@@ -64,7 +64,7 @@ undefined4 core_manpuz_cpp_FUN_0050b360(void)
 // 0050b38e: MOV dword ptr [EAX + 0x8],EBX
 // 0050b391: PUSH ECX
 //   Label: LAB_0050b391
-// 0050b392: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 0050b392: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 0050b397: MOV EAX,0x1
 // 0050b39c: ADD ESP,0x4

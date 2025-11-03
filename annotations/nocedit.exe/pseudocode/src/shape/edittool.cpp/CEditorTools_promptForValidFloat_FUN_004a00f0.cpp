@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, float min_value, float max_value, bool show_current_value)
 // Cross-references:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040efc4 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040efc4 [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_CLightActor_FUN_00423440 (00423440) at 004234ac [UNCONDITIONAL_CALL]
 //   core_cloth.cpp_FUN_0043ddf0 (0043ddf0) at 0043dffc [UNCONDITIONAL_CALL]
 //   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 (00443040) at 0044346c [UNCONDITIONAL_CALL]
@@ -18,7 +18,7 @@
 //   core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0 (0057bbe0) at 0057c142 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_UserInputCreate_FUN_0057d660 (0057d660) at 0057e3b3 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0 (0057c5d0) at 0057cb57 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00597f2b [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597f2b [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_g_00623205
 //   TerminatedCString s_f_00623208

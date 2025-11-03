@@ -1,8 +1,8 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
 // Address: 0059fa20
 // Address Range: [[0059fa20, 0059faf3]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20()
+// Convention: __cdecl
+// Signature: CVector3f * core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20(CDeformableModelInstance * this_ptr)
 // Cross-references:
 //   core_batcreat.cpp_CBatCreature_process_FUN_00415470 (00415470) at 004156ff [UNCONDITIONAL_CALL]
 //   core_batman.cpp_CBatman_process_FUN_00416870 (00416870) at 00416e1a [UNCONDITIONAL_CALL]
@@ -27,8 +27,8 @@
 //   core_npc.cpp_CNPC_process_FUN_005448b0 (005448b0) at 00544960 [UNCONDITIONAL_CALL]
 //   core_scat.cpp_FUN_00558720 (00558720) at 00558b39 [UNCONDITIONAL_CALL]
 //   core_sentinel.cpp_FUN_00568030 (00568030) at 00568548 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModel_LoadingSomethingMemory_FUN_0059c2f0 (0059c2f0) at 0059c3ae [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_FUN_0059fdd0 (0059fdd0) at 0059fe1c [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fdd0 (0059fdd0) at 0059fe1c [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 (0059c2f0) at 0059c3ae [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a2800 (005a2800) at 005a2daf [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb4b0 (005bb4b0) at 005bb705 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bdd20 (005bdd20) at 005bdd9a [UNCONDITIONAL_CALL]
@@ -42,24 +42,22 @@
 //   core_zombie.cpp_CZombie_process_FUN_005f9470 (005f9470) at 005f9d18 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059f820
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20(undefined4 param_1,
-   undefined4 param_2, undefined4 param_3) */
-
-CVector3f * core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20(void)
+CVector3f * __cdecl
+core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20(CDeformableModelInstance *this_ptr)
 
 {
   CVector3f *input_vector;
+  int extraout_EAX;
   int iVar1;
   BADSPACEBASE *in_ESP;
   float *pfVar2;
   CMatrix3x4f *pCVar3;
   byte bVar4;
-  int in_stack_00000004;
   CVector3f *in_stack_00000008;
   int in_stack_0000000c;
   int in_stack_00000010;
@@ -68,17 +66,17 @@ CVector3f * core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20(void)
   
   bVar4 = 0;
   if (in_stack_0000000c < 0) {
-    in_stack_00000008->x = *(float *)(in_stack_00000004 + 0x6a4);
-    in_stack_00000008->y = *(float *)(in_stack_00000004 + 0x6a8);
-    in_stack_00000008->z = *(float *)(in_stack_00000004 + 0x6ac);
+    in_stack_00000008->x = *(float *)(this_ptr->field3_0x508 + 0x19c);
+    in_stack_00000008->y = *(float *)(this_ptr->field3_0x508 + 0x1a0);
+    in_stack_00000008->z = *(float *)(this_ptr->field3_0x508 + 0x1a4);
     return in_stack_00000008;
   }
-  iVar1 = core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-  input_vector = (CVector3f *)(in_stack_00000004 + 0x58 + in_stack_00000010 * 0xc);
-  if (*(int *)(in_stack_00000010 * 0x24 + iVar1 + 0x2857c) < 0) {
-    in_stack_00000008->x = input_vector->x + *(float *)(in_stack_00000004 + 0x6a4);
-    in_stack_00000008->y = input_vector->y + *(float *)(in_stack_00000004 + 0x6a8);
-    in_stack_00000008->z = input_vector->z + *(float *)(in_stack_00000004 + 0x6ac);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr);
+  input_vector = this_ptr->transformed_vertices + in_stack_00000010;
+  if (*(int *)(in_stack_00000010 * 0x24 + extraout_EAX + 0x2857c) < 0) {
+    in_stack_00000008->x = input_vector->x + *(float *)(this_ptr->field3_0x508 + 0x19c);
+    in_stack_00000008->y = input_vector->y + *(float *)(this_ptr->field3_0x508 + 0x1a0);
+    in_stack_00000008->z = input_vector->z + *(float *)(this_ptr->field3_0x508 + 0x1a4);
     return in_stack_00000008;
   }
   core_skeleton_cpp_CDeformableModelInstance_FUN_0059f820();
@@ -130,7 +128,7 @@ CVector3f * core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20(void)
 // 0059fa5e: RET
 // 0059fa5f: PUSH EDI
 //   Label: LAB_0059fa5f
-// 0059fa60: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 0059fa60: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0059fa65: ADD ESP,0x4
 // 0059fa68: MOV EDX,dword ptr [ESP + 0x7c]

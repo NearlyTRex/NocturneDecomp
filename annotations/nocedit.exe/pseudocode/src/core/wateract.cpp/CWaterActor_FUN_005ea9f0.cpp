@@ -8,8 +8,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
 
 {
@@ -68,21 +66,21 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
       iVar5 = iVar4 * iVar11;
       *(int *)this_ptr->field21_0x298 = iVar5;
       if (iVar5 < 0x3e9) break;
-      this_ptr->patch_size = this_ptr->patch_size * (float)_DAT_0065727f;
+      this_ptr->patch_size = this_ptr->patch_size * (float)DOUBLE_0065727f;
     }
     fVar1 = (this_ptr->size).x;
     fVar2 = (this_ptr->size).z;
-    local_30 = -(this_ptr->size).z * (float)_DAT_00657277;
+    local_30 = -(this_ptr->size).z * (float)DOUBLE_00657277;
     local_14 = 0;
     if (0 < iVar4) {
       dVar21 = 0.0;
       do {
         iVar13 = (int)((ulonglong)dVar21 >> 0x20);
-        local_24 = -(this_ptr->size).x * (float)_DAT_00657277;
+        local_24 = -(this_ptr->size).x * (float)DOUBLE_00657277;
         if (0 < iVar11) {
-          fVar15 = (float10)_DAT_006572a7;
-          fVar14 = (float10)_DAT_0065729f;
-          fVar16 = (float10)_DAT_00657277;
+          fVar15 = (float10)DOUBLE_006572a7;
+          fVar14 = (float10)DOUBLE_0065729f;
+          fVar16 = (float10)DOUBLE_00657277;
           fVar17 = (float10)(fVar1 / (float)iVar9);
           dVar21 = (double)CONCAT44(iVar13,this_ptr->field21_0x298 + iVar13 * 0x20 + 4);
           do {
@@ -192,16 +190,16 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
     this_ptr->field21_0x298[3] = '\0';
     iVar13 = 0;
     if (0 < *(int *)(this_ptr->field21_0x298 + 0x2af9c)) {
-      fVar15 = (float10)_DAT_006572af;
-      fVar14 = (float10)_DAT_0065729f;
-      fVar16 = (float10)_DAT_00657297;
+      fVar15 = (float10)DOUBLE_006572af;
+      fVar14 = (float10)DOUBLE_0065729f;
+      fVar16 = (float10)DOUBLE_00657297;
       do {
         fVar17 = ((float10)iVar13 / (float10)*(int *)(this_ptr->field21_0x298 + 0x2af9c)) *
-                 (float10)_DAT_00657287 * (float10)_DAT_0065727f;
+                 (float10)DOUBLE_00657287 * (float10)DOUBLE_0065727f;
         fVar18 = (float10)fcos(fVar17);
         fVar17 = (float10)fsin(fVar17);
         *(float *)(this_ptr->field21_0x298 + *(int *)this_ptr->field21_0x298 * 0x20 + 4) =
-             (float)(fVar18 * (float10)(this_ptr->size).x * (float10)_DAT_0065728f);
+             (float)(fVar18 * (float10)(this_ptr->size).x * (float10)DOUBLE_0065728f);
         pcVar8 = this_ptr->field21_0x298 + *(int *)this_ptr->field21_0x298 * 0x20 + 8;
         pcVar8[0] = '\0';
         pcVar8[1] = '\0';
@@ -209,7 +207,7 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ea9f0(CWaterActor *this_ptr)
         pcVar8[3] = '\0';
         iVar5 = *(int *)this_ptr->field21_0x298 * 0x20;
         *(float *)(this_ptr->field21_0x298 + iVar5 + 0xc) =
-             (float)(fVar17 * (float10)(this_ptr->size).z * (float10)_DAT_0065728f);
+             (float)(fVar17 * (float10)(this_ptr->size).z * (float10)DOUBLE_0065728f);
         fVar17 = ((float10)*(float *)(this_ptr->field21_0x298 +
                                      *(int *)this_ptr->field21_0x298 * 0x20 + 4) /
                  (float10)(this_ptr->size).x) * fVar16 * fVar14 + fVar15;

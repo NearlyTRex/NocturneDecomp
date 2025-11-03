@@ -8,8 +8,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_vessel_cpp_CCryptVessel_FUN_005e8fc0(CCryptVessel *this_ptr)
 
 {
@@ -27,7 +25,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_FUN_005e8fc0(CCryptVessel *this_ptr)
             ((CKeyFramedModelInstance *)&this_ptr->model_name);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(this_ptr->field14_0x3c0 + 0x2ac));
-  (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)(&this_ptr->base_actor,&CStack_1c);
+  (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&CStack_1c);
   iVar3 = *(int *)this_ptr->start_loc;
   this_ptr->field3_0x2d4 = 0;
   if (iVar3 != 0) {
@@ -35,7 +33,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_FUN_005e8fc0(CCryptVessel *this_ptr)
     fVar4 = *(float *)(iVar3 + 0x20) - (pCVar1->position).x;
     fVar5 = *(float *)(iVar3 + 0x24) - (this_ptr->base_actor).location.position.y;
     fVar6 = *(float *)(iVar3 + 0x28) - (this_ptr->base_actor).location.position.z;
-    if (SQRT(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) < (float)_DAT_00657029) {
+    if (SQRT(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) < (float)DOUBLE_00657029) {
       iVar3 = *(int *)this_ptr->start_loc;
       (pCVar1->position).x = *(float *)(iVar3 + 0x20);
       (this_ptr->base_actor).location.position.y = *(float *)(iVar3 + 0x24);

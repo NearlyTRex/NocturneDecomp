@@ -16,7 +16,7 @@
 //   CDemonActor_vtable g_CBatmanVTable
 // Function calls:
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -35,9 +35,10 @@ CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_00416450(CBatman *this_ptr)
   
   pCVar5 = (CBatman *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   pcVar6 = "none";
-  (pCVar5->base_enemy).base_character.base_actor.metadata.vtable = &g_CBatmanVTable;
+  (pCVar5->base_enemy).base_character.base_actor.vtable = &g_CBatmanVTable;
   pcVar7 = pCVar5->field1_0xbeb4 + 8;
-  core_skeleton_cpp_FUN_005a0840();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            (&(pCVar5->base_enemy).base_character.model);
   uVar3 = _DAT_0065a770;
   pCVar2 = &pCVar5->base_enemy;
   (pCVar2->base_character).cloth_data[0x344] = -0x66;
@@ -91,7 +92,7 @@ CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_00416450(CBatman *this_ptr)
 // 00416472: MOV dword ptr [EAX + -0x4],0x65a784
 //   XREF to: 0065a784 (DATA)
 // 00416479: LEA EDI,[EBX + 0xbebc]
-// 0041647f: CALL core_skeleton.cpp_FUN_005a0840
+// 0041647f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00416484: FLD float ptr [0x0065a770]
 //   XREF to: 0065a770 (READ)

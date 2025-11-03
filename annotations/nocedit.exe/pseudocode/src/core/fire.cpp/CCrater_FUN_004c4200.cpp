@@ -10,7 +10,7 @@
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   core_fire.cpp_CCrater_FUN_004c4620
+//   core_fire.cpp_CCrater_render_FUN_004c4620
 //   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
 
 #include "nocturne.h"
@@ -47,7 +47,7 @@ void __cdecl core_fire_cpp_CCrater_FUN_004c4200(CCrater *this_ptr)
     *(undefined4 *)(this_ptr->field0_0x0 + 0x10) = in_stack_00000008[1];
     *(undefined4 *)(this_ptr->field0_0x0 + 0x14) = in_stack_00000008[2];
   }
-  core_fire_cpp_CCrater_FUN_004c4620(this_ptr);
+  core_fire_cpp_CCrater_render_FUN_004c4620(this_ptr);
   this_ptr->field0_0x0[0] = '\x01';
   pCVar1 = g_CDemonSetPtr;
   this_ptr->field0_0x0[1] = '\0';
@@ -166,7 +166,7 @@ void __cdecl core_fire_cpp_CCrater_FUN_004c4200(CCrater *this_ptr)
 // 004c4226: MOV dword ptr [EAX + 0x8],EDX
 // 004c4229: PUSH ESI
 //   Label: LAB_004c4229
-// 004c422a: CALL core_fire.cpp_CCrater_FUN_004c4620
+// 004c422a: CALL core_fire.cpp_CCrater_render_FUN_004c4620
 //   XREF to: 004c4620 (UNCONDITIONAL_CALL)
 // 004c422f: ADD ESP,0x4
 // 004c4232: LEA EAX,[ESI + 0xc]

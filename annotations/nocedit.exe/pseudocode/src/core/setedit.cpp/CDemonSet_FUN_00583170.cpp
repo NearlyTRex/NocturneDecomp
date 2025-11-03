@@ -217,18 +217,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
   local_4c = 40.0;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffd94);
   local_44 = this_ptr->vdir_boxes;
-  this_ptr->field22_0x15ac80[0xc] = '\x01';
-  this_ptr->field22_0x15ac80[0xd] = '\0';
-  this_ptr->field22_0x15ac80[0xe] = '\0';
-  this_ptr->field22_0x15ac80[0xf] = '\0';
-  this_ptr->field22_0x15ac80[0x10] = '\x01';
-  this_ptr->field22_0x15ac80[0x11] = '\0';
-  this_ptr->field22_0x15ac80[0x12] = '\0';
-  this_ptr->field22_0x15ac80[0x13] = '\0';
-  this_ptr->field22_0x15ac80[4] = '\x01';
-  this_ptr->field22_0x15ac80[5] = '\0';
-  this_ptr->field22_0x15ac80[6] = '\0';
-  this_ptr->field22_0x15ac80[7] = '\0';
+  this_ptr->unk_lighting_param3 = 1;
+  this_ptr->unk_lighting_param4 = 1;
+  this_ptr->unk_lighting_param1 = 1;
   local_64 = this_ptr->cameras;
   local_6c = &g_CDemonCameraInstance.base.position.y;
   local_18 = 0;
@@ -644,18 +635,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
     if (iVar10 != 0) {
       core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      this_ptr->field22_0x15ac80[0xc] = '\0';
-      this_ptr->field22_0x15ac80[0xd] = '\0';
-      this_ptr->field22_0x15ac80[0xe] = '\0';
-      this_ptr->field22_0x15ac80[0xf] = '\0';
-      this_ptr->field22_0x15ac80[0x10] = '\0';
-      this_ptr->field22_0x15ac80[0x11] = '\0';
-      this_ptr->field22_0x15ac80[0x12] = '\0';
-      this_ptr->field22_0x15ac80[0x13] = '\0';
-      this_ptr->field22_0x15ac80[4] = '\0';
-      this_ptr->field22_0x15ac80[5] = '\0';
-      this_ptr->field22_0x15ac80[6] = '\0';
-      this_ptr->field22_0x15ac80[7] = '\0';
+      this_ptr->unk_lighting_param3 = 0;
+      this_ptr->unk_lighting_param4 = 0;
+      this_ptr->unk_lighting_param1 = 0;
       return;
     }
     if (local_3c == (SVDBox *)0x0) {

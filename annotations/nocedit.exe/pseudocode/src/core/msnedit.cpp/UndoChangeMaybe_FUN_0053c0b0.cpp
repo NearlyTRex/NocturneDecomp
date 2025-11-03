@@ -14,7 +14,7 @@
 //   TerminatedCString s_UNDO_TMP_00680800
 //   CEditorTools g_CEditorToolsPtr
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_0040b050
+//   core_actor.cpp_CDemonActor_load_FUN_0040b050
 //   core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0
 //   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 //   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -27,24 +27,25 @@
 void core_msnedit_cpp_UndoChangeMaybe_FUN_0053c0b0(void)
 
 {
-  FILE *file_ptr;
+  FILE *file_handle;
   int in_stack_00000004;
   
   if (*(int *)(in_stack_00000004 + 0x28) == 0) {
     return;
   }
   core_actor_cpp_syncActorTypeIDs_FUN_0040c7c0();
-  file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                       ("$$UNDO$$.TMP",(char *)0x0,"rt","..\\core\\msnedit.cpp",
-                        0x9ca);
-  if (file_ptr == (FILE *)0x0) {
+  file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0
+                          ("$$UNDO$$.TMP",(char *)0x0,"rt","..\\core\\msnedit.cpp"
+                           ,0x9ca);
+  if (file_handle == (FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s.","$$UNDO$$.TMP");
     return;
   }
-  core_actor_cpp_CDemonActor_FUN_0040b050(*(CDemonActor **)(in_stack_00000004 + 0x28));
+  core_actor_cpp_CDemonActor_load_FUN_0040b050
+            (*(CDemonActor **)(in_stack_00000004 + 0x28),file_handle);
   (*(code *)**(undefined4 **)(*(int *)(in_stack_00000004 + 0x28) + 0x154))();
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\msnedit.cpp",0x9d1);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\msnedit.cpp",0x9d1);
   return;
 }
 
@@ -97,7 +98,7 @@ void core_msnedit_cpp_UndoChangeMaybe_FUN_0053c0b0(void)
 //   Label: LAB_0053c104
 // 0053c105: MOV ECX,dword ptr [ESI + 0x28]
 // 0053c108: PUSH ECX
-// 0053c109: CALL core_actor.cpp_CDemonActor_FUN_0040b050
+// 0053c109: CALL core_actor.cpp_CDemonActor_load_FUN_0040b050
 //   XREF to: 0040b050 (UNCONDITIONAL_CALL)
 // 0053c10e: ADD ESP,0x8
 // 0053c111: MOV EAX,dword ptr [ESI + 0x28]

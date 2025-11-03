@@ -1,10 +1,10 @@
 // Name: core_skeleton.cpp_CSkeleton_load_FUN_00599b10
 // Address: 00599b10
 // Address Range: [[00599b10, 00599ba0]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CSkeleton_load_FUN_00599b10()
+// Convention: __cdecl
+// Signature: void core_skeleton.cpp_CSkeleton_load_FUN_00599b10(CSkeleton * this_ptr, char * filename)
 // Cross-references:
-//   core_skeleton.cpp_LoadSkeleton_FUN_005a1df0 (005a1df0) at 005a1e86 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_loadSkeleton_FUN_005a1df0 (005a1df0) at 005a1e86 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_rt_0064e29e
 //   TerminatedCString s_data_0064e2a1
@@ -21,21 +21,17 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_skeleton.cpp_CSkeleton_load(CSkeleton* pSkeleton, undefined4
-   sFilename) */
-
-void core_skeleton_cpp_CSkeleton_load_FUN_00599b10(void)
+void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00599b10(CSkeleton *this_ptr,char *filename)
 
 {
   char cVar1;
-  FILE *file_ptr;
+  FILE *file_handle;
   char *pcVar2;
   char *pcVar3;
-  int in_stack_00000004;
-  char *in_stack_00000008;
+  CSkeleton *in_stack_0000000c;
   
-  pcVar3 = (char *)(in_stack_00000004 + 0x28508);
-  pcVar2 = in_stack_00000008;
+  pcVar3 = this_ptr->loaded_filename;
+  pcVar2 = filename;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;
@@ -45,15 +41,14 @@ void core_skeleton_cpp_CSkeleton_load_FUN_00599b10(void)
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  file_ptr = engine_dosio_c_getFile_FUN_00481a50("data",in_stack_00000008,"rt");
-  if (file_ptr == (FILE *)0x0) {
+  file_handle = engine_dosio_c_getFile_FUN_00481a50("data",filename,"rt");
+  if (file_handle == (FILE *)0x0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0xf6;
-    core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("CSkeleton::load - Can't open %s",in_stack_00000008);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("CSkeleton::load - Can't open %s",filename);
   }
-  core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0();
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\skeleton.cpp",0xf8);
+  core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(in_stack_0000000c,file_handle);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\skeleton.cpp",0xf8);
   return;
 }
 

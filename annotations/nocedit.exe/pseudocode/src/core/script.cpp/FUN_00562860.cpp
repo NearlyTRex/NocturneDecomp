@@ -22,7 +22,8 @@ void core_script_cpp_FUN_00562860(void)
   if (iVar1 == 0) {
     return;
   }
-  core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
+  core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0((CMotionController *)(iVar1 + 0x158))
+  ;
   return;
 }
 

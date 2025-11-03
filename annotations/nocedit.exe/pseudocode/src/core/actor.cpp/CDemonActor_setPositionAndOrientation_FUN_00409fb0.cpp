@@ -9,7 +9,7 @@
 //   TerminatedCString s_core_actor_cpp_006139ad
 // Function calls:
 //   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 
 #include "nocturne.h"
 
@@ -28,7 +28,7 @@ core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0
     (this_ptr->orient).bank = new_orientation->y;
     (this_ptr->orient).heading = new_orientation->z;
   }
-  core_actor_cpp_CDemonActor_FUN_00408c10(this_ptr);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(this_ptr);
   return;
 }
 
@@ -70,7 +70,7 @@ core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0
 // 00409ff9: MOV dword ptr [EAX + 0x8],EDX
 // 00409ffc: PUSH EBX
 //   Label: LAB_00409ffc
-// 00409ffd: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 00409ffd: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 0040a002: ADD ESP,0x4
 // 0040a005: POP EDI

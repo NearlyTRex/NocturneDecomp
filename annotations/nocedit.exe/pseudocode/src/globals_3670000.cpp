@@ -4,5 +4,6 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x3670000
 // =============================================================================
 
-CVector3f[5000] DAT_0367517c = {};
+int[4000] g_VertexRemapTable = {};
+CVector3f[5000] g_FloatVertexArray = {};
 

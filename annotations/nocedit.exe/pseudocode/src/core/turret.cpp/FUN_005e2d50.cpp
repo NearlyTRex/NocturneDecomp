@@ -21,8 +21,8 @@
 //   undefined4 g_CDemonSetInstance.actor_list_data[0]
 //   undefined4 DAT_032613d4
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
 //   core_box.cpp_CBoundingBox3D_expand_FUN_00420240
 //   core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0
@@ -63,14 +63,14 @@ void core_turret_cpp_FUN_005e2d50(void)
   undefined4 uStack_9c;
   undefined4 uStack_98;
   undefined4 uStack_94;
-  CVector3f aCStack_90 [2];
-  CVector3f aCStack_78 [3];
-  undefined1 auStack_54 [8];
-  float fStack_4c;
+  CVector3f CStack_90;
+  CVector3f CStack_84;
+  CVector3f CStack_78;
+  CVector3f aCStack_6c [2];
+  CVector3f CStack_54;
   CVector3f CStack_48;
-  undefined1 auStack_3c [8];
-  float fStack_34;
-  float fStack_1c;
+  CVector3f aCStack_3c [2];
+  CVector3f CStack_24;
   float fStack_18;
   char *pcStack_14;
   
@@ -83,10 +83,10 @@ void core_turret_cpp_FUN_005e2d50(void)
   corner_index = 0;
   core_box_cpp_CBoundingBox3D_reset_FUN_00420fb0((CBoundingBox3D *)(auStack_d8 + 0xc));
   do {
-    core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(&local_b4,aCStack_78,corner_index);
-    pCVar1 = (CVector3f *)
-             core_actor_cpp_CDemonActor_FUN_00408ec0
-                       (*(CDemonActor **)(in_stack_00000004[5].create_event + 0x50));
+    pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(&local_b4,&CStack_78,corner_index);
+    pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                       (*(CDemonActor **)(in_stack_00000004[5].create_event + 0x50),aCStack_6c,
+                        pCVar1);
     corner_index = corner_index + 1;
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)(auStack_d8 + 0xc),pCVar1);
   } while ((int)corner_index < 8);
@@ -94,9 +94,9 @@ void core_turret_cpp_FUN_005e2d50(void)
   uStack_9c = 0x41700000;
   uStack_98 = 0x41700000;
   uStack_94 = 0x41700000;
-  aCStack_90[0].x = 999.0;
-  aCStack_90[0].y = 999.0;
-  aCStack_90[0].z = 999.0;
+  CStack_90.x = 999.0;
+  CStack_90.y = 999.0;
+  CStack_90.z = 999.0;
   auStack_d8._12_4_ = (float)auStack_d8._12_4_ + _DAT_00656778;
   fStack_c8 = fStack_c8 + _DAT_00656778;
   fStack_c4 = fStack_c4 + _DAT_00656778;
@@ -108,10 +108,10 @@ void core_turret_cpp_FUN_005e2d50(void)
   do {
     while( true ) {
       if ((int)g_CDemonSetPtr->actor_list_ptr <= iVar5) {
-        if ((int)aCStack_90[0].y < 0x42c60001) {
+        if ((int)CStack_90.y < 0x42c60001) {
           core_turret_cpp_FUN_005e3280();
           if (in_stack_00000004[2].orient_matrix.m[1].z <= 0.0) {
-            (*(in_stack_00000004->metadata).vtable[1].renderTransparent)(in_stack_00000004);
+            (*in_stack_00000004->vtable[1].renderTransparent)(in_stack_00000004);
           }
           in_stack_00000004[6].orient_matrix.m[2].z = 1.0;
           return;
@@ -131,48 +131,48 @@ LAB_005e2ed6:
       iVar5 = iVar5 + 1;
       iVar4 = iVar4 + 4;
     }
-    iVar2 = (*((actor_ptr->metadata).vtable)->isActiveTarget)(actor_ptr);
+    iVar2 = (*actor_ptr->vtable->isActiveTarget)(actor_ptr);
     if (iVar2 == 0) goto LAB_005e2ed6;
     crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
               (&stack0xfffffea8,10,&g_CVectorTypeInfo);
-    iVar2 = (*((actor_ptr->metadata).vtable)->getTargetPoints)
-                      (actor_ptr,(CVector3f *)&stack0xfffffea8);
+    iVar2 = (*actor_ptr->vtable->getTargetPoints)(actor_ptr,(CVector3f *)&stack0xfffffea8);
     if (iVar2 < 1) {
-      pCVar3 = (*((actor_ptr->metadata).vtable)->getBoundingBox)
-                         (actor_ptr,(CBoundingBox3D *)auStack_d8);
-      fStack_1c = (pCVar3->min).x + (pCVar3->max).x;
+      pCVar3 = (*actor_ptr->vtable->getBoundingBox)(actor_ptr,(CBoundingBox3D *)auStack_d8);
+      CStack_24.z = (pCVar3->min).x + (pCVar3->max).x;
       fStack_18 = (pCVar3->min).y + (pCVar3->max).y;
-      fStack_4c = fStack_1c * _DAT_00656780;
+      CStack_54.z = CStack_24.z * _DAT_00656780;
       pcStack_14 = (char *)((pCVar3->min).z + (pCVar3->max).z);
       CStack_48.x = fStack_18 * _DAT_00656780;
       CStack_48.y = (float)pcStack_14 * _DAT_00656780;
-      if (&fStack_148 != &fStack_4c) {
-        fStack_148 = fStack_4c;
+      if (&fStack_148 != &CStack_54.z) {
+        fStack_148 = CStack_54.z;
         fStack_144 = CStack_48.x;
         fStack_140 = CStack_48.y;
       }
     }
-    core_actor_cpp_CDemonActor_FUN_00408ec0(actor_ptr);
-    pCVar1 = core_actor_cpp_CDemonActor_FUN_00408f10
-                       (*(CDemonActor **)(in_stack_00000004[5].create_event + 0x50));
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (actor_ptr,&CStack_54,(CVector3f *)&stack0xfffffea4);
+    pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                       (*(CDemonActor **)(in_stack_00000004[5].create_event + 0x50),&CStack_24,
+                        &CStack_54);
     if (((pCVar1->x < local_b4.min.x) || (pCVar1->y < local_b4.min.y)) ||
        ((pCVar1->z < local_b4.min.z ||
         (((local_b4.max.x < pCVar1->x || (local_b4.max.y < pCVar1->y)) ||
          (local_b4.max.z < pCVar1->z)))))) goto LAB_005e2ed6;
-    pCVar1 = core_actor_cpp_CDemonActor_FUN_00408f10(in_stack_00000004);
+    pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                       (in_stack_00000004,&CStack_84,&CStack_54);
     core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_48,pCVar1);
     if (((CStack_48.x < DAT_00664b6c) || (DAT_00664b70 < CStack_48.x)) ||
-       (SQRT(aCStack_90[0].z * aCStack_90[0].z +
-             aCStack_90[0].x * aCStack_90[0].x + aCStack_90[0].y * aCStack_90[0].y) <
+       (SQRT(CStack_90.z * CStack_90.z + CStack_90.x * CStack_90.x + CStack_90.y * CStack_90.y) <
         SQRT(CStack_48.z * CStack_48.z + CStack_48.x * CStack_48.x + CStack_48.y * CStack_48.y)))
     goto LAB_005e2ed6;
-    if (aCStack_90 != &CStack_48) {
-      aCStack_90[0].x = CStack_48.x;
-      aCStack_90[0].y = CStack_48.y;
-      aCStack_90[0].z = CStack_48.z;
+    if (&CStack_90 != &CStack_48) {
+      CStack_90.x = CStack_48.x;
+      CStack_90.y = CStack_48.y;
+      CStack_90.z = CStack_48.z;
     }
-    if (auStack_3c == auStack_54) goto LAB_005e2ed6;
-    fStack_34 = fStack_4c;
+    if (aCStack_3c == &CStack_54) goto LAB_005e2ed6;
+    aCStack_3c[0].z = CStack_54.z;
     iVar5 = iVar5 + 1;
     iVar4 = iVar4 + 4;
   } while( true );
@@ -220,7 +220,7 @@ LAB_005e2ed6:
 // 005e2db9: PUSH EAX
 // 005e2dba: MOV EDI,dword ptr [ESI + 0x780]
 // 005e2dc0: PUSH EDI
-// 005e2dc1: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005e2dc1: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005e2dc6: ADD ESP,0xc
 // 005e2dc9: PUSH EAX
@@ -432,7 +432,7 @@ LAB_005e2ed6:
 // 005e3036: LEA EAX,[ESP + 0x10c]
 // 005e303d: PUSH EAX
 // 005e303e: PUSH EBX
-// 005e303f: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005e303f: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005e3044: ADD ESP,0xc
 // 005e3047: LEA EAX,[ESP + 0x108]
@@ -441,7 +441,7 @@ LAB_005e2ed6:
 // 005e3056: PUSH EAX
 // 005e3057: MOV EDX,dword ptr [ESI + 0x780]
 // 005e305d: PUSH EDX
-// 005e305e: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 005e305e: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 005e3063: ADD ESP,0xc
 // 005e3066: MOV EBX,EAX
@@ -486,7 +486,7 @@ LAB_005e2ed6:
 // 005e30e0: LEA EAX,[ESP + 0xdc]
 // 005e30e7: PUSH EAX
 // 005e30e8: PUSH ESI
-// 005e30e9: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 005e30e9: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 005e30ee: ADD ESP,0xc
 // 005e30f1: PUSH EAX

@@ -29,13 +29,14 @@ void core_scat_cpp_FUN_00557d20(void)
   float in_stack_ffffffbc;
   
   do {
-    iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610();
+    iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&(in_stack_00000004->model).motion_controller);
     if (iVar1 == 100) {
       this_ptr = core_actor_cpp_castToClassHash_FUN_0040c790
                            (in_stack_00000004->grabbed_by,g_CEnemyClassInfo.name_hash);
       if (this_ptr != (CDemonActor *)0x0) {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffffb8);
-        (*(this_ptr->metadata).vtable[1].playAmbientSoundWithVolume)
+        (*this_ptr->vtable[1].playAmbientSoundWithVolume)
                   (this_ptr,&stack0xffffffbc,in_stack_ffffffbc);
       }
     }

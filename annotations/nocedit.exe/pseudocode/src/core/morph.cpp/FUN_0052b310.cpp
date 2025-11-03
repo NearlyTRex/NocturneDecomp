@@ -18,8 +18,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_morph.cpp_FUN_0052b310(undefined4 param_1) */
-
 void core_morph_cpp_FUN_0052b310(void)
 
 {

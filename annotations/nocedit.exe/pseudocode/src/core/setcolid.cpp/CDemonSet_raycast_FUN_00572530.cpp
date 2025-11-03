@@ -5,7 +5,7 @@
 // Signature: float core_setcolid.cpp_CDemonSet_raycast_FUN_00572530(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
 // Cross-references:
 //   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 (0040a210) at 0040a742 [UNCONDITIONAL_CALL]
-//   core_crossbow.cpp_FUN_00448f20 (00448f20) at 004490c8 [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_FUN_00448f20 (00448f20) at 004490c8 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireEffect_FUN_004c8230 (004c8230) at 004c8313 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d4190 (004d4190) at 004d4651 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d6260 (004d6260) at 004d64c4 [UNCONDITIONAL_CALL]
@@ -82,11 +82,11 @@ core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
     fVar6 = *pfVar1;
     fVar7 = ray_origin->y;
     fVar8 = ray_origin->z;
-    if (&this_ptr->collision_result_vec3 != (CVector3f *)local_18) {
-      (this_ptr->collision_result_vec3).x =
+    if (&this_ptr->collision_impact_position != (CVector3f *)local_18) {
+      (this_ptr->collision_impact_position).x =
            ray_origin->x + (ray_target->x - ray_origin->x) * *pfVar1;
-      (this_ptr->collision_result_vec3).y = fVar7 + (fVar9 - fVar2) * fVar5;
-      (this_ptr->collision_result_vec3).z = fVar8 + (fVar3 - fVar4) * fVar6;
+      (this_ptr->collision_impact_position).y = fVar7 + (fVar9 - fVar2) * fVar5;
+      (this_ptr->collision_impact_position).z = fVar8 + (fVar3 - fVar4) * fVar6;
       return this_ptr->raycast_distance;
     }
   }

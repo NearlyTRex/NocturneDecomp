@@ -6,8 +6,8 @@
 // Cross-references:
 //   core_curtain.cpp_FUN_0044a920 (0044a920) at 0044b043 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00619c0a
-//   undefined4 DAT_00619c12
+//   double DOUBLE_00619c0a = -0.5
+//   double DOUBLE_00619c12 = 0.0100000000000000
 //   undefined4 DAT_008879bc
 //   CVector3f[100] DAT_008879c0
 //   undefined4 DAT_008879c4
@@ -19,7 +19,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_curtain.cpp_FUN_00449fc0(undefined4 param_1, undefined4
    param_2) */
 
@@ -68,27 +67,27 @@ void core_curtain_cpp_FUN_00449fc0(void)
     pfVar2 = (float *)(in_stack_00000008 + 0x2c);
     iVar11 = 0;
     pfVar13 = (float *)(in_stack_00000004 + 0x1c728);
-    local_1c = &DAT_00887e70[0].cylinder_top_y;
+    local_1c = &DAT_00887e70[0].cylinder_radius;
     do {
-      if (((((float)_DAT_00619c0a <= *(float *)(in_stack_00000008 + 0x30)) ||
+      if (((((float)DOUBLE_00619c0a <= *(float *)(in_stack_00000008 + 0x30)) ||
            (fVar6 = *(float *)((int)&DAT_008879c0[0].y + iVar11) +
-                    DAT_00887e70[local_18].cylinder_bottom_y,
+                    DAT_00887e70[local_18].cylinder_top_y,
            fVar6 <= *(float *)(in_stack_00000008 + 0x24))) ||
           (*(float *)(in_stack_00000008 + 0x24) <= *(float *)((int)&DAT_008879c0[0].y + iVar11))) ||
          (fVar5 = *(float *)(in_stack_00000008 + 0x20) -
                   *(float *)((int)&DAT_008879c0[0].x + iVar11),
          fVar3 = *(float *)(in_stack_00000008 + 0x28) - *(float *)((int)&DAT_008879c0[0].z + iVar11)
-         , DAT_00887e70[local_18].cylinder_top_y <= SQRT(fVar3 * fVar3 + fVar5 * fVar5))) {
+         , DAT_00887e70[local_18].cylinder_radius <= SQRT(fVar3 * fVar3 + fVar5 * fVar5))) {
         if ((*(float *)((int)&DAT_008879c0[0].y + iVar11) <= *(float *)(in_stack_00000008 + 0x24))
            && (fVar6 = *(float *)((int)&DAT_008879c0[0].y + iVar11) +
-                       DAT_00887e70[local_18].cylinder_bottom_y,
+                       DAT_00887e70[local_18].cylinder_top_y,
               *(float *)(in_stack_00000008 + 0x24) <= fVar6)) {
           local_104[0] = *(float *)(in_stack_00000008 + 0x20) -
                          *(float *)((int)&DAT_008879c0[0].x + iVar11);
           local_fc = *(float *)(in_stack_00000008 + 0x28) -
                      *(float *)((int)&DAT_008879c0[0].z + iVar11);
           fVar5 = SQRT(local_104[0] * local_104[0] + local_fc * local_fc);
-          if (fVar5 <= DAT_00887e70[local_18].cylinder_top_y) {
+          if (fVar5 <= DAT_00887e70[local_18].cylinder_radius) {
             if (*(float *)(in_stack_00000008 + 0x3c) < fVar6) {
               if (*(float *)((int)&DAT_008879c0[0].y + iVar11) <
                   *(float *)(in_stack_00000008 + 0x3c)) {
@@ -199,7 +198,7 @@ void core_curtain_cpp_FUN_00449fc0(void)
         *(float *)(in_stack_00000008 + 0x30) = *(float *)(in_stack_00000008 + 0x30) - fVar9 * fVar3;
         *(float *)(in_stack_00000008 + 0x34) = *(float *)(in_stack_00000008 + 0x34) - fVar7 * fVar4;
       }
-      if ((fVar5 < fVar6) && ((float)_DAT_00619c12 < fVar5)) {
+      if ((fVar5 < fVar6) && ((float)DOUBLE_00619c12 < fVar5)) {
         fVar6 = fVar6 - fVar5;
         fVar5 = 1.0 / fVar5;
         fVar3 = local_e0 * fVar6 * fVar5 * *pfVar13;

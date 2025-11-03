@@ -29,6 +29,7 @@ void core_zombie_cpp_CZombie_FUN_005fc4f0(void)
 
 {
   int iVar1;
+  CMotionList *this_ptr;
   undefined4 uVar2;
   int in_stack_00000004;
   int in_stack_00000008;
@@ -42,7 +43,8 @@ void core_zombie_cpp_CZombie_FUN_005fc4f0(void)
   }
   *(undefined4 *)(in_stack_00000004 + 0xbe38) = 0x3f99999a;
   if (0.0 < *(float *)(in_stack_00000004 + 0x243c)) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              ((CMotionController *)(in_stack_00000004 + 0x158));
     if (*(float *)(in_stack_00000004 + 0xbf94) <= 0.0) {
       *(undefined4 *)(in_stack_00000004 + 0xbf94) = 0x40000000;
       iVar1 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
@@ -62,17 +64,20 @@ void core_zombie_cpp_CZombie_FUN_005fc4f0(void)
   }
   else {
     *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
-    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
+                      ((CMotionController *)(in_stack_00000004 + 0x158));
     if ((*(int *)(iVar1 + 0x24) != 8) && (*(int *)(iVar1 + 0x24) != 7)) {
       core_zombie_cpp_CZombie_FUN_005fbde0();
       if ((*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbf90) * 4) == 0) &&
          ((*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbf80) * 4) != 0 ||
           (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbf78) * 4) != 0))))
       {
-        core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
-        core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460();
+        this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                             ((CMotionController *)(in_stack_00000004 + 0x158));
+        core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr);
       }
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                ((CMotionController *)(in_stack_00000004 + 0x158));
       sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
       (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
       (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0xa0))();

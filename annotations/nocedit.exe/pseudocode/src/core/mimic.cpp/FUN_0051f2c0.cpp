@@ -16,7 +16,7 @@
 //   core_backgnd.cpp_freeFlames_FUN_00412720
 //   core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00
 //   core_cloth.cpp_FUN_0043bf80
-//   core_morph.cpp_FUN_0052b330
+//   core_morph.cpp_CMorphModel_FUN_0052b330
 //   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40
 //   crt_memory.c_free_FUN_005fe659
 //   crt_memory.c_freeSingleInstance_FUN_005fe632
@@ -40,7 +40,7 @@ CMimic * __cdecl core_mimic_cpp_FUN_0051f2c0(CMimic *this_ptr,uint d1)
     return this_ptr;
   }
   iVar1 = *(int *)(this_ptr->field3_0x4bdf8 + 0xc5c);
-  (this_ptr->field0_0x0).base_character.base_actor.metadata.vtable =
+  (this_ptr->field0_0x0).base_character.base_actor.vtable =
        &PTR_core_mimic_cpp_CMimic_setup_FUN_0051f3e0_00661424;
   g_CurrentDebugFilename = "..\\core\\mimic.cpp";
   g_CurrentDebugLine = 0xa9;
@@ -51,7 +51,7 @@ CMimic * __cdecl core_mimic_cpp_FUN_0051f2c0(CMimic *this_ptr,uint d1)
   this_ptr->field3_0x4bdf8[0xc5d] = '\0';
   this_ptr->field3_0x4bdf8[0xc5e] = '\0';
   this_ptr->field3_0x4bdf8[0xc5f] = '\0';
-  core_morph_cpp_FUN_0052b330();
+  core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)(this_ptr->field3_0x4bdf8 + 0x2c));
   iVar1 = core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
   iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(iVar1 + -0x8bb8));
   iVar1 = core_backgnd_cpp_freeFires_FUN_00412700((SFire **)(iVar1 + -0x4b0));
@@ -63,7 +63,7 @@ CMimic * __cdecl core_mimic_cpp_FUN_0051f2c0(CMimic *this_ptr,uint d1)
                       (uint)this_ptr);
   ptr = (CMimic *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar2[-1].padding_0x0 + 0x215c),1);
+                  ((CDemonActor *)(pCVar2[-1].part_visibility_flags + 7),1);
   if ((d1 & 2) == 0) {
     return ptr;
   }
@@ -104,7 +104,7 @@ CMimic * __cdecl core_mimic_cpp_FUN_0051f2c0(CMimic *this_ptr,uint d1)
 // 0051f30e: ADD EBX,0x4be24
 // 0051f314: PUSH EBX
 // 0051f315: MOV dword ptr [EBX + 0xc30],0x0
-// 0051f31f: CALL core_morph.cpp_FUN_0052b330
+// 0051f31f: CALL core_morph.cpp_CMorphModel_FUN_0052b330
 //   XREF to: 0052b330 (UNCONDITIONAL_CALL)
 // 0051f324: ADD ESP,0x8
 // 0051f327: PUSH 0x0

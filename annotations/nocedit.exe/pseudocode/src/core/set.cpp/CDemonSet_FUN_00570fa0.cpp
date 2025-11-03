@@ -5,7 +5,7 @@
 // Signature: void core_set.cpp_CDemonSet_FUN_00570fa0(CDemonSet * this_ptr)
 // Cross-references:
 //   core_drip.cpp_FUN_0048e2a0 (0048e2a0) at 0048e438 [UNCONDITIONAL_CALL]
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ad3c4 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ad3c4 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CExplosion_FUN_004c3970 (004c3970) at 004c39b6 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireEffect_FUN_004c8f50 (004c8f50) at 004c8fc6 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireEffect_FUN_004c8fd0 (004c8fd0) at 004c904a [UNCONDITIONAL_CALL]

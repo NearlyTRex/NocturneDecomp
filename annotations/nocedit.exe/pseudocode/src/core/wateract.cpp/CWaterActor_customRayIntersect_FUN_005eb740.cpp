@@ -34,8 +34,7 @@ float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740(CWat
   float fStack_18;
   float fStack_14;
   
-  this_ptr_00 = (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
-                          (&this_ptr->base_actor,local_50);
+  this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,local_50);
   fVar2 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
                     (this_ptr_00,in_stack_ffffff68,in_stack_ffffff6c,in_stack_ffffff70);
   if ((fVar2 < 0.0) || (1.0 < fVar2)) {

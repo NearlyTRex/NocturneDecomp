@@ -9,8 +9,8 @@
 // Globals:
 //   double DOUBLE_00616797 = 1.01000000000000
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ea0
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
 //   core_boxactor.cpp_FUN_004218d0
 //   core_boxactor.cpp_FUN_00422590
@@ -30,7 +30,8 @@ void core_boxactor_cpp_FUN_00422390(void)
   float fVar5;
   BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  float *in_stack_0000000c;
+  CVector3f *in_stack_00000008;
+  CVector3f *in_stack_0000000c;
   undefined1 local_48 [8];
   float local_40;
   float fStack_3c;
@@ -40,10 +41,12 @@ void core_boxactor_cpp_FUN_00422390(void)
   float fStack_14;
   float fStack_10;
   
-  core_actor_cpp_CDemonActor_FUN_00408f10(in_stack_00000004);
-  core_actor_cpp_CDemonActor_FUN_00408ea0(in_stack_00000004);
+  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+            (in_stack_00000004,(CVector3f *)local_48,in_stack_00000008);
+  core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+            (in_stack_00000004,&local_20,in_stack_0000000c);
   if (fStack_14 * fStack_38 + local_20.y * local_40 + local_20.z * fStack_3c < 0.0) {
-    (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+    (*in_stack_00000004->vtable->getBoundingBox)
               (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffa8);
     fVar5 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
                       ((CBoundingBox3D *)(local_48 + 4),&CStack_2c,(CVector3f *)&stack0xfffffff8,
@@ -51,9 +54,9 @@ void core_boxactor_cpp_FUN_00422390(void)
     local_48 = (undefined1  [8])(double)fVar5;
     if ((0.0 <= (double)local_48) && ((double)local_48 < 1.0)) {
       fVar5 = (float)DOUBLE_00616797 - fVar5;
-      fStack_10 = *in_stack_0000000c * fVar5;
-      fVar1 = in_stack_0000000c[1];
-      fVar2 = in_stack_0000000c[2];
+      fStack_10 = in_stack_0000000c->x * fVar5;
+      fVar1 = in_stack_0000000c->y;
+      fVar2 = in_stack_0000000c->z;
       fVar3 = (in_stack_00000004->location).position.y;
       (in_stack_00000004->location).position.x =
            (in_stack_00000004->location).position.x + fStack_10;
@@ -89,7 +92,7 @@ void core_boxactor_cpp_FUN_00422390(void)
 //   XREF to: Stack[-0x48] (DATA)
 // 004223a9: PUSH EAX
 // 004223aa: PUSH EBX
-// 004223ab: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 004223ab: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 004223b0: ADD ESP,0xc
 // 004223b3: PUSH ESI
@@ -97,7 +100,7 @@ void core_boxactor_cpp_FUN_00422390(void)
 //   XREF to: Stack[-0x24] (DATA)
 // 004223b8: PUSH EAX
 // 004223b9: PUSH EBX
-// 004223ba: CALL core_actor.cpp_CDemonActor_FUN_00408ea0
+// 004223ba: CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 //   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
 // 004223bf: ADD ESP,0xc
 // 004223c2: FLD float ptr [ESP + 0x48]

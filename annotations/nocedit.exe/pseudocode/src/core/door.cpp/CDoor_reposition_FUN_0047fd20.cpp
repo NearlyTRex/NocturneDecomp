@@ -19,9 +19,9 @@
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
-//   core_actor.cpp_CDemonActor_FUN_00408e80
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -33,8 +33,7 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
 {
   CLocation *pCVar1;
   float fVar2;
-  float *pfVar3;
-  CVector3f *pCVar4;
+  CVector3f *pCVar3;
   BADSPACEBASE *in_ESP;
   float fStack00000008;
   float fStack0000000c;
@@ -45,20 +44,18 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
   float fStack_a4;
   float fStack_a0;
   CVector3f aCStack_90 [2];
-  undefined4 uStack_78;
-  undefined4 uStack_74;
-  undefined4 uStack_70;
+  CVector3f CStack_78;
   float fStack_6c;
   float fStack_68;
   float fStack_64;
-  float fStack_48;
-  float fStack_44;
-  float fStack_40;
-  undefined4 uStack_30;
-  undefined4 uStack_2c;
-  undefined4 uStack_28;
+  CVector3f CStack_60;
+  CVector3f CStack_54;
+  CVector3f CStack_48;
+  CVector3f CStack_3c;
+  CVector3f CStack_30;
+  CVector3f CStack_24;
   
-  (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
+  (*((this_ptr->base_actor).vtable)->getBoundingBox)
             (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffff38);
   switch(this_ptr->door_type) {
   case 0:
@@ -74,7 +71,7 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
       fVar2 = (this_ptr->orig_orient).y - this_ptr->param * (float)DOUBLE_00621139;
     }
     (this_ptr->base_actor).orient.bank = fVar2;
-    core_actor_cpp_CDemonActor_FUN_00408c10(&this_ptr->base_actor);
+    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base_actor);
     if (ABS(fStack_b4) <= ABS(fStack_a8)) {
       fVar2 = fStack_a8 + (float)DOUBLE_00621149;
     }
@@ -90,14 +87,16 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
     this_ptr->field17_0x9bc[9] = '\0';
     this_ptr->field17_0x9bc[10] = '\0';
     this_ptr->field17_0x9bc[0xb] = '\0';
-    pfVar3 = core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr->base_actor);
+    pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                       (&this_ptr->base_actor,&CStack_3c,(CVector3f *)this_ptr->field17_0x9bc);
     break;
   case 1:
     (this_ptr->base_actor).location.position.y = (this_ptr->orig_pos).y + this_ptr->param;
-    uStack_2c = 0x40600000;
-    uStack_30 = 0;
-    uStack_28 = 0;
-    pfVar3 = core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr->base_actor);
+    CStack_30.y = 3.5;
+    CStack_30.x = 0.0;
+    CStack_30.z = 0.0;
+    pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                       (&this_ptr->base_actor,&CStack_60,&CStack_30);
     break;
   case 2:
     if (this_ptr->door_side == 1) {
@@ -108,27 +107,29 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
     }
     aCStack_90[0].y = 0.0;
     aCStack_90[0].z = 0.0;
-    pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+    pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        (&(this_ptr->base_actor).orient_matrix,(CVector3f *)&stack0xffffffe8,
                         aCStack_90);
-    fStack_6c = (this_ptr->orig_pos).x + pCVar4->x;
-    fStack_68 = (this_ptr->orig_pos).y + pCVar4->y;
-    fStack_64 = (this_ptr->orig_pos).z + pCVar4->z;
+    fStack_6c = (this_ptr->orig_pos).x + pCVar3->x;
+    fStack_68 = (this_ptr->orig_pos).y + pCVar3->y;
+    fStack_64 = (this_ptr->orig_pos).z + pCVar3->z;
     (this_ptr->base_actor).location.position.x = fStack_6c;
     (this_ptr->base_actor).location.position.y = fStack_68;
     (this_ptr->base_actor).location.position.z = fStack_64;
-    uStack_78 = 0;
-    uStack_74 = 0x40600000;
-    uStack_70 = 0;
-    pfVar3 = core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr->base_actor);
+    CStack_78.x = 0.0;
+    CStack_78.y = 3.5;
+    CStack_78.z = 0.0;
+    pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                       (&this_ptr->base_actor,&CStack_54,&CStack_78);
     break;
   case 3:
     (this_ptr->base_actor).orient.pitch = this_ptr->param * (float)DOUBLE_00621139;
-    core_actor_cpp_CDemonActor_FUN_00408c10(&this_ptr->base_actor);
-    fStack_48 = (fStack_b4 + fStack_a8) * FLOAT_00621141;
-    fStack_44 = (fStack_b0 + fStack_a4) * FLOAT_00621141;
-    fStack_40 = (fStack_ac + fStack_a0) * FLOAT_00621141;
-    pfVar3 = core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr->base_actor);
+    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base_actor);
+    CStack_48.x = (fStack_b4 + fStack_a8) * FLOAT_00621141;
+    CStack_48.y = (fStack_b0 + fStack_a4) * FLOAT_00621141;
+    CStack_48.z = (fStack_ac + fStack_a0) * FLOAT_00621141;
+    pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                       (&this_ptr->base_actor,&CStack_24,&CStack_48);
     break;
   default:
     g_CurrentFilename = "..\\core\\door.cpp";
@@ -136,10 +137,10 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDoor::reposition - Unknown type");
     goto LAB_0047fe19;
   }
-  if ((float *)this_ptr->field17_0x9bc != pfVar3) {
-    *(float *)this_ptr->field17_0x9bc = *pfVar3;
-    *(float *)(this_ptr->field17_0x9bc + 4) = pfVar3[1];
-    *(float *)(this_ptr->field17_0x9bc + 8) = pfVar3[2];
+  if ((CVector3f *)this_ptr->field17_0x9bc != pCVar3) {
+    *(float *)this_ptr->field17_0x9bc = pCVar3->x;
+    *(float *)(this_ptr->field17_0x9bc + 4) = pCVar3->y;
+    *(float *)(this_ptr->field17_0x9bc + 8) = pCVar3->z;
   }
 LAB_0047fe19:
   if (0.0 < *(float *)this_ptr->field19_0x9cc) {
@@ -150,13 +151,14 @@ LAB_0047fe19:
          core_actor_cpp_getRandomFloat_FUN_0040cc10
                    (-*(float *)this_ptr->field19_0x9cc,*(float *)this_ptr->field19_0x9cc);
     fStack0000000c = fStack00000008;
-    pCVar4 = core_actor_cpp_CDemonActor_FUN_00408e80(&this_ptr->base_actor);
+    pCVar3 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                       (&this_ptr->base_actor,&CStack_78,(CVector3f *)&stack0x00000000);
     pCVar1 = &(this_ptr->base_actor).location;
-    (pCVar1->position).x = pCVar4->x + (pCVar1->position).x;
+    (pCVar1->position).x = pCVar3->x + (pCVar1->position).x;
     (this_ptr->base_actor).location.position.y =
-         pCVar4->y + (this_ptr->base_actor).location.position.y;
+         pCVar3->y + (this_ptr->base_actor).location.position.y;
     (this_ptr->base_actor).location.position.z =
-         pCVar4->z + (this_ptr->base_actor).location.position.z;
+         pCVar3->z + (this_ptr->base_actor).location.position.z;
     this_ptr->field19_0x9cc[0] = '\0';
     this_ptr->field19_0x9cc[1] = '\0';
     this_ptr->field19_0x9cc[2] = '\0';
@@ -217,7 +219,7 @@ LAB_0047fe19:
 // 0047fda0: FSTP float ptr [EBX + 0x34]
 //   Label: LAB_0047fda0
 // 0047fda3: PUSH EBX
-// 0047fda4: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 0047fda4: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 0047fda9: ADD ESP,0x4
 // 0047fdac: FLD float ptr [ESP + 0x1c]
@@ -243,7 +245,7 @@ LAB_0047fe19:
 // 0047fde8: MOV dword ptr [EBX + 0x9c0],0x40600000
 // 0047fdf2: PUSH EBX
 // 0047fdf3: MOV dword ptr [EBX + 0x9c4],0x0
-// 0047fdfd: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0047fdfd: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0047fe02: ADD ESP,0xc
 //   Label: LAB_0047fe02
@@ -297,7 +299,7 @@ LAB_0047fe19:
 // 0047fe83: PUSH EBX
 // 0047fe84: MOV dword ptr [ESP + 0xa0],EDI
 // 0047fe8b: MOV dword ptr [ESP + 0xa8],EDI
-// 0047fe92: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0047fe92: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0047fe97: LEA ESI,[EBX + 0x9bc]
 // 0047fe9d: JMP 0x0047fe02
@@ -348,7 +350,7 @@ LAB_0047fe19:
 // 0047ff2a: PUSH EBX
 // 0047ff2b: MOV dword ptr [ESP + 0x5c],ECX
 // 0047ff2f: MOV dword ptr [ESP + 0x60],EDI
-// 0047ff33: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0047ff33: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0047ff38: LEA ESI,[EBX + 0x9bc]
 // 0047ff3e: JMP 0x0047fe02
@@ -364,7 +366,7 @@ LAB_0047fe19:
 //   XREF to: 00621139 (READ)
 // 0047ff5e: PUSH EBX
 // 0047ff5f: FSTP float ptr [EBX + 0x30]
-// 0047ff62: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 0047ff62: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 0047ff67: ADD ESP,0x4
 // 0047ff6a: FLD float ptr [ESP + 0x14]
@@ -395,7 +397,7 @@ LAB_0047fe19:
 // 0047ffb9: FXCH
 // 0047ffbb: FSTP float ptr [ESP + 0x8c]
 // 0047ffc2: FSTP float ptr [ESP + 0x90]
-// 0047ffc9: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0047ffc9: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0047ffce: LEA ESI,[EBX + 0x9bc]
 // 0047ffd4: JMP 0x0047fe02
@@ -445,7 +447,7 @@ LAB_0047fe19:
 // 00480071: PUSH EAX
 // 00480072: PUSH EBX
 // 00480073: FSTP float ptr [ESP + 0xcc]
-// 0048007a: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 0048007a: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 0048007f: MOV ESI,EAX
 // 00480081: LEA EAX,[EBX + 0x20]

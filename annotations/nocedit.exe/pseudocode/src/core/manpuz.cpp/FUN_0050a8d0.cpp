@@ -13,8 +13,8 @@
 //   CFireEffect g_CFireEffectInstance
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408e80
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 //   core_fire.cpp_CFireEffect_FUN_004c8230
 //   core_fire.cpp_SLaserInfo_ctor_FUN_004c81f0
@@ -38,10 +38,10 @@ void core_manpuz_cpp_FUN_0050a8d0(void)
   int in_stack_00000008;
   float in_stack_0000000c;
   CVector3f local_6c;
-  CVector3f local_60 [2];
-  float local_48;
-  float local_44;
-  float local_40;
+  CVector3f local_60;
+  CVector3f local_54;
+  CVector3f local_48;
+  CVector3f local_3c;
   CVector3f local_30;
   double local_24;
   char *local_1c;
@@ -86,21 +86,20 @@ LAB_0050a92e:
     pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        ((CMatrix3x3f *)local_1c,&local_6c,
                         (CVector3f *)(in_stack_00000004[4].create_event + 0xc));
-    local_48 = *(float *)(pcVar2 + 0xc) + pCVar3->x;
-    local_44 = *(float *)(pcVar2 + 0x10) + pCVar3->y;
-    local_40 = *(float *)(pcVar2 + 0x14) + pCVar3->z;
-    core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-    local_60[0].x = 0.0;
-    local_60[0].y =
-         ((float)in_stack_00000004[4].was_created -
-         *(float *)(in_stack_00000004[4].create_event + 0x10)) * FLOAT_006357d9;
-    local_60[0].z =
-         -(in_stack_00000004[0xf].field_224.y * FLOAT_006357d5 +
-           *(float *)(in_stack_00000004[4].create_event + 0x14) + in_stack_00000004[4].create_prob)
-         * FLOAT_006357d9;
+    local_48.x = *(float *)(pcVar2 + 0xc) + pCVar3->x;
+    local_48.y = *(float *)(pcVar2 + 0x10) + pCVar3->y;
+    local_48.z = *(float *)(pcVar2 + 0x14) + pCVar3->z;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&local_3c,&local_48)
+    ;
+    local_60.x = 0.0;
+    local_60.y = ((float)in_stack_00000004[4].was_created -
+                 *(float *)(in_stack_00000004[4].create_event + 0x10)) * FLOAT_006357d9;
+    local_60.z = -(in_stack_00000004[0xf].field12_0xe0.y * FLOAT_006357d5 +
+                   *(float *)(in_stack_00000004[4].create_event + 0x14) +
+                  in_stack_00000004[4].create_prob) * FLOAT_006357d9;
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-              ((CMatrix3x3f *)local_1c,&local_30,local_60);
-    core_actor_cpp_CDemonActor_FUN_00408e80(in_stack_00000004);
+              ((CMatrix3x3f *)local_1c,&local_30,&local_60);
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(in_stack_00000004,&local_54,&local_30);
     core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
     core_fire_cpp_SLaserInfo_ctor_FUN_004c81f0((SLaserInfo *)&stack0xfffffeec);
     core_fire_cpp_CFireEffect_FUN_004c8230(g_CFireEffectPtr);
@@ -208,7 +207,7 @@ LAB_0050a92e:
 // 0050a9a4: PUSH EBX
 // 0050a9a5: FSTP float ptr [EBP + 0x46]
 //   XREF to: Stack[-0x40] (WRITE)
-// 0050a9a8: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0050a9a8: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0050a9ad: XOR ECX,ECX
 // 0050a9af: MOV dword ptr [EBP + 0x26],ECX
@@ -255,7 +254,7 @@ LAB_0050a92e:
 //   XREF to: Stack[-0x54] (DATA)
 // 0050aa10: PUSH EAX
 // 0050aa11: PUSH EBX
-// 0050aa12: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 0050aa12: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 0050aa17: ADD ESP,0xc
 // 0050aa1a: MOV EDX,dword ptr [0x006810c8]

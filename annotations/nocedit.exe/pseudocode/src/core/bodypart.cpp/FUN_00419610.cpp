@@ -27,11 +27,10 @@
 void core_bodypart_cpp_FUN_00419610(void)
 
 {
-  CDemonSet *pCVar1;
   CConsole *this_ptr;
   CBoundingBox3D *this_ptr_00;
+  int iVar1;
   int iVar2;
-  int iVar3;
   BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
@@ -39,8 +38,8 @@ void core_bodypart_cpp_FUN_00419610(void)
   if (*(int *)in_stack_00000004[1].actor_name == 0) {
     if ((((in_stack_00000008 != 0) && (in_stack_00000004[0xb].runtime_state == 0)) &&
         (in_stack_00000004[0xb].orient_matrix.m[2].y == 0.0)) &&
-       (iVar2 = (*((in_stack_00000004->metadata).vtable)->getAllowedMeleeAttackTypes)
-                          (in_stack_00000004), this_ptr = g_CConsolePtr, iVar2 == 0)) {
+       (iVar1 = (*in_stack_00000004->vtable->getAllowedMeleeAttackTypes)(in_stack_00000004),
+       this_ptr = g_CConsolePtr, iVar1 == 0)) {
       in_stack_00000004[1].actor_name[0] = '\x01';
       in_stack_00000004[1].actor_name[1] = '\0';
       in_stack_00000004[1].actor_name[2] = '\0';
@@ -59,24 +58,19 @@ void core_bodypart_cpp_FUN_00419610(void)
     in_stack_00000004[1].actor_name[2] = '\0';
     in_stack_00000004[1].actor_name[3] = '\0';
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-    *(undefined4 *)(g_CDemonSetPtr->field22_0x15ac80 + 8) =
-         *(undefined4 *)(in_stack_00000004[9].create_event + 0x20);
-    this_ptr_00 = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+    g_CDemonSetPtr->unk_lighting_param2 = *(int *)(in_stack_00000004[9].create_event + 0x20);
+    this_ptr_00 = (*in_stack_00000004->vtable->getBoundingBox)
                             (in_stack_00000004,(CBoundingBox3D *)&stack0xfffffff4);
-    iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-    if ((iVar2 != 0) &&
+    iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
+    if ((iVar1 != 0) &&
        ((*(int *)(in_stack_00000004[9].create_event + 0x24) == 0 ||
-        (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
-        iVar3 != 0)))) {
+        (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+        iVar2 != 0)))) {
       core_bodypart_cpp_FUN_00419340();
     }
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-    pCVar1 = g_CDemonSetPtr;
-    pCVar1->field22_0x15ac80[8] = '\0';
-    pCVar1->field22_0x15ac80[9] = '\0';
-    pCVar1->field22_0x15ac80[10] = '\0';
-    pCVar1->field22_0x15ac80[0xb] = '\0';
-    in_stack_00000004[0xb].health = iVar2;
+    g_CDemonSetPtr->unk_lighting_param2 = 0;
+    in_stack_00000004[0xb].health = iVar1;
   }
   return;
 }

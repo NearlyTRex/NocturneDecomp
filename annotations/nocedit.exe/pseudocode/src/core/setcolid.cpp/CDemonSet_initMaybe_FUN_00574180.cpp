@@ -8,7 +8,7 @@
 //   core_actor.cpp_CDemonActor_processFootstep_FUN_0040c830 (0040c830) at 0040c8ba [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_00428f40 (00428f40) at 00429455 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 (0042d5a0) at 0042d8ed [UNCONDITIONAL_CALL]
-//   core_crossbow.cpp_FUN_00448f20 (00448f20) at 00449302 [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_FUN_00448f20 (00448f20) at 00449302 [UNCONDITIONAL_CALL]
 //   core_emitter.cpp_FUN_004a8860 (004a8860) at 004a89ca [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireEffect_FUN_004c8230 (004c8230) at 004c89c1 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d4190 (004d4190) at 004d4660 [UNCONDITIONAL_CALL]
@@ -33,7 +33,7 @@
 //   core_stranger.cpp_CStranger_FUN_005c4c20 (005c4c20) at 005c4d63 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370 (005c4370) at 005c44bd [UNCONDITIONAL_CALL]
 //   core_tommygun.cpp_FUN_005ddb30 (005ddb30) at 005ddcd2 [UNCONDITIONAL_CALL]
-//   core_weapon.cpp_FUN_005ee830 (005ee830) at 005ee8ac [UNCONDITIONAL_CALL]
+//   core_weapon.cpp_CWeapon_FUN_005ee830 (005ee830) at 005ee8ac [UNCONDITIONAL_CALL]
 //   core_zombie.cpp_CZombie_process_FUN_005f9470 (005f9470) at 005f96d3 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
@@ -43,7 +43,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet *this_
 {
   this_ptr->ignore_list_count = 0;
   this_ptr->collision_flag = 0;
-  this_ptr->field63_0x15f6dc = 0;
+  this_ptr->field71_0x15f6dc = 0;
   this_ptr->ray_type = 0;
   return;
 }

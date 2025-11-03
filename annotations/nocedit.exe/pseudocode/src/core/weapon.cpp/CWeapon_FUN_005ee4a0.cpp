@@ -29,7 +29,7 @@
 //   undefined4 DAT_03f95db8
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
 //   core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310
 //   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
@@ -43,6 +43,7 @@
 void __cdecl core_weapon_cpp_CWeapon_FUN_005ee4a0(CWeapon *this_ptr)
 
 {
+  CVector3f *input_local_point;
   CDemonActor *pCVar1;
   BADSPACEBASE *in_ESP;
   int unaff_EBP;
@@ -50,14 +51,16 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee4a0(CWeapon *this_ptr)
   float in_stack_00000010;
   float in_stack_00000014;
   float class_name_hash;
-  int iStack_10;
+  float fStack_10;
   
-  (*(this_ptr->base_actor).metadata.vtable[1].renderOpaque)(&this_ptr->base_actor);
-  core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr->base_actor);
+  input_local_point =
+       (CVector3f *)(*(this_ptr->base_actor).vtable[1].renderOpaque)(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (&this_ptr->base_actor,(CVector3f *)&stack0xffffffec,input_local_point);
   g_CDemonLightInstance.light_enabled_flag = 1;
   g_CDemonLightInstance.field17_0x1cbc = 1;
   if ((int *)&stack0x00000000 != g_CDemonLightInstance.base.base.rotation_matrix.m[0] + 1) {
-    g_CDemonLightInstance.base.base.position.x = iStack_10;
+    g_CDemonLightInstance.base.base.position.x = (int)fStack_10;
     g_CDemonLightInstance.base.base.position.y = unaff_EBP;
     g_CDemonLightInstance.base.base.position.z = unaff_ESI;
   }
@@ -68,7 +71,7 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee4a0(CWeapon *this_ptr)
   g_CDemonLightInstance.base.max_distance = 32.0;
   g_CDemonLightInstance.base.base.projection_scale = 32.0;
   g_CDemonLightInstance.antialiasing_enabled = 1;
-  pCVar1 = (*((this_ptr->base_actor).metadata.vtable)->getCarrier)(&this_ptr->base_actor);
+  pCVar1 = (*((this_ptr->base_actor).vtable)->getCarrier)(&this_ptr->base_actor);
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar1,(uint)class_name_hash);
   if ((pCVar1 != (CDemonActor *)0x0) &&
      (in_stack_00000010 = *(float *)(pCVar1[0x176].create_event + 0x30),
@@ -109,7 +112,7 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee4a0(CWeapon *this_ptr)
 // 005ee4be: LEA EAX,[ESP + 0x1c]
 // 005ee4c2: PUSH EAX
 // 005ee4c3: PUSH EBX
-// 005ee4c4: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005ee4c4: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005ee4c9: MOV EDX,0x1
 // 005ee4ce: LEA EAX,[ESP + 0x24]

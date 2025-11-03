@@ -9,7 +9,7 @@
 // Globals:
 //   TerminatedCString s_shape_meshlod_cpp_00637d58
 //   TerminatedCString s_Can_t_call_LodMesh_getLO_00637d6d
-//   undefined4 DAT_00637db5
+//   double DOUBLE_00637db5 = 0.000100000000000000
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 //   undefined4 DAT_02f33330
@@ -29,8 +29,6 @@
 //   shape_meshlod.cpp_FUN_0051b570
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void shape_meshlod_cpp_LodMesh_getLOD_FUN_0051b920
                (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4,

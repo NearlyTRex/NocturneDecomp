@@ -6,11 +6,11 @@
 // Globals:
 //   undefined4 DAT_00652e00
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408e80
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_spike.cpp_FUN_005b8950
 
 #include "nocturne.h"
@@ -22,48 +22,52 @@
 void core_spike_cpp_FUN_005b8410(void)
 
 {
-  float fVar1;
-  float fVar2;
+  CLocation *pCVar1;
+  CDemonActor_vtable *pCVar2;
   float fVar3;
-  float fVar4;
-  float fVar5;
-  CDemonActor_vtable *pCVar6;
-  int iVar7;
-  CVector3f *pCVar8;
-  float fVar9;
+  int iVar4;
+  CVector3f *pCVar5;
+  float fVar6;
+  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   float in_stack_00000010;
-  float fStack_24;
+  CVector3f local_48;
+  float local_38;
+  float local_34;
+  float local_30;
+  float local_2c;
+  float fStack_28;
+  CVector3f CStack_24;
   
-  fVar9 = in_stack_00000004[2].location.position.y;
-  if ((fVar9 == 0.0) || (fVar9 == 1.4013e-45)) {
-    iVar7 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+  fVar6 = in_stack_00000004[2].location.position.y;
+  if ((fVar6 == 0.0) || (fVar6 == 1.4013e-45)) {
+    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,(char *)&in_stack_00000004[2].orient_matrix.m[0].y);
-    if (iVar7 != 0) {
+    if (iVar4 != 0) {
       in_stack_00000004[2].location.area_id = 1;
     }
-    iVar7 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,in_stack_00000004[2].create_event + 0x2c);
-    if (iVar7 == 0) goto LAB_005b85e2;
+    if (iVar4 == 0) goto LAB_005b85e2;
     in_stack_00000004[2].location.area_id = 0;
 LAB_005b8479:
-    fVar9 = in_stack_00000004[2].location.position.z;
-    if (fVar9 == 0.0) {
+    fVar6 = in_stack_00000004[2].location.position.z;
+    if (fVar6 == 0.0) {
       return;
     }
-    if (fVar9 == 2.8026e-45) {
+    if (fVar6 == 2.8026e-45) {
       in_stack_00000004[2].location.position.z = 4.2039e-45;
     }
   }
   else {
-    iVar7 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,(char *)&in_stack_00000004[2].scale);
-    if (iVar7 != 0) {
+    if (iVar4 != 0) {
       in_stack_00000004[2].location.area_id = 1;
     }
-    iVar7 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,in_stack_00000004[3].actor_name + 0x14);
-    if (iVar7 == 0) {
+    if (iVar4 == 0) {
 LAB_005b85e2:
       if (in_stack_00000004[2].location.area_id == 0) goto LAB_005b8479;
     }
@@ -71,82 +75,86 @@ LAB_005b85e2:
       in_stack_00000004[2].location.area_id = 1;
     }
   }
-  fVar9 = *(float *)(in_stack_00000004[3].create_event + 8) - in_stack_00000010;
-  *(float *)(in_stack_00000004[3].create_event + 8) = fVar9;
-  if (0.0 < fVar9) {
+  fVar6 = *(float *)(in_stack_00000004[3].create_event + 8) - in_stack_00000010;
+  *(float *)(in_stack_00000004[3].create_event + 8) = fVar6;
+  if (0.0 < fVar6) {
     return;
   }
-  fVar9 = in_stack_00000004[2].location.position.z;
+  fVar6 = in_stack_00000004[2].location.position.z;
   in_stack_00000004[3].create_event[8] = '\0';
   in_stack_00000004[3].create_event[9] = '\0';
   in_stack_00000004[3].create_event[10] = '\0';
   in_stack_00000004[3].create_event[0xb] = '\0';
-  if (fVar9 == 0.0) {
+  if (fVar6 == 0.0) {
     in_stack_00000004[2].location.position.z = 1.4013e-45;
-    in_stack_00000004[3].metadata.vtable = (CDemonActor_vtable *)0x0;
+    in_stack_00000004[3].vtable = (CDemonActor_vtable *)0x0;
     goto LAB_005b84db;
   }
-  if (fVar9 == 1.4013e-45) {
-    pCVar6 = (CDemonActor_vtable *)
+  if (fVar6 == 1.4013e-45) {
+    pCVar2 = (CDemonActor_vtable *)
              (in_stack_00000010 / *(float *)in_stack_00000004[3].create_event +
-             (float)in_stack_00000004[3].metadata.vtable);
-    in_stack_00000004[3].metadata.vtable = pCVar6;
-    if ((float)pCVar6 <= 1.0) goto LAB_005b84db;
+             (float)in_stack_00000004[3].vtable);
+    in_stack_00000004[3].vtable = pCVar2;
+    if ((float)pCVar2 <= 1.0) goto LAB_005b84db;
     in_stack_00000004[2].location.position.z = 2.8026e-45;
-    fVar9 = in_stack_00000004[2].location.position.y;
-    in_stack_00000004[3].metadata.vtable = (CDemonActor_vtable *)0x3f800000;
-    if (fVar9 == 2.8026e-45) {
+    fVar6 = in_stack_00000004[2].location.position.y;
+    in_stack_00000004[3].vtable = (CDemonActor_vtable *)0x3f800000;
+    if (fVar6 == 2.8026e-45) {
 LAB_005b8655:
       in_stack_00000004[2].location.area_id = 0;
       goto LAB_005b84db;
     }
-    if (fVar9 != 1.4013e-45) {
-      *(CDemonActor **)(in_stack_00000004[3].create_event + 8) =
-           in_stack_00000004[3].metadata.next_actor;
+    if (fVar6 != 1.4013e-45) {
+      *(CDemonActor **)(in_stack_00000004[3].create_event + 8) = in_stack_00000004[3].next_actor;
       goto LAB_005b84db;
     }
   }
   else {
-    if (fVar9 == 2.8026e-45) {
-      in_stack_00000004[3].metadata.vtable = (CDemonActor_vtable *)0x3f800000;
+    if (fVar6 == 2.8026e-45) {
+      in_stack_00000004[3].vtable = (CDemonActor_vtable *)0x3f800000;
       in_stack_00000004[2].location.position.z = 4.2039e-45;
       goto LAB_005b84db;
     }
-    if ((fVar9 != 4.2039e-45) ||
-       (pCVar6 = (CDemonActor_vtable *)
-                 ((float)in_stack_00000004[3].metadata.vtable -
+    if ((fVar6 != 4.2039e-45) ||
+       (pCVar2 = (CDemonActor_vtable *)
+                 ((float)in_stack_00000004[3].vtable -
                  in_stack_00000010 / *(float *)(in_stack_00000004[3].create_event + 4)),
-       in_stack_00000004[3].metadata.vtable = pCVar6, 0.0 <= (float)pCVar6)) goto LAB_005b84db;
+       in_stack_00000004[3].vtable = pCVar2, 0.0 <= (float)pCVar2)) goto LAB_005b84db;
     in_stack_00000004[2].location.position.z = 0.0;
-    fVar9 = in_stack_00000004[2].location.position.y;
-    in_stack_00000004[3].metadata.vtable = (CDemonActor_vtable *)0x0;
-    if (fVar9 == 2.8026e-45) goto LAB_005b8655;
-    if (fVar9 != 1.4013e-45) {
-      *(CDemonActor **)(in_stack_00000004[3].create_event + 8) =
-           in_stack_00000004[3].metadata.next_actor;
+    fVar6 = in_stack_00000004[2].location.position.y;
+    in_stack_00000004[3].vtable = (CDemonActor_vtable *)0x0;
+    if (fVar6 == 2.8026e-45) goto LAB_005b8655;
+    if (fVar6 != 1.4013e-45) {
+      *(CDemonActor **)(in_stack_00000004[3].create_event + 8) = in_stack_00000004[3].next_actor;
       goto LAB_005b84db;
     }
   }
-  fVar9 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.75,1.25);
-  *(float *)(in_stack_00000004[3].create_event + 8) =
-       fVar9 * (float)in_stack_00000004[3].metadata.next_actor;
+  fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.75,1.25);
+  *(float *)(in_stack_00000004[3].create_event + 8) = fVar6 * (float)in_stack_00000004[3].next_actor
+  ;
 LAB_005b84db:
-  fVar4 = (in_stack_00000004->location).position.y;
-  fVar5 = (in_stack_00000004->location).position.z;
-  pCVar8 = core_actor_cpp_CDemonActor_FUN_00408e80(in_stack_00000004);
-  fVar9 = in_stack_00000004[2].orient.bank;
-  fVar1 = pCVar8->y;
-  fVar2 = in_stack_00000004[2].orient.heading;
-  fVar3 = pCVar8->z;
-  (in_stack_00000004->location).position.x = in_stack_00000004[2].orient.pitch + pCVar8->x;
-  (in_stack_00000004->location).position.y = fVar9 + fVar1;
-  (in_stack_00000004->location).position.z = fVar2 + fVar3;
-  fVar4 = fVar4 - (in_stack_00000004->location).position.x;
-  fVar5 = fVar5 - (in_stack_00000004->location).position.y;
-  fVar9 = fStack_24 - (in_stack_00000004->location).position.z;
-  if (fVar9 * fVar9 + fVar5 * fVar5 + fVar4 * fVar4 <= (float)_DAT_00652e00) {
+  pCVar1 = &in_stack_00000004->location;
+  local_30 = (pCVar1->position).x;
+  local_2c = (in_stack_00000004->location).position.y;
+  fStack_28 = (in_stack_00000004->location).position.z;
+  local_48.z = in_stack_00000004[2].orient_matrix.m[0].x * (float)in_stack_00000004[3].vtable;
+  local_48.x = 0.0;
+  local_48.y = 0.0;
+  pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                     (in_stack_00000004,&CStack_24,&local_48);
+  local_38 = in_stack_00000004[2].orient.pitch + pCVar5->x;
+  local_34 = in_stack_00000004[2].orient.bank + pCVar5->y;
+  local_30 = in_stack_00000004[2].orient.heading + pCVar5->z;
+  (pCVar1->position).x = local_38;
+  (in_stack_00000004->location).position.y = local_34;
+  (in_stack_00000004->location).position.z = local_30;
+  fVar6 = local_2c - (pCVar1->position).x;
+  fVar3 = fStack_28 - (in_stack_00000004->location).position.y;
+  CStack_24.x = CStack_24.x - (in_stack_00000004->location).position.z;
+  if (CStack_24.x * CStack_24.x + fVar3 * fVar3 + fVar6 * fVar6 <= (float)_DAT_00652e00) {
     return;
   }
+  local_48.x = (float)in_stack_00000004;
   core_spike_cpp_FUN_005b8950();
   return;
 }
@@ -174,7 +182,7 @@ LAB_005b84db:
 //   XREF to: 006793d0 (READ)
 // 005b843b: PUSH EBP
 //   XREF to: 02d05310 (DATA)
-// 005b843c: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 005b843c: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 005b8441: ADD ESP,0x8
 // 005b8444: TEST EAX,EAX
@@ -188,7 +196,7 @@ LAB_005b84db:
 //   XREF to: 006793d0 (READ)
 // 005b845e: PUSH EAX
 //   XREF to: 02d05310 (DATA)
-// 005b845f: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 005b845f: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 005b8464: ADD ESP,0x8
 // 005b8467: TEST EAX,EAX
@@ -244,7 +252,7 @@ LAB_005b84db:
 // 005b851a: LEA EAX,[ESP + 0x28]
 // 005b851e: PUSH EAX
 // 005b851f: PUSH EBX
-// 005b8520: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 005b8520: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 005b8525: LEA EDX,[EBX + 0x2e0]
 // 005b852b: FLD float ptr [EDX]
@@ -295,7 +303,7 @@ LAB_005b84db:
 //   XREF to: 006793d0 (READ)
 // 005b85a2: PUSH ESI
 //   XREF to: 02d05310 (DATA)
-// 005b85a3: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 005b85a3: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 005b85a8: ADD ESP,0x8
 // 005b85ab: TEST EAX,EAX
@@ -309,7 +317,7 @@ LAB_005b84db:
 //   XREF to: 006793d0 (READ)
 // 005b85c6: PUSH EDI
 //   XREF to: 02d05310 (DATA)
-// 005b85c7: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 005b85c7: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 005b85cc: ADD ESP,0x8
 // 005b85cf: TEST EAX,EAX

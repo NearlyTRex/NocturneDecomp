@@ -20,7 +20,8 @@ undefined4 core_werewolf_cpp_FUN_005f1db0(void)
   if (*(int *)(in_stack_00000004 + 0x70) == 2) {
     return 2;
   }
-  iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0();
+  iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0
+                    ((CMotionController *)(in_stack_00000004 + 0x158));
   uVar1 = *(uint *)(iVar2 + 0x24);
   if (0xb < uVar1) {
     if (uVar1 < 0xd) {

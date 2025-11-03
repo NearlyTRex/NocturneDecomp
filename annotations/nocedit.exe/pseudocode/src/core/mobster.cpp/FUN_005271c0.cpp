@@ -24,10 +24,12 @@ void core_mobster_cpp_FUN_005271c0(void)
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.5,1.0);
   *(float *)(in_stack_00000004 + 0xbf90) = fVar1;
   if (*(int *)(in_stack_00000004 + 0x24b4) != 0) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              ((CMotionController *)(in_stack_00000004 + 0x158));
     return;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+            ((CMotionController *)(in_stack_00000004 + 0x158));
   return;
 }
 

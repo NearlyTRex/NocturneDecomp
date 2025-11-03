@@ -28,7 +28,7 @@ int __cdecl core_trap_cpp_CTrap_FUN_005de920(CTrap *this_ptr)
             (g_CDemonRendererPtr,&(this_ptr->base_actor).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr,(CVector3i *)&(this_ptr->base_actor).orient,(CVector3i *)0x0);
-  this_ptr_00 = (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
+  this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
                           (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe0);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar1 != 0) {

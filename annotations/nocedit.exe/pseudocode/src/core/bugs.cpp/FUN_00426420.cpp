@@ -17,8 +17,8 @@
 //   undefined4 DAT_0065b5c8
 //   undefined4 DAT_0065b5d0
 // Function calls:
-//   core_actor.cpp_FUN_0040cd70
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_bugs.cpp_FUN_00425b70
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 
@@ -139,8 +139,8 @@ core_bugs_cpp_FUN_00426420
   local_44 = local_68 - (float)param_6[5];
   local_40[0].x = local_64 - (float)param_6[6];
   local_40[0].y = local_60 - (float)param_6[7];
-  core_actor_cpp_FUN_0040cd70(local_40[0].x);
-  fVar2 = core_actor_cpp_FUN_0040cd70(local_40[0].x);
+  core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_40[0].x);
+  fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_40[0].x);
   local_14 = fVar2 * (float)DOUBLE_00616e33 * (float)DOUBLE_00616e3b;
   local_18 = -local_14;
   if (unaff_EBX < local_18) {
@@ -150,10 +150,10 @@ core_bugs_cpp_FUN_00426420
     unaff_EBX = local_14;
   }
   local_14 = -local_14;
-  fVar2 = core_actor_cpp_FUN_0040cd70((float)param_6[6] + unaff_EBX);
+  fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((float)param_6[6] + unaff_EBX);
   param_6[7] = 0;
   param_6[6] = (int)fVar2;
-  fVar2 = core_actor_cpp_FUN_0040cd70((float)param_6[5] + unaff_EBX);
+  fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((float)param_6[5] + unaff_EBX);
   param_6[5] = (int)fVar2;
   return 0;
 }
@@ -333,14 +333,14 @@ core_bugs_cpp_FUN_00426420
 // 004266c4: FSUB float ptr [EAX + 0x8]
 // 004266c7: PUSH dword ptr [ESP + 0x38]
 // 004266cb: FSTP float ptr [ESP + 0x40]
-// 004266cf: CALL core_actor.cpp_FUN_0040cd70
+// 004266cf: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 004266d4: MOV dword ptr [ESP + 0x80],EAX
 // 004266db: FLD float ptr [ESP + 0x80]
 // 004266e2: ADD ESP,0x4
 // 004266e5: PUSH dword ptr [ESP + 0x34]
 // 004266e9: FSTP float ptr [ESP + 0x70]
-// 004266ed: CALL core_actor.cpp_FUN_0040cd70
+// 004266ed: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 004266f2: MOV dword ptr [ESP + 0x80],EAX
 // 004266f9: FLD float ptr [ESP + 0x80]
@@ -398,7 +398,7 @@ core_bugs_cpp_FUN_00426420
 // 00426783: FADD float ptr [ESP + 0x6c]
 // 00426787: SUB ESP,0x4
 // 0042678a: FSTP float ptr [ESP]
-// 0042678d: CALL core_actor.cpp_FUN_0040cd70
+// 0042678d: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 00426792: MOV dword ptr [ESP + 0x80],EAX
 // 00426799: FLD float ptr [EBX + 0x14]
@@ -411,7 +411,7 @@ core_bugs_cpp_FUN_00426420
 // 004267b6: FXCH
 // 004267b8: FSTP float ptr [EBX + 0x18]
 // 004267bb: FSTP float ptr [ESP]
-// 004267be: CALL core_actor.cpp_FUN_0040cd70
+// 004267be: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 004267c3: MOV dword ptr [ESP + 0x80],EAX
 // 004267ca: FLD float ptr [ESP + 0x80]

@@ -6,15 +6,15 @@
 // Cross-references:
 //   core_stranger.cpp_CStranger_FUN_005be520 (005be520) at 005be603 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\stranger.cpp_006538c4
+//   TerminatedCString s_core_stranger_cpp_006538c4
 //   TerminatedCString s_CStranger_makeDrawDecisi_006538d9
-//   undefined4 DAT_00653914
-//   undefined4 DAT_0065391c
-//   undefined4 DAT_00653924
-//   undefined4 DAT_0065392c
-//   undefined4 DAT_00653934
-//   undefined4 DAT_0065393c
-//   undefined4 DAT_00653940
+//   double DOUBLE_00653914 = 0.25
+//   double DOUBLE_0065391c = 4
+//   double DOUBLE_00653924 = -0.75
+//   double DOUBLE_0065392c = 0.000100000000000000
+//   double DOUBLE_00653934 = 0.5
+//   float FLOAT_0065393c = 0.3490658
+//   float FLOAT_00653940 = 0.6000000
 //   undefined4 DAT_00663770
 //   undefined4 DAT_00663774
 //   undefined4 DAT_00663778
@@ -36,9 +36,9 @@
 //   core_motion.cpp_CMotionController_FUN_0052e2b0
 //   core_motion.cpp_CMotionController_FUN_0052e3a0
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
-//   core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_stranger.cpp_CStranger_FUN_005c02b0
 //   core_xform.cpp_quaternionFromAngleX_FUN_005f79b0
 //   core_xform.cpp_quaternionFromAngleY_FUN_005f79f0
@@ -53,9 +53,12 @@
 void core_stranger_cpp_CStranger_FUN_005bfb60(void)
 
 {
+  CMotionController *this_ptr;
   undefined4 *puVar1;
   float fVar2;
   int iVar3;
+  CMotionList *this_ptr_00;
+  CMotionList *this_ptr_01;
   float fVar4;
   BADSPACEBASE *in_ESP;
   undefined4 *puVar5;
@@ -67,6 +70,7 @@ void core_stranger_cpp_CStranger_FUN_005bfb60(void)
   int iStack00000010;
   float in_stack_00000018;
   float afStackY_1888 [1503];
+  undefined4 local_fc;
   float in_stack_ffffff24;
   float in_stack_ffffff28;
   code *result_out;
@@ -84,7 +88,7 @@ void core_stranger_cpp_CStranger_FUN_005bfb60(void)
   undefined4 local_50;
   undefined4 uStack_48;
   undefined4 local_38;
-  undefined4 local_28;
+  float local_28;
   float local_24;
   float local_20;
   float fStack_14;
@@ -92,28 +96,32 @@ void core_stranger_cpp_CStranger_FUN_005bfb60(void)
   bVar8 = 0;
   if ((*(int *)((int)in_stack_00000004 + 0x2a8c) < 0) ||
      (0x10 < *(int *)((int)in_stack_00000004 + 0x2a8c))) {
-    g_CurrentFilename = "MbP?..\\core\\stranger.cpp" + 4;
+    g_CurrentFilename = "..\\core\\stranger.cpp";
     g_CurrentLineNumber = 0xa85;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CStranger::makeDrawDecision - draw motion out of range!");
   }
-  local_28 = core_motion_cpp_CMotionController_FUN_0052dd20();
-  fVar2 = (float)core_motion_cpp_CMotionController_FUN_0052dd20();
+  this_ptr = (CMotionController *)((int)in_stack_00000004 + 0x158);
+  local_28 = core_motion_cpp_CMotionController_FUN_0052dd20(this_ptr);
+  fVar2 = core_motion_cpp_CMotionController_FUN_0052dd20(this_ptr);
   local_24 = fVar2 + local_24;
-  fVar2 = (float)core_motion_cpp_CMotionController_FUN_0052dd20();
+  fVar2 = core_motion_cpp_CMotionController_FUN_0052dd20(this_ptr);
+  local_fc = 0x22;
   local_20 = fVar2 + local_20;
-  core_motion_cpp_CMotionController_FUN_0052dd20();
+  core_motion_cpp_CMotionController_FUN_0052dd20(this_ptr);
   if (*(int *)((int)in_stack_00000004 + 0x2a8c) != 0xe) goto LAB_005bfd3a;
+  local_fc = 0x5bfcc2;
   fVar2 = (float)core_motion_cpp_CMotionController_FUN_0052e2b0();
   in_stack_ffffff24 = fVar2;
-  iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0();
+  iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0
+                    ((CMotionController *)((int)in_stack_00000004 + 0x158));
   iVar3 = *(int *)(iVar3 + 0x24);
   if ((iVar3 == 0x17) || (iVar3 == 0x18)) {
-    in_stack_ffffff28 = in_stack_ffffff28 + (float)_DAT_00653924;
+    in_stack_ffffff28 = in_stack_ffffff28 + (float)DOUBLE_00653924;
 LAB_005bfd02:
-    fVar2 = in_stack_ffffff28 * (float)_DAT_0065391c;
+    fVar2 = in_stack_ffffff28 * (float)DOUBLE_0065391c;
   }
   else if ((iVar3 == 0x19) || (iVar3 == 0x1a)) {
-    in_stack_ffffff28 = (float)_DAT_00653914 - in_stack_ffffff28;
+    in_stack_ffffff28 = (float)DOUBLE_00653914 - in_stack_ffffff28;
     goto LAB_005bfd02;
   }
   if ((int)fVar2 < 0x3f800001) {
@@ -126,22 +134,26 @@ LAB_005bfd02:
   }
   in_stack_ffffff24 = in_stack_ffffff24 * fVar2;
 LAB_005bfd3a:
-  if (in_stack_ffffff24 <= (float)_DAT_0065392c) {
+  if (in_stack_ffffff24 <= (float)DOUBLE_0065392c) {
     return;
   }
-  core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-  core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460();
+  local_fc = 0x5bfd8e;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820
+            ((CDeformableModelInstance *)((int)in_stack_00000004 + 0x158));
+  core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_00);
   iStack00000010 = core_motion_cpp_CMotionController_FUN_0052e3a0();
   if (((*(int *)((int)in_stack_00000004 + 0x2a8c) == 9) &&
       (1.0 <= *(float *)((int)in_stack_00000004 + 0x2a90))) &&
      (*(int *)((int)in_stack_00000004 + 0x1fc34) != 0)) {
-    core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-    iStack00000010 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460();
+    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820
+              ((CDeformableModelInstance *)((int)in_stack_00000004 + 0x158));
+    iStack00000010 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_01);
     core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
     core_motion_cpp_CMotionController_FUN_0052e3a0();
   }
   result_out = core_skeleton_cpp_FUN_0059ddb0;
-  core_skeleton_cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50
+            ((CDeformableModelInstance *)((int)in_stack_00000004 + 0x158));
   if (*(int *)((int)in_stack_00000004 + 0x2a8c) == 0) {
     core_xform_cpp_slerpQuaternion_FUN_005f77e0
               ((CQuaternion4f *)(DAT_03f6bb04 * 0x10 + (int)in_stack_00000004 + 0x808),
@@ -174,12 +186,12 @@ LAB_005bfd3a:
   }
   if (*(int *)((int)in_stack_00000004 + 0x2a8c) == 1) {
     fVar2 = (*(float *)((int)in_stack_00000004 + 0x1fbf0) +
-            *(float *)((int)in_stack_00000004 + 0x1fc10)) * (float)_DAT_00653934;
+            *(float *)((int)in_stack_00000004 + 0x1fc10)) * (float)DOUBLE_00653934;
     in_stack_ffffff44 = 0.0;
     in_stack_00000018 = 0.6;
     if (fVar2 < 0.0) {
-      in_stack_ffffff44 = ((fVar2 + _DAT_0065393c) / (DAT_00663770 + _DAT_0065393c)) * _DAT_00653940
-      ;
+      in_stack_ffffff44 =
+           ((fVar2 + FLOAT_0065393c) / (DAT_00663770 + FLOAT_0065393c)) * FLOAT_00653940;
     }
     if (0.0 < fVar2) {
       in_stack_ffffff44 = ((fVar2 - 0.2617994) / (DAT_00663774 - 0.2617994)) * 0.6;
@@ -467,7 +479,7 @@ LAB_005bfd3a:
 // 005bfd81: PUSH EAX
 // 005bfd82: LEA ESI,[EBX + 0x158]
 // 005bfd88: PUSH ESI
-// 005bfd89: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 005bfd89: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005bfd8e: ADD ESP,0x4
 // 005bfd91: PUSH EAX
@@ -502,7 +514,7 @@ LAB_005bfd3a:
 // 005bfdef: LEA EAX,[EBX + 0x2864]
 // 005bfdf5: PUSH EAX
 // 005bfdf6: PUSH ESI
-// 005bfdf7: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 005bfdf7: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005bfdfc: ADD ESP,0x4
 // 005bfdff: PUSH EAX
@@ -527,7 +539,7 @@ LAB_005bfd3a:
 // 005bfe71: PUSH ESI
 // 005bfe72: LEA EAX,[EBX + 0x158]
 // 005bfe78: PUSH EAX
-// 005bfe79: CALL core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+// 005bfe79: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 005bfe7e: MOV EDI,dword ptr [EBX + 0x2a8c]
 // 005bfe84: ADD ESP,0x18

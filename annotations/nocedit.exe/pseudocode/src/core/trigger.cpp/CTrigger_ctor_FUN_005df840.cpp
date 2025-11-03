@@ -30,7 +30,7 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005df840(CTrigger *this_pt
   char *pcVar4;
   
   pCVar2 = (CTrigger *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
-  (pCVar2->base_actor).metadata.vtable = &g_CTriggerVTable;
+  (pCVar2->base_actor).vtable = &g_CTriggerVTable;
   pCVar2->field1_0x158[8] = '\0';
   pCVar2->field1_0x158[9] = '\0';
   pCVar2->field1_0x158[10] = -0x60;

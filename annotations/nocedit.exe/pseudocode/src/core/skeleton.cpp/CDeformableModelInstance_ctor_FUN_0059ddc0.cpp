@@ -8,19 +8,19 @@
 //   core_charactr.cpp_CCharacter_ctor_FUN_00427e20 (00427e20) at 00427e36 [UNCONDITIONAL_CALL]
 //   core_cloth.cpp_staticInit_FUN_00438b80 (00438b80) at 00438b85 [UNCONDITIONAL_CALL]
 //   core_moloch.cpp_CMoloch_ctor_FUN_00528b30 (00528b30) at 00528b46 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 (0058e690) at 0058e6e5 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058e4e0 (0058e4e0) at 0058e5ed [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_FUN_0058e690 (0058e690) at 0058e6e5 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00598f10 (00598f10) at 00598fa2 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_viewModel_FUN_00598fc0 (00598fc0) at 005991dd [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModel_LoadingSomethingMemory_FUN_0059c2f0 (0059c2f0) at 0059c345 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 (0059c2f0) at 0059c345 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 (0059d460) at 0059d4e6 [UNCONDITIONAL_CALL]
 //   core_succubus.cpp_CSuccubus_ctor_FUN_005c6a80 (005c6a80) at 005c6a96 [UNCONDITIONAL_CALL]
 //   core_vampboss.cpp_CVampireBoss_ctor_FUN_005e5590 (005e5590) at 005e55a4 [UNCONDITIONAL_CALL]
 // Globals:
 //   WatcomTypeInfo g_CVectorTypeInfo
-//   void* PTR_core_skeleton.cpp_CDeformableModelInstance_FreeSomething_FUN_0059de40_00662ec4 = 0059de40
+//   CMotionController_vtable g_CDeformableModelInstanceVTable
 // Function calls:
-//   core_motion.cpp_CMotionController_FUN_ctor_0052d570
+//   core_motion.cpp_CMotionController_ctor_FUN_0052d570
 //   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
 
 #include "nocturne.h"
@@ -32,11 +32,10 @@ core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(CDeformableModelIns
   CMotionController *pCVar1;
   void *pvVar2;
   
-  pCVar1 = core_motion_cpp_CMotionController_FUN_ctor_0052d570((CMotionController *)this_ptr);
+  pCVar1 = core_motion_cpp_CMotionController_ctor_FUN_0052d570(&this_ptr->motion_controller);
   pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (&pCVar1[1].motionListSize,100,&g_CVectorTypeInfo);
-  *(void ***)((int)pvVar2 + -8) =
-       &PTR_core_skeleton_cpp_CDeformableModelInstance_FreeSomething_FUN_0059de40_00662ec4;
+                     (&pCVar1[1].current_motion_index,100,&g_CVectorTypeInfo);
+  *(CMotionController_vtable **)((int)pvVar2 + -8) = &g_CDeformableModelInstanceVTable;
   *(undefined1 *)((int)pvVar2 + 0x2208) = 0;
   *(undefined4 *)((int)pvVar2 + 0x2258) = 0;
   *(undefined4 *)((int)pvVar2 + 0x21dc) = 0;
@@ -55,7 +54,7 @@ core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(CDeformableModelIns
 //   Label: core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
 //   XREF to: Stack[0x4] (READ)
 // 0059ddc4: PUSH EAX
-// 0059ddc5: CALL core_motion.cpp_CMotionController_FUN_ctor_0052d570
+// 0059ddc5: CALL core_motion.cpp_CMotionController_ctor_FUN_0052d570
 //   XREF to: 0052d570 (UNCONDITIONAL_CALL)
 // 0059ddca: ADD ESP,0x4
 // 0059ddcd: PUSH 0x6598c0

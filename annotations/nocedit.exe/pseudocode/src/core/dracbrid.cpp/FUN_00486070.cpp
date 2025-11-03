@@ -11,9 +11,9 @@
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CFireEffect g_CFireEffectInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_FUN_0040cc70
-//   core_actor.cpp_FUN_0040cd10
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
+//   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_charactr.cpp_CCharacter_FUN_0042b5b0
 //   core_dracbrid.cpp_FUN_004864c0
 //   core_dracbrid.cpp_ShotThruHeart_FUN_00486020
@@ -31,81 +31,101 @@
 void core_dracbrid_cpp_FUN_00486070(void)
 
 {
+  CDeformableModelInstance *this_ptr;
   float fVar1;
   bool bVar2;
+  CVector3f *input_local_point;
   int iVar3;
+  BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
-  int in_stack_00000008;
+  float in_stack_00000008;
+  CVector3f aCStack_28 [2];
   
   bVar2 = false;
-  if (*(int *)(in_stack_00000008 + 0x28) == 7) {
+  if (*(int *)((int)in_stack_00000008 + 0x28) == 7) {
     iVar3 = 0;
-    *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)DOUBLE_00621c26;
-    core_actor_cpp_CDemonActor_FUN_00408ec0(&in_stack_00000004->base_actor);
+    *(float *)((int)in_stack_00000008 + 4) =
+         *(float *)((int)in_stack_00000008 + 4) * (float)DOUBLE_00621c26;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffd0,
+               (CVector3f *)((int)in_stack_00000008 + 0x1c));
     do {
       iVar3 = iVar3 + 1;
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
     } while (iVar3 < 5);
     bVar2 = true;
   }
-  if (*(int *)(in_stack_00000008 + 0x30) == 0x68) {
+  if (*(int *)((int)in_stack_00000008 + 0x30) == 0x68) {
     bVar2 = true;
   }
-  if (*(int *)(in_stack_00000008 + 0x30) == 0x6c) {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-    core_actor_cpp_CDemonActor_FUN_00408ec0(&in_stack_00000004->base_actor);
+  if (*(int *)((int)in_stack_00000008 + 0x30) == 0x6c) {
+    input_local_point = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              (&in_stack_00000004->base_actor,aCStack_28,input_local_point);
     core_charactr_cpp_CCharacter_FUN_0042b5b0(in_stack_00000004);
   }
   core_dracbrid_cpp_ShotThruHeart_FUN_00486020();
-  fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
+  fVar1 = in_stack_00000004->hit_points - *(float *)((int)in_stack_00000008 + 4);
+  this_ptr = &in_stack_00000004->model;
   in_stack_00000004->hit_points = fVar1;
   if (fVar1 <= 0.0) {
     in_stack_00000004->hit_points = 0.0;
-    iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
     iVar3 = *(int *)(iVar3 + 0x24);
     if ((((iVar3 != 0x11) && (iVar3 != 0x10)) && (iVar3 != 10)) && (iVar3 != 7)) {
       if (bVar2) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
-        (*((in_stack_00000004->base_actor).metadata.vtable)->playAmbientSound)
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller)
+        ;
+        (*((in_stack_00000004->base_actor).vtable)->playAmbientSound)
                   (&in_stack_00000004->base_actor,"bride-launch.wav");
       }
       else {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller)
+        ;
       }
     }
-    iVar3 = core_actor_cpp_FUN_0040cd10();
+    iVar3 = core_actor_cpp_randomChance_FUN_0040cd10(0.4);
     if (iVar3 != 0) {
+      aCStack_28[0].x = 2.0;
       core_dracbrid_cpp_FUN_004864c0();
+      aCStack_28[0].y = in_stack_00000008;
+      aCStack_28[0].x = (float)in_stack_00000004;
       core_enemy_cpp_FUN_004a9f10();
       return;
     }
     goto LAB_0048616e;
   }
-  iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0();
+  iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
   iVar3 = *(int *)(iVar3 + 0x24);
   if (((iVar3 == 8) || (iVar3 == 9)) || (iVar3 == 2)) {
 LAB_00486225:
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00((CMotionController *)0x486231);
   }
   else if (((iVar3 == 0) || (iVar3 == 0xe)) ||
           (((iVar3 == 0x13 || (((iVar3 == 0xc || (iVar3 == 0x12)) || (iVar3 == 0x14)))) ||
            (iVar3 == 0x15)))) {
-    iVar3 = core_actor_cpp_FUN_0040cc70();
+    iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
     if (iVar3 == 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                (&(in_stack_00000004->model).motion_controller);
     }
     if (iVar3 == 1) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                (&(in_stack_00000004->model).motion_controller);
     }
     if (iVar3 == 2) goto LAB_00486225;
   }
-  iVar3 = core_actor_cpp_FUN_0040cd10();
+  iVar3 = core_actor_cpp_randomChance_FUN_0040cd10(0.4);
   if (iVar3 != 0) {
+    aCStack_28[0].x = 2.0;
     core_dracbrid_cpp_FUN_004864c0();
+    aCStack_28[0].y = in_stack_00000008;
+    aCStack_28[0].x = (float)in_stack_00000004;
     core_enemy_cpp_FUN_004a9f10();
     return;
   }
 LAB_0048616e:
+  aCStack_28[0].x = in_stack_00000008;
   core_enemy_cpp_FUN_004a9f10();
   return;
 }
@@ -146,7 +166,7 @@ LAB_0048616e:
 // 004860b5: LEA EAX,[ESP + 0x1c]
 // 004860b9: PUSH EAX
 // 004860ba: PUSH ESI
-// 004860bb: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 004860bb: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 004860c0: ADD ESP,0xc
 // 004860c3: PUSH 0x0
@@ -210,7 +230,7 @@ LAB_0048616e:
 // 00486156: ADD ESP,0x8
 // 00486159: PUSH 0x3ecccccd
 //   Label: LAB_00486159
-// 0048615e: CALL core_actor.cpp_FUN_0040cd10
+// 0048615e: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 00486163: ADD ESP,0x4
 // 00486166: TEST EAX,EAX
@@ -241,7 +261,7 @@ LAB_0048616e:
 // 00486196: FSTP ST1
 // 00486198: PUSH ESI
 // 00486199: FSTP float ptr [EDI + 0x4]
-// 0048619c: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0048619c: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 004861a1: ADD ESP,0xc
 // 004861a4: PUSH 0xffff
@@ -315,7 +335,7 @@ LAB_0048616e:
 // 00486231: ADD ESP,0xc
 // 00486234: PUSH 0x3ecccccd
 //   Label: LAB_00486234
-// 00486239: CALL core_actor.cpp_FUN_0040cd10
+// 00486239: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 0048623e: ADD ESP,0x4
 // 00486241: TEST EAX,EAX
@@ -355,7 +375,7 @@ LAB_0048616e:
 // 00486281: PUSH 0x2
 //   Label: LAB_00486281
 // 00486283: PUSH 0x0
-// 00486285: CALL core_actor.cpp_FUN_0040cc70
+// 00486285: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 0048628a: ADD ESP,0x8
 // 0048628d: MOV EBX,EAX

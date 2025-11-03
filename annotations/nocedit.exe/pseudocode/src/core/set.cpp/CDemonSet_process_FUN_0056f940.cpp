@@ -11,13 +11,13 @@
 //   TerminatedCString s_soff_00645fe0
 //   TerminatedCString s_moon_00645fe6
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CDemonLight*[96] g_MasterLightList
 //   int g_ActiveLightCount
 //   CDemonLight*[96] g_ActiveLightList
 //   undefined4 DAT_03276f38
 // Function calls:
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_setutil.cpp_C3DSLight_process_FUN_00586cb0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   crt_string.c_strnicmp_FUN_005ff070
@@ -57,13 +57,13 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_0056f940(CDemonSet *this_ptr)
         }
         core_setutil_cpp_C3DSLight_process_FUN_00586cb0(this_ptr_00,g_MasterLightList[0],local_18);
         crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffeec,"%son",this_ptr_00->name);
-        iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+        iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                           (g_CEventListPtr,&stack0xfffffef0);
         if (iVar2 != 0) {
           pCVar1->light_enabled_flag = 1;
         }
         crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef4,"%soff");
-        iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+        iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                           (g_CEventListPtr,&stack0xfffffef8);
         if (iVar2 != 0) {
           pCVar1->light_enabled_flag = 0;
@@ -177,7 +177,7 @@ LAB_0056f972:
 //   XREF to: 006793d0 (READ)
 // 0056fa06: PUSH ECX
 //   XREF to: 02d05310 (DATA)
-// 0056fa07: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0056fa07: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0056fa0c: ADD ESP,0x8
 // 0056fa0f: TEST EAX,EAX
@@ -202,7 +202,7 @@ LAB_0056f972:
 //   XREF to: 006793d0 (READ)
 // 0056fa3b: PUSH EAX
 //   XREF to: 02d05310 (DATA)
-// 0056fa3c: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0056fa3c: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 0056fa41: ADD ESP,0x8
 // 0056fa44: TEST EAX,EAX

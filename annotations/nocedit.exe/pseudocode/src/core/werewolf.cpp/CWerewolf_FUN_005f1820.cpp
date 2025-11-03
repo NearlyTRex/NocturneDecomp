@@ -47,8 +47,8 @@ int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr)
   if ((float)this_ptr->field11_0xbf00 <= (float)DOUBLE_00657db4) {
     if (*(int *)(this_ptr->base_enemy).base_character.field13_0x2620 != 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-      pcVar2 = (this_ptr->base_enemy).base_character.model.padding_0x0 +
-               *(int *)(this_ptr->field4_0xbec0 + 0x10) * 0x30 + 0xe80;
+      pcVar2 = (this_ptr->base_enemy).base_character.model.field3_0x508 +
+               *(int *)(this_ptr->field4_0xbec0 + 0x10) * 0x30 + 0x978;
       puVar3 = (undefined4 *)&stack0xffffffb4;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
         *puVar3 = *(undefined4 *)pcVar2;

@@ -1,14 +1,14 @@
 // Name: core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70
 // Address: 0052af70
 // Address Range: [[0052af70, 0052b153]]
-// Convention: unknown
-// Signature: undefined core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70()
+// Convention: __cdecl
+// Signature: void core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel * this_ptr)
 // Cross-references:
-//   core_morph.cpp_MorphModelCallToRotatePoints_FUN_0052af30 (0052af30) at 0052af4f [UNCONDITIONAL_CALL]
+//   core_morph.cpp_CMorphModel_FUN_0052af30 (0052af30) at 0052af4f [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\morph.cpp_0063a3f7
+//   TerminatedCString s_core_morph_cpp_0063a3f7
 //   TerminatedCString s_CMorphModel_rotatePoints_0063a409
-//   undefined4 DAT_00661b40
+//   float FLOAT_00661b40 = 256
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CDemonRenderer g_CDemonRendererInstance
@@ -30,11 +30,7 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 core_morph.cpp_CMorphModel_rotatePoints(CMorphModel* param_1, undefined4
-   param_2, undefined4 param_3) */
-
-void core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(void)
+void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel *this_ptr)
 
 {
   float fVar1;
@@ -48,15 +44,14 @@ void core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(void)
   int iVar9;
   CVector3i *input;
   int iVar10;
-  int in_stack_00000004;
   int in_stack_00000008;
   float in_stack_0000000c;
   int in_stack_00000010;
   int local_14;
   uint uVar11;
   
-  if (2000 < *(int *)(in_stack_00000004 + 0x54)) {
-    g_CurrentFilename = "?..\\core\\morph.cpp" + 1;
+  if (2000 < this_ptr->num_points) {
+    g_CurrentFilename = "..\\core\\morph.cpp";
     g_CurrentLineNumber = 0x1f8;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::rotatePoints - too many points!");
   }
@@ -75,9 +70,9 @@ void core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(void)
       fVar3 = *(float *)(iVar5 + 8 + iVar9);
       fVar4 = *(float *)(iVar5 + 0xc + iVar9);
       input->x = (int)ROUND((*(float *)(iVar5 + 4 + iVar9) * in_stack_0000000c +
-                            *(float *)(iVar8 + 4) * fVar7) * _DAT_00661b40);
-      input->y = (int)ROUND((fVar3 * in_stack_0000000c + fVar1 * fVar7) * _DAT_00661b40);
-      input->z = (int)ROUND((in_stack_0000000c * fVar4 + fVar7 * fVar2) * _DAT_00661b40);
+                            *(float *)(iVar8 + 4) * fVar7) * FLOAT_00661b40);
+      input->y = (int)ROUND((fVar3 * in_stack_0000000c + fVar1 * fVar7) * FLOAT_00661b40);
+      input->z = (int)ROUND((in_stack_0000000c * fVar4 + fVar7 * fVar2) * FLOAT_00661b40);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
                  ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
@@ -100,7 +95,10 @@ void core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(void)
     return;
   }
   core_set_cpp_CDemonSet_FUN_0056e5d0(g_CDemonSetPtr);
-  core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(g_CDemonSetPtr);
+  core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
+            (g_CDemonSetPtr,*(int *)((int)in_stack_0000000c + 0x54),
+             *(int *)((int)in_stack_0000000c + 0x5c),*(SInputFace **)((int)in_stack_0000000c + 0x60)
+             ,0x2f3dbb4,3,0);
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,local_14);
   return;
 }

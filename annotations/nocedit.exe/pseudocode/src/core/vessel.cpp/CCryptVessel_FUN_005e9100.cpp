@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_vessel.cpp_CCryptVessel_FUN_005e9100(CCryptVessel * this_ptr)
 // Globals:
-//   undefined4 s_CHero_00657031
+//   TerminatedCString s_CHero_00657031
 // Function calls:
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
 
@@ -17,7 +17,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_FUN_005e9100(CCryptVessel *this_ptr)
   CDemonActor *in_stack_00000008;
   
   if ((*(int *)(this_ptr->field14_0x3c0 + 0x430) == 0) && (this_ptr->state == 0)) {
-    iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,"?CHero" + 1);
+    iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,"CHero");
     if (iVar1 != 0) {
       return 4;
     }

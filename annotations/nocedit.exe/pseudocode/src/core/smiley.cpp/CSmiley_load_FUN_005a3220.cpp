@@ -31,7 +31,8 @@ void core_smiley_cpp_CSmiley_load_FUN_005a3220(void)
   core_actor_cpp_serializeFloat_FUN_0040b770
             ((float *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc),
              "guardDistance");
-  core_actor_cpp_serializeMotionState_FUN_0040b9f0(model_ptr,"motion state");
+  core_actor_cpp_serializeMotionState_FUN_0040b9f0
+            (&model_ptr->motion_controller,"motion state");
   return;
 }
 

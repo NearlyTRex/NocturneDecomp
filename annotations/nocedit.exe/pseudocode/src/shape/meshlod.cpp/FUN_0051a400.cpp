@@ -11,7 +11,7 @@
 //   void* PTR_shape_meshlod.cpp_FUN_0051a567_0051a3e4 = 0051a567
 //   void* PTR_shape_meshlod.cpp_FUN_0051a5d5_0051a3ec = 0051a5d5
 //   undefined4 DAT_0051a3f4
-//   undefined4 s_..\shape\meshlod.cpp_00637aa5
+//   TerminatedCString s_shape_meshlod_cpp_00637aa5
 //   TerminatedCString s_anon_00637aba
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -92,7 +92,7 @@ double shape_meshlod_cpp_FUN_0051a400(void)
                    (in_stack_00000008[1] - pfVar4[1]) * (in_stack_00000008[1] - pfVar4[1]) +
                    (*in_stack_00000008 - *pfVar4) * (*in_stack_00000008 - *pfVar4));
   default:
-    g_CurrentFilename = "0@..\\shape\\meshlod.cpp" + 2;
+    g_CurrentFilename = "..\\shape\\meshlod.cpp";
     g_CurrentLineNumber = 0xec8;
     core_main_c_displayErrorAndQuit_FUN_00506f10("!");
     pfVar3 = (float *)shape_meshlod_cpp_FUN_00518870();

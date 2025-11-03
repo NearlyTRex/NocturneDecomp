@@ -43,7 +43,7 @@ core_bugs_cpp_CBugs_dtor_FUN_00427bd0
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
                      ((CDeformableModelInstance *)(iVar1 + -0x293c),0,d4,d5,d6);
   ptr = (CBugs *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                           ((CDemonActor *)(pCVar2[-1].padding_0x0 + 0x215c),1);
+                           ((CDemonActor *)(pCVar2[-1].part_visibility_flags + 7),1);
   if ((d9 & 2) == 0) {
     return ptr;
   }

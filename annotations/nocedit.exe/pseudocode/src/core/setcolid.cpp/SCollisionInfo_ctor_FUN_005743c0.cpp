@@ -4,9 +4,9 @@
 // Convention: __cdecl
 // Signature: SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0(SCollisionInfo * this_ptr)
 // Cross-references:
-//   core_actor.cpp_CDemonActor_FUN_004093f0 (004093f0) at 004093fb [UNCONDITIONAL_CALL]
 //   core_actor.cpp_CDemonActor_testLineIntersection_FUN_00409150 (00409150) at 0040916a [UNCONDITIONAL_CALL]
 //   core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0 (004090c0) at 004090cb [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CDemonActor_testRayIntersection_FUN_004093f0 (004093f0) at 004093fb [UNCONDITIONAL_CALL]
 //   core_door.cpp_CDoor_process_FUN_004800c0 (004800c0) at 00480450 [UNCONDITIONAL_CALL]
 //   core_flame.cpp_FUN_004c9c00 (004c9c00) at 004c9dad [UNCONDITIONAL_CALL]
 //   core_pendulum.cpp_FUN_005495c0 (005495c0) at 005495d5 [UNCONDITIONAL_CALL]
@@ -27,8 +27,8 @@ SCollisionInfo * __cdecl
 core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(SCollisionInfo *this_ptr)
 
 {
-  this_ptr->cylinder_radius_sq = 0.0;
   this_ptr->result_ptr = (void *)0x0;
+  this_ptr->field9_0x24 = (void *)0x0;
   this_ptr->ray_type = 0;
   return this_ptr;
 }

@@ -22,7 +22,7 @@
 //   undefined4 DAT_02f7a080
 //   undefined4 DAT_02f7a118
 // Function calls:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
 //   core_actor.cpp_CActorProperty_FUN_0040ea50
 //   core_actor.cpp_FUN_0040e150
 //   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -34,6 +34,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 core_msnedit.cpp_FUN_0053c730(undefined4 param_1) */
 
 void core_msnedit_cpp_FUN_0053c730(void)
@@ -72,7 +73,7 @@ void core_msnedit_cpp_FUN_0053c730(void)
       (**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x28) + 0x154) + 0xd4))();
       iVar2 = 0;
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffac0);
-      if (0 < DAT_02f7a028) {
+      if (0 < _DAT_02f7a028) {
         puVar5 = &DAT_02f7a030;
         do {
           core_actor_cpp_CActorProperty_FUN_0040ea50();
@@ -80,7 +81,7 @@ void core_msnedit_cpp_FUN_0053c730(void)
           iVar2 = iVar2 + 1;
           puVar5 = puVar5 + 0xec;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffac0,&DAT_02f79c20);
-        } while (iVar2 < DAT_02f7a028);
+        } while (iVar2 < _DAT_02f7a028);
       }
       crt_stdio_c_sprintf_FUN_005fdbd0
                 (acStack_198,"Edit %s properties",*(undefined4 *)(in_stack_00000004 + 0x28))
@@ -91,8 +92,9 @@ void core_msnedit_cpp_FUN_0053c730(void)
       iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         ((CPickList *)&stack0xfffffac0,acStack_198,iVar2,config_param2);
       if (iVar2 < 0) break;
+      iVar2 = iVar2 * 0xec;
       pcVar6 = local_6c;
-      pcVar4 = &DAT_02f7a030 + iVar2 * 0xec;
+      pcVar4 = &DAT_02f7a030 + iVar2;
       do {
         cVar1 = *pcVar4;
         *pcVar6 = cVar1;
@@ -102,8 +104,10 @@ void core_msnedit_cpp_FUN_0053c730(void)
         pcVar6[1] = cVar1;
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
-      if (*(int *)(&DAT_02f7a080 + iVar2 * 0xec) != 0) {
-        core_actor_cpp_AnotherActorParser_FUN_0040eed0();
+      if (*(int *)(&DAT_02f7a080 + iVar2) != 0) {
+        core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
+                  ((CActorProperty *)(&DAT_02f7a02c + iVar2),
+                   *(CDemonActor **)(in_stack_00000004 + 0x28));
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                 ((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,
@@ -284,7 +288,7 @@ void core_msnedit_cpp_FUN_0053c730(void)
 //   Label: LAB_0053c89f
 // 0053c8a2: PUSH EDI
 // 0053c8a3: PUSH EDX
-// 0053c8a4: CALL core_actor.cpp_AnotherActorParser_FUN_0040eed0
+// 0053c8a4: CALL core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
 //   XREF to: 0040eed0 (UNCONDITIONAL_CALL)
 // 0053c8a9: ADD ESP,0x8
 // 0053c8ac: JMP 0x0053c88b

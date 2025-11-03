@@ -11,7 +11,7 @@
 //   undefined4 s_AR2.RAW_00615e62
 //   undefined4 s_R2.RAW_00615e63
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_flame.cpp_FUN_004c9b90
 
@@ -24,44 +24,49 @@ void core_bodypart_cpp_FUN_0041ae50(void)
 
 {
   char cVar1;
-  float *pfVar2;
+  CVector3f *pCVar2;
   int iVar3;
   float fVar4;
   int iVar5;
+  BADSPACEBASE *in_ESP;
+  CVector3f *input_local_point;
   char *pcVar6;
+  float *pfVar7;
   CDemonActor *in_stack_00000004;
-  undefined4 *in_stack_00000008;
+  CVector3f *in_stack_00000008;
+  CVector3f local_18;
   
   iVar5 = *(int *)(in_stack_00000004[5].create_event + 0x1c);
   if (iVar5 < 2) {
-    pcVar6 = in_stack_00000004[iVar5 * 2 + 5].create_event + 0x20;
+    input_local_point = (CVector3f *)(in_stack_00000004[iVar5 * 2 + 5].create_event + 0x20);
     *(int *)(in_stack_00000004[5].create_event + 0x1c) = iVar5 + 1;
-    if (pcVar6 != (char *)in_stack_00000008) {
-      *(undefined4 *)pcVar6 = *in_stack_00000008;
-      *(undefined4 *)(pcVar6 + 4) = in_stack_00000008[1];
-      *(undefined4 *)(pcVar6 + 8) = in_stack_00000008[2];
+    if (input_local_point != in_stack_00000008) {
+      input_local_point->x = in_stack_00000008->x;
+      input_local_point->y = in_stack_00000008->y;
+      input_local_point->z = in_stack_00000008->z;
     }
-    pfVar2 = core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-    *(float *)(pcVar6 + 0x2c) = *pfVar2;
-    *(float *)(pcVar6 + 0x30) = pfVar2[1];
-    *(float *)(pcVar6 + 0x34) = pfVar2[2];
+    pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                       (in_stack_00000004,&local_18,input_local_point);
+    input_local_point[3].z = pCVar2->x;
+    input_local_point[4].x = pCVar2->y;
+    input_local_point[4].y = pCVar2->z;
     core_flame_cpp_FUN_004c9b90();
-    *(undefined4 *)(pcVar6 + 0x1b8) = 0;
-    *(undefined4 *)(pcVar6 + 0x164) = 0x3fc00000;
-    *(undefined4 *)(pcVar6 + 0x168) = 0x40400000;
-    pfVar2 = &in_stack_00000004[1].orient_matrix.m[0].y;
-    *(undefined4 *)(pcVar6 + 0x16c) = 0x3fc00000;
+    input_local_point[0x24].z = 0.0;
+    input_local_point[0x1d].z = 1.5;
+    input_local_point[0x1e].x = 3.0;
+    pfVar7 = &in_stack_00000004[1].orient_matrix.m[0].y;
+    input_local_point[0x1e].y = 1.5;
     in_stack_00000004->is_transparent = 1;
     pcVar6 = "GCHAR2.RAW" + 1;
     in_stack_00000004[1].orient.bank = 1.4013e-45;
     do {
       cVar1 = *pcVar6;
-      *(char *)pfVar2 = cVar1;
+      *(char *)pfVar7 = cVar1;
       if (cVar1 == '\0') break;
       cVar1 = pcVar6[1];
       pcVar6 = pcVar6 + 2;
-      *(char *)((int)pfVar2 + 1) = cVar1;
-      pfVar2 = (float *)((int)pfVar2 + 2);
+      *(char *)((int)pfVar7 + 1) = cVar1;
+      pfVar7 = (float *)((int)pfVar7 + 2);
     } while (cVar1 != '\0');
     iVar5 = 0;
     if (0 < (int)in_stack_00000004[1].location.position.z) {
@@ -112,7 +117,7 @@ void core_bodypart_cpp_FUN_0041ae50(void)
 // 0041ae9a: LEA EAX,[ESP + 0xc]
 // 0041ae9e: PUSH EAX
 // 0041ae9f: PUSH EBX
-// 0041aea0: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0041aea0: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0041aea5: LEA EDX,[ESI + 0x2c]
 // 0041aea8: FLD float ptr [EAX]

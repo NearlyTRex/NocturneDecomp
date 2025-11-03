@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_biggs.cpp_FUN_00418b50()
 // Function calls:
-//   core_actor.cpp_FUN_0040cc70
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_enemy.cpp_FUN_004a9f10
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 
@@ -25,18 +25,22 @@ void core_biggs_cpp_FUN_00418b50(void)
   *(float *)(in_stack_00000004 + 0x243c) = fVar1;
   if (fVar1 <= 0.0) {
     *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              ((CMotionController *)(in_stack_00000004 + 0x158));
   }
   else {
-    iVar2 = core_actor_cpp_FUN_0040cc70();
+    iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
     if (iVar2 == 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                ((CMotionController *)(in_stack_00000004 + 0x158));
     }
     if (iVar2 == 1) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                ((CMotionController *)(in_stack_00000004 + 0x158));
     }
     if (iVar2 == 2) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                ((CMotionController *)(in_stack_00000004 + 0x158));
       core_enemy_cpp_FUN_004a9f10();
       return;
     }
@@ -67,7 +71,7 @@ void core_biggs_cpp_FUN_00418b50(void)
 //   XREF to: 00418bc6 (CONDITIONAL_JUMP)
 // 00418b79: PUSH 0x2
 // 00418b7b: PUSH 0x0
-// 00418b7d: CALL core_actor.cpp_FUN_0040cc70
+// 00418b7d: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 00418b82: ADD ESP,0x8
 // 00418b85: MOV ESI,EAX

@@ -20,7 +20,7 @@
 //   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
 //   core_morph.cpp_FUN_0052b310
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -42,7 +42,8 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_ctor_FUN_004185c0(CBiggs *this_ptr)
             ((CKeyFramedModelInstance *)(pCVar4[1].base_character.base_actor.actor_name + 8));
   iVar5 = core_morph_cpp_FUN_0052b310();
   *(CDemonActor_vtable **)(iVar5 + -0xbeec) = &g_CBiggsVTable;
-  core_skeleton_cpp_FUN_005a0840();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            ((CDeformableModelInstance *)(iVar5 + -0xbee8));
   pcVar6 = "bigAlien";
   pcVar7 = (char *)(iVar5 + 0xc2c);
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
@@ -96,7 +97,7 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_ctor_FUN_004185c0(CBiggs *this_ptr)
 // 004185fd: PUSH EAX
 // 004185fe: MOV dword ptr [EBX + 0x154],0x65ac24
 //   XREF to: 0065ac24 (DATA)
-// 00418608: CALL core_skeleton.cpp_FUN_005a0840
+// 00418608: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 0041860d: ADD ESP,0x8
 // 00418610: PUSH 0x615ac4

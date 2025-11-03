@@ -20,12 +20,12 @@
 //   undefined4 g_CWeaponClassInfo.name_hash
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_enemy.cpp_FUN_004a9a50
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20
-//   core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 //   core_xform.cpp_quaternionFromAngleX_FUN_005f79b0
 //   core_xform.cpp_quaternionFromAngleY_FUN_005f79f0
@@ -44,24 +44,26 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
   float fVar1;
   int iVar2;
   CDemonActor *pCVar3;
-  float *pfVar4;
+  CVector3f *pCVar4;
   CQuaternion4f *quat_ptr;
   BADSPACEBASE *in_ESP;
   float unaff_EBP;
+  undefined4 *puVar5;
   float unaff_EDI;
-  byte bVar5;
+  byte bVar6;
   CDemonActor *in_stack_00000004;
   float afStackY_1838 [1515];
   CQuaternion4f *in_stack_ffffff98;
-  float fVar6;
+  float fVar7;
   float local_50;
   CVector3f local_44;
-  float local_38 [5];
+  float local_38;
+  CVector3f local_34;
   float fStack_24;
   CVector3f local_20;
   float fStack_14;
   
-  bVar5 = 0;
+  bVar6 = 0;
   if (*(int *)(in_stack_00000004[0x1b].create_event + 0x38) == 0) {
     in_stack_00000004[0x8e].create_event[0x44] = '\0';
     in_stack_00000004[0x8e].create_event[0x45] = '\0';
@@ -86,29 +88,30 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
         g_CurrentLineNumber = 0x323;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CMobster::aimTommyGun - I'm not carrying one!");
       }
-      core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                (&local_44,&g_ZeroVector,
-                 (CMatrix3x4f *)&(&in_stack_00000004[0xb].metadata)[DAT_02f37ed0 + -1].runtime_flags
-                );
-      pfVar4 = core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
+      pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+                         (&local_44,&g_ZeroVector,
+                          (CMatrix3x4f *)&(&in_stack_00000004[0xb].scale)[DAT_02f37ed0 * 4].z);
+      pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                         (in_stack_00000004,&local_34,pCVar4);
       iVar2 = *(int *)(in_stack_00000004[0x8d].create_event + 0x4c);
-      fStack_24 = *(float *)(iVar2 + 0x20) - *pfVar4;
-      local_20.x = *(float *)(iVar2 + 0x24) - pfVar4[1];
-      local_20.y = *(float *)(iVar2 + 0x28) - pfVar4[2];
+      fStack_24 = *(float *)(iVar2 + 0x20) - pCVar4->x;
+      local_20.x = *(float *)(iVar2 + 0x24) - pCVar4->y;
+      local_20.y = *(float *)(iVar2 + 0x28) - pCVar4->z;
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                          (*(CDemonActor **)(in_stack_00000004[0x8d].create_event + 0x4c),
                           g_CHeroClassInfo.name_hash);
-      fVar6 = _DAT_006398f2;
+      fVar7 = _DAT_006398f2;
       if (pCVar3 != (CDemonActor *)0x0) {
-        fVar6 = _DAT_006398f6;
+        fVar7 = _DAT_006398f6;
       }
-      local_20.y = local_20.y + fVar6;
+      local_20.y = local_20.y + fVar7;
       core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                 ((CVector3f *)&fStack_14,&local_20);
       quat_ptr = (CQuaternion4f *)
-                 core_actor_cpp_FUN_0040cd70(unaff_EDI - (in_stack_00000004->orient).bank);
-      fVar6 = SQRT(unaff_EBP * unaff_EBP + local_20.z * local_20.z + fStack_14 * fStack_14);
-      if (((float)in_stack_ffffff98 <= ABS((float)quat_ptr)) || (fVar6 <= (float)_DAT_006398fe)) {
+                 core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                           (unaff_EDI - (in_stack_00000004->orient).bank);
+      fVar7 = SQRT(unaff_EBP * unaff_EBP + local_20.z * local_20.z + fStack_14 * fStack_14);
+      if (((float)in_stack_ffffff98 <= ABS((float)quat_ptr)) || (fVar7 <= (float)_DAT_006398fe)) {
         fVar1 = *(float *)(in_stack_00000004[0x8e].create_event + 0x44) - (float)quat_ptr;
         *(float *)(in_stack_00000004[0x8e].create_event + 0x44) = fVar1;
         if (fVar1 < 0.0) {
@@ -134,24 +137,28 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
       if ((float)in_stack_ffffff98 < (float)quat_ptr) {
         quat_ptr = in_stack_ffffff98;
       }
-      core_skeleton_cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50();
-      core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(quat_ptr,fVar6);
-      *(float *)(&stack0xffffffa8 + (uint)bVar5 * -8) = local_38[(uint)bVar5 * -2 + 1];
-      local_38[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0xfffffff9] =
-           local_38[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 2];
-      fVar6 = local_38[0];
-      (local_38 + (uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 0xfffffff9)
-      [(uint)bVar5 * -2 + 1] =
-           (local_38 + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 2)[(uint)bVar5 * -2 + 1];
+      core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50
+                ((CDeformableModelInstance *)(in_stack_00000004 + 1));
+      core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(quat_ptr,fVar7);
+      puVar5 = (undefined4 *)((int)&local_34 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4);
+      *(undefined4 *)(&stack0xffffffa8 + (uint)bVar6 * -8) =
+           *(undefined4 *)((int)&local_34 + (uint)bVar6 * -8);
+      *(undefined4 *)(&stack0xffffffac + (uint)bVar6 * -8 + (uint)bVar6 * -8) = *puVar5;
+      fVar7 = local_38;
+      *(undefined4 *)
+       ((int)(&stack0xffffffac + (uint)bVar6 * -8 + (uint)bVar6 * -8) + ((uint)bVar6 * -2 + 1) * 4)
+           = puVar5[(uint)bVar6 * -2 + 1];
       core_skeleton_cpp_CDeformableModelInstance_FUN_0059ff20();
       core_xform_cpp_quaternionFromAngleY_FUN_005f79f0
-                ((CQuaternion4f *)-(float)in_stack_ffffff98,fVar6);
+                ((CQuaternion4f *)-(float)in_stack_ffffff98,fVar7);
       local_50 = local_44.y;
-      local_38[(uint)bVar5 * 0xfffffffe + 0xfffffffb] = local_38[(uint)bVar5 * -2 + -1];
-      local_38[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xfffffffc] =
-           local_38[(uint)bVar5 * -2 + (uint)bVar5 * -2];
-      (local_38 + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xfffffffc)[(uint)bVar5 * -2 + 1] =
-           (local_38 + (uint)bVar5 * -2 + (uint)bVar5 * -2)[(uint)bVar5 * -2 + 1];
+      *(undefined4 *)(&stack0xffffffb4 + (uint)bVar6 * -8) =
+           *(undefined4 *)((int)&local_44 + (uint)bVar6 * -8 + 8);
+      *(float *)(&stack0xffffffb4 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4) =
+           (&local_38)[(uint)bVar6 * -2 + (uint)bVar6 * -2];
+      *(float *)((int)(&stack0xffffffb4 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4) +
+                ((uint)bVar6 * -2 + 1) * 4) =
+           (&local_38 + (uint)bVar6 * -2 + (uint)bVar6 * -2)[(uint)bVar6 * -2 + 1];
       core_skeleton_cpp_CDeformableModelInstance_FUN_0059ff20();
       return;
     }
@@ -261,7 +268,7 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
 //   XREF to: Stack[-0x44] (DATA)
 // 00526873: PUSH EAX
 // 00526874: PUSH EBX
-// 00526875: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 00526875: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0052687a: MOV EDX,dword ptr [EBX + 0xbe3c]
 // 00526880: FLD float ptr [EDX + 0x20]
@@ -310,7 +317,7 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
 // 005268e5: SUB ESP,0x4
 // 005268e8: FSTP float ptr [ESP]
 //   XREF to: Stack[-0x8c] (DATA)
-// 005268eb: CALL core_actor.cpp_FUN_0040cd70
+// 005268eb: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 005268f0: MOV dword ptr [ESP + 0x74],EAX
 //   XREF to: Stack[-0x18] (WRITE)
@@ -439,7 +446,7 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
 // 005269ef: PUSH 0x6
 // 005269f1: PUSH EAX
 //   Label: LAB_005269f1
-// 005269f2: CALL core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+// 005269f2: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 005269f7: ADD ESP,0x18
 // 005269fa: PUSH dword ptr [ESP + 0x5c]

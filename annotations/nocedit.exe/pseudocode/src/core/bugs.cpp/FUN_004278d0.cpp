@@ -8,7 +8,7 @@
 //   CGame g_CGameInstance
 //   undefined4 g_CGameInstance.delta_time_float
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_bugs.cpp_FUN_004257f0
 //   core_bugs.cpp_FUN_00426420
 //   core_bugs.cpp_FUN_004272f0
@@ -38,7 +38,7 @@ void core_bugs_cpp_FUN_004278d0(void)
   (in_stack_00000004->base_actor).orient.bank = (in_stack_00000004->base_actor).orient.heading;
   (in_stack_00000004->base_actor).orient.pitch = (in_stack_00000004->base_actor).orient.bank;
   pCVar7 = in_stack_00000004;
-  core_actor_cpp_CDemonActor_FUN_00408c10(&in_stack_00000004->base_actor);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&in_stack_00000004->base_actor);
   (in_stack_00000004->base_actor).location.position.x = (float)pCVar7;
   (in_stack_00000004->base_actor).location.position.y = fVar1;
   (in_stack_00000004->base_actor).location.position.z = fVar2;
@@ -93,7 +93,7 @@ void core_bugs_cpp_FUN_004278d0(void)
 // 0042790e: MOV dword ptr [EAX + 0x4],EDX
 // 00427911: MOV EDX,dword ptr [EAX + 0x4]
 // 00427914: MOV dword ptr [EAX],EDX
-// 00427916: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 00427916: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 0042791b: MOV EAX,dword ptr [EBX]
 // 0042791d: MOV dword ptr [EBP + -0x10],EAX

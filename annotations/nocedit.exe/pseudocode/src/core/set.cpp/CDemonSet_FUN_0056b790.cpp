@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_set.cpp_CDemonSet_FUN_0056b790(CDemonSet * this_ptr)
 // Cross-references:
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ac723 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ac723 [UNCONDITIONAL_CALL]
 //   core_platfrm.cpp_FUN_0054cc30 (0054cc30) at 0054cd2f [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055cbf9 [UNCONDITIONAL_CALL]
 // Function calls:

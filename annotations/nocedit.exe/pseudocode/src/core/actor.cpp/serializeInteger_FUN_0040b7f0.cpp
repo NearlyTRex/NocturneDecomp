@@ -72,7 +72,7 @@
 //   TerminatedCString s_d_00613f28
 //   TerminatedCString s_s_d_00613f2b
 //   string s_Integer_value_0066e148
-//   char* g_PropertyNamePrefix = 00000000
+//   char[104] g_PropertyNamePrefix
 //   FILE* g_ActorDataFile
 //   int g_ActorReadingMode
 // Function calls:
@@ -97,7 +97,7 @@ void __cdecl core_actor_cpp_serializeInteger_FUN_0040b7f0(int *int_ptr,char *pro
     }
   }
   else {
-    crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s%d",&g_PropertyNamePrefix,*int_ptr);
+    crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s%d",g_PropertyNamePrefix,*int_ptr);
   }
   core_actor_cpp_serializeDescription_FUN_0040b290("Integer value",in_stack_0000000c);
   return;

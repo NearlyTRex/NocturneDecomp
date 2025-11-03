@@ -12,7 +12,7 @@
 //   CDemonActor_vtable g_CBatCreatureVTable
 // Function calls:
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -27,8 +27,9 @@ CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_ctor_FUN_004150f0(CBatCrea
   CBatCreature *pCVar4;
   
   pCVar4 = (CBatCreature *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
-  (pCVar4->base_enemy).base_character.base_actor.metadata.vtable = &g_CBatCreatureVTable;
-  core_skeleton_cpp_FUN_005a0840();
+  (pCVar4->base_enemy).base_character.base_actor.vtable = &g_CBatCreatureVTable;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            (&(pCVar4->base_enemy).base_character.model);
   uVar3 = _PTR_FUN_0065a5b1_3;
   uVar2 = _DAT_0065a5b0;
   pCVar1 = &pCVar4->base_enemy;
@@ -63,7 +64,7 @@ CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_ctor_FUN_004150f0(CBatCrea
 // 0041510a: PUSH EAX
 // 0041510b: MOV dword ptr [EAX + -0x4],0x65a5c4
 //   XREF to: 0065a5c4 (DATA)
-// 00415112: CALL core_skeleton.cpp_FUN_005a0840
+// 00415112: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00415117: FLD float ptr [0x0065a5b0]
 //   XREF to: 0065a5b0 (READ)

@@ -23,7 +23,7 @@
 //   undefined4 g_CDemonSetInstance.actor_list_data[0]
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_event.cpp_FUN_004b18e0
 //   core_lever.cpp_FUN_00505080
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
@@ -45,7 +45,9 @@ undefined4 core_hero_cpp_FUN_004f2f50(void)
   int iVar5;
   int iVar6;
   CDemonActor *in_stack_00000004;
-  CVector3f local_34;
+  undefined1 local_38 [8];
+  float local_30;
+  float fStack_2c;
   CVector3f CStack_28;
   CLocation *local_1c;
   undefined4 local_18;
@@ -59,18 +61,21 @@ undefined4 core_hero_cpp_FUN_004f2f50(void)
                        (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar5),
                         g_CLeverClassInfo.name_hash);
     if (pCVar2 != (CDemonActor *)0x0) {
-      core_actor_cpp_CDemonActor_FUN_00408f10(in_stack_00000004);
-      if ((((ABS(local_34.y) <= (float)DOUBLE_0062ec36) && (0.0 <= (double)local_34.z)) &&
-          ((double)local_34.z <= DOUBLE_0062ec3e)) && (ABS(local_34.x) <= (float)DOUBLE_0062ec3e)) {
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                (in_stack_00000004,(CVector3f *)local_38,&(pCVar2->location).position);
+      if ((((ABS(local_30) <= (float)DOUBLE_0062ec36) && (0.0 <= (double)fStack_2c)) &&
+          ((double)fStack_2c <= DOUBLE_0062ec3e)) &&
+         (ABS((float)local_38._4_4_) <= (float)DOUBLE_0062ec3e)) {
         pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                           (&CStack_28,&local_34);
+                           (&CStack_28,(CVector3f *)(local_38 + 4));
         if (ABS(pCVar3->y) <= (float)DOUBLE_0062ec46) {
           iVar4 = core_lever_cpp_FUN_00505080();
           if (iVar4 != 0) {
-            local_34.x = 0.0;
+            local_38._4_4_ = 0.0;
             fVar1 = SQRT((CStack_28.y + FLOAT_0062ec52) * (CStack_28.y + FLOAT_0062ec52) +
-                         (local_34.z + _DAT_0062ec4e) * (local_34.z + _DAT_0062ec4e));
-            local_34.y = 2.0;
+                         (fStack_2c + _DAT_0062ec4e) * (fStack_2c + _DAT_0062ec4e));
+            local_38._0_4_ = 0.5;
+            local_30 = 2.0;
             if (fVar1 <= unaff_ESI) {
               in_stack_00000004[0x179].scale.z = (int)pCVar2;
               unaff_ESI = fVar1;
@@ -159,7 +164,7 @@ undefined4 core_hero_cpp_FUN_004f2f50(void)
 // 004f2fce: MOV EAX,dword ptr [EBP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 004f2fd1: PUSH EAX
-// 004f2fd2: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 004f2fd2: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 004f2fd7: ADD ESP,0xc
 // 004f2fda: FLD float ptr [ESP + 0x18]

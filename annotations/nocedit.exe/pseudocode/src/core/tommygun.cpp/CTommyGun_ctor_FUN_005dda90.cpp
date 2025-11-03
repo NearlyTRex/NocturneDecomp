@@ -26,33 +26,27 @@ int __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_005dda90(CTommyGun *this_ptr)
   CWeapon *pCVar3;
   
   pCVar3 = core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base_weapon);
-  (pCVar3->base_actor).metadata.vtable = &g_CTommyGunVTable;
+  (pCVar3->base_actor).vtable = &g_CTommyGunVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            ((CKeyFramedModelInstance *)&pCVar3->model_instance,"tommygun.kfm");
-  pCVar3->field4_0x2d8[0] = '\0';
-  pCVar3->field4_0x2d8[1] = '\0';
-  pCVar3->field4_0x2d8[2] = '\0';
-  pCVar3->field4_0x2d8[3] = '\0';
-  pCVar3->field4_0x2d8[4] = '\0';
-  pCVar3->field4_0x2d8[5] = '\0';
-  pCVar3->field4_0x2d8[6] = '\0';
-  pCVar3->field4_0x2d8[7] = '\0';
-  pCVar3->field4_0x2d8[8] = '\x04';
-  pCVar3->field4_0x2d8[9] = '\0';
-  pCVar3->field4_0x2d8[10] = '\0';
-  pCVar3->field4_0x2d8[0xb] = '\0';
-  pCVar3->field4_0x2d8[0xc] = '\x01';
-  pCVar3->field4_0x2d8[0xd] = '\0';
-  pCVar3->field4_0x2d8[0xe] = '\0';
-  pCVar3->field4_0x2d8[0xf] = '\0';
-  pCVar3->field4_0x2d8[0x10] = '\0';
-  pCVar3->field4_0x2d8[0x11] = '\0';
-  pCVar3->field4_0x2d8[0x12] = -0x38;
-  pCVar3->field4_0x2d8[0x13] = 'B';
-  pCVar3->field4_0x2d8[0x14] = '\x01';
-  pCVar3->field4_0x2d8[0x15] = '\0';
-  pCVar3->field4_0x2d8[0x16] = '\0';
-  pCVar3->field4_0x2d8[0x17] = '\0';
+            (&pCVar3->model,"tommygun.kfm");
+  pCVar3->field3_0x2d8[0] = '\0';
+  pCVar3->field3_0x2d8[1] = '\0';
+  pCVar3->field3_0x2d8[2] = '\0';
+  pCVar3->field3_0x2d8[3] = '\0';
+  pCVar3->field3_0x2d8[4] = '\0';
+  pCVar3->field3_0x2d8[5] = '\0';
+  pCVar3->field3_0x2d8[6] = '\0';
+  pCVar3->field3_0x2d8[7] = '\0';
+  pCVar3->field3_0x2d8[8] = '\x04';
+  pCVar3->field3_0x2d8[9] = '\0';
+  pCVar3->field3_0x2d8[10] = '\0';
+  pCVar3->field3_0x2d8[0xb] = '\0';
+  pCVar3->field3_0x2d8[0xc] = '\x01';
+  pCVar3->field3_0x2d8[0xd] = '\0';
+  pCVar3->field3_0x2d8[0xe] = '\0';
+  pCVar3->field3_0x2d8[0xf] = '\0';
+  pCVar3->bolt_velocity = 100.0;
+  pCVar3->fire_cooldown = 1.4013e-45;
   pCVar1 = pCVar3 + 1;
   (pCVar1->base_actor).actor_name[4] = '\0';
   uVar2 = _DAT_0066466c;
@@ -68,7 +62,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_005dda90(CTommyGun *this_ptr)
   pCVar3[1].base_actor.actor_name[1] = '\0';
   pCVar3[1].base_actor.actor_name[2] = '\0';
   pCVar3[1].base_actor.actor_name[3] = '\0';
-  *(undefined4 *)(pCVar3->field8_0x305 + 0x25f) = uVar2;
+  *(undefined4 *)(pCVar3->field9_0x305 + 0x25f) = uVar2;
   return (int)pCVar3;
 }
 

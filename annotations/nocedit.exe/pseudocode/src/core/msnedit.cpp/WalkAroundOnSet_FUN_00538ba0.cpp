@@ -24,12 +24,12 @@
 //   CBitFont* g_SmallEditorFont
 //   CBitFont* g_EditorFont
 //   CEditorTools g_CEditorToolsPtr
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CGame g_CGameInstance
 //   CHero*[4] g_HeroActors
 //   int g_LocalHeroIndex
 // Function calls:
-//   core_event.cpp_FUN_004b0460
+//   core_event.cpp_CEventList_FUN_004b0460
 //   core_game.cpp_CGame_runGameSession_FUN_004daf80
 //   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120
 //   core_mission.cpp_CDemonMission_createHeros_FUN_00524a80
@@ -87,7 +87,7 @@ void core_msnedit_cpp_WalkAroundOnSet_FUN_00538ba0(void)
       core_mission_cpp_CDemonMission_FUN_00523fb0(in_stack_00000004);
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Preparing...");
-      core_event_cpp_FUN_004b0460();
+      core_event_cpp_CEventList_FUN_004b0460(g_CEventListPtr);
       iVar1 = core_mission_cpp_CDemonMission_FUN_00524760(in_stack_00000004);
       if (iVar1 != 0) {
         core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(in_stack_00000004);
@@ -107,7 +107,7 @@ void core_msnedit_cpp_WalkAroundOnSet_FUN_00538ba0(void)
     core_mission_cpp_CDemonMission_load_FUN_00522d90(in_stack_00000004,&stack0x00000020,1);
     crt_stdio_c_sprintf_FUN_005fdbd0(acStack_e0,"world\\%s",&stack0x00000024);
     crt_io_c_deleteFile_FUN_005ff9d0(acStack_dc);
-    core_event_cpp_FUN_004b0460();
+    core_event_cpp_CEventList_FUN_004b0460(g_CEventListPtr);
     return;
   }
   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -217,7 +217,7 @@ void core_msnedit_cpp_WalkAroundOnSet_FUN_00538ba0(void)
 //   XREF to: 006793d0 (READ)
 // 00538c7e: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 00538c7f: CALL core_event.cpp_FUN_004b0460
+// 00538c7f: CALL core_event.cpp_CEventList_FUN_004b0460
 //   XREF to: 004b0460 (UNCONDITIONAL_CALL)
 // 00538c84: ADD ESP,0x4
 // 00538c87: PUSH EBX
@@ -295,7 +295,7 @@ void core_msnedit_cpp_WalkAroundOnSet_FUN_00538ba0(void)
 //   XREF to: 006793d0 (READ)
 // 00538d2d: PUSH EBP
 //   XREF to: 02d05310 (DATA)
-// 00538d2e: CALL core_event.cpp_FUN_004b0460
+// 00538d2e: CALL core_event.cpp_CEventList_FUN_004b0460
 //   XREF to: 004b0460 (UNCONDITIONAL_CALL)
 // 00538d33: ADD ESP,0x4
 // 00538d36: POP ESI

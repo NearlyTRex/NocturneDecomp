@@ -62,13 +62,11 @@ core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0
   ;
   local_14 = g_SavedProjectionFactor;
   core_mirror_cpp_setupMirrorReflection_FUN_005214c0
-            ((SMirrorReflection *)(this_ptr->actor_list_maybe[mirror_index][1].create_event + 0x1c))
-  ;
+            (&(this_ptr->mirror_glass_actors[mirror_index]->mirror).reflection);
   engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10(g_CDemonRendererPtr,1);
   (*(code *)((g_CurrentSceneCamera->base).vtable)->saveAlphaTransform)();
   engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_0048cdf0(g_CDemonRendererPtr,mirror_index + 1);
-  this_ptr->active_mirror =
-       (SMirror *)(this_ptr->actor_list_maybe[mirror_index][1].create_event + 0x1c);
+  this_ptr->active_mirror = &this_ptr->mirror_glass_actors[mirror_index]->mirror;
   return;
 }
 

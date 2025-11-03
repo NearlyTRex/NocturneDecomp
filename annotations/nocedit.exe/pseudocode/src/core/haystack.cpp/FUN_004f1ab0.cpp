@@ -11,7 +11,7 @@
 //   undefined4 g_CDemonSetInstance.damage_listeners
 //   undefined4 DAT_03263318
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
 
@@ -24,6 +24,7 @@ void core_haystack_cpp_FUN_004f1ab0(void)
 
 {
   CDemonActor *this_ptr;
+  CVector3f *input_local_point;
   BADSPACEBASE *in_ESP;
   int iVar1;
   int iVar2;
@@ -31,10 +32,11 @@ void core_haystack_cpp_FUN_004f1ab0(void)
   SDamageInfo SStack_5c;
   CDemonActor *pCStack_20;
   
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+  input_local_point = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
   iVar2 = 0;
   iVar1 = 0;
-  core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (in_stack_00000004,(CVector3f *)&stack0xffffffe8,input_local_point);
   while( true ) {
     if (g_CDemonSetPtr->damage_listener_count <= iVar2) break;
     this_ptr = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar1 + -4);
@@ -44,7 +46,7 @@ void core_haystack_cpp_FUN_004f1ab0(void)
       SStack_5c.damage_flags = 0x41200000;
       SStack_5c.wielder = in_stack_00000004;
       pCStack_20 = in_stack_00000004;
-      (*(this_ptr->metadata).vtable[1].playAmbientSound)(this_ptr,&stack0xfffffff0);
+      (*this_ptr->vtable[1].playAmbientSound)(this_ptr,&stack0xfffffff0);
     }
     iVar2 = iVar2 + 1;
     iVar1 = iVar1 + 4;
@@ -80,7 +82,7 @@ void core_haystack_cpp_FUN_004f1ab0(void)
 // 004f1ada: PUSH EBP
 // 004f1adb: XOR EDI,EDI
 // 004f1add: XOR ESI,ESI
-// 004f1adf: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 004f1adf: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 004f1ae4: ADD ESP,0xc
 // 004f1ae7: MOV EBX,dword ptr [0x006810c8]

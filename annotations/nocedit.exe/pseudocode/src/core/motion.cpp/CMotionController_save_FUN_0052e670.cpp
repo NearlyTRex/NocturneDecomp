@@ -2,7 +2,7 @@
 // Address: 0052e670
 // Address Range: [[0052e670, 0052e6f6]]
 // Convention: __cdecl
-// Signature: void core_motion.cpp_CMotionController_save_FUN_0052e670(CMotionController * this_ptr)
+// Signature: void core_motion.cpp_CMotionController_save_FUN_0052e670(CMotionController * this_ptr, FILE * file_handle)
 // Cross-references:
 //   core_actor.cpp_serializeMotionState_FUN_0040b9f0 (0040b9f0) at 0040baac [UNCONDITIONAL_CALL]
 // Globals:
@@ -19,27 +19,27 @@
 
 #include "nocturne.h"
 
-void __cdecl core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr)
+void __cdecl
+core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,FILE *file_handle)
 
 {
-  undefined4 uVar1;
-  FILE *in_stack_00000008;
+  int iVar1;
   undefined4 in_stack_0000000c;
   undefined4 uVar2;
   
-  if (this_ptr->currentMotionName[0] == '\0') {
-    if (this_ptr->motionListPtr == (CMotionList *)0x0) {
+  if (this_ptr->current_motion_name[0] == '\0') {
+    if (this_ptr->motion_list_ptr == (CMotionList *)0x0) {
       g_CurrentFilename = "..\\core\\motion.cpp";
       g_CurrentLineNumber = 0x536;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Tried to save motion controller state without setting motion list pointer!");
     }
-    uVar2 = (undefined4)((ulonglong)(double)this_ptr->curFrameNumber >> 0x20);
-    uVar1 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    uVar2 = (undefined4)((ulonglong)(double)this_ptr->current_frame_number >> 0x20);
+    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
     crt_stdio_c_fprintf_FUN_005fe6d0
-              (in_stack_00000008,"%s\"%s\",%g // current motion name, curFrameNumber\n",in_stack_0000000c,uVar1,uVar2);
+              (file_handle,"%s\"%s\",%g // current motion name, curFrameNumber\n",in_stack_0000000c,iVar1,uVar2);
     return;
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%s\"%s\",%g // current motion name, curFrameNumber\n");
+  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s\"%s\",%g // current motion name, curFrameNumber\n");
   return;
 }
 

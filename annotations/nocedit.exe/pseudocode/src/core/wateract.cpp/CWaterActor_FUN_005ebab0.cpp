@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_wateract.cpp_CWaterActor_FUN_005ebab0(CWaterActor * this_ptr)
 // Globals:
-//   undefined4 DAT_006574b7
+//   double DOUBLE_006574b7 = 4
 //   CGame* g_CGamePtr = 02d81a9c
 //   CKeys* g_CKeysPtr = 02dcd7d4
 //   undefined4 g_CGameInstance.delta_time_float
@@ -13,8 +13,6 @@
 //   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_wateract_cpp_CWaterActor_FUN_005ebab0(CWaterActor *this_ptr)
 
@@ -30,7 +28,7 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ebab0(CWaterActor *this_ptr)
   
   iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
   if (iVar1 != 0) {
-    fStack0000000c = g_CGamePtr->delta_time_float * (float)_DAT_006574b7;
+    fStack0000000c = g_CGamePtr->delta_time_float * (float)DOUBLE_006574b7;
     iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4b);
     if (iVar1 != 0) {
       (this_ptr->size).x = (this_ptr->size).x - in_stack_00000020;
@@ -63,11 +61,11 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ebab0(CWaterActor *this_ptr)
       (this_ptr->size).z = 100.0;
     }
     (this_ptr->size).y = 0.1;
-    (*((this_ptr->base_actor).metadata.vtable)->setup)(&this_ptr->base_actor);
+    (*((this_ptr->base_actor).vtable)->setup)(&this_ptr->base_actor);
     return;
   }
   core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base_actor);
-  (*((this_ptr->base_actor).metadata.vtable)->setup)(&this_ptr->base_actor);
+  (*((this_ptr->base_actor).vtable)->setup)(&this_ptr->base_actor);
   return;
 }
 

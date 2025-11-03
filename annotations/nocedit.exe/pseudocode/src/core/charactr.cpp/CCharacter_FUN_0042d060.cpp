@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_charactr.cpp_CCharacter_FUN_0042d060(CCharacter * this_ptr)
 // Cross-references:
-//   core_boneguy.cpp_CBoneGuy_explode2_FUN_0041d680 (0041d680) at 0041d68c [UNCONDITIONAL_CALL]
+//   core_boneguy.cpp_CBoneGuy_FUN_0041d680 (0041d680) at 0041d68c [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_00428e30 (00428e30) at 00428ecb [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_0042c3c0 (0042c3c0) at 0042c56b [UNCONDITIONAL_CALL]
 //   core_npc.cpp_CNPC_FUN_00544d30 (00544d30) at 00544dd9 [UNCONDITIONAL_CALL]
@@ -19,7 +19,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d060(CCharacter *this_ptr)
   iVar1 = 0;
   do {
     iVar1 = iVar1 + 1;
-    (*(this_ptr->base_actor).metadata.vtable[1].renderTargetPoints)(&this_ptr->base_actor);
+    (*(this_ptr->base_actor).vtable[1].renderTargetPoints)(&this_ptr->base_actor);
   } while (iVar1 < 2);
   return;
 }

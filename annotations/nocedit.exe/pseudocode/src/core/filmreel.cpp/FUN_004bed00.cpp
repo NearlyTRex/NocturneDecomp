@@ -31,14 +31,14 @@ int core_filmreel_cpp_FUN_004bed00(void)
   float fStack_34;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-  this_ptr = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+  this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
                        (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffc8);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
   if (iVar1 == 0) {
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
     return 0;
   }
-  in_stack_0000000c = in_stack_00000004[2].metadata.runtime_vector1.x;
+  in_stack_0000000c = in_stack_00000004[2].previous_transform_state.position.x;
   in_stack_00000008 = 0;
   fStack_34 = 6.972861e-39;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

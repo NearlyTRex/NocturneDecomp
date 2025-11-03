@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_turret.cpp_CTurret_FUN_005e34d0(CTurret * this_ptr)
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 
 #include "nocturne.h"
 
@@ -22,10 +22,9 @@ int __cdecl core_turret_cpp_CTurret_FUN_005e34d0(CTurret *this_ptr)
       (this_ptr->base_weapon).base_actor.orient.bank = in_stack_00000008[1];
       (this_ptr->base_weapon).base_actor.orient.heading = in_stack_00000008[2];
     }
-    core_actor_cpp_CDemonActor_FUN_00408c10((CDemonActor *)this_ptr);
+    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
     if (*(int *)(in_stack_0000000c + 0xc) != 0) {
-      (*(this_ptr->base_weapon).base_actor.metadata.vtable[1].renderTransparent)
-                ((CDemonActor *)this_ptr);
+      (*(this_ptr->base_weapon).base_actor.vtable[1].renderTransparent)((CDemonActor *)this_ptr);
     }
     return 1;
   }
@@ -60,7 +59,7 @@ int __cdecl core_turret_cpp_CTurret_FUN_005e34d0(CTurret *this_ptr)
 // 005e34fb: PUSH EDI
 //   Label: LAB_005e34fb
 // 005e34fc: PUSH EBX
-// 005e34fd: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 005e34fd: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 005e3502: MOV EDI,dword ptr [ESI + 0xc]
 // 005e3505: ADD ESP,0x4

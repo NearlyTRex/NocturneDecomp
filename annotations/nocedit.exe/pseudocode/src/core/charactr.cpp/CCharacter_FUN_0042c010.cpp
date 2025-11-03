@@ -8,7 +8,7 @@
 //   CGame* g_CGamePtr = 02d81a9c
 //   undefined4 g_CGameInstance.delta_time_float
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 
 #include "nocturne.h"
 
@@ -18,9 +18,10 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c010(CCharacter *this_ptr)
   float fVar1;
   float fVar2;
   int iVar3;
-  float *pfVar4;
+  CVector3f *pCVar4;
   BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000008;
+  CVector3f *in_stack_0000000c;
   float local_2c;
   float local_20;
   float local_18;
@@ -29,16 +30,18 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c010(CCharacter *this_ptr)
     iVar3 = 0;
   }
   else {
-    iVar3 = (*(this_ptr->base_actor).metadata.vtable[1].getGroundType)(&this_ptr->base_actor);
+    iVar3 = (*(this_ptr->base_actor).vtable[1].getGroundType)(&this_ptr->base_actor);
     if (iVar3 != 0) {
-      pfVar4 = core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000008);
-      local_2c = local_20 - *pfVar4;
-      fVar1 = SQRT((local_18 - pfVar4[2]) * (local_18 - pfVar4[2]) + local_2c * local_2c);
+      pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                         (in_stack_00000008,(CVector3f *)&stack0xffffffbc,in_stack_0000000c);
+      local_2c = local_20 - pCVar4->x;
+      fVar1 = local_18 - pCVar4->z;
+      fVar1 = SQRT(fVar1 * fVar1 + local_2c * local_2c);
       fVar2 = g_CGamePtr->delta_time_float * (float)DOUBLE_0061718a;
       if (fVar2 < fVar1) {
         local_2c = local_2c * (fVar2 / fVar1);
       }
-      (*((in_stack_00000008->metadata).vtable)->setPositionAndOrientation)
+      (*in_stack_00000008->vtable->setPositionAndOrientation)
                 (in_stack_00000008,(CVector3f *)&stack0xffffffc8,
                  (CVector3f *)((in_stack_00000008->location).position.x + local_2c));
       return 1;
@@ -85,7 +88,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c010(CCharacter *this_ptr)
 //   XREF to: Stack[-0x44] (DATA)
 // 0042c047: PUSH EAX
 // 0042c048: PUSH EBX
-// 0042c049: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0042c049: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0042c04e: FLD float ptr [EBP + -0x14]
 //   XREF to: Stack[-0x1c] (READ)

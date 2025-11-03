@@ -23,17 +23,17 @@ void core_gabriela_cpp_FUN_004d5fe0(void)
   CDemonActor *in_stack_00000004;
   
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000004);
-  iVar1 = (**(code **)(*(int *)((int)in_stack_00000004[0x178].metadata.runtime_vector1.x + 0x154) +
-                      0xf8))();
+  iVar1 = (**(code **)(*(int *)((int)in_stack_00000004[0x178].previous_transform_state.position.x +
+                               0x154) + 0xf8))();
   if ((iVar1 != 0) &&
-     (*(int *)((int)in_stack_00000004[0x178].metadata.runtime_vector1.x + 0x2dc) == 1)) {
+     (*(int *)((int)in_stack_00000004[0x178].previous_transform_state.position.x + 0x2dc) == 1)) {
     in_stack_00000004[0x17a].actor_name[0x1c] = '\0';
     in_stack_00000004[0x17a].actor_name[0x1d] = '\0';
     in_stack_00000004[0x17a].actor_name[0x1e] = -0x80;
     in_stack_00000004[0x17a].actor_name[0x1f] = '?';
   }
   core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
-  in_stack_00000004[0x179].metadata.vtable = (CDemonActor_vtable *)0x0;
+  in_stack_00000004[0x179].vtable = (CDemonActor_vtable *)0x0;
   return;
 }
 

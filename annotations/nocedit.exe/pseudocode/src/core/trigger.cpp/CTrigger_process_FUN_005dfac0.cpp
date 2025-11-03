@@ -14,7 +14,7 @@
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   CDemonSet* g_CDemonSetPtr = 03114278
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CFireEffect g_CFireEffectInstance
 //   undefined4 DAT_02d7a7b8
 //   int g_HeroCount
@@ -27,13 +27,13 @@
 //   undefined4 DAT_032613d4
 // Function calls:
 //   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
-//   core_event.cpp_FUN_004aabe0
+//   core_event.cpp_CEventList_FUN_004aabe0
 //   core_fire.cpp_CFireEffect_FUN_004c8c90
 //   core_hero.cpp_FUN_004f2220
 //   core_mission.cpp_CDemonMission_FUN_00524030
-//   core_set.cpp_CDemonSet_FUN_0056db80
+//   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
 //   core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0
 //   shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20
 
@@ -51,7 +51,7 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr)
   undefined4 uVar4;
   char *pcVar5;
   CBoundingBox3D *pCVar6;
-  float *pfVar7;
+  CVector3f *pCVar7;
   int iVar8;
   int iVar9;
   int iVar10;
@@ -62,15 +62,10 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr)
   float fStack_80;
   float fStack_7c;
   float fStack_78;
-  int iStack_74;
-  int iStack_70;
-  int iStack_6c;
-  float fStack_68;
-  float fStack_64;
-  float fStack_60;
-  float fStack_50;
-  float fStack_4c;
-  float fStack_48;
+  CVector3i CStack_74;
+  CVector3f CStack_68;
+  CVector3f CStack_5c;
+  CVector3f aCStack_50 [2];
   int local_34;
   char *local_30;
   char *local_2c;
@@ -90,7 +85,7 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr)
     iVar9 = core_hero_cpp_FUN_004f2220();
     if (iVar9 != 0) {
       iVar9 = 0;
-      (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)(&this_ptr->base_actor,&local_a0);
+      (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&local_a0);
       if (0 < g_HeroCount) {
         iVar10 = 0;
         do {
@@ -133,24 +128,26 @@ LAB_005dfb52:
   case 2:
     iVar9 = core_hero_cpp_FUN_004f2220();
     if (iVar9 != 0) {
-      pCVar6 = (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
+      pCVar6 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
                          (&this_ptr->base_actor,(CBoundingBox3D *)local_b8);
       fStack_80 = (pCVar6->min).x + (pCVar6->max).x;
       fStack_7c = (pCVar6->min).y + (pCVar6->max).y;
-      fStack_68 = fStack_80 * _DAT_0065562c;
-      fStack_64 = fStack_7c * _DAT_0065562c;
+      CStack_68.x = fStack_80 * _DAT_0065562c;
+      CStack_68.y = fStack_7c * _DAT_0065562c;
       fStack_78 = (pCVar6->min).z + (pCVar6->max).z;
-      fStack_60 = fStack_78 * _DAT_0065562c;
-      pfVar7 = core_actor_cpp_CDemonActor_FUN_00408ec0(&this_ptr->base_actor);
-      if (&fStack_50 != pfVar7) {
-        fStack_50 = *pfVar7;
-        fStack_4c = pfVar7[1];
-        fStack_48 = pfVar7[2];
+      CStack_68.z = fStack_78 * _DAT_0065562c;
+      pCVar7 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                         (&this_ptr->base_actor,&CStack_5c,&CStack_68);
+      if (aCStack_50 != pCVar7) {
+        aCStack_50[0].x = pCVar7->x;
+        aCStack_50[0].y = pCVar7->y;
+        aCStack_50[0].z = pCVar7->z;
       }
-      iStack_74 = (int)ROUND(fStack_50 * _DAT_00664a00);
-      iStack_70 = (int)ROUND(fStack_4c * _DAT_00664a00);
-      iStack_6c = (int)ROUND(fStack_48 * _DAT_00664a00);
-      iVar9 = core_set_cpp_CDemonSet_FUN_0056db80(g_CDemonSetPtr);
+      CStack_74.x = (int)ROUND(aCStack_50[0].x * _DAT_00664a00);
+      CStack_74.y = (int)ROUND(aCStack_50[0].y * _DAT_00664a00);
+      CStack_74.z = (int)ROUND(aCStack_50[0].z * _DAT_00664a00);
+      iVar9 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
+                        (g_CDemonSetPtr,&CStack_74,(CVector3i *)0x0);
       local_b8[0] = (double)iVar9;
       if ((*(float *)(this_ptr->field1_0x158 + 0xc4) * (float)_DAT_00655634 <= (float)iVar9) &&
          ((float)iVar9 <= *(float *)(this_ptr->field1_0x158 + 200) * (float)_DAT_00655634)) {
@@ -277,14 +274,14 @@ LAB_005e0053:
 switchD_005dfb63_default:
   *(int *)(this_ptr->field1_0x158 + 0x194) = local_34;
   if (*(int *)(this_ptr->field1_0x158 + 0x14) == 0) {
-    core_event_cpp_FUN_004aabe0();
+    core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
     this_ptr->field1_0x158[0x1a4] = '\0';
     this_ptr->field1_0x158[0x1a5] = '\0';
     this_ptr->field1_0x158[0x1a6] = '\0';
     this_ptr->field1_0x158[0x1a7] = '\0';
     return;
   }
-  core_event_cpp_FUN_004aabe0();
+  core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
   return;
 }
 
@@ -395,7 +392,7 @@ switchD_005dfb63_default:
 //   XREF to: 006793d0 (READ)
 // 005dfbab: PUSH EDX
 //   XREF to: 02d05310 (DATA)
-// 005dfbac: CALL core_event.cpp_FUN_004aabe0
+// 005dfbac: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 005dfbb1: ADD ESP,0x8
 // 005dfbb4: MOV ESP,EBP
@@ -527,7 +524,7 @@ switchD_005dfb63_default:
 // 005dfcfb: FSTP float ptr [ESP + 0x5c]
 // 005dfcff: PUSH ESI
 // 005dfd00: FSTP float ptr [ESP + 0x64]
-// 005dfd04: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005dfd04: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005dfd09: MOV EBX,EAX
 // 005dfd0b: LEA EAX,[ESP + 0x74]
@@ -564,7 +561,7 @@ switchD_005dfb63_default:
 //   XREF to: 006810c8 (READ)
 // 005dfd61: PUSH EDX
 //   XREF to: 03114278 (DATA)
-// 005dfd62: CALL core_set.cpp_CDemonSet_FUN_0056db80
+// 005dfd62: CALL core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
 //   XREF to: 0056db80 (UNCONDITIONAL_CALL)
 // 005dfd67: FLD float ptr [ESI + 0x21c]
 // 005dfd6d: ADD ESP,0xc
@@ -866,7 +863,7 @@ switchD_005dfb63_default:
 //   XREF to: 006793d0 (READ)
 // 005e008e: PUSH EAX
 //   XREF to: 02d05310 (DATA)
-// 005e008f: CALL core_event.cpp_FUN_004aabe0
+// 005e008f: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 005e0094: ADD ESP,0x8
 // 005e0097: MOV dword ptr [ESI + 0x2fc],EDI

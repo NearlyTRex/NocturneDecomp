@@ -17,10 +17,10 @@
 //   undefined4 DAT_032c1c68
 //   undefined4 DAT_032c1c6c
 //   undefined4 DAT_032c1c70
-//   undefined4 DAT_032cd84c
+//   CVector3i[20000] g_TransformedVertexArray
 //   undefined4 DAT_032cd850
 //   undefined4 DAT_032cd854
-//   undefined4 DAT_033081cc
+//   CVector3f[20000] g_VertexNormalArray
 //   undefined4 DAT_033081d0
 //   undefined4 DAT_033081d4
 // Function calls:
@@ -43,10 +43,9 @@ void core_set_cpp_FUN_005702b0(void)
   int iVar3;
   int iVar4;
   int iVar5;
-  int iVar6;
   BADSPACEBASE *in_ESP;
   int unaff_EDI;
-  byte bVar7;
+  byte bVar6;
   int in_stack_00000004;
   ushort *in_stack_00000008;
   int in_stack_0000000c;
@@ -63,7 +62,7 @@ void core_set_cpp_FUN_005702b0(void)
   int local_24 [4];
   int local_14;
   
-  bVar7 = 0;
+  bVar6 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,&DAT_006813e4);
   if (g_CGamePtr->field62_0x1f4 == 2) {
     in_stack_00000010 = g_CurrentAlphaValue << 8;
@@ -117,43 +116,41 @@ void core_set_cpp_FUN_005702b0(void)
       local_108.field11_0x34[6] = (char)((uint)iVar3 >> 0x10);
       local_108.field11_0x34[7] = (char)((uint)iVar3 >> 0x18);
       if (*(int *)(in_stack_00000004 + 0x15ae84) != 0) {
-        engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0((CVector3i *)&DAT_032cd84c,&local_108)
-        ;
+        engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(g_TransformedVertexArray,&local_108);
       }
       iVar3 = 0;
       if (0 < local_108.vertex_count) {
         unaff_EDI = 0;
-        iVar6 = 0;
+        iVar5 = 0;
         do {
           iVar4 = *(int *)(local_108.field7_0x1c + unaff_EDI + -4);
-          iVar5 = iVar4 * 0xc;
           if ((((*(int *)(in_stack_00000004 + 0x15ae84) == 0) ||
-               (1.0 <= ABS((float)(&DAT_033081cc)[iVar4 * 3]))) ||
-              (1.0 <= ABS((float)(&DAT_033081d0)[iVar4 * 3]))) ||
-             (1.0 <= ABS((float)(&DAT_033081d4)[iVar4 * 3]))) {
-            local_24[2] = (int)ROUND((float)(&DAT_033081cc)[iVar4 * 3]);
-            local_24[3] = (int)ROUND((float)(&DAT_033081d0)[iVar4 * 3]);
-            local_14 = (int)ROUND((float)(&DAT_033081d4)[iVar4 * 3]);
+               (1.0 <= ABS(g_VertexNormalArray[iVar4].x))) ||
+              (1.0 <= ABS(g_VertexNormalArray[iVar4].y))) ||
+             (1.0 <= ABS(g_VertexNormalArray[iVar4].z))) {
+            local_24[2] = (int)ROUND(g_VertexNormalArray[iVar4].x);
+            local_24[3] = (int)ROUND(g_VertexNormalArray[iVar4].y);
+            local_14 = (int)ROUND(g_VertexNormalArray[iVar4].z);
           }
           else {
             aCStack_40[0].x =
-                 (int)ROUND(DAT_032c1c68 * FLOAT_00662850) - *(int *)(&DAT_032cd84c + iVar5);
+                 (int)ROUND(DAT_032c1c68 * FLOAT_00662850) - g_TransformedVertexArray[iVar4].x;
             aCStack_40[0].y =
-                 (int)ROUND(DAT_032c1c6c * FLOAT_00662850) - *(int *)(&DAT_032cd850 + iVar5);
+                 (int)ROUND(DAT_032c1c6c * FLOAT_00662850) - g_TransformedVertexArray[iVar4].y;
             aCStack_40[0].z =
-                 (int)ROUND(DAT_032c1c70 * FLOAT_00662850) - *(int *)(&DAT_032cd854 + iVar5);
+                 (int)ROUND(DAT_032c1c70 * FLOAT_00662850) - g_TransformedVertexArray[iVar4].z;
             engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(aCStack_40);
             local_24[2] = local_28;
-            local_24[(uint)bVar7 * -2 + 3] = local_24[(uint)bVar7 * -2];
-            local_24[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-                 local_24[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+            local_24[(uint)bVar6 * -2 + 3] = local_24[(uint)bVar6 * -2];
+            local_24[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+                 local_24[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
           }
           iVar3 = iVar3 + 1;
           iVar4 = 0x8000 - local_24[3];
-          *(int *)((int)&uStack_c0 + iVar6) = local_24[2] + 0x8000;
-          *(int *)((int)&uStack_80 + iVar6) = iVar4;
+          *(int *)((int)&uStack_c0 + iVar5) = local_24[2] + 0x8000;
+          *(int *)((int)&uStack_80 + iVar5) = iVar4;
           unaff_EDI = unaff_EDI + 0xc;
-          iVar6 = iVar6 + 4;
+          iVar5 = iVar5 + 4;
         } while (iVar3 < local_108.vertex_count);
       }
       if (1 < local_108.vertex_count) {
@@ -179,13 +176,13 @@ void core_set_cpp_FUN_005702b0(void)
       iVar3 = 0;
       if (0 < local_108.vertex_count) {
         iVar4 = 0;
-        iVar6 = 0;
+        iVar5 = 0;
         do {
-          *(int *)(local_108.field7_0x1c + iVar6) = *(int *)((int)&uStack_c0 + iVar4) << 8;
-          *(int *)(local_108.field7_0x1c + iVar6 + 4) = *(int *)((int)&uStack_80 + iVar4) << 8;
+          *(int *)(local_108.field7_0x1c + iVar5) = *(int *)((int)&uStack_c0 + iVar4) << 8;
+          *(int *)(local_108.field7_0x1c + iVar5 + 4) = *(int *)((int)&uStack_80 + iVar4) << 8;
           iVar3 = iVar3 + 1;
           iVar4 = iVar4 + 4;
-          iVar6 = iVar6 + 0xc;
+          iVar5 = iVar5 + 0xc;
         } while (iVar3 < local_108.vertex_count);
       }
       if (*(int *)(in_stack_00000004 + 0x15ae84) != 0) {

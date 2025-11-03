@@ -92,7 +92,7 @@ void core_pendulum_cpp_FUN_005495c0(void)
         ((CStack_7c.x <= pfVar2[3] && (CStack_7c.y <= pfVar2[4])))) && (CStack_7c.z <= pfVar2[5])) {
       pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                          ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158));
-      fStack_24 = aSStack_110[0].cylinder_top_y * aSStack_110[0].cylinder_top_y;
+      fStack_24 = aSStack_110[0].cylinder_radius * aSStack_110[0].cylinder_radius;
       iStack_20 = pCVar4->vertex_count;
       ppCVar5 = pCVar4->vertex_list;
       iStack_1c = 0;
@@ -113,8 +113,8 @@ void core_pendulum_cpp_FUN_005495c0(void)
           CStack_a0.x = (CStack_a0.x + *(float *)(in_stack_00000004 + 0x20)) - *pfStack_18;
           CStack_a0.y = (CStack_a0.y + *(float *)(in_stack_00000004 + 0x24)) - pfStack_18[1];
           CStack_a0.z = (CStack_a0.z + *(float *)(in_stack_00000004 + 0x28)) - pfStack_18[2];
-          if (((aSStack_110[0].field5_0x14 <= CStack_a0.y) &&
-              (CStack_a0.y <= aSStack_110[0].cylinder_bottom_y + 1.0)) &&
+          if (((aSStack_110[0].cylinder_bottom_y <= CStack_a0.y) &&
+              (CStack_a0.y <= aSStack_110[0].cylinder_top_y + 1.0)) &&
              (CStack_a0.x * CStack_a0.x + CStack_a0.z * CStack_a0.z <= fStack_24)) break;
           iStack_1c = iStack_1c + 1;
           ppCVar5 = ppCVar5 + 3;

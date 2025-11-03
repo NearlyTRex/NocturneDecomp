@@ -6,8 +6,8 @@
 // Cross-references:
 //   core_scat.cpp_FUN_005578e0 (005578e0) at 00557ceb [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408f10
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 
 #include "nocturne.h"
@@ -15,19 +15,24 @@
 void __cdecl core_charactr_cpp_CCharacter_FUN_00428d80(CCharacter *this_ptr)
 
 {
-  float f1;
+  float angle_radians;
   CVector3f *pCVar1;
   float fVar2;
   float fVar3;
   BADSPACEBASE *in_ESP;
+  CVector3f *in_stack_00000008;
+  CVector3f local_24 [2];
+  undefined4 local_8;
   
-  pCVar1 = core_actor_cpp_CDemonActor_FUN_00408f10(&this_ptr->base_actor);
+  pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                     (&this_ptr->base_actor,local_24,in_stack_00000008);
   pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                      ((CVector3f *)&stack0xffffffd4,pCVar1);
-  f1 = pCVar1->y;
-  fVar2 = core_actor_cpp_FUN_0040cd70(f1);
-  fVar3 = -f1;
-  if ((-f1 <= fVar2) && (fVar3 = f1, fVar2 <= f1)) {
+  angle_radians = pCVar1->y;
+  local_8 = *(undefined4 *)(this_ptr->field2_0x240c + 0x2c);
+  fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(angle_radians);
+  fVar3 = -angle_radians;
+  if ((-angle_radians <= fVar2) && (fVar3 = angle_radians, fVar2 <= angle_radians)) {
     *(float *)(this_ptr->field2_0x240c + 0xc) = fVar2;
     return;
   }
@@ -49,7 +54,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428d80(CCharacter *this_ptr)
 //   XREF to: Stack[-0x24] (DATA)
 // 00428d91: PUSH EAX
 // 00428d92: PUSH EBX
-// 00428d93: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 00428d93: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 00428d98: ADD ESP,0xc
 // 00428d9b: PUSH EAX
@@ -67,7 +72,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428d80(CCharacter *this_ptr)
 //   XREF to: Stack[-0xc] (READ)
 // 00428dba: MOV dword ptr [ESP + 0x24],EAX
 //   XREF to: Stack[-0x10] (WRITE)
-// 00428dbe: CALL core_actor.cpp_FUN_0040cd70
+// 00428dbe: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 00428dc3: MOV dword ptr [ESP + 0x2c],EAX
 //   XREF to: Stack[-0x8] (WRITE)

@@ -14,7 +14,7 @@
 //   core_cloth.cpp_FUN_00438ba0
 //   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
 //   core_hero.cpp_FUN_004f2340
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -47,7 +47,8 @@ CGabriella * __cdecl core_gabriela_cpp_constructorMaybe_FUN_004d2b20(CGabriella 
   *(undefined4 *)(iVar2 + -0x20) = 0;
   *(undefined4 *)(iVar2 + -0xc) = *(undefined4 *)(iVar2 + -0x10);
   *(undefined4 *)(iVar2 + -0x14) = *(undefined4 *)(iVar2 + -0x18);
-  core_skeleton_cpp_FUN_005a0840();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            ((CDeformableModelInstance *)(iVar2 + -0x1fabc));
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             ((CKeyFramedModelInstance *)(*(int *)(iVar2 + -0x1ac) + 0x158),"gabgun.kfm");
   return (CGabriella *)(iVar2 + -0x1fc14);
@@ -99,7 +100,7 @@ CGabriella * __cdecl core_gabriela_cpp_constructorMaybe_FUN_004d2b20(CGabriella 
 // 004d2bfe: FXCH
 // 004d2c00: FSTP float ptr [EBX + 0x1fc08]
 // 004d2c06: FSTP float ptr [EBX + 0x1fc00]
-// 004d2c0c: CALL core_skeleton.cpp_FUN_005a0840
+// 004d2c0c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004d2c11: LEA EAX,[EBX + 0x1f738]
 // 004d2c17: ADD ESP,0x8

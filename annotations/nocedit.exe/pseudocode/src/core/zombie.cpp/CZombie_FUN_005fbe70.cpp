@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: int core_zombie.cpp_CZombie_FUN_005fbe70(CZombie * this_ptr)
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408e80
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   core_charactr.cpp_CCharacter_FUN_0042b0e0
 //   core_dlight.cpp_renderConeLightGeometry_FUN_004760d0
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059f820
@@ -17,11 +17,12 @@
 int __cdecl core_zombie_cpp_CZombie_FUN_005fbe70(CZombie *this_ptr)
 
 {
-  int iVar1;
+  CVector3f *pCVar1;
+  int iVar2;
   BADSPACEBASE *in_ESP;
-  undefined4 *puVar2;
   undefined4 *puVar3;
-  byte bVar4;
+  undefined4 *puVar4;
+  byte bVar5;
   CMatrix3x4f *matrix;
   undefined4 local_c4 [12];
   CVector3f local_94;
@@ -32,46 +33,45 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fbe70(CZombie *this_ptr)
   CVector3f local_58;
   CVector3f local_4c;
   CVector3f local_40;
-  float local_34;
-  float local_30;
-  float local_2c;
+  CVector3f local_34;
   CVector3f local_28;
-  float local_1c;
-  float local_18;
-  float local_14;
+  CVector3f local_1c;
   
-  bVar4 = 0;
+  bVar5 = 0;
   if ((*(int *)(this_ptr->base_enemy).base_character.field13_0x2620 != 0) &&
      (this_ptr->is_miner_zombie != 0)) {
     core_skeleton_cpp_CDeformableModelInstance_FUN_0059f820();
     matrix = (CMatrix3x4f *)&stack0xffffff0c;
     local_70.y = 0.5;
     local_70.z = 0.5;
-    puVar2 = local_c4;
-    puVar3 = (undefined4 *)&stack0xffffff0c;
-    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar3 = *puVar2;
-      puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-      puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    puVar3 = local_c4;
+    puVar4 = (undefined4 *)&stack0xffffff0c;
+    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+      *puVar4 = *puVar3;
+      puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+      puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
     }
     local_70.x = 0.0;
-    core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_94,&local_70,matrix);
-    core_actor_cpp_CDemonActor_FUN_00408ec0((CDemonActor *)this_ptr);
+    pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_94,&local_70,matrix);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+              ((CDemonActor *)this_ptr,&local_88,pCVar1);
     local_58.x = 0.0;
     local_58.y = 0.0;
     local_58.z = 0.0;
-    core_xform_cpp_transformVector3x4_FUN_005f4dc0
-              (&local_40,&local_58,(CMatrix3x4f *)&stack0xffffff0c);
-    core_actor_cpp_CDemonActor_FUN_00408e80((CDemonActor *)this_ptr);
+    pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+                       (&local_40,&local_58,(CMatrix3x4f *)&stack0xffffff0c);
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+              ((CDemonActor *)this_ptr,&local_34,pCVar1);
     local_28.x = 0.0;
     local_28.y = 0.0;
     local_28.z = 1.0;
-    core_xform_cpp_transformVector3x4_FUN_005f4dc0
-              (&local_4c,&local_28,(CMatrix3x4f *)&stack0xffffff0c);
-    core_actor_cpp_CDemonActor_FUN_00408e80((CDemonActor *)this_ptr);
-    local_64.x = local_1c - local_34;
-    local_64.y = local_18 - local_30;
-    local_64.z = local_14 - local_2c;
+    pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+                       (&local_4c,&local_28,(CMatrix3x4f *)&stack0xffffff0c);
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+              ((CDemonActor *)this_ptr,&local_1c,pCVar1);
+    local_64.x = local_1c.x - local_34.x;
+    local_64.y = local_1c.y - local_34.y;
+    local_64.z = local_1c.z - local_34.z;
     core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_7c,&local_64);
     core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(&local_88,(CVector3i *)&local_7c,56.0,6.0);
   }
@@ -140,7 +140,7 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fbe70(CZombie *this_ptr)
 //   XREF to: Stack[-0x88] (DATA)
 // 005fbeed: PUSH EAX
 // 005fbeee: PUSH EBX
-// 005fbeef: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005fbeef: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005fbef4: ADD ESP,0xc
 // 005fbef7: LEA EAX,[EBP + -0x66]
@@ -166,7 +166,7 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fbe70(CZombie *this_ptr)
 //   XREF to: Stack[-0x34] (DATA)
 // 005fbf18: PUSH EAX
 // 005fbf19: PUSH EBX
-// 005fbf1a: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 005fbf1a: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 005fbf1f: ADD ESP,0xc
 // 005fbf22: LEA EAX,[EBP + -0x66]
@@ -193,7 +193,7 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fbe70(CZombie *this_ptr)
 //   XREF to: Stack[-0x1c] (DATA)
 // 005fbf48: PUSH EAX
 // 005fbf49: PUSH EBX
-// 005fbf4a: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 005fbf4a: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 005fbf4f: FLD float ptr [EBP + 0x72]
 //   XREF to: Stack[-0x1c] (READ)

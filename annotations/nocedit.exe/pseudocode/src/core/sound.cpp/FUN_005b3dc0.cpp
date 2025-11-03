@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_sound.cpp_FUN_005b3dc0()
 // Cross-references:
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ab545 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ab545 [UNCONDITIONAL_CALL]
 // Globals:
 //   undefined4 DAT_03f6b7b4
 //   undefined4 DAT_03f6b7b8

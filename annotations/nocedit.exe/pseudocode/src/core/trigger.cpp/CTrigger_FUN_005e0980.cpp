@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_trigger.cpp_CTrigger_FUN_005e0980(CTrigger * this_ptr)
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 
 #include "nocturne.h"
 
@@ -14,12 +14,14 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e0980(CTrigger *this_ptr)
   CVector3f *pCVar1;
   CBoundingBox3D *pCVar2;
   BADSPACEBASE *in_ESP;
-  CBoundingBox3D CStack_2c;
+  CVector3f *in_stack_0000000c;
+  undefined1 auStack_2c [36];
   
   if (*(int *)(this_ptr->field1_0x158 + 0x1c) == 3) {
-    pCVar1 = core_actor_cpp_CDemonActor_FUN_00408f10(&this_ptr->base_actor);
-    pCVar2 = (*((this_ptr->base_actor).metadata.vtable)->getBoundingBox)
-                       (&this_ptr->base_actor,&CStack_2c);
+    pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                       (&this_ptr->base_actor,(CVector3f *)(auStack_2c + 0x14),in_stack_0000000c);
+    pCVar2 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
+                       (&this_ptr->base_actor,(CBoundingBox3D *)auStack_2c);
     if (((((pCVar2->min).x <= pCVar1->x) && ((pCVar2->min).y <= pCVar1->y)) &&
         ((pCVar2->min).z <= pCVar1->z)) &&
        (((pCVar1->x <= (pCVar2->max).x && (pCVar1->y <= (pCVar2->max).y)) &&
@@ -58,7 +60,7 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e0980(CTrigger *this_ptr)
 //   XREF to: Stack[-0x18] (DATA)
 // 005e09ad: PUSH EDX
 // 005e09ae: PUSH ESI
-// 005e09af: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 005e09af: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 005e09b4: ADD ESP,0xc
 // 005e09b7: MOV EDX,ESP

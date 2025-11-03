@@ -8,7 +8,7 @@
 // Globals:
 //   double DOUBLE_00616e53 = 0.00390625
 // Function calls:
-//   core_actor.cpp_FUN_0040cc70
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
 
 #include "nocturne.h"
 
@@ -30,7 +30,14 @@ void core_bugs_cpp_FUN_004270f0(void)
   int in_stack_00000004;
   int in_stack_00000008;
   int in_stack_0000000c;
-  int aiStack_102c [1025];
+  int aiStackY_102c [1007];
+  int local_44;
+  int local_40;
+  int local_3c;
+  int local_38;
+  int local_34;
+  int local_30;
+  int local_2c;
   int local_28;
   int *local_24;
   int local_20;
@@ -38,13 +45,13 @@ void core_bugs_cpp_FUN_004270f0(void)
   undefined4 local_18;
   
   bVar8 = 0;
-  aiStack_102c[0x400] = *(int *)(in_stack_00000008 + 0x2c);
+  local_2c = *(int *)(in_stack_00000008 + 0x2c);
   *(undefined4 *)(in_stack_00000008 + 0x34) = 0;
   *(undefined4 *)(in_stack_00000008 + 0x2c) = *(undefined4 *)(in_stack_00000008 + 0x30);
-  aiStack_102c[0x3ff] = in_stack_00000004 + 0x12b38;
+  local_30 = in_stack_00000004 + 0x12b38;
   local_20 = 0;
   do {
-    piVar4 = (int *)(aiStack_102c[0x3ff] + *(int *)(in_stack_00000008 + 0x2c) * 0x28);
+    piVar4 = (int *)(local_30 + *(int *)(in_stack_00000008 + 0x2c) * 0x28);
     local_28 = *(int *)(*(int *)(*(int *)(in_stack_00000004 + 0x12afc) + 0x2234) + 4 +
                        *(int *)(in_stack_00000008 + 0x2c) * 0xc);
     iVar6 = 0;
@@ -58,11 +65,11 @@ void core_bugs_cpp_FUN_004270f0(void)
                            4);
         local_18 = 1;
         if ((local_20 != 0) ||
-           ((iVar3 = iVar2, iVar1 != aiStack_102c[0x400] &&
+           ((iVar3 = iVar2, iVar1 != local_2c &&
             ((*(int *)(in_stack_00000008 + 0x3c) < 1 || (local_28 <= local_1c)))))) {
           iVar3 = iVar2 + 4;
           iVar6 = iVar6 + 1;
-          *(int *)((int)aiStack_102c + iVar2 + 0xfc4) = iVar1;
+          *(int *)(&stack0xffffff98 + iVar2) = iVar1;
         }
         iVar5 = iVar5 + 1;
         piVar4 = piVar4 + 1;
@@ -74,33 +81,32 @@ void core_bugs_cpp_FUN_004270f0(void)
     *(int *)(in_stack_00000008 + 0x3c) = *(int *)(in_stack_00000008 + 0x3c) + -1;
   }
   if (iVar6 < 1) {
-    *(int *)(in_stack_00000008 + 0x30) = aiStack_102c[0x400];
-    if (aiStack_102c[0x400] < 0) {
+    *(int *)(in_stack_00000008 + 0x30) = local_2c;
+    if (local_2c < 0) {
       *(undefined4 *)(in_stack_00000008 + 0x30) = *(undefined4 *)(in_stack_00000008 + 0x2c);
     }
   }
   else {
-    iVar5 = core_actor_cpp_FUN_0040cc70();
-    *(int *)(in_stack_0000000c + 0x30) = aiStack_102c[iVar5 + 0x3f2];
+    iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,iVar6 + -1);
+    *(undefined4 *)(in_stack_0000000c + 0x30) = *(undefined4 *)(&stack0xffffff9c + iVar5 * 4);
   }
   iVar5 = *(int *)(*(int *)(in_stack_00000008 + 0x12afc) + 0x2234);
   piVar4 = (int *)(iVar5 + *(int *)(in_stack_0000000c + 0x2c) * 0xc);
   piVar7 = piVar4 + (uint)bVar8 * -2 + 1;
-  aiStack_102c[0x3fd] = *piVar4;
-  aiStack_102c[(uint)bVar8 * -2 + 0x3fe] = *piVar7;
-  aiStack_102c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x3ff] = piVar7[(uint)bVar8 * -2 + 1];
+  local_38 = *piVar4;
+  *(int *)((int)&stack0xffffffcc + (uint)bVar8 * -8) = *piVar7;
+  *(int *)((int)&stack0xffffffd0 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+       piVar7[(uint)bVar8 * -2 + 1];
   piVar4 = (int *)(iVar5 + *(int *)(in_stack_0000000c + 0x30) * 0xc);
   piVar7 = piVar4 + (uint)bVar8 * -2 + 1;
-  aiStack_102c[0x3fa] = *piVar4;
-  aiStack_102c[(uint)bVar8 * -2 + 0x3fb] = *piVar7;
-  aiStack_102c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x3fc] = piVar7[(uint)bVar8 * -2 + 1];
+  local_44 = *piVar4;
+  *(int *)((int)&stack0xffffffc0 + (uint)bVar8 * -8) = *piVar7;
+  *(int *)((int)&stack0xffffffc4 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+       piVar7[(uint)bVar8 * -2 + 1];
   *(float *)(in_stack_0000000c + 0x38) =
-       SQRT((float)((aiStack_102c[0x3ff] - aiStack_102c[0x3fc]) *
-                    (aiStack_102c[0x3ff] - aiStack_102c[0x3fc]) +
-                   (aiStack_102c[0x3fd] - aiStack_102c[0x3fa]) *
-                   (aiStack_102c[0x3fd] - aiStack_102c[0x3fa]) +
-                   (aiStack_102c[0x3fe] - aiStack_102c[0x3fb]) *
-                   (aiStack_102c[0x3fe] - aiStack_102c[0x3fb]))) * (float)DOUBLE_00616e53;
+       SQRT((float)((local_30 - local_3c) * (local_30 - local_3c) +
+                   (local_38 - local_44) * (local_38 - local_44) +
+                   (local_34 - local_40) * (local_34 - local_40))) * (float)DOUBLE_00616e53;
   return;
 }
 
@@ -320,7 +326,7 @@ void core_bugs_cpp_FUN_004270f0(void)
 //   Label: LAB_004272c7
 // 004272c8: PUSH ESI
 // 004272c9: PUSH 0x0
-// 004272cb: CALL core_actor.cpp_FUN_0040cc70
+// 004272cb: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 004272d0: ADD ESP,0x8
 // 004272d3: MOV EDX,dword ptr [ESP + 0x70]

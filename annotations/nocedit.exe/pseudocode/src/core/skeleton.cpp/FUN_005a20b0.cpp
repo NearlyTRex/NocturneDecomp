@@ -16,14 +16,14 @@
 //   core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940 (0057a940) at 0057aa44 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 (0057ae50) at 0057af8c [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_UserInputCreate_FUN_0057d660 (0057d660) at 0057dcc4 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00598037 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00598037 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0064f112
-//   undefined4 DAT_0064f11a
-//   undefined4 DAT_0064f122
-//   undefined4 DAT_0064f12a
-//   undefined4 DAT_0064f132
-//   undefined4 DAT_0064f13a
+//   double DOUBLE_0064f112 = 10
+//   double DOUBLE_0064f11a = 0.0500000000000000
+//   double DOUBLE_0064f122 = 3.14159265350000
+//   double DOUBLE_0064f12a = 8
+//   double DOUBLE_0064f132 = 30
+//   double DOUBLE_0064f13a = -1.57079632675000
 //   double DOUBLE_0064f142 = 1.57079632675000
 //   CGame* g_CGamePtr = 02d81a9c
 //   CKeys* g_CKeysPtr = 02dcd7d4
@@ -31,9 +31,6 @@
 //   void* g_CKeysPtr
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 core_skeleton.cpp_FUN_005a20b0(undefined4 param_1) */
 
 void core_skeleton_cpp_FUN_005a20b0(void)
 
@@ -87,8 +84,8 @@ void core_skeleton_cpp_FUN_005a20b0(void)
   }
   iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4b);
   if (iVar1 != 0) {
-    fVar3 = (float10)fsin((float10)in_stack_00000004[4] + (float10)_DAT_0064f13a);
-    fVar2 = (float10)fcos((float10)in_stack_00000004[4] + (float10)_DAT_0064f13a);
+    fVar3 = (float10)fsin((float10)in_stack_00000004[4] + (float10)DOUBLE_0064f13a);
+    fVar2 = (float10)fcos((float10)in_stack_00000004[4] + (float10)DOUBLE_0064f13a);
     *in_stack_00000004 = (float)(fVar3 * (float10)in_stack_0000005c + (float10)*in_stack_00000004);
     in_stack_00000004[2] =
          (float)(fVar2 * (float10)in_stack_0000005c + (float10)in_stack_00000004[2]);

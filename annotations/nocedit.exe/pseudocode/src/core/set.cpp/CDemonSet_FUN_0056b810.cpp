@@ -34,12 +34,12 @@
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
 //   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-//   core_actor.cpp_CDemonActor_FUN_00408c10
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 //   core_fire.cpp_CFireEffect_FUN_004c8c90
 //   core_flamecan.cpp_FUN_004cb340
-//   core_glass.cpp_FUN_004eaef0
-//   core_glass.cpp_FUN_004eb3a0
+//   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0
+//   core_glass.cpp_CGlass_shatter_FUN_004eaef0
 //   core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
 //   core_setcolid.cpp_CDemonSet_FUN_005743e0
 //   core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00
@@ -54,6 +54,8 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
   undefined4 uVar1;
   int iVar2;
   CPathMap *this_ptr_00;
+  CGlass *this_ptr_01;
+  int extraout_EAX;
   CDemonActor *pCVar3;
   CDemonSet *pCVar4;
   int iVar5;
@@ -76,6 +78,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
   float fStack_5c;
   undefined4 uStack_58;
   CLocation *local_50;
+  CVector3f *pCStack_48;
   int local_40;
   int local_3c;
   int local_38;
@@ -141,7 +144,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
                 if (g_CGamePtr->profile_mode == 2) {
                   local_60 = (float)wincore_winrun_cpp_getTime_FUN_005f2dc0();
                 }
-                (*((DAT_00821ff4->metadata).vtable)->process)(DAT_00821ff4);
+                (*DAT_00821ff4->vtable->process)(DAT_00821ff4);
                 if (g_CGamePtr->profile_mode == 2) {
                   iVar2 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
                   *(int *)((int)&DAT_032bd794 + iVar5) = iVar2 - (int)local_50;
@@ -151,7 +154,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
                   local_2c = local_2c + 1;
                   iVar5 = iVar5 + 4;
                 }
-                this_ptr_00 = (*((DAT_00821ff4->metadata).vtable)->getPathMap)(DAT_00821ff4);
+                this_ptr_00 = (*DAT_00821ff4->vtable->getPathMap)(DAT_00821ff4);
                 if (this_ptr_00 != (CPathMap *)0x0) {
                   core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60
                             (this_ptr_00,&(DAT_00821ff4->location).position,0);
@@ -162,7 +165,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
                   DAT_00821ff4 = (CDemonActor *)0x0;
                 }
                 else {
-                  core_actor_cpp_CDemonActor_FUN_00408c10(DAT_00821ff4);
+                  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(DAT_00821ff4);
                   DAT_00821ff4 = (CDemonActor *)0x0;
                 }
               }
@@ -185,28 +188,31 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
                                (*(CDemonActor **)pCVar4->actor_list_data,
                                 g_CCharacterClassInfo.name_hash);
         if (((pCStack_90 != (CDemonActor *)0x0) &&
-            (iVar5 = (*(pCStack_90->metadata).vtable[1].hasCollision)(pCStack_90,in_stack_fffffefc),
-            iVar5 == 0)) &&
-           (in_stack_fffffefc = (SCollisionInfo *)g_CFireEffectPtr, iStack_94 = iVar5,
-           iVar5 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr), iVar5 != 0)) {
+            (iVar5 = (*pCStack_90->vtable[1].hasCollision)(pCStack_90,in_stack_fffffefc), iVar5 == 0
+            )) && (in_stack_fffffefc = (SCollisionInfo *)g_CFireEffectPtr, iStack_94 = iVar5,
+                  iVar5 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr), iVar5 != 0)) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff18);
           iStack_e0 = iStack_8c;
           if (&pCStack_d8 != apCStack_9c) {
             pCStack_d8 = apCStack_9c[0];
           }
-          (*(pCStack_74->metadata).vtable[1].playAmbientSoundWithVolume)
+          (*pCStack_74->vtable[1].playAmbientSoundWithVolume)
                     (pCStack_74,acStack_e4,in_stack_ffffff18);
         }
         pCStack_d8 = (CLocation *)0x56bba8;
-        pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
-                           (*(CDemonActor **)pCVar4->actor_list_data,g_CGlassClassInfo.name_hash);
-        if (pCVar3 != (CDemonActor *)0x0) {
-          pCStack_d8 = &pCVar3->location;
+        this_ptr_01 = (CGlass *)
+                      core_actor_cpp_castToClassHash_FUN_0040c790
+                                (*(CDemonActor **)pCVar4->actor_list_data,
+                                 g_CGlassClassInfo.name_hash);
+        if (this_ptr_01 != (CGlass *)0x0) {
+          pCStack_d8 = &(this_ptr_01->base).location;
           iStack_e0 = 0x56bbcd;
           local_50 = pCStack_d8;
           iVar5 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr);
-          if ((iVar5 != 0) && (iVar5 = core_glass_cpp_FUN_004eb3a0(), iVar5 != 0)) {
-            core_glass_cpp_FUN_004eaef0();
+          if ((iVar5 != 0) &&
+             (core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(this_ptr_01),
+             extraout_EAX != 0)) {
+            core_glass_cpp_CGlass_shatter_FUN_004eaef0(this_ptr_01,pCStack_48);
           }
         }
         pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
@@ -540,7 +546,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
 //   Label: LAB_0056ba5f
 //   XREF to: 00821ff4 (READ)
 // 0056ba65: PUSH EDX
-// 0056ba66: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 0056ba66: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 0056ba6b: ADD ESP,0x4
 // 0056ba6e: XOR ECX,ECX
@@ -687,7 +693,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
 // 0056bbd2: JZ 0x0056bbef
 //   XREF to: 0056bbef (CONDITIONAL_JUMP)
 // 0056bbd4: PUSH EBX
-// 0056bbd5: CALL core_glass.cpp_FUN_004eb3a0
+// 0056bbd5: CALL core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0
 //   XREF to: 004eb3a0 (UNCONDITIONAL_CALL)
 // 0056bbda: ADD ESP,0x4
 // 0056bbdd: TEST EAX,EAX
@@ -696,7 +702,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
 // 0056bbe1: MOV EDX,dword ptr [ESP + 0x78]
 // 0056bbe5: PUSH EDX
 // 0056bbe6: PUSH EBX
-// 0056bbe7: CALL core_glass.cpp_FUN_004eaef0
+// 0056bbe7: CALL core_glass.cpp_CGlass_shatter_FUN_004eaef0
 //   XREF to: 004eaef0 (UNCONDITIONAL_CALL)
 // 0056bbec: ADD ESP,0x8
 // 0056bbef: MOV ECX,dword ptr [0x03f87490]

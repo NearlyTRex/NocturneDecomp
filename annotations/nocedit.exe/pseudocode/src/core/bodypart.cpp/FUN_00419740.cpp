@@ -23,33 +23,27 @@
 undefined4 core_bodypart_cpp_FUN_00419740(void)
 
 {
-  CDemonSet *pCVar1;
-  int iVar2;
+  int iVar1;
   CDemonActor *in_stack_00000004;
   
   if ((in_stack_00000004[0xb].health != 0) &&
      ((*(int *)in_stack_00000004[1].actor_name < 2 ||
       (*(int *)(in_stack_00000004[5].create_event + 0x1c) != 0)))) {
     if (*(int *)(in_stack_00000004[9].create_event + 0x24) != 0) {
-      *(undefined4 *)(g_CDemonSetPtr->field22_0x15ac80 + 8) =
-           *(undefined4 *)(in_stack_00000004[9].create_event + 0x20);
+      g_CDemonSetPtr->unk_lighting_param2 = *(int *)(in_stack_00000004[9].create_event + 0x20);
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
                 (g_CDemonRendererPtr,*(int *)(in_stack_00000004[9].create_event + 0x30));
       core_bodypart_cpp_FUN_00419340();
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
-      pCVar1 = g_CDemonSetPtr;
-      pCVar1->field22_0x15ac80[8] = '\0';
-      pCVar1->field22_0x15ac80[9] = '\0';
-      pCVar1->field22_0x15ac80[10] = '\0';
-      pCVar1->field22_0x15ac80[0xb] = '\0';
+      g_CDemonSetPtr->unk_lighting_param2 = 0;
     }
-    iVar2 = 0;
+    iVar1 = 0;
     if (0 < *(int *)(in_stack_00000004[5].create_event + 0x1c)) {
       do {
         core_flame_cpp_FUN_004ca110();
-        iVar2 = iVar2 + 1;
-      } while (iVar2 < *(int *)(in_stack_00000004[5].create_event + 0x1c));
+        iVar1 = iVar1 + 1;
+      } while (iVar1 < *(int *)(in_stack_00000004[5].create_event + 0x1c));
     }
     return 1;
   }

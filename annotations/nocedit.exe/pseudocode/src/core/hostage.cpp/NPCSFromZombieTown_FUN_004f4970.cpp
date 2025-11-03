@@ -23,8 +23,8 @@
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
 //   core_npc.cpp_CNPC_FUN_00544870
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 //   crt_string.c_stricmp_FUN_005fe7f0
 
@@ -36,95 +36,72 @@ void core_hostage_cpp_NPCSFromZombieTown_FUN_004f4970(void)
 
 {
   char *str1;
-  CCharacter *pCVar1;
-  int iVar2;
-  undefined4 uVar3;
+  CDeformableModelInstance *this_ptr;
+  int iVar1;
+  CSkeleton *this_ptr_00;
+  CMotionList *this_ptr_01;
+  float fVar2;
   CNPC *in_stack_00000004;
   
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
-  str1 = (in_stack_00000004->base_character).model.padding_0x0 + 0x2260;
-  pCVar1 = &in_stack_00000004[1].base_character;
-  (pCVar1->model).padding_0x0[600] = '\x06';
-  (pCVar1->model).padding_0x0[0x259] = '\0';
-  (pCVar1->model).padding_0x0[0x25a] = '\0';
-  (pCVar1->model).padding_0x0[0x25b] = '\0';
-  iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,"hickboy.dfm");
-  if (iVar2 == 0) {
-    pCVar1 = &in_stack_00000004[1].base_character;
-    (pCVar1->model).padding_0x0[600] = '\0';
-    (pCVar1->model).padding_0x0[0x259] = '\0';
-    (pCVar1->model).padding_0x0[0x25a] = '\0';
-    (pCVar1->model).padding_0x0[0x25b] = '\0';
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450
+            (&(in_stack_00000004->base_character).model);
+  str1 = (in_stack_00000004->base_character).model.field11_0x2260;
+  in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 8.40779e-45;
+  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,"hickboy.dfm");
+  if (iVar1 == 0) {
+    in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 0.0;
   }
-  iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,"depute.dfm");
-  if (iVar2 == 0) {
-    pCVar1 = &in_stack_00000004[1].base_character;
-    (pCVar1->model).padding_0x0[600] = '\x01';
-    (pCVar1->model).padding_0x0[0x259] = '\0';
-    (pCVar1->model).padding_0x0[0x25a] = '\0';
-    (pCVar1->model).padding_0x0[0x25b] = '\0';
+  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,"depute.dfm");
+  if (iVar1 == 0) {
+    in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 1.4013e-45;
   }
-  iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,"hickho.dfm");
-  if (iVar2 == 0) {
-    pCVar1 = &in_stack_00000004[1].base_character;
-    (pCVar1->model).padding_0x0[600] = '\x02';
-    (pCVar1->model).padding_0x0[0x259] = '\0';
-    (pCVar1->model).padding_0x0[0x25a] = '\0';
-    (pCVar1->model).padding_0x0[0x25b] = '\0';
+  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,"hickho.dfm");
+  if (iVar1 == 0) {
+    in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 2.8026e-45;
   }
-  iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,"hickgirl.dfm");
-  if (iVar2 == 0) {
-    pCVar1 = &in_stack_00000004[1].base_character;
-    (pCVar1->model).padding_0x0[600] = '\x04';
-    (pCVar1->model).padding_0x0[0x259] = '\0';
-    (pCVar1->model).padding_0x0[0x25a] = '\0';
-    (pCVar1->model).padding_0x0[0x25b] = '\0';
+  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,"hickgirl.dfm");
+  if (iVar1 == 0) {
+    in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 5.60519e-45;
   }
-  iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,"hickdad.dfm");
-  if (iVar2 == 0) {
-    pCVar1 = &in_stack_00000004[1].base_character;
-    (pCVar1->model).padding_0x0[600] = '\x05';
-    (pCVar1->model).padding_0x0[0x259] = '\0';
-    (pCVar1->model).padding_0x0[0x25a] = '\0';
-    (pCVar1->model).padding_0x0[0x25b] = '\0';
+  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,"hickdad.dfm");
+  if (iVar1 == 0) {
+    in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 7.00649e-45;
   }
-  iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,"preacher.dfm");
-  if (iVar2 == 0) {
-    pCVar1 = &in_stack_00000004[1].base_character;
-    (pCVar1->model).padding_0x0[600] = '\x03';
-    (pCVar1->model).padding_0x0[0x259] = '\0';
-    (pCVar1->model).padding_0x0[0x25a] = '\0';
-    (pCVar1->model).padding_0x0[0x25b] = '\0';
+  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,"preacher.dfm");
+  if (iVar1 == 0) {
+    in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 4.2039e-45;
   }
-  core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-  core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
-  uVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  *(undefined4 *)(in_stack_00000004[1].base_character.model.padding_0x0 + 0x270) = uVar3;
-  uVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  *(undefined4 *)(in_stack_00000004[1].base_character.model.padding_0x0 + 0x26c) = uVar3;
-  uVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  *(undefined4 *)(in_stack_00000004[1].base_character.model.padding_0x0 + 0x274) = uVar3;
-  uVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  *(undefined4 *)(in_stack_00000004[1].base_character.model.padding_0x0 + 0x278) = uVar3;
-  uVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  iVar2 = *(int *)(in_stack_00000004[1].base_character.model.padding_0x0 + 600);
-  *(undefined4 *)(in_stack_00000004->base_character).carry_hands[1].field0_0x0 = uVar3;
-  if (iVar2 != 1) {
-    uVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-    *(undefined4 *)(in_stack_00000004->base_character).carry_hands[0].field0_0x0 = uVar3;
+  this_ptr = &(in_stack_00000004->base_character).model;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr);
+  this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                          (&this_ptr->motion_controller);
+  fVar2 = (float)core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_00,"Bip01 R UpperArm");
+  in_stack_00000004[1].base_character.model.transformed_vertices[0x2c].z = fVar2;
+  fVar2 = (float)core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_00,"Bip01 Head");
+  in_stack_00000004[1].base_character.model.transformed_vertices[0x2c].y = fVar2;
+  fVar2 = (float)core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_00,"Bip01 L Foot");
+  in_stack_00000004[1].base_character.model.transformed_vertices[0x2d].x = fVar2;
+  fVar2 = (float)core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                           (this_ptr_00,"Bip01 R Foot");
+  in_stack_00000004[1].base_character.model.transformed_vertices[0x2d].y = fVar2;
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 R Hand");
+  fVar2 = in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z;
+  *(int *)(in_stack_00000004->base_character).carry_hands[1].field0_0x0 = iVar1;
+  if (fVar2 != 1.4013e-45) {
+    iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 L Hand");
+    *(int *)(in_stack_00000004->base_character).carry_hands[0].field0_0x0 = iVar1;
   }
-  uVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  iVar2 = *(int *)(in_stack_00000004[1].base_character.model.padding_0x0 + 600);
-  *(undefined4 *)((in_stack_00000004->base_character).field11_0x25a0 + 0x24) = uVar3;
-  if (iVar2 == 1) {
-    DAT_02db8888 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460();
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 Spine1");
+  fVar2 = in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z;
+  *(int *)((in_stack_00000004->base_character).field11_0x25a0 + 0x24) = iVar1;
+  if (fVar2 == 1.4013e-45) {
+    DAT_02db8888 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_01);
   }
   core_npc_cpp_CNPC_FUN_00544870(in_stack_00000004);
-  pCVar1 = &in_stack_00000004[1].base_character;
-  (pCVar1->model).padding_0x0[0x250] = '\0';
-  (pCVar1->model).padding_0x0[0x251] = '\0';
-  (pCVar1->model).padding_0x0[0x252] = '\0';
-  (pCVar1->model).padding_0x0[0x253] = '\0';
+  in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].x = 0.0;
   return;
 }
 
@@ -139,7 +116,7 @@ void core_hostage_cpp_NPCSFromZombieTown_FUN_004f4970(void)
 //   XREF to: Stack[0x4] (READ)
 // 004f4978: LEA EAX,[EBX + 0x158]
 // 004f497e: PUSH EAX
-// 004f497f: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 004f497f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 004f4984: ADD ESP,0x4
 // 004f4987: PUSH 0x62ee40
@@ -213,7 +190,7 @@ void core_hostage_cpp_NPCSFromZombieTown_FUN_004f4970(void)
 // 004f4a3d: LEA EDI,[EBX + 0x158]
 //   Label: LAB_004f4a3d
 // 004f4a43: PUSH EDI
-// 004f4a44: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 004f4a44: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 004f4a49: ADD ESP,0x4
 // 004f4a4c: PUSH EDI

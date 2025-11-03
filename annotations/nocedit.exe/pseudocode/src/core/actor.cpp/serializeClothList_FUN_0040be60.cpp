@@ -20,11 +20,11 @@
 //   TerminatedCString s_s_d_clothCount_006140f6
 //   TerminatedCString s_s_s_0061410a
 //   TerminatedCString s_s_00614112
-//   char* g_PropertyNamePrefix = 00000000
+//   char[104] g_PropertyNamePrefix
 //   FILE* g_ActorDataFile
 //   int g_ActorReadingMode
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_0040aee0
+//   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   core_actor.cpp_handleActorPropertyParseError_FUN_0040b210
 //   core_actor.cpp_serializeDescription_FUN_0040b290
 //   crt_stdio.c_fgetc_FUN_005fe840
@@ -42,25 +42,24 @@ core_actor_cpp_serializeClothList_FUN_0040be60(CClothList *cloth_list,char *prop
   CClothList *pCVar3;
   
   if (g_ActorReadingMode != 1) {
-    iVar1 = crt_stdio_c_fprintf_FUN_005fe6d0
-                      (g_ActorDataFile,"%s{ // %s\n",&g_PropertyNamePrefix,property_name);
-    core_actor_cpp_CDemonActor_FUN_0040aee0(iVar1);
-    iVar2 = 0;
-    iVar1 = crt_stdio_c_fprintf_FUN_005fe6d0
-                      (g_ActorDataFile,"%s%d // clothCount\n",&g_PropertyNamePrefix,
-                       *(undefined4 *)cloth_list);
+    crt_stdio_c_fprintf_FUN_005fe6d0
+              (g_ActorDataFile,"%s{ // %s\n",g_PropertyNamePrefix,property_name);
+    core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(1);
+    iVar1 = 0;
+    crt_stdio_c_fprintf_FUN_005fe6d0
+              (g_ActorDataFile,"%s%d // clothCount\n",g_PropertyNamePrefix,
+               *(undefined4 *)cloth_list);
     if (0 < *(int *)cloth_list) {
       pCVar3 = cloth_list + 4;
       do {
-        iVar2 = iVar2 + 1;
-        iVar1 = crt_stdio_c_fprintf_FUN_005fe6d0
-                          (g_ActorDataFile,"%s\"%s\"\n","%s\"%s\"\n",&g_PropertyNamePrefix,
-                           pCVar3);
+        iVar1 = iVar1 + 1;
+        crt_stdio_c_fprintf_FUN_005fe6d0
+                  (g_ActorDataFile,"%s\"%s\"\n","%s\"%s\"\n",g_PropertyNamePrefix,pCVar3);
         pCVar3 = pCVar3 + 0x28;
-      } while (iVar2 < *(int *)cloth_list);
+      } while (iVar1 < *(int *)cloth_list);
     }
-    core_actor_cpp_CDemonActor_FUN_0040aee0(iVar1);
-    crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s}\n",&g_PropertyNamePrefix);
+    core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(-1);
+    crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s}\n",g_PropertyNamePrefix);
     return;
   }
   do {
@@ -244,7 +243,7 @@ core_actor_cpp_serializeClothList_FUN_0040be60(CClothList *cloth_list,char *prop
 //   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
 // 0040bf6d: ADD ESP,0x10
 // 0040bf70: PUSH 0x1
-// 0040bf72: CALL core_actor.cpp_CDemonActor_FUN_0040aee0
+// 0040bf72: CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   XREF to: 0040aee0 (UNCONDITIONAL_CALL)
 // 0040bf77: ADD ESP,0x4
 // 0040bf7a: MOV EBX,dword ptr [EBP]
@@ -287,7 +286,7 @@ core_actor_cpp_serializeClothList_FUN_0040be60(CClothList *cloth_list,char *prop
 // 0040bfcd: LEA EDX,[EDX]
 // 0040bfd0: PUSH -0x1
 //   Label: LAB_0040bfd0
-// 0040bfd2: CALL core_actor.cpp_CDemonActor_FUN_0040aee0
+// 0040bfd2: CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   XREF to: 0040aee0 (UNCONDITIONAL_CALL)
 // 0040bfd7: ADD ESP,0x4
 // 0040bfda: PUSH 0x66e178

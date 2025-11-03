@@ -27,8 +27,8 @@
 //   undefined4 g_ZeroVector.y
 //   undefined4 g_ZeroVector.z
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408e80
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
 //   core_bodypart.cpp_FUN_0041aa40
@@ -46,21 +46,21 @@
 void core_bodypart_cpp_FUN_0041a050(void)
 
 {
-  double dVar1;
-  double dVar2;
-  CVector3f *pCVar3;
-  char *pcVar4;
-  float *pfVar5;
+  CLocation *pCVar1;
+  int iVar2;
+  double dVar3;
+  double dVar4;
+  CVector3f *pCVar5;
+  char *pcVar6;
   int *extraout_EAX;
-  int *piVar6;
-  float fVar7;
-  int iVar8;
-  SSurfaceNormal *pSVar9;
+  int *piVar7;
+  float fVar8;
+  int iVar9;
+  SSurfaceNormal *pSVar10;
   int extraout_ECX;
-  int iVar10;
-  int *piVar11;
-  int iVar12;
-  char *pcVar13;
+  int iVar11;
+  int *piVar12;
+  int iVar13;
   SSurfaceNormal *output;
   BADSPACEBASE *in_ESP;
   int iVar14;
@@ -68,7 +68,7 @@ void core_bodypart_cpp_FUN_0041a050(void)
   float10 fVar16;
   float10 fVar17;
   double dVar18;
-  CDemonActor *in_stack_00000004;
+  CBodyPart *in_stack_00000004;
   CVector3f local_68;
   float local_5c;
   int local_58;
@@ -76,183 +76,193 @@ void core_bodypart_cpp_FUN_0041a050(void)
   int local_50;
   int local_4c;
   int local_48;
+  CVector3f CStack_44;
+  CVector3f CStack_34;
   char *local_20;
   float local_18;
   int iStack_14;
   
-  if ((2 < *(int *)(in_stack_00000004[1].actor_name + 0x1c)) &&
-     (0 < (int)in_stack_00000004[1].location.position.z)) {
+  if ((2 < *(int *)(in_stack_00000004->field1_0x158 + 0x1c)) &&
+     (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x28))) {
     core_bodypart_cpp_FUN_0041aa40();
     iStack_14 = -((local_50 + (int)local_5c) / 2);
-    iVar12 = -((local_4c + local_58) / 2);
-    iVar8 = 0;
+    iVar13 = -((local_4c + local_58) / 2);
+    iVar9 = 0;
     iVar14 = -((local_48 + local_54) / 2);
-    if (0 < *(int *)(in_stack_00000004[1].actor_name + 0x1c)) {
-      iVar10 = 0;
+    if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x1c)) {
+      iVar11 = 0;
       do {
-        fVar7 = in_stack_00000004[1].location.position.x;
-        *(int *)(iVar10 + (int)fVar7) = *(int *)(iVar10 + (int)fVar7) + iStack_14;
-        piVar6 = (int *)(iVar10 + 4 + (int)fVar7);
-        *piVar6 = *piVar6 + iVar12;
-        piVar6 = (int *)(iVar10 + 8 + (int)fVar7);
-        *piVar6 = *piVar6 + iVar14;
-        iVar8 = iVar8 + 1;
-        iVar10 = iVar10 + 0xc;
-      } while (iVar8 < *(int *)(in_stack_00000004[1].actor_name + 0x1c));
+        iVar2 = *(int *)(in_stack_00000004->field1_0x158 + 0x20);
+        *(int *)(iVar11 + iVar2) = *(int *)(iVar11 + iVar2) + iStack_14;
+        piVar7 = (int *)(iVar11 + 4 + iVar2);
+        *piVar7 = *piVar7 + iVar13;
+        piVar7 = (int *)(iVar11 + 8 + iVar2);
+        *piVar7 = *piVar7 + iVar14;
+        iVar9 = iVar9 + 1;
+        iVar11 = iVar11 + 0xc;
+      } while (iVar9 < *(int *)(in_stack_00000004->field1_0x158 + 0x1c));
     }
     local_50 = local_50 + iStack_14;
-    local_4c = local_4c + iVar12;
+    local_4c = local_4c + iVar13;
     local_48 = local_48 + iVar14;
     local_5c = (float)((int)local_5c + iStack_14);
     local_54 = local_54 + iVar14;
-    local_58 = local_58 + iVar12;
+    local_58 = local_58 + iVar13;
     local_68.x = (float)_DAT_00615e34;
-    *(float *)(in_stack_00000004[1].actor_name + 4) = (float)local_50 * local_68.x;
-    *(float *)(in_stack_00000004[1].actor_name + 8) = (float)local_4c * local_68.x;
-    *(float *)(in_stack_00000004[1].actor_name + 0xc) = (float)local_48 * local_68.x;
-    *(float *)(in_stack_00000004[1].actor_name + 0x10) = (float)(int)local_5c * local_68.x;
-    local_68.y = (float)iVar12 * local_68.x;
-    *(float *)(in_stack_00000004[1].actor_name + 0x14) = (float)local_58 * local_68.x;
+    *(float *)(in_stack_00000004->field1_0x158 + 4) = (float)local_50 * local_68.x;
+    *(float *)(in_stack_00000004->field1_0x158 + 8) = (float)local_4c * local_68.x;
+    *(float *)(in_stack_00000004->field1_0x158 + 0xc) = (float)local_48 * local_68.x;
+    *(float *)(in_stack_00000004->field1_0x158 + 0x10) = (float)(int)local_5c * local_68.x;
+    local_68.y = (float)iVar13 * local_68.x;
+    *(float *)(in_stack_00000004->field1_0x158 + 0x14) = (float)local_58 * local_68.x;
     local_68.z = (float)iVar14 * local_68.x;
-    *(float *)(in_stack_00000004[1].actor_name + 0x18) = (float)local_54 * local_68.x;
+    *(float *)(in_stack_00000004->field1_0x158 + 0x18) = (float)local_54 * local_68.x;
     local_68.x = (float)iStack_14 * local_68.x;
     local_18 = local_68.z;
-    pCVar3 = core_actor_cpp_CDemonActor_FUN_00408e80(in_stack_00000004);
-    (in_stack_00000004->location).position.x = (in_stack_00000004->location).position.x - pCVar3->x;
-    (in_stack_00000004->location).position.y = (in_stack_00000004->location).position.y - pCVar3->y;
-    (in_stack_00000004->location).position.z = (in_stack_00000004->location).position.z - pCVar3->z;
-    iVar8 = 0;
-    if (0 < (int)in_stack_00000004[1].metadata.runtime_vector2.x) {
-      pfVar5 = &in_stack_00000004[1].metadata.runtime_vector2.y;
+    pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                       (&in_stack_00000004->base_actor,&CStack_44,&local_68);
+    pCVar1 = &(in_stack_00000004->base_actor).location;
+    (pCVar1->position).x = (pCVar1->position).x - pCVar5->x;
+    (in_stack_00000004->base_actor).location.position.y =
+         (in_stack_00000004->base_actor).location.position.y - pCVar5->y;
+    (in_stack_00000004->base_actor).location.position.z =
+         (in_stack_00000004->base_actor).location.position.z - pCVar5->z;
+    iVar9 = 0;
+    if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x134)) {
+      pcVar6 = in_stack_00000004->field1_0x158 + 0x138;
       do {
-        *pfVar5 = *pfVar5 + local_68.y;
-        pfVar5[1] = pfVar5[1] + local_68.z;
-        iVar8 = iVar8 + 1;
-        pfVar5[2] = pfVar5[2] + local_5c;
-        pfVar5 = pfVar5 + 0x65;
-      } while (iVar8 < (int)in_stack_00000004[1].metadata.runtime_vector2.x);
+        *(float *)pcVar6 = *(float *)pcVar6 + local_68.y;
+        *(float *)(pcVar6 + 4) = *(float *)(pcVar6 + 4) + local_68.z;
+        iVar9 = iVar9 + 1;
+        *(float *)(pcVar6 + 8) = *(float *)(pcVar6 + 8) + local_5c;
+        pcVar6 = pcVar6 + 0x194;
+      } while (iVar9 < *(int *)(in_stack_00000004->field1_0x158 + 0x134));
     }
-    iVar8 = 0;
-    if (0 < *(int *)(in_stack_00000004[5].create_event + 0x1c)) {
-      local_20 = in_stack_00000004[5].create_event + 0x20;
-      pcVar13 = in_stack_00000004[5].create_event + 0x4c;
+    iVar9 = 0;
+    if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x5f4)) {
+      local_20 = in_stack_00000004->field1_0x158 + 0x5f8;
+      pcVar6 = in_stack_00000004->field1_0x158 + 0x624;
       do {
-        pcVar4 = local_20 + iVar8 * 0x2b0;
-        *(float *)pcVar4 = *(float *)pcVar4 + local_68.y;
-        *(float *)(pcVar4 + 4) = *(float *)(pcVar4 + 4) + local_68.z;
-        *(float *)(pcVar4 + 8) = *(float *)(pcVar4 + 8) + local_5c;
-        iVar8 = iVar8 + 1;
-        pfVar5 = core_actor_cpp_CDemonActor_FUN_00408ec0(in_stack_00000004);
-        *(float *)pcVar13 = *pfVar5;
-        *(float *)(pcVar13 + 4) = pfVar5[1];
-        *(float *)(pcVar13 + 8) = pfVar5[2];
-        pcVar13 = pcVar13 + 0x2b0;
-      } while (iVar8 < *(int *)(in_stack_00000004[5].create_event + 0x1c));
+        pCVar5 = (CVector3f *)(local_20 + iVar9 * 0x2b0);
+        pCVar5->x = pCVar5->x + local_68.y;
+        pCVar5->y = pCVar5->y + local_68.z;
+        pCVar5->z = pCVar5->z + local_5c;
+        iVar9 = iVar9 + 1;
+        pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                           (&in_stack_00000004->base_actor,&CStack_34,pCVar5);
+        *(float *)pcVar6 = pCVar5->x;
+        *(float *)(pcVar6 + 4) = pCVar5->y;
+        *(float *)(pcVar6 + 8) = pCVar5->z;
+        pcVar6 = pcVar6 + 0x2b0;
+      } while (iVar9 < *(int *)(in_stack_00000004->field1_0x158 + 0x5f4));
     }
     crt_memory_c_memset_FUN_005fde40
-              ((void *)in_stack_00000004[1].location.position.y,0,
-               *(int *)(in_stack_00000004[1].actor_name + 0x1c) * 0xc);
-    piVar6 = (int *)in_stack_00000004[1].location.position.z;
+              (*(void **)(in_stack_00000004->field1_0x158 + 0x24),0,
+               *(int *)(in_stack_00000004->field1_0x158 + 0x1c) * 0xc);
+    piVar7 = *(int **)(in_stack_00000004->field1_0x158 + 0x28);
     iStack_14 = 0;
-    if (0 < (int)piVar6) {
+    if (0 < (int)piVar7) {
       local_18 = 0.0;
       do {
-        output = (SSurfaceNormal *)(in_stack_00000004[1].location.area_id + (int)local_18);
+        output = (SSurfaceNormal *)
+                 (*(int *)(in_stack_00000004->field1_0x158 + 0x2c) + (int)local_18);
         output->vertex_count = 3;
         engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0
-                  ((CVector3i *)in_stack_00000004[1].location.position.x,output);
-        iVar8 = 0;
-        piVar6 = extraout_EAX;
-        pSVar9 = output;
+                  (*(CVector3i **)(in_stack_00000004->field1_0x158 + 0x20),output);
+        iVar9 = 0;
+        piVar7 = extraout_EAX;
+        pSVar10 = output;
         if (0 < output->vertex_count) {
           do {
-            piVar6 = (int *)((int)in_stack_00000004[1].location.position.y +
-                            pSVar9->vertex_index_1 * 0xc);
-            *piVar6 = *piVar6 + output->normal_x;
-            piVar6[1] = piVar6[1] + output->normal_y;
-            piVar6[2] = piVar6[2] + output->normal_z;
-            iVar8 = iVar8 + 1;
-            pSVar9 = (SSurfaceNormal *)&pSVar9->normal_y;
-          } while (iVar8 < output->vertex_count);
+            piVar7 = (int *)(*(int *)(in_stack_00000004->field1_0x158 + 0x24) +
+                            pSVar10->vertex_index_1 * 0xc);
+            *piVar7 = *piVar7 + output->normal_x;
+            piVar7[1] = piVar7[1] + output->normal_y;
+            piVar7[2] = piVar7[2] + output->normal_z;
+            iVar9 = iVar9 + 1;
+            pSVar10 = (SSurfaceNormal *)&pSVar10->normal_y;
+          } while (iVar9 < output->vertex_count);
         }
         local_18 = (float)((int)local_18 + 0x3c);
         iStack_14 = iStack_14 + 1;
-      } while (iStack_14 < (int)in_stack_00000004[1].location.position.z);
+      } while (iStack_14 < *(int *)(in_stack_00000004->field1_0x158 + 0x28));
     }
-    iVar8 = 0;
-    if (0 < *(int *)(in_stack_00000004[1].actor_name + 0x1c)) {
-      iVar12 = 0;
+    iVar9 = 0;
+    if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x1c)) {
+      iVar13 = 0;
       do {
-        piVar11 = (int *)((int)in_stack_00000004[1].location.position.y + iVar12);
-        dVar18 = (double)*piVar11;
-        dVar2 = (double)piVar11[1];
-        dVar1 = (double)piVar11[2];
-        dVar18 = SQRT(dVar1 * dVar1 + dVar2 * dVar2 + dVar18 * dVar18);
+        piVar12 = (int *)(*(int *)(in_stack_00000004->field1_0x158 + 0x24) + iVar13);
+        dVar18 = (double)*piVar12;
+        dVar4 = (double)piVar12[1];
+        dVar3 = (double)piVar12[2];
+        dVar18 = SQRT(dVar3 * dVar3 + dVar4 * dVar4 + dVar18 * dVar18);
         if (0.0 < dVar18) {
           fVar15 = (float10)_DAT_00615e3c / (float10)dVar18;
-          fVar16 = (float10)*piVar11 * fVar15;
-          fVar17 = (float10)piVar11[1] * fVar15;
-          fVar15 = (float10)piVar11[2] * fVar15;
+          fVar16 = (float10)*piVar12 * fVar15;
+          fVar17 = (float10)piVar12[1] * fVar15;
+          fVar15 = (float10)piVar12[2] * fVar15;
           dVar18 = crt_math_c_round_FUN_005fe6b0
-                             ((double)CONCAT44(piVar11,CONCAT22((short)((uint)piVar6 >> 0x10),
+                             ((double)CONCAT44(piVar12,CONCAT22((short)((uint)piVar7 >> 0x10),
                                                                 (ushort)(0.0 < dVar18) << 8 |
                                                                 (ushort)NAN(dVar18) << 10 |
                                                                 (ushort)(dVar18 == 0.0) << 0xe)));
           dVar18 = crt_math_c_round_FUN_005fe6b0(dVar18);
           dVar18 = crt_math_c_round_FUN_005fe6b0(dVar18);
-          piVar6 = (int *)((ulonglong)dVar18 >> 0x20);
-          *piVar6 = (int)ROUND(fVar16);
-          piVar6[1] = (int)ROUND(fVar17);
-          piVar6[2] = (int)ROUND(fVar15);
-          iVar12 = extraout_ECX;
+          piVar7 = (int *)((ulonglong)dVar18 >> 0x20);
+          *piVar7 = (int)ROUND(fVar16);
+          piVar7[1] = (int)ROUND(fVar17);
+          piVar7[2] = (int)ROUND(fVar15);
+          iVar13 = extraout_ECX;
         }
         else {
-          piVar11[2] = 0;
-          piVar11[1] = piVar11[2];
-          *piVar11 = piVar11[2];
+          piVar12[2] = 0;
+          piVar12[1] = piVar12[2];
+          *piVar12 = piVar12[2];
         }
-        iVar8 = iVar8 + 1;
-        piVar6 = *(int **)(in_stack_00000004[1].actor_name + 0x1c);
-        iVar12 = iVar12 + 0xc;
-      } while (iVar8 < (int)piVar6);
+        iVar9 = iVar9 + 1;
+        piVar7 = *(int **)(in_stack_00000004->field1_0x158 + 0x1c);
+        iVar13 = iVar13 + 0xc;
+      } while (iVar9 < (int)piVar7);
     }
     core_bodypart_cpp_FUN_0041b070();
-    pfVar5 = &in_stack_00000004[9].field_236.z;
-    if ((CDemonActorClassMetadata *)pfVar5 != &in_stack_00000004[1].metadata) {
-      *pfVar5 = in_stack_00000004[1].metadata.runtime_vector1.x;
-      in_stack_00000004[9].field14_0xf8 = (int)in_stack_00000004[1].metadata.runtime_vector1.y;
-      in_stack_00000004[9].is_transparent = (int)in_stack_00000004[1].metadata.runtime_vector1.z;
+    if (in_stack_00000004->field1_0x158 + 0xbb4 != in_stack_00000004->field1_0x158 + 0x128) {
+      *(undefined4 *)(in_stack_00000004->field1_0x158 + 0xbb4) =
+           *(undefined4 *)(in_stack_00000004->field1_0x158 + 0x128);
+      *(undefined4 *)(in_stack_00000004->field1_0x158 + 3000) =
+           *(undefined4 *)(in_stack_00000004->field1_0x158 + 300);
+      *(undefined4 *)(in_stack_00000004->field1_0x158 + 0xbbc) =
+           *(undefined4 *)(in_stack_00000004->field1_0x158 + 0x130);
     }
-    pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                       ((CMatrix3x3f *)(in_stack_00000004[9].create_event + 0x54),&local_68,
-                        &in_stack_00000004[1].metadata.runtime_vector1);
-    if ((CVector3f *)&in_stack_00000004[9].field16_0x100 != pCVar3) {
-      in_stack_00000004[9].field16_0x100 = (int)pCVar3->x;
-      in_stack_00000004[9].field17_0x104 = (int)pCVar3->y;
-      in_stack_00000004[9].scale.x = (int)pCVar3->z;
+    pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+                       ((CMatrix3x3f *)(in_stack_00000004->field1_0x158 + 0xb8c),&local_68,
+                        (CVector3f *)(in_stack_00000004->field1_0x158 + 0x128));
+    if ((CVector3f *)(in_stack_00000004->field1_0x158 + 0xbc0) != pCVar5) {
+      ((CVector3f *)(in_stack_00000004->field1_0x158 + 0xbc0))->x = pCVar5->x;
+      *(float *)(in_stack_00000004->field1_0x158 + 0xbc4) = pCVar5->y;
+      *(float *)(in_stack_00000004->field1_0x158 + 0xbc8) = pCVar5->z;
     }
-    fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
-    in_stack_00000004[9].field23_0x124 = (int)fVar7;
-    fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
-    in_stack_00000004[9].metadata.runtime_vector1.y = fVar7;
-    fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-9.424778,9.424778);
-    in_stack_00000004[9].metadata.runtime_vector1.x = fVar7;
+    fVar8 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
+    *(float *)(in_stack_00000004->field1_0x158 + 0xbe4) = fVar8;
+    fVar8 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
+    *(float *)(in_stack_00000004->field1_0x158 + 0xbec) = fVar8;
+    fVar8 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-9.424778,9.424778);
+    *(float *)(in_stack_00000004->field1_0x158 + 0xbe8) = fVar8;
     return;
   }
-  in_stack_00000004->was_created = 2;
-  core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0();
-  pCVar3 = (CVector3f *)(in_stack_00000004[1].actor_name + 0x10);
-  if (pCVar3 != &g_ZeroVector) {
-    pCVar3->x = g_ZeroVector.x;
-    *(float *)(in_stack_00000004[1].actor_name + 0x14) = g_ZeroVector.y;
-    *(float *)(in_stack_00000004[1].actor_name + 0x18) = g_ZeroVector.z;
+  (in_stack_00000004->base_actor).was_created = 2;
+  core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(in_stack_00000004);
+  pCVar5 = (CVector3f *)(in_stack_00000004->field1_0x158 + 0x10);
+  if (pCVar5 != &g_ZeroVector) {
+    pCVar5->x = g_ZeroVector.x;
+    *(float *)(in_stack_00000004->field1_0x158 + 0x14) = g_ZeroVector.y;
+    *(float *)(in_stack_00000004->field1_0x158 + 0x18) = g_ZeroVector.z;
   }
-  if ((CVector3f *)(in_stack_00000004[1].actor_name + 4) != pCVar3) {
-    ((CVector3f *)(in_stack_00000004[1].actor_name + 4))->x = pCVar3->x;
-    *(undefined4 *)(in_stack_00000004[1].actor_name + 8) =
-         *(undefined4 *)(in_stack_00000004[1].actor_name + 0x14);
-    *(undefined4 *)(in_stack_00000004[1].actor_name + 0xc) =
-         *(undefined4 *)(in_stack_00000004[1].actor_name + 0x18);
+  if ((CVector3f *)(in_stack_00000004->field1_0x158 + 4) != pCVar5) {
+    ((CVector3f *)(in_stack_00000004->field1_0x158 + 4))->x = pCVar5->x;
+    *(undefined4 *)(in_stack_00000004->field1_0x158 + 8) =
+         *(undefined4 *)(in_stack_00000004->field1_0x158 + 0x14);
+    *(undefined4 *)(in_stack_00000004->field1_0x158 + 0xc) =
+         *(undefined4 *)(in_stack_00000004->field1_0x158 + 0x18);
   }
   return;
 }
@@ -460,7 +470,7 @@ void core_bodypart_cpp_FUN_0041a050(void)
 // 0041a2d6: FMULP
 // 0041a2d8: PUSH EDI
 // 0041a2d9: FSTP float ptr [ESP + 0x40]
-// 0041a2dd: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 0041a2dd: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 0041a2e2: MOV EDX,EAX
 // 0041a2e4: LEA EAX,[EDI + 0x20]
@@ -529,7 +539,7 @@ void core_bodypart_cpp_FUN_0041a050(void)
 // 0041a3a0: PUSH EDI
 // 0041a3a1: ADD EBX,0x2b0
 // 0041a3a7: INC ESI
-// 0041a3a8: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0041a3a8: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0041a3ad: MOV EDX,dword ptr [EAX]
 // 0041a3af: MOV dword ptr [EBX + 0xfffffd50],EDX

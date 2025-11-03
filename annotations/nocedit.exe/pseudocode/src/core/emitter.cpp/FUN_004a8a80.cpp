@@ -27,7 +27,7 @@ void core_emitter_cpp_FUN_004a8a80(void)
     return;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-  this_ptr = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+  this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
                        (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe8);
   fStack_c = 6.845583e-39;
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);

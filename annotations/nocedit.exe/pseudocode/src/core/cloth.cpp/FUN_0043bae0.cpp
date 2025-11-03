@@ -62,7 +62,8 @@ void core_cloth_cpp_FUN_0043bae0(void)
   
   bVar8 = 0;
   core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
-            (g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x104));
+            (g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x104),*(int **)(in_stack_00000004 + 0x10c)
+            );
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,1);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xffff);
   iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
@@ -78,7 +79,10 @@ void core_cloth_cpp_FUN_0043bae0(void)
   engine_texture_cpp_ensureTextureLoaded_FUN_005dd800
             ((SMRGLTextureBasic *)(in_stack_00000004 + 0x124));
   if (*(int *)(in_stack_00000004 + 0x3ce84) == 0) {
-    core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(g_CDemonSetPtr);
+    core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
+              (g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x104),
+               *(int *)(in_stack_00000004 + 0x110) / 2,*(SInputFace **)(in_stack_00000004 + 0x114),
+               *(int *)(in_stack_00000004 + 0x10c),4,0);
     if ((in_stack_00000008 != 0) &&
        (iVar6 = 0, iVar3 = in_stack_00000004, 0 < *(int *)(in_stack_00000004 + 0x3f028))) {
       do {
@@ -102,7 +106,11 @@ void core_cloth_cpp_FUN_0043bae0(void)
       pSVar4 = *(SMRGLPrimitiveQuad **)(in_stack_00000004 + 0x114);
     }
     core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770(g_CDemonSetPtr,pSVar4,iVar3 / 2,iVar6);
-    core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(g_CDemonSetPtr);
+    iVar3 = *(int *)(in_stack_00000004 + 0x110) / 2;
+    core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
+              (g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x104),iVar3,
+               (SInputFace *)(*(int *)(in_stack_00000004 + 0x114) + iVar3 * 0x48),
+               *(int *)(in_stack_00000004 + 0x10c),4,0);
     if (62999 < in_stack_00000008) {
       in_stack_00000008 = *(int *)(in_stack_00000004 + 0x110) / 2;
       iVar3 = -1;
@@ -114,7 +122,10 @@ void core_cloth_cpp_FUN_0043bae0(void)
     pSVar4 = (SMRGLPrimitiveQuad *)(*(int *)(in_stack_00000004 + 0x114) + in_stack_00000008 * 0x48);
   }
   else {
-    core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(g_CDemonSetPtr);
+    core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
+              (g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x104),
+               *(int *)(in_stack_00000004 + 0x110),*(SInputFace **)(in_stack_00000004 + 0x114),
+               *(int *)(in_stack_00000004 + 0x10c),4,0);
     if ((in_stack_00000008 != 0) &&
        (iVar6 = 0, iVar3 = in_stack_00000004, 0 < *(int *)(in_stack_00000004 + 0x3f028))) {
       do {
@@ -166,7 +177,9 @@ void core_cloth_cpp_FUN_0043bae0(void)
         iStack0000000c = iStack0000000c + 1;
       } while (iStack0000000c < in_stack_00000008);
     }
-    core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(g_CDemonSetPtr);
+    core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
+              (g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x104),in_stack_00000008,
+               (SInputFace *)&DAT_00827500,*(int *)(in_stack_00000004 + 0x10c),4,0);
     if (62999 < in_stack_00000008) {
       iVar3 = -1;
       pSVar4 = (SMRGLPrimitiveQuad *)&DAT_00827500;

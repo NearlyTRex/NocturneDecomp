@@ -9,7 +9,7 @@
 //   core_tommygun.cpp_FUN_005ddb30 (005ddb30) at 005de2d7 [UNCONDITIONAL_CALL]
 //   core_turret.cpp_FUN_005e3750 (005e3750) at 005e3c2a [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_%s_exploding!_00619b2e
+//   TerminatedCString s_s_exploding_00619b2e
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
@@ -40,7 +40,7 @@ void core_crate_cpp_FUN_00448a70(void)
     return;
   }
   engine_console_cpp_CConsole_printf_FUN_00441890
-            (g_CConsolePtr,"?%s exploding!\n" + 1,in_stack_00000004);
+            (g_CConsolePtr,"%s exploding!\n",in_stack_00000004);
   (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();
   if (&uStack_10 != (undefined4 *)(in_stack_00000004 + 0x20)) {
     uStack_10 = *(undefined4 *)(in_stack_00000004 + 0x20);

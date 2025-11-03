@@ -17,7 +17,7 @@
 // Function calls:
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -29,41 +29,41 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr)
   char cVar1;
   CEnemy *pCVar2;
   undefined4 uVar3;
-  CZombie *pCVar4;
-  float fVar5;
-  undefined4 uVar6;
+  undefined4 uVar4;
+  CZombie *pCVar5;
+  float fVar6;
   int iVar7;
   char *pcVar8;
   char *pcVar9;
   
-  pCVar4 = (CZombie *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
+  pCVar5 = (CZombie *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   pcVar8 = "true";
-  (pCVar4->base_enemy).base_character.base_actor.metadata.vtable =
-       &PTR_core_zombie_cpp_CZombie_FUN_006659e4;
-  core_skeleton_cpp_FUN_005a0840();
-  pCVar2 = &pCVar4->base_enemy;
+  (pCVar5->base_enemy).base_character.base_actor.vtable = &PTR_core_zombie_cpp_CZombie_FUN_006659e4;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            (&(pCVar5->base_enemy).base_character.model);
+  pCVar2 = &pCVar5->base_enemy;
   (pCVar2->base_character).cloth_data[0x344] = '\0';
   (pCVar2->base_character).cloth_data[0x345] = '\0';
   (pCVar2->base_character).cloth_data[0x346] = '\0';
   (pCVar2->base_character).cloth_data[0x347] = '?';
-  pcVar9 = pCVar4->field1_0xbeb4 + 0x28;
-  pCVar2 = &pCVar4->base_enemy;
+  pcVar9 = pCVar5->field1_0xbeb4 + 0x28;
+  pCVar2 = &pCVar5->base_enemy;
   (pCVar2->base_character).cloth_data[0x348] = '\0';
-  uVar6 = _DAT_006659cc;
+  uVar3 = _DAT_006659cc;
   (pCVar2->base_character).cloth_data[0x349] = '\0';
   (pCVar2->base_character).cloth_data[0x34a] = -0x80;
   (pCVar2->base_character).cloth_data[0x34b] = '?';
-  pCVar4->field1_0xbeb4[0x18] = '\0';
-  uVar3 = _PTR_FUN_006659cd_3;
-  pCVar4->field1_0xbeb4[0x19] = '\0';
-  pCVar4->field1_0xbeb4[0x1a] = '\0';
-  pCVar4->field1_0xbeb4[0x1b] = '\0';
-  pCVar4->field1_0xbeb4[0x14] = '\0';
-  pCVar4->field1_0xbeb4[0x15] = '\0';
-  pCVar4->field1_0xbeb4[0x16] = '\0';
-  pCVar4->field1_0xbeb4[0x17] = '\0';
-  *(undefined4 *)((pCVar4->base_enemy).base_character.cloth_data + 0x34c) = uVar6;
-  *(undefined4 *)((pCVar4->base_enemy).base_character.cloth_data + 0x350) = uVar3;
+  pCVar5->field1_0xbeb4[0x18] = '\0';
+  uVar4 = _PTR_FUN_006659cd_3;
+  pCVar5->field1_0xbeb4[0x19] = '\0';
+  pCVar5->field1_0xbeb4[0x1a] = '\0';
+  pCVar5->field1_0xbeb4[0x1b] = '\0';
+  pCVar5->field1_0xbeb4[0x14] = '\0';
+  pCVar5->field1_0xbeb4[0x15] = '\0';
+  pCVar5->field1_0xbeb4[0x16] = '\0';
+  pCVar5->field1_0xbeb4[0x17] = '\0';
+  *(undefined4 *)((pCVar5->base_enemy).base_character.cloth_data + 0x34c) = uVar3;
+  *(undefined4 *)((pCVar5->base_enemy).base_character.cloth_data + 0x350) = uVar4;
   do {
     cVar1 = *pcVar8;
     *pcVar9 = cVar1;
@@ -73,44 +73,44 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr)
     pcVar9[1] = cVar1;
     pcVar9 = pcVar9 + 2;
   } while (cVar1 != '\0');
-  fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.3,1.0);
-  pCVar4->field1_0xbeb4[0x20] = '\0';
-  pCVar4->field1_0xbeb4[0x21] = '\0';
-  pCVar4->field1_0xbeb4[0x22] = '\0';
-  pCVar4->field1_0xbeb4[0x23] = '\0';
-  *(float *)(pCVar4->field1_0xbeb4 + 8) = fVar5;
-  uVar6 = core_actor_cpp_FUN_0040cc70();
-  pCVar4->field1_0xbeb4[0x10] = '\0';
-  pCVar4->field1_0xbeb4[0x11] = '\0';
-  pCVar4->field1_0xbeb4[0x12] = '\0';
-  pCVar4->field1_0xbeb4[0x13] = '\0';
-  pCVar4->field1_0xbeb4[0x24] = '\0';
-  pCVar4->field1_0xbeb4[0x25] = '\0';
-  pCVar4->field1_0xbeb4[0x26] = '\0';
-  pCVar4->field1_0xbeb4[0x27] = '\0';
-  *(undefined4 *)(pCVar4->field1_0xbeb4 + 0xc) = uVar6;
+  fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.3,1.0);
+  pCVar5->field1_0xbeb4[0x20] = '\0';
+  pCVar5->field1_0xbeb4[0x21] = '\0';
+  pCVar5->field1_0xbeb4[0x22] = '\0';
+  pCVar5->field1_0xbeb4[0x23] = '\0';
+  *(float *)(pCVar5->field1_0xbeb4 + 8) = fVar6;
+  iVar7 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,0xff);
+  pCVar5->field1_0xbeb4[0x10] = '\0';
+  pCVar5->field1_0xbeb4[0x11] = '\0';
+  pCVar5->field1_0xbeb4[0x12] = '\0';
+  pCVar5->field1_0xbeb4[0x13] = '\0';
+  pCVar5->field1_0xbeb4[0x24] = '\0';
+  pCVar5->field1_0xbeb4[0x25] = '\0';
+  pCVar5->field1_0xbeb4[0x26] = '\0';
+  pCVar5->field1_0xbeb4[0x27] = '\0';
+  *(int *)(pCVar5->field1_0xbeb4 + 0xc) = iVar7;
   pcVar9 = g_CDemonSetPtr->geometry_filename;
-  pCVar4->is_miner_zombie = 0;
-  pCVar4->field4_0xbf48[0x4c] = '\0';
-  pCVar4->field4_0xbf48[0x4d] = '\0';
-  pCVar4->field4_0xbf48[0x4e] = '\0';
-  pCVar4->field4_0xbf48[0x4f] = '\0';
+  pCVar5->is_miner_zombie = 0;
+  pCVar5->field4_0xbf48[0x4c] = '\0';
+  pCVar5->field4_0xbf48[0x4d] = '\0';
+  pCVar5->field4_0xbf48[0x4e] = '\0';
+  pCVar5->field4_0xbf48[0x4f] = '\0';
   iVar7 = crt_string_c_stricmp_FUN_005fe7f0(pcVar9,"mine.geo");
-  pCVar4->always_chase_fast = 0;
-  pCVar4->field4_0xbf48[0x5c] = '\0';
-  pCVar4->field4_0xbf48[0x5d] = '\0';
-  pCVar4->field4_0xbf48[0x5e] = '\0';
-  pCVar4->field4_0xbf48[0x5f] = '\0';
-  pCVar4->field4_0xbf48[0x60] = '\0';
-  pCVar4->field4_0xbf48[0x61] = '\0';
-  pCVar4->field4_0xbf48[0x62] = '\0';
-  pCVar4->field4_0xbf48[99] = '\0';
-  pCVar4->field1_0xbeb4[4] = '\0';
-  pCVar4->field1_0xbeb4[5] = '\0';
-  pCVar4->field1_0xbeb4[6] = '\0';
-  pCVar4->field1_0xbeb4[7] = '\0';
-  pCVar4->is_miner_zombie = (uint)(iVar7 == 0);
-  return pCVar4;
+  pCVar5->always_chase_fast = 0;
+  pCVar5->field4_0xbf48[0x5c] = '\0';
+  pCVar5->field4_0xbf48[0x5d] = '\0';
+  pCVar5->field4_0xbf48[0x5e] = '\0';
+  pCVar5->field4_0xbf48[0x5f] = '\0';
+  pCVar5->field4_0xbf48[0x60] = '\0';
+  pCVar5->field4_0xbf48[0x61] = '\0';
+  pCVar5->field4_0xbf48[0x62] = '\0';
+  pCVar5->field4_0xbf48[99] = '\0';
+  pCVar5->field1_0xbeb4[4] = '\0';
+  pCVar5->field1_0xbeb4[5] = '\0';
+  pCVar5->field1_0xbeb4[6] = '\0';
+  pCVar5->field1_0xbeb4[7] = '\0';
+  pCVar5->is_miner_zombie = (uint)(iVar7 == 0);
+  return pCVar5;
 }
 
 
@@ -135,7 +135,7 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr)
 //   XREF to: 00658494 (DATA)
 // 005f9006: MOV dword ptr [EAX + -0x4],0x6659e4
 //   XREF to: 006659e4 (DATA)
-// 005f900d: CALL core_skeleton.cpp_FUN_005a0840
+// 005f900d: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005f9012: MOV dword ptr [EBX + 0x2ddc],0x3f000000
 // 005f901c: LEA EDI,[EBX + 0xbedc]

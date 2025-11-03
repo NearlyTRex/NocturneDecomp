@@ -137,25 +137,26 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
              *(float *)(this_ptr->field4_0x2e0 + 0x3c)) * _DAT_0065559e;
   fStack_84 = (*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc8) -
               *(float *)(this_ptr->field4_0x2e0 + 0x40)) * _DAT_0065559e;
-  pcVar1 = this_ptr->field4_0x2e0 + 0x20;
+  pCVar7 = (CVector3f *)(this_ptr->field4_0x2e0 + 0x20);
   *(float *)pcVar8 = *(float *)pcVar8 + local_8c;
   *(float *)(this_ptr->field4_0x2e0 + 0x3c) = *(float *)(this_ptr->field4_0x2e0 + 0x3c) + local_88;
   *(float *)(this_ptr->field4_0x2e0 + 0x40) = *(float *)(this_ptr->field4_0x2e0 + 0x40) + fStack_84;
-  local_74 = *(float *)pcVar8 - *(float *)pcVar1;
+  local_74 = *(float *)pcVar8 - pCVar7->x;
   local_70 = *(float *)(this_ptr->field4_0x2e0 + 0x3c) - *(float *)(this_ptr->field4_0x2e0 + 0x24);
   local_20 = local_74 * _DAT_006555a2;
   fStack_6c = *(float *)(this_ptr->field4_0x2e0 + 0x40) - *(float *)(this_ptr->field4_0x2e0 + 0x28);
   local_1c = local_70 * _DAT_006555a2;
   local_18 = fStack_6c * _DAT_006555a2;
-  *(float *)pcVar1 = *(float *)pcVar1 + local_20;
-  *(float *)(this_ptr->field4_0x2e0 + 0x24) = *(float *)(this_ptr->field4_0x2e0 + 0x24) + local_1c;
+  fVar6 = *(float *)(this_ptr->field4_0x2e0 + 0x24);
+  pCVar7->x = pCVar7->x + local_20;
+  *(float *)(this_ptr->field4_0x2e0 + 0x24) = fVar6 + local_1c;
   *(float *)(this_ptr->field4_0x2e0 + 0x28) = *(float *)(this_ptr->field4_0x2e0 + 0x28) + local_18;
   local_a4 = (this_ptr->base_actor).location.position.x;
   local_a0 = (this_ptr->base_actor).location.position.y;
   local_9c = (this_ptr->base_actor).location.position.z;
   fStack0000000c = -*(float *)(this_ptr->field4_0x2e0 + 0x44);
   pcVar8 = this_ptr->field4_0x2e0 + 8;
-  local_c8 = *(float *)pcVar1 - *(float *)pcVar8;
+  local_c8 = pCVar7->x - *(float *)pcVar8;
   local_c4 = *(float *)(this_ptr->field4_0x2e0 + 0x24) - *(float *)(this_ptr->field4_0x2e0 + 0xc);
   pcVar1 = this_ptr->field4_0x2e0 + 0x2c;
   local_c0 = *(float *)(this_ptr->field4_0x2e0 + 0x28) - *(float *)(this_ptr->field4_0x2e0 + 0x10);
@@ -165,7 +166,8 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   local_b8 = fStack0000000c + local_28;
   local_2c = local_bc;
   local_24 = local_b4;
-  pCVar7 = core_actor_cpp_CDemonActor_FUN_00408ea0(&this_ptr->base_actor);
+  pCVar7 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+                     (&this_ptr->base_actor,local_50.m,pCVar7);
   local_7c = pCVar7->x * _DAT_006555a6;
   local_78 = pCVar7->y * _DAT_006555a6;
   local_74 = _DAT_006555a6 * pCVar7->z;
@@ -276,7 +278,7 @@ LAB_005df3d0:
     in_stack_00000024->y = pCVar7->y;
     in_stack_00000024->z = pCVar7->z;
   }
-  core_actor_cpp_CDemonActor_FUN_00408c10(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base_actor);
   return;
 }
 

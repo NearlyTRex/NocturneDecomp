@@ -5,8 +5,8 @@
 // Signature: undefined core_game.cpp_FUN_004e3110()
 // Globals:
 //   TerminatedCString s_s_3_2f_ms_0062d3e9
-//   undefined4 DAT_0062d3fd
-//   undefined4 DAT_0062d405
+//   double DOUBLE_0062d3fd = 0.0555555555555556
+//   double DOUBLE_0062d405 = 0.0000152587890625
 //   double DOUBLE_0062d40d = 1000
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   CGame* g_CGamePtr = 02d81a9c
@@ -21,8 +21,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_game_cpp_FUN_004e3110(void)
 
 {
@@ -35,8 +33,8 @@ void core_game_cpp_FUN_004e3110(void)
   iVar1 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   engine_console_cpp_CConsole_printf_FUN_00441890
             (g_CConsolePtr,"%s : %3.2f ms\n",in_stack_00000008,
-             ((double)(iVar1 - g_ProfileStartTime) * _DAT_0062d3fd * _DAT_0062d405 * DOUBLE_0062d40d
-             ) / (double)g_CGamePtr->delta_time_float);
+             ((double)(iVar1 - g_ProfileStartTime) * DOUBLE_0062d3fd * DOUBLE_0062d405 *
+             DOUBLE_0062d40d) / (double)g_CGamePtr->delta_time_float);
   return;
 }
 

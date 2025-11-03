@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40 (0059de40) at 0059de70 [UNCONDITIONAL_CALL]
 // Globals:
-//   void* PTR_core_motion.cpp_CMotionController_free_FUN_0052d5a0_00661bc4 = 0052d5a0
+//   CMotionController_vtable g_CMotionControllerVTable
 //   WatcomTypeInfo g_CMotionControllerTypeInfo
 // Function calls:
 //   crt_memory.c_free_FUN_005fe659
@@ -26,8 +26,7 @@ core_motion_cpp_CMotionController_dtor_FUN_0052d5a0(CMotionController *this_ptr,
     crt_memory_c_free_FUN_005fe659(ptr);
     return this_ptr;
   }
-  *(void ***)(this_ptr->field8_0x34 + 0x1c) =
-       &PTR_core_motion_cpp_CMotionController_free_FUN_0052d5a0_00661bc4;
+  this_ptr->vtable = &g_CMotionControllerVTable;
   if ((d1 & 2) == 0) {
     return this_ptr;
   }

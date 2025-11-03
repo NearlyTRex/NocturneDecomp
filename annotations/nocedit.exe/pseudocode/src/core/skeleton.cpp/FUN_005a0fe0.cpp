@@ -14,9 +14,10 @@ int core_skeleton_cpp_FUN_005a0fe0(void)
 
 {
   int iVar1;
+  CDeformableModelInstance *in_stack_00000008;
   
   iVar1 = core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a1040();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a1040(in_stack_00000008);
   if (iVar1 == 0) {
     return 0;
   }

@@ -9,7 +9,7 @@
 //   CFireEffect g_CFireEffectInstance
 //   CGore g_CGoreInstance
 // Function calls:
-//   core_fire.cpp_CFireEffect_FUN_004c74a0
+//   core_fire.cpp_CFireEffect_renderDecals_FUN_004c74a0
 //   core_gore.cpp_FUN_004ed830
 
 #include "nocturne.h"
@@ -17,8 +17,10 @@
 void core_set_cpp_FUN_00571380(void)
 
 {
+  int in_stack_0000000c;
+  
   core_gore_cpp_FUN_004ed830(g_CGorePtr);
-  core_fire_cpp_CFireEffect_FUN_004c74a0(g_CFireEffectPtr);
+  core_fire_cpp_CFireEffect_renderDecals_FUN_004c74a0(g_CFireEffectPtr,0,in_stack_0000000c);
   return;
 }
 
@@ -47,7 +49,7 @@ void core_set_cpp_FUN_00571380(void)
 //   XREF to: 0067a3d0 (READ)
 // 005713a5: PUSH ESI
 //   XREF to: 02d12db0 (DATA)
-// 005713a6: CALL core_fire.cpp_CFireEffect_FUN_004c74a0
+// 005713a6: CALL core_fire.cpp_CFireEffect_renderDecals_FUN_004c74a0
 //   XREF to: 004c74a0 (UNCONDITIONAL_CALL)
 // 005713ab: ADD ESP,0xc
 // 005713ae: POP ESI

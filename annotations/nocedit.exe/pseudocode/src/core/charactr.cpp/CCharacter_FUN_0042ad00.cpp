@@ -14,9 +14,9 @@
 //   undefined4 DAT_00823c58
 //   CDemonRenderer g_CDemonRendererInstance
 // Function calls:
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
-//   core_skeleton.cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150
 //   crt_math.c_round_FUN_005fe6b0
 //   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 
@@ -26,72 +26,74 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
 
 {
   int iVar1;
-  byte *pbVar2;
+  SVert *pSVar2;
   float fVar3;
   float fVar4;
-  int iVar5;
+  int extraout_EAX;
+  CDeformableModel *pCVar5;
   int iVar6;
-  int iVar7;
   int extraout_ECX;
-  byte *pbVar8;
+  SVert *pSVar7;
   int extraout_ECX_00;
-  int iVar9;
-  CCharacter *pCVar10;
-  int iVar11;
-  byte *pbVar12;
-  float10 fVar13;
-  double dVar14;
+  int iVar8;
+  CCharacter *pCVar9;
+  SVert *pSVar10;
+  CDeformableModelInstance *this_ptr_00;
+  CDeformableModel *pCVar11;
+  float10 fVar12;
+  double dVar13;
   float local_24;
   
   if (*(int *)(this_ptr->cloth_data + 0x478) == 0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,&DAT_0066e784);
+  this_ptr_00 = &this_ptr->model;
   if (*(int *)(this_ptr->cloth_data + 0x8d40) != 0) {
-    core_skeleton_cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150();
+    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150(this_ptr_00);
     return;
   }
-  iVar5 = core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-  iVar6 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0();
-  iVar1 = *(int *)((this_ptr->model).padding_0x0 + 0x2230);
-  iVar7 = 0;
-  if (0 < *(int *)(iVar5 + 0x28558)) {
-    iVar9 = 0;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr_00);
+  pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
+  iVar1 = (this_ptr->model).field6_0x2230;
+  iVar6 = 0;
+  if (0 < *(int *)(extraout_EAX + 0x28558)) {
+    iVar8 = 0;
     do {
-      *(undefined4 *)((int)&DAT_00823c54 + iVar9) = 0;
-      iVar7 = iVar7 + 1;
-      iVar9 = iVar9 + 4;
-    } while (iVar7 < *(int *)(iVar5 + 0x28558));
+      *(undefined4 *)((int)&DAT_00823c54 + iVar8) = 0;
+      iVar6 = iVar6 + 1;
+      iVar8 = iVar8 + 4;
+    } while (iVar6 < *(int *)(extraout_EAX + 0x28558));
   }
   fVar4 = DAT_0065b830;
-  iVar7 = 0;
+  iVar6 = 0;
   if (0 < *(int *)(this_ptr->cloth_data + 0x478)) {
     fVar3 = (float)DOUBLE_00617132;
-    pCVar10 = this_ptr;
+    pCVar9 = this_ptr;
     do {
-      (&DAT_00823c54)[*(int *)(pCVar10->cloth_data + 0x488)] =
-           (float)(&DAT_00823c54)[*(int *)(pCVar10->cloth_data + 0x488)] +
-           (*(float *)(pCVar10->cloth_data + 0x498) * fVar3) / fVar4;
-      iVar7 = iVar7 + 1;
-      pCVar10 = (CCharacter *)((pCVar10->base_actor).actor_name + 0x18);
-    } while (iVar7 < *(int *)(this_ptr->cloth_data + 0x478));
+      (&DAT_00823c54)[*(int *)(pCVar9->cloth_data + 0x488)] =
+           (float)(&DAT_00823c54)[*(int *)(pCVar9->cloth_data + 0x488)] +
+           (*(float *)(pCVar9->cloth_data + 0x498) * fVar3) / fVar4;
+      iVar6 = iVar6 + 1;
+      pCVar9 = (CCharacter *)((pCVar9->base_actor).actor_name + 0x18);
+    } while (iVar6 < *(int *)(this_ptr->cloth_data + 0x478));
   }
-  iVar9 = 0;
-  iVar11 = 0;
-  iVar7 = iVar6;
-  if (0 < *(int *)(iVar5 + 0x28558)) {
+  iVar6 = 0;
+  iVar8 = 0;
+  pCVar11 = pCVar5;
+  if (0 < *(int *)(extraout_EAX + 0x28558)) {
     do {
-      if ((float)DOUBLE_00617132 <= (float)(&DAT_00823c54)[iVar9]) {
-        iVar11 = iVar11 + 1;
+      if ((float)DOUBLE_00617132 <= (float)(&DAT_00823c54)[iVar6]) {
+        iVar8 = iVar8 + 1;
       }
-      if (*(int *)(iVar7 + 0x8dcc) == -1) {
-        iVar11 = iVar11 + 1;
+      if (pCVar11->farthest_child_bone[0] == -1) {
+        iVar8 = iVar8 + 1;
       }
-      iVar9 = iVar9 + 1;
-      iVar7 = iVar7 + 4;
-    } while (iVar9 < *(int *)(iVar5 + 0x28558));
+      iVar6 = iVar6 + 1;
+      pCVar11 = (CDeformableModel *)pCVar11->lod_info;
+    } while (iVar6 < *(int *)(extraout_EAX + 0x28558));
   }
-  if (iVar11 == *(int *)(iVar5 + 0x28558)) {
+  if (iVar8 == *(int *)(extraout_EAX + 0x28558)) {
     this_ptr->cloth_data[0x8d44] = '\0';
     this_ptr->cloth_data[0x8d45] = '\0';
     this_ptr->cloth_data[0x8d46] = -0x80;
@@ -101,28 +103,30 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
     this_ptr->cloth_data[0x8d42] = '\0';
     this_ptr->cloth_data[0x8d43] = '\0';
   }
-  for (iVar5 = 0; iVar7 = iVar6 + iVar1 * 4, iVar5 < *(int *)(iVar7 + 0x2c); iVar5 = iVar5 + 1) {
-    pbVar2 = *(byte **)(iVar7 + 0x40);
+  for (iVar6 = 0; iVar6 < pCVar5->vertex_count[iVar1]; iVar6 = iVar6 + 1) {
+    pSVar2 = pCVar5->vertex_data_ptr[iVar1];
     local_24 = 0.0;
-    iVar7 = 0;
-    pbVar8 = pbVar2;
-    pbVar12 = pbVar2;
-    while (iVar7 < (int)(uint)*pbVar2) {
-      fVar13 = (float10)*(float *)(pbVar8 + 4) * (float10)(float)(&DAT_00823c54)[pbVar12[1]];
-      dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(iVar7,(uint)pbVar12[1]));
-      pbVar8 = (byte *)(extraout_ECX + 4);
-      pbVar12 = pbVar12 + 1;
-      local_24 = (float)(int)ROUND(fVar13) + local_24;
-      iVar7 = (int)((ulonglong)dVar14 >> 0x20) + 1;
+    iVar8 = 0;
+    pSVar7 = pSVar2;
+    pSVar10 = pSVar2;
+    while (iVar8 < (int)(uint)pSVar2->num_bone_influences) {
+      fVar12 = (float10)pSVar7->bone_weights[0] *
+               (float10)(float)(&DAT_00823c54)[pSVar10->bone_indices[0]];
+      dVar13 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(iVar8,(uint)pSVar10->bone_indices[0]))
+      ;
+      pSVar7 = (SVert *)(extraout_ECX + 4);
+      pSVar10 = (SVert *)pSVar10->bone_indices;
+      local_24 = (float)(int)ROUND(fVar12) + local_24;
+      iVar8 = (int)((ulonglong)dVar13 >> 0x20) + 1;
     }
     if ((float)DOUBLE_00617132 < local_24) {
       local_24 = 65535.0;
     }
-    fVar13 = (float10)local_24;
-    dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(iVar7,g_CDemonRendererPtr));
-    *(int *)(*SUB84(dVar14,0) + extraout_ECX_00 + 0x2c) = (int)ROUND(fVar13);
+    fVar12 = (float10)local_24;
+    dVar13 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(iVar8,g_CDemonRendererPtr));
+    *(int *)(*SUB84(dVar13,0) + extraout_ECX_00 + 0x2c) = (int)ROUND(fVar12);
   }
-  core_skeleton_cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150(&this_ptr->model);
   return;
 }
 
@@ -168,7 +172,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
 // 0042ad47: JNZ 0x0042aeb4
 //   XREF to: 0042aeb4 (CONDITIONAL_JUMP)
 // 0042ad4d: PUSH EDI
-// 0042ad4e: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 0042ad4e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0042ad53: ADD ESP,0x4
 // 0042ad56: PUSH EDI
@@ -338,7 +342,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
 // 0042aeb8: PUSH 0xc9
 // 0042aebd: PUSH -0x1
 // 0042aebf: PUSH EDI
-// 0042aec0: CALL core_skeleton.cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150
+// 0042aec0: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
 //   XREF to: 005a0150 (UNCONDITIONAL_CALL)
 // 0042aec5: ADD ESP,0x14
 // 0042aec8: MOV ESP,EBP
@@ -403,7 +407,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
 // 0042af44: PUSH -0x1
 // 0042af46: ADD EAX,0x158
 // 0042af4b: PUSH EAX
-// 0042af4c: CALL core_skeleton.cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150
+// 0042af4c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
 //   XREF to: 005a0150 (UNCONDITIONAL_CALL)
 // 0042af51: ADD ESP,0x14
 // 0042af54: MOV ESP,EBP

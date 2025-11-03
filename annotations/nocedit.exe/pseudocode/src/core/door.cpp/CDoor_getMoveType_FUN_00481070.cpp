@@ -15,7 +15,7 @@
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408f10
+//   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_door.cpp_CDoor_FUN_00481210
 //   core_game.cpp_CGame_displayMessage_FUN_004d7f20
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -27,9 +27,13 @@ int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr)
 
 {
   char *message;
+  BADSPACEBASE *in_ESP;
   float unaff_ESI;
+  int in_stack_00000008;
   
-  core_actor_cpp_CDemonActor_FUN_00408f10(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+            (&this_ptr->base_actor,(CVector3f *)&stack0xffffffe8,
+             (CVector3f *)(in_stack_00000008 + 0x20));
   message = support_newmsg_cpp_getLocalizedString_FUN_005441f0("The door is locked from the other side.");
   if (unaff_ESI <= 0.0) {
     if ((this_ptr->allowed_sides & 2) != 0) goto LAB_004811fd;
@@ -108,7 +112,7 @@ switchD_00481208_caseD_2:
 //   XREF to: Stack[-0x18] (DATA)
 // 00481089: PUSH EAX
 // 0048108a: PUSH EBX
-// 0048108b: CALL core_actor.cpp_CDemonActor_FUN_00408f10
+// 0048108b: CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   XREF to: 00408f10 (UNCONDITIONAL_CALL)
 // 00481090: ADD ESP,0xc
 // 00481093: PUSH 0x6212e4

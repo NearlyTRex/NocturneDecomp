@@ -56,12 +56,12 @@
 //   undefined1 DAT_03670a59
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0
-//   core_skeleton.cpp_CDeformableModel_freeAllModels_FUN_005a1dc0
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0
 //   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-//   core_skeleton.cpp_CSkeleton_freeAllSkeletons_FUN_005a1ea0
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_freeAllModels_FUN_005a1dc0
+//   core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0
 //   crt_io.c_deleteFile_FUN_005ff9d0
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 //   crt_stdio.c_fgetc_FUN_005fe840
@@ -215,8 +215,8 @@ LAB_00599119:
     engine_2d_c_drawText_FUN_00401fd0("3.  View a deformable model in action!",0,0x2c);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     engine_2d_c_clearInputAndWait_FUN_00403260();
-    core_skeleton_cpp_CSkeleton_freeAllSkeletons_FUN_005a1ea0();
-    core_skeleton_cpp_CDeformableModel_freeAllModels_FUN_005a1dc0();
+    core_skeleton_cpp_freeAllSkeletons_FUN_005a1ea0();
+    core_skeleton_cpp_freeAllModels_FUN_005a1dc0();
     iVar4 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
     if ((iVar4 == 0x33) &&
        (iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
@@ -233,13 +233,13 @@ LAB_00599119:
         g_CurrentLineNumber = 0x1b7a;
         core_main_c_displayErrorAndQuit_FUN_00506f10("viewModel - out of memory!");
       }
-      core_skeleton_cpp_FUN_005a0840();
-      core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
-      core_skeledit_cpp_DefinitelyRelatedToEditorMode_FUN_005968b0();
+      core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(this_ptr);
+      core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr);
+      core_skeledit_cpp_CDeformableModelInstance_FUN_005968b0(this_ptr);
       g_CurrentDebugLine = 0x1b7e;
       g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
       if (this_ptr != (CDeformableModelInstance *)0x0) {
-        (*(code *)**(undefined4 **)(this_ptr->padding_0x0 + 0x50))();
+        (*(code *)((this_ptr->motion_controller).vtable)->dtor)();
       }
     }
   } while (iVar4 != 0x1b);
@@ -487,9 +487,9 @@ LAB_00599119:
 //   XREF to: 005eda20 (UNCONDITIONAL_CALL)
 // 00599168: CALL engine_2d.c_clearInputAndWait_FUN_00403260
 //   XREF to: 00403260 (UNCONDITIONAL_CALL)
-// 0059916d: CALL core_skeleton.cpp_CSkeleton_freeAllSkeletons_FUN_005a1ea0
+// 0059916d: CALL core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0
 //   XREF to: 005a1ea0 (UNCONDITIONAL_CALL)
-// 00599172: CALL core_skeleton.cpp_CDeformableModel_freeAllModels_FUN_005a1dc0
+// 00599172: CALL core_skeleton.cpp_freeAllModels_FUN_005a1dc0
 //   XREF to: 005a1dc0 (UNCONDITIONAL_CALL)
 // 00599177: MOV EBX,dword ptr [0x0067cf44]
 //   XREF to: 02dcd7d4 (PARAM)
@@ -559,16 +559,16 @@ LAB_00599119:
 // 0059920d: PUSH EDI
 //   Label: LAB_0059920d
 // 0059920e: PUSH EBX
-// 0059920f: CALL core_skeleton.cpp_FUN_005a0840
+// 0059920f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00599214: ADD ESP,0x8
 // 00599217: PUSH EBX
-// 00599218: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 00599218: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0059921d: ADD ESP,0x4
 // 00599220: PUSH EBX
 // 00599221: MOV EDI,0x1b7e
-// 00599226: CALL core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0
+// 00599226: CALL core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0
 //   XREF to: 005968b0 (UNCONDITIONAL_CALL)
 // 0059922b: MOV ECX,0x64e117
 //   XREF to: 0064e117 (PARAM)

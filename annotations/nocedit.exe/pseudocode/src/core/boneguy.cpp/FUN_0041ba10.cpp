@@ -5,15 +5,13 @@
 // Signature: undefined core_boneguy.cpp_FUN_0041ba10()
 // Globals:
 //   void* switchdataD_0041b9f4 = 0041ba74
-//   undefined4 DAT_00615f6d
-//   undefined4 DAT_00615f75
+//   double DAT_00615f6d = 0.00392156862745098
+//   double DAT_00615f75 = 0.0235294117647059
 // Function calls:
 //   crt_math.c_floor_FUN_005feb90
 //   crt_math.c_round_FUN_005fe6b0
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 float * core_boneguy_cpp_FUN_0041ba10(void)
 
@@ -39,8 +37,8 @@ float * core_boneguy_cpp_FUN_0041ba10(void)
   fVar5 = fVar2;
   fVar6 = fVar2;
   if (0.0 < in_stack_00000008[1]) {
-    fVar5 = in_stack_00000008[1] * (float)_DAT_00615f6d;
-    fVar2 = (float)_DAT_00615f75;
+    fVar5 = in_stack_00000008[1] * (float)DAT_00615f6d;
+    fVar2 = (float)DAT_00615f75;
     crt_math_c_floor_FUN_005feb90((double)in_ST0);
     fVar7 = (float10)(double)CONCAT44(extraout_EDX,extraout_EAX);
     crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,extraout_EAX));

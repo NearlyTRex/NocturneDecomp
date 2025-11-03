@@ -13,7 +13,7 @@
 //   undefined4 g_CDemonCameraInstance.base.position.y
 //   undefined4 g_CDemonCameraInstance.base.position.z
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 //   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
 //   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
@@ -36,7 +36,8 @@ core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040c8f0
   float fStack_10;
   float local_8;
   
-  core_actor_cpp_CDemonActor_FUN_00408ec0(this_ptr);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (this_ptr,(CVector3f *)&stack0xffffffcc,u1);
   local_20.x = (float)g_CDemonCameraInstance.base.position.y;
   local_20.y = (float)g_CDemonCameraInstance.base.position.z;
   if (FLOAT_006142bc <
@@ -58,8 +59,7 @@ core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040c8f0
   if (local_8 < unaff_EBX + (float)DOUBLE_006142c0) {
     iVar1 = g_CDemonSetPtr->ground_type;
   }
-  iVar1 = (*((this_ptr->metadata).vtable)->handleFootstep)
-                    (this_ptr,&local_20,iVar1,in_stack_00000020);
+  iVar1 = (*this_ptr->vtable->handleFootstep)(this_ptr,&local_20,iVar1,in_stack_00000020);
   return iVar1;
 }
 
@@ -77,7 +77,7 @@ core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040c8f0
 //   XREF to: Stack[-0x34] (DATA)
 // 0040c901: PUSH EAX
 // 0040c902: PUSH EBX
-// 0040c903: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 0040c903: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 0040c908: ADD ESP,0xc
 // 0040c90b: MOV EAX,[0x032758e8]

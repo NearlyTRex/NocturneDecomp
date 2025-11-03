@@ -90,8 +90,8 @@
 //   core_skeledit.cpp_FUN_0058f810
 //   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510
 //   core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0
-//   core_skeleton.cpp_CDeformableModel_FUN_0059a2b0
-//   core_skeleton.cpp_CDeformableModel_SkeletonPtrNotSet_FUN_0059a810
+//   core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0
+//   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810
 //   core_xform.cpp_inverse_FUN_005f6210
 //   crt_file.c_makepath_FUN_005febfc
 //   crt_stack.c_stack_probe_FUN_005ff9f3
@@ -144,45 +144,48 @@ undefined4 core_skeledit_cpp_FUN_0058c190(void)
 
 {
   char cVar1;
-  streambuf *psVar2;
+  SVert *pSVar2;
   undefined4 uVar3;
-  float fVar4;
-  FILE *pFVar5;
-  bool bVar6;
-  FILE *pFVar7;
-  int iVar8;
-  undefined4 *puVar9;
+  int iVar4;
+  float fVar5;
+  CDeformableModel *pCVar6;
+  bool bVar7;
+  FILE *pFVar8;
+  int iVar9;
+  undefined4 *puVar10;
   FILE *file_ptr;
   undefined3 extraout_var;
   undefined3 extraout_var_00;
-  int iVar11;
-  uint uVar12;
+  int iVar12;
   undefined1 *puVar13;
-  int iVar14;
+  CDeformableModel *pCVar14;
+  ushort *puVar15;
+  int iVar16;
   BADSPACEBASE *in_ESP;
   int unaff_EBP;
-  ushort *unaff_ESI;
-  char *pcVar15;
-  undefined4 *puVar16;
-  ushort *puVar17;
-  ushort *puVar18;
-  char *pcVar19;
+  STextureSet *unaff_ESI;
+  char *pcVar17;
+  undefined4 *puVar18;
+  ushort *puVar19;
+  STextureSet *pSVar20;
+  char *pcVar21;
   int unaff_EDI;
-  char *pcVar20;
-  byte bVar21;
-  FILE *in_stack_0000000c;
-  FILE *in_stack_00000010;
+  char *pcVar22;
+  int *piVar23;
+  byte bVar24;
+  CDeformableModel *in_stack_0000000c;
+  CDeformableModel *in_stack_00000010;
   int in_stack_00000014;
   int in_stack_00000024;
   int iStack00000028;
   int iStack0000002c;
   int iStack00000030;
   int in_stack_00000034;
-  FILE *pFStack00000038;
+  CDeformableModel *pCStack00000038;
   int iStack0000003c;
   int in_stack_00000040;
   int in_stack_00000044;
-  FILE *in_stack_00000048;
+  CDeformableModel *in_stack_00000048;
   undefined4 in_stack_0000004c;
   int in_stack_00000050;
   int in_stack_00000058;
@@ -257,6 +260,9 @@ undefined4 core_skeledit_cpp_FUN_0058c190(void)
   char acStack_144 [40];
   int local_11c;
   SLodMesh SStack_114;
+  int local_7c;
+  int local_74;
+  int local_70;
   undefined4 local_48;
   int local_40 [3];
   int local_34 [6];
@@ -264,33 +270,33 @@ undefined4 core_skeledit_cpp_FUN_0058c190(void)
   FILE *local_18;
   FILE *pFStack_10;
   undefined1 auStack_c [4];
-  undefined4 *puVar10;
+  undefined4 *puVar11;
   
-  pFVar5 = in_stack_0000000c;
-  bVar21 = 0;
+  pCVar6 = in_stack_0000000c;
+  bVar24 = 0;
   crt_stack_c_stack_probe_FUN_005ff9f3(0xa248);
   DAT_03670650 = 0;
-  pFVar7 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  pFVar8 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      ((char *)in_stack_00000010,(char *)0x0,"rt",
                       "..\\core\\skeledit.cpp",0x60a);
-  local_18 = pFVar7;
-  if (pFVar7 == (FILE *)0x0) {
+  local_18 = pFVar8;
+  if (pFVar8 == (FILE *)0x0) {
     crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,"Can't open %s",in_stack_00000014);
     return 0;
   }
-  iVar14 = 1;
-  core_skeleton_cpp_CDeformableModel_FUN_0059a2b0();
+  iVar16 = 1;
+  core_skeleton_cpp_CDeformableModel_free_FUN_0059a2b0(in_stack_0000000c);
   do {
-    iVar8 = crt_stdio_c_fgetc_FUN_005fe840(pFVar7);
-    if (iVar8 < 0) break;
-  } while ((iVar8 != 10) || (iVar14 = iVar14 + -1, 0 < iVar14));
+    iVar9 = crt_stdio_c_fgetc_FUN_005fe840(pFVar8);
+    if (iVar9 < 0) break;
+  } while ((iVar9 != 10) || (iVar16 = iVar16 + -1, 0 < iVar16));
   crt_stdio_c_fscanf_FUN_005fe7c0(pFStack_10,"%d\n",auStack_c);
-  core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0();
-  core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10();
-  core_skeleton_cpp_CDeformableModel_SkeletonPtrNotSet_FUN_0059a810();
+  core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0((CBoneStructure *)pFStack_10);
+  core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10((CBoneStructure *)pFStack_10);
+  core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(in_stack_0000000c);
   core_skeledit_cpp_FUN_0058b160();
-  iVar14 = core_skeledit_cpp_FUN_0058b200();
-  if (iVar14 == 0) {
+  iVar16 = core_skeledit_cpp_FUN_0058b200();
+  if (iVar16 == 0) {
     crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,"Heirarchy in %s does not match that in skeleton %s");
     if (*(int *)(in_stack_00000034 + 0x308) != 2) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)auStack_1230);
@@ -298,15 +304,15 @@ undefined4 core_skeledit_cpp_FUN_0058c190(void)
       shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)(auStack_1230 + 8),acStack_3e0);
       crt_stdio_c_sprintf_FUN_005fdbd0(acStack_3dc,"Display %s");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)(auStack_1230 + 0x10),acStack_3d8);
-      iVar14 = 0;
+      iVar16 = 0;
       while( true ) {
-        iVar14 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                           ((CPickList *)auStack_121c,&DAT_03670650,iVar14,0);
-        if (iVar14 < 0) break;
-        if (iVar14 == 0) {
+        iVar16 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                           ((CPickList *)auStack_121c,&DAT_03670650,iVar16,0);
+        if (iVar16 < 0) break;
+        if (iVar16 == 0) {
           core_skeledit_cpp_FUN_0058afe0();
         }
-        if (iVar14 == 1) {
+        if (iVar16 == 1) {
           core_skeledit_cpp_FUN_0058afe0();
         }
       }
@@ -316,29 +322,29 @@ undefined4 core_skeledit_cpp_FUN_0058c190(void)
     }
     return 0;
   }
-  iVar14 = 1;
+  iVar16 = 1;
   do {
-    iVar8 = crt_stdio_c_fgetc_FUN_005fe840(pFStack_10);
-    if (iVar8 < 0) break;
-  } while ((iVar8 != 10) || (iVar14 = iVar14 + -1, 0 < iVar14));
-  iVar14 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_0000000c,"%d,%d,%d\n");
-  if (iVar14 != 3) {
+    iVar9 = crt_stdio_c_fgetc_FUN_005fe840(pFStack_10);
+    if (iVar9 < 0) break;
+  } while ((iVar9 != 10) || (iVar16 = iVar16 + -1, 0 < iVar16));
+  iVar16 = crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)in_stack_0000000c,"%d,%d,%d\n");
+  if (iVar16 != 3) {
 LAB_0058c613:
     crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,"%s is corrupt!");
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000070,"..\\core\\skeledit.cpp",0x647);
     return 0;
   }
-  core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0();
-  core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510();
-  iVar14 = core_skeledit_cpp_FUN_0058b8e0();
-  if (((iVar14 == 0) || (iVar14 = core_skeledit_cpp_FUN_0058b9b0(), iVar14 == 0)) ||
-     (iVar14 = core_skeledit_cpp_FUN_0058bc40(), iVar14 == 0)) goto LAB_0058c613;
+  core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0(in_stack_0000000c,1,1,local_7c,1);
+  core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510(in_stack_0000000c,0,local_74,local_70,0);
+  iVar16 = core_skeledit_cpp_FUN_0058b8e0();
+  if (((iVar16 == 0) || (iVar16 = core_skeledit_cpp_FUN_0058b9b0(), iVar16 == 0)) ||
+     (iVar16 = core_skeledit_cpp_FUN_0058bc40(), iVar16 == 0)) goto LAB_0058c613;
   if (*(char *)(in_stack_00000050 + 0x200) == '\0') {
     core_skeledit_cpp_FUN_0058f790();
   }
   else {
-    iVar14 = core_skeledit_cpp_FUN_0058f810();
-    if (iVar14 == 0) {
+    iVar16 = core_skeledit_cpp_FUN_0058f810();
+    if (iVar16 == 0) {
       return 0;
     }
   }
@@ -348,16 +354,16 @@ LAB_0058c613:
   iStack00000030 = 0;
   if (0 < (int)in_stack_ffff5e30) {
     local_18 = (FILE *)&stack0xffff5e88;
-    iVar14 = 0;
+    iVar16 = 0;
     do {
       core_xform_cpp_inverse_FUN_005f6210((CMatrix3x4f *)local_18,in_stack_ffff5e30);
-      puVar9 = (undefined4 *)((int)auStack_24c8 + iVar14);
-      iVar14 = iVar14 + 0x30;
-      pcVar20 = SStack_114.field0_0x0 + 0x50;
-      for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {
-        *puVar9 = *(undefined4 *)pcVar20;
-        pcVar20 = pcVar20 + ((uint)bVar21 * -2 + 1) * 4;
-        puVar9 = puVar9 + (uint)bVar21 * -2 + 1;
+      puVar10 = (undefined4 *)((int)auStack_24c8 + iVar16);
+      iVar16 = iVar16 + 0x30;
+      pcVar22 = SStack_114.field0_0x0 + 0x50;
+      for (iVar9 = 0xc; iVar9 != 0; iVar9 = iVar9 + -1) {
+        *puVar10 = *(undefined4 *)pcVar22;
+        pcVar22 = pcVar22 + ((uint)bVar24 * -2 + 1) * 4;
+        puVar10 = puVar10 + (uint)bVar24 * -2 + 1;
       }
       iStack00000030 = iStack00000030 + 1;
       local_18 = (FILE *)&((CMatrix3x4f *)((int)local_18 + 0x60))->m[2].x;
@@ -368,9 +374,9 @@ LAB_0058c613:
   crt_file_c_makepath_FUN_005febfc
             (acStack_ccc,(char *)&stack0x00000048,acStack_6bc,(char *)0x0,(char *)0x0);
   if ((in_stack_00000068[0x1b]._bufsize == 0) &&
-     (iVar14 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+     (iVar16 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                          (g_CEditorToolsPtr,"Copy textures from a directory (empty string if textures are already in art directory.)",acStack_cc8,0x104,1)
-     , iVar14 == 0)) {
+     , iVar16 == 0)) {
     return 0;
   }
   if (acStack_cc4[0] != '\0') {
@@ -378,40 +384,40 @@ LAB_0058c613:
               (acStack_cc4,(char *)&stack0x0000004c,acStack_5b4,acStack_7b4,acStack_8b4);
     crt_file_c_makepath_FUN_005febfc(acStack_4b0,(char *)0x0,acStack_5b0,acStack_7b0,acStack_8b0);
     in_stack_00000040 = 0;
-    if (0 < in_stack_0000000c[6]._handle) {
-      unaff_ESI = &in_stack_0000000c[6]._ungotten;
+    if (0 < in_stack_0000000c->num_texture_sets) {
+      unaff_ESI = in_stack_0000000c->texture_sets;
       do {
         local_34[2] = 0;
-        if (0 < (int)in_stack_0000000c[6]._bufsize) {
-          pcVar20 = (char *)(unaff_ESI + 4);
+        if (0 < in_stack_0000000c->num_textures) {
+          pcVar22 = unaff_ESI->textures[0].texture_variants[0].texture_name;
           do {
             crt_string_c_splitpath_FUN_005ff178
-                      (pcVar20,(char *)0x0,(char *)0x0,acStack_7ac,(char *)0x0);
+                      (pcVar22,(char *)0x0,(char *)0x0,acStack_7ac,(char *)0x0);
             crt_file_c_makepath_FUN_005febfc
                       (acStack_9ac,(char *)&stack0x00000058,acStack_4a8,acStack_7a8,"tga");
             crt_file_c_makepath_FUN_005febfc
                       (acStack_bb0,(char *)0x0,"art",acStack_7a4,"tga");
-            pFVar7 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+            pFVar8 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                (acStack_9a4,(char *)0x0,"rb","..\\core\\skeledit.cpp",
                                 0x6a5);
-            if ((pFVar7 == (FILE *)0x0) &&
-               (pcVar15 = crt_string_c_strstr_FUN_005fedd0(acStack_79c,"gore"),
-               pcVar15 != (char *)0x0)) {
+            if ((pFVar8 == (FILE *)0x0) &&
+               (pcVar17 = crt_string_c_strstr_FUN_005fedd0(acStack_79c,"gore"),
+               pcVar17 != (char *)0x0)) {
               crt_file_c_makepath_FUN_005febfc
                         (acStack_99c,"t:","\\enemy",acStack_798,"tga");
-              pFVar7 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+              pFVar8 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                  (acStack_998,(char *)0x0,"rb","..\\core\\skeledit.cpp"
                                   ,0x6a9);
             }
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                       (g_CEditorToolsPtr,"Copying %s -> %s");
-            if (pFVar7 == (FILE *)0x0) {
+            if (pFVar8 == (FILE *)0x0) {
               if (*(int *)(in_stack_00000094 + 0x308) != 2) {
                 crt_stdio_c_sprintf_FUN_005fdbd0(acStack_e2c,"Can't open %s.  Keep going anyway?");
                 in_stack_ffff5e64 = acStack_e28;
-                iVar14 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+                iVar16 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                                    (g_CEditorToolsPtr,in_stack_ffff5e64);
-                if (iVar14 == 0) {
+                if (iVar16 == 0) {
                   return 0;
                 }
               }
@@ -425,10 +431,10 @@ LAB_0058c613:
                 g_CurrentLineNumber = 0x6b6;
                 core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s");
               }
-              while (iVar14 = crt_stdio_c_fgetc_FUN_005fe840(pFVar7), -1 < iVar14) {
-                crt_stdio_c_fputc_FUN_006007a0(iVar14,file_ptr);
+              while (iVar16 = crt_stdio_c_fgetc_FUN_005fe840(pFVar8), -1 < iVar16) {
+                crt_stdio_c_fputc_FUN_006007a0(iVar16,file_ptr);
               }
-              if ((pFVar7->_flag & 0x20) != 0) {
+              if ((pFVar8->_flag & 0x20) != 0) {
                 g_CurrentFilename = "..\\core\\skeledit.cpp";
                 g_CurrentLineNumber = 0x6bc;
                 core_main_c_displayErrorAndQuit_FUN_00506f10("Error reading %s");
@@ -439,68 +445,68 @@ LAB_0058c613:
                 core_main_c_displayErrorAndQuit_FUN_00506f10("Error writing %s");
               }
               in_stack_ffff5e64 = (char *)0x58cae6;
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar7,"..\\core\\skeledit.cpp",0x6be);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar8,"..\\core\\skeledit.cpp",0x6be);
               in_stack_ffff5e74._0_1_ = -0x41;
               in_stack_ffff5e74._1_1_ = '\x06';
               in_stack_ffff5e74._2_1_ = '\0';
               in_stack_ffff5e74._3_1_ = '\0';
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\skeledit.cpp",0x6bf);
             }
-            pcVar20 = pcVar20 + 0x48;
+            pcVar22 = pcVar22 + 0x48;
             local_34[2] = local_34[2] + 1;
-          } while (local_34[2] < (int)in_stack_0000000c[6]._bufsize);
+          } while (local_34[2] < in_stack_0000000c->num_textures);
         }
-        unaff_ESI = unaff_ESI + 0xb40;
+        unaff_ESI = unaff_ESI + 1;
         in_stack_00000040 = in_stack_00000040 + 1;
-      } while (in_stack_00000040 < in_stack_0000000c[6]._handle);
+      } while (in_stack_00000040 < in_stack_0000000c->num_texture_sets);
     }
   }
   local_40[0] = 2;
   if (*(int *)(in_stack_0000006c + 0x308) == 1) {
-    bVar6 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
+    bVar7 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                       (g_CEditorToolsPtr,"Enter number of 256x256 crams",local_40,true,1,8,true)
     ;
-    if (CONCAT31(extraout_var,bVar6) == 0) {
+    if (CONCAT31(extraout_var,bVar7) == 0) {
       return 0;
     }
-    pcVar15 = "$$TEST";
-    pcVar20 = acStack_ab8;
+    pcVar17 = "$$TEST";
+    pcVar22 = acStack_ab8;
 LAB_0058c4e0:
     do {
-      cVar1 = *pcVar15;
-      *pcVar20 = cVar1;
+      cVar1 = *pcVar17;
+      *pcVar22 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar15[1];
-      pcVar15 = pcVar15 + 2;
-      pcVar20[1] = cVar1;
-      pcVar20 = pcVar20 + 2;
+      cVar1 = pcVar17[1];
+      pcVar17 = pcVar17 + 2;
+      pcVar22[1] = cVar1;
+      pcVar22 = pcVar22 + 2;
     } while (cVar1 != '\0');
   }
   else {
     if (*(int *)(in_stack_0000006c + 0x308) == 2) {
-      pcVar15 = "$$BATCH";
-      pcVar20 = acStack_abc;
+      pcVar17 = "$$BATCH";
+      pcVar22 = acStack_abc;
       goto LAB_0058c4e0;
     }
-    bVar6 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
+    bVar7 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                       (g_CEditorToolsPtr,"Enter number of 256x256 crams",local_40,true,1,8,true)
     ;
-    if (CONCAT31(extraout_var_00,bVar6) == 0) {
+    if (CONCAT31(extraout_var_00,bVar7) == 0) {
       return 0;
     }
     crt_string_c_splitpath_FUN_005ff178
               ((char *)in_stack_00000070,(char *)0x0,(char *)0x0,acStack_ab8,(char *)0x0);
     shape_design_c_initializeTextureManager_FUN_0046a880(1);
     shape_design_c_setTextureQualityParameter_FUN_0046a8e0(0x40);
-    iVar14 = shape_design_c_calculateTextureQualityLevel_FUN_0046a930(local_34[1]);
-    if (1 < in_stack_0000000c[6]._handle) {
-      iVar14 = iVar14 + -1;
+    iVar16 = shape_design_c_calculateTextureQualityLevel_FUN_0046a930(local_34[1]);
+    if (1 < in_stack_0000000c->num_texture_sets) {
+      iVar16 = iVar16 + -1;
     }
-    acStack_aa8[iVar14] = '\0';
-    iVar14 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                       (g_CEditorToolsPtr,"Enter crammed texture base name (no path or extension)",acStack_aa8,iVar14 + 1
+    acStack_aa8[iVar16] = '\0';
+    iVar16 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+                       (g_CEditorToolsPtr,"Enter crammed texture base name (no path or extension)",acStack_aa8,iVar16 + 1
                         ,1);
-    if (iVar14 == 0) {
+    if (iVar16 == 0) {
       return 0;
     }
   }
@@ -508,130 +514,133 @@ LAB_0058c4e0:
   local_1c = shape_design_c_getLastTextureProcessIndex_FUN_0046a860();
   shape_meshlod_cpp_LodMesh_ctor_FUN_00515840((SLodMesh *)(local_1c4 + 0x54));
   shape_meshlod_cpp_CallocSomething1_FUN_00515ac0();
-  pFVar7 = in_stack_00000068;
-  iVar14 = 1;
+  pFVar8 = in_stack_00000068;
+  iVar16 = 1;
   do {
-    iVar8 = crt_stdio_c_fgetc_FUN_005fe840(pFVar7);
-    if (iVar8 < 0) break;
-  } while ((iVar8 != 10) || (iVar14 = iVar14 + -1, 0 < iVar14));
-  iVar14 = 0;
-  if (0 < in_stack_0000000c[1]._handle) {
+    iVar9 = crt_stdio_c_fgetc_FUN_005fe840(pFVar8);
+    if (iVar9 < 0) break;
+  } while ((iVar9 != 10) || (iVar16 = iVar16 + -1, 0 < iVar16));
+  iVar16 = 0;
+  if (0 < in_stack_0000000c->vertex_count[0]) {
     iStack00000028 = 0;
     do {
-      psVar2 = in_stack_0000000c[2]._link;
-      puVar16 = (undefined4 *)(auStack_168._4_4_ + iStack00000028);
-      *puVar16 = *(undefined4 *)((int)&psVar2->__get_end + in_stack_00000024);
-      puVar16[1] = *(undefined4 *)((int)&psVar2->__get_ptr + in_stack_00000024);
-      puVar16[2] = *(undefined4 *)((int)&psVar2->__put_base + in_stack_00000024);
-      puVar9 = puVar16;
+      pSVar2 = in_stack_0000000c->vertex_data_ptr[0];
+      puVar18 = (undefined4 *)(auStack_168._4_4_ + iStack00000028);
+      *puVar18 = *(undefined4 *)((int)pSVar2->bone_weights + in_stack_00000024 + 0xc);
+      puVar18[1] = *(undefined4 *)((int)pSVar2->bone_weights + in_stack_00000024 + 0x10);
+      puVar18[2] = *(undefined4 *)((int)pSVar2->bone_weights + in_stack_00000024 + 0x14);
+      puVar10 = puVar18;
       do {
-        puVar10 = puVar9 + 1;
-        puVar9[3] = 0;
-        puVar9 = puVar10;
-      } while (puVar10 != puVar16 + 100);
-      iVar8 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000068,"%d\n");
-      if (((iVar8 != 1) || (unaff_EBP < 1)) || ((int)in_stack_ffff5e64 < unaff_EBP)) {
+        puVar11 = puVar10 + 1;
+        puVar10[3] = 0;
+        puVar10 = puVar11;
+      } while (puVar11 != puVar18 + 100);
+      iVar9 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000068,"%d\n");
+      if (((iVar9 != 1) || (unaff_EBP < 1)) || ((int)in_stack_ffff5e64 < unaff_EBP)) {
 LAB_0058c601:
         shape_meshlod_cpp_LodMesh_dtor_FUN_00515950((SLodMesh *)auStack_168);
         goto LAB_0058c613;
       }
-      iVar8 = 0;
+      iVar9 = 0;
       if (0 < unaff_EBP) {
         do {
-          iVar11 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000068,"%d,%f\n");
-          if (iVar11 != 2) goto LAB_0058c601;
+          iVar12 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000068,"%d,%f\n");
+          if (iVar12 != 2) goto LAB_0058c601;
           unaff_EDI = aiStack_6e08[unaff_EDI];
-          iVar8 = iVar8 + 1;
-          puVar16[unaff_EDI + 3] = (float)puVar16[unaff_EDI + 3] + (float)unaff_ESI;
-        } while (iVar8 < unaff_EBP);
+          iVar9 = iVar9 + 1;
+          puVar18[unaff_EDI + 3] = (float)puVar18[unaff_EDI + 3] + (float)unaff_ESI;
+        } while (iVar9 < unaff_EBP);
       }
-      iVar14 = iVar14 + 1;
+      iVar16 = iVar16 + 1;
       in_stack_00000024 = in_stack_00000024 + 0x34;
       iStack00000028 = iStack00000028 + 0x4c4;
-    } while (iVar14 < in_stack_0000000c[1]._handle);
+    } while (iVar16 < in_stack_0000000c->vertex_count[0]);
   }
-  iVar14 = 0;
+  iVar16 = 0;
   in_stack_0000005c = 0;
-  if (0 < (int)in_stack_0000000c[0x40b]._flag) {
-    pFStack00000038 = in_stack_0000000c;
+  if (0 < in_stack_0000000c->num_parts) {
+    pCStack00000038 = in_stack_0000000c;
     do {
-      iStack0000002c = iVar14 * 4;
-      iStack00000030 = iVar14 * 0x12;
-      in_stack_00000034 = iVar14 * 0x8c;
-      iVar8 = 0;
-      if (0 < (int)pFStack00000038[0x40c]._bufsize) {
+      iStack0000002c = iVar16 * 4;
+      iStack00000030 = iVar16 * 0x12;
+      in_stack_00000034 = iVar16 * 0x8c;
+      iVar9 = 0;
+      if (0 < pCStack00000038->parts[0].tri_counts[0]) {
         do {
-          puVar16 = (undefined4 *)(iStack_15c + in_stack_00000034);
-          puVar17 = (ushort *)(in_stack_0000000c[4]._flag + iStack00000030);
-          puVar16[1] = in_stack_0000005c;
-          uVar3 = *(undefined4 *)(in_stack_0000000c[5]._cnt + iStack0000002c);
-          puVar16[2] = 0;
-          puVar16[3] = 0xfffe7961;
-          puVar18 = puVar17 + 3;
-          *puVar16 = uVar3;
-          fVar4 = (float)_DAT_0064ae0a;
-          puVar9 = puVar16;
+          puVar18 = (undefined4 *)(iStack_15c + in_stack_00000034);
+          puVar15 = (ushort *)
+                    ((int)&(in_stack_0000000c->tri_data_ptr[0]->vertex_indices).vertex_index_0 +
+                    iStack00000030);
+          puVar18[1] = in_stack_0000005c;
+          uVar3 = *(undefined4 *)((int)in_stack_0000000c->index_data_ptr[0] + iStack0000002c);
+          puVar18[2] = 0;
+          puVar18[3] = 0xfffe7961;
+          puVar19 = puVar15 + 3;
+          *puVar18 = uVar3;
+          fVar5 = (float)_DAT_0064ae0a;
+          puVar10 = puVar18;
           do {
-            puVar16[4] = (uint)*puVar17;
-            puVar9[7] = (float)puVar17[3] * fVar4;
-            in_stack_00000070 = (FILE *)(uint)puVar17[6];
-            puVar16 = puVar16 + 1;
-            puVar17 = puVar17 + 1;
-            puVar9[8] = (float)(int)in_stack_00000070 * fVar4;
-            puVar9 = puVar9 + 2;
-          } while (puVar17 != puVar18);
-          iVar14 = iVar14 + 1;
+            puVar18[4] = (uint)*puVar15;
+            puVar10[7] = (float)puVar15[3] * fVar5;
+            in_stack_00000070 = (FILE *)(uint)puVar15[6];
+            puVar18 = puVar18 + 1;
+            puVar15 = puVar15 + 1;
+            puVar10[8] = (float)(int)in_stack_00000070 * fVar5;
+            puVar10 = puVar10 + 2;
+          } while (puVar15 != puVar19);
+          iVar16 = iVar16 + 1;
           iStack0000002c = iStack0000002c + 4;
           iStack00000030 = iStack00000030 + 0x12;
           in_stack_00000034 = in_stack_00000034 + 0x8c;
-          iVar8 = iVar8 + 1;
-        } while (iVar8 < (int)pFStack00000038[0x40c]._bufsize);
+          iVar9 = iVar9 + 1;
+        } while (iVar9 < pCStack00000038->parts[0].tri_counts[0]);
       }
-      pFStack00000038 = (FILE *)&pFStack00000038[3]._flag;
+      pCStack00000038 = (CDeformableModel *)(pCStack00000038->tri_count + 3);
       in_stack_0000005c = in_stack_0000005c + 1;
-    } while (in_stack_0000005c < (int)in_stack_0000000c[0x40b]._flag);
+    } while (in_stack_0000005c < in_stack_0000000c->num_parts);
   }
   in_stack_00000058 = 0;
-  if (0 < (int)in_stack_0000000c[0x40b]._flag) {
+  if (0 < in_stack_0000000c->num_parts) {
     in_stack_00000048 = in_stack_0000000c;
     do {
-      in_stack_0000000c = (FILE *)0x0;
+      in_stack_0000000c = (CDeformableModel *)0x0;
       in_stack_00000010 = in_stack_00000048;
-      iStack0000003c = iVar14 * 4;
-      in_stack_00000040 = iVar14 * 0x12;
-      in_stack_00000044 = iVar14 * 0x8c;
-      if (0 < (int)in_stack_00000048[0x40d]._flag) {
+      iStack0000003c = iVar16 * 4;
+      in_stack_00000040 = iVar16 * 0x12;
+      in_stack_00000044 = iVar16 * 0x8c;
+      if (0 < in_stack_00000048->parts[0].cap_tri_counts[0]) {
         do {
-          puVar16 = (undefined4 *)(iStack_15c + in_stack_00000044);
-          puVar17 = (ushort *)(pFVar5[4]._flag + in_stack_00000040);
-          puVar16[1] = in_stack_00000058;
-          uVar3 = *(undefined4 *)(pFVar5[5]._cnt + iStack0000003c);
-          puVar16[2] = 1;
-          *puVar16 = uVar3;
-          puVar16[3] = *(undefined4 *)
-                        (*(int *)&pFVar5[5]._ungotten + (iVar14 - (int)pFVar5[3]._ptr) * 4);
-          puVar18 = puVar17 + 3;
-          fVar4 = (float)_DAT_0064ae0a;
-          puVar9 = puVar16;
+          puVar18 = (undefined4 *)(iStack_15c + in_stack_00000044);
+          puVar15 = (ushort *)
+                    ((int)&(pCVar6->tri_data_ptr[0]->vertex_indices).vertex_index_0 +
+                    in_stack_00000040);
+          puVar18[1] = in_stack_00000058;
+          uVar3 = *(undefined4 *)((int)pCVar6->index_data_ptr[0] + iStack0000003c);
+          puVar18[2] = 1;
+          *puVar18 = uVar3;
+          puVar18[3] = pCVar6->cap_index_ptr[0][iVar16 - pCVar6->tri_count[0]];
+          puVar19 = puVar15 + 3;
+          fVar5 = (float)_DAT_0064ae0a;
+          puVar10 = puVar18;
           do {
-            puVar16[4] = (uint)*puVar17;
-            puVar9[7] = (float)puVar17[3] * fVar4;
-            in_stack_00000070 = (FILE *)(uint)puVar17[6];
-            puVar16 = puVar16 + 1;
-            puVar17 = puVar17 + 1;
-            puVar9[8] = (float)(int)in_stack_00000070 * fVar4;
-            puVar9 = puVar9 + 2;
-          } while (puVar17 != puVar18);
-          iVar14 = iVar14 + 1;
+            puVar18[4] = (uint)*puVar15;
+            puVar10[7] = (float)puVar15[3] * fVar5;
+            in_stack_00000070 = (FILE *)(uint)puVar15[6];
+            puVar18 = puVar18 + 1;
+            puVar15 = puVar15 + 1;
+            puVar10[8] = (float)(int)in_stack_00000070 * fVar5;
+            puVar10 = puVar10 + 2;
+          } while (puVar15 != puVar19);
+          iVar16 = iVar16 + 1;
           iStack0000003c = iStack0000003c + 4;
           in_stack_00000044 = in_stack_00000044 + 0x8c;
-          in_stack_0000000c = (FILE *)((int)in_stack_0000000c + 1);
+          in_stack_0000000c = (CDeformableModel *)((int)in_stack_0000000c + 1);
           in_stack_00000040 = in_stack_00000040 + 0x12;
-        } while ((int)in_stack_0000000c < (int)in_stack_00000048[0x40d]._flag);
+        } while ((int)in_stack_0000000c < in_stack_00000048->parts[0].cap_tri_counts[0]);
       }
-      in_stack_00000048 = (FILE *)&in_stack_00000048[3]._flag;
+      in_stack_00000048 = (CDeformableModel *)(in_stack_00000048->tri_count + 3);
       in_stack_00000058 = in_stack_00000058 + 1;
-    } while (in_stack_00000058 < (int)pFVar5[0x40b]._flag);
+    } while (in_stack_00000058 < pCVar6->num_parts);
   }
   auStack_14c[0] = '\x02';
   auStack_14c[1] = '\0';
@@ -657,20 +666,20 @@ LAB_0058c601:
   acStack_150[1] = '\0';
   acStack_150[2] = '\0';
   acStack_150[3] = '\0';
-  iVar14 = 0;
-  pFVar7 = pFVar5;
-  if (0 < (int)pFVar5[6]._bufsize) {
+  iVar16 = 0;
+  pCVar14 = pCVar6;
+  if (0 < pCVar6->num_textures) {
     do {
-      puVar17 = &pFVar7[6]._ungotten;
-      puVar9 = (undefined4 *)(iVar14 * 0x48 + iStack_154);
-      for (iVar8 = 0x12; iVar8 != 0; iVar8 = iVar8 + -1) {
-        *puVar9 = *(undefined4 *)puVar17;
-        puVar17 = puVar17 + (uint)bVar21 * -4 + 2;
-        puVar9 = puVar9 + (uint)bVar21 * -2 + 1;
+      pSVar20 = pCVar14->texture_sets;
+      piVar23 = (int *)(iVar16 * 0x48 + iStack_154);
+      for (iVar9 = 0x12; iVar9 != 0; iVar9 = iVar9 + -1) {
+        *piVar23 = pSVar20->textures[0].texture_variants[0].base.type;
+        pSVar20 = (STextureSet *)((int)pSVar20 + (uint)bVar24 * -8 + 4);
+        piVar23 = piVar23 + (uint)bVar24 * -2 + 1;
       }
-      iVar14 = iVar14 + 1;
-      pFVar7 = (FILE *)&pFVar7[2]._handle;
-    } while (iVar14 < (int)pFVar5[6]._bufsize);
+      iVar16 = iVar16 + 1;
+      pCVar14 = (CDeformableModel *)(pCVar14->vertex_data_ptr + 2);
+    } while (iVar16 < pCVar6->num_textures);
   }
   auStack_14c._4_4_ = in_stack_ffff5e64;
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000068,"..\\core\\skeledit.cpp",0x75a);
@@ -731,15 +740,15 @@ LAB_0058c601:
     ;
     shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
               (g_CEditorToolsPtr,"LOD generation complete!");
-    iVar14 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-    iVar8 = 0;
+    iVar16 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
+    iVar9 = 0;
     do {
-      iVar11 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-      if (0 < iVar11 - iVar14) {
-        iVar8 = iVar8 + (iVar11 - iVar14);
+      iVar12 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
+      if (0 < iVar12 - iVar16) {
+        iVar9 = iVar9 + (iVar12 - iVar16);
       }
-      iVar14 = iVar11;
-    } while (iVar8 < 0x360000);
+      iVar16 = iVar12;
+    } while (iVar9 < 0x360000);
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
     sound_sndmain_cpp_cleanup_FUN_005ab130();
     shape_meshlod_cpp_LodMesh_dtor_FUN_00515950((SLodMesh *)auStack_274);
@@ -747,87 +756,88 @@ LAB_0058c601:
     return 1;
   }
   *(undefined4 *)(in_stack_000000a4 + 0x30c) = 0;
-  uVar12 = core_skeledit_cpp_FUN_00589c20();
-  if (-1 < (int)uVar12) {
-    if (uVar12 != 0) {
-      pcVar20 = (char *)shape_meshlod_cpp_FUN_0051d990();
-      pFVar5->_ptr = pcVar20;
-      if ((int)pcVar20 < 1) goto LAB_0058d5ef;
-      iVar14 = 0;
-      if (0 < (int)pcVar20) {
-        iVar8 = 0;
-        pFVar7 = pFVar5;
+  iVar16 = core_skeledit_cpp_FUN_00589c20();
+  if (-1 < iVar16) {
+    if (iVar16 != 0) {
+      iVar9 = shape_meshlod_cpp_FUN_0051d990();
+      pCVar6->num_lods = iVar9;
+      if (iVar9 < 1) goto LAB_0058d5ef;
+      iVar12 = 0;
+      if (0 < iVar9) {
+        iVar9 = 0;
+        pCVar14 = pCVar6;
         do {
-          iVar11 = *(int *)((int)local_34 + iVar8);
-          pFVar7->_link = (streambuf *)0x0;
-          pFVar7->_cnt = iVar11;
-          iVar14 = iVar14 + 1;
-          iVar8 = iVar8 + 4;
-          pFVar7 = (FILE *)&pFVar7->_link;
-        } while (iVar14 < (int)pFVar5->_ptr);
+          piVar23 = &pCVar14->lod_info[0].shadow_only_flag;
+          iVar4 = *(int *)((int)local_34 + iVar9);
+          *piVar23 = 0;
+          pCVar14->lod_info[0].pixel_height = iVar4;
+          iVar12 = iVar12 + 1;
+          iVar9 = iVar9 + 4;
+          pCVar14 = (CDeformableModel *)piVar23;
+        } while (iVar12 < pCVar6->num_lods);
       }
     }
-    iVar14 = 0;
-    if (0 < (int)pFVar5->_ptr) {
+    iVar9 = 0;
+    if (0 < pCVar6->num_lods) {
       in_stack_00000064 = 0;
       do {
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Extracting LOD %d of %d");
         shape_meshlod_cpp_LodMesh_ctor_FUN_00515840((SLodMesh *)(auStack_274 + 0x40));
-        if (in_stack_00000010 == (FILE *)0x0) {
+        if (in_stack_00000010 == (CDeformableModel *)0x0) {
           shape_meshlod_cpp_FUN_0051a8c0();
         }
         else {
           shape_meshlod_cpp_LodMesh_getLOD_FUN_0051b920();
         }
         shape_meshlod_cpp_FUN_0051bac0();
-        if (iVar14 == 0) {
+        if (iVar9 == 0) {
           if (auStack_220._8_4_ != in_stack_00000014) {
             g_CurrentFilename = "..\\core\\skeledit.cpp";
             g_CurrentLineNumber = 0x7bc;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Texture cram count mismatch!");
           }
-          iVar8 = 0;
+          iVar12 = 0;
           if (0 < (int)auStack_220._12_4_) {
-            pcVar20 = (char *)(in_stack_00000040 + 8);
+            pcVar22 = (char *)(in_stack_00000040 + 8);
             do {
-              pcVar19 = (char *)(iVar8 * 0x48 + auStack_220._16_4_ + 8);
-              iVar8 = iVar8 + 1;
-              pcVar15 = pcVar20;
+              pcVar21 = (char *)(iVar12 * 0x48 + auStack_220._16_4_ + 8);
+              iVar12 = iVar12 + 1;
+              pcVar17 = pcVar22;
               do {
-                cVar1 = *pcVar19;
-                *pcVar15 = cVar1;
+                cVar1 = *pcVar21;
+                *pcVar17 = cVar1;
                 if (cVar1 == '\0') break;
-                cVar1 = pcVar19[1];
-                pcVar19 = pcVar19 + 2;
-                pcVar15[1] = cVar1;
-                pcVar15 = pcVar15 + 2;
+                cVar1 = pcVar21[1];
+                pcVar21 = pcVar21 + 2;
+                pcVar17[1] = cVar1;
+                pcVar17 = pcVar17 + 2;
               } while (cVar1 != '\0');
-              pcVar20 = pcVar20 + 0x48;
-            } while (iVar8 < (int)auStack_220._12_4_);
+              pcVar22 = pcVar22 + 0x48;
+            } while (iVar12 < (int)auStack_220._12_4_);
           }
         }
         core_skeledit_cpp_FUN_0058d790();
         shape_meshlod_cpp_LodMesh_dtor_FUN_00515950((SLodMesh *)auStack_220);
-        iVar14 = iVar14 + 1;
+        iVar9 = iVar9 + 1;
         in_stack_00000064 = in_stack_00000064 + 4;
-      } while (iVar14 < (int)pFVar5->_ptr);
+      } while (iVar9 < pCVar6->num_lods);
     }
-    pFVar5->_link = (streambuf *)0x0;
-    pFVar5->_cnt = 999999;
+    pCVar6->lod_info[0].shadow_only_flag = 0;
+    pCVar6->lod_info[0].pixel_height = 999999;
     local_48 = 999999;
-    if ((int)pFVar5->_ptr < 5) {
+    if (pCVar6->num_lods < 5) {
       *(undefined4 *)(in_stack_000000ac + 0x30c) = 1;
       DAT_02f33330 = 1;
-      iVar14 = core_skeledit_cpp_FUN_00589c20();
-      if (iVar14 < 0) goto LAB_0058d5ef;
-      if (iVar14 != 0) {
-        iVar14 = shape_meshlod_cpp_FUN_0051d990();
-        if (iVar14 < 1) goto LAB_0058d5ef;
-        if (iVar14 == 2) {
-          (&pFVar5->_cnt)[(int)pFVar5->_ptr * 2] = 999999;
-          (&pFVar5->_link)[(int)pFVar5->_ptr * 2] = (streambuf *)&DAT_00000001;
-          pFVar5->_ptr = pFVar5->_ptr + 1;
+      iVar9 = core_skeledit_cpp_FUN_00589c20();
+      if (iVar9 < 0) goto LAB_0058d5ef;
+      if (iVar9 != 0) {
+        iVar9 = shape_meshlod_cpp_FUN_0051d990();
+        if (iVar9 < 1) goto LAB_0058d5ef;
+        if (iVar9 == 2) {
+          pCVar6->lod_info[pCVar6->num_lods].pixel_height = 999999;
+          pCVar6->lod_info[pCVar6->num_lods].shadow_only_flag = 1;
+          pCVar6->num_lods = pCVar6->num_lods + 1;
           shape_meshlod_cpp_LodMesh_ctor_FUN_00515840((SLodMesh *)local_1c4);
           shape_meshlod_cpp_LodMesh_getLOD_FUN_0051b920();
           core_skeledit_cpp_FUN_0058d790();
@@ -836,41 +846,42 @@ LAB_0058c601:
       }
     }
     in_stack_0000006c = 1;
-    if (1 < pFVar5[6]._handle) {
-      in_stack_00000068 = (FILE *)&pFVar5[0xd4]._handle;
+    if (1 < pCVar6->num_texture_sets) {
+      in_stack_00000068 = (FILE *)(pCVar6->texture_sets + 1);
       do {
         crt_stdio_c_sprintf_FUN_005fdbd0(SStack_114.field0_0x0 + 0x38,"%s%d");
         core_skeledit_cpp_FUN_0058de70();
         puVar13 = (undefined1 *)shape_design_c_getLastTextureProcessIndex_FUN_0046a860();
-        if ((ushort *)puVar13 != unaff_ESI) {
+        if ((STextureSet *)puVar13 != unaff_ESI) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0x7fe;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Cram getNumCramsUsed() mismatch!");
         }
         iStack00000030 = 0;
-        if (0 < (int)uVar12) {
-          puVar17 = (ushort *)((int)in_stack_00000068 + 8);
+        if (0 < iVar16) {
+          pcVar22 = ((STextureSet *)in_stack_00000068)->textures[0].texture_variants[0].texture_name
+          ;
           do {
-            pcVar20 = shape_design_c_getTextureName_FUN_0046e060(iStack00000030);
-            puVar18 = puVar17 + 0x24;
+            pcVar17 = shape_design_c_getTextureName_FUN_0046e060(iStack00000030);
+            pcVar21 = pcVar22 + 0x48;
             do {
-              cVar1 = *pcVar20;
-              *(char *)puVar17 = cVar1;
+              cVar1 = *pcVar17;
+              *pcVar22 = cVar1;
               if (cVar1 == '\0') break;
-              cVar1 = pcVar20[1];
-              pcVar20 = pcVar20 + 2;
-              *(char *)((int)puVar17 + 1) = cVar1;
-              puVar17 = puVar17 + 1;
+              cVar1 = pcVar17[1];
+              pcVar17 = pcVar17 + 2;
+              pcVar22[1] = cVar1;
+              pcVar22 = pcVar22 + 2;
             } while (cVar1 != '\0');
             iStack00000030 = iStack00000030 + 1;
-            puVar17 = puVar18;
-          } while (iStack00000030 < (int)uVar12);
+            pcVar22 = pcVar21;
+          } while (iStack00000030 < iVar16);
         }
         in_stack_00000068 = (FILE *)((int)in_stack_00000068 + 0x1680);
         in_stack_0000006c = in_stack_0000006c + 1;
-      } while (in_stack_0000006c < pFVar5[6]._handle);
+      } while (in_stack_0000006c < pCVar6->num_texture_sets);
     }
-    pFVar5[6]._bufsize = uVar12;
+    pCVar6->num_textures = iVar16;
     shape_meshlod_cpp_LodMesh_dtor_FUN_00515950((SLodMesh *)(auStack_2bc + 0x10));
     shape_meshlod_cpp_LodMesh_dtor_FUN_00515950((SLodMesh *)auStack_14c);
     return 1;
@@ -917,7 +928,7 @@ LAB_0058d5ef:
 //   XREF to: 0058c656 (CONDITIONAL_JUMP)
 // 0058c1e5: PUSH EBP
 // 0058c1e6: MOV EBX,0x1
-// 0058c1eb: CALL core_skeleton.cpp_CDeformableModel_FUN_0059a2b0
+// 0058c1eb: CALL core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0
 //   XREF to: 0059a2b0 (UNCONDITIONAL_CALL)
 // 0058c1f0: ADD ESP,0x4
 // 0058c1f3: PUSH ESI
@@ -966,7 +977,7 @@ LAB_0058d5ef:
 //   XREF to: 0058aa10 (UNCONDITIONAL_CALL)
 // 0058c24a: ADD ESP,0xc
 // 0058c24d: PUSH EBP
-// 0058c24e: CALL core_skeleton.cpp_CDeformableModel_SkeletonPtrNotSet_FUN_0059a810
+// 0058c24e: CALL core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810
 //   XREF to: 0059a810 (UNCONDITIONAL_CALL)
 // 0058c253: ADD ESP,0x4
 // 0058c256: PUSH EAX

@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_boneguy.cpp_CBoneGuy_load_FUN_0041d270()
 // Globals:
-//   undefined4 s_speed_0061623d
+//   TerminatedCString s_speed_0061623d
 //   TerminatedCString s_modelName_00616243
 //   TerminatedCString s_guardDistance_0061624d
 //   TerminatedCString s_motion_state_0061625b
@@ -59,8 +59,8 @@ void core_boneguy_cpp_CBoneGuy_load_FUN_0041d270(void)
   int in_stack_00000030;
   
   core_enemy_cpp_CEnemy_serialize_FUN_004a9660(in_stack_00000004);
-  core_actor_cpp_serializeFloat_FUN_0040b770
-            ((float *)(in_stack_00000008 + 0xbe24),"@speed" + 1);
+  core_actor_cpp_serializeFloat_FUN_0040b770((float *)(in_stack_00000008 + 0xbe24),"speed")
+  ;
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970
             ((CDeformableModelInstance *)(in_stack_0000000c + 0x158),"modelName");
   if (g_CBoneGuyClassVersion < 4) {
@@ -68,7 +68,7 @@ void core_boneguy_cpp_CBoneGuy_load_FUN_0041d270(void)
               ((float *)(in_stack_00000010 + 0xbe34),"guardDistance");
   }
   core_actor_cpp_serializeMotionState_FUN_0040b9f0
-            ((void *)((int)in_stack_00000014 + 0x158),"motion state");
+            ((CMotionController *)((int)in_stack_00000014 + 0x158),"motion state");
   if (1 < g_CBoneGuyClassVersion) {
     core_actor_cpp_serializeString_FUN_0040b5c0
               ((char **)(in_stack_00000018 + 0xbed0),"deathEvent");
@@ -81,7 +81,7 @@ void core_boneguy_cpp_CBoneGuy_load_FUN_0041d270(void)
     core_actor_cpp_serializeInteger_FUN_0040b7f0
               ((int *)(in_stack_00000028 + 0xbf38),"boxCount");
     core_actor_cpp_serializePartStatus_FUN_0040bae0
-              ((void *)((int)in_stack_00000014 + 0x158),"partStatus");
+              ((CMotionController *)((int)in_stack_00000014 + 0x158),"partStatus");
     iVar1 = 0;
     if (0 < *(int *)(in_stack_00000030 + 0xbf38)) {
       vector_ptr_00 = (CVector3f *)(in_stack_00000030 + 0xbf74);

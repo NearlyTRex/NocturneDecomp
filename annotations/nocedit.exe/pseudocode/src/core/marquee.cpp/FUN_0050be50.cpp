@@ -32,7 +32,7 @@ float core_marquee_cpp_FUN_0050be50(void)
   }
   in_stack_00000004[1].orient_matrix.m[0].z = 0.0;
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-  this_ptr = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+  this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
                        (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffec);
   fStack_8 = 7.41521e-39;
   fVar2 = (float)core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);

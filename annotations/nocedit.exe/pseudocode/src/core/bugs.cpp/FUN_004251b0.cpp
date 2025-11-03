@@ -47,15 +47,15 @@ CDemonActor ** core_bugs_cpp_FUN_004251b0(void)
     iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000008);
-      this_ptr = (*((in_stack_00000008->metadata).vtable)->getBoundingBox)
+      this_ptr = (*in_stack_00000008->vtable->getBoundingBox)
                            (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffc4);
       iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
       if (iVar1 != 0) {
         iVar1 = 0;
-        if (0 < *(int *)(in_stack_00000008[0x8d].metadata.field3_0x1c + 4)) {
-          in_stack_00000014 = &in_stack_00000008[0x8d].metadata.next_actor;
+        if (0 < in_stack_00000008[0x8d].field26_0x148) {
+          in_stack_00000014 = &in_stack_00000008[0x8d].next_actor;
           position = (CVector3i *)(in_stack_00000008[0x8e].actor_name + 8);
-          rotation = (CVector3i *)&in_stack_00000008[0x8d].metadata.vtable;
+          rotation = (CVector3i *)&in_stack_00000008[0x8d].vtable;
           do {
             engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                       (g_CDemonRendererPtr,position,rotation);

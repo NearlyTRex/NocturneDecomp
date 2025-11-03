@@ -42,10 +42,10 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a420(CCharacter *this_ptr)
   bVar6 = 0;
   iVar3 = 0;
   if (0 < *(int *)(this_ptr->cloth_data + 0x35c)) {
-    local_14 = (this_ptr->model).padding_0x0 + 0xe80;
+    local_14 = (this_ptr->model).field3_0x508 + 0x978;
     pcVar2 = this_ptr->cloth_data + 0x360;
     do {
-      if (*(int *)((this_ptr->model).padding_0x0 + *(int *)pcVar2 * 4 + 0x2140) != 0) {
+      if ((this_ptr->model).part_visibility_flags[*(int *)pcVar2] != 0) {
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                   ((CMatrix3x4f *)(pcVar2 + 8),
                    (CMatrix3x4f *)(local_14 + *(int *)(pcVar2 + 4) * 0x30),

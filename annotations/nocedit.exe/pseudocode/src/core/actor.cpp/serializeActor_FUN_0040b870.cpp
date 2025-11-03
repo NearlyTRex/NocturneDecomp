@@ -41,7 +41,7 @@
 //   core_zombie.cpp_CZombie_serialize_FUN_005fbfd0 (005fbfd0) at 005fc0ad [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_s_00613f30
-//   char* g_PropertyNamePrefix = 00000000
+//   char[104] g_PropertyNamePrefix
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   FILE* g_ActorDataFile
 //   int g_ActorReadingMode
@@ -49,7 +49,7 @@
 //   CDemonMission g_CDemonMissionInstance
 // Function calls:
 //   core_mission.cpp_CDemonMission_loadActor_FUN_00523990
-//   core_mission.cpp_CDemonMission_writeActor_FUN_00523af0
+//   core_mission.cpp_CDemonMission_saveActor_FUN_00523af0
 //   crt_stdio.c_fprintf_FUN_005fe6d0
 
 #include "nocturne.h"
@@ -67,8 +67,8 @@ void __cdecl core_actor_cpp_serializeActor_FUN_0040b870(CDemonActor *actor_ptr,c
     *(CDemonActor **)property_name = pCVar1;
     return;
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s",&g_PropertyNamePrefix);
-  core_mission_cpp_CDemonMission_writeActor_FUN_00523af0
+  crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s",g_PropertyNamePrefix);
+  core_mission_cpp_CDemonMission_saveActor_FUN_00523af0
             (g_CDemonMissionPtr,*(CDemonActor **)property_name,g_ActorDataFile,
              g_CurrentActorBeingProcessed,in_stack_0000000c);
   return;
@@ -137,7 +137,7 @@ void __cdecl core_actor_cpp_serializeActor_FUN_0040b870(CDemonActor *actor_ptr,c
 //   XREF to: 0067d550 (READ)
 // 0040b8e1: PUSH EAX
 //   XREF to: 02f33740 (DATA)
-// 0040b8e2: CALL core_mission.cpp_CDemonMission_writeActor_FUN_00523af0
+// 0040b8e2: CALL core_mission.cpp_CDemonMission_saveActor_FUN_00523af0
 //   XREF to: 00523af0 (UNCONDITIONAL_CALL)
 // 0040b8e7: ADD ESP,0x14
 // 0040b8ea: POP EDI

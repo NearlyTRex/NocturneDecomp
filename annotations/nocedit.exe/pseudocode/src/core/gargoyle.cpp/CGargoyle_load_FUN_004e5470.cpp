@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_gargoyle.cpp_CGargoyle_load_FUN_004e5470()
 // Globals:
-//   undefined4 s_speed_0062d9bf
+//   TerminatedCString s_speed_0062d9bf
 //   TerminatedCString s_modelName_0062d9c5
 //   TerminatedCString s_motion_state_0062d9cf
 //   TerminatedCString s_stoneRed_0062d9dc
@@ -31,10 +31,11 @@ void core_gargoyle_cpp_CGargoyle_load_FUN_004e5470(void)
   CEnemy *in_stack_00000004;
   
   core_enemy_cpp_CEnemy_serialize_FUN_004a9660(in_stack_00000004);
-  core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"@@speed" + 2);
+  core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"speed");
   model_ptr = &(in_stack_00000004->base_character).model;
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
-  core_actor_cpp_serializeMotionState_FUN_0040b9f0(model_ptr,"motion state");
+  core_actor_cpp_serializeMotionState_FUN_0040b9f0
+            (&model_ptr->motion_controller,"motion state");
   if (g_CGargoyleClassVersion < 2) {
     return;
   }

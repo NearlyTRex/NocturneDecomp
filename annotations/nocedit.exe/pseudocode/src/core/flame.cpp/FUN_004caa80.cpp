@@ -41,22 +41,18 @@ void core_flame_cpp_FUN_004caa80(void)
   float fStack_24;
   
   this_ptr = g_CDemonRendererPtr;
-  pCVar4 = in_stack_00000004 + 1;
-  (pCVar4->metadata).field3_0x1c[4] = '\0';
-  (pCVar4->metadata).field3_0x1c[5] = '\0';
-  (pCVar4->metadata).field3_0x1c[6] = '\0';
-  (pCVar4->metadata).field3_0x1c[7] = '\0';
-  in_stack_00000004[1].metadata.runtime_flags = 0;
+  in_stack_00000004[1].field26_0x148 = 0;
+  in_stack_00000004[1].previous_transform_state.dirty_flags = 0;
   iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(this_ptr);
   if ((iVar2 == 0) && (in_stack_00000008 != 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-    this_ptr_00 = (*((in_stack_00000004->metadata).vtable)->getBoundingBox)
+    this_ptr_00 = (*in_stack_00000004->vtable->getBoundingBox)
                             (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd0);
     fStack_24 = 7.040803e-39;
     fVar3 = (float)core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-    in_stack_00000004[1].metadata.runtime_vector2.y = fVar3;
+    in_stack_00000004[1].previous_transform_state.orientation.y = fVar3;
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
-    if ((in_stack_00000004[1].metadata.runtime_vector2.y != 0.0) &&
+    if ((in_stack_00000004[1].previous_transform_state.orientation.y != 0.0) &&
        (((1.0 < SQRT(*(float *)(in_stack_00000004[1].actor_name + 8) *
                      *(float *)(in_stack_00000004[1].actor_name + 8) +
                      *(float *)in_stack_00000004[1].actor_name *
@@ -76,18 +72,14 @@ void core_flame_cpp_FUN_004caa80(void)
           fVar1 = (in_stack_00000004->location).position.y - (pCVar4->location).position.y;
           fStack00000010 = (in_stack_00000004->location).position.z - (pCVar4->location).position.z;
           if ((SQRT(fStack00000010 * fStack00000010 + fVar3 * fVar3 + fVar1 * fVar1) <
-               (float)DOUBLE_0062a13e) && (*(int *)(pCVar4[1].metadata.field3_0x1c + 4) == 1)) {
+               (float)DOUBLE_0062a13e) && (pCVar4[1].field26_0x148 == 1)) {
             return;
           }
         }
         iVar2 = iVar2 + 4;
       }
       if (fStack00000010 == 0.0) {
-        in_stack_00000004 = in_stack_00000004 + 1;
-        (in_stack_00000004->metadata).field3_0x1c[4] = '\x01';
-        (in_stack_00000004->metadata).field3_0x1c[5] = '\0';
-        (in_stack_00000004->metadata).field3_0x1c[6] = '\0';
-        (in_stack_00000004->metadata).field3_0x1c[7] = '\0';
+        in_stack_00000004[1].field26_0x148 = 1;
         return;
       }
     }

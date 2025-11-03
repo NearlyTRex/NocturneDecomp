@@ -10,8 +10,8 @@
 //   core_tommygun.cpp_FUN_005ddb30 (005ddb30) at 005dddbc [UNCONDITIONAL_CALL]
 //   core_turret.cpp_FUN_005e3750 (005e3750) at 005e3b4b [UNCONDITIONAL_CALL]
 // Globals:
-//   CSpark* g_CFireEffectSparksEnd
-//   CMuzzleFlash[20] g_CFireEffectMuzzleFlashes
+//   int g_SparkActiveCount
+//   CMuzzleFlash[20] g_MuzzleFlashPool
 // Function calls:
 //   core_fire.cpp_FUN_004c1940
 
@@ -20,9 +20,9 @@
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c7a60(CFireEffect *this_ptr)
 
 {
-  g_CFireEffectSparksEnd = (CSpark *)((int)&(g_CFireEffectSparksEnd->base).position.x + 1);
-  if (0x13 < (int)g_CFireEffectSparksEnd) {
-    g_CFireEffectSparksEnd = (CSpark *)0x0;
+  g_SparkActiveCount = g_SparkActiveCount + 1;
+  if (0x13 < g_SparkActiveCount) {
+    g_SparkActiveCount = 0;
   }
   core_fire_cpp_FUN_004c1940();
   return;

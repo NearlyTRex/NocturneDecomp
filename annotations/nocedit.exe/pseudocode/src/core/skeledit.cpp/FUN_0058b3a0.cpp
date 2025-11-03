@@ -27,7 +27,7 @@
 //   int g_CurrentLineNumber
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_motion.cpp_FUN_0052d170
+//   core_motion.cpp_CMotionList_save_FUN_0052d170
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 //   crt_stdio.c_fprintf_FUN_005fe6d0
 
@@ -43,103 +43,106 @@ void core_skeledit_cpp_FUN_0058b3a0(void)
   double dVar5;
   double dVar6;
   int iVar7;
-  int iVar8;
+  char *pcVar8;
   float *pfVar9;
-  int iVar10;
+  int *piVar10;
+  int iVar11;
   int iStack00000008;
-  int iStack0000000c;
+  CMotionList *pCStack0000000c;
   FILE *in_stack_00000010;
   int iStack00000014;
+  CMotionList *pCVar12;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x4c);
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000010,"// skeleton version\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000010,"%d\n",g_CSkeletonVersion);
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000010,"// bonecount, frameCount\n");
   crt_stdio_c_fprintf_FUN_005fe6d0
-            (in_stack_00000010,"%d,%d\n",*(undefined4 *)(iStack0000000c + 0x28558),
-             *(undefined4 *)(iStack0000000c + 0x2936c));
-  iVar10 = 0;
+            (in_stack_00000010,"%d,%d\n",
+             *(undefined4 *)(pCStack0000000c[1].state_names[2] + 0x10),
+             pCStack0000000c[1].motions[0].signals[10].value);
+  iVar11 = 0;
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000010,"// boneList\n");
-  if (0 < *(int *)(iStack0000000c + 0x28558)) {
-    iVar8 = iStack0000000c + 0x2855c;
-    iVar7 = iStack0000000c;
+  if (0 < *(int *)(pCStack0000000c[1].state_names[2] + 0x10)) {
+    pcVar8 = pCStack0000000c[1].state_names[2] + 0x14;
+    pCVar12 = pCStack0000000c;
     do {
       crt_stdio_c_fprintf_FUN_005fe6d0
-                (in_stack_00000010,"\"%s\", %d\n","\"%s\", %d\n",iVar8,
-                 *(undefined4 *)(iVar7 + 0x2857c));
-      iVar10 = iVar10 + 1;
-      iVar8 = iVar8 + 0x24;
-      iVar7 = iVar7 + 0x24;
-    } while (iVar10 < *(int *)(iStack0000000c + 0x28558));
+                (in_stack_00000010,"\"%s\", %d\n","\"%s\", %d\n",pcVar8,
+                 *(undefined4 *)(pCVar12[1].state_names[3] + 0x16));
+      iVar11 = iVar11 + 1;
+      pcVar8 = pcVar8 + 0x24;
+      pCVar12 = (CMotionList *)(pCVar12->state_names[1] + 2);
+    } while (iVar11 < *(int *)(pCStack0000000c[1].state_names[2] + 0x10));
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000010,"// angle list: w,x,y,z\n");
-  pfVar9 = *(float **)(iStack0000000c + 0x29370);
+  pfVar9 = (float *)pCStack0000000c[1].motions[0].signals[0xb].frame_number;
   iStack00000008 = 0;
-  if (0 < *(int *)(iStack0000000c + 0x2936c)) {
+  if (0 < pCStack0000000c[1].motions[0].signals[10].value) {
     do {
-      iVar10 = 0;
-      if (0 < *(int *)(iStack0000000c + 0x28558)) {
+      iVar11 = 0;
+      if (0 < *(int *)(pCStack0000000c[1].state_names[2] + 0x10)) {
         do {
           pfVar1 = pfVar9 + 3;
           pfVar2 = pfVar9 + 2;
           pfVar3 = pfVar9 + 1;
           fVar4 = *pfVar9;
           pfVar9 = pfVar9 + 4;
-          iVar10 = iVar10 + 1;
+          iVar11 = iVar11 + 1;
           crt_stdio_c_fprintf_FUN_005fe6d0
                     (in_stack_00000010,"%g,%g,%g,%g\n",(double)fVar4,SUB84((double)*pfVar3,0),
                      (int)((ulonglong)(double)*pfVar3 >> 0x20),SUB84((double)*pfVar2,0),
                      (int)((ulonglong)(double)*pfVar2 >> 0x20),SUB84((double)*pfVar1,0),
                      (int)((ulonglong)(double)*pfVar1 >> 0x20));
-        } while (iVar10 < *(int *)(iStack0000000c + 0x28558));
+        } while (iVar11 < *(int *)(pCStack0000000c[1].state_names[2] + 0x10));
       }
       iStack00000008 = iStack00000008 + 1;
-    } while (iStack00000008 < *(int *)(iStack0000000c + 0x2936c));
+    } while (iStack00000008 < pCStack0000000c[1].motions[0].signals[10].value);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000010,"// root offset list: x,y,z\n");
   iStack00000008 = 0;
-  if (0 < *(int *)(iStack0000000c + 0x2936c)) {
-    iVar10 = 0;
+  if (0 < pCStack0000000c[1].motions[0].signals[10].value) {
+    iVar11 = 0;
     do {
-      iVar8 = *(int *)(iStack0000000c + 0x29374);
-      dVar5 = (double)*(float *)(iVar10 + 4 + iVar8);
+      iVar7 = pCStack0000000c[1].motions[0].signals[0xb].value;
+      dVar5 = (double)*(float *)(iVar11 + 4 + iVar7);
       crt_stdio_c_fprintf_FUN_005fe6d0
                 (in_stack_00000010,"%g,%g,%g\n","%g,%g,%g\n",
-                 SUB84((double)*(float *)(iVar10 + iVar8),0),
-                 (int)((ulonglong)(double)*(float *)(iVar10 + iVar8) >> 0x20),SUB84(dVar5,0),
-                 (int)((ulonglong)dVar5 >> 0x20),SUB84((double)*(float *)(iVar10 + 8 + iVar8),0));
-      iVar10 = iVar10 + 0xc;
+                 SUB84((double)*(float *)(iVar11 + iVar7),0),
+                 (int)((ulonglong)(double)*(float *)(iVar11 + iVar7) >> 0x20),SUB84(dVar5,0),
+                 (int)((ulonglong)dVar5 >> 0x20),SUB84((double)*(float *)(iVar11 + 8 + iVar7),0));
+      iVar11 = iVar11 + 0xc;
       iStack00000008 = iStack00000008 + 1;
-    } while (iStack00000008 < *(int *)(iStack0000000c + 0x2936c));
+    } while (iStack00000008 < pCStack0000000c[1].motions[0].signals[10].value);
   }
-  iVar10 = crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000010,"// canceled movement list: x,y,z\n");
+  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000010,"// canceled movement list: x,y,z\n");
   iStack00000014 = 0;
-  if (0 < *(int *)(iStack0000000c + 0x2936c)) {
-    iVar8 = 0;
+  if (0 < pCStack0000000c[1].motions[0].signals[10].value) {
+    iVar11 = 0;
     do {
-      dVar5 = (double)*(float *)(iVar8 + 4 + *(int *)(iStack0000000c + 0x29378));
-      dVar6 = (double)*(float *)(iVar8 + *(int *)(iStack0000000c + 0x29378));
+      iVar7 = pCStack0000000c[1].motions[0].signals[0xc].frame_number;
+      dVar5 = (double)*(float *)(iVar11 + 4 + iVar7);
+      dVar6 = (double)*(float *)(iVar11 + iVar7);
       crt_stdio_c_fprintf_FUN_005fe6d0
                 (in_stack_00000010,"%g,%g,%g\n","%g,%g,%g\n",SUB84(dVar6,0),
                  (int)((ulonglong)dVar6 >> 0x20),SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));
-      iVar8 = iVar8 + 0xc;
-      iVar10 = iStack00000014 + 1;
-      iStack00000014 = iVar10;
-    } while (iVar10 < *(int *)(iStack0000000c + 0x2936c));
+      iVar11 = iVar11 + 0xc;
+      iStack00000014 = iStack00000014 + 1;
+    } while (iStack00000014 < pCStack0000000c[1].motions[0].signals[10].value);
   }
-  core_motion_cpp_FUN_0052d170(iVar10);
-  iVar10 = 0;
+  core_motion_cpp_CMotionList_save_FUN_0052d170(pCStack0000000c,in_stack_00000010);
+  iVar11 = 0;
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000010,"// reference bone org list: x,y,z\n");
-  if (0 < *(int *)(iStack0000000c + 0x28558)) {
-    pfVar9 = (float *)(iStack0000000c + 0x2937c);
+  if (0 < *(int *)(pCStack0000000c[1].state_names[2] + 0x10)) {
+    piVar10 = &pCStack0000000c[1].motions[0].signals[0xc].value;
     do {
-      fVar4 = *pfVar9;
-      pfVar9 = pfVar9 + 3;
-      iVar10 = iVar10 + 1;
+      fVar4 = (float)*piVar10;
+      piVar10 = piVar10 + 3;
+      iVar11 = iVar11 + 1;
       crt_stdio_c_fprintf_FUN_005fe6d0
                 (in_stack_00000010,"%g,%g,%g\n","%g,%g,%g\n",SUB84((double)fVar4,0),
                  (int)((ulonglong)(double)fVar4 >> 0x20));
-    } while (iVar10 < *(int *)(iStack0000000c + 0x28558));
+    } while (iVar11 < *(int *)(pCStack0000000c[1].state_names[2] + 0x10));
   }
   if ((in_stack_00000010->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
@@ -392,7 +395,7 @@ void core_skeledit_cpp_FUN_0058b3a0(void)
 // 0058b5c0: PUSH EBP
 //   Label: LAB_0058b5c0
 // 0058b5c1: PUSH EDI
-// 0058b5c2: CALL core_motion.cpp_FUN_0052d170
+// 0058b5c2: CALL core_motion.cpp_CMotionList_save_FUN_0052d170
 //   XREF to: 0052d170 (UNCONDITIONAL_CALL)
 // 0058b5c7: ADD ESP,0x8
 // 0058b5ca: PUSH 0x64a720

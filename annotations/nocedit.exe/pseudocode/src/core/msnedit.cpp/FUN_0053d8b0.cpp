@@ -25,7 +25,7 @@
 //   core_mission.cpp_CDemonMission_FUN_00523f20
 //   core_msnedit.cpp_FUN_00538ea0
 //   core_msnedit.cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   crt_string.c_stricmp_FUN_005fe7f0
 //   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
@@ -110,17 +110,17 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
     crt_stdio_c_sprintf_FUN_005fdbd0(local_88,"C%s",pcVar5);
     pCVar7 = core_actor_cpp_createActorByName_FUN_0040c430(local_88);
     local_20 = pCVar7;
-    (*((pCVar7->metadata).vtable)->setup)(pCVar7);
+    (*pCVar7->vtable->setup)(pCVar7);
     iVar10 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                        (g_CEditorToolsPtr,"Attempt to transfer properties?");
     if (iVar10 != 0) {
       core_actor_cpp_FUN_0040e130();
       core_actor_cpp_FUN_0040e130();
-      (*((pCVar7->metadata).vtable)->getPropertyList)(pCVar7,&CStack_2b24);
+      (*pCVar7->vtable->getPropertyList)(pCVar7,&CStack_2b24);
       in_stack_ffffafdc = &stack0xffffafe0;
       (**(code **)(*(int *)(*(int *)(in_stack_00000010 + 0x28) + 0x154) + 0xd4))();
       iStack_18 = 0;
-      if (0 < CStack_2b24.propertyCount) {
+      if (0 < CStack_2b24.property_count) {
         pCStack_14 = CStack_2b24.properties;
         do {
           pCVar4 = pCStack_14;
@@ -135,14 +135,14 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
                 switch(*piVar9) {
                 case 0:
                 case 0xf:
-                  *(undefined4 *)pCVar4->data1 = *(undefined4 *)piVar9[0x1a];
+                  *(undefined4 *)pCVar4->data_ptr = *(undefined4 *)piVar9[0x1a];
                   break;
                 case 1:
-                  *(undefined4 *)pCVar4->data1 = *(undefined4 *)piVar9[0x1a];
+                  *(undefined4 *)pCVar4->data_ptr = *(undefined4 *)piVar9[0x1a];
                   break;
                 case 2:
                   puVar2 = (undefined4 *)piVar9[0x1a];
-                  puVar3 = (undefined4 *)pCVar4->data1;
+                  puVar3 = (undefined4 *)pCVar4->data_ptr;
                   if (puVar3 != puVar2) {
                     *puVar3 = *puVar2;
                     puVar3[1] = puVar2[1];
@@ -155,7 +155,7 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
                 case 0xb:
                 case 0xc:
                   pcVar11 = (char *)piVar9[0x1a];
-                  pcVar12 = (char *)pCVar4->data1;
+                  pcVar12 = (char *)pCVar4->data_ptr;
                   do {
                     cVar1 = *pcVar11;
                     *pcVar12 = cVar1;
@@ -169,15 +169,16 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
                 case 4:
                 case 5:
                 case 9:
-                  *(undefined4 *)pCVar4->data1 = *(undefined4 *)piVar9[0x1a];
+                  *(undefined4 *)pCVar4->data_ptr = *(undefined4 *)piVar9[0x1a];
                   break;
                 case 6:
                   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-                            ((CKeyFramedModelInstance *)pCVar4->data1,(char *)(piVar9[0x1a] + 0x78))
-                  ;
+                            ((CKeyFramedModelInstance *)pCVar4->data_ptr,
+                             (char *)(piVar9[0x1a] + 0x78));
                   break;
                 case 7:
-                  core_skeleton_cpp_FUN_005a0840();
+                  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+                            ((CDeformableModelInstance *)pCVar4->data_ptr);
                 }
               }
               local_20 = (CDemonActor *)(local_20->actor_name + 1);
@@ -186,7 +187,7 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
           }
           pCStack_14 = pCStack_14 + 1;
           iStack_18 = iStack_18 + 1;
-        } while (iStack_18 < CStack_2b24.propertyCount);
+        } while (iStack_18 < CStack_2b24.property_count);
       }
     }
     pcVar5 = *(char **)(in_stack_00000008 + 0x28);
@@ -211,7 +212,7 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
       (pCStack_1c->orient).bank = *(float *)(iVar10 + 0x34);
       (pCStack_1c->orient).heading = *(float *)(iVar10 + 0x38);
     }
-    (*((pCStack_1c->metadata).vtable)->setup)(pCStack_1c);
+    (*pCStack_1c->vtable->setup)(pCStack_1c);
     core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
     core_msnedit_cpp_FUN_00538ea0();
     core_mission_cpp_CDemonMission_FUN_00523f20(in_stack_0000000c);
@@ -651,7 +652,7 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
 // 0053dcd7: PUSH EAX
 // 0053dcd8: MOV EAX,dword ptr [EBP + 0x68]
 // 0053dcdb: PUSH EAX
-// 0053dcdc: CALL core_skeleton.cpp_FUN_005a0840
+// 0053dcdc: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 0053dce1: ADD ESP,0x8
 // 0053dce4: JMP 0x0053dac4

@@ -11,7 +11,7 @@
 // Function calls:
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -24,41 +24,37 @@ CGhoul * __cdecl core_ghoul_cpp_FUN_004e6030(CGhoul *this_ptr)
   undefined4 uVar2;
   undefined4 uVar3;
   CGhoul *pCVar4;
-  float max_value;
-  int iVar5;
+  float fVar5;
+  int iVar6;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
-  float10 fVar6;
-  double dVar7;
+  float10 fVar7;
   float min_value;
-  undefined4 uStack00000008;
-  float fStack0000000c;
   
   pCVar4 = (CGhoul *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
-  (pCVar4->base_enemy).base_character.base_actor.metadata.vtable = &PTR_core_ghoul_cpp_FUN_0065ed44;
-  core_skeleton_cpp_FUN_005a0840();
-  max_value = core_actor_cpp_getRandomFloat_FUN_0040cc10(20.0,35.0);
-  fVar6 = (float10)max_value * (float10)_DAT_0062db0a;
+  (pCVar4->base_enemy).base_character.base_actor.vtable = &PTR_core_ghoul_cpp_FUN_0065ed44;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            (&(pCVar4->base_enemy).base_character.model);
+  fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(20.0,35.0);
+  fVar7 = (float10)fVar5 * (float10)DAT_0062db0a;
   min_value = 10.0;
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,max_value));
-  *(int *)(pCVar4->field1_0xbeb4 + 0xc) = (int)ROUND(fVar6);
-  fStack0000000c = core_actor_cpp_getRandomFloat_FUN_0040cc10(min_value,max_value);
+  crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,fVar5));
+  *(int *)(pCVar4->field1_0xbeb4 + 0xc) = (int)ROUND(fVar7);
+  fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(min_value,fVar5);
   pCVar4->arise_timer = 0xa0000;
   pCVar4->field3_0xbecc[0] = -1;
   pCVar4->field3_0xbecc[1] = -1;
   pCVar4->field3_0xbecc[2] = -1;
   pCVar4->field3_0xbecc[3] = -1;
-  fVar6 = (float10)fStack0000000c * (float10)_DAT_0062db0a;
+  fVar7 = (float10)fVar5 * (float10)DAT_0062db0a;
   pCVar4->field3_0xbecc[4] = '\0';
   pCVar4->field3_0xbecc[5] = '\0';
   pCVar4->field3_0xbecc[6] = '\0';
   pCVar4->field3_0xbecc[7] = '\0';
   pCVar4->spasm_count = 2;
-  uStack00000008 = 3;
-  dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX_00,fStack0000000c));
-  uStack00000008 = 1;
-  *(int *)(pCVar4->field1_0xbeb4 + 0x10) = (int)ROUND(fVar6);
-  iVar5 = core_actor_cpp_FUN_0040cc70(SUB84(dVar7,0),(int)((ulonglong)dVar7 >> 0x20));
+  crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX_00,fVar5));
+  *(int *)(pCVar4->field1_0xbeb4 + 0x10) = (int)ROUND(fVar7);
+  iVar6 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,(int)fVar5);
   pCVar1 = &pCVar4->base_enemy;
   (pCVar1->base_character).cloth_data[0x344] = '\0';
   (pCVar1->base_character).cloth_data[0x345] = '\0';
@@ -91,7 +87,7 @@ CGhoul * __cdecl core_ghoul_cpp_FUN_004e6030(CGhoul *this_ptr)
   pCVar4->field6_0xbee0[0x49] = '\0';
   pCVar4->field6_0xbee0[0x4a] = '\0';
   pCVar4->field6_0xbee0[0x4b] = '\0';
-  pCVar4->lives_left = iVar5;
+  pCVar4->lives_left = iVar6;
   *(undefined4 *)((pCVar4->base_enemy).base_character.cloth_data + 0x34c) = uVar2;
   *(undefined4 *)((pCVar4->base_enemy).base_character.cloth_data + 0x350) = uVar3;
   return pCVar4;
@@ -114,7 +110,7 @@ CGhoul * __cdecl core_ghoul_cpp_FUN_004e6030(CGhoul *this_ptr)
 // 004e604d: PUSH EAX
 // 004e604e: MOV dword ptr [EAX + -0x4],0x65ed44
 //   XREF to: 0065ed44 (DATA)
-// 004e6055: CALL core_skeleton.cpp_FUN_005a0840
+// 004e6055: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004e605a: ADD ESP,0x8
 // 004e605d: PUSH 0x420c0000

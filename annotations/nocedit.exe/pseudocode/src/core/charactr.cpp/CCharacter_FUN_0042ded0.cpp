@@ -8,9 +8,9 @@
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bc849 [UNCONDITIONAL_CALL]
 //   core_tentacle.cpp_FUN_005db9d0 (005db9d0) at 005dbb13 [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
-//   core_actor.cpp_CDemonActor_FUN_00408e80
-//   core_actor.cpp_CDemonActor_FUN_00408ea0
+//   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 
 #include "nocturne.h"
 
@@ -18,27 +18,37 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ded0(CCharacter *this_ptr)
 
 {
   COrientation *pCVar1;
-  CVector3f *pCVar2;
+  char *pcVar2;
   CVector3f *pCVar3;
+  BADSPACEBASE *in_ESP;
   float *in_stack_00000008;
+  undefined1 local_20 [12];
+  CVector3f local_14;
   
-  core_actor_cpp_CDemonActor_FUN_00408e80(&this_ptr->base_actor);
-  core_actor_cpp_CDemonActor_FUN_00408e80(&this_ptr->base_actor);
+  core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+            (&this_ptr->base_actor,(CVector3f *)local_20,
+             (CVector3f *)(this_ptr->model).field10_0x2254);
+  core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+            (&this_ptr->base_actor,(CVector3f *)&local_14.y,
+             (CVector3f *)(this_ptr->field2_0x240c + 0x10));
   pCVar1 = &(this_ptr->base_actor).orient;
   if (pCVar1 != (COrientation *)in_stack_00000008) {
     pCVar1->pitch = *in_stack_00000008;
     (this_ptr->base_actor).orient.bank = in_stack_00000008[1];
     (this_ptr->base_actor).orient.heading = in_stack_00000008[2];
   }
-  core_actor_cpp_CDemonActor_FUN_00408c10(&this_ptr->base_actor);
-  pCVar2 = core_actor_cpp_CDemonActor_FUN_00408ea0(&this_ptr->base_actor);
-  pCVar3 = (CVector3f *)((this_ptr->model).padding_0x0 + 0x2254);
-  if (pCVar3 != pCVar2) {
-    pCVar3->x = pCVar2->x;
-    *(float *)((this_ptr->model).padding_0x0 + 0x2258) = pCVar2->y;
-    *(float *)((this_ptr->model).padding_0x0 + 0x225c) = pCVar2->z;
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base_actor);
+  pCVar3 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+                     (&this_ptr->base_actor,(CVector3f *)&stack0xffffffd4,&local_14);
+  pcVar2 = (this_ptr->model).field10_0x2254;
+  if ((CVector3f *)pcVar2 != pCVar3) {
+    *(float *)pcVar2 = pCVar3->x;
+    *(float *)((this_ptr->model).field10_0x2254 + 4) = pCVar3->y;
+    *(float *)((this_ptr->model).field10_0x2254 + 8) = pCVar3->z;
   }
-  pCVar3 = core_actor_cpp_CDemonActor_FUN_00408ea0(&this_ptr->base_actor);
+  pCVar3 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+                     (&this_ptr->base_actor,(CVector3f *)(local_20 + 4),
+                      (CVector3f *)&stack0xfffffffc);
   if ((CVector3f *)(this_ptr->field2_0x240c + 0x10) == pCVar3) {
     return;
   }
@@ -64,7 +74,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ded0(CCharacter *this_ptr)
 //   XREF to: Stack[-0x20] (DATA)
 // 0042dee8: PUSH EAX
 // 0042dee9: PUSH EBX
-// 0042deea: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 0042deea: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 0042deef: ADD ESP,0xc
 // 0042def2: LEA EAX,[EBX + 0x241c]
@@ -73,7 +83,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ded0(CCharacter *this_ptr)
 //   XREF to: Stack[-0x14] (DATA)
 // 0042defd: PUSH EAX
 // 0042defe: PUSH EBX
-// 0042deff: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 0042deff: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 0042df04: LEA EAX,[EBX + 0x30]
 // 0042df07: ADD ESP,0xc
@@ -88,7 +98,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ded0(CCharacter *this_ptr)
 // 0042df1b: MOV dword ptr [EAX + 0x8],EDX
 // 0042df1e: PUSH EBX
 //   Label: LAB_0042df1e
-// 0042df1f: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 0042df1f: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 0042df24: ADD ESP,0x4
 // 0042df27: LEA EAX,[ESP + 0x18]
@@ -98,7 +108,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ded0(CCharacter *this_ptr)
 //   XREF to: Stack[-0x38] (DATA)
 // 0042df30: PUSH EAX
 // 0042df31: PUSH EBX
-// 0042df32: CALL core_actor.cpp_CDemonActor_FUN_00408ea0
+// 0042df32: CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 //   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
 // 0042df37: LEA EDX,[EBX + 0x23ac]
 // 0042df3d: ADD ESP,0xc
@@ -119,7 +129,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ded0(CCharacter *this_ptr)
 //   XREF to: Stack[-0x2c] (DATA)
 // 0042df5d: PUSH EAX
 // 0042df5e: PUSH EBX
-// 0042df5f: CALL core_actor.cpp_CDemonActor_FUN_00408ea0
+// 0042df5f: CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 //   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
 // 0042df64: ADD EBX,0x241c
 // 0042df6a: ADD ESP,0xc

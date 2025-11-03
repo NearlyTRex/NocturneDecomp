@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_morph.cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel * this_ptr, char * filename)
 // Cross-references:
-//   core_morph.cpp_CMorphModel_setFaceList_2_FUN_0052aca0 (0052aca0) at 0052ad69 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_CMorphModel_FUN_0052aca0 (0052aca0) at 0052ad69 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_CMorphModel_setFaceList_FUN_0052aac0 (0052aac0) at 0052ab77 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_morph_cpp_0063a3a7

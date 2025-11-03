@@ -6,14 +6,13 @@
 // Cross-references:
 //   shape_meshlod.cpp_FUN_00519830 (00519830) at 00519860 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00637a55
+//   double DOUBLE_00637a55 = 0.333333333333333
 //   WatcomTypeInfo g_CVectorTypeInfo
 // Function calls:
 //   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 shape_meshlod.cpp_FUN_00519870(undefined4 param_1, undefined4 param_2,
    undefined4 param_3, undefined4 param_4) */
 
@@ -86,7 +85,7 @@ undefined4 shape_meshlod_cpp_FUN_00519870(void)
            in_stack_0000000c[1] * *(float *)(in_stack_00000004 + 0x48) +
            in_stack_00000008[2] * *(float *)(in_stack_00000004 + 0x4c) +
            *in_stack_00000008 * *pfVar9 +
-           in_stack_00000008[1] * *(float *)(in_stack_00000004 + 0x48)) * (float)_DAT_00637a55;
+           in_stack_00000008[1] * *(float *)(in_stack_00000004 + 0x48)) * (float)DOUBLE_00637a55;
     crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(local_84,3,&g_CVectorTypeInfo);
     if (local_80 != in_stack_00000008) {
       local_80[0] = *in_stack_00000008;

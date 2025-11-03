@@ -9,7 +9,7 @@
 //   TerminatedCString s_d_f_f_f_00613ed3
 //   TerminatedCString s_s_d_g_g_g_00613edf
 //   string s_4D_location_0066e108
-//   char* g_PropertyNamePrefix = 00000000
+//   char[104] g_PropertyNamePrefix
 //   FILE* g_ActorDataFile
 //   int g_ActorReadingMode
 // Function calls:
@@ -36,7 +36,7 @@ core_actor_cpp_serializeLocation_FUN_0040b480(CLocation *location_ptr,char *prop
   }
   else {
     crt_stdio_c_fprintf_FUN_005fe6d0
-              (g_ActorDataFile,"%s%d,%g,%g,%g",&g_PropertyNamePrefix,location_ptr->area_id,
+              (g_ActorDataFile,"%s%d,%g,%g,%g",g_PropertyNamePrefix,location_ptr->area_id,
                (double)(location_ptr->position).x,(double)(location_ptr->position).y,
                (double)(location_ptr->position).z);
   }

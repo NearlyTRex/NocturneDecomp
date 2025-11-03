@@ -9,14 +9,17 @@
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CFireEffect g_CFireEffectInstance
 // Function calls:
-//   core_fire.cpp_CFireEffect_FUN_004c7b20
+//   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 
 #include "nocturne.h"
 
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c7620(CFireEffect *this_ptr)
 
 {
-  core_fire_cpp_CFireEffect_FUN_004c7b20(g_CFireEffectPtr);
+  CVector3f *in_stack_00000008;
+  
+  core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
+            (g_CFireEffectPtr,in_stack_00000008,0.6,(CVector3f *)0x0,0xffff);
   return;
 }
 
@@ -34,7 +37,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7620(CFireEffect *this_ptr)
 //   XREF to: 0067a3d0 (READ)
 // 004c7637: PUSH ECX
 //   XREF to: 02d12db0 (DATA)
-// 004c7638: CALL core_fire.cpp_CFireEffect_FUN_004c7b20
+// 004c7638: CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 //   XREF to: 004c7b20 (UNCONDITIONAL_CALL)
 // 004c763d: ADD ESP,0x14
 // 004c7640: RET

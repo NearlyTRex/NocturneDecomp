@@ -24,8 +24,7 @@ void core_boxactor_cpp_CLightActor_FUN_00423400(void)
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (in_stack_00000004,g_CLightActorClassInfo.name_hash);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (in_stack_00000010,"%g mm",
-             (double)*(float *)(pCVar1[4].metadata.field3_0x1c + 4));
+            (in_stack_00000010,"%g mm",(double)(float)pCVar1[4].field26_0x148);
   return;
 }
 

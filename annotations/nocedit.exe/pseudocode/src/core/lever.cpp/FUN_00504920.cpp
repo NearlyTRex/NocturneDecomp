@@ -9,7 +9,7 @@
 //   double DOUBLE_006310b0 = 0.900000000000000
 //   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   undefined4 g_CLeverClassInfo.name_hash
 //   CDemonSet g_CDemonSetInstance
 //   undefined4 g_CDemonSetInstance.actor_list_ptr
@@ -17,7 +17,7 @@
 //   undefined4 DAT_032613d4
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_event.cpp_FUN_004aabe0
+//   core_event.cpp_CEventList_FUN_004aabe0
 //   core_lever.cpp_FUN_00504b20
 
 #include "nocturne.h"
@@ -55,7 +55,7 @@ void core_lever_cpp_FUN_00504920(void)
       if ((*(int *)(in_stack_00000004 + 0x40c) != 0) &&
          ((float)DOUBLE_006310b0 < *(float *)(in_stack_00000004 + 0x2dc))) {
 LAB_005049ad:
-        core_event_cpp_FUN_004aabe0();
+        core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
       }
     }
   }
@@ -83,11 +83,11 @@ LAB_00504aa4:
   if (*(int *)(in_stack_00000004 + 0x40c) == 0) {
     if ((*(float *)(in_stack_00000004 + 0x2dc) < (float)DOUBLE_006310a8) &&
        (*(char *)(in_stack_00000004 + 0x344) != '\0')) {
-      core_event_cpp_FUN_004aabe0();
+      core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
     }
     if (((float)DOUBLE_006310b0 < *(float *)(in_stack_00000004 + 0x2dc)) &&
        (*(char *)(in_stack_00000004 + 0x2e0) != '\0')) {
-      core_event_cpp_FUN_004aabe0();
+      core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
       return;
     }
   }
@@ -144,7 +144,7 @@ LAB_00504aa4:
 //   XREF to: 006793d0 (READ)
 // 005049ac: PUSH EBP
 //   XREF to: 02d05310 (DATA)
-// 005049ad: CALL core_event.cpp_FUN_004aabe0
+// 005049ad: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   Label: LAB_005049ad
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 005049b2: ADD ESP,0x8
@@ -258,7 +258,7 @@ LAB_00504aa4:
 //   XREF to: 006793d0 (READ)
 // 00504ad4: PUSH EDI
 //   XREF to: 02d05310 (DATA)
-// 00504ad5: CALL core_event.cpp_FUN_004aabe0
+// 00504ad5: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 00504ada: ADD ESP,0x8
 // 00504add: FLD float ptr [EBX + 0x2dc]
@@ -286,7 +286,7 @@ LAB_00504aa4:
 //   XREF to: 006793d0 (READ)
 // 00504b0c: PUSH EBP
 //   XREF to: 02d05310 (DATA)
-// 00504b0d: CALL core_event.cpp_FUN_004aabe0
+// 00504b0d: CALL core_event.cpp_CEventList_FUN_004aabe0
 //   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
 // 00504b12: ADD ESP,0x8
 // 00504b15: ADD ESP,0x8

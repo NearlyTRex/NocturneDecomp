@@ -8,8 +8,8 @@
 //   TerminatedCString s_Bipn09_0062237e
 // Function calls:
 //   core_enemy.cpp_CEnemy_FUN_004a9650
-//   core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -19,21 +19,24 @@
 void core_drone_cpp_FUN_0048ebc0(void)
 
 {
+  CDeformableModelInstance *this_ptr;
   CCharacter *pCVar1;
-  undefined4 uVar2;
+  CSkeleton *this_ptr_00;
+  int iVar2;
   CEnemy *in_stack_00000004;
   
-  core_skeleton_cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450();
-  core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
+  this_ptr = &(in_stack_00000004->base_character).model;
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr);
   pCVar1 = &in_stack_00000004[1].base_character;
   (pCVar1->base_actor).actor_name[8] = '\0';
   (pCVar1->base_actor).actor_name[9] = '\0';
   (pCVar1->base_actor).actor_name[10] = '\0';
   (pCVar1->base_actor).actor_name[0xb] = '\0';
-  uVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  *(undefined4 *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc) = uVar2;
-  uVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0();
-  *(undefined4 *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x10) = uVar2;
+  iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bipn04");
+  *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc) = iVar2;
+  iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bipn09");
+  *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x10) = iVar2;
   core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
   pCVar1 = &in_stack_00000004[1].base_character;
   (pCVar1->base_actor).actor_name[0x14] = '\0';
@@ -62,11 +65,11 @@ void core_drone_cpp_FUN_0048ebc0(void)
 //   XREF to: Stack[0x4] (READ)
 // 0048ebc6: LEA ESI,[EBX + 0x158]
 // 0048ebcc: PUSH ESI
-// 0048ebcd: CALL core_skeleton.cpp_CDeformableModelInstance_CallToLoadSkeletonDeformable_FUN_005a0450
+// 0048ebcd: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0048ebd2: ADD ESP,0x4
 // 0048ebd5: PUSH ESI
-// 0048ebd6: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 0048ebd6: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0048ebdb: ADD ESP,0x4
 // 0048ebde: PUSH 0x1

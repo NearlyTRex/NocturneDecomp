@@ -5,9 +5,9 @@
 // Signature: undefined core_ghoul.cpp_FUN_004e8bc0()
 // Globals:
 //   void* switchdataD_004e8ba4 = 004e8c2d
-//   undefined4 DAT_0062ded2
-//   undefined4 DAT_0062deda
-//   undefined4 DAT_0062dee2
+//   double DOUBLE_0062ded2 = 0.5
+//   double DOUBLE_0062deda = 0.700000000000000
+//   double DOUBLE_0062dee2 = 0.300000000000000
 //   undefined4 DAT_02d832fc
 //   undefined4 DAT_02d83310
 //   undefined4 DAT_02d83314
@@ -18,7 +18,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_ghoul.cpp_FUN_004e8bc0(undefined4 param_1, undefined4 param_2)
     */
 
@@ -64,8 +63,8 @@ joined_r0x004e8d11:
           local_3c = pfVar2[1];
           fStack_38 = pfVar2[2];
         }
-        local_3c = local_24 * (float)_DAT_0062dee2 + local_3c * (float)_DAT_0062deda;
-        local_40 = local_28 * (float)_DAT_0062ded2 + local_40 * (float)_DAT_0062ded2;
+        local_3c = local_24 * (float)DOUBLE_0062dee2 + local_3c * (float)DOUBLE_0062deda;
+        local_40 = local_28 * (float)DOUBLE_0062ded2 + local_40 * (float)DOUBLE_0062ded2;
         pfVar2 = (float *)(in_stack_00000008 + iVar5 * 3);
         if (pfVar2 != &local_40) {
           *pfVar2 = local_40;

@@ -17,12 +17,15 @@
 undefined4 core_hero_cpp_FUN_004f2890(void)
 
 {
+  CMotionList *this_ptr;
   int iVar1;
+  int in_stack_00000004;
   int in_stack_0000000c;
   
   if (in_stack_0000000c == 0) {
-    core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
-    iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0();
+    this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                         ((CMotionController *)(in_stack_00000004 + 0x158));
+    iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr);
     if (iVar1 < 0) {
       return 0;
     }

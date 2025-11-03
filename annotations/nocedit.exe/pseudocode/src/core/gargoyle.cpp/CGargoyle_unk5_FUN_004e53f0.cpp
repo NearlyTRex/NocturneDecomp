@@ -9,7 +9,7 @@
 //   CDemonMission g_CDemonMissionInstance
 //   undefined4 DAT_02f33744
 //   CDemonSet g_CDemonSetInstance
-//   undefined4 g_CDemonSetInstance.field22_0x15ac80[0]
+//   undefined4 g_CDemonSetInstance.lighting_quality_mode
 //   undefined4 DAT_0326f100
 //   undefined4 DAT_0326f104
 //   undefined4 DAT_0326f108
@@ -23,25 +23,19 @@
 void core_gargoyle_cpp_CGargoyle_unk5_FUN_004e53f0(void)
 
 {
-  undefined4 uVar1;
+  int iVar1;
   CDemonSet *pCVar2;
   CCharacter *in_stack_00000004;
   
   pCVar2 = g_CDemonSetPtr;
   if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) {
-    uVar1 = *(undefined4 *)g_CDemonSetPtr->field22_0x15ac80;
-    pCVar2->field22_0x15ac80[0] = '\x03';
-    pCVar2->field22_0x15ac80[1] = '\0';
-    pCVar2->field22_0x15ac80[2] = '\0';
-    pCVar2->field22_0x15ac80[3] = '\0';
-    *(int *)(pCVar2->field35_0x15ae84 + 4) =
-         *(int *)(in_stack_00000004[1].base_actor.create_event + 0x50) << 8;
-    *(int *)(pCVar2->field35_0x15ae84 + 8) =
-         *(int *)(in_stack_00000004[1].base_actor.create_event + 0x54) << 8;
-    *(int *)(pCVar2->field35_0x15ae84 + 0xc) =
-         *(int *)(in_stack_00000004[1].base_actor.create_event + 0x58) << 8;
+    iVar1 = g_CDemonSetPtr->lighting_quality_mode;
+    g_CDemonSetPtr->lighting_quality_mode = 3;
+    pCVar2->light_scale_factor = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x50) << 8;
+    pCVar2->color_scale_factor = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x54) << 8;
+    pCVar2->fog_scale_factor = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x58) << 8;
     core_charactr_cpp_CCharacter_FUN_0042a2c0(in_stack_00000004);
-    *(undefined4 *)g_CDemonSetPtr->field22_0x15ac80 = uVar1;
+    g_CDemonSetPtr->lighting_quality_mode = iVar1;
     return;
   }
   core_charactr_cpp_CCharacter_FUN_0042a2c0(in_stack_00000004);

@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bbb2d [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_006537ec
+//   float FLOAT_006537ec = 0.5
 //   undefined4 DAT_03f6bb00
 //   undefined4 DAT_03f6bb04
 // Function calls:
@@ -14,7 +14,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_hero_stranger.cpp_CStranger_FUN_005be490(CStranger* param_1,
    undefined4 param_2) */
 
@@ -26,18 +25,21 @@ float * core_stranger_cpp_CStranger_FUN_005be490(void)
   float fVar3;
   float fVar4;
   float fVar5;
-  float *pfVar6;
-  float *pfVar7;
+  CVector3f *pCVar6;
+  CVector3f *pCVar7;
+  int in_stack_00000004;
   float *in_stack_00000008;
   
-  pfVar6 = (float *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20();
-  pfVar7 = (float *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20();
-  fVar5 = _DAT_006537ec;
-  fVar1 = pfVar7[1];
-  fVar2 = pfVar6[1];
-  fVar3 = pfVar7[2];
-  fVar4 = pfVar6[2];
-  *in_stack_00000008 = (*pfVar7 + *pfVar6) * _DAT_006537ec;
+  pCVar6 = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
+  pCVar7 = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
+  fVar5 = FLOAT_006537ec;
+  fVar1 = pCVar7->y;
+  fVar2 = pCVar6->y;
+  fVar3 = pCVar7->z;
+  fVar4 = pCVar6->z;
+  *in_stack_00000008 = (pCVar7->x + pCVar6->x) * FLOAT_006537ec;
   in_stack_00000008[1] = (fVar1 + fVar2) * fVar5;
   in_stack_00000008[2] = fVar5 * (fVar3 + fVar4);
   return in_stack_00000008;

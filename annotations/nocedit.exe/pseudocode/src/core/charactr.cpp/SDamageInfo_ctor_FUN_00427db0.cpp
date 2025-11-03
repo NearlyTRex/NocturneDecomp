@@ -16,7 +16,7 @@
 //   core_charactr.cpp_CCharacter_FUN_00428e30 (00428e30) at 00428e69 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_00428ee0 (00428ee0) at 00428f04 [UNCONDITIONAL_CALL]
 //   core_cow.cpp_FUN_00444310 (00444310) at 004445ad [UNCONDITIONAL_CALL]
-//   core_crossbow.cpp_FUN_00448f20 (00448f20) at 00449318 [UNCONDITIONAL_CALL]
+//   core_crossbow.cpp_CCrossbow_FUN_00448f20 (00448f20) at 00449318 [UNCONDITIONAL_CALL]
 //   core_dog.cpp_CZombieDog_process_FUN_0047f140 (0047f140) at 0047f3fa [UNCONDITIONAL_CALL]
 //   core_dracbrid.cpp_FUN_00484410 (00484410) at 00484d4d [UNCONDITIONAL_CALL]
 //   core_drip.cpp_FUN_0048e2a0 (0048e2a0) at 0048e3da [UNCONDITIONAL_CALL]

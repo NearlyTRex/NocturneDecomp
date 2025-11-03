@@ -4,7 +4,7 @@
 // Convention: __fpustack
 // Signature: double crt_math.c_floor_FUN_005feb90(double input_value)
 // Cross-references:
-//   core_actor.cpp_FUN_0040cd70 (0040cd70) at 0040cdf8 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70 (0040cd70) at 0040cdf8 [UNCONDITIONAL_CALL]
 //   core_bat.cpp_FUN_004146f0 (004146f0) at 00414719 [UNCONDITIONAL_CALL]
 //   core_bat.cpp_FUN_00414ce0 (00414ce0) at 00414d2c [UNCONDITIONAL_CALL]
 //   core_boneguy.cpp_FUN_0041ba10 (0041ba10) at 0041bb27 [UNCONDITIONAL_CALL]
@@ -29,7 +29,7 @@
 //   core_pendulum.cpp_FUN_00549b90 (00549b90) at 00549c21 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0 (0057bbe0) at 0057c44a [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058b9b0 (0058b9b0) at 0058baa3 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_FUN_005a0d10 (005a0d10) at 005a0d63 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0d10 (005a0d10) at 005a0d63 [UNCONDITIONAL_CALL]
 //   core_tommygun.cpp_CTommyGun_process_FUN_005de360 (005de360) at 005de497 [UNCONDITIONAL_CALL]
 //   crt_math.c_ceil_FUN_006001b2 (006001b2) at 006001c3 [UNCONDITIONAL_CALL]
 //   shape_design.c_normalizeUVCoordinates_FUN_0046e340 (0046e340) at 0046e447 [UNCONDITIONAL_CALL]

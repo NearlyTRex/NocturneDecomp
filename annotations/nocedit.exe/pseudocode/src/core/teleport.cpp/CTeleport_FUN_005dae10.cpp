@@ -10,7 +10,7 @@
 //   CDemonMission g_CDemonMissionInstance
 //   undefined4 DAT_02f33744
 // Function calls:
-//   core_actor.cpp_renderActorBoundingBox_FUN_0040d940
+//   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 //   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 
 #include "nocturne.h"
@@ -24,7 +24,7 @@ int __cdecl core_teleport_cpp_CTeleport_FUN_005dae10(CTeleport *this_ptr)
   if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) {
     iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
     if (iVar1 == 0) {
-      core_actor_cpp_renderActorBoundingBox_FUN_0040d940(in_stack_00000008,0xfb);
+      core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(in_stack_00000008,0xfb);
       return 0;
     }
   }
@@ -61,7 +61,7 @@ int __cdecl core_teleport_cpp_CTeleport_FUN_005dae10(CTeleport *this_ptr)
 // 005dae37: MOV EBX,dword ptr [ESP + 0xc]
 //   XREF to: Stack[0x4] (READ)
 // 005dae3b: PUSH EBX
-// 005dae3c: CALL core_actor.cpp_renderActorBoundingBox_FUN_0040d940
+// 005dae3c: CALL core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 //   XREF to: 0040d940 (UNCONDITIONAL_CALL)
 // 005dae41: ADD ESP,0x8
 // 005dae44: XOR EAX,EAX

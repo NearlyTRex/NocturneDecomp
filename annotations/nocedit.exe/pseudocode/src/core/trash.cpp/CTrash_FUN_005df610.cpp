@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: float * core_trash.cpp_CTrash_FUN_005df610(CTrash * this_ptr)
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ea0
+//   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 //   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 
 #include "nocturne.h"
@@ -14,9 +14,11 @@ float * __cdecl core_trash_cpp_CTrash_FUN_005df610(CTrash *this_ptr)
 {
   CVector3f *pCVar1;
   CKeyFramedModel *pCVar2;
+  BADSPACEBASE *in_ESP;
   float *in_stack_00000008;
-  float local_18;
-  float local_14;
+  CVector3f local_1c;
+  float local_10;
+  float local_c;
   
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      ((CKeyFramedModelInstance *)&this_ptr->model_name);
@@ -27,13 +29,16 @@ float * __cdecl core_trash_cpp_CTrash_FUN_005df610(CTrash *this_ptr)
   in_stack_00000008[3] = pCVar1[1].x;
   in_stack_00000008[4] = pCVar1[1].y;
   in_stack_00000008[5] = pCVar1[1].z;
-  core_actor_cpp_CDemonActor_FUN_00408ea0(&this_ptr->base_actor);
-  *in_stack_00000008 = *in_stack_00000008 + local_18;
-  in_stack_00000008[1] = in_stack_00000008[1] + local_14;
-  in_stack_00000008[2] = in_stack_00000008[2] + 0.0;
-  in_stack_00000008[3] = in_stack_00000008[3] + local_18;
-  in_stack_00000008[4] = in_stack_00000008[4] + local_14;
-  in_stack_00000008[5] = in_stack_00000008[5] + 0.0;
+  local_c = *(float *)(this_ptr->field4_0x2e0 + 0x30);
+  local_10 = 0.0;
+  core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+            (&this_ptr->base_actor,&local_1c,(CVector3f *)&local_10);
+  *in_stack_00000008 = *in_stack_00000008 + local_1c.y;
+  in_stack_00000008[1] = in_stack_00000008[1] + local_1c.z;
+  in_stack_00000008[2] = in_stack_00000008[2] + local_10;
+  in_stack_00000008[3] = in_stack_00000008[3] + local_1c.y;
+  in_stack_00000008[4] = in_stack_00000008[4] + local_1c.z;
+  in_stack_00000008[5] = in_stack_00000008[5] + local_10;
   return in_stack_00000008;
 }
 
@@ -85,7 +90,7 @@ float * __cdecl core_trash_cpp_CTrash_FUN_005df610(CTrash *this_ptr)
 //   XREF to: Stack[-0x14] (WRITE)
 // 005df67a: MOV dword ptr [ESP + 0x20],EDX
 //   XREF to: Stack[-0xc] (WRITE)
-// 005df67e: CALL core_actor.cpp_CDemonActor_FUN_00408ea0
+// 005df67e: CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 //   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
 // 005df683: ADD ESP,0xc
 // 005df686: FLD float ptr [EBX]

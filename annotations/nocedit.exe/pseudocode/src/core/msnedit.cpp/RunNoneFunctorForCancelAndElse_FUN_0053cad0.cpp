@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_msnedit.cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0()
 // Cross-references:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040f233 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040f233 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_none_0063c89a
 // Function calls:

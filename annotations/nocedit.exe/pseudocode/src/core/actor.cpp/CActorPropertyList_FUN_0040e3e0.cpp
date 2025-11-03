@@ -16,11 +16,14 @@ int __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e3e0(CActorPropertyList *t
   char cVar1;
   int iVar2;
   char *pcVar3;
+  char *in_stack_00000008;
+  void *in_stack_0000000c;
   char *in_stack_00000014;
   char *in_stack_00000018;
   undefined4 in_stack_0000001c;
   
-  iVar2 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0(this_ptr);
+  iVar2 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
+                    (this_ptr,10,in_stack_00000008,in_stack_0000000c,(void *)0x0);
   pcVar3 = (char *)(iVar2 + 0x70);
   do {
     cVar1 = *in_stack_00000014;

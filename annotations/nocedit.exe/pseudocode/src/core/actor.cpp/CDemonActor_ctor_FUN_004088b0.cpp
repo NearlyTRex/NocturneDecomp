@@ -64,44 +64,37 @@
 //   CDemonActor_vtable g_CDemonActorVTable
 //   undefined4 DAT_0078a123
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408c10
-//   core_actor.cpp_CDemonActor_initMetadata_FUN_00408870
+//   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
+//   core_actor.cpp_initTransformCache_FUN_00408870
 
 #include "nocturne.h"
 
 CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor *this_ptr)
 
 {
-  char *this_ptr_00;
+  CVector3f *this_ptr_00;
   char cVar1;
-  CDemonActorClassMetadata *pCVar2;
+  CDemonActorTransformState *pCVar2;
   char *pcVar3;
   float *pfVar4;
-  CDemonActor **ppCVar5;
   
-  pCVar2 = core_actor_cpp_CDemonActor_initMetadata_FUN_00408870(&this_ptr->metadata);
-  this_ptr_00 = pCVar2[-7].field5_0x28;
-  pCVar2->vtable = &g_CDemonActorVTable;
-  *this_ptr_00 = '\0';
-  pCVar2->next_actor = (CDemonActor *)0x0;
-  pCVar2->field5_0x28[0] = '\0';
-  pCVar2->field5_0x28[1] = '\0';
-  pCVar2->field5_0x28[2] = '\0';
-  pCVar2->field5_0x28[3] = '\0';
-  pCVar2[-0xffffffff00000006].field3_0x1c[4] = '\0';
-  pCVar2[-0xffffffff00000006].field3_0x1c[5] = '\0';
-  pCVar2[-0xffffffff00000006].field3_0x1c[6] = '\0';
-  pCVar2[-0xffffffff00000006].field3_0x1c[7] = '\0';
-  *(undefined4 *)pCVar2[-6].field3_0x1c = *(undefined4 *)(pCVar2[-6].field3_0x1c + 4);
-  pCVar2[-6].runtime_flags = *(int *)pCVar2[-6].field3_0x1c;
-  pCVar2[-6].next_actor = (CDemonActor *)0x0;
+  pCVar2 = core_actor_cpp_initTransformCache_FUN_00408870(&this_ptr->previous_transform_state);
+  this_ptr_00 = &pCVar2[-0xb].orientation;
+  pCVar2[1].orientation.y = (float)&g_CDemonActorVTable;
+  *(undefined1 *)&this_ptr_00->x = 0;
+  pCVar2[1].position.z = 0.0;
+  pCVar2[1].orientation.x = 0.0;
+  pCVar2[-10].dirty_flags = 0;
+  pCVar2[-10].orientation.z = (float)pCVar2[-10].dirty_flags;
+  pCVar2[-10].orientation.y = pCVar2[-10].orientation.z;
+  pCVar2[-9].position.x = 0.0;
   pcVar3 = "none";
-  pCVar2[-5].runtime_vector1.x = 0.0;
-  pCVar2[-6].vtable = (CDemonActor_vtable *)pCVar2[-5].runtime_vector1.x;
-  *(CDemonActor_vtable **)pCVar2[-6].field5_0x28 = pCVar2[-6].vtable;
-  core_actor_cpp_CDemonActor_FUN_00408c10((CDemonActor *)this_ptr_00);
-  pfVar4 = &pCVar2[-4].runtime_vector2.y;
-  pCVar2[-4].runtime_vector2.x = 1.0;
+  pCVar2[-9].orientation.x = 0.0;
+  pCVar2[-9].position.z = pCVar2[-9].orientation.x;
+  pCVar2[-9].position.y = pCVar2[-9].position.z;
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr_00);
+  pfVar4 = &pCVar2[-7].orientation.z;
+  pCVar2[-7].orientation.y = 1.0;
   do {
     cVar1 = *pcVar3;
     *(char *)pfVar4 = cVar1;
@@ -111,46 +104,37 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor *
     *(char *)((int)pfVar4 + 1) = cVar1;
     pfVar4 = (float *)((int)pfVar4 + 2);
   } while (cVar1 != '\0');
-  pCVar2[-4].runtime_vector1.z = 0.0;
-  pCVar2[-2].runtime_vector2.z = 0.0;
-  pCVar2[-0xffffffff00000002].field3_0x1c[4] = '\0';
-  pCVar2[-0xffffffff00000002].field3_0x1c[5] = '\0';
-  pCVar2[-0xffffffff00000002].field3_0x1c[6] = '\0';
-  pCVar2[-0xffffffff00000002].field3_0x1c[7] = '\0';
-  *(undefined4 *)pCVar2[-2].field3_0x1c = *(undefined4 *)(pCVar2[-2].field3_0x1c + 4);
-  pCVar2[-2].runtime_flags = *(int *)pCVar2[-2].field3_0x1c;
-  pCVar2[-2].vtable = (CDemonActor_vtable *)0x0;
-  *(CDemonActor_vtable **)pCVar2[-2].field5_0x28 = pCVar2[-2].vtable;
-  pCVar2[-2].next_actor = *(CDemonActor **)pCVar2[-2].field5_0x28;
-  pCVar2[-1].runtime_vector2.y = 9.18355e-41;
-  pCVar2[-1].runtime_vector2.z = 9.18355e-41;
-  pCVar2[-1].runtime_flags = 0x10000;
-  pCVar2[-1].runtime_vector1.x = 1.4013e-45;
-  pCVar2[-1].runtime_vector1.y = 0.0;
-  pCVar2[-0xffffffff00000001].field3_0x1c[0] = '\0';
-  pCVar2[-0xffffffff00000001].field3_0x1c[1] = '\0';
-  pCVar2[-0xffffffff00000001].field3_0x1c[2] = '\0';
-  pCVar2[-0xffffffff00000001].field3_0x1c[3] = '\0';
-  pCVar2[-1].runtime_vector1.z = 0.0;
-  pCVar2[-1].runtime_vector2.x = 0.0;
-  pCVar2[-5].vtable = (CDemonActor_vtable *)0x64;
+  pCVar2[-7].orientation.x = 0.0;
+  pCVar2[-3].position.z = 0.0;
+  pCVar2[-3].orientation.z = 0.0;
+  pCVar2[-3].orientation.y = pCVar2[-3].orientation.z;
+  pCVar2[-3].orientation.x = pCVar2[-3].orientation.y;
+  pCVar2[-2].position.y = 0.0;
+  pCVar2[-2].position.x = pCVar2[-2].position.y;
+  pCVar2[-3].dirty_flags = (int)pCVar2[-2].position.x;
+  pCVar2[-2].dirty_flags = 0x10000;
+  pCVar2[-1].position.x = 9.18355e-41;
+  pCVar2[-1].position.y = 9.18355e-41;
+  pCVar2[-2].position.z = 1.4013e-45;
+  pCVar2[-2].orientation.x = 0.0;
+  pCVar2[-1].position.z = 0.0;
+  pCVar2[-2].orientation.y = 0.0;
+  pCVar2[-2].orientation.z = 0.0;
+  pCVar2[-7].position.x = 1.4013e-43;
   pcVar3 = "str";
-  pCVar2->field3_0x1c[4] = '\0';
-  pCVar2->field3_0x1c[5] = '\0';
-  pCVar2->field3_0x1c[6] = '\0';
-  pCVar2->field3_0x1c[7] = '\0';
-  ppCVar5 = &pCVar2[-1].next_actor;
-  pCVar2[-4].runtime_vector1.x = (float)&DAT_0078a123;
+  pCVar2[1].position.y = 0.0;
+  pfVar4 = &pCVar2[-1].orientation.y;
+  pCVar2[-7].position.y = (float)&DAT_0078a123;
   do {
     cVar1 = *pcVar3;
-    *(char *)ppCVar5 = cVar1;
+    *(char *)pfVar4 = cVar1;
     if (cVar1 == '\0') {
       return (CDemonActor *)this_ptr_00;
     }
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    *(char *)((int)ppCVar5 + 1) = cVar1;
-    ppCVar5 = (CDemonActor **)((int)ppCVar5 + 2);
+    *(char *)((int)pfVar4 + 1) = cVar1;
+    pfVar4 = (float *)((int)pfVar4 + 2);
   } while (cVar1 != '\0');
   return (CDemonActor *)this_ptr_00;
 }
@@ -165,7 +149,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor *
 //   XREF to: Stack[0x4] (READ)
 // 004088b7: ADD EBX,0x128
 // 004088bd: PUSH EBX
-// 004088be: CALL core_actor.cpp_CDemonActor_initMetadata_FUN_00408870
+// 004088be: CALL core_actor.cpp_initTransformCache_FUN_00408870
 //   XREF to: 00408870 (UNCONDITIONAL_CALL)
 // 004088c3: LEA EBX,[EAX + 0xfffffed8]
 // 004088c9: MOV dword ptr [EBX + 0x154],0x6597d4
@@ -191,7 +175,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor *
 // 0040891c: MOV dword ptr [EAX + 0x4],EDX
 // 0040891f: MOV EDX,dword ptr [EAX + 0x4]
 // 00408922: MOV dword ptr [EAX],EDX
-// 00408924: CALL core_actor.cpp_CDemonActor_FUN_00408c10
+// 00408924: CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 00408929: ADD ESP,0x4
 // 0040892c: LEA EDI,[EBX + 0x78]

@@ -1,8 +1,8 @@
 // Name: core_msnedit.cpp_staticInit_FUN_00535c30
 // Address: 00535c30
 // Address Range: [[00535c30, 00535c57]]
-// Convention: unknown
-// Signature: undefined core_msnedit.cpp_staticInit_FUN_00535c30()
+// Convention: __cdecl
+// Signature: void core_msnedit.cpp_staticInit_FUN_00535c30(void)
 // Globals:
 //   WatcomStaticDestructorNode g_CEdCheckDestructorNode
 //   undefined4 DAT_02f7a024
@@ -14,7 +14,7 @@
 
 #include "nocturne.h"
 
-void core_msnedit_cpp_staticInit_FUN_00535c30(void)
+void __cdecl core_msnedit_cpp_staticInit_FUN_00535c30(void)
 
 {
   core_actor_cpp_FUN_0040e130();

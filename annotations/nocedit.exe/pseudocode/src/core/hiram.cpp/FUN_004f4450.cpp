@@ -36,7 +36,7 @@ core_hiram_cpp_FUN_004f4450
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base_actor).base_character.base_actor.metadata.vtable =
+  (this_ptr->base_actor).base_character.base_actor.vtable =
        &PTR_core_hiram_cpp_FUN_004f4530_0065f974;
   pCVar1 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)&(this_ptr->base_actor).model_name);
   iVar2 = core_backgnd_cpp_freeFlames_FUN_00412720
@@ -49,7 +49,7 @@ core_hiram_cpp_FUN_004f4450
                      ((CDeformableModelInstance *)(iVar2 + -0x293c),0,d4,d5,d6);
   ptr = (CHiram *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar3[-1].padding_0x0 + 0x215c),1);
+                  ((CDemonActor *)(pCVar3[-1].part_visibility_flags + 7),1);
   if ((d9 & 2) == 0) {
     return ptr;
   }

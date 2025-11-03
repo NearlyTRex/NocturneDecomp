@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_actor.cpp_FUN_004104d0()
 // Cross-references:
-//   core_actor.cpp_renderActorBoundingBox_FUN_0040d940 (0040d940) at 0040dd63 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 (0040d940) at 0040dd63 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

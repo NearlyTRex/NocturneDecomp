@@ -1,10 +1,10 @@
 // Name: core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0
 // Address: 004b05a0
 // Address Range: [[004b05a0, 004b0712]]
-// Convention: unknown
-// Signature: undefined core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0()
+// Convention: __cdecl
+// Signature: void core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList * this_ptr)
 // Cross-references:
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ad13e [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ad13e [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_event_cpp_00625b32
 //   TerminatedCString s_CEventList_setTimerEvent_00625b44
@@ -13,75 +13,65 @@
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
-//   core_event.cpp_FUN_004b0900
+//   core_event.cpp_CEventList_FUN_004b0900
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   crt_string.c_memmove_FUN_005fe5e0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_event.cpp_CEventList_setTimerEvent(CEventList* param_1, undefined4
-   param_2, undefined4 param_3) */
-
-void core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(void)
+void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *this_ptr)
 
 {
   int iVar1;
-  double dVar2;
-  char cVar3;
+  char cVar2;
+  int iVar3;
   int iVar4;
-  int iVar5;
-  char *pcVar6;
-  int in_stack_00000004;
+  char *pcVar5;
   char *in_stack_00000008;
   float in_stack_0000000c;
   
-  dVar2 = (double)in_stack_0000000c;
-  if (dVar2 < 0.0) {
+  if (in_stack_0000000c < 0.0) {
     g_CurrentFilename = "..\\core\\event.cpp";
     g_CurrentLineNumber = 0xa5d;
-    core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("CEventList::setTimerEvent - invalid duration for %s: %f",in_stack_00000008,SUB84(dVar2,0),
-               (int)((ulonglong)dVar2 >> 0x20));
+    core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setTimerEvent - invalid duration for %s: %f");
   }
-  iVar4 = core_event_cpp_FUN_004b0900();
-  if (iVar4 < 0) {
+  iVar3 = core_event_cpp_CEventList_FUN_004b0900(this_ptr);
+  if (iVar3 < 0) {
     if (0.0 < in_stack_0000000c) {
-      if (9 < *(int *)(in_stack_00000004 + 0x3210)) {
+      if (9 < this_ptr->timer_count) {
         g_CurrentFilename = "..\\core\\event.cpp";
         g_CurrentLineNumber = 0xa7e;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setTimerEvent - too many timers!");
       }
-      pcVar6 = (char *)(*(int *)(in_stack_00000004 + 0x3210) * 0x20 + in_stack_00000004 + 0x3214);
+      pcVar5 = this_ptr->field14_0x3218 + this_ptr->timer_count * 0x20 + -4;
       do {
-        cVar3 = *in_stack_00000008;
-        *pcVar6 = cVar3;
-        if (cVar3 == '\0') break;
-        cVar3 = in_stack_00000008[1];
+        cVar2 = *in_stack_00000008;
+        *pcVar5 = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = in_stack_00000008[1];
         in_stack_00000008 = in_stack_00000008 + 2;
-        pcVar6[1] = cVar3;
-        pcVar6 = pcVar6 + 2;
-      } while (cVar3 != '\0');
-      *(float *)(in_stack_00000004 + 0x3354 + *(int *)(in_stack_00000004 + 0x3210) * 4) =
-           in_stack_0000000c;
-      *(int *)(in_stack_00000004 + 0x3210) = *(int *)(in_stack_00000004 + 0x3210) + 1;
+        pcVar5[1] = cVar2;
+        pcVar5 = pcVar5 + 2;
+      } while (cVar2 != '\0');
+      *(float *)(this_ptr->field16_0x3380 + this_ptr->timer_count * 4 + -0x2c) = in_stack_0000000c;
+      this_ptr->timer_count = this_ptr->timer_count + 1;
       return;
     }
   }
   else {
-    iVar1 = iVar4 * 4;
+    iVar1 = iVar3 * 4;
     if (in_stack_0000000c <= 0.0) {
-      iVar5 = *(int *)(in_stack_00000004 + 0x3210) + -1;
-      *(int *)(in_stack_00000004 + 0x3210) = iVar5;
+      iVar4 = this_ptr->timer_count + -1;
+      this_ptr->timer_count = iVar4;
       crt_string_c_memmove_FUN_005fe5e0
-                ((void *)(in_stack_00000004 + 0x3214 + iVar4 * 0x20),
-                 (void *)(iVar4 * 0x20 + 0x20 + in_stack_00000004 + 0x3214),(iVar5 - iVar4) * 0x20);
+                (this_ptr->field14_0x3218 + iVar3 * 0x20 + -4,
+                 this_ptr->field14_0x3218 + iVar3 * 0x20 + 0x1c,(iVar4 - iVar3) * 0x20);
       crt_string_c_memmove_FUN_005fe5e0
-                ((void *)(in_stack_00000004 + 0x3354 + iVar1),
-                 (void *)(iVar1 + 4 + in_stack_00000004 + 0x3354),
-                 (*(int *)(in_stack_00000004 + 0x3210) - iVar4) * 4);
+                (this_ptr->field16_0x3380 + iVar1 + -0x2c,this_ptr->field16_0x3380 + iVar1 + -0x28,
+                 (this_ptr->timer_count - iVar3) * 4);
       return;
     }
-    *(float *)(iVar1 + 0x3354 + in_stack_00000004) = in_stack_0000000c;
+    *(float *)(this_ptr->field16_0x3380 + iVar1 + -0x2c) = in_stack_0000000c;
   }
   return;
 }
@@ -136,7 +126,7 @@ void core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(void)
 //   XREF to: Stack[0x8] (READ)
 // 004b05f5: PUSH EDX
 // 004b05f6: PUSH EBX
-// 004b05f7: CALL core_event.cpp_FUN_004b0900
+// 004b05f7: CALL core_event.cpp_CEventList_FUN_004b0900
 //   XREF to: 004b0900 (UNCONDITIONAL_CALL)
 // 004b05fc: MOV ESI,EAX
 // 004b05fe: ADD ESP,0x8

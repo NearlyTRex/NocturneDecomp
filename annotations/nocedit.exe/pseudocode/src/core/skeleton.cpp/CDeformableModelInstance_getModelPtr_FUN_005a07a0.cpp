@@ -1,14 +1,14 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 // Address: 005a07a0
 // Address Range: [[005a07a0, 005a081b]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0()
+// Convention: __cdecl
+// Signature: CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(CDeformableModelInstance * this_ptr)
 // Cross-references:
 //   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 (00409470) at 004097ec [UNCONDITIONAL_CALL]
 //   core_batcreat.cpp_CBatCreature_FUN_00415150 (00415150) at 004152e0 [UNCONDITIONAL_CALL]
 //   core_batman.cpp_CBatman_FUN_00416510 (00416510) at 004166a0 [UNCONDITIONAL_CALL]
 //   core_bodypart.cpp_FUN_0041b280 (0041b280) at 0041b2f3 [UNCONDITIONAL_CALL]
-//   core_boneguy.cpp_CBoneGuy_explode2_FUN_0041d680 (0041d680) at 0041d6b2 [UNCONDITIONAL_CALL]
+//   core_boneguy.cpp_CBoneGuy_FUN_0041d680 (0041d680) at 0041d6b2 [UNCONDITIONAL_CALL]
 //   core_boneguy.cpp_CBoneGuy_explode_FUN_0041bd90 (0041bd90) at 0041bf02 [UNCONDITIONAL_CALL]
 //   core_bride.cpp_FUN_00423810 (00423810) at 0042391c [UNCONDITIONAL_CALL]
 //   core_bugs.cpp_FUN_004268e0 (004268e0) at 00426b5d [UNCONDITIONAL_CALL]
@@ -30,39 +30,39 @@
 //   core_hotdemon.cpp_FUN_004f6d00 (004f6d00) at 004f6eb5 [UNCONDITIONAL_CALL]
 //   core_imp.cpp_FUN_004f9910 (004f9910) at 004f9aa3 [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_FUN_00525340 (00525340) at 005254c7 [UNCONDITIONAL_CALL]
-//   core_morph.cpp_CallToAddpartAgain_FUN_0052a870 (0052a870) at 0052a884 [UNCONDITIONAL_CALL]
-//   core_morph.cpp_GetSkeletonPtrAndAnimate_FUN_0052aa30 (0052aa30) at 0052aa51 [UNCONDITIONAL_CALL]
-//   core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0 (0052bcb0) at 0052bda8 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_CMorphModel_FUN_0052a870 (0052a870) at 0052a884 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052aa30 (0052aa30) at 0052aa51 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052bda8 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_00559730 (00559730) at 0055975d [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_00562920 (00562920) at 00563dc7 [UNCONDITIONAL_CALL]
 //   core_sentinel.cpp_FUN_00567e20 (00567e20) at 00567fb0 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 005968e9 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005968e9 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260 (0058a260) at 0058a291 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_LockGetPtrAndExportModel_FUN_00598ee0 (00598ee0) at 00598efd [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150 (005a0150) at 005a019f [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0 (005a01d0) at 005a01f0 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0210 (005a0210) at 005a022d [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0250 (005a0250) at 005a0271 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a02a0 (005a02a0) at 005a02c1 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a02f0 (005a02f0) at 005a0311 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a05e0 (005a05e0) at 005a060e [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820 (005a0820) at 005a0825 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a1040 (005a1040) at 005a1063 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a10e0 (005a10e0) at 005a10ec [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a14b0 (005a14b0) at 005a14eb [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a16c0 (005a16c0) at 005a16d0 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtr1_FUN_005a17b0 (005a17b0) at 005a17c7 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndDoSomething2_FUN_005a17e0 (005a17e0) at 005a17ec [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndShatter_FUN_005a14b0 (005a14b0) at 005a14eb [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething5_FUN_005a01d0 (005a01d0) at 005a01f0 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820 (005a0820) at 005a0825 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrsAndSomething_FUN_005a02f0 (005a02f0) at 005a0311 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_GetPtr_RotateVerts_Render_FUN_005a0150 (005a0150) at 005a019f [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_GetPtrsAndDoSomething1_FUN_005a10e0 (005a10e0) at 005a10ec [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a17b0 (005a17b0) at 005a17c7 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a17e0 (005a17e0) at 005a17ec [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0 (0059deb0) at 0059dec0 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800 (005a1800) at 005a181d [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0 (005a03b0) at 005a03c7 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340 (005a0340) at 005a0370 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_FUN_005a0210 (005a0210) at 005a022d [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a24d0 (005a24d0) at 005a2662 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb4b0 (005bb4b0) at 005bb7b5 [UNCONDITIONAL_CALL]
 //   core_svetlana.cpp_CSvetlana_FUN_005d88e0 (005d88e0) at 005d8b1a [UNCONDITIONAL_CALL]
 //   core_zombie.cpp_CZombie_FUN_005f9140 (005f9140) at 005f9259 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\skeleton.cpp_0064eef0
+//   TerminatedCString s_core_skeleton_cpp_0064eef0
 //   TerminatedCString s_CDeformableModelInstance_0064ef05
 //   TerminatedCString s_core_skeleton_cpp_0064ef53
 //   TerminatedCString s_Tried_to_do_something_wi_0064ef68
@@ -73,27 +73,24 @@
 
 #include "nocturne.h"
 
-/* Signature: CDeformableModel*
-   core_skeleton.cpp_CDeformableModelInstance_getModelPtr(CDeformableModelInstance* param_1) */
-
-undefined4 core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(void)
+CDeformableModel * __cdecl
+core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+          (CDeformableModelInstance *this_ptr)
 
 {
-  int in_stack_00000004;
-  
-  if (*(int *)(in_stack_00000004 + 0x22b0) == 0) {
-    if (*(char *)(in_stack_00000004 + 0x2260) != '\0') {
+  if (this_ptr->model_ptr == (CDeformableModel *)0x0) {
+    if (this_ptr->field11_0x2260[0] != '\0') {
       g_CurrentFilename = "..\\core\\skeleton.cpp";
       g_CurrentLineNumber = 0xdd3;
       core_main_c_displayErrorAndQuit_FUN_00506f10
-                ("Tried to do something with model %s, but modelPtr not set.  (CDeformableModelInstance::preCache not called.",in_stack_00000004 + 0x2260);
-      return *(undefined4 *)(in_stack_00000004 + 0x22b0);
+                ("Tried to do something with model %s, but modelPtr not set.  (CDeformableModelInstance::preCache not called.",this_ptr->field11_0x2260);
+      return this_ptr->model_ptr;
     }
-    g_CurrentFilename = "L=..\\core\\skeleton.cpp" + 2;
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0xdd1;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModelInstance::getModelPtr - modelPtr=NULL, and no name specified.");
   }
-  return *(undefined4 *)(in_stack_00000004 + 0x22b0);
+  return this_ptr->model_ptr;
 }
 
 

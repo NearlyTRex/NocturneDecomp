@@ -6,15 +6,14 @@
 // Cross-references:
 //   core_gargoyle.cpp_CGargoyle_unk6_FUN_004e4a00 (004e4a00) at 004e4df6 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0062d92f
-//   undefined4 DAT_0062d937
+//   double DOUBLE_0062d92f = -0.314159265350000
+//   double DOUBLE_0062d937 = 0.314159265350000
 // Function calls:
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_gargoyle.cpp_CGargoyle_FUN_004e48a0(CGargoyle* param_1) */
 
 undefined4 core_gargoyle_cpp_CGargoyle_FUN_004e48a0(void)
@@ -48,9 +47,9 @@ undefined4 core_gargoyle_cpp_CGargoyle_FUN_004e48a0(void)
         local_1c = pCVar4->y;
         local_18.x = pCVar4->z;
       }
-      fVar5 = core_actor_cpp_FUN_0040cd70
+      fVar5 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                         (*(float *)(*(int *)(in_stack_00000004 + 0xbe3c) + 0x34) - local_1c);
-      if ((fVar5 < (float)_DAT_0062d92f) || ((float)_DAT_0062d937 < fVar5)) {
+      if ((fVar5 < (float)DOUBLE_0062d92f) || ((float)DOUBLE_0062d937 < fVar5)) {
         return 1;
       }
     }
@@ -195,7 +194,7 @@ undefined4 core_gargoyle_cpp_CGargoyle_FUN_004e48a0(void)
 // 004e49a8: SUB ESP,0x4
 // 004e49ab: FSTP float ptr [ESP]
 //   XREF to: Stack[-0x3c] (DATA)
-// 004e49ae: CALL core_actor.cpp_FUN_0040cd70
+// 004e49ae: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 004e49b3: MOV dword ptr [ESP + 0x30],EAX
 //   XREF to: Stack[-0xc] (WRITE)

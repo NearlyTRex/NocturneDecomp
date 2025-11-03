@@ -39,9 +39,9 @@ void CBox::loadFromFile(CBox * this_ptr, FILE * file_handle);
 // Address: 00420020
 void CBox::saveToFile(CBox * this_ptr, FILE * file_handle);
 
-// Original: core_box.cpp_CBox_FUN_00420180
+// Original: core_box.cpp_CBox_setupVelocities_FUN_00420180
 // Address: 00420180
-void CBox(CBox * this_ptr);
+void CBox::setupVelocities(CBox * this_ptr, CVector3f * linear_velocity, CVector3f * angular_velocity);
 
 // Original: core_box.cpp_SScrape_ctor_FUN_00420200
 // Address: 00420200

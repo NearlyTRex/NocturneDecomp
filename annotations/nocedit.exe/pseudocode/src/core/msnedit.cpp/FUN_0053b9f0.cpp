@@ -134,7 +134,7 @@ void core_msnedit_cpp_FUN_0053b9f0(void)
           g_CurrentDebugLine = 0x8ff;
           g_CurrentDebugFilename = "..\\core\\msnedit.cpp";
           if (this_ptr != (CDemonActor *)0x0) {
-            (*((this_ptr->metadata).vtable)->dtor)
+            (*this_ptr->vtable->dtor)
                       (this_ptr,2,(uint)in_stack_fffffc38,in_stack_fffffc3c,(uint)in_stack_fffffc40,
                        (uint)in_stack_fffffc44,in_stack_fffffc48,in_stack_fffffc4c,in_stack_fffffc50
                       );
@@ -156,18 +156,18 @@ void core_msnedit_cpp_FUN_0053b9f0(void)
         pCVar4 = (CDemonActor *)(pCVar4->actor_name + 2);
       } while (cVar1 != '\0');
     }
-    iVar3 = (*((this_ptr->metadata).vtable)->initializeInEditor)(this_ptr);
+    iVar3 = (*this_ptr->vtable->initializeInEditor)(this_ptr);
     if (iVar3 == 0) {
       g_CurrentDebugLine = 0x906;
       g_CurrentDebugFilename = "..\\core\\msnedit.cpp";
-      (*((this_ptr->metadata).vtable)->dtor)
+      (*this_ptr->vtable->dtor)
                 (this_ptr,2,in_stack_fffffbec,in_stack_fffffbf0,in_stack_fffffbf4,in_stack_fffffbf8,
                  in_stack_fffffbfc,in_stack_fffffc00,in_stack_fffffc04);
     }
     else {
       core_mission_cpp_CDemonMission_FUN_00523b70(in_stack_00000038);
       core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_0000003c);
-      (*((this_ptr->metadata).vtable)->setup)(this_ptr);
+      (*this_ptr->vtable->setup)(this_ptr);
       core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
     }
   }

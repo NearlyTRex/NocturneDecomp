@@ -11,7 +11,7 @@
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20 (0059fa20) at 0059fac6 [UNCONDITIONAL_CALL]
 //   core_zombie.cpp_CZombie_FUN_005fbe70 (005fbe70) at 005fbeb3 [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280
 //   core_xform.cpp_setRotationScaleIdentity_FUN_005f5190
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
@@ -24,6 +24,7 @@
 void core_skeleton_cpp_CDeformableModelInstance_FUN_0059f820(void)
 
 {
+  int extraout_EAX;
   int iVar1;
   BADSPACEBASE *in_ESP;
   int unaff_EBP;
@@ -32,7 +33,7 @@ void core_skeleton_cpp_CDeformableModelInstance_FUN_0059f820(void)
   float *pfVar3;
   undefined4 *puVar4;
   byte bVar5;
-  int in_stack_00000004;
+  CDeformableModelInstance *in_stack_00000004;
   int in_stack_00000008;
   int in_stack_0000000c;
   undefined4 auStack_a8 [11];
@@ -55,20 +56,20 @@ void core_skeleton_cpp_CDeformableModelInstance_FUN_0059f820(void)
   bVar5 = 0;
   if (in_stack_00000008 < 0) {
     core_xform_cpp_setRotationScaleIdentity_FUN_005f5190((CMatrix3x4f *)&local_7c);
-    local_6c = *(float *)(in_stack_00000004 + 0x6a4);
-    local_5c = *(float *)(in_stack_00000004 + 0x6a8);
-    local_4c = *(undefined4 *)(in_stack_00000004 + 0x6ac);
+    local_6c = *(float *)(in_stack_00000004->field3_0x508 + 0x19c);
+    local_5c = *(float *)(in_stack_00000004->field3_0x508 + 0x1a0);
+    local_4c = *(undefined4 *)(in_stack_00000004->field3_0x508 + 0x1a4);
   }
   else {
-    iVar1 = core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
+    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(in_stack_00000004);
     local_18.z = (float)(in_stack_00000008 * 0xc);
-    if (*(int *)(iVar1 + 0x2857c + in_stack_00000008 * 0x24) < 0) {
-      local_70 = *(float *)(in_stack_00000004 + 0x6a4) +
-                 *(float *)(in_stack_00000004 + 0x58 + (int)local_18.z);
-      local_60 = *(float *)(in_stack_00000004 + 0x6a8) +
-                 *(float *)(in_stack_00000004 + 0x5c + (int)local_18.z);
-      local_50 = *(float *)(in_stack_00000004 + 0x6ac) +
-                 *(float *)(in_stack_00000004 + 0x60 + (int)local_18.z);
+    if (*(int *)(extraout_EAX + 0x2857c + in_stack_00000008 * 0x24) < 0) {
+      local_70 = *(float *)(in_stack_00000004->field3_0x508 + 0x19c) +
+                 in_stack_00000004->transformed_vertices[in_stack_00000008].x;
+      local_60 = *(float *)(in_stack_00000004->field3_0x508 + 0x1a0) +
+                 in_stack_00000004->transformed_vertices[in_stack_00000008].y;
+      local_50 = *(float *)(in_stack_00000004->field3_0x508 + 0x1a4) +
+                 in_stack_00000004->transformed_vertices[in_stack_00000008].z;
     }
     else {
       core_skeleton_cpp_CDeformableModelInstance_FUN_0059f820();
@@ -80,24 +81,35 @@ void core_skeleton_cpp_CDeformableModelInstance_FUN_0059f820(void)
         puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
       }
       core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                (&local_18,(CVector3f *)(in_stack_00000004 + 0x58 + unaff_EBP),&CStack_48);
+                (&local_18,
+                 (CVector3f *)((int)&in_stack_00000004->transformed_vertices[0].x + unaff_EBP),
+                 &CStack_48);
       local_68 = local_18.y;
       local_58 = local_18.z;
     }
     core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280
               ((CMatrix3x3f *)&local_7c,
-               (CQuaternion4f *)(in_stack_00000008 * 0x10 + in_stack_00000004 + 0x6b0));
-    in_stack_00000004 = in_stack_00000004 + in_stack_0000000c * 4;
-    if (*(int *)(in_stack_00000004 + 0xcf0) != 0x3f800000) {
-      local_78 = local_78 * *(float *)(in_stack_00000004 + 0xcf0);
-      local_74 = local_74 * *(float *)(in_stack_00000004 + 0xcf0);
-      local_70 = local_70 * *(float *)(in_stack_00000004 + 0xcf0);
-      local_68 = local_68 * *(float *)(in_stack_00000004 + 0xcf0);
-      local_64 = local_64 * *(float *)(in_stack_00000004 + 0xcf0);
-      local_60 = local_60 * *(float *)(in_stack_00000004 + 0xcf0);
-      local_58 = local_58 * *(float *)(in_stack_00000004 + 0xcf0);
-      local_54 = local_54 * *(float *)(in_stack_00000004 + 0xcf0);
-      local_50 = local_50 * *(float *)(in_stack_00000004 + 0xcf0);
+               (CQuaternion4f *)(in_stack_00000004->field3_0x508 + in_stack_00000008 * 0x10 + 0x1a8)
+              );
+    if (*(int *)(in_stack_00000004->field3_0x508 + in_stack_0000000c * 4 + 0x7e8) != 0x3f800000) {
+      local_78 = local_78 *
+                 *(float *)(in_stack_00000004->field3_0x508 + in_stack_0000000c * 4 + 0x7e8);
+      local_74 = local_74 *
+                 *(float *)(in_stack_00000004->field3_0x508 + in_stack_0000000c * 4 + 0x7e8);
+      local_70 = local_70 *
+                 *(float *)(in_stack_00000004->field3_0x508 + in_stack_0000000c * 4 + 0x7e8);
+      local_68 = local_68 *
+                 *(float *)(in_stack_00000004->field3_0x508 + in_stack_0000000c * 4 + 0x7e8);
+      local_64 = local_64 *
+                 *(float *)(in_stack_00000004->field3_0x508 + in_stack_0000000c * 4 + 0x7e8);
+      local_60 = local_60 *
+                 *(float *)(in_stack_00000004->field3_0x508 + in_stack_0000000c * 4 + 0x7e8);
+      local_58 = local_58 *
+                 *(float *)(in_stack_00000004->field3_0x508 + in_stack_0000000c * 4 + 0x7e8);
+      local_54 = local_54 *
+                 *(float *)(in_stack_00000004->field3_0x508 + in_stack_0000000c * 4 + 0x7e8);
+      local_50 = local_50 *
+                 *(float *)(in_stack_00000004->field3_0x508 + in_stack_0000000c * 4 + 0x7e8);
     }
   }
   pfVar3 = &local_78;
@@ -124,7 +136,7 @@ void core_skeleton_cpp_CDeformableModelInstance_FUN_0059f820(void)
 // 0059f83a: JL 0x0059f92e
 //   XREF to: 0059f92e (CONDITIONAL_JUMP)
 // 0059f840: PUSH EBX
-// 0059f841: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 0059f841: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0059f846: ADD ESP,0x4
 // 0059f849: MOV EDX,dword ptr [ESP + 0xb4]

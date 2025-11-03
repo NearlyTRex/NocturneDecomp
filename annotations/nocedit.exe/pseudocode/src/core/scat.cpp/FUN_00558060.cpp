@@ -29,16 +29,20 @@ void core_scat_cpp_FUN_00558060(void)
   float in_stack_00000008;
   int local_14;
   
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0();
+  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
+                    (&(in_stack_00000004->model).motion_controller);
   if ((*(int *)(iVar1 + 0x24) != 0xc) &&
-     (iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0(), *(int *)(iVar1 + 0x24) != 0xd)) {
+     (iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
+                        (&(in_stack_00000004->model).motion_controller),
+     *(int *)(iVar1 + 0x24) != 0xd)) {
     iVar1 = *(int *)(in_stack_00000004[2].cloth_data + 0x5388);
     if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) == 0) {
       iVar1 = 0;
     }
     iVar2 = *(int *)(in_stack_00000004[2].cloth_data + 0x5508);
     if (((iVar2 != 0) && (iVar1 != iVar2)) && (*(int *)(iVar2 + 0x2e0) == 8)) {
-      iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0();
+      iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0
+                        (&(in_stack_00000004->model).motion_controller);
       if (*(int *)(iVar2 + 0x24) == 0) {
         in_stack_00000004[2].cloth_data[0x5508] = '\0';
         in_stack_00000004[2].cloth_data[0x5509] = '\0';
@@ -46,7 +50,8 @@ void core_scat_cpp_FUN_00558060(void)
         in_stack_00000004[2].cloth_data[0x550b] = '\0';
       }
       else {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                  (&(in_stack_00000004->model).motion_controller);
       }
     }
     local_14 = 0;
@@ -60,7 +65,8 @@ void core_scat_cpp_FUN_00558060(void)
         }
       }
       iVar2 = core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(in_stack_00000004);
-      core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
+      core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                (&(in_stack_00000004->model).motion_controller);
       if (-1 < iVar2) {
         iVar3 = *(int *)(in_stack_00000004[2].cloth_data + 0x5508);
         if (iVar1 != iVar3) {
@@ -93,7 +99,8 @@ void core_scat_cpp_FUN_00558060(void)
                 (*(int *)(in_stack_00000004[2].cloth_data + 0x5508) = iVar1, iVar1 != 0)) &&
                ((**(code **)(*(int *)(iVar1 + 0x154) + 0xf0))(),
                *(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5508) + 0x2e0) == 8)) {
-              core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+              core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                        (&(in_stack_00000004->model).motion_controller);
             }
           }
         }

@@ -26,18 +26,21 @@ float * core_gabriela_cpp_FUN_004d4cf0(void)
   float fVar3;
   float fVar4;
   float fVar5;
-  float *pfVar6;
-  float *pfVar7;
+  CVector3f *pCVar6;
+  CVector3f *pCVar7;
+  int in_stack_00000004;
   float *in_stack_00000008;
   
-  pfVar6 = (float *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20();
-  pfVar7 = (float *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20();
+  pCVar6 = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
+  pCVar7 = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
   fVar5 = _DAT_0062af6d;
-  fVar1 = pfVar7[1];
-  fVar2 = pfVar6[1];
-  fVar3 = pfVar7[2];
-  fVar4 = pfVar6[2];
-  *in_stack_00000008 = (*pfVar7 + *pfVar6) * _DAT_0062af6d;
+  fVar1 = pCVar7->y;
+  fVar2 = pCVar6->y;
+  fVar3 = pCVar7->z;
+  fVar4 = pCVar6->z;
+  *in_stack_00000008 = (pCVar7->x + pCVar6->x) * _DAT_0062af6d;
   in_stack_00000008[1] = (fVar1 + fVar2) * fVar5;
   in_stack_00000008[2] = fVar5 * (fVar3 + fVar4);
   return in_stack_00000008;

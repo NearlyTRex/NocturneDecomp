@@ -18,7 +18,7 @@ CTempleStone * __cdecl core_stone_cpp_CTempleStone_ctor_FUN_005bad10(CTempleSton
   CBoxActor *pCVar1;
   
   pCVar1 = core_boxactor_cpp_CBoxActor_ctor_FUN_00421700((CBoxActor *)this_ptr);
-  (pCVar1->base_actor).metadata.vtable = &g_CTempleStoneVTable;
+  (pCVar1->base_actor).vtable = &g_CTempleStoneVTable;
   pCVar1[1].base_actor.actor_name[0] = '\0';
   pCVar1[1].base_actor.actor_name[1] = '\0';
   pCVar1[1].base_actor.actor_name[2] = '\0';

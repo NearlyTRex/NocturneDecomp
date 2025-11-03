@@ -67,7 +67,7 @@
 //   undefined4 DAT_03363630
 //   int g_VDIsActorAreaInvalid
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408ec0
+//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0
 //   core_box.cpp_CBoundingBox3D_getMaximumBound_FUN_00421060
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -123,11 +123,10 @@ core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
   undefined1 auStack_c4 [20];
   undefined1 auStack_b0 [8];
   CBoundingBox3D CStack_a8;
-  CVector3f CStack_80;
+  undefined1 auStack_80 [12];
   float fStack_74;
   float fStack_70;
-  float fStack_6c;
-  float fStack_68;
+  CVector3f CStack_6c;
   float fStack_58;
   float fStack_54;
   float fStack_50;
@@ -167,12 +166,12 @@ LAB_0057523f:
   g_UseExternalRenderer = 0;
   local_40 = (float)engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(this_ptr_01);
   engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr,0);
-  (*((actor->metadata).vtable)->getBoundingBox)(actor,(CBoundingBox3D *)auStack_c4);
+  (*actor->vtable->getBoundingBox)(actor,(CBoundingBox3D *)auStack_c4);
   uVar12 = 0;
   piVar3 = (int *)&stack0xfffffe94;
   do {
     pCVar4 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
-                       ((CBoundingBox3D *)auStack_b0,&CStack_80,uVar12);
+                       ((CBoundingBox3D *)auStack_b0,(CVector3f *)auStack_80,uVar12);
     uVar12 = uVar12 + 1;
     piVar3[3] = (int)ROUND(pCVar4->x * g_VDCoordinateScaleFactor);
     piVar3[4] = (int)ROUND(pCVar4->y * g_VDCoordinateScaleFactor);
@@ -182,12 +181,12 @@ LAB_0057523f:
   fStack_58 = (float)auStack_b0._4_4_ + CStack_a8.min.z;
   fStack_70 = ((float)auStack_b0._4_4_ + CStack_a8.min.z) * g_VDHalfExtentMultiplier;
   fStack_54 = CStack_a8.min.x + CStack_a8.max.x;
-  fStack_6c = (CStack_a8.min.x + CStack_a8.max.x) * g_VDHalfExtentMultiplier;
+  CStack_6c.x = (CStack_a8.min.x + CStack_a8.max.x) * g_VDHalfExtentMultiplier;
   fStack_50 = CStack_a8.min.y + CStack_a8.max.y;
-  fStack_68 = (CStack_a8.min.y + CStack_a8.max.y) * g_VDHalfExtentMultiplier;
+  CStack_6c.y = (CStack_a8.min.y + CStack_a8.max.y) * g_VDHalfExtentMultiplier;
   iStack_e8 = (int)ROUND(fStack_70 * g_VDCoordinateScaleFactor);
-  iStack_e4 = (int)ROUND(fStack_6c * g_VDCoordinateScaleFactor);
-  iStack_e0 = (int)ROUND(fStack_68 * g_VDCoordinateScaleFactor);
+  iStack_e4 = (int)ROUND(CStack_6c.x * g_VDCoordinateScaleFactor);
+  iStack_e0 = (int)ROUND(CStack_6c.y * g_VDCoordinateScaleFactor);
   pSVar5 = g_BoundingBoxQuadTemplates;
   do {
     iVar13 = pSVar5->vertices[0].vertex_index;
@@ -221,19 +220,20 @@ LAB_0057523f:
     g_VDCameraIndex = 0;
     this_ptr->previous_best_camera_timer = 0.0;
   }
-  (*((actor->metadata).vtable)->getBoundingBox)(actor,(CBoundingBox3D *)(auStack_c4 + 4));
+  (*actor->vtable->getBoundingBox)(actor,(CBoundingBox3D *)(auStack_c4 + 4));
   pCStack00000028 =
        (CDemonActor *)
        core_box_cpp_CBoundingBox3D_getMaximumBound_FUN_00421060((CBoundingBox3D *)(auStack_b0 + 4));
   local_48 = CStack_a8.min.x + CStack_a8.max.x;
-  CStack_80.z = local_48 * g_VDHalfExtentMultiplier;
+  auStack_80._8_4_ = local_48 * g_VDHalfExtentMultiplier;
   local_44 = CStack_a8.min.y + CStack_a8.max.y;
   local_40 = CStack_a8.min.z + CStack_a8.max.z;
   fStack_74 = local_44 * g_VDHalfExtentMultiplier;
   fStack_70 = local_40 * g_VDHalfExtentMultiplier;
   this_ptr_00 = (CDemonSet *)((float)pCStack00000028 * (float)g_VDBBoxExpansionFactor + 1.0);
   aiStack_148[1] = 0x5754ce;
-  core_actor_cpp_CDemonActor_FUN_00408ec0(actor);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (actor,&CStack_6c,(CVector3f *)(auStack_80 + 8));
   fStack00000010 = (float)core_setdir_cpp_CDemonSet_FUN_00576870(this_ptr_00);
   iVar13 = g_WindowHeight;
   g_VDIsActorAreaInvalid = (int)(fStack00000010 == -NAN);
@@ -256,14 +256,14 @@ LAB_0057523f:
   iStack0000001c = 0;
   for (iVar13 = 0; iVar13 < (int)g_CDemonSetPtr->actor_list_ptr; iVar13 = iVar13 + 1) {
     pCVar9 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iStack0000001c);
-    iVar11 = (*((pCVar9->metadata).vtable)->getBlockVirtualDirectorFlag)(pCVar9);
+    iVar11 = (*pCVar9->vtable->getBlockVirtualDirectorFlag)(pCVar9);
     if (((iVar11 != 0) && (pCVar9 != actor)) &&
        (fVar15 = (pCVar9->location).position.x - (actor->location).position.x,
        fVar2 = (pCVar9->location).position.y - (actor->location).position.y,
        fVar10 = (pCVar9->location).position.z - (actor->location).position.z,
        fVar10 * fVar10 + fVar2 * fVar2 + fVar15 * fVar15 <= in_stack_00000018)) {
       g_VDNearbyActorPointers[g_VDNearbyActorCount] = pCVar9;
-      pCVar8 = (*((pCVar9->metadata).vtable)->getBoundingBox)(pCVar9,&CStack_a8);
+      pCVar8 = (*pCVar9->vtable->getBoundingBox)(pCVar9,&CStack_a8);
       iVar11 = g_VDNearbyActorCount;
       if (g_VDNearbyActorBoundingBoxes + g_VDNearbyActorCount != pCVar8) {
         g_VDNearbyActorBoundingBoxes[g_VDNearbyActorCount].min.x = (pCVar8->min).x;
@@ -664,7 +664,7 @@ LAB_0057523f:
 // 005754b9: FXCH
 // 005754bb: FSTP float ptr [ESP + 0xcc]
 // 005754c2: FSTP float ptr [ESP + 0xd0]
-// 005754c9: CALL core_actor.cpp_CDemonActor_FUN_00408ec0
+// 005754c9: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
 // 005754ce: ADD ESP,0xc
 // 005754d1: LEA EAX,[ESP + 0xc8]

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CGlass * core_glass.cpp_CGlass_ctor_FUN_004e9040(CGlass * this_ptr)
 // Cross-references:
-//   core_glass.cpp_CGlass_ctor_FUN_004e9000 (004e9000) at 004e901a [UNCONDITIONAL_CALL]
+//   core_glass.cpp_CGlass_factoryFunc_FUN_004e9000 (004e9000) at 004e901a [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_HEADLITE_RAW_0062df62
 //   undefined4 s_EADLITE.RAW_0062df63
@@ -22,7 +22,7 @@
 //   CDemonActor_vtable g_CGlassVTable
 // Function calls:
 //   core_actor.cpp_CDemonActor_ctor_FUN_004088b0
-//   core_mirror.cpp_allocMirrorClipPlanes_FUN_005213c0
+//   core_mirror.cpp_CMirror_ctor_FUN_005213c0
 //   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
 
 #include "nocturne.h"
@@ -32,16 +32,15 @@ CGlass * __cdecl core_glass_cpp_CGlass_ctor_FUN_004e9040(CGlass *this_ptr)
 {
   char cVar1;
   CDemonActor *pCVar2;
-  SMirror *pSVar3;
+  CMirror *pCVar3;
   void *pvVar4;
   char *pcVar5;
   char *pcVar6;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
-  pSVar3 = core_mirror_cpp_allocMirrorClipPlanes_FUN_005213c0
-                     ((SMirror *)(pCVar2[1].create_event + 0x1c));
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  pCVar3 = core_mirror_cpp_CMirror_ctor_FUN_005213c0((CMirror *)(pCVar2[1].create_event + 0x1c));
   pvVar4 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (&pSVar3[1].reflection.reflection_matrix.m[1].y,0x19,&g_CVectorTypeInfo);
+                     (&pCVar3[1].reflection.reflection_matrix.m[1].y,0x19,&g_CVectorTypeInfo);
   *(CDemonActor_vtable **)((int)pvVar4 + -0x238) = &g_CGlassVTable;
   pcVar5 = "HEADLITE.RAW";
   *(undefined4 *)((int)pvVar4 + -0x234) = 0x40800000;
@@ -105,7 +104,7 @@ CGlass * __cdecl core_glass_cpp_CGlass_ctor_FUN_004e9040(CGlass *this_ptr)
 // 004e904c: ADD ESP,0x4
 // 004e904f: ADD EAX,0x1ec
 // 004e9054: PUSH EAX
-// 004e9055: CALL core_mirror.cpp_allocMirrorClipPlanes_FUN_005213c0
+// 004e9055: CALL core_mirror.cpp_CMirror_ctor_FUN_005213c0
 //   XREF to: 005213c0 (UNCONDITIONAL_CALL)
 // 004e905a: ADD ESP,0x4
 // 004e905d: PUSH 0x6598c0

@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_boneguy.cpp_staticInit_FUN_0041b6d0 (0041b6d0) at 0041b6dc [DATA]
 // Globals:
-//   undefined4 s_..\core\boneguy.cpp_00615f2d
+//   TerminatedCString s_core_boneguy_cpp_00615f2d
 // Function calls:
 //   core_boneguy.cpp_CBoneGuy_ctor_FUN_0041bbc0
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
@@ -19,7 +19,7 @@ void core_boneguy_cpp_constructor_FUN_0041b820(void)
   CBoneGuy *this_ptr;
   
   this_ptr = (CBoneGuy *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xc4e4,"?..\\core\\boneguy.cpp" + 1,0x74);
+             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xc4e4,"..\\core\\boneguy.cpp",0x74);
   if (this_ptr == (CBoneGuy *)0x0) {
     return;
   }

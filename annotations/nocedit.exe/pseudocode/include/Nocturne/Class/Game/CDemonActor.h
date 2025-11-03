@@ -27,6 +27,11 @@ typedef struct CDemonActor {
     int field_284; // 0x11c
     int field_288; // 0x120
     int field_292; // 0x124
-    CDemonActorClassMetadata metadata; // 0x128
+    CDemonActorTransformState previous_transform_state; // 0x128
+    int field_324; // 0x144
+    int field_328; // 0x148
+    CDemonActor* next_actor; // 0x14c
+    int field_336; // 0x150
+    CDemonActor_vtable* vtable; // 0x154
 } CDemonActor;
 

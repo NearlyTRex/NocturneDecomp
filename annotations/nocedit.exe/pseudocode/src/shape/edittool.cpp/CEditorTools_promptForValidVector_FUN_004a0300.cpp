@@ -4,10 +4,10 @@
 // Convention: __cdecl
 // Signature: int shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools * editor_tools, char * prompt_text, CVector3f * result_ptr, bool show_current_value)
 // Cross-references:
-//   core_actor.cpp_AnotherActorParser_FUN_0040eed0 (0040eed0) at 0040f065 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040f065 [UNCONDITIONAL_CALL]
 //   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 (00443040) at 0044336f [UNCONDITIONAL_CALL]
 //   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (0047cbc0) at 0047e0fe [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 00597c63 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597c63 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_g_g_g_006232b5
 //   TerminatedCString s_f_f_f_006232be

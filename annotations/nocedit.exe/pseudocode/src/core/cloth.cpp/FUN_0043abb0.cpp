@@ -15,7 +15,7 @@
 //   undefined4 DAT_0326eedc
 //   undefined4 DAT_0326eee0
 // Function calls:
-//   core_actor.cpp_FUN_0040cd70
+//   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_cloth.cpp_FUN_0043a2b0
 //   core_cloth.cpp_FUN_0043a420
 //   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
@@ -261,7 +261,7 @@ void core_cloth_cpp_FUN_0043abb0(void)
     in_stack_00000004[0xff96] = in_stack_0000000c->y;
     in_stack_00000004[0xff97] = in_stack_0000000c->z;
   }
-  fVar4 = core_actor_cpp_FUN_0040cd70((float)local_d4._0_4_);
+  fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((float)local_d4._0_4_);
   local_68 = fVar4 * (1.0 / in_stack_00000010) * (1.0 / in_stack_00000010);
   iVar5 = 0;
   if (0 < (int)in_stack_00000004[0x41]) {
@@ -986,7 +986,7 @@ void core_cloth_cpp_FUN_0043abb0(void)
 // 0043b18b: PUSH dword ptr [ESP + 0x100]
 //   Label: LAB_0043b18b
 //   XREF to: Stack[-0xe0] (READ)
-// 0043b192: CALL core_actor.cpp_FUN_0040cd70
+// 0043b192: CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
 // 0043b197: MOV dword ptr [ESP + 0x1d0],EAX
 //   XREF to: Stack[-0x14] (WRITE)

@@ -29,7 +29,8 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_005bb830(CStranger *this_pt
   if (iVar2 == 0) {
     return;
   }
-  iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0();
+  iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0
+                    (&(this_ptr->base_hero).base_character.model.motion_controller);
   bVar1 = false;
   switch(*(undefined4 *)(iVar2 + 0x24)) {
   case 7:

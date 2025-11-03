@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850(CDemonGlobe * this_ptr, CVector3i * vertex_position, CVector3i * surface_normal)
 // Cross-references:
-//   core_set.cpp_CDemonSet_FUN_0056db80 (0056db80) at 0056dc5f [UNCONDITIONAL_CALL]
+//   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80 (0056db80) at 0056dc5f [UNCONDITIONAL_CALL]
 // Globals:
 //   float FLOAT_0065c8c8 = 0.00390625
 //   float FLOAT_0065c8cc = 0.00001525879

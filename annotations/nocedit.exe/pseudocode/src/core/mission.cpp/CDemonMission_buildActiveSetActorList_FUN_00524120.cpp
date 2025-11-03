@@ -14,7 +14,7 @@
 //   TerminatedCString s_CDemonMission_buildActiv_00639228
 //   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 //   CDemonSet g_CDemonSetInstance
@@ -22,8 +22,8 @@
 //   undefined4 g_CDemonSetInstance.actor_list_data[0]
 // Function calls:
 //   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-//   core_actor.cpp_FUN_0040cd10
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_actor.cpp_randomChance_FUN_0040cd10
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_set.cpp_CDemonSet_FUN_00570fc0
 //   core_setcolid.cpp_CDemonSet_FUN_005743e0
@@ -54,11 +54,11 @@ core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(CDemonMissio
         if (this_ptr_00->create_event[0] != '\0') {
           iVar2 = crt_string_c_stricmp_FUN_005fe7f0(this_ptr_00->create_event,"none");
           if ((iVar2 != 0) &&
-             (iVar2 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+             (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                 (g_CEventListPtr,this_ptr_00->create_event), iVar2 == 0))
           goto LAB_0052422f;
         }
-        iVar2 = core_actor_cpp_FUN_0040cd10();
+        iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(this_ptr_00->create_prob);
         if (iVar2 == 0) {
           this_ptr_00->was_created = 2;
         }
@@ -82,7 +82,7 @@ LAB_0052422f:
         if (this_ptr_00->was_created == 1) goto LAB_005241b1;
       }
     }
-    this_ptr_00 = (this_ptr_00->metadata).next_actor;
+    this_ptr_00 = this_ptr_00->next_actor;
   } while( true );
 }
 
@@ -151,7 +151,7 @@ LAB_0052422f:
 //   XREF to: 00524202 (CONDITIONAL_JUMP)
 // 00524197: PUSH dword ptr [EBX + 0x74]
 //   Label: LAB_00524197
-// 0052419a: CALL core_actor.cpp_FUN_0040cd10
+// 0052419a: CALL core_actor.cpp_randomChance_FUN_0040cd10
 //   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
 // 0052419f: ADD ESP,0x4
 // 005241a2: TEST EAX,EAX
@@ -205,7 +205,7 @@ LAB_0052422f:
 //   XREF to: 006793d0 (READ)
 // 0052421e: PUSH ESI
 //   XREF to: 02d05310 (DATA)
-// 0052421f: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 0052421f: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 00524224: ADD ESP,0x8
 // 00524227: TEST EAX,EAX

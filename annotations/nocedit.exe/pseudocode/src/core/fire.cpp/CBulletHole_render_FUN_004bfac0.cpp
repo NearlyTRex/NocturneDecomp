@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_fire.cpp_CBulletHole_render_FUN_004bfac0(CBulletHole * this_ptr)
 // Cross-references:
-//   core_fire.cpp_CFireEffect_FUN_004c74a0 (004c74a0) at 004c75b1 [UNCONDITIONAL_CALL]
+//   core_fire.cpp_CFireEffect_renderDecals_FUN_004c74a0 (004c74a0) at 004c75b1 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireEffect_render_FUN_004c7180 (004c7180) at 004c7287 [UNCONDITIONAL_CALL]
 // Globals:
 //   float FLOAT_0065dca8 = 256
@@ -36,10 +36,10 @@
 //   SMRGLPrimitiveQuadIndex g_BillboardPrimitive
 //   CDemonSet g_CDemonSetInstance
 // Function calls:
-//   core_actor.cpp_CDemonActor_FUN_00408e80
 //   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
-//   core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+//   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
+//   core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 //   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
 //   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
@@ -56,11 +56,12 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr
   int iVar3;
   BADSPACEBASE *in_ESP;
   CVector3i *rotation;
-  CVector3i local_38;
+  CVector3i local_48;
+  undefined4 local_3c;
+  undefined1 local_38 [12];
   int local_2c;
   int local_28;
-  float local_18;
-  float local_14;
+  CVector3f local_1c;
   
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
@@ -72,32 +73,41 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr
     rotation = (CVector3i *)&this_ptr->transformed_pos;
   }
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)&this_ptr->surface_normal,rotation);
+            (g_CDemonRendererPtr,(CVector3i *)&this_ptr->euler_angles,rotation);
   iVar3 = (this_ptr->texture_index & 1U) * 0x800000;
+  local_48.x = 0;
   g_RenderVertexBuffer[0].u = (float)(iVar3 + 0x80000);
   iVar2 = (this_ptr->texture_index & 2U) * 0x400000;
   g_RenderVertexBuffer[1].u = (float)(iVar3 + 0x780000);
   g_RenderVertexBuffer[0].v = (float)(iVar2 + 0x780000);
   g_RenderVertexBuffer[2].v = (float)(iVar2 + 0x80000);
-  local_38.x = (int)ROUND(FLOAT_0065dca8 * -0.17);
-  local_38.y = (int)ROUND(FLOAT_0065dca8 * -0.17);
-  local_38.z = (int)ROUND(FLOAT_0065dca8 * 0.0);
+  local_38._0_4_ = (undefined4)ROUND(FLOAT_0065dca8 * -0.17);
+  local_38._4_4_ = (undefined4)ROUND(FLOAT_0065dca8 * -0.17);
+  local_38._8_4_ = (undefined4)ROUND(FLOAT_0065dca8 * 0.0);
   g_RenderVertexBuffer[1].v = g_RenderVertexBuffer[0].v;
   g_RenderVertexBuffer[2].u = g_RenderVertexBuffer[1].u;
   g_RenderVertexBuffer[3].u = g_RenderVertexBuffer[0].u;
   g_RenderVertexBuffer[3].v = g_RenderVertexBuffer[2].v;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_38);
+            (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,(CVector3i *)local_38);
+  local_48.x = -0x41d1eb85;
+  local_48.y = 0;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,
              (CVector3i *)&stack0xffffff9c);
+  local_48.x = 0x3e2e147b;
+  local_48.y = 0x3e2e147b;
+  local_48.z = 0;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,
              (CVector3i *)&stack0xfffffff4);
-  local_14 = (float)(int)ROUND(FLOAT_0065dca8 * -0.17);
+  local_48.y = -0x41d1eb85;
+  local_3c = 0;
+  local_48.z = 0x3e2e147b;
+  local_1c.z = (float)(int)ROUND(FLOAT_0065dca8 * -0.17);
   fVar1 = FLOAT_0065dca8 * 0.17;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)&local_14);
+            (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)&local_1c.z);
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     g_RenderVertexBuffer[0].color = 0xffff;
     g_RenderVertexBuffer[0].fog = 9.18341e-41;
@@ -113,11 +123,16 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr
     g_RenderVertexBuffer[0].light = 9.18341e-41;
   }
   else {
-    core_actor_cpp_CDemonActor_FUN_00408e80(this_ptr->actor_ptr);
-    local_38.z = (int)ROUND(local_18 * FLOAT_0065dcac);
-    local_2c = (int)ROUND(local_14 * FLOAT_0065dcac);
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+              (this_ptr->actor_ptr,&local_1c,&this_ptr->actor_local_space);
+    local_48.x = (int)ROUND((this_ptr->position).x * FLOAT_0065dca8);
+    local_48.y = (int)ROUND((this_ptr->position).y * FLOAT_0065dca8);
+    local_48.z = (int)ROUND((this_ptr->position).z * FLOAT_0065dca8);
+    local_38._8_4_ = (undefined4)ROUND(local_1c.y * FLOAT_0065dcac);
+    local_2c = (int)ROUND(local_1c.z * FLOAT_0065dcac);
     local_28 = (int)ROUND((float)(int)ROUND(fVar1) * FLOAT_0065dcac);
-    core_set_cpp_CDemonSet_CallLightVertexColor_FUN_0056e110(g_CDemonSetPtr);
+    core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
+              (g_CDemonSetPtr,&local_48,(CVector3i *)(local_38 + 8),0,4);
   }
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
             (g_CDemonRendererPtr,&g_BillboardPrimitive.base);
@@ -382,7 +397,7 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr
 // 004bfd5f: PUSH EAX
 // 004bfd60: MOV EDX,dword ptr [ESI + 0x10]
 // 004bfd63: PUSH EDX
-// 004bfd64: CALL core_actor.cpp_CDemonActor_FUN_00408e80
+// 004bfd64: CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 004bfd69: ADD ESP,0xc
 // 004bfd6c: LEA EBX,[ESP + 0xc]
@@ -424,7 +439,7 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr
 //   XREF to: 03114278 (PARAM)
 // 004bfdd1: PUSH ECX
 //   XREF to: 03114278 (DATA)
-// 004bfdd2: CALL core_set.cpp_CDemonSet_CallLightVertexColor_FUN_0056e110
+// 004bfdd2: CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 //   XREF to: 0056e110 (UNCONDITIONAL_CALL)
 // 004bfdd7: ADD ESP,0x14
 // 004bfdda: JMP 0x004bfd02

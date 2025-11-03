@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_stranger.cpp_CStranger_FUN_005bfb60 (005bfb60) at 005c003b [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00653944
+//   double DOUBLE_00653944 = 0.000100000000000000
 //   undefined4 DAT_00665998
 //   undefined4 DAT_03f6bad8
 //   undefined4 DAT_03f6badc
@@ -15,9 +15,9 @@
 // Function calls:
 //   core_motion.cpp_CMotionController_FUN_0052e3a0
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059f750
-//   core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
-//   core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_xform.cpp_multiplyQuaternion_FUN_005f7640
 //   core_xform.cpp_quaternionFromAngleX_FUN_005f79b0
 //   core_xform.cpp_quaternionFromAngleY_FUN_005f79f0
@@ -26,19 +26,19 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_hero_stranger.cpp_CStranger_FUN_005c02b0(CStranger* param_1,
    undefined4 param_2) */
 
 void core_stranger_cpp_CStranger_FUN_005c02b0(void)
 
 {
+  CMotionList *this_ptr;
   int iVar1;
   BADSPACEBASE *in_ESP;
   int unaff_ESI;
   undefined4 *puVar2;
   undefined4 *puVar3;
+  CDeformableModelInstance *unaff_EDI;
   float *pfVar4;
   float *pfVar5;
   byte bVar6;
@@ -49,12 +49,12 @@ void core_stranger_cpp_CStranger_FUN_005c02b0(void)
   float afStackY_19a8 [67];
   int aiStackY_189c [10];
   float afStackY_1874 [31];
-  int aiStackY_17f8 [398];
+  CDeformableModelInstance *apCStackY_17f8 [398];
   code *apcStackY_11c0 [3];
   float afStackY_11b4 [67];
   int aiStackY_10a8 [10];
   float afStackY_1080 [31];
-  int aiStackY_1004 [904];
+  CDeformableModelInstance *apCStackY_1004 [904];
   float in_stack_fffffe20;
   float in_stack_fffffe24;
   code *apcStack_1d4 [2];
@@ -101,7 +101,8 @@ void core_stranger_cpp_CStranger_FUN_005c02b0(void)
   undefined4 local_24;
   int local_20;
   float local_1c;
-  int local_18 [2];
+  int local_18;
+  CDeformableModelInstance *pCStack_14;
   
   bVar6 = 0;
   if (in_stack_00000008 == 0) {
@@ -115,7 +116,7 @@ void core_stranger_cpp_CStranger_FUN_005c02b0(void)
               ((uint)bVar6 * -2 + 1) * 4) =
          (afStack_114 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
     core_xform_cpp_quaternionFromAngleZ_FUN_005f7a30((CQuaternion4f *)0x3fc90fdb,in_stack_fffffe24);
-    local_18[0] = in_stack_00000004 + 0x1fc08;
+    local_18 = in_stack_00000004 + 0x1fc08;
     puVar2 = (undefined4 *)&stack0xfffffe5c;
   }
   else {
@@ -129,7 +130,7 @@ void core_stranger_cpp_CStranger_FUN_005c02b0(void)
               ((uint)bVar6 * -2 + 1) * 4) =
          (apcStack_1d4 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
     core_xform_cpp_quaternionFromAngleZ_FUN_005f7a30((CQuaternion4f *)0xbfc90fdb,in_stack_fffffe24);
-    local_18[0] = in_stack_00000004 + 0x1fbe8;
+    local_18 = in_stack_00000004 + 0x1fbe8;
     puVar2 = auStack_e4;
   }
   puVar3 = puVar2 + (uint)bVar6 * -2 + 1;
@@ -140,16 +141,16 @@ void core_stranger_cpp_CStranger_FUN_005c02b0(void)
   *(undefined4 *)
    ((int)(&stack0xfffffe50 + (uint)bVar6 * -8 + (uint)bVar6 * -8) + ((uint)bVar6 * -2 + 1) * 4) =
        (puVar3 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
-  if (0.0 < (1.0 - (1.0 - *(float *)(local_18[0] + 0x14)) * *(float *)(in_stack_00000004 + 0x2a90))
-            * *(float *)(in_stack_00000004 + 0x2a90)) {
-    local_18[1] = in_stack_00000004 + 0x158;
-    core_skeleton_cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820();
-    core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460();
+  if (0.0 < (1.0 - (1.0 - *(float *)(local_18 + 0x14)) * *(float *)(in_stack_00000004 + 0x2a90)) *
+            *(float *)(in_stack_00000004 + 0x2a90)) {
+    pCStack_14 = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);
+    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(pCStack_14);
+    core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr);
     apcStack_1d4[0] = *(code **)(in_stack_00000004 + 0x2a90);
     iVar1 = core_motion_cpp_CMotionController_FUN_0052e3a0();
     apcStack_1d4[1] = core_skeleton_cpp_FUN_0059ddb0;
     local_20 = iVar1;
-    core_skeleton_cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50();
+    core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50(unaff_EDI);
     apcStack_1d4[1] = (code *)0x5c040c;
     core_xform_cpp_quaternionFromAngleY_FUN_005f79f0
               (*(CQuaternion4f **)(unaff_ESI + 0xc),in_stack_fffffe38);
@@ -223,16 +224,16 @@ void core_stranger_cpp_CStranger_FUN_005c02b0(void)
     (afStack_114 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1] =
          (afStack_40 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_FUN_0059f750();
-    if ((float)_DAT_00653944 < *(float *)(in_stack_00000004 + 0x1fc8c)) {
+    if ((float)DOUBLE_00653944 < *(float *)(in_stack_00000004 + 0x1fc8c)) {
       core_xform_cpp_quaternionFromAngleX_FUN_005f79b0
                 ((CQuaternion4f *)0x3fc90fdb,in_stack_fffffe5c);
       pCVar9 = (CQuaternion4f *)(auStack_c8 + 0xc);
       auStack_c8._8_4_ = local_1c;
-      aiStack_b8[(uint)bVar6 * -2 + -1] = local_18[(uint)bVar6 * -2];
+      aiStack_b8[(uint)bVar6 * -2 + -1] = (&local_18)[(uint)bVar6 * -2];
       aiStack_b8[(uint)bVar6 * -2 + (uint)bVar6 * -2] =
-           local_18[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+           (int)(&pCStack_14)[(uint)bVar6 * -2 + (uint)bVar6 * -2];
       (aiStack_b8 + (uint)bVar6 * -2 + (uint)bVar6 * -2)[(uint)bVar6 * -2 + 1] =
-           (local_18 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
+           (int)(&pCStack_14 + (uint)bVar6 * -2 + (uint)bVar6 * -2)[(uint)bVar6 * -2 + 1];
       core_xform_cpp_multiplyQuaternion_FUN_005f7640
                 ((CQuaternion4f *)(auStack_120 + 4),pCVar9,in_stack_fffffe60);
       local_cc = uStack_98;
@@ -351,7 +352,7 @@ void core_stranger_cpp_CStranger_FUN_005c02b0(void)
 // 005c0389: PUSH EAX
 // 005c038a: MOV dword ptr [ESP + 0x1d0],EAX
 //   XREF to: Stack[-0x1c] (WRITE)
-// 005c0391: CALL core_skeleton.cpp_CDeformableModelInstance_GetModelPtrAndSomething_FUN_005a0820
+// 005c0391: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005c0396: ADD ESP,0x4
 // 005c0399: PUSH EAX
@@ -384,7 +385,7 @@ void core_stranger_cpp_CStranger_FUN_005c02b0(void)
 //   XREF to: Stack[-0x34] (READ)
 // 005c03e8: PUSH ESI
 // 005c03e9: PUSH EDI
-// 005c03ea: CALL core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+// 005c03ea: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 005c03ef: ADD ESP,0x18
 // 005c03f2: MOV EAX,dword ptr [ESP + 0x1c0]

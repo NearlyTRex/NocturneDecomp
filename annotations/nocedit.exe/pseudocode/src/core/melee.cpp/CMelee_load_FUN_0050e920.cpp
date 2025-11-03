@@ -67,7 +67,7 @@ void core_melee_cpp_CMelee_load_FUN_0050e920(void)
             ((char **)(in_stack_00000004[1].base_actor.create_event + 0x14),
              "swingHitCharacterSound");
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)&in_stack_00000004[1].base_actor.field_236.y,"hitOtherSound");
+            ((char **)&in_stack_00000004[1].base_actor.field13_0xec.y,"hitOtherSound");
   return;
 }
 

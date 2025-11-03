@@ -9,7 +9,7 @@
 // Globals:
 //   TerminatedCString s_CHASE_2_00658a47
 // Function calls:
-//   core_actor.cpp_FUN_0040cc70
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
@@ -21,19 +21,23 @@
 void core_zombie_cpp_CZombie_FUN_005fca10(void)
 
 {
+  CMotionList *this_ptr;
   int iVar1;
+  CMotionController *this_ptr_00;
+  int in_stack_00000004;
   int in_stack_0000000c;
   
-  core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
-  iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0();
+  this_ptr_00 = (CMotionController *)(in_stack_00000004 + 0x158);
+  this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(this_ptr_00);
+  iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr);
   if (iVar1 != 0x16) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr_00);
     return;
   }
   if (*(int *)(in_stack_0000000c + 0xbf44) == 0) {
-    core_actor_cpp_FUN_0040cc70();
+    core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr_00);
   return;
 }
 
@@ -77,7 +81,7 @@ void core_zombie_cpp_CZombie_FUN_005fca10(void)
 //   Label: LAB_005fca56
 // 005fca58: PUSH 0x2
 // 005fca5a: PUSH EDX
-// 005fca5b: CALL core_actor.cpp_FUN_0040cc70
+// 005fca5b: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 005fca60: ADD ESP,0x8
 // 005fca63: ADD EAX,0x15

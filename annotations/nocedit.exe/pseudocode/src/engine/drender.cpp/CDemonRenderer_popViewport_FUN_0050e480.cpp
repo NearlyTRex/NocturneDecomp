@@ -8,7 +8,7 @@
 //   core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80 (0044cb80) at 0044cc17 [UNCONDITIONAL_CALL]
 //   core_dlight.cpp_CDemonLight_endScene_FUN_00472d30 (00472d30) at 00472db2 [UNCONDITIONAL_CALL]
 //   core_level.cpp_CLevelLoader_update_FUN_00504160 (00504160) at 00504599 [UNCONDITIONAL_CALL]
-//   core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0 (0052bcb0) at 0052c344 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052c344 [UNCONDITIONAL_CALL]
 //   core_setdir.cpp_CZThumb_popRenderingContext_FUN_00574ef0 (00574ef0) at 00574ef7 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310 (00580310) at 005804fd [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 (0057ce80) at 0057d21e [UNCONDITIONAL_CALL]

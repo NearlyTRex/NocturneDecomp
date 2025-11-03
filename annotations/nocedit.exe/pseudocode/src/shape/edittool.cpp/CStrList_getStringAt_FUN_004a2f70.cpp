@@ -8,7 +8,7 @@
 //   core_cloth.cpp_FUN_0043c430 (0043c430) at 0043c523 [UNCONDITIONAL_CALL]
 //   core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 (004bd750) at 004bd7a6 [UNCONDITIONAL_CALL]
 //   core_mission.cpp_FUN_00524c20 (00524c20) at 00524cb6 [UNCONDITIONAL_CALL]
-//   core_morph.cpp_Select1stModel_Select2ndModel_Loading_FUN_0052bcb0 (0052bcb0) at 0052c9f3 [UNCONDITIONAL_CALL]
+//   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052c9f3 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_DeleteActors_FUN_0053df90 (0053df90) at 0053e089 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053b510 (0053b510) at 0053b907 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053b9f0 (0053b9f0) at 0053ba75 [UNCONDITIONAL_CALL]

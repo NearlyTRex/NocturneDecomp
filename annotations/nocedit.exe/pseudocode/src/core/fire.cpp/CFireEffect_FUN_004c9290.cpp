@@ -7,7 +7,7 @@
 //   core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0 (005eeaf0) at 005eebb0 [UNCONDITIONAL_CALL]
 // Globals:
 //   CPopcorn* g_CFireEffectPopcornsEnd
-//   CRainDrop[256] g_CFireEffectRainDrops
+//   CRainDrop[256] g_RainDropPool
 //   undefined4 DAT_02d76edc
 //   undefined4 DAT_02d76ef8
 
@@ -20,11 +20,11 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c9290(CFireEffect *this_ptr)
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
   
-  (*(g_CFireEffectRainDrops[(int)g_CFireEffectPopcornsEnd].base.vtable)->setup)
-            (&g_CFireEffectRainDrops[(int)g_CFireEffectPopcornsEnd].base,in_stack_00000008,
-             in_stack_0000000c);
+  (*(g_RainDropPool[(int)g_CFireEffectPopcornsEnd].base.vtable)->setup)
+            (&g_RainDropPool[(int)g_CFireEffectPopcornsEnd].base,in_stack_00000008,in_stack_0000000c
+            );
   pCVar1 = (CPopcorn *)((int)&(g_CFireEffectPopcornsEnd->base).position.x + 1);
-  g_CFireEffectRainDrops[(int)g_CFireEffectPopcornsEnd].base.lifetime_remaining = 0.25;
+  g_RainDropPool[(int)g_CFireEffectPopcornsEnd].base.lifetime_remaining = 0.25;
   if (0xff < (int)pCVar1) {
     pCVar1 = (CPopcorn *)0x0;
   }

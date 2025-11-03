@@ -1,56 +1,50 @@
 // Name: core_motion.cpp_CMotionController_FUN_0052dbc0
 // Address: 0052dbc0
 // Address Range: [[0052dbc0, 0052dc76]]
-// Convention: unknown
-// Signature: undefined core_motion.cpp_CMotionController_FUN_0052dbc0()
+// Convention: __cdecl
+// Signature: void core_motion.cpp_CMotionController_FUN_0052dbc0(CMotionController * this_ptr)
 // Cross-references:
 //   core_motion.cpp_CMotionController_FUN_0052d950 (0052d950) at 0052da28 [UNCONDITIONAL_CALL]
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610 (0052d610) at 0052d8d1 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0063aa93
+//   float FLOAT_0063aa93 = -1
 // Function calls:
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_motion.cpp_CMotionController_FUN_0052dde0
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 core_motion.cpp_CMotionController_FUN_0052dbc0(undefined4 param_1,
-   undefined4 param_2) */
-
-void core_motion_cpp_CMotionController_FUN_0052dbc0(void)
+void __cdecl core_motion_cpp_CMotionController_FUN_0052dbc0(CMotionController *this_ptr)
 
 {
   float fVar1;
-  undefined4 uVar2;
-  int iVar3;
-  int in_stack_00000004;
+  int iVar2;
   int in_stack_00000008;
-  undefined4 local_18;
+  float local_18;
   
   local_18 = *(float *)(in_stack_00000008 + 0xc);
-  if (local_18 == _DAT_0063aa93) {
-    iVar3 = (**(code **)(*(int *)(in_stack_00000004 + 0x50) + 4))();
-    local_18 = (float)iVar3;
+  if (local_18 == FLOAT_0063aa93) {
+    iVar2 = (*(code *)this_ptr->vtable->findPatchToFrame)();
+    local_18 = (float)iVar2;
   }
   if (*(float *)(in_stack_00000008 + 0x10) <= 0.0) {
-    core_motion_cpp_CMotionController_FUN_0052dde0();
+    core_motion_cpp_CMotionController_FUN_0052dde0(this_ptr);
     if (*(int *)(in_stack_00000008 + 0x14) != 0) {
-      iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0();
-      *(undefined4 *)(in_stack_00000004 + 0x28) = *(undefined4 *)(iVar3 + 0x24);
+      iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
+      this_ptr->state_index = *(int *)(iVar2 + 0x24);
       return;
     }
   }
   else {
-    *(undefined4 *)(in_stack_00000004 + 0x18) = *(undefined4 *)(in_stack_00000008 + 8);
-    *(float *)(in_stack_00000004 + 0x1c) = local_18;
-    uVar2 = *(undefined4 *)(in_stack_00000008 + 4);
-    *(undefined4 *)(in_stack_00000004 + 0x14) = 0x3a83126f;
-    *(undefined4 *)(in_stack_00000004 + 0xc) = uVar2;
+    this_ptr->tween_target_motion = *(int *)(in_stack_00000008 + 8);
+    this_ptr->tween_target_frame = local_18;
+    iVar2 = *(int *)(in_stack_00000008 + 4);
+    this_ptr->tween_progress = 0.001;
+    this_ptr->tween_type = iVar2;
     fVar1 = *(float *)(in_stack_00000008 + 0x10);
-    *(undefined4 *)(in_stack_00000004 + 0x20) = 0;
-    *(float *)(in_stack_00000004 + 0x10) = 1.0 / fVar1;
-    *(undefined4 *)(in_stack_00000004 + 0x24) = *(undefined4 *)(in_stack_00000008 + 0x14);
+    this_ptr->tween_direction = 0;
+    this_ptr->tween_speed = 1.0 / fVar1;
+    this_ptr->tween_set_new_state = *(int *)(in_stack_00000008 + 0x14);
   }
   return;
 }

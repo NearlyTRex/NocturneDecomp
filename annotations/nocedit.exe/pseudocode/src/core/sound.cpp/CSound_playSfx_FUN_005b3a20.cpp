@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_sound.cpp_CSound_playSfx_FUN_005b3a20(CSound * this_ptr, int n, char * sound_name)
 // Cross-references:
-//   core_event.cpp_LargeEventHandler_FUN_004aacc0 (004aacc0) at 004ac5e0 [UNCONDITIONAL_CALL]
+//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ac5e0 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (004ddaf0) at 004df4a0 [UNCONDITIONAL_CALL]
 //   core_game.cpp_FUN_004dd9d0 (004dd9d0) at 004dda6b [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053eb40 (0053eb40) at 0053eb7d [UNCONDITIONAL_CALL]

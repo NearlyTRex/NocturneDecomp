@@ -22,7 +22,7 @@
 //   core_script.cpp_FUN_0055a540 (0055a540) at 0055a5e3 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_005606e0 (005606e0) at 00560706 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_00562920 (00562920) at 00563522 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_DefinitelyRelatedToEditorMode_FUN_005968b0 (005968b0) at 005988af [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005988af [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00589530 (00589530) at 00589565 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_005896b0 (005896b0) at 005896e5 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058b8e0 (0058b8e0) at 0058b968 [UNCONDITIONAL_CALL]

@@ -38,7 +38,7 @@ void core_bride_cpp_CBride_load_FUN_00424560(void)
     return;
   }
   core_actor_cpp_serializeMotionState_FUN_0040b9f0
-            (&(in_stack_00000004->base_character).model,"state");
+            (&(in_stack_00000004->base_character).model.motion_controller,"state");
   return;
 }
 

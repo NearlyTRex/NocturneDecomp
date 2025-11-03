@@ -20,7 +20,7 @@
 //   CEventList* g_CEventListPtr = 02d05310
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   CNetGame* g_CNetGameInstance = 02f7c740
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   CHero*[4] g_HeroActors
 //   int g_LocalHeroIndex
 //   CDemonMission g_CDemonMissionInstance
@@ -33,7 +33,7 @@
 // Function calls:
 //   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
 //   core_actor.cpp_isOfClassHash_FUN_0040c760
-//   core_event.cpp_FUN_004b0b80
+//   core_event.cpp_CEventList_FUN_004b0b80
 //   core_mission.cpp_CDemonMission_FUN_00524030
 //   core_script.cpp_CheckingActorVariableName_FUN_00559220
 //   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -78,7 +78,7 @@ CHero * core_script_cpp_GetDemonActor_FUN_005594e0
       return (CHero *)0x0;
     }
     DAT_0310f4ac = 1;
-    actor_ptr = (CHero *)core_event_cpp_FUN_004b0b80();
+    actor_ptr = (CHero *)core_event_cpp_CEventList_FUN_004b0b80(g_CEventListPtr);
     if (actor_ptr == (CHero *)0x0) {
       crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310eca0,"Actor variable %s not defined, or doesn't reference an existing actor",param_5);
       return (CHero *)0x0;
@@ -196,7 +196,7 @@ CHero * core_script_cpp_GetDemonActor_FUN_005594e0
 //   XREF to: 02d05310 (DATA)
 // 0055954c: MOV dword ptr [0x0310f4ac],EBP
 //   XREF to: 0310f4ac (WRITE)
-// 00559552: CALL core_event.cpp_FUN_004b0b80
+// 00559552: CALL core_event.cpp_CEventList_FUN_004b0b80
 //   XREF to: 004b0b80 (UNCONDITIONAL_CALL)
 // 00559557: ADD ESP,0x8
 // 0055955a: MOV ESI,EAX

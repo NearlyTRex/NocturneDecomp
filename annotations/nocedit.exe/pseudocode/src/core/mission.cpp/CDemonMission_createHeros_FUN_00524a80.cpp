@@ -95,7 +95,7 @@ core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,
   while (actor_ptr != (CDemonActor *)0x0) {
     iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CHeroPlaceholder");
     if (iVar4 == 0) {
-      actor_ptr = (actor_ptr->metadata).next_actor;
+      actor_ptr = actor_ptr->next_actor;
     }
     else {
       core_mission_cpp_CDemonMission_FUN_00523f20(this_ptr);

@@ -34,7 +34,7 @@ CSimBox * __cdecl core_simbox_cpp_CSimBox_ctor_FUN_00588d40(CSimBox *this_ptr)
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
                      ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pCVar4 = core_box_cpp_CBox_ctor_FUN_0041dc50((CBox *)(pCVar3[1].model_name + 0xc));
-  pCVar4[-1].external_force.z = (float)&g_CSimBoxVTable;
+  pCVar4[-1].linear_velocity_local.z = (float)&g_CSimBoxVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             ((CKeyFramedModelInstance *)&pCVar4[-1].linear_velocity_temp,"question.kfm");
   pcVar5 = "none";

@@ -9,12 +9,11 @@
 //   shape_meshlod.cpp_FUN_0051a6b0 (0051a6b0) at 0051a8ac [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_NeighboringFacesEdgesCheck_FUN_00518910 (00518910) at 00518de7 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00637919
-//   undefined4 DAT_0063791d
+//   float FLOAT_00637919 = 3
+//   float FLOAT_0063791d = 0.3333333
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 shape_meshlod.cpp_FUN_00518870(undefined4 param_1, undefined4 param_2,
    undefined4 param_3) */
 
@@ -48,9 +47,9 @@ float * shape_meshlod_cpp_FUN_00518870(void)
   fVar6 = *(float *)(iVar10 + 8 + iVar7);
   *in_stack_00000008 =
        (*(float *)(iVar11 + iVar7) + *(float *)(iVar9 + iVar7) + *(float *)(iVar10 + iVar7)) /
-       _DAT_00637919;
-  fVar8 = _DAT_0063791d;
-  in_stack_00000008[1] = (fVar1 + fVar2 + fVar5) * _DAT_0063791d;
+       FLOAT_00637919;
+  fVar8 = FLOAT_0063791d;
+  in_stack_00000008[1] = (fVar1 + fVar2 + fVar5) * FLOAT_0063791d;
   in_stack_00000008[2] = fVar8 * (fVar3 + fVar4 + fVar6);
   return in_stack_00000008;
 }

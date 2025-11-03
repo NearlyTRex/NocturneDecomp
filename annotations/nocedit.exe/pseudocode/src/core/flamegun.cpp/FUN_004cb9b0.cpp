@@ -43,7 +43,7 @@ void core_flamegun_cpp_FUN_004cb9b0(void)
   else {
     iVar3 = core_sound_cpp_FUN_005b3b80();
     if (iVar3 == 0) {
-      uVar4 = (*((pCStack00000004->base_actor).metadata.vtable)->playSound)
+      uVar4 = (*((pCStack00000004->base_actor).vtable)->playSound)
                         (&pCStack00000004->base_actor,"fl-throw.wav");
       *(undefined4 *)(pCStack00000004[1].base_actor.actor_name + 4) = uVar4;
     }

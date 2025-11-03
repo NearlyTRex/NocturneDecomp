@@ -69,12 +69,13 @@ void core_actor_cpp_CActorProperty_FUN_0040ea50(void)
 {
   char cVar1;
   float *pfVar2;
-  int iVar3;
-  int *piVar4;
-  undefined4 *puVar5;
-  char *pcVar6;
+  CMotionList *pCVar3;
+  int iVar4;
+  int *piVar5;
+  undefined4 *puVar6;
   char *pcVar7;
-  int iVar8;
+  char *pcVar8;
+  int iVar9;
   undefined4 *in_stack_00000004;
   char *in_stack_0000000c;
   
@@ -96,205 +97,207 @@ void core_actor_cpp_CActorProperty_FUN_0040ea50(void)
   case 8:
   case 0xb:
   case 0xc:
-    pcVar7 = (char *)in_stack_00000004[0x1a];
+    pcVar8 = (char *)in_stack_00000004[0x1a];
     do {
-      cVar1 = *pcVar7;
+      cVar1 = *pcVar8;
       *in_stack_0000000c = cVar1;
       if (cVar1 == '\0') {
         return;
       }
-      cVar1 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
+      cVar1 = pcVar8[1];
+      pcVar8 = pcVar8 + 2;
       in_stack_0000000c[1] = cVar1;
       in_stack_0000000c = in_stack_0000000c + 2;
     } while (cVar1 != '\0');
     return;
   case 4:
     if (*(int *)in_stack_00000004[0x1a] == 0) {
-      pcVar7 = "FALSE";
+      pcVar8 = "FALSE";
     }
     else {
-      pcVar7 = "TRUE";
+      pcVar8 = "TRUE";
     }
     do {
-      cVar1 = *pcVar7;
+      cVar1 = *pcVar8;
       *in_stack_0000000c = cVar1;
       if (cVar1 == '\0') {
         return;
       }
-      cVar1 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
+      cVar1 = pcVar8[1];
+      pcVar8 = pcVar8 + 2;
       in_stack_0000000c[1] = cVar1;
       in_stack_0000000c = in_stack_0000000c + 2;
     } while (cVar1 != '\0');
     return;
   case 5:
-    pcVar7 = *(char **)in_stack_00000004[0x1a];
-    if (pcVar7 != (char *)0x0) {
+    pcVar8 = *(char **)in_stack_00000004[0x1a];
+    if (pcVar8 != (char *)0x0) {
       do {
-        cVar1 = *pcVar7;
+        cVar1 = *pcVar8;
         *in_stack_0000000c = cVar1;
         if (cVar1 == '\0') {
           return;
         }
-        cVar1 = pcVar7[1];
-        pcVar7 = pcVar7 + 2;
+        cVar1 = pcVar8[1];
+        pcVar8 = pcVar8 + 2;
         in_stack_0000000c[1] = cVar1;
         in_stack_0000000c = in_stack_0000000c + 2;
       } while (cVar1 != '\0');
       return;
     }
-    pcVar7 = "(none)";
+    pcVar8 = "(none)";
     do {
-      cVar1 = *pcVar7;
+      cVar1 = *pcVar8;
       *in_stack_0000000c = cVar1;
       if (cVar1 == '\0') {
         return;
       }
-      cVar1 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
+      cVar1 = pcVar8[1];
+      pcVar8 = pcVar8 + 2;
       in_stack_0000000c[1] = cVar1;
       in_stack_0000000c = in_stack_0000000c + 2;
     } while (cVar1 != '\0');
     return;
   case 6:
-    pcVar7 = (char *)(in_stack_00000004[0x1a] + 0x78);
+    pcVar8 = (char *)(in_stack_00000004[0x1a] + 0x78);
     do {
-      cVar1 = *pcVar7;
+      cVar1 = *pcVar8;
       *in_stack_0000000c = cVar1;
       if (cVar1 == '\0') {
         return;
       }
-      cVar1 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
+      cVar1 = pcVar8[1];
+      pcVar8 = pcVar8 + 2;
       in_stack_0000000c[1] = cVar1;
       in_stack_0000000c = in_stack_0000000c + 2;
     } while (cVar1 != '\0');
     return;
   case 7:
-    pcVar7 = (char *)(in_stack_00000004[0x1a] + 0x2260);
+    pcVar8 = (char *)(in_stack_00000004[0x1a] + 0x2260);
     do {
-      cVar1 = *pcVar7;
+      cVar1 = *pcVar8;
       *in_stack_0000000c = cVar1;
       if (cVar1 == '\0') {
         return;
       }
-      cVar1 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
+      cVar1 = pcVar8[1];
+      pcVar8 = pcVar8 + 2;
       in_stack_0000000c[1] = cVar1;
       in_stack_0000000c = in_stack_0000000c + 2;
     } while (cVar1 != '\0');
     return;
   case 9:
-    pcVar7 = core_ground_cpp_getGroundTypeName_FUN_004eed80(*(int *)in_stack_00000004[0x1a]);
+    pcVar8 = core_ground_cpp_getGroundTypeName_FUN_004eed80(*(int *)in_stack_00000004[0x1a]);
     do {
-      cVar1 = *pcVar7;
+      cVar1 = *pcVar8;
       *in_stack_0000000c = cVar1;
       if (cVar1 == '\0') {
         return;
       }
-      cVar1 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
+      cVar1 = pcVar8[1];
+      pcVar8 = pcVar8 + 2;
       in_stack_0000000c[1] = cVar1;
       in_stack_0000000c = in_stack_0000000c + 2;
     } while (cVar1 != '\0');
     return;
   case 10:
-    pcVar7 = (char *)in_stack_00000004[0x1a];
-    if (*pcVar7 == '\0') {
-      pcVar7 = "(none)";
+    pcVar8 = (char *)in_stack_00000004[0x1a];
+    if (*pcVar8 == '\0') {
+      pcVar8 = "(none)";
     }
     do {
-      cVar1 = *pcVar7;
+      cVar1 = *pcVar8;
       *in_stack_0000000c = cVar1;
       if (cVar1 == '\0') {
         return;
       }
-      cVar1 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
+      cVar1 = pcVar8[1];
+      pcVar8 = pcVar8 + 2;
       in_stack_0000000c[1] = cVar1;
       in_stack_0000000c = in_stack_0000000c + 2;
     } while (cVar1 != '\0');
     return;
   case 0xd:
-    iVar8 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
-    iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    pCVar3 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                       ((CMotionController *)in_stack_00000004[0x1a]);
+    iVar9 = core_motion_cpp_CMotionController_FUN_0052dab0
+                      ((CMotionController *)in_stack_00000004[0x1a]);
     crt_stdio_c_sprintf_FUN_005fdbd0
-              (in_stack_0000000c,"%s (%s)",iVar3,iVar8 + 4 + *(int *)(iVar3 + 0x24) * 0x1e);
+              (in_stack_0000000c,"%s (%s)",iVar9,pCVar3->state_names + *(int *)(iVar9 + 0x24));
     return;
   case 0xe:
     if ((int)in_stack_00000004[0x17] < *(int *)in_stack_00000004[0x1a]) {
-      piVar4 = (int *)in_stack_00000004[0x1a] + in_stack_00000004[0x17] * 10 + 1;
+      piVar5 = (int *)in_stack_00000004[0x1a] + in_stack_00000004[0x17] * 10 + 1;
       do {
-        iVar8 = *piVar4;
-        *in_stack_0000000c = (char)iVar8;
-        if ((char)iVar8 == '\0') {
+        iVar9 = *piVar5;
+        *in_stack_0000000c = (char)iVar9;
+        if ((char)iVar9 == '\0') {
           return;
         }
-        cVar1 = *(char *)((int)piVar4 + 1);
-        piVar4 = (int *)((int)piVar4 + 2);
+        cVar1 = *(char *)((int)piVar5 + 1);
+        piVar5 = (int *)((int)piVar5 + 2);
         in_stack_0000000c[1] = cVar1;
         in_stack_0000000c = in_stack_0000000c + 2;
       } while (cVar1 != '\0');
       return;
     }
-    pcVar7 = "(add a new cloth)";
+    pcVar8 = "(add a new cloth)";
     do {
-      cVar1 = *pcVar7;
+      cVar1 = *pcVar8;
       *in_stack_0000000c = cVar1;
       if (cVar1 == '\0') {
         return;
       }
-      cVar1 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
+      cVar1 = pcVar8[1];
+      pcVar8 = pcVar8 + 2;
       in_stack_0000000c[1] = cVar1;
       in_stack_0000000c = in_stack_0000000c + 2;
     } while (cVar1 != '\0');
     return;
   case 0xf:
-    pcVar7 = "??????";
-    iVar8 = 0;
+    pcVar8 = "??????";
+    iVar9 = 0;
     if (0 < (int)in_stack_00000004[0x17]) {
-      puVar5 = (undefined4 *)in_stack_00000004[0x18];
+      puVar6 = (undefined4 *)in_stack_00000004[0x18];
       do {
-        if (*(int *)in_stack_00000004[0x1a] == puVar5[1]) {
-          pcVar7 = (char *)*puVar5;
+        if (*(int *)in_stack_00000004[0x1a] == puVar6[1]) {
+          pcVar8 = (char *)*puVar6;
           break;
         }
-        iVar8 = iVar8 + 1;
-        puVar5 = puVar5 + 2;
-      } while (iVar8 < (int)in_stack_00000004[0x17]);
+        iVar9 = iVar9 + 1;
+        puVar6 = puVar6 + 2;
+      } while (iVar9 < (int)in_stack_00000004[0x17]);
     }
     do {
-      cVar1 = *pcVar7;
+      cVar1 = *pcVar8;
       *in_stack_0000000c = cVar1;
       if (cVar1 == '\0') {
         return;
       }
-      cVar1 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
+      cVar1 = pcVar8[1];
+      pcVar8 = pcVar8 + 2;
       in_stack_0000000c[1] = cVar1;
       in_stack_0000000c = in_stack_0000000c + 2;
     } while (cVar1 != '\0');
     return;
   case 0x10:
-    piVar4 = (int *)in_stack_00000004[0x1a];
-    iVar8 = in_stack_00000004[0x17];
-    if (iVar8 < *piVar4) {
+    piVar5 = (int *)in_stack_00000004[0x1a];
+    iVar9 = in_stack_00000004[0x17];
+    if (iVar9 < *piVar5) {
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (in_stack_0000000c,"%s => %s",piVar4 + iVar8 * 0x19 + 1,
-                 piVar4 + iVar8 * 0x19 + 0x7e);
+                (in_stack_0000000c,"%s => %s",piVar5 + iVar9 * 0x19 + 1,
+                 piVar5 + iVar9 * 0x19 + 0x7e);
       return;
     }
-    pcVar7 = "(add a rule)";
+    pcVar8 = "(add a rule)";
     do {
-      cVar1 = *pcVar7;
+      cVar1 = *pcVar8;
       *in_stack_0000000c = cVar1;
       if (cVar1 == '\0') {
         return;
       }
-      cVar1 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
+      cVar1 = pcVar8[1];
+      pcVar8 = pcVar8 + 2;
       in_stack_0000000c[1] = cVar1;
       in_stack_0000000c = in_stack_0000000c + 2;
     } while (cVar1 != '\0');
@@ -303,30 +306,30 @@ void core_actor_cpp_CActorProperty_FUN_0040ea50(void)
     (*(code *)in_stack_00000004[0x1a])();
     return;
   case 0x12:
-    pcVar6 = "(none)";
-    pcVar7 = in_stack_0000000c;
+    pcVar7 = "(none)";
+    pcVar8 = in_stack_0000000c;
     do {
-      cVar1 = *pcVar6;
-      *pcVar7 = cVar1;
+      cVar1 = *pcVar7;
+      *pcVar8 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar6[1];
-      pcVar6 = pcVar6 + 2;
-      pcVar7[1] = cVar1;
+      cVar1 = pcVar7[1];
       pcVar7 = pcVar7 + 2;
+      pcVar8[1] = cVar1;
+      pcVar8 = pcVar8 + 2;
     } while (cVar1 != '\0');
-    iVar8 = 0;
-    pcVar7 = in_stack_0000000c;
+    iVar9 = 0;
+    pcVar8 = in_stack_0000000c;
     do {
-      if ((*(uint *)in_stack_00000004[0x1a] & *(uint *)((int)&DAT_0066e30c + iVar8)) != 0) {
-        if (in_stack_0000000c < pcVar7) {
-          iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7,", ");
-          pcVar7 = pcVar7 + iVar3;
+      if ((*(uint *)in_stack_00000004[0x1a] & *(uint *)((int)&DAT_0066e30c + iVar9)) != 0) {
+        if (in_stack_0000000c < pcVar8) {
+          iVar4 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar8,", ");
+          pcVar8 = pcVar8 + iVar4;
         }
-        iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7,"%s");
-        pcVar7 = pcVar7 + iVar3;
+        iVar4 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar8,"%s");
+        pcVar8 = pcVar8 + iVar4;
       }
-      iVar8 = iVar8 + 8;
-    } while (iVar8 != 0x10);
+      iVar9 = iVar9 + 8;
+    } while (iVar9 != 0x10);
     break;
   default:
     g_CurrentFilename = "..\\core\\actor.cpp";

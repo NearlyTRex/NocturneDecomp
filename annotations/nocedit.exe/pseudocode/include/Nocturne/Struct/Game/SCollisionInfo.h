@@ -8,10 +8,10 @@ typedef struct SCollisionInfo {
     float field_8; // 0x8
     float field_12; // 0xc
     float field_16; // 0x10
-    float field_20; // 0x14
-    float cylinder_bottom_y; // 0x18
-    float cylinder_top_y; // 0x1c
-    float cylinder_radius_sq; // 0x20
-    void* result_ptr; // 0x24
+    float cylinder_bottom_y; // 0x14
+    float cylinder_top_y; // 0x18
+    float cylinder_radius; // 0x1c
+    void* result_ptr; // 0x20
+    void* field_36; // 0x24
 } SCollisionInfo;
 

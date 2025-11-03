@@ -5,8 +5,8 @@
 // Signature: void engine_2d.c_plotPixel_FUN_00401140(int x, int y)
 // Cross-references:
 //   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409b90 (00409b90) at 00409e04 [UNCONDITIONAL_CALL]
-//   core_actor.cpp_FUN_00409900 (00409900) at 00409923 [UNCONDITIONAL_CALL]
-//   core_actor.cpp_FUN_00409930 (00409930) at 00409aa8 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_draw3DPointMarker_FUN_00409930 (00409930) at 00409aa8 [UNCONDITIONAL_CALL]
+//   core_actor.cpp_plotPixelWithBoundsCheck_FUN_00409900 (00409900) at 00409923 [UNCONDITIONAL_CALL]
 //   core_cloth.cpp_FUN_0043c6b0 (0043c6b0) at 0043c6d3 [UNCONDITIONAL_CALL]
 //   core_cloth.cpp_FUN_0043c6e0 (0043c6e0) at 0043c7a0 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052bb50 (0052bb50) at 0052bb73 [UNCONDITIONAL_CALL]

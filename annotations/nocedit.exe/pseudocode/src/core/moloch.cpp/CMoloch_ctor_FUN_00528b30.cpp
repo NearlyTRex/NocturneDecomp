@@ -20,7 +20,7 @@
 //   core_hero.cpp_FUN_004f2340
 //   core_morph.cpp_FUN_0052b310
 //   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-//   core_skeleton.cpp_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -37,7 +37,8 @@ CMoloch * __cdecl core_moloch_cpp_CMoloch_ctor_FUN_00528b30(CMoloch *this_ptr)
             ((CDeformableModelInstance *)(iVar2 + 0x1fbd4));
   iVar2 = core_morph_cpp_FUN_0052b310();
   *(CDemonActor_vtable **)(iVar2 + -0x21e08) = &PTR_core_moloch_cpp_FUN_00528c70_00661944;
-  core_skeleton_cpp_FUN_005a0840();
+  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
+            ((CDeformableModelInstance *)(iVar2 + -0x21e04));
   pcVar3 = "molochToDemon";
   pcVar4 = (char *)(iVar2 + -200);
   do {
@@ -95,7 +96,7 @@ CMoloch * __cdecl core_moloch_cpp_CMoloch_ctor_FUN_00528b30(CMoloch *this_ptr)
 // 00528b6d: PUSH EAX
 // 00528b6e: MOV dword ptr [EBX + 0x154],0x661944
 //   XREF to: 00661944 (DATA)
-// 00528b78: CALL core_skeleton.cpp_FUN_005a0840
+// 00528b78: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00528b7d: ADD ESP,0x8
 // 00528b80: MOV ESI,0x639d55

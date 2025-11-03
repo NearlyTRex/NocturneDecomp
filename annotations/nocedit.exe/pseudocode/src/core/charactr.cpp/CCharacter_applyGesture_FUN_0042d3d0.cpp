@@ -15,7 +15,7 @@
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
-//   core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 
 #include "nocturne.h"
 
@@ -28,8 +28,9 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_0042d3d0(CCharacter *
       g_CurrentLineNumber = 0xcc7;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::applyGesture - never set gestureBranchRoot for actor %s",this_ptr);
     }
-    core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0();
-    core_skeleton_cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50();
+    core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+              (&(this_ptr->model).motion_controller);
+    core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50(&this_ptr->model);
   }
   return;
 }
@@ -109,7 +110,7 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_0042d3d0(CCharacter *
 // 0042d48d: PUSH ECX
 // 0042d48e: ADD EBX,0x158
 // 0042d494: PUSH EBX
-// 0042d495: CALL core_skeleton.cpp_CDeformableModelInstance_UnkSomethingWriteMe2_FUN_0059eb50
+// 0042d495: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 0042d49a: ADD ESP,0x18
 // 0042d49d: POP ESI

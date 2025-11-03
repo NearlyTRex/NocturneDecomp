@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_emitter.cpp_FUN_004a8860 (004a8860) at 004a88d6 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_0050a8d0 (0050a8d0) at 0050aa35 [UNCONDITIONAL_CALL]
-//   core_weapon.cpp_FUN_005ee830 (005ee830) at 005ee8e6 [UNCONDITIONAL_CALL]
+//   core_weapon.cpp_CWeapon_FUN_005ee830 (005ee830) at 005ee8e6 [UNCONDITIONAL_CALL]
 // Globals:
 //   undefined4 DAT_0065dcc0
 

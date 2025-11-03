@@ -32,15 +32,16 @@ void core_biggs_cpp_CBiggs_load_FUN_00418ac0(void)
   core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"@@speed" + 2);
   model_ptr = &(in_stack_00000004->base_character).model;
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
-  core_actor_cpp_serializeMotionState_FUN_0040b9f0(model_ptr,"motion state");
+  core_actor_cpp_serializeMotionState_FUN_0040b9f0
+            (&model_ptr->motion_controller,"motion state");
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)(in_stack_00000004[1].base_character.model.padding_0x0 + 0x2c),
+            (&in_stack_00000004[1].base_character.model.motion_controller.field11_0x2c,
              "morphing");
   core_actor_cpp_serializeFloat_FUN_0040b770
-            ((float *)(in_stack_00000004[1].base_character.model.padding_0x0 + 0x30),
-             "morphTimer");
+            ((float *)in_stack_00000004[1].base_character.model.motion_controller.
+                      current_motion_name,"morphTimer");
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)(in_stack_00000004[1].base_character.model.padding_0x0 + 0xc60),
+            ((char **)(in_stack_00000004[1].base_character.model.field3_0x508 + 0x758),
              "morphEvent");
   return;
 }

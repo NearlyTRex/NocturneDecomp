@@ -5,10 +5,10 @@
 // Signature: undefined core_grave.cpp_FUN_004ee5c0()
 // Globals:
 //   CEventList* g_CEventListPtr = 02d05310
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 // Function calls:
 //   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_grave.cpp_FUN_004ee790
 
 #include "nocturne.h"
@@ -28,7 +28,7 @@ void core_grave_cpp_FUN_004ee5c0(void)
   
   if (*(int *)(in_stack_00000004 + 0x2dc) == 0) {
     if (*(int *)(in_stack_00000004 + 0x2e0) == 0) {
-      iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+      iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,(char *)(in_stack_00000004 + 0x2e8));
       if (iVar3 != 0) {
         core_grave_cpp_FUN_004ee790();
@@ -91,7 +91,7 @@ void core_grave_cpp_FUN_004ee5c0(void)
 //   XREF to: 006793d0 (READ)
 // 004ee607: PUSH ESI
 //   XREF to: 02d05310 (DATA)
-// 004ee608: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 004ee608: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 004ee60d: ADD ESP,0x8
 // 004ee610: TEST EAX,EAX

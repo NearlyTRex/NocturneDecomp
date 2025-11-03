@@ -36,7 +36,7 @@ void core_stranger_cpp_CStranger_FUN_005c6590(void)
         this_ptr[4].location.position.y = 0.0;
         this_ptr[4].location.position.x = this_ptr[4].location.position.y;
         *(float *)(this_ptr[4].actor_name + 0x1c) = this_ptr[4].location.position.x;
-        (*(this_ptr->metadata).vtable[1].renderTransparent)(this_ptr);
+        (*this_ptr->vtable[1].renderTransparent)(this_ptr);
         *(undefined4 *)(in_stack_00000004 + 0x1fc2c) = 0;
         *(undefined4 *)(in_stack_00000004 + 0x2a8c) = 0;
         uVar1 = DAT_00663744;

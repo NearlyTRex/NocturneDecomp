@@ -7,7 +7,7 @@
 //   TerminatedCString s_sentinel_die_wav_006458b3
 //   TerminatedCString s_sentinel_hurt_wav_006458c4
 // Function calls:
-//   core_actor.cpp_FUN_0040cc70
+//   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_enemy.cpp_FUN_004a9f10
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -22,6 +22,7 @@
 void core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
 
 {
+  CMotionController *this_ptr;
   float fVar1;
   int iVar2;
   undefined4 uVar3;
@@ -29,26 +30,29 @@ void core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
   int in_stack_00000008;
   
   fVar1 = *(float *)(in_stack_00000004 + 0x243c) - *(float *)(in_stack_00000008 + 4);
+  this_ptr = (CMotionController *)(in_stack_00000004 + 0x158);
   *(float *)(in_stack_00000004 + 0x243c) = fVar1;
   if (0.0 < fVar1) {
-    iVar2 = core_actor_cpp_FUN_0040cc70();
+    iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
     if (iVar2 == 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr);
     }
     if (iVar2 == 1) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                ((CMotionController *)(in_stack_00000004 + 0x158));
     }
     if (iVar2 == 2) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                ((CMotionController *)(in_stack_00000004 + 0x158));
     }
     iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
     if (iVar2 != 0) goto LAB_00568d4d;
   }
   else {
     *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0();
+    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
     if ((*(int *)(iVar2 + 0x24) == 8) || (*(int *)(iVar2 + 0x24) == 9)) goto LAB_00568d4d;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00();
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr);
     sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
   }
   uVar3 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
@@ -124,7 +128,7 @@ LAB_00568d4d:
 // 00568d5f: PUSH 0x2
 //   Label: LAB_00568d5f
 // 00568d61: PUSH 0x0
-// 00568d63: CALL core_actor.cpp_FUN_0040cc70
+// 00568d63: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
 //   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
 // 00568d68: ADD ESP,0x8
 // 00568d6b: MOV EDI,EAX

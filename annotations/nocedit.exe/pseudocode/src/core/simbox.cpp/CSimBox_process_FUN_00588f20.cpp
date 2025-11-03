@@ -10,12 +10,12 @@
 //   double DOUBLE_00649c1a = 2
 //   CEventList* g_CEventListPtr = 02d05310
 //   CKeys* g_CKeysPtr = 02dcd7d4
-//   undefined4 DAT_02d05310
+//   CEventList g_CEventListInstance
 //   void* g_CKeysPtr
 // Function calls:
 //   core_box.cpp_CBox_process_FUN_0041e2f0
 //   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-//   core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   crt_stdlib.c_rand_FUN_005feb5c
 
 #include "nocturne.h"
@@ -32,7 +32,7 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr)
   
   if ((*(int *)(this_ptr->field1_0x158 + 0x17c) == 1) &&
      (*(int *)(this_ptr->field1_0x158 + 0x454) == 0)) {
-    iVar3 = core_event_cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->field1_0x158 + 0x184);
     if (iVar3 != 0) {
       this_ptr->field1_0x158[0x454] = '\x01';
@@ -79,7 +79,7 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr)
       (this_ptr->base_actor).orient.heading =
            (float)iVar3 * FLOAT_00649c02 * (float)DOUBLE_00649c12 * (float)DOUBLE_00649c1a;
       iVar3 = crt_stdlib_c_rand_FUN_005feb5c();
-      pCVar2 = (this_ptr->base_actor).metadata.vtable;
+      pCVar2 = (this_ptr->base_actor).vtable;
       (this_ptr->base_actor).orient.bank =
            (float)iVar3 * FLOAT_00649c02 * (float)DOUBLE_00649c12 * (float)DOUBLE_00649c1a;
       (*pCVar2->setup)(&this_ptr->base_actor);
@@ -123,7 +123,7 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr)
 //   XREF to: 006793d0 (READ)
 // 00588f50: PUSH ESI
 //   XREF to: 02d05310 (DATA)
-// 00588f51: CALL core_event.cpp_CEvent_LoggingSomethingToConsole_FUN_004adca0
+// 00588f51: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   XREF to: 004adca0 (UNCONDITIONAL_CALL)
 // 00588f56: ADD ESP,0x8
 // 00588f59: TEST EAX,EAX
