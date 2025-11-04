@@ -5,8 +5,8 @@
 // Signature: int core_skeleton.cpp_CDeformableModelInstance_FUN_005a08a0(CDeformableModelInstance * this_ptr)
 // Function calls:
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0ad0
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_FUN_005a1950
 
 #include "nocturne.h"
@@ -17,13 +17,13 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a08a0(CDeformableModelInstance
 {
   int iVar1;
   CMotionList *pCVar2;
-  int extraout_EAX;
-  undefined1 *puVar3;
-  int iVar4;
-  undefined1 *puVar5;
+  CSkeleton *pCVar3;
+  undefined1 *puVar4;
+  int iVar5;
+  undefined1 *puVar6;
   BADSPACEBASE *in_ESP;
   int unaff_EBP;
-  int iVar6;
+  int iVar7;
   int in_stack_00000014;
   undefined1 auStack_2dac [6812];
   undefined1 auStack_1310 [4800];
@@ -41,56 +41,56 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a08a0(CDeformableModelInstance
   float local_24;
   int local_1c;
   int local_14;
-  float fVar7;
   float fVar8;
+  float fVar9;
   
   pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                      (&this_ptr->motion_controller);
   local_1c = pCVar2->motions[in_stack_00000014].frame_count;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr);
-  iVar1 = *(int *)(extraout_EAX + 0x28558);
+  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
+  iVar1 = pCVar3->bone_count;
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a0ad0(this_ptr);
-  iVar6 = 0;
+  iVar7 = 0;
   core_skeleton_cpp_FUN_005a1950();
   local_14 = -1;
-  fVar7 = 1e+30;
+  fVar8 = 1e+30;
   if (0 < unaff_EBP) {
     do {
       core_skeleton_cpp_CDeformableModelInstance_FUN_005a0ad0(this_ptr);
       core_skeleton_cpp_FUN_005a1950();
-      iVar4 = 0;
-      fVar8 = 0.0;
+      iVar5 = 0;
+      fVar9 = 0.0;
       if (0 < iVar1) {
-        fVar8 = 0.0;
-        puVar3 = auStack_2dac;
-        puVar5 = auStack_1310;
+        fVar9 = 0.0;
+        puVar4 = auStack_2dac;
+        puVar6 = auStack_1310;
         do {
-          local_44 = *(float *)(puVar3 + 0xc);
-          local_40 = *(float *)(puVar3 + 0x1c);
-          local_3c = *(float *)(puVar3 + 0x2c);
-          local_50 = *(float *)(puVar5 + 0xc);
-          local_4c = *(float *)(puVar5 + 0x1c);
-          local_48 = *(float *)(puVar5 + 0x2c);
-          puVar5 = puVar5 + 0x30;
-          puVar3 = puVar3 + 0x30;
-          iVar4 = iVar4 + 1;
-          fVar8 = (local_48 - local_3c) * (local_48 - local_3c) +
+          local_44 = *(float *)(puVar4 + 0xc);
+          local_40 = *(float *)(puVar4 + 0x1c);
+          local_3c = *(float *)(puVar4 + 0x2c);
+          local_50 = *(float *)(puVar6 + 0xc);
+          local_4c = *(float *)(puVar6 + 0x1c);
+          local_48 = *(float *)(puVar6 + 0x2c);
+          puVar6 = puVar6 + 0x30;
+          puVar4 = puVar4 + 0x30;
+          iVar5 = iVar5 + 1;
+          fVar9 = (local_48 - local_3c) * (local_48 - local_3c) +
                   (local_4c - local_40) * (local_4c - local_40) +
-                  (local_50 - local_44) * (local_50 - local_44) + fVar8;
+                  (local_50 - local_44) * (local_50 - local_44) + fVar9;
           local_38 = local_44;
           local_34 = local_40;
           fStack_30 = local_3c;
           fStack_2c = local_50;
           fStack_28 = local_4c;
           local_24 = local_48;
-        } while (iVar4 < iVar1);
+        } while (iVar5 < iVar1);
       }
-      if (fVar8 < fVar7) {
-        local_14 = iVar6;
-        fVar7 = fVar8;
+      if (fVar9 < fVar8) {
+        local_14 = iVar7;
+        fVar8 = fVar9;
       }
-      iVar6 = iVar6 + 1;
-    } while (iVar6 < unaff_EBP);
+      iVar7 = iVar7 + 1;
+    } while (iVar7 < unaff_EBP);
   }
   return local_14;
 }
@@ -115,7 +115,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a08a0(CDeformableModelInstance
 // 005a08cc: PUSH EDI
 // 005a08cd: MOV dword ptr [ESP + 0x357c],EAX
 //   XREF to: Stack[-0x20] (WRITE)
-// 005a08d4: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 005a08d4: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005a08d9: ADD ESP,0x4
 // 005a08dc: MOV EBX,dword ptr [EAX + 0x28558]

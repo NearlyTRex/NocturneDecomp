@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_icepick.cpp_FUN_004f8b20()
 // Globals:
-//   undefined4 s_..\core\icepick.cpp_0062f75b
+//   TerminatedCString s_core_icepick_cpp_0062f75b
 //   TerminatedCString s_CIcePick_getCarryObjToBo_0062f76f
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -62,7 +62,7 @@ void core_icepick_cpp_FUN_004f8b20(void)
     }
   }
   else {
-    g_CurrentFilename = "@..\\core\\icepick.cpp" + 1;
+    g_CurrentFilename = "..\\core\\icepick.cpp";
     g_CurrentLineNumber = 0x28a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CIcePick::getCarryObjToBodyXForm - wrong hand");
   }

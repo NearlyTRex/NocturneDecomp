@@ -16,7 +16,7 @@ void __cdecl core_motion_cpp_CMotionController_FUN_0052dad0(CMotionController *t
 {
   this_ptr->current_motion_index = 0;
   this_ptr->current_frame_number = 0.0;
-  this_ptr->field11_0x2c = 0;
+  this_ptr->in_transition = 0;
   this_ptr->state_index = -1;
   core_motion_cpp_CMotionController_FUN_0052de40(this_ptr);
   return;

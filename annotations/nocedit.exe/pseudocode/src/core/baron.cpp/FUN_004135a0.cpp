@@ -23,7 +23,7 @@ void core_baron_cpp_FUN_004135a0(void)
   if ((in_stack_00000008 == *(int *)(in_stack_00000004 + 0x1fcac)) &&
      (*(int *)(in_stack_00000004 + 0x1fcac) != 0)) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              ((CMotionController *)(in_stack_00000004 + 0x158));
+              ((CMotionController *)(in_stack_00000004 + 0x158),7,1);
     *(undefined4 *)(in_stack_00000004 + 0x1fcac) = 0;
     return;
   }

@@ -40,8 +40,8 @@
 //   core_mimic.cpp_CMimic_setup_FUN_0051f3e0 (0051f3e0) at 0051f41d [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_CMobster_ctor_FUN_00525200 (00525200) at 00525224 [UNCONDITIONAL_CALL]
 //   core_moloch.cpp_CMoloch_ctor_FUN_00528b30 (00528b30) at 00528b78 [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00528c70 (00528c70) at 00528ca1 [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00528d20 (00528d20) at 005292e3 [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_process_FUN_00528d20 (00528d20) at 005292e3 [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_setup_FUN_00528c70 (00528c70) at 00528ca1 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052bd08 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053d8b0 (0053d8b0) at 0053dcdc [UNCONDITIONAL_CALL]
 //   core_npc.cpp_FUN_005447e0 (005447e0) at 00544840 [UNCONDITIONAL_CALL]
@@ -79,7 +79,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(CDeformableModelInstance
   char *pcVar2;
   char *in_stack_00000008;
   
-  pcVar2 = this_ptr->field11_0x2260;
+  pcVar2 = this_ptr->field18_0x2260;
   do {
     cVar1 = *in_stack_00000008;
     *pcVar2 = cVar1;
@@ -92,7 +92,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(CDeformableModelInstance
   this_ptr->model_ptr = (CDeformableModel *)0x0;
   core_skeleton_cpp_FUN_005a0410();
   core_skeleton_cpp_FUN_005a0430();
-  this_ptr->field6_0x2230 = -1;
+  this_ptr->field13_0x2230 = -1;
   return;
 }
 

@@ -8,7 +8,7 @@
 //   core_gabriela.cpp_FUN_004d4d80 (004d4d80) at 004d5250 [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 (005267a0) at 00526a4b [UNCONDITIONAL_CALL]
 //   core_scat.cpp_FUN_005584a0 (005584a0) at 00558562 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fdd0 (0059fdd0) at 0059fe94 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0 (0059fdd0) at 0059fe94 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005be520 (005be520) at 005be760 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bf720 (005bf720) at 005bf7ad [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bfb60 (005bfb60) at 005c0131 [UNCONDITIONAL_CALL]

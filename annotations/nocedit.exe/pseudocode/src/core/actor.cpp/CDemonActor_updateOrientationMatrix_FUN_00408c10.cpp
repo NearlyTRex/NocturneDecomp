@@ -35,7 +35,7 @@
 //   core_manpuz.cpp_FUN_0050b1d0 (0050b1d0) at 0050b248 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_0050b360 (0050b360) at 0050b392 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_0050b440 (0050b440) at 0050b5af [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00528d20 (00528d20) at 00528f1f [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_process_FUN_00528d20 (00528d20) at 00528f1f [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 (0053e220) at 0053e479 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 (005390f0) at 0053a476 [UNCONDITIONAL_CALL]
 //   core_pendulum.cpp_FUN_00549b90 (00549b90) at 00549c8c [UNCONDITIONAL_CALL]

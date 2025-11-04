@@ -26,21 +26,21 @@ void core_biggs_cpp_FUN_00418b50(void)
   if (fVar1 <= 0.0) {
     *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              ((CMotionController *)(in_stack_00000004 + 0x158));
+              ((CMotionController *)(in_stack_00000004 + 0x158),7,1);
   }
   else {
     iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
     if (iVar2 == 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                ((CMotionController *)(in_stack_00000004 + 0x158));
+                ((CMotionController *)(in_stack_00000004 + 0x158),4,1);
     }
     if (iVar2 == 1) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                ((CMotionController *)(in_stack_00000004 + 0x158));
+                ((CMotionController *)(in_stack_00000004 + 0x158),5,1);
     }
     if (iVar2 == 2) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                ((CMotionController *)(in_stack_00000004 + 0x158));
+                ((CMotionController *)(in_stack_00000004 + 0x158),6,1);
       core_enemy_cpp_FUN_004a9f10();
       return;
     }

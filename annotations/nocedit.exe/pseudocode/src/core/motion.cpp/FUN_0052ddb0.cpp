@@ -7,7 +7,7 @@
 //   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 (0043c880) at 0043d480 [UNCONDITIONAL_CALL]
 //   core_dracbrid.cpp_CDraculaBride_load_FUN_00485dd0 (00485dd0) at 00485e89 [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_FUN_00520500 (00520500) at 0052057e [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00528d20 (00528d20) at 00529242 [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_process_FUN_00528d20 (00528d20) at 00529242 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052c9fd [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_00536e20 (00536e20) at 005371de [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c6750 (005c6750) at 005c679e [UNCONDITIONAL_CALL]

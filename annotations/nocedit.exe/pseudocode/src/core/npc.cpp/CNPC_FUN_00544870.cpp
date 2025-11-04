@@ -24,7 +24,7 @@ void __cdecl core_npc_cpp_CNPC_FUN_00544870(CNPC *this_ptr)
   
   core_charactr_cpp_CCharacter_FUN_00428140(&this_ptr->base_character);
   iVar1 = crt_string_c_stricmp_FUN_005fe7f0
-                    ((this_ptr->base_character).model.field11_0x2260,"priest.dfm");
+                    ((this_ptr->base_character).model.field18_0x2260,"priest.dfm");
   if (iVar1 != 0) {
     return;
   }

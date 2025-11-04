@@ -6,11 +6,11 @@
 // Cross-references:
 //   core_mobster.cpp_FUN_00525840 (00525840) at 00525d5e [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\mobster.cpp_006398ae
+//   TerminatedCString s_core_mobster_cpp_006398ae
 //   TerminatedCString s_CMobster_aimTommyGun_I_m_006398c2
-//   undefined4 DAT_006398f2
-//   undefined4 DAT_006398f6
-//   undefined4 DAT_006398fe
+//   float FLOAT_006398f2 = 3
+//   float FLOAT_006398f6 = 4
+//   double DOUBLE_006398fe = 2
 //   undefined4 g_CHeroClassInfo.name_hash
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -24,7 +24,7 @@
 //   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_enemy.cpp_FUN_004a9a50
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
+//   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 //   core_xform.cpp_quaternionFromAngleX_FUN_005f79b0
@@ -33,26 +33,24 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_mobster.cpp_CMobster_aimTommyGun(CMobster* param_1, undefined4
    param_2) */
 
 void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
 
 {
-  float fVar1;
-  int iVar2;
-  CDemonActor *pCVar3;
-  CVector3f *pCVar4;
+  int iVar1;
+  CDemonActor *pCVar2;
+  CVector3f *pCVar3;
   CQuaternion4f *quat_ptr;
   BADSPACEBASE *in_ESP;
   float unaff_EBP;
-  undefined4 *puVar5;
+  undefined4 *puVar4;
   float unaff_EDI;
-  byte bVar6;
+  byte bVar5;
   CDemonActor *in_stack_00000004;
   float afStackY_1838 [1515];
+  float fVar6;
   CQuaternion4f *in_stack_ffffff98;
   float fVar7;
   float local_50;
@@ -63,7 +61,7 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
   CVector3f local_20;
   float fStack_14;
   
-  bVar6 = 0;
+  bVar5 = 0;
   if (*(int *)(in_stack_00000004[0x1b].create_event + 0x38) == 0) {
     in_stack_00000004[0x8e].create_event[0x44] = '\0';
     in_stack_00000004[0x8e].create_event[0x45] = '\0';
@@ -72,37 +70,37 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
   }
   else {
     if (*(int *)(in_stack_00000004[0x8d].create_event + 0x4c) != 0) {
-      iVar2 = core_enemy_cpp_FUN_004a9a50();
-      if ((iVar2 == 0) && (*(int *)(in_stack_00000004[0x8e].actor_name + 0x18) == 0)) {
+      iVar1 = core_enemy_cpp_FUN_004a9a50();
+      if ((iVar1 == 0) && (*(int *)(in_stack_00000004[0x8e].actor_name + 0x18) == 0)) {
         in_stack_00000004[0x8e].create_event[0x44] = '\0';
         in_stack_00000004[0x8e].create_event[0x45] = '\0';
         in_stack_00000004[0x8e].create_event[0x46] = '\0';
         in_stack_00000004[0x8e].create_event[0x47] = '\0';
         return;
       }
-      pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
+      pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
                          (*(CDemonActor **)(in_stack_00000004[0x1b].create_event + 0x38),
                           g_CWeaponClassInfo.name_hash);
-      if (pCVar3 == (CDemonActor *)0x0) {
-        g_CurrentFilename = "@@..\\core\\mobster.cpp" + 2;
+      if (pCVar2 == (CDemonActor *)0x0) {
+        g_CurrentFilename = "..\\core\\mobster.cpp";
         g_CurrentLineNumber = 0x323;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CMobster::aimTommyGun - I'm not carrying one!");
       }
-      pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+      pCVar3 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_44,&g_ZeroVector,
                           (CMatrix3x4f *)&(&in_stack_00000004[0xb].scale)[DAT_02f37ed0 * 4].z);
-      pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                         (in_stack_00000004,&local_34,pCVar4);
-      iVar2 = *(int *)(in_stack_00000004[0x8d].create_event + 0x4c);
-      fStack_24 = *(float *)(iVar2 + 0x20) - pCVar4->x;
-      local_20.x = *(float *)(iVar2 + 0x24) - pCVar4->y;
-      local_20.y = *(float *)(iVar2 + 0x28) - pCVar4->z;
-      pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
+      pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                         (in_stack_00000004,&local_34,pCVar3);
+      iVar1 = *(int *)(in_stack_00000004[0x8d].create_event + 0x4c);
+      fStack_24 = *(float *)(iVar1 + 0x20) - pCVar3->x;
+      local_20.x = *(float *)(iVar1 + 0x24) - pCVar3->y;
+      local_20.y = *(float *)(iVar1 + 0x28) - pCVar3->z;
+      pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
                          (*(CDemonActor **)(in_stack_00000004[0x8d].create_event + 0x4c),
                           g_CHeroClassInfo.name_hash);
-      fVar7 = _DAT_006398f2;
-      if (pCVar3 != (CDemonActor *)0x0) {
-        fVar7 = _DAT_006398f6;
+      fVar7 = FLOAT_006398f2;
+      if (pCVar2 != (CDemonActor *)0x0) {
+        fVar7 = FLOAT_006398f6;
       }
       local_20.y = local_20.y + fVar7;
       core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
@@ -111,10 +109,10 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
                  core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                            (unaff_EDI - (in_stack_00000004->orient).bank);
       fVar7 = SQRT(unaff_EBP * unaff_EBP + local_20.z * local_20.z + fStack_14 * fStack_14);
-      if (((float)in_stack_ffffff98 <= ABS((float)quat_ptr)) || (fVar7 <= (float)_DAT_006398fe)) {
-        fVar1 = *(float *)(in_stack_00000004[0x8e].create_event + 0x44) - (float)quat_ptr;
-        *(float *)(in_stack_00000004[0x8e].create_event + 0x44) = fVar1;
-        if (fVar1 < 0.0) {
+      if (((float)in_stack_ffffff98 <= ABS((float)quat_ptr)) || (fVar7 <= (float)DOUBLE_006398fe)) {
+        fVar6 = *(float *)(in_stack_00000004[0x8e].create_event + 0x44) - (float)quat_ptr;
+        *(float *)(in_stack_00000004[0x8e].create_event + 0x44) = fVar6;
+        if (fVar6 < 0.0) {
           in_stack_00000004[0x8e].create_event[0x44] = '\0';
           in_stack_00000004[0x8e].create_event[0x45] = '\0';
           in_stack_00000004[0x8e].create_event[0x46] = '\0';
@@ -122,9 +120,9 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
         }
       }
       else {
-        fVar1 = *(float *)(in_stack_00000004[0x8e].create_event + 0x44) + (float)quat_ptr;
-        *(float *)(in_stack_00000004[0x8e].create_event + 0x44) = fVar1;
-        if (1.0 < fVar1) {
+        fVar6 = *(float *)(in_stack_00000004[0x8e].create_event + 0x44) + (float)quat_ptr;
+        *(float *)(in_stack_00000004[0x8e].create_event + 0x44) = fVar6;
+        if (1.0 < fVar6) {
           in_stack_00000004[0x8e].create_event[0x44] = '\0';
           in_stack_00000004[0x8e].create_event[0x45] = '\0';
           in_stack_00000004[0x8e].create_event[0x46] = -0x80;
@@ -137,28 +135,37 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
       if ((float)in_stack_ffffff98 < (float)quat_ptr) {
         quat_ptr = in_stack_ffffff98;
       }
-      core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50
-                ((CDeformableModelInstance *)(in_stack_00000004 + 1));
+      if (in_stack_00000004[0x1b].field7_0x6c == 0) {
+        fVar6 = *(float *)(in_stack_00000004[0x8e].create_event + 0x44);
+        iVar1 = 2;
+      }
+      else {
+        fVar6 = *(float *)(in_stack_00000004[0x8e].create_event + 0x44);
+        iVar1 = 6;
+      }
+      core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
+                ((CDeformableModelInstance *)(in_stack_00000004 + 1),iVar1,6.0,fVar6,DAT_02f37ef0,
+                 core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
       core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(quat_ptr,fVar7);
-      puVar5 = (undefined4 *)((int)&local_34 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4);
-      *(undefined4 *)(&stack0xffffffa8 + (uint)bVar6 * -8) =
-           *(undefined4 *)((int)&local_34 + (uint)bVar6 * -8);
-      *(undefined4 *)(&stack0xffffffac + (uint)bVar6 * -8 + (uint)bVar6 * -8) = *puVar5;
+      puVar4 = (undefined4 *)((int)&local_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4);
+      *(undefined4 *)(&stack0xffffffa8 + (uint)bVar5 * -8) =
+           *(undefined4 *)((int)&local_34 + (uint)bVar5 * -8);
+      *(undefined4 *)(&stack0xffffffac + (uint)bVar5 * -8 + (uint)bVar5 * -8) = *puVar4;
       fVar7 = local_38;
       *(undefined4 *)
-       ((int)(&stack0xffffffac + (uint)bVar6 * -8 + (uint)bVar6 * -8) + ((uint)bVar6 * -2 + 1) * 4)
-           = puVar5[(uint)bVar6 * -2 + 1];
+       ((int)(&stack0xffffffac + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4)
+           = puVar4[(uint)bVar5 * -2 + 1];
       core_skeleton_cpp_CDeformableModelInstance_FUN_0059ff20();
       core_xform_cpp_quaternionFromAngleY_FUN_005f79f0
                 ((CQuaternion4f *)-(float)in_stack_ffffff98,fVar7);
       local_50 = local_44.y;
-      *(undefined4 *)(&stack0xffffffb4 + (uint)bVar6 * -8) =
-           *(undefined4 *)((int)&local_44 + (uint)bVar6 * -8 + 8);
-      *(float *)(&stack0xffffffb4 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4) =
-           (&local_38)[(uint)bVar6 * -2 + (uint)bVar6 * -2];
-      *(float *)((int)(&stack0xffffffb4 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4) +
-                ((uint)bVar6 * -2 + 1) * 4) =
-           (&local_38 + (uint)bVar6 * -2 + (uint)bVar6 * -2)[(uint)bVar6 * -2 + 1];
+      *(undefined4 *)(&stack0xffffffb4 + (uint)bVar5 * -8) =
+           *(undefined4 *)((int)&local_44 + (uint)bVar5 * -8 + 8);
+      *(float *)(&stack0xffffffb8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+           (&local_38)[(uint)bVar5 * -2 + (uint)bVar5 * -2];
+      *(float *)((int)(&stack0xffffffb8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) +
+                ((uint)bVar5 * -2 + 1) * 4) =
+           (&local_38 + (uint)bVar5 * -2 + (uint)bVar5 * -2)[(uint)bVar5 * -2 + 1];
       core_skeleton_cpp_CDeformableModelInstance_FUN_0059ff20();
       return;
     }
@@ -446,7 +453,7 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
 // 005269ef: PUSH 0x6
 // 005269f1: PUSH EAX
 //   Label: LAB_005269f1
-// 005269f2: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
+// 005269f2: CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 005269f7: ADD ESP,0x18
 // 005269fa: PUSH dword ptr [ESP + 0x5c]

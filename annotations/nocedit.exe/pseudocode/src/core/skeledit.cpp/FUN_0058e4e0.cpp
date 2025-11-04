@@ -20,9 +20,9 @@
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_skeledit.cpp_FUN_0058e600
 //   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e070
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0480
+//   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 
@@ -38,6 +38,8 @@ void core_skeledit_cpp_FUN_0058e4e0(void)
   int iVar2;
   int iVar3;
   int in_stack_00000004;
+  int in_stack_00000008;
+  float in_stack_0000000c;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x30);
   this_ptr = (CDeformableModelInstance *)
@@ -51,9 +53,10 @@ void core_skeledit_cpp_FUN_0058e4e0(void)
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::groundBias - out of memory!");
   }
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a0480(this_ptr);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e070();
+  core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
+            (this_ptr,in_stack_00000008,in_stack_0000000c);
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(this_ptr);
-  iVar1 = this_ptr->field7_0x2234;
+  iVar1 = this_ptr->field14_0x2234;
   iVar3 = 0;
   iVar2 = *(int *)(iVar1 + 4);
   if (0 < *(int *)(in_stack_00000004 + 0x2c)) {
@@ -124,7 +127,7 @@ void core_skeledit_cpp_FUN_0058e4e0(void)
 //   XREF to: Stack[0xc] (READ)
 // 0058e54f: PUSH EDI
 // 0058e550: PUSH ESI
-// 0058e551: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e070
+// 0058e551: CALL core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
 //   XREF to: 0059e070 (UNCONDITIONAL_CALL)
 // 0058e556: ADD ESP,0xc
 // 0058e559: PUSH 0x0

@@ -12,7 +12,7 @@
 //   undefined4 DAT_03106170
 //   undefined4 DAT_03106174
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059f750
+//   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
 //   core_xform.cpp_multiplyQuaternion_FUN_005f7640
 //   core_xform.cpp_quaternionFromAngleX_FUN_005f79b0
 //   core_xform.cpp_quaternionFromAngleY_FUN_005f79f0
@@ -28,6 +28,7 @@ void core_scat_cpp_FUN_005584a0(void)
 
 {
   int iVar1;
+  int bone_index;
   BADSPACEBASE *in_ESP;
   float *pfVar2;
   float *pfVar3;
@@ -36,7 +37,7 @@ void core_scat_cpp_FUN_005584a0(void)
   int unaff_retaddr;
   int in_stack_00000004;
   int in_stack_00000008;
-  undefined4 in_stack_00000010;
+  int in_stack_00000010;
   float afStackY_1924 [1520];
   float in_stack_fffffea0;
   float in_stack_fffffea4;
@@ -47,6 +48,7 @@ void core_scat_cpp_FUN_005584a0(void)
   CQuaternion4f *in_stack_fffffebc;
   CQuaternion4f *in_stack_fffffec0;
   CQuaternion4f *in_stack_fffffec4;
+  code *blend_callback;
   float fStack_138;
   CQuaternion4f local_11c;
   CQuaternion4f local_10c;
@@ -165,12 +167,16 @@ void core_scat_cpp_FUN_005584a0(void)
   pfVar2[(uint)bVar5 * -2 + 1] =
        (afStack_40 + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 4)[(uint)bVar5 * -2 + 1];
   core_xform_cpp_multiplyQuaternion_FUN_005f7640(&CStack_b8,in_stack_fffffec0,in_stack_fffffec4);
+  bone_index = in_stack_00000010;
+  blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
   *(float *)(&stack0x00000000 + (uint)bVar5 * -8) = afStack_40[(uint)bVar5 * -2];
   (&stack0x00000004)[(uint)bVar5 * -2 + (uint)bVar5 * -2] =
        (int)afStack_40[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
   (&stack0x00000004 + (uint)bVar5 * -2 + (uint)bVar5 * -2)[(uint)bVar5 * -2 + 1] =
        (int)(afStack_40 + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1];
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059f750();
+  core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
+            ((CDeformableModelInstance *)(iVar1 + 0x158),(CQuaternion4f *)&stack0xfffffffc,
+             fStack_138,bone_index,blend_callback);
   return;
 }
 
@@ -437,7 +443,7 @@ void core_scat_cpp_FUN_005584a0(void)
 // 00558702: PUSH ESI
 // 00558703: ADD EBX,0x158
 // 00558709: PUSH EBX
-// 0055870a: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059f750
+// 0055870a: CALL core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
 //   XREF to: 0059f750 (UNCONDITIONAL_CALL)
 // 0055870f: ADD ESP,0x14
 // 00558712: MOV ESP,EBP

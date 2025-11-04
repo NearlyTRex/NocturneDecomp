@@ -46,7 +46,7 @@
 //   core_icepick.cpp_FUN_004f80b0 (004f80b0) at 004f81db [UNCONDITIONAL_CALL]
 //   core_lever.cpp_FUN_00505080 (00505080) at 005050ae [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_FUN_0051fcc0 (0051fcc0) at 0051fd32 [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00528d20 (00528d20) at 00528e62 [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_process_FUN_00528d20 (00528d20) at 00528e62 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053c340 (0053c340) at 0053c467 [UNCONDITIONAL_CALL]
 //   core_platfrm.cpp_FUN_0054cc30 (0054cc30) at 0054d233 [UNCONDITIONAL_CALL]
 //   core_platfrm.cpp_FUN_0054df80 (0054df80) at 0054e031 [UNCONDITIONAL_CALL]

@@ -10,9 +10,9 @@
 //   core_menu.cpp_ShowOptionsScreen_FUN_00512d30 (00512d30) at 00512da0 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 00513042 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00639f99
-//   undefined4 DAT_00639fa1
-//   undefined4 DAT_00639fb9
+//   double DOUBLE_00639f99 = -0.5
+//   double DOUBLE_00639fa1 = 48
+//   float FLOAT_00639fb9 = 1.570796
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   undefined4 DAT_0067d7d0
 //   CDemonSet* g_CDemonSetPtr = 03114278
@@ -102,7 +102,7 @@ void core_moon_cpp_CMoon_FUN_00529ed0(void)
             (g_CDemonRendererPtr,(CVector3i *)&g_ZeroVector);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr,112.0);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr);
-  local_5c = (*(float *)(in_stack_00000004 + 4) + (float)_DAT_00639f99) * (float)_DAT_00639fa1;
+  local_5c = (*(float *)(in_stack_00000004 + 4) + (float)DOUBLE_00639f99) * (float)DOUBLE_00639fa1;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr,(CVector3f *)&local_5c);
   pCVar3 = g_CDemonSetPtr;
@@ -139,12 +139,12 @@ void core_moon_cpp_CMoon_FUN_00529ed0(void)
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
         fVar1 = *(float *)(DAT_02f3820c[0].field0_0x0 + iVar7 + 4) /
                 (float)DAT_02f381e8[*(int *)(DAT_02f3820c[0].field0_0x0 + iVar7)].len;
-        fVar2 = (float)_DAT_00639fc1;
+        fVar2 = (float)DOUBLE_00639fc1;
         if (fVar1 < fVar2) {
-          fVar10 = (float10)_DAT_00639fb5 - (float10)fVar1 * (float10)_DAT_00639fb1;
+          fVar10 = (float10)FLOAT_00639fb5 - (float10)fVar1 * (float10)FLOAT_00639fb1;
         }
         else {
-          fVar10 = ((float10)fVar1 + (float10)_DAT_00639f99) * (float10)_DAT_00639fa9;
+          fVar10 = ((float10)fVar1 + (float10)DOUBLE_00639f99) * (float10)DOUBLE_00639fa9;
         }
         dVar11 = crt_math_c_round_FUN_005fe6b0
                            ((double)CONCAT44(g_CDemonSetPtr,

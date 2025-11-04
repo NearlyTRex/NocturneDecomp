@@ -135,14 +135,14 @@ LAB_0042c771:
   }
   *(float *)(this_ptr->field2_0x240c + 0xc) = fVar3;
 LAB_0042c7cc:
-  (this_ptr->model).field10_0x2254[8] = '\0';
-  (this_ptr->model).field10_0x2254[9] = '\0';
-  (this_ptr->model).field10_0x2254[10] = '\0';
-  (this_ptr->model).field10_0x2254[0xb] = '\0';
-  *(undefined4 *)((this_ptr->model).field10_0x2254 + 4) =
-       *(undefined4 *)((this_ptr->model).field10_0x2254 + 8);
-  *(undefined4 *)(this_ptr->model).field10_0x2254 =
-       *(undefined4 *)((this_ptr->model).field10_0x2254 + 4);
+  (this_ptr->model).field17_0x2254[8] = '\0';
+  (this_ptr->model).field17_0x2254[9] = '\0';
+  (this_ptr->model).field17_0x2254[10] = '\0';
+  (this_ptr->model).field17_0x2254[0xb] = '\0';
+  *(undefined4 *)((this_ptr->model).field17_0x2254 + 4) =
+       *(undefined4 *)((this_ptr->model).field17_0x2254 + 8);
+  *(undefined4 *)(this_ptr->model).field17_0x2254 =
+       *(undefined4 *)((this_ptr->model).field17_0x2254 + 4);
   return;
 }
 

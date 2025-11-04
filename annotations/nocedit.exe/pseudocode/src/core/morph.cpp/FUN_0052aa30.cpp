@@ -7,9 +7,9 @@
 //   core_morph.cpp_FUN_0052b600 (0052b600) at 0052b627 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_morph.cpp_CMorphModel_animate_FUN_0052a920
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 
 #include "nocturne.h"
 
@@ -19,7 +19,7 @@ core_morph_cpp_FUN_0052aa30
           CMorphModel *param_4)
 
 {
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e000();
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(param_3);
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(param_3);
   core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(param_3);
   core_morph_cpp_CMorphModel_animate_FUN_0052a920(param_4);
@@ -34,7 +34,7 @@ core_morph_cpp_FUN_0052aa30
 // 0052aa32: MOV EBX,dword ptr [ESP + 0x14]
 //   XREF to: Stack[0xc] (READ)
 // 0052aa36: PUSH EBX
-// 0052aa37: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
+// 0052aa37: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   XREF to: 0059e000 (UNCONDITIONAL_CALL)
 // 0052aa3c: ADD ESP,0x4
 // 0052aa3f: PUSH 0x0

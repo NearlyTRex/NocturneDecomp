@@ -30,14 +30,19 @@ void core_zombie_cpp_CZombie_FUN_005fca10(void)
   this_ptr_00 = (CMotionController *)(in_stack_00000004 + 0x158);
   this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(this_ptr_00);
   iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr);
-  if (iVar1 != 0x16) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr_00);
+  if (iVar1 == 0x16) {
+    if (*(int *)(in_stack_0000000c + 0xbf44) == 0) {
+      iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
+      iVar1 = iVar1 + 0x15;
+    }
+    else {
+      iVar1 = 1;
+    }
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              (this_ptr_00,iVar1,in_stack_00000004);
     return;
   }
-  if (*(int *)(in_stack_0000000c + 0xbf44) == 0) {
-    core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
-  }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr_00);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr_00,1,1);
   return;
 }
 

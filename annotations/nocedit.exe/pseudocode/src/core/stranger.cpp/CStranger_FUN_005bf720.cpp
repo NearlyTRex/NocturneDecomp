@@ -9,10 +9,10 @@
 //   double DOUBLE_00653894 = 40
 //   undefined4 DAT_03f6bacc
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e0a0
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a1510
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a15e0
+//   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
 //   core_xform.cpp_quaternionFromAngleY_FUN_005f79f0
 //   core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0
 
@@ -34,7 +34,9 @@ void core_stranger_cpp_CStranger_FUN_005bf720(void)
   bVar2 = 0;
   this_ptr = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a1510(this_ptr);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e0a0();
+  core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
+            (this_ptr,*(int *)(in_stack_00000004 + 0x1fc84),
+             *(float *)(in_stack_00000004 + 0x1fc54) * (float)DOUBLE_00653894,-1);
   pCVar1 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                      ((CVector3f *)(auStack_1808 + 0x5fd),
                       (CQuaternion4f *)(DAT_03f6bacc * 0x10 + in_stack_00000004 + 0x808));
@@ -76,7 +78,7 @@ void core_stranger_cpp_CStranger_FUN_005bf720(void)
 // 005bf756: MOV EDX,dword ptr [ESI + 0x1fc84]
 // 005bf75c: PUSH EDX
 // 005bf75d: PUSH EBX
-// 005bf75e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e0a0
+// 005bf75e: CALL core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
 //   XREF to: 0059e0a0 (UNCONDITIONAL_CALL)
 // 005bf763: MOV EAX,[0x03f6bacc]
 //   XREF to: 03f6bacc (READ)

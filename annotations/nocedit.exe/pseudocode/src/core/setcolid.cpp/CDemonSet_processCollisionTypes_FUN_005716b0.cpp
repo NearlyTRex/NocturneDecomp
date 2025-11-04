@@ -9,7 +9,7 @@
 //   core_actor.cpp_CDemonActor_processFootstep_FUN_0040c830 (0040c830) at 0040c8ab [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CCrater_FUN_004c4200 (004c4200) at 004c4255 [UNCONDITIONAL_CALL]
 //   core_gore.cpp_FUN_004ed0d0 (004ed0d0) at 004ed0fb [UNCONDITIONAL_CALL]
-//   core_msnedit.cpp_IgnoreAndProcess_FUN_0053c8d0 (0053c8d0) at 0053c8fe [UNCONDITIONAL_CALL]
+//   core_msnedit.cpp_CDemonMission_FUN_0053c8d0 (0053c8d0) at 0053c8fe [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c2850 (005c2850) at 005c2e86 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_setcolid_cpp_006461b6

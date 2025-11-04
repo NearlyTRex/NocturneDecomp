@@ -43,7 +43,7 @@
 //   undefined4 DAT_031061a0
 // Function calls:
 //   core_hero.cpp_CHero_FUN_004f2540
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -60,8 +60,8 @@ void core_scat_cpp_FUN_00556f90(void)
   CHero *in_stack_00000004;
   
   core_hero_cpp_CHero_FUN_004f2540(in_stack_00000004);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820
-            (&(in_stack_00000004->base_character).model);
+  this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+                       (&(in_stack_00000004->base_character).model);
   DAT_0310615c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 head");
   _DAT_03106160 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L Clavicle");
@@ -120,7 +120,7 @@ void core_scat_cpp_FUN_00556f90(void)
 // 00556f9c: ADD ESP,0x4
 // 00556f9f: LEA EAX,[ESI + 0x158]
 // 00556fa5: PUSH EAX
-// 00556fa6: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 00556fa6: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 00556fab: ADD ESP,0x4
 // 00556fae: PUSH 0x1

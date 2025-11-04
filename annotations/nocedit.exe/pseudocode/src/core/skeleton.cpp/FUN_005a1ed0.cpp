@@ -14,46 +14,48 @@
 //   CSkeleton[40] g_SkeletonPool
 //   undefined4 DAT_038f60d0
 // Function calls:
+//   core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0059dd60
 //   core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_0059a140
-//   core_skeleton.cpp_FUN_0059dd60
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 
 #include "nocturne.h"
 
-void core_skeleton_cpp_FUN_005a1ed0(int param_1)
+void core_skeleton_cpp_FUN_005a1ed0(void)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
-  CSkeleton *this_ptr;
   int iVar4;
+  CSkeleton *this_ptr;
+  CDeformableModel *this_ptr_00;
   char *in_stack_00000004;
   
-  iVar2 = 0;
   iVar3 = 0;
+  iVar4 = 0;
   if (0 < g_SkeletonPoolCount) {
     this_ptr = g_SkeletonPool;
     do {
-      param_1 = core_skeleton_cpp_CSkeleton_calculateFrameDataSize_FUN_0059a140(this_ptr);
-      iVar2 = iVar2 + 1;
+      iVar1 = core_skeleton_cpp_CSkeleton_calculateFrameDataSize_FUN_0059a140(this_ptr);
+      iVar3 = iVar3 + 1;
       this_ptr = this_ptr + 1;
-      iVar3 = iVar3 + param_1;
-    } while (iVar2 < g_SkeletonPoolCount);
-  }
-  iVar2 = 0;
-  iVar4 = 0;
-  if (0 < g_DeformableModelCount) {
-    do {
-      iVar1 = core_skeleton_cpp_FUN_0059dd60(param_1);
-      iVar2 = iVar2 + 1;
       iVar4 = iVar4 + iVar1;
-      param_1 = g_DeformableModelCount;
-    } while (iVar2 < g_DeformableModelCount);
+    } while (iVar3 < g_SkeletonPoolCount);
+  }
+  iVar3 = 0;
+  iVar1 = 0;
+  if (0 < g_DeformableModelCount) {
+    this_ptr_00 = g_DeformableModelPool;
+    do {
+      iVar2 = core_skeleton_cpp_CDeformableModel_calculateMemorySize_FUN_0059dd60(this_ptr_00);
+      iVar3 = iVar3 + 1;
+      iVar1 = iVar1 + iVar2;
+      this_ptr_00 = this_ptr_00 + 1;
+    } while (iVar3 < g_DeformableModelCount);
   }
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (in_stack_00000004,"%d skeletons, %d bytes, %d models, %d bytes",g_SkeletonPoolCount,iVar3,
-             g_DeformableModelCount,iVar4);
+            (in_stack_00000004,"%d skeletons, %d bytes, %d models, %d bytes",g_SkeletonPoolCount,iVar4,
+             g_DeformableModelCount,iVar1);
   return;
 }
 
@@ -105,7 +107,7 @@ void core_skeleton_cpp_FUN_005a1ed0(int param_1)
 //   Label: LAB_005a1f23
 //   XREF to: 0368c8a0 (DATA)
 //   XREF to: 036958a0 (DATA)
-// 005a1f24: CALL core_skeleton.cpp_FUN_0059dd60
+// 005a1f24: CALL core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0059dd60
 //   XREF to: 0059dd60 (UNCONDITIONAL_CALL)
 // 005a1f29: INC EBX
 // 005a1f2a: ADD ESP,0x4

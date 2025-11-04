@@ -156,8 +156,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b190(CCharacter *this_ptr)
               ((CMatrix3x4f *)local_dc,&(this_ptr->base_actor).location.position,
                (CVector3f *)&(this_ptr->base_actor).orient);
     core_xform_cpp_inverse_FUN_005f6210
-              ((CMatrix3x4f *)
-               ((this_ptr->model).field3_0x508 + *(int *)(in_stack_0000001c + 4) * 0x30 + 0x978),
+              ((this_ptr->model).bone_world_matrices + *(int *)(in_stack_0000001c + 4),
                in_stack_fffffd44);
     puVar5 = (undefined4 *)&stack0xfffffd4c;
     puVar7 = &uStack_1f8;

@@ -19,7 +19,7 @@
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
+//   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 
 #include "nocturne.h"
 
@@ -67,7 +67,7 @@ void core_passngr_cpp_FUN_00545ef0(void)
                       (g_CEventListPtr,in_stack_00000004[2].cloth_data + 0x5028);
     if (iVar4 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(in_stack_00000004->model).motion_controller);
+                (&(in_stack_00000004->model).motion_controller,1,1);
       if (in_stack_00000004[2].cloth_data[0x50cc] != '\0') {
         (*((in_stack_00000004->base_actor).vtable)->playSound)
                   (&in_stack_00000004->base_actor,in_stack_00000004[2].cloth_data + 0x50cc);
@@ -76,14 +76,14 @@ void core_passngr_cpp_FUN_00545ef0(void)
     }
   }
   fStack_14 = in_stack_00000008;
-  (in_stack_00000004->model).field10_0x2254[8] = '\0';
-  (in_stack_00000004->model).field10_0x2254[9] = '\0';
-  (in_stack_00000004->model).field10_0x2254[10] = '\0';
-  (in_stack_00000004->model).field10_0x2254[0xb] = '\0';
-  *(undefined4 *)((in_stack_00000004->model).field10_0x2254 + 4) =
-       *(undefined4 *)((in_stack_00000004->model).field10_0x2254 + 8);
-  *(undefined4 *)(in_stack_00000004->model).field10_0x2254 =
-       *(undefined4 *)((in_stack_00000004->model).field10_0x2254 + 4);
+  (in_stack_00000004->model).field17_0x2254[8] = '\0';
+  (in_stack_00000004->model).field17_0x2254[9] = '\0';
+  (in_stack_00000004->model).field17_0x2254[10] = '\0';
+  (in_stack_00000004->model).field17_0x2254[0xb] = '\0';
+  *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4) =
+       *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 8);
+  *(undefined4 *)(in_stack_00000004->model).field17_0x2254 =
+       *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4);
   while (0.0 < fStack_14) {
     fStack_14 = (float)core_motion_cpp_CMotionController_advance_FUN_0052d610
                                  (&(in_stack_00000004->model).motion_controller);
@@ -92,7 +92,7 @@ void core_passngr_cpp_FUN_00545ef0(void)
   if (iVar3 != 0) {
     pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                        (&in_stack_00000004->base_actor,(CVector3f *)&stack0xfffffff0,
-                        (CVector3f *)(in_stack_00000004->model).field10_0x2254);
+                        (CVector3f *)(in_stack_00000004->model).field17_0x2254);
     pCVar1 = &(in_stack_00000004->base_actor).location;
     (pCVar1->position).x = pCVar5->x + (pCVar1->position).x;
     (in_stack_00000004->base_actor).location.position.y =
@@ -107,7 +107,8 @@ void core_passngr_cpp_FUN_00545ef0(void)
       *(int *)(iVar3 + 0x2c) = (in_stack_00000004->base_actor).location.area_id;
     }
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020();
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(&in_stack_00000004->model)
+  ;
   core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
   return;
 }
@@ -298,7 +299,7 @@ void core_passngr_cpp_FUN_00545ef0(void)
 // 00546095: LEA EAX,[EBX + 0x158]
 //   Label: LAB_00546095
 // 0054609b: PUSH EAX
-// 0054609c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
+// 0054609c: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 //   XREF to: 0059e020 (UNCONDITIONAL_CALL)
 // 005460a1: ADD ESP,0x4
 // 005460a4: PUSH dword ptr [EBP + 0x18]

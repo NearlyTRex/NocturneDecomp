@@ -11,7 +11,7 @@
 //   undefined4 g_ZeroVector.y
 //   undefined4 g_ZeroVector.z
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   crt_math.c_ceil_FUN_006001b2
 //   crt_math.c_floor_FUN_005feb90
 //   crt_math.c_round_FUN_005fe6b0
@@ -30,17 +30,18 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0d10(CDeformableModelInstance
   float fVar6;
   float fVar7;
   float fVar8;
-  int iVar9;
-  float fVar10;
+  CVector3f *pCVar9;
+  CVector3f *pCVar10;
   float fVar11;
-  int extraout_EAX;
+  float fVar12;
+  CSkeleton *pCVar13;
+  undefined4 extraout_EAX;
   undefined4 extraout_EAX_00;
-  undefined4 extraout_EAX_01;
-  int iVar12;
+  int iVar14;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
   float10 in_ST0;
-  float10 fVar13;
+  float10 fVar15;
   float *in_stack_00000008;
   float in_stack_0000000c;
   float in_stack_00000010;
@@ -55,45 +56,44 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0d10(CDeformableModelInstance
     in_stack_00000008[2] = g_ZeroVector.z;
     return in_stack_00000008;
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr);
+  pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   crt_math_c_floor_FUN_005feb90((double)in_ST0);
-  fVar13 = (float10)(double)CONCAT44(extraout_EDX,extraout_EAX_00);
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,extraout_EAX_00));
-  iVar1 = (int)ROUND(fVar13);
+  fVar15 = (float10)(double)CONCAT44(extraout_EDX,extraout_EAX);
+  crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,extraout_EAX));
+  iVar1 = (int)ROUND(fVar15);
   crt_math_c_ceil_FUN_006001b2((double)in_stack_00000014);
-  fVar13 = (float10)(double)CONCAT44(extraout_EDX_00,extraout_EAX_01);
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX_00,extraout_EAX_01));
-  iVar2 = (int)ROUND(fVar13);
+  fVar15 = (float10)(double)CONCAT44(extraout_EDX_00,extraout_EAX_00);
+  crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX_00,extraout_EAX_00));
+  iVar2 = (int)ROUND(fVar15);
   local_2c = 0.0;
   local_28 = 0.0;
   local_24 = 0.0;
   if (iVar1 < iVar2) {
-    iVar12 = iVar1 * 0xc;
+    iVar14 = iVar1 * 0xc;
     do {
-      iVar9 = *(int *)(extraout_EAX + 0x29378);
-      local_2c = local_2c + *(float *)(iVar9 + iVar12);
-      local_28 = local_28 + *(float *)(iVar9 + 4 + iVar12);
-      local_24 = local_24 + *(float *)(iVar9 + 8 + iVar12);
-      iVar12 = iVar12 + 0xc;
-    } while (iVar12 < iVar2 * 0xc);
+      pCVar9 = pCVar13->frame_positions_2;
+      local_2c = local_2c + *(float *)((int)&pCVar9->x + iVar14);
+      local_28 = local_28 + *(float *)((int)&pCVar9->y + iVar14);
+      local_24 = local_24 + *(float *)((int)&pCVar9->z + iVar14);
+      iVar14 = iVar14 + 0xc;
+    } while (iVar14 < iVar2 * 0xc);
   }
-  iVar12 = iVar1 * 0xc;
-  fVar10 = in_stack_00000010 - (float)iVar1;
-  iVar9 = *(int *)(extraout_EAX + 0x29378);
-  fVar3 = *(float *)(iVar12 + 4 + iVar9);
-  fVar4 = *(float *)(iVar12 + 8 + iVar9);
-  iVar1 = iVar2 + -1;
-  fVar11 = (float)iVar2 - in_stack_00000014;
-  iVar2 = *(int *)(extraout_EAX + 0x29378);
-  fVar5 = *(float *)(iVar2 + 4 + iVar1 * 0xc);
-  fVar6 = *(float *)(iVar2 + 8 + iVar1 * 0xc);
-  fVar7 = *(float *)(this_ptr->field3_0x508 + 4);
-  fVar8 = *(float *)(this_ptr->field3_0x508 + 8);
+  fVar11 = in_stack_00000010 - (float)iVar1;
+  pCVar9 = pCVar13->frame_positions_2;
+  fVar3 = pCVar9[iVar1].y;
+  fVar4 = pCVar9[iVar1].z;
+  iVar14 = iVar2 + -1;
+  fVar12 = (float)iVar2 - in_stack_00000014;
+  pCVar10 = pCVar13->frame_positions_2;
+  fVar5 = pCVar10[iVar14].y;
+  fVar6 = pCVar10[iVar14].z;
+  fVar7 = (float)this_ptr->field4_0x50c;
+  fVar8 = this_ptr->rest_pose_data[0];
   *in_stack_00000008 =
-       ((local_2c - *(float *)(iVar12 + iVar9) * fVar10) - *(float *)(iVar2 + iVar1 * 0xc) * fVar11)
-       * *(float *)this_ptr->field3_0x508;
-  in_stack_00000008[1] = ((local_28 - fVar3 * fVar10) - fVar5 * fVar11) * fVar7;
-  in_stack_00000008[2] = ((local_24 - fVar4 * fVar10) - fVar6 * fVar11) * fVar8;
+       ((local_2c - pCVar9[iVar1].x * fVar11) - pCVar10[iVar14].x * fVar12) *
+       (float)this_ptr->field3_0x508;
+  in_stack_00000008[1] = ((local_28 - fVar3 * fVar11) - fVar5 * fVar12) * fVar7;
+  in_stack_00000008[2] = ((local_24 - fVar4 * fVar11) - fVar6 * fVar12) * fVar8;
   return in_stack_00000008;
 }
 
@@ -133,7 +133,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0d10(CDeformableModelInstance
 // 005a0d4d: PUSH EBX
 //   Label: LAB_005a0d4d
 // 005a0d4e: PUSH EDI
-// 005a0d4f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 005a0d4f: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005a0d54: ADD ESP,0x4
 // 005a0d57: FLD float ptr [ESP + 0x58]

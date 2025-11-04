@@ -12,7 +12,7 @@
 // Function calls:
 //   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_motion.cpp_CMotionController_FUN_0052dd20
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 
 #include "nocturne.h"
 
@@ -23,55 +23,66 @@ undefined4 core_ghoul_cpp_FUN_004e82d0(void)
 
 {
   float fVar1;
-  float *pfVar2;
-  float *pfVar3;
-  CVector3f *pCVar4;
+  CVector3f *pCVar2;
+  CVector3f *pCVar3;
+  CDeformableModelInstance *this_ptr;
   BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   CVector3f *in_stack_00000008;
   CDemonActor *in_stack_00000018;
+  CVector3f aCStack_80 [2];
+  float local_68;
+  float local_64;
+  float local_60;
   CVector3f local_5c;
   float local_50;
   float local_4c;
   float fStack_48;
   float fStack_44;
   float local_40;
-  float fStack_3c;
+  CVector3f CStack_3c;
   float local_28;
   float local_24;
   float local_20;
   float fStack_14;
   float local_10;
   
-  fVar1 = core_motion_cpp_CMotionController_FUN_0052dd20
-                    ((CMotionController *)(in_stack_00000004 + 0x158));
+  this_ptr = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);
+  fVar1 = core_motion_cpp_CMotionController_FUN_0052dd20((CMotionController *)this_ptr);
   if (fVar1 <= 0.0) {
     return 0;
   }
-  pfVar2 = (float *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  pfVar3 = (float *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  local_28 = *pfVar3 + *pfVar2;
-  local_24 = pfVar3[1] + pfVar2[1];
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     (this_ptr,&CStack_3c,DAT_02d83300);
+  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     (this_ptr,aCStack_80,DAT_02d83308);
+  local_28 = pCVar3->x + pCVar2->x;
+  local_24 = pCVar3->y + pCVar2->y;
   local_4c = local_28 * FLOAT_0062de5a;
-  local_20 = pfVar3[2] + pfVar2[2];
+  local_20 = pCVar3->z + pCVar2->z;
   fStack_48 = local_24 * FLOAT_0062de5a;
   fStack_44 = local_20 * FLOAT_0062de5a;
-  pfVar2 = (float *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  pfVar3 = (float *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  local_50 = (*pfVar3 + *pfVar2) * FLOAT_0062de5a;
-  local_4c = (pfVar3[1] + pfVar2[1]) * FLOAT_0062de5a;
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     (this_ptr,(CVector3f *)&stack0xffffff78,DAT_02d83304);
+  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     (this_ptr,&CStack_3c,DAT_02d8330c);
+  local_68 = pCVar3->x + pCVar2->x;
+  local_64 = pCVar3->y + pCVar2->y;
+  local_50 = local_68 * FLOAT_0062de5a;
+  local_4c = local_64 * FLOAT_0062de5a;
+  local_60 = pCVar3->z + pCVar2->z;
   fStack_14 = fStack_44 + local_50;
-  fStack_48 = (pfVar3[2] + pfVar2[2]) * FLOAT_0062de5a;
+  fStack_48 = local_60 * FLOAT_0062de5a;
   local_5c.x = fStack_14 * FLOAT_0062de5a;
   local_10 = local_40 + local_4c;
   local_5c.y = local_10 * FLOAT_0062de5a;
-  local_5c.z = (fStack_3c + fStack_48) * FLOAT_0062de5a;
-  pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+  local_5c.z = (CStack_3c.x + fStack_48) * FLOAT_0062de5a;
+  pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      (in_stack_00000018,(CVector3f *)&stack0xfffffff8,&local_5c);
-  if (in_stack_00000008 != pCVar4) {
-    in_stack_00000008->x = pCVar4->x;
-    in_stack_00000008->y = pCVar4->y;
-    in_stack_00000008->z = pCVar4->z;
+  if (in_stack_00000008 != pCVar2) {
+    in_stack_00000008->x = pCVar2->x;
+    in_stack_00000008->y = pCVar2->y;
+    in_stack_00000008->z = pCVar2->z;
   }
   return 1;
 }
@@ -118,7 +129,7 @@ undefined4 core_ghoul_cpp_FUN_004e82d0(void)
 //   XREF to: Stack[-0x40] (DATA)
 // 004e8327: PUSH EAX
 // 004e8328: PUSH EBX
-// 004e8329: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 004e8329: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 004e832e: ADD ESP,0xc
 // 004e8331: MOV ECX,dword ptr [0x02d83308]
@@ -129,7 +140,7 @@ undefined4 core_ghoul_cpp_FUN_004e82d0(void)
 //   XREF to: Stack[-0x88] (DATA)
 // 004e833e: PUSH EAX
 // 004e833f: PUSH EBX
-// 004e8340: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 004e8340: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 004e8345: FLD float ptr [EAX]
 // 004e8347: FADD float ptr [ESI]
@@ -168,7 +179,7 @@ undefined4 core_ghoul_cpp_FUN_004e82d0(void)
 // 004e8394: PUSH EBX
 // 004e8395: FSTP float ptr [ESP + 0x54]
 //   XREF to: Stack[-0x50] (WRITE)
-// 004e8399: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 004e8399: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 004e839e: ADD ESP,0xc
 // 004e83a1: MOV EBP,dword ptr [0x02d8330c]
@@ -179,7 +190,7 @@ undefined4 core_ghoul_cpp_FUN_004e82d0(void)
 //   XREF to: Stack[-0x4c] (DATA)
 // 004e83ae: PUSH EAX
 // 004e83af: PUSH EBX
-// 004e83b0: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 004e83b0: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 004e83b5: FLD float ptr [EAX]
 // 004e83b7: FADD float ptr [ESI]

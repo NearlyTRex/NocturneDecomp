@@ -26,7 +26,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bcc0(CCharacter *this_ptr)
 {
   int in_stack_00000008;
   
-  if (((this_ptr->model).field11_0x2260[0] != '\0') &&
+  if (((this_ptr->model).field18_0x2260[0] != '\0') &&
      ((this_ptr->model).part_visibility_flags[in_stack_00000008] != 0)) {
     core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
     core_charactr_cpp_CCharacter_FUN_0042bd30(this_ptr);

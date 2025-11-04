@@ -32,9 +32,9 @@
 //   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0
 //   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
+//   core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a10e0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-//   core_skeleton.cpp_FUN_0059dca0
 
 #include "nocturne.h"
 
@@ -51,11 +51,13 @@ core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
   float fVar3;
   CVector3f *pCVar4;
   CKeyFramedModel *this_ptr_01;
+  CDeformableModel *this_ptr_02;
   BADSPACEBASE *in_ESP;
   CVector3f *ray_origin_00;
   undefined1 *frame_index;
   CVector3f *pCVar5;
   CVector3f *in_stack_ffffff5c;
+  int in_stack_ffffff60;
   undefined1 local_9c [12];
   undefined8 uStack_90;
   float fStack_88;
@@ -173,10 +175,12 @@ LAB_004095c9:
       }
       out_hit_normal[1].x = (float)g_DeformableModelRayHitPartIndex;
       out_hit_normal[1].y = (float)g_DeformableModelRayHitLodIndex;
+      iVar2 = g_DeformableModelRayHitTriangleIndex;
       out_hit_normal[1].z = (float)g_DeformableModelRayHitTriangleIndex;
-      core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-                ((CDeformableModelInstance *)collision_info->result_ptr);
-      fVar3 = (float)core_skeleton_cpp_FUN_0059dca0();
+      this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+                              ((CDeformableModelInstance *)collision_info->result_ptr);
+      fVar3 = (float)core_skeleton_cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0
+                               (this_ptr_02,iVar2,in_stack_ffffff60);
       out_hit_normal[2].x = fVar3;
     }
   }
@@ -581,7 +585,7 @@ LAB_004095c9:
 //   XREF to: 005a07a0 (UNCONDITIONAL_CALL)
 // 004097f1: ADD ESP,0x4
 // 004097f4: PUSH EAX
-// 004097f5: CALL core_skeleton.cpp_FUN_0059dca0
+// 004097f5: CALL core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0
 //   XREF to: 0059dca0 (UNCONDITIONAL_CALL)
 // 004097fa: MOV dword ptr [EBX + 0x18],EAX
 // 004097fd: LEA EAX,[ESP + 0x94]

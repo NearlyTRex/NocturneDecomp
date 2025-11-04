@@ -7,7 +7,7 @@
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a08a0 (005a08a0) at 005a096a [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_FUN_005a1b70 (005a1b70) at 005a1cca [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 
@@ -17,7 +17,6 @@ void core_skeleton_cpp_FUN_005a1950(void)
 
 {
   float fVar1;
-  float extraout_EAX;
   float *pfVar2;
   BADSPACEBASE *in_ESP;
   int iVar3;
@@ -27,48 +26,48 @@ void core_skeleton_cpp_FUN_005a1950(void)
   int in_stack_0000000c;
   int in_stack_00000010;
   CVector3f local_34;
-  float local_28;
+  CSkeleton *local_28;
   CVector3f *local_24;
   int local_20;
-  float local_1c;
+  CSkeleton *local_1c;
   CVector3f *local_18;
   CQuaternion4f *local_14;
   int iVar5;
   
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(in_stack_00000008);
+  local_28 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+                       (in_stack_00000008);
   iVar5 = 0;
-  if (0 < *(int *)((int)extraout_EAX + 0x28558)) {
+  if (0 < local_28->bone_count) {
     local_24 = (CVector3f *)(in_stack_00000004 + 0x1f7);
     local_14 = (CQuaternion4f *)(in_stack_00000004 + 3);
     local_34.z = (float)(in_stack_0000000c + 0x58);
     iVar3 = 0;
     pfVar2 = in_stack_00000004;
     pfVar4 = in_stack_00000004;
-    local_28 = extraout_EAX;
-    local_1c = extraout_EAX;
+    local_1c = local_28;
     local_18 = local_24;
     do {
       local_20 = iVar5 * 0x30;
       core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280((CMatrix3x3f *)local_18,local_14);
       if (pfVar2[0x193] != 1.0) {
-        *(float *)((int)in_stack_00000004 + (int)local_1c + 0x7dc) =
-             pfVar2[0x193] * *(float *)((int)in_stack_00000004 + (int)local_1c + 0x7dc);
-        *(float *)((int)in_stack_00000004 + (int)local_1c + 0x7e0) =
-             pfVar2[0x193] * *(float *)((int)in_stack_00000004 + (int)local_1c + 0x7e0);
-        *(float *)((int)in_stack_00000004 + (int)local_1c + 0x7e4) =
-             pfVar2[0x193] * *(float *)((int)in_stack_00000004 + (int)local_1c + 0x7e4);
-        *(float *)((int)in_stack_00000004 + (int)local_1c + 0x7ec) =
-             pfVar2[0x193] * *(float *)((int)in_stack_00000004 + (int)local_1c + 0x7ec);
-        *(float *)((int)in_stack_00000004 + (int)local_1c + 0x7f0) =
-             pfVar2[0x193] * *(float *)((int)in_stack_00000004 + (int)local_1c + 0x7f0);
-        *(float *)((int)in_stack_00000004 + (int)local_1c + 0x7f4) =
-             pfVar2[0x193] * *(float *)((int)in_stack_00000004 + (int)local_1c + 0x7f4);
-        *(float *)((int)in_stack_00000004 + (int)local_1c + 0x7fc) =
-             pfVar2[0x193] * *(float *)((int)in_stack_00000004 + (int)local_1c + 0x7fc);
-        *(float *)((int)in_stack_00000004 + (int)local_1c + 0x800) =
-             pfVar2[0x193] * *(float *)((int)in_stack_00000004 + (int)local_1c + 0x800);
-        *(float *)((int)in_stack_00000004 + (int)local_1c + 0x804) =
-             pfVar2[0x193] * *(float *)((int)in_stack_00000004 + (int)local_1c + 0x804);
+        *(float *)((int)(in_stack_00000004 + 0x1f7) + (int)local_1c) =
+             pfVar2[0x193] * *(float *)((int)(in_stack_00000004 + 0x1f7) + (int)local_1c);
+        *(float *)((int)(in_stack_00000004 + 0x1f8) + (int)local_1c) =
+             pfVar2[0x193] * *(float *)((int)(in_stack_00000004 + 0x1f8) + (int)local_1c);
+        *(float *)((int)(in_stack_00000004 + 0x1f9) + (int)local_1c) =
+             pfVar2[0x193] * *(float *)((int)(in_stack_00000004 + 0x1f9) + (int)local_1c);
+        *(float *)((int)(in_stack_00000004 + 0x1fb) + (int)local_1c) =
+             pfVar2[0x193] * *(float *)((int)(in_stack_00000004 + 0x1fb) + (int)local_1c);
+        *(float *)((int)(in_stack_00000004 + 0x1fc) + (int)local_1c) =
+             pfVar2[0x193] * *(float *)((int)(in_stack_00000004 + 0x1fc) + (int)local_1c);
+        *(float *)((int)(in_stack_00000004 + 0x1fd) + (int)local_1c) =
+             pfVar2[0x193] * *(float *)((int)(in_stack_00000004 + 0x1fd) + (int)local_1c);
+        *(float *)((int)(in_stack_00000004 + 0x1ff) + (int)local_1c) =
+             pfVar2[0x193] * *(float *)((int)(in_stack_00000004 + 0x1ff) + (int)local_1c);
+        *(float *)((int)(in_stack_00000004 + 0x200) + (int)local_1c) =
+             pfVar2[0x193] * *(float *)((int)(in_stack_00000004 + 0x200) + (int)local_1c);
+        *(float *)((int)(in_stack_00000004 + 0x201) + (int)local_1c) =
+             pfVar2[0x193] * *(float *)((int)(in_stack_00000004 + 0x201) + (int)local_1c);
       }
       fVar1 = ((CMatrix3x3f *)((int)local_18 + 0x28578))->m[0].y;
       if ((int)fVar1 < 0) {
@@ -78,20 +77,21 @@ void core_skeleton_cpp_FUN_005a1950(void)
       }
       else {
         core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                  (&local_34,(CVector3f *)((int)local_28 + iVar3),
+                  (&local_34,
+                   (CVector3f *)((int)((local_28->motion_list).state_names + -1) + 0x1a + iVar3),
                    (CMatrix3x4f *)((int)fVar1 * 0x30 + local_20));
         pfVar4[0x1fa] = local_34.y;
         pfVar4[0x1fe] = local_34.z;
-        pfVar4[0x202] = local_28;
+        pfVar4[0x202] = (float)local_28;
       }
       pfVar2 = pfVar2 + 1;
       pfVar4 = pfVar4 + 0xc;
       iVar3 = iVar3 + 0xc;
       local_18 = ((CMatrix3x3f *)((int)local_18 + 0x24))->m + 1;
       local_14 = local_14 + 1;
-      local_1c = (float)((int)local_1c + 0x24);
+      local_1c = (CSkeleton *)((local_1c->motion_list).state_names[1] + 2);
       iVar5 = iVar5 + 1;
-    } while (iVar5 < *(int *)((int)local_28 + 0x28558));
+    } while (iVar5 < local_28->bone_count);
   }
   return;
 }
@@ -109,7 +109,7 @@ void core_skeleton_cpp_FUN_005a1950(void)
 // 005a195b: MOV EDX,dword ptr [ESP + 0x44]
 //   XREF to: Stack[0x8] (READ)
 // 005a195f: PUSH EDX
-// 005a1960: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 005a1960: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005a1965: ADD ESP,0x4
 // 005a1968: MOV EBX,dword ptr [EAX + 0x28558]

@@ -4,14 +4,13 @@
 // Convention: unknown
 // Signature: undefined core_mimic.cpp_FUN_00520a00()
 // Globals:
-//   undefined4 DAT_00638833
-//   undefined4 DAT_0063883b
+//   double DOUBLE_00638833 = 1.30000000000000
+//   float FLOAT_0063883b = 0.5
 // Function calls:
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_mimic.cpp_FUN_00520a00(undefined4 param_1, undefined4 param_2)
     */
 
@@ -27,8 +26,8 @@ undefined4 core_mimic_cpp_FUN_00520a00(void)
   in_stack_00000008[7] = 0x3f800000;
   if (*in_stack_00000008 == 1) {
     in_stack_00000008[5] = -0x42333333;
-    fVar1 = (float)_DAT_00638833;
-    in_stack_00000008[6] = (int)((float)in_stack_00000008[6] + _DAT_0063883b);
+    fVar1 = (float)DOUBLE_00638833;
+    in_stack_00000008[6] = (int)((float)in_stack_00000008[6] + FLOAT_0063883b);
     in_stack_00000008[7] = (int)((float)in_stack_00000008[7] * fVar1);
   }
   else {

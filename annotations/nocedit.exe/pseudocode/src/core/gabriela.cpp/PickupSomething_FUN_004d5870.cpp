@@ -136,17 +136,24 @@ LAB_004d59f9:
        (*(float *)(iVar5 + 0x28) - local_a4[local_18 * 3]) +
        (in_stack_00000004->location).position.z;
   if (local_18 < 2) {
-    if (local_18 == 1) {
-LAB_004d5bb4:
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                ((CMotionController *)(in_stack_00000004 + 1));
+    if (local_18 != 1) {
+LAB_004d5bd9:
+      g_CurrentFilename = "..\\core\\gabriela.cpp";
+      g_CurrentLineNumber = 0x638;
+      core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze - invalid pickUpType: %d");
       return 1;
     }
+    iVar6 = 0xe;
   }
-  else if ((local_18 < 3) || (local_18 == 3)) goto LAB_004d5bb4;
-  g_CurrentFilename = "..\\core\\gabriela.cpp";
-  g_CurrentLineNumber = 0x638;
-  core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze - invalid pickUpType: %d");
+  else if (local_18 < 3) {
+    iVar6 = 0xf;
+  }
+  else {
+    if (local_18 != 3) goto LAB_004d5bd9;
+    iVar6 = 4;
+  }
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+            ((CMotionController *)(in_stack_00000004 + 1),iVar6,1);
   return 1;
 }
 

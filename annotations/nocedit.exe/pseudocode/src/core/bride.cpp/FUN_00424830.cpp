@@ -18,7 +18,7 @@
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
 //   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
 
@@ -35,10 +35,12 @@ void core_bride_cpp_FUN_00424830(void)
   int iVar1;
   undefined4 uVar2;
   BADSPACEBASE *in_ESP;
+  int unaff_EBP;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
-  float local_30;
+  float in_stack_ffffffd0;
   char *sound_name;
+  CVector3f local_24;
   
   sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
   if (*(int *)(in_stack_00000008 + 0x28) == 7) {
@@ -53,9 +55,11 @@ void core_bride_cpp_FUN_00424830(void)
     } while (iVar1 < 5);
   }
   if (*(int *)(in_stack_00000008 + 0x30) == 0x6c) {
-    input_local_point = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+    input_local_point =
+         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                   (&in_stack_00000004->model,&local_24,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&in_stack_00000004->base_actor,(CVector3f *)&local_30,input_local_point);
+              (&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffd0,input_local_point);
     core_charactr_cpp_CCharacter_FUN_0042b5b0(in_stack_00000004);
   }
   core_bride_cpp_FUN_00424600();
@@ -66,9 +70,9 @@ void core_bride_cpp_FUN_00424830(void)
   }
   this_ptr = &in_stack_00000004->model;
   if (0.0 < in_stack_00000004->hit_points) {
-    core_actor_cpp_randomChance_FUN_0040cd10(0.5);
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
-    local_30 = 6.087675e-39;
+    iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              (&this_ptr->motion_controller,(iVar1 == 0) + 7,(int)in_stack_ffffffd0);
     iVar1 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
     if (iVar1 != 0) goto LAB_00424955;
     sound_name = "ub-hurt?.wav";
@@ -77,16 +81,19 @@ void core_bride_cpp_FUN_00424830(void)
     in_stack_00000004->hit_points = 0.0;
     iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
     if ((*(int *)(iVar1 + 0x24) == 0xe) || (*(int *)(iVar1 + 0x24) == 0xd)) goto LAB_00424955;
-    core_actor_cpp_randomChance_FUN_0040cd10(0.5);
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
+    local_24.z = 6.087358e-39;
+    iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+    local_24.z = 6.08739e-39;
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              (&this_ptr->motion_controller,(iVar1 == 0) + 0xb,unaff_EBP);
     sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
     sound_name = "ub-die?.wav";
   }
-  local_30 = 6.087437e-39;
   uVar2 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                     (&in_stack_00000004->base_actor,sound_name);
   *(undefined4 *)(in_stack_00000004[1].base_actor.create_event + 0x48) = uVar2;
 LAB_00424955:
+  local_24.z = 6.087459e-39;
   core_enemy_cpp_FUN_004a9f10();
   return;
 }
@@ -124,7 +131,7 @@ LAB_00424955:
 // 0042486b: PUSH EAX
 // 0042486c: LEA EAX,[ESI + 0x158]
 // 00424872: PUSH EAX
-// 00424873: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 00424873: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 00424878: ADD ESP,0xc
 // 0042487b: PUSH EAX

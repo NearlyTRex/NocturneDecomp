@@ -10,7 +10,7 @@
 //   shape_meshlod.cpp_OpenS3DFile_FUN_0051aa60 (0051aa60) at 0051ad12 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_Computing_plane_equation_00637cce
-//   undefined4 DAT_00637ced
+//   double DOUBLE_00637ced = 0.000100000000000000
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   CEditorTools g_CEditorToolsPtr
 // Function calls:
@@ -25,7 +25,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 shape_meshlod.cpp_FUN_0051b330(undefined4 param_1) */
 
 void shape_meshlod_cpp_FUN_0051b330(void)

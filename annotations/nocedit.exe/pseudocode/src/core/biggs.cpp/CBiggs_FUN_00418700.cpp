@@ -24,7 +24,7 @@
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
+//   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 
 #include "nocturne.h"
@@ -44,97 +44,109 @@ void __cdecl core_biggs_cpp_CBiggs_FUN_00418700(CBiggs *this_ptr)
   float in_stack_00000008;
   
   iVar5 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
+  if (iVar5 == 0) {
+    return;
+  }
+  pCVar4 = &(this_ptr->base_enemy).base_character;
+  (pCVar4->model).field17_0x2254[8] = '\0';
+  (pCVar4->model).field17_0x2254[9] = '\0';
+  (pCVar4->model).field17_0x2254[10] = '\0';
+  (pCVar4->model).field17_0x2254[0xb] = '\0';
+  *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4) =
+       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
+  *(undefined4 *)(this_ptr->base_enemy).base_character.model.field17_0x2254 =
+       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4);
+  fVar6 = in_stack_00000008 * (this_ptr->base_enemy).speed;
+  this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
+  while (0.0 < fVar6) {
+    fVar6 = (float)core_motion_cpp_CMotionController_advance_FUN_0052d610
+                             (&this_ptr_00->motion_controller);
+    core_charactr_cpp_CCharacter_FUN_0042ec40((CCharacter *)this_ptr);
+  }
+  fVar6 = (this_ptr->base_enemy).speed;
+  fVar2 = (float)_DAT_00615b09;
+  *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x28) =
+       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
+  *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
+       in_stack_00000008 * fVar2 * fVar6;
+  core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr_00->motion_controller);
+  iVar5 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
+  if (iVar5 == 0) goto LAB_004187db;
+  uVar1 = *(uint *)((this_ptr->base_enemy).base_character.field11_0x25a0 + 0x10);
+  if (uVar1 < 2) {
+    if (uVar1 == 1) {
+LAB_004187b0:
+      iVar5 = 1;
+    }
+    else {
+LAB_00418994:
+      iVar5 = 0;
+    }
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              (&(this_ptr->base_enemy).base_character.model.motion_controller,iVar5,1);
+  }
+  else {
+    if (uVar1 < 3) goto LAB_004187b0;
+    if (uVar1 != 3) goto LAB_00418994;
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              (&this_ptr_00->motion_controller,0,1);
+    engine_console_cpp_CConsole_printf_FUN_00441890
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
+  }
+  pCVar4 = &(this_ptr->base_enemy).base_character;
+  (pCVar4->model).field17_0x2254[8] = '\0';
+  (pCVar4->model).field17_0x2254[9] = '\0';
+  (pCVar4->model).field17_0x2254[10] = '\0';
+  (pCVar4->model).field17_0x2254[0xb] = '\0';
+  *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4) =
+       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
+  *(undefined4 *)(this_ptr->base_enemy).base_character.model.field17_0x2254 =
+       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4);
+LAB_004187db:
+  if (0.0 < *(float *)(this_ptr->base_enemy).field6_0xbe38) {
+    *(float *)(this_ptr->base_enemy).field6_0xbe38 =
+         *(float *)(this_ptr->base_enemy).field6_0xbe38 - in_stack_00000008;
+  }
+  iVar5 = core_charactr_cpp_CCharacter_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar5 != 0) {
+    *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) =
+         *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) -
+         in_stack_00000008 * (float)_DAT_00615b11;
+    pCVar3 = &this_ptr->base_enemy;
+    (pCVar3->base_character).field2_0x240c[0x18] = '\0';
+    (pCVar3->base_character).field2_0x240c[0x19] = '\0';
+    (pCVar3->base_character).field2_0x240c[0x1a] = '\0';
+    (pCVar3->base_character).field2_0x240c[0x1b] = '\0';
+    *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x14) =
+         *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x18);
+    *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x10) =
+         *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x14);
     pCVar4 = &(this_ptr->base_enemy).base_character;
-    (pCVar4->model).field10_0x2254[8] = '\0';
-    (pCVar4->model).field10_0x2254[9] = '\0';
-    (pCVar4->model).field10_0x2254[10] = '\0';
-    (pCVar4->model).field10_0x2254[0xb] = '\0';
-    *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4) =
-         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 8);
-    *(undefined4 *)(this_ptr->base_enemy).base_character.model.field10_0x2254 =
-         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4);
-    fVar6 = in_stack_00000008 * (this_ptr->base_enemy).speed;
-    this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
-    while (0.0 < fVar6) {
-      fVar6 = (float)core_motion_cpp_CMotionController_advance_FUN_0052d610
-                               (&this_ptr_00->motion_controller);
-      core_charactr_cpp_CCharacter_FUN_0042ec40((CCharacter *)this_ptr);
-    }
-    fVar6 = (this_ptr->base_enemy).speed;
-    fVar2 = (float)_DAT_00615b09;
-    *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x28) =
-         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 8);
-    *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
-         in_stack_00000008 * fVar2 * fVar6;
-    core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr_00->motion_controller);
-    iVar5 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
-    if (iVar5 != 0) {
-      uVar1 = *(uint *)((this_ptr->base_enemy).base_character.field11_0x25a0 + 0x10);
-      if (((uVar1 < 2) || (uVar1 < 3)) || (uVar1 != 3)) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base_enemy).base_character.model.motion_controller);
-      }
-      else {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&this_ptr_00->motion_controller);
-        engine_console_cpp_CConsole_printf_FUN_00441890
-                  (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
-      }
-      pCVar4 = &(this_ptr->base_enemy).base_character;
-      (pCVar4->model).field10_0x2254[8] = '\0';
-      (pCVar4->model).field10_0x2254[9] = '\0';
-      (pCVar4->model).field10_0x2254[10] = '\0';
-      (pCVar4->model).field10_0x2254[0xb] = '\0';
-      *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4) =
-           *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 8);
-      *(undefined4 *)(this_ptr->base_enemy).base_character.model.field10_0x2254 =
-           *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4);
-    }
-    if (0.0 < *(float *)(this_ptr->base_enemy).field6_0xbe38) {
-      *(float *)(this_ptr->base_enemy).field6_0xbe38 =
-           *(float *)(this_ptr->base_enemy).field6_0xbe38 - in_stack_00000008;
-    }
-    iVar5 = core_charactr_cpp_CCharacter_FUN_004297e0((CCharacter *)this_ptr);
-    if (iVar5 != 0) {
-      *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) =
-           *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) -
-           in_stack_00000008 * (float)_DAT_00615b11;
-      pCVar3 = &this_ptr->base_enemy;
-      (pCVar3->base_character).field2_0x240c[0x18] = '\0';
-      (pCVar3->base_character).field2_0x240c[0x19] = '\0';
-      (pCVar3->base_character).field2_0x240c[0x1a] = '\0';
-      (pCVar3->base_character).field2_0x240c[0x1b] = '\0';
-      *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x14) =
-           *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x18);
-      *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x10) =
-           *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x14);
-      pCVar4 = &(this_ptr->base_enemy).base_character;
-      (pCVar4->model).field10_0x2254[8] = '\0';
-      (pCVar4->model).field10_0x2254[9] = '\0';
-      (pCVar4->model).field10_0x2254[10] = '\0';
-      (pCVar4->model).field10_0x2254[0xb] = '\0';
-      *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4) =
-           *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 8);
-      *(undefined4 *)(this_ptr->base_enemy).base_character.model.field10_0x2254 =
-           *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4);
-      core_charactr_cpp_CCharacter_FUN_00428f40((CCharacter *)this_ptr);
-    }
-    core_charactr_cpp_CCharacter_FUN_00429820((CCharacter *)this_ptr);
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020();
-    core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
-    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                      (g_CEventListPtr,this_ptr->field4_0xc040 + 0xc2c);
-    if (iVar5 != 0) {
-      this_ptr->morph_timer = 0.0;
-      this_ptr->morphing = 1;
-    }
-    if ((this_ptr->morphing != 0) &&
-       (fVar6 = this_ptr->morph_timer + in_stack_00000008, this_ptr->morph_timer = fVar6,
-       DAT_0065ac10 < fVar6)) {
-      this_ptr->morph_timer = DAT_0065ac10;
-      return;
-    }
+    (pCVar4->model).field17_0x2254[8] = '\0';
+    (pCVar4->model).field17_0x2254[9] = '\0';
+    (pCVar4->model).field17_0x2254[10] = '\0';
+    (pCVar4->model).field17_0x2254[0xb] = '\0';
+    *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4) =
+         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
+    *(undefined4 *)(this_ptr->base_enemy).base_character.model.field17_0x2254 =
+         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4);
+    core_charactr_cpp_CCharacter_FUN_00428f40((CCharacter *)this_ptr);
+  }
+  core_charactr_cpp_CCharacter_FUN_00429820((CCharacter *)this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
+            (&(this_ptr->base_enemy).base_character.model);
+  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
+  iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+                    (g_CEventListPtr,this_ptr->field4_0xc040 + 0xc2c);
+  if (iVar5 != 0) {
+    this_ptr->morph_timer = 0.0;
+    this_ptr->morphing = 1;
+  }
+  if ((this_ptr->morphing != 0) &&
+     (fVar6 = this_ptr->morph_timer + in_stack_00000008, this_ptr->morph_timer = fVar6,
+     DAT_0065ac10 < fVar6)) {
+    this_ptr->morph_timer = DAT_0065ac10;
+    return;
   }
   return;
 }
@@ -329,7 +341,7 @@ void __cdecl core_biggs_cpp_CBiggs_FUN_00418700(CBiggs *this_ptr)
 // 004188d5: ADD ESP,0x4
 // 004188d8: LEA EAX,[EBX + 0x158]
 // 004188de: PUSH EAX
-// 004188df: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
+// 004188df: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 //   XREF to: 0059e020 (UNCONDITIONAL_CALL)
 // 004188e4: ADD ESP,0x4
 // 004188e7: PUSH dword ptr [EBP + 0x14]

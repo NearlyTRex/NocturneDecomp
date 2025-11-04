@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_hotdemon.cpp_FUN_004f79d0()
 // Globals:
-//   undefined4 s_Model_0062f528
+//   TerminatedCString s_Model_0062f528
 //   TerminatedCString s_State_0062f52e
 // Function calls:
 //   core_actor.cpp_CActorPropertyList_FUN_0040e4a0

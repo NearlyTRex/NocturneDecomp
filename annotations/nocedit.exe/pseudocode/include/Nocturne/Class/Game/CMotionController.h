@@ -14,7 +14,7 @@ typedef struct CMotionController {
     int tween_direction; // 0x20
     int tween_set_new_state; // 0x24
     int state_index; // 0x28
-    int field_44; // 0x2c
+    int in_transition; // 0x2c
     char current_motion_name[32]; // 0x30
     CMotionController_vtable* vtable; // 0x50
 } CMotionController;

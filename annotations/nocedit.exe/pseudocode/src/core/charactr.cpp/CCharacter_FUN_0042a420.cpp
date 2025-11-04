@@ -34,21 +34,20 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a420(CCharacter *this_ptr)
   undefined4 local_5c;
   CVector3f CStack_58;
   float fStack_48;
-  char *pcStack_38;
+  CMatrix3x4f *pCStack_38;
   CVector3i CStack_24;
   float local_18;
-  char *local_14;
+  CMatrix3x4f *local_14;
   
   bVar6 = 0;
   iVar3 = 0;
   if (0 < *(int *)(this_ptr->cloth_data + 0x35c)) {
-    local_14 = (this_ptr->model).field3_0x508 + 0x978;
+    local_14 = (this_ptr->model).bone_world_matrices;
     pcVar2 = this_ptr->cloth_data + 0x360;
     do {
       if ((this_ptr->model).part_visibility_flags[*(int *)pcVar2] != 0) {
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                  ((CMatrix3x4f *)(pcVar2 + 8),
-                   (CMatrix3x4f *)(local_14 + *(int *)(pcVar2 + 4) * 0x30),
+                  ((CMatrix3x4f *)(pcVar2 + 8),local_14 + *(int *)(pcVar2 + 4),
                    (CMatrix3x4f *)in_stack_ffffff74);
         puVar4 = (undefined4 *)&stack0xffffff78;
         puVar5 = &local_5c;
@@ -59,7 +58,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a420(CCharacter *this_ptr)
         }
         core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&CStack_58,(CMatrix3x3f *)&stack0xffffffd8);
         local_18 = fStack_48;
-        local_14 = pcStack_38;
+        local_14 = pCStack_38;
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                   (g_CDemonRendererPtr,&CStack_24,(CVector3i *)&local_18);
         in_stack_ffffff74 = &DAT_00823a98;

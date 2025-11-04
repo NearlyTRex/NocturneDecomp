@@ -22,31 +22,24 @@
 void core_bugs_cpp_FUN_004250f0(void)
 
 {
-  CCharacter *pCVar1;
-  int iVar2;
+  int iVar1;
   CCharacter *in_stack_00000004;
   
-  iVar2 = core_charactr_cpp_CCharacter_FUN_00429870(in_stack_00000004);
-  if (iVar2 != 0) {
-    if ((*(int *)(in_stack_00000004[2].model.field3_0x508 + 0x15f0) == 0) &&
-       (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                          (g_CEventListPtr,in_stack_00000004[2].model.field3_0x508 + 0x15f8),
-       iVar2 != 0)) {
-      pCVar1 = in_stack_00000004 + 2;
-      (pCVar1->model).field3_0x508[0x15f0] = '\x01';
-      (pCVar1->model).field3_0x508[0x15f1] = '\0';
-      (pCVar1->model).field3_0x508[0x15f2] = '\0';
-      (pCVar1->model).field3_0x508[0x15f3] = '\0';
+  iVar1 = core_charactr_cpp_CCharacter_FUN_00429870(in_stack_00000004);
+  if (iVar1 != 0) {
+    if ((in_stack_00000004[2].model.bone_world_matrices[0x42].m[1].y == 0.0) &&
+       (iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+                          (g_CEventListPtr,
+                           (char *)(in_stack_00000004[2].model.bone_world_matrices[0x42].m + 2)),
+       iVar1 != 0)) {
+      in_stack_00000004[2].model.bone_world_matrices[0x42].m[1].y = 1.4013e-45;
     }
-    if ((*(int *)(in_stack_00000004[2].model.field3_0x508 + 0x15f4) == 0) &&
-       (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                          (g_CEventListPtr,in_stack_00000004[2].model.field3_0x508 + 0x165c),
-       iVar2 != 0)) {
-      pCVar1 = in_stack_00000004 + 2;
-      (pCVar1->model).field3_0x508[0x15f4] = '\x01';
-      (pCVar1->model).field3_0x508[0x15f5] = '\0';
-      (pCVar1->model).field3_0x508[0x15f6] = '\0';
-      (pCVar1->model).field3_0x508[0x15f7] = '\0';
+    if ((in_stack_00000004[2].model.bone_world_matrices[0x42].m[1].z == 0.0) &&
+       (iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+                          (g_CEventListPtr,
+                           (char *)&in_stack_00000004[2].model.bone_world_matrices[0x44].m[2].x),
+       iVar1 != 0)) {
+      in_stack_00000004[2].model.bone_world_matrices[0x42].m[1].z = 1.4013e-45;
     }
     switch(*(undefined4 *)(in_stack_00000004[1].base_actor.create_event + 0x20)) {
     case 0:

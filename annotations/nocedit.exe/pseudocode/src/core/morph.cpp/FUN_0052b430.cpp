@@ -6,8 +6,8 @@
 // Cross-references:
 //   core_biggs.cpp_FUN_00418680 (00418680) at 004186b8 [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_CMimic_setup_FUN_0051f3e0 (0051f3e0) at 0051f653 [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00528c70 (00528c70) at 00528ce7 [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00528d20 (00528d20) at 00529330 [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_process_FUN_00528d20 (00528d20) at 00529330 [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_setup_FUN_00528c70 (00528c70) at 00528ce7 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052c481 [UNCONDITIONAL_CALL]
 //   core_passngr.cpp_FUN_00545d30 (00545d30) at 00545da1 [UNCONDITIONAL_CALL]
 //   core_succubus.cpp_CSuccubus_FUN_005c6b60 (005c6b60) at 005c6dc9 [UNCONDITIONAL_CALL]

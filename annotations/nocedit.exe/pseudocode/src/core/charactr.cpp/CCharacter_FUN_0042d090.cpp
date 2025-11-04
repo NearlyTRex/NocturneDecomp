@@ -57,7 +57,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
   undefined1 auStack_8c [100];
   COrientation *local_28;
   CLocation *local_24;
-  char *local_20;
+  CMatrix3x4f *local_20;
   SCarryHand *local_1c;
   float local_18;
   float fStack_14;
@@ -66,7 +66,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
   local_28 = &(this_ptr->base_actor).orient;
   local_24 = &(this_ptr->base_actor).location;
   local_18 = 0.0;
-  local_20 = (this_ptr->model).field3_0x508 + 0x978;
+  local_20 = (this_ptr->model).bone_world_matrices;
   pSVar4 = this_ptr->carry_hands;
   do {
     if (pSVar4->carry_actor != (CDemonActor *)0x0) {

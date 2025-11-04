@@ -373,7 +373,7 @@ uint hashClassName(char * class_name);
 
 // Original: core_actor.cpp_registerActorClass_FUN_0040c2e0
 // Address: 0040c2e0
-CDemonActorType * registerActorClass(CDemonActorType * this_ptr, char * class_name, CDemonActorFactoryFunction * factor_func, int * max_version, int version, CDemonActorType * parent_class_info);
+CDemonActorType * registerActorClass(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factor_func, int * max_version, int version, CDemonActorType * parent_class_info);
 
 // Original: core_actor.cpp_getActorClassByName_FUN_0040c3c0
 // Address: 0040c3c0

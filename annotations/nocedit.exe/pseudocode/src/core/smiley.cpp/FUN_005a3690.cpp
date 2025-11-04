@@ -10,7 +10,7 @@
 //   undefined4 DAT_03f48fc4
 //   undefined4 DAT_03f48fcc
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 
 #include "nocturne.h"
 
@@ -20,42 +20,55 @@
 undefined4 core_smiley_cpp_FUN_005a3690(void)
 
 {
-  undefined4 *puVar1;
+  CVector3f *pCVar1;
+  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
-  undefined4 *in_stack_00000008;
+  CVector3f *in_stack_00000008;
+  CVector3f local_30;
+  CVector3f CStack_20;
   
   if (*(int *)(in_stack_00000004 + 0xbefc) == 3) {
     return 0;
   }
-  puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  if (in_stack_00000008 != puVar1) {
-    *in_stack_00000008 = *puVar1;
-    in_stack_00000008[1] = puVar1[1];
-    in_stack_00000008[2] = puVar1[2];
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_30,DAT_03f48fa0
+                     );
+  if (in_stack_00000008 != pCVar1) {
+    in_stack_00000008->x = pCVar1->x;
+    in_stack_00000008->y = pCVar1->y;
+    in_stack_00000008->z = pCVar1->z;
   }
-  puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  if (in_stack_00000008 + 3 != puVar1) {
-    in_stack_00000008[3] = *puVar1;
-    in_stack_00000008[4] = puVar1[1];
-    in_stack_00000008[5] = puVar1[2];
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&CStack_20,
+                      DAT_03f48fb4);
+  if (in_stack_00000008 + 1 != pCVar1) {
+    in_stack_00000008[1].x = pCVar1->x;
+    in_stack_00000008[1].y = pCVar1->y;
+    in_stack_00000008[1].z = pCVar1->z;
   }
-  puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  if (in_stack_00000008 + 6 != puVar1) {
-    in_stack_00000008[6] = *puVar1;
-    in_stack_00000008[7] = puVar1[1];
-    in_stack_00000008[8] = puVar1[2];
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),
+                      (CVector3f *)&stack0xffffffc0,DAT_03f48fb8);
+  if (in_stack_00000008 + 2 != pCVar1) {
+    in_stack_00000008[2].x = pCVar1->x;
+    in_stack_00000008[2].y = pCVar1->y;
+    in_stack_00000008[2].z = pCVar1->z;
   }
-  puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  if (in_stack_00000008 + 9 != puVar1) {
-    in_stack_00000008[9] = *puVar1;
-    in_stack_00000008[10] = puVar1[1];
-    in_stack_00000008[0xb] = puVar1[2];
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_30,DAT_03f48fc4
+                     );
+  if (in_stack_00000008 + 3 != pCVar1) {
+    in_stack_00000008[3].x = pCVar1->x;
+    in_stack_00000008[3].y = pCVar1->y;
+    in_stack_00000008[3].z = pCVar1->z;
   }
-  puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  if (in_stack_00000008 + 0xc != puVar1) {
-    in_stack_00000008[0xc] = *puVar1;
-    in_stack_00000008[0xd] = puVar1[1];
-    in_stack_00000008[0xe] = puVar1[2];
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),
+                      (CVector3f *)&stack0xfffffff8,DAT_03f48fcc);
+  if (in_stack_00000008 + 4 != pCVar1) {
+    in_stack_00000008[4].x = pCVar1->x;
+    in_stack_00000008[4].y = pCVar1->y;
+    in_stack_00000008[4].z = pCVar1->z;
   }
   return 5;
 }
@@ -91,7 +104,7 @@ undefined4 core_smiley_cpp_FUN_005a3690(void)
 // 005a36bd: LEA EAX,[EDI + 0x158]
 // 005a36c3: PUSH EAX
 // 005a36c4: MOV EBX,0x1
-// 005a36c9: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 005a36c9: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 005a36ce: ADD ESP,0xc
 // 005a36d1: CMP ESI,EAX
@@ -112,7 +125,7 @@ undefined4 core_smiley_cpp_FUN_005a3690(void)
 // 005a36f0: PUSH EAX
 // 005a36f1: LEA EAX,[EDI + 0x158]
 // 005a36f7: PUSH EAX
-// 005a36f8: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 005a36f8: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 005a36fd: MOV EDX,EAX
 // 005a36ff: LEA EAX,[EBX*0x4 + 0x0]
@@ -139,7 +152,7 @@ undefined4 core_smiley_cpp_FUN_005a3690(void)
 // 005a372f: LEA EAX,[EDI + 0x158]
 // 005a3735: PUSH EAX
 // 005a3736: INC EBX
-// 005a3737: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 005a3737: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 005a373c: MOV EDX,EAX
 // 005a373e: LEA EAX,[EBX*0x4 + 0x0]
@@ -166,7 +179,7 @@ undefined4 core_smiley_cpp_FUN_005a3690(void)
 // 005a376f: LEA EAX,[EDI + 0x158]
 // 005a3775: PUSH EAX
 // 005a3776: INC EBX
-// 005a3777: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 005a3777: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 005a377c: MOV EDX,EAX
 // 005a377e: LEA EAX,[EBX*0x4 + 0x0]
@@ -193,7 +206,7 @@ undefined4 core_smiley_cpp_FUN_005a3690(void)
 // 005a37af: ADD EDI,0x158
 // 005a37b5: PUSH EDI
 // 005a37b6: INC EBX
-// 005a37b7: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 005a37b7: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 005a37bc: MOV EDX,EAX
 // 005a37be: LEA EAX,[EBX*0x4 + 0x0]

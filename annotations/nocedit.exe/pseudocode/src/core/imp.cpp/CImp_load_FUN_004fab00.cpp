@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_imp.cpp_CImp_load_FUN_004fab00()
 // Globals:
-//   undefined4 s_speed_0062fa2e
+//   TerminatedCString s_speed_0062fa2e
 //   TerminatedCString s_modelName_0062fa34
 //   TerminatedCString s_motion_state_0062fa3e
 // Function calls:
@@ -24,7 +24,7 @@ void core_imp_cpp_CImp_load_FUN_004fab00(void)
   CEnemy *in_stack_00000004;
   
   core_enemy_cpp_CEnemy_serialize_FUN_004a9660(in_stack_00000004);
-  core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"@speed" + 1);
+  core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"speed");
   model_ptr = &(in_stack_00000004->base_character).model;
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
   core_actor_cpp_serializeMotionState_FUN_0040b9f0

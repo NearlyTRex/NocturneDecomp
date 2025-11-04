@@ -28,7 +28,7 @@
 //   core_imp.cpp_FUN_004f9c30 (004f9c30) at 004fa11d [UNCONDITIONAL_CALL]
 //   core_larva.cpp_FUN_00503080 (00503080) at 005032df [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_FUN_00525840 (00525840) at 00525d6d [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00528d20 (00528d20) at 00528fba [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_process_FUN_00528d20 (00528d20) at 00528fba [UNCONDITIONAL_CALL]
 //   core_npc.cpp_CNPC_process_FUN_005448b0 (005448b0) at 00544af0 [UNCONDITIONAL_CALL]
 //   core_passngr.cpp_FUN_00545ef0 (00545ef0) at 005460a8 [UNCONDITIONAL_CALL]
 //   core_scat.cpp_FUN_005571f0 (005571f0) at 005575a2 [UNCONDITIONAL_CALL]
@@ -47,7 +47,7 @@
 //   core_charactr.cpp_CCharacter_FUN_0042d090
 //   core_charactr.cpp_CCharacter_FUN_0042d530
 //   core_cloth.cpp_FUN_0043c2d0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 
 #include "nocturne.h"
 
@@ -63,7 +63,7 @@ void __cdecl core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(CChara
   
   core_charactr_cpp_CCharacter_applyGesture_FUN_0042d3d0(this_ptr);
   core_charactr_cpp_CCharacter_applyLookAt_FUN_0042dcd0(this_ptr);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40(&this_ptr->model);
+  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(&this_ptr->model);
   core_charactr_cpp_CCharacter_FUN_0042d530(this_ptr);
   core_charactr_cpp_CCharacter_FUN_0042d090(this_ptr);
   if (*(int *)this_ptr->field13_0x2620 == 0) {
@@ -98,7 +98,7 @@ void __cdecl core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(CChara
 // 0042dfd4: ADD ESP,0x4
 // 0042dfd7: LEA EAX,[EBX + 0x158]
 // 0042dfdd: PUSH EAX
-// 0042dfde: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+// 0042dfde: CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
 // 0042dfe3: ADD ESP,0x4
 // 0042dfe6: PUSH EBX

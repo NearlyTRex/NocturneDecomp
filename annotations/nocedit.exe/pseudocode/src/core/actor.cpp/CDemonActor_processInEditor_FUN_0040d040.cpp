@@ -37,9 +37,9 @@
 //   void* g_CKeysPtr
 //   CDemonMission g_CDemonMissionInstance
 // Function calls:
-//   core_msnedit.cpp_FUN_0053ca00
-//   core_msnedit.cpp_IgnoreAndProcess_FUN_0053c8d0
-//   core_skeleton.cpp_FUN_005a20b0
+//   core_msnedit.cpp_CDemonMission_FUN_0053c8d0
+//   core_msnedit.cpp_CDemonMission_FUN_0053ca00
+//   core_slew.cpp_CSlew_processInput_FUN_005a20b0
 
 #include "nocturne.h"
 
@@ -54,7 +54,7 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
   float in_stack_0000000c;
   CDemonMission *in_stack_00000010;
   CDemonMission *in_stack_00000014;
-  CDemonActor *in_stack_00000018;
+  float in_stack_00000018;
   
   pCVar1 = this_ptr;
   this_ptr->was_created = 0;
@@ -71,14 +71,14 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
         in_stack_00000010 = (CDemonMission *)(pCVar1->orient).bank;
         in_stack_00000014 = (CDemonMission *)(pCVar1->orient).heading;
       }
-      core_skeleton_cpp_FUN_005a20b0();
+      core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0x00000000);
       (pCVar1->location).position.x = (float)this_ptr;
       (pCVar1->location).position.y = in_stack_00000008;
       (pCVar1->location).position.z = in_stack_0000000c;
       if (&pCVar1->orient != (COrientation *)&stack0x00000010) {
         (pCVar1->orient).pitch = (float)in_stack_00000010;
         (pCVar1->orient).bank = (float)in_stack_00000014;
-        (pCVar1->orient).heading = (float)in_stack_00000018;
+        (pCVar1->orient).heading = in_stack_00000018;
       }
     }
     iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x22);
@@ -86,13 +86,12 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
       in_stack_00000014 = (CDemonMission *)pCVar1;
       in_stack_00000010 = g_CDemonMissionPtr;
       in_stack_0000000c = 5.952307e-39;
-      core_msnedit_cpp_IgnoreAndProcess_FUN_0053c8d0();
+      core_msnedit_cpp_CDemonMission_FUN_0053c8d0(g_CDemonMissionPtr);
     }
     if (((byte)g_MouseButtonFlags & 2) != 0) {
-      in_stack_00000018 = pCVar1;
       in_stack_00000014 = g_CDemonMissionPtr;
       in_stack_00000010 = (CDemonMission *)0x40d0b5;
-      core_msnedit_cpp_FUN_0053ca00();
+      core_msnedit_cpp_CDemonMission_FUN_0053ca00(g_CDemonMissionPtr);
       return;
     }
   }
@@ -150,7 +149,7 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
 //   XREF to: 0067d550 (READ)
 // 0040d096: PUSH EDX
 //   XREF to: 02f33740 (DATA)
-// 0040d097: CALL core_msnedit.cpp_IgnoreAndProcess_FUN_0053c8d0
+// 0040d097: CALL core_msnedit.cpp_CDemonMission_FUN_0053c8d0
 //   XREF to: 0053c8d0 (UNCONDITIONAL_CALL)
 // 0040d09c: ADD ESP,0x8
 // 0040d09f: TEST byte ptr [0x02cf6a94],0x2
@@ -164,7 +163,7 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
 //   XREF to: 0067d550 (READ)
 // 0040d0af: PUSH ECX
 //   XREF to: 02f33740 (DATA)
-// 0040d0b0: CALL core_msnedit.cpp_FUN_0053ca00
+// 0040d0b0: CALL core_msnedit.cpp_CDemonMission_FUN_0053ca00
 //   XREF to: 0053ca00 (UNCONDITIONAL_CALL)
 // 0040d0b5: ADD ESP,0x8
 // 0040d0b8: ADD ESP,0x1c
@@ -197,7 +196,7 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
 // 0040d0f8: MOV EAX,ESP
 //   Label: LAB_0040d0f8
 // 0040d0fa: PUSH EAX
-// 0040d0fb: CALL core_skeleton.cpp_FUN_005a20b0
+// 0040d0fb: CALL core_slew.cpp_CSlew_processInput_FUN_005a20b0
 //   XREF to: 005a20b0 (UNCONDITIONAL_CALL)
 // 0040d100: ADD ESP,0x4
 // 0040d103: LEA EDX,[EBX + 0x20]

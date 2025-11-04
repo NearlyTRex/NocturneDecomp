@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_xform.cpp_setIdentityQuaternion_FUN_005f7620(CQuaternion4f * quaternion)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80 (0059df80) at 0059dfb1 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80 (0059df80) at 0059dfb1 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

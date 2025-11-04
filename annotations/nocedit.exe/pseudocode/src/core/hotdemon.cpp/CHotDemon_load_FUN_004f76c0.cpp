@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_hotdemon.cpp_CHotDemon_load_FUN_004f76c0()
 // Globals:
-//   undefined4 s_speed_0062f4d8
+//   TerminatedCString s_speed_0062f4d8
 //   TerminatedCString s_modelName_0062f4de
 //   TerminatedCString s_motion_state_0062f4e8
 // Function calls:
@@ -24,7 +24,7 @@ void core_hotdemon_cpp_CHotDemon_load_FUN_004f76c0(void)
   CEnemy *in_stack_00000004;
   
   core_enemy_cpp_CEnemy_serialize_FUN_004a9660(in_stack_00000004);
-  core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"@@speed" + 2);
+  core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"speed");
   model_ptr = &(in_stack_00000004->base_character).model;
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
   core_actor_cpp_serializeMotionState_FUN_0040b9f0

@@ -67,10 +67,9 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6550(CHostage *this_ptr)
       puVar3 = (undefined4 *)&stack0xfffffd74;
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 ((CMatrix3x4f *)(auStack_200 + 4),
-                 (CMatrix3x4f *)
-                 ((this_ptr->base_npc).base_character.model.field3_0x508 +
+                 (this_ptr->base_npc).base_character.model.bone_world_matrices +
                  *(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].
-                         field0_0x0 * 0x30 + 0x978),in_stack_fffffd74);
+                         field0_0x0,in_stack_fffffd74);
       puVar2 = auStack_1c8;
       goto LAB_004f6696;
     }
@@ -99,10 +98,9 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6550(CHostage *this_ptr)
     puVar3 = (undefined4 *)&stack0xfffffd78;
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               ((CMatrix3x4f *)(auStack_dc + 4),
-               (CMatrix3x4f *)
-               ((this_ptr->base_npc).base_character.model.field3_0x508 +
+               (this_ptr->base_npc).base_character.model.bone_world_matrices +
                *(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0
-               * 0x30 + 0x978),in_stack_fffffd78);
+               ,in_stack_fffffd78);
     puVar2 = auStack_254;
   }
   else if (iVar1 != 5) {
@@ -130,10 +128,9 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6550(CHostage *this_ptr)
       puVar3 = (undefined4 *)&stack0xfffffd78;
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 ((CMatrix3x4f *)(auStack_19c + 4),
-                 (CMatrix3x4f *)
-                 ((this_ptr->base_npc).base_character.model.field3_0x508 +
+                 (this_ptr->base_npc).base_character.model.bone_world_matrices +
                  *(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].
-                         field0_0x0 * 0x30 + 0x978),in_stack_fffffd78);
+                         field0_0x0,in_stack_fffffd78);
       puVar2 = auStack_224;
     }
   }
@@ -159,10 +156,9 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6550(CHostage *this_ptr)
     puVar3 = (undefined4 *)&stack0xfffffd78;
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               ((CMatrix3x4f *)(auStack_10c + 4),
-               (CMatrix3x4f *)
-               ((this_ptr->base_npc).base_character.model.field3_0x508 +
+               (this_ptr->base_npc).base_character.model.bone_world_matrices +
                *(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0
-               * 0x30 + 0x978),in_stack_fffffd78);
+               ,in_stack_fffffd78);
     puVar2 = auStack_164;
   }
 LAB_004f6696:

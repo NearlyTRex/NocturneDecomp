@@ -29,8 +29,8 @@
 //   core_charactr.cpp_CCharacter_FUN_0042d090
 //   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
 //   core_mission.cpp_CDemonMission_FUN_00524030
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 //   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
@@ -45,15 +45,15 @@ undefined4 core_charactr_cpp_CCharacter_FUN_0042f3e0(void)
 
 {
   CCharacter *this_ptr;
-  int extraout_EAX;
-  int iVar1;
+  CSkeleton *pCVar1;
+  int iVar2;
   CDemonActor *this_ptr_00;
-  CVector3f *pCVar2;
-  CCharacter *pCVar3;
-  uint uVar4;
+  CVector3f *pCVar3;
+  CCharacter *pCVar4;
+  uint uVar5;
   BADSPACEBASE *in_ESP;
-  int iVar5;
   int iVar6;
+  int iVar7;
   CDemonActor *in_stack_00000004;
   int in_stack_00000010;
   CCharacter *in_stack_00000014;
@@ -88,23 +88,23 @@ undefined4 core_charactr_cpp_CCharacter_FUN_0042f3e0(void)
   local_2c = this_ptr->carry_hands;
   local_20.z = (float)local_28;
   do {
-    iVar5 = 0;
+    iVar6 = 0;
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)auStack_584);
-    pCVar3 = this_ptr;
+    pCVar4 = this_ptr;
     do {
-      if (-1 < *(int *)pCVar3->carry_hands[0].field0_0x0) {
-        (&local_30)[auStack_584._4_4_] = iVar5;
-        iVar6 = *(int *)pCVar3->carry_hands[0].field0_0x0;
-        core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(local_14);
+      if (-1 < *(int *)pCVar4->carry_hands[0].field0_0x0) {
+        (&local_30)[auStack_584._4_4_] = iVar6;
+        iVar7 = *(int *)pCVar4->carry_hands[0].field0_0x0;
+        pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(local_14);
         crt_stdio_c_sprintf_FUN_005fdbd0
-                  (acStack_1d4,"Hand %d\t%s\t%s\n",iVar5,extraout_EAX + 0x2855c + iVar6 * 0x24);
+                  (acStack_1d4,"Hand %d\t%s\t%s\n",iVar6,pCVar1->bone_list + iVar7);
         in_stack_fffff6dc = (CCharacter *)(acStack_1d4 + 4);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
                   ((CStrList *)(auStack_57c + 4),(char *)in_stack_fffff6dc);
       }
-      iVar5 = iVar5 + 1;
-      pCVar3 = (CCharacter *)&(pCVar3->base_actor).orient_matrix.m[0].z;
-    } while (iVar5 < 2);
+      iVar6 = iVar6 + 1;
+      pCVar4 = (CCharacter *)&(pCVar4->base_actor).orient_matrix.m[0].z;
+    } while (iVar6 < 2);
     if ((int)auStack_584._4_4_ < 1) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"No hands an carry items!");
@@ -124,53 +124,54 @@ undefined4 core_charactr_cpp_CCharacter_FUN_0042f3e0(void)
       return 1;
     }
     local_20.z = (float)(&local_2c)[(int)local_20.y];
-    uVar4 = local_24 + (int)local_20.z * 0x44;
+    uVar5 = local_24 + (int)local_20.z * 0x44;
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff6dc);
-    iVar5 = 0;
-    shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff6e0,"(nothing)");
     iVar6 = 0;
+    shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff6e0,"(nothing)");
+    iVar7 = 0;
     in_stack_fffff6dc = (CCharacter *)0x0;
-    while (iVar5 < (int)g_CDemonSetPtr->actor_list_ptr) {
-      pCVar3 = *(CCharacter **)(g_CDemonSetPtr->actor_list_data + iVar6);
-      if (pCVar3 == this_ptr) {
+    while (iVar6 < (int)g_CDemonSetPtr->actor_list_ptr) {
+      pCVar4 = *(CCharacter **)(g_CDemonSetPtr->actor_list_data + iVar7);
+      if (pCVar4 == this_ptr) {
 LAB_0042f571:
-        iVar5 = iVar5 + 1;
-        iVar6 = iVar6 + 4;
+        iVar6 = iVar6 + 1;
+        iVar7 = iVar7 + 4;
       }
       else {
-        iVar1 = (*((pCVar3->base_actor).vtable)->canPickup)
-                          (&pCVar3->base_actor,(CDemonActor *)this_ptr);
-        if (iVar1 != 3) goto LAB_0042f571;
-        if (pCVar3 == *(CCharacter **)(in_stack_00000010 + 8)) {
+        iVar2 = (*((pCVar4->base_actor).vtable)->canPickup)
+                          (&pCVar4->base_actor,(CDemonActor *)this_ptr);
+        if (iVar2 != 3) goto LAB_0042f571;
+        if (pCVar4 == *(CCharacter **)(in_stack_00000010 + 8)) {
           in_stack_00000014 = in_stack_fffff6f8;
         }
         in_stack_fffff6ec = (CStrList_vtable *)0x42f5df;
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff6f8,(char *)pCVar3);
-        iVar5 = iVar5 + 1;
-        iVar6 = iVar6 + 4;
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff6f8,(char *)pCVar4);
+        iVar6 = iVar6 + 1;
+        iVar7 = iVar7 + 4;
       }
     }
     in_stack_fffff6e0 = 0;
-    iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+    iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                       ((CPickList *)&stack0xfffff6e4,"Select actor to carry.",0,0);
-    if (-1 < iVar5) {
+    if (-1 < iVar6) {
       in_stack_fffff6e4 = (char **)0x0;
       in_stack_fffff6dc = this_ptr;
       (*(this_ptr->base_actor).vtable[1].renderTargetPoints)((CDemonActor *)this_ptr);
-      in_stack_fffff6e0 = uVar4;
-      if (0 < iVar5) {
+      in_stack_fffff6e0 = uVar5;
+      if (0 < iVar6) {
         in_stack_fffff6e8 = (CStrList_vtable *)0x42f63e;
-        shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xfffff6f4,iVar5);
+        shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xfffff6f4,iVar6);
         this_ptr_00 = (CDemonActor *)core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr)
         ;
         in_stack_fffff6ec = (CStrList_vtable *)0x42f674;
-        pCVar2 = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20
-                           ((CDeformableModelInstance *)0x0);
-        pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                           ((CDemonActor *)this_ptr,&local_20,pCVar2);
-        (this_ptr_00->location).position.x = pCVar2->x;
-        (this_ptr_00->location).position.y = pCVar2->y;
-        (this_ptr_00->location).position.z = pCVar2->z;
+        pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                           ((CDeformableModelInstance *)0x0,(CVector3f *)&local_20.z,
+                            *(int *)(in_stack_00000014->base_actor).actor_name);
+        pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                           ((CDemonActor *)this_ptr,&local_20,pCVar3);
+        (this_ptr_00->location).position.x = pCVar3->x;
+        (this_ptr_00->location).position.y = pCVar3->y;
+        (this_ptr_00->location).position.z = pCVar3->z;
         if ((CCharacter *)&this_ptr_00->orient != in_stack_00000014) {
           (this_ptr_00->orient).pitch = *(float *)(in_stack_00000014->base_actor).actor_name;
           (this_ptr_00->orient).bank = *(float *)((in_stack_00000014->base_actor).actor_name + 4);
@@ -180,7 +181,7 @@ LAB_0042f571:
         core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(this_ptr_00);
         in_stack_fffff6f8 = this_ptr;
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(this_ptr);
-        in_stack_fffff6e0 = uVar4;
+        in_stack_fffff6e0 = uVar5;
       }
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -257,7 +258,7 @@ LAB_0042f571:
 // 0042f481: MOV EAX,dword ptr [ESP + 0x918]
 //   XREF to: Stack[-0x1c] (READ)
 // 0042f488: PUSH EAX
-// 0042f489: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 0042f489: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0042f48e: ADD EAX,0x2855c
 // 0042f493: ADD ESP,0x4
@@ -452,7 +453,7 @@ LAB_0042f571:
 // 0042f666: PUSH EAX
 // 0042f667: MOV ECX,dword ptr [ESP + 0x90c]
 // 0042f66e: PUSH ECX
-// 0042f66f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+// 0042f66f: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   XREF to: 0059fa20 (UNCONDITIONAL_CALL)
 // 0042f674: ADD ESP,0xc
 // 0042f677: PUSH EAX

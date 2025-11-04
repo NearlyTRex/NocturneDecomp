@@ -51,8 +51,15 @@ void core_scat_cpp_FUN_00557ea0(void)
       core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
       return;
     }
-    core_scat_cpp_FUN_00558010();
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
+    iVar2 = core_scat_cpp_FUN_00558010();
+    if (iVar2 == 0) {
+      iVar2 = 0xc;
+    }
+    else {
+      iVar2 = 0xd;
+    }
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              (&this_ptr->motion_controller,iVar2,1);
     (*((in_stack_00000004->base_actor).vtable)->playSound)
               (&in_stack_00000004->base_actor,"scat-hurt-?.wav");
     core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
@@ -60,12 +67,14 @@ void core_scat_cpp_FUN_00557ea0(void)
   }
   in_stack_00000004->hit_points = 0.0;
   iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
-  if ((*(int *)(iVar2 + 0x24) != 5) &&
-     (iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller),
-     *(int *)(iVar2 + 0x24) != 4)) {
-    in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
-    core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);
+  if (*(int *)(iVar2 + 0x24) != 5) {
+    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
+    if (*(int *)(iVar2 + 0x24) != 4) {
+      in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                (&this_ptr->motion_controller,4,1);
+      core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);
+    }
   }
   (*((in_stack_00000004->base_actor).vtable)->playSound)
             (&in_stack_00000004->base_actor,"scat-die-?.wav");

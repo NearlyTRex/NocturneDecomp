@@ -4,15 +4,13 @@
 // Convention: unknown
 // Signature: undefined core_mobster.cpp_FUN_00525110()
 // Globals:
-//   undefined4 DAT_006396a6
-//   undefined4 DAT_006396ae
+//   float FLOAT_006396a6 = 0.5
+//   double DOUBLE_006396ae = 0.400000000000000
 // Function calls:
 //   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_actor.cpp_CVector_ctor_FUN_00410340
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 CVector3f * core_mobster_cpp_FUN_00525110(void)
 

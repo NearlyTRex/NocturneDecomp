@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_0059a050(CSkeleton * this_ptr, int bone_index, int frame_index)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e0a0 (0059e0a0) at 0059e6ad [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (0059e0a0) at 0059e6ad [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 (0059a070) at 0059a0e4 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"

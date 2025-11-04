@@ -31,6 +31,7 @@ void core_gabriela_cpp_FUN_004d6b30(void)
   float fVar3;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
+  int in_stack_ffffffc4;
   
   if ((*(uint *)in_stack_00000004[1].base_actor.actor_name & 0x7fffffff) != 0) {
     *(undefined4 *)(in_stack_00000008 + 4) = 0;
@@ -48,8 +49,8 @@ void core_gabriela_cpp_FUN_004d6b30(void)
   if (0.0 < fVar3) {
     if (0.0 < *(float *)(in_stack_00000008 + 4)) {
       if (*(int *)(in_stack_00000004[2].cloth_data + 0x54cc) == 0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller)
-        ;
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                  (&this_ptr->motion_controller,8,1);
       }
       if (g_CGamePtr->hero_number != 2) {
         pCVar1 = (in_stack_00000004->base_actor).vtable;
@@ -66,9 +67,10 @@ void core_gabriela_cpp_FUN_004d6b30(void)
       iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
       if (*(int *)(iVar2 + 0x24) != 0xb) {
         in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
-        core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,100.0);
+        fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,100.0);
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(in_stack_00000004->model).motion_controller);
+                  (&(in_stack_00000004->model).motion_controller,(fVar3 <= FLOAT_0062b0fd) + 9,
+                   in_stack_ffffffc4);
         if (g_CGamePtr->hero_number != 2) {
           pCVar1 = (in_stack_00000004->base_actor).vtable;
           fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.25,0.4);

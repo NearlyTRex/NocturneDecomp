@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_mobster.cpp_FUN_00527b70()
 // Globals:
-//   undefined4 s_Model_00639a1a
+//   TerminatedCString s_Model_00639a1a
 //   TerminatedCString s_State_00639a20
 //   TerminatedCString s_CWayPoint_00639a26
 //   TerminatedCString s_Our_post_00639a30

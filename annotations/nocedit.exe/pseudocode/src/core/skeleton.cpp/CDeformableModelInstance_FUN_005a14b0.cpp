@@ -25,13 +25,13 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a14b0(CDeformableModelInstance
   CVector3i *skinned_vertices;
   int *part_visibility_flags;
   
-  if (in_stack_00000010 != (CVector3f *)this_ptr->field6_0x2230) {
+  if (in_stack_00000010 != (CVector3f *)this_ptr->field13_0x2230) {
     core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(this_ptr);
   }
   part_visibility_flags = this_ptr->texture_set_indices;
   skinned_vertices = (CVector3i *)this_ptr->part_visibility_flags;
-  lod_index = this_ptr->field7_0x2234;
-  orientation_vector = (CVector3f *)this_ptr->field6_0x2230;
+  lod_index = this_ptr->field14_0x2234;
+  orientation_vector = (CVector3f *)this_ptr->field13_0x2230;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0
             (this_ptr_00,in_stack_00000010,orientation_vector,lod_index,skinned_vertices,

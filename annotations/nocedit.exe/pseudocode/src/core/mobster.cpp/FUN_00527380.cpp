@@ -8,11 +8,11 @@
 // Globals:
 //   void* switchdataD_00527364 = 005273c0
 //   TerminatedCString s_limb_wav_0063999e
-//   undefined4 DAT_006399ae
-//   undefined4 DAT_006399b6
-//   undefined4 DAT_006399be
-//   undefined4 DAT_006399c6
-//   undefined4 DAT_006399ce
+//   double DOUBLE_006399ae = 0.333000000000000
+//   double DOUBLE_006399b6 = 0.666000000000000
+//   double DOUBLE_006399be = 7
+//   double DOUBLE_006399c6 = 0.5
+//   double DOUBLE_006399ce = 2.5
 //   CGame* g_CGamePtr = 02d81a9c
 //   CGame g_CGameInstance
 //   undefined4 g_CGameInstance.blood_flag
@@ -29,7 +29,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_mobster.cpp_FUN_00527380(undefined4 param_1, undefined4
    param_2) */
 
@@ -78,8 +77,8 @@ switchD_005273b9_default:
      (fVar2 != (float)in_stack_00000004[1].model.motion_controller.tween_type)) goto LAB_0052761a;
   if (in_stack_00000004[1].model.motion_controller.current_frame_number == *in_stack_00000008) {
     fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
-    if ((float)_DAT_006399ae <= fVar2) {
-      if (_DAT_006399b6 <= (double)fVar2) goto LAB_00527413;
+    if ((float)DOUBLE_006399ae <= fVar2) {
+      if (DOUBLE_006399b6 <= (double)fVar2) goto LAB_00527413;
       fVar2 = (float)in_stack_00000004[1].base_actor.field25_0x144;
     }
     else {
@@ -129,7 +128,7 @@ LAB_00527413:
         [in_stack_00000004[1].model.motion_controller.tween_type] == 0) {
       in_stack_00000008[1] = 9999.0;
     }
-    in_stack_00000008[2] = in_stack_00000008[2] * (float)_DAT_006399be;
+    in_stack_00000008[2] = in_stack_00000008[2] * (float)DOUBLE_006399be;
     if ((*in_stack_00000008 == (float)in_stack_00000004[1].base_actor.field25_0x144) ||
        (*in_stack_00000008 == (float)in_stack_00000004[1].base_actor.field26_0x148)) {
       (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)
@@ -148,12 +147,12 @@ LAB_00527413:
 LAB_0052761a:
   fVar2 = *in_stack_00000008;
   if (fVar2 == (float)in_stack_00000004[1].model.motion_controller.tween_type) {
-    in_stack_00000008[1] = in_stack_00000008[1] * (float)_DAT_006399ce;
+    in_stack_00000008[1] = in_stack_00000008[1] * (float)DOUBLE_006399ce;
     return;
   }
   if ((fVar2 != (float)in_stack_00000004[1].model.motion_controller.current_motion_index) &&
      (fVar2 != in_stack_00000004[1].model.motion_controller.current_frame_number)) {
-    in_stack_00000008[1] = in_stack_00000008[1] * (float)_DAT_006399c6;
+    in_stack_00000008[1] = in_stack_00000008[1] * (float)DOUBLE_006399c6;
     return;
   }
   in_stack_00000008[1] = in_stack_00000008[1];

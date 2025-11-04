@@ -30,11 +30,11 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a10e0(CDeformableModelInstance
   if (iVar3 < 0) {
     iVar3 = 0;
   }
-  if (iVar3 != this_ptr->field6_0x2230) {
+  if (iVar3 != this_ptr->field13_0x2230) {
     core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(this_ptr);
   }
   skinned_vertices = (CVector3i *)this_ptr->part_visibility_flags;
-  ray_direction = (CVector3f *)this_ptr->field7_0x2234;
+  ray_direction = (CVector3f *)this_ptr->field14_0x2234;
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   fVar2 = core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0
                     (pCVar1,in_stack_00000010,in_stack_00000014,ray_direction,skinned_vertices,

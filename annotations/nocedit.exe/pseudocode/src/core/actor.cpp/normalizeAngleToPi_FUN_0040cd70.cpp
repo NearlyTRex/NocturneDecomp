@@ -40,7 +40,7 @@
 //   core_mimic.cpp_FUN_0051fcc0 (0051fcc0) at 0051ff03 [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 (005267a0) at 005268eb [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_FUN_00525840 (00525840) at 005262cf [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00528d20 (00528d20) at 00528e7e [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_process_FUN_00528d20 (00528d20) at 00528e7e [UNCONDITIONAL_CALL]
 //   core_moloch.cpp_FUN_005293b0 (005293b0) at 005295f6 [UNCONDITIONAL_CALL]
 //   core_platfrm.cpp_FUN_0054cc30 (0054cc30) at 0054d654 [UNCONDITIONAL_CALL]
 //   core_platfrm.cpp_FUN_0054df80 (0054df80) at 0054dfe2 [UNCONDITIONAL_CALL]

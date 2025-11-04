@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_menu.cpp_GetGameMainMenuChoice_FUN_00510000 (00510000) at 0051008e [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00639fc9
+//   double DOUBLE_00639fc9 = 30
 //   undefined4 DAT_02f381e4
 
 #include "nocturne.h"
@@ -17,7 +17,7 @@
 undefined4 core_moon_cpp_FUN_0052a3f0(void)
 
 {
-  if ((float)_DAT_00639fc9 <= _DAT_02f381e4) {
+  if ((float)DOUBLE_00639fc9 <= _DAT_02f381e4) {
     return 0;
   }
   return 1;

@@ -17,8 +17,8 @@
 // Function calls:
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
 //   core_charactr.cpp_CCharacter_FUN_0042a520
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a1160
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 
 #include "nocturne.h"
 
@@ -34,7 +34,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b5b0(CCharacter *this_ptr)
   if ((*(int *)(this_ptr->cloth_data + 0x478) < 0x32) &&
      (((in_stack_00000018 != 0 ||
        (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(&this_ptr->base_actor,"CHero"),
-       iVar1 == 0)) && ((this_ptr->model).field11_0x2260[0] != '\0')))) {
+       iVar1 == 0)) && ((this_ptr->model).field18_0x2260[0] != '\0')))) {
     iVar1 = core_skeleton_cpp_CDeformableModelInstance_FUN_005a1160();
     iVar2 = 0;
     pCVar3 = this_ptr;
@@ -49,7 +49,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b5b0(CCharacter *this_ptr)
     }
     *(int *)(this_ptr->cloth_data + 0x47c) = in_stack_00000018;
     *(undefined4 *)(this_ptr->cloth_data + 0x480) = in_stack_0000001c;
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(&this_ptr->model);
+    core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(&this_ptr->model);
     core_charactr_cpp_CCharacter_FUN_0042a520(this_ptr);
     (this_ptr->base_actor).is_transparent = 1;
     return;
@@ -132,7 +132,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b5b0(CCharacter *this_ptr)
 // 0042b635: MOV dword ptr [EBX + 0x2f18],EAX
 // 0042b63b: LEA EAX,[EBX + 0x158]
 // 0042b641: PUSH EAX
-// 0042b642: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 0042b642: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0042b647: ADD ESP,0x4
 // 0042b64a: PUSH EAX

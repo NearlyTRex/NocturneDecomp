@@ -4,10 +4,10 @@
 // Convention: __cdecl
 // Signature: void core_motion.cpp_CMotionController_FUN_0052de40(CMotionController * this_ptr)
 // Cross-references:
-//   core_motion.cpp_CMotionController_FUN_0052d950 (0052d950) at 0052d9b5 [UNCONDITIONAL_CALL]
 //   core_motion.cpp_CMotionController_FUN_0052dad0 (0052dad0) at 0052daf1 [UNCONDITIONAL_CALL]
 //   core_motion.cpp_CMotionController_FUN_0052dde0 (0052dde0) at 0052de0d [UNCONDITIONAL_CALL]
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610 (0052d610) at 0052d77a [UNCONDITIONAL_CALL]
+//   core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950 (0052d950) at 0052d9b5 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

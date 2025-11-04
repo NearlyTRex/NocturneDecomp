@@ -6,14 +6,13 @@
 // Cross-references:
 //   core_mobster.cpp_FUN_00525840 (00525840) at 0052587a [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00639826
-//   undefined4 DAT_0063982e
+//   double DOUBLE_00639826 = 1.57079632675000
+//   double DOUBLE_0063982e = -1.57079632675000
 // Function calls:
 //   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_mobster.cpp_FUN_00525650(undefined4 param_1) */
 
 void core_mobster_cpp_FUN_00525650(void)
@@ -37,7 +36,7 @@ void core_mobster_cpp_FUN_00525650(void)
       local_24.z = -1.6;
       local_24.x = 2.2;
     }
-    fVar1 = *(float *)(*(int *)(in_stack_00000004 + 0xbee0) + 0x34) + (float)_DAT_00639826;
+    fVar1 = *(float *)(*(int *)(in_stack_00000004 + 0xbee0) + 0x34) + (float)DOUBLE_00639826;
   }
   else {
     local_18.y = -2.35;
@@ -48,7 +47,7 @@ void core_mobster_cpp_FUN_00525650(void)
       local_24.z = -1.6;
       local_24.x = -2.2;
     }
-    fVar1 = *(float *)(*(int *)(in_stack_00000004 + 0xbee0) + 0x34) + (float)_DAT_0063982e;
+    fVar1 = *(float *)(*(int *)(in_stack_00000004 + 0xbee0) + 0x34) + (float)DOUBLE_0063982e;
   }
   *(float *)(in_stack_00000004 + 0x34) = fVar1;
   pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

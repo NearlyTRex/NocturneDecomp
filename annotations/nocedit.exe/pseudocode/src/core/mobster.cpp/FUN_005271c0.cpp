@@ -25,11 +25,11 @@ void core_mobster_cpp_FUN_005271c0(void)
   *(float *)(in_stack_00000004 + 0xbf90) = fVar1;
   if (*(int *)(in_stack_00000004 + 0x24b4) != 0) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              ((CMotionController *)(in_stack_00000004 + 0x158));
+              ((CMotionController *)(in_stack_00000004 + 0x158),6,1);
     return;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            ((CMotionController *)(in_stack_00000004 + 0x158));
+            ((CMotionController *)(in_stack_00000004 + 0x158),2,1);
   return;
 }
 

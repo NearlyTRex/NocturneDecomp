@@ -22,6 +22,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr)
@@ -29,7 +30,7 @@ int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr)
 {
   int iVar1;
   BADSPACEBASE *in_ESP;
-  char *pcVar2;
+  CMatrix3x4f *pCVar2;
   undefined4 *puVar3;
   byte bVar4;
   CWerewolf *pCStack_48;
@@ -47,12 +48,12 @@ int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr)
   if ((float)this_ptr->field11_0xbf00 <= (float)DOUBLE_00657db4) {
     if (*(int *)(this_ptr->base_enemy).base_character.field13_0x2620 != 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-      pcVar2 = (this_ptr->base_enemy).base_character.model.field3_0x508 +
-               *(int *)(this_ptr->field4_0xbec0 + 0x10) * 0x30 + 0x978;
+      pCVar2 = (this_ptr->base_enemy).base_character.model.bone_world_matrices +
+               *(int *)(this_ptr->field4_0xbec0 + 0x10);
       puVar3 = (undefined4 *)&stack0xffffffb4;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *puVar3 = *(undefined4 *)pcVar2;
-        pcVar2 = pcVar2 + ((uint)bVar4 * -2 + 1) * 4;
+        *puVar3 = pCVar2->m[0].w;
+        pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
         puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
       }
       core_xform_cpp_matrixToEulerAngles_FUN_005f5690

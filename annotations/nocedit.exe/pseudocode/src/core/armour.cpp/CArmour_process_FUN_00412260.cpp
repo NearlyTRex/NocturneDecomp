@@ -16,7 +16,7 @@
 //   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
 //   core_motion.cpp_CMotionController_FUN_0052dab0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
+//   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 
 #include "nocturne.h"
 
@@ -36,14 +36,14 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr)
   iVar4 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
   if (iVar4 != 0) {
     pCVar3 = &(this_ptr->base_enemy).base_character;
-    (pCVar3->model).field10_0x2254[8] = '\0';
-    (pCVar3->model).field10_0x2254[9] = '\0';
-    (pCVar3->model).field10_0x2254[10] = '\0';
-    (pCVar3->model).field10_0x2254[0xb] = '\0';
-    *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4) =
-         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 8);
-    *(undefined4 *)(this_ptr->base_enemy).base_character.model.field10_0x2254 =
-         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4);
+    (pCVar3->model).field17_0x2254[8] = '\0';
+    (pCVar3->model).field17_0x2254[9] = '\0';
+    (pCVar3->model).field17_0x2254[10] = '\0';
+    (pCVar3->model).field17_0x2254[0xb] = '\0';
+    *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4) =
+         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
+    *(undefined4 *)(this_ptr->base_enemy).base_character.model.field17_0x2254 =
+         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4);
     fVar1 = (this_ptr->base_enemy).speed;
     this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
     while (0.0 < in_stack_00000008 * fVar1) {
@@ -52,23 +52,24 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr)
     fVar1 = (this_ptr->base_enemy).speed;
     fVar2 = (float)DOUBLE_00614dd8;
     *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x28) =
-         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 8);
+         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
     *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
          in_stack_00000008 * fVar2 * fVar1;
     core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr_00->motion_controller);
     iVar4 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
     if (iVar4 != 0) {
       pCVar3 = &(this_ptr->base_enemy).base_character;
-      (pCVar3->model).field10_0x2254[8] = '\0';
-      (pCVar3->model).field10_0x2254[9] = '\0';
-      (pCVar3->model).field10_0x2254[10] = '\0';
-      (pCVar3->model).field10_0x2254[0xb] = '\0';
-      *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4) =
-           *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 8);
-      *(undefined4 *)(this_ptr->base_enemy).base_character.model.field10_0x2254 =
-           *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4);
+      (pCVar3->model).field17_0x2254[8] = '\0';
+      (pCVar3->model).field17_0x2254[9] = '\0';
+      (pCVar3->model).field17_0x2254[10] = '\0';
+      (pCVar3->model).field17_0x2254[0xb] = '\0';
+      *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4) =
+           *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
+      *(undefined4 *)(this_ptr->base_enemy).base_character.model.field17_0x2254 =
+           *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4);
     }
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020();
+    core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
+              (&(this_ptr->base_enemy).base_character.model);
     core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
     iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->field1_0xbeb4 + 8);
@@ -158,7 +159,7 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr)
 // 00412311: LEA EAX,[ESI + 0x158]
 //   Label: LAB_00412311
 // 00412317: PUSH EAX
-// 00412318: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
+// 00412318: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 //   XREF to: 0059e020 (UNCONDITIONAL_CALL)
 // 0041231d: ADD ESP,0x4
 // 00412320: PUSH dword ptr [EBP + 0x18]

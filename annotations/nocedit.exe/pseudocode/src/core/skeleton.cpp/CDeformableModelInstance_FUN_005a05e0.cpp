@@ -9,9 +9,9 @@
 //   float FLOAT_0064eeec = 0.05000000
 //   float FLOAT_00662ea0 = 0.00390625
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e070
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
 
 #include "nocturne.h"
 
@@ -35,7 +35,7 @@ void core_skeleton_cpp_CDeformableModelInstance_FUN_005a05e0(void)
   int *piVar11;
   byte bVar12;
   CDeformableModelInstance *in_stack_00000004;
-  int aiStackY_101c [1011];
+  int aiStackY_101c [1010];
   undefined4 local_48;
   undefined4 local_44;
   int local_40;
@@ -56,13 +56,14 @@ void core_skeleton_cpp_CDeformableModelInstance_FUN_005a05e0(void)
   local_48 = 0x80000001;
   pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(in_stack_00000004);
   iVar3 = pCVar7->vertex_count[0];
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e070();
+  core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
+            (in_stack_00000004,0,0.0);
   local_48 = 0;
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(in_stack_00000004);
   if (0 < iVar3) {
     iVar8 = 0;
     do {
-      piVar10 = (int *)(in_stack_00000004->field7_0x2234 + iVar8);
+      piVar10 = (int *)(in_stack_00000004->field14_0x2234 + iVar8);
       piVar11 = piVar10 + (uint)bVar12 * -2 + 1;
       local_34 = *piVar10;
       *(int *)((int)&stack0xffffffd0 + (uint)bVar12 * -8) = *piVar11;
@@ -89,29 +90,29 @@ void core_skeleton_cpp_CDeformableModelInstance_FUN_005a05e0(void)
       iVar8 = iVar8 + 0xc;
     } while (iVar8 < iVar3 * 0xc);
   }
-  pcVar1 = in_stack_00000004->field8_0x2238;
+  pcVar1 = in_stack_00000004->field15_0x2238;
   *(float *)pcVar1 = (float)local_28 * FLOAT_00662ea0;
-  *(float *)(in_stack_00000004->field8_0x2238 + 4) = (float)local_24 * FLOAT_00662ea0;
-  *(float *)(in_stack_00000004->field8_0x2238 + 8) = (float)local_20 * FLOAT_00662ea0;
-  pcVar9 = in_stack_00000004->field8_0x2238 + 0xc;
+  *(float *)(in_stack_00000004->field15_0x2238 + 4) = (float)local_24 * FLOAT_00662ea0;
+  *(float *)(in_stack_00000004->field15_0x2238 + 8) = (float)local_20 * FLOAT_00662ea0;
+  pcVar9 = in_stack_00000004->field15_0x2238 + 0xc;
   *(float *)pcVar9 = (float)local_40 * FLOAT_00662ea0;
-  *(float *)(in_stack_00000004->field8_0x2238 + 0x10) = (float)local_3c * FLOAT_00662ea0;
-  *(float *)(in_stack_00000004->field8_0x2238 + 0x14) = (float)local_38 * FLOAT_00662ea0;
+  *(float *)(in_stack_00000004->field15_0x2238 + 0x10) = (float)local_3c * FLOAT_00662ea0;
+  *(float *)(in_stack_00000004->field15_0x2238 + 0x14) = (float)local_38 * FLOAT_00662ea0;
   fVar4 = (*(float *)pcVar9 - *(float *)pcVar1) * FLOAT_0064eeec;
-  fVar5 = (*(float *)(in_stack_00000004->field8_0x2238 + 0x10) -
-          *(float *)(in_stack_00000004->field8_0x2238 + 4)) * FLOAT_0064eeec;
-  fVar6 = (*(float *)(in_stack_00000004->field8_0x2238 + 0x14) -
-          *(float *)(in_stack_00000004->field8_0x2238 + 8)) * FLOAT_0064eeec;
-  fVar2 = *(float *)(in_stack_00000004->field8_0x2238 + 4);
+  fVar5 = (*(float *)(in_stack_00000004->field15_0x2238 + 0x10) -
+          *(float *)(in_stack_00000004->field15_0x2238 + 4)) * FLOAT_0064eeec;
+  fVar6 = (*(float *)(in_stack_00000004->field15_0x2238 + 0x14) -
+          *(float *)(in_stack_00000004->field15_0x2238 + 8)) * FLOAT_0064eeec;
+  fVar2 = *(float *)(in_stack_00000004->field15_0x2238 + 4);
   *(float *)pcVar1 = *(float *)pcVar1 - fVar4;
-  *(float *)(in_stack_00000004->field8_0x2238 + 4) = fVar2 - fVar5;
-  *(float *)(in_stack_00000004->field8_0x2238 + 8) =
-       *(float *)(in_stack_00000004->field8_0x2238 + 8) - fVar6;
+  *(float *)(in_stack_00000004->field15_0x2238 + 4) = fVar2 - fVar5;
+  *(float *)(in_stack_00000004->field15_0x2238 + 8) =
+       *(float *)(in_stack_00000004->field15_0x2238 + 8) - fVar6;
   *(float *)pcVar9 = *(float *)pcVar9 + fVar4;
-  *(float *)(in_stack_00000004->field8_0x2238 + 0x10) =
-       *(float *)(in_stack_00000004->field8_0x2238 + 0x10) + fVar5;
-  *(float *)(in_stack_00000004->field8_0x2238 + 0x14) =
-       *(float *)(in_stack_00000004->field8_0x2238 + 0x14) + fVar6;
+  *(float *)(in_stack_00000004->field15_0x2238 + 0x10) =
+       *(float *)(in_stack_00000004->field15_0x2238 + 0x10) + fVar5;
+  *(float *)(in_stack_00000004->field15_0x2238 + 0x14) =
+       *(float *)(in_stack_00000004->field15_0x2238 + 0x14) + fVar6;
   return;
 }
 
@@ -147,7 +148,7 @@ void core_skeleton_cpp_CDeformableModelInstance_FUN_005a05e0(void)
 // 005a0618: PUSH 0x0
 // 005a061a: PUSH EBP
 // 005a061b: MOV ESI,dword ptr [EAX + 0x2c]
-// 005a061e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e070
+// 005a061e: CALL core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
 //   XREF to: 0059e070 (UNCONDITIONAL_CALL)
 // 005a0623: ADD ESP,0xc
 // 005a0626: PUSH 0x0

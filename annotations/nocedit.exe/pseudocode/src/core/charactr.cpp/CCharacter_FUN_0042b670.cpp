@@ -32,11 +32,11 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b670(CCharacter *this_ptr)
   CVector3f local_38;
   CVector3f local_2c;
   CVector3f local_20;
-  char *local_14;
+  CMatrix3x4f *local_14;
   
   iVar3 = 0;
   if (0 < *(int *)(this_ptr->cloth_data + 0x35c)) {
-    local_14 = (this_ptr->model).field3_0x508 + 0x978;
+    local_14 = (this_ptr->model).bone_world_matrices;
     pcVar2 = this_ptr->cloth_data + 0x360;
     do {
       if ((this_ptr->model).part_visibility_flags[*(int *)pcVar2] != 0) {

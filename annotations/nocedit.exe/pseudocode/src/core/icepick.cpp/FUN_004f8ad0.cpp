@@ -21,7 +21,7 @@ undefined4 core_icepick_cpp_FUN_004f8ad0(void)
     return 0;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            ((CMotionController *)(in_stack_00000004 + 0x158));
+            ((CMotionController *)(in_stack_00000004 + 0x158),0x16,1);
   return 1;
 }
 

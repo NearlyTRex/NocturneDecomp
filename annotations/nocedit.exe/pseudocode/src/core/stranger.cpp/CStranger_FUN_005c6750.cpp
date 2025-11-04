@@ -33,7 +33,7 @@ void core_stranger_cpp_CStranger_FUN_005c6750(void)
   (in_stack_00000004->base_character).field13_0x2620[0x473] = '\0';
   core_motion_cpp_FUN_0052ddb0();
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(in_stack_00000004->base_character).model.motion_controller);
+            (&(in_stack_00000004->base_character).model.motion_controller,0,1);
   return;
 }
 

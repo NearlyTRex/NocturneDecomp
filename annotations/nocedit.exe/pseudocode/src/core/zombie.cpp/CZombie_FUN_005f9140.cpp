@@ -28,8 +28,8 @@
 //   core_enemy.cpp_CEnemy_FUN_004a9650
 //   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 //   crt_string.c_stricmp_FUN_005fe7f0
 
@@ -50,7 +50,7 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005f9140(CZombie *this_ptr)
   
   this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr_00);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr_00);
+  this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Head");
   *(int *)(this_ptr->field4_0xbf48 + 4) = iVar2;
   iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L ForeArm");
@@ -105,7 +105,7 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005f9140(CZombie *this_ptr)
   *(int *)(this_ptr->field4_0xbf48 + 0x48) = iVar2;
   (this_ptr->base_enemy).base_character.model.part_visibility_flags[0x1d] = 0;
   iVar2 = crt_string_c_stricmp_FUN_005fe7f0
-                    ((this_ptr->base_enemy).base_character.model.field11_0x2260,
+                    ((this_ptr->base_enemy).base_character.model.field18_0x2260,
                      "newzomb1.dfm");
   if (iVar2 == 0) {
     uVar1 = *(undefined4 *)(this_ptr->field4_0xbf48 + 0x30);
@@ -133,10 +133,10 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005f9140(CZombie *this_ptr)
   if ((-1 < *(int *)(this_ptr->field4_0xbf48 + 0x40)) &&
      (*(float *)((this_ptr->base_enemy).base_character.cloth_data + 0x358) < 0.0)) {
     *(float *)((this_ptr->base_enemy).base_character.cloth_data + 0x358) =
-         *(float *)((this_ptr->base_enemy).base_character.model.field8_0x2238 + 0x10) +
+         *(float *)((this_ptr->base_enemy).base_character.model.field15_0x2238 + 0x10) +
          (float)_DAT_006585a5;
   }
-  str1 = (this_ptr->base_enemy).base_character.model.field11_0x2260;
+  str1 = (this_ptr->base_enemy).base_character.model.field18_0x2260;
   this_ptr->field4_0xbf48[0x50] = '\0';
   this_ptr->field4_0xbf48[0x51] = '\0';
   this_ptr->field4_0xbf48[0x52] = '\0';
@@ -181,7 +181,7 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005f9140(CZombie *this_ptr)
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 005f9158: ADD ESP,0x4
 // 005f915b: PUSH EDI
-// 005f915c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 005f915c: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005f9161: ADD ESP,0x4
 // 005f9164: PUSH 0x1

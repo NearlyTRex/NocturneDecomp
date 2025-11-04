@@ -23,7 +23,7 @@ CDemonActorType * __cdecl core_hero_cpp_staticInit_FUN_004f2120(void)
   CDemonActorType *pCVar1;
   
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CHeroClassInfo,"CHero",(CDemonActorFactoryFunction *)0x0,
+            (&g_CHeroClassInfo,"CHero",(CDemonActor_FactoryFunc *)0x0,
              &g_CHeroPlaceholderClassVersion,0xc,&g_CCharacterClassInfo);
   pCVar1 = core_actor_cpp_registerActorClass_FUN_0040c2e0
                      (&g_CHeroPlaceholderClassInfo,"CHeroPlaceholder",

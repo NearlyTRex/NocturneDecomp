@@ -46,12 +46,12 @@ undefined4 core_hostage_cpp_FUN_004f5ff0(void)
       *(undefined4 *)(in_stack_00000004 + 0x2418) = *(undefined4 *)(in_stack_00000004 + 0x2438);
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              ((CMotionController *)(in_stack_00000004 + 0x158));
+              ((CMotionController *)(in_stack_00000004 + 0x158),2,1);
     return 1;
   }
   *(undefined4 *)(in_stack_00000004 + 0x1fae8) = 0;
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            ((CMotionController *)(in_stack_00000004 + 0x158));
+            ((CMotionController *)(in_stack_00000004 + 0x158),0,1);
   return 0;
 }
 

@@ -47,14 +47,14 @@ LAB_005a35b4:
     *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
     iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
     if ((*(int *)(iVar2 + 0x24) != 8) && (*(int *)(iVar2 + 0x24) != 7)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr,7,1);
       (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x13c))();
       (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
     }
     core_enemy_cpp_FUN_004a9f10();
     return;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr,3,1);
   core_enemy_cpp_FUN_004a9f10();
   return;
 }

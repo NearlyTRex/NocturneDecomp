@@ -18,7 +18,7 @@
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
 //   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
 
@@ -57,7 +57,9 @@ void core_batman_cpp_FUN_004179a0(void)
     } while (iVar2 < 5);
   }
   if (*(int *)((int)in_stack_00000008 + 0x30) == 0x6c) {
-    input_local_point = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+    input_local_point =
+         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                   (&in_stack_00000004->model,(CVector3f *)&stack0xffffffd0,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               (&in_stack_00000004->base_actor,&CStack_20,input_local_point);
     core_charactr_cpp_CCharacter_FUN_0042b5b0(in_stack_00000004);
@@ -70,7 +72,8 @@ void core_batman_cpp_FUN_004179a0(void)
     in_stack_00000004->hit_points = 0.0;
     iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
     if ((*(int *)(iVar2 + 0x24) != 7) && (*(int *)(iVar2 + 0x24) != 8)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                (&this_ptr->motion_controller,7,1);
       sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
       pCVar3 = (CDemonActor *)
                (*((in_stack_00000004->base_actor).vtable)->playSound)
@@ -85,15 +88,16 @@ void core_batman_cpp_FUN_004179a0(void)
   else {
     iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
     if (iVar2 == 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                (&this_ptr->motion_controller,4,1);
     }
     if (iVar2 == 1) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(in_stack_00000004->model).motion_controller);
+                (&(in_stack_00000004->model).motion_controller,5,1);
     }
     if (iVar2 == 2) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(in_stack_00000004->model).motion_controller);
+                (&(in_stack_00000004->model).motion_controller,6,1);
     }
     iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
     if (iVar2 == 0) {
@@ -150,7 +154,7 @@ void core_batman_cpp_FUN_004179a0(void)
 // 004179ec: PUSH EAX
 // 004179ed: LEA EAX,[ESI + 0x158]
 // 004179f3: PUSH EAX
-// 004179f4: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 004179f4: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 004179f9: ADD ESP,0xc
 // 004179fc: PUSH EAX

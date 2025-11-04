@@ -51,7 +51,7 @@ void core_scat_cpp_FUN_00558060(void)
       }
       else {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(in_stack_00000004->model).motion_controller);
+                  (&(in_stack_00000004->model).motion_controller,0,1);
       }
     }
     local_14 = 0;
@@ -100,7 +100,7 @@ void core_scat_cpp_FUN_00558060(void)
                ((**(code **)(*(int *)(iVar1 + 0x154) + 0xf0))(),
                *(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5508) + 0x2e0) == 8)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&(in_stack_00000004->model).motion_controller);
+                        (&(in_stack_00000004->model).motion_controller,6,1);
             }
           }
         }

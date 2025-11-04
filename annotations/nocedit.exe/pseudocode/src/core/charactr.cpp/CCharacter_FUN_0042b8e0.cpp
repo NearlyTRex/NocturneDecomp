@@ -20,7 +20,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b8e0(CCharacter *this_ptr)
   undefined4 uStack0000000c;
   
   (*((this_ptr->base_actor).vtable)->playSound)(&this_ptr->base_actor,"glass-1.wav@2.0");
-  if ((this_ptr->model).field11_0x2260[0] == '\0') {
+  if ((this_ptr->model).field18_0x2260[0] == '\0') {
     (this_ptr->base_actor).was_created = 2;
     return;
   }

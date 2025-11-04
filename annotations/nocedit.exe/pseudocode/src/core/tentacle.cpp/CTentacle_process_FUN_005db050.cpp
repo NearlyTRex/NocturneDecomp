@@ -28,8 +28,8 @@
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
+//   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 //   core_tentacle.cpp_FUN_005db900
 //   core_tentacle.cpp_FUN_005dbb70
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
@@ -111,7 +111,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
           iVar3 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
           if ((iVar3 != 0) && (iVar3 = (**(code **)(*(int *)(iVar3 + 0x154) + 0x108))(), iVar3 == 0)
              ) {
-            core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40(local_1c);
+            core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(local_1c);
             core_tentacle_cpp_FUN_005dbb70();
             pfVar7 = afStack_1c0;
             pCVar10 = &CStack_1f0;
@@ -215,7 +215,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
             iVar3 = core_tentacle_cpp_FUN_005db900();
             if (iVar3 != 0) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&this_ptr_00->motion_controller);
+                        (&this_ptr_00->motion_controller,2,1);
               this_ptr->field1_0xbeb4[8] = '\0';
               this_ptr->field1_0xbeb4[9] = '\0';
               this_ptr->field1_0xbeb4[10] = '\0';
@@ -226,7 +226,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
             iVar3 = core_tentacle_cpp_FUN_005db900();
             if (iVar3 != 0) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&this_ptr_00->motion_controller);
+                        (&this_ptr_00->motion_controller,2,1);
               this_ptr->field1_0xbeb4[8] = '\0';
               this_ptr->field1_0xbeb4[9] = '\0';
               this_ptr->field1_0xbeb4[10] = '\0';
@@ -282,7 +282,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
                      *(float *)(iVar3 + 0x24)) < (float)_DAT_00654e24)) &&
                ((float)_DAT_00654e2c < fVar1 && fVar1 < (float)_DAT_00654e34)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&(this_ptr->base_enemy).base_character.model.motion_controller);
+                        (&(this_ptr->base_enemy).base_character.model.motion_controller,6,1);
               this_ptr->field1_0xbeb4[8] = '\0';
               this_ptr->field1_0xbeb4[9] = '\0';
               this_ptr->field1_0xbeb4[10] = -0x38;
@@ -292,8 +292,8 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
         }
       }
       else {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&local_1c->motion_controller)
-        ;
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                  (&local_1c->motion_controller,0,1);
         this_ptr->field1_0xbeb4[8] = '\0';
         this_ptr->field1_0xbeb4[9] = '\0';
         this_ptr->field1_0xbeb4[10] = -0x38;
@@ -333,7 +333,8 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
       this_ptr->field1_0xbeb4[0x17] = '?';
     }
     core_charactr_cpp_CCharacter_FUN_00429820((CCharacter *)this_ptr);
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020();
+    core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
+              (&(this_ptr->base_enemy).base_character.model);
     core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
   }
   return;
@@ -455,7 +456,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
 // 005db19d: ADD ESP,0x4
 // 005db1a0: LEA EAX,[EBX + 0x158]
 // 005db1a6: PUSH EAX
-// 005db1a7: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
+// 005db1a7: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 //   XREF to: 0059e020 (UNCONDITIONAL_CALL)
 // 005db1ac: ADD ESP,0x4
 // 005db1af: PUSH dword ptr [EBP + 0x18]
@@ -484,7 +485,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
 //   XREF to: 005db0b1 (CONDITIONAL_JUMP)
 // 005db1e8: MOV EAX,dword ptr [ESP + 0x244]
 // 005db1ef: PUSH EAX
-// 005db1f0: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+// 005db1f0: CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
 // 005db1f5: ADD ESP,0x4
 // 005db1f8: PUSH EBX

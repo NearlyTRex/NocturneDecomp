@@ -47,9 +47,9 @@
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_enemy.cpp_CEnemy_FUN_004a9650
 //   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 //   crt_string.c_stricmp_FUN_005fe7f0
 
@@ -70,7 +70,7 @@ void core_dracbrid_cpp_DraculaBrideModels_FUN_004840b0(void)
   float fVar4;
   CEnemy *in_stack_00000004;
   
-  str1 = (in_stack_00000004->base_character).model.field11_0x2260;
+  str1 = (in_stack_00000004->base_character).model.field18_0x2260;
   pCVar1 = &(in_stack_00000004->base_character).model;
   if (g_CGamePtr->nudity_flag == 0) {
     iVar3 = crt_string_c_stricmp_FUN_005fe7f0(str1,"nbride2.dfm");
@@ -102,7 +102,7 @@ void core_dracbrid_cpp_DraculaBrideModels_FUN_004840b0(void)
   }
   core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
   pCVar1 = &(in_stack_00000004->base_character).model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(pCVar1);
+  this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar1);
   DAT_02c6d0a0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 Head");
   _DAT_02c6d0a4 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L Hand");
@@ -232,7 +232,7 @@ void core_dracbrid_cpp_DraculaBrideModels_FUN_004840b0(void)
 // 0048414b: ADD ESP,0x4
 // 0048414e: LEA EDI,[EBX + 0x158]
 // 00484154: PUSH EDI
-// 00484155: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 00484155: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0048415a: ADD ESP,0x4
 // 0048415d: PUSH 0x1

@@ -24,7 +24,7 @@
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
 //   core_npc.cpp_CNPC_FUN_00544870
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 //   crt_string.c_stricmp_FUN_005fe7f0
 
@@ -45,7 +45,7 @@ void core_hostage_cpp_NPCSFromZombieTown_FUN_004f4970(void)
   
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450
             (&(in_stack_00000004->base_character).model);
-  str1 = (in_stack_00000004->base_character).model.field11_0x2260;
+  str1 = (in_stack_00000004->base_character).model.field18_0x2260;
   in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 8.40779e-45;
   iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,"hickboy.dfm");
   if (iVar1 == 0) {
@@ -72,7 +72,7 @@ void core_hostage_cpp_NPCSFromZombieTown_FUN_004f4970(void)
     in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 4.2039e-45;
   }
   this_ptr = &(in_stack_00000004->base_character).model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr);
+  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                           (&this_ptr->motion_controller);
   fVar2 = (float)core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
@@ -190,7 +190,7 @@ void core_hostage_cpp_NPCSFromZombieTown_FUN_004f4970(void)
 // 004f4a3d: LEA EDI,[EBX + 0x158]
 //   Label: LAB_004f4a3d
 // 004f4a43: PUSH EDI
-// 004f4a44: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 004f4a44: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 004f4a49: ADD ESP,0x4
 // 004f4a4c: PUSH EDI

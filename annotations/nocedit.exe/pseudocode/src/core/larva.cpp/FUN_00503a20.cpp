@@ -67,14 +67,15 @@ void core_larva_cpp_FUN_00503a20(void)
       this_ptr[0x8d].field26_0x148 = iVar3;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              ((CMotionController *)(this_ptr + 1));
+              ((CMotionController *)(this_ptr + 1),3,1);
   }
   else {
     pCVar1 = in_stack_00000004 + 1;
     in_stack_00000004[0x1a].next_actor = (CDemonActor *)0x0;
     iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0((CMotionController *)pCVar1);
     if ((*(int *)(iVar3 + 0x24) != 5) && (*(int *)(iVar3 + 0x24) != 4)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00((CMotionController *)pCVar1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                ((CMotionController *)pCVar1,4,1);
     }
     sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
     sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();

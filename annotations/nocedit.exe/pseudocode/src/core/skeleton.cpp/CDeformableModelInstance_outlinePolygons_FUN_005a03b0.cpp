@@ -12,7 +12,7 @@
 //   int g_CurrentLineNumber
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_skeleton.cpp_CDeformableModel_FUN_0059b5a0
+//   core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 
 #include "nocturne.h"
@@ -23,14 +23,15 @@ core_skeleton_cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0
 
 {
   CDeformableModel *this_ptr_00;
+  int unaff_EBX;
   
-  if (this_ptr->field6_0x2230 < 0) {
+  if (this_ptr->field13_0x2230 < 0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0xd33;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModelInstance::outlinePolygons called but LOD is not set!");
   }
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
-  core_skeleton_cpp_CDeformableModel_FUN_0059b5a0(this_ptr_00);
+  core_skeleton_cpp_CDeformableModel_renderWireframe_FUN_0059b5a0(this_ptr_00,unaff_EBX);
   return;
 }
 
@@ -52,7 +53,7 @@ core_skeleton_cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0
 //   XREF to: 005a07a0 (UNCONDITIONAL_CALL)
 // 005a03cc: ADD ESP,0x4
 // 005a03cf: PUSH EAX
-// 005a03d0: CALL core_skeleton.cpp_CDeformableModel_FUN_0059b5a0
+// 005a03d0: CALL core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0
 //   XREF to: 0059b5a0 (UNCONDITIONAL_CALL)
 // 005a03d5: ADD ESP,0x8
 // 005a03d8: POP EDI

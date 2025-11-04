@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_cow.cpp_FUN_00444c00()
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 
 #include "nocturne.h"
 
@@ -14,16 +14,21 @@
 undefined4 core_cow_cpp_FUN_00444c00(void)
 
 {
-  undefined4 *puVar1;
-  undefined4 *in_stack_00000008;
+  CVector3f *pCVar1;
+  BADSPACEBASE *in_ESP;
+  int in_stack_00000004;
+  CVector3f *in_stack_00000008;
+  CVector3f local_10;
   
-  puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  if (in_stack_00000008 == puVar1) {
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_10,
+                      *(int *)(in_stack_00000004 + 0xbebc));
+  if (in_stack_00000008 == pCVar1) {
     return 1;
   }
-  *in_stack_00000008 = *puVar1;
-  in_stack_00000008[1] = puVar1[1];
-  in_stack_00000008[2] = puVar1[2];
+  in_stack_00000008->x = pCVar1->x;
+  in_stack_00000008->y = pCVar1->y;
+  in_stack_00000008->z = pCVar1->z;
   return 1;
 }
 
@@ -43,7 +48,7 @@ undefined4 core_cow_cpp_FUN_00444c00(void)
 // 00444c17: PUSH EAX
 // 00444c18: LEA EAX,[EDX + 0x158]
 // 00444c1e: PUSH EAX
-// 00444c1f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 00444c1f: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 00444c24: ADD ESP,0xc
 // 00444c27: CMP EBX,EAX

@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_mimic.cpp_CMimic_setup2_FUN_0051f780 (0051f780) at 0051f8db [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_%s_attacking_hero_006387b3
+//   TerminatedCString s_s_attacking_hero_006387b3
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   CConsole g_ConsolePtr
 //   undefined4 g_CGabriellaClassInfo.name_hash
@@ -60,8 +60,8 @@ void core_mimic_cpp_FUN_00520500(void)
             (&(g_HeroActors[g_LocalHeroIndex]->base_character).model.motion_controller);
   core_motion_cpp_FUN_0052ddb0();
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            ((CMotionController *)(in_stack_00000004 + 0x158));
-  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"@@%s attacking hero\n" + 2);
+            ((CMotionController *)(in_stack_00000004 + 0x158),1,1);
+  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s attacking hero\n");
   return;
 }
 

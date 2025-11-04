@@ -35,15 +35,15 @@ void core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
   if (0.0 < fVar1) {
     iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
     if (iVar2 == 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr,5,1);
     }
     if (iVar2 == 1) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                ((CMotionController *)(in_stack_00000004 + 0x158));
+                ((CMotionController *)(in_stack_00000004 + 0x158),6,1);
     }
     if (iVar2 == 2) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                ((CMotionController *)(in_stack_00000004 + 0x158));
+                ((CMotionController *)(in_stack_00000004 + 0x158),7,1);
     }
     iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
     if (iVar2 != 0) goto LAB_00568d4d;
@@ -52,7 +52,7 @@ void core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
     *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
     iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
     if ((*(int *)(iVar2 + 0x24) == 8) || (*(int *)(iVar2 + 0x24) == 9)) goto LAB_00568d4d;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr,8,1);
     sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
   }
   uVar3 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();

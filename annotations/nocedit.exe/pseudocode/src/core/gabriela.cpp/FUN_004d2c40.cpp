@@ -53,8 +53,8 @@
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -78,7 +78,7 @@ void core_gabriela_cpp_FUN_004d2c40(void)
             ((CCloth *)&in_stack_00000004[1].base_character.base_actor.orient_matrix.m[0].y,
              "gabcoat.cth");
   core_cloth_cpp_FUN_00439710();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr);
+  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   DAT_02d7b848 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 head");
   DAT_02d7b84c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
@@ -178,7 +178,7 @@ void core_gabriela_cpp_FUN_004d2c40(void)
 //   XREF to: 00439710 (UNCONDITIONAL_CALL)
 // 004d2c90: ADD ESP,0x10
 // 004d2c93: PUSH EDI
-// 004d2c94: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 004d2c94: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 004d2c99: ADD ESP,0x4
 // 004d2c9c: PUSH 0x1

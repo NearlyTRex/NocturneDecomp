@@ -170,9 +170,7 @@
 //   core_skeleton.cpp_CDeformableModel_getBonePart_FUN_0059c2d0
 //   core_skeleton.cpp_CDeformableModel_getPartPtr_FUN_0059c220
 //   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
@@ -181,13 +179,15 @@
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a17b0
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a17e0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
+//   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 //   core_skeleton.cpp_freeAllModels_FUN_005a1dc0
 //   core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0
 //   core_skeleton.cpp_FUN_005a0410
 //   core_skeleton.cpp_FUN_005a0430
-//   core_skeleton.cpp_FUN_005a2060
-//   core_skeleton.cpp_FUN_005a20b0
+//   core_slew.cpp_CSlew_init_FUN_005a2060
+//   core_slew.cpp_CSlew_processInput_FUN_005a20b0
 //   core_stairs.cpp_FUN_005b95c0
 //   core_stairs.cpp_FUN_005b9620
 //   core_stairs.cpp_FUN_005b9670
@@ -262,7 +262,7 @@ core_skeledit_cpp_CDeformableModelInstance_FUN_005968b0(CDeformableModelInstance
   int iVar8;
   CDeformableModel *pCVar9;
   undefined3 extraout_var;
-  CVector3f *extraout_EAX;
+  float *extraout_EAX;
   CMotionList *pCVar10;
   CVector3f *pCVar11;
   undefined3 extraout_var_00;
@@ -282,28 +282,28 @@ core_skeledit_cpp_CDeformableModelInstance_FUN_005968b0(CDeformableModelInstance
   float10 fVar19;
   double dVar20;
   CGame *in_stack_ffffcc64;
-  CMatrix3x4f *in_stack_ffffcc9c;
-  CDeformableModel *in_stack_ffffccac;
-  char *in_stack_ffffccb0;
-  CMatrix3x4f *in_stack_ffffccb4;
-  CKeys *in_stack_ffffcd24;
-  int *in_stack_ffffcd28;
-  CKeys *in_stack_ffffcd2c;
-  char *in_stack_ffffcd30;
+  CMatrix3x4f *in_stack_ffffcca0;
+  CDeformableModel *in_stack_ffffccb0;
+  char *in_stack_ffffccb4;
+  CMatrix3x4f *in_stack_ffffccb8;
+  CKeys *in_stack_ffffcd28;
+  int *in_stack_ffffcd2c;
+  CKeys *in_stack_ffffcd30;
+  char *in_stack_ffffcd34;
   uint uVar21;
   CKeys *pCVar22;
   undefined4 uVar23;
-  double in_stack_ffffcd34;
-  double in_stack_ffffcd4c;
+  double in_stack_ffffcd38;
+  double in_stack_ffffcd50;
   CPickList *pCVar24;
-  undefined8 in_stack_ffffcd54;
-  undefined8 in_stack_ffffcd5c;
-  CKeys *in_stack_ffffcd64;
-  uint in_stack_ffffcd68;
-  CKeys *in_stack_ffffcd6c;
-  uint in_stack_ffffcd70;
-  CKeys *in_stack_ffffcd74;
-  int in_stack_ffffcd84;
+  undefined8 in_stack_ffffcd58;
+  undefined8 in_stack_ffffcd60;
+  CKeys *in_stack_ffffcd68;
+  uint in_stack_ffffcd6c;
+  CKeys *in_stack_ffffcd70;
+  uint in_stack_ffffcd74;
+  CKeys *in_stack_ffffcd78;
+  int in_stack_ffffcd88;
   CPickList local_1900;
   CPickList local_1558;
   CPickList local_11b0;
@@ -339,8 +339,9 @@ core_skeledit_cpp_CDeformableModelInstance_FUN_005968b0(CDeformableModelInstance
   float local_290 [12];
   CVector3f local_260 [4];
   CMatrix3x4f local_230;
-  CVector3f local_200;
-  CVector3f local_1f4;
+  undefined1 local_200 [16];
+  float local_1f0;
+  float local_1ec;
   CBoundingBox3D local_1e4;
   float local_1cc;
   float local_1c8;
@@ -404,7 +405,7 @@ core_skeledit_cpp_CDeformableModelInstance_FUN_005968b0(CDeformableModelInstance
   CBoundingBox3D *local_60;
   CVector3f *local_5c;
   CVector3f *local_58;
-  char *local_54;
+  CMatrix3x4f *local_54;
   float local_50;
   uint local_4c;
   uint local_48;
@@ -439,17 +440,19 @@ core_skeledit_cpp_CDeformableModelInstance_FUN_005968b0(CDeformableModelInstance
   local_35c[0xd] = '\x0f';
   local_35c[0xe] = 'I';
   local_35c[0xf] = '@';
-  local_f4 = *(float *)this_ptr->field8_0x2238 + *(float *)(this_ptr->field8_0x2238 + 0xc);
-  local_f0 = *(float *)(this_ptr->field8_0x2238 + 4) + *(float *)(this_ptr->field8_0x2238 + 0x10);
+  local_f4 = *(float *)this_ptr->field15_0x2238 + *(float *)(this_ptr->field15_0x2238 + 0xc);
+  local_f0 = *(float *)(this_ptr->field15_0x2238 + 4) + *(float *)(this_ptr->field15_0x2238 + 0x10);
   local_35c._16_4_ = local_f4 * _DAT_0064e0ba;
-  local_ec = *(float *)(this_ptr->field8_0x2238 + 8) + *(float *)(this_ptr->field8_0x2238 + 0x14);
+  local_ec = *(float *)(this_ptr->field15_0x2238 + 8) + *(float *)(this_ptr->field15_0x2238 + 0x14);
   local_e4 = local_f0 * _DAT_0064e0ba;
   local_e0 = local_ec * _DAT_0064e0ba;
-  local_1b4 = *(float *)this_ptr->field8_0x2238 + *(float *)(this_ptr->field8_0x2238 + 0xc);
-  local_1b0 = *(float *)(this_ptr->field8_0x2238 + 4) + *(float *)(this_ptr->field8_0x2238 + 0x10);
+  local_1b4 = *(float *)this_ptr->field15_0x2238 + *(float *)(this_ptr->field15_0x2238 + 0xc);
+  local_1b0 = *(float *)(this_ptr->field15_0x2238 + 4) + *(float *)(this_ptr->field15_0x2238 + 0x10)
+  ;
   local_16c._12_4_ = local_1b4 * _DAT_0064e0ba;
   local_348 = local_1b0 * _DAT_0064e0ba;
-  local_1ac = *(float *)(this_ptr->field8_0x2238 + 8) + *(float *)(this_ptr->field8_0x2238 + 0x14);
+  local_1ac = *(float *)(this_ptr->field15_0x2238 + 8) + *(float *)(this_ptr->field15_0x2238 + 0x14)
+  ;
   local_16c._20_4_ = local_1ac * _DAT_0064e0ba;
   local_88 = -1;
   local_16c._16_4_ = local_348;
@@ -478,7 +481,7 @@ core_skeledit_cpp_CDeformableModelInstance_FUN_005968b0(CDeformableModelInstance
   if (local_64 < 0) {
     local_64 = 0;
   }
-  core_skeleton_cpp_FUN_005a2060();
+  core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_200);
   if ((DAT_0366b64c & 2) == 0) {
     DAT_0366b64c = DAT_0366b64c | 2;
     core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(&DAT_03665f74);
@@ -501,9 +504,9 @@ core_skeledit_cpp_CDeformableModelInstance_FUN_005968b0(CDeformableModelInstance
   local_5c = local_c0->vertex_pool;
   local_58 = this_ptr->transformed_vertices;
   local_c4 = &(this_ptr->motion_controller).current_frame_number;
-  local_54 = this_ptr->field3_0x508 + 0x978;
-  local_60 = (CBoundingBox3D *)this_ptr->field8_0x2238;
-  local_6c = this_ptr->field10_0x2254;
+  local_54 = this_ptr->bone_world_matrices;
+  local_60 = (CBoundingBox3D *)this_ptr->field15_0x2238;
+  local_6c = this_ptr->field17_0x2254;
   local_28 = local_30;
   do {
     local_90 = g_CGamePtr->delta_time_float;
@@ -661,11 +664,12 @@ core_skeledit_cpp_CDeformableModelInstance_FUN_005968b0(CDeformableModelInstance
     local_d0.y = 0;
     local_d0.z = 0;
     if (local_a8 == 0) {
-      core_skeleton_cpp_CDeformableModelInstance_FUN_0059e000();
+      core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(this_ptr)
+      ;
     }
     else {
-      core_skeleton_cpp_CDeformableModelInstance_FUN_0059df80(this_ptr);
-      core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40(this_ptr);
+      core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(this_ptr);
+      core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr);
     }
     if (local_b4 == 1) {
       pCVar13 = this_ptr;
@@ -701,7 +705,7 @@ core_skeledit_cpp_CDeformableModelInstance_FUN_005968b0(CDeformableModelInstance
     if (uVar21 != 0) {
       iVar14 = 0;
       iVar8 = 0;
-      while (iVar8 < local_c0->vertex_count[this_ptr->field6_0x2230]) {
+      while (iVar8 < local_c0->vertex_count[this_ptr->field13_0x2230]) {
         pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
         if ((*(byte *)((int)&(pSVar4->projected_vertex).screen_x + iVar14 + 3) & 0x80) == 0) {
           local_68 = *(int *)((int)&(pSVar4->projected_vertex).screen_y + iVar14) >> 0x10;
@@ -723,8 +727,7 @@ LAB_0059722b:
     if (0 < DAT_03665f74.poly_count) {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&local_2c0,local_190.m + 1,&local_19c);
-      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                (&local_2c0,(CMatrix3x4f *)(local_54 + iVar8 * 0x30),in_stack_ffffcc9c);
+      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_2c0,local_54 + iVar8,in_stack_ffffcca0);
       pfVar15 = local_320;
       pCVar11 = local_2f0;
       for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -733,19 +736,19 @@ LAB_0059722b:
         pCVar11 = (CVector3f *)((int)pCVar11 + ((uint)bVar18 * -2 + 1) * 4);
       }
       core_xform_cpp_getTranslation_FUN_005f6110(local_2f0,(CMatrix3x4f *)local_16c);
-      if (&local_200 != extraout_EAX) {
-        local_200.x = extraout_EAX->x;
-        local_200.y = extraout_EAX->y;
-        local_200.z = extraout_EAX->z;
+      if ((float *)local_200 != extraout_EAX) {
+        local_200._0_4_ = *extraout_EAX;
+        local_200._4_4_ = extraout_EAX[1];
+        local_200._8_4_ = extraout_EAX[2];
       }
       pCVar11 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(local_2f0,&local_148);
-      if (&local_1f4 != pCVar11) {
-        local_1f4.x = pCVar11->x;
-        local_1f4.y = pCVar11->y;
-        local_1f4.z = pCVar11->z;
+      if ((CVector3f *)(local_200 + 0xc) != pCVar11) {
+        local_200._12_4_ = pCVar11->x;
+        local_1f0 = pCVar11->y;
+        local_1ec = pCVar11->z;
       }
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr,(CVector3i *)&local_1f4,(CVector3i *)&local_200);
+                (g_CDemonRendererPtr,(CVector3i *)(local_200 + 0xc),(CVector3i *)local_200);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                 (&DAT_03665f74,(CKeyFramedModelInstance *)0x0,0,-1);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
@@ -867,7 +870,7 @@ LAB_005975b4:
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-    in_stack_ffffcc9c = (CMatrix3x4f *)g_CKeysPtr;
+    in_stack_ffffcca0 = (CMatrix3x4f *)g_CKeysPtr;
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
     if (iVar8 != 0) break;
     iVar8 = 0;
@@ -898,7 +901,7 @@ LAB_005975b4:
         if (iVar8 != 0) {
           local_50 = local_50 * _DAT_0064e0ca;
         }
-        in_stack_ffffccb4 = (CMatrix3x4f *)g_CKeysPtr;
+        in_stack_ffffccb8 = (CMatrix3x4f *)g_CKeysPtr;
         iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x38);
         if (iVar8 != 0) {
           local_50 = local_50 * _DAT_0064e0ce;
@@ -937,10 +940,11 @@ LAB_005975b4:
       }
     }
     else {
-      core_skeleton_cpp_FUN_005a20b0();
-      core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390(&local_230,&local_200,&local_1f4);
+      core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)local_200);
+      core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
+                (&local_230,(CVector3f *)local_200,(CVector3f *)(local_200 + 0xc));
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                ((CMatrix3x4f *)(local_54 + local_64 * 0x30),&local_230,in_stack_ffffccb4);
+                (local_54 + local_64,&local_230,in_stack_ffffccb8);
       pfVar15 = local_290;
       pCVar11 = local_260;
       for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -962,12 +966,12 @@ LAB_005975b4:
         local_19c.z = pCVar11->z;
       }
     }
-    in_stack_ffffccb0 = (char *)0x30;
-    in_stack_ffffccac = (CDeformableModel *)g_CKeysPtr;
+    in_stack_ffffccb4 = (char *)0x30;
+    in_stack_ffffccb0 = (CDeformableModel *)g_CKeysPtr;
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x30);
     if (iVar8 != 0) {
-      in_stack_ffffccb0 = (char *)0x597c43;
-      in_stack_ffffccb4 = (CMatrix3x4f *)g_CKeysPtr;
+      in_stack_ffffccb4 = (char *)0x597c43;
+      in_stack_ffffccb8 = (CMatrix3x4f *)g_CKeysPtr;
       iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
       if (iVar8 == 0) {
         iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
@@ -982,8 +986,8 @@ LAB_005975b4:
         }
       }
       else {
-        in_stack_ffffccb0 = (char *)0x597c68;
-        in_stack_ffffccb4 = (CMatrix3x4f *)g_CEditorToolsPtr;
+        in_stack_ffffccb4 = (char *)0x597c68;
+        in_stack_ffffccb8 = (CMatrix3x4f *)g_CEditorToolsPtr;
         iVar8 = shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
                           (g_CEditorToolsPtr,"Bias model x,y,z",local_148.m + 1,false);
         if ((iVar8 != 0) &&
@@ -1035,8 +1039,8 @@ LAB_005975b4:
       else {
         core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(this_ptr);
         core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90
-                  (&local_1e4,pCVar9->vertex_count[this_ptr->field6_0x2230],
-                   (CVector3i *)this_ptr->field7_0x2234);
+                  (&local_1e4,pCVar9->vertex_count[this_ptr->field13_0x2230],
+                   (CVector3i *)this_ptr->field14_0x2234);
         local_1a8 = local_1e4.max.x - local_1e4.min.x;
         local_1a4 = local_1e4.max.y - local_1e4.min.y;
         local_1a0 = local_1e4.max.z - local_1e4.min.z;
@@ -1071,7 +1075,7 @@ LAB_005975b4:
       while( true ) {
         pCVar10 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                             (&this_ptr->motion_controller);
-        uVar21 = SUB84(in_stack_ffffcd34,0);
+        uVar21 = SUB84(in_stack_ffffcd38,0);
         if (pCVar10->motion_count <= iVar14) break;
         pCVar10 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                             (&this_ptr->motion_controller);
@@ -1087,8 +1091,8 @@ LAB_005975b4:
         (this_ptr->motion_controller).current_motion_index = iVar8;
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_1900,0,(uint)in_stack_ffffcd24,(uint)in_stack_ffffcd28,
-                 (uint)in_stack_ffffcd2c,(uint)in_stack_ffffcd30,uVar21);
+                (&local_1900,0,(uint)in_stack_ffffcd28,(uint)in_stack_ffffcd2c,
+                 (uint)in_stack_ffffcd30,(uint)in_stack_ffffcd34,uVar21);
     }
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x14);
     if (iVar8 != 0) {
@@ -1107,62 +1111,62 @@ LAB_005975b4:
         *(float *)(SUB84(dVar20,0) + 0x38) = (float)(int)local_38;
       }
     }
-    in_stack_ffffcd24 = g_CKeysPtr;
+    in_stack_ffffcd28 = g_CKeysPtr;
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2d);
     if (iVar8 != 0) {
-      in_stack_ffffcd24 = (CKeys *)&DAT_00000001;
+      in_stack_ffffcd28 = (CKeys *)&DAT_00000001;
       shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                 (g_CEditorToolsPtr,"Select texture set",&local_ac,true,0,4,true);
     }
-    in_stack_ffffcd28 = (int *)0x598266;
-    in_stack_ffffcd2c = g_CKeysPtr;
+    in_stack_ffffcd2c = (int *)0x598266;
+    in_stack_ffffcd30 = g_CKeysPtr;
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x20);
     if (iVar8 != 0) {
       pCVar9 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
       iVar8 = pCVar9->num_lods;
       crt_stdio_c_sprintf_FUN_005fdbd0((char *)local_534,"Select LOD (0..%d), or -1 for auto-LOD");
-      in_stack_ffffcd2c = (CKeys *)&DAT_00000001;
-      in_stack_ffffcd28 = &local_b0;
-      in_stack_ffffcd24 = local_534;
+      in_stack_ffffcd30 = (CKeys *)&DAT_00000001;
+      in_stack_ffffcd2c = &local_b0;
+      in_stack_ffffcd28 = local_534;
       shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
-                (g_CEditorToolsPtr,(char *)in_stack_ffffcd24,in_stack_ffffcd28,true,-1,iVar8 + -1,
+                (g_CEditorToolsPtr,(char *)in_stack_ffffcd28,in_stack_ffffcd2c,true,-1,iVar8 + -1,
                  true);
     }
-    in_stack_ffffcd30 = (char *)0x5982c2;
+    in_stack_ffffcd34 = (char *)0x5982c2;
     pCVar22 = g_CKeysPtr;
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x23);
     if (iVar8 != 0) {
       local_a8 = (uint)(local_a8 == 0);
     }
-    in_stack_ffffcd34 = (double)CONCAT44(0x5982e5,pCVar22);
+    in_stack_ffffcd38 = (double)CONCAT44(0x5982e5,pCVar22);
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2c);
     if (iVar8 != 0) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1558);
       pCVar9 = local_c0;
-      uVar21 = (uint)in_stack_ffffcd5c;
-      uVar23 = SUB84(in_stack_ffffcd34,0);
+      uVar21 = (uint)in_stack_ffffcd60;
+      uVar23 = SUB84(in_stack_ffffcd38,0);
       iVar8 = 0;
       if (0 < local_bc->bone_count) {
         do {
-          uVar23 = SUB84(in_stack_ffffcd34,0);
+          uVar23 = SUB84(in_stack_ffffcd38,0);
           core_skeleton_cpp_CDeformableModel_getBonePart_FUN_0059c2d0(pCVar9,iVar8);
-          in_stack_ffffcd34 = (double)CONCAT44(0x598339,uVar23);
+          in_stack_ffffcd38 = (double)CONCAT44(0x598339,uVar23);
           crt_stdio_c_sprintf_FUN_005fdbd0((char *)local_46c,"%s\t%s");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1558.base_strlist,(char *)local_46c);
-          uVar21 = (uint)in_stack_ffffcd5c;
-          uVar23 = SUB84(in_stack_ffffcd34,0);
+          uVar21 = (uint)in_stack_ffffcd60;
+          uVar23 = SUB84(in_stack_ffffcd38,0);
           iVar8 = iVar8 + 1;
         } while (iVar8 < local_bc->bone_count);
       }
-      in_stack_ffffcd34 = (double)CONCAT44(0x598378,uVar23);
+      in_stack_ffffcd38 = (double)CONCAT44(0x598378,uVar23);
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                 (&local_1558,"Part for bone info",-1,0);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_1558,0,SUB84(in_stack_ffffcd4c,0),
-                 (uint)((ulonglong)in_stack_ffffcd4c >> 0x20),(uint)in_stack_ffffcd54,
-                 (uint)((ulonglong)in_stack_ffffcd54 >> 0x20),uVar21);
+                (&local_1558,0,SUB84(in_stack_ffffcd50,0),
+                 (uint)((ulonglong)in_stack_ffffcd50 >> 0x20),(uint)in_stack_ffffcd58,
+                 (uint)((ulonglong)in_stack_ffffcd58 >> 0x20),uVar21);
     }
-    pCVar22 = SUB84(in_stack_ffffcd4c,0);
+    pCVar22 = SUB84(in_stack_ffffcd50,0);
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0xf);
     if (iVar8 != 0) {
       pCVar22 = g_CKeysPtr;
@@ -1175,7 +1179,7 @@ LAB_005975b4:
       }
     }
     dVar20 = (double)CONCAT44(0x17,g_CKeysPtr);
-    in_stack_ffffcd4c = (double)CONCAT44(0x5983c7,pCVar22);
+    in_stack_ffffcd50 = (double)CONCAT44(0x5983c7,pCVar22);
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x17);
     uVar23 = SUB84(dVar20,0);
     if (iVar8 != 0) {
@@ -1197,19 +1201,19 @@ LAB_005975b4:
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
                     (&local_e08.base_strlist,"Copy position/orientation to clipboard");
           pCVar24 = &local_e08;
-          in_stack_ffffcd4c = (double)CONCAT44(0x59882c,uVar23);
+          in_stack_ffffcd50 = (double)CONCAT44(0x59882c,uVar23);
           local_2c = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                (pCVar24,"Item tester",-1,0);
           dVar20 = (double)CONCAT44(0x59883f,pCVar24);
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&local_e08,0,(uint)in_stack_ffffcd64,in_stack_ffffcd68,(uint)in_stack_ffffcd6c,
-                     in_stack_ffffcd70,(uint)in_stack_ffffcd74);
+                    (&local_e08,0,(uint)in_stack_ffffcd68,in_stack_ffffcd6c,(uint)in_stack_ffffcd70,
+                     in_stack_ffffcd74,(uint)in_stack_ffffcd78);
         }
         uVar23 = SUB84(dVar20,0);
         if (local_2c < 0) break;
         if (local_2c == 0) {
           dVar20 = 9.28252630231411e-307;
-          in_stack_ffffcd4c =
+          in_stack_ffffcd50 =
                (double)CONCAT44("Select model to position",g_CEditorToolsPtr);
           iVar8 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                             (g_CEditorToolsPtr,"Select model to position","models"
@@ -1225,20 +1229,20 @@ LAB_005975b4:
         }
         if (local_2c == 1) {
           shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_11b0);
-          uVar23 = SUB84(in_stack_ffffcd4c,0);
+          uVar23 = SUB84(in_stack_ffffcd50,0);
           iVar8 = 0;
           string_data = local_28;
           if (0 < local_bc->bone_count) {
             do {
               shape_edittool_cpp_CStrList_add_FUN_004a2b80
                         (&local_11b0.base_strlist,string_data->bone_name);
-              uVar23 = SUB84(in_stack_ffffcd4c,0);
+              uVar23 = SUB84(in_stack_ffffcd50,0);
               iVar8 = iVar8 + 1;
               string_data = string_data + 1;
             } while (iVar8 < local_bc->bone_count);
           }
           pCVar24 = &local_11b0;
-          in_stack_ffffcd4c = (double)CONCAT44(0x598495,uVar23);
+          in_stack_ffffcd50 = (double)CONCAT44(0x598495,uVar23);
           iVar8 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                             (pCVar24,"Select bone",-1,0);
           if (-1 < iVar8) {
@@ -1246,12 +1250,12 @@ LAB_005975b4:
           }
           dVar20 = (double)CONCAT44(0x5984ad,pCVar24);
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&local_11b0,0,(uint)in_stack_ffffcd64,in_stack_ffffcd68,(uint)in_stack_ffffcd6c
-                     ,in_stack_ffffcd70,(uint)in_stack_ffffcd74);
+                    (&local_11b0,0,(uint)in_stack_ffffcd68,in_stack_ffffcd6c,(uint)in_stack_ffffcd70
+                     ,in_stack_ffffcd74,(uint)in_stack_ffffcd78);
         }
         if (local_2c == 2) {
           dVar20 = (double)ZEXT48(g_CEditorToolsPtr);
-          in_stack_ffffcd4c = (double)CONCAT44(0x5984d0,SUB84(in_stack_ffffcd4c,0));
+          in_stack_ffffcd50 = (double)CONCAT44(0x5984d0,SUB84(in_stack_ffffcd50,0));
           shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
                     (g_CEditorToolsPtr,"Edit item pos",local_190.m + 1,true);
         }
@@ -1261,7 +1265,7 @@ LAB_005975b4:
           local_19c.z = local_19c.y;
           local_19c.y = fVar3;
           dVar20 = (double)ZEXT48(g_CEditorToolsPtr);
-          in_stack_ffffcd4c = (double)CONCAT44(0x598511,SUB84(in_stack_ffffcd4c,0));
+          in_stack_ffffcd50 = (double)CONCAT44(0x598511,SUB84(in_stack_ffffcd50,0));
           shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
                     (g_CEditorToolsPtr,"Edit item orient (P,B,H)",&local_19c,true);
           fVar3 = local_19c.z;
@@ -1277,7 +1281,7 @@ LAB_005975b4:
           cVar2 = *pcVar16;
           while (cVar2 != '\0') {
             local_1c = 0;
-            in_stack_ffffcd4c = (double)CONCAT44(0x598570,SUB84(in_stack_ffffcd4c,0));
+            in_stack_ffffcd50 = (double)CONCAT44(0x598570,SUB84(in_stack_ffffcd50,0));
             pcVar17 = pcVar16;
             crt_stdio_c_sscanf_FUN_0060013c(pcVar16,"%f%n");
             if (local_1c < 1) {
@@ -1292,11 +1296,11 @@ LAB_005975b4:
           }
           if (iVar8 == 6) {
             dVar20 = (double)local_1bc;
-            in_stack_ffffcd4c = (double)local_1c0;
-            in_stack_ffffcd34 = (double)local_1cc;
-            in_stack_ffffcd30 = "Import these values:\nX: %g\nY: %g\nZ: %g\nP: %g\nB: %g\nH: %g\n";
-            in_stack_ffffcd28 = (int *)0x5985f0;
-            in_stack_ffffcd2c = (CKeys *)g_CEditorToolsPtr;
+            in_stack_ffffcd50 = (double)local_1c0;
+            in_stack_ffffcd38 = (double)local_1cc;
+            in_stack_ffffcd34 = "Import these values:\nX: %g\nY: %g\nZ: %g\nP: %g\nB: %g\nH: %g\n";
+            in_stack_ffffcd2c = (int *)0x5985f0;
+            in_stack_ffffcd30 = (CKeys *)g_CEditorToolsPtr;
             iVar8 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                               (g_CEditorToolsPtr,"Import these values:\nX: %g\nY: %g\nZ: %g\nP: %g\nB: %g\nH: %g\n");
             if (iVar8 != 0) {
@@ -1315,13 +1319,13 @@ LAB_005975b4:
           }
         }
         if (local_2c == 5) {
-          in_stack_ffffcd4c = (double)local_19c.x;
-          in_stack_ffffcd34 = (double)local_190.m[1].x;
-          in_stack_ffffcd30 = "CVector(%g,%g,%g), makePBH(%g,%g,%g)";
-          in_stack_ffffcd2c = local_46c;
-          in_stack_ffffcd28 = (int *)0x5986a2;
+          in_stack_ffffcd50 = (double)local_19c.x;
+          in_stack_ffffcd38 = (double)local_190.m[1].x;
+          in_stack_ffffcd34 = "CVector(%g,%g,%g), makePBH(%g,%g,%g)";
+          in_stack_ffffcd30 = local_46c;
+          in_stack_ffffcd2c = (int *)0x5986a2;
           crt_stdio_c_sprintf_FUN_005fdbd0
-                    ((char *)in_stack_ffffcd2c,"CVector(%g,%g,%g), makePBH(%g,%g,%g)");
+                    ((char *)in_stack_ffffcd30,"CVector(%g,%g,%g), makePBH(%g,%g,%g)");
           shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0
                     (g_CEditorToolsPtr,(char *)local_46c);
           dVar20 = (double)CONCAT44(g_CEditorToolsPtr,0x5986d2);
@@ -1330,33 +1334,33 @@ LAB_005975b4:
         }
       }
     }
-    in_stack_ffffcd54 = CONCAT44(0x598861,uVar23);
+    in_stack_ffffcd58 = CONCAT44(0x598861,uVar23);
     pcVar17 = (char *)g_CKeysPtr;
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x12);
     if (iVar8 != 0) {
       pcVar17 = "Enter .S3D filename to save model";
-      in_stack_ffffcd54 = CONCAT44(g_CEditorToolsPtr,0x598888);
+      in_stack_ffffcd58 = CONCAT44(g_CEditorToolsPtr,0x598888);
       iVar8 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                         (g_CEditorToolsPtr,"Enter .S3D filename to save model",local_4d0,100,0);
       if (iVar8 != 0) {
         pcVar17 = (char *)&local_14;
-        in_stack_ffffcd54 = CONCAT44(local_4d0,0x5988b4);
+        in_stack_ffffcd58 = CONCAT44(local_4d0,0x5988b4);
         crt_string_c_splitpath_FUN_005ff178(local_4d0,pcVar17,local_a60,local_960,local_760);
         if (local_760[0] == '\0') {
           pcVar17 = (char *)&local_14;
-          in_stack_ffffcd54 = CONCAT44(local_4d0,0x5988e4);
+          in_stack_ffffcd58 = CONCAT44(local_4d0,0x5988e4);
           crt_file_c_makepath_FUN_005febfc(local_4d0,pcVar17,local_a60,local_960,"s3d");
         }
         core_skeledit_cpp_LockGetPtrAndExportModel_FUN_00598ee0();
       }
     }
-    in_stack_ffffcd68 = 0x13;
-    in_stack_ffffcd5c = CONCAT44(0x59890a,pcVar17);
-    in_stack_ffffcd64 = g_CKeysPtr;
+    in_stack_ffffcd6c = 0x13;
+    in_stack_ffffcd60 = CONCAT44(0x59890a,pcVar17);
+    in_stack_ffffcd68 = g_CKeysPtr;
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x13);
     if (iVar8 != 0) {
-      in_stack_ffffcd68 = 0x59891d;
-      in_stack_ffffcd6c = g_CKeysPtr;
+      in_stack_ffffcd6c = 0x59891d;
+      in_stack_ffffcd70 = g_CKeysPtr;
       iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
       if (iVar8 == 0) {
         if (local_88 < 0) {
@@ -1372,8 +1376,8 @@ LAB_005975b4:
         local_88 = 1;
       }
     }
-    in_stack_ffffcd70 = 0x598951;
-    in_stack_ffffcd74 = g_CKeysPtr;
+    in_stack_ffffcd74 = 0x598951;
+    in_stack_ffffcd78 = g_CKeysPtr;
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3b);
     if (iVar8 != 0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -1436,14 +1440,14 @@ LAB_005975b4:
       engine_2d_c_drawText_FUN_00401fd0("Z",7,0x176);
       engine_2d_c_drawText_FUN_00401fd0("Show some useful info",0x69,0x176);
       engine_2d_c_drawText_FUN_00401fd0("E",7,0x181);
-      in_stack_ffffcd74 = (CKeys *)0x598dcc;
+      in_stack_ffffcd78 = (CKeys *)0x598dcc;
       engine_2d_c_drawText_FUN_00401fd0("Export to S3D",0x69,0x181);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       engine_2d_c_clearInputAndWait_FUN_00403260();
       engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
     }
-    (*g_CKeysPtr->vtable[1].isKeyDown)(g_CKeysPtr,in_stack_ffffcd84);
+    (*g_CKeysPtr->vtable[1].isKeyDown)(g_CKeysPtr,in_stack_ffffcd88);
   } while( true );
   if (((local_40 != 0) || (local_94 != 0)) &&
      (iVar8 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
@@ -1463,7 +1467,7 @@ LAB_005975b4:
                       (g_CEditorToolsPtr,"Enter .DFM filename","models",0x64e099,
                        SUB41(local_860,0));
     if (CONCAT31(extraout_var_01,bVar7) != 0) {
-      core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(in_stack_ffffccac,in_stack_ffffccb0);
+      core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(in_stack_ffffccb0,in_stack_ffffccb4);
     }
   }
   g_CDemonSetPtr->lighting_quality_mode = 0;
@@ -1616,7 +1620,7 @@ LAB_005975b4:
 // 00596a72: LEA EAX,[EBP + 0xfffffe8e]
 //   Label: LAB_00596a72
 // 00596a78: PUSH EAX
-// 00596a79: CALL core_skeleton.cpp_FUN_005a2060
+// 00596a79: CALL core_slew.cpp_CSlew_init_FUN_005a2060
 //   XREF to: 005a2060 (UNCONDITIONAL_CALL)
 // 00596a7e: MOV DH,byte ptr [0x0366b64c]
 //   XREF to: 0366b64c (READ)
@@ -1784,11 +1788,11 @@ LAB_005975b4:
 //   XREF to: 00597157 (CONDITIONAL_JUMP)
 // 00596c60: MOV EBX,dword ptr [EBP + 0x92]
 // 00596c66: PUSH EBX
-// 00596c67: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
+// 00596c67: CALL core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 //   XREF to: 0059df80 (UNCONDITIONAL_CALL)
 // 00596c6c: ADD ESP,0x4
 // 00596c6f: PUSH EBX
-// 00596c70: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+// 00596c70: CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
 // 00596c75: ADD ESP,0x4
 //   Label: LAB_00596c75
@@ -2274,7 +2278,7 @@ LAB_005975b4:
 // 00597157: MOV ECX,dword ptr [EBP + 0x92]
 //   Label: LAB_00597157
 // 0059715d: PUSH ECX
-// 0059715e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
+// 0059715e: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   XREF to: 0059e000 (UNCONDITIONAL_CALL)
 // 00597163: JMP 0x00596c75
 //   XREF to: 00596c75 (UNCONDITIONAL_JUMP)
@@ -3756,7 +3760,7 @@ LAB_005975b4:
 //   XREF to: 00597a90 (CONDITIONAL_JUMP)
 // 00598030: LEA EAX,[EBP + 0xfffffe8e]
 // 00598036: PUSH EAX
-// 00598037: CALL core_skeleton.cpp_FUN_005a20b0
+// 00598037: CALL core_slew.cpp_CSlew_processInput_FUN_005a20b0
 //   XREF to: 005a20b0 (UNCONDITIONAL_CALL)
 // 0059803c: ADD ESP,0x4
 // 0059803f: LEA EAX,[EBP + 0xfffffe9a]

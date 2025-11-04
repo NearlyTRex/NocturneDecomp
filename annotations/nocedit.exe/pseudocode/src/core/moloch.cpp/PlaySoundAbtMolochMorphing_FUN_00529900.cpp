@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900()
 // Cross-references:
-//   core_moloch.cpp_FUN_00528d20 (00528d20) at 00529104 [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_process_FUN_00528d20 (00528d20) at 00529104 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_moloch_morph_todemon_wav_00639eaf
 //   TerminatedCString s_moloch_morph_tohuman_wav_00639ec8

@@ -167,9 +167,9 @@ undefined FUN_0053c4f0();
 // Address: 0053c730
 undefined FUN_0053c730();
 
-// Original: core_msnedit.cpp_IgnoreAndProcess_FUN_0053c8d0
+// Original: core_msnedit.cpp_CDemonMission_FUN_0053c8d0
 // Address: 0053c8d0
-undefined IgnoreAndProcess();
+void CDemonMission(CDemonMission * this_ptr);
 
 // Original: core_msnedit.cpp_FUN_0053c930
 // Address: 0053c930
@@ -179,9 +179,9 @@ undefined FUN_0053c930();
 // Address: 0053c970
 undefined BeginAndEndScene();
 
-// Original: core_msnedit.cpp_FUN_0053ca00
+// Original: core_msnedit.cpp_CDemonMission_FUN_0053ca00
 // Address: 0053ca00
-undefined FUN_0053ca00();
+void CDemonMission(CDemonMission * this_ptr);
 
 // Original: core_msnedit.cpp_FUN_0053ca30
 // Address: 0053ca30

@@ -8,7 +8,7 @@
 //   undefined4 DAT_02f37eec
 //   undefined4 DAT_02f37ef4
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 
 #include "nocturne.h"
 
@@ -18,36 +18,45 @@
 int core_mobster_cpp_FUN_005278d0(void)
 
 {
-  undefined4 *puVar1;
+  CVector3f *pCVar1;
   int iVar2;
+  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
-  undefined4 *in_stack_00000008;
+  CVector3f *in_stack_00000008;
+  undefined1 auStack_2c [16];
+  CVector3f local_1c;
   
   iVar2 = 1;
-  puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  if (in_stack_00000008 != puVar1) {
-    *in_stack_00000008 = *puVar1;
-    in_stack_00000008[1] = puVar1[1];
-    in_stack_00000008[2] = puVar1[2];
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_1c,DAT_02f37ec8
+                     );
+  if (in_stack_00000008 != pCVar1) {
+    in_stack_00000008->x = pCVar1->x;
+    in_stack_00000008->y = pCVar1->y;
+    in_stack_00000008->z = pCVar1->z;
   }
   if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbf80) * 4) != 0) {
-    puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-    if (in_stack_00000008 + 3 != puVar1) {
-      in_stack_00000008[3] = *puVar1;
-      in_stack_00000008[4] = puVar1[1];
-      in_stack_00000008[5] = puVar1[2];
+    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                       ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),
+                        (CVector3f *)(auStack_2c + 8),DAT_02f37eec);
+    if (in_stack_00000008 + 1 != pCVar1) {
+      in_stack_00000008[1].x = pCVar1->x;
+      in_stack_00000008[1].y = pCVar1->y;
+      in_stack_00000008[1].z = pCVar1->z;
     }
     iVar2 = 2;
   }
   if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbf84) * 4) == 0) {
     return iVar2;
   }
-  puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  in_stack_00000008 = in_stack_00000008 + iVar2 * 3;
-  if (in_stack_00000008 != puVar1) {
-    *in_stack_00000008 = *puVar1;
-    in_stack_00000008[1] = puVar1[1];
-    in_stack_00000008[2] = puVar1[2];
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),
+                      (CVector3f *)auStack_2c,DAT_02f37ef4);
+  in_stack_00000008 = in_stack_00000008 + iVar2;
+  if (in_stack_00000008 != pCVar1) {
+    in_stack_00000008->x = pCVar1->x;
+    in_stack_00000008->y = pCVar1->y;
+    in_stack_00000008->z = pCVar1->z;
   }
   return iVar2 + 1;
 }
@@ -73,7 +82,7 @@ int core_mobster_cpp_FUN_005278d0(void)
 // 005278eb: LEA EAX,[ESI + 0x158]
 // 005278f1: PUSH EAX
 // 005278f2: MOV EBX,0x1
-// 005278f7: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 005278f7: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 005278fc: ADD ESP,0xc
 // 005278ff: CMP EDI,EAX
@@ -92,7 +101,7 @@ int core_mobster_cpp_FUN_005278d0(void)
 // 0052791e: PUSH EAX
 // 0052791f: LEA EAX,[ESI + 0x158]
 // 00527925: PUSH EAX
-// 00527926: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 00527926: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 0052792b: MOV EDX,EAX
 // 0052792d: LEA EAX,[EBX*0x4 + 0x0]
@@ -141,7 +150,7 @@ int core_mobster_cpp_FUN_005278d0(void)
 // 0052798a: PUSH EAX
 // 0052798b: ADD ESI,0x158
 // 00527991: PUSH ESI
-// 00527992: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 00527992: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 00527997: MOV ESI,EAX
 // 00527999: LEA EAX,[EBX*0x4 + 0x0]

@@ -32,7 +32,7 @@ void core_boneguy_cpp_ExplodeAndSoundSomething_FUN_0041d4d0(void)
     return;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(in_stack_00000004->base_enemy).base_character.model.motion_controller);
+            (&(in_stack_00000004->base_enemy).base_character.model.motion_controller,3,1);
   core_enemy_cpp_FUN_004a9f10();
   return;
 }

@@ -10,7 +10,7 @@
 //   undefined4 DAT_03f6bb00
 //   undefined4 DAT_03f6bb04
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 
 #include "nocturne.h"
 
@@ -27,13 +27,16 @@ float * core_stranger_cpp_CStranger_FUN_005be490(void)
   float fVar5;
   CVector3f *pCVar6;
   CVector3f *pCVar7;
+  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   float *in_stack_00000008;
   
-  pCVar6 = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20
-                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
-  pCVar7 = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20
-                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
+  pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),
+                      (CVector3f *)&stack0xffffffd0,DAT_03f6bb04);
+  pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),
+                      (CVector3f *)&stack0xffffffec,DAT_03f6bb00);
   fVar5 = FLOAT_006537ec;
   fVar1 = pCVar7->y;
   fVar2 = pCVar6->y;
@@ -64,7 +67,7 @@ float * core_stranger_cpp_CStranger_FUN_005be490(void)
 // 005be4a9: PUSH EAX
 // 005be4aa: ADD EDI,0x158
 // 005be4b0: PUSH EDI
-// 005be4b1: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+// 005be4b1: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   XREF to: 0059fa20 (UNCONDITIONAL_CALL)
 // 005be4b6: ADD ESP,0xc
 // 005be4b9: MOV ECX,dword ptr [0x03f6bb00]
@@ -75,7 +78,7 @@ float * core_stranger_cpp_CStranger_FUN_005be490(void)
 //   XREF to: Stack[-0x18] (DATA)
 // 005be4c6: PUSH EAX
 // 005be4c7: PUSH EDI
-// 005be4c8: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+// 005be4c8: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   XREF to: 0059fa20 (UNCONDITIONAL_CALL)
 // 005be4cd: FLD float ptr [EAX]
 // 005be4cf: FADD float ptr [EBX]

@@ -24,7 +24,7 @@
 //   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_setcolid.cpp_CDemonSet_FUN_00574580
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 
@@ -37,9 +37,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
 {
   float fVar1;
   int iVar2;
-  CSkeleton *this_ptr_00;
-  CVector3f *pCVar3;
-  CSkeleton *this_ptr_01;
+  CSkeleton *pCVar3;
+  CVector3f *pCVar4;
   BADSPACEBASE *in_ESP;
   float in_stack_00000008;
   CVector3f local_40;
@@ -58,15 +57,15 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
              *(float *)(this_ptr->cloth_data + 0x1b8) + _DAT_006175ea;
         core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                   (&this_ptr->base_actor,&local_1c,(CVector3f *)&stack0xffffffb4);
-        core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(&this_ptr->model);
-        iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                          (this_ptr_01,"?Bip01 head" + 1);
+        pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+                           (&this_ptr->model);
+        iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,"?Bip01 head" + 1);
         if (iVar2 != -1) {
-          pCVar3 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+          pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                              ((CVector3f *)&stack0xffffffa8,(CVector3f *)&stack0xffffff9c,
                               (CMatrix3x4f *)0x0);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                    (&this_ptr->base_actor,&local_34,pCVar3);
+                    (&this_ptr->base_actor,&local_34,pCVar4);
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
                     (g_CFireEffectPtr,&local_34,0.5,&local_1c,0x8000);
         }
@@ -76,19 +75,18 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
       if (fVar1 < 0.0) {
         *(float *)(this_ptr->cloth_data + 0x1bc) =
              *(float *)(this_ptr->cloth_data + 0x1bc) + _DAT_006175ee;
-        core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(&this_ptr->model);
-        iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 head")
-        ;
+        pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+                           (&this_ptr->model);
+        iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,"Bip01 head");
         if (iVar2 != -1) {
           local_40.x = 0.0;
           local_40.y = 0.2;
           local_40.z = 0.5;
-          pCVar3 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+          pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                              ((CVector3f *)&stack0xffffff90,&local_40,
-                              (CMatrix3x4f *)((this_ptr->model).field3_0x508 + iVar2 * 0x30 + 0x978)
-                             );
+                              (this_ptr->model).bone_world_matrices + iVar2);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                    (&this_ptr->base_actor,&local_28,pCVar3);
+                    (&this_ptr->base_actor,&local_28,pCVar4);
           iVar2 = core_setcolid_cpp_CDemonSet_FUN_00574580(g_CDemonSetPtr);
           if (iVar2 == 0) {
             *(uint *)(this_ptr->cloth_data + 0x1c0) =
@@ -163,7 +161,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
 //   XREF to: 006175ee (READ)
 // 0042eabf: PUSH EAX
 // 0042eac0: FSTP float ptr [EBX + 0x2c54]
-// 0042eac6: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 0042eac6: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0042eacb: ADD ESP,0x4
 // 0042eace: PUSH 0x0
@@ -267,7 +265,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
 //   XREF to: 00408e80 (UNCONDITIONAL_CALL)
 // 0042ebb1: ADD ESP,0xc
 // 0042ebb4: PUSH ESI
-// 0042ebb5: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 0042ebb5: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0042ebba: ADD ESP,0x4
 // 0042ebbd: PUSH EDI

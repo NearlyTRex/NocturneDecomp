@@ -20,11 +20,11 @@
 //   core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780
 //   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0
 //   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0480
+//   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 
 #include "nocturne.h"
@@ -114,8 +114,8 @@ core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeform
     }
     this_ptr_00 = local_20;
     core_skeleton_cpp_CDeformableModelInstance_FUN_005a0480(local_20);
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059df80(this_ptr_00);
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40(this_ptr_00);
+    core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(this_ptr_00);
+    core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr_00);
     core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(this_ptr_00);
     local_34 = 0;
     if (0 < this_ptr->num_parts) {
@@ -138,15 +138,15 @@ core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeform
           do {
             puVar15 = (ushort *)
                       ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_1c);
-            piVar6 = (int *)((uint)*puVar15 * 0xc + local_20->field7_0x2234);
+            piVar6 = (int *)((uint)*puVar15 * 0xc + local_20->field14_0x2234);
             local_4c = (float)*piVar6 * FLOAT_00662ea0;
             local_48 = (float)piVar6[1] * FLOAT_00662ea0;
             local_44 = (float)piVar6[2] * FLOAT_00662ea0;
-            piVar7 = (int *)(local_20->field7_0x2234 + (uint)puVar15[1] * 0xc);
+            piVar7 = (int *)(local_20->field14_0x2234 + (uint)puVar15[1] * 0xc);
             local_70 = (float)*piVar7 * FLOAT_00662ea0;
             local_6c = (float)piVar7[1] * FLOAT_00662ea0;
             local_68 = (float)piVar7[2] * FLOAT_00662ea0;
-            piVar7 = (int *)((uint)puVar15[2] * 0xc + local_20->field7_0x2234);
+            piVar7 = (int *)((uint)puVar15[2] * 0xc + local_20->field14_0x2234);
             local_40 = (float)*piVar7 * FLOAT_00662ea0;
             local_3c = (float)piVar7[1] * FLOAT_00662ea0;
             local_38 = (float)piVar7[2] * FLOAT_00662ea0;
@@ -314,11 +314,11 @@ core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeform
 //   XREF to: 005a0480 (UNCONDITIONAL_CALL)
 // 0059d52a: ADD ESP,0x8
 // 0059d52d: PUSH ESI
-// 0059d52e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
+// 0059d52e: CALL core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 //   XREF to: 0059df80 (UNCONDITIONAL_CALL)
 // 0059d533: ADD ESP,0x4
 // 0059d536: PUSH ESI
-// 0059d537: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+// 0059d537: CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
 // 0059d53c: ADD ESP,0x4
 // 0059d53f: PUSH 0x0

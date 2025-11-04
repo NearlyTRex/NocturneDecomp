@@ -10,7 +10,7 @@
 //   undefined4 DAT_02d7b888
 //   undefined4 DAT_02d7b88c
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 
 #include "nocturne.h"
 
@@ -28,13 +28,16 @@ float * core_gabriela_cpp_FUN_004d4cf0(void)
   float fVar5;
   CVector3f *pCVar6;
   CVector3f *pCVar7;
+  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   float *in_stack_00000008;
   
-  pCVar6 = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20
-                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
-  pCVar7 = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20
-                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
+  pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),
+                      (CVector3f *)&stack0xffffffd0,DAT_02d7b88c);
+  pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),
+                      (CVector3f *)&stack0xffffffec,DAT_02d7b888);
   fVar5 = _DAT_0062af6d;
   fVar1 = pCVar7->y;
   fVar2 = pCVar6->y;
@@ -65,7 +68,7 @@ float * core_gabriela_cpp_FUN_004d4cf0(void)
 // 004d4d09: PUSH EAX
 // 004d4d0a: ADD EDI,0x158
 // 004d4d10: PUSH EDI
-// 004d4d11: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+// 004d4d11: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   XREF to: 0059fa20 (UNCONDITIONAL_CALL)
 // 004d4d16: ADD ESP,0xc
 // 004d4d19: MOV ECX,dword ptr [0x02d7b888]
@@ -76,7 +79,7 @@ float * core_gabriela_cpp_FUN_004d4cf0(void)
 //   XREF to: Stack[-0x18] (DATA)
 // 004d4d26: PUSH EAX
 // 004d4d27: PUSH EDI
-// 004d4d28: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+// 004d4d28: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   XREF to: 0059fa20 (UNCONDITIONAL_CALL)
 // 004d4d2d: FLD float ptr [EAX]
 // 004d4d2f: FADD float ptr [EBX]

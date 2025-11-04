@@ -51,7 +51,7 @@
 //   core_mimic.cpp_CMimic_beginMorph_FUN_00520a80 (00520a80) at 00520b5f [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_FUN_00520500 (00520500) at 005205a0 [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_FUN_00525840 (00525840) at 00525d97 [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00528d20 (00528d20) at 00529024 [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_process_FUN_00528d20 (00528d20) at 00529024 [UNCONDITIONAL_CALL]
 //   core_npc.cpp_CNPC_process_FUN_005448b0 (005448b0) at 00544b1c [UNCONDITIONAL_CALL]
 //   core_scat.cpp_FUN_005571f0 (005571f0) at 005575de [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055e922 [UNCONDITIONAL_CALL]

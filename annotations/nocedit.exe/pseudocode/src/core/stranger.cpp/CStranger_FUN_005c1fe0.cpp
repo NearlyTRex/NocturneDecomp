@@ -119,7 +119,7 @@ undefined4 core_stranger_cpp_CStranger_FUN_005c1fe0(void)
                                   &(this_ptr_00->location).position), 0.0 < pCVar3->z)) {
             in_stack_00000004[0x179].field19_0x114 = (int)this_ptr_00;
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      ((CMotionController *)(in_stack_00000004 + 1));
+                      ((CMotionController *)(in_stack_00000004 + 1),0x2a,1);
             in_stack_00000004[0x8d].create_event[0x48] = '\0';
             in_stack_00000004[0x8d].create_event[0x49] = '\0';
             in_stack_00000004[0x8d].create_event[0x4a] = '\0';

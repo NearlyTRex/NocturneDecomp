@@ -21,9 +21,9 @@
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810
 //   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e070
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0480
+//   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 
@@ -35,15 +35,14 @@ void __cdecl
 core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690(CDeformableModel *this_ptr)
 
 {
-  char *pcVar1;
-  CMotionController_vtable *pCVar2;
+  CMotionController_vtable *pCVar1;
   CDeformableModelInstance *this_ptr_00;
-  CVector3f *pCVar3;
-  int *piVar4;
-  CVector3f *pCVar5;
-  int iVar6;
+  CVector3f *pCVar2;
+  int *piVar3;
+  CVector3f *pCVar4;
+  int iVar5;
   BADSPACEBASE *in_ESP;
-  int iVar7;
+  int iVar6;
   CBoundingBox3D local_5c;
   float local_44;
   float local_40;
@@ -76,27 +75,27 @@ core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690(CDeformableM
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::calcRootOffsetScale - out of memory!");
   }
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a0480(this_ptr_00);
-  iVar6 = 0;
+  iVar5 = 0;
   if (0 < local_14->bone_count) {
-    pCVar5 = local_14->bone_scales;
-    pCVar3 = this_ptr_00->transformed_vertices;
+    pCVar4 = local_14->bone_scales;
+    pCVar2 = this_ptr_00->transformed_vertices;
     do {
-      if (pCVar3 != pCVar5) {
-        pCVar3->x = pCVar5->x;
-        pCVar3->y = pCVar5->y;
-        pCVar3->z = pCVar5->z;
+      if (pCVar2 != pCVar4) {
+        pCVar2->x = pCVar4->x;
+        pCVar2->y = pCVar4->y;
+        pCVar2->z = pCVar4->z;
       }
-      pCVar3 = pCVar3 + 1;
-      iVar6 = iVar6 + 1;
-      pCVar5 = pCVar5 + 1;
-    } while (iVar6 < local_14->bone_count);
+      pCVar2 = pCVar2 + 1;
+      iVar5 = iVar5 + 1;
+      pCVar4 = pCVar4 + 1;
+    } while (iVar5 < local_14->bone_count);
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e070();
+  core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070(this_ptr_00,0,0.0);
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(this_ptr_00);
-  piVar4 = (int *)this_ptr_00->field7_0x2234;
-  local_38.x = (float)*piVar4 * _DAT_00662e44;
-  local_38.y = (float)piVar4[1] * _DAT_00662e44;
-  local_38.z = (float)piVar4[2] * _DAT_00662e44;
+  piVar3 = (int *)this_ptr_00->field14_0x2234;
+  local_38.x = (float)*piVar3 * _DAT_00662e44;
+  local_38.y = (float)piVar3[1] * _DAT_00662e44;
+  local_38.z = (float)piVar3[2] * _DAT_00662e44;
   if (&local_5c != (CBoundingBox3D *)&local_38) {
     local_5c.min.x = local_38.x;
     local_5c.min.y = local_38.y;
@@ -107,85 +106,75 @@ core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690(CDeformableM
     local_5c.max.y = local_38.y;
     local_5c.max.z = local_38.z;
   }
-  iVar6 = 1;
+  iVar5 = 1;
   if (1 < this_ptr->vertex_count[0]) {
-    iVar7 = 0xc;
+    iVar6 = 0xc;
     do {
-      piVar4 = (int *)(this_ptr_00->field7_0x2234 + iVar7);
-      local_38.x = (float)*piVar4 * _DAT_00662e44;
-      local_38.y = (float)piVar4[1] * _DAT_00662e44;
-      local_38.z = (float)piVar4[2] * _DAT_00662e44;
+      piVar3 = (int *)(this_ptr_00->field14_0x2234 + iVar6);
+      local_38.x = (float)*piVar3 * _DAT_00662e44;
+      local_38.y = (float)piVar3[1] * _DAT_00662e44;
+      local_38.z = (float)piVar3[2] * _DAT_00662e44;
       core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_5c,&local_38);
-      iVar6 = iVar6 + 1;
-      iVar7 = iVar7 + 0xc;
-    } while (iVar6 < this_ptr->vertex_count[0]);
+      iVar5 = iVar5 + 1;
+      iVar6 = iVar6 + 0xc;
+    } while (iVar5 < this_ptr->vertex_count[0]);
   }
-  pcVar1 = this_ptr_00->field3_0x508;
   local_2c = local_5c.max.x - local_5c.min.x;
   local_28 = local_5c.max.y - local_5c.min.y;
   local_24 = local_5c.max.z - local_5c.min.z;
   local_20 = 0x3f800000;
   local_1c = 0x3f800000;
   local_18 = 0x3f800000;
-  if (pcVar1 != (char *)&local_20) {
-    this_ptr_00->field3_0x508[4] = '\0';
-    this_ptr_00->field3_0x508[5] = '\0';
-    this_ptr_00->field3_0x508[6] = -0x80;
-    this_ptr_00->field3_0x508[7] = '?';
-    this_ptr_00->field3_0x508[8] = '\0';
-    this_ptr_00->field3_0x508[9] = '\0';
-    this_ptr_00->field3_0x508[10] = -0x80;
-    this_ptr_00->field3_0x508[0xb] = '?';
-    pcVar1[0] = '\0';
-    pcVar1[1] = '\0';
-    pcVar1[2] = -0x80;
-    pcVar1[3] = '?';
+  if (&this_ptr_00->field3_0x508 != &local_20) {
+    this_ptr_00->field4_0x50c = 0x3f800000;
+    this_ptr_00->rest_pose_data[0] = 1.0;
+    this_ptr_00->field3_0x508 = 0x3f800000;
   }
-  iVar6 = 0;
+  iVar5 = 0;
   if (0 < local_14->bone_count) {
-    pCVar3 = this_ptr_00->transformed_vertices;
-    pCVar5 = this_ptr->vertex_pool;
+    pCVar2 = this_ptr_00->transformed_vertices;
+    pCVar4 = this_ptr->vertex_pool;
     do {
-      if (pCVar3 != pCVar5) {
-        pCVar3->x = pCVar5->x;
-        pCVar3->y = pCVar5->y;
-        pCVar3->z = pCVar5->z;
+      if (pCVar2 != pCVar4) {
+        pCVar2->x = pCVar4->x;
+        pCVar2->y = pCVar4->y;
+        pCVar2->z = pCVar4->z;
       }
-      pCVar3 = pCVar3 + 1;
-      iVar6 = iVar6 + 1;
-      pCVar5 = pCVar5 + 1;
-    } while (iVar6 < local_14->bone_count);
+      pCVar2 = pCVar2 + 1;
+      iVar5 = iVar5 + 1;
+      pCVar4 = pCVar4 + 1;
+    } while (iVar5 < local_14->bone_count);
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e070();
+  core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070(this_ptr_00,0,0.0);
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(this_ptr_00);
-  piVar4 = (int *)this_ptr_00->field7_0x2234;
-  local_38.x = (float)*piVar4 * _DAT_00662e44;
-  local_38.y = (float)piVar4[1] * _DAT_00662e44;
-  local_38.z = (float)piVar4[2] * _DAT_00662e44;
+  piVar3 = (int *)this_ptr_00->field14_0x2234;
+  local_38.x = (float)*piVar3 * _DAT_00662e44;
+  local_38.y = (float)piVar3[1] * _DAT_00662e44;
+  local_38.z = (float)piVar3[2] * _DAT_00662e44;
   if (&local_5c != (CBoundingBox3D *)&local_38) {
     local_5c.min.x = local_38.x;
     local_5c.min.y = local_38.y;
     local_5c.min.z = local_38.z;
   }
-  pCVar3 = &local_38;
-  if (&local_5c.max != pCVar3) {
+  pCVar2 = &local_38;
+  if (&local_5c.max != pCVar2) {
     local_5c.max.x = local_38.x;
     local_5c.max.y = local_38.y;
     local_5c.max.z = local_38.z;
   }
-  iVar6 = 1;
+  iVar5 = 1;
   if (1 < this_ptr->vertex_count[0]) {
-    iVar7 = 0xc;
+    iVar6 = 0xc;
     do {
-      piVar4 = (int *)(this_ptr_00->field7_0x2234 + iVar7);
-      local_38.x = (float)*piVar4 * _DAT_00662e44;
-      local_38.y = (float)piVar4[1] * _DAT_00662e44;
-      local_38.z = (float)piVar4[2] * _DAT_00662e44;
+      piVar3 = (int *)(this_ptr_00->field14_0x2234 + iVar6);
+      local_38.x = (float)*piVar3 * _DAT_00662e44;
+      local_38.y = (float)piVar3[1] * _DAT_00662e44;
+      local_38.z = (float)piVar3[2] * _DAT_00662e44;
       core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_5c,&local_38);
-      iVar6 = iVar6 + 1;
-      pCVar3 = (CVector3f *)this_ptr->vertex_count[0];
-      iVar7 = iVar7 + 0xc;
-    } while (iVar6 < (int)pCVar3);
+      iVar5 = iVar5 + 1;
+      pCVar2 = (CVector3f *)this_ptr->vertex_count[0];
+      iVar6 = iVar6 + 0xc;
+    } while (iVar5 < (int)pCVar2);
   }
   local_44 = local_5c.max.x - local_5c.min.x;
   local_40 = local_5c.max.y - local_5c.min.y;
@@ -193,10 +182,10 @@ core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690(CDeformableM
   (this_ptr->model_scale).x = local_44 / local_2c;
   (this_ptr->model_scale).y = local_40 / local_28;
   (this_ptr->model_scale).z = local_3c / local_24;
-  pCVar2 = (this_ptr_00->motion_controller).vtable;
+  pCVar1 = (this_ptr_00->motion_controller).vtable;
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0xa32;
-  (*(code *)pCVar2->dtor)(pCVar2,pCVar3,0xa32,"..\\core\\skeledit.cpp",this_ptr_00,2);
+  (*(code *)pCVar1->dtor)(pCVar1,pCVar2,0xa32,"..\\core\\skeledit.cpp",this_ptr_00,2);
   return;
 }
 
@@ -300,7 +289,7 @@ core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690(CDeformableM
 //   Label: LAB_0058e766
 // 0058e768: PUSH 0x0
 // 0058e76a: PUSH EBP
-// 0058e76b: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e070
+// 0058e76b: CALL core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
 //   XREF to: 0059e070 (UNCONDITIONAL_CALL)
 // 0058e770: ADD ESP,0xc
 // 0058e773: PUSH 0x0
@@ -489,7 +478,7 @@ core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690(CDeformableM
 //   Label: LAB_0058e8f9
 // 0058e8fb: PUSH 0x0
 // 0058e8fd: PUSH EBP
-// 0058e8fe: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e070
+// 0058e8fe: CALL core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
 //   XREF to: 0059e070 (UNCONDITIONAL_CALL)
 // 0058e903: ADD ESP,0xc
 // 0058e906: PUSH 0x0

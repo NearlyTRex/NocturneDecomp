@@ -380,7 +380,7 @@ LAB_005c53f2:
                           (*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x54d4),
                            "CTrap");
         if (iVar7 == 0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(local_2c);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(local_2c,0x16,1);
           if (*(int *)(in_stack_00000004[2].cloth_data + 0x5558) != 0) {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
                       (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",
@@ -392,7 +392,7 @@ LAB_005c53f2:
           in_stack_00000004[2].cloth_data[0x555b] = '\0';
         }
         else {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(local_2c);
+          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(local_2c,0x14,1);
           in_stack_00000004[2].cloth_data[0x5558] = '\x06';
           in_stack_00000004[2].cloth_data[0x5559] = '\0';
           in_stack_00000004[2].cloth_data[0x555a] = '\0';

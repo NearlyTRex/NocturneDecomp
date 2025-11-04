@@ -4,8 +4,8 @@
 // Convention: unknown
 // Signature: undefined core_msnedit.cpp_BeginAndEndScene_FUN_0053c970()
 // Cross-references:
+//   core_msnedit.cpp_CDemonMission_FUN_0053ca00 (0053ca00) at 0053ca1a [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053c930 (0053c930) at 0053c961 [UNCONDITIONAL_CALL]
-//   core_msnedit.cpp_FUN_0053ca00 (0053ca00) at 0053ca1a [UNCONDITIONAL_CALL]
 // Globals:
 //   undefined4 DAT_02f7c53c
 //   CDemonCamera g_CDemonCameraInstance

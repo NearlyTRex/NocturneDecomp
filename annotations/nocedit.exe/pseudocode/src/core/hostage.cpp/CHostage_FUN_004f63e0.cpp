@@ -23,7 +23,7 @@ int __cdecl core_hostage_cpp_CHostage_FUN_004f63e0(CHostage *this_ptr)
   (this_ptr->base_npc).base_character.grabbed_by = in_stack_00000008;
   if (in_stack_0000000c == 0) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base_npc).base_character.model.motion_controller);
+              (&(this_ptr->base_npc).base_character.model.motion_controller,4,1);
     core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
   }
   this_ptr->field8_0x1fae0[0xc] = '\0';

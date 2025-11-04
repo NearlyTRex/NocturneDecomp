@@ -23,7 +23,7 @@ void core_dracbrid_cpp_FUN_00485b20(void)
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
   
-  if (((in_stack_00000004->model).field11_0x2260[0] != '\0') &&
+  if (((in_stack_00000004->model).field18_0x2260[0] != '\0') &&
      ((in_stack_00000004->model).part_visibility_flags[in_stack_00000008] != 0)) {
     iVar2 = core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
     core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);

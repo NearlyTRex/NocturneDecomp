@@ -33,17 +33,17 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(CDeformableModelInstance
 {
   CDeformableModel *this_ptr_00;
   int in_stack_00000010;
-  char *lod_index;
+  CMatrix3x4f *lod_index;
   CMatrix3x4f *bone_matrices;
   int *output_buffer;
   
   output_buffer = this_ptr->part_visibility_flags;
-  bone_matrices = (CMatrix3x4f *)this_ptr->field7_0x2234;
-  lod_index = this_ptr->field3_0x508 + 0x978;
+  bone_matrices = (CMatrix3x4f *)this_ptr->field14_0x2234;
+  lod_index = this_ptr->bone_world_matrices;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   core_skeleton_cpp_CDeformableModel_skinVertices_FUN_0059a880
             (this_ptr_00,(int)lod_index,bone_matrices,output_buffer);
-  this_ptr->field6_0x2230 = in_stack_00000010;
+  this_ptr->field13_0x2230 = in_stack_00000010;
   return;
 }
 

@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_icepick.cpp_FUN_004f80b0 (004f80b0) at 004f8579 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0062f753
+//   double DOUBLE_0062f753 = 2
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 g_CDemonSetInstance.actor_list_ptr
 //   undefined4 g_CDemonSetInstance.actor_list_data[0]
@@ -18,7 +18,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_hero_icepick.cpp_FUN_004f8970(undefined4 param_1) */
 
 undefined4 core_icepick_cpp_FUN_004f8970(void)
@@ -57,7 +56,7 @@ undefined4 core_icepick_cpp_FUN_004f8970(void)
         fVar1 = (this_ptr->location).position.x - local_28.z;
         local_28.x = (this_ptr->location).position.y - local_1c;
         local_28.y = (this_ptr->location).position.z - fStack_18;
-        if ((ABS(local_28.x) <= (float)_DAT_0062f753) &&
+        if ((ABS(local_28.x) <= (float)DOUBLE_0062f753) &&
            (fVar1 = fVar1 * fVar1 + local_28.y * local_28.y, fVar1 <= unaff_ESI)) {
           *(CDemonActor **)(in_stack_00000004[0x17a].actor_name + 8) = this_ptr;
           unaff_ESI = fVar1;
@@ -76,7 +75,7 @@ undefined4 core_icepick_cpp_FUN_004f8970(void)
        (*(float *)(*(int *)(in_stack_00000004[0x17a].actor_name + 8) + 0x28) - local_28.x) +
        (in_stack_00000004->location).position.z;
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            ((CMotionController *)(in_stack_00000004 + 1));
+            ((CMotionController *)(in_stack_00000004 + 1),0x13,1);
   return 1;
 }
 

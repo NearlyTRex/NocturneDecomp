@@ -34,7 +34,7 @@
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
 //   core_motion.cpp_CMotionController_FUN_0052dd20
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   crt_math.c_round_FUN_005fe6b0
 
 #include "nocturne.h"
@@ -48,6 +48,7 @@ void core_gabriela_cpp_FUN_004d4890(void)
   CDeformableModelInstance *this_ptr;
   CDemonActor_vtable *pCVar1;
   int iVar2;
+  int bone_index;
   CDemonActor *pCVar3;
   CVector3f *pCVar4;
   undefined4 extraout_EDX;
@@ -62,7 +63,8 @@ void core_gabriela_cpp_FUN_004d4890(void)
   CVector3f local_84 [2];
   CCharacter *local_6c;
   undefined1 local_68 [12];
-  undefined1 auStack_5c [40];
+  undefined1 auStack_5c [28];
+  CVector3f local_40;
   CVector3f local_34;
   CVector3f local_28;
   CDemonActor *local_1c;
@@ -74,7 +76,12 @@ void core_gabriela_cpp_FUN_004d4890(void)
     switch(iVar2) {
     case 1:
     case 7:
-      core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20(this_ptr);
+      bone_index = DAT_02d7b864;
+      if (iVar2 == 7) {
+        bone_index = DAT_02d7b868;
+      }
+      core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                (this_ptr,(CVector3f *)(auStack_5c + 4),bone_index);
       if (*(int *)(in_stack_00000004[2].cloth_data + 0x54cc) == 0) {
         if (*(int *)(in_stack_00000004->field2_0x240c + 4) != 0) {
           local_18 = core_motion_cpp_CMotionController_FUN_0052dd20(&this_ptr->motion_controller);
@@ -134,7 +141,8 @@ void core_gabriela_cpp_FUN_004d4890(void)
       (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)
                 (&in_stack_00000004->base_actor);
       in_stack_ffffff58 = 1.4013e-45;
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                (&this_ptr->motion_controller,0,1);
       break;
     default:
       core_charactr_cpp_CCharacter_FUN_0042ec40(in_stack_00000004);
@@ -144,7 +152,8 @@ void core_gabriela_cpp_FUN_004d4890(void)
                          (in_stack_00000004->grabbed_by,g_CEnemyClassInfo.name_hash);
       local_1c = pCVar3;
       if (pCVar3 != (CDemonActor *)0x0) {
-        pCVar4 = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20(this_ptr);
+        pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                           (this_ptr,&local_40,DAT_02d7b878);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   (&in_stack_00000004->base_actor,(CVector3f *)(local_68 + 4),pCVar4);
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);
@@ -205,8 +214,8 @@ void core_gabriela_cpp_FUN_004d4890(void)
     case 0x16:
       iVar2 = core_hero_cpp_FUN_004f2ed0();
       if (iVar2 == 0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller)
-        ;
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                  (&this_ptr->motion_controller,0,1);
       }
     }
     if (in_stack_00000008 <= 0.0) {
@@ -268,7 +277,7 @@ void core_gabriela_cpp_FUN_004d4890(void)
 //   XREF to: Stack[-0x58] (DATA)
 // 004d48db: PUSH EAX
 // 004d48dc: PUSH ESI
-// 004d48dd: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+// 004d48dd: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   XREF to: 0059fa20 (UNCONDITIONAL_CALL)
 // 004d48e2: MOV ECX,dword ptr [EBX + 0x1fbac]
 // 004d48e8: ADD ESP,0xc
@@ -478,7 +487,7 @@ void core_gabriela_cpp_FUN_004d4890(void)
 //   XREF to: Stack[-0x40] (DATA)
 // 004d4adc: PUSH EAX
 // 004d4add: PUSH ESI
-// 004d4ade: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+// 004d4ade: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   XREF to: 0059fa20 (UNCONDITIONAL_CALL)
 // 004d4ae3: ADD ESP,0xc
 // 004d4ae6: PUSH EAX

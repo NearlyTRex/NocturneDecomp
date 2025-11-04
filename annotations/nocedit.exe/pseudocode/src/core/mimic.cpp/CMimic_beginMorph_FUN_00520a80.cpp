@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_mimic.cpp_FUN_0051fcc0 (0051fcc0) at 0052007f [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\mimic.cpp_0063883f
+//   TerminatedCString s_core_mimic_cpp_0063883f
 //   TerminatedCString s_CMimic_beginMorph_can_t__00638851
 //   TerminatedCString s_s_morphing_into_type_s_0063889a
 //   CConsole* g_CConsolePtr = 0083b1a4
@@ -31,7 +31,7 @@ void core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(void)
   int in_stack_00000004;
   
   if (*(int *)(in_stack_00000004 + 0x4ca54) == 0) {
-    g_CurrentFilename = "?..\\core\\mimic.cpp" + 1;
+    g_CurrentFilename = "..\\core\\mimic.cpp";
     g_CurrentLineNumber = 0x499;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMimic::beginMorph() - can't do this unless morphActor has been created!");
   }
@@ -55,7 +55,7 @@ void core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(void)
   }
   *(undefined4 *)(in_stack_00000004 + 0x4ca50) = 0;
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            ((CMotionController *)(in_stack_00000004 + 0x158));
+            ((CMotionController *)(in_stack_00000004 + 0x158),0,1);
   core_mimic_cpp_CMimic_processMorph_FUN_00520ba0();
   this_ptr = g_CConsolePtr;
   *(undefined4 *)(in_stack_00000004 + 0xfc) = 1;

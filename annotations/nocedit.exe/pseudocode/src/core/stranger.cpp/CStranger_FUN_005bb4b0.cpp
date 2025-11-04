@@ -59,10 +59,10 @@
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
 //   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e070
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 //   core_stranger.cpp_CStranger_FUN_005be520
 
@@ -76,16 +76,14 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb4b0(CStranger *this_ptr)
   CDeformableModelInstance *this_ptr_00;
   CSkeleton *this_ptr_01;
   CMotionList *pCVar1;
+  int motion_index;
   CVector3f *pCVar2;
   CDeformableModel *this_ptr_02;
   BADSPACEBASE *in_ESP;
-  CDeformableModelInstance *pCStack00000040;
-  undefined1 *puStack0000004c;
-  int iStack00000050;
   
   core_hero_cpp_CHero_FUN_004f2540(&this_ptr->base_hero);
   this_ptr_00 = &(this_ptr->base_hero).base_character.model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr_00);
+  this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   DAT_03f6bacc = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bip01 head");
   DAT_03f6bad0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
@@ -134,30 +132,26 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb4b0(CStranger *this_ptr)
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                      (&this_ptr_00->motion_controller);
   DAT_03f6bb20 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);
-  pCStack00000040 = (CDeformableModelInstance *)0x1;
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                      (&this_ptr_00->motion_controller);
-  core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);
-  pCStack00000040 = this_ptr_00;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e070();
-  puStack0000004c = (undefined1 *)DAT_03f6bb04;
-  pCStack00000040 = (CDeformableModelInstance *)0x5bb70a;
-  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20(this_ptr_00);
-  puStack0000004c = &stack0x00000054;
+  motion_index = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);
+  core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
+            (this_ptr_00,motion_index,22.0);
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                     (this_ptr_00,(CVector3f *)&stack0x0000005c,DAT_03f6bb04);
   if ((CVector3f *)(this_ptr->field4_0x1fc3c + 0x80) != pCVar2) {
     ((CVector3f *)(this_ptr->field4_0x1fc3c + 0x80))->x = pCVar2->x;
     *(float *)(this_ptr->field4_0x1fc3c + 0x84) = pCVar2->y;
     *(float *)(this_ptr->field4_0x1fc3c + 0x88) = pCVar2->z;
   }
-  iStack00000050 = DAT_03f6badc;
-  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20
-                     (&(this_ptr->base_hero).base_character.model);
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                     (&(this_ptr->base_hero).base_character.model,(CVector3f *)&stack0x00000054,
+                      DAT_03f6badc);
   if ((CVector3f *)(this_ptr->field4_0x1fc3c + 0x8c) != pCVar2) {
     ((CVector3f *)(this_ptr->field4_0x1fc3c + 0x8c))->x = pCVar2->x;
     *(float *)(this_ptr->field4_0x1fc3c + 0x90) = pCVar2->y;
     *(float *)(this_ptr->field4_0x1fc3c + 0x94) = pCVar2->z;
   }
-  iStack00000050 = 0x5bb75c;
   core_stranger_cpp_CStranger_FUN_005be520();
   this_ptr->field4_0x1fc3c[0x98] = '\0';
   this_ptr->field4_0x1fc3c[0x99] = '\0';
@@ -167,7 +161,6 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb4b0(CStranger *this_ptr)
   this_ptr->field4_0x1fc3c[0x229] = '\0';
   this_ptr->field4_0x1fc3c[0x22a] = '\0';
   this_ptr->field4_0x1fc3c[0x22b] = '\0';
-  iStack00000050 = 0x5bb784;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             ((CKeyFramedModelInstance *)(this_ptr->field4_0x1fc3c + 0x9c),
              "stranger-hat.kfm");
@@ -207,7 +200,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb4b0(CStranger *this_ptr)
 // 005bb4c0: ADD ESP,0x4
 // 005bb4c3: LEA EDI,[ESI + 0x158]
 // 005bb4c9: PUSH EDI
-// 005bb4ca: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 005bb4ca: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005bb4cf: ADD ESP,0x4
 // 005bb4d2: PUSH 0x1
@@ -437,7 +430,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb4b0(CStranger *this_ptr)
 // 005bb6e3: PUSH 0x41b00000
 // 005bb6e8: PUSH EAX
 // 005bb6e9: PUSH EDI
-// 005bb6ea: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e070
+// 005bb6ea: CALL core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
 //   XREF to: 0059e070 (UNCONDITIONAL_CALL)
 // 005bb6ef: ADD ESP,0xc
 // 005bb6f2: MOV EDX,dword ptr [0x03f6bb04]
@@ -448,7 +441,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb4b0(CStranger *this_ptr)
 // 005bb6fd: PUSH EAX
 // 005bb6fe: PUSH EDI
 // 005bb6ff: LEA EBX,[ESI + 0x1fcbc]
-// 005bb705: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+// 005bb705: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   XREF to: 0059fa20 (UNCONDITIONAL_CALL)
 // 005bb70a: ADD ESP,0xc
 // 005bb70d: CMP EBX,EAX
@@ -469,7 +462,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb4b0(CStranger *this_ptr)
 // 005bb72c: PUSH EAX
 // 005bb72d: LEA EAX,[ESI + 0x158]
 // 005bb733: PUSH EAX
-// 005bb734: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+// 005bb734: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   XREF to: 0059fa20 (UNCONDITIONAL_CALL)
 // 005bb739: LEA EBX,[ESI + 0x1fcc8]
 // 005bb73f: ADD ESP,0xc

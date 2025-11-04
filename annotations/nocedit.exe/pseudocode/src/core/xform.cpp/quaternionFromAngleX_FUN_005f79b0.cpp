@@ -9,7 +9,7 @@
 //   core_icepick.cpp_FUN_004f8810 (004f8810) at 004f88f4 [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 (005267a0) at 00526a06 [UNCONDITIONAL_CALL]
 //   core_scat.cpp_FUN_005584a0 (005584a0) at 005585ca [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fdd0 (0059fdd0) at 0059fe70 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0 (0059fdd0) at 0059fe70 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005be520 (005be520) at 005bef28 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bfb60 (005bfb60) at 005c0007 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c02b0 (005c02b0) at 005c0431 [UNCONDITIONAL_CALL]

@@ -7,21 +7,20 @@
 //   core_icepick.cpp_FUN_004f80b0 (004f80b0) at 004f83b7 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_shoot_0062f72b
-//   undefined4 DAT_0062f733
-//   undefined4 DAT_0062f73b
-//   undefined4 DAT_0062f743
-//   undefined4 DAT_0062f74b
+//   double DOUBLE_0062f733 = 2
+//   double DOUBLE_0062f73b = 3.14159265350000
+//   double DOUBLE_0062f743 = 0.785398163375000
+//   double DOUBLE_0062f74b = -0.785398163375000
 //   undefined4 DAT_02db89b0
 // Function calls:
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
+//   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20
 //   core_xform.cpp_quaternionFromAngleX_FUN_005f79b0
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_hero_icepick.cpp_FUN_004f8810(undefined4 param_1, undefined4
    param_2) */
 
@@ -30,13 +29,13 @@ void core_icepick_cpp_FUN_004f8810(void)
 {
   float fVar1;
   CMotionList *this_ptr;
+  int target_motion_index;
   BADSPACEBASE *in_ESP;
   byte bVar2;
   int in_stack_00000004;
   float in_stack_00000008;
   float in_stack_00000014;
-  int aiStackY_17fc [1517];
-  int iStack_3c;
+  undefined4 auStackY_17fc [1517];
   float in_stack_ffffffd4;
   undefined4 local_20;
   undefined4 uStack_10;
@@ -44,33 +43,33 @@ void core_icepick_cpp_FUN_004f8810(void)
   bVar2 = 0;
   if (*(int *)(in_stack_00000004 + 0x1fbf4) != 0) {
     if (*(int *)(in_stack_00000004 + 0x1fbd4) == 0) {
-      fVar1 = *(float *)(in_stack_00000004 + 0x1fbfc) - in_stack_00000008 * (float)_DAT_0062f733;
+      fVar1 = *(float *)(in_stack_00000004 + 0x1fbfc) - in_stack_00000008 * (float)DOUBLE_0062f733;
       *(float *)(in_stack_00000004 + 0x1fbfc) = fVar1;
       if (fVar1 < 0.0) {
         *(undefined4 *)(in_stack_00000004 + 0x1fbfc) = 0;
       }
     }
     else {
-      fVar1 = in_stack_00000008 * (float)_DAT_0062f733 + *(float *)(in_stack_00000004 + 0x1fbfc);
+      fVar1 = in_stack_00000008 * (float)DOUBLE_0062f733 + *(float *)(in_stack_00000004 + 0x1fbfc);
       *(float *)(in_stack_00000004 + 0x1fbfc) = fVar1;
       if (1.0 < fVar1) {
         *(undefined4 *)(in_stack_00000004 + 0x1fbfc) = 0x3f800000;
       }
     }
-    iStack_3c = 1;
     this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                          ((CMotionController *)(in_stack_00000004 + 0x158));
-    core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr);
-    iStack_3c = *(undefined4 *)(in_stack_00000004 + 0x1fbfc);
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50
-              ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
-    fVar1 = *(float *)(in_stack_00000004 + 0xbe54) * (float)_DAT_0062f73b * (float)_DAT_0062f733 *
-            in_stack_00000014 + *(float *)(in_stack_00000004 + 0x1fc00);
+    target_motion_index = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr);
+    core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
+              ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),target_motion_index,0.0,
+               *(float *)(in_stack_00000004 + 0x1fbfc),DAT_02db89b0,
+               core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
+    fVar1 = *(float *)(in_stack_00000004 + 0xbe54) * (float)DOUBLE_0062f73b * (float)DOUBLE_0062f733
+            * in_stack_00000014 + *(float *)(in_stack_00000004 + 0x1fc00);
     *(float *)(in_stack_00000004 + 0x1fc00) = fVar1;
-    if ((float)_DAT_0062f743 < fVar1) {
+    if ((float)DOUBLE_0062f743 < fVar1) {
       *(undefined4 *)(in_stack_00000004 + 0x1fc00) = 0x3f490fdb;
     }
-    if (*(float *)(in_stack_00000004 + 0x1fc00) < (float)_DAT_0062f74b) {
+    if (*(float *)(in_stack_00000004 + 0x1fc00) < (float)DOUBLE_0062f74b) {
       *(undefined4 *)(in_stack_00000004 + 0x1fc00) = 0xbf490fdb;
     }
     core_xform_cpp_quaternionFromAngleX_FUN_005f79b0
@@ -85,7 +84,6 @@ void core_icepick_cpp_FUN_004f8810(void)
          *(undefined4 *)
           ((int)(&stack0xffffffe8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) +
           ((uint)bVar2 * -2 + 1) * 4);
-    iStack_3c = in_stack_00000004 + 0x158;
     core_skeleton_cpp_CDeformableModelInstance_FUN_0059ff20();
   }
   return;
@@ -143,7 +141,7 @@ void core_icepick_cpp_FUN_004f8810(void)
 // 004f888c: PUSH 0x0
 // 004f888e: PUSH EAX
 // 004f888f: PUSH ESI
-// 004f8890: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
+// 004f8890: CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 004f8895: FLD float ptr [EBX + 0xbe54]
 // 004f889b: FMUL double ptr [0x0062f73b]

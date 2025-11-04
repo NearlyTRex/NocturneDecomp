@@ -31,7 +31,7 @@ core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340
   int *lod_index;
   int *part_visibility_flags;
   
-  if (this_ptr->field6_0x2230 < 0) {
+  if (this_ptr->field13_0x2230 < 0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0xd23;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModelInstance::renderPolygons called but LOD is not set!");

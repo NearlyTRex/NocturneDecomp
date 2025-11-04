@@ -9,7 +9,7 @@
 // Function calls:
 //   core_enemy.cpp_CEnemy_FUN_004a9650
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -27,7 +27,7 @@ void core_drone_cpp_FUN_0048ebc0(void)
   
   this_ptr = &(in_stack_00000004->base_character).model;
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr);
+  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   pCVar1 = &in_stack_00000004[1].base_character;
   (pCVar1->base_actor).actor_name[8] = '\0';
   (pCVar1->base_actor).actor_name[9] = '\0';
@@ -69,7 +69,7 @@ void core_drone_cpp_FUN_0048ebc0(void)
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0048ebd2: ADD ESP,0x4
 // 0048ebd5: PUSH ESI
-// 0048ebd6: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 0048ebd6: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0048ebdb: ADD ESP,0x4
 // 0048ebde: PUSH 0x1

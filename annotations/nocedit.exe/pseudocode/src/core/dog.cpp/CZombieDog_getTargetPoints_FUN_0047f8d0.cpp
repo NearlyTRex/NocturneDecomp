@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_dog.cpp_CZombieDog_getTargetPoints_FUN_0047f8d0(CZombieDog * this_ptr, CVector3f * out_points_array)
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 
 #include "nocturne.h"
 
@@ -14,8 +14,12 @@ core_dog_cpp_CZombieDog_getTargetPoints_FUN_0047f8d0
 
 {
   CVector3f *pCVar1;
+  BADSPACEBASE *in_ESP;
+  CVector3f local_10;
   
-  pCVar1 = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     (&(this_ptr->base_enemy).base_character.model,&local_10,
+                      *(int *)(this_ptr->field1_0xbeb4 + 8));
   if (out_points_array == pCVar1) {
     return 1;
   }
@@ -41,7 +45,7 @@ core_dog_cpp_CZombieDog_getTargetPoints_FUN_0047f8d0
 // 0047f8e7: PUSH EAX
 // 0047f8e8: LEA EAX,[EDX + 0x158]
 // 0047f8ee: PUSH EAX
-// 0047f8ef: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 0047f8ef: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 0047f8f4: ADD ESP,0xc
 // 0047f8f7: CMP EBX,EAX

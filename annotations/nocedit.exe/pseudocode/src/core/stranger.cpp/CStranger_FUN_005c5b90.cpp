@@ -74,17 +74,17 @@ void core_stranger_cpp_CStranger_FUN_005c5b90(void)
       case 2:
       case 3:
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  ((CMotionController *)(in_stack_00000004 + 0x158));
+                  ((CMotionController *)(in_stack_00000004 + 0x158),0x1c,1);
         *(undefined4 *)(in_stack_00000004 + 0x1fc38) = 5;
         *(undefined4 *)(in_stack_00000004 + 0xbe38) = 0;
         return;
       case 4:
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr,0x1d,1);
         *(undefined4 *)(in_stack_00000004 + 0x1fc38) = 5;
         *(undefined4 *)(in_stack_00000004 + 0xbe38) = 0;
         return;
       case 5:
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr,0x1e,1);
         *(undefined4 *)(in_stack_00000004 + 0x1fc38) = 5;
         *(undefined4 *)(in_stack_00000004 + 0xbe38) = 0;
         return;
@@ -114,7 +114,7 @@ void core_stranger_cpp_CStranger_FUN_005c5b90(void)
       iVar1 = core_hero_cpp_FUN_004f3120();
       if (iVar1 != 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  ((CMotionController *)(in_stack_00000004 + 0x158));
+                  ((CMotionController *)(in_stack_00000004 + 0x158),6,1);
         return;
       }
       if ((*(int *)(in_stack_00000004 + 0x24f8) == 0) &&
@@ -124,7 +124,7 @@ void core_stranger_cpp_CStranger_FUN_005c5b90(void)
         if (iVar1 != 0) {
           *(undefined4 *)(in_stack_00000004 + 0xbe38) = 0;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    ((CMotionController *)(in_stack_00000004 + 0x158));
+                    ((CMotionController *)(in_stack_00000004 + 0x158),0x1f,1);
           return;
         }
         iVar1 = core_stranger_cpp_CStranger_FUN_005c1fe0();

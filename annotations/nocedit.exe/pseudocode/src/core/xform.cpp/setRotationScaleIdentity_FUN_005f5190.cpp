@@ -5,7 +5,7 @@
 // Signature: void core_xform.cpp_setRotationScaleIdentity_FUN_005f5190(CMatrix3x4f * matrix)
 // Cross-references:
 //   core_skeledit.cpp_FUN_0058aeb0 (0058aeb0) at 0058aefc [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059f820 (0059f820) at 0059f933 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 (0059f820) at 0059f933 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

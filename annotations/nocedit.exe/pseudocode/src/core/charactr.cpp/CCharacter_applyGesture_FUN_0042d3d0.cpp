@@ -15,22 +15,44 @@
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
+//   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
 
 #include "nocturne.h"
 
 void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_0042d3d0(CCharacter *this_ptr)
 
 {
+  int iVar1;
+  float fVar2;
+  float fVar3;
+  CMotionList *pCVar4;
+  float blend_weight;
+  
   if (-1 < *(int *)(this_ptr->field11_0x25a0 + 0x28)) {
     if (*(int *)(this_ptr->field11_0x25a0 + 0x24) < -1) {
       g_CurrentFilename = "..\\core\\charactr.cpp";
       g_CurrentLineNumber = 0xcc7;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::applyGesture - never set gestureBranchRoot for actor %s",this_ptr);
     }
-    core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-              (&(this_ptr->model).motion_controller);
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50(&this_ptr->model);
+    iVar1 = *(int *)(this_ptr->field11_0x25a0 + 0x28);
+    pCVar4 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                       (&(this_ptr->model).motion_controller);
+    fVar2 = 1.0 / (pCVar4->motions[iVar1].fps * FLOAT_006173c2);
+    fVar3 = *(float *)(this_ptr->field11_0x25a0 + 0x2c) * fVar2;
+    fVar2 = ((float)pCVar4->motions[iVar1].frame_count - *(float *)(this_ptr->field11_0x25a0 + 0x2c)
+            ) * fVar2;
+    blend_weight = 0.85;
+    if (fVar3 < FLOAT_006173c6) {
+      blend_weight = fVar3;
+    }
+    if (fVar2 < blend_weight) {
+      blend_weight = fVar2;
+    }
+    core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
+              (&this_ptr->model,*(int *)(this_ptr->field11_0x25a0 + 0x28),
+               *(float *)(this_ptr->field11_0x25a0 + 0x2c),blend_weight,
+               *(int *)(this_ptr->field11_0x25a0 + 0x24),
+               core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
   }
   return;
 }
@@ -110,7 +132,7 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_0042d3d0(CCharacter *
 // 0042d48d: PUSH ECX
 // 0042d48e: ADD EBX,0x158
 // 0042d494: PUSH EBX
-// 0042d495: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
+// 0042d495: CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 0042d49a: ADD ESP,0x18
 // 0042d49d: POP ESI

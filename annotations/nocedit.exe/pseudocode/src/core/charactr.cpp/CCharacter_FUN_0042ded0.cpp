@@ -27,7 +27,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ded0(CCharacter *this_ptr)
   
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
             (&this_ptr->base_actor,(CVector3f *)local_20,
-             (CVector3f *)(this_ptr->model).field10_0x2254);
+             (CVector3f *)(this_ptr->model).field17_0x2254);
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
             (&this_ptr->base_actor,(CVector3f *)&local_14.y,
              (CVector3f *)(this_ptr->field2_0x240c + 0x10));
@@ -40,11 +40,11 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ded0(CCharacter *this_ptr)
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base_actor);
   pCVar3 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                      (&this_ptr->base_actor,(CVector3f *)&stack0xffffffd4,&local_14);
-  pcVar2 = (this_ptr->model).field10_0x2254;
+  pcVar2 = (this_ptr->model).field17_0x2254;
   if ((CVector3f *)pcVar2 != pCVar3) {
     *(float *)pcVar2 = pCVar3->x;
-    *(float *)((this_ptr->model).field10_0x2254 + 4) = pCVar3->y;
-    *(float *)((this_ptr->model).field10_0x2254 + 8) = pCVar3->z;
+    *(float *)((this_ptr->model).field17_0x2254 + 4) = pCVar3->y;
+    *(float *)((this_ptr->model).field17_0x2254 + 8) = pCVar3->z;
   }
   pCVar3 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                      (&this_ptr->base_actor,(CVector3f *)(local_20 + 4),

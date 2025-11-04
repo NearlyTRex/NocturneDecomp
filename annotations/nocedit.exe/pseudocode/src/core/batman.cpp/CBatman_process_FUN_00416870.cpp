@@ -62,10 +62,10 @@
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 //   engine_console.cpp_CConsole_printf_FUN_00441890
@@ -92,13 +92,11 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
   CEnemy *pCVar11;
   int iVar12;
   int iVar13;
-  int extraout_EAX;
-  int extraout_EAX_00;
   CVector3f *pCVar14;
   undefined4 uVar15;
-  int extraout_EAX_01;
+  int extraout_EAX;
   CDemonActor *pCVar16;
-  int extraout_EAX_02;
+  int extraout_EAX_00;
   BADSPACEBASE *in_ESP;
   float in_stack_00000008;
   SCollisionInfo *in_stack_fffffe7c;
@@ -106,12 +104,15 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
   float local_140;
   float local_13c;
   float local_138;
-  CVector3f local_134 [3];
+  CVector3f local_134;
+  CVector3f local_128;
+  CVector3f local_11c;
   undefined4 local_110;
   undefined4 local_10c;
   float local_108;
   CVector3f local_104;
-  CVector3f local_f8 [2];
+  CVector3f local_f8;
+  CVector3f local_ec;
   float local_e0;
   float local_dc;
   float local_d8;
@@ -139,8 +140,8 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
   int local_30;
   float local_2c;
   int local_28;
-  int local_24;
-  int local_20;
+  CSkeleton *local_24;
+  CSkeleton *local_20;
   int local_1c;
   int local_18;
   float local_14;
@@ -150,14 +151,14 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
     return;
   }
   pCVar10 = &(this_ptr->base_enemy).base_character;
-  (pCVar10->model).field10_0x2254[8] = '\0';
-  (pCVar10->model).field10_0x2254[9] = '\0';
-  (pCVar10->model).field10_0x2254[10] = '\0';
-  (pCVar10->model).field10_0x2254[0xb] = '\0';
-  *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4) =
-       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 8);
-  *(undefined4 *)(this_ptr->base_enemy).base_character.model.field10_0x2254 =
-       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4);
+  (pCVar10->model).field17_0x2254[8] = '\0';
+  (pCVar10->model).field17_0x2254[9] = '\0';
+  (pCVar10->model).field17_0x2254[10] = '\0';
+  (pCVar10->model).field17_0x2254[0xb] = '\0';
+  *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4) =
+       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
+  *(undefined4 *)(this_ptr->base_enemy).base_character.model.field17_0x2254 =
+       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4);
   local_3c = in_stack_00000008 * (this_ptr->base_enemy).speed;
   while (0.0 < local_3c) {
     core_motion_cpp_CMotionController_advance_FUN_0052d610
@@ -168,7 +169,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
   fVar9 = (float)_DAT_006158cd;
   pCVar3 = &(this_ptr->base_enemy).base_character.model;
   *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x28) =
-       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 8);
+       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
   *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
        in_stack_00000008 * fVar9 * fVar6;
   iVar12 = core_motion_cpp_CMotionController_FUN_0052dab0(&pCVar3->motion_controller);
@@ -182,9 +183,9 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
                 ((CDemonActor *)this_ptr);
       if (*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base_enemy);
-        if (extraout_EAX_01 != 0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar3->motion_controller)
-          ;
+        if (extraout_EAX != 0) {
+          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                    (&pCVar3->motion_controller,1,1);
         }
       }
       else {
@@ -206,7 +207,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
           }
           if (iVar12 == *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c)) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&(this_ptr->base_enemy).base_character.model.motion_controller);
+                      (&(this_ptr->base_enemy).base_character.model.motion_controller,0xd,1);
             iVar12 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
             this_ptr->mist_state = 1;
             if (&this_ptr->new_pos != (CVector3f *)(iVar12 + 0x20)) {
@@ -236,7 +237,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
                                 (this_ptr->base_enemy).base_character.base_actor.orient.bank);
           if (ABS(local_14) < (float)_DAT_006158d5) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&(this_ptr->base_enemy).base_character.model.motion_controller);
+                      (&(this_ptr->base_enemy).base_character.model.motion_controller,3,1);
           }
         }
         core_batman_cpp_FUN_004167f0();
@@ -250,26 +251,26 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
       pCVar3 = &(this_ptr->base_enemy).base_character.model;
       if (*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base_enemy);
-        if (extraout_EAX_02 == 0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar3->motion_controller)
-          ;
+        if (extraout_EAX_00 == 0) {
+          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                    (&pCVar3->motion_controller,0,1);
         }
         else {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar3->motion_controller)
-          ;
+          core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                    (&pCVar3->motion_controller,1,1);
         }
       }
       else {
         local_2c = DAT_0065a76c;
         pCVar10 = &(this_ptr->base_enemy).base_character;
-        (pCVar10->model).field10_0x2254[8] = '\0';
-        (pCVar10->model).field10_0x2254[9] = '\0';
-        (pCVar10->model).field10_0x2254[10] = '\0';
-        (pCVar10->model).field10_0x2254[0xb] = '\0';
-        *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4) =
-             *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 8);
-        *(undefined4 *)(this_ptr->base_enemy).base_character.model.field10_0x2254 =
-             *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4);
+        (pCVar10->model).field17_0x2254[8] = '\0';
+        (pCVar10->model).field17_0x2254[9] = '\0';
+        (pCVar10->model).field17_0x2254[10] = '\0';
+        (pCVar10->model).field17_0x2254[0xb] = '\0';
+        *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4) =
+             *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
+        *(undefined4 *)(this_ptr->base_enemy).base_character.model.field17_0x2254 =
+             *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4);
         local_110 = 0;
         local_108 = fVar6;
         local_10c = 0;
@@ -298,7 +299,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
                                   (this_ptr->base_enemy).base_character.base_actor.orient.bank);
             if (ABS(local_14) < (float)_DAT_006158d5) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&pCVar3->motion_controller);
+                        (&pCVar3->motion_controller,3,1);
               (this_ptr->base_enemy).field6_0xbe38[0] = '\0';
               (this_ptr->base_enemy).field6_0xbe38[1] = '\0';
               (this_ptr->base_enemy).field6_0xbe38[2] = -0x80;
@@ -314,7 +315,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
           }
           if ((this_ptr->base_enemy).guard_distance < local_34) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&(this_ptr->base_enemy).base_character.model.motion_controller);
+                      (&(this_ptr->base_enemy).base_character.model.motion_controller,0,1);
           }
         }
       }
@@ -325,16 +326,17 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
       pCVar14 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_104,&g_ZeroVector,
                            (CMatrix3x4f *)
-                           ((this_ptr->base_enemy).base_character.model.field3_0x508 +
-                           DAT_008227c0 * 0x30 + 0x978));
+                           (this_ptr->base_enemy).base_character.model.bone_world_matrices
+                           [DAT_008227c0].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                ((CDemonActor *)this_ptr,local_f8,pCVar14);
+                ((CDemonActor *)this_ptr,&local_f8,pCVar14);
       core_enemy_cpp_FUN_004a9880();
       break;
     case 8:
       if (((this_ptr->base_enemy).pool_me == 0) &&
          ((this_ptr->base_enemy).base_character.base_actor.field11_0xdc == 0)) {
-        pCVar14 = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20(pCVar3);
+        pCVar14 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                            (pCVar3,&local_ec,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_74,pCVar14);
         core_gore_cpp_FUN_004ede30();
@@ -348,7 +350,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
          (iVar12 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                              (g_CEventListPtr,this_ptr->field1_0xbeb4 + 8), iVar12 != 0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(this_ptr->base_enemy).base_character.model.motion_controller);
+                  (&(this_ptr->base_enemy).base_character.model.motion_controller,0xb,1);
         iVar12 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
         if ((iVar12 == 0) &&
            ((iVar12 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar12 == 0 &&
@@ -362,13 +364,15 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
     case 0xb:
       if ((this_ptr->base_enemy).base_character.base_actor.location.position.y <
           *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 8) + 1.0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar3->motion_controller);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                  (&pCVar3->motion_controller,0xc,1);
       }
       break;
     case 0xd:
       switch(this_ptr->mist_state) {
       case 0:
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar3->motion_controller);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                  (&pCVar3->motion_controller,0,1);
         break;
       case 1:
         fVar6 = this_ptr->vanish_timer + in_stack_00000008;
@@ -377,22 +381,22 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
           this_ptr->mist_state = 2;
           this_ptr->vanish_timer = DAT_0065a778;
         }
+        pCVar3 = &(this_ptr->base_enemy).base_character.model;
         iVar12 = 0;
         local_bc.x = 0.0;
         local_bc.y = 3.0;
         local_bc.z = 0.0;
-        core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820
-                  (&(this_ptr->base_enemy).base_character.model);
-        local_20 = extraout_EAX;
-        if (0 < *(int *)(extraout_EAX + 0x28558)) {
+        local_20 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar3);
+        if (0 < local_20->bone_count) {
           do {
-            pCVar14 = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+            pCVar14 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                                (pCVar3,&local_11c,iVar12);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                       ((CDemonActor *)this_ptr,&local_14c,pCVar14);
             core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
                       (g_CFireEffectPtr,&local_14c,0.5,&local_bc,0xffff);
             iVar12 = iVar12 + 1;
-          } while (iVar12 < *(int *)(local_20 + 0x28558));
+          } while (iVar12 < local_20->bone_count);
         }
         break;
       case 2:
@@ -451,17 +455,17 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
         local_68.x = 0.0;
         local_68.y = 3.0;
         local_68.z = 0.0;
-        core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(pCVar3);
-        local_24 = extraout_EAX_00;
-        if (0 < *(int *)(extraout_EAX_00 + 0x28558)) {
+        local_24 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar3);
+        if (0 < local_24->bone_count) {
           do {
-            pCVar14 = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+            pCVar14 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                                (pCVar3,&local_128,iVar12);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                      ((CDemonActor *)this_ptr,local_134,pCVar14);
+                      ((CDemonActor *)this_ptr,&local_134,pCVar14);
             core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
-                      (g_CFireEffectPtr,local_134,0.5,&local_68,0xffff);
+                      (g_CFireEffectPtr,&local_134,0.5,&local_68,0xffff);
             iVar12 = iVar12 + 1;
-          } while (iVar12 < *(int *)(local_24 + 0x28558));
+          } while (iVar12 < local_24->bone_count);
         }
         fVar6 = this_ptr->vanish_timer - in_stack_00000008;
         this_ptr->vanish_timer = fVar6;
@@ -472,29 +476,38 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
         }
       }
     }
+    goto switchD_004173a5_caseD_4;
   }
-  else {
-    uVar7 = *(uint *)((this_ptr->base_enemy).base_character.field11_0x25a0 + 0x10);
-    if (((uVar7 < 2) || (uVar7 < 3)) || (uVar7 != 3)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base_enemy).base_character.model.motion_controller);
+  uVar7 = *(uint *)((this_ptr->base_enemy).base_character.field11_0x25a0 + 0x10);
+  if (uVar7 < 2) {
+    if (uVar7 == 1) {
+LAB_00416943:
+      iVar12 = 1;
     }
     else {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base_enemy).base_character.model.motion_controller);
-      engine_console_cpp_CConsole_printf_FUN_00441890
-                (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+LAB_00416b03:
+      iVar12 = 0;
     }
-    pCVar10 = &(this_ptr->base_enemy).base_character;
-    (pCVar10->model).field10_0x2254[8] = '\0';
-    (pCVar10->model).field10_0x2254[9] = '\0';
-    (pCVar10->model).field10_0x2254[10] = '\0';
-    (pCVar10->model).field10_0x2254[0xb] = '\0';
-    *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4) =
-         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 8);
-    *(undefined4 *)(this_ptr->base_enemy).base_character.model.field10_0x2254 =
-         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              (&(this_ptr->base_enemy).base_character.model.motion_controller,iVar12,1);
   }
+  else {
+    if (uVar7 < 3) goto LAB_00416943;
+    if (uVar7 != 3) goto LAB_00416b03;
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              (&(this_ptr->base_enemy).base_character.model.motion_controller,0,1);
+    engine_console_cpp_CConsole_printf_FUN_00441890
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+  }
+  pCVar10 = &(this_ptr->base_enemy).base_character;
+  (pCVar10->model).field17_0x2254[8] = '\0';
+  (pCVar10->model).field17_0x2254[9] = '\0';
+  (pCVar10->model).field17_0x2254[10] = '\0';
+  (pCVar10->model).field17_0x2254[0xb] = '\0';
+  *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4) =
+       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
+  *(undefined4 *)(this_ptr->base_enemy).base_character.model.field17_0x2254 =
+       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4);
 switchD_004173a5_caseD_4:
   if (0.0 < *(float *)(this_ptr->base_enemy).field6_0xbe38) {
     *(float *)(this_ptr->base_enemy).field6_0xbe38 =
@@ -512,15 +525,15 @@ switchD_004173a5_caseD_4:
     pcVar4 = (this_ptr->base_enemy).base_character.field2_0x240c + 0x10;
     local_d8 = in_stack_00000008 *
                *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x24);
-    pcVar5 = (this_ptr->base_enemy).base_character.model.field10_0x2254;
+    pcVar5 = (this_ptr->base_enemy).base_character.model.field17_0x2254;
     local_140 = local_e0 + *(float *)pcVar4;
     local_13c = local_dc + *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x14);
     local_138 = local_d8 + *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x18);
     local_d4 = local_140 + *(float *)pcVar5;
     local_d0 = local_13c +
-               *(float *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4);
+               *(float *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4);
     local_cc = local_138 +
-               *(float *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 8);
+               *(float *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
     pCVar11 = &this_ptr->base_enemy;
     (pCVar11->base_character).field2_0x240c[0x18] = '\0';
     (pCVar11->base_character).field2_0x240c[0x19] = '\0';
@@ -530,12 +543,12 @@ switchD_004173a5_caseD_4:
          *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x18);
     *(float *)pcVar4 = *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x14);
     pCVar10 = &(this_ptr->base_enemy).base_character;
-    (pCVar10->model).field10_0x2254[8] = '\0';
-    (pCVar10->model).field10_0x2254[9] = '\0';
-    (pCVar10->model).field10_0x2254[10] = '\0';
-    (pCVar10->model).field10_0x2254[0xb] = '\0';
-    uVar15 = *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 8);
-    *(undefined4 *)((this_ptr->base_enemy).base_character.model.field10_0x2254 + 4) = uVar15;
+    (pCVar10->model).field17_0x2254[8] = '\0';
+    (pCVar10->model).field17_0x2254[9] = '\0';
+    (pCVar10->model).field17_0x2254[10] = '\0';
+    (pCVar10->model).field17_0x2254[0xb] = '\0';
+    uVar15 = *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
+    *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4) = uVar15;
     *(undefined4 *)pcVar5 = uVar15;
     core_charactr_cpp_CCharacter_FUN_00428f40((CCharacter *)this_ptr);
   }
@@ -543,7 +556,8 @@ switchD_004173a5_caseD_4:
     this_ptr->mist_state = 0;
   }
   core_charactr_cpp_CCharacter_FUN_00429820((CCharacter *)this_ptr);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020();
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
+            (&(this_ptr->base_enemy).base_character.model);
   core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
   return;
 }
@@ -756,7 +770,7 @@ switchD_004173a5_caseD_4:
 // 00416a89: ADD ESP,0x4
 // 00416a8c: LEA EAX,[EBX + 0x158]
 // 00416a92: PUSH EAX
-// 00416a93: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
+// 00416a93: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 //   XREF to: 0059e020 (UNCONDITIONAL_CALL)
 // 00416a98: ADD ESP,0x4
 // 00416a9b: PUSH dword ptr [EBP + 0x92]
@@ -847,7 +861,7 @@ switchD_004173a5_caseD_4:
 //   XREF to: Stack[-0xb8] (WRITE)
 // 00416b54: MOV dword ptr [EBP + -0x2a],EDX
 //   XREF to: Stack[-0xb4] (WRITE)
-// 00416b57: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 00416b57: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 00416b5c: ADD ESP,0x4
 // 00416b5f: MOV EDX,dword ptr [EAX + 0x28558]
@@ -862,7 +876,7 @@ switchD_004173a5_caseD_4:
 //   XREF to: Stack[-0x11c] (DATA)
 // 00416b77: PUSH EAX
 // 00416b78: PUSH EDI
-// 00416b79: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 00416b79: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 00416b7e: ADD ESP,0xc
 // 00416b81: PUSH EAX
@@ -1054,7 +1068,7 @@ switchD_004173a5_caseD_4:
 //   XREF to: Stack[-0x64] (WRITE)
 // 00416d19: MOV dword ptr [EBP + 0x2a],EDX
 //   XREF to: Stack[-0x60] (WRITE)
-// 00416d1c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 00416d1c: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 00416d21: ADD ESP,0x4
 // 00416d24: MOV EDX,dword ptr [EAX + 0x28558]
@@ -1069,7 +1083,7 @@ switchD_004173a5_caseD_4:
 //   XREF to: Stack[-0x128] (DATA)
 // 00416d38: PUSH EAX
 // 00416d39: PUSH EDI
-// 00416d3a: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 00416d3a: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 00416d3f: ADD ESP,0xc
 // 00416d42: PUSH EAX
@@ -1160,7 +1174,7 @@ switchD_004173a5_caseD_4:
 //   XREF to: Stack[-0xec] (DATA)
 // 00416e18: PUSH EAX
 // 00416e19: PUSH EDI
-// 00416e1a: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+// 00416e1a: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   XREF to: 0059fa20 (UNCONDITIONAL_CALL)
 // 00416e1f: ADD ESP,0xc
 // 00416e22: PUSH EAX

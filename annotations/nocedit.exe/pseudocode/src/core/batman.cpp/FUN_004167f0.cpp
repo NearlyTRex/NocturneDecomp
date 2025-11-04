@@ -22,11 +22,11 @@ void core_batman_cpp_FUN_004167f0(void)
   iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
   if (iVar1 != 0) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              ((CMotionController *)(in_stack_00000008 + 0x158));
+              ((CMotionController *)(in_stack_00000008 + 0x158),1,1);
     return;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            ((CMotionController *)(in_stack_00000008 + 0x158));
+            ((CMotionController *)(in_stack_00000008 + 0x158),2,1);
   return;
 }
 

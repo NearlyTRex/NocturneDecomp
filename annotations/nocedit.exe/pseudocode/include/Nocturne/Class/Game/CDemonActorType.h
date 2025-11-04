@@ -5,7 +5,7 @@
 typedef struct CDemonActorType {
     char class_name[40]; // 0x0
     CDemonActorType* parent_type; // 0x28
-    CDemonActorFactoryFunction* factory_func; // 0x2c
+    CDemonActor_FactoryFunc* factory_func; // 0x2c
     void* type_info; // 0x30
     int type_id; // 0x34
     uint name_hash; // 0x38

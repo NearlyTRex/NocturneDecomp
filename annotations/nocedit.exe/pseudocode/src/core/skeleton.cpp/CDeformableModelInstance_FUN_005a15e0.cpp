@@ -9,7 +9,7 @@
 //   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005972fc [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bf720 (005bf720) at 005bf7ed [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 
 #include "nocturne.h"
 
@@ -18,62 +18,62 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a15e0(CDeformableModelInstance
 
 {
   int iVar1;
-  int extraout_EAX;
-  undefined4 *puVar2;
-  int iVar3;
+  CSkeleton *pCVar2;
+  float *pfVar3;
   int iVar4;
-  undefined4 *puVar5;
-  undefined4 *puVar6;
-  undefined4 *puVar7;
-  undefined4 *puVar8;
-  byte bVar9;
-  undefined4 *in_stack_00000008;
-  undefined4 *local_10;
-  undefined4 *local_c;
-  undefined4 *puVar10;
+  int iVar5;
+  float *pfVar6;
+  float *pfVar7;
+  float *pfVar8;
+  float *pfVar9;
+  byte bVar10;
+  float *in_stack_00000008;
+  float *local_10;
+  float *local_c;
+  float *pfVar11;
   
-  bVar9 = 0;
-  if (this_ptr->field3_0x508 + 0x19c != (char *)in_stack_00000008) {
-    *(undefined4 *)(this_ptr->field3_0x508 + 0x19c) = *in_stack_00000008;
-    *(undefined4 *)(this_ptr->field3_0x508 + 0x1a0) = in_stack_00000008[1];
-    *(undefined4 *)(this_ptr->field3_0x508 + 0x1a4) = in_stack_00000008[2];
+  bVar10 = 0;
+  if (&this_ptr->root_position != (CVector3f *)in_stack_00000008) {
+    (this_ptr->root_position).x = *in_stack_00000008;
+    (this_ptr->root_position).y = in_stack_00000008[1];
+    (this_ptr->root_position).z = in_stack_00000008[2];
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr);
-  iVar1 = *(int *)(extraout_EAX + 0x28558);
-  iVar4 = 0;
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
+  iVar1 = pCVar2->bone_count;
+  iVar5 = 0;
   if (0 < iVar1) {
     local_c = in_stack_00000008;
     local_10 = in_stack_00000008;
-    puVar2 = in_stack_00000008;
-    puVar5 = in_stack_00000008;
-    puVar6 = in_stack_00000008;
-    puVar10 = in_stack_00000008;
+    pfVar3 = in_stack_00000008;
+    pfVar6 = in_stack_00000008;
+    pfVar7 = in_stack_00000008;
+    pfVar11 = in_stack_00000008;
     do {
-      puVar8 = puVar6 + (uint)bVar9 * -2 + 0x1ad;
-      puVar7 = local_10 + (uint)bVar9 * -2 + 4;
-      puVar6[0x1ac] = local_10[3];
-      *puVar8 = *puVar7;
-      puVar8[(uint)bVar9 * -2 + 1] = puVar7[(uint)bVar9 * -2 + 1];
-      (puVar8 + (uint)bVar9 * -2 + 1)[(uint)bVar9 * -2 + 1] =
-           (puVar7 + (uint)bVar9 * -2 + 1)[(uint)bVar9 * -2 + 1];
-      puVar10[0x33c] = puVar5[0x193];
-      puVar5 = puVar5 + 1;
-      puVar6 = puVar6 + 4;
-      puVar7 = local_c + 0x1f7;
-      puVar8 = puVar2 + 0x3a0;
-      for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar8 = *puVar7;
-        puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
-        puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
+      pfVar9 = pfVar7 + (uint)bVar10 * -2 + 0x1ad;
+      pfVar8 = local_10 + (uint)bVar10 * -2 + 4;
+      pfVar7[0x1ac] = local_10[3];
+      *pfVar9 = *pfVar8;
+      pfVar9[(uint)bVar10 * -2 + 1] = pfVar8[(uint)bVar10 * -2 + 1];
+      (pfVar9 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1] =
+           (pfVar8 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
+      pfVar11[0x33c] = pfVar6[0x193];
+      pfVar6 = pfVar6 + 1;
+      pfVar7 = pfVar7 + 4;
+      pfVar8 = local_c + 0x1f7;
+      pfVar9 = pfVar3 + 0x3a0;
+      for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
+        *pfVar9 = *pfVar8;
+        pfVar8 = pfVar8 + (uint)bVar10 * -2 + 1;
+        pfVar9 = pfVar9 + (uint)bVar10 * -2 + 1;
       }
-      iVar4 = iVar4 + 1;
+      iVar5 = iVar5 + 1;
       local_c = local_c + 0xc;
-      puVar10 = puVar10 + 1;
+      pfVar11 = pfVar11 + 1;
       local_10 = local_10 + 4;
-      puVar2 = puVar2 + 0xc;
-    } while (iVar4 < iVar1);
+      pfVar3 = pfVar3 + 0xc;
+    } while (iVar5 < iVar1);
   }
-  in_stack_00000008[0x88c] = 0xffffffff;
+  in_stack_00000008[0x88c] = -NAN;
   return;
 }
 
@@ -101,7 +101,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a15e0(CDeformableModelInstance
 //   Label: LAB_005a1606
 //   XREF to: Stack[0x4] (READ)
 // 005a160a: PUSH EDX
-// 005a160b: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 005a160b: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005a1610: ADD ESP,0x4
 // 005a1613: MOV EAX,dword ptr [EAX + 0x28558]

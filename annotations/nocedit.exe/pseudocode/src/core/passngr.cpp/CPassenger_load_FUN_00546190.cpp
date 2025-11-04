@@ -37,8 +37,8 @@ void core_passngr_cpp_CPassenger_load_FUN_00546190(void)
             ((char **)&in_stack_00000004[1].base_character.base_actor.health,
              "wolfModelName");
   core_actor_cpp_serializeFloat_FUN_0040b770
-            ((float *)(in_stack_00000004[1].base_character.model.field3_0x508 + 0x6d8),
-             "morphTime");
+            (&in_stack_00000004[1].base_character.model.bone_rotations[0x53].w,"morphTime")
+  ;
   if ((1 < g_CPassengerClassVersion) && (g_CPassengerClassVersion < 5)) {
     model_ptr = &(in_stack_00000004->base_character).model;
     core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
@@ -47,8 +47,8 @@ void core_passngr_cpp_CPassenger_load_FUN_00546190(void)
   }
   if (2 < g_CPassengerClassVersion) {
     core_actor_cpp_serializeFloat_FUN_0040b770
-              ((float *)(in_stack_00000004[1].base_character.model.field3_0x508 + 0x6dc),
-               "wolfSize");
+              (&in_stack_00000004[1].base_character.model.bone_rotations[0x53].x,"wolfSize"
+              );
   }
   if (3 < g_CPassengerClassVersion) {
     core_actor_cpp_serializeString_FUN_0040b5c0

@@ -17,11 +17,15 @@
 void __cdecl core_motion_cpp_FUN_0052db90(void)
 
 {
+  int desired_state_index;
   undefined4 *in_stack_00000004;
   CMotionController *in_stack_00000008;
+  int in_stack_00000010;
   
-  core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0((CMotionList *)*in_stack_00000004);
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(in_stack_00000008);
+  desired_state_index =
+       core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0((CMotionList *)*in_stack_00000004);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+            (in_stack_00000008,desired_state_index,in_stack_00000010);
   return;
 }
 

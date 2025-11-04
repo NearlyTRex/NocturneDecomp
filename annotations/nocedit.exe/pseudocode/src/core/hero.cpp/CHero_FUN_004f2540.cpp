@@ -9,7 +9,7 @@
 //   core_gabriela.cpp_FUN_004d2c40 (004d2c40) at 004d2c48 [UNCONDITIONAL_CALL]
 //   core_haystack.cpp_FUN_004f0c80 (004f0c80) at 004f0c87 [UNCONDITIONAL_CALL]
 //   core_icepick.cpp_FUN_004f7e80 (004f7e80) at 004f7e87 [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00528c70 (00528c70) at 00528cf9 [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_setup_FUN_00528c70 (00528c70) at 00528cf9 [UNCONDITIONAL_CALL]
 //   core_scat.cpp_FUN_00556f90 (00556f90) at 00556f97 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb4b0 (005bb4b0) at 005bb4bb [UNCONDITIONAL_CALL]
 //   core_svetlana.cpp_CSvetlana_FUN_005d88e0 (005d88e0) at 005d8911 [UNCONDITIONAL_CALL]

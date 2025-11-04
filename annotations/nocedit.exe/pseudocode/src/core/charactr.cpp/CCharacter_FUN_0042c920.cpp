@@ -27,7 +27,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c920(CCharacter *this_ptr)
   
   if (in_stack_00000008 == (CVector3f *)0x0) {
     if (((*(int *)(this_ptr->field11_0x25a0 + 0x10) != 0) && (*(int *)this_ptr->field11_0x25a0 != 0)
-        ) && ((this_ptr->model).field11_0x2260[0] != '\0')) {
+        ) && ((this_ptr->model).field18_0x2260[0] != '\0')) {
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                               (&(this_ptr->model).motion_controller);
       iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);

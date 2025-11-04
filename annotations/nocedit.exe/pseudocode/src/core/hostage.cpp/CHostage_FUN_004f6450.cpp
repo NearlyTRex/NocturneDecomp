@@ -31,7 +31,8 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6450(CHostage *this_ptr)
   (this_ptr->base_npc).base_character.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base_npc).base_character.hit_points = 0.0;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_00->motion_controller);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              (&this_ptr_00->motion_controller,6,1);
     (*((this_ptr->base_npc).base_character.base_actor.vtable)->spawnFlies)
               ((CDemonActor *)this_ptr,0x32,25.0);
     (*((this_ptr->base_npc).base_character.base_actor.vtable)->playSound)
@@ -40,7 +41,7 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6450(CHostage *this_ptr)
   else if (0.0 < *(float *)(in_stack_00000008 + 4)) {
     if ((this_ptr->base_npc).base_character.grabbed_by == (CDemonActor *)0x0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&this_ptr_00->motion_controller);
+                (&this_ptr_00->motion_controller,4,1);
       uVar3 = DAT_00821ff4;
       this_ptr->field8_0x1fae0[0xc] = '\0';
       this_ptr->field8_0x1fae0[0xd] = '\0';

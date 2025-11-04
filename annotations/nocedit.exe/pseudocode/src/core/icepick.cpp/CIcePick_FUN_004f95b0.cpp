@@ -30,10 +30,10 @@ void core_icepick_cpp_CIcePick_FUN_004f95b0(void)
 {
   CDeformableModelInstance *this_ptr;
   float fVar1;
-  int iVar2;
-  undefined4 uVar3;
+  undefined4 uVar2;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
+  int iVar3;
   
   sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
   if ((*(uint *)in_stack_00000004[1].base_actor.actor_name & 0x7fffffff) != 0) {
@@ -51,29 +51,38 @@ void core_icepick_cpp_CIcePick_FUN_004f95b0(void)
   in_stack_00000004->hit_points = fVar1;
   if (fVar1 <= 0.0) {
     in_stack_00000004->hit_points = 0.0;
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
-    if ((*(int *)(iVar2 + 0x24) != 9) &&
-       (iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller),
-       *(int *)(iVar2 + 0x24) != 8)) {
-      in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
-      (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)
-                (&in_stack_00000004->base_actor);
-      core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);
-      sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-      (*((in_stack_00000004->base_actor).vtable)->playSound)
-                (&in_stack_00000004->base_actor,"icepick_die01.wav");
-      core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
-      return;
+    iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
+    if (*(int *)(iVar3 + 0x24) != 9) {
+      iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
+      if (*(int *)(iVar3 + 0x24) != 8) {
+        in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                  (&this_ptr->motion_controller,8,1);
+        (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)
+                  (&in_stack_00000004->base_actor);
+        core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);
+        sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+        (*((in_stack_00000004->base_actor).vtable)->playSound)
+                  (&in_stack_00000004->base_actor,"icepick_die01.wav");
+        core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
+        return;
+      }
     }
   }
   else if (0.0 < *(float *)(in_stack_00000008 + 4)) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
-    iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
-    if (iVar2 == 0) {
-      uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
+    if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) == 0) {
+      iVar3 = 4;
+    }
+    else {
+      iVar3 = 0xb;
+    }
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              (&this_ptr->motion_controller,iVar3,1);
+    iVar3 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    if (iVar3 == 0) {
+      uVar2 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                         (&in_stack_00000004->base_actor,"icepick_injured??.wav");
-      *(undefined4 *)(in_stack_00000004[2].cloth_data + 0x5500) = uVar3;
+      *(undefined4 *)(in_stack_00000004[2].cloth_data + 0x5500) = uVar2;
       core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
       return;
     }

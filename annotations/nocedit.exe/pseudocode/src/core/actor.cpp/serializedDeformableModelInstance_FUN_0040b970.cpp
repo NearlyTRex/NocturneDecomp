@@ -58,7 +58,7 @@ core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970
     core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(model_ptr);
     return;
   }
-  pcVar2 = model_ptr->field11_0x2260;
+  pcVar2 = model_ptr->field18_0x2260;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;

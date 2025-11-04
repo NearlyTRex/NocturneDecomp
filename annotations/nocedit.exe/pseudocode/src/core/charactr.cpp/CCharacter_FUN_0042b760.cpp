@@ -15,7 +15,7 @@
 //   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_gore.cpp_FUN_004edaa0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 
 #include "nocturne.h"
 
@@ -27,20 +27,23 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b760(CCharacter *this_ptr)
   BADSPACEBASE *in_ESP;
   int in_stack_00000008;
   float in_stack_00000010;
-  CVector3f local_28 [2];
+  undefined1 local_28 [8];
+  float fStack_20;
   CVector3f local_10;
   
   if ((this_ptr->model).part_visibility_flags[in_stack_00000008] == 0) {
     iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(in_stack_00000010);
     if (iVar1 != 0) {
-      input_local_point = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+      input_local_point =
+           core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     (&this_ptr->model,(CVector3f *)(local_28 + 4),(int)in_stack_00000010);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 (&this_ptr->base_actor,(CVector3f *)&local_10.z,input_local_point);
-      local_28[0].x = -3.0;
-      local_28[0].y = 0.0;
-      local_28[0].z = 0.0;
+      local_28._0_4_ = -3.0;
+      local_28._4_4_ = 0.0;
+      fStack_20 = 0.0;
       core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                (&this_ptr->base_actor,&local_10,local_28);
+                (&this_ptr->base_actor,&local_10,(CVector3f *)local_28);
       core_gore_cpp_FUN_004edaa0();
       return;
     }
@@ -83,7 +86,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b760(CCharacter *this_ptr)
 // 0042b796: PUSH EAX
 // 0042b797: LEA EAX,[EBX + 0x158]
 // 0042b79d: PUSH EAX
-// 0042b79e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 0042b79e: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 0042b7a3: ADD ESP,0xc
 // 0042b7a6: PUSH EAX

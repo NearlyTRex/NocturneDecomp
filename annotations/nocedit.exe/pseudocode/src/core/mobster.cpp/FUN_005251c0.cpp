@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_mobster.cpp_staticInit_FUN_00525070 (00525070) at 0052507c [DATA]
 // Globals:
-//   undefined4 s_..\core\mobster.cpp_006396b6
+//   TerminatedCString s_core_mobster_cpp_006396b6
 // Function calls:
 //   core_mobster.cpp_CMobster_ctor_FUN_00525200
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
@@ -19,7 +19,7 @@ void core_mobster_cpp_FUN_005251c0(void)
   CMobster *this_ptr;
   
   this_ptr = (CMobster *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf94,"?..\\core\\mobster.cpp" + 1,0x85);
+             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf94,"..\\core\\mobster.cpp",0x85);
   if (this_ptr == (CMobster *)0x0) {
     return;
   }

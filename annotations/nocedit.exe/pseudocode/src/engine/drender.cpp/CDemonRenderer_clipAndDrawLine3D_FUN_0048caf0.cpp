@@ -9,7 +9,7 @@
 //   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 (0043d590) at 0043d7bf [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_00583170 (00583170) at 005839c1 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_FUN_00582930 (00582930) at 00582bec [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModel_FUN_0059b5a0 (0059b5a0) at 0059b607 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0 (0059b5a0) at 0059b607 [UNCONDITIONAL_CALL]
 //   core_tvbat.cpp_CTVBat_FUN_005e4d80 (005e4d80) at 005e5007 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_CurrentPolygonColor

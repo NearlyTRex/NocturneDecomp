@@ -49,12 +49,12 @@
 //   core_morph.cpp_CMorph_getReady_FUN_0052b680
 //   core_morph.cpp_FUN_0052b430
 //   core_morph.cpp_FUN_0052b580
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
+//   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -72,8 +72,6 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
   CDeformableModelInstance *pCStack00000060;
   undefined4 uStack00000064;
   undefined4 uStack00000068;
-  CDeformableModelInstance *pCStack00000070;
-  CDeformableModelInstance *pCStack00000074;
   
   pCVar1 = &(this_ptr->base_enemy).base_character.model;
   if (g_CGamePtr->nudity_flag == 0) {
@@ -92,7 +90,7 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
   core_cloth_cpp_CClothList_load_FUN_0043bfa0((CClothList *)(this_ptr->field1_0xbeb4 + 0x22bc));
   core_cloth_cpp_FUN_0043c290();
   core_cloth_cpp_FUN_0043c2d0();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(pCVar1);
+  this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar1);
   _DAT_03f6bb68 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Head");
   _DAT_03f6bb74 =
@@ -129,13 +127,12 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
   _DAT_03f6bb94 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine2");
   uStack00000048 = 0x5c6d8f;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059df80(this_ptr_00);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059df80(pCVar1);
-  *(float *)((this_ptr->base_enemy).base_character.model.field3_0x508 + 0x1a4) =
-       *(float *)((this_ptr->base_enemy).base_character.model.field3_0x508 + 0x1a4) + FLOAT_00654121
-  ;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40(pCVar1);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(pCVar1);
+  (this_ptr->base_enemy).base_character.model.root_position.z =
+       (this_ptr->base_enemy).base_character.model.root_position.z + FLOAT_00654121;
+  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(pCVar1);
+  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr_00);
   pCStack0000005c = (CMorph *)pCVar1;
   core_morph_cpp_FUN_0052b430();
   pCStack0000005c = (CMorph *)0x1;
@@ -175,11 +172,8 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
   this_ptr->field1_0xbeb4[0x247d] = '\0';
   this_ptr->field1_0xbeb4[0x247e] = -0x60;
   this_ptr->field1_0xbeb4[0x247f] = '@';
-  pCStack00000070 = this_ptr_00;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e000();
-  pCStack00000070 = (CDeformableModelInstance *)0x5c6e63;
-  pCStack00000074 = pCVar1;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e000();
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(pCVar1);
   return;
 }
 
@@ -262,7 +256,7 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
 //   XREF to: 0043c2d0 (UNCONDITIONAL_CALL)
 // 005c6c16: ADD ESP,0x18
 // 005c6c19: PUSH EBP
-// 005c6c1a: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 005c6c1a: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005c6c1f: ADD ESP,0x4
 // 005c6c22: PUSH 0x1
@@ -420,11 +414,11 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
 // 005c6d84: PUSH EDI
 // 005c6d85: MOV [0x03f6bb94],EAX
 //   XREF to: 03f6bb94 (WRITE)
-// 005c6d8a: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
+// 005c6d8a: CALL core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 //   XREF to: 0059df80 (UNCONDITIONAL_CALL)
 // 005c6d8f: ADD ESP,0x4
 // 005c6d92: PUSH EBP
-// 005c6d93: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
+// 005c6d93: CALL core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 //   XREF to: 0059df80 (UNCONDITIONAL_CALL)
 // 005c6d98: FLD float ptr [EBX + 0x804]
 // 005c6d9e: ADD ESP,0x4
@@ -432,11 +426,11 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
 //   XREF to: 00654121 (READ)
 // 005c6da7: PUSH EBP
 // 005c6da8: FSTP float ptr [EBX + 0x804]
-// 005c6dae: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+// 005c6dae: CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
 // 005c6db3: ADD ESP,0x4
 // 005c6db6: PUSH EDI
-// 005c6db7: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+// 005c6db7: CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
 // 005c6dbc: ADD ESP,0x4
 // 005c6dbf: PUSH EBP
@@ -487,11 +481,11 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
 // 005c6e40: MOV dword ptr [EBX + 0xe32c],0x0
 // 005c6e4a: PUSH EDI
 // 005c6e4b: MOV dword ptr [EBX + 0xe330],0x40a00000
-// 005c6e55: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
+// 005c6e55: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   XREF to: 0059e000 (UNCONDITIONAL_CALL)
 // 005c6e5a: ADD ESP,0x4
 // 005c6e5d: PUSH EBP
-// 005c6e5e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
+// 005c6e5e: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   XREF to: 0059e000 (UNCONDITIONAL_CALL)
 // 005c6e63: ADD ESP,0x4
 // 005c6e66: ADD ESP,0x8

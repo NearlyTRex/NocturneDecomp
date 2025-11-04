@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: void core_motion.cpp_CMotionController_FUN_0052dbc0(CMotionController * this_ptr)
 // Cross-references:
-//   core_motion.cpp_CMotionController_FUN_0052d950 (0052d950) at 0052da28 [UNCONDITIONAL_CALL]
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610 (0052d610) at 0052d8d1 [UNCONDITIONAL_CALL]
+//   core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950 (0052d950) at 0052da28 [UNCONDITIONAL_CALL]
 // Globals:
 //   float FLOAT_0063aa93 = -1
 // Function calls:

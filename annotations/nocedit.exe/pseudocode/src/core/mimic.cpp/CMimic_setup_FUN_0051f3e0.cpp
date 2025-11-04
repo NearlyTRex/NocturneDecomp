@@ -60,12 +60,12 @@
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_morph.cpp_CMorph_getReady_FUN_0052b680
 //   core_morph.cpp_FUN_0052b430
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
+//   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -102,7 +102,7 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
             (&(in_stack_00000004->base_character).model);
   pCVar1 = &(in_stack_00000004->base_character).model;
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(pCVar1);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(pCVar1);
+  this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar1);
   DAT_02f33378 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 head");
   _DAT_02f3337c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 L Clavicle");
@@ -154,10 +154,10 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
   (*(code *)**(undefined4 **)
               (*(int *)(in_stack_00000004[6].base_character.cloth_data + 0x2784) + 0x154))();
   pCVar1 = &(in_stack_00000004->base_character).model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059df80(pCVar1);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40(pCVar1);
+  core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(pCVar1);
+  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(pCVar1);
   core_morph_cpp_FUN_0052b430();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e000();
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(pCVar1);
   iVar6 = 0;
   if (0 < *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1ba8)) {
     iVar5 = 0;
@@ -201,14 +201,16 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
       iVar5 = iVar5 + 0x3c;
     } while (iVar6 < *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1bb0));
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059df80
+  core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
             ((CDeformableModelInstance *)
              (*(int *)(in_stack_00000004[6].base_character.cloth_data + 0x2784) + 0x158));
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40
+  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
             ((CDeformableModelInstance *)
              (*(int *)(in_stack_00000004[6].base_character.cloth_data + 0x2784) + 0x158));
   core_morph_cpp_FUN_0052b430();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e000();
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
+            ((CDeformableModelInstance *)
+             (*(int *)(in_stack_00000004[6].base_character.cloth_data + 0x2784) + 0x158));
   core_morph_cpp_CMorph_getReady_FUN_0052b680
             ((CMorph *)(in_stack_00000004[6].base_character.cloth_data + 0x1b54));
   return;
@@ -254,7 +256,7 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0051f431: ADD ESP,0x4
 // 0051f434: PUSH EDI
-// 0051f435: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 0051f435: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0051f43a: ADD ESP,0x4
 // 0051f43d: PUSH 0x1
@@ -467,11 +469,11 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
 // 0051f62e: ADD ESP,0x4
 // 0051f631: LEA ESI,[EBX + 0x158]
 // 0051f637: PUSH ESI
-// 0051f638: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
+// 0051f638: CALL core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 //   XREF to: 0059df80 (UNCONDITIONAL_CALL)
 // 0051f63d: ADD ESP,0x4
 // 0051f640: PUSH ESI
-// 0051f641: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+// 0051f641: CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
 // 0051f646: ADD ESP,0x4
 // 0051f649: PUSH ESI
@@ -482,7 +484,7 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
 //   XREF to: 0052b430 (UNCONDITIONAL_CALL)
 // 0051f658: ADD ESP,0xc
 // 0051f65b: PUSH ESI
-// 0051f65c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
+// 0051f65c: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   XREF to: 0059e000 (UNCONDITIONAL_CALL)
 // 0051f661: ADD ESP,0x4
 // 0051f664: MOV ESI,dword ptr [EBX + 0x4be78]
@@ -542,13 +544,13 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
 //   Label: LAB_0051f6e0
 // 0051f6e6: ADD EAX,0x158
 // 0051f6eb: PUSH EAX
-// 0051f6ec: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
+// 0051f6ec: CALL core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 //   XREF to: 0059df80 (UNCONDITIONAL_CALL)
 // 0051f6f1: MOV EAX,dword ptr [EBX + 0x4ca54]
 // 0051f6f7: ADD ESP,0x4
 // 0051f6fa: ADD EAX,0x158
 // 0051f6ff: PUSH EAX
-// 0051f700: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+// 0051f700: CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
 // 0051f705: MOV EAX,dword ptr [EBX + 0x4ca54]
 // 0051f70b: ADD ESP,0x4
@@ -563,7 +565,7 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
 // 0051f728: ADD ESP,0xc
 // 0051f72b: ADD EAX,0x158
 // 0051f730: PUSH EAX
-// 0051f731: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
+// 0051f731: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   XREF to: 0059e000 (UNCONDITIONAL_CALL)
 // 0051f736: ADD ESP,0x4
 // 0051f739: PUSH ESI

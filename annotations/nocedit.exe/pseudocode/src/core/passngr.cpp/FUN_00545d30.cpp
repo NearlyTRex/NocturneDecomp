@@ -14,11 +14,11 @@
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
 //   core_npc.cpp_CNPC_FUN_00544870
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
+//   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 
 #include "nocturne.h"
 
@@ -31,25 +31,24 @@ void core_passngr_cpp_FUN_00545d30(void)
   CDeformableModelInstance *this_ptr;
   char cVar2;
   int iVar3;
-  CCharacter *pCVar4;
-  CDemonActor *pCVar5;
+  CDemonActor *pCVar4;
   CMotionList *this_ptr_00;
-  char *pcVar6;
+  char *pcVar5;
   CNPC *in_stack_00000004;
   
   core_npc_cpp_CNPC_FUN_00544870(in_stack_00000004);
   if (in_stack_00000004[1].base_character.base_actor.scale.x == 0) {
-    pCVar5 = core_actor_cpp_createActorByName_FUN_0040c430("CWerewolf");
-    pcVar6 = in_stack_00000004[1].base_character.base_actor.create_event + 0xc;
-    in_stack_00000004[1].base_character.base_actor.scale.x = (int)pCVar5;
+    pCVar4 = core_actor_cpp_createActorByName_FUN_0040c430("CWerewolf");
+    pcVar5 = in_stack_00000004[1].base_character.base_actor.create_event + 0xc;
+    in_stack_00000004[1].base_character.base_actor.scale.x = (int)pCVar4;
     do {
-      cVar2 = *pcVar6;
-      pCVar5->actor_name[0] = cVar2;
+      cVar2 = *pcVar5;
+      pCVar4->actor_name[0] = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar6[1];
-      pcVar6 = pcVar6 + 2;
-      pCVar5->actor_name[1] = cVar2;
-      pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);
+      cVar2 = pcVar5[1];
+      pcVar5 = pcVar5 + 2;
+      pCVar4->actor_name[1] = cVar2;
+      pCVar4 = (CDemonActor *)(pCVar4->actor_name + 2);
     } while (cVar2 != '\0');
     iVar3 = in_stack_00000004[1].base_character.base_actor.scale.x;
     *(float *)(iVar3 + 0x20) = (in_stack_00000004->base_character).base_actor.location.position.x;
@@ -66,8 +65,8 @@ void core_passngr_cpp_FUN_00545d30(void)
     core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
               ((CDeformableModelInstance *)
                (in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));
-    *(undefined4 *)(in_stack_00000004[1].base_character.base_actor.scale.x + 0x261c) =
-         *(undefined4 *)(in_stack_00000004[1].base_character.model.field3_0x508 + 0x6dc);
+    *(float *)(in_stack_00000004[1].base_character.base_actor.scale.x + 0x261c) =
+         in_stack_00000004[1].base_character.model.bone_rotations[0x53].x;
     (*(code *)**(undefined4 **)(in_stack_00000004[1].base_character.base_actor.scale.x + 0x154))();
     this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                             ((CMotionController *)
@@ -77,27 +76,25 @@ void core_passngr_cpp_FUN_00545d30(void)
               ((CMotionController *)(in_stack_00000004[1].base_character.base_actor.scale.x + 0x158)
               );
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059df80
+  core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
             ((CDeformableModelInstance *)
              (in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40
+  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
             ((CDeformableModelInstance *)
              (in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));
   this_ptr = &(in_stack_00000004->base_character).model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059df80(this_ptr);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr);
   core_morph_cpp_FUN_0052b430();
   core_morph_cpp_FUN_0052b430();
   core_morph_cpp_CMorph_getReady_FUN_0052b680
             ((CMorph *)&in_stack_00000004[1].base_character.base_actor.scale.y);
-  pCVar4 = &in_stack_00000004[1].base_character;
-  (pCVar4->model).field3_0x508[0x6d8] = '\0';
-  (pCVar4->model).field3_0x508[0x6d9] = '\0';
-  (pCVar4->model).field3_0x508[0x6da] = '\0';
-  (pCVar4->model).field3_0x508[0x6db] = '\0';
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e000();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e000();
+  in_stack_00000004[1].base_character.model.bone_rotations[0x53].w = 0.0;
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
+            ((CDeformableModelInstance *)
+             (in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));
   return;
 }
 
@@ -121,22 +118,22 @@ void core_passngr_cpp_FUN_00545d30(void)
 //   Label: LAB_00545d4e
 // 00545d54: ADD EAX,0x158
 // 00545d59: PUSH EAX
-// 00545d5a: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
+// 00545d5a: CALL core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 //   XREF to: 0059df80 (UNCONDITIONAL_CALL)
 // 00545d5f: MOV EAX,dword ptr [EBX + 0x1f810]
 // 00545d65: ADD ESP,0x4
 // 00545d68: ADD EAX,0x158
 // 00545d6d: PUSH EAX
-// 00545d6e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+// 00545d6e: CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
 // 00545d73: ADD ESP,0x4
 // 00545d76: LEA ESI,[EBX + 0x158]
 // 00545d7c: PUSH ESI
-// 00545d7d: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
+// 00545d7d: CALL core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 //   XREF to: 0059df80 (UNCONDITIONAL_CALL)
 // 00545d82: ADD ESP,0x4
 // 00545d85: PUSH ESI
-// 00545d86: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+// 00545d86: CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
 // 00545d8b: ADD ESP,0x4
 // 00545d8e: PUSH ESI
@@ -164,13 +161,13 @@ void core_passngr_cpp_FUN_00545d30(void)
 // 00545dc6: ADD ESP,0x4
 // 00545dc9: PUSH ESI
 // 00545dca: MOV dword ptr [EBX + 0x20440],0x0
-// 00545dd4: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
+// 00545dd4: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   XREF to: 0059e000 (UNCONDITIONAL_CALL)
 // 00545dd9: MOV EAX,dword ptr [EBX + 0x1f810]
 // 00545ddf: ADD ESP,0x4
 // 00545de2: ADD EAX,0x158
 // 00545de7: PUSH EAX
-// 00545de8: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
+// 00545de8: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   XREF to: 0059e000 (UNCONDITIONAL_CALL)
 // 00545ded: ADD ESP,0x4
 // 00545df0: POP EDI

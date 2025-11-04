@@ -57,7 +57,7 @@
 //   core_set.cpp_CDemonSet_FUN_0056d380
 //   core_set.cpp_CDemonSet_FUN_0056fbd0
 //   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 //   core_xform.cpp_matrixToEulerAngles_FUN_005f5690
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
@@ -94,10 +94,10 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
   
   this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
   local_14 = &g_CDemonLightInstance;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(&(this_ptr_00->base_character).model);
+  this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+                          (&(this_ptr_00->base_character).model);
   iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_02,"Bip01 Head");
-  euler_out = (CVector3f *)((this_ptr_00->base_character).model.field3_0x508 + iVar3 * 0x30 + 0x978)
-  ;
+  euler_out = (CVector3f *)((this_ptr_00->base_character).model.bone_world_matrices + iVar3);
   local_44.y = 0.338;
   local_44.x = 0.0;
   local_44.z = 0.75;
@@ -210,7 +210,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
 // 0056c9b5: MOV dword ptr [EBP + -0x4],EDX
 //   XREF to: Stack[-0x14] (WRITE)
 //   XREF to: 02d7eaf0 (DATA)
-// 0056c9b8: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 0056c9b8: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 0056c9bd: ADD ESP,0x4
 // 0056c9c0: PUSH 0x0

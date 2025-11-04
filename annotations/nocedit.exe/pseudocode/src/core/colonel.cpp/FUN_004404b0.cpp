@@ -50,8 +50,8 @@ void core_colonel_cpp_FUN_004404b0(void)
       iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
       if (*(int *)(iVar2 + 0x24) != 5) {
         in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller)
-        ;
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                  (&this_ptr->motion_controller,5,1);
         core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);
         core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
         return;
@@ -59,7 +59,8 @@ void core_colonel_cpp_FUN_004404b0(void)
     }
   }
   else if (0.0 < *(float *)(in_stack_00000008 + 4)) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller,4,1)
+    ;
     core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
     return;
   }

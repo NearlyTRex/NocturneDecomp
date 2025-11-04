@@ -45,7 +45,7 @@ void core_gabriela_cpp_FUN_004d5550(void)
   CMatrix3x4f *pCVar7;
   byte bVar8;
   CCharacter *in_stack_00000004;
-  char *matrix_b;
+  CMatrix3x4f *matrix_b;
   CMatrix3x4f *in_stack_fffffc54;
   float local_37c [12];
   CMatrix3x4f local_34c;
@@ -79,9 +79,7 @@ void core_gabriela_cpp_FUN_004d5550(void)
               (&local_22c,(CVector3f *)&DAT_02d7b820,(CVector3f *)&DAT_02d7b82c);
     pCVar7 = &local_34c;
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-              (&local_22c,
-               (CMatrix3x4f *)
-               ((in_stack_00000004->model).field3_0x508 + DAT_02d7b870 * 0x30 + 0x978),pCVar7);
+              (&local_22c,(in_stack_00000004->model).bone_world_matrices + DAT_02d7b870,pCVar7);
     pfVar4 = local_1cc;
     pCVar6 = &local_1fc;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -96,7 +94,7 @@ void core_gabriela_cpp_FUN_004d5550(void)
     (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5388) + 0x154) + 0xf0))();
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_13c,(CVector3f *)&DAT_02d7b814,&g_ZeroVector);
-    matrix_b = (in_stack_00000004->model).field3_0x508 + DAT_02d7b88c * 0x30 + 0x978;
+    matrix_b = (in_stack_00000004->model).bone_world_matrices + DAT_02d7b88c;
     pCVar7 = &local_13c;
     core_xform_cpp_buildRotationX_FUN_005f6c40((CMatrix3x4f *)0x3fc90fdb,(float)pCVar7);
     pCVar6 = &local_28c;
@@ -123,7 +121,7 @@ void core_gabriela_cpp_FUN_004d5550(void)
       pfVar4 = pfVar4 + (uint)bVar8 * -2 + 1;
       pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);
     }
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_25c,pCVar7,(CMatrix3x4f *)matrix_b);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_25c,pCVar7,matrix_b);
     pfVar4 = local_ac;
     pCVar7 = &local_19c;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -131,8 +129,7 @@ void core_gabriela_cpp_FUN_004d5550(void)
       pfVar4 = pfVar4 + (uint)bVar8 * -2 + 1;
       pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);
     }
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-              (&local_19c,(CMatrix3x4f *)matrix_b,in_stack_fffffc54);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_19c,matrix_b,in_stack_fffffc54);
     fVar1 = local_34.m[2].z;
     pfVar4 = local_7c;
     pCVar7 = &local_2ec;

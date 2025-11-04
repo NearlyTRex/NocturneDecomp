@@ -6,7 +6,7 @@
 // Globals:
 //   undefined4 DAT_02d832fc
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059f820
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 
 #include "nocturne.h"
@@ -22,12 +22,16 @@ CVector3f * core_ghoul_cpp_FUN_004e84a0(void)
   undefined4 *puVar2;
   undefined4 *puVar3;
   byte bVar4;
+  int in_stack_00000004;
   CVector3f *in_stack_00000008;
+  CMatrix3x4f *in_stack_ffffff84;
   undefined4 local_4c [12];
   CVector3f local_1c;
   
   bVar4 = 0;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059f820();
+  core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
+            ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),DAT_02d832fc,in_stack_ffffff84)
+  ;
   puVar2 = local_4c;
   puVar3 = (undefined4 *)&stack0xffffff84;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -65,7 +69,7 @@ CVector3f * core_ghoul_cpp_FUN_004e84a0(void)
 //   XREF to: Stack[-0x4c] (DATA)
 // 004e84c0: LEA EDI,[EBP + -0x6c]
 //   XREF to: Stack[-0x7c] (DATA)
-// 004e84c3: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059f820
+// 004e84c3: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
 //   XREF to: 0059f820 (UNCONDITIONAL_CALL)
 // 004e84c8: MOV ECX,0xc
 // 004e84cd: LEA ESI,[EBP + -0x3c]

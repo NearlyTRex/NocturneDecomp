@@ -18,7 +18,7 @@
 //   core_setcolid.cpp_CDemonSet_disableIgnore_FUN_00574210
 //   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 //   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
+//   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
 
 #include "nocturne.h"
 
@@ -52,10 +52,14 @@ void core_gabriela_cpp_FUN_004d6d40(void)
     in_stack_00000004[0x17a].actor_name[7] = '\0';
   }
   if (in_stack_0000000c == 0) {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50
-              ((CDeformableModelInstance *)(in_stack_00000004 + 1));
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059eb50
-              ((CDeformableModelInstance *)(in_stack_00000004 + 1));
+    core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
+              ((CDeformableModelInstance *)(in_stack_00000004 + 1),0,0.0,
+               *(float *)in_stack_00000004[0x17a].actor_name,DAT_02d7b84c,
+               core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
+    core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
+              ((CDeformableModelInstance *)(in_stack_00000004 + 1),0,0.0,
+               *(float *)(in_stack_00000004[0x17a].actor_name + 4),DAT_02d7b850,
+               core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
     return;
   }
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000004);
@@ -293,7 +297,7 @@ void core_gabriela_cpp_FUN_004d6d40(void)
 // 004d6f3e: PUSH EDX
 // 004d6f3f: LEA ESI,[EBX + 0x158]
 // 004d6f45: PUSH ESI
-// 004d6f46: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
+// 004d6f46: CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 004d6f4b: ADD ESP,0x18
 // 004d6f4e: PUSH 0x59ddb0
@@ -305,7 +309,7 @@ void core_gabriela_cpp_FUN_004d6d40(void)
 // 004d6f60: PUSH 0x0
 // 004d6f62: PUSH 0x0
 // 004d6f64: PUSH ESI
-// 004d6f65: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50
+// 004d6f65: CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
 //   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
 // 004d6f6a: ADD ESP,0x18
 // 004d6f6d: ADD ESP,0x58

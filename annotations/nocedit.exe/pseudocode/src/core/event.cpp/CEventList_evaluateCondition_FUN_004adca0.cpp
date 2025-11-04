@@ -34,7 +34,7 @@
 //   core_mimic.cpp_CMimic_setup2_FUN_0051f780 (0051f780) at 0051f883 [UNCONDITIONAL_CALL]
 //   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120 (00524120) at 0052421f [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_FUN_00525840 (00525840) at 00525ab8 [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00528d20 (00528d20) at 00529382 [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_process_FUN_00528d20 (00528d20) at 00529382 [UNCONDITIONAL_CALL]
 //   core_passngr.cpp_FUN_00545ef0 (00545ef0) at 00545f49 [UNCONDITIONAL_CALL]
 //   core_pendulum.cpp_FUN_0054a180 (0054a180) at 0054a262 [UNCONDITIONAL_CALL]
 //   core_platfrm.cpp_FUN_0054cc30 (0054cc30) at 0054d0c2 [UNCONDITIONAL_CALL]

@@ -26,7 +26,7 @@
 //   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
 //   core_setcolid.cpp_CDemonSet_raycast_FUN_00572530
 //   core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00574270
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 //   crt_math.c_acos_FUN_00600162
 
@@ -38,6 +38,7 @@ void core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
 
 {
   float fVar1;
+  int bone_index;
   BADSPACEBASE *in_ESP;
   double dVar2;
   CDemonActor *in_stack_00000004;
@@ -48,9 +49,7 @@ void core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
   CVector3f CStack_90;
   CVector3f CStack_84;
   CVector3f CStack_78;
-  float fStack_6c;
-  float fStack_68;
-  float fStack_64;
+  CVector3f CStack_6c;
   CVector3f CStack_60;
   CVector3f CStack_54;
   float fStack_48;
@@ -72,6 +71,7 @@ void core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
     core_main_c_displayErrorAndQuit_FUN_00506f10("CStranger::aimLeftPistol - no weapon?");
   }
   (**(code **)(*(int *)((int)in_stack_00000004[0x17a].orient_matrix.m[0].x + 0x154) + 0xf4))();
+  bone_index = DAT_03f6bad8;
   fStack_24 = -1.3089969;
   fStack_2c = 0.5235988;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -107,13 +107,13 @@ void core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
     CStack_90.y = CStack_b4.y;
     CStack_90.z = CStack_b4.z;
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20
-            ((CDeformableModelInstance *)(in_stack_00000004 + 1));
+  core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+            ((CDeformableModelInstance *)(in_stack_00000004 + 1),&CStack_6c,bone_index);
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(in_stack_00000004,&CStack_60,&CStack_90)
   ;
-  CStack_78.x = CStack_60.x - fStack_6c;
-  CStack_78.y = CStack_60.y - fStack_68;
-  CStack_78.z = CStack_60.z - fStack_64;
+  CStack_78.x = CStack_60.x - CStack_6c.x;
+  CStack_78.y = CStack_60.y - CStack_6c.y;
+  CStack_78.z = CStack_60.z - CStack_6c.z;
   core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_54,&CStack_78);
   fVar1 = SQRT(CStack_78.z * CStack_78.z + CStack_78.x * CStack_78.x + CStack_78.y * CStack_78.y);
   if ((float)DOUBLE_00653d14 < fVar1) {
@@ -344,7 +344,7 @@ void core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
 // 005c4576: PUSH EAX
 // 005c4577: LEA EAX,[EBX + 0x158]
 // 005c457d: PUSH EAX
-// 005c457e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+// 005c457e: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   XREF to: 0059fa20 (UNCONDITIONAL_CALL)
 // 005c4583: ADD ESP,0xc
 // 005c4586: LEA EAX,[ESP + 0x58]

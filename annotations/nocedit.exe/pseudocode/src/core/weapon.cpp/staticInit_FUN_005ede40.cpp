@@ -19,7 +19,7 @@ CDemonActorType * __cdecl core_weapon_cpp_staticInit_FUN_005ede40(void)
   CDemonActorType *pCVar1;
   
   pCVar1 = core_actor_cpp_registerActorClass_FUN_0040c2e0
-                     (&g_CWeaponClassInfo,"CWeapon",(CDemonActorFactoryFunction *)0x0,
+                     (&g_CWeaponClassInfo,"CWeapon",(CDemonActor_FactoryFunc *)0x0,
                       &g_CWeaponClassVersion,7,&g_CDemonActorClassInfo);
   return pCVar1;
 }

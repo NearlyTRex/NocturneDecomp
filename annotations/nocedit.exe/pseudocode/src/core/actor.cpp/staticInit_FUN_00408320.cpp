@@ -16,7 +16,7 @@ void __cdecl core_actor_cpp_staticInit_FUN_00408320(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CDemonActorClassInfo,"CDemonActor",(CDemonActorFactoryFunction *)0x0,
+            (&g_CDemonActorClassInfo,"CDemonActor",(CDemonActor_FactoryFunc *)0x0,
              &g_CDemonActorClassVersion,7,(CDemonActorType *)0x0);
   return;
 }

@@ -41,9 +41,9 @@
 // Function calls:
 //   core_enemy.cpp_CEnemy_FUN_004a9650
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -64,7 +64,7 @@ void core_hotdemon_cpp_FUN_004f6d00(void)
   core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
   this_ptr = &(in_stack_00000004->base_character).model;
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr);
+  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   DAT_02db88c8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 Head");
   _DAT_02db88d4 =
@@ -147,7 +147,7 @@ void core_hotdemon_cpp_FUN_004f6d00(void)
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 004f6d41: ADD ESP,0x4
 // 004f6d44: PUSH ESI
-// 004f6d45: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 004f6d45: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 004f6d4a: ADD ESP,0x4
 // 004f6d4d: PUSH 0x1

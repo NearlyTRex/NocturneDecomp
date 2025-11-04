@@ -133,7 +133,7 @@
 //   core_moon.cpp_CMoon_FUN_00529ed0 (00529ed0) at 0052a0a4 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052b160 (0052b160) at 0052b1b0 [UNCONDITIONAL_CALL]
 //   core_motion.cpp_CMotionController_FUN_0052e3a0 (0052e3a0) at 0052e3ee [UNCONDITIONAL_CALL]
-//   core_motion.cpp_CMotionController_FUN_0052e4c0 (0052e4c0) at 0052e541 [UNCONDITIONAL_CALL]
+//   core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0 (0052e4c0) at 0052e541 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053d3b0 (0053d3b0) at 0053d476 [UNCONDITIONAL_CALL]
 //   core_netgame.cpp_FUN_00541390 (00541390) at 00541734 [UNCONDITIONAL_CALL]
 //   core_path.cpp_CPathMap_findPathToDestination_FUN_00547320 (00547320) at 00547602 [UNCONDITIONAL_CALL]

@@ -226,7 +226,7 @@
 //   core_inv.cpp_CInventory_findItemByName_FUN_004fe9d0
 //   core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700
 //   core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 //   core_sound.cpp_CSound_playSfx_FUN_005b3a20
 //   core_weather.cpp_CWeather_FUN_005ef8c0
@@ -275,12 +275,11 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
   undefined3 extraout_var_02;
   CDemonActor *pCVar16;
   CDemonActor *this_ptr_01;
-  CSkeleton *this_ptr_02;
-  CGasMask *this_ptr_03;
-  int iVar17;
+  CSkeleton *pCVar17;
+  CGasMask *this_ptr_02;
   int iVar18;
+  int iVar19;
   BADSPACEBASE *in_ESP;
-  CSkeleton *pCVar19;
   CSkeleton *pCVar20;
   byte *pbVar21;
   byte bVar22;
@@ -471,19 +470,19 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
     }
     if ((this_ptr->subtitle_system_enabled == 0) &&
        (iVar11 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x44), iVar11 != 0)) {
-      iVar17 = 0;
+      iVar18 = 0;
       iVar11 = 100;
       pbVar21 = abStack_358;
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Enter cheat code");
       iVar11 = shape_edittool_cpp_CEditorTools_showCheatInputDialog_FUN_004a0400
-                         (g_CEditorToolsPtr,pcVar12,(char *)pbVar21,iVar11,iVar17);
+                         (g_CEditorToolsPtr,pcVar12,(char *)pbVar21,iVar11,iVar18);
       if (iVar11 != 0) {
         iVar11 = 0;
         while (abStack_358[0] != 0) {
           wincore_winrun_cpp_enqueueInput_FUN_005f2f30((uint)abStack_358[iVar11]);
-          iVar17 = iVar11 + 1;
+          iVar18 = iVar11 + 1;
           iVar11 = iVar11 + 1;
-          abStack_358[0] = abStack_358[iVar17];
+          abStack_358[0] = abStack_358[iVar18];
         }
       }
     }
@@ -493,14 +492,14 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       if (CONCAT31(extraout_var,bVar10) == 0) break;
       uVar13 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
       iVar11 = (uVar13 & 0xff) << 8;
-      iVar17 = 0x13;
+      iVar18 = 0x13;
       do {
         iVar14 = iVar11;
-        iVar18 = iVar17 + -1;
-        g_InputHistory[iVar17 + 1] = g_InputHistory[iVar17];
-        iVar11 = CONCAT31((int3)((uint)iVar14 >> 8),g_InputHistory[iVar17]);
-        iVar17 = iVar18;
-      } while (0 < iVar18);
+        iVar19 = iVar18 + -1;
+        g_InputHistory[iVar18 + 1] = g_InputHistory[iVar18];
+        iVar11 = CONCAT31((int3)((uint)iVar14 >> 8),g_InputHistory[iVar18]);
+        iVar18 = iVar19;
+      } while (0 < iVar19);
       g_InputHistory[1] = (char)((uint)iVar14 >> 8);
       pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062ba32);
       uVar13 = 0xffffffff;
@@ -996,19 +995,19 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         bVar3 = *pbVar21;
         pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
-      iVar17 = ~uVar13 - 1;
-      iStack_240 = iVar17;
-      if (0 < iVar17) {
+      iVar18 = ~uVar13 - 1;
+      iStack_240 = iVar18;
+      if (0 < iVar18) {
         iStack_a0 = 0;
         do {
-          bVar3 = g_InputHistory[iVar17];
+          bVar3 = g_InputHistory[iVar18];
           uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (uVar13 == bVar3) {
             iVar11 = iVar11 + 1;
           }
-          iVar17 = iVar17 + -1;
+          iVar18 = iVar18 + -1;
           pbVar15 = pbVar15 + 1;
-        } while (iStack_a0 < iVar17);
+        } while (iStack_a0 < iVar18);
       }
       if (iVar11 == iStack_240) {
         g_InputHistory[1] = '\0';
@@ -1455,19 +1454,19 @@ LAB_004df408:
         iStack_6c = 0;
         for (iVar11 = 0; iVar11 < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c);
             iVar11 = iVar11 + 1) {
-          iVar17 = *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_6c + 8000);
+          iVar18 = *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_6c + 8000);
           pCVar6 = g_HeroActors[g_LocalHeroIndex];
           fStack_2b8 = (pCVar6->base_character).base_actor.location.position.x -
-                       *(float *)(iVar17 + 0x20);
+                       *(float *)(iVar18 + 0x20);
           local_2b4 = (pCVar6->base_character).base_actor.location.position.y -
-                      *(float *)(iVar17 + 0x24);
+                      *(float *)(iVar18 + 0x24);
           fStack_2b0 = (pCVar6->base_character).base_actor.location.position.z -
-                       *(float *)(iVar17 + 0x28);
+                       *(float *)(iVar18 + 0x28);
           if (SQRT(fStack_2b0 * fStack_2b0 + fStack_2b8 * fStack_2b8 + local_2b4 * local_2b4) <=
               (float)DOUBLE_0062c925) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_2f4);
             SStack_2f4.damage_amount = 100.0;
-            (**(code **)(*(int *)(iVar17 + 0x154) + 0x11c))();
+            (**(code **)(*(int *)(iVar18 + 0x154) + 0x11c))();
           }
           iStack_6c = iStack_6c + 4;
         }
@@ -1553,19 +1552,19 @@ LAB_004df408:
         bVar3 = *pbVar21;
         pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
       } while (bVar3 != 0);
-      iVar17 = ~uVar13 - 1;
-      iStack_188 = iVar17;
-      if (0 < iVar17) {
+      iVar18 = ~uVar13 - 1;
+      iStack_188 = iVar18;
+      if (0 < iVar18) {
         iStack_60 = 0;
         do {
-          bVar3 = g_InputHistory[iVar17];
+          bVar3 = g_InputHistory[iVar18];
           uVar13 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*pbVar15);
           if (uVar13 == bVar3) {
             iVar11 = iVar11 + 1;
           }
-          iVar17 = iVar17 + -1;
+          iVar18 = iVar18 + -1;
           pbVar15 = pbVar15 + 1;
-        } while (iStack_60 < iVar17);
+        } while (iStack_60 < iVar18);
       }
       if (iVar11 == iStack_188) {
         g_InputHistory[1] = '\0';
@@ -1891,57 +1890,59 @@ LAB_004df408:
                         (*(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_38 + -4) + 0x158);
           if (*(char *)(*(int *)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_38 + -4) + 0x23b8) !=
               '\0') {
-            core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(pCStack_138);
-            pCStack_134 = this_ptr_02;
+            pCVar17 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+                                (pCStack_138);
+            pCStack_134 = pCVar17;
             iVar11 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                               (this_ptr_02,"Bip01 head");
+                               (pCVar17,"Bip01 head");
             if (iVar11 != -1) {
               pCStack_130 = pCStack_138;
               fStack_12c = fStack_13c;
-              *(float *)(pCStack_138->field3_0x508 + iVar11 * 4 + 0xc) =
-                   *(float *)(pCStack_138->field3_0x508 + iVar11 * 4 + 0xc) * fStack_13c;
-              iVar17 = 0;
-              pCVar20 = this_ptr_02;
+              pCStack_138->rest_pose_data[iVar11 + 1] =
+                   pCStack_138->rest_pose_data[iVar11 + 1] * fStack_13c;
+              iVar18 = 0;
+              pCVar20 = pCVar17;
               iStack_128 = iVar11;
-              if (0 < this_ptr_02->bone_count) {
+              if (0 < pCVar17->bone_count) {
                 do {
                   if (iStack_128 == pCVar20->bone_list[0].parent_index) {
                     core_game_cpp_CGame_FUN_004dda80((CGame *)pCStack_130);
                   }
-                  iVar17 = iVar17 + 1;
+                  iVar18 = iVar18 + 1;
                   pCVar20 = (CSkeleton *)((pCVar20->motion_list).state_names[1] + 2);
-                } while (iVar17 < this_ptr_02->bone_count);
+                } while (iVar18 < pCVar17->bone_count);
               }
             }
             iVar11 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                                (pCStack_134,"bipltit02");
-            pCVar20 = pCStack_134;
+            pCVar17 = pCStack_134;
             if (iVar11 != -1) {
               pCStack_124 = pCStack_138;
               fStack_120 = fStack_13c;
-              *(float *)(pCStack_138->field3_0x508 + iVar11 * 4 + 0xc) =
-                   *(float *)(pCStack_138->field3_0x508 + iVar11 * 4 + 0xc) * fStack_13c;
-              iVar17 = 0;
-              pCVar19 = pCStack_134;
+              pCStack_138->rest_pose_data[iVar11 + 1] =
+                   pCStack_138->rest_pose_data[iVar11 + 1] * fStack_13c;
+              iVar18 = 0;
+              pCVar20 = pCStack_134;
               iStack_11c = iVar11;
               if (0 < pCStack_134->bone_count) {
                 do {
-                  if (iStack_11c == pCVar19->bone_list[0].parent_index) {
+                  if (iStack_11c == pCVar20->bone_list[0].parent_index) {
                     core_game_cpp_CGame_FUN_004dda80((CGame *)pCStack_124);
                   }
-                  iVar17 = iVar17 + 1;
-                  pCVar19 = (CSkeleton *)((pCVar19->motion_list).state_names[1] + 2);
-                } while (iVar17 < pCVar20->bone_count);
+                  iVar18 = iVar18 + 1;
+                  pCVar20 = (CSkeleton *)((pCVar20->motion_list).state_names[1] + 2);
+                } while (iVar18 < pCVar17->bone_count);
               }
             }
             iVar11 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                                (pCStack_134,"biprtit02");
+            pCVar17 = pCStack_134;
             if (iVar11 != -1) {
               pCStack_118 = pCStack_138;
               fStack_114 = fStack_13c;
-              *(float *)(pCStack_138->field3_0x508 + iVar11 * 4 + 0xc) =
-                   *(float *)(pCStack_138->field3_0x508 + iVar11 * 4 + 0xc) * fStack_13c;
-              iVar17 = 0;
+              pCStack_138->rest_pose_data[iVar11 + 1] =
+                   pCStack_138->rest_pose_data[iVar11 + 1] * fStack_13c;
+              iVar18 = 0;
               pCVar20 = pCStack_134;
               iStack_110 = iVar11;
               if (0 < pCStack_134->bone_count) {
@@ -1949,9 +1950,9 @@ LAB_004df408:
                   if (iStack_110 == pCVar20->bone_list[0].parent_index) {
                     core_game_cpp_CGame_FUN_004dda80((CGame *)pCStack_118);
                   }
-                  iVar17 = iVar17 + 1;
+                  iVar18 = iVar18 + 1;
                   pCVar20 = (CSkeleton *)((pCVar20->motion_list).state_names[1] + 2);
-                } while (iVar17 < pCStack_134->bone_count);
+                } while (iVar18 < pCVar17->bone_count);
               }
             }
           }
@@ -2030,16 +2031,16 @@ LAB_004df408:
       }
       if (iStack_100 == iStack_104) {
         g_InputHistory[1] = '\0';
-        this_ptr_03 = (CGasMask *)
+        this_ptr_02 = (CGasMask *)
                       shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2d8,"..\\core\\game.cpp",0xbb0)
         ;
-        if (this_ptr_03 != (CGasMask *)0x0) {
-          this_ptr_03 = core_gasmask_cpp_CGasMask_ctor_FUN_004e5d00(this_ptr_03);
+        if (this_ptr_02 != (CGasMask *)0x0) {
+          this_ptr_02 = core_gasmask_cpp_CGasMask_ctor_FUN_004e5d00(this_ptr_02);
         }
         core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
-        (*((this_ptr_03->base_actor).vtable)->setup)(&this_ptr_03->base_actor);
+        (*((this_ptr_02->base_actor).vtable)->setup)(&this_ptr_02->base_actor);
         core_inv_cpp_CInventory_addItem_FUN_004fd600
-                  (&g_HeroActors[g_LocalHeroIndex]->inventory,&this_ptr_03->base_actor,1);
+                  (&g_HeroActors[g_LocalHeroIndex]->inventory,&this_ptr_02->base_actor,1);
         fVar23 = 5.0;
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             ("You've got a gasmask!");
@@ -6140,7 +6141,7 @@ LAB_004df408:
 //   XREF to: 004dfe81 (UNCONDITIONAL_JUMP)
 // 004dff7e: PUSH ECX
 //   Label: LAB_004dff7e
-// 004dff7f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 004dff7f: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 004dff84: ADD ESP,0x4
 // 004dff87: PUSH 0x0

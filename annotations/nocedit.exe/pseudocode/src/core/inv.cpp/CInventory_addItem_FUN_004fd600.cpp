@@ -55,7 +55,7 @@
 //   TerminatedCString s_Found_dynamite_Creating__00630764
 //   TerminatedCString s_Found_same_weapon_increa_0063078e
 //   TerminatedCString s_Converting_existing_ammo_006307b7
-//   undefined4 DAT_006307e2
+//   double DOUBLE_006307e2 = 0.0250000000000000
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   CGame* g_CGamePtr = 02d81a9c
 //   char* g_CurrentDebugFilename = 0067d200
@@ -101,8 +101,6 @@
 //   support_newmsg.cpp_getLocalizedString_FUN_005441f0
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl
 core_inv_cpp_CInventory_addItem_FUN_004fd600
@@ -1079,7 +1077,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
     } while (cVar1 != '\0');
     iVar10 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
                        (g_SmallEditorFont,this_ptr->message_text);
-    this_ptr->message_display_timer = (float)iVar10 * (float)_DAT_006307e2;
+    this_ptr->message_display_timer = (float)iVar10 * (float)DOUBLE_006307e2;
   }
   pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790(in_stack_0000003c,g_CAmmoClassInfo.name_hash)
   ;

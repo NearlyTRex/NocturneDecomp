@@ -60,7 +60,7 @@ void core_baron_cpp_FUN_00413470(void)
     }
     crt_memory_c_memset_FUN_005fde40((void *)(in_stack_00000004 + 0xbe2c),0,0x2c);
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              ((CMotionController *)(in_stack_00000004 + 0x158));
+              ((CMotionController *)(in_stack_00000004 + 0x158),6,1);
     *(undefined4 *)(in_stack_00000004 + 0x1fccc) = 1;
     *(undefined4 *)(in_stack_00000004 + 0x1fcd0) = 0;
     return;

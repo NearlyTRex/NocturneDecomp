@@ -70,10 +70,10 @@ int __cdecl core_motion_cpp_CMotionController_FUN_0052e020(CMotionController *th
       piVar6 = piVar6 + (uint)bVar8 * -2 + 1;
       piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
     }
-    iVar5 = this_ptr->field11_0x2c;
+    iVar5 = this_ptr->in_transition;
     if ((iVar5 != 0) && (*(int *)(iVar5 + 4) == 2)) {
       in_stack_00000014[2] = *(int *)(iVar5 + 8);
-      in_stack_00000014[3] = *(int *)(this_ptr->field11_0x2c + 0xc);
+      in_stack_00000014[3] = *(int *)(this_ptr->in_transition + 0xc);
     }
     fVar2 = (float)pSVar4->exit_forward_from_frame;
   }

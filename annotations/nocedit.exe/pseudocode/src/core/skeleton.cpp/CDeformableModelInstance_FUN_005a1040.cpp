@@ -36,12 +36,12 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a1040(CDeformableModelInstance
       (0 < (int)uVar1 && (piVar2[2] != 0)); piVar2 = piVar2 + -2) {
     uVar1 = uVar1 - 1;
   }
-  if (uVar1 != this_ptr->field6_0x2230) {
+  if (uVar1 != this_ptr->field13_0x2230) {
     core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(this_ptr);
   }
   core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
-            (this_ptr_00,this_ptr->field6_0x2230,in_stack_00000010,in_stack_0000000c,
-             this_ptr->field7_0x2234,this_ptr->texture_set_indices[in_stack_0000000c],unaff_EDI);
+            (this_ptr_00,this_ptr->field13_0x2230,in_stack_00000010,in_stack_0000000c,
+             this_ptr->field14_0x2234,this_ptr->texture_set_indices[in_stack_0000000c],unaff_EDI);
   this_ptr->part_visibility_flags[in_stack_0000000c] = 0;
   return;
 }

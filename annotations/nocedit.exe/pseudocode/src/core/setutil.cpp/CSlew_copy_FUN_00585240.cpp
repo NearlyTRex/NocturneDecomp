@@ -12,10 +12,10 @@ void __cdecl core_setutil_cpp_CSlew_copy_FUN_00585240(CSlew *this_ptr,CSlew *oth
   (this_ptr->position).x = (other->position).x;
   (this_ptr->position).y = (other->position).y;
   (this_ptr->position).z = (other->position).z;
-  (this_ptr->orientation).x = (other->orientation).x;
-  (this_ptr->orientation).y = (other->orientation).y;
-  (this_ptr->orientation).z = (other->orientation).z;
-  this_ptr->speed = other->speed;
+  this_ptr->pitch = other->pitch;
+  this_ptr->yaw = other->yaw;
+  this_ptr->roll = other->roll;
+  this_ptr->slew_rate = other->slew_rate;
   return;
 }
 

@@ -21,8 +21,8 @@
 //   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 
 #include "nocturne.h"
 
@@ -35,33 +35,35 @@ void core_svetlana_cpp_AttackWithParentBone_FUN_005d9a10(void)
 {
   CDemonActor *this_ptr;
   float fVar1;
-  int extraout_EAX;
-  CVector3f *pCVar2;
-  int iVar3;
-  float fVar4;
+  CSkeleton *pCVar2;
+  CVector3f *pCVar3;
+  int iVar4;
+  float fVar5;
   BADSPACEBASE *in_ESP;
-  int iVar5;
-  int iVar6;
+  int unaff_ESI;
+  CSkeleton *pCVar6;
+  int iVar7;
+  int iVar8;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
-  SDamageInfo SStack_6c;
+  undefined1 auStack_6c [68];
   CVector3f CStack_28;
   float local_14;
   
-  fVar4 = 0.0;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820
-            ((CDeformableModelInstance *)(in_stack_00000004 + 1));
+  fVar5 = 0.0;
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 1));
   local_14 = -NAN;
-  iVar5 = extraout_EAX;
+  pCVar6 = pCVar2;
   fVar1 = local_14;
-  if (0 < *(int *)(extraout_EAX + 0x28558)) {
+  if (0 < pCVar2->bone_count) {
     do {
-      fVar1 = fVar4;
-      if (in_stack_00000008 == *(int *)(iVar5 + 0x2857c)) break;
-      fVar4 = (float)((int)fVar4 + 1);
-      iVar5 = iVar5 + 0x24;
+      fVar1 = fVar5;
+      if (in_stack_00000008 == pCVar6->bone_list[0].parent_index) break;
+      fVar5 = (float)((int)fVar5 + 1);
+      pCVar6 = (CSkeleton *)((pCVar6->motion_list).state_names[1] + 2);
       fVar1 = local_14;
-    } while ((int)fVar4 < *(int *)(extraout_EAX + 0x28558));
+    } while ((int)fVar5 < pCVar2->bone_count);
   }
   local_14 = fVar1;
   if (local_14 == -NAN) {
@@ -69,36 +71,40 @@ void core_svetlana_cpp_AttackWithParentBone_FUN_005d9a10(void)
     g_CurrentLineNumber = 0x2f0;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find svetlana's parent bone");
   }
-  pCVar2 = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 1),&CStack_28,
+                      in_stack_00000008);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (in_stack_00000004,(CVector3f *)&stack0xffffffe8,pCVar2);
-  pCVar2 = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  iVar5 = 0;
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&CStack_28,pCVar2);
-  iVar6 = 0;
+            (in_stack_00000004,(CVector3f *)&stack0xffffffe8,pCVar3);
+  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 1),
+                      (CVector3f *)(auStack_6c + 0x34),unaff_ESI);
+  iVar7 = 0;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&CStack_28,pCVar3);
+  iVar8 = 0;
   do {
     while( true ) {
-      if (g_CDemonSetPtr->damage_listener_count <= iVar6) {
+      if (g_CDemonSetPtr->damage_listener_count <= iVar8) {
         (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"svetlana-miss?.wav");
         return;
       }
-      this_ptr = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar5 + -4);
+      this_ptr = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar7 + -4);
       if (this_ptr != in_stack_00000004) break;
 LAB_005d9adc:
-      iVar6 = iVar6 + 1;
-      iVar5 = iVar5 + 4;
+      iVar8 = iVar8 + 1;
+      iVar7 = iVar7 + 4;
     }
-    core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_6c);
-    SStack_6c.damage_flags = 0x41700000;
-    SStack_6c.field0_0x0 = 0;
-    SStack_6c.weapon_damage_modifier = 3;
-    SStack_6c.damage_type = 0x3f333333;
-    SStack_6c.attacker = (CDemonActor *)0x67;
-    iVar3 = (*this_ptr->vtable[1].playSoundWithVolume)
+    core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_6c);
+    auStack_6c._8_4_ = 0x41700000;
+    auStack_6c._0_4_ = 0;
+    auStack_6c._44_4_ = 3;
+    auStack_6c._48_4_ = 0x3f333333;
+    auStack_6c._52_4_ = (CDemonActor *)0x67;
+    iVar4 = (*this_ptr->vtable[1].playSoundWithVolume)
                       (this_ptr,&stack0xfffffff8,(float)&CStack_28.z);
-    if (iVar3 == 0) goto LAB_005d9adc;
-    iVar6 = iVar6 + 1;
-    iVar5 = iVar5 + 4;
+    if (iVar4 == 0) goto LAB_005d9adc;
+    iVar8 = iVar8 + 1;
+    iVar7 = iVar7 + 4;
   } while( true );
 }
 
@@ -117,7 +123,7 @@ LAB_005d9adc:
 // 005d9a25: LEA EAX,[EBP + 0x158]
 // 005d9a2b: PUSH EAX
 // 005d9a2c: XOR EBX,EBX
-// 005d9a2e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 005d9a2e: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005d9a33: MOV EDX,0xffffffff
 // 005d9a38: MOV ESI,EAX
@@ -150,7 +156,7 @@ LAB_005d9adc:
 // 005d9a75: PUSH EAX
 // 005d9a76: LEA EBX,[EBP + 0x158]
 // 005d9a7c: PUSH EBX
-// 005d9a7d: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 005d9a7d: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 005d9a82: ADD ESP,0xc
 // 005d9a85: PUSH EAX
@@ -168,7 +174,7 @@ LAB_005d9adc:
 //   XREF to: Stack[-0x48] (DATA)
 // 005d9a9d: PUSH EAX
 // 005d9a9e: PUSH EBX
-// 005d9a9f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 005d9a9f: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 005d9aa4: ADD ESP,0xc
 // 005d9aa7: PUSH EAX

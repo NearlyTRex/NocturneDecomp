@@ -266,6 +266,7 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   undefined4 *puVar17;
   byte bVar18;
   CEvent *in_stack_00000008;
+  undefined8 in_stack_ffffea40;
   float in_stack_ffffea50;
   CVector3f *in_stack_ffffea64;
   int in_stack_ffffea68;
@@ -1712,7 +1713,8 @@ LAB_004aaf38:
                                                   if (local_f0 != 0) {
                                                                                                         
                                                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                                                            ((CMotionController *)(pCVar6 + 1));
+                                                            ((CMotionController *)(pCVar6 + 1),iVar4
+                                                             ,1);
                                                   }
                                                   }
                                                 }
@@ -1969,8 +1971,10 @@ LAB_004aaf38:
                                                     } while (0 < (int)SVar12);
                                                   }
                                                   (local_40d + 1)[SVar12] = '\0';
-                                                  while ((g_CharacterClassificationTable
-                                                          [(byte)(local_40d[1] + 1)] & 2U) != 0) {
+                                                  while (iVar4 = (int)((ulonglong)in_stack_ffffea40
+                                                                      >> 0x20),
+                                                        (g_CharacterClassificationTable
+                                                         [(byte)(local_40d[1] + 1)] & 2U) != 0) {
                                                     crt_string_c_memmove_FUN_005fe5e0
                                                               (local_40d + 1,local_40d + 2,SVar12);
                                                     SVar12 = SVar12 - 1;
@@ -1985,10 +1989,10 @@ LAB_004aaf38:
                                                     pCVar9 = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                                                             ((CMotionController *)pCVar6);
-                                                  iVar4 = 
+                                                  iVar5 = 
                                                   core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
                                                             (pCVar9);
-                                                  if (iVar4 < 0) {
+                                                  if (iVar5 < 0) {
                                                     crt_stdio_c_sprintf_FUN_005fdbd0
                                                               (&DAT_02d0a460,
                                                                "Model %s does not have motion %s");
@@ -1997,11 +2001,12 @@ LAB_004aaf38:
                                                   if (local_f0 != 0) {
                                                     core_motion_cpp_CMotionController_FUN_0052dde0
                                                               ((CMotionController *)pCVar6);
-                                                    core_motion_cpp_CMotionController_FUN_0052dab0
-                                                              ((CMotionController *)pCVar6);
-                                                                                                        
-                                                  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                                                    iVar5 = 
+                                                  core_motion_cpp_CMotionController_FUN_0052dab0
                                                             ((CMotionController *)pCVar6);
+                                                  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                                                            ((CMotionController *)pCVar6,
+                                                             *(int *)(iVar5 + 0x24),iVar4);
                                                   }
                                                   }
                                                   }

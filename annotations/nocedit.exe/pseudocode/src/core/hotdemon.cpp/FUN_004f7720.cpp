@@ -6,7 +6,7 @@
 // Globals:
 //   TerminatedCString s_hotdemon_die_wav_0062f4f5
 //   TerminatedCString s_hotdemon_hurt_wav_0062f506
-//   undefined4 DAT_0062f520
+//   double DOUBLE_0062f520 = 2
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CFireEffect g_CFireEffectInstance
 // Function calls:
@@ -20,7 +20,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_hotdemon.cpp_FUN_004f7720(undefined4 param_1, undefined4
    param_2) */
 
@@ -33,11 +32,12 @@ void core_hotdemon_cpp_FUN_004f7720(void)
   BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
+  float desired_state_index;
   
   sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
   if (*(int *)(in_stack_00000008 + 0x28) == 8) {
     iVar2 = 0;
-    *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)_DAT_0062f520;
+    *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)DOUBLE_0062f520;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               (in_stack_00000004,(CVector3f *)&stack0xffffffe0,
                (CVector3f *)(in_stack_00000008 + 0x1c));
@@ -55,7 +55,14 @@ void core_hotdemon_cpp_FUN_004f7720(void)
     iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0((CMotionController *)this_ptr);
     iVar2 = *(int *)(iVar2 + 0x24);
     if ((((iVar2 != 4) && (iVar2 != 5)) && (iVar2 != 10)) && (iVar2 != 0xb)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00((CMotionController *)this_ptr);
+      if (iVar2 < 6) {
+        desired_state_index = 5.60519e-45;
+      }
+      else {
+        desired_state_index = 1.4013e-44;
+      }
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                ((CMotionController *)this_ptr,(int)desired_state_index,1);
       sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
       iVar2 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"hotdemon-die.wav")
       ;
@@ -65,9 +72,15 @@ void core_hotdemon_cpp_FUN_004f7720(void)
     }
   }
   else {
-    core_motion_cpp_CMotionController_FUN_0052dab0((CMotionController *)this_ptr);
+    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0((CMotionController *)this_ptr);
+    if ((*(int *)(iVar2 + 0x24) < 6) || (*(int *)(iVar2 + 0x24) == 0xf)) {
+      iVar2 = 3;
+    }
+    else {
+      iVar2 = 9;
+    }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              ((CMotionController *)(in_stack_00000004 + 1));
+              ((CMotionController *)(in_stack_00000004 + 1),iVar2,1);
     iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
     if (iVar2 == 0) {
       iVar2 = (*in_stack_00000004->vtable->playSound)

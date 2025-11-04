@@ -15,7 +15,7 @@
 //   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
 //   core_platfrm.cpp_FUN_0054cab0
 //   core_platfrm.cpp_FUN_0054e480
-//   core_skeleton.cpp_FUN_005a20b0
+//   core_slew.cpp_CSlew_processInput_FUN_005a20b0
 //   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
 //   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
 //   core_xform.cpp_eulerToQuaternion_FUN_005f7b20
@@ -87,12 +87,14 @@ void core_platfrm_cpp_FUN_0054ea00(void)
   undefined1 auStack_150 [24];
   CMatrix3x4f aCStack_138 [2];
   undefined4 auStack_d8 [5];
-  undefined1 auStack_c4 [24];
-  CQuaternion4f CStack_ac;
-  float fStack_9c;
-  float fStack_98;
-  undefined1 auStack_94 [8];
-  float fStack_8c;
+  undefined1 auStack_c4 [12];
+  float fStack_b8;
+  float fStack_b4;
+  undefined1 auStack_b0 [8];
+  float fStack_a8;
+  float fStack_a4;
+  undefined1 auStack_a0 [16];
+  CQuaternion4f aCStack_90 [2];
   undefined4 uStack_70;
   float afStack_6c [4];
   undefined4 uStack_5c;
@@ -155,23 +157,24 @@ void core_platfrm_cpp_FUN_0054ea00(void)
         if ((int *)(auStack_c4 + 4) != &this_ptr[2].field7_0x6c) {
           auStack_c4._4_4_ = this_ptr[2].field7_0x6c;
           auStack_c4._8_4_ = this_ptr[2].was_created;
-          auStack_c4._12_4_ = this_ptr[2].create_prob;
+          fStack_b8 = this_ptr[2].create_prob;
         }
         pCVar3 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                            ((CVector3f *)&stack0x00000010,
                             (CQuaternion4f *)(this_ptr[2].create_event + 0xc));
-        if ((CVector3f *)(auStack_c4 + 0x14) != pCVar3) {
-          auStack_c4._20_4_ = pCVar3->x;
-          CStack_ac.w = pCVar3->y;
-          CStack_ac.x = pCVar3->z;
+        if ((CVector3f *)auStack_b0 != pCVar3) {
+          auStack_b0._0_4_ = pCVar3->x;
+          auStack_b0._4_4_ = pCVar3->y;
+          fStack_a8 = pCVar3->z;
         }
-        core_skeleton_cpp_FUN_005a20b0();
-        if (&this_ptr[2].field7_0x6c != (int *)(auStack_c4 + 0xc)) {
-          this_ptr[2].field7_0x6c = auStack_c4._12_4_;
-          this_ptr[2].was_created = auStack_c4._16_4_;
-          this_ptr[2].create_prob = (float)auStack_c4._20_4_;
+        core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)(auStack_c4 + 8));
+        if ((float *)&this_ptr[2].field7_0x6c != &fStack_b8) {
+          this_ptr[2].field7_0x6c = (int)fStack_b8;
+          this_ptr[2].was_created = (int)fStack_b4;
+          this_ptr[2].create_prob = (float)auStack_b0._0_4_;
         }
-        core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&CStack_ac,in_stack_fffffd5c);
+        core_xform_cpp_eulerToQuaternion_FUN_005f7b20
+                  ((CQuaternion4f *)(auStack_b0 + 4),in_stack_fffffd5c);
         pfVar5 = (float *)((int)this_ptr + (uint)bVar12 * -8 + 0x338);
         *(float *)(this_ptr[2].create_event + 0xc) = afStack_6c[0];
         pfVar8 = pfVar5 + (uint)bVar12 * -2 + 1;
@@ -181,26 +184,25 @@ void core_platfrm_cpp_FUN_0054ea00(void)
              (afStack_6c + (uint)bVar12 * -2 + (uint)bVar12 * -2 + 2)[(uint)bVar12 * -2 + 1];
         break;
       case 2:
-        if (&CStack_ac.y != (float *)this_ptr[2].create_event) {
-          CStack_ac.y = *(float *)this_ptr[2].create_event;
-          CStack_ac.z = *(float *)(this_ptr[2].create_event + 4);
-          fStack_9c = *(float *)(this_ptr[2].create_event + 8);
+        if (&fStack_a4 != (float *)this_ptr[2].create_event) {
+          fStack_a4 = *(float *)this_ptr[2].create_event;
+          auStack_a0._0_4_ = *(undefined4 *)(this_ptr[2].create_event + 4);
+          auStack_a0._4_4_ = *(undefined4 *)(this_ptr[2].create_event + 8);
         }
         pCVar3 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                            (aCStack_38,(CQuaternion4f *)(this_ptr[2].create_event + 0x1c));
-        if ((CVector3f *)auStack_94 != pCVar3) {
-          auStack_94._0_4_ = pCVar3->x;
-          auStack_94._4_4_ = pCVar3->y;
-          fStack_8c = pCVar3->z;
+        if ((CVector3f *)(auStack_a0 + 0xc) != pCVar3) {
+          auStack_a0._12_4_ = pCVar3->x;
+          aCStack_90[0].w = pCVar3->y;
+          aCStack_90[0].x = pCVar3->z;
         }
-        core_skeleton_cpp_FUN_005a20b0();
-        if ((float *)this_ptr[2].create_event != &fStack_9c) {
-          *(float *)this_ptr[2].create_event = fStack_9c;
-          *(float *)(this_ptr[2].create_event + 4) = fStack_98;
-          *(undefined4 *)(this_ptr[2].create_event + 8) = auStack_94._0_4_;
+        core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)auStack_a0);
+        if (this_ptr[2].create_event != auStack_a0 + 4) {
+          *(undefined4 *)this_ptr[2].create_event = auStack_a0._4_4_;
+          *(undefined4 *)(this_ptr[2].create_event + 4) = auStack_a0._8_4_;
+          *(undefined4 *)(this_ptr[2].create_event + 8) = auStack_a0._12_4_;
         }
-        core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-                  ((CQuaternion4f *)(auStack_94 + 4),in_stack_fffffd5c);
+        core_xform_cpp_eulerToQuaternion_FUN_005f7b20(aCStack_90,in_stack_fffffd5c);
         pfVar5 = (float *)((int)this_ptr + (uint)bVar12 * -8 + 0x348);
         *(undefined4 *)(this_ptr[2].create_event + 0x1c) = uStack_5c;
         pfVar8 = pfVar5 + (uint)bVar12 * -2 + 1;
@@ -620,7 +622,7 @@ void core_platfrm_cpp_FUN_0054ea00(void)
 // 0054ecae: LEA EAX,[ESP + 0x1ec]
 //   Label: LAB_0054ecae
 // 0054ecb5: PUSH EAX
-// 0054ecb6: CALL core_skeleton.cpp_FUN_005a20b0
+// 0054ecb6: CALL core_slew.cpp_CSlew_processInput_FUN_005a20b0
 //   XREF to: 005a20b0 (UNCONDITIONAL_CALL)
 // 0054ecbb: LEA EAX,[ESP + 0x1f0]
 // 0054ecc2: LEA EDX,[EBX + 0x31c]
@@ -683,7 +685,7 @@ void core_platfrm_cpp_FUN_0054ea00(void)
 // 0054ed88: LEA EAX,[ESP + 0x208]
 //   Label: LAB_0054ed88
 // 0054ed8f: PUSH EAX
-// 0054ed90: CALL core_skeleton.cpp_FUN_005a20b0
+// 0054ed90: CALL core_slew.cpp_CSlew_processInput_FUN_005a20b0
 //   XREF to: 005a20b0 (UNCONDITIONAL_CALL)
 // 0054ed95: LEA EAX,[ESP + 0x20c]
 // 0054ed9c: LEA EDX,[EBX + 0x328]

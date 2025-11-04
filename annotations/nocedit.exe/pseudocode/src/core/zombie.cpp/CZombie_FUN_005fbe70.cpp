@@ -8,7 +8,7 @@
 //   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   core_charactr.cpp_CCharacter_FUN_0042b0e0
 //   core_dlight.cpp_renderConeLightGeometry_FUN_004760d0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059f820
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 
@@ -23,6 +23,7 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fbe70(CZombie *this_ptr)
   undefined4 *puVar3;
   undefined4 *puVar4;
   byte bVar5;
+  CMatrix3x4f *in_stack_ffffff0c;
   CMatrix3x4f *matrix;
   undefined4 local_c4 [12];
   CVector3f local_94;
@@ -40,7 +41,9 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fbe70(CZombie *this_ptr)
   bVar5 = 0;
   if ((*(int *)(this_ptr->base_enemy).base_character.field13_0x2620 != 0) &&
      (this_ptr->is_miner_zombie != 0)) {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059f820();
+    core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
+              (&(this_ptr->base_enemy).base_character.model,*(int *)(this_ptr->field4_0xbf48 + 4),
+               in_stack_ffffff0c);
     matrix = (CMatrix3x4f *)&stack0xffffff0c;
     local_70.y = 0.5;
     local_70.z = 0.5;
@@ -108,7 +111,7 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fbe70(CZombie *this_ptr)
 //   XREF to: Stack[-0xc4] (DATA)
 // 005fbeb0: LEA EDI,[EBP + -0x66]
 //   XREF to: Stack[-0xf4] (DATA)
-// 005fbeb3: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059f820
+// 005fbeb3: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
 //   XREF to: 0059f820 (UNCONDITIONAL_CALL)
 // 005fbeb8: ADD ESP,0x8
 // 005fbebb: LEA EAX,[EBP + -0x66]

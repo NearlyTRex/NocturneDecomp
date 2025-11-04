@@ -181,8 +181,8 @@
 //   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
 //   core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0
 //   core_setedit.cpp_CDemonSet_FUN_00577af0
-//   core_skeleton.cpp_FUN_005a2060
-//   core_skeleton.cpp_FUN_005a20b0
+//   core_slew.cpp_CSlew_init_FUN_005a2060
+//   core_slew.cpp_CSlew_processInput_FUN_005a20b0
 //   crt_io.c_deleteFile_FUN_005ff9d0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   engine_2d.c_clearInputAndWait_FUN_00403260
@@ -240,12 +240,11 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
   CDemonMission *in_stack_00000004;
   int in_stack_00000008;
   char *pcVar14;
-  void *param5;
   CGame *in_stack_fffff64c;
-  CPickList *this_ptr_00;
+  void *param5;
   CKeys *d2;
   uint d3;
-  CKeys *in_stack_fffff664;
+  CKeys *in_stack_fffff668;
   uint d5;
   CKeys *d6;
   char local_4e0 [300];
@@ -254,12 +253,11 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
   float local_1e8 [10];
   CMatrix3x3f local_1c0;
   CMatrix3x3f local_198;
-  float local_170;
-  float local_16c;
-  float local_168;
-  CVector3f local_164;
+  undefined1 local_170 [16];
+  float local_160;
+  float local_15c;
   float local_158;
-  float local_10c;
+  int local_10c;
   float local_108;
   float local_104;
   float local_100;
@@ -289,7 +287,9 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
   float local_88;
   float local_84;
   float local_80;
-  CVector3f local_7c;
+  float local_7c;
+  float local_78;
+  float local_74;
   float local_68;
   int local_64;
   int local_60;
@@ -382,11 +382,11 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
   core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
   core_fire_cpp_CFireEffect_init_FUN_004c6c80(g_CFireEffectPtr);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff64c);
-  core_skeleton_cpp_FUN_005a2060();
-  local_7c.x = 0.0;
-  local_7c.y = 0.0;
+  core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_170);
+  local_7c = 0.0;
+  local_78 = 0.0;
   local_5c = g_CDemonCameraInstance.corona_blend_factor;
-  local_7c.z = 0.0;
+  local_74 = 0.0;
   local_18 = 10.0;
   local_48 = g_CDemonSetPtr->selected_camera_index;
   local_4c = in_stack_00000004->field2_0xc + 0x38;
@@ -417,14 +417,14 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
           core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
                     (g_CDemonSetPtr,*(CDemonActor **)(in_stack_00000004->field2_0xc + 0x1c),0);
         }
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_2b0,"Static cam: %s",0x3275924);
-        local_10c = (float)g_CDemonCameraInstance.base.position.x;
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_2b0,"Static cam: %s");
+        local_10c = g_CDemonCameraInstance.base.position.x;
         local_108 = (float)*local_54;
         local_104 = (float)*local_58;
-        if (&local_170 != &local_10c) {
-          local_170 = (float)g_CDemonCameraInstance.base.position.x;
-          local_16c = (float)*local_54;
-          local_168 = (float)*local_58;
+        if ((int *)local_170 != &local_10c) {
+          local_170._0_4_ = g_CDemonCameraInstance.base.position.x;
+          local_170._4_4_ = *local_54;
+          local_170._8_4_ = *local_58;
         }
         pCVar9 = &g_CDemonCameraInstance.base.rotation_matrix;
         pfVar3 = local_1e8;
@@ -441,33 +441,35 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
           pCVar11 = (CMatrix3x3f *)((int)pCVar11 + ((uint)bVar13 * -2 + 1) * 4);
         }
         pCVar5 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(&local_1c0,&local_dc);
-        if (&local_164 != pCVar5) {
-          local_164.x = pCVar5->x;
-          local_164.y = pCVar5->y;
-          local_164.z = pCVar5->z;
+        if ((CVector3f *)(local_170 + 0xc) != pCVar5) {
+          local_170._12_4_ = pCVar5->x;
+          local_160 = pCVar5->y;
+          local_15c = pCVar5->z;
         }
         local_158 = g_CDemonCameraInstance.base.projection_scale;
         break;
       case 1:
         crt_stdio_c_sprintf_FUN_005fdbd0(local_2b0,"Custom cam (camera fixed, slew the actor)");
         if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {
-          g_CDemonCameraInstance.base.position.x = (int)local_170;
-          g_CDemonCameraInstance.base.position.y = (int)local_16c;
-          g_CDemonCameraInstance.base.position.z = (int)local_168;
+          g_CDemonCameraInstance.base.position.x = local_170._0_4_;
+          g_CDemonCameraInstance.base.position.y = local_170._4_4_;
+          g_CDemonCameraInstance.base.position.z = local_170._8_4_;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                  ((CMatrix3x3f *)&g_CDemonCameraInstance.base.rotation_matrix,&local_164);
+                  ((CMatrix3x3f *)&g_CDemonCameraInstance.base.rotation_matrix,
+                   (CVector3f *)(local_170 + 0xc));
         g_CDemonCameraInstance.base.projection_scale = local_158;
         break;
       case 2:
         crt_stdio_c_sprintf_FUN_005fdbd0(local_2b0,"Slew cam (actor fixed, slew the camera)");
         if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {
-          g_CDemonCameraInstance.base.position.x = (int)local_170;
-          g_CDemonCameraInstance.base.position.y = (int)local_16c;
-          g_CDemonCameraInstance.base.position.z = (int)local_168;
+          g_CDemonCameraInstance.base.position.x = local_170._0_4_;
+          g_CDemonCameraInstance.base.position.y = local_170._4_4_;
+          g_CDemonCameraInstance.base.position.z = local_170._8_4_;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                  ((CMatrix3x3f *)&g_CDemonCameraInstance.base.rotation_matrix,&local_164);
+                  ((CMatrix3x3f *)&g_CDemonCameraInstance.base.rotation_matrix,
+                   (CVector3f *)(local_170 + 0xc));
         g_CDemonCameraInstance.base.projection_scale = local_158;
         break;
       case 3:
@@ -485,39 +487,40 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
           local_ac = *(float *)(iVar10 + 0x20) + local_100;
           local_a8 = *(float *)(iVar10 + 0x24) + local_fc;
           local_a4 = *(float *)(iVar10 + 0x28) + local_f8;
-          if (&local_170 != &local_ac) {
-            local_170 = local_ac;
-            local_16c = local_a8;
-            local_168 = local_a4;
+          if ((float *)local_170 != &local_ac) {
+            local_170._0_4_ = local_ac;
+            local_170._4_4_ = local_a8;
+            local_170._8_4_ = local_a4;
           }
           iVar10 = *(int *)(in_stack_00000004->field2_0xc + 0x1c);
-          if (&local_164 != (CVector3f *)(iVar10 + 0x30)) {
-            local_164.x = ((CVector3f *)(iVar10 + 0x30))->x;
-            local_164.y = *(float *)(iVar10 + 0x34);
-            local_164.z = *(float *)(iVar10 + 0x38);
+          if ((float *)(local_170 + 0xc) != (float *)(iVar10 + 0x30)) {
+            local_170._12_4_ = *(float *)(iVar10 + 0x30);
+            local_160 = *(float *)(iVar10 + 0x34);
+            local_15c = *(float *)(iVar10 + 0x38);
           }
           local_158 = 28.0;
         }
         if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {
-          g_CDemonCameraInstance.base.position.x = (int)local_170;
-          g_CDemonCameraInstance.base.position.y = (int)local_16c;
-          g_CDemonCameraInstance.base.position.z = (int)local_168;
+          g_CDemonCameraInstance.base.position.x = local_170._0_4_;
+          g_CDemonCameraInstance.base.position.y = local_170._4_4_;
+          g_CDemonCameraInstance.base.position.z = local_170._8_4_;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                  ((CMatrix3x3f *)&g_CDemonCameraInstance.base.rotation_matrix,&local_164);
+                  ((CMatrix3x3f *)&g_CDemonCameraInstance.base.rotation_matrix,
+                   (CVector3f *)(local_170 + 0xc));
         g_CDemonCameraInstance.base.projection_scale = local_158;
         break;
       case 4:
         crt_stdio_c_sprintf_FUN_005fdbd0(local_2b0,"Chase/spot cam");
         if (*(int *)(in_stack_00000004->field2_0xc + 0x1c) != 0) {
-          if (&local_164 != &local_7c) {
-            local_164.x = local_7c.x;
-            local_164.y = local_7c.y;
-            local_164.z = local_7c.z;
+          if ((float *)(local_170 + 0xc) != &local_7c) {
+            local_170._12_4_ = local_7c;
+            local_160 = local_78;
+            local_15c = local_74;
           }
-          local_164.y = local_164.y +
-                        *(float *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) + 0x34);
-          core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_198,&local_164);
+          local_160 = local_160 + *(float *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) + 0x34);
+          core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
+                    (&local_198,(CVector3f *)(local_170 + 0xc));
           local_94.z = -local_18;
           local_94.x = local_28;
           local_94.y = local_24;
@@ -539,20 +542,21 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
           local_80 = pCVar5->z + *(float *)(iVar10 + 0x28);
           local_b4 = local_84 + local_cc;
           local_b0 = local_80 + local_c8;
-          if (&local_170 != &local_b8) {
-            local_170 = local_b8;
-            local_16c = local_b4;
-            local_168 = local_b0;
+          if ((float *)local_170 != &local_b8) {
+            local_170._0_4_ = local_b8;
+            local_170._4_4_ = local_b4;
+            local_170._8_4_ = local_b0;
           }
           local_158 = 28.0;
         }
         if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {
-          g_CDemonCameraInstance.base.position.x = (int)local_170;
-          g_CDemonCameraInstance.base.position.y = (int)local_16c;
-          g_CDemonCameraInstance.base.position.z = (int)local_168;
+          g_CDemonCameraInstance.base.position.x = local_170._0_4_;
+          g_CDemonCameraInstance.base.position.y = local_170._4_4_;
+          g_CDemonCameraInstance.base.position.z = local_170._8_4_;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                  ((CMatrix3x3f *)&g_CDemonCameraInstance.base.rotation_matrix,&local_164);
+                  ((CMatrix3x3f *)&g_CDemonCameraInstance.base.rotation_matrix,
+                   (CVector3f *)(local_170 + 0xc));
         g_CDemonCameraInstance.base.projection_scale = local_158;
         break;
       default:
@@ -760,19 +764,19 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
         local_20 = local_20 * local_2c;
         iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4a);
         if (iVar10 != 0) {
-          local_7c.x = local_7c.x + local_34;
+          local_7c = local_7c + local_34;
         }
         iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4e);
         if (iVar10 != 0) {
-          local_7c.x = local_7c.x - local_34;
+          local_7c = local_7c - local_34;
         }
         iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x52);
         if (iVar10 != 0) {
-          local_7c.y = local_7c.y + local_34;
+          local_78 = local_78 + local_34;
         }
         iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x53);
         if (iVar10 != 0) {
-          local_7c.y = local_7c.y - local_34;
+          local_78 = local_78 - local_34;
         }
         iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0xd);
         if (iVar10 != 0) {
@@ -809,24 +813,24 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
             local_18 = local_18 + local_1c;
           }
         }
-        if (local_7c.x < (float)_DAT_0063c5ac) {
-          local_7c.x = -1.5707964;
+        if (local_7c < (float)_DAT_0063c5ac) {
+          local_7c = -1.5707964;
         }
-        if ((float)_DAT_0063c594 < local_7c.x) {
-          local_7c.x = 1.5707964;
+        if ((float)_DAT_0063c594 < local_7c) {
+          local_7c = 1.5707964;
         }
-        if (local_7c.y < (float)_DAT_0063c5ac) {
-          local_7c.y = local_7c.y + _DAT_0063c5b4;
+        if (local_78 < (float)_DAT_0063c5ac) {
+          local_78 = local_78 + _DAT_0063c5b4;
         }
-        if ((float)_DAT_0063c594 < local_7c.y) {
-          local_7c.y = local_7c.y + _DAT_0063c5b8;
+        if ((float)_DAT_0063c594 < local_78) {
+          local_78 = local_78 + _DAT_0063c5b8;
         }
         if (local_18 < (float)_DAT_0063c5a4) {
           local_18 = 0.5;
         }
       }
       if (DAT_02f7c53c == 2) {
-        core_skeleton_cpp_FUN_005a20b0();
+        core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)local_170);
       }
       else if (*(int *)(in_stack_00000004->field2_0xc + 0x1c) != 0) {
         (**(code **)(*(int *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) + 0x154) + 0xd0))();
@@ -851,7 +855,7 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
       iVar10 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3c);
       if (iVar10 != 0) {
         iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
-        in_stack_fffff664 = (CKeys *)(g_WindowWidth + -1);
+        in_stack_fffff668 = (CKeys *)(g_WindowWidth + -1);
         if (iVar10 == 0) {
           core_script_cpp_CScript_unk50_FUN_00566660();
           DAT_02f7c634 = 1;
@@ -899,7 +903,7 @@ LAB_00539d68:
     iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
     if (iVar10 != 0) {
       d3 = 0x539d95;
-      in_stack_fffff664 = g_CKeysPtr;
+      in_stack_fffff668 = g_CKeysPtr;
       iVar10 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1f);
       if (iVar10 != 0) {
         engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -909,7 +913,7 @@ LAB_00539d68:
         }
         else {
           crt_stdio_c_sprintf_FUN_005fdbd0(local_3b4,"%s.msn");
-          in_stack_fffff664 = (CKeys *)0x53a627;
+          in_stack_fffff668 = (CKeys *)0x53a627;
           iVar10 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                              (g_CEditorToolsPtr,"Save mission to %s.msn");
           if (iVar10 != 0) {
@@ -1021,10 +1025,10 @@ LAB_00539e00:
       }
       iVar10 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x16);
       if (iVar10 != 0) {
-        this_ptr_00 = (CPickList *)g_CKeysPtr;
-        iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
-        if (iVar10 == 0) {
-          iVar10 = -1;
+        iVar10 = 0x53a824;
+        iVar6 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
+        if (iVar6 == 0) {
+          iVar6 = -1;
           while( true ) {
             shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff64c);
             for (pCVar4 = in_stack_00000004->first_actor; pCVar4 != (CDemonActor *)0x0;
@@ -1034,14 +1038,15 @@ LAB_00539e00:
                           ((CStrList *)&stack0xfffff64c,pCVar4->actor_name);
               }
             }
-            if ((int)this_ptr_00 < 1) break;
+            if (iVar10 < 1) break;
             shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)&stack0xfffff64c);
-            this_ptr_00 = (CPickList *)&stack0xfffff64c;
-            iVar10 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                               (this_ptr_00,"Select actor to unhide",iVar10,0);
-            if (iVar10 < 0) goto LAB_0053a88c;
-            shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                      ((CStrList *)&stack0xfffff64c,iVar10);
+            iVar10 = 0x53ac35;
+            iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                              ((CPickList *)&stack0xfffff64c,"Select actor to unhide",iVar6
+                               ,0);
+            if (iVar6 < 0) goto LAB_0053a88c;
+            shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xfffff64c,iVar6)
+            ;
             pcVar14 = core_mission_cpp_CDemonMission_FUN_00524030(in_stack_00000004);
             if (pcVar14 == (char *)0x0) {
               g_CurrentFilename = "..\\core\\msnedit.cpp";
@@ -1053,16 +1058,16 @@ LAB_00539e00:
             pcVar14[0x14a] = '\0';
             pcVar14[0x14b] = '\0';
             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                      ((CPickList *)&stack0xfffff64c,0,(uint)d2,d3,(uint)in_stack_fffff664,d5,
+                      ((CPickList *)&stack0xfffff64c,0,(uint)d2,d3,(uint)in_stack_fffff668,d5,
                        (uint)d6);
           }
-          if (iVar10 < 0) {
+          if (iVar6 < 0) {
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                       (g_CEditorToolsPtr,"No actors hidden.");
           }
 LAB_0053a88c:
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    ((CPickList *)&stack0xfffff64c,0,(uint)d2,d3,(uint)in_stack_fffff664,d5,(uint)d6
+                    ((CPickList *)&stack0xfffff64c,0,(uint)d2,d3,(uint)in_stack_fffff668,d5,(uint)d6
                     );
         }
         else {
@@ -1089,10 +1094,10 @@ LAB_0053a88c:
         }
         local_64 = 1;
       }
-      in_stack_fffff664 = g_CKeysPtr;
+      in_stack_fffff668 = g_CKeysPtr;
       iVar10 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x31);
       if (iVar10 != 0) {
-        in_stack_fffff664 = (CKeys *)0x53a909;
+        in_stack_fffff668 = (CKeys *)0x53a909;
         iVar10 = core_msnedit_cpp_FUN_0053c210();
         if (iVar10 != 0) {
           core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
@@ -1450,7 +1455,7 @@ LAB_0053ad72:
 //   XREF to: Stack[-0x170] (DATA)
 // 005392d8: PUSH EAX
 // 005392d9: MOV ESI,0x41200000
-// 005392de: CALL core_skeleton.cpp_FUN_005a2060
+// 005392de: CALL core_slew.cpp_CSlew_init_FUN_005a2060
 //   XREF to: 005a2060 (UNCONDITIONAL_CALL)
 // 005392e3: XOR EDX,EDX
 // 005392e5: MOV EAX,[0x03276acc]
@@ -2675,7 +2680,7 @@ LAB_0053ad72:
 // 00539c89: LEA EAX,[EBP + 0xffffff1e]
 //   XREF to: Stack[-0x170] (DATA)
 // 00539c8f: PUSH EAX
-// 00539c90: CALL core_skeleton.cpp_FUN_005a20b0
+// 00539c90: CALL core_slew.cpp_CSlew_processInput_FUN_005a20b0
 //   XREF to: 005a20b0 (UNCONDITIONAL_CALL)
 // 00539c95: ADD ESP,0x4
 //   Label: LAB_00539c95

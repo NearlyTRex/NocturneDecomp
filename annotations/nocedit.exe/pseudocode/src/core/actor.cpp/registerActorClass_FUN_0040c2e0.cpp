@@ -2,7 +2,7 @@
 // Address: 0040c2e0
 // Address Range: [[0040c2e0, 0040c3b3]]
 // Convention: __cdecl
-// Signature: CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040c2e0(CDemonActorType * this_ptr, char * class_name, CDemonActorFactoryFunction * factor_func, int * max_version, int version, CDemonActorType * parent_class_info)
+// Signature: CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040c2e0(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factor_func, int * max_version, int version, CDemonActorType * parent_class_info)
 // Cross-references:
 //   core_actor.cpp_staticInit_FUN_00408320 (00408320) at 00408335 [UNCONDITIONAL_CALL]
 //   core_ammo.cpp_staticInit_FUN_00410d50 (00410d50) at 00410d6b [UNCONDITIONAL_CALL]
@@ -127,7 +127,7 @@
 
 CDemonActorType * __cdecl
 core_actor_cpp_registerActorClass_FUN_0040c2e0
-          (CDemonActorType *this_ptr,char *class_name,CDemonActorFactoryFunction *factor_func,
+          (CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factor_func,
           int *max_version,int version,CDemonActorType *parent_class_info)
 
 {

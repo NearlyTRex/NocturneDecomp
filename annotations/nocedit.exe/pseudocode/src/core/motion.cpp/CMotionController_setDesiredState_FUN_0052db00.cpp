@@ -2,7 +2,7 @@
 // Address: 0052db00
 // Address Range: [[0052db00, 0052db87]]
 // Convention: __cdecl
-// Signature: void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr)
+// Signature: void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
 // Cross-references:
 //   core_baron.cpp_CBaron_process_FUN_00412e80 (00412e80) at 00412ebf [UNCONDITIONAL_CALL]
 //   core_baron.cpp_FUN_00413470 (00413470) at 0041355b [UNCONDITIONAL_CALL]
@@ -65,7 +65,7 @@
 //   core_mobster.cpp_FUN_00525840 (00525840) at 00525b77 [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_FUN_00526d90 (00526d90) at 0052705c [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_FUN_00527740 (00527740) at 005277e6 [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00528d20 (00528d20) at 00528f86 [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_process_FUN_00528d20 (00528d20) at 00528f86 [UNCONDITIONAL_CALL]
 //   core_motion.cpp_FUN_0052db90 (0052db90) at 0052dbb3 [UNCONDITIONAL_CALL]
 //   core_npc.cpp_CNPC_process_FUN_005448b0 (005448b0) at 00544b4b [UNCONDITIONAL_CALL]
 //   core_npc.cpp_FUN_00544c50 (00544c50) at 00544d11 [UNCONDITIONAL_CALL]
@@ -108,41 +108,41 @@
 //   int g_CurrentLineNumber
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_motion.cpp_CMotionController_FUN_0052d950
-//   core_motion.cpp_CMotionController_FUN_0052da50
+//   core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950
+//   core_motion.cpp_CMotionController_reverseTransition_FUN_0052da50
 
 #include "nocturne.h"
 
 void __cdecl
-core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController *this_ptr)
+core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+          (CMotionController *this_ptr,int desired_state_index,int force_immediate)
 
 {
-  int in_stack_00000008;
   int in_stack_00000010;
   
-  if (in_stack_00000008 < 0) {
+  if (desired_state_index < 0) {
     this_ptr->state_index = -1;
     return;
   }
-  if (this_ptr->motion_list_ptr->state_count <= in_stack_00000008) {
+  if (this_ptr->motion_list_ptr->state_count <= desired_state_index) {
     g_CurrentFilename = "..\\core\\motion.cpp";
     g_CurrentLineNumber = 0x274;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMotionController::setDesiredState - invalid state index");
   }
-  if (in_stack_00000008 != this_ptr->state_index) {
-    if (this_ptr->field11_0x2c != 0) {
+  if (desired_state_index != this_ptr->state_index) {
+    if (this_ptr->in_transition != 0) {
       if (this_ptr->tween_direction == 0) {
-        core_motion_cpp_CMotionController_FUN_0052da50(this_ptr);
+        core_motion_cpp_CMotionController_reverseTransition_FUN_0052da50(this_ptr);
       }
-      this_ptr->field11_0x2c = 0;
+      this_ptr->in_transition = 0;
     }
     this_ptr->tween_set_new_state = 0;
-    this_ptr->state_index = in_stack_00000008;
+    this_ptr->state_index = desired_state_index;
   }
   if (in_stack_00000010 == 0) {
     return;
   }
-  core_motion_cpp_CMotionController_FUN_0052d950(this_ptr);
+  core_motion_cpp_CMotionController_findAndStartTransition_FUN_0052d950(this_ptr);
   return;
 }
 
@@ -209,14 +209,14 @@ core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController
 //   XREF to: 0052db14 (UNCONDITIONAL_JUMP)
 // 0052db71: PUSH EBX
 //   Label: LAB_0052db71
-// 0052db72: CALL core_motion.cpp_CMotionController_FUN_0052da50
+// 0052db72: CALL core_motion.cpp_CMotionController_reverseTransition_FUN_0052da50
 //   XREF to: 0052da50 (UNCONDITIONAL_CALL)
 // 0052db77: ADD ESP,0x4
 // 0052db7a: JMP 0x0052db25
 //   XREF to: 0052db25 (UNCONDITIONAL_JUMP)
 // 0052db7c: PUSH EBX
 //   Label: LAB_0052db7c
-// 0052db7d: CALL core_motion.cpp_CMotionController_FUN_0052d950
+// 0052db7d: CALL core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950
 //   XREF to: 0052d950 (UNCONDITIONAL_CALL)
 // 0052db82: ADD ESP,0x4
 // 0052db85: POP ESI

@@ -97,7 +97,7 @@ undefined4 core_boneguy_cpp_FUN_0041cc40(void)
           (pCVar4->base_actor).create_event[0x2a] = '\0';
           (pCVar4->base_actor).create_event[0x2b] = '\0';
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(in_stack_00000004->model).motion_controller);
+                    (&(in_stack_00000004->model).motion_controller,1,1);
           return 0;
         }
         iVar8 = -1;
@@ -126,7 +126,7 @@ undefined4 core_boneguy_cpp_FUN_0041cc40(void)
                     (g_CConsolePtr,"%s beginning to pickup %s\n",in_stack_00000004,
                      *(undefined4 *)(in_stack_00000004[1].base_actor.create_event + 0x2c));
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(in_stack_00000004->model).motion_controller);
+                    (&(in_stack_00000004->model).motion_controller,7,1);
           return 1;
         }
         engine_console_cpp_CConsole_printf_FUN_00441890
@@ -143,7 +143,7 @@ undefined4 core_boneguy_cpp_FUN_0041cc40(void)
         (pCVar4->base_actor).create_event[0x2a] = -0x60;
         (pCVar4->base_actor).create_event[0x2b] = 'A';
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&(in_stack_00000004->model).motion_controller);
+                  (&(in_stack_00000004->model).motion_controller,1,1);
         return 0;
       }
       iVar8 = 0;

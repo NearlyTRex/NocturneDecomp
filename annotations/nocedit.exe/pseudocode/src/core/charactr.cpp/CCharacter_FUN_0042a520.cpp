@@ -42,7 +42,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a520(CCharacter *this_ptr)
   CVector3f local_5c;
   CVector3f local_4c;
   float local_40;
-  char *local_3c;
+  CMatrix3x4f *local_3c;
   char *local_38;
   char *local_34;
   int local_30;
@@ -87,7 +87,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a520(CCharacter *this_ptr)
       local_28 = local_14 + 1;
       iVar5 = 0;
       if (0 < local_28) {
-        local_3c = (this_ptr->model).field3_0x508 + 0x978;
+        local_3c = (this_ptr->model).bone_world_matrices;
         local_38 = this_ptr->cloth_data + 0x934;
         local_34 = this_ptr->cloth_data + 0x484;
         local_2c = &this_ptr->model;
@@ -108,11 +108,11 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a520(CCharacter *this_ptr)
           fVar2 = 1.0 / local_1c;
           local_4c.z = local_68 * fVar3 * fVar2;
           local_40 = fStack_64 * fVar3 * fVar2;
-          local_3c = (char *)(fStack_60 * fVar3 * fVar2);
+          local_3c = (CMatrix3x4f *)(fStack_60 * fVar3 * fVar2);
           if ((float *)(pcVar8 + 8) != &local_4c.z) {
             *(float *)(pcVar8 + 8) = local_4c.z;
             *(float *)(pcVar8 + 0xc) = local_40;
-            *(char **)(pcVar8 + 0x10) = local_3c;
+            *(CMatrix3x4f **)(pcVar8 + 0x10) = local_3c;
           }
           pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                              (&local_5c,(CVector3f *)(pcVar8 + 8),

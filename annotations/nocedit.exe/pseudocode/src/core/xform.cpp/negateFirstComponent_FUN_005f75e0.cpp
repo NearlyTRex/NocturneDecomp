@@ -4,9 +4,9 @@
 // Convention: __cdecl
 // Signature: void core_xform.cpp_negateFirstComponent_FUN_005f75e0(CQuaternion4f * output_vector, CQuaternion4f * input_vector)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e0a0 (0059e0a0) at 0059ea44 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50 (0059eb50) at 0059f175 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059f260 (0059f260) at 0059f65b [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (0059eb50) at 0059f175 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260 (0059f260) at 0059f65b [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (0059e0a0) at 0059ea44 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

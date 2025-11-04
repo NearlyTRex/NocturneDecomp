@@ -22,7 +22,7 @@ undefined4 core_gabriela_cpp_FUN_004d6050(void)
     return 0;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            ((CMotionController *)(in_stack_00000004 + 0x158));
+            ((CMotionController *)(in_stack_00000004 + 0x158),5,1);
   return 1;
 }
 

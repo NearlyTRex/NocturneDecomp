@@ -28,7 +28,7 @@
 //   core_larva.cpp_FUN_00503080 (00503080) at 005032b8 [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_FUN_0051fcc0 (0051fcc0) at 0052047a [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_FUN_00525840 (00525840) at 00525cc9 [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00528d20 (00528d20) at 0052921b [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_process_FUN_00528d20 (00528d20) at 0052921b [UNCONDITIONAL_CALL]
 //   core_npc.cpp_CNPC_process_FUN_005448b0 (005448b0) at 00544acc [UNCONDITIONAL_CALL]
 //   core_scat.cpp_FUN_005571f0 (005571f0) at 005578d1 [UNCONDITIONAL_CALL]
 //   core_sentinel.cpp_FUN_00568030 (00568030) at 0056820a [UNCONDITIONAL_CALL]
@@ -168,7 +168,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
          *(undefined4 *)(this_ptr->field2_0x240c + 0x20);
     return;
   }
-  if ((this_ptr->model).field11_0x2260[0] != '\0') {
+  if ((this_ptr->model).field18_0x2260[0] != '\0') {
     pcVar8 = (char *)core_motion_cpp_CMotionController_FUN_0052dab0
                                (&(this_ptr->model).motion_controller);
     uVar12 = 0xffffffff;
@@ -249,7 +249,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
     dVar7 = local_9c;
     local_28 = *(float *)(this_ptr->cloth_data + 0x358) * this_ptr->size_scale;
     if (local_28 < *(float *)(this_ptr->cloth_data + 0x354) * this_ptr->size_scale) {
-      local_28 = *(float *)((this_ptr->model).field8_0x2238 + 0x10);
+      local_28 = *(float *)((this_ptr->model).field15_0x2238 + 0x10);
     }
     fVar9 = *(float *)(this_ptr->cloth_data + 0x354) * this_ptr->size_scale;
     if (local_28 < fVar9) {

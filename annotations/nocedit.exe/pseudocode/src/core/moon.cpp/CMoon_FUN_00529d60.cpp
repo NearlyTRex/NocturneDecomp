@@ -10,13 +10,13 @@
 //   core_menu.cpp_ShowOptionsScreen_FUN_00512d30 (00512d30) at 00512d93 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 00513035 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00639f61
-//   undefined4 DAT_00639f69
-//   undefined4 DAT_00639f71
-//   undefined4 DAT_00639f79
-//   undefined4 DAT_00639f81
-//   undefined4 DAT_00639f89
-//   undefined4 DAT_00639f91
+//   double DOUBLE_00639f61 = 0.0125000000000000
+//   double DOUBLE_00639f69 = 0.580000000000000
+//   double DOUBLE_00639f71 = 12
+//   double DOUBLE_00639f79 = 60
+//   float FLOAT_00639f81 = -60
+//   double DOUBLE_00639f89 = 20
+//   double DOUBLE_00639f91 = 30
 //   undefined4 DAT_0067d7d0
 //   int g_GlobalDeltaTimeInt
 //   undefined4 DAT_02f381dc
@@ -46,15 +46,15 @@ void core_moon_cpp_CMoon_FUN_00529d60(void)
   int in_stack_00000004;
   float in_stack_00000008;
   
-  fVar2 = in_stack_00000008 * (float)_DAT_00639f61 + *(float *)(in_stack_00000004 + 4);
+  fVar2 = in_stack_00000008 * (float)DOUBLE_00639f61 + *(float *)(in_stack_00000004 + 4);
   *(float *)(in_stack_00000004 + 4) = fVar2;
-  if ((float)_DAT_00639f69 < fVar2) {
+  if ((float)DOUBLE_00639f69 < fVar2) {
     *(undefined4 *)(in_stack_00000004 + 4) = 0x3f147ae1;
     DAT_0067d7d0 = 1;
   }
-  _DAT_02f381e4 = in_stack_00000008 * (float)_DAT_00639f71 + _DAT_02f381e4;
-  if ((float)_DAT_00639f79 <= _DAT_02f381e4) {
-    _DAT_02f381e4 = _DAT_02f381e4 + _DAT_00639f81;
+  _DAT_02f381e4 = in_stack_00000008 * (float)DOUBLE_00639f71 + _DAT_02f381e4;
+  if ((float)DOUBLE_00639f79 <= _DAT_02f381e4) {
+    _DAT_02f381e4 = _DAT_02f381e4 + FLOAT_00639f81;
   }
   DAT_02f381dc = DAT_02f381dc + g_GlobalDeltaTimeInt * 0x20;
   DAT_02f381e0 = DAT_02f381e0 + g_GlobalDeltaTimeInt * 0x10;
@@ -63,14 +63,14 @@ void core_moon_cpp_CMoon_FUN_00529d60(void)
     do {
       iVar1 = *(int *)(DAT_02f3820c[0].field0_0x0 + iVar4);
       *(float *)(DAT_02f3820c[0].field0_0x0 + iVar4 + 4) =
-           in_stack_00000008 * (float)_DAT_00639f89 +
+           in_stack_00000008 * (float)DOUBLE_00639f89 +
            *(float *)(DAT_02f3820c[0].field0_0x0 + iVar4 + 4);
       if ((float)DAT_02f381e8[iVar1].len <= *(float *)(DAT_02f3820c[0].field0_0x0 + iVar4 + 4)) {
         *(float *)(DAT_02f3820c[0].field0_0x0 + iVar4 + 4) =
              *(float *)(DAT_02f3820c[0].field0_0x0 + iVar4 + 4) - (float)DAT_02f381e8[iVar1].len;
       }
       fVar2 = (float)DAT_02f384dc.frame_count;
-      fVar3 = in_stack_00000008 * (float)_DAT_00639f91 +
+      fVar3 = in_stack_00000008 * (float)DOUBLE_00639f91 +
               *(float *)(DAT_02f3820c[0].field0_0x0 + iVar4 + 8);
       *(float *)(DAT_02f3820c[0].field0_0x0 + iVar4 + 8) = fVar3;
       if (fVar2 <= fVar3) {

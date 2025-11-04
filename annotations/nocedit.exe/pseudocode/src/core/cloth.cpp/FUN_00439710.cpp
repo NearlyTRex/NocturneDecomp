@@ -19,10 +19,10 @@
 //   core_cloth.cpp_ConnectingVerticesCheck_FUN_004394e0
 //   core_cloth.cpp_OrientBoneCheck_FUN_0043a110
 //   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
+//   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 
 #include "nocturne.h"
@@ -34,7 +34,8 @@
 void core_cloth_cpp_FUN_00439710
                (undefined4 param_1,undefined4 param_2,int unaff_EBX,undefined4 param_4,int param_5,
                undefined4 *param_6,undefined4 *param_7,int param_8,CDeformableModelInstance *param_9
-               ,int param_10,CDeformableModelInstance *param_11,undefined4 param_12,int param_13)
+               ,int param_10,CDeformableModelInstance *param_11,undefined4 param_12,
+               CDeformableModelInstance *param_13)
 
 {
   float *pfVar1;
@@ -87,14 +88,14 @@ void core_cloth_cpp_FUN_00439710
   int *local_70;
   int local_6c;
   float *local_68;
-  char *local_60;
+  CMatrix3x4f *local_60;
   float local_5c;
   float *local_58;
   int local_54;
   int local_50;
   float local_4c;
   float *local_48;
-  int local_44;
+  CMatrix3x4f *local_44;
   float local_40;
   int local_3c;
   int local_38;
@@ -218,11 +219,11 @@ void core_cloth_cpp_FUN_00439710
         iVar12 = iVar12 + 0xc;
       } while (iVar7 < *(int *)(param_8 + 0x104));
     }
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059df80(param_11);
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40(param_11);
+    core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(param_11);
+    core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(param_11);
     local_18 = 0;
     if (0 < *(int *)(param_10 + 0x3f028)) {
-      local_60 = param_11->field3_0x508 + 0x978;
+      local_60 = param_11->bone_world_matrices;
       local_6c = param_10 + 0x56d8;
       local_34 = param_10;
       do {
@@ -242,9 +243,7 @@ void core_cloth_cpp_FUN_00439710
             for (iVar12 = 0; pfVar20 = pfVar20 + 1, iVar12 < (int)(uint)*(byte *)local_68;
                 iVar12 = iVar12 + 1) {
               pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                                 (&local_ac,pCVar25,
-                                  (CMatrix3x4f *)
-                                  (local_60 + (uint)*(byte *)((int)pfVar19 + 1) * 0x30));
+                                 (&local_ac,pCVar25,local_60 + *(byte *)((int)pfVar19 + 1));
               local_90 = pCVar9->x * *pfVar20;
               local_8c = pCVar9->y * *pfVar20;
               local_88 = pCVar9->z * *pfVar20;
@@ -305,7 +304,7 @@ void core_cloth_cpp_FUN_00439710
     }
     local_7c = (CDeformableModel *)0x0;
     if (0 < *(int *)(param_10 + 0x3f028)) {
-      local_44 = param_13 + 0xe80;
+      local_44 = param_13->bone_world_matrices;
       local_54 = param_10 + 0x56d8;
       local_24 = 0;
       local_20 = param_10;
@@ -329,9 +328,7 @@ void core_cloth_cpp_FUN_00439710
             for (iVar12 = 0; pfVar18 = pfVar18 + 1, iVar12 < (int)(uint)*(byte *)local_48;
                 iVar12 = iVar12 + 1) {
               pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                                 (&local_c4,pCVar25,
-                                  (CMatrix3x4f *)
-                                  ((uint)*(byte *)((int)pfVar20 + 1) * 0x30 + local_44));
+                                 (&local_c4,pCVar25,local_44 + *(byte *)((int)pfVar20 + 1));
               local_dc = pCVar9->z * *pfVar18;
               pfVar20 = (float *)((int)pfVar20 + 1);
               pCVar25 = pCVar25 + 1;
@@ -359,28 +356,20 @@ void core_cloth_cpp_FUN_00439710
         local_7c = (CDeformableModel *)((int)local_7c + 1);
       } while ((int)local_7c < *(int *)(param_10 + 0x3f028));
     }
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059e000();
+    core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(param_13);
   }
   iVar7 = 0;
   pCVar10 = param_11;
   if (0 < (int)param_11->transformed_vertices[0xe].y) {
     do {
-      pCVar10[2].field3_0x508[0xd40] = -1;
-      pCVar10[2].field3_0x508[0xd41] = -1;
-      pCVar10[2].field3_0x508[0xd42] = -1;
-      pCVar10[2].field3_0x508[0xd43] = -1;
+      pCVar10[2].bone_world_matrices[0x14].m[0].y = -NAN;
       iVar7 = iVar7 + 1;
       pCVar10 = (CDeformableModelInstance *)&pCVar10->transformed_vertices[0x10].y;
     } while (iVar7 < (int)param_11->transformed_vertices[0xe].y);
   }
-  param_11[0x1d].field3_0x508[0xb00] = '\0';
-  param_11[0x1d].field3_0x508[0xb01] = '\0';
-  param_11[0x1d].field3_0x508[0xb02] = '\0';
-  param_11[0x1d].field3_0x508[0xb03] = '\0';
-  *(undefined4 *)(param_11[0x1d].field3_0x508 + 0xafc) =
-       *(undefined4 *)(param_11[0x1d].field3_0x508 + 0xb00);
-  *(undefined4 *)(param_11[0x1d].field3_0x508 + 0xaf8) =
-       *(undefined4 *)(param_11[0x1d].field3_0x508 + 0xafc);
+  param_11[0x1d].bone_world_matrices[8].m[0].y = 0.0;
+  param_11[0x1d].bone_world_matrices[8].m[0].x = param_11[0x1d].bone_world_matrices[8].m[0].y;
+  param_11[0x1d].bone_world_matrices[8].m[0].w = param_11[0x1d].bone_world_matrices[8].m[0].x;
   return;
 }
 
@@ -723,11 +712,11 @@ void core_cloth_cpp_FUN_00439710
 //   Label: LAB_00439ae4
 //   XREF to: Stack[0x10] (READ)
 // 00439aeb: PUSH ESI
-// 00439aec: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059df80
+// 00439aec: CALL core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 //   XREF to: 0059df80 (UNCONDITIONAL_CALL)
 // 00439af1: ADD ESP,0x4
 // 00439af4: PUSH ESI
-// 00439af5: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+// 00439af5: CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
 // 00439afa: ADD ESP,0x4
 // 00439afd: MOV EAX,dword ptr [ESP + 0x100]
@@ -1190,7 +1179,7 @@ void core_cloth_cpp_FUN_00439710
 //   Label: LAB_00439fb5
 //   XREF to: Stack[0x10] (READ)
 // 00439fbc: PUSH EBP
-// 00439fbd: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
+// 00439fbd: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   XREF to: 0059e000 (UNCONDITIONAL_CALL)
 // 00439fc2: ADD ESP,0x4
 // 00439fc5: MOV EAX,dword ptr [ESP + 0x100]

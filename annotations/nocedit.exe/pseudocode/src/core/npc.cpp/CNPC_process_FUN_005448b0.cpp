@@ -33,8 +33,8 @@
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
 //   core_motion.cpp_FUN_0052db90
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+//   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 
 #include "nocturne.h"
@@ -57,6 +57,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr)
   float fStack0000000c;
   float fStack00000010;
   float fStack00000014;
+  undefined1 *puStack_2c;
   
   iVar7 = core_charactr_cpp_CCharacter_FUN_00429870(&this_ptr->base_character);
   if (iVar7 == 0) {
@@ -64,14 +65,14 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr)
   }
   core_charactr_cpp_CCharacter_FUN_0042ea40(&this_ptr->base_character);
   pCVar6 = &this_ptr->base_character;
-  (pCVar6->model).field10_0x2254[8] = '\0';
-  (pCVar6->model).field10_0x2254[9] = '\0';
-  (pCVar6->model).field10_0x2254[10] = '\0';
-  (pCVar6->model).field10_0x2254[0xb] = '\0';
-  *(undefined4 *)((this_ptr->base_character).model.field10_0x2254 + 4) =
-       *(undefined4 *)((this_ptr->base_character).model.field10_0x2254 + 8);
-  *(undefined4 *)(this_ptr->base_character).model.field10_0x2254 =
-       *(undefined4 *)((this_ptr->base_character).model.field10_0x2254 + 4);
+  (pCVar6->model).field17_0x2254[8] = '\0';
+  (pCVar6->model).field17_0x2254[9] = '\0';
+  (pCVar6->model).field17_0x2254[10] = '\0';
+  (pCVar6->model).field17_0x2254[0xb] = '\0';
+  *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 4) =
+       *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 8);
+  *(undefined4 *)(this_ptr->base_character).model.field17_0x2254 =
+       *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 4);
   pCVar1 = &(this_ptr->base_character).model;
   collision_info = in_stack_00000008;
   while (0.0 < (float)collision_info) {
@@ -84,7 +85,9 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr)
                     ((CDemonActor *)this_ptr,collision_info);
   if ((((1 < iVar7) && ((this_ptr->base_character).base_actor.was_created == 1)) &&
       (this_ptr->pool_me == 0)) && ((this_ptr->base_character).base_actor.field11_0xdc == 0)) {
-    input_local_point = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20(pCVar1);
+    input_local_point =
+         core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                   (pCVar1,(CVector3f *)&puStack_2c,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,(CVector3f *)&stack0xfffffff0,input_local_point);
     core_gore_cpp_FUN_004ede30();
@@ -93,7 +96,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr)
   fVar5 = (float)DOUBLE_0063e364;
   fVar4 = (float)DOUBLE_0063e36c;
   *(undefined4 *)((this_ptr->base_character).field2_0x240c + 0x28) =
-       *(undefined4 *)((this_ptr->base_character).model.field10_0x2254 + 8);
+       *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 8);
   *(float *)((this_ptr->base_character).field2_0x240c + 0x2c) =
        (float)in_stack_00000008 * fVar5 * fVar4;
   iVar7 = core_charactr_cpp_CCharacter_FUN_0042ca70(&this_ptr->base_character);
@@ -110,7 +113,8 @@ LAB_005449e5:
                               (&pCVar1->motion_controller);
       iVar7 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
       if (iVar7 < 0) goto LAB_005449e5;
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->motion_controller);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                (&pCVar1->motion_controller,iVar7,1);
     }
     else {
       if (uVar3 != 3) goto LAB_005449e5;
@@ -120,14 +124,14 @@ LAB_005449e5:
     }
   }
   pCVar6 = &this_ptr->base_character;
-  (pCVar6->model).field10_0x2254[8] = '\0';
-  (pCVar6->model).field10_0x2254[9] = '\0';
-  (pCVar6->model).field10_0x2254[10] = '\0';
-  (pCVar6->model).field10_0x2254[0xb] = '\0';
-  *(undefined4 *)((this_ptr->base_character).model.field10_0x2254 + 4) =
-       *(undefined4 *)((this_ptr->base_character).model.field10_0x2254 + 8);
-  *(undefined4 *)(this_ptr->base_character).model.field10_0x2254 =
-       *(undefined4 *)((this_ptr->base_character).model.field10_0x2254 + 4);
+  (pCVar6->model).field17_0x2254[8] = '\0';
+  (pCVar6->model).field17_0x2254[9] = '\0';
+  (pCVar6->model).field17_0x2254[10] = '\0';
+  (pCVar6->model).field17_0x2254[0xb] = '\0';
+  *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 4) =
+       *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 8);
+  *(undefined4 *)(this_ptr->base_character).model.field17_0x2254 =
+       *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 4);
 LAB_00544a0c:
   *(float *)((this_ptr->base_character).field2_0x240c + 0x20) =
        *(float *)((this_ptr->base_character).field2_0x240c + 0x20) -
@@ -150,17 +154,20 @@ LAB_00544a0c:
        *(undefined4 *)((this_ptr->base_character).field2_0x240c + 0x18);
   *(float *)pcVar2 = *(float *)((this_ptr->base_character).field2_0x240c + 0x14);
   pCVar6 = &this_ptr->base_character;
-  (pCVar6->model).field10_0x2254[8] = '\0';
-  (pCVar6->model).field10_0x2254[9] = '\0';
-  (pCVar6->model).field10_0x2254[10] = '\0';
-  (pCVar6->model).field10_0x2254[0xb] = '\0';
-  *(undefined4 *)((this_ptr->base_character).model.field10_0x2254 + 4) =
-       *(undefined4 *)((this_ptr->base_character).model.field10_0x2254 + 8);
-  *(undefined4 *)(this_ptr->base_character).model.field10_0x2254 =
-       *(undefined4 *)((this_ptr->base_character).model.field10_0x2254 + 4);
+  (pCVar6->model).field17_0x2254[8] = '\0';
+  (pCVar6->model).field17_0x2254[9] = '\0';
+  (pCVar6->model).field17_0x2254[10] = '\0';
+  (pCVar6->model).field17_0x2254[0xb] = '\0';
+  *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 4) =
+       *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 8);
+  *(undefined4 *)(this_ptr->base_character).model.field17_0x2254 =
+       *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 4);
+  puStack_2c = &stack0xffffffdc;
   core_charactr_cpp_CCharacter_FUN_00428f40(&this_ptr->base_character);
+  puStack_2c = (undefined1 *)0x544ada;
   core_charactr_cpp_CCharacter_FUN_00429820(&this_ptr->base_character);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020();
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
+            (&(this_ptr->base_character).model);
   core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(&this_ptr->base_character);
   return;
 }
@@ -255,7 +262,7 @@ LAB_00544a0c:
 // 0054495a: LEA EAX,[ESP + 0x14]
 // 0054495e: PUSH EAX
 // 0054495f: PUSH ESI
-// 00544960: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+// 00544960: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   XREF to: 0059fa20 (UNCONDITIONAL_CALL)
 // 00544965: ADD ESP,0xc
 // 00544968: PUSH EAX
@@ -391,7 +398,7 @@ LAB_00544a0c:
 // 00544ada: ADD ESP,0x4
 // 00544add: LEA EAX,[EBX + 0x158]
 // 00544ae3: PUSH EAX
-// 00544ae4: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
+// 00544ae4: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 //   XREF to: 0059e020 (UNCONDITIONAL_CALL)
 // 00544ae9: ADD ESP,0x4
 // 00544aec: PUSH dword ptr [EBP + 0x18]

@@ -23,7 +23,7 @@
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
+//   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 
 #include "nocturne.h"
 
@@ -33,15 +33,16 @@
 void core_hiram_cpp_FUN_004f4550(void)
 
 {
-  CCharacter *this_ptr;
+  CDeformableModelInstance *this_ptr;
+  CCharacter *this_ptr_00;
   int iVar1;
   CDemonActor *actor_ptr;
-  CGlass *this_ptr_00;
+  CGlass *this_ptr_01;
   uint unaff_ESI;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
   
-  this_ptr = in_stack_00000004;
+  this_ptr_00 = in_stack_00000004;
   iVar1 = core_charactr_cpp_CCharacter_FUN_00429870(in_stack_00000004);
   if (iVar1 == 0) {
     return;
@@ -53,42 +54,41 @@ void core_hiram_cpp_FUN_004f4550(void)
                       (g_CEventListPtr,in_stack_00000004[2].cloth_data + 0x5028);
     if (iVar1 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(in_stack_00000004->model).motion_controller);
+                (&(in_stack_00000004->model).motion_controller,1,1);
       actor_ptr = (CDemonActor *)core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
-      this_ptr_00 = (CGlass *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,unaff_ESI);
-      if (this_ptr_00 != (CGlass *)0x0) {
+      this_ptr_01 = (CGlass *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,unaff_ESI);
+      if (this_ptr_01 != (CGlass *)0x0) {
         core_glass_cpp_CGlass_shatter_FUN_004eaef0
-                  (this_ptr_00,&(this_ptr_00->base).location.position);
+                  (this_ptr_01,&(this_ptr_01->base).location.position);
       }
     }
   }
   in_stack_00000004 = (CCharacter *)in_stack_00000008;
-  (this_ptr->model).field10_0x2254[8] = '\0';
-  (this_ptr->model).field10_0x2254[9] = '\0';
-  (this_ptr->model).field10_0x2254[10] = '\0';
-  (this_ptr->model).field10_0x2254[0xb] = '\0';
-  *(undefined4 *)((this_ptr->model).field10_0x2254 + 4) =
-       *(undefined4 *)((this_ptr->model).field10_0x2254 + 8);
-  *(undefined4 *)(this_ptr->model).field10_0x2254 =
-       *(undefined4 *)((this_ptr->model).field10_0x2254 + 4);
-  while( true ) {
-    if ((float)in_stack_00000004 <= 0.0) break;
+  (this_ptr_00->model).field17_0x2254[8] = '\0';
+  (this_ptr_00->model).field17_0x2254[9] = '\0';
+  (this_ptr_00->model).field17_0x2254[10] = '\0';
+  (this_ptr_00->model).field17_0x2254[0xb] = '\0';
+  this_ptr = &this_ptr_00->model;
+  *(undefined4 *)((this_ptr_00->model).field17_0x2254 + 4) =
+       *(undefined4 *)((this_ptr_00->model).field17_0x2254 + 8);
+  *(undefined4 *)(this_ptr_00->model).field17_0x2254 =
+       *(undefined4 *)((this_ptr_00->model).field17_0x2254 + 4);
+  while (0.0 < (float)in_stack_00000004) {
     in_stack_00000004 =
          (CCharacter *)
-         core_motion_cpp_CMotionController_advance_FUN_0052d610
-                   (&(this_ptr->model).motion_controller);
+         core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr->motion_controller);
     if (in_stack_00000004 == (CCharacter *)0x29a) {
       in_stack_00000004 = (CCharacter *)0x1;
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(g_CDemonMissionPtr);
     }
     else {
-      core_charactr_cpp_CCharacter_FUN_0042ec40(this_ptr);
+      core_charactr_cpp_CCharacter_FUN_0042ec40(this_ptr_00);
     }
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020();
-  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base_actor);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059e020();
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(this_ptr);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr_00->base_actor);
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(this_ptr);
+  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(this_ptr_00);
   return;
 }
 
@@ -227,7 +227,7 @@ void core_hiram_cpp_FUN_004f4550(void)
 //   XREF to: 004f45b1 (UNCONDITIONAL_JUMP)
 // 004f4660: PUSH ESI
 //   Label: LAB_004f4660
-// 004f4661: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
+// 004f4661: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 //   XREF to: 0059e020 (UNCONDITIONAL_CALL)
 // 004f4666: ADD ESP,0x4
 // 004f4669: PUSH EBX
@@ -235,7 +235,7 @@ void core_hiram_cpp_FUN_004f4550(void)
 //   XREF to: 00408c10 (UNCONDITIONAL_CALL)
 // 004f466f: ADD ESP,0x4
 // 004f4672: PUSH ESI
-// 004f4673: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e020
+// 004f4673: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 //   XREF to: 0059e020 (UNCONDITIONAL_CALL)
 // 004f4678: ADD ESP,0x4
 // 004f467b: PUSH dword ptr [EBP + 0x18]

@@ -8,7 +8,7 @@
 //   TerminatedCString s_Bip01_R_Hand_00654bcb
 // Function calls:
 //   core_npc.cpp_CNPC_FUN_00544870
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -21,8 +21,8 @@ void __cdecl core_tbplayer_cpp_CBassPlayer_FUN_005da090(CBassPlayer *this_ptr)
   int iVar2;
   
   core_npc_cpp_CNPC_FUN_00544870(&this_ptr->base_npc);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820
-            (&(this_ptr->base_npc).base_character.model);
+  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+                          (&(this_ptr->base_npc).base_character.model);
   iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 L Hand");
   this_ptr->field1_0x1f708 = iVar2;
   iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 R Hand");
@@ -49,7 +49,7 @@ void __cdecl core_tbplayer_cpp_CBassPlayer_FUN_005da090(CBassPlayer *this_ptr)
 // 005da09c: ADD ESP,0x4
 // 005da09f: LEA EAX,[EBX + 0x158]
 // 005da0a5: PUSH EAX
-// 005da0a6: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 005da0a6: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005da0ab: ADD ESP,0x4
 // 005da0ae: PUSH 0x1

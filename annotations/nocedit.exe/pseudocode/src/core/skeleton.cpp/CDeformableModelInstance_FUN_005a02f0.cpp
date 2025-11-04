@@ -20,10 +20,10 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a02f0(CDeformableModelInstance
   int in_stack_00000008;
   int lod_index;
   
-  if (in_stack_00000008 != this_ptr->field6_0x2230) {
+  if (in_stack_00000008 != this_ptr->field13_0x2230) {
     core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(this_ptr);
   }
-  lod_index = this_ptr->field7_0x2234;
+  lod_index = this_ptr->field14_0x2234;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(this_ptr_00,lod_index);
   return;

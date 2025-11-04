@@ -38,7 +38,7 @@
 //   core_motion.cpp_CMotionController_FUN_0052dcf0
 //   core_motion.cpp_FUN_0052ddb0
 //   core_msnedit.cpp_FUN_00536cd0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
+//   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   crt_math.c_ceil_FUN_006001b2
 //   crt_math.c_floor_FUN_005feb90
 //   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -53,7 +53,7 @@
 void core_msnedit_cpp_FUN_00536e20(void)
 
 {
-  CMotionController *this_ptr;
+  CDeformableModelInstance *this_ptr;
   int iVar1;
   undefined4 extraout_EAX;
   undefined4 extraout_EDX;
@@ -68,16 +68,16 @@ void core_msnedit_cpp_FUN_00536e20(void)
   if ((((*(int *)(g_CDemonMissionPtr->field2_0xc + 0x1c) != 0) && (-1 < DAT_02f7c52c)) &&
       (DAT_02f7c52c < _DAT_02f7a028)) &&
      ((*(int *)(&DAT_02f7a02c + DAT_02f7c52c * 0xec) == 0xd &&
-      (this_ptr = *(CMotionController **)(&DAT_02f7a094 + DAT_02f7c52c * 0xec),
-      this_ptr != (CMotionController *)0x0)))) {
+      (this_ptr = *(CDeformableModelInstance **)(&DAT_02f7a094 + DAT_02f7c52c * 0xec),
+      this_ptr != (CDeformableModelInstance *)0x0)))) {
     iVar2 = *(int *)(g_CDemonMissionPtr->field2_0xc + 0x14) + -0x38;
     iVar1 = *(int *)(g_CDemonMissionPtr->field2_0xc + 0x14) + -1;
     if (((0 < g_MouseX) && ((g_MouseX < 0x9c && (iVar2 <= g_MouseY)))) && (g_MouseY <= iVar1)) {
       DAT_02f7c538 = 1;
     }
     engine_2d_c_fillRectWithBorder_FUN_00403200(1,iVar2,0x9b,iVar1,0,0xff);
-    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dcf0(this_ptr);
+    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
+    iVar2 = core_motion_cpp_CMotionController_FUN_0052dcf0(&this_ptr->motion_controller);
     crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff18,"?%s (%s)" + 1,iVar1,iVar2);
     iVar2 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar2 != 0) {
@@ -138,7 +138,7 @@ void core_msnedit_cpp_FUN_00536e20(void)
     }
     fStack_d4 = 7.663201e-39;
     core_motion_cpp_FUN_0052ddb0();
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059e000();
+    core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(this_ptr);
   }
   return;
 }
@@ -570,7 +570,7 @@ void core_msnedit_cpp_FUN_00536e20(void)
 //   XREF to: 0052ddb0 (UNCONDITIONAL_CALL)
 // 005371e3: ADD ESP,0xc
 // 005371e6: PUSH ESI
-// 005371e7: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059e000
+// 005371e7: CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   XREF to: 0059e000 (UNCONDITIONAL_CALL)
 // 005371ec: ADD ESP,0x4
 // 005371ef: MOV ESP,EBP

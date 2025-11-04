@@ -23,13 +23,13 @@ CMoloch * CMoloch::ctor(CMoloch * this_ptr);
 // Address: 00528bf0
 CMoloch * CMoloch::dtor(CMoloch * this_ptr, uint d1, uint d2, uint d3, uint d4);
 
-// Original: core_moloch.cpp_FUN_00528c70
+// Original: core_moloch.cpp_CMoloch_setup_FUN_00528c70
 // Address: 00528c70
-undefined FUN_00528c70();
+void CMoloch::setup(CMoloch * this_ptr);
 
-// Original: core_moloch.cpp_FUN_00528d20
+// Original: core_moloch.cpp_CMoloch_process_FUN_00528d20
 // Address: 00528d20
-undefined FUN_00528d20();
+void CMoloch::process(CMoloch * this_ptr);
 
 // Original: core_moloch.cpp_FUN_005293b0
 // Address: 005293b0

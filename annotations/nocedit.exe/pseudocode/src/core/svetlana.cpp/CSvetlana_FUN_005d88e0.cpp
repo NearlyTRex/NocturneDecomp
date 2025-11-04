@@ -56,9 +56,9 @@
 //   core_cloth.cpp_FUN_00439710
 //   core_hero.cpp_CHero_FUN_004f2540
 //   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -77,7 +77,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d88e0(CSvetlana *this_ptr)
             (&(this_ptr->base_hero).base_character.model);
   core_hero_cpp_CHero_FUN_004f2540(&this_ptr->base_hero);
   this_ptr_00 = &(this_ptr->base_hero).base_character.model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0820(this_ptr_00);
+  this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   DAT_03f6cb90 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bip01 head");
   _DAT_03f6cb94 =
@@ -171,7 +171,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d88e0(CSvetlana *this_ptr)
 // 005d8916: ADD ESP,0x4
 // 005d8919: LEA EDI,[ESI + 0x158]
 // 005d891f: PUSH EDI
-// 005d8920: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0820
+// 005d8920: CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   XREF to: 005a0820 (UNCONDITIONAL_CALL)
 // 005d8925: ADD ESP,0x4
 // 005d8928: PUSH 0x1

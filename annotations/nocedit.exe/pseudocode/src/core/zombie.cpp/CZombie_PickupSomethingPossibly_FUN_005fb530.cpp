@@ -324,9 +324,17 @@ LAB_005fbae6:
       return 1;
     }
   }
-  else if ((2 < uVar3) && (uVar3 != 3)) goto LAB_005fbae6;
+  else {
+    if (uVar3 < 3) {
+      iVar8 = 0xc;
+      goto LAB_005fba91;
+    }
+    if (uVar3 != 3) goto LAB_005fbae6;
+  }
+  iVar8 = 10;
+LAB_005fba91:
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(in_stack_00000004->model).motion_controller);
+            (&(in_stack_00000004->model).motion_controller,iVar8,1);
   return 1;
 }
 

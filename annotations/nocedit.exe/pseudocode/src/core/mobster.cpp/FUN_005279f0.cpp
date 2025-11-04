@@ -7,7 +7,7 @@
 //   core_mobster.cpp_FUN_00525840 (00525840) at 00525f8a [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_mobster_cheese_c_c_d_wav_006399fa
-//   undefined4 DAT_00639a16
+//   float FLOAT_00639a16 = 5
 //   CGame* g_CGamePtr = 02d81a9c
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CSound* g_CSoundPtr = 03f6af64
@@ -26,7 +26,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_mobster.cpp_FUN_005279f0(undefined4 param_1, undefined4
    param_2) */
 
@@ -69,7 +68,7 @@ void core_mobster_cpp_FUN_005279f0(void)
     } while (iVar6 < 3);
     if (0.0 < *(float *)(in_stack_00000004 + 0xbed4)) {
       *(float *)(in_stack_00000004 + 0xbed4) =
-           *(float *)(in_stack_00000004 + 0xbed4) + _DAT_00639a16;
+           *(float *)(in_stack_00000004 + 0xbed4) + FLOAT_00639a16;
       iVar5 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
       if (iVar5 == 0) {
         iVar6 = 0;

@@ -101,7 +101,7 @@ core_gabriela_cpp_FUN_004d5c60
               if (ABS((float)param_5) <= (float)DOUBLE_0062b01d) {
                 param_5[0x179].field19_0x114 = (int)fVar3;
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                          ((CMotionController *)(param_5 + 1));
+                          ((CMotionController *)(param_5 + 1),0x16,1);
                 param_5[0x8d].create_event[0x48] = '\0';
                 param_5[0x8d].create_event[0x49] = '\0';
                 param_5[0x8d].create_event[0x4a] = '\0';

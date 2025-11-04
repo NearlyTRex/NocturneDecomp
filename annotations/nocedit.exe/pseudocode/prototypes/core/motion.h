@@ -35,13 +35,13 @@ CMotionController * CMotionController::dtor(CMotionController * this_ptr, uint d
 // Address: 0052d610
 int CMotionController::advance(CMotionController * this_ptr);
 
-// Original: core_motion.cpp_CMotionController_FUN_0052d950
+// Original: core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950
 // Address: 0052d950
-int CMotionController(CMotionController * this_ptr);
+int CMotionController::findAndStartTransition(CMotionController * this_ptr);
 
-// Original: core_motion.cpp_CMotionController_FUN_0052da50
+// Original: core_motion.cpp_CMotionController_reverseTransition_FUN_0052da50
 // Address: 0052da50
-void CMotionController(CMotionController * this_ptr);
+void CMotionController::reverseTransition(CMotionController * this_ptr);
 
 // Original: core_motion.cpp_CMotionController_FUN_0052dab0
 // Address: 0052dab0
@@ -53,7 +53,7 @@ void CMotionController(CMotionController * this_ptr);
 
 // Original: core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 // Address: 0052db00
-void CMotionController::setDesiredState(CMotionController * this_ptr);
+void CMotionController::setDesiredState(CMotionController * this_ptr, int desired_state_index, int force_immediate);
 
 // Original: core_motion.cpp_FUN_0052db90
 // Address: 0052db90
@@ -115,9 +115,9 @@ undefined CMotionController();
 // Address: 0052e3a0
 undefined CMotionController();
 
-// Original: core_motion.cpp_CMotionController_FUN_0052e4c0
+// Original: core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
 // Address: 0052e4c0
-undefined CMotionController();
+void CMotionController::getFramesForInterpolation(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, int * out_frame2, float * out_blend_weight);
 
 // Original: core_motion.cpp_CMotionController_FUN_0052e570
 // Address: 0052e570

@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_imp.cpp_FUN_004fb110()
 // Globals:
-//   undefined4 s_Model_0062fa96
+//   TerminatedCString s_Model_0062fa96
 //   TerminatedCString s_State_0062fa9c
 // Function calls:
 //   core_actor.cpp_CActorPropertyList_FUN_0040e4a0

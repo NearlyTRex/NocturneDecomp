@@ -4,13 +4,13 @@
 // Convention: __cdecl
 // Signature: int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059e0a0 (0059e0a0) at 0059e682 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059eb50 (0059eb50) at 0059ef33 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059f260 (0059f260) at 0059f582 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059f6e0 (0059f6e0) at 0059f70e [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059f750 (0059f750) at 0059f7a8 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20 (0059ff20) at 0059ff92 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a00f0 (005a00f0) at 005a0116 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750 (0059f750) at 0059f7a8 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (0059eb50) at 0059ef33 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260 (0059f260) at 0059f582 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_0059f6e0 (0059f6e0) at 0059f70e [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (0059e0a0) at 0059e682 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

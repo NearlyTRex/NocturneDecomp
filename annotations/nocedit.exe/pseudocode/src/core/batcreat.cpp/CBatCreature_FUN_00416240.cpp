@@ -6,23 +6,26 @@
 // Globals:
 //   undefined4 DAT_0082274c
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 
 #include "nocturne.h"
 
 int __cdecl core_batcreat_cpp_CBatCreature_FUN_00416240(CBatCreature *this_ptr)
 
 {
-  undefined4 *puVar1;
-  undefined4 *in_stack_00000008;
+  CVector3f *pCVar1;
+  BADSPACEBASE *in_ESP;
+  CVector3f *in_stack_00000008;
+  CVector3f local_14;
   
-  puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  if (in_stack_00000008 == puVar1) {
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     (&(this_ptr->base_enemy).base_character.model,&local_14,DAT_0082274c);
+  if (in_stack_00000008 == pCVar1) {
     return 1;
   }
-  *in_stack_00000008 = *puVar1;
-  in_stack_00000008[1] = puVar1[1];
-  in_stack_00000008[2] = puVar1[2];
+  in_stack_00000008->x = pCVar1->x;
+  in_stack_00000008->y = pCVar1->y;
+  in_stack_00000008->z = pCVar1->z;
   return 1;
 }
 
@@ -45,7 +48,7 @@ int __cdecl core_batcreat_cpp_CBatCreature_FUN_00416240(CBatCreature *this_ptr)
 // 00416259: ADD EAX,0x158
 // 0041625e: PUSH EAX
 // 0041625f: MOV EBX,0x1
-// 00416264: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 00416264: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 00416269: ADD ESP,0xc
 // 0041626c: CMP ESI,EAX

@@ -40,7 +40,7 @@
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_motion.cpp_CMotionController_FUN_0052dd20
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 
@@ -77,9 +77,7 @@ undefined4 core_stranger_cpp_CStranger_FUN_005c1680(void)
   CVector3f aCStack_dc [2];
   float fStack_bc;
   CVector3f CStack_b8;
-  float fStack_ac;
-  float fStack_a8;
-  float fStack_a4;
+  CVector3f aCStack_ac [2];
   undefined1 auStack_8c [24];
   undefined1 auStack_74 [8];
   float fStack_6c;
@@ -244,7 +242,7 @@ LAB_005c17d2:
   switch(afStack_38[2]) {
   case 1.4013e-45:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              ((CMotionController *)(in_stack_00000004 + 1));
+              ((CMotionController *)(in_stack_00000004 + 1),0x1b,1);
     iVar5 = in_stack_00000004[0x179].scale.x;
     format = "Rummaging %s\n";
     break;
@@ -256,19 +254,22 @@ LAB_005c17d2:
       this_ptr = (CDeformableModelInstance *)(in_stack_00000004 + 1);
       if (*(float *)(in_stack_00000004[0x17a].create_event + 0x34) <= (float)DOUBLE_00653a94) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  ((CMotionController *)this_ptr);
+                  ((CMotionController *)this_ptr,0x13,1);
         iVar5 = in_stack_00000004[0x179].scale.x;
         format = "Picking up %s off ground\n";
       }
       else {
-        core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20(this_ptr);
-        core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20(this_ptr);
-        fStack_60 = CStack_b8.y - fStack_a8;
-        fStack_64 = CStack_b8.x - fStack_ac;
-        fStack_5c = CStack_b8.z - fStack_a4;
-        fStack_124 = fStack_ac - *(float *)(in_stack_00000004[0x17a].create_event + 0x30);
-        fStack_120 = fStack_a8 - *(float *)(in_stack_00000004[0x17a].create_event + 0x34);
-        auStack_11c._0_4_ = fStack_a4 - *(float *)(in_stack_00000004[0x17a].create_event + 0x38);
+        core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                  (this_ptr,&CStack_b8,DAT_03f6bb04);
+        core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                  (this_ptr,aCStack_ac,DAT_03f6badc);
+        fStack_60 = CStack_b8.y - aCStack_ac[0].y;
+        fStack_64 = CStack_b8.x - aCStack_ac[0].x;
+        fStack_5c = CStack_b8.z - aCStack_ac[0].z;
+        fStack_124 = aCStack_ac[0].x - *(float *)(in_stack_00000004[0x17a].create_event + 0x30);
+        fStack_120 = aCStack_ac[0].y - *(float *)(in_stack_00000004[0x17a].create_event + 0x34);
+        auStack_11c._0_4_ =
+             aCStack_ac[0].z - *(float *)(in_stack_00000004[0x17a].create_event + 0x38);
         if ((float)DOUBLE_00653a94 <
             ABS(SQRT(fStack_5c * fStack_5c + fStack_64 * fStack_64 + fStack_60 * fStack_60) -
                 SQRT((float)auStack_11c._0_4_ * (float)auStack_11c._0_4_ +
@@ -280,7 +281,7 @@ LAB_005c17d2:
           return 0;
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  ((CMotionController *)this_ptr);
+                  ((CMotionController *)this_ptr,0x15,1);
         iVar5 = in_stack_00000004[0x179].scale.x;
         format = "Picking up %s waist level\n";
       }
@@ -293,7 +294,7 @@ LAB_005c17d2:
       *(uint *)(in_stack_00000004[0x17a].create_event + 0x20) = (uint)(0.0 < pCVar7->z);
       if ((float)DOUBLE_00653a8c < fVar1) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  ((CMotionController *)(in_stack_00000004 + 1));
+                  ((CMotionController *)(in_stack_00000004 + 1),0x18,1);
         pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                            (in_stack_00000004,(CVector3f *)(auStack_11c + 4),
                             (CVector3f *)(in_stack_00000004[0x179].scale.x + 0x20));
@@ -307,7 +308,7 @@ LAB_005c17d2:
       }
       else {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  ((CMotionController *)(in_stack_00000004 + 1));
+                  ((CMotionController *)(in_stack_00000004 + 1),0x17,1);
         iVar5 = in_stack_00000004[0x179].scale.x;
         format = "Picking up heavy %s crate\n";
       }
@@ -855,7 +856,7 @@ LAB_005c1c40:
 // 005c1c8f: LEA EAX,[ESP + 0xbc]
 // 005c1c96: PUSH EAX
 // 005c1c97: PUSH EBX
-// 005c1c98: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+// 005c1c98: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   XREF to: 0059fa20 (UNCONDITIONAL_CALL)
 // 005c1c9d: ADD ESP,0xc
 // 005c1ca0: MOV EDX,dword ptr [0x03f6badc]
@@ -864,7 +865,7 @@ LAB_005c1c40:
 // 005c1ca7: LEA EAX,[ESP + 0xc8]
 // 005c1cae: PUSH EAX
 // 005c1caf: PUSH EBX
-// 005c1cb0: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+// 005c1cb0: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   XREF to: 0059fa20 (UNCONDITIONAL_CALL)
 // 005c1cb5: ADD ESP,0xc
 // 005c1cb8: FLD float ptr [ESP + 0xb8]

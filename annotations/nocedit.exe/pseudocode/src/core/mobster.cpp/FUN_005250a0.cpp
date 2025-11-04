@@ -4,12 +4,10 @@
 // Convention: unknown
 // Signature: undefined core_mobster.cpp_FUN_005250a0()
 // Globals:
-//   undefined4 DAT_00639696
-//   undefined4 DAT_0063969e
+//   float FLOAT_00639696 = 0.5
+//   double DOUBLE_0063969e = 0.400000000000000
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 float * core_mobster_cpp_FUN_005250a0(void)
 
@@ -24,10 +22,10 @@ float * core_mobster_cpp_FUN_005250a0(void)
   float fStack_20;
   
   (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x14))();
-  fVar1 = _DAT_00639696;
-  *in_stack_00000004 = (fStack_30 + fStack_24) * _DAT_00639696;
+  fVar1 = FLOAT_00639696;
+  *in_stack_00000004 = (fStack_30 + fStack_24) * FLOAT_00639696;
   in_stack_00000004[1] = fVar1 * (fStack_2c + fStack_20);
-  in_stack_00000004[2] = fStack_28 + (float)_DAT_0063969e;
+  in_stack_00000004[2] = fStack_28 + (float)DOUBLE_0063969e;
   return in_stack_00000004;
 }
 

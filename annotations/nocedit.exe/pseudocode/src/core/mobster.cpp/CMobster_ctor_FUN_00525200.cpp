@@ -8,10 +8,10 @@
 //   core_vehicle.cpp_CVehicle_process_FUN_005e7e80 (005e7e80) at 005e842d [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_mobster1_dfm_006396ca
-//   undefined1 DAT_006396d7
-//   undefined1 DAT_006396d8
-//   undefined1 DAT_006396d9
-//   undefined1 DAT_006396da
+//   TerminatedCString s_none_006396d7
+//   undefined4 DAT_006396d8
+//   undefined4 DAT_006396d9
+//   undefined4 DAT_006396da
 //   undefined4 DAT_00661780
 //   undefined4 DAT_00661784
 //   CDemonActor_vtable PTR_core_mobster.cpp_FUN_00525340_00661794
@@ -96,7 +96,7 @@ CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_00525200(CMobster *this_pt
   pCVar5->field3_0xbedc[5] = '\0';
   pCVar5->field3_0xbedc[6] = '\0';
   pCVar5->field3_0xbedc[7] = '\0';
-  pcVar7 = &DAT_006396d7;
+  pcVar7 = "none";
   pCVar5->side_of_car = 0;
   pCVar5->hold_pos_flag = 0;
   pcVar8 = pCVar5->field6_0xbeec;

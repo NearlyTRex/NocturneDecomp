@@ -28,7 +28,7 @@
 //   core_lightgun.cpp_FUN_00505b70 (00505b70) at 00505c42 [UNCONDITIONAL_CALL]
 //   core_lightgun.cpp_FUN_00505c70 (00505c70) at 00506248 [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_FUN_00525840 (00525840) at 00525c02 [UNCONDITIONAL_CALL]
-//   core_msnedit.cpp_IgnoreAndProcess_FUN_0053c8d0 (0053c8d0) at 0053c8e9 [UNCONDITIONAL_CALL]
+//   core_msnedit.cpp_CDemonMission_FUN_0053c8d0 (0053c8d0) at 0053c8e9 [UNCONDITIONAL_CALL]
 //   core_scat.cpp_FUN_00558cf0 (00558cf0) at 00558f35 [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a2800 (005a2800) at 005a3098 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c2850 (005c2850) at 005c2d2a [UNCONDITIONAL_CALL]

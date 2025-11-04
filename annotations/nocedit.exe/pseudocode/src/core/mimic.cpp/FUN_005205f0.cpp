@@ -96,9 +96,8 @@ int core_mimic_cpp_FUN_005205f0(void)
                     ((CMatrix3x4f *)&stack0xffffff3c,(CVector3f *)(local_4c + 0xc),local_34.m + 1);
           core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                     ((CMatrix3x4f *)&stack0xffffff3c,
-                     (CMatrix3x4f *)
-                     ((in_stack_00000004->model).field3_0x508 + DAT_02f33378 * 0x30 + 0x978),
-                     in_stack_ffffff40);
+                     (in_stack_00000004->model).bone_world_matrices + DAT_02f33378,in_stack_ffffff40
+                    );
           puVar2 = (undefined4 *)&stack0xffffff0c;
           puVar3 = (undefined4 *)&stack0xffffff6c;
           for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

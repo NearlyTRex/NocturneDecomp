@@ -13,7 +13,7 @@
 // Function calls:
 //   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 
 #include "nocturne.h"
 
@@ -29,10 +29,15 @@ void core_haystack_cpp_FUN_004f1ab0(void)
   int iVar1;
   int iVar2;
   CDemonActor *in_stack_00000004;
-  SDamageInfo SStack_5c;
+  int in_stack_00000008;
+  undefined1 auStack_5c [56];
+  CDemonActor *pCStack_24;
   CDemonActor *pCStack_20;
   
-  input_local_point = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+  input_local_point =
+       core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                 ((CDeformableModelInstance *)(in_stack_00000004 + 1),
+                  (CVector3f *)(auStack_5c + 0x34),in_stack_00000008);
   iVar2 = 0;
   iVar1 = 0;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -41,10 +46,10 @@ void core_haystack_cpp_FUN_004f1ab0(void)
     if (g_CDemonSetPtr->damage_listener_count <= iVar2) break;
     this_ptr = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar1 + -4);
     if (this_ptr != in_stack_00000004) {
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_5c);
-      SStack_5c.field0_0x0 = (int)&SStack_5c.damage_amount;
-      SStack_5c.damage_flags = 0x41200000;
-      SStack_5c.wielder = in_stack_00000004;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_5c);
+      auStack_5c._0_4_ = auStack_5c + 4;
+      auStack_5c._8_4_ = 0x41200000;
+      pCStack_24 = in_stack_00000004;
       pCStack_20 = in_stack_00000004;
       (*this_ptr->vtable[1].playAmbientSound)(this_ptr,&stack0xfffffff0);
     }
@@ -72,7 +77,7 @@ void core_haystack_cpp_FUN_004f1ab0(void)
 // 004f1ac4: PUSH EAX
 // 004f1ac5: LEA EAX,[EBP + 0x158]
 // 004f1acb: PUSH EAX
-// 004f1acc: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 004f1acc: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 004f1ad1: ADD ESP,0xc
 // 004f1ad4: PUSH EAX

@@ -46,7 +46,7 @@ CDemonActor * __cdecl core_actor_cpp_createActorByName_FUN_0040c430(char *class_
     g_CurrentLineNumber = 0xa3b;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create actor of unknown class type: %s",class_name);
   }
-  if (pCVar1->factory_func == (CDemonActorFactoryFunction *)0x0) {
+  if (pCVar1->factory_func == (CDemonActor_FactoryFunc *)0x0) {
     g_CurrentFilename = "..\\core\\actor.cpp";
     g_CurrentLineNumber = 0xa41;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create instance of abstract type %s",class_name);

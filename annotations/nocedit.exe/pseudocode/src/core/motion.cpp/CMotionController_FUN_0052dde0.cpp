@@ -9,8 +9,8 @@
 //   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 (0043c880) at 0043c913 [UNCONDITIONAL_CALL]
 //   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ad5c0 [UNCONDITIONAL_CALL]
 //   core_mission.cpp_CDemonMission_createOneHero_FUN_00524920 (00524920) at 00524a17 [UNCONDITIONAL_CALL]
-//   core_motion.cpp_CMotionController_FUN_0052d950 (0052d950) at 0052d9d5 [UNCONDITIONAL_CALL]
 //   core_motion.cpp_CMotionController_FUN_0052dbc0 (0052dbc0) at 0052dc51 [UNCONDITIONAL_CALL]
+//   core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950 (0052d950) at 0052d9d5 [UNCONDITIONAL_CALL]
 //   core_motion.cpp_FUN_0052ddb0 (0052ddb0) at 0052ddd1 [UNCONDITIONAL_CALL]
 //   core_passngr.cpp_FUN_00545d30 (00545d30) at 00545edb [UNCONDITIONAL_CALL]
 // Globals:
@@ -31,7 +31,7 @@ void __cdecl core_motion_cpp_CMotionController_FUN_0052dde0(CMotionController *t
     iVar1 = (*(code *)this_ptr->vtable->findPatchToFrame)();
     in_stack_0000000c = (float)iVar1;
   }
-  this_ptr->field11_0x2c = 0;
+  this_ptr->in_transition = 0;
   this_ptr->current_motion_index = in_stack_00000008;
   this_ptr->current_frame_number = in_stack_0000000c;
   core_motion_cpp_CMotionController_FUN_0052de40(this_ptr);

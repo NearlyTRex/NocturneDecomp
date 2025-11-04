@@ -64,8 +64,8 @@ void core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void)
       in_stack_00000004->hit_points = 0.0;
       iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
       if (*(int *)(iVar3 + 0x24) != 8) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller)
-        ;
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                  (&this_ptr->motion_controller,8,1);
         (*((in_stack_00000004->base_actor).vtable)->playSound)
                   (&in_stack_00000004->base_actor,"gargoyle-shatter.wav");
         core_charactr_cpp_CCharacter_FUN_0042b9e0(in_stack_00000004);

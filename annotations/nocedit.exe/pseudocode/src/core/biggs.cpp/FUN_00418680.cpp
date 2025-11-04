@@ -35,7 +35,7 @@ void core_biggs_cpp_FUN_00418680(void)
   core_morph_cpp_CMorph_getReady_FUN_0052b680
             ((CMorph *)
              (in_stack_00000004[1].base_character.model.motion_controller.current_motion_name + 4));
-  in_stack_00000004[1].base_character.model.motion_controller.field11_0x2c = 0;
+  in_stack_00000004[1].base_character.model.motion_controller.in_transition = 0;
   pCVar1 = &in_stack_00000004[1].base_character;
   (pCVar1->model).motion_controller.current_motion_name[0] = '\0';
   (pCVar1->model).motion_controller.current_motion_name[1] = '\0';

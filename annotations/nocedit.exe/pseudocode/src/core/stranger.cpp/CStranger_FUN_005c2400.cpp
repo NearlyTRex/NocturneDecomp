@@ -131,7 +131,7 @@ undefined4 core_stranger_cpp_CStranger_FUN_005c2400(void)
             engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Ladder dot : %f\n");
             in_stack_00000004[0x17a].orient.heading = (float)this_ptr;
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      ((CMotionController *)(in_stack_00000004 + 1));
+                      ((CMotionController *)(in_stack_00000004 + 1),0x2b,1);
             in_stack_00000004[0x8d].create_event[0x48] = '\0';
             in_stack_00000004[0x8d].create_event[0x49] = '\0';
             in_stack_00000004[0x8d].create_event[0x4a] = '\0';

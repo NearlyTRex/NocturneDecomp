@@ -23,30 +23,34 @@ void core_cow_cpp_FUN_00444b40(void)
 
 {
   float fVar1;
-  int iVar2;
-  undefined4 uVar3;
+  undefined4 uVar2;
   int in_stack_00000004;
   int in_stack_00000008;
+  int iVar3;
   
   core_cow_cpp_FUN_004448c0();
   fVar1 = *(float *)(in_stack_00000004 + 0x243c) - *(float *)(in_stack_00000008 + 4);
   *(float *)(in_stack_00000004 + 0x243c) = fVar1;
   if (fVar1 <= 0.0) {
     *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0
+    iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0
                       ((CMotionController *)(in_stack_00000004 + 0x158));
-    if ((*(int *)(iVar2 + 0x24) == 5) || (*(int *)(iVar2 + 0x24) == 4)) goto LAB_00444b80;
+    if ((*(int *)(iVar3 + 0x24) == 5) || (*(int *)(iVar3 + 0x24) == 4)) goto LAB_00444b80;
+    iVar3 = 4;
+  }
+  else {
+    iVar3 = 3;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            ((CMotionController *)(in_stack_00000004 + 0x158));
+            ((CMotionController *)(in_stack_00000004 + 0x158),iVar3,1);
 LAB_00444b80:
-  iVar2 = core_sound_cpp_FUN_005b3b80();
-  if (iVar2 == 0) {
-    uVar3 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
-    *(undefined4 *)(in_stack_00000004 + 0xbec4) = uVar3;
+  iVar3 = core_sound_cpp_FUN_005b3b80();
+  if (iVar3 != 0) {
     core_enemy_cpp_FUN_004a9f10();
     return;
   }
+  uVar2 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
+  *(undefined4 *)(in_stack_00000004 + 0xbec4) = uVar2;
   core_enemy_cpp_FUN_004a9f10();
   return;
 }

@@ -4,23 +4,27 @@
 // Convention: __cdecl
 // Signature: int core_werewolf.cpp_CWerewolf_FUN_005f1df0(CWerewolf * this_ptr)
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 
 #include "nocturne.h"
 
 int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1df0(CWerewolf *this_ptr)
 
 {
-  undefined4 *puVar1;
-  undefined4 *in_stack_00000008;
+  CVector3f *pCVar1;
+  BADSPACEBASE *in_ESP;
+  CVector3f *in_stack_00000008;
+  CVector3f local_10;
   
-  puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  if (in_stack_00000008 == puVar1) {
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     (&(this_ptr->base_enemy).base_character.model,&local_10,
+                      *(int *)this_ptr->field4_0xbec0);
+  if (in_stack_00000008 == pCVar1) {
     return 1;
   }
-  *in_stack_00000008 = *puVar1;
-  in_stack_00000008[1] = puVar1[1];
-  in_stack_00000008[2] = puVar1[2];
+  in_stack_00000008->x = pCVar1->x;
+  in_stack_00000008->y = pCVar1->y;
+  in_stack_00000008->z = pCVar1->z;
   return 1;
 }
 
@@ -40,7 +44,7 @@ int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1df0(CWerewolf *this_ptr)
 // 005f1e07: PUSH EAX
 // 005f1e08: LEA EAX,[EDX + 0x158]
 // 005f1e0e: PUSH EAX
-// 005f1e0f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 005f1e0f: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 005f1e14: ADD ESP,0xc
 // 005f1e17: CMP EBX,EAX

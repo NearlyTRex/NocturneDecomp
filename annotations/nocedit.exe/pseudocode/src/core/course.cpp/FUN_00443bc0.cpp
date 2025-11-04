@@ -7,9 +7,9 @@
 //   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 (00443040) at 00443332 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_t_7_3f_Pos_7_2f_7_2f_7_2_00619402
-//   undefined4 DAT_0061943b
-//   undefined4 DAT_00619443
-//   undefined4 DAT_0061944b
+//   float FLOAT_0061943b = -100
+//   double DOUBLE_00619443 = 20
+//   float FLOAT_0061944b = -1
 //   float FLOAT_0065c060 = 256
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CGame* g_CGamePtr = 02d81a9c
@@ -30,8 +30,8 @@
 //   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 //   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
 //   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
-//   core_skeleton.cpp_FUN_005a2060
-//   core_skeleton.cpp_FUN_005a20b0
+//   core_slew.cpp_CSlew_init_FUN_005a2060
+//   core_slew.cpp_CSlew_processInput_FUN_005a20b0
 //   crt_math.c_floor_FUN_005feb90
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   engine_2d.c_clearInputAndWait_FUN_00403260
@@ -49,8 +49,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_course_cpp_FUN_00443bc0(void)
 
 {
@@ -63,28 +61,28 @@ void core_course_cpp_FUN_00443bc0(void)
   BADSPACEBASE *in_ESP;
   SRenderVertex *pSVar3;
   SRenderVertex *pSVar4;
-  double *pdVar5;
-  int *piVar6;
-  byte bVar7;
-  float10 fVar8;
-  double dVar9;
+  int *piVar5;
+  byte bVar6;
+  float10 in_ST0;
+  double dVar7;
   CCourse *in_stack_00000004;
   CKeyFramedModel *in_stack_00000008;
-  SRenderVertex *in_stack_fffffe6c;
-  SRenderVertex *in_stack_fffffe70;
-  double dStack_164;
-  double dStack_15c;
-  double dStack_154;
-  undefined8 uStack_14c;
-  CGame *in_stack_fffffed0;
-  CVector3f local_cc;
-  CVector3i local_c0;
-  CVector3f local_b0 [2];
-  CVector3i local_98;
+  SRenderVertex *in_stack_fffffea8;
+  SRenderVertex *in_stack_fffffeac;
+  double dStack_134;
+  float fStack_130;
+  undefined1 *puStack_12c;
+  CGame *in_stack_fffffedc;
+  CVector3i local_cc;
+  float local_b0;
+  float fVar8;
+  float fVar9;
   float local_8c;
   float local_88;
   float local_84;
-  CVector3f local_80;
+  CSlew *in_stack_ffffff80;
+  float local_7c;
+  float local_78;
   CVector3i local_74;
   float local_68;
   float local_64;
@@ -104,25 +102,28 @@ void core_course_cpp_FUN_00443bc0(void)
   float local_18;
   int local_14;
   
-  bVar7 = 0;
+  bVar6 = 0;
   local_18 = 0.0;
   g_CDemonSetPtr->lighting_quality_mode = 1;
   local_28 = 0;
+  dStack_134 = (double)CONCAT44(fStack_130,(CSlew *)&local_cc);
   local_2c = 0;
   local_24 = 0;
-  fVar8 = (float10)core_skeleton_cpp_FUN_005a2060();
-  local_cc.z = local_cc.z + _DAT_0061943b;
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffed0);
+  core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&local_cc);
+  local_cc.z = (int)((float)local_cc.z + FLOAT_0061943b);
+  puStack_12c = (undefined1 *)0x443c10;
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffedc);
   while( true ) {
-    local_b0[0].x = 0.0;
-    local_b0[0].y = 0.0;
-    local_b0[0].z = 0.0;
+    local_b0 = 0.0;
+    fVar8 = 0.0;
+    fVar9 = 0.0;
     local_14 = in_stack_00000004->len;
     local_3c = (double)local_18;
     local_20 = (float)local_14;
     if (local_3c < 0.0) {
-      dVar9 = crt_math_c_floor_FUN_005feb90((double)fVar8);
-      fVar8 = (float10)dVar9;
+      puStack_12c = (undefined1 *)0x443e75;
+      dVar7 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
+      in_ST0 = (float10)dVar7;
       local_1c = (float)(double)CONCAT44(extraout_EDX_00,extraout_EAX_00) * local_20 +
                  (float)local_3c;
       if (local_1c < 0.0) {
@@ -130,51 +131,43 @@ void core_course_cpp_FUN_00443bc0(void)
       }
     }
     else {
-      dVar9 = crt_math_c_floor_FUN_005feb90((double)fVar8);
-      fVar8 = (float10)dVar9;
+      puStack_12c = (undefined1 *)0x443c56;
+      dVar7 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
+      in_ST0 = (float10)dVar7;
       local_1c = (float)local_3c - (float)(double)CONCAT44(extraout_EDX,extraout_EAX) * local_20;
     }
     uVar1 = local_24;
     local_18 = local_1c;
-    uStack_14c = (double)CONCAT44(0x443c8b,(undefined4)uStack_14c);
+    puStack_12c = &stack0xffffff80;
+    dStack_134 = (double)CONCAT44(local_1c,in_stack_00000004);
     core_course_cpp_CCourse_FUN_00442710(in_stack_00000004);
-    if (uVar1 != 0) {
-      if (&local_cc != &local_80) {
-        local_cc.x = local_80.x;
-        local_cc.y = local_80.y;
-        local_cc.z = local_80.z;
-      }
-      if (&local_c0 != &local_98) {
-        local_c0.x = local_98.x;
-        local_c0.y = local_98.y;
-        local_c0.z = local_98.z;
-      }
+    if ((uVar1 != 0) && (&local_cc != (CVector3i *)&stack0xffffff80)) {
+      local_cc.z = (int)local_78;
+      local_cc.x = (int)in_stack_ffffff80;
     }
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr);
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-              (g_CDemonRendererPtr,(CVector3i *)&local_cc);
+              (g_CDemonRendererPtr,&local_cc);
     if (local_2c == 0) {
-      local_50 = local_b0[0].x;
-      local_4c = local_b0[0].y;
-      local_48 = local_b0[0].z;
-      fVar8 = (float10)core_course_cpp_FUN_00443760();
+      local_50 = local_b0;
+      local_4c = fVar8;
+      local_48 = fVar9;
+      in_ST0 = (float10)core_course_cpp_FUN_00443760();
     }
     else {
       g_CDemonRaytraceInstance.rendering_mode = 1;
       core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,100.0,0);
     }
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr,local_b0);
+              (g_CDemonRendererPtr,(CVector3f *)&local_b0);
     local_14 = in_stack_00000004->len + -1;
-    uStack_14c = (double)CONCAT44(0x443d61,(undefined4)uStack_14c);
     core_course_cpp_CCourse_FUN_00442710(in_stack_00000004);
     g_ActiveRenderColor = 0xfa;
     local_34 = 0;
     while (local_34 < in_stack_00000004->len) {
       local_14 = local_34;
-      uStack_14c = (double)CONCAT44(0x443da7,(undefined4)uStack_14c);
       core_course_cpp_CCourse_FUN_00442710(in_stack_00000004);
       local_5c.x = (int)ROUND(local_8c * FLOAT_0065c060);
       local_5c.y = (int)ROUND(local_88 * FLOAT_0065c060);
@@ -188,19 +181,19 @@ void core_course_cpp_FUN_00443bc0(void)
                 (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_74);
       pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
       pSVar3 = pSVar4 + 1;
-      pdVar5 = &dStack_164;
+      piVar5 = (int *)&stack0xfffffed8;
       for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *(int *)pdVar5 = (pSVar3->projected_vertex).transformed_x;
-        pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar7 * -2 + 1) * 4);
-        pdVar5 = (double *)((int)pdVar5 + ((uint)bVar7 * -2 + 1) * 4);
+        *piVar5 = (pSVar3->projected_vertex).transformed_x;
+        pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);
+        piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
       }
-      piVar6 = (int *)&stack0xfffffe6c;
+      piVar5 = (int *)&stack0xfffffea8;
       for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *piVar6 = (pSVar4->projected_vertex).transformed_x;
-        pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);
-        piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
+        *piVar5 = (pSVar4->projected_vertex).transformed_x;
+        pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
+        piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
       }
-      engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe6c,in_stack_fffffe70);
+      engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffea8,in_stack_fffffeac);
       if (&local_8c == &local_68) {
         local_34 = local_34 + 1;
       }
@@ -213,20 +206,17 @@ void core_course_cpp_FUN_00443bc0(void)
     }
     if (local_24 == 0) {
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                (g_CDemonRendererPtr,&local_80);
+                (g_CDemonRendererPtr,(CVector3f *)&stack0xffffff80);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr,&local_98,(CVector3i *)0x0);
-      uStack_14c = (double)CONCAT44(0x443f1d,(undefined4)uStack_14c);
+                (g_CDemonRendererPtr,(CVector3i *)&stack0xffffff68,(CVector3i *)0x0);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                 (in_stack_00000008,(CKeyFramedModelInstance *)0x0,0,-1);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     }
-    uStack_14c = (double)(float)local_98.x;
-    dStack_154 = (double)local_80.z;
-    dStack_15c = (double)local_80.y;
-    dStack_164 = (double)local_80.x;
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffed0,"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f");
-    engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,0,0);
+    puStack_12c = SUB84((double)local_7c,0);
+    dStack_134 = (double)(float)in_stack_ffffff80;
+    crt_stdio_c_sprintf_FUN_005fdbd0((char *)&fStack_130,"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f");
+    engine_2d_c_drawText_FUN_00401fd0((char *)&fStack_130,0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     local_30 = g_CGamePtr->delta_time_float;
@@ -240,23 +230,27 @@ void core_course_cpp_FUN_00443bc0(void)
     if (iVar2 != 0) {
       local_24 = (uint)(local_24 == 0);
     }
+    local_cc.z = 0x444022;
     iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1f);
     if (iVar2 != 0) {
       local_2c = (uint)(local_2c == 0);
     }
+    local_b0 = 6.26787e-39;
     iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x34);
     if (iVar2 != 0) {
       local_18 = local_18 + 1.0;
     }
     iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x33);
     if (iVar2 != 0) {
-      local_18 = local_18 + _DAT_0061944b;
+      local_18 = local_18 + FLOAT_0061944b;
     }
     if (local_24 == 0) {
-      fVar8 = (float10)core_skeleton_cpp_FUN_005a20b0();
+      in_stack_ffffff80 = (CSlew *)&local_cc;
+      local_84 = 6.267998e-39;
+      core_slew_cpp_CSlew_processInput_FUN_005a20b0(in_stack_ffffff80);
     }
     if (local_28 == 0) {
-      local_18 = local_30 * (float)_DAT_00619443 + local_18;
+      local_18 = local_30 * (float)DOUBLE_00619443 + local_18;
     }
   }
   engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -286,7 +280,7 @@ void core_course_cpp_FUN_00443bc0(void)
 // 00443be9: PUSH EAX
 // 00443bea: MOV dword ptr [EBP + 0x5e],EDX
 // 00443bed: MOV dword ptr [EBP + 0x66],EDX
-// 00443bf0: CALL core_skeleton.cpp_FUN_005a2060
+// 00443bf0: CALL core_slew.cpp_CSlew_init_FUN_005a2060
 //   XREF to: 005a2060 (UNCONDITIONAL_CALL)
 // 00443bf5: FLD float ptr [EBP + -0x3a]
 // 00443bf8: MOV EDI,dword ptr [0x0067b654]
@@ -787,7 +781,7 @@ void core_course_cpp_FUN_00443bc0(void)
 // 00444098: LEA EAX,[EBP + -0x42]
 //   Label: LAB_00444098
 // 0044409b: PUSH EAX
-// 0044409c: CALL core_skeleton.cpp_FUN_005a20b0
+// 0044409c: CALL core_slew.cpp_CSlew_processInput_FUN_005a20b0
 //   XREF to: 005a20b0 (UNCONDITIONAL_CALL)
 // 004440a1: ADD ESP,0x4
 // 004440a4: JMP 0x0044407a

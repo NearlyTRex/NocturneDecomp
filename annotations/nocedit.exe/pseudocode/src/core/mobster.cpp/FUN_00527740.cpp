@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_mobster.cpp_FUN_00527740()
 // Globals:
-//   undefined4 s_mobster-die-?.wav_006399d6
+//   TerminatedCString s_mobster_die_wav_006399d6
 //   TerminatedCString s_mobster_hit_wav_006399e8
 //   undefined4 g_CTommyGunClassInfo.name_hash
 // Function calls:
@@ -47,7 +47,7 @@ void core_mobster_cpp_FUN_00527740(void)
     *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
     iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
     if ((*(int *)(iVar3 + 0x24) != 5) && (*(int *)(iVar3 + 0x24) != 4)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr,4,1);
       (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x13c))();
       if (*(int *)(in_stack_00000004 + 0xbf58) == 0) {
         sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
@@ -64,7 +64,7 @@ void core_mobster_cpp_FUN_00527740(void)
                      (*(CDemonActor **)(in_stack_00000008 + 0x34),g_CTommyGunClassInfo.name_hash);
   if (pCVar2 == (CDemonActor *)0x0) {
 LAB_005277e1:
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr,3,1);
   }
   else {
     iVar3 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);

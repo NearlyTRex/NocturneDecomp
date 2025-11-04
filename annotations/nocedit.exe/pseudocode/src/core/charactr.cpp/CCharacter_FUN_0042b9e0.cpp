@@ -52,7 +52,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
   
   max_value = 6.127877e-39;
   sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-  if ((this_ptr->model).field11_0x2260[0] != '\0') {
+  if ((this_ptr->model).field18_0x2260[0] != '\0') {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(&this_ptr->model);
     local_1c = (float)pCVar1->num_parts;
     if (1 < (int)local_1c) {

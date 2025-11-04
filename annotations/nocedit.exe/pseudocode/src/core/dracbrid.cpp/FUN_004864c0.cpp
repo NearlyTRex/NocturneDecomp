@@ -19,6 +19,7 @@ void core_dracbrid_cpp_FUN_004864c0
                CDemonActor *param_5)
 
 {
+  int bone_index;
   float fVar1;
   int iVar2;
   int iVar3;
@@ -32,7 +33,7 @@ void core_dracbrid_cpp_FUN_004864c0
   float local_54;
   float local_50;
   float fStack_4c;
-  CVector3f CStack_40;
+  undefined1 auStack_40 [12];
   int local_34;
   float local_30;
   float local_2c;
@@ -48,14 +49,17 @@ void core_dracbrid_cpp_FUN_004864c0
     iVar2 = 0;
     do {
       iVar3 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+      bone_index = DAT_02c6d0a0;
       if (iVar3 == 0) {
         pSVar7->field0_0x0[0x1c] = '\0';
         pSVar7->field0_0x0[0x1d] = '\0';
         pSVar7->field0_0x0[0x1e] = '\0';
         pSVar7->field0_0x0[0x1f] = '\0';
-        pCVar4 = (CVector3f *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
+        pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                           ((CDeformableModelInstance *)(param_5 + 1),(CVector3f *)(auStack_40 + 8),
+                            bone_index);
         pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                           (param_5,&CStack_40,pCVar4);
+                           (param_5,(CVector3f *)auStack_40,pCVar4);
         if (pSVar7->field1_0x20 + 1 != pCVar4) {
           pSVar7->field1_0x20[1].x = pCVar4->x;
           pSVar7->field1_0x20[1].y = pCVar4->y;
@@ -87,12 +91,12 @@ void core_dracbrid_cpp_FUN_004864c0
           pSVar7->field1_0x20[2].y = local_50;
           pSVar7->field1_0x20[2].z = fStack_4c;
         }
-        CStack_40.y = (float)g_CDemonCameraInstance.base.position.x;
-        CStack_40.z = (float)g_CDemonCameraInstance.base.position.y;
+        auStack_40._4_4_ = g_CDemonCameraInstance.base.position.x;
+        auStack_40._8_4_ = g_CDemonCameraInstance.base.position.y;
         local_34 = g_CDemonCameraInstance.base.position.z;
         local_28 = fStack_4c;
         fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
-        CStack_40.z = fVar1 + CStack_40.z;
+        auStack_40._8_4_ = fVar1 + (float)auStack_40._8_4_;
         fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
         local_30 = fVar1 + local_30;
         fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);

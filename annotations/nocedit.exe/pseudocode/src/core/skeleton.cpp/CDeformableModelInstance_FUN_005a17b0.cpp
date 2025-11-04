@@ -18,9 +18,9 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a17b0(CDeformableModelInstance
   CDeformableModel *this_ptr_00;
   int unaff_EBX;
   CMatrix3x4f *in_stack_0000000c;
-  char *color;
+  CMatrix3x4f *color;
   
-  color = this_ptr->field3_0x508 + 0x978;
+  color = this_ptr->bone_world_matrices;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
             (this_ptr_00,(int)color,in_stack_0000000c,unaff_EBX);

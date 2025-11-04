@@ -10,7 +10,7 @@
 //   undefined4 DAT_02db8a18
 //   undefined4 DAT_02db8a20
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 
 #include "nocturne.h"
 
@@ -20,61 +20,75 @@
 int core_imp_cpp_FUN_004faf40(void)
 
 {
-  undefined4 *puVar1;
-  undefined4 *puVar2;
+  CVector3f *pCVar1;
+  CVector3f *pCVar2;
   int iVar3;
+  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
-  undefined4 *in_stack_00000008;
+  CVector3f *in_stack_00000008;
+  CVector3f CStack_44;
+  undefined1 auStack_38 [24];
+  CVector3f CStack_20;
   
   iVar3 = 0;
   if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbef0) * 4) != 0) {
-    puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-    if (in_stack_00000008 != puVar1) {
-      *in_stack_00000008 = *puVar1;
-      in_stack_00000008[1] = puVar1[1];
-      in_stack_00000008[2] = puVar1[2];
+    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                       ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),
+                        (CVector3f *)(auStack_38 + 8),DAT_02db89f4);
+    if (in_stack_00000008 != pCVar1) {
+      in_stack_00000008->x = pCVar1->x;
+      in_stack_00000008->y = pCVar1->y;
+      in_stack_00000008->z = pCVar1->z;
     }
     iVar3 = 1;
   }
   if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbec8) * 4) != 0) {
-    puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-    puVar2 = in_stack_00000008 + iVar3 * 3;
-    if (puVar2 != puVar1) {
-      *puVar2 = *puVar1;
-      puVar2[1] = puVar1[1];
-      puVar2[2] = puVar1[2];
+    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                       ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),
+                        (CVector3f *)auStack_38,DAT_02db8a08);
+    pCVar2 = in_stack_00000008 + iVar3;
+    if (pCVar2 != pCVar1) {
+      pCVar2->x = pCVar1->x;
+      pCVar2->y = pCVar1->y;
+      pCVar2->z = pCVar1->z;
     }
     iVar3 = iVar3 + 1;
   }
   if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbed0) * 4) != 0) {
-    puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-    puVar2 = in_stack_00000008 + iVar3 * 3;
-    if (puVar2 != puVar1) {
-      *puVar2 = *puVar1;
-      puVar2[1] = puVar1[1];
-      puVar2[2] = puVar1[2];
+    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                       ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),
+                        (CVector3f *)&stack0xffffffec,DAT_02db8a0c);
+    pCVar2 = in_stack_00000008 + iVar3;
+    if (pCVar2 != pCVar1) {
+      pCVar2->x = pCVar1->x;
+      pCVar2->y = pCVar1->y;
+      pCVar2->z = pCVar1->z;
     }
     iVar3 = iVar3 + 1;
   }
   if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbee8) * 4) != 0) {
-    puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-    puVar2 = in_stack_00000008 + iVar3 * 3;
-    if (puVar2 != puVar1) {
-      *puVar2 = *puVar1;
-      puVar2[1] = puVar1[1];
-      puVar2[2] = puVar1[2];
+    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                       ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&CStack_44,
+                        DAT_02db8a18);
+    pCVar2 = in_stack_00000008 + iVar3;
+    if (pCVar2 != pCVar1) {
+      pCVar2->x = pCVar1->x;
+      pCVar2->y = pCVar1->y;
+      pCVar2->z = pCVar1->z;
     }
     iVar3 = iVar3 + 1;
   }
   if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbeec) * 4) == 0) {
     return iVar3;
   }
-  puVar1 = (undefined4 *)core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb00();
-  in_stack_00000008 = in_stack_00000008 + iVar3 * 3;
-  if (in_stack_00000008 != puVar1) {
-    *in_stack_00000008 = *puVar1;
-    in_stack_00000008[1] = puVar1[1];
-    in_stack_00000008[2] = puVar1[2];
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&CStack_20,
+                      DAT_02db8a20);
+  in_stack_00000008 = in_stack_00000008 + iVar3;
+  if (in_stack_00000008 != pCVar1) {
+    in_stack_00000008->x = pCVar1->x;
+    in_stack_00000008->y = pCVar1->y;
+    in_stack_00000008->z = pCVar1->z;
   }
   return iVar3 + 1;
 }
@@ -109,7 +123,7 @@ int core_imp_cpp_FUN_004faf40(void)
 // 004faf7f: PUSH EAX
 // 004faf80: LEA EAX,[ESI + 0x158]
 // 004faf86: PUSH EAX
-// 004faf87: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 004faf87: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 004faf8c: MOV EDX,EAX
 // 004faf8e: LEA EAX,[EBX*0x4 + 0x0]
@@ -141,7 +155,7 @@ int core_imp_cpp_FUN_004faf40(void)
 // 004fafcf: PUSH EAX
 // 004fafd0: LEA EAX,[ESI + 0x158]
 // 004fafd6: PUSH EAX
-// 004fafd7: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 004fafd7: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 004fafdc: MOV EDX,EAX
 // 004fafde: LEA EAX,[EBX*0x4 + 0x0]
@@ -173,7 +187,7 @@ int core_imp_cpp_FUN_004faf40(void)
 // 004fb01e: PUSH EAX
 // 004fb01f: LEA EAX,[ESI + 0x158]
 // 004fb025: PUSH EAX
-// 004fb026: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 004fb026: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 004fb02b: MOV EDX,EAX
 // 004fb02d: LEA EAX,[EBX*0x4 + 0x0]
@@ -212,7 +226,7 @@ int core_imp_cpp_FUN_004faf40(void)
 // 004fb077: PUSH EAX
 // 004fb078: LEA EAX,[ESI + 0x158]
 // 004fb07e: PUSH EAX
-// 004fb07f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 004fb07f: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 004fb084: ADD ESP,0xc
 // 004fb087: CMP EDI,EAX
@@ -237,7 +251,7 @@ int core_imp_cpp_FUN_004faf40(void)
 // 004fb0ac: PUSH EAX
 // 004fb0ad: ADD ESI,0x158
 // 004fb0b3: PUSH ESI
-// 004fb0b4: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb00
+// 004fb0b4: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
 // 004fb0b9: MOV EDX,EAX
 // 004fb0bb: LEA EAX,[EBX*0x4 + 0x0]

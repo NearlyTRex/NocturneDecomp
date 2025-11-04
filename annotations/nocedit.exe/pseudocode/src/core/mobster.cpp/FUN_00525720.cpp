@@ -6,15 +6,14 @@
 // Cross-references:
 //   core_mobster.cpp_FUN_00525840 (00525840) at 005261f4 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00639836
-//   undefined4 DAT_0063983e
+//   double DOUBLE_00639836 = 1.57079632675000
+//   double DOUBLE_0063983e = -1.57079632675000
 // Function calls:
 //   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_mobster.cpp_FUN_00525720(undefined4 param_1) */
 
 void core_mobster_cpp_FUN_00525720(void)
@@ -24,7 +23,6 @@ void core_mobster_cpp_FUN_00525720(void)
   CVector3f *pCVar2;
   BADSPACEBASE *in_ESP;
   int in_stack_00000004;
-  CVector3f local_3c;
   CVector3f local_30;
   CVector3f local_24;
   CVector3f local_18;
@@ -38,29 +36,25 @@ void core_mobster_cpp_FUN_00525720(void)
       local_24.z = -1.6;
       local_24.x = 4.2;
     }
-    fVar1 = *(float *)(*(int *)(in_stack_00000004 + 0xbee0) + 0x34) + (float)_DAT_00639836;
+    fVar1 = *(float *)(*(int *)(in_stack_00000004 + 0xbee0) + 0x34) + (float)DOUBLE_00639836;
   }
   else {
-    local_3c.y = -2.35;
-    local_3c.z = -1.6;
-    local_3c.x = -4.2;
-    if (&local_24 != &local_3c) {
+    if (&local_24 != (CVector3f *)&stack0xffffffc4) {
       local_24.y = -2.35;
       local_24.z = -1.6;
       local_24.x = -4.2;
     }
-    fVar1 = *(float *)(*(int *)(in_stack_00000004 + 0xbee0) + 0x34) + (float)_DAT_0063983e;
+    fVar1 = *(float *)(*(int *)(in_stack_00000004 + 0xbee0) + 0x34) + (float)DOUBLE_0063983e;
   }
   *(float *)(in_stack_00000004 + 0x34) = fVar1;
   pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      (*(CDemonActor **)(in_stack_00000004 + 0xbee0),&local_30,&local_24);
   *(float *)(in_stack_00000004 + 0x20) = pCVar2->x;
-  local_3c.x = 1.4013e-45;
   *(float *)(in_stack_00000004 + 0x24) = pCVar2->y;
   *(float *)(in_stack_00000004 + 0x28) = pCVar2->z;
   *(undefined4 *)(in_stack_00000004 + 0xbee0) = 0;
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            ((CMotionController *)(in_stack_00000004 + 0x158));
+            ((CMotionController *)(in_stack_00000004 + 0x158),8,1);
   return;
 }
 

@@ -30,10 +30,10 @@ void core_svetlana_cpp_FUN_005d9d30(void)
 {
   CDeformableModelInstance *this_ptr;
   float fVar1;
-  int iVar2;
-  undefined4 uVar3;
+  undefined4 uVar2;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
+  int iVar3;
   
   if ((*(uint *)in_stack_00000004[1].base_actor.actor_name & 0x7fffffff) != 0) {
     *(undefined4 *)(in_stack_00000008 + 4) = 0;
@@ -50,28 +50,37 @@ void core_svetlana_cpp_FUN_005d9d30(void)
   in_stack_00000004->hit_points = fVar1;
   if (fVar1 <= 0.0) {
     in_stack_00000004->hit_points = 0.0;
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
-    if ((*(int *)(iVar2 + 0x24) != 9) &&
-       (iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller),
-       *(int *)(iVar2 + 0x24) != 8)) {
-      in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
-      core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);
-      sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-      uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
-                        (&in_stack_00000004->base_actor,"svet-die.wav");
-      *(undefined4 *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar3;
-      core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
-      return;
+    iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
+    if (*(int *)(iVar3 + 0x24) != 9) {
+      iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
+      if (*(int *)(iVar3 + 0x24) != 8) {
+        in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                  (&this_ptr->motion_controller,8,1);
+        core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);
+        sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+        uVar2 = (*((in_stack_00000004->base_actor).vtable)->playSound)
+                          (&in_stack_00000004->base_actor,"svet-die.wav");
+        *(undefined4 *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar2;
+        core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
+        return;
+      }
     }
   }
   else if (0.0 < *(float *)(in_stack_00000008 + 4)) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller);
-    iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
-    if (iVar2 == 0) {
-      uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
+    if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) == 0) {
+      iVar3 = 4;
+    }
+    else {
+      iVar3 = 0xb;
+    }
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              (&this_ptr->motion_controller,iVar3,1);
+    iVar3 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    if (iVar3 == 0) {
+      uVar2 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                         (&in_stack_00000004->base_actor,"svet-hurt?.wav");
-      *(undefined4 *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar3;
+      *(undefined4 *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar2;
       core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
       return;
     }

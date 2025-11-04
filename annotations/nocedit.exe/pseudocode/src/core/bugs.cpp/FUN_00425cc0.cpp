@@ -34,14 +34,13 @@ void core_bugs_cpp_FUN_00425cc0(void)
   CLocation *dest_position;
   float *pfVar1;
   float *pfVar2;
-  char *pcVar3;
-  int iVar4;
+  int iVar3;
   CPathMap *this_ptr;
-  int iVar5;
+  int iVar4;
   int extraout_EDX;
   int extraout_EDX_00;
   BADSPACEBASE *in_ESP;
-  int iVar6;
+  int iVar5;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
   CMatrix3x3f CStack_a4;
@@ -69,16 +68,16 @@ void core_bugs_cpp_FUN_00425cc0(void)
   
   (*(in_stack_00000004->base_actor).vtable[1].getAllowedMeleeAttackTypes)
             (&in_stack_00000004->base_actor);
-  if ((*(int *)(in_stack_00000004[2].model.field3_0x508 + 0x15f4) != 0) &&
-     (iVar5 = *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18), iVar5 != 0)) {
-    fStack_70 = (in_stack_00000004->base_actor).location.position.x - *(float *)(iVar5 + 0x20);
-    fStack_6c = (in_stack_00000004->base_actor).location.position.y - *(float *)(iVar5 + 0x24);
-    fStack_68 = (in_stack_00000004->base_actor).location.position.z - *(float *)(iVar5 + 0x28);
+  if ((in_stack_00000004[2].model.bone_world_matrices[0x42].m[1].z != 0.0) &&
+     (iVar4 = *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18), iVar4 != 0)) {
+    fStack_70 = (in_stack_00000004->base_actor).location.position.x - *(float *)(iVar4 + 0x20);
+    fStack_6c = (in_stack_00000004->base_actor).location.position.y - *(float *)(iVar4 + 0x24);
+    fStack_68 = (in_stack_00000004->base_actor).location.position.z - *(float *)(iVar4 + 0x28);
     if ((ABS(fStack_6c) < (float)DOUBLE_00616df3) &&
        ((ABS(fStack_70) < (float)DOUBLE_00616df3 && (ABS(fStack_68) < (float)DOUBLE_00616df3)))) {
       core_bugs_cpp_FUN_004257f0();
       core_bugs_cpp_FUN_00427400();
-      iVar5 = extraout_EDX;
+      iVar4 = extraout_EDX;
       if (*(int *)(in_stack_00000004[1].base_actor.create_event + 0x20) == 1) {
         core_bugs_cpp_FUN_00425fe0();
         return;
@@ -86,17 +85,17 @@ void core_bugs_cpp_FUN_00425cc0(void)
       goto LAB_00425d86;
     }
   }
-  if ((*(int *)(in_stack_00000004[2].model.field3_0x508 + 0x15f0) != 0) &&
-     (iVar5 = *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18), iVar5 != 0)) {
-    this_ptr = (CPathMap *)(**(code **)(*(int *)(iVar5 + 0x154) + 0xbc))();
+  if ((in_stack_00000004[2].model.bone_world_matrices[0x42].m[1].y != 0.0) &&
+     (iVar4 = *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18), iVar4 != 0)) {
+    this_ptr = (CPathMap *)(**(code **)(*(int *)(iVar4 + 0x154) + 0xbc))();
     if (this_ptr == (CPathMap *)0x0) {
       this_ptr = (CPathMap *)core_path_cpp_FUN_00548500();
     }
     dest_position = &(in_stack_00000004->base_actor).location;
-    iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
+    iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                       (this_ptr,&dest_position->position,&CStack_4c,
                        (in_stack_00000004->base_actor).field7_0x6c);
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&CStack_a4,&CStack_4c);
       CStack_7c.z = _DAT_0065b5d4 * in_stack_00000008;
       CStack_7c.x = 0.0;
@@ -116,39 +115,39 @@ void core_bugs_cpp_FUN_00425cc0(void)
       (in_stack_00000004->base_actor).location.position.z = fStack_5c;
       fStack_40 = fStack_34 - (dest_position->position).x;
       fStack_38 = fStack_2c - (in_stack_00000004->base_actor).location.position.z;
-      pcVar3 = in_stack_00000004[2].model.field3_0x508 + 0x1724;
-      fStack_1c = *(float *)pcVar3 + *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1730);
-      fStack_18 = *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1728) +
-                  *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1734);
+      pfVar1 = &in_stack_00000004[2].model.bone_world_matrices[0x48].m[2].z;
+      fStack_1c = *pfVar1 + in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].y;
+      fStack_18 = in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].w +
+                  in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].z;
       fStack_58 = fStack_1c * FLOAT_00616dfb;
-      fStack_14 = *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x172c) +
-                  *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1738);
+      fStack_14 = in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].x +
+                  in_stack_00000004[2].model.bone_world_matrices[0x49].m[1].w;
       fStack_54 = fStack_18 * FLOAT_00616dfb;
       fStack_50 = fStack_14 * FLOAT_00616dfb;
       fStack_3c = fStack_54;
-      if ((((*(float *)pcVar3 <= fStack_40) &&
-           (*(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1728) <= fStack_54)) &&
-          (*(float *)(in_stack_00000004[2].model.field3_0x508 + 0x172c) <= fStack_38)) &&
-         (((fStack_40 <= *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1730) &&
-           (fStack_54 <= *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1734))) &&
-          (fStack_38 <= *(float *)(in_stack_00000004[2].model.field3_0x508 + 0x1738))))) {
+      if ((((*pfVar1 <= fStack_40) &&
+           (in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].w <= fStack_54)) &&
+          (in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].x <= fStack_38)) &&
+         (((fStack_40 <= in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].y &&
+           (fStack_54 <= in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].z)) &&
+          (fStack_38 <= in_stack_00000004[2].model.bone_world_matrices[0x49].m[1].w)))) {
         core_bugs_cpp_FUN_004276c0();
       }
     }
   }
   core_bugs_cpp_FUN_004257f0();
-  iVar5 = extraout_EDX_00;
+  iVar4 = extraout_EDX_00;
 LAB_00425d86:
-  iVar4 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x24);
-  iVar6 = 0;
-  if (0 < iVar4) {
+  iVar3 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x24);
+  iVar5 = 0;
+  if (0 < iVar3) {
     do {
-      iVar6 = iVar6 + 1;
-      iVar4 = core_bugs_cpp_FUN_00426420();
-      iVar5 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x24);
-    } while (iVar6 < iVar5);
+      iVar5 = iVar5 + 1;
+      iVar3 = core_bugs_cpp_FUN_00426420();
+      iVar4 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x24);
+    } while (iVar5 < iVar4);
   }
-  core_bugs_cpp_FUN_004272f0(iVar4,iVar5);
+  core_bugs_cpp_FUN_004272f0(iVar3,iVar4);
   return;
 }
 

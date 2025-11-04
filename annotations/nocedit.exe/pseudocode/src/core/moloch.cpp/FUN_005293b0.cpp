@@ -4,13 +4,13 @@
 // Convention: unknown
 // Signature: undefined core_moloch.cpp_FUN_005293b0()
 // Cross-references:
-//   core_moloch.cpp_FUN_00528d20 (00528d20) at 0052905b [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_process_FUN_00528d20 (00528d20) at 0052905b [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00639e45
-//   undefined4 DAT_00639e4d
-//   undefined4 DAT_00639e55
-//   undefined4 DAT_00639e5d
-//   undefined4 DAT_00639e65
+//   double DOUBLE_00639e45 = 6
+//   double DOUBLE_00639e4d = 0.318309886192889
+//   double DOUBLE_00639e55 = 4
+//   double DOUBLE_00639e5d = 3.14159265350000
+//   double DOUBLE_00639e65 = -3.14159265350000
 //   CHero*[4] g_HeroActors
 //   int g_LocalHeroIndex
 // Function calls:
@@ -22,7 +22,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_hero_moloch.cpp_FUN_005293b0(undefined4 param_1, undefined4 param_2)
     */
 
@@ -90,7 +89,7 @@ void core_moloch_cpp_FUN_005293b0
     param_5->field2_0x240c[0xe] = '\0';
     param_5->field2_0x240c[0xf] = '\0';
     if (SQRT(local_6c._4_4_ * local_6c._4_4_ +
-             local_70 * local_70 + (float)local_6c * (float)local_6c) <= (float)_DAT_00639e45) {
+             local_70 * local_70 + (float)local_6c * (float)local_6c) <= (float)DOUBLE_00639e45) {
       iVar5 = (*(g_HeroActors[iVar5]->base_character).base_actor.vtable[1].processMeleeHit)
                         ((CDemonActor *)g_HeroActors[iVar5],in_stack_ffffff74);
       if ((iVar5 == 0) && (uVar8 = core_charactr_cpp_CCharacter_FUN_0042ede0(param_5), uVar8 != 0))
@@ -125,7 +124,7 @@ void core_moloch_cpp_FUN_005293b0
       if (iVar5 != 0) {
         fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (fStack_4c - (param_5->base_actor).orient.bank);
-        fVar6 = fVar6 * (float)_DAT_00639e4d * (float)_DAT_00639e55;
+        fVar6 = fVar6 * (float)DOUBLE_00639e4d * (float)DOUBLE_00639e55;
         param_5[1].base_actor.location.area_id = (int)fVar6;
         if (fVar6 < -unaff_EBX) {
           param_5[1].base_actor.location.area_id = (int)-unaff_EBX;
@@ -188,11 +187,11 @@ void core_moloch_cpp_FUN_005293b0
       CStack_34.x = -unaff_retaddr;
     }
     auStack_58._4_4_ = CStack_34.x - *(float *)(param_5[2].cloth_data + 0x84ac);
-    if (param_6 * (float)_DAT_00639e5d < (float)auStack_58._4_4_) {
-      auStack_58._4_4_ = param_6 * (float)_DAT_00639e5d;
+    if (param_6 * (float)DOUBLE_00639e5d < (float)auStack_58._4_4_) {
+      auStack_58._4_4_ = param_6 * (float)DOUBLE_00639e5d;
     }
-    if ((float)auStack_58._4_4_ < param_6 * (float)_DAT_00639e65) {
-      auStack_58._4_4_ = param_6 * (float)_DAT_00639e65;
+    if ((float)auStack_58._4_4_ < param_6 * (float)DOUBLE_00639e65) {
+      auStack_58._4_4_ = param_6 * (float)DOUBLE_00639e65;
     }
     *(float *)(param_5[2].cloth_data + 0x84ac) =
          *(float *)(param_5[2].cloth_data + 0x84ac) + (float)auStack_58._4_4_;

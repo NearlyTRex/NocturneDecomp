@@ -20,8 +20,8 @@
 //   int g_LocalHeroIndex
 // Function calls:
 //   core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a00f0
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0250
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a1510
@@ -62,7 +62,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
   this_ptr_00 = &this_ptr->model;
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a1510(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a00f0(this_ptr_00);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059fb40(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
   core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_01,in_stack_ffffe570);
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a0250(this_ptr_00);
@@ -169,7 +169,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
 //   XREF to: 005a00f0 (UNCONDITIONAL_CALL)
 // 0042b028: ADD ESP,0xc
 // 0042b02b: PUSH EBX
-// 0042b02c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fb40
+// 0042b02c: CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
 // 0042b031: ADD ESP,0x4
 // 0042b034: LEA EAX,[ESI + 0x2390]

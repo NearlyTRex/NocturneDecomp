@@ -24,7 +24,7 @@
 //   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_scat.cpp_FUN_00558cf0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 //   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
 
@@ -47,7 +47,8 @@ void core_scat_cpp_FUN_00558720(void)
   float in_stack_00000008;
   int in_stack_0000000c;
   CDemonActor_vtable *local_13c;
-  CVector3f local_138 [13];
+  CVector3f local_138 [12];
+  CVector3f CStack_a8;
   CVector3f CStack_9c;
   float fStack_90;
   float fStack_8c;
@@ -163,8 +164,8 @@ LAB_00558aeb:
                      (*(CDemonActor **)(in_stack_00000004[0x17a].actor_name + 8),&CStack_6c,
                       &CStack_60);
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(in_stack_00000004,&CStack_9c,pCVar4);
-  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_FUN_0059fa20
-                     ((CDeformableModelInstance *)(in_stack_00000004 + 1));
+  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 1),&CStack_a8,DAT_03106174);
   CStack_84.x = CStack_9c.x - pCVar4->x;
   CStack_84.y = CStack_9c.y - pCVar4->y;
   CStack_84.z = CStack_9c.z - pCVar4->z;
@@ -596,7 +597,7 @@ LAB_005587bd:
 // 00558b31: PUSH EAX
 // 00558b32: LEA EAX,[ESI + 0x158]
 // 00558b38: PUSH EAX
-// 00558b39: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059fa20
+// 00558b39: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   XREF to: 0059fa20 (UNCONDITIONAL_CALL)
 // 00558b3e: ADD ESP,0xc
 // 00558b41: FLD float ptr [ESP + 0xa4]

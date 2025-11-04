@@ -53,9 +53,8 @@ void core_werewolf_cpp_FUN_005f1e40(void)
     local_50.z = 0.0;
     core_xform_cpp_transformVector3x4_FUN_005f4dc0
               (&local_5c,&local_50,
-               (CMatrix3x4f *)
-               ((in_stack_00000004->model).field3_0x508 +
-               *(int *)(in_stack_00000004[1].base_actor.create_event + 0x34) * 0x30 + 0x978));
+               (in_stack_00000004->model).bone_world_matrices +
+               *(int *)(in_stack_00000004[1].base_actor.create_event + 0x34));
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
               (&in_stack_00000004->base_actor,&local_68,
                (CVector3f *)(*(int *)(in_stack_00000004[1].base_actor.create_event + 0x4c) + 0x20));

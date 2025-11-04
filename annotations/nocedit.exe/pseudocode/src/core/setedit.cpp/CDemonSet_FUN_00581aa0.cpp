@@ -74,8 +74,8 @@
 //   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 //   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
 //   core_setedit.cpp_FUN_005817d0
-//   core_skeleton.cpp_FUN_005a2060
-//   core_skeleton.cpp_FUN_005a20b0
+//   core_slew.cpp_CSlew_init_FUN_005a2060
+//   core_slew.cpp_CSlew_processInput_FUN_005a20b0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   crt_string.c_memmove_FUN_005fe5e0
 //   engine_2d.c_clearInputAndWait_FUN_00403260
@@ -116,42 +116,42 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
   char *pcVar6;
   int iVar7;
   char *pcVar8;
-  CGame *in_stack_fffff374;
-  CKeys *in_stack_fffff404;
-  uint in_stack_fffff408;
-  CPickList *in_stack_fffff40c;
-  uint in_stack_fffff410;
-  CKeys *in_stack_fffff414;
-  CKeys *in_stack_fffff41c;
-  uint in_stack_fffff420;
-  CPickList *in_stack_fffff424;
-  uint in_stack_fffff428;
-  CKeys *in_stack_fffff42c;
-  uint in_stack_fffff434;
-  uint in_stack_fffff438;
-  uint in_stack_fffff43c;
-  uint in_stack_fffff440;
-  uint in_stack_fffff444;
+  CGame *in_stack_fffff390;
+  uint in_stack_fffff4dc;
+  uint in_stack_fffff4e0;
+  uint in_stack_fffff4e4;
+  uint in_stack_fffff4e8;
+  CKeys *in_stack_fffff4ec;
+  uint in_stack_fffff51c;
+  uint in_stack_fffff520;
+  uint in_stack_fffff524;
+  uint in_stack_fffff528;
+  SRoom *in_stack_fffff52c;
+  uint in_stack_fffff580;
+  uint in_stack_fffff584;
+  uint in_stack_fffff588;
+  uint in_stack_fffff58c;
+  uint in_stack_fffff590;
   CPickList local_8e4;
   CPickList local_53c;
   char local_194 [100];
   CMatrix3x3f local_130;
-  float local_108;
-  float local_104;
-  float local_100;
-  CVector3f local_fc;
+  undefined1 local_108 [16];
+  float local_f8;
+  float local_f4;
   float local_f0;
-  float local_ec;
-  float local_e8;
-  float local_e4;
-  CVector3f local_e0;
+  undefined1 local_ec [16];
+  float local_dc;
+  float local_d8;
   CVector3f local_d0;
   float local_c4;
   float local_c0;
   float local_bc;
   CVector3f local_b8;
   CVector3f local_ac;
-  CVector3f local_a0;
+  float local_a0;
+  float local_9c;
+  float local_98;
   CVector3f local_94;
   CVector3f local_88;
   CVector3f local_7c;
@@ -182,12 +182,12 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
   this_ptr->actor_list_ptr = (void *)0x0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  core_skeleton_cpp_FUN_005a2060();
-  local_a0.x = 0.0;
-  local_a0.y = 0.0;
-  local_a0.z = 0.0;
+  core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_108);
+  local_a0 = 0.0;
+  local_9c = 0.0;
+  local_98 = 0.0;
   local_28 = 40.0;
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff374);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff390);
   local_20 = this_ptr->rooms;
   this_ptr->unk_lighting_param3 = 1;
   this_ptr->unk_lighting_param4 = 1;
@@ -203,15 +203,16 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
     if (local_18 != (SRoom *)0x0) {
-      if (&local_fc != &local_a0) {
-        local_fc.x = local_a0.x;
-        local_fc.y = local_a0.y;
-        local_fc.z = local_a0.z;
+      if ((float *)(local_108 + 0xc) != &local_a0) {
+        local_108._12_4_ = local_a0;
+        local_f8 = local_9c;
+        local_f4 = local_98;
       }
       pCVar4 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
                          (&local_18->rotation_matrix,&local_94);
-      local_fc.y = local_fc.y + pCVar4->y;
-      core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_130,&local_fc);
+      local_f8 = local_f8 + pCVar4->y;
+      core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
+                (&local_130,(CVector3f *)(local_108 + 0xc));
       local_88.z = -local_28;
       local_88.x = 0.0;
       local_88.y = 0.0;
@@ -221,20 +222,21 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
       local_58 = pCVar4->x + (local_18->position).x;
       local_54 = pCVar4->y + (local_18->position).y;
       local_50 = pCVar4->z + (local_18->position).z;
-      if (&local_108 != &local_58) {
-        local_108 = local_58;
-        local_104 = local_54;
-        local_100 = local_50;
+      if ((float *)local_108 != &local_58) {
+        local_108._0_4_ = local_58;
+        local_108._4_4_ = local_54;
+        local_108._8_4_ = local_50;
       }
     }
     local_f0 = 28.0;
     if (&stack0x00000000 != g_CDemonCameraInstance.camera_name + 0xcc) {
-      g_CDemonCameraInstance.base.position.x = (int)local_108;
-      g_CDemonCameraInstance.base.position.y = (int)local_104;
-      g_CDemonCameraInstance.base.position.z = (int)local_100;
+      g_CDemonCameraInstance.base.position.x = local_108._0_4_;
+      g_CDemonCameraInstance.base.position.y = local_108._4_4_;
+      g_CDemonCameraInstance.base.position.z = local_108._8_4_;
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-              ((CMatrix3x3f *)&g_CDemonCameraInstance.base.rotation_matrix,&local_fc);
+              ((CMatrix3x3f *)&g_CDemonCameraInstance.base.rotation_matrix,
+               (CVector3f *)(local_108 + 0xc));
     g_CDemonCameraInstance.base.projection_scale = local_f0;
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr,150.0,0);
@@ -291,7 +293,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
       } while (cVar1 != '\0');
     }
     else {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_194,"Room size: %d",local_18->field4_0x40);
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_194,"Room size: %d");
     }
     engine_2d_c_drawText_FUN_00401fd0(local_194,0,0);
     core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
@@ -307,7 +309,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
       return;
     }
     if (local_18 == (SRoom *)0x0) {
-      core_skeleton_cpp_FUN_005a20b0();
+      core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)local_108);
     }
     else {
       local_38 = g_CGamePtr->delta_time_float;
@@ -326,19 +328,19 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
       local_3c = local_28 * (float)DOUBLE_00648c25 * local_34;
       iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4a);
       if (iVar7 != 0) {
-        local_a0.x = local_a0.x + local_30;
+        local_a0 = local_a0 + local_30;
       }
       iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4e);
       if (iVar7 != 0) {
-        local_a0.x = local_a0.x - local_30;
+        local_a0 = local_a0 - local_30;
       }
       iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x52);
       if (iVar7 != 0) {
-        local_a0.y = local_a0.y + local_30;
+        local_9c = local_9c + local_30;
       }
       iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x53);
       if (iVar7 != 0) {
-        local_a0.y = local_a0.y - local_30;
+        local_9c = local_9c - local_30;
       }
       iVar7 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0xd);
       if (iVar7 != 0) {
@@ -348,17 +350,17 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
       if (iVar7 != 0) {
         local_28 = local_28 + local_3c;
       }
-      if (local_a0.x < (float)DOUBLE_00648c3d) {
-        local_a0.x = -1.5707964;
+      if (local_a0 < (float)DOUBLE_00648c3d) {
+        local_a0 = -1.5707964;
       }
-      if ((float)DOUBLE_00648c1d < local_a0.x) {
-        local_a0.x = 1.5707964;
+      if ((float)DOUBLE_00648c1d < local_a0) {
+        local_a0 = 1.5707964;
       }
-      if (local_a0.y < (float)DOUBLE_00648c3d) {
-        local_a0.y = local_a0.y + FLOAT_00648c45;
+      if (local_9c < (float)DOUBLE_00648c3d) {
+        local_9c = local_9c + FLOAT_00648c45;
       }
-      if ((float)DOUBLE_00648c1d < local_a0.y) {
-        local_a0.y = local_a0.y + FLOAT_00648c49;
+      if ((float)DOUBLE_00648c1d < local_9c) {
+        local_9c = local_9c + FLOAT_00648c49;
       }
       if (local_28 < (float)DOUBLE_00648c25) {
         local_28 = 0.5;
@@ -366,28 +368,28 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
       iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
       pSVar2 = local_18;
       if (iVar7 == 0) {
-        core_skeleton_cpp_FUN_005a2060();
-        if ((SRoom *)&local_ec != pSVar2) {
-          local_ec = (pSVar2->position).x;
-          local_e8 = (pSVar2->position).y;
-          local_e4 = (pSVar2->position).z;
+        core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_ec);
+        if ((SRoom *)local_ec != pSVar2) {
+          local_ec._0_4_ = (pSVar2->position).x;
+          local_ec._4_4_ = (pSVar2->position).y;
+          local_ec._8_4_ = (pSVar2->position).z;
         }
         pCVar4 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
                            (&local_18->rotation_matrix,&local_70);
         pSVar2 = local_18;
-        if (&local_e0 != pCVar4) {
-          local_e0.x = pCVar4->x;
-          local_e0.y = pCVar4->y;
-          local_e0.z = pCVar4->z;
+        if ((CVector3f *)(local_ec + 0xc) != pCVar4) {
+          local_ec._12_4_ = pCVar4->x;
+          local_dc = pCVar4->y;
+          local_d8 = pCVar4->z;
         }
-        core_skeleton_cpp_FUN_005a20b0();
-        if ((SRoom *)&local_ec != pSVar2) {
-          (pSVar2->position).x = local_ec;
-          (pSVar2->position).y = local_e8;
-          (pSVar2->position).z = local_e4;
+        core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)local_ec);
+        if ((SRoom *)local_ec != pSVar2) {
+          (pSVar2->position).x = (float)local_ec._0_4_;
+          (pSVar2->position).y = (float)local_ec._4_4_;
+          (pSVar2->position).z = (float)local_ec._8_4_;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                  (&local_18->rotation_matrix,&local_e0);
+                  (&local_18->rotation_matrix,(CVector3f *)(local_ec + 0xc));
       }
       else {
         local_24 = g_CGamePtr->delta_time_float * (float)DOUBLE_00648c2d;
@@ -447,12 +449,14 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
         *local_40 = iVar7;
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_8e4,0,(uint)in_stack_fffff404,in_stack_fffff408,(uint)in_stack_fffff40c,
-                 in_stack_fffff410,(uint)in_stack_fffff414);
+                (&local_8e4,0,in_stack_fffff4dc,in_stack_fffff4e0,in_stack_fffff4e4,
+                 in_stack_fffff4e8,(uint)in_stack_fffff4ec);
     }
+    in_stack_fffff4dc = 0xf;
     iVar7 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0xf);
     if (iVar7 != 0) {
-      in_stack_fffff404 = g_CKeysPtr;
+      in_stack_fffff4e8 = 0x581f44;
+      in_stack_fffff4ec = g_CKeysPtr;
       iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
       if (iVar7 == 0) {
         local_1c = local_1c + 1;
@@ -467,8 +471,6 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
         }
       }
     }
-    in_stack_fffff408 = 0x581f6b;
-    in_stack_fffff40c = (CPickList *)g_CKeysPtr;
     iVar7 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x17);
     if (iVar7 != 0) {
       if (this_ptr->room_count < 0x14) {
@@ -480,28 +482,26 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
                   (&local_53c.base_strlist,"Large (e.g. Warehouse)");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_53c.base_strlist,"Humongous");
-        in_stack_fffff40c = &local_53c;
-        in_stack_fffff408 = 0x582016;
         iVar7 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                          (in_stack_fffff40c,"Create new room",DAT_03365cbc,0);
+                          (&local_53c,"Create new room",DAT_03365cbc,0);
         if (iVar7 < 0) {
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&local_53c,0,(uint)in_stack_fffff41c,in_stack_fffff420,(uint)in_stack_fffff424,
-                     in_stack_fffff428,(uint)in_stack_fffff42c);
+                    (&local_53c,0,in_stack_fffff51c,in_stack_fffff520,in_stack_fffff524,
+                     in_stack_fffff528,(uint)in_stack_fffff52c);
         }
         else {
           DAT_03365cbc = iVar7;
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&local_53c,0,(uint)in_stack_fffff41c,in_stack_fffff420,(uint)in_stack_fffff424,
-                     in_stack_fffff428,(uint)in_stack_fffff42c);
+                    (&local_53c,0,in_stack_fffff51c,in_stack_fffff520,in_stack_fffff524,
+                     in_stack_fffff528,(uint)in_stack_fffff52c);
           local_1c = this_ptr->room_count;
           local_18 = local_20 + local_1c;
-          if ((SRoom *)&local_108 != local_18) {
-            (local_18->position).x = local_108;
-            (local_18->position).y = local_104;
-            (local_18->position).z = local_100;
+          if ((SRoom *)local_108 != local_18) {
+            (local_18->position).x = (float)local_108._0_4_;
+            (local_18->position).y = (float)local_108._4_4_;
+            (local_18->position).z = (float)local_108._8_4_;
           }
-          local_b8.y = local_fc.y;
+          local_b8.y = local_f8;
           local_b8.x = 0.0;
           local_b8.z = 0.0;
           core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
@@ -518,31 +518,32 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
                   (g_CEditorToolsPtr,"Max number of rooms has been reached, can't add any more rooms.");
       }
     }
-    in_stack_fffff410 = 0x5820d9;
-    in_stack_fffff414 = g_CKeysPtr;
+    in_stack_fffff51c = 0x20;
     iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x20);
     iVar7 = local_1c;
-    if ((((iVar5 != 0) && (-1 < local_1c)) && (local_1c < this_ptr->room_count)) &&
-       (iVar5 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-                          (g_CEditorToolsPtr,"Delete the selected room?"), iVar5 != 0)) {
-      iVar5 = this_ptr->room_count + -1;
-      this_ptr->room_count = iVar5;
-      in_stack_fffff414 = (CKeys *)0x582147;
-      crt_string_c_memmove_FUN_005fe5e0
-                (local_20 + iVar7,local_20 + iVar7 + 1,(iVar5 - iVar7) * 0x44);
-      if (this_ptr->room_count <= iVar7) {
-        local_1c = 0;
+    if (((iVar5 != 0) && (-1 < local_1c)) && (local_1c < this_ptr->room_count)) {
+      in_stack_fffff528 = 0x58210e;
+      in_stack_fffff52c = (SRoom *)g_CEditorToolsPtr;
+      iVar5 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+                        (g_CEditorToolsPtr,"Delete the selected room?");
+      if (iVar5 != 0) {
+        iVar5 = this_ptr->room_count + -1;
+        this_ptr->room_count = iVar5;
+        in_stack_fffff52c = local_20 + iVar7;
+        in_stack_fffff528 = 0x582147;
+        crt_string_c_memmove_FUN_005fe5e0
+                  (in_stack_fffff52c,local_20 + iVar7 + 1,(iVar5 - iVar7) * 0x44);
+        if (this_ptr->room_count <= iVar7) {
+          local_1c = 0;
+        }
+        local_18 = (SRoom *)0x0;
       }
-      local_18 = (SRoom *)0x0;
     }
-    in_stack_fffff41c = g_CKeysPtr;
     iVar7 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x31);
     if (iVar7 != 0) {
       local_18 = (SRoom *)0x0;
       local_1c = -1;
     }
-    in_stack_fffff420 = 0x582192;
-    in_stack_fffff424 = (CPickList *)g_CKeysPtr;
     iVar7 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1c);
     pSVar2 = local_18;
     if ((iVar7 != 0) && (local_18 != (SRoom *)0x0)) {
@@ -555,23 +556,23 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
                 ((CStrList *)&stack0xfffff374,"Large (e.g. Warehouse)");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
                 ((CStrList *)&stack0xfffff374,"Humongous");
-      in_stack_fffff424 = (CPickList *)&stack0xfffff374;
-      in_stack_fffff420 = 0x582235;
       iVar7 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        (in_stack_fffff424,"Choose room size",pSVar2->field4_0x40,0);
+                        ((CPickList *)&stack0xfffff374,"Choose room size",
+                         pSVar2->field4_0x40,0);
       if (-1 < iVar7) {
         pSVar2->field4_0x40 = iVar7;
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffff374,0,in_stack_fffff434,in_stack_fffff438,
-                 in_stack_fffff43c,in_stack_fffff440,in_stack_fffff444);
+                ((CPickList *)&stack0xfffff374,0,in_stack_fffff580,in_stack_fffff584,
+                 in_stack_fffff588,in_stack_fffff58c,in_stack_fffff590);
     }
-    in_stack_fffff428 = 0x582260;
-    in_stack_fffff42c = g_CKeysPtr;
+    in_stack_fffff580 = 0x3b;
     iVar7 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3b);
     if (iVar7 != 0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      in_stack_fffff58c = 0x582291;
       engine_2d_c_drawText_FUN_00401fd0("F1",0,0);
+      in_stack_fffff590 = 0x5822b4;
       engine_2d_c_drawText_FUN_00401fd0("Show this help screen",g_WindowWidth / 10,0);
       engine_2d_c_drawText_FUN_00401fd0("S",0,0xb);
       engine_2d_c_drawText_FUN_00401fd0("Set default room size for set",g_WindowWidth / 10,0xb);
@@ -586,13 +587,10 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
       engine_2d_c_drawText_FUN_00401fd0("N",0,0x42);
       engine_2d_c_drawText_FUN_00401fd0("Deselect room",g_WindowWidth / 10,0x42);
       engine_2d_c_drawText_FUN_00401fd0("To position the selected box, use the normal slew keys.",0,0x58);
-      in_stack_fffff42c = (CKeys *)0x582465;
       engine_2d_c_drawText_FUN_00401fd0("To size the selected box, use arrow keys and Q/A with CTRL.",0,99);
       engine_2d_c_clearInputAndWait_FUN_00403260();
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-      in_stack_fffff434 = 0x58247e;
       engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
-      in_stack_fffff438 = 0x582486;
       engine_2d_c_clearInputAndWait_FUN_00403260();
     }
   } while( true );
@@ -631,7 +629,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
 // 00581aec: LEA EAX,[EBP + -0x7a]
 // 00581aef: PUSH EAX
 // 00581af0: XOR EBX,EBX
-// 00581af2: CALL core_skeleton.cpp_FUN_005a2060
+// 00581af2: CALL core_slew.cpp_CSlew_init_FUN_005a2060
 //   XREF to: 005a2060 (UNCONDITIONAL_CALL)
 // 00581af7: MOV EAX,0x42200000
 // 00581afc: MOV EDX,dword ptr [0x0067b654]
@@ -960,7 +958,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
 //   XREF to: 005824ec (CONDITIONAL_JUMP)
 // 00581e53: LEA EAX,[EBP + -0x7a]
 // 00581e56: PUSH EAX
-// 00581e57: CALL core_skeleton.cpp_FUN_005a20b0
+// 00581e57: CALL core_slew.cpp_CSlew_processInput_FUN_005a20b0
 //   XREF to: 005a20b0 (UNCONDITIONAL_CALL)
 // 00581e5c: ADD ESP,0x4
 // 00581e5f: PUSH 0x1f
@@ -2023,7 +2021,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
 //   Label: LAB_005827d9
 // 005827dc: PUSH EAX
 // 005827dd: MOV EBX,dword ptr [EBP + 0x76]
-// 005827e0: CALL core_skeleton.cpp_FUN_005a2060
+// 005827e0: CALL core_slew.cpp_CSlew_init_FUN_005a2060
 //   XREF to: 005a2060 (UNCONDITIONAL_CALL)
 // 005827e5: LEA EAX,[EBP + -0x5e]
 // 005827e8: ADD ESP,0x4
@@ -2060,7 +2058,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
 //   Label: LAB_0058282d
 // 00582830: PUSH EAX
 // 00582831: MOV ESI,dword ptr [EBP + 0x76]
-// 00582834: CALL core_skeleton.cpp_FUN_005a20b0
+// 00582834: CALL core_slew.cpp_CSlew_processInput_FUN_005a20b0
 //   XREF to: 005a20b0 (UNCONDITIONAL_CALL)
 // 00582839: LEA EAX,[EBP + -0x5e]
 // 0058283c: ADD ESP,0x4

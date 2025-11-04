@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900(CInventory * this_ptr, CWeapon * weapon)
 // Globals:
-//   undefined4 s_..\core\inv.cpp_006307ea
+//   TerminatedCString s_core_inv_cpp_006307ea
 //   TerminatedCString s_core_inv_cpp_006307fa
 //   TerminatedCString s_Out_of_memory_0063080a
 //   TerminatedCString s_Some_ammo_00630818
@@ -37,7 +37,7 @@ core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004fe900(CInventory *this_ptr,C
     return;
   }
   this_ptr_00 = (CAmmo *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
-                                   (0x31c,"?..\\core\\inv.cpp" + 1,0x2fc);
+                                   (0x31c,"..\\core\\inv.cpp",0x2fc);
   if (this_ptr_00 != (CAmmo *)0x0) {
     this_ptr_00 = core_ammo_cpp_CAmmo_ctor_FUN_00410dc0(this_ptr_00);
   }
