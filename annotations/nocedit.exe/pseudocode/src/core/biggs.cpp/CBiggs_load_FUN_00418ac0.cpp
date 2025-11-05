@@ -41,8 +41,8 @@ void core_biggs_cpp_CBiggs_load_FUN_00418ac0(void)
             ((float *)in_stack_00000004[1].base_character.model.motion_controller.
                       current_motion_name,"morphTimer");
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)(in_stack_00000004[1].base_character.model.bone_rotations + 0x5b),
-             "morphEvent");
+            ((char **)(in_stack_00000004[1].base_character.model.bone_transform.bone_rotations +
+                      0x5b),"morphEvent");
   return;
 }
 

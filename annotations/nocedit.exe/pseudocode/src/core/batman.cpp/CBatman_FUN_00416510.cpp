@@ -50,9 +50,9 @@
 // Function calls:
 //   core_enemy.cpp_CEnemy_FUN_004a9650
 //   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -69,7 +69,7 @@ void __cdecl core_batman_cpp_CBatman_FUN_00416510(CBatman *this_ptr)
   
   core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base_enemy);
   this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   DAT_008227b8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bip01 Head");
@@ -165,7 +165,7 @@ void __cdecl core_batman_cpp_CBatman_FUN_00416510(CBatman *this_ptr)
 // 0041651d: ADD ESP,0x4
 // 00416520: LEA EDI,[ESI + 0x158]
 // 00416526: PUSH EDI
-// 00416527: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 00416527: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0041652c: ADD ESP,0x4
 // 0041652f: PUSH EDI

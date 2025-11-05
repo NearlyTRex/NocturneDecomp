@@ -5,7 +5,7 @@
 // Signature: void core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0(CDeformableModel * this_ptr, char * filename)
 // Cross-references:
 //   core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070 (004be070) at 004be0e9 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_LoadSkeletonDeformable_FUN_005a1cf0 (005a1cf0) at 005a1d9d [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_getDeformableModel_FUN_005a1cf0 (005a1cf0) at 005a1d9d [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_rt_0064e860
 //   TerminatedCString s_models_0064e863
@@ -32,7 +32,7 @@ core_skeleton_cpp_CDeformableModel_load_FUN_0059b8d0(CDeformableModel *this_ptr,
   char *pcVar3;
   CDeformableModel *in_stack_0000000c;
   
-  pcVar3 = this_ptr->model_identifier;
+  pcVar3 = this_ptr->model_filename;
   pcVar2 = filename;
   do {
     cVar1 = *pcVar2;

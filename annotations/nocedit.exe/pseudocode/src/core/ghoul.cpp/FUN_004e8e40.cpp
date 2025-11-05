@@ -13,7 +13,7 @@
 // Function calls:
 //   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_enemy.cpp_CEnemy_FUN_004aa250
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -29,24 +29,24 @@ void core_ghoul_cpp_FUN_004e8e40(void)
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,4);
   switch(iVar1) {
   case 0:
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-              (&(in_stack_00000004->base_character).model);
+    core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+              (&(in_stack_00000004->base_character).model,"guul.dfm");
     break;
   case 1:
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-              (&(in_stack_00000004->base_character).model);
+    core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+              (&(in_stack_00000004->base_character).model,"chubgul2.dfm");
     return;
   case 2:
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-              (&(in_stack_00000004->base_character).model);
+    core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+              (&(in_stack_00000004->base_character).model,"guullmap.dfm");
     return;
   case 3:
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-              (&(in_stack_00000004->base_character).model);
+    core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+              (&(in_stack_00000004->base_character).model,"longguul.dfm");
     return;
   case 4:
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-              (&(in_stack_00000004->base_character).model);
+    core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+              (&(in_stack_00000004->base_character).model,"chubguul.dfm");
     return;
   }
   return;
@@ -83,7 +83,7 @@ void core_ghoul_cpp_FUN_004e8e40(void)
 //   XREF to: 0062df01 (DATA)
 // 004e8e6b: ADD EBX,0x158
 // 004e8e71: PUSH EBX
-// 004e8e72: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 004e8e72: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004e8e77: ADD ESP,0x8
 // 004e8e7a: POP EBX
@@ -94,7 +94,7 @@ void core_ghoul_cpp_FUN_004e8e40(void)
 //   XREF to: 0062df0a (DATA)
 // 004e8e81: ADD EBX,0x158
 // 004e8e87: PUSH EBX
-// 004e8e88: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 004e8e88: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004e8e8d: ADD ESP,0x8
 // 004e8e90: POP EBX
@@ -104,7 +104,7 @@ void core_ghoul_cpp_FUN_004e8e40(void)
 //   XREF to: 0062df17 (DATA)
 // 004e8e97: ADD EBX,0x158
 // 004e8e9d: PUSH EBX
-// 004e8e9e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 004e8e9e: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004e8ea3: ADD ESP,0x8
 // 004e8ea6: POP EBX
@@ -114,7 +114,7 @@ void core_ghoul_cpp_FUN_004e8e40(void)
 //   XREF to: 0062df24 (DATA)
 // 004e8ead: ADD EBX,0x158
 // 004e8eb3: PUSH EBX
-// 004e8eb4: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 004e8eb4: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004e8eb9: ADD ESP,0x8
 // 004e8ebc: POP EBX
@@ -124,7 +124,7 @@ void core_ghoul_cpp_FUN_004e8e40(void)
 //   XREF to: 0062df31 (DATA)
 // 004e8ec3: ADD EBX,0x158
 // 004e8ec9: PUSH EBX
-// 004e8eca: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 004e8eca: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004e8ecf: ADD ESP,0x8
 // 004e8ed2: POP EBX

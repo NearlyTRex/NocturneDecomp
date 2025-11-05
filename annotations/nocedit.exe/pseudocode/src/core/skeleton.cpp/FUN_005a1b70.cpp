@@ -5,7 +5,7 @@
 // Signature: undefined core_skeleton.cpp_FUN_005a1b70()
 // Function calls:
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
-//   core_skeleton.cpp_FUN_005a1950
+//   core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950
 //   core_xform.cpp_slerpQuaternion_FUN_005f77e0
 
 #include "nocturne.h"
@@ -13,18 +13,18 @@
 void core_skeleton_cpp_FUN_005a1b70(void)
 
 {
-  int iVar1;
-  float *pfVar2;
+  SBoneTransformData *pSVar1;
   BADSPACEBASE *in_ESP;
-  int iVar3;
-  float *pfVar4;
+  int iVar2;
+  undefined4 *puVar3;
+  undefined4 *puVar4;
   byte bVar5;
   float *in_stack_00000004;
-  float *in_stack_00000008;
+  SBoneTransformData *in_stack_00000008;
   float *in_stack_0000000c;
   float in_stack_00000010;
   CDeformableModelInstance *in_stack_00000014;
-  undefined4 in_stack_00000018;
+  CDeformableModelInstance *in_stack_00000018;
   float afStackY_182c [1524];
   float in_stack_ffffffb0;
   float local_44;
@@ -52,9 +52,9 @@ void core_skeleton_cpp_FUN_005a1b70(void)
   local_34 = in_stack_0000000c[1] * in_stack_00000010;
   local_20 = 1.0 - in_stack_00000010;
   local_30 = in_stack_0000000c[2] * in_stack_00000010;
-  local_2c = *in_stack_00000008 * local_20;
-  local_28 = in_stack_00000008[1] * local_20;
-  local_24 = in_stack_00000008[2] * local_20;
+  local_2c = (in_stack_00000008->root_position).x * local_20;
+  local_28 = (in_stack_00000008->root_position).y * local_20;
+  local_24 = (in_stack_00000008->root_position).z * local_20;
   local_44 = local_2c + local_38;
   local_40 = local_28 + local_34;
   local_3c = local_24 + local_30;
@@ -65,33 +65,30 @@ void core_skeleton_cpp_FUN_005a1b70(void)
   }
   local_18 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                        (in_stack_00000014);
-  iVar1 = local_18->bone_count;
-  iVar3 = 0;
-  if (0 < iVar1) {
-    result_out = (CQuaternion4f *)(in_stack_00000008 + 3);
+  iVar2 = 0;
+  if (0 < local_18->bone_count) {
+    result_out = in_stack_00000008->bone_rotations;
     local_14 = (CQuaternion4f *)(in_stack_0000000c + 3);
-    pfVar2 = in_stack_00000008;
+    pSVar1 = in_stack_00000008;
     do {
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
                 (result_out,local_14,(CQuaternion4f *)in_stack_00000014,in_stack_ffffffb0);
-      pfVar4 = pfVar2 + (uint)bVar5 * -2 + 4;
-      pfVar2[3] = in_stack_ffffffb0;
-      *pfVar4 = *(float *)(&stack0xffffffb4 + (uint)bVar5 * -8);
-      pfVar4[(uint)bVar5 * -2 + 1] =
-           *(float *)(&stack0xffffffb8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-      (pfVar4 + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1] =
-           *(float *)((int)(&stack0xffffffb8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) +
-                     ((uint)bVar5 * -2 + 1) * 4);
+      puVar3 = (undefined4 *)((int)pSVar1 + (uint)bVar5 * -8 + 0x10);
+      pSVar1->bone_rotations[0].w = in_stack_ffffffb0;
+      puVar4 = puVar3 + (uint)bVar5 * -2 + 1;
+      *puVar3 = *(undefined4 *)(&stack0xffffffb4 + (uint)bVar5 * -8);
+      *puVar4 = *(undefined4 *)(&stack0xffffffb8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+      puVar4[(uint)bVar5 * -2 + 1] =
+           *(undefined4 *)
+            ((int)(&stack0xffffffb8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) +
+            ((uint)bVar5 * -2 + 1) * 4);
       local_14 = local_14 + 1;
-      iVar3 = iVar3 + 1;
+      iVar2 = iVar2 + 1;
       result_out = result_out + 1;
-      iVar1 = local_18->bone_count;
-      pfVar2 = pfVar2 + 4;
-    } while (iVar3 < iVar1);
+      pSVar1 = (SBoneTransformData *)&pSVar1->bone_rotations[0].x;
+    } while (iVar2 < local_18->bone_count);
   }
-  core_skeleton_cpp_FUN_005a1950
-            (local_18,iVar1,in_stack_00000008,in_stack_00000018,in_stack_00000008,in_stack_00000018)
-  ;
+  core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(in_stack_00000008,in_stack_00000018);
   return;
 }
 
@@ -268,7 +265,7 @@ void core_skeleton_cpp_FUN_005a1b70(void)
 // 005a1cc5: MOV EBX,dword ptr [ESP + 0x5c]
 //   XREF to: Stack[0x4] (READ)
 // 005a1cc9: PUSH EBX
-// 005a1cca: CALL core_skeleton.cpp_FUN_005a1950
+// 005a1cca: CALL core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950
 //   XREF to: 005a1950 (UNCONDITIONAL_CALL)
 // 005a1ccf: ADD ESP,0x8
 // 005a1cd2: ADD ESP,0x44

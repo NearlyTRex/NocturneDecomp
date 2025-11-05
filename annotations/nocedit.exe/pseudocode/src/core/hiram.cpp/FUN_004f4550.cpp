@@ -64,15 +64,10 @@ void core_hiram_cpp_FUN_004f4550(void)
     }
   }
   in_stack_00000004 = (CCharacter *)in_stack_00000008;
-  (this_ptr_00->model).field17_0x2254[8] = '\0';
-  (this_ptr_00->model).field17_0x2254[9] = '\0';
-  (this_ptr_00->model).field17_0x2254[10] = '\0';
-  (this_ptr_00->model).field17_0x2254[0xb] = '\0';
+  (this_ptr_00->model).accumulated_root_motion.z = 0.0;
   this_ptr = &this_ptr_00->model;
-  *(undefined4 *)((this_ptr_00->model).field17_0x2254 + 4) =
-       *(undefined4 *)((this_ptr_00->model).field17_0x2254 + 8);
-  *(undefined4 *)(this_ptr_00->model).field17_0x2254 =
-       *(undefined4 *)((this_ptr_00->model).field17_0x2254 + 4);
+  (this_ptr_00->model).accumulated_root_motion.y = (this_ptr_00->model).accumulated_root_motion.z;
+  (this_ptr_00->model).accumulated_root_motion.x = (this_ptr_00->model).accumulated_root_motion.y;
   while (0.0 < (float)in_stack_00000004) {
     in_stack_00000004 =
          (CCharacter *)

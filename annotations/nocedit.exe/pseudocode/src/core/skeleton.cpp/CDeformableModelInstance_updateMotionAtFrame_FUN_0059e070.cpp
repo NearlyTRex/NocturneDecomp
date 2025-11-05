@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 (0058e690) at 0058e76b [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058e4e0 (0058e4e0) at 0058e551 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a05e0 (005a05e0) at 005a061e [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0 (005a05e0) at 005a061e [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb4b0 (005bb4b0) at 005bb6ea [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40

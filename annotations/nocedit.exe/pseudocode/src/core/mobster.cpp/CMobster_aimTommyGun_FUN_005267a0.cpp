@@ -24,8 +24,8 @@
 //   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_enemy.cpp_FUN_004a9a50
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
+//   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
 //   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 //   core_xform.cpp_quaternionFromAngleX_FUN_005f79b0
 //   core_xform.cpp_quaternionFromAngleY_FUN_005f79f0
@@ -49,11 +49,14 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
   float unaff_EDI;
   byte bVar5;
   CDemonActor *in_stack_00000004;
+  CDeformableModelInstance *in_stack_00000018;
   float afStackY_1838 [1515];
   float fVar6;
   CQuaternion4f *in_stack_ffffff98;
   float fVar7;
-  float local_50;
+  code *blend_callback;
+  undefined1 auStack_58 [12];
+  float afStack_4c [2];
   CVector3f local_44;
   float local_38;
   CVector3f local_34;
@@ -148,25 +151,30 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
                  core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
       core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(quat_ptr,fVar7);
       puVar4 = (undefined4 *)((int)&local_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4);
-      *(undefined4 *)(&stack0xffffffa8 + (uint)bVar5 * -8) =
+      *(undefined4 *)(auStack_58 + (uint)bVar5 * -8) =
            *(undefined4 *)((int)&local_34 + (uint)bVar5 * -8);
-      *(undefined4 *)(&stack0xffffffac + (uint)bVar5 * -8 + (uint)bVar5 * -8) = *puVar4;
+      *(undefined4 *)(auStack_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4) = *puVar4;
       fVar7 = local_38;
       *(undefined4 *)
-       ((int)(&stack0xffffffac + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4)
-           = puVar4[(uint)bVar5 * -2 + 1];
-      core_skeleton_cpp_CDeformableModelInstance_FUN_0059ff20();
+       ((int)(auStack_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4) + ((uint)bVar5 * -2 + 1) * 4) =
+           puVar4[(uint)bVar5 * -2 + 1];
+      core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
+                ((CDeformableModelInstance *)(in_stack_00000004 + 1),(CQuaternion4f *)auStack_58,
+                 *(float *)(in_stack_00000004[0x8e].create_event + 0x44),DAT_02f37ef0,
+                 core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
       core_xform_cpp_quaternionFromAngleY_FUN_005f79f0
                 ((CQuaternion4f *)-(float)in_stack_ffffff98,fVar7);
-      local_50 = local_44.y;
-      *(undefined4 *)(&stack0xffffffb4 + (uint)bVar5 * -8) =
-           *(undefined4 *)((int)&local_44 + (uint)bVar5 * -8 + 8);
-      *(float *)(&stack0xffffffb8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+      blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
+      auStack_58._8_4_ = local_44.y;
+      afStack_4c[(uint)bVar5 * -2] = *(float *)((int)&local_44 + (uint)bVar5 * -8 + 8);
+      iVar1 = DAT_02f37ef0;
+      afStack_4c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
            (&local_38)[(uint)bVar5 * -2 + (uint)bVar5 * -2];
-      *(float *)((int)(&stack0xffffffb8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) +
-                ((uint)bVar5 * -2 + 1) * 4) =
+      (afStack_4c + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1] =
            (&local_38 + (uint)bVar5 * -2 + (uint)bVar5 * -2)[(uint)bVar5 * -2 + 1];
-      core_skeleton_cpp_CDeformableModelInstance_FUN_0059ff20();
+      core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
+                (in_stack_00000018,(CQuaternion4f *)(auStack_58 + 8),
+                 *(float *)(in_stack_00000004[0x8e].create_event + 0x44),iVar1,blend_callback);
       return;
     }
     in_stack_00000004[0x8e].create_event[0x44] = '\0';
@@ -484,7 +492,7 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
 // 00526a33: PUSH EAX
 // 00526a34: MOV dword ptr [ESP + 0x84],EAX
 //   XREF to: Stack[-0x18] (WRITE)
-// 00526a3b: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20
+// 00526a3b: CALL core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
 //   XREF to: 0059ff20 (UNCONDITIONAL_CALL)
 // 00526a40: ADD ESP,0x14
 // 00526a43: LEA ESI,[ESP + 0x18]
@@ -514,7 +522,7 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
 // 00526a75: MOV EDX,dword ptr [ESP + 0x80]
 //   XREF to: Stack[-0x18] (READ)
 // 00526a7c: PUSH EDX
-// 00526a7d: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20
+// 00526a7d: CALL core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
 //   XREF to: 0059ff20 (UNCONDITIONAL_CALL)
 // 00526a82: ADD ESP,0x14
 // 00526a85: MOV ESP,EBP

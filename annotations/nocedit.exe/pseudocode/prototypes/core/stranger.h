@@ -9,7 +9,7 @@ CDemonActorType * staticInit(void);
 
 // Original: core_stranger.cpp_FUN_005baee0
 // Address: 005baee0
-undefined FUN_005baee0();
+float FUN_005baee0(int current_bone_index, int target_bone_index, float blend_weight, int hierarchy_distance, CDeformableModelInstance * instance);
 
 // Original: core_stranger.cpp_FUN_005baf20
 // Address: 005baf20

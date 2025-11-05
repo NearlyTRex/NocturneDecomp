@@ -24,7 +24,7 @@
 //   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 //   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
 //   core_path.cpp_FUN_00548500
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
+//   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 //   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
 //   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
 //   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
@@ -141,11 +141,13 @@ void core_bugs_cpp_FUN_00425fe0(void)
     }
     if ((0 < (int)pfVar5) &&
        (in_stack_00000008 =
-             in_stack_00000004[2].model.bone_world_matrices[0x49].m[2].x - in_stack_00000008,
-       in_stack_00000004[2].model.bone_world_matrices[0x49].m[2].x = in_stack_00000008,
-       class_name_hash = g_CCharacterClassInfo.name_hash, in_stack_00000008 <= 0.0)) {
+             in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[2].x -
+             in_stack_00000008,
+       in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[2].x =
+            in_stack_00000008, class_name_hash = g_CCharacterClassInfo.name_hash,
+       in_stack_00000008 <= 0.0)) {
       pCVar2 = *(CDemonActor **)(in_stack_00000004[1].cloth_data + 0x423c);
-      in_stack_00000004[2].model.bone_world_matrices[0x49].m[2].x = 0.2;
+      in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[2].x = 0.2;
       pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar2,class_name_hash);
       if (pCVar2 != (CDemonActor *)0x0) {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe78);
@@ -169,10 +171,11 @@ void core_bugs_cpp_FUN_00425fe0(void)
       pcVar6 = pcVar6 + (uint)bVar7 * -8 + 4;
     }
     if (*(int *)(in_stack_00000004[1].cloth_data + 0x4274) !=
-        (*(CDeformableModelInstance **)(in_stack_00000004[1].cloth_data + 0x4240))->field13_0x2230)
-    {
-      core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0
-                (*(CDeformableModelInstance **)(in_stack_00000004[1].cloth_data + 0x4240));
+        (*(CDeformableModelInstance **)(in_stack_00000004[1].cloth_data + 0x4240))->
+        cached_skinned_lod_index) {
+      core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
+                (*(CDeformableModelInstance **)(in_stack_00000004[1].cloth_data + 0x4240),
+                 *(int *)(in_stack_00000004[1].cloth_data + 0x4274));
     }
     iVar1 = 0;
     if (0 < *(int *)(in_stack_00000004[1].base_actor.create_event + 0x24)) {
@@ -182,13 +185,13 @@ void core_bugs_cpp_FUN_00425fe0(void)
       } while (iVar1 < *(int *)(in_stack_00000004[1].base_actor.create_event + 0x24));
     }
     core_bugs_cpp_FUN_004272f0();
-    fStack_58 = in_stack_00000004[2].model.bone_world_matrices[0x48].m[2].z +
-                in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].y;
-    fStack_54 = in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].w +
-                in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].z;
+    fStack_58 = in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x48].m[2].z +
+                in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[0].y;
+    fStack_54 = in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[0].w +
+                in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[0].z;
     fStack_88 = fStack_58 * FLOAT_00616e13;
-    fStack_50 = in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].x +
-                in_stack_00000004[2].model.bone_world_matrices[0x49].m[1].w;
+    fStack_50 = in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[0].x +
+                in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[1].w;
     fStack_84 = fStack_54 * FLOAT_00616e13;
     fStack_80 = fStack_50 * FLOAT_00616e13;
     fStack_34 = (in_stack_00000004->base_actor).location.position.x + fStack_88;
@@ -334,7 +337,7 @@ void core_bugs_cpp_FUN_00425fe0(void)
 //   XREF to: 00426133 (CONDITIONAL_JUMP)
 // 00426129: PUSH EDI
 // 0042612a: PUSH EAX
-// 0042612b: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
+// 0042612b: CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 //   XREF to: 005a01d0 (UNCONDITIONAL_CALL)
 // 00426130: ADD ESP,0x8
 // 00426133: MOV ECX,dword ptr [EBX + 0xbec0]

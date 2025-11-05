@@ -40,10 +40,10 @@
 //   undefined4 DAT_02db88f4
 // Function calls:
 //   core_enemy.cpp_CEnemy_FUN_004a9650
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -58,12 +58,19 @@ void core_hotdemon_cpp_FUN_004f6d00(void)
   CCharacter *pCVar1;
   CSkeleton *this_ptr_00;
   CEnemy *in_stack_00000004;
+  char *model_name;
   
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            (&(in_stack_00000004->base_character).model);
+  if (g_CGamePtr->nudity_flag == 0) {
+    model_name = "hotdemonx.dfm";
+  }
+  else {
+    model_name = "hotdemon.dfm";
+  }
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(in_stack_00000004->base_character).model,model_name);
   core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
   this_ptr = &(in_stack_00000004->base_character).model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   DAT_02db88c8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 Head");
@@ -134,7 +141,7 @@ void core_hotdemon_cpp_FUN_004f6d00(void)
 //   XREF to: 0062f372 (DATA)
 // 004f6d23: PUSH EAX
 //   Label: LAB_004f6d23
-// 004f6d24: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 004f6d24: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004f6d29: ADD ESP,0x8
 // 004f6d2c: PUSH EDI
@@ -143,7 +150,7 @@ void core_hotdemon_cpp_FUN_004f6d00(void)
 // 004f6d32: ADD ESP,0x4
 // 004f6d35: LEA ESI,[EDI + 0x158]
 // 004f6d3b: PUSH ESI
-// 004f6d3c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 004f6d3c: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 004f6d41: ADD ESP,0x4
 // 004f6d44: PUSH ESI

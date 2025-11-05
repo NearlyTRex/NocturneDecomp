@@ -18,8 +18,8 @@
 //   core_actor.cpp_castToClassHash_FUN_0040c790
 //   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_bugs.cpp_FUN_00425660
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 
 #include "nocturne.h"
@@ -77,8 +77,9 @@ void core_bugs_cpp_FUN_00427400(void)
         core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                   (*(CDeformableModelInstance **)(in_stack_00000010 + 0x12afc));
         core_bugs_cpp_FUN_00425660();
-        core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0
-                  (*(CDeformableModelInstance **)(in_stack_00000010 + 0x12afc));
+        core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
+                  (*(CDeformableModelInstance **)(in_stack_00000010 + 0x12afc),
+                   *(int *)(in_stack_00000010 + 0x12b30));
         iVar5 = 0;
         iVar1 = *(int *)(*(int *)(in_stack_00000010 + 0x12afc) + 0x2234);
         if (0 < *(int *)(in_stack_00000010 + 0x12b34)) {
@@ -250,7 +251,7 @@ void core_bugs_cpp_FUN_00427400(void)
 // 0042752a: MOV EBP,dword ptr [EBP + 0x12afc]
 // 00427530: PUSH EBP
 // 00427531: MOV EBX,ESI
-// 00427533: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
+// 00427533: CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 //   XREF to: 005a01d0 (UNCONDITIONAL_CALL)
 // 00427538: ADD ESP,0x8
 // 0042753b: MOV EDX,ESI

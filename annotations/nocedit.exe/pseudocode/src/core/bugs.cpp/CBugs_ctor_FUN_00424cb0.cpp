@@ -28,7 +28,7 @@
 // Function calls:
 //   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
 //   crt_memory.c_memset_FUN_005fde40
 
@@ -43,7 +43,6 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00424cb0(CBugs *this_ptr)
   CKeyFramedModelInstance *this_ptr_00;
   char *pcVar4;
   char *pcVar5;
-  char *pcStack0000000c;
   
   pCVar2 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   pvVar3 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
@@ -68,9 +67,9 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00424cb0(CBugs *this_ptr)
             (this_ptr_00 + 1,"hroach.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00 + 2,"mroach.kfm");
-  pcStack0000000c = "guul.dfm";
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            ((CDeformableModelInstance *)(this_ptr_00[-0xc3].part_visibility_flags + 1));
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            ((CDeformableModelInstance *)(this_ptr_00[-0xc3].part_visibility_flags + 1),
+             "guul.dfm");
   this_ptr_00[5].model_name[0x4c] = '\0';
   this_ptr_00[5].model_name[0x4d] = '\0';
   this_ptr_00[5].model_name[0x4e] = '\0';
@@ -197,7 +196,7 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00424cb0(CBugs *this_ptr)
 //   XREF to: 00616d00 (DATA)
 // 00424d72: LEA EAX,[EBX + 0x158]
 // 00424d78: PUSH EAX
-// 00424d79: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 00424d79: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00424d7e: MOV dword ptr [EBX + 0x12af8],0x0
 // 00424d88: MOV ESI,0x616d09

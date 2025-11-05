@@ -8,7 +8,7 @@
 //   core_stranger.cpp_CStranger_FUN_005c07b0 (005c07b0) at 005c1416 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c2850 (005c2850) at 005c2b09 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_006531ac
+//   double DOUBLE_006531ac = 0.00390625
 //   undefined4 g_CBoxActorClassInfo.name_hash
 //   undefined4 g_CCryptVesselClassInfo.name_hash
 // Function calls:
@@ -17,7 +17,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_stone.cpp_FUN_005bb010(undefined4 param_1) */
 
 float core_stranger_cpp_FUN_005bb010(void)
@@ -62,7 +61,7 @@ float core_stranger_cpp_FUN_005bb010(void)
       }
       iVar4 = iVar4 + 0xc;
     }
-    return (float)(iVar6 - iVar8) * (float)_DAT_006531ac;
+    return (float)(iVar6 - iVar8) * (float)DOUBLE_006531ac;
   }
   return 0.0;
 }

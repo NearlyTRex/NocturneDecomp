@@ -37,7 +37,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042bc20(CCharacter *this_ptr)
         in_stack_00000008[5] =
              (int)(*(float *)(this_ptr->cloth_data + 0x354) * this_ptr->size_scale);
         if ((float)in_stack_00000008[6] < (float)in_stack_00000008[5]) {
-          in_stack_00000008[6] = *(int *)((this_ptr->model).field15_0x2238 + 0x10);
+          in_stack_00000008[6] = (int)(this_ptr->model).bounding_box.max.y;
         }
         in_stack_00000008[7] =
              (int)(*(float *)(this_ptr->cloth_data + 0x348) * this_ptr->size_scale);

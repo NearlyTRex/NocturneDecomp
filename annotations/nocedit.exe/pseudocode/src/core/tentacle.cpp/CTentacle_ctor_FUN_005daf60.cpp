@@ -10,7 +10,7 @@
 //   CDemonActor_vtable g_CTentacleVTable
 // Function calls:
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -22,8 +22,8 @@ CTentacle * __cdecl core_tentacle_cpp_CTentacle_ctor_FUN_005daf60(CTentacle *thi
   
   pCVar2 = (CTentacle *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   (pCVar2->base_enemy).base_character.base_actor.vtable = &g_CTentacleVTable;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            (&(pCVar2->base_enemy).base_character.model);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(pCVar2->base_enemy).base_character.model,"tentacle.dfm");
   pCVar1 = &pCVar2->base_enemy;
   (pCVar1->base_character).cloth_data[0x34c] = '\0';
   (pCVar1->base_character).cloth_data[0x34d] = '\0';
@@ -66,7 +66,7 @@ CTentacle * __cdecl core_tentacle_cpp_CTentacle_ctor_FUN_005daf60(CTentacle *thi
 // 005daf7a: PUSH EAX
 // 005daf7b: MOV dword ptr [EAX + -0x4],0x664474
 //   XREF to: 00664474 (DATA)
-// 005daf82: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005daf82: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005daf87: MOV dword ptr [EBX + 0x2de4],0x42480000
 // 005daf91: MOV dword ptr [EBX + 0x2de8],0x42c80000

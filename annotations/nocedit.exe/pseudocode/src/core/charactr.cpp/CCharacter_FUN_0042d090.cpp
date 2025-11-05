@@ -66,7 +66,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
   local_28 = &(this_ptr->base_actor).orient;
   local_24 = &(this_ptr->base_actor).location;
   local_18 = 0.0;
-  local_20 = (this_ptr->model).bone_world_matrices;
+  local_20 = (this_ptr->model).bone_transform.bone_world_matrices;
   pSVar4 = this_ptr->carry_hands;
   do {
     if (pSVar4->carry_actor != (CDemonActor *)0x0) {

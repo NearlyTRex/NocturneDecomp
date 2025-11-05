@@ -64,7 +64,7 @@
 //   core_motion.cpp_CMotionController_FUN_0052dde0
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_msnedit.cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   core_sound.cpp_FUN_005b3de0
 //   crt_file.c_makepath_FUN_005febfc
 //   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -376,8 +376,8 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       }
     } while ((this_ptr->validator_or_callback != (void *)0x0) &&
             (iVar15 = (*(code *)this_ptr->validator_or_callback)(), iVar15 == 0));
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-              ((CDeformableModelInstance *)this_ptr->data_ptr);
+    core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+              ((CDeformableModelInstance *)this_ptr->data_ptr,local_548);
     if (this_ptr->auto_update_flag != 0) {
       (*actor->vtable->setup)(actor);
     }
@@ -1539,7 +1539,7 @@ LAB_00410083:
 // 0040f53f: PUSH EAX
 // 0040f540: MOV ESI,dword ptr [EBX + 0x68]
 // 0040f543: PUSH ESI
-// 0040f544: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 0040f544: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 0040f549: MOV EDI,dword ptr [EBX + 0x58]
 // 0040f54c: ADD ESP,0x8

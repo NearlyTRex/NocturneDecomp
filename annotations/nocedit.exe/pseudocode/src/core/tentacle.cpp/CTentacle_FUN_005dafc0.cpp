@@ -14,8 +14,8 @@
 //   undefined4 DAT_03f6cd14
 // Function calls:
 //   core_enemy.cpp_CEnemy_FUN_004a9650
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -29,7 +29,7 @@ void __cdecl core_tentacle_cpp_CTentacle_FUN_005dafc0(CTentacle *this_ptr)
   undefined4 uStack00000010;
   
   this_ptr_01 = &(this_ptr->base_enemy).base_character.model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr_01);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_01);
   core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000008);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_01);
   DAT_03f6cd08 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"bipp02");
@@ -48,7 +48,7 @@ void __cdecl core_tentacle_cpp_CTentacle_FUN_005dafc0(CTentacle *this_ptr)
 //   XREF to: Stack[0x4] (READ)
 // 005dafc5: ADD EBX,0x158
 // 005dafcb: PUSH EBX
-// 005dafcc: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 005dafcc: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 005dafd1: ADD ESP,0x4
 // 005dafd4: MOV EDX,dword ptr [ESP + 0x8]

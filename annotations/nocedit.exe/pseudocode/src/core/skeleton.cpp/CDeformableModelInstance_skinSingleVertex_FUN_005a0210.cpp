@@ -1,36 +1,34 @@
-// Name: core_skeleton.cpp_CDeformableModelInstance_FUN_005a0210
+// Name: core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210
 // Address: 005a0210
 // Address Range: [[005a0210, 005a0242]]
 // Convention: __cdecl
-// Signature: int core_skeleton.cpp_CDeformableModelInstance_FUN_005a0210(CDeformableModelInstance * this_ptr)
+// Signature: CVector3f * core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210(CDeformableModelInstance * this_ptr, CVector3f * output_pos, int lod_index, int vertex_index)
 // Function calls:
 //   core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 
 #include "nocturne.h"
 
-int __cdecl
-core_skeleton_cpp_CDeformableModelInstance_FUN_005a0210(CDeformableModelInstance *this_ptr)
+CVector3f * __cdecl
+core_skeleton_cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210
+          (CDeformableModelInstance *this_ptr,CVector3f *output_pos,int lod_index,int vertex_index)
 
 {
   CDeformableModel *this_ptr_00;
   CMatrix3x4f *unaff_ESI;
-  int in_stack_00000008;
-  CVector3f *in_stack_0000000c;
-  int in_stack_00000010;
-  CMatrix3x4f *vertex_index;
+  CMatrix3x4f *vertex_index_00;
   
-  vertex_index = this_ptr->bone_world_matrices;
+  vertex_index_00 = (this_ptr->bone_transform).bone_world_matrices;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   core_skeleton_cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00
-            (this_ptr_00,in_stack_0000000c,in_stack_00000010,(int)vertex_index,unaff_ESI);
-  return in_stack_00000008;
+            (this_ptr_00,(CVector3f *)lod_index,vertex_index,(int)vertex_index_00,unaff_ESI);
+  return output_pos;
 }
 
 
 // Assembly code:
 // 005a0210: PUSH EBX
-//   Label: core_skeleton.cpp_CDeformableModelInstance_FUN_005a0210
+//   Label: core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210
 // 005a0211: PUSH ESI
 // 005a0212: MOV EDX,dword ptr [ESP + 0xc]
 //   XREF to: Stack[0x4] (READ)

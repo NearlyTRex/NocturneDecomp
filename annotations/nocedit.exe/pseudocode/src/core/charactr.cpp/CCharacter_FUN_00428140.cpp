@@ -56,9 +56,9 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428140(CCharacter *this_ptr)
     }
     pCVar5 = (CCharacter *)&(pCVar5->base_actor).orient_matrix.m[0].z;
   } while (pCVar5 != (CCharacter *)((this_ptr->base_actor).create_event + 0x10));
-  if ((this_ptr->model).field18_0x2260[0] != '\0') {
+  if ((this_ptr->model).model_name[0] != '\0') {
     (this_ptr->model).scale_factor = this_ptr->size_scale;
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(&this_ptr->model);
+    core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(&this_ptr->model);
     pcVar8 = (char *)0x0;
     pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                        (&this_ptr->model);

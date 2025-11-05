@@ -1,8 +1,8 @@
 // Name: core_gabriela.cpp_FUN_004d2a80
 // Address: 004d2a80
 // Address Range: [[004d2a80, 004d2adf]]
-// Convention: unknown
-// Signature: undefined core_gabriela.cpp_FUN_004d2a80()
+// Convention: __cdecl
+// Signature: float core_gabriela.cpp_FUN_004d2a80(int current_bone_index, int target_bone_index, float blend_weight, int hierarchy_distance, CDeformableModelInstance * instance)
 // Cross-references:
 //   core_gabriela.cpp_FUN_004d4d80 (004d4d80) at 004d5462 [DATA]
 // Globals:
@@ -13,31 +13,30 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_hero_gabriella.cpp_FUN_004d2a80(undefined1 param_1, undefined1
-   param_2, undefined4 param_3, undefined4 param_4) */
-
-float core_gabriela_cpp_FUN_004d2a80(void)
+float __cdecl
+core_gabriela_cpp_FUN_004d2a80
+          (int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,
+          CDeformableModelInstance *instance)
 
 {
-  float in_stack_0000000c;
-  int in_stack_00000010;
+  float fVar1;
   
-  if (in_stack_00000010 < 1) {
-    in_stack_0000000c = in_stack_0000000c * (float)DOUBLE_0062acad;
+  if (hierarchy_distance < 1) {
+    fVar1 = blend_weight * (float)DOUBLE_0062acad;
   }
-  else if (in_stack_00000010 == 1) {
-    in_stack_0000000c = in_stack_0000000c * (float)DOUBLE_0062aca5;
+  else if (hierarchy_distance == 1) {
+    fVar1 = blend_weight * (float)DOUBLE_0062aca5;
   }
-  else if (in_stack_00000010 == 2) {
-    in_stack_0000000c = in_stack_0000000c * (float)DOUBLE_0062ac9d;
+  else if (hierarchy_distance == 2) {
+    fVar1 = blend_weight * (float)DOUBLE_0062ac9d;
   }
   else {
-    if (in_stack_00000010 != 3) {
-      return in_stack_0000000c;
+    if (hierarchy_distance != 3) {
+      return blend_weight;
     }
-    in_stack_0000000c = in_stack_0000000c * (float)DOUBLE_0062ac95;
+    fVar1 = blend_weight * (float)DOUBLE_0062ac95;
   }
-  return in_stack_0000000c;
+  return fVar1;
 }
 
 

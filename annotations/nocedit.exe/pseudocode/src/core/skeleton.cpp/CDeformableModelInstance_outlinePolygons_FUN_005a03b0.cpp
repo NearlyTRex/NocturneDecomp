@@ -25,7 +25,7 @@ core_skeleton_cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0
   CDeformableModel *this_ptr_00;
   int unaff_EBX;
   
-  if (this_ptr->field13_0x2230 < 0) {
+  if (this_ptr->cached_skinned_lod_index < 0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0xd33;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModelInstance::outlinePolygons called but LOD is not set!");

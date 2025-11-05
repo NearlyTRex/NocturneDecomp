@@ -5,7 +5,7 @@
 // Signature: void core_stranger.cpp_CStranger_process_FUN_005bb830(CStranger * this_ptr)
 // Globals:
 //   void* switchdataD_005bb7dc = 005bb84e
-//   undefined4 DAT_006534ac
+//   double DOUBLE_006534ac = 0.25
 //   CGame* g_CGamePtr = 02d81a9c
 //   CGame g_CGameInstance
 //   undefined4 g_CGameInstance.delta_time_float
@@ -16,8 +16,6 @@
 //   core_stranger.cpp_CStranger_FUN_005bb960
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_stranger_cpp_CStranger_process_FUN_005bb830(CStranger *this_ptr)
 

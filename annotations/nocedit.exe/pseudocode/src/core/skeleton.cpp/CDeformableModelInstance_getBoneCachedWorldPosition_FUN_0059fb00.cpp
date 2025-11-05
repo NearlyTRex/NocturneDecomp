@@ -56,9 +56,9 @@ core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb
           (CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index)
 
 {
-  out_position->x = this_ptr->bone_world_matrices[bone_index].m[0].z;
-  out_position->y = this_ptr->bone_world_matrices[bone_index].m[1].z;
-  out_position->z = this_ptr->bone_world_matrices[bone_index].m[2].z;
+  out_position->x = (this_ptr->bone_transform).bone_world_matrices[bone_index].m[0].z;
+  out_position->y = (this_ptr->bone_transform).bone_world_matrices[bone_index].m[1].z;
+  out_position->z = (this_ptr->bone_transform).bone_world_matrices[bone_index].m[2].z;
   return out_position;
 }
 

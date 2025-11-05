@@ -51251,10 +51251,10 @@
         "start":"005a05e0"
       }
     ],
-    "cmt":"Signature: undefined1 core_skeleton.cpp_CDeformableModelInstance_FUN_005a05e0(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModelInstance_FUN_005a05e0",
-    "ret":"undefined1",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -51498,9 +51498,24 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModelInstance*"
+        }
+      ]
     }
   },
   {
@@ -54683,9 +54698,10 @@
         "start":"005baee0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_stranger.cpp_FUN_005baee0",
-    "ret":"undefined1",
+    "ret":"float",
     "vars":{
       "locals":[
         {
@@ -54705,8 +54721,97 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"current_bone_index",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"target_bone_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"blend_weight",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"hierarchy_distance",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"instance",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModelInstance*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

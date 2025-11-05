@@ -50,7 +50,7 @@
 //   core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700
 //   core_mobster.cpp_CMobster_ctor_FUN_00525200
 //   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90
 //   core_vehicle.cpp_FUN_005e8b50
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
@@ -79,6 +79,7 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
   int iVar12;
   int iVar13;
   float in_stack_00000008;
+  char *model_name;
   float fVar14;
   undefined1 auStack_f4 [84];
   CBoundingBox3D local_a0;
@@ -268,9 +269,15 @@ joined_r0x005e8664:
     g_CurrentLineNumber = 0x161;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMobster::process - Out of memory!");
   }
-  core_actor_cpp_randomChance_FUN_0040cd10(0.5);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            (&(this_ptr_00->base_enemy).base_character.model);
+  iVar12 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+  if (iVar12 == 0) {
+    model_name = "mobster4.dfm";
+  }
+  else {
+    model_name = "mobster3.dfm";
+  }
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(this_ptr_00->base_enemy).base_character.model,model_name);
   *(CVehicle **)(this_ptr_00->field3_0xbedc + 4) = this_ptr;
   if (local_14 == 0) {
     this_ptr_00->side_of_car = 0;
@@ -899,7 +906,7 @@ LAB_005e82f4:
 //   XREF to: 00656e97 (DATA)
 // 005e84a9: PUSH EAX
 //   Label: LAB_005e84a9
-// 005e84aa: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005e84aa: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005e84af: ADD ESP,0x8
 // 005e84b2: MOV ECX,dword ptr [ESP + 0xec]

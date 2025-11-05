@@ -343,9 +343,9 @@ LAB_0051fdb4:
 LAB_0052043a:
       if (!bVar11) {
 LAB_0052043c:
-        local_124 = local_124 + *(float *)(in_stack_00000004->model).field17_0x2254;
-        local_120 = local_120 + *(float *)((in_stack_00000004->model).field17_0x2254 + 4);
-        local_11c = local_11c + *(float *)((in_stack_00000004->model).field17_0x2254 + 8);
+        local_124 = local_124 + (in_stack_00000004->model).accumulated_root_motion.x;
+        local_120 = local_120 + (in_stack_00000004->model).accumulated_root_motion.y;
+        local_11c = local_11c + (in_stack_00000004->model).accumulated_root_motion.z;
       }
     }
   }

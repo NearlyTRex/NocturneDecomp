@@ -25,7 +25,7 @@
 //   core_charactr.cpp_CCharacter_FUN_0042ad00
 //   core_charactr.cpp_CCharacter_FUN_0042af60
 //   core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+//   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 
 #include "nocturne.h"
@@ -36,7 +36,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429aa0(CCharacter *this_ptr)
   int iVar1;
   
   if (*(int *)(this_ptr->cloth_data + 0x8d40) == 0) {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150(&this_ptr->model);
+    core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
+              (&this_ptr->model,-1,0xffffffff,1,0);
     core_cloth_cpp_MultipleCallSaveJoinedLight_FUN_0043c320();
   }
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
@@ -121,7 +122,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429aa0(CCharacter *this_ptr)
 // 00429b0c: PUSH -0x1
 // 00429b0e: LEA ESI,[EBX + 0x158]
 // 00429b14: PUSH ESI
-// 00429b15: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+// 00429b15: CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   XREF to: 005a0150 (UNCONDITIONAL_CALL)
 // 00429b1a: ADD ESP,0x14
 // 00429b1d: PUSH ESI

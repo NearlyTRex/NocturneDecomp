@@ -61,9 +61,9 @@
 //   core_morph.cpp_CMorph_getReady_FUN_0052b680
 //   core_morph.cpp_FUN_0052b430
 //   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
@@ -89,6 +89,7 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
   CEnemy *in_stack_00000004;
   undefined4 auStackY_1010 [1015];
   uint class_name_hash;
+  char *model_name;
   undefined4 uStack_28;
   undefined4 uStack_1c;
   
@@ -98,10 +99,16 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
     g_CurrentLineNumber = 0xb6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMimic::setup - can't use mimic in multi-player!");
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            (&(in_stack_00000004->base_character).model);
+  if (g_HeroActors[g_LocalHeroIndex] == (CHero *)0x0) {
+    model_name = "stranger.dfm";
+  }
+  else {
+    model_name = (g_HeroActors[g_LocalHeroIndex]->base_character).model.model_name;
+  }
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(in_stack_00000004->base_character).model,model_name);
   pCVar1 = &(in_stack_00000004->base_character).model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(pCVar1);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(pCVar1);
   this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar1);
   DAT_02f33378 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 head");
   _DAT_02f3337c =
@@ -247,12 +254,12 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
 // 0051f41b: PUSH EAX
 // 0051f41c: PUSH EDX
 //   Label: LAB_0051f41c
-// 0051f41d: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 0051f41d: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 0051f422: ADD ESP,0x8
 // 0051f425: LEA EDI,[EBX + 0x158]
 // 0051f42b: PUSH EDI
-// 0051f42c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 0051f42c: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0051f431: ADD ESP,0x4
 // 0051f434: PUSH EDI

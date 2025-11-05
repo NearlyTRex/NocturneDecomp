@@ -84,7 +84,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
           local_40.z = 0.5;
           pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                              ((CVector3f *)&stack0xffffff90,&local_40,
-                              (this_ptr->model).bone_world_matrices + iVar2);
+                              (this_ptr->model).bone_transform.bone_world_matrices + iVar2);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     (&this_ptr->base_actor,&local_28,pCVar4);
           iVar2 = core_setcolid_cpp_CDemonSet_FUN_00574580(g_CDemonSetPtr);

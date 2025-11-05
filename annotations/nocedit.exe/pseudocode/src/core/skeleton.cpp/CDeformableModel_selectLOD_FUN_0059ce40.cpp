@@ -5,7 +5,7 @@
 // Signature: int core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40(CDeformableModel * this_ptr, CBoundingBox3D * bounding_box)
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042af60 (0042af60) at 0042b045 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150 (005a0150) at 005a01a8 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150 (005a0150) at 005a01a8 [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonRenderer g_CDemonRendererInstance

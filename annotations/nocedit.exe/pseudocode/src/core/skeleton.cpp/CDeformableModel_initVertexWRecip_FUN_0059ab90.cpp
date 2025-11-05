@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel * this_ptr, int lod_index)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a02f0 (005a02f0) at 005a031a [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0 (005a02f0) at 005a031a [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonRenderer g_CDemonRendererInstance

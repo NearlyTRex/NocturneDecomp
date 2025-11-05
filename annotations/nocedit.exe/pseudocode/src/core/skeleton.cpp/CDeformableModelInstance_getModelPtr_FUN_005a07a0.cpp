@@ -39,13 +39,6 @@
 //   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005968e9 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260 (0058a260) at 0058a291 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_LockGetPtrAndExportModel_FUN_00598ee0 (00598ee0) at 00598efd [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150 (005a0150) at 005a019f [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0 (005a01d0) at 005a01f0 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0210 (005a0210) at 005a022d [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0250 (005a0250) at 005a0271 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a02a0 (005a02a0) at 005a02c1 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a02f0 (005a02f0) at 005a0311 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a05e0 (005a05e0) at 005a060e [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a1040 (005a1040) at 005a1063 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a10e0 (005a10e0) at 005a10ec [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a14b0 (005a14b0) at 005a14eb [UNCONDITIONAL_CALL]
@@ -53,10 +46,17 @@
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a17b0 (005a17b0) at 005a17c7 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a17e0 (005a17e0) at 005a17ec [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0 (0059deb0) at 0059dec0 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0 (005a05e0) at 005a060e [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800 (005a1800) at 005a181d [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 (005a0820) at 005a0825 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0 (005a03b0) at 005a03c7 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340 (005a0340) at 005a0370 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150 (005a0150) at 005a019f [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0 (005a02f0) at 005a0311 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0 (005a02a0) at 005a02c1 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250 (005a0250) at 005a0271 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210 (005a0210) at 005a022d [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0 (005a01d0) at 005a01f0 [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a24d0 (005a24d0) at 005a2662 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb4b0 (005bb4b0) at 005bb7b5 [UNCONDITIONAL_CALL]
 //   core_svetlana.cpp_CSvetlana_FUN_005d88e0 (005d88e0) at 005d8b1a [UNCONDITIONAL_CALL]
@@ -79,11 +79,11 @@ core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 
 {
   if (this_ptr->model_ptr == (CDeformableModel *)0x0) {
-    if (this_ptr->field18_0x2260[0] != '\0') {
+    if (this_ptr->model_name[0] != '\0') {
       g_CurrentFilename = "..\\core\\skeleton.cpp";
       g_CurrentLineNumber = 0xdd3;
       core_main_c_displayErrorAndQuit_FUN_00506f10
-                ("Tried to do something with model %s, but modelPtr not set.  (CDeformableModelInstance::preCache not called.",this_ptr->field18_0x2260);
+                ("Tried to do something with model %s, but modelPtr not set.  (CDeformableModelInstance::preCache not called.",this_ptr->model_name);
       return this_ptr->model_ptr;
     }
     g_CurrentFilename = "..\\core\\skeleton.cpp";

@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: void core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, int * out_frame2, float * out_blend_weight)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0ad0 (005a0ad0) at 005a0b06 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (0059eb50) at 0059eb92 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0 (005a0ad0) at 005a0b06 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (0059e0a0) at 0059e0dd [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_math.c_round_FUN_005fe6b0

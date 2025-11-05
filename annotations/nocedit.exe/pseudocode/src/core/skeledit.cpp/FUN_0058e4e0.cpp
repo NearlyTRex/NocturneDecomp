@@ -20,8 +20,8 @@
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_skeledit.cpp_FUN_0058e600
 //   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0480
+//   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
+//   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
@@ -37,9 +37,9 @@ void core_skeledit_cpp_FUN_0058e4e0(void)
   int iVar1;
   int iVar2;
   int iVar3;
-  int in_stack_00000004;
-  int in_stack_00000008;
-  float in_stack_0000000c;
+  CDeformableModel *in_stack_0000000c;
+  int in_stack_0000001c;
+  float in_stack_00000020;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x30);
   this_ptr = (CDeformableModelInstance *)
@@ -52,26 +52,27 @@ void core_skeledit_cpp_FUN_0058e4e0(void)
     g_CurrentLineNumber = 0x9bd;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::groundBias - out of memory!");
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0480(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
+            (this_ptr,in_stack_0000000c);
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
-            (this_ptr,in_stack_00000008,in_stack_0000000c);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(this_ptr);
-  iVar1 = this_ptr->field14_0x2234;
+            (this_ptr,in_stack_0000001c,in_stack_00000020);
+  core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(this_ptr,0);
+  iVar1 = this_ptr->current_lod_index;
   iVar3 = 0;
   iVar2 = *(int *)(iVar1 + 4);
-  if (0 < *(int *)(in_stack_00000004 + 0x2c)) {
+  if (0 < in_stack_0000000c->vertex_count[0]) {
     do {
       if (*(int *)(iVar1 + 4) < iVar2) {
         iVar2 = *(int *)(iVar1 + 4);
       }
       iVar3 = iVar3 + 1;
       iVar1 = iVar1 + 0xc;
-    } while (iVar3 < *(int *)(in_stack_00000004 + 0x2c));
+    } while (iVar3 < in_stack_0000000c->vertex_count[0]);
   }
   core_skeledit_cpp_FUN_0058e600();
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0x9d1;
-  (*(code *)((this_ptr->motion_controller).vtable)->dtor)();
+  (*((this_ptr->motion_controller).vtable)->dtor)(&this_ptr->motion_controller);
   return;
 }
 
@@ -118,7 +119,7 @@ void core_skeledit_cpp_FUN_0058e4e0(void)
 // 0058e53d: PUSH EBX
 //   Label: LAB_0058e53d
 // 0058e53e: PUSH ESI
-// 0058e53f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0480
+// 0058e53f: CALL core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
 //   XREF to: 005a0480 (UNCONDITIONAL_CALL)
 // 0058e544: ADD ESP,0x8
 // 0058e547: MOV EDI,dword ptr [ESP + 0x28]
@@ -132,7 +133,7 @@ void core_skeledit_cpp_FUN_0058e4e0(void)
 // 0058e556: ADD ESP,0xc
 // 0058e559: PUSH 0x0
 // 0058e55b: PUSH ESI
-// 0058e55c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
+// 0058e55c: CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 //   XREF to: 005a01d0 (UNCONDITIONAL_CALL)
 // 0058e561: ADD ESP,0x8
 // 0058e564: MOV EAX,dword ptr [ESI + 0x2234]

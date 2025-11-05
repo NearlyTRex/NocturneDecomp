@@ -64885,10 +64885,10 @@
         "start":"0059ff20"
       }
     ],
-    "cmt":"Signature: undefined1 core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20",
-    "ret":"undefined1",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -65052,9 +65052,88 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModelInstance*"
+        },
+        {
+          "name":"rotation_quat",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CQuaternion4f*"
+        },
+        {
+          "name":"blend_weight",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"bone_index",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"blend_callback",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel_MotionBlendWeightFunc*"
+        }
+      ]
     }
   },
   {
@@ -65068,7 +65147,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModelInstance_FUN_005a02a0",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0",
     "ret":"void",
     "vars":{
       "params":[
@@ -65087,6 +65166,22 @@
             ]
           },
           "type":"CDeformableModelInstance*"
+        },
+        {
+          "name":"lod_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -65190,7 +65285,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModelInstance_FUN_005a08a0",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -65658,7 +65753,55 @@
               }
             ]
           },
-          "type":"CDeformableModelInstance*"
+          "type":"CMotionController*"
+        },
+        {
+          "name":"source_motion_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"source_frame",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"target_motion_index",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{

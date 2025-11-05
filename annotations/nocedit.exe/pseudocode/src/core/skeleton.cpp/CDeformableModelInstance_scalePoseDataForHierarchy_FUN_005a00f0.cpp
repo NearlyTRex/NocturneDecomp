@@ -1,8 +1,8 @@
-// Name: core_skeleton.cpp_CDeformableModelInstance_FUN_005a00f0
+// Name: core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f0
 // Address: 005a00f0
 // Address Range: [[005a00f0, 005a0144]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_FUN_005a00f0(CDeformableModelInstance * this_ptr)
+// Signature: void core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f0(CDeformableModelInstance * this_ptr, float scale_factor, int target_bone_index)
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042af60 (0042af60) at 0042b023 [UNCONDITIONAL_CALL]
 // Function calls:
@@ -12,13 +12,13 @@
 #include "nocturne.h"
 
 void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_FUN_005a00f0(CDeformableModelInstance *this_ptr)
+core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f0
+          (CDeformableModelInstance *this_ptr,float scale_factor,int target_bone_index)
 
 {
   CSkeleton *this_ptr_00;
   int iVar1;
   int start_bone_index;
-  int in_stack_0000000c;
   float in_stack_00000010;
   
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
@@ -26,9 +26,10 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a00f0(CDeformableModelInstance
   if (0 < this_ptr_00->bone_count) {
     do {
       iVar1 = core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100
-                        (this_ptr_00,start_bone_index,in_stack_0000000c);
+                        (this_ptr_00,start_bone_index,target_bone_index);
       if (-1 < iVar1) {
-        this_ptr->current_pose_data[0] = this_ptr->current_pose_data[0] * in_stack_00000010;
+        (this_ptr->bone_transform).current_pose_data[0] =
+             (this_ptr->bone_transform).current_pose_data[0] * in_stack_00000010;
       }
       start_bone_index = start_bone_index + 1;
       this_ptr = (CDeformableModelInstance *)&(this_ptr->motion_controller).current_motion_index;
@@ -40,7 +41,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a00f0(CDeformableModelInstance
 
 // Assembly code:
 // 005a00f0: PUSH EBX
-//   Label: core_skeleton.cpp_CDeformableModelInstance_FUN_005a00f0
+//   Label: core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f0
 // 005a00f1: PUSH ESI
 // 005a00f2: PUSH EDI
 // 005a00f3: PUSH EBP

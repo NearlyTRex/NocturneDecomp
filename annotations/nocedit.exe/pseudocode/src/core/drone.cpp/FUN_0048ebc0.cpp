@@ -8,8 +8,8 @@
 //   TerminatedCString s_Bipn09_0062237e
 // Function calls:
 //   core_enemy.cpp_CEnemy_FUN_004a9650
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -26,7 +26,7 @@ void core_drone_cpp_FUN_0048ebc0(void)
   CEnemy *in_stack_00000004;
   
   this_ptr = &(in_stack_00000004->base_character).model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   pCVar1 = &in_stack_00000004[1].base_character;
   (pCVar1->base_actor).actor_name[8] = '\0';
@@ -65,7 +65,7 @@ void core_drone_cpp_FUN_0048ebc0(void)
 //   XREF to: Stack[0x4] (READ)
 // 0048ebc6: LEA ESI,[EBX + 0x158]
 // 0048ebcc: PUSH ESI
-// 0048ebcd: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 0048ebcd: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0048ebd2: ADD ESP,0x4
 // 0048ebd5: PUSH ESI

@@ -64779,7 +64779,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150",
     "ret":"void",
     "vars":{
       "params":[
@@ -64798,6 +64798,70 @@
             ]
           },
           "type":"CDeformableModelInstance*"
+        },
+        {
+          "name":"lod_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"render_flags",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"lighting_mode",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"render_pass",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -64813,7 +64877,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0",
     "ret":"void",
     "vars":{
       "params":[
@@ -64832,6 +64896,22 @@
             ]
           },
           "type":"CDeformableModelInstance*"
+        },
+        {
+          "name":"lod_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -64847,7 +64927,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModelInstance_FUN_005a0250",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250",
     "ret":"void",
     "vars":{
       "params":[
@@ -64866,6 +64946,22 @@
             ]
           },
           "type":"CDeformableModelInstance*"
+        },
+        {
+          "name":"lod_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -64881,7 +64977,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450",
     "ret":"void",
     "vars":{
       "params":[
@@ -64915,7 +65011,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModelInstance_FUN_005a0ad0",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -65208,6 +65304,54 @@
             ]
           },
           "type":"CDeformableModelInstance*"
+        },
+        {
+          "name":"motion_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"animation_time",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"output_bone_data",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"SBoneTransformData*"
         }
       ]
     }
@@ -65289,9 +65433,10 @@
         "start":"005a1950"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_FUN_005a1950",
-    "ret":"undefined1",
+    "name":"core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -65471,9 +65616,40 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"bone_data",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SBoneTransformData*"
+        },
+        {
+          "name":"instance_ptr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModelInstance*"
+        }
+      ]
     }
   },
   {

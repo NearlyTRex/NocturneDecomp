@@ -26,6 +26,6 @@ typedef struct CDeformableModel {
     int farthest_child_bone[100]; // 0x8dcc
     char model_name[80]; // 0x8f5c
     CSkeleton* skeleton_ptr; // 0x8fac
-    char model_identifier[80]; // 0x8fb0
+    char model_filename[80]; // 0x8fb0
 } CDeformableModel;
 

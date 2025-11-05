@@ -168,7 +168,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
          *(undefined4 *)(this_ptr->field2_0x240c + 0x20);
     return;
   }
-  if ((this_ptr->model).field18_0x2260[0] != '\0') {
+  if ((this_ptr->model).model_name[0] != '\0') {
     pcVar8 = (char *)core_motion_cpp_CMotionController_FUN_0052dab0
                                (&(this_ptr->model).motion_controller);
     uVar12 = 0xffffffff;
@@ -249,7 +249,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
     dVar7 = local_9c;
     local_28 = *(float *)(this_ptr->cloth_data + 0x358) * this_ptr->size_scale;
     if (local_28 < *(float *)(this_ptr->cloth_data + 0x354) * this_ptr->size_scale) {
-      local_28 = *(float *)((this_ptr->model).field15_0x2238 + 0x10);
+      local_28 = (this_ptr->model).bounding_box.max.y;
     }
     fVar9 = *(float *)(this_ptr->cloth_data + 0x354) * this_ptr->size_scale;
     if (local_28 < fVar9) {

@@ -52,18 +52,21 @@ core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
   bVar5 = 0;
   if (bone_index < 0) {
     core_xform_cpp_setRotationScaleIdentity_FUN_005f5190((CMatrix3x4f *)&local_7c);
-    local_6c = (this_ptr->root_position).x;
-    local_5c = (this_ptr->root_position).y;
-    local_4c = (this_ptr->root_position).z;
+    local_6c = (this_ptr->bone_transform).root_position.x;
+    local_5c = (this_ptr->bone_transform).root_position.y;
+    local_4c = (this_ptr->bone_transform).root_position.z;
   }
   else {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
     iVar2 = pCVar1->bone_list[bone_index].parent_index;
     local_18.z = (float)(bone_index * 0xc);
     if (iVar2 < 0) {
-      local_70 = (this_ptr->root_position).x + this_ptr->transformed_vertices[bone_index].x;
-      local_60 = (this_ptr->root_position).y + this_ptr->transformed_vertices[bone_index].y;
-      local_50 = (this_ptr->root_position).z + this_ptr->transformed_vertices[bone_index].z;
+      local_70 = (this_ptr->bone_transform).root_position.x +
+                 this_ptr->transformed_vertices[bone_index].x;
+      local_60 = (this_ptr->bone_transform).root_position.y +
+                 this_ptr->transformed_vertices[bone_index].y;
+      local_50 = (this_ptr->bone_transform).root_position.z +
+                 this_ptr->transformed_vertices[bone_index].z;
     }
     else {
       core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
@@ -82,17 +85,17 @@ core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
       local_58 = local_18.z;
     }
     core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280
-              ((CMatrix3x3f *)&local_7c,this_ptr->bone_rotations + bone_index);
-    if (this_ptr->current_pose_data[(int)out_matrix] != 1.0) {
-      local_78 = local_78 * this_ptr->current_pose_data[(int)out_matrix];
-      local_74 = local_74 * this_ptr->current_pose_data[(int)out_matrix];
-      local_70 = local_70 * this_ptr->current_pose_data[(int)out_matrix];
-      local_68 = local_68 * this_ptr->current_pose_data[(int)out_matrix];
-      local_64 = local_64 * this_ptr->current_pose_data[(int)out_matrix];
-      local_60 = local_60 * this_ptr->current_pose_data[(int)out_matrix];
-      local_58 = local_58 * this_ptr->current_pose_data[(int)out_matrix];
-      local_54 = local_54 * this_ptr->current_pose_data[(int)out_matrix];
-      local_50 = local_50 * this_ptr->current_pose_data[(int)out_matrix];
+              ((CMatrix3x3f *)&local_7c,(this_ptr->bone_transform).bone_rotations + bone_index);
+    if ((this_ptr->bone_transform).current_pose_data[(int)out_matrix] != 1.0) {
+      local_78 = local_78 * (this_ptr->bone_transform).current_pose_data[(int)out_matrix];
+      local_74 = local_74 * (this_ptr->bone_transform).current_pose_data[(int)out_matrix];
+      local_70 = local_70 * (this_ptr->bone_transform).current_pose_data[(int)out_matrix];
+      local_68 = local_68 * (this_ptr->bone_transform).current_pose_data[(int)out_matrix];
+      local_64 = local_64 * (this_ptr->bone_transform).current_pose_data[(int)out_matrix];
+      local_60 = local_60 * (this_ptr->bone_transform).current_pose_data[(int)out_matrix];
+      local_58 = local_58 * (this_ptr->bone_transform).current_pose_data[(int)out_matrix];
+      local_54 = local_54 * (this_ptr->bone_transform).current_pose_data[(int)out_matrix];
+      local_50 = local_50 * (this_ptr->bone_transform).current_pose_data[(int)out_matrix];
     }
   }
   pfVar3 = &local_78;

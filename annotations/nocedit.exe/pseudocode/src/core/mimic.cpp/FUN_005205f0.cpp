@@ -30,7 +30,7 @@
 //   core_morph.cpp_CMorphModel_FUN_0052bae0
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_motion.cpp_CMotionController_FUN_0052e700
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+//   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
 //   core_xform.cpp_getTranslation_FUN_005f6110
 //   core_xform.cpp_matrixToEulerAngles_FUN_005f5690
@@ -79,7 +79,8 @@ int core_mimic_cpp_FUN_005205f0(void)
         g_TransformMatrix.m[0][0] = -g_TransformMatrix.m[0][0];
         g_TransformMatrix.m[0][1] = -g_TransformMatrix.m[0][1];
         g_TransformMatrix.m[0][2] = -g_TransformMatrix.m[0][2];
-        core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150(&in_stack_00000004->model);
+        core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
+                  (&in_stack_00000004->model,-1,0xffffffff,1,0);
         core_cloth_cpp_FUN_0043bae0();
         local_34.m[2].z =
              (float)core_actor_cpp_castToClassHash_FUN_0040c790
@@ -96,8 +97,8 @@ int core_mimic_cpp_FUN_005205f0(void)
                     ((CMatrix3x4f *)&stack0xffffff3c,(CVector3f *)(local_4c + 0xc),local_34.m + 1);
           core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                     ((CMatrix3x4f *)&stack0xffffff3c,
-                     (in_stack_00000004->model).bone_world_matrices + DAT_02f33378,in_stack_ffffff40
-                    );
+                     (in_stack_00000004->model).bone_transform.bone_world_matrices + DAT_02f33378,
+                     in_stack_ffffff40);
           puVar2 = (undefined4 *)&stack0xffffff0c;
           puVar3 = (undefined4 *)&stack0xffffff6c;
           for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -255,7 +256,7 @@ int core_mimic_cpp_FUN_005205f0(void)
 //   XREF to: 02d052ec (WRITE)
 // 005206f1: MOV dword ptr [0x02d052f0],ECX
 //   XREF to: 02d052f0 (WRITE)
-// 005206f7: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+// 005206f7: CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   XREF to: 005a0150 (UNCONDITIONAL_CALL)
 // 005206fc: ADD ESP,0x14
 // 005206ff: PUSH 0x0

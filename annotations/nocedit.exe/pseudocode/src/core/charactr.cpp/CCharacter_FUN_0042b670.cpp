@@ -36,7 +36,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b670(CCharacter *this_ptr)
   
   iVar3 = 0;
   if (0 < *(int *)(this_ptr->cloth_data + 0x35c)) {
-    local_14 = (this_ptr->model).bone_world_matrices;
+    local_14 = (this_ptr->model).bone_transform.bone_world_matrices;
     pcVar2 = this_ptr->cloth_data + 0x360;
     do {
       if ((this_ptr->model).part_visibility_flags[*(int *)pcVar2] != 0) {

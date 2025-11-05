@@ -38,9 +38,9 @@
 // Function calls:
 //   core_enemy.cpp_CEnemy_FUN_004a9650
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -58,7 +58,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041bd90(CBoneGuy *this_ptr)
   undefined4 uStack00000034;
   
   this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   DAT_00822944 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bip01 Head");
@@ -122,7 +122,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041bd90(CBoneGuy *this_ptr)
 //   XREF to: Stack[0x4] (READ)
 // 0041bd97: LEA EDI,[ESI + 0x158]
 // 0041bd9d: PUSH EDI
-// 0041bd9e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 0041bd9e: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0041bda3: ADD ESP,0x4
 // 0041bda6: PUSH EDI

@@ -22,12 +22,12 @@
 //   core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40
 //   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a00f0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0250
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a1510
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a15e0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 //   core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340
+//   core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f0
+//   core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250
 //   crt_math.c_round_FUN_005fe6b0
 //   crt_stdlib.c_rand_FUN_005feb5c
 //   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
@@ -61,11 +61,12 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
   engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&DAT_0066e6b0 + iVar2 % 6);
   this_ptr_00 = &this_ptr->model;
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a1510(this_ptr_00);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a00f0(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f0
+            (this_ptr_00,1.1,-1);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
-  core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_01,in_stack_ffffe570);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0250(this_ptr_00);
+  iVar2 = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_01,in_stack_ffffe570);
+  core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(this_ptr_00,iVar2);
   core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(this_ptr_00);
   iVar2 = 0;
   do {
@@ -165,7 +166,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
 // 0042b01b: PUSH -0x1
 // 0042b01d: PUSH 0x3f8ccccd
 // 0042b022: PUSH EBX
-// 0042b023: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a00f0
+// 0042b023: CALL core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f0
 //   XREF to: 005a00f0 (UNCONDITIONAL_CALL)
 // 0042b028: ADD ESP,0xc
 // 0042b02b: PUSH EBX
@@ -184,7 +185,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
 // 0042b04a: ADD ESP,0x8
 // 0042b04d: PUSH EAX
 // 0042b04e: PUSH EBX
-// 0042b04f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0250
+// 0042b04f: CALL core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250
 //   XREF to: 005a0250 (UNCONDITIONAL_CALL)
 // 0042b054: ADD ESP,0x8
 // 0042b057: PUSH 0x0

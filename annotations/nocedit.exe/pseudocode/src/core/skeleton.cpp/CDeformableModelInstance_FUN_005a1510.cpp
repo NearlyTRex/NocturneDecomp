@@ -34,10 +34,10 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a1510(CDeformableModelInstance
   float *pfVar11;
   
   bVar10 = 0;
-  if ((CVector3f *)in_stack_00000008 != &this_ptr->root_position) {
-    *in_stack_00000008 = (this_ptr->root_position).x;
-    in_stack_00000008[1] = (this_ptr->root_position).y;
-    in_stack_00000008[2] = (this_ptr->root_position).z;
+  if ((SBoneTransformData *)in_stack_00000008 != &this_ptr->bone_transform) {
+    *in_stack_00000008 = (this_ptr->bone_transform).root_position.x;
+    in_stack_00000008[1] = (this_ptr->bone_transform).root_position.y;
+    in_stack_00000008[2] = (this_ptr->bone_transform).root_position.z;
   }
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   iVar1 = pCVar2->bone_count;
@@ -50,15 +50,15 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a1510(CDeformableModelInstance
     do {
       pfVar9 = in_stack_00000008 + (uint)bVar10 * -2 + 4;
       pfVar6 = (float *)((int)local_10 + (uint)bVar10 * -8 + 0x6b4);
-      in_stack_00000008[3] = local_10->bone_rotations[0].w;
+      in_stack_00000008[3] = (local_10->bone_transform).bone_rotations[0].w;
       pfVar7 = pfVar6 + (uint)bVar10 * -2 + 1;
       *pfVar9 = *pfVar6;
       pfVar9[(uint)bVar10 * -2 + 1] = *pfVar7;
       (pfVar9 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1] = pfVar7[(uint)bVar10 * -2 + 1];
-      pfVar11[0x193] = this_ptr->current_pose_data[0];
+      pfVar11[0x193] = (this_ptr->bone_transform).current_pose_data[0];
       this_ptr = (CDeformableModelInstance *)&(this_ptr->motion_controller).current_motion_index;
       in_stack_00000008 = in_stack_00000008 + 4;
-      pCVar8 = local_c->bone_world_matrices;
+      pCVar8 = (local_c->bone_transform).bone_world_matrices;
       pfVar6 = pfVar3 + 0x1f7;
       for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
         *pfVar6 = pCVar8->m[0].w;

@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_stranger.cpp_staticInit_FUN_005bae80 (005bae80) at 005baea2 [DATA]
 // Globals:
-//   undefined4 s_..\core\stranger.cpp_006531b4
+//   TerminatedCString s_core_stranger_cpp_006531b4
 // Function calls:
 //   core_stranger.cpp_CStranger_ctor_FUN_005bb120
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
@@ -19,8 +19,7 @@ void core_stranger_cpp_FUN_005bb0e0(void)
   CStranger *this_ptr;
   
   this_ptr = (CStranger *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
-                       (0x1fe70,"p?..\\core\\stranger.cpp" + 2,0x1d3);
+             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1fe70,"..\\core\\stranger.cpp",0x1d3);
   if (this_ptr == (CStranger *)0x0) {
     return;
   }

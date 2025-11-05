@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_0059ab20(CDeformableModel * this_ptr, int lod_index, int * input_vertices)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0250 (005a0250) at 005a027a [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250 (005a0250) at 005a027a [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CDemonSet g_CDemonSetInstance

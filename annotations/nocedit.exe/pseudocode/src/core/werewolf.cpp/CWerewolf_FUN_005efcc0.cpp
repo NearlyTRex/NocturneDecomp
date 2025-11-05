@@ -12,8 +12,8 @@
 // Function calls:
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_enemy.cpp_CEnemy_FUN_004a9650
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -30,7 +30,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005efcc0(CWerewolf *this_ptr)
   float fStack00000018;
   
   this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine3");
   *(int *)this_ptr->field4_0xbec0 = iVar2;
@@ -82,7 +82,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005efcc0(CWerewolf *this_ptr)
 // 005efcc5: MOV EBX,dword ptr [ESP + 0x10]
 // 005efcc9: LEA ESI,[EBX + 0x158]
 // 005efccf: PUSH ESI
-// 005efcd0: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 005efcd0: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 005efcd5: ADD ESP,0x4
 // 005efcd8: PUSH ESI

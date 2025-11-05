@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40 (0059fb40) at 0059fba8 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 (0059f820) at 0059f8f5 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_FUN_005a1950 (005a1950) at 005a19c3 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950 (005a1950) at 005a19c3 [UNCONDITIONAL_CALL]
 //   core_xform.cpp_lerpMatrix3x4_FUN_005f7140 (005f7140) at 005f721c [UNCONDITIONAL_CALL]
 //   core_xform.cpp_quaternionToEulerAnglesZYX_FUN_005f7af0 (005f7af0) at 005f7b02 [UNCONDITIONAL_CALL]
 //   core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0 (005f7ac0) at 005f7ad2 [UNCONDITIONAL_CALL]

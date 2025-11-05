@@ -76,14 +76,11 @@ void core_passngr_cpp_FUN_00545ef0(void)
     }
   }
   fStack_14 = in_stack_00000008;
-  (in_stack_00000004->model).field17_0x2254[8] = '\0';
-  (in_stack_00000004->model).field17_0x2254[9] = '\0';
-  (in_stack_00000004->model).field17_0x2254[10] = '\0';
-  (in_stack_00000004->model).field17_0x2254[0xb] = '\0';
-  *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4) =
-       *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 8);
-  *(undefined4 *)(in_stack_00000004->model).field17_0x2254 =
-       *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4);
+  (in_stack_00000004->model).accumulated_root_motion.z = 0.0;
+  (in_stack_00000004->model).accumulated_root_motion.y =
+       (in_stack_00000004->model).accumulated_root_motion.z;
+  (in_stack_00000004->model).accumulated_root_motion.x =
+       (in_stack_00000004->model).accumulated_root_motion.y;
   while (0.0 < fStack_14) {
     fStack_14 = (float)core_motion_cpp_CMotionController_advance_FUN_0052d610
                                  (&(in_stack_00000004->model).motion_controller);
@@ -92,7 +89,7 @@ void core_passngr_cpp_FUN_00545ef0(void)
   if (iVar3 != 0) {
     pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                        (&in_stack_00000004->base_actor,(CVector3f *)&stack0xfffffff0,
-                        (CVector3f *)(in_stack_00000004->model).field17_0x2254);
+                        &(in_stack_00000004->model).accumulated_root_motion);
     pCVar1 = &(in_stack_00000004->base_actor).location;
     (pCVar1->position).x = pCVar5->x + (pCVar1->position).x;
     (in_stack_00000004->base_actor).location.position.y =

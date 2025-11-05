@@ -53496,7 +53496,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_motion.cpp_CMotionController_FUN_0052e570",
+    "name":"core_motion.cpp_CMotionController_accumulateScaledRootMotion_FUN_0052e570",
     "ret":"void",
     "vars":{
       "params":[
@@ -53515,6 +53515,54 @@
             ]
           },
           "type":"CMotionController*"
+        },
+        {
+          "name":"start_frame",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"end_frame",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"scale_factor",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -69766,7 +69814,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModelInstance_FUN_005a00f0",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f0",
     "ret":"void",
     "vars":{
       "params":[
@@ -69785,6 +69833,38 @@
             ]
           },
           "type":"CDeformableModelInstance*"
+        },
+        {
+          "name":"scale_factor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"target_bone_index",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -69800,7 +69880,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModelInstance_FUN_005a02f0",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0",
     "ret":"void",
     "vars":{
       "params":[
@@ -69819,6 +69899,22 @@
             ]
           },
           "type":"CDeformableModelInstance*"
+        },
+        {
+          "name":"lod_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -70076,12 +70172,38 @@
         "start":"005a1cf0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_LoadSkeletonDeformable_FUN_005a1cf0",
-    "ret":"undefined1",
+    "name":"core_skeleton.cpp_getDeformableModel_FUN_005a1cf0",
+    "ret":"CDeformableModel*",
     "vars":{
+      "params":[
+        {
+          "name":"model_filename",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

@@ -29,7 +29,7 @@
 //   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055d118 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_00562860 (00562860) at 0056287d [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596d51 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a08a0 (005a08a0) at 005a08b2 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0 (005a08a0) at 005a08b2 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_FUN_005a0f50 (005a0f50) at 005a0f5e [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb4b0 (005bb4b0) at 005bb6d2 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c5270 (005c5270) at 005c5336 [UNCONDITIONAL_CALL]

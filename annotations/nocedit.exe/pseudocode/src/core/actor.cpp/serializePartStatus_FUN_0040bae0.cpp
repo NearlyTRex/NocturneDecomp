@@ -37,8 +37,8 @@
 // Function calls:
 //   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
 //   core_actor.cpp_handleActorPropertyParseError_FUN_0040b210
-//   core_skeleton.cpp_FUN_005a0410
-//   core_skeleton.cpp_FUN_005a0430
+//   core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430
+//   core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_005a0410
 //   crt_stdio.c_fgetc_FUN_005fe840
 //   crt_stdio.c_fprintf_FUN_005fe6d0
 //   crt_stdio.c_fscanf_FUN_005fe7c0
@@ -88,7 +88,8 @@ void __cdecl core_actor_cpp_serializePartStatus_FUN_0040bae0(void *part,char *pr
     }
   } while (iVar2 != 10);
   crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile,"%d",&stack0xffffffec);
-  core_skeleton_cpp_FUN_005a0410();
+  core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_005a0410
+            ((CDeformableModelInstance *)part);
   iVar2 = 0;
   if (0 < unaff_EDI) {
     do {
@@ -101,7 +102,8 @@ void __cdecl core_actor_cpp_serializePartStatus_FUN_0040bae0(void *part,char *pr
     } while (iVar2 < unaff_EDI);
   }
   crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile," ");
-  core_skeleton_cpp_FUN_005a0430();
+  core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430
+            ((CDeformableModelInstance *)part);
   iVar2 = 0;
   if (0 < unaff_EBX) {
     do {
@@ -168,7 +170,7 @@ void __cdecl core_actor_cpp_serializePartStatus_FUN_0040bae0(void *part,char *pr
 //   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
 // 0040bb2e: ADD ESP,0xc
 // 0040bb31: PUSH EBP
-// 0040bb32: CALL core_skeleton.cpp_FUN_005a0410
+// 0040bb32: CALL core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_005a0410
 //   XREF to: 005a0410 (UNCONDITIONAL_CALL)
 // 0040bb37: ADD ESP,0x4
 // 0040bb3a: MOV EAX,dword ptr [ESP]
@@ -216,7 +218,7 @@ void __cdecl core_actor_cpp_serializePartStatus_FUN_0040bae0(void *part,char *pr
 //   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
 // 0040bb91: ADD ESP,0x8
 // 0040bb94: PUSH EBP
-// 0040bb95: CALL core_skeleton.cpp_FUN_005a0430
+// 0040bb95: CALL core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430
 //   XREF to: 005a0430 (UNCONDITIONAL_CALL)
 // 0040bb9a: ADD ESP,0x4
 // 0040bb9d: MOV ESI,dword ptr [ESP]

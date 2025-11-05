@@ -1,8 +1,8 @@
-// Name: core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// Name: core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 // Address: 005a0450
 // Address Range: [[005a0450, 005a0470]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450(CDeformableModelInstance * this_ptr)
+// Signature: void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450(CDeformableModelInstance * this_ptr)
 // Cross-references:
 //   core_armour.cpp_CArmour_FUN_00412240 (00412240) at 00412257 [UNCONDITIONAL_CALL]
 //   core_batcreat.cpp_CBatCreature_FUN_00415150 (00415150) at 00415167 [UNCONDITIONAL_CALL]
@@ -41,37 +41,39 @@
 //   core_werewolf.cpp_CWerewolf_FUN_005efcc0 (005efcc0) at 005efcd0 [UNCONDITIONAL_CALL]
 //   core_zombie.cpp_CZombie_FUN_005f9140 (005f9140) at 005f9153 [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0480
-//   core_skeleton.cpp_LoadSkeletonDeformable_FUN_005a1cf0
+//   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
+//   core_skeleton.cpp_getDeformableModel_FUN_005a1cf0
 
 #include "nocturne.h"
 
 void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(CDeformableModelInstance *this_ptr)
+core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(CDeformableModelInstance *this_ptr)
 
 {
+  CDeformableModel *model_ptr;
   CDeformableModelInstance *in_stack_00000008;
   
-  core_skeleton_cpp_LoadSkeletonDeformable_FUN_005a1cf0();
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0480(in_stack_00000008);
+  model_ptr = core_skeleton_cpp_getDeformableModel_FUN_005a1cf0(this_ptr->model_name);
+  core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
+            (in_stack_00000008,model_ptr);
   return;
 }
 
 
 // Assembly code:
 // 005a0450: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+//   Label: core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: Stack[0x4] (READ)
 // 005a0454: ADD EAX,0x2260
 // 005a0459: PUSH EAX
-// 005a045a: CALL core_skeleton.cpp_LoadSkeletonDeformable_FUN_005a1cf0
+// 005a045a: CALL core_skeleton.cpp_getDeformableModel_FUN_005a1cf0
 //   XREF to: 005a1cf0 (UNCONDITIONAL_CALL)
 // 005a045f: ADD ESP,0x4
 // 005a0462: PUSH EAX
 // 005a0463: MOV EDX,dword ptr [ESP + 0x8]
 //   XREF to: Stack[0x4] (READ)
 // 005a0467: PUSH EDX
-// 005a0468: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0480
+// 005a0468: CALL core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
 //   XREF to: 005a0480 (UNCONDITIONAL_CALL)
 // 005a046d: ADD ESP,0x8
 // 005a0470: RET

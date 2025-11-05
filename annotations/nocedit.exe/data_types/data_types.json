@@ -757,6 +757,18 @@
       "type":"struct"
     },
     {
+      "name":"CMotionController_accumulateScaledRootMotion",
+      "type":"function_definition"
+    },
+    {
+      "name":"CMotionController_dtor",
+      "type":"function_definition"
+    },
+    {
+      "name":"CMotionController_findPatchToFrame",
+      "type":"function_definition"
+    },
+    {
       "name":"CMotionController_vtable",
       "type":"struct"
     },
@@ -2438,6 +2450,10 @@
     },
     {
       "name":"SBoneGuyBox",
+      "type":"struct"
+    },
+    {
+      "name":"SBoneTransformData",
       "type":"struct"
     },
     {
@@ -7371,6 +7387,72 @@
         {
           "name":"s",
           "type":"SOCKET"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CMotionController_accumulateScaledRootMotion",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CMotionController*"
+        },
+        {
+          "name":"start_frame",
+          "type":"float"
+        },
+        {
+          "name":"end_frame",
+          "type":"float"
+        },
+        {
+          "name":"scale_factor",
+          "type":"float"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CMotionController_dtor",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CMotionController*"
+        }
+      ],
+      "return_type":"CMotionController*",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CMotionController_findPatchToFrame",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CMotionController*"
+        },
+        {
+          "name":"source_motion_index",
+          "type":"int"
+        },
+        {
+          "name":"source_frame",
+          "type":"float"
+        },
+        {
+          "name":"target_motion_index",
+          "type":"int"
         }
       ],
       "return_type":"int",
@@ -17840,7 +17922,7 @@
         },
         {
           "len":80,
-          "name":"model_identifier",
+          "name":"model_filename",
           "offset":36784,
           "type":"char[80]"
         }
@@ -17875,52 +17957,22 @@
           "type":"CVector3f[100]"
         },
         {
-          "len":4,
-          "name":"field_1288",
+          "len":12,
+          "name":"scaled_model_dimensions",
           "offset":1288,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"field_1292",
-          "offset":1292,
-          "type":"int"
+          "type":"CVector3f"
         },
         {
           "len":400,
           "name":"rest_pose_data",
-          "offset":1296,
+          "offset":1300,
           "type":"float[100]"
         },
         {
-          "len":4,
-          "name":"field_1696",
-          "offset":1696,
-          "type":"int"
-        },
-        {
-          "len":12,
-          "name":"root_position",
+          "len":6812,
+          "name":"bone_transform",
           "offset":1700,
-          "type":"CVector3f"
-        },
-        {
-          "len":1600,
-          "name":"bone_rotations",
-          "offset":1712,
-          "type":"CQuaternion4f[100]"
-        },
-        {
-          "len":400,
-          "name":"current_pose_data",
-          "offset":3312,
-          "type":"float[100]"
-        },
-        {
-          "len":4800,
-          "name":"bone_world_matrices",
-          "offset":3712,
-          "type":"CMatrix3x4f[100]"
+          "type":"SBoneTransformData"
         },
         {
           "len":120,
@@ -17936,21 +17988,21 @@
         },
         {
           "len":4,
-          "name":"field_8752",
+          "name":"cached_skinned_lod_index",
           "offset":8752,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_8756",
+          "name":"current_lod_index",
           "offset":8756,
           "type":"int"
         },
         {
           "len":24,
-          "name":"field_8760",
+          "name":"bounding_box",
           "offset":8760,
-          "type":"char[24]"
+          "type":"CBoundingBox3D"
         },
         {
           "len":4,
@@ -17960,13 +18012,13 @@
         },
         {
           "len":12,
-          "name":"field_8788",
+          "name":"accumulated_root_motion",
           "offset":8788,
-          "type":"char[12]"
+          "type":"CVector3f"
         },
         {
           "len":80,
-          "name":"field_8800",
+          "name":"model_name",
           "offset":8800,
           "type":"char[80]"
         },
@@ -26360,19 +26412,19 @@
           "len":4,
           "name":"dtor",
           "offset":0,
-          "type":"void*"
+          "type":"CMotionController_dtor*"
         },
         {
           "len":4,
           "name":"findPatchToFrame",
           "offset":4,
-          "type":"void*"
+          "type":"CMotionController_findPatchToFrame*"
         },
         {
           "len":4,
-          "name":"field_8",
+          "name":"accumulateScaledRootMotion",
           "offset":8,
-          "type":"void*"
+          "type":"CMotionController_accumulateScaledRootMotion*"
         }
       ],
       "importable":true,
@@ -34361,6 +34413,42 @@
       "importable":true,
       "len":72,
       "name":"SBoneGuyBox",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":12,
+          "name":"root_position",
+          "offset":0,
+          "type":"CVector3f"
+        },
+        {
+          "len":1600,
+          "name":"bone_rotations",
+          "offset":12,
+          "type":"CQuaternion4f[100]"
+        },
+        {
+          "len":400,
+          "name":"current_pose_data",
+          "offset":1612,
+          "type":"float[100]"
+        },
+        {
+          "len":4800,
+          "name":"bone_world_matrices",
+          "offset":2012,
+          "type":"CMatrix3x4f[100]"
+        }
+      ],
+      "importable":true,
+      "len":6812,
+      "name":"SBoneTransformData",
       "pack":false,
       "type":"struct"
     },

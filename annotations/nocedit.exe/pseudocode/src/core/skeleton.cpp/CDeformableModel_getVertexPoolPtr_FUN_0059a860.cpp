@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CVector3f * core_skeleton.cpp_CDeformableModel_getVertexPoolPtr_FUN_0059a860(CDeformableModel * this_ptr, int index)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0480 (005a0480) at 005a052e [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480 (005a0480) at 005a052e [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

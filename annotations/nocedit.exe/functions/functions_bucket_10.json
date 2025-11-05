@@ -69457,8 +69457,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModelInstance_FUN_005a0210",
-    "ret":"int",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210",
+    "ret":"CVector3f*",
     "vars":{
       "params":[
         {
@@ -69476,6 +69476,54 @@
             ]
           },
           "type":"CDeformableModelInstance*"
+        },
+        {
+          "name":"output_pos",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"lod_index",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"vertex_index",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -69499,13 +69547,29 @@
         "start":"005a0410"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_FUN_005a0410",
-    "ret":"undefined1",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_005a0410",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModelInstance*"
+        }
+      ]
     }
   },
   {
@@ -69519,7 +69583,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModelInstance_FUN_005a0c90",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90",
     "ret":"void",
     "vars":{
       "locals":[
@@ -69604,6 +69668,54 @@
             ]
           },
           "type":"CDeformableModelInstance*"
+        },
+        {
+          "name":"start_frame",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"end_frame",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"scale_factor",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -69619,8 +69731,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModelInstance_FUN_005a0d10",
-    "ret":"float*",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10",
+    "ret":"CVector3f*",
     "vars":{
       "locals":[
         {
@@ -69896,6 +70008,54 @@
             ]
           },
           "type":"CDeformableModelInstance*"
+        },
+        {
+          "name":"output_buffer",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"start_frame",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"end_frame",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ],
       "ret_storage":{

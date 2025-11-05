@@ -17,7 +17,7 @@
 //   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
 //   core_motion.cpp_CMotionController_FUN_0052dab0
 //   core_motion.cpp_CMotionController_FUN_0052e700
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+//   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   crt_math.c_round_FUN_005fe6b0
 //   engine_3d.c_setRenderAlpha_FUN_00406d80
 //   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
@@ -94,7 +94,7 @@ LAB_00413b59:
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr,1);
     pCVar1 = &(this_ptr->field0_0x0).base_character.model;
     fStack_2c = 5.990945e-39;
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150(pCVar1);
+    core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150(pCVar1,-1,0x2e7,1,0);
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr);
     if (DAT_02f43978 != 0) {
       core_motion_cpp_CMotionController_FUN_0052e700(&pCVar1->motion_controller);
@@ -255,7 +255,7 @@ LAB_00413b59:
 // 00413c43: PUSH -0x1
 // 00413c45: LEA ESI,[EBX + 0x158]
 // 00413c4b: PUSH ESI
-// 00413c4c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+// 00413c4c: CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   XREF to: 005a0150 (UNCONDITIONAL_CALL)
 // 00413c51: ADD ESP,0x14
 // 00413c54: MOV EAX,[0x006703ec]

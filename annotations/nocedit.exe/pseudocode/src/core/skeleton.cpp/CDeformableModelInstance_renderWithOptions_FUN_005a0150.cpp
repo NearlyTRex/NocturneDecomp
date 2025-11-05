@@ -1,8 +1,8 @@
-// Name: core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+// Name: core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 // Address: 005a0150
 // Address Range: [[005a0150, 005a01cb]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150(CDeformableModelInstance * this_ptr)
+// Signature: void core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, int render_pass)
 // Cross-references:
 //   core_baron.cpp_CBaron_FUN_00413ae0 (00413ae0) at 00413c4c [UNCONDITIONAL_CALL]
 //   core_batman.cpp_CBatman_FUN_004173b0 (004173b0) at 0041752e [UNCONDITIONAL_CALL]
@@ -17,36 +17,38 @@
 //   core_vampboss.cpp_CVampireBoss_FUN_005e6da0 (005e6da0) at 005e6e14 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0250
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a02a0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a02f0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 //   core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340
+//   core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0
+//   core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0
+//   core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250
 
 #include "nocturne.h"
 
 void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150(CDeformableModelInstance *this_ptr)
+core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
+          (CDeformableModelInstance *this_ptr,int lod_index,uint render_flags,int lighting_mode,
+          int render_pass)
 
 {
   CDeformableModel *this_ptr_00;
   CBoundingBox3D *unaff_EDI;
-  int in_stack_00000008;
   uint in_stack_00000018;
   int in_stack_0000001c;
   
-  if (in_stack_00000008 < 0) {
+  if (lod_index < 0) {
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
-    core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_00,unaff_EDI);
+    lod_index = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_00,unaff_EDI);
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0250(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(this_ptr,lod_index);
   if (in_stack_0000001c == 0) {
     if (((int)in_stack_00000018 < 0) || ((in_stack_00000018 & 0x100) == 0)) {
-      core_skeleton_cpp_CDeformableModelInstance_FUN_005a02f0(this_ptr);
+      core_skeleton_cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0(this_ptr,lod_index);
     }
   }
   else {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a02a0(this_ptr);
+    core_skeleton_cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0(this_ptr,lod_index)
+    ;
   }
   core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(this_ptr);
   return;
@@ -55,7 +57,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150(CDeformableModelInstance
 
 // Assembly code:
 // 005a0150: PUSH EBX
-//   Label: core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+//   Label: core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 // 005a0151: PUSH ESI
 // 005a0152: PUSH EDI
 // 005a0153: MOV EBX,dword ptr [ESP + 0x10]
@@ -69,7 +71,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150(CDeformableModelInstance
 // 005a0161: PUSH ESI
 //   Label: LAB_005a0161
 // 005a0162: PUSH EBX
-// 005a0163: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0250
+// 005a0163: CALL core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250
 //   XREF to: 005a0250 (UNCONDITIONAL_CALL)
 // 005a0168: ADD ESP,0x8
 // 005a016b: CMP dword ptr [ESP + 0x1c],0x0
@@ -116,7 +118,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150(CDeformableModelInstance
 // 005a01b4: PUSH ESI
 //   Label: LAB_005a01b4
 // 005a01b5: PUSH EBX
-// 005a01b6: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a02a0
+// 005a01b6: CALL core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0
 //   XREF to: 005a02a0 (UNCONDITIONAL_CALL)
 // 005a01bb: ADD ESP,0x8
 // 005a01be: JMP 0x005a0180
@@ -124,7 +126,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150(CDeformableModelInstance
 // 005a01c0: PUSH ESI
 //   Label: LAB_005a01c0
 // 005a01c1: PUSH EBX
-// 005a01c2: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a02f0
+// 005a01c2: CALL core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0
 //   XREF to: 005a02f0 (UNCONDITIONAL_CALL)
 // 005a01c7: ADD ESP,0x8
 // 005a01ca: JMP 0x005a0180

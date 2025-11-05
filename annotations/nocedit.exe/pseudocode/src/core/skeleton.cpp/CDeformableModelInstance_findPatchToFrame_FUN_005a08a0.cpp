@@ -1,18 +1,20 @@
-// Name: core_skeleton.cpp_CDeformableModelInstance_FUN_005a08a0
+// Name: core_skeleton.cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0
 // Address: 005a08a0
 // Address Range: [[005a08a0, 005a0ac3]]
 // Convention: __cdecl
-// Signature: int core_skeleton.cpp_CDeformableModelInstance_FUN_005a08a0(CDeformableModelInstance * this_ptr)
+// Signature: int core_skeleton.cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0(CMotionController * this_ptr, int source_motion_index, float source_frame, int target_motion_index)
 // Function calls:
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0ad0
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
-//   core_skeleton.cpp_FUN_005a1950
+//   core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950
 
 #include "nocturne.h"
 
 int __cdecl
-core_skeleton_cpp_CDeformableModelInstance_FUN_005a08a0(CDeformableModelInstance *this_ptr)
+core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0
+          (CMotionController *this_ptr,int source_motion_index,float source_frame,
+          int target_motion_index)
 
 {
   int iVar1;
@@ -20,13 +22,14 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a08a0(CDeformableModelInstance
   CSkeleton *pCVar3;
   undefined1 *puVar4;
   int iVar5;
-  undefined1 *puVar6;
+  float *pfVar6;
   BADSPACEBASE *in_ESP;
   int unaff_EBP;
   int iVar7;
-  int in_stack_00000014;
-  undefined1 auStack_2dac [6812];
-  undefined1 auStack_1310 [4800];
+  float in_stack_00000014;
+  int in_stack_00000020;
+  undefined1 auStack_3588 [6808];
+  SBoneTransformData SStack_1af0;
   float local_50;
   float local_4c;
   float local_48;
@@ -44,34 +47,40 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a08a0(CDeformableModelInstance
   float fVar8;
   float fVar9;
   
-  pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                     (&this_ptr->motion_controller);
-  local_1c = pCVar2->motions[in_stack_00000014].frame_count;
-  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
+  pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(this_ptr);
+  local_1c = pCVar2->motions[(int)in_stack_00000014].frame_count;
+  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+                     ((CDeformableModelInstance *)this_ptr);
   iVar1 = pCVar3->bone_count;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0ad0(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
+            ((CDeformableModelInstance *)this_ptr,target_motion_index,in_stack_00000014,
+             (SBoneTransformData *)(auStack_3588 + 0x1a94));
   iVar7 = 0;
-  core_skeleton_cpp_FUN_005a1950();
+  core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950
+            (&SStack_1af0,(CDeformableModelInstance *)this_ptr);
   local_14 = -1;
   fVar8 = 1e+30;
   if (0 < unaff_EBP) {
     do {
-      core_skeleton_cpp_CDeformableModelInstance_FUN_005a0ad0(this_ptr);
-      core_skeleton_cpp_FUN_005a1950();
+      core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
+                ((CDeformableModelInstance *)this_ptr,in_stack_00000020,(float)iVar7,
+                 (SBoneTransformData *)auStack_3588);
+      core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950
+                ((SBoneTransformData *)&stack0xffffca74,(CDeformableModelInstance *)this_ptr);
       iVar5 = 0;
       fVar9 = 0.0;
       if (0 < iVar1) {
         fVar9 = 0.0;
-        puVar4 = auStack_2dac;
-        puVar6 = auStack_1310;
+        puVar4 = auStack_3588 + 0x7dc;
+        pfVar6 = &SStack_1af0.bone_world_matrices[0].m[0].x;
         do {
           local_44 = *(float *)(puVar4 + 0xc);
           local_40 = *(float *)(puVar4 + 0x1c);
           local_3c = *(float *)(puVar4 + 0x2c);
-          local_50 = *(float *)(puVar6 + 0xc);
-          local_4c = *(float *)(puVar6 + 0x1c);
-          local_48 = *(float *)(puVar6 + 0x2c);
-          puVar6 = puVar6 + 0x30;
+          local_50 = pfVar6[3];
+          local_4c = pfVar6[7];
+          local_48 = pfVar6[0xb];
+          pfVar6 = pfVar6 + 0xc;
           puVar4 = puVar4 + 0x30;
           iVar5 = iVar5 + 1;
           fVar9 = (local_48 - local_3c) * (local_48 - local_3c) +
@@ -98,7 +107,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a08a0(CDeformableModelInstance
 
 // Assembly code:
 // 005a08a0: PUSH EBX
-//   Label: core_skeleton.cpp_CDeformableModelInstance_FUN_005a08a0
+//   Label: core_skeleton.cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0
 // 005a08a1: PUSH ESI
 // 005a08a2: PUSH EDI
 // 005a08a3: PUSH EBP
@@ -128,7 +137,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a08a0(CDeformableModelInstance
 //   XREF to: Stack[0xc] (READ)
 // 005a08f8: PUSH ESI
 // 005a08f9: PUSH EDI
-// 005a08fa: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0ad0
+// 005a08fa: CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
 //   XREF to: 005a0ad0 (UNCONDITIONAL_CALL)
 // 005a08ff: ADD ESP,0x10
 // 005a0902: PUSH EDI
@@ -137,7 +146,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a08a0(CDeformableModelInstance
 // 005a090a: PUSH EAX
 // 005a090b: MOV EBP,0xffffffff
 // 005a0910: XOR ESI,ESI
-// 005a0912: CALL core_skeleton.cpp_FUN_005a1950
+// 005a0912: CALL core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950
 //   XREF to: 005a1950 (UNCONDITIONAL_CALL)
 // 005a0917: ADD ESP,0x8
 // 005a091a: MOV EAX,0x7149f2ca
@@ -164,14 +173,14 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a08a0(CDeformableModelInstance
 //   XREF to: Stack[-0x35a0] (DATA)
 // 005a095a: PUSH EBP
 // 005a095b: PUSH EDI
-// 005a095c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0ad0
+// 005a095c: CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
 //   XREF to: 005a0ad0 (UNCONDITIONAL_CALL)
 // 005a0961: ADD ESP,0x10
 // 005a0964: PUSH EDI
 // 005a0965: LEA EAX,[ESP + 0x4]
 //   XREF to: Stack[-0x3598] (DATA)
 // 005a0969: PUSH EAX
-// 005a096a: CALL core_skeleton.cpp_FUN_005a1950
+// 005a096a: CALL core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950
 //   XREF to: 005a1950 (UNCONDITIONAL_CALL)
 // 005a096f: ADD ESP,0x8
 // 005a0972: XOR EAX,EAX

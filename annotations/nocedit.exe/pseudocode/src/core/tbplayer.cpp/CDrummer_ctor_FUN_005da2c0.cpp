@@ -10,7 +10,7 @@
 //   CDemonActor_vtable g_CDrummerVTable
 // Function calls:
 //   core_npc.cpp_FUN_005447e0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -21,7 +21,8 @@ CDrummer * __cdecl core_tbplayer_cpp_CDrummer_ctor_FUN_005da2c0(CDrummer *this_p
   
   pCVar1 = (CDrummer *)core_npc_cpp_FUN_005447e0(&this_ptr->base_npc);
   (pCVar1->base_npc).base_character.base_actor.vtable = &g_CDrummerVTable;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(&(pCVar1->base_npc).base_character.model);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(pCVar1->base_npc).base_character.model,"drummer.dfm");
   return pCVar1;
 }
 
@@ -42,7 +43,7 @@ CDrummer * __cdecl core_tbplayer_cpp_CDrummer_ctor_FUN_005da2c0(CDrummer *this_p
 // 005da2da: PUSH EAX
 // 005da2db: MOV dword ptr [EAX + -0x4],0x664074
 //   XREF to: 00664074 (DATA)
-// 005da2e2: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005da2e2: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005da2e7: ADD ESP,0x8
 // 005da2ea: MOV EAX,EBX

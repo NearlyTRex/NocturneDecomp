@@ -46,14 +46,14 @@ core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
   int in_stack_00000010;
   int in_stack_00000014;
   
-  if (this_ptr->field13_0x2230 < 0) {
+  if (this_ptr->cached_skinned_lod_index < 0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0xfa7;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModelInstance::computeCylindricalUVs - points not generated");
   }
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(in_stack_00000008);
-  iVar1 = pCVar3->vertex_count[in_stack_00000008->field13_0x2230];
-  iVar5 = in_stack_00000008->field14_0x2234;
+  iVar1 = pCVar3->vertex_count[in_stack_00000008->cached_skinned_lod_index];
+  iVar5 = in_stack_00000008->current_lod_index;
   iVar9 = 1;
   iVar7 = *(int *)(iVar5 + 4);
   iVar8 = iVar7;

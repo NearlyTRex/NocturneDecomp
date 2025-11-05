@@ -13,7 +13,7 @@
 //   CDemonActor_vtable PTR_core_hotdemon.cpp_FUN_004f6d00_0065fce4
 // Function calls:
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -30,8 +30,8 @@ CHotDemon * __cdecl core_hotdemon_cpp_CHotDemon_ctor_FUN_004f6ca0(CHotDemon *thi
   pCVar4 = (CHotDemon *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   (pCVar4->base_enemy).base_character.base_actor.vtable =
        &PTR_core_hotdemon_cpp_FUN_004f6d00_0065fce4;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            (&(pCVar4->base_enemy).base_character.model);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(pCVar4->base_enemy).base_character.model,"hotdemon.dfm");
   uVar3 = _DAT_0065fcd4;
   uVar2 = _DAT_0065fcd0;
   pCVar1 = &pCVar4->base_enemy;
@@ -66,7 +66,7 @@ CHotDemon * __cdecl core_hotdemon_cpp_CHotDemon_ctor_FUN_004f6ca0(CHotDemon *thi
 // 004f6cba: PUSH EAX
 // 004f6cbb: MOV dword ptr [EAX + -0x4],0x65fce4
 //   XREF to: 0065fce4 (DATA)
-// 004f6cc2: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 004f6cc2: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004f6cc7: FLD float ptr [0x0065fcd0]
 //   XREF to: 0065fcd0 (READ)

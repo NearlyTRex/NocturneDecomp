@@ -18,6 +18,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_bugs.cpp_FUN_00424e50(undefined4 param_1) */
 
@@ -127,10 +128,10 @@ void core_bugs_cpp_FUN_00424e50(void)
     } while (local_24 < *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc));
   }
   core_bugs_cpp_FUN_004272f0();
-  in_stack_00000004[2].base_character.model.bone_world_matrices[0x43].m[1].x = -NAN;
-  in_stack_00000004[2].base_character.model.bone_world_matrices[0x43].m[1].y = -NAN;
+  in_stack_00000004[2].base_character.model.bone_transform.bone_world_matrices[0x43].m[1].x = -NAN;
+  in_stack_00000004[2].base_character.model.bone_transform.bone_world_matrices[0x43].m[1].y = -NAN;
   (in_stack_00000004->base_character).base_actor.field16_0x100 = 1;
-  in_stack_00000004[2].base_character.model.bone_world_matrices[0x43].m[2].x = 0.0;
+  in_stack_00000004[2].base_character.model.bone_transform.bone_world_matrices[0x43].m[2].x = 0.0;
   return;
 }
 

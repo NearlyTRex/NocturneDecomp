@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_motion.cpp_FUN_0052dcb0(void)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0480 (005a0480) at 005a04a8 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480 (005a0480) at 005a04a8 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
 

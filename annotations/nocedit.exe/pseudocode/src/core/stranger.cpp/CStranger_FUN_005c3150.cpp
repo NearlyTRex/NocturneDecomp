@@ -92,8 +92,8 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
               (&local_16c,(CVector3f *)(local_ac + 0xc),local_40.m + 1);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               (&local_16c,
-               (this_ptr->base_hero).base_character.model.bone_world_matrices + DAT_03f6bacc,
-               in_stack_fffffdd4);
+               (this_ptr->base_hero).base_character.model.bone_transform.bone_world_matrices +
+               DAT_03f6bacc,in_stack_fffffdd4);
     pfVar5 = (float *)&stack0xfffffdd4;
     pCVar4 = local_13c;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -200,8 +200,8 @@ LAB_005c33d7:
                 (&local_1cc,&local_64,local_94.m + 1);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 (&local_1cc,
-                 (this_ptr->base_hero).base_character.model.bone_world_matrices + DAT_03f6bacc,
-                 in_stack_fffffdd4);
+                 (this_ptr->base_hero).base_character.model.bone_transform.bone_world_matrices +
+                 DAT_03f6bacc,in_stack_fffffdd4);
       pfVar5 = local_10c;
     }
     else {
@@ -215,8 +215,8 @@ LAB_005c33d7:
                 (&local_1fc,&local_58,local_40.m + 2);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 (&local_1fc,
-                 (this_ptr->base_hero).base_character.model.bone_world_matrices + DAT_03f6bb04,
-                 in_stack_fffffdd4);
+                 (this_ptr->base_hero).base_character.model.bone_transform.bone_world_matrices +
+                 DAT_03f6bb04,in_stack_fffffdd4);
       pfVar5 = local_19c;
     }
     pCVar4 = local_dc;

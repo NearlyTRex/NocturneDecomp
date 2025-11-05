@@ -17,7 +17,7 @@
 //   core_morph.cpp_FUN_0052b600
 //   core_morph.cpp_FUN_0052b640
 //   core_motion.cpp_CMotionController_FUN_0052e700
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+//   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 
 #include "nocturne.h"
@@ -25,59 +25,43 @@
 int __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e6da0(CVampireBoss *this_ptr)
 
 {
-  char *this_ptr_00;
-  CBoundingBox3D *this_ptr_01;
+  CBoundingBox3D *this_ptr_00;
   int iVar1;
   BADSPACEBASE *in_ESP;
   CVampireBoss *pCStack00000010;
   int in_stack_0000003c;
-  char *pcStack_28;
-  char *pcStack_24;
   
   if (*(int *)(this_ptr->base_enemy).base_character.field2_0x240c != 0) {
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-  this_ptr_01 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->getBoundingBox)
-                          ((CDemonActor *)this_ptr,(CBoundingBox3D *)&pcStack_28);
-  pcStack_24 = (char *)0x5e6ddd;
-  iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
+  this_ptr_00 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->getBoundingBox)
+                          ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffd8);
+  iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar1 == 0) goto LAB_005e6e6c;
   pCStack00000010 = (CVampireBoss *)(this_ptr->field1_0xbeb4 + 0x81f9c);
   if (this_ptr->form == 0) {
-    pcStack_24 = (char *)0xffffffff;
-    pcStack_28 = (char *)0xffffffff;
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150
-              (&(this_ptr->base_enemy).base_character.model);
+    core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
+              (&(this_ptr->base_enemy).base_character.model,-1,0xffffffff,1,0);
     core_cloth_cpp_FUN_0043bae0();
 LAB_005e6e2e:
     core_cloth_cpp_FUN_0043bae0();
   }
   else {
     if (this_ptr->form == 2) {
-      pcStack_24 = (char *)0xffffffff;
-      pcStack_28 = (char *)0xffffffff;
-      core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150
-                ((CDeformableModelInstance *)(this_ptr->field1_0xbeb4 + 8));
+      core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
+                ((CDeformableModelInstance *)(this_ptr->field1_0xbeb4 + 8),-1,0xffffffff,1,0);
       goto LAB_005e6e2e;
     }
-    pcStack_24 = (char *)0x0;
-    this_ptr_00 = this_ptr->field3_0xcdcc4;
-    pcStack_28 = this_ptr_00;
     core_morph_cpp_FUN_0052b600();
-    pcStack_24 = (char *)0x0;
-    pcStack_28 = this_ptr_00;
     core_morph_cpp_FUN_0052b640();
-    pcStack_28 = (char *)0x5e6edd;
-    pcStack_24 = this_ptr_00;
     core_morph_cpp_FUN_0052b640();
-    pcStack_24 = (char *)0x5e6ef1;
     core_morph_cpp_FUN_0052b640();
     core_morph_cpp_FUN_0052b640();
     core_morph_cpp_FUN_0052b600();
     core_morph_cpp_FUN_0052b640();
     core_morph_cpp_FUN_0052b640();
-    core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)this_ptr_00);
+    core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)this_ptr->field3_0xcdcc4);
   }
   core_charactr_cpp_CCharacter_FUN_0042a420((CCharacter *)this_ptr);
   if (DAT_02f43978 != 0) {
@@ -145,7 +129,7 @@ LAB_005e6e6c:
 // 005e6e0f: PUSH -0x1
 // 005e6e11: PUSH -0x1
 // 005e6e13: PUSH EAX
-// 005e6e14: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+// 005e6e14: CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   XREF to: 005a0150 (UNCONDITIONAL_CALL)
 // 005e6e19: ADD ESP,0x14
 // 005e6e1c: PUSH 0x0
@@ -210,7 +194,7 @@ LAB_005e6e6c:
 // 005e6e9a: PUSH -0x1
 // 005e6e9c: PUSH -0x1
 // 005e6e9e: PUSH ESI
-// 005e6e9f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+// 005e6e9f: CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   XREF to: 005a0150 (UNCONDITIONAL_CALL)
 // 005e6ea4: ADD ESP,0x14
 // 005e6ea7: PUSH 0x0

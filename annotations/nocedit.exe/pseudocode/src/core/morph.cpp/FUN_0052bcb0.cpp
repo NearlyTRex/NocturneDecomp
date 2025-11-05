@@ -53,14 +53,14 @@
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_FUN_0052ddb0
 //   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0250
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   core_skeleton.cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340
 //   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
+//   core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250
+//   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 //   core_stairs.cpp_FUN_005b9620
 //   core_stairs.cpp_FUN_005b9670
 //   core_stairs.cpp_FUN_005b9a20
@@ -140,8 +140,10 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
   float afStack_458 [5];
   float afStack_444 [11];
   SMorphControlPoint *apSStack_418 [125];
-  undefined1 auStack_224 [8];
-  undefined1 auStack_21c [296];
+  undefined1 auStack_224 [4];
+  char acStack_220 [4];
+  undefined1 auStack_21c [4];
+  char acStack_218 [292];
   undefined1 local_f4 [48];
   float local_c4 [12];
   float local_94;
@@ -184,19 +186,19 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
                     (g_CEditorToolsPtr,"Select 1st model file","models",
                      "*.dfm",SUB41(auStack_224,0));
   if (iVar4 != 0) {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-              ((CDeformableModelInstance *)&stack0xffffb250);
+    core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+              ((CDeformableModelInstance *)&stack0xffffb250,acStack_220);
     iVar4 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,"Select 2nd model file","models",
                        "*.dfm",SUB41(auStack_21c,0));
     if (iVar4 != 0) {
-      core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-                ((CDeformableModelInstance *)auStack_2af4);
+      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+                ((CDeformableModelInstance *)auStack_2af4,acStack_218);
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Loading...");
-      core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450
+      core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450
                 ((CDeformableModelInstance *)&stack0xffffb260);
-      core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450
+      core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450
                 ((CDeformableModelInstance *)(auStack_2af4 + 0xc));
       local_68 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                            ((CDeformableModelInstance *)&stack0xffffb268);
@@ -224,8 +226,8 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
                     ((CDeformableModelInstance *)&stack0xffffb280);
           core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
                     ((CDeformableModelInstance *)&stack0xffffb280);
-          core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0
-                    ((CDeformableModelInstance *)&stack0xffffb280);
+          core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
+                    ((CDeformableModelInstance *)&stack0xffffb280,0);
           core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90
                     ((CBoundingBox3D *)0x0,
                      *(int *)(*(int *)((int)&local_48 + (int)&stack0xffffb280) + 0x2c),pCStack_2b40)
@@ -263,7 +265,8 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
           core_stairs_cpp_FUN_005b9a20();
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                     (g_CDemonRendererPtr,&g_ZeroVector);
-          core_skeleton_cpp_CDeformableModelInstance_FUN_005a0250(in_stack_0000001c);
+          core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250
+                    (in_stack_0000001c,0);
           iVar13 = 0;
           fVar2 = 0.0;
           while (fVar10 = fVar2,
@@ -377,7 +380,8 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
           core_stairs_cpp_FUN_005b9a20();
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                     (g_CDemonRendererPtr,&g_ZeroVector);
-          core_skeleton_cpp_CDeformableModelInstance_FUN_005a0250(in_stack_00000030);
+          core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250
+                    (in_stack_00000030,0);
           if (in_stack_00000014 * 0x30 == 0) {
             core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340
                       (in_stack_00000034);
@@ -551,7 +555,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
 // 0052bd03: LEA EAX,[ESP + 0x4]
 //   XREF to: Stack[-0x4db8] (DATA)
 // 0052bd07: PUSH EAX
-// 0052bd08: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 0052bd08: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 0052bd0d: ADD ESP,0x8
 // 0052bd10: PUSH 0x0
@@ -584,7 +588,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
 // 0052bd4b: LEA EAX,[ESP + 0x22c4]
 //   XREF to: Stack[-0x2b04] (DATA)
 // 0052bd52: PUSH EAX
-// 0052bd53: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 0052bd53: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 0052bd58: ADD ESP,0x8
 // 0052bd5b: PUSH 0x63a4de
@@ -600,13 +604,13 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
 // 0052bd6f: LEA EAX,[ESP + 0xc]
 //   XREF to: Stack[-0x4db8] (DATA)
 // 0052bd73: PUSH EAX
-// 0052bd74: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 0052bd74: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0052bd79: ADD ESP,0x4
 // 0052bd7c: LEA EAX,[ESP + 0x22c0]
 //   XREF to: Stack[-0x2b04] (DATA)
 // 0052bd83: PUSH EAX
-// 0052bd84: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 0052bd84: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0052bd89: ADD ESP,0x4
 // 0052bd8c: LEA EAX,[ESP + 0xc]
@@ -713,7 +717,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
 // 0052bea4: ADD ESP,0x4
 // 0052bea7: PUSH 0x0
 // 0052bea9: PUSH ESI
-// 0052beaa: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
+// 0052beaa: CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 //   XREF to: 005a01d0 (UNCONDITIONAL_CALL)
 // 0052beaf: ADD ESP,0x8
 // 0052beb2: MOV EAX,dword ptr [ESP + 0x4d90]
@@ -881,7 +885,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
 // 0052c05e: MOV EDX,dword ptr [ESP + 0x4d88]
 //   XREF to: Stack[-0x40] (READ)
 // 0052c065: PUSH EDX
-// 0052c066: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0250
+// 0052c066: CALL core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250
 //   XREF to: 005a0250 (UNCONDITIONAL_CALL)
 // 0052c06b: MOV EAX,[0x02cf6a8c]
 //   XREF to: 02cf6a8c (READ)
@@ -1083,7 +1087,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
 // 0052c26b: MOV EAX,dword ptr [ESP + 0x4d9c]
 //   XREF to: Stack[-0x2c] (READ)
 // 0052c272: PUSH EAX
-// 0052c273: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0250
+// 0052c273: CALL core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250
 //   XREF to: 005a0250 (UNCONDITIONAL_CALL)
 // 0052c278: ADD ESP,0x8
 // 0052c27b: MOV EDX,dword ptr [ESP + 0x4d68]

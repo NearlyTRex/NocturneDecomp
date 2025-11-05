@@ -1,41 +1,42 @@
-// Name: core_skeleton.cpp_CDeformableModelInstance_FUN_005a0250
+// Name: core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250
 // Address: 005a0250
 // Address Range: [[005a0250, 005a0290]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_FUN_005a0250(CDeformableModelInstance * this_ptr)
+// Signature: void core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(CDeformableModelInstance * this_ptr, int lod_index)
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042af60 (0042af60) at 0042b04f [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052c066 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150 (005a0150) at 005a0163 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150 (005a0150) at 005a0163 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_0059ab20
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 
 #include "nocturne.h"
 
 void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_FUN_005a0250(CDeformableModelInstance *this_ptr)
+core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250
+          (CDeformableModelInstance *this_ptr,int lod_index)
 
 {
   CDeformableModel *this_ptr_00;
   int *unaff_EBX;
-  int in_stack_00000008;
-  int lod_index;
+  int lod_index_00;
   
-  if (in_stack_00000008 != this_ptr->field13_0x2230) {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(this_ptr);
+  if (lod_index != this_ptr->cached_skinned_lod_index) {
+    core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(this_ptr,lod_index);
   }
-  lod_index = this_ptr->field14_0x2234;
+  lod_index_00 = this_ptr->current_lod_index;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
-  core_skeleton_cpp_CDeformableModel_rotateVertices_FUN_0059ab20(this_ptr_00,lod_index,unaff_EBX);
+  core_skeleton_cpp_CDeformableModel_rotateVertices_FUN_0059ab20(this_ptr_00,lod_index_00,unaff_EBX)
+  ;
   return;
 }
 
 
 // Assembly code:
 // 005a0250: PUSH EBX
-//   Label: core_skeleton.cpp_CDeformableModelInstance_FUN_005a0250
+//   Label: core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250
 // 005a0251: PUSH ESI
 // 005a0252: MOV EBX,dword ptr [ESP + 0xc]
 //   XREF to: Stack[0x4] (READ)
@@ -63,7 +64,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0250(CDeformableModelInstance
 // 005a0285: PUSH EAX
 //   Label: LAB_005a0285
 // 005a0286: PUSH EBX
-// 005a0287: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
+// 005a0287: CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 //   XREF to: 005a01d0 (UNCONDITIONAL_CALL)
 // 005a028c: ADD ESP,0x8
 // 005a028f: JMP 0x005a0262

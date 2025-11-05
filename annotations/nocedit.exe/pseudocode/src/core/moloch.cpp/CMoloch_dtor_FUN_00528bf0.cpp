@@ -40,8 +40,8 @@ core_moloch_cpp_CMoloch_dtor_FUN_00528bf0(CMoloch *this_ptr,uint d1,uint d2,uint
                      ((CDeformableModelInstance *)(extraout_EAX + -0x2388),0,unaff_retaddr,
                       (uint)this_ptr,d1);
   core_hero_cpp_CHero_dtor_FUN_004f2470
-            ((CHero *)&pCVar1[-0xf].bone_rotations[0x60].y,1,(uint)this_ptr,d1,d2,d3,d4,
-             in_stack_00000018,in_stack_0000001c);
+            ((CHero *)&pCVar1[-0xf].bone_transform.bone_rotations[0x60].y,1,(uint)this_ptr,d1,d2,d3,
+             d4,in_stack_00000018,in_stack_0000001c);
   if ((d4 & 2) == 0) {
     return ptr;
   }

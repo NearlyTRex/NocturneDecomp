@@ -1,35 +1,34 @@
 // Name: core_stranger.cpp_FUN_005baee0
 // Address: 005baee0
 // Address Range: [[005baee0, 005baf1d]]
-// Convention: unknown
-// Signature: undefined core_stranger.cpp_FUN_005baee0()
+// Convention: __cdecl
+// Signature: float core_stranger.cpp_FUN_005baee0(int current_bone_index, int target_bone_index, float blend_weight, int hierarchy_distance, CDeformableModelInstance * instance)
 // Cross-references:
 //   core_stranger.cpp_CStranger_FUN_005bfb60 (005bfb60) at 005bffec [DATA]
 // Globals:
-//   undefined4 DAT_0065319c
-//   undefined4 DAT_006531a4
+//   double DAT_0065319c = 0.700000000000000
+//   double DAT_006531a4 = 0.400000000000000
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-float core_stranger_cpp_FUN_005baee0(void)
+float __cdecl
+core_stranger_cpp_FUN_005baee0
+          (int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,
+          CDeformableModelInstance *instance)
 
 {
   float fVar1;
-  float in_stack_0000000c;
-  int in_stack_00000010;
   
-  if (in_stack_00000010 < 1) {
-    fVar1 = (float)_DAT_006531a4;
+  if (hierarchy_distance < 1) {
+    fVar1 = (float)DAT_006531a4;
   }
   else {
-    if (in_stack_00000010 != 1) {
-      return in_stack_0000000c;
+    if (hierarchy_distance != 1) {
+      return blend_weight;
     }
-    fVar1 = (float)_DAT_0065319c;
+    fVar1 = (float)DAT_0065319c;
   }
-  return in_stack_0000000c * fVar1;
+  return blend_weight * fVar1;
 }
 
 

@@ -10,7 +10,7 @@
 //   core_morph.cpp_CMorph_getReady_FUN_0052b680
 //   core_morph.cpp_FUN_0052b430
 //   core_morph.cpp_FUN_0052b470
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 
 #include "nocturne.h"
 
@@ -24,7 +24,7 @@ void core_biggs_cpp_FUN_00418680(void)
   CEnemy *in_stack_00000004;
   
   core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450
             (&(in_stack_00000004->base_character).model);
   this_ptr = (CKeyFramedModelInstance *)
              (in_stack_00000004[1].base_character.base_actor.actor_name + 8);
@@ -58,7 +58,7 @@ void core_biggs_cpp_FUN_00418680(void)
 // 0041868d: ADD ESP,0x4
 // 00418690: LEA ESI,[EBX + 0x158]
 // 00418696: PUSH ESI
-// 00418697: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 00418697: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0041869c: ADD ESP,0x4
 // 0041869f: LEA EDI,[EBX + 0xbebc]

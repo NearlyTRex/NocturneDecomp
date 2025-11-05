@@ -8,7 +8,7 @@
 // Globals:
 //   void* switchdataD_005bb900 = 005bd3db
 //   void* switchdataD_005bb918 = 005bd235
-//   undefined4 s_DebugActionPending_006534b4
+//   TerminatedCString s_DebugActionPending_006534b4
 //   TerminatedCString s_grabbedBy_s_006534c7
 //   TerminatedCString s_pushedObject_s_006534d5
 //   TerminatedCString s_ladder_006534e6
@@ -269,7 +269,7 @@ void core_stranger_cpp_CStranger_FUN_005bb960(void)
   int iStack_14;
   
   local_1c = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                       (g_CEventListPtr,"?DebugActionPending" + 1);
+                       (g_CEventListPtr,"DebugActionPending");
   pCVar19 = in_stack_00000004->carry_hands[1].carry_actor;
   if ((pCVar19 != (CDemonActor *)0x0) &&
      (*(float *)(in_stack_00000004[2].cloth_data + 0x55d0) < FLOAT_006535dc)) {
@@ -321,14 +321,11 @@ void core_stranger_cpp_CStranger_FUN_005bb960(void)
     in_stack_00000004[2].cloth_data[0x5562] = '\0';
     in_stack_00000004[2].cloth_data[0x5563] = '\0';
   }
-  (in_stack_00000004->model).field17_0x2254[8] = '\0';
-  (in_stack_00000004->model).field17_0x2254[9] = '\0';
-  (in_stack_00000004->model).field17_0x2254[10] = '\0';
-  (in_stack_00000004->model).field17_0x2254[0xb] = '\0';
-  *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4) =
-       *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 8);
-  *(undefined4 *)(in_stack_00000004->model).field17_0x2254 =
-       *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4);
+  (in_stack_00000004->model).accumulated_root_motion.z = 0.0;
+  (in_stack_00000004->model).accumulated_root_motion.y =
+       (in_stack_00000004->model).accumulated_root_motion.z;
+  (in_stack_00000004->model).accumulated_root_motion.x =
+       (in_stack_00000004->model).accumulated_root_motion.y;
   pCVar15 = (CVector3f *)core_stranger_cpp_CStranger_FUN_005be490();
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             (&in_stack_00000004->base_actor,&CStack_230,pCVar15);
@@ -440,15 +437,15 @@ void core_stranger_cpp_CStranger_FUN_005bb960(void)
   }
   fVar16 = (float)DOUBLE_006535e4;
   pCStack_64 = &(in_stack_00000004->model).motion_controller;
-  *(undefined4 *)(in_stack_00000004->field2_0x240c + 0x28) =
-       *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 8);
+  *(float *)(in_stack_00000004->field2_0x240c + 0x28) =
+       (in_stack_00000004->model).accumulated_root_motion.z;
   *(float *)(in_stack_00000004->field2_0x240c + 0x2c) = in_stack_00000008 * fVar16;
   iVar17 = core_motion_cpp_CMotionController_FUN_0052dab0(pCStack_64);
   if ((*(int *)(iVar17 + 0x24) == 4) ||
      (iVar17 = core_motion_cpp_CMotionController_FUN_0052dab0(pCStack_64),
      *(int *)(iVar17 + 0x24) == 5)) {
-    *(float *)(in_stack_00000004->model).field17_0x2254 =
-         *(float *)(in_stack_00000004->model).field17_0x2254 * (float)DOUBLE_006535ec;
+    (in_stack_00000004->model).accumulated_root_motion.x =
+         (in_stack_00000004->model).accumulated_root_motion.x * (float)DOUBLE_006535ec;
   }
   if (*(int *)(in_stack_00000004[2].cloth_data + 0x54d0) == 0) {
     fVar16 = *(float *)(in_stack_00000004[2].cloth_data + 0x5564) -
@@ -629,14 +626,11 @@ LAB_005bd19f:
                 engine_console_cpp_CConsole_printf_FUN_00441890
                           (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
               }
-              (in_stack_00000004->model).field17_0x2254[8] = '\0';
-              (in_stack_00000004->model).field17_0x2254[9] = '\0';
-              (in_stack_00000004->model).field17_0x2254[10] = '\0';
-              (in_stack_00000004->model).field17_0x2254[0xb] = '\0';
-              *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4) =
-                   *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 8);
-              *(undefined4 *)(in_stack_00000004->model).field17_0x2254 =
-                   *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4);
+              (in_stack_00000004->model).accumulated_root_motion.z = 0.0;
+              (in_stack_00000004->model).accumulated_root_motion.y =
+                   (in_stack_00000004->model).accumulated_root_motion.z;
+              (in_stack_00000004->model).accumulated_root_motion.x =
+                   (in_stack_00000004->model).accumulated_root_motion.y;
             }
           }
           else {
@@ -832,16 +826,13 @@ LAB_005bd19f:
             fStack_188 = pCVar15->x * *(float *)pcStack_40;
             fStack_184 = pCVar15->y * *(float *)pcStack_40;
             fStack_180 = pCVar15->z * *(float *)pcStack_40;
-            pcVar2 = (in_stack_00000004->model).field17_0x2254;
-            if ((float *)pcVar2 != &fStack_188) {
-              *(float *)pcVar2 = fStack_188;
-              *(float *)((in_stack_00000004->model).field17_0x2254 + 4) = fStack_184;
-              *(float *)((in_stack_00000004->model).field17_0x2254 + 8) = fStack_180;
+            pCVar15 = &(in_stack_00000004->model).accumulated_root_motion;
+            if (pCVar15 != (CVector3f *)&fStack_188) {
+              pCVar15->x = fStack_188;
+              (in_stack_00000004->model).accumulated_root_motion.y = fStack_184;
+              (in_stack_00000004->model).accumulated_root_motion.z = fStack_180;
             }
-            (in_stack_00000004->model).field17_0x2254[4] = '\0';
-            (in_stack_00000004->model).field17_0x2254[5] = '\0';
-            (in_stack_00000004->model).field17_0x2254[6] = '\0';
-            (in_stack_00000004->model).field17_0x2254[7] = '\0';
+            (in_stack_00000004->model).accumulated_root_motion.y = 0.0;
           }
         }
       }
@@ -985,21 +976,18 @@ switchD_005bd22e_caseD_6:
     if (iStack_80 == 0) goto LAB_005bc1a6;
     pCStack_5c = &(in_stack_00000004->model).motion_controller;
     iVar17 = core_motion_cpp_CMotionController_FUN_0052dab0(pCStack_5c);
-    pcVar2 = (in_stack_00000004->model).field17_0x2254;
-    fStack_218 = *(float *)pcVar2 + *(float *)(in_stack_00000004->field2_0x240c + 0x10);
+    pCVar15 = &(in_stack_00000004->model).accumulated_root_motion;
+    fStack_218 = pCVar15->x + *(float *)(in_stack_00000004->field2_0x240c + 0x10);
     iStack_20 = *(int *)(iVar17 + 0x24);
-    fStack_214 = *(float *)((in_stack_00000004->model).field17_0x2254 + 4) +
+    fStack_214 = (in_stack_00000004->model).accumulated_root_motion.y +
                  *(float *)(in_stack_00000004->field2_0x240c + 0x14);
-    fStack_210 = *(float *)((in_stack_00000004->model).field17_0x2254 + 8) +
+    fStack_210 = (in_stack_00000004->model).accumulated_root_motion.z +
                  *(float *)(in_stack_00000004->field2_0x240c + 0x18);
     fStack_44 = DAT_0066374c * in_stack_00000008;
-    (in_stack_00000004->model).field17_0x2254[8] = '\0';
-    (in_stack_00000004->model).field17_0x2254[9] = '\0';
-    (in_stack_00000004->model).field17_0x2254[10] = '\0';
-    (in_stack_00000004->model).field17_0x2254[0xb] = '\0';
-    uVar21 = *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 8);
-    *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4) = uVar21;
-    *(undefined4 *)pcVar2 = uVar21;
+    (in_stack_00000004->model).accumulated_root_motion.z = 0.0;
+    fVar16 = (in_stack_00000004->model).accumulated_root_motion.z;
+    (in_stack_00000004->model).accumulated_root_motion.y = fVar16;
+    pCVar15->x = fVar16;
     in_stack_00000004->field2_0x240c[0x18] = '\0';
     in_stack_00000004->field2_0x240c[0x19] = '\0';
     in_stack_00000004->field2_0x240c[0x1a] = '\0';
@@ -1230,7 +1218,7 @@ joined_r0x005bdb44:
     }
   }
   else {
-    pCStack_7c = (CMotionController *)(in_stack_00000004->model).field17_0x2254;
+    pCStack_7c = (CMotionController *)&(in_stack_00000004->model).accumulated_root_motion;
     pCVar15 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                         (&in_stack_00000004->base_actor,&CStack_1ac,(CVector3f *)pCStack_7c);
     pCVar1 = &(in_stack_00000004->base_actor).location;
@@ -1239,12 +1227,9 @@ joined_r0x005bdb44:
          pCVar15->y + (in_stack_00000004->base_actor).location.position.y;
     (in_stack_00000004->base_actor).location.position.z =
          pCVar15->z + (in_stack_00000004->base_actor).location.position.z;
-    *(char *)&pCStack_7c->current_frame_number = '\0';
-    *(char *)((int)&pCStack_7c->current_frame_number + 1) = '\0';
-    *(char *)((int)&pCStack_7c->current_frame_number + 2) = '\0';
-    *(char *)((int)&pCStack_7c->current_frame_number + 3) = '\0';
-    *(undefined4 *)((int)pCStack_7c + 4) = *(undefined4 *)((int)pCStack_7c + 8);
-    pCStack_7c->motion_list_ptr = *(undefined4 *)((int)pCStack_7c + 4);
+    pCStack_7c->current_frame_number = 0.0;
+    pCStack_7c->current_motion_index = (int)pCStack_7c->current_frame_number;
+    pCStack_7c->motion_list_ptr = (CMotionList *)pCStack_7c->current_motion_index;
   }
   in_stack_00000004[2].cloth_data[0x55b0] = '\0';
   in_stack_00000004[2].cloth_data[0x55b1] = '\0';

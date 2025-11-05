@@ -10,7 +10,7 @@
 //   CDemonActor_vtable PTR_core_icepick.cpp_FUN_00660034
 // Function calls:
 //   core_hero.cpp_FUN_004f2340
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -29,8 +29,8 @@ CIcePick * __cdecl core_icepick_cpp_FUN_004f7df0(CIcePick *this_ptr)
   pCVar1->field1_0x1fbd4[5] = '\0';
   pCVar1->field1_0x1fbd4[6] = '\0';
   pCVar1->field1_0x1fbd4[7] = '\0';
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(&(pCVar1->base_hero).base_character.model)
-  ;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(pCVar1->base_hero).base_character.model,"icepick.dfm");
   pCVar1->field1_0x1fbd4[0x1c] = '\0';
   pCVar1->field1_0x1fbd4[0x1d] = '\0';
   pCVar1->field1_0x1fbd4[0x1e] = -0x80;
@@ -72,7 +72,7 @@ CIcePick * __cdecl core_icepick_cpp_FUN_004f7df0(CIcePick *this_ptr)
 // 004f7e11: MOV dword ptr [EAX + 0x1fa7c],0x0
 // 004f7e1b: PUSH EAX
 // 004f7e1c: MOV dword ptr [EAX + 0x1fa80],0x0
-// 004f7e26: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 004f7e26: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004f7e2b: LEA EAX,[EBX + 0x1fbe4]
 // 004f7e31: MOV dword ptr [EBX + 0x1fbf0],0x3f800000

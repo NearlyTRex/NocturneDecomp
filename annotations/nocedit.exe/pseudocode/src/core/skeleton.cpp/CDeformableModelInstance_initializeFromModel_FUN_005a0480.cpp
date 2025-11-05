@@ -1,85 +1,88 @@
-// Name: core_skeleton.cpp_CDeformableModelInstance_FUN_005a0480
+// Name: core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
 // Address: 005a0480
 // Address Range: [[005a0480, 005a05dc]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_FUN_005a0480(CDeformableModelInstance * this_ptr)
+// Signature: void core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480(CDeformableModelInstance * this_ptr, CDeformableModel * model_ptr)
 // Cross-references:
 //   core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 (0058e690) at 0058e71c [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058e4e0 (0058e4e0) at 0058e53f [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450 (005a0450) at 005a0468 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450 (005a0450) at 005a0468 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 (0059c2f0) at 0059c382 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 (0059d460) at 0059d525 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_motion.cpp_FUN_0052dcb0
 //   core_skeleton.cpp_CDeformableModel_getVertexPoolPtr_FUN_0059a860
 //   core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a05e0
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 
 #include "nocturne.h"
 
 void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_FUN_005a0480(CDeformableModelInstance *this_ptr)
+core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
+          (CDeformableModelInstance *this_ptr,CDeformableModel *model_ptr)
 
 {
   float fVar1;
   float fVar2;
-  int iVar3;
-  CDeformableModel *pCVar4;
-  CSkeleton *pCVar5;
-  CVector3f *pCVar6;
-  CVector3f *pCVar7;
+  float fVar3;
+  float fVar4;
+  int iVar5;
+  CDeformableModel *pCVar6;
+  CSkeleton *pCVar7;
+  CVector3f *pCVar8;
+  CVector3f *pCVar9;
   BADSPACEBASE *in_ESP;
   int index;
-  float *pfVar8;
-  CDeformableModel *in_stack_00000008;
+  float *pfVar10;
   CDeformableModelInstance *in_stack_0000000c;
+  CDeformableModelInstance *in_stack_00000010;
   CDeformableModelInstance *in_stack_00000014;
-  float local_1c;
-  CDeformableModelInstance *pCVar9;
+  CDeformableModelInstance *pCVar11;
   
-  this_ptr->model_ptr = in_stack_00000008;
-  pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
+  this_ptr->model_ptr = model_ptr;
+  pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   core_motion_cpp_FUN_0052dcb0();
-  iVar3 = pCVar5->bone_count;
-  pCVar4 = in_stack_0000000c->model_ptr;
-  local_1c = (pCVar4->model_scale).x * in_stack_0000000c->scale_factor;
-  fVar1 = (pCVar4->model_scale).y;
-  fVar2 = (pCVar4->model_scale).z;
-  if ((float *)&in_stack_0000000c->field3_0x508 != &local_1c) {
-    in_stack_0000000c->field3_0x508 = (int)local_1c;
-    in_stack_0000000c->field4_0x50c = (int)(fVar1 * in_stack_0000000c->scale_factor);
-    in_stack_0000000c->rest_pose_data[0] = fVar2 * in_stack_0000000c->scale_factor;
+  iVar5 = pCVar7->bone_count;
+  pCVar6 = in_stack_0000000c->model_ptr;
+  fVar1 = (pCVar6->model_scale).y;
+  fVar2 = in_stack_0000000c->scale_factor;
+  fVar3 = (pCVar6->model_scale).z;
+  fVar4 = in_stack_0000000c->scale_factor;
+  if (&in_stack_0000000c->scaled_model_dimensions != (CVector3f *)&stack0xffffffe4) {
+    (in_stack_0000000c->scaled_model_dimensions).x =
+         (pCVar6->model_scale).x * in_stack_0000000c->scale_factor;
+    (in_stack_0000000c->scaled_model_dimensions).y = fVar1 * fVar2;
+    (in_stack_0000000c->scaled_model_dimensions).z = fVar3 * fVar4;
   }
   index = 0;
-  if (0 < iVar3) {
-    pfVar8 = &in_stack_0000000c->scale_factor;
-    pCVar7 = in_stack_0000000c->transformed_vertices;
-    pCVar9 = in_stack_0000000c;
+  if (0 < iVar5) {
+    pfVar10 = &in_stack_0000000c->scale_factor;
+    pCVar9 = in_stack_0000000c->transformed_vertices;
+    pCVar11 = in_stack_0000000c;
     do {
-      pCVar6 = core_skeleton_cpp_CDeformableModel_getVertexPoolPtr_FUN_0059a860
+      pCVar8 = core_skeleton_cpp_CDeformableModel_getVertexPoolPtr_FUN_0059a860
                          (in_stack_0000000c->model_ptr,index);
-      if (pCVar7 != pCVar6) {
-        pCVar7->x = pCVar6->x;
-        pCVar7->y = pCVar6->y;
-        pCVar7->z = pCVar6->z;
+      if (pCVar9 != pCVar8) {
+        pCVar9->x = pCVar8->x;
+        pCVar9->y = pCVar8->y;
+        pCVar9->z = pCVar8->z;
       }
-      pCVar9->rest_pose_data[1] = in_stack_0000000c->scale_factor;
-      if (pCVar5->bone_list[0].parent_index < 0) {
-        pCVar7->x = *pfVar8 * pCVar7->x;
-        pCVar7->y = *pfVar8 * pCVar7->y;
-        pCVar7->z = *pfVar8 * pCVar7->z;
+      pCVar11->rest_pose_data[0] = in_stack_0000000c->scale_factor;
+      if (pCVar7->bone_list[0].parent_index < 0) {
+        pCVar9->x = *pfVar10 * pCVar9->x;
+        pCVar9->y = *pfVar10 * pCVar9->y;
+        pCVar9->z = *pfVar10 * pCVar9->z;
       }
-      pCVar5 = (CSkeleton *)((pCVar5->motion_list).state_names[1] + 2);
-      pCVar7 = pCVar7 + 1;
-      pCVar9 = (CDeformableModelInstance *)&(pCVar9->motion_controller).current_motion_index;
+      pCVar7 = (CSkeleton *)((pCVar7->motion_list).state_names[1] + 2);
+      pCVar9 = pCVar9 + 1;
+      pCVar11 = (CDeformableModelInstance *)&(pCVar11->motion_controller).current_motion_index;
       index = index + 1;
-    } while (index < iVar3);
+    } while (index < iVar5);
   }
   core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0(in_stack_0000000c);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a05e0();
-  local_1c = 8.267215e-39;
+  core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0(in_stack_00000010);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
             (in_stack_00000014);
   return;
@@ -88,7 +91,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0480(CDeformableModelInstance
 
 // Assembly code:
 // 005a0480: PUSH EBX
-//   Label: core_skeleton.cpp_CDeformableModelInstance_FUN_005a0480
+//   Label: core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
 // 005a0481: PUSH ESI
 // 005a0482: PUSH EDI
 // 005a0483: PUSH EBP
@@ -205,7 +208,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0480(CDeformableModelInstance
 // 005a058b: MOV ECX,dword ptr [ESP + 0x28]
 //   XREF to: Stack[0x4] (READ)
 // 005a058f: PUSH ECX
-// 005a0590: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a05e0
+// 005a0590: CALL core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0
 //   XREF to: 005a05e0 (UNCONDITIONAL_CALL)
 // 005a0595: ADD ESP,0x4
 // 005a0598: MOV EBX,dword ptr [ESP + 0x28]

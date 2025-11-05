@@ -7,8 +7,8 @@
 //   core_morph.cpp_FUN_0052b600 (0052b600) at 0052b627 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_morph.cpp_CMorphModel_animate_FUN_0052a920
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 
 #include "nocturne.h"
@@ -20,7 +20,7 @@ core_morph_cpp_FUN_0052aa30
 
 {
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(param_3);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(param_3);
+  core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(param_3,0);
   core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(param_3);
   core_morph_cpp_CMorphModel_animate_FUN_0052a920(param_4);
   return;
@@ -39,7 +39,7 @@ core_morph_cpp_FUN_0052aa30
 // 0052aa3c: ADD ESP,0x4
 // 0052aa3f: PUSH 0x0
 // 0052aa41: PUSH EBX
-// 0052aa42: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
+// 0052aa42: CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 //   XREF to: 005a01d0 (UNCONDITIONAL_CALL)
 // 0052aa47: ADD ESP,0x8
 // 0052aa4a: PUSH EBX

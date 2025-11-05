@@ -24,14 +24,11 @@ void core_beast_cpp_FUN_004182a0(void)
   
   iVar1 = core_charactr_cpp_CCharacter_FUN_00429870(in_stack_00000004);
   if (iVar1 != 0) {
-    (in_stack_00000004->model).field17_0x2254[8] = '\0';
-    (in_stack_00000004->model).field17_0x2254[9] = '\0';
-    (in_stack_00000004->model).field17_0x2254[10] = '\0';
-    (in_stack_00000004->model).field17_0x2254[0xb] = '\0';
-    *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4) =
-         *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 8);
-    *(undefined4 *)(in_stack_00000004->model).field17_0x2254 =
-         *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4);
+    (in_stack_00000004->model).accumulated_root_motion.z = 0.0;
+    (in_stack_00000004->model).accumulated_root_motion.y =
+         (in_stack_00000004->model).accumulated_root_motion.z;
+    (in_stack_00000004->model).accumulated_root_motion.x =
+         (in_stack_00000004->model).accumulated_root_motion.y;
     in_stack_00000008 = in_stack_00000008 * *(float *)in_stack_00000004[1].base_actor.actor_name;
     while (0.0 < in_stack_00000008) {
       core_motion_cpp_CMotionController_advance_FUN_0052d610

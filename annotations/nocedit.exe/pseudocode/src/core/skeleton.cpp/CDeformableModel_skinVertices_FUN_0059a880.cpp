@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880(CDeformableModel * this_ptr, int lod_index, CMatrix3x4f * bone_matrices, int * output_buffer)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0 (005a01d0) at 005a01f9 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0 (005a01d0) at 005a01f9 [UNCONDITIONAL_CALL]
 // Globals:
 //   float FLOAT_00662e98 = 256
 // Function calls:

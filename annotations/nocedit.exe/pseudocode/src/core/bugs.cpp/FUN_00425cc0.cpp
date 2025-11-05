@@ -68,7 +68,7 @@ void core_bugs_cpp_FUN_00425cc0(void)
   
   (*(in_stack_00000004->base_actor).vtable[1].getAllowedMeleeAttackTypes)
             (&in_stack_00000004->base_actor);
-  if ((in_stack_00000004[2].model.bone_world_matrices[0x42].m[1].z != 0.0) &&
+  if ((in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x42].m[1].z != 0.0) &&
      (iVar4 = *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18), iVar4 != 0)) {
     fStack_70 = (in_stack_00000004->base_actor).location.position.x - *(float *)(iVar4 + 0x20);
     fStack_6c = (in_stack_00000004->base_actor).location.position.y - *(float *)(iVar4 + 0x24);
@@ -85,7 +85,7 @@ void core_bugs_cpp_FUN_00425cc0(void)
       goto LAB_00425d86;
     }
   }
-  if ((in_stack_00000004[2].model.bone_world_matrices[0x42].m[1].y != 0.0) &&
+  if ((in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x42].m[1].y != 0.0) &&
      (iVar4 = *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18), iVar4 != 0)) {
     this_ptr = (CPathMap *)(**(code **)(*(int *)(iVar4 + 0x154) + 0xbc))();
     if (this_ptr == (CPathMap *)0x0) {
@@ -115,22 +115,26 @@ void core_bugs_cpp_FUN_00425cc0(void)
       (in_stack_00000004->base_actor).location.position.z = fStack_5c;
       fStack_40 = fStack_34 - (dest_position->position).x;
       fStack_38 = fStack_2c - (in_stack_00000004->base_actor).location.position.z;
-      pfVar1 = &in_stack_00000004[2].model.bone_world_matrices[0x48].m[2].z;
-      fStack_1c = *pfVar1 + in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].y;
-      fStack_18 = in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].w +
-                  in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].z;
+      pfVar1 = &in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x48].m[2].z;
+      fStack_1c = *pfVar1 + in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[0]
+                            .y;
+      fStack_18 = in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[0].w +
+                  in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[0].z;
       fStack_58 = fStack_1c * FLOAT_00616dfb;
-      fStack_14 = in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].x +
-                  in_stack_00000004[2].model.bone_world_matrices[0x49].m[1].w;
+      fStack_14 = in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[0].x +
+                  in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[1].w;
       fStack_54 = fStack_18 * FLOAT_00616dfb;
       fStack_50 = fStack_14 * FLOAT_00616dfb;
       fStack_3c = fStack_54;
       if ((((*pfVar1 <= fStack_40) &&
-           (in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].w <= fStack_54)) &&
-          (in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].x <= fStack_38)) &&
-         (((fStack_40 <= in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].y &&
-           (fStack_54 <= in_stack_00000004[2].model.bone_world_matrices[0x49].m[0].z)) &&
-          (fStack_38 <= in_stack_00000004[2].model.bone_world_matrices[0x49].m[1].w)))) {
+           (in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[0].w <= fStack_54)
+           ) && (in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[0].x <=
+                 fStack_38)) &&
+         (((fStack_40 <= in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[0].y
+           && (fStack_54 <=
+               in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[0].z)) &&
+          (fStack_38 <= in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[1].w))
+         )) {
         core_bugs_cpp_FUN_004276c0();
       }
     }

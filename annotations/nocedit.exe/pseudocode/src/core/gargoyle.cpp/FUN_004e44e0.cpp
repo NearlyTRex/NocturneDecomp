@@ -12,7 +12,7 @@
 //   CDemonActor_vtable PTR_core_gargoyle.cpp_CGargoyle_FUN_0065ea44
 // Function calls:
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -29,8 +29,8 @@ CGargoyle * __cdecl core_gargoyle_cpp_FUN_004e44e0(CGargoyle *this_ptr)
   pCVar4 = (CGargoyle *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   (pCVar4->base_enemy).base_character.base_actor.vtable =
        &PTR_core_gargoyle_cpp_CGargoyle_FUN_0065ea44;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            (&(pCVar4->base_enemy).base_character.model);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(pCVar4->base_enemy).base_character.model,"gargoyle.dfm");
   pCVar1 = &pCVar4->base_enemy;
   (pCVar1->base_character).cloth_data[0x344] = -0x66;
   (pCVar1->base_character).cloth_data[0x345] = -0x67;
@@ -106,7 +106,7 @@ CGargoyle * __cdecl core_gargoyle_cpp_FUN_004e44e0(CGargoyle *this_ptr)
 // 004e44fa: PUSH EAX
 // 004e44fb: MOV dword ptr [EAX + -0x4],0x65ea44
 //   XREF to: 0065ea44 (DATA)
-// 004e4502: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 004e4502: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004e4507: MOV dword ptr [EBX + 0x2ddc],0x3f19999a
 // 004e4511: MOV dword ptr [EBX + 0x2de0],0x3f19999a

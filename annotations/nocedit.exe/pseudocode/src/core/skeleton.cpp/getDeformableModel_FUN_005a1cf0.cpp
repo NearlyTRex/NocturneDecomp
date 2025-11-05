@@ -1,11 +1,11 @@
-// Name: core_skeleton.cpp_LoadSkeletonDeformable_FUN_005a1cf0
+// Name: core_skeleton.cpp_getDeformableModel_FUN_005a1cf0
 // Address: 005a1cf0
 // Address Range: [[005a1cf0, 005a1dbb]]
-// Convention: unknown
-// Signature: undefined core_skeleton.cpp_LoadSkeletonDeformable_FUN_005a1cf0()
+// Convention: __cdecl
+// Signature: CDeformableModel * core_skeleton.cpp_getDeformableModel_FUN_005a1cf0(char * model_filename)
 // Cross-references:
 //   core_baron.cpp_CBaronWeapon_FUN_00413da0 (00413da0) at 00413db2 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450 (005a0450) at 005a045a [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450 (005a0450) at 005a045a [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_skeleton_cpp_0064f038
 //   TerminatedCString s_Can_t_load_s_because_def_0064f04d
@@ -23,20 +23,19 @@
 
 #include "nocturne.h"
 
-CDeformableModel * core_skeleton_cpp_LoadSkeletonDeformable_FUN_005a1cf0(void)
+CDeformableModel * __cdecl core_skeleton_cpp_getDeformableModel_FUN_005a1cf0(char *model_filename)
 
 {
   int iVar1;
   int iVar2;
   CDeformableModel *this_ptr;
   char *str1;
-  char *in_stack_00000004;
   
   iVar2 = 0;
   if (0 < g_DeformableModelCount) {
-    str1 = g_DeformableModelPool[0].model_identifier;
+    str1 = g_DeformableModelPool[0].model_filename;
     do {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,in_stack_00000004);
+      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,model_filename);
       if (iVar1 == 0) {
         return g_DeformableModelPool + iVar2;
       }
@@ -48,11 +47,11 @@ CDeformableModel * core_skeleton_cpp_LoadSkeletonDeformable_FUN_005a1cf0(void)
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0x1057;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("Can't load %s because deformable model manager is full.  (Size is %d)",in_stack_00000004,0x40);
+              ("Can't load %s because deformable model manager is full.  (Size is %d)",model_filename,0x40);
   }
   this_ptr = g_DeformableModelPool + g_DeformableModelCount;
   g_DeformableModelCount = g_DeformableModelCount + 1;
-  core_skeleton_cpp_CDeformableModel_load_FUN_0059b8d0(this_ptr,in_stack_00000004);
+  core_skeleton_cpp_CDeformableModel_load_FUN_0059b8d0(this_ptr,model_filename);
   core_skeleton_cpp_CDeformableModel_captureTextures_FUN_0059a780(this_ptr);
   return this_ptr;
 }
@@ -60,7 +59,7 @@ CDeformableModel * core_skeleton_cpp_LoadSkeletonDeformable_FUN_005a1cf0(void)
 
 // Assembly code:
 // 005a1cf0: PUSH EBX
-//   Label: core_skeleton.cpp_LoadSkeletonDeformable_FUN_005a1cf0
+//   Label: core_skeleton.cpp_getDeformableModel_FUN_005a1cf0
 // 005a1cf1: PUSH ESI
 // 005a1cf2: PUSH EDI
 // 005a1cf3: PUSH EBP

@@ -5,7 +5,7 @@
 // Signature: double crt_math.c_ceil_FUN_006001b2(double value)
 // Cross-references:
 //   core_msnedit.cpp_FUN_00536e20 (00536e20) at 00537096 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0d10 (005a0d10) at 005a0d8c [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10 (005a0d10) at 005a0d8c [UNCONDITIONAL_CALL]
 //   core_trigger.cpp_FUN_005e0ba0 (005e0ba0) at 005e0c0b [UNCONDITIONAL_CALL]
 //   shape_design.c_sampleAndFilterPixel_FUN_0046ae20 (0046ae20) at 0046aee1 [UNCONDITIONAL_CALL]
 //   wincore_winrun.cpp_sleep_FUN_005f40e0 (005f40e0) at 005f410b [UNCONDITIONAL_CALL]

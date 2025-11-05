@@ -25,7 +25,7 @@
 //   core_mission.cpp_CDemonMission_FUN_00523f20
 //   core_msnedit.cpp_FUN_00538ea0
 //   core_msnedit.cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   crt_string.c_stricmp_FUN_005fe7f0
 //   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
@@ -177,8 +177,9 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
                              (char *)(piVar9[0x1a] + 0x78));
                   break;
                 case 7:
-                  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-                            ((CDeformableModelInstance *)pCVar4->data_ptr);
+                  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+                            ((CDeformableModelInstance *)pCVar4->data_ptr,
+                             (char *)(piVar9[0x1a] + 0x2260));
                 }
               }
               local_20 = (CDemonActor *)(local_20->actor_name + 1);
@@ -652,7 +653,7 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
 // 0053dcd7: PUSH EAX
 // 0053dcd8: MOV EAX,dword ptr [EBP + 0x68]
 // 0053dcdb: PUSH EAX
-// 0053dcdc: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 0053dcdc: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 0053dce1: ADD ESP,0x8
 // 0053dce4: JMP 0x0053dac4

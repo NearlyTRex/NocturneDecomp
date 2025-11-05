@@ -18,7 +18,7 @@
 //   core_morph.cpp_FUN_0052b600
 //   core_morph.cpp_FUN_0052b640
 //   core_motion.cpp_CMotionController_FUN_0052e700
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+//   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00
 //   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 
@@ -29,16 +29,14 @@
 int __cdecl core_succubus_cpp_CSuccubus_FUN_005c7590(CSuccubus *this_ptr)
 
 {
-  float fVar1;
+  int iVar1;
   CBoundingBox3D *this_ptr_00;
-  int iVar2;
   BADSPACEBASE *in_ESP;
   int iStack00000014;
   int in_stack_0000001c;
-  CSuccubus *pCStack_1c;
   
-  fVar1 = (float)engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr);
-  if (fVar1 == 0.0) {
+  iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr);
+  if (iVar1 == 0) {
     (this_ptr->base_enemy).base_character.field13_0x2620[0] = '\0';
     (this_ptr->base_enemy).base_character.field13_0x2620[1] = '\0';
     (this_ptr->base_enemy).base_character.field13_0x2620[2] = '\0';
@@ -47,43 +45,36 @@ int __cdecl core_succubus_cpp_CSuccubus_FUN_005c7590(CSuccubus *this_ptr)
   if (*(int *)(this_ptr->base_enemy).base_character.field2_0x240c == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     this_ptr_00 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->getBoundingBox)
-                            ((CDemonActor *)this_ptr,(CBoundingBox3D *)&pCStack_1c);
+                            ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffe4);
     iStack00000014 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     if (iStack00000014 != 0) {
       (this_ptr->base_enemy).base_character.field13_0x2620[0] = '\x01';
       (this_ptr->base_enemy).base_character.field13_0x2620[1] = '\0';
       (this_ptr->base_enemy).base_character.field13_0x2620[2] = '\0';
       (this_ptr->base_enemy).base_character.field13_0x2620[3] = '\0';
-      if (fVar1 == 0.0) {
+      if (iVar1 == 0) {
         if (*(int *)(this_ptr->field1_0xbeb4 + 0x2480) == 0) {
           core_charactr_cpp_CCharacter_FUN_00429aa0((CCharacter *)this_ptr);
         }
         else {
-          pCStack_1c = (CSuccubus *)(this_ptr->field1_0xbeb4 + 0x2488);
           core_morph_cpp_FUN_0052b600();
-          pCStack_1c = (CSuccubus *)fVar1;
           core_morph_cpp_FUN_0052b600();
-          pCStack_1c = (CSuccubus *)fVar1;
           core_morph_cpp_FUN_0052b640();
-          pCStack_1c = *(CSuccubus **)(this_ptr->field1_0xbeb4 + 0x2450);
           core_morph_cpp_FUN_0052b640();
           core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)(this_ptr->field1_0xbeb4 + 0x2488))
           ;
         }
       }
       else {
-        pCStack_1c = (CSuccubus *)0xffffffff;
-        core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150
-                  ((CDeformableModelInstance *)(this_ptr->field1_0xbeb4 + 8));
+        core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
+                  ((CDeformableModelInstance *)(this_ptr->field1_0xbeb4 + 8),-1,0xffffffff,1,0);
         core_cloth_cpp_MultipleCallSaveJoinedLight_FUN_0043c320();
       }
       if ((DAT_02f43978 != 0) &&
-         (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
-         iVar2 == 0)) {
-        pCStack_1c = this_ptr;
+         (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+         iVar1 == 0)) {
         core_motion_cpp_CMotionController_FUN_0052e700
                   (&(this_ptr->base_enemy).base_character.model.motion_controller);
-        pCStack_1c = (CSuccubus *)0x5c765c;
         (*((this_ptr->base_enemy).base_character.base_actor.vtable)->renderTargetPoints)
                   ((CDemonActor *)this_ptr);
       }
@@ -149,7 +140,7 @@ int __cdecl core_succubus_cpp_CSuccubus_FUN_005c7590(CSuccubus *this_ptr)
 // 005c7609: PUSH -0x1
 // 005c760b: PUSH -0x1
 // 005c760d: PUSH EDI
-// 005c760e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+// 005c760e: CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   XREF to: 005a0150 (UNCONDITIONAL_CALL)
 // 005c7613: ADD ESP,0x14
 // 005c7616: PUSH EDI

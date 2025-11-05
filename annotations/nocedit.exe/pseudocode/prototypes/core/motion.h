@@ -119,9 +119,9 @@ undefined CMotionController();
 // Address: 0052e4c0
 void CMotionController::getFramesForInterpolation(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, int * out_frame2, float * out_blend_weight);
 
-// Original: core_motion.cpp_CMotionController_FUN_0052e570
+// Original: core_motion.cpp_CMotionController_accumulateScaledRootMotion_FUN_0052e570
 // Address: 0052e570
-void CMotionController(CMotionController * this_ptr);
+void CMotionController::accumulateScaledRootMotion(CMotionController * this_ptr, float start_frame, float end_frame, float scale_factor);
 
 // Original: core_motion.cpp_CMotionController_load_FUN_0052e5d0
 // Address: 0052e5d0

@@ -12,7 +12,7 @@
 //   CDemonActor_vtable PTR_core_dracbrid.cpp_DraculaBrideModels_FUN_0065cd94
 // Function calls:
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -31,8 +31,8 @@ CDraculaBride * __cdecl core_dracbrid_cpp_ctor_FUN_00483fc0(CDraculaBride *this_
   pCVar4 = (CDraculaBride *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   (pCVar4->base_enemy).base_character.base_actor.vtable =
        &PTR_core_dracbrid_cpp_DraculaBrideModels_FUN_0065cd94;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            (&(pCVar4->base_enemy).base_character.model);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(pCVar4->base_enemy).base_character.model,"nbride2.dfm");
   pCVar1 = &pCVar4->base_enemy;
   (pCVar1->base_character).cloth_data[0x344] = '\0';
   (pCVar1->base_character).cloth_data[0x345] = '\0';
@@ -97,7 +97,7 @@ CDraculaBride * __cdecl core_dracbrid_cpp_ctor_FUN_00483fc0(CDraculaBride *this_
 // 00483fdd: PUSH EAX
 // 00483fde: MOV dword ptr [EAX + -0x4],0x65cd94
 //   XREF to: 0065cd94 (DATA)
-// 00483fe5: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 00483fe5: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00483fea: MOV dword ptr [EBX + 0x2ddc],0x3f000000
 // 00483ff4: MOV dword ptr [EBX + 0x2de0],0x3f800000

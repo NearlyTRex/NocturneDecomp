@@ -16,8 +16,8 @@
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0
 //   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 
@@ -27,6 +27,8 @@ void __cdecl core_skeledit_cpp_FUN_00598f10(void)
 
 {
   CDeformableModelInstance *this_ptr;
+  undefined4 uStack00000008;
+  char *in_stack_00000014;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x20);
   this_ptr = (CDeformableModelInstance *)
@@ -40,15 +42,16 @@ void __cdecl core_skeledit_cpp_FUN_00598f10(void)
     g_CurrentLineNumber = 0x1b7a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("viewModel - out of memory!");
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(this_ptr);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr,in_stack_00000014);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr);
   core_skeledit_cpp_CDeformableModelInstance_FUN_005968b0(this_ptr);
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0x1b7e;
   if (this_ptr == (CDeformableModelInstance *)0x0) {
     return;
   }
-  (*(code *)((this_ptr->motion_controller).vtable)->dtor)();
+  uStack00000008 = 2;
+  (*((this_ptr->motion_controller).vtable)->dtor)(&this_ptr->motion_controller);
   return;
 }
 
@@ -94,11 +97,11 @@ void __cdecl core_skeledit_cpp_FUN_00598f10(void)
 //   XREF to: Stack[0x4] (READ)
 // 00598f66: PUSH ESI
 // 00598f67: PUSH EBX
-// 00598f68: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 00598f68: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00598f6d: ADD ESP,0x8
 // 00598f70: PUSH EBX
-// 00598f71: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 00598f71: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 00598f76: ADD ESP,0x4
 // 00598f79: PUSH EBX

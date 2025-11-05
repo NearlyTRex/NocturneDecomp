@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, float interpolation)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0ad0 (005a0ad0) at 005a0b3c [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (0059eb50) at 0059f12e [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0 (005a0ad0) at 005a0b3c [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (0059e0a0) at 0059e1c0 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_0059a050

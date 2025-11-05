@@ -66,18 +66,18 @@ core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
   
   bVar5 = 0;
   if (bone_index < 0) {
-    out_position->x = (this_ptr->root_position).x;
-    out_position->y = (this_ptr->root_position).y;
-    out_position->z = (this_ptr->root_position).z;
+    out_position->x = (this_ptr->bone_transform).root_position.x;
+    out_position->y = (this_ptr->bone_transform).root_position.y;
+    out_position->z = (this_ptr->bone_transform).root_position.z;
     return out_position;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   iVar2 = pCVar1->bone_list[in_stack_00000010].parent_index;
   input_vector = this_ptr->transformed_vertices + in_stack_00000010;
   if (iVar2 < 0) {
-    out_position->x = input_vector->x + (this_ptr->root_position).x;
-    out_position->y = input_vector->y + (this_ptr->root_position).y;
-    out_position->z = input_vector->z + (this_ptr->root_position).z;
+    out_position->x = input_vector->x + (this_ptr->bone_transform).root_position.x;
+    out_position->y = input_vector->y + (this_ptr->bone_transform).root_position.y;
+    out_position->z = input_vector->z + (this_ptr->bone_transform).root_position.z;
     return out_position;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820

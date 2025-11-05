@@ -1,10 +1,10 @@
-// Name: core_skeleton.cpp_CDeformableModelInstance_FUN_005a0d10
+// Name: core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10
 // Address: 005a0d10
 // Address Range: [[005a0d10, 005a0f46]]
 // Convention: __cdecl
-// Signature: float * core_skeleton.cpp_CDeformableModelInstance_FUN_005a0d10(CDeformableModelInstance * this_ptr)
+// Signature: CVector3f * core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10(CDeformableModelInstance * this_ptr, CVector3f * output_buffer, float start_frame, float end_frame)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0c90 (005a0c90) at 005a0ca5 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90 (005a0c90) at 005a0ca5 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_FUN_005a0f50 (005a0f50) at 005a0fc1 [UNCONDITIONAL_CALL]
 // Globals:
 //   CVector3f g_ZeroVector
@@ -18,8 +18,10 @@
 
 #include "nocturne.h"
 
-float * __cdecl
-core_skeleton_cpp_CDeformableModelInstance_FUN_005a0d10(CDeformableModelInstance *this_ptr)
+CVector3f * __cdecl
+core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10
+          (CDeformableModelInstance *this_ptr,CVector3f *output_buffer,float start_frame,
+          float end_frame)
 
 {
   int iVar1;
@@ -42,19 +44,16 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0d10(CDeformableModelInstance
   undefined4 extraout_EDX_00;
   float10 in_ST0;
   float10 fVar15;
-  float *in_stack_00000008;
-  float in_stack_0000000c;
-  float in_stack_00000010;
   float in_stack_00000014;
   float local_2c;
   float local_28;
   float local_24;
   
-  if (in_stack_00000010 <= in_stack_0000000c) {
-    *in_stack_00000008 = g_ZeroVector.x;
-    in_stack_00000008[1] = g_ZeroVector.y;
-    in_stack_00000008[2] = g_ZeroVector.z;
-    return in_stack_00000008;
+  if (end_frame <= start_frame) {
+    output_buffer->x = g_ZeroVector.x;
+    output_buffer->y = g_ZeroVector.y;
+    output_buffer->z = g_ZeroVector.z;
+    return output_buffer;
   }
   pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   crt_math_c_floor_FUN_005feb90((double)in_ST0);
@@ -78,7 +77,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0d10(CDeformableModelInstance
       iVar14 = iVar14 + 0xc;
     } while (iVar14 < iVar2 * 0xc);
   }
-  fVar11 = in_stack_00000010 - (float)iVar1;
+  fVar11 = end_frame - (float)iVar1;
   pCVar9 = pCVar13->frame_positions_2;
   fVar3 = pCVar9[iVar1].y;
   fVar4 = pCVar9[iVar1].z;
@@ -87,20 +86,20 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0d10(CDeformableModelInstance
   pCVar10 = pCVar13->frame_positions_2;
   fVar5 = pCVar10[iVar14].y;
   fVar6 = pCVar10[iVar14].z;
-  fVar7 = (float)this_ptr->field4_0x50c;
-  fVar8 = this_ptr->rest_pose_data[0];
-  *in_stack_00000008 =
+  fVar7 = (this_ptr->scaled_model_dimensions).y;
+  fVar8 = (this_ptr->scaled_model_dimensions).z;
+  output_buffer->x =
        ((local_2c - pCVar9[iVar1].x * fVar11) - pCVar10[iVar14].x * fVar12) *
-       (float)this_ptr->field3_0x508;
-  in_stack_00000008[1] = ((local_28 - fVar3 * fVar11) - fVar5 * fVar12) * fVar7;
-  in_stack_00000008[2] = ((local_24 - fVar4 * fVar11) - fVar6 * fVar12) * fVar8;
-  return in_stack_00000008;
+       (this_ptr->scaled_model_dimensions).x;
+  output_buffer->y = ((local_28 - fVar3 * fVar11) - fVar5 * fVar12) * fVar7;
+  output_buffer->z = ((local_24 - fVar4 * fVar11) - fVar6 * fVar12) * fVar8;
+  return output_buffer;
 }
 
 
 // Assembly code:
 // 005a0d10: PUSH ESI
-//   Label: core_skeleton.cpp_CDeformableModelInstance_FUN_005a0d10
+//   Label: core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10
 // 005a0d11: PUSH EDI
 // 005a0d12: SUB ESP,0x40
 // 005a0d15: MOV EDI,dword ptr [ESP + 0x4c]

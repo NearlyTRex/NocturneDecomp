@@ -17,7 +17,7 @@
 // Function calls:
 //   core_charactr.cpp_CCharacter_ctor_FUN_00427e20
 //   core_path.cpp_CPathMap_ctor_FUN_00546450
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -34,8 +34,9 @@ CNPC * __cdecl core_npc_cpp_FUN_005447e0(CNPC *this_ptr)
   pCVar2[-1].height_cache_tags[7][0x4e] = 0x3f666666;
   pCVar2[-1].height_cache_tags[7][0x51] = 0x3fcccccd;
   pCVar2[-1].height_cache_tags[7][0x52] = -0x3b864000;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            ((CDeformableModelInstance *)(pCVar2[-1].height_cache[0x4f] + 0x1c));
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            ((CDeformableModelInstance *)(pCVar2[-1].height_cache[0x4f] + 0x1c),
+             "priest.dfm");
   pCVar2[-1].height_cache_tags[2][0x53] = 0;
   pCVar2[1].current_position.x = 0.0;
   pCVar2[1].current_position.y = 0.0;
@@ -68,7 +69,7 @@ CNPC * __cdecl core_npc_cpp_FUN_005447e0(CNPC *this_ptr)
 // 0054482b: MOV dword ptr [EBX + 0x2dec],0x3fcccccd
 // 00544835: PUSH EAX
 // 00544836: MOV dword ptr [EBX + 0x2df0],0xc479c000
-// 00544840: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 00544840: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00544845: MOV dword ptr [EBX + 0x2624],0x0
 // 0054484f: ADD ESP,0x8

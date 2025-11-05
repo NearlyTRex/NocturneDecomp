@@ -17,7 +17,7 @@
 // Function calls:
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -39,8 +39,8 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr)
   pCVar5 = (CZombie *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   pcVar8 = "true";
   (pCVar5->base_enemy).base_character.base_actor.vtable = &PTR_core_zombie_cpp_CZombie_FUN_006659e4;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            (&(pCVar5->base_enemy).base_character.model);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(pCVar5->base_enemy).base_character.model,"zombie1.dfm");
   pCVar2 = &pCVar5->base_enemy;
   (pCVar2->base_character).cloth_data[0x344] = '\0';
   (pCVar2->base_character).cloth_data[0x345] = '\0';
@@ -135,7 +135,7 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr)
 //   XREF to: 00658494 (DATA)
 // 005f9006: MOV dword ptr [EAX + -0x4],0x6659e4
 //   XREF to: 006659e4 (DATA)
-// 005f900d: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005f900d: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005f9012: MOV dword ptr [EBX + 0x2ddc],0x3f000000
 // 005f901c: LEA EDI,[EBX + 0xbedc]

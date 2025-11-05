@@ -20,7 +20,7 @@
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
 //   core_morph.cpp_FUN_0052b310
 //   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -43,12 +43,12 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus *thi
   core_cloth_cpp_FUN_0043bf40();
   iVar5 = core_morph_cpp_FUN_0052b310();
   *(CDemonActor_vtable **)(iVar5 + -0xe1e8) = &g_CSuccubusVTable;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            ((CDeformableModelInstance *)(iVar5 + -0xe1e4));
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            ((CDeformableModelInstance *)(iVar5 + -0xe1e4),"succubus.dfm");
   pcVar6 = "hdwing.cth";
   pcVar7 = (char *)(iVar5 + -0x1c8);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            ((CDeformableModelInstance *)(iVar5 + -0x2480));
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            ((CDeformableModelInstance *)(iVar5 + -0x2480),"hotdemon.dfm");
   *(undefined4 *)(iVar5 + -0xb560) = 0x3f19999a;
   uVar2 = _DAT_0066392c;
   *(undefined4 *)(iVar5 + -0xb55c) = 0x3f666666;
@@ -104,7 +104,7 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus *thi
 // 005c6acb: PUSH EAX
 // 005c6acc: MOV dword ptr [EBX + 0x154],0x663944
 //   XREF to: 00663944 (DATA)
-// 005c6ad6: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005c6ad6: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005c6adb: ADD ESP,0x8
 // 005c6ade: PUSH 0x653fe5
@@ -114,7 +114,7 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus *thi
 // 005c6aea: MOV ESI,0x653ff2
 //   XREF to: 00653ff2 (DATA)
 // 005c6aef: LEA EDI,[EBX + 0xe174]
-// 005c6af5: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005c6af5: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005c6afa: MOV dword ptr [EBX + 0x2ddc],0x3f19999a
 // 005c6b04: FLD float ptr [0x0066392c]

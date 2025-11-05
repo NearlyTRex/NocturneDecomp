@@ -223,7 +223,7 @@ void core_cloth_cpp_FUN_00439710
     core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(param_11);
     local_18 = 0;
     if (0 < *(int *)(param_10 + 0x3f028)) {
-      local_60 = param_11->bone_world_matrices;
+      local_60 = (param_11->bone_transform).bone_world_matrices;
       local_6c = param_10 + 0x56d8;
       local_34 = param_10;
       do {
@@ -304,7 +304,7 @@ void core_cloth_cpp_FUN_00439710
     }
     local_7c = (CDeformableModel *)0x0;
     if (0 < *(int *)(param_10 + 0x3f028)) {
-      local_44 = param_13->bone_world_matrices;
+      local_44 = (param_13->bone_transform).bone_world_matrices;
       local_54 = param_10 + 0x56d8;
       local_24 = 0;
       local_20 = param_10;
@@ -362,14 +362,16 @@ void core_cloth_cpp_FUN_00439710
   pCVar10 = param_11;
   if (0 < (int)param_11->transformed_vertices[0xe].y) {
     do {
-      pCVar10[2].bone_world_matrices[0x14].m[0].y = -NAN;
+      pCVar10[2].bone_transform.bone_world_matrices[0x14].m[0].y = -NAN;
       iVar7 = iVar7 + 1;
       pCVar10 = (CDeformableModelInstance *)&pCVar10->transformed_vertices[0x10].y;
     } while (iVar7 < (int)param_11->transformed_vertices[0xe].y);
   }
-  param_11[0x1d].bone_world_matrices[8].m[0].y = 0.0;
-  param_11[0x1d].bone_world_matrices[8].m[0].x = param_11[0x1d].bone_world_matrices[8].m[0].y;
-  param_11[0x1d].bone_world_matrices[8].m[0].w = param_11[0x1d].bone_world_matrices[8].m[0].x;
+  param_11[0x1d].bone_transform.bone_world_matrices[8].m[0].y = 0.0;
+  param_11[0x1d].bone_transform.bone_world_matrices[8].m[0].x =
+       param_11[0x1d].bone_transform.bone_world_matrices[8].m[0].y;
+  param_11[0x1d].bone_transform.bone_world_matrices[8].m[0].w =
+       param_11[0x1d].bone_transform.bone_world_matrices[8].m[0].x;
   return;
 }
 

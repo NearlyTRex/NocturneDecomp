@@ -33,7 +33,7 @@ core_skeleton_cpp_CDeformableModelInstance_copyBoneRotations_FUN_0059f6e0
       if (-1 < iVar1) {
         pfVar3 = (float *)((int)this_ptr + (uint)bVar5 * -8 + 0x6b4);
         pfVar2 = in_stack_00000010 + (uint)bVar5 * -2 + 1;
-        this_ptr->bone_rotations[0].w = *in_stack_00000010;
+        (this_ptr->bone_transform).bone_rotations[0].w = *in_stack_00000010;
         pfVar4 = pfVar3 + (uint)bVar5 * -2 + 1;
         *pfVar3 = *pfVar2;
         *pfVar4 = pfVar2[(uint)bVar5 * -2 + 1];

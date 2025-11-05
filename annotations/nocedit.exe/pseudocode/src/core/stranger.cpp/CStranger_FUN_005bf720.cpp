@@ -9,7 +9,7 @@
 //   double DOUBLE_00653894 = 40
 //   undefined4 DAT_03f6bacc
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20
+//   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a1510
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a15e0
 //   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -27,26 +27,37 @@ void core_stranger_cpp_CStranger_FUN_005bf720(void)
   CDeformableModelInstance *this_ptr;
   CVector3f *pCVar1;
   BADSPACEBASE *in_ESP;
-  byte bVar2;
+  undefined4 *puVar2;
+  byte bVar3;
   int in_stack_00000004;
-  undefined4 auStack_1808 [1535];
+  float blend_weight;
+  code *bone_index;
+  CDeformableModel_MotionBlendWeightFunc *in_stack_ffffe534;
+  float afStack_1808 [1527];
+  CQuaternion4f local_2c;
+  float local_1c;
+  undefined4 auStack_18 [3];
   
-  bVar2 = 0;
+  bVar3 = 0;
   this_ptr = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a1510(this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
             (this_ptr,*(int *)(in_stack_00000004 + 0x1fc84),
              *(float *)(in_stack_00000004 + 0x1fc54) * (float)DOUBLE_00653894,-1);
   pCVar1 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
-                     ((CVector3f *)(auStack_1808 + 0x5fd),
+                     ((CVector3f *)(auStack_18 + 1),
                       (CQuaternion4f *)(DAT_03f6bacc * 0x10 + in_stack_00000004 + 0x808));
+  bone_index = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
+  blend_weight = -NAN;
   core_xform_cpp_quaternionFromAngleY_FUN_005f79f0((CQuaternion4f *)-pCVar1->y,1.0);
-  auStack_1808[(uint)bVar2 * -2 + 0x5f8] = auStack_1808[(uint)bVar2 * -2 + 0x5fc];
-  auStack_1808[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x5f9] =
-       auStack_1808[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x5fd];
-  (auStack_1808 + (uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x5f9)[(uint)bVar2 * -2 + 1] =
-       (auStack_1808 + (uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x5fd)[(uint)bVar2 * -2 + 1];
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0059ff20();
+  local_2c.w = local_1c;
+  puVar2 = (undefined4 *)((int)&local_2c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+  *(undefined4 *)((int)&local_2c + (uint)bVar3 * -8 + 4) = auStack_18[(uint)bVar3 * -2];
+  *puVar2 = auStack_18[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+  puVar2[(uint)bVar3 * -2 + 1] =
+       (auStack_18 + (uint)bVar3 * -2 + (uint)bVar3 * -2 + 1)[(uint)bVar3 * -2 + 1];
+  core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
+            (this_ptr,&local_2c,blend_weight,(int)bone_index,in_stack_ffffe534);
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a1510(this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_FUN_005a15e0(this_ptr);
   return;
@@ -120,7 +131,7 @@ void core_stranger_cpp_CStranger_FUN_005bf720(void)
 // 005bf7cd: MOVSD ES:EDI,ESI
 // 005bf7ce: MOVSD ES:EDI,ESI
 // 005bf7cf: MOVSD ES:EDI,ESI
-// 005bf7d0: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20
+// 005bf7d0: CALL core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
 //   XREF to: 0059ff20 (UNCONDITIONAL_CALL)
 // 005bf7d5: ADD ESP,0x14
 // 005bf7d8: MOV ECX,dword ptr [ESP + 0x1ae0]

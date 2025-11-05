@@ -115,7 +115,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
           in_stack_0000001c =
                (*(this_ptr_00->base_actor).vtable[1].hasCollision)
                          (&this_ptr_00->base_actor,in_stack_ffffff24);
-          if ((in_stack_0000001c == 0) || ((this_ptr_00->model).field18_0x2260[0] == '\0')) {
+          if ((in_stack_0000001c == 0) || ((this_ptr_00->model).model_name[0] == '\0')) {
             pCVar1 = &(this_ptr_00->base_actor).location;
             if ((CLocation *)&stack0xffffff4c != pCVar1) {
               in_stack_ffffff4c = (pCVar1->position).x;

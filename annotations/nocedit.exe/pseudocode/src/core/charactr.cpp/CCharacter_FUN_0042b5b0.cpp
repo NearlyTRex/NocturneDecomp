@@ -34,7 +34,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b5b0(CCharacter *this_ptr)
   if ((*(int *)(this_ptr->cloth_data + 0x478) < 0x32) &&
      (((in_stack_00000018 != 0 ||
        (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(&this_ptr->base_actor,"CHero"),
-       iVar1 == 0)) && ((this_ptr->model).field18_0x2260[0] != '\0')))) {
+       iVar1 == 0)) && ((this_ptr->model).model_name[0] != '\0')))) {
     iVar1 = core_skeleton_cpp_CDeformableModelInstance_FUN_005a1160();
     iVar2 = 0;
     pCVar3 = this_ptr;

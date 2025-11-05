@@ -5,7 +5,7 @@
 // Signature: void core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780(CDeformableModel * this_ptr)
 // Cross-references:
 //   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 (0059d460) at 0059d4ac [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_LoadSkeletonDeformable_FUN_005a1cf0 (005a1cf0) at 005a1da6 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_getDeformableModel_FUN_005a1cf0 (005a1cf0) at 005a1da6 [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonRenderer g_CDemonRendererInstance

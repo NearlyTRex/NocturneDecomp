@@ -12,7 +12,7 @@
 //   CDemonActor_vtable g_CSmileyVTable
 // Function calls:
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -28,8 +28,8 @@ CSmiley * __cdecl core_smiley_cpp_CSmiley_ctor_FUN_005a2430(CSmiley *this_ptr)
   
   pCVar4 = (CSmiley *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   (pCVar4->base_enemy).base_character.base_actor.vtable = &g_CSmileyVTable;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            (&(pCVar4->base_enemy).base_character.model);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(pCVar4->base_enemy).base_character.model,"smiley.dfm");
   pCVar4->field1_0xbeb4[8] = '\0';
   pCVar4->field1_0xbeb4[9] = '\0';
   pCVar4->field1_0xbeb4[10] = '\0';
@@ -88,7 +88,7 @@ CSmiley * __cdecl core_smiley_cpp_CSmiley_ctor_FUN_005a2430(CSmiley *this_ptr)
 // 005a244a: PUSH EAX
 // 005a244b: MOV dword ptr [EAX + -0x4],0x662f84
 //   XREF to: 00662f84 (DATA)
-// 005a2452: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005a2452: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005a2457: MOV dword ptr [EBX + 0xbebc],0x0
 // 005a2461: MOV dword ptr [EBX + 0xbec0],0x42c80000

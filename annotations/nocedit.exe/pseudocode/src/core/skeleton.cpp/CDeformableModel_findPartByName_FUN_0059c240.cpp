@@ -56,7 +56,7 @@ core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
   g_CurrentFilename = "..\\core\\skeleton.cpp";
   g_CurrentLineNumber = 0x5c8;
   core_main_c_displayErrorAndQuit_FUN_00506f10
-            ("Can't find part %s in model %s",part_name,this_ptr->model_identifier);
+            ("Can't find part %s in model %s",part_name,this_ptr->model_filename);
   return -1;
 }
 

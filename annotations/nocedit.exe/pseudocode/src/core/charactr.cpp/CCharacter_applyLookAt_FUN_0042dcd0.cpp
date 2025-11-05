@@ -77,10 +77,11 @@ void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_0042dcd0(CCharacter *t
           ((int)(&stack0xffffffa4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) +
           ((uint)bVar4 * -2 + 1) * 4);
     core_xform_cpp_slerpQuaternion_FUN_005f77e0
-              ((this_ptr->model).bone_rotations + *(int *)(this_ptr->field11_0x25a0 + 0x44),
-               (CQuaternion4f *)local_54,*(CQuaternion4f **)(this_ptr->field11_0x25a0 + 0x40),
-               in_stack_ffffff94);
-    pCVar1 = (this_ptr->model).bone_rotations + *(int *)(this_ptr->field11_0x25a0 + 0x44);
+              ((this_ptr->model).bone_transform.bone_rotations +
+               *(int *)(this_ptr->field11_0x25a0 + 0x44),(CQuaternion4f *)local_54,
+               *(CQuaternion4f **)(this_ptr->field11_0x25a0 + 0x40),in_stack_ffffff94);
+    pCVar1 = (this_ptr->model).bone_transform.bone_rotations +
+             *(int *)(this_ptr->field11_0x25a0 + 0x44);
     pfVar2 = (float *)((int)pCVar1 + ((uint)bVar4 * -2 + 1) * 4);
     pCVar1->w = fStack_20;
     pfVar3 = pfVar2 + (uint)bVar4 * -2 + 1;

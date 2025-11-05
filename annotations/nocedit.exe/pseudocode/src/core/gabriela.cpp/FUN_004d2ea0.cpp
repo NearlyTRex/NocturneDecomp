@@ -129,7 +129,7 @@ void core_gabriela_cpp_FUN_004d2ea0(void)
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
   CCharacter *pCVar21;
-  char *pcVar22;
+  char *sound_name;
   SCollisionInfo *in_stack_fffffe24;
   float local_1b4;
   float local_1b0;
@@ -206,14 +206,11 @@ void core_gabriela_cpp_FUN_004d2ea0(void)
   pCVar12 = (CVector3f *)core_gabriela_cpp_FUN_004d4cf0();
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             (&in_stack_00000004->base_actor,&local_184,pCVar12);
-  (in_stack_00000004->model).field17_0x2254[8] = '\0';
-  (in_stack_00000004->model).field17_0x2254[9] = '\0';
-  (in_stack_00000004->model).field17_0x2254[10] = '\0';
-  (in_stack_00000004->model).field17_0x2254[0xb] = '\0';
-  *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4) =
-       *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 8);
-  *(undefined4 *)(in_stack_00000004->model).field17_0x2254 =
-       *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4);
+  (in_stack_00000004->model).accumulated_root_motion.z = 0.0;
+  (in_stack_00000004->model).accumulated_root_motion.y =
+       (in_stack_00000004->model).accumulated_root_motion.z;
+  (in_stack_00000004->model).accumulated_root_motion.x =
+       (in_stack_00000004->model).accumulated_root_motion.y;
   core_gabriela_cpp_FUN_004d4890();
   bVar4 = 0.0 < in_stack_00000004->hit_points;
   bVar17 = in_stack_00000004->grabbed_by == (CDemonActor *)0x0;
@@ -508,9 +505,9 @@ LAB_004d321d:
 LAB_004d3cb2:
           if (!bVar20) {
 LAB_004d3cb4:
-            local_178 = local_178 + *(float *)(in_stack_00000004->model).field17_0x2254;
-            local_174 = local_174 + *(float *)((in_stack_00000004->model).field17_0x2254 + 4);
-            local_170 = local_170 + *(float *)((in_stack_00000004->model).field17_0x2254 + 8);
+            local_178 = local_178 + (in_stack_00000004->model).accumulated_root_motion.x;
+            local_174 = local_174 + (in_stack_00000004->model).accumulated_root_motion.y;
+            local_170 = local_170 + (in_stack_00000004->model).accumulated_root_motion.z;
           }
         }
       }
@@ -540,22 +537,19 @@ LAB_004d3cb4:
     }
   }
   else {
-    pcVar22 = (in_stack_00000004->model).field17_0x2254;
-    pCVar12 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                        (&in_stack_00000004->base_actor,&local_70,(CVector3f *)pcVar22);
+    pCVar12 = &(in_stack_00000004->model).accumulated_root_motion;
+    pCVar13 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                        (&in_stack_00000004->base_actor,&local_70,pCVar12);
     pCVar1 = &(in_stack_00000004->base_actor).location;
-    (pCVar1->position).x = pCVar12->x + (pCVar1->position).x;
+    (pCVar1->position).x = pCVar13->x + (pCVar1->position).x;
     (in_stack_00000004->base_actor).location.position.y =
-         pCVar12->y + (in_stack_00000004->base_actor).location.position.y;
+         pCVar13->y + (in_stack_00000004->base_actor).location.position.y;
     (in_stack_00000004->base_actor).location.position.z =
-         pCVar12->z + (in_stack_00000004->base_actor).location.position.z;
-    (in_stack_00000004->model).field17_0x2254[8] = '\0';
-    (in_stack_00000004->model).field17_0x2254[9] = '\0';
-    (in_stack_00000004->model).field17_0x2254[10] = '\0';
-    (in_stack_00000004->model).field17_0x2254[0xb] = '\0';
-    *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4) =
-         *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 8);
-    *(undefined4 *)pcVar22 = *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4);
+         pCVar13->z + (in_stack_00000004->base_actor).location.position.z;
+    (in_stack_00000004->model).accumulated_root_motion.z = 0.0;
+    (in_stack_00000004->model).accumulated_root_motion.y =
+         (in_stack_00000004->model).accumulated_root_motion.z;
+    pCVar12->x = (in_stack_00000004->model).accumulated_root_motion.y;
   }
   core_charactr_cpp_CCharacter_FUN_00429820(in_stack_00000004);
   if (((bVar8 && (bVar7 && (bVar6 && (bVar5 && (bVar19 && (bVar18 && (bVar17 && bVar4))))))) &&
@@ -632,7 +626,7 @@ LAB_004d3cb4:
     local_38 = _DAT_0065e7b4 + (float)DOUBLE_0062aedd;
     if ((local_38 <= local_30) && (*(float *)(in_stack_00000004[2].cloth_data + 0x54fc) < local_38))
     {
-      pcVar22 = "undraw-s.wav @ .7";
+      sound_name = "undraw-s.wav @ .7";
       goto LAB_004d33ec;
     }
   }
@@ -650,10 +644,10 @@ LAB_004d3cb4:
     if ((local_44 <= local_40) && (local_40 < *(float *)(in_stack_00000004[2].cloth_data + 0x54fc)))
     {
       core_game_cpp_CGame_FUN_004e0bb0(g_CGamePtr);
-      pcVar22 = "draw-f.wav @ 1.5";
+      sound_name = "draw-f.wav @ 1.5";
 LAB_004d33ec:
-      (*((in_stack_00000004->base_actor).vtable)->playSound)(&in_stack_00000004->base_actor,pcVar22)
-      ;
+      (*((in_stack_00000004->base_actor).vtable)->playSound)
+                (&in_stack_00000004->base_actor,sound_name);
     }
   }
   if ((in_stack_00000004[2].cloth_data[0x54f4] & 3U) == 0) {
@@ -800,8 +794,8 @@ LAB_004d344b:
       }
       else {
         fVar15 = in_stack_00000008 * (float)DOUBLE_0062aef5 +
-                 in_stack_00000004[8].model.bone_rotations[0x15].z;
-        in_stack_00000004[8].model.bone_rotations[0x15].z = fVar15;
+                 in_stack_00000004[8].model.bone_transform.bone_rotations[0x15].z;
+        in_stack_00000004[8].model.bone_transform.bone_rotations[0x15].z = fVar15;
         if (DAT_0065e7f0 < fVar15) {
           pCVar21 = in_stack_00000004 + 1;
           (pCVar21->base_actor).actor_name[0x14] = '\0';
@@ -812,7 +806,7 @@ LAB_004d344b:
           in_stack_00000004[2].cloth_data[0x550d] = '\0';
           in_stack_00000004[2].cloth_data[0x550e] = '\0';
           in_stack_00000004[2].cloth_data[0x550f] = '\0';
-          in_stack_00000004[8].model.bone_rotations[0x15].z = DAT_0065e7f0;
+          in_stack_00000004[8].model.bone_transform.bone_rotations[0x15].z = DAT_0065e7f0;
         }
       }
       local_e8.x = *(float *)(in_stack_00000004[2].cloth_data + 0x5524);
@@ -820,7 +814,7 @@ LAB_004d344b:
       local_e8.y = 0.0;
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                 ((CMatrix3x3f *)&stack0xfffffe24,&local_e8);
-      local_d0.z = in_stack_00000004[8].model.bone_rotations[0x15].z;
+      local_d0.z = in_stack_00000004[8].model.bone_transform.bone_rotations[0x15].z;
       local_d0.x = 0.0;
       local_d0.y = 0.0;
       pCVar12 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
@@ -839,7 +833,7 @@ LAB_004d344b:
     in_stack_00000004[2].cloth_data[0x550e] = '\0';
     in_stack_00000004[2].cloth_data[0x550f] = '\0';
 LAB_004d363a:
-    in_stack_00000004[8].model.bone_rotations[0x15].z = _DAT_0065e7ec;
+    in_stack_00000004[8].model.bone_transform.bone_rotations[0x15].z = _DAT_0065e7ec;
     iVar11 = core_gabriela_cpp_FUN_004d5f70();
     if (iVar11 == 0) goto LAB_004d4152;
     in_stack_00000004[2].cloth_data[0x550c] = '\x01';

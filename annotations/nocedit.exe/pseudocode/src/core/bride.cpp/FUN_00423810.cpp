@@ -39,9 +39,9 @@
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_enemy.cpp_CEnemy_FUN_004a9650
 //   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -60,7 +60,7 @@ void core_bride_cpp_FUN_00423810(void)
   CEnemy *in_stack_00000004;
   
   this_ptr = &(in_stack_00000004->base_character).model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   DAT_00822cdc = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 Head");
@@ -130,7 +130,7 @@ void core_bride_cpp_FUN_00423810(void)
 // 00423819: PUSH EDI
 // 0042381a: LEA EDI,[EBX + 0x158]
 // 00423820: PUSH EDI
-// 00423821: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 00423821: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 00423826: ADD ESP,0x4
 // 00423829: PUSH EDI

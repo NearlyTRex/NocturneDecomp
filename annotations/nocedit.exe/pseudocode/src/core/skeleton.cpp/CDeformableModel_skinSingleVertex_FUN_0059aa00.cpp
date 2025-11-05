@@ -5,7 +5,7 @@
 // Signature: CVector3f * core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00(CDeformableModel * this_ptr, CVector3f * output_pos, int lod_index, int vertex_index, CMatrix3x4f * bone_matrices)
 // Cross-references:
 //   core_skeledit.cpp_ExportModel_FUN_00595fc0 (00595fc0) at 0059623a [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0210 (005a0210) at 005a0236 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210 (005a0210) at 005a0236 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 

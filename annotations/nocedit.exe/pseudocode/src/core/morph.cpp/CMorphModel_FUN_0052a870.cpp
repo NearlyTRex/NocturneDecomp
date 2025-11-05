@@ -8,8 +8,8 @@
 //   core_morph.cpp_FUN_0052b550 (0052b550) at 0052b571 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_morph.cpp_CMorphModel_FUN_0052a710
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 
 #include "nocturne.h"
 
@@ -19,7 +19,7 @@ void __cdecl core_morph_cpp_CMorphModel_FUN_0052a870(CMorphModel *this_ptr)
   CDeformableModelInstance *in_stack_00000008;
   CMorphModel *in_stack_0000000c;
   
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(in_stack_00000008);
+  core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(in_stack_00000008,0);
   core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(in_stack_00000008);
   core_morph_cpp_CMorphModel_FUN_0052a710(in_stack_0000000c);
   return;
@@ -36,7 +36,7 @@ void __cdecl core_morph_cpp_CMorphModel_FUN_0052a870(CMorphModel *this_ptr)
 //   XREF to: Stack[0x8] (READ)
 // 0052a878: PUSH 0x0
 // 0052a87a: PUSH EBX
-// 0052a87b: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
+// 0052a87b: CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 //   XREF to: 005a01d0 (UNCONDITIONAL_CALL)
 // 0052a880: ADD ESP,0x8
 // 0052a883: PUSH EBX

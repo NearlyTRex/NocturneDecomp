@@ -33,10 +33,10 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a15e0(CDeformableModelInstance
   float *pfVar11;
   
   bVar10 = 0;
-  if (&this_ptr->root_position != (CVector3f *)in_stack_00000008) {
-    (this_ptr->root_position).x = *in_stack_00000008;
-    (this_ptr->root_position).y = in_stack_00000008[1];
-    (this_ptr->root_position).z = in_stack_00000008[2];
+  if (&this_ptr->bone_transform != (SBoneTransformData *)in_stack_00000008) {
+    (this_ptr->bone_transform).root_position.x = *in_stack_00000008;
+    (this_ptr->bone_transform).root_position.y = in_stack_00000008[1];
+    (this_ptr->bone_transform).root_position.z = in_stack_00000008[2];
   }
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   iVar1 = pCVar2->bone_count;

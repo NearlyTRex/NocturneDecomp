@@ -7,8 +7,8 @@
 //   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 (00409470) at 00409787 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 
 #include "nocturne.h"
 
@@ -18,7 +18,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a10e0(CDeformableModelInstance
 {
   CDeformableModel *pCVar1;
   float fVar2;
-  int iVar3;
+  int lod_index;
   byte *unaff_EBP;
   int in_stack_00000010;
   CVector3f *in_stack_00000014;
@@ -26,15 +26,15 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a10e0(CDeformableModelInstance
   CVector3i *skinned_vertices;
   
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
-  iVar3 = pCVar1->num_lods + -2;
-  if (iVar3 < 0) {
-    iVar3 = 0;
+  lod_index = pCVar1->num_lods + -2;
+  if (lod_index < 0) {
+    lod_index = 0;
   }
-  if (iVar3 != this_ptr->field13_0x2230) {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(this_ptr);
+  if (lod_index != this_ptr->cached_skinned_lod_index) {
+    core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(this_ptr,lod_index);
   }
   skinned_vertices = (CVector3i *)this_ptr->part_visibility_flags;
-  ray_direction = (CVector3f *)this_ptr->field14_0x2234;
+  ray_direction = (CVector3f *)this_ptr->current_lod_index;
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   fVar2 = core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0
                     (pCVar1,in_stack_00000010,in_stack_00000014,ray_direction,skinned_vertices,
@@ -106,7 +106,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a10e0(CDeformableModelInstance
 // 005a114a: PUSH EBX
 //   Label: LAB_005a114a
 // 005a114b: PUSH ESI
-// 005a114c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
+// 005a114c: CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 //   XREF to: 005a01d0 (UNCONDITIONAL_CALL)
 // 005a1151: ADD ESP,0x8
 // 005a1154: JMP 0x005a1105

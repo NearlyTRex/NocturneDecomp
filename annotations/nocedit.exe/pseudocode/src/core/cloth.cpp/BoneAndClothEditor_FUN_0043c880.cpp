@@ -24,9 +24,9 @@
 //   undefined4 DAT_00838e54
 //   CDeformableModelInstance g_CDeformableModelInstanceInstance
 //   undefined4 g_CDeformableModelInstanceInstance.motion_controller.current_frame_number
-//   undefined4 g_CDeformableModelInstanceInstance.field17_0x2254[0]
-//   undefined4 g_CDeformableModelInstanceInstance.field17_0x2254[4]
-//   undefined4 g_CDeformableModelInstanceInstance.field17_0x2254[8]
+//   undefined4 g_CDeformableModelInstanceInstance.accumulated_root_motion.x
+//   undefined4 g_CDeformableModelInstanceInstance.accumulated_root_motion.y
+//   undefined4 g_CDeformableModelInstanceInstance.accumulated_root_motion.z
 //   undefined4 DAT_0083b10c
 //   undefined4 DAT_0083b110
 //   CDemonRenderer g_CDemonRendererInstance
@@ -50,8 +50,8 @@
 //   core_motion.cpp_CMotionController_FUN_0052dde0
 //   core_motion.cpp_FUN_0052ddb0
 //   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 //   core_stairs.cpp_FUN_005b9620
@@ -199,21 +199,12 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
     }
     core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
               (&g_CDeformableModelInstanceInstance);
-    *local_18 = *local_18 - (float)g_CDeformableModelInstanceInstance.field17_0x2254._0_4_;
-    local_18[1] = local_18[1] - (float)g_CDeformableModelInstanceInstance.field17_0x2254._4_4_;
-    local_18[2] = local_18[2] - (float)g_CDeformableModelInstanceInstance.field17_0x2254._8_4_;
-    g_CDeformableModelInstanceInstance.field17_0x2254[8] = '\0';
-    g_CDeformableModelInstanceInstance.field17_0x2254[9] = '\0';
-    g_CDeformableModelInstanceInstance.field17_0x2254[10] = '\0';
-    g_CDeformableModelInstanceInstance.field17_0x2254[0xb] = '\0';
-    g_CDeformableModelInstanceInstance.field17_0x2254[4] = '\0';
-    g_CDeformableModelInstanceInstance.field17_0x2254[5] = '\0';
-    g_CDeformableModelInstanceInstance.field17_0x2254[6] = '\0';
-    g_CDeformableModelInstanceInstance.field17_0x2254[7] = '\0';
-    g_CDeformableModelInstanceInstance.field17_0x2254[0] = '\0';
-    g_CDeformableModelInstanceInstance.field17_0x2254[1] = '\0';
-    g_CDeformableModelInstanceInstance.field17_0x2254[2] = '\0';
-    g_CDeformableModelInstanceInstance.field17_0x2254[3] = '\0';
+    *local_18 = *local_18 - g_CDeformableModelInstanceInstance.accumulated_root_motion.x;
+    local_18[1] = local_18[1] - g_CDeformableModelInstanceInstance.accumulated_root_motion.y;
+    local_18[2] = local_18[2] - g_CDeformableModelInstanceInstance.accumulated_root_motion.z;
+    g_CDeformableModelInstanceInstance.accumulated_root_motion.z = 0.0;
+    g_CDeformableModelInstanceInstance.accumulated_root_motion.y = 0.0;
+    g_CDeformableModelInstanceInstance.accumulated_root_motion.x = 0.0;
     if (iStack_1c == 0) {
       core_cloth_cpp_FUN_0043ab80();
     }
@@ -250,7 +241,8 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
               (g_CDemonRendererPtr,(CVector3i *)&DAT_00838e4c,(CVector3i *)0x0);
     if (in_stack_00000004 != 0) {
-      core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150(&g_CDeformableModelInstanceInstance);
+      core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
+                (&g_CDeformableModelInstanceInstance,-1,0xffffffff,1,0);
       core_cloth_cpp_FUN_0043bae0();
     }
     iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3e);
@@ -715,7 +707,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
 // 0043cadd: PUSH -0x1
 // 0043cadf: PUSH 0x838e58
 //   XREF to: 00838e58 (DATA)
-// 0043cae4: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+// 0043cae4: CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   XREF to: 005a0150 (UNCONDITIONAL_CALL)
 // 0043cae9: ADD ESP,0x14
 // 0043caec: CMP dword ptr [ESP + 0x504],0x0

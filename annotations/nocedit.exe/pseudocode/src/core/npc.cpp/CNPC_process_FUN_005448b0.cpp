@@ -47,8 +47,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr)
   uint uVar3;
   float fVar4;
   float fVar5;
-  CCharacter *pCVar6;
-  int iVar7;
+  int iVar6;
   SCollisionInfo *collision_info;
   CVector3f *input_local_point;
   CMotionList *this_ptr_00;
@@ -59,20 +58,16 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr)
   float fStack00000014;
   undefined1 *puStack_2c;
   
-  iVar7 = core_charactr_cpp_CCharacter_FUN_00429870(&this_ptr->base_character);
-  if (iVar7 == 0) {
+  iVar6 = core_charactr_cpp_CCharacter_FUN_00429870(&this_ptr->base_character);
+  if (iVar6 == 0) {
     return;
   }
   core_charactr_cpp_CCharacter_FUN_0042ea40(&this_ptr->base_character);
-  pCVar6 = &this_ptr->base_character;
-  (pCVar6->model).field17_0x2254[8] = '\0';
-  (pCVar6->model).field17_0x2254[9] = '\0';
-  (pCVar6->model).field17_0x2254[10] = '\0';
-  (pCVar6->model).field17_0x2254[0xb] = '\0';
-  *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 4) =
-       *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 8);
-  *(undefined4 *)(this_ptr->base_character).model.field17_0x2254 =
-       *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 4);
+  (this_ptr->base_character).model.accumulated_root_motion.z = 0.0;
+  (this_ptr->base_character).model.accumulated_root_motion.y =
+       (this_ptr->base_character).model.accumulated_root_motion.z;
+  (this_ptr->base_character).model.accumulated_root_motion.x =
+       (this_ptr->base_character).model.accumulated_root_motion.y;
   pCVar1 = &(this_ptr->base_character).model;
   collision_info = in_stack_00000008;
   while (0.0 < (float)collision_info) {
@@ -81,9 +76,9 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr)
          core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
     core_charactr_cpp_CCharacter_FUN_0042ec40(&this_ptr->base_character);
   }
-  iVar7 = (*(this_ptr->base_character).base_actor.vtable[1].hasCollision)
+  iVar6 = (*(this_ptr->base_character).base_actor.vtable[1].hasCollision)
                     ((CDemonActor *)this_ptr,collision_info);
-  if ((((1 < iVar7) && ((this_ptr->base_character).base_actor.was_created == 1)) &&
+  if ((((1 < iVar6) && ((this_ptr->base_character).base_actor.was_created == 1)) &&
       (this_ptr->pool_me == 0)) && ((this_ptr->base_character).base_actor.field11_0xdc == 0)) {
     input_local_point =
          core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
@@ -95,12 +90,12 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr)
   }
   fVar5 = (float)DOUBLE_0063e364;
   fVar4 = (float)DOUBLE_0063e36c;
-  *(undefined4 *)((this_ptr->base_character).field2_0x240c + 0x28) =
-       *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 8);
+  *(float *)((this_ptr->base_character).field2_0x240c + 0x28) =
+       (this_ptr->base_character).model.accumulated_root_motion.z;
   *(float *)((this_ptr->base_character).field2_0x240c + 0x2c) =
        (float)in_stack_00000008 * fVar5 * fVar4;
-  iVar7 = core_charactr_cpp_CCharacter_FUN_0042ca70(&this_ptr->base_character);
-  if (iVar7 == 0) goto LAB_00544a0c;
+  iVar6 = core_charactr_cpp_CCharacter_FUN_0042ca70(&this_ptr->base_character);
+  if (iVar6 == 0) goto LAB_00544a0c;
   uVar3 = *(uint *)((this_ptr->base_character).field11_0x25a0 + 0x10);
   if (uVar3 < 2) {
 LAB_005449e5:
@@ -111,10 +106,10 @@ LAB_005449e5:
     if (uVar3 < 3) {
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                               (&pCVar1->motion_controller);
-      iVar7 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
-      if (iVar7 < 0) goto LAB_005449e5;
+      iVar6 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
+      if (iVar6 < 0) goto LAB_005449e5;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&pCVar1->motion_controller,iVar7,1);
+                (&pCVar1->motion_controller,iVar6,1);
     }
     else {
       if (uVar3 != 3) goto LAB_005449e5;
@@ -123,15 +118,11 @@ LAB_005449e5:
                 (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
     }
   }
-  pCVar6 = &this_ptr->base_character;
-  (pCVar6->model).field17_0x2254[8] = '\0';
-  (pCVar6->model).field17_0x2254[9] = '\0';
-  (pCVar6->model).field17_0x2254[10] = '\0';
-  (pCVar6->model).field17_0x2254[0xb] = '\0';
-  *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 4) =
-       *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 8);
-  *(undefined4 *)(this_ptr->base_character).model.field17_0x2254 =
-       *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 4);
+  (this_ptr->base_character).model.accumulated_root_motion.z = 0.0;
+  (this_ptr->base_character).model.accumulated_root_motion.y =
+       (this_ptr->base_character).model.accumulated_root_motion.z;
+  (this_ptr->base_character).model.accumulated_root_motion.x =
+       (this_ptr->base_character).model.accumulated_root_motion.y;
 LAB_00544a0c:
   *(float *)((this_ptr->base_character).field2_0x240c + 0x20) =
        *(float *)((this_ptr->base_character).field2_0x240c + 0x20) -
@@ -153,15 +144,11 @@ LAB_00544a0c:
   *(undefined4 *)((this_ptr->base_character).field2_0x240c + 0x14) =
        *(undefined4 *)((this_ptr->base_character).field2_0x240c + 0x18);
   *(float *)pcVar2 = *(float *)((this_ptr->base_character).field2_0x240c + 0x14);
-  pCVar6 = &this_ptr->base_character;
-  (pCVar6->model).field17_0x2254[8] = '\0';
-  (pCVar6->model).field17_0x2254[9] = '\0';
-  (pCVar6->model).field17_0x2254[10] = '\0';
-  (pCVar6->model).field17_0x2254[0xb] = '\0';
-  *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 4) =
-       *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 8);
-  *(undefined4 *)(this_ptr->base_character).model.field17_0x2254 =
-       *(undefined4 *)((this_ptr->base_character).model.field17_0x2254 + 4);
+  (this_ptr->base_character).model.accumulated_root_motion.z = 0.0;
+  (this_ptr->base_character).model.accumulated_root_motion.y =
+       (this_ptr->base_character).model.accumulated_root_motion.z;
+  (this_ptr->base_character).model.accumulated_root_motion.x =
+       (this_ptr->base_character).model.accumulated_root_motion.y;
   puStack_2c = &stack0xffffffdc;
   core_charactr_cpp_CCharacter_FUN_00428f40(&this_ptr->base_character);
   puStack_2c = (undefined1 *)0x544ada;

@@ -11,59 +11,58 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 int __cdecl core_motion_cpp_CMotionController_FUN_0052e020(CMotionController *this_ptr)
 
 {
   int iVar1;
   float fVar2;
-  SMotion *pSVar3;
-  SMotion *pSVar4;
+  char *pcVar3;
+  char *pcVar4;
   int iVar5;
   int *piVar6;
   int *piVar7;
   byte bVar8;
-  int in_stack_00000008;
+  int unaff_retaddr;
+  float in_stack_00000008;
   float in_stack_0000000c;
   float *in_stack_00000010;
   int *in_stack_00000014;
   float local_24;
-  int local_20;
   
   bVar8 = 0;
-  pSVar4 = this_ptr->motion_list_ptr->motions + in_stack_00000008;
+  pcVar4 = this_ptr->motion_list_ptr->motions[(int)in_stack_00000008].motion_name;
   iVar5 = 0;
-  fVar2 = *in_stack_00000010 * pSVar4->fps + in_stack_0000000c;
-  local_20 = 0;
-  pSVar3 = pSVar4;
-  local_24 = fVar2;
-  if (0 < pSVar4->signal_count) {
+  local_24 = *in_stack_00000010 * *(float *)(pcVar4 + 0x20) + in_stack_0000000c;
+  pcVar3 = pcVar4;
+  if (0 < *(int *)(pcVar4 + 0x4a4)) {
     do {
-      iVar1 = pSVar3->signals[0].frame_number;
+      iVar1 = ((SMotionSignal *)(pcVar3 + 0x4a8))->frame_number;
       if ((in_stack_0000000c <= (float)iVar1) && ((float)iVar1 <= local_24 + (float)DOUBLE_0063ab1f)
          ) {
-        local_20 = pSVar3->signals[0].value;
         local_24 = (float)iVar1 + (float)DOUBLE_0063ab1f;
       }
       iVar5 = iVar5 + 1;
-      pSVar3 = (SMotion *)(pSVar3->motion_name + 8);
-    } while (iVar5 < pSVar4->signal_count);
+      pcVar3 = pcVar3 + 8;
+    } while (iVar5 < *(int *)(pcVar4 + 0x4a4));
   }
-  if ((double)local_24 < (double)pSVar4->exit_forward_from_frame + DOUBLE_0063ab17) {
-    (*(code *)this_ptr->vtable->field2_0x8)();
+  if ((double)local_24 < (double)*(int *)(pcVar4 + 0x28) + DOUBLE_0063ab17) {
+    (*this_ptr->vtable->accumulateScaledRootMotion)
+              (this_ptr,(float)*(int *)(pcVar4 + 0x60) + in_stack_0000000c,
+               (float)*(int *)(pcVar4 + 0x60) + local_24,1.0);
     in_stack_00000014[1] = 1;
     in_stack_00000014[5] = 0;
-    in_stack_00000014[2] = in_stack_00000008;
-    in_stack_00000014[3] = (int)local_24;
-    if (fVar2 <= (float)in_stack_00000014[3]) {
-      return local_20;
+    in_stack_00000014[2] = (int)in_stack_00000008;
+    in_stack_00000014[3] = unaff_retaddr;
+    if (in_stack_00000008 <= (float)in_stack_00000014[3]) {
+      return (int)this_ptr;
     }
     fVar2 = (float)in_stack_00000014[3];
   }
   else {
-    (*(code *)this_ptr->vtable->field2_0x8)();
-    piVar6 = &pSVar4->unused1;
+    (*this_ptr->vtable->accumulateScaledRootMotion)
+              (this_ptr,(float)*(int *)(pcVar4 + 0x60) + in_stack_0000000c,
+               (float)(*(int *)(pcVar4 + 0x60) + *(int *)(pcVar4 + 0x28)),1.0);
+    piVar6 = (int *)(pcVar4 + 0x2c);
     piVar7 = in_stack_00000014;
     for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
       *piVar7 = *piVar6;
@@ -75,10 +74,10 @@ int __cdecl core_motion_cpp_CMotionController_FUN_0052e020(CMotionController *th
       in_stack_00000014[2] = *(int *)(iVar5 + 8);
       in_stack_00000014[3] = *(int *)(this_ptr->in_transition + 0xc);
     }
-    fVar2 = (float)pSVar4->exit_forward_from_frame;
+    fVar2 = (float)*(int *)(pcVar4 + 0x28);
   }
-  *in_stack_00000010 = (fVar2 - in_stack_0000000c) / pSVar4->fps;
-  return local_20;
+  *in_stack_00000010 = (fVar2 - in_stack_0000000c) / *(float *)(pcVar4 + 0x20);
+  return (int)this_ptr;
 }
 
 

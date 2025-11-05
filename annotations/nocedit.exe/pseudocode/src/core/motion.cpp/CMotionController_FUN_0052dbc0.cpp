@@ -20,12 +20,13 @@ void __cdecl core_motion_cpp_CMotionController_FUN_0052dbc0(CMotionController *t
   float fVar1;
   int iVar2;
   int in_stack_00000008;
-  float local_18;
+  float in_stack_0000000c;
   
-  local_18 = *(float *)(in_stack_00000008 + 0xc);
-  if (local_18 == FLOAT_0063aa93) {
-    iVar2 = (*(code *)this_ptr->vtable->findPatchToFrame)();
-    local_18 = (float)iVar2;
+  if (*(float *)(in_stack_00000008 + 0xc) == FLOAT_0063aa93) {
+    iVar2 = (*this_ptr->vtable->findPatchToFrame)
+                      (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,
+                       *(int *)(in_stack_00000008 + 8));
+    in_stack_0000000c = (float)iVar2;
   }
   if (*(float *)(in_stack_00000008 + 0x10) <= 0.0) {
     core_motion_cpp_CMotionController_FUN_0052dde0(this_ptr);
@@ -37,7 +38,7 @@ void __cdecl core_motion_cpp_CMotionController_FUN_0052dbc0(CMotionController *t
   }
   else {
     this_ptr->tween_target_motion = *(int *)(in_stack_00000008 + 8);
-    this_ptr->tween_target_frame = local_18;
+    this_ptr->tween_target_frame = in_stack_0000000c;
     iVar2 = *(int *)(in_stack_00000008 + 4);
     this_ptr->tween_progress = 0.001;
     this_ptr->tween_type = iVar2;

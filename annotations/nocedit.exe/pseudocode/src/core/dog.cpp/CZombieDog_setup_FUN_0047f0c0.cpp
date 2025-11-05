@@ -8,8 +8,8 @@
 //   TerminatedCString s_Bip01_Head_00620fb1
 // Function calls:
 //   core_enemy.cpp_CEnemy_FUN_004a9650
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -22,7 +22,7 @@ void __cdecl core_dog_cpp_CZombieDog_setup_FUN_0047f0c0(CZombieDog *this_ptr)
   int iVar1;
   
   this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine1");
   *(int *)(this_ptr->field1_0xbeb4 + 8) = iVar1;
@@ -41,7 +41,7 @@ void __cdecl core_dog_cpp_CZombieDog_setup_FUN_0047f0c0(CZombieDog *this_ptr)
 //   XREF to: Stack[0x4] (READ)
 // 0047f0c6: LEA EBX,[ESI + 0x158]
 // 0047f0cc: PUSH EBX
-// 0047f0cd: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 0047f0cd: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0047f0d2: ADD ESP,0x4
 // 0047f0d5: PUSH EBX

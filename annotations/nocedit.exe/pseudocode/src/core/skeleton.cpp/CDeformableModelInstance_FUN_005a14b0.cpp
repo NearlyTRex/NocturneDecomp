@@ -7,8 +7,8 @@
 //   core_charactr.cpp_CCharacter_FUN_0042b8e0 (0042b8e0) at 0042b91d [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 
 #include "nocturne.h"
 
@@ -25,13 +25,14 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a14b0(CDeformableModelInstance
   CVector3i *skinned_vertices;
   int *part_visibility_flags;
   
-  if (in_stack_00000010 != (CVector3f *)this_ptr->field13_0x2230) {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(this_ptr);
+  if (in_stack_00000010 != (CVector3f *)this_ptr->cached_skinned_lod_index) {
+    core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
+              (this_ptr,(int)in_stack_00000010);
   }
   part_visibility_flags = this_ptr->texture_set_indices;
   skinned_vertices = (CVector3i *)this_ptr->part_visibility_flags;
-  lod_index = this_ptr->field14_0x2234;
-  orientation_vector = (CVector3f *)this_ptr->field13_0x2230;
+  lod_index = this_ptr->current_lod_index;
+  orientation_vector = (CVector3f *)this_ptr->cached_skinned_lod_index;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0
             (this_ptr_00,in_stack_00000010,orientation_vector,lod_index,skinned_vertices,
@@ -84,7 +85,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a14b0(CDeformableModelInstance
 // 005a1501: PUSH EAX
 //   Label: LAB_005a1501
 // 005a1502: PUSH EBX
-// 005a1503: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
+// 005a1503: CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 //   XREF to: 005a01d0 (UNCONDITIONAL_CALL)
 // 005a1508: ADD ESP,0x8
 // 005a150b: JMP 0x005a14c4

@@ -1898,8 +1898,8 @@ LAB_004df408:
             if (iVar11 != -1) {
               pCStack_130 = pCStack_138;
               fStack_12c = fStack_13c;
-              pCStack_138->rest_pose_data[iVar11 + 1] =
-                   pCStack_138->rest_pose_data[iVar11 + 1] * fStack_13c;
+              pCStack_138->rest_pose_data[iVar11] = pCStack_138->rest_pose_data[iVar11] * fStack_13c
+              ;
               iVar18 = 0;
               pCVar20 = pCVar17;
               iStack_128 = iVar11;
@@ -1919,8 +1919,8 @@ LAB_004df408:
             if (iVar11 != -1) {
               pCStack_124 = pCStack_138;
               fStack_120 = fStack_13c;
-              pCStack_138->rest_pose_data[iVar11 + 1] =
-                   pCStack_138->rest_pose_data[iVar11 + 1] * fStack_13c;
+              pCStack_138->rest_pose_data[iVar11] = pCStack_138->rest_pose_data[iVar11] * fStack_13c
+              ;
               iVar18 = 0;
               pCVar20 = pCStack_134;
               iStack_11c = iVar11;
@@ -1940,8 +1940,8 @@ LAB_004df408:
             if (iVar11 != -1) {
               pCStack_118 = pCStack_138;
               fStack_114 = fStack_13c;
-              pCStack_138->rest_pose_data[iVar11 + 1] =
-                   pCStack_138->rest_pose_data[iVar11 + 1] * fStack_13c;
+              pCStack_138->rest_pose_data[iVar11] = pCStack_138->rest_pose_data[iVar11] * fStack_13c
+              ;
               iVar18 = 0;
               pCVar20 = pCStack_134;
               iStack_110 = iVar11;

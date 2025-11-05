@@ -140,13 +140,13 @@ core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
         pCVar13 = local_34;
         local_34 = (CDeformableModelInstance *)&(local_34->motion_controller).current_motion_index;
         pfVar17 = (float *)((int)local_54 + (uint)bVar18 * -8 + 0x6b4);
-        local_54->bone_rotations[0].w = afStack_250[3];
+        (local_54->bone_transform).bone_rotations[0].w = afStack_250[3];
         pfVar12 = pfVar17 + (uint)bVar18 * -2 + 1;
         *pfVar17 = afStack_250[(uint)bVar18 * -2 + 4];
         *pfVar12 = afStack_250[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 5];
         pfVar12[(uint)bVar18 * -2 + 1] =
              (afStack_250 + (uint)bVar18 * -2 + (uint)bVar18 * -2 + 5)[(uint)bVar18 * -2 + 1];
-        pCVar13->current_pose_data[0] = pCVar13->rest_pose_data[1];
+        (pCVar13->bone_transform).current_pose_data[0] = pCVar13->rest_pose_data[0];
         local_2c = local_2c + 1;
         local_54 = (CDeformableModelInstance *)&(local_54->motion_controller).tween_speed;
       } while (local_2c < this_ptr_00->bone_count);
@@ -158,20 +158,24 @@ core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
     pCVar5 = this_ptr_00->frame_positions_1;
     fVar2 = pCVar5[local_7c].y;
     fVar3 = pCVar5[local_7c].z;
-    if (&this_ptr->root_position != (CVector3f *)local_8c) {
-      (this_ptr->root_position).x =
+    if (&this_ptr->bone_transform != (SBoneTransformData *)local_8c) {
+      (this_ptr->bone_transform).root_position.x =
            pCVar5[local_7c].x * fVar6 + pCVar4[local_80].x * (float)in_stack_ffffe798;
-      (this_ptr->root_position).y = fVar2 * fVar6 + fVar19 * (float)in_stack_ffffe798;
-      (this_ptr->root_position).z = fVar3 * fVar6 + fVar1 * (float)in_stack_ffffe798;
+      (this_ptr->bone_transform).root_position.y = fVar2 * fVar6 + fVar19 * (float)in_stack_ffffe798
+      ;
+      (this_ptr->bone_transform).root_position.z = fVar3 * fVar6 + fVar1 * (float)in_stack_ffffe798;
     }
-    fVar19 = (float)this_ptr->field3_0x508;
-    fVar1 = this_ptr->rest_pose_data[0];
-    (this_ptr->root_position).y = (float)this_ptr->field4_0x50c * (this_ptr->root_position).y;
-    (this_ptr->root_position).z = fVar1 * (this_ptr->root_position).z;
-    (this_ptr->root_position).x = fVar19 * (this_ptr->root_position).x;
+    fVar19 = (this_ptr->scaled_model_dimensions).x;
+    fVar1 = (this_ptr->bone_transform).root_position.x;
+    fVar2 = (this_ptr->scaled_model_dimensions).z;
+    fVar3 = (this_ptr->bone_transform).root_position.z;
+    (this_ptr->bone_transform).root_position.y =
+         (this_ptr->scaled_model_dimensions).y * (this_ptr->bone_transform).root_position.y;
+    (this_ptr->bone_transform).root_position.z = fVar2 * fVar3;
+    (this_ptr->bone_transform).root_position.x = fVar19 * fVar1;
     return;
   }
-  if (this_ptr->field16_0x2250 == 1) {
+  if (this_ptr->field11_0x2250 == 1) {
     pCStack_14 = (CDeformableModelInstance *)0x0;
     if (0 < this_ptr_00->bone_count) {
       local_4c = 0;
@@ -209,7 +213,7 @@ core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
     local_24 = 0;
     if (0 < this_ptr_00->bone_count) {
       local_50 = 0;
-      local_6c = this_ptr->bone_rotations;
+      local_6c = (this_ptr->bone_transform).bone_rotations;
       local_44 = this_ptr_00;
       local_40 = this_ptr;
       do {
@@ -249,7 +253,7 @@ core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
           }
           pfVar16 = (float *)((int)pCVar13 + (uint)bVar18 * -8 + 0x6b4);
           pfVar12 = pfVar17 + (uint)bVar18 * -2 + 1;
-          pCVar13->bone_rotations[0].w = *pfVar17;
+          (pCVar13->bone_transform).bone_rotations[0].w = *pfVar17;
           pfVar17 = pfVar16 + (uint)bVar18 * -2 + 1;
           *pfVar16 = *pfVar12;
           *pfVar17 = pfVar12[(uint)bVar18 * -2 + 1];
@@ -262,7 +266,7 @@ core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
       } while (local_24 < this_ptr_00->bone_count);
     }
   }
-  else if (this_ptr->field16_0x2250 == 2) {
+  else if (this_ptr->field11_0x2250 == 2) {
     pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
     iVar20 = 0;
     local_64 = (float)(pCVar8->motion_list).motions[motion_index].frame_start;
@@ -326,7 +330,7 @@ core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
     local_24 = 0;
     if (0 < this_ptr_00->bone_count) {
       local_58 = (CDeformableModelInstance *)0x0;
-      local_60 = this_ptr->bone_rotations;
+      local_60 = (this_ptr->bone_transform).bone_rotations;
       local_44 = this_ptr_00;
       pCStack_14 = this_ptr;
       do {
@@ -349,7 +353,7 @@ core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
           (&fStack_c8 + (uint)bVar18 * -2 + (uint)bVar18 * -2)[(uint)bVar18 * -2 + 1] =
                (float)(puVar10 + (uint)bVar18 * -2 + 1)[(uint)bVar18 * -2 + 1];
           puVar10 = (undefined4 *)((int)pCStack_14 + (uint)bVar18 * -8 + 0x6b4);
-          afStack_e8[2] = pCStack_14->bone_rotations[0].w;
+          afStack_e8[2] = (pCStack_14->bone_transform).bone_rotations[0].w;
           puVar11 = puVar10 + (uint)bVar18 * -2 + 1;
           *(undefined4 *)(auStack_d8 + (uint)bVar18 * -8 + -4) = *puVar10;
           *(undefined4 *)(auStack_d8 + (uint)bVar18 * -8 + (uint)bVar18 * -8) = *puVar11;

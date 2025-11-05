@@ -61,14 +61,13 @@ void core_sentinel_cpp_FUN_00568030(void)
 {
   CDeformableModelInstance *pCVar1;
   char *pcVar2;
-  char *pcVar3;
-  float fVar4;
-  uint uVar5;
-  float fVar6;
-  CCharacter *pCVar7;
+  float fVar3;
+  uint uVar4;
+  float fVar5;
+  CCharacter *pCVar6;
+  int iVar7;
   int iVar8;
-  int iVar9;
-  CVector3f *pCVar10;
+  CVector3f *pCVar9;
   int extraout_EAX;
   int extraout_EAX_00;
   BADSPACEBASE *in_ESP;
@@ -121,48 +120,44 @@ void core_sentinel_cpp_FUN_00568030(void)
   float local_18;
   float local_14;
   
-  iVar8 = core_charactr_cpp_CCharacter_FUN_00429870(&in_stack_00000004->base_character);
-  if (iVar8 == 0) {
+  iVar7 = core_charactr_cpp_CCharacter_FUN_00429870(&in_stack_00000004->base_character);
+  if (iVar7 == 0) {
     return;
   }
-  pCVar7 = &in_stack_00000004->base_character;
-  (pCVar7->model).field17_0x2254[8] = '\0';
-  (pCVar7->model).field17_0x2254[9] = '\0';
-  (pCVar7->model).field17_0x2254[10] = '\0';
-  (pCVar7->model).field17_0x2254[0xb] = '\0';
-  *(undefined4 *)((in_stack_00000004->base_character).model.field17_0x2254 + 4) =
-       *(undefined4 *)((in_stack_00000004->base_character).model.field17_0x2254 + 8);
-  *(undefined4 *)(in_stack_00000004->base_character).model.field17_0x2254 =
-       *(undefined4 *)((in_stack_00000004->base_character).model.field17_0x2254 + 4);
+  (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
+  (in_stack_00000004->base_character).model.accumulated_root_motion.y =
+       (in_stack_00000004->base_character).model.accumulated_root_motion.z;
+  (in_stack_00000004->base_character).model.accumulated_root_motion.x =
+       (in_stack_00000004->base_character).model.accumulated_root_motion.y;
   local_2c = in_stack_00000008 * in_stack_00000004->speed;
   pCVar1 = &(in_stack_00000004->base_character).model;
 LAB_00568089:
   if (0.0 < local_2c) {
-    iVar8 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
-    switch(iVar8) {
+    iVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
+    switch(iVar7) {
     case 100:
       if ((((*(int *)(in_stack_00000004->field6_0xbe38 + 4) != 0) &&
-           (iVar8 = (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) +
-                                0x120))(), iVar8 == 0)) &&
-          (iVar8 = (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) +
-                               0x108))(), iVar8 == 0)) &&
-         (iVar8 = (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) +
-                              0xfc))(), iVar8 != 0)) {
+           (iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) +
+                                0x120))(), iVar7 == 0)) &&
+          (iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) +
+                               0x108))(), iVar7 == 0)) &&
+         (iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) +
+                              0xfc))(), iVar7 != 0)) {
         local_110.z = DAT_00662678;
         local_110.x = 0.0;
         local_110.y = 0.0;
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)in_stack_00000004,&local_c8,&local_110);
-        fVar4 = local_c8.x - *(float *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x20);
-        fVar6 = local_c8.z - *(float *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x28);
-        fVar4 = SQRT(fVar6 * fVar6 + fVar4 * fVar4);
-        fVar6 = (float)DOUBLE_00645872;
+        fVar3 = local_c8.x - *(float *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x20);
+        fVar5 = local_c8.z - *(float *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x28);
+        fVar3 = SQRT(fVar5 * fVar5 + fVar3 * fVar3);
+        fVar5 = (float)DOUBLE_00645872;
         if (ABS(local_c8.y - *(float *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x24)) <=
             (float)DOUBLE_0064587a) {
-          if ((fVar6 < fVar4) ||
-             (iVar8 = (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154)
-                                  + 0x100))(), iVar8 != 0)) {
-            if (fVar6 < fVar4) {
+          if ((fVar5 < fVar3) ||
+             (iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154)
+                                  + 0x100))(), iVar7 != 0)) {
+            if (fVar5 < fVar3) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&pCVar1->motion_controller,0,1);
             }
@@ -203,18 +198,18 @@ LAB_00568089:
     }
     goto LAB_00568089;
   }
-  fVar4 = in_stack_00000004->speed;
-  fVar6 = (float)DOUBLE_0064585a;
-  *(undefined4 *)((in_stack_00000004->base_character).field2_0x240c + 0x28) =
-       *(undefined4 *)((in_stack_00000004->base_character).model.field17_0x2254 + 8);
+  fVar3 = in_stack_00000004->speed;
+  fVar5 = (float)DOUBLE_0064585a;
+  *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x28) =
+       (in_stack_00000004->base_character).model.accumulated_root_motion.z;
   *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x2c) =
-       in_stack_00000008 * fVar6 * fVar4;
-  iVar8 = core_motion_cpp_CMotionController_FUN_0052dab0(&pCVar1->motion_controller);
-  iVar8 = *(int *)(iVar8 + 0x24);
-  local_1c = iVar8;
-  iVar9 = core_charactr_cpp_CCharacter_FUN_0042ca70(&in_stack_00000004->base_character);
-  if (iVar9 == 0) {
-    if ((iVar8 == 10) || (iVar8 == 0xb)) {
+       in_stack_00000008 * fVar5 * fVar3;
+  iVar7 = core_motion_cpp_CMotionController_FUN_0052dab0(&pCVar1->motion_controller);
+  iVar7 = *(int *)(iVar7 + 0x24);
+  local_1c = iVar7;
+  iVar8 = core_charactr_cpp_CCharacter_FUN_0042ca70(&in_stack_00000004->base_character);
+  if (iVar8 == 0) {
+    if ((iVar7 == 10) || (iVar7 == 0xb)) {
       (in_stack_00000004->base_character).cloth_data[0x348] = '\0';
       (in_stack_00000004->base_character).cloth_data[0x349] = '\0';
       (in_stack_00000004->base_character).cloth_data[0x34a] = '\0';
@@ -230,8 +225,8 @@ LAB_00568089:
     case 0:
       (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
                 ((CDemonActor *)in_stack_00000004);
-      iVar8 = *(int *)(in_stack_00000004->field6_0xbe38 + 4);
-      if (iVar8 == 0) {
+      iVar7 = *(int *)(in_stack_00000004->field6_0xbe38 + 4);
+      if (iVar7 == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
         if (extraout_EAX == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -243,11 +238,11 @@ LAB_00568089:
         }
       }
       else {
-        local_5c = *(float *)(iVar8 + 0x20) -
+        local_5c = *(float *)(iVar7 + 0x20) -
                    (in_stack_00000004->base_character).base_actor.location.position.x;
-        local_58 = *(float *)(iVar8 + 0x24) -
+        local_58 = *(float *)(iVar7 + 0x24) -
                    (in_stack_00000004->base_character).base_actor.location.position.y;
-        local_54 = *(float *)(iVar8 + 0x28) -
+        local_54 = *(float *)(iVar7 + 0x28) -
                    (in_stack_00000004->base_character).base_actor.location.position.z;
         if (SQRT(local_54 * local_54 + local_5c * local_5c + local_58 * local_58) <= _DAT_00662684)
         {
@@ -271,26 +266,22 @@ LAB_00568089:
     case 2:
       (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
                 ((CDemonActor *)in_stack_00000004);
-      fVar4 = DAT_00662678;
+      fVar3 = DAT_00662678;
       pCVar1 = &(in_stack_00000004->base_character).model;
       if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) != 0) {
         local_20 = DAT_00662678;
-        pCVar7 = &in_stack_00000004->base_character;
-        (pCVar7->model).field17_0x2254[8] = '\0';
-        (pCVar7->model).field17_0x2254[9] = '\0';
-        (pCVar7->model).field17_0x2254[10] = '\0';
-        (pCVar7->model).field17_0x2254[0xb] = '\0';
-        *(undefined4 *)((in_stack_00000004->base_character).model.field17_0x2254 + 4) =
-             *(undefined4 *)((in_stack_00000004->base_character).model.field17_0x2254 + 8);
-        *(undefined4 *)(in_stack_00000004->base_character).model.field17_0x2254 =
-             *(undefined4 *)((in_stack_00000004->base_character).model.field17_0x2254 + 4);
+        (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
+        (in_stack_00000004->base_character).model.accumulated_root_motion.y =
+             (in_stack_00000004->base_character).model.accumulated_root_motion.z;
+        (in_stack_00000004->base_character).model.accumulated_root_motion.x =
+             (in_stack_00000004->base_character).model.accumulated_root_motion.y;
         local_98 = 0;
-        local_90 = fVar4;
+        local_90 = fVar3;
         local_94 = 0;
         (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) + 0xbc))();
-        iVar8 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
+        iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                           (&in_stack_00000004->base_character);
-        if (-1 < iVar8) {
+        if (-1 < iVar7) {
           local_e0 = (in_stack_00000004->base_character).base_actor.location.position.x -
                      *(float *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x20);
           local_d8 = (in_stack_00000004->base_character).base_actor.location.position.z -
@@ -303,28 +294,28 @@ LAB_00568089:
                       (&pCVar1->motion_controller,3,1);
           }
           if ((local_24 <= local_20) && (*(float *)in_stack_00000004->field6_0xbe38 <= 0.0)) {
-            iVar8 = *(int *)(in_stack_00000004->field6_0xbe38 + 4);
-            local_bc.x = *(float *)(iVar8 + 0x20) -
+            iVar7 = *(int *)(in_stack_00000004->field6_0xbe38 + 4);
+            local_bc.x = *(float *)(iVar7 + 0x20) -
                          (in_stack_00000004->base_character).base_actor.location.position.x;
-            local_bc.y = *(float *)(iVar8 + 0x24) -
+            local_bc.y = *(float *)(iVar7 + 0x24) -
                          (in_stack_00000004->base_character).base_actor.location.position.y;
-            local_bc.z = *(float *)(iVar8 + 0x28) -
+            local_bc.z = *(float *)(iVar7 + 0x28) -
                          (in_stack_00000004->base_character).base_actor.location.position.z;
             core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_74,&local_bc);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_74.y -
                                   (in_stack_00000004->base_character).base_actor.orient.bank);
             if (ABS(local_14) < (float)DOUBLE_00645862) {
-              iVar8 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+              iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
               pCVar1 = &(in_stack_00000004->base_character).model;
-              if (iVar8 == 0) {
+              if (iVar7 == 0) {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                           (&pCVar1->motion_controller,10,1);
-                pCVar7 = &in_stack_00000004[1].base_character;
-                (pCVar7->base_actor).actor_name[0xc] = '\0';
-                (pCVar7->base_actor).actor_name[0xd] = '\0';
-                (pCVar7->base_actor).actor_name[0xe] = -0x60;
-                (pCVar7->base_actor).actor_name[0xf] = '@';
+                pCVar6 = &in_stack_00000004[1].base_character;
+                (pCVar6->base_actor).actor_name[0xc] = '\0';
+                (pCVar6->base_actor).actor_name[0xd] = '\0';
+                (pCVar6->base_actor).actor_name[0xe] = -0x60;
+                (pCVar6->base_actor).actor_name[0xf] = '@';
               }
               else {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -362,51 +353,47 @@ LAB_0056878f:
                   (&pCVar1->motion_controller,0,1);
         break;
       }
-      pCVar7 = &in_stack_00000004->base_character;
-      (pCVar7->model).field17_0x2254[8] = '\0';
-      (pCVar7->model).field17_0x2254[9] = '\0';
-      (pCVar7->model).field17_0x2254[10] = '\0';
-      (pCVar7->model).field17_0x2254[0xb] = '\0';
-      *(undefined4 *)((in_stack_00000004->base_character).model.field17_0x2254 + 4) =
-           *(undefined4 *)((in_stack_00000004->base_character).model.field17_0x2254 + 8);
-      *(undefined4 *)(in_stack_00000004->base_character).model.field17_0x2254 =
-           *(undefined4 *)((in_stack_00000004->base_character).model.field17_0x2254 + 4);
+      (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
+      (in_stack_00000004->base_character).model.accumulated_root_motion.y =
+           (in_stack_00000004->base_character).model.accumulated_root_motion.z;
+      (in_stack_00000004->base_character).model.accumulated_root_motion.x =
+           (in_stack_00000004->base_character).model.accumulated_root_motion.y;
       local_80 = 0;
       local_78 = DAT_00662678;
       local_7c = 0;
       (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) + 0xbc))();
       core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(&in_stack_00000004->base_character);
-      iVar8 = *(int *)(in_stack_00000004->field6_0xbe38 + 4);
+      iVar7 = *(int *)(in_stack_00000004->field6_0xbe38 + 4);
       local_11c = (in_stack_00000004->base_character).base_actor.location.position.x -
-                  *(float *)(iVar8 + 0x20);
+                  *(float *)(iVar7 + 0x20);
       local_118 = (in_stack_00000004->base_character).base_actor.location.position.y -
-                  *(float *)(iVar8 + 0x24);
+                  *(float *)(iVar7 + 0x24);
       local_114 = (in_stack_00000004->base_character).base_actor.location.position.z -
-                  *(float *)(iVar8 + 0x28);
+                  *(float *)(iVar7 + 0x28);
       if (_DAT_00662684 <=
           SQRT(local_114 * local_114 + local_11c * local_11c + local_118 * local_118)) {
-        iVar8 = core_actor_cpp_randomChance_FUN_0040cd10(0.1);
-        if (iVar8 == 0) break;
-        iVar8 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
-        if (iVar8 != 0) {
+        iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.1);
+        if (iVar7 == 0) break;
+        iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+        if (iVar7 != 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar1->motion_controller,0xe,1);
           break;
         }
       }
       else {
-        iVar8 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
-        if (iVar8 == 0) {
-          iVar8 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
-          if (iVar8 != 0) {
+        iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+        if (iVar7 == 0) {
+          iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+          if (iVar7 != 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar1->motion_controller,4,1);
             break;
           }
           goto LAB_0056878f;
         }
-        iVar8 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
-        if (iVar8 != 0) {
+        iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+        if (iVar7 != 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar1->motion_controller,0xe,1);
           break;
@@ -418,40 +405,40 @@ LAB_0056878f:
     case 4:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe60);
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-      pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                          (&local_b0,&g_ZeroVector,
-                           (CMatrix3x4f *)
-                           (in_stack_00000004->base_character).model.bone_world_matrices
-                           [DAT_03114214].m);
+      pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+                         (&local_b0,&g_ZeroVector,
+                          (CMatrix3x4f *)
+                          (in_stack_00000004->base_character).model.bone_transform.
+                          bone_world_matrices[DAT_03114214].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                ((CDemonActor *)in_stack_00000004,&local_a4,pCVar10);
+                ((CDemonActor *)in_stack_00000004,&local_a4,pCVar9);
       core_enemy_cpp_FUN_004a9880();
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,30.0);
-      pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                          (&local_50,&g_ZeroVector,
-                           (CMatrix3x4f *)
-                           (in_stack_00000004->base_character).model.bone_world_matrices
-                           [DAT_0311420c].m);
+      pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+                         (&local_50,&g_ZeroVector,
+                          (CMatrix3x4f *)
+                          (in_stack_00000004->base_character).model.bone_transform.
+                          bone_world_matrices[DAT_0311420c].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                ((CDemonActor *)in_stack_00000004,&local_8c,pCVar10);
+                ((CDemonActor *)in_stack_00000004,&local_8c,pCVar9);
       core_enemy_cpp_FUN_004a9880();
       break;
     case 9:
       if ((in_stack_00000004->pool_me == 0) &&
          ((in_stack_00000004->base_character).base_actor.field11_0xdc == 0)) {
-        pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                            (&(in_stack_00000004->base_character).model,local_44,0);
+        pCVar9 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                           (&(in_stack_00000004->base_character).model,local_44,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                  ((CDemonActor *)in_stack_00000004,&local_128,pCVar10);
+                  ((CDemonActor *)in_stack_00000004,&local_128,pCVar9);
         core_gore_cpp_FUN_004ede30();
         in_stack_00000004->pool_me = 1;
       }
       break;
     case 10:
-      fVar4 = *(float *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc) -
+      fVar3 = *(float *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc) -
               in_stack_00000008;
-      *(float *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc) = fVar4;
-      if (fVar4 < 0.0) {
+      *(float *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc) = fVar3;
+      if (fVar3 < 0.0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(in_stack_00000004->base_character).model.motion_controller,0xb,1);
       }
@@ -460,17 +447,17 @@ LAB_0056878f:
     case 0xf:
       (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
                 ((CDemonActor *)in_stack_00000004);
-      iVar8 = *(int *)(in_stack_00000004->field6_0xbe38 + 4);
-      if (iVar8 == 0) {
+      iVar7 = *(int *)(in_stack_00000004->field6_0xbe38 + 4);
+      if (iVar7 == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(in_stack_00000004->base_character).model.motion_controller,0,1);
       }
       else {
-        local_f8.x = *(float *)(iVar8 + 0x20) -
+        local_f8.x = *(float *)(iVar7 + 0x20) -
                      (in_stack_00000004->base_character).base_actor.location.position.x;
-        local_f8.y = *(float *)(iVar8 + 0x24) -
+        local_f8.y = *(float *)(iVar7 + 0x24) -
                      (in_stack_00000004->base_character).base_actor.location.position.y;
-        local_f8.z = *(float *)(iVar8 + 0x28) -
+        local_f8.z = *(float *)(iVar7 + 0x28) -
                      (in_stack_00000004->base_character).base_actor.location.position.z;
         core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_d4,&local_f8);
         (in_stack_00000004->base_character).base_actor.orient.bank = local_d4.y;
@@ -478,42 +465,38 @@ LAB_0056878f:
     }
     goto switchD_00568487_caseD_d;
   }
-  uVar5 = *(uint *)((in_stack_00000004->base_character).field11_0x25a0 + 0x10);
-  if (uVar5 < 2) {
-    if (uVar5 == 1) {
+  uVar4 = *(uint *)((in_stack_00000004->base_character).field11_0x25a0 + 0x10);
+  if (uVar4 < 2) {
+    if (uVar4 == 1) {
 LAB_005680fd:
-      iVar8 = 2;
+      iVar7 = 2;
     }
     else {
 LAB_0056845d:
-      iVar8 = 0;
+      iVar7 = 0;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(in_stack_00000004->base_character).model.motion_controller,iVar8,1);
+              (&(in_stack_00000004->base_character).model.motion_controller,iVar7,1);
   }
   else {
-    if (uVar5 < 3) goto LAB_005680fd;
-    if (uVar5 != 3) goto LAB_0056845d;
+    if (uVar4 < 3) goto LAB_005680fd;
+    if (uVar4 != 3) goto LAB_0056845d;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n",in_stack_00000004);
   }
-  pCVar7 = &in_stack_00000004->base_character;
-  (pCVar7->model).field17_0x2254[8] = '\0';
-  (pCVar7->model).field17_0x2254[9] = '\0';
-  (pCVar7->model).field17_0x2254[10] = '\0';
-  (pCVar7->model).field17_0x2254[0xb] = '\0';
-  *(undefined4 *)((in_stack_00000004->base_character).model.field17_0x2254 + 4) =
-       *(undefined4 *)((in_stack_00000004->base_character).model.field17_0x2254 + 8);
-  *(undefined4 *)(in_stack_00000004->base_character).model.field17_0x2254 =
-       *(undefined4 *)((in_stack_00000004->base_character).model.field17_0x2254 + 4);
+  (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
+  (in_stack_00000004->base_character).model.accumulated_root_motion.y =
+       (in_stack_00000004->base_character).model.accumulated_root_motion.z;
+  (in_stack_00000004->base_character).model.accumulated_root_motion.x =
+       (in_stack_00000004->base_character).model.accumulated_root_motion.y;
 switchD_00568487_caseD_d:
   if (0.0 < *(float *)in_stack_00000004->field6_0xbe38) {
     *(float *)in_stack_00000004->field6_0xbe38 =
          *(float *)in_stack_00000004->field6_0xbe38 - in_stack_00000008;
   }
-  iVar8 = core_charactr_cpp_CCharacter_FUN_004297e0(&in_stack_00000004->base_character);
-  if (iVar8 != 0) {
+  iVar7 = core_charactr_cpp_CCharacter_FUN_004297e0(&in_stack_00000004->base_character);
+  if (iVar7 != 0) {
     *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x20) =
          *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x20) -
          in_stack_00000008 * (float)DOUBLE_0064586a;
@@ -524,13 +507,13 @@ switchD_00568487_caseD_d:
     pcVar2 = (in_stack_00000004->base_character).field2_0x240c + 0x10;
     local_fc = in_stack_00000008 *
                *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x24);
-    pcVar3 = (in_stack_00000004->base_character).model.field17_0x2254;
+    pCVar9 = &(in_stack_00000004->base_character).model.accumulated_root_motion;
     local_ec = local_104 + *(float *)pcVar2;
     local_e8 = local_100 + *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x14);
     local_e4 = local_fc + *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x18);
-    local_68 = local_ec + *(float *)pcVar3;
-    local_64 = local_e8 + *(float *)((in_stack_00000004->base_character).model.field17_0x2254 + 4);
-    local_60 = local_e4 + *(float *)((in_stack_00000004->base_character).model.field17_0x2254 + 8);
+    local_68 = local_ec + pCVar9->x;
+    local_64 = local_e8 + (in_stack_00000004->base_character).model.accumulated_root_motion.y;
+    local_60 = local_e4 + (in_stack_00000004->base_character).model.accumulated_root_motion.z;
     (in_stack_00000004->base_character).field2_0x240c[0x18] = '\0';
     (in_stack_00000004->base_character).field2_0x240c[0x19] = '\0';
     (in_stack_00000004->base_character).field2_0x240c[0x1a] = '\0';
@@ -538,15 +521,10 @@ switchD_00568487_caseD_d:
     *(undefined4 *)((in_stack_00000004->base_character).field2_0x240c + 0x14) =
          *(undefined4 *)((in_stack_00000004->base_character).field2_0x240c + 0x18);
     *(float *)pcVar2 = *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x14);
-    pCVar7 = &in_stack_00000004->base_character;
-    (pCVar7->model).field17_0x2254[8] = '\0';
-    (pCVar7->model).field17_0x2254[9] = '\0';
-    (pCVar7->model).field17_0x2254[10] = '\0';
-    (pCVar7->model).field17_0x2254[0xb] = '\0';
-    *(undefined4 *)((in_stack_00000004->base_character).model.field17_0x2254 + 4) =
-         *(undefined4 *)((in_stack_00000004->base_character).model.field17_0x2254 + 8);
-    *(undefined4 *)pcVar3 =
-         *(undefined4 *)((in_stack_00000004->base_character).model.field17_0x2254 + 4);
+    (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
+    (in_stack_00000004->base_character).model.accumulated_root_motion.y =
+         (in_stack_00000004->base_character).model.accumulated_root_motion.z;
+    pCVar9->x = (in_stack_00000004->base_character).model.accumulated_root_motion.y;
     core_charactr_cpp_CCharacter_FUN_00428f40(&in_stack_00000004->base_character);
   }
   core_charactr_cpp_CCharacter_FUN_00429820(&in_stack_00000004->base_character);

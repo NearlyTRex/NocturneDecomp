@@ -19,10 +19,10 @@
 //   core_skeleton.cpp_CDeformableModel_getPartPtr_FUN_0059c220
 //   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
 //   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   core_skeleton.cpp_CDeformableModelInstance_FUN_005a1040
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
 //   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
@@ -63,9 +63,10 @@ undefined4 core_bodypart_cpp_FUN_0041b280(void)
   }
   core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
             ((CDeformableModelInstance *)&stack0xffffd7c4);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            ((CDeformableModelInstance *)&stack0xffffd7c8);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            ((CDeformableModelInstance *)&stack0xffffd7c8,
+             CStack_570.cancel_button.button_text + 0xb8);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450
             ((CDeformableModelInstance *)&stack0xffffd7cc);
   config_param1 =
        core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
@@ -108,8 +109,8 @@ undefined4 core_bodypart_cpp_FUN_0041b280(void)
     if ((bVar1) &&
        (in_stack_00000004 ==
         (CDeformableModel *)
-        (((CDeformableModel *)(CStack_570.base_strlist.item_count + -0x9000))->model_identifier +
-        0x4f))) {
+        (((CDeformableModel *)(CStack_570.base_strlist.item_count + -0x9000))->model_filename + 0x4f
+        ))) {
       iVar4 = 0;
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                 (&CStack_570,0,(uint)in_stack_ffffd7dc,(uint)in_stack_ffffd7e0,
@@ -195,12 +196,12 @@ undefined4 core_bodypart_cpp_FUN_0041b280(void)
 // 0041b2d8: LEA EAX,[ESP + 0x4]
 //   XREF to: Stack[-0x2840] (DATA)
 // 0041b2dc: PUSH EAX
-// 0041b2dd: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 0041b2dd: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 0041b2e2: ADD ESP,0x8
 // 0041b2e5: MOV EAX,ESP
 // 0041b2e7: PUSH EAX
-// 0041b2e8: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 0041b2e8: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 0041b2ed: ADD ESP,0x4
 // 0041b2f0: MOV EAX,ESP

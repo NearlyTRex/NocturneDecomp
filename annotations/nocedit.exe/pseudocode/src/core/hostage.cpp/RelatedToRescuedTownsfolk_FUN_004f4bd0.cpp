@@ -205,14 +205,11 @@ void core_hostage_cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0(void)
   if (iVar8 == 0) {
     return;
   }
-  (in_stack_00000004->model).field17_0x2254[8] = '\0';
-  (in_stack_00000004->model).field17_0x2254[9] = '\0';
-  (in_stack_00000004->model).field17_0x2254[10] = '\0';
-  (in_stack_00000004->model).field17_0x2254[0xb] = '\0';
-  *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4) =
-       *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 8);
-  *(undefined4 *)(in_stack_00000004->model).field17_0x2254 =
-       *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4);
+  (in_stack_00000004->model).accumulated_root_motion.z = 0.0;
+  (in_stack_00000004->model).accumulated_root_motion.y =
+       (in_stack_00000004->model).accumulated_root_motion.z;
+  (in_stack_00000004->model).accumulated_root_motion.x =
+       (in_stack_00000004->model).accumulated_root_motion.y;
   local_24 = &(in_stack_00000004->model).motion_controller;
   fVar11 = in_stack_00000008;
   while (0.0 < fVar11) {
@@ -284,8 +281,8 @@ LAB_004f4dd2:
     }
   }
   fVar11 = (float)DOUBLE_0062f06a;
-  *(undefined4 *)(in_stack_00000004->field2_0x240c + 0x28) =
-       *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 8);
+  *(float *)(in_stack_00000004->field2_0x240c + 0x28) =
+       (in_stack_00000004->model).accumulated_root_motion.z;
   local_28 = 0.0;
   *(float *)(in_stack_00000004->field2_0x240c + 0x2c) = in_stack_00000008 * fVar11;
   fVar11 = core_motion_cpp_CMotionController_FUN_0052dd20(local_24);
@@ -650,14 +647,11 @@ LAB_004f5384:
                 (&(in_stack_00000004->model).motion_controller,0,1);
     }
     else if (in_stack_00000004->grabbed_by == (CDemonActor *)0x0) goto LAB_004f5384;
-    (in_stack_00000004->model).field17_0x2254[8] = '\0';
-    (in_stack_00000004->model).field17_0x2254[9] = '\0';
-    (in_stack_00000004->model).field17_0x2254[10] = '\0';
-    (in_stack_00000004->model).field17_0x2254[0xb] = '\0';
-    *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4) =
-         *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 8);
-    *(undefined4 *)(in_stack_00000004->model).field17_0x2254 =
-         *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4);
+    (in_stack_00000004->model).accumulated_root_motion.z = 0.0;
+    (in_stack_00000004->model).accumulated_root_motion.y =
+         (in_stack_00000004->model).accumulated_root_motion.z;
+    (in_stack_00000004->model).accumulated_root_motion.x =
+         (in_stack_00000004->model).accumulated_root_motion.y;
   }
 switchD_004f5c7d_caseD_5:
   if (((0.0 < in_stack_00000004->hit_points) &&
@@ -701,13 +695,13 @@ switchD_004f5c7d_caseD_5:
     CStack_cc.z = *(float *)(in_stack_00000004->field2_0x240c + 0x1c) * in_stack_00000008;
     CStack_c0.x = *(float *)(in_stack_00000004->field2_0x240c + 0x20) * in_stack_00000008;
     CStack_c0.y = *(float *)(in_stack_00000004->field2_0x240c + 0x24) * in_stack_00000008;
-    pcVar16 = (in_stack_00000004->model).field17_0x2254;
+    pCVar12 = &(in_stack_00000004->model).accumulated_root_motion;
     local_ec._4_4_ = CStack_cc.z + *(float *)(in_stack_00000004->field2_0x240c + 0x10);
     local_ec._8_4_ = CStack_c0.x + *(float *)(in_stack_00000004->field2_0x240c + 0x14);
     local_e0 = CStack_c0.y + *(float *)(in_stack_00000004->field2_0x240c + 0x18);
-    CStack_74.y = (float)local_ec._4_4_ + *(float *)pcVar16;
-    CStack_74.z = (float)local_ec._8_4_ + *(float *)((in_stack_00000004->model).field17_0x2254 + 4);
-    local_68 = local_e0 + *(float *)((in_stack_00000004->model).field17_0x2254 + 8);
+    CStack_74.y = (float)local_ec._4_4_ + pCVar12->x;
+    CStack_74.z = (float)local_ec._8_4_ + (in_stack_00000004->model).accumulated_root_motion.y;
+    local_68 = local_e0 + (in_stack_00000004->model).accumulated_root_motion.z;
     in_stack_00000004->field2_0x240c[0x18] = '\0';
     in_stack_00000004->field2_0x240c[0x19] = '\0';
     in_stack_00000004->field2_0x240c[0x1a] = '\0';
@@ -716,14 +710,11 @@ switchD_004f5c7d_caseD_5:
          *(undefined4 *)(in_stack_00000004->field2_0x240c + 0x18);
     *(float *)(in_stack_00000004->field2_0x240c + 0x10) =
          *(float *)(in_stack_00000004->field2_0x240c + 0x14);
-    (in_stack_00000004->model).field17_0x2254[8] = '\0';
-    (in_stack_00000004->model).field17_0x2254[9] = '\0';
-    (in_stack_00000004->model).field17_0x2254[10] = '\0';
-    (in_stack_00000004->model).field17_0x2254[0xb] = '\0';
+    (in_stack_00000004->model).accumulated_root_motion.z = 0.0;
     pCVar1 = &(in_stack_00000004->base_actor).location;
-    *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4) =
-         *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 8);
-    *(undefined4 *)pcVar16 = *(undefined4 *)((in_stack_00000004->model).field17_0x2254 + 4);
+    (in_stack_00000004->model).accumulated_root_motion.y =
+         (in_stack_00000004->model).accumulated_root_motion.z;
+    pCVar12->x = (in_stack_00000004->model).accumulated_root_motion.y;
     CStack_c0.z = (pCVar1->position).x;
     fStack_b4 = (in_stack_00000004->base_actor).location.position.y;
     local_b0 = (in_stack_00000004->base_actor).location.position.z;

@@ -123,14 +123,9 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
      (ABS(local_b0.z) < (float)DOUBLE_00617042)) {
     local_3c = 1;
   }
-  (this_ptr->model).field17_0x2254[8] = '\0';
-  (this_ptr->model).field17_0x2254[9] = '\0';
-  (this_ptr->model).field17_0x2254[10] = '\0';
-  (this_ptr->model).field17_0x2254[0xb] = '\0';
-  *(undefined4 *)((this_ptr->model).field17_0x2254 + 4) =
-       *(undefined4 *)((this_ptr->model).field17_0x2254 + 8);
-  *(undefined4 *)(this_ptr->model).field17_0x2254 =
-       *(undefined4 *)((this_ptr->model).field17_0x2254 + 4);
+  (this_ptr->model).accumulated_root_motion.z = 0.0;
+  (this_ptr->model).accumulated_root_motion.y = (this_ptr->model).accumulated_root_motion.z;
+  (this_ptr->model).accumulated_root_motion.x = (this_ptr->model).accumulated_root_motion.y;
   if (((float)DOUBLE_0061705a * 0.0 + (float)DOUBLE_00617062 +
        ABS(ABS(fVar7)) * (float)DOUBLE_0061704a * (float)DOUBLE_00617052 <= local_fc) ||
      (1.0 < ABS(local_b0.z))) {

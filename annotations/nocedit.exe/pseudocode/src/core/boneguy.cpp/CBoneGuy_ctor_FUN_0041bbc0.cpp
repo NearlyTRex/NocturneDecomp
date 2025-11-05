@@ -19,7 +19,7 @@
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
 //   crt_memory.c_memset_FUN_005fde40
 
@@ -53,8 +53,8 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
                    (pCVar4[1].base_character.base_actor.create_event + 0x10,0x14,
                     &g_SBoneGuyBoxTypeInfo);
   *(CDemonActor_vtable **)((int)dest + -0xbde8) = &g_CBoneGuyVTable;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            ((CDeformableModelInstance *)((int)dest + -0xbde4));
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            ((CDeformableModelInstance *)((int)dest + -0xbde4),"boneguy.dfm");
   *(undefined4 *)((int)dest + -0x9160) = 0x3f19999a;
   *(undefined4 *)((int)dest + -0x915c) = 0x3f666666;
   pcVar7 = "boneguydie";
@@ -133,7 +133,7 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
 // 0041bbf9: PUSH EAX
 // 0041bbfa: MOV dword ptr [EBX + 0x154],0x65af74
 //   XREF to: 0065af74 (DATA)
-// 0041bc04: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 0041bc04: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 0041bc09: MOV dword ptr [EBX + 0x2ddc],0x3f19999a
 // 0041bc13: MOV dword ptr [EBX + 0x2de0],0x3f666666

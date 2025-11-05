@@ -153,7 +153,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
   }
   local_20 = 0;
   if (0 < *(int *)(this_ptr->cloth_data + 0x478)) {
-    local_38 = (CSkeleton *)(this_ptr->model).bone_world_matrices;
+    local_38 = (CSkeleton *)(this_ptr->model).bone_transform.bone_world_matrices;
     local_40 = this_ptr->cloth_data + 0x934;
     pcVar11 = this_ptr->cloth_data + 0x484;
     local_1c = this_ptr;

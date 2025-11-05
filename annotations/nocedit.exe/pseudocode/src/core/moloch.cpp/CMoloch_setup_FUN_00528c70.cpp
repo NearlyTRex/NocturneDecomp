@@ -12,8 +12,8 @@
 //   core_hero.cpp_CHero_FUN_004f2540
 //   core_morph.cpp_CMorph_getReady_FUN_0052b680
 //   core_morph.cpp_FUN_0052b430
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 
 #include "nocturne.h"
 
@@ -21,19 +21,24 @@ void __cdecl core_moloch_cpp_CMoloch_setup_FUN_00528c70(CMoloch *this_ptr)
 
 {
   CDeformableModelInstance *this_ptr_00;
+  char *model_name;
   
   this_ptr_00 = &(this_ptr->base_hero).base_character.model;
   if (this_ptr->in_human_form == 0) {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(this_ptr_00);
+    core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+              (this_ptr_00,"moloch_d.dfm");
+    model_name = "moloch_h.dfm";
   }
   else {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(this_ptr_00);
+    core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+              (this_ptr_00,"moloch_h.dfm");
+    model_name = "moloch_d.dfm";
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            ((CDeformableModelInstance *)this_ptr->field1_0x1fbd4);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            ((CDeformableModelInstance *)this_ptr->field1_0x1fbd4,model_name);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450
             (&(this_ptr->base_hero).base_character.model);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450
             ((CDeformableModelInstance *)this_ptr->field1_0x1fbd4);
   this_ptr->field5_0x21e94[0xcf0] = '\0';
   this_ptr->field5_0x21e94[0xcf1] = '\0';
@@ -63,24 +68,24 @@ void __cdecl core_moloch_cpp_CMoloch_setup_FUN_00528c70(CMoloch *this_ptr)
 // 00528c8d: PUSH 0x639d71
 //   XREF to: 00639d71 (DATA)
 // 00528c92: PUSH EAX
-// 00528c93: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 00528c93: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00528c98: ADD ESP,0x8
 // 00528c9b: PUSH 0x639d7e
 //   XREF to: 00639d7e (DATA)
 // 00528ca0: PUSH ESI
 //   Label: LAB_00528ca0
-// 00528ca1: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 00528ca1: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00528ca6: ADD ESP,0x8
 // 00528ca9: LEA ESI,[EBX + 0x158]
 // 00528caf: PUSH ESI
-// 00528cb0: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 00528cb0: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 00528cb5: ADD ESP,0x4
 // 00528cb8: LEA EDI,[EBX + 0x1fbd4]
 // 00528cbe: PUSH EDI
-// 00528cbf: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 00528cbf: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 00528cc4: ADD ESP,0x4
 // 00528cc7: PUSH ESI
@@ -113,7 +118,7 @@ void __cdecl core_moloch_cpp_CMoloch_setup_FUN_00528c70(CMoloch *this_ptr)
 //   Label: LAB_00528d05
 //   XREF to: 00639d8b (DATA)
 // 00528d0a: PUSH EAX
-// 00528d0b: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 00528d0b: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00528d10: ADD ESP,0x8
 // 00528d13: PUSH 0x639d98

@@ -1,10 +1,10 @@
-// Name: core_skeleton.cpp_CDeformableModelInstance_FUN_005a0ad0
+// Name: core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
 // Address: 005a0ad0
 // Address Range: [[005a0ad0, 005a0c8f]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_FUN_005a0ad0(CDeformableModelInstance * this_ptr)
+// Signature: void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0(CDeformableModelInstance * this_ptr, int motion_index, float animation_time, SBoneTransformData * output_bone_data)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a08a0 (005a08a0) at 005a08fa [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0 (005a08a0) at 005a08fa [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
@@ -13,7 +13,9 @@
 #include "nocturne.h"
 
 void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_FUN_005a0ad0(CDeformableModelInstance *this_ptr)
+core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
+          (CDeformableModelInstance *this_ptr,int motion_index,float animation_time,
+          SBoneTransformData *output_bone_data)
 
 {
   float fVar1;
@@ -26,72 +28,74 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0ad0(CDeformableModelInstance
   CSkeleton *pCVar8;
   int bone_index;
   BADSPACEBASE *in_ESP;
-  float *pfVar9;
-  byte bVar10;
-  int in_stack_00000008;
-  float in_stack_0000000c;
-  float *in_stack_00000010;
+  undefined4 *puVar9;
+  undefined4 *puVar10;
+  byte bVar11;
   float afStackY_1830 [1519];
   float fStack_58;
   float fStack_54;
-  float local_38 [5];
   int local_24;
-  int local_20;
-  int local_1c;
+  float local_20;
+  float local_1c;
   CSkeleton *local_18;
   CSkeleton *local_14;
-  float *pfVar11;
-  float *pfVar12;
+  SBoneTransformData *pSVar12;
+  SBoneTransformData *pSVar13;
   
-  bVar10 = 0;
+  bVar11 = 0;
   pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   local_18 = pCVar8;
   core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
-            (&this_ptr->motion_controller,in_stack_00000008,in_stack_0000000c,&local_24,&local_20,
+            (&this_ptr->motion_controller,motion_index,animation_time,&local_24,(int *)&local_20,
              (float *)&stack0xffffffa4);
   bone_index = 0;
-  pfVar11 = in_stack_00000010;
-  pfVar12 = in_stack_00000010;
+  pSVar12 = output_bone_data;
+  pSVar13 = output_bone_data;
   if (0 < pCVar8->bone_count) {
     do {
       core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
-                (local_14,bone_index,local_20,local_1c,fStack_58);
+                (local_14,bone_index,(int)local_20,(int)local_1c,fStack_58);
       bone_index = bone_index + 1;
-      pfVar9 = pfVar11 + (uint)bVar10 * -2 + 4;
-      pfVar11[3] = fStack_54;
-      *pfVar9 = *(float *)(&stack0xffffffb0 + (uint)bVar10 * -8);
-      pfVar9[(uint)bVar10 * -2 + 1] =
-           *(float *)(&stack0xffffffb4 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
-      (pfVar9 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1] =
-           *(float *)((int)(&stack0xffffffb4 + (uint)bVar10 * -8 + (uint)bVar10 * -8) +
-                     ((uint)bVar10 * -2 + 1) * 4);
-      pfVar12[0x193] = 1.0;
-      pfVar11 = pfVar11 + 4;
-      pfVar12 = pfVar12 + 1;
+      puVar9 = (undefined4 *)((int)pSVar12 + (uint)bVar11 * -8 + 0x10);
+      pSVar12->bone_rotations[0].w = fStack_54;
+      puVar10 = puVar9 + (uint)bVar11 * -2 + 1;
+      *puVar9 = *(undefined4 *)(&stack0xffffffb0 + (uint)bVar11 * -8);
+      *puVar10 = *(undefined4 *)(&stack0xffffffb4 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
+      puVar10[(uint)bVar11 * -2 + 1] =
+           *(undefined4 *)
+            ((int)(&stack0xffffffb4 + (uint)bVar11 * -8 + (uint)bVar11 * -8) +
+            ((uint)bVar11 * -2 + 1) * 4);
+      pSVar13->current_pose_data[0] = 1.0;
+      pSVar12 = (SBoneTransformData *)&pSVar12->bone_rotations[0].x;
+      pSVar13 = (SBoneTransformData *)&(pSVar13->root_position).y;
     } while (bone_index < local_14->bone_count);
   }
   pCVar5 = local_14->frame_positions_1;
-  fVar1 = pCVar5[local_1c].y;
-  fVar2 = pCVar5[local_1c].z;
+  fVar1 = pCVar5[(int)local_1c].y;
+  fVar2 = pCVar5[(int)local_1c].z;
   fVar7 = 1.0 - fStack_58;
   pCVar6 = local_14->frame_positions_1;
-  fVar3 = pCVar6[local_20].y;
-  fVar4 = pCVar6[local_20].z;
-  if (local_38 != in_stack_00000010) {
-    *in_stack_00000010 = pCVar6[local_20].x * fVar7 + pCVar5[local_1c].x * fStack_58;
-    in_stack_00000010[1] = fVar3 * fVar7 + fVar1 * fStack_58;
-    in_stack_00000010[2] = fVar4 * fVar7 + fVar2 * fStack_58;
+  fVar3 = pCVar6[(int)local_20].y;
+  fVar4 = pCVar6[(int)local_20].z;
+  if ((SBoneTransformData *)&stack0xffffffc8 != output_bone_data) {
+    (output_bone_data->root_position).x =
+         pCVar6[(int)local_20].x * fVar7 + pCVar5[(int)local_1c].x * fStack_58;
+    (output_bone_data->root_position).y = fVar3 * fVar7 + fVar1 * fStack_58;
+    (output_bone_data->root_position).z = fVar4 * fVar7 + fVar2 * fStack_58;
   }
-  *in_stack_00000010 = (float)this_ptr->field3_0x508 * *in_stack_00000010;
-  in_stack_00000010[1] = (float)this_ptr->field4_0x50c * in_stack_00000010[1];
-  in_stack_00000010[2] = this_ptr->rest_pose_data[0] * in_stack_00000010[2];
+  (output_bone_data->root_position).x =
+       (this_ptr->scaled_model_dimensions).x * (output_bone_data->root_position).x;
+  (output_bone_data->root_position).y =
+       (this_ptr->scaled_model_dimensions).y * (output_bone_data->root_position).y;
+  (output_bone_data->root_position).z =
+       (this_ptr->scaled_model_dimensions).z * (output_bone_data->root_position).z;
   return;
 }
 
 
 // Assembly code:
 // 005a0ad0: PUSH EBX
-//   Label: core_skeleton.cpp_CDeformableModelInstance_FUN_005a0ad0
+//   Label: core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
 // 005a0ad1: PUSH ESI
 // 005a0ad2: PUSH EDI
 // 005a0ad3: PUSH EBP

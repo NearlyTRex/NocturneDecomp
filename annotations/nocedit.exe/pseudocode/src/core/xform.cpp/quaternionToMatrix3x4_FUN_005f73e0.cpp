@@ -5,7 +5,7 @@
 // Signature: CMatrix3x4f * core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0(CMatrix3x4f * matrix_out, CQuaternion4f * quat_ptr)
 // Cross-references:
 //   core_course.cpp_CCourse_FUN_00442710 (00442710) at 00442753 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20 (0059ff20) at 005a00ba [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20 (0059ff20) at 005a00ba [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_xform.cpp_clearTranslation_FUN_005f5370
 //   core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280

@@ -179,7 +179,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
   } while (pcVar5 != local_24);
   local_20 = *(float *)(this_ptr->cloth_data + 0x358) * this_ptr->size_scale;
   if (local_20 < *(float *)(this_ptr->cloth_data + 0x354) * this_ptr->size_scale) {
-    local_20 = *(float *)((this_ptr->model).field15_0x2238 + 0x10);
+    local_20 = (this_ptr->model).bounding_box.max.y;
   }
   local_d4.base.type = (int)(*(float *)(this_ptr->cloth_data + 0x354) * this_ptr->size_scale);
   if (local_20 < (float)local_d4.base.type) {

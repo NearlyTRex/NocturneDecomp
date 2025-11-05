@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_bugs.cpp_FUN_004268e0 (004268e0) at 00426ff4 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_CarryLights_FUN_004d7120 (004d7120) at 004d7212 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20 (0059ff20) at 005a00df [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20 (0059ff20) at 005a00df [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c07b0 (005c07b0) at 005c128e [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"

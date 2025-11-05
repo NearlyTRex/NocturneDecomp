@@ -50,12 +50,12 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
   int local_14;
   
   bVar6 = 0;
-  if (((this_ptr->model).field18_0x2260[0] != '\0') &&
+  if (((this_ptr->model).model_name[0] != '\0') &&
      ((this_ptr->model).part_visibility_flags[in_stack_0000000c] != 0)) {
     core_skeleton_cpp_CDeformableModelInstance_FUN_005a1040(&this_ptr->model);
     local_14 = 0;
     if (0 < *(int *)(this_ptr->cloth_data + 0x35c)) {
-      local_18 = (this_ptr->model).bone_world_matrices;
+      local_18 = (this_ptr->model).bone_transform.bone_world_matrices;
       pcVar1 = this_ptr->cloth_data + 0x360;
       do {
         if (in_stack_0000000c == *(int *)pcVar1) {
@@ -83,7 +83,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
         if ((in_stack_0000000c == *(int *)pcVar1) && (-1 < *(int *)(pcVar1 + 4))) {
           core_xform_cpp_transformVector3x4_FUN_005f4dc0
                     (&local_30,(CVector3f *)(pcVar1 + 8),
-                     (this_ptr->model).bone_world_matrices + *(int *)(pcVar1 + 4));
+                     (this_ptr->model).bone_transform.bone_world_matrices + *(int *)(pcVar1 + 4));
           core_bodypart_cpp_FUN_0041ae50();
         }
         iVar2 = iVar2 + 1;

@@ -44,7 +44,7 @@ int core_skeleton_cpp_CDeformableModelInstance_FUN_005a1160(void)
   local_3c = 1e+30;
   local_48 = 0;
   if (0 < pCVar13->bone_count) {
-    pCVar14 = in_stack_00000004->bone_world_matrices;
+    pCVar14 = (in_stack_00000004->bone_transform).bone_world_matrices;
     pCVar15 = pCVar14;
     local_38 = pCVar13;
     do {

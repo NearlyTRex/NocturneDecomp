@@ -10,7 +10,7 @@
 //   CDemonActor_vtable g_CBassPlayerVTable
 // Function calls:
 //   core_npc.cpp_FUN_005447e0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -21,7 +21,8 @@ CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_ctor_FUN_005da060(CBassPlaye
   
   pCVar1 = (CBassPlayer *)core_npc_cpp_FUN_005447e0(&this_ptr->base_npc);
   (pCVar1->base_npc).base_character.base_actor.vtable = &g_CBassPlayerVTable;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(&(pCVar1->base_npc).base_character.model);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(pCVar1->base_npc).base_character.model,"bassplayer.dfm");
   return pCVar1;
 }
 
@@ -42,7 +43,7 @@ CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_ctor_FUN_005da060(CBassPlaye
 // 005da07a: PUSH EAX
 // 005da07b: MOV dword ptr [EAX + -0x4],0x663f14
 //   XREF to: 00663f14 (DATA)
-// 005da082: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005da082: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005da087: ADD ESP,0x8
 // 005da08a: MOV EAX,EBX

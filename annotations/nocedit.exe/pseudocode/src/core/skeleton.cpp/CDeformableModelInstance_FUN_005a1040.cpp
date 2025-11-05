@@ -9,8 +9,8 @@
 //   core_skeleton.cpp_FUN_005a0fe0 (005a0fe0) at 005a1015 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+//   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 
 #include "nocturne.h"
 
@@ -19,8 +19,8 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a1040(CDeformableModelInstance
 
 {
   CDeformableModel *this_ptr_00;
-  uint uVar1;
-  int *piVar2;
+  uint lod_index;
+  int *piVar1;
   CVector3i *unaff_EDI;
   int in_stack_00000008;
   int in_stack_0000000c;
@@ -31,17 +31,18 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a1040(CDeformableModelInstance
     return;
   }
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
-  uVar1 = (uint)(1 < this_ptr_00->num_lods);
-  for (piVar2 = &this_ptr_00->lod_info[uVar1 - 1].shadow_only_flag;
-      (0 < (int)uVar1 && (piVar2[2] != 0)); piVar2 = piVar2 + -2) {
-    uVar1 = uVar1 - 1;
+  lod_index = (uint)(1 < this_ptr_00->num_lods);
+  for (piVar1 = &this_ptr_00->lod_info[lod_index - 1].shadow_only_flag;
+      (0 < (int)lod_index && (piVar1[2] != 0)); piVar1 = piVar1 + -2) {
+    lod_index = lod_index - 1;
   }
-  if (uVar1 != this_ptr->field13_0x2230) {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a01d0(this_ptr);
+  if (lod_index != this_ptr->cached_skinned_lod_index) {
+    core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(this_ptr,lod_index);
   }
   core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
-            (this_ptr_00,this_ptr->field13_0x2230,in_stack_00000010,in_stack_0000000c,
-             this_ptr->field14_0x2234,this_ptr->texture_set_indices[in_stack_0000000c],unaff_EDI);
+            (this_ptr_00,this_ptr->cached_skinned_lod_index,in_stack_00000010,in_stack_0000000c,
+             this_ptr->current_lod_index,this_ptr->texture_set_indices[in_stack_0000000c],unaff_EDI)
+  ;
   this_ptr->part_visibility_flags[in_stack_0000000c] = 0;
   return;
 }
@@ -103,7 +104,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a1040(CDeformableModelInstance
 //   XREF to: 005a10ab (CONDITIONAL_JUMP)
 // 005a10a1: PUSH EAX
 // 005a10a2: PUSH EBX
-// 005a10a3: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a01d0
+// 005a10a3: CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 //   XREF to: 005a01d0 (UNCONDITIONAL_CALL)
 // 005a10a8: ADD ESP,0x8
 // 005a10ab: MOV ECX,dword ptr [EBX + EDI*0x4 + 0x21b8]

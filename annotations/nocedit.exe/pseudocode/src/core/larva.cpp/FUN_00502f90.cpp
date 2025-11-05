@@ -12,7 +12,7 @@
 //   CDemonActor_vtable PTR_core_larva.cpp_FUN_00660734
 // Function calls:
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -28,8 +28,8 @@ CLarva * __cdecl core_larva_cpp_FUN_00502f90(CLarva *this_ptr)
   
   pCVar4 = (CLarva *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   (pCVar4->base_enemy).base_character.base_actor.vtable = &PTR_core_larva_cpp_FUN_00660734;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            (&(pCVar4->base_enemy).base_character.model);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(pCVar4->base_enemy).base_character.model,"worm.dfm");
   pCVar1 = &pCVar4->base_enemy;
   (pCVar1->base_character).cloth_data[0x344] = '\0';
   (pCVar1->base_character).cloth_data[0x345] = '\0';
@@ -78,7 +78,7 @@ CLarva * __cdecl core_larva_cpp_FUN_00502f90(CLarva *this_ptr)
 // 00502faa: PUSH EAX
 // 00502fab: MOV dword ptr [EAX + -0x4],0x660734
 //   XREF to: 00660734 (DATA)
-// 00502fb2: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 00502fb2: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00502fb7: MOV dword ptr [EBX + 0x2ddc],0x3e800000
 // 00502fc1: MOV dword ptr [EBX + 0x2de0],0x3f000000

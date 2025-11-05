@@ -23,6 +23,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* Signature: int actors_enemy_bugs.cpp_CBugs_load(CBugs* pBugs) */
 
 void core_bugs_cpp_CBugs_load_FUN_004254f0(void)
@@ -57,20 +58,20 @@ void core_bugs_cpp_CBugs_load_FUN_004254f0(void)
     } while (iVar2 < *(int *)(in_stack_00000004[1].base_character.cloth_data + 0x3978));
   }
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)&in_stack_00000004[2].base_character.model.bone_world_matrices[0x3c].m[1].y,
-             "allowChase");
+            ((int *)&in_stack_00000004[2].base_character.model.bone_transform.bone_world_matrices
+                     [0x3c].m[1].y,"allowChase");
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)&in_stack_00000004[2].base_character.model.bone_world_matrices[0x3c].m[1].z,
-             "allowSwarm");
+            ((int *)&in_stack_00000004[2].base_character.model.bone_transform.bone_world_matrices
+                     [0x3c].m[1].z,"allowSwarm");
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)(in_stack_00000004[2].base_character.model.bone_world_matrices[0x3c].m + 2),
-             "allowChaseEvent");
+            ((char **)(in_stack_00000004[2].base_character.model.bone_transform.bone_world_matrices
+                       [0x3c].m + 2),"allowChaseEvent");
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)&in_stack_00000004[2].base_character.model.bone_world_matrices[0x3e].m[2].x,
-             "allowSwarmEvent");
+            ((char **)&in_stack_00000004[2].base_character.model.bone_transform.bone_world_matrices
+                       [0x3e].m[2].x,"allowSwarmEvent");
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)&in_stack_00000004[2].base_character.model.bone_world_matrices[0x40].m[2].y,
-             "animateEvent");
+            ((char **)&in_stack_00000004[2].base_character.model.bone_transform.bone_world_matrices
+                       [0x40].m[2].y,"animateEvent");
   return;
 }
 

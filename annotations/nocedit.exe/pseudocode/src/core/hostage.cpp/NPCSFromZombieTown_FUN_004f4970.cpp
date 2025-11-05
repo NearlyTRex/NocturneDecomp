@@ -23,8 +23,8 @@
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
 //   core_npc.cpp_CNPC_FUN_00544870
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 //   crt_string.c_stricmp_FUN_005fe7f0
 
@@ -43,9 +43,9 @@ void core_hostage_cpp_NPCSFromZombieTown_FUN_004f4970(void)
   float fVar2;
   CNPC *in_stack_00000004;
   
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450
             (&(in_stack_00000004->base_character).model);
-  str1 = (in_stack_00000004->base_character).model.field18_0x2260;
+  str1 = (in_stack_00000004->base_character).model.model_name;
   in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 8.40779e-45;
   iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,"hickboy.dfm");
   if (iVar1 == 0) {
@@ -116,7 +116,7 @@ void core_hostage_cpp_NPCSFromZombieTown_FUN_004f4970(void)
 //   XREF to: Stack[0x4] (READ)
 // 004f4978: LEA EAX,[EBX + 0x158]
 // 004f497e: PUSH EAX
-// 004f497f: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 004f497f: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 004f4984: ADD ESP,0x4
 // 004f4987: PUSH 0x62ee40

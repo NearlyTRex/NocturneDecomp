@@ -14,7 +14,7 @@
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
 //   core_morph.cpp_FUN_0052b310
 //   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -24,7 +24,6 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_005e5590(CVampire
   CEnemy *pCVar1;
   int iVar2;
   int iStack00000008;
-  char *pcStack00000014;
   
   pCVar1 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
@@ -37,11 +36,10 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_005e5590(CVampire
   iVar2 = core_morph_cpp_FUN_0052b310();
   *(CDemonActor_vtable **)(iVar2 + -0xcdb70) = &g_CVampireBossVTable;
   iStack00000008 = 0x5e5605;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            ((CDeformableModelInstance *)(iVar2 + -0xcdb6c));
-  pcStack00000014 = "batboss.dfm";
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            ((CDeformableModelInstance *)(iVar2 + -0xc1e08));
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            ((CDeformableModelInstance *)(iVar2 + -0xcdb6c),"nosfer.dfm");
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            ((CDeformableModelInstance *)(iVar2 + -0xc1e08),"batboss.dfm");
   *(undefined4 *)(iVar2 + -0xcaee8) = 0x40000000;
   *(undefined4 *)(iVar2 + -0xcaee4) = 0x40400000;
   *(undefined4 *)(iVar2 + -0xcaee0) = 0x42480000;
@@ -103,14 +101,14 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_005e5590(CVampire
 // 005e55f5: PUSH EAX
 // 005e55f6: MOV dword ptr [EBX + 0x154],0x664e94
 //   XREF to: 00664e94 (DATA)
-// 005e5600: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005e5600: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005e5605: ADD ESP,0x8
 // 005e5608: PUSH 0x656ad0
 //   XREF to: 00656ad0 (DATA)
 // 005e560d: LEA EAX,[EBX + 0xbebc]
 // 005e5613: PUSH EAX
-// 005e5614: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005e5614: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005e5619: MOV dword ptr [EBX + 0x2ddc],0x40000000
 // 005e5623: MOV dword ptr [EBX + 0x2de0],0x40400000

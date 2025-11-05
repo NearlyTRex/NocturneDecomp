@@ -20,7 +20,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a17b0(CDeformableModelInstance
   CMatrix3x4f *in_stack_0000000c;
   CMatrix3x4f *color;
   
-  color = this_ptr->bone_world_matrices;
+  color = (this_ptr->bone_transform).bone_world_matrices;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
             (this_ptr_00,(int)color,in_stack_0000000c,unaff_EBX);

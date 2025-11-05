@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_skeleton.cpp_CDeformableModel_lightVertices_FUN_0059ab50(CDeformableModel * this_ptr, int lod_index, int render_flags)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a02a0 (005a02a0) at 005a02ca [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0 (005a02a0) at 005a02ca [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CDemonSet g_CDemonSetInstance

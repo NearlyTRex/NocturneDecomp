@@ -11,7 +11,7 @@
 // Function calls:
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -33,8 +33,8 @@ CGhoul * __cdecl core_ghoul_cpp_FUN_004e6030(CGhoul *this_ptr)
   
   pCVar4 = (CGhoul *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   (pCVar4->base_enemy).base_character.base_actor.vtable = &PTR_core_ghoul_cpp_FUN_0065ed44;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            (&(pCVar4->base_enemy).base_character.model);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(pCVar4->base_enemy).base_character.model,"guul.dfm");
   fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(20.0,35.0);
   fVar7 = (float10)fVar5 * (float10)DAT_0062db0a;
   min_value = 10.0;
@@ -110,7 +110,7 @@ CGhoul * __cdecl core_ghoul_cpp_FUN_004e6030(CGhoul *this_ptr)
 // 004e604d: PUSH EAX
 // 004e604e: MOV dword ptr [EAX + -0x4],0x65ed44
 //   XREF to: 0065ed44 (DATA)
-// 004e6055: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 004e6055: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004e605a: ADD ESP,0x8
 // 004e605d: PUSH 0x420c0000

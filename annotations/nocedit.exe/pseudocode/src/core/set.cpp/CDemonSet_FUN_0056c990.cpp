@@ -97,7 +97,8 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                           (&(this_ptr_00->base_character).model);
   iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_02,"Bip01 Head");
-  euler_out = (CVector3f *)((this_ptr_00->base_character).model.bone_world_matrices + iVar3);
+  euler_out = (CVector3f *)
+              ((this_ptr_00->base_character).model.bone_transform.bone_world_matrices + iVar3);
   local_44.y = 0.338;
   local_44.x = 0.0;
   local_44.z = 0.75;

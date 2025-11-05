@@ -50,15 +50,16 @@
 //   core_morph.cpp_FUN_0052b430
 //   core_morph.cpp_FUN_0052b580
 //   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
@@ -72,21 +73,24 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
   CDeformableModelInstance *pCStack00000060;
   undefined4 uStack00000064;
   undefined4 uStack00000068;
+  char *model_name;
   
   pCVar1 = &(this_ptr->base_enemy).base_character.model;
   if (g_CGamePtr->nudity_flag == 0) {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(pCVar1);
+    core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(pCVar1,"succubusx.dfm");
+    model_name = "hotdemonx.dfm";
   }
   else {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(pCVar1);
+    core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(pCVar1,"succubus.dfm");
+    model_name = "hotdemon.dfm";
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            ((CDeformableModelInstance *)(this_ptr->field1_0xbeb4 + 8));
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            ((CDeformableModelInstance *)(this_ptr->field1_0xbeb4 + 8),model_name);
   core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base_enemy);
   pCVar1 = &(this_ptr->base_enemy).base_character.model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(pCVar1);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(pCVar1);
   this_ptr_00 = (CDeformableModelInstance *)(this_ptr->field1_0xbeb4 + 8);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
   core_cloth_cpp_CClothList_load_FUN_0043bfa0((CClothList *)(this_ptr->field1_0xbeb4 + 0x22bc));
   core_cloth_cpp_FUN_0043c290();
   core_cloth_cpp_FUN_0043c2d0();
@@ -129,8 +133,8 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
   uStack00000048 = 0x5c6d8f;
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(pCVar1);
-  (this_ptr->base_enemy).base_character.model.root_position.z =
-       (this_ptr->base_enemy).base_character.model.root_position.z + FLOAT_00654121;
+  (this_ptr->base_enemy).base_character.model.bone_transform.root_position.z =
+       (this_ptr->base_enemy).base_character.model.bone_transform.root_position.z + FLOAT_00654121;
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(pCVar1);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr_00);
   pCStack0000005c = (CMorph *)pCVar1;
@@ -199,14 +203,14 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
 // 005c6b88: PUSH 0x654019
 //   XREF to: 00654019 (DATA)
 // 005c6b8d: PUSH EAX
-// 005c6b8e: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005c6b8e: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005c6b93: ADD ESP,0x8
 // 005c6b96: PUSH 0x654026
 //   XREF to: 00654026 (DATA)
 // 005c6b9b: PUSH ESI
 //   Label: LAB_005c6b9b
-// 005c6b9c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005c6b9c: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005c6ba1: ADD ESP,0x8
 // 005c6ba4: PUSH EBX
@@ -215,12 +219,12 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
 // 005c6baa: ADD ESP,0x4
 // 005c6bad: LEA EBP,[EBX + 0x158]
 // 005c6bb3: PUSH EBP
-// 005c6bb4: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 005c6bb4: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 005c6bb9: ADD ESP,0x4
 // 005c6bbc: LEA EDI,[EBX + 0xbebc]
 // 005c6bc2: PUSH EDI
-// 005c6bc3: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 005c6bc3: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 005c6bc8: ADD ESP,0x4
 // 005c6bcb: LEA ESI,[EBX + 0xe170]
@@ -498,7 +502,7 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
 //   Label: LAB_005c6e6e
 //   XREF to: 00653ffd (DATA)
 // 005c6e73: PUSH EAX
-// 005c6e74: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005c6e74: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005c6e79: ADD ESP,0x8
 // 005c6e7c: PUSH 0x65400b

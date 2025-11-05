@@ -48,7 +48,7 @@
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20 (0059fa20) at 0059fae2 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00 (0059aa00) at 0059aabc [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880 (0059a880) at 0059a9c3 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_FUN_005a1950 (005a1950) at 005a1a03 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950 (005a1950) at 005a1a03 [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a2800 (005a2800) at 005a2c2e [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a3160 (005a3160) at 005a31cd [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c07b0 (005c07b0) at 005c12ce [UNCONDITIONAL_CALL]

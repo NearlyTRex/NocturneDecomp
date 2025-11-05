@@ -12,7 +12,7 @@
 //   CDemonActor_vtable PTR_core_drone.cpp_FUN_0065d0c4
 // Function calls:
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -28,8 +28,8 @@ CDrone * __cdecl core_drone_cpp_ctor_FUN_0048eb50(CDrone *this_ptr)
   
   pCVar4 = (CDrone *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   (pCVar4->base_enemy).base_character.base_actor.vtable = &PTR_core_drone_cpp_FUN_0065d0c4;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            (&(pCVar4->base_enemy).base_character.model);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(pCVar4->base_enemy).base_character.model,"drone.dfm");
   pCVar1 = &pCVar4->base_enemy;
   (pCVar1->base_character).cloth_data[0x344] = '\0';
   uVar2 = _DAT_0065d0ac;
@@ -70,7 +70,7 @@ CDrone * __cdecl core_drone_cpp_ctor_FUN_0048eb50(CDrone *this_ptr)
 // 0048eb6a: PUSH EAX
 // 0048eb6b: MOV dword ptr [EAX + -0x4],0x65d0c4
 //   XREF to: 0065d0c4 (DATA)
-// 0048eb72: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 0048eb72: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 0048eb77: MOV dword ptr [EBX + 0x2ddc],0x3f400000
 // 0048eb81: FLD float ptr [0x0065d0ac]

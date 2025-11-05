@@ -402,7 +402,7 @@
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 (00599fc0) at 0059a034 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0 (00599bb0) at 00599c44 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CSkeleton_load_FUN_00599b10 (00599b10) at 00599b97 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_LoadSkeletonDeformable_FUN_005a1cf0 (005a1cf0) at 005a1d6a [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_getDeformableModel_FUN_005a1cf0 (005a1cf0) at 005a1d6a [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_loadSkeleton_FUN_005a1df0 (005a1df0) at 005a1e62 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0 (005b3cc0) at 005b3d0f [UNCONDITIONAL_CALL]
 //   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b25c8 [UNCONDITIONAL_CALL]

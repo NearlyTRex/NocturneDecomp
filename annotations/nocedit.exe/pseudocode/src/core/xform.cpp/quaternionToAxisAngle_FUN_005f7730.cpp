@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_xform.cpp_quaternionToAxisAngle_FUN_005f7730(CQuaternion4f * quat_ptr, float * angle_out, CVector3f * axis_out)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20 (0059ff20) at 0059ff5a [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20 (0059ff20) at 0059ff5a [UNCONDITIONAL_CALL]
 // Globals:
 //   double g_QuaternionAxisAngleNegativeOne = -1
 //   double g_QuaternionAxisAngleDoubler = 2

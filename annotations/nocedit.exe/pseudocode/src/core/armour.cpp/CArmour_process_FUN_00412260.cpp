@@ -26,24 +26,19 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr)
   CDeformableModelInstance *this_ptr_00;
   float fVar1;
   float fVar2;
-  CCharacter *pCVar3;
-  int iVar4;
+  int iVar3;
   float in_stack_00000008;
   undefined4 uStack00000010;
   undefined4 uStack00000014;
   undefined4 uStack00000018;
   
-  iVar4 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
-  if (iVar4 != 0) {
-    pCVar3 = &(this_ptr->base_enemy).base_character;
-    (pCVar3->model).field17_0x2254[8] = '\0';
-    (pCVar3->model).field17_0x2254[9] = '\0';
-    (pCVar3->model).field17_0x2254[10] = '\0';
-    (pCVar3->model).field17_0x2254[0xb] = '\0';
-    *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4) =
-         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
-    *(undefined4 *)(this_ptr->base_enemy).base_character.model.field17_0x2254 =
-         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4);
+  iVar3 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
+  if (iVar3 != 0) {
+    (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z = 0.0;
+    (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y =
+         (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
+    (this_ptr->base_enemy).base_character.model.accumulated_root_motion.x =
+         (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y;
     fVar1 = (this_ptr->base_enemy).speed;
     this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
     while (0.0 < in_stack_00000008 * fVar1) {
@@ -51,29 +46,25 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr)
     }
     fVar1 = (this_ptr->base_enemy).speed;
     fVar2 = (float)DOUBLE_00614dd8;
-    *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x28) =
-         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
+    *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x28) =
+         (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
     *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
          in_stack_00000008 * fVar2 * fVar1;
     core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr_00->motion_controller);
-    iVar4 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
-    if (iVar4 != 0) {
-      pCVar3 = &(this_ptr->base_enemy).base_character;
-      (pCVar3->model).field17_0x2254[8] = '\0';
-      (pCVar3->model).field17_0x2254[9] = '\0';
-      (pCVar3->model).field17_0x2254[10] = '\0';
-      (pCVar3->model).field17_0x2254[0xb] = '\0';
-      *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4) =
-           *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
-      *(undefined4 *)(this_ptr->base_enemy).base_character.model.field17_0x2254 =
-           *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4);
+    iVar3 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
+    if (iVar3 != 0) {
+      (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z = 0.0;
+      (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y =
+           (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
+      (this_ptr->base_enemy).base_character.model.accumulated_root_motion.x =
+           (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y;
     }
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
               (&(this_ptr->base_enemy).base_character.model);
     core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
-    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->field1_0xbeb4 + 8);
-    if (iVar4 != 0) {
+    if (iVar3 != 0) {
       (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
                 ((CDemonActor *)this_ptr,"armour.wav");
       uStack00000010 = 0;

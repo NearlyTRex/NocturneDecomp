@@ -52,9 +52,9 @@
 //   core_hero.cpp_CHero_FUN_004f2540
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -72,8 +72,8 @@ void core_gabriela_cpp_FUN_004d2c40(void)
   
   core_hero_cpp_CHero_FUN_004f2540(in_stack_00000004);
   this_ptr = &(in_stack_00000004->base_character).model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(this_ptr);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr,"gabriela.dfm");
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr);
   core_cloth_cpp_CCloth_load_FUN_00438cf0
             ((CCloth *)&in_stack_00000004[1].base_character.base_actor.orient_matrix.m[0].y,
              "gabcoat.cth");
@@ -154,11 +154,11 @@ void core_gabriela_cpp_FUN_004d2c40(void)
 //   XREF to: 0062ace2 (DATA)
 // 004d2c55: LEA EDI,[ESI + 0x158]
 // 004d2c5b: PUSH EDI
-// 004d2c5c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 004d2c5c: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 004d2c61: ADD ESP,0x8
 // 004d2c64: PUSH EDI
-// 004d2c65: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 004d2c65: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 004d2c6a: ADD ESP,0x4
 // 004d2c6d: PUSH 0x62acef

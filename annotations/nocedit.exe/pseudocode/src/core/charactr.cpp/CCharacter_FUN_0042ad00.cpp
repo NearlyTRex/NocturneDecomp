@@ -14,9 +14,9 @@
 //   undefined4 DAT_00823c58
 //   CDemonRenderer g_CDemonRendererInstance
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   crt_math.c_round_FUN_005fe6b0
 //   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 
@@ -50,12 +50,13 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,&DAT_0066e784);
   this_ptr_00 = &this_ptr->model;
   if (*(int *)(this_ptr->cloth_data + 0x8d40) != 0) {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150(this_ptr_00);
+    core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
+              (this_ptr_00,-1,0xc9,0,1);
     return;
   }
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
-  iVar1 = (this_ptr->model).field13_0x2230;
+  iVar1 = (this_ptr->model).cached_skinned_lod_index;
   iVar7 = 0;
   if (0 < pCVar5->bone_count) {
     iVar9 = 0;
@@ -126,7 +127,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
     dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(iVar9,g_CDemonRendererPtr));
     *(int *)(*SUB84(dVar14,0) + extraout_ECX_00 + 0x2c) = (int)ROUND(fVar13);
   }
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0150(&this_ptr->model);
+  core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
+            (&this_ptr->model,-1,0x163,0,1);
   return;
 }
 
@@ -342,7 +344,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
 // 0042aeb8: PUSH 0xc9
 // 0042aebd: PUSH -0x1
 // 0042aebf: PUSH EDI
-// 0042aec0: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+// 0042aec0: CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   XREF to: 005a0150 (UNCONDITIONAL_CALL)
 // 0042aec5: ADD ESP,0x14
 // 0042aec8: MOV ESP,EBP
@@ -407,7 +409,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
 // 0042af44: PUSH -0x1
 // 0042af46: ADD EAX,0x158
 // 0042af4b: PUSH EAX
-// 0042af4c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150
+// 0042af4c: CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   XREF to: 005a0150 (UNCONDITIONAL_CALL)
 // 0042af51: ADD ESP,0x14
 // 0042af54: MOV ESP,EBP

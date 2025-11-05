@@ -1,39 +1,42 @@
-// Name: core_skeleton.cpp_CDeformableModelInstance_FUN_005a0c90
+// Name: core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90
 // Address: 005a0c90
 // Address Range: [[005a0c90, 005a0d02]]
 // Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_FUN_005a0c90(CDeformableModelInstance * this_ptr)
+// Signature: void core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90(CDeformableModelInstance * this_ptr, float start_frame, float end_frame, float scale_factor)
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0d10
+//   core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10
 
 #include "nocturne.h"
 
 void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_FUN_005a0c90(CDeformableModelInstance *this_ptr)
+core_skeleton_cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90
+          (CDeformableModelInstance *this_ptr,float start_frame,float end_frame,float scale_factor)
 
 {
   float fVar1;
   float fVar2;
-  float *pfVar3;
-  int in_stack_00000008;
+  CVector3f *pCVar3;
+  BADSPACEBASE *in_ESP;
   float in_stack_00000014;
+  CVector3f local_c;
   
-  pfVar3 = core_skeleton_cpp_CDeformableModelInstance_FUN_005a0d10(this_ptr);
-  fVar1 = pfVar3[1];
-  fVar2 = pfVar3[2];
-  *(float *)(in_stack_00000008 + 0x2254) =
-       *(float *)(in_stack_00000008 + 0x2254) + *pfVar3 * in_stack_00000014;
-  *(float *)(in_stack_00000008 + 0x2258) =
-       *(float *)(in_stack_00000008 + 0x2258) + fVar1 * in_stack_00000014;
-  *(float *)(in_stack_00000008 + 0x225c) =
-       *(float *)(in_stack_00000008 + 0x225c) + in_stack_00000014 * fVar2;
+  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10
+                     (this_ptr,&local_c,start_frame,end_frame);
+  fVar1 = pCVar3->y;
+  fVar2 = pCVar3->z;
+  *(float *)((int)start_frame + 0x2254) =
+       *(float *)((int)start_frame + 0x2254) + pCVar3->x * in_stack_00000014;
+  *(float *)((int)start_frame + 0x2258) =
+       *(float *)((int)start_frame + 0x2258) + fVar1 * in_stack_00000014;
+  *(float *)((int)start_frame + 0x225c) =
+       *(float *)((int)start_frame + 0x225c) + in_stack_00000014 * fVar2;
   return;
 }
 
 
 // Assembly code:
 // 005a0c90: SUB ESP,0x18
-//   Label: core_skeleton.cpp_CDeformableModelInstance_FUN_005a0c90
+//   Label: core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90
 // 005a0c93: PUSH dword ptr [ESP + 0x24]
 //   XREF to: Stack[0xc] (READ)
 // 005a0c97: LEA EAX,[ESP + 0x10]
@@ -44,7 +47,7 @@ core_skeleton_cpp_CDeformableModelInstance_FUN_005a0c90(CDeformableModelInstance
 // 005a0ca0: MOV EDX,dword ptr [ESP + 0x28]
 //   XREF to: Stack[0x4] (READ)
 // 005a0ca4: PUSH EDX
-// 005a0ca5: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0d10
+// 005a0ca5: CALL core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10
 //   XREF to: 005a0d10 (UNCONDITIONAL_CALL)
 // 005a0caa: ADD ESP,0x10
 // 005a0cad: FLD float ptr [ESP + 0x28]

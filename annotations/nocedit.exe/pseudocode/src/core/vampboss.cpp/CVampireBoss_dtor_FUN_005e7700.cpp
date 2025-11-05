@@ -42,7 +42,7 @@ core_vampboss_cpp_CVampireBoss_dtor_FUN_005e7700
   iVar1 = core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
                      ((CDeformableModelInstance *)(iVar1 + -0x22b4),0,d2,d3,d4);
-  iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(pCVar2[-5].field18_0x2260 + 0x34));
+  iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(pCVar2[-5].model_name + 0x34));
   iVar1 = core_backgnd_cpp_freeFires_FUN_00412700((SFire **)(iVar1 + -0x4b0));
   iVar1 = core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0x20c));
   core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0xb4));

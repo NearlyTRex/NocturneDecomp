@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042af60 (0042af60) at 0042b0a5 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052c8ab [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0150 (005a0150) at 005a018b [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150 (005a0150) at 005a018b [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_skeleton_cpp_0064ee38
 //   TerminatedCString s_CDeformableModelInstance_0064ee4d
@@ -31,7 +31,7 @@ core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340
   int *lod_index;
   int *part_visibility_flags;
   
-  if (this_ptr->field13_0x2230 < 0) {
+  if (this_ptr->cached_skinned_lod_index < 0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0xd23;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModelInstance::renderPolygons called but LOD is not set!");

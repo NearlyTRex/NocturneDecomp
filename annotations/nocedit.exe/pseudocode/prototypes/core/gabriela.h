@@ -17,7 +17,7 @@ undefined FUN_004d2a30();
 
 // Original: core_gabriela.cpp_FUN_004d2a80
 // Address: 004d2a80
-undefined FUN_004d2a80();
+float FUN_004d2a80(int current_bone_index, int target_bone_index, float blend_weight, int hierarchy_distance, CDeformableModelInstance * instance);
 
 // Original: core_gabriela.cpp_FUN_004d2ae0
 // Address: 004d2ae0

@@ -17,8 +17,8 @@
 //   core_morph.cpp_FUN_0052b430
 //   core_morph.cpp_FUN_0052b580
 //   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
@@ -44,9 +44,9 @@ void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e56c0(CVampireBoss *this_ptr)
   
   core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base_enemy);
   this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
   this_ptr_01 = (CDeformableModelInstance *)(this_ptr->field1_0xbeb4 + 8);
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr_01);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_01);
   core_cloth_cpp_CCloth_load_FUN_00438cf0
             ((CCloth *)(this_ptr->field1_0xbeb4 + 0x22bc),"batwing.cth");
   core_cloth_cpp_FUN_00439710();
@@ -133,12 +133,12 @@ void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e56c0(CVampireBoss *this_ptr)
 // 005e56d1: ADD ESP,0x4
 // 005e56d4: LEA EDI,[EBX + 0x158]
 // 005e56da: PUSH EDI
-// 005e56db: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 005e56db: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 005e56e0: ADD ESP,0x4
 // 005e56e3: LEA EBP,[EBX + 0xbebc]
 // 005e56e9: PUSH EBP
-// 005e56ea: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 005e56ea: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 005e56ef: ADD ESP,0x4
 // 005e56f2: PUSH 0x656adc

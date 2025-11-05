@@ -34,7 +34,7 @@
 //   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
 //   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
 //   core_hero.cpp_FUN_004f2340
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -162,8 +162,9 @@ CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005bb120(CStranger *thi
   *(undefined4 *)(pCVar5[-1].model_name + 0x18) = uVar1;
   *(undefined4 *)(pCVar5[-1].model_name + 0x40) = uVar2;
   *(undefined4 *)(pCVar5[-1].model_name + 0x38) = uVar3;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            ((CDeformableModelInstance *)(pCVar5[-0x156].part_visibility_flags + 10));
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            ((CDeformableModelInstance *)(pCVar5[-0x156].part_visibility_flags + 10),
+             "stranger.dfm");
   pCVar5[-0xffffffff0000013b].animation_state[0x6c] = '\0';
   pCVar5[-0xffffffff0000013b].animation_state[0x6d] = '\0';
   pCVar5[-0xffffffff0000013b].animation_state[0x6e] = '\0';
@@ -313,7 +314,7 @@ CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005bb120(CStranger *thi
 // 005bb278: FSTP float ptr [EBX + 0x1fbec]
 // 005bb27e: FSTP float ptr [EBX + 0x1fc14]
 // 005bb284: FSTP float ptr [EBX + 0x1fc0c]
-// 005bb28a: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005bb28a: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005bb28f: MOV dword ptr [EBX + 0x2a8c],0x0
 // 005bb299: MOV dword ptr [EBX + 0x1fc2c],0x0

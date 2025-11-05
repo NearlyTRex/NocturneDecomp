@@ -26,7 +26,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042de50(CCharacter *this_ptr)
   
   iVar1 = (*(this_ptr->base_actor).vtable[1].hasCollision)(&this_ptr->base_actor,in_stack_fffffff4);
   if (iVar1 < 2) {
-    if ((this_ptr->model).field18_0x2260[0] != '\0') {
+    if ((this_ptr->model).model_name[0] != '\0') {
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                               (&(this_ptr->model).motion_controller);
       iStack0000000c = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);

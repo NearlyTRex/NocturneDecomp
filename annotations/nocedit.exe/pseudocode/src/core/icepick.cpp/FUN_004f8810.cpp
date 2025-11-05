@@ -15,8 +15,8 @@
 // Function calls:
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
+//   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
 //   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20
 //   core_xform.cpp_quaternionFromAngleX_FUN_005f79b0
 
 #include "nocturne.h"
@@ -29,18 +29,19 @@ void core_icepick_cpp_FUN_004f8810(void)
 {
   float fVar1;
   CMotionList *this_ptr;
-  int target_motion_index;
+  int iVar2;
   BADSPACEBASE *in_ESP;
-  byte bVar2;
+  byte bVar3;
   int in_stack_00000004;
   float in_stack_00000008;
   float in_stack_00000014;
-  undefined4 auStackY_17fc [1517];
+  float afStackY_17fc [1517];
   float in_stack_ffffffd4;
-  undefined4 local_20;
-  undefined4 uStack_10;
+  code *blend_callback;
+  float local_20;
+  float fStack_10;
   
-  bVar2 = 0;
+  bVar3 = 0;
   if (*(int *)(in_stack_00000004 + 0x1fbf4) != 0) {
     if (*(int *)(in_stack_00000004 + 0x1fbd4) == 0) {
       fVar1 = *(float *)(in_stack_00000004 + 0x1fbfc) - in_stack_00000008 * (float)DOUBLE_0062f733;
@@ -58,9 +59,9 @@ void core_icepick_cpp_FUN_004f8810(void)
     }
     this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                          ((CMotionController *)(in_stack_00000004 + 0x158));
-    target_motion_index = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr);
+    iVar2 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-              ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),target_motion_index,0.0,
+              ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),iVar2,0.0,
                *(float *)(in_stack_00000004 + 0x1fbfc),DAT_02db89b0,
                core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
     fVar1 = *(float *)(in_stack_00000004 + 0xbe54) * (float)DOUBLE_0062f73b * (float)DOUBLE_0062f733
@@ -74,17 +75,22 @@ void core_icepick_cpp_FUN_004f8810(void)
     }
     core_xform_cpp_quaternionFromAngleX_FUN_005f79b0
               (*(CQuaternion4f **)(in_stack_00000004 + 0x1fc00),in_stack_ffffffd4);
-    uStack_10 = local_20;
-    *(undefined4 *)(&stack0xfffffff4 + (uint)bVar2 * -8) =
-         *(undefined4 *)(&stack0xffffffe4 + (uint)bVar2 * -8);
-    *(undefined4 *)(&stack0xfffffff8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-         *(undefined4 *)(&stack0xffffffe8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+    blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
+    fStack_10 = local_20;
+    *(undefined4 *)(&stack0xfffffff4 + (uint)bVar3 * -8) =
+         *(undefined4 *)(&stack0xffffffe4 + (uint)bVar3 * -8);
+    iVar2 = DAT_02db89b0;
+    *(undefined4 *)(&stack0xfffffff8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
+         *(undefined4 *)(&stack0xffffffe8 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
     *(undefined4 *)
-     ((int)(&stack0xfffffff8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4) =
+     ((int)(&stack0xfffffff8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) + ((uint)bVar3 * -2 + 1) * 4) =
          *(undefined4 *)
-          ((int)(&stack0xffffffe8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) +
-          ((uint)bVar2 * -2 + 1) * 4);
-    core_skeleton_cpp_CDeformableModelInstance_FUN_0059ff20();
+          ((int)(&stack0xffffffe8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) +
+          ((uint)bVar3 * -2 + 1) * 4);
+    core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
+              ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),
+               (CQuaternion4f *)&stack0xfffffff0,*(float *)(in_stack_00000004 + 0x1fbfc),iVar2,
+               blend_callback);
   }
   return;
 }
@@ -195,7 +201,7 @@ void core_icepick_cpp_FUN_004f8810(void)
 // 004f891e: PUSH EAX
 // 004f891f: ADD EBX,0x158
 // 004f8925: PUSH EBX
-// 004f8926: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0059ff20
+// 004f8926: CALL core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
 //   XREF to: 0059ff20 (UNCONDITIONAL_CALL)
 // 004f892b: ADD ESP,0x14
 // 004f892e: POP ESI

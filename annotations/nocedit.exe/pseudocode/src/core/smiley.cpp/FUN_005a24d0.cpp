@@ -49,9 +49,9 @@
 // Function calls:
 //   core_enemy.cpp_CEnemy_FUN_004a9650
 //   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 //   crt_string.c_stricmp_FUN_005fe7f0
 
@@ -72,7 +72,7 @@ void core_smiley_cpp_FUN_005a24d0(void)
   
   core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
   this_ptr = &(in_stack_00000004->base_character).model;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0450(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   DAT_03f48fa0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 Head");
@@ -146,14 +146,12 @@ void core_smiley_cpp_FUN_005a24d0(void)
   in_stack_00000004[1].base_character.base_actor.orient_matrix.m[0].y = 0.0;
   in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].x = 1.4013e-45;
   iVar1 = crt_string_c_stricmp_FUN_005fe7f0
-                    ((in_stack_00000004->base_character).model.field18_0x2260,"smiley2.dfm"
-                    );
+                    ((in_stack_00000004->base_character).model.model_name,"smiley2.dfm");
   if (iVar1 == 0) {
     in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].x = 2.8026e-45;
   }
   iVar1 = crt_string_c_stricmp_FUN_005fe7f0
-                    ((in_stack_00000004->base_character).model.field18_0x2260,"smiley3.dfm"
-                    );
+                    ((in_stack_00000004->base_character).model.model_name,"smiley3.dfm");
   if (iVar1 != 0) {
     return;
   }
@@ -181,7 +179,7 @@ void core_smiley_cpp_FUN_005a24d0(void)
 // 005a24df: ADD ESP,0x4
 // 005a24e2: LEA EDI,[EBX + 0x158]
 // 005a24e8: PUSH EDI
-// 005a24e9: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0450
+// 005a24e9: CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   XREF to: 005a0450 (UNCONDITIONAL_CALL)
 // 005a24ee: ADD ESP,0x4
 // 005a24f1: PUSH EDI

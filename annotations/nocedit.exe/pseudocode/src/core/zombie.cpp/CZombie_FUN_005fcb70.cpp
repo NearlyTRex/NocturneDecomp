@@ -14,7 +14,7 @@
 // Function calls:
 //   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_enemy.cpp_CEnemy_FUN_004aa250
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   crt_string.c_stricmp_FUN_005fe7f0
 
 #include "nocturne.h"
@@ -31,24 +31,24 @@ void core_zombie_cpp_CZombie_FUN_005fcb70(void)
   core_enemy_cpp_CEnemy_FUN_004aa250(in_stack_00000004);
   this_ptr = &(in_stack_00000004->base_character).model;
   iVar1 = crt_string_c_stricmp_FUN_005fe7f0
-                    ((in_stack_00000004->base_character).model.field18_0x2260,"jeff.dfm");
+                    ((in_stack_00000004->base_character).model.model_name,"jeff.dfm");
   if (iVar1 != 0) {
     iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,4);
     switch(iVar1) {
     case 0:
-      core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(this_ptr);
+      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr,"zombie1.dfm");
       return;
     case 1:
-      core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(this_ptr);
+      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr,"zombie2.dfm");
       return;
     case 2:
-      core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(this_ptr);
+      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr,"zombie3.dfm");
       return;
     case 3:
-      core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(this_ptr);
+      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr,"fletch.dfm");
       return;
     case 4:
-      core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840(this_ptr);
+      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr,"skinned.dfm");
       return;
     }
   }
@@ -88,7 +88,7 @@ void core_zombie_cpp_CZombie_FUN_005fcb70(void)
 //   Label: caseD_0
 //   XREF to: 00658ab0 (DATA)
 // 005fcba8: PUSH EBX
-// 005fcba9: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005fcba9: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005fcbae: ADD ESP,0x8
 // 005fcbb1: POP EBP
@@ -99,7 +99,7 @@ void core_zombie_cpp_CZombie_FUN_005fcb70(void)
 //   Label: caseD_1
 //   XREF to: 00658abc (DATA)
 // 005fcbba: PUSH EBX
-// 005fcbbb: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005fcbbb: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005fcbc0: ADD ESP,0x8
 // 005fcbc3: POP EBP
@@ -110,7 +110,7 @@ void core_zombie_cpp_CZombie_FUN_005fcb70(void)
 //   Label: caseD_2
 //   XREF to: 00658ac8 (DATA)
 // 005fcbcc: PUSH EBX
-// 005fcbcd: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005fcbcd: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005fcbd2: ADD ESP,0x8
 // 005fcbd5: POP EBP
@@ -121,7 +121,7 @@ void core_zombie_cpp_CZombie_FUN_005fcb70(void)
 //   Label: caseD_3
 //   XREF to: 00658ad4 (DATA)
 // 005fcbde: PUSH EBX
-// 005fcbdf: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005fcbdf: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005fcbe4: ADD ESP,0x8
 // 005fcbe7: POP EBP
@@ -132,7 +132,7 @@ void core_zombie_cpp_CZombie_FUN_005fcb70(void)
 //   Label: caseD_4
 //   XREF to: 00658adf (DATA)
 // 005fcbf0: PUSH EBX
-// 005fcbf1: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005fcbf1: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005fcbf6: ADD ESP,0x8
 // 005fcbf9: POP EBP

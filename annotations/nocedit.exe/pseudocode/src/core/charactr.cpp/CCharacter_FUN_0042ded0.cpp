@@ -18,7 +18,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ded0(CCharacter *this_ptr)
 
 {
   COrientation *pCVar1;
-  char *pcVar2;
+  CVector3f *pCVar2;
   CVector3f *pCVar3;
   BADSPACEBASE *in_ESP;
   float *in_stack_00000008;
@@ -26,8 +26,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ded0(CCharacter *this_ptr)
   CVector3f local_14;
   
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-            (&this_ptr->base_actor,(CVector3f *)local_20,
-             (CVector3f *)(this_ptr->model).field17_0x2254);
+            (&this_ptr->base_actor,(CVector3f *)local_20,&(this_ptr->model).accumulated_root_motion)
+  ;
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
             (&this_ptr->base_actor,(CVector3f *)&local_14.y,
              (CVector3f *)(this_ptr->field2_0x240c + 0x10));
@@ -38,13 +38,13 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ded0(CCharacter *this_ptr)
     (this_ptr->base_actor).orient.heading = in_stack_00000008[2];
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base_actor);
-  pCVar3 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+  pCVar2 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                      (&this_ptr->base_actor,(CVector3f *)&stack0xffffffd4,&local_14);
-  pcVar2 = (this_ptr->model).field17_0x2254;
-  if ((CVector3f *)pcVar2 != pCVar3) {
-    *(float *)pcVar2 = pCVar3->x;
-    *(float *)((this_ptr->model).field17_0x2254 + 4) = pCVar3->y;
-    *(float *)((this_ptr->model).field17_0x2254 + 8) = pCVar3->z;
+  pCVar3 = &(this_ptr->model).accumulated_root_motion;
+  if (pCVar3 != pCVar2) {
+    pCVar3->x = pCVar2->x;
+    (this_ptr->model).accumulated_root_motion.y = pCVar2->y;
+    (this_ptr->model).accumulated_root_motion.z = pCVar2->z;
   }
   pCVar3 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                      (&this_ptr->base_actor,(CVector3f *)(local_20 + 4),

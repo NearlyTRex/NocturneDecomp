@@ -66,35 +66,30 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   CDemonActor_vtable *pCVar5;
   float fVar6;
   float fVar7;
-  CCharacter *pCVar8;
-  CEnemy *pCVar9;
-  CDemonMission *pCVar10;
-  int iVar11;
+  CEnemy *pCVar8;
+  CDemonMission *pCVar9;
+  int iVar10;
   CHotDemon *this_ptr_00;
   int extraout_EAX;
   int extraout_EAX_00;
-  float fVar12;
-  undefined4 uVar13;
-  COrientation *pCVar14;
+  float fVar11;
+  undefined4 uVar12;
+  COrientation *pCVar13;
+  char *pcVar14;
   char *pcVar15;
-  char *pcVar16;
   float in_stack_00000008;
   
-  iVar11 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
-  if (iVar11 == 0) {
+  iVar10 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
+  if (iVar10 == 0) {
     return;
   }
-  pCVar8 = &(this_ptr->base_enemy).base_character;
-  (pCVar8->model).field17_0x2254[8] = '\0';
-  (pCVar8->model).field17_0x2254[9] = '\0';
-  (pCVar8->model).field17_0x2254[10] = '\0';
-  (pCVar8->model).field17_0x2254[0xb] = '\0';
-  *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4) =
-       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
-  *(undefined4 *)(this_ptr->base_enemy).base_character.model.field17_0x2254 =
-       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4);
-  fVar12 = (this_ptr->base_enemy).speed;
-  while (0.0 < in_stack_00000008 * fVar12) {
+  (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z = 0.0;
+  (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y =
+       (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
+  (this_ptr->base_enemy).base_character.model.accumulated_root_motion.x =
+       (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y;
+  fVar11 = (this_ptr->base_enemy).speed;
+  while (0.0 < in_stack_00000008 * fVar11) {
     core_motion_cpp_CMotionController_advance_FUN_0052d610
               (&(this_ptr->base_enemy).base_character.model.motion_controller);
     core_charactr_cpp_CCharacter_FUN_0042ec40((CCharacter *)this_ptr);
@@ -107,27 +102,27 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
        *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x2264);
   *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x225c) =
        *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x2260);
-  fVar12 = (this_ptr->base_enemy).speed;
-  while (0.0 < in_stack_00000008 * fVar12) {
+  fVar11 = (this_ptr->base_enemy).speed;
+  while (0.0 < in_stack_00000008 * fVar11) {
     core_motion_cpp_CMotionController_advance_FUN_0052d610
               ((CMotionController *)(this_ptr->field1_0xbeb4 + 8));
   }
-  fVar12 = (this_ptr->base_enemy).speed;
+  fVar11 = (this_ptr->base_enemy).speed;
   fVar6 = (float)DOUBLE_006541a9;
   pCVar2 = &(this_ptr->base_enemy).base_character.model;
-  *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x28) =
-       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
+  *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x28) =
+       (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
   *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
-       in_stack_00000008 * fVar6 * fVar12;
-  iVar11 = core_motion_cpp_CMotionController_FUN_0052dab0(&pCVar2->motion_controller);
-  uVar4 = *(uint *)(iVar11 + 0x24);
-  iVar11 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
-  if (iVar11 == 0) {
+       in_stack_00000008 * fVar6 * fVar11;
+  iVar10 = core_motion_cpp_CMotionController_FUN_0052dab0(&pCVar2->motion_controller);
+  uVar4 = *(uint *)(iVar10 + 0x24);
+  iVar10 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
+  if (iVar10 == 0) {
     if (uVar4 == 0) {
       (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].getAllowedMeleeAttackTypes)
                 ((CDemonActor *)this_ptr);
-      iVar11 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
-      if (iVar11 == 0) {
+      iVar10 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
+      if (iVar10 == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base_enemy);
         if (extraout_EAX != 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -135,13 +130,13 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
         }
       }
       else {
-        fVar12 = (this_ptr->base_enemy).base_character.base_actor.location.position.x -
-                 *(float *)(iVar11 + 0x20);
+        fVar11 = (this_ptr->base_enemy).base_character.base_actor.location.position.x -
+                 *(float *)(iVar10 + 0x20);
         fVar6 = (this_ptr->base_enemy).base_character.base_actor.location.position.y -
-                *(float *)(iVar11 + 0x24);
+                *(float *)(iVar10 + 0x24);
         fVar7 = (this_ptr->base_enemy).base_character.base_actor.location.position.z -
-                *(float *)(iVar11 + 0x28);
-        if (SQRT(fVar7 * fVar7 + fVar12 * fVar12 + fVar6 * fVar6) <
+                *(float *)(iVar10 + 0x28);
+        if (SQRT(fVar7 * fVar7 + fVar11 * fVar11 + fVar6 * fVar6) <
             (this_ptr->base_enemy).guard_distance) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar2->motion_controller,1,1);
@@ -164,27 +159,23 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
         }
       }
       else {
-        pCVar8 = &(this_ptr->base_enemy).base_character;
-        (pCVar8->model).field17_0x2254[8] = '\0';
-        (pCVar8->model).field17_0x2254[9] = '\0';
-        (pCVar8->model).field17_0x2254[10] = '\0';
-        (pCVar8->model).field17_0x2254[0xb] = '\0';
-        *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4) =
-             *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
-        *(undefined4 *)(this_ptr->base_enemy).base_character.model.field17_0x2254 =
-             *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4);
+        (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z = 0.0;
+        (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y =
+             (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
+        (this_ptr->base_enemy).base_character.model.accumulated_root_motion.x =
+             (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y;
         (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154) + 0xbc))()
         ;
-        iVar11 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0((CCharacter *)this_ptr);
-        if (((-1 < iVar11) &&
-            (iVar11 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4),
-            fVar12 = *(float *)(iVar11 + 0x20) -
+        iVar10 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0((CCharacter *)this_ptr);
+        if (((-1 < iVar10) &&
+            (iVar10 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4),
+            fVar11 = *(float *)(iVar10 + 0x20) -
                      (this_ptr->base_enemy).base_character.base_actor.location.position.x,
-            fVar6 = *(float *)(iVar11 + 0x24) -
+            fVar6 = *(float *)(iVar10 + 0x24) -
                     (this_ptr->base_enemy).base_character.base_actor.location.position.y,
-            fVar7 = *(float *)(iVar11 + 0x28) -
+            fVar7 = *(float *)(iVar10 + 0x28) -
                     (this_ptr->base_enemy).base_character.base_actor.location.position.z,
-            SQRT(fVar7 * fVar7 + fVar12 * fVar12 + fVar6 * fVar6) < _DAT_00663934)) &&
+            SQRT(fVar7 * fVar7 + fVar11 * fVar11 + fVar6 * fVar6) < _DAT_00663934)) &&
            (*(int *)(this_ptr->field1_0xbeb4 + 0x2480) == 0)) {
           this_ptr->field1_0xbeb4[0x2480] = '\x01';
           this_ptr->field1_0xbeb4[0x2481] = '\0';
@@ -210,14 +201,14 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   if (uVar4 < 2) {
     if (uVar4 == 1) {
 LAB_005c6fa5:
-      iVar11 = 1;
+      iVar10 = 1;
     }
     else {
 LAB_005c731a:
-      iVar11 = 0;
+      iVar10 = 0;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base_enemy).base_character.model.motion_controller,iVar11,1);
+              (&(this_ptr->base_enemy).base_character.model.motion_controller,iVar10,1);
   }
   else {
     if (uVar4 < 3) goto LAB_005c6fa5;
@@ -226,43 +217,35 @@ LAB_005c731a:
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
   }
-  pCVar8 = &(this_ptr->base_enemy).base_character;
-  (pCVar8->model).field17_0x2254[8] = '\0';
-  (pCVar8->model).field17_0x2254[9] = '\0';
-  (pCVar8->model).field17_0x2254[10] = '\0';
-  (pCVar8->model).field17_0x2254[0xb] = '\0';
-  *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4) =
-       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
-  *(undefined4 *)(this_ptr->base_enemy).base_character.model.field17_0x2254 =
-       *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4);
+  (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z = 0.0;
+  (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y =
+       (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
+  (this_ptr->base_enemy).base_character.model.accumulated_root_motion.x =
+       (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y;
 LAB_005c6fd0:
   if (0.0 < *(float *)(this_ptr->base_enemy).field6_0xbe38) {
     *(float *)(this_ptr->base_enemy).field6_0xbe38 =
          *(float *)(this_ptr->base_enemy).field6_0xbe38 - in_stack_00000008;
   }
-  iVar11 = core_charactr_cpp_CCharacter_FUN_004297e0((CCharacter *)this_ptr);
-  if (iVar11 != 0) {
+  iVar10 = core_charactr_cpp_CCharacter_FUN_004297e0((CCharacter *)this_ptr);
+  if (iVar10 != 0) {
     *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) =
          *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) -
          in_stack_00000008 * (float)DOUBLE_006541b1;
-    pCVar9 = &this_ptr->base_enemy;
-    (pCVar9->base_character).field2_0x240c[0x18] = '\0';
-    (pCVar9->base_character).field2_0x240c[0x19] = '\0';
-    (pCVar9->base_character).field2_0x240c[0x1a] = '\0';
-    (pCVar9->base_character).field2_0x240c[0x1b] = '\0';
+    pCVar8 = &this_ptr->base_enemy;
+    (pCVar8->base_character).field2_0x240c[0x18] = '\0';
+    (pCVar8->base_character).field2_0x240c[0x19] = '\0';
+    (pCVar8->base_character).field2_0x240c[0x1a] = '\0';
+    (pCVar8->base_character).field2_0x240c[0x1b] = '\0';
     *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x14) =
          *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x18);
     *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x10) =
          *(undefined4 *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x14);
-    pCVar8 = &(this_ptr->base_enemy).base_character;
-    (pCVar8->model).field17_0x2254[8] = '\0';
-    (pCVar8->model).field17_0x2254[9] = '\0';
-    (pCVar8->model).field17_0x2254[10] = '\0';
-    (pCVar8->model).field17_0x2254[0xb] = '\0';
-    *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4) =
-         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 8);
-    *(undefined4 *)(this_ptr->base_enemy).base_character.model.field17_0x2254 =
-         *(undefined4 *)((this_ptr->base_enemy).base_character.model.field17_0x2254 + 4);
+    (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z = 0.0;
+    (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y =
+         (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
+    (this_ptr->base_enemy).base_character.model.accumulated_root_motion.x =
+         (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y;
     core_charactr_cpp_CCharacter_FUN_00428f40((CCharacter *)this_ptr);
   }
   core_charactr_cpp_CCharacter_FUN_00429820((CCharacter *)this_ptr);
@@ -274,46 +257,46 @@ LAB_005c6fd0:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
             ((CDeformableModelInstance *)(this_ptr->field1_0xbeb4 + 8));
   if ((*(int *)(this_ptr->field1_0xbeb4 + 0x2480) != 0) &&
-     (fVar12 = *(float *)(this_ptr->field1_0xbeb4 + 0x2484) + in_stack_00000008,
-     *(float *)(this_ptr->field1_0xbeb4 + 0x2484) = fVar12, _DAT_00663938 < fVar12)) {
+     (fVar11 = *(float *)(this_ptr->field1_0xbeb4 + 0x2484) + in_stack_00000008,
+     *(float *)(this_ptr->field1_0xbeb4 + 0x2484) = fVar11, _DAT_00663938 < fVar11)) {
     this_ptr_00 = (CHotDemon *)
                   shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
                             (0xbef0,"..\\core\\succubus.cpp",0x16c);
     if (this_ptr_00 != (CHotDemon *)0x0) {
       this_ptr_00 = core_hotdemon_cpp_CHotDemon_ctor_FUN_004f6ca0(this_ptr_00);
     }
-    pCVar10 = g_CDemonMissionPtr;
+    pCVar9 = g_CDemonMissionPtr;
     if (this_ptr_00 != (CHotDemon *)0x0) {
       (this_ptr->base_enemy).base_character.base_actor.was_created = 2;
-      core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(pCVar10);
+      core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(pCVar9);
       (this_ptr_00->base_enemy).base_character.base_actor.location.position.x =
            (this_ptr->base_enemy).base_character.base_actor.location.position.x;
       (this_ptr_00->base_enemy).base_character.base_actor.location.position.y =
            (this_ptr->base_enemy).base_character.base_actor.location.position.y;
       (this_ptr_00->base_enemy).base_character.base_actor.location.position.z =
            (this_ptr->base_enemy).base_character.base_actor.location.position.z;
-      pCVar14 = &(this_ptr_00->base_enemy).base_character.base_actor.orient;
+      pCVar13 = &(this_ptr_00->base_enemy).base_character.base_actor.orient;
       (this_ptr_00->base_enemy).base_character.base_actor.location.area_id =
            (this_ptr->base_enemy).base_character.base_actor.location.area_id;
       pCVar1 = &(this_ptr->base_enemy).base_character.base_actor.orient;
-      if (pCVar14 != pCVar1) {
-        pCVar14->pitch = pCVar1->pitch;
+      if (pCVar13 != pCVar1) {
+        pCVar13->pitch = pCVar1->pitch;
         (this_ptr_00->base_enemy).base_character.base_actor.orient.bank =
              (this_ptr->base_enemy).base_character.base_actor.orient.bank;
         (this_ptr_00->base_enemy).base_character.base_actor.orient.heading =
              (this_ptr->base_enemy).base_character.base_actor.orient.heading;
       }
-      pcVar15 = "hdwing.cth";
-      pcVar16 = (this_ptr_00->base_enemy).base_character.cloth_data;
+      pcVar14 = "hdwing.cth";
+      pcVar15 = (this_ptr_00->base_enemy).base_character.cloth_data;
       (this_ptr_00->base_enemy).base_character.cloth_count = 1;
       do {
-        cVar3 = *pcVar15;
-        *pcVar16 = cVar3;
+        cVar3 = *pcVar14;
+        *pcVar15 = cVar3;
         if (cVar3 == '\0') break;
-        cVar3 = pcVar15[1];
+        cVar3 = pcVar14[1];
+        pcVar14 = pcVar14 + 2;
+        pcVar15[1] = cVar3;
         pcVar15 = pcVar15 + 2;
-        pcVar16[1] = cVar3;
-        pcVar16 = pcVar16 + 2;
       } while (cVar3 != '\0');
       (*((this_ptr_00->base_enemy).base_character.base_actor.vtable)->setup)
                 ((CDemonActor *)this_ptr_00);
@@ -324,31 +307,31 @@ LAB_005c6fd0:
            (this_ptr->base_enemy).base_character.base_actor.scale.x;
       (this_ptr_00->base_enemy).base_character.base_actor.scale.y =
            (this_ptr->base_enemy).base_character.base_actor.scale.y;
-      pCVar10 = g_CDemonMissionPtr;
+      pCVar9 = g_CDemonMissionPtr;
       (this_ptr_00->base_enemy).base_character.base_actor.scale.z =
            (this_ptr->base_enemy).base_character.base_actor.scale.z;
-      core_mission_cpp_CDemonMission_FUN_00523b70(pCVar10);
-      uVar13 = *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x2450);
+      core_mission_cpp_CDemonMission_FUN_00523b70(pCVar9);
+      uVar12 = *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x2450);
       *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x2450) =
            *(undefined4 *)((this_ptr_00->base_enemy).base_character.cloth_data + 400);
-      *(undefined4 *)((this_ptr_00->base_enemy).base_character.cloth_data + 400) = uVar13;
+      *(undefined4 *)((this_ptr_00->base_enemy).base_character.cloth_data + 400) = uVar12;
     }
   }
   if (*(int *)(this_ptr->base_enemy).base_character.field13_0x2620 != 0) {
     core_cloth_cpp_FUN_0043c2d0();
   }
-  iVar11 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+  iVar10 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                      (g_CEventListPtr,"succubusShutUp");
-  if (iVar11 == 0) {
-    iVar11 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
-    if ((iVar11 == 0) &&
-       (fVar12 = *(float *)(this_ptr->field1_0xbeb4 + 0x247c) - in_stack_00000008,
-       *(float *)(this_ptr->field1_0xbeb4 + 0x247c) = fVar12, fVar12 < 0.0)) {
-      fVar12 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
+  if (iVar10 == 0) {
+    iVar10 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    if ((iVar10 == 0) &&
+       (fVar11 = *(float *)(this_ptr->field1_0xbeb4 + 0x247c) - in_stack_00000008,
+       *(float *)(this_ptr->field1_0xbeb4 + 0x247c) = fVar11, fVar11 < 0.0)) {
+      fVar11 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
       pCVar5 = (this_ptr->base_enemy).base_character.base_actor.vtable;
-      *(float *)(this_ptr->field1_0xbeb4 + 0x247c) = fVar12;
-      uVar13 = (*pCVar5->playSound)((CDemonActor *)this_ptr,"succubus-horny-?.wav");
-      *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x2478) = uVar13;
+      *(float *)(this_ptr->field1_0xbeb4 + 0x247c) = fVar11;
+      uVar12 = (*pCVar5->playSound)((CDemonActor *)this_ptr,"succubus-horny-?.wav");
+      *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x2478) = uVar12;
       return;
     }
     return;

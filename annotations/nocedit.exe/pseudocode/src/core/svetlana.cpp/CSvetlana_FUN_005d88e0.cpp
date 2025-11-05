@@ -56,9 +56,9 @@
 //   core_cloth.cpp_FUN_00439710
 //   core_hero.cpp_CHero_FUN_004f2540
 //   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 
 #include "nocturne.h"
@@ -72,9 +72,16 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d88e0(CSvetlana *this_ptr)
   CSkeleton *this_ptr_01;
   CDeformableModel *this_ptr_02;
   int iVar1;
+  char *model_name;
   
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            (&(this_ptr->base_hero).base_character.model);
+  if (g_CGamePtr->nudity_flag == 0) {
+    model_name = "svetlanax.dfm";
+  }
+  else {
+    model_name = "svetlana.dfm";
+  }
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(this_ptr->base_hero).base_character.model,model_name);
   core_hero_cpp_CHero_FUN_004f2540(&this_ptr->base_hero);
   this_ptr_00 = &(this_ptr->base_hero).base_character.model;
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
@@ -162,7 +169,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d88e0(CSvetlana *this_ptr)
 //   XREF to: 00654914 (DATA)
 // 005d8907: PUSH EAX
 //   Label: LAB_005d8907
-// 005d8908: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 005d8908: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 005d890d: ADD ESP,0x8
 // 005d8910: PUSH ESI

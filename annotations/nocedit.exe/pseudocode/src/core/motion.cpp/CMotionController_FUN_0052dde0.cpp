@@ -26,14 +26,20 @@ void __cdecl core_motion_cpp_CMotionController_FUN_0052dde0(CMotionController *t
   int iVar1;
   int in_stack_00000008;
   float in_stack_0000000c;
+  undefined4 uStack00000014;
+  int in_stack_0000002c;
+  float in_stack_00000030;
   
   if (in_stack_0000000c == FLOAT_0063aafb) {
-    iVar1 = (*(code *)this_ptr->vtable->findPatchToFrame)();
-    in_stack_0000000c = (float)iVar1;
+    iVar1 = (*this_ptr->vtable->findPatchToFrame)
+                      (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,
+                       in_stack_00000008);
+    in_stack_00000030 = (float)iVar1;
   }
   this_ptr->in_transition = 0;
-  this_ptr->current_motion_index = in_stack_00000008;
-  this_ptr->current_frame_number = in_stack_0000000c;
+  this_ptr->current_motion_index = in_stack_0000002c;
+  this_ptr->current_frame_number = in_stack_00000030;
+  uStack00000014 = 0x52de12;
   core_motion_cpp_CMotionController_FUN_0052de40(this_ptr);
   return;
 }

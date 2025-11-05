@@ -18,7 +18,7 @@
 // Function calls:
 //   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -39,8 +39,8 @@ CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_00525200(CMobster *this_pt
   pCVar5 = (CMobster *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   (pCVar5->base_enemy).base_character.base_actor.vtable =
        &PTR_core_mobster_cpp_FUN_00525340_00661794;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_005a0840
-            (&(pCVar5->base_enemy).base_character.model);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+            (&(pCVar5->base_enemy).base_character.model,"mobster1.dfm");
   uVar3 = _DAT_00661780;
   pCVar2 = &pCVar5->base_enemy;
   (pCVar2->base_character).cloth_data[0x344] = -0x66;
@@ -136,7 +136,7 @@ CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_00525200(CMobster *this_pt
 // 0052521c: PUSH EAX
 // 0052521d: MOV dword ptr [EAX + -0x4],0x661794
 //   XREF to: 00661794 (DATA)
-// 00525224: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a0840
+// 00525224: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   XREF to: 005a0840 (UNCONDITIONAL_CALL)
 // 00525229: FLD float ptr [0x00661780]
 //   XREF to: 00661780 (READ)
