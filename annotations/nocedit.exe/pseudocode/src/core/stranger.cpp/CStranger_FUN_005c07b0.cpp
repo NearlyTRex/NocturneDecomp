@@ -5,7 +5,7 @@
 // Signature: undefined core_stranger.cpp_CStranger_FUN_005c07b0()
 // Cross-references:
 //   core_stranger.cpp_CStranger_FUN_005c06b0 (005c06b0) at 005c0706 [UNCONDITIONAL_CALL]
-//   core_stranger.cpp_FUN_005c5170 (005c5170) at 005c5196 [UNCONDITIONAL_CALL]
+//   core_stranger.cpp_CStranger_FUN_005c5170 (005c5170) at 005c5196 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_stranger_cpp_0065394c
 //   TerminatedCString s_Don_t_know_how_to_carry__00653961

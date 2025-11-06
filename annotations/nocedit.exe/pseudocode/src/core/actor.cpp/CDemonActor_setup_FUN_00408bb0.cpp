@@ -9,7 +9,7 @@
 //   core_barrier.cpp_CBarrier_FUN_00414210 (00414210) at 00414216 [UNCONDITIONAL_CALL]
 //   core_bat.cpp_CBat_FUN_004148a0 (004148a0) at 004148ce [UNCONDITIONAL_CALL]
 //   core_battery.cpp_FUN_00417ef0 (00417ef0) at 00417ef6 [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_FUN_00419810 (00419810) at 00419818 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_setup_FUN_00419810 (00419810) at 00419818 [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_FUN_00421830 (00421830) at 0042183a [UNCONDITIONAL_CALL]
 //   core_chain.cpp_FUN_0042fd20 (0042fd20) at 0042fd2c [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_00428140 (00428140) at 0042814c [UNCONDITIONAL_CALL]

@@ -47,9 +47,9 @@ undefined CHaystack::load();
 // Address: 004f1b60
 undefined FUN_004f1b60();
 
-// Original: core_haystack.cpp_FUN_004f1b70
+// Original: core_haystack.cpp_CHaystack_FUN_004f1b70
 // Address: 004f1b70
-undefined FUN_004f1b70();
+void CHaystack(CHaystack * this_ptr);
 
 // Original: core_haystack.cpp_FUN_004f1c90
 // Address: 004f1c90

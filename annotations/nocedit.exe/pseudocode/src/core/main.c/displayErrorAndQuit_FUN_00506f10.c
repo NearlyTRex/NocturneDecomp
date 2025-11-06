@@ -177,7 +177,7 @@
 //   core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430 (004d2430) at 004d24d8 [UNCONDITIONAL_CALL]
 //   core_frankgen.cpp_LoadModel_FUN_004d2190 (004d2190) at 004d2307 [UNCONDITIONAL_CALL]
 //   core_frankgen.cpp_PlaySounds_FUN_004d1a40 (004d1a40) at 004d1ea3 [UNCONDITIONAL_CALL]
-//   core_gabriela.cpp_CarryLights_FUN_004d7120 (004d7120) at 004d750e [UNCONDITIONAL_CALL]
+//   core_gabriela.cpp_CGabriella_FUN_004d7120 (004d7120) at 004d750e [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_PickupSomething_FUN_004d5870 (004d5870) at 004d5bfc [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_displayBitmap_FUN_004e2890 (004e2890) at 004e28ff [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 (004e12b0) at 004e16a9 [UNCONDITIONAL_CALL]

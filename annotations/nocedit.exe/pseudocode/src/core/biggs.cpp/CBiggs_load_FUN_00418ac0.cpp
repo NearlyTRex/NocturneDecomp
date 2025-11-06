@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_biggs.cpp_CBiggs_load_FUN_00418ac0()
 // Globals:
-//   undefined4 s_speed_00615b19
+//   TerminatedCString s_speed_00615b19
 //   TerminatedCString s_modelName_00615b1f
 //   TerminatedCString s_motion_state_00615b29
 //   TerminatedCString s_morphing_00615b36
@@ -29,7 +29,7 @@ void core_biggs_cpp_CBiggs_load_FUN_00418ac0(void)
   CEnemy *in_stack_00000004;
   
   core_enemy_cpp_CEnemy_serialize_FUN_004a9660(in_stack_00000004);
-  core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"@@speed" + 2);
+  core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"speed");
   model_ptr = &(in_stack_00000004->base_character).model;
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
   core_actor_cpp_serializeMotionState_FUN_0040b9f0

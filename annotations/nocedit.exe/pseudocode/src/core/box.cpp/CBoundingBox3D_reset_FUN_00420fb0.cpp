@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_box.cpp_CBoundingBox3D_reset_FUN_00420fb0(CBoundingBox3D * this_ptr)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a16c0 (005a16c0) at 005a16ee [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0 (005a16c0) at 005a16ee [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0 (0059d9e0) at 0059da11 [UNCONDITIONAL_CALL]
 //   core_spike.cpp_FUN_005b8950 (005b8950) at 005b89f7 [UNCONDITIONAL_CALL]
 //   core_turret.cpp_FUN_005e2d50 (005e2d50) at 005e2d90 [UNCONDITIONAL_CALL]

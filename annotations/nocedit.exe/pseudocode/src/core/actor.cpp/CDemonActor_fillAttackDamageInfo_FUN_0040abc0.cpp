@@ -2,9 +2,9 @@
 // Address: 0040abc0
 // Address Range: [[0040abc0, 0040ac1f]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0(CDemonActor * this_ptr, int attack_flags, SDamageInfo * out_damage_info, CDemonActor * victim)
+// Signature: void core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0(CDemonActor * this_ptr, int attack_flags, SDamageInfo * out_damage_info, CDemonActor * victim)
 // Cross-references:
-//   core_bodypart.cpp_FUN_0041b210 (0041b210) at 0041b229 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_0041b210 (0041b210) at 0041b229 [UNCONDITIONAL_CALL]
 //   core_melee.cpp_FUN_0050eaf0 (0050eaf0) at 0050eb09 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_actor_cpp_00613ab0
@@ -13,7 +13,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
+void __cdecl
 core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0
           (CDemonActor *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
 
@@ -24,12 +24,12 @@ core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0
             (this_ptr,"..\\core\\actor.cpp",0x6e4);
   out_damage_info->damage_amount = 5.0;
   out_damage_info->damage_type = 0x67;
-  out_damage_info->weapon_damage_modifier = 0x3e4ccccd;
+  out_damage_info->weapon_damage_modifier = 0.2;
   out_damage_info->damage_flags = 0x3ecccccd;
   out_damage_info->attacker = this_ptr;
   pCVar1 = (*this_ptr->vtable->getCarrier)(this_ptr);
   out_damage_info->wielder = pCVar1;
-  return (int)pCVar1;
+  return;
 }
 
 

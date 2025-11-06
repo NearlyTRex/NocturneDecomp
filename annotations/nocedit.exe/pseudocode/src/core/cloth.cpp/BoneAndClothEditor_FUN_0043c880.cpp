@@ -46,9 +46,9 @@
 //   core_cloth.cpp_FUN_0043bae0
 //   core_cloth.cpp_FUN_0043c6e0
 //   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
-//   core_motion.cpp_CMotionController_FUN_0052dab0
-//   core_motion.cpp_CMotionController_FUN_0052dde0
-//   core_motion.cpp_FUN_0052ddb0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+//   core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0
+//   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
 //   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
@@ -79,6 +79,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
   int iVar1;
   uchar uVar2;
   CSkeleton *pCVar3;
+  SMotion *motion_name;
   int iVar4;
   undefined3 extraout_var;
   undefined3 extraout_var_00;
@@ -165,8 +166,8 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
   _DAT_00838e4c = 0;
   core_stairs_cpp_FUN_005b9620();
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffaac);
-  core_motion_cpp_CMotionController_FUN_0052dde0
-            (&g_CDeformableModelInstanceInstance.motion_controller);
+  core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
+            (&g_CDeformableModelInstanceInstance.motion_controller,0,0.0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                      (&g_CDeformableModelInstanceInstance);
   g_CDemonSetPtr->lighting_quality_mode = 1;
@@ -179,15 +180,18 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
   local_24 = (CSkeleton *)local_4c;
   do {
     local_44 = g_CGamePtr->delta_time_float;
-    iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0
-                      (&g_CDeformableModelInstanceInstance.motion_controller);
+    motion_name = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                            (&g_CDeformableModelInstanceInstance.motion_controller);
     if (local_34 == 0) {
       local_54 = g_CDeformableModelInstanceInstance.motion_controller.current_frame_number;
-      for (fVar5 = local_40 * *(float *)(iVar4 + 0x20) +
+      for (fVar5 = local_40 * motion_name->fps +
                    g_CDeformableModelInstanceInstance.motion_controller.current_frame_number;
-          (float)*(int *)(iVar4 + 100) < fVar5; fVar5 = fVar5 - (float)*(int *)(iVar4 + 100)) {
+          (float)motion_name->frame_count < fVar5; fVar5 = fVar5 - (float)motion_name->frame_count)
+      {
       }
-      core_motion_cpp_FUN_0052ddb0();
+      core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
+                (&g_CDeformableModelInstanceInstance.motion_controller,motion_name->motion_name,
+                 fVar5);
     }
     if (local_24 == (CSkeleton *)0x0) {
       core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
@@ -312,8 +316,8 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
                         ((CPickList *)&stack0xfffffb44,"Select motion",
                          (int)in_stack_00000068,0);
       if (-1 < iVar4) {
-        core_motion_cpp_CMotionController_FUN_0052dde0
-                  (&g_CDeformableModelInstanceInstance.motion_controller);
+        core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
+                  (&g_CDeformableModelInstanceInstance.motion_controller,iVar4,0.0);
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                 ((CPickList *)&stack0xfffffb4c,0,(uint)in_stack_fffffb48,(uint)in_stack_fffffb4c,
@@ -542,7 +546,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
 // 0043c90d: PUSH EBX
 // 0043c90e: PUSH 0x838e58
 //   XREF to: 00838e58 (DATA)
-// 0043c913: CALL core_motion.cpp_CMotionController_FUN_0052dde0
+// 0043c913: CALL core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0
 //   XREF to: 0052dde0 (UNCONDITIONAL_CALL)
 // 0043c918: ADD ESP,0xc
 // 0043c91b: PUSH 0x838e58
@@ -585,7 +589,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
 //   XREF to: 00838e58 (DATA)
 // 0043c9a3: MOV dword ptr [ESP + 0x504],EAX
 // 0043c9aa: MOV dword ptr [ESP + 0x4],EAX
-// 0043c9ae: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0043c9ae: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0043c9b3: ADD ESP,0x4
 // 0043c9b6: MOV EDX,dword ptr [ESP + 0x50c]
@@ -887,7 +891,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
 // 0043d47a: PUSH ECX
 // 0043d47b: PUSH 0x838e58
 //   XREF to: 00838e58 (DATA)
-// 0043d480: CALL core_motion.cpp_FUN_0052ddb0
+// 0043d480: CALL core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
 //   XREF to: 0052ddb0 (UNCONDITIONAL_CALL)
 // 0043d485: ADD ESP,0xc
 // 0043d488: JMP 0x0043c9cc

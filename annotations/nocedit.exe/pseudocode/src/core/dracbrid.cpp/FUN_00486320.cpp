@@ -7,22 +7,22 @@
 //   undefined4 caseD_f
 //   void* switchdataD_004862f0 = 0048632f
 // Function calls:
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 
 #include "nocturne.h"
 
 undefined4 core_dracbrid_cpp_FUN_00486320(void)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
   int in_stack_00000004;
   
   if (*(int *)(in_stack_00000004 + 0x70) == 2) {
     return 2;
   }
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
-                    ((CMotionController *)(in_stack_00000004 + 0x158));
-  switch(*(undefined4 *)(iVar1 + 0x24)) {
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     ((CMotionController *)(in_stack_00000004 + 0x158));
+  switch(pSVar1->state_index) {
   case 7:
   case 10:
     return 1;
@@ -54,7 +54,7 @@ undefined4 core_dracbrid_cpp_FUN_00486320(void)
 // 0048633b: ADD EAX,0x158
 //   Label: LAB_0048633b
 // 00486340: PUSH EAX
-// 00486341: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 00486341: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 00486346: MOV EAX,dword ptr [EAX + 0x24]
 // 00486349: SUB EAX,0x7

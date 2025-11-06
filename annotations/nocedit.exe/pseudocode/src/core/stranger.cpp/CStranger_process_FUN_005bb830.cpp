@@ -12,7 +12,7 @@
 // Function calls:
 //   core_charactr.cpp_CCharacter_FUN_00429870
 //   core_game.cpp_CGame_slamDT_FUN_004e3080
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_stranger.cpp_CStranger_FUN_005bb960
 
 #include "nocturne.h"
@@ -22,15 +22,16 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_005bb830(CStranger *this_pt
 {
   bool bVar1;
   int iVar2;
+  SMotion *pSVar3;
   
   iVar2 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
   if (iVar2 == 0) {
     return;
   }
-  iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0
-                    (&(this_ptr->base_hero).base_character.model.motion_controller);
+  pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     (&(this_ptr->base_hero).base_character.model.motion_controller);
   bVar1 = false;
-  switch(*(undefined4 *)(iVar2 + 0x24)) {
+  switch(pSVar3->state_index) {
   case 7:
   case 8:
   case 9:
@@ -143,7 +144,7 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_005bb830(CStranger *this_pt
 // 005bb8cd: PUSH EAX
 // 005bb8ce: FSTP float ptr [ESP + 0xc]
 //   XREF to: Stack[-0x8] (WRITE)
-// 005bb8d2: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 005bb8d2: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 005bb8d7: MOV EAX,dword ptr [EAX + 0x24]
 // 005bb8da: XOR ESI,ESI

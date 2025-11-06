@@ -15,7 +15,7 @@
 //   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10 (00572a10) at 00572b48 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 (0058e690) at 0058e83a [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058f810 (0058f810) at 0059038e [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a16c0 (005a16c0) at 005a1758 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0 (005a16c0) at 005a1758 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0 (0059d9e0) at 0059dafe [UNCONDITIONAL_CALL]
 //   core_spike.cpp_FUN_005b8950 (005b8950) at 005b8a62 [UNCONDITIONAL_CALL]
 //   core_turret.cpp_CTurret_FUN_005e2910 (005e2910) at 005e2afb [UNCONDITIONAL_CALL]

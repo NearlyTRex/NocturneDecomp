@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_werewolf.cpp_FUN_005f1db0()
 // Function calls:
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 
 #include "nocturne.h"
 
@@ -14,15 +14,15 @@ undefined4 core_werewolf_cpp_FUN_005f1db0(void)
 
 {
   uint uVar1;
-  int iVar2;
+  SMotion *pSVar2;
   int in_stack_00000004;
   
   if (*(int *)(in_stack_00000004 + 0x70) == 2) {
     return 2;
   }
-  iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0
-                    ((CMotionController *)(in_stack_00000004 + 0x158));
-  uVar1 = *(uint *)(iVar2 + 0x24);
+  pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     ((CMotionController *)(in_stack_00000004 + 0x158));
+  uVar1 = pSVar2->state_index;
   if (0xb < uVar1) {
     if (uVar1 < 0xd) {
       return 1;
@@ -54,7 +54,7 @@ undefined4 core_werewolf_cpp_FUN_005f1db0(void)
 // 005f1dcb: ADD EAX,0x158
 //   Label: LAB_005f1dcb
 // 005f1dd0: PUSH EAX
-// 005f1dd1: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 005f1dd1: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 005f1dd6: MOV EAX,dword ptr [EAX + 0x24]
 // 005f1dd9: ADD ESP,0x4

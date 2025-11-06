@@ -31,9 +31,9 @@ undefined FUN_004167f0();
 // Address: 00416870
 void CBatman::process(CBatman * this_ptr);
 
-// Original: core_batman.cpp_CBatman_FUN_004173b0
+// Original: core_batman.cpp_CBatman_renderOpaque_FUN_004173b0
 // Address: 004173b0
-int CBatman(CBatman * this_ptr);
+int CBatman::renderOpaque(CBatman * this_ptr);
 
 // Original: core_batman.cpp_CBatman_serialize_FUN_00417580
 // Address: 00417580

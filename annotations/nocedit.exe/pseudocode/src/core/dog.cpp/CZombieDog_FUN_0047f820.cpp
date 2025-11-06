@@ -9,7 +9,7 @@
 //   CSound g_CSoundInstance
 // Function calls:
 //   core_enemy.cpp_FUN_004a9f10
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_sound.cpp_FUN_005b3b80
 
@@ -20,36 +20,38 @@ void __cdecl core_dog_cpp_CZombieDog_FUN_0047f820(CZombieDog *this_ptr)
 {
   CDeformableModelInstance *this_ptr_00;
   float fVar1;
-  undefined4 uVar2;
+  SMotion *pSVar2;
+  undefined4 uVar3;
   int unaff_ESI;
   int in_stack_00000008;
   CZombieDog *pCStack0000000c;
-  int iVar3;
+  int iVar4;
   
   fVar1 = (this_ptr->base_enemy).base_character.hit_points - *(float *)(in_stack_00000008 + 4);
   this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
   (this_ptr->base_enemy).base_character.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base_enemy).base_character.hit_points = 0.0;
-    iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr_00->motion_controller);
-    if ((*(int *)(iVar3 + 0x24) == 7) || (*(int *)(iVar3 + 0x24) == 6)) goto LAB_0047f855;
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       (&this_ptr_00->motion_controller);
+    if ((pSVar2->state_index == 7) || (pSVar2->state_index == 6)) goto LAB_0047f855;
     unaff_ESI = 1;
-    iVar3 = 6;
+    iVar4 = 6;
   }
   else {
-    iVar3 = 1;
+    iVar4 = 1;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&this_ptr_00->motion_controller,iVar3,unaff_ESI);
+            (&this_ptr_00->motion_controller,iVar4,unaff_ESI);
 LAB_0047f855:
-  iVar3 = core_sound_cpp_FUN_005b3b80();
-  if (iVar3 != 0) {
+  iVar4 = core_sound_cpp_FUN_005b3b80();
+  if (iVar4 != 0) {
     core_enemy_cpp_FUN_004a9f10();
     return;
   }
-  uVar2 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
+  uVar3 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
                     ((CDemonActor *)this_ptr,"dog2.wav");
-  *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x10) = uVar2;
+  *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x10) = uVar3;
   pCStack0000000c = this_ptr;
   core_enemy_cpp_FUN_004a9f10();
   return;
@@ -108,7 +110,7 @@ LAB_0047f855:
 // 0047f880: PUSH ESI
 //   Label: LAB_0047f880
 // 0047f881: MOV dword ptr [EBX + 0x243c],0x0
-// 0047f88b: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0047f88b: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0047f890: MOV EAX,dword ptr [EAX + 0x24]
 // 0047f893: ADD ESP,0x4

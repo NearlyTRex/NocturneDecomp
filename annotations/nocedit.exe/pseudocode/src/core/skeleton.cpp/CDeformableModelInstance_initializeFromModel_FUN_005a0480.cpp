@@ -10,7 +10,7 @@
 //   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 (0059c2f0) at 0059c382 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 (0059d460) at 0059d525 [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_motion.cpp_FUN_0052dcb0
+//   core_motion.cpp_CMotionController_setMotionList_FUN_0052dcb0
 //   core_skeleton.cpp_CDeformableModel_getVertexPoolPtr_FUN_0059a860
 //   core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0
 //   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0
@@ -30,21 +30,22 @@ core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
   float fVar4;
   int iVar5;
   CDeformableModel *pCVar6;
-  CSkeleton *pCVar7;
+  CSkeleton *motion_list;
+  CVector3f *pCVar7;
   CVector3f *pCVar8;
-  CVector3f *pCVar9;
   BADSPACEBASE *in_ESP;
   int index;
-  float *pfVar10;
+  float *pfVar9;
   CDeformableModelInstance *in_stack_0000000c;
   CDeformableModelInstance *in_stack_00000010;
   CDeformableModelInstance *in_stack_00000014;
-  CDeformableModelInstance *pCVar11;
+  CDeformableModelInstance *pCVar10;
   
   this_ptr->model_ptr = model_ptr;
-  pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
-  core_motion_cpp_FUN_0052dcb0();
-  iVar5 = pCVar7->bone_count;
+  motion_list = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
+  core_motion_cpp_CMotionController_setMotionList_FUN_0052dcb0
+            ((CMotionController *)model_ptr,&motion_list->motion_list);
+  iVar5 = motion_list->bone_count;
   pCVar6 = in_stack_0000000c->model_ptr;
   fVar1 = (pCVar6->model_scale).y;
   fVar2 = in_stack_0000000c->scale_factor;
@@ -58,26 +59,26 @@ core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
   }
   index = 0;
   if (0 < iVar5) {
-    pfVar10 = &in_stack_0000000c->scale_factor;
-    pCVar9 = in_stack_0000000c->transformed_vertices;
-    pCVar11 = in_stack_0000000c;
+    pfVar9 = &in_stack_0000000c->scale_factor;
+    pCVar8 = in_stack_0000000c->transformed_vertices;
+    pCVar10 = in_stack_0000000c;
     do {
-      pCVar8 = core_skeleton_cpp_CDeformableModel_getVertexPoolPtr_FUN_0059a860
+      pCVar7 = core_skeleton_cpp_CDeformableModel_getVertexPoolPtr_FUN_0059a860
                          (in_stack_0000000c->model_ptr,index);
-      if (pCVar9 != pCVar8) {
-        pCVar9->x = pCVar8->x;
-        pCVar9->y = pCVar8->y;
-        pCVar9->z = pCVar8->z;
+      if (pCVar8 != pCVar7) {
+        pCVar8->x = pCVar7->x;
+        pCVar8->y = pCVar7->y;
+        pCVar8->z = pCVar7->z;
       }
-      pCVar11->rest_pose_data[0] = in_stack_0000000c->scale_factor;
-      if (pCVar7->bone_list[0].parent_index < 0) {
-        pCVar9->x = *pfVar10 * pCVar9->x;
-        pCVar9->y = *pfVar10 * pCVar9->y;
-        pCVar9->z = *pfVar10 * pCVar9->z;
+      pCVar10->rest_pose_data[0] = in_stack_0000000c->scale_factor;
+      if (motion_list->bone_list[0].parent_index < 0) {
+        pCVar8->x = *pfVar9 * pCVar8->x;
+        pCVar8->y = *pfVar9 * pCVar8->y;
+        pCVar8->z = *pfVar9 * pCVar8->z;
       }
-      pCVar7 = (CSkeleton *)((pCVar7->motion_list).state_names[1] + 2);
-      pCVar9 = pCVar9 + 1;
-      pCVar11 = (CDeformableModelInstance *)&(pCVar11->motion_controller).current_motion_index;
+      motion_list = (CSkeleton *)((motion_list->motion_list).state_names[1] + 2);
+      pCVar8 = pCVar8 + 1;
+      pCVar10 = (CDeformableModelInstance *)&(pCVar10->motion_controller).current_motion_index;
       index = index + 1;
     } while (index < iVar5);
   }
@@ -111,7 +112,7 @@ core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
 // 005a04a3: PUSH ECX
 // 005a04a4: MOV EBX,EAX
 // 005a04a6: MOV EBP,EAX
-// 005a04a8: CALL core_motion.cpp_FUN_0052dcb0
+// 005a04a8: CALL core_motion.cpp_CMotionController_setMotionList_FUN_0052dcb0
 //   XREF to: 0052dcb0 (UNCONDITIONAL_CALL)
 // 005a04ad: ADD ESP,0x8
 // 005a04b0: MOV EAX,dword ptr [EBX + 0x28558]

@@ -19,7 +19,7 @@
 //   core_actor.cpp_CActorPropertyList_FUN_0040e4a0
 //   core_actor.cpp_CActorPropertyList_FUN_0040e4d0
 //   core_enemy.cpp_CEnemy_FUN_004aa170
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
 
@@ -28,8 +28,9 @@
 void __cdecl core_zombie_cpp_CZombie_FUN_005fca80(CZombie *this_ptr)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
   CMotionList *this_ptr_00;
+  int iVar2;
   CActorPropertyList *in_stack_00000008;
   char *pcStack00000018;
   int *piStack0000001c;
@@ -37,17 +38,17 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005fca80(CZombie *this_ptr)
   core_enemy_cpp_CEnemy_FUN_004aa170(&this_ptr->base_enemy);
   core_actor_cpp_CActorPropertyList_FUN_0040e4a0(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e4d0(in_stack_00000008);
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
-                    (&(this_ptr->base_enemy).base_character.model.motion_controller);
-  if (*(int *)(iVar1 + 0x24) == 0xe) {
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     (&(this_ptr->base_enemy).base_character.model.motion_controller);
+  if (pSVar1->state_index == 0xe) {
     core_actor_cpp_CActorPropertyList_FUN_0040e460(in_stack_00000008);
     core_actor_cpp_CActorPropertyList_FUN_0040e350(in_stack_00000008);
   }
   core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);
   this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                           (&(this_ptr->base_enemy).base_character.model.motion_controller);
-  iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
-  if (iVar1 != 0x16) {
+  iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
+  if (iVar2 != 0x16) {
     return;
   }
   piStack0000001c = &this_ptr->always_chase_fast;
@@ -88,7 +89,7 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005fca80(CZombie *this_ptr)
 //   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)
 // 005fcab8: ADD ESP,0xc
 // 005fcabb: PUSH EDI
-// 005fcabc: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 005fcabc: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 005fcac1: MOV EAX,dword ptr [EAX + 0x24]
 // 005fcac4: ADD ESP,0x4

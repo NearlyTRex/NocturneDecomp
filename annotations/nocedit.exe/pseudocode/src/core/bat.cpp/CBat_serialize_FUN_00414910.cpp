@@ -12,7 +12,7 @@
 //   TerminatedCString s_modelName_00615324
 //   TerminatedCString s_periodicSoundTimerMin_0061532e
 //   TerminatedCString s_periodicSoundTimerMax_00615344
-//   undefined4 DAT_0061535e
+//   double DOUBLE_0061535e = 30
 //   undefined4 g_CBatClassVersion
 // Function calls:
 //   core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0
@@ -21,8 +21,6 @@
 //   core_actor.cpp_serializeString_FUN_0040b5c0
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_bat_cpp_CBat_serialize_FUN_00414910(CBat *this_ptr)
 
@@ -33,7 +31,7 @@ void __cdecl core_bat_cpp_CBat_serialize_FUN_00414910(CBat *this_ptr)
   core_actor_cpp_serializeFloat_FUN_0040b770(&this_ptr->param,"param");
   if (g_CBatClassVersion < 3) {
     core_actor_cpp_serializeFloat_FUN_0040b770(&this_ptr->speed,"speed");
-    this_ptr->course_speed = this_ptr->speed * (float)_DAT_0061535e;
+    this_ptr->course_speed = this_ptr->speed * (float)DOUBLE_0061535e;
   }
   else {
     core_actor_cpp_serializeFloat_FUN_0040b770(&this_ptr->speed,"flapSpeedMult");

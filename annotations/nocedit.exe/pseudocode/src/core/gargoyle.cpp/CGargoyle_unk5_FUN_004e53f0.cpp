@@ -14,7 +14,7 @@
 //   undefined4 DAT_0326f104
 //   undefined4 DAT_0326f108
 // Function calls:
-//   core_charactr.cpp_CCharacter_FUN_0042a2c0
+//   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 
 #include "nocturne.h"
 
@@ -34,11 +34,11 @@ void core_gargoyle_cpp_CGargoyle_unk5_FUN_004e53f0(void)
     pCVar2->light_scale_factor = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x50) << 8;
     pCVar2->color_scale_factor = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x54) << 8;
     pCVar2->fog_scale_factor = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x58) << 8;
-    core_charactr_cpp_CCharacter_FUN_0042a2c0(in_stack_00000004);
+    core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(in_stack_00000004);
     g_CDemonSetPtr->lighting_quality_mode = iVar1;
     return;
   }
-  core_charactr_cpp_CCharacter_FUN_0042a2c0(in_stack_00000004);
+  core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(in_stack_00000004);
   return;
 }
 
@@ -75,7 +75,7 @@ void core_gargoyle_cpp_CGargoyle_unk5_FUN_004e53f0(void)
 // 004e543c: PUSH EDX
 // 004e543d: MOV dword ptr [EAX + 0x15ae90],ECX
 //   XREF to: 0326f108 (WRITE)
-// 004e5443: CALL core_charactr.cpp_CCharacter_FUN_0042a2c0
+// 004e5443: CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 //   XREF to: 0042a2c0 (UNCONDITIONAL_CALL)
 // 004e5448: MOV EDX,dword ptr [0x006810c8]
 //   XREF to: 006810c8 (READ)
@@ -86,7 +86,7 @@ void core_gargoyle_cpp_CGargoyle_unk5_FUN_004e53f0(void)
 // 004e5458: RET
 // 004e5459: PUSH EDX
 //   Label: LAB_004e5459
-// 004e545a: CALL core_charactr.cpp_CCharacter_FUN_0042a2c0
+// 004e545a: CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 //   XREF to: 0042a2c0 (UNCONDITIONAL_CALL)
 // 004e545f: ADD ESP,0x4
 // 004e5462: RET

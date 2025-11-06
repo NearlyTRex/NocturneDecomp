@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0059dd60(CDeformableModel * this_ptr)
 // Cross-references:
-//   core_skeleton.cpp_FUN_005a1ed0 (005a1ed0) at 005a1f24 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_getMemoryStats_FUN_005a1ed0 (005a1ed0) at 005a1f24 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

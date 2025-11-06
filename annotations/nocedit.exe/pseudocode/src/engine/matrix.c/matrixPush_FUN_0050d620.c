@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: void engine_matrix.c_matrixPush_FUN_0050d620(void)
 // Cross-references:
+//   core_mimic.cpp_CMimic_FUN_005205f0 (005205f0) at 0052069f [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_FUN_0051f130 (0051f130) at 0051f133 [UNCONDITIONAL_CALL]
-//   core_mimic.cpp_FUN_005205f0 (005205f0) at 0052069f [UNCONDITIONAL_CALL]
 //   engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d620 (0048c630) at 0048c630 [UNCONDITIONAL_JUMP]
 // Globals:
 //   TerminatedCString s_engine_matrix_c_00635a71

@@ -111,9 +111,9 @@ undefined FUN_004d6260();
 // Address: 004d6540
 undefined FUN_004d6540();
 
-// Original: core_gabriela.cpp_FUN_004d6b30
+// Original: core_gabriela.cpp_CGabriella_FUN_004d6b30
 // Address: 004d6b30
-undefined FUN_004d6b30();
+void CGabriella(CGabriella * this_ptr);
 
 // Original: core_gabriela.cpp_FUN_004d6d40
 // Address: 004d6d40
@@ -123,9 +123,9 @@ undefined FUN_004d6d40();
 // Address: 004d6f80
 undefined FUN_004d6f80();
 
-// Original: core_gabriela.cpp_CarryLights_FUN_004d7120
+// Original: core_gabriela.cpp_CGabriella_FUN_004d7120
 // Address: 004d7120
-undefined CarryLights();
+void CGabriella(CGabriella * this_ptr);
 
 // Original: core_gabriela.cpp_FUN_004d7590
 // Address: 004d7590

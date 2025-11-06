@@ -34,9 +34,9 @@
 //   undefined4 DAT_02f7c538
 // Function calls:
 //   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-//   core_motion.cpp_CMotionController_FUN_0052dab0
-//   core_motion.cpp_CMotionController_FUN_0052dcf0
-//   core_motion.cpp_FUN_0052ddb0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
+//   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
 //   core_msnedit.cpp_FUN_00536cd0
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   crt_math.c_ceil_FUN_006001b2
@@ -55,14 +55,17 @@ void core_msnedit_cpp_FUN_00536e20(void)
 {
   CDeformableModelInstance *this_ptr;
   int iVar1;
+  SMotion *motion_name;
+  char *pcVar2;
   undefined4 extraout_EAX;
   undefined4 extraout_EDX;
-  int iVar2;
+  int y1;
   BADSPACEBASE *in_ESP;
   float10 extraout_ST0;
   float in_stack_00000014;
   float fStack_d4;
-  float fStack_c8;
+  float in_stack_ffffff38;
+  float in_stack_ffffff3c;
   
   DAT_02f7c538 = 0;
   if ((((*(int *)(g_CDemonMissionPtr->field2_0xc + 0x1c) != 0) && (-1 < DAT_02f7c52c)) &&
@@ -70,44 +73,46 @@ void core_msnedit_cpp_FUN_00536e20(void)
      ((*(int *)(&DAT_02f7a02c + DAT_02f7c52c * 0xec) == 0xd &&
       (this_ptr = *(CDeformableModelInstance **)(&DAT_02f7a094 + DAT_02f7c52c * 0xec),
       this_ptr != (CDeformableModelInstance *)0x0)))) {
-    iVar2 = *(int *)(g_CDemonMissionPtr->field2_0xc + 0x14) + -0x38;
+    y1 = *(int *)(g_CDemonMissionPtr->field2_0xc + 0x14) + -0x38;
     iVar1 = *(int *)(g_CDemonMissionPtr->field2_0xc + 0x14) + -1;
-    if (((0 < g_MouseX) && ((g_MouseX < 0x9c && (iVar2 <= g_MouseY)))) && (g_MouseY <= iVar1)) {
+    if (((0 < g_MouseX) && ((g_MouseX < 0x9c && (y1 <= g_MouseY)))) && (g_MouseY <= iVar1)) {
       DAT_02f7c538 = 1;
     }
-    engine_2d_c_fillRectWithBorder_FUN_00403200(1,iVar2,0x9b,iVar1,0,0xff);
-    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dcf0(&this_ptr->motion_controller);
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff18,"?%s (%s)" + 1,iVar1,iVar2);
-    iVar2 = core_msnedit_cpp_FUN_00536cd0();
-    if (iVar2 != 0) {
+    engine_2d_c_fillRectWithBorder_FUN_00403200(1,y1,0x9b,iVar1,0,0xff);
+    motion_name = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                            (&this_ptr->motion_controller);
+    pcVar2 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
+                       (&this_ptr->motion_controller);
+    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff18,"?%s (%s)" + 1,motion_name,pcVar2);
+    iVar1 = core_msnedit_cpp_FUN_00536cd0();
+    if (iVar1 != 0) {
       core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                 ((CActorProperty *)(&DAT_02f7a02c + DAT_02f7c52c * 0xec),
                  *(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c));
     }
-    iVar2 = core_msnedit_cpp_FUN_00536cd0();
-    if (iVar2 != 0) {
+    iVar1 = core_msnedit_cpp_FUN_00536cd0();
+    if (iVar1 != 0) {
       DAT_02f7c52c = -1;
     }
     crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff28,"%6.2f");
-    iVar2 = core_msnedit_cpp_FUN_00536cd0();
-    if (iVar2 != 0) {
+    iVar1 = core_msnedit_cpp_FUN_00536cd0();
+    if (iVar1 != 0) {
       shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                 (g_CEditorToolsPtr,"Enter frame number",&fStack_d4,true,0.0,
-                 (float)(*(int *)(iVar1 + 100) + -1),true);
+                 (float)(motion_name->frame_count + -1),true);
     }
     fStack_d4 = 0.0;
-    iVar2 = core_msnedit_cpp_FUN_00536cd0();
-    if (iVar2 != 0) {
+    iVar1 = core_msnedit_cpp_FUN_00536cd0();
+    if (iVar1 != 0) {
       DAT_02f7c530 = 0;
     }
     fStack_d4 = 0.0;
-    iVar2 = core_msnedit_cpp_FUN_00536cd0();
-    if (iVar2 != 0) {
+    iVar1 = core_msnedit_cpp_FUN_00536cd0();
+    if (iVar1 != 0) {
       fStack_d4 = 7.662741e-39;
-      crt_math_c_ceil_FUN_006001b2((double)fStack_c8);
+      crt_math_c_ceil_FUN_006001b2((double)in_stack_ffffff38);
       if ((double)CONCAT44(extraout_EDX,extraout_EAX) + _DAT_0063b73c < 0.0) {
-        in_stack_00000014 = (float)(*(int *)(iVar1 + 100) + -1);
+        in_stack_00000014 = (float)(motion_name->frame_count + -1);
       }
       DAT_02f7c530 = 0;
     }
@@ -135,9 +140,16 @@ void core_msnedit_cpp_FUN_00536e20(void)
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
       DAT_02f7c530 = 0;
+      in_stack_ffffff3c = (float)(motion_name->frame_count + -1);
+    }
+    if ((DAT_02f7c530 != 0) &&
+       (in_stack_ffffff3c = g_CGamePtr->delta_time_float * motion_name->fps + in_stack_ffffff3c,
+       (float)motion_name->frame_count <= in_stack_ffffff3c)) {
+      in_stack_ffffff3c = 0.0;
     }
     fStack_d4 = 7.663201e-39;
-    core_motion_cpp_FUN_0052ddb0();
+    core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
+              (&this_ptr->motion_controller,motion_name->motion_name,in_stack_ffffff3c);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(this_ptr);
   }
   return;
@@ -236,7 +248,7 @@ void core_msnedit_cpp_FUN_00536e20(void)
 //   XREF to: 00403200 (UNCONDITIONAL_CALL)
 // 00536efe: ADD ESP,0x18
 // 00536f01: PUSH ESI
-// 00536f02: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 00536f02: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 00536f07: FLD float ptr [ESI + 0x8]
 // 00536f0a: ADD ESP,0x4
@@ -245,7 +257,7 @@ void core_msnedit_cpp_FUN_00536e20(void)
 // 00536f11: PUSH ESI
 // 00536f12: FSTP float ptr [ESP + 0x4]
 //   XREF to: Stack[-0xf8] (WRITE)
-// 00536f16: CALL core_motion.cpp_CMotionController_FUN_0052dcf0
+// 00536f16: CALL core_motion.cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
 //   XREF to: 0052dcf0 (UNCONDITIONAL_CALL)
 // 00536f1b: ADD ESP,0x4
 // 00536f1e: PUSH EAX
@@ -566,7 +578,7 @@ void core_msnedit_cpp_FUN_00536e20(void)
 //   XREF to: Stack[-0xf8] (DATA)
 // 005371dc: PUSH EDI
 // 005371dd: PUSH ESI
-// 005371de: CALL core_motion.cpp_FUN_0052ddb0
+// 005371de: CALL core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
 //   XREF to: 0052ddb0 (UNCONDITIONAL_CALL)
 // 005371e3: ADD ESP,0xc
 // 005371e6: PUSH ESI

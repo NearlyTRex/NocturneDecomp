@@ -261,7 +261,7 @@ int CDemonActor::processMeleeHit(CDemonActor * this_ptr, int hit_type);
 
 // Original: core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0
 // Address: 0040abc0
-int CDemonActor::fillAttackDamageInfo(CDemonActor * this_ptr, int attack_flags, SDamageInfo * out_damage_info, CDemonActor * victim);
+void CDemonActor::fillAttackDamageInfo(CDemonActor * this_ptr, int attack_flags, SDamageInfo * out_damage_info, CDemonActor * victim);
 
 // Original: core_actor.cpp_CDemonActor_playAttackHitEffects_FUN_0040ac20
 // Address: 0040ac20

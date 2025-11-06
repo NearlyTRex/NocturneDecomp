@@ -22,7 +22,7 @@
 //   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_setcolid.cpp_CDemonSet_FUN_00574580
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
@@ -36,9 +36,10 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
 
 {
   float fVar1;
-  int iVar2;
+  SMotion *pSVar2;
   CSkeleton *pCVar3;
-  CVector3f *pCVar4;
+  int iVar4;
+  CVector3f *pCVar5;
   BADSPACEBASE *in_ESP;
   float in_stack_00000008;
   CVector3f local_40;
@@ -48,8 +49,9 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
   
   if ((*(int *)this_ptr->field13_0x2620 != 0) &&
      (*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbd4) < (float)_DAT_006175e2)) {
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&(this_ptr->model).motion_controller);
-    if (*(int *)(iVar2 + 0x24) == 0) {
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       (&(this_ptr->model).motion_controller);
+    if (pSVar2->state_index == 0) {
       if ((*(int *)(this_ptr->cloth_data + 0x1c0) == 0) &&
          (fVar1 = *(float *)(this_ptr->cloth_data + 0x1b8) - in_stack_00000008,
          *(float *)(this_ptr->cloth_data + 0x1b8) = fVar1, fVar1 < 0.0)) {
@@ -59,13 +61,13 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
                   (&this_ptr->base_actor,&local_1c,(CVector3f *)&stack0xffffffb4);
         pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                            (&this_ptr->model);
-        iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,"?Bip01 head" + 1);
-        if (iVar2 != -1) {
-          pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+        iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,"?Bip01 head" + 1);
+        if (iVar4 != -1) {
+          pCVar5 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                              ((CVector3f *)&stack0xffffffa8,(CVector3f *)&stack0xffffff9c,
                               (CMatrix3x4f *)0x0);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                    (&this_ptr->base_actor,&local_34,pCVar4);
+                    (&this_ptr->base_actor,&local_34,pCVar5);
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
                     (g_CFireEffectPtr,&local_34,0.5,&local_1c,0x8000);
         }
@@ -77,18 +79,18 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
              *(float *)(this_ptr->cloth_data + 0x1bc) + _DAT_006175ee;
         pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                            (&this_ptr->model);
-        iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,"Bip01 head");
-        if (iVar2 != -1) {
+        iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,"Bip01 head");
+        if (iVar4 != -1) {
           local_40.x = 0.0;
           local_40.y = 0.2;
           local_40.z = 0.5;
-          pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+          pCVar5 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                              ((CVector3f *)&stack0xffffff90,&local_40,
-                              (this_ptr->model).bone_transform.bone_world_matrices + iVar2);
+                              (this_ptr->model).bone_transform.bone_world_matrices + iVar4);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                    (&this_ptr->base_actor,&local_28,pCVar4);
-          iVar2 = core_setcolid_cpp_CDemonSet_FUN_00574580(g_CDemonSetPtr);
-          if (iVar2 == 0) {
+                    (&this_ptr->base_actor,&local_28,pCVar5);
+          iVar4 = core_setcolid_cpp_CDemonSet_FUN_00574580(g_CDemonSetPtr);
+          if (iVar4 == 0) {
             *(uint *)(this_ptr->cloth_data + 0x1c0) =
                  (uint)(*(int *)(this_ptr->cloth_data + 0x1c0) == 0);
             return;
@@ -134,7 +136,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
 // 0042ea72: LEA ESI,[EBX + 0x158]
 //   Label: LAB_0042ea72
 // 0042ea78: PUSH ESI
-// 0042ea79: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0042ea79: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0042ea7e: MOV EAX,dword ptr [EAX + 0x24]
 // 0042ea81: ADD ESP,0x4

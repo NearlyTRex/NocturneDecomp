@@ -5,23 +5,24 @@
 // Signature: int core_zombie.cpp_CZombie_FUN_005fc9e0(CZombie * this_ptr)
 // Function calls:
 //   core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c720
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 
 #include "nocturne.h"
 
 int __cdecl core_zombie_cpp_CZombie_FUN_005fc9e0(CZombie *this_ptr)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
+  int iVar2;
   CDemonActor *in_stack_00000008;
   
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
-                    (&(this_ptr->base_enemy).base_character.model.motion_controller);
-  if (*(int *)(iVar1 + 0x24) == 0xe) {
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     (&(this_ptr->base_enemy).base_character.model.motion_controller);
+  if (pSVar1->state_index == 0xe) {
     return 1;
   }
-  iVar1 = core_actor_cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c720(in_stack_00000008);
-  return iVar1;
+  iVar2 = core_actor_cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c720(in_stack_00000008);
+  return iVar2;
 }
 
 
@@ -31,7 +32,7 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fc9e0(CZombie *this_ptr)
 //   XREF to: Stack[0x4] (READ)
 // 005fc9e4: ADD EAX,0x158
 // 005fc9e9: PUSH EAX
-// 005fc9ea: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 005fc9ea: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 005fc9ef: MOV EAX,dword ptr [EAX + 0x24]
 // 005fc9f2: ADD ESP,0x4

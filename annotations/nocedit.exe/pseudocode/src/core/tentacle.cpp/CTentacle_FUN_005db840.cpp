@@ -9,7 +9,7 @@
 //   undefined4 DAT_02f33744
 // Function calls:
 //   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
-//   core_charactr.cpp_CCharacter_FUN_0042a2c0
+//   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 
 #include "nocturne.h"
 
@@ -26,7 +26,7 @@ int __cdecl core_tentacle_cpp_CTentacle_FUN_005db840(CTentacle *this_ptr)
     }
     core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940((CDemonActor *)this_ptr,3);
   }
-  iVar1 = core_charactr_cpp_CCharacter_FUN_0042a2c0((CCharacter *)this_ptr);
+  iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
   return iVar1;
 }
 
@@ -57,7 +57,7 @@ int __cdecl core_tentacle_cpp_CTentacle_FUN_005db840(CTentacle *this_ptr)
 // 005db869: ADD ESP,0x8
 // 005db86c: PUSH EBX
 //   Label: LAB_005db86c
-// 005db86d: CALL core_charactr.cpp_CCharacter_FUN_0042a2c0
+// 005db86d: CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 //   XREF to: 0042a2c0 (UNCONDITIONAL_CALL)
 // 005db872: ADD ESP,0x4
 // 005db875: POP EBX

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_charactr.cpp_CCharacter_FUN_0042bf40(CCharacter * this_ptr)
 // Cross-references:
-//   core_hero.cpp_FUN_004f29b0 (004f29b0) at 004f2a20 [UNCONDITIONAL_CALL]
+//   core_hero.cpp_CHero_FUN_004f29b0 (004f29b0) at 004f2a20 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

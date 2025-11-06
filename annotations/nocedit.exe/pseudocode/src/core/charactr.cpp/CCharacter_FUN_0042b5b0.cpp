@@ -17,7 +17,7 @@
 // Function calls:
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
 //   core_charactr.cpp_CCharacter_FUN_0042a520
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a1160
+//   core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_005a1160
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 
 #include "nocturne.h"
@@ -28,6 +28,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b5b0(CCharacter *this_ptr)
   int iVar1;
   int iVar2;
   CCharacter *pCVar3;
+  CVector3f *in_stack_0000000c;
   int in_stack_00000018;
   undefined4 in_stack_0000001c;
   
@@ -35,7 +36,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b5b0(CCharacter *this_ptr)
      (((in_stack_00000018 != 0 ||
        (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(&this_ptr->base_actor,"CHero"),
        iVar1 == 0)) && ((this_ptr->model).model_name[0] != '\0')))) {
-    iVar1 = core_skeleton_cpp_CDeformableModelInstance_FUN_005a1160();
+    iVar1 = core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_005a1160
+                      (&this_ptr->model,in_stack_0000000c);
     iVar2 = 0;
     pCVar3 = this_ptr;
     if (0 < *(int *)(this_ptr->cloth_data + 0x478)) {
@@ -102,7 +104,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b5b0(CCharacter *this_ptr)
 //   XREF to: Stack[0x8] (READ)
 // 0042b5f6: PUSH ESI
 // 0042b5f7: PUSH EDX
-// 0042b5f8: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a1160
+// 0042b5f8: CALL core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_005a1160
 //   XREF to: 005a1160 (UNCONDITIONAL_CALL)
 // 0042b5fd: ADD ESP,0x8
 // 0042b600: MOV ECX,EAX

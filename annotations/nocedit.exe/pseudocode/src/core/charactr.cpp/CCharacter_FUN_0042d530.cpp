@@ -8,7 +8,7 @@
 //   core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800 (0042f800) at 0042f82e [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_CMimic_setup2_FUN_0051f780 (0051f780) at 0051f8e4 [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a16c0
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
 
 #include "nocturne.h"
 
@@ -16,9 +16,11 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d530(CCharacter *this_ptr)
 
 {
   CBoundingBox3D *pCVar1;
+  BADSPACEBASE *in_ESP;
   
   if ((this_ptr->model).model_name[0] != '\0') {
-    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_FUN_005a16c0(&this_ptr->model);
+    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
+                       (&this_ptr->model,(CBoundingBox3D *)&stack0xffffffe4);
     if ((CBoundingBox3D *)(this_ptr->field11_0x25a0 + 0x58) != pCVar1) {
       (((CBoundingBox3D *)(this_ptr->field11_0x25a0 + 0x58))->min).x = (pCVar1->min).x;
       *(float *)(this_ptr->field11_0x25a0 + 0x5c) = (pCVar1->min).y;
@@ -54,7 +56,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d530(CCharacter *this_ptr)
 //   Label: LAB_0042d54e
 // 0042d550: PUSH EAX
 // 0042d551: PUSH EDX
-// 0042d552: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a16c0
+// 0042d552: CALL core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
 //   XREF to: 005a16c0 (UNCONDITIONAL_CALL)
 // 0042d557: LEA EDX,[EBX + 0x25f8]
 // 0042d55d: ADD ESP,0x8

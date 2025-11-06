@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_charactr.cpp_CCharacter_FUN_0042cfe0(CCharacter * this_ptr)
 // Cross-references:
-//   core_stranger.cpp_FUN_005c67f0 (005c67f0) at 005c681b [UNCONDITIONAL_CALL]
+//   core_stranger.cpp_CStranger_FUN_005c67f0 (005c67f0) at 005c681b [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 

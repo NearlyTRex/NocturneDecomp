@@ -8,7 +8,7 @@
 // Globals:
 //   CMotionController_vtable g_CMotionControllerVTable
 // Function calls:
-//   core_motion.cpp_CMotionController_FUN_0052dad0
+//   core_motion.cpp_CMotionController_reset_FUN_0052dad0
 
 #include "nocturne.h"
 
@@ -19,7 +19,7 @@ core_motion_cpp_CMotionController_ctor_FUN_0052d570(CMotionController *this_ptr)
   this_ptr->vtable = &g_CMotionControllerVTable;
   this_ptr->current_motion_name[0] = '\0';
   this_ptr->motion_list_ptr = (CMotionList *)0x0;
-  core_motion_cpp_CMotionController_FUN_0052dad0(this_ptr);
+  core_motion_cpp_CMotionController_reset_FUN_0052dad0(this_ptr);
   return this_ptr;
 }
 
@@ -34,7 +34,7 @@ core_motion_cpp_CMotionController_ctor_FUN_0052d570(CMotionController *this_ptr)
 // 0052d57c: MOV byte ptr [EBX + 0x30],0x0
 // 0052d580: PUSH EBX
 // 0052d581: MOV dword ptr [EBX],0x0
-// 0052d587: CALL core_motion.cpp_CMotionController_FUN_0052dad0
+// 0052d587: CALL core_motion.cpp_CMotionController_reset_FUN_0052dad0
 //   XREF to: 0052dad0 (UNCONDITIONAL_CALL)
 // 0052d58c: ADD ESP,0x4
 // 0052d58f: MOV EAX,EBX

@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
 // Cross-references:
-//   core_baron.cpp_CBaron_FUN_00413ae0 (00413ae0) at 00413c21 [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_FUN_00419740 (00419740) at 0041979b [UNCONDITIONAL_CALL]
+//   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 (00413ae0) at 00413c21 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740 (00419740) at 0041979b [UNCONDITIONAL_CALL]
 //   core_boneguy.cpp_FUN_0041d1b0 (0041d1b0) at 0041d222 [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_FUN_00421ef0 (00421ef0) at 00421f6e [UNCONDITIONAL_CALL]
 //   core_bugs.cpp_FUN_004251b0 (004251b0) at 004252c3 [UNCONDITIONAL_CALL]

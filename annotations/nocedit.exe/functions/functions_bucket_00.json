@@ -4386,13 +4386,38 @@
         "start":"00419000"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_bodypart.cpp_FUN_00419000()",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_bodypart.cpp_FUN_00419000",
-    "ret":"undefined1",
+    "name":"core_bodypart.cpp_CBodyPart_getActorType_FUN_00419000",
+    "ret":"CDemonActorType*",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBodyPart*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -4405,9 +4430,10 @@
         "start":"00419880"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_bodypart.cpp_CBodyPart_load_FUN_00419880",
-    "ret":"undefined1",
+    "name":"core_bodypart.cpp_CBodyPart_serialize_FUN_00419880",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -4443,9 +4469,24 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBodyPart*"
+        }
+      ]
     }
   },
   {
@@ -4457,10 +4498,10 @@
         "start":"0041b280"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_bodypart.cpp_FUN_0041b280(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_bodypart.cpp_FUN_0041b280",
-    "ret":"undefined1",
+    "name":"core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -4560,8 +4601,33 @@
           "type":"undefined1"
         }
       ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBodyPart*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -38532,13 +38598,38 @@
         "start":"004f2880"
       }
     ],
-    "cmt":"Signature: undefined1 actors_hero_hero.cpp_FUN_004f2880()",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_FUN_004f2880",
-    "ret":"undefined1",
+    "name":"core_hero.cpp_CHero_FUN_004f2880",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CHero*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -47430,7 +47521,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_motion.cpp_CMotionController_FUN_0052e700",
+    "name":"core_motion.cpp_CMotionController_render_FUN_0052e700",
     "ret":"void",
     "vars":{
       "locals":[
@@ -47627,6 +47718,22 @@
             ]
           },
           "type":"CMotionController*"
+        },
+        {
+          "name":"actor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
         }
       ]
     }
@@ -58309,7 +58416,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModel_renderBoneNames_FUN_0059b800",
+    "name":"core_skeleton.cpp_CDeformableModel_renderBones_FUN_0059b800",
     "ret":"void",
     "vars":{
       "locals":[

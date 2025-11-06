@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_icepick.cpp_FUN_004f95a0()
 // Function calls:
-//   core_charactr.cpp_CCharacter_FUN_0042a2c0
+//   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 
 #include "nocturne.h"
 
@@ -15,7 +15,7 @@ void core_icepick_cpp_FUN_004f95a0(void)
 {
   CCharacter *in_stack_00000004;
   
-  core_charactr_cpp_CCharacter_FUN_0042a2c0(in_stack_00000004);
+  core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(in_stack_00000004);
   return;
 }
 
@@ -25,7 +25,7 @@ void core_icepick_cpp_FUN_004f95a0(void)
 //   Label: core_icepick.cpp_FUN_004f95a0
 //   XREF to: Stack[0x4] (READ)
 // 004f95a4: PUSH EDX
-// 004f95a5: CALL core_charactr.cpp_CCharacter_FUN_0042a2c0
+// 004f95a5: CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 //   XREF to: 0042a2c0 (UNCONDITIONAL_CALL)
 // 004f95aa: ADD ESP,0x4
 // 004f95ad: RET

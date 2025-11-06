@@ -35,7 +35,7 @@
 //   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 //   core_fire.cpp_CFireEffect_FUN_004c90c0
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
@@ -55,7 +55,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr)
   CGame *pCVar2;
   int iVar3;
   CVector3f *pCVar4;
-  int iVar5;
+  SMotion *pSVar5;
   int iVar6;
   BADSPACEBASE *in_ESP;
   undefined4 unaff_EBP;
@@ -146,8 +146,9 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr)
   pCVar8 = &(this_ptr->field0_0x0).base_character.model;
   if (iVar3 == 0) {
     iVar3 = 0x41344e;
-    iVar6 = core_motion_cpp_CMotionController_FUN_0052dab0(&pCVar8->motion_controller);
-    switch(*(undefined4 *)(iVar6 + 0x24)) {
+    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       (&pCVar8->motion_controller);
+    switch(pSVar5->state_index) {
     case 0:
     case 1:
     case 2:
@@ -179,8 +180,9 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr)
       *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0xc) =
            *(float *)((this_ptr->field0_0x0).field3_0xbe2c + 0x24) *
            *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0x2c);
-      iVar5 = core_motion_cpp_CMotionController_FUN_0052dab0(&pCVar8->motion_controller);
-      if (iVar6 == *(int *)(iVar5 + 0x24)) break;
+      pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                         (&pCVar8->motion_controller);
+      if (iVar6 == pSVar5->state_index) break;
       goto LAB_0041300c;
     case 4:
       pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
@@ -880,7 +882,7 @@ switchD_0041345d_default:
 // 00413418: FMUL float ptr [EBP + 0x2438]
 // 0041341e: PUSH ESI
 // 0041341f: FSTP float ptr [EBP + 0x2418]
-// 00413425: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 00413425: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0041342a: MOV EAX,dword ptr [EAX + 0x24]
 // 0041342d: ADD ESP,0x4
@@ -898,7 +900,7 @@ switchD_0041345d_default:
 //   XREF to: 004133dc (UNCONDITIONAL_JUMP)
 // 00413448: PUSH EAX
 //   Label: LAB_00413448
-// 00413449: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 00413449: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0041344e: MOV EAX,dword ptr [EAX + 0x24]
 // 00413451: ADD ESP,0x4

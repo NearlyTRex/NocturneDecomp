@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformableModel * this_ptr, CVector3f * center_position, CVector3f * orientation_vector, int lod_index, CVector3i * skinned_vertices, int * part_visibility_flags, int * texture_set_indices, int particle_lifetime)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a14b0 (005a14b0) at 005a14f4 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_005a14b0 (005a14b0) at 005a14f4 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_skeleton_cpp_0064ec65
 //   TerminatedCString s_CDeformableModel_shatter_0064ec7a

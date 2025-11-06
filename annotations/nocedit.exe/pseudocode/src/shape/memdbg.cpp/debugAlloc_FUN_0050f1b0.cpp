@@ -20,7 +20,7 @@
 //   core_beast.cpp_constructor_FUN_004181e0 (004181e0) at 004181ec [UNCONDITIONAL_CALL]
 //   core_biggs.cpp_constructor_FUN_00418580 (00418580) at 0041858c [UNCONDITIONAL_CALL]
 //   core_bodypart.cpp_CreateBodyPart_FUN_00418e10 (00418e10) at 00418e2f [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_FUN_00418fd0 (00418fd0) at 00418fdc [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_createBodyPart_FUN_00418fd0 (00418fd0) at 00418fdc [UNCONDITIONAL_CALL]
 //   core_boneguy.cpp_constructor_FUN_0041b820 (0041b820) at 0041b82c [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_FUN_004216c0 (004216c0) at 004216cc [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_FUN_00422950 (00422950) at 0042295f [UNCONDITIONAL_CALL]

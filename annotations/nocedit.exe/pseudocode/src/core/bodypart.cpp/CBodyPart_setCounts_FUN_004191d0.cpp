@@ -4,11 +4,11 @@
 // Convention: __cdecl
 // Signature: void core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart * this_ptr)
 // Cross-references:
+//   core_bodypart.cpp_CBodyPart_FUN_0041b070 (0041b070) at 0041b096 [UNCONDITIONAL_CALL]
 //   core_bodypart.cpp_CBodyPart_dtor_FUN_00419130 (00419130) at 0041914b [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_CBodyPart_load_FUN_00419880 (00419880) at 00419aa7 [UNCONDITIONAL_CALL]
 //   core_bodypart.cpp_CBodyPart_process_FUN_00419be0 (00419be0) at 00419c7f [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_serialize_FUN_00419880 (00419880) at 00419aa7 [UNCONDITIONAL_CALL]
 //   core_bodypart.cpp_FUN_0041a050 (0041a050) at 0041a080 [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_FUN_0041b070 (0041b070) at 0041b096 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0 (0059c5e0) at 0059c83e [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_bodypart_cpp_00615bd9

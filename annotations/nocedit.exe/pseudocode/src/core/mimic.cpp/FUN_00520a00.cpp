@@ -7,7 +7,7 @@
 //   double DOUBLE_00638833 = 1.30000000000000
 //   float FLOAT_0063883b = 0.5
 // Function calls:
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 
 #include "nocturne.h"
 
@@ -18,7 +18,7 @@ undefined4 core_mimic_cpp_FUN_00520a00(void)
 
 {
   float fVar1;
-  int iVar2;
+  SMotion *pSVar2;
   int in_stack_00000004;
   int *in_stack_00000008;
   
@@ -33,9 +33,9 @@ undefined4 core_mimic_cpp_FUN_00520a00(void)
   else {
     in_stack_00000008[5] = 0x40000000;
   }
-  iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0
-                    ((CMotionController *)(in_stack_00000004 + 0x158));
-  if (*(int *)(iVar2 + 0x24) == 0xc) {
+  pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     ((CMotionController *)(in_stack_00000004 + 0x158));
+  if (pSVar2->state_index == 0xc) {
     return 0;
   }
   return 2;
@@ -60,7 +60,7 @@ undefined4 core_mimic_cpp_FUN_00520a00(void)
 // 00520a29: LEA EAX,[EDX + 0x158]
 //   Label: LAB_00520a29
 // 00520a2f: PUSH EAX
-// 00520a30: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 00520a30: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 00520a35: MOV EAX,dword ptr [EAX + 0x24]
 // 00520a38: ADD ESP,0x4

@@ -4,11 +4,9 @@
 // Convention: unknown
 // Signature: undefined core_bodypart.cpp_FUN_0041b5c0()
 // Globals:
-//   undefined4 DAT_00615b78
+//   float FLOAT_00615b78 = 0.5
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 float * core_bodypart_cpp_FUN_0041b5c0(void)
 
@@ -21,12 +19,12 @@ float * core_bodypart_cpp_FUN_0041b5c0(void)
   float *in_stack_00000004;
   float *in_stack_00000008;
   
-  fVar5 = _DAT_00615b78;
+  fVar5 = FLOAT_00615b78;
   fVar1 = in_stack_00000004[1];
   fVar2 = in_stack_00000004[4];
   fVar3 = in_stack_00000004[2];
   fVar4 = in_stack_00000004[5];
-  *in_stack_00000008 = (*in_stack_00000004 + in_stack_00000004[3]) * _DAT_00615b78;
+  *in_stack_00000008 = (*in_stack_00000004 + in_stack_00000004[3]) * FLOAT_00615b78;
   in_stack_00000008[1] = (fVar1 + fVar2) * fVar5;
   in_stack_00000008[2] = fVar5 * (fVar3 + fVar4);
   return in_stack_00000008;

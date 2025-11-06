@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_box.cpp_CBox_setupVelocities_FUN_00420180(CBox * this_ptr, CVector3f * linear_velocity, CVector3f * angular_velocity)
 // Cross-references:
-//   core_bodypart.cpp_FUN_00419fd0 (00419fd0) at 0041a023 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_onDropped_FUN_00419fd0 (00419fd0) at 0041a023 [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_FUN_004224f0 (004224f0) at 00422539 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CToss_create_FUN_004c3ee0 (004c3ee0) at 004c3fd1 [UNCONDITIONAL_CALL]
 // Function calls:

@@ -27,9 +27,9 @@ undefined FUN_00418680();
 // Address: 00418700
 void CBiggs(CBiggs * this_ptr);
 
-// Original: core_biggs.cpp_FUN_004189b0
+// Original: core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0
 // Address: 004189b0
-undefined FUN_004189b0();
+int CBiggs::renderOpaque(CBiggs * this_ptr);
 
 // Original: core_biggs.cpp_CBiggs_load_FUN_00418ac0
 // Address: 00418ac0

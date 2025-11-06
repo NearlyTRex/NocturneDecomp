@@ -14,7 +14,7 @@
 //   int g_CurrentLineNumber
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   crt_stdio.c_fprintf_FUN_005fe6d0
 
 #include "nocturne.h"
@@ -23,7 +23,7 @@ void __cdecl
 core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,FILE *file_handle)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
   undefined4 in_stack_0000000c;
   undefined4 uVar2;
   
@@ -34,9 +34,9 @@ core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,
       core_main_c_displayErrorAndQuit_FUN_00506f10("Tried to save motion controller state without setting motion list pointer!");
     }
     uVar2 = (undefined4)((ulonglong)(double)this_ptr->current_frame_number >> 0x20);
-    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
+    pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
     crt_stdio_c_fprintf_FUN_005fe6d0
-              (file_handle,"%s\"%s\",%g // current motion name, curFrameNumber\n",in_stack_0000000c,iVar1,uVar2);
+              (file_handle,"%s\"%s\",%g // current motion name, curFrameNumber\n",in_stack_0000000c,pSVar1,uVar2);
     return;
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s\"%s\",%g // current motion name, curFrameNumber\n");
@@ -76,7 +76,7 @@ core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,
 // 0052e6ab: FSTP double ptr [ESP]
 //   XREF to: Stack[-0x14] (DATA)
 // 0052e6ae: PUSH EBX
-// 0052e6af: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0052e6af: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0052e6b4: ADD ESP,0x4
 // 0052e6b7: PUSH EAX

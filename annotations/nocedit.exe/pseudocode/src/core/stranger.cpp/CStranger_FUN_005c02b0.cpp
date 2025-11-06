@@ -13,7 +13,7 @@
 //   undefined4 DAT_03f6bae0
 //   undefined4 DAT_03f6bae4
 // Function calls:
-//   core_motion.cpp_CMotionController_FUN_0052e3a0
+//   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
 //   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
 //   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
@@ -154,7 +154,9 @@ void core_stranger_cpp_CStranger_FUN_005c02b0(void)
     pCStack_14 = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);
     this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCStack_14);
     iVar1 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(&this_ptr->motion_list);
-    target_frame_number = (float)core_motion_cpp_CMotionController_FUN_0052e3a0();
+    target_frame_number =
+         core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
+                   (&unaff_EDI->motion_controller,iVar1,*(float *)(in_stack_00000004 + 0x2a90));
     local_20 = target_frame_number;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
               (unaff_EDI,iVar1,target_frame_number,in_stack_fffffe28,unaff_EBP,
@@ -376,7 +378,7 @@ void core_stranger_cpp_CStranger_FUN_005c02b0(void)
 //   XREF to: Stack[-0x1c] (READ)
 // 005c03b0: PUSH EDI
 // 005c03b1: MOV ESI,EAX
-// 005c03b3: CALL core_motion.cpp_CMotionController_FUN_0052e3a0
+// 005c03b3: CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
 //   XREF to: 0052e3a0 (UNCONDITIONAL_CALL)
 // 005c03b8: MOV dword ptr [ESP + 0x1d4],EAX
 //   XREF to: Stack[-0x18] (WRITE)

@@ -9,7 +9,7 @@
 //   TerminatedCString s_float_00656cec
 //   TerminatedCString s_voicuhuman_wav_00656cf2
 // Function calls:
-//   core_motion.cpp_FUN_0052ddb0
+//   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
 
 #include "nocturne.h"
 
@@ -21,7 +21,8 @@ void core_vampboss_cpp_SomethingVoicuHumanWav_FUN_005e74c0(void)
   int in_stack_00000004;
   
   *(undefined4 *)(in_stack_00000004 + 0xcdcc0) = 3;
-  core_motion_cpp_FUN_0052ddb0();
+  core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
+            ((CMotionController *)(in_stack_00000004 + 0x158),"float",0.0);
   *(undefined4 *)(in_stack_00000004 + 0xce91c) = 0;
   (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
   return;
@@ -39,7 +40,7 @@ void core_vampboss_cpp_SomethingVoicuHumanWav_FUN_005e74c0(void)
 // 005e74cc: LEA EAX,[EBX + 0x158]
 // 005e74d2: PUSH EAX
 // 005e74d3: MOV dword ptr [EBX + 0xcdcc0],0x3
-// 005e74dd: CALL core_motion.cpp_FUN_0052ddb0
+// 005e74dd: CALL core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
 //   XREF to: 0052ddb0 (UNCONDITIONAL_CALL)
 // 005e74e2: ADD ESP,0xc
 // 005e74e5: PUSH 0x656cf2

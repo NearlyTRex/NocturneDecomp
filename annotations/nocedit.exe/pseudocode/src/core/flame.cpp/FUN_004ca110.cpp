@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_flame.cpp_FUN_004ca110()
 // Cross-references:
-//   core_bodypart.cpp_FUN_00419740 (00419740) at 004197dd [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740 (00419740) at 004197dd [UNCONDITIONAL_CALL]
 //   core_crossbow.cpp_CCrossbow_renderTransparent_FUN_00448e80 (00448e80) at 00448e96 [UNCONDITIONAL_CALL]
 //   core_flamecan.cpp_FUN_004cb550 (004cb550) at 004cb56d [UNCONDITIONAL_CALL]
 //   core_vessel.cpp_FUN_005e98b0 (005e98b0) at 005e9a11 [UNCONDITIONAL_CALL]

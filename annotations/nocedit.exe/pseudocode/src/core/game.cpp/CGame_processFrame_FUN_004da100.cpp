@@ -103,7 +103,7 @@
 //   core_set.cpp_CDemonSet_FUN_0056c1a0
 //   core_set.cpp_CDemonSet_FUN_0056c990
 //   core_set.cpp_CDemonSet_FUN_0056d190
-//   core_skeleton.cpp_FUN_005a1ed0
+//   core_skeleton.cpp_getMemoryStats_FUN_005a1ed0
 //   core_slew.cpp_CSlew_init_FUN_005a2060
 //   core_slew.cpp_CSlew_processInput_FUN_005a20b0
 //   core_sound.cpp_FUN_005b2fd0
@@ -416,7 +416,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x42);
         engine_texture_cpp_getTextureCacheStats_FUN_005dd970(local_3dc);
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x37);
-        core_skeleton_cpp_FUN_005a1ed0();
+        core_skeleton_cpp_getMemoryStats_FUN_005a1ed0(local_3dc);
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x2c);
         engine_2d_c_drawText_FUN_00401fd0(this_ptr->field52_0xd0,0,g_WindowHeight + -0x21);
         if (g_FullscreenMode != 0) {
@@ -1340,7 +1340,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 // 004da85b: LEA EAX,[EBP + 0xfffffcb2]
 //   XREF to: Stack[-0x3dc] (DATA)
 // 004da861: PUSH EAX
-// 004da862: CALL core_skeleton.cpp_FUN_005a1ed0
+// 004da862: CALL core_skeleton.cpp_getMemoryStats_FUN_005a1ed0
 //   XREF to: 005a1ed0 (UNCONDITIONAL_CALL)
 // 004da867: MOV EAX,[0x00679398]
 //   XREF to: 00679398 (READ)

@@ -4,15 +4,13 @@
 // Convention: __cdecl
 // Signature: void core_bat.cpp_CBat_FUN_00414f00(CBat * this_ptr)
 // Globals:
-//   undefined4 DAT_00615426
+//   double DOUBLE_00615426 = 0.25
 //   CKeys* g_CKeysPtr = 02dcd7d4
 //   void* g_CKeysPtr
 // Function calls:
 //   core_bat.cpp_FUN_00414ce0
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_bat_cpp_CBat_FUN_00414f00(CBat *this_ptr)
 

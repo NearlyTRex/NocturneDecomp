@@ -5,7 +5,7 @@
 // Signature: void core_actor.cpp_serializeActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
 // Cross-references:
 //   core_ammobox.cpp_CAmmoBox_serialize_FUN_00411900 (00411900) at 004119ae [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_CBodyPart_load_FUN_00419880 (00419880) at 00419a19 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_serialize_FUN_00419880 (00419880) at 00419a19 [UNCONDITIONAL_CALL]
 //   core_boneguy.cpp_CBoneGuy_load_FUN_0041d270 (0041d270) at 0041d420 [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_CBoxActor_load_FUN_00422060 (00422060) at 00422152 [UNCONDITIONAL_CALL]
 //   core_chain.cpp_CChain_load_FUN_00430fe0 (00430fe0) at 00431022 [UNCONDITIONAL_CALL]

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_batman.cpp_CBatman_serialize_FUN_00417580(CBatman * this_ptr)
 // Globals:
-//   undefined4 s_speed_006158f5
+//   TerminatedCString s_speed_006158f5
 //   TerminatedCString s_modelName_006158fb
 //   TerminatedCString s_motion_state_00615905
 //   TerminatedCString s_fallEvent_00615912
@@ -29,7 +29,7 @@ void __cdecl core_batman_cpp_CBatman_serialize_FUN_00417580(CBatman *this_ptr)
   CDeformableModelInstance *model_ptr;
   
   core_enemy_cpp_CEnemy_serialize_FUN_004a9660(&this_ptr->base_enemy);
-  core_actor_cpp_serializeFloat_FUN_0040b770(&(this_ptr->base_enemy).speed,"?speed" + 1);
+  core_actor_cpp_serializeFloat_FUN_0040b770(&(this_ptr->base_enemy).speed,"speed");
   model_ptr = &(this_ptr->base_enemy).base_character.model;
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
   core_actor_cpp_serializeMotionState_FUN_0040b9f0

@@ -7,7 +7,7 @@
 //   undefined4 s_smiley_die??.wav_0064f37a
 // Function calls:
 //   core_enemy.cpp_FUN_004a9f10
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_smiley.cpp_FUN_005a32a0
 
@@ -20,8 +20,9 @@ void core_smiley_cpp_FUN_005a3580(void)
 
 {
   CMotionController *this_ptr;
-  float fVar1;
-  int iVar2;
+  int iVar1;
+  float fVar2;
+  SMotion *pSVar3;
   int in_stack_00000004;
   int in_stack_00000008;
   
@@ -30,23 +31,23 @@ void core_smiley_cpp_FUN_005a3580(void)
     *(undefined4 *)(in_stack_00000008 + 4) = 0;
     return;
   }
-  iVar2 = *(int *)(in_stack_00000008 + 0x30);
-  if (iVar2 == 4) {
+  iVar1 = *(int *)(in_stack_00000008 + 0x30);
+  if (iVar1 == 4) {
     *(undefined4 *)(in_stack_00000008 + 0x30) = 100;
   }
-  else if ((iVar2 < 0xc) || (iVar2 == 0x6b)) goto LAB_005a35b4;
+  else if ((iVar1 < 0xc) || (iVar1 == 0x6b)) goto LAB_005a35b4;
   *(undefined4 *)(in_stack_00000008 + 4) = 0;
 LAB_005a35b4:
   if (0.0 < *(float *)(in_stack_00000008 + 4)) {
     core_smiley_cpp_FUN_005a32a0();
   }
-  fVar1 = *(float *)(in_stack_00000004 + 0x243c) - *(float *)(in_stack_00000008 + 4);
+  fVar2 = *(float *)(in_stack_00000004 + 0x243c) - *(float *)(in_stack_00000008 + 4);
   this_ptr = (CMotionController *)(in_stack_00000004 + 0x158);
-  *(float *)(in_stack_00000004 + 0x243c) = fVar1;
-  if (fVar1 <= 0.0) {
+  *(float *)(in_stack_00000004 + 0x243c) = fVar2;
+  if (fVar2 <= 0.0) {
     *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
-    if ((*(int *)(iVar2 + 0x24) != 8) && (*(int *)(iVar2 + 0x24) != 7)) {
+    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
+    if ((pSVar3->state_index != 8) && (pSVar3->state_index != 7)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr,7,1);
       (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x13c))();
       (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
@@ -110,7 +111,7 @@ LAB_005a35b4:
 //   XREF to: 005a366b (CONDITIONAL_JUMP)
 // 005a35ed: PUSH EDI
 // 005a35ee: MOV dword ptr [EBX + 0x243c],0x0
-// 005a35f8: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 005a35f8: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 005a35fd: MOV EAX,dword ptr [EAX + 0x24]
 // 005a3600: ADD ESP,0x4

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10(CDemonRenderer * this_ptr, int enabled)
 // Cross-references:
-//   core_mimic.cpp_FUN_005205f0 (005205f0) at 00520697 [UNCONDITIONAL_CALL]
+//   core_mimic.cpp_CMimic_FUN_005205f0 (005205f0) at 00520697 [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0 (005709e0) at 00570aaa [UNCONDITIONAL_CALL]
 //   core_set.cpp_FUN_00570af0 (00570af0) at 00570b39 [UNCONDITIONAL_CALL]
 

@@ -9,7 +9,7 @@
 // Function calls:
 //   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_enemy.cpp_FUN_004a9f10
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
 //   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
@@ -23,8 +23,9 @@ void core_drone_cpp_FUN_0048f360(void)
 
 {
   float fVar1;
-  int iVar2;
+  SMotion *pSVar2;
   undefined4 uVar3;
+  int iVar4;
   int in_stack_00000004;
   int in_stack_00000008;
   
@@ -34,21 +35,21 @@ void core_drone_cpp_FUN_0048f360(void)
   *(float *)(in_stack_00000004 + 0x243c) = fVar1;
   if (0.0 < fVar1) {
     sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-    iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
-    if (iVar2 == 0) {
+    iVar4 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    if (iVar4 == 0) {
       uVar3 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
       *(undefined4 *)(in_stack_00000004 + 0xbec8) = uVar3;
     }
-    iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
-    if (iVar2 == 0) {
+    iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
+    if (iVar4 == 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 ((CMotionController *)(in_stack_00000004 + 0x158),3,1);
     }
-    if (iVar2 == 1) {
+    if (iVar4 == 1) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 ((CMotionController *)(in_stack_00000004 + 0x158),4,1);
     }
-    if (iVar2 == 2) {
+    if (iVar4 == 2) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 ((CMotionController *)(in_stack_00000004 + 0x158),5,1);
       core_enemy_cpp_FUN_004a9f10();
@@ -57,9 +58,9 @@ void core_drone_cpp_FUN_0048f360(void)
   }
   else {
     *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0
-                      ((CMotionController *)(in_stack_00000004 + 0x158));
-    if ((*(int *)(iVar2 + 0x24) != 8) && (*(int *)(iVar2 + 0x24) != 7)) {
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       ((CMotionController *)(in_stack_00000004 + 0x158));
+    if ((pSVar2->state_index != 8) && (pSVar2->state_index != 7)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 ((CMotionController *)(in_stack_00000004 + 0x158),7,1);
     }
@@ -105,7 +106,7 @@ void core_drone_cpp_FUN_0048f360(void)
 // 0048f3a6: LEA ESI,[EBX + 0x158]
 // 0048f3ac: PUSH ESI
 // 0048f3ad: MOV dword ptr [EBX + 0x243c],0x0
-// 0048f3b7: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0048f3b7: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0048f3bc: MOV EAX,dword ptr [EAX + 0x24]
 // 0048f3bf: ADD ESP,0x4

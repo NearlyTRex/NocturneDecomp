@@ -42,7 +42,7 @@
 //   core_enemy.cpp_FUN_004a9880
 //   core_gore.cpp_FUN_004ede30
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
@@ -66,8 +66,9 @@ void core_sentinel_cpp_FUN_00568030(void)
   float fVar5;
   CCharacter *pCVar6;
   int iVar7;
-  int iVar8;
-  CVector3f *pCVar9;
+  SMotion *pSVar8;
+  int iVar9;
+  CVector3f *pCVar10;
   int extraout_EAX;
   int extraout_EAX_00;
   BADSPACEBASE *in_ESP;
@@ -204,11 +205,12 @@ LAB_00568089:
        (in_stack_00000004->base_character).model.accumulated_root_motion.z;
   *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x2c) =
        in_stack_00000008 * fVar5 * fVar3;
-  iVar7 = core_motion_cpp_CMotionController_FUN_0052dab0(&pCVar1->motion_controller);
-  iVar7 = *(int *)(iVar7 + 0x24);
+  pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     (&pCVar1->motion_controller);
+  iVar7 = pSVar8->state_index;
   local_1c = iVar7;
-  iVar8 = core_charactr_cpp_CCharacter_FUN_0042ca70(&in_stack_00000004->base_character);
-  if (iVar8 == 0) {
+  iVar9 = core_charactr_cpp_CCharacter_FUN_0042ca70(&in_stack_00000004->base_character);
+  if (iVar9 == 0) {
     if ((iVar7 == 10) || (iVar7 == 0xb)) {
       (in_stack_00000004->base_character).cloth_data[0x348] = '\0';
       (in_stack_00000004->base_character).cloth_data[0x349] = '\0';
@@ -405,31 +407,31 @@ LAB_0056878f:
     case 4:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe60);
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-      pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                         (&local_b0,&g_ZeroVector,
-                          (CMatrix3x4f *)
-                          (in_stack_00000004->base_character).model.bone_transform.
-                          bone_world_matrices[DAT_03114214].m);
+      pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+                          (&local_b0,&g_ZeroVector,
+                           (CMatrix3x4f *)
+                           (in_stack_00000004->base_character).model.bone_transform.
+                           bone_world_matrices[DAT_03114214].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                ((CDemonActor *)in_stack_00000004,&local_a4,pCVar9);
+                ((CDemonActor *)in_stack_00000004,&local_a4,pCVar10);
       core_enemy_cpp_FUN_004a9880();
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,30.0);
-      pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                         (&local_50,&g_ZeroVector,
-                          (CMatrix3x4f *)
-                          (in_stack_00000004->base_character).model.bone_transform.
-                          bone_world_matrices[DAT_0311420c].m);
+      pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+                          (&local_50,&g_ZeroVector,
+                           (CMatrix3x4f *)
+                           (in_stack_00000004->base_character).model.bone_transform.
+                           bone_world_matrices[DAT_0311420c].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                ((CDemonActor *)in_stack_00000004,&local_8c,pCVar9);
+                ((CDemonActor *)in_stack_00000004,&local_8c,pCVar10);
       core_enemy_cpp_FUN_004a9880();
       break;
     case 9:
       if ((in_stack_00000004->pool_me == 0) &&
          ((in_stack_00000004->base_character).base_actor.field11_0xdc == 0)) {
-        pCVar9 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                           (&(in_stack_00000004->base_character).model,local_44,0);
+        pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                            (&(in_stack_00000004->base_character).model,local_44,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                  ((CDemonActor *)in_stack_00000004,&local_128,pCVar9);
+                  ((CDemonActor *)in_stack_00000004,&local_128,pCVar10);
         core_gore_cpp_FUN_004ede30();
         in_stack_00000004->pool_me = 1;
       }
@@ -507,11 +509,11 @@ switchD_00568487_caseD_d:
     pcVar2 = (in_stack_00000004->base_character).field2_0x240c + 0x10;
     local_fc = in_stack_00000008 *
                *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x24);
-    pCVar9 = &(in_stack_00000004->base_character).model.accumulated_root_motion;
+    pCVar10 = &(in_stack_00000004->base_character).model.accumulated_root_motion;
     local_ec = local_104 + *(float *)pcVar2;
     local_e8 = local_100 + *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x14);
     local_e4 = local_fc + *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x18);
-    local_68 = local_ec + pCVar9->x;
+    local_68 = local_ec + pCVar10->x;
     local_64 = local_e8 + (in_stack_00000004->base_character).model.accumulated_root_motion.y;
     local_60 = local_e4 + (in_stack_00000004->base_character).model.accumulated_root_motion.z;
     (in_stack_00000004->base_character).field2_0x240c[0x18] = '\0';
@@ -524,7 +526,7 @@ switchD_00568487_caseD_d:
     (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
     (in_stack_00000004->base_character).model.accumulated_root_motion.y =
          (in_stack_00000004->base_character).model.accumulated_root_motion.z;
-    pCVar9->x = (in_stack_00000004->base_character).model.accumulated_root_motion.y;
+    pCVar10->x = (in_stack_00000004->base_character).model.accumulated_root_motion.y;
     core_charactr_cpp_CCharacter_FUN_00428f40(&in_stack_00000004->base_character);
   }
   core_charactr_cpp_CCharacter_FUN_00429820(&in_stack_00000004->base_character);
@@ -586,7 +588,7 @@ switchD_00568487_caseD_d:
 // 005680b3: PUSH EDI
 // 005680b4: FSTP float ptr [EBX + 0x2434]
 // 005680ba: FSTP float ptr [EBX + 0x2438]
-// 005680c0: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 005680c0: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 005680c5: ADD ESP,0x4
 // 005680c8: PUSH dword ptr [EBP + 0x92]

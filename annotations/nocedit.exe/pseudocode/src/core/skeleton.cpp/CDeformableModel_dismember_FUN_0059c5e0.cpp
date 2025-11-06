@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformableModel * this_ptr, int lod_index, CBodyPart * body_part_ptr, int part_index, int num_parts_to_dismember, int texture_set_index, CVector3i * skinned_vertices)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a1040 (005a1040) at 005a10c8 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040 (005a1040) at 005a10c8 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_skeleton_cpp_0064eb04
 //   TerminatedCString s_CDeformableModel_dismemb_0064eb19

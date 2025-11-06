@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_game.cpp_CGame_FUN_004e0bd0(CGame * this_ptr)
 // Cross-references:
-//   core_gabriela.cpp_FUN_004d6b30 (004d6b30) at 004d6d18 [UNCONDITIONAL_CALL]
+//   core_gabriela.cpp_CGabriella_FUN_004d6b30 (004d6b30) at 004d6d18 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c48b0 (005c48b0) at 005c4af3 [UNCONDITIONAL_CALL]
 // Globals:
 //   CHero*[4] g_HeroActors

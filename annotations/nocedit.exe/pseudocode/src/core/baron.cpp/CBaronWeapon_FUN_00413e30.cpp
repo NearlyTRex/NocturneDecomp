@@ -7,7 +7,7 @@
 //   void* switchdataD_00413e20 = 00413e65
 // Function calls:
 //   core_baron.cpp_FUN_00413f20
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 
 #include "nocturne.h"
 
@@ -15,6 +15,7 @@ int __cdecl core_baron_cpp_CBaronWeapon_FUN_00413e30(CBaronWeapon *this_ptr)
 
 {
   int iVar1;
+  SMotion *pSVar2;
   
   core_baron_cpp_FUN_00413f20();
   iVar1 = this_ptr->field1_0x578;
@@ -22,8 +23,9 @@ int __cdecl core_baron_cpp_CBaronWeapon_FUN_00413e30(CBaronWeapon *this_ptr)
     if (*(int *)(iVar1 + 0xbe38) != 0) {
       return 0;
     }
-    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0((CMotionController *)(iVar1 + 0x158));
-    switch(*(undefined4 *)(iVar1 + 0x24)) {
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       ((CMotionController *)(iVar1 + 0x158));
+    switch(pSVar2->state_index) {
     case 0:
     case 1:
     case 2:
@@ -68,7 +70,7 @@ int __cdecl core_baron_cpp_CBaronWeapon_FUN_00413e30(CBaronWeapon *this_ptr)
 // 00413e6c: LEA EAX,[EDX + 0x158]
 //   Label: LAB_00413e6c
 // 00413e72: PUSH EAX
-// 00413e73: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 00413e73: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 00413e78: MOV EAX,dword ptr [EAX + 0x24]
 // 00413e7b: ADD ESP,0x4

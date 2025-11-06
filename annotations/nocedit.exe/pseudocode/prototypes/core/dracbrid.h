@@ -39,9 +39,9 @@ undefined FUN_00485b20();
 // Address: 00485bc0
 undefined FUN_00485bc0();
 
-// Original: core_dracbrid.cpp_FUN_00485be0
+// Original: core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0
 // Address: 00485be0
-undefined FUN_00485be0();
+int CDraculaBride::renderOpaque(CDraculaBride * this_ptr);
 
 // Original: core_dracbrid.cpp_CDraculaBride_load_FUN_00485dd0
 // Address: 00485dd0

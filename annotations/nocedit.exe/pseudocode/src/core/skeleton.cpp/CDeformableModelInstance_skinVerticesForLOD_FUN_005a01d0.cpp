@@ -12,10 +12,10 @@
 //   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597ddc [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 (0058e690) at 0058e77a [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058e4e0 (0058e4e0) at 0058e55c [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a1040 (005a1040) at 005a10a3 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a10e0 (005a10e0) at 005a114c [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a14b0 (005a14b0) at 005a1503 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0 (005a05e0) at 005a0629 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040 (005a1040) at 005a10a3 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0 (005a10e0) at 005a114c [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_005a14b0 (005a14b0) at 005a1503 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0 (005a02f0) at 005a0327 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0 (005a02a0) at 005a02d7 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250 (005a0250) at 005a0287 [UNCONDITIONAL_CALL]
@@ -35,15 +35,15 @@ core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
   CDeformableModel *this_ptr_00;
   int in_stack_00000010;
   CMatrix3x4f *lod_index_00;
-  CMatrix3x4f *bone_matrices;
+  CVector3i *bone_matrices;
   int *output_buffer;
   
   output_buffer = this_ptr->part_visibility_flags;
-  bone_matrices = (CMatrix3x4f *)this_ptr->current_lod_index;
+  bone_matrices = this_ptr->skinned_vertices_buffer;
   lod_index_00 = (this_ptr->bone_transform).bone_world_matrices;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   core_skeleton_cpp_CDeformableModel_skinVertices_FUN_0059a880
-            (this_ptr_00,(int)lod_index_00,bone_matrices,output_buffer);
+            (this_ptr_00,(int)lod_index_00,(CMatrix3x4f *)bone_matrices,output_buffer);
   this_ptr->cached_skinned_lod_index = in_stack_00000010;
   return;
 }

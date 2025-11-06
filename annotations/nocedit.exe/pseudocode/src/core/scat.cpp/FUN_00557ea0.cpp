@@ -15,7 +15,7 @@
 // Function calls:
 //   core_charactr.cpp_CCharacter_FUN_0042c3c0
 //   core_gore.cpp_CGore_FUN_004ee030
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_scat.cpp_FUN_00558010
 
@@ -29,7 +29,8 @@ void core_scat_cpp_FUN_00557ea0(void)
 {
   CDeformableModelInstance *this_ptr;
   float fVar1;
-  int iVar2;
+  SMotion *pSVar2;
+  int iVar3;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
   
@@ -51,25 +52,27 @@ void core_scat_cpp_FUN_00557ea0(void)
       core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
       return;
     }
-    iVar2 = core_scat_cpp_FUN_00558010();
-    if (iVar2 == 0) {
-      iVar2 = 0xc;
+    iVar3 = core_scat_cpp_FUN_00558010();
+    if (iVar3 == 0) {
+      iVar3 = 0xc;
     }
     else {
-      iVar2 = 0xd;
+      iVar3 = 0xd;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr->motion_controller,iVar2,1);
+              (&this_ptr->motion_controller,iVar3,1);
     (*((in_stack_00000004->base_actor).vtable)->playSound)
               (&in_stack_00000004->base_actor,"scat-hurt-?.wav");
     core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
     return;
   }
   in_stack_00000004->hit_points = 0.0;
-  iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
-  if (*(int *)(iVar2 + 0x24) != 5) {
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
-    if (*(int *)(iVar2 + 0x24) != 4) {
+  pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     (&this_ptr->motion_controller);
+  if (pSVar2->state_index != 5) {
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       (&this_ptr->motion_controller);
+    if (pSVar2->state_index != 4) {
       in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr->motion_controller,4,1);
@@ -154,7 +157,7 @@ void core_scat_cpp_FUN_00557ea0(void)
 // 00557f32: PUSH ESI
 //   Label: LAB_00557f32
 // 00557f33: MOV dword ptr [EBX + 0x243c],0x0
-// 00557f3d: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 00557f3d: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 00557f42: MOV EAX,dword ptr [EAX + 0x24]
 // 00557f45: ADD ESP,0x4
@@ -162,7 +165,7 @@ void core_scat_cpp_FUN_00557ea0(void)
 // 00557f4b: JZ 0x00557f8e
 //   XREF to: 00557f8e (CONDITIONAL_JUMP)
 // 00557f4d: PUSH ESI
-// 00557f4e: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 00557f4e: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 00557f53: MOV EAX,dword ptr [EAX + 0x24]
 // 00557f56: ADD ESP,0x4

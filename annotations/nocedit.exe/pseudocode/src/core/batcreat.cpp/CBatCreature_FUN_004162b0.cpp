@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_batcreat.cpp_CBatCreature_FUN_004162b0(CBatCreature * this_ptr)
 // Globals:
-//   undefined4 s_Model_006156b9
+//   TerminatedCString s_Model_006156b9
 //   TerminatedCString s_State_006156bf
 // Function calls:
 //   core_actor.cpp_CActorPropertyList_FUN_0040e4a0

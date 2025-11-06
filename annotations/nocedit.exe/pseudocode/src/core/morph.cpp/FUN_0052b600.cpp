@@ -4,12 +4,12 @@
 // Convention: unknown
 // Signature: undefined core_morph.cpp_FUN_0052b600()
 // Cross-references:
-//   core_biggs.cpp_FUN_004189b0 (004189b0) at 00418a24 [UNCONDITIONAL_CALL]
+//   core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0 (004189b0) at 00418a24 [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0 (00520ba0) at 00520ccd [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00529750 (00529750) at 005297ea [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750 (00529750) at 005297ea [UNCONDITIONAL_CALL]
 //   core_passngr.cpp_FUN_005460c0 (005460c0) at 00546165 [UNCONDITIONAL_CALL]
-//   core_succubus.cpp_CSuccubus_FUN_005c7590 (005c7590) at 005c76a0 [UNCONDITIONAL_CALL]
-//   core_vampboss.cpp_CVampireBoss_FUN_005e6da0 (005e6da0) at 005e6f0e [UNCONDITIONAL_CALL]
+//   core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590 (005c7590) at 005c76a0 [UNCONDITIONAL_CALL]
+//   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0 (005e6da0) at 005e6f0e [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_morph.cpp_FUN_0052aa30
 

@@ -38,7 +38,7 @@
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
 //   core_charactr.cpp_CCharacter_FUN_0042e840
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_motion.cpp_CMotionController_FUN_0052dd20
+//   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
@@ -99,8 +99,8 @@ undefined4 core_stranger_cpp_CStranger_FUN_005c1680(void)
        (in_stack_00000004[0x179].scale.x != 0)) ||
       (local_14 = (float)core_charactr_cpp_CCharacter_FUN_0042e840(),
       local_14 < (float)DOUBLE_00653a7c)) ||
-     (((local_14 = core_motion_cpp_CMotionController_FUN_0052dd20
-                             ((CMotionController *)(in_stack_00000004 + 1)), local_14 < 1.0 ||
+     (((local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
+                             ((CMotionController *)(in_stack_00000004 + 1),0), local_14 < 1.0 ||
        (in_stack_00000004[0x1b].field7_0x6c != 0)) ||
       (*(int *)(in_stack_00000004[0x1b].create_event + 0x38) != 0)))) {
     return 0;
@@ -377,7 +377,7 @@ LAB_005c1c40:
 // 005c16d7: PUSH 0x0
 // 005c16d9: LEA EAX,[ESI + 0x158]
 // 005c16df: PUSH EAX
-// 005c16e0: CALL core_motion.cpp_CMotionController_FUN_0052dd20
+// 005c16e0: CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   XREF to: 0052dd20 (UNCONDITIONAL_CALL)
 // 005c16e5: MOV dword ptr [ESP + 0x164],EAX
 //   XREF to: Stack[-0x14] (WRITE)

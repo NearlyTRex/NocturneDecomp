@@ -60,9 +60,9 @@
 //   core_event.cpp_CRuleList_remove_FUN_004b17c0
 //   core_ground.cpp_getGroundTypeName_FUN_004eed80
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_motion.cpp_CMotionController_FUN_0052dab0
-//   core_motion.cpp_CMotionController_FUN_0052dde0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
+//   core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0
 //   core_msnedit.cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0
 //   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   core_sound.cpp_FUN_005b3de0
@@ -96,7 +96,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
   int *piVar5;
   bool bVar6;
   undefined3 extraout_var;
-  undefined1 *puVar7;
+  SMotion *pSVar7;
   char *pcVar8;
   uint uVar9;
   SIZE_T SVar10;
@@ -562,10 +562,9 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
         crt_stdio_c_sprintf_FUN_005fdbd0
                   (local_980,"%s\t%s",pSVar17,local_1c + local_24->motions[0].state_index);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)local_21fc,local_980);
-        puVar7 = (undefined1 *)
-                 core_motion_cpp_CMotionController_FUN_0052dab0
+        pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            ((CMotionController *)this_ptr->data_ptr);
-        if ((SMotion *)puVar7 == pSVar17) {
+        if (pSVar7 == pSVar17) {
           local_20 = iVar15;
         }
         local_24 = (CMotionList *)(local_24->state_names[0x2d] + 2);
@@ -576,7 +575,8 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     iVar15 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                        ((CPickList *)local_21fc,local_2a0,local_20,0);
     if (-1 < iVar15) {
-      core_motion_cpp_CMotionController_FUN_0052dde0((CMotionController *)this_ptr->data_ptr);
+      core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
+                ((CMotionController *)this_ptr->data_ptr,iVar15,0.0);
       if (this_ptr->auto_update_flag != 0) {
         (*actor->vtable->setup)(actor);
       }
@@ -2192,7 +2192,7 @@ LAB_00410083:
 // 0040fadb: ADD ESP,0x8
 // 0040fade: MOV EAX,dword ptr [EBX + 0x68]
 // 0040fae1: PUSH EAX
-// 0040fae2: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0040fae2: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0040fae7: ADD ESP,0x4
 // 0040faea: CMP EAX,EDI
@@ -2232,7 +2232,7 @@ LAB_00410083:
 // 0040fb40: PUSH EAX
 // 0040fb41: MOV ESI,dword ptr [EBX + 0x68]
 // 0040fb44: PUSH ESI
-// 0040fb45: CALL core_motion.cpp_CMotionController_FUN_0052dde0
+// 0040fb45: CALL core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0
 //   XREF to: 0052dde0 (UNCONDITIONAL_CALL)
 // 0040fb4a: MOV EDI,dword ptr [EBX + 0x58]
 // 0040fb4d: ADD ESP,0xc

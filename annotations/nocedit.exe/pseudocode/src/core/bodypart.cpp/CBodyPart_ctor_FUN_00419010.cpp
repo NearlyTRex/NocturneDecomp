@@ -5,7 +5,7 @@
 // Signature: CBodyPart * core_bodypart.cpp_CBodyPart_ctor_FUN_00419010(CBodyPart * this_ptr)
 // Cross-references:
 //   core_bodypart.cpp_CreateBodyPart_FUN_00418e10 (00418e10) at 00418f19 [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_FUN_00418fd0 (00418fd0) at 00418fea [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_createBodyPart_FUN_00418fd0 (00418fd0) at 00418fea [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonActor_vtable g_CBodyPartVTable
 //   WatcomTypeInfo g_SBodyPartModelTypeInfo

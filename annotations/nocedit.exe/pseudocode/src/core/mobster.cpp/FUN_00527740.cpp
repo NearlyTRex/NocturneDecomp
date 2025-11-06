@@ -12,7 +12,7 @@
 //   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_enemy.cpp_FUN_004a9f10
 //   core_mobster.cpp_FUN_00527380
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
 //   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
@@ -29,7 +29,8 @@ void core_mobster_cpp_FUN_00527740(void)
   float fVar1;
   CDemonActor *pCVar2;
   int iVar3;
-  undefined4 uVar4;
+  SMotion *pSVar4;
+  undefined4 uVar5;
   int in_stack_00000004;
   int in_stack_00000008;
   
@@ -45,15 +46,15 @@ void core_mobster_cpp_FUN_00527740(void)
   *(float *)(in_stack_00000004 + 0x243c) = fVar1;
   if (fVar1 <= 0.0) {
     *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
-    iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
-    if ((*(int *)(iVar3 + 0x24) != 5) && (*(int *)(iVar3 + 0x24) != 4)) {
+    pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
+    if ((pSVar4->state_index != 5) && (pSVar4->state_index != 4)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr,4,1);
       (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x13c))();
       if (*(int *)(in_stack_00000004 + 0xbf58) == 0) {
         sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-        uVar4 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
+        uVar5 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
         *(undefined4 *)(in_stack_00000004 + 0xbf58) = 1;
-        *(undefined4 *)(in_stack_00000004 + 0xbf50) = uVar4;
+        *(undefined4 *)(in_stack_00000004 + 0xbf50) = uVar5;
         core_enemy_cpp_FUN_004a9f10();
         return;
       }
@@ -72,8 +73,8 @@ LAB_005277e1:
   }
   iVar3 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
   if (iVar3 == 0) {
-    uVar4 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
-    *(undefined4 *)(in_stack_00000004 + 0xbf50) = uVar4;
+    uVar5 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
+    *(undefined4 *)(in_stack_00000004 + 0xbf50) = uVar5;
     core_enemy_cpp_FUN_004a9f10();
     return;
   }
@@ -177,7 +178,7 @@ LAB_00527805:
 // 00527814: PUSH ESI
 //   Label: LAB_00527814
 // 00527815: MOV dword ptr [EBX + 0x243c],0x0
-// 0052781f: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0052781f: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 00527824: MOV EAX,dword ptr [EAX + 0x24]
 // 00527827: ADD ESP,0x4

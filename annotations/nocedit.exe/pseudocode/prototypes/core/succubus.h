@@ -27,9 +27,9 @@ void CSuccubus(CSuccubus * this_ptr);
 // Address: 005c6e90
 void CSuccubus::process(CSuccubus * this_ptr);
 
-// Original: core_succubus.cpp_CSuccubus_FUN_005c7590
+// Original: core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590
 // Address: 005c7590
-int CSuccubus(CSuccubus * this_ptr);
+int CSuccubus::renderOpaque(CSuccubus * this_ptr);
 
 // Original: core_succubus.cpp_CSuccubus_serialize_FUN_005c7710
 // Address: 005c7710

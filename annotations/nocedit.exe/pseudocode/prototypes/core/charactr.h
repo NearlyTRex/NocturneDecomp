@@ -75,9 +75,9 @@ void CCharacter(CCharacter * this_ptr);
 // Address: 00429b40
 void CCharacter(CCharacter * this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_FUN_0042a2c0
+// Original: core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 // Address: 0042a2c0
-int CCharacter(CCharacter * this_ptr);
+int CCharacter::renderOpaque(CCharacter * this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042a390
 // Address: 0042a390

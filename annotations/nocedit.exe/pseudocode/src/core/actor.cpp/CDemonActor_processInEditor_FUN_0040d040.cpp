@@ -5,7 +5,7 @@
 // Signature: void core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor * this_ptr)
 // Cross-references:
 //   core_barrier.cpp_CBarrier_FUN_00414460 (00414460) at 004145fd [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_FUN_0041b260 (0041b260) at 0041b265 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_processInEditor_FUN_0041b260 (0041b260) at 0041b265 [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_FUN_004228e0 (004228e0) at 004228e5 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800 (0042f800) at 0042f809 [UNCONDITIONAL_CALL]
 //   core_curtain.cpp_FUN_0044b7a0 (0044b7a0) at 0044b8ab [UNCONDITIONAL_CALL]

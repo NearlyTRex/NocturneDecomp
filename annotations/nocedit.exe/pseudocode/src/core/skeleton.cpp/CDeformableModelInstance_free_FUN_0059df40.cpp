@@ -19,13 +19,13 @@ void __cdecl
 core_skeleton_cpp_CDeformableModelInstance_free_FUN_0059df40(CDeformableModelInstance *this_ptr)
 
 {
-  if ((void *)this_ptr->current_lod_index == (void *)0x0) {
+  if (this_ptr->skinned_vertices_buffer == (CVector3i *)0x0) {
     return;
   }
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
   g_CurrentDebugLine = 0x905;
-  crt_memory_c_free_FUN_005fe659((void *)this_ptr->current_lod_index);
-  this_ptr->current_lod_index = 0;
+  crt_memory_c_free_FUN_005fe659(this_ptr->skinned_vertices_buffer);
+  this_ptr->skinned_vertices_buffer = (CVector3i *)0x0;
   return;
 }
 

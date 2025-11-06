@@ -4,10 +4,10 @@
 // Convention: __cdecl
 // Signature: void engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(CDemonRenderer * this_ptr)
 // Cross-references:
-//   core_baron.cpp_CBaron_FUN_00413ae0 (00413ae0) at 00413c5a [UNCONDITIONAL_CALL]
-//   core_batman.cpp_CBatman_FUN_004173b0 (004173b0) at 0041753c [UNCONDITIONAL_CALL]
+//   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 (00413ae0) at 00413c5a [UNCONDITIONAL_CALL]
+//   core_batman.cpp_CBatman_renderOpaque_FUN_004173b0 (004173b0) at 0041753c [UNCONDITIONAL_CALL]
 //   core_boneguy.cpp_FUN_0041d1b0 (0041d1b0) at 0041d249 [UNCONDITIONAL_CALL]
-//   core_dracbrid.cpp_FUN_00485be0 (00485be0) at 00485d7b [UNCONDITIONAL_CALL]
+//   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 (00485be0) at 00485d7b [UNCONDITIONAL_CALL]
 //   core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 (004fee00) at 004ff170 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052b160 (0052b160) at 0052b23f [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005971d9 [UNCONDITIONAL_CALL]

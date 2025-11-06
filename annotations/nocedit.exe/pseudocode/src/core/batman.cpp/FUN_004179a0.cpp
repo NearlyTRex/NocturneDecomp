@@ -4,9 +4,9 @@
 // Convention: unknown
 // Signature: undefined core_batman.cpp_FUN_004179a0()
 // Globals:
-//   undefined4 s_batman-die.wav_0061597d
+//   TerminatedCString s_batman_die_wav_0061597d
 //   TerminatedCString s_batman_hurt_wav_0061598c
-//   undefined4 DAT_0061599d
+//   double DOUBLE_0061599d = 2
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CFireEffect g_CFireEffectInstance
 // Function calls:
@@ -16,7 +16,7 @@
 //   core_charactr.cpp_CCharacter_FUN_0042b5b0
 //   core_enemy.cpp_FUN_004a9f10
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
@@ -24,7 +24,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_batman.cpp_FUN_004179a0(undefined4 param_1, undefined4
    param_2) */
 
@@ -35,7 +34,8 @@ void core_batman_cpp_FUN_004179a0(void)
   float fVar1;
   CVector3f *input_local_point;
   int iVar2;
-  CDemonActor *pCVar3;
+  SMotion *pSVar3;
+  CDemonActor *pCVar4;
   BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
@@ -47,7 +47,7 @@ void core_batman_cpp_FUN_004179a0(void)
   if (*(int *)((int)in_stack_00000008 + 0x28) == 7) {
     iVar2 = 0;
     *(float *)((int)in_stack_00000008 + 4) =
-         *(float *)((int)in_stack_00000008 + 4) * (float)_DAT_0061599d;
+         *(float *)((int)in_stack_00000008 + 4) * (float)DOUBLE_0061599d;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               (&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffd8,
                (CVector3f *)((int)in_stack_00000008 + 0x1c));
@@ -70,15 +70,16 @@ void core_batman_cpp_FUN_004179a0(void)
   in_stack_00000004->hit_points = fVar1;
   if (fVar1 <= 0.0) {
     in_stack_00000004->hit_points = 0.0;
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
-    if ((*(int *)(iVar2 + 0x24) != 7) && (*(int *)(iVar2 + 0x24) != 8)) {
+    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       (&this_ptr->motion_controller);
+    if ((pSVar3->state_index != 7) && (pSVar3->state_index != 8)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr->motion_controller,7,1);
       sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-      pCVar3 = (CDemonActor *)
+      pCVar4 = (CDemonActor *)
                (*((in_stack_00000004->base_actor).vtable)->playSound)
-                         (&in_stack_00000004->base_actor,"4@batman-die.wav" + 2);
-      in_stack_00000004[1].base_actor.next_actor = pCVar3;
+                         (&in_stack_00000004->base_actor,"batman-die.wav");
+      in_stack_00000004[1].base_actor.next_actor = pCVar4;
       pCStack_14 = in_stack_00000004;
       CStack_20.z = 6.0136e-39;
       core_enemy_cpp_FUN_004a9f10();
@@ -101,10 +102,10 @@ void core_batman_cpp_FUN_004179a0(void)
     }
     iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
     if (iVar2 == 0) {
-      pCVar3 = (CDemonActor *)
+      pCVar4 = (CDemonActor *)
                (*((in_stack_00000004->base_actor).vtable)->playSound)
                          (&in_stack_00000004->base_actor,"batman-hurt?.wav");
-      in_stack_00000004[1].base_actor.next_actor = pCVar3;
+      in_stack_00000004[1].base_actor.next_actor = pCVar4;
       CStack_20.z = in_stack_00000008;
       CStack_20.y = (float)in_stack_00000004;
       CStack_20.x = 6.013658e-39;
@@ -294,7 +295,7 @@ void core_batman_cpp_FUN_004179a0(void)
 // 00417b19: PUSH EBX
 //   Label: LAB_00417b19
 // 00417b1a: MOV dword ptr [ESI + 0x243c],0x0
-// 00417b24: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 00417b24: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 00417b29: MOV EAX,dword ptr [EAX + 0x24]
 // 00417b2c: ADD ESP,0x4

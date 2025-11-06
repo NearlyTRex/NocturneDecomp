@@ -43,9 +43,9 @@ undefined CColonel::load();
 // Address: 004404a0
 undefined FUN_004404a0();
 
-// Original: core_colonel.cpp_FUN_004404b0
+// Original: core_colonel.cpp_CColonel_FUN_004404b0
 // Address: 004404b0
-undefined FUN_004404b0();
+void CColonel(CColonel * this_ptr);
 
 // Original: core_colonel.cpp_FUN_004405d0
 // Address: 004405d0

@@ -183,9 +183,9 @@ undefined CStranger();
 // Address: 005c4c20
 undefined CStranger();
 
-// Original: core_stranger.cpp_FUN_005c5170
+// Original: core_stranger.cpp_CStranger_FUN_005c5170
 // Address: 005c5170
-undefined FUN_005c5170();
+void CStranger(CStranger * this_ptr);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c51c0
 // Address: 005c51c0
@@ -223,9 +223,9 @@ undefined FUN_005c6650();
 // Address: 005c6660
 undefined FUN_005c6660();
 
-// Original: core_stranger.cpp_FUN_005c66a0
+// Original: core_stranger.cpp_CStranger_FUN_005c66a0
 // Address: 005c66a0
-undefined FUN_005c66a0();
+int CStranger(CStranger * this_ptr);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c6750
 // Address: 005c6750
@@ -235,9 +235,9 @@ undefined CStranger();
 // Address: 005c67c0
 undefined CStranger();
 
-// Original: core_stranger.cpp_FUN_005c67f0
+// Original: core_stranger.cpp_CStranger_FUN_005c67f0
 // Address: 005c67f0
-undefined FUN_005c67f0();
+void CStranger(CStranger * this_ptr);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c6850
 // Address: 005c6850

@@ -10,7 +10,7 @@
 // Function calls:
 //   core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042e370
 //   core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 
@@ -22,28 +22,29 @@
 void core_scat_cpp_FUN_00558060(void)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
   int iVar2;
   int iVar3;
+  int iVar4;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
   int local_14;
   
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
-                    (&(in_stack_00000004->model).motion_controller);
-  if ((*(int *)(iVar1 + 0x24) != 0xc) &&
-     (iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
-                        (&(in_stack_00000004->model).motion_controller),
-     *(int *)(iVar1 + 0x24) != 0xd)) {
-    iVar1 = *(int *)(in_stack_00000004[2].cloth_data + 0x5388);
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     (&(in_stack_00000004->model).motion_controller);
+  if ((pSVar1->state_index != 0xc) &&
+     (pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                         (&(in_stack_00000004->model).motion_controller), pSVar1->state_index != 0xd
+     )) {
+    iVar4 = *(int *)(in_stack_00000004[2].cloth_data + 0x5388);
     if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) == 0) {
-      iVar1 = 0;
+      iVar4 = 0;
     }
     iVar2 = *(int *)(in_stack_00000004[2].cloth_data + 0x5508);
-    if (((iVar2 != 0) && (iVar1 != iVar2)) && (*(int *)(iVar2 + 0x2e0) == 8)) {
-      iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0
-                        (&(in_stack_00000004->model).motion_controller);
-      if (*(int *)(iVar2 + 0x24) == 0) {
+    if (((iVar2 != 0) && (iVar4 != iVar2)) && (*(int *)(iVar2 + 0x2e0) == 8)) {
+      pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                         (&(in_stack_00000004->model).motion_controller);
+      if (pSVar1->state_index == 0) {
         in_stack_00000004[2].cloth_data[0x5508] = '\0';
         in_stack_00000004[2].cloth_data[0x5509] = '\0';
         in_stack_00000004[2].cloth_data[0x550a] = '\0';
@@ -57,7 +58,7 @@ void core_scat_cpp_FUN_00558060(void)
     local_14 = 0;
     while (0.0 < in_stack_00000008) {
       iVar2 = *(int *)(in_stack_00000004[2].cloth_data + 0x5508);
-      if ((iVar1 == iVar2) && (iVar2 != 0)) {
+      if ((iVar4 == iVar2) && (iVar2 != 0)) {
         switch(*(undefined4 *)(iVar2 + 0x2e0)) {
         default:
           break;
@@ -69,7 +70,7 @@ void core_scat_cpp_FUN_00558060(void)
                 (&(in_stack_00000004->model).motion_controller);
       if (-1 < iVar2) {
         iVar3 = *(int *)(in_stack_00000004[2].cloth_data + 0x5508);
-        if (iVar1 != iVar3) {
+        if (iVar4 != iVar3) {
           if (iVar3 != 0) {
             if (iVar3 != 0) {
               if (*(int *)(iVar3 + 0x2e0) == 8) {
@@ -89,15 +90,15 @@ void core_scat_cpp_FUN_00558060(void)
             }
           }
           if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) != 0) {
-            if ((iVar1 == 0) || (*(int *)(iVar1 + 0x2e0) == 8)) {
+            if ((iVar4 == 0) || (*(int *)(iVar4 + 0x2e0) == 8)) {
               iVar3 = 0;
             }
             else {
               iVar3 = 1;
             }
             if (((iVar3 == iVar2) &&
-                (*(int *)(in_stack_00000004[2].cloth_data + 0x5508) = iVar1, iVar1 != 0)) &&
-               ((**(code **)(*(int *)(iVar1 + 0x154) + 0xf0))(),
+                (*(int *)(in_stack_00000004[2].cloth_data + 0x5508) = iVar4, iVar4 != 0)) &&
+               ((**(code **)(*(int *)(iVar4 + 0x154) + 0xf0))(),
                *(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5508) + 0x2e0) == 8)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(in_stack_00000004->model).motion_controller,6,1);
@@ -129,7 +130,7 @@ void core_scat_cpp_FUN_00558060(void)
 //   XREF to: Stack[0x4] (READ)
 // 0055806f: LEA ESI,[EBX + 0x158]
 // 00558075: PUSH ESI
-// 00558076: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 00558076: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0055807b: MOV EAX,dword ptr [EAX + 0x24]
 // 0055807e: ADD ESP,0x4
@@ -145,7 +146,7 @@ void core_scat_cpp_FUN_00558060(void)
 // 0055808c: RET
 // 0055808d: PUSH ESI
 //   Label: LAB_0055808d
-// 0055808e: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0055808e: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 00558093: MOV EAX,dword ptr [EAX + 0x24]
 // 00558096: ADD ESP,0x4
@@ -311,7 +312,7 @@ void core_scat_cpp_FUN_00558060(void)
 //   XREF to: 005580c6 (CONDITIONAL_JUMP)
 // 00558210: LEA EDI,[EBX + 0x158]
 // 00558216: PUSH EDI
-// 00558217: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 00558217: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0055821c: MOV EAX,dword ptr [EAX + 0x24]
 // 0055821f: ADD ESP,0x4

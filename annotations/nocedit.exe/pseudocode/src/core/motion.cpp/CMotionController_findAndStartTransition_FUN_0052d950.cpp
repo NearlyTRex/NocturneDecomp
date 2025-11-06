@@ -9,10 +9,10 @@
 // Globals:
 //   void* switchdataD_0052d938 = 0052d9cd
 // Function calls:
-//   core_motion.cpp_CMotionController_FUN_0052dab0
-//   core_motion.cpp_CMotionController_FUN_0052dbc0
-//   core_motion.cpp_CMotionController_FUN_0052dde0
-//   core_motion.cpp_CMotionController_FUN_0052de40
+//   core_motion.cpp_CMotionController_clearTweenState_FUN_0052de40
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+//   core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0
+//   core_motion.cpp_CMotionController_startTransition_FUN_0052dbc0
 
 #include "nocturne.h"
 
@@ -20,52 +20,54 @@ int __cdecl
 core_motion_cpp_CMotionController_findAndStartTransition_FUN_0052d950(CMotionController *this_ptr)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
   int iVar2;
-  int iVar3;
-  int iVar4;
+  SMotion *pSVar3;
+  SMotionTransition *transition;
   
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
-  iVar4 = this_ptr->state_index;
-  if ((iVar4 < 0) || (iVar4 == *(int *)(iVar1 + 0x24))) {
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
+  iVar2 = this_ptr->state_index;
+  if ((iVar2 < 0) || (iVar2 == pSVar1->state_index)) {
     this_ptr->in_transition = 0;
     return 0;
   }
-  if (((int *)this_ptr->in_transition == (int *)0x0) || (iVar4 != *(int *)this_ptr->in_transition))
+  if (((int *)this_ptr->in_transition == (int *)0x0) || (iVar2 != *(int *)this_ptr->in_transition))
   {
     iVar2 = 0;
-    iVar4 = 0;
-    iVar3 = iVar1;
-    if (0 < *(int *)(iVar1 + 0x68)) {
+    transition = (SMotionTransition *)0x0;
+    pSVar3 = pSVar1;
+    if (0 < pSVar1->transition_count) {
       do {
-        if (*(int *)(iVar3 + 0x6c) == this_ptr->state_index) {
-          iVar4 = iVar1 + 0x6c + iVar2 * 0x18;
+        if (pSVar3->transitions[0].desired_state == this_ptr->state_index) {
+          transition = pSVar1->transitions + iVar2;
           break;
         }
         iVar2 = iVar2 + 1;
-        iVar3 = iVar3 + 0x18;
-      } while (iVar2 < *(int *)(iVar1 + 0x68));
+        pSVar3 = (SMotion *)(pSVar3->motion_name + 0x18);
+      } while (iVar2 < pSVar1->transition_count);
     }
-    if ((iVar4 != 0) && (iVar4 != this_ptr->in_transition)) {
+    if ((transition != (SMotionTransition *)0x0) &&
+       (transition != (SMotionTransition *)this_ptr->in_transition)) {
       this_ptr->in_transition = 0;
-      core_motion_cpp_CMotionController_FUN_0052de40(this_ptr);
-      switch(*(undefined4 *)(iVar4 + 4)) {
+      core_motion_cpp_CMotionController_clearTweenState_FUN_0052de40(this_ptr);
+      switch(transition->cmd) {
       case 1:
-        core_motion_cpp_CMotionController_FUN_0052dde0(this_ptr);
-        if (*(int *)(iVar4 + 0x14) != 0) {
-          iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
-          this_ptr->state_index = *(int *)(iVar4 + 0x24);
+        core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
+                  (this_ptr,transition->to_motion_number,transition->to_frame_number);
+        if (transition->set_new_state_as_desired != 0) {
+          pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
+          this_ptr->state_index = pSVar1->state_index;
         }
         return 1;
       case 2:
-        this_ptr->in_transition = iVar4;
+        this_ptr->in_transition = (int)transition;
         return 0;
       case 3:
       case 4:
       case 5:
       case 6:
-        this_ptr->in_transition = iVar4;
-        core_motion_cpp_CMotionController_FUN_0052dbc0(this_ptr);
+        this_ptr->in_transition = (int)transition;
+        core_motion_cpp_CMotionController_startTransition_FUN_0052dbc0(this_ptr,transition);
         return 0;
       }
     }
@@ -83,7 +85,7 @@ core_motion_cpp_CMotionController_findAndStartTransition_FUN_0052d950(CMotionCon
 // 0052d954: MOV EBX,dword ptr [ESP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 0052d958: PUSH EBX
-// 0052d959: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0052d959: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0052d95e: ADD ESP,0x4
 // 0052d961: MOV EDX,dword ptr [EBX + 0x28]
@@ -123,7 +125,7 @@ core_motion_cpp_CMotionController_findAndStartTransition_FUN_0052d950(CMotionCon
 //   XREF to: 0052da01 (CONDITIONAL_JUMP)
 // 0052d9ad: PUSH EBX
 // 0052d9ae: MOV dword ptr [EBX + 0x2c],0x0
-// 0052d9b5: CALL core_motion.cpp_CMotionController_FUN_0052de40
+// 0052d9b5: CALL core_motion.cpp_CMotionController_clearTweenState_FUN_0052de40
 //   XREF to: 0052de40 (UNCONDITIONAL_CALL)
 // 0052d9ba: MOV EAX,dword ptr [EBP + 0x4]
 // 0052d9bd: DEC EAX
@@ -142,7 +144,7 @@ core_motion_cpp_CMotionController_findAndStartTransition_FUN_0052d950(CMotionCon
 // 0052d9d0: PUSH dword ptr [EBP + 0xc]
 // 0052d9d3: PUSH EDI
 // 0052d9d4: PUSH EBX
-// 0052d9d5: CALL core_motion.cpp_CMotionController_FUN_0052dde0
+// 0052d9d5: CALL core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0
 //   XREF to: 0052dde0 (UNCONDITIONAL_CALL)
 // 0052d9da: MOV EAX,dword ptr [EBP + 0x14]
 // 0052d9dd: ADD ESP,0xc
@@ -150,7 +152,7 @@ core_motion_cpp_CMotionController_findAndStartTransition_FUN_0052d950(CMotionCon
 // 0052d9e2: JZ 0x0052d9f3
 //   XREF to: 0052d9f3 (CONDITIONAL_JUMP)
 // 0052d9e4: PUSH EBX
-// 0052d9e5: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0052d9e5: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0052d9ea: MOV EAX,dword ptr [EAX + 0x24]
 // 0052d9ed: ADD ESP,0x4
@@ -194,7 +196,7 @@ core_motion_cpp_CMotionController_findAndStartTransition_FUN_0052d950(CMotionCon
 //   Label: caseD_6
 // 0052da24: PUSH EBX
 // 0052da25: MOV dword ptr [EBX + 0x2c],EBP
-// 0052da28: CALL core_motion.cpp_CMotionController_FUN_0052dbc0
+// 0052da28: CALL core_motion.cpp_CMotionController_startTransition_FUN_0052dbc0
 //   XREF to: 0052dbc0 (UNCONDITIONAL_CALL)
 // 0052da2d: ADD ESP,0x8
 // 0052da30: XOR EAX,EAX

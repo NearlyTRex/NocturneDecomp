@@ -6,8 +6,8 @@
 // Cross-references:
 //   core_batcreat.cpp_FUN_00415dd0 (00415dd0) at 00415ff7 [UNCONDITIONAL_CALL]
 //   core_batman.cpp_FUN_00417660 (00417660) at 00417804 [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_CBodyPart_load_FUN_00419880 (00419880) at 00419bb1 [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_FUN_0041b280 (0041b280) at 0041b4b6 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 (0041b280) at 0041b4b6 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_serialize_FUN_00419880 (00419880) at 00419bb1 [UNCONDITIONAL_CALL]
 //   core_bride.cpp_FUN_00424600 (00424600) at 00424732 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_0042bcc0 (0042bcc0) at 0042bd1d [UNCONDITIONAL_CALL]
 //   core_cow.cpp_FUN_004448c0 (004448c0) at 00444a4c [UNCONDITIONAL_CALL]
@@ -17,12 +17,12 @@
 //   core_imp.cpp_FUN_004fab60 (004fab60) at 004fad04 [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_FUN_00527380 (00527380) at 00527593 [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055c93e [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_FUN_005a0fe0 (005a0fe0) at 005a1029 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0 (005a0fe0) at 005a1029 [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a32a0 (005a32a0) at 005a345e [UNCONDITIONAL_CALL]
 //   core_zombie.cpp_CZombie_FUN_005fc220 (005fc220) at 005fc3bf [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00615e34
-//   undefined4 DAT_00615e3c
+//   double DOUBLE_00615e34 = 0.00390625
+//   double DOUBLE_00615e3c = 65535
 //   CVector3f g_ZeroVector
 //   undefined4 g_ZeroVector.y
 //   undefined4 g_ZeroVector.z
@@ -30,18 +30,15 @@
 //   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
+//   core_bodypart.cpp_CBodyPart_FUN_0041b070
 //   core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
 //   core_bodypart.cpp_FUN_0041aa40
-//   core_bodypart.cpp_FUN_0041b070
 //   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
 //   crt_math.c_round_FUN_005fe6b0
 //   crt_memory.c_memset_FUN_005fde40
 //   engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 actors_other_bodypart.cpp_FUN_0041a050(undefined4 param_1) */
 
 void core_bodypart_cpp_FUN_0041a050(void)
 
@@ -108,7 +105,7 @@ void core_bodypart_cpp_FUN_0041a050(void)
     local_5c = (float)((int)local_5c + iStack_14);
     local_54 = local_54 + iVar14;
     local_58 = local_58 + iVar13;
-    local_68.x = (float)_DAT_00615e34;
+    local_68.x = (float)DOUBLE_00615e34;
     *(float *)(in_stack_00000004->field1_0x158 + 4) = (float)local_50 * local_68.x;
     *(float *)(in_stack_00000004->field1_0x158 + 8) = (float)local_4c * local_68.x;
     *(float *)(in_stack_00000004->field1_0x158 + 0xc) = (float)local_48 * local_68.x;
@@ -197,7 +194,7 @@ void core_bodypart_cpp_FUN_0041a050(void)
         dVar3 = (double)piVar12[2];
         dVar18 = SQRT(dVar3 * dVar3 + dVar4 * dVar4 + dVar18 * dVar18);
         if (0.0 < dVar18) {
-          fVar15 = (float10)_DAT_00615e3c / (float10)dVar18;
+          fVar15 = (float10)DOUBLE_00615e3c / (float10)dVar18;
           fVar16 = (float10)*piVar12 * fVar15;
           fVar17 = (float10)piVar12[1] * fVar15;
           fVar15 = (float10)piVar12[2] * fVar15;
@@ -224,7 +221,7 @@ void core_bodypart_cpp_FUN_0041a050(void)
         iVar13 = iVar13 + 0xc;
       } while (iVar9 < (int)piVar7);
     }
-    core_bodypart_cpp_FUN_0041b070();
+    core_bodypart_cpp_CBodyPart_FUN_0041b070(in_stack_00000004);
     if (in_stack_00000004->field1_0x158 + 0xbb4 != in_stack_00000004->field1_0x158 + 0x128) {
       *(undefined4 *)(in_stack_00000004->field1_0x158 + 0xbb4) =
            *(undefined4 *)(in_stack_00000004->field1_0x158 + 0x128);
@@ -681,7 +678,7 @@ void core_bodypart_cpp_FUN_0041a050(void)
 //   XREF to: 0041a4ab (CONDITIONAL_JUMP)
 // 0041a53e: PUSH EDI
 //   Label: LAB_0041a53e
-// 0041a53f: CALL core_bodypart.cpp_FUN_0041b070
+// 0041a53f: CALL core_bodypart.cpp_CBodyPart_FUN_0041b070
 //   XREF to: 0041b070 (UNCONDITIONAL_CALL)
 // 0041a544: LEA EAX,[EDI + 0xd0c]
 // 0041a54a: LEA EDX,[EDI + 0x280]

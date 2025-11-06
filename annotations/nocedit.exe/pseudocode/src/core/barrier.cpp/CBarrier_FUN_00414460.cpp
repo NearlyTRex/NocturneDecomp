@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_barrier.cpp_CBarrier_FUN_00414460(CBarrier * this_ptr)
 // Globals:
-//   undefined4 DAT_006151bf
+//   double DOUBLE_006151bf = 5
 //   double DOUBLE_006151c7 = 0.200000000000000
 //   CGame* g_CGamePtr = 02d81a9c
 //   CKeys* g_CKeysPtr = 02dcd7d4
@@ -14,8 +14,6 @@
 //   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_barrier_cpp_CBarrier_FUN_00414460(CBarrier *this_ptr)
 

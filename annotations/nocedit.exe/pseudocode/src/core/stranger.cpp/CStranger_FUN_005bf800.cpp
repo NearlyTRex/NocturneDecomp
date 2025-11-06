@@ -14,7 +14,7 @@
 //   undefined4 DAT_03f6bb1c
 //   undefined4 DAT_03f6bb20
 // Function calls:
-//   core_motion.cpp_CMotionController_FUN_0052dd20
+//   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 
 #include "nocturne.h"
 
@@ -34,8 +34,8 @@ void core_stranger_cpp_CStranger_FUN_005bf800(void)
   *(undefined4 *)(in_stack_00000004 + 0x1fc80) = 0;
   *(undefined4 *)(in_stack_00000004 + 0x1fc7c) = *(undefined4 *)(in_stack_00000004 + 0x1fc80);
   *(undefined4 *)(in_stack_00000004 + 0x1fc78) = *(undefined4 *)(in_stack_00000004 + 0x1fc7c);
-  fVar3 = core_motion_cpp_CMotionController_FUN_0052dd20
-                    ((CMotionController *)(in_stack_00000004 + 0x158));
+  fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
+                    ((CMotionController *)(in_stack_00000004 + 0x158),0);
   if ((fVar3 <= 0.0) || (1.0 <= *(float *)(in_stack_00000004 + 0x1fc54))) {
     *(undefined4 *)(in_stack_00000004 + 0x1fc50) = 0;
     *(undefined4 *)(in_stack_00000004 + 0x1fc84) = 0xffffffff;
@@ -140,7 +140,7 @@ void core_stranger_cpp_CStranger_FUN_005bf800(void)
 // 005bf827: MOV dword ptr [EAX],EDX
 // 005bf829: LEA EAX,[EBX + 0x158]
 // 005bf82f: PUSH EAX
-// 005bf830: CALL core_motion.cpp_CMotionController_FUN_0052dd20
+// 005bf830: CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   XREF to: 0052dd20 (UNCONDITIONAL_CALL)
 // 005bf835: MOV dword ptr [ESP + 0x38],EAX
 //   XREF to: Stack[-0x18] (WRITE)

@@ -10,9 +10,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_other_bodypart.cpp_FUN_0041b540(undefined4 param_1, undefined4
-   param_2, undefined4 param_3) */
-
 void core_bodypart_cpp_FUN_0041b540(void)
 
 {

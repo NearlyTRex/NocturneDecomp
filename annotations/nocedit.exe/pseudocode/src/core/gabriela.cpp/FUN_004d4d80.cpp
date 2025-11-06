@@ -39,7 +39,7 @@
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
 //   core_gabriela.cpp_FUN_004d4c90
 //   core_gabriela.cpp_FUN_004d4ce0
-//   core_motion.cpp_CMotionController_FUN_0052e3a0
+//   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
 //   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
 //   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
 //   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
@@ -165,7 +165,10 @@ void core_gabriela_cpp_FUN_004d4d80(void)
         if (1.0 < local_24) {
           local_24 = 1.0;
         }
-        local_50 = (CDeformableModelInstance *)core_motion_cpp_CMotionController_FUN_0052e3a0();
+        local_50 = (CDeformableModelInstance *)
+                   core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
+                             ((CMotionController *)(in_stack_00000004 + 0x158),DAT_02d7b87c,local_24
+                             );
         local_14 = local_50;
         core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
                   ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),DAT_02d7b87c,
@@ -231,9 +234,13 @@ void core_gabriela_cpp_FUN_004d4d80(void)
       (pfVar5 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1] =
            *(float *)((int)(&stack0xfffffe54 + (uint)bVar6 * -8 + (uint)bVar6 * -8) +
                      ((uint)bVar6 * -2 + 1) * 4);
+      iVar1 = DAT_02d7b880;
       if (0.0 < *(float *)(in_stack_00000004 + 0x1fc0c)) {
         *(undefined4 *)(in_stack_00000004 + 0x23a8) = 2;
-        local_1c = (CDeformableModelInstance *)core_motion_cpp_CMotionController_FUN_0052e3a0();
+        local_1c = (CDeformableModelInstance *)
+                   core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
+                             ((CMotionController *)(in_stack_00000004 + 0x158),iVar1,
+                              *(float *)(in_stack_00000004 + 0x1fc0c));
         local_14 = local_1c;
         core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
                   ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),DAT_02d7b880,
@@ -270,7 +277,9 @@ void core_gabriela_cpp_FUN_004d4d80(void)
           local_20 = 1.0;
         }
         pCVar2 = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);
-        local_44 = (CDeformableModelInstance *)core_motion_cpp_CMotionController_FUN_0052e3a0();
+        local_44 = (CDeformableModelInstance *)
+                   core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
+                             ((CMotionController *)pCVar2,DAT_02d7b87c,local_20);
         iVar1 = DAT_02d7b858;
         local_14 = local_44;
         core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
@@ -335,8 +344,12 @@ void core_gabriela_cpp_FUN_004d4d80(void)
         }
       }
       if (0.0 < *(float *)(in_stack_00000004 + 0x1fc0c)) {
+        fVar7 = (float)DOUBLE_0062af85;
         *(undefined4 *)(in_stack_00000004 + 0x23a8) = 2;
-        local_18 = (CDeformableModelInstance *)core_motion_cpp_CMotionController_FUN_0052e3a0();
+        local_18 = (CDeformableModelInstance *)
+                   core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
+                             ((CMotionController *)(in_stack_00000004 + 0x158),DAT_02d7b884,
+                              1.0 - *(float *)(in_stack_00000004 + 0x1fc0c) * fVar7);
         local_14 = local_18;
         core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
                   ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),DAT_02d7b884,
@@ -813,7 +826,7 @@ void core_gabriela_cpp_FUN_004d4d80(void)
 // 004d50ca: PUSH ESI
 // 004d50cb: LEA ESI,[EBX + 0x158]
 // 004d50d1: PUSH ESI
-// 004d50d2: CALL core_motion.cpp_CMotionController_FUN_0052e3a0
+// 004d50d2: CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
 //   XREF to: 0052e3a0 (UNCONDITIONAL_CALL)
 // 004d50d7: ADD ESP,0xc
 // 004d50da: PUSH 0x59ddb0
@@ -922,7 +935,7 @@ void core_gabriela_cpp_FUN_004d4d80(void)
 // 004d51d8: PUSH ECX
 // 004d51d9: LEA ESI,[EBX + 0x158]
 // 004d51df: PUSH ESI
-// 004d51e0: CALL core_motion.cpp_CMotionController_FUN_0052e3a0
+// 004d51e0: CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
 //   XREF to: 0052e3a0 (UNCONDITIONAL_CALL)
 // 004d51e5: MOV EDI,dword ptr [0x02d7b860]
 //   XREF to: 02d7b860 (READ)
@@ -1067,7 +1080,7 @@ void core_gabriela_cpp_FUN_004d4d80(void)
 // 004d52f6: PUSH EAX
 // 004d52f7: LEA ESI,[EBX + 0x158]
 // 004d52fd: PUSH ESI
-// 004d52fe: CALL core_motion.cpp_CMotionController_FUN_0052e3a0
+// 004d52fe: CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
 //   XREF to: 0052e3a0 (UNCONDITIONAL_CALL)
 // 004d5303: ADD ESP,0xc
 // 004d5306: MOV EDX,dword ptr [0x02d7b858]
@@ -1300,7 +1313,7 @@ void core_gabriela_cpp_FUN_004d4d80(void)
 // 004d5503: LEA ESI,[EBX + 0x158]
 // 004d5509: PUSH ESI
 // 004d550a: MOV dword ptr [EBX + 0x23a8],0x2
-// 004d5514: CALL core_motion.cpp_CMotionController_FUN_0052e3a0
+// 004d5514: CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
 //   XREF to: 0052e3a0 (UNCONDITIONAL_CALL)
 // 004d5519: MOV dword ptr [EBP + 0x7a],EAX
 //   XREF to: Stack[-0x14] (WRITE)

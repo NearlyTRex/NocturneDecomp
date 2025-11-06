@@ -9,7 +9,7 @@
 //   TerminatedCString s_DIE_006171a2
 //   TerminatedCString s_DEAD_006171a6
 // Function calls:
-//   core_motion.cpp_CMotionController_FUN_0052dcf0
+//   core_motion.cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
 //   crt_string.c_stricmp_FUN_005fe7f0
 //   crt_string.c_strnicmp_FUN_005ff070
 
@@ -27,14 +27,14 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c580(CCharacter *this_ptr)
     return 2;
   }
   str2 = (char *)0x3;
-  pcVar1 = (char *)core_motion_cpp_CMotionController_FUN_0052dcf0
-                             (&(this_ptr->model).motion_controller);
+  pcVar1 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
+                     (&(this_ptr->model).motion_controller);
   iVar2 = crt_string_c_strnicmp_FUN_005ff070(pcVar1,str2,unaff_EBX);
   if (iVar2 == 0) {
     return 1;
   }
-  pcVar1 = (char *)core_motion_cpp_CMotionController_FUN_0052dcf0
-                             (&(this_ptr->model).motion_controller);
+  pcVar1 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
+                     (&(this_ptr->model).motion_controller);
   iVar2 = crt_string_c_stricmp_FUN_005fe7f0(pcVar1,(char *)this_ptr);
   if (iVar2 == 0) {
     return 2;
@@ -61,7 +61,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c580(CCharacter *this_ptr)
 //   XREF to: 006171a2 (DATA)
 // 0042c598: ADD EBX,0x158
 // 0042c59e: PUSH EBX
-// 0042c59f: CALL core_motion.cpp_CMotionController_FUN_0052dcf0
+// 0042c59f: CALL core_motion.cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
 //   XREF to: 0052dcf0 (UNCONDITIONAL_CALL)
 // 0042c5a4: ADD ESP,0x4
 // 0042c5a7: PUSH EAX
@@ -78,7 +78,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c580(CCharacter *this_ptr)
 //   Label: LAB_0042c5bb
 //   XREF to: 006171a6 (DATA)
 // 0042c5c0: PUSH EBX
-// 0042c5c1: CALL core_motion.cpp_CMotionController_FUN_0052dcf0
+// 0042c5c1: CALL core_motion.cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
 //   XREF to: 0052dcf0 (UNCONDITIONAL_CALL)
 // 0042c5c6: ADD ESP,0x4
 // 0042c5c9: PUSH EAX

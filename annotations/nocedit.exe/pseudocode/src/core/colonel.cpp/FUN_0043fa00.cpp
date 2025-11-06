@@ -33,7 +33,7 @@
 //   core_hero.cpp_FUN_004f2ed0
 //   core_hero.cpp_FUN_004f2f50
 //   core_hero.cpp_FUN_004f30f0
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
@@ -61,8 +61,9 @@ void core_colonel_cpp_FUN_0043fa00(void)
   CVector3f *pCVar6;
   float fVar7;
   int iVar8;
+  SMotion *pSVar9;
   BADSPACEBASE *in_ESP;
-  byte bVar9;
+  byte bVar10;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
   CDeformableModelInstance *in_stack_00000020;
@@ -84,7 +85,7 @@ void core_colonel_cpp_FUN_0043fa00(void)
   float local_1c;
   int iStack_18;
   
-  bVar9 = 0;
+  bVar10 = 0;
   iVar5 = core_charactr_cpp_CCharacter_FUN_00429870(in_stack_00000004);
   if (iVar5 == 0) {
     return;
@@ -115,8 +116,9 @@ void core_colonel_cpp_FUN_0043fa00(void)
   this_ptr = &in_stack_00000004->model;
   if (iVar5 == 0) {
     desired_state_index = (CCharacter *)0x43fe28;
-    iVar5 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
-    switch(*(undefined4 *)(iVar5 + 0x24)) {
+    pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       (&this_ptr->motion_controller);
+    switch(pSVar9->state_index) {
     case 0:
     case 1:
     case 2:
@@ -179,8 +181,9 @@ LAB_0043fd6e:
         *(float *)(in_stack_00000004->field2_0x240c + 0xc) =
              (float)in_stack_00000004[1].base_actor.location.area_id *
              *(float *)(in_stack_00000004->field2_0x240c + 0x2c);
-        iVar8 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr_02->motion_controller);
-        if (iVar5 != *(int *)(iVar8 + 0x24)) goto LAB_0043fad3;
+        pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                           (&this_ptr_02->motion_controller);
+        if (iVar5 != pSVar9->state_index) goto LAB_0043fad3;
       }
       break;
     case 6:
@@ -308,10 +311,11 @@ LAB_0043fc14:
                *(CVector3f **)(in_stack_00000004[2].cloth_data + 0x5508));
     source_quaternions = (CQuaternion4f *)local_4c;
     local_4c._0_4_ = local_60.y;
-    *(float *)(local_4c + (uint)bVar9 * -8 + 4) = afStack_54[(uint)bVar9 * -2 + -1];
-    local_44[(uint)bVar9 * -2 + (uint)bVar9 * -2] = afStack_54[(uint)bVar9 * -2 + (uint)bVar9 * -2];
-    (local_44 + (uint)bVar9 * -2 + (uint)bVar9 * -2)[(uint)bVar9 * -2 + 1] =
-         (afStack_54 + (uint)bVar9 * -2 + (uint)bVar9 * -2)[(uint)bVar9 * -2 + 1];
+    *(float *)(local_4c + (uint)bVar10 * -8 + 4) = afStack_54[(uint)bVar10 * -2 + -1];
+    local_44[(uint)bVar10 * -2 + (uint)bVar10 * -2] =
+         afStack_54[(uint)bVar10 * -2 + (uint)bVar10 * -2];
+    (local_44 + (uint)bVar10 * -2 + (uint)bVar10 * -2)[(uint)bVar10 * -2 + 1] =
+         (afStack_54 + (uint)bVar10 * -2 + (uint)bVar10 * -2)[(uint)bVar10 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
               (in_stack_00000020,source_quaternions,fVar7,(int)bone_index,in_stack_ffffff9c);
   }
@@ -695,7 +699,7 @@ switchD_0043fe37_caseD_6:
 // 0043fd7a: FMUL float ptr [EBX + 0x2438]
 // 0043fd80: PUSH EDI
 // 0043fd81: FSTP float ptr [EBX + 0x2418]
-// 0043fd87: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0043fd87: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0043fd8c: MOV EAX,dword ptr [EAX + 0x24]
 // 0043fd8f: ADD ESP,0x4
@@ -772,7 +776,7 @@ switchD_0043fe37_caseD_6:
 //   XREF to: 0043fd60 (UNCONDITIONAL_JUMP)
 // 0043fe22: PUSH ESI
 //   Label: LAB_0043fe22
-// 0043fe23: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0043fe23: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0043fe28: MOV EAX,dword ptr [EAX + 0x24]
 // 0043fe2b: ADD ESP,0x4

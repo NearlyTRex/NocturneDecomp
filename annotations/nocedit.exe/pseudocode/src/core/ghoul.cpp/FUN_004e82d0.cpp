@@ -11,7 +11,7 @@
 //   undefined4 DAT_02d8330c
 // Function calls:
 //   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-//   core_motion.cpp_CMotionController_FUN_0052dd20
+//   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 
 #include "nocturne.h"
@@ -48,7 +48,8 @@ undefined4 core_ghoul_cpp_FUN_004e82d0(void)
   float local_10;
   
   this_ptr = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);
-  fVar1 = core_motion_cpp_CMotionController_FUN_0052dd20((CMotionController *)this_ptr);
+  fVar1 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
+                    ((CMotionController *)this_ptr,0xb);
   if (fVar1 <= 0.0) {
     return 0;
   }
@@ -101,7 +102,7 @@ undefined4 core_ghoul_cpp_FUN_004e82d0(void)
 // 004e82e7: PUSH 0xb
 // 004e82e9: ADD EBX,0x158
 // 004e82ef: PUSH EBX
-// 004e82f0: CALL core_motion.cpp_CMotionController_FUN_0052dd20
+// 004e82f0: CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   XREF to: 0052dd20 (UNCONDITIONAL_CALL)
 // 004e82f5: MOV dword ptr [ESP + 0x8c],EAX
 //   XREF to: Stack[-0x10] (WRITE)

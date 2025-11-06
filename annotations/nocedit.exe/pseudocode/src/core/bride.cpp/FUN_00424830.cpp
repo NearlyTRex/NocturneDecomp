@@ -16,7 +16,7 @@
 //   core_charactr.cpp_CCharacter_FUN_0042b5b0
 //   core_enemy.cpp_FUN_004a9f10
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 //   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
@@ -32,8 +32,9 @@ void core_bride_cpp_FUN_00424830(void)
 {
   CDeformableModelInstance *this_ptr;
   CVector3f *input_local_point;
-  int iVar1;
-  undefined4 uVar2;
+  SMotion *pSVar1;
+  int iVar2;
+  undefined4 uVar3;
   BADSPACEBASE *in_ESP;
   int unaff_EBP;
   CCharacter *in_stack_00000004;
@@ -44,15 +45,15 @@ void core_bride_cpp_FUN_00424830(void)
   
   sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
   if (*(int *)(in_stack_00000008 + 0x28) == 7) {
-    iVar1 = 0;
+    iVar2 = 0;
     *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)DOUBLE_00616cb5;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               (&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffc4,
                (CVector3f *)(in_stack_00000008 + 0x1c));
     do {
-      iVar1 = iVar1 + 1;
+      iVar2 = iVar2 + 1;
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
-    } while (iVar1 < 5);
+    } while (iVar2 < 5);
   }
   if (*(int *)(in_stack_00000008 + 0x30) == 0x6c) {
     input_local_point =
@@ -63,35 +64,36 @@ void core_bride_cpp_FUN_00424830(void)
     core_charactr_cpp_CCharacter_FUN_0042b5b0(in_stack_00000004);
   }
   core_bride_cpp_FUN_00424600();
-  iVar1 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x40);
+  iVar2 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x40);
   in_stack_00000004->hit_points = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
-  if ((in_stack_00000004->model).part_visibility_flags[iVar1] == 0) {
+  if ((in_stack_00000004->model).part_visibility_flags[iVar2] == 0) {
     in_stack_00000004->hit_points = 0.0;
   }
   this_ptr = &in_stack_00000004->model;
   if (0.0 < in_stack_00000004->hit_points) {
-    iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+    iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr->motion_controller,(iVar1 == 0) + 7,(int)in_stack_ffffffd0);
-    iVar1 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
-    if (iVar1 != 0) goto LAB_00424955;
+              (&this_ptr->motion_controller,(iVar2 == 0) + 7,(int)in_stack_ffffffd0);
+    iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    if (iVar2 != 0) goto LAB_00424955;
     sound_name = "ub-hurt?.wav";
   }
   else {
     in_stack_00000004->hit_points = 0.0;
-    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
-    if ((*(int *)(iVar1 + 0x24) == 0xe) || (*(int *)(iVar1 + 0x24) == 0xd)) goto LAB_00424955;
+    pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       (&this_ptr->motion_controller);
+    if ((pSVar1->state_index == 0xe) || (pSVar1->state_index == 0xd)) goto LAB_00424955;
     local_24.z = 6.087358e-39;
-    iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+    iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
     local_24.z = 6.08739e-39;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr->motion_controller,(iVar1 == 0) + 0xb,unaff_EBP);
+              (&this_ptr->motion_controller,(iVar2 == 0) + 0xb,unaff_EBP);
     sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
     sound_name = "ub-die?.wav";
   }
-  uVar2 = (*((in_stack_00000004->base_actor).vtable)->playSound)
+  uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                     (&in_stack_00000004->base_actor,sound_name);
-  *(undefined4 *)(in_stack_00000004[1].base_actor.create_event + 0x48) = uVar2;
+  *(undefined4 *)(in_stack_00000004[1].base_actor.create_event + 0x48) = uVar3;
 LAB_00424955:
   local_24.z = 6.087459e-39;
   core_enemy_cpp_FUN_004a9f10();
@@ -178,7 +180,7 @@ LAB_00424955:
 //   XREF to: 004249c4 (CONDITIONAL_JUMP)
 // 004248e8: PUSH EBX
 // 004248e9: MOV dword ptr [ESI + 0x243c],0x0
-// 004248f3: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 004248f3: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 004248f8: MOV EAX,dword ptr [EAX + 0x24]
 // 004248fb: ADD ESP,0x4

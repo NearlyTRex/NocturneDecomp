@@ -5,7 +5,7 @@
 // Signature: int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
 // Cross-references:
 //   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040f4e3 [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_FUN_0041b280 (0041b280) at 0041b3e5 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 (0041b280) at 0041b3e5 [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_FUN_00423110 (00423110) at 004231cf [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_0042f3e0 (0042f3e0) at 0042f4f5 [UNCONDITIONAL_CALL]
 //   core_cloth.cpp_FUN_0043c430 (0043c430) at 0043c4bc [UNCONDITIONAL_CALL]

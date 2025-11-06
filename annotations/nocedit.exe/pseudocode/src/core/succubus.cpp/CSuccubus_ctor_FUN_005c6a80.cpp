@@ -12,8 +12,8 @@
 //   undefined4 s_dwing.cth_00653ff3
 //   undefined4 s_wing.cth_00653ff4
 //   undefined4 s_ing.cth_00653ff5
-//   undefined4 DAT_0066392c
-//   undefined4 PTR_FUN_0066392d+3
+//   float DAT_0066392c = 50
+//   float FLOAT_00663930 = 100
 //   CDemonActor_vtable g_CSuccubusVTable
 // Function calls:
 //   core_cloth.cpp_FUN_0043bf40
@@ -24,14 +24,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus *this_ptr)
 
 {
   char cVar1;
-  undefined4 uVar2;
-  undefined4 uVar3;
+  float fVar2;
+  float fVar3;
   CEnemy *pCVar4;
   int iVar5;
   char *pcVar6;
@@ -50,12 +48,12 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus *thi
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             ((CDeformableModelInstance *)(iVar5 + -0x2480),"hotdemon.dfm");
   *(undefined4 *)(iVar5 + -0xb560) = 0x3f19999a;
-  uVar2 = _DAT_0066392c;
+  fVar2 = DAT_0066392c;
   *(undefined4 *)(iVar5 + -0xb55c) = 0x3f666666;
-  uVar3 = _PTR_FUN_0066392d_3;
+  fVar3 = FLOAT_00663930;
   *(undefined4 *)(iVar5 + -0x1cc) = 1;
-  *(undefined4 *)(iVar5 + -0xb558) = uVar2;
-  *(undefined4 *)(iVar5 + -0xb554) = uVar3;
+  *(float *)(iVar5 + -0xb558) = fVar2;
+  *(float *)(iVar5 + -0xb554) = fVar3;
   do {
     cVar1 = *pcVar6;
     *pcVar7 = cVar1;

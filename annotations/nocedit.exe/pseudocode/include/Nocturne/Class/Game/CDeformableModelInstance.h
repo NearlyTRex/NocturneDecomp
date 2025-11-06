@@ -12,7 +12,7 @@ typedef struct CDeformableModelInstance {
     int part_visibility_flags[30]; // 0x2140
     int texture_set_indices[30]; // 0x21b8
     int cached_skinned_lod_index; // 0x2230
-    int current_lod_index; // 0x2234
+    CVector3i* skinned_vertices_buffer; // 0x2234
     CBoundingBox3D bounding_box; // 0x2238
     int field_8784; // 0x2250
     CVector3f accumulated_root_motion; // 0x2254

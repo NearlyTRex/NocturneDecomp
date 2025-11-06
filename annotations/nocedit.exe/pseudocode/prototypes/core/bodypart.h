@@ -11,13 +11,13 @@ void staticInit(void);
 // Address: 00418e10
 undefined CreateBodyPart();
 
-// Original: core_bodypart.cpp_FUN_00418fd0
+// Original: core_bodypart.cpp_createBodyPart_FUN_00418fd0
 // Address: 00418fd0
-undefined FUN_00418fd0();
+CBodyPart * createBodyPart(void);
 
-// Original: core_bodypart.cpp_FUN_00419000
+// Original: core_bodypart.cpp_CBodyPart_getActorType_FUN_00419000
 // Address: 00419000
-undefined FUN_00419000();
+CDemonActorType * CBodyPart::getActorType(CBodyPart * this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_ctor_FUN_00419010
 // Address: 00419010
@@ -35,57 +35,57 @@ void CBodyPart::setCounts(CBodyPart * this_ptr);
 // Address: 00419340
 undefined FUN_00419340();
 
-// Original: core_bodypart.cpp_FUN_004194b0
+// Original: core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0
 // Address: 004194b0
-undefined FUN_004194b0();
+int CBodyPart::renderOpaque(CBodyPart * this_ptr);
 
-// Original: core_bodypart.cpp_FUN_00419610
+// Original: core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419610
 // Address: 00419610
-undefined FUN_00419610();
+void CBodyPart::renderBackground(CBodyPart * this_ptr, int layer_flag);
 
-// Original: core_bodypart.cpp_FUN_00419740
+// Original: core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740
 // Address: 00419740
-undefined FUN_00419740();
+int CBodyPart::renderTransparent(CBodyPart * this_ptr);
 
-// Original: core_bodypart.cpp_FUN_00419810
+// Original: core_bodypart.cpp_CBodyPart_setup_FUN_00419810
 // Address: 00419810
-undefined FUN_00419810();
+void CBodyPart::setup(CBodyPart * this_ptr);
 
-// Original: core_bodypart.cpp_CBodyPart_load_FUN_00419880
+// Original: core_bodypart.cpp_CBodyPart_serialize_FUN_00419880
 // Address: 00419880
-undefined CBodyPart::load();
+void CBodyPart::serialize(CBodyPart * this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_process_FUN_00419be0
 // Address: 00419be0
-undefined CBodyPart::process();
+void CBodyPart::process(CBodyPart * this_ptr);
 
 // Original: core_bodypart.cpp_FUN_00419e10
 // Address: 00419e10
 undefined FUN_00419e10();
 
-// Original: core_bodypart.cpp_FUN_00419f50
+// Original: core_bodypart.cpp_CBodyPart_hasCollision_FUN_00419f50
 // Address: 00419f50
-undefined FUN_00419f50();
+int CBodyPart::hasCollision(CBodyPart * this_ptr);
 
-// Original: core_bodypart.cpp_FUN_00419f60
+// Original: core_bodypart.cpp_CBodyPart_getBoundingBox_FUN_00419f60
 // Address: 00419f60
-undefined FUN_00419f60();
+CBoundingBox3D * CBodyPart::getBoundingBox(CBodyPart * this_ptr, CBoundingBox3D * out_box);
 
-// Original: core_bodypart.cpp_FUN_00419fa0
+// Original: core_bodypart.cpp_CBodyPart_canPickup_FUN_00419fa0
 // Address: 00419fa0
-undefined FUN_00419fa0();
+int CBodyPart::canPickup(CBodyPart * this_ptr, CDemonActor * picker);
 
-// Original: core_bodypart.cpp_FUN_00419fc0
+// Original: core_bodypart.cpp_CBodyPart_pickup_FUN_00419fc0
 // Address: 00419fc0
-undefined FUN_00419fc0();
+void CBodyPart::pickup(CBodyPart * this_ptr, CDemonActor * carrier);
 
-// Original: core_bodypart.cpp_FUN_00419fd0
+// Original: core_bodypart.cpp_CBodyPart_onDropped_FUN_00419fd0
 // Address: 00419fd0
-undefined FUN_00419fd0();
+void CBodyPart::onDropped(CBodyPart * this_ptr, CVector3f * drop_position);
 
-// Original: core_bodypart.cpp_FUN_0041a040
+// Original: core_bodypart.cpp_CBodyPart_getCarrier_FUN_0041a040
 // Address: 0041a040
-undefined FUN_0041a040();
+CDemonActor * CBodyPart::getCarrier(CBodyPart * this_ptr);
 
 // Original: core_bodypart.cpp_FUN_0041a050
 // Address: 0041a050
@@ -111,29 +111,29 @@ undefined FUN_0041ae50();
 // Address: 0041af90
 int CBodyPart(CBodyPart * this_ptr);
 
-// Original: core_bodypart.cpp_FUN_0041b070
+// Original: core_bodypart.cpp_CBodyPart_FUN_0041b070
 // Address: 0041b070
-undefined FUN_0041b070();
+void CBodyPart(CBodyPart * this_ptr);
 
 // Original: core_bodypart.cpp_FUN_0041b1b0
 // Address: 0041b1b0
 undefined FUN_0041b1b0();
 
-// Original: core_bodypart.cpp_FUN_0041b1f0
+// Original: core_bodypart.cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_0041b1f0
 // Address: 0041b1f0
-undefined FUN_0041b1f0();
+int CBodyPart::getAllowedMeleeAttackTypes(CBodyPart * this_ptr);
 
-// Original: core_bodypart.cpp_FUN_0041b210
+// Original: core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_0041b210
 // Address: 0041b210
-undefined FUN_0041b210();
+void CBodyPart::fillAttackDamageInfo(CBodyPart * this_ptr, int attack_flags, SDamageInfo * out_damage_info, CDemonActor * victim);
 
-// Original: core_bodypart.cpp_FUN_0041b260
+// Original: core_bodypart.cpp_CBodyPart_processInEditor_FUN_0041b260
 // Address: 0041b260
-undefined FUN_0041b260();
+void CBodyPart::processInEditor(CBodyPart * this_ptr);
 
-// Original: core_bodypart.cpp_FUN_0041b280
+// Original: core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280
 // Address: 0041b280
-undefined FUN_0041b280();
+int CBodyPart::initializeInEditor(CBodyPart * this_ptr);
 
 // Original: core_bodypart.cpp_FUN_0041b4e0
 // Address: 0041b4e0

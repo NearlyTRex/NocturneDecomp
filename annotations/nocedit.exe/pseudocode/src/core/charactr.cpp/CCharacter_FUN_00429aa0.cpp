@@ -4,15 +4,15 @@
 // Convention: __cdecl
 // Signature: void core_charactr.cpp_CCharacter_FUN_00429aa0(CCharacter * this_ptr)
 // Cross-references:
-//   core_batman.cpp_CBatman_FUN_004173b0 (004173b0) at 00417456 [UNCONDITIONAL_CALL]
-//   core_biggs.cpp_FUN_004189b0 (004189b0) at 00418ab3 [UNCONDITIONAL_CALL]
+//   core_batman.cpp_CBatman_renderOpaque_FUN_004173b0 (004173b0) at 00417456 [UNCONDITIONAL_CALL]
+//   core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0 (004189b0) at 00418ab3 [UNCONDITIONAL_CALL]
 //   core_boneguy.cpp_FUN_0041d1b0 (0041d1b0) at 0041d22b [UNCONDITIONAL_CALL]
-//   core_charactr.cpp_CCharacter_FUN_0042a2c0 (0042a2c0) at 0042a324 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_0042a390 (0042a390) at 0042a3cd [UNCONDITIONAL_CALL]
-//   core_dracbrid.cpp_FUN_00485be0 (00485be0) at 00485cda [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00529750 (00529750) at 0052986a [UNCONDITIONAL_CALL]
+//   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0 (0042a2c0) at 0042a324 [UNCONDITIONAL_CALL]
+//   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 (00485be0) at 00485cda [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750 (00529750) at 0052986a [UNCONDITIONAL_CALL]
 //   core_passngr.cpp_FUN_005460c0 (005460c0) at 00546120 [UNCONDITIONAL_CALL]
-//   core_succubus.cpp_CSuccubus_FUN_005c7590 (005c7590) at 005c76fd [UNCONDITIONAL_CALL]
+//   core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590 (005c7590) at 005c76fd [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CGame* g_CGamePtr = 02d81a9c

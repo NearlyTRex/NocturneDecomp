@@ -4,9 +4,9 @@
 // Convention: __cdecl
 // Signature: void core_morph.cpp_FUN_0052b640(void)
 // Cross-references:
-//   core_biggs.cpp_FUN_004189b0 (004189b0) at 00418a43 [UNCONDITIONAL_CALL]
-//   core_succubus.cpp_CSuccubus_FUN_005c7590 (005c7590) at 005c76c2 [UNCONDITIONAL_CALL]
-//   core_vampboss.cpp_CVampireBoss_FUN_005e6da0 (005e6da0) at 005e6ec8 [UNCONDITIONAL_CALL]
+//   core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0 (004189b0) at 00418a43 [UNCONDITIONAL_CALL]
+//   core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590 (005c7590) at 005c76c2 [UNCONDITIONAL_CALL]
+//   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0 (005e6da0) at 005e6ec8 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_morph.cpp_FUN_0052aa80
 

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CDeformableModelInstance * core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(CDeformableModelInstance * this_ptr)
 // Cross-references:
-//   core_bodypart.cpp_FUN_0041b280 (0041b280) at 0041b2c8 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 (0041b280) at 0041b2c8 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_ctor_FUN_00427e20 (00427e20) at 00427e36 [UNCONDITIONAL_CALL]
 //   core_cloth.cpp_staticInit_FUN_00438b80 (00438b80) at 00438b85 [UNCONDITIONAL_CALL]
 //   core_moloch.cpp_CMoloch_ctor_FUN_00528b30 (00528b30) at 00528b46 [UNCONDITIONAL_CALL]

@@ -10,8 +10,8 @@
 //   core_actor.cpp_createActorByName_FUN_0040c430
 //   core_morph.cpp_CMorph_getReady_FUN_0052b680
 //   core_morph.cpp_FUN_0052b430
-//   core_motion.cpp_CMotionController_FUN_0052dde0
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
+//   core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
 //   core_npc.cpp_CNPC_FUN_00544870
 //   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
@@ -30,37 +30,37 @@ void core_passngr_cpp_FUN_00545d30(void)
   COrientation *pCVar1;
   CDeformableModelInstance *this_ptr;
   char cVar2;
-  int iVar3;
-  CDemonActor *pCVar4;
+  CDemonActor *pCVar3;
   CMotionList *this_ptr_00;
+  int iVar4;
   char *pcVar5;
   CNPC *in_stack_00000004;
   
   core_npc_cpp_CNPC_FUN_00544870(in_stack_00000004);
   if (in_stack_00000004[1].base_character.base_actor.scale.x == 0) {
-    pCVar4 = core_actor_cpp_createActorByName_FUN_0040c430("CWerewolf");
+    pCVar3 = core_actor_cpp_createActorByName_FUN_0040c430("CWerewolf");
     pcVar5 = in_stack_00000004[1].base_character.base_actor.create_event + 0xc;
-    in_stack_00000004[1].base_character.base_actor.scale.x = (int)pCVar4;
+    in_stack_00000004[1].base_character.base_actor.scale.x = (int)pCVar3;
     do {
       cVar2 = *pcVar5;
-      pCVar4->actor_name[0] = cVar2;
+      pCVar3->actor_name[0] = cVar2;
       if (cVar2 == '\0') break;
       cVar2 = pcVar5[1];
       pcVar5 = pcVar5 + 2;
-      pCVar4->actor_name[1] = cVar2;
-      pCVar4 = (CDemonActor *)(pCVar4->actor_name + 2);
+      pCVar3->actor_name[1] = cVar2;
+      pCVar3 = (CDemonActor *)(pCVar3->actor_name + 2);
     } while (cVar2 != '\0');
-    iVar3 = in_stack_00000004[1].base_character.base_actor.scale.x;
-    *(float *)(iVar3 + 0x20) = (in_stack_00000004->base_character).base_actor.location.position.x;
-    *(float *)(iVar3 + 0x24) = (in_stack_00000004->base_character).base_actor.location.position.y;
-    *(float *)(iVar3 + 0x28) = (in_stack_00000004->base_character).base_actor.location.position.z;
-    *(int *)(iVar3 + 0x2c) = (in_stack_00000004->base_character).base_actor.location.area_id;
-    iVar3 = in_stack_00000004[1].base_character.base_actor.scale.x;
+    iVar4 = in_stack_00000004[1].base_character.base_actor.scale.x;
+    *(float *)(iVar4 + 0x20) = (in_stack_00000004->base_character).base_actor.location.position.x;
+    *(float *)(iVar4 + 0x24) = (in_stack_00000004->base_character).base_actor.location.position.y;
+    *(float *)(iVar4 + 0x28) = (in_stack_00000004->base_character).base_actor.location.position.z;
+    *(int *)(iVar4 + 0x2c) = (in_stack_00000004->base_character).base_actor.location.area_id;
+    iVar4 = in_stack_00000004[1].base_character.base_actor.scale.x;
     pCVar1 = &(in_stack_00000004->base_character).base_actor.orient;
-    if ((COrientation *)(iVar3 + 0x30) != pCVar1) {
-      *(float *)(iVar3 + 0x30) = pCVar1->pitch;
-      *(float *)(iVar3 + 0x34) = (in_stack_00000004->base_character).base_actor.orient.bank;
-      *(float *)(iVar3 + 0x38) = (in_stack_00000004->base_character).base_actor.orient.heading;
+    if ((COrientation *)(iVar4 + 0x30) != pCVar1) {
+      *(float *)(iVar4 + 0x30) = pCVar1->pitch;
+      *(float *)(iVar4 + 0x34) = (in_stack_00000004->base_character).base_actor.orient.bank;
+      *(float *)(iVar4 + 0x38) = (in_stack_00000004->base_character).base_actor.orient.heading;
     }
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
               ((CDeformableModelInstance *)
@@ -72,10 +72,10 @@ void core_passngr_cpp_FUN_00545d30(void)
     this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                             ((CMotionController *)
                              (in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));
-    core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_00);
-    core_motion_cpp_CMotionController_FUN_0052dde0
+    iVar4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_00);
+    core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
               ((CMotionController *)(in_stack_00000004[1].base_character.base_actor.scale.x + 0x158)
-              );
+               ,iVar4,0.0);
   }
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
             ((CDeformableModelInstance *)
@@ -257,7 +257,7 @@ void core_passngr_cpp_FUN_00545d30(void)
 // 00545ecf: MOV EAX,dword ptr [EBX + 0x1f810]
 // 00545ed5: ADD EAX,0x158
 // 00545eda: PUSH EAX
-// 00545edb: CALL core_motion.cpp_CMotionController_FUN_0052dde0
+// 00545edb: CALL core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0
 //   XREF to: 0052dde0 (UNCONDITIONAL_CALL)
 // 00545ee0: ADD ESP,0xc
 // 00545ee3: JMP 0x00545d4e

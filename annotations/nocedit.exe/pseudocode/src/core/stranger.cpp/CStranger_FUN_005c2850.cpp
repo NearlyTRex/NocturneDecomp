@@ -29,7 +29,7 @@
 //   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 //   core_charactr.cpp_CCharacter_FUN_0042e840
 //   core_dest.cpp_FUN_0046fd50
-//   core_motion.cpp_CMotionController_FUN_0052dd20
+//   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 //   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
@@ -99,8 +99,8 @@ undefined4 core_stranger_cpp_CStranger_FUN_005c2850(void)
      local_18 < (float)DOUBLE_00653bb4)) {
     return 0;
   }
-  local_18 = core_motion_cpp_CMotionController_FUN_0052dd20
-                       ((CMotionController *)(in_stack_00000004 + 1));
+  local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
+                       ((CMotionController *)(in_stack_00000004 + 1),0);
   if (local_18 < 1.0) {
     return 0;
   }
@@ -324,7 +324,7 @@ undefined4 core_stranger_cpp_CStranger_FUN_005c2850(void)
 //   Label: LAB_005c28ad
 // 005c28af: LEA EAX,[EBX + 0x158]
 // 005c28b5: PUSH EAX
-// 005c28b6: CALL core_motion.cpp_CMotionController_FUN_0052dd20
+// 005c28b6: CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   XREF to: 0052dd20 (UNCONDITIONAL_CALL)
 // 005c28bb: MOV dword ptr [ESP + 0xe0],EAX
 //   XREF to: Stack[-0x18] (WRITE)

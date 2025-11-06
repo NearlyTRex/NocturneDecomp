@@ -6,19 +6,15 @@
 // Cross-references:
 //   core_bodypart.cpp_CBodyPart_process_FUN_00419be0 (00419be0) at 00419cd5 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00615e14
-//   undefined4 DAT_00615e1c
-//   undefined4 DAT_00615e24
-//   undefined4 DAT_00615e2c
+//   double DOUBLE_00615e14 = 1.5
+//   double DOUBLE_00615e1c = 3
+//   double DOUBLE_00615e24 = 0.200000000000000
+//   double DOUBLE_00615e2c = 5
 // Function calls:
 //   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_flame.cpp_FUN_004c9c00
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 actors_other_bodypart.cpp_FUN_00419e10(undefined4 param_1, undefined4
-   param_2) */
 
 void core_bodypart_cpp_FUN_00419e10(void)
 
@@ -60,12 +56,12 @@ void core_bodypart_cpp_FUN_00419e10(void)
         local_2c[0].x = 1.0;
         *(float *)(pcVar3 + 4) = pCVar2->y;
         *(float *)(pcVar3 + 8) = pCVar2->z;
-        if (*(float *)(in_stack_00000004[9].create_event + 0x38) < (float)_DAT_00615e2c) {
+        if (*(float *)(in_stack_00000004[9].create_event + 0x38) < (float)DOUBLE_00615e2c) {
           local_2c[0].x =
-               *(float *)(in_stack_00000004[9].create_event + 0x38) * (float)_DAT_00615e24;
+               *(float *)(in_stack_00000004[9].create_event + 0x38) * (float)DOUBLE_00615e24;
         }
-        local_14 = (char *)(local_2c[0].x * (float)_DAT_00615e14);
-        fVar1 = (float)_DAT_00615e1c;
+        local_14 = (char *)(local_2c[0].x * (float)DOUBLE_00615e14);
+        fVar1 = (float)DOUBLE_00615e1c;
         input_local_point[0x1d].z = (float)local_14;
         input_local_point[0x1e].x = local_2c[0].x * fVar1;
         input_local_point[0x1e].y = (float)local_14;

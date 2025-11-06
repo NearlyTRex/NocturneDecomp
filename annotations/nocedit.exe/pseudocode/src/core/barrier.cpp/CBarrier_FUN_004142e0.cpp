@@ -4,12 +4,10 @@
 // Convention: __cdecl
 // Signature: void core_barrier.cpp_CBarrier_FUN_004142e0(CBarrier * this_ptr)
 // Globals:
-//   undefined4 DAT_0061515f
-//   undefined4 DAT_00615167
+//   double DOUBLE_0061515f = 0.5
+//   double DOUBLE_00615167 = 0.100000000000000
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_barrier_cpp_CBarrier_FUN_004142e0(CBarrier *this_ptr)
 
@@ -19,12 +17,12 @@ void __cdecl core_barrier_cpp_CBarrier_FUN_004142e0(CBarrier *this_ptr)
   float *in_stack_00000008;
   
   fVar1 = *(float *)this_ptr->field1_0x158;
-  fVar2 = (float)_DAT_0061515f;
+  fVar2 = (float)DOUBLE_0061515f;
   in_stack_00000008[1] = -0.1;
   *in_stack_00000008 = -fVar1 * fVar2;
   in_stack_00000008[2] = -*(float *)(this_ptr->field1_0x158 + 8) * fVar2;
   in_stack_00000008[3] = *(float *)this_ptr->field1_0x158 * fVar2;
-  in_stack_00000008[4] = *(float *)(this_ptr->field1_0x158 + 4) + (float)_DAT_00615167;
+  in_stack_00000008[4] = *(float *)(this_ptr->field1_0x158 + 4) + (float)DOUBLE_00615167;
   in_stack_00000008[5] = fVar2 * *(float *)(this_ptr->field1_0x158 + 8);
   return;
 }

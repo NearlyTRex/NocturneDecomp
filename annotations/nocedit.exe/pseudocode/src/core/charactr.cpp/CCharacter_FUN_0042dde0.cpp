@@ -7,27 +7,28 @@
 //   core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409ec0
 //   core_actor.cpp_crc32ProcessInt_FUN_0040cf50
 //   core_actor.cpp_crc32ProcessString_FUN_0040cf90
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 
 #include "nocturne.h"
 
 void __cdecl core_charactr_cpp_CCharacter_FUN_0042dde0(CCharacter *this_ptr)
 
 {
-  char *pcVar1;
+  SMotion *string;
+  char *string_00;
   uint *in_stack_00000008;
   
   core_actor_cpp_CDemonActor_calculateChecksum_FUN_00409ec0(&this_ptr->base_actor,in_stack_00000008)
   ;
-  pcVar1 = (this_ptr->model).model_name;
+  string_00 = (this_ptr->model).model_name;
   core_actor_cpp_crc32ProcessInt_FUN_0040cf50(in_stack_00000008,(int)this_ptr->hit_points);
-  if (*pcVar1 == '\0') {
+  if (*string_00 == '\0') {
     return;
   }
-  core_actor_cpp_crc32ProcessString_FUN_0040cf90(in_stack_00000008,pcVar1);
-  pcVar1 = (char *)core_motion_cpp_CMotionController_FUN_0052dab0
-                             (&(this_ptr->model).motion_controller);
-  core_actor_cpp_crc32ProcessString_FUN_0040cf90(in_stack_00000008,pcVar1);
+  core_actor_cpp_crc32ProcessString_FUN_0040cf90(in_stack_00000008,string_00);
+  string = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     (&(this_ptr->model).motion_controller);
+  core_actor_cpp_crc32ProcessString_FUN_0040cf90(in_stack_00000008,string->motion_name);
   core_actor_cpp_crc32ProcessInt_FUN_0040cf50
             (in_stack_00000008,(int)(this_ptr->model).motion_controller.current_frame_number);
   return;
@@ -70,7 +71,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042dde0(CCharacter *this_ptr)
 //   XREF to: 0040cf90 (UNCONDITIONAL_CALL)
 // 0042de21: ADD ESP,0x8
 // 0042de24: PUSH ESI
-// 0042de25: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0042de25: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0042de2a: ADD ESP,0x4
 // 0042de2d: PUSH EAX

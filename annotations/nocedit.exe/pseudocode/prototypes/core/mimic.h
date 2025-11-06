@@ -47,13 +47,13 @@ undefined FUN_0051fcc0();
 // Address: 00520500
 undefined FUN_00520500();
 
-// Original: core_mimic.cpp_FUN_005205f0
+// Original: core_mimic.cpp_CMimic_FUN_005205f0
 // Address: 005205f0
-undefined FUN_005205f0();
+int CMimic(CMimic * this_ptr);
 
-// Original: core_mimic.cpp_FUN_00520870
+// Original: core_mimic.cpp_CMimic_renderOpaque_FUN_00520870
 // Address: 00520870
-undefined FUN_00520870();
+int CMimic::renderOpaque(CMimic * this_ptr);
 
 // Original: core_mimic.cpp_FUN_00520890
 // Address: 00520890

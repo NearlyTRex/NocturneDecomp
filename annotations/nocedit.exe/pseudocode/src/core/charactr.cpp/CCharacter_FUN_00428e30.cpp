@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_charactr.cpp_CCharacter_FUN_00428e30(CCharacter * this_ptr)
 // Cross-references:
-//   core_hero.cpp_FUN_004f3af0 (004f3af0) at 004f3b0d [UNCONDITIONAL_CALL]
+//   core_hero.cpp_CHero_FUN_004f3af0 (004f3af0) at 004f3b0d [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_charactr.cpp_CCharacter_FUN_0042d060
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0

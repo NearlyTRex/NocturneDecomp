@@ -5,8 +5,8 @@
 // Signature: void core_charactr.cpp_CCharacter_FUN_0042a420(CCharacter * this_ptr)
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_00429aa0 (00429aa0) at 00429aec [UNCONDITIONAL_CALL]
-//   core_mimic.cpp_FUN_005205f0 (005205f0) at 00520803 [UNCONDITIONAL_CALL]
-//   core_vampboss.cpp_CVampireBoss_FUN_005e6da0 (005e6da0) at 005e6e37 [UNCONDITIONAL_CALL]
+//   core_mimic.cpp_CMimic_FUN_005205f0 (005205f0) at 00520803 [UNCONDITIONAL_CALL]
+//   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0 (005e6da0) at 005e6e37 [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CKeyFramedModelInstance DAT_00823a98

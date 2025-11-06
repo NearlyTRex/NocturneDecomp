@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: float core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0(CDeformableModel * this_ptr, int lod_index, CVector3f * ray_origin, CVector3f * ray_direction, CVector3i * skinned_vertices, byte * part_visibility_flags)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a10e0 (005a10e0) at 005a1128 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0 (005a10e0) at 005a1128 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_skeleton_cpp_0064ec1b
 //   TerminatedCString s_CDeformableModel_exactRa_0064ec30

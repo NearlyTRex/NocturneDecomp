@@ -21,8 +21,8 @@
 //   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 //   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
-//   core_charactr.cpp_CCharacter_FUN_0042a2c0
 //   core_charactr.cpp_CCharacter_FUN_0042e840
+//   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 //   core_cloth.cpp_FUN_0043c070
 //   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
 //   core_fire.cpp_CFireEffect_FUN_004c7f80
@@ -76,7 +76,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
   float local_14;
   
   bVar6 = 0;
-  iVar3 = core_charactr_cpp_CCharacter_FUN_0042a2c0((CCharacter *)this_ptr);
+  iVar3 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
   if (iVar3 == 0) {
     return 0;
   }
@@ -255,7 +255,7 @@ LAB_005c33d7:
 // 005c315f: MOV EBX,dword ptr [EBP + 0x92]
 //   XREF to: Stack[0x4] (READ)
 // 005c3165: PUSH EBX
-// 005c3166: CALL core_charactr.cpp_CCharacter_FUN_0042a2c0
+// 005c3166: CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 //   XREF to: 0042a2c0 (UNCONDITIONAL_CALL)
 // 005c316b: ADD ESP,0x4
 // 005c316e: TEST EAX,EAX

@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042bd30 (0042bd30) at 0042bf1a [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_CHAR2.RAW_00615e60
+//   TerminatedCString s_CHAR2_RAW_00615e60
 //   undefined4 s_HAR2.RAW_00615e61
 //   undefined4 s_AR2.RAW_00615e62
 //   undefined4 s_R2.RAW_00615e63
@@ -16,9 +16,6 @@
 //   core_flame.cpp_FUN_004c9b90
 
 #include "nocturne.h"
-
-/* Signature: undefined1 actors_other_bodypart.cpp_FUN_0041ae50(undefined4 param_1, undefined4
-   param_2) */
 
 void core_bodypart_cpp_FUN_0041ae50(void)
 
@@ -57,7 +54,7 @@ void core_bodypart_cpp_FUN_0041ae50(void)
     pfVar7 = &in_stack_00000004[1].orient_matrix.m[0].y;
     input_local_point[0x1e].y = 1.5;
     in_stack_00000004->is_transparent = 1;
-    pcVar6 = "GCHAR2.RAW" + 1;
+    pcVar6 = "CHAR2.RAW";
     in_stack_00000004[1].orient.bank = 1.4013e-45;
     do {
       cVar1 = *pcVar6;

@@ -7,7 +7,7 @@
 //   TerminatedCString s_wait_00654e94
 // Function calls:
 //   core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c720
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   crt_string.c_stricmp_FUN_005fe7f0
 
 #include "nocturne.h"
@@ -15,13 +15,13 @@
 int __cdecl core_tentacle_cpp_CTentacle_FUN_005dbb30(CTentacle *this_ptr)
 
 {
-  char *str1;
+  SMotion *str1;
   int iVar1;
   char *unaff_EBP;
   
-  str1 = (char *)core_motion_cpp_CMotionController_FUN_0052dab0
-                           (&(this_ptr->base_enemy).base_character.model.motion_controller);
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,unaff_EBP);
+  str1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                   (&(this_ptr->base_enemy).base_character.model.motion_controller);
+  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1->motion_name,unaff_EBP);
   if (iVar1 == 0) {
     return 1;
   }
@@ -40,7 +40,7 @@ int __cdecl core_tentacle_cpp_CTentacle_FUN_005dbb30(CTentacle *this_ptr)
 //   XREF to: 00654e94 (DATA)
 // 005dbb3b: ADD EAX,0x158
 // 005dbb40: PUSH EAX
-// 005dbb41: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 005dbb41: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 005dbb46: ADD ESP,0x4
 // 005dbb49: PUSH EAX

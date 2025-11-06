@@ -6,9 +6,9 @@
 // Cross-references:
 //   core_bodypart.cpp_FUN_0041a050 (0041a050) at 0041a0df [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00615e4c
-//   undefined4 DAT_00615e54
-//   undefined4 DAT_00615e5c
+//   double DOUBLE_00615e4c = 3.14159265350000
+//   double DOUBLE_00615e54 = 0.0833333333333333
+//   float FLOAT_00615e5c = 65536
 // Function calls:
 //   core_bodypart.cpp_FUN_0041a630
 //   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
@@ -19,9 +19,6 @@
 /* WARNING: Removing unreachable block (ram,0x0041ad84) */
 /* WARNING: Removing unreachable block (ram,0x0041ad97) */
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 actors_other_bodypart.cpp_FUN_0041aa40(undefined4 param_1, undefined4
-   param_2, undefined4 param_3) */
 
 void core_bodypart_cpp_FUN_0041aa40(void)
 
@@ -77,24 +74,24 @@ void core_bodypart_cpp_FUN_0041aa40(void)
   local_c0 = 0;
   do {
     local_18 = local_bc;
-    local_54.x = (float)local_c0 * (float)_DAT_00615e4c * (float)_DAT_00615e54;
-    local_54.y = (float)local_bc * (float)_DAT_00615e4c * (float)_DAT_00615e54;
+    local_54.x = (float)local_c0 * (float)DOUBLE_00615e4c * (float)DOUBLE_00615e54;
+    local_54.y = (float)local_bc * (float)DOUBLE_00615e4c * (float)DOUBLE_00615e54;
     local_54.z = 0.0;
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_b8,&local_54);
-    fVar9 = (float10)local_b8.m[0].y * (float10)_DAT_00615e5c;
-    fVar10 = (float10)local_b8.m[0].z * (float10)_DAT_00615e5c;
-    fVar11 = (float10)local_b8.m[1].x * (float10)_DAT_00615e5c;
-    fVar12 = (float10)local_b8.m[1].y * (float10)_DAT_00615e5c;
-    fVar13 = (float10)local_b8.m[1].z * (float10)_DAT_00615e5c;
-    fVar14 = (float10)local_b8.m[2].x * (float10)_DAT_00615e5c;
-    fVar15 = (float10)local_b8.m[2].y * (float10)_DAT_00615e5c;
+    fVar9 = (float10)local_b8.m[0].y * (float10)FLOAT_00615e5c;
+    fVar10 = (float10)local_b8.m[0].z * (float10)FLOAT_00615e5c;
+    fVar11 = (float10)local_b8.m[1].x * (float10)FLOAT_00615e5c;
+    fVar12 = (float10)local_b8.m[1].y * (float10)FLOAT_00615e5c;
+    fVar13 = (float10)local_b8.m[1].z * (float10)FLOAT_00615e5c;
+    fVar14 = (float10)local_b8.m[2].x * (float10)FLOAT_00615e5c;
+    fVar15 = (float10)local_b8.m[2].y * (float10)FLOAT_00615e5c;
     dVar16 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,extraout_EAX));
     local_20 = (int)ROUND(fVar9);
-    fVar9 = (float10)fStack_94 * (float10)_DAT_00615e5c;
+    fVar9 = (float10)fStack_94 * (float10)FLOAT_00615e5c;
     local_bc = 0x41ab2f;
     crt_math_c_round_FUN_005fe6b0(dVar16);
     local_18 = (int)ROUND(fVar10);
-    fVar10 = (float10)local_8c * (float10)_DAT_00615e5c;
+    fVar10 = (float10)local_8c * (float10)FLOAT_00615e5c;
     local_54.z = NAN;
     local_54.y = NAN;
     local_54.x = NAN;

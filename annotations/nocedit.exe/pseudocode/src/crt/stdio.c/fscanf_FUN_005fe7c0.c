@@ -15,7 +15,7 @@
 //   core_actor.cpp_serializeRules_FUN_0040c000 (0040c000) at 0040c044 [UNCONDITIONAL_CALL]
 //   core_actor.cpp_serializeString_FUN_0040b5c0 (0040b5c0) at 0040b63f [UNCONDITIONAL_CALL]
 //   core_actor.cpp_serializeVector_FUN_0040b340 (0040b340) at 0040b364 [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_CBodyPart_load_FUN_00419880 (00419880) at 00419b4b [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_serialize_FUN_00419880 (00419880) at 00419b4b [UNCONDITIONAL_CALL]
 //   core_box.cpp_CBox_loadFromFile_FUN_0041fe90 (0041fe90) at 0041ff01 [UNCONDITIONAL_CALL]
 //   core_cloth.cpp_CCloth_load_FUN_00438cf0 (00438cf0) at 00438f41 [UNCONDITIONAL_CALL]
 //   core_course.cpp_CCourse_importMatrices_FUN_00442ea0 (00442ea0) at 00442f05 [UNCONDITIONAL_CALL]

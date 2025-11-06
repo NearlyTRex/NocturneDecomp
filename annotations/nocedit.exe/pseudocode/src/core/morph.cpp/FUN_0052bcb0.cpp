@@ -51,7 +51,7 @@
 //   core_morph.cpp_FUN_0052bb80
 //   core_morph.cpp_FUN_0052ca90
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
-//   core_motion.cpp_FUN_0052ddb0
+//   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
 //   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 //   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
@@ -98,16 +98,17 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
   float y;
   undefined3 extraout_var;
   CMotionList *pCVar6;
-  char *string_data;
   float *pfVar7;
-  int iVar8;
-  float *pfVar9;
-  float fVar10;
-  float *pfVar11;
-  int iVar12;
-  BADSPACEBASE *in_ESP;
+  char *pcVar8;
+  int iVar9;
+  float *pfVar10;
+  float fVar11;
+  float *pfVar12;
   int iVar13;
-  float fVar14;
+  BADSPACEBASE *in_ESP;
+  int iVar14;
+  float fVar15;
+  CMotionController *this_ptr;
   int unaff_retaddr;
   int in_stack_00000014;
   float in_stack_00000018;
@@ -122,6 +123,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
   CGame *in_stack_ffffb26c;
   CMotionList *pCStack_4d18;
   float *pfStack_4d14;
+  float in_stack_ffffb320;
   float in_stack_ffffb328;
   float in_stack_ffffb32c;
   float in_stack_ffffb330;
@@ -232,20 +234,20 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
                     ((CBoundingBox3D *)0x0,
                      *(int *)(*(int *)((int)&local_48 + (int)&stack0xffffb280) + 0x2c),pCStack_2b40)
           ;
-          iVar8 = 0;
+          iVar9 = 0;
           if (0 < iVar4) {
-            pfVar9 = (float *)((int)afStack_458 + unaff_retaddr);
-            iVar13 = in_stack_00000014;
+            pfVar10 = (float *)((int)afStack_458 + unaff_retaddr);
+            iVar14 = in_stack_00000014;
             do {
-              piVar5 = (int *)((int)aiStack_460 + iVar13);
-              iVar13 = iVar13 + 0x20;
+              piVar5 = (int *)((int)aiStack_460 + iVar14);
+              iVar14 = iVar14 + 0x20;
               piVar5 = (int *)((int)fStack_2b3c + *piVar5 * 0xc);
-              iVar8 = iVar8 + 1;
-              *pfVar9 = (float)*piVar5 * FLOAT_00661b48;
-              pfVar9[1] = (float)piVar5[1] * FLOAT_00661b48;
-              pfVar9[2] = (float)piVar5[2] * FLOAT_00661b48;
-              pfVar9 = pfVar9 + 8;
-            } while (iVar8 < iVar4);
+              iVar9 = iVar9 + 1;
+              *pfVar10 = (float)*piVar5 * FLOAT_00661b48;
+              pfVar10[1] = (float)piVar5[1] * FLOAT_00661b48;
+              pfVar10[2] = (float)piVar5[2] * FLOAT_00661b48;
+              pfVar10 = pfVar10 + 8;
+            } while (iVar9 < iVar4);
           }
           in_stack_00000014 = in_stack_00000014 + 4;
           unaff_retaddr = unaff_retaddr + 0xc;
@@ -255,88 +257,88 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
         wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
         y = (float)((int)((g_WindowHeight + (g_WindowHeight >> 0x1f) * -4) -
                          (uint)((g_WindowHeight >> 0x1f) << 1 < 0)) >> 2);
-        fVar14 = -NAN;
-        iVar8 = 0;
+        fVar15 = -NAN;
+        iVar9 = 0;
         local_8 = (float)(g_WindowHeight + (int)y * -2);
         do {
           engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
-                    (g_CDemonRendererPtr,(g_WindowWidth / 2) * iVar8,(int)y,g_WindowWidth / 2,
+                    (g_CDemonRendererPtr,(g_WindowWidth / 2) * iVar9,(int)y,g_WindowWidth / 2,
                      (int)local_8);
           core_stairs_cpp_FUN_005b9a20();
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                     (g_CDemonRendererPtr,&g_ZeroVector);
           core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250
                     (in_stack_0000001c,0);
-          iVar13 = 0;
+          iVar14 = 0;
           fVar2 = 0.0;
-          while (fVar10 = fVar2,
-                (int)fVar10 < *(int *)(*(int *)((int)&local_2c + (int)in_stack_0000001c) + 0x2c)) {
-            iVar12 = *(int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).
-                                    screen_x + iVar13);
-            if ((((iVar12 < (g_MouseX + -5) * 0x10000) || ((g_MouseX + 5) * 0x10000 < iVar12)) ||
-                (iVar12 = *(int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).
-                                         screen_y + iVar13), iVar12 < (g_MouseY + -5) * 0x10000)) ||
-               ((g_MouseY + 5) * 0x10000 < iVar12)) {
-              iVar13 = iVar13 + 0x30;
-              fVar2 = (float)((int)fVar10 + 1);
+          while (fVar11 = fVar2,
+                (int)fVar11 < *(int *)(*(int *)((int)&local_2c + (int)in_stack_0000001c) + 0x2c)) {
+            iVar13 = *(int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).
+                                    screen_x + iVar14);
+            if ((((iVar13 < (g_MouseX + -5) * 0x10000) || ((g_MouseX + 5) * 0x10000 < iVar13)) ||
+                (iVar13 = *(int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).
+                                         screen_y + iVar14), iVar13 < (g_MouseY + -5) * 0x10000)) ||
+               ((g_MouseY + 5) * 0x10000 < iVar13)) {
+              iVar14 = iVar14 + 0x30;
+              fVar2 = (float)((int)fVar11 + 1);
             }
             else {
-              iVar13 = iVar13 + 0x30;
-              fVar2 = (float)((int)fVar10 + 1);
-              fVar14 = fVar10;
+              iVar14 = iVar14 + 0x30;
+              fVar2 = (float)((int)fVar11 + 1);
+              fVar15 = fVar11;
             }
           }
           engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr);
-          iVar8 = iVar8 + 1;
-        } while (iVar8 < 2);
+          iVar9 = iVar9 + 1;
+        } while (iVar9 < 2);
         in_stack_00000014 = -1;
-        if (-1 < (int)fVar14) {
+        if (-1 < (int)fVar15) {
           local_18 = 1 - in_stack_0000005c;
-          iVar8 = in_stack_0000005c << 2;
+          iVar9 = in_stack_0000005c << 2;
           if (0 < iVar4) {
             y = (float)(local_18 * 4);
-            iVar13 = 0;
+            iVar14 = 0;
             do {
-              if (fVar14 == *(float *)((int)afStack_444 + iVar8)) {
-                in_stack_00000014 = *(int *)((int)afStack_444 + (int)y + iVar13);
+              if (fVar15 == *(float *)((int)afStack_444 + iVar9)) {
+                in_stack_00000014 = *(int *)((int)afStack_444 + (int)y + iVar14);
               }
-              iVar13 = iVar13 + 0x20;
-              iVar8 = iVar8 + 0x20;
-            } while (iVar13 < iVar4 * 0x20);
+              iVar14 = iVar14 + 0x20;
+              iVar9 = iVar9 + 0x20;
+            } while (iVar14 < iVar4 * 0x20);
           }
           if (in_stack_00000014 < 0) {
-            piVar5 = (int *)(aiStack_2b20[in_stack_0000005c * 0x8ad] + (int)fVar14 * 0xc);
+            piVar5 = (int *)(aiStack_2b20[in_stack_0000005c * 0x8ad] + (int)fVar15 * 0xc);
             local_70 = (float)*piVar5 * FLOAT_00661b48;
             local_6c = (float)piVar5[1] * FLOAT_00661b48;
             local_68 = (CDeformableModel *)((float)piVar5[2] * FLOAT_00661b48);
-            pfVar11 = local_c4 + in_stack_0000005c * 6;
-            local_70 = (float)*piVar5 * FLOAT_00661b48 - *pfVar11;
+            pfVar12 = local_c4 + in_stack_0000005c * 6;
+            local_70 = (float)*piVar5 * FLOAT_00661b48 - *pfVar12;
             local_6c = (float)piVar5[1] * FLOAT_00661b48 - local_c4[in_stack_0000005c * 6 + 1];
             pfVar7 = local_c4 + local_18 * 6;
             local_68 = (CDeformableModel *)
                        ((float)piVar5[2] * FLOAT_00661b48 - local_c4[in_stack_0000005c * 6 + 2]);
-            pfVar9 = local_c4 + local_18 * 6 + 3;
-            local_94 = *pfVar9 - *pfVar7;
+            pfVar10 = local_c4 + local_18 * 6 + 3;
+            local_94 = *pfVar10 - *pfVar7;
             local_90 = local_c4[local_18 * 6 + 4] - local_c4[local_18 * 6 + 1];
             pfVar1 = local_c4 + in_stack_0000005c * 6 + 3;
             local_8c = local_c4[local_18 * 6 + 5] - local_c4[local_18 * 6 + 2];
-            local_40 = *pfVar1 - *pfVar11;
+            local_40 = *pfVar1 - *pfVar12;
             local_3c = local_c4[in_stack_0000005c * 6 + 4] - local_c4[in_stack_0000005c * 6 + 1];
-            local_70 = ((*pfVar9 - *pfVar7) / (*pfVar1 - *pfVar11)) * local_70;
+            local_70 = ((*pfVar10 - *pfVar7) / (*pfVar1 - *pfVar12)) * local_70;
             local_38 = local_c4[in_stack_0000005c * 6 + 5] - local_c4[in_stack_0000005c * 6 + 2];
-            local_58 = *pfVar9 - *pfVar7;
+            local_58 = *pfVar10 - *pfVar7;
             local_54 = local_c4[local_18 * 6 + 4] - local_c4[local_18 * 6 + 1];
             local_50 = local_c4[local_18 * 6 + 5] - local_c4[local_18 * 6 + 2];
-            local_7c = *pfVar1 - *pfVar11;
+            local_7c = *pfVar1 - *pfVar12;
             local_78 = local_c4[in_stack_0000005c * 6 + 4] - local_c4[in_stack_0000005c * 6 + 1];
             local_6c = ((local_c4[local_18 * 6 + 4] - local_c4[local_18 * 6 + 1]) /
                        (local_c4[in_stack_0000005c * 6 + 4] - local_c4[in_stack_0000005c * 6 + 1]))
                        * local_6c;
             local_74 = local_c4[in_stack_0000005c * 6 + 5] - local_c4[in_stack_0000005c * 6 + 2];
-            local_88 = *pfVar9 - *pfVar7;
+            local_88 = *pfVar10 - *pfVar7;
             local_84 = local_c4[local_18 * 6 + 4] - local_c4[local_18 * 6 + 1];
             local_80 = local_c4[local_18 * 6 + 5] - local_c4[local_18 * 6 + 2];
-            local_64 = *pfVar1 - *pfVar11;
+            local_64 = *pfVar1 - *pfVar12;
             local_60 = (CDeformableModel *)
                        (local_c4[in_stack_0000005c * 6 + 4] - local_c4[in_stack_0000005c * 6 + 1]);
             local_5c = local_c4[in_stack_0000005c * 6 + 5] - local_c4[in_stack_0000005c * 6 + 2];
@@ -344,14 +346,14 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
                        (((local_c4[local_18 * 6 + 5] - local_c4[local_18 * 6 + 2]) /
                         (local_c4[in_stack_0000005c * 6 + 5] - local_c4[in_stack_0000005c * 6 + 2]))
                        * (float)local_68);
-            iVar13 = 0;
+            iVar14 = 0;
             local_20 = 1e+30;
             local_70 = local_70 + *pfVar7;
             local_6c = local_6c + local_c4[local_18 * 6 + 1];
             local_68 = (CDeformableModel *)((float)local_68 + local_c4[local_18 * 6 + 2]);
-            iVar8 = 0;
-            while (iVar12 = iVar8, iVar12 < *(int *)(local_28[1 - in_stack_0000005c] + 0x2c)) {
-              piVar5 = (int *)(aiStack_2b20[(1 - in_stack_0000005c) * 0x8ad] + iVar13);
+            iVar9 = 0;
+            while (iVar13 = iVar9, iVar13 < *(int *)(local_28[1 - in_stack_0000005c] + 0x2c)) {
+              piVar5 = (int *)(aiStack_2b20[(1 - in_stack_0000005c) * 0x8ad] + iVar14);
               local_4c = (float)*piVar5 * FLOAT_00661b48;
               local_48 = (float)piVar5[1] * FLOAT_00661b48;
               local_44 = (float)piVar5[2] * FLOAT_00661b48;
@@ -361,18 +363,18 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
               in_stack_00000018 = local_2c * local_2c + local_34 * local_34 + local_30 * local_30;
               if (in_stack_00000018 < local_20) {
                 local_20 = in_stack_00000018;
-                iVar13 = iVar13 + 0xc;
-                iVar8 = iVar12 + 1;
-                in_stack_00000014 = iVar12;
+                iVar14 = iVar14 + 0xc;
+                iVar9 = iVar13 + 1;
+                in_stack_00000014 = iVar13;
               }
               else {
-                iVar13 = iVar13 + 0xc;
-                iVar8 = iVar12 + 1;
+                iVar14 = iVar14 + 0xc;
+                iVar9 = iVar13 + 1;
               }
             }
           }
         }
-        unaff_retaddr = (int)fVar14 * 0x30;
+        unaff_retaddr = (int)fVar15 * 0x30;
         do {
           engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
                     (g_CDemonRendererPtr,(g_WindowWidth / 2) * (int)in_stack_0000001c,(int)y,
@@ -390,15 +392,15 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
             core_skeleton_cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0
                       (in_stack_00000034);
           }
-          iVar8 = 0;
+          iVar9 = 0;
           g_ActiveRenderColor = 0xff;
           if (0 < iVar4) {
             do {
-              iVar8 = iVar8 + 1;
+              iVar9 = iVar9 + 1;
               core_morph_cpp_FUN_0052bb80();
-            } while (iVar8 < iVar4);
+            } while (iVar9 < iVar4);
           }
-          if (-1 < (int)fVar14) {
+          if (-1 < (int)fVar15) {
             uVar3 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                               (g_CEditorToolsPtr);
             g_ActiveRenderColor = CONCAT31(extraout_var,uVar3);
@@ -413,15 +415,15 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
         if (g_MouseButtonFlags == 1) {
           if (local_10 == 1) {
             if (((-1 < (int)y) && (local_8 == in_stack_00000060)) && ((int)in_stack_0000001c < 0)) {
-              afStack_444[(int)y * 8 + (int)local_8 + 1] = fVar14;
+              afStack_444[(int)y * 8 + (int)local_8 + 1] = fVar15;
             }
           }
           else if (local_10 == 0) {
             if ((int)in_stack_0000001c < 0) {
-              if (-1 < (int)fVar14) {
+              if (-1 < (int)fVar15) {
                 if (iVar4 < 0x14) {
                   local_8 = in_stack_00000060;
-                  *(float *)((int)afStack_444 + (int)in_stack_00000060 * 4 + local_c + 4U) = fVar14;
+                  *(float *)((int)afStack_444 + (int)in_stack_00000060 * 4 + local_c + 4U) = fVar15;
                   iVar4 = iVar4 + 1;
                   *(float *)((int)afStack_444 + (1 - (int)in_stack_00000060) * 4 + local_c + 4U) =
                        in_stack_00000018;
@@ -441,17 +443,17 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
         else {
           local_8 = -NAN;
         }
-        if ((int)fVar14 < 0) {
+        if ((int)fVar15 < 0) {
           shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,false);
         }
         local_c = g_MouseButtonFlags;
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
         core_stairs_cpp_FUN_005b9670();
-        iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
-        if (iVar8 != 0) break;
-        iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x14);
-        if (iVar8 != 0) {
+        iVar9 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+        if (iVar9 != 0) break;
+        iVar9 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x14);
+        if (iVar9 != 0) {
           core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
                     ((CDeformableModelInstance *)&pCStack_4d18);
           core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
@@ -471,27 +473,26 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
           core_morph_cpp_FUN_0052ca90();
           core_morph_cpp_CMorphModel_FUN_0052b350(in_stack_000000c0);
         }
-        iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x32);
-        if (iVar8 != 0) {
+        iVar9 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x32);
+        if (iVar9 != 0) {
           shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)auStack_778);
-          iVar8 = 0;
-          for (iVar13 = 0;
-              pCVar6 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                                 ((CMotionController *)
-                                  (&stack0xffffb324 + in_stack_000000d4 * 0x22b4)),
-              iVar13 < pCVar6->motion_count; iVar13 = iVar13 + 1) {
-            pCVar6 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                               ((CMotionController *)(&stack0xffffb324 + in_stack_000000d4 * 0x22b4)
-                               );
-            string_data = pCVar6->motions[0].motion_name + iVar8;
-            iVar8 = iVar8 + 0x54c;
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)auStack_76c,string_data);
+          iVar9 = 0;
+          this_ptr = (CMotionController *)(&stack0xffffb324 + in_stack_000000d4 * 0x22b4);
+          for (iVar14 = 0;
+              pCVar6 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(this_ptr),
+              iVar14 < pCVar6->motion_count; iVar14 = iVar14 + 1) {
+            pCVar6 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(this_ptr);
+            pcVar8 = pCVar6->motions[0].motion_name + iVar9;
+            iVar9 = iVar9 + 0x54c;
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)auStack_76c,pcVar8);
           }
-          iVar8 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+          iVar9 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                             ((CPickList *)(auStack_778 + 8),"Select motion",-1,0);
-          if (-1 < iVar8) {
-            shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)auStack_76c,iVar8);
-            core_motion_cpp_FUN_0052ddb0();
+          if (-1 < iVar9) {
+            pcVar8 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
+                               ((CStrList *)auStack_76c,iVar9);
+            core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
+                      (this_ptr,pcVar8,in_stack_ffffb320);
           }
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                     ((CPickList *)(auStack_76c + 8),0,(uint)in_stack_ffffb328,
@@ -499,6 +500,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
                      (uint)in_stack_ffffb338);
         }
         in_stack_ffffb328 = 3.36312e-44;
+        in_stack_ffffb320 = 7.603025e-39;
         (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x18);
       }
       g_CDemonSetPtr->lighting_quality_mode = 0;
@@ -1795,7 +1797,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
 // 0052c9f8: ADD ESP,0x8
 // 0052c9fb: PUSH EAX
 // 0052c9fc: PUSH EDI
-// 0052c9fd: CALL core_motion.cpp_FUN_0052ddb0
+// 0052c9fd: CALL core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
 //   XREF to: 0052ddb0 (UNCONDITIONAL_CALL)
 // 0052ca02: ADD ESP,0xc
 // 0052ca05: PUSH 0x0

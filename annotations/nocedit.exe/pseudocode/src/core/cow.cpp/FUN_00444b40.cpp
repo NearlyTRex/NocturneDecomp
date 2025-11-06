@@ -10,7 +10,7 @@
 // Function calls:
 //   core_cow.cpp_FUN_004448c0
 //   core_enemy.cpp_FUN_004a9f10
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_sound.cpp_FUN_005b3b80
 
@@ -23,34 +23,35 @@ void core_cow_cpp_FUN_00444b40(void)
 
 {
   float fVar1;
-  undefined4 uVar2;
+  SMotion *pSVar2;
+  undefined4 uVar3;
   int in_stack_00000004;
   int in_stack_00000008;
-  int iVar3;
+  int iVar4;
   
   core_cow_cpp_FUN_004448c0();
   fVar1 = *(float *)(in_stack_00000004 + 0x243c) - *(float *)(in_stack_00000008 + 4);
   *(float *)(in_stack_00000004 + 0x243c) = fVar1;
   if (fVar1 <= 0.0) {
     *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
-    iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0
-                      ((CMotionController *)(in_stack_00000004 + 0x158));
-    if ((*(int *)(iVar3 + 0x24) == 5) || (*(int *)(iVar3 + 0x24) == 4)) goto LAB_00444b80;
-    iVar3 = 4;
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       ((CMotionController *)(in_stack_00000004 + 0x158));
+    if ((pSVar2->state_index == 5) || (pSVar2->state_index == 4)) goto LAB_00444b80;
+    iVar4 = 4;
   }
   else {
-    iVar3 = 3;
+    iVar4 = 3;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            ((CMotionController *)(in_stack_00000004 + 0x158),iVar3,1);
+            ((CMotionController *)(in_stack_00000004 + 0x158),iVar4,1);
 LAB_00444b80:
-  iVar3 = core_sound_cpp_FUN_005b3b80();
-  if (iVar3 != 0) {
+  iVar4 = core_sound_cpp_FUN_005b3b80();
+  if (iVar4 != 0) {
     core_enemy_cpp_FUN_004a9f10();
     return;
   }
-  uVar2 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
-  *(undefined4 *)(in_stack_00000004 + 0xbec4) = uVar2;
+  uVar3 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
+  *(undefined4 *)(in_stack_00000004 + 0xbec4) = uVar3;
   core_enemy_cpp_FUN_004a9f10();
   return;
 }
@@ -113,7 +114,7 @@ LAB_00444b80:
 // 00444ba8: PUSH ESI
 //   Label: LAB_00444ba8
 // 00444ba9: MOV dword ptr [EBX + 0x243c],0x0
-// 00444bb3: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 00444bb3: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 00444bb8: MOV EAX,dword ptr [EAX + 0x24]
 // 00444bbb: ADD ESP,0x4

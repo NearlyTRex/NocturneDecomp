@@ -109,6 +109,7 @@ const float g_MirrorProjectionScale = 256f;
 const float g_MirrorFloatToInt = 65536f;
 const float g_MirrorIntToFloat_Coarse = 0.00390625f;
 const float g_MirrorIntToFloat_Fine = 1.525879e-05f;
+const float FLOAT_00661938 = 2f;
 const float FLOAT_00661b40 = 256f;
 const float FLOAT_00661b48 = 0.00390625f;
 const float FLOAT_00661ba0 = 256f;
@@ -120,6 +121,11 @@ const float FLOAT_00662a28 = 256f;
 const float FLOAT_00662a40 = 256f;
 const float FLOAT_00662e98 = 256f;
 const float FLOAT_00662ea0 = 0.00390625f;
+const float FLOAT_00663928 = 1.5f;
+const float DAT_0066392c = 50f;
+const float FLOAT_00663930 = 100f;
+const float FLOAT_00663934 = 15f;
+const float FLOAT_00663938 = 4f;
 const float FLOAT_006652cc = 256f;
 
 // int constants
@@ -171,7 +177,6 @@ const undefined4 DAT_00663758 = {0x30, 0x78, 0x34, 0x31};
 const undefined4 DAT_0066375c = {0x30, 0x78, 0x33, 0x66};
 const undefined4 DAT_00663770 = {0x2D, 0x30, 0x78, 0x34};
 const undefined4 DAT_00663774 = {0x30, 0x78, 0x33, 0x66};
-const undefined4 DAT_00663928 = {0x30, 0x78, 0x33, 0x66};
 const undefined4 DAT_00663d58 = {0x30, 0x78, 0x34, 0x30};
 const undefined4 DAT_00664b6c = {0x2D, 0x30, 0x78, 0x34};
 const undefined4 DAT_00664b70 = {0x30, 0x78, 0x33, 0x66};

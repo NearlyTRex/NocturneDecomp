@@ -26,14 +26,15 @@ core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0
 {
   int iVar1;
   CDeformableModel *pCVar2;
-  void *pvVar3;
+  CVector3i *pCVar3;
   
   core_skeleton_cpp_CDeformableModelInstance_free_FUN_0059df40(this_ptr);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   iVar1 = pCVar2->vertex_count[0];
-  pvVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0(iVar1 * 0xc,"..\\core\\skeleton.cpp",0x8f9);
-  this_ptr->current_lod_index = (int)pvVar3;
-  if (pvVar3 != (void *)0x0) {
+  pCVar3 = (CVector3i *)
+           shape_memdbg_cpp_debugAlloc_FUN_0050f1f0(iVar1 * 0xc,"..\\core\\skeleton.cpp",0x8f9);
+  this_ptr->skinned_vertices_buffer = pCVar3;
+  if (pCVar3 != (CVector3i *)0x0) {
     this_ptr->cached_skinned_lod_index = -1;
     return;
   }

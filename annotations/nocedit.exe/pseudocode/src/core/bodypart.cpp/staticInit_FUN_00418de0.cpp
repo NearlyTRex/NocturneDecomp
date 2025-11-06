@@ -17,8 +17,9 @@ void __cdecl core_bodypart_cpp_staticInit_FUN_00418de0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CBodyPartClassInfo,"CBodyPart",core_bodypart_cpp_FUN_00418fd0,
-             &g_CBodyPartClassVersion,5,&g_CDemonActorClassInfo);
+            (&g_CBodyPartClassInfo,"CBodyPart",
+             core_bodypart_cpp_createBodyPart_FUN_00418fd0,&g_CBodyPartClassVersion,5,
+             &g_CDemonActorClassInfo);
   return;
 }
 

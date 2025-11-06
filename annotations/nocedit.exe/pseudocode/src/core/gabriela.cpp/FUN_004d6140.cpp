@@ -11,7 +11,7 @@
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
-//   core_charactr.cpp_CCharacter_FUN_0042a2c0
+//   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 //   core_cloth.cpp_FUN_0043bae0
 //   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
 
@@ -28,7 +28,7 @@ int core_gabriela_cpp_FUN_004d6140(void)
   CDemonActor *pCVar4;
   CCharacter *in_stack_00000004;
   
-  iVar3 = core_charactr_cpp_CCharacter_FUN_0042a2c0(in_stack_00000004);
+  iVar3 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(in_stack_00000004);
   if (iVar3 != 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&in_stack_00000004->base_actor);
     core_cloth_cpp_FUN_0043bae0();
@@ -60,7 +60,7 @@ int core_gabriela_cpp_FUN_004d6140(void)
 // 004d6144: MOV EBP,ESP
 // 004d6146: MOV EBX,dword ptr [EBP + 0x14]
 // 004d6149: PUSH EBX
-// 004d614a: CALL core_charactr.cpp_CCharacter_FUN_0042a2c0
+// 004d614a: CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 //   XREF to: 0042a2c0 (UNCONDITIONAL_CALL)
 // 004d614f: ADD ESP,0x4
 // 004d6152: MOV ESI,EAX

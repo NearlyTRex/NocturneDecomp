@@ -9,10 +9,10 @@
 //   void* switchdataD_0041763c = 0041769d
 //   TerminatedCString s_limb_wav_00615939
 //   TerminatedCString s_Shot_thru_the_heart_00615943
-//   undefined4 DAT_0061595d
-//   undefined4 DAT_00615965
-//   undefined4 DAT_0061596d
-//   undefined4 DAT_00615975
+//   double DOUBLE_0061595d = 7
+//   double DOUBLE_00615965 = 0.5
+//   double DOUBLE_0061596d = 2.5
+//   double DOUBLE_00615975 = 20
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   CGame* g_CGamePtr = 02d81a9c
 //   CConsole g_ConsolePtr
@@ -33,7 +33,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_batman.cpp_FUN_00417660(undefined4 param_1, undefined4
    param_2) */
 
@@ -119,12 +118,12 @@ switchD_00417696_default:
           [in_stack_00000004[1].base_actor.is_transparent] == 0) {
         in_stack_00000008[1] = 0x461c3c00;
       }
-      in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)_DAT_0061595d);
+      in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)DOUBLE_0061595d);
     }
   }
   iVar1 = *in_stack_00000008;
   if (iVar1 == in_stack_00000004[1].base_actor.is_transparent) {
-    fVar2 = (float)in_stack_00000008[1] * (float)_DAT_0061596d;
+    fVar2 = (float)in_stack_00000008[1] * (float)DOUBLE_0061596d;
   }
   else {
     if ((iVar1 == in_stack_00000004[1].base_actor.field19_0x114) ||
@@ -132,14 +131,14 @@ switchD_00417696_default:
       in_stack_00000008[1] = in_stack_00000008[1];
       goto LAB_00417851;
     }
-    fVar2 = (float)in_stack_00000008[1] * (float)_DAT_00615965;
+    fVar2 = (float)in_stack_00000008[1] * (float)DOUBLE_00615965;
   }
   in_stack_00000008[1] = (int)fVar2;
 LAB_00417851:
   this_ptr = g_CConsolePtr;
   if ((in_stack_00000004[1].base_actor.field16_0x100 == *in_stack_00000008) &&
      (in_stack_00000008[0xc] == 0x68)) {
-    in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)_DAT_00615975);
+    in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)DOUBLE_00615975);
     engine_console_cpp_CConsole_printf_FUN_00441890(this_ptr,"Shot thru the heart\n");
     iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
     if (iVar1 != 0) {

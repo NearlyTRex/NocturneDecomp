@@ -4,13 +4,13 @@
 // Convention: __cdecl
 // Signature: void core_morph.cpp_CMorphModel_FUN_0052bae0(CMorphModel * this_ptr)
 // Cross-references:
-//   core_biggs.cpp_FUN_004189b0 (004189b0) at 00418a5e [UNCONDITIONAL_CALL]
-//   core_mimic.cpp_FUN_005205f0 (005205f0) at 0052065e [UNCONDITIONAL_CALL]
-//   core_moloch.cpp_FUN_00529750 (00529750) at 00529805 [UNCONDITIONAL_CALL]
+//   core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0 (004189b0) at 00418a5e [UNCONDITIONAL_CALL]
+//   core_mimic.cpp_CMimic_FUN_005205f0 (005205f0) at 0052065e [UNCONDITIONAL_CALL]
+//   core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750 (00529750) at 00529805 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052ca90 (0052ca90) at 0052cb34 [UNCONDITIONAL_CALL]
 //   core_passngr.cpp_FUN_005460c0 (005460c0) at 00546174 [UNCONDITIONAL_CALL]
-//   core_succubus.cpp_CSuccubus_FUN_005c7590 (005c7590) at 005c76f2 [UNCONDITIONAL_CALL]
-//   core_vampboss.cpp_CVampireBoss_FUN_005e6da0 (005e6da0) at 005e6f3d [UNCONDITIONAL_CALL]
+//   core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590 (005c7590) at 005c76f2 [UNCONDITIONAL_CALL]
+//   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0 (005e6da0) at 005e6f3d [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_morph.cpp_CMorphModel_FUN_0052af30
 

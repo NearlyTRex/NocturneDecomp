@@ -59,34 +59,45 @@
 //   int g_CurrentLineNumber
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
+//   core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70
+//   core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020
 //   core_motion.cpp_CMotionController_advanceTween_FUN_0052e1d0
+//   core_motion.cpp_CMotionController_clearTweenState_FUN_0052de40
 //   core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950
-//   core_motion.cpp_CMotionController_FUN_0052dab0
-//   core_motion.cpp_CMotionController_FUN_0052dbc0
-//   core_motion.cpp_CMotionController_FUN_0052de40
-//   core_motion.cpp_CMotionController_FUN_0052de70
-//   core_motion.cpp_CMotionController_FUN_0052e020
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_reverseTransition_FUN_0052da50
+//   core_motion.cpp_CMotionController_startTransition_FUN_0052dbc0
 
 #include "nocturne.h"
 
 int __cdecl core_motion_cpp_CMotionController_advance_FUN_0052d610(CMotionController *this_ptr)
 
 {
-  float fVar1;
-  bool bVar2;
+  bool bVar1;
+  float fVar2;
   int iVar3;
   int iVar4;
+  SMotion *pSVar5;
+  BADSPACEBASE *in_ESP;
   int unaff_EBP;
   float *in_stack_00000008;
   float local_44;
   float local_40;
-  undefined4 local_34;
-  int iStack_30;
+  undefined1 local_3c [8];
+  int local_34;
+  float fStack_30;
   float local_2c;
-  int local_14;
+  float *local_28;
+  float *local_24;
+  int *local_20;
+  int *local_1c;
+  int *local_14;
   
-  local_14 = 0;
+  local_24 = &this_ptr->tween_target_frame;
+  local_1c = &this_ptr->tween_target_motion;
+  local_28 = &this_ptr->current_frame_number;
+  local_20 = &this_ptr->current_motion_index;
+  local_14 = (int *)0x0;
   do {
     if (*in_stack_00000008 <= (float)DOUBLE_0063aa27) break;
     iVar3 = core_motion_cpp_CMotionController_findAndStartTransition_FUN_0052d950(this_ptr);
@@ -94,22 +105,25 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_0052d610(CMotionContro
     local_44 = *in_stack_00000008;
     iVar3 = 0;
     if (this_ptr->tween_progress < 0.0) {
-      iVar3 = core_motion_cpp_CMotionController_FUN_0052e020(this_ptr);
+      iVar3 = core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020
+                        (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,
+                         &local_44,(SMotionTransition *)local_3c);
       switch(local_34) {
       case 1:
       case 2:
-        this_ptr->current_motion_index = iStack_30;
+        this_ptr->current_motion_index = (int)fStack_30;
         this_ptr->current_frame_number = local_2c;
-        if (this_ptr != (CMotionController *)0xffffffe4) {
-          iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
-          this_ptr->state_index = *(int *)(iVar4 + 0x24);
+        if (local_24 != (float *)0x0) {
+          pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
+          this_ptr->state_index = pSVar5->state_index;
         }
         break;
       case 3:
       case 4:
       case 5:
       case 6:
-        core_motion_cpp_CMotionController_FUN_0052dbc0(this_ptr);
+        core_motion_cpp_CMotionController_startTransition_FUN_0052dbc0
+                  (this_ptr,(SMotionTransition *)(local_3c + 4));
         break;
       default:
         g_CurrentFilename = "..\\core\\motion.cpp";
@@ -119,26 +133,26 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_0052d610(CMotionContro
       goto LAB_0052d782;
     }
     if (this_ptr->tween_direction == 0) {
-      fVar1 = (float)DOUBLE_0063aa2f - this_ptr->tween_progress;
+      local_40 = (float)DOUBLE_0063aa2f - this_ptr->tween_progress;
     }
     else {
-      fVar1 = this_ptr->tween_progress;
+      local_40 = this_ptr->tween_progress;
     }
-    local_40 = fVar1 / this_ptr->tween_speed;
+    local_40 = local_40 / this_ptr->tween_speed;
     if (local_40 < 0.0) {
       local_40 = 0.0;
     }
     if (local_40 < local_44) {
       local_44 = local_40;
     }
-    bVar2 = false;
-    local_14 = 0;
+    bVar1 = false;
+    local_14 = (int *)0x0;
     if (local_44 <= 0.0) goto switchD_0052d6ff_caseD_3;
     switch(this_ptr->tween_type) {
     case 3:
       break;
     case 4:
-      bVar2 = true;
+      bVar1 = true;
       core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(this_ptr);
       break;
     case 5:
@@ -146,7 +160,7 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_0052d610(CMotionContro
       goto LAB_0052d70d;
     case 6:
       core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(this_ptr);
-      bVar2 = true;
+      bVar1 = true;
       core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(this_ptr);
       goto LAB_0052d70d;
     default:
@@ -158,26 +172,30 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_0052d610(CMotionContro
 switchD_0052d6ff_caseD_3:
     if (unaff_EBP != 0) {
 LAB_0052d70d:
-      iVar3 = core_motion_cpp_CMotionController_FUN_0052de70();
+      iVar3 = core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70
+                        (this_ptr,local_1c,local_24,local_44,this_ptr->tween_progress);
     }
-    if ((bVar2) && (iVar4 = core_motion_cpp_CMotionController_FUN_0052de70(), iVar3 == 0)) {
+    if ((bVar1) &&
+       (iVar4 = core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70
+                          (this_ptr,local_14,(float *)local_1c,local_40,
+                           1.0 - this_ptr->tween_progress), iVar3 == 0)) {
       iVar3 = iVar4;
     }
     if (this_ptr->tween_direction == 0) {
-      fVar1 = local_40 * this_ptr->tween_speed + this_ptr->tween_progress;
-      this_ptr->tween_progress = fVar1;
-      if (((float)DOUBLE_0063aa37 < fVar1) &&
+      fVar2 = local_40 * this_ptr->tween_speed + this_ptr->tween_progress;
+      this_ptr->tween_progress = fVar2;
+      if (((float)DOUBLE_0063aa37 < fVar2) &&
          (core_motion_cpp_CMotionController_reverseTransition_FUN_0052da50(this_ptr),
          this_ptr->tween_set_new_state != 0)) {
-        iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
-        this_ptr->state_index = *(int *)(iVar4 + 0x24);
+        pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
+        this_ptr->state_index = pSVar5->state_index;
       }
     }
     else {
-      fVar1 = this_ptr->tween_progress - local_40 * this_ptr->tween_speed;
-      this_ptr->tween_progress = fVar1;
-      if (fVar1 < (float)DOUBLE_0063aa3f) {
-        core_motion_cpp_CMotionController_FUN_0052de40(this_ptr);
+      fVar2 = this_ptr->tween_progress - local_40 * this_ptr->tween_speed;
+      this_ptr->tween_progress = fVar2;
+      if (fVar2 < (float)DOUBLE_0063aa3f) {
+        core_motion_cpp_CMotionController_clearTweenState_FUN_0052de40(this_ptr);
       }
     }
 LAB_0052d782:
@@ -190,8 +208,8 @@ LAB_0052d782:
       return iVar3;
     }
 LAB_0052d663:
-    local_14 = local_14 + 1;
-  } while (local_14 < 5);
+    local_14 = (int *)((int)local_14 + 1);
+  } while ((int)local_14 < 5);
   *in_stack_00000008 = 0.0;
   return 0;
 }
@@ -352,7 +370,7 @@ LAB_0052d663:
 //   XREF to: Stack[-0x20] (READ)
 // 0052d71d: PUSH EAX
 // 0052d71e: PUSH EBX
-// 0052d71f: CALL core_motion.cpp_CMotionController_FUN_0052de70
+// 0052d71f: CALL core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70
 //   XREF to: 0052de70 (UNCONDITIONAL_CALL)
 // 0052d724: ADD ESP,0x14
 // 0052d727: MOV ESI,EAX
@@ -375,7 +393,7 @@ LAB_0052d663:
 //   XREF to: Stack[-0x1c] (READ)
 // 0052d747: PUSH ECX
 // 0052d748: PUSH EBX
-// 0052d749: CALL core_motion.cpp_CMotionController_FUN_0052de70
+// 0052d749: CALL core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70
 //   XREF to: 0052de70 (UNCONDITIONAL_CALL)
 // 0052d74e: ADD ESP,0x14
 // 0052d751: TEST ESI,ESI
@@ -398,7 +416,7 @@ LAB_0052d663:
 // 0052d777: JNC 0x0052d782
 //   XREF to: 0052d782 (CONDITIONAL_JUMP)
 // 0052d779: PUSH EBX
-// 0052d77a: CALL core_motion.cpp_CMotionController_FUN_0052de40
+// 0052d77a: CALL core_motion.cpp_CMotionController_clearTweenState_FUN_0052de40
 //   XREF to: 0052de40 (UNCONDITIONAL_CALL)
 // 0052d77f: ADD ESP,0x4
 // 0052d782: MOV EAX,dword ptr [EBP + 0x18]
@@ -524,7 +542,7 @@ LAB_0052d663:
 // 0052d884: JZ 0x0052d782
 //   XREF to: 0052d782 (CONDITIONAL_JUMP)
 // 0052d88a: PUSH EBX
-// 0052d88b: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0052d88b: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0052d890: MOV EAX,dword ptr [EAX + 0x24]
 // 0052d893: ADD ESP,0x4
@@ -543,7 +561,7 @@ LAB_0052d663:
 // 0052d8b1: JZ 0x0052d782
 //   XREF to: 0052d782 (CONDITIONAL_JUMP)
 // 0052d8b7: PUSH EBX
-// 0052d8b8: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0052d8b8: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0052d8bd: MOV EAX,dword ptr [EAX + 0x24]
 // 0052d8c0: ADD ESP,0x4
@@ -555,7 +573,7 @@ LAB_0052d663:
 //   XREF to: Stack[-0x40] (DATA)
 // 0052d8cf: PUSH EAX
 // 0052d8d0: PUSH EBX
-// 0052d8d1: CALL core_motion.cpp_CMotionController_FUN_0052dbc0
+// 0052d8d1: CALL core_motion.cpp_CMotionController_startTransition_FUN_0052dbc0
 //   XREF to: 0052dbc0 (UNCONDITIONAL_CALL)
 // 0052d8d6: ADD ESP,0x8
 // 0052d8d9: JMP 0x0052d782
@@ -589,7 +607,7 @@ LAB_0052d663:
 // 0052d917: PUSH dword ptr [EBX + 0x8]
 // 0052d91a: PUSH ECX
 // 0052d91b: PUSH EBX
-// 0052d91c: CALL core_motion.cpp_CMotionController_FUN_0052e020
+// 0052d91c: CALL core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020
 //   XREF to: 0052e020 (UNCONDITIONAL_CALL)
 // 0052d921: ADD ESP,0x14
 // 0052d924: MOV ESI,EAX

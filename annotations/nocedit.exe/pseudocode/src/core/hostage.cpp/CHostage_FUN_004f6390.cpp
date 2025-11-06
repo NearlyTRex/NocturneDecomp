@@ -4,20 +4,20 @@
 // Convention: __cdecl
 // Signature: int core_hostage.cpp_CHostage_FUN_004f6390(CHostage * this_ptr)
 // Function calls:
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 
 #include "nocturne.h"
 
 int __cdecl core_hostage_cpp_CHostage_FUN_004f6390(CHostage *this_ptr)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
   
   if (((*(int *)this_ptr->field4_0x1fab8 != 0) && (this_ptr->hostage_state != 3)) &&
      (this_ptr->hostage_state != 4)) {
-    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
-                      (&(this_ptr->base_npc).base_character.model.motion_controller);
-    if (*(int *)(iVar1 + 0x24) != 10) {
+    pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       (&(this_ptr->base_npc).base_character.model.motion_controller);
+    if (pSVar1->state_index != 10) {
       return 1;
     }
   }
@@ -45,7 +45,7 @@ int __cdecl core_hostage_cpp_CHostage_FUN_004f6390(CHostage *this_ptr)
 // 004f63b0: ADD EAX,0x158
 //   Label: LAB_004f63b0
 // 004f63b5: PUSH EAX
-// 004f63b6: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 004f63b6: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 004f63bb: MOV EAX,dword ptr [EAX + 0x24]
 // 004f63be: ADD ESP,0x4

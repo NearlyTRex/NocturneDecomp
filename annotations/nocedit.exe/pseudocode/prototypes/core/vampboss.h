@@ -39,9 +39,9 @@ undefined FUN_005e6b80();
 // Address: 005e6ca0
 undefined FUN_005e6ca0();
 
-// Original: core_vampboss.cpp_CVampireBoss_FUN_005e6da0
+// Original: core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0
 // Address: 005e6da0
-int CVampireBoss(CVampireBoss * this_ptr);
+int CVampireBoss::renderOpaque(CVampireBoss * this_ptr);
 
 // Original: core_vampboss.cpp_CVampireBoss_serialize_FUN_005e6f50
 // Address: 005e6f50

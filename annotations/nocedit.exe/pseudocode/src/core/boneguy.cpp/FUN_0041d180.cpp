@@ -7,7 +7,7 @@
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonRenderer g_CDemonRendererInstance
 // Function calls:
-//   core_charactr.cpp_CCharacter_FUN_0042a2c0
+//   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 //   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 
 #include "nocturne.h"
@@ -24,7 +24,7 @@ void core_boneguy_cpp_FUN_0041d180(void)
   if (iVar1 == 0) {
     return;
   }
-  core_charactr_cpp_CCharacter_FUN_0042a2c0(in_stack_00000008);
+  core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(in_stack_00000008);
   return;
 }
 
@@ -47,7 +47,7 @@ void core_boneguy_cpp_FUN_0041d180(void)
 //   Label: LAB_0041d194
 //   XREF to: Stack[0x4] (READ)
 // 0041d198: PUSH ECX
-// 0041d199: CALL core_charactr.cpp_CCharacter_FUN_0042a2c0
+// 0041d199: CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 //   XREF to: 0042a2c0 (UNCONDITIONAL_CALL)
 // 0041d19e: ADD ESP,0x4
 // 0041d1a1: RET

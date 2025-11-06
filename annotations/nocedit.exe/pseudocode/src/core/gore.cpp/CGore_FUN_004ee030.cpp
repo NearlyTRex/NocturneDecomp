@@ -5,8 +5,8 @@
 // Signature: void core_gore.cpp_CGore_FUN_004ee030(CGore * this_ptr, CDemonActor * actor)
 // Cross-references:
 //   core_actor.cpp_CDemonActor_spawnFlies_FUN_00409e70 (00409e70) at 00409ea9 [UNCONDITIONAL_CALL]
-//   core_colonel.cpp_FUN_004404b0 (004404b0) at 00440596 [UNCONDITIONAL_CALL]
-//   core_haystack.cpp_FUN_004f1b70 (004f1b70) at 004f1c70 [UNCONDITIONAL_CALL]
+//   core_colonel.cpp_CColonel_FUN_004404b0 (004404b0) at 00440596 [UNCONDITIONAL_CALL]
+//   core_haystack.cpp_CHaystack_FUN_004f1b70 (004f1b70) at 004f1c70 [UNCONDITIONAL_CALL]
 //   core_icepick.cpp_CIcePick_FUN_004f95b0 (004f95b0) at 004f96f6 [UNCONDITIONAL_CALL]
 //   core_scat.cpp_FUN_00557ea0 (00557ea0) at 00557f86 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c48b0 (005c48b0) at 005c4a7e [UNCONDITIONAL_CALL]

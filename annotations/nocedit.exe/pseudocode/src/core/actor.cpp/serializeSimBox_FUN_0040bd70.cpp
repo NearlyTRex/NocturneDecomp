@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_actor.cpp_serializeSimBox_FUN_0040bd70(CSimBox * simbox_ptr, char * property_name)
 // Cross-references:
-//   core_bodypart.cpp_CBodyPart_load_FUN_00419880 (00419880) at 00419a05 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_serialize_FUN_00419880 (00419880) at 00419a05 [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_CBoxActor_load_FUN_00422060 (00422060) at 00422190 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sim_box_state_info_openi_0061402e

@@ -13,7 +13,7 @@
 //   core_barrier.cpp_CBarrier_serialize_FUN_00414340 (00414340) at 0041438f [UNCONDITIONAL_CALL]
 //   core_batman.cpp_CBatman_serialize_FUN_00417580 (00417580) at 00417608 [UNCONDITIONAL_CALL]
 //   core_biggs.cpp_CBiggs_load_FUN_00418ac0 (00418ac0) at 00418b11 [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_CBodyPart_load_FUN_00419880 (00419880) at 004198a0 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_serialize_FUN_00419880 (00419880) at 004198a0 [UNCONDITIONAL_CALL]
 //   core_boneguy.cpp_CBoneGuy_load_FUN_0041d270 (0041d270) at 0041d325 [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_CBoxActor_load_FUN_00422060 (00422060) at 00422203 [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_load_FUN_00422c80 (00422c80) at 00422d0d [UNCONDITIONAL_CALL]

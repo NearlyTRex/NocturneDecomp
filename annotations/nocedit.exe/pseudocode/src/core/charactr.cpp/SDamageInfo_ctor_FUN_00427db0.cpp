@@ -57,7 +57,7 @@ SDamageInfo * __cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(SDamageInf
 
 {
   this_ptr->ammo_type = 0;
-  this_ptr->weapon_damage_modifier = 0;
+  this_ptr->weapon_damage_modifier = 0.0;
   this_ptr->field0_0x0 = -1;
   this_ptr->damage_flags = 0;
   (this_ptr->impact_point).z = 0.0;

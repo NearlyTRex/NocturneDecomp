@@ -7,8 +7,8 @@
 //   TerminatedCString s_STAND_006174c3
 //   undefined4 DAT_006174ca
 // Function calls:
-//   core_motion.cpp_CMotionController_FUN_0052dd20
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
+//   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
 
 #include "nocturne.h"
@@ -21,7 +21,6 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042de50(CCharacter *this_ptr)
   int iVar1;
   CMotionList *this_ptr_00;
   float fVar2;
-  int iStack0000000c;
   SCollisionInfo *in_stack_fffffff4;
   
   iVar1 = (*(this_ptr->base_actor).vtable[1].hasCollision)(&this_ptr->base_actor,in_stack_fffffff4);
@@ -29,10 +28,10 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042de50(CCharacter *this_ptr)
     if ((this_ptr->model).model_name[0] != '\0') {
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                               (&(this_ptr->model).motion_controller);
-      iStack0000000c = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
-      if (-1 < iStack0000000c) {
-        fVar2 = core_motion_cpp_CMotionController_FUN_0052dd20(&(this_ptr->model).motion_controller)
-        ;
+      iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
+      if (-1 < iVar1) {
+        fVar2 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
+                          (&(this_ptr->model).motion_controller,iVar1);
         if ((float)_DAT_006174ca < fVar2) {
           return 0;
         }
@@ -94,7 +93,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042de50(CCharacter *this_ptr)
 //   XREF to: 0042de7e (CONDITIONAL_JUMP)
 // 0042deaa: PUSH EAX
 // 0042deab: PUSH EBX
-// 0042deac: CALL core_motion.cpp_CMotionController_FUN_0052dd20
+// 0042deac: CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   XREF to: 0052dd20 (UNCONDITIONAL_CALL)
 // 0042deb1: MOV dword ptr [ESP + 0x8],EAX
 // 0042deb5: FLD float ptr [ESP + 0x8]

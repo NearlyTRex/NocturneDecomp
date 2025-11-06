@@ -23,7 +23,7 @@
 //   core_anvil.cpp_CAnvil_FUN_00412090 (00412090) at 004120ba [UNCONDITIONAL_CALL]
 //   core_bat.cpp_CBat_FUN_00414ec0 (00414ec0) at 00414ef1 [UNCONDITIONAL_CALL]
 //   core_battery.cpp_FUN_00418110 (00418110) at 0041813a [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_CBodyPart_load_FUN_00419880 (00419880) at 00419985 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_serialize_FUN_00419880 (00419880) at 00419985 [UNCONDITIONAL_CALL]
 //   core_box.cpp_CBox_saveToFile_FUN_00420020 (00420020) at 00420047 [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_FUN_00422900 (00422900) at 0042291f [UNCONDITIONAL_CALL]
 //   core_chain.cpp_CChain_addFilesToExtractList_FUN_00431250 (00431250) at 0043128d [UNCONDITIONAL_CALL]

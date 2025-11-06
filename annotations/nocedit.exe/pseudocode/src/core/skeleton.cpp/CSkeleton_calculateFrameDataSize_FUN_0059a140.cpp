@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_0059a140(CSkeleton * this_ptr)
 // Cross-references:
-//   core_skeleton.cpp_FUN_005a1ed0 (005a1ed0) at 005a1ee8 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_getMemoryStats_FUN_005a1ed0 (005a1ed0) at 005a1ee8 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

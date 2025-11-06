@@ -15,7 +15,7 @@
 //   core_charactr.cpp_CCharacter_FUN_0042ca70
 //   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 
 #include "nocturne.h"
@@ -50,7 +50,8 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr)
          (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
     *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
          in_stack_00000008 * fVar2 * fVar1;
-    core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr_00->motion_controller);
+    core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&this_ptr_00->motion_controller)
+    ;
     iVar3 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
     if (iVar3 != 0) {
       (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z = 0.0;
@@ -129,7 +130,7 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr)
 // 004122d4: PUSH EBX
 // 004122d5: FSTP float ptr [ESI + 0x2434]
 // 004122db: FSTP float ptr [ESI + 0x2438]
-// 004122e1: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 004122e1: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 004122e6: ADD ESP,0x4
 // 004122e9: PUSH dword ptr [EBP + 0x18]

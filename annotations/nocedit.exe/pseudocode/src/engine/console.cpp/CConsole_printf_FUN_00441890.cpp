@@ -11,7 +11,7 @@
 //   core_batman.cpp_CBatman_process_FUN_00416870 (00416870) at 00416aee [UNCONDITIONAL_CALL]
 //   core_batman.cpp_FUN_00417660 (00417660) at 00417938 [UNCONDITIONAL_CALL]
 //   core_biggs.cpp_CBiggs_FUN_00418700 (00418700) at 0041897f [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_FUN_00419610 (00419610) at 00419712 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419610 (00419610) at 00419712 [UNCONDITIONAL_CALL]
 //   core_boneguy.cpp_FUN_0041bf90 (0041bf90) at 0041c5f7 [UNCONDITIONAL_CALL]
 //   core_boneguy.cpp_FUN_0041cc40 (0041cc40) at 0041cee9 [UNCONDITIONAL_CALL]
 //   core_bugs.cpp_FUN_00427400 (00427400) at 004274f1 [UNCONDITIONAL_CALL]

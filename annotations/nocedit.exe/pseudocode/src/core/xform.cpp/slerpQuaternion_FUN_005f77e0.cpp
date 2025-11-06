@@ -14,7 +14,7 @@
 //   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (0059eb50) at 0059f085 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260 (0059f260) at 0059f5c5 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 (0059a070) at 0059a0f5 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_FUN_005a1b70 (005a1b70) at 005a1c76 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70 (005a1b70) at 005a1c76 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bfb60 (005bfb60) at 005bfebc [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c02b0 (005c02b0) at 005c0680 [UNCONDITIONAL_CALL]
 //   core_turret.cpp_CTurret_process_FUN_005e2430 (005e2430) at 005e27fb [UNCONDITIONAL_CALL]

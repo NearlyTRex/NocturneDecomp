@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70(CDemonRenderer * this_ptr, float render_alpha)
 // Cross-references:
-//   core_batman.cpp_CBatman_FUN_004173b0 (004173b0) at 004174f5 [UNCONDITIONAL_CALL]
-//   core_dracbrid.cpp_FUN_00485be0 (00485be0) at 00485d34 [UNCONDITIONAL_CALL]
+//   core_batman.cpp_CBatman_renderOpaque_FUN_004173b0 (004173b0) at 004174f5 [UNCONDITIONAL_CALL]
+//   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 (00485be0) at 00485d34 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CTrail_render_FUN_004c5e90 (004c5e90) at 004c5f03 [UNCONDITIONAL_CALL]
 // Globals:
 //   double g_RenderAlphaFixedScale = 65535

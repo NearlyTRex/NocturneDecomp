@@ -5,7 +5,7 @@
 // Signature: void core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950(SBoneTransformData * bone_data, CDeformableModelInstance * instance_ptr)
 // Cross-references:
 //   core_skeleton.cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0 (005a08a0) at 005a096a [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_FUN_005a1b70 (005a1b70) at 005a1cca [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70 (005a1b70) at 005a1cca [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280

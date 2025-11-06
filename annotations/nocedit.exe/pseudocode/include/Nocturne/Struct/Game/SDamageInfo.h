@@ -10,7 +10,7 @@ typedef struct SDamageInfo {
     float impact_force; // 0x18
     CVector3f impact_direction; // 0x1c
     int ammo_type; // 0x28
-    int weapon_damage_modifier; // 0x2c
+    float weapon_damage_modifier; // 0x2c
     int damage_type; // 0x30
     CDemonActor* attacker; // 0x34
     CDemonActor* wielder; // 0x38

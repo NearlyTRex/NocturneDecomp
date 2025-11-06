@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, bool auto_select_flag)
 // Cross-references:
-//   core_bodypart.cpp_FUN_0041b280 (0041b280) at 0041b2aa [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 (0041b280) at 0041b2aa [UNCONDITIONAL_CALL]
 //   core_cloth.cpp_FUN_0043ddf0 (0043ddf0) at 0043deec [UNCONDITIONAL_CALL]
 //   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 (00443040) at 004431a0 [UNCONDITIONAL_CALL]
 //   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (0047cbc0) at 0047d69d [UNCONDITIONAL_CALL]

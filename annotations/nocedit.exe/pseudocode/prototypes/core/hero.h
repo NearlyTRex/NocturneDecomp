@@ -47,25 +47,25 @@ void CHero::serialize(CHero * this_ptr);
 // Address: 004f2870
 int CHero(CHero * this_ptr);
 
-// Original: core_hero.cpp_FUN_004f2880
+// Original: core_hero.cpp_CHero_FUN_004f2880
 // Address: 004f2880
-undefined FUN_004f2880();
+int CHero(CHero * this_ptr);
 
-// Original: core_hero.cpp_FUN_004f2890
+// Original: core_hero.cpp_CHero_FUN_004f2890
 // Address: 004f2890
-undefined FUN_004f2890();
+int CHero(CHero * this_ptr);
 
-// Original: core_hero.cpp_FUN_004f28a0
+// Original: core_hero.cpp_CHero_FUN_004f28a0
 // Address: 004f28a0
-undefined FUN_004f28a0();
+int CHero(CHero * this_ptr);
 
-// Original: core_hero.cpp_FUN_004f28d0
+// Original: core_hero.cpp_CHero_FUN_004f28d0
 // Address: 004f28d0
-undefined FUN_004f28d0();
+int CHero(CHero * this_ptr);
 
-// Original: core_hero.cpp_FUN_004f29b0
+// Original: core_hero.cpp_CHero_FUN_004f29b0
 // Address: 004f29b0
-undefined FUN_004f29b0();
+void CHero(CHero * this_ptr);
 
 // Original: core_hero.cpp_CHero_FUN_004f2a30
 // Address: 004f2a30
@@ -143,9 +143,9 @@ undefined FUN_004f3930();
 // Address: 004f3960
 undefined FUN_004f3960();
 
-// Original: core_hero.cpp_FUN_004f3af0
+// Original: core_hero.cpp_CHero_FUN_004f3af0
 // Address: 004f3af0
-undefined FUN_004f3af0();
+void CHero(CHero * this_ptr);
 
 // Original: core_hero.cpp_CHero_FUN_004f3b20
 // Address: 004f3b20

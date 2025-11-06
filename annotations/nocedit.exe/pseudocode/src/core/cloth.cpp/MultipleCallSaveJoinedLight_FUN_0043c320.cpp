@@ -5,7 +5,7 @@
 // Signature: undefined core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320()
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_00429aa0 (00429aa0) at 00429b25 [UNCONDITIONAL_CALL]
-//   core_succubus.cpp_CSuccubus_FUN_005c7590 (005c7590) at 005c761e [UNCONDITIONAL_CALL]
+//   core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590 (005c7590) at 005c761e [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_cloth.cpp_CCloth_saveJoinedLight_FUN_0043b9f0
 //   core_cloth.cpp_FUN_0043bae0

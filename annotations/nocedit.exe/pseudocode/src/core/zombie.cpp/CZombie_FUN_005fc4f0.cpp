@@ -11,7 +11,7 @@
 //   TerminatedCString s_zom_s0_wav_00658a19
 // Function calls:
 //   core_enemy.cpp_FUN_004a9f10
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
@@ -28,10 +28,11 @@
 void core_zombie_cpp_CZombie_FUN_005fc4f0(void)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
   CMotionList *this_ptr;
   int iVar2;
   undefined4 uVar3;
+  int iVar4;
   int in_stack_00000004;
   int in_stack_00000008;
   
@@ -48,8 +49,8 @@ void core_zombie_cpp_CZombie_FUN_005fc4f0(void)
               ((CMotionController *)(in_stack_00000004 + 0x158),4,1);
     if (*(float *)(in_stack_00000004 + 0xbf94) <= 0.0) {
       *(undefined4 *)(in_stack_00000004 + 0xbf94) = 0x40000000;
-      iVar1 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
-      if (iVar1 == 0) {
+      iVar4 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+      if (iVar4 == 0) {
         if (*(int *)(in_stack_00000004 + 0xbf48) != 0) {
           uVar3 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
           *(undefined4 *)(in_stack_00000004 + 0xbf9c) = uVar3;
@@ -65,11 +66,11 @@ void core_zombie_cpp_CZombie_FUN_005fc4f0(void)
   }
   else {
     *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
-    iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
-                      ((CMotionController *)(in_stack_00000004 + 0x158));
-    if ((*(int *)(iVar1 + 0x24) != 8) && (*(int *)(iVar1 + 0x24) != 7)) {
+    pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       ((CMotionController *)(in_stack_00000004 + 0x158));
+    if ((pSVar1->state_index != 8) && (pSVar1->state_index != 7)) {
       core_zombie_cpp_CZombie_FUN_005fbde0();
-      iVar1 = 6;
+      iVar4 = 6;
       if ((*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbf90) * 4) == 0) &&
          ((*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbf80) * 4) != 0 ||
           (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbf78) * 4) != 0))))
@@ -78,11 +79,11 @@ void core_zombie_cpp_CZombie_FUN_005fc4f0(void)
                              ((CMotionController *)(in_stack_00000004 + 0x158));
         iVar2 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr);
         if (-1 < iVar2) {
-          iVar1 = 9;
+          iVar4 = 9;
         }
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                ((CMotionController *)(in_stack_00000004 + 0x158),iVar1,1);
+                ((CMotionController *)(in_stack_00000004 + 0x158),iVar4,1);
       sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
       (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
       (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0xa0))();
@@ -131,7 +132,7 @@ void core_zombie_cpp_CZombie_FUN_005fc4f0(void)
 //   XREF to: 005fc671 (CONDITIONAL_JUMP)
 // 005fc55c: PUSH EDX
 // 005fc55d: MOV dword ptr [EBX + 0x243c],0x0
-// 005fc567: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 005fc567: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 005fc56c: MOV EAX,dword ptr [EAX + 0x24]
 // 005fc56f: ADD ESP,0x4

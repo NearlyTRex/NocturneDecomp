@@ -8,7 +8,7 @@
 // Globals:
 //   void* switchdataD_00415db8 = 00415e0d
 //   TerminatedCString s_limb_wav_0061567e
-//   undefined4 DAT_00615689
+//   double DOUBLE_00615689 = 7
 //   CGame* g_CGamePtr = 02d81a9c
 //   CGame g_CGameInstance
 //   undefined4 g_CGameInstance.blood_flag
@@ -24,7 +24,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_batcreature.cpp_FUN_00415dd0(undefined4 param_1, undefined4
    param_2) */
 
@@ -108,7 +107,7 @@ switchD_00415e06_default:
         [*(int *)(in_stack_00000004[1].base_actor.create_event + 0x20)] == 0) {
       in_stack_00000008[1] = 0x461c3c00;
     }
-    in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)_DAT_00615689);
+    in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)DOUBLE_00615689);
     return;
   }
   return;

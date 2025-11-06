@@ -16,7 +16,7 @@
 // Function calls:
 //   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
-//   core_charactr.cpp_CCharacter_FUN_0042a2c0
+//   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 //   core_cloth.cpp_FUN_0043bae0
 //   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 //   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
@@ -47,7 +47,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9bc0(CSvetlana *this_ptr)
     *(int *)(&stack0xffffff78 + iVar3 * 4) = (pCVar2->base_character).model.part_visibility_flags[0]
     ;
   } while (iVar3 < 0x1e);
-  iVar3 = core_charactr_cpp_CCharacter_FUN_0042a2c0((CCharacter *)this_ptr);
+  iVar3 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
   iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
   if ((iVar4 == 0) && ((int)g_PerspectiveReciprocal < 0x4000)) {
     pCVar5 = this_ptr;
@@ -66,7 +66,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9bc0(CSvetlana *this_ptr)
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(this_ptr_00,0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,48000);
     if (iVar3 != 0) {
-      core_charactr_cpp_CCharacter_FUN_0042a2c0((CCharacter *)this_ptr);
+      core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
     }
     g_CGamePtr->field62_0x1f4 = iVar4;
     iVar4 = 0;
@@ -119,7 +119,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9bc0(CSvetlana *this_ptr)
 // 005d9bf1: JL 0x005d9be0
 //   XREF to: 005d9be0 (CONDITIONAL_JUMP)
 // 005d9bf3: PUSH ESI
-// 005d9bf4: CALL core_charactr.cpp_CCharacter_FUN_0042a2c0
+// 005d9bf4: CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 //   XREF to: 0042a2c0 (UNCONDITIONAL_CALL)
 // 005d9bf9: ADD ESP,0x4
 // 005d9bfc: MOV EDX,dword ptr [0x006703ec]
@@ -212,7 +212,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9bc0(CSvetlana *this_ptr)
 // 005d9cdb: RET
 // 005d9cdc: PUSH ESI
 //   Label: LAB_005d9cdc
-// 005d9cdd: CALL core_charactr.cpp_CCharacter_FUN_0042a2c0
+// 005d9cdd: CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 //   XREF to: 0042a2c0 (UNCONDITIONAL_CALL)
 // 005d9ce2: ADD ESP,0x4
 // 005d9ce5: JMP 0x005d9c9b

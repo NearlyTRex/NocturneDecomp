@@ -15,7 +15,7 @@
 // Function calls:
 //   core_charactr.cpp_CCharacter_FUN_0042c3c0
 //   core_gore.cpp_CGore_FUN_004ee030
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
 //   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
@@ -30,10 +30,11 @@ void core_svetlana_cpp_FUN_005d9d30(void)
 {
   CDeformableModelInstance *this_ptr;
   float fVar1;
-  undefined4 uVar2;
+  SMotion *pSVar2;
+  undefined4 uVar3;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
-  int iVar3;
+  int iVar4;
   
   if ((*(uint *)in_stack_00000004[1].base_actor.actor_name & 0x7fffffff) != 0) {
     *(undefined4 *)(in_stack_00000008 + 4) = 0;
@@ -50,18 +51,20 @@ void core_svetlana_cpp_FUN_005d9d30(void)
   in_stack_00000004->hit_points = fVar1;
   if (fVar1 <= 0.0) {
     in_stack_00000004->hit_points = 0.0;
-    iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
-    if (*(int *)(iVar3 + 0x24) != 9) {
-      iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
-      if (*(int *)(iVar3 + 0x24) != 8) {
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       (&this_ptr->motion_controller);
+    if (pSVar2->state_index != 9) {
+      pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                         (&this_ptr->motion_controller);
+      if (pSVar2->state_index != 8) {
         in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr->motion_controller,8,1);
         core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);
         sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-        uVar2 = (*((in_stack_00000004->base_actor).vtable)->playSound)
+        uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                           (&in_stack_00000004->base_actor,"svet-die.wav");
-        *(undefined4 *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar2;
+        *(undefined4 *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar3;
         core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
         return;
       }
@@ -69,18 +72,18 @@ void core_svetlana_cpp_FUN_005d9d30(void)
   }
   else if (0.0 < *(float *)(in_stack_00000008 + 4)) {
     if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) == 0) {
-      iVar3 = 4;
+      iVar4 = 4;
     }
     else {
-      iVar3 = 0xb;
+      iVar4 = 0xb;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr->motion_controller,iVar3,1);
-    iVar3 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
-    if (iVar3 == 0) {
-      uVar2 = (*((in_stack_00000004->base_actor).vtable)->playSound)
+              (&this_ptr->motion_controller,iVar4,1);
+    iVar4 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    if (iVar4 == 0) {
+      uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                         (&in_stack_00000004->base_actor,"svet-hurt?.wav");
-      *(undefined4 *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar2;
+      *(undefined4 *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar3;
       core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
       return;
     }
@@ -178,7 +181,7 @@ void core_svetlana_cpp_FUN_005d9d30(void)
 // 005d9dfb: PUSH ESI
 //   Label: LAB_005d9dfb
 // 005d9dfc: MOV dword ptr [EBX + 0x243c],0x0
-// 005d9e06: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 005d9e06: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 005d9e0b: MOV EAX,dword ptr [EAX + 0x24]
 // 005d9e0e: ADD ESP,0x4
@@ -186,7 +189,7 @@ void core_svetlana_cpp_FUN_005d9d30(void)
 // 005d9e14: JZ 0x005d9dd9
 //   XREF to: 005d9dd9 (CONDITIONAL_JUMP)
 // 005d9e16: PUSH ESI
-// 005d9e17: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 005d9e17: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 005d9e1c: MOV EAX,dword ptr [EAX + 0x24]
 // 005d9e1f: ADD ESP,0x4

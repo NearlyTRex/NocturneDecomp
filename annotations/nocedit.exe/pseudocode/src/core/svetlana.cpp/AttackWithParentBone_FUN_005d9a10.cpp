@@ -97,7 +97,7 @@ LAB_005d9adc:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_6c);
     auStack_6c._8_4_ = 0x41700000;
     auStack_6c._0_4_ = 0;
-    auStack_6c._44_4_ = 3;
+    auStack_6c._44_4_ = 4.2039e-45;
     auStack_6c._48_4_ = 0x3f333333;
     auStack_6c._52_4_ = (CDemonActor *)0x67;
     iVar4 = (*this_ptr->vtable[1].playSoundWithVolume)

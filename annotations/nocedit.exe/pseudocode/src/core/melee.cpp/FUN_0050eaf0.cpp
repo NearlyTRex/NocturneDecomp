@@ -25,7 +25,7 @@ void core_melee_cpp_FUN_0050eaf0(void)
             (in_stack_00000004,in_stack_00000008,in_stack_0000000c,in_stack_00000010);
   pCVar1 = (*in_stack_00000004->vtable[1].getBoundingBox)(in_stack_00000004,in_stack_00000018);
   in_stack_0000000c->damage_amount = (float)pCVar1;
-  in_stack_0000000c->weapon_damage_modifier = (int)in_stack_00000004[4].location.position.y;
+  in_stack_0000000c->weapon_damage_modifier = in_stack_00000004[4].location.position.y;
   in_stack_0000000c->ammo_type = (int)in_stack_00000004[4].orient_matrix.m[0].x;
   return;
 }

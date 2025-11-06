@@ -34,7 +34,7 @@ void core_skeledit_cpp_FUN_0058e4e0(void)
 
 {
   CDeformableModelInstance *this_ptr;
-  int iVar1;
+  CVector3i *pCVar1;
   int iVar2;
   int iVar3;
   CDeformableModel *in_stack_0000000c;
@@ -57,16 +57,16 @@ void core_skeledit_cpp_FUN_0058e4e0(void)
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
             (this_ptr,in_stack_0000001c,in_stack_00000020);
   core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(this_ptr,0);
-  iVar1 = this_ptr->current_lod_index;
+  pCVar1 = this_ptr->skinned_vertices_buffer;
   iVar3 = 0;
-  iVar2 = *(int *)(iVar1 + 4);
+  iVar2 = pCVar1->y;
   if (0 < in_stack_0000000c->vertex_count[0]) {
     do {
-      if (*(int *)(iVar1 + 4) < iVar2) {
-        iVar2 = *(int *)(iVar1 + 4);
+      if (pCVar1->y < iVar2) {
+        iVar2 = pCVar1->y;
       }
       iVar3 = iVar3 + 1;
-      iVar1 = iVar1 + 0xc;
+      pCVar1 = pCVar1 + 1;
     } while (iVar3 < in_stack_0000000c->vertex_count[0]);
   }
   core_skeledit_cpp_FUN_0058e600();

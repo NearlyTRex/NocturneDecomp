@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 (00408b00) at 00408b0f [UNCONDITIONAL_CALL]
 //   core_anvil.cpp_CAnvil_FUN_00411ec0 (00411ec0) at 00411ee5 [UNCONDITIONAL_CALL]
-//   core_baron.cpp_CBaron_FUN_00413ae0 (00413ae0) at 00413b87 [UNCONDITIONAL_CALL]
+//   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 (00413ae0) at 00413b87 [UNCONDITIONAL_CALL]
 //   core_battery.cpp_FUN_00417f80 (00417f80) at 00417f94 [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_FUN_00421e00 (00421e00) at 00421e5b [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_FUN_00421ef0 (00421ef0) at 00421f28 [UNCONDITIONAL_CALL]

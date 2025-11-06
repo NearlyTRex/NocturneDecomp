@@ -29,7 +29,7 @@
 // Function calls:
 //   core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0
 //   core_cloth.cpp_FUN_0043e170
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 
 #include "nocturne.h"
 
@@ -42,7 +42,8 @@ void core_stranger_cpp_CStranger_FUN_005c6220(void)
   bool bVar1;
   bool bVar2;
   int iVar3;
-  CCloth *pCVar4;
+  SMotion *pSVar4;
+  CCloth *pCVar5;
   BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   
@@ -131,19 +132,19 @@ void core_stranger_cpp_CStranger_FUN_005c6220(void)
       core_cloth_cpp_FUN_0043e170();
       core_cloth_cpp_FUN_0043e170();
     }
-    pCVar4 = this_ptr + 1;
-    iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0
-                      ((CMotionController *)(in_stack_00000004 + 0x158));
-    if (*(int *)(iVar3 + 0x24) == 0x2a) {
-      if (pCVar4 != (CCloth *)&stack0xffffffd8) {
+    pCVar5 = this_ptr + 1;
+    pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       ((CMotionController *)(in_stack_00000004 + 0x158));
+    if (pSVar4->state_index == 0x2a) {
+      if (pCVar5 != (CCloth *)&stack0xffffffd8) {
         this_ptr[1].padding_0x0[4] = '\0';
         this_ptr[1].padding_0x0[5] = '\0';
         this_ptr[1].padding_0x0[6] = '\0';
         this_ptr[1].padding_0x0[7] = '\0';
-        pCVar4->padding_0x0[0] = '\0';
-        pCVar4->padding_0x0[1] = '\0';
-        pCVar4->padding_0x0[2] = '\0';
-        pCVar4->padding_0x0[3] = '\0';
+        pCVar5->padding_0x0[0] = '\0';
+        pCVar5->padding_0x0[1] = '\0';
+        pCVar5->padding_0x0[2] = '\0';
+        pCVar5->padding_0x0[3] = '\0';
         this_ptr[1].padding_0x0[8] = '\0';
         this_ptr[1].padding_0x0[9] = '\0';
         this_ptr[1].padding_0x0[10] = -0x60;
@@ -151,16 +152,16 @@ void core_stranger_cpp_CStranger_FUN_005c6220(void)
         return;
       }
     }
-    else if (*(int *)(iVar3 + 0x24) == 0x2b) {
-      if (pCVar4 != (CCloth *)&stack0xffffffe4) {
+    else if (pSVar4->state_index == 0x2b) {
+      if (pCVar5 != (CCloth *)&stack0xffffffe4) {
         this_ptr[1].padding_0x0[4] = '\0';
         this_ptr[1].padding_0x0[5] = '\0';
         this_ptr[1].padding_0x0[6] = '\0';
         this_ptr[1].padding_0x0[7] = '\0';
-        pCVar4->padding_0x0[0] = '\0';
-        pCVar4->padding_0x0[1] = '\0';
-        pCVar4->padding_0x0[2] = '\0';
-        pCVar4->padding_0x0[3] = '\0';
+        pCVar5->padding_0x0[0] = '\0';
+        pCVar5->padding_0x0[1] = '\0';
+        pCVar5->padding_0x0[2] = '\0';
+        pCVar5->padding_0x0[3] = '\0';
         this_ptr[1].padding_0x0[8] = '\0';
         this_ptr[1].padding_0x0[9] = '\0';
         this_ptr[1].padding_0x0[10] = -0x60;
@@ -419,7 +420,7 @@ void core_stranger_cpp_CStranger_FUN_005c6220(void)
 //   Label: LAB_005c645a
 // 005c6460: PUSH ESI
 // 005c6461: ADD EBX,0x3fe64
-// 005c6467: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 005c6467: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 005c646c: MOV EAX,dword ptr [EAX + 0x24]
 // 005c646f: ADD ESP,0x4

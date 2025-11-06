@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0(CDemonActor * this_ptr)
 // Cross-references:
-//   core_bodypart.cpp_FUN_0041b1f0 (0041b1f0) at 0041b201 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_0041b1f0 (0041b1f0) at 0041b201 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_actor_cpp_00613a19
 //   double DOUBLE_00613a30 = 2

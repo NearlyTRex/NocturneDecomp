@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDeformableModel * this_ptr, int color, CMatrix3x4f * bone_matrices, int render_flags)
 // Cross-references:
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a17b0 (005a17b0) at 005a17d0 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_renderSkeleton_FUN_005a17b0 (005a17b0) at 005a17d0 [UNCONDITIONAL_CALL]
 // Globals:
 //   float FLOAT_00662e98 = 256
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578

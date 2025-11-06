@@ -4,11 +4,11 @@
 // Convention: __cdecl
 // Signature: void core_bat.cpp_CBat_process_FUN_00414a00(CBat * this_ptr)
 // Globals:
-//   undefined4 DAT_00615366
-//   undefined4 DAT_0061536e
-//   undefined4 DAT_00615376
-//   undefined4 DAT_0061537e
-//   undefined4 DAT_00615386
+//   double DOUBLE_00615366 = 4
+//   double DOUBLE_0061536e = 35
+//   double DOUBLE_00615376 = 10
+//   double DOUBLE_0061537e = 60
+//   double DOUBLE_00615386 = 0.700000000000000
 // Function calls:
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_bat.cpp_FUN_00414ce0
@@ -17,8 +17,6 @@
 //   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr)
 
@@ -33,16 +31,16 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr)
   fVar4 = (this_ptr->base_actor).location.position.z;
   this_ptr->param = this_ptr->course_speed * in_stack_00000008 + this_ptr->param;
   core_bat_cpp_FUN_00414ce0();
-  local_34 = (((this_ptr->base_actor).location.position.y - fVar4) * (float)_DAT_00615366) /
-             in_stack_00000008 + (float)_DAT_0061536e;
-  if (local_34 < (float)_DAT_00615376) {
+  local_34 = (((this_ptr->base_actor).location.position.y - fVar4) * (float)DOUBLE_00615366) /
+             in_stack_00000008 + (float)DOUBLE_0061536e;
+  if (local_34 < (float)DOUBLE_00615376) {
     local_34 = 10.0;
   }
-  if ((float)_DAT_0061537e < local_34) {
+  if ((float)DOUBLE_0061537e < local_34) {
     local_34 = 60.0;
   }
   *(float *)this_ptr->field6_0x310 =
-       (local_34 - *(float *)this_ptr->field6_0x310) * (float)_DAT_00615386 +
+       (local_34 - *(float *)this_ptr->field6_0x310) * (float)DOUBLE_00615386 +
        *(float *)this_ptr->field6_0x310;
   *(float *)(this_ptr->course_filename + 0x2c) =
        in_stack_00000008 * *(float *)this_ptr->field6_0x310 * this_ptr->speed +

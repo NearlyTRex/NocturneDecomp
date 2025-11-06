@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_xform.cpp_buildRotationY_FUN_005f6cc0(CMatrix3x4f * output_matrix, float angle_radians)
 // Cross-references:
-//   core_gabriela.cpp_CarryLights_FUN_004d7120 (004d7120) at 004d74b0 [UNCONDITIONAL_CALL]
+//   core_gabriela.cpp_CGabriella_FUN_004d7120 (004d7120) at 004d74b0 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d5550 (004d5550) at 004d563d [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c07b0 (005c07b0) at 005c0f09 [UNCONDITIONAL_CALL]
 

@@ -5,8 +5,8 @@
 // Signature: void core_biggs.cpp_CBiggs_FUN_00418700(CBiggs * this_ptr)
 // Globals:
 //   TerminatedCString s_s_confused_while_walking_00615ada
-//   undefined4 DAT_00615b09
-//   undefined4 DAT_00615b11
+//   double DOUBLE_00615b09 = 3.14159265350000
+//   double DOUBLE_00615b11 = 32
 //   undefined4 DAT_0065ac10
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   CEventList* g_CEventListPtr = 02d05310
@@ -22,14 +22,12 @@
 //   core_charactr.cpp_CCharacter_FUN_0042ec40
 //   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_biggs_cpp_CBiggs_FUN_00418700(CBiggs *this_ptr)
 
@@ -59,12 +57,12 @@ void __cdecl core_biggs_cpp_CBiggs_FUN_00418700(CBiggs *this_ptr)
     core_charactr_cpp_CCharacter_FUN_0042ec40((CCharacter *)this_ptr);
   }
   fVar5 = (this_ptr->base_enemy).speed;
-  fVar2 = (float)_DAT_00615b09;
+  fVar2 = (float)DOUBLE_00615b09;
   *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x28) =
        (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
   *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
        in_stack_00000008 * fVar2 * fVar5;
-  core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr_00->motion_controller);
+  core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&this_ptr_00->motion_controller);
   iVar4 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
   if (iVar4 == 0) goto LAB_004187db;
   uVar1 = *(uint *)((this_ptr->base_enemy).base_character.field11_0x25a0 + 0x10);
@@ -102,7 +100,7 @@ LAB_004187db:
   if (iVar4 != 0) {
     *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) =
          *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) -
-         in_stack_00000008 * (float)_DAT_00615b11;
+         in_stack_00000008 * (float)DOUBLE_00615b11;
     pCVar3 = &this_ptr->base_enemy;
     (pCVar3->base_character).field2_0x240c[0x18] = '\0';
     (pCVar3->base_character).field2_0x240c[0x19] = '\0';
@@ -189,7 +187,7 @@ LAB_004187db:
 // 00418773: PUSH ESI
 // 00418774: FSTP float ptr [EBX + 0x2434]
 // 0041877a: FSTP float ptr [EBX + 0x2438]
-// 00418780: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 00418780: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 00418785: ADD ESP,0x4
 // 00418788: PUSH dword ptr [EBP + 0x14]

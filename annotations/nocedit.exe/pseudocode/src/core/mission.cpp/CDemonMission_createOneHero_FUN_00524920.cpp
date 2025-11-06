@@ -25,7 +25,7 @@
 //   core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_mission.cpp_CDemonMission_FUN_00523b70
-//   core_motion.cpp_CMotionController_FUN_0052dde0
+//   core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0
 //   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 
 #include "nocturne.h"
@@ -75,8 +75,8 @@ LAB_0052499a:
                   (in_stack_00000010,&(this_ptr_00->base_actor).location.position,
                    (CVector3f *)&(this_ptr_00->base_actor).orient);
         (in_stack_00000010->location).area_id = (this_ptr_00->base_actor).location.area_id;
-        core_motion_cpp_CMotionController_FUN_0052dde0((CMotionController *)(in_stack_00000010 + 1))
-        ;
+        core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
+                  ((CMotionController *)(in_stack_00000010 + 1),0,0.0);
         (*in_stack_00000010->vtable[1].evaluateTriggerCondition)(in_stack_00000010);
       }
       core_mission_cpp_CDemonMission_FUN_00523b70(g_CDemonMissionPtr);
@@ -199,7 +199,7 @@ LAB_0052499a:
 // 00524a0d: MOV dword ptr [EBP + 0x2c],EAX
 // 00524a10: LEA EAX,[EBP + 0x158]
 // 00524a16: PUSH EAX
-// 00524a17: CALL core_motion.cpp_CMotionController_FUN_0052dde0
+// 00524a17: CALL core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0
 //   XREF to: 0052dde0 (UNCONDITIONAL_CALL)
 // 00524a1c: ADD ESP,0xc
 // 00524a1f: PUSH 0x0

@@ -38,7 +38,7 @@
 //   core_enemy.cpp_FUN_004a9880
 //   core_gargoyle.cpp_CGargoyle_FUN_004e48a0
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
@@ -60,9 +60,10 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
   uint uVar3;
   float fVar4;
   int iVar5;
-  int iVar6;
-  CVector3f *pCVar7;
-  float fVar8;
+  SMotion *pSVar6;
+  int iVar7;
+  CVector3f *pCVar8;
+  float fVar9;
   int extraout_EAX;
   int extraout_EAX_00;
   BADSPACEBASE *in_ESP;
@@ -103,12 +104,12 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
   
   iVar5 = core_charactr_cpp_CCharacter_FUN_00429870(&in_stack_00000004->base_character);
   if (iVar5 == 0) {
-    iVar5 = core_motion_cpp_CMotionController_FUN_0052dab0
-                      (&(in_stack_00000004->base_character).model.motion_controller);
-    if (*(int *)(iVar5 + 0x24) == 8) {
+    pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       (&(in_stack_00000004->base_character).model.motion_controller);
+    if (pSVar6->state_index == 8) {
       return;
     }
-    if (*(int *)(iVar5 + 0x24) == 5) {
+    if (pSVar6->state_index == 5) {
       return;
     }
   }
@@ -123,17 +124,18 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
     core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
     core_charactr_cpp_CCharacter_FUN_0042ec40(&in_stack_00000004->base_character);
   }
-  fVar8 = in_stack_00000004->speed;
+  fVar9 = in_stack_00000004->speed;
   fVar4 = (float)DOUBLE_0062d9a7;
   *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x28) =
        (in_stack_00000004->base_character).model.accumulated_root_motion.z;
   *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x2c) =
-       in_stack_00000008 * fVar4 * fVar8;
-  iVar5 = core_motion_cpp_CMotionController_FUN_0052dab0(&pCVar1->motion_controller);
-  iVar5 = *(int *)(iVar5 + 0x24);
+       in_stack_00000008 * fVar4 * fVar9;
+  pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     (&pCVar1->motion_controller);
+  iVar5 = pSVar6->state_index;
   local_28 = iVar5;
-  iVar6 = core_charactr_cpp_CCharacter_FUN_0042ca70(&in_stack_00000004->base_character);
-  if (iVar6 == 0) {
+  iVar7 = core_charactr_cpp_CCharacter_FUN_0042ca70(&in_stack_00000004->base_character);
+  if (iVar7 == 0) {
     switch(iVar5) {
     case 0:
       (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
@@ -146,9 +148,9 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
                   (&pCVar1->motion_controller,5,1);
         iVar5 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
         if (iVar5 == 0) {
-          fVar8 = (float)(*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
+          fVar9 = (float)(*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
                                    ((CDemonActor *)in_stack_00000004,"gargoyle-stone.wav");
-          in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].y = fVar8;
+          in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].y = fVar9;
         }
       }
       else {
@@ -213,15 +215,15 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
                   (&pCVar1->motion_controller,5,1);
         iVar5 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
         if (iVar5 == 0) {
-          fVar8 = (float)(*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
+          fVar9 = (float)(*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
                                    ((CDemonActor *)in_stack_00000004,"gargoyle-stone.wav");
-          in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].y = fVar8;
+          in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].y = fVar9;
         }
       }
       else {
-        fVar8 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].z;
-        pCVar7 = &(in_stack_00000004->base_character).model.accumulated_root_motion;
-        if (fVar8 == 0.0) {
+        fVar9 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].z;
+        pCVar8 = &(in_stack_00000004->base_character).model.accumulated_root_motion;
+        if (fVar9 == 0.0) {
           if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) == 0) {
             core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
             if (extraout_EAX_00 == 0) {
@@ -238,10 +240,10 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
             local_78 = DAT_0065ea2c;
             (in_stack_00000004->base_character).model.accumulated_root_motion.y =
                  (in_stack_00000004->base_character).model.accumulated_root_motion.z;
-            pCVar7->x = (in_stack_00000004->base_character).model.accumulated_root_motion.y;
+            pCVar8->x = (in_stack_00000004->base_character).model.accumulated_root_motion.y;
             local_20 = local_78;
-            local_80 = fVar8;
-            local_7c = fVar8;
+            local_80 = fVar9;
+            local_7c = fVar9;
             (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) + 0xbc))()
             ;
             iVar5 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
@@ -252,7 +254,7 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
               local_54 = (in_stack_00000004->base_character).base_actor.location.position.z -
                          *(float *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x28);
               local_30 = SQRT(local_54 * local_54 + local_5c * local_5c);
-              local_58 = fVar8;
+              local_58 = fVar9;
               local_24 = local_30;
               if (_DAT_0065ea38 < local_30) {
                 iVar5 = core_actor_cpp_randomChance_FUN_0040cd10(0.1);
@@ -298,7 +300,7 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
           (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
           (in_stack_00000004->base_character).model.accumulated_root_motion.y =
                (in_stack_00000004->base_character).model.accumulated_root_motion.z;
-          pCVar7->x = (in_stack_00000004->base_character).model.accumulated_root_motion.y;
+          pCVar8->x = (in_stack_00000004->base_character).model.accumulated_root_motion.y;
           local_44 = 0;
           local_40 = 0;
           local_3c = 0;
@@ -311,13 +313,13 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
     case 3:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffefc);
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(3.0,5.0);
-      pCVar7 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+      pCVar8 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_8c,&g_ZeroVector,
                           (CMatrix3x4f *)
                           (in_stack_00000004->base_character).model.bone_transform.
                           bone_world_matrices[DAT_02d83208].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                ((CDemonActor *)in_stack_00000004,&local_bc,pCVar7);
+                ((CDemonActor *)in_stack_00000004,&local_bc,pCVar8);
       core_enemy_cpp_FUN_004a9880();
       break;
     case 5:
@@ -325,17 +327,17 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
                 ((CDemonActor *)in_stack_00000004);
       iVar5 = core_gargoyle_cpp_CGargoyle_FUN_004e48a0();
       if ((iVar5 != 0) &&
-         (fVar8 = (float)in_stack_00000004[1].base_character.base_actor.runtime_state -
+         (fVar9 = (float)in_stack_00000004[1].base_character.base_actor.runtime_state -
                   in_stack_00000008,
-         in_stack_00000004[1].base_character.base_actor.runtime_state = (int)fVar8, fVar8 < 0.0)) {
+         in_stack_00000004[1].base_character.base_actor.runtime_state = (int)fVar9, fVar9 < 0.0)) {
         in_stack_00000004[1].base_character.base_actor.runtime_state = 0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar1->motion_controller,0,1);
         iVar5 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
         if (iVar5 == 0) {
-          fVar8 = (float)(*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
+          fVar9 = (float)(*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
                                    ((CDemonActor *)in_stack_00000004,"gargoyle-alive?.wav");
-          in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].y = fVar8;
+          in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].y = fVar9;
         }
       }
     }
@@ -383,11 +385,11 @@ switchD_004e531f_caseD_4:
     pcVar2 = (in_stack_00000004->base_character).field2_0x240c + 0x10;
     local_90 = in_stack_00000008 *
                *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x24);
-    pCVar7 = &(in_stack_00000004->base_character).model.accumulated_root_motion;
+    pCVar8 = &(in_stack_00000004->base_character).model.accumulated_root_motion;
     local_74 = local_98 + *(float *)pcVar2;
     local_70 = local_94 + *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x14);
     local_6c = local_90 + *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x18);
-    local_b0 = local_74 + pCVar7->x;
+    local_b0 = local_74 + pCVar8->x;
     local_ac = local_70 + (in_stack_00000004->base_character).model.accumulated_root_motion.y;
     local_a8 = local_6c + (in_stack_00000004->base_character).model.accumulated_root_motion.z;
     (in_stack_00000004->base_character).field2_0x240c[0x18] = '\0';
@@ -400,7 +402,7 @@ switchD_004e531f_caseD_4:
     (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
     (in_stack_00000004->base_character).model.accumulated_root_motion.y =
          (in_stack_00000004->base_character).model.accumulated_root_motion.z;
-    pCVar7->x = (in_stack_00000004->base_character).model.accumulated_root_motion.y;
+    pCVar8->x = (in_stack_00000004->base_character).model.accumulated_root_motion.y;
     core_charactr_cpp_CCharacter_FUN_00428f40(&in_stack_00000004->base_character);
   }
   core_charactr_cpp_CCharacter_FUN_00429820(&in_stack_00000004->base_character);
@@ -421,59 +423,59 @@ switchD_004e531f_caseD_4:
     in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].y = 9.18341e-41;
     in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].z = 9.18341e-41;
   }
-  fVar8 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].z;
+  fVar9 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].z;
   iVar5 = (in_stack_00000004->base_character).base_actor.scale.x;
-  if (iVar5 < (int)fVar8) {
+  if (iVar5 < (int)fVar9) {
     iVar5 = (in_stack_00000004->base_character).base_actor.scale.x + g_GlobalDeltaTimeInt;
-    fVar8 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].z;
+    fVar9 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].z;
     (in_stack_00000004->base_character).base_actor.scale.x = iVar5;
-    if ((int)fVar8 < iVar5) {
-      (in_stack_00000004->base_character).base_actor.scale.x = (int)fVar8;
+    if ((int)fVar9 < iVar5) {
+      (in_stack_00000004->base_character).base_actor.scale.x = (int)fVar9;
     }
   }
-  else if ((int)fVar8 < iVar5) {
+  else if ((int)fVar9 < iVar5) {
     iVar5 = (in_stack_00000004->base_character).base_actor.scale.x - g_GlobalDeltaTimeInt;
-    fVar8 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].z;
+    fVar9 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].z;
     (in_stack_00000004->base_character).base_actor.scale.x = iVar5;
-    if (iVar5 < (int)fVar8) {
-      (in_stack_00000004->base_character).base_actor.scale.x = (int)fVar8;
+    if (iVar5 < (int)fVar9) {
+      (in_stack_00000004->base_character).base_actor.scale.x = (int)fVar9;
     }
   }
-  fVar8 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].x;
+  fVar9 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].x;
   iVar5 = (in_stack_00000004->base_character).base_actor.scale.y;
-  if (iVar5 < (int)fVar8) {
+  if (iVar5 < (int)fVar9) {
     iVar5 = (in_stack_00000004->base_character).base_actor.scale.y + g_GlobalDeltaTimeInt;
-    fVar8 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].x;
+    fVar9 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].x;
     (in_stack_00000004->base_character).base_actor.scale.y = iVar5;
-    if ((int)fVar8 < iVar5) {
-      (in_stack_00000004->base_character).base_actor.scale.y = (int)fVar8;
+    if ((int)fVar9 < iVar5) {
+      (in_stack_00000004->base_character).base_actor.scale.y = (int)fVar9;
     }
   }
-  else if ((int)fVar8 < iVar5) {
+  else if ((int)fVar9 < iVar5) {
     iVar5 = (in_stack_00000004->base_character).base_actor.scale.y - g_GlobalDeltaTimeInt;
-    fVar8 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].x;
+    fVar9 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].x;
     (in_stack_00000004->base_character).base_actor.scale.y = iVar5;
-    if (iVar5 < (int)fVar8) {
-      (in_stack_00000004->base_character).base_actor.scale.y = (int)fVar8;
+    if (iVar5 < (int)fVar9) {
+      (in_stack_00000004->base_character).base_actor.scale.y = (int)fVar9;
     }
   }
-  fVar8 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].y;
+  fVar9 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].y;
   iVar5 = (in_stack_00000004->base_character).base_actor.scale.z;
-  if (iVar5 < (int)fVar8) {
+  if (iVar5 < (int)fVar9) {
     iVar5 = (in_stack_00000004->base_character).base_actor.scale.z + g_GlobalDeltaTimeInt;
-    fVar8 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].y;
+    fVar9 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].y;
     (in_stack_00000004->base_character).base_actor.scale.z = iVar5;
-    if ((int)fVar8 < iVar5) {
-      (in_stack_00000004->base_character).base_actor.scale.z = (int)fVar8;
+    if ((int)fVar9 < iVar5) {
+      (in_stack_00000004->base_character).base_actor.scale.z = (int)fVar9;
       return;
     }
   }
-  else if ((int)fVar8 < iVar5) {
+  else if ((int)fVar9 < iVar5) {
     iVar5 = (in_stack_00000004->base_character).base_actor.scale.z - g_GlobalDeltaTimeInt;
-    fVar8 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].y;
+    fVar9 = in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].y;
     (in_stack_00000004->base_character).base_actor.scale.z = iVar5;
-    if (iVar5 < (int)fVar8) {
-      (in_stack_00000004->base_character).base_actor.scale.z = (int)fVar8;
+    if (iVar5 < (int)fVar9) {
+      (in_stack_00000004->base_character).base_actor.scale.z = (int)fVar9;
       return;
     }
   }
@@ -540,7 +542,7 @@ switchD_004e531f_caseD_4:
 // 004e4a7a: LEA EAX,[EBX + 0x158]
 //   Label: LAB_004e4a7a
 // 004e4a80: PUSH EAX
-// 004e4a81: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 004e4a81: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 004e4a86: MOV EAX,dword ptr [EAX + 0x24]
 // 004e4a89: ADD ESP,0x4
@@ -569,7 +571,7 @@ switchD_004e531f_caseD_4:
 // 004e4ab8: PUSH ESI
 // 004e4ab9: FSTP float ptr [EBX + 0x2434]
 // 004e4abf: FSTP float ptr [EBX + 0x2438]
-// 004e4ac5: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 004e4ac5: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 004e4aca: ADD ESP,0x4
 // 004e4acd: PUSH dword ptr [EBP + 0x92]

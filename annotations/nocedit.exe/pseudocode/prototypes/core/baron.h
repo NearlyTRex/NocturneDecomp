@@ -59,13 +59,13 @@ void CBaron::serialize(CBaron * this_ptr);
 // Address: 00413ad0
 int CBaron(CBaron * this_ptr);
 
-// Original: core_baron.cpp_CBaron_FUN_00413ae0
+// Original: core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0
 // Address: 00413ae0
-int CBaron(CBaron * this_ptr);
+int CBaron::renderTransparent(CBaron * this_ptr);
 
-// Original: core_baron.cpp_FUN_00413cd0
+// Original: core_baron.cpp_CBaron_FUN_00413cd0
 // Address: 00413cd0
-undefined FUN_00413cd0();
+void CBaron(CBaron * this_ptr);
 
 // Original: core_baron.cpp_CBaron_FUN_00413cf0
 // Address: 00413cf0

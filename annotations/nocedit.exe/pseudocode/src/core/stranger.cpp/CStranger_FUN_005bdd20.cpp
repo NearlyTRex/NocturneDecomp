@@ -36,7 +36,7 @@
 //   core_hero.cpp_FUN_004f3890
 //   core_hero.cpp_FUN_004f38d0
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
-//   core_motion.cpp_CMotionController_FUN_0052dd20
+//   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   core_stranger.cpp_CStranger_FUN_005c1f00
@@ -101,20 +101,20 @@ LAB_005bdd85:
               if (*(int *)(in_stack_00000004[2].cloth_data + 0x5548) == 0) {
                 if (*(int *)(in_stack_00000004->field2_0x240c + 4) != 0) {
                   local_14 = (CDemonActor_vtable *)
-                             core_motion_cpp_CMotionController_FUN_0052dd20
-                                       (&this_ptr->motion_controller);
+                             core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
+                                       (&this_ptr->motion_controller,3);
                   if ((float)DOUBLE_006537e4 < (float)local_14) {
                     (*((in_stack_00000004->base_actor).vtable)->processFootstepAtOffset)
                               (&in_stack_00000004->base_actor,&local_5c,1.7);
                   }
                   else {
                     local_14 = (CDemonActor_vtable *)
-                               core_motion_cpp_CMotionController_FUN_0052dd20
-                                         (&this_ptr->motion_controller);
+                               core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
+                                         (&this_ptr->motion_controller,1);
                     if ((float)local_14 <= (float)DOUBLE_006537e4) {
                       local_14 = (CDemonActor_vtable *)
-                                 core_motion_cpp_CMotionController_FUN_0052dd20
-                                           (&this_ptr->motion_controller);
+                                 core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
+                                           (&this_ptr->motion_controller,2);
                       if ((float)DOUBLE_006537e4 < (float)local_14) {
                         (*((in_stack_00000004->base_actor).vtable)->processFootstepAtOffset)
                                   (&in_stack_00000004->base_actor,&local_5c,1.0);
@@ -677,7 +677,7 @@ LAB_005bde44:
 //   XREF to: 005bddf2 (CONDITIONAL_JUMP)
 // 005be021: PUSH 0x3
 // 005be023: PUSH ESI
-// 005be024: CALL core_motion.cpp_CMotionController_FUN_0052dd20
+// 005be024: CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   XREF to: 0052dd20 (UNCONDITIONAL_CALL)
 // 005be029: MOV dword ptr [ESP + 0xac],EAX
 // 005be030: FLD float ptr [ESP + 0xac]
@@ -690,7 +690,7 @@ LAB_005bde44:
 //   XREF to: 005be0c8 (CONDITIONAL_JUMP)
 // 005be049: PUSH 0x1
 // 005be04b: PUSH ESI
-// 005be04c: CALL core_motion.cpp_CMotionController_FUN_0052dd20
+// 005be04c: CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   XREF to: 0052dd20 (UNCONDITIONAL_CALL)
 // 005be051: MOV dword ptr [ESP + 0xac],EAX
 // 005be058: FLD float ptr [ESP + 0xac]
@@ -745,7 +745,7 @@ LAB_005bde44:
 // 005be0e4: PUSH 0x2
 //   Label: LAB_005be0e4
 // 005be0e6: PUSH ESI
-// 005be0e7: CALL core_motion.cpp_CMotionController_FUN_0052dd20
+// 005be0e7: CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   XREF to: 0052dd20 (UNCONDITIONAL_CALL)
 // 005be0ec: MOV dword ptr [ESP + 0xac],EAX
 // 005be0f3: FLD float ptr [ESP + 0xac]

@@ -17,7 +17,7 @@
 //   double DOUBLE_00639e2d = 1.57079632675000
 //   float FLOAT_00639e35 = -3.141593
 //   double DOUBLE_00639e3d = 3.14159265350000
-//   undefined4 DAT_00661938
+//   float FLOAT_00661938 = 2
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   CEventList* g_CEventListPtr = 02d05310
 //   CGame* g_CGamePtr = 02d81a9c
@@ -41,11 +41,11 @@
 //   core_morph.cpp_CMorph_getReady_FUN_0052b680
 //   core_morph.cpp_FUN_0052b430
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+//   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   core_motion.cpp_FUN_0052ddb0
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a1510
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+//   core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
 //   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
@@ -54,8 +54,6 @@
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr)
 
@@ -69,14 +67,17 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr)
   int iVar6;
   CVector3f *pCVar7;
   float fVar8;
+  SMotion *pSVar9;
   BADSPACEBASE *in_ESP;
-  uint uVar9;
+  uint uVar10;
   char *model_name;
   CMoloch *in_stack_00000008;
   char *pcStack00000028;
   undefined4 uStack0000002c;
-  char *pcStack0000003c;
-  CMoloch *pCVar10;
+  float in_stack_00000034;
+  SMotion *pSStack0000003c;
+  char *in_stack_00000044;
+  CMoloch *pCVar11;
   CMoloch *desired_state_index;
   SCollisionInfo *in_stack_ffffe50c;
   CVector3f local_44 [2];
@@ -103,8 +104,8 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr)
        (this_ptr->base_hero).base_character.model.accumulated_root_motion.z;
   (this_ptr->base_hero).base_character.model.accumulated_root_motion.x =
        (this_ptr->base_hero).base_character.model.accumulated_root_motion.y;
-  pCVar10 = in_stack_00000008;
-  while (pCVar5 = g_CGamePtr, 0.0 < (float)pCVar10) {
+  pCVar11 = in_stack_00000008;
+  while (pCVar5 = g_CGamePtr, 0.0 < (float)pCVar11) {
     core_motion_cpp_CMotionController_advance_FUN_0052d610
               (&(this_ptr->base_hero).base_character.model.motion_controller);
     core_charactr_cpp_CCharacter_FUN_0042ec40((CCharacter *)this_ptr);
@@ -119,23 +120,23 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr)
          *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x2c) *
          (float)DOUBLE_00639e0d;
   }
-  pCVar10 = this_ptr;
+  pCVar11 = this_ptr;
   desired_state_index = in_stack_00000008;
   iVar6 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
   if (iVar6 == 0) {
     if ((this_ptr->base_hero).control_type == 2) {
-      pCVar10 = (CMoloch *)0x529060;
+      pCVar11 = (CMoloch *)0x529060;
       desired_state_index = this_ptr;
       core_moloch_cpp_FUN_005293b0();
     }
-    iVar6 = core_motion_cpp_CMotionController_FUN_0052dab0
-                      (&(this_ptr->base_hero).base_character.model.motion_controller);
-    uVar9 = *(uint *)(iVar6 + 0x24);
-    if ((((uVar9 == 0) || (uVar9 < 2)) || (uVar9 == 2)) &&
+    pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       (&(this_ptr->base_hero).base_character.model.motion_controller);
+    uVar10 = pSVar9->state_index;
+    if ((((uVar10 == 0) || (uVar10 < 2)) || (uVar10 == 2)) &&
        (*(int *)((this_ptr->base_hero).base_character.field2_0x240c + 4) != 0)) {
-      uVar9 = (uint)(*(int *)(this_ptr->base_hero).field3_0xbe2c != 0);
+      uVar10 = (uint)(*(int *)(this_ptr->base_hero).field3_0xbe2c != 0);
       if (*(int *)((this_ptr->base_hero).field3_0xbe2c + 4) != 0) {
-        uVar9 = 2;
+        uVar10 = 2;
       }
       if (*(int *)((this_ptr->base_hero).field3_0xbe2c + 0x18) != 0) {
         if (this_ptr->morphing == 0) {
@@ -149,25 +150,25 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr)
       *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0xc) =
            *(float *)((this_ptr->base_hero).field3_0xbe2c + 0x24) *
            *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x2c);
-      iVar6 = core_motion_cpp_CMotionController_FUN_0052dab0
-                        (&(this_ptr->base_hero).base_character.model.motion_controller);
-      if (uVar9 != *(uint *)(iVar6 + 0x24)) goto LAB_00528e32;
+      pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                         (&(this_ptr->base_hero).base_character.model.motion_controller);
+      if (uVar10 != pSVar9->state_index) goto LAB_00528e32;
     }
   }
   else {
-    uVar9 = *(uint *)((this_ptr->base_hero).base_character.field11_0x25a0 + 0x10);
-    pCVar10 = (CMoloch *)&(this_ptr->base_hero).base_character.model;
-    if (uVar9 < 2) {
-      if (uVar9 == 1) goto LAB_00528e31;
+    uVar10 = *(uint *)((this_ptr->base_hero).base_character.field11_0x25a0 + 0x10);
+    pCVar11 = (CMoloch *)&(this_ptr->base_hero).base_character.model;
+    if (uVar10 < 2) {
+      if (uVar10 == 1) goto LAB_00528e31;
 LAB_0052903e:
       desired_state_index = (CMoloch *)0x0;
-      pCVar10 = (CMoloch *)&(this_ptr->base_hero).base_character.model;
+      pCVar11 = (CMoloch *)&(this_ptr->base_hero).base_character.model;
     }
     else {
-      if (2 < uVar9) {
-        if (uVar9 == 3) {
+      if (2 < uVar10) {
+        if (uVar10 == 3) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    ((CMotionController *)pCVar10,0,1);
+                    ((CMotionController *)pCVar11,0,1);
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
           goto LAB_00528e3a;
@@ -179,7 +180,7 @@ LAB_00528e31:
     }
 LAB_00528e32:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              ((CMotionController *)pCVar10,(int)desired_state_index,0x528e37);
+              ((CMotionController *)pCVar11,(int)desired_state_index,0x528e37);
   }
 LAB_00528e3a:
   pCVar2 = (this_ptr->base_hero).base_character.grabbed_by;
@@ -270,13 +271,16 @@ LAB_00528f8e:
     }
   }
   else {
-    core_motion_cpp_CMotionController_FUN_0052dab0(&pCVar1->motion_controller);
-    core_motion_cpp_FUN_0052ddb0();
+    pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       (&pCVar1->motion_controller);
+    core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
+              ((CMotionController *)this_ptr->field1_0x1fbd4,pSVar9->motion_name,
+               (this_ptr->base_hero).base_character.model.motion_controller.current_frame_number);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
               ((CDeformableModelInstance *)this_ptr->field1_0x1fbd4);
     fVar8 = this_ptr->morph_timer + (float)in_stack_00000008;
     this_ptr->morph_timer = fVar8;
-    if (_DAT_00661938 < fVar8) {
+    if (FLOAT_00661938 < fVar8) {
       if (this_ptr->in_human_form == 0) {
         model_name = "moloch_h.dfm";
         this_ptr->in_human_form = 1;
@@ -290,17 +294,19 @@ LAB_00528f8e:
       this_ptr_00 = this_ptr->field1_0x1fbd4;
       this_ptr->morphing = 0;
       this_ptr->morph_timer = 0.0;
-      core_skeleton_cpp_CDeformableModelInstance_FUN_005a1510
-                ((CDeformableModelInstance *)this_ptr_00);
-      pcStack0000003c =
-           (char *)core_motion_cpp_CMotionController_FUN_0052dab0((CMotionController *)this_ptr_00);
+      core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
+                ((CDeformableModelInstance *)this_ptr_00,(SBoneTransformData *)&stack0xffffe538);
+      pSStack0000003c =
+           core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     ((CMotionController *)this_ptr_00);
       pCVar1 = &(this_ptr->base_hero).base_character.model;
       uStack0000002c = *(undefined4 *)(this_ptr->field1_0x1fbd4 + 8);
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(pCVar1,model_name);
       core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(pCVar1);
-      core_motion_cpp_FUN_0052ddb0();
+      core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
+                (&pCVar1->motion_controller,in_stack_00000044,in_stack_00000034);
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-                ((CDeformableModelInstance *)this_ptr_00,pcStack0000003c);
+                ((CDeformableModelInstance *)this_ptr_00,pSStack0000003c->motion_name);
       core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450
                 ((CDeformableModelInstance *)this_ptr_00);
       core_morph_cpp_FUN_0052b430();
@@ -680,7 +686,7 @@ LAB_00528f8e:
 // 00529063: LEA EAX,[EBX + 0x158]
 //   Label: LAB_00529063
 // 00529069: PUSH EAX
-// 0052906a: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0052906a: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0052906f: MOV EAX,dword ptr [EAX + 0x24]
 // 00529072: ADD ESP,0x4
@@ -720,7 +726,7 @@ LAB_00528f8e:
 // 005290da: FMUL float ptr [EBX + 0x2438]
 // 005290e0: PUSH EDI
 // 005290e1: FSTP float ptr [EBX + 0x2418]
-// 005290e7: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 005290e7: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 005290ec: MOV EAX,dword ptr [EAX + 0x24]
 // 005290ef: ADD ESP,0x4
@@ -838,7 +844,7 @@ LAB_00528f8e:
 //   XREF to: 00528f8e (UNCONDITIONAL_JUMP)
 // 00529228: PUSH ESI
 //   Label: LAB_00529228
-// 00529229: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 00529229: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0052922e: ADD ESP,0x4
 // 00529231: SUB ESP,0x4
@@ -847,7 +853,7 @@ LAB_00528f8e:
 // 0052923a: PUSH EAX
 // 0052923b: LEA ESI,[EBX + 0x1fbd4]
 // 00529241: PUSH ESI
-// 00529242: CALL core_motion.cpp_FUN_0052ddb0
+// 00529242: CALL core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
 //   XREF to: 0052ddb0 (UNCONDITIONAL_CALL)
 // 00529247: ADD ESP,0xc
 // 0052924a: PUSH ESI
@@ -881,11 +887,11 @@ LAB_00528f8e:
 // 005292a4: MOV dword ptr [EBX + 0x21e8c],0x0
 // 005292ae: PUSH ESI
 // 005292af: MOV dword ptr [EBX + 0x21e90],0x0
-// 005292b9: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a1510
+// 005292b9: CALL core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
 //   XREF to: 005a1510 (UNCONDITIONAL_CALL)
 // 005292be: ADD ESP,0x8
 // 005292c1: PUSH ESI
-// 005292c2: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 005292c2: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 005292c7: MOV dword ptr [ESP + 0x1b08],EAX
 // 005292ce: ADD ESP,0x4
@@ -906,7 +912,7 @@ LAB_00528f8e:
 // 005292fb: PUSH dword ptr [ESP + 0x1af4]
 // 00529302: PUSH EAX
 // 00529303: PUSH EDI
-// 00529304: CALL core_motion.cpp_FUN_0052ddb0
+// 00529304: CALL core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
 //   XREF to: 0052ddb0 (UNCONDITIONAL_CALL)
 // 00529309: ADD ESP,0xc
 // 0052930c: MOV EDX,dword ptr [ESP + 0x1af8]

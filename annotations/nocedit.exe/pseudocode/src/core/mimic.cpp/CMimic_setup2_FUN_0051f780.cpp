@@ -23,7 +23,7 @@
 //   core_mimic.cpp_FUN_0051f930
 //   core_mimic.cpp_FUN_0051fcc0
 //   core_mimic.cpp_FUN_00520500
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 
 #include "nocturne.h"
 
@@ -36,6 +36,7 @@ void core_mimic_cpp_CMimic_setup2_FUN_0051f780(void)
   float fVar1;
   uint uVar2;
   int iVar3;
+  SMotion *pSVar4;
   CCharacter *in_stack_00000004;
   
   if (g_CNetGameInstance->connection_type != 0) {
@@ -71,10 +72,10 @@ void core_mimic_cpp_CMimic_setup2_FUN_0051f780(void)
                         (g_CEventListPtr,in_stack_00000004[1].base_actor.create_event + 0x20);
       if ((iVar3 != 0) &&
          (core_mimic_cpp_FUN_0051f930(), *(int *)(in_stack_00000004[6].cloth_data + 0x1e84) == 1)) {
-        iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0
-                          (&(g_HeroActors[g_LocalHeroIndex]->base_character).model.motion_controller
-                          );
-        uVar2 = *(uint *)(iVar3 + 0x24);
+        pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                           (&(g_HeroActors[g_LocalHeroIndex]->base_character).model.
+                             motion_controller);
+        uVar2 = pSVar4->state_index;
         if ((uVar2 < 3) || (uVar2 < 4)) {
 LAB_0051f8da:
           core_mimic_cpp_FUN_00520500();
@@ -242,7 +243,7 @@ LAB_0051f8da:
 //   XREF to: 02db87c0 (DATA)
 // 0051f8b7: ADD EAX,0x158
 // 0051f8bc: PUSH EAX
-// 0051f8bd: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 0051f8bd: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 0051f8c2: MOV EAX,dword ptr [EAX + 0x24]
 // 0051f8c5: ADD ESP,0x4

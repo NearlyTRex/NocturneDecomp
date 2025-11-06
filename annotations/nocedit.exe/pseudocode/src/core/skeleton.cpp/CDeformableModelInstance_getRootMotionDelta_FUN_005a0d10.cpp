@@ -5,7 +5,7 @@
 // Signature: CVector3f * core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10(CDeformableModelInstance * this_ptr, CVector3f * output_buffer, float start_frame, float end_frame)
 // Cross-references:
 //   core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90 (005a0c90) at 005a0ca5 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_FUN_005a0f50 (005a0f50) at 005a0fc1 [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_getRootMotionDeltaForMotion_FUN_005a0f50 (005a0f50) at 005a0fc1 [UNCONDITIONAL_CALL]
 // Globals:
 //   CVector3f g_ZeroVector
 //   undefined4 g_ZeroVector.y

@@ -11,7 +11,7 @@
 //   core_barrier.cpp_CBarrier_serialize_FUN_00414340 (00414340) at 00414346 [UNCONDITIONAL_CALL]
 //   core_bat.cpp_CBat_serialize_FUN_00414910 (00414910) at 00414916 [UNCONDITIONAL_CALL]
 //   core_battery.cpp_CBattery_load_FUN_00418000 (00418000) at 00418006 [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_CBodyPart_load_FUN_00419880 (00419880) at 0041988c [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_serialize_FUN_00419880 (00419880) at 0041988c [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_CBoxActor_load_FUN_00422060 (00422060) at 00422070 [UNCONDITIONAL_CALL]
 //   core_chain.cpp_CChain_load_FUN_00430fe0 (00430fe0) at 00430fe6 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_serialize_FUN_004283a0 (004283a0) at 004283ac [UNCONDITIONAL_CALL]

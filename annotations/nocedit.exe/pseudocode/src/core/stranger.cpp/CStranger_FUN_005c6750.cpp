@@ -7,8 +7,8 @@
 //   TerminatedCString s_stand_00653fa1
 // Function calls:
 //   core_hero.cpp_CHero_FUN_004f3b20
+//   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   core_motion.cpp_FUN_0052ddb0
 
 #include "nocturne.h"
 
@@ -17,8 +17,10 @@
 void core_stranger_cpp_CStranger_FUN_005c6750(void)
 
 {
+  CDeformableModelInstance *this_ptr;
   CHero *in_stack_00000004;
   
+  this_ptr = &(in_stack_00000004->base_character).model;
   core_hero_cpp_CHero_FUN_004f3b20(in_stack_00000004);
   in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].x = 0.0;
   in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].y = 0.0;
@@ -31,9 +33,9 @@ void core_stranger_cpp_CStranger_FUN_005c6750(void)
   (in_stack_00000004->base_character).field13_0x2620[0x471] = '\0';
   (in_stack_00000004->base_character).field13_0x2620[0x472] = '\0';
   (in_stack_00000004->base_character).field13_0x2620[0x473] = '\0';
-  core_motion_cpp_FUN_0052ddb0();
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(in_stack_00000004->base_character).model.motion_controller,0,1);
+  core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
+            (&this_ptr->motion_controller,"stand",0.0);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller,0,1);
   return;
 }
 
@@ -57,7 +59,7 @@ void core_stranger_cpp_CStranger_FUN_005c6750(void)
 // 005c6789: MOV dword ptr [EBX + 0x2934],0x0
 // 005c6793: PUSH EBX
 // 005c6794: MOV dword ptr [EBX + 0x2938],0x0
-// 005c679e: CALL core_motion.cpp_FUN_0052ddb0
+// 005c679e: CALL core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
 //   XREF to: 0052ddb0 (UNCONDITIONAL_CALL)
 // 005c67a3: ADD ESP,0xc
 // 005c67a6: PUSH 0x1

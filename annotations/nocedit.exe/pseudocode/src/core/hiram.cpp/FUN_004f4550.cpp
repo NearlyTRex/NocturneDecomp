@@ -21,7 +21,7 @@
 //   core_mission.cpp_CDemonMission_FUN_00524030
 //   core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 
@@ -36,6 +36,7 @@ void core_hiram_cpp_FUN_004f4550(void)
   CDeformableModelInstance *this_ptr;
   CCharacter *this_ptr_00;
   int iVar1;
+  SMotion *pSVar2;
   CDemonActor *actor_ptr;
   CGlass *this_ptr_01;
   uint unaff_ESI;
@@ -47,9 +48,9 @@ void core_hiram_cpp_FUN_004f4550(void)
   if (iVar1 == 0) {
     return;
   }
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
-                    (&(in_stack_00000004->model).motion_controller);
-  if (*(int *)(iVar1 + 0x24) != 1) {
+  pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     (&(in_stack_00000004->model).motion_controller);
+  if (pSVar2->state_index != 1) {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,in_stack_00000004[2].cloth_data + 0x5028);
     if (iVar1 != 0) {
@@ -117,7 +118,7 @@ void core_hiram_cpp_FUN_004f4550(void)
 // 004f4576: LEA ESI,[EBX + 0x158]
 //   Label: LAB_004f4576
 // 004f457c: PUSH ESI
-// 004f457d: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 004f457d: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 004f4582: MOV EAX,dword ptr [EAX + 0x24]
 // 004f4585: ADD ESP,0x4

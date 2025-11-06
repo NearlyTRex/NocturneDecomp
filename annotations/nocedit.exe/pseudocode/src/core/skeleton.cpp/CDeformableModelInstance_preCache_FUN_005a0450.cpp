@@ -9,7 +9,7 @@
 //   core_batman.cpp_CBatman_FUN_00416510 (00416510) at 00416527 [UNCONDITIONAL_CALL]
 //   core_beast.cpp_FUN_00418280 (00418280) at 0041828a [UNCONDITIONAL_CALL]
 //   core_biggs.cpp_FUN_00418680 (00418680) at 00418697 [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_FUN_0041b280 (0041b280) at 0041b2e8 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 (0041b280) at 0041b2e8 [UNCONDITIONAL_CALL]
 //   core_boneguy.cpp_CBoneGuy_explode_FUN_0041bd90 (0041bd90) at 0041bd9e [UNCONDITIONAL_CALL]
 //   core_bride.cpp_FUN_00423810 (00423810) at 00423821 [UNCONDITIONAL_CALL]
 //   core_cloth.cpp_FUN_0043ddf0 (0043ddf0) at 0043dfaa [UNCONDITIONAL_CALL]

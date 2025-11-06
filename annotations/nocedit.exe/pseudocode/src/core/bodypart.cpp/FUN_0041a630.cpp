@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_bodypart.cpp_FUN_0041aa40 (0041aa40) at 0041adb4 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00615e44
+//   float FLOAT_00615e44 = 65536
 //   CVector3f g_ZeroVector
 // Function calls:
 //   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -21,10 +21,6 @@
 //   crt_math.c_round_FUN_005fe6b0
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 actors_other_bodypart.cpp_FUN_0041a630(undefined4 param_1, undefined4
-   param_2) */
 
 void core_bodypart_cpp_FUN_0041a630
                (undefined4 param_1,undefined4 param_2,int unaff_EBX,undefined4 param_4,
@@ -77,19 +73,19 @@ void core_bodypart_cpp_FUN_0041a630
   
   bVar11 = 0;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_a4,param_6);
-  fVar12 = (float10)local_a4.m[0].y * (float10)_DAT_00615e44;
-  fVar13 = (float10)local_a4.m[0].z * (float10)_DAT_00615e44;
-  fVar14 = (float10)local_a4.m[1].x * (float10)_DAT_00615e44;
-  fVar15 = (float10)local_a4.m[1].y * (float10)_DAT_00615e44;
-  fVar16 = (float10)local_a4.m[1].z * (float10)_DAT_00615e44;
-  fVar17 = (float10)local_a4.m[2].x * (float10)_DAT_00615e44;
-  fVar18 = (float10)local_a4.m[2].y * (float10)_DAT_00615e44;
+  fVar12 = (float10)local_a4.m[0].y * (float10)FLOAT_00615e44;
+  fVar13 = (float10)local_a4.m[0].z * (float10)FLOAT_00615e44;
+  fVar14 = (float10)local_a4.m[1].x * (float10)FLOAT_00615e44;
+  fVar15 = (float10)local_a4.m[1].y * (float10)FLOAT_00615e44;
+  fVar16 = (float10)local_a4.m[1].z * (float10)FLOAT_00615e44;
+  fVar17 = (float10)local_a4.m[2].x * (float10)FLOAT_00615e44;
+  fVar18 = (float10)local_a4.m[2].y * (float10)FLOAT_00615e44;
   dVar19 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,extraout_EAX));
   local_28.y = (float)(int)ROUND(fVar12);
-  fVar12 = (float10)fStack_80 * (float10)_DAT_00615e44;
+  fVar12 = (float10)fStack_80 * (float10)FLOAT_00615e44;
   dVar19 = crt_math_c_round_FUN_005fe6b0(dVar19);
   local_1c.x = (float)(int)ROUND(fVar13);
-  fVar13 = (float10)fStack_78 * (float10)_DAT_00615e44;
+  fVar13 = (float10)fStack_78 * (float10)FLOAT_00615e44;
   iVar9 = 0;
   dVar19 = crt_math_c_round_FUN_005fe6b0(dVar19);
   dVar19 = crt_math_c_round_FUN_005fe6b0(dVar19);

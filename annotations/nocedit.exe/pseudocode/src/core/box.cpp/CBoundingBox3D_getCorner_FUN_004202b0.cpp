@@ -14,7 +14,7 @@
 //   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 (005716b0) at 00571a45 [UNCONDITIONAL_CALL]
 //   core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140 (00573140) at 00573183 [UNCONDITIONAL_CALL]
 //   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (005751d0) at 005752bb [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a16c0 (005a16c0) at 005a173f [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0 (005a16c0) at 005a173f [UNCONDITIONAL_CALL]
 //   core_spike.cpp_FUN_005b8950 (005b8950) at 005b8a2a [UNCONDITIONAL_CALL]
 //   core_turret.cpp_CTurret_FUN_005e2910 (005e2910) at 005e2adf [UNCONDITIONAL_CALL]
 //   core_turret.cpp_FUN_005e2d50 (005e2d50) at 005e2da9 [UNCONDITIONAL_CALL]

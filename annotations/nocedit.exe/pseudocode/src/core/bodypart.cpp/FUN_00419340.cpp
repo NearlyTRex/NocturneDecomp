@@ -4,9 +4,9 @@
 // Convention: unknown
 // Signature: undefined core_bodypart.cpp_FUN_00419340()
 // Cross-references:
-//   core_bodypart.cpp_FUN_004194b0 (004194b0) at 0041953a [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_FUN_00419610 (00419610) at 004196b4 [UNCONDITIONAL_CALL]
-//   core_bodypart.cpp_FUN_00419740 (00419740) at 004197a9 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419610 (00419610) at 004196b4 [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0 (004194b0) at 0041953a [UNCONDITIONAL_CALL]
+//   core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740 (00419740) at 004197a9 [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonSet* g_CDemonSetPtr = 03114278
@@ -22,9 +22,6 @@
 //   engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
 
 #include "nocturne.h"
-
-/* Signature: undefined1 actors_other_bodypart.cpp_FUN_00419340(undefined4 param_1, undefined4
-   param_2) */
 
 void core_bodypart_cpp_FUN_00419340(void)
 

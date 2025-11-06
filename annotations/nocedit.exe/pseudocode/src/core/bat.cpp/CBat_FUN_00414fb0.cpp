@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_bat.cpp_CBat_FUN_00414fb0(CBat * this_ptr)
 // Globals:
-//   undefined4 s_Move_bat_along_course._0061542e
+//   TerminatedCString s_Move_bat_along_course_0061542e
 //   TerminatedCString s_anon_00615445
 // Function calls:
 //   core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150
@@ -20,7 +20,7 @@ void __cdecl core_bat_cpp_CBat_FUN_00414fb0(CBat *this_ptr)
   core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(&this_ptr->base_actor,in_stack_00000008);
   *in_stack_00000008 = *in_stack_00000008 + 0xb;
   core_actor_cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
-            (in_stack_00000008,"</>","?Move bat along course." + 1);
+            (in_stack_00000008,"</>","Move bat along course.");
   return;
 }
 

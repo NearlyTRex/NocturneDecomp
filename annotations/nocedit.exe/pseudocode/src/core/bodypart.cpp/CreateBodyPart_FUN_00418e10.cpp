@@ -15,11 +15,11 @@
 //   core_imp.cpp_FUN_004fab60 (004fab60) at 004fac32 [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_FUN_00527380 (00527380) at 0052748b [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055c8f7 [UNCONDITIONAL_CALL]
-//   core_skeleton.cpp_FUN_005a0fe0 (005a0fe0) at 005a0ffe [UNCONDITIONAL_CALL]
+//   core_skeleton.cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0 (005a0fe0) at 005a0ffe [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a32a0 (005a32a0) at 005a338c [UNCONDITIONAL_CALL]
 //   core_zombie.cpp_CZombie_FUN_005fc220 (005fc220) at 005fc2ed [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\bodypart.cpp_00615b7c
+//   TerminatedCString s_core_bodypart_cpp_00615b7c
 //   TerminatedCString s_core_bodypart_cpp_00615b91
 //   TerminatedCString s_Can_t_create_body_part_00615ba6
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
@@ -36,10 +36,6 @@
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 
 #include "nocturne.h"
-
-/* Signature: undefined1 actors_other_bodypart.cpp_CreateBodyPart(undefined4 param_1, undefined4
-   param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6,
-   undefined4 param_7) */
 
 CBodyPart * core_bodypart_cpp_CreateBodyPart_FUN_00418e10(void)
 
@@ -61,7 +57,7 @@ CBodyPart * core_bodypart_cpp_CreateBodyPart_FUN_00418e10(void)
   float local_14;
   
   this_ptr = (CBodyPart *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xf30,"?..\\core\\bodypart.cpp" + 1,0x31);
+             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xf30,"..\\core\\bodypart.cpp",0x31);
   if (this_ptr != (CBodyPart *)0x0) {
     this_ptr = core_bodypart_cpp_CBodyPart_ctor_FUN_00419010(this_ptr);
   }

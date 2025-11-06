@@ -7,10 +7,10 @@
 //   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 (0043c880) at 0043caf9 [UNCONDITIONAL_CALL]
 //   core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320 (0043c320) at 0043c376 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d6140 (004d6140) at 004d6185 [UNCONDITIONAL_CALL]
-//   core_mimic.cpp_FUN_005205f0 (005205f0) at 00520708 [UNCONDITIONAL_CALL]
+//   core_mimic.cpp_CMimic_FUN_005205f0 (005205f0) at 00520708 [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_FUN_005208b0 (005208b0) at 00520918 [UNCONDITIONAL_CALL]
 //   core_svetlana.cpp_CSvetlana_FUN_005d9bc0 (005d9bc0) at 005d9d0a [UNCONDITIONAL_CALL]
-//   core_vampboss.cpp_CVampireBoss_FUN_005e6da0 (005e6da0) at 005e6e2e [UNCONDITIONAL_CALL]
+//   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0 (005e6da0) at 005e6e2e [UNCONDITIONAL_CALL]
 // Globals:
 //   undefined4 DAT_0061855a
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578

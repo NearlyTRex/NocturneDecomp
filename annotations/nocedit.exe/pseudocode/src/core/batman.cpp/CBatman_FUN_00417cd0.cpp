@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_batman.cpp_CBatman_FUN_00417cd0(CBatman * this_ptr)
 // Globals:
-//   undefined4 s_Model_006159a5
+//   TerminatedCString s_Model_006159a5
 //   TerminatedCString s_State_006159ab
 //   TerminatedCString s_Fall_event_006159b1
 // Function calls:

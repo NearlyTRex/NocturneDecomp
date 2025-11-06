@@ -9,7 +9,7 @@
 // Function calls:
 //   core_actor.cpp_getRandomInt_FUN_0040cc70
 //   core_enemy.cpp_FUN_004a9f10
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
 //   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
@@ -24,8 +24,9 @@ void core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
 {
   CMotionController *this_ptr;
   float fVar1;
-  int iVar2;
+  SMotion *pSVar2;
   undefined4 uVar3;
+  int iVar4;
   int in_stack_00000004;
   int in_stack_00000008;
   
@@ -33,25 +34,25 @@ void core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
   this_ptr = (CMotionController *)(in_stack_00000004 + 0x158);
   *(float *)(in_stack_00000004 + 0x243c) = fVar1;
   if (0.0 < fVar1) {
-    iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
-    if (iVar2 == 0) {
+    iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
+    if (iVar4 == 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr,5,1);
     }
-    if (iVar2 == 1) {
+    if (iVar4 == 1) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 ((CMotionController *)(in_stack_00000004 + 0x158),6,1);
     }
-    if (iVar2 == 2) {
+    if (iVar4 == 2) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 ((CMotionController *)(in_stack_00000004 + 0x158),7,1);
     }
-    iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
-    if (iVar2 != 0) goto LAB_00568d4d;
+    iVar4 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    if (iVar4 != 0) goto LAB_00568d4d;
   }
   else {
     *(undefined4 *)(in_stack_00000004 + 0x243c) = 0;
-    iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0(this_ptr);
-    if ((*(int *)(iVar2 + 0x24) == 8) || (*(int *)(iVar2 + 0x24) == 9)) goto LAB_00568d4d;
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
+    if ((pSVar2->state_index == 8) || (pSVar2->state_index == 9)) goto LAB_00568d4d;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr,8,1);
     sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
   }
@@ -84,7 +85,7 @@ LAB_00568d4d:
 //   XREF to: 00568d5f (CONDITIONAL_JUMP)
 // 00568cf9: PUSH ESI
 // 00568cfa: MOV dword ptr [EBX + 0x243c],0x0
-// 00568d04: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 00568d04: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 00568d09: MOV EAX,dword ptr [EAX + 0x24]
 // 00568d0c: ADD ESP,0x4

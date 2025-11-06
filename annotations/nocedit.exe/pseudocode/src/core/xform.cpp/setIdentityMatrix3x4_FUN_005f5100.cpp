@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_xform.cpp_setIdentityMatrix3x4_FUN_005f5100(CMatrix3x4f * matrix)
 // Cross-references:
-//   core_gabriela.cpp_CarryLights_FUN_004d7120 (004d7120) at 004d74ce [UNCONDITIONAL_CALL]
+//   core_gabriela.cpp_CGabriella_FUN_004d7120 (004d7120) at 004d74ce [UNCONDITIONAL_CALL]
 //   core_mirror.cpp_setupMirrorReflection_FUN_005214c0 (005214c0) at 00521884 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c07b0 (005c07b0) at 005c15cc [UNCONDITIONAL_CALL]
 

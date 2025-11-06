@@ -4,11 +4,11 @@
 // Convention: __cdecl
 // Signature: void core_charactr.cpp_CCharacter_FUN_0042c3c0(CCharacter * this_ptr)
 // Cross-references:
-//   core_baron.cpp_FUN_00413cd0 (00413cd0) at 00413ce1 [UNCONDITIONAL_CALL]
-//   core_colonel.cpp_FUN_004404b0 (004404b0) at 004405a0 [UNCONDITIONAL_CALL]
+//   core_baron.cpp_CBaron_FUN_00413cd0 (00413cd0) at 00413ce1 [UNCONDITIONAL_CALL]
+//   core_colonel.cpp_CColonel_FUN_004404b0 (004404b0) at 004405a0 [UNCONDITIONAL_CALL]
 //   core_enemy.cpp_FUN_004a9f10 (004a9f10) at 004a9f2d [UNCONDITIONAL_CALL]
-//   core_gabriela.cpp_FUN_004d6b30 (004d6b30) at 004d6c88 [UNCONDITIONAL_CALL]
-//   core_haystack.cpp_FUN_004f1b70 (004f1b70) at 004f1c00 [UNCONDITIONAL_CALL]
+//   core_gabriela.cpp_CGabriella_FUN_004d6b30 (004d6b30) at 004d6c88 [UNCONDITIONAL_CALL]
+//   core_haystack.cpp_CHaystack_FUN_004f1b70 (004f1b70) at 004f1c00 [UNCONDITIONAL_CALL]
 //   core_icepick.cpp_CIcePick_FUN_004f95b0 (004f95b0) at 004f9721 [UNCONDITIONAL_CALL]
 //   core_npc.cpp_CNPC_FUN_00544d30 (00544d30) at 00544e01 [UNCONDITIONAL_CALL]
 //   core_scat.cpp_FUN_00557ea0 (00557ea0) at 00557fa2 [UNCONDITIONAL_CALL]

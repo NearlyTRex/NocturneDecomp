@@ -22,7 +22,7 @@
 // Function calls:
 //   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 //   core_hero.cpp_FUN_004f3960
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
 //   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 //   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
@@ -40,10 +40,11 @@ void core_gabriela_cpp_FUN_004d4190(void)
 {
   CHero *pCVar1;
   CDemonSet *this_ptr;
-  int iVar2;
+  SMotion *pSVar2;
   CVector3f *pCVar3;
   float fVar4;
   CBoundingBox3D *pCVar5;
+  int iVar6;
   BADSPACEBASE *in_ESP;
   float unaff_EBP;
   CDemonActor *this_ptr_00;
@@ -95,11 +96,11 @@ void core_gabriela_cpp_FUN_004d4190(void)
       fVar4 = 0.0;
     }
     if ((float)DOUBLE_0062aefd <= fVar4) {
-      iVar2 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
+      iVar6 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         ((CPathMap *)(g_HeroActors[g_LocalHeroIndex]->field3_0xbe2c + 0x2c),
                          &(in_stack_00000004->location).position,&local_bc,
                          in_stack_00000004->field7_0x6c);
-      if (iVar2 != 0) {
+      if (iVar6 != 0) {
         fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (local_bc.z - (in_stack_00000004->orient).bank);
         fVar4 = fVar4 * (float)DOUBLE_0062af05 * (float)DOUBLE_0062aefd;
@@ -110,12 +111,12 @@ void core_gabriela_cpp_FUN_004d4190(void)
         if (unaff_EBP < *(float *)(in_stack_00000004[0x8d].create_event + 0x60)) {
           *(float *)(in_stack_00000004[0x8d].create_event + 0x60) = unaff_EBP;
         }
-        iVar2 = g_LocalHeroIndex;
+        iVar6 = g_LocalHeroIndex;
         in_stack_00000004[0x8d].create_event[0x3c] = '\x01';
         in_stack_00000004[0x8d].create_event[0x3d] = '\0';
         in_stack_00000004[0x8d].create_event[0x3e] = '\0';
         in_stack_00000004[0x8d].create_event[0x3f] = '\0';
-        pCVar1 = g_HeroActors[iVar2];
+        pCVar1 = g_HeroActors[iVar6];
         if (&fStack_90 != afStack_a8) {
           fStack_90 = (in_stack_00000004->location).position.x -
                       (pCVar1->base_character).base_actor.location.position.x;
@@ -142,9 +143,9 @@ void core_gabriela_cpp_FUN_004d4190(void)
       }
       if ((this_ptr_00 == (CDemonActor *)0x0) || ((float)DOUBLE_0062af15 <= fStack_114)) {
         if ((in_stack_00000004[0x179].previous_transform_state.orientation.z != 0.0) &&
-           (iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0
-                              ((CMotionController *)(in_stack_00000004 + 1)),
-           *(int *)(iVar2 + 0x24) == 0)) {
+           (pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                               ((CMotionController *)(in_stack_00000004 + 1)),
+           pSVar2->state_index == 0)) {
           in_stack_00000004[0x8d].create_event[0x54] = '\x01';
           in_stack_00000004[0x8d].create_event[0x55] = '\0';
           in_stack_00000004[0x8d].create_event[0x56] = '\0';
@@ -154,9 +155,9 @@ void core_gabriela_cpp_FUN_004d4190(void)
       }
       else {
         if ((in_stack_00000004[0x179].previous_transform_state.orientation.z == 0.0) &&
-           (iVar2 = core_motion_cpp_CMotionController_FUN_0052dab0
-                              ((CMotionController *)(in_stack_00000004 + 1)),
-           *(int *)(iVar2 + 0x24) == 0)) {
+           (pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                               ((CMotionController *)(in_stack_00000004 + 1)),
+           pSVar2->state_index == 0)) {
           in_stack_00000004[0x8d].create_event[0x54] = '\x01';
           in_stack_00000004[0x8d].create_event[0x55] = '\0';
           in_stack_00000004[0x8d].create_event[0x56] = '\0';
@@ -344,7 +345,7 @@ void core_gabriela_cpp_FUN_004d4190(void)
 //   XREF to: 004d42b7 (CONDITIONAL_JUMP)
 // 004d4297: LEA EAX,[EBX + 0x158]
 // 004d429d: PUSH EAX
-// 004d429e: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 004d429e: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 004d42a3: MOV EAX,dword ptr [EAX + 0x24]
 // 004d42a6: ADD ESP,0x4
@@ -678,7 +679,7 @@ void core_gabriela_cpp_FUN_004d4190(void)
 //   XREF to: 004d4395 (CONDITIONAL_JUMP)
 // 004d46ac: LEA EAX,[EBX + 0x158]
 // 004d46b2: PUSH EAX
-// 004d46b3: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 004d46b3: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 004d46b8: MOV EAX,dword ptr [EAX + 0x24]
 // 004d46bb: ADD ESP,0x4

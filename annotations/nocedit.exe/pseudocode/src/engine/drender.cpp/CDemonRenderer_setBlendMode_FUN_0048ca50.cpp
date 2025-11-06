@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer * this_ptr, int blend_mode)
 // Cross-references:
-//   core_baron.cpp_CBaron_FUN_00413ae0 (00413ae0) at 00413c0d [UNCONDITIONAL_CALL]
-//   core_batman.cpp_CBatman_FUN_004173b0 (004173b0) at 004174e2 [UNCONDITIONAL_CALL]
+//   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 (00413ae0) at 00413c0d [UNCONDITIONAL_CALL]
+//   core_batman.cpp_CBatman_renderOpaque_FUN_004173b0 (004173b0) at 004174e2 [UNCONDITIONAL_CALL]
 //   core_chain.cpp_FUN_004308f0 (004308f0) at 004309e9 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_0042af60 (0042af60) at 0042b0ce [UNCONDITIONAL_CALL]
 //   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20 (00473a20) at 00473ee6 [UNCONDITIONAL_CALL]
@@ -13,7 +13,7 @@
 //   core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210 (00475210) at 00475288 [UNCONDITIONAL_CALL]
 //   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0 (00474ad0) at 00474da9 [UNCONDITIONAL_CALL]
 //   core_dlight.cpp_renderConeLightGeometry_FUN_004760d0 (004760d0) at 00476144 [UNCONDITIONAL_CALL]
-//   core_dracbrid.cpp_FUN_00485be0 (00485be0) at 00485d21 [UNCONDITIONAL_CALL]
+//   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 (00485be0) at 00485d21 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CExplosion_render_FUN_004c3b10 (004c3b10) at 004c3e45 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CGlassParticle_render_FUN_004c1ef0 (004c1ef0) at 004c20bb [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CGunFlame_render_FUN_004c50b0 (004c50b0) at 004c55b6 [UNCONDITIONAL_CALL]

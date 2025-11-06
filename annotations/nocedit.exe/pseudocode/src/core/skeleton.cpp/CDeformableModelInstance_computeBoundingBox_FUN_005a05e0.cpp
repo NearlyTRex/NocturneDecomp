@@ -58,7 +58,7 @@ core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0
   if (0 < iVar4) {
     iVar9 = 0;
     do {
-      piVar11 = (int *)(this_ptr->current_lod_index + iVar9);
+      piVar11 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar9);
       piVar12 = piVar11 + (uint)bVar13 * -2 + 1;
       local_34 = *piVar11;
       *(int *)((int)&stack0xffffffd0 + (uint)bVar13 * -8) = *piVar12;

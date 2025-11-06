@@ -28,14 +28,14 @@ core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
 
 {
   int iVar1;
-  int iVar2;
+  CVector3i *pCVar2;
   CDeformableModel *pCVar3;
   SRenderVertex *pSVar4;
   int iVar5;
+  int iVar6;
   int extraout_ECX;
-  int *piVar6;
+  int *piVar7;
   undefined4 extraout_EDX;
-  int iVar7;
   int iVar8;
   int iVar9;
   int iVar10;
@@ -53,52 +53,52 @@ core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
   }
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(in_stack_00000008);
   iVar1 = pCVar3->vertex_count[in_stack_00000008->cached_skinned_lod_index];
-  iVar5 = in_stack_00000008->current_lod_index;
-  iVar9 = 1;
-  iVar7 = *(int *)(iVar5 + 4);
-  iVar8 = iVar7;
-  iVar10 = iVar7;
+  pCVar2 = in_stack_00000008->skinned_vertices_buffer;
+  iVar10 = 1;
+  iVar8 = pCVar2->y;
+  iVar9 = iVar8;
+  iVar5 = iVar8;
   if (1 < iVar1) {
     do {
-      iVar2 = *(int *)(iVar5 + 0x10);
-      iVar8 = iVar2;
-      if ((iVar10 <= iVar2) && (iVar8 = iVar10, iVar7 < iVar2)) {
-        iVar7 = iVar2;
+      iVar6 = pCVar2[1].y;
+      iVar9 = iVar6;
+      if ((iVar5 <= iVar6) && (iVar9 = iVar5, iVar8 < iVar6)) {
+        iVar8 = iVar6;
       }
-      iVar9 = iVar9 + 1;
-      iVar10 = iVar8;
-      iVar5 = iVar5 + 0xc;
-    } while (iVar9 < iVar1);
+      iVar10 = iVar10 + 1;
+      iVar5 = iVar9;
+      pCVar2 = pCVar2 + 1;
+    } while (iVar10 < iVar1);
   }
-  iVar7 = iVar7 - iVar8;
-  if (iVar7 < 1) {
-    iVar7 = 1;
+  iVar8 = iVar8 - iVar9;
+  if (iVar8 < 1) {
+    iVar8 = 1;
   }
   if (0 < iVar1) {
     iVar10 = 0;
     iVar5 = 0;
     do {
-      piVar6 = (int *)(*(int *)(in_stack_0000000c + 0x2234) + iVar10);
-      if ((*piVar6 == 0) && (piVar6[2] == 0)) {
+      piVar7 = (int *)(*(int *)(in_stack_0000000c + 0x2234) + iVar10);
+      if ((*piVar7 == 0) && (piVar7[2] == 0)) {
         pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
-        iVar9 = in_stack_00000010;
+        iVar6 = in_stack_00000010;
       }
       else {
-        fVar11 = crt_math_c_atan2_FUN_006013b1((float10)*piVar6,(float10)piVar6[2]);
+        fVar11 = crt_math_c_atan2_FUN_006013b1((float10)*piVar7,(float10)piVar7[2]);
         fVar11 = fVar11 * (float10)DOUBLE_0064f030;
         dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,in_stack_0000000c));
-        piVar6 = (int *)((ulonglong)dVar12 >> 0x20);
-        iVar9 = SUB84(dVar12,0) + (int)ROUND(fVar11);
+        piVar7 = (int *)((ulonglong)dVar12 >> 0x20);
+        iVar6 = SUB84(dVar12,0) + (int)ROUND(fVar11);
         pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
         iVar5 = extraout_ECX;
       }
-      *(int *)((int)&pSVar4->u + iVar5) = iVar9;
-      iVar9 = iVar5 + 0x30;
+      *(int *)((int)&pSVar4->u + iVar5) = iVar6;
+      iVar6 = iVar5 + 0x30;
       *(int *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->v + iVar5) =
-           in_stack_00000014 + (int)(((longlong)(piVar6[1] - iVar8) * 0x1000000) / (longlong)iVar7);
+           in_stack_00000014 + (int)(((longlong)(piVar7[1] - iVar9) * 0x1000000) / (longlong)iVar8);
       iVar10 = iVar10 + 0xc;
-      iVar5 = iVar9;
-    } while (iVar9 < iVar1 * 0x30);
+      iVar5 = iVar6;
+    } while (iVar6 < iVar1 * 0x30);
   }
   return;
 }

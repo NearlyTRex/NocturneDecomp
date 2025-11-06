@@ -38,7 +38,7 @@
 //   core_enemy.cpp_FUN_004a9880
 //   core_gore.cpp_FUN_004ede30
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
@@ -63,10 +63,12 @@ void core_cow_cpp_FUN_00444310(void)
   float fVar4;
   float fVar5;
   int iVar6;
-  CEnemy *pCVar7;
-  CVector3f *pCVar8;
+  SMotion *pSVar7;
+  int iVar8;
+  CEnemy *pCVar9;
+  CVector3f *pCVar10;
   int extraout_EAX;
-  undefined4 uVar9;
+  undefined4 uVar11;
   int extraout_EAX_00;
   BADSPACEBASE *in_ESP;
   CEnemy *in_stack_00000004;
@@ -113,11 +115,12 @@ void core_cow_cpp_FUN_00444310(void)
        (in_stack_00000004->base_character).model.accumulated_root_motion.z;
   *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x2c) =
        in_stack_00000008 * fVar5 * fVar2 * fVar4;
-  iVar6 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
-  uVar9 = *(undefined4 *)(iVar6 + 0x24);
-  iVar6 = core_charactr_cpp_CCharacter_FUN_0042ca70(&in_stack_00000004->base_character);
-  if (iVar6 == 0) {
-    switch(uVar9) {
+  pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     (&this_ptr->motion_controller);
+  iVar6 = pSVar7->state_index;
+  iVar8 = core_charactr_cpp_CCharacter_FUN_0042ca70(&in_stack_00000004->base_character);
+  if (iVar8 == 0) {
+    switch(iVar6) {
     case 0:
       core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
       if (extraout_EAX == 0) {
@@ -126,10 +129,10 @@ void core_cow_cpp_FUN_00444310(void)
         if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) != 0) {
           iVar6 = core_sound_cpp_FUN_005b3b80();
           if (iVar6 == 0) {
-            uVar9 = (*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
-                              ((CDemonActor *)in_stack_00000004,"cow?.wav");
+            uVar11 = (*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
+                               ((CDemonActor *)in_stack_00000004,"cow?.wav");
             *(undefined4 *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x10) =
-                 uVar9;
+                 uVar11;
           }
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(in_stack_00000004->base_character).model.motion_controller,1,1);
@@ -143,7 +146,7 @@ void core_cow_cpp_FUN_00444310(void)
     case 1:
       (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
                 ((CDemonActor *)in_stack_00000004);
-      uVar9 = DAT_0065c098;
+      uVar11 = DAT_0065c098;
       if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
         if (extraout_EAX_00 == 0) {
@@ -160,7 +163,7 @@ void core_cow_cpp_FUN_00444310(void)
              (in_stack_00000004->base_character).model.accumulated_root_motion.y;
         local_54 = 0;
         local_50 = 0;
-        local_4c = uVar9;
+        local_4c = uVar11;
         (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) + 0xbc))();
         iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                           (&in_stack_00000004->base_character);
@@ -183,24 +186,24 @@ void core_cow_cpp_FUN_00444310(void)
     case 2:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff40);
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-      pCVar8 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                         (&local_3c,&g_ZeroVector,
-                          (CMatrix3x4f *)
-                          (in_stack_00000004->base_character).model.bone_transform.
-                          bone_world_matrices
-                          [*(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc)
-                          ].m);
+      pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+                          (&local_3c,&g_ZeroVector,
+                           (CMatrix3x4f *)
+                           (in_stack_00000004->base_character).model.bone_transform.
+                           bone_world_matrices
+                           [*(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc
+                                    )].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                ((CDemonActor *)in_stack_00000004,&local_30,pCVar8);
+                ((CDemonActor *)in_stack_00000004,&local_30,pCVar10);
       core_enemy_cpp_FUN_004a9880();
       break;
     case 5:
       if ((in_stack_00000004->pool_me == 0) &&
          ((in_stack_00000004->base_character).base_actor.field11_0xdc == 0)) {
-        pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                           (this_ptr,&local_78,0);
+        pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                            (this_ptr,&local_78,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                  ((CDemonActor *)in_stack_00000004,&local_84,pCVar8);
+                  ((CDemonActor *)in_stack_00000004,&local_84,pCVar10);
         core_gore_cpp_FUN_004ede30();
         in_stack_00000004->pool_me = 1;
       }
@@ -241,9 +244,9 @@ switchD_0044482d_caseD_3:
   iVar6 = core_charactr_cpp_CCharacter_FUN_004297e0(&in_stack_00000004->base_character);
   if (iVar6 != 0) {
     if ((*(int *)(in_stack_00000004->field6_0xbe38 + 4) != 0) &&
-       (pCVar7 = (CEnemy *)
+       (pCVar9 = (CEnemy *)
                  (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) +
-                             0x108))(), pCVar7 == in_stack_00000004)) {
+                             0x108))(), pCVar9 == in_stack_00000004)) {
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                 (g_CDemonSetPtr,*(CDemonActor **)(in_stack_00000004->field6_0xbe38 + 4));
     }
@@ -257,11 +260,11 @@ switchD_0044482d_caseD_3:
     pcVar1 = (in_stack_00000004->base_character).field2_0x240c + 0x10;
     local_40 = in_stack_00000008 *
                *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x24);
-    pCVar8 = &(in_stack_00000004->base_character).model.accumulated_root_motion;
+    pCVar10 = &(in_stack_00000004->base_character).model.accumulated_root_motion;
     local_60 = local_48 + *(float *)pcVar1;
     local_5c = local_44 + *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x14);
     local_58 = local_40 + *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x18);
-    local_6c = local_60 + pCVar8->x;
+    local_6c = local_60 + pCVar10->x;
     local_68 = local_5c + (in_stack_00000004->base_character).model.accumulated_root_motion.y;
     local_64 = local_58 + (in_stack_00000004->base_character).model.accumulated_root_motion.z;
     (in_stack_00000004->base_character).field2_0x240c[0x18] = '\0';
@@ -274,7 +277,7 @@ switchD_0044482d_caseD_3:
     (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
     fVar2 = (in_stack_00000004->base_character).model.accumulated_root_motion.z;
     (in_stack_00000004->base_character).model.accumulated_root_motion.y = fVar2;
-    pCVar8->x = fVar2;
+    pCVar10->x = fVar2;
     core_charactr_cpp_CCharacter_FUN_00428f40(&in_stack_00000004->base_character);
   }
   core_charactr_cpp_CCharacter_FUN_00429820(&in_stack_00000004->base_character);
@@ -338,7 +341,7 @@ switchD_0044482d_caseD_3:
 // 00444399: PUSH ESI
 // 0044439a: FSTP float ptr [EBX + 0x2434]
 // 004443a0: FSTP float ptr [EBX + 0x2438]
-// 004443a6: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 004443a6: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 004443ab: ADD ESP,0x4
 // 004443ae: PUSH dword ptr [EBP + 0x92]

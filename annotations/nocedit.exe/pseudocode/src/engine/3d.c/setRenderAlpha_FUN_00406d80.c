@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
 // Cross-references:
-//   core_baron.cpp_CBaron_FUN_00413ae0 (00413ae0) at 00413b75 [UNCONDITIONAL_CALL]
+//   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 (00413ae0) at 00413b75 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_displayActStats_FUN_004e3800 (004e3800) at 004e3ad0 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_finishAct_FUN_004e3b90 (004e3b90) at 004e3f47 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_renderOverlay_FUN_004d8040 (004d8040) at 004d8431 [UNCONDITIONAL_CALL]

@@ -36,7 +36,7 @@
 //   core_ghoul.cpp_CGhoul_FUN_004e6600 (004e6600) at 004e6c6c [UNCONDITIONAL_CALL]
 //   core_gun.cpp_FUN_004f0350 (004f0350) at 004f099c [UNCONDITIONAL_CALL]
 //   core_haystack.cpp_FUN_004f0e40 (004f0e40) at 004f0f49 [UNCONDITIONAL_CALL]
-//   core_hero.cpp_FUN_004f28d0 (004f28d0) at 004f2955 [UNCONDITIONAL_CALL]
+//   core_hero.cpp_CHero_FUN_004f28d0 (004f28d0) at 004f2955 [UNCONDITIONAL_CALL]
 //   core_hero.cpp_FUN_004f2d70 (004f2d70) at 004f2e0f [UNCONDITIONAL_CALL]
 //   core_hero.cpp_FUN_004f2f50 (004f2f50) at 004f2fd2 [UNCONDITIONAL_CALL]
 //   core_hero.cpp_FUN_004f3120 (004f3120) at 004f3266 [UNCONDITIONAL_CALL]

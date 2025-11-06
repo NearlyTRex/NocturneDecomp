@@ -7,8 +7,8 @@
 //   void* switchdataD_00557dc0 = 00557e46
 //   double DOUBLE_0064141c = 0.950000000000000
 // Function calls:
-//   core_charactr.cpp_CCharacter_FUN_0042a2c0
 //   core_charactr.cpp_CCharacter_FUN_0042e840
+//   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 
 #include "nocturne.h"
 
@@ -21,7 +21,7 @@ int core_scat_cpp_FUN_00557df0(void)
   float fVar2;
   CCharacter *in_stack_00000004;
   
-  iVar1 = core_charactr_cpp_CCharacter_FUN_0042a2c0(in_stack_00000004);
+  iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(in_stack_00000004);
   if (iVar1 != 0) {
     if (*(int *)(in_stack_00000004[2].cloth_data + 0x5508) != 0) {
       (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5508) + 0x154) + 8))();
@@ -53,7 +53,7 @@ int core_scat_cpp_FUN_00557df0(void)
 // 00557df4: MOV EBX,dword ptr [ESP + 0xc]
 //   XREF to: Stack[0x4] (READ)
 // 00557df8: PUSH EBX
-// 00557df9: CALL core_charactr.cpp_CCharacter_FUN_0042a2c0
+// 00557df9: CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 //   XREF to: 0042a2c0 (UNCONDITIONAL_CALL)
 // 00557dfe: ADD ESP,0x4
 // 00557e01: TEST EAX,EAX

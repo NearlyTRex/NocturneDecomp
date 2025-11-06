@@ -22,7 +22,7 @@
 // Function calls:
 //   core_bodypart.cpp_FUN_0041add0
 //   core_bodypart.cpp_FUN_0041ae50
-//   core_skeleton.cpp_CDeformableModelInstance_FUN_005a1040
+//   core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
 //   core_xform.cpp_matrixToEulerAngles_FUN_005f5690
 //   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
@@ -39,7 +39,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
   undefined4 *puVar4;
   undefined4 *puVar5;
   byte bVar6;
-  int in_stack_00000008;
+  CBodyPart *in_stack_00000008;
   int in_stack_0000000c;
   undefined4 in_stack_00000010;
   CMatrix3x4f *in_stack_ffffff68;
@@ -52,7 +52,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
   bVar6 = 0;
   if (((this_ptr->model).model_name[0] != '\0') &&
      ((this_ptr->model).part_visibility_flags[in_stack_0000000c] != 0)) {
-    core_skeleton_cpp_CDeformableModelInstance_FUN_005a1040(&this_ptr->model);
+    core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
+              (&this_ptr->model,in_stack_00000008,in_stack_0000000c);
     local_14 = 0;
     if (0 < *(int *)(this_ptr->cloth_data + 0x35c)) {
       local_18 = (this_ptr->model).bone_transform.bone_world_matrices;
@@ -99,7 +100,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
       iVar2 = iVar2 + 1;
       pCVar3 = (CCharacter *)&(pCVar3->base_actor).orient_matrix.m[0].z;
     } while (iVar2 < 2);
-    *(undefined4 *)(in_stack_00000008 + 0x158) = in_stack_00000010;
+    *(undefined4 *)in_stack_00000008->field1_0x158 = in_stack_00000010;
     return;
   }
   return;
@@ -149,7 +150,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
 //   XREF to: Stack[0x8] (READ)
 // 0042bd8a: PUSH EDI
 // 0042bd8b: PUSH EBX
-// 0042bd8c: CALL core_skeleton.cpp_CDeformableModelInstance_FUN_005a1040
+// 0042bd8c: CALL core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
 //   XREF to: 005a1040 (UNCONDITIONAL_CALL)
 // 0042bd91: XOR EAX,EAX
 // 0042bd93: MOV dword ptr [EBP + 0x6e],EAX

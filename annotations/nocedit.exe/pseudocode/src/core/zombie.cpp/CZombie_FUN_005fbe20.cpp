@@ -9,26 +9,27 @@
 //   undefined4 DAT_02f33744
 // Function calls:
 //   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
-//   core_charactr.cpp_CCharacter_FUN_0042a2c0
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 
 #include "nocturne.h"
 
 int __cdecl core_zombie_cpp_CZombie_FUN_005fbe20(CZombie *this_ptr)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
+  int iVar2;
   
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
-                    (&(this_ptr->base_enemy).base_character.model.motion_controller);
-  if (*(int *)(iVar1 + 0x24) == 0xe) {
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     (&(this_ptr->base_enemy).base_character.model.motion_controller);
+  if (pSVar1->state_index == 0xe) {
     if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) == 0) {
       return 0;
     }
     core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940((CDemonActor *)this_ptr,3);
   }
-  iVar1 = core_charactr_cpp_CCharacter_FUN_0042a2c0((CCharacter *)this_ptr);
-  return iVar1;
+  iVar2 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
+  return iVar2;
 }
 
 
@@ -39,7 +40,7 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fbe20(CZombie *this_ptr)
 //   XREF to: Stack[0x4] (READ)
 // 005fbe25: LEA EAX,[EBX + 0x158]
 // 005fbe2b: PUSH EAX
-// 005fbe2c: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 005fbe2c: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 005fbe31: MOV EAX,dword ptr [EAX + 0x24]
 // 005fbe34: ADD ESP,0x4
@@ -60,7 +61,7 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fbe20(CZombie *this_ptr)
 // 005fbe4f: ADD ESP,0x8
 // 005fbe52: PUSH EBX
 //   Label: LAB_005fbe52
-// 005fbe53: CALL core_charactr.cpp_CCharacter_FUN_0042a2c0
+// 005fbe53: CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 //   XREF to: 0042a2c0 (UNCONDITIONAL_CALL)
 // 005fbe58: ADD ESP,0x4
 // 005fbe5b: POP EBX

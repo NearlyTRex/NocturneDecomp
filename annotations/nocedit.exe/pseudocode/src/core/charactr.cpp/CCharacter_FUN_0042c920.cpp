@@ -10,8 +10,8 @@
 //   TerminatedCString s_STAND_00617258
 // Function calls:
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
+//   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_0052db90
 //   core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
-//   core_motion.cpp_FUN_0052db90
 
 #include "nocturne.h"
 
@@ -32,7 +32,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c920(CCharacter *this_ptr)
                               (&(this_ptr->model).motion_controller);
       iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
       if (-1 < iVar1) {
-        core_motion_cpp_FUN_0052db90();
+        core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90
+                  (&(this_ptr->model).motion_controller,"STAND",1);
       }
     }
     this_ptr->field11_0x25a0[0x10] = '\0';
@@ -115,7 +116,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c920(CCharacter *this_ptr)
 // 0042c9b3: PUSH 0x617258
 //   XREF to: 00617258 (DATA)
 // 0042c9b8: PUSH ESI
-// 0042c9b9: CALL core_motion.cpp_FUN_0052db90
+// 0042c9b9: CALL core_motion.cpp_CMotionController_setDesiredStateByName_FUN_0052db90
 //   XREF to: 0052db90 (UNCONDITIONAL_CALL)
 // 0042c9be: ADD ESP,0xc
 // 0042c9c1: JMP 0x0042c954

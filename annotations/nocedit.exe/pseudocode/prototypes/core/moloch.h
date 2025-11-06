@@ -35,9 +35,9 @@ void CMoloch::process(CMoloch * this_ptr);
 // Address: 005293b0
 undefined FUN_005293b0();
 
-// Original: core_moloch.cpp_FUN_00529750
+// Original: core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750
 // Address: 00529750
-undefined FUN_00529750();
+int CMoloch::renderOpaque(CMoloch * this_ptr);
 
 // Original: core_moloch.cpp_CMoloch_load_FUN_00529880
 // Address: 00529880

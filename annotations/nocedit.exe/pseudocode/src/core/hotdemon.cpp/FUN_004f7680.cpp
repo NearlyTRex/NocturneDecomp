@@ -6,7 +6,7 @@
 // Globals:
 //   void* switchdataD_004f765c = 004f76a4
 // Function calls:
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 
 #include "nocturne.h"
 
@@ -15,12 +15,12 @@
 undefined4 core_hotdemon_cpp_FUN_004f7680(void)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
   int in_stack_00000004;
   
-  iVar1 = core_motion_cpp_CMotionController_FUN_0052dab0
-                    ((CMotionController *)(in_stack_00000004 + 0x158));
-  switch(*(undefined4 *)(iVar1 + 0x24)) {
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     ((CMotionController *)(in_stack_00000004 + 0x158));
+  switch(pSVar1->state_index) {
   case 4:
   case 10:
     return 1;
@@ -39,7 +39,7 @@ undefined4 core_hotdemon_cpp_FUN_004f7680(void)
 //   XREF to: Stack[0x4] (READ)
 // 004f7684: ADD EAX,0x158
 // 004f7689: PUSH EAX
-// 004f768a: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 004f768a: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 004f768f: MOV EAX,dword ptr [EAX + 0x24]
 // 004f7692: SUB EAX,0x4

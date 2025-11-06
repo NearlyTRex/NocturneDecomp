@@ -24,7 +24,7 @@
 //   core_hero.cpp_FUN_004f2f50
 //   core_hero.cpp_FUN_004f3120
 //   core_hero.cpp_FUN_004f33b0
-//   core_motion.cpp_CMotionController_FUN_0052dd20
+//   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_stranger.cpp_CStranger_FUN_005c1680
 //   core_stranger.cpp_CStranger_FUN_005c1fe0
@@ -49,8 +49,8 @@ void core_stranger_cpp_CStranger_FUN_005c5b90(void)
       && (iVar1 = core_stranger_cpp_CStranger_FUN_005c5e80(), iVar1 == 0)) &&
      (*(int *)(in_stack_00000004 + 0x1fbd4) == 0)) {
     this_ptr = (CMotionController *)(in_stack_00000004 + 0x158);
-    core_motion_cpp_CMotionController_FUN_0052dd20(this_ptr);
-    fVar2 = core_motion_cpp_CMotionController_FUN_0052dd20(this_ptr);
+    core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(this_ptr,0);
+    fVar2 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(this_ptr,1);
     if ((float)DOUBLE_00653e6c < fVar2 + unaff_ESI) {
       uVar3 = core_hero_cpp_FUN_004f2d70();
       switch(uVar3) {
@@ -190,14 +190,14 @@ void core_stranger_cpp_CStranger_FUN_005c5b90(void)
 // 005c5bc9: PUSH EAX
 // 005c5bca: LEA ESI,[EBX + 0x158]
 // 005c5bd0: PUSH ESI
-// 005c5bd1: CALL core_motion.cpp_CMotionController_FUN_0052dd20
+// 005c5bd1: CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   XREF to: 0052dd20 (UNCONDITIONAL_CALL)
 // 005c5bd6: MOV dword ptr [ESP + 0x8],EAX
 //   XREF to: Stack[-0x14] (WRITE)
 // 005c5bda: ADD ESP,0x8
 // 005c5bdd: PUSH 0x1
 // 005c5bdf: PUSH ESI
-// 005c5be0: CALL core_motion.cpp_CMotionController_FUN_0052dd20
+// 005c5be0: CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   XREF to: 0052dd20 (UNCONDITIONAL_CALL)
 // 005c5be5: MOV dword ptr [ESP + 0xc],EAX
 //   XREF to: Stack[-0x10] (WRITE)

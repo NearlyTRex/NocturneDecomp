@@ -4,17 +4,17 @@
 // Convention: __cdecl
 // Signature: void core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, int render_pass)
 // Cross-references:
-//   core_baron.cpp_CBaron_FUN_00413ae0 (00413ae0) at 00413c4c [UNCONDITIONAL_CALL]
-//   core_batman.cpp_CBatman_FUN_004173b0 (004173b0) at 0041752e [UNCONDITIONAL_CALL]
+//   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 (00413ae0) at 00413c4c [UNCONDITIONAL_CALL]
+//   core_batman.cpp_CBatman_renderOpaque_FUN_004173b0 (004173b0) at 0041752e [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_00429aa0 (00429aa0) at 00429b15 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_0042ad00 (0042ad00) at 0042aec0 [UNCONDITIONAL_CALL]
 //   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 (0043c880) at 0043cae4 [UNCONDITIONAL_CALL]
-//   core_dracbrid.cpp_FUN_00485be0 (00485be0) at 00485d6d [UNCONDITIONAL_CALL]
-//   core_mimic.cpp_FUN_005205f0 (005205f0) at 005206f7 [UNCONDITIONAL_CALL]
+//   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 (00485be0) at 00485d6d [UNCONDITIONAL_CALL]
+//   core_mimic.cpp_CMimic_FUN_005205f0 (005205f0) at 005206f7 [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_FUN_005208b0 (005208b0) at 00520907 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005971ca [UNCONDITIONAL_CALL]
-//   core_succubus.cpp_CSuccubus_FUN_005c7590 (005c7590) at 005c760e [UNCONDITIONAL_CALL]
-//   core_vampboss.cpp_CVampireBoss_FUN_005e6da0 (005e6da0) at 005e6e14 [UNCONDITIONAL_CALL]
+//   core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590 (005c7590) at 005c760e [UNCONDITIONAL_CALL]
+//   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0 (005e6da0) at 005e6e14 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0

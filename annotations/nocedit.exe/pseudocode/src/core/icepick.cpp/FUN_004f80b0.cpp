@@ -40,7 +40,7 @@
 //   core_icepick.cpp_FUN_004f8c70
 //   core_icepick.cpp_FUN_004f93a0
 //   core_inv.cpp_CInventory_updateInventory_FUN_004ffad0
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
@@ -69,8 +69,9 @@ void core_icepick_cpp_FUN_004f80b0(void)
   uint uVar8;
   int iVar9;
   undefined4 uVar10;
+  SMotion *pSVar11;
   BADSPACEBASE *in_ESP;
-  byte bVar11;
+  byte bVar12;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
   CDeformableModelInstance *in_stack_0000002c;
@@ -88,7 +89,7 @@ void core_icepick_cpp_FUN_004f80b0(void)
   float local_1c;
   int local_18;
   
-  bVar11 = 0;
+  bVar12 = 0;
   iVar4 = core_charactr_cpp_CCharacter_FUN_00429870(in_stack_00000004);
   if (iVar4 == 0) {
     return;
@@ -122,9 +123,9 @@ void core_icepick_cpp_FUN_004f80b0(void)
        (in_stack_00000004->model).accumulated_root_motion.z;
   iVar4 = core_charactr_cpp_CCharacter_FUN_0042ca70(in_stack_00000004);
   if (iVar4 == 0) {
-    iVar4 = core_motion_cpp_CMotionController_FUN_0052dab0
-                      (&(in_stack_00000004->model).motion_controller);
-    uVar8 = *(uint *)(iVar4 + 0x24);
+    pSVar11 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                        (&(in_stack_00000004->model).motion_controller);
+    uVar8 = pSVar11->state_index;
     if (uVar8 < 9) {
       if ((((uVar8 == 0) || (uVar8 < 2)) || (uVar8 < 3)) || (uVar8 == 3)) goto LAB_004f8427;
     }
@@ -221,9 +222,9 @@ switchD_004f8665_default:
             *(float *)(in_stack_00000004->field2_0x240c + 0xc) =
                  (float)in_stack_00000004[1].base_actor.location.area_id *
                  *(float *)(in_stack_00000004->field2_0x240c + 0x2c);
-            iVar9 = core_motion_cpp_CMotionController_FUN_0052dab0
-                              (&(in_stack_00000004->model).motion_controller);
-            if (iVar4 != *(int *)(iVar9 + 0x24)) {
+            pSVar11 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                                (&(in_stack_00000004->model).motion_controller);
+            if (iVar4 != pSVar11->state_index) {
               if ((((iVar4 == 0xe) || (iVar4 == 0xf)) || (iVar4 == 0x10)) &&
                  (iVar9 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar9 == 0)) {
                 uVar10 = (*((in_stack_00000004->base_actor).vtable)->playSound)
@@ -359,13 +360,13 @@ LAB_004f82f8:
               ((CQuaternion4f *)(in_stack_00000004[2].cloth_data + 0x5504),
                *(CVector3f **)(in_stack_00000004[2].cloth_data + 0x5510));
     auStack_3c._0_4_ = local_48;
-    *(undefined4 *)(auStack_3c + (uint)bVar11 * -8 + 4) =
-         *(undefined4 *)((int)&stack0xffffffbc + (uint)bVar11 * -8);
-    local_34[(uint)bVar11 * -2 + (uint)bVar11 * -2] =
-         *(float *)((int)&stack0xffffffbc + ((uint)bVar11 * -2 + (uint)bVar11 * -2 + 1) * 4);
-    (local_34 + (uint)bVar11 * -2 + (uint)bVar11 * -2)[(uint)bVar11 * -2 + 1] =
-         ((float *)((int)&stack0xffffffbc + ((uint)bVar11 * -2 + (uint)bVar11 * -2 + 1) * 4))
-         [(uint)bVar11 * -2 + 1];
+    *(undefined4 *)(auStack_3c + (uint)bVar12 * -8 + 4) =
+         *(undefined4 *)((int)&stack0xffffffbc + (uint)bVar12 * -8);
+    local_34[(uint)bVar12 * -2 + (uint)bVar12 * -2] =
+         *(float *)((int)&stack0xffffffbc + ((uint)bVar12 * -2 + (uint)bVar12 * -2 + 1) * 4);
+    (local_34 + (uint)bVar12 * -2 + (uint)bVar12 * -2)[(uint)bVar12 * -2 + 1] =
+         ((float *)((int)&stack0xffffffbc + ((uint)bVar12 * -2 + (uint)bVar12 * -2 + 1) * 4))
+         [(uint)bVar12 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
               (in_stack_0000002c,(CQuaternion4f *)(auStack_3c + 4),fVar6,(int)bone_index,
                in_stack_ffffffb0);
@@ -829,7 +830,7 @@ LAB_004f82f8:
 // 004f851d: FMUL float ptr [EBX + 0x2438]
 // 004f8523: PUSH EAX
 // 004f8524: FSTP float ptr [EBX + 0x2418]
-// 004f852a: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 004f852a: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 004f852f: MOV EAX,dword ptr [EAX + 0x24]
 // 004f8532: ADD ESP,0x4
@@ -989,7 +990,7 @@ LAB_004f82f8:
 //   XREF to: 004f8559 (UNCONDITIONAL_JUMP)
 // 004f86a0: PUSH EDX
 //   Label: LAB_004f86a0
-// 004f86a1: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 004f86a1: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 004f86a6: MOV EAX,dword ptr [EAX + 0x24]
 // 004f86a9: ADD ESP,0x4

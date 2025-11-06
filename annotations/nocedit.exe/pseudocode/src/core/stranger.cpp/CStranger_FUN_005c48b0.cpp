@@ -30,7 +30,7 @@
 //   core_gore.cpp_CGore_FUN_004ee030
 //   core_hero.cpp_FUN_004f3580
 //   core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570
-//   core_motion.cpp_CMotionController_FUN_0052dab0
+//   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 //   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
@@ -52,16 +52,17 @@ void core_stranger_cpp_CStranger_FUN_005c48b0
   CConsole *this_ptr_00;
   CGame *pCVar2;
   int iVar3;
-  undefined4 uVar4;
-  float fVar5;
-  CDemonActor *pCVar6;
+  SMotion *pSVar4;
+  undefined4 uVar5;
+  float fVar6;
+  CDemonActor *pCVar7;
   undefined4 unaff_ESI;
   undefined4 unaff_EDI;
   float unaff_retaddr;
   int in_stack_ffffffc4;
-  undefined8 uVar7;
+  undefined8 uVar8;
   
-  uVar7 = CONCAT44(unaff_ESI,unaff_EDI);
+  uVar8 = CONCAT44(unaff_ESI,unaff_EDI);
   if (g_CGamePtr->field53_0x1d0 != 0) {
     *(undefined4 *)(param_6 + 4) = 0;
   }
@@ -88,7 +89,7 @@ void core_stranger_cpp_CStranger_FUN_005c48b0
      (param_5->hit_points <= 0.0)) {
     param_5->hit_points = 0.0;
     engine_console_cpp_CConsole_printf_FUN_00441890
-              (this_ptr_00,"Using auto health\n",uVar7,unaff_EBX);
+              (this_ptr_00,"Using auto health\n",uVar8,unaff_EBX);
     core_inv_cpp_CInventory_autoUseHealthItem_FUN_00501570
               ((CInventory *)(param_5[2].cloth_data + 0x5058));
     engine_console_cpp_CConsole_printf_FUN_00441890
@@ -99,18 +100,20 @@ void core_stranger_cpp_CStranger_FUN_005c48b0
     pCVar1 = (param_5->base_actor).vtable;
     param_5->hit_points = 0.0;
     (*pCVar1[1].processFootstep)(&param_5->base_actor,unaff_retaddr);
-    iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
-    if (*(int *)(iVar3 + 0x24) != 0x29) {
-      iVar3 = core_motion_cpp_CMotionController_FUN_0052dab0(&this_ptr->motion_controller);
-      if (*(int *)(iVar3 + 0x24) != 0x28) {
+    pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       (&this_ptr->motion_controller);
+    if (pSVar4->state_index != 0x29) {
+      pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                         (&this_ptr->motion_controller);
+      if (pSVar4->state_index != 0x28) {
         if ((*(int *)(param_5[2].cloth_data + 0x54cc) == 0) &&
            (*(int *)(param_5[2].cloth_data + 0x5548) == 0)) {
           if (*(int *)(param_6 + 0x30) == 1) {
             iVar3 = 1;
           }
           else {
-            fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,100.0);
-            iVar3 = (fVar5 <= FLOAT_00653d70) + 0x25;
+            fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,100.0);
+            iVar3 = (fVar6 <= FLOAT_00653d70) + 0x25;
           }
         }
         else {
@@ -128,9 +131,9 @@ void core_stranger_cpp_CStranger_FUN_005c48b0
                   (&(param_5->model).motion_controller,iVar3,in_stack_ffffffc4);
         sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
         if (*(int *)(param_6 + 0x30) != 1) {
-          uVar4 = (*((param_5->base_actor).vtable)->playSound)
+          uVar5 = (*((param_5->base_actor).vtable)->playSound)
                             (&param_5->base_actor,"stranger_die??.wav");
-          *(undefined4 *)(param_5[2].cloth_data + 0x5788) = uVar4;
+          *(undefined4 *)(param_5[2].cloth_data + 0x5788) = uVar5;
         }
         core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&param_5->base_actor);
       }
@@ -155,9 +158,9 @@ void core_stranger_cpp_CStranger_FUN_005c48b0
   if (((*(int *)(param_6 + 0x30) != 0x69) && (*(int *)(param_5[2].cloth_data + 0x54cc) == 0)) &&
      ((*(int *)(param_5[2].cloth_data + 0x5548) == 0 &&
       (*(int *)(param_5[2].cloth_data + 0x5558) == 0)))) {
-    pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
+    pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (*(CDemonActor **)(param_6 + 0x34),g_CTommyGunClassInfo.name_hash);
-    if (pCVar6 != (CDemonActor *)0x0) {
+    if (pCVar7 != (CDemonActor *)0x0) {
       iVar3 = core_actor_cpp_randomChance_FUN_0040cd10(0.333);
       if (iVar3 == 0) goto LAB_005c4be2;
     }
@@ -167,9 +170,9 @@ void core_stranger_cpp_CStranger_FUN_005c48b0
 LAB_005c4be2:
   iVar3 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
   if (iVar3 == 0) {
-    uVar4 = (*((param_5->base_actor).vtable)->playSound)
+    uVar5 = (*((param_5->base_actor).vtable)->playSound)
                       (&param_5->base_actor,"stranger_hit??.wav");
-    *(undefined4 *)(param_5[2].cloth_data + 0x5788) = uVar4;
+    *(undefined4 *)(param_5[2].cloth_data + 0x5788) = uVar5;
   }
 LAB_005c4ae0:
   if (0.0 < *(float *)(param_6 + 4)) {
@@ -298,7 +301,7 @@ LAB_005c4ae0:
 // 005c49d8: CALL dword ptr [EAX + 0x104]
 // 005c49de: ADD ESP,0x4
 // 005c49e1: PUSH EDI
-// 005c49e2: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 005c49e2: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 005c49e7: MOV EAX,dword ptr [EAX + 0x24]
 // 005c49ea: ADD ESP,0x4
@@ -306,7 +309,7 @@ LAB_005c4ae0:
 // 005c49f0: JZ 0x005c4a86
 //   XREF to: 005c4a86 (CONDITIONAL_JUMP)
 // 005c49f6: PUSH EDI
-// 005c49f7: CALL core_motion.cpp_CMotionController_FUN_0052dab0
+// 005c49f7: CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
 // 005c49fc: MOV EAX,dword ptr [EAX + 0x24]
 // 005c49ff: ADD ESP,0x4
