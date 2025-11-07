@@ -35,9 +35,9 @@ undefined FUN_005b9490();
 // Address: 005b95b0
 undefined staticInit();
 
-// Original: core_stairs.cpp_FUN_005b95c0
+// Original: core_stairs.cpp_CSpotView_FUN_005b95c0
 // Address: 005b95c0
-CSpotView * FUN_005b95c0(CSpotView * this_ptr);
+CSpotView * CSpotView(CSpotView * this_ptr);
 
 // Original: core_stairs.cpp_FUN_005b9620
 // Address: 005b9620

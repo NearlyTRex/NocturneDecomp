@@ -6,14 +6,14 @@
 // Cross-references:
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058d419 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\skeledit.cpp_0064ae12
+//   TerminatedCString s_core_skeledit_cpp_0064ae12
 //   TerminatedCString s_Can_t_find_any_bones_inf_0064ae27
 //   TerminatedCString s_core_skeledit_cpp_0064ae50
 //   TerminatedCString s_BUG_Count_mismatch_0064ae65
 //   TerminatedCString s_core_skeledit_cpp_0064ae7b
 //   TerminatedCString s_core_skeledit_cpp_0064ae90
 //   TerminatedCString s_Out_of_memory_0064aea5
-//   undefined4 DAT_0064aeba
+//   double DOUBLE_0064aeba = 256
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
@@ -27,8 +27,6 @@
 //   shape_meshlod.cpp_FUN_0051bd30
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_skeledit_cpp_FUN_0058d790(void)
 
@@ -117,7 +115,7 @@ void core_skeledit_cpp_FUN_0058d790(void)
           iVar10 = *(int *)(local_38 + 0x7c) + local_24;
           dVar17 = (double)CONCAT44(puVar13,iVar10);
           *(undefined4 *)(local_2c + *(int *)(local_38 + 0x90)) = *puVar13;
-          fVar15 = (float10)_DAT_0064aeba;
+          fVar15 = (float10)DOUBLE_0064aeba;
           puVar7 = puVar13;
           do {
             *SUB84(dVar17,0) = *(undefined2 *)(puVar7 + 4);
@@ -255,7 +253,7 @@ void core_skeledit_cpp_FUN_0058d790(void)
       *(byte *)pfVar11 = *(byte *)pfVar11 + 1;
     }
     if (*(byte *)pfVar11 == 0) {
-      g_CurrentFilename = "p?..\\core\\skeledit.cpp" + 2;
+      g_CurrentFilename = "..\\core\\skeledit.cpp";
       g_CurrentLineNumber = 0x856;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find any bones influencing vertex!");
     }

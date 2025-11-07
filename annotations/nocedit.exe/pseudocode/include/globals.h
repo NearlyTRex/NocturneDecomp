@@ -1815,7 +1815,7 @@ extern int[10] g_ViewportStack_ClipTop;
 extern int[10] g_ViewportStack_ClipBottom;
 extern FileTrackingEntry[100] g_FileRegistry;
 extern CAlphaBitmap[8] CAlphaBitmap_ARRAY_02f214f0;
-extern SLodFace[200] DAT_02f2a4d0;
+extern CLodFace[200] DAT_02f2a4d0;
 extern CVector3f[400] CVector3f_ARRAY_02f313f0;
 extern CVector3f[32] g_MirrorInputVertices;
 extern CVector3f[32] g_MirrorOutputVertices;

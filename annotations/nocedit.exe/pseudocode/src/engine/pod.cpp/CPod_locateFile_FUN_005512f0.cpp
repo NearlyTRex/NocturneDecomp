@@ -8,8 +8,8 @@
 //   core_msnedit.cpp_CheckWorldMountedAndSave_FUN_0053d190 (0053d190) at 0053d1ae [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_00537230 (00537230) at 00537274 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_CDeformableModel_save_FUN_0058f040 (0058f040) at 0058f075 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0 (0058b2c0) at 0058b2f5 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00589f40 (00589f40) at 00589f5f [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_FUN_0058b2c0 (0058b2c0) at 0058b2f5 [UNCONDITIONAL_CALL]
 // Function calls:
 //   engine_dosio.c_getRelativeFilePath_FUN_004816c0
 //   engine_pod.cpp_CPodFile_findFileIndex_FUN_00550140

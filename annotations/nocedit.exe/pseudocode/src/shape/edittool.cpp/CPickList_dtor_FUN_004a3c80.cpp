@@ -48,11 +48,11 @@
 //   core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0 (0057bbe0) at 0057c29b [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_UserInputCreate_FUN_0057d660 (0057d660) at 0057e304 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0 (0057c5d0) at 0057ce65 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005981a0 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 005981a0 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (0058f810) at 00591568 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00589c20 (00589c20) at 00589ce9 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058afe0 (0058afe0) at 0058b0d0 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c774 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_FUN_0058f810 (0058f810) at 00591568 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 00593039 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b3d20 (005b3d20) at 005b3da7 [UNCONDITIONAL_CALL]
 //   core_teleport.cpp_CTeleportDest_FUN_005da870 (005da870) at 005da8e6 [UNCONDITIONAL_CALL]
@@ -75,7 +75,7 @@
 //   engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230 (00550230) at 00550528 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 (0049f420) at 0049fa84 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 (0049f270) at 0049f3c2 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051e63f [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051e63f [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0 (005ad5c0) at 005ad835 [UNCONDITIONAL_CALL]
 // Globals:
 //   WatcomTypeInfo g_CPickListTypeInfo

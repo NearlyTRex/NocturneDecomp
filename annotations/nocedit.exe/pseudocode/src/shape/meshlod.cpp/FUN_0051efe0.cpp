@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined shape_meshlod.cpp_FUN_0051efe0()
 // Function calls:
-//   crt_unknown.c_FUN_006020c2
+//   crt_memory.c_copyArrayWithFunction_FUN_006020c2
 
 #include "nocturne.h"
 
@@ -43,7 +43,8 @@ undefined4 * shape_meshlod_cpp_FUN_0051efe0(void)
     in_stack_00000004[0x13] = in_stack_00000008[0x13];
   }
   in_stack_00000004[0x14] = in_stack_00000008[0x14];
-  crt_unknown_c_FUN_006020c2();
+  crt_memory_c_copyArrayWithFunction_FUN_006020c2
+            (in_stack_00000004 + 0x15,in_stack_00000008 + 0x15,3,0xc,core_actor_cpp_FUN_00410360);
   in_stack_00000004[0x1e] = in_stack_00000008[0x1e];
   in_stack_00000004[(uint)bVar4 * -2 + 0x1f] = in_stack_00000008[(uint)bVar4 * -2 + 0x1f];
   (in_stack_00000004 + (uint)bVar4 * -2 + 0x1f)[(uint)bVar4 * -2 + 1] =
@@ -108,7 +109,7 @@ undefined4 * shape_meshlod_cpp_FUN_0051efe0(void)
 // 0051f043: FLD float ptr [EBP + 0x50]
 // 0051f046: PUSH EAX
 // 0051f047: FSTP float ptr [EBX + 0x50]
-// 0051f04a: CALL crt_unknown.c_FUN_006020c2
+// 0051f04a: CALL crt_memory.c_copyArrayWithFunction_FUN_006020c2
 //   XREF to: 006020c2 (UNCONDITIONAL_CALL)
 // 0051f04f: LEA EDI,[EBX + 0x78]
 // 0051f052: LEA ESI,[EBP + 0x78]

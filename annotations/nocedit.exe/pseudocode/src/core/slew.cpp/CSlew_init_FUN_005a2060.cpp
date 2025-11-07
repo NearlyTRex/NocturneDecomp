@@ -14,7 +14,7 @@
 //   core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940 (0057a940) at 0057a97c [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 (0057ae50) at 0057aecb [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_UserInputCreate_FUN_0057d660 (0057d660) at 0057d707 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596a79 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00596a79 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

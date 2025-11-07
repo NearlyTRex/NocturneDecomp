@@ -16,12 +16,12 @@
 //   core_setedit.cpp_CDemonSet_FUN_00583170 (00583170) at 00583cac [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (00578d80) at 005795c4 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_DementedFogEditor_FUN_00580730 (00580730) at 00581262 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005985eb [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 005985eb [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c9a4 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 005933f7 [UNCONDITIONAL_CALL]
 //   core_teleport.cpp_CTeleport_FUN_005dabe0 (005dabe0) at 005dad67 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051e195 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d844 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051e195 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_Yes_I_know_what_I_m_doin_00623058
 //   TerminatedCString s_No_please_I_didn_t_mean__00623097

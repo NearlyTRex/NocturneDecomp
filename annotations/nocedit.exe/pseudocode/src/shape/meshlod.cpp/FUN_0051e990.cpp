@@ -4,8 +4,8 @@
 // Convention: unknown
 // Signature: undefined shape_meshlod.cpp_FUN_0051e990()
 // Cross-references:
+//   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051dfb4 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d5ef [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051dfb4 [UNCONDITIONAL_CALL]
 // Globals:
 //   float FLOAT_00638525 = 127
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
@@ -18,8 +18,6 @@
 //   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
 
 #include "nocturne.h"
-
-/* Signature: undefined1 shape_meshlod.cpp_FUN_0051e990(undefined4 param_1, undefined4 param_2) */
 
 void shape_meshlod_cpp_FUN_0051e990(void)
 

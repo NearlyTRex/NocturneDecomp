@@ -5,17 +5,10 @@
 // Signature: undefined shape_meshlod.cpp_FUN_00514f90()
 // Cross-references:
 //   shape_meshlod.cpp_FUN_00515110 (00515110) at 00515128 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051a4e5 (0051a4e5) at 0051a4f1 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051a526 (0051a526) at 0051a532 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051a598 (0051a598) at 0051a5a0 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051a7cb (0051a7cb) at 0051a7d3 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051a7e5 (0051a7e5) at 0051a7ed [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051a829 (0051a829) at 0051a82d [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_FUN_0051a400 (0051a400) at 0051a4f1 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_FUN_0051a6b0 (0051a6b0) at 0051a7d3 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
-
-/* Signature: undefined1 shape_meshlod.cpp_FUN_00514f90(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3, undefined4 param_4) */
 
 float * shape_meshlod_cpp_FUN_00514f90(void)
 

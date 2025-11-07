@@ -7,7 +7,7 @@
 //   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (0040eed0) at 0040f065 [UNCONDITIONAL_CALL]
 //   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 (00443040) at 0044336f [UNCONDITIONAL_CALL]
 //   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (0047cbc0) at 0047e0fe [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597c63 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00597c63 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_g_g_g_006232b5
 //   TerminatedCString s_f_f_f_006232be

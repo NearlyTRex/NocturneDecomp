@@ -12,7 +12,7 @@
 //   core_level.cpp_CLevelLoader_show_FUN_00503dc0 (00503dc0) at 00503e4a [UNCONDITIONAL_CALL]
 //   core_moon.cpp_CMoon_init_FUN_00529ae0 (00529ae0) at 00529c11 [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_load_FUN_00569410 (00569410) at 00569e1b [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 0059842c [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 0059842c [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_rb_0061f2e3
 //   TerminatedCString s_models_0061f2e6

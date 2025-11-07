@@ -19,9 +19,9 @@ undefined FUN_00589500();
 // Address: 00589530
 undefined FUN_00589530();
 
-// Original: core_skeledit.cpp_LoadFileBoneStructureMaybe_FUN_005895f0
+// Original: core_skeledit.cpp_readNonEmptyLine_FUN_005895f0
 // Address: 005895f0
-undefined LoadFileBoneStructureMaybe();
+int readNonEmptyLine(char * buffer, FILE * file, int require_content);
 
 // Original: core_skeledit.cpp_FUN_005896b0
 // Address: 005896b0
@@ -85,15 +85,15 @@ undefined FUN_0058a2b0();
 
 // Original: core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0
 // Address: 0058a3d0
-void CBoneStructure::importBON(CBoneStructure * this_ptr);
+void CBoneStructure::importBON(CBoneStructure * this_ptr, char * filename);
 
 // Original: core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
 // Address: 0058a4a0
-void CBoneStructure::readBONheader(CBoneStructure * this_ptr);
+void CBoneStructure::readBONheader(CBoneStructure * this_ptr, FILE * file, int * frame_count_out);
 
 // Original: core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
 // Address: 0058aa10
-void CBoneStructure::readBONframe(CBoneStructure * this_ptr);
+void CBoneStructure::readBONframe(CBoneStructure * this_ptr, FILE * file, int mirror_flag);
 
 // Original: core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0
 // Address: 0058abb0
@@ -139,13 +139,13 @@ undefined FUN_0058b200();
 // Address: 0058b260
 undefined FUN_0058b260();
 
-// Original: core_skeledit.cpp_FUN_0058b2c0
+// Original: core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0
 // Address: 0058b2c0
-undefined FUN_0058b2c0();
+void CSkeleton::save(CSkeleton * this_ptr, FILE * file_handle);
 
-// Original: core_skeledit.cpp_FUN_0058b3a0
+// Original: core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
 // Address: 0058b3a0
-undefined FUN_0058b3a0();
+void CSkeleton::saveStream(CSkeleton * this_ptr, FILE * file_handle);
 
 // Original: core_skeledit.cpp_FUN_0058b660
 // Address: 0058b660
@@ -195,9 +195,9 @@ undefined FUN_0058e240();
 // Address: 0058e3e0
 undefined FUN_0058e3e0();
 
-// Original: core_skeledit.cpp_FUN_0058e4e0
+// Original: core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0
 // Address: 0058e4e0
-undefined FUN_0058e4e0();
+void CDeformable::groundBias(CDeformableModel * this_ptr);
 
 // Original: core_skeledit.cpp_FUN_0058e600
 // Address: 0058e600
@@ -211,9 +211,9 @@ void CDeformableModel::calcRootOffsetScale(CDeformableModel * this_ptr);
 // Address: 0058eaa0
 undefined FUN_0058eaa0();
 
-// Original: core_skeledit.cpp_FUN_0058ec60
+// Original: core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60
 // Address: 0058ec60
-undefined FUN_0058ec60();
+void CDeformableModel::removeUnusedTextures(CDeformableModel * this_ptr);
 
 // Original: core_skeledit.cpp_FUN_0058ede0
 // Address: 0058ede0
@@ -223,17 +223,17 @@ undefined FUN_0058ede0();
 // Address: 0058f040
 void CDeformableModel::save(CDeformableModel * this_ptr, char * filename);
 
-// Original: core_skeledit.cpp_ParseSkeletonBase_FUN_0058f120
+// Original: core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
 // Address: 0058f120
-undefined ParseSkeletonBase();
+void CDeformableModel::saveStream(CDeformableModel * this_ptr);
 
 // Original: core_skeledit.cpp_FUN_0058f790
 // Address: 0058f790
 undefined FUN_0058f790();
 
-// Original: core_skeledit.cpp_FUN_0058f810
+// Original: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
 // Address: 0058f810
-undefined FUN_0058f810();
+int CDeformableModel::determinePartsFromS3D(CDeformableModel * this_ptr);
 
 // Original: core_skeledit.cpp_FUN_00592520
 // Address: 00592520
@@ -251,21 +251,21 @@ undefined FUN_00592690();
 // Address: 00595f30
 undefined FUN_00595f30();
 
-// Original: core_skeledit.cpp_ExportModel_FUN_00595fc0
+// Original: core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
 // Address: 00595fc0
-undefined ExportModel();
+void CDeformableModel::exportModelToS3D(CDeformableModel * this_ptr, char * output_filename, int lod_level, CMatrix3x4f * bone_matrices);
 
 // Original: core_skeledit.cpp_FUN_00596860
 // Address: 00596860
 undefined FUN_00596860();
 
-// Original: core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0
+// Original: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
 // Address: 005968b0
-void CDeformableModelInstance(CDeformableModelInstance * this_ptr);
+void CDeformableModelInstance::viewModel(CDeformableModelInstance * this_ptr);
 
-// Original: core_skeledit.cpp_LockGetPtrAndExportModel_FUN_00598ee0
+// Original: core_skeledit.cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0
 // Address: 00598ee0
-undefined LockGetPtrAndExportModel();
+void CDeformableModelInstance::exportModelToS3D(CDeformableModelInstance * this_ptr, char * filename);
 
 // Original: core_skeledit.cpp_FUN_00598f10
 // Address: 00598f10

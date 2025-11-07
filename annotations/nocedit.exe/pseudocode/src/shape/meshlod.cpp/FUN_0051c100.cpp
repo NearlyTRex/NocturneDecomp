@@ -19,7 +19,7 @@
 //   TerminatedCString s_f_f_f_00637fca
 // Function calls:
 //   crt_stdio.c_fprintf_FUN_005fe6d0
-//   shape_meshlod.cpp_FUN_005164d0
+//   shape_meshlod.cpp_CLodMesh_FUN_005164d0
 
 #include "nocturne.h"
 
@@ -28,47 +28,49 @@
 int shape_meshlod_cpp_FUN_0051c100(void)
 
 {
-  undefined4 uVar1;
+  SLodTriangle *pSVar1;
   int iVar2;
   int iVar3;
-  int iVar4;
-  int *in_stack_00000004;
+  CLodMesh *in_stack_00000004;
   FILE *in_stack_00000008;
   
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"// S3D version\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%d\n",0x67);
-  uVar1 = shape_meshlod_cpp_FUN_005164d0();
+  iVar2 = shape_meshlod_cpp_CLodMesh_FUN_005164d0(in_stack_00000004);
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"// numTextures,numTris,numVerts,numParts,numFrames,numLights,numCameras\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"0,%d,%d,1,1,0,0\n",uVar1);
+  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"0,%d,%d,1,1,0,0\n",iVar2);
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"// partList: firstVert,numVerts,firstTri,numTris,\"name\"\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"0,%d,0,%d, \"TheOnlyPart\"\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"// texture list: name\n");
-  iVar4 = 0;
+  iVar2 = 0;
   crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"// triList: textureIndex,vertices(index, texX, texY)\n");
-  if (0 < in_stack_00000004[2]) {
+  if (0 < in_stack_00000004->tri_count) {
     iVar3 = 0;
     do {
-      iVar2 = in_stack_00000004[3] + iVar3;
-      if (*(int *)(iVar2 + 0x40) == 0) {
+      pSVar1 = in_stack_00000004->triangle_data;
+      if (*(int *)(pSVar1->field9_0x44 + iVar3 + -4) == 0) {
         crt_stdio_c_fprintf_FUN_005fe6d0
                   (in_stack_00000008,"%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\n","%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\n",
-                   0xffffffff,*(undefined4 *)(iVar2 + 0x10),(double)*(float *)(iVar2 + 0x1c),
-                   (double)*(float *)(iVar2 + 0x20),*(undefined4 *)(iVar2 + 0x14),
-                   (double)*(float *)(iVar2 + 0x24),(double)*(float *)(iVar2 + 0x28));
+                   0xffffffff,*(undefined4 *)(pSVar1->field4_0x1c + iVar3 + -0xc),
+                   (double)*(float *)(pSVar1->field4_0x1c + iVar3),
+                   (double)*(float *)(pSVar1->field4_0x1c + iVar3 + 4),
+                   *(undefined4 *)(pSVar1->field4_0x1c + iVar3 + -8),
+                   (double)*(float *)(pSVar1->field4_0x1c + iVar3 + 8),
+                   (double)*(float *)(pSVar1->field4_0x1c + iVar3 + 0xc));
       }
-      iVar4 = iVar4 + 1;
+      iVar2 = iVar2 + 1;
       iVar3 = iVar3 + 0x8c;
-    } while (iVar4 < in_stack_00000004[2]);
+    } while (iVar2 < in_stack_00000004->tri_count);
   }
   iVar3 = 0;
-  iVar4 = crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"// vertexList: x,y,z\n");
-  if (0 < *in_stack_00000004) {
+  iVar2 = crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"// vertexList: x,y,z\n");
+  if (0 < in_stack_00000004->vertex_count) {
     do {
       iVar3 = iVar3 + 1;
-      iVar4 = crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%f,%f,%f\n");
-    } while (iVar3 < *in_stack_00000004);
+      iVar2 = crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"%f,%f,%f\n");
+    } while (iVar3 < in_stack_00000004->vertex_count);
   }
-  return iVar4;
+  return iVar2;
 }
 
 
@@ -96,7 +98,7 @@ int shape_meshlod_cpp_FUN_0051c100(void)
 //   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
 // 0051c127: ADD ESP,0xc
 // 0051c12a: PUSH EBX
-// 0051c12b: CALL shape_meshlod.cpp_FUN_005164d0
+// 0051c12b: CALL shape_meshlod.cpp_CLodMesh_FUN_005164d0
 //   XREF to: 005164d0 (UNCONDITIONAL_CALL)
 // 0051c130: ADD ESP,0x4
 // 0051c133: PUSH 0x637e98

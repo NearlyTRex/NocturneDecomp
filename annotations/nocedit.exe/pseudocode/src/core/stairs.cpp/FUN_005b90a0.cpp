@@ -7,16 +7,15 @@
 //   core_dracbrid.cpp_FUN_004869a0 (004869a0) at 00486bbb [UNCONDITIONAL_CALL]
 //   core_flies.cpp_FUN_004cc300 (004cc300) at 004cc3ad [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00652fc6
-//   undefined4 DAT_00652fce
-//   undefined4 DAT_00652fd2
-//   undefined4 DAT_00652fd6
-//   undefined4 DAT_00652fda
-//   undefined4 DAT_00652fde
+//   double DOUBLE_00652fc6 = 0.5
+//   float FLOAT_00652fce = 2
+//   float FLOAT_00652fd2 = -3
+//   float FLOAT_00652fd6 = 3
+//   float FLOAT_00652fda = -2
+//   float FLOAT_00652fde = 4
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_stairs.cpp_FUN_005b90a0(undefined4 param_1, undefined4
    param_2, undefined4 param_3) */
 
@@ -39,23 +38,23 @@ void core_stairs_cpp_FUN_005b90a0(void)
   float in_stack_0000000c;
   
   fVar1 = in_stack_00000008 * in_stack_00000008;
-  fVar3 = (1.0 - in_stack_0000000c) * (float)_DAT_00652fc6;
+  fVar3 = (1.0 - in_stack_0000000c) * (float)DOUBLE_00652fc6;
   fVar2 = fVar1 * in_stack_00000008;
-  fVar4 = fVar3 * _DAT_00652fce;
-  fVar7 = fVar3 * _DAT_00652fd2;
-  fVar6 = _DAT_00652fce - fVar3;
-  fVar5 = fVar3 + _DAT_00652fd2;
-  fVar9 = _DAT_00652fd6 - fVar4;
+  fVar4 = fVar3 * FLOAT_00652fce;
+  fVar7 = fVar3 * FLOAT_00652fd2;
+  fVar6 = FLOAT_00652fce - fVar3;
+  fVar5 = fVar3 + FLOAT_00652fd2;
+  fVar9 = FLOAT_00652fd6 - fVar4;
   in_stack_00000004[1] = fVar5 * fVar1 + fVar6 * fVar2 + 1.0;
-  fVar8 = fVar3 * _DAT_00652fde;
-  fVar10 = fVar3 + _DAT_00652fda;
+  fVar8 = fVar3 * FLOAT_00652fde;
+  fVar10 = fVar3 + FLOAT_00652fda;
   in_stack_00000004[3] = fVar3 * fVar2 - fVar3 * fVar1;
-  fVar11 = fVar3 * _DAT_00652fd6;
-  fVar6 = fVar6 * _DAT_00652fd6;
+  fVar11 = fVar3 * FLOAT_00652fd6;
+  fVar6 = fVar6 * FLOAT_00652fd6;
   in_stack_00000004[4] = (fVar8 * in_stack_00000008 + fVar7 * fVar1) - fVar3;
-  fVar7 = fVar9 * _DAT_00652fce;
-  in_stack_00000004[5] = fVar5 * _DAT_00652fce * in_stack_00000008 + fVar6 * fVar1;
-  fVar5 = fVar10 * _DAT_00652fd6;
+  fVar7 = fVar9 * FLOAT_00652fce;
+  in_stack_00000004[5] = fVar5 * FLOAT_00652fce * in_stack_00000008 + fVar6 * fVar1;
+  fVar5 = fVar10 * FLOAT_00652fd6;
   in_stack_00000004[7] = fVar11 * fVar1 - fVar4 * in_stack_00000008;
   *in_stack_00000004 = (-fVar3 * fVar2 + fVar4 * fVar1) - fVar3 * in_stack_00000008;
   in_stack_00000004[2] = fVar9 * fVar1 + fVar10 * fVar2 + fVar3 * in_stack_00000008;

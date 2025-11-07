@@ -5,7 +5,7 @@
 // Signature: void core_motion.cpp_CMotionController_reset_FUN_0052dad0(CMotionController * this_ptr)
 // Cross-references:
 //   core_motion.cpp_CMotionController_ctor_FUN_0052d570 (0052d570) at 0052d587 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596ae9 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00596ae9 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_motion.cpp_CMotionController_clearTweenState_FUN_0052de40
 

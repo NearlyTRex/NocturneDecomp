@@ -40,7 +40,7 @@
 //   core_set.cpp_CDemonSet_FUN_00570040 (00570040) at 0057027b [UNCONDITIONAL_CALL]
 //   core_set.cpp_FUN_005702b0 (005702b0) at 00570690 [UNCONDITIONAL_CALL]
 //   core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50 (00587b50) at 00587d15 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597320 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00597320 [UNCONDITIONAL_CALL]
 //   core_svetlana.cpp_CSvetlana_FUN_005d9bc0 (005d9bc0) at 005d9c8f [UNCONDITIONAL_CALL]
 //   core_vessel.cpp_FUN_005e98b0 (005e98b0) at 005e9943 [UNCONDITIONAL_CALL]
 //   core_water.cpp_CWater_render_FUN_005ea320 (005ea320) at 005ea753 [UNCONDITIONAL_CALL]

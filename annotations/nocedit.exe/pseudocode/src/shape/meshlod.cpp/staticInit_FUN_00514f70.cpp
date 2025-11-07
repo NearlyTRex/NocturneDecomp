@@ -1,8 +1,8 @@
 // Name: shape_meshlod.cpp_staticInit_FUN_00514f70
 // Address: 00514f70
 // Address Range: [[00514f70, 00514f87]]
-// Convention: unknown
-// Signature: undefined shape_meshlod.cpp_staticInit_FUN_00514f70()
+// Convention: __cdecl
+// Signature: void shape_meshlod.cpp_staticInit_FUN_00514f70(void)
 // Globals:
 //   WatcomTypeInfo g_CVectorTypeInfo
 //   CVector3f[400] CVector3f_ARRAY_02f313f0
@@ -11,7 +11,7 @@
 
 #include "nocturne.h"
 
-void shape_meshlod_cpp_staticInit_FUN_00514f70(void)
+void __cdecl shape_meshlod_cpp_staticInit_FUN_00514f70(void)
 
 {
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667

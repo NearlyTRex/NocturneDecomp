@@ -10,7 +10,7 @@
 //   core_script.cpp_CScript_dtor_FUN_00559840 (00559840) at 00559854 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_00561a30 (00561a30) at 00561bd6 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_005671a0 (005671a0) at 0056720e [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_ExportModel_FUN_00595fc0 (00595fc0) at 0059684c [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (00595fc0) at 0059684c [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 (004baf00) at 004bb550 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740 (004ba740) at 004baee2 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0 (004bccf0) at 004bce34 [UNCONDITIONAL_CALL]

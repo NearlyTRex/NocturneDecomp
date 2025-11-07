@@ -4,10 +4,10 @@
 // Convention: unknown
 // Signature: undefined shape_meshlod.cpp_FUN_0051e6b0()
 // Cross-references:
+//   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051df93 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d677 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051df93 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0066136c
+//   float FLOAT_0066136c = 256
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonRenderer g_CDemonRendererInstance
 // Function calls:
@@ -15,9 +15,6 @@
 //   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 shape_meshlod.cpp_FUN_0051e6b0(undefined4 param_1) */
 
 void shape_meshlod_cpp_FUN_0051e6b0(void)
 
@@ -37,8 +34,8 @@ void shape_meshlod_cpp_FUN_0051e6b0(void)
     iVar3 = 0;
     do {
       shape_meshlod_cpp_FUN_0051b2e0();
-      local_18.x = (int)ROUND(local_8 * _DAT_0066136c);
-      local_18.y = (int)ROUND(unaff_EBP * _DAT_0066136c);
+      local_18.x = (int)ROUND(local_8 * FLOAT_0066136c);
+      local_18.y = (int)ROUND(unaff_EBP * FLOAT_0066136c);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
                  ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +

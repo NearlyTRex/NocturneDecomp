@@ -19,7 +19,7 @@
 //   core_script.cpp_FUN_00559b20 (00559b20) at 00559bea [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_005645d0 (005645d0) at 0056462b [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_005664d0 (005664d0) at 00566593 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596b9e [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00596b9e [UNCONDITIONAL_CALL]
 //   engine_2d.c_fillRectWithBorder_FUN_00403200 (00403200) at 0040321c [UNCONDITIONAL_CALL]
 //   engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850 (004d0850) at 004d08b1 [UNCONDITIONAL_CALL]
 //   engine_font.cpp_CBitFont_showFontTest_FUN_004d04b0 (004d04b0) at 004d04dc [UNCONDITIONAL_CALL]
@@ -33,8 +33,8 @@
 //   shape_edittool.cpp_CInputString_draw_FUN_0049d9b0 (0049d9b0) at 0049dab9 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40 (004a4d40) at 004a5046 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_draw3DBorder_FUN_004a58f0 (004a58f0) at 004a597f [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051dba2 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d588 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051dba2 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_ClipLeft
 //   int g_ClipTop

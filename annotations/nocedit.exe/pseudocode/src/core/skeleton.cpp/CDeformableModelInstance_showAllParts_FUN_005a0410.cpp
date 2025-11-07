@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_actor.cpp_serializePartStatus_FUN_0040bae0 (0040bae0) at 0040bb32 [UNCONDITIONAL_CALL]
 //   core_boneguy.cpp_FUN_0041bf90 (0041bf90) at 0041c256 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005971eb [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 005971eb [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 (005a0840) at 005a0876 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"

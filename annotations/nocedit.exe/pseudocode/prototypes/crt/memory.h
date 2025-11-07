@@ -27,6 +27,10 @@ void * destroyTypeArray(WatcomTypeArrayInfo * destroy_info);
 // Address: 005feee9
 int freeTypeArray(void * * obj_array, int obj_count, WatcomTypeInfo * type_info);
 
+// Original: crt_memory.c_copyObjectArray_FUN_00600bc2
+// Address: 00600bc2
+void * copyObjectArray(void * dest, void * source, int count, WatcomTypeInfo * type_info);
+
 // Original: crt_memory.c_dispatchObjectArrayConstructor_FUN_00601200
 // Address: 00601200
 void * dispatchObjectArrayConstructor(void * array_ptr, int element_count, WatcomTypeInfo * type_info);
@@ -54,6 +58,10 @@ void * realloc(void * ptr, ulong new_size);
 // Original: crt_memory.c_realloc_implementation_FUN_00601e08
 // Address: 00601e08
 void * realloc::implementation(void * ptr, ulong new_size);
+
+// Original: crt_memory.c_copyArrayWithFunction_FUN_006020c2
+// Address: 006020c2
+void * copyArrayWithFunction(void * dest, void * source, int count, int element_size, void * copy_func);
 
 // Original: crt_memory.c_malloc_FUN_006021da
 // Address: 006021da

@@ -2,7 +2,7 @@
 // Address: 0058a4a0
 // Address Range: [[0058a4a0, 0058aa01]]
 // Convention: __cdecl
-// Signature: void core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneStructure * this_ptr)
+// Signature: void core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneStructure * this_ptr, FILE * file, int * frame_count_out)
 // Cross-references:
 //   core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0 (0058a3d0) at 0058a43f [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c235 [UNCONDITIONAL_CALL]
@@ -20,10 +20,10 @@
 //   TerminatedCString s_Hell_froze_while_shuffli_0064a3b0
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   undefined1 DAT_03659830
-//   undefined1 DAT_03659831
-//   undefined1 DAT_03659832
-//   undefined1 DAT_03659833
+//   char[100][30] g_BoneNameBuffer
+//   undefined4 DAT_03659831
+//   undefined4 DAT_03659832
+//   undefined4 DAT_03659833
 //   undefined4 DAT_0365984e
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -35,7 +35,9 @@
 
 #include "nocturne.h"
 
-void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneStructure *this_ptr)
+void __cdecl
+core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
+          (CBoneStructure *this_ptr,FILE *file,int *frame_count_out)
 
 {
   char cVar1;
@@ -51,18 +53,17 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
   char *pcVar10;
   streambuf **ppsVar11;
   int *piVar12;
-  undefined1 *puVar13;
+  char (*pacVar13) [30];
   char *pcVar14;
   streambuf **ppsVar15;
   byte bVar16;
   streambuf **str2;
   streambuf **ppsVar17;
-  FILE *in_stack_00000010;
   FILE *in_stack_00000014;
   int *in_stack_00000018;
   FILE *in_stack_0000001c;
   int *in_stack_00000020;
-  undefined1 *puVar18;
+  char (*pacVar18) [30];
   int aiStack_22c [100];
   int aiStack_9c [8];
   int local_7c;
@@ -99,11 +100,11 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
   crt_stack_c_stack_probe_FUN_005ff9f3(0x25c);
   iVar5 = 1;
   do {
-    iVar4 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000010);
+    iVar4 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)frame_count_out);
     if (iVar4 < 0) break;
   } while ((iVar4 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
   crt_stdio_c_fscanf_FUN_005fe7c0
-            (in_stack_00000014,"%d,%d\n",in_stack_00000010,in_stack_00000018);
+            (in_stack_00000014,"%d,%d\n",frame_count_out,in_stack_00000018);
   if (100 < (int)in_stack_00000014->_ptr) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x2a6;
@@ -118,7 +119,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
   if (0 < (int)in_stack_0000001c->_ptr) {
     local_1c = &in_stack_0000001c->_cnt;
     local_14 = &in_stack_0000001c[1]._link;
-    pcVar14 = &DAT_03659830;
+    pcVar14 = g_BoneNameBuffer[0];
     do {
       pcVar10 = (char *)(iVar5 * 0x84 + local_20);
       crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_0000001c,"\"%[^\"]\",%d\n","\"%[^\"]\",%d\n",pcVar10,local_18);
@@ -175,7 +176,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
           ppsVar17 = ppsVar17 + 0x21;
           str2 = str2 + 0x21;
           puVar9 = piVar8 + 1;
-          iVar4 = aiStack_22c[(int)this_ptr] - aiStack_22c[(int)(this_ptr + 1)];
+          iVar4 = aiStack_22c[(int)this_ptr] - aiStack_22c[(int)((int)&this_ptr->bone_count + 1)];
           if (iVar4 == 0) {
             iVar4 = crt_string_c_stricmp_FUN_005fe7f0((char *)str1,(char *)str2);
           }
@@ -233,7 +234,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
           }
           piVar7 = piVar7 + 0x21;
           str1 = str1 + 0x21;
-          this_ptr = this_ptr + 1;
+          this_ptr = (CBoneStructure *)((int)&this_ptr->bone_count + 1);
           piVar8 = puVar9;
         } while ((int)this_ptr < iVar5);
       }
@@ -242,20 +243,20 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
   }
   iVar5 = 0;
   if (0 < *in_stack_00000020) {
-    puVar13 = &DAT_03659830;
+    pacVar13 = g_BoneNameBuffer;
     piVar8 = in_stack_00000020;
     do {
-      puVar18 = puVar13;
+      pacVar18 = pacVar13;
       iVar4 = core_skeledit_cpp_FUN_0058ac30();
       piVar8[0xce5] = iVar4;
       if (iVar4 < 0) {
         g_CurrentFilename = "..\\core\\skeledit.cpp";
         g_CurrentLineNumber = 0x2e8;
-        core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze while shuffling bones...",puVar18);
+        core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze while shuffling bones...",pacVar18);
       }
       piVar8 = piVar8 + 1;
       iVar5 = iVar5 + 1;
-      puVar13 = puVar13 + 0x1e;
+      pacVar13 = pacVar13 + 1;
     } while (iVar5 < *in_stack_00000020);
   }
   iVar5 = 0;

@@ -8,8 +8,8 @@
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c327 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_d_d_f_f_d_f_f_d_f_f_0064a8cf
-//   undefined4 DAT_0064a8f2
-//   undefined4 DAT_0064a8fa
+//   double DOUBLE_0064a8f2 = 0.00390625
+//   double DOUBLE_0064a8fa = 256
 // Function calls:
 //   core_skeledit.cpp_FUN_0058ede0
 //   crt_math.c_floor_FUN_005feb90
@@ -21,7 +21,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 undefined4 core_skeledit_cpp_FUN_0058b9b0(void)
 
@@ -95,19 +94,20 @@ undefined4 core_skeledit_cpp_FUN_0058b9b0(void)
         }
         iVar3 = iVar3 + 4;
       } while (iVar3 != 0xc);
-      local_4c = (double)((local_14 + 4.0) * (float)_DAT_0064a8f2);
+      local_4c = (double)((local_14 + 4.0) * (float)DOUBLE_0064a8f2);
       dVar11 = crt_math_c_floor_FUN_005feb90((double)fVar8);
       local_18 = (float)((float10)(double)CONCAT44(extraout_EDX,extraout_EAX) *
-                        (float10)_DAT_0064a8fa);
+                        (float10)DOUBLE_0064a8fa);
       local_4c._0_4_ =
-           (undefined4)((ulonglong)(double)((fStack_c + fStack_10) * (float)_DAT_0064a8f2) >> 0x20);
+           (undefined4)
+           ((ulonglong)(double)((fStack_c + fStack_10) * (float)DOUBLE_0064a8f2) >> 0x20);
       local_20 = extraout_EDX;
       dVar11 = crt_math_c_floor_FUN_005feb90(dVar11);
       fVar8 = (float10)dVar11;
       local_28 = extraout_EAX_00;
       local_24 = extraout_EDX_00;
       fStack_10 = (float)((float10)(double)CONCAT44(extraout_EDX_00,extraout_EAX_00) *
-                         (float10)_DAT_0064a8fa);
+                         (float10)DOUBLE_0064a8fa);
       if ((int)local_20 < 0) {
         local_20 = 0.0;
       }
@@ -122,9 +122,9 @@ undefined4 core_skeledit_cpp_FUN_0058b9b0(void)
         uVar1 = *(undefined2 *)((int)local_34 + iVar3);
         *puVar5 = uVar1;
         fVar9 = ((float10)*(float *)(local_3c + iVar3 + -4) - (float10)local_1c) *
-                (float10)_DAT_0064a8fa;
+                (float10)DOUBLE_0064a8fa;
         fVar10 = ((float10)*(float *)((int)&local_4c + iVar3) - (float10)fStack_10) *
-                 (float10)_DAT_0064a8fa;
+                 (float10)DOUBLE_0064a8fa;
         dVar11 = crt_math_c_round_FUN_005fe6b0
                            ((double)CONCAT44(iVar3,CONCAT22((short)((uint)fVar4 >> 0x10),uVar1)));
         local_4c._0_4_ = 0x58bb63;

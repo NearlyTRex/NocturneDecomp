@@ -16,8 +16,6 @@
 
 #include "nocturne.h"
 
-/* Signature: void core_skeledit.cpp_FUN_0058ac80(int* param_1, undefined4 param_2) */
-
 void core_skeledit_cpp_FUN_0058ac80(void)
 
 {

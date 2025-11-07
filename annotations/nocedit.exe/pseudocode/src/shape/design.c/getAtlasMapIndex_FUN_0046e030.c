@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (0047a3e0) at 0047a72d [UNCONDITIONAL_CALL]
 //   shape_design.c_tileTextureMaps_FUN_0046a180 (0046a180) at 0046a5c4 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051bac0 (0051bac0) at 0051bc5d [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (0051bac0) at 0051bc5d [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051ead0 (0051ead0) at 0051ec0d [UNCONDITIONAL_CALL]
 // Globals:
 //   undefined4 DAT_01e8d474

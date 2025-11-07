@@ -1,47 +1,43 @@
 // Name: shape_meshlod.cpp_FUN_0051a6b0
 // Address: 0051a6b0
-// Address Range: [[0051a6b0, 0051a766] [0051a882, 0051a8bd]]
-// Convention: unknown
-// Signature: undefined shape_meshlod.cpp_FUN_0051a6b0()
+// Address Range: [[0051a6b0, 0051a8bd]]
+// Convention: __cdecl
+// Signature: float * shape_meshlod.cpp_FUN_0051a6b0(CLodMesh * this_ptr)
 // Cross-references:
 //   shape_meshlod.cpp_FUN_0051a300 (0051a300) at 0051a370 [UNCONDITIONAL_CALL]
 // Globals:
-//   void* PTR_shape_meshlod.cpp_FUN_0051a7ff_0051a6a0 = 0051a7ff
-//   void* PTR_shape_meshlod.cpp_FUN_0051a83f_0051a6a8 = 0051a83f
+//   void* PTR_caseD_3_0051a6a0 = 0051a7ff
+//   void* PTR_caseD_5_0051a6a8 = 0051a83f
 //   TerminatedCString s_shape_meshlod_cpp_00637abc
 //   TerminatedCString s_anon_00637ad1
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
+//   shape_meshlod.cpp_FUN_00514f90
 //   shape_meshlod.cpp_FUN_00518870
 
 #include "nocturne.h"
 
-/* Signature: undefined1 shape_meshlod.cpp_FUN_0051a6b0(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3, undefined4 param_4) */
-
-float * shape_meshlod_cpp_FUN_0051a6b0(void)
+float * __cdecl shape_meshlod_cpp_FUN_0051a6b0(CLodMesh *this_ptr)
 
 {
-  float *pfVar1;
+  SLodVert *pSVar1;
   float fVar2;
   float fVar3;
-  int iVar4;
-  float fVar5;
-  byte bVar6;
-  float *pfVar7;
-  float *pfVar8;
-  int in_stack_00000004;
+  float fVar4;
+  byte bVar5;
+  SLodVert *pSVar6;
+  SLodVert *pSVar7;
   float *in_stack_00000008;
   float *in_stack_0000000c;
   int in_stack_00000010;
   
-  iVar4 = *(int *)(in_stack_00000004 + 4);
-  pfVar7 = (float *)(*(int *)(in_stack_00000010 + 0x10) * 0x4c4 + iVar4);
-  pfVar1 = (float *)(iVar4 + *(int *)(in_stack_00000010 + 0x14) * 0x4c4);
-  pfVar8 = (float *)(iVar4 + *(int *)(in_stack_00000010 + 0x18) * 0x4c4);
-  bVar6 = *(float *)(in_stack_00000010 + 0x78) <
+  pSVar7 = this_ptr->vertex_data;
+  pSVar6 = pSVar7 + *(int *)(in_stack_00000010 + 0x10);
+  pSVar1 = pSVar7 + *(int *)(in_stack_00000010 + 0x14);
+  pSVar7 = pSVar7 + *(int *)(in_stack_00000010 + 0x18);
+  bVar5 = *(float *)(in_stack_00000010 + 0x78) <
           in_stack_0000000c[2] * *(float *)(in_stack_00000010 + 0x5c) +
           *in_stack_0000000c * *(float *)(in_stack_00000010 + 0x54) +
           in_stack_0000000c[1] * *(float *)(in_stack_00000010 + 0x58);
@@ -49,25 +45,25 @@ float * shape_meshlod_cpp_FUN_0051a6b0(void)
       in_stack_0000000c[2] * *(float *)(in_stack_00000010 + 0x68) +
       *in_stack_0000000c * *(float *)(in_stack_00000010 + 0x60) +
       in_stack_0000000c[1] * *(float *)(in_stack_00000010 + 100)) {
-    bVar6 = bVar6 | 2;
+    bVar5 = bVar5 | 2;
   }
   if (*(float *)(in_stack_00000010 + 0x80) <
       in_stack_0000000c[2] * *(float *)(in_stack_00000010 + 0x74) +
       *in_stack_0000000c * *(float *)(in_stack_00000010 + 0x6c) +
       in_stack_0000000c[1] * *(float *)(in_stack_00000010 + 0x70)) {
-    bVar6 = bVar6 | 4;
+    bVar5 = bVar5 | 4;
   }
-  switch(bVar6) {
+  switch(bVar5) {
   case 0:
-    fVar5 = *(float *)(in_stack_00000010 + 0x50) -
+    fVar4 = *(float *)(in_stack_00000010 + 0x50) -
             (in_stack_0000000c[2] * *(float *)(in_stack_00000010 + 0x4c) +
             *in_stack_0000000c * *(float *)(in_stack_00000010 + 0x44) +
             in_stack_0000000c[1] * *(float *)(in_stack_00000010 + 0x48));
     fVar2 = *(float *)(in_stack_00000010 + 0x48);
     fVar3 = *(float *)(in_stack_00000010 + 0x4c);
-    *in_stack_00000008 = *in_stack_0000000c - *(float *)(in_stack_00000010 + 0x44) * fVar5;
-    in_stack_00000008[1] = in_stack_0000000c[1] - fVar2 * fVar5;
-    in_stack_00000008[2] = in_stack_0000000c[2] - fVar3 * fVar5;
+    *in_stack_00000008 = *in_stack_0000000c - *(float *)(in_stack_00000010 + 0x44) * fVar4;
+    in_stack_00000008[1] = in_stack_0000000c[1] - fVar2 * fVar4;
+    in_stack_00000008[2] = in_stack_0000000c[2] - fVar3 * fVar4;
     return in_stack_00000008;
   case 1:
     shape_meshlod_cpp_FUN_00514f90();
@@ -76,22 +72,22 @@ float * shape_meshlod_cpp_FUN_0051a6b0(void)
     shape_meshlod_cpp_FUN_00514f90();
     return in_stack_00000008;
   case 3:
-    *in_stack_00000008 = *pfVar1;
-    in_stack_00000008[1] = pfVar1[1];
-    in_stack_00000008[2] = pfVar1[2];
+    *in_stack_00000008 = *(float *)pSVar1->field0_0x0;
+    in_stack_00000008[1] = *(float *)(pSVar1->field0_0x0 + 4);
+    in_stack_00000008[2] = *(float *)(pSVar1->field0_0x0 + 8);
     return in_stack_00000008;
   case 4:
     shape_meshlod_cpp_FUN_00514f90();
     return in_stack_00000008;
   case 5:
-    *in_stack_00000008 = *pfVar7;
-    in_stack_00000008[1] = pfVar7[1];
-    in_stack_00000008[2] = pfVar7[2];
+    *in_stack_00000008 = *(float *)pSVar6->field0_0x0;
+    in_stack_00000008[1] = *(float *)(pSVar6->field0_0x0 + 4);
+    in_stack_00000008[2] = *(float *)(pSVar6->field0_0x0 + 8);
     return in_stack_00000008;
   case 6:
-    *in_stack_00000008 = *pfVar8;
-    in_stack_00000008[1] = pfVar8[1];
-    in_stack_00000008[2] = pfVar8[2];
+    *in_stack_00000008 = *(float *)pSVar7->field0_0x0;
+    in_stack_00000008[1] = *(float *)(pSVar7->field0_0x0 + 4);
+    in_stack_00000008[2] = *(float *)(pSVar7->field0_0x0 + 8);
     return in_stack_00000008;
   default:
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
@@ -188,12 +184,166 @@ float * shape_meshlod_cpp_FUN_0051a6b0(void)
 //   XREF to: 0051a829 (COMPUTED_JUMP)
 //   XREF to: 0051a83f (COMPUTED_JUMP)
 //   XREF to: 0051a862 (COMPUTED_JUMP)
+//   XREF to: 0051a6b0 (READ)
 //   XREF to: 0051a6a0 (READ)
 //   XREF to: 0051a6a8 (READ)
-//   XREF to: 0051a6b0 (READ)
+// 0051a767: LEA ECX,[ESI + 0x44]
+//   Label: caseD_0
+// 0051a76a: FLD float ptr [EDX + 0x4]
+// 0051a76d: FMUL float ptr [ECX + 0x4]
+// 0051a770: FLD float ptr [EDX]
+// 0051a772: FMUL float ptr [ECX]
+// 0051a774: FADDP
+// 0051a776: FLD float ptr [EDX + 0x8]
+// 0051a779: FMUL float ptr [ECX + 0x8]
+// 0051a77c: FADDP
+// 0051a77e: FSUBR float ptr [ESI + 0x50]
+// 0051a781: FLD float ptr [ECX]
+// 0051a783: FXCH
+// 0051a785: FSTP float ptr [ESP + 0xc]
+//   XREF to: Stack[-0x18] (WRITE)
+// 0051a789: FMUL float ptr [ESP + 0xc]
+//   XREF to: Stack[-0x18] (READ)
+// 0051a78d: FSTP float ptr [ESP]
+//   XREF to: Stack[-0x24] (DATA)
+// 0051a790: FLD float ptr [ECX + 0x4]
+// 0051a793: FMUL float ptr [ESP + 0xc]
+//   XREF to: Stack[-0x18] (READ)
+// 0051a797: FSTP float ptr [ESP + 0x4]
+//   XREF to: Stack[-0x20] (WRITE)
+// 0051a79b: FLD float ptr [ECX + 0x8]
+// 0051a79e: FMUL float ptr [ESP + 0xc]
+//   XREF to: Stack[-0x18] (READ)
+// 0051a7a2: FSTP float ptr [ESP + 0x8]
+//   XREF to: Stack[-0x1c] (WRITE)
+// 0051a7a6: FLD float ptr [EDX]
+// 0051a7a8: FSUB float ptr [ESP]
+//   XREF to: Stack[-0x24] (DATA)
+// 0051a7ab: FSTP float ptr [EBX]
+// 0051a7ad: FLD float ptr [EDX + 0x4]
+// 0051a7b0: FSUB float ptr [ESP + 0x4]
+//   XREF to: Stack[-0x20] (READ)
+// 0051a7b4: FSTP float ptr [EBX + 0x4]
+// 0051a7b7: FLD float ptr [EDX + 0x8]
+// 0051a7ba: FSUB float ptr [ESP + 0x8]
+//   XREF to: Stack[-0x1c] (READ)
+// 0051a7be: FSTP float ptr [EBX + 0x8]
+// 0051a7c1: MOV EAX,EBX
+// 0051a7c3: ADD ESP,0x14
+// 0051a7c6: POP EBP
+// 0051a7c7: POP EDI
+// 0051a7c8: POP ESI
+// 0051a7c9: POP EBX
+// 0051a7ca: RET
+// 0051a7cb: MOV EAX,dword ptr [ESP + 0x10]
+//   Label: caseD_1
+//   XREF to: Stack[-0x14] (READ)
+// 0051a7cf: PUSH EAX
+// 0051a7d0: PUSH EBP
+// 0051a7d1: PUSH EDX
+// 0051a7d2: PUSH EBX
+// 0051a7d3: CALL shape_meshlod.cpp_FUN_00514f90
+//   XREF to: 00514f90 (UNCONDITIONAL_CALL)
+// 0051a7d8: ADD ESP,0x10
+// 0051a7db: MOV EAX,EBX
+// 0051a7dd: ADD ESP,0x14
+// 0051a7e0: POP EBP
+// 0051a7e1: POP EDI
+// 0051a7e2: POP ESI
+// 0051a7e3: POP EBX
+// 0051a7e4: RET
+// 0051a7e5: PUSH EDI
+//   Label: caseD_2
+// 0051a7e6: MOV EDI,dword ptr [ESP + 0x14]
+//   XREF to: Stack[-0x14] (READ)
+// 0051a7ea: PUSH EDI
+// 0051a7eb: PUSH EDX
+// 0051a7ec: PUSH EBX
+// 0051a7ed: CALL shape_meshlod.cpp_FUN_00514f90
+//   XREF to: 00514f90 (UNCONDITIONAL_CALL)
+// 0051a7f2: ADD ESP,0x10
+// 0051a7f5: MOV EAX,EBX
+// 0051a7f7: ADD ESP,0x14
+// 0051a7fa: POP EBP
+// 0051a7fb: POP EDI
+// 0051a7fc: POP ESI
+// 0051a7fd: POP EBX
+// 0051a7fe: RET
+// 0051a7ff: MOV EDX,dword ptr [ESP + 0x10]
+//   Label: caseD_3
+//   XREF to: Stack[-0x14] (READ)
+// 0051a803: MOV EDX,dword ptr [EDX]
+// 0051a805: MOV ECX,dword ptr [ESP + 0x10]
+//   XREF to: Stack[-0x14] (READ)
+// 0051a809: MOV dword ptr [EBX],EDX
+// 0051a80b: LEA EDX,[EBX + 0x4]
+// 0051a80e: MOV ECX,dword ptr [ECX + 0x4]
+// 0051a811: MOV dword ptr [EDX],ECX
+// 0051a813: LEA ECX,[EDX + 0x4]
+// 0051a816: MOV EDX,dword ptr [ESP + 0x10]
+//   XREF to: Stack[-0x14] (READ)
+// 0051a81a: MOV EDX,dword ptr [EDX + 0x8]
+// 0051a81d: MOV dword ptr [ECX],EDX
+// 0051a81f: MOV EAX,EBX
+// 0051a821: ADD ESP,0x14
+// 0051a824: POP EBP
+// 0051a825: POP EDI
+// 0051a826: POP ESI
+// 0051a827: POP EBX
+// 0051a828: RET
+// 0051a829: PUSH EBP
+//   Label: caseD_4
+// 0051a82a: PUSH EDI
+// 0051a82b: PUSH EDX
+// 0051a82c: PUSH EBX
+// 0051a82d: CALL shape_meshlod.cpp_FUN_00514f90
+//   XREF to: 00514f90 (UNCONDITIONAL_CALL)
+// 0051a832: ADD ESP,0x10
+// 0051a835: MOV EAX,EBX
+// 0051a837: ADD ESP,0x14
+// 0051a83a: POP EBP
+// 0051a83b: POP EDI
+// 0051a83c: POP ESI
+// 0051a83d: POP EBX
+// 0051a83e: RET
+// 0051a83f: MOV EDX,dword ptr [EBP]
+//   Label: caseD_5
+// 0051a842: LEA ECX,[EBP + 0x4]
+// 0051a845: MOV dword ptr [EBX],EDX
+// 0051a847: LEA EDX,[EBX + 0x4]
+// 0051a84a: MOV ECX,dword ptr [ECX]
+// 0051a84c: MOV dword ptr [EDX],ECX
+// 0051a84e: LEA ECX,[EDX + 0x4]
+// 0051a851: LEA EDX,[EBP + 0x8]
+// 0051a854: MOV EDX,dword ptr [EDX]
+// 0051a856: MOV dword ptr [ECX],EDX
+// 0051a858: MOV EAX,EBX
+// 0051a85a: ADD ESP,0x14
+// 0051a85d: POP EBP
+// 0051a85e: POP EDI
+// 0051a85f: POP ESI
+// 0051a860: POP EBX
+// 0051a861: RET
+// 0051a862: MOV EDX,dword ptr [EDI]
+//   Label: caseD_6
+// 0051a864: LEA ECX,[EDI + 0x4]
+// 0051a867: MOV dword ptr [EBX],EDX
+// 0051a869: LEA EDX,[EBX + 0x4]
+// 0051a86c: MOV ECX,dword ptr [ECX]
+// 0051a86e: MOV dword ptr [EDX],ECX
+// 0051a870: LEA ECX,[EDI + 0x8]
+// 0051a873: MOV ECX,dword ptr [ECX]
+// 0051a875: MOV dword ptr [EDX + 0x4],ECX
+// 0051a878: MOV EAX,EBX
+// 0051a87a: ADD ESP,0x14
+// 0051a87d: POP EBP
+// 0051a87e: POP EDI
+// 0051a87f: POP ESI
+// 0051a880: POP EBX
+// 0051a881: RET
 // 0051a882: MOV EDX,0x637abc
 //   Label: default
-//   XREF to: 00637abc (PARAM)
+//   XREF to: 00637abc (DATA)
 // 0051a887: MOV ECX,0xf22
 // 0051a88c: PUSH 0x637ad1
 //   XREF to: 00637ad1 (DATA)

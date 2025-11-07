@@ -15,7 +15,7 @@
 //   core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0 (0054e1e0) at 0054e268 [UNCONDITIONAL_CALL]
 //   core_platfrm.cpp_FUN_0054cc30 (0054cc30) at 0054ce41 [UNCONDITIONAL_CALL]
 //   core_platfrm.cpp_FUN_0054ea00 (0054ea00) at 0054ee11 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00598054 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00598054 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 00595bb0 [UNCONDITIONAL_CALL]
 //   core_tentacle.cpp_CTentacle_process_FUN_005db050 (005db050) at 005db319 [UNCONDITIONAL_CALL]
 //   core_turret.cpp_CTurret_FUN_005e2910 (005e2910) at 005e29fd [UNCONDITIONAL_CALL]

@@ -5,7 +5,7 @@
 
 // Original: shape_meshlod.cpp_staticInit_FUN_00514f70
 // Address: 00514f70
-undefined staticInit();
+void staticInit(void);
 
 // Original: shape_meshlod.cpp_FUN_00514f90
 // Address: 00514f90
@@ -31,33 +31,33 @@ undefined FUN_005151c0();
 // Address: 005151e0
 undefined FUN_005151e0();
 
-// Original: shape_meshlod.cpp_LodMesh_ctor_FUN_00515840
+// Original: shape_meshlod.cpp_CLodMesh_ctor_FUN_00515840
 // Address: 00515840
-SLodMesh * LodMesh::ctor(SLodMesh * this_ptr);
+CLodMesh * CLodMesh::ctor(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_LodMesh_copy_FUN_00515860
+// Original: shape_meshlod.cpp_CLodMesh_copy_FUN_00515860
 // Address: 00515860
-SLodMesh * LodMesh::copy(SLodMesh * this_ptr, SLodMesh * other);
+CLodMesh * CLodMesh::copy(CLodMesh * this_ptr, CLodMesh * other);
 
-// Original: shape_meshlod.cpp_FUN_00515880
+// Original: shape_meshlod.cpp_CLodMesh_init_FUN_00515880
 // Address: 00515880
-undefined FUN_00515880();
+void CLodMesh::init(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_LodMesh_dtor_FUN_00515950
+// Original: shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950
 // Address: 00515950
-SLodMesh * LodMesh::dtor(SLodMesh * this_ptr);
+CLodMesh * CLodMesh::dtor(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FreeSomething1_FUN_00515970
+// Original: shape_meshlod.cpp_CLodMesh_free_FUN_00515970
 // Address: 00515970
-undefined FreeSomething1();
+void CLodMesh::free(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_CallocSomething1_FUN_00515ac0
+// Original: shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0
 // Address: 00515ac0
-undefined CallocSomething1();
+void CLodMesh::allocate(CLodMesh * this_ptr, int vertex_count, int tri_count, int submesh_count);
 
-// Original: shape_meshlod.cpp_FUN_00515ba0
+// Original: shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0
 // Address: 00515ba0
-undefined FUN_00515ba0();
+int CLodMesh::buildEdges(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_00515ca0
 // Address: 00515ca0
@@ -71,9 +71,9 @@ undefined FUN_00515d10();
 // Address: 00515d60
 undefined FUN_00515d60();
 
-// Original: shape_meshlod.cpp_AdjacentEdgesCheck_FUN_00515d90
+// Original: shape_meshlod.cpp_addAdjacentEdgeToVertex_FUN_00515d90
 // Address: 00515d90
-undefined AdjacentEdgesCheck();
+void addAdjacentEdgeToVertex(SLodVert * vertex_ptr, int edge_index);
 
 // Original: shape_meshlod.cpp_FUN_00515e00
 // Address: 00515e00
@@ -87,13 +87,13 @@ undefined FUN_00515e50();
 // Address: 00515e90
 undefined FUN_00515e90();
 
-// Original: shape_meshlod.cpp_MemoryAdjacentThing_FUN_00515ec0
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00515ec0
 // Address: 00515ec0
-undefined MemoryAdjacentThing();
+int CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_00516000
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00516000
 // Address: 00516000
-undefined FUN_00516000();
+void CLodMesh(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_00516420
 // Address: 00516420
@@ -103,13 +103,13 @@ undefined FUN_00516420();
 // Address: 00516480
 undefined FUN_00516480();
 
-// Original: shape_meshlod.cpp_FUN_005164d0
+// Original: shape_meshlod.cpp_CLodMesh_FUN_005164d0
 // Address: 005164d0
-undefined FUN_005164d0();
+int CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_00516500
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00516500
 // Address: 00516500
-undefined FUN_00516500();
+CBoundingBox3D * CLodMesh(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_00516570
 // Address: 00516570
@@ -123,61 +123,61 @@ undefined FUN_005165c0();
 // Address: 00516620
 undefined FUN_00516620();
 
-// Original: shape_meshlod.cpp_FUN_00516a40
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00516a40
 // Address: 00516a40
-undefined FUN_00516a40();
+void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_00516b40
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00516b40
 // Address: 00516b40
-undefined FUN_00516b40();
+void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_00516ba0
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00516ba0
 // Address: 00516ba0
-undefined FUN_00516ba0();
+void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_00516d50
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00516d50
 // Address: 00516d50
-undefined FUN_00516d50();
+void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_00516e10
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00516e10
 // Address: 00516e10
-undefined FUN_00516e10();
+void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_00516f50
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00516f50
 // Address: 00516f50
-undefined FUN_00516f50();
+void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_00517000
+// Original: shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000
 // Address: 00517000
-undefined FUN_00517000();
+void CLodMesh::createOrigSamplePoints(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_005172c0
 // Address: 005172c0
 undefined FUN_005172c0();
 
-// Original: shape_meshlod.cpp_FUN_005173f0
+// Original: shape_meshlod.cpp_CLodMesh_FUN_005173f0
 // Address: 005173f0
-undefined FUN_005173f0();
+void CLodMesh(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_00517530
 // Address: 00517530
 undefined FUN_00517530();
 
-// Original: shape_meshlod.cpp_FUN_00517630
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00517630
 // Address: 00517630
-undefined FUN_00517630();
+void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_00518300
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00518300
 // Address: 00518300
-undefined FUN_00518300();
+void CLodMesh(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_005183e0
 // Address: 005183e0
 undefined FUN_005183e0();
 
-// Original: shape_meshlod.cpp_FUN_00518490
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00518490
 // Address: 00518490
-undefined FUN_00518490();
+int CLodMesh(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_00518740
 // Address: 00518740
@@ -191,25 +191,25 @@ undefined ReallocSomething();
 // Address: 00518870
 undefined FUN_00518870();
 
-// Original: shape_meshlod.cpp_NeighboringFacesEdgesCheck_FUN_00518910
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00518910
 // Address: 00518910
-undefined NeighboringFacesEdgesCheck();
+void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_00519480
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00519480
 // Address: 00519480
-undefined FUN_00519480();
+int CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_00519680
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00519680
 // Address: 00519680
-undefined FUN_00519680();
+int CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_00519710
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00519710
 // Address: 00519710
-undefined FUN_00519710();
+void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_EncounteredInvalidFacesWhichWereDeleted_FUN_005197c0
+// Original: shape_meshlod.cpp_CLodMesh_FUN_005197c0
 // Address: 005197c0
-undefined EncounteredInvalidFacesWhichWereDeleted();
+void CLodMesh(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_00519830
 // Address: 00519830
@@ -227,9 +227,9 @@ undefined SamplePointsCheck();
 // Address: 0051a030
 undefined FUN_0051a030();
 
-// Original: shape_meshlod.cpp_FUN_0051a150
+// Original: shape_meshlod.cpp_CLodMesh_FUN_0051a150
 // Address: 0051a150
-undefined FUN_0051a150();
+int CLodMesh(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_0051a300
 // Address: 0051a300
@@ -239,69 +239,13 @@ undefined FUN_0051a300();
 // Address: 0051a400
 undefined FUN_0051a400();
 
-// Original: shape_meshlod.cpp_FUN_0051a4b8
-// Address: 0051a4b8
-undefined FUN_0051a4b8();
-
-// Original: shape_meshlod.cpp_FUN_0051a4e5
-// Address: 0051a4e5
-undefined FUN_0051a4e5();
-
-// Original: shape_meshlod.cpp_FUN_0051a526
-// Address: 0051a526
-undefined FUN_0051a526();
-
-// Original: shape_meshlod.cpp_FUN_0051a567
-// Address: 0051a567
-undefined FUN_0051a567();
-
-// Original: shape_meshlod.cpp_FUN_0051a598
-// Address: 0051a598
-undefined FUN_0051a598();
-
-// Original: shape_meshlod.cpp_FUN_0051a5d5
-// Address: 0051a5d5
-undefined FUN_0051a5d5();
-
-// Original: shape_meshlod.cpp_FUN_0051a602
-// Address: 0051a602
-undefined FUN_0051a602();
-
 // Original: shape_meshlod.cpp_FUN_0051a6b0
 // Address: 0051a6b0
-undefined FUN_0051a6b0();
+float * FUN_0051a6b0(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_0051a767
-// Address: 0051a767
-undefined FUN_0051a767();
-
-// Original: shape_meshlod.cpp_FUN_0051a7cb
-// Address: 0051a7cb
-undefined FUN_0051a7cb();
-
-// Original: shape_meshlod.cpp_FUN_0051a7e5
-// Address: 0051a7e5
-undefined FUN_0051a7e5();
-
-// Original: shape_meshlod.cpp_FUN_0051a7ff
-// Address: 0051a7ff
-undefined FUN_0051a7ff();
-
-// Original: shape_meshlod.cpp_FUN_0051a829
-// Address: 0051a829
-undefined FUN_0051a829();
-
-// Original: shape_meshlod.cpp_FUN_0051a83f
-// Address: 0051a83f
-undefined FUN_0051a83f();
-
-// Original: shape_meshlod.cpp_FUN_0051a862
-// Address: 0051a862
-undefined FUN_0051a862();
-
-// Original: shape_meshlod.cpp_FUN_0051a8c0
+// Original: shape_meshlod.cpp_CLodMesh_FUN_0051a8c0
 // Address: 0051a8c0
-undefined FUN_0051a8c0();
+CLodMesh * CLodMesh(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_0051a980
 // Address: 0051a980
@@ -311,21 +255,21 @@ undefined FUN_0051a980();
 // Address: 0051a9d0
 undefined FUN_0051a9d0();
 
-// Original: shape_meshlod.cpp_OpenS3DFile_FUN_0051aa60
+// Original: shape_meshlod.cpp_CLodMesh_FUN_0051aa60
 // Address: 0051aa60
-undefined OpenS3DFile();
+void CLodMesh(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_0051ad60
 // Address: 0051ad60
 undefined FUN_0051ad60();
 
-// Original: shape_meshlod.cpp_FUN_0051adf0
+// Original: shape_meshlod.cpp_CLodMesh_FUN_0051adf0
 // Address: 0051adf0
-undefined FUN_0051adf0();
+void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_0051b080
+// Original: shape_meshlod.cpp_CLodMesh_FUN_0051b080
 // Address: 0051b080
-undefined FUN_0051b080();
+void CLodMesh(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_0051b2b0
 // Address: 0051b2b0
@@ -335,17 +279,17 @@ undefined FUN_0051b2b0();
 // Address: 0051b2e0
 undefined FUN_0051b2e0();
 
-// Original: shape_meshlod.cpp_FUN_0051b330
+// Original: shape_meshlod.cpp_CLodMesh_FUN_0051b330
 // Address: 0051b330
-undefined FUN_0051b330();
+void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_0051b3e0
+// Original: shape_meshlod.cpp_CLodMesh_FUN_0051b3e0
 // Address: 0051b3e0
-undefined FUN_0051b3e0();
+void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_0051b570
+// Original: shape_meshlod.cpp_CLodMesh_FUN_0051b570
 // Address: 0051b570
-undefined FUN_0051b570();
+void CLodMesh(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_0051b6f0
 // Address: 0051b6f0
@@ -359,21 +303,21 @@ undefined FUN_0051b720();
 // Address: 0051b770
 undefined FUN_0051b770();
 
-// Original: shape_meshlod.cpp_TryingToCloseFileMaybe_FUN_0051b870
+// Original: shape_meshlod.cpp_CLodMesh_FUN_0051b870
 // Address: 0051b870
-undefined TryingToCloseFileMaybe();
+void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_0051b8a0
+// Original: shape_meshlod.cpp_CLodMesh_FUN_0051b8a0
 // Address: 0051b8a0
-undefined FUN_0051b8a0();
+int CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_LodMesh_getLOD_FUN_0051b920
+// Original: shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920
 // Address: 0051b920
-undefined LodMesh::getLOD();
+void CLodMesh::getLOD(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_0051bac0
+// Original: shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0
 // Address: 0051bac0
-undefined FUN_0051bac0();
+void CLodMesh::fixupAfterCram(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_0051bcc0
 // Address: 0051bcc0
@@ -415,41 +359,41 @@ undefined FUN_0051c600();
 // Address: 0051c6f0
 undefined FUN_0051c6f0();
 
-// Original: shape_meshlod.cpp_FUN_0051cdf0
+// Original: shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
 // Address: 0051cdf0
-undefined FUN_0051cdf0();
+void CLodMesh::eqLoad(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_0051d0e0
 // Address: 0051d0e0
 undefined FUN_0051d0e0();
 
-// Original: shape_meshlod.cpp_FUN_0051d180
+// Original: shape_meshlod.cpp_CLodMesh_FUN_0051d180
 // Address: 0051d180
-undefined FUN_0051d180();
+void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_0051d250
+// Original: shape_meshlod.cpp_CLodMesh_FUN_0051d250
 // Address: 0051d250
-undefined FUN_0051d250();
+void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_0051d2d0
+// Original: shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0
 // Address: 0051d2d0
-undefined FUN_0051d2d0();
+void CLodMesh::gridLoad(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_0051d420
 // Address: 0051d420
 undefined FUN_0051d420();
 
-// Original: shape_meshlod.cpp_FUN_0051d4a0
+// Original: shape_meshlod.cpp_CLodMesh_FUN_0051d4a0
 // Address: 0051d4a0
-undefined FUN_0051d4a0();
+void CLodMesh(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_0051d520
 // Address: 0051d520
 undefined FUN_0051d520();
 
-// Original: shape_meshlod.cpp_FUN_0051d990
+// Original: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
 // Address: 0051d990
-undefined FUN_0051d990();
+int CLodMesh::chooseLodsInteractive(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_0051e6b0
 // Address: 0051e6b0
@@ -515,25 +459,25 @@ undefined FUN_0051eec0();
 // Address: 0051eed0
 undefined FUN_0051eed0();
 
-// Original: shape_meshlod.cpp_FUN_0051ef00
+// Original: shape_meshlod.cpp_CLodFace_ctor_FUN_0051ef00
 // Address: 0051ef00
-SLodFace * FUN_0051ef00(SLodFace * this_ptr);
+CLodFace * CLodFace::ctor(CLodFace * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_0051ef20
+// Original: shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20
 // Address: 0051ef20
-void FUN_0051ef20(SLodFace * this_ptr, SLodFace * other);
+void CLodFace::copy(CLodFace * this_ptr, CLodFace * other);
 
-// Original: shape_meshlod.cpp_FUN_0051efc0
+// Original: shape_meshlod.cpp_CLodFace_dtor_FUN_0051efc0
 // Address: 0051efc0
-SLodFace * FUN_0051efc0(SLodFace * this_ptr);
+CLodFace * CLodFace::dtor(CLodFace * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_0051efe0
 // Address: 0051efe0
 undefined FUN_0051efe0();
 
-// Original: shape_meshlod.cpp_FUN_0051f080
+// Original: shape_meshlod.cpp_CSpotView_FUN_0051f080
 // Address: 0051f080
-CSpotView * FUN_0051f080(CSpotView * this_ptr);
+CSpotView * CSpotView(CSpotView * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_0051f090
 // Address: 0051f090
@@ -547,10 +491,10 @@ undefined FUN_0051f0a0();
 // Address: 0051f0b0
 undefined FUN_0051f0b0();
 
-// Original: shape_meshlod.cpp_FUN_0051f0c0
+// Original: shape_meshlod.cpp_freeLodFaces_FUN_0051f0c0
 // Address: 0051f0c0
-undefined FUN_0051f0c0();
+void freeLodFaces(CLodFace * * array);
 
-// Original: shape_meshlod.cpp_FUN_0051f0e0
+// Original: shape_meshlod.cpp_freeVectors_FUN_0051f0e0
 // Address: 0051f0e0
-undefined FUN_0051f0e0();
+void freeVectors(CVector3f * * array);

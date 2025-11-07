@@ -34,7 +34,7 @@
 //   crt_math.c_ceil_FUN_006001b2 (006001b2) at 006001c3 [UNCONDITIONAL_CALL]
 //   shape_design.c_normalizeUVCoordinates_FUN_0046e340 (0046e340) at 0046e447 [UNCONDITIONAL_CALL]
 //   shape_design.c_sampleAndFilterPixel_FUN_0046ae20 (0046ae20) at 0046ae7b [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051bac0 (0051bac0) at 0051bbc3 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (0051bac0) at 0051bbc3 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_DirectSoundDevice_HardwareSfx3DBuffer_FUN_005af750 (005af750) at 005afaf4 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a5e10 (005a5e10) at 005a5e1e [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a5e70 (005a5e70) at 005a5ea0 [UNCONDITIONAL_CALL]

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_motion.cpp_CMotionList_save_FUN_0052d170(CMotionList * this_ptr, FILE * file_handle)
 // Cross-references:
-//   core_skeledit.cpp_FUN_0058b3a0 (0058b3a0) at 0058b5c2 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0 (0058b3a0) at 0058b5c2 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_motion_list_version_0063a663
 //   TerminatedCString s_d_0063a67b

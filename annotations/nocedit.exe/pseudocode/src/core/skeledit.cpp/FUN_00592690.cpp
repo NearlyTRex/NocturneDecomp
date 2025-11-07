@@ -164,8 +164,8 @@
 //   TerminatedCString s_Biasing_motions_0064d5c6
 //   TerminatedCString s_Cyclic_bias_detected_in__0064d5d7
 //   TerminatedCString s_Finished_processing_s_OK_0064d5f2
-//   undefined4 DAT_0064d60e
-//   undefined4 DAT_0064d612
+//   float FLOAT_0064d60e = 0.01745329
+//   double DOUBLE_0064d612 = 99
 //   undefined4 DAT_00665968
 //   undefined4 DAT_0066596c
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
@@ -206,7 +206,7 @@
 //   core_skeledit.cpp_FUN_00592520
 //   core_skeledit.cpp_FUN_005925c0
 //   core_skeledit.cpp_FUN_00595f30
-//   core_skeledit.cpp_LoadFileBoneStructureMaybe_FUN_005895f0
+//   core_skeledit.cpp_readNonEmptyLine_FUN_005895f0
 //   core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910
 //   core_skeleton.cpp_CSkeleton_free_FUN_00599a50
 //   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
@@ -252,63 +252,61 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 undefined4 core_skeledit_cpp_FUN_00592690(void)
 
 {
   char cVar1;
-  CEditorTools *this_ptr;
-  FILE *pFVar2;
-  int iVar3;
-  char *pcVar4;
-  FILE *file;
-  streambuf **str;
-  int iVar5;
-  CVector3f *pCVar6;
-  SBone *pSVar7;
-  SBone *pSVar8;
-  SIZE_T n;
+  float fVar2;
+  CBoneStructure *pCVar3;
+  int iVar4;
+  char *pcVar5;
+  FILE *file_ptr;
+  CBoneStructure *pCVar6;
+  int iVar7;
+  CEditorTools *pCVar8;
   CVector3f *pCVar9;
-  int iVar10;
-  SMotion *pSVar11;
-  CQuaternion4f *pCVar12;
-  float fVar13;
+  SBone *pSVar10;
+  SBone *pSVar11;
+  SIZE_T n;
+  CVector3f *pCVar12;
+  int iVar13;
+  SMotion *pSVar14;
+  float fVar15;
+  CQuaternion4f *pCVar16;
   BADSPACEBASE *in_ESP;
-  int *piVar14;
-  CBoneStructure *pCVar15;
+  undefined4 *puVar17;
   SMotionTransition *dest;
-  byte *pbVar16;
-  float *pfVar17;
-  float *pfVar18;
-  CMatrix3x4f *pCVar19;
-  CMatrix3x4f *pCVar20;
-  CQuaternion4f *pCVar21;
-  bool bVar22;
-  byte bVar23;
-  float10 fVar24;
-  double dVar25;
+  byte *pbVar18;
+  float *pfVar19;
+  float *pfVar20;
+  CMatrix3x4f *pCVar21;
+  CMatrix3x4f *pCVar22;
+  undefined4 *puVar23;
+  bool bVar24;
+  byte bVar25;
+  float10 fVar26;
+  double dVar27;
   CSkeleton *in_stack_0000000c;
   char *in_stack_00000010;
-  char *pcVar26;
-  uint d2;
-  char *d3;
-  char *d4;
-  uint d5;
-  undefined1 *d2_00;
-  char *pcVar27;
   char *pcVar28;
-  undefined1 *d5_00;
-  char *matrix_ptr;
-  uint uVar29;
-  CSkeleton *str1;
-  FILE *pFVar30;
+  int *piVar29;
+  uint d5;
+  char *pcVar30;
+  undefined1 *d2;
+  char *in_stack_fffeec48;
   char *pcVar31;
   char *pcVar32;
-  char *pcVar33;
+  undefined1 *d5_00;
+  char *matrix_ptr;
+  uint uVar33;
+  CSkeleton *str1;
+  char *pcVar34;
+  char *pcVar35;
+  char *pcVar36;
   char *in_stack_fffeec60;
   char *in_stack_fffeec64;
-  undefined1 *in_stack_fffeec68;
+  float *in_stack_fffeec68;
   CMatrix3x4f *in_stack_fffeec6c;
   CVector3f *in_stack_fffeec70;
   CVector3f *in_stack_fffeec74;
@@ -323,19 +321,23 @@ undefined4 core_skeledit_cpp_FUN_00592690(void)
   char acStack_dec8 [32];
   int aiStack_dea8 [6793];
   int iStack_7484;
-  CMatrix3x4f aCStack_742c [281];
-  CQuaternion4f aCStack_3f60 [300];
+  undefined1 auStack_742c [28];
+  float fStack_7410;
+  float fStack_7400;
   CPickList CStack_2ca0;
   float afStack_28f8 [120];
   int aiStack_2718 [120];
   int aiStack_2538 [120];
   char acStack_2358 [400];
-  FILE local_21c8 [10];
-  undefined1 local_209c [7];
+  float local_21c8;
+  char acStack_21c2 [294];
+  undefined1 local_209c [3];
+  undefined1 local_2099 [4];
   char local_2095;
-  CQuaternion4f aCStack_2094 [18];
-  FILE aFStack_1f70 [9];
-  CBoneStructure aCStack_1e6c [260];
+  float afStack_2094 [2];
+  byte abStack_208b [283];
+  undefined4 uStack_1f70;
+  char acStack_1e6c [260];
   char acStack_1d68 [256];
   char acStack_1c68 [256];
   char acStack_1b68 [256];
@@ -356,25 +358,25 @@ undefined4 core_skeledit_cpp_FUN_00592690(void)
   char acStack_e68 [256];
   char acStack_d68 [256];
   char acStack_c68 [256];
-  CQuaternion4f aCStack_b68 [12];
-  CQuaternion4f aCStack_aa0 [12];
+  float afStack_b68 [50];
+  float afStack_aa0 [50];
   char acStack_9d8 [200];
-  CQuaternion4f aCStack_910 [12];
+  float afStack_910 [49];
   char acStack_849 [101];
-  CQuaternion4f aCStack_7e4 [6];
-  CQuaternion4f aCStack_780 [6];
+  float afStack_7e4 [25];
+  float afStack_780 [25];
   undefined1 auStack_71c [400];
-  CQuaternion4f aCStack_58c [6];
-  CQuaternion4f aCStack_528 [15];
+  float afStack_58c [25];
+  float afStack_528 [63];
   CMatrix3x4f CStack_42c;
   CMatrix3x4f CStack_3fc;
   CMatrix3x4f CStack_3cc;
   CMatrix3x4f CStack_39c;
   float afStack_36c [12];
   float afStack_33c [12];
-  float afStack_30c [12];
-  CQuaternion4f aCStack_2dc [3];
-  CQuaternion4f aCStack_2ac [5];
+  undefined4 auStack_30c [12];
+  undefined4 auStack_2dc [12];
+  float afStack_2ac [20];
   undefined1 auStack_25c [64];
   float fStack_21c;
   float afStack_218 [7];
@@ -404,58 +406,47 @@ undefined4 core_skeledit_cpp_FUN_00592690(void)
   float local_150;
   float local_14c;
   CVector3f local_148;
-  undefined1 local_13c [16];
-  float local_12c;
-  float fStack_128;
+  float local_13c;
+  float local_138;
+  float local_134;
+  CVector3f local_130;
   double local_124;
   double local_11c;
-  FILE *local_114;
+  CBoneStructure *local_114;
   float local_110;
-  int local_10c;
-  long local_108;
+  float local_10c;
+  float local_108;
   float local_104;
   int local_100;
-  float local_fc;
-  float local_f8;
+  char *local_fc;
+  char *local_f8;
   char *local_f4;
   SMotion *local_f0;
-  int local_ec;
-  int local_e8;
+  float local_ec;
+  float local_e8;
   SMotion *local_e4;
   char *local_e0;
-  int local_dc;
-  uint local_d8;
+  float local_dc;
+  float local_d8;
   float local_d4;
-  int local_d0;
+  FILE *local_d0;
   float local_cc;
   float local_c8;
   float local_c4;
-  int local_c0;
-  int local_bc;
-  FILE *local_b8;
-  float local_b0;
-  int local_ac;
-  int local_a8;
-  float local_a4;
-  float *local_a0;
-  char *local_9c;
+  float local_c0;
+  float local_bc;
+  CBoneStructure *local_b8;
+  undefined1 local_b0 [24];
   float local_98;
   SMotionTransition *local_94;
   float local_90;
   undefined1 local_8c [44];
-  undefined1 local_60 [8];
-  float local_58;
+  CVector3f local_60;
   float local_54;
-  float local_50;
-  float local_4c;
-  CSkeleton *local_48;
-  float *local_44;
-  CQuaternion4f *local_40;
-  char *local_3c;
-  SMotion *local_38;
+  undefined1 local_50 [28];
   float local_34;
-  int local_30;
-  int local_2c;
+  float local_30;
+  float local_2c;
   float local_24;
   char local_20 [4];
   char local_1c [4];
@@ -464,436 +455,448 @@ undefined4 core_skeledit_cpp_FUN_00592690(void)
   char local_10 [4];
   char acStack_c [4];
   
-  bVar23 = 0;
+  bVar25 = 0;
   crt_stack_c_stack_probe_FUN_005ff9f3(0x11418);
   core_skeleton_cpp_CSkeleton_free_FUN_00599a50(in_stack_0000000c);
-  pFVar2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  pCVar3 = (CBoneStructure *)
+           shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (in_stack_00000010,(char *)0x0,"rt","..\\core\\skeledit.cpp",
                       0x103c);
-  local_114 = pFVar2;
-  if (pFVar2 == (FILE *)0x0) {
+  local_114 = pCVar3;
+  if (pCVar3 == (CBoneStructure *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s");
     return 0;
   }
   local_110 = 0.0;
-  iVar10 = 1;
+  iVar13 = 1;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Reading state list from %s");
   do {
-    iVar3 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2);
-    if (iVar3 < 0) break;
-  } while ((iVar3 != 10) || (iVar10 = iVar10 + -1, 0 < iVar10));
-  local_10c = 0;
-  crt_stdio_c_fscanf_FUN_005fe7c0(local_114,"%d\n");
-  if (0x50 < local_10c) {
+    iVar4 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)pCVar3);
+    if (iVar4 < 0) break;
+  } while ((iVar4 != 10) || (iVar13 = iVar13 + -1, 0 < iVar13));
+  local_10c = 0.0;
+  crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)local_114,"%d\n");
+  if (0x50 < (int)local_10c) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x104a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("%s has %d states, max is %d");
   }
-  pFVar2 = local_114;
-  iVar10 = 1;
+  pCVar3 = local_114;
+  iVar13 = 1;
   do {
-    iVar3 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2);
-    if (iVar3 < 0) break;
-  } while ((iVar3 != 10) || (iVar10 = iVar10 + -1, 0 < iVar10));
+    iVar4 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)pCVar3);
+    if (iVar4 < 0) break;
+  } while ((iVar4 != 10) || (iVar13 = iVar13 + -1, 0 < iVar13));
   (in_stack_0000000c->motion_list).state_count = 0;
-  if ((in_stack_0000000c->motion_list).state_count < local_10c) {
+  if ((in_stack_0000000c->motion_list).state_count < (int)local_10c) {
     do {
       crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)0x5927ba,"%s\n");
       if ((in_stack_0000000c->motion_list).state_names[(in_stack_0000000c->motion_list).state_count]
           [0] == '/') {
-        pcVar26 = "State name begins with '/', state count is probably wrong in %s";
+        pcVar28 = "State name begins with '/', state count is probably wrong in %s";
         goto LAB_005927df;
       }
-      iVar10 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
+      iVar13 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
                          (&in_stack_0000000c->motion_list);
-      if (-1 < iVar10) {
+      if (-1 < iVar13) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Duplicate state %s in %s");
         goto LAB_005927ee;
       }
-      iVar10 = (in_stack_0000000c->motion_list).state_count + 1;
-      (in_stack_0000000c->motion_list).state_count = iVar10;
-    } while (iVar10 < local_10c);
+      iVar13 = (in_stack_0000000c->motion_list).state_count + 1;
+      (in_stack_0000000c->motion_list).state_count = iVar13;
+    } while (iVar13 < (int)local_10c);
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Reading home pose filename");
-  pFVar2 = local_114;
-  iVar3 = 1;
-  pcVar26 = "(file error)";
-  pCVar15 = aCStack_1e6c;
-  for (iVar10 = 0x41; iVar10 != 0; iVar10 = iVar10 + -1) {
-    *(undefined4 *)pCVar15 = *(undefined4 *)pcVar26;
-    pcVar26 = pcVar26 + ((uint)bVar23 * -2 + 1) * 4;
-    pCVar15 = pCVar15 + ((uint)bVar23 * -2 + 1) * 4;
+  pCVar3 = local_114;
+  iVar4 = 1;
+  pcVar28 = "(file error)";
+  pcVar31 = acStack_1e6c;
+  for (iVar13 = 0x41; iVar13 != 0; iVar13 = iVar13 + -1) {
+    *(undefined4 *)pcVar31 = *(undefined4 *)pcVar28;
+    pcVar28 = pcVar28 + ((uint)bVar25 * -2 + 1) * 4;
+    pcVar31 = pcVar31 + ((uint)bVar25 * -2 + 1) * 4;
   }
   do {
-    iVar10 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2);
-    if (iVar10 < 0) break;
-  } while ((iVar10 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
-  iVar10 = crt_stdio_c_fscanf_FUN_005fe7c0(local_114,"\"%[^\"]\"\n");
-  if (iVar10 == 1) {
-    crt_string_c_splitpath_FUN_005ff178
-              ((char *)aCStack_1e6c,local_10,acStack_1068,acStack_f68,acStack_1168);
+    iVar13 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)pCVar3);
+    if (iVar13 < 0) break;
+  } while ((iVar13 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
+  iVar13 = crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)local_114,"\"%[^\"]\"\n");
+  if (iVar13 == 1) {
+    crt_string_c_splitpath_FUN_005ff178(acStack_1e6c,local_10,acStack_1068,acStack_f68,acStack_1168)
+    ;
     if ((acStack_1068[0] == '\0') && (local_10[0] == '\0')) {
       crt_string_c_splitpath_FUN_005ff178
                 (in_stack_00000010,local_10,acStack_1068,(char *)0x0,(char *)0x0);
-      crt_file_c_makepath_FUN_005febfc
-                ((char *)aCStack_1e6c,local_10,acStack_1068,acStack_f68,acStack_1168);
+      crt_file_c_makepath_FUN_005febfc(acStack_1e6c,local_10,acStack_1068,acStack_f68,acStack_1168);
     }
-    crt_string_c_splitpath_FUN_005ff178
-              ((char *)aCStack_1e6c,local_1c,acStack_1368,acStack_e68,acStack_1768);
+    crt_string_c_splitpath_FUN_005ff178(acStack_1e6c,local_1c,acStack_1368,acStack_e68,acStack_1768)
+    ;
     if (acStack_1768[0] == '\0') {
       crt_file_c_makepath_FUN_005febfc
-                ((char *)aCStack_1e6c,local_1c,acStack_1368,acStack_e68,"pos");
+                (acStack_1e6c,local_1c,acStack_1368,acStack_e68,"pos");
     }
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Reading bone heirarchy and building reorientation matrices from %s");
-    core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(aCStack_1e6c);
+    core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0
+              ((CBoneStructure *)acStack_1e6c,in_stack_fffeec48);
     core_skeledit_cpp_FUN_0058aeb0();
-    pFVar2 = local_114;
-    iVar10 = 1;
-    pcVar26 = (char *)0x5929db;
+    pCVar3 = local_114;
+    iVar13 = 1;
+    pcVar28 = (char *)0x5929db;
     core_skeledit_cpp_FUN_00595f30();
     do {
-      pcVar27 = (char *)0x5929e4;
-      iVar3 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2);
-      if (iVar3 < 0) break;
-    } while ((iVar3 != 10) || (iVar10 = iVar10 + -1, 0 < iVar10));
-    local_108 = crt_stdio_c_ftell_FUN_00601560(local_114);
-    this_ptr = g_CEditorToolsPtr;
+      pcVar31 = (char *)0x5929e4;
+      iVar4 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)pCVar3);
+      if (iVar4 < 0) break;
+    } while ((iVar4 != 10) || (iVar13 = iVar13 + -1, 0 < iVar13));
+    local_108 = (float)crt_stdio_c_ftell_FUN_00601560((FILE *)local_114);
+    pCVar8 = g_CEditorToolsPtr;
     local_104 = 0.0;
     (in_stack_0000000c->motion_list).motion_count = 0;
     d5_00 = (undefined1 *)0x592a33;
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-              (this_ptr,"Pass 1: Building list of animation files and getting total frame count");
-    local_fc = 0.0;
+              (pCVar8,"Pass 1: Building list of animation files and getting total frame count");
+    local_fc = (char *)0x0;
     DAT_03670b5c = 0;
-    local_f8 = 1.40128e-40;
+    local_f8 = (char *)0x1869f;
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_2ca0);
     local_100 = 0;
     local_f0 = (in_stack_0000000c->motion_list).motions;
 LAB_00592a67:
-    iVar10 = local_100;
-    pcVar33 = (char *)0x0;
-    pFVar30 = local_21c8;
-    uVar29 = 0x592a7f;
-    pFVar2 = local_114;
-    local_c0 = core_skeledit_cpp_LoadFileBoneStructureMaybe_FUN_005895f0();
-    if (local_c0 == 0) {
+    iVar13 = local_100;
+    pcVar36 = (char *)0x0;
+    pcVar34 = (char *)&local_21c8;
+    uVar33 = 0x592a7f;
+    pCVar3 = local_114;
+    local_c0 = (float)core_skeledit_cpp_readNonEmptyLine_FUN_005895f0
+                                ((char *)local_114,(FILE *)0x0,(int)in_stack_fffeec60);
+    if (local_c0 == 0.0) {
 LAB_00592ea4:
-      if (iVar10 != 0) {
+      if (iVar13 != 0) {
         d5 = 0x10a4;
-        pcVar31 = "..\\core\\skeledit.cpp";
-        pcVar28 = "rt";
-        d2 = 0;
+        pcVar32 = "..\\core\\skeledit.cpp";
+        pcVar30 = "rt";
+        piVar29 = (int *)0x0;
         local_f4 = &DAT_0365caf8 + (in_stack_0000000c->motion_list).motion_count * 0x104;
-        file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                         (local_f4,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x10a4);
-        if (file == (FILE *)0x0) {
+        pCVar6 = (CBoneStructure *)
+                 shape_memdbg_cpp_openFile_FUN_0050f7a0
+                           (local_f4,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x10a4);
+        if (pCVar6 == (CBoneStructure *)0x0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"Can't open %s mentioned in %s");
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&CStack_2ca0,0,d2,(uint)pcVar28,(uint)pcVar31,d5,(uint)pcVar26);
+                    (&CStack_2ca0,0,(uint)piVar29,(uint)pcVar30,(uint)pcVar32,d5,(uint)pcVar28);
           goto LAB_005927ee;
         }
-        iVar10 = 1;
+        iVar13 = 1;
         do {
-          iVar3 = crt_stdio_c_fgetc_FUN_005fe840(file);
-          if (iVar3 < 0) break;
-        } while ((iVar3 != 10) || (iVar10 = iVar10 + -1, 0 < iVar10));
-        crt_stdio_c_fscanf_FUN_005fe7c0(file,"%d\n");
-        core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0((CBoneStructure *)file);
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",0x10b8);
+          iVar4 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)pCVar6);
+          if (iVar4 < 0) break;
+        } while ((iVar4 != 10) || (iVar13 = iVar13 + -1, 0 < iVar13));
+        crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)pCVar6,"%d\n");
+        core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(pCVar6,(FILE *)local_50,piVar29)
+        ;
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0((FILE *)pCVar6,"..\\core\\skeledit.cpp",0x10b8);
         if (0x1869e < (int)local_fc) {
-          local_fc = (float)((int)local_50 + -1);
+          local_fc = (char *)(local_50._0_4_ + -1);
         }
         if (0x1869e < (int)local_f8) {
-          local_f8 = (float)((int)local_50 + -1);
+          local_f8 = (char *)(local_50._0_4_ + -1);
         }
         if ((((int)local_fc < 0) || ((int)local_f8 < (int)local_fc)) ||
-           ((int)local_50 <= (int)local_f8)) {
+           ((int)local_50._0_4_ <= (int)local_f8)) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"Invalid frame start/end for animation %s in %s");
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&CStack_2ca0,0,d5,(uint)pcVar26,(uint)pcVar27,(uint)d5_00,uVar29);
+                    (&CStack_2ca0,0,d5,(uint)pcVar28,(uint)pcVar31,(uint)d5_00,uVar33);
           goto LAB_005927ee;
         }
-        iVar10 = core_skeledit_cpp_FUN_0058b200();
-        if (iVar10 == 0) {
+        iVar13 = core_skeledit_cpp_FUN_0058b200();
+        if (iVar13 == 0) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_2ca0.base_strlist,local_f4);
         }
-        iVar10 = (in_stack_0000000c->motion_list).motion_count;
-        local_f0[iVar10].frame_start = (int)local_104;
-        iVar3 = ((int)local_f8 - (int)local_fc) + 1;
-        local_104 = (float)((int)local_104 + iVar3);
-        local_f0[iVar10].frame_count = iVar3;
-        afStack_28f8[(in_stack_0000000c->motion_list).motion_count] = local_fc;
+        iVar13 = (in_stack_0000000c->motion_list).motion_count;
+        local_f0[iVar13].frame_start = (int)local_104;
+        local_104 = (float)((int)local_104 + (int)(local_f8 + (1 - (int)local_fc)));
+        local_f0[iVar13].frame_count = (int)(local_f8 + (1 - (int)local_fc));
+        afStack_28f8[(in_stack_0000000c->motion_list).motion_count] = (float)local_fc;
         local_100 = 0;
         (in_stack_0000000c->motion_list).motion_count =
              (in_stack_0000000c->motion_list).motion_count + 1;
-        local_fc = 0.0;
-        local_f8 = 1.40128e-40;
+        local_fc = (char *)0x0;
+        local_f8 = (char *)0x1869f;
       }
     }
     else {
       in_stack_fffeec60 = (char *)0x9;
-      pcVar33 = "animation";
-      pFVar2 = local_21c8;
-      pFVar30 = (FILE *)0x592aa0;
-      iVar3 = crt_string_c_strnicmp_FUN_005ff070((char *)pFVar2,"animation",9);
-      if (iVar3 == 0) goto LAB_00592ea4;
+      pcVar36 = "animation";
+      pCVar3 = (CBoneStructure *)&local_21c8;
+      pcVar34 = (char *)0x592aa0;
+      iVar4 = crt_string_c_strnicmp_FUN_005ff070((char *)pCVar3,"animation",9);
+      if (iVar4 == 0) goto LAB_00592ea4;
     }
-    if (local_c0 == 0) {
+    if (local_c0 == 0.0) {
       if ((in_stack_0000000c->motion_list).motion_count < 1) {
         g_CurrentFilename = "..\\core\\skeledit.cpp";
         g_CurrentLineNumber = 0x1159;
         core_main_c_displayErrorAndQuit_FUN_00506f10("No motions defined in %s");
       }
       if (0 < CStack_2ca0.base_strlist.item_count) {
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_2ca0.base_strlist,(char *)aCStack_1e6c)
-        ;
-        iVar10 = 0;
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_2ca0.base_strlist,acStack_1e6c);
+        iVar13 = 0;
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
                   (&CStack_2ca0.base_strlist,"(Dump this list to the clipboard)");
         while( true ) {
           crt_stdio_c_sprintf_FUN_005fdbd0(acStack_2358,"The following motions do not have the same skeleton\nheirarchy as the home pose file\n%s\nPress Enter to view heirarchy, or ESC when done viewing list.\n");
-          iVar10 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                             (&CStack_2ca0,acStack_2358,iVar10,0);
-          if (iVar10 < 0) break;
-          if (iVar10 == CStack_2ca0.base_strlist.item_count + -1) {
-            pcVar26 = &DAT_0366b650;
-            for (iVar3 = 0; iVar3 < CStack_2ca0.base_strlist.item_count + -1; iVar3 = iVar3 + 1) {
-              pFVar30 = (FILE *)shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                                          (&CStack_2ca0.base_strlist,iVar3);
-              iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar26,"%s\r\n");
-              pcVar26 = pcVar26 + iVar5;
+          iVar13 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                             (&CStack_2ca0,acStack_2358,iVar13,0);
+          if (iVar13 < 0) break;
+          if (iVar13 == CStack_2ca0.base_strlist.item_count + -1) {
+            pcVar28 = &DAT_0366b650;
+            for (iVar4 = 0; iVar4 < CStack_2ca0.base_strlist.item_count + -1; iVar4 = iVar4 + 1) {
+              pcVar34 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
+                                  (&CStack_2ca0.base_strlist,iVar4);
+              iVar7 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar28,"%s\r\n");
+              pcVar28 = pcVar28 + iVar7;
             }
             shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0
                       (g_CEditorToolsPtr,&DAT_0366b650);
           }
           else {
-            pFVar2 = (FILE *)shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                                       (&CStack_2ca0.base_strlist,iVar10);
-            core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0((CBoneStructure *)pFVar2);
-            pFVar30 = (FILE *)&stack0xfffeec10;
+            pCVar6 = (CBoneStructure *)
+                     shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
+                               (&CStack_2ca0.base_strlist,iVar13);
+            core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(pCVar6,(char *)pCVar3);
+            pcVar34 = &stack0xfffeec10;
             core_skeledit_cpp_FUN_0058afe0();
+            pCVar3 = pCVar6;
           }
         }
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&CStack_2ca0,0,(uint)pFVar30,(uint)pFVar2,(uint)pcVar33,(uint)in_stack_fffeec60,
+                  (&CStack_2ca0,0,(uint)pcVar34,(uint)pCVar3,(uint)pcVar36,(uint)in_stack_fffeec60,
                    (uint)in_stack_fffeec64);
         return 0;
       }
       core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910
                 (in_stack_0000000c,iStack_decc,(int)local_104);
-      iVar10 = 0;
+      iVar13 = 0;
       if (0 < in_stack_0000000c->bone_count) {
-        pcVar26 = acStack_dec8;
-        local_48 = in_stack_0000000c;
-        pSVar7 = in_stack_0000000c->bone_list;
+        pcVar28 = acStack_dec8;
+        local_50._8_4_ = in_stack_0000000c;
+        pSVar10 = in_stack_0000000c->bone_list;
         do {
-          pSVar8 = pSVar7 + 1;
-          local_48->bone_list[0].parent_index = aiStack_dea8[iVar10 * 0x21];
-          iVar10 = iVar10 + 1;
-          pcVar27 = pcVar26;
+          pSVar11 = pSVar10 + 1;
+          ((SBone *)(local_50._8_4_ + 0x2855c))->parent_index = aiStack_dea8[iVar13 * 0x21];
+          iVar13 = iVar13 + 1;
+          pcVar31 = pcVar28;
           do {
-            cVar1 = *pcVar27;
-            pSVar7->bone_name[0] = cVar1;
+            cVar1 = *pcVar31;
+            pSVar10->bone_name[0] = cVar1;
             if (cVar1 == '\0') break;
-            cVar1 = pcVar27[1];
-            pcVar27 = pcVar27 + 2;
-            pSVar7->bone_name[1] = cVar1;
-            pSVar7 = (SBone *)(pSVar7->bone_name + 2);
+            cVar1 = pcVar31[1];
+            pcVar31 = pcVar31 + 2;
+            pSVar10->bone_name[1] = cVar1;
+            pSVar10 = (SBone *)(pSVar10->bone_name + 2);
           } while (cVar1 != '\0');
-          pcVar26 = pcVar26 + 0x84;
-          local_48 = (CSkeleton *)((local_48->motion_list).state_names[1] + 2);
-          pSVar7 = pSVar8;
-        } while (iVar10 < in_stack_0000000c->bone_count);
+          pcVar28 = pcVar28 + 0x84;
+          local_50._8_4_ = (CSkeleton *)(((CMotionList *)local_50._8_4_)->state_names[1] + 2);
+          pSVar10 = pSVar11;
+        } while (iVar13 < in_stack_0000000c->bone_count);
       }
-      crt_stdio_c_fseek_FUN_005ffacc(local_114,local_108,0);
-      local_30 = 0;
+      pcVar28 = (char *)0x592ba5;
+      crt_stdio_c_fseek_FUN_005ffacc((FILE *)local_114,(long)local_108,0);
+      local_30 = 0.0;
       shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                 (g_CEditorToolsPtr,"Importing skeleton animation frames...");
       local_110 = 1.4013e-45;
       if (0 < (in_stack_0000000c->motion_list).motion_count) {
-        local_38 = (in_stack_0000000c->motion_list).motions;
-        local_3c = &DAT_0365caf8;
+        local_50._24_4_ = (in_stack_0000000c->motion_list).motions;
+        local_50._20_4_ = &DAT_0365caf8;
         local_34 = 0.0;
         do {
-          local_e4 = local_38;
-          local_e0 = local_3c;
+          local_e4 = (SMotion *)local_50._24_4_;
+          local_e0 = (char *)local_50._20_4_;
           local_24 = local_104;
-          pcVar26 = (char *)0x592c2b;
+          pcVar31 = (char *)0x592c2b;
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                    (g_CEditorToolsPtr,(float)local_38->frame_start,(float)(int)local_104);
+                    (g_CEditorToolsPtr,(float)*(int *)(local_50._24_4_ + 0x60),(float)(int)local_104
+                    );
+          pCVar3 = local_114;
           do {
-            pcVar28 = local_209c;
-            pcVar27 = (char *)0x592c43;
-            iVar10 = core_skeledit_cpp_LoadFileBoneStructureMaybe_FUN_005895f0();
-            if (iVar10 == 0) {
+            pcVar32 = local_209c;
+            pcVar30 = (char *)0x592c43;
+            iVar13 = core_skeledit_cpp_readNonEmptyLine_FUN_005895f0
+                               ((char *)pCVar3,(FILE *)&DAT_00000001,(int)pcVar34);
+            if (iVar13 == 0) {
               g_CurrentFilename = "..\\core\\skeledit.cpp";
               g_CurrentLineNumber = 0x11a5;
               core_main_c_displayErrorAndQuit_FUN_00506f10("Error parsing file!");
             }
-            pcVar32 = (char *)0x9;
-            pcVar31 = "animation";
+            pcVar35 = (char *)0x9;
+            pcVar34 = "animation";
             str1 = (CSkeleton *)local_209c;
             matrix_ptr = (char *)0x592c61;
-            iVar10 = crt_string_c_strnicmp_FUN_005ff070((char *)str1,"animation",9);
-            fVar13 = local_34;
-          } while (iVar10 != 0);
+            iVar13 = crt_string_c_strnicmp_FUN_005ff070((char *)str1,"animation",9);
+            fVar15 = local_34;
+          } while (iVar13 != 0);
           local_e4->transition_count = 0;
           local_e4->signal_count = 0;
           local_e4->fps = 30.0;
           local_e4->exit_forward_cmd = 1;
           local_e4->exit_forward_tween_time = 0.0;
           local_e4->exit_forward_set_new_state = 0;
-          local_dc = 0;
+          local_dc = 0.0;
           local_e4->exit_forward_from_frame = local_e4->frame_count;
-          local_d8 = 4;
-          local_e4->exit_forward_to_motion = local_30;
+          local_d8 = 5.60519e-45;
+          local_e4->exit_forward_to_motion = (int)local_30;
           local_d4 = 0.0;
           local_e4->exit_backward_to_frame = 0.0;
           local_24 = (float)(local_e4->frame_count + -1);
           local_e4->marker_count = 0;
-          local_e4->exit_backward_to_motion = local_30;
+          local_e4->exit_backward_to_motion = (int)local_30;
           local_e4->exit_forward_to_frame = (float)(int)local_24;
           local_cc = -99999.0;
           local_1b8 = -99999.0;
           local_1bc = -99999.0;
           local_1c0 = -99999.0;
           local_c4 = 0.0;
-          local_d0 = 0;
-          local_bc = 0;
+          local_d0 = (FILE *)0x0;
+          local_bc = 0.0;
           local_8c._0_4_ = local_e4->frame_count + -1;
           local_c8 = -99998.0;
           local_94 = local_e4->transitions;
-          local_e8 = 0;
+          local_e8 = 0.0;
           local_8c._8_4_ = &local_e4->exit_forward_tween_time;
-          local_13c._0_4_ = 0.0;
-          local_13c._4_4_ = 0.0;
-          local_a0 = &local_e4->fps;
-          pfVar17 = (float *)&DAT_00665968;
-          pCVar20 = &CStack_42c;
-          for (iVar10 = 0xc; iVar10 != 0; iVar10 = iVar10 + -1) {
-            pCVar20->m[0].w = *pfVar17;
-            pfVar17 = pfVar17 + (uint)bVar23 * -2 + 1;
-            pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar23 * -2 + 1) * 4);
+          local_13c = 0.0;
+          local_138 = 0.0;
+          local_b0._16_4_ = &local_e4->fps;
+          pfVar19 = (float *)&DAT_00665968;
+          pCVar22 = &CStack_42c;
+          for (iVar13 = 0xc; iVar13 != 0; iVar13 = iVar13 + -1) {
+            pCVar22->m[0].w = *pfVar19;
+            pfVar19 = pfVar19 + (uint)bVar25 * -2 + 1;
+            pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar25 * -2 + 1) * 4);
           }
-          local_13c._8_4_ = 0.0;
-          local_a4 = fVar13;
-          if (0 < *(int *)((int)aiStack_2718 + (int)fVar13)) {
+          local_134 = 0.0;
+          local_b0._12_4_ = fVar15;
+          if (0 < *(int *)((int)aiStack_2718 + (int)fVar15)) {
             do {
-              core_skeledit_cpp_LoadFileBoneStructureMaybe_FUN_005895f0();
-              iVar10 = crt_string_c_strnicmp_FUN_005ff070(local_209c,"fps",3);
-              if (iVar10 == 0) {
-                pcVar4 = local_209c + 3;
-                while ((g_CharacterClassificationTable[(byte)(*pcVar4 + 1)] & 2U) != 0) {
-                  pcVar4 = pcVar4 + 1;
+              core_skeledit_cpp_readNonEmptyLine_FUN_005895f0
+                        ((char *)local_114,(FILE *)&DAT_00000001,(int)pcVar28);
+              iVar13 = crt_string_c_strnicmp_FUN_005ff070(local_209c,"fps",3);
+              if (iVar13 == 0) {
+                pcVar28 = "%f";
+                pcVar5 = local_2099;
+                while ((g_CharacterClassificationTable[(byte)(*pcVar5 + 1)] & 2U) != 0) {
+                  pcVar5 = pcVar5 + 1;
                 }
-                iVar10 = crt_stdio_c_sscanf_FUN_0060013c(pcVar4,"%f");
-                if (iVar10 != 1) {
+                iVar13 = crt_stdio_c_sscanf_FUN_0060013c(pcVar5,"%f");
+                if (iVar13 != 1) {
                   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                             (g_CEditorToolsPtr,"Error parsing \"fps\" statement for animation %s in %s:\n%s");
                   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                            (&CStack_2ca0,0,(uint)pcVar28,(uint)matrix_ptr,(uint)str1,(uint)pcVar31,
-                             (uint)pcVar32);
+                            (&CStack_2ca0,0,(uint)pcVar32,(uint)matrix_ptr,(uint)str1,(uint)pcVar34,
+                             (uint)pcVar35);
                   goto LAB_005927ee;
                 }
               }
               else {
-                iVar10 = crt_string_c_strnicmp_FUN_005ff070(local_209c,"if",2);
-                if (iVar10 == 0) {
+                iVar13 = crt_string_c_strnicmp_FUN_005ff070(local_209c,"if",2);
+                if (iVar13 == 0) {
                   if (0x2c < local_e4->transition_count) {
                     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                               (g_CEditorToolsPtr,"Too many transitions in animation %s in %s, max is %d");
                     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                              (&CStack_2ca0,0,(uint)pcVar28,(uint)matrix_ptr,(uint)str1,
-                               (uint)pcVar31,(uint)pcVar32);
+                              (&CStack_2ca0,0,(uint)pcVar32,(uint)matrix_ptr,(uint)str1,
+                               (uint)pcVar34,(uint)pcVar35);
                     goto LAB_005927ee;
                   }
-                  local_9c = local_209c + 3;
-                  while ((g_CharacterClassificationTable[(byte)(*local_9c + 1)] & 2U) != 0) {
-                    local_9c = local_9c + 1;
+                  local_b0._20_4_ = local_2099;
+                  while ((g_CharacterClassificationTable[(byte)(*(char *)local_b0._20_4_ + 1)] & 2U)
+                         != 0) {
+                    local_b0._20_4_ = local_b0._20_4_ + 1;
                   }
                   local_98 = -NAN;
-                  crt_stdio_c_sscanf_FUN_0060013c(local_9c,"%s %s%n");
+                  crt_stdio_c_sscanf_FUN_0060013c((char *)local_b0._20_4_,"%s %s%n");
                   if ((int)local_98 < 3) {
                     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                               (g_CEditorToolsPtr,"Error parsing \"if\" statement for animation %s in %s:\n%s");
                     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                              (&CStack_2ca0,0,(uint)matrix_ptr,(uint)str1,(uint)pcVar31,
-                               (uint)pcVar32,(uint)pcVar33);
+                              (&CStack_2ca0,0,(uint)matrix_ptr,(uint)str1,(uint)pcVar34,
+                               (uint)pcVar35,(uint)pcVar36);
                     goto LAB_005927ee;
                   }
                   dest = local_94 + local_e4->transition_count;
+                  pcVar28 = (char *)0x593bf7;
                   crt_memory_c_memset_FUN_005fde40(dest,0,0x18);
-                  iVar10 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
+                  iVar13 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
                                      (&in_stack_0000000c->motion_list);
-                  dest->desired_state = iVar10;
-                  if (iVar10 < 0) {
+                  dest->desired_state = iVar13;
+                  if (iVar13 < 0) {
                     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                               (g_CEditorToolsPtr,"Invalid desired state \"%s\" in \"if\" statement for animation %s in %s:\n%s");
                     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                              (&CStack_2ca0,0,(uint)pcVar31,(uint)pcVar32,(uint)pcVar33,
+                              (&CStack_2ca0,0,(uint)pcVar34,(uint)pcVar35,(uint)pcVar36,
                                (uint)in_stack_fffeec60,(uint)in_stack_fffeec64);
                     goto LAB_005927ee;
                   }
-                  iVar10 = 0;
-                  pSVar11 = local_e4;
+                  iVar13 = 0;
+                  pSVar14 = local_e4;
                   if (0 < local_e4->transition_count) {
                     do {
-                      if (dest->desired_state == pSVar11->transitions[0].desired_state) {
+                      if (dest->desired_state == pSVar14->transitions[0].desired_state) {
                         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                   (g_CEditorToolsPtr,"Duplicate if %s's for animation %s in %s");
                         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                  (&CStack_2ca0,0,(uint)pcVar31,(uint)pcVar32,(uint)pcVar33,
+                                  (&CStack_2ca0,0,(uint)pcVar34,(uint)pcVar35,(uint)pcVar36,
                                    (uint)in_stack_fffeec60,(uint)in_stack_fffeec64);
                         goto LAB_005927ee;
                       }
-                      iVar10 = iVar10 + 1;
-                      pSVar11 = (SMotion *)(pSVar11->motion_name + 0x18);
-                    } while (iVar10 < local_e4->transition_count);
+                      iVar13 = iVar13 + 1;
+                      pSVar14 = (SMotion *)(pSVar14->motion_name + 0x18);
+                    } while (iVar13 < local_e4->transition_count);
                   }
-                  iVar10 = core_skeledit_cpp_FUN_005925c0();
-                  dest->cmd = iVar10;
-                  if (iVar10 == 0) {
+                  iVar13 = core_skeledit_cpp_FUN_005925c0();
+                  dest->cmd = iVar13;
+                  if (iVar13 == 0) {
                     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                               (g_CEditorToolsPtr,"Invalid transition command in \"if %s\" statement for animation %s in %s:\n%s");
                     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                              (&CStack_2ca0,0,(uint)pcVar32,(uint)pcVar33,(uint)in_stack_fffeec60,
+                              (&CStack_2ca0,0,(uint)pcVar35,(uint)pcVar36,(uint)in_stack_fffeec60,
                                (uint)in_stack_fffeec64,(uint)in_stack_fffeec68);
                     goto LAB_005927ee;
                   }
-                  pcVar32 = local_9c + (int)local_98;
-                  while ((g_CharacterClassificationTable[(byte)(*pcVar32 + 1)] & 2U) != 0) {
-                    pcVar32 = pcVar32 + 1;
+                  pcVar35 = (char *)(local_b0._20_4_ + (int)local_98);
+                  while ((g_CharacterClassificationTable[(byte)(*pcVar35 + 1)] & 2U) != 0) {
+                    pcVar35 = pcVar35 + 1;
                   }
                   local_98 = -NAN;
-                  crt_stdio_c_sscanf_FUN_0060013c(pcVar32,"\"%[^\"]\"%n");
+                  crt_stdio_c_sscanf_FUN_0060013c(pcVar35,"\"%[^\"]\"%n");
                   if ((int)local_98 < 0) {
                     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                               (g_CEditorToolsPtr,"Error parsing \"if %s\" statement parms for animation %s in %s:\n%s");
                     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                              (&CStack_2ca0,0,(uint)pcVar33,(uint)in_stack_fffeec60,
+                              (&CStack_2ca0,0,(uint)pcVar36,(uint)in_stack_fffeec60,
                                (uint)in_stack_fffeec64,(uint)in_stack_fffeec68,
                                (uint)in_stack_fffeec6c);
                     goto LAB_005927ee;
                   }
-                  pcVar28 = (char *)0x0;
-                  pcVar27 = (char *)aCStack_910;
-                  pcVar26 = (char *)0x593d7a;
+                  pcVar32 = (char *)0x0;
+                  pcVar30 = (char *)afStack_910;
+                  pcVar31 = (char *)0x593d7a;
                   crt_string_c_splitpath_FUN_005ff178
-                            (pcVar27,(char *)0x0,(char *)0x0,(char *)aCStack_aa0,(char *)0x0);
-                  pcVar31 = (char *)aCStack_aa0;
+                            (pcVar30,(char *)0x0,(char *)0x0,(char *)afStack_aa0,(char *)0x0);
+                  pcVar34 = (char *)afStack_aa0;
                   matrix_ptr = (char *)0x593d92;
                   str1 = in_stack_0000000c;
-                  iVar10 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
+                  iVar13 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
                                      (&in_stack_0000000c->motion_list);
-                  dest->to_motion_number = iVar10;
-                  if (iVar10 < 0) {
+                  dest->to_motion_number = iVar13;
+                  if (iVar13 < 0) {
                     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                               (g_CEditorToolsPtr,"Invalid destination animation for \"if %s\" statement for animation %s in %s:\n%s");
                     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -902,15 +905,14 @@ LAB_00592ea4:
                                (uint)in_stack_fffeec74);
                     goto LAB_005927ee;
                   }
-                  pCVar12 = (CQuaternion4f *)(pcVar32 + (int)local_98);
-                  while ((g_CharacterClassificationTable[(byte)(*(char *)&pCVar12->w + 1)] & 2U) !=
-                         0) {
-                    pCVar12 = (CQuaternion4f *)((int)&pCVar12->w + 1);
+                  pfVar19 = (float *)(pcVar35 + (int)local_98);
+                  while ((g_CharacterClassificationTable[(byte)(*(byte *)pfVar19 + 1)] & 2U) != 0) {
+                    pfVar19 = (float *)((int)pfVar19 + 1);
                   }
-                  if (*(char *)&pCVar12->w == '[') {
+                  if (*(byte *)pfVar19 == 0x5b) {
                     local_98 = -NAN;
                     matrix_ptr = (char *)0x593ed7;
-                    crt_stdio_c_sscanf_FUN_0060013c((char *)pCVar12,"[ %[^]] ]%n");
+                    crt_stdio_c_sscanf_FUN_0060013c((char *)pfVar19,"[ %[^]] ]%n");
                     if ((int)local_98 < 0) {
                       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                 (g_CEditorToolsPtr,"Can't parse destination frame number for \"if %s\" statement for animation %s in %s:\n%s");
@@ -919,10 +921,10 @@ LAB_00592ea4:
                                  (uint)in_stack_fffeec70,(uint)in_stack_fffeec74,in_stack_fffeec78);
                       goto LAB_005927ee;
                     }
-                    pcVar31 = (char *)aCStack_780;
+                    pcVar34 = (char *)afStack_780;
                     str1 = (CSkeleton *)0x593f07;
-                    iVar10 = core_skeledit_cpp_FUN_00592520();
-                    if (iVar10 == 0) {
+                    iVar13 = core_skeledit_cpp_FUN_00592520();
+                    if (iVar13 == 0) {
                       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                 (g_CEditorToolsPtr,"Can't parse destination frame number for \"if %s\" statement for animation %s in %s:\n%s");
                       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -932,10 +934,10 @@ LAB_00592ea4:
                     }
                     local_24 = local_90;
                     dest->to_frame_number = (float)(int)local_90;
-                    pCVar12 = (CQuaternion4f *)((int)&pCVar12->w + (int)local_98);
-                    while ((g_CharacterClassificationTable[(byte)(*(char *)&pCVar12->w + 1)] & 2U)
-                           != 0) {
-                      pCVar12 = (CQuaternion4f *)((int)&pCVar12->w + 1);
+                    pfVar19 = (float *)((int)pfVar19 + (int)local_98);
+                    while ((g_CharacterClassificationTable[(byte)(*(byte *)pfVar19 + 1)] & 2U) != 0)
+                    {
+                      pfVar19 = (float *)((int)pfVar19 + 1);
                     }
                   }
                   else {
@@ -947,12 +949,12 @@ LAB_00592ea4:
                   case 4:
                   case 5:
                   case 6:
-                    iVar10 = crt_string_c_strnicmp_FUN_005ff070((char *)pCVar12,"over",4);
-                    if (iVar10 == 0) {
+                    iVar13 = crt_string_c_strnicmp_FUN_005ff070((char *)pfVar19,"over",4);
+                    if (iVar13 == 0) {
                       local_98 = -NAN;
                       str1 = (CSkeleton *)0x593fe1;
-                      pcVar31 = (char *)pCVar12;
-                      crt_stdio_c_sscanf_FUN_0060013c((char *)pCVar12,"%*s%f%n");
+                      pcVar34 = (char *)pfVar19;
+                      crt_stdio_c_sscanf_FUN_0060013c((char *)pfVar19,"%*s%f%n");
                       if ((int)local_98 < 0) {
                         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                   (g_CEditorToolsPtr,"Can't parse tween time for \"if %s\" statement for animation %s in %s:\n%s");
@@ -962,7 +964,7 @@ LAB_00592ea4:
                         goto LAB_005927ee;
                       }
                       local_11c = (double)dest->tween_time;
-                      if ((local_11c < 0.0) || (_DAT_0064d612 < local_11c)) {
+                      if ((local_11c < 0.0) || (DOUBLE_0064d612 < local_11c)) {
                         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                   (g_CEditorToolsPtr,"Invalid tween time for \"if %s\" statement for animation %s in %s:\n%s");
                         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -970,36 +972,34 @@ LAB_00592ea4:
                                    (uint)in_stack_fffeec74,in_stack_fffeec78,in_stack_fffeec7c);
                         goto LAB_005927ee;
                       }
-                      pCVar12 = (CQuaternion4f *)((int)&pCVar12->w + (int)local_98);
-                      while ((g_CharacterClassificationTable[(byte)(*(char *)&pCVar12->w + 1)] & 2U)
-                             != 0) {
-                        pCVar12 = (CQuaternion4f *)((int)&pCVar12->w + 1);
+                      pfVar19 = (float *)((int)pfVar19 + (int)local_98);
+                      while ((g_CharacterClassificationTable[(byte)(*(byte *)pfVar19 + 1)] & 2U) !=
+                             0) {
+                        pfVar19 = (float *)((int)pfVar19 + 1);
                       }
                     }
                   }
                   in_stack_fffeec64 = (char *)0x9;
                   in_stack_fffeec60 = "keepState";
-                  pcVar32 = (char *)0x593e8a;
-                  pcVar33 = (char *)pCVar12;
-                  iVar10 = crt_string_c_strnicmp_FUN_005ff070
-                                     ((char *)pCVar12,"keepState",9);
-                  if (iVar10 == 0) {
-                    pfVar17 = &pCVar12->y;
+                  pcVar35 = (char *)0x593e8a;
+                  pcVar36 = (char *)pfVar19;
+                  iVar13 = crt_string_c_strnicmp_FUN_005ff070
+                                     ((char *)pfVar19,"keepState",9);
+                  if (iVar13 == 0) {
+                    pfVar19 = (float *)((int)pfVar19 + 9);
                     dest->set_new_state_as_desired = 1;
-                    while (pCVar12 = (CQuaternion4f *)((int)pfVar17 + 1),
-                          (g_CharacterClassificationTable[(byte)(*(char *)&pCVar12->w + 1)] & 2U) !=
-                          0) {
-                      pfVar17 = &pCVar12->w;
+                    while ((g_CharacterClassificationTable[(byte)(*(byte *)pfVar19 + 1)] & 2U) != 0)
+                    {
+                      pfVar19 = (float *)((int)pfVar19 + 1);
                     }
                   }
                   else {
                     dest->set_new_state_as_desired = 0;
                   }
-                  while ((g_CharacterClassificationTable[(byte)(*(char *)&pCVar12->w + 1)] & 2U) !=
-                         0) {
-                    pCVar12 = (CQuaternion4f *)((int)&pCVar12->w + 1);
+                  while ((g_CharacterClassificationTable[(byte)(*(byte *)pfVar19 + 1)] & 2U) != 0) {
+                    pfVar19 = (float *)((int)pfVar19 + 1);
                   }
-                  if (*(char *)&pCVar12->w != '\0') {
+                  if (*(byte *)pfVar19 != 0) {
                     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                               (g_CEditorToolsPtr,"Extra parms in \"if %s\" statement for animation %s in %s:\n%s\nExtra parms: \"%s\"");
                     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -1010,65 +1010,68 @@ LAB_00592ea4:
                   local_e4->transition_count = local_e4->transition_count + 1;
                 }
                 else {
-                  iVar10 = crt_string_c_strnicmp_FUN_005ff070(local_209c,"->",2);
-                  if (iVar10 == 0) {
-                    pCVar12 = (CQuaternion4f *)(local_209c + 2);
-                    while ((g_CharacterClassificationTable[(byte)(*(char *)&pCVar12->w + 1)] & 2U)
-                           != 0) {
-                      pCVar12 = (CQuaternion4f *)((int)&pCVar12->w + 1);
+                  iVar13 = crt_string_c_strnicmp_FUN_005ff070(local_209c,"->",2);
+                  if (iVar13 == 0) {
+                    pfVar19 = (float *)(local_209c + 2);
+                    while ((g_CharacterClassificationTable[(byte)(*(char *)pfVar19 + 1)] & 2U) != 0)
+                    {
+                      pfVar19 = (float *)((int)pfVar19 + 1);
                     }
-                    pcVar27 = (char *)0x6;
-                    pcVar26 = "(loop)";
-                    d4 = (char *)pCVar12;
-                    iVar10 = crt_string_c_strnicmp_FUN_005ff070((char *)pCVar12,"(loop)",6);
-                    pcVar4 = (char *)((int)&pCVar12->x + 2);
-                    if (iVar10 == 0) {
+                    pcVar30 = (char *)0x6;
+                    pcVar31 = "(loop)";
+                    pcVar28 = (char *)0x59417a;
+                    pcVar5 = (char *)pfVar19;
+                    iVar13 = crt_string_c_strnicmp_FUN_005ff070((char *)pfVar19,"(loop)",6);
+                    pCVar8 = (CEditorTools *)((int)pfVar19 + 6);
+                    if (iVar13 == 0) {
                       local_e4->exit_forward_to_frame = 0.0;
-                      local_e4->exit_forward_to_motion = local_30;
-                      while ((g_CharacterClassificationTable[(byte)(*pcVar4 + 1)] & 2U) != 0) {
-                        pcVar4 = pcVar4 + 1;
+                      local_e4->exit_forward_to_motion = (int)local_30;
+                      while ((g_CharacterClassificationTable[(byte)(pCVar8->field0_0x0 + 1)] & 2U)
+                             != 0) {
+                        pCVar8 = pCVar8 + 1;
                       }
                     }
                     else {
-                      pcVar28 = (char *)0x6;
-                      pcVar27 = "(stop)";
-                      d4 = (char *)0x5941d7;
-                      pcVar26 = (char *)pCVar12;
-                      iVar10 = crt_string_c_strnicmp_FUN_005ff070((char *)pCVar12,"(stop)",6)
+                      pcVar32 = (char *)0x6;
+                      pcVar30 = "(stop)";
+                      pcVar5 = (char *)0x5941d7;
+                      pcVar31 = (char *)pfVar19;
+                      iVar13 = crt_string_c_strnicmp_FUN_005ff070((char *)pfVar19,"(stop)",6)
                       ;
-                      if (iVar10 == 0) {
-                        local_e4->exit_forward_to_motion = local_30;
+                      if (iVar13 == 0) {
+                        local_e4->exit_forward_to_motion = (int)local_30;
                         local_24 = (float)(local_e4->frame_count + -1);
                         local_e4->exit_forward_to_frame = (float)(int)local_24;
-                        while ((g_CharacterClassificationTable[(byte)(*pcVar4 + 1)] & 2U) != 0) {
-                          pcVar4 = pcVar4 + 1;
+                        while ((g_CharacterClassificationTable[(byte)(pCVar8->field0_0x0 + 1)] & 2U)
+                               != 0) {
+                          pCVar8 = pCVar8 + 1;
                         }
                       }
                       else {
-                        local_60._4_4_ = -NAN;
-                        crt_stdio_c_sscanf_FUN_0060013c((char *)pCVar12," \"%[^\"]\" %n");
-                        if ((int)local_60._4_4_ < 0) {
+                        local_60.y = -NAN;
+                        crt_stdio_c_sscanf_FUN_0060013c((char *)pfVar19," \"%[^\"]\" %n");
+                        if ((int)local_60.y < 0) {
                           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                     (g_CEditorToolsPtr,"Error parsing \"->\" statement parms for animation %s in %s:\n%s");
                           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                    (&CStack_2ca0,0,(uint)pcVar32,(uint)pcVar33,
+                                    (&CStack_2ca0,0,(uint)pcVar35,(uint)pcVar36,
                                      (uint)in_stack_fffeec60,(uint)in_stack_fffeec64,
                                      (uint)in_stack_fffeec68);
                           goto LAB_005927ee;
                         }
-                        pcVar27 = (char *)0x0;
-                        pcVar26 = (char *)aCStack_b68;
-                        d4 = (char *)0x59424d;
+                        pcVar30 = (char *)0x0;
+                        pcVar31 = (char *)afStack_b68;
+                        pcVar5 = (char *)0x59424d;
                         crt_string_c_splitpath_FUN_005ff178
-                                  (pcVar26,(char *)0x0,(char *)0x0,acStack_9d8,(char *)0x0);
-                        pcVar31 = (char *)0x0;
+                                  (pcVar31,(char *)0x0,(char *)0x0,acStack_9d8,(char *)0x0);
+                        pcVar34 = (char *)0x0;
                         str1 = (CSkeleton *)acStack_9d8;
-                        pcVar28 = (char *)0x594265;
+                        pcVar32 = (char *)0x594265;
                         matrix_ptr = (char *)in_stack_0000000c;
-                        iVar10 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
+                        iVar13 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
                                            (&in_stack_0000000c->motion_list);
-                        local_e4->exit_forward_to_motion = iVar10;
-                        if (iVar10 < 0) {
+                        local_e4->exit_forward_to_motion = iVar13;
+                        if (iVar13 < 0) {
                           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                     (g_CEditorToolsPtr,"Invalid destination animation for \"->\" statement for animation %s in %s:\n%s");
                           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -1077,15 +1080,16 @@ LAB_00592ea4:
                                      (uint)in_stack_fffeec70);
                           goto LAB_005927ee;
                         }
-                        pcVar4 = (char *)((int)&pCVar12->w + local_60._4_4_);
-                        while ((g_CharacterClassificationTable[(byte)(*pcVar4 + 1)] & 2U) != 0) {
-                          pcVar4 = pcVar4 + 1;
+                        pCVar8 = (CEditorTools *)((int)pfVar19 + (int)local_60.y);
+                        while ((g_CharacterClassificationTable[(byte)(pCVar8->field0_0x0 + 1)] & 2U)
+                               != 0) {
+                          pCVar8 = pCVar8 + 1;
                         }
-                        if (*pcVar4 == '[') {
-                          local_60._4_4_ = -NAN;
-                          pcVar28 = (char *)0x5943a6;
-                          crt_stdio_c_sscanf_FUN_0060013c(pcVar4,"[ %[^]] ]%n");
-                          if ((int)local_60._4_4_ < 0) {
+                        if (pCVar8->field0_0x0 == '[') {
+                          local_60.y = -NAN;
+                          pcVar32 = (char *)0x5943a6;
+                          crt_stdio_c_sscanf_FUN_0060013c(&pCVar8->field0_0x0,"[ %[^]] ]%n");
+                          if ((int)local_60.y < 0) {
                             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                       (g_CEditorToolsPtr,"Can't parse destination frame number for \"->\" statement for animation %s in %s:\n%s");
                             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -1094,14 +1098,14 @@ LAB_00592ea4:
                                        (uint)in_stack_fffeec70,(uint)in_stack_fffeec74);
                             goto LAB_005927ee;
                           }
-                          pcVar33 = &DAT_00000001;
-                          pcVar32 = (char *)(in_stack_0000000c->motion_list).motions
+                          pcVar36 = &DAT_00000001;
+                          pcVar35 = (char *)(in_stack_0000000c->motion_list).motions
                                             [local_e4->exit_forward_to_motion].frame_count;
-                          pcVar31 = local_8c + 4;
+                          pcVar34 = local_8c + 4;
                           str1 = (CSkeleton *)(auStack_71c + 300);
                           matrix_ptr = (char *)0x5943d9;
-                          iVar10 = core_skeledit_cpp_FUN_00592520();
-                          if (iVar10 == 0) {
+                          iVar13 = core_skeledit_cpp_FUN_00592520();
+                          if (iVar13 == 0) {
                             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                       (g_CEditorToolsPtr,"Can't parse destination frame number for \"->\" statement for animation %s in %s:\n%s");
                             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -1112,37 +1116,39 @@ LAB_00592ea4:
                           }
                           local_24 = (float)local_8c._4_4_;
                           local_e4->exit_forward_to_frame = (float)(int)local_8c._4_4_;
-                          pcVar4 = pcVar4 + local_60._4_4_;
-                          while ((g_CharacterClassificationTable[(byte)(*pcVar4 + 1)] & 2U) != 0) {
-                            pcVar4 = pcVar4 + 1;
+                          pCVar8 = pCVar8 + (int)local_60.y;
+                          while ((g_CharacterClassificationTable[(byte)(pCVar8->field0_0x0 + 1)] &
+                                 2U) != 0) {
+                            pCVar8 = pCVar8 + 1;
                           }
                         }
                         else {
                           local_e4->exit_forward_to_frame = 0.0;
                         }
-                        if (*pcVar4 != '\0') {
-                          local_60._4_4_ = -NAN;
-                          crt_stdio_c_sscanf_FUN_0060013c(pcVar4,"%s%n");
-                          if ((int)local_60._4_4_ < 1) {
+                        if (pCVar8->field0_0x0 != '\0') {
+                          local_60.y = -NAN;
+                          crt_stdio_c_sscanf_FUN_0060013c(&pCVar8->field0_0x0,"%s%n");
+                          if ((int)local_60.y < 1) {
                             g_CurrentFilename = "..\\core\\skeledit.cpp";
                             g_CurrentLineNumber = 0x129f;
                             core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze!");
                           }
-                          d4 = (char *)aCStack_2ac;
-                          iVar10 = core_skeledit_cpp_FUN_005925c0();
-                          if (iVar10 != 0) {
-                            local_e4->exit_forward_cmd = iVar10;
-                            pcVar4 = pcVar4 + local_60._4_4_;
-                            while ((g_CharacterClassificationTable[(byte)(*pcVar4 + 1)] & 2U) != 0)
-                            {
-                              pcVar4 = pcVar4 + 1;
+                          pcVar5 = (char *)afStack_2ac;
+                          pcVar28 = (char *)0x594358;
+                          iVar13 = core_skeledit_cpp_FUN_005925c0();
+                          if (iVar13 != 0) {
+                            local_e4->exit_forward_cmd = iVar13;
+                            pCVar8 = pCVar8 + (int)local_60.y;
+                            while ((g_CharacterClassificationTable[(byte)(pCVar8->field0_0x0 + 1)] &
+                                   2U) != 0) {
+                              pCVar8 = pCVar8 + 1;
                             }
                             if (local_e4->exit_forward_cmd == 2) {
                               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                         (g_CEditorToolsPtr,"Invalid transition command in \"->\" statement for animation %s in %s:\n%s");
                               shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                        (&CStack_2ca0,0,(uint)pcVar28,(uint)matrix_ptr,(uint)str1,
-                                         (uint)pcVar31,(uint)pcVar32);
+                                        (&CStack_2ca0,0,(uint)pcVar32,(uint)matrix_ptr,(uint)str1,
+                                         (uint)pcVar34,(uint)pcVar35);
                               goto LAB_005927ee;
                             }
                             local_e4->exit_forward_tween_time = 0.0;
@@ -1151,68 +1157,71 @@ LAB_00592ea4:
                             case 4:
                             case 5:
                             case 6:
-                              pcVar26 = (char *)0x4;
-                              d4 = "over";
-                              uVar29 = 0x5944e6;
-                              iVar10 = crt_string_c_strnicmp_FUN_005ff070(pcVar4,"over",4);
-                              if (iVar10 == 0) {
-                                pcVar27 = local_60 + 4;
-                                d4 = "%*s%f%n";
-                                local_60._4_4_ = -NAN;
-                                d3 = pcVar4;
-                                pcVar26 = (char *)local_8c._8_4_;
-                                crt_stdio_c_sscanf_FUN_0060013c(pcVar4,"%*s%f%n");
-                                if ((int)local_60._4_4_ < 0) {
+                              pcVar31 = (char *)0x4;
+                              pcVar5 = "over";
+                              uVar33 = 0x5944e6;
+                              pcVar28 = &pCVar8->field0_0x0;
+                              iVar13 = crt_string_c_strnicmp_FUN_005ff070
+                                                 (&pCVar8->field0_0x0,"over",4);
+                              if (iVar13 == 0) {
+                                pcVar30 = (char *)&local_60.y;
+                                pcVar5 = "%*s%f%n";
+                                local_60.y = -NAN;
+                                pcVar28 = &pCVar8->field0_0x0;
+                                pcVar31 = (char *)local_8c._8_4_;
+                                crt_stdio_c_sscanf_FUN_0060013c
+                                          (&pCVar8->field0_0x0,"%*s%f%n");
+                                if ((int)local_60.y < 0) {
                                   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                             (g_CEditorToolsPtr,"Can't parse tween time for \"->\" statement for animation %s in %s:\n%s");
                                   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                            (&CStack_2ca0,0,uVar29,(uint)d3,(uint)d4,(uint)pcVar26,
-                                             (uint)pcVar27);
+                                            (&CStack_2ca0,0,uVar33,(uint)pcVar28,(uint)pcVar5,
+                                             (uint)pcVar31,(uint)pcVar30);
                                   goto LAB_005927ee;
                                 }
                                 local_124 = (double)local_e4->exit_forward_tween_time;
-                                if ((local_124 < 0.0) || (_DAT_0064d612 < local_124)) {
+                                if ((local_124 < 0.0) || (DOUBLE_0064d612 < local_124)) {
                                   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                             (g_CEditorToolsPtr,"Invalid tween time for \"->\" statement for animation %s in %s:\n%s");
                                   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                            (&CStack_2ca0,0,uVar29,(uint)d3,(uint)d4,(uint)pcVar26,
-                                             (uint)pcVar27);
+                                            (&CStack_2ca0,0,uVar33,(uint)pcVar28,(uint)pcVar5,
+                                             (uint)pcVar31,(uint)pcVar30);
                                   goto LAB_005927ee;
                                 }
-                                pcVar4 = pcVar4 + local_60._4_4_;
-                                while ((g_CharacterClassificationTable[(byte)(*pcVar4 + 1)] & 2U) !=
-                                       0) {
-                                  pcVar4 = pcVar4 + 1;
+                                pCVar8 = pCVar8 + (int)local_60.y;
+                                while ((g_CharacterClassificationTable
+                                        [(byte)(pCVar8->field0_0x0 + 1)] & 2U) != 0) {
+                                  pCVar8 = pCVar8 + 1;
                                 }
                                 if ((local_e4->exit_forward_cmd == 5) ||
                                    (local_e4->exit_forward_cmd == 6)) {
-                                  fVar24 = (float10)local_e4->frame_count -
+                                  fVar26 = (float10)local_e4->frame_count -
                                            (float10)local_e4->exit_forward_tween_time *
                                            (float10)local_e4->fps;
-                                  dVar25 = crt_math_c_round_FUN_005fe6b0
-                                                     ((double)CONCAT44(local_60._4_4_,local_e4));
-                                  *(int *)(SUB84(dVar25,0) + 0x28) = (int)ROUND(fVar24);
-                                  if (*(int *)(SUB84(dVar25,0) + 0x28) < 0) {
+                                  dVar27 = crt_math_c_round_FUN_005fe6b0
+                                                     ((double)CONCAT44(local_60.y,local_e4));
+                                  *(int *)(SUB84(dVar27,0) + 0x28) = (int)ROUND(fVar26);
+                                  if (*(int *)(SUB84(dVar27,0) + 0x28) < 0) {
                                     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                               (g_CEditorToolsPtr,"Tween time for \"->\" statement is longer than animation time in animation %s in %s:\n%s"
                                               );
                                     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                              (&CStack_2ca0,0,(uint)d3,(uint)d4,(uint)pcVar26,
-                                               (uint)pcVar27,(uint)pcVar28);
+                                              (&CStack_2ca0,0,(uint)pcVar28,(uint)pcVar5,
+                                               (uint)pcVar31,(uint)pcVar30,(uint)pcVar32);
                                     goto LAB_005927ee;
                                   }
                                 }
                               }
                             }
                           }
-                          iVar10 = crt_string_c_strnicmp_FUN_005ff070(pcVar4,"keepState",9)
-                          ;
-                          if (iVar10 == 0) {
+                          iVar13 = crt_string_c_strnicmp_FUN_005ff070
+                                             (&pCVar8->field0_0x0,"keepState",9);
+                          if (iVar13 == 0) {
                             local_e4->exit_forward_set_new_state = 1;
-                            pcVar4 = pcVar4 + 9;
-                            while ((g_CharacterClassificationTable[(byte)(*pcVar4 + 1)] & 2U) != 0)
-                            {
-                              pcVar4 = pcVar4 + 1;
+                            pCVar8 = pCVar8 + 9;
+                            while ((g_CharacterClassificationTable[(byte)(pCVar8->field0_0x0 + 1)] &
+                                   2U) != 0) {
+                              pCVar8 = pCVar8 + 1;
                             }
                           }
                           else {
@@ -1221,52 +1230,55 @@ LAB_00592ea4:
                         }
                       }
                     }
-                    while ((g_CharacterClassificationTable[(byte)(*pcVar4 + 1)] & 2U) != 0) {
-                      pcVar4 = pcVar4 + 1;
+                    while ((g_CharacterClassificationTable[(byte)(pCVar8->field0_0x0 + 1)] & 2U) !=
+                           0) {
+                      pCVar8 = pCVar8 + 1;
                     }
-                    if (*pcVar4 != '\0') {
+                    if (pCVar8->field0_0x0 != '\0') {
                       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                 (g_CEditorToolsPtr,"Extra parms in \"->\" statement for animation %s in %s:\n%s\nExtra parms: \"%s\"");
                       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                (&CStack_2ca0,0,(uint)d4,(uint)pcVar26,(uint)pcVar27,(uint)pcVar28,
-                                 (uint)matrix_ptr);
+                                (&CStack_2ca0,0,(uint)pcVar5,(uint)pcVar31,(uint)pcVar30,
+                                 (uint)pcVar32,(uint)matrix_ptr);
                       goto LAB_005927ee;
                     }
                   }
                   else {
-                    iVar10 = crt_string_c_strnicmp_FUN_005ff070(local_209c,"signal",6);
-                    if (iVar10 == 0) {
-                      pcVar26 = local_209c + 6;
-                      while ((g_CharacterClassificationTable[(byte)(*pcVar26 + 1)] & 2U) != 0) {
-                        pcVar26 = pcVar26 + 1;
+                    pcVar28 = (char *)0x59472b;
+                    iVar13 = crt_string_c_strnicmp_FUN_005ff070(local_209c,"signal",6);
+                    if (iVar13 == 0) {
+                      pcVar31 = local_2099 + 3;
+                      while ((g_CharacterClassificationTable[(byte)(*pcVar31 + 1)] & 2U) != 0) {
+                        pcVar31 = pcVar31 + 1;
                       }
                       if (0xe < local_e4->signal_count) {
                         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                   (g_CEditorToolsPtr,"Too many signals in animation %s in %s, max is %d");
                         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                  (&CStack_2ca0,0,(uint)str1,(uint)pcVar31,(uint)pcVar32,
-                                   (uint)pcVar33,(uint)in_stack_fffeec60);
+                                  (&CStack_2ca0,0,(uint)str1,(uint)pcVar34,(uint)pcVar35,
+                                   (uint)pcVar36,(uint)in_stack_fffeec60);
                         goto LAB_005927ee;
                       }
-                      iVar10 = crt_stdio_c_sscanf_FUN_0060013c(pcVar26,"%d %*s %s");
-                      if (iVar10 != 2) {
+                      pcVar28 = (char *)0x5947a8;
+                      iVar13 = crt_stdio_c_sscanf_FUN_0060013c(pcVar31,"%d %*s %s");
+                      if (iVar13 != 2) {
                         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                   (g_CEditorToolsPtr,"Error parsing \"signal\" statement for animation %s in %s:\n%s");
                         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                  (&CStack_2ca0,0,(uint)pcVar31,(uint)pcVar32,(uint)pcVar33,
+                                  (&CStack_2ca0,0,(uint)pcVar34,(uint)pcVar35,(uint)pcVar36,
                                    (uint)in_stack_fffeec60,(uint)in_stack_fffeec64);
                         goto LAB_005927ee;
                       }
                       matrix_ptr = (char *)0x0;
-                      pcVar28 = (char *)local_e4->frame_count;
-                      pcVar27 = local_8c + 0x10;
-                      pcVar26 = (char *)aCStack_7e4;
-                      iVar10 = core_skeledit_cpp_FUN_00592520();
-                      if (iVar10 == 0) {
+                      pcVar32 = (char *)local_e4->frame_count;
+                      pcVar30 = local_8c + 0x10;
+                      pcVar31 = (char *)afStack_7e4;
+                      iVar13 = core_skeledit_cpp_FUN_00592520();
+                      if (iVar13 == 0) {
                         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                   (g_CEditorToolsPtr,"Invalid frame number in \"signal\" statement for animation %s in %s:\n%s");
                         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                  (&CStack_2ca0,0,(uint)pcVar32,(uint)pcVar33,
+                                  (&CStack_2ca0,0,(uint)pcVar35,(uint)pcVar36,
                                    (uint)in_stack_fffeec60,(uint)in_stack_fffeec64,
                                    (uint)in_stack_fffeec68);
                         goto LAB_005927ee;
@@ -1275,7 +1287,7 @@ LAB_00592ea4:
                         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                   (g_CEditorToolsPtr,"Signal value cannot be 0 in \"signal\" statement for animation %s in %s:\n%s");
                         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                  (&CStack_2ca0,0,(uint)pcVar32,(uint)pcVar33,
+                                  (&CStack_2ca0,0,(uint)pcVar35,(uint)pcVar36,
                                    (uint)in_stack_fffeec60,(uint)in_stack_fffeec64,
                                    (uint)in_stack_fffeec68);
                         goto LAB_005927ee;
@@ -1285,98 +1297,98 @@ LAB_00592ea4:
                       local_e4->signal_count = local_e4->signal_count + 1;
                     }
                     else {
-                      pcVar28 = (char *)0x7;
-                      pcVar27 = "reverse";
-                      pcVar26 = local_209c;
-                      uVar29 = 0x5948d5;
-                      iVar10 = crt_string_c_strnicmp_FUN_005ff070(pcVar26,"reverse",7);
-                      if (iVar10 == 0) {
-                        local_dc = 1;
+                      pcVar32 = (char *)0x7;
+                      pcVar30 = "reverse";
+                      pcVar31 = local_209c;
+                      uVar33 = 0x5948d5;
+                      iVar13 = crt_string_c_strnicmp_FUN_005ff070(pcVar31,"reverse",7);
+                      if (iVar13 == 0) {
+                        local_dc = 1.4013e-45;
                       }
                       else {
                         matrix_ptr = (char *)0x5;
-                        pcVar28 = "filename";
-                        pcVar27 = local_209c;
-                        pcVar26 = (char *)0x5948fb;
-                        iVar10 = crt_string_c_strnicmp_FUN_005ff070(pcVar27,"filename",5);
-                        if (iVar10 != 0) {
+                        pcVar32 = "filename";
+                        pcVar30 = local_209c;
+                        pcVar31 = (char *)0x5948fb;
+                        iVar13 = crt_string_c_strnicmp_FUN_005ff070(pcVar30,"filename",5);
+                        if (iVar13 != 0) {
                           str1 = (CSkeleton *)0x6;
                           matrix_ptr = "frames";
-                          pcVar28 = local_209c;
-                          pcVar27 = (char *)0x594919;
-                          iVar10 = crt_string_c_strnicmp_FUN_005ff070(pcVar28,"frames",6);
-                          if (iVar10 != 0) {
+                          pcVar32 = local_209c;
+                          pcVar30 = (char *)0x594919;
+                          iVar13 = crt_string_c_strnicmp_FUN_005ff070(pcVar32,"frames",6);
+                          if (iVar13 != 0) {
                             matrix_ptr = local_209c;
-                            pcVar28 = (char *)0x594937;
-                            iVar10 = crt_string_c_strnicmp_FUN_005ff070
+                            pcVar32 = (char *)0x594937;
+                            iVar13 = crt_string_c_strnicmp_FUN_005ff070
                                                (matrix_ptr,"cancel",6);
-                            if (iVar10 == 0) {
-                              pCVar12 = (CQuaternion4f *)(local_209c + 6);
-                              while ((g_CharacterClassificationTable
-                                      [(byte)(*(char *)&pCVar12->w + 1)] & 2U) != 0) {
-                                pCVar12 = (CQuaternion4f *)((int)&pCVar12->w + 1);
+                            if (iVar13 == 0) {
+                              pfVar19 = (float *)(local_2099 + 3);
+                              while ((g_CharacterClassificationTable[(byte)(*(byte *)pfVar19 + 1)] &
+                                     2U) != 0) {
+                                pfVar19 = (float *)((int)pfVar19 + 1);
                               }
-                              pcVar32 = "none";
-                              local_d8 = 0;
+                              pcVar35 = "none";
+                              local_d8 = 0.0;
                               str1 = (CSkeleton *)0x594970;
-                              pcVar31 = (char *)pCVar12;
-                              pcVar4 = crt_string_c_strstr_FUN_005fedd0
-                                                 ((char *)pCVar12,"none");
-                              if (pcVar4 == (char *)0x0) {
+                              pcVar34 = (char *)pfVar19;
+                              pcVar5 = crt_string_c_strstr_FUN_005fedd0
+                                                 ((char *)pfVar19,"none");
+                              if (pcVar5 == (char *)0x0) {
 LAB_00594985:
                                 do {
-                                  if (*(byte *)&pCVar12->w == 0) break;
-                                  uVar29 = crt_ctype_c_toupper_FUN_005ff9e0
-                                                     ((uint)*(byte *)&pCVar12->w);
-                                  if (uVar29 < 0x50) {
-                                    if (0x41 < uVar29) {
-                                      if (uVar29 < 0x43) {
+                                  if (*(byte *)pfVar19 == 0) break;
+                                  uVar33 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*(byte *)pfVar19);
+                                  if (uVar33 < 0x50) {
+                                    if (0x41 < uVar33) {
+                                      if (uVar33 < 0x43) {
                                         local_d4 = (float)((uint)local_d4 | 4);
                                       }
                                       else {
-                                        if (uVar29 != 0x48) {
-                                          pCVar12 = (CQuaternion4f *)((int)&pCVar12->w + 1);
+                                        if (uVar33 != 0x48) {
+                                          pfVar19 = (float *)((int)pfVar19 + 1);
                                           goto LAB_00594985;
                                         }
                                         local_d4 = (float)((uint)local_d4 | 2);
                                       }
                                     }
                                   }
-                                  else if (uVar29 < 0x51) {
+                                  else if (uVar33 < 0x51) {
                                     local_d4 = (float)((uint)local_d4 | 1);
                                   }
-                                  else if (uVar29 < 0x59) {
-                                    if (uVar29 == 0x58) {
-                                      local_d8 = local_d8 | 1;
+                                  else if (uVar33 < 0x59) {
+                                    if (uVar33 == 0x58) {
+                                      local_d8 = (float)((uint)local_d8 | 1);
                                     }
                                   }
-                                  else if (uVar29 < 0x5a) {
-                                    local_d8 = local_d8 | 2;
+                                  else if (uVar33 < 0x5a) {
+                                    local_d8 = (float)((uint)local_d8 | 2);
                                   }
-                                  else if (uVar29 == 0x5a) {
-                                    local_d8 = local_d8 | 4;
+                                  else if (uVar33 == 0x5a) {
+                                    local_d8 = (float)((uint)local_d8 | 4);
                                   }
-                                  pCVar12 = (CQuaternion4f *)((int)&pCVar12->w + 1);
+                                  pfVar19 = (float *)((int)pfVar19 + 1);
                                 } while( true );
                               }
                             }
                             else {
                               matrix_ptr = (char *)0x5949fd;
-                              iVar10 = crt_string_c_strnicmp_FUN_005ff070
+                              iVar13 = crt_string_c_strnicmp_FUN_005ff070
                                                  (local_209c,"bias",4);
-                              if (iVar10 == 0) {
-                                pcVar28 = local_209c + 4;
-                                while ((g_CharacterClassificationTable
-                                        [(byte)(*(char *)&((CQuaternion4f *)pcVar28)->w + 1)] & 2U)
-                                       != 0) {
-                                  pcVar28 = (char *)((int)&((CQuaternion4f *)pcVar28)->w + 1);
+                              if (iVar13 == 0) {
+                                pfVar19 = (float *)local_2099;
+                                while (pcVar32 = (char *)((int)pfVar19 + 1),
+                                      (g_CharacterClassificationTable
+                                       [(byte)(*(char *)&((CBoneStructure *)pcVar32)->bone_count + 1
+                                              )] & 2U) != 0) {
+                                  pfVar19 = (float *)&((CBoneStructure *)pcVar32)->bone_count;
                                 }
                                 matrix_ptr = "frame %s to \"%[^\"]\" frame %s%n";
                                 local_8c._20_4_ = -NAN;
-                                pcVar27 = (char *)0x594a50;
+                                pcVar30 = (char *)0x594a50;
                                 crt_stdio_c_sscanf_FUN_0060013c
-                                          (pcVar28,"frame %s to \"%[^\"]\" frame %s%n");
-                                iVar10 = DAT_03670b5c;
+                                          (pcVar32,"frame %s to \"%[^\"]\" frame %s%n");
+                                iVar13 = DAT_03670b5c;
                                 if ((int)local_8c._20_4_ < 0xf) {
                                   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                             (g_CEditorToolsPtr,"Can't parse \"bias\" statement for animation %s in %s:%s");
@@ -1387,10 +1399,10 @@ LAB_00594985:
                                   goto LAB_005927ee;
                                 }
                                 (&DAT_03670b60)[DAT_03670b5c * 4] = local_30;
-                                pcVar31 = (char *)aCStack_528;
+                                pcVar34 = (char *)afStack_528;
                                 str1 = (CSkeleton *)0x594ac3;
-                                iVar3 = core_skeledit_cpp_FUN_00592520();
-                                if (iVar3 == 0) {
+                                iVar4 = core_skeledit_cpp_FUN_00592520();
+                                if (iVar4 == 0) {
                                   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                             (g_CEditorToolsPtr,"Can't parse frame to bias in \"bias\" statement for animation %s in %s:%s");
                                   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -1399,10 +1411,10 @@ LAB_00594985:
                                              in_stack_fffeec78,in_stack_fffeec7c);
                                   goto LAB_005927ee;
                                 }
-                                iVar3 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
-                                                  (&in_stack_0000000c->motion_list);
-                                (&DAT_03670b68)[iVar10 * 4] = iVar3;
-                                if (iVar3 < 0) {
+                                fVar15 = (float)core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
+                                                          (&in_stack_0000000c->motion_list);
+                                (&DAT_03670b68)[iVar13 * 4] = fVar15;
+                                if ((int)fVar15 < 0) {
                                   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                             (g_CEditorToolsPtr,"Invalid reference motion \"%s\" in \"bias\" statement for animation %s in %s:%s");
                                   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -1411,7 +1423,7 @@ LAB_00594985:
                                              in_stack_fffeec7c,in_stack_fffeec80);
                                   goto LAB_005927ee;
                                 }
-                                if (iVar3 == local_30) {
+                                if (fVar15 == local_30) {
                                   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                             (g_CEditorToolsPtr,"Reference motion is same as motion to bias in \"bias\" statement for animation %s in %s:%s");
                                   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -1420,15 +1432,15 @@ LAB_00594985:
                                              in_stack_fffeec7c,in_stack_fffeec80);
                                   goto LAB_005927ee;
                                 }
-                                in_stack_fffeec68 = (undefined1 *)0x0;
+                                in_stack_fffeec68 = (float *)0x0;
                                 in_stack_fffeec64 =
-                                     (char *)(in_stack_0000000c->motion_list).motions[iVar3].
+                                     (char *)(in_stack_0000000c->motion_list).motions[(int)fVar15].
                                              frame_count;
-                                in_stack_fffeec60 = (char *)(&DAT_03670b6c + iVar10 * 4);
-                                pcVar33 = (char *)aCStack_58c;
-                                pcVar32 = (char *)0x594bd1;
-                                iVar10 = core_skeledit_cpp_FUN_00592520();
-                                if (iVar10 == 0) {
+                                in_stack_fffeec60 = (char *)(&DAT_03670b6c + iVar13 * 4);
+                                pcVar36 = (char *)afStack_58c;
+                                pcVar35 = (char *)0x594bd1;
+                                iVar13 = core_skeledit_cpp_FUN_00592520();
+                                if (iVar13 == 0) {
                                   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                             (g_CEditorToolsPtr,"Can't parse frame to bias in \"bias\" statement for animation %s in %s:%s");
                                   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -1440,13 +1452,13 @@ LAB_00594985:
                                 DAT_03670b5c = DAT_03670b5c + 1;
                               }
                               else {
-                                pcVar33 = (char *)0x7;
-                                pcVar32 = "markers";
-                                pcVar31 = local_209c;
+                                pcVar36 = (char *)0x7;
+                                pcVar35 = "markers";
+                                pcVar34 = local_209c;
                                 str1 = (CSkeleton *)0x594c32;
-                                iVar10 = crt_string_c_strnicmp_FUN_005ff070
-                                                   (pcVar31,"markers",7);
-                                if (iVar10 == 0) {
+                                iVar13 = crt_string_c_strnicmp_FUN_005ff070
+                                                   (pcVar34,"markers",7);
+                                if (iVar13 == 0) {
                                   if (0 < local_e4->marker_count) {
                                     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                               (g_CEditorToolsPtr,"Multiple \"markers\" statements for animation %s in %s"
@@ -1457,22 +1469,22 @@ LAB_00594985:
                                                (uint)in_stack_fffeec74,in_stack_fffeec78);
                                     goto LAB_005927ee;
                                   }
-                                  pcVar4 = local_209c + 7;
-                                  while ((g_CharacterClassificationTable[(byte)(*pcVar4 + 1)] & 2U)
+                                  pcVar5 = local_2099 + 4;
+                                  while ((g_CharacterClassificationTable[(byte)(*pcVar5 + 1)] & 2U)
                                          != 0) {
-                                    pcVar4 = pcVar4 + 1;
+                                    pcVar5 = pcVar5 + 1;
                                   }
-                                  cVar1 = *pcVar4;
+                                  cVar1 = *pcVar5;
                                   while (cVar1 != '\0') {
                                     local_8c._24_4_ = -NAN;
-                                    crt_stdio_c_sscanf_FUN_0060013c(pcVar4,"%d%n");
+                                    crt_stdio_c_sscanf_FUN_0060013c(pcVar5,"%d%n");
                                     if ((int)local_8c._24_4_ < 0) {
                                       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                                 (g_CEditorToolsPtr,
                                                  "Can't parse \"markers\" statement for animation %s in %s:\n%s");
                                       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                                (&CStack_2ca0,0,uVar29,(uint)pcVar26,(uint)pcVar27,
-                                                 (uint)pcVar28,(uint)matrix_ptr);
+                                                (&CStack_2ca0,0,uVar33,(uint)pcVar31,(uint)pcVar30,
+                                                 (uint)pcVar32,(uint)matrix_ptr);
                                       goto LAB_005927ee;
                                     }
                                     if (((int)local_8c._28_4_ < 1) ||
@@ -1481,8 +1493,8 @@ LAB_00594985:
                                                 (g_CEditorToolsPtr,
                                                  "Can't place marker at invalid frame number %d for animation %s in %s:\n%s");
                                       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                                (&CStack_2ca0,0,uVar29,(uint)pcVar26,(uint)pcVar27,
-                                                 (uint)pcVar28,(uint)matrix_ptr);
+                                                (&CStack_2ca0,0,uVar33,(uint)pcVar31,(uint)pcVar30,
+                                                 (uint)pcVar32,(uint)matrix_ptr);
                                       goto LAB_005927ee;
                                     }
                                     if (9 < local_e4->marker_count) {
@@ -1490,8 +1502,8 @@ LAB_00594985:
                                                 (g_CEditorToolsPtr,
                                                  "Too many markers in animation %s in %s:\n%s");
                                       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                                (&CStack_2ca0,0,uVar29,(uint)pcVar26,(uint)pcVar27,
-                                                 (uint)pcVar28,(uint)matrix_ptr);
+                                                (&CStack_2ca0,0,uVar33,(uint)pcVar31,(uint)pcVar30,
+                                                 (uint)pcVar32,(uint)matrix_ptr);
                                       goto LAB_005927ee;
                                     }
                                     if ((0 < local_e4->marker_count) &&
@@ -1501,39 +1513,38 @@ LAB_00594985:
                                                 (g_CEditorToolsPtr,
                                                  "Frame numbers are not strictly increasing in \"markers\" statement in animation %s in %s:\n%s");
                                       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                                (&CStack_2ca0,0,uVar29,(uint)pcVar26,(uint)pcVar27,
-                                                 (uint)pcVar28,(uint)matrix_ptr);
+                                                (&CStack_2ca0,0,uVar33,(uint)pcVar31,(uint)pcVar30,
+                                                 (uint)pcVar32,(uint)matrix_ptr);
                                       goto LAB_005927ee;
                                     }
                                     local_e4->markers[local_e4->marker_count] = local_8c._28_4_;
                                     local_e4->marker_count = local_e4->marker_count + 1;
-                                    pcVar4 = pcVar4 + local_8c._24_4_;
-                                    while ((g_CharacterClassificationTable[(byte)(*pcVar4 + 1)] & 2U
+                                    pcVar5 = pcVar5 + local_8c._24_4_;
+                                    while ((g_CharacterClassificationTable[(byte)(*pcVar5 + 1)] & 2U
                                            ) != 0) {
-                                      pcVar4 = pcVar4 + 1;
+                                      pcVar5 = pcVar5 + 1;
                                     }
-                                    cVar1 = *pcVar4;
+                                    cVar1 = *pcVar5;
                                   }
                                 }
                                 else {
-                                  pcVar31 = (char *)0x594e75;
-                                  iVar10 = crt_string_c_strnicmp_FUN_005ff070
+                                  pcVar34 = (char *)0x594e75;
+                                  iVar13 = crt_string_c_strnicmp_FUN_005ff070
                                                      (local_209c,"displace",8);
-                                  if (iVar10 == 0) {
-                                    pcVar31 = local_209c + 8;
-                                    while ((g_CharacterClassificationTable
-                                            [(byte)(*(char *)&((CQuaternion4f *)pcVar31)->w + 1)] &
+                                  if (iVar13 == 0) {
+                                    pcVar34 = local_2099 + 5;
+                                    while ((g_CharacterClassificationTable[(byte)(*pcVar34 + 1)] &
                                            2U) != 0) {
-                                      pcVar31 = (char *)((int)&((CQuaternion4f *)pcVar31)->w + 1);
+                                      pcVar34 = (char *)((int)pcVar34 + 1);
                                     }
-                                    in_stack_fffeec64 = local_13c + 8;
-                                    in_stack_fffeec60 = local_13c + 4;
-                                    pcVar33 = local_13c;
-                                    pcVar32 = "%f,%f,%f";
+                                    in_stack_fffeec64 = (char *)&local_134;
+                                    in_stack_fffeec60 = (char *)&local_138;
+                                    pcVar36 = (char *)&local_13c;
+                                    pcVar35 = "%f,%f,%f";
                                     str1 = (CSkeleton *)0x594ebc;
-                                    iVar10 = crt_stdio_c_sscanf_FUN_0060013c
-                                                       (pcVar31,"%f,%f,%f");
-                                    if (iVar10 != 3) {
+                                    iVar13 = crt_stdio_c_sscanf_FUN_0060013c
+                                                       (pcVar34,"%f,%f,%f");
+                                    if (iVar13 != 3) {
                                       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                                 (g_CEditorToolsPtr,
                                                  "Can't parse displacement vector in \"displace\" keyword in animation %s in %s\n:%s");
@@ -1545,47 +1556,47 @@ LAB_00594985:
                                     }
                                   }
                                   else {
-                                    pcVar32 = (char *)0x594f17;
-                                    iVar10 = crt_string_c_strnicmp_FUN_005ff070
+                                    pcVar35 = (char *)0x594f17;
+                                    iVar13 = crt_string_c_strnicmp_FUN_005ff070
                                                        (local_209c,"totaldisplacement",0x11
                                                        );
-                                    if (iVar10 == 0) {
-                                      pbVar16 = (byte *)((int)&aCStack_2094[0].y + 1);
+                                    if (iVar13 == 0) {
+                                      pbVar18 = abStack_208b;
 LAB_00594f2a:
                                       do {
-                                        pcVar32 = (char *)pbVar16;
-                                        pbVar16 = (byte *)pcVar32 + 1;
-                                      } while ((g_CharacterClassificationTable[(byte)(*pcVar32 + 1)]
+                                        pcVar35 = (char *)pbVar18;
+                                        pbVar18 = (byte *)pcVar35 + 1;
+                                      } while ((g_CharacterClassificationTable[(byte)(*pcVar35 + 1)]
                                                & 2U) != 0);
-                                      if (*pcVar32 != 0) {
+                                      if (*pcVar35 != 0) {
                                         local_8c._32_4_ =
-                                             crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)*pcVar32);
+                                             crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)*pcVar35);
                                         if (0x58 < (uint)local_8c._32_4_) {
                                           if (((uint)local_8c._32_4_ < 0x5a) ||
                                              ((uint)local_8c._32_4_ < 0x5b)) {
 LAB_0059507b:
-                                            pbVar16 = (byte *)pcVar32 + 1;
-                                            if (((byte *)pcVar32)[1] == 0x3a) {
-                                              pbVar16 = (byte *)pcVar32 + 2;
+                                            pbVar18 = (byte *)pcVar35 + 1;
+                                            if (((byte *)pcVar35)[1] == 0x3a) {
+                                              pbVar18 = (byte *)pcVar35 + 2;
                                             }
-                                            if (*pbVar16 == 0x3d) {
-                                              pbVar16 = pbVar16 + 1;
+                                            if (*pbVar18 == 0x3d) {
+                                              pbVar18 = pbVar18 + 1;
                                             }
                                             in_stack_fffeec6c = (CMatrix3x4f *)0x7;
-                                            iVar10 = crt_string_c_strnicmp_FUN_005ff070
-                                                               ((char *)pbVar16,"display",7
+                                            iVar13 = crt_string_c_strnicmp_FUN_005ff070
+                                                               ((char *)pbVar18,"display",7
                                                                );
-                                            if (iVar10 == 0) {
-                                              pbVar16 = pbVar16 + 7;
+                                            if (iVar13 == 0) {
+                                              pbVar18 = pbVar18 + 7;
                                               local_8c._40_4_ = -99998.0;
                                             }
                                             else {
-                                              local_60._0_4_ = -NAN;
-                                              in_stack_fffeec70 = (CVector3f *)local_60;
+                                              local_60.x = -NAN;
+                                              in_stack_fffeec70 = &local_60;
                                               in_stack_fffeec6c = (CMatrix3x4f *)(local_8c + 0x28);
                                               crt_stdio_c_sscanf_FUN_0060013c
-                                                        ((char *)pbVar16,"%f%n");
-                                              if ((int)local_60._0_4_ < 1) {
+                                                        ((char *)pbVar18,"%f%n");
+                                              if ((int)local_60.x < 1) {
                                                 shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                                           (g_CEditorToolsPtr,
                                                            "Can't parse \"totalDisplacement\" keyword in animation %s in %s\n:%s");
@@ -1595,7 +1606,7 @@ LAB_0059507b:
                                                            in_stack_fffeec88,in_stack_fffeec8c);
                                                 goto LAB_005927ee;
                                               }
-                                              pbVar16 = pbVar16 + local_60._0_4_;
+                                              pbVar18 = pbVar18 + (int)local_60.x;
                                             }
                                             if ((float)local_8c._32_4_ == 1.23314e-43) {
                                               local_1c0 = (float)local_8c._40_4_;
@@ -1611,10 +1622,10 @@ LAB_0059507b:
                                             if ((float)local_8c._32_4_ != 1.27518e-43)
                                             goto LAB_0059518b;
                                             local_8c._36_4_ = -NAN;
-                                            crt_stdio_c_sscanf_FUN_0060013c(pcVar32,"[%[^- \t] - %[^] \t] ]%n");
+                                            crt_stdio_c_sscanf_FUN_0060013c(pcVar35,"[%[^- \t] - %[^] \t] ]%n");
                                             if (((int)local_8c._36_4_ < 5) ||
-                                               (iVar10 = core_skeledit_cpp_FUN_00592520(),
-                                               iVar10 == 0)) {
+                                               (iVar13 = core_skeledit_cpp_FUN_00592520(),
+                                               iVar13 == 0)) {
 LAB_00594fab:
                                               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                                         (g_CEditorToolsPtr,
@@ -1628,8 +1639,8 @@ LAB_00594fab:
                                             in_stack_fffeec74 = (CVector3f *)0x0;
                                             in_stack_fffeec70 = (CVector3f *)local_e4->frame_count;
                                             in_stack_fffeec6c = (CMatrix3x4f *)local_8c;
-                                            iVar10 = core_skeledit_cpp_FUN_00592520();
-                                            if (iVar10 == 0) goto LAB_00594fab;
+                                            iVar13 = core_skeledit_cpp_FUN_00592520();
+                                            if (iVar13 == 0) goto LAB_00594fab;
                                             if ((int)local_8c._0_4_ < (int)local_c4) {
                                               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                                         (g_CEditorToolsPtr,
@@ -1640,7 +1651,7 @@ LAB_00594fab:
                                                          in_stack_fffeec7c,in_stack_fffeec80);
                                               goto LAB_005927ee;
                                             }
-                                            pbVar16 = (byte *)pcVar32 + local_8c._36_4_;
+                                            pbVar18 = (byte *)pcVar35 + local_8c._36_4_;
                                           }
                                           goto LAB_00594f2a;
                                         }
@@ -1659,27 +1670,27 @@ LAB_0059518b:
                                                    in_stack_fffeec80,in_stack_fffeec84);
                                         goto LAB_005927ee;
                                       }
-                                      in_stack_fffeec68 = local_13c + 8;
-                                      in_stack_fffeec64 = local_13c + 4;
-                                      in_stack_fffeec60 = local_13c;
-                                      pcVar33 = "%f,%f,%f";
-                                      pcVar31 = (char *)0x594f71;
-                                      crt_stdio_c_sscanf_FUN_0060013c(pcVar32,"%f,%f,%f");
+                                      in_stack_fffeec68 = &local_134;
+                                      in_stack_fffeec64 = (char *)&local_138;
+                                      in_stack_fffeec60 = (char *)&local_13c;
+                                      pcVar36 = "%f,%f,%f";
+                                      pcVar34 = (char *)0x594f71;
+                                      crt_stdio_c_sscanf_FUN_0060013c(pcVar35,"%f,%f,%f");
                                     }
                                     else {
-                                      in_stack_fffeec68 = (undefined1 *)0x6;
+                                      in_stack_fffeec68 = (float *)0x6;
                                       in_stack_fffeec64 = "flipXZ";
                                       in_stack_fffeec60 = local_209c;
-                                      pcVar33 = (char *)0x5951d9;
-                                      iVar10 = crt_string_c_strnicmp_FUN_005ff070
+                                      pcVar36 = (char *)0x5951d9;
+                                      iVar13 = crt_string_c_strnicmp_FUN_005ff070
                                                          (in_stack_fffeec60,"flipXZ",6);
-                                      if (iVar10 == 0) {
-                                        local_d0 = 1;
+                                      if (iVar13 == 0) {
+                                        local_d0 = (FILE *)&DAT_00000001;
                                       }
                                       else {
-                                        iVar10 = crt_string_c_strnicmp_FUN_005ff070
+                                        iVar13 = crt_string_c_strnicmp_FUN_005ff070
                                                            (local_209c,"rotate",6);
-                                        if (iVar10 != 0) {
+                                        if (iVar13 != 0) {
                                           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                                     (g_CEditorToolsPtr,
                                                      "Invalid keyword for animation %s in %s:\n%s");
@@ -1689,7 +1700,7 @@ LAB_0059518b:
                                                      in_stack_fffeec84,in_stack_fffeec88);
                                           goto LAB_005927ee;
                                         }
-                                        if (local_bc != 0) {
+                                        if (local_bc != 0.0) {
                                           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                                     (g_CEditorToolsPtr,
                                                      "Multiple \"rotate\" keywords used in animation %s in %s");
@@ -1699,16 +1710,16 @@ LAB_0059518b:
                                                      in_stack_fffeec84,in_stack_fffeec88);
                                           goto LAB_005927ee;
                                         }
-                                        in_stack_fffeec60 = local_209c + 6;
+                                        in_stack_fffeec60 = local_2099 + 3;
                                         while ((g_CharacterClassificationTable
                                                 [(byte)(*in_stack_fffeec60 + 1)] & 2U) != 0) {
-                                          in_stack_fffeec60 = in_stack_fffeec60 + 1;
+                                          in_stack_fffeec60 = (char *)((int)in_stack_fffeec60 + 1);
                                         }
                                         in_stack_fffeec64 = "%f,%f,%f";
-                                        pcVar33 = (char *)0x595281;
-                                        iVar10 = crt_stdio_c_sscanf_FUN_0060013c
+                                        pcVar36 = (char *)0x595281;
+                                        iVar13 = crt_stdio_c_sscanf_FUN_0060013c
                                                            (in_stack_fffeec60,"%f,%f,%f");
-                                        if (iVar10 != 3) {
+                                        if (iVar13 != 3) {
                                           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                                     (g_CEditorToolsPtr,
                                                      "Can't parse rotation PBH in \"rotate\" keyword in animation %s in %s\n:%s");
@@ -1718,14 +1729,14 @@ LAB_0059518b:
                                                      in_stack_fffeec88,in_stack_fffeec8c);
                                           goto LAB_005927ee;
                                         }
-                                        local_178._36_4_ = (float)local_178._36_4_ * _DAT_0064d60e;
-                                        local_150 = local_150 * _DAT_0064d60e;
-                                        local_14c = local_14c * _DAT_0064d60e;
+                                        local_178._36_4_ = (float)local_178._36_4_ * FLOAT_0064d60e;
+                                        local_150 = local_150 * FLOAT_0064d60e;
+                                        local_14c = local_14c * FLOAT_0064d60e;
                                         in_stack_fffeec74 = (CVector3f *)(local_178 + 0x24);
-                                        local_bc = 1;
+                                        local_bc = 1.4013e-45;
                                         in_stack_fffeec70 = &g_ZeroVector;
                                         in_stack_fffeec6c = &CStack_42c;
-                                        in_stack_fffeec68 = (undefined1 *)0x595353;
+                                        in_stack_fffeec68 = (float *)0x595353;
                                         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                                                   (in_stack_fffeec6c,&g_ZeroVector,in_stack_fffeec74
                                                   );
@@ -1742,156 +1753,159 @@ LAB_0059518b:
                   }
                 }
               }
-              local_e8 = local_e8 + 1;
-            } while (local_e8 < *(int *)((int)aiStack_2718 + (int)local_a4));
+              local_e8 = (float)((int)local_e8 + 1);
+            } while ((int)local_e8 < *(int *)((int)aiStack_2718 + local_b0._12_4_));
           }
-          pFVar2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+          pCVar3 = (CBoneStructure *)
+                   shape_memdbg_cpp_openFile_FUN_0050f7a0
                              (local_e0,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x13d8
                              );
-          local_b8 = pFVar2;
-          if (pFVar2 == (FILE *)0x0) {
+          local_b8 = pCVar3;
+          if (pCVar3 == (CBoneStructure *)0x0) {
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                       (g_CEditorToolsPtr,"Can't open %s mentioned in %s");
             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                      (&CStack_2ca0,0,(uint)pcVar26,(uint)pcVar27,(uint)pcVar28,(uint)matrix_ptr,
+                      (&CStack_2ca0,0,(uint)pcVar31,(uint)pcVar30,(uint)pcVar32,(uint)matrix_ptr,
                        (uint)str1);
             goto LAB_005927ee;
           }
-          iVar10 = 1;
+          iVar13 = 1;
           do {
-            iVar3 = crt_stdio_c_fgetc_FUN_005fe840(pFVar2);
-            pFVar30 = local_b8;
-            if (iVar3 < 0) break;
-          } while ((iVar3 != 10) || (iVar10 = iVar10 + -1, 0 < iVar10));
-          crt_stdio_c_fscanf_FUN_005fe7c0(local_b8,"%d\n");
-          fVar13 = local_34;
-          core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0((CBoneStructure *)pFVar30);
-          iVar10 = 0;
-          if (0 < *(int *)((int)afStack_28f8 + (int)fVar13)) {
+            iVar4 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)pCVar3);
+            pCVar6 = local_b8;
+            if (iVar4 < 0) break;
+          } while ((iVar4 != 10) || (iVar13 = iVar13 + -1, 0 < iVar13));
+          crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)local_b8,"%d\n");
+          fVar15 = local_34;
+          core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
+                    (pCVar6,(FILE *)local_b0,(int *)pcVar30);
+          iVar13 = 0;
+          if (0 < *(int *)((int)afStack_28f8 + (int)fVar15)) {
             do {
-              iVar10 = iVar10 + 1;
-              core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0((CBoneStructure *)local_b8)
-              ;
-              local_b0 = (float)((int)local_b0 + -1);
-            } while (iVar10 < *(int *)((int)afStack_28f8 + (int)fVar13));
+              iVar13 = iVar13 + 1;
+              core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0(local_b8);
+              local_b0._0_4_ = local_b0._0_4_ + -1;
+            } while (iVar13 < *(int *)((int)afStack_28f8 + (int)fVar15));
           }
-          local_a8 = 0;
-          local_2c = 0;
-          local_ac = 1;
+          local_b0._8_4_ = (streambuf *)0x0;
+          local_2c = 0.0;
+          local_b0._4_4_ = 1.4013e-45;
           if (-1 < local_e4->frame_count) {
             do {
-              iVar10 = local_2c;
-              local_24 = (float)(local_e4->frame_start + local_2c);
+              fVar2 = local_2c;
+              fVar15 = (float)(int)local_104;
+              local_24 = (float)(local_e4->frame_start + (int)local_2c);
               shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                        (g_CEditorToolsPtr,(float)(int)local_24,(float)(int)local_104);
-              if ((int)local_b0 < 1) {
-                if (iVar10 != local_e4->frame_count) {
+                        (g_CEditorToolsPtr,(float)(int)local_24,fVar15);
+              if ((int)local_b0._0_4_ < 1) {
+                if (fVar2 != (float)local_e4->frame_count) {
                   g_CurrentFilename = "..\\core\\skeledit.cpp";
                   g_CurrentLineNumber = 0x1408;
                   core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze!");
                 }
                 break;
               }
-              local_b0 = (float)((int)local_b0 + -1);
-              core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10((CBoneStructure *)local_b8)
+              local_b0._0_4_ = local_b0._0_4_ + -1;
+              core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10
+                        (local_b8,local_d0,(int)fVar15);
+              fVar15 = local_bc;
+              core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0((CBoneStructure *)pcVar32)
               ;
-              iVar10 = local_bc;
-              core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0((CBoneStructure *)pcVar28)
-              ;
-              if (iVar10 != 0) {
-                iVar10 = 0;
+              if (fVar15 != 0.0) {
+                iVar13 = 0;
                 if (0 < iStack_7484) {
-                  pfVar17 = (float *)aCStack_742c;
+                  pfVar19 = (float *)auStack_742c;
                   do {
-                    iVar10 = iVar10 + 1;
+                    iVar13 = iVar13 + 1;
                     core_xform_cpp_multiplyMatrix3x4InPlace_FUN_005f50c0
-                              ((CMatrix3x4f *)pfVar17,&CStack_42c);
-                    pfVar17 = pfVar17 + 0x21;
-                  } while (iVar10 < iStack_7484);
+                              ((CMatrix3x4f *)pfVar19,&CStack_42c);
+                    pfVar19 = pfVar19 + 0x21;
+                  } while (iVar13 < iStack_7484);
                 }
                 core_skeledit_cpp_FUN_0058ac80();
               }
-              pcVar28 = (char *)aCStack_3f60;
+              pcVar32 = &stack0xffffc0a0;
               core_skeledit_cpp_FUN_0058af40();
-              if (local_ac != 0) {
-                local_178._24_4_ = aCStack_742c[0].m[0].z;
-                local_178._28_4_ = aCStack_742c[0].m[1].z;
-                local_178._32_4_ = aCStack_742c[0].m[2].z;
+              if ((float)local_b0._4_4_ != 0.0) {
+                local_178._24_4_ = auStack_742c._12_4_;
+                local_178._28_4_ = fStack_7410;
+                local_178._32_4_ = fStack_7400;
                 if (&local_1f0 != (float *)(local_178 + 0x18)) {
-                  local_1f0 = aCStack_742c[0].m[0].z;
-                  local_1ec = aCStack_742c[0].m[1].z;
-                  local_1e8 = aCStack_742c[0].m[2].z;
+                  local_1f0 = (float)auStack_742c._12_4_;
+                  local_1ec = fStack_7410;
+                  local_1e8 = fStack_7400;
                 }
                 matrix_ptr = (char *)(local_1b4 + 1);
-                pcVar28 = (char *)aCStack_742c;
-                pCVar6 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
-                                   ((CVector3f *)pcVar28,(CMatrix3x3f *)matrix_ptr);
-                if (local_1b4 != pCVar6) {
-                  local_1b4[0].x = pCVar6->x;
-                  local_1b4[0].y = pCVar6->y;
-                  local_1b4[0].z = pCVar6->z;
+                pcVar32 = auStack_742c;
+                pCVar9 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
+                                   ((CVector3f *)pcVar32,(CMatrix3x3f *)matrix_ptr);
+                if (local_1b4 != pCVar9) {
+                  local_1b4[0].x = pCVar9->x;
+                  local_1b4[0].y = pCVar9->y;
+                  local_1b4[0].z = pCVar9->z;
                 }
-                local_ac = 0;
+                local_b0._4_4_ = 0.0;
               }
-              local_19c = aCStack_742c[0].m[0].z;
-              local_178._12_4_ = aCStack_742c[0].m[0].z - local_1f0;
-              local_178._16_4_ = aCStack_742c[0].m[1].z - local_1ec;
-              local_178._20_4_ = aCStack_742c[0].m[2].z - local_1e8;
-              local_198 = aCStack_742c[0].m[1].z;
-              local_1d8.x = (float)local_178._12_4_ + (float)local_13c._0_4_;
-              local_1d8.y = (float)local_178._16_4_ + (float)local_13c._4_4_;
-              local_1d8.z = (float)local_178._20_4_ + (float)local_13c._8_4_;
-              local_194 = aCStack_742c[0].m[2].z;
-              if (local_e4->frame_count <= local_2c) {
-                if (local_dc == 0) {
+              local_19c = (float)auStack_742c._12_4_;
+              local_178._12_4_ = (float)auStack_742c._12_4_ - local_1f0;
+              local_178._16_4_ = fStack_7410 - local_1ec;
+              local_178._20_4_ = fStack_7400 - local_1e8;
+              local_198 = fStack_7410;
+              local_1d8.x = (float)local_178._12_4_ + local_13c;
+              local_1d8.y = (float)local_178._16_4_ + local_138;
+              local_1d8.z = (float)local_178._20_4_ + local_134;
+              local_194 = fStack_7400;
+              if (local_e4->frame_count <= (int)local_2c) {
+                if (local_dc == 0.0) {
                   if (&local_190 != &local_1d8) {
                     local_190.x = local_1d8.x;
                     local_190.y = local_1d8.y;
                     local_190.z = local_1d8.z;
                   }
-                  local_a8 = 1;
+                  local_b0._8_4_ = &DAT_00000001;
                 }
                 break;
               }
-              if (local_dc == 0) {
-                iVar10 = local_e4->frame_start + local_2c;
+              if (local_dc == 0.0) {
+                iVar13 = local_e4->frame_start + (int)local_2c;
               }
               else {
-                iVar10 = (local_e4->frame_start + local_e4->frame_count + -1) - local_2c;
+                iVar13 = (local_e4->frame_start + local_e4->frame_count + -1) - (int)local_2c;
               }
-              pCVar6 = in_stack_0000000c->frame_positions_1 + iVar10;
-              if (pCVar6 != &local_1d8) {
-                pCVar6->x = local_1d8.x;
-                pCVar6->y = local_1d8.y;
-                pCVar6->z = local_1d8.z;
+              pCVar9 = in_stack_0000000c->frame_positions_1 + iVar13;
+              if (pCVar9 != &local_1d8) {
+                pCVar9->x = local_1d8.x;
+                pCVar9->y = local_1d8.y;
+                pCVar9->z = local_1d8.z;
               }
-              iVar3 = in_stack_0000000c->bone_count;
-              pCVar12 = in_stack_0000000c->bone_angle_frames;
+              iVar4 = in_stack_0000000c->bone_count;
+              pCVar16 = in_stack_0000000c->bone_angle_frames;
               if (local_d4 == 0.0) {
-                local_58 = local_d4;
+                local_60.z = local_d4;
                 if (0 < in_stack_0000000c->bone_count) {
-                  local_40 = aCStack_742c[0].m;
-                  pCVar12 = pCVar12 + iVar3 * iVar10;
+                  local_50._16_4_ = auStack_742c;
+                  pCVar16 = pCVar16 + iVar4 * iVar13;
                   do {
-                    core_xform_cpp_matrixToQuaternion_FUN_005f7420(local_40,(CMatrix3x3f *)pcVar28);
-                    pfVar17 = (float *)((int)pCVar12 + (uint)bVar23 * -8 + 4);
-                    pCVar12->w = afStack_218[3];
-                    pfVar18 = pfVar17 + (uint)bVar23 * -2 + 1;
-                    *pfVar17 = afStack_218[(uint)bVar23 * -2 + 4];
-                    *pfVar18 = afStack_218[(uint)bVar23 * -2 + (uint)bVar23 * -2 + 5];
-                    pfVar18[(uint)bVar23 * -2 + 1] =
-                         (afStack_218 + (uint)bVar23 * -2 + (uint)bVar23 * -2 + 5)
-                         [(uint)bVar23 * -2 + 1];
-                    local_58 = (float)((int)local_58 + 1);
-                    local_40 = (CQuaternion4f *)&local_40[8].x;
-                    pCVar12 = pCVar12 + 1;
-                  } while ((int)local_58 < in_stack_0000000c->bone_count);
+                    core_xform_cpp_matrixToQuaternion_FUN_005f7420
+                              ((CQuaternion4f *)local_50._16_4_,(CMatrix3x3f *)pcVar32);
+                    pfVar19 = (float *)((int)pCVar16 + (uint)bVar25 * -8 + 4);
+                    pCVar16->w = afStack_218[3];
+                    pfVar20 = pfVar19 + (uint)bVar25 * -2 + 1;
+                    *pfVar19 = afStack_218[(uint)bVar25 * -2 + 4];
+                    *pfVar20 = afStack_218[(uint)bVar25 * -2 + (uint)bVar25 * -2 + 5];
+                    pfVar20[(uint)bVar25 * -2 + 1] =
+                         (afStack_218 + (uint)bVar25 * -2 + (uint)bVar25 * -2 + 5)
+                         [(uint)bVar25 * -2 + 1];
+                    local_60.z = (float)((int)local_60.z + 1);
+                    local_50._16_4_ = &((CQuaternion4f *)(local_50._16_4_ + 0x80))->x;
+                    pCVar16 = pCVar16 + 1;
+                  } while ((int)local_60.z < in_stack_0000000c->bone_count);
                 }
               }
               else {
-                pCVar20 = (CMatrix3x4f *)local_178;
-                pCVar6 = (CVector3f *)aCStack_742c;
-                core_xform_cpp_matrixToEulerAngles_FUN_005f5690(pCVar6,(CMatrix3x3f *)pCVar20);
+                pCVar22 = (CMatrix3x4f *)local_178;
+                pCVar9 = (CVector3f *)auStack_742c;
+                core_xform_cpp_matrixToEulerAngles_FUN_005f5690(pCVar9,(CMatrix3x3f *)pCVar22);
                 if (((uint)local_d4 & 1) != 0) {
                   local_178._0_4_ = local_1b4[0].x;
                 }
@@ -1907,146 +1921,149 @@ LAB_0059518b:
                 core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
                           (&CStack_39c,&local_148,(CVector3f *)local_178);
                 core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                          (aCStack_742c,&CStack_39c,(CMatrix3x4f *)pCVar6);
-                pfVar17 = afStack_33c;
-                pCVar19 = &CStack_3cc;
-                for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-                  pCVar19->m[0].w = *pfVar17;
-                  pfVar17 = pfVar17 + (uint)bVar23 * -2 + 1;
-                  pCVar19 = (CMatrix3x4f *)((int)pCVar19 + ((uint)bVar23 * -2 + 1) * 4);
+                          ((CMatrix3x4f *)auStack_742c,&CStack_39c,(CMatrix3x4f *)pCVar9);
+                pfVar19 = afStack_33c;
+                pCVar21 = &CStack_3cc;
+                for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
+                  pCVar21->m[0].w = *pfVar19;
+                  pfVar19 = pfVar19 + (uint)bVar25 * -2 + 1;
+                  pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar25 * -2 + 1) * 4);
                 }
-                core_xform_cpp_inverse_FUN_005f6210(&CStack_3cc,pCVar20);
-                pfVar17 = afStack_36c;
-                pCVar20 = &CStack_3fc;
-                for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-                  pCVar20->m[0].w = *pfVar17;
-                  pfVar17 = pfVar17 + (uint)bVar23 * -2 + 1;
-                  pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar23 * -2 + 1) * 4);
+                core_xform_cpp_inverse_FUN_005f6210(&CStack_3cc,pCVar22);
+                pfVar19 = afStack_36c;
+                pCVar22 = &CStack_3fc;
+                for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
+                  pCVar22->m[0].w = *pfVar19;
+                  pfVar19 = pfVar19 + (uint)bVar25 * -2 + 1;
+                  pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar25 * -2 + 1) * 4);
                 }
                 local_54 = 0.0;
                 if (0 < in_stack_0000000c->bone_count) {
-                  local_44 = (float *)aCStack_742c;
-                  pCVar12 = pCVar12 + iVar3 * iVar10;
+                  local_50._12_4_ = auStack_742c;
+                  pCVar16 = pCVar16 + iVar4 * iVar13;
                   do {
                     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                              ((CMatrix3x4f *)local_44,&CStack_3fc,(CMatrix3x4f *)pcVar28);
-                    pcVar28 = (char *)aCStack_2dc;
-                    pfVar17 = afStack_30c;
-                    pCVar21 = aCStack_2dc;
-                    for (iVar10 = 0xc; iVar10 != 0; iVar10 = iVar10 + -1) {
-                      pCVar21->w = *pfVar17;
-                      pfVar17 = pfVar17 + (uint)bVar23 * -2 + 1;
-                      pCVar21 = (CQuaternion4f *)((int)pCVar21 + ((uint)bVar23 * -2 + 1) * 4);
+                              ((CMatrix3x4f *)local_50._12_4_,&CStack_3fc,(CMatrix3x4f *)pcVar32);
+                    pcVar32 = (char *)auStack_2dc;
+                    puVar17 = auStack_30c;
+                    puVar23 = auStack_2dc;
+                    for (iVar13 = 0xc; iVar13 != 0; iVar13 = iVar13 + -1) {
+                      *puVar23 = *puVar17;
+                      puVar17 = puVar17 + (uint)bVar25 * -2 + 1;
+                      puVar23 = puVar23 + (uint)bVar25 * -2 + 1;
                     }
                     core_xform_cpp_matrixToQuaternion_FUN_005f7420
-                              ((CQuaternion4f *)pcVar28,(CMatrix3x3f *)matrix_ptr);
-                    pfVar17 = (float *)((int)pCVar12 + (uint)bVar23 * -8 + 4);
-                    pCVar12->w = fStack_21c;
-                    pfVar18 = pfVar17 + (uint)bVar23 * -2 + 1;
-                    *pfVar17 = afStack_218[(uint)bVar23 * -2];
-                    *pfVar18 = afStack_218[(uint)bVar23 * -2 + (uint)bVar23 * -2 + 1];
-                    pfVar18[(uint)bVar23 * -2 + 1] =
-                         (afStack_218 + (uint)bVar23 * -2 + (uint)bVar23 * -2 + 1)
-                         [(uint)bVar23 * -2 + 1];
+                              ((CQuaternion4f *)pcVar32,(CMatrix3x3f *)matrix_ptr);
+                    pfVar19 = (float *)((int)pCVar16 + (uint)bVar25 * -8 + 4);
+                    pCVar16->w = fStack_21c;
+                    pfVar20 = pfVar19 + (uint)bVar25 * -2 + 1;
+                    *pfVar19 = afStack_218[(uint)bVar25 * -2];
+                    *pfVar20 = afStack_218[(uint)bVar25 * -2 + (uint)bVar25 * -2 + 1];
+                    pfVar20[(uint)bVar25 * -2 + 1] =
+                         (afStack_218 + (uint)bVar25 * -2 + (uint)bVar25 * -2 + 1)
+                         [(uint)bVar25 * -2 + 1];
                     local_54 = (float)((int)local_54 + 1);
-                    local_44 = &((CMatrix3x4f *)((int)local_44 + 0x60))->m[2].x;
-                    pCVar12 = pCVar12 + 1;
+                    local_50._12_4_ = &((CMatrix3x4f *)(local_50._12_4_ + 0x60))->m[2].x;
+                    pCVar16 = pCVar16 + 1;
                   } while ((int)local_54 < in_stack_0000000c->bone_count);
                 }
               }
-              local_2c = local_2c + 1;
-            } while (local_2c <= local_e4->frame_count);
+              local_2c = (float)((int)local_2c + 1);
+            } while ((int)local_2c <= local_e4->frame_count);
           }
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_b8,"..\\core\\skeledit.cpp",0x147a);
+          pcVar28 = (char *)0x59567c;
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0
+                    ((FILE *)local_b8,"..\\core\\skeledit.cpp",0x147a);
           local_1fc = 0.0;
           local_1f8 = 0.0;
           local_1f4 = 0.0;
-          iVar10 = 0;
+          iVar13 = 0;
           if (0 < local_e4->frame_count) {
             do {
-              iVar3 = local_e4->frame_start + iVar10;
-              if (iVar10 < local_e4->frame_count + -1) {
-                pCVar6 = in_stack_0000000c->frame_positions_1 + iVar3;
-                pCVar9 = in_stack_0000000c->frame_positions_1 + iVar3 + 1;
-                local_13c._12_4_ = pCVar9->x - pCVar6->x;
-                local_12c = pCVar9->y - pCVar6->y;
-                fVar13 = pCVar9->z - pCVar6->z;
-                pCVar6 = in_stack_0000000c->frame_positions_2 + iVar3;
-                fStack_128 = fVar13;
-                if (pCVar6 != (CVector3f *)(local_13c + 0xc)) {
-                  pCVar6->x = (float)local_13c._12_4_;
-                  pCVar6->y = local_12c;
+              iVar4 = local_e4->frame_start + iVar13;
+              if (iVar13 < local_e4->frame_count + -1) {
+                pCVar9 = in_stack_0000000c->frame_positions_1 + iVar4;
+                pCVar12 = in_stack_0000000c->frame_positions_1 + iVar4 + 1;
+                local_130.x = pCVar12->x - pCVar9->x;
+                local_130.y = pCVar12->y - pCVar9->y;
+                fVar15 = pCVar12->z - pCVar9->z;
+                pCVar9 = in_stack_0000000c->frame_positions_2 + iVar4;
+                local_130.z = fVar15;
+                if (pCVar9 != &local_130) {
+                  pCVar9->x = local_130.x;
+                  pCVar9->y = local_130.y;
 LAB_00595723:
-                  pCVar6->z = fVar13;
+                  pCVar9->z = fVar15;
                 }
               }
-              else if (iVar10 < 1) {
-                pCVar6 = in_stack_0000000c->frame_positions_2;
-                pCVar6[iVar3].z = 0.0;
-                pCVar6[iVar3].y = pCVar6[iVar3].z;
-                pCVar6[iVar3].x = pCVar6[iVar3].y;
+              else if (iVar13 < 1) {
+                pCVar9 = in_stack_0000000c->frame_positions_2;
+                pCVar9[iVar4].z = 0.0;
+                pCVar9[iVar4].y = pCVar9[iVar4].z;
+                pCVar9[iVar4].x = pCVar9[iVar4].y;
               }
-              else if (local_a8 == 0) {
-                pCVar6 = in_stack_0000000c->frame_positions_2 + iVar3;
-                pCVar9 = in_stack_0000000c->frame_positions_2 + iVar3 + -1;
-                if (pCVar6 != pCVar9) {
-                  pCVar6->x = pCVar9->x;
-                  pCVar6->y = pCVar9->y;
-                  pCVar6->z = pCVar9->z;
+              else if ((streambuf *)local_b0._8_4_ == (streambuf *)0x0) {
+                pCVar9 = in_stack_0000000c->frame_positions_2 + iVar4;
+                pCVar12 = in_stack_0000000c->frame_positions_2 + iVar4 + -1;
+                if (pCVar9 != pCVar12) {
+                  pCVar9->x = pCVar12->x;
+                  pCVar9->y = pCVar12->y;
+                  pCVar9->z = pCVar12->z;
                 }
               }
               else {
-                pCVar6 = in_stack_0000000c->frame_positions_1;
-                local_184.x = local_190.x - pCVar6[iVar3].x;
-                local_184.y = local_190.y - pCVar6[iVar3].y;
-                fVar13 = local_190.z - pCVar6[iVar3].z;
-                pCVar6 = in_stack_0000000c->frame_positions_2 + iVar3;
-                local_184.z = fVar13;
-                if (pCVar6 != &local_184) {
-                  pCVar6->x = local_184.x;
-                  pCVar6->y = local_184.y;
+                pCVar9 = in_stack_0000000c->frame_positions_1;
+                local_184.x = local_190.x - pCVar9[iVar4].x;
+                local_184.y = local_190.y - pCVar9[iVar4].y;
+                fVar15 = local_190.z - pCVar9[iVar4].z;
+                pCVar9 = in_stack_0000000c->frame_positions_2 + iVar4;
+                local_184.z = fVar15;
+                if (pCVar9 != &local_184) {
+                  pCVar9->x = local_184.x;
+                  pCVar9->y = local_184.y;
                   goto LAB_00595723;
                 }
               }
-              if ((local_d8 & 1) == 0) {
-                in_stack_0000000c->frame_positions_2[iVar3].x = 0.0;
+              if (((uint)local_d8 & 1) == 0) {
+                in_stack_0000000c->frame_positions_2[iVar4].x = 0.0;
               }
               else {
-                in_stack_0000000c->frame_positions_1[iVar3].x = 0.0;
-                if (((int)local_c4 <= iVar10) && (iVar10 <= (int)local_8c._0_4_)) {
-                  local_1fc = local_1fc + in_stack_0000000c->frame_positions_2[iVar3].x;
+                in_stack_0000000c->frame_positions_1[iVar4].x = 0.0;
+                if (((int)local_c4 <= iVar13) && (iVar13 <= (int)local_8c._0_4_)) {
+                  local_1fc = local_1fc + in_stack_0000000c->frame_positions_2[iVar4].x;
                 }
               }
-              if ((local_d8 & 2) == 0) {
-                in_stack_0000000c->frame_positions_2[iVar3].y = 0.0;
+              if (((uint)local_d8 & 2) == 0) {
+                in_stack_0000000c->frame_positions_2[iVar4].y = 0.0;
               }
               else {
-                in_stack_0000000c->frame_positions_1[iVar3].y = 0.0;
-                if (((int)local_c4 <= iVar10) && (iVar10 <= (int)local_8c._0_4_)) {
-                  local_1f8 = local_1f8 + in_stack_0000000c->frame_positions_2[iVar3].y;
+                in_stack_0000000c->frame_positions_1[iVar4].y = 0.0;
+                if (((int)local_c4 <= iVar13) && (iVar13 <= (int)local_8c._0_4_)) {
+                  local_1f8 = local_1f8 + in_stack_0000000c->frame_positions_2[iVar4].y;
                 }
               }
-              if ((local_d8 & 4) == 0) {
-                in_stack_0000000c->frame_positions_2[iVar3].z = 0.0;
+              if (((uint)local_d8 & 4) == 0) {
+                in_stack_0000000c->frame_positions_2[iVar4].z = 0.0;
               }
               else {
-                in_stack_0000000c->frame_positions_1[iVar3].z = 0.0;
-                if (((int)local_c4 <= iVar10) && (iVar10 <= (int)local_8c._0_4_)) {
-                  local_1f4 = local_1f4 + in_stack_0000000c->frame_positions_2[iVar3].z;
+                in_stack_0000000c->frame_positions_1[iVar4].z = 0.0;
+                if (((int)local_c4 <= iVar13) && (iVar13 <= (int)local_8c._0_4_)) {
+                  local_1f4 = local_1f4 + in_stack_0000000c->frame_positions_2[iVar4].z;
                 }
               }
-              iVar10 = iVar10 + 1;
-            } while (iVar10 < local_e4->frame_count);
+              iVar13 = iVar13 + 1;
+            } while (iVar13 < local_e4->frame_count);
           }
           local_1e4 = 0.0;
           local_1e0 = 0.0;
           local_1dc = 0.0;
           if (local_1c0 == local_c8) {
+            pcVar28 = &g_CEditorToolsPtr->field0_0x0;
             shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                       (g_CEditorToolsPtr,"Total displacement for animation %s on X-axis is %g");
           }
           else if (local_1c0 != local_cc) {
-            if ((local_d8 & 1) == 0) {
+            if (((uint)local_d8 & 1) == 0) {
               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                         (g_CEditorToolsPtr,"Setting total displacement on an axis that wasn't canceled doesn't work yet!");
             }
@@ -2055,11 +2072,12 @@ LAB_00595723:
             }
           }
           if (local_1bc == local_c8) {
+            pcVar28 = (char *)0x595e36;
             shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                       (g_CEditorToolsPtr,"Total displacement for animation %s on Y-axis is %g");
           }
           else if (local_1bc != local_cc) {
-            if ((local_d8 & 2) == 0) {
+            if (((uint)local_d8 & 2) == 0) {
               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                         (g_CEditorToolsPtr,"Setting total displacement on an axis that wasn't canceled doesn't work yet!");
             }
@@ -2068,11 +2086,12 @@ LAB_00595723:
             }
           }
           if (local_1b8 == local_c8) {
+            pcVar28 = (char *)0x595e78;
             shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                       (g_CEditorToolsPtr,"Total displacement for animation %s on Z-axis is %g");
           }
           else if (local_1b8 != local_cc) {
-            if ((local_d8 & 4) == 0) {
+            if (((uint)local_d8 & 4) == 0) {
               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                         (g_CEditorToolsPtr,"Setting total displacement on an axis that wasn't canceled doesn't work yet!");
             }
@@ -2082,47 +2101,48 @@ LAB_00595723:
           }
           if (0.0 < SQRT(local_1dc * local_1dc + local_1e4 * local_1e4 + local_1e0 * local_1e0)) {
             local_24 = (float)((local_8c._0_4_ - (int)local_c4) + 1);
-            local_4c = (float)(int)local_24;
-            fVar13 = 1.0 / local_4c;
-            local_1e4 = local_1e4 * fVar13;
-            local_1e0 = local_1e0 * fVar13;
-            local_1dc = local_1dc * fVar13;
-            iVar10 = (int)local_c4 - local_8c._0_4_;
-            bVar22 = local_c4 == (float)local_8c._0_4_;
-            fVar13 = local_c4;
-            while (bVar22 || SBORROW4((int)fVar13,local_8c._0_4_) != iVar10 < 0) {
-              iVar10 = local_e4->frame_start + (int)fVar13;
-              pCVar6 = in_stack_0000000c->frame_positions_2;
-              pCVar6[iVar10].x = pCVar6[iVar10].x + local_1e4;
-              pCVar6[iVar10].y = pCVar6[iVar10].y + local_1e0;
-              fVar13 = (float)((int)fVar13 + 1);
-              pCVar6[iVar10].z = pCVar6[iVar10].z + local_1dc;
-              iVar10 = (int)fVar13 - local_8c._0_4_;
-              bVar22 = iVar10 == 0;
+            local_50._4_4_ = (undefined4)(int)local_24;
+            fVar15 = 1.0 / (float)local_50._4_4_;
+            local_1e4 = local_1e4 * fVar15;
+            local_1e0 = local_1e0 * fVar15;
+            local_1dc = local_1dc * fVar15;
+            iVar13 = (int)local_c4 - local_8c._0_4_;
+            bVar24 = local_c4 == (float)local_8c._0_4_;
+            fVar15 = local_c4;
+            while (bVar24 || SBORROW4((int)fVar15,local_8c._0_4_) != iVar13 < 0) {
+              iVar13 = local_e4->frame_start + (int)fVar15;
+              pCVar9 = in_stack_0000000c->frame_positions_2;
+              pCVar9[iVar13].x = pCVar9[iVar13].x + local_1e4;
+              pCVar9[iVar13].y = pCVar9[iVar13].y + local_1e0;
+              fVar15 = (float)((int)fVar15 + 1);
+              pCVar9[iVar13].z = pCVar9[iVar13].z + local_1dc;
+              iVar13 = (int)fVar15 - local_8c._0_4_;
+              bVar24 = iVar13 == 0;
             }
           }
-          local_3c = local_3c + 0x104;
-          local_38 = local_38 + 1;
+          local_50._20_4_ = local_50._20_4_ + 0x104;
+          local_50._24_4_ = local_50._24_4_ + 0x54c;
           local_34 = (float)((int)local_34 + 4);
-          local_30 = local_30 + 1;
-        } while (local_30 < (in_stack_0000000c->motion_list).motion_count);
+          local_30 = (float)((int)local_30 + 1);
+        } while ((int)local_30 < (in_stack_0000000c->motion_list).motion_count);
       }
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_114,"..\\core\\skeledit.cpp",0x14ef);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0((FILE *)local_114,"..\\core\\skeledit.cpp",0x14ef)
+      ;
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Biasing motions.");
       local_110 = 0.0;
-      local_114 = (FILE *)0x0;
+      local_114 = (CBoneStructure *)0x0;
       crt_memory_c_memset_FUN_005fde40(aiStack_2538,0,0x1e0);
       if (0 < DAT_03670b5c) {
-        iVar10 = 0;
+        iVar13 = 0;
         do {
-          piVar14 = (int *)((int)&DAT_03670b60 + iVar10);
-          iVar10 = iVar10 + 0x10;
-          aiStack_2538[*piVar14] = 1;
-        } while (iVar10 < DAT_03670b5c * 0x10);
+          piVar29 = (int *)((int)&DAT_03670b60 + iVar13);
+          iVar13 = iVar13 + 0x10;
+          aiStack_2538[*piVar29] = 1;
+        } while (iVar13 < DAT_03670b5c * 0x10);
       }
-      iVar10 = 0;
+      iVar13 = 0;
       if (DAT_03670b5c < 1) {
 LAB_00595eb8:
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -2133,17 +2153,17 @@ LAB_00595eb8:
         return 1;
       }
       do {
-        iVar3 = 0;
+        iVar4 = 0;
         if (0 < DAT_03670b5c) {
-          iVar5 = 0;
+          iVar7 = 0;
           do {
-            if ((-1 < *(int *)((int)&DAT_03670b60 + iVar5)) &&
-               (aiStack_2538[*(int *)((int)&DAT_03670b68 + iVar5)] == 0)) break;
-            iVar5 = iVar5 + 0x10;
-            iVar3 = iVar3 + 1;
-          } while (iVar5 < DAT_03670b5c * 0x10);
+            if ((-1 < *(int *)((int)&DAT_03670b60 + iVar7)) &&
+               (aiStack_2538[*(int *)((int)&DAT_03670b68 + iVar7)] == 0)) break;
+            iVar7 = iVar7 + 0x10;
+            iVar4 = iVar4 + 1;
+          } while (iVar7 < DAT_03670b5c * 0x10);
         }
-        if (DAT_03670b5c <= iVar3) {
+        if (DAT_03670b5c <= iVar4) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"Cyclic bias detected in %s");
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -2151,74 +2171,73 @@ LAB_00595eb8:
                      (uint)in_stack_fffeec6c,(uint)in_stack_fffeec70,(uint)in_stack_fffeec74);
           goto LAB_005927ee;
         }
-        piVar14 = &DAT_03670b60 + iVar3 * 4;
-        iVar5 = (in_stack_0000000c->motion_list).motions[*piVar14].frame_start +
-                (&DAT_03670b64)[iVar3 * 4];
-        iVar3 = (in_stack_0000000c->motion_list).motions[(&DAT_03670b68)[iVar3 * 4]].frame_start +
-                (&DAT_03670b6c)[iVar3 * 4];
-        pCVar6 = in_stack_0000000c->frame_positions_1;
-        local_1cc = pCVar6[iVar3].x - pCVar6[iVar5].x;
-        local_1c8 = pCVar6[iVar3].y - pCVar6[iVar5].y;
-        local_1c4 = pCVar6[iVar3].z - pCVar6[iVar5].z;
-        for (iVar3 = 0; iVar5 = DAT_03670b5c,
-            iVar3 < (in_stack_0000000c->motion_list).motions[*piVar14].frame_count;
-            iVar3 = iVar3 + 1) {
-          iVar5 = (in_stack_0000000c->motion_list).motions[*piVar14].frame_start + iVar3;
-          pCVar6 = in_stack_0000000c->frame_positions_1;
-          pCVar6[iVar5].x = pCVar6[iVar5].x + local_1cc;
-          pCVar6[iVar5].y = pCVar6[iVar5].y + local_1c8;
-          pCVar6[iVar5].z = pCVar6[iVar5].z + local_1c4;
+        piVar29 = &DAT_03670b60 + iVar4 * 4;
+        iVar7 = (in_stack_0000000c->motion_list).motions[*piVar29].frame_start +
+                (&DAT_03670b64)[iVar4 * 4];
+        iVar4 = (in_stack_0000000c->motion_list).motions[(&DAT_03670b68)[iVar4 * 4]].frame_start +
+                (&DAT_03670b6c)[iVar4 * 4];
+        pCVar9 = in_stack_0000000c->frame_positions_1;
+        local_1cc = pCVar9[iVar4].x - pCVar9[iVar7].x;
+        local_1c8 = pCVar9[iVar4].y - pCVar9[iVar7].y;
+        local_1c4 = pCVar9[iVar4].z - pCVar9[iVar7].z;
+        for (iVar4 = 0; iVar7 = DAT_03670b5c,
+            iVar4 < (in_stack_0000000c->motion_list).motions[*piVar29].frame_count;
+            iVar4 = iVar4 + 1) {
+          iVar7 = (in_stack_0000000c->motion_list).motions[*piVar29].frame_start + iVar4;
+          pCVar9 = in_stack_0000000c->frame_positions_1;
+          pCVar9[iVar7].x = pCVar9[iVar7].x + local_1cc;
+          pCVar9[iVar7].y = pCVar9[iVar7].y + local_1c8;
+          pCVar9[iVar7].z = pCVar9[iVar7].z + local_1c4;
         }
-        aiStack_2538[*piVar14] = 0;
-        iVar10 = iVar10 + 1;
-        *piVar14 = -1;
-        if (iVar5 <= iVar10) goto LAB_00595eb8;
+        aiStack_2538[*piVar29] = 0;
+        iVar13 = iVar13 + 1;
+        *piVar29 = -1;
+        if (iVar7 <= iVar13) goto LAB_00595eb8;
       } while( true );
     }
-    iVar10 = crt_string_c_strnicmp_FUN_005ff070((char *)local_21c8,"animation",9);
-    if (iVar10 == 0) {
+    iVar13 = crt_string_c_strnicmp_FUN_005ff070((char *)&local_21c8,"animation",9);
+    if (iVar13 == 0) {
       if (0x77 < (in_stack_0000000c->motion_list).motion_count) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Too many motions in %s, max is %d");
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&CStack_2ca0,0,(uint)d5_00,uVar29,(uint)pFVar30,(uint)pFVar2,(uint)pcVar33);
+                  (&CStack_2ca0,0,(uint)d5_00,uVar33,(uint)pcVar34,(uint)pCVar3,(uint)pcVar36);
         goto LAB_005927ee;
       }
-      d2_00 = auStack_71c;
-      iVar10 = crt_stdio_c_sscanf_FUN_0060013c((char *)((int)&local_21c8[0]._link + 1)," \"%[^\"]\" : %s")
-      ;
-      if (iVar10 != 2) {
+      d2 = auStack_71c;
+      iVar13 = crt_stdio_c_sscanf_FUN_0060013c(acStack_21c2 + 3," \"%[^\"]\" : %s");
+      if (iVar13 != 2) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Can't parse %s.  I don't understand this line:\n%s");
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&CStack_2ca0,0,(uint)d2_00,(uint)pcVar27,(uint)d5_00,uVar29,(uint)pFVar30);
+                  (&CStack_2ca0,0,(uint)d2,(uint)pcVar31,(uint)d5_00,uVar33,(uint)pcVar34);
         goto LAB_005927ee;
       }
       crt_string_c_splitpath_FUN_005ff178
-                ((char *)aFStack_1f70,local_20,acStack_1568,acStack_1668,acStack_1868);
+                ((char *)&uStack_1f70,local_20,acStack_1568,acStack_1668,acStack_1868);
       if ((acStack_1568[0] == '\0') && (local_20[0] == '\0')) {
         crt_string_c_splitpath_FUN_005ff178
                   (in_stack_00000010,local_20,acStack_1568,(char *)0x0,(char *)0x0);
         crt_file_c_makepath_FUN_005febfc
-                  ((char *)aFStack_1f70,local_20,acStack_1568,acStack_1668,acStack_1868);
+                  ((char *)&uStack_1f70,local_20,acStack_1568,acStack_1668,acStack_1868);
       }
       crt_string_c_splitpath_FUN_005ff178
-                ((char *)aFStack_1f70,acStack_c,acStack_1d68,acStack_1c68,acStack_1268);
+                ((char *)&uStack_1f70,acStack_c,acStack_1d68,acStack_1c68,acStack_1268);
       if (acStack_1268[0] == '\0') {
         crt_file_c_makepath_FUN_005febfc
-                  ((char *)aFStack_1f70,acStack_c,acStack_1d68,acStack_1c68,"bon");
+                  ((char *)&uStack_1f70,acStack_c,acStack_1d68,acStack_1c68,"bon");
       }
-      pSVar11 = local_f0 + (in_stack_0000000c->motion_list).motion_count;
-      crt_memory_c_memset_FUN_005fde40(pSVar11,0,0x54c);
-      pcVar27 = (char *)0x0;
-      pcVar26 = (char *)aFStack_1f70;
+      pSVar14 = local_f0 + (in_stack_0000000c->motion_list).motion_count;
+      crt_memory_c_memset_FUN_005fde40(pSVar14,0,0x54c);
+      pcVar31 = (char *)0x0;
+      pcVar28 = (char *)&uStack_1f70;
       crt_string_c_splitpath_FUN_005ff178
-                (pcVar26,(char *)0x0,(char *)0x0,pSVar11->motion_name,(char *)0x0);
+                (pcVar28,(char *)0x0,(char *)0x0,pSVar14->motion_name,(char *)0x0);
       d5_00 = (undefined1 *)0x5931fc;
-      iVar10 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
+      iVar13 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
                          (&in_stack_0000000c->motion_list);
-      pSVar11->state_index = iVar10;
-      if (iVar10 < 0) {
+      pSVar14->state_index = iVar13;
+      if (iVar13 < 0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Invalid state %s for animation %s in %s");
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -2227,61 +2246,62 @@ LAB_00595eb8:
         goto LAB_005927ee;
       }
       aiStack_2718[(in_stack_0000000c->motion_list).motion_count] = 0;
-      pFVar2 = aFStack_1f70;
-      pcVar33 = &DAT_0365caf8 + (in_stack_0000000c->motion_list).motion_count * 0x104;
+      pcVar34 = (char *)&uStack_1f70;
+      pcVar36 = &DAT_0365caf8 + (in_stack_0000000c->motion_list).motion_count * 0x104;
       do {
-        cVar1 = *(char *)&pFVar2->_ptr;
-        *pcVar33 = cVar1;
+        cVar1 = *pcVar34;
+        *pcVar36 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = *(char *)((int)&pFVar2->_ptr + 1);
-        pFVar2 = (FILE *)((int)&pFVar2->_ptr + 2);
-        pcVar33[1] = cVar1;
-        pcVar33 = pcVar33 + 2;
+        cVar1 = pcVar34[1];
+        pcVar34 = pcVar34 + 2;
+        pcVar36[1] = cVar1;
+        pcVar36 = pcVar36 + 2;
       } while (cVar1 != '\0');
       local_100 = 1;
       goto LAB_00592a67;
     }
-    iVar10 = crt_string_c_strnicmp_FUN_005ff070((char *)local_21c8,"checkout",8);
-    if (iVar10 != 0) {
+    iVar13 = crt_string_c_strnicmp_FUN_005ff070((char *)&local_21c8,"checkout",8);
+    if (iVar13 != 0) {
       if (local_100 == 0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Expected animation keyword in %s but instead found this:\n%s");
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&CStack_2ca0,0,uVar29,(uint)pFVar30,(uint)pFVar2,(uint)pcVar33,
+                  (&CStack_2ca0,0,uVar33,(uint)pcVar34,(uint)pCVar3,(uint)pcVar36,
                    (uint)in_stack_fffeec60);
         goto LAB_005927ee;
       }
       aiStack_2718[(in_stack_0000000c->motion_list).motion_count] =
            aiStack_2718[(in_stack_0000000c->motion_list).motion_count] + 1;
-      iVar10 = (in_stack_0000000c->motion_list).motion_count;
-      iVar3 = crt_string_c_strnicmp_FUN_005ff070((char *)local_21c8,"filename",8);
-      pcVar26 = &DAT_0365caf8 + iVar10 * 0x104;
-      if (iVar3 == 0) {
-        str = &local_21c8[0]._link;
-        while ((g_CharacterClassificationTable[(byte)(*(char *)str + 1)] & 2U) != 0) {
-          str = (streambuf **)((int)str + 1);
+      iVar13 = (in_stack_0000000c->motion_list).motion_count;
+      iVar4 = crt_string_c_strnicmp_FUN_005ff070((char *)&local_21c8,"filename",8);
+      pcVar28 = &DAT_0365caf8 + iVar13 * 0x104;
+      if (iVar4 == 0) {
+        pcVar31 = acStack_21c2 + 2;
+        while ((g_CharacterClassificationTable[(byte)(*pcVar31 + 1)] & 2U) != 0) {
+          pcVar31 = pcVar31 + 1;
         }
-        iVar10 = crt_stdio_c_sscanf_FUN_0060013c((char *)str,"\"%[^\"]\"");
-        if (iVar10 != 1) {
+        iVar13 = crt_stdio_c_sscanf_FUN_0060013c(pcVar31,"\"%[^\"]\"");
+        if (iVar13 != 1) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0x112f;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Error parsing \"filename\" statement for animation %s in %s:\n%s");
         }
-        crt_string_c_splitpath_FUN_005ff178(pcVar26,local_14,acStack_1468,acStack_1b68,acStack_c68);
+        crt_string_c_splitpath_FUN_005ff178(pcVar28,local_14,acStack_1468,acStack_1b68,acStack_c68);
         if ((acStack_1468[0] == '\0') && (local_14[0] == '\0')) {
           crt_string_c_splitpath_FUN_005ff178
                     (in_stack_00000010,local_14,acStack_1468,(char *)0x0,(char *)0x0);
-          crt_file_c_makepath_FUN_005febfc(pcVar26,local_14,acStack_1468,acStack_1b68,acStack_c68);
+          crt_file_c_makepath_FUN_005febfc(pcVar28,local_14,acStack_1468,acStack_1b68,acStack_c68);
         }
-        crt_string_c_splitpath_FUN_005ff178(pcVar26,local_18,acStack_1a68,acStack_1968,acStack_d68);
+        crt_string_c_splitpath_FUN_005ff178(pcVar28,local_18,acStack_1a68,acStack_1968,acStack_d68);
         if (acStack_d68[0] == '\0') {
           crt_file_c_makepath_FUN_005febfc
-                    (pcVar26,local_18,acStack_1a68,acStack_1968,"bon");
+                    (pcVar28,local_18,acStack_1a68,acStack_1968,"bon");
         }
-        pcVar27 = (char *)0x0;
-        pFVar2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                           (pcVar26,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x1139);
-        if (pFVar2 == (FILE *)0x0) {
+        pcVar31 = (char *)0x0;
+        file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
+                             (pcVar28,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x1139)
+        ;
+        if (file_ptr == (FILE *)0x0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"Can't open %s mentioned in %s");
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -2290,35 +2310,35 @@ LAB_00595eb8:
           goto LAB_005927ee;
         }
         d5_00 = (undefined1 *)0x5935de;
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\skeledit.cpp",0x113e);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\skeledit.cpp",0x113e);
       }
       else {
         d5_00 = (undefined1 *)0x6;
-        pcVar27 = "frames";
-        pcVar26 = (char *)local_21c8;
-        iVar10 = crt_string_c_strnicmp_FUN_005ff070(pcVar26,"frames",6);
-        if (iVar10 == 0) {
-          pcVar26 = (char *)((int)&local_21c8[0]._cnt + 2);
-          while ((g_CharacterClassificationTable[(byte)(*pcVar26 + 1)] & 2U) != 0) {
-            pcVar26 = pcVar26 + 1;
+        pcVar31 = "frames";
+        pcVar28 = (char *)&local_21c8;
+        iVar13 = crt_string_c_strnicmp_FUN_005ff070(pcVar28,"frames",6);
+        if (iVar13 == 0) {
+          pcVar28 = acStack_21c2;
+          while ((g_CharacterClassificationTable[(byte)(*pcVar28 + 1)] & 2U) != 0) {
+            pcVar28 = pcVar28 + 1;
           }
-          local_ec = -1;
-          crt_stdio_c_sscanf_FUN_0060013c(pcVar26," %[^-] - %s%n");
-          if (local_ec < 3) {
+          local_ec = -NAN;
+          crt_stdio_c_sscanf_FUN_0060013c(pcVar28," %[^-] - %s%n");
+          if ((int)local_ec < 3) {
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                       (g_CEditorToolsPtr,"Error parsing \"frames\" statement for animation %s in %s:\n%s");
             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                      (&CStack_2ca0,0,(uint)pcVar33,(uint)in_stack_fffeec60,(uint)in_stack_fffeec64,
+                      (&CStack_2ca0,0,(uint)pcVar36,(uint)in_stack_fffeec60,(uint)in_stack_fffeec64,
                        (uint)in_stack_fffeec68,(uint)in_stack_fffeec6c);
             goto LAB_005927ee;
           }
-          pcVar26 = (char *)0x593720;
-          iVar10 = core_skeledit_cpp_FUN_00592520();
-          if (iVar10 != 0) {
+          pcVar28 = (char *)0x593720;
+          iVar13 = core_skeledit_cpp_FUN_00592520();
+          if (iVar13 != 0) {
             d5_00 = auStack_25c;
-            pcVar27 = (char *)0x59373e;
-            iVar10 = core_skeledit_cpp_FUN_00592520();
-            if (iVar10 != 0) goto LAB_00592a67;
+            pcVar31 = (char *)0x59373e;
+            iVar13 = core_skeledit_cpp_FUN_00592520();
+            if (iVar13 != 0) goto LAB_00592a67;
           }
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"Error parsing \"frames\" statement for animation %s in %s:\n%s");
@@ -2330,24 +2350,24 @@ LAB_00595eb8:
       }
       goto LAB_00592a67;
     }
-    pcVar27 = acStack_849 + 1;
-    pcVar26 = "%s";
-    crt_stdio_c_sscanf_FUN_0060013c((char *)&local_21c8[0]._link,"%s");
-    uVar29 = 0xffffffff;
-    pcVar33 = acStack_849 + 1;
+    pcVar31 = acStack_849 + 1;
+    pcVar28 = "%s";
+    crt_stdio_c_sscanf_FUN_0060013c(acStack_21c2 + 2,"%s");
+    uVar33 = 0xffffffff;
+    pcVar34 = acStack_849 + 1;
     do {
-      if (uVar29 == 0) break;
-      uVar29 = uVar29 - 1;
-      cVar1 = *pcVar33;
-      pcVar33 = pcVar33 + (uint)bVar23 * -2 + 1;
+      if (uVar33 == 0) break;
+      uVar33 = uVar33 - 1;
+      cVar1 = *pcVar34;
+      pcVar34 = pcVar34 + (uint)bVar25 * -2 + 1;
     } while (cVar1 != '\0');
-    n = ~uVar29 - 1;
+    n = ~uVar33 - 1;
     if (0 < (int)n) {
-      pcVar33 = acStack_849 + ~uVar29;
+      pcVar34 = acStack_849 + ~uVar33;
       do {
-        if ((g_CharacterClassificationTable[(byte)(pcVar33[-1] + 1)] & 2U) == 0) break;
+        if ((g_CharacterClassificationTable[(byte)(pcVar34[-1] + 1)] & 2U) == 0) break;
         n = n - 1;
-        pcVar33 = pcVar33 + -1;
+        pcVar34 = pcVar34 + -1;
       } while (0 < (int)n);
     }
     (acStack_849 + 1)[n] = '\0';
@@ -2356,27 +2376,27 @@ LAB_00595eb8:
       crt_string_c_memmove_FUN_005fe5e0(acStack_849 + 1,acStack_849 + 2,n);
       n = n - 1;
     }
-    pcVar33 = crt_env_c_getenv_FUN_006013f0("USERNAME");
-    if (((pcVar33 != (char *)0x0) &&
-        (iVar10 = crt_string_c_stricmp_FUN_005fe7f0(pcVar33,acStack_849 + 1), iVar10 == 0)) ||
-       (iVar10 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-                           (g_CEditorToolsPtr,"User \"%s\" is currently working on this file.  Continue anyway?"), iVar10 != 0))
+    pcVar34 = crt_env_c_getenv_FUN_006013f0("USERNAME");
+    if (((pcVar34 != (char *)0x0) &&
+        (iVar13 = crt_string_c_stricmp_FUN_005fe7f0(pcVar34,acStack_849 + 1), iVar13 == 0)) ||
+       (iVar13 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+                           (g_CEditorToolsPtr,"User \"%s\" is currently working on this file.  Continue anyway?"), iVar13 != 0))
     goto LAB_00592a67;
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
               (&CStack_2ca0,0,(uint)in_stack_fffeec64,(uint)in_stack_fffeec68,
                (uint)in_stack_fffeec6c,(uint)in_stack_fffeec70,(uint)in_stack_fffeec74);
   }
   else {
-    pcVar26 = "Can't parse home pose filename from %s.  The state count is probably wrong.";
+    pcVar28 = "Can't parse home pose filename from %s.  The state count is probably wrong.";
 LAB_005927df:
-    shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar26);
+    shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar28);
   }
 LAB_005927ee:
   if (local_110 != 0.0) {
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
   }
-  if (local_114 != (FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_114,"..\\core\\skeledit.cpp",0x1052);
+  if (local_114 != (CBoneStructure *)0x0) {
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0((FILE *)local_114,"..\\core\\skeledit.cpp",0x1052);
   }
   return 0;
 }
@@ -2831,7 +2851,7 @@ LAB_005927ee:
 // 00592a76: PUSH EAX
 // 00592a77: MOV EBX,dword ptr [EBP + -0x7e]
 //   XREF to: Stack[-0x108] (READ)
-// 00592a7a: CALL core_skeledit.cpp_LoadFileBoneStructureMaybe_FUN_005895f0
+// 00592a7a: CALL core_skeledit.cpp_readNonEmptyLine_FUN_005895f0
 //   XREF to: 005895f0 (UNCONDITIONAL_CALL)
 // 00592a7f: ADD ESP,0xc
 // 00592a82: MOV dword ptr [EBP + -0x3e],EAX
@@ -3027,7 +3047,7 @@ LAB_005927ee:
 // 00592c37: LEA EAX,[EBP + 0xffffdfe6]
 //   XREF to: Stack[-0x20a4] (DATA)
 // 00592c3d: PUSH EAX
-// 00592c3e: CALL core_skeledit.cpp_LoadFileBoneStructureMaybe_FUN_005895f0
+// 00592c3e: CALL core_skeledit.cpp_readNonEmptyLine_FUN_005895f0
 //   XREF to: 005895f0 (UNCONDITIONAL_CALL)
 // 00592c43: ADD ESP,0xc
 // 00592c46: TEST EAX,EAX
@@ -3153,7 +3173,7 @@ LAB_005927ee:
 // 00592d72: LEA EAX,[EBP + 0xffffdfe6]
 //   XREF to: Stack[-0x20a4] (DATA)
 // 00592d78: PUSH EAX
-// 00592d79: CALL core_skeledit.cpp_LoadFileBoneStructureMaybe_FUN_005895f0
+// 00592d79: CALL core_skeledit.cpp_readNonEmptyLine_FUN_005895f0
 //   XREF to: 005895f0 (UNCONDITIONAL_CALL)
 // 00592d7e: ADD ESP,0xc
 // 00592d81: PUSH 0x3

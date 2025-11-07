@@ -14,10 +14,10 @@
 //   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 (005390f0) at 005396e0 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_00581aa0 (00581aa0) at 00581d63 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_00583170 (00583170) at 00583523 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 0059759f [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 0059759f [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 (004a1380) at 004a1390 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051dec6 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d641 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051dec6 [UNCONDITIONAL_CALL]
 // Globals:
 //   uchar[32768] g_ColorCubeLookup
 //   undefined4 UCHAR_ARRAY_02cf9400

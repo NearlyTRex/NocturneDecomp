@@ -2,7 +2,7 @@
 // Address: 0058a3d0
 // Address Range: [[0058a3d0, 0058a49f]]
 // Convention: __cdecl
-// Signature: void core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStructure * this_ptr)
+// Signature: void core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStructure * this_ptr, char * filename)
 // Cross-references:
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 0059299f [UNCONDITIONAL_CALL]
 // Globals:
@@ -27,19 +27,24 @@
 
 #include "nocturne.h"
 
-void __cdecl core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStructure *this_ptr)
+void __cdecl
+core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStructure *this_ptr,char *filename)
 
 {
-  FILE *file;
+  CBoneStructure *this_ptr_00;
   int iVar1;
+  char *unaff_EBX;
   int iVar2;
-  CBoneStructure *in_stack_0000000c;
+  BADSPACEBASE *in_ESP;
+  int *unaff_ESI;
   char *in_stack_00000010;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x30);
-  file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (in_stack_00000010,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x27c);
-  if (file == (FILE *)0x0) {
+  this_ptr_00 = (CBoneStructure *)
+                shape_memdbg_cpp_openFile_FUN_0050f7a0
+                          (in_stack_00000010,(char *)0x0,"rt","..\\core\\skeledit.cpp",
+                           0x27c);
+  if (this_ptr_00 == (CBoneStructure *)0x0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x27d;
     core_main_c_displayErrorAndQuit_FUN_00506f10
@@ -47,14 +52,16 @@ void __cdecl core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStruct
   }
   iVar2 = 1;
   do {
-    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file);
+    iVar1 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)this_ptr_00);
     if (iVar1 < 0) break;
   } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
-  crt_stdio_c_fscanf_FUN_005fe7c0(file,"%d\n");
-  core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0((CBoneStructure *)file);
-  core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10((CBoneStructure *)file);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",0x290);
-  core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(in_stack_0000000c);
+  crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)this_ptr_00,"%d\n");
+  core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
+            (this_ptr_00,(FILE *)&stack0x00000004,unaff_ESI);
+  core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10(this_ptr_00,(FILE *)0x0,(int)unaff_EBX)
+  ;
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0((FILE *)this_ptr_00,"..\\core\\skeledit.cpp",0x290);
+  core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0((CBoneStructure *)filename);
   return;
 }
 

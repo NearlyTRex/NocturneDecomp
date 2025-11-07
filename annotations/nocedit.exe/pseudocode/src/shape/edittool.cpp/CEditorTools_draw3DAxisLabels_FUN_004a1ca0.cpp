@@ -9,7 +9,7 @@
 //   core_manpuz.cpp_FUN_00509d50 (00509d50) at 00509de2 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_00581aa0 (00581aa0) at 00581d79 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_00583170 (00583170) at 00583539 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005975b4 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 005975b4 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 (0059b640) at 0059b7c1 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90 (004a1e90) at 004a1f20 [UNCONDITIONAL_CALL]
 // Globals:

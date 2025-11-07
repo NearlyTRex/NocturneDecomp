@@ -6,7 +6,7 @@
 // Globals:
 //   WatcomTypeInfo g_RA4HQPointTypeInfo
 // Function calls:
-//   crt_unknown.c_FUN_00600bc2
+//   crt_memory.c_copyObjectArray_FUN_00600bc2
 
 #include "nocturne.h"
 
@@ -14,7 +14,7 @@ int __cdecl
 core_dmodel_cpp_CDemonTriangle_copy_FUN_0047ef10(CDemonTriangle *this_ptr,CDemonTriangle *other)
 
 {
-  int iVar1;
+  void *pvVar1;
   
   (this_ptr->vertex1).x = (other->vertex1).x;
   (this_ptr->vertex1).y = (other->vertex1).y;
@@ -22,8 +22,9 @@ core_dmodel_cpp_CDemonTriangle_copy_FUN_0047ef10(CDemonTriangle *this_ptr,CDemon
   (this_ptr->vertex2).x = (other->vertex2).x;
   (this_ptr->vertex2).y = (other->vertex2).y;
   (this_ptr->vertex2).z = (other->vertex2).z;
-  iVar1 = crt_unknown_c_FUN_00600bc2();
-  return iVar1 + -0x18;
+  pvVar1 = crt_memory_c_copyObjectArray_FUN_00600bc2
+                     (&this_ptr->vertex3,&other->vertex3,4,&g_RA4HQPointTypeInfo);
+  return (int)pvVar1 + -0x18;
 }
 
 
@@ -52,7 +53,7 @@ core_dmodel_cpp_CDemonTriangle_copy_FUN_0047ef10(CDemonTriangle *this_ptr,CDemon
 // 0047ef42: MOV ECX,dword ptr [EDX + -0x4]
 // 0047ef45: PUSH EAX
 // 0047ef46: MOV dword ptr [EAX + -0x4],ECX
-// 0047ef49: CALL crt_unknown.c_FUN_00600bc2
+// 0047ef49: CALL crt_memory.c_copyObjectArray_FUN_00600bc2
 //   XREF to: 00600bc2 (UNCONDITIONAL_CALL)
 // 0047ef4e: ADD ESP,0x10
 // 0047ef51: SUB EAX,0x18

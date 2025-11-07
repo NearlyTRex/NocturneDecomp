@@ -14,7 +14,7 @@
 //   core_netgame.cpp_CNetGame_FUN_0053fd00 (0053fd00) at 005400e0 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0 (00576da0) at 00576f45 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 (0057e7c0) at 0057f55f [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_FUN_0058f810 (0058f810) at 00590ed5 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (0058f810) at 00590ed5 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 00592c26 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220 (004b4220) at 004b4ccd [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 (004baf00) at 004bbe32 [UNCONDITIONAL_CALL]
@@ -25,9 +25,9 @@
 //   engine_fileio.cpp_copyFileWithProgress_FUN_004b2030 (004b2030) at 004b21ab [UNCONDITIONAL_CALL]
 //   engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230 (00550230) at 00550499 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 (004a0430) at 004a04f5 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_005173f0 (005173f0) at 005174b4 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_00519710 (00519710) at 00519789 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_00516620 (00516620) at 005168ba [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_005173f0 (005173f0) at 005174b4 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_00519710 (00519710) at 00519789 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0 (005ad5c0) at 005ad8f2 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_shape_edittool_cpp_006232ee

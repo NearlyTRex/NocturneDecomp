@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_skeleton.cpp_CDeformableModelInstance_renderBones_FUN_005a17e0(CDeformableModelInstance * this_ptr)
 // Cross-references:
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597586 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00597586 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_skeleton.cpp_CDeformableModel_renderBones_FUN_0059b800
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0

@@ -6,45 +6,42 @@
 // Cross-references:
 //   core_stairs.cpp_FUN_005b9670 (005b9670) at 005b9940 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00652ffa
-//   undefined4 DAT_00653002
-//   undefined4 DAT_00653006
-//   undefined4 DAT_0065300a
-//   undefined4 DAT_00653012
-//   undefined4 DAT_0065301a
-//   undefined4 DAT_00653022
-//   undefined4 DAT_0065302a
+//   double DOUBLE_00652ffa = 3.14159265350000
+//   float FLOAT_00653002 = 6.283185
+//   float FLOAT_00653006 = -6.283185
+//   double DOUBLE_0065300a = -1.57079632675000
+//   double DOUBLE_00653012 = 1.57079632675000
+//   double DOUBLE_0065301a = 0.100000000000000
+//   double DOUBLE_00653022 = 10000
+//   double DOUBLE_0065302a = 0.0100000000000000
 //   double DOUBLE_00653032 = 100
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 actors_other_stairs.cpp_FUN_005b9950(undefined4 param_1) */
 
 void core_stairs_cpp_FUN_005b9950(void)
 
 {
   int in_stack_00000004;
   
-  if (*(float *)(in_stack_00000004 + 0x28) < (float)_DAT_00652ffa) {
-    *(float *)(in_stack_00000004 + 0x28) = *(float *)(in_stack_00000004 + 0x28) + _DAT_00653002;
+  if (*(float *)(in_stack_00000004 + 0x28) < (float)DOUBLE_00652ffa) {
+    *(float *)(in_stack_00000004 + 0x28) = *(float *)(in_stack_00000004 + 0x28) + FLOAT_00653002;
   }
-  if ((float)_DAT_00652ffa < *(float *)(in_stack_00000004 + 0x28)) {
-    *(float *)(in_stack_00000004 + 0x28) = *(float *)(in_stack_00000004 + 0x28) + _DAT_00653006;
+  if ((float)DOUBLE_00652ffa < *(float *)(in_stack_00000004 + 0x28)) {
+    *(float *)(in_stack_00000004 + 0x28) = *(float *)(in_stack_00000004 + 0x28) + FLOAT_00653006;
   }
-  if (*(float *)(in_stack_00000004 + 0x24) < (float)_DAT_0065300a) {
+  if (*(float *)(in_stack_00000004 + 0x24) < (float)DOUBLE_0065300a) {
     *(undefined4 *)(in_stack_00000004 + 0x24) = 0xbfc90fdb;
   }
-  if ((float)_DAT_00653012 < *(float *)(in_stack_00000004 + 0x24)) {
+  if ((float)DOUBLE_00653012 < *(float *)(in_stack_00000004 + 0x24)) {
     *(undefined4 *)(in_stack_00000004 + 0x24) = 0x3fc90fdb;
   }
-  if (*(float *)(in_stack_00000004 + 0x2c) < (float)_DAT_0065301a) {
+  if (*(float *)(in_stack_00000004 + 0x2c) < (float)DOUBLE_0065301a) {
     *(undefined4 *)(in_stack_00000004 + 0x2c) = 0x3dcccccd;
   }
-  if ((float)_DAT_00653022 < *(float *)(in_stack_00000004 + 0x2c)) {
+  if ((float)DOUBLE_00653022 < *(float *)(in_stack_00000004 + 0x2c)) {
     *(undefined4 *)(in_stack_00000004 + 0x2c) = 0x461c4000;
   }
-  if (*(float *)(in_stack_00000004 + 0x38) < (float)_DAT_0065302a) {
+  if (*(float *)(in_stack_00000004 + 0x38) < (float)DOUBLE_0065302a) {
     *(undefined4 *)(in_stack_00000004 + 0x38) = 0x3c23d70a;
   }
   if (*(float *)(in_stack_00000004 + 0x38) <= (float)DOUBLE_00653032) {

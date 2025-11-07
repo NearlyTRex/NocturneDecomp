@@ -84,7 +84,7 @@
 //   core_scat.cpp_FUN_00558720 (00558720) at 0055891d [UNCONDITIONAL_CALL]
 //   core_sentinel.cpp_FUN_00568030 (00568030) at 005680c0 [UNCONDITIONAL_CALL]
 //   core_sentinel.cpp_SentinelBehavior_FUN_00568cd0 (00568cd0) at 00568d04 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596dd7 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00596dd7 [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a2800 (005a2800) at 005a2a53 [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a3580 (005a3580) at 005a35f8 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bc686 [UNCONDITIONAL_CALL]

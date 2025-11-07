@@ -11,7 +11,7 @@
 //   core_skeledit.cpp_FUN_0058de70 (0058de70) at 0058e09b [UNCONDITIONAL_CALL]
 //   shape_design.c_cramTextureList_FUN_0046bb80 (0046bb80) at 0046df9c [UNCONDITIONAL_CALL]
 //   shape_design.c_tileTextureMaps_FUN_0046a180 (0046a180) at 0046a845 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051bac0 (0051bac0) at 0051bb2f [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (0051bac0) at 0051bb2f [UNCONDITIONAL_CALL]
 // Globals:
 //   CTextureCache* g_TextureCacheInstance
 // Function calls:

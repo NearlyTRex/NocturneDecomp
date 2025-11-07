@@ -5,7 +5,7 @@
 // Signature: int core_skeleton.cpp_CDeformableModel_getBonePart_FUN_0059c2d0(CDeformableModel * this_ptr, int bone_index)
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042a520 (0042a520) at 0042a6b0 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00598316 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00598316 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

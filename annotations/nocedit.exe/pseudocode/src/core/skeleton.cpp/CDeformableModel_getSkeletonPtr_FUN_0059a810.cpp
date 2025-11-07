@@ -5,12 +5,12 @@
 // Signature: CSkeleton * core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(CDeformableModel * this_ptr)
 // Cross-references:
 //   core_cloth.cpp_FUN_00439710 (00439710) at 00439a1f [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005968f5 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 005968f5 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 (0058e690) at 0058e6a6 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 (0058f120) at 0058f136 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c24e [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058d790 (0058d790) at 0058d7ad [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058e600 (0058e600) at 0058e617 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_ParseSkeletonBase_FUN_0058f120 (0058f120) at 0058f136 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0 (005a16c0) at 005a16db [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 (005a0820) at 005a082e [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0 (0059d9e0) at 0059d9ec [UNCONDITIONAL_CALL]

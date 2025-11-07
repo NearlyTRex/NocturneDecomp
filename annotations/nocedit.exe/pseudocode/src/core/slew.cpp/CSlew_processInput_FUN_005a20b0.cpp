@@ -16,7 +16,7 @@
 //   core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940 (0057a940) at 0057aa44 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 (0057ae50) at 0057af8c [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_UserInputCreate_FUN_0057d660 (0057d660) at 0057dcc4 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00598037 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00598037 [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_0064f112 = 10
 //   double DOUBLE_0064f11a = 0.0500000000000000

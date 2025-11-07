@@ -213,10 +213,6 @@
       "type":"struct"
     },
     {
-      "name":"CBoneStructure",
-      "type":"struct"
-    },
-    {
       "name":"CBulletTrail",
       "type":"struct"
     },
@@ -1090,6 +1086,10 @@
     },
     {
       "name":"CLocation",
+      "type":"struct"
+    },
+    {
+      "name":"CLodFace",
       "type":"struct"
     },
     {
@@ -2449,6 +2449,14 @@
       "type":"struct"
     },
     {
+      "name":"SBoneData",
+      "type":"struct"
+    },
+    {
+      "name":"CBoneStructure",
+      "type":"struct"
+    },
+    {
       "name":"SBoneGuyBox",
       "type":"struct"
     },
@@ -2681,11 +2689,11 @@
       "type":"struct"
     },
     {
-      "name":"SLodFace",
+      "name":"SLodEdge",
       "type":"struct"
     },
     {
-      "name":"SLodMesh",
+      "name":"SLodTriangle",
       "type":"struct"
     },
     {
@@ -4382,6 +4390,10 @@
     },
     {
       "name":"CDemonFileManager",
+      "type":"struct"
+    },
+    {
+      "name":"CLodMesh",
       "type":"struct"
     },
     {
@@ -16067,9 +16079,34 @@
       "alig":1,
       "cat":"/Nocturne/Class/Game",
       "desc":"",
-      "fields":[],
+      "fields":[
+        {
+          "len":4,
+          "name":"bone_count",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":13200,
+          "name":"bones",
+          "offset":4,
+          "type":"SBoneData[100]"
+        },
+        {
+          "len":4864,
+          "name":"field_13204",
+          "offset":13204,
+          "type":"char[4864]"
+        },
+        {
+          "len":400,
+          "name":"new_bone_indices",
+          "offset":18068,
+          "type":"int[100]"
+        }
+      ],
       "importable":true,
-      "len":1,
+      "len":18468,
       "name":"CBoneStructure",
       "pack":false,
       "type":"struct"
@@ -25468,6 +25505,282 @@
       "desc":"",
       "fields":[
         {
+          "len":12,
+          "name":"vertex_indices",
+          "offset":0,
+          "type":"int[3]"
+        },
+        {
+          "len":4,
+          "name":"field_12",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_16",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_20",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_24",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":24,
+          "name":"field_28",
+          "offset":28,
+          "type":"char[24]"
+        },
+        {
+          "len":4,
+          "name":"field_52",
+          "offset":52,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_56",
+          "offset":56,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_60",
+          "offset":60,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_64",
+          "offset":64,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_68",
+          "offset":68,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_72",
+          "offset":72,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_76",
+          "offset":76,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_80",
+          "offset":80,
+          "type":"float"
+        },
+        {
+          "len":36,
+          "name":"vertices",
+          "offset":84,
+          "type":"CVector3f[3]"
+        },
+        {
+          "len":12,
+          "name":"field_120",
+          "offset":120,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"field_132",
+          "offset":132,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_136",
+          "offset":136,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":140,
+      "name":"CLodFace",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"vertex_count",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"vertex_data",
+          "offset":4,
+          "type":"SLodVert*"
+        },
+        {
+          "len":4,
+          "name":"tri_count",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"triangle_data",
+          "offset":12,
+          "type":"SLodTriangle*"
+        },
+        {
+          "len":4,
+          "name":"submesh_count",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"submesh_data",
+          "offset":20,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_24",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_28",
+          "offset":28,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_32",
+          "offset":32,
+          "type":"int"
+        },
+        {
+          "len":16,
+          "name":"field_36",
+          "offset":36,
+          "type":"char[16]"
+        },
+        {
+          "len":4,
+          "name":"next_lod",
+          "offset":52,
+          "type":"CLodMesh*"
+        },
+        {
+          "len":4,
+          "name":"field_56",
+          "offset":56,
+          "type":"FILE*"
+        },
+        {
+          "len":4,
+          "name":"max_vertex_count",
+          "offset":60,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"max_tri_count",
+          "offset":64,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"edge_count",
+          "offset":68,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"edges_ptr",
+          "offset":72,
+          "type":"SLodEdge*"
+        },
+        {
+          "len":4,
+          "name":"lod_level_count",
+          "offset":76,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"lod_levels_ptr",
+          "offset":80,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_84",
+          "offset":84,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_88",
+          "offset":88,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"sample_point_count",
+          "offset":92,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"sample_points_ptr",
+          "offset":96,
+          "type":"void*"
+        },
+        {
+          "len":12,
+          "name":"center_offset",
+          "offset":100,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"scale_factor",
+          "offset":112,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":116,
+      "name":"CLodMesh",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":4,
           "name":"base_codec",
           "offset":0,
@@ -34404,6 +34717,48 @@
       "desc":"",
       "fields":[
         {
+          "len":32,
+          "name":"name",
+          "offset":0,
+          "type":"char[32]"
+        },
+        {
+          "len":4,
+          "name":"field_32",
+          "offset":32,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"parent_index",
+          "offset":36,
+          "type":"int"
+        },
+        {
+          "len":44,
+          "name":"field_40",
+          "offset":40,
+          "type":"char[44]"
+        },
+        {
+          "len":48,
+          "name":"matrix",
+          "offset":84,
+          "type":"CMatrix3x4f"
+        }
+      ],
+      "importable":true,
+      "len":132,
+      "name":"SBoneData",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":72,
           "name":"field_0",
           "offset":0,
@@ -37098,15 +37453,123 @@
       "desc":"",
       "fields":[
         {
-          "len":140,
+          "len":4,
+          "name":"vertex_idx_1",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"vertex_idx_2",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"field_8",
+          "offset":8,
+          "type":"char[12]"
+        },
+        {
+          "len":4,
+          "name":"deletion_flag",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"field_24",
+          "offset":24,
+          "type":"char[12]"
+        },
+        {
+          "len":4,
+          "name":"adjacent_tri_count",
+          "offset":36,
+          "type":"int"
+        },
+        {
+          "len":200,
+          "name":"adjacent_tri_indices",
+          "offset":40,
+          "type":"int[50]"
+        }
+      ],
+      "importable":true,
+      "len":240,
+      "name":"SLodEdge",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":16,
           "name":"field_0",
           "offset":0,
-          "type":"char[140]"
+          "type":"char[16]"
+        },
+        {
+          "len":4,
+          "name":"vertex_idx_0",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"vertex_idx_1",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"vertex_idx_2",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":24,
+          "name":"field_28",
+          "offset":28,
+          "type":"char[24]"
+        },
+        {
+          "len":4,
+          "name":"edge_idx_0",
+          "offset":52,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"edge_idx_1",
+          "offset":56,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"edge_idx_2",
+          "offset":60,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"processed_flag",
+          "offset":64,
+          "type":"int"
+        },
+        {
+          "len":72,
+          "name":"field_68",
+          "offset":68,
+          "type":"char[72]"
         }
       ],
       "importable":true,
       "len":140,
-      "name":"SLodFace",
+      "name":"SLodTriangle",
       "pack":false,
       "type":"struct"
     },
@@ -37116,28 +37579,22 @@
       "desc":"",
       "fields":[
         {
-          "len":116,
+          "len":1016,
           "name":"field_0",
           "offset":0,
-          "type":"char[116]"
-        }
-      ],
-      "importable":true,
-      "len":116,
-      "name":"SLodMesh",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
+          "type":"char[1016]"
+        },
         {
-          "len":1220,
-          "name":"field_0",
-          "offset":0,
-          "type":"char[1220]"
+          "len":4,
+          "name":"adjacent_edge_count",
+          "offset":1016,
+          "type":"int"
+        },
+        {
+          "len":200,
+          "name":"adjacent_edge_indices",
+          "offset":1020,
+          "type":"int[50]"
         }
       ],
       "importable":true,

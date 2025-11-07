@@ -105,6 +105,7 @@ const double g_PositiveInfinity = inf;
 // float constants
 const float FLOAT_00660484 = 120f;
 const float FLOAT_006608cc = 256f;
+const float FLOAT_0066136c = 256f;
 const float g_MirrorProjectionScale = 256f;
 const float g_MirrorFloatToInt = 65536f;
 const float g_MirrorIntToFloat_Coarse = 0.00390625f;
@@ -119,6 +120,7 @@ const float g_VDCameraDistanceRadius = 200f;
 const float g_VDNearbyActorRadius = 100f;
 const float FLOAT_00662a28 = 256f;
 const float FLOAT_00662a40 = 256f;
+const float FLOAT_00662e44 = 0.00390625f;
 const float FLOAT_00662e98 = 256f;
 const float FLOAT_00662ea0 = 0.00390625f;
 const float FLOAT_00663928 = 1.5f;

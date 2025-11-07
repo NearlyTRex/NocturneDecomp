@@ -12,7 +12,7 @@
 //   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 (00485be0) at 00485d6d [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_CMimic_FUN_005205f0 (005205f0) at 005206f7 [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_FUN_005208b0 (005208b0) at 00520907 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005971ca [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 005971ca [UNCONDITIONAL_CALL]
 //   core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590 (005c7590) at 005c760e [UNCONDITIONAL_CALL]
 //   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0 (005e6da0) at 005e6e14 [UNCONDITIONAL_CALL]
 // Function calls:

@@ -21,7 +21,7 @@
 //   core_script.cpp_FUN_00562920 (00562920) at 00563573 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 (00584940) at 00584b40 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 (0057e7c0) at 0057f5ee [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00598410 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00598410 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_viewModel_FUN_00598fc0 (00598fc0) at 005991ad [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_No_files_found_006230e2

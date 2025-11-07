@@ -51,10 +51,6 @@ undefined FUN_00600a64();
 // Address: 00600ad0
 undefined FUN_00600ad0();
 
-// Original: crt_unknown.c_FUN_00600bc2
-// Address: 00600bc2
-undefined FUN_00600bc2();
-
 // Original: crt_unknown.c_FUN_00600c80
 // Address: 00600c80
 undefined FUN_00600c80();
@@ -70,10 +66,6 @@ undefined AnotherFunctorCall2();
 // Original: crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94
 // Address: 00601a94
 undefined MultipleDoNothingCalls();
-
-// Original: crt_unknown.c_FUN_006020c2
-// Address: 006020c2
-undefined FUN_006020c2();
 
 // Original: crt_unknown.c_FUN_006021c0
 // Address: 006021c0

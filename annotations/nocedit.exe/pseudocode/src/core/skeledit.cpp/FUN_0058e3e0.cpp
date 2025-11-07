@@ -4,14 +4,11 @@
 // Convention: unknown
 // Signature: undefined core_skeledit.cpp_FUN_0058e3e0()
 // Cross-references:
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597f44 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00597f44 [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 
 #include "nocturne.h"
-
-/* Signature: void core_skeledit.cpp_FUN_0058e3e0(int* param_1, float param_2, undefined4 param_3)
-    */
 
 void core_skeledit_cpp_FUN_0058e3e0(void)
 

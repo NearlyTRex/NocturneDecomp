@@ -61,7 +61,7 @@
 //   core_set.cpp_FUN_005702b0 (005702b0) at 005702cb [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_FUN_005817d0 (005817d0) at 00581947 [UNCONDITIONAL_CALL]
 //   core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50 (00587b50) at 00587d01 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597508 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00597508 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780 (0059a780) at 0059a7d0 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 (0059abf0) at 0059b568 [UNCONDITIONAL_CALL]
 //   core_stairs.cpp_FUN_005b9c10 (005b9c10) at 005b9c8a [UNCONDITIONAL_CALL]

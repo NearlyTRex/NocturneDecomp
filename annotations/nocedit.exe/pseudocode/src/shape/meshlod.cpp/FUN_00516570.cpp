@@ -4,35 +4,38 @@
 // Convention: unknown
 // Signature: undefined shape_meshlod.cpp_FUN_00516570()
 // Cross-references:
-//   shape_meshlod.cpp_FUN_00516e10 (00516e10) at 00516ebd [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_LodMesh_getLOD_FUN_0051b920 (0051b920) at 0051baa6 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_00516e10 (00516e10) at 00516ebd [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 (0051b920) at 0051baa6 [UNCONDITIONAL_CALL]
 // Function calls:
-//   shape_meshlod.cpp_EncounteredInvalidFacesWhichWereDeleted_FUN_005197c0
+//   shape_meshlod.cpp_CLodMesh_FUN_005197c0
 
 #include "nocturne.h"
 
 void shape_meshlod_cpp_FUN_00516570(void)
 
 {
-  int iVar1;
+  SLodVert *pSVar1;
   int iVar2;
   int iVar3;
-  int *in_stack_00000004;
+  CLodMesh *in_stack_00000004;
   float *in_stack_00000008;
   
   iVar3 = 0;
-  if (0 < *in_stack_00000004) {
+  if (0 < in_stack_00000004->vertex_count) {
     iVar2 = 0;
     do {
-      iVar1 = in_stack_00000004[1];
-      *(float *)(iVar2 + iVar1) = *in_stack_00000008 + *(float *)(iVar2 + iVar1);
-      *(float *)(iVar2 + 4 + iVar1) = in_stack_00000008[1] + *(float *)(iVar2 + 4 + iVar1);
+      pSVar1 = in_stack_00000004->vertex_data;
+      *(float *)(pSVar1->field0_0x0 + iVar2) =
+           *in_stack_00000008 + *(float *)(pSVar1->field0_0x0 + iVar2);
+      *(float *)(pSVar1->field0_0x0 + iVar2 + 4) =
+           in_stack_00000008[1] + *(float *)(pSVar1->field0_0x0 + iVar2 + 4);
       iVar3 = iVar3 + 1;
-      *(float *)(iVar2 + 8 + iVar1) = in_stack_00000008[2] + *(float *)(iVar2 + 8 + iVar1);
+      *(float *)(pSVar1->field0_0x0 + iVar2 + 8) =
+           in_stack_00000008[2] + *(float *)(pSVar1->field0_0x0 + iVar2 + 8);
       iVar2 = iVar2 + 0x4c4;
-    } while (iVar3 < *in_stack_00000004);
+    } while (iVar3 < in_stack_00000004->vertex_count);
   }
-  shape_meshlod_cpp_EncounteredInvalidFacesWhichWereDeleted_FUN_005197c0();
+  shape_meshlod_cpp_CLodMesh_FUN_005197c0(in_stack_00000004);
   return;
 }
 
@@ -72,7 +75,7 @@ void shape_meshlod_cpp_FUN_00516570(void)
 // 005165b3: POP EDI
 // 005165b4: PUSH ESI
 //   Label: LAB_005165b4
-// 005165b5: CALL shape_meshlod.cpp_EncounteredInvalidFacesWhichWereDeleted_FUN_005197c0
+// 005165b5: CALL shape_meshlod.cpp_CLodMesh_FUN_005197c0
 //   XREF to: 005197c0 (UNCONDITIONAL_CALL)
 // 005165ba: ADD ESP,0x4
 // 005165bd: POP ESI

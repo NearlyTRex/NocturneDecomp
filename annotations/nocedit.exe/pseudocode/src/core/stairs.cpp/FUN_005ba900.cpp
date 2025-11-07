@@ -4,9 +4,9 @@
 // Convention: unknown
 // Signature: undefined core_stairs.cpp_FUN_005ba900()
 // Globals:
-//   undefined4 DAT_006530ca
-//   undefined4 DAT_006530d2
-//   undefined4 DAT_006530da
+//   double DOUBLE_006530ca = 0.5
+//   double DOUBLE_006530d2 = 0.100000000000000
+//   double DOUBLE_006530da = 0.200000000000000
 //   CGame* g_CGamePtr = 02d81a9c
 //   CKeys* g_CKeysPtr = 02dcd7d4
 //   undefined4 g_CGameInstance.delta_time_float
@@ -18,7 +18,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_stairs.cpp_FUN_005ba900(undefined4 param_1) */
 
 void core_stairs_cpp_FUN_005ba900(void)
@@ -74,19 +73,19 @@ void core_stairs_cpp_FUN_005ba900(void)
            *(float *)(in_stack_00000004[1].actor_name + 4) + in_stack_00000088;
     }
   }
-  if (*(float *)(in_stack_00000004[1].actor_name + 8) < (float)_DAT_006530da) {
+  if (*(float *)(in_stack_00000004[1].actor_name + 8) < (float)DOUBLE_006530da) {
     in_stack_00000004[1].actor_name[8] = -0x33;
     in_stack_00000004[1].actor_name[9] = -0x34;
     in_stack_00000004[1].actor_name[10] = 'L';
     in_stack_00000004[1].actor_name[0xb] = '>';
   }
-  if (*(float *)in_stack_00000004[1].actor_name < (float)_DAT_006530da) {
+  if (*(float *)in_stack_00000004[1].actor_name < (float)DOUBLE_006530da) {
     in_stack_00000004[1].actor_name[0] = -0x33;
     in_stack_00000004[1].actor_name[1] = -0x34;
     in_stack_00000004[1].actor_name[2] = 'L';
     in_stack_00000004[1].actor_name[3] = '>';
   }
-  if (*(float *)(in_stack_00000004[1].actor_name + 4) < (float)_DAT_006530da) {
+  if (*(float *)(in_stack_00000004[1].actor_name + 4) < (float)DOUBLE_006530da) {
     in_stack_00000004[1].actor_name[4] = -0x33;
     in_stack_00000004[1].actor_name[5] = -0x34;
     in_stack_00000004[1].actor_name[6] = 'L';
@@ -104,7 +103,7 @@ void core_stairs_cpp_FUN_005ba900(void)
     in_stack_00000004[1].actor_name[0x16] = '\0';
     in_stack_00000004[1].actor_name[0x17] = '\0';
   }
-  if (*(float *)(in_stack_00000004[1].actor_name + 0xc) < (float)_DAT_006530d2) {
+  if (*(float *)(in_stack_00000004[1].actor_name + 0xc) < (float)DOUBLE_006530d2) {
     in_stack_00000004[1].actor_name[0xc] = -0x33;
     in_stack_00000004[1].actor_name[0xd] = -0x34;
     in_stack_00000004[1].actor_name[0xe] = -0x34;
@@ -115,7 +114,7 @@ void core_stairs_cpp_FUN_005ba900(void)
     *(undefined4 *)(in_stack_00000004[1].actor_name + 0xc) =
          *(undefined4 *)in_stack_00000004[1].actor_name;
   }
-  if (*(float *)(in_stack_00000004[1].actor_name + 0x10) < (float)_DAT_006530d2) {
+  if (*(float *)(in_stack_00000004[1].actor_name + 0x10) < (float)DOUBLE_006530d2) {
     in_stack_00000004[1].actor_name[0x10] = -0x33;
     in_stack_00000004[1].actor_name[0x11] = -0x34;
     in_stack_00000004[1].actor_name[0x12] = -0x34;

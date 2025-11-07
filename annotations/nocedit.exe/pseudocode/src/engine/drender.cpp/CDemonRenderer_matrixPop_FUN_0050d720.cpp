@@ -63,7 +63,7 @@
 //   core_setedit.cpp_CDemonSet_FUN_00581aa0 (00581aa0) at 00581db4 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_00583170 (00583170) at 0058362f [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00 (0057fd00) at 0057fefe [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597547 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00597547 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 (0059b640) at 0059b7d4 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c3150 (005c3150) at 005c34f7 [UNCONDITIONAL_CALL]
 //   core_trap.cpp_CTrap_FUN_005de920 (005de920) at 005de999 [UNCONDITIONAL_CALL]

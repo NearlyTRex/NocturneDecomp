@@ -10,7 +10,7 @@
 //   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 (00485be0) at 00485d7b [UNCONDITIONAL_CALL]
 //   core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 (004fee00) at 004ff170 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052b160 (0052b160) at 0052b23f [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005971d9 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 005971d9 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_CaptureFaceCount
 //   SFace[5000] g_CapturedFaces

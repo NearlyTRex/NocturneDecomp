@@ -41,12 +41,12 @@
 //   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 //   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
 //   shape_edittool.cpp_CStrList_add_FUN_004a2b80
-//   shape_meshlod.cpp_FUN_00516ba0
+//   shape_meshlod.cpp_CLodMesh_FUN_00516ba0
+//   shape_meshlod.cpp_CLodMesh_FUN_0051b870
+//   shape_meshlod.cpp_CLodMesh_FUN_0051b8a0
 //   shape_meshlod.cpp_FUN_0051b6f0
 //   shape_meshlod.cpp_FUN_0051b770
-//   shape_meshlod.cpp_FUN_0051b8a0
 //   shape_meshlod.cpp_FUN_0051d520
-//   shape_meshlod.cpp_TryingToCloseFileMaybe_FUN_0051b870
 //   sound_sndmain.cpp_cleanup_FUN_005ab130
 //   sound_sndmain.cpp_FUN_005aaef0
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
@@ -58,9 +58,10 @@ int core_skeledit_cpp_FUN_00589c20(void)
 {
   int iVar1;
   CPickList *this_ptr;
+  FILE *pFVar2;
   char *format_string;
   BADSPACEBASE *in_ESP;
-  int in_stack_0000000c;
+  CLodMesh *in_stack_0000000c;
   int in_stack_00000010;
   CStrList_vtable *in_stack_fffff5b4;
   CStrList_vtable *in_stack_fffff5b8;
@@ -110,15 +111,15 @@ int core_skeledit_cpp_FUN_00589c20(void)
         if (iVar1 != 1) {
           return 0;
         }
-        iVar1 = shape_meshlod_cpp_FUN_0051b770();
-        *(int *)(in_stack_0000000c + 0x38) = iVar1;
-        if (iVar1 == 0) {
+        pFVar2 = (FILE *)shape_meshlod_cpp_FUN_0051b770();
+        in_stack_0000000c->field11_0x38 = pFVar2;
+        if (pFVar2 == (FILE *)0x0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0x179;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create mesh precompute file.");
         }
         core_skeledit_cpp_FUN_0058a0f0();
-        shape_meshlod_cpp_FUN_00516ba0();
+        shape_meshlod_cpp_CLodMesh_FUN_00516ba0(in_stack_0000000c);
         sound_sndmain_cpp_FUN_005aaef0();
         sound_sndmain_cpp_startSfx_FUN_005a8e90();
         shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
@@ -126,21 +127,21 @@ int core_skeledit_cpp_FUN_00589c20(void)
         sound_sndmain_cpp_cleanup_FUN_005ab130();
         return 1;
       }
-      iVar1 = shape_meshlod_cpp_FUN_0051b770();
-      *(int *)(in_stack_0000000c + 0x38) = iVar1;
-      if (iVar1 == 0) {
+      pFVar2 = (FILE *)shape_meshlod_cpp_FUN_0051b770();
+      in_stack_0000000c->field11_0x38 = pFVar2;
+      if (pFVar2 == (FILE *)0x0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Error loading precompute file.");
         return -1;
       }
       core_skeledit_cpp_FUN_00589fa0();
       core_skeledit_cpp_FUN_00589fe0();
-      iVar1 = shape_meshlod_cpp_FUN_0051b8a0();
+      iVar1 = shape_meshlod_cpp_CLodMesh_FUN_0051b8a0(in_stack_0000000c);
       if (iVar1 != 0) {
-        shape_meshlod_cpp_TryingToCloseFileMaybe_FUN_0051b870();
+        shape_meshlod_cpp_CLodMesh_FUN_0051b870(in_stack_0000000c);
         return 1;
       }
-      shape_meshlod_cpp_TryingToCloseFileMaybe_FUN_0051b870();
+      shape_meshlod_cpp_CLodMesh_FUN_0051b870(in_stack_0000000c);
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"Error loading precompute file.");
       return -1;
@@ -152,7 +153,7 @@ int core_skeledit_cpp_FUN_00589c20(void)
     iVar1 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                       (g_CEditorToolsPtr,format_string);
     if (iVar1 != 0) {
-      shape_meshlod_cpp_FUN_00516ba0();
+      shape_meshlod_cpp_CLodMesh_FUN_00516ba0(in_stack_0000000c);
       sound_sndmain_cpp_FUN_005aaef0();
       sound_sndmain_cpp_startSfx_FUN_005a8e90();
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
@@ -345,14 +346,14 @@ int core_skeledit_cpp_FUN_00589c20(void)
 // 00589dc0: MOV EBP,dword ptr [EBX + 0x38]
 // 00589dc3: PUSH EBP
 // 00589dc4: PUSH EBX
-// 00589dc5: CALL shape_meshlod.cpp_FUN_0051b8a0
+// 00589dc5: CALL shape_meshlod.cpp_CLodMesh_FUN_0051b8a0
 //   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)
 // 00589dca: ADD ESP,0x8
 // 00589dcd: TEST EAX,EAX
 // 00589dcf: JZ 0x00589e0e
 //   XREF to: 00589e0e (CONDITIONAL_JUMP)
 // 00589dd1: PUSH EBX
-// 00589dd2: CALL shape_meshlod.cpp_TryingToCloseFileMaybe_FUN_0051b870
+// 00589dd2: CALL shape_meshlod.cpp_CLodMesh_FUN_0051b870
 //   XREF to: 0051b870 (UNCONDITIONAL_CALL)
 // 00589dd7: MOV EAX,0x1
 // 00589ddc: ADD ESP,0x4
@@ -381,7 +382,7 @@ int core_skeledit_cpp_FUN_00589c20(void)
 // 00589e0d: RET
 // 00589e0e: PUSH EBX
 //   Label: LAB_00589e0e
-// 00589e0f: CALL shape_meshlod.cpp_TryingToCloseFileMaybe_FUN_0051b870
+// 00589e0f: CALL shape_meshlod.cpp_CLodMesh_FUN_0051b870
 //   XREF to: 0051b870 (UNCONDITIONAL_CALL)
 // 00589e14: ADD ESP,0x4
 // 00589e17: PUSH 0x64a039
@@ -434,7 +435,7 @@ int core_skeledit_cpp_FUN_00589c20(void)
 // 00589e80: PUSH EBP
 // 00589e81: PUSH 0x0
 // 00589e83: PUSH EBX
-// 00589e84: CALL shape_meshlod.cpp_FUN_00516ba0
+// 00589e84: CALL shape_meshlod.cpp_CLodMesh_FUN_00516ba0
 //   XREF to: 00516ba0 (UNCONDITIONAL_CALL)
 // 00589e89: ADD ESP,0xc
 // 00589e8c: CALL sound_sndmain.cpp_FUN_005aaef0
@@ -488,7 +489,7 @@ int core_skeledit_cpp_FUN_00589c20(void)
 // 00589ef3: PUSH EBP
 // 00589ef4: PUSH 0x0
 // 00589ef6: PUSH EBX
-// 00589ef7: CALL shape_meshlod.cpp_FUN_00516ba0
+// 00589ef7: CALL shape_meshlod.cpp_CLodMesh_FUN_00516ba0
 //   XREF to: 00516ba0 (UNCONDITIONAL_CALL)
 // 00589efc: ADD ESP,0xc
 // 00589eff: CALL sound_sndmain.cpp_FUN_005aaef0

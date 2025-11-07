@@ -27,9 +27,9 @@
 //   core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940 (0057a940) at 0057a98b [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 (0057ae50) at 0057aeda [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_UserInputCreate_FUN_0057d660 (0057d660) at 0057d952 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596907 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00596907 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051db1e [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d546 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051db1e [UNCONDITIONAL_CALL]
 // Function calls:
 //   wincore_winrun.cpp_getTime_FUN_005f2dc0
 

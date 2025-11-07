@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined shape_meshlod.cpp_SamplePointsCheck_FUN_00519b50()
 // Cross-references:
-//   shape_meshlod.cpp_NeighboringFacesEdgesCheck_FUN_00518910 (00518910) at 00518f21 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_00518910 (00518910) at 00518f21 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_shape_meshlod_cpp_00637a5d
 //   TerminatedCString s_Too_many_sample_points_00637a72
@@ -19,7 +19,7 @@
 //   undefined4 CVector3f_ARRAY_02f313f0[0].z
 //   undefined4 DAT_02f313fc
 //   undefined4 DAT_02f31400
-//   undefined8 DAT_02f326b0
+//   undefined4 DAT_02f326b0
 //   undefined4 DAT_02f326b0+4
 //   undefined8 DAT_02f326b8
 //   undefined4 DAT_02f326b8+4
@@ -31,8 +31,6 @@
 //   shape_meshlod.cpp_FUN_0051a030
 
 #include "nocturne.h"
-
-/* Signature: undefined1 shape_meshlod.cpp_SamplePointsCheck(undefined4 param_1) */
 
 void shape_meshlod_cpp_SamplePointsCheck_FUN_00519b50
                (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
@@ -106,7 +104,7 @@ void shape_meshlod_cpp_SamplePointsCheck_FUN_00519b50
     do {
       *(undefined4 *)((int)&DAT_02f326b0 + iVar6) = 0;
       iVar9 = iVar9 + 1;
-      *(undefined4 *)((int)&DAT_02f326b0 + iVar6 + 4) = 0x3ff00000;
+      *(undefined4 *)((int)&DAT_02f326b0_4 + iVar6) = 0x3ff00000;
       core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)&local_8c,point);
       pCVar3 = extraout_EAX;
       param_2 = extraout_EDX;

@@ -5,7 +5,7 @@
 // Signature: CVector3f * core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)
 // Cross-references:
 //   core_bodypart.cpp_FUN_0041a630 (0041a630) at 0041a8c4 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005980d5 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 005980d5 [UNCONDITIONAL_CALL]
 //   core_xform.cpp_quaternionToEulerAnglesZYX_FUN_005f7af0 (005f7af0) at 005f7b10 [UNCONDITIONAL_CALL]
 // Globals:
 //   double g_MathConstantNegativeOne = -1

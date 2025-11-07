@@ -31,7 +31,7 @@
 //   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052bd84 [UNCONDITIONAL_CALL]
 //   core_passngr.cpp_FUN_00545d30 (00545d30) at 00545d8f [UNCONDITIONAL_CALL]
 //   core_sentinel.cpp_FUN_00567e20 (00567e20) at 00567e37 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005968da [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 005968da [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00598f10 (00598f10) at 00598f71 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_viewModel_FUN_00598fc0 (00598fc0) at 00599218 [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a24d0 (005a24d0) at 005a24e9 [UNCONDITIONAL_CALL]

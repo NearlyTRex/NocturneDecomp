@@ -14,7 +14,7 @@
 //   core_level.cpp_CLevelLoader_cleanup_FUN_00504720 (00504720) at 00504747 [UNCONDITIONAL_CALL]
 //   core_moon.cpp_CMoon_free_FUN_00529ce0 (00529ce0) at 00529d08 [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_clear_FUN_005693c0 (005693c0) at 005693c7 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596a95 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00596a95 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_core_dmodel_cpp_0061f534
 //   TerminatedCString s_core_dmodel_cpp_0061f547

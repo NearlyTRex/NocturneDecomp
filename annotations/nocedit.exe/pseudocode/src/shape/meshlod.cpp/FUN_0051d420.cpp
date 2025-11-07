@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined shape_meshlod.cpp_FUN_0051d420()
 // Cross-references:
-//   shape_meshlod.cpp_FUN_00516d50 (00516d50) at 00516db9 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_00516d50 (00516d50) at 00516db9 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_d_006381fb
 //   TerminatedCString s_d_006381ff

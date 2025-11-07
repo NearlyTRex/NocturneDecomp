@@ -13,8 +13,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 shape_meshlod.cpp_FUN_0051e770(undefined4 param_1) */
-
 void shape_meshlod_cpp_FUN_0051e770(void)
 
 {

@@ -18,8 +18,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined4 core_skeledit.cpp_FUN_005925c0(char* param_1, undefined4 param_2) */
-
 undefined4 core_skeledit_cpp_FUN_005925c0(void)
 
 {

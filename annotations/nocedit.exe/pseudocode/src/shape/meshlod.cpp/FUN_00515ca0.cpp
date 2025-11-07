@@ -4,8 +4,8 @@
 // Convention: unknown
 // Signature: undefined shape_meshlod.cpp_FUN_00515ca0()
 // Cross-references:
-//   shape_meshlod.cpp_FUN_00515ba0 (00515ba0) at 00515c5d [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_00517630 (00517630) at 00517fba [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_00517630 (00517630) at 00517fba [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0 (00515ba0) at 00515c5d [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_Too_many_adj_faces_00637466
 //   TerminatedCString s_shape_meshlod_cpp_0063747a

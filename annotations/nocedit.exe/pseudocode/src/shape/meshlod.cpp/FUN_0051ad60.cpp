@@ -19,7 +19,7 @@
 //   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 //   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 //   shape_memdbg.cpp_openFile_FUN_0050f7a0
-//   shape_meshlod.cpp_FUN_0051adf0
+//   shape_meshlod.cpp_CLodMesh_FUN_0051adf0
 
 #include "nocturne.h"
 
@@ -28,6 +28,7 @@ void shape_meshlod_cpp_FUN_0051ad60(void)
 {
   FILE *file_ptr;
   char *in_stack_00000008;
+  CLodMesh *in_stack_00000010;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Importing %s");
@@ -39,7 +40,7 @@ void shape_meshlod_cpp_FUN_0051ad60(void)
     g_CurrentLineNumber = 0x10cf;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",in_stack_00000008);
   }
-  shape_meshlod_cpp_FUN_0051adf0();
+  shape_meshlod_cpp_CLodMesh_FUN_0051adf0(in_stack_00000010);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\meshlod.cpp",0x10d7);
   return;
 }
@@ -81,7 +82,7 @@ void shape_meshlod_cpp_FUN_0051ad60(void)
 // 0051ad9d: MOV EBP,dword ptr [ESP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 0051ada1: PUSH EBP
-// 0051ada2: CALL shape_meshlod.cpp_FUN_0051adf0
+// 0051ada2: CALL shape_meshlod.cpp_CLodMesh_FUN_0051adf0
 //   XREF to: 0051adf0 (UNCONDITIONAL_CALL)
 // 0051ada7: ADD ESP,0x8
 // 0051adaa: PUSH 0x10d7

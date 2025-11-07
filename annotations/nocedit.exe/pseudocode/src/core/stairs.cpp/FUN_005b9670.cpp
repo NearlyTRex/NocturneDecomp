@@ -7,13 +7,13 @@
 //   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 (0043d590) at 0043d6e7 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052c400 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052ca90 (0052ca90) at 0052cb59 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597aa3 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00597aa3 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051e3cc [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d7cc [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051e3cc [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00652fe2
-//   undefined4 DAT_00652fea
-//   undefined4 DAT_00652ff2
+//   double DOUBLE_00652fe2 = 3.14159265350000
+//   double DOUBLE_00652fea = 1.10000000000000
+//   double DOUBLE_00652ff2 = 1.5
 //   CGame* g_CGamePtr = 02d81a9c
 //   CKeys* g_CKeysPtr = 02dcd7d4
 //   undefined4 g_CGameInstance.delta_time_float
@@ -23,10 +23,6 @@
 //   core_stairs.cpp_FUN_005b9950
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 actors_other_stairs.cpp_FUN_005b9670(undefined4 param_1, undefined4
-   param_2) */
 
 void core_stairs_cpp_FUN_005b9670(void)
 
@@ -57,10 +53,10 @@ void core_stairs_cpp_FUN_005b9670(void)
   else {
     fStack_c = 0.05;
   }
-  fVar3 = (float)_DAT_00652fea;
+  fVar3 = (float)DOUBLE_00652fea;
   fVar1 = g_CGamePtr->delta_time_float * in_stack_00000008;
-  fStack0000000c = *(float *)(in_stack_00000004 + 0x2c) * (float)_DAT_00652ff2;
-  fVar2 = (float)_DAT_00652fe2;
+  fStack0000000c = *(float *)(in_stack_00000004 + 0x2c) * (float)DOUBLE_00652ff2;
+  fVar2 = (float)DOUBLE_00652fe2;
   if (fStack0000000c < 1.0) {
     fStack0000000c = 1.0;
   }

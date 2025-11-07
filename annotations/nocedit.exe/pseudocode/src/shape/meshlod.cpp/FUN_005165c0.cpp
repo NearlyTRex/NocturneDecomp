@@ -4,10 +4,10 @@
 // Convention: unknown
 // Signature: undefined shape_meshlod.cpp_FUN_005165c0()
 // Cross-references:
-//   shape_meshlod.cpp_FUN_00516e10 (00516e10) at 00516f40 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_LodMesh_getLOD_FUN_0051b920 (0051b920) at 0051ba7d [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_00516e10 (00516e10) at 00516f40 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 (0051b920) at 0051ba7d [UNCONDITIONAL_CALL]
 // Function calls:
-//   shape_meshlod.cpp_EncounteredInvalidFacesWhichWereDeleted_FUN_005197c0
+//   shape_meshlod.cpp_CLodMesh_FUN_005197c0
 
 #include "nocturne.h"
 
@@ -16,24 +16,26 @@ void shape_meshlod_cpp_FUN_005165c0(void)
 {
   int iVar1;
   int iVar2;
-  int *in_stack_00000004;
+  CLodMesh *in_stack_00000004;
   float *in_stack_00000008;
   
   iVar2 = 0;
-  if (0 < *in_stack_00000004) {
+  if (0 < in_stack_00000004->vertex_count) {
     iVar1 = 0;
     do {
-      *(float *)(in_stack_00000004[1] + iVar1) =
-           *in_stack_00000008 * *(float *)(in_stack_00000004[1] + iVar1);
-      *(float *)(in_stack_00000004[1] + 4 + iVar1) =
-           in_stack_00000008[1] * *(float *)(in_stack_00000004[1] + 4 + iVar1);
+      *(float *)(in_stack_00000004->vertex_data->field0_0x0 + iVar1) =
+           *in_stack_00000008 * *(float *)(in_stack_00000004->vertex_data->field0_0x0 + iVar1);
+      *(float *)(in_stack_00000004->vertex_data->field0_0x0 + iVar1 + 4) =
+           in_stack_00000008[1] * *(float *)(in_stack_00000004->vertex_data->field0_0x0 + iVar1 + 4)
+      ;
       iVar2 = iVar2 + 1;
-      *(float *)(in_stack_00000004[1] + 8 + iVar1) =
-           in_stack_00000008[2] * *(float *)(in_stack_00000004[1] + 8 + iVar1);
+      *(float *)(in_stack_00000004->vertex_data->field0_0x0 + iVar1 + 8) =
+           in_stack_00000008[2] * *(float *)(in_stack_00000004->vertex_data->field0_0x0 + iVar1 + 8)
+      ;
       iVar1 = iVar1 + 0x4c4;
-    } while (iVar2 < *in_stack_00000004);
+    } while (iVar2 < in_stack_00000004->vertex_count);
   }
-  shape_meshlod_cpp_EncounteredInvalidFacesWhichWereDeleted_FUN_005197c0();
+  shape_meshlod_cpp_CLodMesh_FUN_005197c0(in_stack_00000004);
   return;
 }
 
@@ -75,7 +77,7 @@ void shape_meshlod_cpp_FUN_005165c0(void)
 // 00516608: POP EDI
 // 00516609: PUSH EDX
 //   Label: LAB_00516609
-// 0051660a: CALL shape_meshlod.cpp_EncounteredInvalidFacesWhichWereDeleted_FUN_005197c0
+// 0051660a: CALL shape_meshlod.cpp_CLodMesh_FUN_005197c0
 //   XREF to: 005197c0 (UNCONDITIONAL_CALL)
 // 0051660f: ADD ESP,0x4
 // 00516612: POP ESI

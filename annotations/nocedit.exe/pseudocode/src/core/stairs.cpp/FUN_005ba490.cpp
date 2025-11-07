@@ -4,11 +4,10 @@
 // Convention: unknown
 // Signature: undefined core_stairs.cpp_FUN_005ba490()
 // Globals:
-//   undefined4 DAT_00653062
+//   double DOUBLE_00653062 = 0.5
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_stairs.cpp_FUN_005ba490(undefined4 param_1, undefined4
    param_2) */
 
@@ -20,7 +19,7 @@ void core_stairs_cpp_FUN_005ba490(void)
   int in_stack_00000004;
   float *in_stack_00000008;
   
-  fVar2 = (float)_DAT_00653062;
+  fVar2 = (float)DOUBLE_00653062;
   *in_stack_00000008 = -*(float *)(in_stack_00000004 + 0x160) * fVar2;
   fVar1 = *(float *)(in_stack_00000004 + 0x160);
   in_stack_00000008[1] = 0.0;

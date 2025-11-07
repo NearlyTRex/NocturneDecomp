@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_stairs.cpp_FUN_005bab90()
 // Globals:
-//   undefined4 s_With_CTRL_held_down:_006530e2
+//   TerminatedCString s_With_CTRL_held_down_006530e2
 //   TerminatedCString s_Left_right_adjusts_width_006530f7
 //   TerminatedCString s_Q_A_adjusts_rise_00653112
 //   TerminatedCString s_Up_Down_adjusts_run_00653125
@@ -25,7 +25,7 @@ void core_stairs_cpp_FUN_005bab90(void)
   
   core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(in_stack_00000004,in_stack_00000008);
   *in_stack_00000008 = *in_stack_00000008 + 0xb;
-  core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"?With CTRL held down:" + 1);
+  core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"With CTRL held down:");
   core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"  Left/right adjusts width");
   core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"  Q/A adjusts rise");
   core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"  Up/Down adjusts run");

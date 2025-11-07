@@ -4,13 +4,10 @@
 // Convention: unknown
 // Signature: undefined shape_meshlod.cpp_FUN_0051a980()
 // Cross-references:
-//   shape_meshlod.cpp_FUN_00517630 (00517630) at 005180e5 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_00518490 (00518490) at 00518506 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_00517630 (00517630) at 005180e5 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_00518490 (00518490) at 00518506 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
-
-/* Signature: undefined1 shape_meshlod.cpp_FUN_0051a980(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3) */
 
 undefined8 shape_meshlod_cpp_FUN_0051a980(void)
 

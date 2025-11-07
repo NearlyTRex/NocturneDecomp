@@ -61,7 +61,7 @@
 //   core_setedit.cpp_UserInputCreate_FUN_0057d660 (0057d660) at 0057d7be [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 (0057ce80) at 0057d1ab [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_CDeformableModel_save_FUN_0058f040 (0058f040) at 0058f0aa [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_FUN_0058b2c0 (0058b2c0) at 0058b32a [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0 (0058b2c0) at 0058b32a [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0 (0059b8d0) at 0059b908 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CSkeleton_load_FUN_00599b10 (00599b10) at 00599b48 [UNCONDITIONAL_CALL]
 //   core_texlist.cpp_CTextureList_load_FUN_005dbe00 (005dbe00) at 005dbe88 [UNCONDITIONAL_CALL]

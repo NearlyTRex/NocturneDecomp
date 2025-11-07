@@ -18,7 +18,7 @@
 //   core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0 (0057bbe0) at 0057c142 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_UserInputCreate_FUN_0057d660 (0057d660) at 0057e3b3 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0 (0057c5d0) at 0057cb57 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597f2b [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00597f2b [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_g_00623205
 //   TerminatedCString s_f_00623208

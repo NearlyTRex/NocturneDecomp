@@ -8,24 +8,25 @@
 //   TerminatedCString s_shape_meshlod_cpp_00637d10
 // Function calls:
 //   shape_memdbg.cpp_closeFile_FUN_0050f9b0
+//   shape_meshlod.cpp_CLodMesh_FUN_0051b8a0
 //   shape_meshlod.cpp_FUN_0051b770
-//   shape_meshlod.cpp_FUN_0051b8a0
 
 #include "nocturne.h"
 
-undefined4 shape_meshlod_cpp_FUN_0051b720(void)
+int shape_meshlod_cpp_FUN_0051b720(void)
 
 {
   FILE *file_ptr;
-  undefined4 uVar1;
+  int iVar1;
+  CLodMesh *in_stack_00000004;
   
   file_ptr = (FILE *)shape_meshlod_cpp_FUN_0051b770();
   if (file_ptr == (FILE *)0x0) {
     return 0;
   }
-  uVar1 = shape_meshlod_cpp_FUN_0051b8a0();
+  iVar1 = shape_meshlod_cpp_CLodMesh_FUN_0051b8a0(in_stack_00000004);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\meshlod.cpp",0x121e);
-  return uVar1;
+  return iVar1;
 }
 
 
@@ -51,7 +52,7 @@ undefined4 shape_meshlod_cpp_FUN_0051b720(void)
 // 0051b73d: PUSH EAX
 //   Label: LAB_0051b73d
 // 0051b73e: PUSH ESI
-// 0051b73f: CALL shape_meshlod.cpp_FUN_0051b8a0
+// 0051b73f: CALL shape_meshlod.cpp_CLodMesh_FUN_0051b8a0
 //   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)
 // 0051b744: ADD ESP,0x8
 // 0051b747: PUSH 0x121e

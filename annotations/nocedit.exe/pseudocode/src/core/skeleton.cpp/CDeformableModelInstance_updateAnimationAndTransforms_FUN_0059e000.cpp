@@ -10,7 +10,7 @@
 //   core_morph.cpp_FUN_0052aa30 (0052aa30) at 0052aa37 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_00536e20 (00536e20) at 005371e7 [UNCONDITIONAL_CALL]
 //   core_passngr.cpp_FUN_00545d30 (00545d30) at 00545de8 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 0059715e [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 0059715e [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480 (005a0480) at 005a059d [UNCONDITIONAL_CALL]
 //   core_succubus.cpp_CSuccubus_FUN_005c6b60 (005c6b60) at 005c6e55 [UNCONDITIONAL_CALL]
 //   core_succubus.cpp_CSuccubus_process_FUN_005c6e90 (005c6e90) at 005c70fc [UNCONDITIONAL_CALL]

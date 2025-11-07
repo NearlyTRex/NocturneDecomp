@@ -59,10 +59,10 @@
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   crt_io.c_deleteFile_FUN_005ff9d0
+//   crt_memory.c_copyArrayWithFunction_FUN_006020c2
 //   crt_stdio.c_fprintf_FUN_005fe6d0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   crt_string.c_stricmp_FUN_005fe7f0
-//   crt_unknown.c_FUN_006020c2
 //   shape_design.c_optimizePolygonMesh_FUN_004658e0
 //   shape_design.c_removeDegeneratePolygons_FUN_00465310
 //   shape_design.c_vertexReducer_FUN_00467850
@@ -246,7 +246,8 @@ LAB_005d7a1a:
                *(undefined4 *)((int)&local_140 + (uint)bVar10 * 0xfffffff8);
           (puVar5 + (uint)bVar10 * -2 + 2)[(uint)bVar10 * -2 + 1] =
                (&puStack_13c)[(uint)bVar10 * -2 + (uint)bVar10 * -2];
-          crt_unknown_c_FUN_006020c2();
+          crt_memory_c_copyArrayWithFunction_FUN_006020c2
+                    (puVar5 + 4,&stack0xfffffec8,3,0x10,shape_superopt_cpp_FUN_005d8330);
           *(char (*) [4])((int)local_18 + 0x40) = local_10c;
           *(char (*) [4])((int)local_18 + 0x44) = local_108;
           *(char (*) [4])((int)local_18 + 0x48) = acStack_104;
@@ -708,7 +709,7 @@ LAB_005d7a1a:
 // 005d7b24: MOVSD ES:EDI,ESI
 // 005d7b25: MOVSD ES:EDI,ESI
 // 005d7b26: MOVSD ES:EDI,ESI
-// 005d7b27: CALL crt_unknown.c_FUN_006020c2
+// 005d7b27: CALL crt_memory.c_copyArrayWithFunction_FUN_006020c2
 //   XREF to: 006020c2 (UNCONDITIONAL_CALL)
 // 005d7b2c: ADD ESP,0x14
 // 005d7b2f: MOV EDX,dword ptr [ESP + 0x134]

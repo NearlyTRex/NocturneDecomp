@@ -4,18 +4,15 @@
 // Convention: unknown
 // Signature: undefined shape_meshlod.cpp_FUN_00518870()
 // Cross-references:
-//   shape_meshlod.cpp_FUN_00517000 (00517000) at 005170e0 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_00518910 (00518910) at 00518de7 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000 (00517000) at 005170e0 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051a400 (0051a400) at 0051a65c [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051a6b0 (0051a6b0) at 0051a8ac [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_NeighboringFacesEdgesCheck_FUN_00518910 (00518910) at 00518de7 [UNCONDITIONAL_CALL]
 // Globals:
 //   float FLOAT_00637919 = 3
 //   float FLOAT_0063791d = 0.3333333
 
 #include "nocturne.h"
-
-/* Signature: undefined1 shape_meshlod.cpp_FUN_00518870(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3) */
 
 float * shape_meshlod_cpp_FUN_00518870(void)
 

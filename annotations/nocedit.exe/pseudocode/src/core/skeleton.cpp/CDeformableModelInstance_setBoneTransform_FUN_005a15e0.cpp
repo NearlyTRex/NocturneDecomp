@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042af60 (0042af60) at 0042b0bd [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d6f80 (004d6f80) at 004d7035 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005972fc [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 005972fc [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bf720 (005bf720) at 005bf7ed [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820

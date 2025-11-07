@@ -16,29 +16,31 @@ core_skeledit_cpp_LodVert_copy_FUN_00599550(void *n1,void *n2,SLodVert *other2,S
 {
   int iVar1;
   char *pcVar2;
-  char *pcVar3;
-  byte bVar4;
+  int *piVar3;
+  char *pcVar4;
+  int *piVar5;
+  byte bVar6;
   
-  bVar4 = 0;
+  bVar6 = 0;
   crt_stack_c_stack_probe_FUN_005ff9f3(0xc);
   *(undefined4 *)other2->field0_0x0 = *(undefined4 *)other3->field0_0x0;
   *(undefined4 *)(other2->field0_0x0 + 4) = *(undefined4 *)(other3->field0_0x0 + 4);
   *(undefined4 *)(other2->field0_0x0 + 8) = *(undefined4 *)(other3->field0_0x0 + 8);
   pcVar2 = other3->field0_0x0 + 0xc;
-  pcVar3 = other2->field0_0x0 + 0xc;
+  pcVar4 = other2->field0_0x0 + 0xc;
   for (iVar1 = 0xfa; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(undefined4 *)pcVar3 = *(undefined4 *)pcVar2;
-    pcVar2 = pcVar2 + (uint)bVar4 * -8 + 4;
-    pcVar3 = pcVar3 + (uint)bVar4 * -8 + 4;
+    *(undefined4 *)pcVar4 = *(undefined4 *)pcVar2;
+    pcVar2 = pcVar2 + (uint)bVar6 * -8 + 4;
+    pcVar4 = pcVar4 + (uint)bVar6 * -8 + 4;
   }
   *(undefined4 *)(other2->field0_0x0 + 0x3f4) = *(undefined4 *)(other3->field0_0x0 + 0x3f4);
-  *(undefined4 *)(other2->field0_0x0 + 0x3f8) = *(undefined4 *)(other3->field0_0x0 + 0x3f8);
-  pcVar2 = other3->field0_0x0 + 0x3fc;
-  pcVar3 = other2->field0_0x0 + 0x3fc;
+  other2->adjacent_edge_count = other3->adjacent_edge_count;
+  piVar3 = other3->adjacent_edge_indices;
+  piVar5 = other2->adjacent_edge_indices;
   for (iVar1 = 0x32; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(undefined4 *)pcVar3 = *(undefined4 *)pcVar2;
-    pcVar2 = pcVar2 + (uint)bVar4 * -8 + 4;
-    pcVar3 = pcVar3 + (uint)bVar4 * -8 + 4;
+    *piVar5 = *piVar3;
+    piVar3 = piVar3 + (uint)bVar6 * -2 + 1;
+    piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
   }
   return other2;
 }

@@ -10,7 +10,7 @@
 //   core_script.cpp_CScript_ctor_FUN_005597f0 (005597f0) at 005597f8 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_00561a30 (00561a30) at 00561a42 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_005671a0 (005671a0) at 005671c0 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_ExportModel_FUN_00595fc0 (00595fc0) at 00596084 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (00595fc0) at 00596084 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b2461 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_staticInit_FUN_005b1760 (005b1760) at 005b1772 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 (004baf00) at 004bb49a [UNCONDITIONAL_CALL]

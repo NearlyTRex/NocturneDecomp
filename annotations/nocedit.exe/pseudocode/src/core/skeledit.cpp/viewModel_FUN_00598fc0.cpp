@@ -23,7 +23,7 @@
 //   TerminatedCString s_lastTestSkeletonDir_00649dc2
 //   TerminatedCString s_s_00649dda
 //   TerminatedCString s_core_skeledit_cpp_00649de0
-//   undefined4 s_..\core\skeledit.cpp_0064e0d2
+//   TerminatedCString s_core_skeledit_cpp_0064e0d2
 //   TerminatedCString s_core_skeledit_cpp_0064e0e7
 //   TerminatedCString s_viewModel_out_of_memory_0064e0fc
 //   TerminatedCString s_core_skeledit_cpp_0064e117
@@ -56,7 +56,7 @@
 //   undefined1 DAT_03670a59
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
 //   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
 //   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 //   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
@@ -80,8 +80,6 @@
 
 #include "nocturne.h"
 
-/* Signature: void core_skeledit.cpp_viewModel(undefined4 param_1) */
-
 void core_skeledit_cpp_viewModel_FUN_00598fc0(void)
 
 {
@@ -94,6 +92,7 @@ void core_skeledit_cpp_viewModel_FUN_00598fc0(void)
   BADSPACEBASE *in_ESP;
   char *pcVar6;
   char *pcVar7;
+  CDeformableModelInstance *in_stack_ffffff28;
   undefined1 auStack_18 [4];
   int local_14;
   
@@ -224,7 +223,7 @@ LAB_00599119:
                            "*.dfm",SUB41(&stack0xffffff14,0)), iVar3 != 0)) {
       this_ptr = (CDeformableModelInstance *)
                  shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
-                           (0x22b4,"L=..\\core\\skeledit.cpp" + 2,0x1b79);
+                           (0x22b4,"..\\core\\skeledit.cpp",0x1b79);
       if (this_ptr != (CDeformableModelInstance *)0x0) {
         this_ptr = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(this_ptr);
       }
@@ -235,10 +234,11 @@ LAB_00599119:
       }
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr,&stack0xffffff18);
       core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr);
-      core_skeledit_cpp_CDeformableModelInstance_FUN_005968b0(this_ptr);
+      core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(in_stack_ffffff28);
       g_CurrentDebugLine = 0x1b7e;
       g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
       if (this_ptr != (CDeformableModelInstance *)0x0) {
+        in_stack_ffffff28 = (CDeformableModelInstance *)&DAT_00000002;
         (*((this_ptr->motion_controller).vtable)->dtor)(&this_ptr->motion_controller);
       }
     }
@@ -568,7 +568,7 @@ LAB_00599119:
 // 0059921d: ADD ESP,0x4
 // 00599220: PUSH EBX
 // 00599221: MOV EDI,0x1b7e
-// 00599226: CALL core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0
+// 00599226: CALL core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
 //   XREF to: 005968b0 (UNCONDITIONAL_CALL)
 // 0059922b: MOV ECX,0x64e117
 //   XREF to: 0064e117 (PARAM)

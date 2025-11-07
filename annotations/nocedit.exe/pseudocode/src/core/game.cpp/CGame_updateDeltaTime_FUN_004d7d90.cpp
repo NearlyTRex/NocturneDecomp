@@ -24,9 +24,9 @@
 //   core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940 (0057a940) at 0057acb0 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 (0057ae50) at 0057b1fa [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_UserInputCreate_FUN_0057d660 (0057d660) at 0057db2e [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597813 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00597813 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051e011 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d7bc [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051e011 [UNCONDITIONAL_CALL]
 // Globals:
 //   float g_MovieRecordingFrameBase = 65536
 //   double g_DeltaTimeToSeconds = 0.0000152587890625

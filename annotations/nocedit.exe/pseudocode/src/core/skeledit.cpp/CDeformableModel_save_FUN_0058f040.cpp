@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_skeledit.cpp_CDeformableModel_save_FUN_0058f040(CDeformableModel * this_ptr, char * filename)
 // Cross-references:
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00598ecb [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00598ecb [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_s_s_already_exists_in_a__0064a0c6
 //   TerminatedCString s_Saving_model_to_s_0064b160
@@ -23,7 +23,7 @@
 //   CDemonPod g_CDemonPodInstance
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_skeledit.cpp_ParseSkeletonBase_FUN_0058f120
+//   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 //   engine_dosio.c_getFile_FUN_00481a50
 //   engine_pod.cpp_CPod_locateFile_FUN_005512f0
@@ -38,7 +38,7 @@ core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(CDeformableModel *this_ptr,
 
 {
   CPodFile *pCVar1;
-  FILE *file_ptr;
+  CDeformableModel *this_ptr_00;
   char *pcStack00000014;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x24);
@@ -50,14 +50,15 @@ core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(CDeformableModel *this_ptr,
     shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
               (g_CEditorToolsPtr,"%s\\%s already exists in a mounted pod file:\n%s\nI'm still saving it to the local file,\nbut just thought you would want to know about the\none in the pod.","models",filename);
   }
-  file_ptr = engine_dosio_c_getFile_FUN_00481a50("models",filename,"wt");
-  if (file_ptr == (FILE *)0x0) {
+  this_ptr_00 = (CDeformableModel *)
+                engine_dosio_c_getFile_FUN_00481a50("models",filename,"wt");
+  if (this_ptr_00 == (CDeformableModel *)0x0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0xb2c;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::save - Can't create %s");
   }
-  core_skeledit_cpp_ParseSkeletonBase_FUN_0058f120();
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\skeledit.cpp",0xb2e);
+  core_skeledit_cpp_CDeformableModel_saveStream_FUN_0058f120(this_ptr_00);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0((FILE *)this_ptr_00,"..\\core\\skeledit.cpp",0xb2e);
   pcStack00000014 = filename;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Saved model to %s OK");
@@ -133,7 +134,7 @@ core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(CDeformableModel *this_ptr,
 // 0058f0b9: MOV EAX,dword ptr [ESP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 0058f0bd: PUSH EAX
-// 0058f0be: CALL core_skeledit.cpp_ParseSkeletonBase_FUN_0058f120
+// 0058f0be: CALL core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
 //   XREF to: 0058f120 (UNCONDITIONAL_CALL)
 // 0058f0c3: ADD ESP,0x8
 // 0058f0c6: PUSH 0xb2e

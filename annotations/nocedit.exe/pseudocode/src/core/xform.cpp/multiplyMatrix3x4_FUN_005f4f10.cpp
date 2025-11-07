@@ -32,7 +32,7 @@
 //   core_platfrm.cpp_FUN_0054e320 (0054e320) at 0054e38f [UNCONDITIONAL_CALL]
 //   core_platfrm.cpp_FUN_0054ea00 (0054ea00) at 0054ee67 [UNCONDITIONAL_CALL]
 //   core_scat.cpp_FUN_00558fd0 (00558fd0) at 005590a3 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005978a7 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 005978a7 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058ac80 (0058ac80) at 0058ad19 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058ad30 (0058ad30) at 0058ad97 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058af40 (0058af40) at 0058af76 [UNCONDITIONAL_CALL]

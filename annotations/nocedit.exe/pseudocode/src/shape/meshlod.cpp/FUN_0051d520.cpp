@@ -5,7 +5,7 @@
 // Signature: undefined shape_meshlod.cpp_FUN_0051d520()
 // Cross-references:
 //   core_skeledit.cpp_FUN_00589c20 (00589c20) at 00589c63 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_00516ba0 (00516ba0) at 00516cc3 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_00516ba0 (00516ba0) at 00516cc3 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051ed60 (0051ed60) at 0051eda8 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_Press_and_hold_P_to_paus_0063823f
@@ -51,8 +51,8 @@
 //   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
 //   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 //   shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-//   shape_meshlod.cpp_FUN_005164d0
-//   shape_meshlod.cpp_FUN_00516500
+//   shape_meshlod.cpp_CLodMesh_FUN_005164d0
+//   shape_meshlod.cpp_CLodMesh_FUN_00516500
 //   shape_meshlod.cpp_FUN_0051b2e0
 //   shape_meshlod.cpp_FUN_0051e6b0
 //   shape_meshlod.cpp_FUN_0051e770
@@ -66,21 +66,17 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 shape_meshlod.cpp_FUN_0051d520(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3) */
-
 undefined4 shape_meshlod_cpp_FUN_0051d520(void)
 
 {
   uchar uVar1;
   undefined3 extraout_var;
-  undefined4 uVar2;
+  int iVar2;
   undefined4 *puVar3;
   float fVar4;
-  int iVar5;
   undefined4 extraout_EDX;
   BADSPACEBASE *in_ESP;
-  int in_stack_00000004;
+  CLodMesh *in_stack_00000004;
   int in_stack_00000008;
   uint in_stack_0000000c;
   undefined4 in_stack_00000088;
@@ -133,16 +129,16 @@ LAB_0051d5ec:
       shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0
                 (g_CEditorToolsPtr,DAT_02f313e8,4);
     }
-    if ((DAT_02f31238 != 0) && (*(int *)(in_stack_00000004 + 0x34) != 0)) {
+    if ((DAT_02f31238 != 0) && (in_stack_00000004->next_lod != (CLodMesh *)0x0)) {
       shape_meshlod_cpp_FUN_0051e6b0();
       engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(g_CDemonRendererPtr,0xff,0,0xff);
       shape_meshlod_cpp_FUN_0051e770();
     }
-    uVar2 = shape_meshlod_cpp_FUN_005164d0();
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff6c,"%d faces, %d original",uVar2);
+    iVar2 = shape_meshlod_cpp_CLodMesh_FUN_005164d0(in_stack_00000004);
+    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff6c,"%d faces, %d original",iVar2);
     engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff70,0,0);
     engine_2d_c_drawText_FUN_00401fd0(&DAT_02f31258,0,0xb);
-    shape_meshlod_cpp_FUN_00516500();
+    shape_meshlod_cpp_CLodMesh_FUN_00516500(in_stack_00000004);
     puVar3 = (undefined4 *)shape_meshlod_cpp_FUN_0051b2e0();
     if (&local_1c != puVar3) {
       local_1c = *puVar3;
@@ -169,21 +165,21 @@ LAB_0051d5ec:
     acStack_70[2] = 'Q';
     acStack_70[3] = '\0';
     core_stairs_cpp_FUN_005b9670();
-    iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
-    if (iVar5 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    if (iVar2 != 0) {
       shape_edittool_cpp_CEditorTools_createCenteredDialog_FUN_0049e940
                 (g_CEditorToolsPtr,(char *)0x0);
       do {
         shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
                   (g_CEditorToolsPtr,"OK - let go of ESC...");
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-        iVar5 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
-      } while (iVar5 != 0);
+        iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
+      } while (iVar2 != 0);
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      iVar5 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+      iVar2 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                         (g_CEditorToolsPtr,"Good enough?");
-      if (iVar5 != 0) {
+      if (iVar2 != 0) {
 LAB_0051d915:
         engine_2d_c_clearInputAndWait_FUN_00403260();
         DAT_0067d390 = -1;
@@ -191,28 +187,28 @@ LAB_0051d915:
         return in_stack_00000088;
       }
     }
-    iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x19);
-    if (iVar5 == 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x19);
+    if (iVar2 == 0) {
       if (in_stack_00000008 == 0) goto LAB_0051d915;
     }
     else {
       in_stack_00000008 = 1;
     }
-    iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2f);
-    if (iVar5 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2f);
+    if (iVar2 != 0) {
       DAT_02f31234 = (uint)(DAT_02f31234 == 0);
     }
     local_18 = 7.516394e-39;
-    iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x18);
-    if (iVar5 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x18);
+    if (iVar2 != 0) {
       DAT_02f31238 = (uint)(DAT_02f31238 == 0);
     }
-    iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x12);
-    if (iVar5 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x12);
+    if (iVar2 != 0) {
       DAT_02f3123c = (uint)(DAT_02f3123c == 0);
     }
-    iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x39);
-    if ((iVar5 != 0) || (iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1c), iVar5 != 0))
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x39);
+    if ((iVar2 != 0) || (iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1c), iVar2 != 0))
     goto LAB_0051d915;
   } while( true );
 }
@@ -402,7 +398,7 @@ LAB_0051d915:
 //   Label: LAB_0051d6a6
 // 0051d6a9: PUSH EDX
 // 0051d6aa: PUSH ESI
-// 0051d6ab: CALL shape_meshlod.cpp_FUN_005164d0
+// 0051d6ab: CALL shape_meshlod.cpp_CLodMesh_FUN_005164d0
 //   XREF to: 005164d0 (UNCONDITIONAL_CALL)
 // 0051d6b0: ADD ESP,0x4
 // 0051d6b3: PUSH EAX
@@ -433,7 +429,7 @@ LAB_0051d915:
 //   XREF to: Stack[-0x58] (DATA)
 // 0051d6ec: PUSH EAX
 // 0051d6ed: PUSH ESI
-// 0051d6ee: CALL shape_meshlod.cpp_FUN_00516500
+// 0051d6ee: CALL shape_meshlod.cpp_CLodMesh_FUN_00516500
 //   XREF to: 00516500 (UNCONDITIONAL_CALL)
 // 0051d6f3: ADD ESP,0x8
 // 0051d6f6: LEA EAX,[ESP + 0x64]

@@ -51117,8 +51117,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_LodMesh_ctor_FUN_00515840",
-    "ret":"SLodMesh*",
+    "name":"shape_meshlod.cpp_CLodMesh_ctor_FUN_00515840",
+    "ret":"CLodMesh*",
     "vars":{
       "params":[
         {
@@ -51135,7 +51135,7 @@
               }
             ]
           },
-          "type":"SLodMesh*"
+          "type":"CLodMesh*"
         }
       ],
       "ret_storage":{
@@ -51159,14 +51159,77 @@
         "start":"00515ac0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_meshlod.cpp_CallocSomething1(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_CallocSomething1_FUN_00515ac0",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
+        },
+        {
+          "name":"vertex_count",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"tri_count",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"submesh_count",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -51178,13 +51241,38 @@
         "start":"00515ec0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_meshlod.cpp_MemoryAdjacentThing(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_MemoryAdjacentThing_FUN_00515ec0",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_CLodMesh_FUN_00515ec0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -51215,10 +51303,10 @@
         "start":"00516a40"
       }
     ],
-    "cmt":"Signature: undefined1 shape_meshlod.cpp_FUN_00516a40(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_00516a40",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_CLodMesh_FUN_00516a40",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -51318,9 +51406,24 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
+        }
+      ]
     }
   },
   {
@@ -51332,14 +51435,29 @@
         "start":"00516b40"
       }
     ],
-    "cmt":"Signature: undefined1 shape_meshlod.cpp_FUN_00516b40(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_00516b40",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_CLodMesh_FUN_00516b40",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
+        }
+      ]
     }
   },
   {
@@ -51351,7 +51469,6 @@
         "start":"005172c0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_meshlod.cpp_FUN_005172c0(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
     "importable":true,
     "name":"shape_meshlod.cpp_FUN_005172c0",
     "ret":"undefined1",
@@ -51436,7 +51553,6 @@
         "start":"00518740"
       }
     ],
-    "cmt":"Signature: undefined1 shape_meshlod.cpp_FUN_00518740(undefined4 param_1, undefined4 param_2)",
     "importable":true,
     "name":"shape_meshlod.cpp_FUN_00518740",
     "ret":"undefined1",
@@ -51455,14 +51571,29 @@
         "start":"005197c0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_meshlod.cpp_EncounteredInvalidFacesWhichWereDeleted(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_EncounteredInvalidFacesWhichWereDeleted_FUN_005197c0",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_CLodMesh_FUN_005197c0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
+        }
+      ]
     }
   },
   {
@@ -51474,12 +51605,38 @@
         "start":"0051a8c0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_0051a8c0",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_CLodMesh_FUN_0051a8c0",
+    "ret":"CLodMesh*",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -51492,9 +51649,10 @@
         "start":"0051bac0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_0051bac0",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -51642,9 +51800,24 @@
           "type":"undefined8"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
+        }
+      ]
     }
   },
   {
@@ -51712,8 +51885,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_0051efc0",
-    "ret":"SLodFace*",
+    "name":"shape_meshlod.cpp_CLodFace_dtor_FUN_0051efc0",
+    "ret":"CLodFace*",
     "vars":{
       "params":[
         {
@@ -51730,7 +51903,7 @@
               }
             ]
           },
-          "type":"SLodFace*"
+          "type":"CLodFace*"
         }
       ],
       "ret_storage":{
@@ -51754,13 +51927,29 @@
         "start":"0051f0c0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_0051f0c0",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_freeLodFaces_FUN_0051f0c0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"array",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodFace**"
+        }
+      ]
     }
   },
   {
@@ -69319,13 +69508,45 @@
         "start":"0058b2c0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_0058b2c0",
-    "ret":"undefined1",
+    "name":"core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CSkeleton*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"FILE*"
+        }
+      ]
     }
   },
   {
@@ -69667,7 +69888,6 @@
         "start":"005925c0"
       }
     ],
-    "cmt":"Signature: undefined4 core_skeledit.cpp_FUN_005925c0(char* param_1, undefined4 param_2)",
     "importable":true,
     "name":"core_skeledit.cpp_FUN_005925c0",
     "ret":"undefined1",
@@ -69686,9 +69906,10 @@
         "start":"00595fc0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_ExportModel_FUN_00595fc0",
-    "ret":"undefined1",
+    "name":"core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -70460,9 +70681,72 @@
           "type":"undefined8"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
+        },
+        {
+          "name":"output_filename",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"lod_level",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"bone_matrices",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMatrix3x4f*"
+        }
+      ]
     }
   },
   {
@@ -70474,7 +70758,6 @@
         "start":"00598fc0"
       }
     ],
-    "cmt":"Signature: void core_skeledit.cpp_viewModel(undefined4 param_1)",
     "importable":true,
     "name":"core_skeledit.cpp_viewModel_FUN_00598fc0",
     "ret":"undefined1",
@@ -74693,7 +74976,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stairs.cpp_FUN_005b95c0",
+    "name":"core_stairs.cpp_CSpotView_FUN_005b95c0",
     "ret":"CSpotView*",
     "vars":{
       "params":[

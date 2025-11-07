@@ -232,6 +232,8 @@ const double g_ClearColor = 0.0;
 
 // float constants
 const float g_MaxSoftwareLatency = 0.5f;
+const float FLOAT_00684170 = 12f;
+const float FLOAT_00684174 = 1f;
 const float g_IEEE754NormalScaleFactor = 0.9375f;
 const float g_IEEE754SubnormalScaleFactor = 1.0625f;
 const float g_IEEE754RenormScaleFactor = 9.223372e+18f;

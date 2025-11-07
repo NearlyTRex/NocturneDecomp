@@ -14,7 +14,7 @@
 //   core_moon.cpp_CMoon_FUN_00529ed0 (00529ed0) at 00529fbf [UNCONDITIONAL_CALL]
 //   core_moon.cpp_FUN_0052a2c0 (0052a2c0) at 0052a3c2 [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190 (0056a190) at 0056a29f [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 0059795b [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 0059795b [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0
 //   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980

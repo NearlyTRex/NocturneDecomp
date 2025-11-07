@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_stairs.cpp_FUN_005b9c10()
 // Globals:
-//   undefined4 DAT_0065305a
+//   double DOUBLE_0065305a = 0.5
 //   undefined4 DAT_006634b0
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
@@ -106,7 +106,7 @@ undefined4 core_stairs_cpp_FUN_005b9c10(void)
         iVar3 = 0x30;
         iVar8 = 0;
         do {
-          CStack_78.y = (int)(-*(float *)(in_stack_00000028 + 0x160) * (float)_DAT_0065305a);
+          CStack_78.y = (int)(-*(float *)(in_stack_00000028 + 0x160) * (float)DOUBLE_0065305a);
           CStack_78.z = (int)(*(float *)(in_stack_00000028 + 0x158) * (float)iVar2);
           fStack_6c = (float)iVar2 * *(float *)(in_stack_00000028 + 0x15c);
           aCStack_68[0].x = (int)ROUND((float)CStack_78.y * _DAT_006634b0);

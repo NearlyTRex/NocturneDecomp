@@ -9,9 +9,9 @@
 //   engine_dosio.c_getFile_FUN_00481a50 (00481a50) at 00481a9c [UNCONDITIONAL_CALL]
 //   engine_dosio.c_reopenFileStream_FUN_00481b50 (00481b50) at 00481ba7 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50 (004b7d50) at 004b7dc9 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_00516d50 (00516d50) at 00516d64 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_0051b8a0 (0051b8a0) at 0051b8af [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_00515190 (00515190) at 00515195 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_00516d50 (00516d50) at 00516d64 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051b8a0 (0051b8a0) at 0051b8af [UNCONDITIONAL_CALL]
 // Globals:
 //   CreateDirectoryA* PTR_CreateDirectoryA_00611508 = 00211c46
 // Function calls:

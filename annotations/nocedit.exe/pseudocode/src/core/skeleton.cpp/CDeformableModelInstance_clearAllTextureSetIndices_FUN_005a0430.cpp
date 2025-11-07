@@ -5,7 +5,7 @@
 // Signature: void core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430(CDeformableModelInstance * this_ptr)
 // Cross-references:
 //   core_actor.cpp_serializePartStatus_FUN_0040bae0 (0040bae0) at 0040bb95 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597181 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00597181 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 (005a0840) at 005a087f [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"

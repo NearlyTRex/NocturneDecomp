@@ -9,7 +9,7 @@
 //   WatcomTypeInfo g_RA4HQPointTypeInfo
 // Function calls:
 //   core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40
-//   crt_unknown.c_FUN_00600bc2
+//   crt_memory.c_copyObjectArray_FUN_00600bc2
 
 #include "nocturne.h"
 
@@ -160,7 +160,7 @@ core_dmodel_cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(CKeyFramedMod
 // 0047a913: LEA EAX,[ESP + 0x24]
 //   XREF to: Stack[-0x64] (DATA)
 // 0047a917: PUSH EAX
-// 0047a918: CALL crt_unknown.c_FUN_00600bc2
+// 0047a918: CALL crt_memory.c_copyObjectArray_FUN_00600bc2
 //   XREF to: 00600bc2 (UNCONDITIONAL_CALL)
 // 0047a91d: ADD ESP,0x10
 // 0047a920: MOV ECX,0x12

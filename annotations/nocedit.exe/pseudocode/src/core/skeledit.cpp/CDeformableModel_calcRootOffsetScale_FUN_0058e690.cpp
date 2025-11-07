@@ -4,14 +4,14 @@
 // Convention: __cdecl
 // Signature: void core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690(CDeformableModel * this_ptr)
 // Globals:
-//   undefined4 s_..\core\skeledit.cpp_0064af7a
+//   TerminatedCString s_core_skeledit_cpp_0064af7a
 //   TerminatedCString s_CDeformableModel_calcRoo_0064af8f
 //   TerminatedCString s_core_skeledit_cpp_0064aff0
 //   TerminatedCString s_core_skeledit_cpp_0064b005
 //   TerminatedCString s_CDeformableModel_calcRoo_0064b01a
 //   TerminatedCString s_core_skeledit_cpp_0064b051
 //   double DOUBLE_0064b06a = -9999
-//   undefined4 DAT_00662e44
+//   float FLOAT_00662e44 = 0.00390625
 //   char* g_CurrentDebugFilename = 0067d200
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -30,7 +30,6 @@
 #include "nocturne.h"
 
 /* WARNING: Variable defined which should be unmapped: this_ptr */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl
 core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690(CDeformableModel *this_ptr)
@@ -61,7 +60,7 @@ core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690(CDeformableM
   crt_stack_c_stack_probe_FUN_005ff9f3(0x6c);
   pCVar4 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(in_stack_0000000c);
   if (pCVar4->bone_scales[0].x < (float)DOUBLE_0064b06a) {
-    g_CurrentFilename = "p?..\\core\\skeledit.cpp" + 2;
+    g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x9f8;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CDeformableModel::calcRootOffsetScale - Reference bone origin list for skeleton %s is not valid.",pCVar4->loaded_filename);
@@ -96,9 +95,9 @@ core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690(CDeformableM
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070(this_ptr_00,0,0.0);
   core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(this_ptr_00,0);
   pCVar1 = this_ptr_00->skinned_vertices_buffer;
-  local_18 = (float)pCVar1->x * _DAT_00662e44;
-  local_14.x = (float)pCVar1->y * _DAT_00662e44;
-  local_14.y = (float)pCVar1->z * _DAT_00662e44;
+  local_18 = (float)pCVar1->x * FLOAT_00662e44;
+  local_14.x = (float)pCVar1->y * FLOAT_00662e44;
+  local_14.y = (float)pCVar1->z * FLOAT_00662e44;
   if ((CVector3f *)&stack0xffffffc8 != &local_14) {
     local_30.min.x = local_14.z;
     in_stack_ffffffcc = local_14.y;
@@ -113,9 +112,9 @@ core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690(CDeformableM
     iVar9 = 0xc;
     do {
       piVar6 = (int *)((int)&this_ptr_00->skinned_vertices_buffer->x + iVar9);
-      local_14.x = (float)*piVar6 * _DAT_00662e44;
-      local_14.y = (float)piVar6[1] * _DAT_00662e44;
-      local_14.z = (float)piVar6[2] * _DAT_00662e44;
+      local_14.x = (float)*piVar6 * FLOAT_00662e44;
+      local_14.y = (float)piVar6[1] * FLOAT_00662e44;
+      local_14.z = (float)piVar6[2] * FLOAT_00662e44;
       core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)&stack0xffffffc8,&local_14);
       iVar8 = iVar8 + 1;
       iVar9 = iVar9 + 0xc;
@@ -149,9 +148,9 @@ core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690(CDeformableM
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070(this_ptr_00,0,0.0);
   core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(this_ptr_00,0);
   pCVar1 = this_ptr_00->skinned_vertices_buffer;
-  local_14.y = (float)pCVar1->x * _DAT_00662e44;
-  local_14.z = (float)pCVar1->y * _DAT_00662e44;
-  fVar3 = (float)pCVar1->z * _DAT_00662e44;
+  local_14.y = (float)pCVar1->x * FLOAT_00662e44;
+  local_14.z = (float)pCVar1->y * FLOAT_00662e44;
+  fVar3 = (float)pCVar1->z * FLOAT_00662e44;
   if (&local_30 != (CBoundingBox3D *)&local_14.z) {
     local_30.min.x = local_14.z;
     local_30.min.y = fVar3;
@@ -167,7 +166,7 @@ core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690(CDeformableM
     iVar9 = 0xc;
     do {
       local_14.z = (float)*(int *)((int)&this_ptr_00->skinned_vertices_buffer->x + iVar9) *
-                   _DAT_00662e44;
+                   FLOAT_00662e44;
       core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_30,(CVector3f *)&local_14.z);
       iVar8 = iVar8 + 1;
       iVar9 = iVar9 + 0xc;

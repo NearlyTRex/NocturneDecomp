@@ -14,7 +14,7 @@
 //   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 (0057e7c0) at 0057ed25 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_DementedFogEditor_FUN_00580730 (00580730) at 00580e38 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0 (0057c5d0) at 0057cd53 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00598eb0 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00598eb0 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (004b5a50) at 004b5af0 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_shape_edittool_cpp_00622eae

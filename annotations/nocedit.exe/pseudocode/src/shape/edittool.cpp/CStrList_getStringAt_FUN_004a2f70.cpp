@@ -38,7 +38,7 @@
 //   core_script.cpp_FUN_005671a0 (005671a0) at 0056722a [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_005677a0 (005677a0) at 00567b67 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_DementedFogEditor_FUN_00580730 (00580730) at 00581128 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_ExportModel_FUN_00595fc0 (00595fc0) at 00596782 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (00595fc0) at 00596782 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058afe0 (0058afe0) at 0058b113 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 00593811 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b17d0 (005b17d0) at 005b1814 [UNCONDITIONAL_CALL]

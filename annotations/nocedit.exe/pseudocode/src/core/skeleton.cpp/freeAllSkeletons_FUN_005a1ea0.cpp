@@ -7,7 +7,7 @@
 //   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 (004be270) at 004be3e0 [UNCONDITIONAL_CALL]
 //   core_main.c_finalizeGameSystems_FUN_00508570 (00508570) at 005087f0 [UNCONDITIONAL_CALL]
 //   core_mission.cpp_FUN_005248e0 (005248e0) at 00524901 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005968c9 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 005968c9 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_viewModel_FUN_00598fc0 (00598fc0) at 0059916d [UNCONDITIONAL_CALL]
 // Globals:
 //   undefined4 s_.RAW_0067c6e0

@@ -20,7 +20,7 @@
 //   core_setedit.cpp_DementedFogEditor_FUN_00580730 (00580730) at 00580c8c [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_ImportingGroundTextures_FUN_00578420 (00578420) at 00578513 [UNCONDITIONAL_CALL]
 //   core_setutil.cpp_C3DSCamera_load_FUN_00585420 (00585420) at 00585473 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 0059856b [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 0059856b [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058a1b0 (0058a1b0) at 0058a1e9 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592520 (00592520) at 00592582 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 0059310d [UNCONDITIONAL_CALL]

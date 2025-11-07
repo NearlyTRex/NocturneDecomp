@@ -39,6 +39,7 @@
 //   core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0 (0058a3d0) at 0058a411 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (0058a4a0) at 0058a4c1 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0 (0058abb0) at 0058abd9 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (0058f810) at 0058fa9e [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_005894c0 (005894c0) at 005894d9 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00589740 (00589740) at 00589758 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_005897b0 (005897b0) at 005897f0 [UNCONDITIONAL_CALL]
@@ -47,9 +48,8 @@
 //   core_skeledit.cpp_FUN_0058b9b0 (0058b9b0) at 0058b9cf [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058bc40 (0058bc40) at 0058bc61 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c1f4 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_FUN_0058f810 (0058f810) at 0058fa9e [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 00592710 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_LoadFileBoneStructureMaybe_FUN_005895f0 (005895f0) at 00589609 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_readNonEmptyLine_FUN_005895f0 (005895f0) at 00589609 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_viewModel_FUN_00598fc0 (00598fc0) at 00599004 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970 (0059b970) at 0059bb44 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0 (00599bb0) at 00599c62 [UNCONDITIONAL_CALL]
@@ -66,10 +66,10 @@
 //   shape_design.c_loadTextureData_FUN_0046b060 (0046b060) at 0046b0f0 [UNCONDITIONAL_CALL]
 //   shape_design.c_readPixelRowFromFile_FUN_0046abf0 (0046abf0) at 0046ac06 [UNCONDITIONAL_CALL]
 //   shape_design.c_skipLines_FUN_00459360 (00459360) at 00459376 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_0051aa60 (0051aa60) at 0051aa80 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_0051adf0 (0051adf0) at 0051af88 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0 (0051cdf0) at 0051cf14 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_00515160 (00515160) at 0051516f [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051adf0 (0051adf0) at 0051af88 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051cdf0 (0051cdf0) at 0051cf14 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_OpenS3DFile_FUN_0051aa60 (0051aa60) at 0051aa80 [UNCONDITIONAL_CALL]
 // Globals:
 //   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 //   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434

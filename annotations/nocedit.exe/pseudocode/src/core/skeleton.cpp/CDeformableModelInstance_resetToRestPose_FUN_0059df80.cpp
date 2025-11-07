@@ -9,7 +9,7 @@
 //   core_mimic.cpp_CMimic_setup_FUN_0051f3e0 (0051f3e0) at 0051f6ec [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052c44d [UNCONDITIONAL_CALL]
 //   core_passngr.cpp_FUN_00545d30 (00545d30) at 00545d5a [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596c67 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00596c67 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 (0059c2f0) at 0059c38b [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 (0059d460) at 0059d52e [UNCONDITIONAL_CALL]
 //   core_succubus.cpp_CSuccubus_FUN_005c6b60 (005c6b60) at 005c6d8a [UNCONDITIONAL_CALL]

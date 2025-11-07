@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CVector3f * core_xform.cpp_invertAndGetTranslation_FUN_005f6140(CVector3f * output_vector, CMatrix3x4f * input_matrix)
 // Cross-references:
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00598099 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00598099 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_xform.cpp_getTranslation_FUN_005f6110
 //   core_xform.cpp_inverse_FUN_005f6210

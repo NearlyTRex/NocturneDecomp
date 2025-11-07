@@ -4,8 +4,8 @@
 // Convention: unknown
 // Signature: undefined shape_meshlod.cpp_ReallocSomething_FUN_00518790()
 // Cross-references:
-//   shape_meshlod.cpp_FUN_0051b080 (0051b080) at 0051b0c8 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051bac0 (0051bac0) at 0051bcb3 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_0051b080 (0051b080) at 0051b0c8 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (0051bac0) at 0051bcb3 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_shape_meshlod_cpp_006378dd
 //   TerminatedCString s_shape_meshlod_cpp_006378f2
@@ -18,9 +18,6 @@
 //   shape_memdbg.cpp_debugRealloc_FUN_0050f540
 
 #include "nocturne.h"
-
-/* Signature: undefined1 shape_meshlod.cpp_ReallocSomething(undefined4 param_1, undefined4 param_2)
-    */
 
 int shape_meshlod_cpp_ReallocSomething_FUN_00518790(void)
 

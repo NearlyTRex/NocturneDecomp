@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_skeledit.cpp_FUN_0058e0b0()
 // Globals:
-//   undefined4 s_..\core\skeledit.cpp_0064aec2
+//   TerminatedCString s_core_skeledit_cpp_0064aec2
 //   TerminatedCString s_Can_t_add_another_textur_0064aed7
 //   TerminatedCString s_tga_0064aef6
 //   TerminatedCString s_art_0064aefb
@@ -43,7 +43,7 @@ void core_skeledit_cpp_FUN_0058e0b0
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x334);
   if (4 < *(int *)(param_7 + 0xb8)) {
-    g_CurrentFilename = "p@..\\core\\skeledit.cpp" + 2;
+    g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x912;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't add another texture set!");
   }

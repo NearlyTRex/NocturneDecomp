@@ -21,7 +21,7 @@
 //   core_platfrm.cpp_FUN_0054e320 (0054e320) at 0054e3bb [UNCONDITIONAL_CALL]
 //   core_scat.cpp_FUN_00558fd0 (00558fd0) at 005590c9 [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_FUN_0056c990 (0056c990) at 0056ca1b [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00597906 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00597906 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 00595575 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 (0059b640) at 0059b782 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c06b0 (005c06b0) at 005c077c [UNCONDITIONAL_CALL]

@@ -9,7 +9,7 @@
 //   core_cloth.cpp_staticInit_FUN_00438b80 (00438b80) at 00438b85 [UNCONDITIONAL_CALL]
 //   core_moloch.cpp_CMoloch_ctor_FUN_00528b30 (00528b30) at 00528b46 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 (0058e690) at 0058e6e5 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_FUN_0058e4e0 (0058e4e0) at 0058e5ed [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0 (0058e4e0) at 0058e5ed [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00598f10 (00598f10) at 00598fa2 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_viewModel_FUN_00598fc0 (00598fc0) at 005991dd [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 (0059c2f0) at 0059c345 [UNCONDITIONAL_CALL]

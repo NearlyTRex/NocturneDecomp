@@ -6,13 +6,12 @@
 // Cross-references:
 //   core_stairs.cpp_FUN_005ba900 (005ba900) at 005baa5d [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0065308a
+//   double DOUBLE_0065308a = 0.5
 // Function calls:
 //   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_stairs.cpp_FUN_005ba700(undefined4 param_1) */
 
 void core_stairs_cpp_FUN_005ba700(void)
@@ -36,8 +35,8 @@ void core_stairs_cpp_FUN_005ba700(void)
   float local_14;
   int local_10;
   
-  local_18 = *(float *)(in_stack_00000004 + 0x160) * (float)_DAT_0065308a;
-  local_14 = -*(float *)(in_stack_00000004 + 0x160) * (float)_DAT_0065308a;
+  local_18 = *(float *)(in_stack_00000004 + 0x160) * (float)DOUBLE_0065308a;
+  local_14 = -*(float *)(in_stack_00000004 + 0x160) * (float)DOUBLE_0065308a;
   iVar1 = 0;
   if (0 < *(int *)(in_stack_00000004 + 0x16c)) {
     this_ptr_00 = (CDemonTriangle *)(in_stack_00000004 + 0x170);

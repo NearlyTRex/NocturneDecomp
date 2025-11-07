@@ -7,7 +7,7 @@
 //   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 (0041b280) at 0041b377 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_0042a3f0 (0042a3f0) at 0042a408 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_00562920 (00562920) at 00563f65 [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 005976f7 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 005976f7 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

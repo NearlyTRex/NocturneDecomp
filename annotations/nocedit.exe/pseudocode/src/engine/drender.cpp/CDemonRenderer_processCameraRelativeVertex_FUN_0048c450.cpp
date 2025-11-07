@@ -70,7 +70,7 @@
 //   core_setedit.cpp_UserInputCreate_FUN_0057d660 (0057d660) at 0057dd30 [UNCONDITIONAL_CALL]
 //   core_setutil.cpp_C3DSLight_isVisible_FUN_00587df0 (00587df0) at 00587e51 [UNCONDITIONAL_CALL]
 //   core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50 (00587b50) at 00587b7c [UNCONDITIONAL_CALL]
-//   core_skeledit.cpp_CDeformableModelInstance_FUN_005968b0 (005968b0) at 00596c44 [UNCONDITIONAL_CALL]
+//   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00596c44 [UNCONDITIONAL_CALL]
 //   core_trap.cpp_CTrap_FUN_005de920 (005de920) at 005de936 [UNCONDITIONAL_CALL]
 //   core_turret.cpp_CTurret_FUN_005e2320 (005e2320) at 005e23b8 [UNCONDITIONAL_CALL]
 //   core_tvbat.cpp_CTVBat_FUN_005e4d80 (005e4d80) at 005e4e2f [UNCONDITIONAL_CALL]
@@ -79,8 +79,8 @@
 //   core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70 (005e9e70) at 005ea088 [UNCONDITIONAL_CALL]
 //   core_water.cpp_CWater_render_FUN_005ea320 (005ea320) at 005ea492 [UNCONDITIONAL_CALL]
 //   core_weather.cpp_CWeather_FUN_005ef190 (005ef190) at 005ef353 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051dcbe [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d5b3 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051dcbe [UNCONDITIONAL_CALL]
 // Globals:
 //   double g_WorldToCameraScale = 256
 // Function calls:

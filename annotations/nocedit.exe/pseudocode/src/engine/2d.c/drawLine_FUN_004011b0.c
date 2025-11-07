@@ -18,7 +18,7 @@
 //   shape_design.c_showPointEditor_FUN_0045c6c0 (0045c6c0) at 0045c8e3 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CInputString_draw_FUN_0049d9b0 (0049d9b0) at 0049dafd [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40 (004a4d40) at 004a4e77 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d990 (0051d990) at 0051dde5 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051dde5 [UNCONDITIONAL_CALL]
 // Function calls:
 //   engine_2d.c_plotPixel_FUN_00401140
 

@@ -8,9 +8,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 shape_meshlod.cpp_FUN_0051a300(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3) */
-
 float * shape_meshlod_cpp_FUN_0051a300(void)
 
 {
@@ -19,7 +16,7 @@ float * shape_meshlod_cpp_FUN_0051a300(void)
   double dVar3;
   BADSPACEBASE *in_ESP;
   int iVar4;
-  int in_stack_00000004;
+  CLodMesh *in_stack_00000004;
   float *in_stack_00000008;
   float *in_stack_0000000c;
   undefined4 uStack_3c;
@@ -32,11 +29,11 @@ float * shape_meshlod_cpp_FUN_0051a300(void)
   iVar4 = 0;
   local_18 = 0;
   uStack_3c = 0x46293e59;
-  if (0 < *(int *)(in_stack_00000004 + 8)) {
+  if (0 < in_stack_00000004->tri_count) {
     do {
       dVar3 = (double)CONCAT44(local_38,uStack_3c);
-      if (*(int *)(*(int *)(in_stack_00000004 + 0xc) + iVar4 + 0x40) == 0) {
-        shape_meshlod_cpp_FUN_0051a6b0();
+      if (*(int *)(in_stack_00000004->triangle_data->field9_0x44 + iVar4 + -4) == 0) {
+        shape_meshlod_cpp_FUN_0051a6b0(in_stack_00000004);
         fVar2 = SQRT((in_stack_0000000c[2] - fStack_24) * (in_stack_0000000c[2] - fStack_24) +
                      (in_stack_0000000c[1] - local_28) * (in_stack_0000000c[1] - local_28) +
                      (*in_stack_0000000c - local_2c) * (*in_stack_0000000c - local_2c));
@@ -55,7 +52,7 @@ float * shape_meshlod_cpp_FUN_0051a300(void)
       uStack_3c = SUB84(dVar3,0);
       local_18 = local_18 + 1;
       iVar4 = iVar4 + 0x8c;
-    } while (local_18 < *(int *)(in_stack_00000004 + 8));
+    } while (local_18 < in_stack_00000004->tri_count);
   }
   return in_stack_00000008;
 }
@@ -71,27 +68,20 @@ float * shape_meshlod_cpp_FUN_0051a300(void)
 // 0051a306: SUB ESP,0x2c
 // 0051a309: AND ESP,0xfffffff8
 // 0051a30c: MOV EBX,dword ptr [EBP + 0x18]
-//   XREF to: Stack[0x8] (READ)
 // 0051a30f: MOV ESI,dword ptr [EBP + 0x1c]
-//   XREF to: Stack[0xc] (READ)
 // 0051a312: MOV EDX,0x39a08ce9
 // 0051a317: MOV EAX,dword ptr [EBP + 0x14]
-//   XREF to: Stack[0x4] (READ)
 // 0051a31a: MOV ECX,0x46293e59
 // 0051a31f: XOR EDI,EDI
 // 0051a321: MOV dword ptr [ESP],EDX
-//   XREF to: Stack[-0x40] (DATA)
 // 0051a324: MOV dword ptr [ESP + 0x28],EDI
-//   XREF to: Stack[-0x18] (WRITE)
 // 0051a328: MOV EDX,dword ptr [EAX + 0x8]
 // 0051a32b: MOV dword ptr [ESP + 0x4],ECX
-//   XREF to: Stack[-0x3c] (WRITE)
 // 0051a32f: TEST EDX,EDX
 // 0051a331: JLE 0x0051a35c
 //   XREF to: 0051a35c (CONDITIONAL_JUMP)
 // 0051a333: MOV EAX,dword ptr [EBP + 0x14]
 //   Label: LAB_0051a333
-//   XREF to: Stack[0x4] (READ)
 // 0051a336: MOV EAX,dword ptr [EAX + 0xc]
 // 0051a339: ADD EAX,EDI
 // 0051a33b: CMP dword ptr [EAX + 0x40],0x0
@@ -99,12 +89,9 @@ float * shape_meshlod_cpp_FUN_0051a300(void)
 //   XREF to: 0051a365 (CONDITIONAL_JUMP)
 // 0051a341: MOV ECX,dword ptr [ESP + 0x28]
 //   Label: LAB_0051a341
-//   XREF to: Stack[-0x18] (READ)
 // 0051a345: INC ECX
 // 0051a346: MOV EDX,dword ptr [EBP + 0x14]
-//   XREF to: Stack[0x4] (READ)
 // 0051a349: MOV dword ptr [ESP + 0x28],ECX
-//   XREF to: Stack[-0x18] (WRITE)
 // 0051a34d: MOV EAX,ECX
 // 0051a34f: MOV ECX,dword ptr [EDX + 0x8]
 // 0051a352: ADD EDI,0x8c
@@ -123,59 +110,44 @@ float * shape_meshlod_cpp_FUN_0051a300(void)
 //   Label: LAB_0051a365
 // 0051a366: PUSH ESI
 // 0051a367: LEA EAX,[ESP + 0x18]
-//   XREF to: Stack[-0x30] (DATA)
 // 0051a36b: PUSH EAX
 // 0051a36c: MOV ECX,dword ptr [EBP + 0x14]
-//   XREF to: Stack[0x4] (READ)
 // 0051a36f: PUSH ECX
 // 0051a370: CALL shape_meshlod.cpp_FUN_0051a6b0
 //   XREF to: 0051a6b0 (UNCONDITIONAL_CALL)
 // 0051a375: ADD ESP,0x10
 // 0051a378: FLD float ptr [ESI]
 // 0051a37a: FSUB float ptr [ESP + 0x10]
-//   XREF to: Stack[-0x30] (READ)
 // 0051a37e: FMUL ST0
 // 0051a380: FLD float ptr [ESI + 0x4]
 // 0051a383: FSUB float ptr [ESP + 0x14]
-//   XREF to: Stack[-0x2c] (READ)
 // 0051a387: FMUL ST0
 // 0051a389: FLD float ptr [ESI + 0x8]
 // 0051a38c: FXCH
 // 0051a38e: FADDP ST2,ST0
 // 0051a390: FSUB float ptr [ESP + 0x18]
-//   XREF to: Stack[-0x28] (READ)
 // 0051a394: FMUL ST0
 // 0051a396: FADDP
 // 0051a398: FSQRT
 // 0051a39a: FST double ptr [ESP + 0x8]
-//   XREF to: Stack[-0x38] (WRITE)
 // 0051a39e: FCOMP double ptr [ESP]
-//   XREF to: Stack[-0x40] (DATA)
 // 0051a3a1: FNSTSW AX
 // 0051a3a3: SAHF
 // 0051a3a4: JNC 0x0051a341
 //   XREF to: 0051a341 (CONDITIONAL_JUMP)
 // 0051a3a6: MOV EAX,dword ptr [ESP + 0x8]
-//   XREF to: Stack[-0x38] (READ)
 // 0051a3aa: MOV dword ptr [ESP],EAX
-//   XREF to: Stack[-0x40] (DATA)
 // 0051a3ad: MOV EAX,dword ptr [ESP + 0xc]
-//   XREF to: Stack[-0x34] (READ)
 // 0051a3b1: MOV dword ptr [ESP + 0x4],EAX
-//   XREF to: Stack[-0x3c] (WRITE)
 // 0051a3b5: LEA EAX,[ESP + 0x10]
-//   XREF to: Stack[-0x30] (DATA)
 // 0051a3b9: CMP EBX,EAX
 // 0051a3bb: JZ 0x0051a341
 //   XREF to: 0051a341 (CONDITIONAL_JUMP)
 // 0051a3bd: MOV EAX,dword ptr [ESP + 0x10]
-//   XREF to: Stack[-0x30] (DATA)
 // 0051a3c1: MOV dword ptr [EBX],EAX
 // 0051a3c3: MOV EAX,dword ptr [ESP + 0x14]
-//   XREF to: Stack[-0x2c] (READ)
 // 0051a3c7: MOV dword ptr [EBX + 0x4],EAX
 // 0051a3ca: MOV EAX,dword ptr [ESP + 0x18]
-//   XREF to: Stack[-0x28] (READ)
 // 0051a3ce: MOV dword ptr [EBX + 0x8],EAX
 // 0051a3d1: JMP 0x0051a341
 //   XREF to: 0051a341 (UNCONDITIONAL_JUMP)

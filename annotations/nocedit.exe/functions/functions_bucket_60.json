@@ -2354,7 +2354,6 @@
         "start":"00410360"
       }
     ],
-    "cmt":"Signature: undefined1 core_actor.cpp_FUN_00410360(undefined4 param_1, undefined4 param_2)",
     "importable":true,
     "name":"core_actor.cpp_FUN_00410360",
     "ret":"undefined1",
@@ -37057,7 +37056,6 @@
         "start":"005151e0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_meshlod.cpp_FUN_005151e0(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6)",
     "importable":true,
     "name":"shape_meshlod.cpp_FUN_005151e0",
     "ret":"undefined1",
@@ -37720,8 +37718,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_LodMesh_copy_FUN_00515860",
-    "ret":"SLodMesh*",
+    "name":"shape_meshlod.cpp_CLodMesh_copy_FUN_00515860",
+    "ret":"CLodMesh*",
     "vars":{
       "params":[
         {
@@ -37738,7 +37736,7 @@
               }
             ]
           },
-          "type":"SLodMesh*"
+          "type":"CLodMesh*"
         },
         {
           "name":"other",
@@ -37754,7 +37752,7 @@
               }
             ]
           },
-          "type":"SLodMesh*"
+          "type":"CLodMesh*"
         }
       ],
       "ret_storage":{
@@ -37778,7 +37776,6 @@
         "start":"00515d60"
       }
     ],
-    "cmt":"Signature: undefined1 shape_meshlod.cpp_FUN_00515d60(undefined4 param_1, undefined4 param_2)",
     "importable":true,
     "name":"shape_meshlod.cpp_FUN_00515d60",
     "ret":"undefined1",
@@ -37797,7 +37794,6 @@
         "start":"005183e0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_meshlod.cpp_FUN_005183e0(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
     "importable":true,
     "name":"shape_meshlod.cpp_FUN_005183e0",
     "ret":"undefined1",
@@ -37816,10 +37812,10 @@
         "start":"0051aa60"
       }
     ],
-    "cmt":"Signature: undefined1 shape_meshlod.cpp_OpenS3DFile(undefined4 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_OpenS3DFile_FUN_0051aa60",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_CLodMesh_FUN_0051aa60",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -37983,9 +37979,24 @@
           "type":"undefined1"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
+        }
+      ]
     }
   },
   {
@@ -38015,7 +38026,6 @@
         "start":"0051b2e0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_meshlod.cpp_FUN_0051b2e0(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
     "importable":true,
     "name":"shape_meshlod.cpp_FUN_0051b2e0",
     "ret":"undefined1",
@@ -38084,10 +38094,10 @@
         "start":"0051b3e0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_meshlod.cpp_FUN_0051b3e0(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_0051b3e0",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_CLodMesh_FUN_0051b3e0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -38155,9 +38165,24 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
+        }
+      ]
     }
   },
   {
@@ -38275,13 +38300,29 @@
         "start":"0051f0e0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_0051f0e0",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_freeVectors_FUN_0051f0e0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"array",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f**"
+        }
+      ]
     }
   },
   {
@@ -48426,7 +48467,6 @@
         "start":"0058e3e0"
       }
     ],
-    "cmt":"Signature: void core_skeledit.cpp_FUN_0058e3e0(int* param_1, float param_2, undefined4 param_3)",
     "importable":true,
     "name":"core_skeledit.cpp_FUN_0058e3e0",
     "ret":"undefined1",
@@ -48495,9 +48535,10 @@
         "start":"0058e4e0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_0058e4e0",
-    "ret":"undefined1",
+    "name":"core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -48565,9 +48606,24 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
+        }
+      ]
     }
   },
   {
@@ -48579,9 +48635,10 @@
         "start":"0058ec60"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_0058ec60",
-    "ret":"undefined1",
+    "name":"core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -48665,9 +48722,24 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
+        }
+      ]
     }
   },
   {
@@ -48989,14 +49061,45 @@
         "start":"00598ee0"
       }
     ],
-    "cmt":"Signature: void core_skeledit.cpp_LockGetPtrAndExportModel(CDeformableModelInstance* param_1, undefined4 param_2, undefined4 param_3)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_LockGetPtrAndExportModel_FUN_00598ee0",
-    "ret":"undefined1",
+    "name":"core_skeledit.cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModelInstance*"
+        },
+        {
+          "name":"filename",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ]
     }
   },
   {

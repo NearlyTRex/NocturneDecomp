@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_stairs.cpp_FUN_005ba840()
 // Globals:
-//   undefined4 s_stair_count_00653092
+//   TerminatedCString s_stair_count_00653092
 //   TerminatedCString s_rise_0065309e
 //   TerminatedCString s_run_006530a3
 //   TerminatedCString s_width_006530a7

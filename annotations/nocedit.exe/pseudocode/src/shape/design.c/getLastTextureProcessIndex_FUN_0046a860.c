@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (0047a3e0) at 0047a784 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c51a [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051bac0 (0051bac0) at 0051bb22 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (0051bac0) at 0051bb22 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_LastTextureProcessIndex
 

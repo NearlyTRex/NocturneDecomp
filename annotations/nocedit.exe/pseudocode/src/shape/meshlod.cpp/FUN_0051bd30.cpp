@@ -9,8 +9,8 @@
 //   WatcomTypeInfo g_CVectorTypeInfo
 // Function calls:
 //   core_cloth.cpp_freeVectors_FUN_0043e460
-//   crt_unknown.c_FUN_00600bc2
-//   crt_unknown.c_FUN_006020c2
+//   crt_memory.c_copyArrayWithFunction_FUN_006020c2
+//   crt_memory.c_copyObjectArray_FUN_00600bc2
 //   shape_meshlod.cpp_FUN_0051f090
 //   shape_meshlod.cpp_FUN_0051f0a0
 //   shape_meshlod.cpp_FUN_0051f0b0
@@ -25,24 +25,20 @@ void shape_meshlod_cpp_FUN_0051bd30(void)
   BADSPACEBASE *in_ESP;
   undefined4 *puVar3;
   undefined4 *unaff_ESI;
-  int *piVar4;
+  undefined4 *puVar4;
   undefined4 *puVar5;
-  undefined4 *puVar6;
-  byte bVar7;
+  byte bVar6;
   undefined4 *unaff_retaddr;
   int in_stack_00000004;
   int in_stack_00000008;
-  int aiStackY_189c [1528];
-  undefined4 *puStackY_bc;
-  WatcomTypeInfo *pWStackY_b8;
-  code *pcStackY_b4;
-  undefined4 auStack_ac [4];
+  int aiStackY_189c [1526];
+  undefined4 uStack_ac;
   undefined4 uStack_9c;
-  undefined4 uStack_90;
   undefined4 local_8c;
   undefined4 local_80;
   undefined4 local_78;
-  undefined4 local_74 [4];
+  undefined4 local_6c;
+  undefined4 uStack_68;
   undefined4 uStack_64;
   undefined4 uStack_60;
   undefined4 uStack_5c;
@@ -56,7 +52,7 @@ void shape_meshlod_cpp_FUN_0051bd30(void)
   undefined4 *local_18;
   undefined4 *local_14;
   
-  bVar7 = 0;
+  bVar6 = 0;
   local_38[1] = *(int *)(in_stack_00000004 + 8) + -1;
   if (-1 < local_38[1]) {
     local_38[3] = in_stack_00000008 << 2;
@@ -69,122 +65,122 @@ void shape_meshlod_cpp_FUN_0051bd30(void)
           puVar3 = (undefined4 *)(local_28 + *(int *)(in_stack_00000004 + 0xc));
           puVar2 = (undefined4 *)(*(int *)(in_stack_00000004 + 0xc) + local_24);
           if (*(int *)(local_38[3] + (int)puVar3) < *(int *)((int)puVar2 + local_38[3])) {
-            piVar4 = puVar2 + (uint)bVar7 * -2 + 1;
-            aiStackY_189c[(uint)bVar7 * -2 + 0x5f8] = *piVar4;
-            aiStackY_189c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x5f9] =
-                 piVar4[(uint)bVar7 * -2 + 1];
-            (aiStackY_189c + (uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x5f9)[(uint)bVar7 * -2 + 1] =
-                 (piVar4 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1];
-            auStack_ac[(uint)bVar7 * -2] = puVar2[(uint)bVar7 * -2 + 5];
-            auStack_ac[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-                 (puVar2 + (uint)bVar7 * -2 + 5)[(uint)bVar7 * -2 + 1];
-            puVar5 = puVar2 + 7;
-            puVar6 = auStack_ac + 2;
+            puVar4 = puVar2 + (uint)bVar6 * -2 + 1;
+            *(undefined4 *)(&stack0xffffff44 + (uint)bVar6 * -8) = *puVar4;
+            *(undefined4 *)(&stack0xffffff48 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+                 puVar4[(uint)bVar6 * -2 + 1];
+            *(undefined4 *)
+             ((int)(&stack0xffffff48 + (uint)bVar6 * -8 + (uint)bVar6 * -8) +
+             ((uint)bVar6 * -2 + 1) * 4) = (puVar4 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
+            *(undefined4 *)((int)&stack0xffffff54 + (uint)bVar6 * -8) = puVar2[(uint)bVar6 * -2 + 5]
+            ;
+            *(undefined4 *)(&stack0xffffff58 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+                 (puVar2 + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1];
+            puVar4 = puVar2 + 7;
+            puVar5 = (undefined4 *)&stack0xffffff5c;
             for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-              *puVar6 = *puVar5;
-              puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-              puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+              *puVar5 = *puVar4;
+              puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+              puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
             }
             local_8c = puVar2[0xd];
-            local_74[(uint)bVar7 * -2 + -5] = puVar2[(uint)bVar7 * -2 + 0xe];
-            local_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + -4] =
-                 (puVar2 + (uint)bVar7 * -2 + 0xe)[(uint)bVar7 * -2 + 1];
+            *(undefined4 *)(&stack0xffffff78 + (uint)bVar6 * -8) = puVar2[(uint)bVar6 * -2 + 0xe];
+            *(undefined4 *)(&stack0xffffff7c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+                 (puVar2 + (uint)bVar6 * -2 + 0xe)[(uint)bVar6 * -2 + 1];
             local_80 = puVar2[0x10];
             local_18 = puVar2 + 0x11;
             local_14 = puVar3;
             shape_meshlod_cpp_FUN_0051f0b0();
             shape_meshlod_cpp_FUN_0051f0a0();
-            puStackY_bc = puVar2 + 0x13;
             shape_meshlod_cpp_FUN_0051f090();
-            pWStackY_b8 = &g_CVectorTypeInfo;
             uStack_64 = puVar2[0x14];
-            puStackY_bc = (undefined4 *)0x3;
-            crt_unknown_c_FUN_00600bc2();
+            crt_memory_c_copyObjectArray_FUN_00600bc2(&uStack_60,puVar2 + 0x15,3,&g_CVectorTypeInfo)
+            ;
             local_3c = puVar2[0x1e];
-            local_38[(uint)bVar7 * -2] = puVar2[(uint)bVar7 * -2 + 0x1f];
-            local_38[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-                 (puVar2 + (uint)bVar7 * -2 + 0x1f)[(uint)bVar7 * -2 + 1];
+            local_38[(uint)bVar6 * -2] = puVar2[(uint)bVar6 * -2 + 0x1f];
+            local_38[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+                 (puVar2 + (uint)bVar6 * -2 + 0x1f)[(uint)bVar6 * -2 + 1];
             local_38[3] = puVar2[0x21];
             local_28 = puVar2[0x22];
-            puVar6 = puVar2 + (uint)bVar7 * -2 + 1;
-            puVar5 = puVar3 + (uint)bVar7 * -2 + 1;
+            puVar5 = puVar2 + (uint)bVar6 * -2 + 1;
+            puVar4 = puVar3 + (uint)bVar6 * -2 + 1;
             *puVar2 = *puVar3;
-            *puVar6 = *puVar5;
-            puVar6[(uint)bVar7 * -2 + 1] = puVar5[(uint)bVar7 * -2 + 1];
-            (puVar6 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1] =
-                 (puVar5 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1];
+            *puVar5 = *puVar4;
+            puVar5[(uint)bVar6 * -2 + 1] = puVar4[(uint)bVar6 * -2 + 1];
+            (puVar5 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1] =
+                 (puVar4 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
             puVar2[4] = puVar3[4];
-            puVar2[(uint)bVar7 * -2 + 5] = puVar3[(uint)bVar7 * -2 + 5];
-            (puVar2 + (uint)bVar7 * -2 + 5)[(uint)bVar7 * -2 + 1] =
-                 (puVar3 + (uint)bVar7 * -2 + 5)[(uint)bVar7 * -2 + 1];
-            puVar5 = puVar3 + 7;
-            puVar6 = puVar2 + 7;
+            puVar2[(uint)bVar6 * -2 + 5] = puVar3[(uint)bVar6 * -2 + 5];
+            (puVar2 + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1] =
+                 (puVar3 + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1];
+            puVar4 = puVar3 + 7;
+            puVar5 = puVar2 + 7;
             for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-              *puVar6 = *puVar5;
-              puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-              puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+              *puVar5 = *puVar4;
+              puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+              puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
             }
             puVar2[0xd] = puVar3[0xd];
-            puVar2[(uint)bVar7 * -2 + 0xe] = puVar3[(uint)bVar7 * -2 + 0xe];
-            (puVar2 + (uint)bVar7 * -2 + 0xe)[(uint)bVar7 * -2 + 1] =
-                 (puVar3 + (uint)bVar7 * -2 + 0xe)[(uint)bVar7 * -2 + 1];
+            puVar2[(uint)bVar6 * -2 + 0xe] = puVar3[(uint)bVar6 * -2 + 0xe];
+            (puVar2 + (uint)bVar6 * -2 + 0xe)[(uint)bVar6 * -2 + 1] =
+                 (puVar3 + (uint)bVar6 * -2 + 0xe)[(uint)bVar6 * -2 + 1];
             puVar2[0x10] = puVar3[0x10];
             if (puVar3 + 0x11 != unaff_ESI) {
               *unaff_ESI = puVar3[0x11];
               unaff_ESI[1] = puVar3[0x12];
               unaff_ESI[2] = puVar3[0x13];
             }
-            pcStackY_b4 = core_actor_cpp_FUN_00410360;
-            pWStackY_b8 = (WatcomTypeInfo *)0xc;
             puVar2[0x14] = puVar3[0x14];
-            puStackY_bc = (undefined4 *)0x3;
-            crt_unknown_c_FUN_006020c2();
+            crt_memory_c_copyArrayWithFunction_FUN_006020c2
+                      (puVar2 + 0x15,puVar3 + 0x15,3,0xc,core_actor_cpp_FUN_00410360);
             puVar3[0x1e] = unaff_ESI[0x1e];
-            puVar3[(uint)bVar7 * -2 + 0x1f] = unaff_ESI[(uint)bVar7 * -2 + 0x1f];
-            (puVar3 + (uint)bVar7 * -2 + 0x1f)[(uint)bVar7 * -2 + 1] =
-                 (unaff_ESI + (uint)bVar7 * -2 + 0x1f)[(uint)bVar7 * -2 + 1];
+            puVar3[(uint)bVar6 * -2 + 0x1f] = unaff_ESI[(uint)bVar6 * -2 + 0x1f];
+            (puVar3 + (uint)bVar6 * -2 + 0x1f)[(uint)bVar6 * -2 + 1] =
+                 (unaff_ESI + (uint)bVar6 * -2 + 0x1f)[(uint)bVar6 * -2 + 1];
             puVar3[0x21] = unaff_ESI[0x21];
             puVar3[0x22] = unaff_ESI[0x22];
-            puVar2 = unaff_retaddr + (uint)bVar7 * -2 + 1;
-            *unaff_retaddr = auStack_ac[0];
-            *puVar2 = auStack_ac[(uint)bVar7 * -2 + 1];
-            puVar2[(uint)bVar7 * -2 + 1] = auStack_ac[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 2];
-            (puVar2 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1] =
-                 (auStack_ac + (uint)bVar7 * -2 + (uint)bVar7 * -2 + 2)[(uint)bVar7 * -2 + 1];
+            puVar2 = unaff_retaddr + (uint)bVar6 * -2 + 1;
+            *unaff_retaddr = uStack_ac;
+            *puVar2 = *(undefined4 *)(&stack0xffffff58 + (uint)bVar6 * -8);
+            puVar2[(uint)bVar6 * -2 + 1] =
+                 *(undefined4 *)(&stack0xffffff5c + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+            (puVar2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1] =
+                 *(undefined4 *)
+                  ((int)(&stack0xffffff5c + (uint)bVar6 * -8 + (uint)bVar6 * -8) +
+                  ((uint)bVar6 * -2 + 1) * 4);
             unaff_retaddr[4] = uStack_9c;
-            unaff_retaddr[(uint)bVar7 * -2 + 5] = auStack_ac[(uint)bVar7 * -2 + 5];
-            (unaff_retaddr + (uint)bVar7 * -2 + 5)[(uint)bVar7 * -2 + 1] =
-                 auStack_ac[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 6];
-            puVar2 = auStack_ac + 7;
+            unaff_retaddr[(uint)bVar6 * -2 + 5] =
+                 *(undefined4 *)(&stack0xffffff68 + (uint)bVar6 * -8);
+            (unaff_retaddr + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1] =
+                 *(undefined4 *)(&stack0xffffff6c + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+            puVar2 = (undefined4 *)&stack0xffffff70;
             puVar3 = unaff_retaddr + 7;
             for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
               *puVar3 = *puVar2;
-              puVar2 = puVar2 + (uint)bVar7 * -2 + 1;
-              puVar3 = puVar3 + (uint)bVar7 * -2 + 1;
+              puVar2 = puVar2 + (uint)bVar6 * -2 + 1;
+              puVar3 = puVar3 + (uint)bVar6 * -2 + 1;
             }
             unaff_retaddr[0xd] = local_78;
-            unaff_retaddr[(uint)bVar7 * -2 + 0xe] = local_74[(uint)bVar7 * -2];
-            (unaff_retaddr + (uint)bVar7 * -2 + 0xe)[(uint)bVar7 * -2 + 1] =
-                 local_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-            unaff_retaddr[0x10] = local_74[2];
-            if (unaff_retaddr + 0x11 != local_74 + 3) {
-              unaff_retaddr[0x11] = local_74[3];
+            unaff_retaddr[(uint)bVar6 * -2 + 0xe] =
+                 *(undefined4 *)(&stack0xffffff8c + (uint)bVar6 * -8);
+            (unaff_retaddr + (uint)bVar6 * -2 + 0xe)[(uint)bVar6 * -2 + 1] =
+                 *(undefined4 *)(&stack0xffffff90 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+            unaff_retaddr[0x10] = local_6c;
+            if (unaff_retaddr + 0x11 != &stack0xffffff98) {
+              unaff_retaddr[0x11] = uStack_68;
               unaff_retaddr[0x12] = uStack_64;
               unaff_retaddr[0x13] = uStack_60;
             }
-            pcStackY_b4 = (code *)0xc;
-            pWStackY_b8 = (WatcomTypeInfo *)0x3;
             unaff_retaddr[0x14] = uStack_5c;
-            puStackY_bc = (undefined4 *)auStack_58;
-            crt_unknown_c_FUN_006020c2();
+            crt_memory_c_copyArrayWithFunction_FUN_006020c2
+                      (unaff_retaddr + 0x15,auStack_58,3,0xc,core_actor_cpp_FUN_00410360);
             unaff_retaddr[0x1e] = local_38[1];
-            unaff_retaddr[(uint)bVar7 * -2 + 0x1f] = local_38[(uint)bVar7 * -2 + 2];
-            (unaff_retaddr + (uint)bVar7 * -2 + 0x1f)[(uint)bVar7 * -2 + 1] =
-                 local_38[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 3];
+            unaff_retaddr[(uint)bVar6 * -2 + 0x1f] = local_38[(uint)bVar6 * -2 + 2];
+            (unaff_retaddr + (uint)bVar6 * -2 + 0x1f)[(uint)bVar6 * -2 + 1] =
+                 local_38[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 3];
             unaff_retaddr[0x21] = local_24;
-            auStack_ac[0] = 0;
+            uStack_ac = 0;
             unaff_retaddr[0x22] = local_20;
-            pcStackY_b4 = (code *)0x51c061;
             core_cloth_cpp_freeVectors_FUN_0043e460(apCStack_54);
           }
           local_24 = local_24 + 0x8c;
@@ -354,7 +350,7 @@ void shape_meshlod_cpp_FUN_0051bd30(void)
 // 0051bea6: PUSH EAX
 // 0051bea7: LEA EDI,[ESP + 0x88]
 //   XREF to: Stack[-0x48] (DATA)
-// 0051beae: CALL crt_unknown.c_FUN_00600bc2
+// 0051beae: CALL crt_memory.c_copyObjectArray_FUN_00600bc2
 //   XREF to: 00600bc2 (UNCONDITIONAL_CALL)
 // 0051beb3: LEA ESI,[EBX + 0x78]
 // 0051beb6: ADD ESP,0x10
@@ -424,7 +420,7 @@ void shape_meshlod_cpp_FUN_0051bd30(void)
 //   XREF to: Stack[-0x20] (READ)
 // 0051bf5f: ADD EAX,0x54
 // 0051bf62: PUSH EAX
-// 0051bf63: CALL crt_unknown.c_FUN_006020c2
+// 0051bf63: CALL crt_memory.c_copyArrayWithFunction_FUN_006020c2
 //   XREF to: 006020c2 (UNCONDITIONAL_CALL)
 // 0051bf68: ADD ESP,0x14
 // 0051bf6b: MOV EDI,dword ptr [ESP + 0xa0]
@@ -507,7 +503,7 @@ void shape_meshlod_cpp_FUN_0051bd30(void)
 // 0051c025: PUSH EAX
 // 0051c026: LEA ESI,[ESP + 0x8c]
 //   XREF to: Stack[-0x48] (DATA)
-// 0051c02d: CALL crt_unknown.c_FUN_006020c2
+// 0051c02d: CALL crt_memory.c_copyArrayWithFunction_FUN_006020c2
 //   XREF to: 006020c2 (UNCONDITIONAL_CALL)
 // 0051c032: LEA EDI,[EBX + 0x78]
 // 0051c035: ADD ESP,0x14

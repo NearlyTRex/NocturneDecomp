@@ -7,7 +7,7 @@
 //   core_skeledit.cpp_FUN_00589bb0 (00589bb0) at 00589bc7 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00589c20 (00589c20) at 00589d8d [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058d11e [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_00516d50 (00516d50) at 00516d86 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_FUN_00516d50 (00516d50) at 00516d86 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051b6f0 (0051b6f0) at 0051b6fa [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051b720 (0051b720) at 0051b72c [UNCONDITIONAL_CALL]
 // Globals:
