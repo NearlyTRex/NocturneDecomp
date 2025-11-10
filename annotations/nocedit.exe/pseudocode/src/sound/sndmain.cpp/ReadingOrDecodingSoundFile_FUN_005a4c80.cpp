@@ -50,9 +50,9 @@
 //   engine_dosio.c_splitPath_FUN_00481f20
 //   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 //   sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0
-//   sound_mp3.cpp_FreeSomething1_FUN_005349e0
-//   sound_mp3.cpp_FUN_00534a60
-//   sound_mp3.cpp_OpenAndPrepareDecoding_FUN_00534550
+//   sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0
+//   sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550
+//   sound_mp3.cpp_CMP3Decoder_read_FUN_00534a60
 //   sound_sndmain.cpp_CalculateDistanceMaybe_FUN_005a45c0
 //   sound_sndmain.cpp_FUN_005a8550
 //   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
@@ -76,6 +76,7 @@ SfxSample * sound_sndmain_cpp_ReadingOrDecodingSoundFile_FUN_005a4c80(void)
   long lVar5;
   void *buffer;
   SIZE_T SVar6;
+  short *output_buffer;
   uint uVar7;
   BADSPACEBASE *in_ESP;
   SfxSample *pSVar8;
@@ -206,7 +207,8 @@ LAB_005a4cea:
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unknown sample file format extension: %s");
       return pSVar8;
     }
-    sound_mp3_cpp_OpenAndPrepareDecoding_FUN_00534550();
+    sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550
+              ((CMP3Decoder *)&DAT_03f49010,(char *)in_stack_00000028);
     pSVar8->field1_0x4[0x100] = '\x10';
     pSVar8->field1_0x4[0x101] = '\0';
     pSVar8->field1_0x4[0x102] = '\0';
@@ -234,16 +236,19 @@ LAB_005a4cea:
     *(undefined4 *)(pSVar8->field_160 + 8) = uVar2;
     iVar9 = sound_sndmain_cpp_ReallocSomething_FUN_005a6170();
     if (iVar9 == 0) goto LAB_005a4ef8;
-    iVar9 = sound_sndmain_cpp_SfxSample_lock_FUN_005a6430();
-    if ((iVar9 != 0) &&
-       (iVar9 = sound_mp3_cpp_FUN_00534a60(), iVar9 == *(int *)(pSVar8->field1_0x4 + 0x10c))) {
+    output_buffer = (short *)sound_sndmain_cpp_SfxSample_lock_FUN_005a6430();
+    if ((output_buffer != (short *)0x0) &&
+       (iVar9 = sound_mp3_cpp_CMP3Decoder_read_FUN_00534a60
+                          ((CMP3Decoder *)&DAT_03f49010,output_buffer,
+                           *(int *)(pSVar8->field1_0x4 + 0x10c)),
+       iVar9 == *(int *)(pSVar8->field1_0x4 + 0x10c))) {
       sound_sndmain_cpp_SfxSample_releaseSoundBuffer_FUN_005a6540(pSVar8);
       return pSVar8;
     }
   }
   sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
 LAB_005a4ef8:
-  sound_mp3_cpp_FreeSomething1_FUN_005349e0();
+  sound_mp3_cpp_CMP3Decoder_free_FUN_005349e0((CMP3Decoder *)&DAT_03f49010);
   sound_sndmain_cpp_SfxSample_freeMemory_FUN_005a62c0(pSVar8);
   if (in_stack_00000030 != (FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000030,"..\\sound\\sndmain.cpp",0x2eb);
@@ -515,7 +520,7 @@ LAB_005a4ef8:
 // 005a4ef8: PUSH 0x3f49010
 //   Label: LAB_005a4ef8
 //   XREF to: 03f49010 (DATA)
-// 005a4efd: CALL sound_mp3.cpp_FreeSomething1_FUN_005349e0
+// 005a4efd: CALL sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0
 //   XREF to: 005349e0 (UNCONDITIONAL_CALL)
 // 005a4f02: ADD ESP,0x4
 // 005a4f05: PUSH EBP
@@ -643,7 +648,7 @@ LAB_005a4ef8:
 // 005a501c: PUSH EDX
 // 005a501d: PUSH 0x3f49010
 //   XREF to: 03f49010 (DATA)
-// 005a5022: CALL sound_mp3.cpp_OpenAndPrepareDecoding_FUN_00534550
+// 005a5022: CALL sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550
 //   XREF to: 00534550 (UNCONDITIONAL_CALL)
 // 005a5027: MOV dword ptr [EBP + 0x104],0x10
 // 005a5031: MOV EAX,[0x03f49114]
@@ -708,7 +713,7 @@ LAB_005a4ef8:
 // 005a5100: PUSH EAX
 // 005a5101: PUSH 0x3f49010
 //   XREF to: 03f49010 (DATA)
-// 005a5106: CALL sound_mp3.cpp_FUN_00534a60
+// 005a5106: CALL sound_mp3.cpp_CMP3Decoder_read_FUN_00534a60
 //   XREF to: 00534a60 (UNCONDITIONAL_CALL)
 // 005a510b: MOV ESI,dword ptr [EBP + 0x110]
 // 005a5111: ADD ESP,0xc

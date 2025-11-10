@@ -7,7 +7,7 @@
 //   core_msnedit.cpp_BeginAndEndScene_FUN_0053c970 (0053c970) at 0053c9c8 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053b9f0 (0053b9f0) at 0053baf8 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0063b2ec
+//   float FLOAT_0063b2ec = 10000
 //   undefined4 DAT_00661c30
 //   CDemonCamera g_CDemonCameraInstance
 //   undefined4 DAT_032758e8
@@ -64,13 +64,13 @@ float * core_msnedit_cpp_FUN_00535c60(void)
   *in_stack_00000004 = (float)local_34.y * _DAT_00661c30;
   in_stack_00000004[1] = (float)local_34.z * _DAT_00661c30;
   in_stack_00000004[2] = (float)local_28 * _DAT_00661c30;
-  if (_DAT_0063b2ec <
+  if (FLOAT_0063b2ec <
       SQRT(in_stack_00000004[2] * in_stack_00000004[2] +
            *in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1])) {
     fVar1 = *in_stack_00000004 - (float)g_CDemonCameraInstance.base.position.x;
     fVar2 = in_stack_00000004[1] - (float)g_CDemonCameraInstance.base.position.y;
     fVar3 = in_stack_00000004[2] - (float)g_CDemonCameraInstance.base.position.z;
-    fVar4 = _DAT_0063b2ec / SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);
+    fVar4 = FLOAT_0063b2ec / SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);
     fVar2 = (float)g_CDemonCameraInstance.base.position.y + fVar2 * fVar4;
     fVar3 = (float)g_CDemonCameraInstance.base.position.z + fVar3 * fVar4;
     if (in_stack_00000004 != local_24) {

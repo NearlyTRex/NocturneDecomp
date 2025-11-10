@@ -168,7 +168,7 @@
 //   shape_superopt.cpp_FUN_005d7000 (005d7000) at 005d70ae [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_MallocAndDeletingInvalidPolygons_FUN_005d46f0 (005d46f0) at 005d4790 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_WeldingVerticesMaybe_FUN_005d4160 (005d4160) at 005d4237 [UNCONDITIONAL_CALL]
-//   sound_mp3.cpp_FUN_00534210 (00534210) at 00534414 [UNCONDITIONAL_CALL]
+//   sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210 (00534210) at 00534414 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_SfxSample_freeMemory_FUN_005a62c0 (005a62c0) at 005a631b [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 (005acf20) at 005ad017 [UNCONDITIONAL_CALL]
 //   support_codec.cpp_CCodec_dtor_FUN_0043e9b0 (0043e9b0) at 0043e9ed [UNCONDITIONAL_CALL]

@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_msnedit.cpp_FUN_0053c4f0 (0053c4f0) at 0053c6a7 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_%s_(%s)_0063b6f4
+//   TerminatedCString s_s_s_0063b6f4
 //   TerminatedCString s_X_0063b6fc
 //   TerminatedCString s_s_6_2f_0063b700
 //   TerminatedCString s_Enter_frame_number_0063b706
@@ -83,7 +83,7 @@ void core_msnedit_cpp_FUN_00536e20(void)
                             (&this_ptr->motion_controller);
     pcVar2 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
                        (&this_ptr->motion_controller);
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff18,"?%s (%s)" + 1,motion_name,pcVar2);
+    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff18,"%s (%s)",motion_name,pcVar2);
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
       core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0

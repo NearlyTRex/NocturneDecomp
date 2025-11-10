@@ -733,11 +733,11 @@
       "type":"struct"
     },
     {
-      "name":"CMP3Decoder",
+      "name":"CMatrix3x3i",
       "type":"struct"
     },
     {
-      "name":"CMatrix3x3i",
+      "name":"CMemoryBitStream",
       "type":"struct"
     },
     {
@@ -2421,6 +2421,10 @@
       "type":"struct"
     },
     {
+      "name":"SBitAllocationTable",
+      "type":"struct"
+    },
+    {
       "name":"SBitBuffer",
       "type":"struct"
     },
@@ -2638,6 +2642,14 @@
     },
     {
       "name":"SHardwareEdge",
+      "type":"struct"
+    },
+    {
+      "name":"SHuffmanTable",
+      "type":"struct"
+    },
+    {
+      "name":"SHuffmanTableSource",
       "type":"struct"
     },
     {
@@ -2901,6 +2913,50 @@
       "type":"struct"
     },
     {
+      "name":"SMpegFrameHeader",
+      "type":"struct"
+    },
+    {
+      "name":"SMpegFrame",
+      "type":"struct"
+    },
+    {
+      "name":"SMpegLayer3Granule",
+      "type":"struct"
+    },
+    {
+      "name":"SMpegLayer3Scalefactors",
+      "type":"struct"
+    },
+    {
+      "name":"SMpegScalefactorBandData",
+      "type":"struct"
+    },
+    {
+      "name":"SMpegSubbandAllocation",
+      "type":"struct"
+    },
+    {
+      "name":"SMpegSubbandQuantizedSamples",
+      "type":"struct"
+    },
+    {
+      "name":"SMpegSubbandSCFSI",
+      "type":"struct"
+    },
+    {
+      "name":"SMpegSubbandSamples",
+      "type":"struct"
+    },
+    {
+      "name":"SMpegStereoSubbandSamples",
+      "type":"struct"
+    },
+    {
+      "name":"SMpegSubbandScalefactors",
+      "type":"struct"
+    },
+    {
       "name":"SNetPlayer",
       "type":"struct"
     },
@@ -3049,6 +3105,10 @@
       "type":"struct"
     },
     {
+      "name":"SScalefactorBandRange",
+      "type":"struct"
+    },
+    {
       "name":"SScrape",
       "type":"struct"
     },
@@ -3098,6 +3158,10 @@
     },
     {
       "name":"CDemonPart",
+      "type":"struct"
+    },
+    {
+      "name":"SSynthesisFilter",
       "type":"struct"
     },
     {
@@ -4385,6 +4449,10 @@
       "type":"struct"
     },
     {
+      "name":"CFileBitStream",
+      "type":"struct"
+    },
+    {
       "name":"CFileManager",
       "type":"struct"
     },
@@ -4394,6 +4462,10 @@
     },
     {
       "name":"CLodMesh",
+      "type":"struct"
+    },
+    {
+      "name":"CMP3Decoder",
       "type":"struct"
     },
     {
@@ -22207,6 +22279,84 @@
       "desc":"",
       "fields":[
         {
+          "len":4,
+          "name":"file_handle",
+          "offset":0,
+          "type":"FILE*"
+        },
+        {
+          "len":4,
+          "name":"buffer",
+          "offset":4,
+          "type":"char*"
+        },
+        {
+          "len":4,
+          "name":"buffer_size",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"total_bits_read",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"current_byte_index",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"bits_available",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"end_of_stream_flag",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"error_flag",
+          "offset":28,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"stream_start_position",
+          "offset":32,
+          "type":"long"
+        },
+        {
+          "len":4,
+          "name":"stream_length",
+          "offset":36,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"bytes_remaining",
+          "offset":40,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":44,
+      "name":"CFileBitStream",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":256,
           "name":"filename",
           "offset":0,
@@ -26327,6 +26477,48 @@
       "desc":"",
       "fields":[
         {
+          "len":4,
+          "name":"buffer_size_limit",
+          "offset":0,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"total_bits_read",
+          "offset":4,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"current_dword_index",
+          "offset":8,
+          "type":"uint"
+        },
+        {
+          "len":16384,
+          "name":"frame_buffer",
+          "offset":12,
+          "type":"uint[4096]"
+        },
+        {
+          "len":4,
+          "name":"bits_available",
+          "offset":16396,
+          "type":"uint"
+        }
+      ],
+      "importable":true,
+      "len":16400,
+      "name":"CMemoryBitStream",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":48820,
           "name":"field_0",
           "offset":0,
@@ -26830,10 +27022,94 @@
       "desc":"",
       "fields":[
         {
-          "len":34352,
-          "name":"field_0",
+          "len":256,
+          "name":"filename",
           "offset":0,
-          "type":"char[34352]"
+          "type":"char[256]"
+        },
+        {
+          "len":4,
+          "name":"sample_rate",
+          "offset":256,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"num_channels",
+          "offset":260,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"available_samples",
+          "offset":264,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"decode_buffer_pos",
+          "offset":268,
+          "type":"short*"
+        },
+        {
+          "len":4608,
+          "name":"decode_buffer",
+          "offset":272,
+          "type":"short[2304]"
+        },
+        {
+          "len":16400,
+          "name":"memory_bitstream",
+          "offset":4880,
+          "type":"CMemoryBitStream"
+        },
+        {
+          "len":44,
+          "name":"file_bitstream",
+          "offset":21280,
+          "type":"CFileBitStream"
+        },
+        {
+          "len":4,
+          "name":"field_21324",
+          "offset":21324,
+          "type":"int"
+        },
+        {
+          "len":8192,
+          "name":"synthesis_v_buffer",
+          "offset":21328,
+          "type":"float[2][1024]"
+        },
+        {
+          "len":8,
+          "name":"synthesis_buffer_index",
+          "offset":29520,
+          "type":"int[2]"
+        },
+        {
+          "len":180,
+          "name":"layer3_scalefactors",
+          "offset":29528,
+          "type":"int[45]"
+        },
+        {
+          "len":36,
+          "name":"field_29708",
+          "offset":29708,
+          "type":"char[36]"
+        },
+        {
+          "len":2304,
+          "name":"synthesis_history",
+          "offset":29744,
+          "type":"float[2][16][18]"
+        },
+        {
+          "len":2304,
+          "name":"field_32048",
+          "offset":32048,
+          "type":"char[2304]"
         }
       ],
       "importable":true,
@@ -34634,6 +34910,60 @@
       "fields":[
         {
           "len":4,
+          "name":"table_version",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"num_lines",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"allocation_data_ptr",
+          "offset":8,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"table_index",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"num_subbands",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"num_allocation_groups",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"num_granules",
+          "offset":24,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":28,
+      "name":"SBitAllocationTable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
           "name":"bits_available",
           "offset":0,
           "type":"int"
@@ -36872,6 +37202,126 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"table_id",
+          "offset":0,
+          "type":"char[4]"
+        },
+        {
+          "len":4,
+          "name":"xlen",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"ylen",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"linbits",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"max_value",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"reference_index",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_24",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_28",
+          "offset":28,
+          "type":"int"
+        },
+        {
+          "len":2052,
+          "name":"huffman_data",
+          "offset":32,
+          "type":"char[2052]"
+        },
+        {
+          "len":4,
+          "name":"table_size",
+          "offset":2084,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":2088,
+      "name":"SHuffmanTable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"table_size",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_4",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_8",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"bits",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"reference_index",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"huffman_data_ptr",
+          "offset":20,
+          "type":"char*"
+        }
+      ],
+      "importable":true,
+      "len":24,
+      "name":"SHuffmanTableSource",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Struct/System",
       "desc":"",
@@ -37990,6 +38440,420 @@
       "importable":true,
       "len":24,
       "name":"SMotionTransition",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"header",
+          "offset":0,
+          "type":"SMpegFrameHeader*"
+        },
+        {
+          "len":4,
+          "name":"channel_mode",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"allocation_table",
+          "offset":8,
+          "type":"SBitAllocationTable*"
+        },
+        {
+          "len":4,
+          "name":"table_index",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"samples_per_granule",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"js_bound",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"sblimit",
+          "offset":24,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":28,
+      "name":"SMpegFrame",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"mpeg_version",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"layer",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"protection",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"bitrate_index",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"sampling_rate_index",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"padding",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"private_bit",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"channel_mode",
+          "offset":28,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"mode_extension",
+          "offset":32,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"copyright",
+          "offset":36,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"original",
+          "offset":40,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"emphasis",
+          "offset":44,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":48,
+      "name":"SMpegFrameHeader",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"field_0",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_4",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":16,
+          "name":"field_8",
+          "offset":8,
+          "type":"char[16]"
+        },
+        {
+          "len":4,
+          "name":"part_2_3_length_maybe",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"big_value_pair_count",
+          "offset":28,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"global_gain",
+          "offset":32,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"scalefac_compress",
+          "offset":36,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"window_switching_flag",
+          "offset":40,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"block_type",
+          "offset":44,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"mixed_block_flag",
+          "offset":48,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"table_select",
+          "offset":52,
+          "type":"int[3]"
+        },
+        {
+          "len":12,
+          "name":"subblock_gain",
+          "offset":64,
+          "type":"int[3]"
+        },
+        {
+          "len":4,
+          "name":"region0_count",
+          "offset":76,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"region1_count",
+          "offset":80,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"preflag",
+          "offset":84,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"scalefac_scale",
+          "offset":88,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"count_1_table_select",
+          "offset":92,
+          "type":"int"
+        },
+        {
+          "len":64,
+          "name":"field_96",
+          "offset":96,
+          "type":"char[64]"
+        }
+      ],
+      "importable":true,
+      "len":160,
+      "name":"SMpegLayer3Granule",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":88,
+          "name":"scalefac_long",
+          "offset":0,
+          "type":"int[22]"
+        },
+        {
+          "len":156,
+          "name":"scalefac_short",
+          "offset":88,
+          "type":"int[3][13]"
+        }
+      ],
+      "importable":true,
+      "len":244,
+      "name":"SMpegLayer3Scalefactors",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":248,
+          "name":"reserved",
+          "offset":0,
+          "type":"int[62]"
+        },
+        {
+          "len":42,
+          "name":"intensity_stereo_pos",
+          "offset":248,
+          "type":"short[21]"
+        }
+      ],
+      "importable":true,
+      "len":290,
+      "name":"SMpegScalefactorBandData",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4608,
+          "name":"channels",
+          "offset":0,
+          "type":"SMpegSubbandSamples[2]"
+        }
+      ],
+      "importable":true,
+      "len":4608,
+      "name":"SMpegStereoSubbandSamples",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":128,
+          "name":"granules",
+          "offset":0,
+          "type":"int[32]"
+        }
+      ],
+      "importable":true,
+      "len":128,
+      "name":"SMpegSubbandAllocation",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":2304,
+          "name":"samples",
+          "offset":0,
+          "type":"int[32][18]"
+        }
+      ],
+      "importable":true,
+      "len":2304,
+      "name":"SMpegSubbandQuantizedSamples",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":2304,
+          "name":"samples",
+          "offset":0,
+          "type":"float[32][18]"
+        }
+      ],
+      "importable":true,
+      "len":2304,
+      "name":"SMpegSubbandSamples",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":384,
+          "name":"codes",
+          "offset":0,
+          "type":"int[3][32]"
+        }
+      ],
+      "importable":true,
+      "len":384,
+      "name":"SMpegSubbandScalefactors",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":128,
+          "name":"scfsi",
+          "offset":0,
+          "type":"int[32]"
+        }
+      ],
+      "importable":true,
+      "len":128,
+      "name":"SMpegSubbandSCFSI",
       "pack":false,
       "type":"struct"
     },
@@ -39301,6 +40165,30 @@
       "desc":"",
       "fields":[
         {
+          "len":4,
+          "name":"start",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"end",
+          "offset":4,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"SScalefactorBandRange",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":12,
           "name":"local_position",
           "offset":0,
@@ -39982,6 +40870,60 @@
       "importable":true,
       "len":32,
       "name":"SSurfacePlane",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"field_0",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_4",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_8",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_12",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_16",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"alternate_index",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_24",
+          "offset":24,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":28,
+      "name":"SSynthesisFilter",
       "pack":false,
       "type":"struct"
     },

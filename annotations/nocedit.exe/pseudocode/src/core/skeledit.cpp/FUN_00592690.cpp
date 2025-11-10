@@ -1157,7 +1157,7 @@ LAB_00592ea4:
                             case 4:
                             case 5:
                             case 6:
-                              pcVar31 = (char *)0x4;
+                              pcVar31 = &DAT_00000004;
                               pcVar5 = "over";
                               uVar33 = 0x5944e6;
                               pcVar28 = &pCVar8->field0_0x0;

@@ -42,6 +42,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
 void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDemonLight *this_ptr)
 
 {
@@ -146,9 +148,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
               texture = texture + 2;
               local_100.surface_normal.A = (int)fRam00000018;
               fStack_e4 = FLOAT_0061f17b * 0.0 * fRam00000140 * (float)DOUBLE_0061f18b;
-              local_100.surface_normal.B = (int)fRam00000024;
+              local_100.surface_normal.B = (int)_DAT_00000024;
               local_100.surface_normal.D = (int)(fRam00000018 * fStack_e4);
-              fStack_e8 = fRam00000024 * fStack_e4;
+              fStack_e8 = _DAT_00000024 * fStack_e4;
               local_100.surface_normal.C = (int)fRam00000030;
               fStack_e4 = fRam00000030 * fStack_e4;
               local_50[0].x =

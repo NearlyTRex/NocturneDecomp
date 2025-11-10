@@ -400,7 +400,7 @@ engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0
           iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0
                             ((SFoundFileInfo *)(auStack_d6c + 0x204));
           if (iVar3 == 0) {
-            ppcVar10[0xdc] = (char *)0x4;
+            ppcVar10[0xdc] = &DAT_00000004;
           }
           else if (iStack_d80 + 2U < uStack_958) {
             ppcVar10[0xdc] = (char *)0x0;
@@ -493,7 +493,7 @@ engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0
              (iVar3 = crt_string_c_stricmp_FUN_005fe7f0
                                 ((char *)(ppcVar10 + 0xc2),g_VersionControlSession.primary_username)
              , iVar3 != 0)) {
-            if ((ppcVar10[0xdc] == (char *)0x4) &&
+            if ((ppcVar10[0xdc] == &DAT_00000004) &&
                ((ppcVar10[0xdf] == (char *)0x0 && (ppcVar10[0xdd] == (char *)0x0)))) {
               ppcVar10[0xde] = &DAT_00000002;
               ppcVar10[0xdb] = "You don't have this pod";

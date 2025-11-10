@@ -46,9 +46,9 @@
 //   shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020 (004a0020) at 004a008c [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300 (004a0300) at 004a0383 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360 (004a3360) at 004a33df [UNCONDITIONAL_CALL]
-//   sound_mp3.cpp_FUN_00533d30 (00533d30) at 00533db8 [UNCONDITIONAL_CALL]
-//   sound_mp3.cpp_FUN_00533f80 (00533f80) at 00534018 [UNCONDITIONAL_CALL]
-//   sound_mp3.cpp_HuffmanDecodeTableThing_FUN_00531680 (00531680) at 00531963 [UNCONDITIONAL_CALL]
+//   sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680 (00531680) at 00531963 [UNCONDITIONAL_CALL]
+//   sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30 (00533d30) at 00533db8 [UNCONDITIONAL_CALL]
+//   sound_mp3.cpp_initializeHuffmanTables_FUN_00533f80 (00533f80) at 00534018 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CalculateDistanceMaybe_FUN_005a45c0 (005a45c0) at 005a4a01 [UNCONDITIONAL_CALL]
 //   support_trisock.cpp_parseIPComponents_FUN_005e1800 (005e1800) at 005e1822 [UNCONDITIONAL_CALL]
 // Function calls:

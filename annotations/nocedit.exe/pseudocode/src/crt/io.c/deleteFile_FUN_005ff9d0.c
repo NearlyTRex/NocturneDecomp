@@ -37,7 +37,7 @@
 //   shape_meshlod.cpp_FUN_00515190 (00515190) at 005151a2 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_SomethingAboutLogTXTCreate_FUN_005c7910 (005c7910) at 005c7922 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_TriListSomething_FUN_005d77a0 (005d77a0) at 005d7d14 [UNCONDITIONAL_CALL]
-//   sound_mp3.cpp_FUN_00534210 (00534210) at 00534221 [UNCONDITIONAL_CALL]
+//   sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210 (00534210) at 00534221 [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_stdio.c_remove_FUN_00606600
 

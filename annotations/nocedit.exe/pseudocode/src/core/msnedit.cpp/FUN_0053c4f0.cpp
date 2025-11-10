@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 (005390f0) at 0053972b [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_Selected:_%s_0063c874
+//   TerminatedCString s_Selected_s_0063c874
 //   int g_WindowWidth = 0x140
 //   int g_WindowHeight = 0xc8
 //   WatcomStaticDestructorNode DAT_0068064c
@@ -97,7 +97,7 @@ void core_msnedit_cpp_FUN_0053c4f0(void)
     return;
   }
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (acStack_13c,"@Selected: %s" + 1,*(undefined4 *)(in_stack_00000004 + 0x28));
+            (acStack_13c,"Selected: %s",*(undefined4 *)(in_stack_00000004 + 0x28));
   engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,g_WindowHeight + -0xb);
   shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40
             ((CEdScrollBar *)&DAT_02f797e4);

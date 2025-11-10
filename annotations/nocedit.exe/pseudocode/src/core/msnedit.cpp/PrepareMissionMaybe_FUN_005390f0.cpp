@@ -37,16 +37,16 @@
 //   TerminatedCString s_Select_actor_by_name_0063c535
 //   TerminatedCString s_core_msnedit_cpp_0063c54a
 //   TerminatedCString s_Invalid_cameraMode_0063c55e
-//   undefined4 DAT_0063c574
-//   undefined4 DAT_0063c57c
-//   undefined4 DAT_0063c584
-//   undefined4 DAT_0063c58c
-//   undefined4 DAT_0063c594
-//   undefined4 DAT_0063c59c
-//   undefined4 DAT_0063c5a4
-//   undefined4 DAT_0063c5ac
-//   undefined4 DAT_0063c5b4
-//   undefined4 DAT_0063c5b8
+//   float FLOAT_0063c574 = 0.5
+//   double DOUBLE_0063c57c = 0.25
+//   double DOUBLE_0063c584 = 10
+//   double DOUBLE_0063c58c = 0.0500000000000000
+//   double DOUBLE_0063c594 = 1.57079632675000
+//   double DOUBLE_0063c59c = 1.5
+//   double DOUBLE_0063c5a4 = 0.5
+//   double DOUBLE_0063c5ac = -1.57079632675000
+//   float FLOAT_0063c5b4 = 6.283185
+//   float FLOAT_0063c5b8 = -6.283185
 //   undefined4 DAT_00661c44
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
@@ -479,10 +479,10 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
                                                  0x154) + 0x14))();
           local_f4 = *pfVar3 + pfVar3[3];
           local_f0 = pfVar3[1] + pfVar3[4];
-          local_100 = local_f4 * _DAT_0063c574;
+          local_100 = local_f4 * FLOAT_0063c574;
           local_ec = pfVar3[2] + pfVar3[5];
-          local_fc = local_f0 * _DAT_0063c574;
-          local_f8 = local_ec * _DAT_0063c574;
+          local_fc = local_f0 * FLOAT_0063c574;
+          local_f8 = local_ec * FLOAT_0063c574;
           iVar10 = *(int *)(in_stack_00000004->field2_0xc + 0x1c);
           local_ac = *(float *)(iVar10 + 0x20) + local_100;
           local_a8 = *(float *)(iVar10 + 0x24) + local_fc;
@@ -529,10 +529,10 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
                                                  0x154) + 0x14))();
           local_e8 = *pfVar3 + pfVar3[3];
           local_e4 = pfVar3[1] + pfVar3[4];
-          local_d0 = local_e8 * _DAT_0063c574;
+          local_d0 = local_e8 * FLOAT_0063c574;
           local_e0 = pfVar3[2] + pfVar3[5];
-          local_cc = local_e4 * _DAT_0063c574;
-          local_c8 = local_e0 * _DAT_0063c574;
+          local_cc = local_e4 * FLOAT_0063c574;
+          local_c8 = local_e0 * FLOAT_0063c574;
           iVar10 = *(int *)(in_stack_00000004->field2_0xc + 0x1c);
           pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                              (&local_198,&local_a0,&local_94);
@@ -652,8 +652,8 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
         local_c0 = pfVar3[4] - pfVar3[1];
         local_bc = pfVar3[5] - pfVar3[2];
         local_40 = SQRT(local_bc * local_bc + local_c4 * local_c4 + local_c0 * local_c0) *
-                   (float)_DAT_0063c57c;
-        if (local_40 < (float)_DAT_0063c5a4) {
+                   (float)DOUBLE_0063c57c;
+        if (local_40 < (float)DOUBLE_0063c5a4) {
           local_40 = 0.5;
         }
         param5 = (void *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) + 0x30);
@@ -745,14 +745,14 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
         if (iVar10 == 0) {
           iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
           if (iVar10 != 0) {
-            local_2c = local_3c * (float)_DAT_0063c584;
+            local_2c = local_3c * (float)DOUBLE_0063c584;
           }
         }
         else {
-          local_2c = local_3c * (float)_DAT_0063c58c;
+          local_2c = local_3c * (float)DOUBLE_0063c58c;
         }
-        local_34 = local_2c * (float)_DAT_0063c594;
-        local_1c = local_18 * (float)_DAT_0063c59c;
+        local_34 = local_2c * (float)DOUBLE_0063c594;
+        local_1c = local_18 * (float)DOUBLE_0063c59c;
         if (local_1c < 1.0) {
           local_1c = 1.0;
         }
@@ -813,19 +813,19 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
             local_18 = local_18 + local_1c;
           }
         }
-        if (local_7c < (float)_DAT_0063c5ac) {
+        if (local_7c < (float)DOUBLE_0063c5ac) {
           local_7c = -1.5707964;
         }
-        if ((float)_DAT_0063c594 < local_7c) {
+        if ((float)DOUBLE_0063c594 < local_7c) {
           local_7c = 1.5707964;
         }
-        if (local_78 < (float)_DAT_0063c5ac) {
-          local_78 = local_78 + _DAT_0063c5b4;
+        if (local_78 < (float)DOUBLE_0063c5ac) {
+          local_78 = local_78 + FLOAT_0063c5b4;
         }
-        if ((float)_DAT_0063c594 < local_78) {
-          local_78 = local_78 + _DAT_0063c5b8;
+        if ((float)DOUBLE_0063c594 < local_78) {
+          local_78 = local_78 + FLOAT_0063c5b8;
         }
-        if (local_18 < (float)_DAT_0063c5a4) {
+        if (local_18 < (float)DOUBLE_0063c5a4) {
           local_18 = 0.5;
         }
       }

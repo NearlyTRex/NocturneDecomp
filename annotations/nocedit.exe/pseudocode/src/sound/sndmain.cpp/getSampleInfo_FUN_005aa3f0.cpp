@@ -41,8 +41,8 @@
 //   engine_dosio.c_splitPath_FUN_00481f20
 //   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 //   sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0
-//   sound_mp3.cpp_FreeSomething1_FUN_005349e0
-//   sound_mp3.cpp_OpenAndPrepareDecoding_FUN_00534550
+//   sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0
+//   sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550
 //   sound_sndmain.cpp_CalculateDistanceMaybe_FUN_005a45c0
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
@@ -112,7 +112,8 @@ undefined4 sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(void)
           sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0((CMP3Decoder *)&DAT_03f55248);
           crt_stdlib_c_atexit_FUN_005ff060(&DAT_00681af4);
         }
-        sound_mp3_cpp_OpenAndPrepareDecoding_FUN_00534550();
+        sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550
+                  ((CMP3Decoder *)&DAT_03f55248,in_stack_00000004);
         in_stack_00000004[0x104] = '\x10';
         in_stack_00000004[0x105] = '\0';
         in_stack_00000004[0x106] = '\0';
@@ -124,7 +125,7 @@ undefined4 sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(void)
         in_stack_00000004[0x112] = -1;
         in_stack_00000004[0x113] = -1;
         *(undefined4 *)(in_stack_00000004 + 0x10c) = uVar1;
-        sound_mp3_cpp_FreeSomething1_FUN_005349e0();
+        sound_mp3_cpp_CMP3Decoder_free_FUN_005349e0((CMP3Decoder *)&DAT_03f55248);
       }
       else {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -377,7 +378,7 @@ LAB_005aa53c:
 //   Label: LAB_005aa5ad
 // 005aa5ae: PUSH 0x3f55248
 //   XREF to: 03f55248 (DATA)
-// 005aa5b3: CALL sound_mp3.cpp_OpenAndPrepareDecoding_FUN_00534550
+// 005aa5b3: CALL sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550
 //   XREF to: 00534550 (UNCONDITIONAL_CALL)
 // 005aa5b8: MOV dword ptr [EBP + 0x104],0x10
 // 005aa5c2: MOV EAX,[0x03f5534c]
@@ -390,7 +391,7 @@ LAB_005aa53c:
 // 005aa5df: PUSH 0x3f55248
 //   XREF to: 03f55248 (DATA)
 // 005aa5e4: MOV dword ptr [EBP + 0x10c],EAX
-// 005aa5ea: CALL sound_mp3.cpp_FreeSomething1_FUN_005349e0
+// 005aa5ea: CALL sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0
 //   XREF to: 005349e0 (UNCONDITIONAL_CALL)
 // 005aa5ef: ADD ESP,0x4
 // 005aa5f2: JMP 0x005aa53c

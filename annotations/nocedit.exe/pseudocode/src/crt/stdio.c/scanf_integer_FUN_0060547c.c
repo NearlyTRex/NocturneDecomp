@@ -87,7 +87,7 @@ crt_stdio_c_scanf_integer_FUN_0060547c(scanf_state_t *state,va_list_t *args,int 
     else {
       iVar5 = base;
       if ((base == 0x10) && (local_1c == 0x30)) {
-        iVar6 = crt_stdio_c_scanf_getc_with_width_FUN_00605918((scanf_state_t *)0x10);
+        iVar6 = crt_stdio_c_scanf_getc_with_width_FUN_00605918((scanf_state_t *)&DAT_00000010);
         iVar8 = 1;
         if (iVar6 == -1) goto LAB_00605798;
         if ((iVar6 == 0x78) || (iVar6 == 0x58)) {

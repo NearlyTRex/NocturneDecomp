@@ -49,6 +49,7 @@
 /* WARNING: Removing unreachable block (ram,0x00477604) */
 /* WARNING: Removing unreachable block (ram,0x00477618) */
 /* WARNING: Removing unreachable block (ram,0x0047764b) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl
 core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFramedModel *this_ptr,FILE *file)
@@ -153,12 +154,12 @@ core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFramedModel *this
     do {
       crt_stdio_c_fscanf_FUN_005fe7c0(file,"%d,%d");
       iVar2 = 0;
-      if (0 < iRam00000004) {
+      if (0 < _DAT_00000004) {
         this_ptr = (CKeyFramedModel *)0x18;
         do {
           crt_stdio_c_fscanf_FUN_005fe7c0(file,", %d,%d,%d");
           iVar2 = iVar2 + 1;
-        } while (iVar2 < iRam00000004);
+        } while (iVar2 < _DAT_00000004);
       }
       crt_stdio_c_fscanf_FUN_005fe7c0(file,"\n");
       this_ptr = (CKeyFramedModel *)(this_ptr->model_filename + 1);

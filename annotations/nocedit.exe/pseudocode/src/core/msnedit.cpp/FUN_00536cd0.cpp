@@ -7,7 +7,7 @@
 //   core_msnedit.cpp_FUN_00536e20 (00536e20) at 00537081 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 (005390f0) at 005398c0 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0063b6ec
+//   double DOUBLE_0063b6ec = 0.300000000000000
 //   CEdButton* g_ActiveButton
 //   int g_MouseX
 //   int g_MouseY
@@ -52,7 +52,7 @@ core_msnedit_cpp_FUN_00536cd0
     engine_2d_c_drawLine_FUN_004011b0(unaff_EBX,param_7,unaff_EBX,y1);
   }
   uVar2 = g_MouseButtonFlags & 1;
-  if (((param_8 == 0) && (0.0 < _DAT_02f7c630)) && (_DAT_02f7c630 < (float)_DAT_0063b6ec)) {
+  if (((param_8 == 0) && (0.0 < _DAT_02f7c630)) && (_DAT_02f7c630 < (float)DOUBLE_0063b6ec)) {
     uVar2 = 0;
   }
   if ((unaff_ESI != 0) && (uVar2 != 0)) {

@@ -91,7 +91,7 @@
 //   shape_design.c_simpleTexture_FUN_00467350 (00467350) at 0046739f [UNCONDITIONAL_CALL]
 //   shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0 (0048fed0) at 0048feec [UNCONDITIONAL_CALL]
 //   shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70 (0053ee70) at 0053f151 [UNCONDITIONAL_CALL]
-//   sound_mp3.cpp_OpenAndPrepareDecoding_FUN_00534550 (00534550) at 0053457b [UNCONDITIONAL_CALL]
+//   sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550 (00534550) at 0053457b [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CalculateDistanceMaybe_FUN_005a45c0 (005a45c0) at 005a46f3 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a5200 (005a5200) at 005a5433 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a4de4 [UNCONDITIONAL_CALL]

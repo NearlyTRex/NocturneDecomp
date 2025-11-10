@@ -14,9 +14,9 @@
 //   TerminatedCString s_CDemonMission_editGore_O_0063cfca
 //   TerminatedCString s_stranger_hat_kfm_0063cff2
 //   TerminatedCString s_Reset_gore_0063d003
-//   undefined4 DAT_0063d014
-//   undefined4 DAT_0063d01c
-//   undefined4 DAT_0063d020
+//   double DOUBLE_0063d014 = 10
+//   float FLOAT_0063d01c = 0.1000000
+//   float FLOAT_0063d020 = -100
 //   undefined4 DAT_00661c30
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   int g_WindowWidth = 0x140
@@ -298,7 +298,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
     else {
       in_stack_00000008 = (CGore *)((float)in_stack_00000008 - g_CGamePtr->delta_time_float);
       if ((float)in_stack_00000008 < 0.0) {
-        in_stack_00000008 = (CGore *)((float)in_stack_00000008 + _DAT_0063d01c);
+        in_stack_00000008 = (CGore *)((float)in_stack_00000008 + FLOAT_0063d01c);
         core_gore_cpp_FUN_004edaa0();
       }
     }
@@ -309,11 +309,11 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
     else {
       in_stack_00000028 = (CDemonSet *)((float)in_stack_00000028 - g_CGamePtr->delta_time_float);
       if ((float)in_stack_00000028 < 0.0) {
-        fVar1 = (float)_DAT_0063d014;
+        fVar1 = (float)DOUBLE_0063d014;
         in_stack_00000084 = *(float *)((int)in_stack_000000cc + 0x44) * fVar1;
         in_stack_00000088 = (COrientation *)(*(float *)((int)in_stack_000000cc + 0x50) * fVar1);
         in_stack_0000008c = (char *)(fVar1 * *(float *)((int)in_stack_000000cc + 0x5c));
-        in_stack_00000028 = (CDemonSet *)((float)in_stack_00000028 + _DAT_0063d01c);
+        in_stack_00000028 = (CDemonSet *)((float)in_stack_00000028 + FLOAT_0063d01c);
         in_stack_00000008 = g_CGorePtr;
         in_stack_00000004 = (CDemonMission *)0x53e758;
         core_gore_cpp_FUN_004edaa0();
@@ -324,7 +324,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
       in_stack_00000084 = fStack00000044;
       in_stack_0000008c = in_stack_0000004c;
       in_stack_0000002c = g_CDemonSetPtr;
-      in_stack_00000064 = (float)pCVar6 + _DAT_0063d020;
+      in_stack_00000064 = (float)pCVar6 + FLOAT_0063d020;
       in_stack_00000068 = in_stack_0000004c;
       in_stack_00000028 = (CDemonSet *)0x53e7bd;
       in_stack_00000088 = pCVar6;

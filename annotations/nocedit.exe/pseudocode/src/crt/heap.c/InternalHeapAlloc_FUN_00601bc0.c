@@ -40,8 +40,8 @@ void * __cdecl crt_heap_c_InternalHeapAlloc_FUN_00601bc0(ulong size)
     return (void *)0x0;
   }
   local_24 = (Heap *)(size + 0xb & 0xfffffff8);
-  if (local_24 < (Heap *)0x10) {
-    local_24 = (Heap *)0x10;
+  if (local_24 < (Heap *)&DAT_00000010) {
+    local_24 = (Heap *)&DAT_00000010;
   }
   (*(code *)PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f00)();
   pvVar6 = (void *)0x0;

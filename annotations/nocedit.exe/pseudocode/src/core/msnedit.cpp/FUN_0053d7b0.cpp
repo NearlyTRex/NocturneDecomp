@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 (005381e0) at 00538a49 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_Preparing_actors._0063ccf4
+//   TerminatedCString s_Preparing_actors_0063ccf4
 //   TerminatedCString s_Rebuilding_waypoint_conn_0063cd06
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   CDemonSet* g_CDemonSetPtr = 03114278
@@ -33,7 +33,7 @@ void core_msnedit_cpp_FUN_0053d7b0(void)
   CDemonMission *in_stack_00000004;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"BPreparing actors." + 1);
+            (g_CEditorToolsPtr,"Preparing actors.");
   iVar2 = 0;
   core_mission_cpp_CDemonMission_FUN_00523cf0(in_stack_00000004);
   if (0 < (int)in_stack_00000004->set_list) {

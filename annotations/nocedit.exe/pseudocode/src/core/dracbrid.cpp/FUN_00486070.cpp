@@ -117,7 +117,7 @@ LAB_00486225:
     pCVar5 = (CDeformableModelInstance *)0x0;
     iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
     if (iVar4 == 0) {
-      this_ptr = (CDeformableModelInstance *)0x4;
+      this_ptr = (CDeformableModelInstance *)&DAT_00000004;
       pCVar5 = &in_stack_00000004->model;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar5->motion_controller,4,1)
       ;

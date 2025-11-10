@@ -89,7 +89,7 @@
 //   shape_meshlod.cpp_FUN_0051c070 (0051c070) at 0051c09e [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_SomethingAboutLogTXTCreate_FUN_005c7910 (005c7910) at 005c7948 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_TriListSomething_FUN_005d77a0 (005d77a0) at 005d77fe [UNCONDITIONAL_CALL]
-//   sound_mp3.cpp_FUN_00534210 (00534210) at 005342e6 [UNCONDITIONAL_CALL]
+//   sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210 (00534210) at 005342e6 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_HandleSoundError_FUN_005adba0 (005adba0) at 005adc09 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 (005acf20) at 005ad088 [UNCONDITIONAL_CALL]
 //   wincore_winvideo.cpp_playMovie_FUN_005f4a00 (005f4a00) at 005f4a45 [UNCONDITIONAL_CALL]

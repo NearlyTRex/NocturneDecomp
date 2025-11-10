@@ -30,7 +30,7 @@
 //   shape_design.c_centerKeyframeModels_FUN_004681a0 (004681a0) at 00468274 [UNCONDITIONAL_CALL]
 //   shape_design.c_loadPalette_FUN_0046e810 (0046e810) at 0046e99c [UNCONDITIONAL_CALL]
 //   shape_design.c_validateModelTextures_FUN_00459a20 (00459a20) at 00459b4a [UNCONDITIONAL_CALL]
-//   sound_mp3.cpp_OpenAndPrepareDecoding_FUN_00534550 (00534550) at 00534562 [UNCONDITIONAL_CALL]
+//   sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550 (00534550) at 00534562 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CalculateDistanceMaybe_FUN_005a45c0 (005a45c0) at 005a466c [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a5180 (005a5180) at 005a5193 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a5200 (005a5200) at 005a52b0 [UNCONDITIONAL_CALL]

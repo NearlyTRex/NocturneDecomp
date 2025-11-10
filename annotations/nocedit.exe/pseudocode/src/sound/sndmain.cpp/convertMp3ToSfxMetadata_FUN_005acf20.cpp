@@ -58,8 +58,8 @@
 //   shape_memdbg.cpp_openFile_FUN_0050f7a0
 //   sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0
 //   sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530
-//   sound_mp3.cpp_FUN_00534a60
-//   sound_mp3.cpp_MPEGPickTable_LayerCheck_FUN_00534630
+//   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630
+//   sound_mp3.cpp_CMP3Decoder_read_FUN_00534a60
 
 #include "nocturne.h"
 
@@ -70,16 +70,14 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
   int iVar2;
   FILE *pFVar3;
   CMP3Decoder *pCVar4;
-  CStrList_vtable *pCVar5;
-  char *pcVar6;
+  int iVar5;
+  CStrList_vtable *pCVar6;
   char *pcVar7;
-  int iVar8;
+  char *pcVar8;
   uint uVar9;
-  undefined4 uVar10;
   BADSPACEBASE *in_ESP;
-  char *pcVar11;
-  byte bVar12;
-  undefined8 uVar13;
+  char *pcVar10;
+  byte bVar11;
   char **in_stack_00000018;
   CStrList_vtable *pCStack0000001c;
   FILE *in_stack_00000020;
@@ -93,7 +91,7 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
   char acStack_104 [4];
   char acStack_100 [240];
   
-  bVar12 = 0;
+  bVar11 = 0;
   iVar2 = engine_dosio_c_getFileSize_FUN_00481880((char *)0x0,mp3_filename);
   if (iVar2 < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -117,13 +115,11 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
     g_CurrentLineNumber = 0x1774;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
-  sound_mp3_cpp_MPEGPickTable_LayerCheck_FUN_00534630();
-  uVar9 = *(uint *)(pCVar4->field0_0x0 + 0x104);
-  uVar10 = (undefined4)(0x200 % (ulonglong)uVar9);
+  sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630(pCVar4,pFVar3,iVar2);
+  iVar2 = (int)(0x200 / (ulonglong)(uint)pCVar4->num_channels);
   do {
-    uVar13 = sound_mp3_cpp_FUN_00534a60(&stack0xfffff7c0,uVar10);
-    uVar10 = (undefined4)((ulonglong)uVar13 >> 0x20);
-  } while ((int)uVar13 == (int)(0x200 / (ulonglong)uVar9));
+    iVar5 = sound_mp3_cpp_CMP3Decoder_read_FUN_00534a60(pCVar4,(short *)&stack0xfffff7c0,iVar2);
+  } while (iVar5 == iVar2);
   g_CurrentDebugFilename = "..\\sound\\sndmain.cpp";
   g_CurrentDebugLine = 0x1784;
   pCVar4 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(pCVar4);
@@ -132,75 +128,75 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
             (mp3_filename,&stack0x00000014,acStack_104,acStack_204,(char *)0x0);
   crt_file_c_makepath_FUN_005febfc
             (acStack_304,(char *)&stack0x00000018,acStack_100,acStack_200,"sfx");
-  pCVar5 = (CStrList_vtable *)
+  pCVar6 = (CStrList_vtable *)
            shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (acStack_300,(char *)0x0,"rt","..\\sound\\sndmain.cpp",0x1791);
   iVar2 = -1;
-  pCStack0000001c = pCVar5;
+  pCStack0000001c = pCVar6;
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)&stack0x00000008);
-  if (pCVar5 != (CStrList_vtable *)0x0) {
-    while (pcVar6 = crt_stdio_c_fgets_FUN_005fefd0(acStack_428 + 4,300,in_stack_00000020),
-          pcVar6 != (char *)0x0) {
-      pcVar6 = acStack_428;
+  if (pCVar6 != (CStrList_vtable *)0x0) {
+    while (pcVar7 = crt_stdio_c_fgets_FUN_005fefd0(acStack_428 + 4,300,in_stack_00000020),
+          pcVar7 != (char *)0x0) {
+      pcVar7 = acStack_428;
       do {
-        pcVar11 = pcVar6;
-        if (*pcVar6 == '\n') goto LAB_005ad262;
-        if (*pcVar6 == '\0') break;
-        pcVar11 = pcVar6 + 1;
-        if (*pcVar11 == '\n') goto LAB_005ad262;
-        pcVar6 = pcVar6 + 2;
-      } while (*pcVar11 != '\0');
-      pcVar11 = (char *)0x0;
+        pcVar10 = pcVar7;
+        if (*pcVar7 == '\n') goto LAB_005ad262;
+        if (*pcVar7 == '\0') break;
+        pcVar10 = pcVar7 + 1;
+        if (*pcVar10 == '\n') goto LAB_005ad262;
+        pcVar7 = pcVar7 + 2;
+      } while (*pcVar10 != '\0');
+      pcVar10 = (char *)0x0;
 LAB_005ad262:
-      if (pcVar11 != (char *)0x0) {
-        pcVar6 = acStack_428;
+      if (pcVar10 != (char *)0x0) {
+        pcVar7 = acStack_428;
         do {
-          pcVar11 = pcVar6;
-          if (*pcVar6 == '\n') goto LAB_005ad285;
-          if (*pcVar6 == '\0') break;
-          pcVar11 = pcVar6 + 1;
-          if (*pcVar11 == '\n') goto LAB_005ad285;
-          pcVar6 = pcVar6 + 2;
-        } while (*pcVar11 != '\0');
-        pcVar11 = (char *)0x0;
+          pcVar10 = pcVar7;
+          if (*pcVar7 == '\n') goto LAB_005ad285;
+          if (*pcVar7 == '\0') break;
+          pcVar10 = pcVar7 + 1;
+          if (*pcVar10 == '\n') goto LAB_005ad285;
+          pcVar7 = pcVar7 + 2;
+        } while (*pcVar10 != '\0');
+        pcVar10 = (char *)0x0;
 LAB_005ad285:
-        *pcVar11 = '\0';
+        *pcVar10 = '\0';
       }
       shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0x00000008,acStack_428);
-      pcVar6 = acStack_428 + 4;
-      pcVar7 = crt_string_c_strstr_FUN_005fedd0(pcVar6,"//");
-      pcVar11 = pcVar6;
-      if (pcVar7 != (char *)0x0) {
-        *pcVar7 = '\0';
+      pcVar7 = acStack_428 + 4;
+      pcVar8 = crt_string_c_strstr_FUN_005fedd0(pcVar7,"//");
+      pcVar10 = pcVar7;
+      if (pcVar8 != (char *)0x0) {
+        *pcVar8 = '\0';
       }
       do {
-        pcVar7 = pcVar11;
-        if (*pcVar11 == '\0') goto joined_r0x005ad2dc;
-        if (*pcVar11 == '\0') break;
-        pcVar7 = pcVar11 + 1;
-        if (*pcVar7 == '\0') goto joined_r0x005ad2dc;
-        pcVar11 = pcVar11 + 2;
-      } while (*pcVar7 != '\0');
-      pcVar7 = (char *)0x0;
+        pcVar8 = pcVar10;
+        if (*pcVar10 == '\0') goto joined_r0x005ad2dc;
+        if (*pcVar10 == '\0') break;
+        pcVar8 = pcVar10 + 1;
+        if (*pcVar8 == '\0') goto joined_r0x005ad2dc;
+        pcVar10 = pcVar10 + 2;
+      } while (*pcVar8 != '\0');
+      pcVar8 = (char *)0x0;
 joined_r0x005ad2dc:
-      while ((pcVar6 < pcVar7 &&
-             ((g_CharacterClassificationTable[(byte)(pcVar7[-1] + 1)] & 2U) != 0))) {
-        pcVar7 = pcVar7 + -1;
+      while ((pcVar7 < pcVar8 &&
+             ((g_CharacterClassificationTable[(byte)(pcVar8[-1] + 1)] & 2U) != 0))) {
+        pcVar8 = pcVar8 + -1;
       }
-      *pcVar7 = '\0';
+      *pcVar8 = '\0';
       while ((g_CharacterClassificationTable[(byte)(acStack_428[4] + 1)] & 2U) != 0) {
         uVar9 = 0xffffffff;
-        pcVar11 = pcVar6;
+        pcVar10 = pcVar7;
         do {
           if (uVar9 == 0) break;
           uVar9 = uVar9 - 1;
-          cVar1 = *pcVar11;
-          pcVar11 = pcVar11 + (uint)bVar12 * -2 + 1;
+          cVar1 = *pcVar10;
+          pcVar10 = pcVar10 + (uint)bVar11 * -2 + 1;
         } while (cVar1 != '\0');
-        crt_string_c_memmove_FUN_005fe5e0(pcVar6,acStack_428 + 5,~uVar9 - 1);
+        crt_string_c_memmove_FUN_005fe5e0(pcVar7,acStack_428 + 5,~uVar9 - 1);
       }
-      iVar8 = crt_string_c_strnicmp_FUN_005ff070(acStack_428 + 8,"length",5);
-      if (iVar8 == 0) {
+      iVar5 = crt_string_c_strnicmp_FUN_005ff070(acStack_428 + 8,"length",5);
+      if (iVar5 == 0) {
         if (-1 < iVar2) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
           g_CurrentLineNumber = 0x179d;
@@ -311,7 +307,7 @@ joined_r0x005ad2dc:
 //   Label: LAB_005acfb7
 // 005acfb8: PUSH EBX
 // 005acfb9: PUSH ESI
-// 005acfba: CALL sound_mp3.cpp_MPEGPickTable_LayerCheck_FUN_00534630
+// 005acfba: CALL sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630
 //   XREF to: 00534630 (UNCONDITIONAL_CALL)
 // 005acfbf: MOV EAX,0x200
 // 005acfc4: MOV ECX,dword ptr [ESI + 0x104]
@@ -328,7 +324,7 @@ joined_r0x005ad2dc:
 //   XREF to: Stack[-0x85c] (DATA)
 // 005acfe1: PUSH EAX
 // 005acfe2: PUSH ESI
-// 005acfe3: CALL sound_mp3.cpp_FUN_00534a60
+// 005acfe3: CALL sound_mp3.cpp_CMP3Decoder_read_FUN_00534a60
 //   XREF to: 00534a60 (UNCONDITIONAL_CALL)
 // 005acfe8: ADD ESP,0xc
 // 005acfeb: ADD dword ptr [ESP + 0x840],EAX

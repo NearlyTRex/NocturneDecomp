@@ -7,7 +7,7 @@
 //   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 (005390f0) at 0053a3e1 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_CBarrier_0063c862
-//   undefined4 DAT_0063c86c
+//   double DOUBLE_0063c86c = 1000
 //   int g_DisableMouseHitOnBarrier
 //   CDemonCamera g_CDemonCameraInstance
 //   undefined4 DAT_032758e8
@@ -22,7 +22,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 core_msnedit.cpp_FUN_0053c340(undefined4 param_1, undefined4 param_2,
    undefined4 param_3) */
 
@@ -50,7 +49,7 @@ CDemonActor * core_msnedit_cpp_FUN_0053c340(void)
     local_28._8_4_ = g_CDemonCameraInstance.base.position.z;
     core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480
               (&g_CDemonCameraInstance,(CVector3f *)&local_4c,in_stack_00000008,in_stack_0000000c);
-    local_14 = (float)_DAT_0063c86c /
+    local_14 = (float)DOUBLE_0063c86c /
                SQRT((float)local_44._4_4_ * (float)local_44._4_4_ +
                     local_4c._4_4_ * local_4c._4_4_ + (float)local_44._0_4_ * (float)local_44._0_4_)
     ;

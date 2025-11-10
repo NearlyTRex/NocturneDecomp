@@ -7,8 +7,8 @@
 //   core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0 (00453bd0) at 00453c08 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512597 [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_setGamma_FUN_00570d60 (00570d60) at 00570dab [UNCONDITIONAL_CALL]
-//   sound_mp3.cpp_FUN_00531d50 (00531d50) at 0053214b [UNCONDITIONAL_CALL]
-//   sound_mp3.cpp_FUN_00532540 (00532540) at 00532580 [UNCONDITIONAL_CALL]
+//   sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540 (00532540) at 00532580 [UNCONDITIONAL_CALL]
+//   sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50 (00531d50) at 0053214b [UNCONDITIONAL_CALL]
 // Globals:
 //   byte g_UseSoftwareMath = 0x0
 // Function calls:

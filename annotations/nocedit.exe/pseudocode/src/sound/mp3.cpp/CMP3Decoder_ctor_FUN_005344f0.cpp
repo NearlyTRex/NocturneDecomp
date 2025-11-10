@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CMP3Decoder * sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0(CMP3Decoder * this_ptr)
 // Cross-references:
-//   sound_mp3.cpp_FUN_00534210 (00534210) at 00534280 [UNCONDITIONAL_CALL]
+//   sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210 (00534210) at 00534280 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a5200 (005a5200) at 005a52dc [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a4d1c [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 (005acf20) at 005acfa5 [UNCONDITIONAL_CALL]
@@ -18,16 +18,10 @@
 CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(CMP3Decoder *this_ptr)
 
 {
-  this_ptr->field0_0x0[0x108] = '\0';
-  this_ptr->field0_0x0[0x109] = '\0';
-  this_ptr->field0_0x0[0x10a] = '\0';
-  this_ptr->field0_0x0[0x10b] = '\0';
-  this_ptr->field0_0x0[0x10c] = '\0';
-  this_ptr->field0_0x0[0x10d] = '\0';
-  this_ptr->field0_0x0[0x10e] = '\0';
-  this_ptr->field0_0x0[0x10f] = '\0';
-  crt_memory_c_memset_FUN_005fde40(this_ptr->field0_0x0 + 0x5320,0,0x2c);
-  this_ptr->field0_0x0[0] = '\0';
+  this_ptr->available_samples = 0;
+  this_ptr->decode_buffer_pos = (short *)0x0;
+  crt_memory_c_memset_FUN_005fde40(&this_ptr->file_bitstream,0,0x2c);
+  this_ptr->filename[0] = '\0';
   return this_ptr;
 }
 

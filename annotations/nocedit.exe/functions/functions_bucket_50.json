@@ -54245,9 +54245,10 @@
         "start":"0052e8d0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_mp3.cpp_FUN_0052e8d0",
-    "ret":"undefined1",
+    "name":"sound_mp3.cpp_validateLayer2AllocationTable_FUN_0052e8d0",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -54299,8 +54300,33 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"frame",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMpegFrame*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -54313,13 +54339,38 @@
         "start":"0052ee50"
       }
     ],
-    "cmt":"Signature: undefined1 sound_mp3.cpp_FUN_0052ee50(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_mp3.cpp_FUN_0052ee50",
-    "ret":"undefined1",
+    "name":"sound_mp3.cpp_CFileBitStream_readBit_FUN_0052ee50",
+    "ret":"uint",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CFileBitStream*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -54332,12 +54383,38 @@
         "start":"0052f0d0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_mp3.cpp_FUN_0052f0d0",
-    "ret":"undefined1",
+    "name":"sound_mp3.cpp_CFileBitStream_getErrorFlag_FUN_0052f0d0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CFileBitStream*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -54350,14 +54427,29 @@
         "start":"0052f250"
       }
     ],
-    "cmt":"Signature: undefined1 sound_mp3.cpp_RelatedToMemoryCheckOverflow(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_mp3.cpp_RelatedToMemoryCheckOverflow_FUN_0052f250",
-    "ret":"undefined1",
+    "name":"sound_mp3.cpp_CMP3Decoder_readBit_FUN_0052f250",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMP3Decoder*"
+        }
+      ]
     }
   },
   {
@@ -54369,10 +54461,10 @@
         "start":"0052f350"
       }
     ],
-    "cmt":"Signature: undefined1 sound_mp3.cpp_HuffmanCodeCheck(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_mp3.cpp_HuffmanCodeCheck_FUN_0052f350",
-    "ret":"undefined1",
+    "name":"sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f350",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -54392,8 +54484,113 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMP3Decoder*"
+        },
+        {
+          "name":"huffman_table",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SHuffmanTable*"
+        },
+        {
+          "name":"x_out",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"y_out",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"v_out",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"w_out",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -54406,10 +54603,10 @@
         "start":"0052f850"
       }
     ],
-    "cmt":"Signature: undefined1 sound_mp3.cpp_CallReadOrWriteBits(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_mp3.cpp_CallReadOrWriteBits_FUN_0052f850",
-    "ret":"undefined1",
+    "name":"sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -54429,9 +54626,72 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CFileBitStream*"
+        },
+        {
+          "name":"allocation_indices",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMpegSubbandAllocation*"
+        },
+        {
+          "name":"scalefactors",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMpegSubbandScalefactors*"
+        },
+        {
+          "name":"alloc_info",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"SBitAllocationTable*"
+        }
+      ]
     }
   },
   {
@@ -54443,10 +54703,10 @@
         "start":"0052fb50"
       }
     ],
-    "cmt":"Signature: undefined1 sound_mp3.cpp_FUN_0052fb50(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_mp3.cpp_FUN_0052fb50",
-    "ret":"undefined1",
+    "name":"sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -54514,9 +54774,72 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CFileBitStream*"
+        },
+        {
+          "name":"quantized_samples",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMpegSubbandScalefactors*"
+        },
+        {
+          "name":"allocation",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMpegSubbandAllocation*"
+        },
+        {
+          "name":"alloc_table",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"SBitAllocationTable*"
+        }
+      ]
     }
   },
   {
@@ -54528,10 +54851,10 @@
         "start":"0052fc50"
       }
     ],
-    "cmt":"Signature: undefined1 sound_mp3.cpp_FUN_0052fc50(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_mp3.cpp_FUN_0052fc50",
-    "ret":"undefined1",
+    "name":"sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -54791,9 +55114,72 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CFileBitStream*"
+        },
+        {
+          "name":"sample_array",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMpegSubbandScalefactors*"
+        },
+        {
+          "name":"allocation_array",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMpegSubbandAllocation*"
+        },
+        {
+          "name":"allocation_table",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"SBitAllocationTable*"
+        }
+      ]
     }
   },
   {
@@ -54805,10 +55191,10 @@
         "start":"00531d50"
       }
     ],
-    "cmt":"Signature: undefined1 sound_mp3.cpp_FUN_00531d50(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_mp3.cpp_FUN_00531d50",
-    "ret":"undefined1",
+    "name":"sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -55196,9 +55582,104 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"quantized_samples",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMpegSubbandQuantizedSamples*"
+        },
+        {
+          "name":"output_samples",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMpegSubbandSamples*"
+        },
+        {
+          "name":"scalefactor_data",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"granule_info",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMpegLayer3Granule*"
+        },
+        {
+          "name":"channel_index",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"granule_array",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMpegLayer3Granule**"
+        }
+      ]
     }
   },
   {
@@ -55210,10 +55691,10 @@
         "start":"00533c50"
       }
     ],
-    "cmt":"Signature: undefined1 sound_mp3.cpp_FUN_00533c50(undefined4 param_1, undefined1 param_2, undefined1 param_3, undefined1 param_4, undefined4 param_5)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_mp3.cpp_FUN_00533c50",
-    "ret":"undefined1",
+    "name":"sound_mp3.cpp_calculateMainDataSize_FUN_00533c50",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -55249,8 +55730,33 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"frame_info",
+          "storage":{
+            "offset":4,
+            "size":28,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":28
+              }
+            ]
+          },
+          "type":"SMpegFrame"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -55263,14 +55769,45 @@
         "start":"00534550"
       }
     ],
-    "cmt":"Signature: undefined1 sound_mp3.cpp_OpenAndPrepareDecoding(undefined4 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_mp3.cpp_OpenAndPrepareDecoding_FUN_00534550",
-    "ret":"undefined1",
+    "name":"sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMP3Decoder*"
+        },
+        {
+          "name":"filename",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ]
     }
   },
   {

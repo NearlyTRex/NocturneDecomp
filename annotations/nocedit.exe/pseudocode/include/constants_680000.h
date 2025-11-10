@@ -328,16 +328,6 @@ const undefined4 DAT_006854f0 = {0x30, 0x78, 0x31, 0x00};
 const undefined4 DAT_006855d8 = {0x30, 0x78, 0x66, 0x66};
 
 // void* constants
-const void* DAT_0068019C = 0x0067EB60;
-const void* DAT_006801B4 = 0x0067EB70;
-const void* DAT_006801CC = 0x0067EB98;
-const void* DAT_006801FC = 0x0067EBC0;
-const void* DAT_00680214 = 0x0067EC00;
-const void* DAT_0068022C = 0x0067EC40;
-const void* DAT_00680244 = 0x0067ECD0;
-const void* DAT_0068025C = 0x0067ED60;
-const void* DAT_00680274 = 0x0067EDF0;
-const void* DAT_0068028C = 0x0067EEF0;
 const void* DAT_00680E30 = 0x006441CB;
 const void* DAT_00680E34 = 0x006441CD;
 const void* DAT_00680E38 = 0x00644209;

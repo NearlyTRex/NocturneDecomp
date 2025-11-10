@@ -1,14 +1,14 @@
 // Name: sound_mp3.cpp_FUN_005303a0
 // Address: 005303a0
 // Address Range: [[005303a0, 005303f7]]
-// Convention: unknown
-// Signature: undefined sound_mp3.cpp_FUN_005303a0()
+// Convention: __cdecl
+// Signature: void sound_mp3.cpp_FUN_005303a0(void * unk1, void * unk2, SMpegFrame * frame_info)
 // Globals:
-//   undefined4 DAT_0067e3c0
+//   double[64] g_MpegScalefactorTable
 
 #include "nocturne.h"
 
-void sound_mp3_cpp_FUN_005303a0(void)
+void __cdecl sound_mp3_cpp_FUN_005303a0(void *unk1,void *unk2,SMpegFrame *frame_info)
 
 {
   int iVar1;
@@ -17,22 +17,19 @@ void sound_mp3_cpp_FUN_005303a0(void)
   int *piVar4;
   int iVar5;
   int iVar6;
-  int in_stack_00000004;
-  int in_stack_00000008;
-  int in_stack_0000000c;
   
   iVar6 = 0;
-  iVar1 = *(int *)(in_stack_0000000c + 0x10);
+  iVar1 = frame_info->samples_per_granule;
   do {
     iVar5 = 0;
     if (0 < iVar1) {
-      piVar4 = (int *)(in_stack_00000008 + iVar6);
-      pfVar3 = (float *)(in_stack_00000004 + iVar6);
+      piVar4 = (int *)((int)unk2 + iVar6);
+      pfVar3 = (float *)((int)unk1 + iVar6);
       do {
         iVar2 = *piVar4;
         piVar4 = piVar4 + 0x60;
         iVar5 = iVar5 + 1;
-        *pfVar3 = *pfVar3 * (float)*(double *)(&DAT_0067e3c0 + iVar2 * 8);
+        *pfVar3 = *pfVar3 * (float)g_MpegScalefactorTable[iVar2];
         pfVar3 = pfVar3 + 0x60;
       } while (iVar5 < iVar1);
     }

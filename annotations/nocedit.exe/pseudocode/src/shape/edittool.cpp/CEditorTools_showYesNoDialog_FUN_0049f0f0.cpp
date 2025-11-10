@@ -23,7 +23,7 @@
 //   engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0 (004b76d0) at 004b796b [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10 (004b6e10) at 004b6ef2 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0 (004bc2b0) at 004bc3aa [UNCONDITIONAL_CALL]
-//   sound_mp3.cpp_FUN_00534210 (00534210) at 00534235 [UNCONDITIONAL_CALL]
+//   sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210 (00534210) at 00534235 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_Yes_006230bc
 //   TerminatedCString s_No_006230c1

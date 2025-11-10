@@ -22,7 +22,7 @@
 //   TerminatedCString s_Enemy_detail_0063ccc8
 //   TerminatedCString s_Ammo_detail_0063ccd5
 //   TerminatedCString s_Health_detail_0063cce1
-//   undefined4 DAT_0063ccf0
+//   float FLOAT_0063ccf0 = 100
 //   undefined4 g_CAmmoClassInfo.name_hash
 //   undefined4 g_CEnemyClassInfo.name_hash
 //   undefined4 DAT_02db8780.name_hash
@@ -38,7 +38,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 core_msnedit.cpp_FUN_0053d3b0(undefined4 param_1) */
 
 void core_msnedit_cpp_FUN_0053d3b0(void)
@@ -101,7 +100,7 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
         }
       }
       fVar4 = (float10)(float)pCVar1[0x1a].next_actor * (float10)(float)local_14;
-      fVar5 = (float10)(float)local_14 * (float10)_DAT_0063ccf0;
+      fVar5 = (float10)(float)local_14 * (float10)FLOAT_0063ccf0;
       crt_math_c_round_FUN_005fe6b0((double)CONCAT44(uVar3,pCVar2));
       local_28 = (int)ROUND(fVar5);
       crt_stdio_c_sprintf_FUN_005fdbd0

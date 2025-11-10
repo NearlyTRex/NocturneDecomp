@@ -23,7 +23,7 @@
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   crt_math.c_round_FUN_005fe6b0
 //   crt_stdio.c_fseek_FUN_005ffacc
-//   sound_mp3.cpp_FUN_00534ba0
+//   sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0
 //   sound_sndmain.cpp_FUN_005a8550
 //   sound_sndmain.cpp_FUN_005a86f0
 
@@ -63,7 +63,7 @@ void sound_sndmain_cpp_SfxSample_seek_FUN_005a65a0(void)
     dVar3 = (double)CONCAT44(extraout_EDX,extraout_EAX);
   }
   *(int *)(in_stack_00000004 + 0x168) = in_stack_0000000c;
-  if (*(int *)(in_stack_00000004 + 0x16c) == 0) {
+  if (*(CMP3Decoder **)(in_stack_00000004 + 0x16c) == (CMP3Decoder *)0x0) {
     if (*(int *)(in_stack_00000004 + 0x174) == 0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x7b6;
@@ -71,14 +71,16 @@ void sound_sndmain_cpp_SfxSample_seek_FUN_005a65a0(void)
                 ("SfxSample::seek - no MP3 and no wavFile for sample '%s'",in_stack_00000004);
       return;
     }
-    iVar1 = sound_sndmain_cpp_FUN_005a8550();
+    iVar1 = sound_sndmain_cpp_FUN_005a8550(SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20));
     crt_stdio_c_fseek_FUN_005ffacc
               (*(FILE **)(in_stack_00000004 + 0x174),
                iVar1 * *(int *)(in_stack_00000004 + 0x164) + *(int *)(in_stack_00000004 + 0x170),
                unaff_EDI);
   }
   else {
-    iVar1 = sound_mp3_cpp_FUN_00534ba0(SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20));
+    iVar1 = sound_mp3_cpp_CMP3Decoder_seek_FUN_00534ba0
+                      (*(CMP3Decoder **)(in_stack_00000004 + 0x16c),
+                       *(int *)(in_stack_00000004 + 0x164));
     if (iVar1 == 0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x7ab;
@@ -208,7 +210,7 @@ void sound_sndmain_cpp_SfxSample_seek_FUN_005a65a0(void)
 //   Label: LAB_005a66b3
 // 005a66b9: PUSH EDI
 // 005a66ba: PUSH ESI
-// 005a66bb: CALL sound_mp3.cpp_FUN_00534ba0
+// 005a66bb: CALL sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0
 //   XREF to: 00534ba0 (UNCONDITIONAL_CALL)
 // 005a66c0: ADD ESP,0x8
 // 005a66c3: TEST EAX,EAX

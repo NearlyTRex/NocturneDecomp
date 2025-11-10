@@ -235,7 +235,7 @@ undefined4 core_skeledit_cpp_FUN_0058c190(void)
   char acStack_3d8 [284];
   undefined1 auStack_2bc [16];
   undefined1 auStack_2ac [16];
-  int iStack_29c;
+  undefined1 *puStack_29c;
   undefined1 auStack_298 [48];
   void *local_268;
   undefined1 auStack_234 [8];
@@ -247,7 +247,7 @@ undefined4 core_skeledit_cpp_FUN_0058c190(void)
   undefined1 auStack_170 [8];
   undefined1 auStack_168 [8];
   undefined1 auStack_160 [16];
-  int iStack_150;
+  undefined1 *puStack_150;
   undefined1 auStack_14c [8];
   undefined1 *puStack_144;
   SLodTriangle *pSStack_140;
@@ -667,7 +667,7 @@ LAB_0058c601:
   puStack_144 = &DAT_00000001;
   pCStack_13c = (CLodMesh *)&DAT_00000001;
   pFStack_138 = (FILE *)0x0;
-  iStack_150 = 4;
+  puStack_150 = &DAT_00000004;
   iVar15 = 0;
   pCVar12 = pCVar6;
   if (0 < pCVar6->num_textures) {
@@ -688,7 +688,7 @@ LAB_0058c601:
   shape_meshlod_cpp_CLodMesh_FUN_0051b330((CLodMesh *)(auStack_168 + 4));
   shape_meshlod_cpp_CLodMesh_copy_FUN_00515860((CLodMesh *)auStack_2bc,(CLodMesh *)auStack_160);
   shape_meshlod_cpp_FUN_0051bcc0();
-  iStack_29c = 4;
+  puStack_29c = &DAT_00000004;
   auStack_298._0_4_ = &DAT_00000002;
   auStack_298._12_4_ = &DAT_00000001;
   auStack_298._8_4_ = 0;

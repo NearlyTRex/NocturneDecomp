@@ -65,7 +65,7 @@
 //   shape_meshlod.cpp_FUN_0051a9d0 (0051a9d0) at 0051a9e4 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051ad60 (0051ad60) at 0051ad74 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051c070 (0051c070) at 0051c084 [UNCONDITIONAL_CALL]
-//   sound_mp3.cpp_FUN_00534210 (00534210) at 005343b4 [UNCONDITIONAL_CALL]
+//   sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210 (00534210) at 005343b4 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0 (005ad5c0) at 005ad5e1 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_shape_edittool_cpp_00622eae

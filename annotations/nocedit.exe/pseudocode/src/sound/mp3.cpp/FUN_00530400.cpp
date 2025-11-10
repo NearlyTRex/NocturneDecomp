@@ -4,18 +4,16 @@
 // Convention: unknown
 // Signature: undefined sound_mp3.cpp_FUN_00530400()
 // Globals:
-//   undefined4 DAT_0063ae2a
-//   undefined4 DAT_0063ae32
-//   undefined4 DAT_0063ae3a
-//   undefined4 DAT_0063ae42
-//   undefined4 DAT_0063ae4a
-//   undefined4 DAT_0063ae52
+//   double DOUBLE_0063ae2a = 0.0490873852120000
+//   double DOUBLE_0063ae32 = 1000000000
+//   double DOUBLE_0063ae3a = 1.00000000000000E-9
+//   double DOUBLE_0063ae42 = 0.785398163397000
+//   double DOUBLE_0063ae4a = -0.5
+//   double DOUBLE_0063ae52 = 0.5
 // Function calls:
 //   crt_math.c_modf_FUN_00602102
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void sound_mp3_cpp_FUN_00530400(void)
 
@@ -41,23 +39,26 @@ void sound_mp3_cpp_FUN_00530400(void)
     pfVar4 = local_1c;
     do {
       fVar5 = (float10)fcos((float10)iVar3 *
-                            ((float10)local_28 * (float10)_DAT_0063ae2a + (float10)_DAT_0063ae42));
-      *pfVar2 = (float)(fVar5 * (float10)_DAT_0063ae32);
+                            ((float10)local_28 * (float10)DOUBLE_0063ae2a + (float10)DOUBLE_0063ae42
+                            ));
+      *pfVar2 = (float)(fVar5 * (float10)DOUBLE_0063ae32);
       local_18 = iVar3;
       if (0.0 <= *pfVar2) {
         local_30 = (double)*pfVar2;
-        crt_math_c_modf_FUN_00602102((double)(*pfVar2 + (float)_DAT_0063ae52),(double *)&local_30);
+        crt_math_c_modf_FUN_00602102((double)(*pfVar2 + (float)DOUBLE_0063ae52),(double *)&local_30)
+        ;
         dVar1 = (double)CONCAT44(local_28,local_30._4_4_);
       }
       else {
         local_38 = (double)*pfVar2;
-        crt_math_c_modf_FUN_00602102((double)(*pfVar2 + (float)_DAT_0063ae4a),(double *)&local_38);
+        crt_math_c_modf_FUN_00602102((double)(*pfVar2 + (float)DOUBLE_0063ae4a),(double *)&local_38)
+        ;
         dVar1 = (double)CONCAT44((undefined4)local_30,local_38._4_4_);
       }
       *pfVar2 = (float)dVar1;
       pfVar2 = pfVar2 + 1;
       iVar3 = iVar3 + 2;
-      *pfVar4 = *pfVar4 * (float)_DAT_0063ae3a;
+      *pfVar4 = *pfVar4 * (float)DOUBLE_0063ae3a;
       pfVar4 = pfVar4 + 1;
     } while (iVar3 != 0x41);
     local_28 = local_28 + 1;

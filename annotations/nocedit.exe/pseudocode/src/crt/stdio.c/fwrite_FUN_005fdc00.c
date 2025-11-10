@@ -26,7 +26,7 @@
 //   shape_design.c_cramTextureList_FUN_0046bb80 (0046bb80) at 0046db20 [UNCONDITIONAL_CALL]
 //   shape_design.c_createKeyframeModel_FUN_00468320 (00468320) at 00468572 [UNCONDITIONAL_CALL]
 //   shape_design.c_exportModelToBIN_FUN_0045aa80 (0045aa80) at 0045b680 [UNCONDITIONAL_CALL]
-//   sound_mp3.cpp_FUN_00534210 (00534210) at 0053437c [UNCONDITIONAL_CALL]
+//   sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210 (00534210) at 0053437c [UNCONDITIONAL_CALL]
 // Globals:
 //   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 //   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434

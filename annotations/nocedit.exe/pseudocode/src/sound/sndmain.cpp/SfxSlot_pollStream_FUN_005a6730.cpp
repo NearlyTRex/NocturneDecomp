@@ -44,7 +44,7 @@
 //   crt_math.c_round_FUN_005fe6b0
 //   crt_memory.c_memset_FUN_005fde40
 //   crt_stdio.c_fread_FUN_005fd990
-//   sound_mp3.cpp_FUN_00534a60
+//   sound_mp3.cpp_CMP3Decoder_read_FUN_00534a60
 //   sound_sndmain.cpp_FUN_005a8550
 //   sound_sndmain.cpp_FUN_005a87d0
 //   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
@@ -74,29 +74,30 @@ sound_sndmain_cpp_SfxSlot_pollStream_FUN_005a6730
   int iVar6;
   SfxSlot *pSVar7;
   SfxSlot *pSVar8;
+  undefined4 *puVar9;
   SIZE_T size;
   ulong count;
-  uint uVar9;
+  uint uVar10;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
-  int iVar10;
+  int iVar11;
   undefined4 extraout_EDX_01;
-  SfxSlot *pSVar11;
+  SfxSlot *samples_requested;
+  short *output_buffer;
   undefined4 *puVar12;
-  undefined4 *puVar13;
-  byte bVar14;
-  float10 fVar15;
-  double dVar16;
+  byte bVar13;
+  float10 fVar14;
+  double dVar15;
   char *in_stack_ffffffc8;
   FILE *count_00;
   FILE *file;
-  undefined4 uVar17;
+  undefined4 uVar16;
   int in_stack_ffffffd4;
   SfxSlot *local_28;
   int local_1c;
   SfxSlot *local_14;
   
-  bVar14 = 0;
+  bVar13 = 0;
   if (g_SoundLockCount < 1) {
     in_stack_ffffffc8 = "SfxSlot::pollStream - must be locked!";
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -126,7 +127,7 @@ sound_sndmain_cpp_SfxSlot_pollStream_FUN_005a6730
       core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::pollStream - cannot stream sample with exotic loop points: %s",param_5);
       param_2 = extraout_EDX_00;
     }
-    dVar16 = (double)CONCAT44(param_2,g_SfxSlots + iVar6);
+    dVar15 = (double)CONCAT44(param_2,g_SfxSlots + iVar6);
     if (g_SfxSlots[iVar6].dsound_buffer != (void *)0x0) {
       iVar6 = sound_sndmain_cpp_PollHWPlaybackPosAndSet_FUN_005a80e0();
       if (iVar6 == 0) {
@@ -134,11 +135,11 @@ sound_sndmain_cpp_SfxSlot_pollStream_FUN_005a6730
         goto LAB_005a69e2;
       }
       in_stack_ffffffc8 = (char *)0x5a67fa;
-      dVar16 = (double)sound_sndmain_cpp_FUN_005a87d0();
-      if ((SUB84(dVar16,0) == 0) && (-1 < *(int *)(param_5->field1_0x4 + 0x10c))) {
+      dVar15 = (double)sound_sndmain_cpp_FUN_005a87d0();
+      if ((SUB84(dVar15,0) == 0) && (-1 < *(int *)(param_5->field1_0x4 + 0x10c))) {
         dVar2 = (double)*(int *)(param_5->field1_0x4 + 0x10c);
         dVar1 = *(double *)(local_14->field_20 + 0x4c);
-        dVar16 = (double)CONCAT44((int)((ulonglong)dVar16 >> 0x20),
+        dVar15 = (double)CONCAT44((int)((ulonglong)dVar15 >> 0x20),
                                   CONCAT22((short)((uint)local_14 >> 0x10),
                                            (ushort)(dVar2 < dVar1) << 8 |
                                            (ushort)(NAN(dVar2) || NAN(dVar1)) << 10 |
@@ -146,31 +147,31 @@ sound_sndmain_cpp_SfxSlot_pollStream_FUN_005a6730
         if (dVar2 < dVar1 || (dVar2 == dVar1) != 0) goto LAB_005a69e2;
       }
     }
-    dVar16 = crt_math_c_round_FUN_005fe6b0(dVar16);
-    fVar15 = (float10)*(int *)(param_5->field_160 + 8) - (float10)*(double *)local_28->field_284;
-    dVar16 = crt_math_c_round_FUN_005fe6b0
-                       ((double)CONCAT44((int)((ulonglong)dVar16 >> 0x20),local_28));
-    iVar10 = (int)((ulonglong)dVar16 >> 0x20);
-    iVar6 = (int)ROUND(fVar15);
+    dVar15 = crt_math_c_round_FUN_005fe6b0(dVar15);
+    fVar14 = (float10)*(int *)(param_5->field_160 + 8) - (float10)*(double *)local_28->field_284;
+    dVar15 = crt_math_c_round_FUN_005fe6b0
+                       ((double)CONCAT44((int)((ulonglong)dVar15 >> 0x20),local_28));
+    iVar11 = (int)((ulonglong)dVar15 >> 0x20);
+    iVar6 = (int)ROUND(fVar14);
     if (iVar6 < 0) {
-      iVar10 = iVar6 + *(int *)param_5->field_160;
-      iVar6 = iVar10;
+      iVar11 = iVar6 + *(int *)param_5->field_160;
+      iVar6 = iVar11;
     }
     if ((int)in_stack_ffffffc8 <= iVar6) {
       return 1;
     }
-    uVar17 = 99999999;
+    uVar16 = 99999999;
     if (param_5->buffer_id != (void *)0x0) {
       iVar6 = sound_sndmain_cpp_FUN_005a8550();
       in_stack_ffffffd4 = (int)(0x3c00 / (longlong)iVar6);
-      iVar10 = (int)(0x3c00 % (longlong)iVar6);
+      iVar11 = (int)(0x3c00 % (longlong)iVar6);
     }
-    fVar15 = (float10)*(int *)(param_5->field1_0x4 + 0x108) * (float10)param_6;
-    dVar16 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(iVar10,*(int *)param_5->field_160 + -1))
+    fVar14 = (float10)*(int *)(param_5->field1_0x4 + 0x108) * (float10)param_6;
+    dVar15 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(iVar11,*(int *)param_5->field_160 + -1))
     ;
-    file = (FILE *)(int)ROUND(fVar15);
-    if ((int)SUB84(dVar16,0) < (int)ROUND(fVar15)) {
-      file = SUB84(dVar16,0);
+    file = (FILE *)(int)ROUND(fVar14);
+    if ((int)SUB84(dVar15,0) < (int)ROUND(fVar14)) {
+      file = SUB84(dVar15,0);
     }
     pSVar7 = (SfxSlot *)((int)file - in_stack_ffffffd4);
     while( true ) {
@@ -183,22 +184,23 @@ sound_sndmain_cpp_SfxSlot_pollStream_FUN_005a6730
         g_CurrentLineNumber = 0x827;
         core_main_c_displayErrorAndQuit_FUN_00506f10
                   ("nextLoadSampleDest = %d, allocLength = %d",*(undefined4 *)(param_5->field_160 + 8),
-                   *(undefined4 *)param_5->field_160,file,uVar17);
+                   *(undefined4 *)param_5->field_160,file,uVar16);
       }
-      pSVar11 = (SfxSlot *)(*(int *)param_5->field_160 - *(int *)(param_5->field_160 + 8));
-      if ((int)pSVar7 < (int)pSVar11) {
-        pSVar11 = pSVar7;
+      samples_requested = (SfxSlot *)(*(int *)param_5->field_160 - *(int *)(param_5->field_160 + 8))
+      ;
+      if ((int)pSVar7 < (int)samples_requested) {
+        samples_requested = pSVar7;
       }
-      if ((int)local_28 < (int)pSVar11) {
-        pSVar11 = local_28;
+      if ((int)local_28 < (int)samples_requested) {
+        samples_requested = local_28;
       }
       iVar6 = *(int *)(param_5->field1_0x4 + 0x10c);
       bVar3 = false;
       if (-1 < iVar6) {
         if (*(int *)(param_5->field_160 + 4) < iVar6) {
           pSVar8 = (SfxSlot *)(iVar6 - *(int *)(param_5->field_160 + 4));
-          if ((int)pSVar8 < (int)pSVar11) {
-            pSVar11 = pSVar8;
+          if ((int)pSVar8 < (int)samples_requested) {
+            samples_requested = pSVar8;
           }
         }
         else {
@@ -216,30 +218,30 @@ sound_sndmain_cpp_SfxSlot_pollStream_FUN_005a6730
           }
         }
       }
-      puVar12 = &DAT_03f51648;
+      output_buffer = (short *)&DAT_03f51648;
       bVar4 = false;
       bVar5 = true;
       if (param_5->buffer_id == (void *)0x0) break;
 LAB_005a6ab8:
       if (bVar3) {
-        count = *(int *)(*(int *)(local_1c + 0x78) + 0x108) * (int)pSVar11;
-        uVar9 = *(uint *)(*(int *)(local_1c + 0x78) + 0x104);
-        local_14 = pSVar11;
-        if (uVar9 < 8) {
+        count = *(int *)(*(int *)(local_1c + 0x78) + 0x108) * (int)samples_requested;
+        uVar10 = *(uint *)(*(int *)(local_1c + 0x78) + 0x104);
+        local_14 = samples_requested;
+        if (uVar10 < 8) {
 LAB_005a6adf:
           g_CurrentFilename = "C..\\sound\\sndmain.cpp" + 1;
           g_CurrentLineNumber = 0x5ca;
           core_main_c_displayErrorAndQuit_FUN_00506f10("generateSilence - invalid bit depth!");
         }
-        else if (uVar9 < 9) {
-          crt_memory_c_memset_FUN_005fde40(puVar12,0x80,count);
+        else if (uVar10 < 9) {
+          crt_memory_c_memset_FUN_005fde40(output_buffer,0x80,count);
         }
         else {
-          if (uVar9 != 0x10) goto LAB_005a6adf;
-          crt_memory_c_memset_FUN_005fde40(puVar12,0,count * 2);
+          if (uVar10 != 0x10) goto LAB_005a6adf;
+          crt_memory_c_memset_FUN_005fde40(output_buffer,0,count * 2);
         }
       }
-      else if (param_5->mp3_data == (void *)0x0) {
+      else if ((CMP3Decoder *)param_5->mp3_data == (CMP3Decoder *)0x0) {
         if (param_5->file_handle == (FILE *)0x0) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
           g_CurrentLineNumber = 0x879;
@@ -247,59 +249,61 @@ LAB_005a6adf:
         }
         count_00 = param_5->file_handle;
         size = sound_sndmain_cpp_FUN_005a8550();
-        local_14 = (SfxSlot *)crt_stdio_c_fread_FUN_005fd990(puVar12,size,(SIZE_T)count_00,file);
+        local_14 = (SfxSlot *)
+                   crt_stdio_c_fread_FUN_005fd990(output_buffer,size,(SIZE_T)count_00,file);
         if ((param_5->file_handle->_flag & 0x20) != 0) {
           sound_sndmain_cpp_SfxSample_releaseSoundBuffer_FUN_005a6540(param_5);
           goto LAB_005a69da;
         }
       }
       else {
-        sound_mp3_cpp_FUN_00534a60();
+        sound_mp3_cpp_CMP3Decoder_read_FUN_00534a60
+                  ((CMP3Decoder *)param_5->mp3_data,output_buffer,(int)samples_requested);
       }
       if ((bVar5) && (0 < (int)local_14)) {
-        puVar12 = (undefined4 *)sound_sndmain_cpp_SfxSample_lock_FUN_005a6430();
-        if (puVar12 == (undefined4 *)0x0) goto LAB_005a69da;
+        puVar9 = (undefined4 *)sound_sndmain_cpp_SfxSample_lock_FUN_005a6430();
+        if (puVar9 == (undefined4 *)0x0) goto LAB_005a69da;
         iVar6 = sound_sndmain_cpp_FUN_005a8550();
-        puVar13 = &DAT_03f51648;
-        for (uVar9 = (uint)((int)local_14 * iVar6) >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-          *puVar12 = *puVar13;
-          puVar13 = puVar13 + (uint)bVar14 * -2 + 1;
-          puVar12 = puVar12 + (uint)bVar14 * -2 + 1;
+        puVar12 = &DAT_03f51648;
+        for (uVar10 = (uint)((int)local_14 * iVar6) >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+          *puVar9 = *puVar12;
+          puVar12 = puVar12 + (uint)bVar13 * -2 + 1;
+          puVar9 = puVar9 + (uint)bVar13 * -2 + 1;
         }
-        for (uVar9 = (int)local_14 * iVar6 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-          *(undefined1 *)puVar12 = *(undefined1 *)puVar13;
-          puVar13 = (undefined4 *)((int)puVar13 + (uint)bVar14 * -2 + 1);
-          puVar12 = (undefined4 *)((int)puVar12 + (uint)bVar14 * -2 + 1);
+        for (uVar10 = (int)local_14 * iVar6 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
+          *(undefined1 *)puVar9 = *(undefined1 *)puVar12;
+          puVar12 = (undefined4 *)((int)puVar12 + (uint)bVar13 * -2 + 1);
+          puVar9 = (undefined4 *)((int)puVar9 + (uint)bVar13 * -2 + 1);
         }
 LAB_005a6b5d:
         sound_sndmain_cpp_SfxSample_releaseSoundBuffer_FUN_005a6540(param_5);
       }
       else if (bVar4) goto LAB_005a6b5d;
-      if ((int)pSVar11 < (int)local_14) {
+      if ((int)samples_requested < (int)local_14) {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
         g_CurrentLineNumber = 0x8a0;
         core_main_c_displayErrorAndQuit_FUN_00506f10
-                  ("MP3 decoded more than batch: r = %d, batch = %d",local_14,pSVar11);
+                  ("MP3 decoded more than batch: r = %d, batch = %d",local_14,samples_requested);
       }
-      if (pSVar11 != local_14) {
+      if (samples_requested != local_14) {
         *(char **)(param_5->field1_0x4 + 0x10c) =
              local_14->field_20 + *(int *)(param_5->field_160 + 4) + -0x14;
       }
       iVar6 = *(int *)(param_5->field_160 + 8);
-      iVar10 = *(int *)param_5->field_160;
+      iVar11 = *(int *)param_5->field_160;
       pSVar7 = (SfxSlot *)((int)pSVar7 - (int)local_14);
       *(char **)(param_5->field_160 + 4) =
            local_14->field_20 + *(int *)(param_5->field_160 + 4) + -0x14;
       *(char **)(param_5->field_160 + 8) = local_14->field_20 + iVar6 + -0x14;
-      if (iVar10 <= (int)(local_14->field_20 + iVar6 + -0x14)) {
+      if (iVar11 <= (int)(local_14->field_20 + iVar6 + -0x14)) {
         param_5->field_160[8] = '\0';
         param_5->field_160[9] = '\0';
         param_5->field_160[10] = '\0';
         param_5->field_160[0xb] = '\0';
       }
     }
-    puVar12 = (undefined4 *)sound_sndmain_cpp_SfxSample_lock_FUN_005a6430();
-    if (puVar12 != (undefined4 *)0x0) {
+    output_buffer = (short *)sound_sndmain_cpp_SfxSample_lock_FUN_005a6430();
+    if (output_buffer != (short *)0x0) {
       bVar5 = false;
       bVar4 = true;
       goto LAB_005a6ab8;
@@ -919,7 +923,7 @@ LAB_005a69e2:
 //   Label: LAB_005a6caa
 // 005a6cab: PUSH ESI
 // 005a6cac: PUSH ECX
-// 005a6cad: CALL sound_mp3.cpp_FUN_00534a60
+// 005a6cad: CALL sound_mp3.cpp_CMP3Decoder_read_FUN_00534a60
 //   XREF to: 00534a60 (UNCONDITIONAL_CALL)
 // 005a6cb2: ADD ESP,0xc
 // 005a6cb5: MOV dword ptr [ESP + 0x20],EAX

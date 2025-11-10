@@ -31,7 +31,7 @@
 //   engine_dosio.c_splitPath_FUN_00481f20
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 //   sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0
-//   sound_mp3.cpp_OpenAndPrepareDecoding_FUN_00534550
+//   sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550
 //   sound_sndmain.cpp_CalculateDistanceMaybe_FUN_005a45c0
 //   sound_sndmain.cpp_ReallocSomething_FUN_005a6170
 //   sound_sndmain.cpp_SfxSample_freeMemory_FUN_005a62c0
@@ -96,7 +96,8 @@ LAB_005a5242:
       g_CurrentLineNumber = 0x3c6;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory.");
     }
-    sound_mp3_cpp_OpenAndPrepareDecoding_FUN_00534550();
+    sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550
+              ((CMP3Decoder *)local_14->mp3_data,in_stack_00000008);
     pSVar7 = local_14;
     do {
       cVar1 = *in_stack_00000008;
@@ -322,7 +323,7 @@ LAB_005a5505:
 //   Label: LAB_005a5310
 // 005a5311: MOV EDX,dword ptr [EBP + 0x16c]
 // 005a5317: PUSH EDX
-// 005a5318: CALL sound_mp3.cpp_OpenAndPrepareDecoding_FUN_00534550
+// 005a5318: CALL sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550
 //   XREF to: 00534550 (UNCONDITIONAL_CALL)
 // 005a531d: ADD ESP,0x8
 // 005a5320: MOV EDI,EBP

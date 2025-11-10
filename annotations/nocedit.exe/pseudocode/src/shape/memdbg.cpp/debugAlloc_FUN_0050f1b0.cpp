@@ -147,7 +147,7 @@
 //   shape_quantize.cpp_AllocateMemForSomething_FUN_00556a00 (00556a00) at 00556be3 [UNCONDITIONAL_CALL]
 //   shape_quantize.cpp_ColorQuantizationMaybe_FUN_00556490 (00556490) at 005564c0 [UNCONDITIONAL_CALL]
 //   shape_quantize.cpp_FUN_00556180 (00556180) at 005561bb [UNCONDITIONAL_CALL]
-//   sound_mp3.cpp_FUN_00534210 (00534210) at 00534250 [UNCONDITIONAL_CALL]
+//   sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210 (00534210) at 00534250 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a5200 (005a5200) at 005a52cf [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 (005acf20) at 005acf98 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a9293 [UNCONDITIONAL_CALL]

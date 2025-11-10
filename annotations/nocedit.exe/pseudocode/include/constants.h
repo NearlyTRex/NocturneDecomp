@@ -19,6 +19,8 @@
 #include "constants_2D80000.h"
 #include "constants_2DB0000.h"
 #include "constants_2DD0000.h"
+#include "constants_2F40000.h"
+#include "constants_2F60000.h"
 #include "constants_2FA0000.h"
 #include "constants_2FB0000.h"
 #include "constants_30D0000.h"

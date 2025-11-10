@@ -19,7 +19,7 @@
 //   TerminatedCString s_Disconnecting_0063d4eb
 //   TerminatedCString s_Couldn_t_connect_to_all__0063d4fc
 //   double DOUBLE_0063d52d = 0.0000152587890625
-//   undefined4 DAT_0063d535
+//   float FLOAT_0063d535 = 1000
 //   double DOUBLE_0063d53d = 30
 //   double DOUBLE_0063d545 = 0.100000000000000
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
@@ -41,7 +41,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 core_netgame.cpp_CNetGame_FUN_0053fd00(CNetGame* param_1, undefined4
    param_2) */
 
@@ -100,7 +99,7 @@ LAB_0053fe74:
             goto LAB_0053fe74;
           }
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                    (g_CEditorToolsPtr,fVar5 * _DAT_0063d535,3000.0);
+                    (g_CEditorToolsPtr,fVar5 * FLOAT_0063d535,3000.0);
           while( true ) {
             fVar5 = (float)(int)(g_CurrentGameTime - uVar4) * (float)DOUBLE_0063d52d;
             if (fVar5 < 0.0) {
@@ -170,7 +169,7 @@ LAB_00540097:
             goto LAB_00540097;
           }
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                    (g_CEditorToolsPtr,fVar5 * _DAT_0063d535,5000.0);
+                    (g_CEditorToolsPtr,fVar5 * FLOAT_0063d535,5000.0);
           while( true ) {
             local_14 = (float)(int)(g_CurrentGameTime - uVar4) * (float)DOUBLE_0063d52d;
             if (local_14 < 0.0) {
