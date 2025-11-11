@@ -5,7 +5,7 @@
 // Signature: CMP3Decoder * sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530(CMP3Decoder * this_ptr)
 // Cross-references:
 //   sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210 (00534210) at 0053440b [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSample_freeMemory_FUN_005a62c0 (005a62c0) at 005a6312 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0 (005a62c0) at 005a6312 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 (005acf20) at 005ad00e [UNCONDITIONAL_CALL]
 // Function calls:
 //   sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0

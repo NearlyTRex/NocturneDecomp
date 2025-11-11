@@ -925,6 +925,10 @@
       "type":"struct"
     },
     {
+      "name":"CSampleInfo",
+      "type":"struct"
+    },
+    {
       "name":"CScript",
       "type":"struct"
     },
@@ -938,6 +942,10 @@
     },
     {
       "name":"CScriptEditor",
+      "type":"struct"
+    },
+    {
+      "name":"CSfxOptions",
       "type":"struct"
     },
     {
@@ -3581,10 +3589,6 @@
       "type":"function_definition"
     },
     {
-      "name":"SfxOptions",
-      "type":"struct"
-    },
-    {
       "name":"ShowWindow",
       "type":"function_definition"
     },
@@ -4469,6 +4473,14 @@
       "type":"struct"
     },
     {
+      "name":"CSfxSample",
+      "type":"struct"
+    },
+    {
+      "name":"CSfxSlot",
+      "type":"struct"
+    },
+    {
       "name":"FileEmbeddedData",
       "type":"struct"
     },
@@ -4478,14 +4490,6 @@
     },
     {
       "name":"FileTrackingEntry",
-      "type":"struct"
-    },
-    {
-      "name":"SfxSample",
-      "type":"struct"
-    },
-    {
-      "name":"SfxSlot",
       "type":"struct"
     },
     {
@@ -28912,6 +28916,54 @@
     },
     {
       "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":256,
+          "name":"field_0",
+          "offset":0,
+          "type":"char[256]"
+        },
+        {
+          "len":4,
+          "name":"bit_depth",
+          "offset":256,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"sample_rate",
+          "offset":260,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"total_samples",
+          "offset":264,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"bytes_per_second",
+          "offset":268,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"field_272",
+          "offset":272,
+          "type":"char[12]"
+        }
+      ],
+      "importable":true,
+      "len":284,
+      "name":"CSampleInfo",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
       "cat":"/Nocturne/Class/Game",
       "desc":"",
       "fields":[
@@ -29084,6 +29136,204 @@
       "importable":true,
       "len":48836,
       "name":"CSentinel",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"status",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"sample_data",
+          "offset":4,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"volume",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"position",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"loop_count",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":92,
+          "name":"field_20",
+          "offset":20,
+          "type":"char[92]"
+        }
+      ],
+      "importable":true,
+      "len":112,
+      "name":"CSfxOptions",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"name",
+          "offset":0,
+          "type":"char[4]"
+        },
+        {
+          "len":284,
+          "name":"sample_info",
+          "offset":4,
+          "type":"CSampleInfo"
+        },
+        {
+          "len":4,
+          "name":"sample_data",
+          "offset":288,
+          "type":"void*"
+        },
+        {
+          "len":44,
+          "name":"field_292",
+          "offset":292,
+          "type":"char[44]"
+        },
+        {
+          "len":4,
+          "name":"field_336",
+          "offset":336,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"ref_count",
+          "offset":340,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"buffer_id",
+          "offset":344,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"streaming_slot_index",
+          "offset":348,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"field_352",
+          "offset":352,
+          "type":"char[12]"
+        },
+        {
+          "len":4,
+          "name":"mp3_data",
+          "offset":364,
+          "type":"CMP3Decoder*"
+        },
+        {
+          "len":4,
+          "name":"field_368",
+          "offset":368,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"file_handle",
+          "offset":372,
+          "type":"FILE*"
+        },
+        {
+          "len":4,
+          "name":"field_376",
+          "offset":376,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"sound_buffer",
+          "offset":380,
+          "type":"void*"
+        }
+      ],
+      "importable":true,
+      "len":384,
+      "name":"CSfxSample",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":112,
+          "name":"options",
+          "offset":0,
+          "type":"CSfxOptions"
+        },
+        {
+          "len":4,
+          "name":"dsound_buffer",
+          "offset":112,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_116",
+          "offset":116,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"sample",
+          "offset":120,
+          "type":"CSfxSample*"
+        },
+        {
+          "len":156,
+          "name":"field_124",
+          "offset":124,
+          "type":"char[156]"
+        },
+        {
+          "len":4,
+          "name":"is_active",
+          "offset":280,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"field_284",
+          "offset":284,
+          "type":"char[12]"
+        }
+      ],
+      "importable":true,
+      "len":296,
+      "name":"CSfxSlot",
       "pack":false,
       "type":"struct"
     },
@@ -36886,204 +37136,6 @@
       "importable":true,
       "len":84,
       "name":"SFreaky",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":112,
-          "name":"field_0",
-          "offset":0,
-          "type":"char[112]"
-        }
-      ],
-      "importable":true,
-      "len":112,
-      "name":"SfxOptions",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"name",
-          "offset":0,
-          "type":"char[4]"
-        },
-        {
-          "len":284,
-          "name":"field_4",
-          "offset":4,
-          "type":"char[284]"
-        },
-        {
-          "len":4,
-          "name":"sample_data",
-          "offset":288,
-          "type":"void*"
-        },
-        {
-          "len":44,
-          "name":"field_292",
-          "offset":292,
-          "type":"char[44]"
-        },
-        {
-          "len":4,
-          "name":"field_150",
-          "offset":336,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"ref_count",
-          "offset":340,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"buffer_id",
-          "offset":344,
-          "type":"void*"
-        },
-        {
-          "len":4,
-          "name":"streaming_slot_index",
-          "offset":348,
-          "type":"int"
-        },
-        {
-          "len":12,
-          "name":"field_160",
-          "offset":352,
-          "type":"char[12]"
-        },
-        {
-          "len":4,
-          "name":"mp3_data",
-          "offset":364,
-          "type":"void*"
-        },
-        {
-          "len":4,
-          "name":"field_368",
-          "offset":368,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"file_handle",
-          "offset":372,
-          "type":"FILE*"
-        },
-        {
-          "len":4,
-          "name":"field_376",
-          "offset":376,
-          "type":"void*"
-        },
-        {
-          "len":4,
-          "name":"sound_buffer",
-          "offset":380,
-          "type":"void*"
-        }
-      ],
-      "importable":true,
-      "len":384,
-      "name":"SfxSample",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"status",
-          "offset":0,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"sample_data",
-          "offset":4,
-          "type":"void*"
-        },
-        {
-          "len":4,
-          "name":"volume",
-          "offset":8,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"position",
-          "offset":12,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"loop_count",
-          "offset":16,
-          "type":"int"
-        },
-        {
-          "len":92,
-          "name":"field_20",
-          "offset":20,
-          "type":"char[92]"
-        },
-        {
-          "len":4,
-          "name":"dsound_buffer",
-          "offset":112,
-          "type":"void*"
-        },
-        {
-          "len":4,
-          "name":"field_116",
-          "offset":116,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"sample",
-          "offset":120,
-          "type":"SfxSample*"
-        },
-        {
-          "len":156,
-          "name":"field_124",
-          "offset":124,
-          "type":"char[156]"
-        },
-        {
-          "len":4,
-          "name":"is_active",
-          "offset":280,
-          "type":"int"
-        },
-        {
-          "len":12,
-          "name":"field_284",
-          "offset":284,
-          "type":"char[12]"
-        }
-      ],
-      "importable":true,
-      "len":296,
-      "name":"SfxSlot",
       "pack":false,
       "type":"struct"
     },

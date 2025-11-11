@@ -108,8 +108,8 @@
 //   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
-//   core_sound.cpp_FUN_005b3b80
-//   core_sound.cpp_FUN_005b3b90
+//   core_sound.cpp_CSound_FUN_005b3b80
+//   core_sound.cpp_CSound_FUN_005b3b90
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 //   crt_math.c_round_FUN_005fe6b0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -138,11 +138,12 @@ void core_ghoul_cpp_CGhoul_FUN_004e6600(void)
   SMotion *pSVar11;
   int iVar12;
   CEnemy *pCVar13;
+  int extraout_EAX;
   undefined2 extraout_var;
   CVector3f *pCVar14;
-  int extraout_EAX;
-  float fVar15;
   int extraout_EAX_00;
+  float fVar15;
+  int extraout_EAX_01;
   undefined4 uVar16;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
@@ -476,7 +477,7 @@ switchD_004e6f9a_caseD_e:
         iVar12 = in_stack_00000004[1].base_character.base_actor.field6_0x68;
         if (iVar12 == 0) {
           core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
-          if (extraout_EAX != 0) goto LAB_004e7576;
+          if (extraout_EAX_00 != 0) goto LAB_004e7576;
           (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
                     ((CDemonActor *)in_stack_00000004);
           if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) != 0) {
@@ -556,7 +557,7 @@ switchD_004e6f9a_caseD_e:
           iVar12 = *(int *)(in_stack_00000004->field6_0xbe38 + 4);
           if (iVar12 == 0) {
             core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
-            if (extraout_EAX_00 == 0) {
+            if (extraout_EAX_01 == 0) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(in_stack_00000004->base_character).model.motion_controller,0,1);
             }
@@ -1136,8 +1137,8 @@ LAB_004e6754:
      fVar3 = *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x10),
      fVar4 = *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x18),
      (float)DOUBLE_0062ddf2 < SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar15 * fVar15))) {
-    iVar12 = core_sound_cpp_FUN_005b3b80();
-    if (iVar12 == 0) {
+    core_sound_cpp_CSound_FUN_005b3b80(g_CSoundPtr);
+    if (extraout_EAX == 0) {
       crt_stdio_c_sprintf_FUN_005fdbd0
                 (&stack0xfffffc88,"ghoul-walk-?.wav *%f",(double)in_stack_00000004->speed);
       uVar16 = (*((in_stack_00000004->base_character).base_actor.vtable)->playAmbientSound)
@@ -1146,7 +1147,7 @@ LAB_004e6754:
     }
   }
   else {
-    core_sound_cpp_FUN_005b3b90();
+    core_sound_cpp_CSound_FUN_005b3b90(g_CSoundPtr);
   }
   if (in_stack_00000004->pool_me == 0) {
     if ((in_stack_00000004->base_character).model.part_visibility_flags
@@ -1552,7 +1553,7 @@ LAB_004e6754:
 //   XREF to: 03f6af64 (PARAM)
 // 004e696c: PUSH EDX
 //   XREF to: 03f6af64 (DATA)
-// 004e696d: CALL core_sound.cpp_FUN_005b3b80
+// 004e696d: CALL core_sound.cpp_CSound_FUN_005b3b80
 //   XREF to: 005b3b80 (UNCONDITIONAL_CALL)
 // 004e6972: ADD ESP,0x8
 // 004e6975: TEST EAX,EAX
@@ -3890,7 +3891,7 @@ LAB_004e6754:
 //   XREF to: 00681ef8 (READ)
 // 004e8036: PUSH ESI
 //   XREF to: 03f6af64 (DATA)
-// 004e8037: CALL core_sound.cpp_FUN_005b3b90
+// 004e8037: CALL core_sound.cpp_CSound_FUN_005b3b90
 //   XREF to: 005b3b90 (UNCONDITIONAL_CALL)
 // 004e803c: ADD ESP,0x8
 // 004e803f: JMP 0x004e697d

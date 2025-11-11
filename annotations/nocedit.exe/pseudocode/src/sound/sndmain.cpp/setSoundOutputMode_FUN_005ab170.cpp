@@ -5,7 +5,7 @@
 // Signature: int sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170(int bits_per_sample, int channels, int sample_rate)
 // Cross-references:
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512cca [UNCONDITIONAL_CALL]
-//   core_sound.cpp_findAllSoundFiles_FUN_005b2d00 (005b2d00) at 005b2d4f [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00 (005b2d00) at 005b2d4f [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CallToSetSoundMode_FUN_005ab280 (005ab280) at 005ab291 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CallToSetSoundOutputMode2_FUN_005ab2a0 (005ab2a0) at 005ab2b1 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CallToSetSoundOutputMode3_FUN_005ab2c0 (005ab2c0) at 005ab2d1 [UNCONDITIONAL_CALL]

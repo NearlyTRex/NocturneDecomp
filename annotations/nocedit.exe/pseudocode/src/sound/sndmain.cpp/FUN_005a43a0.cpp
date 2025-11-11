@@ -31,14 +31,14 @@ int sound_sndmain_cpp_FUN_005a43a0(undefined4 param_1,undefined4 param_2,undefin
   }
   iVar3 = 0;
   iVar2 = 0;
-  iVar1 = g_SfxSlots[0].field_116;
+  iVar1 = g_SfxSlots[0].field2_0x74;
   while( true ) {
     if (iVar1 == 0) {
       return iVar3;
     }
     iVar3 = iVar3 + 1;
     if (0x49ff < iVar2 + 0x128) break;
-    iVar1 = *(int *)(g_SfxSlots[1].field_124 + iVar2 + -8);
+    iVar1 = *(int *)(g_SfxSlots[1].field4_0x7c + iVar2 + -8);
     iVar2 = iVar2 + 0x128;
   }
   return -1;

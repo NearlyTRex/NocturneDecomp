@@ -100,6 +100,9 @@ const char[300] g_LocalizationTemplate = "";
 const char[80] g_LoadedModelName = "";
 
 // double constants
+const double DOUBLE_00663138 = -1;
+const double DOUBLE_00663140 = 1116.4000000000001;
+const double DOUBLE_00663150 = 20;
 const double g_PositiveInfinity = inf;
 
 // float constants
@@ -123,6 +126,9 @@ const float FLOAT_00662a40 = 256f;
 const float FLOAT_00662e44 = 0.00390625f;
 const float FLOAT_00662e98 = 256f;
 const float FLOAT_00662ea0 = 0.00390625f;
+const float FLOAT_00663158 = 4f;
+const float FLOAT_0066315c = 20f;
+const float FLOAT_00663160 = 10000f;
 const float FLOAT_00663928 = 1.5f;
 const float DAT_0066392c = 50f;
 const float FLOAT_00663930 = 100f;
@@ -164,8 +170,6 @@ const undefined4 DAT_00662458 = {0x30, 0x78, 0x33, 0x66};
 const undefined4 DAT_00662638 = {0x2D, 0x30, 0x78, 0x31};
 const undefined4 DAT_00662678 = {0x30, 0x78, 0x34, 0x30};
 const undefined4 DAT_00662f68 = {0x30, 0x78, 0x34, 0x30};
-const undefined4 DAT_00663148 = {0x30, 0x78, 0x30, 0x00};
-const undefined4 DAT_0066314c = {0x30, 0x78, 0x34, 0x30};
 const undefined4 DAT_00663164 = {0x30, 0x78, 0x34, 0x30};
 const undefined4 DAT_00663310 = {0x30, 0x78, 0x33, 0x65};
 const undefined4 DAT_00663314 = {0x30, 0x78, 0x33, 0x65};

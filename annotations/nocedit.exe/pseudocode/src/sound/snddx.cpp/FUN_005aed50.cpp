@@ -15,8 +15,8 @@
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   sound_snddx.cpp_FUN_005ade70
 //   sound_snddx.cpp_FUN_005adff0
+//   sound_sndmain.cpp_CSfxSlot_kill_FUN_005acdb0
 //   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
-//   sound_sndmain.cpp_SfxSlot_kill_FUN_005acdb0
 
 #include "nocturne.h"
 
@@ -34,6 +34,7 @@ undefined4 sound_snddx_cpp_FUN_005aed50(void)
   int *piStack_1a8;
   undefined1 *puStack_1a4;
   undefined1 *puStack_1a0;
+  CSfxSlot *in_stack_fffffe64;
   uint uStack_18;
   undefined1 local_c [4];
   undefined1 local_8 [4];
@@ -74,7 +75,7 @@ undefined4 sound_snddx_cpp_FUN_005aed50(void)
   }
   else {
     puStack_1a0 = (undefined1 *)0x5aed79;
-    sound_sndmain_cpp_SfxSlot_kill_FUN_005acdb0();
+    sound_sndmain_cpp_CSfxSlot_kill_FUN_005acdb0(in_stack_fffffe64);
     uVar2 = 1;
   }
   return uVar2;
@@ -99,7 +100,7 @@ undefined4 sound_snddx_cpp_FUN_005aed50(void)
 //   Label: LAB_005aed6c
 // 005aed72: POP EBX
 // 005aed73: RET
-// 005aed74: CALL sound_sndmain.cpp_SfxSlot_kill_FUN_005acdb0
+// 005aed74: CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_005acdb0
 //   Label: LAB_005aed74
 //   XREF to: 005acdb0 (UNCONDITIONAL_CALL)
 // 005aed79: MOV EAX,0x1

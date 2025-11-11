@@ -8,7 +8,7 @@
 //   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 (00506450) at 0050661c [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 (0050aba0) at 0050acf7 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40 (0050ad40) at 0050adad [UNCONDITIONAL_CALL]
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b21cb [UNCONDITIONAL_CALL]
+//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b21cb [UNCONDITIONAL_CALL]
 //   core_vehicle.cpp_FUN_005e8b50 (005e8b50) at 005e8b5f [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a95e0 (005a95e0) at 005a95f5 [UNCONDITIONAL_CALL]
 // Globals:
@@ -18,22 +18,20 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005a8940(undefined4 param_1) */
-
 void sound_sndmain_cpp_FUN_005a8940(void)
 
 {
-  SfxOptions *pSVar1;
+  CSfxOptions *pCVar1;
   int iVar2;
   undefined4 in_stack_00000004;
   
   iVar2 = g_SfxLastSlot;
-  pSVar1 = DAT_03f624a8 + g_SfxLastSlot;
-  pSVar1->field0_0x0[0x20] = '\x01';
-  pSVar1->field0_0x0[0x21] = '\0';
-  pSVar1->field0_0x0[0x22] = '\0';
-  pSVar1->field0_0x0[0x23] = '\0';
-  *(undefined4 *)(DAT_03f624a8[iVar2].field0_0x0 + 0x1c) = in_stack_00000004;
+  pCVar1 = g_SfxOptions + g_SfxLastSlot;
+  pCVar1->field5_0x14[0xc] = '\x01';
+  pCVar1->field5_0x14[0xd] = '\0';
+  pCVar1->field5_0x14[0xe] = '\0';
+  pCVar1->field5_0x14[0xf] = '\0';
+  *(undefined4 *)(g_SfxOptions[iVar2].field5_0x14 + 8) = in_stack_00000004;
   return;
 }
 

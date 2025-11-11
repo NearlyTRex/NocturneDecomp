@@ -123,7 +123,7 @@ void core_dracbrid_cpp_FUN_004864c0
         sound_sndmain_cpp_FUN_005a8940();
         sound_sndmain_cpp_FUN_005a8a00();
         sound_sndmain_cpp_FUN_005a8a60();
-        core_sound_cpp_FUN_005b1ed0();
+        core_sound_cpp_CSound_FUN_005b1ed0(g_CSoundPtr);
         uVar6 = sound_sndmain_cpp_startSfx_FUN_005a8e90();
         *(undefined4 *)pSVar7->field0_0x0 = uVar6;
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();

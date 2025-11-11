@@ -10,8 +10,8 @@
 //   core_skeledit.cpp_FUN_00589b10 (00589b10) at 00589b1b [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00589c20 (00589c20) at 00589e8c [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058d1f4 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2dd0 (005b2dd0) at 005b2e33 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830 (005b3830) at 005b3933 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2e33 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b3933 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0 (005ad5c0) at 005ad6d1 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_AudioBitsPerSample = 0x10

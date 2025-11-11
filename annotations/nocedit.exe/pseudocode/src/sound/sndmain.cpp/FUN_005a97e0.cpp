@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005a97e0()
 // Function calls:
-//   sound_sndmain.cpp_ComputingDelay_FUN_005a7100
+//   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
 //   sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
@@ -13,21 +13,21 @@
 undefined4 sound_sndmain_cpp_FUN_005a97e0(void)
 
 {
-  undefined4 *puVar1;
-  int iVar2;
-  byte bVar3;
-  undefined4 *in_stack_00000010;
+  CSfxSlot *this_ptr;
+  int iVar1;
+  byte bVar2;
+  int *in_stack_00000010;
   
-  bVar3 = 0;
-  puVar1 = (undefined4 *)sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
-  if (puVar1 == (undefined4 *)0x0) {
+  bVar2 = 0;
+  this_ptr = (CSfxSlot *)sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
+  if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }
-  sound_sndmain_cpp_ComputingDelay_FUN_005a7100();
-  for (iVar2 = 0x1c; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *in_stack_00000010 = *puVar1;
-    puVar1 = puVar1 + (uint)bVar3 * -2 + 1;
-    in_stack_00000010 = in_stack_00000010 + (uint)bVar3 * -2 + 1;
+  sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr);
+  for (iVar1 = 0x1c; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *in_stack_00000010 = (this_ptr->options).status;
+    this_ptr = (CSfxSlot *)((int)this_ptr + (uint)bVar2 * -8 + 4);
+    in_stack_00000010 = in_stack_00000010 + (uint)bVar2 * -2 + 1;
   }
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 1;
@@ -54,7 +54,7 @@ undefined4 sound_sndmain_cpp_FUN_005a97e0(void)
 //   Label: LAB_005a97f8
 // 005a97f9: PUSH 0x0
 // 005a97fb: PUSH EAX
-// 005a97fc: CALL sound_sndmain.cpp_ComputingDelay_FUN_005a7100
+// 005a97fc: CALL sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
 //   XREF to: 005a7100 (UNCONDITIONAL_CALL)
 // 005a9801: ADD ESP,0x8
 // 005a9804: MOV ECX,0x1c

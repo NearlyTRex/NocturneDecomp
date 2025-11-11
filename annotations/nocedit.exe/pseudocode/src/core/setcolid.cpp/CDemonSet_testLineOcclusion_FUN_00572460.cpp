@@ -6,8 +6,8 @@
 // Cross-references:
 //   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 (0042d5a0) at 0042d939 [UNCONDITIONAL_CALL]
 //   core_gabriela.cpp_FUN_004d6f80 (004d6f80) at 004d70c8 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b334b [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b2770 (005b2770) at 005b2855 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2fd0 (005b2fd0) at 005b334b [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c3960 (005c3960) at 005c40e9 [UNCONDITIONAL_CALL]
 //   core_zombie.cpp_CZombie_process_FUN_005f9470 (005f9470) at 005f9716 [UNCONDITIONAL_CALL]
 // Globals:

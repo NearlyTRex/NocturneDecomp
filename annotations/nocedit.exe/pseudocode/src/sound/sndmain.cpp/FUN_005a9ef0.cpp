@@ -13,8 +13,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005a9ef0() */
-
 uint sound_sndmain_cpp_FUN_005a9ef0(void)
 
 {
@@ -23,15 +21,15 @@ uint sound_sndmain_cpp_FUN_005a9ef0(void)
   
   iVar1 = 0;
   uVar2 = 0;
-  while ((*(int *)(g_SfxSlots[0].field_124 + iVar1 + -4) == 0 ||
-         (*(int *)(g_SfxSlots[0].field_124 + iVar1 + -8) == 0))) {
+  while ((*(int *)(g_SfxSlots[0].field4_0x7c + iVar1 + -4) == 0 ||
+         (*(int *)(g_SfxSlots[0].field4_0x7c + iVar1 + -8) == 0))) {
     iVar1 = iVar1 + 0x128;
     uVar2 = uVar2 + 1;
     if (0x49ff < iVar1) {
       return 0;
     }
   }
-  return *(int *)(g_SfxSlots[0].field_124 + iVar1 + -8) << 6 | uVar2;
+  return *(int *)(g_SfxSlots[0].field4_0x7c + iVar1 + -8) << 6 | uVar2;
 }
 
 

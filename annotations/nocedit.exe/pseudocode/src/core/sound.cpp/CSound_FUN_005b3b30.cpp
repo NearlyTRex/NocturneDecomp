@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_actor.cpp_CDemonActor_playAmbientSoundWithVolume_FUN_00408fd0 (00408fd0) at 00408fea [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0
+//   core_sound.cpp_FUN_005b1fd0
 //   sound_sndmain.cpp_FUN_005a8b40
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
@@ -20,7 +20,7 @@ int __cdecl core_sound_cpp_CSound_FUN_005b3b30(CSound *this_ptr,char *actor_name
   
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
   sound_sndmain_cpp_FUN_005a8b40();
-  iVar1 = core_sound_cpp_PlaySfxByStringMaybe_FUN_005b1fd0();
+  iVar1 = core_sound_cpp_FUN_005b1fd0();
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   return iVar1;
 }
@@ -52,7 +52,7 @@ int __cdecl core_sound_cpp_CSound_FUN_005b3b30(CSound *this_ptr,char *actor_name
 // 005b3b5a: MOV EBX,dword ptr [ESP + 0x24]
 //   XREF to: Stack[0x8] (READ)
 // 005b3b5e: PUSH EBX
-// 005b3b5f: CALL core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0
+// 005b3b5f: CALL core_sound.cpp_FUN_005b1fd0
 //   XREF to: 005b1fd0 (UNCONDITIONAL_CALL)
 // 005b3b64: ADD ESP,0x1c
 // 005b3b67: MOV EBX,EAX

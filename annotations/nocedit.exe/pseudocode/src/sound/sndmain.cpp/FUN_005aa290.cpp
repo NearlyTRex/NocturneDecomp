@@ -18,8 +18,6 @@
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005aa290(undefined8 param_1, undefined8 param_2,
-   undefined8 param_3, undefined8 param_4) */
 
 undefined4 sound_sndmain_cpp_FUN_005aa290(void)
 

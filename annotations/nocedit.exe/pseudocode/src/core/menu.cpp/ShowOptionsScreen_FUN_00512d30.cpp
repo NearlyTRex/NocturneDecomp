@@ -43,8 +43,8 @@
 //   core_moon.cpp_CMoon_FUN_00529d60
 //   core_moon.cpp_CMoon_FUN_00529ed0
 //   core_moon.cpp_CMoon_init_FUN_00529ae0
-//   core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830
-//   core_sound.cpp_RelatedToSoundCleanup_FUN_005b39a0
+//   core_sound.cpp_CSound_FUN_005b3830
+//   core_sound.cpp_CSound_FUN_005b39a0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   support_newmsg.cpp_getLocalizedString_FUN_005441f0
 //   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
@@ -65,7 +65,7 @@ void core_menu_cpp_ShowOptionsScreen_FUN_00512d30(void)
   int in_stack_00000064;
   
   if (in_stack_00000004 != 0) {
-    core_sound_cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830();
+    core_sound_cpp_CSound_FUN_005b3830(g_CSoundPtr);
     core_moon_cpp_CMoon_init_FUN_00529ae0();
   }
   puVar4 = &DAT_02f28a50;
@@ -108,13 +108,13 @@ void core_menu_cpp_ShowOptionsScreen_FUN_00512d30(void)
       break;
     case 3:
       core_game_cpp_CGame_rollCredits_FUN_004e4010(g_CGamePtr);
-      core_sound_cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830();
+      core_sound_cpp_CSound_FUN_005b3830(g_CSoundPtr);
     }
     iVar1 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
   } while (iVar1 == 0);
   if (in_stack_00000064 != 0) {
     core_moon_cpp_CMoon_free_FUN_00529ce0();
-    core_sound_cpp_RelatedToSoundCleanup_FUN_005b39a0();
+    core_sound_cpp_CSound_FUN_005b39a0(g_CSoundPtr);
     core_inivar_cpp_writeIniData_FUN_004fc510();
     return;
   }
@@ -295,7 +295,7 @@ void core_menu_cpp_ShowOptionsScreen_FUN_00512d30(void)
 //   XREF to: 00681ef8 (READ)
 // 00512e97: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 00512e98: CALL core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830
+// 00512e98: CALL core_sound.cpp_CSound_FUN_005b3830
 //   XREF to: 005b3830 (UNCONDITIONAL_CALL)
 // 00512e9d: ADD ESP,0x4
 // 00512ea0: PUSH 0x2f21590
@@ -342,7 +342,7 @@ void core_menu_cpp_ShowOptionsScreen_FUN_00512d30(void)
 //   XREF to: 00681ef8 (READ)
 // 00512ef1: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 00512ef2: CALL core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830
+// 00512ef2: CALL core_sound.cpp_CSound_FUN_005b3830
 //   XREF to: 005b3830 (UNCONDITIONAL_CALL)
 // 00512ef7: ADD ESP,0x4
 // 00512efa: JMP 0x00512e62
@@ -358,7 +358,7 @@ void core_menu_cpp_ShowOptionsScreen_FUN_00512d30(void)
 //   XREF to: 00681ef8 (READ)
 // 00512f12: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 00512f13: CALL core_sound.cpp_RelatedToSoundCleanup_FUN_005b39a0
+// 00512f13: CALL core_sound.cpp_CSound_FUN_005b39a0
 //   XREF to: 005b39a0 (UNCONDITIONAL_CALL)
 // 00512f18: ADD ESP,0x4
 // 00512f1b: CALL core_inivar.cpp_writeIniData_FUN_004fc510

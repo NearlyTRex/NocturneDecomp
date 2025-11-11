@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005a5db0()
 // Globals:
-//   undefined4 s_..\sound\sndmain.cpp_0064fc6b
+//   TerminatedCString s_sound_sndmain_cpp_0064fc6b
 //   TerminatedCString s_generateSilence_invalid__0064fc80
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -35,7 +35,7 @@ void sound_sndmain_cpp_FUN_005a5db0(void)
     return;
   }
 LAB_005a5de0:
-  g_CurrentFilename = "C..\\sound\\sndmain.cpp" + 1;
+  g_CurrentFilename = "..\\sound\\sndmain.cpp";
   g_CurrentLineNumber = 0x5ca;
   core_main_c_displayErrorAndQuit_FUN_00506f10("generateSilence - invalid bit depth!");
   return;

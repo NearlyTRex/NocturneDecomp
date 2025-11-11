@@ -40,9 +40,9 @@
 //   core_mobster.cpp_FUN_005279f0 (005279f0) at 00527b32 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053eb40 (0053eb40) at 0053eb8f [UNCONDITIONAL_CALL]
 //   core_sentinel.cpp_SentinelBehavior_FUN_00568cd0 (00568cd0) at 00568db4 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b33d8 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b3b80 (005b3b80) at 005b3b85 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b2770 (005b2770) at 005b28e0 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2fd0 (005b2fd0) at 005b33d8 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b3b80 (005b3b80) at 005b3b85 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bc546 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c48b0 (005c48b0) at 005c4be9 [UNCONDITIONAL_CALL]
 //   core_succubus.cpp_CSuccubus_process_FUN_005c6e90 (005c6e90) at 005c72bc [UNCONDITIONAL_CALL]
@@ -63,8 +63,6 @@
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
-
-/* Signature: undefined1 sound_sndmain.cpp_SoundLockKillBlah(undefined4 param_1) */
 
 bool sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(void)
 

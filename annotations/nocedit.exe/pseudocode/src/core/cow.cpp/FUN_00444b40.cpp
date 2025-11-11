@@ -12,7 +12,7 @@
 //   core_enemy.cpp_FUN_004a9f10
 //   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   core_sound.cpp_FUN_005b3b80
+//   core_sound.cpp_CSound_FUN_005b3b80
 
 #include "nocturne.h"
 
@@ -23,11 +23,12 @@ void core_cow_cpp_FUN_00444b40(void)
 
 {
   float fVar1;
+  int extraout_EAX;
   SMotion *pSVar2;
   undefined4 uVar3;
   int in_stack_00000004;
   int in_stack_00000008;
-  int iVar4;
+  int desired_state_index;
   
   core_cow_cpp_FUN_004448c0();
   fVar1 = *(float *)(in_stack_00000004 + 0x243c) - *(float *)(in_stack_00000008 + 4);
@@ -37,16 +38,16 @@ void core_cow_cpp_FUN_00444b40(void)
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        ((CMotionController *)(in_stack_00000004 + 0x158));
     if ((pSVar2->state_index == 5) || (pSVar2->state_index == 4)) goto LAB_00444b80;
-    iVar4 = 4;
+    desired_state_index = 4;
   }
   else {
-    iVar4 = 3;
+    desired_state_index = 3;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            ((CMotionController *)(in_stack_00000004 + 0x158),iVar4,1);
+            ((CMotionController *)(in_stack_00000004 + 0x158),desired_state_index,1);
 LAB_00444b80:
-  iVar4 = core_sound_cpp_FUN_005b3b80();
-  if (iVar4 != 0) {
+  core_sound_cpp_CSound_FUN_005b3b80(g_CSoundPtr);
+  if (extraout_EAX != 0) {
     core_enemy_cpp_FUN_004a9f10();
     return;
   }
@@ -96,7 +97,7 @@ LAB_00444b80:
 //   XREF to: 00681ef8 (READ)
 // 00444b8d: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 00444b8e: CALL core_sound.cpp_FUN_005b3b80
+// 00444b8e: CALL core_sound.cpp_CSound_FUN_005b3b80
 //   XREF to: 005b3b80 (UNCONDITIONAL_CALL)
 // 00444b93: ADD ESP,0x8
 // 00444b96: TEST EAX,EAX

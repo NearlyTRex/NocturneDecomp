@@ -18,11 +18,11 @@
 //   TerminatedCString s_mp_wav_00652744
 //   undefined4 s_p?.wav_00652745
 //   TerminatedCString s_s_g_0065274c
-//   undefined4 DAT_00652756
-//   undefined4 DAT_0065275e
-//   undefined4 DAT_00652766
-//   undefined4 DAT_0065276e
-//   undefined4 DAT_00652776
+//   float FLOAT_00652756 = 20
+//   double DOUBLE_0065275e = 1.5
+//   double DOUBLE_00652766 = 0.800000000000000
+//   double DOUBLE_0065276e = 0.600000000000000
+//   double DOUBLE_00652776 = 510
 //   CGame* g_CGamePtr = 02d81a9c
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   void* PTR_s_int_00681ef0 = 00652706
@@ -120,7 +120,7 @@ undefined4 core_sound_cpp_FUN_005b2770(void)
       local_2c = 0x41a00000;
       local_3c.z = DAT_03f6af78;
       local_28 = 0;
-      local_3c.y = DAT_03f6af74 + _DAT_00652756;
+      local_3c.y = DAT_03f6af74 + FLOAT_00652756;
       iVar4 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00572460
                         (g_CDemonSetPtr,&local_48,&local_3c);
       if (iVar4 == 0) {
@@ -139,7 +139,7 @@ undefined4 core_sound_cpp_FUN_005b2770(void)
   }
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
   sound_sndmain_cpp_FUN_005a8b70();
-  sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0();
+  sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(3);
   iVar4 = crt_string_c_stricmp_FUN_005fe7f0((char *)PTR_s_int_00681ef0,"int");
   if (iVar4 == 0) {
     sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
@@ -188,8 +188,8 @@ undefined4 core_sound_cpp_FUN_005b2770(void)
       *(float *)(pSVar7->field0_0x0 + 4) = fVar1 + fVar2;
       *(float *)(pSVar7->field0_0x0 + 8) = *(float *)(pSVar7->field0_0x0 + 8) + fVar3;
       uVar6 = (undefined2)((uint)iVar5 >> 0x10);
-      if ((float)_DAT_00652776 < ABS(*(float *)(STrainNoise_ARRAY_03f6b7bc[iVar4].field0_0x0 + 8)))
-      {
+      if ((float)DOUBLE_00652776 < ABS(*(float *)(STrainNoise_ARRAY_03f6b7bc[iVar4].field0_0x0 + 8))
+         ) {
         sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
         uVar6 = extraout_var;
       }

@@ -6,7 +6,7 @@
 // Cross-references:
 //   sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170 (005ab170) at 005ab1fa [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\sound\sndmain.cpp_0064fae7
+//   TerminatedCString s_sound_sndmain_cpp_0064fae7
 //   TerminatedCString s_sound_sndmain_cpp_0064fafc
 //   TerminatedCString s_sound_sndmain_cpp_0064fb11
 //   TerminatedCString s_sound_sndmain_cpp_0064fb26
@@ -57,7 +57,7 @@ void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_005a5730(int requested_size,i
   g_PrimaryMixBuffer =
        shape_memdbg_cpp_debugRealloc_FUN_0050f540
                  (g_PrimaryMixBuffer,num_buffers * iVar4 * g_AudioChannels,
-                  "?..\\sound\\sndmain.cpp" + 1,0x4a2);
+                  "..\\sound\\sndmain.cpp",0x4a2);
   g_SecondaryMixBuffer =
        shape_memdbg_cpp_debugRealloc_FUN_0050f540
                  (g_SecondaryMixBuffer,g_AudioChannels * iVar4 * 2,"..\\sound\\sndmain.cpp",

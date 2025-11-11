@@ -4,34 +4,32 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_LockFreeSampleAndUnlock_FUN_005aa660()
 // Cross-references:
-//   core_sound.cpp_RelatedToSoundCleanup_FUN_005b39a0 (005b39a0) at 005b39a5 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b39a0 (005b39a0) at 005b39a5 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005aaeb0 (005aaeb0) at 005aaed8 [UNCONDITIONAL_CALL]
 // Globals:
-//   SfxSample[64] DAT_03f6282c
+//   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f629ac
 //   undefined4 DAT_03f6882c
 // Function calls:
+//   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
 //   sound_sndmain.cpp_killAllSoundSlots_FUN_005a9cc0
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
-//   sound_sndmain.cpp_SfxSample_freeMemory_FUN_005a62c0
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_LockFreeSampleAndUnlock() */
-
 void sound_sndmain_cpp_LockFreeSampleAndUnlock_FUN_005aa660(void)
 
 {
-  SfxSample *sample;
+  CSfxSample *this_ptr;
   
   sound_sndmain_cpp_lockSound_FUN_005abd30();
-  sample = DAT_03f6282c;
+  this_ptr = g_SfxSamples;
   sound_sndmain_cpp_killAllSoundSlots_FUN_005a9cc0();
   do {
-    sound_sndmain_cpp_SfxSample_freeMemory_FUN_005a62c0(sample);
-    sample = sample + 1;
-  } while (sample != (SfxSample *)&DAT_03f6882c);
+    sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(this_ptr);
+    this_ptr = this_ptr + 1;
+  } while (this_ptr != (CSfxSample *)&DAT_03f6882c);
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return;
 }
@@ -53,7 +51,7 @@ void sound_sndmain_cpp_LockFreeSampleAndUnlock_FUN_005aa660(void)
 //   Label: LAB_005aa677
 //   XREF to: 03f6282c (DATA)
 //   XREF to: 03f629ac (DATA)
-// 005aa678: CALL sound_sndmain.cpp_SfxSample_freeMemory_FUN_005a62c0
+// 005aa678: CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
 //   XREF to: 005a62c0 (UNCONDITIONAL_CALL)
 // 005aa67d: ADD EBX,0x180
 // 005aa683: ADD ESP,0x4

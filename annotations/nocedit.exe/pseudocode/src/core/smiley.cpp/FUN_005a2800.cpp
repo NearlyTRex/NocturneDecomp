@@ -9,9 +9,9 @@
 //   TerminatedCString s_s_confused_while_walking_0064f2ca
 //   TerminatedCString s_Capture_0064f2f4
 //   TerminatedCString s_Capture_0064f2fc
-//   undefined4 DAT_0064f30a
-//   undefined4 DAT_0064f312
-//   undefined4 DAT_0064f31a
+//   double DOUBLE_0064f30a = 3.14159265350000
+//   double DOUBLE_0064f312 = 0.523598775583333
+//   double DOUBLE_0064f31a = 32
 //   undefined4 DAT_00662f68
 //   CEventList* g_CEventListPtr = 02d05310
 //   CGore* g_CGorePtr = 02d83364
@@ -51,7 +51,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_smiley.cpp_FUN_005a2800(undefined4 param_1, undefined4
    param_2) */
 
@@ -185,7 +184,7 @@ void core_smiley_cpp_FUN_005a2800(void)
     }
   }
   fVar11 = *(float *)in_stack_00000004[1].base_actor.actor_name;
-  fVar3 = (float)_DAT_0064f30a;
+  fVar3 = (float)DOUBLE_0064f30a;
   pCVar2 = &in_stack_00000004->model;
   *(float *)(in_stack_00000004->field2_0x240c + 0x28) =
        (in_stack_00000004->model).accumulated_root_motion.z;
@@ -218,7 +217,7 @@ void core_smiley_cpp_FUN_005a2800(void)
             core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_c4,&local_58);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_c4.y - (in_stack_00000004->base_actor).orient.bank);
-            if (ABS(local_14) < (float)_DAT_0064f312) {
+            if (ABS(local_14) < (float)DOUBLE_0064f312) {
               pCVar10 = in_stack_00000004 + 1;
               (pCVar10->base_actor).create_event[0x54] = '\0';
               (pCVar10->base_actor).create_event[0x55] = '\0';
@@ -421,7 +420,7 @@ switchD_005a3055_caseD_7:
       }
       *(float *)(in_stack_00000004->field2_0x240c + 0x20) =
            *(float *)(in_stack_00000004->field2_0x240c + 0x20) -
-           in_stack_00000008 * (float)_DAT_0064f31a;
+           in_stack_00000008 * (float)DOUBLE_0064f31a;
       local_64 = *(float *)(in_stack_00000004->field2_0x240c + 0x1c) * in_stack_00000008;
       local_60 = *(float *)(in_stack_00000004->field2_0x240c + 0x20) * in_stack_00000008;
       local_5c = in_stack_00000008 * *(float *)(in_stack_00000004->field2_0x240c + 0x24);

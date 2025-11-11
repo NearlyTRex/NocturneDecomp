@@ -23,26 +23,26 @@
 //   sound_snddx.cpp_FUN_005afcc0 (005afcc0) at 005afd4e [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_FUN_005b0030 (005b0030) at 005b0107 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_FUN_005b0120 (005b0120) at 005b0321 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_FUN_005b12e0 (005b12e0) at 005b145b [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_WavInDevice_setMode_FUN_005b0f70 (005b0f70) at 005b11c5 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_WavOutDevice_poll_FUN_005b0c10 (005b0c10) at 005b0c78 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_waveInClose_FUN_005b0d70 (005b0d70) at 005b0df8 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_waveInReset_FUN_005b0f10 (005b0f10) at 005b0f5d [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_waveInStart_FUN_005b0e20 (005b0e20) at 005b0eea [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_waveOutClose_FUN_005b0840 (005b0840) at 005b08c8 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_waveOutOpen_FUN_005b0a30 (005b0a30) at 005b0bd4 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_waveOutReset_FUN_005b09c0 (005b09c0) at 005b0a16 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_waveOutWrite_FUN_005b06c0 (005b06c0) at 005b0827 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_waveOutWrite_FUN_005b0cc0 (005b0cc0) at 005b0d4c [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_FUN_005a6170 (005a6170) at 005a621b [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_FUN_005a80e0 (005a80e0) at 005a813a [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0 (005a7fe0) at 005a806a [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a6a4a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a5620 (005a5620) at 005a5681 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_PollHWPlaybackPosAndSet_FUN_005a80e0 (005a80e0) at 005a813a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a4ef0 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ReallocSomething_FUN_005a6170 (005a6170) at 005a621b [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_pollHwHandle_FUN_005a7fe0 (005a7fe0) at 005a806a [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a6a4a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_SleepAndKillSoundThreadError_FUN_005abcb0 (005abcb0) at 005abd11 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_WavReadingFunc1_FUN_005a3fe0 (005a3fe0) at 005a4264 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a951b [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_FUN_005b12e0 (005b12e0) at 005b145b [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_WavInDevice_setMode_FUN_005b0f70 (005b0f70) at 005b11c5 [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_WavOutDevice_poll_FUN_005b0c10 (005b0c10) at 005b0c78 [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_waveInClose_FUN_005b0d70 (005b0d70) at 005b0df8 [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_waveInReset_FUN_005b0f10 (005b0f10) at 005b0f5d [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_waveInStart_FUN_005b0e20 (005b0e20) at 005b0eea [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_waveOutClose_FUN_005b0840 (005b0840) at 005b08c8 [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_waveOutOpen_FUN_005b0a30 (005b0a30) at 005b0bd4 [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_waveOutReset_FUN_005b09c0 (005b09c0) at 005b0a16 [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_waveOutWrite_FUN_005b06c0 (005b06c0) at 005b0827 [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_waveOutWrite_FUN_005b0cc0 (005b0cc0) at 005b0d4c [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_s_0065140c
 //   TerminatedCString s_sound_sndmain_cpp_00651410
@@ -81,9 +81,6 @@
 //   sound_sndmain.cpp_getSoundDeviceInfo_FUN_005ab370
 
 #include "nocturne.h"
-
-/* Signature: undefined1 sound_sndmain.cpp_HandleSoundError(undefined4 param_1, undefined1 param_2)
-    */
 
 void sound_sndmain_cpp_HandleSoundError_FUN_005adba0(void)
 

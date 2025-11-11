@@ -10,7 +10,7 @@
 //   core_main.c_initializeGameSystems_FUN_00507a60 (00507a60) at 00507a92 [UNCONDITIONAL_CALL]
 //   core_netgame.cpp_CNetGame_FUN_0053f780 (0053f780) at 0053f816 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 005933d6 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b250e [UNCONDITIONAL_CALL]
+//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b250e [UNCONDITIONAL_CALL]
 //   crt_io.c_getTempDirectory_FUN_00609afc (00609afc) at 00609b14 [UNCONDITIONAL_CALL]
 //   crt_io.c_parseFileInfo_FUN_0060e3b0 (0060e3b0) at 0060e3bc [UNCONDITIONAL_CALL]
 //   crt_process.c_spawnvp_FUN_0060f39c (0060f39c) at 0060f7f4 [UNCONDITIONAL_CALL]

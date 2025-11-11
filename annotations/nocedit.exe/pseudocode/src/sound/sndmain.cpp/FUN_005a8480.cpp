@@ -1,19 +1,19 @@
 // Name: sound_sndmain.cpp_FUN_005a8480
 // Address: 005a8480
 // Address Range: [[005a8480, 005a84ca]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_FUN_005a8480()
+// Convention: __cdecl
+// Signature: void * sound_sndmain.cpp_FUN_005a8480(void)
 // Cross-references:
 //   core_event.cpp_CEventList_FUN_004b0db0 (004b0db0) at 004b0e80 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_processFrame_FUN_004da100 (004da100) at 004da941 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_GetSampleInfo_FUN_005b3ba0 (005b3ba0) at 005b3bb1 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b3ba0 (005b3ba0) at 005b3bb1 [UNCONDITIONAL_CALL]
 //   core_tommygun.cpp_CTommyGun_process_FUN_005de360 (005de360) at 005de4c4 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_ctor_FUN_005a60f0 (005a60f0) at 005a60f5 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005ad3b0 (005ad3b0) at 005ad3c2 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSample_ctor_FUN_005a60f0 (005a60f0) at 005a60f5 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0066315c
-//   undefined4 DAT_00663160
-//   undefined4 DAT_00681b38
+//   float FLOAT_0066315c = 20
+//   float FLOAT_00663160 = 10000
+//   double DOUBLE_00681b38 = 1
 //   undefined4 DAT_03f5daa0
 // Function calls:
 //   crt_memory.c_memset_FUN_005fde40
@@ -21,9 +21,8 @@
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005a8480(undefined4 param_1) */
 
-void * sound_sndmain_cpp_FUN_005a8480(void)
+void * __cdecl sound_sndmain_cpp_FUN_005a8480(void)
 
 {
   float fVar1;
@@ -32,10 +31,10 @@ void * sound_sndmain_cpp_FUN_005a8480(void)
   void *in_stack_00000004;
   
   crt_memory_c_memset_FUN_005fde40(in_stack_00000004,0,0x150);
-  fVar1 = (float)_DAT_00681b38;
+  fVar1 = (float)DOUBLE_00681b38;
   fVar2 = _DAT_03f5daa0 * fVar1;
-  fVar3 = _DAT_00663160 * fVar1;
-  *(float *)((int)in_stack_00000004 + 0x114) = _DAT_0066315c * fVar1;
+  fVar3 = FLOAT_00663160 * fVar1;
+  *(float *)((int)in_stack_00000004 + 0x114) = FLOAT_0066315c * fVar1;
   *(float *)((int)in_stack_00000004 + 0x118) = fVar2;
   *(float *)((int)in_stack_00000004 + 0x11c) = fVar3;
   return in_stack_00000004;

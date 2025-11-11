@@ -5,7 +5,7 @@
 // Signature: undefined sound_sndmain.cpp_FUN_005a4400()
 // Globals:
 //   undefined4 DAT_03f62828
-//   SfxSample[64] DAT_03f6282c
+//   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f6297c
 //   undefined4 DAT_03f629ac
 //   undefined4 DAT_03f62afc
@@ -13,7 +13,7 @@
 
 #include "nocturne.h"
 
-SfxSample * sound_sndmain_cpp_FUN_005a4400(void)
+CSfxSample * sound_sndmain_cpp_FUN_005a4400(void)
 
 {
   int iVar1;
@@ -24,14 +24,14 @@ SfxSample * sound_sndmain_cpp_FUN_005a4400(void)
     if (0x3f < DAT_03f62828) {
       DAT_03f62828 = 0;
     }
-    if ((DAT_03f6282c[DAT_03f62828].field_150 == 0) && (DAT_03f6282c[DAT_03f62828].ref_count == 0))
-    break;
+    if ((g_SfxSamples[DAT_03f62828].field4_0x150 == 0) &&
+       (g_SfxSamples[DAT_03f62828].ref_count == 0)) break;
     iVar1 = iVar1 + 1;
     if (0x3f < iVar1) {
-      return (SfxSample *)0x0;
+      return (CSfxSample *)0x0;
     }
   }
-  return DAT_03f6282c + DAT_03f62828;
+  return g_SfxSamples + DAT_03f62828;
 }
 
 

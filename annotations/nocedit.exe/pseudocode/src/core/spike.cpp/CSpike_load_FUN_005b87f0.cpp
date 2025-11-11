@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_spike.cpp_CSpike_load_FUN_005b87f0()
 // Globals:
-//   undefined4 s_modelName_00652e08
+//   TerminatedCString s_modelName_00652e08
 //   TerminatedCString s_spikeType_00652e12
 //   TerminatedCString s_spikeState_00652e1c
 //   TerminatedCString s_areWeActive_00652e27
@@ -38,7 +38,7 @@ void core_spike_cpp_CSpike_load_FUN_005b87f0(void)
   
   core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);
   core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
-            ((CKeyFramedModelInstance *)(in_stack_00000004 + 1),">modelName" + 1);
+            ((CKeyFramedModelInstance *)(in_stack_00000004 + 1),"modelName");
   core_actor_cpp_serializeInteger_FUN_0040b7f0
             ((int *)&in_stack_00000004[2].location.position.y,"spikeType");
   core_actor_cpp_serializeInteger_FUN_0040b7f0

@@ -8,12 +8,10 @@
 // Globals:
 //   undefined4 DAT_00681b30
 //   undefined4 DAT_00681b34
-//   undefined4 DAT_00681b38
+//   double DOUBLE_00681b38 = 1
 //   CSound* g_CSoundInstance
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void sound_sndmain_cpp_FUN_005aa240(void)
 
@@ -21,7 +19,7 @@ void sound_sndmain_cpp_FUN_005aa240(void)
   undefined4 in_stack_00000004;
   undefined4 in_stack_00000008;
   
-  _DAT_00681b38 = 1.0 / (double)CONCAT44(in_stack_00000008,in_stack_00000004);
+  DOUBLE_00681b38 = 1.0 / (double)CONCAT44(in_stack_00000008,in_stack_00000004);
   DAT_00681b30 = in_stack_00000004;
   DAT_00681b34 = in_stack_00000008;
   if (g_CSoundInstance == (CSound *)0x0) {

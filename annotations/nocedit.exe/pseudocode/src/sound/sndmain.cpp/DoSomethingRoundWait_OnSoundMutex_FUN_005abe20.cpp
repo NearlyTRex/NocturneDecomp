@@ -7,7 +7,7 @@
 //   core_moon.cpp_CMoon_FUN_00529ed0 (00529ed0) at 00529edc [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005abba0 (005abba0) at 005abbb8 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00650ecf
+//   double DOUBLE_00650ecf = 3
 //   CSound* g_CSoundInstance
 //   undefined4 DAT_03f693f8
 //   HANDLE g_SoundMutex
@@ -20,7 +20,6 @@
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 sound_sndmain.cpp_DoSomethingRoundWait_OnSoundMutex() */
 
 void sound_sndmain_cpp_DoSomethingRoundWait_OnSoundMutex_FUN_005abe20(void)
 
@@ -29,7 +28,7 @@ void sound_sndmain_cpp_DoSomethingRoundWait_OnSoundMutex_FUN_005abe20(void)
   
   if (g_CSoundInstance != (CSound *)0x0) {
     iVar1 = wincore_winrun_cpp_waitForMutexTimeout_FUN_005f4010
-                      (g_SoundMutex,_DAT_03f693f8 * _DAT_00650ecf);
+                      (g_SoundMutex,_DAT_03f693f8 * DOUBLE_00650ecf);
     if (iVar1 != 0) {
       g_SoundLockCount = g_SoundLockCount + 1;
       (*(code *)g_CSoundInstance->vtable->field_16)();

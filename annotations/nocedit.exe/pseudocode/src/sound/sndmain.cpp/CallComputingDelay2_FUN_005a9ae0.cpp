@@ -9,12 +9,12 @@
 //   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 (00506450) at 00506541 [UNCONDITIONAL_CALL]
 //   core_lightgun.cpp_FUN_00505c70 (00505c70) at 0050641b [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_0050a4f0 (0050a4f0) at 0050a589 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b30b3 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b2770 (005b2770) at 005b2ae1 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2fd0 (005b2fd0) at 005b30b3 [UNCONDITIONAL_CALL]
 // Globals:
 //   CSound* g_CSoundInstance
 // Function calls:
-//   sound_sndmain.cpp_ComputingDelay_FUN_005a7100
+//   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
 //   sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
@@ -26,22 +26,22 @@
 undefined4 sound_sndmain_cpp_CallComputingDelay2_FUN_005a9ae0(void)
 
 {
-  int iVar1;
-  undefined4 uVar2;
+  CSfxSlot *this_ptr;
+  undefined4 uVar1;
   undefined4 in_stack_00000008;
   
-  iVar1 = sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
-  if (iVar1 == 0) {
+  this_ptr = (CSfxSlot *)sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
+  if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }
-  uVar2 = 1;
-  *(undefined4 *)(iVar1 + 0x44) = in_stack_00000008;
-  sound_sndmain_cpp_ComputingDelay_FUN_005a7100();
-  if ((*(int *)(iVar1 + 0x70) != 0) && (g_CSoundInstance != (CSound *)0x0)) {
-    uVar2 = (*(code *)g_CSoundInstance->vtable[1].func2)();
+  uVar1 = 1;
+  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x30) = in_stack_00000008;
+  sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr);
+  if ((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundInstance != (CSound *)0x0)) {
+    uVar1 = (*(code *)g_CSoundInstance->vtable[1].func2)();
   }
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
-  return uVar2;
+  return uVar1;
 }
 
 
@@ -70,7 +70,7 @@ undefined4 sound_sndmain_cpp_CallComputingDelay2_FUN_005a9ae0(void)
 // 005a9b00: PUSH EBX
 // 005a9b01: MOV ESI,0x1
 // 005a9b06: MOV dword ptr [EBX + 0x44],EAX
-// 005a9b09: CALL sound_sndmain.cpp_ComputingDelay_FUN_005a7100
+// 005a9b09: CALL sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
 //   XREF to: 005a7100 (UNCONDITIONAL_CALL)
 // 005a9b0e: MOV ECX,dword ptr [EBX + 0x70]
 // 005a9b11: ADD ESP,0x8

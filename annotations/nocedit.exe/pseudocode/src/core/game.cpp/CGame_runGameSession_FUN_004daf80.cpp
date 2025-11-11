@@ -119,8 +119,8 @@
 //   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
 //   core_set.cpp_CDemonSet_setGamma_FUN_00570d60
 //   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
-//   core_sound.cpp_FUN_005b2dd0
-//   core_sound.cpp_FUN_005b2f70
+//   core_sound.cpp_CSound_FUN_005b2dd0
+//   core_sound.cpp_CSound_FUN_005b2f70
 //   crt_env.c_getenv_FUN_006013f0
 //   engine_2d.c_clearInputAndWait_FUN_00403260
 //   engine_console.cpp_CConsole_printf_FUN_00441890
@@ -362,7 +362,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
             g_CheatSystemEnabled = 1;
           }
           else {
-            core_sound_cpp_FUN_005b2f70();
+            core_sound_cpp_CSound_FUN_005b2f70(g_CSoundPtr);
             shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff790);
             pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Return");
             in_stack_fffff830 = (SCollisionInfo *)0x4db785;
@@ -431,7 +431,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
             }
             engine_2d_c_clearInputAndWait_FUN_00403260();
             if (this_ptr->cutscene_skippable == 0) {
-              core_sound_cpp_FUN_005b2dd0();
+              core_sound_cpp_CSound_FUN_005b2dd0(g_CSoundPtr);
             }
             in_stack_fffff88c = (SCollisionInfo *)0x0;
             *(int *)(g_HeroActors[g_LocalHeroIndex]->field3_0xbe2c + 0x13908) = this_ptr->aim_mode;
@@ -512,7 +512,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       if (this_ptr->need_chapter_reload != 0) break;
       if (local_18 != 0) {
         local_18 = this_ptr->need_chapter_reload;
-        core_sound_cpp_FUN_005b2dd0();
+        core_sound_cpp_CSound_FUN_005b2dd0(g_CSoundPtr);
       }
     }
     local_1c = 0;
@@ -544,7 +544,7 @@ LAB_004db434:
   this_ptr->player_pos_x = fVar6;
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\game.cpp",0x683);
   engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,0);
-  core_sound_cpp_FUN_005b2f70();
+  core_sound_cpp_CSound_FUN_005b2f70(g_CSoundPtr);
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(this_ptr);
   (*g_CKeysPtr->vtable[1].isKeyDown)(g_CKeysPtr,in_stack_fffff8d8);
   core_set_cpp_CDemonSet_FUN_0056d2d0(g_CDemonSetPtr);
@@ -1120,7 +1120,7 @@ LAB_004db434:
 //   XREF to: 00681ef8 (READ)
 // 004db53a: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
-// 004db53b: CALL core_sound.cpp_FUN_005b2f70
+// 004db53b: CALL core_sound.cpp_CSound_FUN_005b2f70
 //   XREF to: 005b2f70 (UNCONDITIONAL_CALL)
 // 004db540: ADD ESP,0x4
 // 004db543: MOV EAX,dword ptr [EBP + 0x14]
@@ -1357,7 +1357,7 @@ LAB_004db434:
 //   XREF to: 00681ef8 (READ)
 // 004db753: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 004db754: CALL core_sound.cpp_FUN_005b2f70
+// 004db754: CALL core_sound.cpp_CSound_FUN_005b2f70
 //   XREF to: 005b2f70 (UNCONDITIONAL_CALL)
 // 004db759: ADD ESP,0x4
 // 004db75c: LEA EAX,[EBP + 0xfffff7a0]
@@ -1607,7 +1607,7 @@ LAB_004db434:
 //   XREF to: 00681ef8 (READ)
 // 004db97c: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 004db97d: CALL core_sound.cpp_FUN_005b2dd0
+// 004db97d: CALL core_sound.cpp_CSound_FUN_005b2dd0
 //   XREF to: 005b2dd0 (UNCONDITIONAL_CALL)
 // 004db982: ADD ESP,0x4
 // 004db985: MOV EDX,dword ptr [0x02db87d0]
@@ -1853,7 +1853,7 @@ LAB_004db434:
 //   XREF to: 03f6af64 (DATA)
 // 004dbb9e: MOV dword ptr [EBP + -0x8],ESI
 //   XREF to: Stack[-0x18] (WRITE)
-// 004dbba1: CALL core_sound.cpp_FUN_005b2dd0
+// 004dbba1: CALL core_sound.cpp_CSound_FUN_005b2dd0
 //   XREF to: 005b2dd0 (UNCONDITIONAL_CALL)
 // 004dbba6: ADD ESP,0x4
 // 004dbba9: JMP 0x004db357

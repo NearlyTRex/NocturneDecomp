@@ -5,8 +5,8 @@
 // Signature: undefined sound_sndmain.cpp_FUN_005aa020()
 // Cross-references:
 //   core_setedit.cpp_DementedFogEditor_FUN_00580730 (00580730) at 00580f97 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b38e2 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b1870 (005b1870) at 005b19ab [UNCONDITIONAL_CALL]
-//   core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830 (005b3830) at 005b38e2 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005aae00 (005aae00) at 005aae3d [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005ad3b0 (005ad3b0) at 005ad416 [UNCONDITIONAL_CALL]
 // Globals:
@@ -19,9 +19,6 @@
 //   CSound* g_CSoundInstance
 
 #include "nocturne.h"
-
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005aa020(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6) */
 
 void sound_sndmain_cpp_FUN_005aa020(void)
 

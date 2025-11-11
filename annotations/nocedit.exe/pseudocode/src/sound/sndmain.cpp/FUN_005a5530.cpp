@@ -4,12 +4,12 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005a5530()
 // Cross-references:
-//   sound_sndmain.cpp_SfxSlot_kill_2_FUN_005aca90 (005aca90) at 005acaf9 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_kill_FUN_005acdb0 (005acdb0) at 005acdc4 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_kill_FUN_005acdb0 (005acdb0) at 005acdc4 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005aca90 (005aca90) at 005acaf9 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0064fab7
+//   double DOUBLE_0064fab7 = 0.5
 //   int g_AudioChannels = 0x2
-//   undefined4 DAT_00681b38
+//   double DOUBLE_00681b38 = 1
 //   undefined4 DAT_03f68830
 //   undefined4 DAT_03f68838
 //   undefined4 DAT_03f68840
@@ -41,7 +41,7 @@ void sound_sndmain_cpp_FUN_005a5530(void)
   dVar2 = _DAT_03f68838;
   dVar1 = _DAT_03f68830;
   if (g_AudioChannels == 2) {
-    dVar1 = _DAT_00681b38 * _DAT_0064fab7;
+    dVar1 = DOUBLE_00681b38 * DOUBLE_0064fab7;
     DAT_03f69328 = _DAT_03f68830 - _DAT_03f68860 * dVar1;
     DAT_03f69368 = _DAT_03f68838 - _DAT_03f68868 * dVar1;
     DAT_03f693a8 = _DAT_03f68840 - _DAT_03f68870 * dVar1;

@@ -89,7 +89,7 @@
 //   core_skeledit.cpp_FUN_0058a2b0 (0058a2b0) at 0058a369 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260 (0058a260) at 0058a27f [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_viewModel_FUN_00598fc0 (00598fc0) at 005993eb [UNCONDITIONAL_CALL]
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b2501 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b2501 [UNCONDITIONAL_CALL]
 //   core_texlist.cpp_CTextureList_save_FUN_005dc0d0 (005dc0d0) at 005dc1a1 [UNCONDITIONAL_CALL]
 //   core_vehicle.cpp_CVehicle_FUN_005e8d00 (005e8d00) at 005e8d14 [UNCONDITIONAL_CALL]
 //   engine_console.cpp_CConsole_printf_FUN_00441890 (00441890) at 00441947 [UNCONDITIONAL_CALL]

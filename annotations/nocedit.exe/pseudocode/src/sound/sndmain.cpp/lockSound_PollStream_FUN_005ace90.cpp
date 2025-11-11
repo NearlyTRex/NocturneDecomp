@@ -10,12 +10,12 @@
 //   undefined4 DAT_0065109f
 //   undefined4 DAT_006510a7
 //   undefined4 DAT_00663164
-//   SfxSample[64] DAT_03f6282c
+//   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f629ac
 //   undefined4 DAT_03f6882c
 // Function calls:
+//   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
-//   sound_sndmain.cpp_SfxSlot_pollStream_FUN_005a6730
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
@@ -26,14 +26,17 @@
 void sound_sndmain_cpp_lockSound_PollStream_FUN_005ace90(void)
 
 {
-  SfxSample *pSVar1;
+  CSfxSlot *extraout_EAX;
+  CSfxSlot *this_ptr;
+  CSfxSample *pCVar1;
   
   sound_sndmain_cpp_lockSound_FUN_005abd30();
-  pSVar1 = DAT_03f6282c;
+  pCVar1 = g_SfxSamples;
+  this_ptr = extraout_EAX;
   do {
-    sound_sndmain_cpp_SfxSlot_pollStream_FUN_005a6730();
-    pSVar1 = pSVar1 + 1;
-  } while (pSVar1 != (SfxSample *)&DAT_03f6882c);
+    this_ptr = (CSfxSlot *)sound_sndmain_cpp_CSfxSlot_pollStream_FUN_005a6730(this_ptr);
+    pCVar1 = pCVar1 + 1;
+  } while (pCVar1 != (CSfxSample *)&DAT_03f6882c);
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return;
 }
@@ -82,7 +85,7 @@ void sound_sndmain_cpp_lockSound_PollStream_FUN_005ace90(void)
 // 005acedd: PUSH EBX
 //   XREF to: 03f6282c (DATA)
 //   XREF to: 03f629ac (DATA)
-// 005acede: CALL sound_sndmain.cpp_SfxSlot_pollStream_FUN_005a6730
+// 005acede: CALL sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730
 //   XREF to: 005a6730 (UNCONDITIONAL_CALL)
 // 005acee3: ADD EBX,0x180
 //   XREF to: 03f629ac (PARAM)

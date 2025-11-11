@@ -1,24 +1,24 @@
 // Name: core_sound.cpp_FUN_005b1870
 // Address: 005b1870
 // Address Range: [[005b1870, 005b1ec6]]
-// Convention: unknown
-// Signature: undefined core_sound.cpp_FUN_005b1870()
+// Convention: __cdecl
+// Signature: void core_sound.cpp_FUN_005b1870(void)
 // Cross-references:
-//   core_sound.cpp_FUN_005b2dd0 (005b2dd0) at 005b2e0d [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2fd0 (005b2fd0) at 005b300f [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2e0d [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b300f [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_castle_00652506
-//   undefined4 DAT_0065250e
-//   undefined4 DAT_00652516
-//   undefined4 DAT_0065251e
-//   undefined4 DAT_00652526
-//   undefined4 DAT_0065252e
-//   undefined4 DAT_00652532
-//   undefined4 DAT_00652536
-//   undefined4 DAT_0065253e
-//   undefined4 DAT_00652546
-//   undefined4 DAT_0065254e
-//   undefined4 DAT_00652556
+//   double DOUBLE_0065250e = 0.000100000000000000
+//   double DOUBLE_00652516 = 0.00390625
+//   double DOUBLE_0065251e = 0.0200000000000000
+//   double DOUBLE_00652526 = 0.0166666666666667
+//   float FLOAT_0065252e = 0.015625
+//   float FLOAT_00652532 = 0.3000000
+//   double DOUBLE_00652536 = 50
+//   double DOUBLE_0065253e = -50
+//   double DOUBLE_00652546 = 60
+//   double DOUBLE_0065254e = -60
+//   float FLOAT_00652556 = 0.2000000
 //   CGame* g_CGamePtr = 02d81a9c
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 g_CDemonLightInstance.base.base.position.x
@@ -53,9 +53,8 @@
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 core_sound.cpp_FUN_005b1870() */
 
-void core_sound_cpp_FUN_005b1870(void)
+void __cdecl core_sound_cpp_FUN_005b1870(void)
 
 {
   float fVar1;
@@ -116,7 +115,7 @@ void core_sound_cpp_FUN_005b1870(void)
     local_6c._8_4_ = (float)local_c8.y - DAT_03f6af78;
     if (SQRT((float)local_6c._8_4_ * (float)local_6c._8_4_ +
              (float)local_6c._0_4_ * (float)local_6c._0_4_ +
-             (float)local_6c._4_4_ * (float)local_6c._4_4_) < (float)_DAT_0065250e) {
+             (float)local_6c._4_4_ * (float)local_6c._4_4_) < (float)DOUBLE_0065250e) {
       return;
     }
     pCVar8 = &g_CDemonCameraInstance.base.rotation_matrix;
@@ -207,7 +206,7 @@ void core_sound_cpp_FUN_005b1870(void)
             (&local_70)[(uint)bVar11 * -2] = (&local_30)[(uint)bVar11 * -2];
             *(undefined4 *)(local_6c + (uint)bVar11 * -8 + (uint)bVar11 * -8) =
                  *(undefined4 *)((int)&local_2c + (uint)bVar11 * -8 + (uint)bVar11 * -8);
-            fVar1 = (float)_DAT_00652516;
+            fVar1 = (float)DOUBLE_00652516;
             local_6c._8_4_ = (float)local_70 * fVar1;
             local_5c = (float)(int)local_6c._4_4_ * fVar1;
             local_78 = (float)(int)local_6c._0_4_ * fVar1 - local_a8[0].x;
@@ -215,9 +214,10 @@ void core_sound_cpp_FUN_005b1870(void)
             local_74 = local_5c - local_a8[0].y;
             fVar3 = SQRT(local_74 * local_74 + local_7c * local_7c + local_78 * local_78);
             dStack_150 = (double)fVar3;
-            if ((float)_DAT_00652536 < fVar3) {
-              uStack_144 = (double)CONCAT44((fVar3 + (float)_DAT_0065253e) * (float)_DAT_0065251e +
-                                            uStack_144._4_4_,(float)uStack_144);
+            if ((float)DOUBLE_00652536 < fVar3) {
+              uStack_144 = (double)CONCAT44((fVar3 + (float)DOUBLE_0065253e) *
+                                            (float)DOUBLE_0065251e + uStack_144._4_4_,
+                                            (float)uStack_144);
             }
             in_stack_fffffeac = (CVector3f *)(local_6c + 8);
             local_60 = (float)(int)local_6c._0_4_ * fVar1 + 1.0;
@@ -226,8 +226,8 @@ void core_sound_cpp_FUN_005b1870(void)
                               (g_CDemonSetPtr,in_stack_fffffeac);
             fVar3 = fVar3 - local_5c;
             uStack_144 = (double)fVar3;
-            if ((float)_DAT_00652546 < fVar3) {
-              fStack_13c = (fVar3 + (float)_DAT_0065254e) * (float)_DAT_00652526 + fStack_13c;
+            if ((float)DOUBLE_00652546 < fVar3) {
+              fStack_13c = (fVar3 + (float)DOUBLE_0065254e) * (float)DOUBLE_00652526 + fStack_13c;
             }
           }
           else {
@@ -235,13 +235,13 @@ void core_sound_cpp_FUN_005b1870(void)
             uStack_144 = (double)CONCAT44(uStack_144._4_4_,0x3f800000);
           }
           if (0.0 < fStack_148) {
-            fStack_148 = fStack_148 + _DAT_00652556;
+            fStack_148 = fStack_148 + FLOAT_00652556;
           }
           fStack_148 = fStack_148 * fStack_148;
           if (1.0 < fStack_148) {
             fStack_148 = 1.0;
           }
-          _DAT_03f6af7c = fStack_148 * _DAT_0065252e + _DAT_03f6af7c;
+          _DAT_03f6af7c = fStack_148 * FLOAT_0065252e + _DAT_03f6af7c;
           iVar7 = iVar7 + 2;
         } while (iVar7 != 0x21);
         iVar4 = iVar4 + 2;
@@ -249,7 +249,7 @@ void core_sound_cpp_FUN_005b1870(void)
     }
     _DAT_03f6af7c = _DAT_03f6af7c * _DAT_03f6af7c;
     if (0.0 < _DAT_03f6af7c) {
-      _DAT_03f6af7c = _DAT_03f6af7c + _DAT_00652532;
+      _DAT_03f6af7c = _DAT_03f6af7c + FLOAT_00652532;
     }
     if (1.0 < _DAT_03f6af7c) {
       _DAT_03f6af7c = 1.0;

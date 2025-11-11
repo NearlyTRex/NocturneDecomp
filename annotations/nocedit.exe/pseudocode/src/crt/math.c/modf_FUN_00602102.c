@@ -6,7 +6,7 @@
 // Cross-references:
 //   crt_math.c_floor_FUN_005feb90 (005feb90) at 005feba3 [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0 (005304f0) at 00530788 [UNCONDITIONAL_CALL]
-//   sound_mp3.cpp_FUN_00530400 (00530400) at 00530471 [UNCONDITIONAL_CALL]
+//   sound_mp3.cpp_initializeSynthesisDctTable_FUN_00530400 (00530400) at 00530471 [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_math.c_round_FUN_005fe6b0
 

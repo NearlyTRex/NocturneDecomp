@@ -6,14 +6,14 @@
 // Cross-references:
 //   sound_sndmain.cpp_FUN_005aa360 (005aa360) at 005aa3b4 [UNCONDITIONAL_CALL]
 // Globals:
-//   SfxSlot[64] g_SfxSlots
+//   CSfxSlot[64] g_SfxSlots
 //   undefined4 DAT_03f5db1c
 //   undefined4 g_SfxSlots[1].status
 //   undefined4 DAT_03f5dc44
 // Function calls:
 //   crt_string.c_stricmp_FUN_005fe7f0
+//   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
-//   sound_sndmain.cpp_SfxSlot_kill_FUN_005a7e60
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
@@ -28,12 +28,12 @@ void sound_sndmain_cpp_FUN_005aa2f0(void)
   sound_sndmain_cpp_lockSound_FUN_005abd30();
   iVar2 = 0;
   do {
-    if (*(char **)(g_SfxSlots[0].field_124 + iVar2 + -4) != (char *)0x0) {
+    if (*(char **)(g_SfxSlots[0].field4_0x7c + iVar2 + -4) != (char *)0x0) {
       iVar1 = crt_string_c_stricmp_FUN_005fe7f0
-                        (*(char **)(g_SfxSlots[0].field_124 + iVar2 + -4),in_stack_00000004);
+                        (*(char **)(g_SfxSlots[0].field4_0x7c + iVar2 + -4),in_stack_00000004);
       if (iVar1 == 0) {
-        sound_sndmain_cpp_SfxSlot_kill_FUN_005a7e60
-                  ((SfxSlot *)(g_SfxSlots[0].field_20 + iVar2 + -0x14));
+        sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60
+                  ((CSfxSlot *)(g_SfxSlots[0].options.field5_0x14 + iVar2 + -0x14));
       }
     }
     iVar2 = iVar2 + 0x128;
@@ -83,7 +83,7 @@ void sound_sndmain_cpp_FUN_005aa2f0(void)
 // 005aa330: ADD EAX,EBX
 // 005aa332: PUSH EAX
 //   XREF to: 03f5dbcc (DATA)
-// 005aa333: CALL sound_sndmain.cpp_SfxSlot_kill_FUN_005a7e60
+// 005aa333: CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
 //   XREF to: 005a7e60 (UNCONDITIONAL_CALL)
 // 005aa338: ADD ESP,0x4
 // 005aa33b: JMP 0x005aa307

@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_spike.cpp_FUN_005b8e90()
 // Globals:
-//   undefined4 s_Model_file_(.kfm)_00652ecc
+//   TerminatedCString s_Model_file_kfm_00652ecc
 //   TerminatedCString s_Type_00652ef7
 //   TerminatedCString s_State_00652f24
 //   TerminatedCString s_Are_we_active_00652f2a

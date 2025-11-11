@@ -26,8 +26,8 @@ void sound_sndmain_cpp_FUN_005aae00(void)
   
   iVar1 = 0;
   do {
-    sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0();
-    sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20();
+    sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(iVar1,1.0);
+    sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(iVar1);
     iVar1 = iVar1 + 1;
   } while (iVar1 < 0x20);
   sound_sndmain_cpp_FUN_005aa240();

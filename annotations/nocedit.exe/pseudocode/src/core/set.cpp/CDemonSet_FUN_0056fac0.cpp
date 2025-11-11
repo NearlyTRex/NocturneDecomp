@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: float core_set.cpp_CDemonSet_FUN_0056fac0(CDemonSet * this_ptr)
 // Cross-references:
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b20f2 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b20f2 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
 

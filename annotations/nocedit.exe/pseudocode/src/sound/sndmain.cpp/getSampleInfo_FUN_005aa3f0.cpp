@@ -1,10 +1,10 @@
 // Name: sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0
 // Address: 005aa3f0
 // Address Range: [[005aa3f0, 005aa652]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0()
+// Convention: __cdecl
+// Signature: int sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0(char * filename)
 // Cross-references:
-//   core_sound.cpp_GetSampleInfo_FUN_005b3ba0 (005b3ba0) at 005b3bd5 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b3ba0 (005b3ba0) at 005b3bd5 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005ad3b0 (005ad3b0) at 005ad3ec [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_00650b55
@@ -18,14 +18,14 @@
 //   TerminatedCString s_Unknown_sample_file_form_00650bab
 //   TerminatedCString s_sound_sndmain_cpp_00650bd4
 //   TerminatedCString s_getSampleInfo_can_t_dete_00650be9
-//   WatcomStaticDestructorNode DAT_00681af4
+//   WatcomStaticDestructorNode g_CMP3DecoderDestructorNode
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   undefined4 DAT_03f55248
-//   undefined4 DAT_03f55348
-//   undefined4 DAT_03f5534c
+//   CMP3Decoder g_CMP3DecoderInstance
+//   undefined4 g_CMP3DecoderInstance.sample_rate
+//   undefined4 g_CMP3DecoderInstance.num_channels
 //   undefined1 DAT_03f5d878
-//   SfxSample[64] DAT_03f6282c
+//   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f6293c
 //   undefined4 DAT_03f629ac
 //   undefined4 DAT_03f629b0
@@ -50,82 +50,77 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_getSampleInfo(undefined4 param_1) */
-
-undefined4 sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(void)
+int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(char *filename)
 
 {
-  undefined4 uVar1;
-  int iVar2;
+  int iVar1;
   FILE *file_handle;
-  uint uVar3;
+  uint uVar2;
   BADSPACEBASE *in_ESP;
-  int iVar4;
-  char *pcVar5;
-  byte bVar6;
-  char *in_stack_00000004;
-  char cVar7;
+  int iVar3;
+  char *pcVar4;
+  byte bVar5;
+  char cVar6;
   undefined4 in_stack_fffffefc;
   
-  bVar6 = 0;
+  bVar5 = 0;
   sound_sndmain_cpp_lockSound_FUN_005abd30();
-  iVar4 = 0;
+  iVar3 = 0;
   do {
-    if (0 < *(int *)(DAT_03f6282c[0].field_292 + iVar4 + -0x14)) {
-      iVar2 = crt_string_c_stricmp_FUN_005fe7f0(DAT_03f6282c[0].name + iVar4,in_stack_00000004);
-      if (iVar2 == 0) {
-        pcVar5 = DAT_03f6282c[0].name + iVar4;
-        for (iVar2 = 0x54; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *(undefined4 *)in_stack_00000004 = *(undefined4 *)pcVar5;
-          pcVar5 = pcVar5 + (uint)bVar6 * -8 + 4;
-          in_stack_00000004 = in_stack_00000004 + (uint)bVar6 * -8 + 4;
+    if (0 < *(int *)(g_SfxSamples[0].sample_info.field5_0x110 + iVar3 + -4)) {
+      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(g_SfxSamples[0].name + iVar3,filename);
+      if (iVar1 == 0) {
+        pcVar4 = g_SfxSamples[0].name + iVar3;
+        for (iVar1 = 0x54; iVar1 != 0; iVar1 = iVar1 + -1) {
+          *(undefined4 *)filename = *(undefined4 *)pcVar4;
+          pcVar4 = pcVar4 + (uint)bVar5 * -8 + 4;
+          filename = filename + (uint)bVar5 * -8 + 4;
         }
         sound_sndmain_cpp_unlockSound_FUN_005abdc0();
         return 1;
       }
     }
-    cVar7 = (char)in_stack_fffffefc;
-    iVar4 = iVar4 + 0x180;
-  } while (iVar4 < 0x6000);
+    cVar6 = (char)in_stack_fffffefc;
+    iVar3 = iVar3 + 0x180;
+  } while (iVar3 < 0x6000);
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
-  iVar4 = engine_dosio_c_getFileSize_FUN_00481880("sound",in_stack_00000004);
-  if (0 < iVar4) {
+  iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",filename);
+  if (0 < iVar3) {
     engine_dosio_c_splitPath_FUN_00481f20
-              (in_stack_00000004,(char *)0x0,(char *)0x0,(char *)0x0,&stack0xfffffef8);
-    if (cVar7 == '.') {
-      uVar3 = 0xffffffff;
-      pcVar5 = &stack0xfffffefc;
+              (filename,(char *)0x0,(char *)0x0,(char *)0x0,&stack0xfffffef8);
+    if (cVar6 == '.') {
+      uVar2 = 0xffffffff;
+      pcVar4 = &stack0xfffffefc;
       do {
-        if (uVar3 == 0) break;
-        uVar3 = uVar3 - 1;
-        cVar7 = *pcVar5;
-        pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
-      } while (cVar7 != '\0');
-      crt_string_c_memmove_FUN_005fe5e0(&stack0xfffffefc,&stack0xfffffefd,~uVar3 - 1);
+        if (uVar2 == 0) break;
+        uVar2 = uVar2 - 1;
+        cVar6 = *pcVar4;
+        pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
+      } while (cVar6 != '\0');
+      crt_string_c_memmove_FUN_005fe5e0(&stack0xfffffefc,&stack0xfffffefd,~uVar2 - 1);
     }
-    iVar4 = crt_string_c_stricmp_FUN_005fe7f0(&stack0xffffff00,"wav");
-    if (iVar4 != 0) {
-      iVar4 = crt_string_c_stricmp_FUN_005fe7f0(&stack0xffffff04,"mp3");
-      if (iVar4 == 0) {
+    iVar3 = crt_string_c_stricmp_FUN_005fe7f0(&stack0xffffff00,"wav");
+    if (iVar3 != 0) {
+      iVar3 = crt_string_c_stricmp_FUN_005fe7f0(&stack0xffffff04,"mp3");
+      if (iVar3 == 0) {
         if ((DAT_03f5d878 & 1) == 0) {
           DAT_03f5d878 = DAT_03f5d878 | 1;
-          sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0((CMP3Decoder *)&DAT_03f55248);
-          crt_stdlib_c_atexit_FUN_005ff060(&DAT_00681af4);
+          sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(&g_CMP3DecoderInstance);
+          crt_stdlib_c_atexit_FUN_005ff060(&g_CMP3DecoderDestructorNode);
         }
-        sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550
-                  ((CMP3Decoder *)&DAT_03f55248,in_stack_00000004);
-        in_stack_00000004[0x104] = '\x10';
-        in_stack_00000004[0x105] = '\0';
-        in_stack_00000004[0x106] = '\0';
-        in_stack_00000004[0x107] = '\0';
-        *(undefined4 *)(in_stack_00000004 + 0x108) = DAT_03f5534c;
-        uVar1 = DAT_03f55348;
-        in_stack_00000004[0x110] = -1;
-        in_stack_00000004[0x111] = -1;
-        in_stack_00000004[0x112] = -1;
-        in_stack_00000004[0x113] = -1;
-        *(undefined4 *)(in_stack_00000004 + 0x10c) = uVar1;
-        sound_mp3_cpp_CMP3Decoder_free_FUN_005349e0((CMP3Decoder *)&DAT_03f55248);
+        sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(&g_CMP3DecoderInstance,filename);
+        filename[0x104] = '\x10';
+        filename[0x105] = '\0';
+        filename[0x106] = '\0';
+        filename[0x107] = '\0';
+        *(int *)(filename + 0x108) = g_CMP3DecoderInstance.num_channels;
+        iVar3 = g_CMP3DecoderInstance.sample_rate;
+        filename[0x110] = -1;
+        filename[0x111] = -1;
+        filename[0x112] = -1;
+        filename[0x113] = -1;
+        *(int *)(filename + 0x10c) = iVar3;
+        sound_mp3_cpp_CMP3Decoder_free_FUN_005349e0(&g_CMP3DecoderInstance);
       }
       else {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -134,7 +129,7 @@ undefined4 sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(void)
       }
 LAB_005aa53c:
       sound_sndmain_cpp_CalculateDistanceMaybe_FUN_005a45c0();
-      if (*(int *)(in_stack_00000004 + 0x110) < 1) {
+      if (*(int *)(filename + 0x110) < 1) {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
         g_CurrentLineNumber = 0x10de;
         core_main_c_displayErrorAndQuit_FUN_00506f10("getSampleInfo - can't determine length for %s");
@@ -142,12 +137,11 @@ LAB_005aa53c:
       }
       return 1;
     }
-    file_handle = engine_dosio_c_getFile_FUN_00481a50
-                            ("sound",in_stack_00000004,"rb");
+    file_handle = engine_dosio_c_getFile_FUN_00481a50("sound",filename,"rb");
     if (file_handle != (FILE *)0x0) {
       crt_stdio_c_ftell_FUN_00601560(file_handle);
-      iVar4 = sound_sndmain_cpp_WavReadingFunc1_FUN_005a3fe0();
-      if (iVar4 != 0) {
+      iVar3 = sound_sndmain_cpp_WavReadingFunc1_FUN_005a3fe0();
+      if (iVar3 != 0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\sound\\sndmain.cpp",0x10ba);
         goto LAB_005aa53c;
       }

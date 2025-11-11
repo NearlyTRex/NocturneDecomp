@@ -52,8 +52,8 @@
 //   sound_mp3.cpp_CFileBitStream_fillBuffer_FUN_0052ec40 (0052ec40) at 0052ec87 [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_CFileBitStream_readBit_FUN_0052ee50 (0052ee50) at 0052eee0 [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40 (0052ef40) at 0052f076 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a6c7a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a4f8e [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a6c7a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_WavReadingFunc1_FUN_005a3fe0 (005a3fe0) at 005a4085 [UNCONDITIONAL_CALL]
 // Globals:
 //   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434

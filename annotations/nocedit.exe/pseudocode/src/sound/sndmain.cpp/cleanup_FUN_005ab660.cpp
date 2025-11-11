@@ -9,14 +9,14 @@
 //   sound_sndmain.cpp_allocBuffers_FUN_005ab5b0 (005ab5b0) at 005ab5b1 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005abf61 [UNCONDITIONAL_CALL]
 // Globals:
-//   SfxSample[64] DAT_03f6282c
+//   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f629ac
 //   undefined4 DAT_03f6882c
 //   CSound* g_CSoundInstance
 //   undefined4 DAT_03f69270
 // Function calls:
 //   sound_sndmain.cpp_cleanup_FUN_005ab130
-//   sound_sndmain.cpp_SfxSample_freeMemory_FUN_005a62c0
+//   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
 
 #include "nocturne.h"
 
@@ -26,15 +26,15 @@ int sound_sndmain_cpp_cleanup_FUN_005ab660(void)
 
 {
   int iVar1;
-  SfxSample *sample;
+  CSfxSample *this_ptr;
   
   iVar1 = sound_sndmain_cpp_cleanup_FUN_005ab130();
   if (iVar1 != 0) {
-    sample = DAT_03f6282c;
+    this_ptr = g_SfxSamples;
     do {
-      sound_sndmain_cpp_SfxSample_freeMemory_FUN_005a62c0(sample);
-      sample = sample + 1;
-    } while (sample != (SfxSample *)&DAT_03f6882c);
+      sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(this_ptr);
+      this_ptr = this_ptr + 1;
+    } while (this_ptr != (CSfxSample *)&DAT_03f6882c);
     if (g_CSoundInstance == (CSound *)0x0) {
       iVar1 = 1;
     }
@@ -68,7 +68,7 @@ int sound_sndmain_cpp_cleanup_FUN_005ab660(void)
 //   Label: LAB_005ab676
 //   XREF to: 03f6282c (DATA)
 //   XREF to: 03f629ac (DATA)
-// 005ab677: CALL sound_sndmain.cpp_SfxSample_freeMemory_FUN_005a62c0
+// 005ab677: CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
 //   XREF to: 005a62c0 (UNCONDITIONAL_CALL)
 // 005ab67c: ADD EBX,0x180
 // 005ab682: ADD ESP,0x4

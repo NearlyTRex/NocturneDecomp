@@ -4,12 +4,10 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005a39a0()
 // Globals:
-//   undefined4 DAT_0064f397
-//   undefined4 DAT_0064f39f
+//   double DOUBLE_0064f397 = 2
+//   double DOUBLE_0064f39f = 3.14159265350000
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void sound_sndmain_cpp_FUN_005a39a0(void)
 
@@ -76,10 +74,10 @@ void sound_sndmain_cpp_FUN_005a39a0(void)
   if (1 < in_stack_00000014) {
     do {
       iVar10 = local_24 / 2;
-      fVar18 = (float10)_DAT_0064f39f / (float10)iVar10;
+      fVar18 = (float10)DOUBLE_0064f39f / (float10)iVar10;
       fVar3 = (float10)fcos(fVar18);
       fVar19 = (float10)fsin(fVar18);
-      fVar20 = (float10)_DAT_0064f397;
+      fVar20 = (float10)DOUBLE_0064f397;
       fVar18 = fVar18 * fVar20;
       fVar21 = (float10)fsin(fVar18);
       fVar18 = (float10)fcos(fVar18);

@@ -4,15 +4,15 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005aa360()
 // Globals:
-//   SfxSample[64] DAT_03f6282c
+//   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f62980
 //   undefined4 DAT_03f629ac
 //   undefined4 DAT_03f62b00
 // Function calls:
 //   crt_string.c_stricmp_FUN_005fe7f0
+//   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
 //   sound_sndmain.cpp_FUN_005aa2f0
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
-//   sound_sndmain.cpp_SfxSample_freeMemory_FUN_005a62c0
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
@@ -31,11 +31,11 @@ void sound_sndmain_cpp_FUN_005aa360(void)
   }
   iVar2 = 0;
   do {
-    if (*(int *)(DAT_03f6282c[0].field_160 + iVar2 + -0xc) == 0) {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(DAT_03f6282c[0].name + iVar2,in_stack_00000004);
+    if (*(int *)(g_SfxSamples[0].field8_0x160 + iVar2 + -0xc) == 0) {
+      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(g_SfxSamples[0].name + iVar2,in_stack_00000004);
       if (iVar1 == 0) {
-        sound_sndmain_cpp_SfxSample_freeMemory_FUN_005a62c0
-                  ((SfxSample *)(DAT_03f6282c[0].name + iVar2));
+        sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0
+                  ((CSfxSample *)(g_SfxSamples[0].name + iVar2));
       }
     }
     iVar2 = iVar2 + 0x180;
@@ -81,7 +81,7 @@ void sound_sndmain_cpp_FUN_005aa360(void)
 //   XREF to: 005aa39c (CONDITIONAL_JUMP)
 // 005aa393: PUSH ESI
 //   XREF to: 03f6282c (DATA)
-// 005aa394: CALL sound_sndmain.cpp_SfxSample_freeMemory_FUN_005a62c0
+// 005aa394: CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
 //   XREF to: 005a62c0 (UNCONDITIONAL_CALL)
 // 005aa399: ADD ESP,0x4
 // 005aa39c: ADD EBX,0x180

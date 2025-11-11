@@ -20,14 +20,14 @@
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512863 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_0055ff00 (0055ff00) at 0056005f [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_DementedFogEditor_FUN_00580730 (00580730) at 00581106 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2ea5 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b3384 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b3938 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_FUN_005b3ae0 (005b3ae0) at 005b3ae5 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_FUN_005b3b30 (005b3b30) at 005b3b31 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b21bd [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b2770 (005b2770) at 005b288e [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2dd0 (005b2dd0) at 005b2ea5 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2fd0 (005b2fd0) at 005b3384 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b3aa0 (005b3aa0) at 005b3aa1 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830 (005b3830) at 005b3938 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b21bd [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bdc67 [UNCONDITIONAL_CALL]
 //   core_tommygun.cpp_CTommyGun_process_FUN_005de360 (005de360) at 005de510 [UNCONDITIONAL_CALL]
 //   core_vehicle.cpp_FUN_005e8b50 (005e8b50) at 005e8b59 [UNCONDITIONAL_CALL]
@@ -42,7 +42,7 @@
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 //   undefined4 g_SfxLastSlot
-//   SfxOptions[8] DAT_03f624a8
+//   CSfxOptions[8] g_SfxOptions
 //   undefined4 g_SfxLastSlot.volume
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -56,8 +56,8 @@ void sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30
 
 {
   int iVar1;
-  SfxOptions *pSVar2;
-  SfxOptions *pSVar3;
+  CSfxOptions *pCVar2;
+  CSfxOptions *pCVar3;
   byte bVar4;
   
   bVar4 = 0;
@@ -67,12 +67,12 @@ void sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30
     g_CurrentLineNumber = 0xd20;
     core_main_c_displayErrorAndQuit_FUN_00506f10("pushSfxOptions - stack full",unaff_EBX);
   }
-  pSVar2 = DAT_03f624a8 + g_SfxLastSlot + -1;
-  pSVar3 = DAT_03f624a8 + g_SfxLastSlot;
+  pCVar2 = g_SfxOptions + g_SfxLastSlot + -1;
+  pCVar3 = g_SfxOptions + g_SfxLastSlot;
   for (iVar1 = 0x1c; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(undefined4 *)pSVar3->field0_0x0 = *(undefined4 *)pSVar2->field0_0x0;
-    pSVar2 = (SfxOptions *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);
-    pSVar3 = (SfxOptions *)((int)pSVar3 + ((uint)bVar4 * -2 + 1) * 4);
+    pCVar3->status = pCVar2->status;
+    pCVar2 = (CSfxOptions *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+    pCVar3 = (CSfxOptions *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
   return;
 }

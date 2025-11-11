@@ -4,9 +4,9 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005a5620()
 // Globals:
-//   undefined4 s_allocateHwSample_-_failed_0064fabf
+//   TerminatedCString s_allocateHwSample_failed_0064fabf
 //   undefined4 DAT_03f62828
-//   SfxSample[64] DAT_03f6282c
+//   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f62980
 //   undefined4 DAT_03f629ac
 //   undefined4 DAT_03f62afc
@@ -14,8 +14,8 @@
 //   undefined4 DAT_03f62b04
 //   CSound* g_CSoundInstance
 // Function calls:
+//   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
 //   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
-//   sound_sndmain.cpp_SfxSample_freeMemory_FUN_005a62c0
 
 #include "nocturne.h"
 
@@ -38,9 +38,9 @@ int sound_sndmain_cpp_FUN_005a5620(void)
         if (0x3f < iVar1) {
           iVar1 = 0;
         }
-        if (((DAT_03f6282c[iVar1].ref_count == 0) && (DAT_03f6282c[iVar1].buffer_id != (void *)0x0))
-           && (DAT_03f6282c[iVar1].field_150 == 0)) {
-          sound_sndmain_cpp_SfxSample_freeMemory_FUN_005a62c0(DAT_03f6282c + iVar1);
+        if (((g_SfxSamples[iVar1].ref_count == 0) && (g_SfxSamples[iVar1].buffer_id != (void *)0x0))
+           && (g_SfxSamples[iVar1].field4_0x150 == 0)) {
+          sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(g_SfxSamples + iVar1);
           break;
         }
         iVar2 = iVar2 + 1;
@@ -135,7 +135,7 @@ int sound_sndmain_cpp_FUN_005a5620(void)
 //   XREF to: 03f6282c (DATA)
 // 005a56a8: PUSH EDX
 //   XREF to: 03f629ac (DATA)
-// 005a56a9: CALL sound_sndmain.cpp_SfxSample_freeMemory_FUN_005a62c0
+// 005a56a9: CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
 //   XREF to: 005a62c0 (UNCONDITIONAL_CALL)
 // 005a56ae: ADD ESP,0x4
 // 005a56b1: JMP 0x005a5677

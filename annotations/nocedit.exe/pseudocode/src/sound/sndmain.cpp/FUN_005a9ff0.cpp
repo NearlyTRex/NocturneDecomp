@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_game.cpp_CGame_processFrame_FUN_004da100 (004da100) at 004da7fe [UNCONDITIONAL_CALL]
 // Globals:
-//   SfxSlot[64] g_SfxSlots
+//   CSfxSlot[64] g_SfxSlots
 //   undefined4 g_SfxSlots[0].field7_0x74
 //   undefined4 DAT_03f5db1c
 //   undefined4 DAT_03f5dc40
@@ -15,22 +15,20 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005a9ff0() */
-
 int sound_sndmain_cpp_FUN_005a9ff0(void)
 
 {
-  SfxSlot *pSVar1;
+  CSfxSlot *pCVar1;
   int iVar2;
   
-  pSVar1 = g_SfxSlots;
+  pCVar1 = g_SfxSlots;
   iVar2 = 0;
   do {
-    if ((pSVar1->sample != (SfxSample *)0x0) && (pSVar1->field_116 != 0)) {
+    if ((pCVar1->sample != (CSfxSample *)0x0) && (pCVar1->field2_0x74 != 0)) {
       iVar2 = iVar2 + 1;
     }
-    pSVar1 = pSVar1 + 1;
-  } while (pSVar1 != (SfxSlot *)&g_SfxLastSlot);
+    pCVar1 = pCVar1 + 1;
+  } while (pCVar1 != (CSfxSlot *)&g_SfxLastSlot);
   return iVar2;
 }
 

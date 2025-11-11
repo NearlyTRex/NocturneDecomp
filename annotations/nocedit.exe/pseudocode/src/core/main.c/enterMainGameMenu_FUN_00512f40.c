@@ -122,7 +122,7 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00512f40(void)
     switch(uVar5) {
     case 0:
       core_moon_cpp_CMoon_free_FUN_00529ce0();
-      core_sound_cpp_RelatedToSoundCleanup_FUN_005b39a0();
+      core_sound_cpp_CSound_FUN_005b39a0(g_CSoundPtr);
       iVar6 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
       if ((iVar6 == 0) || (iVar6 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d), iVar6 == 0)) {
         iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
@@ -143,13 +143,13 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00512f40(void)
       break;
     case 2:
       core_moon_cpp_CMoon_free_FUN_00529ce0();
-      core_sound_cpp_RelatedToSoundCleanup_FUN_005b39a0();
+      core_sound_cpp_CSound_FUN_005b39a0(g_CSoundPtr);
       core_game_cpp_CGame_loadSaveGame_FUN_004e12b0(g_CGamePtr,(char *)0x0,1,(char *)0x0);
       engine_2d_c_clearInputAndWait_FUN_00403260();
       engine_texture_cpp_clearTextureCache_FUN_005dd8e0();
       core_moon_cpp_CMoon_init_FUN_00529ae0();
 LAB_005131d5:
-      core_sound_cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830();
+      core_sound_cpp_CSound_FUN_005b3830(g_CSoundPtr);
       break;
     case 3:
       iVar8 = 99;
@@ -163,7 +163,7 @@ LAB_005131d5:
     {
       iVar4 = sound_sndmain_cpp_getSoundEnabled_FUN_005a96b0();
       sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0((uint)(iVar4 == 0));
-      core_sound_cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830();
+      core_sound_cpp_CSound_FUN_005b3830(g_CSoundPtr);
     }
     iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
     if ((iVar4 != 0) &&
@@ -178,24 +178,24 @@ LAB_005131d5:
         wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
       }
       g_FullscreenMode = 0;
-      core_sound_cpp_RelatedToSoundCleanup_FUN_005b39a0();
+      core_sound_cpp_CSound_FUN_005b39a0(g_CSoundPtr);
       core_main_c_showDeveloperToolsMenu_FUN_005073a0();
-      core_sound_cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830();
+      core_sound_cpp_CSound_FUN_005b3830(g_CSoundPtr);
     }
     iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
     if ((iVar4 != 0) && (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x21), iVar4 != 0))
     {
-      core_sound_cpp_RelatedToSoundCleanup_FUN_005b39a0();
+      core_sound_cpp_CSound_FUN_005b39a0(g_CSoundPtr);
       core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(&g_CDemonFileManagerInstance);
-      core_sound_cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830();
+      core_sound_cpp_CSound_FUN_005b3830(g_CSoundPtr);
     }
     if (in_stack_00000100 != 0) {
       in_stack_00000100 = 0;
-      core_sound_cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830();
+      core_sound_cpp_CSound_FUN_005b3830(g_CSoundPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
     }
     if (iVar8 != 0) {
-      core_sound_cpp_RelatedToSoundCleanup_FUN_005b39a0();
+      core_sound_cpp_CSound_FUN_005b39a0(g_CSoundPtr);
       core_moon_cpp_CMoon_free_FUN_00529ce0();
       return iVar8;
     }

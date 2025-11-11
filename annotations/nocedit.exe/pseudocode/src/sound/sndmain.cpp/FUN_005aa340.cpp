@@ -4,23 +4,21 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005aa340()
 // Globals:
-//   undefined4 DAT_00681b40
-//   undefined4 DAT_00681b44
+//   uint UINT_00681b40 = 0x200000
+//   uint UINT_00681b44 = 0x400000
 // Function calls:
 //   sound_sndmain.cpp_FUN_005a4450
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void sound_sndmain_cpp_FUN_005aa340(void)
 
 {
-  undefined4 in_stack_00000004;
-  undefined4 in_stack_00000008;
+  uint in_stack_00000004;
+  uint in_stack_00000008;
   
-  _DAT_00681b40 = in_stack_00000004;
-  DAT_00681b44 = in_stack_00000008;
+  UINT_00681b40 = in_stack_00000004;
+  UINT_00681b44 = in_stack_00000008;
   sound_sndmain_cpp_FUN_005a4450();
   return;
 }

@@ -43,12 +43,12 @@
 //   TerminatedCString s_sound_sndmain_cpp_0064f8ad
 //   TerminatedCString s_Error_parsing_s_line_d_s_0064f8c2
 //   TerminatedCString s_sound_sndmain_cpp_0064f8df
-//   undefined4 DAT_0064f8f7
-//   undefined4 DAT_0064f8ff
-//   undefined4 DAT_00663158
-//   undefined4 DAT_0066315c
-//   undefined4 DAT_00663160
-//   undefined4 DAT_00681b38
+//   double DOUBLE_0064f8f7 = 0.00100000000000000
+//   double DOUBLE_0064f8ff = 0.100000000000000
+//   float FLOAT_00663158 = 4
+//   float FLOAT_0066315c = 20
+//   float FLOAT_00663160 = 10000
+//   double DOUBLE_00681b38 = 1
 //   char[256] g_CharacterClassificationTable
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -70,7 +70,6 @@
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 sound_sndmain.cpp_CalculateDistanceMaybe(undefined4 param_1) */
 
 void sound_sndmain_cpp_CalculateDistanceMaybe_FUN_005a45c0(void)
 
@@ -120,10 +119,10 @@ void sound_sndmain_cpp_CalculateDistanceMaybe_FUN_005a45c0(void)
   char *pcStack_14;
   
   bVar14 = 0;
-  fVar5 = (float)_DAT_00681b38;
-  fVar4 = _DAT_0066315c * fVar5;
+  fVar5 = (float)DOUBLE_00681b38;
+  fVar4 = FLOAT_0066315c * fVar5;
   fVar6 = _DAT_03f5daa0 * fVar5;
-  fVar5 = _DAT_00663160 * fVar5;
+  fVar5 = FLOAT_00663160 * fVar5;
   in_stack_00000004[0x124] = '\x01';
   in_stack_00000004[0x125] = '\0';
   in_stack_00000004[0x126] = '\0';
@@ -217,14 +216,14 @@ joined_r0x005a47dc:
                     ("Reference distance specified in %s on line %d, then again on line %d",auStack_134,local_1c,pcStack_14);
         }
         local_18 = pcVar9;
-        if (fRam00000114 < (float)_DAT_0064f8ff) {
+        if (fRam00000114 < (float)DOUBLE_0064f8ff) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
           g_CurrentLineNumber = 0x292;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("Reference volume distance %g is too small in %s line %d!",SUB84((double)fRam00000114,0),
                      (int)((ulonglong)(double)fRam00000114 >> 0x20),auStack_130,pcVar9);
         }
-        fRam00000118 = fRam00000114 / _DAT_00663158;
+        fRam00000118 = fRam00000114 / FLOAT_00663158;
       }
       else {
         iVar8 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xfffffba0,"minDist =%f",local_28[0]);
@@ -237,7 +236,7 @@ joined_r0x005a47dc:
           }
           dVar1 = (double)fRam00000118;
           uStack_454 = dVar1;
-          if (fRam00000118 < (float)_DAT_0064f8ff) {
+          if (fRam00000118 < (float)DOUBLE_0064f8ff) {
             uStack_454._4_4_ = (undefined4)((ulonglong)dVar1 >> 0x20);
             uVar3 = uStack_454._4_4_;
             uStack_454._0_4_ = SUB84(dVar1,0);
@@ -266,7 +265,7 @@ joined_r0x005a47dc:
                 core_main_c_displayErrorAndQuit_FUN_00506f10
                           ("Minimum distance specified in %s on line %d, then again on line %d",acStack_124,unaff_ESI,0);
               }
-              if ((float)uStack_454 < (float)_DAT_0064f8f7) {
+              if ((float)uStack_454 < (float)DOUBLE_0064f8f7) {
                 g_CurrentFilename = "..\\sound\\sndmain.cpp";
                 g_CurrentLineNumber = 0x2a7;
                 core_main_c_displayErrorAndQuit_FUN_00506f10

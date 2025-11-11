@@ -4,14 +4,14 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80()
 // Cross-references:
-//   sound_sndmain.cpp_SfxSlot_kill_2_FUN_005aca90 (005aca90) at 005acd01 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005aca90 (005aca90) at 005acd01 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_0064fc18
 //   TerminatedCString s_convertMixBufToOutput_in_0064fc2d
-//   undefined4 DAT_0064fc57
-//   undefined4 DAT_0064fc5b
-//   undefined4 DAT_0064fc5f
-//   undefined4 DAT_0064fc67
+//   float FLOAT_0064fc57 = 32766
+//   float FLOAT_0064fc5b = 127
+//   double DOUBLE_0064fc5f = -1
+//   float FLOAT_0064fc67 = 128
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
@@ -19,7 +19,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 sound_sndmain.cpp_convertMixBufToOutput(undefined4 param_1, undefined4
    param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5) */
 
@@ -52,11 +51,11 @@ LAB_005a5ccd:
     if (0 < in_stack_00000010) {
       do {
         fVar1 = *in_stack_00000004;
-        if (fVar1 <= (float)_DAT_0064fc5f) {
+        if (fVar1 <= (float)DOUBLE_0064fc5f) {
           *(undefined1 *)local_30 = 0;
         }
         else if (fVar1 < 1.0) {
-          local_28 = (undefined1)(int)ROUND(fVar1 * _DAT_0064fc5b + _DAT_0064fc67);
+          local_28 = (undefined1)(int)ROUND(fVar1 * FLOAT_0064fc5b + FLOAT_0064fc67);
           *(undefined1 *)local_30 = local_28;
         }
         else {
@@ -74,11 +73,11 @@ LAB_005a5ccd:
     if (0 < in_stack_00000010) {
       do {
         fVar1 = *in_stack_00000004;
-        if (fVar1 <= (float)_DAT_0064fc5f) {
+        if (fVar1 <= (float)DOUBLE_0064fc5f) {
           *local_30 = 0x8001;
         }
         else if (fVar1 < 1.0) {
-          local_20 = (undefined2)(int)ROUND(fVar1 * _DAT_0064fc57);
+          local_20 = (undefined2)(int)ROUND(fVar1 * FLOAT_0064fc57);
           *local_30 = local_20;
         }
         else {

@@ -5,10 +5,10 @@
 // Signature: undefined sound_sndmain.cpp_SleepAndKillSoundThreadError_FUN_005abcb0()
 // Cross-references:
 //   sound_snddx.cpp_FUN_005ae4b0 (005ae4b0) at 005ae548 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_waveOutReset_FUN_005b09c0 (005b09c0) at 005b09f6 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005abc00 (005abc00) at 005abc07 [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_waveOutReset_FUN_005b09c0 (005b09c0) at 005b09f6 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_killSoundThread_-_failed!_00650e07
+//   TerminatedCString s_killSoundThread_failed_00650e07
 //   undefined4 DAT_03f69400
 //   undefined4 DAT_03f69404
 // Function calls:

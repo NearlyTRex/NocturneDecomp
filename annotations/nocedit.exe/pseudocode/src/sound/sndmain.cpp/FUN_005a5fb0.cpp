@@ -4,19 +4,16 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005a5fb0()
 // Cross-references:
-//   sound_sndmain.cpp_UnknownPlayOrUseSample_FUN_005a75e0 (005a75e0) at 005a7cad [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (005a75e0) at 005a7cad [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0064fcb7
+//   double DOUBLE_0064fcb7 = 4294967296
 // Function calls:
 //   crt_math.c_floor_FUN_005feb90
 //   crt_math.c_round_FUN_005fe6b0
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005a5fb0(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3, undefined8 param_4, undefined8 param_5, undefined4 param_6) */
 
 double sound_sndmain_cpp_FUN_005a5fb0(void)
 
@@ -59,7 +56,7 @@ double sound_sndmain_cpp_FUN_005a5fb0(void)
     local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
     iVar10 = (uint)local_34;
     local_34 = (double)((longlong)ROUND(fVar12) & 0xffffffff);
-    fVar12 = ((float10)_in_stack_00000010 - (float10)(longlong)local_34) * (float10)_DAT_0064fcb7;
+    fVar12 = ((float10)_in_stack_00000010 - (float10)(longlong)local_34) * (float10)DOUBLE_0064fcb7;
     crt_math_c_round_FUN_005fe6b0((double)CONCAT44((int)((ulonglong)dVar14 >> 0x20),iVar10));
     local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
     uVar8 = (uint)local_34;
@@ -71,7 +68,7 @@ double sound_sndmain_cpp_FUN_005a5fb0(void)
     iVar7 = (uint)local_34;
     local_34 = (double)((longlong)ROUND(fVar13) & 0xffffffff);
     fVar13 = ((float10)(double)CONCAT44(in_stack_0000001c,in_stack_00000018) -
-             (float10)(longlong)local_34) * (float10)_DAT_0064fcb7;
+             (float10)(longlong)local_34) * (float10)DOUBLE_0064fcb7;
     crt_math_c_round_FUN_005fe6b0((double)CONCAT44((int)((ulonglong)dVar14 >> 0x20),iVar7));
     local_34._0_4_ = (uint)(longlong)ROUND(fVar13);
     fVar3 = *in_stack_0000000c;

@@ -13,8 +13,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_sound.cpp_FUN_005b3de0(undefined4 param_1, undefined4 param_2) */
-
 void core_sound_cpp_FUN_005b3de0(void)
 
 {

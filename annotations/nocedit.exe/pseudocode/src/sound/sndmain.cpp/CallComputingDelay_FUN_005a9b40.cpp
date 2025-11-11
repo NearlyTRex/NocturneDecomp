@@ -10,7 +10,7 @@
 // Globals:
 //   CSound* g_CSoundInstance
 // Function calls:
-//   sound_sndmain.cpp_ComputingDelay_FUN_005a7100
+//   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
 //   sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
@@ -22,16 +22,16 @@
 undefined4 sound_sndmain_cpp_CallComputingDelay_FUN_005a9b40(void)
 
 {
-  int iVar1;
+  CSfxSlot *this_ptr;
   undefined4 in_stack_00000008;
   
-  iVar1 = sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
-  if (iVar1 == 0) {
+  this_ptr = (CSfxSlot *)sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
+  if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }
-  *(undefined4 *)(iVar1 + 0x48) = in_stack_00000008;
-  sound_sndmain_cpp_ComputingDelay_FUN_005a7100();
-  if ((*(int *)(iVar1 + 0x70) != 0) && (g_CSoundInstance != (CSound *)0x0)) {
+  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x34) = in_stack_00000008;
+  sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr);
+  if ((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundInstance != (CSound *)0x0)) {
     (*(code *)g_CSoundInstance->vtable[1].func2)();
   }
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
@@ -62,7 +62,7 @@ undefined4 sound_sndmain_cpp_CallComputingDelay_FUN_005a9b40(void)
 //   XREF to: Stack[0x8] (READ)
 // 005a9b5f: PUSH EBX
 // 005a9b60: MOV dword ptr [EBX + 0x48],EAX
-// 005a9b63: CALL sound_sndmain.cpp_ComputingDelay_FUN_005a7100
+// 005a9b63: CALL sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
 //   XREF to: 005a7100 (UNCONDITIONAL_CALL)
 // 005a9b68: MOV ECX,dword ptr [EBX + 0x70]
 // 005a9b6b: ADD ESP,0x8

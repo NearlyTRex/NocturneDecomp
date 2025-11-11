@@ -1,19 +1,19 @@
 // Name: sound_sndmain.cpp_staticInit_FUN_005a3940
 // Address: 005a3940
 // Address Range: [[005a3940, 005a399b]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_staticInit_FUN_005a3940()
+// Convention: __cdecl
+// Signature: void sound_sndmain.cpp_staticInit_FUN_005a3940(void)
 // Globals:
-//   undefined4 DAT_00663158
-//   undefined4 DAT_0066315c
+//   float FLOAT_00663158 = 4
+//   float FLOAT_0066315c = 20
 //   WatcomTypeInfo g_SfxSlotTypeInfo
 //   WatcomTypeInfo g_SfxOptionsTypeInfo
 //   WatcomTypeInfo g_SfxSampleTypeInfo
-//   WatcomStaticDestructorNode DAT_00681ad0
+//   WatcomStaticDestructorNode g_SfxSamplesDestructorNode
 //   undefined4 DAT_03f5daa0
-//   SfxSlot[64] g_SfxSlots
-//   SfxOptions[8] DAT_03f624a8
-//   SfxSample[64] DAT_03f6282c
+//   CSfxSlot[64] g_SfxSlots
+//   CSfxOptions[8] g_SfxOptions
+//   CSfxSample[64] g_SfxSamples
 // Function calls:
 //   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
 //   crt_stdlib.c_atexit_FUN_005ff060
@@ -22,15 +22,15 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void sound_sndmain_cpp_staticInit_FUN_005a3940(void)
+void __cdecl sound_sndmain_cpp_staticInit_FUN_005a3940(void)
 
 {
-  _DAT_03f5daa0 = _DAT_0066315c / _DAT_00663158;
+  _DAT_03f5daa0 = FLOAT_0066315c / FLOAT_00663158;
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(g_SfxSlots,0x40,&g_SfxSlotTypeInfo);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(DAT_03f624a8,8,&g_SfxOptionsTypeInfo);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(DAT_03f6282c,0x40,&g_SfxSampleTypeInfo)
+  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(g_SfxOptions,8,&g_SfxOptionsTypeInfo);
+  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(g_SfxSamples,0x40,&g_SfxSampleTypeInfo)
   ;
-  crt_stdlib_c_atexit_FUN_005ff060(&DAT_00681ad0);
+  crt_stdlib_c_atexit_FUN_005ff060(&g_SfxSamplesDestructorNode);
   return;
 }
 

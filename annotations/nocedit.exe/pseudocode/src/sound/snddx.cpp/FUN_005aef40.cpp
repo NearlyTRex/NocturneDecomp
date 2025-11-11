@@ -5,7 +5,7 @@
 // Signature: undefined sound_snddx.cpp_FUN_005aef40()
 // Globals:
 //   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c
-//   undefined4 s_Create_secondary_buffer_00651c0c
+//   TerminatedCString s_Create_secondary_buffer_00651c0c
 //   TerminatedCString s_DirectSoundDevice_alloca_00651c24
 //   undefined4 DAT_03f6a9b0
 //   undefined4 DAT_03f6a9e0
@@ -88,7 +88,7 @@ int sound_snddx_cpp_FUN_005aef40
         uVar4 = sound_snddx_cpp_FUN_005ade70();
         crt_stdio_c_sprintf_FUN_005fdbd0
                   ((char *)&piStack_1d8,"DirectSux: Unable to %s.  (%s)",
-                   "?Create secondary buffer" + 1,uVar4);
+                   "Create secondary buffer",uVar4);
         sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
       }
       sound_sndmain_cpp_HandleSoundError_FUN_005adba0();

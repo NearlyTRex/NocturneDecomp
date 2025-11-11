@@ -227,6 +227,7 @@ const char[7][4] g_WeekdayNamesShort = {
 };
 
 // double constants
+const double DOUBLE_00681b38 = 1;
 const double g_SelectedClearColor = 0.0;
 const double g_ClearColor = 0.0;
 
@@ -285,7 +286,6 @@ const undefined4 DAT_00681a04 = {0x2D, 0x30, 0x78, 0x66};
 const undefined4 DAT_00681af0 = {0x30, 0x78, 0x31, 0x00};
 const undefined4 DAT_00681b30 = {0x30, 0x78, 0x30, 0x00};
 const undefined4 DAT_00681b34 = {0x30, 0x78, 0x33, 0x66};
-const undefined4 DAT_00681b44 = {0x30, 0x78, 0x34, 0x30};
 const undefined4 DAT_00681b50 = {0x2D, 0x30, 0x78, 0x31};
 const undefined4 DAT_00681b54 = {0x30, 0x78, 0x38, 0x00};
 const undefined4 DAT_00681b58 = {0x30, 0x78, 0x31, 0x00};

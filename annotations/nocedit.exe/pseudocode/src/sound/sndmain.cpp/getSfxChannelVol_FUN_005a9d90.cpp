@@ -1,16 +1,16 @@
 // Name: sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90
 // Address: 005a9d90
 // Address Range: [[005a9d90, 005a9dd7]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90()
+// Convention: __cdecl
+// Signature: float sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90(int channel_index)
 // Cross-references:
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 005127e2 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2e7f [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b323b [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b3883 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b2d70 (005b2d70) at 005b2d8f [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2dd0 (005b2dd0) at 005b2e7f [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2fd0 (005b2fd0) at 005b323b [UNCONDITIONAL_CALL]
-//   core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830 (005b3830) at 005b3883 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_DirectSoundDevice_HardwareSfx3DBuffer_FUN_005af750 (005af750) at 005af7ea [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_Something1_FUN_005a6f00 (005a6f00) at 005a6f42 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_FUN_005a6f00 (005a6f00) at 005a6f42 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005ac1ad [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_writeIni_FUN_005ac220 (005ac220) at 005ac3ab [UNCONDITIONAL_CALL]
 // Globals:
@@ -24,22 +24,16 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_getSfxChannelVol(undefined4 param_1) */
-
-undefined4
-sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90
-          (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4,int param_5
-          )
+float __cdecl sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(int channel_index)
 
 {
-  if ((-1 < param_5) && (param_5 < 0x20)) {
-    return *(undefined4 *)(&DAT_03f688a8 + param_5 * 4);
+  if ((-1 < channel_index) && (channel_index < 0x20)) {
+    return *(float *)(&DAT_03f688a8 + channel_index * 4);
   }
   g_CurrentFilename = "..\\sound\\sndmain.cpp";
   g_CurrentLineNumber = 0xf96;
-  core_main_c_displayErrorAndQuit_FUN_00506f10
-            ("getSfxChannelVol - invalid channel index: %d",param_5,unaff_EBX);
-  return *(undefined4 *)(&DAT_03f688a8 + param_5 * 4);
+  core_main_c_displayErrorAndQuit_FUN_00506f10("getSfxChannelVol - invalid channel index: %d",channel_index);
+  return *(float *)(&DAT_03f688a8 + channel_index * 4);
 }
 
 

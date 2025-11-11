@@ -4,12 +4,11 @@
 // Convention: unknown
 // Signature: undefined sound_snddx.cpp_FUN_005aef10()
 // Globals:
-//   undefined4 DAT_00651c04
+//   double DOUBLE_00651c04 = 0.304800000000000
 //   undefined4 DAT_03f6a9bc
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 sound_snddx.cpp_FUN_005aef10(undefined1 param_1, undefined8 param_2) */
 
 void sound_snddx_cpp_FUN_005aef10(void)

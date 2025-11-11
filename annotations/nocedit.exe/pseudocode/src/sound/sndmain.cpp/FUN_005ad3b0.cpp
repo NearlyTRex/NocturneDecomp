@@ -62,7 +62,7 @@ char * sound_sndmain_cpp_FUN_005ad3b0(void)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  iVar3 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0();
+  iVar3 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((char *)&uStack_16c);
   if (iVar3 == 0) {
     uStack_16c = in_stack_00000004;
     crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03f5d8a0,"Can't get sample info for %s");

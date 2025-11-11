@@ -1,13 +1,13 @@
 // Name: sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20
 // Address: 005a9e20
 // Address Range: [[005a9e20, 005a9e94]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20()
+// Convention: __cdecl
+// Signature: void sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20(int channel_index)
 // Cross-references:
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512841 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2e76 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b3231 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b2d70 (005b2d70) at 005b2d85 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2dd0 (005b2dd0) at 005b2e76 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2fd0 (005b2fd0) at 005b3231 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005aae00 (005aae00) at 005aae14 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005ac18e [UNCONDITIONAL_CALL]
 // Globals:
@@ -15,41 +15,36 @@
 //   TerminatedCString s_enableSfxChannel_invalid_00650ac1
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   SfxSlot[64] g_SfxSlots
+//   CSfxSlot[64] g_SfxSlots
 //   undefined4 g_SfxSlots[1].status
 //   undefined4 DAT_03f68928
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
+//   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
-//   sound_sndmain.cpp_SfxSlot_kill_FUN_005a7e60
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_enableSfxChannel(undefined4 param_1, undefined4 param_2)
-    */
-
-void sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(void)
+void __cdecl sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(int channel_index)
 
 {
   int iVar1;
-  int in_stack_00000004;
   int in_stack_00000008;
   
-  if ((in_stack_00000004 < 0) || (0x1f < in_stack_00000004)) {
+  if ((channel_index < 0) || (0x1f < channel_index)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0xfa1;
-    core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("enableSfxChannel - invalid channel index: %d",in_stack_00000004);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("enableSfxChannel - invalid channel index: %d",channel_index);
   }
-  *(int *)(&DAT_03f68928 + in_stack_00000004 * 4) = in_stack_00000008;
+  *(int *)(&DAT_03f68928 + channel_index * 4) = in_stack_00000008;
   if (in_stack_00000008 == 0) {
     sound_sndmain_cpp_lockSound_FUN_005abd30();
     iVar1 = 0;
     do {
-      if (in_stack_00000004 == *(int *)(g_SfxSlots[0].field_20 + iVar1 + -0x14)) {
-        sound_sndmain_cpp_SfxSlot_kill_FUN_005a7e60
-                  ((SfxSlot *)(g_SfxSlots[0].field_20 + iVar1 + -0x14));
+      if (channel_index == *(int *)(g_SfxSlots[0].options.field5_0x14 + iVar1 + -0x14)) {
+        sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60
+                  ((CSfxSlot *)(g_SfxSlots[0].options.field5_0x14 + iVar1 + -0x14));
       }
       iVar1 = iVar1 + 0x128;
     } while (iVar1 != 0x4a00);
@@ -105,7 +100,7 @@ void sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(void)
 //   XREF to: 03f5daa4 (DATA)
 // 005a9e74: ADD EAX,EBX
 // 005a9e76: PUSH EAX
-// 005a9e77: CALL sound_sndmain.cpp_SfxSlot_kill_FUN_005a7e60
+// 005a9e77: CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
 //   XREF to: 005a7e60 (UNCONDITIONAL_CALL)
 // 005a9e7c: ADD ESP,0x4
 // 005a9e7f: ADD EBX,0x128

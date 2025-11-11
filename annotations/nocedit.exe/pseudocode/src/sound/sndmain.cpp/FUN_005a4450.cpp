@@ -1,16 +1,16 @@
 // Name: sound_sndmain.cpp_FUN_005a4450
 // Address: 005a4450
 // Address Range: [[005a4450, 005a4525]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_FUN_005a4450()
+// Convention: __cdecl
+// Signature: int sound_sndmain.cpp_FUN_005a4450(void)
 // Cross-references:
+//   sound_sndmain.cpp_CSfxSample_FUN_005a6170 (005a6170) at 005a6277 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 (005a7e60) at 005a7f82 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005aa340 (005aa340) at 005aa354 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ReallocSomething_FUN_005a6170 (005a6170) at 005a6277 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_kill_FUN_005a7e60 (005a7e60) at 005a7f82 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00681b44
+//   uint UINT_00681b44 = 0x400000
 //   undefined4 DAT_03f62828
-//   SfxSample[64] DAT_03f6282c
+//   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f6294c
 //   undefined4 DAT_03f6297c
 //   undefined4 DAT_03f62980
@@ -19,14 +19,12 @@
 //   undefined4 DAT_03f62acc
 //   undefined4 DAT_03f62b0c
 // Function calls:
-//   sound_sndmain.cpp_FUN_005a8550
-//   sound_sndmain.cpp_SfxSample_freeMemory_FUN_005a62c0
+//   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
+//   sound_sndmain.cpp_CSfxSample_FUN_005a8550
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005a4450(undefined4 param_1) */
-
-undefined4 sound_sndmain_cpp_FUN_005a4450(void)
+int __cdecl sound_sndmain_cpp_FUN_005a4450(void)
 
 {
   int iVar1;
@@ -38,15 +36,16 @@ undefined4 sound_sndmain_cpp_FUN_005a4450(void)
   iVar2 = 0;
   iVar4 = 0;
   do {
-    if (*(int *)(DAT_03f6282c[0].field_292 + iVar2 + -4) != 0) {
-      iVar3 = sound_sndmain_cpp_FUN_005a8550();
-      iVar4 = iVar4 + iVar3 * *(int *)(DAT_03f6282c[0].field_160 + iVar2);
+    if (*(int *)(g_SfxSamples[0].field3_0x124 + iVar2 + -4) != 0) {
+      iVar3 = sound_sndmain_cpp_CSfxSample_FUN_005a8550
+                        ((CSfxSample *)(g_SfxSamples[0].name + iVar2));
+      iVar4 = iVar4 + iVar3 * *(int *)(g_SfxSamples[0].field8_0x160 + iVar2);
     }
     iVar2 = iVar2 + 0x180;
   } while (iVar2 != 0x6000);
 LAB_005a4473:
   do {
-    if (iVar4 + in_stack_00000004 <= DAT_00681b44) {
+    if (iVar4 + in_stack_00000004 <= (int)UINT_00681b44) {
       return 1;
     }
     iVar3 = 0;
@@ -56,12 +55,12 @@ LAB_005a4473:
       if (0x3f < iVar2) {
         iVar2 = 0;
       }
-      if ((((DAT_03f6282c[iVar2].sample_data != (void *)0x0) &&
-           (0 < *(int *)DAT_03f6282c[iVar2].field_160)) && (DAT_03f6282c[iVar2].ref_count == 0)) &&
-         (DAT_03f6282c[iVar2].field_150 == 0)) {
-        iVar1 = sound_sndmain_cpp_FUN_005a8550();
-        iVar4 = iVar4 - iVar1 * *(int *)DAT_03f6282c[iVar2].field_160;
-        sound_sndmain_cpp_SfxSample_freeMemory_FUN_005a62c0(DAT_03f6282c + iVar2);
+      if ((((g_SfxSamples[iVar2].sample_data != (void *)0x0) &&
+           (0 < *(int *)g_SfxSamples[iVar2].field8_0x160)) && (g_SfxSamples[iVar2].ref_count == 0))
+         && (g_SfxSamples[iVar2].field4_0x150 == 0)) {
+        iVar1 = sound_sndmain_cpp_CSfxSample_FUN_005a8550(g_SfxSamples + iVar2);
+        iVar4 = iVar4 - iVar1 * *(int *)g_SfxSamples[iVar2].field8_0x160;
+        sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(g_SfxSamples + iVar2);
         if (0x3f < iVar3) {
           return 0;
         }
@@ -141,7 +140,7 @@ LAB_005a4473:
 // 005a44bb: ADD EDI,EBX
 // 005a44bd: PUSH EDI
 //   XREF to: 03f629ac (DATA)
-// 005a44be: CALL sound_sndmain.cpp_FUN_005a8550
+// 005a44be: CALL sound_sndmain.cpp_CSfxSample_FUN_005a8550
 //   XREF to: 005a8550 (UNCONDITIONAL_CALL)
 // 005a44c3: IMUL EAX,dword ptr [EDI + 0x160]
 //   XREF to: 03f62b0c (READ)
@@ -167,7 +166,7 @@ LAB_005a4473:
 // 005a44ef: ADD EDI,EAX
 // 005a44f1: PUSH EDI
 //   XREF to: 03f6282c (DATA)
-// 005a44f2: CALL sound_sndmain.cpp_FUN_005a8550
+// 005a44f2: CALL sound_sndmain.cpp_CSfxSample_FUN_005a8550
 //   XREF to: 005a8550 (UNCONDITIONAL_CALL)
 // 005a44f7: IMUL EAX,dword ptr [EDI + 0x160]
 //   XREF to: 03f6298c (READ)
@@ -175,7 +174,7 @@ LAB_005a4473:
 // 005a4501: PUSH EDI
 //   XREF to: 03f6282c (DATA)
 // 005a4502: SUB ESI,EAX
-// 005a4504: CALL sound_sndmain.cpp_SfxSample_freeMemory_FUN_005a62c0
+// 005a4504: CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
 //   XREF to: 005a62c0 (UNCONDITIONAL_CALL)
 // 005a4509: ADD ESP,0x4
 // 005a450c: CMP EBX,0x40

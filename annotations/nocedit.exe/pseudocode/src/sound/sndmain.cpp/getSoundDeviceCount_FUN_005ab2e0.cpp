@@ -17,9 +17,9 @@
 //   undefined4 g_SoundDevices[2].device_name[0]
 // Function calls:
 //   sound_snddx.cpp_enumerateDirectSoundDevice_FUN_005b0390
-//   sound_snddx.cpp_enumerateWaveOutDevice_FUN_005b1470
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
+//   sound_sndwav.cpp_enumerateWaveOutDevice_FUN_005b1470
 
 #include "nocturne.h"
 
@@ -37,7 +37,7 @@ int __cdecl sound_sndmain_cpp_getSoundDeviceCount_FUN_005ab2e0(void)
   g_SoundDeviceCount = 0;
   iVar2 = 0;
   do {
-    iVar1 = sound_snddx_cpp_enumerateWaveOutDevice_FUN_005b1470
+    iVar1 = sound_sndwav_cpp_enumerateWaveOutDevice_FUN_005b1470
                       (iVar2,g_SoundDevices + g_SoundDeviceCount);
     if (iVar1 == 0) break;
     g_SoundDeviceCount = g_SoundDeviceCount + 1;
@@ -85,7 +85,7 @@ int __cdecl sound_sndmain_cpp_getSoundDeviceCount_FUN_005ab2e0(void)
 // 005ab310: PUSH ESI
 // 005ab311: MOV dword ptr [0x00681b20],EBX
 //   XREF to: 00681b20 (WRITE)
-// 005ab317: CALL sound_snddx.cpp_enumerateWaveOutDevice_FUN_005b1470
+// 005ab317: CALL sound_sndwav.cpp_enumerateWaveOutDevice_FUN_005b1470
 //   XREF to: 005b1470 (UNCONDITIONAL_CALL)
 // 005ab31c: MOV EBX,dword ptr [0x00681b20]
 //   XREF to: 00681b20 (READ)

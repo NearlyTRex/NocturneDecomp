@@ -5,16 +5,16 @@
 // Signature: undefined sound_sndmain.cpp_FUN_005a8c10()
 // Globals:
 //   undefined4 g_SfxLastSlot
-//   SfxOptions[8] DAT_03f624a8
+//   CSfxOptions[8] g_SfxOptions
 // Function calls:
-//   sound_sndmain.cpp_FUN_005a8830
+//   sound_sndmain.cpp_CSfxSlot_reset_FUN_005a8830
 
 #include "nocturne.h"
 
 void sound_sndmain_cpp_FUN_005a8c10(void)
 
 {
-  sound_sndmain_cpp_FUN_005a8830();
+  sound_sndmain_cpp_CSfxSlot_reset_FUN_005a8830((CSfxSlot *)(g_SfxOptions + g_SfxLastSlot));
   return;
 }
 
@@ -30,7 +30,7 @@ void sound_sndmain_cpp_FUN_005a8c10(void)
 // 005a8c1f: ADD EAX,0x3f624a8
 //   XREF to: 03f624a8 (DATA)
 // 005a8c24: PUSH EAX
-// 005a8c25: CALL sound_sndmain.cpp_FUN_005a8830
+// 005a8c25: CALL sound_sndmain.cpp_CSfxSlot_reset_FUN_005a8830
 //   XREF to: 005a8830 (UNCONDITIONAL_CALL)
 // 005a8c2a: ADD ESP,0x4
 // 005a8c2d: RET

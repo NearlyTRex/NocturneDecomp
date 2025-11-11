@@ -6,10 +6,10 @@
 // Cross-references:
 //   core_spike.cpp_FUN_005b8410 (005b8410) at 005b8717 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00652ebc
-//   undefined4 DAT_00652ec0
-//   undefined4 DAT_00652ec4
-//   undefined4 DAT_00652ec8
+//   float FLOAT_00652ebc = -0.1000000
+//   float FLOAT_00652ec0 = 0.1000000
+//   float FLOAT_00652ec4 = 2
+//   float FLOAT_00652ec8 = 10
 //   WatcomTypeInfo g_CVectorTypeInfo
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CDemonSet g_CDemonSetInstance
@@ -30,7 +30,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_spike.cpp_FUN_005b8950(undefined4 param_1) */
 
 void core_spike_cpp_FUN_005b8950(void)
@@ -81,10 +80,10 @@ void core_spike_cpp_FUN_005b8950(void)
   CStack_88.max.y = 0.1;
   CStack_88.max.z = 0.1;
   CStack_70.x = 0.0;
-  auStack_e4._12_4_ = (float)auStack_e4._12_4_ + _DAT_00652ebc;
-  auStack_e4._16_4_ = (float)auStack_e4._16_4_ + _DAT_00652ebc;
-  fStack_cc = fStack_cc + _DAT_00652ec0;
-  fStack_c8 = fStack_c8 + _DAT_00652ec0;
+  auStack_e4._12_4_ = (float)auStack_e4._12_4_ + FLOAT_00652ebc;
+  auStack_e4._16_4_ = (float)auStack_e4._16_4_ + FLOAT_00652ebc;
+  fStack_cc = fStack_cc + FLOAT_00652ec0;
+  fStack_c8 = fStack_c8 + FLOAT_00652ec0;
   core_box_cpp_CBoundingBox3D_reset_FUN_00420fb0((CBoundingBox3D *)auStack_c0);
   corner_index = 0;
   point = (CVector3f *)&stack0xfffffe4c;

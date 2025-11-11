@@ -5,7 +5,7 @@
 // Signature: tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
 // Cross-references:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10 (00506f10) at 0050708b [UNCONDITIONAL_CALL]
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b24e9 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b24e9 [UNCONDITIONAL_CALL]
 //   crt_io.c_utime_FUN_00608160 (00608160) at 006081e4 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220 (004b4220) at 004b4e76 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460 (004b7460) at 004b7530 [UNCONDITIONAL_CALL]

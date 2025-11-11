@@ -4,9 +4,9 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005ab6e0()
 // Cross-references:
-//   core_sound.cpp_FUN_005b2dd0 (005b2dd0) at 005b2e2b [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2e2b [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b38ce [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b3c90 (005b3c90) at 005b3cb4 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830 (005b3830) at 005b38ce [UNCONDITIONAL_CALL]
 // Globals:
 //   CSound* g_CSoundInstance
 //   undefined4 DAT_03f693e8

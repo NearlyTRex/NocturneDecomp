@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 0051251d [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053eb40 (0053eb40) at 0053eb66 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2dd0 (005b2dd0) at 005b2e38 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2e38 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005aaef0 (005aaef0) at 005aaf0b [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setMaxSwSoundLatency_FUN_005abeb0 (005abeb0) at 005abeb0 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170 (005ab170) at 005ab176 [UNCONDITIONAL_CALL]

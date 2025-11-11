@@ -38,7 +38,7 @@
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c1cc [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 005926d0 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_viewModel_FUN_00598fc0 (00598fc0) at 00598fea [UNCONDITIONAL_CALL]
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b24a0 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b24a0 [UNCONDITIONAL_CALL]
 //   engine_console.cpp_CConsole_printf_FUN_00441890 (00441890) at 00441930 [UNCONDITIONAL_CALL]
 //   engine_dosio.c_getFile_FUN_00481a50 (00481a50) at 00481ab6 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 (004b3920) at 004b3aa2 [UNCONDITIONAL_CALL]

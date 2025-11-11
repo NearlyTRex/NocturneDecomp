@@ -112,7 +112,7 @@
 //   core_mission.cpp_CDemonMission_clearMaybe_FUN_00522c80
 //   core_mmx.c_detectCPUFeatures_FUN_00524f10
 //   core_netgame.cpp_CNetGame_FUN_0053f780
-//   core_sound.cpp_findAllSoundFiles_FUN_005b2d00
+//   core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00
 //   crt_env.c_getenv_FUN_006013f0
 //   crt_file.c_setReadonlyAttribute_FUN_00600c30
 //   crt_stdio.c_fopenThreadSafe_FUN_00601b14
@@ -632,7 +632,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
   ;
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)&stack0x00000078);
-  core_sound_cpp_findAllSoundFiles_FUN_005b2d00();
+  core_sound_cpp_CSound_findAllSoundFiles_FUN_005b2d00(g_CSoundPtr);
   core_mission_cpp_CDemonMission_clearMaybe_FUN_00522c80(g_CDemonMissionPtr);
   iVar7 = 0;
   iStack00000098 = 0;
@@ -1468,7 +1468,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
 //   XREF to: 00681ef8 (READ)
 // 0050810b: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 0050810c: CALL core_sound.cpp_findAllSoundFiles_FUN_005b2d00
+// 0050810c: CALL core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00
 //   XREF to: 005b2d00 (UNCONDITIONAL_CALL)
 // 00508111: ADD ESP,0x4
 // 00508114: MOV ESI,dword ptr [0x0067d550]

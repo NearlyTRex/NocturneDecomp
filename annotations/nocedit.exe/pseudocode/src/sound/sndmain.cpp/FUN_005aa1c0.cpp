@@ -4,8 +4,8 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005aa1c0()
 // Cross-references:
-//   core_sound.cpp_FUN_005b2dd0 (005b2dd0) at 005b2e05 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830 (005b3830) at 005b392b [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2e05 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b392b [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005aae00 (005aae00) at 005aae86 [UNCONDITIONAL_CALL]
 // Globals:
 //   undefined4 DAT_03f68848
@@ -17,9 +17,6 @@
 //   CSound* g_CSoundInstance
 
 #include "nocturne.h"
-
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005aa1c0(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6) */
 
 void sound_sndmain_cpp_FUN_005aa1c0(void)
 

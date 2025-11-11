@@ -4,8 +4,8 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x3F60000
 // =============================================================================
 
-SfxOptions[8] DAT_03f624a8 = {};
-SfxSample[64] DAT_03f6282c = {};
+CSfxOptions[8] g_SfxOptions = {};
+CSfxSample[64] g_SfxSamples = {};
 SSoundDeviceInfo[8] g_SoundDevices = {};
 void*[8] g_ChannelTertiaryBuffers = {};
 void*[8] g_ChannelPrimaryBuffers = {};

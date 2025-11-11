@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_smiley.cpp_FUN_005a3580()
 // Globals:
-//   undefined4 s_smiley_die??.wav_0064f37a
+//   TerminatedCString s_smiley_die_wav_0064f37a
 // Function calls:
 //   core_enemy.cpp_FUN_004a9f10
 //   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0

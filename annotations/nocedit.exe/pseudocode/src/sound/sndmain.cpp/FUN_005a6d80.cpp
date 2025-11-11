@@ -1,10 +1,10 @@
 // Name: sound_sndmain.cpp_FUN_005a6d80
 // Address: 005a6d80
 // Address Range: [[005a6d80, 005a6dec]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_FUN_005a6d80()
+// Convention: __cdecl
+// Signature: int sound_sndmain.cpp_FUN_005a6d80(void)
 // Cross-references:
-//   sound_sndmain.cpp_ComputingDelay_FUN_005a7100 (005a7100) at 005a7259 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100 (005a7100) at 005a7259 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_AudioChannels = 0x2
 //   undefined8 DAT_03f69328
@@ -16,37 +16,36 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005a6d80(undefined4 param_1) */
-
-undefined8
-sound_sndmain_cpp_FUN_005a6d80
-          (undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,int param_5)
+int __cdecl sound_sndmain_cpp_FUN_005a6d80(void)
 
 {
+  int in_EAX;
   int iVar1;
   int iVar2;
-  float10 fVar3;
+  int iVar3;
   float10 fVar4;
   float10 fVar5;
+  float10 fVar6;
+  int in_stack_00000004;
   
-  iVar2 = 0;
+  iVar3 = 0;
   if (0 < g_AudioChannels) {
-    param_2 = 0;
-    iVar1 = param_5;
+    iVar2 = 0;
+    iVar1 = in_stack_00000004;
     do {
-      fVar3 = (float10)*(double *)(param_5 + 4) - (float10)*(double *)((int)&DAT_03f69328 + param_2)
-      ;
-      fVar4 = (float10)*(double *)(param_5 + 0xc) -
-              (float10)*(double *)((int)&DAT_03f69368 + param_2);
-      fVar5 = (float10)*(double *)(param_5 + 0x14) -
-              (float10)*(double *)((int)&DAT_03f693a8 + param_2);
-      param_2 = param_2 + 8;
-      iVar2 = iVar2 + 1;
-      *(float *)(iVar1 + 0x80) = (float)SQRT(fVar5 * fVar5 + fVar4 * fVar4 + fVar3 * fVar3);
+      fVar4 = (float10)*(double *)(in_stack_00000004 + 4) -
+              (float10)*(double *)((int)&DAT_03f69328 + iVar2);
+      fVar5 = (float10)*(double *)(in_stack_00000004 + 0xc) -
+              (float10)*(double *)((int)&DAT_03f69368 + iVar2);
+      fVar6 = (float10)*(double *)(in_stack_00000004 + 0x14) -
+              (float10)*(double *)((int)&DAT_03f693a8 + iVar2);
+      iVar2 = iVar2 + 8;
+      iVar3 = iVar3 + 1;
+      *(float *)(iVar1 + 0x80) = (float)SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);
       iVar1 = iVar1 + 4;
-    } while (iVar2 < g_AudioChannels);
+    } while (iVar3 < g_AudioChannels);
   }
-  return CONCAT44(param_2,param_1);
+  return in_EAX;
 }
 
 

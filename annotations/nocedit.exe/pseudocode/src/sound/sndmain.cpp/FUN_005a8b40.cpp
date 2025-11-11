@@ -14,8 +14,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005a8b40(undefined4 param_1, undefined4 param_2) */
-
 void sound_sndmain_cpp_FUN_005a8b40(void)
 
 {
@@ -24,8 +22,8 @@ void sound_sndmain_cpp_FUN_005a8b40(void)
   undefined4 in_stack_00000008;
   
   iVar1 = g_SfxLastSlot;
-  *(undefined4 *)(DAT_03f624a8[g_SfxLastSlot].field0_0x0 + 0x4c) = in_stack_00000004;
-  *(undefined4 *)(DAT_03f624a8[iVar1].field0_0x0 + 0x50) = in_stack_00000008;
+  *(undefined4 *)(g_SfxOptions[g_SfxLastSlot].field5_0x14 + 0x38) = in_stack_00000004;
+  *(undefined4 *)(g_SfxOptions[iVar1].field5_0x14 + 0x3c) = in_stack_00000008;
   return;
 }
 

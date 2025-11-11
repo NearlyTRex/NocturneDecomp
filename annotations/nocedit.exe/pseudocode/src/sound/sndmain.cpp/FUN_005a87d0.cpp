@@ -4,11 +4,11 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005a87d0()
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005a86f0 (005a86f0) at 005a8726 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSampleInfo_FUN_005a86f0 (005a86f0) at 005a8726 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0 (005a7fe0) at 005a8055 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a67f5 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170 (005a8170) at 005a8329 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a8810 (005a8810) at 005a8815 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_pollHwHandle_FUN_005a7fe0 (005a7fe0) at 005a8055 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a67f5 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_updatePlaybackPos_FUN_005a8170 (005a8170) at 005a8329 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

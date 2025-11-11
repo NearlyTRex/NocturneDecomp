@@ -5,9 +5,9 @@
 // Signature: undefined sound_sndmain.cpp_FUN_005abc00()
 // Cross-references:
 //   sound_snddx.cpp_FUN_005ae340 (005ae340) at 005ae3ce [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_FUN_005b08f0 (005b08f0) at 005b098b [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_FUN_005b08f0 (005b08f0) at 005b098b [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00650dff
+//   double DOUBLE_00650dff = 0.00200000000000000
 //   undefined4 DAT_03f693f8
 //   undefined4 DAT_03f693fc
 //   undefined4 DAT_03f69400
@@ -20,7 +20,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 sound_sndmain.cpp_FUN_005abc00(undefined8 param_1) */
 
 HANDLE sound_sndmain_cpp_FUN_005abc00(void)
@@ -36,7 +35,7 @@ HANDLE sound_sndmain_cpp_FUN_005abc00(void)
   if (hThread != (HANDLE)0x0) {
     DAT_03f693f8 = in_stack_00000004;
     DAT_03f693fc = in_stack_00000008;
-    if ((double)CONCAT44(in_stack_00000008,in_stack_00000004) < _DAT_00650dff) {
+    if ((double)CONCAT44(in_stack_00000008,in_stack_00000004) < DOUBLE_00650dff) {
       DAT_03f693f8 = 0xd2f1a9fc;
       DAT_03f693fc = 0x3f60624d;
     }

@@ -35,11 +35,11 @@
 //   core_mobster.cpp_FUN_00527740 (00527740) at 00527762 [UNCONDITIONAL_CALL]
 //   core_script.cpp_CScript_process_FUN_00559960 (00559960) at 00559aab [UNCONDITIONAL_CALL]
 //   core_sentinel.cpp_SentinelBehavior_FUN_00568cd0 (00568cd0) at 00568d2d [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2f70 (005b2f70) at 005b2f86 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b33c0 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b3b90 (005b3b90) at 005b3b95 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b2770 (005b2770) at 005b28cf [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b2ca0 (005b2ca0) at 005b2cad [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2f70 (005b2f70) at 005b2f86 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2fd0 (005b2fd0) at 005b33c0 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b3b90 (005b3b90) at 005b3b95 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bdca8 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c48b0 (005c48b0) at 005c4a46 [UNCONDITIONAL_CALL]
 //   core_succubus.cpp_CSuccubus_process_FUN_005c6e90 (005c6e90) at 005c74df [UNCONDITIONAL_CALL]
@@ -54,7 +54,7 @@
 //   core_werewolf.cpp_FUN_005f1ac0 (005f1ac0) at 005f1b92 [UNCONDITIONAL_CALL]
 //   core_zombie.cpp_CZombie_FUN_005fc4f0 (005fc4f0) at 005fc5b9 [UNCONDITIONAL_CALL]
 // Function calls:
-//   sound_sndmain.cpp_SfxSlot_kill_FUN_005a7e60
+//   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
 //   sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
@@ -65,13 +65,13 @@
 undefined4 sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40(void)
 
 {
-  SfxSlot *slot;
+  CSfxSlot *slot;
   
-  slot = (SfxSlot *)sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
-  if (slot == (SfxSlot *)0x0) {
+  slot = (CSfxSlot *)sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
+  if (slot == (CSfxSlot *)0x0) {
     return 0;
   }
-  sound_sndmain_cpp_SfxSlot_kill_FUN_005a7e60(slot);
+  sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(slot);
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 1;
 }
@@ -92,7 +92,7 @@ undefined4 sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40(void)
 // 005a9c53: RET
 // 005a9c54: PUSH EAX
 //   Label: LAB_005a9c54
-// 005a9c55: CALL sound_sndmain.cpp_SfxSlot_kill_FUN_005a7e60
+// 005a9c55: CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
 //   XREF to: 005a7e60 (UNCONDITIONAL_CALL)
 // 005a9c5a: ADD ESP,0x4
 // 005a9c5d: CALL sound_sndmain.cpp_unlockSound_FUN_005abdc0

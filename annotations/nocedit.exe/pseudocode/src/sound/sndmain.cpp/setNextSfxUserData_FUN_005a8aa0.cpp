@@ -1,10 +1,10 @@
 // Name: sound_sndmain.cpp_setNextSfxUserData_FUN_005a8aa0
 // Address: 005a8aa0
 // Address Range: [[005a8aa0, 005a8aef]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_setNextSfxUserData_FUN_005a8aa0()
+// Convention: __cdecl
+// Signature: void sound_sndmain.cpp_setNextSfxUserData_FUN_005a8aa0(int userdata_index)
 // Cross-references:
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b21e5 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b21e5 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_00650812
 //   TerminatedCString s_setNextSfxUserData_inval_00650827
@@ -17,21 +17,18 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_setNextSfxUserData(undefined4 param_1, undefined4
-   param_2) */
-
-void sound_sndmain_cpp_setNextSfxUserData_FUN_005a8aa0
-               (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4,
-               int param_5,undefined4 param_6,undefined4 param_7)
+void __cdecl sound_sndmain_cpp_setNextSfxUserData_FUN_005a8aa0(int userdata_index)
 
 {
-  if ((param_5 < 0) || (1 < param_5)) {
+  undefined4 in_stack_0000000c;
+  
+  if ((userdata_index < 0) || (1 < userdata_index)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0xcf3;
-    core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("setNextSfxUserData - invalid user data index: %d",param_5,unaff_EBX);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("setNextSfxUserData - invalid user data index: %d",userdata_index)
+    ;
   }
-  *(undefined4 *)(g_SfxLastSlot * 0x70 + 0x3f624fc + param_5 * 4) = param_7;
+  *(undefined4 *)(g_SfxLastSlot * 0x70 + 0x3f624fc + userdata_index * 4) = in_stack_0000000c;
   return;
 }
 

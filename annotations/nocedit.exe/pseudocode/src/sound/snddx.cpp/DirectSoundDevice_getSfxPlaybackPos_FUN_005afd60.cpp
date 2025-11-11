@@ -16,7 +16,7 @@
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   sound_snddx.cpp_FUN_005ade70
-//   sound_sndmain.cpp_FUN_005a8550
+//   sound_sndmain.cpp_CSfxSample_FUN_005a8550
 //   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
 
 #include "nocturne.h"
@@ -53,7 +53,7 @@ double sound_snddx_cpp_DirectSoundDevice_getSfxPlaybackPos_FUN_005afd60(void)
     sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
     return -1.0;
   }
-  uVar2 = sound_sndmain_cpp_FUN_005a8550();
+  uVar2 = sound_sndmain_cpp_CSfxSample_FUN_005a8550(*(CSfxSample **)(in_stack_00000008 + 0x78));
   return (double)(uStack_20 / uVar2);
 }
 
@@ -108,7 +108,7 @@ double sound_snddx_cpp_DirectSoundDevice_getSfxPlaybackPos_FUN_005afd60(void)
 //   XREF to: Stack[0x8] (READ)
 // 005afdc9: MOV ECX,dword ptr [EAX + 0x78]
 // 005afdcc: PUSH ECX
-// 005afdcd: CALL sound_sndmain.cpp_FUN_005a8550
+// 005afdcd: CALL sound_sndmain.cpp_CSfxSample_FUN_005a8550
 //   XREF to: 005a8550 (UNCONDITIONAL_CALL)
 // 005afdd2: MOV EBX,EAX
 // 005afdd4: ADD ESP,0x4

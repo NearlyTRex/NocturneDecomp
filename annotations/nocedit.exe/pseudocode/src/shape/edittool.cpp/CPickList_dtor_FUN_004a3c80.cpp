@@ -54,7 +54,7 @@
 //   core_skeledit.cpp_FUN_0058afe0 (0058afe0) at 0058b0d0 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c774 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 00593039 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b3d20 (005b3d20) at 005b3da7 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b3d20 (005b3d20) at 005b3da7 [UNCONDITIONAL_CALL]
 //   core_teleport.cpp_CTeleportDest_FUN_005da870 (005da870) at 005da8e6 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030 (004b5030) at 004b52c0 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220 (004b4220) at 004b45ad [UNCONDITIONAL_CALL]

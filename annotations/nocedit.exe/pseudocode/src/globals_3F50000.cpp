@@ -4,5 +4,5 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x3F50000
 // =============================================================================
 
-SfxSlot[64] g_SfxSlots = {};
+CSfxSlot[64] g_SfxSlots = {};
 

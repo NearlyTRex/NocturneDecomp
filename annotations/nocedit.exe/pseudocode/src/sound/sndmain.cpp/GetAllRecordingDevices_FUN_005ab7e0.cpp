@@ -11,8 +11,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_GetAllRecordingDevices() */
-
 int sound_sndmain_cpp_GetAllRecordingDevices_FUN_005ab7e0(void)
 
 {

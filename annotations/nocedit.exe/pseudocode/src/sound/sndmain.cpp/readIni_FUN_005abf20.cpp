@@ -136,14 +136,14 @@ LAB_005ac012:
       if (0 < g_MaxSoundChannels) {
         do {
           crt_stdio_c_sprintf_FUN_005fdbd0(local_2c,"SfxChannel%dEnabled");
-          in_stack_00000054 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0();
+          in_stack_00000054 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(iVar2);
           engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(ini_file,local_24,&stack0x00000054);
-          sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20();
+          sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(iVar2);
           crt_stdio_c_sprintf_FUN_005fdbd0(local_1c,"SfxChannel%dVol");
-          in_stack_00000068 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90();
+          in_stack_00000068 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(iVar2);
           in_stack_0000006c = in_stack_00000068;
           engine_ini_cpp_CIniFile_getFloat_FUN_004fbcd0(ini_file,local_14,&stack0x00000068);
-          sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0();
+          sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(iVar2,in_stack_0000006c);
           iVar2 = iVar2 + 1;
         } while (iVar2 < g_MaxSoundChannels);
       }

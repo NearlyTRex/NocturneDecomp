@@ -405,7 +405,7 @@
 //   core_skeleton.cpp_getDeformableModel_FUN_005a1cf0 (005a1cf0) at 005a1d6a [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_loadSkeleton_FUN_005a1df0 (005a1df0) at 005a1e62 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0 (005b3cc0) at 005b3d0f [UNCONDITIONAL_CALL]
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b25c8 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b25c8 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bfb60 (005bfb60) at 005bfb9c [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c07b0 (005c07b0) at 005c15fd [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c1680 (005c1680) at 005c1eed [UNCONDITIONAL_CALL]
@@ -680,29 +680,28 @@
 //   sound_snddx.cpp_DirectSoundDevice_lockSample_FUN_005af220 (005af220) at 005af294 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_DirectSoundDevice_startSfx_FUN_005afe80 (005afe80) at 005aff26 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_DirectSoundDevice_unlockSample_FUN_005af320 (005af320) at 005af35a [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580 (005a8580) at 005a86c3 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0 (005a62c0) at 005a6378 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_lock_FUN_005a6430 (005a6430) at 005a64b1 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0 (005a65a0) at 005a6625 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_FUN_005a6df0 (005a6df0) at 005a6e68 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_FUN_005a6f00 (005a6f00) at 005a6fb8 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070 (005a7070) at 005a70b6 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100 (005a7100) at 005a73a5 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 (005a7e60) at 005a7fa9 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_kill_FUN_005acdb0 (005acdb0) at 005ace36 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (005a75e0) at 005a7769 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0 (005a7fe0) at 005a8017 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a6b8b [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390 (005a8390) at 005a83bc [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170 (005a8170) at 005a82c1 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CalculateDistanceMaybe_FUN_005a45c0 (005a45c0) at 005a4b81 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ComputingDelay_FUN_005a7100 (005a7100) at 005a73a5 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a43a0 (005a43a0) at 005a43ee [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a5200 (005a5200) at 005a5308 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a59c0 (005a59c0) at 005a59f8 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a5db0 (005a5db0) at 005a5dfb [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9de0 (005a9de0) at 005a9e0d [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005aca90 (005aca90) at 005acd66 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a508a [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SampleInfo_cvtPlaybackPos_FUN_005a8580 (005a8580) at 005a86c3 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSample_freeMemory_FUN_005a62c0 (005a62c0) at 005a6378 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSample_lock_FUN_005a6430 (005a6430) at 005a64b1 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSample_seek_FUN_005a65a0 (005a65a0) at 005a6625 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_Something1_FUN_005a6f00 (005a6f00) at 005a6fb8 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_Something2_FUN_005a6df0 (005a6df0) at 005a6e68 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_autoCalcDelayRemaining_FUN_005a7070 (005a7070) at 005a70b6 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_kill_2_FUN_005aca90 (005aca90) at 005acd66 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_kill_FUN_005a7e60 (005a7e60) at 005a7fa9 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_kill_FUN_005acdb0 (005acdb0) at 005ace36 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_pollHwHandle_FUN_005a7fe0 (005a7fe0) at 005a8017 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a6b8b [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_seek_FUN_005a8390 (005a8390) at 005a83bc [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_updatePlaybackPos_FUN_005a8170 (005a8170) at 005a82c1 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_UnknownPlayOrUseSample_FUN_005a75e0 (005a75e0) at 005a7769 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_allocMixBuffers_FUN_005a5730 (005a5730) at 005a5825 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80 (005a5b80) at 005a5ce9 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 (005acf20) at 005acf81 [UNCONDITIONAL_CALL]
@@ -721,6 +720,7 @@
 //   sound_sndmain.cpp_setMaxSwSoundLatency_FUN_005abeb0 (005abeb0) at 005abf04 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0 (005a8af0) at 005a8b31 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setNextSfxUserData_FUN_005a8aa0 (005a8aa0) at 005a8ae6 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setNumberOfSfxChannels_FUN_005a9de0 (005a9de0) at 005a9e0d [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setRecordingFormat_FUN_005ab9a0 (005ab9a0) at 005aba0a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0 (005a9cf0) at 005a9d1b [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setSfxUserData_FUN_005a9ba0 (005a9ba0) at 005a9bcb [UNCONDITIONAL_CALL]
@@ -767,7 +767,7 @@
 //   BOOL g_RecursiveCallFlag
 //   CSound g_CSoundInstance
 // Function calls:
-//   core_sound.cpp_FUN_005aaeb0
+//   core_sound.cpp_CSound_FUN_005aaeb0
 //   crt_errno.c_errno_FUN_00601450
 //   crt_startup.c_notifyAbnormalTermination_FUN_00601620
 //   crt_stdio.c_fprintf_FUN_005fe6d0
@@ -860,7 +860,7 @@ LAB_00506f71:
           in_stack_00000020 = pFVar1;
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar1,"..\\core\\main.c",0xad);
         }
-        core_sound_cpp_FUN_005aaeb0();
+        core_sound_cpp_CSound_FUN_005aaeb0();
         engine_2d_c_cleanupGraphicsSystem_FUN_005ecd90();
         wincore_winrun_cpp_endPeriod_FUN_005f2db0();
         wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005f3920(g_ErrorMessageBuffer);
@@ -1025,7 +1025,7 @@ LAB_00506f93:
 //   XREF to: 00681ef8 (READ)
 // 00507014: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 00507015: CALL core_sound.cpp_FUN_005aaeb0
+// 00507015: CALL core_sound.cpp_CSound_FUN_005aaeb0
 //   XREF to: 005b2d60 (UNCONDITIONAL_CALL)
 // 0050701a: ADD ESP,0x4
 // 0050701d: CALL engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90

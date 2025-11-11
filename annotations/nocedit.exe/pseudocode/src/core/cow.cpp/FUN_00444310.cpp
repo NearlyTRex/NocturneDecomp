@@ -43,7 +43,7 @@
 //   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
-//   core_sound.cpp_FUN_005b3b80
+//   core_sound.cpp_CSound_FUN_005b3b80
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 
@@ -68,8 +68,9 @@ void core_cow_cpp_FUN_00444310(void)
   CEnemy *pCVar9;
   CVector3f *pCVar10;
   int extraout_EAX;
-  undefined4 uVar11;
   int extraout_EAX_00;
+  undefined4 uVar11;
+  int extraout_EAX_01;
   BADSPACEBASE *in_ESP;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
@@ -127,8 +128,8 @@ void core_cow_cpp_FUN_00444310(void)
         (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
                   ((CDemonActor *)in_stack_00000004);
         if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) != 0) {
-          iVar6 = core_sound_cpp_FUN_005b3b80();
-          if (iVar6 == 0) {
+          core_sound_cpp_CSound_FUN_005b3b80(g_CSoundPtr);
+          if (extraout_EAX_00 == 0) {
             uVar11 = (*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
                                ((CDemonActor *)in_stack_00000004,"cow?.wav");
             *(undefined4 *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x10) =
@@ -149,7 +150,7 @@ void core_cow_cpp_FUN_00444310(void)
       uVar11 = DAT_0065c098;
       if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
-        if (extraout_EAX_00 == 0) {
+        if (extraout_EAX_01 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr->motion_controller,0,1);
         }
@@ -696,7 +697,7 @@ switchD_0044482d_caseD_3:
 //   XREF to: 03f6af64 (PARAM)
 // 004446d9: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 004446da: CALL core_sound.cpp_FUN_005b3b80
+// 004446da: CALL core_sound.cpp_CSound_FUN_005b3b80
 //   XREF to: 005b3b80 (UNCONDITIONAL_CALL)
 // 004446df: ADD ESP,0x8
 // 004446e2: TEST EAX,EAX

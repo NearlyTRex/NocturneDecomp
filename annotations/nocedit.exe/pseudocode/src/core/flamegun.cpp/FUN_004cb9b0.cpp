@@ -9,8 +9,8 @@
 //   CSound* g_CSoundPtr = 03f6af64
 //   CSound g_CSoundInstance
 // Function calls:
-//   core_sound.cpp_FUN_005b3b80
-//   core_sound.cpp_FUN_005b3b90
+//   core_sound.cpp_CSound_FUN_005b3b80
+//   core_sound.cpp_CSound_FUN_005b3b90
 //   core_weapon.cpp_CWeapon_process_FUN_005ee110
 
 #include "nocturne.h"
@@ -24,15 +24,16 @@ void core_flamegun_cpp_FUN_004cb9b0(void)
 {
   float fVar1;
   CWeapon *pCVar2;
-  int iVar3;
-  undefined4 uVar4;
+  int extraout_EAX;
+  undefined4 uVar3;
+  int iVar4;
   CWeapon *pCStack00000004;
   float fStack00000008;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(pCStack00000004);
   if (*(int *)pCStack00000004[1].base_actor.actor_name == 0) {
     if (*(int *)(pCStack00000004[1].base_actor.actor_name + 4) != 0) {
-      core_sound_cpp_FUN_005b3b90();
+      core_sound_cpp_CSound_FUN_005b3b90(g_CSoundPtr);
       pCVar2 = pCStack00000004 + 1;
       (pCVar2->base_actor).actor_name[4] = '\0';
       (pCVar2->base_actor).actor_name[5] = '\0';
@@ -41,30 +42,30 @@ void core_flamegun_cpp_FUN_004cb9b0(void)
     }
   }
   else {
-    iVar3 = core_sound_cpp_FUN_005b3b80();
-    if (iVar3 == 0) {
-      uVar4 = (*((pCStack00000004->base_actor).vtable)->playSound)
+    core_sound_cpp_CSound_FUN_005b3b80(g_CSoundPtr);
+    if (extraout_EAX == 0) {
+      uVar3 = (*((pCStack00000004->base_actor).vtable)->playSound)
                         (&pCStack00000004->base_actor,"fl-throw.wav");
-      *(undefined4 *)(pCStack00000004[1].base_actor.actor_name + 4) = uVar4;
+      *(undefined4 *)(pCStack00000004[1].base_actor.actor_name + 4) = uVar3;
     }
     fStack00000008 = *(float *)(pCStack00000004[1].base_actor.actor_name + 0xc) - fStack00000008;
     *(float *)(pCStack00000004[1].base_actor.actor_name + 0xc) = fStack00000008;
     if (fStack00000008 < 0.0) {
       fVar1 = 1.0 / _DAT_0065e270;
-      iVar3 = pCStack00000004->ammo_count + -1;
-      pCStack00000004->ammo_count = iVar3;
+      iVar4 = pCStack00000004->ammo_count + -1;
+      pCStack00000004->ammo_count = iVar4;
       *(float *)(pCStack00000004[1].base_actor.actor_name + 0xc) = fVar1 + fStack00000008;
-      if (iVar3 < 0) {
+      if (iVar4 < 0) {
         pCStack00000004->ammo_count = 0;
       }
     }
   }
-  uVar4 = *(undefined4 *)pCStack00000004[1].base_actor.actor_name;
+  uVar3 = *(undefined4 *)pCStack00000004[1].base_actor.actor_name;
   pCStack00000004[1].base_actor.actor_name[0] = '\0';
   pCStack00000004[1].base_actor.actor_name[1] = '\0';
   pCStack00000004[1].base_actor.actor_name[2] = '\0';
   pCStack00000004[1].base_actor.actor_name[3] = '\0';
-  *(undefined4 *)(pCStack00000004[1].base_actor.actor_name + 8) = uVar4;
+  *(undefined4 *)(pCStack00000004[1].base_actor.actor_name + 8) = uVar3;
   return;
 }
 
@@ -110,7 +111,7 @@ void core_flamegun_cpp_FUN_004cb9b0(void)
 //   XREF to: 00681ef8 (READ)
 // 004cba0b: PUSH EDX
 //   XREF to: 03f6af64 (DATA)
-// 004cba0c: CALL core_sound.cpp_FUN_005b3b80
+// 004cba0c: CALL core_sound.cpp_CSound_FUN_005b3b80
 //   XREF to: 005b3b80 (UNCONDITIONAL_CALL)
 // 004cba11: ADD ESP,0x8
 // 004cba14: TEST EAX,EAX
@@ -163,7 +164,7 @@ void core_flamegun_cpp_FUN_004cb9b0(void)
 //   XREF to: 00681ef8 (READ)
 // 004cba8a: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
-// 004cba8b: CALL core_sound.cpp_FUN_005b3b90
+// 004cba8b: CALL core_sound.cpp_CSound_FUN_005b3b90
 //   XREF to: 005b3b90 (UNCONDITIONAL_CALL)
 // 004cba90: ADD ESP,0x8
 // 004cba93: MOV dword ptr [EBX + 0x57c],0x0

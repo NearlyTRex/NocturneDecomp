@@ -28,16 +28,16 @@ void sound_sndmain_cpp_FUN_005a59c0(void)
 {
   int *piVar1;
   int iVar2;
-  SfxSlot *pSVar3;
+  CSfxSlot *pCVar3;
   BADSPACEBASE *in_ESP;
   ulong count;
   undefined4 *puVar4;
   int iVar5;
   undefined4 *puVar6;
   byte bVar7;
-  undefined4 auStackY_68 [5];
-  undefined4 uStackY_54;
-  undefined4 uStackY_50;
+  undefined4 auStack_68 [5];
+  undefined4 uStack_54;
+  undefined4 uStack_50;
   undefined4 auStack_3c [8];
   int iStack_1c;
   int iStack_18;
@@ -59,7 +59,7 @@ void sound_sndmain_cpp_FUN_005a59c0(void)
   if (0 < g_AudioChannels) {
     iVar2 = 0;
     do {
-      uStackY_54 = 0x5a5a38;
+      uStack_54 = 0x5a5a38;
       crt_string_c_memmove_FUN_005fe5e0
                 (*(void **)((int)g_ChannelPrimaryBuffers + iVar2),
                  (void *)(g_MixBufferSize * 4 +
@@ -68,7 +68,7 @@ void sound_sndmain_cpp_FUN_005a59c0(void)
       piVar1 = (int *)((int)g_ChannelPrimaryBuffers + iVar2);
       iVar2 = iVar2 + 4;
       iVar5 = iVar5 + 1;
-      uStackY_50 = 0x5a5a66;
+      uStack_50 = 0x5a5a66;
       crt_memory_c_memset_FUN_005fde40
                 ((void *)(*piVar1 + (g_NumMixBuffers + -1) * g_MixBufferSize * 4),0,count);
     } while (iVar5 < g_AudioChannels);
@@ -76,33 +76,32 @@ void sound_sndmain_cpp_FUN_005a59c0(void)
   iStack_1c = g_MixBufferSize;
   iStack_18 = g_AudioChannels;
   iStack_14 = g_AudioSampleRate;
-  iVar5 = g_AudioSampleRate;
   if (0 < g_AudioChannels) {
-    iVar2 = 0;
+    iVar5 = 0;
     do {
-      iVar5 = iVar2 + 4;
-      *(undefined4 *)((int)auStack_3c + iVar2) =
-           *(undefined4 *)((int)g_ChannelPrimaryBuffers + iVar2);
-      iVar2 = iVar5;
-    } while (iVar5 < g_AudioChannels * 4);
+      iVar2 = iVar5 + 4;
+      *(undefined4 *)((int)auStack_3c + iVar5) =
+           *(undefined4 *)((int)g_ChannelPrimaryBuffers + iVar5);
+      iVar5 = iVar2;
+    } while (iVar2 < g_AudioChannels * 4);
   }
-  pSVar3 = g_SfxSlots;
+  pCVar3 = g_SfxSlots;
   do {
-    iVar5 = sound_sndmain_cpp_ComputingDelay_FUN_005a7100(iVar5);
-    pSVar3 = pSVar3 + 1;
-  } while (pSVar3 != (SfxSlot *)&g_SfxLastSlot);
-  pSVar3 = g_SfxSlots;
+    sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(pCVar3);
+    pCVar3 = pCVar3 + 1;
+  } while (pCVar3 != (CSfxSlot *)&g_SfxLastSlot);
+  pCVar3 = g_SfxSlots;
   do {
     puVar4 = auStack_3c;
-    puVar6 = auStackY_68;
+    puVar6 = auStack_68;
     for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {
       *puVar6 = *puVar4;
       puVar4 = puVar4 + (uint)bVar7 * -2 + 1;
       puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
     }
-    sound_sndmain_cpp_UnknownPlayOrUseSample_FUN_005a75e0();
-    pSVar3 = pSVar3 + 1;
-  } while (pSVar3 != (SfxSlot *)&g_SfxLastSlot);
+    sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(pCVar3);
+    pCVar3 = pCVar3 + 1;
+  } while (pCVar3 != (CSfxSlot *)&g_SfxLastSlot);
   g_MixBufferReadIndex = g_MixBufferSize;
   g_MixBufferWriteIndex = 0;
   DAT_03f69320 = DAT_03f69320 + 1;

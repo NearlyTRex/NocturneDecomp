@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_sound.cpp_FUN_005b17d0()
 // Globals:
-//   undefined4 DAT_03f6b128
+//   CStrList CStrList_03f6b128
 //   undefined4 DAT_03f6b138
 //   undefined1 DAT_03f6b140
 //   undefined1 DAT_03f6b141
@@ -16,8 +16,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_sound.cpp_FUN_005b17d0(undefined4 param_1) */
-
 void core_sound_cpp_FUN_005b17d0(void)
 
 {
@@ -25,24 +23,23 @@ void core_sound_cpp_FUN_005b17d0(void)
   char *pcVar2;
   int iVar3;
   int index;
-  undefined4 *unaff_EBP;
+  CStrList *unaff_EBP;
   char *pcVar4;
   char *in_stack_00000004;
   
   index = 0;
   DAT_03f6b138 = 0;
-  if (DAT_03f6b128 < 1) {
+  if (CStrList_03f6b128.item_count < 1) {
     DAT_03f6b138 = 0;
     return;
   }
   do {
-    pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&DAT_03f6b128,index);
+    pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStrList_03f6b128,index);
     iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
                       (in_stack_00000004,pcVar2,(int)unaff_EBP);
     if (iVar3 != 0) {
-      unaff_EBP = &DAT_03f6b128;
-      pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&DAT_03f6b128,index)
-      ;
+      unaff_EBP = &CStrList_03f6b128;
+      pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStrList_03f6b128,index);
       pcVar4 = &DAT_03f6b140 + DAT_03f6b138 * 0x28;
       do {
         cVar1 = *pcVar2;
@@ -59,7 +56,7 @@ void core_sound_cpp_FUN_005b17d0(void)
       }
     }
     index = index + 1;
-    if (DAT_03f6b128 <= index) {
+    if (CStrList_03f6b128.item_count <= index) {
       return;
     }
   } while( true );

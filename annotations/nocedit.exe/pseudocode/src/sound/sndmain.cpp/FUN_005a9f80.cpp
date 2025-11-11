@@ -5,17 +5,17 @@
 // Signature: undefined sound_sndmain.cpp_FUN_005a9f80()
 // Globals:
 //   TerminatedCString s_sfx_slot_d_s_pos_7_1f_7__00650b33
-//   SfxSlot[64] g_SfxSlots
+//   CSfxSlot[64] g_SfxSlots
 //   undefined4 DAT_03f5db1c
 //   undefined4 g_SfxSlots[1].status
-//   undefined4 g_SfxSlots[1].field_20[76]
-//   undefined4 g_SfxSlots[1].field_20[80]
+//   undefined4 g_SfxSlots[1].options.field5_0x14[76]
+//   undefined4 g_SfxSlots[1].options.field5_0x14[80]
 //   undefined4 DAT_03f5dc40
 //   undefined4 DAT_03f5dc44
 // Function calls:
 //   crt_stdio.c_sprintf_FUN_005fdbd0
+//   sound_sndmain.cpp_CSfxSlot_FUN_005a80e0
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
-//   sound_sndmain.cpp_PollHWPlaybackPosAndSet_FUN_005a80e0
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
@@ -24,26 +24,26 @@ void sound_sndmain_cpp_FUN_005a9f80(void)
 
 {
   int iVar1;
-  SfxSlot *pSVar2;
-  int iVar3;
+  CSfxSlot *this_ptr;
+  int iVar2;
   char *in_stack_00000008;
   
   sound_sndmain_cpp_lockSound_FUN_005abd30();
-  pSVar2 = g_SfxSlots;
-  iVar3 = 0;
+  this_ptr = g_SfxSlots;
+  iVar2 = 0;
   do {
-    if ((pSVar2->sample != (SfxSample *)0x0) && (pSVar2->field_116 != 0)) {
-      sound_sndmain_cpp_PollHWPlaybackPosAndSet_FUN_005a80e0();
+    if ((this_ptr->sample != (CSfxSample *)0x0) && (this_ptr->field2_0x74 != 0)) {
+      sound_sndmain_cpp_CSfxSlot_FUN_005a80e0(this_ptr);
       iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0
-                        (in_stack_00000008,"sfx slot %d: %s, pos %7.1f/%7.1f\n",iVar3,pSVar2->sample,
-                         *(undefined4 *)(pSVar2->field_20 + 0x4c),
-                         *(undefined4 *)(pSVar2->field_20 + 0x50),
-                         (double)*(int *)(pSVar2->sample->field1_0x4 + 0x10c));
+                        (in_stack_00000008,"sfx slot %d: %s, pos %7.1f/%7.1f\n",iVar2,
+                         this_ptr->sample,*(undefined4 *)((this_ptr->options).field5_0x14 + 0x4c),
+                         *(undefined4 *)((this_ptr->options).field5_0x14 + 0x50),
+                         (double)(this_ptr->sample->sample_info).bytes_per_second);
       in_stack_00000008 = in_stack_00000008 + iVar1;
     }
-    iVar3 = iVar3 + 1;
-    pSVar2 = pSVar2 + 1;
-  } while (iVar3 < 0x40);
+    iVar2 = iVar2 + 1;
+    this_ptr = this_ptr + 1;
+  } while (iVar2 < 0x40);
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   *in_stack_00000008 = '\0';
   return;
@@ -91,7 +91,7 @@ void sound_sndmain_cpp_FUN_005a9f80(void)
 //   XREF to: 005a9f9a (CONDITIONAL_JUMP)
 // 005a9fb9: PUSH EBX
 //   XREF to: 03f5dbcc (DATA)
-// 005a9fba: CALL sound_sndmain.cpp_PollHWPlaybackPosAndSet_FUN_005a80e0
+// 005a9fba: CALL sound_sndmain.cpp_CSfxSlot_FUN_005a80e0
 //   XREF to: 005a80e0 (UNCONDITIONAL_CALL)
 // 005a9fbf: ADD ESP,0x4
 // 005a9fc2: MOV EAX,dword ptr [EBX + 0x78]

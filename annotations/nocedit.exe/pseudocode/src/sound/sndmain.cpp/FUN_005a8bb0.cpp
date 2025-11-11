@@ -18,8 +18,8 @@ void sound_sndmain_cpp_FUN_005a8bb0(void)
 {
   uint in_stack_00000004;
   
-  *(uint *)(DAT_03f624a8[g_SfxLastSlot].field0_0x0 + 0x5c) =
-       *(uint *)(DAT_03f624a8[g_SfxLastSlot].field0_0x0 + 0x5c) & ~in_stack_00000004;
+  *(uint *)(g_SfxOptions[g_SfxLastSlot].field5_0x14 + 0x48) =
+       *(uint *)(g_SfxOptions[g_SfxLastSlot].field5_0x14 + 0x48) & ~in_stack_00000004;
   return;
 }
 

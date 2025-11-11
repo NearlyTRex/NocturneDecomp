@@ -35,7 +35,7 @@
 //   undefined4 DAT_03261368
 //   CSound g_CSoundInstance
 // Function calls:
-//   core_sound.cpp_CallToCallToPlaySFX_FUN_005b39b0
+//   core_sound.cpp_CSound_FUN_005b39b0
 //   crt_string.c_splitpath_FUN_005ff178
 //   crt_string.c_stricmp_FUN_005fe7f0
 
@@ -153,7 +153,7 @@ void core_script_cpp_FUN_0055a540(void)
     } while (cVar1 != '\0');
   }
   puStack_68 = acStack_64;
-  core_sound_cpp_CallToCallToPlaySFX_FUN_005b39b0();
+  core_sound_cpp_CSound_FUN_005b39b0(g_CSoundPtr);
   in_stack_00000004[6] = 0;
   return;
 }
@@ -300,7 +300,7 @@ void core_script_cpp_FUN_0055a540(void)
 //   XREF to: 00681ef8 (READ)
 // 0055a672: PUSH ESI
 //   XREF to: 03f6af64 (DATA)
-// 0055a673: CALL core_sound.cpp_CallToCallToPlaySFX_FUN_005b39b0
+// 0055a673: CALL core_sound.cpp_CSound_FUN_005b39b0
 //   XREF to: 005b39b0 (UNCONDITIONAL_CALL)
 // 0055a678: ADD ESP,0x8
 // 0055a67b: MOV dword ptr [EBX + 0x18],0x0

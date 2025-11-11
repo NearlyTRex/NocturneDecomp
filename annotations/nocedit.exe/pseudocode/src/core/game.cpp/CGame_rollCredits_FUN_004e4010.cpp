@@ -93,8 +93,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
   int in_stack_00000064;
   CGame *in_stack_00000074;
   int in_stack_00000078;
-  char *apcStack_1124 [5];
-  undefined4 uStack_1110;
+  undefined4 uStack_1120;
   CGame *in_stack_ffffef00;
   undefined4 auStack_10bc [997];
   char acStack_128 [4];
@@ -135,14 +134,14 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
       pcVar5 = pcVar5 + (uint)bVar11 * -2 + 1;
     } while (cVar3 != '\0');
     pvVar6 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(~uVar7 + 9,"..\\core\\game.cpp",0x1237);
-    *(void **)((int)apcStack_1124 + iVar8 + 4) = pvVar6;
+    *(void **)((int)&uStack_1120 + iVar8) = pvVar6;
     if (pvVar6 == (void *)0x0) {
       g_CurrentFilename = "..\\core\\game.cpp";
       g_CurrentLineNumber = 0x1239;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CGame::rollCredits - Out of memory");
     }
     pcVar5 = acStack_124;
-    pcVar10 = *(char **)((int)apcStack_1124 + iVar8);
+    pcVar10 = *(char **)(&stack0xffffeedc + iVar8);
     do {
       cVar3 = *pcVar5;
       *pcVar10 = cVar3;
@@ -156,27 +155,19 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\core\\game.cpp",0x123e);
   sound_sndmain_cpp_cleanup_FUN_005ab130();
   sound_sndmain_cpp_FUN_005aaef0();
-  apcStack_1124[0] = (char *)0x1;
-  iVar8 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0();
+  iVar8 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(1);
   if (iVar8 != 0) {
-    apcStack_1124[1] = (char *)0x4e438f;
+    uStack_1120 = 0x4e438f;
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-    apcStack_1124[2] = (char *)0x1;
-    apcStack_1124[1] = (char *)0x4e4396;
-    sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0();
-    apcStack_1124[3] = (char *)0x1;
-    apcStack_1124[2] = (char *)0x4e43a0;
+    uStack_1120 = 0x4e4396;
+    sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(1);
     sound_sndmain_cpp_FUN_005a8b70();
-    apcStack_1124[4] = "faded-remix.mp3";
-    apcStack_1124[3] = (char *)0x4e43ad;
     sound_sndmain_cpp_startSfx_FUN_005a8e90();
-    uStack_1110 = 0x4e43bc;
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   }
   engine_2d_c_clearInputAndWait_FUN_00403260();
   this_ptr_00 = g_ThemeFont;
   g_ThemeFont->win_font_enabled = 0;
-  uStack_1110 = 0x4e4136;
   iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr_00,0x58);
   puStack00000020 = (uint *)0xffffffff;
   iStack00000030 = iVar4;
@@ -206,7 +197,6 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
             pcVar5 = pcVar5 + 2;
           }
           if ((-1 < (int)in_stack_00000040) && ((int)in_stack_00000040 < 0x1df - iVar4)) {
-            uStack_1110 = 0x4e421c;
             engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
                       (this_ptr_00,0x19e,0x27f,(int)in_stack_00000040,color_mode,0,pcVar5);
           }

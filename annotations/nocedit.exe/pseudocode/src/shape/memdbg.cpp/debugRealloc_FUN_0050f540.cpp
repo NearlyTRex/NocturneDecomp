@@ -36,7 +36,7 @@
 //   shape_meshlod.cpp_ReallocSomething_FUN_00518790 (00518790) at 005187eb [UNCONDITIONAL_CALL]
 //   shape_quantize.cpp_AllocateMemoryForSomething_FUN_00554a50 (00554a50) at 00554aaf [UNCONDITIONAL_CALL]
 //   shape_quantize.cpp_FUN_00556d20 (00556d20) at 00556d31 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ReallocSomething_FUN_005a6170 (005a6170) at 005a62a1 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_FUN_005a6170 (005a6170) at 005a62a1 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_allocMixBuffers_FUN_005a5730 (005a5730) at 005a57c4 [UNCONDITIONAL_CALL]
 //   support_codec.cpp_CLZWDictionary_init_FUN_0043ee60 (0043ee60) at 0043ee9d [UNCONDITIONAL_CALL]
 // Globals:

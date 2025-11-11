@@ -410,7 +410,7 @@
 //   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
 //   core_setdir.cpp_CDemonSet_setPendingCamera_FUN_00575b00
 //   core_setutil.cpp_C3DSLight_addFilter_FUN_00586fa0
-//   core_sound.cpp_CallToCallToPlaySFX_FUN_005b39b0
+//   core_sound.cpp_CSound_FUN_005b39b0
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   crt_stdio.c_sscanf_FUN_0060013c
@@ -2618,9 +2618,9 @@ LAB_0055e656:
                                                     ;
                                                     if (pcVar18 != (char *)0x0) goto LAB_0055e656;
                                                     if (DAT_0310ec9c == 0) {
-                                                                                                            
-                                                  core_sound_cpp_CallToCallToPlaySFX_FUN_005b39b0();
-                                                  }
+                                                      core_sound_cpp_CSound_FUN_005b39b0
+                                                                (g_CSoundPtr);
+                                                    }
                                                   }
                                                   else {
                                                     iVar8 = crt_string_c_strnicmp_FUN_005ff070
@@ -9910,7 +9910,7 @@ LAB_0055a8d4:
 //   XREF to: 03f6af64 (PARAM)
 // 0055ea8c: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 0055ea8d: CALL core_sound.cpp_CallToCallToPlaySFX_FUN_005b39b0
+// 0055ea8d: CALL core_sound.cpp_CSound_FUN_005b39b0
 //   XREF to: 005b39b0 (UNCONDITIONAL_CALL)
 // 0055ea92: ADD ESP,0x8
 // 0055ea95: JMP 0x0055a8bb

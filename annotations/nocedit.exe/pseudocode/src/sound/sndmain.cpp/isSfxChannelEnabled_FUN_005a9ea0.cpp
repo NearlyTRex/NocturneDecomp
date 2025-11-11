@@ -1,15 +1,15 @@
 // Name: sound_sndmain.cpp_isSfxChannelEnabled_FUN_005a9ea0
 // Address: 005a9ea0
 // Address Range: [[005a9ea0, 005a9ee3]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_isSfxChannelEnabled_FUN_005a9ea0()
+// Convention: __cdecl
+// Signature: int sound_sndmain.cpp_isSfxChannelEnabled_FUN_005a9ea0(int channel_index)
 // Cross-references:
 //   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ac549 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_rollCredits_FUN_004e4010 (004e4010) at 004e4109 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 005128a1 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2e62 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b321d [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b2d70 (005b2d70) at 005b2d75 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2dd0 (005b2dd0) at 005b2e62 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2fd0 (005b2fd0) at 005b321d [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005ac15d [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a8f23 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_writeIni_FUN_005ac220 (005ac220) at 005ac37a [UNCONDITIONAL_CALL]
@@ -24,22 +24,16 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_isSfxChannelEnabled(undefined4 param_1) */
-
-undefined4
-sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0
-          (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4,int param_5
-          )
+int __cdecl sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(int channel_index)
 
 {
-  if ((-1 < param_5) && (param_5 < 0x20)) {
-    return *(undefined4 *)(&DAT_03f68928 + param_5 * 4);
+  if ((-1 < channel_index) && (channel_index < 0x20)) {
+    return *(int *)(&DAT_03f68928 + channel_index * 4);
   }
   g_CurrentFilename = "..\\sound\\sndmain.cpp";
   g_CurrentLineNumber = 0xfb0;
-  core_main_c_displayErrorAndQuit_FUN_00506f10
-            ("isSfxChannelEnabled - invalid channel index: %d",param_5,unaff_EBX);
-  return *(undefined4 *)(&DAT_03f68928 + param_5 * 4);
+  core_main_c_displayErrorAndQuit_FUN_00506f10("isSfxChannelEnabled - invalid channel index: %d",channel_index);
+  return *(int *)(&DAT_03f68928 + channel_index * 4);
 }
 
 

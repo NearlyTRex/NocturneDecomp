@@ -1,10 +1,10 @@
 // Name: sound_sndmain.cpp_FUN_005aaeb0
 // Address: 005aaeb0
 // Address Range: [[005aaeb0, 005aaee3]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_FUN_005aaeb0()
+// Convention: __cdecl
+// Signature: void sound_sndmain.cpp_FUN_005aaeb0(void)
 // Cross-references:
-//   core_sound.cpp_FUN_005aaeb0 (005b2d60) at 005b2d60 [UNCONDITIONAL_JUMP]
+//   core_sound.cpp_CSound_FUN_005aaeb0 (005b2d60) at 005b2d60 [UNCONDITIONAL_JUMP]
 // Globals:
 //   undefined4 DAT_03f5d87c
 // Function calls:
@@ -16,19 +16,24 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_sound.cpp_FUN_005aaeb0() */
-
-void sound_sndmain_cpp_FUN_005aaeb0(void)
+void __cdecl sound_sndmain_cpp_FUN_005aaeb0(void)
 
 {
+  undefined4 uStack00000004;
+  undefined4 uStack00000008;
+  undefined4 uStack0000000c;
+  
   if (0 < DAT_03f5d87c) {
     return;
   }
   DAT_03f5d87c = DAT_03f5d87c + 1;
   sound_sndmain_cpp_cleanup_FUN_005ab130();
   sound_sndmain_cpp_cleanup_FUN_005ab660();
+  uStack00000004 = 0x5aaed3;
   sound_sndmain_cpp_stopRecordingDevice_FUN_005abb60();
+  uStack00000008 = 0x5aaed8;
   sound_sndmain_cpp_releaseRecordingDevice_FUN_005ab930();
+  uStack0000000c = 0x5aaedd;
   sound_sndmain_cpp_LockFreeSampleAndUnlock_FUN_005aa660();
   DAT_03f5d87c = DAT_03f5d87c + -1;
   return;

@@ -119,13 +119,13 @@ void requantizeSamples(SMpegSubbandScalefactors * quantized_samples, SMpegSubban
 // Address: 005302f0
 void applyScalefactorsToSubbands(float * spectral_samples, int * scalefactor_band_indices, SMpegFrame * frame_info, int channel_or_granule_index);
 
-// Original: sound_mp3.cpp_FUN_005303a0
+// Original: sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_005303a0
 // Address: 005303a0
-void FUN_005303a0(void * unk1, void * unk2, SMpegFrame * frame_info);
+void applyScalefactorsToLayer2Samples(float * sample_array, int * scalefactor_indices, SMpegFrame * frame_info);
 
-// Original: sound_mp3.cpp_FUN_00530400
+// Original: sound_mp3.cpp_initializeSynthesisDctTable_FUN_00530400
 // Address: 00530400
-undefined FUN_00530400();
+void initializeSynthesisDctTable(float * output_dct_table);
 
 // Original: sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0
 // Address: 005304f0

@@ -21,8 +21,8 @@
 // Function calls:
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   sound_snddx.cpp_FUN_005ade70
+//   sound_sndmain.cpp_FUN_005aca90
 //   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
-//   sound_sndmain.cpp_SfxSlot_kill_2_FUN_005aca90
 
 #include "nocturne.h"
 
@@ -84,7 +84,7 @@ undefined4 sound_snddx_cpp_FUN_005adff0(void)
                                 (uint)((DAT_03f6a9c4 >> 0x1f) << 2 < 0)) >> 3);
         } while (iVar2 < DAT_03f6a9cc * 4);
       }
-      sound_sndmain_cpp_SfxSlot_kill_2_FUN_005aca90();
+      sound_sndmain_cpp_FUN_005aca90();
       DAT_03f6a9dc = DAT_03f6a9dc + 1;
       if (DAT_03f6a9d8 <= DAT_03f6a9dc) {
         DAT_03f6a9dc = 0;
@@ -206,7 +206,7 @@ undefined4 sound_snddx_cpp_FUN_005adff0(void)
 // 005ae0ce: PUSH EAX
 // 005ae0cf: LEA EAX,[ESP + 0x334]
 // 005ae0d6: PUSH EAX
-// 005ae0d7: CALL sound_sndmain.cpp_SfxSlot_kill_2_FUN_005aca90
+// 005ae0d7: CALL sound_sndmain.cpp_FUN_005aca90
 //   XREF to: 005aca90 (UNCONDITIONAL_CALL)
 // 005ae0dc: MOV EDX,dword ptr [0x03f6a9dc]
 //   XREF to: 03f6a9dc (READ)

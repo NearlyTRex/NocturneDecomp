@@ -7,7 +7,7 @@
 //   core_fire.cpp_CFireball_onCollision_FUN_004c1690 (004c1690) at 004c1729 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_0050a4f0 (0050a4f0) at 0050a5d7 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_DementedFogEditor_FUN_00580730 (00580730) at 0058111a [UNCONDITIONAL_CALL]
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b26dd [UNCONDITIONAL_CALL]
+//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b26dd [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a9580 (005a9580) at 005a95b1 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005ad3b0 (005ad3b0) at 005ad467 [UNCONDITIONAL_CALL]
 // Globals:
@@ -23,38 +23,35 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005a88e0(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6) */
-
 void sound_sndmain_cpp_FUN_005a88e0(void)
 
 {
-  SfxOptions *pSVar1;
+  CSfxOptions *pCVar1;
   int iVar2;
-  undefined4 in_stack_00000004;
-  undefined4 in_stack_00000008;
-  undefined4 in_stack_0000000c;
-  undefined4 in_stack_00000010;
+  void *in_stack_00000004;
+  int in_stack_00000008;
+  int in_stack_0000000c;
+  int in_stack_00000010;
   undefined4 in_stack_00000014;
   undefined4 in_stack_00000018;
   
   iVar2 = g_SfxLastSlot;
-  *(undefined4 *)(DAT_03f624a8[g_SfxLastSlot].field0_0x0 + 4) = in_stack_00000004;
-  *(undefined4 *)(DAT_03f624a8[iVar2].field0_0x0 + 8) = in_stack_00000008;
-  *(undefined4 *)(DAT_03f624a8[iVar2].field0_0x0 + 0xc) = in_stack_0000000c;
-  *(undefined4 *)(DAT_03f624a8[iVar2].field0_0x0 + 0x10) = in_stack_00000010;
-  *(undefined4 *)(DAT_03f624a8[iVar2].field0_0x0 + 0x14) = in_stack_00000014;
-  *(undefined4 *)(DAT_03f624a8[iVar2].field0_0x0 + 0x18) = in_stack_00000018;
-  pSVar1 = DAT_03f624a8 + iVar2;
-  pSVar1->field0_0x0[0x1c] = '\0';
-  pSVar1->field0_0x0[0x1d] = '\0';
-  pSVar1->field0_0x0[0x1e] = '\0';
-  pSVar1->field0_0x0[0x1f] = '\0';
-  pSVar1 = DAT_03f624a8 + iVar2;
-  pSVar1->field0_0x0[0x20] = '\0';
-  pSVar1->field0_0x0[0x21] = '\0';
-  pSVar1->field0_0x0[0x22] = '\0';
-  pSVar1->field0_0x0[0x23] = '\0';
+  g_SfxOptions[g_SfxLastSlot].sample_data = in_stack_00000004;
+  g_SfxOptions[iVar2].volume = in_stack_00000008;
+  g_SfxOptions[iVar2].position = in_stack_0000000c;
+  g_SfxOptions[iVar2].loop_count = in_stack_00000010;
+  *(undefined4 *)g_SfxOptions[iVar2].field5_0x14 = in_stack_00000014;
+  *(undefined4 *)(g_SfxOptions[iVar2].field5_0x14 + 4) = in_stack_00000018;
+  pCVar1 = g_SfxOptions + iVar2;
+  pCVar1->field5_0x14[8] = '\0';
+  pCVar1->field5_0x14[9] = '\0';
+  pCVar1->field5_0x14[10] = '\0';
+  pCVar1->field5_0x14[0xb] = '\0';
+  pCVar1 = g_SfxOptions + iVar2;
+  pCVar1->field5_0x14[0xc] = '\0';
+  pCVar1->field5_0x14[0xd] = '\0';
+  pCVar1->field5_0x14[0xe] = '\0';
+  pCVar1->field5_0x14[0xf] = '\0';
   return;
 }
 

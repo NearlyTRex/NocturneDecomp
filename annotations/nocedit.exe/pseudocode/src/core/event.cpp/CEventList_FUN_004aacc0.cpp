@@ -219,8 +219,8 @@
 //   core_setdir.cpp_CDemonSet_setPendingCamera_FUN_00575b00
 //   core_setutil.cpp_C3DSLight_advanceFilter_FUN_00586e70
 //   core_setutil.cpp_C3DSLight_setFilterFrame_FUN_00586f00
+//   core_sound.cpp_CSound_FUN_005b3dc0
 //   core_sound.cpp_CSound_playSfx_FUN_005b3a20
-//   core_sound.cpp_FUN_005b3dc0
 //   core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
 //   core_weather.cpp_CWeather_FUN_005ef8c0
 //   crt_ctype.c_toupper_FUN_005ff9e0
@@ -636,7 +636,7 @@ LAB_004aad41:
               }
               local_ec = local_ec + local_c4;
               if (local_f0 != 0) {
-                core_sound_cpp_FUN_005b3dc0();
+                core_sound_cpp_CSound_FUN_005b3dc0(g_CSoundPtr);
               }
             }
             else {
@@ -1275,10 +1275,10 @@ LAB_004aaf38:
                                                           (local_13ad + 1,"cue",3);
                                         if (iVar4 == 0) {
                                           iVar4 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0
-                                                            ();
+                                                            (1);
                                           if (iVar4 != 0) {
                                             sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-                                            sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0();
+                                            sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(1);
                                             core_sound_cpp_CSound_playSfx_FUN_005b3a20
                                                       (g_CSoundPtr,(int)this_ptr,local_13ad + 1);
                                             sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
@@ -3438,7 +3438,7 @@ LAB_004aace6:
 //   XREF to: Stack[-0xcc] (READ)
 // 004ab544: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 004ab545: CALL core_sound.cpp_FUN_005b3dc0
+// 004ab545: CALL core_sound.cpp_CSound_FUN_005b3dc0
 //   XREF to: 005b3dc0 (UNCONDITIONAL_CALL)
 // 004ab54a: ADD ESP,0xc
 // 004ab54d: JMP 0x004aaf1d

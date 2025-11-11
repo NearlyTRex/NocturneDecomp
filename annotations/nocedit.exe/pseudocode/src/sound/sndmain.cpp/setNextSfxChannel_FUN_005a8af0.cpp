@@ -1,42 +1,37 @@
 // Name: sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0
 // Address: 005a8af0
 // Address Range: [[005a8af0, 005a8b3a]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0()
+// Convention: __cdecl
+// Signature: void sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0(int channel_index)
 // Cross-references:
 //   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ac560 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_rollCredits_FUN_004e4010 (004e4010) at 004e4391 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_0055ff00 (0055ff00) at 00560066 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2eac [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b3395 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b393f [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b2770 (005b2770) at 005b289f [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2dd0 (005b2dd0) at 005b2eac [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2fd0 (005b2fd0) at 005b3395 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830 (005b3830) at 005b393f [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_00650858
 //   TerminatedCString s_setNextSfxChannel_invali_0065086d
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 //   undefined4 g_SfxLastSlot
-//   SfxOptions[8] DAT_03f624a8
+//   CSfxOptions[8] g_SfxOptions
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_setNextSfxChannel(undefined4 param_1) */
-
-void sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0
-               (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4,
-               int param_5)
+void __cdecl sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(int channel_index)
 
 {
-  if ((param_5 < 0) || (0x1f < param_5)) {
+  if ((channel_index < 0) || (0x1f < channel_index)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0xcf8;
-    core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("setNextSfxChannel - invalid channel index: %d",param_5,unaff_EBX);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("setNextSfxChannel - invalid channel index: %d",channel_index);
   }
-  *(int *)DAT_03f624a8[g_SfxLastSlot].field0_0x0 = param_5;
+  g_SfxOptions[g_SfxLastSlot].status = channel_index;
   return;
 }
 

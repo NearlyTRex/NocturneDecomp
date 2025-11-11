@@ -63,7 +63,7 @@
 //   core_setutil.cpp_C3DSCamera_apply_FUN_00585870 (00585870) at 00585962 [UNCONDITIONAL_CALL]
 //   core_shovel.cpp_fire_FUN_00588c20 (00588c20) at 00588c31 [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a2800 (005a2800) at 005a2b79 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b241f [UNCONDITIONAL_CALL]
+//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b241f [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bd722 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c1680 (005c1680) at 005c1e8b [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c1fe0 (005c1fe0) at 005c23df [UNCONDITIONAL_CALL]
@@ -80,9 +80,9 @@
 //   core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530 (005fb530) at 005fb91e [UNCONDITIONAL_CALL]
 //   core_zombie.cpp_CZombie_process_FUN_005f9470 (005f9470) at 005f995f [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_DirectSoundDevice_allocateSfx_FUN_005af410 (005af410) at 005af5e9 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ComputingDelay_FUN_005a7100 (005a7100) at 005a7145 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100 (005a7100) at 005a7145 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 (005a7e60) at 005a7e97 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_HandleSoundError_FUN_005adba0 (005adba0) at 005adbeb [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_kill_FUN_005a7e60 (005a7e60) at 005a7e97 [UNCONDITIONAL_CALL]
 // Globals:
 //   undefined4 s_..\engine\console.cpp_00618de9
 //   TerminatedCString s_at_00618dff

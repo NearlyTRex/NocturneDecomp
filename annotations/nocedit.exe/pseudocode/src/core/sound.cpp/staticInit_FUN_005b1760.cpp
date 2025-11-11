@@ -7,7 +7,7 @@
 //   WatcomTypeInfo g_STrainNoiseTypeInfo
 //   WatcomStaticDestructorNode DAT_00681ed0
 //   CSound g_CSoundInstance
-//   undefined4 DAT_03f6b128
+//   CStrList CStrList_03f6b128
 //   STrainNoise[10] STrainNoise_ARRAY_03f6b7bc
 // Function calls:
 //   core_sound.cpp_CSound_FUN_005b2ce0
@@ -21,7 +21,7 @@ void __cdecl core_sound_cpp_staticInit_FUN_005b1760(void)
 
 {
   core_sound_cpp_CSound_FUN_005b2ce0(&g_CSoundInstance);
-  shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)&DAT_03f6b128);
+  shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&CStrList_03f6b128);
   crt_stdlib_c_atexit_FUN_005ff060(&DAT_00681ed0);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
             (STrainNoise_ARRAY_03f6b7bc,10,&g_STrainNoiseTypeInfo);

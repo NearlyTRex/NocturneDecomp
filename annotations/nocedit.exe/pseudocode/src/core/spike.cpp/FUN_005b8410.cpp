@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_spike.cpp_FUN_005b8410()
 // Globals:
-//   undefined4 DAT_00652e00
+//   double DOUBLE_00652e00 = 0.0000100000000000000
 //   CEventList* g_CEventListPtr = 02d05310
 //   CEventList g_CEventListInstance
 // Function calls:
@@ -15,7 +15,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_spike.cpp_FUN_005b8410(undefined4 param_1, undefined4 param_2)
     */
 
@@ -151,7 +150,7 @@ LAB_005b84db:
   fVar6 = local_2c - (pCVar1->position).x;
   fVar3 = fStack_28 - (in_stack_00000004->location).position.y;
   CStack_24.x = CStack_24.x - (in_stack_00000004->location).position.z;
-  if (CStack_24.x * CStack_24.x + fVar3 * fVar3 + fVar6 * fVar6 <= (float)_DAT_00652e00) {
+  if (CStack_24.x * CStack_24.x + fVar3 * fVar3 + fVar6 * fVar6 <= (float)DOUBLE_00652e00) {
     return;
   }
   local_48.x = (float)in_stack_00000004;

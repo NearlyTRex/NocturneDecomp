@@ -4,14 +4,12 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005a5e10()
 // Globals:
-//   undefined4 DAT_0064fca7
+//   double DOUBLE_0064fca7 = 4294967296
 // Function calls:
 //   crt_math.c_floor_FUN_005feb90
 //   crt_math.c_round_FUN_005fe6b0
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void sound_sndmain_cpp_FUN_005a5e10(void)
 
@@ -33,7 +31,7 @@ void sound_sndmain_cpp_FUN_005a5e10(void)
   crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,extraout_EAX));
   local_c = (undefined4)(longlong)ROUND(fVar1);
   fVar1 = ((float10)(double)CONCAT44(in_stack_00000008,in_stack_00000004) -
-          (float10)((longlong)ROUND(fVar1) & 0xffffffff)) * (float10)_DAT_0064fca7;
+          (float10)((longlong)ROUND(fVar1) & 0xffffffff)) * (float10)DOUBLE_0064fca7;
   *in_stack_0000000c = local_c;
   dVar2 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(in_stack_00000010,local_c));
   uStack_8 = (undefined4)(longlong)ROUND(fVar1);

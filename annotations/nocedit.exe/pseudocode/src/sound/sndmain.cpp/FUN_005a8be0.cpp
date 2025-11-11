@@ -28,9 +28,9 @@ void sound_sndmain_cpp_FUN_005a8be0(void)
   undefined4 in_stack_0000000c;
   
   iVar1 = g_SfxLastSlot;
-  *(undefined4 *)(DAT_03f624a8[g_SfxLastSlot].field0_0x0 + 0x60) = in_stack_00000004;
-  *(undefined4 *)(DAT_03f624a8[iVar1].field0_0x0 + 100) = in_stack_00000008;
-  *(undefined4 *)(DAT_03f624a8[iVar1].field0_0x0 + 0x68) = in_stack_0000000c;
+  *(undefined4 *)(g_SfxOptions[g_SfxLastSlot].field5_0x14 + 0x4c) = in_stack_00000004;
+  *(undefined4 *)(g_SfxOptions[iVar1].field5_0x14 + 0x50) = in_stack_00000008;
+  *(undefined4 *)(g_SfxOptions[iVar1].field5_0x14 + 0x54) = in_stack_0000000c;
   return;
 }
 

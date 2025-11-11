@@ -5,7 +5,7 @@
 // Signature: undefined sound_sndmain.cpp_FUN_005a8a80()
 // Cross-references:
 //   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 (00506450) at 00506634 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b21fc [UNCONDITIONAL_CALL]
+//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b21fc [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005ad3b0 (005ad3b0) at 005ad474 [UNCONDITIONAL_CALL]
 // Globals:
 //   undefined4 g_SfxLastSlot
@@ -13,14 +13,12 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005a8a80(undefined4 param_1) */
-
 void sound_sndmain_cpp_FUN_005a8a80(void)
 
 {
   undefined4 in_stack_00000004;
   
-  *(undefined4 *)(DAT_03f624a8[g_SfxLastSlot].field0_0x0 + 0x48) = in_stack_00000004;
+  *(undefined4 *)(g_SfxOptions[g_SfxLastSlot].field5_0x14 + 0x34) = in_stack_00000004;
   return;
 }
 

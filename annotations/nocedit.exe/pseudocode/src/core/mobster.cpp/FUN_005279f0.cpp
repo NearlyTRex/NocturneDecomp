@@ -20,7 +20,7 @@
 //   CSound g_CSoundInstance
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   core_sound.cpp_GetSampleInfo_FUN_005b3ba0
+//   core_sound.cpp_CSound_FUN_005b3ba0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
 
@@ -44,7 +44,7 @@ void core_mobster_cpp_FUN_005279f0(void)
   char local_80 [100];
   int local_1c;
   int local_18;
-  undefined4 local_14;
+  float local_14;
   
   if (*(float *)(in_stack_00000004 + 0xbed4) <= 0.0) {
     iVar6 = 0;
@@ -59,8 +59,8 @@ void core_mobster_cpp_FUN_005279f0(void)
                   (local_80,"mobster-cheese-%c-%c-%d.wav",
                    (uint)*(byte *)(in_stack_00000004 + 0xbed0),local_1c,
                    *(undefined4 *)(&DAT_02f37eb4 + iVar5));
-        local_14 = core_sound_cpp_GetSampleInfo_FUN_005b3ba0();
-        *(undefined4 *)(in_stack_00000004 + 0xbed4) = local_14;
+        local_14 = core_sound_cpp_CSound_FUN_005b3ba0(g_CSoundPtr);
+        *(float *)(in_stack_00000004 + 0xbed4) = local_14;
         if (0.0 < *(float *)(in_stack_00000004 + 0xbed4)) break;
         *(undefined4 *)(&DAT_02f37eb4 + iVar5) = 0;
       }
@@ -187,7 +187,7 @@ void core_mobster_cpp_FUN_005279f0(void)
 //   XREF to: 00681ef8 (READ)
 // 00527a8f: PUSH EDX
 //   XREF to: 03f6af64 (DATA)
-// 00527a90: CALL core_sound.cpp_GetSampleInfo_FUN_005b3ba0
+// 00527a90: CALL core_sound.cpp_CSound_FUN_005b3ba0
 //   XREF to: 005b3ba0 (UNCONDITIONAL_CALL)
 // 00527a95: MOV dword ptr [ESP + 0x74],EAX
 //   XREF to: Stack[-0x14] (WRITE)

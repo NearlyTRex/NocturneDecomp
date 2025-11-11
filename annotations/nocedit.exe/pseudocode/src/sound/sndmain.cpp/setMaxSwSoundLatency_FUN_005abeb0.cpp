@@ -6,7 +6,7 @@
 // Cross-references:
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005ac07b [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\sound\sndmain.cpp_00650ed7
+//   TerminatedCString s_sound_sndmain_cpp_00650ed7
 //   TerminatedCString s_setMaxSwSoundLatency_can_00650eec
 //   double g_MinLatencyThreshold = 0.0500000000000000
 //   double g_MaxLatencyThreshold = 2
@@ -27,7 +27,7 @@ void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_005abeb0(float latency)
   
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_005ab540();
   if (iVar1 != 0) {
-    g_CurrentFilename = "@..\\sound\\sndmain.cpp" + 1;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x15a2;
     core_main_c_displayErrorAndQuit_FUN_00506f10("setMaxSwSoundLatency - can't do this while sound is active");
   }

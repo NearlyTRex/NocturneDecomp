@@ -5,7 +5,7 @@
 // Signature: char * crt_time.c_asctime_FUN_00601768(tm * timeptr)
 // Cross-references:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10 (00506f10) at 00507094 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b24f2 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b24f2 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_HandleSoundError_FUN_005adba0 (005adba0) at 005adc62 [UNCONDITIONAL_CALL]
 // Globals:
 //   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c

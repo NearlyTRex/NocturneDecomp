@@ -12,37 +12,35 @@
 // Globals:
 //   CSound* g_CSoundInstance
 // Function calls:
-//   sound_sndmain.cpp_PollHWPlaybackPosAndSet_FUN_005a80e0
-//   sound_sndmain.cpp_SampleInfo_cvtPlaybackPos_FUN_005a8580
+//   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
+//   sound_sndmain.cpp_CSfxSlot_FUN_005a80e0
 //   sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005a9720(undefined4 param_1, undefined4 param_2) */
-
 undefined8 sound_sndmain_cpp_FUN_005a9720(void)
 
 {
+  CSfxSlot *this_ptr;
   int iVar1;
-  undefined8 uVar2;
+  undefined4 extraout_EDX;
   undefined4 local_18;
-  undefined4 uStack_14;
+  int iStack_14;
   
-  uVar2 = CONCAT44(local_18,uStack_14);
-  iVar1 = sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
-  if (iVar1 != 0) {
-    if (((*(int *)(iVar1 + 0x70) != 0) && (g_CSoundInstance != (CSound *)0x0)) &&
-       (iVar1 = sound_sndmain_cpp_PollHWPlaybackPosAndSet_FUN_005a80e0(), iVar1 == 0)) {
+  this_ptr = (CSfxSlot *)sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
+  if (this_ptr != (CSfxSlot *)0x0) {
+    if (((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundInstance != (CSound *)0x0)) &&
+       (iVar1 = sound_sndmain_cpp_CSfxSlot_FUN_005a80e0(this_ptr), iVar1 == 0)) {
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
       return 0xbff0000000000000;
     }
-    uVar2 = sound_sndmain_cpp_SampleInfo_cvtPlaybackPos_FUN_005a8580();
+    iStack_14 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
+                          ((CSampleInfo *)this_ptr->sample);
     sound_sndmain_cpp_unlockSound_FUN_005abdc0();
+    local_18 = extraout_EDX;
   }
-  local_18 = (undefined4)((ulonglong)uVar2 >> 0x20);
-  uStack_14 = (undefined4)uVar2;
-  return CONCAT44(uStack_14,local_18);
+  return CONCAT44(iStack_14,local_18);
 }
 
 
@@ -74,7 +72,7 @@ undefined8 sound_sndmain_cpp_FUN_005a9720(void)
 // 005a974d: JZ 0x005a975c
 //   XREF to: 005a975c (CONDITIONAL_JUMP)
 // 005a974f: PUSH EAX
-// 005a9750: CALL sound_sndmain.cpp_PollHWPlaybackPosAndSet_FUN_005a80e0
+// 005a9750: CALL sound_sndmain.cpp_CSfxSlot_FUN_005a80e0
 //   XREF to: 005a80e0 (UNCONDITIONAL_CALL)
 // 005a9755: ADD ESP,0x4
 // 005a9758: TEST EAX,EAX
@@ -92,7 +90,7 @@ undefined8 sound_sndmain_cpp_FUN_005a9720(void)
 // 005a976b: PUSH EDI
 // 005a976c: MOV EAX,dword ptr [EBX + 0x78]
 // 005a976f: PUSH EAX
-// 005a9770: CALL sound_sndmain.cpp_SampleInfo_cvtPlaybackPos_FUN_005a8580
+// 005a9770: CALL sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
 //   XREF to: 005a8580 (UNCONDITIONAL_CALL)
 // 005a9775: MOV dword ptr [ESP + 0x24],EAX
 //   XREF to: Stack[-0x18] (WRITE)

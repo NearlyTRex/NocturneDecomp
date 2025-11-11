@@ -21,26 +21,23 @@
 //   sound_sndmain.cpp_YetAnother2ComputingDelayCall_FUN_005a98b0 (005a98b0) at 005a98b8 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setSfxUserData_FUN_005a9ba0 (005a9ba0) at 005a9bda [UNCONDITIONAL_CALL]
 // Globals:
-//   SfxSlot[64] g_SfxSlots
+//   CSfxSlot[64] g_SfxSlots
 //   undefined4 DAT_03f5db14
 //   undefined4 g_SfxSlots[0].field7_0x74
 //   undefined4 DAT_03f5db1c
 //   CSound* g_CSoundInstance
 // Function calls:
+//   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
-//   sound_sndmain.cpp_SfxSlot_kill_FUN_005a7e60
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_SoundLockKillAndUnlock(undefined4 param_1, undefined4
-   param_2) */
-
-SfxSlot * sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00(void)
+CSfxSlot * sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00(void)
 
 {
   int iVar1;
-  SfxSlot *slot;
+  CSfxSlot *slot;
   uint uVar2;
   uint in_stack_00000004;
   int in_stack_00000008;
@@ -49,28 +46,28 @@ SfxSlot * sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00(void)
   in_stack_00000004 = in_stack_00000004 & 0x3f;
   if (((uVar2 != 0) && (uVar2 < 0xffffff)) && (in_stack_00000004 < 0x40)) {
     slot = g_SfxSlots + in_stack_00000004;
-    if (uVar2 == g_SfxSlots[in_stack_00000004].field_116) {
+    if (uVar2 == g_SfxSlots[in_stack_00000004].field2_0x74) {
       if (in_stack_00000008 != 0) {
         sound_sndmain_cpp_lockSound_FUN_005abd30();
-        if ((uVar2 != g_SfxSlots[in_stack_00000004].field_116) ||
-           (g_SfxSlots[in_stack_00000004].sample == (SfxSample *)0x0)) {
+        if ((uVar2 != g_SfxSlots[in_stack_00000004].field2_0x74) ||
+           (g_SfxSlots[in_stack_00000004].sample == (CSfxSample *)0x0)) {
           sound_sndmain_cpp_unlockSound_FUN_005abdc0();
-          return (SfxSlot *)0x0;
+          return (CSfxSlot *)0x0;
         }
         if (g_SfxSlots[in_stack_00000004].dsound_buffer != (void *)0x0) {
           if ((g_CSoundInstance != (CSound *)0x0) &&
              (iVar1 = (*(code *)g_CSoundInstance->vtable[1].field_20)(), iVar1 != 0)) {
             return slot;
           }
-          sound_sndmain_cpp_SfxSlot_kill_FUN_005a7e60(slot);
+          sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(slot);
           sound_sndmain_cpp_unlockSound_FUN_005abdc0();
-          return (SfxSlot *)0x0;
+          return (CSfxSlot *)0x0;
         }
       }
       return slot;
     }
   }
-  return (SfxSlot *)0x0;
+  return (CSfxSlot *)0x0;
 }
 
 
@@ -162,7 +159,7 @@ SfxSlot * sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00(void)
 // 005a5d8e: RET
 // 005a5d8f: PUSH EBX
 //   Label: LAB_005a5d8f
-// 005a5d90: CALL sound_sndmain.cpp_SfxSlot_kill_FUN_005a7e60
+// 005a5d90: CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
 //   XREF to: 005a7e60 (UNCONDITIONAL_CALL)
 // 005a5d95: ADD ESP,0x4
 // 005a5d98: CALL sound_sndmain.cpp_unlockSound_FUN_005abdc0

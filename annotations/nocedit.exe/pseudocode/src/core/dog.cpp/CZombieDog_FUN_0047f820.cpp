@@ -11,7 +11,7 @@
 //   core_enemy.cpp_FUN_004a9f10
 //   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   core_sound.cpp_FUN_005b3b80
+//   core_sound.cpp_CSound_FUN_005b3b80
 
 #include "nocturne.h"
 
@@ -20,12 +20,13 @@ void __cdecl core_dog_cpp_CZombieDog_FUN_0047f820(CZombieDog *this_ptr)
 {
   CDeformableModelInstance *this_ptr_00;
   float fVar1;
+  int extraout_EAX;
   SMotion *pSVar2;
   undefined4 uVar3;
   int unaff_ESI;
   int in_stack_00000008;
   CZombieDog *pCStack0000000c;
-  int iVar4;
+  int desired_state_index;
   
   fVar1 = (this_ptr->base_enemy).base_character.hit_points - *(float *)(in_stack_00000008 + 4);
   this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
@@ -36,16 +37,16 @@ void __cdecl core_dog_cpp_CZombieDog_FUN_0047f820(CZombieDog *this_ptr)
                        (&this_ptr_00->motion_controller);
     if ((pSVar2->state_index == 7) || (pSVar2->state_index == 6)) goto LAB_0047f855;
     unaff_ESI = 1;
-    iVar4 = 6;
+    desired_state_index = 6;
   }
   else {
-    iVar4 = 1;
+    desired_state_index = 1;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&this_ptr_00->motion_controller,iVar4,unaff_ESI);
+            (&this_ptr_00->motion_controller,desired_state_index,unaff_ESI);
 LAB_0047f855:
-  iVar4 = core_sound_cpp_FUN_005b3b80();
-  if (iVar4 != 0) {
+  core_sound_cpp_CSound_FUN_005b3b80(g_CSoundPtr);
+  if (extraout_EAX != 0) {
     core_enemy_cpp_FUN_004a9f10();
     return;
   }
@@ -91,7 +92,7 @@ LAB_0047f855:
 //   XREF to: 00681ef8 (READ)
 // 0047f862: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 0047f863: CALL core_sound.cpp_FUN_005b3b80
+// 0047f863: CALL core_sound.cpp_CSound_FUN_005b3b80
 //   XREF to: 005b3b80 (UNCONDITIONAL_CALL)
 // 0047f868: ADD ESP,0x8
 // 0047f86b: TEST EAX,EAX

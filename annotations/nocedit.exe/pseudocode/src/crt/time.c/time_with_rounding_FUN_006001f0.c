@@ -5,7 +5,7 @@
 // Signature: time_t crt_time.c_time_with_rounding_FUN_006001f0(time_t * optional_output)
 // Cross-references:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10 (00506f10) at 0050704f [UNCONDITIONAL_CALL]
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b24c6 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b24c6 [UNCONDITIONAL_CALL]
 //   crt_io.c_utime_FUN_00608160 (00608160) at 006081cc [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220 (004b4220) at 004b4e5f [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 (004baf00) at 004bbf34 [UNCONDITIONAL_CALL]

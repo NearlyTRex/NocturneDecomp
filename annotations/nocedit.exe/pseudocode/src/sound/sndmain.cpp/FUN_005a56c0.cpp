@@ -4,11 +4,9 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005a56c0()
 // Globals:
-//   undefined4 DAT_0064fadf
+//   double DOUBLE_0064fadf = 0.0500000000000000
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 float sound_sndmain_cpp_FUN_005a56c0(void)
 
@@ -24,7 +22,7 @@ float sound_sndmain_cpp_FUN_005a56c0(void)
   if (in_stack_00000010 < in_stack_00000004) {
     in_stack_00000004 = in_stack_00000010;
   }
-  if (in_stack_00000004 <= in_stack_00000008 * (float)_DAT_0064fadf) {
+  if (in_stack_00000004 <= in_stack_00000008 * (float)DOUBLE_0064fadf) {
     return 20.0;
   }
   return in_stack_00000008 / in_stack_00000004;

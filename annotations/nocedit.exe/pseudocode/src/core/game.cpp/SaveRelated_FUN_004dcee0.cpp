@@ -53,8 +53,8 @@
 //   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
 //   core_set.cpp_CDemonSet_setGamma_FUN_00570d60
 //   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
-//   core_sound.cpp_FUN_005b2dd0
-//   core_sound.cpp_FUN_005b2f70
+//   core_sound.cpp_CSound_FUN_005b2dd0
+//   core_sound.cpp_CSound_FUN_005b2f70
 //   crt_env.c_getenv_FUN_006013f0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   engine_dosio.c_getFile_FUN_00481a50
@@ -131,11 +131,11 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
       iVar4 = 1 - this_ptr_00->is_paused;
       this_ptr_00->is_paused = iVar4;
       if (iVar4 == 0) {
-        core_sound_cpp_FUN_005b2dd0();
+        core_sound_cpp_CSound_FUN_005b2dd0(g_CSoundPtr);
       }
       else {
         g_MouseButtonFlags = 0;
-        core_sound_cpp_FUN_005b2f70();
+        core_sound_cpp_CSound_FUN_005b2f70(g_CSoundPtr);
       }
     }
     if ((((this_ptr_00->velocity_debug_enabled != 0) ||
@@ -155,12 +155,12 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
         (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x32), iVar4 != 0)))) {
       iVar4 = sound_sndmain_cpp_getSoundEnabled_FUN_005a96b0();
       if (iVar4 == 0) {
-        core_sound_cpp_FUN_005b2f70();
+        core_sound_cpp_CSound_FUN_005b2f70(g_CSoundPtr);
         sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(1);
       }
       else {
         sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(0);
-        core_sound_cpp_FUN_005b2dd0();
+        core_sound_cpp_CSound_FUN_005b2dd0(g_CSoundPtr);
       }
     }
     if ((((this_ptr_00->velocity_debug_enabled != 0) &&
@@ -385,7 +385,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
 //   XREF to: 03f6af64 (DATA)
 // 004dcf5e: MOV [0x02cf6a94],EAX
 //   XREF to: 02cf6a94 (WRITE)
-// 004dcf63: CALL core_sound.cpp_FUN_005b2f70
+// 004dcf63: CALL core_sound.cpp_CSound_FUN_005b2f70
 //   XREF to: 005b2f70 (UNCONDITIONAL_CALL)
 // 004dcf68: ADD ESP,0x4
 //   Label: LAB_004dcf68
@@ -497,7 +497,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
 //   XREF to: 00681ef8 (READ)
 // 004dd03e: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 004dd03f: CALL core_sound.cpp_FUN_005b2dd0
+// 004dd03f: CALL core_sound.cpp_CSound_FUN_005b2dd0
 //   XREF to: 005b2dd0 (UNCONDITIONAL_CALL)
 // 004dd044: ADD ESP,0x4
 //   Label: LAB_004dd044
@@ -962,7 +962,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
 //   XREF to: 00681ef8 (READ)
 // 004dd447: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
-// 004dd448: CALL core_sound.cpp_FUN_005b2dd0
+// 004dd448: CALL core_sound.cpp_CSound_FUN_005b2dd0
 //   XREF to: 005b2dd0 (UNCONDITIONAL_CALL)
 // 004dd44d: JMP 0x004dcf68
 //   XREF to: 004dcf68 (UNCONDITIONAL_JUMP)
@@ -998,7 +998,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
 //   XREF to: 00681ef8 (READ)
 // 004dd48f: PUSH EDX
 //   XREF to: 03f6af64 (DATA)
-// 004dd490: CALL core_sound.cpp_FUN_005b2f70
+// 004dd490: CALL core_sound.cpp_CSound_FUN_005b2f70
 //   XREF to: 005b2f70 (UNCONDITIONAL_CALL)
 // 004dd495: ADD ESP,0x4
 // 004dd498: PUSH 0x1

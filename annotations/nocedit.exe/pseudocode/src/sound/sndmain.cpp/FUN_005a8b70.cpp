@@ -6,23 +6,21 @@
 // Cross-references:
 //   core_game.cpp_CGame_rollCredits_FUN_004e4010 (004e4010) at 004e439b [UNCONDITIONAL_CALL]
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 0051286a [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b338b [UNCONDITIONAL_CALL]
+//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b21d7 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b2770 (005b2770) at 005b2895 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2fd0 (005b2fd0) at 005b338b [UNCONDITIONAL_CALL]
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0 (005b1fd0) at 005b21d7 [UNCONDITIONAL_CALL]
 // Globals:
 //   undefined4 g_SfxLastSlot
 //   undefined4 g_SfxLastSlot.field_20[76]
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005a8b70(undefined4 param_1) */
-
 void sound_sndmain_cpp_FUN_005a8b70(void)
 
 {
   undefined4 in_stack_00000004;
   
-  *(undefined4 *)(DAT_03f624a8[g_SfxLastSlot].field0_0x0 + 0x5c) = in_stack_00000004;
+  *(undefined4 *)(g_SfxOptions[g_SfxLastSlot].field5_0x14 + 0x48) = in_stack_00000004;
   return;
 }
 

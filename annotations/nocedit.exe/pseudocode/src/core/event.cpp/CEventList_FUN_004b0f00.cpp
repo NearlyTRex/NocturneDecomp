@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_event.cpp_CEventList_FUN_004b0f00(CEventList * this_ptr)
 // Cross-references:
-//   core_sound.cpp_FUN_005b2dd0 (005b2dd0) at 005b2f40 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2f40 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_event.cpp_CEventList_FUN_004b0db0
 //   sound_sndmain.cpp_FUN_005a8be0

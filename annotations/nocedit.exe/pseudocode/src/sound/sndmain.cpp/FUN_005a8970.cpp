@@ -15,17 +15,17 @@
 void sound_sndmain_cpp_FUN_005a8970(void)
 
 {
-  SfxOptions *pSVar1;
+  CSfxOptions *pCVar1;
   int iVar2;
   undefined4 in_stack_00000004;
   
   iVar2 = g_SfxLastSlot;
-  pSVar1 = DAT_03f624a8 + g_SfxLastSlot;
-  pSVar1->field0_0x0[0x20] = '\x02';
-  pSVar1->field0_0x0[0x21] = '\0';
-  pSVar1->field0_0x0[0x22] = '\0';
-  pSVar1->field0_0x0[0x23] = '\0';
-  *(undefined4 *)(DAT_03f624a8[iVar2].field0_0x0 + 0x1c) = in_stack_00000004;
+  pCVar1 = g_SfxOptions + g_SfxLastSlot;
+  pCVar1->field5_0x14[0xc] = '\x02';
+  pCVar1->field5_0x14[0xd] = '\0';
+  pCVar1->field5_0x14[0xe] = '\0';
+  pCVar1->field5_0x14[0xf] = '\0';
+  *(undefined4 *)(g_SfxOptions[iVar2].field5_0x14 + 8) = in_stack_00000004;
   return;
 }
 

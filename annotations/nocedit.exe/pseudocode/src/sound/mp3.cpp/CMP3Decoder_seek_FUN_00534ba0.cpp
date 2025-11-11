@@ -6,7 +6,7 @@
 // Cross-references:
 //   sound_mp3.cpp_CMP3Decoder_getTotalSamples_FUN_00534d10 (00534d10) at 00534d1b [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 (00534630) at 00534956 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSample_seek_FUN_005a65a0 (005a65a0) at 005a66bb [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0 (005a65a0) at 005a66bb [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_memory.c_memset_FUN_005fde40
 //   crt_stdio.c_fseek_FUN_005ffacc

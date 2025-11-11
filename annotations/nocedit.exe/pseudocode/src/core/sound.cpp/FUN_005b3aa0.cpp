@@ -4,23 +4,23 @@
 // Convention: unknown
 // Signature: undefined core_sound.cpp_FUN_005b3aa0()
 // Function calls:
-//   core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0
+//   core_sound.cpp_FUN_005b1fd0
 //   sound_sndmain.cpp_FUN_005a8b40
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 
 #include "nocturne.h"
 
-undefined4 core_sound_cpp_FUN_005b3aa0(void)
+int core_sound_cpp_FUN_005b3aa0(void)
 
 {
-  undefined4 uVar1;
+  int iVar1;
   
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
   sound_sndmain_cpp_FUN_005a8b40();
-  uVar1 = core_sound_cpp_PlaySfxByStringMaybe_FUN_005b1fd0();
+  iVar1 = core_sound_cpp_FUN_005b1fd0();
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
-  return uVar1;
+  return iVar1;
 }
 
 
@@ -48,7 +48,7 @@ undefined4 core_sound_cpp_FUN_005b3aa0(void)
 // 005b3ac7: MOV ECX,dword ptr [ESP + 0x24]
 //   XREF to: Stack[0x8] (READ)
 // 005b3acb: PUSH ECX
-// 005b3acc: CALL core_sound.cpp_PlaySfxByStringMaybe_FUN_005b1fd0
+// 005b3acc: CALL core_sound.cpp_FUN_005b1fd0
 //   XREF to: 005b1fd0 (UNCONDITIONAL_CALL)
 // 005b3ad1: ADD ESP,0x1c
 // 005b3ad4: MOV EBX,EAX

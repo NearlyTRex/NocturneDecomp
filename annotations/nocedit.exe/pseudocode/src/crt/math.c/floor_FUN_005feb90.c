@@ -36,13 +36,13 @@
 //   shape_design.c_sampleAndFilterPixel_FUN_0046ae20 (0046ae20) at 0046ae7b [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (0051bac0) at 0051bbc3 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_DirectSoundDevice_HardwareSfx3DBuffer_FUN_005af750 (005af750) at 005afaf4 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSampleInfo_FUN_005a86f0 (005a86f0) at 005a879d [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (005a75e0) at 005a7884 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170 (005a8170) at 005a8360 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a5e10 (005a5e10) at 005a5e1e [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a5e70 (005a5e70) at 005a5ea0 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a5fb0 (005a5fb0) at 005a5fe0 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a86f0 (005a86f0) at 005a879d [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005ac400 (005ac400) at 005ac7e5 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SfxSlot_updatePlaybackPos_FUN_005a8170 (005a8170) at 005a8360 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_UnknownPlayOrUseSample_FUN_005a75e0 (005a75e0) at 005a7884 [UNCONDITIONAL_CALL]
 // Globals:
 //   double g_MathDomainAdjustment = -1
 // Function calls:

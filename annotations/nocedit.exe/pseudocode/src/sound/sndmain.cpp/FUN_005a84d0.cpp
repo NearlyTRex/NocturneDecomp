@@ -4,11 +4,9 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005a84d0()
 // Cross-references:
-//   core_sound.cpp_GetSampleInfo_FUN_005b3ba0 (005b3ba0) at 005b3c1f [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_FUN_005b3ba0 (005b3ba0) at 005b3c1f [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
-
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005a84d0(undefined4 param_1) */
 
 double sound_sndmain_cpp_FUN_005a84d0(void)
 

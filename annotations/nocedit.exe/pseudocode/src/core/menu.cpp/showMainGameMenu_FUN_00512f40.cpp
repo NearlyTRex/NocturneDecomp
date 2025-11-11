@@ -68,8 +68,8 @@
 //   core_moon.cpp_CMoon_FUN_00529d60
 //   core_moon.cpp_CMoon_FUN_00529ed0
 //   core_moon.cpp_CMoon_init_FUN_00529ae0
-//   core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830
-//   core_sound.cpp_RelatedToSoundCleanup_FUN_005b39a0
+//   core_sound.cpp_CSound_FUN_005b3830
+//   core_sound.cpp_CSound_FUN_005b39a0
 //   engine_2d.c_clearInputAndWait_FUN_00403260
 //   engine_2d.c_drawText_FUN_00401fd0
 //   engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0
@@ -198,7 +198,7 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_00512f40(void)
     switch(uVar5) {
     case 0:
       core_moon_cpp_CMoon_free_FUN_00529ce0();
-      core_sound_cpp_RelatedToSoundCleanup_FUN_005b39a0();
+      core_sound_cpp_CSound_FUN_005b39a0(g_CSoundPtr);
       iVar6 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
       if ((iVar6 == 0) || (iVar6 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d), iVar6 == 0)) {
         iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
@@ -219,13 +219,13 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_00512f40(void)
       break;
     case 2:
       core_moon_cpp_CMoon_free_FUN_00529ce0();
-      core_sound_cpp_RelatedToSoundCleanup_FUN_005b39a0();
+      core_sound_cpp_CSound_FUN_005b39a0(g_CSoundPtr);
       core_game_cpp_CGame_loadSaveGame_FUN_004e12b0(g_CGamePtr,(char *)0x0,1,(char *)0x0);
       engine_2d_c_clearInputAndWait_FUN_00403260();
       engine_texture_cpp_clearTextureCache_FUN_005dd8e0();
       core_moon_cpp_CMoon_init_FUN_00529ae0();
 LAB_005131d5:
-      core_sound_cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830();
+      core_sound_cpp_CSound_FUN_005b3830(g_CSoundPtr);
       break;
     case 3:
       iVar8 = 99;
@@ -239,7 +239,7 @@ LAB_005131d5:
     {
       iVar4 = sound_sndmain_cpp_getSoundEnabled_FUN_005a96b0();
       sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0((uint)(iVar4 == 0));
-      core_sound_cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830();
+      core_sound_cpp_CSound_FUN_005b3830(g_CSoundPtr);
     }
     iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
     if ((iVar4 != 0) &&
@@ -254,24 +254,24 @@ LAB_005131d5:
         wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
       }
       g_FullscreenMode = 0;
-      core_sound_cpp_RelatedToSoundCleanup_FUN_005b39a0();
+      core_sound_cpp_CSound_FUN_005b39a0(g_CSoundPtr);
       core_main_c_showDeveloperToolsMenu_FUN_005073a0();
-      core_sound_cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830();
+      core_sound_cpp_CSound_FUN_005b3830(g_CSoundPtr);
     }
     iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
     if ((iVar4 != 0) && (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x21), iVar4 != 0))
     {
-      core_sound_cpp_RelatedToSoundCleanup_FUN_005b39a0();
+      core_sound_cpp_CSound_FUN_005b39a0(g_CSoundPtr);
       core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(&g_CDemonFileManagerInstance);
-      core_sound_cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830();
+      core_sound_cpp_CSound_FUN_005b3830(g_CSoundPtr);
     }
     if (in_stack_00000100 != 0) {
       in_stack_00000100 = 0;
-      core_sound_cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830();
+      core_sound_cpp_CSound_FUN_005b3830(g_CSoundPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
     }
     if (iVar8 != 0) {
-      core_sound_cpp_RelatedToSoundCleanup_FUN_005b39a0();
+      core_sound_cpp_CSound_FUN_005b39a0(g_CSoundPtr);
       core_moon_cpp_CMoon_free_FUN_00529ce0();
       return iVar8;
     }
@@ -579,7 +579,7 @@ LAB_005131d5:
 //   XREF to: 00681ef8 (READ)
 // 0051316f: PUSH EDX
 //   XREF to: 03f6af64 (DATA)
-// 00513170: CALL core_sound.cpp_RelatedToSoundCleanup_FUN_005b39a0
+// 00513170: CALL core_sound.cpp_CSound_FUN_005b39a0
 //   XREF to: 005b39a0 (UNCONDITIONAL_CALL)
 // 00513175: ADD ESP,0x4
 // 00513178: MOV EAX,[0x0067cf44]
@@ -628,7 +628,7 @@ LAB_005131d5:
 //   XREF to: 00681ef8 (READ)
 // 005131d4: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
-// 005131d5: CALL core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830
+// 005131d5: CALL core_sound.cpp_CSound_FUN_005b3830
 //   Label: LAB_005131d5
 //   XREF to: 005b3830 (UNCONDITIONAL_CALL)
 // 005131da: ADD ESP,0x4
@@ -686,7 +686,7 @@ LAB_005131d5:
 //   XREF to: 00681ef8 (READ)
 // 0051323a: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 0051323b: CALL core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830
+// 0051323b: CALL core_sound.cpp_CSound_FUN_005b3830
 //   XREF to: 005b3830 (UNCONDITIONAL_CALL)
 // 00513240: ADD ESP,0x4
 // 00513243: PUSH 0x1d
@@ -750,7 +750,7 @@ LAB_005131d5:
 //   XREF to: 03f6af64 (DATA)
 // 005132ba: MOV dword ptr [0x03f6b878],ECX
 //   XREF to: 03f6b878 (WRITE)
-// 005132c0: CALL core_sound.cpp_RelatedToSoundCleanup_FUN_005b39a0
+// 005132c0: CALL core_sound.cpp_CSound_FUN_005b39a0
 //   XREF to: 005b39a0 (UNCONDITIONAL_CALL)
 // 005132c5: ADD ESP,0x4
 // 005132c8: CALL core_main.c_showDeveloperToolsMenu_FUN_005073a0
@@ -759,7 +759,7 @@ LAB_005131d5:
 //   XREF to: 00681ef8 (READ)
 // 005132d3: PUSH ESI
 //   XREF to: 03f6af64 (DATA)
-// 005132d4: CALL core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830
+// 005132d4: CALL core_sound.cpp_CSound_FUN_005b3830
 //   XREF to: 005b3830 (UNCONDITIONAL_CALL)
 // 005132d9: ADD ESP,0x4
 // 005132dc: PUSH 0x1d
@@ -791,7 +791,7 @@ LAB_005131d5:
 //   XREF to: 00681ef8 (READ)
 // 00513309: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
-// 0051330a: CALL core_sound.cpp_RelatedToSoundCleanup_FUN_005b39a0
+// 0051330a: CALL core_sound.cpp_CSound_FUN_005b39a0
 //   XREF to: 005b39a0 (UNCONDITIONAL_CALL)
 // 0051330f: ADD ESP,0x4
 // 00513312: PUSH 0x2dd4130
@@ -804,7 +804,7 @@ LAB_005131d5:
 //   XREF to: 00681ef8 (READ)
 // 00513324: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 00513325: CALL core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830
+// 00513325: CALL core_sound.cpp_CSound_FUN_005b3830
 //   XREF to: 005b3830 (UNCONDITIONAL_CALL)
 // 0051332a: ADD ESP,0x4
 // 0051332d: CMP dword ptr [ESP + 0x10],0x0
@@ -818,7 +818,7 @@ LAB_005131d5:
 // 0051333c: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
 // 0051333d: MOV dword ptr [ESP + 0x14],ECX
-// 00513341: CALL core_sound.cpp_GetChannelVolumesPlaySplashSfx_FUN_005b3830
+// 00513341: CALL core_sound.cpp_CSound_FUN_005b3830
 //   XREF to: 005b3830 (UNCONDITIONAL_CALL)
 // 00513346: ADD ESP,0x4
 // 00513349: CALL engine_2d.c_clearInputAndWait_FUN_00403260
@@ -831,7 +831,7 @@ LAB_005131d5:
 //   XREF to: 00681ef8 (READ)
 // 0051335c: PUSH ESI
 //   XREF to: 03f6af64 (DATA)
-// 0051335d: CALL core_sound.cpp_RelatedToSoundCleanup_FUN_005b39a0
+// 0051335d: CALL core_sound.cpp_CSound_FUN_005b39a0
 //   XREF to: 005b39a0 (UNCONDITIONAL_CALL)
 // 00513362: ADD ESP,0x4
 // 00513365: PUSH 0x2f21590
@@ -905,7 +905,7 @@ LAB_005131d5:
 //   XREF to: 00681ef8 (READ)
 // 005133eb: PUSH ESI
 //   XREF to: 03f6af64 (DATA)
-// 005133ec: CALL core_sound.cpp_RelatedToSoundCleanup_FUN_005b39a0
+// 005133ec: CALL core_sound.cpp_CSound_FUN_005b39a0
 //   XREF to: 005b39a0 (UNCONDITIONAL_CALL)
 // 005133f1: ADD ESP,0x4
 // 005133f4: PUSH 0x1
