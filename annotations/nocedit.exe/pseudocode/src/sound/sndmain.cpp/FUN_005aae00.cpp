@@ -12,7 +12,7 @@
 //   sound_sndmain.cpp_FUN_005aa1c0
 //   sound_sndmain.cpp_FUN_005aa240
 //   sound_sndmain.cpp_FUN_005ab990
-//   sound_sndmain.cpp_GetCurrentSoundDevice_FUN_005ab6c0
+//   sound_sndmain.cpp_getCurrentSoundDevice_FUN_005ab6c0
 //   sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860
 //   sound_sndmain.cpp_selectSoundDevice_FUN_005ab4c0
 //   sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0
@@ -34,7 +34,7 @@ void sound_sndmain_cpp_FUN_005aae00(void)
   sound_sndmain_cpp_FUN_005aa020();
   sound_sndmain_cpp_FUN_005aa0a0();
   sound_sndmain_cpp_FUN_005aa1c0();
-  iVar1 = sound_sndmain_cpp_GetCurrentSoundDevice_FUN_005ab6c0();
+  iVar1 = sound_sndmain_cpp_getCurrentSoundDevice_FUN_005ab6c0();
   sound_sndmain_cpp_selectSoundDevice_FUN_005ab4c0(iVar1);
   sound_sndmain_cpp_FUN_005ab990();
   sound_sndmain_cpp_selectRecordingDevice_FUN_005ab860();
@@ -105,7 +105,7 @@ void sound_sndmain_cpp_FUN_005aae00(void)
 // 005aae86: CALL sound_sndmain.cpp_FUN_005aa1c0
 //   XREF to: 005aa1c0 (UNCONDITIONAL_CALL)
 // 005aae8b: ADD ESP,0x18
-// 005aae8e: CALL sound_sndmain.cpp_GetCurrentSoundDevice_FUN_005ab6c0
+// 005aae8e: CALL sound_sndmain.cpp_getCurrentSoundDevice_FUN_005ab6c0
 //   XREF to: 005ab6c0 (UNCONDITIONAL_CALL)
 // 005aae93: PUSH EAX
 // 005aae94: CALL sound_sndmain.cpp_selectSoundDevice_FUN_005ab4c0

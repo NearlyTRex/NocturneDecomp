@@ -1,27 +1,27 @@
 // Name: sound_snddx.cpp_FUN_005ade70
 // Address: 005ade70
 // Address Range: [[005ade70, 005adf8c]]
-// Convention: unknown
-// Signature: undefined sound_snddx.cpp_FUN_005ade70()
+// Convention: __cdecl
+// Signature: char * sound_snddx.cpp_FUN_005ade70(void)
 // Cross-references:
+//   sound_snddx.cpp_CDirectSoundDevice_FUN_005ae340 (005ae340) at 005ae46a [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_FUN_005ae4b0 (005ae4b0) at 005ae5c6 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_FUN_005ae830 (005ae830) at 005aec6f [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_FUN_005aed50 (005aed50) at 005aedd6 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_FUN_005aef40 (005aef40) at 005af0ef [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_FUN_005afcc0 (005afcc0) at 005afd2b [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_005af410 (005af410) at 005af671 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60 (005afd60) at 005afe31 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_005b0030 (005b0030) at 005b00e4 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_005af220 (005af220) at 005af2e5 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750 (005af750) at 005afb82 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_005afe80 (005afe80) at 005afff1 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_005af320 (005af320) at 005af39b [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_CreatePrimaryBufferMaybe_FUN_005b0440 (005b0440) at 005b05ad [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_DirectSoundDevice_HardwareSfx3DBuffer_FUN_005af750 (005af750) at 005afb82 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_DirectSoundDevice_allocateSfx_FUN_005af410 (005af410) at 005af671 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_DirectSoundDevice_getSfxPlaybackPos_FUN_005afd60 (005afd60) at 005afe31 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_DirectSoundDevice_lockSample_FUN_005af220 (005af220) at 005af2e5 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_DirectSoundDevice_startSfx_FUN_005afe80 (005afe80) at 005afff1 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_DirectSoundDevice_unlockSample_FUN_005af320 (005af320) at 005af39b [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_FUN_005adf90 (005adf90) at 005adfae [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_FUN_005adff0 (005adff0) at 005ae177 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_FUN_005ae1c0 (005ae1c0) at 005ae22b [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_FUN_005ae340 (005ae340) at 005ae46a [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_FUN_005ae4b0 (005ae4b0) at 005ae5c6 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_FUN_005ae660 (005ae660) at 005ae795 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_FUN_005ae830 (005ae830) at 005aec6f [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_FUN_005aed50 (005aed50) at 005aedd6 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_FUN_005aef40 (005aef40) at 005af0ef [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_FUN_005afcc0 (005afcc0) at 005afd2b [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_FUN_005b0030 (005b0030) at 005b00e4 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_FUN_005b0120 (005b0120) at 005b02fe [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_DSERR_ALLOCATED_The_requ_00651544
@@ -43,9 +43,7 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_snddx.cpp_FUN_005ade70(undefined4 param_1) */
-
-undefined8 sound_snddx_cpp_FUN_005ade70(void)
+char * __cdecl sound_snddx_cpp_FUN_005ade70(void)
 
 {
   uint in_stack_00000004;
@@ -53,73 +51,73 @@ undefined8 sound_snddx_cpp_FUN_005ade70(void)
   if (in_stack_00000004 < 0x88780032) {
     if (0x8007000d < in_stack_00000004) {
       if (in_stack_00000004 < 0x8007000f) {
-        return CONCAT44(in_stack_00000004,"DSERR_OUTOFMEMORY: The DirectSound subsystem could not allocate sufficient memory to complete the caller's request.");
+        return "DSERR_OUTOFMEMORY: The DirectSound subsystem could not allocate sufficient memory to complete the caller's request.";
       }
       if (in_stack_00000004 < 0x8878000a) {
         if (in_stack_00000004 == 0x80070057) {
-          return 0x800700570065178a;
+          return "DSERR_INVALIDPARAM: An invalid parameter was passed to the returning function.";
         }
-        return CONCAT44(in_stack_00000004,"DSERR_ELIFINO: Unknown error status code.");
+        return "DSERR_ELIFINO: Unknown error status code.";
       }
       if (in_stack_00000004 < 0x8878000b) {
-        return CONCAT44(in_stack_00000004,"DSERR_ALLOCATED: The request failed because resources, such as a priority level, were already in use by another caller.");
+        return "DSERR_ALLOCATED: The request failed because resources, such as a priority level, were already in use by another caller.";
       }
       if (in_stack_00000004 == 0x8878001e) {
-        return 0x8878001e0065167e;
+        return "DSERR_CONTROLUNAVAIL: The control (volume, pan, and so forth) requested by the caller is not available.";
       }
-      return CONCAT44(in_stack_00000004,"DSERR_ELIFINO: Unknown error status code.");
+      return "DSERR_ELIFINO: Unknown error status code.";
     }
     if (0x80004004 < in_stack_00000004) {
       if (in_stack_00000004 < 0x80004006) {
-        return CONCAT44(in_stack_00000004,"DSERR_GENERIC: An undetermined error occurred inside the DirectSound subsystem.");
+        return "DSERR_GENERIC: An undetermined error occurred inside the DirectSound subsystem.";
       }
       if (in_stack_00000004 == 0x80040110) {
-        return 0x80040110006517d9;
+        return "DSERR_NOAGGREGATION: The object does not support aggregation.";
       }
-      return CONCAT44(in_stack_00000004,"DSERR_ELIFINO: Unknown error status code.");
+      return "DSERR_ELIFINO: Unknown error status code.";
     }
     if (in_stack_00000004 == 0x80004001) {
-      return 0x80004001006519fc;
+      return "DSERR_UNSUPPORTED: The function called is not supported at this time.";
     }
   }
   else {
     if (in_stack_00000004 < 0x88780033) {
-      return CONCAT44(in_stack_00000004,"DSERR_INVALIDCALL: This function is not valid for the current state of this object.");
+      return "DSERR_INVALIDCALL: This function is not valid for the current state of this object.";
     }
     if (in_stack_00000004 < 0x88780082) {
       if (0x88780063 < in_stack_00000004) {
         if (in_stack_00000004 < 0x88780065) {
-          return CONCAT44(in_stack_00000004,"DSERR_BADFORMAT: The specified wave format is not supported.");
+          return "DSERR_BADFORMAT: The specified wave format is not supported.";
         }
         if (in_stack_00000004 == 0x88780078) {
-          return 0x8878007800651817;
+          return "DSERR_NODRIVER: No sound driver is available for use.";
         }
-        return CONCAT44(in_stack_00000004,"DSERR_ELIFINO: Unknown error status code.");
+        return "DSERR_ELIFINO: Unknown error status code.";
       }
       if (in_stack_00000004 == 0x88780046) {
-        return 0x8878004600651900;
+        return "DSERR_PRIOLEVELNEEDED: The caller does not have the priority level required for the function to succeed.";
       }
     }
     else {
       if (in_stack_00000004 < 0x88780083) {
-        return CONCAT44(in_stack_00000004,"DSERR_ALREADYINITIALIZED: The object is already initialized.");
+        return "DSERR_ALREADYINITIALIZED: The object is already initialized.";
       }
       if (in_stack_00000004 < 0x887800a0) {
         if (in_stack_00000004 == 0x88780096) {
-          return 0x8878009600651636;
+          return "DSERR_BUFFERLOST: The buffer memory has been lost and must be restored.";
         }
       }
       else {
         if (in_stack_00000004 < 0x887800a1) {
-          return CONCAT44(in_stack_00000004,"DSERR_OTHERAPPHASPRIO: This value is obsolete and is not used.");
+          return "DSERR_OTHERAPPHASPRIO: This value is obsolete and is not used.";
         }
         if (in_stack_00000004 == 0x887800aa) {
-          return 0x887800aa00651969;
+          return "DSERR_UNINITIALIZED: The IDirectSound::Initialize method has not been called or has not been called successfully before other methods were called.";
         }
       }
     }
   }
-  return CONCAT44(in_stack_00000004,"DSERR_ELIFINO: Unknown error status code.");
+  return "DSERR_ELIFINO: Unknown error status code.";
 }
 
 

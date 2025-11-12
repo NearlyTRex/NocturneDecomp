@@ -14,7 +14,7 @@
 //   undefined4 s_..\sound\sndmain.cpp_0065101f
 //   TerminatedCString s_pollSfx_must_be_locked_00651034
 //   int g_AudioBitsPerSample = 0x10
-//   int g_AudioChannels = 0x2
+//   int g_AudioChannelCount = 0x2
 //   int g_AudioSampleRate = 0x5622
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -84,8 +84,8 @@ void __cdecl sound_sndmain_cpp_FUN_005aca90(void)
       iVar2 = iVar2 + 4;
     } while (SBORROW4(iVar2,in_stack_00000010 * 4) != iVar2 + in_stack_00000010 * -4 < 0);
   }
-  if (((in_stack_0000000c == (int *)g_AudioBitsPerSample) && (in_stack_00000010 == g_AudioChannels))
-     && (in_stack_00000014 == g_AudioSampleRate)) {
+  if (((in_stack_0000000c == (int *)g_AudioBitsPerSample) &&
+      (in_stack_00000010 == g_AudioChannelCount)) && (in_stack_00000014 == g_AudioSampleRate)) {
     sound_sndmain_cpp_FUN_005a5530();
     iVar2 = 0;
     if (0 < in_stack_00000014) {
@@ -111,7 +111,7 @@ void __cdecl sound_sndmain_cpp_FUN_005aca90(void)
         }
         iVar2 = 0;
         count = g_MixBufferSize * 4;
-        if (0 < g_AudioChannels) {
+        if (0 < g_AudioChannelCount) {
           iVar3 = 0;
           do {
             uStack_74 = 0x5acbca;
@@ -125,17 +125,17 @@ void __cdecl sound_sndmain_cpp_FUN_005aca90(void)
             iVar2 = iVar2 + 1;
             crt_memory_c_memset_FUN_005fde40
                       ((void *)((g_NumMixBuffers + -1) * g_MixBufferSize * 4 + *piVar1),0,count);
-          } while (iVar2 < g_AudioChannels);
+          } while (iVar2 < g_AudioChannelCount);
         }
         aiStack_3c[0] = g_AudioSampleRate;
-        if (0 < g_AudioChannels) {
+        if (0 < g_AudioChannelCount) {
           iVar2 = 0;
           do {
             iVar3 = iVar2 + 4;
             *(undefined4 *)(&stack0xffffff9c + iVar2) =
                  *(undefined4 *)((int)g_ChannelPrimaryBuffers + iVar2);
             iVar2 = iVar3;
-          } while (iVar3 < g_AudioChannels * 4);
+          } while (iVar3 < g_AudioChannelCount * 4);
         }
         pCVar4 = local_14;
         this_ptr = g_SfxSlots;

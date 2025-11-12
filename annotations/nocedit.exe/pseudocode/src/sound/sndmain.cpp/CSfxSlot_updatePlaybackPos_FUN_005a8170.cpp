@@ -19,18 +19,19 @@
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   crt_math.c_floor_FUN_005feb90
-//   sound_sndmain.cpp_FUN_005a87d0
+//   sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_005a87d0
 
 #include "nocturne.h"
 
 void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot *this_ptr)
 
 {
+  CSfxSample *this_ptr_00;
   double dVar1;
   int iVar2;
   undefined4 extraout_EAX;
   undefined4 extraout_EDX;
-  float10 extraout_ST0;
+  float10 in_ST0;
   undefined4 in_stack_00000008;
   undefined4 in_stack_0000000c;
   undefined4 uStack_24;
@@ -43,7 +44,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot 
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::updatePlaybackPos - no samplePtr");
   }
   if (((double)CONCAT44(in_stack_0000000c,in_stack_00000008) < 0.0) ||
-     ((double)*(int *)this_ptr->sample->field8_0x160 <
+     ((double)*(int *)this_ptr->sample->field12_0x160 <
       (double)CONCAT44(in_stack_0000000c,in_stack_00000008))) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0xbc2;
@@ -51,17 +52,18 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot 
   }
   dVar1 = (double)CONCAT44(in_stack_0000000c,in_stack_00000008) - *(double *)this_ptr->field6_0x11c;
   if (dVar1 < 0.0) {
-    dVar1 = (double)*(int *)this_ptr->sample->field8_0x160 + dVar1;
+    dVar1 = (double)*(int *)this_ptr->sample->field12_0x160 + dVar1;
   }
   local_20 = (undefined4)((ulonglong)dVar1 >> 0x20);
   uStack_24 = SUB84(dVar1,0);
-  if ((dVar1 < 0.0) || ((double)*(int *)this_ptr->sample->field8_0x160 + DOUBLE_0065064f < dVar1)) {
+  if ((dVar1 < 0.0) || ((double)*(int *)this_ptr->sample->field12_0x160 + DOUBLE_0065064f < dVar1))
+  {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0xbd0;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)",in_stack_00000008,in_stack_0000000c,
                *(undefined4 *)this_ptr->field6_0x11c,*(undefined4 *)(this_ptr->field6_0x11c + 4),
-               uStack_24,local_20,*(undefined4 *)this_ptr->sample->field8_0x160,this_ptr->sample);
+               uStack_24,local_20,*(undefined4 *)this_ptr->sample->field12_0x160,this_ptr->sample);
   }
   if ((*(double *)((this_ptr->options).field5_0x14 + 0x4c) != *(double *)this_ptr->field6_0x11c) ||
      ((double)CONCAT44(in_stack_0000000c,in_stack_00000008) <
@@ -83,17 +85,18 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot 
     (this_ptr->options).field5_0x14[0x52] = '\0';
     (this_ptr->options).field5_0x14[0x53] = '\0';
   }
-  if ((-1 < (this_ptr->sample->sample_info).bytes_per_second) &&
-     ((double)(this_ptr->sample->sample_info).bytes_per_second <=
+  this_ptr_00 = this_ptr->sample;
+  if ((-1 < (this_ptr_00->sample_info).total_bytes) &&
+     ((double)(this_ptr_00->sample_info).total_bytes <=
       *(double *)((this_ptr->options).field5_0x14 + 0x4c))) {
-    iVar2 = sound_sndmain_cpp_FUN_005a87d0();
+    iVar2 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(this_ptr_00);
     if (iVar2 == 0) {
       *(double *)((this_ptr->options).field5_0x14 + 0x4c) =
-           (double)(this_ptr->sample->sample_info).bytes_per_second;
+           (double)(this_ptr->sample->sample_info).total_bytes;
     }
     else {
-      iVar2 = (this_ptr->sample->sample_info).bytes_per_second;
-      crt_math_c_floor_FUN_005feb90((double)extraout_ST0);
+      iVar2 = (this_ptr->sample->sample_info).total_bytes;
+      crt_math_c_floor_FUN_005feb90((double)in_ST0);
       *(double *)((this_ptr->options).field5_0x14 + 0x4c) =
            *(double *)((this_ptr->options).field5_0x14 + 0x4c) -
            (double)CONCAT44(extraout_EDX,extraout_EAX) *
@@ -304,7 +307,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot 
 //   XREF to: 005a8257 (UNCONDITIONAL_JUMP)
 // 005a8328: PUSH EDX
 //   Label: LAB_005a8328
-// 005a8329: CALL sound_sndmain.cpp_FUN_005a87d0
+// 005a8329: CALL sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_005a87d0
 //   XREF to: 005a87d0 (UNCONDITIONAL_CALL)
 // 005a832e: ADD ESP,0x4
 // 005a8331: TEST EAX,EAX

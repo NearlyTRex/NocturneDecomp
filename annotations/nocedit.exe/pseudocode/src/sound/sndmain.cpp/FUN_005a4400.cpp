@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005a4400()
 // Globals:
-//   undefined4 DAT_03f62828
+//   int g_LastSampleAccessIndex
 //   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f6297c
 //   undefined4 DAT_03f629ac
@@ -20,18 +20,18 @@ CSfxSample * sound_sndmain_cpp_FUN_005a4400(void)
   
   iVar1 = 0;
   while( true ) {
-    DAT_03f62828 = DAT_03f62828 + 1;
-    if (0x3f < DAT_03f62828) {
-      DAT_03f62828 = 0;
+    g_LastSampleAccessIndex = g_LastSampleAccessIndex + 1;
+    if (0x3f < g_LastSampleAccessIndex) {
+      g_LastSampleAccessIndex = 0;
     }
-    if ((g_SfxSamples[DAT_03f62828].field4_0x150 == 0) &&
-       (g_SfxSamples[DAT_03f62828].ref_count == 0)) break;
+    if ((g_SfxSamples[g_LastSampleAccessIndex].field8_0x150 == 0) &&
+       (g_SfxSamples[g_LastSampleAccessIndex].ref_count == 0)) break;
     iVar1 = iVar1 + 1;
     if (0x3f < iVar1) {
       return (CSfxSample *)0x0;
     }
   }
-  return g_SfxSamples + DAT_03f62828;
+  return g_SfxSamples + g_LastSampleAccessIndex;
 }
 
 

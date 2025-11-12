@@ -3,10 +3,14 @@
 // Structure: CSfxSample
 // Ghidra size: 0x180 (384 bytes)
 typedef struct CSfxSample {
-    char name[4]; // 0x0
-    CSampleInfo sample_info; // 0x4
+    CSampleInfo sample_info; // 0x0
+    int playback_mode; // 0x11c
     void* sample_data; // 0x120
-    char field_292[44]; // 0x124
+    int field_292; // 0x124
+    int expected_size; // 0x128
+    char field_300[16]; // 0x12c
+    int loop_counter; // 0x13c
+    char field_320[16]; // 0x140
     int field_336; // 0x150
     int ref_count; // 0x154
     void* buffer_id; // 0x158

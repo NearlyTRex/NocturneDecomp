@@ -8,7 +8,7 @@
 //   TerminatedCString s_SfxSlot_kill_must_be_loc_0064fbaf
 //   TerminatedCString s_sound_sndmain_cpp_0064fbcf
 //   TerminatedCString s_nextMixingBuffer_shouldn_0064fbe4
-//   int g_AudioChannels = 0x2
+//   int g_AudioChannelCount = 0x2
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 //   int g_MixBufferReadIndex
@@ -56,7 +56,7 @@ void sound_sndmain_cpp_FUN_005a59c0(void)
   }
   iVar5 = 0;
   count = g_MixBufferSize * 4;
-  if (0 < g_AudioChannels) {
+  if (0 < g_AudioChannelCount) {
     iVar2 = 0;
     do {
       uStack_54 = 0x5a5a38;
@@ -71,19 +71,19 @@ void sound_sndmain_cpp_FUN_005a59c0(void)
       uStack_50 = 0x5a5a66;
       crt_memory_c_memset_FUN_005fde40
                 ((void *)(*piVar1 + (g_NumMixBuffers + -1) * g_MixBufferSize * 4),0,count);
-    } while (iVar5 < g_AudioChannels);
+    } while (iVar5 < g_AudioChannelCount);
   }
   iStack_1c = g_MixBufferSize;
-  iStack_18 = g_AudioChannels;
+  iStack_18 = g_AudioChannelCount;
   iStack_14 = g_AudioSampleRate;
-  if (0 < g_AudioChannels) {
+  if (0 < g_AudioChannelCount) {
     iVar5 = 0;
     do {
       iVar2 = iVar5 + 4;
       *(undefined4 *)((int)auStack_3c + iVar5) =
            *(undefined4 *)((int)g_ChannelPrimaryBuffers + iVar5);
       iVar5 = iVar2;
-    } while (iVar2 < g_AudioChannels * 4);
+    } while (iVar2 < g_AudioChannelCount * 4);
   }
   pCVar3 = g_SfxSlots;
   do {

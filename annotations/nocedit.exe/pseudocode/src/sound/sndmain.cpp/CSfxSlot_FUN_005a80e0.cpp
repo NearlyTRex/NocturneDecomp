@@ -9,10 +9,10 @@
 //   sound_sndmain.cpp_FUN_005a9f80 (005a9f80) at 005a9fba [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_Error_polling_hw_playbac_00650541
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 // Function calls:
 //   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
 
@@ -21,11 +21,12 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_FUN_005a80e0(CSfxSlot *this_ptr)
 {
   double dVar1;
   
-  if (((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundInstance != (CSound *)0x0)) &&
+  if (((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundPtr != (CSound *)0x0)) &&
      (this_ptr->sample != (CSfxSample *)0x0)) {
-    dVar1 = (double)(*(code *)g_CSoundInstance->vtable[1].func3)();
+    dVar1 = (double)(*(code *)g_CSoundPtr->vtable[1].func3)();
     if (dVar1 < 0.0) {
-      sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+      sound_sndmain_cpp_logSoundError_FUN_005adba0
+                ("Error polling hw playback pos %s\n",this_ptr->sample);
       return 0;
     }
     sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(this_ptr);
@@ -84,7 +85,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_FUN_005a80e0(CSfxSlot *this_ptr)
 // 005a8134: PUSH EDX
 // 005a8135: PUSH 0x650541
 //   XREF to: 00650541 (DATA)
-// 005a813a: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005a813a: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005a813f: ADD ESP,0x8
 // 005a8142: XOR EAX,EAX

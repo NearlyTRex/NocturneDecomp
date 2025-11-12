@@ -9,7 +9,7 @@
 //   TerminatedCString s_sound_sndmain_cpp_0065016e
 //   TerminatedCString s_SfxSlot_kill_must_be_loc_00650183
 //   double DOUBLE_00663140 = 1116.40000000000
-//   int g_AudioChannels = 0x2
+//   int g_AudioChannelCount = 0x2
 //   int g_AudioSampleRate = 0x5622
 //   undefined4 DAT_00681b30
 //   char* g_CurrentFilename
@@ -44,8 +44,8 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_FUN_005a6df0(CSfxSlot *this_ptr)
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::kill - must be locked!");
     in_EAX = extraout_EAX;
   }
-  iVar3 = g_AudioChannels;
-  if (g_AudioChannels < 2) {
+  iVar3 = g_AudioChannelCount;
+  if (g_AudioChannelCount < 2) {
     this_ptr->field4_0x7c[0x44] = '\0';
     this_ptr->field4_0x7c[0x45] = '\0';
     this_ptr->field4_0x7c[0x46] = '\0';
@@ -56,7 +56,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_FUN_005a6df0(CSfxSlot *this_ptr)
     dVar2 = (double)g_AudioSampleRate;
     iVar4 = 99999;
     pCVar5 = this_ptr;
-    if (0 < g_AudioChannels) {
+    if (0 < g_AudioChannelCount) {
       do {
         fVar7 = (float10)*(float *)(pCVar5->field4_0x7c + 4) * (float10)(dVar2 * dVar1);
         dVar8 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(pCVar5,in_EAX));
@@ -76,13 +76,13 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_FUN_005a6df0(CSfxSlot *this_ptr)
         *(int *)(this_ptr->field4_0x7c + 0x44) = *(int *)(this_ptr->field4_0x7c + 0x44) - iVar4;
         this_ptr = (CSfxSlot *)&(this_ptr->options).sample_data;
       } while (iVar6 < iVar3);
-      g_AudioChannels = iVar3;
+      g_AudioChannelCount = iVar3;
       return;
     }
   }
   else {
     iVar4 = 0;
-    if (0 < g_AudioChannels) {
+    if (0 < g_AudioChannelCount) {
       do {
         iVar4 = iVar4 + 1;
         this_ptr->field4_0x7c[0x44] = '\0';
@@ -90,10 +90,10 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_FUN_005a6df0(CSfxSlot *this_ptr)
         this_ptr->field4_0x7c[0x46] = '\0';
         this_ptr->field4_0x7c[0x47] = '\0';
         this_ptr = (CSfxSlot *)&(this_ptr->options).sample_data;
-      } while (iVar4 < g_AudioChannels);
+      } while (iVar4 < g_AudioChannelCount);
     }
   }
-  g_AudioChannels = iVar3;
+  g_AudioChannelCount = iVar3;
   return;
 }
 

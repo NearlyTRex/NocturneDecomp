@@ -20,7 +20,7 @@
 //   undefined4 DAT_03f6aec4
 // Function calls:
 //   GlobalFree
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   waveInClose
 
 #include "nocturne.h"
@@ -55,7 +55,7 @@ bool sound_sndwav_cpp_waveInClose_FUN_005b0d70(void)
   }
   MVar2 = (*PTR_waveInClose_00611424)((HWAVEIN)DAT_03f6adcc);
   if (MVar2 != 0) {
-    sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+    sound_sndmain_cpp_logSoundError_FUN_005adba0("waveInClose failed.");
   }
   DAT_03f6adcc = 0;
   return MVar2 == 0 && iVar1 != 0;
@@ -143,7 +143,7 @@ bool sound_sndwav_cpp_waveInClose_FUN_005b0d70(void)
 //   XREF to: 005b0e02 (CONDITIONAL_JUMP)
 // 005b0df3: PUSH 0x65243a
 //   XREF to: 0065243a (DATA)
-// 005b0df8: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005b0df8: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005b0dfd: XOR ESI,ESI
 // 005b0dff: ADD ESP,0x4

@@ -2,9 +2,9 @@
 // Address: 005a8580
 // Address Range: [[005a8580, 005a86e7]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSampleInfo * this_ptr)
+// Signature: double sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSampleInfo * this_ptr, double position, uint input_type, uint output_type)
 // Cross-references:
-//   sound_sndmain.cpp_CSampleInfo_FUN_005a86f0 (005a86f0) at 005a870d [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0 (005a86f0) at 005a870d [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390 (005a8390) at 005a83d6 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a9720 (005a9720) at 005a9770 [UNCONDITIONAL_CALL]
 // Globals:
@@ -23,28 +23,39 @@
 
 #include "nocturne.h"
 
-int __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSampleInfo *this_ptr)
+double __cdecl
+sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
+          (CSampleInfo *this_ptr,double position,uint input_type,uint output_type)
 
 {
-  int iStack00000008;
-  uint in_stack_00000010;
-  uint in_stack_00000014;
+  double dVar1;
+  int in_stack_00000004;
   
-  if (in_stack_00000010 != in_stack_00000014) {
-    if (in_stack_00000010 != 0) {
-      if (in_stack_00000010 < 2) {
-        _iStack00000008 = (double)this_ptr->bytes_per_second * _iStack00000008;
+  if (position._4_4_ != input_type) {
+    if (position._4_4_ != 0) {
+      if ((ulonglong)position < 0x200000000) {
+        dVar1 = (double)*(int *)(in_stack_00000004 + 0x10c) *
+                (double)CONCAT44(position._0_4_,this_ptr);
+        this_ptr = SUB84(dVar1,0);
+        position._0_4_ = (undefined4)((ulonglong)dVar1 >> 0x20);
       }
-      else if (in_stack_00000010 == 2) {
-        if (*(int *)this_ptr->field5_0x110 < 1) {
+      else if (position._4_4_ == 2) {
+        if (*(int *)(in_stack_00000004 + 0x110) < 1) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
           g_CurrentLineNumber = 0xc44;
-          core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",this_ptr)
-          ;
-          _iStack00000008 = (double)*(int *)this_ptr->field5_0x110 * _iStack00000008;
+          core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.");
+          dVar1 = (double)*(int *)(in_stack_00000004 + 0x110) *
+                  (double)CONCAT44(position._0_4_,this_ptr);
+          this_ptr = SUB84(dVar1,0);
+          position._0_4_ = (undefined4)((ulonglong)dVar1 >> 0x20);
+          position = (double)CONCAT44(2,position._0_4_);
         }
         else {
-          _iStack00000008 = (double)*(int *)this_ptr->field5_0x110 * _iStack00000008;
+          dVar1 = (double)*(int *)(in_stack_00000004 + 0x110) *
+                  (double)CONCAT44(position._0_4_,this_ptr);
+          this_ptr = SUB84(dVar1,0);
+          position._0_4_ = (undefined4)((ulonglong)dVar1 >> 0x20);
+          position = (double)CONCAT44(2,position._0_4_);
         }
       }
       else {
@@ -53,20 +64,28 @@ int __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSampleInf
         core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - Invalid input sample pos type");
       }
     }
-    if (in_stack_00000014 != 0) {
-      if (in_stack_00000014 < 2) {
-        _iStack00000008 = _iStack00000008 / (double)this_ptr->bytes_per_second;
+    if (input_type != 0) {
+      if (input_type < 2) {
+        dVar1 = (double)CONCAT44(position._0_4_,this_ptr) /
+                (double)*(int *)(in_stack_00000004 + 0x10c);
+        this_ptr = SUB84(dVar1,0);
+        position._0_4_ = (undefined4)((ulonglong)dVar1 >> 0x20);
       }
-      else if (in_stack_00000014 == 2) {
-        if (*(int *)this_ptr->field5_0x110 < 1) {
+      else if (input_type == 2) {
+        if (*(int *)(in_stack_00000004 + 0x110) < 1) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
           g_CurrentLineNumber = 0xc57;
-          core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",this_ptr)
-          ;
-          _iStack00000008 = _iStack00000008 / (double)*(int *)this_ptr->field5_0x110;
+          core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.");
+          dVar1 = (double)CONCAT44(position._0_4_,this_ptr) /
+                  (double)*(int *)(in_stack_00000004 + 0x110);
+          this_ptr = SUB84(dVar1,0);
+          position._0_4_ = (undefined4)((ulonglong)dVar1 >> 0x20);
         }
         else {
-          _iStack00000008 = _iStack00000008 / (double)*(int *)this_ptr->field5_0x110;
+          dVar1 = (double)CONCAT44(position._0_4_,this_ptr) /
+                  (double)*(int *)(in_stack_00000004 + 0x110);
+          this_ptr = SUB84(dVar1,0);
+          position._0_4_ = (undefined4)((ulonglong)dVar1 >> 0x20);
         }
       }
       else {
@@ -76,7 +95,7 @@ int __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSampleInf
       }
     }
   }
-  return iStack00000008;
+  return (double)CONCAT44(position._0_4_,this_ptr);
 }
 
 

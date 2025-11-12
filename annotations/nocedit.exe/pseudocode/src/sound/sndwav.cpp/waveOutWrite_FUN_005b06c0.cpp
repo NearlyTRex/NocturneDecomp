@@ -22,7 +22,7 @@
 //   undefined4 DAT_03f6adc4
 // Function calls:
 //   sound_sndmain.cpp_FUN_005aca90
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   waveOutPrepareHeader
 //   waveOutUnprepareHeader
 //   waveOutWrite
@@ -50,7 +50,7 @@ undefined4 sound_sndwav_cpp_waveOutWrite_FUN_005b06c0(void)
   MVar3 = (*PTR_waveOutUnprepareHeader_00611454)
                     ((HWAVEOUT)DAT_03f6ad34,(LPWAVEHDR)(&DAT_03f6ad58)[in_stack_00000004],0x20);
   if (MVar3 != 0) {
-    sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+    sound_sndmain_cpp_logSoundError_FUN_005adba0("waveOutUnprepareHeader failed!");
     return 0;
   }
   iVar6 = 0;
@@ -74,14 +74,14 @@ undefined4 sound_sndwav_cpp_waveOutWrite_FUN_005b06c0(void)
                     ((HWAVEOUT)DAT_03f6ad34,*(LPWAVEHDR *)((int)&DAT_03f6ad58 + unaff_retaddr),0x20)
   ;
   if (MVar3 != 0) {
-    sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+    sound_sndmain_cpp_logSoundError_FUN_005adba0("waveOutPrepareHeader failed!");
     return 0;
   }
   MVar3 = (*PTR_waveOutWrite_00611458)
                     ((HWAVEOUT)DAT_03f6ad34,*(LPWAVEHDR *)((int)&DAT_03f6ad58 + in_stack_00000010),
                      0x20);
   if (MVar3 != 0) {
-    sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+    sound_sndmain_cpp_logSoundError_FUN_005adba0("waveOutWrite failed!");
     return 0;
   }
   return 1;
@@ -230,7 +230,7 @@ undefined4 sound_sndwav_cpp_waveOutWrite_FUN_005b06c0(void)
 // 005b07f4: PUSH 0x65231f
 //   Label: LAB_005b07f4
 //   XREF to: 0065231f (DATA)
-// 005b07f9: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005b07f9: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005b07fe: ADD ESP,0x4
 // 005b0801: XOR EAX,EAX
@@ -243,7 +243,7 @@ undefined4 sound_sndwav_cpp_waveOutWrite_FUN_005b06c0(void)
 // 005b080b: PUSH 0x65233e
 //   Label: LAB_005b080b
 //   XREF to: 0065233e (DATA)
-// 005b0810: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005b0810: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005b0815: ADD ESP,0x4
 // 005b0818: XOR EAX,EAX
@@ -256,7 +256,7 @@ undefined4 sound_sndwav_cpp_waveOutWrite_FUN_005b06c0(void)
 // 005b0822: PUSH 0x65235b
 //   Label: LAB_005b0822
 //   XREF to: 0065235b (DATA)
-// 005b0827: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005b0827: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005b082c: ADD ESP,0x4
 // 005b082f: XOR EAX,EAX

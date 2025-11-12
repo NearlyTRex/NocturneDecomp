@@ -20,7 +20,7 @@
 //   undefined4 DAT_03f6af3c
 // Function calls:
 //   sound_sndmain.cpp_FUN_005aa7f0
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   sound_sndwav.cpp_waveOutWrite_FUN_005b0cc0
 
 #include "nocturne.h"
@@ -28,45 +28,51 @@
 int sound_sndwav_cpp_FUN_005b12e0(void)
 
 {
-  int iVar1;
+  uint uVar1;
   int iVar2;
   int iVar3;
+  int iVar4;
+  int iVar5;
   int in_stack_0000000c;
   
-  iVar3 = 0;
+  iVar4 = DAT_03f6af14 *
+          ((int)((DAT_03f6af10 + (DAT_03f6af10 >> 0x1f) * -8) -
+                (uint)((DAT_03f6af10 >> 0x1f) << 2 < 0)) >> 3);
+  iVar5 = 0;
+  uVar1 = (uint)(DAT_03f6af10 == 0x10);
   while( true ) {
     if ((&DAT_03f6aec0)[DAT_03f6af38] == 0) {
       return -1;
     }
-    iVar1 = ((DAT_03f6af20 - DAT_03f6af3c) * DAT_03f6af30) / DAT_03f6af18;
-    if (in_stack_0000000c < iVar1) {
-      iVar1 = in_stack_0000000c;
+    iVar2 = ((DAT_03f6af20 - DAT_03f6af3c) * DAT_03f6af30) / DAT_03f6af18;
+    if (in_stack_0000000c < iVar2) {
+      iVar2 = in_stack_0000000c;
     }
-    if (0 < iVar1) {
+    if (0 < iVar2) {
       sound_sndmain_cpp_FUN_005aa7f0();
-      in_stack_0000000c = in_stack_0000000c - iVar1;
-      DAT_03f6af3c = DAT_03f6af3c + (DAT_03f6af18 * iVar1) / DAT_03f6af30;
-      iVar3 = iVar3 + iVar1;
+      in_stack_0000000c = in_stack_0000000c - iVar2;
+      DAT_03f6af3c = DAT_03f6af3c + (DAT_03f6af18 * iVar2) / DAT_03f6af30;
+      iVar5 = iVar5 + iVar2;
     }
     if (in_stack_0000000c < 1) {
-      return iVar3;
+      return iVar5;
     }
-    iVar1 = DAT_03f6af38 + 1;
-    if (DAT_03f6af24 <= iVar1) {
-      iVar1 = 0;
+    iVar2 = DAT_03f6af38 + 1;
+    if (DAT_03f6af24 <= iVar2) {
+      iVar2 = 0;
     }
-    if ((&DAT_03f6ae20)[iVar1] == 0) {
+    if ((&DAT_03f6ae20)[iVar2] == 0) {
       return -1;
     }
-    if ((*(byte *)((&DAT_03f6ae20)[iVar1] + 0x10) & 1) == 0) {
-      return iVar3;
+    if ((*(byte *)((&DAT_03f6ae20)[iVar2] + 0x10) & 1) == 0) {
+      return iVar5;
     }
-    iVar2 = sound_sndwav_cpp_waveOutWrite_FUN_005b0cc0();
-    if (iVar2 == 0) break;
+    iVar3 = sound_sndwav_cpp_waveOutWrite_FUN_005b0cc0();
+    if (iVar3 == 0) break;
     DAT_03f6af3c = 0;
-    DAT_03f6af38 = iVar1;
+    DAT_03f6af38 = iVar2;
   }
-  sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+  sound_sndmain_cpp_logSoundError_FUN_005adba0("WavInDevice::poll - queueWavInBuffer failed",uVar1,iVar4);
   return -1;
 }
 
@@ -246,7 +252,7 @@ int sound_sndwav_cpp_FUN_005b12e0(void)
 // 005b1456: PUSH 0x6524ac
 //   Label: LAB_005b1456
 //   XREF to: 006524ac (DATA)
-// 005b145b: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005b145b: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005b1460: MOV EAX,0xffffffff
 // 005b1465: ADD ESP,0x4

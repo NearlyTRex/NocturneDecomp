@@ -25,7 +25,7 @@
 //   undefined4 DAT_03f5db14
 //   undefined4 g_SfxSlots[0].field7_0x74
 //   undefined4 DAT_03f5db1c
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 // Function calls:
 //   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
@@ -55,8 +55,8 @@ CSfxSlot * sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00(void)
           return (CSfxSlot *)0x0;
         }
         if (g_SfxSlots[in_stack_00000004].dsound_buffer != (void *)0x0) {
-          if ((g_CSoundInstance != (CSound *)0x0) &&
-             (iVar1 = (*(code *)g_CSoundInstance->vtable[1].field_20)(), iVar1 != 0)) {
+          if ((g_CSoundPtr != (CSound *)0x0) &&
+             (iVar1 = (*(code *)g_CSoundPtr->vtable[1].field_20)(), iVar1 != 0)) {
             return slot;
           }
           sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(slot);

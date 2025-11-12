@@ -45,8 +45,8 @@
 //   sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550
 //   sound_sndmain.cpp_CalculateDistanceMaybe_FUN_005a45c0
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
+//   sound_sndmain.cpp_parseWavFile_FUN_005a3fe0
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
-//   sound_sndmain.cpp_WavReadingFunc1_FUN_005a3fe0
 
 #include "nocturne.h"
 
@@ -60,6 +60,7 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(char *filename)
   int iVar3;
   char *pcVar4;
   byte bVar5;
+  long in_stack_0000000c;
   char cVar6;
   undefined4 in_stack_fffffefc;
   
@@ -67,11 +68,11 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(char *filename)
   sound_sndmain_cpp_lockSound_FUN_005abd30();
   iVar3 = 0;
   do {
-    if (0 < *(int *)(g_SfxSamples[0].sample_info.field5_0x110 + iVar3 + -4)) {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(g_SfxSamples[0].name + iVar3,filename);
+    if (0 < *(int *)(g_SfxSamples[0].field5_0x12c + iVar3 + -0x1c)) {
+      pcVar4 = g_SfxSamples[0].sample_info.name + iVar3;
+      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(pcVar4,filename);
       if (iVar1 == 0) {
-        pcVar4 = g_SfxSamples[0].name + iVar3;
-        for (iVar1 = 0x54; iVar1 != 0; iVar1 = iVar1 + -1) {
+        for (iVar3 = 0x54; iVar3 != 0; iVar3 = iVar3 + -1) {
           *(undefined4 *)filename = *(undefined4 *)pcVar4;
           pcVar4 = pcVar4 + (uint)bVar5 * -8 + 4;
           filename = filename + (uint)bVar5 * -8 + 4;
@@ -139,8 +140,9 @@ LAB_005aa53c:
     }
     file_handle = engine_dosio_c_getFile_FUN_00481a50("sound",filename,"rb");
     if (file_handle != (FILE *)0x0) {
-      crt_stdio_c_ftell_FUN_00601560(file_handle);
-      iVar3 = sound_sndmain_cpp_WavReadingFunc1_FUN_005a3fe0();
+      in_stack_0000000c = crt_stdio_c_ftell_FUN_00601560(file_handle);
+      iVar3 = sound_sndmain_cpp_parseWavFile_FUN_005a3fe0
+                        (file_handle,&stack0x0000000c,(CSfxSample *)filename);
       if (iVar3 != 0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\sound\\sndmain.cpp",0x10ba);
         goto LAB_005aa53c;
@@ -308,7 +310,7 @@ LAB_005aa53c:
 //   XREF to: Stack[-0x14] (DATA)
 // 005aa51b: PUSH EAX
 // 005aa51c: PUSH EBX
-// 005aa51d: CALL sound_sndmain.cpp_WavReadingFunc1_FUN_005a3fe0
+// 005aa51d: CALL sound_sndmain.cpp_parseWavFile_FUN_005a3fe0
 //   XREF to: 005a3fe0 (UNCONDITIONAL_CALL)
 // 005aa522: ADD ESP,0xc
 // 005aa525: TEST EAX,EAX

@@ -18,7 +18,7 @@
 //   undefined4 DAT_03f6af3c
 // Function calls:
 //   crt_memory.c_memset_FUN_005fde40
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   sound_sndwav.cpp_waveOutWrite_FUN_005b0cc0
 //   waveInStart
 
@@ -58,7 +58,7 @@ undefined4 sound_sndwav_cpp_waveInStart_FUN_005b0e20(void)
   if (MVar2 == 0) {
     return 1;
   }
-  sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+  sound_sndmain_cpp_logSoundError_FUN_005adba0("waveInStart failed!");
   (**(code **)(*in_stack_00000004 + 8))();
   return 0;
 }
@@ -164,7 +164,7 @@ undefined4 sound_sndwav_cpp_waveInStart_FUN_005b0e20(void)
 // 005b0ee5: PUSH 0x65244e
 //   Label: LAB_005b0ee5
 //   XREF to: 0065244e (DATA)
-// 005b0eea: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005b0eea: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005b0eef: ADD ESP,0x4
 // 005b0ef2: MOV EAX,dword ptr [EDI]

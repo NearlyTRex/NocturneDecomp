@@ -5,8 +5,8 @@
 // Signature: void sound_sndmain.cpp_getSoundDeviceInfo_FUN_005ab370(int device_id, SSoundDeviceInfo * dest_buffer)
 // Cross-references:
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512c65 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0 (005adba0) at 005adce8 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_findBestSoundDevice_FUN_005ab3d0 (005ab3d0) at 005ab486 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0 (005adba0) at 005adce8 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005abfda [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_writeIni_FUN_005ac220 (005ac220) at 005ac261 [UNCONDITIONAL_CALL]
 // Globals:

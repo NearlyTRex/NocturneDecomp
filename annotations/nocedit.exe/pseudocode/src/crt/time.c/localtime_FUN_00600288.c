@@ -16,7 +16,7 @@
 //   shape_design.c_embedCopyrightWatermark_FUN_0046b9a0 (0046b9a0) at 0046bb04 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 (0049f420) at 0049f831 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360 (004a3360) at 004a3449 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0 (005adba0) at 005adc59 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0 (005adba0) at 005adc59 [UNCONDITIONAL_CALL]
 // Globals:
 //   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 // Function calls:

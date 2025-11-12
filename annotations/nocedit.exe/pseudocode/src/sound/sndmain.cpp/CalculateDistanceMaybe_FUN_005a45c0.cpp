@@ -52,7 +52,7 @@
 //   char[256] g_CharacterClassificationTable
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   undefined4 DAT_03f5daa0
+//   float FLOAT_03f5daa0
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   crt_stdio.c_fgets_FUN_005fefd0
@@ -68,8 +68,6 @@
 //   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void sound_sndmain_cpp_CalculateDistanceMaybe_FUN_005a45c0(void)
 
@@ -121,7 +119,7 @@ void sound_sndmain_cpp_CalculateDistanceMaybe_FUN_005a45c0(void)
   bVar14 = 0;
   fVar5 = (float)DOUBLE_00681b38;
   fVar4 = FLOAT_0066315c * fVar5;
-  fVar6 = _DAT_03f5daa0 * fVar5;
+  fVar6 = FLOAT_03f5daa0 * fVar5;
   fVar5 = FLOAT_00663160 * fVar5;
   in_stack_00000004[0x124] = '\x01';
   in_stack_00000004[0x125] = '\0';

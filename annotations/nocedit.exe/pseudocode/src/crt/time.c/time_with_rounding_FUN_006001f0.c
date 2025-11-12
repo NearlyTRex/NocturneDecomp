@@ -12,7 +12,7 @@
 //   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (004b5a50) at 004b5be9 [UNCONDITIONAL_CALL]
 //   shape_design.c_embedCopyrightWatermark_FUN_0046b9a0 (0046b9a0) at 0046baf8 [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210 (00534210) at 00534347 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0 (005adba0) at 005adc38 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0 (005adba0) at 005adc38 [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_time.c_get_local_time_FUN_00607150
 //   crt_time.c_mktime_FUN_00600f80

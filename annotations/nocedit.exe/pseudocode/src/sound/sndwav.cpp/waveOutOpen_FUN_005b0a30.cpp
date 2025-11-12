@@ -24,7 +24,7 @@
 //   GlobalAlloc
 //   GlobalLock
 //   sound_sndmain.cpp_getMaxSwLatency_FUN_005abea0
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   waveOutOpen
 
 #include "nocturne.h"
@@ -93,7 +93,7 @@ undefined4 sound_sndwav_cpp_waveOutOpen_FUN_005b0a30(void)
     *in_stack_00000014 = DAT_03f6adc4;
     return 1;
   }
-  sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+  sound_sndmain_cpp_logSoundError_FUN_005adba0("waveOutOpen failed");
 LAB_005b0bdc:
   (**(code **)*in_stack_00000004)();
   return 0;
@@ -264,7 +264,7 @@ LAB_005b0bdc:
 //   XREF to: 005b0bee (CONDITIONAL_JUMP)
 // 005b0bcf: PUSH 0x6523a4
 //   XREF to: 006523a4 (DATA)
-// 005b0bd4: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005b0bd4: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005b0bd9: ADD ESP,0x4
 // 005b0bdc: PUSH EDI

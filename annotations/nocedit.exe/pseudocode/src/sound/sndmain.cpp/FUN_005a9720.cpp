@@ -10,7 +10,7 @@
 //   core_turret.cpp_CTurret_process_FUN_005e2430 (005e2430) at 005e28bb [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005ad3b0 (005ad3b0) at 005ad560 [UNCONDITIONAL_CALL]
 // Globals:
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 // Function calls:
 //   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
 //   sound_sndmain.cpp_CSfxSlot_FUN_005a80e0
@@ -24,23 +24,28 @@ undefined8 sound_sndmain_cpp_FUN_005a9720(void)
 {
   CSfxSlot *this_ptr;
   int iVar1;
-  undefined4 extraout_EDX;
+  double dVar2;
+  uint in_stack_00000008;
+  uint in_stack_ffffffe0;
   undefined4 local_18;
-  int iStack_14;
+  undefined4 uStack_14;
   
   this_ptr = (CSfxSlot *)sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
   if (this_ptr != (CSfxSlot *)0x0) {
-    if (((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundInstance != (CSound *)0x0)) &&
+    if (((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundPtr != (CSound *)0x0)) &&
        (iVar1 = sound_sndmain_cpp_CSfxSlot_FUN_005a80e0(this_ptr), iVar1 == 0)) {
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
       return 0xbff0000000000000;
     }
-    iStack_14 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-                          ((CSampleInfo *)this_ptr->sample);
+    dVar2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
+                      (*(CSampleInfo **)((this_ptr->options).field5_0x14 + 0x4c),
+                       *(double *)((this_ptr->options).field5_0x14 + 0x50),in_stack_00000008,
+                       in_stack_ffffffe0);
+    local_18 = (undefined4)((ulonglong)dVar2 >> 0x20);
     sound_sndmain_cpp_unlockSound_FUN_005abdc0();
-    local_18 = extraout_EDX;
+    uStack_14 = SUB84(dVar2,0);
   }
-  return CONCAT44(iStack_14,local_18);
+  return CONCAT44(uStack_14,local_18);
 }
 
 

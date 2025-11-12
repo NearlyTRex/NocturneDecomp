@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_game.cpp_CGame_processFrame_FUN_004da100 (004da100) at 004da7a2 [UNCONDITIONAL_CALL]
 // Globals:
-//   uint UINT_00681b44 = 0x400000
+//   int g_MaximumSoundMemoryBudget = 0x400000
 //   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f6298c
 //   undefined4 DAT_03f629ac
@@ -14,7 +14,7 @@
 //   undefined4 DAT_03f62b00
 //   undefined4 DAT_03f62b0c
 // Function calls:
-//   sound_sndmain.cpp_CSfxSample_FUN_005a8550
+//   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
 
 #include "nocturne.h"
 
@@ -43,15 +43,15 @@ void sound_sndmain_cpp_FUN_005aa6a0(void)
   local_1c = 0;
   local_14 = 0;
   do {
-    if (0 < *(int *)g_SfxSamples[iVar3].field8_0x160) {
-      if ((g_SfxSamples[iVar3].ref_count == 0) && (g_SfxSamples[iVar3].field4_0x150 == 0)) {
+    if (0 < *(int *)g_SfxSamples[iVar3].field12_0x160) {
+      if ((g_SfxSamples[iVar3].ref_count == 0) && (g_SfxSamples[iVar3].field8_0x150 == 0)) {
         local_1c = local_1c + 1;
-        sound_sndmain_cpp_CSfxSample_FUN_005a8550(g_SfxSamples + iVar3);
+        sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(g_SfxSamples + iVar3);
       }
       else {
-        iVar1 = sound_sndmain_cpp_CSfxSample_FUN_005a8550(this_ptr);
+        iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
         local_14 = local_14 + 1;
-        iVar2 = iVar2 + iVar1 * *(int *)this_ptr->field8_0x160;
+        iVar2 = iVar2 + iVar1 * *(int *)this_ptr->field12_0x160;
       }
     }
     iVar3 = iVar3 + 1;
@@ -73,7 +73,8 @@ void sound_sndmain_cpp_FUN_005aa6a0(void)
     *in_stack_00000014 = 0x40 - local_1c;
   }
   if ((in_stack_00000018 != (int *)0x0) &&
-     (iVar2 = UINT_00681b44 - (iVar2 + local_14), *in_stack_00000018 = iVar2, iVar2 < 0)) {
+     (iVar2 = g_MaximumSoundMemoryBudget - (iVar2 + local_14), *in_stack_00000018 = iVar2, iVar2 < 0
+     )) {
     *in_stack_00000018 = 0;
     return;
   }
@@ -196,7 +197,7 @@ void sound_sndmain_cpp_FUN_005aa6a0(void)
 // 005aa761: PUSH EBX
 //   Label: LAB_005aa761
 //   XREF to: 03f629ac (DATA)
-// 005aa762: CALL sound_sndmain.cpp_CSfxSample_FUN_005a8550
+// 005aa762: CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
 //   XREF to: 005a8550 (UNCONDITIONAL_CALL)
 // 005aa767: IMUL EAX,dword ptr [EBX + 0x160]
 //   XREF to: 03f6298c (READ)
@@ -215,7 +216,7 @@ void sound_sndmain_cpp_FUN_005aa6a0(void)
 // 005aa784: ADD EDI,EAX
 // 005aa786: PUSH EDI
 //   XREF to: 03f629ac (DATA)
-// 005aa787: CALL sound_sndmain.cpp_CSfxSample_FUN_005a8550
+// 005aa787: CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
 //   XREF to: 005a8550 (UNCONDITIONAL_CALL)
 // 005aa78c: IMUL EAX,dword ptr [EDI + 0x160]
 //   XREF to: 03f6298c (READ)

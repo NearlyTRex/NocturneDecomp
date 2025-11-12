@@ -11,13 +11,15 @@
 //   undefined4 DAT_03f6ae20
 //   undefined4 DAT_03f6ae24
 // Function calls:
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   waveInReset
 //   waveInUnprepareHeader
 
 #include "nocturne.h"
 
-undefined4 sound_sndwav_cpp_waveInReset_FUN_005b0f10(void)
+undefined4
+sound_sndwav_cpp_waveInReset_FUN_005b0f10
+          (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX)
 
 {
   MMRESULT MVar1;
@@ -28,7 +30,7 @@ undefined4 sound_sndwav_cpp_waveInReset_FUN_005b0f10(void)
   if (DAT_03f6adcc != 0) {
     MVar1 = (*PTR_waveInReset_00611434)((HWAVEIN)DAT_03f6adcc);
     if (MVar1 != 0) {
-      sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+      sound_sndmain_cpp_logSoundError_FUN_005adba0("waveInReset failed!",unaff_EBX);
       uVar3 = 0;
     }
   }
@@ -92,7 +94,7 @@ undefined4 sound_sndwav_cpp_waveInReset_FUN_005b0f10(void)
 //   XREF to: 005b0f22 (CONDITIONAL_JUMP)
 // 005b0f58: PUSH 0x652462
 //   XREF to: 00652462 (DATA)
-// 005b0f5d: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005b0f5d: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005b0f62: XOR ESI,ESI
 // 005b0f64: ADD ESP,0x4

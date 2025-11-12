@@ -37,7 +37,7 @@
 // Function calls:
 //   GlobalAlloc
 //   GlobalLock
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   waveInGetDevCapsA
 //   waveInOpen
 
@@ -111,7 +111,7 @@ undefined4 sound_sndwav_cpp_WavInDevice_setMode_FUN_005b0f70(void)
     DAT_03f6af28 = in_stack_00000008;
     DAT_03f6af2c = in_stack_0000000c;
     if (iStack_14 < 0) {
-      sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+      sound_sndmain_cpp_logSoundError_FUN_005adba0("WavInDevice::setMode - Can't set any recording modes!");
       return 0;
     }
     DAT_03f6af10 = (&DAT_00681e10)[iStack_14 * 4];
@@ -127,8 +127,8 @@ undefined4 sound_sndwav_cpp_WavInDevice_setMode_FUN_005b0f70(void)
     if (0 < DAT_03f6af24) {
       iVar7 = 0;
       do {
-        pvVar5 = (*GlobalAlloc)(0x2002,((int)((DAT_03f6af10 + (DAT_03f6af10 >> 0x1f) * -8) -
-                                             (uint)((DAT_03f6af10 >> 0x1f) << 2 < 0)) >> 3) *
+        pvVar5 = (*GlobalAlloc)(0x2002,((int)((DAT_03f6af10 + ((int)DAT_03f6af10 >> 0x1f) * -8) -
+                                             (uint)(((int)DAT_03f6af10 >> 0x1f) << 2 < 0)) >> 3) *
                                        DAT_03f6af20 * DAT_03f6af14);
         *(HGLOBAL *)((int)&DAT_03f6ae70 + iVar7) = pvVar5;
         if (pvVar5 == (HGLOBAL)0x0) break;
@@ -149,7 +149,7 @@ undefined4 sound_sndwav_cpp_WavInDevice_setMode_FUN_005b0f70(void)
       WStack_28.wFormatTag = 1;
       WStack_28.wBitsPerSample = (WORD)DAT_03f6af10;
       WStack_28.nChannels = (WORD)DAT_03f6af14;
-      WStack_28.nBlockAlign = (short)((int)(DAT_03f6af10 & 0xffffU) >> 3) * (WORD)DAT_03f6af14;
+      WStack_28.nBlockAlign = (short)((int)(DAT_03f6af10 & 0xffff) >> 3) * (WORD)DAT_03f6af14;
       WStack_28.nSamplesPerSec = DAT_03f6af18;
       WStack_28.nAvgBytesPerSec = DAT_03f6af18 * (uint)WStack_28.nBlockAlign;
       MVar3 = (*PTR_waveInOpen_0061142c)((LPHWAVEIN)&DAT_03f6adcc,DAT_00681e04,&WStack_28,0,0,0);
@@ -427,7 +427,7 @@ undefined4 sound_sndwav_cpp_WavInDevice_setMode_FUN_005b0f70(void)
 // 005b11c0: PUSH 0x652476
 //   Label: LAB_005b11c0
 //   XREF to: 00652476 (DATA)
-// 005b11c5: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005b11c5: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005b11ca: ADD ESP,0x4
 // 005b11cd: XOR EAX,EAX

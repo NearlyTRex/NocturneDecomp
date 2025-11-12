@@ -1,35 +1,33 @@
 // Name: sound_snddx.cpp_FUN_005adf90
 // Address: 005adf90
 // Address Range: [[005adf90, 005adfe4]]
-// Convention: unknown
-// Signature: undefined sound_snddx.cpp_FUN_005adf90()
+// Convention: __cdecl
+// Signature: int sound_snddx.cpp_FUN_005adf90(void)
 // Globals:
 //   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c
 // Function calls:
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   sound_snddx.cpp_FUN_005ade70
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
 
-undefined4 sound_snddx_cpp_FUN_005adf90(void)
+int __cdecl sound_snddx_cpp_FUN_005adf90(void)
 
 {
-  undefined4 uVar1;
+  char *pcVar1;
   BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   undefined4 in_stack_0000000c;
-  undefined1 *puStack_18c;
-  undefined1 auStack_188 [392];
+  char acStack_188 [392];
   
   if (in_stack_00000004 == 0) {
     return 1;
   }
-  uVar1 = sound_snddx_cpp_FUN_005ade70();
+  pcVar1 = sound_snddx_cpp_FUN_005ade70();
   crt_stdio_c_sprintf_FUN_005fdbd0
-            ((char *)&puStack_18c,"DirectSux: Unable to %s.  (%s)",in_stack_0000000c,uVar1);
-  puStack_18c = auStack_188;
-  sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+            (&stack0xfffffe74,"DirectSux: Unable to %s.  (%s)",in_stack_0000000c,pcVar1);
+  sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_188);
   return 0;
 }
 
@@ -64,7 +62,7 @@ undefined4 sound_snddx_cpp_FUN_005adf90(void)
 // 005adfce: ADD ESP,0x10
 // 005adfd1: MOV EAX,ESP
 // 005adfd3: PUSH EAX
-// 005adfd4: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005adfd4: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005adfd9: ADD ESP,0x4
 // 005adfdc: XOR EAX,EAX

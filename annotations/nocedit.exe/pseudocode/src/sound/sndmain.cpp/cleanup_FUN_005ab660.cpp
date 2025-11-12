@@ -12,7 +12,7 @@
 //   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f629ac
 //   undefined4 DAT_03f6882c
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 //   undefined4 DAT_03f69270
 // Function calls:
 //   sound_sndmain.cpp_cleanup_FUN_005ab130
@@ -35,14 +35,14 @@ int sound_sndmain_cpp_cleanup_FUN_005ab660(void)
       sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(this_ptr);
       this_ptr = this_ptr + 1;
     } while (this_ptr != (CSfxSample *)&DAT_03f6882c);
-    if (g_CSoundInstance == (CSound *)0x0) {
+    if (g_CSoundPtr == (CSound *)0x0) {
       iVar1 = 1;
     }
     else {
-      iVar1 = (*(code *)g_CSoundInstance->vtable->func1)();
+      iVar1 = (*(code *)g_CSoundPtr->vtable->func1)();
       if (iVar1 != 0) {
         DAT_03f69270 = 0;
-        g_CSoundInstance = (CSound *)0x0;
+        g_CSoundPtr = (CSound *)0x0;
         return 1;
       }
     }

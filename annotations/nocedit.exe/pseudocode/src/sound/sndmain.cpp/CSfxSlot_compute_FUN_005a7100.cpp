@@ -37,7 +37,7 @@
 //   uint UINT_0066314c = 0x40100000
 //   double DOUBLE_00663150 = 20
 //   CConsole* g_CConsolePtr = 0083b1a4
-//   int g_AudioChannels = 0x2
+//   int g_AudioChannelCount = 0x2
 //   undefined4 DAT_00681b30
 //   CConsole g_ConsolePtr
 //   char* g_CurrentFilename
@@ -48,16 +48,16 @@
 //   undefined4 DAT_03f68848
 //   undefined4 DAT_03f68850
 //   undefined4 DAT_03f68858
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 //   int g_SoundLockCount
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   engine_console.cpp_CConsole_printf_FUN_00441890
-//   sound_sndmain.cpp_CSfxSample_FUN_005a6ce0
 //   sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070
 //   sound_sndmain.cpp_CSfxSlot_FUN_005a6df0
 //   sound_sndmain.cpp_CSfxSlot_FUN_005a6f00
 //   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
+//   sound_sndmain.cpp_FUN_005a6ce0
 //   sound_sndmain.cpp_FUN_005a6d80
 
 #include "nocturne.h"
@@ -117,7 +117,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr)
       }
       bVar11 = true;
     }
-    sound_sndmain_cpp_CSfxSample_FUN_005a6ce0((CSfxSample *)this_ptr);
+    sound_sndmain_cpp_FUN_005a6ce0();
     if (*(double *)((this_ptr->options).field5_0x14 + 0x38) == DOUBLE_00663138) {
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_00441890
@@ -183,7 +183,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr)
                  (double)*(float *)((this_ptr->options).field5_0x14 + 0x30));
     }
     sound_sndmain_cpp_CSfxSlot_FUN_005a6f00(this_ptr);
-    if ((this_ptr->is_active == 1) && (iVar12 = 0, pCVar14 = this_ptr, 0 < g_AudioChannels)) {
+    if ((this_ptr->is_active == 1) && (iVar12 = 0, pCVar14 = this_ptr, 0 < g_AudioChannelCount)) {
       do {
         iVar13 = iVar12 + 1;
         engine_console_cpp_CConsole_printf_FUN_00441890
@@ -192,7 +192,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr)
                                          0x1f)) * *(float *)(pCVar14->field4_0x7c + 0x24)));
         iVar12 = iVar13;
         pCVar14 = (CSfxSlot *)&(pCVar14->options).sample_data;
-      } while (iVar13 < g_AudioChannels);
+      } while (iVar13 < g_AudioChannelCount);
     }
     if (*(float *)this_ptr->field4_0x7c < (float)(1.0 / DOUBLE_00663150)) {
       *(float *)this_ptr->field4_0x7c = (float)(1.0 / DOUBLE_00663150);
@@ -204,9 +204,8 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr)
       engine_console_cpp_CConsole_printf_FUN_00441890
                 (g_CConsolePtr,"  effFreq = %5.2f\n",(double)*(float *)this_ptr->field4_0x7c);
     }
-    if (((bVar11) && (g_CSoundInstance != (CSound *)0x0)) &&
-       (this_ptr->dsound_buffer != (void *)0x0)) {
-      (*(code *)g_CSoundInstance->vtable[1].func2)();
+    if (((bVar11) && (g_CSoundPtr != (CSound *)0x0)) && (this_ptr->dsound_buffer != (void *)0x0)) {
+      (*(code *)g_CSoundPtr->vtable[1].func2)();
     }
     return 1;
   }
@@ -305,7 +304,7 @@ LAB_005a73d3:
 //   XREF to: Stack[-0x18] (READ_WRITE)
 // 005a71c3: PUSH ESI
 //   Label: LAB_005a71c3
-// 005a71c4: CALL sound_sndmain.cpp_CSfxSample_FUN_005a6ce0
+// 005a71c4: CALL sound_sndmain.cpp_FUN_005a6ce0
 //   XREF to: 005a6ce0 (UNCONDITIONAL_CALL)
 // 005a71c9: FLD double ptr [ESI + 0x4c]
 // 005a71cc: ADD ESP,0x4

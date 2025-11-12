@@ -8,7 +8,7 @@
 //   sound_sndmain.cpp_writeIni_FUN_005ac220 (005ac220) at 005ac2ba [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_AudioBitsPerSample = 0x10
-//   int g_AudioChannels = 0x2
+//   int g_AudioChannelCount = 0x2
 //   int g_AudioSampleRate = 0x5622
 
 #include "nocturne.h"
@@ -21,7 +21,7 @@ sound_sndmain_cpp_getAudioFormat_FUN_005ab210(int *bits_per_sample,int *channels
     *bits_per_sample = g_AudioBitsPerSample;
   }
   if (channels != (int *)0x0) {
-    *channels = g_AudioChannels;
+    *channels = g_AudioChannelCount;
   }
   if (sample_rate == (int *)0x0) {
     return;

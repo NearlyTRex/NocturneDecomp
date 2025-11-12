@@ -15,7 +15,8 @@ undefined4 sound_snddx_cpp_FUN_005af720(void)
   int in_stack_00000004;
   
   if ((((0 < in_stack_00000004) && (in_stack_00000004 < 0x1f)) &&
-      ((&DAT_03f6aa44)[in_stack_00000004] != 0)) && ((&DAT_03f6aac0)[in_stack_00000004] != 0)) {
+      ((&DAT_03f6aa44)[in_stack_00000004] != 0)) &&
+     (g_DirectSoundBufferInUse[in_stack_00000004 + 0x1e] != 0)) {
     return 1;
   }
   return 0;

@@ -6,7 +6,7 @@
 // Cross-references:
 //   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100 (005a7100) at 005a7259 [UNCONDITIONAL_CALL]
 // Globals:
-//   int g_AudioChannels = 0x2
+//   int g_AudioChannelCount = 0x2
 //   undefined8 DAT_03f69328
 //   undefined8 DAT_03f69330
 //   undefined8 DAT_03f69368
@@ -29,7 +29,7 @@ int __cdecl sound_sndmain_cpp_FUN_005a6d80(void)
   int in_stack_00000004;
   
   iVar3 = 0;
-  if (0 < g_AudioChannels) {
+  if (0 < g_AudioChannelCount) {
     iVar2 = 0;
     iVar1 = in_stack_00000004;
     do {
@@ -43,7 +43,7 @@ int __cdecl sound_sndmain_cpp_FUN_005a6d80(void)
       iVar3 = iVar3 + 1;
       *(float *)(iVar1 + 0x80) = (float)SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);
       iVar1 = iVar1 + 4;
-    } while (iVar3 < g_AudioChannels);
+    } while (iVar3 < g_AudioChannelCount);
   }
   return in_EAX;
 }

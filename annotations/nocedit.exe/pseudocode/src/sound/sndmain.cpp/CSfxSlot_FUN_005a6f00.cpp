@@ -9,7 +9,7 @@
 //   TerminatedCString s_sound_sndmain_cpp_006501a3
 //   TerminatedCString s_SfxSlot_kill_must_be_loc_006501b8
 //   double DOUBLE_006501df = 0.0500000000000000
-//   int g_AudioChannels = 0x2
+//   int g_AudioChannelCount = 0x2
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 //   int g_SoundLockCount
@@ -45,7 +45,7 @@ float __cdecl sound_sndmain_cpp_CSfxSlot_FUN_005a6f00(CSfxSlot *this_ptr)
   if ((bVar1 & 1) == 0) {
     iVar6 = 0;
     pCVar7 = this_ptr;
-    if (0 < g_AudioChannels) {
+    if (0 < g_AudioChannelCount) {
       do {
         local_28 = *(float *)(pCVar7->field4_0x7c + 4);
         fVar4 = *(float *)(this_ptr->field4_0x7c + 0x88);
@@ -74,18 +74,18 @@ float __cdecl sound_sndmain_cpp_CSfxSlot_FUN_005a6f00(CSfxSlot *this_ptr)
                                 (ushort)(NAN(local_28) || NAN(fVar2)) << 10 |
                                 (ushort)(local_28 == fVar2) << 0xe);
         pCVar7 = (CSfxSlot *)&(pCVar7->options).sample_data;
-      } while (iVar6 < g_AudioChannels);
+      } while (iVar6 < g_AudioChannelCount);
     }
   }
   else {
     iVar6 = 0;
-    if (0 < g_AudioChannels) {
+    if (0 < g_AudioChannelCount) {
       do {
         iVar6 = iVar6 + 1;
         *(float *)(this_ptr->field4_0x7c + 0x24) = fVar3;
         fVar4 = fVar3;
         this_ptr = (CSfxSlot *)&(this_ptr->options).sample_data;
-      } while (iVar6 < g_AudioChannels);
+      } while (iVar6 < g_AudioChannelCount);
     }
   }
   return fVar4;

@@ -8,13 +8,13 @@
 //   TerminatedCString s_Create_temp_secondary_bu_00651b5a
 //   undefined4 DAT_00681dd0
 //   undefined4 DAT_00686d68
-//   undefined4 DAT_03f6a9b0
+//   IDirectSound* g_DirectSound
 //   undefined4 DAT_03f6a9c0
 // Function calls:
 //   crt_memory.c_memset_FUN_005fde40
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   sound_snddx.cpp_FUN_005ade70
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
 
@@ -22,9 +22,9 @@ void sound_snddx_cpp_FUN_005ae660(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  char *pcVar2;
   BADSPACEBASE *in_ESP;
-  int *piStack_1e0;
+  IDirectSound *pIStack_1e0;
   int *piStack_40;
   int *piStack_3c;
   undefined4 uStack_38;
@@ -45,7 +45,7 @@ void sound_snddx_cpp_FUN_005ae660(void)
   }
   local_18 = 0;
   local_14 = 0;
-  piStack_1e0 = (int *)0x5ae6b3;
+  pIStack_1e0 = (IDirectSound *)0x5ae6b3;
   crt_memory_c_memset_FUN_005fde40(&local_2c,0,0x12);
   local_2c = 1;
   uStack_2a = 1;
@@ -53,14 +53,14 @@ void sound_snddx_cpp_FUN_005ae660(void)
   uStack_1e = 0x10;
   uStack_20 = 2;
   uStack_24 = 0xac44;
-  piStack_1e0 = (int *)0x5ae6fe;
+  pIStack_1e0 = (IDirectSound *)0x5ae6fe;
   crt_memory_c_memset_FUN_005fde40(&piStack_40,0,0x14);
   piStack_40 = (int *)0x14;
   piStack_3c = (int *)0x12;
   puStack_30 = (undefined4 *)&local_2c;
   uStack_38 = 0x400;
-  piStack_1e0 = DAT_03f6a9b0;
-  iVar1 = (**(code **)(*DAT_03f6a9b0 + 0xc))();
+  pIStack_1e0 = g_DirectSound;
+  iVar1 = (*(code *)g_DirectSound->vtable[3])();
   if (iVar1 == 0) {
     (**(code **)*puStack_28)();
     if (puStack_30 == (undefined4 *)0x0) {
@@ -81,11 +81,11 @@ void sound_snddx_cpp_FUN_005ae660(void)
     }
   }
   else {
-    uVar2 = sound_snddx_cpp_FUN_005ade70();
+    pcVar2 = sound_snddx_cpp_FUN_005ade70();
     crt_stdio_c_sprintf_FUN_005fdbd0
-              ((char *)&piStack_1e0,"DirectSux: Unable to %s.  (%s)",
-               "Create temp secondary buffer for property set creation",uVar2);
-    sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+              ((char *)&pIStack_1e0,"DirectSux: Unable to %s.  (%s)",
+               "Create temp secondary buffer for property set creation",pcVar2);
+    sound_sndmain_cpp_logSoundError_FUN_005adba0((char *)&pIStack_1e0);
   }
   return;
 }
@@ -204,7 +204,7 @@ void sound_snddx_cpp_FUN_005ae660(void)
 // 005ae7b2: ADD ESP,0x10
 // 005ae7b5: MOV EAX,ESP
 // 005ae7b7: PUSH EAX
-// 005ae7b8: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005ae7b8: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005ae7bd: ADD ESP,0x4
 // 005ae7c0: JMP 0x005ae789

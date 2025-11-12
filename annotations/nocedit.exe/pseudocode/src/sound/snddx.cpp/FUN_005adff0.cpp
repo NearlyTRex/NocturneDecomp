@@ -1,11 +1,11 @@
 // Name: sound_snddx.cpp_FUN_005adff0
 // Address: 005adff0
 // Address Range: [[005adff0, 005ae1b6]]
-// Convention: unknown
-// Signature: undefined sound_snddx.cpp_FUN_005adff0()
+// Convention: __cdecl
+// Signature: int sound_snddx.cpp_FUN_005adff0(void)
 // Cross-references:
-//   sound_snddx.cpp_FUN_005ae340 (005ae340) at 005ae3ac [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_FUN_005aed50 (005aed50) at 005aee0f [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_FUN_005ae340 (005ae340) at 005ae3ac [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_FUN_005aed50 (005aed50) at 005aee0f [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c
 //   TerminatedCString s_Lock_secondary_buffer_00651a8b
@@ -22,18 +22,16 @@
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   sound_snddx.cpp_FUN_005ade70
 //   sound_sndmain.cpp_FUN_005aca90
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_snddx.cpp_FUN_005adff0() */
-
-undefined4 sound_snddx_cpp_FUN_005adff0(void)
+int __cdecl sound_snddx_cpp_FUN_005adff0(void)
 
 {
   int iVar1;
   int iVar2;
-  undefined4 uVar3;
+  char *pcVar3;
   BADSPACEBASE *in_ESP;
   int *piVar4;
   int *piStack_380;
@@ -66,11 +64,11 @@ undefined4 sound_snddx_cpp_FUN_005adff0(void)
     piStack_380 = DAT_03f6a9b8;
     iVar1 = (**(code **)(*DAT_03f6a9b8 + 0x2c))();
     if (iVar1 != 0) {
-      uVar3 = sound_snddx_cpp_FUN_005ade70();
+      pcVar3 = sound_snddx_cpp_FUN_005ade70();
       crt_stdio_c_sprintf_FUN_005fdbd0
                 ((char *)&piStack_380,"DirectSux: Unable to %s.  (%s)",
-                 "Lock secondary buffer",uVar3);
-      sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+                 "Lock secondary buffer",pcVar3);
+      sound_sndmain_cpp_logSoundError_FUN_005adba0((char *)&piStack_380);
       return 0;
     }
     if ((iStack_40 == 0) && (iStack_38 == DAT_03f6a9d4)) {
@@ -92,11 +90,11 @@ undefined4 sound_snddx_cpp_FUN_005adff0(void)
       piVar4 = DAT_03f6a9b8;
       iVar1 = (**(code **)(*DAT_03f6a9b8 + 0x4c))();
       if (iVar1 != 0) {
-        uVar3 = sound_snddx_cpp_FUN_005ade70();
+        pcVar3 = sound_snddx_cpp_FUN_005ade70();
         crt_stdio_c_sprintf_FUN_005fdbd0
                   (acStack_204,"DirectSux: Unable to %s.  (%s)","Unlock secondary buffer"
-                   ,uVar3,piVar4,iStack_3c,iStack_38,iStack_40,uStack_34);
-        sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+                   ,pcVar3,piVar4,iStack_3c,iStack_38,iStack_40,uStack_34);
+        sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_204);
         return 0;
       }
       return 1;
@@ -263,7 +261,7 @@ undefined4 sound_snddx_cpp_FUN_005adff0(void)
 // 005ae15b: ADD ESP,0x10
 // 005ae15e: MOV EAX,ESP
 // 005ae160: PUSH EAX
-// 005ae161: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005ae161: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005ae166: ADD ESP,0x4
 // 005ae169: XOR EAX,EAX
@@ -290,7 +288,7 @@ undefined4 sound_snddx_cpp_FUN_005adff0(void)
 // 005ae197: ADD ESP,0x10
 // 005ae19a: LEA EAX,[ESP + 0x190]
 // 005ae1a1: PUSH EAX
-// 005ae1a2: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005ae1a2: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005ae1a7: ADD ESP,0x4
 // 005ae1aa: XOR EAX,EAX

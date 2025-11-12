@@ -12,7 +12,7 @@
 //   undefined4 DAT_03f6ad9c
 //   undefined4 DAT_03f6adc8
 // Function calls:
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   sound_sndwav.cpp_waveOutWrite_FUN_005b06c0
 
 #include "nocturne.h"
@@ -30,12 +30,12 @@ undefined4 sound_sndwav_cpp_WavOutDevice_poll_FUN_005b0c10(void)
     do {
       if ((*(int *)((int)&DAT_03f6ad58 + iVar2) == 0) || (*(int *)((int)&DAT_03f6ad98 + iVar2) == 0)
          ) {
-        sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+        sound_sndmain_cpp_logSoundError_FUN_005adba0("WavOutDevice::poll - NULL pointer??");
         return 0;
       }
       if (((*(byte *)(*(int *)((int)&DAT_03f6ad58 + iVar2) + 0x10) & 1) != 0) &&
          (iVar1 = sound_sndwav_cpp_waveOutWrite_FUN_005b06c0(), iVar1 == 0)) {
-        sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+        sound_sndmain_cpp_logSoundError_FUN_005adba0("WavOutDevice::poll - sendWavOutBuffer failed");
         return 0;
       }
       iVar3 = iVar3 + 1;
@@ -93,7 +93,7 @@ undefined4 sound_sndwav_cpp_WavOutDevice_poll_FUN_005b0c10(void)
 // 005b0c55: PUSH 0x6523b7
 //   Label: LAB_005b0c55
 //   XREF to: 006523b7 (DATA)
-// 005b0c5a: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005b0c5a: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005b0c5f: XOR EDI,EDI
 // 005b0c61: ADD ESP,0x4
@@ -109,7 +109,7 @@ undefined4 sound_sndwav_cpp_WavOutDevice_poll_FUN_005b0c10(void)
 //   XREF to: 005b0c40 (CONDITIONAL_JUMP)
 // 005b0c73: PUSH 0x6523db
 //   XREF to: 006523db (DATA)
-// 005b0c78: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005b0c78: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005b0c7d: XOR EDI,EDI
 // 005b0c7f: ADD ESP,0x4

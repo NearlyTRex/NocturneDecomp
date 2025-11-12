@@ -24,7 +24,7 @@
 //   undefined4 DAT_03f5dc40
 //   undefined4 g_SfxLastSlot
 //   undefined4 DAT_03f688a8
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   sound_sndmain.cpp_FUN_005ab5a0
@@ -45,7 +45,7 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(int channel_index,f
     g_CurrentLineNumber = 0xf81;
     core_main_c_displayErrorAndQuit_FUN_00506f10("setSfxChannelVol - invalid channel index: %d",channel_index);
   }
-  pCVar1 = g_CSoundInstance;
+  pCVar1 = g_CSoundPtr;
   *(float *)(&DAT_03f688a8 + channel_index * 4) = volume;
   if (pCVar1 != (CSound *)0x0) {
     iVar2 = sound_sndmain_cpp_FUN_005ab5a0();
@@ -55,7 +55,7 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(int channel_index,f
       do {
         if (((pCVar3->field2_0x74 != 0) && (pCVar3->dsound_buffer != (void *)0x0)) &&
            (channel_index == (pCVar3->options).status)) {
-          (*(code *)g_CSoundInstance->vtable[1].func2)();
+          (*(code *)g_CSoundPtr->vtable[1].func2)();
         }
         pCVar3 = pCVar3 + 1;
       } while (pCVar3 != (CSfxSlot *)&g_SfxLastSlot);

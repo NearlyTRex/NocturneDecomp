@@ -8,7 +8,7 @@
 //   sound_sndmain.cpp_FUN_005aca90 (005aca90) at 005acaf9 [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_0064fab7 = 0.5
-//   int g_AudioChannels = 0x2
+//   int g_AudioChannelCount = 0x2
 //   double DOUBLE_00681b38 = 1
 //   undefined4 DAT_03f68830
 //   undefined4 DAT_03f68838
@@ -40,7 +40,7 @@ void sound_sndmain_cpp_FUN_005a5530(void)
   dVar3 = _DAT_03f68840;
   dVar2 = _DAT_03f68838;
   dVar1 = _DAT_03f68830;
-  if (g_AudioChannels == 2) {
+  if (g_AudioChannelCount == 2) {
     dVar1 = DOUBLE_00681b38 * DOUBLE_0064fab7;
     DAT_03f69328 = _DAT_03f68830 - _DAT_03f68860 * dVar1;
     DAT_03f69368 = _DAT_03f68838 - _DAT_03f68868 * dVar1;
@@ -50,7 +50,7 @@ void sound_sndmain_cpp_FUN_005a5530(void)
     DAT_03f693b0 = _DAT_03f68840 + _DAT_03f68870 * dVar1;
     return;
   }
-  if (0 < g_AudioChannels) {
+  if (0 < g_AudioChannelCount) {
     iVar4 = 0;
     do {
       iVar5 = iVar4 + 8;
@@ -58,7 +58,7 @@ void sound_sndmain_cpp_FUN_005a5530(void)
       *(double *)((int)&DAT_03f69368 + iVar4) = dVar2;
       *(double *)((int)&DAT_03f693a8 + iVar4) = dVar3;
       iVar4 = iVar5;
-    } while (SBORROW4(iVar5,g_AudioChannels * 8) != iVar5 + g_AudioChannels * -8 < 0);
+    } while (SBORROW4(iVar5,g_AudioChannelCount * 8) != iVar5 + g_AudioChannelCount * -8 < 0);
   }
   return;
 }

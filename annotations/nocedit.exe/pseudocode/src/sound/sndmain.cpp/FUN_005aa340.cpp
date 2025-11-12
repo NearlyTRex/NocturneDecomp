@@ -5,9 +5,9 @@
 // Signature: undefined sound_sndmain.cpp_FUN_005aa340()
 // Globals:
 //   uint UINT_00681b40 = 0x200000
-//   uint UINT_00681b44 = 0x400000
+//   int g_MaximumSoundMemoryBudget = 0x400000
 // Function calls:
-//   sound_sndmain.cpp_FUN_005a4450
+//   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450
 
 #include "nocturne.h"
 
@@ -15,11 +15,11 @@ void sound_sndmain_cpp_FUN_005aa340(void)
 
 {
   uint in_stack_00000004;
-  uint in_stack_00000008;
+  int in_stack_00000008;
   
   UINT_00681b40 = in_stack_00000004;
-  UINT_00681b44 = in_stack_00000008;
-  sound_sndmain_cpp_FUN_005a4450();
+  g_MaximumSoundMemoryBudget = in_stack_00000008;
+  sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_005a4450(0);
   return;
 }
 
@@ -35,7 +35,7 @@ void sound_sndmain_cpp_FUN_005aa340(void)
 // 005aa34d: PUSH 0x0
 // 005aa34f: MOV [0x00681b44],EAX
 //   XREF to: 00681b44 (WRITE)
-// 005aa354: CALL sound_sndmain.cpp_FUN_005a4450
+// 005aa354: CALL sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450
 //   XREF to: 005a4450 (UNCONDITIONAL_CALL)
 // 005aa359: ADD ESP,0x4
 // 005aa35c: RET

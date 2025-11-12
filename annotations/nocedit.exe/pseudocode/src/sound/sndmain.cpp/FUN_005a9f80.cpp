@@ -38,7 +38,7 @@ void sound_sndmain_cpp_FUN_005a9f80(void)
                         (in_stack_00000008,"sfx slot %d: %s, pos %7.1f/%7.1f\n",iVar2,
                          this_ptr->sample,*(undefined4 *)((this_ptr->options).field5_0x14 + 0x4c),
                          *(undefined4 *)((this_ptr->options).field5_0x14 + 0x50),
-                         (double)(this_ptr->sample->sample_info).bytes_per_second);
+                         (double)(this_ptr->sample->sample_info).total_bytes);
       in_stack_00000008 = in_stack_00000008 + iVar1;
     }
     iVar2 = iVar2 + 1;

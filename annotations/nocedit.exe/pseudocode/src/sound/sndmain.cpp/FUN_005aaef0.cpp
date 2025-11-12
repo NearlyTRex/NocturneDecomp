@@ -15,7 +15,7 @@
 //   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0 (005ad5c0) at 005ad6d1 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_AudioBitsPerSample = 0x10
-//   int g_AudioChannels = 0x2
+//   int g_AudioChannelCount = 0x2
 //   int g_AudioSampleRate = 0x5622
 //   undefined4 DAT_00681b30
 //   undefined4 DAT_00681b34
@@ -49,7 +49,7 @@
 //   undefined4 DAT_03f6889c
 //   undefined4 DAT_03f688a0
 //   undefined4 DAT_03f688a4
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 //   int g_SoundBusyFlag
 //   int g_MixBufferReadIndex
 //   int g_MixBufferWriteIndex
@@ -100,26 +100,26 @@ undefined4 sound_sndmain_cpp_FUN_005aaef0(void)
   }
   sound_sndmain_cpp_lockSound_FUN_005abd30();
   iVar3 = sound_sndmain_cpp_setSoundOutputMode_FUN_005ab170
-                    (g_AudioBitsPerSample,g_AudioChannels,g_AudioSampleRate);
+                    (g_AudioBitsPerSample,g_AudioChannelCount,g_AudioSampleRate);
   if (iVar3 != 0) {
-    if ((0 < g_NumMixBuffers) && (iVar3 = 0, 0 < g_AudioChannels)) {
+    if ((0 < g_NumMixBuffers) && (iVar3 = 0, 0 < g_AudioChannelCount)) {
       iVar5 = 0;
       do {
         puVar1 = (undefined4 *)((int)g_ChannelPrimaryBuffers + iVar5);
         iVar5 = iVar5 + 4;
         iVar3 = iVar3 + 1;
         crt_memory_c_memset_FUN_005fde40((void *)*puVar1,0,g_MixBufferSize * g_NumMixBuffers * 4);
-      } while (iVar3 < g_AudioChannels);
+      } while (iVar3 < g_AudioChannelCount);
     }
     g_MixBufferReadIndex = 0;
     g_MixBufferWriteIndex = 0;
-    (*(code *)g_CSoundInstance->vtable->field_24)();
-    (*(code *)g_CSoundInstance->vtable->field_28)();
-    (*(code *)g_CSoundInstance->vtable->field_32)();
-    (*(code *)g_CSoundInstance->vtable->field_36)();
-    (*(code *)g_CSoundInstance->vtable->field_40)();
+    (*(code *)g_CSoundPtr->vtable->field_24)();
+    (*(code *)g_CSoundPtr->vtable->field_28)();
+    (*(code *)g_CSoundPtr->vtable->field_32)();
+    (*(code *)g_CSoundPtr->vtable->field_36)();
+    (*(code *)g_CSoundPtr->vtable->field_40)();
     DAT_03f69410 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-    iVar3 = (*(code *)g_CSoundInstance->vtable->func2)();
+    iVar3 = (*(code *)g_CSoundPtr->vtable->func2)();
     if (iVar3 != 0) {
       g_SoundBusyFlag = 1;
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();

@@ -7,7 +7,7 @@
 //   core_fire.cpp_CFireEffect_FUN_004c7db0 (004c7db0) at 004c7e34 [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CFireEffect_FUN_004c8dd0 (004c8dd0) at 004c8e32 [UNCONDITIONAL_CALL]
 // Globals:
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 // Function calls:
 //   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
 //   sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
@@ -31,8 +31,8 @@ undefined4 sound_sndmain_cpp_YetAnother2ComputingDelayCall_FUN_005a98b0(void)
   (this_ptr->options).field5_0x14[0xf] = '\0';
   *(undefined4 *)((this_ptr->options).field5_0x14 + 8) = in_stack_00000008;
   sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr);
-  if ((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundInstance != (CSound *)0x0)) {
-    (*(code *)g_CSoundInstance->vtable[1].func2)();
+  if ((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundPtr != (CSound *)0x0)) {
+    (*(code *)g_CSoundPtr->vtable[1].func2)();
   }
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 1;

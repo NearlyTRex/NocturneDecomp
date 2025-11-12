@@ -19,8 +19,8 @@
 //   sound_sndmain.cpp_FUN_005aa0a0
 //   sound_sndmain.cpp_FUN_005aa1c0
 //   sound_sndmain.cpp_FUN_005aaef0
-//   sound_sndmain.cpp_FUN_005ab260
 //   sound_sndmain.cpp_FUN_005ab6e0
+//   sound_sndmain.cpp_getAudioSampleRate_FUN_005ab260
 //   sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90
 //   sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
@@ -91,7 +91,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b3830(CSound *this_ptr)
     uStack00000034 = 1;
     sound_sndmain_cpp_somethingWithStack_FUN_005a8b90();
     uStack00000038 = 0x5b3956;
-    iVar2 = sound_sndmain_cpp_FUN_005ab260();
+    iVar2 = sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260();
     if (iVar2 < 0x7531) {
       pcStack0000003c = "splash-music-22.wav";
       uStack00000038 = 0x5b3992;
@@ -238,7 +238,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b3830(CSound *this_ptr)
 // 005b3949: CALL sound_sndmain.cpp_somethingWithStack_FUN_005a8b90
 //   XREF to: 005a8b90 (UNCONDITIONAL_CALL)
 // 005b394e: ADD ESP,0x4
-// 005b3951: CALL sound_sndmain.cpp_FUN_005ab260
+// 005b3951: CALL sound_sndmain.cpp_getAudioSampleRate_FUN_005ab260
 //   XREF to: 005ab260 (UNCONDITIONAL_CALL)
 // 005b3956: CMP EAX,0x7530
 // 005b395b: JLE 0x005b3988

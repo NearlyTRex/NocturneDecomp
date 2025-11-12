@@ -119,8 +119,8 @@
 //   shape_meshlod.cpp_FUN_0051d0e0 (0051d0e0) at 0051d109 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051d420 (0051d420) at 0051d43f [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_TriListSomething_FUN_005d77a0 (005d77a0) at 005d7960 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0 (005adba0) at 005add64 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 (005acf20) at 005ad1a6 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0 (005adba0) at 005add64 [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_stdio.c_vfprintf_FUN_00604850
 

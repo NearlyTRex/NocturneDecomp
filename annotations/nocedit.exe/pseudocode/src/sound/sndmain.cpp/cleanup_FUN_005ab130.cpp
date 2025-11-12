@@ -18,7 +18,7 @@
 //   sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0 (005a96c0) at 005a96cb [CONDITIONAL_JUMP]
 //   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0 (005ad5c0) at 005ad7c5 [UNCONDITIONAL_CALL]
 // Globals:
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 //   int g_SoundBusyFlag
 // Function calls:
 //   sound_sndmain.cpp_FreeSomeSoundMemory_FUN_005a5900
@@ -34,8 +34,8 @@ undefined4 sound_sndmain_cpp_cleanup_FUN_005ab130(void)
   int iVar1;
   
   sound_sndmain_cpp_killAllSoundSlots_FUN_005a9cc0();
-  if (g_CSoundInstance != (CSound *)0x0) {
-    iVar1 = (*(code *)g_CSoundInstance->vtable->func3)();
+  if (g_CSoundPtr != (CSound *)0x0) {
+    iVar1 = (*(code *)g_CSoundPtr->vtable->func3)();
     if (iVar1 == 0) {
       return 0;
     }

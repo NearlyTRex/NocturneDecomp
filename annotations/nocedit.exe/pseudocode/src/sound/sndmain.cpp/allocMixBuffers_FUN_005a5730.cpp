@@ -11,7 +11,7 @@
 //   TerminatedCString s_sound_sndmain_cpp_0064fb11
 //   TerminatedCString s_sound_sndmain_cpp_0064fb26
 //   TerminatedCString s_allocMixBuffers_out_of_m_0064fb3b
-//   int g_AudioChannels = 0x2
+//   int g_AudioChannelCount = 0x2
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 //   int g_MixBufferReadIndex
@@ -56,15 +56,16 @@ void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_005a5730(int requested_size,i
   g_MixBufferWriteIndex = 0;
   g_PrimaryMixBuffer =
        shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                 (g_PrimaryMixBuffer,num_buffers * iVar4 * g_AudioChannels,
+                 (g_PrimaryMixBuffer,num_buffers * iVar4 * g_AudioChannelCount,
                   "..\\sound\\sndmain.cpp",0x4a2);
   g_SecondaryMixBuffer =
        shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                 (g_SecondaryMixBuffer,g_AudioChannels * iVar4 * 2,"..\\sound\\sndmain.cpp",
+                 (g_SecondaryMixBuffer,g_AudioChannelCount * iVar4 * 2,"..\\sound\\sndmain.cpp",
                   0x4a3);
   g_TertiaryMixBuffer =
        shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                 (g_TertiaryMixBuffer,iVar4 * g_AudioChannels,"..\\sound\\sndmain.cpp",0x4a4);
+                 (g_TertiaryMixBuffer,iVar4 * g_AudioChannelCount,"..\\sound\\sndmain.cpp",0x4a4
+                 );
   if (((g_PrimaryMixBuffer == (void *)0x0) || (g_SecondaryMixBuffer == (void *)0x0)) ||
      (g_TertiaryMixBuffer == (void *)0x0)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -72,7 +73,7 @@ void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_005a5730(int requested_size,i
     core_main_c_displayErrorAndQuit_FUN_00506f10("allocMixBuffers - out of memory");
   }
   iVar4 = 0;
-  if (0 < g_AudioChannels) {
+  if (0 < g_AudioChannelCount) {
     iVar3 = 0;
     iVar5 = g_MixBufferSize * 4;
     iVar2 = 0;
@@ -89,7 +90,7 @@ void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_005a5730(int requested_size,i
       iVar4 = iVar4 + 1;
       iVar3 = iVar3 + g_MixBufferSize * 4;
       iVar2 = iVar2 + 4;
-    } while (iVar4 < g_AudioChannels);
+    } while (iVar4 < g_AudioChannelCount);
   }
   return;
 }

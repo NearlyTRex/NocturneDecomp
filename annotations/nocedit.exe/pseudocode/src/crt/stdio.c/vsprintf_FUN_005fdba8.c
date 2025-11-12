@@ -41,7 +41,7 @@
 //   shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 (0049e6a0) at 0049e6b8 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 (0049e6f0) at 0049e708 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 (0049f0f0) at 0049f10b [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0 (005adba0) at 005adbcb [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0 (005adba0) at 005adbcb [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_stdio.c_FormatEngine_FUN_00602950
 

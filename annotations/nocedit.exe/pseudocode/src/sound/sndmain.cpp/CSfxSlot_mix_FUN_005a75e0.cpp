@@ -137,14 +137,14 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr)
             (pCVar5 = this_ptr->sample, pCVar5 != (CSfxSample *)0x0)) &&
            (0.0 <= *(double *)((this_ptr->options).field5_0x14 + 0x4c)))) {
       if ((in_stack_00000028 < 1) ||
-         (dVar13 = (double)(((float)(pCVar5->sample_info).total_samples / (float)in_stack_00000030)
-                           * *(float *)this_ptr->field4_0x7c),
+         (dVar13 = (double)(((float)(pCVar5->sample_info).sample_rate / (float)in_stack_00000030) *
+                           *(float *)this_ptr->field4_0x7c),
          local_b0 = (undefined4)((ulonglong)dVar13 >> 0x20), dVar13 <= 0.0)) goto LAB_005a770c;
-      iVar10 = *(int *)pCVar5->field8_0x160;
+      iVar10 = *(int *)pCVar5->field12_0x160;
       uStack_ac = SUB84((double)iVar10,0);
       iStack_a4 = in_stack_00000028;
       local_4c = 0;
-      if (0 < (pCVar5->sample_info).bytes_per_second) {
+      if (0 < (pCVar5->sample_info).total_bytes) {
         dVar13 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
         in_ST0 = (float10)dVar13;
         fVar11 = (float10)(double)CONCAT44(extraout_EDX,extraout_EAX);
@@ -188,7 +188,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr)
         ppvVar9 = (void **)(iStack_a4 << 2);
         local_7c = uVar12;
         if ((pCVar5->sample_info).bit_depth == 8) {
-          if ((pCVar5->sample_info).sample_rate == 2) {
+          if ((pCVar5->sample_info).num_channels == 2) {
             if (0 < iStack_a4) {
               uVar4 = 0;
               local_1c = 0;
@@ -233,7 +233,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr)
               if (0 < (int)in_stack_0000002c) {
                 do {
                   iVar10 = (int)pCVar5 * 4;
-                  pCVar5 = (CSfxSample *)(pCVar5->name + 1);
+                  pCVar5 = (CSfxSample *)((pCVar5->sample_info).name + 1);
                   *(float *)(*(int *)(&stack0x00000008 + iVar10) + iVar7) =
                        (float)(int)(bVar3 - 0x80) * *(float *)(pCVar6->field4_0x7c + 0x24) +
                        *(float *)(*(int *)(&stack0x00000008 + iVar10) + iVar7);
@@ -247,7 +247,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr)
             } while (iVar7 < (int)local_34);
           }
         }
-        else if ((pCVar5->sample_info).sample_rate == 2) {
+        else if ((pCVar5->sample_info).num_channels == 2) {
           if (in_stack_0000002c == (void **)&DAT_00000002) {
             uVar12 = sound_sndmain_cpp_FUN_005a5fb0();
             in_ST0 = extraout_ST0;
@@ -318,12 +318,12 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr)
       sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(this_ptr);
       if (local_48 != 0) {
         iVar10 = *(int *)(this_ptr->field6_0x11c + 8) + 1;
-        iVar7 = *(int *)(this_ptr->sample->field3_0x124 +
-                        *(int *)(this_ptr->field6_0x11c + 8) * 4 + 0x18);
+        iVar7 = *(int *)(this_ptr->sample->field7_0x140 +
+                        *(int *)(this_ptr->field6_0x11c + 8) * 4 + -4);
         *(int *)(this_ptr->field6_0x11c + 8) = iVar10;
         pCVar5 = this_ptr->sample;
         *(double *)((this_ptr->options).field5_0x14 + 0x4c) = (double)iVar7;
-        if (*(int *)pCVar5->field3_0x124 <= iVar10) {
+        if (pCVar5->field3_0x124 <= iVar10) {
           this_ptr->field6_0x11c[8] = '\0';
           this_ptr->field6_0x11c[9] = '\0';
           this_ptr->field6_0x11c[10] = '\0';

@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_SleepAndKillSoundThreadError_FUN_005abcb0()
 // Cross-references:
-//   sound_snddx.cpp_FUN_005ae4b0 (005ae4b0) at 005ae548 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_FUN_005ae4b0 (005ae4b0) at 005ae548 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005abc00 (005abc00) at 005abc07 [UNCONDITIONAL_CALL]
 //   sound_sndwav.cpp_waveOutReset_FUN_005b09c0 (005b09c0) at 005b09f6 [UNCONDITIONAL_CALL]
 // Globals:
@@ -12,7 +12,7 @@
 //   undefined4 DAT_03f69400
 //   undefined4 DAT_03f69404
 // Function calls:
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   wincore_winrun.cpp_sleep_FUN_005f40e0
 
 #include "nocturne.h"
@@ -36,7 +36,7 @@ bool sound_sndmain_cpp_SleepAndKillSoundThreadError_FUN_005abcb0(void)
   if (DAT_03f69400 == 0) {
     return true;
   }
-  sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+  sound_sndmain_cpp_logSoundError_FUN_005adba0("killSoundThread - failed!\n");
   return DAT_03f69400 == 0;
 }
 
@@ -86,7 +86,7 @@ bool sound_sndmain_cpp_SleepAndKillSoundThreadError_FUN_005abcb0(void)
 // 005abd0c: PUSH 0x650e07
 //   Label: LAB_005abd0c
 //   XREF to: 00650e07 (DATA)
-// 005abd11: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005abd11: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005abd16: ADD ESP,0x4
 // 005abd19: CMP dword ptr [0x03f69400],0x0

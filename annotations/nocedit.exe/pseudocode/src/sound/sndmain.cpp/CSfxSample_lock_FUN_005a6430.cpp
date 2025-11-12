@@ -15,10 +15,10 @@
 //   TerminatedCString s_SfxSample_lock_nothing_a_0064fdd9
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   sound_sndmain.cpp_CSfxSample_FUN_005a8550
+//   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
 
 #include "nocturne.h"
 
@@ -36,7 +36,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(CSfxSample *this_ptr)
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::lock - already locked!");
   }
   if (((int)in_stack_00000008 < 0) ||
-     (*(int *)this_ptr->field8_0x160 < (int)in_stack_00000008 + (int)in_stack_0000000c)) {
+     (*(int *)this_ptr->field12_0x160 < (int)in_stack_00000008 + (int)in_stack_0000000c)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x758;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::lock - invalid region");
@@ -47,18 +47,18 @@ int __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(CSfxSample *this_ptr)
       g_CurrentLineNumber = 0x75f;
       core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::lock - nothing allocated!");
     }
-    iVar1 = sound_sndmain_cpp_CSfxSample_FUN_005a8550(this_ptr);
+    iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
     pvVar2 = (void *)(iVar1 * (int)in_stack_00000008 + (int)this_ptr->sample_data);
   }
   else {
-    if (g_CSoundInstance == (CSound *)0x0) {
+    if (g_CSoundPtr == (CSound *)0x0) {
       return 0;
     }
-    pvVar2 = (void *)(*(code *)g_CSoundInstance->vtable->field_52)();
+    pvVar2 = (void *)(*(code *)g_CSoundPtr->vtable->field_52)();
   }
   if (pvVar2 != (void *)0x0) {
     this_ptr->sound_buffer = in_stack_0000000c;
-    this_ptr->field12_0x178 = in_stack_00000008;
+    this_ptr->field16_0x178 = in_stack_00000008;
   }
   return (int)pvVar2;
 }
@@ -122,7 +122,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(CSfxSample *this_ptr)
 // 005a64b6: ADD ESP,0x4
 // 005a64b9: PUSH EBX
 //   Label: LAB_005a64b9
-// 005a64ba: CALL sound_sndmain.cpp_CSfxSample_FUN_005a8550
+// 005a64ba: CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
 //   XREF to: 005a8550 (UNCONDITIONAL_CALL)
 // 005a64bf: IMUL EAX,ESI
 // 005a64c2: MOV EDX,dword ptr [EBX + 0x120]

@@ -15,9 +15,9 @@ undefined FUN_005a39a0();
 // Address: 005a3c90
 undefined FUN_005a3c90();
 
-// Original: sound_sndmain.cpp_WavReadingFunc1_FUN_005a3fe0
+// Original: sound_sndmain.cpp_parseWavFile_FUN_005a3fe0
 // Address: 005a3fe0
-undefined WavReadingFunc1();
+int parseWavFile(FILE * file_handle, long * file_offset_ptr, CSfxSample * sfx_sample);
 
 // Original: sound_sndmain.cpp_FUN_005a43a0
 // Address: 005a43a0
@@ -27,9 +27,9 @@ undefined FUN_005a43a0();
 // Address: 005a4400
 undefined FUN_005a4400();
 
-// Original: sound_sndmain.cpp_FUN_005a4450
+// Original: sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450
 // Address: 005a4450
-int FUN_005a4450(void);
+int ensureSoundMemoryAvailable(int requested_bytes);
 
 // Original: sound_sndmain.cpp_FUN_005a4530
 // Address: 005a4530
@@ -139,9 +139,9 @@ void CSfxSample::seek(CSfxSample * this_ptr);
 // Address: 005a6730
 int CSfxSlot::pollStream(CSfxSlot * this_ptr);
 
-// Original: sound_sndmain.cpp_CSfxSample_FUN_005a6ce0
+// Original: sound_sndmain.cpp_FUN_005a6ce0
 // Address: 005a6ce0
-void CSfxSample(CSfxSample * this_ptr);
+void FUN_005a6ce0(void);
 
 // Original: sound_sndmain.cpp_FUN_005a6d80
 // Address: 005a6d80
@@ -195,29 +195,29 @@ void * FUN_005a8480(void);
 // Address: 005a84d0
 undefined FUN_005a84d0();
 
-// Original: sound_sndmain.cpp_FUN_005a8520
+// Original: sound_sndmain.cpp_CSfxSample_FUN_005a8520
 // Address: 005a8520
-undefined FUN_005a8520();
-
-// Original: sound_sndmain.cpp_CSfxSample_FUN_005a8550
-// Address: 005a8550
 int CSfxSample(CSfxSample * this_ptr);
+
+// Original: sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
+// Address: 005a8550
+int CSfxSample::getBytesPerFrame(CSfxSample * this_ptr);
 
 // Original: sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
 // Address: 005a8580
-int CSampleInfo::cvtPlaybackPos(CSampleInfo * this_ptr);
+double CSampleInfo::cvtPlaybackPos(CSampleInfo * this_ptr, double position, uint input_type, uint output_type);
 
-// Original: sound_sndmain.cpp_CSampleInfo_FUN_005a86f0
+// Original: sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
 // Address: 005a86f0
-int CSampleInfo(CSampleInfo * this_ptr);
+double CSampleInfo::normalizePlaybackPos(CSampleInfo * this_ptr, double position, uint input_type, uint output_type);
 
-// Original: sound_sndmain.cpp_FUN_005a87d0
+// Original: sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_005a87d0
 // Address: 005a87d0
-undefined FUN_005a87d0();
+int CSfxSample::getLoopMode(CSfxSample * this_ptr);
 
-// Original: sound_sndmain.cpp_FUN_005a8810
+// Original: sound_sndmain.cpp_CSfxSample_FUN_005a8810
 // Address: 005a8810
-undefined FUN_005a8810();
+int CSfxSample(CSfxSample * this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSlot_reset_FUN_005a8830
 // Address: 005a8830
@@ -519,17 +519,17 @@ int setSoundOutputMode(int bits_per_sample, int channels, int sample_rate);
 // Address: 005ab210
 void getAudioFormat(int * bits_per_sample, int * channels, int * sample_rate);
 
-// Original: sound_sndmain.cpp_FUN_005ab250
+// Original: sound_sndmain.cpp_getAudioBitsPerSample_FUN_005ab250
 // Address: 005ab250
-undefined FUN_005ab250();
+int getAudioBitsPerSample(void);
 
-// Original: sound_sndmain.cpp_FUN_005ab260
+// Original: sound_sndmain.cpp_getAudioSampleRate_FUN_005ab260
 // Address: 005ab260
-undefined FUN_005ab260();
+int getAudioSampleRate(void);
 
-// Original: sound_sndmain.cpp_FUN_005ab270
+// Original: sound_sndmain.cpp_getAudioChannelCount_FUN_005ab270
 // Address: 005ab270
-undefined FUN_005ab270();
+int getAudioChannelCount(void);
 
 // Original: sound_sndmain.cpp_CallToSetSoundMode_FUN_005ab280
 // Address: 005ab280
@@ -581,15 +581,15 @@ undefined FUN_005ab5a0();
 
 // Original: sound_sndmain.cpp_allocBuffers_FUN_005ab5b0
 // Address: 005ab5b0
-undefined allocBuffers();
+int allocBuffers(void);
 
 // Original: sound_sndmain.cpp_cleanup_FUN_005ab660
 // Address: 005ab660
 undefined cleanup();
 
-// Original: sound_sndmain.cpp_GetCurrentSoundDevice_FUN_005ab6c0
+// Original: sound_sndmain.cpp_getCurrentSoundDevice_FUN_005ab6c0
 // Address: 005ab6c0
-undefined GetCurrentSoundDevice();
+int getCurrentSoundDevice(void);
 
 // Original: sound_sndmain.cpp_FUN_005ab6d0
 // Address: 005ab6d0
@@ -727,9 +727,9 @@ undefined FUN_005ad3b0();
 // Address: 005ad5c0
 undefined testSoundFiles();
 
-// Original: sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// Original: sound_sndmain.cpp_logSoundError_FUN_005adba0
 // Address: 005adba0
-undefined HandleSoundError();
+void logSoundError(char * format, ...);
 
 // Original: sound_sndmain.cpp_CSfxOptions_ctor_FUN_005add70
 // Address: 005add70

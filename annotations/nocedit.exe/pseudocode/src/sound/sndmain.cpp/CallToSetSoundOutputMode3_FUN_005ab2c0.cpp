@@ -6,8 +6,8 @@
 // Cross-references:
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512b6c [UNCONDITIONAL_CALL]
 // Function calls:
-//   sound_sndmain.cpp_FUN_005ab250
-//   sound_sndmain.cpp_FUN_005ab270
+//   sound_sndmain.cpp_getAudioBitsPerSample_FUN_005ab250
+//   sound_sndmain.cpp_getAudioChannelCount_FUN_005ab270
 //   sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170
 
 #include "nocturne.h"
@@ -21,8 +21,8 @@ void sound_sndmain_cpp_CallToSetSoundOutputMode3_FUN_005ab2c0(void)
   int unaff_retaddr;
   int in_stack_00000004;
   
-  sound_sndmain_cpp_FUN_005ab270();
-  bits_per_sample = sound_sndmain_cpp_FUN_005ab250();
+  sound_sndmain_cpp_getAudioChannelCount_FUN_005ab270();
+  bits_per_sample = sound_sndmain_cpp_getAudioBitsPerSample_FUN_005ab250();
   sound_sndmain_cpp_setSoundOutputMode_FUN_005ab170(bits_per_sample,unaff_retaddr,in_stack_00000004)
   ;
   return;
@@ -34,10 +34,10 @@ void sound_sndmain_cpp_CallToSetSoundOutputMode3_FUN_005ab2c0(void)
 //   Label: sound_sndmain.cpp_CallToSetSoundOutputMode3_FUN_005ab2c0
 //   XREF to: Stack[0x4] (READ)
 // 005ab2c4: PUSH EDX
-// 005ab2c5: CALL sound_sndmain.cpp_FUN_005ab270
+// 005ab2c5: CALL sound_sndmain.cpp_getAudioChannelCount_FUN_005ab270
 //   XREF to: 005ab270 (UNCONDITIONAL_CALL)
 // 005ab2ca: PUSH EAX
-// 005ab2cb: CALL sound_sndmain.cpp_FUN_005ab250
+// 005ab2cb: CALL sound_sndmain.cpp_getAudioBitsPerSample_FUN_005ab250
 //   XREF to: 005ab250 (UNCONDITIONAL_CALL)
 // 005ab2d0: PUSH EAX
 // 005ab2d1: CALL sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170

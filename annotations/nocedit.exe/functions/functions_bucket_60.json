@@ -53175,10 +53175,10 @@
         "start":"005a3fe0"
       }
     ],
-    "cmt":"Signature: undefined1 sound_sndmain.cpp_WavReadingFunc1(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_WavReadingFunc1_FUN_005a3fe0",
-    "ret":"undefined1",
+    "name":"sound_sndmain.cpp_parseWavFile_FUN_005a3fe0",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -53374,8 +53374,65 @@
           "type":"undefined1"
         }
       ],
+      "params":[
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"FILE*"
+        },
+        {
+          "name":"file_offset_ptr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"long*"
+        },
+        {
+          "name":"sfx_sample",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CSfxSample*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -53390,28 +53447,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_CSfxSample_FUN_005a6ce0",
-    "ret":"void",
-    "vars":{
-      "params":[
-        {
-          "name":"this_ptr",
-          "storage":{
-            "offset":4,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x4]",
-                "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"CSfxSample*"
-        }
-      ]
-    }
+    "name":"sound_sndmain.cpp_FUN_005a6ce0",
+    "ret":"void"
   },
   {
     "addr":"005a75e0",
@@ -54315,13 +54352,20 @@
         "start":"005ab260"
       }
     ],
-    "cmt":"Signature: undefined1 sound_sndmain.cpp_FUN_005ab260()",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005ab260",
-    "ret":"undefined1",
+    "name":"sound_sndmain.cpp_getAudioSampleRate_FUN_005ab260",
+    "ret":"int",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -54529,14 +54573,10 @@
         "start":"005ade60"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"sound_snddx.cpp_staticInit_FUN_005ade60",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "ret":"void"
   },
   {
     "addr":"005ae660",
@@ -54615,10 +54655,10 @@
         "start":"005afd60"
       }
     ],
-    "cmt":"Signature: undefined1 sound_snddx.cpp_DirectSoundDevice_getSfxPlaybackPos(undefined1 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_snddx.cpp_DirectSoundDevice_getSfxPlaybackPos_FUN_005afd60",
-    "ret":"undefined1",
+    "name":"sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60",
+    "ret":"float",
     "vars":{
       "locals":[
         {
@@ -54654,8 +54694,33 @@
           "type":"undefined1"
         }
       ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDirectSoundDevice*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

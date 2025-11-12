@@ -18,7 +18,7 @@
 //   crt_stdlib.c_system_FUN_00602130 (00602130) at 0060213e [UNCONDITIONAL_CALL]
 //   crt_time.c_tzset_FUN_006072f8 (006072f8) at 006072fd [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_establishUserIdentity_FUN_004b1c00 (004b1c00) at 004b1c37 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0 (005adba0) at 005adc7e [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0 (005adba0) at 005adc7e [UNCONDITIONAL_CALL]
 //   wincore_winrun.cpp_getComputerAndUserName_FUN_005f4140 (005f4140) at 005f41d8 [UNCONDITIONAL_CALL]
 // Globals:
 //   char** g_EnvironmentBlock

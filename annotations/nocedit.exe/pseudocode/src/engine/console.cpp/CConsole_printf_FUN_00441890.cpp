@@ -79,10 +79,10 @@
 //   core_werewolf.cpp_FUN_005f1e40 (005f1e40) at 005f1f10 [UNCONDITIONAL_CALL]
 //   core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530 (005fb530) at 005fb91e [UNCONDITIONAL_CALL]
 //   core_zombie.cpp_CZombie_process_FUN_005f9470 (005f9470) at 005f995f [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_DirectSoundDevice_allocateSfx_FUN_005af410 (005af410) at 005af5e9 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_005af410 (005af410) at 005af5e9 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100 (005a7100) at 005a7145 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 (005a7e60) at 005a7e97 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0 (005adba0) at 005adbeb [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0 (005adba0) at 005adbeb [UNCONDITIONAL_CALL]
 // Globals:
 //   undefined4 s_..\engine\console.cpp_00618de9
 //   TerminatedCString s_at_00618dff

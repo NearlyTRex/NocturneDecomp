@@ -17,7 +17,7 @@ CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_ctor_FUN_005a60f0(CSfxSample *
   pCVar1->sample_data = (void *)0x0;
   pCVar1->ref_count = 0;
   pCVar1->buffer_id = (void *)0x0;
-  pCVar1->field4_0x150 = 0;
+  pCVar1->field8_0x150 = 0;
   pCVar1->streaming_slot_index = -1;
   pCVar1->file_handle = (FILE *)0x0;
   pCVar1->mp3_data = (CMP3Decoder *)0x0;

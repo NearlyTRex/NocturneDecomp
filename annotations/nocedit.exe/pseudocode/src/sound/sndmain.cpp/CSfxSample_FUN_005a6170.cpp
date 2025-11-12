@@ -10,23 +10,23 @@
 // Globals:
 //   TerminatedCString s_allocateHwSample_failed_0064fabf
 //   TerminatedCString s_sound_sndmain_cpp_0064fcbf
-//   undefined4 DAT_03f62828
+//   int g_LastSampleAccessIndex
 //   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f62980
 //   undefined4 DAT_03f629ac
 //   undefined4 DAT_03f62afc
 //   undefined4 DAT_03f62b00
 //   undefined4 DAT_03f62b04
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 // Function calls:
 //   shape_memdbg.cpp_debugRealloc_FUN_0050f540
 //   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
 //   sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_005a6400
-//   sound_sndmain.cpp_CSfxSample_FUN_005a8550
+//   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
 //   sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_005a63b0
-//   sound_sndmain.cpp_FUN_005a4450
+//   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450
 //   sound_sndmain.cpp_FUN_005ab5a0
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
 
@@ -36,47 +36,50 @@ int __cdecl sound_sndmain_cpp_CSfxSample_FUN_005a6170(CSfxSample *this_ptr)
   int iVar1;
   void *pvVar2;
   int iVar3;
+  int iVar4;
   char *filename;
   
   sound_sndmain_cpp_CSfxSample_releaseBufferId_FUN_005a63b0(this_ptr);
   sound_sndmain_cpp_CSfxSample_freeSampleData_FUN_005a6400(this_ptr);
   iVar1 = sound_sndmain_cpp_FUN_005ab5a0();
   if (iVar1 == 0) {
-    sound_sndmain_cpp_CSfxSample_FUN_005a8550(this_ptr);
-    sound_sndmain_cpp_FUN_005a4450();
+    iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
+    sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_005a4450
+              (iVar1 * *(int *)this_ptr->field12_0x160);
     iVar3 = 0x6fb;
     filename = "..\\sound\\sndmain.cpp";
-    iVar1 = sound_sndmain_cpp_CSfxSample_FUN_005a8550(this_ptr);
+    iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
     pvVar2 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                       (this_ptr->sample_data,iVar1 * *(int *)this_ptr->field8_0x160,filename,iVar3)
-    ;
+                       (this_ptr->sample_data,iVar1 * *(int *)this_ptr->field12_0x160,filename,iVar3
+                       );
     if (pvVar2 != (void *)0x0) {
       this_ptr->sample_data = pvVar2;
       return 1;
     }
   }
   else {
-    if (g_CSoundInstance != (CSound *)0x0) {
+    iVar1 = (this_ptr->sample_info).num_channels;
+    if (g_CSoundPtr != (CSound *)0x0) {
       do {
-        pvVar2 = (void *)(*(code *)g_CSoundInstance->vtable->field_44)();
+        pvVar2 = (void *)(*(code *)g_CSoundPtr->vtable->field_44)();
         if (pvVar2 != (void *)0x0) goto LAB_005a6225;
-        iVar3 = 0;
-        iVar1 = DAT_03f62828;
+        iVar4 = 0;
+        iVar3 = g_LastSampleAccessIndex;
         do {
-          iVar1 = iVar1 + 1;
-          if (0x3f < iVar1) {
-            iVar1 = 0;
+          iVar3 = iVar3 + 1;
+          if (0x3f < iVar3) {
+            iVar3 = 0;
           }
-          if (((g_SfxSamples[iVar1].ref_count == 0) &&
-              (g_SfxSamples[iVar1].buffer_id != (void *)0x0)) &&
-             (g_SfxSamples[iVar1].field4_0x150 == 0)) {
-            sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(g_SfxSamples + iVar1);
+          if (((g_SfxSamples[iVar3].ref_count == 0) &&
+              (g_SfxSamples[iVar3].buffer_id != (void *)0x0)) &&
+             (g_SfxSamples[iVar3].field8_0x150 == 0)) {
+            sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(g_SfxSamples + iVar3);
             break;
           }
-          iVar3 = iVar3 + 1;
-        } while (iVar3 < 0x40);
-      } while (iVar3 < 0x40);
-      sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+          iVar4 = iVar4 + 1;
+        } while (iVar4 < 0x40);
+      } while (iVar4 < 0x40);
+      sound_sndmain_cpp_logSoundError_FUN_005adba0("allocateHwSample - failed\n",iVar1);
     }
     pvVar2 = (void *)0x0;
 LAB_005a6225:
@@ -175,7 +178,7 @@ LAB_005a6225:
 //   XREF to: 005a61d3 (CONDITIONAL_JUMP)
 // 005a6216: PUSH 0x64fabf
 //   XREF to: 0064fabf (DATA)
-// 005a621b: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005a621b: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005a6220: ADD ESP,0x4
 // 005a6223: XOR EAX,EAX
@@ -216,19 +219,19 @@ LAB_005a6225:
 //   Label: LAB_005a6262
 //   XREF to: Stack[0x4] (READ)
 // 005a6266: PUSH EBX
-// 005a6267: CALL sound_sndmain.cpp_CSfxSample_FUN_005a8550
+// 005a6267: CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
 //   XREF to: 005a8550 (UNCONDITIONAL_CALL)
 // 005a626c: IMUL EAX,dword ptr [EBX + 0x160]
 // 005a6273: ADD ESP,0x4
 // 005a6276: PUSH EAX
-// 005a6277: CALL sound_sndmain.cpp_FUN_005a4450
+// 005a6277: CALL sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450
 //   XREF to: 005a4450 (UNCONDITIONAL_CALL)
 // 005a627c: ADD ESP,0x4
 // 005a627f: PUSH 0x6fb
 // 005a6284: PUSH 0x64fcbf
 //   XREF to: 0064fcbf (DATA)
 // 005a6289: PUSH EBX
-// 005a628a: CALL sound_sndmain.cpp_CSfxSample_FUN_005a8550
+// 005a628a: CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
 //   XREF to: 005a8550 (UNCONDITIONAL_CALL)
 // 005a628f: IMUL EAX,dword ptr [EBX + 0x160]
 // 005a6296: ADD ESP,0x4

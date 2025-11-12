@@ -5,17 +5,17 @@
 // Signature: undefined sound_sndmain.cpp_FUN_005a5620()
 // Globals:
 //   TerminatedCString s_allocateHwSample_failed_0064fabf
-//   undefined4 DAT_03f62828
+//   int g_LastSampleAccessIndex
 //   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f62980
 //   undefined4 DAT_03f629ac
 //   undefined4 DAT_03f62afc
 //   undefined4 DAT_03f62b00
 //   undefined4 DAT_03f62b04
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 // Function calls:
 //   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
 
@@ -25,28 +25,28 @@ int sound_sndmain_cpp_FUN_005a5620(void)
   int iVar1;
   int iVar2;
   
-  if (g_CSoundInstance != (CSound *)0x0) {
+  if (g_CSoundPtr != (CSound *)0x0) {
     do {
-      iVar1 = (*(code *)g_CSoundInstance->vtable->field_44)();
+      iVar1 = (*(code *)g_CSoundPtr->vtable->field_44)();
       if (iVar1 != 0) {
         return iVar1;
       }
       iVar2 = 0;
-      iVar1 = DAT_03f62828;
+      iVar1 = g_LastSampleAccessIndex;
       do {
         iVar1 = iVar1 + 1;
         if (0x3f < iVar1) {
           iVar1 = 0;
         }
         if (((g_SfxSamples[iVar1].ref_count == 0) && (g_SfxSamples[iVar1].buffer_id != (void *)0x0))
-           && (g_SfxSamples[iVar1].field4_0x150 == 0)) {
+           && (g_SfxSamples[iVar1].field8_0x150 == 0)) {
           sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(g_SfxSamples + iVar1);
           break;
         }
         iVar2 = iVar2 + 1;
       } while (iVar2 < 0x40);
     } while (iVar2 < 0x40);
-    sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+    sound_sndmain_cpp_logSoundError_FUN_005adba0("allocateHwSample - failed\n");
   }
   return 0;
 }
@@ -111,7 +111,7 @@ int sound_sndmain_cpp_FUN_005a5620(void)
 //   XREF to: 005a5639 (CONDITIONAL_JUMP)
 // 005a567c: PUSH 0x64fabf
 //   XREF to: 0064fabf (DATA)
-// 005a5681: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005a5681: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005a5686: ADD ESP,0x4
 // 005a5689: XOR EAX,EAX

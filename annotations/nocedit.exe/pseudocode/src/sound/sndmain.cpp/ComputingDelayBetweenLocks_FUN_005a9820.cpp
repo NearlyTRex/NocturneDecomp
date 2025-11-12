@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_manpuz.cpp_FUN_0050a4f0 (0050a4f0) at 0050a57b [UNCONDITIONAL_CALL]
 // Globals:
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 // Function calls:
 //   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
 //   sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
@@ -50,8 +50,8 @@ undefined4 sound_sndmain_cpp_ComputingDelayBetweenLocks_FUN_005a9820(void)
   uVar1 = 1;
   *(undefined4 *)((this_ptr->options).field5_0x14 + 4) = in_stack_0000001c;
   sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr);
-  if ((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundInstance != (CSound *)0x0)) {
-    uVar1 = (*(code *)g_CSoundInstance->vtable[1].func2)();
+  if ((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundPtr != (CSound *)0x0)) {
+    uVar1 = (*(code *)g_CSoundPtr->vtable[1].func2)();
   }
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return uVar1;

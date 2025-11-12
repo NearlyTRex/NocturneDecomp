@@ -14,13 +14,11 @@
 //   float FLOAT_0066315c = 20
 //   float FLOAT_00663160 = 10000
 //   double DOUBLE_00681b38 = 1
-//   undefined4 DAT_03f5daa0
+//   float FLOAT_03f5daa0
 // Function calls:
 //   crt_memory.c_memset_FUN_005fde40
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void * __cdecl sound_sndmain_cpp_FUN_005a8480(void)
 
@@ -32,7 +30,7 @@ void * __cdecl sound_sndmain_cpp_FUN_005a8480(void)
   
   crt_memory_c_memset_FUN_005fde40(in_stack_00000004,0,0x150);
   fVar1 = (float)DOUBLE_00681b38;
-  fVar2 = _DAT_03f5daa0 * fVar1;
+  fVar2 = FLOAT_03f5daa0 * fVar1;
   fVar3 = FLOAT_00663160 * fVar1;
   *(float *)((int)in_stack_00000004 + 0x114) = FLOAT_0066315c * fVar1;
   *(float *)((int)in_stack_00000004 + 0x118) = fVar2;

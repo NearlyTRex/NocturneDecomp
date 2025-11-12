@@ -8,7 +8,7 @@
 //   sound_sndmain.cpp_FUN_005abba0 (005abba0) at 005abbb8 [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_00650ecf = 3
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 //   undefined4 DAT_03f693f8
 //   HANDLE g_SoundMutex
 //   int g_SoundLockCount
@@ -26,12 +26,12 @@ void sound_sndmain_cpp_DoSomethingRoundWait_OnSoundMutex_FUN_005abe20(void)
 {
   int iVar1;
   
-  if (g_CSoundInstance != (CSound *)0x0) {
+  if (g_CSoundPtr != (CSound *)0x0) {
     iVar1 = wincore_winrun_cpp_waitForMutexTimeout_FUN_005f4010
                       (g_SoundMutex,_DAT_03f693f8 * DOUBLE_00650ecf);
     if (iVar1 != 0) {
       g_SoundLockCount = g_SoundLockCount + 1;
-      (*(code *)g_CSoundInstance->vtable->field_16)();
+      (*(code *)g_CSoundPtr->vtable->field_16)();
       sound_sndmain_cpp_lockSound_PollStream_FUN_005ace90();
       g_SoundLockCount = g_SoundLockCount + -1;
       wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_SoundMutex);

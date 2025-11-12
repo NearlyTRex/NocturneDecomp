@@ -20,7 +20,7 @@
 //   undefined4 DAT_03f6ad9c
 // Function calls:
 //   GlobalFree
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   waveOutClose
 
 #include "nocturne.h"
@@ -55,7 +55,7 @@ bool sound_sndwav_cpp_waveOutClose_FUN_005b0840(void)
   }
   MVar2 = (*PTR_waveOutClose_00611440)((HWAVEOUT)DAT_03f6ad34);
   if (MVar2 != 0) {
-    sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+    sound_sndmain_cpp_logSoundError_FUN_005adba0("waveOutClose failed.");
   }
   DAT_03f6ad34 = 0;
   return MVar2 == 0 && iVar1 != 0;
@@ -143,7 +143,7 @@ bool sound_sndwav_cpp_waveOutClose_FUN_005b0840(void)
 //   XREF to: 005b08d2 (CONDITIONAL_JUMP)
 // 005b08c3: PUSH 0x652370
 //   XREF to: 00652370 (DATA)
-// 005b08c8: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005b08c8: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005b08cd: XOR ESI,ESI
 // 005b08cf: ADD ESP,0x4

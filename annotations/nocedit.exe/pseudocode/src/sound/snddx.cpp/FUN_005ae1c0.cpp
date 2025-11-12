@@ -11,7 +11,7 @@
 // Function calls:
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   sound_snddx.cpp_FUN_005ade70
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
 
@@ -20,7 +20,7 @@ undefined4 sound_snddx_cpp_FUN_005ae1c0(void)
 {
   int *piVar1;
   int iVar2;
-  undefined4 uVar3;
+  char *pcVar3;
   BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   char acStack_198 [400];
@@ -28,18 +28,18 @@ undefined4 sound_snddx_cpp_FUN_005ae1c0(void)
   if ((int *)(&DAT_03f6aa44)[in_stack_00000004] != (int *)0x0) {
     iVar2 = (**(code **)(*(int *)(&DAT_03f6aa44)[in_stack_00000004] + 0x48))();
     if (iVar2 != 0) {
-      uVar3 = sound_snddx_cpp_FUN_005ade70();
+      pcVar3 = sound_snddx_cpp_FUN_005ade70();
       crt_stdio_c_sprintf_FUN_005fdbd0
                 (acStack_198,"DirectSux: Unable to %s.  (%s)","Stop hardware sfx secondary buffer",
-                 uVar3);
-      sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+                 pcVar3);
+      sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_198);
       return 0;
     }
   }
-  piVar1 = (int *)(&DAT_03f6aac0)[in_stack_00000004];
+  piVar1 = (int *)g_DirectSoundBufferInUse[in_stack_00000004 + 0x1e];
   if (piVar1 != (int *)0x0) {
     (**(code **)(*piVar1 + 8))();
-    (&DAT_03f6aac0)[in_stack_00000004] = 0;
+    g_DirectSoundBufferInUse[in_stack_00000004 + 0x1e] = 0;
   }
   piVar1 = (int *)(&DAT_03f6aa44)[in_stack_00000004];
   if (piVar1 != (int *)0x0) {
@@ -116,7 +116,7 @@ undefined4 sound_snddx_cpp_FUN_005ae1c0(void)
 // 005ae248: ADD ESP,0x10
 // 005ae24b: MOV EAX,ESP
 // 005ae24d: PUSH EAX
-// 005ae24e: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005ae24e: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005ae253: ADD ESP,0x4
 // 005ae256: XOR EAX,EAX

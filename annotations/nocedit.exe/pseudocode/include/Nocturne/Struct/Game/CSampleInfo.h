@@ -3,11 +3,13 @@
 // Structure: CSampleInfo
 // Ghidra size: 0x11c (284 bytes)
 typedef struct CSampleInfo {
-    char field_0[256]; // 0x0
-    int bit_depth; // 0x100
-    int sample_rate; // 0x104
-    int total_samples; // 0x108
-    int bytes_per_second; // 0x10c
-    char field_272[12]; // 0x110
+    char name[256]; // 0x0
+    int field_256; // 0x100
+    int bit_depth; // 0x104
+    int num_channels; // 0x108
+    int sample_rate; // 0x10c
+    int total_bytes; // 0x110
+    int field_276; // 0x114
+    int field_280; // 0x118
 } CSampleInfo;
 

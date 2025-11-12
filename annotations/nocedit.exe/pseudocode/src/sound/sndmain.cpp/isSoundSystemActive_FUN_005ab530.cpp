@@ -10,14 +10,14 @@
 //   sound_sndmain.cpp_isSoundBusy_FUN_005ab540 (005ab540) at 005ab540 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_selectSoundDevice_FUN_005ab4c0 (005ab4c0) at 005ab4c5 [UNCONDITIONAL_CALL]
 // Globals:
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 
 #include "nocturne.h"
 
 uint __cdecl sound_sndmain_cpp_isSoundSystemActive_FUN_005ab530(void)
 
 {
-  return (uint)(g_CSoundInstance != (CSound *)0x0);
+  return (uint)(g_CSoundPtr != (CSound *)0x0);
 }
 
 

@@ -22,6 +22,7 @@ void sound_sndmain_cpp_FUN_005aa360(void)
 {
   int iVar1;
   int iVar2;
+  CSfxSample *this_ptr;
   char *in_stack_00000004;
   int in_stack_0000000c;
   
@@ -31,11 +32,11 @@ void sound_sndmain_cpp_FUN_005aa360(void)
   }
   iVar2 = 0;
   do {
-    if (*(int *)(g_SfxSamples[0].field8_0x160 + iVar2 + -0xc) == 0) {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(g_SfxSamples[0].name + iVar2,in_stack_00000004);
+    if (*(int *)(g_SfxSamples[0].field12_0x160 + iVar2 + -0xc) == 0) {
+      this_ptr = (CSfxSample *)(g_SfxSamples[0].sample_info.name + iVar2);
+      iVar1 = crt_string_c_stricmp_FUN_005fe7f0((char *)this_ptr,in_stack_00000004);
       if (iVar1 == 0) {
-        sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0
-                  ((CSfxSample *)(g_SfxSamples[0].name + iVar2));
+        sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(this_ptr);
       }
     }
     iVar2 = iVar2 + 0x180;

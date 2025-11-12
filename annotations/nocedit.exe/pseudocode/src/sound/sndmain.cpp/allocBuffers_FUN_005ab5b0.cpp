@@ -1,8 +1,8 @@
 // Name: sound_sndmain.cpp_allocBuffers_FUN_005ab5b0
 // Address: 005ab5b0
 // Address Range: [[005ab5b0, 005ab65c]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_allocBuffers_FUN_005ab5b0()
+// Convention: __cdecl
+// Signature: int sound_sndmain.cpp_allocBuffers_FUN_005ab5b0(void)
 // Cross-references:
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512d12 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00 (005b2d00) at 005b2d37 [UNCONDITIONAL_CALL]
@@ -10,7 +10,7 @@
 //   int g_CurrentSoundDevice = -0x1
 //   undefined4 DAT_03f68990
 //   undefined4 DAT_03f68994
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 //   undefined4 DAT_03f69270
 // Function calls:
 //   sound_snddx.cpp_CreatePrimaryBufferMaybe_FUN_005b0440
@@ -20,7 +20,7 @@
 
 #include "nocturne.h"
 
-undefined4 sound_sndmain_cpp_allocBuffers_FUN_005ab5b0(void)
+int __cdecl sound_sndmain_cpp_allocBuffers_FUN_005ab5b0(void)
 
 {
   int iVar1;
@@ -32,15 +32,15 @@ undefined4 sound_sndmain_cpp_allocBuffers_FUN_005ab5b0(void)
   sound_sndmain_cpp_selectSoundDevice_FUN_005ab4c0(g_CurrentSoundDevice);
   if (-1 < g_CurrentSoundDevice) {
     if (g_SoundDevices[g_CurrentSoundDevice].api_type == 0) {
-      g_CSoundInstance = (CSound *)sound_sndwav_cpp_WaveOutGetDevCapsA2_FUN_005b1510();
+      g_CSoundPtr = (CSound *)sound_sndwav_cpp_WaveOutGetDevCapsA2_FUN_005b1510();
     }
     if (g_SoundDevices[g_CurrentSoundDevice].api_type == 1) {
-      g_CSoundInstance = (CSound *)sound_snddx_cpp_CreatePrimaryBufferMaybe_FUN_005b0440();
+      g_CSoundPtr = (CSound *)sound_snddx_cpp_CreatePrimaryBufferMaybe_FUN_005b0440();
     }
-    if (g_CSoundInstance == (CSound *)0x0) {
+    if (g_CSoundPtr == (CSound *)0x0) {
       return 0;
     }
-    DAT_03f69270 = (*(code *)g_CSoundInstance->vtable->field_20)();
+    DAT_03f69270 = (*(code *)g_CSoundPtr->vtable->field_20)();
     return 1;
   }
   return 0;

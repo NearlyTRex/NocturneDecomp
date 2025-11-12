@@ -14,7 +14,7 @@
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   crt_math.c_round_FUN_005fe6b0
 //   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-//   sound_sndmain.cpp_CSampleInfo_FUN_005a86f0
+//   sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
 //   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
 
 #include "nocturne.h"
@@ -22,37 +22,42 @@
 void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(CSfxSlot *this_ptr)
 
 {
-  CSfxSample *pCVar1;
-  int iVar2;
-  undefined4 extraout_EDX;
-  undefined4 extraout_EDX_00;
-  double dVar3;
+  undefined4 uVar1;
+  CSfxSample *pCVar2;
+  int iVar3;
+  double dVar4;
+  uint in_stack_ffffffe8;
   
   if (this_ptr->sample == (CSfxSample *)0x0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0xbfd;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::seek - no sample?!");
   }
-  iVar2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580((CSampleInfo *)this_ptr->sample)
-  ;
+  dVar4 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
+                    (*(CSampleInfo **)((this_ptr->options).field5_0x14 + 0x4c),
+                     *(double *)((this_ptr->options).field5_0x14 + 0x50),0,in_stack_ffffffe8);
   (this_ptr->options).field5_0x14[0x54] = '\0';
   (this_ptr->options).field5_0x14[0x55] = '\0';
   (this_ptr->options).field5_0x14[0x56] = '\0';
   (this_ptr->options).field5_0x14[0x57] = '\0';
-  *(ulonglong *)((this_ptr->options).field5_0x14 + 0x4c) = CONCAT44(extraout_EDX,iVar2);
-  iVar2 = sound_sndmain_cpp_CSampleInfo_FUN_005a86f0((CSampleInfo *)this_ptr->sample);
-  pCVar1 = this_ptr->sample;
-  *(ulonglong *)((this_ptr->options).field5_0x14 + 0x4c) = CONCAT44(extraout_EDX_00,iVar2);
-  iVar2 = pCVar1->streaming_slot_index;
-  if (iVar2 < 0) {
+  uVar1 = *(undefined4 *)((this_ptr->options).field5_0x14 + 0x54);
+  *(double *)((this_ptr->options).field5_0x14 + 0x4c) = dVar4;
+  dVar4 = sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
+                    (*(CSampleInfo **)((this_ptr->options).field5_0x14 + 0x4c),
+                     (double)CONCAT44(uVar1,*(undefined4 *)((this_ptr->options).field5_0x14 + 0x50))
+                     ,SUB84(dVar4,0),(uint)((ulonglong)dVar4 >> 0x20));
+  pCVar2 = this_ptr->sample;
+  *(double *)((this_ptr->options).field5_0x14 + 0x4c) = dVar4;
+  iVar3 = pCVar2->streaming_slot_index;
+  if (iVar3 < 0) {
     *(undefined4 *)this_ptr->field6_0x11c = *(undefined4 *)((this_ptr->options).field5_0x14 + 0x4c);
     *(undefined4 *)(this_ptr->field6_0x11c + 4) =
          *(undefined4 *)((this_ptr->options).field5_0x14 + 0x50);
     return;
   }
-  dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(iVar2,pCVar1));
-  sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(SUB84(dVar3,0));
-  *(double *)this_ptr->field6_0x11c = (double)*(int *)(this_ptr->sample->field8_0x160 + 8);
+  dVar4 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(iVar3,pCVar2));
+  sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(SUB84(dVar4,0));
+  *(double *)this_ptr->field6_0x11c = (double)*(int *)(this_ptr->sample->field12_0x160 + 8);
   return;
 }
 
@@ -110,7 +115,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(CSfxSlot *this_ptr)
 // 005a83ff: PUSH EDI
 // 005a8400: MOV EBP,dword ptr [EBX + 0x78]
 // 005a8403: PUSH EBP
-// 005a8404: CALL sound_sndmain.cpp_CSampleInfo_FUN_005a86f0
+// 005a8404: CALL sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
 //   XREF to: 005a86f0 (UNCONDITIONAL_CALL)
 // 005a8409: MOV dword ptr [ESP + 0x10],EAX
 //   XREF to: Stack[-0x1c] (WRITE)

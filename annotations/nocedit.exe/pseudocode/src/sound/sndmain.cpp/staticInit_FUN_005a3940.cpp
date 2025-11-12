@@ -10,7 +10,7 @@
 //   WatcomTypeInfo g_SfxOptionsTypeInfo
 //   WatcomTypeInfo g_SfxSampleTypeInfo
 //   WatcomStaticDestructorNode g_SfxSamplesDestructorNode
-//   undefined4 DAT_03f5daa0
+//   float FLOAT_03f5daa0
 //   CSfxSlot[64] g_SfxSlots
 //   CSfxOptions[8] g_SfxOptions
 //   CSfxSample[64] g_SfxSamples
@@ -20,12 +20,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_staticInit_FUN_005a3940(void)
 
 {
-  _DAT_03f5daa0 = FLOAT_0066315c / FLOAT_00663158;
+  FLOAT_03f5daa0 = FLOAT_0066315c / FLOAT_00663158;
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(g_SfxSlots,0x40,&g_SfxSlotTypeInfo);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(g_SfxOptions,8,&g_SfxOptionsTypeInfo);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(g_SfxSamples,0x40,&g_SfxSampleTypeInfo)

@@ -24,8 +24,8 @@
 //   crt_math.c_round_FUN_005fe6b0
 //   crt_stdio.c_fseek_FUN_005ffacc
 //   sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0
-//   sound_sndmain.cpp_CSampleInfo_FUN_005a86f0
-//   sound_sndmain.cpp_CSfxSample_FUN_005a8550
+//   sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
+//   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
 
 #include "nocturne.h"
 
@@ -33,53 +33,56 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(CSfxSample *this_ptr
 
 {
   int iVar1;
-  undefined4 extraout_EDX;
   int unaff_EDI;
   float10 fVar2;
+  double value;
   int in_stack_0000000c;
+  uint in_stack_ffffffe8;
+  uint in_stack_ffffffec;
   
   if (this_ptr->streaming_slot_index < 0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x797;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::seek - '%s' isn't streamed!");
+    core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::seek - '%s' isn't streamed!",this_ptr);
   }
-  iVar1 = sound_sndmain_cpp_CSampleInfo_FUN_005a86f0((CSampleInfo *)this_ptr);
-  fVar2 = (float10)(double)CONCAT44(extraout_EDX,iVar1);
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,iVar1));
-  *(int *)(this_ptr->field8_0x160 + 4) = (int)ROUND(fVar2);
-  if (*(int *)(this_ptr->field8_0x160 + 4) < 0) {
-    this_ptr->field8_0x160[4] = '\0';
-    this_ptr->field8_0x160[5] = '\0';
-    this_ptr->field8_0x160[6] = '\0';
-    this_ptr->field8_0x160[7] = '\0';
+  value = sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
+                    (SUB84((double)in_stack_0000000c,0),
+                     (double)((ulonglong)(double)in_stack_0000000c >> 0x20),in_stack_ffffffe8,
+                     in_stack_ffffffec);
+  fVar2 = (float10)value;
+  crt_math_c_round_FUN_005fe6b0(value);
+  *(int *)(this_ptr->field12_0x160 + 4) = (int)ROUND(fVar2);
+  if (*(int *)(this_ptr->field12_0x160 + 4) < 0) {
+    this_ptr->field12_0x160[4] = '\0';
+    this_ptr->field12_0x160[5] = '\0';
+    this_ptr->field12_0x160[6] = '\0';
+    this_ptr->field12_0x160[7] = '\0';
   }
-  if ((in_stack_0000000c < 0) || (*(int *)this_ptr->field8_0x160 <= in_stack_0000000c)) {
+  if ((in_stack_0000000c < 0) || (*(int *)this_ptr->field12_0x160 <= in_stack_0000000c)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x7a2;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::seek - invalid destPtr");
   }
-  *(int *)(this_ptr->field8_0x160 + 8) = in_stack_0000000c;
+  *(int *)(this_ptr->field12_0x160 + 8) = in_stack_0000000c;
   if (this_ptr->mp3_data == (CMP3Decoder *)0x0) {
     if (this_ptr->file_handle == (FILE *)0x0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x7b6;
-      core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::seek - no MP3 and no wavFile for sample '%s'",this_ptr);
+      core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::seek - no MP3 and no wavFile for sample '%s'");
       return;
     }
-    iVar1 = sound_sndmain_cpp_CSfxSample_FUN_005a8550(this_ptr);
+    iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
     crt_stdio_c_fseek_FUN_005ffacc
               (this_ptr->file_handle,
-               iVar1 * *(int *)(this_ptr->field8_0x160 + 4) + this_ptr->field10_0x170,unaff_EDI);
+               iVar1 * *(int *)(this_ptr->field12_0x160 + 4) + this_ptr->field14_0x170,unaff_EDI);
   }
   else {
     iVar1 = sound_mp3_cpp_CMP3Decoder_seek_FUN_00534ba0
-                      (this_ptr->mp3_data,*(int *)(this_ptr->field8_0x160 + 4));
+                      (this_ptr->mp3_data,*(int *)(this_ptr->field12_0x160 + 4));
     if (iVar1 == 0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x7ab;
-      core_main_c_displayErrorAndQuit_FUN_00506f10
-                ("Error seeking %s to %d",this_ptr,
-                 *(undefined4 *)(this_ptr->field8_0x160 + 4));
+      core_main_c_displayErrorAndQuit_FUN_00506f10("Error seeking %s to %d");
       return;
     }
   }
@@ -113,7 +116,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(CSfxSample *this_ptr
 // 005a65cd: FSTP double ptr [ESP]
 //   XREF to: Stack[-0x28] (DATA)
 // 005a65d0: PUSH EBX
-// 005a65d1: CALL sound_sndmain.cpp_CSampleInfo_FUN_005a86f0
+// 005a65d1: CALL sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
 //   XREF to: 005a86f0 (UNCONDITIONAL_CALL)
 // 005a65d6: MOV dword ptr [ESP + 0x10],EAX
 //   XREF to: Stack[-0x1c] (WRITE)
@@ -160,7 +163,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(CSfxSample *this_ptr
 //   XREF to: 005a66f9 (CONDITIONAL_JUMP)
 // 005a664a: PUSH ESI
 // 005a664b: PUSH EBX
-// 005a664c: CALL sound_sndmain.cpp_CSfxSample_FUN_005a8550
+// 005a664c: CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
 //   XREF to: 005a8550 (UNCONDITIONAL_CALL)
 // 005a6651: IMUL EAX,dword ptr [EBX + 0x164]
 // 005a6658: MOV ECX,dword ptr [EBX + 0x170]

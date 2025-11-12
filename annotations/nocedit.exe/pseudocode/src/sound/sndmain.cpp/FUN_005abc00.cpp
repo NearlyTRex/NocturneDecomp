@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005abc00()
 // Cross-references:
-//   sound_snddx.cpp_FUN_005ae340 (005ae340) at 005ae3ce [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_FUN_005ae340 (005ae340) at 005ae3ce [UNCONDITIONAL_CALL]
 //   sound_sndwav.cpp_FUN_005b08f0 (005b08f0) at 005b098b [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_00650dff = 0.00200000000000000

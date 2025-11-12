@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_CSfxSlot_kill_FUN_005acdb0(CSfxSlot * this_ptr)
 // Cross-references:
-//   sound_snddx.cpp_FUN_005aed50 (005aed50) at 005aed74 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_FUN_005aed50 (005aed50) at 005aed74 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_0065104e
 //   TerminatedCString s_SfxSlot_kill_must_be_loc_00651063

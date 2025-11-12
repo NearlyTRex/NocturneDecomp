@@ -12,12 +12,12 @@
 //   TerminatedCString s_Error_setting_hw_sfx_d_o_0065050a
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   CSound* g_CSoundInstance
+//   CSound* g_CSoundPtr
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
+//   sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_005a87d0
 //   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
-//   sound_sndmain.cpp_FUN_005a87d0
-//   sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+//   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
 
@@ -30,7 +30,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(CSfxSlot *this
   if (this_ptr->dsound_buffer == (void *)0x0) {
     return;
   }
-  if (g_CSoundInstance == (CSound *)0x0) {
+  if (g_CSoundPtr == (CSound *)0x0) {
     sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(this_ptr);
     return;
   }
@@ -39,11 +39,12 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(CSfxSlot *this
     g_CurrentLineNumber = 0xb71;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::pollHwHandle - no sample?");
   }
-  iVar1 = (*(code *)g_CSoundInstance->vtable[1].field_20)();
+  iVar1 = (*(code *)g_CSoundPtr->vtable[1].field_20)();
   if (iVar1 == 0) {
-    iVar1 = sound_sndmain_cpp_FUN_005a87d0();
+    iVar1 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(this_ptr->sample);
     if (iVar1 != 0) {
-      sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+      sound_sndmain_cpp_logSoundError_FUN_005adba0
+                ("Killing looped sfx %s, which died??\n",this_ptr->sample);
     }
     sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(this_ptr);
     return;
@@ -64,11 +65,12 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(CSfxSlot *this
     return;
   }
 LAB_005a809a:
-  iVar1 = (*(code *)g_CSoundInstance->vtable[1].func2)();
+  iVar1 = (*(code *)g_CSoundPtr->vtable[1].func2)();
   if (iVar1 != 0) {
     return;
   }
-  sound_sndmain_cpp_HandleSoundError_FUN_005adba0();
+  sound_sndmain_cpp_logSoundError_FUN_005adba0
+            ("Error setting hw sfx %d options (sample %s), killing.\n",this_ptr->dsound_buffer,this_ptr->sample);
   sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(this_ptr);
   return;
 }
@@ -140,7 +142,7 @@ LAB_005a809a:
 // 005a8051: MOV EAX,dword ptr [EBX + 0x78]
 //   Label: LAB_005a8051
 // 005a8054: PUSH EAX
-// 005a8055: CALL sound_sndmain.cpp_FUN_005a87d0
+// 005a8055: CALL sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_005a87d0
 //   XREF to: 005a87d0 (UNCONDITIONAL_CALL)
 // 005a805a: ADD ESP,0x4
 // 005a805d: TEST EAX,EAX
@@ -150,7 +152,7 @@ LAB_005a809a:
 // 005a8064: PUSH EDX
 // 005a8065: PUSH 0x6504e5
 //   XREF to: 006504e5 (DATA)
-// 005a806a: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005a806a: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005a806f: ADD ESP,0x8
 // 005a8072: PUSH EBX
@@ -197,7 +199,7 @@ LAB_005a809a:
 // 005a80b6: PUSH EBP
 // 005a80b7: PUSH 0x65050a
 //   XREF to: 0065050a (DATA)
-// 005a80bc: CALL sound_sndmain.cpp_HandleSoundError_FUN_005adba0
+// 005a80bc: CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   XREF to: 005adba0 (UNCONDITIONAL_CALL)
 // 005a80c1: ADD ESP,0xc
 // 005a80c4: PUSH EBX
