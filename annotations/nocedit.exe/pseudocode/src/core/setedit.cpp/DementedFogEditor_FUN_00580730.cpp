@@ -86,11 +86,11 @@
 //   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
 //   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 //   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
-//   sound_sndmain.cpp_cleanup_FUN_005ab130
 //   sound_sndmain.cpp_FUN_005a88e0
 //   sound_sndmain.cpp_FUN_005aa020
 //   sound_sndmain.cpp_FUN_005aa0a0
 //   sound_sndmain.cpp_FUN_005aaef0
+//   sound_sndmain.cpp_FUN_005ab130
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
@@ -535,7 +535,7 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
                 ((CPickList *)&stack0xfffffae0,0,(uint)in_stack_fffffae0,(uint)in_stack_fffffae4,
                  (uint)in_stack_fffffae8,(uint)in_stack_fffffaec,(uint)in_stack_fffffaf0);
       in_stack_fffffae0 = (CStrList_vtable *)0x581166;
-      sound_sndmain_cpp_cleanup_FUN_005ab130();
+      sound_sndmain_cpp_FUN_005ab130();
     }
     if (local_28 == 0x1b) {
       engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -1608,7 +1608,7 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
 // 00581159: CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
 //   XREF to: 004a3c80 (UNCONDITIONAL_CALL)
 // 0058115e: ADD ESP,0x8
-// 00581161: CALL sound_sndmain.cpp_cleanup_FUN_005ab130
+// 00581161: CALL sound_sndmain.cpp_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 00581166: JMP 0x00580c22
 //   XREF to: 00580c22 (UNCONDITIONAL_JUMP)

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void wincore_winrun.cpp_setThreadPriority_FUN_005f40a0(HANDLE hThread, int priority_level)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005abc00 (005abc00) at 005abc6c [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_startSoundThread_FUN_005abc00 (005abc00) at 005abc6c [UNCONDITIONAL_CALL]
 // Globals:
 //   SetThreadPriority* SetThreadPriority = 002121f6
 // Function calls:

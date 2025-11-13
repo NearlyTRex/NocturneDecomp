@@ -59,7 +59,7 @@
 //   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
 //   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
 //   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
-//   sound_sndmain.cpp_DoSomethingRoundWait_OnSoundMutex_FUN_005abe20
+//   sound_sndmain.cpp_processAudio_FUN_005abe20
 //   wincore_windll.cpp_clearScreen_FUN_005b3e70
 //   wincore_windll.cpp_clearZBuffer_FUN_005b3ed4
 
@@ -93,7 +93,7 @@ void core_moon_cpp_CMoon_FUN_00529ed0(void)
   uint local_28;
   int local_1c;
   
-  sound_sndmain_cpp_DoSomethingRoundWait_OnSoundMutex_FUN_005abe20();
+  sound_sndmain_cpp_processAudio_FUN_005abe20();
   local_5c = 7.587513e-39;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
@@ -210,7 +210,7 @@ void core_moon_cpp_CMoon_FUN_00529ed0(void)
 // 00529ed4: MOV EBP,ESP
 // 00529ed6: SUB ESP,0x4c
 // 00529ed9: MOV ESI,dword ptr [EBP + 0x14]
-// 00529edc: CALL sound_sndmain.cpp_DoSomethingRoundWait_OnSoundMutex_FUN_005abe20
+// 00529edc: CALL sound_sndmain.cpp_processAudio_FUN_005abe20
 //   XREF to: 005abe20 (UNCONDITIONAL_CALL)
 // 00529ee1: CALL wincore_windll.cpp_clearScreen_FUN_005b3e70
 //   XREF to: 005b3e70 (UNCONDITIONAL_CALL)

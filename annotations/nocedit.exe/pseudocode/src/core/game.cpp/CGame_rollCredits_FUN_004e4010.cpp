@@ -45,9 +45,9 @@
 //   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 //   shape_memdbg.cpp_debugFree_FUN_0050f460
 //   shape_memdbg.cpp_debugMalloc_FUN_0050f250
-//   sound_sndmain.cpp_cleanup_FUN_005ab130
 //   sound_sndmain.cpp_FUN_005a8b70
 //   sound_sndmain.cpp_FUN_005aaef0
+//   sound_sndmain.cpp_FUN_005ab130
 //   sound_sndmain.cpp_isSfxChannelEnabled_FUN_005a9ea0
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
@@ -153,7 +153,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
     } while (cVar3 != '\0');
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\core\\game.cpp",0x123e);
-  sound_sndmain_cpp_cleanup_FUN_005ab130();
+  sound_sndmain_cpp_FUN_005ab130();
   sound_sndmain_cpp_FUN_005aaef0();
   iVar8 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(1);
   if (iVar8 != 0) {
@@ -210,7 +210,7 @@ LAB_004e43c1:
         if (g_MessageCount != 0) {
           this_ptr_00->win_font_enabled = 1;
         }
-        sound_sndmain_cpp_cleanup_FUN_005ab130();
+        sound_sndmain_cpp_FUN_005ab130();
         engine_2d_c_clearInputAndWait_FUN_00403260();
         if (0 < in_stack_00000060) {
           iVar8 = 0;
@@ -327,7 +327,7 @@ LAB_004e43c1:
 // 004e40ec: CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0
 //   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)
 // 004e40f1: ADD ESP,0xc
-// 004e40f4: CALL sound_sndmain.cpp_cleanup_FUN_005ab130
+// 004e40f4: CALL sound_sndmain.cpp_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 004e40f9: CALL sound_sndmain.cpp_FUN_005aaef0
 //   XREF to: 005aaef0 (UNCONDITIONAL_CALL)
@@ -613,7 +613,7 @@ LAB_004e43c1:
 // 004e43c8: JZ 0x004e43d4
 //   XREF to: 004e43d4 (CONDITIONAL_JUMP)
 // 004e43ca: MOV dword ptr [EDI + 0x3190],0x1
-// 004e43d4: CALL sound_sndmain.cpp_cleanup_FUN_005ab130
+// 004e43d4: CALL sound_sndmain.cpp_FUN_005ab130
 //   Label: LAB_004e43d4
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 004e43d9: MOV EBX,dword ptr [ESP + 0x1128]

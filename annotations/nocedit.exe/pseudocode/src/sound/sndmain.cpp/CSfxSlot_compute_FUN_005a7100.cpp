@@ -48,7 +48,7 @@
 //   undefined4 DAT_03f68848
 //   undefined4 DAT_03f68850
 //   undefined4 DAT_03f68858
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 //   int g_SoundLockCount
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -77,13 +77,12 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr)
   double dVar8;
   double dVar9;
   double dVar10;
-  bool bVar11;
+  int iVar11;
   int iVar12;
-  int iVar13;
-  CSfxSlot *pCVar14;
+  CSfxSlot *pCVar13;
   float in_stack_00000008;
-  undefined8 local_60;
-  undefined4 local_38;
+  undefined8 local_50;
+  undefined4 local_28;
   
   if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -93,9 +92,9 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr)
   if (this_ptr->sample == (CSfxSample *)0x0) {
     return 0;
   }
-  bVar11 = false;
   if (this_ptr->is_active == 1) {
-    engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"SFXDBG: sample = %s\n");
+    engine_console_cpp_CConsole_printf_FUN_00441890
+              (g_CConsolePtr,"SFXDBG: sample = %s\n",this_ptr->sample);
   }
   if ((this_ptr->field2_0x74 != 0) && (0.0 <= *(double *)((this_ptr->options).field5_0x14 + 0x4c)))
   {
@@ -115,7 +114,6 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr)
              (in_stack_00000008 / fVar2) * (*(float *)(this_ptr->field4_0x7c + 0x90) - fVar1) +
              fVar3;
       }
-      bVar11 = true;
     }
     sound_sndmain_cpp_FUN_005a6ce0();
     if (*(double *)((this_ptr->options).field5_0x14 + 0x38) == DOUBLE_00663138) {
@@ -141,9 +139,9 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr)
       dVar6 = *(double *)(this_ptr->options).field5_0x14 - _DAT_03f68840;
       dVar4 = SQRT(dVar6 * dVar6 + dVar5 * dVar5 + dVar7 * dVar7);
       if (this_ptr->is_active == 1) {
-        local_38 = SUB84(dVar4,0);
+        local_28 = SUB84(dVar4,0);
         engine_console_cpp_CConsole_printf_FUN_00441890
-                  (g_CConsolePtr,"  distToEar = %7.2fs\n",local_38);
+                  (g_CConsolePtr,"  distToEar = %7.2fs\n",local_28);
       }
       dVar8 = _DAT_03f68848 - *(double *)((this_ptr->options).field5_0x14 + 0x10);
       dVar9 = _DAT_03f68850 - *(double *)((this_ptr->options).field5_0x14 + 0x18);
@@ -154,23 +152,23 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr)
       else {
         dVar4 = (dVar6 * dVar10 + dVar5 * dVar9 + dVar7 * dVar8) / dVar4;
       }
-      local_60 = (dVar4 * _DAT_00681b30 + DOUBLE_00663140) / DOUBLE_00663140;
+      local_50 = (dVar4 * _DAT_00681b30 + DOUBLE_00663140) / DOUBLE_00663140;
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_00441890
-                  (g_CConsolePtr,"  doppler = %5.2f\n",(undefined4)local_60);
+                  (g_CConsolePtr,"  doppler = %5.2f\n",(undefined4)local_50);
       }
       dVar4 = 1.0 / (double)CONCAT44(UINT_0066314c,UINT_00663148);
-      if (local_60 < dVar4) {
-        local_60 = dVar4;
+      if (local_50 < dVar4) {
+        local_50 = dVar4;
       }
-      if ((double)CONCAT44(UINT_0066314c,UINT_00663148) < local_60) {
-        local_60 = (double)CONCAT44(UINT_0066314c,UINT_00663148);
+      if ((double)CONCAT44(UINT_0066314c,UINT_00663148) < local_50) {
+        local_50 = (double)CONCAT44(UINT_0066314c,UINT_00663148);
       }
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_00441890
-                  (g_CConsolePtr,"  doppler (clamped) = %5.2f\n",(undefined4)local_60);
+                  (g_CConsolePtr,"  doppler (clamped) = %5.2f\n",(undefined4)local_50);
       }
-      *(float *)this_ptr->field4_0x7c = *(float *)this_ptr->field4_0x7c * (float)local_60;
+      *(float *)this_ptr->field4_0x7c = *(float *)this_ptr->field4_0x7c * (float)local_50;
     }
     else if (this_ptr->is_active == 1) {
       engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"  non spatialized\n");
@@ -183,16 +181,16 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr)
                  (double)*(float *)((this_ptr->options).field5_0x14 + 0x30));
     }
     sound_sndmain_cpp_CSfxSlot_FUN_005a6f00(this_ptr);
-    if ((this_ptr->is_active == 1) && (iVar12 = 0, pCVar14 = this_ptr, 0 < g_AudioChannelCount)) {
+    if ((this_ptr->is_active == 1) && (iVar11 = 0, pCVar13 = this_ptr, 0 < g_AudioChannelCount)) {
       do {
-        iVar13 = iVar12 + 1;
+        iVar12 = iVar11 + 1;
         engine_console_cpp_CConsole_printf_FUN_00441890
-                  (g_CConsolePtr,"  channelVol[%d] = %5.2f\n",iVar12,
+                  (g_CConsolePtr,"  channelVol[%d] = %5.2f\n","  channelVol[%d] = %5.2f\n",iVar11,
                    (double)((float)(1 << ((char)(this_ptr->sample->sample_info).bit_depth - 1U &
-                                         0x1f)) * *(float *)(pCVar14->field4_0x7c + 0x24)));
-        iVar12 = iVar13;
-        pCVar14 = (CSfxSlot *)&(pCVar14->options).sample_data;
-      } while (iVar13 < g_AudioChannelCount);
+                                         0x1f)) * *(float *)(pCVar13->field4_0x7c + 0x24)));
+        iVar11 = iVar12;
+        pCVar13 = (CSfxSlot *)&(pCVar13->options).sample_data;
+      } while (iVar12 < g_AudioChannelCount);
     }
     if (*(float *)this_ptr->field4_0x7c < (float)(1.0 / DOUBLE_00663150)) {
       *(float *)this_ptr->field4_0x7c = (float)(1.0 / DOUBLE_00663150);
@@ -204,12 +202,14 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr)
       engine_console_cpp_CConsole_printf_FUN_00441890
                 (g_CConsolePtr,"  effFreq = %5.2f\n",(double)*(float *)this_ptr->field4_0x7c);
     }
-    if (((bVar11) && (g_CSoundPtr != (CSound *)0x0)) && (this_ptr->dsound_buffer != (void *)0x0)) {
-      (*(code *)g_CSoundPtr->vtable[1].func2)();
+    if (((in_stack_00000008 != 0.0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) &&
+       (this_ptr->dsound_buffer != (void *)0x0)) {
+      (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr);
     }
     return 1;
   }
-  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Killing %s in compute()\n");
+  engine_console_cpp_CConsole_printf_FUN_00441890
+            (g_CConsolePtr,"Killing %s in compute()\n",this_ptr->sample);
 LAB_005a73d3:
   sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(this_ptr);
   return 0;

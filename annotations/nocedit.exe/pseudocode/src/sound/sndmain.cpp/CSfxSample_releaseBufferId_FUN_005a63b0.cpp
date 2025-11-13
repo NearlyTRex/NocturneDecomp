@@ -7,7 +7,7 @@
 //   sound_sndmain.cpp_CSfxSample_FUN_005a6170 (005a6170) at 005a617c [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0 (005a62c0) at 005a62f1 [UNCONDITIONAL_CALL]
 // Globals:
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 
 #include "nocturne.h"
 
@@ -15,8 +15,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_releaseBufferId_FUN_005a63b0(CSfxSampl
 
 {
   if (this_ptr->buffer_id != (void *)0x0) {
-    if (g_CSoundPtr != (CSound *)0x0) {
-      (*g_CSoundPtr->vtable->releaseBufferId)(g_CSoundPtr,this_ptr->buffer_id);
+    if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
+      (*g_CSoundDevicePtr->vtable->freeSample)(g_CSoundDevicePtr,(int)this_ptr->buffer_id);
       this_ptr->buffer_id = (void *)0x0;
       return;
     }

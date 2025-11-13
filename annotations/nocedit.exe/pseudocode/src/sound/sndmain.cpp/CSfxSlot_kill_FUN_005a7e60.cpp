@@ -29,7 +29,7 @@
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 //   CSfxSlot[64] g_SfxSlots
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 //   int g_SoundLockCount
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -58,8 +58,8 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot *slot)
     engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Killing sfx %s\n",pCVar2);
   }
   if (slot->dsound_buffer != (void *)0x0) {
-    if (g_CSoundPtr != (CSound *)0x0) {
-      (*(code *)g_CSoundPtr->vtable[1].field_16)();
+    if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
+      (*g_CSoundDevicePtr->vtable->killSfx)(g_CSoundDevicePtr);
     }
     slot->dsound_buffer = (void *)0x0;
   }
@@ -85,7 +85,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot *slot)
       {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
         g_CurrentLineNumber = 0xb51;
-        core_main_c_displayErrorAndQuit_FUN_00506f10("streaming sample sfx index mismatch on %s",pCVar2);
+        core_main_c_displayErrorAndQuit_FUN_00506f10("streaming sample sfx index mismatch on %s");
       }
       sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(pCVar2);
     }

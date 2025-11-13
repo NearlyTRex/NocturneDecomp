@@ -13,8 +13,8 @@
 //   CStrList CStrList_03f6b128
 // Function calls:
 //   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
-//   sound_sndmain.cpp_allocBuffers_FUN_005ab5b0
 //   sound_sndmain.cpp_FUN_005ab5a0
+//   sound_sndmain.cpp_FUN_005ab5b0
 //   sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170
 
 #include "nocturne.h"
@@ -30,7 +30,7 @@ void __cdecl core_sound_cpp_CSound_findAllSoundFiles_FUN_005b2d00(CSound *this_p
     shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
               (&CStrList_03f6b128,"sound","*.mp3");
   }
-  sound_sndmain_cpp_allocBuffers_FUN_005ab5b0();
+  sound_sndmain_cpp_FUN_005ab5b0();
   iVar1 = sound_sndmain_cpp_FUN_005ab5a0();
   if (iVar1 == 0) {
     return;
@@ -65,7 +65,7 @@ void __cdecl core_sound_cpp_CSound_findAllSoundFiles_FUN_005b2d00(CSound *this_p
 // 005b2d2f: CALL shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
 //   XREF to: 004a37b0 (UNCONDITIONAL_CALL)
 // 005b2d34: ADD ESP,0xc
-// 005b2d37: CALL sound_sndmain.cpp_allocBuffers_FUN_005ab5b0
+// 005b2d37: CALL sound_sndmain.cpp_FUN_005ab5b0
 //   Label: LAB_005b2d37
 //   XREF to: 005ab5b0 (UNCONDITIONAL_CALL)
 // 005b2d3c: CALL sound_sndmain.cpp_FUN_005ab5a0

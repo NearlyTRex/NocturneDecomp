@@ -74048,7 +74048,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_snddx.cpp_CDirectSoundDevice_FUN_005ae340",
+    "name":"sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340",
     "ret":"int",
     "vars":{
       "locals":[
@@ -74110,7 +74110,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_snddx.cpp_CDirectSoundDevice_FUN_005aef40",
+    "name":"sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_005aef40",
     "ret":"int",
     "vars":{
       "locals":[
@@ -74476,9 +74476,10 @@
         "start":"005b0440"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_snddx.cpp_CreatePrimaryBufferMaybe_FUN_005b0440",
-    "ret":"undefined1",
+    "name":"sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440",
+    "ret":"CDirectSoundDevice*",
     "vars":{
       "locals":[
         {
@@ -74498,8 +74499,33 @@
           "type":"undefined1"
         }
       ],
+      "params":[
+        {
+          "name":"device_id",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"UINT"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -74512,12 +74538,38 @@
         "start":"005b06c0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndwav.cpp_waveOutWrite_FUN_005b06c0",
-    "ret":"undefined1",
+    "name":"sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"buffer_index",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -74530,12 +74582,38 @@
         "start":"005b0840"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndwav.cpp_waveOutClose_FUN_005b0840",
-    "ret":"undefined1",
+    "name":"sound_sndwav.cpp_CWavOutDevice_close_FUN_005b0840",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CWavOutDevice*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -74548,12 +74626,38 @@
         "start":"005b09c0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndwav.cpp_waveOutReset_FUN_005b09c0",
-    "ret":"undefined1",
+    "name":"sound_sndwav.cpp_CWavOutDevice_reset_FUN_005b09c0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CWavOutDevice*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -74566,12 +74670,38 @@
         "start":"005b0cc0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndwav.cpp_waveOutWrite_FUN_005b0cc0",
-    "ret":"undefined1",
+    "name":"sound_sndwav.cpp_writeWavInBuffer_FUN_005b0cc0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"buffer_index",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -74584,13 +74714,29 @@
         "start":"005b16c0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndwav.cpp_FUN_005b16c0",
-    "ret":"undefined1",
+    "name":"sound_sndwav.cpp_CWavOutDevice_freeSample_FUN_005b16c0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CWavOutDevice*"
+        }
+      ]
     }
   },
   {
@@ -74602,13 +74748,29 @@
         "start":"005b1740"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndwav.cpp_FUN_005b1740",
-    "ret":"undefined1",
+    "name":"sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CWavOutDevice*"
+        }
+      ]
     }
   },
   {

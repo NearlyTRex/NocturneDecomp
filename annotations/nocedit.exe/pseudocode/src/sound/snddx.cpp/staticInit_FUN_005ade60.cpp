@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_snddx.cpp_staticInit_FUN_005ade60(void)
 // Globals:
-//   CDirectSoundDevice_vtable g_CDirectSoundDeviceVTable
+//   CSoundDeviceFull_vtable g_CDirectSoundDeviceVTable
 //   CDirectSoundDevice g_CDirectSoundDeviceInstance
 
 #include "nocturne.h"

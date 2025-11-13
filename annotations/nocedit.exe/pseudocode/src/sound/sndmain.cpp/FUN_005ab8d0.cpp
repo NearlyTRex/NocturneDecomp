@@ -11,7 +11,7 @@
 // Function calls:
 //   sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930
 //   sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860
-//   sound_sndwav.cpp_FUN_005b1600
+//   sound_sndwav.cpp_getWavInDevice_FUN_005b1600
 
 #include "nocturne.h"
 
@@ -27,7 +27,9 @@ undefined4 sound_sndmain_cpp_FUN_005ab8d0(void)
   sound_sndmain_cpp_selectRecordingDevice_FUN_005ab860();
   if (-1 < DAT_00681b50) {
     if (g_RecordingDevices[DAT_00681b50].api_type == 0) {
-      g_RecordingDeviceInterface = (IDirectSoundCapture *)sound_sndwav_cpp_FUN_005b1600();
+      g_RecordingDeviceInterface =
+           (IDirectSoundCapture *)
+           sound_sndwav_cpp_getWavInDevice_FUN_005b1600(g_RecordingDevices[DAT_00681b50].device_id);
     }
     if (g_RecordingDeviceInterface != (IDirectSoundCapture *)0x0) {
       return 1;
@@ -69,7 +71,7 @@ undefined4 sound_sndmain_cpp_FUN_005ab8d0(void)
 // 005ab907: MOV ESI,dword ptr [EAX + 0x3f69518]
 //   XREF to: 03f69410 (READ)
 // 005ab90d: PUSH ESI
-// 005ab90e: CALL sound_sndwav.cpp_FUN_005b1600
+// 005ab90e: CALL sound_sndwav.cpp_getWavInDevice_FUN_005b1600
 //   XREF to: 005b1600 (UNCONDITIONAL_CALL)
 // 005ab913: ADD ESP,0x4
 // 005ab916: MOV [0x03f69c54],EAX

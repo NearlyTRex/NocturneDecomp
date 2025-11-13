@@ -37,7 +37,7 @@
 //   undefined4 g_SfxSlots[0].field7_0x74
 //   undefined4 DAT_03f5db1c
 //   undefined4 g_SfxSlots[0].field_284[0]
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 //   int g_SoundLockCount
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -116,7 +116,7 @@ int sound_sndmain_cpp_CSfxSlot_pollStream_FUN_005a6730(CSfxSlot *this_ptr)
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::pollStream - my sfx isn't active with me!");
     in_EDX = extraout_EDX;
   }
-  if (g_CSoundPtr == (CSound *)0x0) {
+  if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
     sound_sndmain_cpp_logSoundError_FUN_005adba0("SfxSample::pollStream - no sound device?\n");
   }
   else {

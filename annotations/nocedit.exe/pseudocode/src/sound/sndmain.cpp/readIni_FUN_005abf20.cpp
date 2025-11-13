@@ -25,9 +25,9 @@
 //   engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0
 //   engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30
 //   engine_ini.cpp_CIniFile_getString_FUN_004fbb20
-//   sound_sndmain.cpp_cleanup_FUN_005ab660
 //   sound_sndmain.cpp_enableHwSoundMixing_FUN_005ab550
 //   sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20
+//   sound_sndmain.cpp_FUN_005ab660
 //   sound_sndmain.cpp_getAudioFormat_FUN_005ab210
 //   sound_sndmain.cpp_getHardwareMixingEnabled_FUN_005ab590
 //   sound_sndmain.cpp_getMaxSwLatency_FUN_005abea0
@@ -89,7 +89,7 @@ void __cdecl sound_sndmain_cpp_readIni_FUN_005abf20(CIniFile *ini_file)
   engine_ini_cpp_CIniFile_getString_FUN_004fbb20
             (ini_file,"DeviceName",local_194,0x100,in_stack_fffffc4c);
   iVar2 = 0;
-  sound_sndmain_cpp_cleanup_FUN_005ab660();
+  sound_sndmain_cpp_FUN_005ab660();
   while( true ) {
     iVar1 = sound_sndmain_cpp_getSoundDeviceCount_FUN_005ab2e0();
     if (iVar1 <= iVar2) break;
@@ -188,7 +188,7 @@ LAB_005ac012:
 //   XREF to: 004fbb20 (UNCONDITIONAL_CALL)
 // 005abf5c: ADD ESP,0x10
 // 005abf5f: XOR EBX,EBX
-// 005abf61: CALL sound_sndmain.cpp_cleanup_FUN_005ab660
+// 005abf61: CALL sound_sndmain.cpp_FUN_005ab660
 //   XREF to: 005ab660 (UNCONDITIONAL_CALL)
 // 005abf66: CALL sound_sndmain.cpp_getSoundDeviceCount_FUN_005ab2e0
 //   Label: LAB_005abf66

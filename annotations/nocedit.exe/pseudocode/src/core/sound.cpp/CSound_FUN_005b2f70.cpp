@@ -14,7 +14,7 @@
 //   undefined4 DAT_03f6b870
 //   undefined4 DAT_03f6b874
 // Function calls:
-//   sound_sndmain.cpp_cleanup_FUN_005ab130
+//   sound_sndmain.cpp_FUN_005ab130
 //   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
 
 #include "nocturne.h"
@@ -32,7 +32,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b2f70(CSound *this_ptr)
   } while (iVar1 != 0xa0);
   sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
   sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-  sound_sndmain_cpp_cleanup_FUN_005ab130();
+  sound_sndmain_cpp_FUN_005ab130();
   return;
 }
 
@@ -69,7 +69,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b2f70(CSound *this_ptr)
 // 005b2fac: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005b2fb1: ADD ESP,0x4
-// 005b2fb4: CALL sound_sndmain.cpp_cleanup_FUN_005ab130
+// 005b2fb4: CALL sound_sndmain.cpp_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 005b2fb9: POP ESI
 // 005b2fba: POP EBX

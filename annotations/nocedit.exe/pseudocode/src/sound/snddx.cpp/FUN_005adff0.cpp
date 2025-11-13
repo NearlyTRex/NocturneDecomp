@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: int sound_snddx.cpp_FUN_005adff0(void)
 // Cross-references:
-//   sound_snddx.cpp_CDirectSoundDevice_FUN_005ae340 (005ae340) at 005ae3ac [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_CDirectSoundDevice_FUN_005aed50 (005aed50) at 005aee0f [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50 (005aed50) at 005aee0f [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340 (005ae340) at 005ae3ac [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c
 //   TerminatedCString s_Lock_secondary_buffer_00651a8b

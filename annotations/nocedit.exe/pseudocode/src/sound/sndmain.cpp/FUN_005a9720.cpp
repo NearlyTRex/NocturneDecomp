@@ -10,7 +10,7 @@
 //   core_turret.cpp_CTurret_process_FUN_005e2430 (005e2430) at 005e28bb [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005ad3b0 (005ad3b0) at 005ad560 [UNCONDITIONAL_CALL]
 // Globals:
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 // Function calls:
 //   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
 //   sound_sndmain.cpp_CSfxSlot_FUN_005a80e0
@@ -32,7 +32,7 @@ undefined8 sound_sndmain_cpp_FUN_005a9720(void)
   
   this_ptr = (CSfxSlot *)sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
   if (this_ptr != (CSfxSlot *)0x0) {
-    if (((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundPtr != (CSound *)0x0)) &&
+    if (((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) &&
        (iVar1 = sound_sndmain_cpp_CSfxSlot_FUN_005a80e0(this_ptr), iVar1 == 0)) {
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
       return 0xbff0000000000000;

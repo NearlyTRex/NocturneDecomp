@@ -19,7 +19,7 @@
 //   int g_AudioSampleRate = 0x5622
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   sound_sndmain.cpp_allocMixBuffers_FUN_005a5730
@@ -47,10 +47,10 @@ sound_sndmain_cpp_setSoundOutputMode_FUN_005ab170(int bits_per_sample,int channe
   g_AudioBitsPerSample = sample_rate;
   g_AudioChannelCount = in_stack_00000010;
   g_AudioSampleRate = in_stack_00000014;
-  if (g_CSoundPtr != (CSound *)0x0) {
-    iVar1 = (*g_CSoundPtr->vtable->setFormat)
-                      (g_CSoundPtr,sample_rate,in_stack_00000010,in_stack_00000014,
-                       (int *)&stack0xfffffff8);
+  if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
+    iVar1 = (*g_CSoundDevicePtr->vtable->setMode)
+                      (g_CSoundDevicePtr,sample_rate,(ushort)in_stack_00000010,in_stack_00000014,
+                       (uint *)&stack0xfffffff8);
     if (iVar1 == 0) {
       return 0;
     }

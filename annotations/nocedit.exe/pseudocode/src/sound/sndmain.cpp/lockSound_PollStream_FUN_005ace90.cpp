@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_lockSound_PollStream_FUN_005ace90()
 // Cross-references:
-//   sound_sndmain.cpp_DoSomethingRoundWait_OnSoundMutex_FUN_005abe20 (005abe20) at 005abe6f [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_processAudio_FUN_005abe20 (005abe20) at 005abe6f [UNCONDITIONAL_CALL]
 // Globals:
 //   undefined4 DAT_00651097
 //   undefined4 DAT_0065109f

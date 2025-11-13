@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010(HANDLE mutex_handle, double timeout_seconds)
 // Cross-references:
-//   sound_sndmain.cpp_DoSomethingRoundWait_OnSoundMutex_FUN_005abe20 (005abe20) at 005abe43 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_processAudio_FUN_005abe20 (005abe20) at 005abe43 [UNCONDITIONAL_CALL]
 // Globals:
 //   WaitForSingleObject* WaitForSingleObject = 002122c4
 //   double g_SecondsToMillisecondsMultiplier = 1000

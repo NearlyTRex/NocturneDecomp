@@ -42,8 +42,8 @@
 //   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 (0049f270) at 0049f3dc [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 (0049fb70) at 0049fc87 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90 (004a3b90) at 004a3c42 [UNCONDITIONAL_CALL]
-//   sound_sndwav.cpp_enumerateWaveInDevice_FUN_005b1560 (005b1560) at 005b159a [UNCONDITIONAL_CALL]
-//   sound_sndwav.cpp_enumerateWaveOutDevice_FUN_005b1470 (005b1470) at 005b14b6 [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560 (005b1560) at 005b159a [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470 (005b1470) at 005b14b6 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_LocalizationLoaded
 //   int g_LocalizedStringCount

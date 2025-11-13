@@ -12,7 +12,7 @@
 //   shape_memdbg.cpp_debugRealloc_FUN_0050f540 (0050f540) at 0050f6a2 [UNCONDITIONAL_CALL]
 //   shape_memdbg.cpp_openFile_FUN_0050f7a0 (0050f7a0) at 0050f8ac [UNCONDITIONAL_CALL]
 //   shape_memdbg.cpp_releaseDebugMutex_FUN_0050ee90 (0050ee90) at 0050ee97 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_DoSomethingRoundWait_OnSoundMutex_FUN_005abe20 (005abe20) at 005abe8b [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_processAudio_FUN_005abe20 (005abe20) at 005abe8b [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0 (005abdc0) at 005abddf [UNCONDITIONAL_CALL]
 // Globals:
 //   ReleaseMutex* ReleaseMutex = 002120fe

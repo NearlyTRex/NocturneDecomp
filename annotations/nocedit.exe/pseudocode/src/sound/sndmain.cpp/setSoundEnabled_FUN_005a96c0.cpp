@@ -17,19 +17,21 @@ int __cdecl sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(int enable)
 
 {
   int iVar1;
+  undefined4 uStack0000000c;
   
   g_SoundEnabled = enable;
   if (enable == 0) {
     return enable;
   }
   sound_sndmain_cpp_killAllSoundSlots_FUN_005a9cc0();
-  if (g_CSoundPtr != (CSound *)0x0) {
-    iVar1 = (*(code *)g_CSoundPtr->vtable->func3)();
+  if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
+    iVar1 = (*g_CSoundDevicePtr->vtable->reset)(g_CSoundDevicePtr);
     if (iVar1 == 0) {
       return 0;
     }
   }
   g_SoundBusyFlag = 0;
+  uStack0000000c = 0x5ab15c;
   sound_sndmain_cpp_FreeSomeSoundMemory_FUN_005a5900();
   return 1;
 }

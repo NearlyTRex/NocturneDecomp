@@ -4,20 +4,18 @@
 // Convention: __cdecl
 // Signature: void sound_sndwav.cpp_staticInit_FUN_005b0670(void)
 // Globals:
-//   void* PTR_sound_snddx.cpp_waveInClose_FUN_005b0d70_00663264 = 005b0d70
-//   void* PTR_sound_snddx.cpp_waveOutClose_FUN_005b0840_00663284 = 005b0840
-//   undefined4 DAT_03f6af40
-//   undefined4 DAT_03f6af44
+//   CSoundDeviceBasic_vtable g_CWavInDeviceVTable
+//   CSoundDeviceFull_vtable g_CWavOutDeviceVTable
+//   CWavOutDevice g_CWavOutDeviceInstance
+//   CWavInDevice g_CWavInDeviceInstance
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl sound_sndwav_cpp_staticInit_FUN_005b0670(void)
 
 {
-  _DAT_03f6af44 = &PTR_sound_snddx_cpp_waveInClose_FUN_005b0d70_00663264;
-  _DAT_03f6af40 = &PTR_sound_snddx_cpp_waveOutClose_FUN_005b0840_00663284;
+  g_CWavInDeviceInstance.vtable = &g_CWavInDeviceVTable;
+  g_CWavOutDeviceInstance.vtable = &g_CWavOutDeviceVTable;
   return;
 }
 

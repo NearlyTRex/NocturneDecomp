@@ -4,25 +4,25 @@
 // Convention: __cdecl
 // Signature: char * sound_snddx.cpp_FUN_005ade70(void)
 // Cross-references:
-//   sound_snddx.cpp_CDirectSoundDevice_FUN_005ae340 (005ae340) at 005ae46a [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_CDirectSoundDevice_FUN_005ae4b0 (005ae4b0) at 005ae5c6 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_CDirectSoundDevice_FUN_005ae830 (005ae830) at 005aec6f [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_CDirectSoundDevice_FUN_005aed50 (005aed50) at 005aedd6 [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_CDirectSoundDevice_FUN_005aef40 (005aef40) at 005af0ef [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_CDirectSoundDevice_FUN_005afcc0 (005afcc0) at 005afd2b [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_005aef40 (005aef40) at 005af0ef [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_005af410 (005af410) at 005af671 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60 (005afd60) at 005afe31 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_005b0030 (005b0030) at 005b00e4 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_005af220 (005af220) at 005af2e5 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50 (005aed50) at 005aedd6 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae4b0 (005ae4b0) at 005ae5c6 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830 (005ae830) at 005aec6f [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750 (005af750) at 005afb82 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_005afe80 (005afe80) at 005afff1 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340 (005ae340) at 005ae46a [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_005af320 (005af320) at 005af39b [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_CreatePrimaryBufferMaybe_FUN_005b0440 (005b0440) at 005b05ad [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_FUN_005adf90 (005adf90) at 005adfae [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_FUN_005adff0 (005adff0) at 005ae177 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_FUN_005ae1c0 (005ae1c0) at 005ae22b [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_FUN_005ae660 (005ae660) at 005ae795 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_FUN_005b0120 (005b0120) at 005b02fe [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440 (005b0440) at 005b05ad [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_DSERR_ALLOCATED_The_requ_00651544
 //   TerminatedCString s_DSERR_ALREADYINITIALIZED_006515bc

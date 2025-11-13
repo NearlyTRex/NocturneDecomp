@@ -5,7 +5,7 @@
 // Signature: void sound_sndmain.cpp_FUN_005aca90(void)
 // Cross-references:
 //   sound_snddx.cpp_FUN_005adff0 (005adff0) at 005ae0d7 [UNCONDITIONAL_CALL]
-//   sound_sndwav.cpp_waveOutWrite_FUN_005b06c0 (005b06c0) at 005b0774 [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0 (005b06c0) at 005b0774 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_0064fb9a
 //   TerminatedCString s_SfxSlot_kill_must_be_loc_0064fbaf

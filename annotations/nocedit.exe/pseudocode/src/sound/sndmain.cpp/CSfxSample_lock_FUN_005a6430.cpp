@@ -15,7 +15,7 @@
 //   TerminatedCString s_SfxSample_lock_nothing_a_0064fdd9
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
@@ -51,10 +51,10 @@ int __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(CSfxSample *this_ptr)
     pvVar2 = (void *)(iVar1 * (int)in_stack_00000008 + (int)this_ptr->sample_data);
   }
   else {
-    if (g_CSoundPtr == (CSound *)0x0) {
+    if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
       return 0;
     }
-    pvVar2 = (void *)(*(code *)g_CSoundPtr->vtable->field_52)();
+    pvVar2 = (void *)(*g_CSoundDevicePtr->vtable->lockSample)(g_CSoundDevicePtr);
   }
   if (pvVar2 != (void *)0x0) {
     this_ptr->sound_buffer = in_stack_0000000c;

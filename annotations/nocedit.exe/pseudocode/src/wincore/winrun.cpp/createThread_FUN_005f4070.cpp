@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: HANDLE wincore_winrun.cpp_createThread_FUN_005f4070(LPTHREAD_START_ROUTINE thread_func, LPVOID thread_param)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005abc00 (005abc00) at 005abc58 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_startSoundThread_FUN_005abc00 (005abc00) at 005abc58 [UNCONDITIONAL_CALL]
 // Globals:
 //   CreateThread* CreateThread = 00211c9a
 // Function calls:

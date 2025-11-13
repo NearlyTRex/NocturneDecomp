@@ -12,7 +12,7 @@
 //   undefined4 DAT_03f62afc
 //   undefined4 DAT_03f62b00
 //   undefined4 DAT_03f62b04
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 // Function calls:
 //   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
@@ -25,9 +25,9 @@ int sound_sndmain_cpp_FUN_005a5620(void)
   int iVar1;
   int iVar2;
   
-  if (g_CSoundPtr != (CSound *)0x0) {
+  if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
     do {
-      iVar1 = (*(code *)g_CSoundPtr->vtable->field_44)();
+      iVar1 = (*g_CSoundDevicePtr->vtable->allocateSample)(g_CSoundDevicePtr);
       if (iVar1 != 0) {
         return iVar1;
       }

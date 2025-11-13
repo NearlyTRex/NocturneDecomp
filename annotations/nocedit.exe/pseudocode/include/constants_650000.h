@@ -1810,7 +1810,7 @@ const char[36] g_EmptyStringBuffer = "";
 // double constants
 const double DOUBLE_006501df = 0.050000000000000003;
 const double DOUBLE_0065064f = 0.001;
-const double DOUBLE_00650dff = 0.002;
+const double g_AudioLatencySecondsMin = 0.002;
 const double DOUBLE_00650ecf = 3;
 const double g_MinLatencyThreshold = 0.050000000000000003;
 const double g_MaxLatencyThreshold = 2;

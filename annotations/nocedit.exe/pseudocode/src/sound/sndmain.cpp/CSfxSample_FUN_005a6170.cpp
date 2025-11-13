@@ -17,7 +17,7 @@
 //   undefined4 DAT_03f62afc
 //   undefined4 DAT_03f62b00
 //   undefined4 DAT_03f62b04
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 // Function calls:
 //   shape_memdbg.cpp_debugRealloc_FUN_0050f540
 //   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
@@ -37,31 +37,33 @@ int __cdecl sound_sndmain_cpp_CSfxSample_FUN_005a6170(CSfxSample *this_ptr)
   void *pvVar2;
   int iVar3;
   int iVar4;
+  int unaff_retaddr;
+  CSfxSample *in_stack_00000008;
+  CSfxSample *in_stack_00000010;
   char *filename;
   
   sound_sndmain_cpp_CSfxSample_releaseBufferId_FUN_005a63b0(this_ptr);
-  sound_sndmain_cpp_CSfxSample_freeSampleData_FUN_005a6400(this_ptr);
+  sound_sndmain_cpp_CSfxSample_freeSampleData_FUN_005a6400(in_stack_00000008);
   iVar1 = sound_sndmain_cpp_FUN_005ab5a0();
   if (iVar1 == 0) {
-    iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
+    iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(in_stack_00000010);
     sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_005a4450
-              (iVar1 * *(int *)this_ptr->field12_0x160);
-    iVar3 = 0x6fb;
-    filename = "..\\sound\\sndmain.cpp";
-    iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
+              (iVar1 * *(int *)in_stack_00000010->field12_0x160);
+    filename = (char *)0x6fb;
+    iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(in_stack_00000010);
     pvVar2 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                       (this_ptr->sample_data,iVar1 * *(int *)this_ptr->field12_0x160,filename,iVar3
-                       );
+                       (in_stack_00000010->sample_data,
+                        iVar1 * *(int *)in_stack_00000010->field12_0x160,filename,unaff_retaddr);
     if (pvVar2 != (void *)0x0) {
-      this_ptr->sample_data = pvVar2;
+      in_stack_00000010->sample_data = pvVar2;
       return 1;
     }
   }
   else {
-    iVar1 = (this_ptr->sample_info).num_channels;
-    if (g_CSoundPtr != (CSound *)0x0) {
+    iVar1 = (in_stack_00000010->sample_info).num_channels;
+    if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
       do {
-        pvVar2 = (void *)(*(code *)g_CSoundPtr->vtable->field_44)();
+        pvVar2 = (void *)(*g_CSoundDevicePtr->vtable->allocateSample)(g_CSoundDevicePtr);
         if (pvVar2 != (void *)0x0) goto LAB_005a6225;
         iVar4 = 0;
         iVar3 = g_LastSampleAccessIndex;
@@ -83,7 +85,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_FUN_005a6170(CSfxSample *this_ptr)
     }
     pvVar2 = (void *)0x0;
 LAB_005a6225:
-    this_ptr->buffer_id = pvVar2;
+    in_stack_00000010->buffer_id = pvVar2;
     if (pvVar2 != (void *)0x0) {
       return 1;
     }

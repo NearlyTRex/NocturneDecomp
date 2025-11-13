@@ -2,9 +2,9 @@
 // Address: 005b0390
 // Address Range: [[005b0390, 005b0436]]
 // Convention: __cdecl
-// Signature: int sound_snddx.cpp_enumerateDirectSoundDevice_FUN_005b0390(int device_id, SSoundDeviceInfo * device_info)
+// Signature: int sound_snddx.cpp_enumerateDirectSoundDevice_FUN_005b0390(UINT device_id, SSoundDeviceInfo * device_info)
 // Cross-references:
-//   sound_snddx.cpp_CreatePrimaryBufferMaybe_FUN_005b0440 (005b0440) at 005b0474 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440 (005b0440) at 005b0474 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSoundDeviceCount_FUN_005ab2e0 (005ab2e0) at 005ab34a [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_DirectSound_s_006522ab
@@ -19,7 +19,8 @@
 #include "nocturne.h"
 
 int __cdecl
-sound_snddx_cpp_enumerateDirectSoundDevice_FUN_005b0390(int device_id,SSoundDeviceInfo *device_info)
+sound_snddx_cpp_enumerateDirectSoundDevice_FUN_005b0390
+          (UINT device_id,SSoundDeviceInfo *device_info)
 
 {
   DWORD DVar1;
@@ -28,7 +29,7 @@ sound_snddx_cpp_enumerateDirectSoundDevice_FUN_005b0390(int device_id,SSoundDevi
     g_DirectSoundDeviceCount = 0;
     crt_dsound_c_DirectSoundEnumerateA(sound_snddx_cpp_FUN_005b0120,(LPVOID)0x0);
   }
-  if ((-1 < device_id) && (device_id < g_DirectSoundDeviceCount)) {
+  if ((-1 < (int)device_id) && ((int)device_id < g_DirectSoundDeviceCount)) {
     device_info->device_id = device_id;
     device_info->api_type = 1;
     DVar1 = g_DirectSoundDevices[device_id].value1;

@@ -8,8 +8,8 @@
 // Globals:
 //   undefined4 DAT_03f5d87c
 // Function calls:
-//   sound_sndmain.cpp_cleanup_FUN_005ab130
-//   sound_sndmain.cpp_cleanup_FUN_005ab660
+//   sound_sndmain.cpp_FUN_005ab130
+//   sound_sndmain.cpp_FUN_005ab660
 //   sound_sndmain.cpp_LockFreeSampleAndUnlock_FUN_005aa660
 //   sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930
 //   sound_sndmain.cpp_stopRecordingDevice_FUN_005abb60
@@ -27,8 +27,8 @@ void __cdecl sound_sndmain_cpp_FUN_005aaeb0(void)
     return;
   }
   DAT_03f5d87c = DAT_03f5d87c + 1;
-  sound_sndmain_cpp_cleanup_FUN_005ab130();
-  sound_sndmain_cpp_cleanup_FUN_005ab660();
+  sound_sndmain_cpp_FUN_005ab130();
+  sound_sndmain_cpp_FUN_005ab660();
   uStack00000004 = 0x5aaed3;
   sound_sndmain_cpp_stopRecordingDevice_FUN_005abb60();
   uStack00000008 = 0x5aaed8;
@@ -52,9 +52,9 @@ void __cdecl sound_sndmain_cpp_FUN_005aaeb0(void)
 //   Label: LAB_005aaebb
 // 005aaebe: MOV dword ptr [0x03f5d87c],ECX
 //   XREF to: 03f5d87c (WRITE)
-// 005aaec4: CALL sound_sndmain.cpp_cleanup_FUN_005ab130
+// 005aaec4: CALL sound_sndmain.cpp_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
-// 005aaec9: CALL sound_sndmain.cpp_cleanup_FUN_005ab660
+// 005aaec9: CALL sound_sndmain.cpp_FUN_005ab660
 //   XREF to: 005ab660 (UNCONDITIONAL_CALL)
 // 005aaece: CALL sound_sndmain.cpp_stopRecordingDevice_FUN_005abb60
 //   XREF to: 005abb60 (UNCONDITIONAL_CALL)

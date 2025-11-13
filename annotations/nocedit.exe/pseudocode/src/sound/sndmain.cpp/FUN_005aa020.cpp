@@ -16,16 +16,16 @@
 //   undefined4 DAT_03f6883c
 //   undefined4 DAT_03f68840
 //   undefined4 DAT_03f68844
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 
 #include "nocturne.h"
 
 void sound_sndmain_cpp_FUN_005aa020(void)
 
 {
-  undefined4 in_stack_00000004;
-  undefined4 in_stack_00000008;
-  undefined4 in_stack_0000000c;
+  float in_stack_00000004;
+  float in_stack_00000008;
+  float in_stack_0000000c;
   undefined4 in_stack_00000010;
   undefined4 in_stack_00000014;
   undefined4 in_stack_00000018;
@@ -36,10 +36,11 @@ void sound_sndmain_cpp_FUN_005aa020(void)
   DAT_03f6883c = in_stack_00000010;
   DAT_03f68840 = in_stack_00000014;
   DAT_03f68844 = in_stack_00000018;
-  if (g_CSoundPtr == (CSound *)0x0) {
+  if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
     return;
   }
-  (*(code *)g_CSoundPtr->vtable->field_24)();
+  (*g_CSoundDevicePtr->vtable->set3DListenerPos)
+            (g_CSoundDevicePtr,in_stack_00000004,in_stack_00000008,in_stack_0000000c);
   return;
 }
 

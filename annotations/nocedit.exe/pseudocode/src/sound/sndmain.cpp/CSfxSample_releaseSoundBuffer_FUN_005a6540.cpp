@@ -8,7 +8,7 @@
 //   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a6c97 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a4fae [UNCONDITIONAL_CALL]
 // Globals:
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 
 #include "nocturne.h"
 
@@ -16,9 +16,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(CSfxSa
 
 {
   if (sample->sound_buffer != (void *)0x0) {
-    if ((sample->buffer_id != (void *)0x0) && (g_CSoundPtr != (CSound *)0x0)) {
-      (*g_CSoundPtr->vtable->releaseBuffer)
-                (g_CSoundPtr,sample->buffer_id,sample->field16_0x178,sample->sound_buffer);
+    if ((sample->buffer_id != (void *)0x0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
+      (*g_CSoundDevicePtr->vtable->unlockSample)(g_CSoundDevicePtr);
     }
     sample->sound_buffer = (void *)0x0;
     sample->field16_0x178 = (void *)0x0;

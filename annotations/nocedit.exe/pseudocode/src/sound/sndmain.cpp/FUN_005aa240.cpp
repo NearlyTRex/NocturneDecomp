@@ -9,23 +9,23 @@
 //   undefined4 DAT_00681b30
 //   undefined4 DAT_00681b34
 //   double DOUBLE_00681b38 = 1
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 
 #include "nocturne.h"
 
 void sound_sndmain_cpp_FUN_005aa240(void)
 
 {
-  undefined4 in_stack_00000004;
+  float in_stack_00000004;
   undefined4 in_stack_00000008;
   
   DOUBLE_00681b38 = 1.0 / (double)CONCAT44(in_stack_00000008,in_stack_00000004);
   DAT_00681b30 = in_stack_00000004;
   DAT_00681b34 = in_stack_00000008;
-  if (g_CSoundPtr == (CSound *)0x0) {
+  if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
     return;
   }
-  (*(code *)g_CSoundPtr->vtable->field_36)();
+  (*g_CSoundDevicePtr->vtable->setRolloffFactor)(g_CSoundDevicePtr,in_stack_00000004);
   return;
 }
 

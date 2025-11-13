@@ -84,16 +84,16 @@
 //   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 //   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
 //   shape_edittool.cpp_CStrList_add_FUN_004a2b80
-//   sound_sndmain.cpp_allocBuffers_FUN_005ab5b0
 //   sound_sndmain.cpp_CallToSetSoundMode_FUN_005ab280
 //   sound_sndmain.cpp_CallToSetSoundOutputMode2_FUN_005ab2a0
 //   sound_sndmain.cpp_CallToSetSoundOutputMode3_FUN_005ab2c0
-//   sound_sndmain.cpp_cleanup_FUN_005ab130
-//   sound_sndmain.cpp_cleanup_FUN_005ab660
 //   sound_sndmain.cpp_enableHwSoundMixing_FUN_005ab550
 //   sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20
 //   sound_sndmain.cpp_FUN_005a8b70
+//   sound_sndmain.cpp_FUN_005ab130
 //   sound_sndmain.cpp_FUN_005ab5a0
+//   sound_sndmain.cpp_FUN_005ab5b0
+//   sound_sndmain.cpp_FUN_005ab660
 //   sound_sndmain.cpp_FUN_005ac400
 //   sound_sndmain.cpp_getAudioBitsPerSample_FUN_005ab250
 //   sound_sndmain.cpp_getAudioChannelCount_FUN_005ab270
@@ -785,7 +785,7 @@ LAB_00512b46:
       }
       uVar9 = sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260();
       if (uVar6 != uVar9) {
-        sound_sndmain_cpp_cleanup_FUN_005ab130();
+        sound_sndmain_cpp_FUN_005ab130();
         sound_sndmain_cpp_CallToSetSoundOutputMode3_FUN_005ab2c0();
         in_stack_fffff668 = uVar6;
         goto LAB_005126f5;
@@ -805,7 +805,7 @@ LAB_00512b46:
       }
       uVar9 = sound_sndmain_cpp_getAudioBitsPerSample_FUN_005ab250();
       if (uVar6 != uVar9) {
-        sound_sndmain_cpp_cleanup_FUN_005ab130();
+        sound_sndmain_cpp_FUN_005ab130();
         sound_sndmain_cpp_CallToSetSoundMode_FUN_005ab280();
         in_stack_fffff668 = uVar6;
         goto LAB_005126f5;
@@ -820,7 +820,7 @@ LAB_00512b46:
       }
       uVar9 = sound_sndmain_cpp_getAudioChannelCount_FUN_005ab270();
       if (uVar6 != uVar9) {
-        sound_sndmain_cpp_cleanup_FUN_005ab130();
+        sound_sndmain_cpp_FUN_005ab130();
         sound_sndmain_cpp_CallToSetSoundOutputMode2_FUN_005ab2a0();
         in_stack_fffff668 = uVar6;
         goto LAB_005126f5;
@@ -839,9 +839,9 @@ LAB_00512b46:
                         ((CPickList *)&stack0xfffff670,"Select sound device",iVar2,
                          (int)pcVar3);
       if (-1 < iVar2) {
-        sound_sndmain_cpp_cleanup_FUN_005ab660();
+        sound_sndmain_cpp_FUN_005ab660();
         sound_sndmain_cpp_selectSoundDevice_FUN_005ab4c0(iVar2);
-        sound_sndmain_cpp_allocBuffers_FUN_005ab5b0();
+        sound_sndmain_cpp_FUN_005ab5b0();
         iVar2 = sound_sndmain_cpp_FUN_005ab5a0();
         if (iVar2 != 0) {
           sound_sndmain_cpp_setSoundOutputMode_FUN_005ab170(0x10,2,0xac44);
@@ -854,10 +854,10 @@ LAB_00512b46:
                  (uint)in_stack_fffff674);
       break;
     case 8:
-      sound_sndmain_cpp_cleanup_FUN_005ab660();
+      sound_sndmain_cpp_FUN_005ab660();
       iVar2 = sound_sndmain_cpp_getHardwareMixingEnabled_FUN_005ab590();
       sound_sndmain_cpp_enableHwSoundMixing_FUN_005ab550((uint)(iVar2 == 0));
-      sound_sndmain_cpp_allocBuffers_FUN_005ab5b0();
+      sound_sndmain_cpp_FUN_005ab5b0();
 LAB_005126f5:
       core_sound_cpp_CSound_FUN_005b3830(g_CSoundPtr);
     }
@@ -2550,7 +2550,7 @@ LAB_005126f5:
 // 00512b5e: CMP EBX,EAX
 // 00512b60: JZ 0x005126fd
 //   XREF to: 005126fd (CONDITIONAL_JUMP)
-// 00512b66: CALL sound_sndmain.cpp_cleanup_FUN_005ab130
+// 00512b66: CALL sound_sndmain.cpp_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 00512b6b: PUSH EBX
 // 00512b6c: CALL sound_sndmain.cpp_CallToSetSoundOutputMode3_FUN_005ab2c0
@@ -2607,7 +2607,7 @@ LAB_005126f5:
 // 00512bd3: CMP EBX,EAX
 // 00512bd5: JZ 0x005126fd
 //   XREF to: 005126fd (CONDITIONAL_JUMP)
-// 00512bdb: CALL sound_sndmain.cpp_cleanup_FUN_005ab130
+// 00512bdb: CALL sound_sndmain.cpp_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 00512be0: PUSH EBX
 // 00512be1: CALL sound_sndmain.cpp_CallToSetSoundMode_FUN_005ab280
@@ -2643,7 +2643,7 @@ LAB_005126f5:
 // 00512c22: CMP EBX,EAX
 // 00512c24: JZ 0x005126fd
 //   XREF to: 005126fd (CONDITIONAL_JUMP)
-// 00512c2a: CALL sound_sndmain.cpp_cleanup_FUN_005ab130
+// 00512c2a: CALL sound_sndmain.cpp_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 00512c2f: PUSH EBX
 // 00512c30: CALL sound_sndmain.cpp_CallToSetSoundOutputMode2_FUN_005ab2a0
@@ -2706,13 +2706,13 @@ LAB_005126f5:
 // 00512ca1: TEST EAX,EAX
 // 00512ca3: JL 0x00512ce1
 //   XREF to: 00512ce1 (CONDITIONAL_JUMP)
-// 00512ca5: CALL sound_sndmain.cpp_cleanup_FUN_005ab660
+// 00512ca5: CALL sound_sndmain.cpp_FUN_005ab660
 //   XREF to: 005ab660 (UNCONDITIONAL_CALL)
 // 00512caa: PUSH EBX
 // 00512cab: CALL sound_sndmain.cpp_selectSoundDevice_FUN_005ab4c0
 //   XREF to: 005ab4c0 (UNCONDITIONAL_CALL)
 // 00512cb0: ADD ESP,0x4
-// 00512cb3: CALL sound_sndmain.cpp_allocBuffers_FUN_005ab5b0
+// 00512cb3: CALL sound_sndmain.cpp_FUN_005ab5b0
 //   XREF to: 005ab5b0 (UNCONDITIONAL_CALL)
 // 00512cb8: CALL sound_sndmain.cpp_FUN_005ab5a0
 //   XREF to: 005ab5a0 (UNCONDITIONAL_CALL)
@@ -2744,7 +2744,7 @@ LAB_005126f5:
 // 00512ced: ADD ESP,0x8
 // 00512cf0: JMP 0x005126fd
 //   XREF to: 005126fd (UNCONDITIONAL_JUMP)
-// 00512cf5: CALL sound_sndmain.cpp_cleanup_FUN_005ab660
+// 00512cf5: CALL sound_sndmain.cpp_FUN_005ab660
 //   Label: caseD_8
 //   XREF to: 005ab660 (UNCONDITIONAL_CALL)
 // 00512cfa: CALL sound_sndmain.cpp_getHardwareMixingEnabled_FUN_005ab590
@@ -2756,7 +2756,7 @@ LAB_005126f5:
 // 00512d0a: CALL sound_sndmain.cpp_enableHwSoundMixing_FUN_005ab550
 //   XREF to: 005ab550 (UNCONDITIONAL_CALL)
 // 00512d0f: ADD ESP,0x4
-// 00512d12: CALL sound_sndmain.cpp_allocBuffers_FUN_005ab5b0
+// 00512d12: CALL sound_sndmain.cpp_FUN_005ab5b0
 //   XREF to: 005ab5b0 (UNCONDITIONAL_CALL)
 // 00512d17: JMP 0x005126ef
 //   XREF to: 005126ef (UNCONDITIONAL_JUMP)

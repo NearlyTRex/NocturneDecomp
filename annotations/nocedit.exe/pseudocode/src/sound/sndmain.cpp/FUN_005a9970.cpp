@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005a9970()
 // Globals:
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 // Function calls:
 //   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
 //   sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
@@ -17,12 +17,12 @@ undefined4 sound_sndmain_cpp_FUN_005a9970(void)
 {
   CSfxSlot *this_ptr;
   undefined4 uVar1;
-  undefined4 in_stack_00000008;
   undefined4 in_stack_0000000c;
   undefined4 in_stack_00000010;
   undefined4 in_stack_00000014;
   undefined4 in_stack_00000018;
   undefined4 in_stack_0000001c;
+  undefined4 in_stack_00000020;
   
   this_ptr = (CSfxSlot *)sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
   if (this_ptr == (CSfxSlot *)0x0) {
@@ -36,16 +36,16 @@ undefined4 sound_sndmain_cpp_FUN_005a9970(void)
   (this_ptr->options).field5_0x14[0x2d] = '\0';
   (this_ptr->options).field5_0x14[0x2e] = '\0';
   (this_ptr->options).field5_0x14[0x2f] = '\0';
-  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x10) = in_stack_00000008;
-  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x14) = in_stack_0000000c;
-  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x18) = in_stack_00000010;
-  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x1c) = in_stack_00000014;
-  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x20) = in_stack_00000018;
+  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x10) = in_stack_0000000c;
+  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x14) = in_stack_00000010;
+  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x18) = in_stack_00000014;
+  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x1c) = in_stack_00000018;
+  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x20) = in_stack_0000001c;
   uVar1 = 1;
-  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x24) = in_stack_0000001c;
+  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x24) = in_stack_00000020;
   sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr);
-  if ((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundPtr != (CSound *)0x0)) {
-    uVar1 = (*(code *)g_CSoundPtr->vtable[1].func2)();
+  if ((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
+    uVar1 = (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr);
   }
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return uVar1;

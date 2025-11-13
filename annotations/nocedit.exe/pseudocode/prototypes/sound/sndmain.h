@@ -507,9 +507,9 @@ void FUN_005aaeb0(void);
 // Address: 005aaef0
 undefined FUN_005aaef0();
 
-// Original: sound_sndmain.cpp_cleanup_FUN_005ab130
+// Original: sound_sndmain.cpp_FUN_005ab130
 // Address: 005ab130
-undefined cleanup();
+int FUN_005ab130(void);
 
 // Original: sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170
 // Address: 005ab170
@@ -579,13 +579,13 @@ int getHardwareMixingEnabled(void);
 // Address: 005ab5a0
 undefined FUN_005ab5a0();
 
-// Original: sound_sndmain.cpp_allocBuffers_FUN_005ab5b0
+// Original: sound_sndmain.cpp_FUN_005ab5b0
 // Address: 005ab5b0
-int allocBuffers(void);
+int FUN_005ab5b0(void);
 
-// Original: sound_sndmain.cpp_cleanup_FUN_005ab660
+// Original: sound_sndmain.cpp_FUN_005ab660
 // Address: 005ab660
-undefined cleanup();
+undefined FUN_005ab660();
 
 // Original: sound_sndmain.cpp_getCurrentSoundDevice_FUN_005ab6c0
 // Address: 005ab6c0
@@ -655,17 +655,17 @@ undefined FUN_005abb10();
 // Address: 005abb60
 int stopRecordingDevice(void);
 
-// Original: sound_sndmain.cpp_FUN_005abba0
+// Original: sound_sndmain.cpp_audioThreadProc_FUN_005abba0
 // Address: 005abba0
-undefined FUN_005abba0();
+DWORD audioThreadProc(LPVOID lpThreadParam);
 
-// Original: sound_sndmain.cpp_FUN_005abc00
+// Original: sound_sndmain.cpp_startSoundThread_FUN_005abc00
 // Address: 005abc00
-undefined FUN_005abc00();
+HANDLE startSoundThread(double latency_seconds);
 
-// Original: sound_sndmain.cpp_SleepAndKillSoundThreadError_FUN_005abcb0
+// Original: sound_sndmain.cpp_killSoundThread_FUN_005abcb0
 // Address: 005abcb0
-undefined SleepAndKillSoundThreadError();
+int killSoundThread(void);
 
 // Original: sound_sndmain.cpp_lockSound_FUN_005abd30
 // Address: 005abd30
@@ -675,9 +675,9 @@ void lockSound(void);
 // Address: 005abdc0
 void unlockSound(void);
 
-// Original: sound_sndmain.cpp_DoSomethingRoundWait_OnSoundMutex_FUN_005abe20
+// Original: sound_sndmain.cpp_processAudio_FUN_005abe20
 // Address: 005abe20
-undefined DoSomethingRoundWait::OnSoundMutex();
+void processAudio(void);
 
 // Original: sound_sndmain.cpp_getMaxSwLatency_FUN_005abea0
 // Address: 005abea0

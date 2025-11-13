@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005aa7f0()
 // Cross-references:
-//   sound_sndwav.cpp_FUN_005b12e0 (005b12e0) at 005b13bf [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0 (005b12e0) at 005b13bf [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_math.c_round_FUN_005fe6b0
 //   sound_sndmain.cpp_FUN_005aa7b0

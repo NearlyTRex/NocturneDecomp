@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FreeSomeSoundMemory_FUN_005a5900()
 // Cross-references:
-//   sound_sndmain.cpp_cleanup_FUN_005ab130 (005ab130) at 005ab157 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005ab130 (005ab130) at 005ab157 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_0064fb5b
 //   TerminatedCString s_sound_sndmain_cpp_0064fb70
@@ -28,8 +28,6 @@
 //   shape_memdbg.cpp_debugFree_FUN_0050f460
 
 #include "nocturne.h"
-
-/* Signature: undefined1 sound_sndmain.cpp_FreeSomeSoundMemory() */
 
 void sound_sndmain_cpp_FreeSomeSoundMemory_FUN_005a5900(void)
 

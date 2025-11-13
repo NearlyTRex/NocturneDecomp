@@ -11,9 +11,9 @@
 //   sound_sndmain.cpp_FUN_005a5200 (005a5200) at 005a5506 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a5620 (005a5620) at 005a56a9 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005aa360 (005aa360) at 005aa394 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005ab660 (005ab660) at 005ab677 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_LockFreeSampleAndUnlock_FUN_005aa660 (005aa660) at 005aa678 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a4f06 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_cleanup_FUN_005ab660 (005ab660) at 005ab677 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450 (005a4450) at 005a4504 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a9504 [UNCONDITIONAL_CALL]
 // Globals:

@@ -4,10 +4,10 @@
 // Convention: __cdecl
 // Signature: float sound_sndmain.cpp_getMaxSwLatency_FUN_005abea0(void)
 // Cross-references:
-//   sound_snddx.cpp_CDirectSoundDevice_FUN_005ae830 (005ae830) at 005aeaf3 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830 (005ae830) at 005aeaf3 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005ac044 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_writeIni_FUN_005ac220 (005ac220) at 005ac318 [UNCONDITIONAL_CALL]
-//   sound_sndwav.cpp_waveOutOpen_FUN_005b0a30 (005b0a30) at 005b0a75 [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_CWavOutDevice_open_FUN_005b0a30 (005b0a30) at 005b0a75 [UNCONDITIONAL_CALL]
 // Globals:
 //   float g_MaxSoftwareLatency = 0.5
 

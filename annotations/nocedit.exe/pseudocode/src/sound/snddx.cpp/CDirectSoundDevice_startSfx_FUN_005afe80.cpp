@@ -32,20 +32,15 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80(CDirectSoun
   char *pcVar3;
   BADSPACEBASE *in_ESP;
   int in_stack_00000008;
-  int *piStack_1b4;
-  CDirectSoundDevice *pCStack_1b0;
   
   iVar2 = *(int *)(in_stack_00000008 + 0x70);
   if ((((iVar2 < 1) || (0x1e < iVar2)) || ((&DAT_03f6aa44)[iVar2] == 0)) ||
      (g_DirectSoundBufferInUse[iVar2 + 0x1e] == 0)) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
     g_CurrentLineNumber = 1000;
-    pCStack_1b0 = (CDirectSoundDevice *)0x5afec2;
     core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - invalid handle: %d");
   }
-  pCStack_1b0 = this_ptr;
-  piStack_1b4 = (int *)0x5afedc;
-  iVar1 = (*(code *)this_ptr->vtable->setSfxPos)();
+  iVar1 = (*this_ptr->vtable->setSfxPos)((CSoundDevice *)this_ptr);
   if (iVar1 != 0) {
     if (*(int *)(in_stack_00000008 + 0x78) == 0) {
       g_CurrentFilename = "..\\sound\\snddx.cpp";
@@ -58,15 +53,13 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80(CDirectSoun
       g_CurrentLineNumber = 0x3f4;
       core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - exotic jump sequences not allowed for hardware mixed sounds");
     }
-    piStack_1b4 = (int *)(&DAT_03f6aa44)[iVar2];
-    pCStack_1b0 = (CDirectSoundDevice *)0x0;
-    iVar2 = (**(code **)(*piStack_1b4 + 0x30))();
+    iVar2 = (**(code **)(*(int *)(&DAT_03f6aa44)[iVar2] + 0x30))();
     if (iVar2 != 0) {
       pcVar3 = sound_snddx_cpp_FUN_005ade70();
       crt_stdio_c_sprintf_FUN_005fdbd0
-                ((char *)&piStack_1b4,"DirectSux: Unable to %s.  (%s)",
+                (&stack0xfffffe50,"DirectSux: Unable to %s.  (%s)",
                  "Play hardware sfx secondary buffer",pcVar3);
-      sound_sndmain_cpp_logSoundError_FUN_005adba0((char *)&piStack_1b4);
+      sound_sndmain_cpp_logSoundError_FUN_005adba0(&stack0xfffffe50);
       return 0;
     }
     iVar1 = 1;

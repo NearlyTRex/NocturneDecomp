@@ -56,8 +56,8 @@
 //   shape_edittool.cpp_CStrList_dtor_FUN_004a2a40
 //   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
 //   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
-//   sound_sndmain.cpp_cleanup_FUN_005ab130
 //   sound_sndmain.cpp_FUN_005aaef0
+//   sound_sndmain.cpp_FUN_005ab130
 //   sound_sndmain.cpp_FUN_005ad3b0
 //   sound_sndmain.cpp_isSoundBusy_FUN_005ab540
 
@@ -258,7 +258,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
       } while (iVar3 < (int)pCStack_50);
     }
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-    sound_sndmain_cpp_cleanup_FUN_005ab130();
+    sound_sndmain_cpp_FUN_005ab130();
     (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
     if ((int)pcVar1 < 1) {
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
@@ -498,7 +498,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
 // 005ad7bd: CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 //   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)
 // 005ad7c2: ADD ESP,0x4
-// 005ad7c5: CALL sound_sndmain.cpp_cleanup_FUN_005ab130
+// 005ad7c5: CALL sound_sndmain.cpp_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 005ad7ca: PUSH 0x1
 // 005ad7cc: MOV EAX,[0x0067cf44]

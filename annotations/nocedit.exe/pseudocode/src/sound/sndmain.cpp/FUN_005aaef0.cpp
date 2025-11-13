@@ -49,7 +49,7 @@
 //   undefined4 DAT_03f6889c
 //   undefined4 DAT_03f688a0
 //   undefined4 DAT_03f688a4
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 //   int g_SoundBusyFlag
 //   int g_MixBufferReadIndex
 //   int g_MixBufferWriteIndex
@@ -63,7 +63,7 @@
 //   undefined4 DAT_03f69410
 // Function calls:
 //   crt_memory.c_memset_FUN_005fde40
-//   sound_sndmain.cpp_cleanup_FUN_005ab130
+//   sound_sndmain.cpp_FUN_005ab130
 //   sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0
 //   sound_sndmain.cpp_isSoundBusy_FUN_005ab540
 //   sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530
@@ -76,14 +76,13 @@
 
 /* Signature: undefined1 sound_sndmain.cpp_FUN_005aaef0() */
 
-undefined4 sound_sndmain_cpp_FUN_005aaef0(void)
+int sound_sndmain_cpp_FUN_005aaef0(void)
 
 {
   undefined4 *puVar1;
   uint uVar2;
   int iVar3;
-  undefined4 uVar4;
-  int iVar5;
+  int iVar4;
   
   uVar2 = sound_sndmain_cpp_isSoundSystemActive_FUN_005ab530();
   if (uVar2 == 0) {
@@ -91,8 +90,8 @@ undefined4 sound_sndmain_cpp_FUN_005aaef0(void)
   }
   iVar3 = sound_sndmain_cpp_getSoundEnabled_FUN_005a96b0();
   if (iVar3 != 0) {
-    uVar4 = sound_sndmain_cpp_cleanup_FUN_005ab130();
-    return uVar4;
+    iVar3 = sound_sndmain_cpp_FUN_005ab130();
+    return iVar3;
   }
   iVar3 = sound_sndmain_cpp_isSoundBusy_FUN_005ab540();
   if (iVar3 != 0) {
@@ -103,23 +102,26 @@ undefined4 sound_sndmain_cpp_FUN_005aaef0(void)
                     (g_AudioBitsPerSample,g_AudioChannelCount,g_AudioSampleRate);
   if (iVar3 != 0) {
     if ((0 < g_NumMixBuffers) && (iVar3 = 0, 0 < g_AudioChannelCount)) {
-      iVar5 = 0;
+      iVar4 = 0;
       do {
-        puVar1 = (undefined4 *)((int)g_ChannelPrimaryBuffers + iVar5);
-        iVar5 = iVar5 + 4;
+        puVar1 = (undefined4 *)((int)g_ChannelPrimaryBuffers + iVar4);
+        iVar4 = iVar4 + 4;
         iVar3 = iVar3 + 1;
         crt_memory_c_memset_FUN_005fde40((void *)*puVar1,0,g_MixBufferSize * g_NumMixBuffers * 4);
       } while (iVar3 < g_AudioChannelCount);
     }
     g_MixBufferReadIndex = 0;
     g_MixBufferWriteIndex = 0;
-    (*(code *)g_CSoundPtr->vtable->field_24)();
-    (*(code *)g_CSoundPtr->vtable->field_28)();
-    (*(code *)g_CSoundPtr->vtable->field_32)();
-    (*(code *)g_CSoundPtr->vtable->field_36)();
-    (*(code *)g_CSoundPtr->vtable->field_40)();
+    (*g_CSoundDevicePtr->vtable->set3DListenerPos)
+              (g_CSoundDevicePtr,DAT_03f68830,DAT_03f68834,DAT_03f68838);
+    (*g_CSoundDevicePtr->vtable->set3DListenerOrient)
+              (g_CSoundDevicePtr,DAT_03f68860,DAT_03f68864,DAT_03f68868,DAT_03f6886c,DAT_03f68870,
+               DAT_03f68874);
+    (*g_CSoundDevicePtr->vtable->setDopplerFactor)(g_CSoundDevicePtr,DAT_03f68848);
+    (*g_CSoundDevicePtr->vtable->setRolloffFactor)(g_CSoundDevicePtr,DAT_00681b30);
+    (*(code *)g_CSoundDevicePtr->vtable->func11)();
     DAT_03f69410 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-    iVar3 = (*(code *)g_CSoundPtr->vtable->func2)();
+    iVar3 = (*g_CSoundDevicePtr->vtable->start)(g_CSoundDevicePtr);
     if (iVar3 != 0) {
       g_SoundBusyFlag = 1;
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
@@ -164,7 +166,7 @@ undefined4 sound_sndmain_cpp_FUN_005aaef0(void)
 // 005aaf1b: POP ESI
 // 005aaf1c: POP EBX
 // 005aaf1d: RET
-// 005aaf1e: CALL sound_sndmain.cpp_cleanup_FUN_005ab130
+// 005aaf1e: CALL sound_sndmain.cpp_FUN_005ab130
 //   Label: LAB_005aaf1e
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 005aaf23: POP EBP

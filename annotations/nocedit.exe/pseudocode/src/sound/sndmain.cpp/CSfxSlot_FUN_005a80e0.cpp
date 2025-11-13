@@ -9,7 +9,7 @@
 //   sound_sndmain.cpp_FUN_005a9f80 (005a9f80) at 005a9fba [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_Error_polling_hw_playbac_00650541
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 // Function calls:
 //   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
@@ -19,12 +19,13 @@
 int __cdecl sound_sndmain_cpp_CSfxSlot_FUN_005a80e0(CSfxSlot *this_ptr)
 
 {
-  double dVar1;
+  int iVar1;
+  undefined4 extraout_EDX;
   
-  if (((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundPtr != (CSound *)0x0)) &&
+  if (((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) &&
      (this_ptr->sample != (CSfxSample *)0x0)) {
-    dVar1 = (double)(*(code *)g_CSoundPtr->vtable[1].func3)();
-    if (dVar1 < 0.0) {
+    iVar1 = (*g_CSoundDevicePtr->vtable->getSfxPlaybackPos)(g_CSoundDevicePtr);
+    if ((double)CONCAT44(extraout_EDX,iVar1) < 0.0) {
       sound_sndmain_cpp_logSoundError_FUN_005adba0
                 ("Error polling hw playback pos %s\n",this_ptr->sample);
       return 0;

@@ -8,7 +8,7 @@
 //   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b38ce [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b3c90 (005b3c90) at 005b3cb4 [UNCONDITIONAL_CALL]
 // Globals:
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 //   undefined4 DAT_03f693e8
 //   undefined4 DAT_03f693ec
 //   undefined4 DAT_03f693f0
@@ -28,10 +28,10 @@ void sound_sndmain_cpp_FUN_005ab6e0(void)
   DAT_03f693e8 = in_stack_00000004;
   DAT_03f693ec = in_stack_00000008;
   DAT_03f693f0 = in_stack_0000000c;
-  if (g_CSoundPtr == (CSound *)0x0) {
+  if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
     return;
   }
-  (*(code *)g_CSoundPtr->vtable->field_40)();
+  (*(code *)g_CSoundDevicePtr->vtable->func11)();
   return;
 }
 

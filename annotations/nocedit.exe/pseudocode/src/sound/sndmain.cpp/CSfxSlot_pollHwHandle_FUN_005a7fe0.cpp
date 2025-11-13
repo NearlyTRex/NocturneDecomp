@@ -12,7 +12,7 @@
 //   TerminatedCString s_Error_setting_hw_sfx_d_o_0065050a
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   CSound* g_CSoundPtr
+//   CSoundDevice* g_CSoundDevicePtr
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_005a87d0
@@ -30,7 +30,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(CSfxSlot *this
   if (this_ptr->dsound_buffer == (void *)0x0) {
     return;
   }
-  if (g_CSoundPtr == (CSound *)0x0) {
+  if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
     sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(this_ptr);
     return;
   }
@@ -39,7 +39,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(CSfxSlot *this
     g_CurrentLineNumber = 0xb71;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::pollHwHandle - no sample?");
   }
-  iVar1 = (*(code *)g_CSoundPtr->vtable[1].field_20)();
+  iVar1 = (*(code *)g_CSoundDevicePtr->vtable->func21)();
   if (iVar1 == 0) {
     iVar1 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(this_ptr->sample);
     if (iVar1 != 0) {
@@ -65,7 +65,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(CSfxSlot *this
     return;
   }
 LAB_005a809a:
-  iVar1 = (*(code *)g_CSoundPtr->vtable[1].func2)();
+  iVar1 = (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr);
   if (iVar1 != 0) {
     return;
   }
