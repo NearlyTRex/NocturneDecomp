@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80()
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005aca90 (005aca90) at 005acd01 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 (005aca90) at 005acd01 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_0064fc18
 //   TerminatedCString s_convertMixBufToOutput_in_0064fc2d

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int sound_snddx.cpp_CDirectSoundDevice_hasHardware3D_FUN_005aee20(CDirectSoundDevice * this_ptr)
 // Globals:
-//   undefined4 DAT_03f6a9bc
+//   IDirectSound3DListener* g_DirectSound3DListener
 
 #include "nocturne.h"
 
@@ -12,7 +12,7 @@ int __cdecl
 sound_snddx_cpp_CDirectSoundDevice_hasHardware3D_FUN_005aee20(CDirectSoundDevice *this_ptr)
 
 {
-  return (uint)(DAT_03f6a9bc != 0);
+  return (uint)(g_DirectSound3DListener != (IDirectSound3DListener *)0x0);
 }
 
 

@@ -6,8 +6,8 @@
 // Cross-references:
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 005125ff [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0065100f
-//   undefined4 DAT_00651017
+//   double DOUBLE_0065100f = 2
+//   double DOUBLE_00651017 = 3.14159265350000
 //   int g_AudioSampleRate = 0x5622
 //   undefined4 DAT_03f5d880
 //   int g_MixBufferSize
@@ -22,7 +22,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x005ac957) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 sound_sndmain.cpp_FUN_005ac400(undefined4 param_1, undefined4 param_2,
    undefined4 param_3) */
 
@@ -113,10 +112,10 @@ longlong sound_sndmain_cpp_FUN_005ac400
     if (1 < iVar15) {
       do {
         iVar11 = local_2c / 2;
-        fVar24 = (float10)_DAT_00651017 / (float10)iVar11;
+        fVar24 = (float10)DOUBLE_00651017 / (float10)iVar11;
         fVar31 = (float10)fcos(fVar24);
         fVar25 = (float10)fsin(fVar24);
-        fVar26 = (float10)_DAT_0065100f;
+        fVar26 = (float10)DOUBLE_0065100f;
         fVar24 = fVar24 * fVar26;
         fVar27 = (float10)fsin(fVar24);
         fVar24 = (float10)fcos(fVar24);
@@ -208,7 +207,7 @@ longlong sound_sndmain_cpp_FUN_005ac400
       } while (iVar15 < iVar11);
     }
     return CONCAT44(pfVar19,SQRT((fVar6 / (float)iVar11) / (float)(int)pfVar13) *
-                            (float)_DAT_0065100f);
+                            (float)DOUBLE_0065100f);
   }
   return ZEXT48(pfVar17) << 0x20;
 }

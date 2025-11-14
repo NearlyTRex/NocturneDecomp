@@ -10,12 +10,12 @@
 //   TerminatedCString s_Get_playback_cursor_of_h_006520ec
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   undefined4 DAT_03f6aa44
+//   IDirectSoundBuffer* g_DirectSoundSampleBuffersEnd
 //   undefined4 DAT_03f6aac0
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   crt_stdio.c_sprintf_FUN_005fdbd0
-//   sound_snddx.cpp_FUN_005ade70
+//   sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
@@ -30,30 +30,31 @@ sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60(CDirectSoundDe
   char *pcVar3;
   BADSPACEBASE *in_ESP;
   int in_stack_00000008;
-  undefined8 uVar4;
-  uint uStack_20;
-  undefined1 local_14 [4];
+  char acStack_198 [4];
+  char acStack_194 [384];
+  DWORD local_14;
   
   iVar1 = *(int *)(in_stack_00000008 + 0x70);
-  if ((((iVar1 < 1) || (0x1e < iVar1)) || ((&DAT_03f6aa44)[iVar1] == 0)) ||
+  if ((((iVar1 < 1) || (0x1e < iVar1)) ||
+      ((&g_DirectSoundSampleBuffersEnd)[iVar1] == (IDirectSoundBuffer *)0x0)) ||
      (g_DirectSoundBufferInUse[iVar1 + 0x1e] == 0)) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
     g_CurrentLineNumber = 0x3d6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::getSfxPlaybackPos - invalid handle");
   }
-  uVar4 = CONCAT44(local_14,(int *)(&DAT_03f6aa44)[iVar1]);
-  iVar1 = (**(code **)(*(int *)(&DAT_03f6aa44)[iVar1] + 0x10))();
-  if (iVar1 != 0) {
-    pcVar3 = sound_snddx_cpp_FUN_005ade70();
+  uVar2 = (*(&g_DirectSoundSampleBuffersEnd)[iVar1]->vtable->GetCurrentPosition)
+                    ((&g_DirectSoundSampleBuffersEnd)[iVar1],(LPDWORD)&stack0xfffffff0,&local_14);
+  if (uVar2 != 0) {
+    pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar2);
     crt_stdio_c_sprintf_FUN_005fdbd0
-              (&stack0xfffffe44,"DirectSux: Unable to %s.  (%s)",
-               "Get playback cursor of hardware sfx secondary buffer",pcVar3,uVar4);
-    sound_sndmain_cpp_logSoundError_FUN_005adba0(&stack0xfffffe44);
+              (acStack_198,"DirectSux: Unable to %s.  (%s)","Get playback cursor of hardware sfx secondary buffer",
+               pcVar3);
+    sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_194);
     return 0.0;
   }
   uVar2 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
                     (*(CSfxSample **)(in_stack_00000008 + 0x78));
-  return SUB84((double)(uStack_20 / uVar2),0);
+  return SUB84((double)((uint)this_ptr / uVar2),0);
 }
 
 
@@ -141,7 +142,7 @@ sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60(CDirectSoundDe
 //   XREF to: 005afda5 (UNCONDITIONAL_JUMP)
 // 005afe30: PUSH EAX
 //   Label: LAB_005afe30
-// 005afe31: CALL sound_snddx.cpp_FUN_005ade70
+// 005afe31: CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   XREF to: 005ade70 (UNCONDITIONAL_CALL)
 // 005afe36: ADD ESP,0x4
 // 005afe39: PUSH EAX

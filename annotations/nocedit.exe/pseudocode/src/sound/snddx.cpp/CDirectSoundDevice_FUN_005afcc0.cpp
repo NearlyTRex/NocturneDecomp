@@ -6,11 +6,11 @@
 // Globals:
 //   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c
 //   TerminatedCString s_Get_active_sfx_secondary_0065207c
-//   undefined4 DAT_03f6aa44
+//   IDirectSoundBuffer* g_DirectSoundSampleBuffersEnd
 //   undefined4 DAT_03f6aac0
 // Function calls:
 //   crt_stdio.c_sprintf_FUN_005fdbd0
-//   sound_snddx.cpp_FUN_005ade70
+//   sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
@@ -19,29 +19,28 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_FUN_005afcc0(CDirectSoundDevice *
 
 {
   int iVar1;
+  uint error_code;
   char *pcVar2;
   BADSPACEBASE *in_ESP;
-  int in_stack_00000008;
-  int *piStack_19c;
-  undefined1 *puStack_198;
-  byte bStack_c;
-  undefined1 local_4 [4];
+  uint in_stack_00000008;
+  char acStack_180 [380];
+  DWORD local_4;
   
   iVar1 = *(int *)(in_stack_00000008 + 0x70);
-  if ((((0 < iVar1) && (iVar1 < 0x1f)) && ((&DAT_03f6aa44)[iVar1] != 0)) &&
+  if ((((0 < iVar1) && (iVar1 < 0x1f)) &&
+      ((&g_DirectSoundSampleBuffersEnd)[iVar1] != (IDirectSoundBuffer *)0x0)) &&
      (g_DirectSoundBufferInUse[iVar1 + 0x1e] != 0)) {
-    puStack_198 = local_4;
-    piStack_19c = (int *)(&DAT_03f6aa44)[iVar1];
-    iVar1 = (**(code **)(*piStack_19c + 0x24))();
-    if (iVar1 != 0) {
-      pcVar2 = sound_snddx_cpp_FUN_005ade70();
+    error_code = (*(&g_DirectSoundSampleBuffersEnd)[iVar1]->vtable->GetStatus)
+                           ((&g_DirectSoundSampleBuffersEnd)[iVar1],&local_4);
+    if (error_code != 0) {
+      pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                ((char *)&piStack_19c,"DirectSux: Unable to %s.  (%s)",
+                (&stack0xfffffe7c,"DirectSux: Unable to %s.  (%s)",
                  "Get active sfx secondary buffer status",pcVar2);
-      sound_sndmain_cpp_logSoundError_FUN_005adba0((char *)&piStack_19c);
+      sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_180);
       return 0;
     }
-    if ((bStack_c & 1) != 0) {
+    if ((in_stack_00000008 & 1) != 0) {
       return 1;
     }
   }
@@ -94,7 +93,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_FUN_005afcc0(CDirectSoundDevice *
 // 005afd29: RET
 // 005afd2a: PUSH EAX
 //   Label: LAB_005afd2a
-// 005afd2b: CALL sound_snddx.cpp_FUN_005ade70
+// 005afd2b: CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   XREF to: 005ade70 (UNCONDITIONAL_CALL)
 // 005afd30: ADD ESP,0x4
 // 005afd33: PUSH EAX

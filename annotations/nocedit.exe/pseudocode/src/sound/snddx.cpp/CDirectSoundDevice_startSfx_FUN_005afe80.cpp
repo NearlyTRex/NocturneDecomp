@@ -14,12 +14,12 @@
 //   TerminatedCString s_Play_hardware_sfx_second_0065220f
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   undefined4 DAT_03f6aa44
+//   IDirectSoundBuffer* g_DirectSoundSampleBuffersEnd
 //   undefined4 DAT_03f6aac0
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   crt_stdio.c_sprintf_FUN_005fdbd0
-//   sound_snddx.cpp_FUN_005ade70
+//   sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
@@ -27,44 +27,57 @@
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80(CDirectSoundDevice *this_ptr)
 
 {
-  int iVar1;
+  CSoundDeviceFull_vtable *pCVar1;
   int iVar2;
+  uint error_code;
   char *pcVar3;
   BADSPACEBASE *in_ESP;
-  int in_stack_00000008;
+  DWORD unaff_retaddr;
+  CSoundDevice *in_stack_00000008;
+  char acStack_174 [356];
   
-  iVar2 = *(int *)(in_stack_00000008 + 0x70);
-  if ((((iVar2 < 1) || (0x1e < iVar2)) || ((&DAT_03f6aa44)[iVar2] == 0)) ||
-     (g_DirectSoundBufferInUse[iVar2 + 0x1e] == 0)) {
+  pCVar1 = in_stack_00000008[0x1c].vtable;
+  if (((((int)pCVar1 < 1) || (0x1e < (int)pCVar1)) ||
+      ((&g_DirectSoundSampleBuffersEnd)[(int)pCVar1] == (IDirectSoundBuffer *)0x0)) ||
+     (g_DirectSoundBufferInUse[(int)((int)&pCVar1->set3DListenerOrient + 2)] == 0)) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
     g_CurrentLineNumber = 1000;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - invalid handle: %d");
+    core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - invalid handle: %d",pCVar1);
   }
-  iVar1 = (*this_ptr->vtable->setSfxPos)((CSoundDevice *)this_ptr);
-  if (iVar1 != 0) {
-    if (*(int *)(in_stack_00000008 + 0x78) == 0) {
+  iVar2 = (*in_stack_00000008->vtable->setSfxPos)(in_stack_00000008);
+  if (iVar2 != 0) {
+    if (in_stack_00000008[0x1e].vtable == (CSoundDeviceFull_vtable *)0x0) {
       g_CurrentFilename = "..\\sound\\snddx.cpp";
       g_CurrentLineNumber = 0x3f2;
       core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - no sample??");
     }
-    if ((1 < *(int *)(*(int *)(in_stack_00000008 + 0x78) + 0x124)) ||
-       (0 < *(int *)(*(int *)(in_stack_00000008 + 0x78) + 0x13c))) {
+    if ((1 < (int)in_stack_00000008[0x1e].vtable[3].func11) ||
+       (0 < (int)in_stack_00000008[0x1e].vtable[3].setSfxPos)) {
       g_CurrentFilename = "..\\sound\\snddx.cpp";
       g_CurrentLineNumber = 0x3f4;
       core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - exotic jump sequences not allowed for hardware mixed sounds");
     }
-    iVar2 = (**(code **)(*(int *)(&DAT_03f6aa44)[iVar2] + 0x30))();
-    if (iVar2 != 0) {
-      pcVar3 = sound_snddx_cpp_FUN_005ade70();
+    if (((undefined1 *)in_stack_00000008[0x1e].vtable[3].func11 == &DAT_00000001) &&
+       (-1 < (int)in_stack_00000008[0x1e].vtable[3].setSfxPos)) {
+      unaff_retaddr = unaff_retaddr | 1;
+    }
+    if (in_stack_00000008[0x1e].vtable[4].poll !=
+        (CSoundDevice_poll *)in_stack_00000008[0x1e].vtable[3].hasHardware3D) {
+      unaff_retaddr = unaff_retaddr | 1;
+    }
+    error_code = (*(&g_DirectSoundSampleBuffersEnd)[(int)pCVar1]->vtable->Play)
+                           ((&g_DirectSoundSampleBuffersEnd)[(int)pCVar1],0,0,unaff_retaddr);
+    if (error_code != 0) {
+      pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (&stack0xfffffe50,"DirectSux: Unable to %s.  (%s)",
+                (&stack0xfffffe88,"DirectSux: Unable to %s.  (%s)",
                  "Play hardware sfx secondary buffer",pcVar3);
-      sound_sndmain_cpp_logSoundError_FUN_005adba0(&stack0xfffffe50);
+      sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_174);
       return 0;
     }
-    iVar1 = 1;
+    iVar2 = 1;
   }
-  return iVar1;
+  return iVar2;
 }
 
 
@@ -208,7 +221,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80(CDirectSoun
 //   XREF to: 005aff2e (UNCONDITIONAL_JUMP)
 // 005afff0: PUSH EAX
 //   Label: LAB_005afff0
-// 005afff1: CALL sound_snddx.cpp_FUN_005ade70
+// 005afff1: CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   XREF to: 005ade70 (UNCONDITIONAL_CALL)
 // 005afff6: ADD ESP,0x4
 // 005afff9: PUSH EAX

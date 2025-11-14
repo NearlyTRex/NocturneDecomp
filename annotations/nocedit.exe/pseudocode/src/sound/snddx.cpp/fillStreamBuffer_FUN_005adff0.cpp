@@ -1,8 +1,8 @@
-// Name: sound_snddx.cpp_FUN_005adff0
+// Name: sound_snddx.cpp_fillStreamBuffer_FUN_005adff0
 // Address: 005adff0
 // Address Range: [[005adff0, 005ae1b6]]
 // Convention: __cdecl
-// Signature: int sound_snddx.cpp_FUN_005adff0(void)
+// Signature: int sound_snddx.cpp_fillStreamBuffer_FUN_005adff0(void)
 // Cross-references:
 //   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50 (005aed50) at 005aee0f [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340 (005ae340) at 005ae3ac [UNCONDITIONAL_CALL]
@@ -10,91 +10,84 @@
 //   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c
 //   TerminatedCString s_Lock_secondary_buffer_00651a8b
 //   TerminatedCString s_Unlock_secondary_buffer_00651aa1
-//   undefined4 DAT_03f6a9b8
-//   undefined4 DAT_03f6a9c4
-//   undefined4 DAT_03f6a9c8
-//   undefined4 DAT_03f6a9cc
-//   undefined4 DAT_03f6a9d0
-//   undefined4 DAT_03f6a9d4
-//   undefined4 DAT_03f6a9d8
-//   undefined4 DAT_03f6a9dc
+//   IDirectSoundBuffer* g_DirectSoundSecondaryBuffer
+//   int g_StreamBitsPerSample
+//   int g_StreamSampleRate
+//   int g_StreamChannelCount
+//   int g_StreamSamplesPerBlock
+//   int g_StreamBlockSizeBytes
+//   int g_StreamBlockCount
+//   int g_StreamCurrentBlock
 // Function calls:
 //   crt_stdio.c_sprintf_FUN_005fdbd0
-//   sound_snddx.cpp_FUN_005ade70
-//   sound_sndmain.cpp_FUN_005aca90
+//   sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
+//   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
 
 #include "nocturne.h"
 
-int __cdecl sound_snddx_cpp_FUN_005adff0(void)
+int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_005adff0(void)
 
 {
-  int iVar1;
+  uint uVar1;
   int iVar2;
-  char *pcVar3;
+  int iVar3;
+  char *pcVar4;
+  LPVOID pvVar5;
   BADSPACEBASE *in_ESP;
-  int *piVar4;
-  int *piStack_380;
-  int iStack_37c;
-  int iStack_378;
-  undefined1 *puStack_374;
-  undefined1 *puStack_370;
-  undefined1 *puStack_36c;
-  undefined1 *puStack_368;
-  undefined4 uStack_364;
-  char acStack_204 [420];
-  int aiStack_60 [8];
-  int iStack_40;
-  int iStack_3c;
-  int iStack_38;
-  undefined4 uStack_34;
-  undefined1 local_20 [4];
-  undefined1 local_1c [4];
-  undefined1 local_18 [4];
-  undefined1 local_14 [4];
+  int in_stack_00000004;
+  LPVOID in_stack_00000008;
+  LPVOID in_stack_0000000c;
+  DWORD in_stack_00000010;
+  DWORD in_stack_00000014;
+  char acStack_334 [4];
+  undefined4 uStack_330;
+  char acStack_18c [4];
+  char acStack_188 [360];
+  LPVOID local_20;
+  LPVOID local_1c;
+  DWORD local_18;
+  DWORD local_14;
   
-  if (DAT_03f6a9b8 != (int *)0x0) {
-    uStack_364 = 0;
-    puStack_368 = local_14;
-    puStack_36c = local_20;
-    puStack_370 = local_18;
-    puStack_374 = local_1c;
-    iStack_37c = DAT_03f6a9dc * DAT_03f6a9d4;
-    iStack_378 = DAT_03f6a9d4;
-    piStack_380 = DAT_03f6a9b8;
-    iVar1 = (**(code **)(*DAT_03f6a9b8 + 0x2c))();
-    if (iVar1 != 0) {
-      pcVar3 = sound_snddx_cpp_FUN_005ade70();
+  if (g_DirectSoundSecondaryBuffer != (IDirectSoundBuffer *)0x0) {
+    uVar1 = (*g_DirectSoundSecondaryBuffer->vtable->Lock)
+                      (g_DirectSoundSecondaryBuffer,g_StreamCurrentBlock * g_StreamBlockSizeBytes,
+                       g_StreamBlockSizeBytes,&local_1c,&local_18,&local_20,&local_14,0);
+    if (uVar1 != 0) {
+      pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                ((char *)&piStack_380,"DirectSux: Unable to %s.  (%s)",
-                 "Lock secondary buffer",pcVar3);
-      sound_sndmain_cpp_logSoundError_FUN_005adba0((char *)&piStack_380);
+                (&stack0xfffffcc8,"DirectSux: Unable to %s.  (%s)",
+                 "Lock secondary buffer",pcVar4);
+      sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_334);
       return 0;
     }
-    if ((iStack_40 == 0) && (iStack_38 == DAT_03f6a9d4)) {
-      iVar2 = 0;
-      iVar1 = iStack_3c;
-      if (0 < DAT_03f6a9cc * 4) {
+    if ((in_stack_00000004 == 0) && (in_stack_0000000c == (LPVOID)g_StreamBlockSizeBytes)) {
+      iVar2 = (int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -
+                   (uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3;
+      iVar3 = 0;
+      pvVar5 = in_stack_00000008;
+      if (0 < g_StreamChannelCount * 4) {
         do {
-          *(int *)((int)aiStack_60 + iVar2) = iVar1;
-          iVar2 = iVar2 + 4;
-          iVar1 = iVar1 + ((int)((DAT_03f6a9c4 + (DAT_03f6a9c4 >> 0x1f) * -8) -
-                                (uint)((DAT_03f6a9c4 >> 0x1f) << 2 < 0)) >> 3);
-        } while (iVar2 < DAT_03f6a9cc * 4);
+          *(LPVOID *)((int)&local_1c + iVar3) = pvVar5;
+          iVar3 = iVar3 + 4;
+          pvVar5 = (LPVOID)((int)pvVar5 + iVar2);
+        } while (iVar3 < g_StreamChannelCount * 4);
       }
-      sound_sndmain_cpp_FUN_005aca90();
-      DAT_03f6a9dc = DAT_03f6a9dc + 1;
-      if (DAT_03f6a9d8 <= DAT_03f6a9dc) {
-        DAT_03f6a9dc = 0;
+      sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90
+                (&local_1c,g_StreamBitsPerSample,g_StreamChannelCount,g_StreamSampleRate,
+                 g_StreamSamplesPerBlock,iVar2 * g_StreamChannelCount);
+      g_StreamCurrentBlock = g_StreamCurrentBlock + 1;
+      if (g_StreamBlockCount <= g_StreamCurrentBlock) {
+        g_StreamCurrentBlock = 0;
       }
-      piVar4 = DAT_03f6a9b8;
-      iVar1 = (**(code **)(*DAT_03f6a9b8 + 0x4c))();
-      if (iVar1 != 0) {
-        pcVar3 = sound_snddx_cpp_FUN_005ade70();
-        crt_stdio_c_sprintf_FUN_005fdbd0
-                  (acStack_204,"DirectSux: Unable to %s.  (%s)","Unlock secondary buffer"
-                   ,pcVar3,piVar4,iStack_3c,iStack_38,iStack_40,uStack_34);
-        sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_204);
+      uVar1 = (*g_DirectSoundSecondaryBuffer->vtable->Unlock)
+                        (g_DirectSoundSecondaryBuffer,in_stack_0000000c,in_stack_00000010,
+                         in_stack_00000008,in_stack_00000014);
+      if (uVar1 != 0) {
+        sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
+        uStack_330 = 0x5ae197;
+        crt_stdio_c_sprintf_FUN_005fdbd0(acStack_18c,"DirectSux: Unable to %s.  (%s)");
+        sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_188);
         return 0;
       }
       return 1;
@@ -106,7 +99,7 @@ int __cdecl sound_snddx_cpp_FUN_005adff0(void)
 
 // Assembly code:
 // 005adff0: PUSH EBX
-//   Label: sound_snddx.cpp_FUN_005adff0
+//   Label: sound_snddx.cpp_fillStreamBuffer_FUN_005adff0
 // 005adff1: PUSH ESI
 // 005adff2: PUSH EDI
 // 005adff3: PUSH EBP
@@ -204,7 +197,7 @@ int __cdecl sound_snddx_cpp_FUN_005adff0(void)
 // 005ae0ce: PUSH EAX
 // 005ae0cf: LEA EAX,[ESP + 0x334]
 // 005ae0d6: PUSH EAX
-// 005ae0d7: CALL sound_sndmain.cpp_FUN_005aca90
+// 005ae0d7: CALL sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
 //   XREF to: 005aca90 (UNCONDITIONAL_CALL)
 // 005ae0dc: MOV EDX,dword ptr [0x03f6a9dc]
 //   XREF to: 03f6a9dc (READ)
@@ -246,7 +239,7 @@ int __cdecl sound_snddx_cpp_FUN_005adff0(void)
 // 005ae13c: RET
 // 005ae13d: PUSH EAX
 //   Label: LAB_005ae13d
-// 005ae13e: CALL sound_snddx.cpp_FUN_005ade70
+// 005ae13e: CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   XREF to: 005ade70 (UNCONDITIONAL_CALL)
 // 005ae143: ADD ESP,0x4
 // 005ae146: PUSH EAX
@@ -273,7 +266,7 @@ int __cdecl sound_snddx_cpp_FUN_005adff0(void)
 // 005ae175: RET
 // 005ae176: PUSH EAX
 //   Label: LAB_005ae176
-// 005ae177: CALL sound_snddx.cpp_FUN_005ade70
+// 005ae177: CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   XREF to: 005ade70 (UNCONDITIONAL_CALL)
 // 005ae17c: ADD ESP,0x4
 // 005ae17f: PUSH EAX

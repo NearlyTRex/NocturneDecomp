@@ -7,7 +7,7 @@
 //   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c
 // Function calls:
 //   crt_stdio.c_sprintf_FUN_005fdbd0
-//   sound_snddx.cpp_FUN_005ade70
+//   sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
@@ -17,14 +17,14 @@ int __cdecl sound_snddx_cpp_FUN_005adf90(void)
 {
   char *pcVar1;
   BADSPACEBASE *in_ESP;
-  int in_stack_00000004;
+  uint in_stack_00000004;
   undefined4 in_stack_0000000c;
   char acStack_188 [392];
   
   if (in_stack_00000004 == 0) {
     return 1;
   }
-  pcVar1 = sound_snddx_cpp_FUN_005ade70();
+  pcVar1 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(in_stack_00000004);
   crt_stdio_c_sprintf_FUN_005fdbd0
             (&stack0xfffffe74,"DirectSux: Unable to %s.  (%s)",in_stack_0000000c,pcVar1);
   sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_188);
@@ -45,7 +45,7 @@ int __cdecl sound_snddx_cpp_FUN_005adf90(void)
 // 005adfac: RET
 // 005adfad: PUSH EAX
 //   Label: LAB_005adfad
-// 005adfae: CALL sound_snddx.cpp_FUN_005ade70
+// 005adfae: CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   XREF to: 005ade70 (UNCONDITIONAL_CALL)
 // 005adfb3: ADD ESP,0x4
 // 005adfb6: PUSH EAX

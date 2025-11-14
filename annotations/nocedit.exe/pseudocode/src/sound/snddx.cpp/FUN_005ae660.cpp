@@ -9,83 +9,76 @@
 //   undefined4 DAT_00681dd0
 //   undefined4 DAT_00686d68
 //   IDirectSound* g_DirectSound
-//   undefined4 DAT_03f6a9c0
+//   IKsPropertySet* g_DirectSoundPropertySet
 // Function calls:
 //   crt_memory.c_memset_FUN_005fde40
 //   crt_stdio.c_sprintf_FUN_005fdbd0
-//   sound_snddx.cpp_FUN_005ade70
+//   sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
 
+/* WARNING: Exceeded maximum restarts with more pending */
+
 void sound_snddx_cpp_FUN_005ae660(void)
 
 {
-  int iVar1;
-  char *pcVar2;
+  uint error_code;
+  char *pcVar1;
   BADSPACEBASE *in_ESP;
-  IDirectSound *pIStack_1e0;
-  int *piStack_40;
-  int *piStack_3c;
-  undefined4 uStack_38;
-  int *piStack_34;
-  undefined4 *puStack_30;
-  undefined2 local_2c;
-  undefined2 uStack_2a;
-  undefined4 *puStack_28;
-  undefined4 uStack_24;
-  undefined2 uStack_20;
-  undefined2 uStack_1e;
-  undefined4 local_18;
+  char acStack_1d0 [400];
+  DSBUFFERDESC DStack_40;
+  int **ppiStack_30;
+  int *local_2c;
+  undefined4 uStack_28;
+  int *piStack_24;
+  undefined4 *puStack_20;
+  IDirectSoundBuffer *local_18;
   undefined4 local_14;
   
-  if (DAT_03f6a9c0 != (int *)0x0) {
-    (**(code **)(*DAT_03f6a9c0 + 8))();
-    DAT_03f6a9c0 = (int *)0x0;
+  if (g_DirectSoundPropertySet != (IKsPropertySet *)0x0) {
+    (*g_DirectSoundPropertySet->vtable->Release)((IUnknown *)g_DirectSoundPropertySet);
+    g_DirectSoundPropertySet = (IKsPropertySet *)0x0;
   }
-  local_18 = 0;
+  local_18 = (IDirectSoundBuffer *)0x0;
   local_14 = 0;
-  pIStack_1e0 = (IDirectSound *)0x5ae6b3;
   crt_memory_c_memset_FUN_005fde40(&local_2c,0,0x12);
-  local_2c = 1;
-  uStack_2a = 1;
-  puStack_28 = (undefined4 *)0x5622;
-  uStack_1e = 0x10;
-  uStack_20 = 2;
-  uStack_24 = 0xac44;
-  pIStack_1e0 = (IDirectSound *)0x5ae6fe;
-  crt_memory_c_memset_FUN_005fde40(&piStack_40,0,0x14);
-  piStack_40 = (int *)0x14;
-  piStack_3c = (int *)0x12;
-  puStack_30 = (undefined4 *)&local_2c;
-  uStack_38 = 0x400;
-  pIStack_1e0 = g_DirectSound;
-  iVar1 = (*(code *)g_DirectSound->vtable[3])();
-  if (iVar1 == 0) {
-    (**(code **)*puStack_28)();
-    if (puStack_30 == (undefined4 *)0x0) {
-      if (piStack_34 != (int *)0x0) {
-        (**(code **)(*piStack_34 + 8))();
+  local_2c = (int *)0x10001;
+  uStack_28 = 0x5622;
+  puStack_20 = (undefined4 *)0x100002;
+  piStack_24 = (int *)0xac44;
+  crt_memory_c_memset_FUN_005fde40(&DStack_40,0,0x14);
+  DStack_40.field0_0x0 = 0x14;
+  DStack_40.field1_0x4 = 0x12;
+  ppiStack_30 = &local_2c;
+  DStack_40.field2_0x8 = 0x400;
+  error_code = (*g_DirectSound->vtable->CreateSoundBuffer)
+                         (g_DirectSound,&DStack_40,&local_18,(LPUNKNOWN)0x0);
+  if (error_code == 0) {
+    (*local_18->vtable->QueryInterface)();
+    if (puStack_20 == (undefined4 *)0x0) {
+      if (piStack_24 != (int *)0x0) {
+        (**(code **)(*piStack_24 + 8))();
       }
     }
     else {
-      (**(code **)*puStack_30)();
-      if (piStack_40 != (int *)0x0) {
-        (**(code **)(*piStack_40 + 8))();
-        piStack_40 = (int *)0x0;
+      (**(code **)*puStack_20)();
+      if (ppiStack_30 != (int **)0x0) {
+        (*(code *)(*ppiStack_30)[2])();
+        ppiStack_30 = (int **)0x0;
       }
-      if (piStack_3c != (int *)0x0) {
-        (**(code **)(*piStack_3c + 8))();
+      if (local_2c != (int *)0x0) {
+        (**(code **)(*local_2c + 8))();
         return;
       }
     }
   }
   else {
-    pcVar2 = sound_snddx_cpp_FUN_005ade70();
+    pcVar1 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
     crt_stdio_c_sprintf_FUN_005fdbd0
-              ((char *)&pIStack_1e0,"DirectSux: Unable to %s.  (%s)",
-               "Create temp secondary buffer for property set creation",pcVar2);
-    sound_sndmain_cpp_logSoundError_FUN_005adba0((char *)&pIStack_1e0);
+              (acStack_1d0,"DirectSux: Unable to %s.  (%s)","Create temp secondary buffer for property set creation",
+               pcVar1);
+    sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_1d0);
   }
   return;
 }
@@ -189,7 +182,7 @@ void sound_snddx_cpp_FUN_005ae660(void)
 // 005ae793: RET
 // 005ae794: PUSH EAX
 //   Label: LAB_005ae794
-// 005ae795: CALL sound_snddx.cpp_FUN_005ade70
+// 005ae795: CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   XREF to: 005ade70 (UNCONDITIONAL_CALL)
 // 005ae79a: ADD ESP,0x4
 // 005ae79d: PUSH EAX

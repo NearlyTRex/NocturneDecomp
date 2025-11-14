@@ -17,7 +17,7 @@
 // Function calls:
 //   crt_memory.c_memset_FUN_005fde40
 //   crt_stdio.c_sprintf_FUN_005fdbd0
-//   sound_snddx.cpp_FUN_005ade70
+//   sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
@@ -26,78 +26,74 @@ int __cdecl
 sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDirectSoundDevice *this_ptr)
 
 {
-  IDirectSoundBuffer *pIVar1;
+  IDirectSoundBuffer *this_ptr_00;
+  int iVar1;
   int iVar2;
-  int iVar3;
-  char *pcVar4;
-  int unaff_EBX;
-  int iVar5;
+  uint error_code;
+  char *pcVar3;
+  int iVar4;
   BADSPACEBASE *in_ESP;
   int in_stack_00000008;
-  int in_stack_0000000c;
-  int in_stack_00000010;
+  short in_stack_00000010;
   int in_stack_00000014;
-  IDirectSound *pIStack_1d8;
-  undefined4 local_38;
-  undefined4 local_34;
-  int local_30;
-  undefined2 *local_28;
-  undefined2 local_24;
-  short local_22;
-  int local_1c;
-  ushort local_18;
-  undefined2 local_16;
+  int in_stack_0000001c;
+  int in_stack_00000028;
+  undefined1 local_34 [4];
+  DSBUFFERDESC local_30;
+  undefined4 local_20;
+  undefined1 local_1c [4];
+  int local_18;
+  ushort uStack_14;
+  undefined2 uStack_12;
   
   if (g_DirectSound != (IDirectSound *)0x0) {
-    iVar5 = 1;
+    iVar4 = 1;
     iVar2 = 4;
     if (g_DirectSoundSampleBuffers[1] != (IDirectSoundBuffer *)0x0) {
       do {
-        iVar5 = iVar5 + 1;
+        iVar4 = iVar4 + 1;
         if (99 < iVar2 + 4) break;
-        iVar3 = iVar2 + 4;
+        iVar1 = iVar2 + 4;
         iVar2 = iVar2 + 4;
-      } while (*(int *)((int)g_DirectSoundSampleBuffers + iVar3) != 0);
+      } while (*(int *)((int)g_DirectSoundSampleBuffers + iVar1) != 0);
     }
-    if (iVar5 < 0x19) {
-      pIStack_1d8 = (IDirectSound *)0x5aefa3;
-      crt_memory_c_memset_FUN_005fde40(&local_24,0,0x12);
-      local_24 = 1;
-      local_22 = (short)in_stack_0000000c;
+    if (iVar4 < 0x19) {
+      crt_memory_c_memset_FUN_005fde40(&local_30.field3_0xc,0,0x12);
+      local_20 = (undefined1 *)CONCAT22(in_stack_00000010,1);
       iVar2 = (int)((in_stack_00000008 + (in_stack_00000008 >> 0x1f) * -8) -
                    (uint)((in_stack_00000008 >> 0x1f) << 2 < 0)) >> 3;
-      local_18 = (short)iVar2 * local_22;
-      local_1c = in_stack_00000010 * (uint)local_18;
-      local_16 = (undefined2)in_stack_00000008;
-      pIStack_1d8 = (IDirectSound *)0x5af02a;
-      crt_memory_c_memset_FUN_005fde40(&local_38,0,0x14);
-      local_28 = &local_24;
-      local_30 = in_stack_0000000c * in_stack_00000014 * iVar2;
-      local_38 = 0x14;
-      local_34 = 0xb0;
-      pIStack_1d8 = g_DirectSound;
-      iVar3 = (*(code *)g_DirectSound->vtable[3])();
-      if (iVar3 == 0) {
-        if (g_DirectSoundSampleBuffers[iVar5] != (IDirectSoundBuffer *)0x0) {
-          g_DirectSoundBufferMetadata[iVar5].field1_0x4 = 0;
-          g_DirectSoundBufferMetadata[iVar5].field0_0x0 = unaff_EBX * iVar2;
-          return iVar5;
+      uStack_14 = (short)iVar2 * in_stack_00000010;
+      local_18 = in_stack_00000014 * (uint)uStack_14;
+      uStack_12 = (undefined2)in_stack_00000008;
+      crt_memory_c_memset_FUN_005fde40(local_34,0,0x14);
+      local_20 = local_1c;
+      local_30.field2_0x8 = in_stack_00000014 * in_stack_0000001c * iVar2;
+      local_30.field0_0x0 = 0x14;
+      local_30.field1_0x4 = 0xb0;
+      error_code = (*g_DirectSound->vtable->CreateSoundBuffer)
+                             (g_DirectSound,&local_30,g_DirectSoundSampleBuffers + iVar4,
+                              (LPUNKNOWN)0x0);
+      if (error_code == 0) {
+        if (g_DirectSoundSampleBuffers[iVar4] != (IDirectSoundBuffer *)0x0) {
+          g_DirectSoundBufferMetadata[iVar4].field1_0x4 = 0;
+          g_DirectSoundBufferMetadata[iVar4].field0_0x0 = in_stack_00000028 * iVar2;
+          return iVar4;
         }
       }
       else {
-        pcVar4 = sound_snddx_cpp_FUN_005ade70();
+        pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
         crt_stdio_c_sprintf_FUN_005fdbd0
-                  ((char *)&pIStack_1d8,"DirectSux: Unable to %s.  (%s)",
-                   "Create secondary buffer",pcVar4);
-        sound_sndmain_cpp_logSoundError_FUN_005adba0((char *)&pIStack_1d8);
+                  (&stack0xfffffe58,"DirectSux: Unable to %s.  (%s)",
+                   "Create secondary buffer",pcVar3);
+        sound_sndmain_cpp_logSoundError_FUN_005adba0(&stack0xfffffe5c);
       }
       sound_sndmain_cpp_logSoundError_FUN_005adba0("DirectSoundDevice::allocateSample - access failed\n");
-      pIVar1 = g_DirectSoundSampleBuffers[iVar5];
-      if (pIVar1 != (IDirectSoundBuffer *)0x0) {
-        (**(code **)((int)pIVar1->field0_0x0 + 8))();
-        g_DirectSoundSampleBuffers[iVar5] = (IDirectSoundBuffer *)0x0;
+      this_ptr_00 = g_DirectSoundSampleBuffers[iVar4];
+      if (this_ptr_00 != (IDirectSoundBuffer *)0x0) {
+        (*this_ptr_00->vtable->Release)((IUnknown *)this_ptr_00);
+        g_DirectSoundSampleBuffers[iVar4] = (IDirectSoundBuffer *)0x0;
       }
-      g_DirectSoundBufferMetadata[iVar5].field0_0x0 = 0;
+      g_DirectSoundBufferMetadata[iVar4].field0_0x0 = 0;
       return 0;
     }
   }
@@ -273,7 +269,7 @@ sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDirectSoundDevic
 // 005af0ed: RET
 // 005af0ee: PUSH EAX
 //   Label: LAB_005af0ee
-// 005af0ef: CALL sound_snddx.cpp_FUN_005ade70
+// 005af0ef: CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   XREF to: 005ade70 (UNCONDITIONAL_CALL)
 // 005af0f4: ADD ESP,0x4
 // 005af0f7: PUSH EAX

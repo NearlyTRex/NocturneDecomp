@@ -5,7 +5,7 @@
 // Signature: void sound_snddx.cpp_CDirectSoundDevice_setRolloffFactor_FUN_005aef10(CDirectSoundDevice * this_ptr)
 // Globals:
 //   double DOUBLE_00651c04 = 0.304800000000000
-//   undefined4 DAT_03f6a9bc
+//   IDirectSound3DListener* g_DirectSound3DListener
 
 #include "nocturne.h"
 
@@ -13,10 +13,14 @@ void __cdecl
 sound_snddx_cpp_CDirectSoundDevice_setRolloffFactor_FUN_005aef10(CDirectSoundDevice *this_ptr)
 
 {
-  if (DAT_03f6a9bc == (int *)0x0) {
+  double in_stack_00000008;
+  
+  if (g_DirectSound3DListener == (IDirectSound3DListener *)0x0) {
     return;
   }
-  (**(code **)(*DAT_03f6a9bc + 0x2c))();
+  (*g_DirectSound3DListener->vtable->SetDistanceFactor)
+            (g_DirectSound3DListener,(float)((float10)in_stack_00000008 * (float10)DOUBLE_00651c04),
+             0);
   return;
 }
 

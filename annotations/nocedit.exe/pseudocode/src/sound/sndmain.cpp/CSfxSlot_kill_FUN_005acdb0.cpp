@@ -9,7 +9,7 @@
 //   TerminatedCString s_sound_sndmain_cpp_0065104e
 //   TerminatedCString s_SfxSlot_kill_must_be_loc_00651063
 //   undefined4 DAT_00651087
-//   undefined4 DAT_0065108f
+//   double DOUBLE_0065108f = 0.25
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 //   CSfxSlot[64] g_SfxSlots

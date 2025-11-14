@@ -6,11 +6,11 @@
 // Globals:
 //   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c
 //   TerminatedCString s_Stop_hardware_sfx_second_00651ab9
-//   undefined4 DAT_03f6aa44
+//   IDirectSoundBuffer* g_DirectSoundSampleBuffersEnd
 //   undefined4 DAT_03f6aac0
 // Function calls:
 //   crt_stdio.c_sprintf_FUN_005fdbd0
-//   sound_snddx.cpp_FUN_005ade70
+//   sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
@@ -18,33 +18,34 @@
 undefined4 sound_snddx_cpp_FUN_005ae1c0(void)
 
 {
+  LPDIRECTSOUNDBUFFER this_ptr;
   int *piVar1;
-  int iVar2;
-  char *pcVar3;
+  IDirectSoundBuffer *this_ptr_00;
+  uint error_code;
+  char *pcVar2;
   BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   char acStack_198 [400];
   
-  if ((int *)(&DAT_03f6aa44)[in_stack_00000004] != (int *)0x0) {
-    iVar2 = (**(code **)(*(int *)(&DAT_03f6aa44)[in_stack_00000004] + 0x48))();
-    if (iVar2 != 0) {
-      pcVar3 = sound_snddx_cpp_FUN_005ade70();
-      crt_stdio_c_sprintf_FUN_005fdbd0
-                (acStack_198,"DirectSux: Unable to %s.  (%s)","Stop hardware sfx secondary buffer",
-                 pcVar3);
-      sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_198);
-      return 0;
-    }
+  this_ptr = (&g_DirectSoundSampleBuffersEnd)[in_stack_00000004];
+  if ((this_ptr != (LPDIRECTSOUNDBUFFER)0x0) &&
+     (error_code = (*this_ptr->vtable->Stop)(this_ptr), error_code != 0)) {
+    pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
+    crt_stdio_c_sprintf_FUN_005fdbd0
+              (acStack_198,"DirectSux: Unable to %s.  (%s)","Stop hardware sfx secondary buffer",
+               pcVar2);
+    sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_198);
+    return 0;
   }
   piVar1 = (int *)g_DirectSoundBufferInUse[in_stack_00000004 + 0x1e];
   if (piVar1 != (int *)0x0) {
     (**(code **)(*piVar1 + 8))();
     g_DirectSoundBufferInUse[in_stack_00000004 + 0x1e] = 0;
   }
-  piVar1 = (int *)(&DAT_03f6aa44)[in_stack_00000004];
-  if (piVar1 != (int *)0x0) {
-    (**(code **)(*piVar1 + 8))();
-    (&DAT_03f6aa44)[in_stack_00000004] = 0;
+  this_ptr_00 = (&g_DirectSoundSampleBuffersEnd)[in_stack_00000004];
+  if (this_ptr_00 != (IDirectSoundBuffer *)0x0) {
+    (*this_ptr_00->vtable->Release)((IUnknown *)this_ptr_00);
+    (&g_DirectSoundSampleBuffersEnd)[in_stack_00000004] = (IDirectSoundBuffer *)0x0;
   }
   return 1;
 }
@@ -101,7 +102,7 @@ undefined4 sound_snddx_cpp_FUN_005ae1c0(void)
 // 005ae228: JZ 0x005ae1e0
 //   XREF to: 005ae1e0 (CONDITIONAL_JUMP)
 // 005ae22a: PUSH EAX
-// 005ae22b: CALL sound_snddx.cpp_FUN_005ade70
+// 005ae22b: CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   XREF to: 005ade70 (UNCONDITIONAL_CALL)
 // 005ae230: ADD ESP,0x4
 // 005ae233: PUSH EAX

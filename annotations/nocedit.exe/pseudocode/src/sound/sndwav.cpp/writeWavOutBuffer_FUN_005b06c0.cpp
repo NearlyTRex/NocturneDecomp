@@ -21,8 +21,8 @@
 //   int g_WaveOutSampleRate
 //   int g_WaveOutBufferSize
 // Function calls:
-//   sound_sndmain.cpp_FUN_005aca90
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
+//   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
 //   waveOutPrepareHeader
 //   waveOutUnprepareHeader
 //   waveOutWrite
@@ -36,11 +36,12 @@ int __cdecl sound_sndwav_cpp_writeWavOutBuffer_FUN_005b06c0(int buffer_index)
   LPVOID pvVar2;
   MMRESULT MVar3;
   int iVar4;
-  int iVar6;
+  int iVar5;
+  int iVar7;
   BADSPACEBASE *in_ESP;
   int unaff_retaddr;
   int in_stack_00000010;
-  int iVar5;
+  int iVar6;
   
   if ((g_WaveOutBuffers[buffer_index] == (LPVOID)0x0) ||
      (g_WaveOutHeaders[buffer_index] == (LPWAVEHDR)0x0)) {
@@ -51,20 +52,23 @@ int __cdecl sound_sndwav_cpp_writeWavOutBuffer_FUN_005b06c0(int buffer_index)
     sound_sndmain_cpp_logSoundError_FUN_005adba0("waveOutUnprepareHeader failed!");
     return 0;
   }
-  iVar6 = 0;
+  iVar4 = (int)((g_WaveOutBitsPerSample + (g_WaveOutBitsPerSample >> 0x1f) * -8) -
+               (uint)((g_WaveOutBitsPerSample >> 0x1f) << 2 < 0)) >> 3;
+  iVar7 = 0;
   if (0 < g_WaveOutChannels * 4) {
     pvVar2 = g_WaveOutBuffers[buffer_index];
-    iVar5 = 0;
+    iVar6 = 0;
     do {
-      iVar4 = iVar5 + 4;
-      iVar1 = (int)pvVar2 + iVar6;
-      iVar6 = iVar6 + ((int)((g_WaveOutBitsPerSample + (g_WaveOutBitsPerSample >> 0x1f) * -8) -
-                            (uint)((g_WaveOutBitsPerSample >> 0x1f) << 2 < 0)) >> 3);
-      *(int *)(&stack0xffffffdc + iVar5) = iVar1;
-      iVar5 = iVar4;
-    } while (iVar4 < g_WaveOutChannels * 4);
+      iVar5 = iVar6 + 4;
+      iVar1 = (int)pvVar2 + iVar7;
+      iVar7 = iVar7 + iVar4;
+      *(int *)(&stack0xffffffdc + iVar6) = iVar1;
+      iVar6 = iVar5;
+    } while (iVar5 < g_WaveOutChannels * 4);
   }
-  sound_sndmain_cpp_FUN_005aca90();
+  sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90
+            ((LPVOID *)&stack0xffffffdc,g_WaveOutBitsPerSample,g_WaveOutChannels,g_WaveOutSampleRate
+             ,g_WaveOutBufferSize,iVar4 * g_WaveOutChannels);
   *(int *)(*(int *)((int)g_WaveOutHeaders + unaff_retaddr) + 4) =
        ((int)((g_WaveOutBitsPerSample + (g_WaveOutBitsPerSample >> 0x1f) * -8) -
              (uint)((g_WaveOutBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveOutBufferSize *
@@ -171,7 +175,7 @@ int __cdecl sound_sndwav_cpp_writeWavOutBuffer_FUN_005b06c0(int buffer_index)
 // 005b076e: PUSH ECX
 // 005b076f: LEA EAX,[ESP + 0x14]
 // 005b0773: PUSH EAX
-// 005b0774: CALL sound_sndmain.cpp_FUN_005aca90
+// 005b0774: CALL sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
 //   XREF to: 005aca90 (UNCONDITIONAL_CALL)
 // 005b0779: MOV EAX,[0x03f6adb8]
 //   XREF to: 03f6adb8 (READ)

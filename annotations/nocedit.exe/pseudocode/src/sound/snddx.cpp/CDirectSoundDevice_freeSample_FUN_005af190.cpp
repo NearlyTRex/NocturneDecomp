@@ -19,7 +19,7 @@ void __cdecl
 sound_snddx_cpp_CDirectSoundDevice_freeSample_FUN_005af190(CDirectSoundDevice *this_ptr)
 
 {
-  IDirectSoundBuffer *pIVar1;
+  IDirectSoundBuffer *this_ptr_00;
   int in_stack_00000008;
   
   if ((((in_stack_00000008 < 1) || (0x18 < in_stack_00000008)) ||
@@ -29,9 +29,9 @@ sound_snddx_cpp_CDirectSoundDevice_freeSample_FUN_005af190(CDirectSoundDevice *t
     g_CurrentLineNumber = 0x2b1;
     core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::freeSample - Invalid handle: %d");
   }
-  pIVar1 = g_DirectSoundSampleBuffers[in_stack_00000008];
-  if (pIVar1 != (IDirectSoundBuffer *)0x0) {
-    (**(code **)((int)pIVar1->field0_0x0 + 8))();
+  this_ptr_00 = g_DirectSoundSampleBuffers[in_stack_00000008];
+  if (this_ptr_00 != (IDirectSoundBuffer *)0x0) {
+    (*this_ptr_00->vtable->Release)((IUnknown *)this_ptr_00);
     g_DirectSoundSampleBuffers[in_stack_00000008] = (IDirectSoundBuffer *)0x0;
   }
   g_DirectSoundBufferMetadata[in_stack_00000008].field0_0x0 = 0;

@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_snddx.cpp_FUN_005af720()
 // Globals:
-//   undefined4 DAT_03f6aa44
+//   IDirectSoundBuffer* g_DirectSoundSampleBuffersEnd
 //   undefined4 DAT_03f6aac0
 
 #include "nocturne.h"
@@ -15,7 +15,7 @@ undefined4 sound_snddx_cpp_FUN_005af720(void)
   int in_stack_00000004;
   
   if ((((0 < in_stack_00000004) && (in_stack_00000004 < 0x1f)) &&
-      ((&DAT_03f6aa44)[in_stack_00000004] != 0)) &&
+      ((&g_DirectSoundSampleBuffersEnd)[in_stack_00000004] != (IDirectSoundBuffer *)0x0)) &&
      (g_DirectSoundBufferInUse[in_stack_00000004 + 0x1e] != 0)) {
     return 1;
   }

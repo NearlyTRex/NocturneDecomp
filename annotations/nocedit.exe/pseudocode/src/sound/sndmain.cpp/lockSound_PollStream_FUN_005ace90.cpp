@@ -6,9 +6,9 @@
 // Cross-references:
 //   sound_sndmain.cpp_processAudio_FUN_005abe20 (005abe20) at 005abe6f [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00651097
-//   undefined4 DAT_0065109f
-//   undefined4 DAT_006510a7
+//   double DOUBLE_00651097 = -0.300000000000000
+//   double DOUBLE_0065109f = -0.100000000000000
+//   double DOUBLE_006510a7 = -0.200000000000000
 //   undefined4 DAT_00663164
 //   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f629ac
@@ -20,7 +20,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 sound_sndmain.cpp_lockSound_PollStream(undefined4 param_1) */
 
 void sound_sndmain_cpp_lockSound_PollStream_FUN_005ace90(void)

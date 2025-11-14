@@ -1,17 +1,17 @@
-// Name: sound_sndmain.cpp_FUN_005aca90
+// Name: sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
 // Address: 005aca90
 // Address Range: [[005aca90, 005acda2]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_FUN_005aca90(void)
+// Signature: void sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90(LPVOID * channel_buffers, int bits_per_sample, int num_channels, int samples_per_sec, int samples_per_block, int block_align)
 // Cross-references:
-//   sound_snddx.cpp_FUN_005adff0 (005adff0) at 005ae0d7 [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_fillStreamBuffer_FUN_005adff0 (005adff0) at 005ae0d7 [UNCONDITIONAL_CALL]
 //   sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0 (005b06c0) at 005b0774 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_0064fb9a
 //   TerminatedCString s_SfxSlot_kill_must_be_loc_0064fbaf
 //   TerminatedCString s_sound_sndmain_cpp_0064fbcf
 //   TerminatedCString s_nextMixingBuffer_shouldn_0064fbe4
-//   undefined4 s_..\sound\sndmain.cpp_0065101f
+//   TerminatedCString s_sound_sndmain_cpp_0065101f
 //   TerminatedCString s_pollSfx_must_be_locked_00651034
 //   int g_AudioBitsPerSample = 0x10
 //   int g_AudioChannelCount = 0x2
@@ -40,7 +40,10 @@
 
 #include "nocturne.h"
 
-void __cdecl sound_sndmain_cpp_FUN_005aca90(void)
+void __cdecl
+sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90
+          (LPVOID *channel_buffers,int bits_per_sample,int num_channels,int samples_per_sec,
+          int samples_per_block,int block_align)
 
 {
   int *piVar1;
@@ -55,9 +58,6 @@ void __cdecl sound_sndmain_cpp_FUN_005aca90(void)
   undefined4 *puVar7;
   undefined4 *puVar8;
   byte bVar9;
-  int *in_stack_0000000c;
-  int in_stack_00000010;
-  int in_stack_00000014;
   int in_stack_0000001c;
   int in_stack_00000020;
   undefined4 auStack_90 [5];
@@ -70,32 +70,32 @@ void __cdecl sound_sndmain_cpp_FUN_005aca90(void)
   
   bVar9 = 0;
   if (g_SoundLockCount < 1) {
-    g_CurrentFilename = "!\t@..\\sound\\sndmain.cpp" + 3;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x16ce;
     uStack_74 = 0x5acd6b;
     core_main_c_displayErrorAndQuit_FUN_00506f10("pollSfx - must be locked!");
   }
-  if (0 < in_stack_00000010) {
+  if (0 < samples_per_sec) {
     iVar2 = 0;
     do {
       if (*(int *)((int)g_ChannelPrimaryBuffers + iVar2) == 0) {
         return;
       }
       iVar2 = iVar2 + 4;
-    } while (SBORROW4(iVar2,in_stack_00000010 * 4) != iVar2 + in_stack_00000010 * -4 < 0);
+    } while (SBORROW4(iVar2,samples_per_sec * 4) != iVar2 + samples_per_sec * -4 < 0);
   }
-  if (((in_stack_0000000c == (int *)g_AudioBitsPerSample) &&
-      (in_stack_00000010 == g_AudioChannelCount)) && (in_stack_00000014 == g_AudioSampleRate)) {
+  if (((num_channels == g_AudioBitsPerSample) && (samples_per_sec == g_AudioChannelCount)) &&
+     (samples_per_block == g_AudioSampleRate)) {
     sound_sndmain_cpp_FUN_005a5530();
     iVar2 = 0;
-    if (0 < in_stack_00000014) {
+    if (0 < samples_per_block) {
       do {
         iVar2 = iVar2 + 1;
-        aiStack_3c[iVar2] = *in_stack_0000000c;
-        in_stack_0000000c = in_stack_0000000c + 1;
-      } while (iVar2 < in_stack_00000014);
+        aiStack_3c[iVar2] = *(int *)num_channels;
+        num_channels = num_channels + 4;
+      } while (iVar2 < samples_per_block);
     }
-    local_18 = in_stack_00000014 << 2;
+    local_18 = samples_per_block << 2;
     local_14 = (CSfxSlot *)&g_SfxLastSlot;
     for (; 0 < in_stack_0000001c; in_stack_0000001c = in_stack_0000001c - iVar3) {
       if (g_MixBufferReadIndex < 1) {
@@ -164,7 +164,7 @@ void __cdecl sound_sndmain_cpp_FUN_005aca90(void)
       if (in_stack_0000001c < g_MixBufferReadIndex) {
         iVar3 = in_stack_0000001c;
       }
-      if (0 < in_stack_00000014) {
+      if (0 < samples_per_block) {
         iVar5 = 0;
         do {
           uStack_74 = *(undefined4 *)((int)aiStack_3c + iVar5 + 4);
@@ -187,7 +187,7 @@ void __cdecl sound_sndmain_cpp_FUN_005aca90(void)
 
 // Assembly code:
 // 005aca90: PUSH EBX
-//   Label: sound_sndmain.cpp_FUN_005aca90
+//   Label: sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
 // 005aca91: PUSH ESI
 // 005aca92: PUSH EDI
 // 005aca93: PUSH EBP

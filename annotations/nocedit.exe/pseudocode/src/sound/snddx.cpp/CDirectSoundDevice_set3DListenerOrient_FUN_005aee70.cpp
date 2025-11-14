@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70(CDirectSoundDevice * this_ptr)
 // Globals:
-//   undefined4 DAT_03f6a9bc
+//   IDirectSound3DListener* g_DirectSound3DListener
 
 #include "nocturne.h"
 
@@ -12,10 +12,20 @@ void __cdecl
 sound_snddx_cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70(CDirectSoundDevice *this_ptr)
 
 {
-  if (DAT_03f6a9bc == (int *)0x0) {
+  double in_stack_00000020;
+  double in_stack_00000028;
+  double in_stack_00000030;
+  double in_stack_00000038;
+  double in_stack_00000040;
+  double in_stack_00000048;
+  
+  if (g_DirectSound3DListener == (IDirectSound3DListener *)0x0) {
     return;
   }
-  (**(code **)(*DAT_03f6a9bc + 0x34))();
+  (*g_DirectSound3DListener->vtable->SetOrientation)
+            (g_DirectSound3DListener,(float)in_stack_00000038,(float)in_stack_00000040,
+             (float)in_stack_00000048,(float)in_stack_00000020,(float)in_stack_00000028,
+             (float)in_stack_00000030,0);
   return;
 }
 

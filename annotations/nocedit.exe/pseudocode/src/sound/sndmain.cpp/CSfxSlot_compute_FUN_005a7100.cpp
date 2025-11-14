@@ -12,9 +12,9 @@
 //   sound_sndmain.cpp_FUN_005a9910 (005a9910) at 005a993a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a9970 (005a9970) at 005a99ca [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a9a70 (005a9a70) at 005a9aa0 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005aca90 (005aca90) at 005acc5a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_SoundDelayComputeThing_FUN_005a9a00 (005a9a00) at 005a9a30 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_YetAnother2ComputingDelayCall_FUN_005a98b0 (005a98b0) at 005a98da [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 (005aca90) at 005acc5a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a90fd [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_0065022e

@@ -5,7 +5,7 @@
 // Signature: undefined sound_sndmain.cpp_FUN_005a5530()
 // Cross-references:
 //   sound_sndmain.cpp_CSfxSlot_kill_FUN_005acdb0 (005acdb0) at 005acdc4 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005aca90 (005aca90) at 005acaf9 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 (005aca90) at 005acaf9 [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_0064fab7 = 0.5
 //   int g_AudioChannelCount = 0x2
@@ -26,7 +26,6 @@
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005a5530() */
 
 void sound_sndmain_cpp_FUN_005a5530(void)
 

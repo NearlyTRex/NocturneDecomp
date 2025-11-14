@@ -1,8 +1,8 @@
-// Name: sound_snddx.cpp_FUN_005ade70
+// Name: sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 // Address: 005ade70
 // Address Range: [[005ade70, 005adf8c]]
 // Convention: __cdecl
-// Signature: char * sound_snddx.cpp_FUN_005ade70(void)
+// Signature: char * sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70(uint error_code)
 // Cross-references:
 //   sound_snddx.cpp_CDirectSoundDevice_FUN_005afcc0 (005afcc0) at 005afd2b [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_005aef40 (005aef40) at 005af0ef [UNCONDITIONAL_CALL]
@@ -18,10 +18,10 @@
 //   sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340 (005ae340) at 005ae46a [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_005af320 (005af320) at 005af39b [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_FUN_005adf90 (005adf90) at 005adfae [UNCONDITIONAL_CALL]
-//   sound_snddx.cpp_FUN_005adff0 (005adff0) at 005ae177 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_FUN_005ae1c0 (005ae1c0) at 005ae22b [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_FUN_005ae660 (005ae660) at 005ae795 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_FUN_005b0120 (005b0120) at 005b02fe [UNCONDITIONAL_CALL]
+//   sound_snddx.cpp_fillStreamBuffer_FUN_005adff0 (005adff0) at 005ae177 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440 (005b0440) at 005b05ad [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_DSERR_ALLOCATED_The_requ_00651544
@@ -43,75 +43,73 @@
 
 #include "nocturne.h"
 
-char * __cdecl sound_snddx_cpp_FUN_005ade70(void)
+char * __cdecl sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uint error_code)
 
 {
-  uint in_stack_00000004;
-  
-  if (in_stack_00000004 < 0x88780032) {
-    if (0x8007000d < in_stack_00000004) {
-      if (in_stack_00000004 < 0x8007000f) {
+  if (error_code < 0x88780032) {
+    if (0x8007000d < error_code) {
+      if (error_code < 0x8007000f) {
         return "DSERR_OUTOFMEMORY: The DirectSound subsystem could not allocate sufficient memory to complete the caller's request.";
       }
-      if (in_stack_00000004 < 0x8878000a) {
-        if (in_stack_00000004 == 0x80070057) {
+      if (error_code < 0x8878000a) {
+        if (error_code == 0x80070057) {
           return "DSERR_INVALIDPARAM: An invalid parameter was passed to the returning function.";
         }
         return "DSERR_ELIFINO: Unknown error status code.";
       }
-      if (in_stack_00000004 < 0x8878000b) {
+      if (error_code < 0x8878000b) {
         return "DSERR_ALLOCATED: The request failed because resources, such as a priority level, were already in use by another caller.";
       }
-      if (in_stack_00000004 == 0x8878001e) {
+      if (error_code == 0x8878001e) {
         return "DSERR_CONTROLUNAVAIL: The control (volume, pan, and so forth) requested by the caller is not available.";
       }
       return "DSERR_ELIFINO: Unknown error status code.";
     }
-    if (0x80004004 < in_stack_00000004) {
-      if (in_stack_00000004 < 0x80004006) {
+    if (0x80004004 < error_code) {
+      if (error_code < 0x80004006) {
         return "DSERR_GENERIC: An undetermined error occurred inside the DirectSound subsystem.";
       }
-      if (in_stack_00000004 == 0x80040110) {
+      if (error_code == 0x80040110) {
         return "DSERR_NOAGGREGATION: The object does not support aggregation.";
       }
       return "DSERR_ELIFINO: Unknown error status code.";
     }
-    if (in_stack_00000004 == 0x80004001) {
+    if (error_code == 0x80004001) {
       return "DSERR_UNSUPPORTED: The function called is not supported at this time.";
     }
   }
   else {
-    if (in_stack_00000004 < 0x88780033) {
+    if (error_code < 0x88780033) {
       return "DSERR_INVALIDCALL: This function is not valid for the current state of this object.";
     }
-    if (in_stack_00000004 < 0x88780082) {
-      if (0x88780063 < in_stack_00000004) {
-        if (in_stack_00000004 < 0x88780065) {
+    if (error_code < 0x88780082) {
+      if (0x88780063 < error_code) {
+        if (error_code < 0x88780065) {
           return "DSERR_BADFORMAT: The specified wave format is not supported.";
         }
-        if (in_stack_00000004 == 0x88780078) {
+        if (error_code == 0x88780078) {
           return "DSERR_NODRIVER: No sound driver is available for use.";
         }
         return "DSERR_ELIFINO: Unknown error status code.";
       }
-      if (in_stack_00000004 == 0x88780046) {
+      if (error_code == 0x88780046) {
         return "DSERR_PRIOLEVELNEEDED: The caller does not have the priority level required for the function to succeed.";
       }
     }
     else {
-      if (in_stack_00000004 < 0x88780083) {
+      if (error_code < 0x88780083) {
         return "DSERR_ALREADYINITIALIZED: The object is already initialized.";
       }
-      if (in_stack_00000004 < 0x887800a0) {
-        if (in_stack_00000004 == 0x88780096) {
+      if (error_code < 0x887800a0) {
+        if (error_code == 0x88780096) {
           return "DSERR_BUFFERLOST: The buffer memory has been lost and must be restored.";
         }
       }
       else {
-        if (in_stack_00000004 < 0x887800a1) {
+        if (error_code < 0x887800a1) {
           return "DSERR_OTHERAPPHASPRIO: This value is obsolete and is not used.";
         }
-        if (in_stack_00000004 == 0x887800aa) {
+        if (error_code == 0x887800aa) {
           return "DSERR_UNINITIALIZED: The IDirectSound::Initialize method has not been called or has not been called successfully before other methods were called.";
         }
       }
@@ -123,7 +121,7 @@ char * __cdecl sound_snddx_cpp_FUN_005ade70(void)
 
 // Assembly code:
 // 005ade70: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: sound_snddx.cpp_FUN_005ade70
+//   Label: sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   XREF to: Stack[0x4] (READ)
 // 005ade74: MOV EDX,EAX
 // 005ade76: CMP EAX,0x88780032

@@ -14,6 +14,10 @@ typedef _cpinfo* LPCPINFO;
 // pointer to _FILETIME
 typedef _FILETIME* LPFILETIME;
 
+// Typedef: LPLONG
+// pointer to long
+typedef long* LPLONG;
+
 // Typedef: LPMEMORYSTATUS
 // pointer to _MEMORYSTATUS
 typedef _MEMORYSTATUS* LPMEMORYSTATUS;
@@ -77,6 +81,10 @@ typedef PTHREAD_START_ROUTINE_FUNC* PTHREAD_START_ROUTINE;
 // Typedef: PTOP_LEVEL_EXCEPTION_FILTER
 // pointer to PTOP_LEVEL_EXCEPTION_FILTER_FUNC
 typedef PTOP_LEVEL_EXCEPTION_FILTER_FUNC* PTOP_LEVEL_EXCEPTION_FILTER;
+
+// Typedef: PULONG
+// pointer to ulong
+typedef ulong* PULONG;
 
 // Typedef: SYSTEMTIME
 typedef _SYSTEMTIME SYSTEMTIME;

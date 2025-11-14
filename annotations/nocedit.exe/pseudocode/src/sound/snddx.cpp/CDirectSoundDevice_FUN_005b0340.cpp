@@ -5,17 +5,22 @@
 // Signature: void sound_snddx.cpp_CDirectSoundDevice_FUN_005b0340(CDirectSoundDevice * this_ptr)
 // Globals:
 //   undefined4 DAT_00681df0
-//   undefined4 DAT_03f6a9c0
+//   IKsPropertySet* g_DirectSoundPropertySet
 
 #include "nocturne.h"
 
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_FUN_005b0340(CDirectSoundDevice *this_ptr)
 
 {
-  if (DAT_03f6a9c0 == (int *)0x0) {
+  BADSPACEBASE *in_ESP;
+  undefined4 local_10 [4];
+  
+  if (g_DirectSoundPropertySet == (IKsPropertySet *)0x0) {
     return;
   }
-  (**(code **)(*DAT_03f6a9c0 + 0x10))();
+  local_10[0] = 0;
+  (*g_DirectSoundPropertySet->vtable->Set)
+            (g_DirectSoundPropertySet,(LPGUID)&DAT_00681df0,0,(LPVOID)0x0,0,local_10,0x10);
   return;
 }
 

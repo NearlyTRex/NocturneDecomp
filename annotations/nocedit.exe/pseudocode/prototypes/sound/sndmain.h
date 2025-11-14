@@ -703,9 +703,9 @@ undefined FUN_005ac400();
 // Address: 005ac990
 undefined FUN_005ac990();
 
-// Original: sound_sndmain.cpp_FUN_005aca90
+// Original: sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
 // Address: 005aca90
-void FUN_005aca90(void);
+void pollAndMixSfx(LPVOID * channel_buffers, int bits_per_sample, int num_channels, int samples_per_sec, int samples_per_block, int block_align);
 
 // Original: sound_sndmain.cpp_CSfxSlot_kill_FUN_005acdb0
 // Address: 005acdb0

@@ -7,81 +7,85 @@
 //   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c
 //   TerminatedCString s_Position_secondary_buffe_00651adc
 //   TerminatedCString s_Play_the_secondary_buffe_00651afb
-//   undefined4 DAT_00651b1c
-//   undefined4 DAT_03f6a9b8
-//   undefined4 DAT_03f6a9c4
-//   undefined4 DAT_03f6a9c8
-//   undefined4 DAT_03f6a9cc
-//   undefined4 DAT_03f6a9d0
-//   undefined4 DAT_03f6a9d4
-//   undefined4 DAT_03f6a9d8
-//   undefined4 DAT_03f6a9dc
+//   double DOUBLE_00651b1c = 0.5
+//   IDirectSoundBuffer* g_DirectSoundSecondaryBuffer
+//   int g_StreamBitsPerSample
+//   int g_StreamSampleRate
+//   int g_StreamChannelCount
+//   int g_StreamSamplesPerBlock
+//   int g_StreamBlockSizeBytes
+//   int g_StreamBlockCount
+//   int g_StreamCurrentBlock
 // Function calls:
 //   crt_stdio.c_sprintf_FUN_005fdbd0
-//   sound_snddx.cpp_FUN_005ade70
-//   sound_snddx.cpp_FUN_005adff0
+//   sound_snddx.cpp_fillStreamBuffer_FUN_005adff0
+//   sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
 //   sound_sndmain.cpp_startSoundThread_FUN_005abc00
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_start_FUN_005ae340(CDirectSoundDevice *this_ptr)
 
 {
   int iVar1;
   HANDLE pvVar2;
-  char *pcVar3;
-  int iVar4;
+  uint uVar3;
+  char *pcVar4;
+  int iVar5;
   BADSPACEBASE *in_ESP;
-  double local_338;
-  char acStack_330 [400];
-  char acStack_1a0 [400];
+  double latency_seconds;
+  char acStack_31c [4];
+  char acStack_318 [396];
+  char acStack_18c [4];
+  char acStack_188 [376];
   
-  if (DAT_03f6a9b8 == (int *)0x0) {
-    local_338 = 0.05;
+  if (g_DirectSoundSecondaryBuffer == (IDirectSoundBuffer *)0x0) {
+    latency_seconds = 0.05;
   }
   else {
-    DAT_03f6a9d4 = ((int)((DAT_03f6a9c4 + (DAT_03f6a9c4 >> 0x1f) * -8) -
-                         (uint)((DAT_03f6a9c4 >> 0x1f) << 2 < 0)) >> 3) * DAT_03f6a9d0 *
-                   DAT_03f6a9cc;
-    local_338 = ((double)DAT_03f6a9d0 / (double)DAT_03f6a9c8) * _DAT_00651b1c;
-    iVar4 = 0;
-    DAT_03f6a9dc = 0;
-    if (0 < DAT_03f6a9d8) {
+    g_StreamBlockSizeBytes =
+         ((int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -
+               (uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_StreamSamplesPerBlock *
+         g_StreamChannelCount;
+    latency_seconds =
+         ((double)g_StreamSamplesPerBlock / (double)g_StreamSampleRate) * DOUBLE_00651b1c;
+    iVar5 = 0;
+    g_StreamCurrentBlock = 0;
+    if (0 < g_StreamBlockCount) {
       do {
-        iVar1 = sound_snddx_cpp_FUN_005adff0();
+        iVar1 = sound_snddx_cpp_fillStreamBuffer_FUN_005adff0();
         if (iVar1 == 0) goto LAB_005ae43b;
-        iVar4 = iVar4 + 1;
-      } while (iVar4 < DAT_03f6a9d8);
+        iVar5 = iVar5 + 1;
+      } while (iVar5 < g_StreamBlockCount);
     }
   }
-  pvVar2 = sound_sndmain_cpp_startSoundThread_FUN_005abc00(local_338);
+  pvVar2 = sound_sndmain_cpp_startSoundThread_FUN_005abc00(latency_seconds);
   if (pvVar2 != (HANDLE)0x0) {
-    if (DAT_03f6a9b8 == (int *)0x0) {
+    if (g_DirectSoundSecondaryBuffer == (IDirectSoundBuffer *)0x0) {
       return 1;
     }
-    iVar4 = (**(code **)(*DAT_03f6a9b8 + 0x34))();
-    if (iVar4 == 0) {
-      iVar4 = (**(code **)(*DAT_03f6a9b8 + 0x30))();
-      if (iVar4 == 0) {
+    uVar3 = (*g_DirectSoundSecondaryBuffer->vtable->SetCurrentPosition)
+                      (g_DirectSoundSecondaryBuffer,0);
+    if (uVar3 == 0) {
+      uVar3 = (*g_DirectSoundSecondaryBuffer->vtable->Play)(g_DirectSoundSecondaryBuffer,0,0,1);
+      if (uVar3 == 0) {
         return 1;
       }
-      pcVar3 = sound_snddx_cpp_FUN_005ade70();
+      pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar3);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (acStack_330,"DirectSux: Unable to %s.  (%s)","Play the secondary buffer",
-                 pcVar3);
-      pcVar3 = acStack_330;
+                (acStack_31c,"DirectSux: Unable to %s.  (%s)","Play the secondary buffer",
+                 pcVar4);
+      pcVar4 = acStack_318;
     }
     else {
-      pcVar3 = sound_snddx_cpp_FUN_005ade70();
+      pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar3);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (acStack_1a0,"DirectSux: Unable to %s.  (%s)","Position secondary buffer to 0",
-                 pcVar3);
-      pcVar3 = acStack_1a0;
+                (acStack_18c,"DirectSux: Unable to %s.  (%s)","Position secondary buffer to 0",
+                 pcVar4);
+      pcVar4 = acStack_188;
     }
-    sound_sndmain_cpp_logSoundError_FUN_005adba0(pcVar3);
+    sound_sndmain_cpp_logSoundError_FUN_005adba0(pcVar4);
   }
 LAB_005ae43b:
   (*this_ptr->vtable->reset)((CSoundDevice *)this_ptr);
@@ -133,7 +137,7 @@ LAB_005ae43b:
 // 005ae3a8: TEST ESI,ESI
 // 005ae3aa: JLE 0x005ae3c4
 //   XREF to: 005ae3c4 (CONDITIONAL_JUMP)
-// 005ae3ac: CALL sound_snddx.cpp_FUN_005adff0
+// 005ae3ac: CALL sound_snddx.cpp_fillStreamBuffer_FUN_005adff0
 //   Label: LAB_005ae3ac
 //   XREF to: 005adff0 (UNCONDITIONAL_CALL)
 // 005ae3b1: TEST EAX,EAX
@@ -182,7 +186,7 @@ LAB_005ae43b:
 // 005ae407: JZ 0x005ae496
 //   XREF to: 005ae496 (CONDITIONAL_JUMP)
 // 005ae40d: PUSH EAX
-// 005ae40e: CALL sound_snddx.cpp_FUN_005ade70
+// 005ae40e: CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   XREF to: 005ade70 (UNCONDITIONAL_CALL)
 // 005ae413: ADD ESP,0x4
 // 005ae416: PUSH EAX
@@ -228,7 +232,7 @@ LAB_005ae43b:
 //   XREF to: 005ae3c4 (UNCONDITIONAL_JUMP)
 // 005ae469: PUSH EAX
 //   Label: LAB_005ae469
-// 005ae46a: CALL sound_snddx.cpp_FUN_005ade70
+// 005ae46a: CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   XREF to: 005ade70 (UNCONDITIONAL_CALL)
 // 005ae46f: ADD ESP,0x4
 // 005ae472: PUSH EAX

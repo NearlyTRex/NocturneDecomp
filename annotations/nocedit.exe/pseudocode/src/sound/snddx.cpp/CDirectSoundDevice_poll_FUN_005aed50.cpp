@@ -6,15 +6,15 @@
 // Globals:
 //   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c
 //   TerminatedCString s_Get_position_of_secondar_00651be1
-//   undefined4 DAT_03f6a9b8
-//   undefined4 DAT_03f6a9bc
-//   undefined4 DAT_03f6a9d4
-//   undefined4 DAT_03f6a9d8
-//   undefined4 DAT_03f6a9dc
+//   IDirectSoundBuffer* g_DirectSoundSecondaryBuffer
+//   IDirectSound3DListener* g_DirectSound3DListener
+//   int g_StreamBlockSizeBytes
+//   int g_StreamBlockCount
+//   int g_StreamCurrentBlock
 // Function calls:
 //   crt_stdio.c_sprintf_FUN_005fdbd0
-//   sound_snddx.cpp_FUN_005ade70
-//   sound_snddx.cpp_FUN_005adff0
+//   sound_snddx.cpp_fillStreamBuffer_FUN_005adff0
+//   sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   sound_sndmain.cpp_CSfxSlot_kill_FUN_005acdb0
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
@@ -27,47 +27,41 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDev
   uint uVar2;
   char *pcVar3;
   BADSPACEBASE *in_ESP;
-  int *piStack_1a8;
-  undefined1 *puStack_1a4;
-  undefined1 *puStack_1a0;
   CSfxSlot *in_stack_fffffe64;
-  uint uStack_18;
-  undefined1 local_c [4];
-  undefined1 local_8 [4];
+  char acStack_184 [376];
+  DWORD local_c;
+  DWORD local_8;
   
-  if (DAT_03f6a9bc == 0) {
-    if (DAT_03f6a9b8 != (int *)0x0) {
-      puStack_1a0 = local_8;
-      puStack_1a4 = local_c;
-      piStack_1a8 = DAT_03f6a9b8;
-      iVar1 = (**(code **)(*DAT_03f6a9b8 + 0x10))();
-      if (iVar1 != 0) {
-        pcVar3 = sound_snddx_cpp_FUN_005ade70();
+  if (g_DirectSound3DListener == (IDirectSound3DListener *)0x0) {
+    if (g_DirectSoundSecondaryBuffer != (IDirectSoundBuffer *)0x0) {
+      uVar2 = (*g_DirectSoundSecondaryBuffer->vtable->GetCurrentPosition)
+                        (g_DirectSoundSecondaryBuffer,&local_c,&local_8);
+      if (uVar2 != 0) {
+        pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar2);
         crt_stdio_c_sprintf_FUN_005fdbd0
-                  ((char *)&piStack_1a8,"DirectSux: Unable to %s.  (%s)",
+                  (&stack0xfffffe78,"DirectSux: Unable to %s.  (%s)",
                    "Get position of secondary buffer",pcVar3);
-        sound_sndmain_cpp_logSoundError_FUN_005adba0((char *)&piStack_1a8);
+        sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_184);
         return 0;
       }
-      uVar2 = uStack_18 / DAT_03f6a9d4;
-      if (DAT_03f6a9d8 <= (int)uVar2) {
-        uVar2 = DAT_03f6a9d8 - 1;
+      uVar2 = (uint)this_ptr / (uint)g_StreamBlockSizeBytes;
+      if (g_StreamBlockCount <= (int)uVar2) {
+        uVar2 = g_StreamBlockCount - 1;
       }
       if ((int)uVar2 < 0) {
         uVar2 = 0;
       }
       do {
-        if (uVar2 == DAT_03f6a9dc) {
+        if (uVar2 == g_StreamCurrentBlock) {
           return 1;
         }
-        iVar1 = sound_snddx_cpp_FUN_005adff0();
+        iVar1 = sound_snddx_cpp_fillStreamBuffer_FUN_005adff0();
       } while (iVar1 != 0);
       return 0;
     }
     iVar1 = 0;
   }
   else {
-    puStack_1a0 = (undefined1 *)0x5aed79;
     sound_sndmain_cpp_CSfxSlot_kill_FUN_005acdb0(in_stack_fffffe64);
     iVar1 = 1;
   }
@@ -142,7 +136,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDev
 // 005aedd4: RET
 // 005aedd5: PUSH EAX
 //   Label: LAB_005aedd5
-// 005aedd6: CALL sound_snddx.cpp_FUN_005ade70
+// 005aedd6: CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   XREF to: 005ade70 (UNCONDITIONAL_CALL)
 // 005aeddb: ADD ESP,0x4
 // 005aedde: PUSH EAX
@@ -168,7 +162,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDev
 //   Label: LAB_005aee0b
 // 005aee0d: JMP 0x005aedbf
 //   XREF to: 005aedbf (UNCONDITIONAL_JUMP)
-// 005aee0f: CALL sound_snddx.cpp_FUN_005adff0
+// 005aee0f: CALL sound_snddx.cpp_fillStreamBuffer_FUN_005adff0
 //   Label: LAB_005aee0f
 //   XREF to: 005adff0 (UNCONDITIONAL_CALL)
 // 005aee14: TEST EAX,EAX

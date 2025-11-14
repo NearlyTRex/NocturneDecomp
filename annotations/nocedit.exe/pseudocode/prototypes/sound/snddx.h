@@ -7,17 +7,17 @@
 // Address: 005ade60
 void staticInit(void);
 
-// Original: sound_snddx.cpp_FUN_005ade70
+// Original: sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 // Address: 005ade70
-char * FUN_005ade70(void);
+char * getDirectSoundErrorString(uint error_code);
 
 // Original: sound_snddx.cpp_FUN_005adf90
 // Address: 005adf90
 int FUN_005adf90(void);
 
-// Original: sound_snddx.cpp_FUN_005adff0
+// Original: sound_snddx.cpp_fillStreamBuffer_FUN_005adff0
 // Address: 005adff0
-int FUN_005adff0(void);
+int fillStreamBuffer(void);
 
 // Original: sound_snddx.cpp_FUN_005ae1c0
 // Address: 005ae1c0

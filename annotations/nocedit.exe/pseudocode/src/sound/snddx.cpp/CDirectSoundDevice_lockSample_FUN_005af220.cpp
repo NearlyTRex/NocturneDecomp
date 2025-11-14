@@ -16,7 +16,7 @@
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   crt_stdio.c_sprintf_FUN_005fdbd0
-//   sound_snddx.cpp_FUN_005ade70
+//   sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
@@ -24,48 +24,42 @@
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_005af220(CDirectSoundDevice *this_ptr)
 
 {
+  uint error_code;
   char *pcVar1;
-  int iVar2;
   BADSPACEBASE *in_ESP;
   int in_stack_00000008;
-  int in_stack_0000000c;
   int in_stack_00000010;
-  IDirectSoundBuffer *pIStack_1bc;
-  int iStack_1b8;
-  int iStack_1b4;
-  int iStack_1b0;
-  int iStack_1ac;
-  int iStack_1a8;
-  int iStack_1a4;
+  int in_stack_00000014;
+  char acStack_16c [352];
   
   if ((((in_stack_00000008 < 1) || (0x18 < in_stack_00000008)) ||
       (g_DirectSoundSampleBuffers[in_stack_00000008] == (IDirectSoundBuffer *)0x0)) ||
      (g_DirectSoundBufferMetadata[in_stack_00000008].field0_0x0 < 1)) {
     return 0;
   }
-  iVar2 = in_stack_00000008 * 0x14;
   if (g_DirectSoundBufferMetadata[in_stack_00000008].field1_0x4 != 0) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
     g_CurrentLineNumber = 0x2c4;
-    iStack_1a4 = 0x5af299;
     core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::lockSample - already locked!");
   }
-  pIStack_1bc = g_DirectSoundSampleBuffers[in_stack_00000008];
-  iStack_1a4 = iVar2 + 0x3f6ab4c;
-  iStack_1a8 = iVar2 + 0x3f6ab44;
-  iStack_1ac = iVar2 + 0x3f6ab48;
-  iStack_1b0 = iVar2 + 0x3f6ab40;
-  iStack_1b4 = in_stack_00000010 * g_DirectSoundBufferMetadata[in_stack_00000008].field0_0x0;
-  iStack_1b8 = in_stack_0000000c * g_DirectSoundBufferMetadata[in_stack_00000008].field0_0x0;
-  iVar2 = (**(code **)((int)pIStack_1bc->field0_0x0 + 0x2c))();
-  if (iVar2 == 0) {
+  error_code = (*g_DirectSoundSampleBuffers[in_stack_00000008]->vtable->Lock)
+                         (g_DirectSoundSampleBuffers[in_stack_00000008],
+                          in_stack_00000010 *
+                          g_DirectSoundBufferMetadata[in_stack_00000008].field0_0x0,
+                          in_stack_00000014 *
+                          g_DirectSoundBufferMetadata[in_stack_00000008].field0_0x0,
+                          (LPVOID *)&g_DirectSoundBufferMetadata[in_stack_00000008].field1_0x4,
+                          (LPDWORD)&g_DirectSoundBufferMetadata[in_stack_00000008].field3_0xc,
+                          (LPVOID *)&g_DirectSoundBufferMetadata[in_stack_00000008].field2_0x8,
+                          (LPDWORD)&g_DirectSoundBufferMetadata[in_stack_00000008].ref_count,0);
+  if (error_code == 0) {
     return g_DirectSoundBufferMetadata[in_stack_00000008].field1_0x4;
   }
-  pcVar1 = sound_snddx_cpp_FUN_005ade70();
+  pcVar1 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            ((char *)&pIStack_1bc,"DirectSux: Unable to %s.  (%s)",
-             "Lock hw sample buffer",pcVar1);
-  sound_sndmain_cpp_logSoundError_FUN_005adba0((char *)&pIStack_1bc);
+            (&stack0xfffffe90,"DirectSux: Unable to %s.  (%s)","Lock hw sample buffer",
+             pcVar1);
+  sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_16c);
   return 0;
 }
 
@@ -160,7 +154,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_005af220(CDirectSo
 // 005af2e3: RET
 // 005af2e4: PUSH EAX
 //   Label: LAB_005af2e4
-// 005af2e5: CALL sound_snddx.cpp_FUN_005ade70
+// 005af2e5: CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 //   XREF to: 005ade70 (UNCONDITIONAL_CALL)
 // 005af2ea: ADD ESP,0x4
 // 005af2ed: PUSH EAX
