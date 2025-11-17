@@ -12,6 +12,85 @@ You are analyzing x86 32-bit disassembly and decompilation output from Ghidra fo
 4. **Examine call sites** - see what's actually being pushed/passed to understand true parameters
 5. **Treat the assembly as the only source of truth** - pseudocode is a helpful hint, not fact
 
+## CRITICAL: Focus on Data Structures, Not Decompiler Aesthetics
+
+**IMPORTANT**: The goal of analysis is to identify correct data structures and function signatures that can be applied in Ghidra - NOT to make the decompiler output look pretty.
+
+### What Actually Matters (Can Be Changed in Ghidra):
+
+1. **Data Structure Definitions**
+   - Struct/class layouts with correct field types and offsets
+   - Array sizes and element types
+   - Vtable structures with correct method offsets
+   - Proper type definitions for all custom types
+
+2. **Function Signatures**
+   - Correct function name
+   - Correct return type
+   - Correct parameter types, names, and count
+   - Correct calling convention
+
+3. **Global Variable Definitions**
+   - Correct type (especially arrays vs single pointers)
+   - Correct size
+   - Correct element type for arrays
+
+4. **Understanding Assembly for Reconstruction**
+   - Understand the logic well enough to reconstruct original C++
+   - Identify patterns (loops, conditionals, vtable calls, etc.)
+   - Map assembly operations to high-level C++ constructs
+
+### What Does NOT Matter (Cannot Be Changed in Ghidra):
+
+1. **Decompiler Output Aesthetics**
+   - Ugly pointer arithmetic (e.g., `*(int**)((int)array + offset)` vs `array[index]`)
+   - Complex nested casts
+   - Goto statements and weird control flow
+   - Variable reuse and confusing temporary names
+   - These will remain ugly - that's fine and expected
+
+2. **Decompiler-Generated Variable Names**
+   - `iVar1`, `iVar2`, `local_14`, etc. are just hints
+   - Focus on understanding what they represent, not renaming them in output
+
+### Analysis Priority:
+
+**PRIMARY GOAL**: Ensure all data structures, function signatures, and global variables are correctly typed in Ghidra so that:
+- The assembly can be understood
+- The original C++ can be reconstructed
+- Function calls use correct parameter types
+- Memory accesses use correct structure offsets
+
+**SECONDARY GOAL**: Document the logic and purpose of each function
+
+**NOT A GOAL**: Making the Ghidra decompiler output readable or pretty
+
+### Example of Correct Focus:
+
+**GOOD Analysis** (focuses on data structures):
+```
+The function uses two global arrays:
+- g_DirectSoundHardwareSfxBuffers[31] at 0x03f6aa44 (IDirectSoundBuffer* array)
+- g_DirectSound3DBufferInterfaces[31] at 0x03f6aac0 (IDirectSound3DBuffer* array)
+
+The loop iterates 31 times (indices 0-30), calling:
+- buffer->Stop() at vtable offset 0x48
+- interface->Release() at vtable offset 0x08
+
+These need to be defined as arrays in Ghidra with the correct types.
+```
+
+**BAD Analysis** (focuses on decompiler output):
+```
+The decompiler output has ugly pointer arithmetic like:
+  *(int**)((int)g_DirectSoundHardwareSfxBuffers + iVar4)
+
+This should be cleaned up to look like:
+  g_DirectSoundHardwareSfxBuffers[loop_index]
+```
+
+The "bad" example critiques something that cannot be changed - the decompiler output will always be ugly. The "good" example focuses on the actual data structure that needs to be correctly defined in Ghidra.
+
 ## Repository Structure
 
 Pseudocode and related files are organized as follows (relative to repository root):

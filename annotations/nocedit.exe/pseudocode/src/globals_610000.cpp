@@ -28,6 +28,7 @@ timeGetTime* timeGetTime = 0x00211884;
 waveInAddBuffer* waveInAddBuffer = 0x00211892;
 waveInClose* waveInClose = 0x002118A4;
 waveInGetDevCapsA* waveInGetDevCapsA = 0x002118B2;
+waveInOpen* waveInOpen = 0x002118C6;
 waveInPrepareHeader* waveInPrepareHeader = 0x002118D4;
 waveInReset* waveInReset = 0x002118EA;
 waveInStart* waveInStart = 0x002118F8;

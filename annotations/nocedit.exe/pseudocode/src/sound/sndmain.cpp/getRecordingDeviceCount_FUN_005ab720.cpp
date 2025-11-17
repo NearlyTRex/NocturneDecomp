@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720(void)
 // Cross-references:
-//   sound_sndmain.cpp_GetAllRecordingDevices_FUN_005ab7e0 (005ab7e0) at 005ab7e8 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_findBestRecordingDevice_FUN_005ab7e0 (005ab7e0) at 005ab7e8 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getRecordingDeviceInfo_FUN_005ab780 (005ab780) at 005ab787 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005abf9a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860 (005ab860) at 005ab878 [UNCONDITIONAL_CALL]

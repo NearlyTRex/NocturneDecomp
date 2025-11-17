@@ -7,10 +7,10 @@
 //   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2f40 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_event.cpp_CEventList_FUN_004b0db0
-//   sound_sndmain.cpp_FUN_005a8be0
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
-//   sound_sndmain.cpp_somethingWithStack_FUN_005a8b90
+//   sound_sndmain.cpp_setNextSfxFlagBits_FUN_005a8b90
+//   sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
 
 #include "nocturne.h"
@@ -33,8 +33,8 @@ void __cdecl core_event_cpp_CEventList_FUN_004b0f00(CEventList *this_ptr)
       pCVar5 = pCVar1;
       iVar4 = iVar3 * 0x120;
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-      sound_sndmain_cpp_FUN_005a8be0();
-      sound_sndmain_cpp_somethingWithStack_FUN_005a8b90();
+      sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0(*(double *)(local_c + iVar4 + 0x118),1);
+      sound_sndmain_cpp_setNextSfxFlagBits_FUN_005a8b90(1);
       uVar2 = sound_sndmain_cpp_startSfx_FUN_005a8e90();
       iVar3 = iVar3 + 1;
       *(undefined4 *)(local_c + iVar4) = uVar2;
@@ -77,11 +77,11 @@ void __cdecl core_event_cpp_CEventList_FUN_004b0f00(CEventList *this_ptr)
 // 004b0f3e: PUSH EAX
 // 004b0f3f: MOV EDX,dword ptr [ESI + 0x118]
 // 004b0f45: PUSH EDX
-// 004b0f46: CALL sound_sndmain.cpp_FUN_005a8be0
+// 004b0f46: CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0
 //   XREF to: 005a8be0 (UNCONDITIONAL_CALL)
 // 004b0f4b: ADD ESP,0xc
 // 004b0f4e: PUSH 0x1
-// 004b0f50: CALL sound_sndmain.cpp_somethingWithStack_FUN_005a8b90
+// 004b0f50: CALL sound_sndmain.cpp_setNextSfxFlagBits_FUN_005a8b90
 //   XREF to: 005a8b90 (UNCONDITIONAL_CALL)
 // 004b0f55: ADD ESP,0x4
 // 004b0f58: PUSH EDI

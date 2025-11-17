@@ -31,11 +31,11 @@
 //   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004a35b0 (004a35b0) at 004a363c [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0 (004a37b0) at 004a383c [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0 (004a39e0) at 004a3a64 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CalculateDistanceMaybe_FUN_005a45c0 (005a45c0) at 005a4636 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a5180 (005a5180) at 005a51bf [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a5200 (005a5200) at 005a5288 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a4d8b [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0 (005aa3f0) at 005aa479 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a4d8b [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_isStreamableFile_FUN_005a5180 (005a5180) at 005a51bf [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200 (005a5200) at 005a5288 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_parseConfigFile_FUN_005a45c0 (005a45c0) at 005a4636 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a91c9 [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_string.c_splitpath_FUN_005ff178

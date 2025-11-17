@@ -1,8 +1,8 @@
 // Name: sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 // Address: 005a8cb0
 // Address Range: [[005a8cb0, 005a8ce9]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0()
+// Convention: __cdecl
+// Signature: void sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0(void)
 // Cross-references:
 //   core_boneguy.cpp_FUN_0041bf90 (0041bf90) at 0041c5d0 [UNCONDITIONAL_CALL]
 //   core_charactr.cpp_CCharacter_FUN_0042a830 (0042a830) at 0042abd3 [UNCONDITIONAL_CALL]
@@ -40,16 +40,13 @@
 //   TerminatedCString s_popSfxOptions_stack_empt_006508e1
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   undefined4 g_SfxLastSlot
+//   int g_SfxLastSlot
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 
 #include "nocturne.h"
 
-/* Signature: int sound_sndmain.cpp_popSfxOptions(int param_1) */
-
-void sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0
-               (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX)
+void __cdecl sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0(void)
 
 {
   g_SfxLastSlot = g_SfxLastSlot + -1;
@@ -58,7 +55,7 @@ void sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0
   }
   g_CurrentFilename = "..\\sound\\sndmain.cpp";
   g_CurrentLineNumber = 0xd2f;
-  core_main_c_displayErrorAndQuit_FUN_00506f10("popSfxOptions - stack empty",unaff_EBX);
+  core_main_c_displayErrorAndQuit_FUN_00506f10("popSfxOptions - stack empty");
   return;
 }
 

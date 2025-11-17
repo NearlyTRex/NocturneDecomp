@@ -47,8 +47,8 @@
 //   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 //   core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340
 //   crt_string.c_strnicmp_FUN_005ff070
-//   sound_sndmain.cpp_FUN_005aa020
-//   sound_sndmain.cpp_FUN_005aa0a0
+//   sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0
+//   sound_sndmain.cpp_set3DListenerPos_FUN_005aa020
 
 #include "nocturne.h"
 
@@ -69,7 +69,7 @@ void __cdecl core_sound_cpp_FUN_005b1870(void)
   int *piVar9;
   int *piVar10;
   byte bVar11;
-  undefined4 auStackY_10b4 [975];
+  float afStackY_10b4 [963];
   CDemonSet *in_stack_fffffea8;
   CVector3f *in_stack_fffffeac;
   double dStack_150;
@@ -98,7 +98,7 @@ void __cdecl core_sound_cpp_FUN_005b1870(void)
   int local_30;
   CVector3f local_2c;
   float fStack_20;
-  undefined4 local_1c [3];
+  float local_1c [3];
   
   bVar11 = 0;
   if (g_CGamePtr->block_auto_save == 0) {
@@ -154,7 +154,8 @@ void __cdecl core_sound_cpp_FUN_005b1870(void)
     piVar9 = piVar9 + 1;
     piVar10 = piVar10 + 1;
   }
-  sound_sndmain_cpp_FUN_005aa020();
+  sound_sndmain_cpp_set3DListenerPos_FUN_005aa020
+            ((double)(float)local_d4._8_4_,(double)(float)local_c8.x,(double)(float)local_c8.y);
   local_d4._0_4_ = 1.0;
   local_d4._4_4_ = 0.0;
   local_d4._8_4_ = 0.0;
@@ -170,7 +171,10 @@ void __cdecl core_sound_cpp_FUN_005b1870(void)
   local_a8[0].z = 1.0;
   core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
             ((CMatrix3x3f *)&dStack_150,(CVector3f *)local_6c,local_a8);
-  sound_sndmain_cpp_FUN_005aa0a0();
+  sound_sndmain_cpp_set3DListenerOrient_FUN_005aa0a0
+            ((double)fStack_20,(double)local_1c[0],(double)local_1c[1],(double)local_b8.z,
+             (double)local_ac,(double)local_a8[0].x,(double)(float)local_6c._4_4_,
+             (double)(float)local_6c._8_4_,(double)local_60);
   _DAT_03f6af7c = 0.0;
   if (g_CGamePtr->block_auto_save == 0) {
     iVar4 = crt_string_c_strnicmp_FUN_005ff070
@@ -190,8 +194,8 @@ void __cdecl core_sound_cpp_FUN_005b1870(void)
                      (int)((g_CDemonCameraInstance.framebuffer_height * iVar4 + iVar6 * -0x20) -
                           (uint)(iVar6 << 4 < 0)) >> 5,(int)in_stack_fffffea8);
           local_d4._8_4_ = fStack_20;
-          *(undefined4 *)((int)&local_c8 + (uint)bVar11 * -8) = local_1c[(uint)bVar11 * -2];
-          *(undefined4 *)((int)&local_c8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 4) =
+          *(float *)((int)&local_c8 + (uint)bVar11 * -8) = local_1c[(uint)bVar11 * -2];
+          *(float *)((int)&local_c8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 4) =
                local_1c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
           dVar2 = uStack_144;
           uStack_144 = (double)((ulonglong)uStack_144 & 0xffffffff00000000);
@@ -383,7 +387,7 @@ void __cdecl core_sound_cpp_FUN_005b1870(void)
 // 005b19a5: SUB ESP,0x8
 // 005b19a8: FSTP double ptr [ESP]
 //   XREF to: Stack[-0x188] (DATA)
-// 005b19ab: CALL sound_sndmain.cpp_FUN_005aa020
+// 005b19ab: CALL sound_sndmain.cpp_set3DListenerPos_FUN_005aa020
 //   XREF to: 005aa020 (UNCONDITIONAL_CALL)
 // 005b19b0: ADD ESP,0x18
 // 005b19b3: LEA EAX,[ESP + 0x98]
@@ -489,7 +493,7 @@ void __cdecl core_sound_cpp_FUN_005b1870(void)
 // 005b1ac9: SUB ESP,0x8
 // 005b1acc: FSTP double ptr [ESP]
 //   XREF to: Stack[-0x1b8] (DATA)
-// 005b1acf: CALL sound_sndmain.cpp_FUN_005aa0a0
+// 005b1acf: CALL sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0
 //   XREF to: 005aa0a0 (UNCONDITIONAL_CALL)
 // 005b1ad4: MOV EAX,[0x0067b654]
 //   XREF to: 0067b654 (READ)

@@ -5,9 +5,9 @@
 // Signature: void sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550(CMP3Decoder * this_ptr, char * filename)
 // Cross-references:
 //   sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210 (00534210) at 00534298 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a5200 (005a5200) at 005a5318 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a5022 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0 (005aa3f0) at 005aa5b3 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a5022 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200 (005a5200) at 005a5318 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a92ea [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_0063b22a

@@ -2,7 +2,7 @@
 // Address: 005ab370
 // Address Range: [[005ab370, 005ab3cc]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_getSoundDeviceInfo_FUN_005ab370(int device_id, SSoundDeviceInfo * dest_buffer)
+// Signature: void sound_sndmain.cpp_getSoundDeviceInfo_FUN_005ab370(int device_id, SSoundDeviceInfo * device_info)
 // Cross-references:
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512c65 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_findBestSoundDevice_FUN_005ab3d0 (005ab3d0) at 005ab486 [UNCONDITIONAL_CALL]
@@ -23,7 +23,7 @@
 #include "nocturne.h"
 
 void __cdecl
-sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(int device_id,SSoundDeviceInfo *dest_buffer)
+sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(int device_id,SSoundDeviceInfo *device_info)
 
 {
   int iVar1;

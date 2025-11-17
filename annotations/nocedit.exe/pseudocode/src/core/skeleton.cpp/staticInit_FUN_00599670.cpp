@@ -6,8 +6,8 @@
 // Globals:
 //   WatcomTypeInfo g_CDeformableModelTypeInfo
 //   WatcomTypeInfo g_CSkeletonTypeInfo
-//   WatcomStaticDestructorNode DAT_00681a4f
-//   WatcomStaticDestructorNode DAT_00681a5f
+//   WatcomStaticDestructorNode g_DeformableModelPoolDestructorNode
+//   WatcomStaticDestructorNode g_SkeletonPoolDestructorNode
 //   CDeformableModel[64] g_DeformableModelPool
 //   CSkeleton[40] g_SkeletonPool
 // Function calls:
@@ -21,10 +21,10 @@ void __cdecl core_skeleton_cpp_staticInit_FUN_00599670(void)
 {
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
             (g_DeformableModelPool,0x40,&g_CDeformableModelTypeInfo);
-  crt_stdlib_c_atexit_FUN_005ff060(&DAT_00681a4f);
+  crt_stdlib_c_atexit_FUN_005ff060(&g_DeformableModelPoolDestructorNode);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
             (g_SkeletonPool,0x28,&g_CSkeletonTypeInfo);
-  crt_stdlib_c_atexit_FUN_005ff060(&DAT_00681a5f);
+  crt_stdlib_c_atexit_FUN_005ff060(&g_SkeletonPoolDestructorNode);
   return;
 }
 

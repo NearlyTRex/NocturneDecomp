@@ -37,10 +37,11 @@ typedef struct DSBCAPS {
 
 // Structure: DSBUFFERDESC
 typedef struct DSBUFFERDESC {
-    DWORD field_0;
-    DWORD field_4;
-    DWORD field_8;
-    DWORD field_12;
+    DWORD dwSize;
+    DWORD dwFlags;
+    DWORD dwBufferBytes;
+    DWORD dwReserved;
+    LPWAVEFORMATEX lpwfxFormat;
 } DSBUFFERDESC;
 
 // Structure: DSCAPS
@@ -83,7 +84,27 @@ typedef struct IDirectSound3DBuffer {
 
 // Structure: IDirectSound3DBuffer_vtable
 typedef struct IDirectSound3DBuffer_vtable {
-    void* field_0;
+    IUnknown_QueryInterface* QueryInterface;
+    IUnknown_AddRef* AddRef;
+    IUnknown_Release* Release;
+    IDirectSound3DBuffer_GetAllParameters* GetAllParameters;
+    IDirectSound3DBuffer_GetConeAngles* GetConeAngles;
+    IDirectSound3DBuffer_GetConeOrientation* GetConeOrientation;
+    IDirectSound3DBuffer_GetConeOutsideVolume* GetConeOutsideVolume;
+    IDirectSound3DBuffer_GetMaxDistance* GetMaxDistance;
+    IDirectSound3DBuffer_GetMinDistance* GetMinDistance;
+    IDirectSound3DBuffer_GetMode* GetMode;
+    IDirectSound3DBuffer_GetPosition* GetPosition;
+    IDirectSound3DBuffer_GetVelocity* GetVelocity;
+    IDirectSound3DBuffer_SetAllParameters* SetAllParameters;
+    IDirectSound3DBuffer_SetConeAngles* SetConeAngles;
+    IDirectSound3DBuffer_SetConeOrientation* SetConeOrientation;
+    IDirectSound3DBuffer_SetConeOutsideVolume* SetConeOutsideVolume;
+    IDirectSound3DBuffer_SetMaxDistance* SetMaxDistance;
+    IDirectSound3DBuffer_SetMinDistance* SetMinDistance;
+    IDirectSound3DBuffer_SetMode* SetMode;
+    IDirectSound3DBuffer_SetPosition* SetPosition;
+    IDirectSound3DBuffer_SetVelocity* SetVelocity;
 } IDirectSound3DBuffer_vtable;
 
 // Structure: IDirectSound3DListener

@@ -11,10 +11,10 @@
 //   sound_sndmain.cpp_CSfxSample_ctor_FUN_005a60f0 (005a60f0) at 005a60f5 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005ad3b0 (005ad3b0) at 005ad3c2 [UNCONDITIONAL_CALL]
 // Globals:
-//   float FLOAT_0066315c = 20
+//   float g_SoundReferenceDistanceConstant = 20
 //   float FLOAT_00663160 = 10000
 //   double DOUBLE_00681b38 = 1
-//   float FLOAT_03f5daa0
+//   float g_SoundReferenceVolumeDistance
 // Function calls:
 //   crt_memory.c_memset_FUN_005fde40
 
@@ -30,9 +30,9 @@ void * __cdecl sound_sndmain_cpp_FUN_005a8480(void)
   
   crt_memory_c_memset_FUN_005fde40(in_stack_00000004,0,0x150);
   fVar1 = (float)DOUBLE_00681b38;
-  fVar2 = FLOAT_03f5daa0 * fVar1;
+  fVar2 = g_SoundReferenceVolumeDistance * fVar1;
   fVar3 = FLOAT_00663160 * fVar1;
-  *(float *)((int)in_stack_00000004 + 0x114) = FLOAT_0066315c * fVar1;
+  *(float *)((int)in_stack_00000004 + 0x114) = g_SoundReferenceDistanceConstant * fVar1;
   *(float *)((int)in_stack_00000004 + 0x118) = fVar2;
   *(float *)((int)in_stack_00000004 + 0x11c) = fVar3;
   return in_stack_00000004;

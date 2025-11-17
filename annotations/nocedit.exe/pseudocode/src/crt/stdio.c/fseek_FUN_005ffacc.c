@@ -35,7 +35,7 @@
 //   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 (00534630) at 005346fe [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0 (00534ba0) at 00534bcf [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0 (005a65a0) at 005a666b [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a4ebf [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a4ebf [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_parseWavFile_FUN_005a3fe0 (005a3fe0) at 005a4200 [UNCONDITIONAL_CALL]
 // Globals:
 //   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434

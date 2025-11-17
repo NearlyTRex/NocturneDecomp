@@ -6,16 +6,14 @@
 // Cross-references:
 //   sound_sndmain.cpp_FUN_005ac400 (005ac400) at 005ac450 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_03f69320
+//   int g_MixBufferCount
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005ab6d0() */
-
-undefined4 sound_sndmain_cpp_FUN_005ab6d0(void)
+int sound_sndmain_cpp_FUN_005ab6d0(void)
 
 {
-  return DAT_03f69320;
+  return g_MixBufferCount;
 }
 
 

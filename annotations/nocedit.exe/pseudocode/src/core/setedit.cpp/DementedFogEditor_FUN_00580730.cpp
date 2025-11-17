@@ -86,13 +86,13 @@
 //   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
 //   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 //   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
-//   sound_sndmain.cpp_FUN_005a88e0
-//   sound_sndmain.cpp_FUN_005aa020
-//   sound_sndmain.cpp_FUN_005aa0a0
 //   sound_sndmain.cpp_FUN_005aaef0
 //   sound_sndmain.cpp_FUN_005ab130
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
+//   sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0
+//   sound_sndmain.cpp_set3DListenerPos_FUN_005aa020
+//   sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
 //   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 //   wincore_windll.cpp_clearScreen_FUN_005b3e70
@@ -476,8 +476,8 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
       }
       core_sound_cpp_CSound_setReverbPreset_FUN_005b3cc0(g_CSoundPtr,iVar7);
       sound_sndmain_cpp_FUN_005aaef0();
-      sound_sndmain_cpp_FUN_005aa020();
-      sound_sndmain_cpp_FUN_005aa0a0();
+      sound_sndmain_cpp_set3DListenerPos_FUN_005aa020(0.0,0.0,0.0);
+      sound_sndmain_cpp_set3DListenerOrient_FUN_005aa0a0(1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0);
       while( true ) {
         shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffa9c);
         in_stack_fffffa94 = (char *)0x580ff0;
@@ -518,7 +518,7 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
         if (iVar7 < 0) break;
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
         in_stack_fffffad8 = (CStrList_vtable *)0x0;
-        sound_sndmain_cpp_FUN_005a88e0();
+        sound_sndmain_cpp_setNextSfxStaticPosition_FUN_005a88e0(0.0,0.0,20.0);
         in_stack_fffffae0 = (CStrList_vtable *)&stack0xfffffae8;
         shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xfffffae8,iVar7);
         in_stack_fffffae4 = (char **)0x581136;
@@ -1401,7 +1401,7 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
 // 00580f91: PUSH 0x0
 // 00580f93: PUSH 0x0
 // 00580f95: PUSH 0x0
-// 00580f97: CALL sound_sndmain.cpp_FUN_005aa020
+// 00580f97: CALL sound_sndmain.cpp_set3DListenerPos_FUN_005aa020
 //   XREF to: 005aa020 (UNCONDITIONAL_CALL)
 // 00580f9c: ADD ESP,0x18
 // 00580f9f: PUSH 0x3ff00000
@@ -1423,7 +1423,7 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
 // 00580fc5: PUSH 0x3ff00000
 // 00580fca: PUSH 0x0
 // 00580fcc: XOR EDI,EDI
-// 00580fce: CALL sound_sndmain.cpp_FUN_005aa0a0
+// 00580fce: CALL sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0
 //   XREF to: 005aa0a0 (UNCONDITIONAL_CALL)
 // 00580fd3: ADD ESP,0x48
 // 00580fd6: MOV EAX,ESP
@@ -1575,7 +1575,7 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
 // 00581114: PUSH 0x0
 // 00581116: PUSH 0x0
 // 00581118: PUSH 0x0
-// 0058111a: CALL sound_sndmain.cpp_FUN_005a88e0
+// 0058111a: CALL sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0
 //   XREF to: 005a88e0 (UNCONDITIONAL_CALL)
 // 0058111f: ADD ESP,0x18
 // 00581122: PUSH EBX

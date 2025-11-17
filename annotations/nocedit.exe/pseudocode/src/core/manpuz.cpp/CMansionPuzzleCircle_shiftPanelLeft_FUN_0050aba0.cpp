@@ -15,9 +15,9 @@
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_manpuz.cpp_FUN_00509b20
 //   core_manpuz.cpp_FUN_0050aef0
-//   sound_sndmain.cpp_FUN_005a8940
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
+//   sound_sndmain.cpp_setNextSfxTrackedPosition_FUN_005a8940
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
 
 #include "nocturne.h"
@@ -79,7 +79,7 @@ void core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0(void)
   piVar3[2] = -0x40800000;
   core_manpuz_cpp_FUN_00509b20();
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-  sound_sndmain_cpp_FUN_005a8940();
+  sound_sndmain_cpp_setNextSfxTrackedPosition_FUN_005a8940((CVector3f *)(piVar3 + 0x16));
   sound_sndmain_cpp_startSfx_FUN_005a8e90();
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   return;
@@ -223,7 +223,7 @@ void core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0(void)
 // 0050acf1: CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   XREF to: 005a8c30 (UNCONDITIONAL_CALL)
 // 0050acf6: PUSH ESI
-// 0050acf7: CALL sound_sndmain.cpp_FUN_005a8940
+// 0050acf7: CALL sound_sndmain.cpp_setNextSfxTrackedPosition_FUN_005a8940
 //   XREF to: 005a8940 (UNCONDITIONAL_CALL)
 // 0050acfc: ADD ESP,0x4
 // 0050acff: PUSH 0x635820

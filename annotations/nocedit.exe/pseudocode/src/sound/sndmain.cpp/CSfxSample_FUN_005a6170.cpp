@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: int sound_sndmain.cpp_CSfxSample_FUN_005a6170(CSfxSample * this_ptr)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005a5200 (005a5200) at 005a53de [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a4ea2 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a4ea2 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200 (005a5200) at 005a53de [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a94ec [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_allocateHwSample_failed_0064fabf
@@ -33,6 +33,9 @@
 int __cdecl sound_sndmain_cpp_CSfxSample_FUN_005a6170(CSfxSample *this_ptr)
 
 {
+  int sample_rate;
+  int sample_count;
+  int bits_per_sample;
   int iVar1;
   void *pvVar2;
   int iVar3;
@@ -48,12 +51,12 @@ int __cdecl sound_sndmain_cpp_CSfxSample_FUN_005a6170(CSfxSample *this_ptr)
   if (iVar1 == 0) {
     iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(in_stack_00000010);
     sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_005a4450
-              (iVar1 * *(int *)in_stack_00000010->field12_0x160);
+              (iVar1 * in_stack_00000010->streaming_buffer_size);
     filename = (char *)0x6fb;
     iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(in_stack_00000010);
     pvVar2 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
                        (in_stack_00000010->sample_data,
-                        iVar1 * *(int *)in_stack_00000010->field12_0x160,filename,unaff_retaddr);
+                        iVar1 * in_stack_00000010->streaming_buffer_size,filename,unaff_retaddr);
     if (pvVar2 != (void *)0x0) {
       in_stack_00000010->sample_data = pvVar2;
       return 1;
@@ -61,9 +64,14 @@ int __cdecl sound_sndmain_cpp_CSfxSample_FUN_005a6170(CSfxSample *this_ptr)
   }
   else {
     iVar1 = (in_stack_00000010->sample_info).num_channels;
+    sample_rate = (in_stack_00000010->sample_info).sample_rate;
+    sample_count = in_stack_00000010->streaming_buffer_size;
+    bits_per_sample = (in_stack_00000010->sample_info).bit_depth;
     if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
       do {
-        pvVar2 = (void *)(*g_CSoundDevicePtr->vtable->allocateSample)(g_CSoundDevicePtr);
+        pvVar2 = (void *)(*g_CSoundDevicePtr->vtable->allocateSample)
+                                   (g_CSoundDevicePtr,bits_per_sample,iVar1,sample_rate,sample_count
+                                   );
         if (pvVar2 != (void *)0x0) goto LAB_005a6225;
         iVar4 = 0;
         iVar3 = g_LastSampleAccessIndex;
@@ -72,20 +80,19 @@ int __cdecl sound_sndmain_cpp_CSfxSample_FUN_005a6170(CSfxSample *this_ptr)
           if (0x3f < iVar3) {
             iVar3 = 0;
           }
-          if (((g_SfxSamples[iVar3].ref_count == 0) &&
-              (g_SfxSamples[iVar3].buffer_id != (void *)0x0)) &&
-             (g_SfxSamples[iVar3].field8_0x150 == 0)) {
+          if (((g_SfxSamples[iVar3].ref_count == 0) && (g_SfxSamples[iVar3].buffer_id != 0)) &&
+             (g_SfxSamples[iVar3].taken == 0)) {
             sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(g_SfxSamples + iVar3);
             break;
           }
           iVar4 = iVar4 + 1;
         } while (iVar4 < 0x40);
       } while (iVar4 < 0x40);
-      sound_sndmain_cpp_logSoundError_FUN_005adba0("allocateHwSample - failed\n",iVar1);
+      sound_sndmain_cpp_logSoundError_FUN_005adba0("allocateHwSample - failed\n");
     }
     pvVar2 = (void *)0x0;
 LAB_005a6225:
-    in_stack_00000010->buffer_id = pvVar2;
+    in_stack_00000010->buffer_id = (int)pvVar2;
     if (pvVar2 != (void *)0x0) {
       return 1;
     }

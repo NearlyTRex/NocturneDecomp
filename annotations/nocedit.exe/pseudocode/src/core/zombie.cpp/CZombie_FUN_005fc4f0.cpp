@@ -17,8 +17,8 @@
 //   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
 //   core_zombie.cpp_CZombie_FUN_005fbde0
 //   core_zombie.cpp_CZombie_FUN_005fc220
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -49,7 +49,7 @@ void core_zombie_cpp_CZombie_FUN_005fc4f0(void)
               ((CMotionController *)(in_stack_00000004 + 0x158),4,1);
     if (*(float *)(in_stack_00000004 + 0xbf94) <= 0.0) {
       *(undefined4 *)(in_stack_00000004 + 0xbf94) = 0x40000000;
-      iVar4 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+      iVar4 = sound_sndmain_cpp_FUN_005a9660();
       if (iVar4 == 0) {
         if (*(int *)(in_stack_00000004 + 0xbf48) != 0) {
           uVar3 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
@@ -84,7 +84,7 @@ void core_zombie_cpp_CZombie_FUN_005fc4f0(void)
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 ((CMotionController *)(in_stack_00000004 + 0x158),iVar4,1);
-      sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+      sound_sndmain_cpp_FUN_005a9c40();
       (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
       (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0xa0))();
     }
@@ -163,7 +163,7 @@ void core_zombie_cpp_CZombie_FUN_005fc4f0(void)
 // 005fc5af: ADD ESP,0xc
 // 005fc5b2: MOV ESI,dword ptr [EBX + 0xbf9c]
 // 005fc5b8: PUSH ESI
-// 005fc5b9: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 005fc5b9: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005fc5be: MOV EBP,dword ptr [EBX + 0xbf48]
 // 005fc5c4: ADD ESP,0x4
@@ -248,7 +248,7 @@ void core_zombie_cpp_CZombie_FUN_005fc4f0(void)
 // 005fc691: MOV ECX,dword ptr [EBX + 0xbf9c]
 // 005fc697: PUSH ECX
 // 005fc698: MOV dword ptr [EBX + 0xbf94],0x40000000
-// 005fc6a2: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 005fc6a2: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005fc6a7: ADD ESP,0x4
 // 005fc6aa: TEST EAX,EAX

@@ -42,9 +42,9 @@ void __cdecl sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(int channel_index)
     sound_sndmain_cpp_lockSound_FUN_005abd30();
     iVar1 = 0;
     do {
-      if (channel_index == *(int *)(g_SfxSlots[0].options.field5_0x14 + iVar1 + -0x14)) {
+      if (channel_index == *(int *)((int)g_SfxSlots[0].options.userdata + iVar1 + -0x54)) {
         sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60
-                  ((CSfxSlot *)(g_SfxSlots[0].options.field5_0x14 + iVar1 + -0x14));
+                  ((CSfxSlot *)((int)g_SfxSlots[0].options.userdata + iVar1 + -0x54));
       }
       iVar1 = iVar1 + 0x128;
     } while (iVar1 != 0x4a00);

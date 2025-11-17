@@ -75,13 +75,13 @@
 //   shape_superopt.cpp_FUN_005c9340 (005c9340) at 005c9458 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_FUN_005d2f50 (005d2f50) at 005d2fef [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_FUN_005d3140 (005d3140) at 005d3212 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CalculateDistanceMaybe_FUN_005a45c0 (005a45c0) at 005a4819 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a4530 (005a4530) at 005a45b4 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a59c0 (005a59c0) at 005a5a33 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a4db0 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 (005acf20) at 005ad319 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0 (005aa3f0) at 005aa49e [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a4db0 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0 (005a59c0) at 005a5a33 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_parseConfigFile_FUN_005a45c0 (005a45c0) at 005a4819 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 (005aca90) at 005acbc5 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_trimLineAndRemoveComments_FUN_005a4530 (005a4530) at 005a45b4 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

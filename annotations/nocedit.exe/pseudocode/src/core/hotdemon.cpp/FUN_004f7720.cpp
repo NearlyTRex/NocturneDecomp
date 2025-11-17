@@ -15,8 +15,8 @@
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
 //   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -35,7 +35,7 @@ void core_hotdemon_cpp_FUN_004f7720(void)
   int iVar3;
   float desired_state_index;
   
-  sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+  sound_sndmain_cpp_FUN_005a9c40();
   if (*(int *)(in_stack_00000008 + 0x28) == 8) {
     iVar3 = 0;
     *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)DOUBLE_0062f520;
@@ -65,7 +65,7 @@ void core_hotdemon_cpp_FUN_004f7720(void)
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 ((CMotionController *)this_ptr,(int)desired_state_index,1);
-      sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+      sound_sndmain_cpp_FUN_005a9c40();
       iVar3 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"hotdemon-die.wav")
       ;
       in_stack_00000004[0x8d].field26_0x148 = iVar3;
@@ -84,7 +84,7 @@ void core_hotdemon_cpp_FUN_004f7720(void)
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               ((CMotionController *)(in_stack_00000004 + 1),iVar3,1);
-    iVar3 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    iVar3 = sound_sndmain_cpp_FUN_005a9660();
     if (iVar3 == 0) {
       iVar3 = (*in_stack_00000004->vtable->playSound)
                         (in_stack_00000004,"hotdemon-hurt?.wav");
@@ -111,7 +111,7 @@ void core_hotdemon_cpp_FUN_004f7720(void)
 //   XREF to: Stack[0x8] (READ)
 // 004f772f: MOV EDX,dword ptr [ESI + 0xbebc]
 // 004f7735: PUSH EDX
-// 004f7736: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 004f7736: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004f773b: MOV ECX,dword ptr [EDI + 0x28]
 // 004f773e: ADD ESP,0x4
@@ -149,7 +149,7 @@ void core_hotdemon_cpp_FUN_004f7720(void)
 // 004f7797: ADD ESP,0xc
 // 004f779a: MOV EAX,dword ptr [ESI + 0xbec0]
 // 004f77a0: PUSH EAX
-// 004f77a1: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 004f77a1: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004f77a6: ADD ESP,0x4
 // 004f77a9: TEST EAX,EAX
@@ -237,7 +237,7 @@ void core_hotdemon_cpp_FUN_004f7720(void)
 // 004f7862: ADD ESP,0xc
 // 004f7865: MOV EDX,dword ptr [ESI + 0xbec0]
 // 004f786b: PUSH EDX
-// 004f786c: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 004f786c: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004f7871: ADD ESP,0x4
 // 004f7874: PUSH 0x62f4f5

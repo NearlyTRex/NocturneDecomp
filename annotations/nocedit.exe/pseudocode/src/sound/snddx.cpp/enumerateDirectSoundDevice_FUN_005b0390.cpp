@@ -27,7 +27,8 @@ sound_snddx_cpp_enumerateDirectSoundDevice_FUN_005b0390
   
   if (g_DirectSoundDeviceCount < 0) {
     g_DirectSoundDeviceCount = 0;
-    crt_dsound_c_DirectSoundEnumerateA(sound_snddx_cpp_FUN_005b0120,(LPVOID)0x0);
+    crt_dsound_c_DirectSoundEnumerateA
+              (sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120,(LPVOID)0x0);
   }
   if ((-1 < (int)device_id) && ((int)device_id < g_DirectSoundDeviceCount)) {
     device_info->device_id = device_id;

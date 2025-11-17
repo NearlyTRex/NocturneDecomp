@@ -6,7 +6,7 @@
 // Cross-references:
 //   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0 (005a62c0) at 005a62d5 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a6c97 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a4fae [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a4fae [UNCONDITIONAL_CALL]
 // Globals:
 //   CSoundDevice* g_CSoundDevicePtr
 
@@ -16,11 +16,11 @@ void __cdecl sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(CSfxSa
 
 {
   if (sample->sound_buffer != (void *)0x0) {
-    if ((sample->buffer_id != (void *)0x0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
-      (*g_CSoundDevicePtr->vtable->unlockSample)(g_CSoundDevicePtr);
+    if ((sample->buffer_id != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
+      (*g_CSoundDevicePtr->vtable->unlockSample)(g_CSoundDevicePtr,sample->buffer_id);
     }
     sample->sound_buffer = (void *)0x0;
-    sample->field16_0x178 = (void *)0x0;
+    sample->field18_0x178 = (void *)0x0;
   }
   return;
 }

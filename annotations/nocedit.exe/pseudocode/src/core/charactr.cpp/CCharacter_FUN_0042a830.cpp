@@ -24,11 +24,11 @@
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
-//   sound_sndmain.cpp_CallComputingDelay2_FUN_005a9ae0
-//   sound_sndmain.cpp_FUN_005a8a60
+//   sound_sndmain.cpp_FUN_005a9ae0
+//   sound_sndmain.cpp_FUN_005a9c40
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+//   sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60
 
 #include "nocturne.h"
 
@@ -130,10 +130,10 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
       }
       CStack_54.z = (float)*(int *)(this_ptr->cloth_data + 0x478) * (float)DOUBLE_00617112 *
                     (float)DOUBLE_0061711a + (float)DOUBLE_00617122;
-      iVar9 = sound_sndmain_cpp_CallComputingDelay2_FUN_005a9ae0();
+      iVar9 = sound_sndmain_cpp_FUN_005a9ae0();
       if (iVar9 == 0) {
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-        sound_sndmain_cpp_FUN_005a8a60();
+        sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(CStack_54.z);
         uVar7 = (*((this_ptr->base_actor).vtable)->playAmbientSound)
                           (&this_ptr->base_actor,"character-onfire-loop.wav");
         *(undefined4 *)(this_ptr->cloth_data + 0x8d3c) = uVar7;
@@ -145,7 +145,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
     fVar1 = *(float *)(this_ptr->cloth_data + 0x8d44) - in_stack_00000008;
     *(float *)(this_ptr->cloth_data + 0x8d44) = fVar1;
     if (fVar1 < 0.0) {
-      sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+      sound_sndmain_cpp_FUN_005a9c40();
       (*((this_ptr->base_actor).vtable)->playSound)
                 (&this_ptr->base_actor,"character-onfire-fallapart.wav");
       core_charactr_cpp_CCharacter_FUN_0042b9e0(this_ptr);
@@ -412,7 +412,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
 // 0042a9d0: PUSH dword ptr [ESP + 0x1c]
 //   XREF to: Stack[-0x4c] (READ)
 // 0042a9d4: PUSH EAX
-// 0042a9d5: CALL sound_sndmain.cpp_CallComputingDelay2_FUN_005a9ae0
+// 0042a9d5: CALL sound_sndmain.cpp_FUN_005a9ae0
 //   XREF to: 005a9ae0 (UNCONDITIONAL_CALL)
 // 0042a9da: ADD ESP,0x8
 // 0042a9dd: TEST EAX,EAX
@@ -568,7 +568,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
 //   XREF to: 0042a9e5 (CONDITIONAL_JUMP)
 // 0042ab6c: MOV EDX,dword ptr [EBX + 0xb7d4]
 // 0042ab72: PUSH EDX
-// 0042ab73: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 0042ab73: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 0042ab78: ADD ESP,0x4
 // 0042ab7b: PUSH 0x6170ca
@@ -595,7 +595,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
 //   XREF to: 005a8c30 (UNCONDITIONAL_CALL)
 // 0042abaf: PUSH dword ptr [ESP + 0x1c]
 //   XREF to: Stack[-0x4c] (READ)
-// 0042abb3: CALL sound_sndmain.cpp_FUN_005a8a60
+// 0042abb3: CALL sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60
 //   XREF to: 005a8a60 (UNCONDITIONAL_CALL)
 // 0042abb8: ADD ESP,0x4
 // 0042abbb: PUSH 0x6170e9

@@ -4,9 +4,9 @@
 // Convention: __cdecl
 // Signature: int sound_sndmain.cpp_parseWavFile_FUN_005a3fe0(FILE * file_handle, long * file_offset_ptr, CSfxSample * sfx_sample)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005a5200 (005a5200) at 005a5489 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a4e48 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0 (005aa3f0) at 005aa51d [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a4e48 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200 (005a5200) at 005a5489 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a9467 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_0064f3bb

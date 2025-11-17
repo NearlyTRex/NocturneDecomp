@@ -5,9 +5,9 @@
 // Signature: undefined core_sound.cpp_FUN_005b3aa0()
 // Function calls:
 //   core_sound.cpp_FUN_005b1fd0
-//   sound_sndmain.cpp_FUN_005a8b40
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
+//   sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40
 
 #include "nocturne.h"
 
@@ -15,9 +15,10 @@ int core_sound_cpp_FUN_005b3aa0(void)
 
 {
   int iVar1;
+  float in_stack_00000014;
   
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-  sound_sndmain_cpp_FUN_005a8b40();
+  sound_sndmain_cpp_setNextSfxDelay_FUN_005a8b40((double)in_stack_00000014);
   iVar1 = core_sound_cpp_FUN_005b1fd0();
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   return iVar1;
@@ -34,7 +35,7 @@ int core_sound_cpp_FUN_005b3aa0(void)
 // 005b3aaa: SUB ESP,0x8
 // 005b3aad: FSTP double ptr [ESP]
 //   XREF to: Stack[-0xc] (DATA)
-// 005b3ab0: CALL sound_sndmain.cpp_FUN_005a8b40
+// 005b3ab0: CALL sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40
 //   XREF to: 005a8b40 (UNCONDITIONAL_CALL)
 // 005b3ab5: ADD ESP,0x8
 // 005b3ab8: PUSH 0x1

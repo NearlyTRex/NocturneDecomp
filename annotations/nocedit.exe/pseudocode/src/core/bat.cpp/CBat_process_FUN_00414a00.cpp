@@ -13,8 +13,8 @@
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_bat.cpp_FUN_00414ce0
 //   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
+//   sound_sndmain.cpp_FUN_005a9660
 //   sound_sndmain.cpp_FUN_005aa290
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
 
 #include "nocturne.h"
 
@@ -58,24 +58,22 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr)
     this_ptr->course_filename[0x2e] = '\0';
     this_ptr->course_filename[0x2f] = '\0';
   }
-  if (this_ptr->unused[0] != '\0') {
-    fVar4 = *(float *)(this_ptr->field10_0x380 + 4) - in_stack_00000008;
-    *(float *)(this_ptr->field10_0x380 + 4) = fVar4;
-    if (fVar4 <= 0.0) {
-      iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
-      if (iVar2 == 0) {
-        iVar2 = sound_sndmain_cpp_FUN_005aa290();
-        if (iVar2 != 0) {
-          uVar3 = (*((this_ptr->base_actor).vtable)->playAmbientSound)
-                            (&this_ptr->base_actor,this_ptr->unused);
-          *(undefined4 *)this_ptr->field10_0x380 = uVar3;
-        }
+  if ((this_ptr->unused[0] != '\0') &&
+     (fVar4 = *(float *)(this_ptr->field10_0x380 + 4) - in_stack_00000008,
+     *(float *)(this_ptr->field10_0x380 + 4) = fVar4, fVar4 <= 0.0)) {
+    iVar2 = sound_sndmain_cpp_FUN_005a9660();
+    if (iVar2 == 0) {
+      iVar2 = sound_sndmain_cpp_FUN_005aa290();
+      if (iVar2 != 0) {
+        uVar3 = (*((this_ptr->base_actor).vtable)->playAmbientSound)
+                          (&this_ptr->base_actor,this_ptr->unused);
+        *(undefined4 *)this_ptr->field10_0x380 = uVar3;
       }
-      fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10
-                        (this_ptr->periodic_sound_timer_min,this_ptr->periodic_sound_timer_max);
-      *(float *)(this_ptr->field10_0x380 + 4) = fVar4;
-      return;
     }
+    fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10
+                      (this_ptr->periodic_sound_timer_min,this_ptr->periodic_sound_timer_max);
+    *(float *)(this_ptr->field10_0x380 + 4) = fVar4;
+    return;
   }
   return;
 }
@@ -209,7 +207,7 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr)
 // 00414b64: MOV ESI,dword ptr [EBX + 0x380]
 //   Label: LAB_00414b64
 // 00414b6a: PUSH ESI
-// 00414b6b: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 00414b6b: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00414b70: ADD ESP,0x4
 // 00414b73: TEST EAX,EAX

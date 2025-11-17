@@ -221,7 +221,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
                  shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                            ((CStrList *)&stack0x00000000,iVar3);
             in_stack_fffff100 = (char **)0x5adadb;
-            string_data = (char **)sound_sndmain_cpp_FUN_005ad3b0();
+            string_data = (char **)sound_sndmain_cpp_FUN_005ad3b0((char *)in_stack_fffff104);
             pCVar5 = (CStrList_vtable *)&stack0xfffff0c4;
             if (string_data != (char **)0x0) {
               in_stack_fffff100 = (char **)0x5adaed;
@@ -248,8 +248,8 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
         if (iVar2 != 0) break;
         shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                   (g_CEditorToolsPtr,(float)iVar3,(float)(int)CStack_48.vtable);
-        shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)auStack_38,iVar3);
-        pcVar4 = (char *)sound_sndmain_cpp_FUN_005ad3b0();
+        pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)auStack_38,iVar3);
+        pcVar4 = sound_sndmain_cpp_FUN_005ad3b0(pcVar4);
         if (pcVar4 != (char *)0x0) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff0d4,pcVar4);
           pcVar1 = pcVar4;

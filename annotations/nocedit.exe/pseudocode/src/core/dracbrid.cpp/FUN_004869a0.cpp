@@ -44,7 +44,7 @@
 //   core_stairs.cpp_FUN_005b92d0
 //   core_stairs.cpp_FUN_005b9490
 //   engine_console.cpp_CConsole_printf_FUN_00441890
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9660
 
 #include "nocturne.h"
 
@@ -97,7 +97,7 @@ void core_dracbrid_cpp_FUN_004869a0(void)
   do {
     local_20 = local_34;
     if (in_stack_00000004 == *(int *)local_34->field2_0x50) {
-      iVar5 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+      iVar5 = sound_sndmain_cpp_FUN_005a9660();
       piVar4 = local_30;
       if (iVar5 == 0) {
         local_30[0x14] = 0;
@@ -252,7 +252,7 @@ void core_dracbrid_cpp_FUN_004869a0(void)
 // 00486a45: MOV EBX,dword ptr [EAX]
 //   XREF to: 02c6d114 (READ)
 // 00486a47: PUSH EBX
-// 00486a48: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 00486a48: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00486a4d: ADD ESP,0x4
 // 00486a50: TEST EAX,EAX

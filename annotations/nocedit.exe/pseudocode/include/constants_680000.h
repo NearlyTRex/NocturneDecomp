@@ -55,7 +55,6 @@ const TerminatedCString s_CMP3Decoder_00681d64 = "$CMP3Decoder$$";
 const TerminatedCString s_SfxSample_00681d84 = "$SfxSample$$";
 const TerminatedCString s_SfxOptions_00681da4 = "$SfxOptions$$";
 const TerminatedCString s_SfxSlot_00681dc4 = "$SfxSlot$$";
-const TerminatedCString s_DEST_00681df9 = ":DEST";
 const TerminatedCString s_STrainNoise_00682184 = "$STrainNoise$$";
 const TerminatedCString s_trid3d_dll_00684010 = "trid3d.dll";
 const TerminatedCString s_CSpike_00684160 = "$CSpike$$";
@@ -227,6 +226,7 @@ const char[7][4] g_WeekdayNamesShort = {
 };
 
 // double constants
+const double DOUBLE_00681b30 = 1;
 const double DOUBLE_00681b38 = 1;
 const double g_SelectedClearColor = 0.0;
 const double g_ClearColor = 0.0;
@@ -284,20 +284,9 @@ const undefined4 DAT_006819fc = {0x2D, 0x30, 0x78, 0x66};
 const undefined4 DAT_00681a00 = {0x30, 0x78, 0x30, 0x00};
 const undefined4 DAT_00681a04 = {0x2D, 0x30, 0x78, 0x66};
 const undefined4 DAT_00681af0 = {0x30, 0x78, 0x31, 0x00};
-const undefined4 DAT_00681b30 = {0x30, 0x78, 0x30, 0x00};
-const undefined4 DAT_00681b34 = {0x30, 0x78, 0x33, 0x66};
-const undefined4 DAT_00681b50 = {0x2D, 0x30, 0x78, 0x31};
 const undefined4 DAT_00681b54 = {0x30, 0x78, 0x38, 0x00};
 const undefined4 DAT_00681b58 = {0x30, 0x78, 0x31, 0x00};
 const undefined4 DAT_00681b5c = {0x30, 0x78, 0x32, 0x62};
-const undefined4 DAT_00681e0c = {0x30, 0x78, 0x31, 0x00};
-const undefined4 DAT_00681e10 = {0x30, 0x78, 0x38, 0x00};
-const undefined4 DAT_00681e14 = {0x30, 0x78, 0x31, 0x00};
-const undefined4 DAT_00681e18 = {0x30, 0x78, 0x32, 0x62};
-const undefined4 DAT_00681e1c = {0x30, 0x78, 0x34, 0x00};
-const undefined4 DAT_00681e20 = {0x30, 0x78, 0x31, 0x30};
-const undefined4 DAT_00681e24 = {0x30, 0x78, 0x31, 0x00};
-const undefined4 DAT_00681e28 = {0x30, 0x78, 0x32, 0x62};
 const undefined4 DAT_006820b0 = {0x30, 0x78, 0x30, 0x00};
 const undefined4 DAT_006820b4 = {0x30, 0x78, 0x30, 0x00};
 const undefined4 DAT_00682118 = {0x30, 0x78, 0x30, 0x00};

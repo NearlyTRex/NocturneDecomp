@@ -45,12 +45,12 @@
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 //   engine_console.cpp_CConsole_printf_FUN_00441890
-//   sound_sndmain.cpp_FUN_005a8be0
+//   sound_sndmain.cpp_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9c40
 //   sound_sndmain.cpp_FUN_005aa290
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0
 
 #include "nocturne.h"
 
@@ -103,7 +103,7 @@ void core_drone_cpp_FUN_0048ec70(void)
   
   iVar7 = core_charactr_cpp_CCharacter_FUN_00429870(&in_stack_00000004->base_character);
   if (iVar7 == 0) {
-    sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+    sound_sndmain_cpp_FUN_005a9c40();
     return;
   }
   (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
@@ -184,7 +184,7 @@ void core_drone_cpp_FUN_0048ec70(void)
           in_stack_00000004->field6_0xbe38[1] = '\0';
           in_stack_00000004->field6_0xbe38[2] = -0x80;
           in_stack_00000004->field6_0xbe38[3] = '?';
-          iVar7 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+          iVar7 = sound_sndmain_cpp_FUN_005a9660();
           if (iVar7 == 0) {
             uVar12 = (*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
                                ((CDemonActor *)in_stack_00000004,"drone-attack?.wav");
@@ -268,11 +268,12 @@ switchD_0048f284_caseD_3:
          *(float *)in_stack_00000004->field6_0xbe38 - in_stack_00000008;
   }
   if ((local_1c == 1) && (iVar7 = sound_sndmain_cpp_FUN_005aa290(), iVar7 != 0)) {
-    iVar7 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    iVar7 = sound_sndmain_cpp_FUN_005a9660();
     if (iVar7 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
+      iVar7 = 2;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
-      sound_sndmain_cpp_FUN_005a8be0();
+      sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,iVar7);
       uVar12 = (*((in_stack_00000004->base_character).base_actor.vtable)->playAmbientSound)
                          ((CDemonActor *)in_stack_00000004,"slime.wav");
       *(undefined4 *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x18) = uVar12;
@@ -280,7 +281,7 @@ switchD_0048f284_caseD_3:
     }
   }
   else {
-    sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+    sound_sndmain_cpp_FUN_005a9c40();
   }
   iVar7 = core_charactr_cpp_CCharacter_FUN_004297e0(&in_stack_00000004->base_character);
   if (iVar7 != 0) {
@@ -465,7 +466,7 @@ switchD_0048f284_caseD_3:
 //   XREF to: 0048f2d7 (CONDITIONAL_JUMP)
 // 0048edd9: MOV ESI,dword ptr [EBX + 0xbecc]
 // 0048eddf: PUSH ESI
-// 0048ede0: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 0048ede0: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 0048ede5: ADD ESP,0x4
 // 0048ede8: TEST EAX,EAX
@@ -606,7 +607,7 @@ switchD_0048f284_caseD_3:
 // 0048ef19: MOV EDX,dword ptr [EBX + 0xbecc]
 //   Label: LAB_0048ef19
 // 0048ef1f: PUSH EDX
-// 0048ef20: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 0048ef20: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 0048ef25: ADD ESP,0x4
 // 0048ef28: LEA ESP,[EBP + 0x7a]
@@ -937,7 +938,7 @@ switchD_0048f284_caseD_3:
 // 0048f217: MOV EDX,dword ptr [EBX + 0xbed0]
 // 0048f21d: PUSH EDX
 // 0048f21e: MOV dword ptr [EBX + 0xbe38],0x3f800000
-// 0048f228: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 0048f228: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 0048f22d: ADD ESP,0x4
 // 0048f230: TEST EAX,EAX
@@ -1000,7 +1001,7 @@ switchD_0048f284_caseD_3:
 //   XREF to: Stack[-0x14] (READ)
 // 0048f2aa: FSTP double ptr [ESP]
 //   XREF to: Stack[-0xe8] (DATA)
-// 0048f2ad: CALL sound_sndmain.cpp_FUN_005a8be0
+// 0048f2ad: CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0
 //   XREF to: 005a8be0 (UNCONDITIONAL_CALL)
 // 0048f2b2: ADD ESP,0xc
 // 0048f2b5: PUSH 0x6223e2
@@ -1017,7 +1018,7 @@ switchD_0048f284_caseD_3:
 // 0048f2d7: MOV ECX,dword ptr [EBX + 0xbecc]
 //   Label: LAB_0048f2d7
 // 0048f2dd: PUSH ECX
-// 0048f2de: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 0048f2de: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 0048f2e3: ADD ESP,0x4
 // 0048f2e6: JMP 0x0048edf0

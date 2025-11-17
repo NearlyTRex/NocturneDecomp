@@ -22,7 +22,7 @@
 //   core_actor.cpp_castToClassHash_FUN_0040c790
 //   core_sound.cpp_CSound_FUN_005b3ba0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9660
 
 #include "nocturne.h"
 
@@ -69,7 +69,7 @@ void core_mobster_cpp_FUN_005279f0(void)
     if (0.0 < *(float *)(in_stack_00000004 + 0xbed4)) {
       *(float *)(in_stack_00000004 + 0xbed4) =
            *(float *)(in_stack_00000004 + 0xbed4) + FLOAT_00639a16;
-      iVar5 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+      iVar5 = sound_sndmain_cpp_FUN_005a9660();
       if (iVar5 == 0) {
         iVar6 = 0;
         iVar5 = 0;
@@ -84,7 +84,7 @@ void core_mobster_cpp_FUN_005279f0(void)
                              (*(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + local_18 + 8000),
                               g_CMobsterClassInfo.name_hash);
           if (((pCVar2 != (CDemonActor *)0x0) &&
-              (iVar3 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar3 != 0)) &&
+              (iVar3 = sound_sndmain_cpp_FUN_005a9660(), iVar3 != 0)) &&
              (iVar5 = iVar5 + 1, 3 < iVar5)) break;
           local_18 = local_18 + 4;
           iVar6 = iVar6 + 1;
@@ -214,7 +214,7 @@ void core_mobster_cpp_FUN_005279f0(void)
 //   XREF to: 00639a16 (READ)
 // 00527ad1: PUSH EBX
 // 00527ad2: FSTP float ptr [ESI + 0xbed4]
-// 00527ad8: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 00527ad8: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00527add: ADD ESP,0x4
 // 00527ae0: TEST EAX,EAX
@@ -259,7 +259,7 @@ void core_mobster_cpp_FUN_005279f0(void)
 // 00527b2b: MOV EDX,dword ptr [EAX + 0xbf54]
 //   Label: LAB_00527b2b
 // 00527b31: PUSH EDX
-// 00527b32: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 00527b32: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00527b37: ADD ESP,0x4
 // 00527b3a: TEST EAX,EAX

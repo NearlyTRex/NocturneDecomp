@@ -2,7 +2,7 @@
 // Address: 005aa3f0
 // Address Range: [[005aa3f0, 005aa652]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0(char * filename)
+// Signature: int sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0(CSfxSample * out_sample)
 // Cross-references:
 //   core_sound.cpp_CSound_FUN_005b3ba0 (005b3ba0) at 005b3bd5 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005ad3b0 (005ad3b0) at 005ad3ec [UNCONDITIONAL_CALL]
@@ -43,14 +43,14 @@
 //   sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0
 //   sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0
 //   sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550
-//   sound_sndmain.cpp_CalculateDistanceMaybe_FUN_005a45c0
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
+//   sound_sndmain.cpp_parseConfigFile_FUN_005a45c0
 //   sound_sndmain.cpp_parseWavFile_FUN_005a3fe0
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
 
-int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(char *filename)
+int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
 
 {
   int iVar1;
@@ -70,12 +70,12 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(char *filename)
   do {
     if (0 < *(int *)(g_SfxSamples[0].field5_0x12c + iVar3 + -0x1c)) {
       pcVar4 = g_SfxSamples[0].sample_info.name + iVar3;
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(pcVar4,filename);
+      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(pcVar4,(char *)out_sample);
       if (iVar1 == 0) {
         for (iVar3 = 0x54; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *(undefined4 *)filename = *(undefined4 *)pcVar4;
+          *(undefined4 *)(out_sample->sample_info).name = *(undefined4 *)pcVar4;
           pcVar4 = pcVar4 + (uint)bVar5 * -8 + 4;
-          filename = filename + (uint)bVar5 * -8 + 4;
+          out_sample = (CSfxSample *)((int)out_sample + (uint)bVar5 * -8 + 4);
         }
         sound_sndmain_cpp_unlockSound_FUN_005abdc0();
         return 1;
@@ -85,10 +85,10 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(char *filename)
     iVar3 = iVar3 + 0x180;
   } while (iVar3 < 0x6000);
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
-  iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",filename);
+  iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",(char *)out_sample);
   if (0 < iVar3) {
     engine_dosio_c_splitPath_FUN_00481f20
-              (filename,(char *)0x0,(char *)0x0,(char *)0x0,&stack0xfffffef8);
+              ((char *)out_sample,(char *)0x0,(char *)0x0,(char *)0x0,&stack0xfffffef8);
     if (cVar6 == '.') {
       uVar2 = 0xffffffff;
       pcVar4 = &stack0xfffffefc;
@@ -109,18 +109,12 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(char *filename)
           sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(&g_CMP3DecoderInstance);
           crt_stdlib_c_atexit_FUN_005ff060(&g_CMP3DecoderDestructorNode);
         }
-        sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(&g_CMP3DecoderInstance,filename);
-        filename[0x104] = '\x10';
-        filename[0x105] = '\0';
-        filename[0x106] = '\0';
-        filename[0x107] = '\0';
-        *(int *)(filename + 0x108) = g_CMP3DecoderInstance.num_channels;
+        sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(&g_CMP3DecoderInstance,(char *)out_sample);
+        (out_sample->sample_info).bit_depth = 0x10;
+        (out_sample->sample_info).num_channels = g_CMP3DecoderInstance.num_channels;
         iVar3 = g_CMP3DecoderInstance.sample_rate;
-        filename[0x110] = -1;
-        filename[0x111] = -1;
-        filename[0x112] = -1;
-        filename[0x113] = -1;
-        *(int *)(filename + 0x10c) = iVar3;
+        (out_sample->sample_info).sample_count = -1;
+        (out_sample->sample_info).sample_rate = iVar3;
         sound_mp3_cpp_CMP3Decoder_free_FUN_005349e0(&g_CMP3DecoderInstance);
       }
       else {
@@ -129,8 +123,8 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(char *filename)
         core_main_c_displayErrorAndQuit_FUN_00506f10("Unknown sample file format extension: %s");
       }
 LAB_005aa53c:
-      sound_sndmain_cpp_CalculateDistanceMaybe_FUN_005a45c0();
-      if (*(int *)(filename + 0x110) < 1) {
+      sound_sndmain_cpp_parseConfigFile_FUN_005a45c0(out_sample);
+      if ((out_sample->sample_info).sample_count < 1) {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
         g_CurrentLineNumber = 0x10de;
         core_main_c_displayErrorAndQuit_FUN_00506f10("getSampleInfo - can't determine length for %s");
@@ -138,11 +132,11 @@ LAB_005aa53c:
       }
       return 1;
     }
-    file_handle = engine_dosio_c_getFile_FUN_00481a50("sound",filename,"rb");
+    file_handle = engine_dosio_c_getFile_FUN_00481a50
+                            ("sound",(char *)out_sample,"rb");
     if (file_handle != (FILE *)0x0) {
       in_stack_0000000c = crt_stdio_c_ftell_FUN_00601560(file_handle);
-      iVar3 = sound_sndmain_cpp_parseWavFile_FUN_005a3fe0
-                        (file_handle,&stack0x0000000c,(CSfxSample *)filename);
+      iVar3 = sound_sndmain_cpp_parseWavFile_FUN_005a3fe0(file_handle,&stack0x0000000c,out_sample);
       if (iVar3 != 0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\sound\\sndmain.cpp",0x10ba);
         goto LAB_005aa53c;
@@ -325,7 +319,7 @@ LAB_005aa53c:
 // 005aa539: ADD ESP,0xc
 // 005aa53c: PUSH EBP
 //   Label: LAB_005aa53c
-// 005aa53d: CALL sound_sndmain.cpp_CalculateDistanceMaybe_FUN_005a45c0
+// 005aa53d: CALL sound_sndmain.cpp_parseConfigFile_FUN_005a45c0
 //   XREF to: 005a45c0 (UNCONDITIONAL_CALL)
 // 005aa542: MOV ESI,dword ptr [EBP + 0x110]
 // 005aa548: ADD ESP,0x4

@@ -47,7 +47,7 @@
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 //   engine_console.cpp_CConsole_printf_FUN_00441890
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9660
 
 #include "nocturne.h"
 
@@ -163,9 +163,8 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
         if (ABS(local_14) < (float)DOUBLE_00615649) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,3,1);
-          iVar7 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
-          if ((iVar7 == 0) &&
-             (iVar7 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar7 == 0)) {
+          iVar7 = sound_sndmain_cpp_FUN_005a9660();
+          if ((iVar7 == 0) && (iVar7 = sound_sndmain_cpp_FUN_005a9660(), iVar7 == 0)) {
             uVar11 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
                                ((CDemonActor *)this_ptr,"batman-attack?.wav");
             *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x48) = uVar11;
@@ -212,9 +211,9 @@ LAB_004158fb:
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(this_ptr->base_enemy).base_character.model.motion_controller,iVar7,1);
       if ((((*(int *)(this_ptr->field1_0xbeb4 + 0x4c) == 0) &&
-           (iVar7 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar7 == 0)) &&
-          (iVar7 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar7 == 0)) &&
-         (iVar7 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar7 == 0)) {
+           (iVar7 = sound_sndmain_cpp_FUN_005a9660(), iVar7 == 0)) &&
+          (iVar7 = sound_sndmain_cpp_FUN_005a9660(), iVar7 == 0)) &&
+         (iVar7 = sound_sndmain_cpp_FUN_005a9660(), iVar7 == 0)) {
         uVar11 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
                            ((CDemonActor *)this_ptr,"batman-alert.wav");
         this_ptr->field1_0xbeb4[0x4c] = '\x01';
@@ -286,9 +285,8 @@ LAB_004158fb:
               (this_ptr->base_enemy).field6_0xbe38[1] = '\0';
               (this_ptr->base_enemy).field6_0xbe38[2] = '\0';
               (this_ptr->base_enemy).field6_0xbe38[3] = '\0';
-              iVar7 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
-              if ((iVar7 == 0) &&
-                 (iVar7 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar7 == 0)) {
+              iVar7 = sound_sndmain_cpp_FUN_005a9660();
+              if ((iVar7 == 0) && (iVar7 = sound_sndmain_cpp_FUN_005a9660(), iVar7 == 0)) {
                 uVar11 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
                                    ((CDemonActor *)this_ptr,"batman-attack?.wav");
                 *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x48) = uVar11;
@@ -314,9 +312,8 @@ LAB_004158fb:
               (this_ptr->base_enemy).field6_0xbe38[1] = '\0';
               (this_ptr->base_enemy).field6_0xbe38[2] = -0x80;
               (this_ptr->base_enemy).field6_0xbe38[3] = '?';
-              iVar7 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
-              if ((iVar7 == 0) &&
-                 (iVar7 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar7 == 0)) {
+              iVar7 = sound_sndmain_cpp_FUN_005a9660();
+              if ((iVar7 == 0) && (iVar7 = sound_sndmain_cpp_FUN_005a9660(), iVar7 == 0)) {
                 uVar11 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
                                    ((CDemonActor *)this_ptr,"batman-attack?.wav");
                 *(undefined4 *)(this_ptr->field1_0xbeb4 + 0x48) = uVar11;
@@ -920,7 +917,7 @@ switchD_00415d62_caseD_2:
 //   XREF to: 0041556b (CONDITIONAL_JUMP)
 // 00415910: MOV EDI,dword ptr [EBX + 0xbef8]
 // 00415916: PUSH EDI
-// 00415917: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 00415917: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 0041591c: ADD ESP,0x4
 // 0041591f: TEST EAX,EAX
@@ -928,7 +925,7 @@ switchD_00415d62_caseD_2:
 //   XREF to: 0041556b (CONDITIONAL_JUMP)
 // 00415927: MOV EAX,dword ptr [EBX + 0xbefc]
 // 0041592d: PUSH EAX
-// 0041592e: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 0041592e: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00415933: ADD ESP,0x4
 // 00415936: TEST EAX,EAX
@@ -936,7 +933,7 @@ switchD_00415d62_caseD_2:
 //   XREF to: 0041556b (CONDITIONAL_JUMP)
 // 0041593e: MOV EDX,dword ptr [EBX + 0xbef4]
 // 00415944: PUSH EDX
-// 00415945: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 00415945: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 0041594a: ADD ESP,0x4
 // 0041594d: TEST EAX,EAX
@@ -989,7 +986,7 @@ switchD_00415d62_caseD_2:
 // 004159c1: ADD ESP,0xc
 // 004159c4: MOV EDX,dword ptr [EBX + 0xbef8]
 // 004159ca: PUSH EDX
-// 004159cb: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 004159cb: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004159d0: ADD ESP,0x4
 // 004159d3: TEST EAX,EAX
@@ -997,7 +994,7 @@ switchD_00415d62_caseD_2:
 //   XREF to: 00415832 (CONDITIONAL_JUMP)
 // 004159db: MOV ECX,dword ptr [EBX + 0xbefc]
 // 004159e1: PUSH ECX
-// 004159e2: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 004159e2: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004159e7: ADD ESP,0x4
 // 004159ea: TEST EAX,EAX
@@ -1226,7 +1223,7 @@ switchD_00415d62_caseD_2:
 // 00415bfe: MOV EDX,dword ptr [EBX + 0xbef8]
 // 00415c04: PUSH EDX
 // 00415c05: MOV dword ptr [EBX + 0xbe38],0x0
-// 00415c0f: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 00415c0f: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00415c14: ADD ESP,0x4
 // 00415c17: TEST EAX,EAX
@@ -1300,7 +1297,7 @@ switchD_00415d62_caseD_2:
 // 00415cae: MOV ESI,dword ptr [EBX + 0xbef8]
 // 00415cb4: PUSH ESI
 // 00415cb5: MOV dword ptr [EBX + 0xbe38],0x3f800000
-// 00415cbf: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 00415cbf: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00415cc4: ADD ESP,0x4
 // 00415cc7: TEST EAX,EAX
@@ -1326,7 +1323,7 @@ switchD_00415d62_caseD_2:
 // 00415cf5: MOV ECX,dword ptr [EBX + 0xbefc]
 //   Label: LAB_00415cf5
 // 00415cfb: PUSH ECX
-// 00415cfc: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 00415cfc: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00415d01: ADD ESP,0x4
 // 00415d04: TEST EAX,EAX
@@ -1344,7 +1341,7 @@ switchD_00415d62_caseD_2:
 // 00415d29: MOV EDI,dword ptr [EBX + 0xbefc]
 //   Label: LAB_00415d29
 // 00415d2f: PUSH EDI
-// 00415d30: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 00415d30: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00415d35: ADD ESP,0x4
 // 00415d38: TEST EAX,EAX

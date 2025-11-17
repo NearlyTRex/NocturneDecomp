@@ -1,8 +1,8 @@
 // Name: sound_sndmain.cpp_FUN_005a9f30
 // Address: 005a9f30
 // Address Range: [[005a9f30, 005a9f7b]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_FUN_005a9f30()
+// Convention: __cdecl
+// Signature: uint sound_sndmain.cpp_FUN_005a9f30(void)
 // Cross-references:
 //   core_game.cpp_CGame_processFrame_FUN_004da100 (004da100) at 004da973 [UNCONDITIONAL_CALL]
 // Globals:
@@ -13,24 +13,25 @@
 
 #include "nocturne.h"
 
-uint sound_sndmain_cpp_FUN_005a9f30(void)
+uint __cdecl sound_sndmain_cpp_FUN_005a9f30(void)
 
 {
   int iVar1;
-  uint uVar2;
+  int iVar2;
+  uint uVar3;
   uint in_stack_00000004;
   
-  uVar2 = (in_stack_00000004 & 0x3f) + 1;
-  if (uVar2 < 0x40) {
-    iVar1 = uVar2 * 0x128;
+  uVar3 = (in_stack_00000004 & 0x3f) + 1;
+  if (uVar3 < 0x40) {
+    iVar2 = uVar3 * 0x128;
     do {
-      if ((*(int *)(g_SfxSlots[0].field4_0x7c + iVar1 + -4) != 0) &&
-         (*(int *)(g_SfxSlots[0].field4_0x7c + iVar1 + -8) != 0)) {
-        return *(int *)(g_SfxSlots[0].field4_0x7c + iVar1 + -8) << 6 | uVar2;
+      if ((*(int *)((int)g_SfxSlots[0].distance_to_speakers + iVar2 + -8) != 0) &&
+         (iVar1 = *(int *)((int)g_SfxSlots[0].distance_to_speakers + iVar2 + -0xc), iVar1 != 0)) {
+        return iVar1 << 6 | uVar3;
       }
-      iVar1 = iVar1 + 0x128;
-      uVar2 = uVar2 + 1;
-    } while (iVar1 < 0x4a00);
+      iVar2 = iVar2 + 0x128;
+      uVar3 = uVar3 + 1;
+    } while (iVar2 < 0x4a00);
   }
   return 0;
 }

@@ -7,7 +7,7 @@
 //   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830 (005ae830) at 005aeaf3 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005ac044 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_writeIni_FUN_005ac220 (005ac220) at 005ac318 [UNCONDITIONAL_CALL]
-//   sound_sndwav.cpp_CWavOutDevice_open_FUN_005b0a30 (005b0a30) at 005b0a75 [UNCONDITIONAL_CALL]
+//   sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30 (005b0a30) at 005b0a75 [UNCONDITIONAL_CALL]
 // Globals:
 //   float g_MaxSoftwareLatency = 0.5
 

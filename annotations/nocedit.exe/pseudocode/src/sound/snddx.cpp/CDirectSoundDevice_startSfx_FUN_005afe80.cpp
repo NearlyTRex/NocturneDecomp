@@ -2,7 +2,7 @@
 // Address: 005afe80
 // Address Range: [[005afe80, 005b0028]]
 // Convention: __cdecl
-// Signature: int sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_005afe80(CDirectSoundDevice * this_ptr)
+// Signature: int sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_005afe80(CDirectSoundDevice * this_ptr, CSfxSlot * slot)
 // Globals:
 //   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c
 //   TerminatedCString s_sound_snddx_cpp_00652121
@@ -14,8 +14,8 @@
 //   TerminatedCString s_Play_hardware_sfx_second_0065220f
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   IDirectSoundBuffer* g_DirectSoundSampleBuffersEnd
-//   undefined4 DAT_03f6aac0
+//   IDirectSoundBuffer*[31] g_DirectSoundHardwareSfxBuffers
+//   IDirectSound3DBuffer*[31] g_DirectSound3DBufferInterfaces
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -24,55 +24,55 @@
 
 #include "nocturne.h"
 
-int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80(CDirectSoundDevice *this_ptr)
+int __cdecl
+sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80
+          (CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 {
-  CSoundDeviceFull_vtable *pCVar1;
+  int iVar1;
   int iVar2;
   uint error_code;
   char *pcVar3;
   BADSPACEBASE *in_ESP;
-  DWORD unaff_retaddr;
-  CSoundDevice *in_stack_00000008;
-  char acStack_174 [356];
+  undefined4 uStack0000000c;
+  uint in_stack_00000010;
+  char acStack_164 [340];
   
-  pCVar1 = in_stack_00000008[0x1c].vtable;
-  if (((((int)pCVar1 < 1) || (0x1e < (int)pCVar1)) ||
-      ((&g_DirectSoundSampleBuffersEnd)[(int)pCVar1] == (IDirectSoundBuffer *)0x0)) ||
-     (g_DirectSoundBufferInUse[(int)((int)&pCVar1->set3DListenerOrient + 2)] == 0)) {
+  iVar1 = slot->hardware_buffer_handle;
+  if ((((iVar1 < 1) || (0x1e < iVar1)) ||
+      (g_DirectSoundHardwareSfxBuffers[iVar1] == (IDirectSoundBuffer *)0x0)) ||
+     (g_DirectSound3DBufferInterfaces[iVar1] == (IDirectSound3DBuffer *)0x0)) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
     g_CurrentLineNumber = 1000;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - invalid handle: %d",pCVar1);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - invalid handle: %d",iVar1);
   }
-  iVar2 = (*in_stack_00000008->vtable->setSfxPos)(in_stack_00000008);
+  iVar2 = (**(code **)((slot->options).status + 0x40))((CSoundDevice *)slot,slot,-1);
   if (iVar2 != 0) {
-    if (in_stack_00000008[0x1e].vtable == (CSoundDeviceFull_vtable *)0x0) {
+    uStack0000000c = 0;
+    if (slot->sample == (CSfxSample *)0x0) {
       g_CurrentFilename = "..\\sound\\snddx.cpp";
       g_CurrentLineNumber = 0x3f2;
       core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - no sample??");
     }
-    if ((1 < (int)in_stack_00000008[0x1e].vtable[3].func11) ||
-       (0 < (int)in_stack_00000008[0x1e].vtable[3].setSfxPos)) {
+    if ((1 < slot->sample->loop_flags) || (0 < slot->sample->loop_start_marker)) {
       g_CurrentFilename = "..\\sound\\snddx.cpp";
       g_CurrentLineNumber = 0x3f4;
       core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - exotic jump sequences not allowed for hardware mixed sounds");
     }
-    if (((undefined1 *)in_stack_00000008[0x1e].vtable[3].func11 == &DAT_00000001) &&
-       (-1 < (int)in_stack_00000008[0x1e].vtable[3].setSfxPos)) {
-      unaff_retaddr = unaff_retaddr | 1;
+    if ((slot->sample->loop_flags == 1) && (-1 < slot->sample->loop_start_marker)) {
+      in_stack_00000010 = in_stack_00000010 | 1;
     }
-    if (in_stack_00000008[0x1e].vtable[4].poll !=
-        (CSoundDevice_poll *)in_stack_00000008[0x1e].vtable[3].hasHardware3D) {
-      unaff_retaddr = unaff_retaddr | 1;
+    if (slot->sample->streaming_buffer_size != (slot->sample->sample_info).sample_count) {
+      in_stack_00000010 = in_stack_00000010 | 1;
     }
-    error_code = (*(&g_DirectSoundSampleBuffersEnd)[(int)pCVar1]->vtable->Play)
-                           ((&g_DirectSoundSampleBuffersEnd)[(int)pCVar1],0,0,unaff_retaddr);
+    error_code = (*g_DirectSoundHardwareSfxBuffers[iVar1]->vtable->Play)
+                           (g_DirectSoundHardwareSfxBuffers[iVar1],0,0,in_stack_00000010);
     if (error_code != 0) {
       pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (&stack0xfffffe88,"DirectSux: Unable to %s.  (%s)",
+                (&stack0xfffffe98,"DirectSux: Unable to %s.  (%s)",
                  "Play hardware sfx secondary buffer",pcVar3);
-      sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_174);
+      sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_164);
       return 0;
     }
     iVar2 = 1;

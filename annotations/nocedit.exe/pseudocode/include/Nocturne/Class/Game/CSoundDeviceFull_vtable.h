@@ -11,9 +11,9 @@ typedef struct CSoundDeviceFull_vtable {
     CSoundDevice_hasHardware3D* hasHardware3D; // 0x14
     CSoundDevice_set3DListenerPos* set3DListenerPos; // 0x18
     CSoundDevice_set3DListenerOrient* set3DListenerOrient; // 0x1c
-    CSoundDevice_setDopplerFactor* setDopplerFactor; // 0x20
-    CSoundDevice_setRolloffFactor* setRolloffFactor; // 0x24
-    void* func11; // 0x28
+    CSoundDevice_set3DListenerVelocity* set3DListenerVelocity; // 0x20
+    CSoundDevice_set3DListenerDistanceFactor* set3DListenerDistanceFactor; // 0x24
+    CSoundDevice_commitDeferredSettings* commitDeferredSettings; // 0x28
     CSoundDevice_allocateSample* allocateSample; // 0x2c
     CSoundDevice_freeSample* freeSample; // 0x30
     CSoundDevice_lockSample* lockSample; // 0x34
@@ -23,6 +23,6 @@ typedef struct CSoundDeviceFull_vtable {
     CSoundDevice_getSfxPlaybackPos* getSfxPlaybackPos; // 0x44
     CSoundDevice_startSfx* startSfx; // 0x48
     CSoundDevice_killSfx* killSfx; // 0x4c
-    void* func21; // 0x50
+    CSoundDevice_isSfxPlaying* isSfxPlaying; // 0x50
 } CSoundDeviceFull_vtable;
 

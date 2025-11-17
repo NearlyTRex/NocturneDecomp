@@ -7,16 +7,17 @@
 //   CSoundDevice* g_CSoundDevicePtr
 // Function calls:
 //   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
-//   sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
+//   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
 
-undefined4 sound_sndmain_cpp_FUN_005a9970(void)
+int sound_sndmain_cpp_FUN_005a9970(void)
 
 {
   CSfxSlot *this_ptr;
-  undefined4 uVar1;
+  int iVar1;
+  uint in_stack_00000004;
   undefined4 in_stack_0000000c;
   undefined4 in_stack_00000010;
   undefined4 in_stack_00000014;
@@ -24,31 +25,25 @@ undefined4 sound_sndmain_cpp_FUN_005a9970(void)
   undefined4 in_stack_0000001c;
   undefined4 in_stack_00000020;
   
-  this_ptr = (CSfxSlot *)sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
+  this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(in_stack_00000004,1);
   if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }
-  (this_ptr->options).field5_0x14[0x28] = '\0';
-  (this_ptr->options).field5_0x14[0x29] = '\0';
-  (this_ptr->options).field5_0x14[0x2a] = '\0';
-  (this_ptr->options).field5_0x14[0x2b] = '\0';
-  (this_ptr->options).field5_0x14[0x2c] = '\0';
-  (this_ptr->options).field5_0x14[0x2d] = '\0';
-  (this_ptr->options).field5_0x14[0x2e] = '\0';
-  (this_ptr->options).field5_0x14[0x2f] = '\0';
-  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x10) = in_stack_0000000c;
-  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x14) = in_stack_00000010;
-  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x18) = in_stack_00000014;
-  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x1c) = in_stack_00000018;
-  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x20) = in_stack_0000001c;
-  uVar1 = 1;
-  *(undefined4 *)((this_ptr->options).field5_0x14 + 0x24) = in_stack_00000020;
-  sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr);
-  if ((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
-    uVar1 = (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr);
+  (this_ptr->options).velocity_source_ptr = (CVector3d *)0x0;
+  (this_ptr->options).velocity_format = 0;
+  *(undefined4 *)&(this_ptr->options).velocity.x = in_stack_0000000c;
+  *(undefined4 *)((int)&(this_ptr->options).velocity.x + 4) = in_stack_00000010;
+  *(undefined4 *)&(this_ptr->options).velocity.y = in_stack_00000014;
+  *(undefined4 *)((int)&(this_ptr->options).velocity.y + 4) = in_stack_00000018;
+  *(undefined4 *)&(this_ptr->options).velocity.z = in_stack_0000001c;
+  iVar1 = 1;
+  *(undefined4 *)((int)&(this_ptr->options).velocity.z + 4) = in_stack_00000020;
+  sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,0.0);
+  if ((this_ptr->hardware_buffer_handle != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
+    iVar1 = (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,this_ptr,4);
   }
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
-  return uVar1;
+  return iVar1;
 }
 
 
@@ -59,7 +54,7 @@ undefined4 sound_sndmain_cpp_FUN_005a9970(void)
 // 005a9973: MOV EDX,dword ptr [ESP + 0xc]
 //   XREF to: Stack[0x4] (READ)
 // 005a9977: PUSH EDX
-// 005a9978: CALL sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
+// 005a9978: CALL sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00
 //   XREF to: 005a5d00 (UNCONDITIONAL_CALL)
 // 005a997d: MOV EBX,EAX
 // 005a997f: ADD ESP,0x8

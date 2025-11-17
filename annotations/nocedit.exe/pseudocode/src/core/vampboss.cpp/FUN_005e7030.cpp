@@ -31,8 +31,8 @@
 //   core_mission.cpp_CDemonMission_FUN_00523b70
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_sound.cpp_CSound_playSfx_FUN_005b3a20
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -87,7 +87,7 @@ void core_vampboss_cpp_FUN_005e7030(void)
       }
       core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(in_stack_00000004);
       core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
-      sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+      sound_sndmain_cpp_FUN_005a9c40();
       core_sound_cpp_CSound_playSfx_FUN_005b3a20
                 (g_CSoundPtr,(int)in_stack_00000004,"voicudeath.wav @ 2.5");
       in_stack_00000004->hit_points = 0.0;
@@ -117,7 +117,7 @@ void core_vampboss_cpp_FUN_005e7030(void)
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               ((CMotionController *)(in_stack_00000004[1].base_actor.create_event + 0x20),(int)fVar5
                ,1);
-    iVar1 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    iVar1 = sound_sndmain_cpp_FUN_005a9660();
     if (iVar1 == 0) {
       uVar2 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                         (&in_stack_00000004->base_actor,"voicuhurt.wav");
@@ -186,7 +186,7 @@ void core_vampboss_cpp_FUN_005e7030(void)
 // 005e70b7: ADD ESP,0xc
 // 005e70ba: MOV EBX,dword ptr [ESI + 0xce900]
 // 005e70c0: PUSH EBX
-// 005e70c1: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 005e70c1: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005e70c6: ADD ESP,0x4
 // 005e70c9: TEST EAX,EAX
@@ -357,7 +357,7 @@ void core_vampboss_cpp_FUN_005e7030(void)
 // 005e7228: ADD ESP,0x8
 // 005e722b: MOV EBP,dword ptr [ESI + 0xce900]
 // 005e7231: PUSH EBP
-// 005e7232: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 005e7232: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005e7237: ADD ESP,0x4
 // 005e723a: PUSH 0x656c80

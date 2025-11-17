@@ -14,8 +14,8 @@
 //   core_chain.cpp_FUN_0042fcc0
 //   core_chain.cpp_FUN_0042fed0
 //   core_sound.cpp_CSound_FUN_005b3a70
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -279,8 +279,8 @@ void core_chain_cpp_FUN_004300d0(void)
     }
   }
   if ((local_50 != 0) && (in_stack_00000004[0x1b4] != '\0')) {
-    sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-    iVar4 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    sound_sndmain_cpp_FUN_005a9c40();
+    iVar4 = sound_sndmain_cpp_FUN_005a9660();
     if (iVar4 == 0) {
       core_sound_cpp_CSound_FUN_005b3a70(g_CSoundPtr,in_stack_00000004,in_stack_00000004 + 0x1b4);
       *(undefined4 *)(in_stack_00000004 + 0x280) = extraout_EAX;
@@ -295,12 +295,12 @@ void core_chain_cpp_FUN_004300d0(void)
     in_stack_00000004[0x285] = '\0';
     in_stack_00000004[0x286] = '\0';
     in_stack_00000004[0x287] = '\0';
-    sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+    sound_sndmain_cpp_FUN_005a9c40();
     return;
   }
-  iVar4 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+  iVar4 = sound_sndmain_cpp_FUN_005a9660();
   if (iVar4 == 0) {
-    iVar4 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    iVar4 = sound_sndmain_cpp_FUN_005a9660();
     if (iVar4 == 0) {
       core_sound_cpp_CSound_FUN_005b3a70(g_CSoundPtr,in_stack_00000004,in_stack_00000004 + 0x21c);
       *(undefined4 *)(in_stack_00000004 + 0x280) = extraout_EAX_00;
@@ -997,12 +997,12 @@ void core_chain_cpp_FUN_004300d0(void)
 //   XREF to: 004307f5 (CONDITIONAL_JUMP)
 // 004307d3: MOV EBX,dword ptr [ESI + 0x280]
 // 004307d9: PUSH EBX
-// 004307da: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 004307da: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004307df: ADD ESP,0x4
 // 004307e2: MOV EDI,dword ptr [ESI + 0x218]
 // 004307e8: PUSH EDI
-// 004307e9: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 004307e9: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004307ee: ADD ESP,0x4
 // 004307f1: TEST EAX,EAX
@@ -1057,7 +1057,7 @@ void core_chain_cpp_FUN_004300d0(void)
 // 00430863: MOV EBX,dword ptr [ESI + 0x218]
 //   Label: LAB_00430863
 // 00430869: PUSH EBX
-// 0043086a: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 0043086a: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 0043086f: ADD ESP,0x4
 // 00430872: TEST EAX,EAX
@@ -1065,7 +1065,7 @@ void core_chain_cpp_FUN_004300d0(void)
 //   XREF to: 004308c1 (CONDITIONAL_JUMP)
 // 00430876: MOV EDI,dword ptr [ESI + 0x280]
 // 0043087c: PUSH EDI
-// 0043087d: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 0043087d: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00430882: ADD ESP,0x4
 // 00430885: TEST EAX,EAX
@@ -1103,7 +1103,7 @@ void core_chain_cpp_FUN_004300d0(void)
 //   Label: LAB_004308d2
 // 004308d8: PUSH ECX
 // 004308d9: MOV dword ptr [ESI + 0x284],EDX
-// 004308df: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 004308df: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004308e4: ADD ESP,0x4
 // 004308e7: MOV ESP,EBP

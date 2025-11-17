@@ -2,7 +2,7 @@
 // Address: 005afd60
 // Address Range: [[005afd60, 005afe79]]
 // Convention: __cdecl
-// Signature: float sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60(CDirectSoundDevice * this_ptr)
+// Signature: double sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60(CDirectSoundDevice * this_ptr, CSfxSlot * slot)
 // Globals:
 //   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c
 //   TerminatedCString s_sound_snddx_cpp_006520a3
@@ -10,8 +10,8 @@
 //   TerminatedCString s_Get_playback_cursor_of_h_006520ec
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   IDirectSoundBuffer* g_DirectSoundSampleBuffersEnd
-//   undefined4 DAT_03f6aac0
+//   IDirectSoundBuffer*[31] g_DirectSoundHardwareSfxBuffers
+//   IDirectSound3DBuffer*[31] g_DirectSound3DBufferInterfaces
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -21,40 +21,42 @@
 
 #include "nocturne.h"
 
-float __cdecl
-sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60(CDirectSoundDevice *this_ptr)
+double __cdecl
+sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
+          (CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 {
-  int iVar1;
+  CSoundDeviceFull_vtable *pCVar1;
   uint uVar2;
   char *pcVar3;
   BADSPACEBASE *in_ESP;
-  int in_stack_00000008;
+  uint in_stack_00000004;
   char acStack_198 [4];
   char acStack_194 [384];
   DWORD local_14;
   
-  iVar1 = *(int *)(in_stack_00000008 + 0x70);
-  if ((((iVar1 < 1) || (0x1e < iVar1)) ||
-      ((&g_DirectSoundSampleBuffersEnd)[iVar1] == (IDirectSoundBuffer *)0x0)) ||
-     (g_DirectSoundBufferInUse[iVar1 + 0x1e] == 0)) {
+  pCVar1 = this_ptr[0x1c].base.vtable;
+  if (((((int)pCVar1 < 1) || (0x1e < (int)pCVar1)) ||
+      (g_DirectSoundHardwareSfxBuffers[(int)pCVar1] == (IDirectSoundBuffer *)0x0)) ||
+     (g_DirectSound3DBufferInterfaces[(int)pCVar1] == (IDirectSound3DBuffer *)0x0)) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
     g_CurrentLineNumber = 0x3d6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::getSfxPlaybackPos - invalid handle");
   }
-  uVar2 = (*(&g_DirectSoundSampleBuffersEnd)[iVar1]->vtable->GetCurrentPosition)
-                    ((&g_DirectSoundSampleBuffersEnd)[iVar1],(LPDWORD)&stack0xfffffff0,&local_14);
+  uVar2 = (*g_DirectSoundHardwareSfxBuffers[(int)pCVar1]->vtable->GetCurrentPosition)
+                    (g_DirectSoundHardwareSfxBuffers[(int)pCVar1],(LPDWORD)&stack0xfffffff0,
+                     &local_14);
   if (uVar2 != 0) {
     pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar2);
     crt_stdio_c_sprintf_FUN_005fdbd0
               (acStack_198,"DirectSux: Unable to %s.  (%s)","Get playback cursor of hardware sfx secondary buffer",
                pcVar3);
     sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_194);
-    return 0.0;
+    return -1.0;
   }
   uVar2 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
-                    (*(CSfxSample **)(in_stack_00000008 + 0x78));
-  return SUB84((double)((uint)this_ptr / uVar2),0);
+                    ((CSfxSample *)this_ptr[0x1e].base.vtable);
+  return (double)(in_stack_00000004 / uVar2);
 }
 
 

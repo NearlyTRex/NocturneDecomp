@@ -74,7 +74,7 @@
 //   sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0 (005349e0) at 00534a49 [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 (00534630) at 00534689 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_005a6400 (005a6400) at 005a641c [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FreeSomeSoundMemory_FUN_005a5900 (005a5900) at 005a5924 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_freeMixBuffers_FUN_005a5900 (005a5900) at 005a5924 [UNCONDITIONAL_CALL]
 //   support_codec.cpp_CLZWDictionary_free_FUN_0043ee10 (0043ee10) at 0043ee35 [UNCONDITIONAL_CALL]
 //   wincore_wddvmem.cpp_cleanupGraphicsSystem_FUN_005ecd90 (005ecd90) at 005ece2f [UNCONDITIONAL_CALL]
 //   wincore_wddvmem.cpp_freeRenderBuffers_FUN_005ecba0 (005ecba0) at 005ecbc7 [UNCONDITIONAL_CALL]

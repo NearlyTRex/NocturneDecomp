@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005ab8d0()
 // Globals:
-//   undefined4 DAT_00681b50
+//   int g_CurrentRecordingDevice = -0x1
 //   int g_SoundLockCount
 //   undefined4 DAT_03f69410
 //   IDirectSoundCapture* g_RecordingDeviceInterface
@@ -24,12 +24,13 @@ undefined4 sound_sndmain_cpp_FUN_005ab8d0(void)
   if (iVar1 == 0) {
     return 0;
   }
-  sound_sndmain_cpp_selectRecordingDevice_FUN_005ab860();
-  if (-1 < DAT_00681b50) {
-    if (g_RecordingDevices[DAT_00681b50].api_type == 0) {
+  sound_sndmain_cpp_selectRecordingDevice_FUN_005ab860(g_CurrentRecordingDevice);
+  if (-1 < g_CurrentRecordingDevice) {
+    if (g_RecordingDevices[g_CurrentRecordingDevice].api_type == 0) {
       g_RecordingDeviceInterface =
            (IDirectSoundCapture *)
-           sound_sndwav_cpp_getWavInDevice_FUN_005b1600(g_RecordingDevices[DAT_00681b50].device_id);
+           sound_sndwav_cpp_getWavInDevice_FUN_005b1600
+                     (g_RecordingDevices[g_CurrentRecordingDevice].device_id);
     }
     if (g_RecordingDeviceInterface != (IDirectSoundCapture *)0x0) {
       return 1;

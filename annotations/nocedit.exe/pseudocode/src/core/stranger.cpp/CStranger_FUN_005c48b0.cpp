@@ -33,8 +33,8 @@
 //   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   engine_console.cpp_CConsole_printf_FUN_00441890
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -129,7 +129,7 @@ void core_stranger_cpp_CStranger_FUN_005c48b0
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(param_5->model).motion_controller,iVar3,in_stack_ffffffc4);
-        sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+        sound_sndmain_cpp_FUN_005a9c40();
         if (*(int *)(param_6 + 0x30) != 1) {
           uVar5 = (*((param_5->base_actor).vtable)->playSound)
                             (&param_5->base_actor,"stranger_die??.wav");
@@ -168,7 +168,7 @@ void core_stranger_cpp_CStranger_FUN_005c48b0
               (&this_ptr->motion_controller,0x24,1);
   }
 LAB_005c4be2:
-  iVar3 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+  iVar3 = sound_sndmain_cpp_FUN_005a9660();
   if (iVar3 == 0) {
     uVar5 = (*((param_5->base_actor).vtable)->playSound)
                       (&param_5->base_actor,"stranger_hit??.wav");
@@ -332,7 +332,7 @@ LAB_005c4ae0:
 // 005c4a3c: ADD ESP,0xc
 // 005c4a3f: MOV ECX,dword ptr [EBX + 0x1fe68]
 // 005c4a45: PUSH ECX
-// 005c4a46: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 005c4a46: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005c4a4b: MOV EDI,dword ptr [ESI + 0x30]
 // 005c4a4e: ADD ESP,0x4
@@ -491,7 +491,7 @@ LAB_005c4ae0:
 // 005c4be2: MOV EDX,dword ptr [EBX + 0x1fe68]
 //   Label: LAB_005c4be2
 // 005c4be8: PUSH EDX
-// 005c4be9: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 005c4be9: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005c4bee: ADD ESP,0x4
 // 005c4bf1: TEST EAX,EAX

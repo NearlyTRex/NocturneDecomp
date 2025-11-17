@@ -8,7 +8,7 @@
 //   waveInUnprepareHeader* waveInUnprepareHeader = 00211906
 //   TerminatedCString s_waveInReset_failed_00652462
 //   HWAVEIN g_WaveInHandle
-//   LPWAVEHDR[8] g_WaveInHeaders
+//   LPWAVEHDR[20] g_WaveInHeaders
 //   undefined4 DAT_03f6ae24
 // Function calls:
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0

@@ -9,7 +9,7 @@
 // Globals:
 //   TerminatedCString s_were_wav_00657da4
 // Function calls:
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9660
 
 #include "nocturne.h"
 
@@ -23,7 +23,7 @@ void core_werewolf_cpp_FUN_005f11e0(void)
   int in_stack_00000004;
   
   *(undefined4 *)(in_stack_00000004 + 0xbedc) = 0x41200000;
-  iVar1 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+  iVar1 = sound_sndmain_cpp_FUN_005a9660();
   if (iVar1 != 0) {
     return;
   }
@@ -42,7 +42,7 @@ void core_werewolf_cpp_FUN_005f11e0(void)
 // 005f11e5: MOV EDX,dword ptr [EBX + 0xbed8]
 // 005f11eb: PUSH EDX
 // 005f11ec: MOV dword ptr [EBX + 0xbedc],0x41200000
-// 005f11f6: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 005f11f6: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005f11fb: ADD ESP,0x4
 // 005f11fe: TEST EAX,EAX

@@ -8,9 +8,9 @@
 // Globals:
 //   undefined4 DAT_03f5d87c
 // Function calls:
+//   sound_sndmain.cpp_FUN_005aa660
 //   sound_sndmain.cpp_FUN_005ab130
 //   sound_sndmain.cpp_FUN_005ab660
-//   sound_sndmain.cpp_LockFreeSampleAndUnlock_FUN_005aa660
 //   sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930
 //   sound_sndmain.cpp_stopRecordingDevice_FUN_005abb60
 
@@ -34,7 +34,7 @@ void __cdecl sound_sndmain_cpp_FUN_005aaeb0(void)
   uStack00000008 = 0x5aaed8;
   sound_sndmain_cpp_releaseRecordingDevice_FUN_005ab930();
   uStack0000000c = 0x5aaedd;
-  sound_sndmain_cpp_LockFreeSampleAndUnlock_FUN_005aa660();
+  sound_sndmain_cpp_FUN_005aa660();
   DAT_03f5d87c = DAT_03f5d87c + -1;
   return;
 }
@@ -60,7 +60,7 @@ void __cdecl sound_sndmain_cpp_FUN_005aaeb0(void)
 //   XREF to: 005abb60 (UNCONDITIONAL_CALL)
 // 005aaed3: CALL sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930
 //   XREF to: 005ab930 (UNCONDITIONAL_CALL)
-// 005aaed8: CALL sound_sndmain.cpp_LockFreeSampleAndUnlock_FUN_005aa660
+// 005aaed8: CALL sound_sndmain.cpp_FUN_005aa660
 //   XREF to: 005aa660 (UNCONDITIONAL_CALL)
 // 005aaedd: DEC dword ptr [0x03f5d87c]
 //   XREF to: 03f5d87c (READ_WRITE)

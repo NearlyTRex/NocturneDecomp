@@ -16,8 +16,8 @@
 //   core_imp.cpp_FUN_004fab60
 //   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -36,7 +36,7 @@ void core_imp_cpp_FUN_004fae00(void)
   int in_stack_00000008;
   char *sound_name;
   
-  sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+  sound_sndmain_cpp_FUN_005a9c40();
   if (*(int *)(in_stack_00000008 + 0x28) == 8) {
     iVar3 = 0;
     *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)DOUBLE_0062fa8e;
@@ -56,7 +56,7 @@ void core_imp_cpp_FUN_004fae00(void)
   if (0.0 < (float)pCVar1) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               ((CMotionController *)this_ptr,5,1);
-    iVar3 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    iVar3 = sound_sndmain_cpp_FUN_005a9660();
     if (iVar3 != 0) goto LAB_004faefc;
     sound_name = "imp-hurt?.wav";
   }
@@ -67,7 +67,7 @@ void core_imp_cpp_FUN_004fae00(void)
     if ((pSVar2->state_index == 6) || (pSVar2->state_index == 7)) goto LAB_004faefc;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               ((CMotionController *)this_ptr,6,1);
-    sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+    sound_sndmain_cpp_FUN_005a9c40();
     sound_name = "imp-die?.wav";
   }
   iVar3 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,sound_name);
@@ -91,7 +91,7 @@ LAB_004faefc:
 //   XREF to: Stack[0x8] (READ)
 // 004fae0f: MOV EDX,dword ptr [ESI + 0xbebc]
 // 004fae15: PUSH EDX
-// 004fae16: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 004fae16: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004fae1b: MOV ECX,dword ptr [EDI + 0x28]
 // 004fae1e: ADD ESP,0x4
@@ -172,7 +172,7 @@ LAB_004faefc:
 // 004faed2: ADD ESP,0xc
 // 004faed5: MOV EDX,dword ptr [ESI + 0xbec0]
 // 004faedb: PUSH EDX
-// 004faedc: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 004faedc: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004faee1: ADD ESP,0x4
 // 004faee4: PUSH 0x62fa6e
@@ -204,7 +204,7 @@ LAB_004faefc:
 // 004faf18: ADD ESP,0xc
 // 004faf1b: MOV EAX,dword ptr [ESI + 0xbec0]
 // 004faf21: PUSH EAX
-// 004faf22: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 004faf22: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004faf27: ADD ESP,0x4
 // 004faf2a: TEST EAX,EAX

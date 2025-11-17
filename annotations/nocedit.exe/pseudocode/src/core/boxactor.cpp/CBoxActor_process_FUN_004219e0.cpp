@@ -54,6 +54,7 @@ void core_boxactor_cpp_CBoxActor_process_FUN_004219e0(void)
   float10 fVar11;
   CDemonActor *in_stack_00000004;
   float in_stack_00000008;
+  int in_stack_ffffff38;
   undefined1 local_84 [56];
   CDemonActor *pCStack_4c;
   CDemonActor *pCStack_48;
@@ -108,7 +109,8 @@ void core_boxactor_cpp_CBoxActor_process_FUN_004219e0(void)
     if (extraout_EAX_00 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       in_stack_00000008 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
-      sound_sndmain_cpp_FUN_005a8be0();
+      sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0
+                ((double)in_stack_00000008,in_stack_ffffff38);
       fVar8 = (float)(*in_stack_00000004->vtable->playSound)
                                (in_stack_00000004,(char *)&in_stack_00000004[2].location.position.y)
       ;

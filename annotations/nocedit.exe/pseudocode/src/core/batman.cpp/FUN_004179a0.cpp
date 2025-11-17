@@ -19,8 +19,8 @@
 //   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -42,8 +42,8 @@ void core_batman_cpp_FUN_004179a0(void)
   CVector3f CStack_20;
   CCharacter *pCStack_14;
   
-  sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-  sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+  sound_sndmain_cpp_FUN_005a9c40();
+  sound_sndmain_cpp_FUN_005a9c40();
   if (*(int *)((int)in_stack_00000008 + 0x28) == 7) {
     iVar2 = 0;
     *(float *)((int)in_stack_00000008 + 4) =
@@ -75,7 +75,7 @@ void core_batman_cpp_FUN_004179a0(void)
     if ((pSVar3->state_index != 7) && (pSVar3->state_index != 8)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr->motion_controller,7,1);
-      sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+      sound_sndmain_cpp_FUN_005a9c40();
       pCVar4 = (CDemonActor *)
                (*((in_stack_00000004->base_actor).vtable)->playSound)
                          (&in_stack_00000004->base_actor,"batman-die.wav");
@@ -100,7 +100,7 @@ void core_batman_cpp_FUN_004179a0(void)
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(in_stack_00000004->model).motion_controller,6,1);
     }
-    iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    iVar2 = sound_sndmain_cpp_FUN_005a9660();
     if (iVar2 == 0) {
       pCVar4 = (CDemonActor *)
                (*((in_stack_00000004->base_actor).vtable)->playSound)
@@ -131,12 +131,12 @@ void core_batman_cpp_FUN_004179a0(void)
 //   XREF to: Stack[0x8] (READ)
 // 004179af: MOV EDX,dword ptr [ESI + 0xbf74]
 // 004179b5: PUSH EDX
-// 004179b6: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 004179b6: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004179bb: ADD ESP,0x4
 // 004179be: MOV ECX,dword ptr [ESI + 0xbf6c]
 // 004179c4: PUSH ECX
-// 004179c5: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 004179c5: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004179ca: MOV EBX,dword ptr [EDI + 0x28]
 // 004179cd: ADD ESP,0x4
@@ -233,7 +233,7 @@ void core_batman_cpp_FUN_004179a0(void)
 // 00417a9e: MOV ECX,dword ptr [ESI + 0xbf70]
 //   Label: LAB_00417a9e
 // 00417aa4: PUSH ECX
-// 00417aa5: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 00417aa5: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00417aaa: ADD ESP,0x4
 // 00417aad: TEST EAX,EAX
@@ -313,7 +313,7 @@ void core_batman_cpp_FUN_004179a0(void)
 // 00417b47: ADD ESP,0xc
 // 00417b4a: MOV EBX,dword ptr [ESI + 0xbf70]
 // 00417b50: PUSH EBX
-// 00417b51: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 00417b51: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 00417b56: ADD ESP,0x4
 // 00417b59: PUSH 0x61597d

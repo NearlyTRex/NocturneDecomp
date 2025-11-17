@@ -5,7 +5,7 @@
 // Signature: int sound_sndmain.cpp_CSfxSample_lock_FUN_005a6430(CSfxSample * this_ptr)
 // Cross-references:
 //   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a69c2 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a50ed [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a50ed [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_0064fd57
 //   TerminatedCString s_SfxSample_lock_already_l_0064fd6c
@@ -36,12 +36,12 @@ int __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(CSfxSample *this_ptr)
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::lock - already locked!");
   }
   if (((int)in_stack_00000008 < 0) ||
-     (*(int *)this_ptr->field12_0x160 < (int)in_stack_00000008 + (int)in_stack_0000000c)) {
+     (this_ptr->streaming_buffer_size < (int)in_stack_00000008 + (int)in_stack_0000000c)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x758;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::lock - invalid region");
   }
-  if (this_ptr->buffer_id == (void *)0x0) {
+  if (this_ptr->buffer_id == 0) {
     if (this_ptr->sample_data == (void *)0x0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x75f;
@@ -54,11 +54,13 @@ int __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(CSfxSample *this_ptr)
     if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
       return 0;
     }
-    pvVar2 = (void *)(*g_CSoundDevicePtr->vtable->lockSample)(g_CSoundDevicePtr);
+    pvVar2 = (void *)(*g_CSoundDevicePtr->vtable->lockSample)
+                               (g_CSoundDevicePtr,this_ptr->buffer_id,(int)in_stack_00000008,
+                                (int)in_stack_0000000c);
   }
   if (pvVar2 != (void *)0x0) {
     this_ptr->sound_buffer = in_stack_0000000c;
-    this_ptr->field16_0x178 = in_stack_00000008;
+    this_ptr->field18_0x178 = in_stack_00000008;
   }
   return (int)pvVar2;
 }

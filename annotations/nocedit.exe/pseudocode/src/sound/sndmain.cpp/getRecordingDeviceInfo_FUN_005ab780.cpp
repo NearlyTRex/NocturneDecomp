@@ -1,10 +1,10 @@
 // Name: sound_sndmain.cpp_getRecordingDeviceInfo_FUN_005ab780
 // Address: 005ab780
 // Address Range: [[005ab780, 005ab7d5]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_getRecordingDeviceInfo_FUN_005ab780()
+// Convention: __cdecl
+// Signature: void sound_sndmain.cpp_getRecordingDeviceInfo_FUN_005ab780(int index, SRecordingDeviceInfo * device_info)
 // Cross-references:
-//   sound_sndmain.cpp_GetAllRecordingDevices_FUN_005ab7e0 (005ab7e0) at 005ab803 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_findBestRecordingDevice_FUN_005ab7e0 (005ab7e0) at 005ab803 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005abfac [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_00650d2c
@@ -19,26 +19,23 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_getRecordingDeviceInfo(undefined4 param_1, undefined4
-   param_2) */
-
-void sound_sndmain_cpp_getRecordingDeviceInfo_FUN_005ab780(void)
+void __cdecl
+sound_sndmain_cpp_getRecordingDeviceInfo_FUN_005ab780(int index,SRecordingDeviceInfo *device_info)
 
 {
   int iVar1;
   SRecordingDeviceInfo *pSVar2;
   byte bVar3;
-  int in_stack_00000004;
   undefined4 *in_stack_00000010;
   
   bVar3 = 0;
   iVar1 = sound_sndmain_cpp_getRecordingDeviceCount_FUN_005ab720();
-  if ((in_stack_00000004 < 0) || (iVar1 <= in_stack_00000004)) {
+  if ((index < 0) || (iVar1 <= index)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x141b;
     core_main_c_displayErrorAndQuit_FUN_00506f10("getRecordingDeviceInfo - invalid index");
   }
-  pSVar2 = g_RecordingDevices + in_stack_00000004;
+  pSVar2 = g_RecordingDevices + index;
   for (iVar1 = 0x42; iVar1 != 0; iVar1 = iVar1 + -1) {
     *in_stack_00000010 = *(undefined4 *)pSVar2->device_name;
     pSVar2 = (SRecordingDeviceInfo *)((int)pSVar2 + ((uint)bVar3 * -2 + 1) * 4);

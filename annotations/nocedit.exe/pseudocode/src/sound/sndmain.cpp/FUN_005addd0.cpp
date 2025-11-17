@@ -1,17 +1,17 @@
 // Name: sound_sndmain.cpp_FUN_005addd0
 // Address: 005addd0
 // Address Range: [[005addd0, 005addda]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_FUN_005addd0()
+// Convention: __cdecl
+// Signature: int sound_sndmain.cpp_FUN_005addd0(void)
 
 #include "nocturne.h"
 
-undefined4 sound_sndmain_cpp_FUN_005addd0(void)
+int __cdecl sound_sndmain_cpp_FUN_005addd0(void)
 
 {
   int in_stack_00000004;
   
-  return *(undefined4 *)(in_stack_00000004 + 0x104);
+  return *(int *)(in_stack_00000004 + 0x104);
 }
 
 

@@ -24,7 +24,7 @@
 //   core_gore.cpp_FUN_004edbb0
 //   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+//   sound_sndmain.cpp_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -51,7 +51,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
   float fStack_14;
   
   max_value = 6.127877e-39;
-  sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+  sound_sndmain_cpp_FUN_005a9c40();
   if ((this_ptr->model).model_name[0] != '\0') {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(&this_ptr->model);
     local_1c = (float)pCVar1->num_parts;
@@ -128,7 +128,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
 // 0042b9f8: MOV dword ptr [ESP],EAX
 // 0042b9fb: MOV EDX,dword ptr [EDI + 0xb7d4]
 // 0042ba01: PUSH EDX
-// 0042ba02: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 0042ba02: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 0042ba07: LEA EAX,[EDI + 0x158]
 // 0042ba0d: LEA ESI,[EDI + 0x23b8]

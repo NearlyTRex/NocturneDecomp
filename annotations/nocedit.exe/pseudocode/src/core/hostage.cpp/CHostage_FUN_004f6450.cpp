@@ -8,7 +8,7 @@
 // Function calls:
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_npc.cpp_CNPC_FUN_00544d30
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9660
 
 #include "nocturne.h"
 
@@ -50,7 +50,7 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6450(CHostage *this_ptr)
       *(undefined4 *)(this_ptr->field8_0x1fae0 + 8) = uVar3;
     }
     uStack0000001c = 0x4f64ca;
-    iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    iVar2 = sound_sndmain_cpp_FUN_005a9660();
     if (iVar2 == 0) {
       uStack0000001c = 0x4f6539;
       uVar3 = (*((this_ptr->base_npc).base_character.base_actor.vtable)->playSound)
@@ -114,7 +114,7 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6450(CHostage *this_ptr)
 // 004f64be: MOV EDI,dword ptr [EBX + 0x1fab0]
 //   Label: LAB_004f64be
 // 004f64c4: PUSH EDI
-// 004f64c5: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 004f64c5: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004f64ca: ADD ESP,0x4
 // 004f64cd: TEST EAX,EAX

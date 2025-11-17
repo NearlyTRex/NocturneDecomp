@@ -16,7 +16,7 @@
 //   TerminatedCString s_setNextSfxChannel_invali_0065086d
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   undefined4 g_SfxLastSlot
+//   int g_SfxLastSlot
 //   CSfxOptions[8] g_SfxOptions
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10

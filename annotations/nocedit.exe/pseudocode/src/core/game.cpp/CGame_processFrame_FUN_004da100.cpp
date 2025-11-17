@@ -123,8 +123,8 @@
 //   shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380
 //   shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40
 //   shape_memdbg.cpp_closeFile_FUN_0050f9b0
-//   sound_sndmain.cpp_CallToLockDoSomethingAndUnlockSound2_FUN_005a96e0
 //   sound_sndmain.cpp_FUN_005a8480
+//   sound_sndmain.cpp_FUN_005a96e0
 //   sound_sndmain.cpp_FUN_005a9ef0
 //   sound_sndmain.cpp_FUN_005a9f30
 //   sound_sndmain.cpp_FUN_005a9ff0
@@ -148,9 +148,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   double dVar1;
   char cVar2;
   CHero *pCVar3;
-  uint uVar4;
   CNetGame *this_ptr_00;
-  int iVar5;
+  int iVar4;
+  uint uVar5;
   char *pcVar6;
   int iVar7;
   CLocation *pCVar8;
@@ -195,7 +195,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   int local_18;
   int local_14;
   
-  iVar5 = (int)((ulonglong)in_stack_fffff9bc >> 0x20);
+  iVar4 = (int)((ulonglong)in_stack_fffff9bc >> 0x20);
   bVar13 = 0;
   local_40 = 0;
   if (this_ptr->profile_mode != 0) {
@@ -243,7 +243,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
                  (CVector3f *)(local_b0 + 0xc));
       if (((byte)g_MouseButtonFlags & 1) != 0) {
         core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
-                  (&g_CDemonCameraInstance,(CVector3i *)g_MouseX,g_MouseY,iVar5);
+                  (&g_CDemonCameraInstance,(CVector3i *)g_MouseX,g_MouseY,iVar4);
         output_ptr = local_70;
         local_70[0].x = aiStack_90[2];
         *(int *)((int)local_70 + ((uint)bVar13 * -2 + -1) * 4 + 8) =
@@ -286,7 +286,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       }
       if (((this_ptr->velocity_debug_enabled != 0) ||
           (pcVar6 = crt_env_c_getenv_FUN_006013f0("SPOOKHOUSE"), pcVar6 != (char *)0x0)) &&
-         (iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3e), iVar5 != 0)) {
+         (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3e), iVar4 != 0)) {
         DAT_02d82568 = DAT_02d82568 + 1;
         crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02d82570,"demon%d.pcx",DAT_02d82568);
         engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02d82570);
@@ -298,13 +298,13 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       }
       core_game_cpp_CGame_drawScreenBorder_FUN_004d7e50(this_ptr);
       if (g_CheatFlags != 0) {
-        iVar5 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
-        if ((iVar5 != 0) &&
-           (iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2f), iVar5 != 0)) {
-          iVar5 = g_DebugRecording;
+        iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+        if ((iVar4 != 0) &&
+           (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2f), iVar4 != 0)) {
+          iVar4 = g_DebugRecording;
           if (g_DebugRecording == 0) {
             g_DebugRecording = 1;
-            _DAT_02d831bc = iVar5;
+            _DAT_02d831bc = iVar4;
           }
           else {
             g_DebugRecording = 0;
@@ -313,10 +313,10 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         if ((_g_DebugRecordingParams < 1) || (_DAT_02d831bc < _g_DebugRecordingParams)) {
           if (g_DebugRecording != 0) {
             pcVar6 = "noc%05d.raw";
-            iVar5 = _DAT_02d831bc;
+            iVar4 = _DAT_02d831bc;
             crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"noc%05d.raw");
             crt_stdio_c_sprintf_FUN_005fdbd0
-                      (local_1dc,"Movie recording active: movie\\%s",local_114,pcVar6,iVar5);
+                      (local_1dc,"Movie recording active: movie\\%s",local_114,pcVar6,iVar4);
             local_34 = engine_dosio_c_getFile_FUN_00481a50("movie",local_114,"wb")
             ;
             if (local_34 != (FILE *)0x0) {
@@ -329,29 +329,29 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
                     do {
                       local_28 = (local_30 * g_WindowWidth) / DAT_0067b664;
                       local_20 = ((local_30 + 1) * g_WindowWidth) / DAT_0067b664;
-                      iVar5 = (local_38 * g_WindowHeight) / DAT_0067b668;
+                      iVar4 = (local_38 * g_WindowHeight) / DAT_0067b668;
                       iVar7 = (local_3c * g_WindowHeight) / DAT_0067b668;
                       iVar11 = 0;
                       local_18 = 0;
                       local_1c = 0;
                       iVar12 = 0;
-                      if (iVar5 < iVar7) {
-                        local_24 = iVar5 << 2;
+                      if (iVar4 < iVar7) {
+                        local_24 = iVar4 << 2;
                         local_2c = iVar7 << 2;
                         do {
                           if (local_28 < local_20) {
                             puVar10 = (uint *)(local_28 * 4 +
                                               *(int *)((int)g_ScreenBufferArray + local_24));
-                            iVar5 = local_28;
+                            iVar4 = local_28;
                             do {
-                              uVar4 = *puVar10;
-                              iVar11 = iVar11 + (uVar4 >> 0x10 & 0xff);
+                              uVar5 = *puVar10;
+                              iVar11 = iVar11 + (uVar5 >> 0x10 & 0xff);
                               puVar10 = puVar10 + 1;
-                              iVar12 = iVar12 + (uVar4 >> 8 & 0xff);
-                              iVar5 = iVar5 + 1;
-                              local_1c = local_1c + (uVar4 & 0xff);
+                              iVar12 = iVar12 + (uVar5 >> 8 & 0xff);
+                              iVar4 = iVar4 + 1;
+                              local_1c = local_1c + (uVar5 & 0xff);
                               local_18 = local_18 + 1;
-                            } while (iVar5 < local_20);
+                            } while (iVar4 < local_20);
                           }
                           local_24 = local_24 + 4;
                         } while (local_24 < local_2c);
@@ -360,10 +360,10 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
                       local_1c = local_1c / local_18;
                       crt_stdio_c_fputc_FUN_006007a0(iVar11 / local_18,local_34);
                       crt_stdio_c_fputc_FUN_006007a0(iVar12,local_34);
-                      iVar5 = local_30 + 1;
+                      iVar4 = local_30 + 1;
                       crt_stdio_c_fputc_FUN_006007a0(local_1c,local_34);
-                      local_30 = iVar5;
-                    } while (iVar5 < DAT_0067b664);
+                      local_30 = iVar4;
+                    } while (iVar4 < DAT_0067b664);
                   }
                   local_38 = local_38 + 1;
                 } while (local_38 < DAT_0067b668);
@@ -432,18 +432,18 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         }
       }
       if (_DAT_02d831c0 != 0) {
-        iVar5 = sound_sndmain_cpp_FUN_005a9ef0();
+        uVar5 = sound_sndmain_cpp_FUN_005a9ef0();
         y_pos = (SCollisionInfo *)0x37;
-        while (iVar5 != 0) {
+        while (uVar5 != 0) {
           sound_sndmain_cpp_FUN_005a8480();
           pcVar14 = &stack0xfffff9d4;
-          iVar5 = sound_sndmain_cpp_CallToLockDoSomethingAndUnlockSound2_FUN_005a96e0();
-          if (iVar5 != 0) {
+          iVar4 = sound_sndmain_cpp_FUN_005a96e0();
+          if (iVar4 != 0) {
             pcVar14 = (char *)y_pos;
             engine_2d_c_drawTextXY_FUN_00402130(0,(int)y_pos,&stack0xfffff9d4);
             y_pos = (SCollisionInfo *)((int)&y_pos->field2_0x8 + 3);
           }
-          iVar5 = sound_sndmain_cpp_FUN_005a9f30();
+          uVar5 = sound_sndmain_cpp_FUN_005a9f30();
         }
       }
       if (this_ptr->event_processing_enabled != 0) {
@@ -457,9 +457,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
                   (g_CEditorToolsPtr,local_2dc);
         engine_2d_c_drawText_FUN_00401fd0(local_2dc,0,g_WindowHeight + -0x42);
       }
-      iVar5 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision)
+      iVar4 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision)
                         ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],(SCollisionInfo *)pcVar14);
-      if (iVar5 == 2) {
+      if (iVar4 == 2) {
         pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                            ("You're dead.  Game over.");
         pcVar14 = local_4dc;
@@ -1440,7 +1440,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 //   XREF to: Stack[-0x62c] (DATA)
 // 004da94f: PUSH EAX
 // 004da950: PUSH EBX
-// 004da951: CALL sound_sndmain.cpp_CallToLockDoSomethingAndUnlockSound2_FUN_005a96e0
+// 004da951: CALL sound_sndmain.cpp_FUN_005a96e0
 //   XREF to: 005a96e0 (UNCONDITIONAL_CALL)
 // 004da956: ADD ESP,0x8
 // 004da959: TEST EAX,EAX

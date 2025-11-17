@@ -45,14 +45,14 @@
 //   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 //   shape_memdbg.cpp_debugFree_FUN_0050f460
 //   shape_memdbg.cpp_debugMalloc_FUN_0050f250
-//   sound_sndmain.cpp_FUN_005a8b70
+//   sound_sndmain.cpp_FUN_005a9660
 //   sound_sndmain.cpp_FUN_005aaef0
 //   sound_sndmain.cpp_FUN_005ab130
 //   sound_sndmain.cpp_isSfxChannelEnabled_FUN_005a9ea0
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
 //   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 //   wincore_windll.cpp_clearScreen_FUN_005b3e70
@@ -161,7 +161,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
     uStack_1120 = 0x4e4396;
     sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(1);
-    sound_sndmain_cpp_FUN_005a8b70();
+    sound_sndmain_cpp_setNextSfxFlags_FUN_005a8b70(1);
     sound_sndmain_cpp_startSfx_FUN_005a8e90();
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   }
@@ -204,8 +204,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
           iVar9 = iVar9 + 4;
         } while (SBORROW4(iVar9,iVar1) != iVar9 + iVar8 * -4 < 0);
       }
-      if ((iStack00000030 != 0) &&
-         (iVar8 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar8 == 0)) {
+      if ((iStack00000030 != 0) && (iVar8 = sound_sndmain_cpp_FUN_005a9660(), iVar8 == 0)) {
 LAB_004e43c1:
         if (g_MessageCount != 0) {
           this_ptr_00->win_font_enabled = 1;
@@ -456,7 +455,7 @@ LAB_004e43c1:
 // 004e4246: JZ 0x004e4259
 //   XREF to: 004e4259 (CONDITIONAL_JUMP)
 // 004e4248: PUSH ECX
-// 004e4249: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 004e4249: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004e424e: ADD ESP,0x4
 // 004e4251: TEST EAX,EAX
@@ -593,7 +592,7 @@ LAB_004e43c1:
 //   XREF to: 005a8af0 (UNCONDITIONAL_CALL)
 // 004e4396: ADD ESP,0x4
 // 004e4399: PUSH 0x1
-// 004e439b: CALL sound_sndmain.cpp_FUN_005a8b70
+// 004e439b: CALL sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70
 //   XREF to: 005a8b70 (UNCONDITIONAL_CALL)
 // 004e43a0: ADD ESP,0x4
 // 004e43a3: PUSH 0x62d64a

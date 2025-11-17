@@ -7,8 +7,8 @@
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512bc0 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00 (005b2d00) at 005b2d3c [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSample_FUN_005a6170 (005a6170) at 005a6191 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CSfxSlot_kill_FUN_005acdb0 (005acdb0) at 005acdde [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660 (005a9660) at 005a9660 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005a9660 (005a9660) at 005a9660 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005acdb0 (005acdb0) at 005acdde [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0 (005a9cf0) at 005a9d3b [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a9105 [UNCONDITIONAL_CALL]
 // Globals:

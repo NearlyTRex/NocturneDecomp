@@ -15,9 +15,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005ab6e0(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3) */
-
 void sound_sndmain_cpp_FUN_005ab6e0(void)
 
 {
@@ -31,7 +28,7 @@ void sound_sndmain_cpp_FUN_005ab6e0(void)
   if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
     return;
   }
-  (*(code *)g_CSoundDevicePtr->vtable->func11)();
+  (*g_CSoundDevicePtr->vtable->commitDeferredSettings)(g_CSoundDevicePtr);
   return;
 }
 

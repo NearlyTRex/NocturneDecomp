@@ -1,8 +1,8 @@
 // Name: sound_sndmain.cpp_FUN_005aa360
 // Address: 005aa360
 // Address Range: [[005aa360, 005aa3bd]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_FUN_005aa360()
+// Convention: __cdecl
+// Signature: void sound_sndmain.cpp_FUN_005aa360(void)
 // Globals:
 //   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f62980
@@ -17,7 +17,7 @@
 
 #include "nocturne.h"
 
-void sound_sndmain_cpp_FUN_005aa360(void)
+void __cdecl sound_sndmain_cpp_FUN_005aa360(void)
 
 {
   int iVar1;
@@ -32,7 +32,7 @@ void sound_sndmain_cpp_FUN_005aa360(void)
   }
   iVar2 = 0;
   do {
-    if (*(int *)(g_SfxSamples[0].field12_0x160 + iVar2 + -0xc) == 0) {
+    if (*(int *)(g_SfxSamples[0].field7_0x140 + iVar2 + 0x14) == 0) {
       this_ptr = (CSfxSample *)(g_SfxSamples[0].sample_info.name + iVar2);
       iVar1 = crt_string_c_stricmp_FUN_005fe7f0((char *)this_ptr,in_stack_00000004);
       if (iVar1 == 0) {

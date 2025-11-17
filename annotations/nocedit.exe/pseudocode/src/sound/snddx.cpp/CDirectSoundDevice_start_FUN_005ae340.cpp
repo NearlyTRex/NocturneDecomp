@@ -88,7 +88,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_start_FUN_005ae340(CDirectSoundDe
     sound_sndmain_cpp_logSoundError_FUN_005adba0(pcVar4);
   }
 LAB_005ae43b:
-  (*this_ptr->vtable->reset)((CSoundDevice *)this_ptr);
+  (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
   return 0;
 }
 

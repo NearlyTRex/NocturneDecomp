@@ -40,8 +40,8 @@
 //   core_sound.cpp_CSound_playSfx_FUN_005b3a20
 //   core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
 //   core_weather.cpp_CWeather_SomethingWithThunder_FUN_005ef140
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -95,7 +95,7 @@ void core_weather_cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0(void)
   }
 LAB_005eeb1c:
   if (*in_stack_00000004 == 0) {
-    sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+    sound_sndmain_cpp_FUN_005a9c40();
     return;
   }
   iVar3 = 0;
@@ -170,7 +170,7 @@ LAB_005eeb1c:
       fVar7 = (float10)fscale(fVar6 + fVar7,fVar5);
       in_stack_00000004[0xd] = (int)(float)fVar7;
     }
-    iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    iVar2 = sound_sndmain_cpp_FUN_005a9660();
     if (iVar2 == 0) {
       core_sound_cpp_CSound_playSfx_FUN_005b3a20
                 (g_CSoundPtr,(int)in_stack_00000004,"rain.wav @ .1");
@@ -375,7 +375,7 @@ LAB_005eeb1c:
 //   Label: LAB_005eecc9
 //   XREF to: 03f96b40 (READ)
 // 005eeccf: PUSH ECX
-// 005eecd0: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 005eecd0: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005eecd5: ADD ESP,0x4
 // 005eecd8: TEST EAX,EAX
@@ -456,7 +456,7 @@ LAB_005eeb1c:
 //   Label: LAB_005eed92
 //   XREF to: 03f96b40 (READ)
 // 005eed98: PUSH ESI
-// 005eed99: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 005eed99: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005eed9e: ADD ESP,0x4
 // 005eeda1: MOV ESP,EBP

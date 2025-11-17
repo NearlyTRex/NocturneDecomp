@@ -11,13 +11,11 @@
 //   core_haystack.cpp_FUN_004f1970 (004f1970) at 004f1a19 [UNCONDITIONAL_CALL]
 //   core_tvbat.cpp_CTVBat_process_FUN_005e4210 (005e4210) at 005e4d10 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_03f68830
-//   undefined4 DAT_03f68838
-//   undefined4 DAT_03f68840
+//   CVector3d g_Cached3DListenerPos
+//   undefined4 g_Cached3DListenerPos.y
+//   undefined4 g_Cached3DListenerPos.z
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 undefined4 sound_sndmain_cpp_FUN_005aa290(void)
 
@@ -27,10 +25,11 @@ undefined4 sound_sndmain_cpp_FUN_005aa290(void)
   double in_stack_00000014;
   double in_stack_0000001c;
   
-  if ((in_stack_00000014 - _DAT_03f68840) * (in_stack_00000014 - _DAT_03f68840) +
-      (in_stack_0000000c - _DAT_03f68838) * (in_stack_0000000c - _DAT_03f68838) +
-      (in_stack_00000004 - _DAT_03f68830) * (in_stack_00000004 - _DAT_03f68830) <=
-      in_stack_0000001c * in_stack_0000001c) {
+  if ((in_stack_00000014 - g_Cached3DListenerPos.z) * (in_stack_00000014 - g_Cached3DListenerPos.z)
+      + (in_stack_0000000c - g_Cached3DListenerPos.y) *
+        (in_stack_0000000c - g_Cached3DListenerPos.y) +
+        (in_stack_00000004 - g_Cached3DListenerPos.x) *
+        (in_stack_00000004 - g_Cached3DListenerPos.x) <= in_stack_0000001c * in_stack_0000001c) {
     return 1;
   }
   return 0;

@@ -2,16 +2,16 @@
 // Address: 005b0f70
 // Address Range: [[005b0f70, 005b12d0]]
 // Convention: __cdecl
-// Signature: int sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice * this_ptr)
+// Signature: int sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice * this_ptr, int bits_per_sample, int channels, int sample_rate, int * out_samples_per_block)
 // Globals:
 //   waveInGetDevCapsA* waveInGetDevCapsA = 002118b2
-//   waveInOpen* PTR_waveInOpen_0061142c = 002118c6
+//   waveInOpen* waveInOpen = 002118c6
 //   GlobalAlloc* GlobalAlloc = 00211fd8
 //   GlobalLock* GlobalLock = 00211ff4
 //   TerminatedCString s_WavInDevice_setMode_Can__00652476
 //   UINT g_WaveOutDeviceID = 0xffffffff
 //   UINT g_WaveInDeviceID = 0xffffffff
-//   undefined4 DAT_00681e0c
+//   SAudioFormatDescriptor[12] g_WaveInFormatTable
 //   undefined4 DAT_00681e10
 //   undefined4 DAT_00681e14
 //   undefined4 DAT_00681e18
@@ -20,20 +20,20 @@
 //   undefined4 DAT_00681e24
 //   undefined4 DAT_00681e28
 //   HWAVEIN g_WaveInHandle
-//   HGLOBAL[8] g_WaveInHeaderHandles
-//   LPWAVEHDR[8] g_WaveInHeaders
-//   undefined4 DAT_03f6ae70
-//   LPVOID[8] DAT_03f6aec0
+//   HGLOBAL[20] g_WaveInHeaderHandles
+//   LPWAVEHDR[20] g_WaveInHeaders
+//   HGLOBAL[20] g_WaveInBufferHandles
+//   LPVOID[20] g_WaveInBuffers
 //   int g_WaveInBitsPerSample
 //   int g_WaveInChannels
 //   int g_WaveInSampleRate
 //   int g_WaveInIs8Bit
 //   int g_WaveInBufferSizeSamples
 //   int g_WaveInNumBuffers
-//   int INT_03f6af28
-//   int INT_03f6af2c
-//   undefined4 DAT_03f6af30
-//   undefined4 DAT_03f6af34
+//   int g_WaveInRequestedChannels
+//   int g_WaveInRequestedSampleRate
+//   int g_WaveInRequestedBitsPerSample
+//   int g_WaveInStereoRequested
 // Function calls:
 //   GlobalAlloc
 //   GlobalLock
@@ -43,7 +43,10 @@
 
 #include "nocturne.h"
 
-int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *this_ptr)
+int __cdecl
+sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70
+          (CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,
+          int *out_samples_per_block)
 
 {
   int iVar1;
@@ -56,15 +59,11 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *thi
   int iVar8;
   BADSPACEBASE *in_ESP;
   uint uVar9;
-  undefined4 *in_stack_00000008;
-  int in_stack_0000000c;
-  int in_stack_00000010;
-  CWavInDevice *in_stack_00000014;
   int in_stack_00000018;
   tagWAVEINCAPSA tStack_54;
   WAVEFORMATEX WStack_24;
   
-  iVar2 = (*this_ptr->vtable->close)((CSoundDevice *)this_ptr);
+  iVar2 = (*((this_ptr->base).vtable)->close)(&this_ptr->base);
   if (iVar2 == 0) {
     return 0;
   }
@@ -72,8 +71,8 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *thi
   if (MVar3 != 0) {
     return 0;
   }
-  DAT_03f6af30 = in_stack_00000014;
-  DAT_03f6af34 = (uint)(in_stack_00000018 != 0);
+  g_WaveInRequestedBitsPerSample = (int)out_samples_per_block;
+  g_WaveInStereoRequested = (int)(in_stack_00000018 != 0);
   WStack_24._16_4_ = tStack_54.dwFormats;
   do {
     uVar9 = 99999;
@@ -81,21 +80,23 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *thi
     iVar8 = 0;
     iVar2 = -1;
     do {
-      if ((*(uint *)((int)&DAT_00681e0c + iVar8) & WStack_24._16_4_) != 0) {
-        uVar4 = (uint)(in_stack_0000000c < *(int *)((int)&DAT_00681e10 + iVar8));
-        if (*(int *)((int)&DAT_00681e10 + iVar8) < in_stack_0000000c) {
+      if ((*(uint *)((int)&g_WaveInFormatTable[0].format_flags + iVar8) & WStack_24._16_4_) != 0) {
+        uVar4 = (uint)(channels < *(int *)((int)&g_WaveInFormatTable[0].bits_per_sample + iVar8));
+        if (*(int *)((int)&g_WaveInFormatTable[0].bits_per_sample + iVar8) < channels) {
           uVar4 = uVar4 + 2;
         }
-        if ((int)DAT_03f6af30 < *(int *)((int)&DAT_00681e18 + iVar8)) {
+        if (g_WaveInRequestedBitsPerSample <
+            *(int *)((int)&g_WaveInFormatTable[0].sample_rate + iVar8)) {
           uVar4 = uVar4 + 1;
         }
-        if (*(int *)((int)&DAT_00681e18 + iVar8) < (int)DAT_03f6af30) {
+        if (*(int *)((int)&g_WaveInFormatTable[0].sample_rate + iVar8) <
+            g_WaveInRequestedBitsPerSample) {
           uVar4 = uVar4 + 2;
         }
-        if (in_stack_00000010 < *(int *)((int)&DAT_00681e14 + iVar8)) {
+        if (sample_rate < *(int *)((int)&g_WaveInFormatTable[0].channels + iVar8)) {
           uVar4 = uVar4 + 2;
         }
-        if (*(int *)((int)&DAT_00681e14 + iVar8) < in_stack_00000010) {
+        if (*(int *)((int)&g_WaveInFormatTable[0].channels + iVar8) < sample_rate) {
           uVar4 = uVar4 + 3;
         }
         if (uVar4 < uVar9) {
@@ -106,15 +107,15 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *thi
       iVar7 = iVar7 + 1;
       iVar8 = iVar8 + 0x10;
     } while (iVar7 < 0xc);
-    INT_03f6af28 = in_stack_0000000c;
-    INT_03f6af2c = in_stack_00000010;
+    g_WaveInRequestedChannels = channels;
+    g_WaveInRequestedSampleRate = sample_rate;
     if (iVar2 < 0) {
       sound_sndmain_cpp_logSoundError_FUN_005adba0("WavInDevice::setMode - Can't set any recording modes!");
       return 0;
     }
-    g_WaveInBitsPerSample = (&DAT_00681e10)[iVar2 * 4];
-    g_WaveInChannels = (&DAT_00681e14)[iVar2 * 4];
-    g_WaveInSampleRate = (&DAT_00681e18)[iVar2 * 4];
+    g_WaveInBitsPerSample = g_WaveInFormatTable[iVar2].bits_per_sample;
+    g_WaveInChannels = g_WaveInFormatTable[iVar2].channels;
+    g_WaveInSampleRate = g_WaveInFormatTable[iVar2].sample_rate;
     g_WaveInIs8Bit = (int)(g_WaveInBitsPerSample == 8);
     g_WaveInBufferSizeSamples = g_WaveInSampleRate / 0x14;
     g_WaveInNumBuffers = (g_WaveInSampleRate * 2) / g_WaveInBufferSizeSamples;
@@ -129,10 +130,10 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *thi
                                               (g_WaveInBitsPerSample >> 0x1f) * -8) -
                                              (uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3)
                                        * g_WaveInBufferSizeSamples * g_WaveInChannels);
-        *(HGLOBAL *)((int)&DAT_03f6ae70 + iVar8) = pvVar5;
+        *(HGLOBAL *)((int)g_WaveInBufferHandles + iVar8) = pvVar5;
         if (pvVar5 == (HGLOBAL)0x0) break;
         pvVar6 = (*GlobalLock)(pvVar5);
-        *(LPVOID *)((int)DAT_03f6aec0 + iVar8) = pvVar6;
+        *(LPVOID *)((int)g_WaveInBuffers + iVar8) = pvVar6;
         if (pvVar6 == (LPVOID)0x0) break;
         pvVar5 = (*GlobalAlloc)(0x2002,0x20);
         *(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar8) = pvVar5;
@@ -152,18 +153,18 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *thi
            (short)((int)(g_WaveInBitsPerSample & 0xffffU) >> 3) * (WORD)g_WaveInChannels;
       WStack_24.nSamplesPerSec = g_WaveInSampleRate;
       WStack_24.nAvgBytesPerSec = g_WaveInSampleRate * (uint)WStack_24.nBlockAlign;
-      MVar3 = (*PTR_waveInOpen_0061142c)(&g_WaveInHandle,g_WaveOutDeviceID,&WStack_24,0,0,0);
+      MVar3 = (*waveInOpen)(&g_WaveInHandle,g_WaveOutDeviceID,&WStack_24,0,0,0);
       if (MVar3 == 0) {
         return 1;
       }
     }
-    iVar7 = (**(code **)*in_stack_00000008)();
+    iVar7 = (*(code *)**(undefined4 **)bits_per_sample)();
     if (iVar7 == 0) {
       return 0;
     }
-    WStack_24._16_4_ = WStack_24._16_4_ & ~(&DAT_00681e0c)[iVar2 * 4];
-    in_stack_0000000c = INT_03f6af28;
-    in_stack_00000010 = INT_03f6af2c;
+    WStack_24._16_4_ = WStack_24._16_4_ & ~g_WaveInFormatTable[iVar2].format_flags;
+    channels = g_WaveInRequestedChannels;
+    sample_rate = g_WaveInRequestedSampleRate;
   } while( true );
 }
 

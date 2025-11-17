@@ -10,7 +10,7 @@
 //   int g_CurrentLineNumber
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
+//   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
@@ -18,21 +18,21 @@
 undefined4 sound_sndmain_cpp_setSfxUserData_FUN_005a9ba0(void)
 
 {
-  int iVar1;
-  int in_stack_00000008;
-  undefined4 in_stack_00000014;
+  CSfxSlot *pCVar1;
+  uint in_stack_00000008;
+  int in_stack_00000014;
   
-  if ((in_stack_00000008 < 0) || (1 < in_stack_00000008)) {
+  if (((int)in_stack_00000008 < 0) || (1 < (int)in_stack_00000008)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0xf40;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("setSfxUserData - invalid user data index: %d",in_stack_00000008);
   }
-  iVar1 = sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
-  if (iVar1 == 0) {
+  pCVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(in_stack_00000008,1);
+  if (pCVar1 == (CSfxSlot *)0x0) {
     return 0;
   }
-  *(undefined4 *)(iVar1 + in_stack_00000008 * 4 + 0x54) = in_stack_00000014;
+  (pCVar1->options).userdata[in_stack_00000008] = in_stack_00000014;
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 1;
 }
@@ -69,7 +69,7 @@ undefined4 sound_sndmain_cpp_setSfxUserData_FUN_005a9ba0(void)
 // 005a9bd5: MOV ESI,dword ptr [ESP + 0x10]
 //   XREF to: Stack[0x4] (READ)
 // 005a9bd9: PUSH ESI
-// 005a9bda: CALL sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
+// 005a9bda: CALL sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00
 //   XREF to: 005a5d00 (UNCONDITIONAL_CALL)
 // 005a9bdf: ADD ESP,0x8
 // 005a9be2: TEST EAX,EAX

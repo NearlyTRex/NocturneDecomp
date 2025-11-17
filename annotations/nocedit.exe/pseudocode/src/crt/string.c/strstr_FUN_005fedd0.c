@@ -10,9 +10,9 @@
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c8e7 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 0059496b [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_readNonEmptyLine_FUN_005895f0 (005895f0) at 0058967f [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CalculateDistanceMaybe_FUN_005a45c0 (005a45c0) at 005a47ad [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a4530 (005a4530) at 005a453d [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 (005acf20) at 005ad2ad [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_parseConfigFile_FUN_005a45c0 (005a45c0) at 005a47ad [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_trimLineAndRemoveComments_FUN_005a4530 (005a4530) at 005a453d [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

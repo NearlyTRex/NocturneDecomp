@@ -6,10 +6,10 @@
 // Cross-references:
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512cca [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00 (005b2d00) at 005b2d4f [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CallToSetSoundMode_FUN_005ab280 (005ab280) at 005ab291 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CallToSetSoundOutputMode2_FUN_005ab2a0 (005ab2a0) at 005ab2b1 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CallToSetSoundOutputMode3_FUN_005ab2c0 (005ab2c0) at 005ab2d1 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005aaef0 (005aaef0) at 005aaf42 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005ab280 (005ab280) at 005ab291 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005ab2a0 (005ab2a0) at 005ab2b1 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005ab2c0 (005ab2c0) at 005ab2d1 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005ac0fd [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_00650c17
@@ -49,8 +49,8 @@ sound_sndmain_cpp_setSoundOutputMode_FUN_005ab170(int bits_per_sample,int channe
   g_AudioSampleRate = in_stack_00000014;
   if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
     iVar1 = (*g_CSoundDevicePtr->vtable->setMode)
-                      (g_CSoundDevicePtr,sample_rate,(ushort)in_stack_00000010,in_stack_00000014,
-                       (uint *)&stack0xfffffff8);
+                      (g_CSoundDevicePtr,sample_rate,in_stack_00000010,in_stack_00000014,
+                       (int *)&stack0xfffffff8);
     if (iVar1 == 0) {
       return 0;
     }

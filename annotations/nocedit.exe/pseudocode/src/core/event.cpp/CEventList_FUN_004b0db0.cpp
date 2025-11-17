@@ -11,8 +11,8 @@
 //   core_event.cpp_CEventList_setSfxHandle_FUN_004b0c80 (004b0c80) at 004b0d2a [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_string.c_memmove_FUN_005fe5e0
-//   sound_sndmain.cpp_CallToLockDoSomethingAndUnlockSound2_FUN_005a96e0
 //   sound_sndmain.cpp_FUN_005a8480
+//   sound_sndmain.cpp_FUN_005a96e0
 //   sound_sndmain.cpp_FUN_005a9720
 
 #include "nocturne.h"
@@ -42,7 +42,7 @@ void __cdecl core_event_cpp_CEventList_FUN_004b0db0(CEventList *this_ptr)
       *(undefined8 *)(dest + 0x118) = local_1c;
       if (0.0 <= *(double *)(dest + 0x118)) {
         sound_sndmain_cpp_FUN_005a8480();
-        iVar3 = sound_sndmain_cpp_CallToLockDoSomethingAndUnlockSound2_FUN_005a96e0();
+        iVar3 = sound_sndmain_cpp_FUN_005a96e0();
         pCVar4 = aCStack_164;
         if (iVar3 == 0) goto LAB_004b0e30;
         pCVar5 = dest + 0x18;
@@ -163,7 +163,7 @@ LAB_004b0e30:
 // 004b0e8a: PUSH EAX
 // 004b0e8b: MOV EDX,dword ptr [EBX]
 // 004b0e8d: PUSH EDX
-// 004b0e8e: CALL sound_sndmain.cpp_CallToLockDoSomethingAndUnlockSound2_FUN_005a96e0
+// 004b0e8e: CALL sound_sndmain.cpp_FUN_005a96e0
 //   XREF to: 005a96e0 (UNCONDITIONAL_CALL)
 // 004b0e93: ADD ESP,0x8
 // 004b0e96: TEST EAX,EAX

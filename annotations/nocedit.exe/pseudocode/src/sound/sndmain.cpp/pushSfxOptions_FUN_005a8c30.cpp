@@ -1,8 +1,8 @@
 // Name: sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 // Address: 005a8c30
 // Address Range: [[005a8c30, 005a8ca1]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30()
+// Convention: __cdecl
+// Signature: void sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30(void)
 // Cross-references:
 //   core_boneguy.cpp_FUN_0041bf90 (0041bf90) at 0041c58e [UNCONDITIONAL_CALL]
 //   core_boxactor.cpp_CBoxActor_process_FUN_004219e0 (004219e0) at 00421bf4 [UNCONDITIONAL_CALL]
@@ -41,7 +41,7 @@
 //   TerminatedCString s_pushSfxOptions_stack_ful_006508b0
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   undefined4 g_SfxLastSlot
+//   int g_SfxLastSlot
 //   CSfxOptions[8] g_SfxOptions
 //   undefined4 g_SfxLastSlot.volume
 // Function calls:
@@ -49,10 +49,7 @@
 
 #include "nocturne.h"
 
-/* Signature: int sound_sndmain.cpp_pushSfxOptions() */
-
-void sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30
-               (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX)
+void __cdecl sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30(void)
 
 {
   int iVar1;
@@ -65,7 +62,7 @@ void sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30
   if (7 < g_SfxLastSlot) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0xd20;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("pushSfxOptions - stack full",unaff_EBX);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("pushSfxOptions - stack full");
   }
   pCVar2 = g_SfxOptions + g_SfxLastSlot + -1;
   pCVar3 = g_SfxOptions + g_SfxLastSlot;

@@ -21,6 +21,7 @@
 void sound_sndmain_cpp_FUN_005aa2f0(void)
 
 {
+  char *str1;
   int iVar1;
   int iVar2;
   char *in_stack_00000004;
@@ -28,12 +29,12 @@ void sound_sndmain_cpp_FUN_005aa2f0(void)
   sound_sndmain_cpp_lockSound_FUN_005abd30();
   iVar2 = 0;
   do {
-    if (*(char **)(g_SfxSlots[0].field4_0x7c + iVar2 + -4) != (char *)0x0) {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0
-                        (*(char **)(g_SfxSlots[0].field4_0x7c + iVar2 + -4),in_stack_00000004);
+    str1 = *(char **)((int)g_SfxSlots[0].distance_to_speakers + iVar2 + -8);
+    if (str1 != (char *)0x0) {
+      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,in_stack_00000004);
       if (iVar1 == 0) {
         sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60
-                  ((CSfxSlot *)(g_SfxSlots[0].options.field5_0x14 + iVar2 + -0x14));
+                  ((CSfxSlot *)((int)g_SfxSlots[0].options.userdata + iVar2 + -0x54));
       }
     }
     iVar2 = iVar2 + 0x128;

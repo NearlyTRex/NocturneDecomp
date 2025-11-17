@@ -5,7 +5,7 @@
 // Signature: undefined sound_sndmain.cpp_FUN_005a97e0()
 // Function calls:
 //   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
-//   sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
+//   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
@@ -16,14 +16,15 @@ undefined4 sound_sndmain_cpp_FUN_005a97e0(void)
   CSfxSlot *this_ptr;
   int iVar1;
   byte bVar2;
+  uint in_stack_00000004;
   int *in_stack_00000010;
   
   bVar2 = 0;
-  this_ptr = (CSfxSlot *)sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
+  this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(in_stack_00000004,1);
   if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }
-  sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr);
+  sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,0.0);
   for (iVar1 = 0x1c; iVar1 != 0; iVar1 = iVar1 + -1) {
     *in_stack_00000010 = (this_ptr->options).status;
     this_ptr = (CSfxSlot *)((int)this_ptr + (uint)bVar2 * -8 + 4);
@@ -41,7 +42,7 @@ undefined4 sound_sndmain_cpp_FUN_005a97e0(void)
 // 005a97e3: MOV EDX,dword ptr [ESP + 0xc]
 //   XREF to: Stack[0x4] (READ)
 // 005a97e7: PUSH EDX
-// 005a97e8: CALL sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
+// 005a97e8: CALL sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00
 //   XREF to: 005a5d00 (UNCONDITIONAL_CALL)
 // 005a97ed: MOV ESI,EAX
 // 005a97ef: ADD ESP,0x8

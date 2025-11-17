@@ -121,8 +121,9 @@ void core_flame_cpp_FUN_004c9c00(void)
                   ((char *)local_f8,"torch.wav * %f",SUB84((double)local_14,0),
                    (int)((ulonglong)(double)local_14 >> 0x20));
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
+        iVar3 = 2;
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
-        sound_sndmain_cpp_FUN_005a8be0();
+        sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,iVar3);
         uVar4 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
         *(undefined4 *)(in_stack_00000004 + 0x1b0) = uVar4;
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();

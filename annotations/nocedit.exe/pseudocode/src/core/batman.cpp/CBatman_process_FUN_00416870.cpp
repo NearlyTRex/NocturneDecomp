@@ -69,7 +69,7 @@
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 //   engine_console.cpp_CConsole_printf_FUN_00441890
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9660
 
 #include "nocturne.h"
 
@@ -294,9 +294,8 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
               (this_ptr->base_enemy).field6_0xbe38[1] = '\0';
               (this_ptr->base_enemy).field6_0xbe38[2] = -0x80;
               (this_ptr->base_enemy).field6_0xbe38[3] = '?';
-              iVar10 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
-              if ((iVar10 == 0) &&
-                 (iVar10 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar10 == 0)) {
+              iVar10 = sound_sndmain_cpp_FUN_005a9660();
+              if ((iVar10 == 0) && (iVar10 = sound_sndmain_cpp_FUN_005a9660(), iVar10 == 0)) {
                 uVar14 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
                                    ((CDemonActor *)this_ptr,"batman-attack?.wav");
                 *(undefined4 *)(this_ptr->field5_0xbf6c + 8) = uVar14;
@@ -341,10 +340,10 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
                              (g_CEventListPtr,this_ptr->field1_0xbeb4 + 8), iVar10 != 0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base_enemy).base_character.model.motion_controller,0xb,1);
-        iVar10 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+        iVar10 = sound_sndmain_cpp_FUN_005a9660();
         if ((iVar10 == 0) &&
-           ((iVar10 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar10 == 0 &&
-            (iVar10 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar10 == 0)))) {
+           ((iVar10 = sound_sndmain_cpp_FUN_005a9660(), iVar10 == 0 &&
+            (iVar10 = sound_sndmain_cpp_FUN_005a9660(), iVar10 == 0)))) {
           uVar14 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
                              ((CDemonActor *)this_ptr,"batman-alert.wav");
           *(undefined4 *)this_ptr->field5_0xbf6c = uVar14;
@@ -1200,7 +1199,7 @@ switchD_004173a5_caseD_4:
 // 00416e83: ADD ESP,0xc
 // 00416e86: MOV EDI,dword ptr [EBX + 0xbf70]
 // 00416e8c: PUSH EDI
-// 00416e8d: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 00416e8d: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00416e92: ADD ESP,0x4
 // 00416e95: TEST EAX,EAX
@@ -1208,7 +1207,7 @@ switchD_004173a5_caseD_4:
 //   XREF to: 00416970 (CONDITIONAL_JUMP)
 // 00416e9d: MOV EAX,dword ptr [EBX + 0xbf74]
 // 00416ea3: PUSH EAX
-// 00416ea4: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 00416ea4: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00416ea9: ADD ESP,0x4
 // 00416eac: TEST EAX,EAX
@@ -1216,7 +1215,7 @@ switchD_004173a5_caseD_4:
 //   XREF to: 00416970 (CONDITIONAL_JUMP)
 // 00416eb4: MOV EDX,dword ptr [EBX + 0xbf6c]
 // 00416eba: PUSH EDX
-// 00416ebb: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 00416ebb: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00416ec0: ADD ESP,0x4
 // 00416ec3: TEST EAX,EAX
@@ -1692,7 +1691,7 @@ switchD_004173a5_caseD_4:
 // 00417328: MOV EDX,dword ptr [EBX + 0xbf70]
 // 0041732e: PUSH EDX
 // 0041732f: MOV dword ptr [EBX + 0xbe38],0x3f800000
-// 00417339: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 00417339: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 0041733e: ADD ESP,0x4
 // 00417341: TEST EAX,EAX
@@ -1718,7 +1717,7 @@ switchD_004173a5_caseD_4:
 // 0041736f: MOV ECX,dword ptr [EBX + 0xbf74]
 //   Label: LAB_0041736f
 // 00417375: PUSH ECX
-// 00417376: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 00417376: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 0041737b: ADD ESP,0x4
 // 0041737e: TEST EAX,EAX

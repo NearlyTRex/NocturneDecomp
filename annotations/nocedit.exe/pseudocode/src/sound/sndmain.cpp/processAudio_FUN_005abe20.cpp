@@ -7,13 +7,13 @@
 //   core_moon.cpp_CMoon_FUN_00529ed0 (00529ed0) at 00529edc [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_audioThreadProc_FUN_005abba0 (005abba0) at 005abbb8 [UNCONDITIONAL_CALL]
 // Globals:
-//   double DOUBLE_00650ecf = 3
+//   double g_AudioLatencyMultiplier = 3
 //   CSoundDevice* g_CSoundDevicePtr
 //   double g_AudioLatencySeconds
 //   HANDLE g_SoundMutex
 //   int g_SoundLockCount
 // Function calls:
-//   sound_sndmain.cpp_lockSound_PollStream_FUN_005ace90
+//   sound_sndmain.cpp_FUN_005ace90
 //   wincore_winrun.cpp_releaseMutex_FUN_005f4050
 //   wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010
 
@@ -26,11 +26,11 @@ void __cdecl sound_sndmain_cpp_processAudio_FUN_005abe20(void)
   
   if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
     iVar1 = wincore_winrun_cpp_waitForMutexTimeout_FUN_005f4010
-                      (g_SoundMutex,g_AudioLatencySeconds * DOUBLE_00650ecf);
+                      (g_SoundMutex,g_AudioLatencySeconds * g_AudioLatencyMultiplier);
     if (iVar1 != 0) {
       g_SoundLockCount = g_SoundLockCount + 1;
       (*g_CSoundDevicePtr->vtable->poll)(g_CSoundDevicePtr);
-      sound_sndmain_cpp_lockSound_PollStream_FUN_005ace90();
+      sound_sndmain_cpp_FUN_005ace90();
       g_SoundLockCount = g_SoundLockCount + -1;
       wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_SoundMutex);
       return;
@@ -80,7 +80,7 @@ void __cdecl sound_sndmain_cpp_processAudio_FUN_005abe20(void)
 // 005abe67: CALL dword ptr [EDX + 0x10]
 // 005abe6a: ADD ESP,0x4
 // 005abe6d: PUSH 0x0
-// 005abe6f: CALL sound_sndmain.cpp_lockSound_PollStream_FUN_005ace90
+// 005abe6f: CALL sound_sndmain.cpp_FUN_005ace90
 //   XREF to: 005ace90 (UNCONDITIONAL_CALL)
 // 005abe74: MOV EDI,dword ptr [0x03f6940c]
 //   XREF to: 03f6940c (READ)

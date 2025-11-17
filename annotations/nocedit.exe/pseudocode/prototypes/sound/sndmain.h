@@ -7,93 +7,93 @@
 // Address: 005a3940
 void staticInit(void);
 
-// Original: sound_sndmain.cpp_FUN_005a39a0
+// Original: sound_sndmain.cpp_computeComplexFFT_FUN_005a39a0
 // Address: 005a39a0
-undefined FUN_005a39a0();
+void computeComplexFFT(float * input_real, float * input_imag, float * output_real, float * output_imag, int size);
 
-// Original: sound_sndmain.cpp_FUN_005a3c90
+// Original: sound_sndmain.cpp_computeFFT_FUN_005a3c90
 // Address: 005a3c90
-undefined FUN_005a3c90();
+void computeFFT(float * input, int size, float * output_real, float * output_imag);
 
 // Original: sound_sndmain.cpp_parseWavFile_FUN_005a3fe0
 // Address: 005a3fe0
 int parseWavFile(FILE * file_handle, long * file_offset_ptr, CSfxSample * sfx_sample);
 
-// Original: sound_sndmain.cpp_FUN_005a43a0
+// Original: sound_sndmain.cpp_getActiveSfxCount_FUN_005a43a0
 // Address: 005a43a0
-undefined FUN_005a43a0();
+int getActiveSfxCount(void);
 
-// Original: sound_sndmain.cpp_FUN_005a4400
+// Original: sound_sndmain.cpp_findFreeSampleSlot_FUN_005a4400
 // Address: 005a4400
-undefined FUN_005a4400();
+CSfxSample * findFreeSampleSlot(void);
 
 // Original: sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450
 // Address: 005a4450
 int ensureSoundMemoryAvailable(int requested_bytes);
 
-// Original: sound_sndmain.cpp_FUN_005a4530
+// Original: sound_sndmain.cpp_trimLineAndRemoveComments_FUN_005a4530
 // Address: 005a4530
-undefined FUN_005a4530();
+void trimLineAndRemoveComments(char * line);
 
-// Original: sound_sndmain.cpp_CalculateDistanceMaybe_FUN_005a45c0
+// Original: sound_sndmain.cpp_parseConfigFile_FUN_005a45c0
 // Address: 005a45c0
-undefined CalculateDistanceMaybe();
+void parseConfigFile(CSfxSample * this_ptr);
 
-// Original: sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80
+// Original: sound_sndmain.cpp_getSfxSample_FUN_005a4c80
 // Address: 005a4c80
-undefined ReadingOrDecodingSoundFile();
+CSfxSample * getSfxSample(char * filename);
 
-// Original: sound_sndmain.cpp_FUN_005a5180
+// Original: sound_sndmain.cpp_isStreamableFile_FUN_005a5180
 // Address: 005a5180
-undefined FUN_005a5180();
+int isStreamableFile(char * filename, char * filepath);
 
-// Original: sound_sndmain.cpp_FUN_005a5200
+// Original: sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200
 // Address: 005a5200
-undefined FUN_005a5200();
+CSfxSample * loadStreamingSoundFile(char * filename);
 
-// Original: sound_sndmain.cpp_FUN_005a5530
+// Original: sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530
 // Address: 005a5530
-undefined FUN_005a5530();
+void calculateVirtualSpeakerPositions(void);
 
-// Original: sound_sndmain.cpp_FUN_005a5620
+// Original: sound_sndmain.cpp_allocateHwSample_FUN_005a5620
 // Address: 005a5620
-undefined FUN_005a5620();
+int allocateHwSample(int bits_per_sample, int channel_count, int sample_rate, int sample_count);
 
-// Original: sound_sndmain.cpp_FUN_005a56c0
+// Original: sound_sndmain.cpp_calculateDistanceGain_FUN_005a56c0
 // Address: 005a56c0
-undefined FUN_005a56c0();
+float calculateDistanceGain(float distance, float reference_distance, float min_distance, float max_distance);
 
 // Original: sound_sndmain.cpp_allocMixBuffers_FUN_005a5730
 // Address: 005a5730
 void allocMixBuffers(int requested_size, int num_buffers);
 
-// Original: sound_sndmain.cpp_FreeSomeSoundMemory_FUN_005a5900
+// Original: sound_sndmain.cpp_freeMixBuffers_FUN_005a5900
 // Address: 005a5900
-undefined FreeSomeSoundMemory();
+void freeMixBuffers(void);
 
-// Original: sound_sndmain.cpp_FUN_005a59c0
+// Original: sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
 // Address: 005a59c0
-undefined FUN_005a59c0();
+undefined nextMixingBuffer();
 
-// Original: sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80
+// Original: sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80
 // Address: 005a5b80
-undefined convertMixBufToOutput();
+void convertMixBufToOutput(float * input_samples, void * output_buffer, int bits_per_sample, int num_samples, int output_stride);
 
-// Original: sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
+// Original: sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00
 // Address: 005a5d00
-undefined SoundLockKillAndUnlock();
+CSfxSlot * getSfxSlotFromHandle(uint sfx_handle, int check_hardware_playback);
 
-// Original: sound_sndmain.cpp_FUN_005a5db0
+// Original: sound_sndmain.cpp_generateSilence_FUN_005a5db0
 // Address: 005a5db0
-undefined FUN_005a5db0();
+void generateSilence(void * buffer, uint bits_per_sample, uint num_samples);
 
-// Original: sound_sndmain.cpp_FUN_005a5e10
+// Original: sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e10
 // Address: 005a5e10
-undefined FUN_005a5e10();
+void convertDoubleToFixed(double input, int * out_integer_part, int * out_fractional_part);
 
-// Original: sound_sndmain.cpp_FUN_005a5e70
+// Original: sound_sndmain.cpp_mixResampleStereo_FUN_005a5e70
 // Address: 005a5e70
-undefined FUN_005a5e70();
+double mixResampleStereo(short * sample_data, SStereoBuffers * channel_buffers, SStereoGains * channel_gains, int resample_position, double resample_delta, int samples_to_process);
 
 // Original: sound_sndmain.cpp_FUN_005a5fb0
 // Address: 005a5fb0
@@ -139,21 +139,21 @@ void CSfxSample::seek(CSfxSample * this_ptr);
 // Address: 005a6730
 int CSfxSlot::pollStream(CSfxSlot * this_ptr);
 
-// Original: sound_sndmain.cpp_FUN_005a6ce0
+// Original: sound_sndmain.cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_005a6ce0
 // Address: 005a6ce0
-void FUN_005a6ce0(void);
+void CSfxSlot::updateBoundPositionAndVelocity(CSfxSlot * this_ptr);
 
-// Original: sound_sndmain.cpp_FUN_005a6d80
+// Original: sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80
 // Address: 005a6d80
-int FUN_005a6d80(void);
+int CSfxSlot::computeDistancesToSpeakers(CSfxSlot * this_ptr);
 
-// Original: sound_sndmain.cpp_CSfxSlot_FUN_005a6df0
+// Original: sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0
 // Address: 005a6df0
-void CSfxSlot(CSfxSlot * this_ptr);
+void CSfxSlot::computeChannelDelays(CSfxSlot * this_ptr);
 
-// Original: sound_sndmain.cpp_CSfxSlot_FUN_005a6f00
+// Original: sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00
 // Address: 005a6f00
-float CSfxSlot(CSfxSlot * this_ptr);
+float CSfxSlot::computeChannelVolumes(CSfxSlot * this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070
 // Address: 005a7070
@@ -161,11 +161,11 @@ void CSfxSlot::autoCalcDelayRemaining(CSfxSlot * this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
 // Address: 005a7100
-int CSfxSlot::compute(CSfxSlot * this_ptr);
+int CSfxSlot::compute(CSfxSlot * this_ptr, float delta_time);
 
 // Original: sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
 // Address: 005a75e0
-void CSfxSlot::mix(CSfxSlot * this_ptr);
+void CSfxSlot::mix(CSfxSlot * this_ptr, SMixBuffer mix_ctx);
 
 // Original: sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
 // Address: 005a7e60
@@ -175,9 +175,9 @@ void CSfxSlot::kill(CSfxSlot * slot);
 // Address: 005a7fe0
 void CSfxSlot::pollHwHandle(CSfxSlot * this_ptr);
 
-// Original: sound_sndmain.cpp_CSfxSlot_FUN_005a80e0
+// Original: sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a80e0
 // Address: 005a80e0
-int CSfxSlot(CSfxSlot * this_ptr);
+int CSfxSlot::pollHwHandle(CSfxSlot * this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170
 // Address: 005a8170
@@ -193,11 +193,11 @@ void * FUN_005a8480(void);
 
 // Original: sound_sndmain.cpp_FUN_005a84d0
 // Address: 005a84d0
-undefined FUN_005a84d0();
+double FUN_005a84d0(void);
 
-// Original: sound_sndmain.cpp_CSfxSample_FUN_005a8520
+// Original: sound_sndmain.cpp_CSfxSample_computeDataSize_FUN_005a8520
 // Address: 005a8520
-int CSfxSample(CSfxSample * this_ptr);
+int CSfxSample::computeDataSize(CSfxSample * this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
 // Address: 005a8550
@@ -215,93 +215,93 @@ double CSampleInfo::normalizePlaybackPos(CSampleInfo * this_ptr, double position
 // Address: 005a87d0
 int CSfxSample::getLoopMode(CSfxSample * this_ptr);
 
-// Original: sound_sndmain.cpp_CSfxSample_FUN_005a8810
+// Original: sound_sndmain.cpp_CSfxSample_hasAdvancedLoopMode_FUN_005a8810
 // Address: 005a8810
-int CSfxSample(CSfxSample * this_ptr);
+int CSfxSample::hasAdvancedLoopMode(CSfxSample * this_ptr);
 
-// Original: sound_sndmain.cpp_CSfxSlot_reset_FUN_005a8830
+// Original: sound_sndmain.cpp_CSfxOptions_reset_FUN_005a8830
 // Address: 005a8830
-void CSfxSlot::reset(CSfxSlot * this_ptr);
+void CSfxOptions::reset(CSfxOptions * this_ptr);
 
-// Original: sound_sndmain.cpp_FUN_005a88e0
+// Original: sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0
 // Address: 005a88e0
-undefined FUN_005a88e0();
+void setNextSfxStaticPosition(double pos_x, double pos_y, double pos_z);
 
-// Original: sound_sndmain.cpp_FUN_005a8940
+// Original: sound_sndmain.cpp_setNextSfxTrackedPosition_FUN_005a8940
 // Address: 005a8940
-undefined FUN_005a8940();
+void setNextSfxTrackedPosition(CVector3f * position_source_ptr);
 
-// Original: sound_sndmain.cpp_FUN_005a8970
+// Original: sound_sndmain.cpp_setNextSfxTrackedPosition_FUN_005a8970
 // Address: 005a8970
-undefined FUN_005a8970();
+void setNextSfxTrackedPosition(CVector3d * position_source_ptr);
 
-// Original: sound_sndmain.cpp_FUN_005a89a0
+// Original: sound_sndmain.cpp_setNextSfxStaticVelocity_FUN_005a89a0
 // Address: 005a89a0
-undefined FUN_005a89a0();
+void setNextSfxStaticVelocity(double vel_x, double vel_y, double vel_z);
 
-// Original: sound_sndmain.cpp_FUN_005a8a00
+// Original: sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a00
 // Address: 005a8a00
-undefined FUN_005a8a00();
+void setNextSfxTrackedVelocity(CVector3f * velocity_source_ptr);
 
-// Original: sound_sndmain.cpp_FUN_005a8a30
+// Original: sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a30
 // Address: 005a8a30
-undefined FUN_005a8a30();
+void setNextSfxTrackedVelocity(CVector3d * velocity_source_ptr);
 
-// Original: sound_sndmain.cpp_FUN_005a8a60
+// Original: sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60
 // Address: 005a8a60
-undefined FUN_005a8a60();
+void setNextSfxVolume(float volume);
 
-// Original: sound_sndmain.cpp_FUN_005a8a80
+// Original: sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_005a8a80
 // Address: 005a8a80
-undefined FUN_005a8a80();
+void setNextSfxBaseFrequency(float base_frequency);
 
 // Original: sound_sndmain.cpp_setNextSfxUserData_FUN_005a8aa0
 // Address: 005a8aa0
-void setNextSfxUserData(int userdata_index);
+void setNextSfxUserData(int userdata_index, int userdata_value);
 
 // Original: sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0
 // Address: 005a8af0
 void setNextSfxChannel(int channel_index);
 
-// Original: sound_sndmain.cpp_FUN_005a8b40
+// Original: sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40
 // Address: 005a8b40
-undefined FUN_005a8b40();
+void setNextSfxDelay(double delay_seconds);
 
-// Original: sound_sndmain.cpp_FUN_005a8b70
+// Original: sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70
 // Address: 005a8b70
-undefined FUN_005a8b70();
+void setNextSfxFlags(uint flags);
 
-// Original: sound_sndmain.cpp_somethingWithStack_FUN_005a8b90
+// Original: sound_sndmain.cpp_setNextSfxFlagBits_FUN_005a8b90
 // Address: 005a8b90
-undefined somethingWithStack();
+void setNextSfxFlagBits(uint flag_mask);
 
-// Original: sound_sndmain.cpp_FUN_005a8bb0
+// Original: sound_sndmain.cpp_clearNextSfxFlagBits_FUN_005a8bb0
 // Address: 005a8bb0
-undefined FUN_005a8bb0();
+void clearNextSfxFlagBits(uint flag_mask);
 
-// Original: sound_sndmain.cpp_FUN_005a8be0
+// Original: sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0
 // Address: 005a8be0
-undefined FUN_005a8be0();
+void setNextSfxTriggerTime(double trigger_time, int trigger_id);
 
-// Original: sound_sndmain.cpp_FUN_005a8c10
+// Original: sound_sndmain.cpp_resetCurrentSfxOptions_FUN_005a8c10
 // Address: 005a8c10
-undefined FUN_005a8c10();
+void resetCurrentSfxOptions(void);
 
 // Original: sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 // Address: 005a8c30
-undefined pushSfxOptions();
+void pushSfxOptions(void);
 
 // Original: sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 // Address: 005a8cb0
-undefined popSfxOptions();
+void popSfxOptions(void);
 
 // Original: sound_sndmain.cpp_FUN_005a8cf0
 // Address: 005a8cf0
-undefined FUN_005a8cf0();
+int FUN_005a8cf0(void);
 
-// Original: sound_sndmain.cpp_FUN_005a8d00
+// Original: sound_sndmain.cpp_formatSfxOptionsToString_FUN_005a8d00
 // Address: 005a8d00
-undefined FUN_005a8d00();
+void formatSfxOptionsToString(char * output_buffer, char * prefix_string, CSfxOptions * options, uint format_flags);
 
 // Original: sound_sndmain.cpp_startSfx_FUN_005a8e90
 // Address: 005a8e90
@@ -323,9 +323,9 @@ undefined FUN_005a95e0();
 // Address: 005a9620
 undefined FUN_005a9620();
 
-// Original: sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// Original: sound_sndmain.cpp_FUN_005a9660
 // Address: 005a9660
-undefined SoundLockKillBlah();
+int FUN_005a9660(void);
 
 // Original: sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0
 // Address: 005a96b0
@@ -335,9 +335,9 @@ int getSoundEnabled(void);
 // Address: 005a96c0
 int setSoundEnabled(int enable);
 
-// Original: sound_sndmain.cpp_CallToLockDoSomethingAndUnlockSound2_FUN_005a96e0
+// Original: sound_sndmain.cpp_FUN_005a96e0
 // Address: 005a96e0
-undefined CallToLockDoSomethingAndUnlockSound2();
+int FUN_005a96e0(void);
 
 // Original: sound_sndmain.cpp_FUN_005a9720
 // Address: 005a9720
@@ -347,13 +347,13 @@ undefined FUN_005a9720();
 // Address: 005a97e0
 undefined FUN_005a97e0();
 
-// Original: sound_sndmain.cpp_ComputingDelayBetweenLocks_FUN_005a9820
+// Original: sound_sndmain.cpp_FUN_005a9820
 // Address: 005a9820
-undefined ComputingDelayBetweenLocks();
+int FUN_005a9820(void);
 
-// Original: sound_sndmain.cpp_YetAnother2ComputingDelayCall_FUN_005a98b0
+// Original: sound_sndmain.cpp_FUN_005a98b0
 // Address: 005a98b0
-undefined YetAnother2ComputingDelayCall();
+int FUN_005a98b0(void);
 
 // Original: sound_sndmain.cpp_FUN_005a9910
 // Address: 005a9910
@@ -363,21 +363,21 @@ undefined FUN_005a9910();
 // Address: 005a9970
 undefined FUN_005a9970();
 
-// Original: sound_sndmain.cpp_SoundDelayComputeThing_FUN_005a9a00
+// Original: sound_sndmain.cpp_FUN_005a9a00
 // Address: 005a9a00
-undefined SoundDelayComputeThing();
+undefined FUN_005a9a00();
 
 // Original: sound_sndmain.cpp_FUN_005a9a70
 // Address: 005a9a70
 undefined FUN_005a9a70();
 
-// Original: sound_sndmain.cpp_CallComputingDelay2_FUN_005a9ae0
+// Original: sound_sndmain.cpp_FUN_005a9ae0
 // Address: 005a9ae0
-undefined CallComputingDelay2();
+int FUN_005a9ae0(void);
 
-// Original: sound_sndmain.cpp_CallComputingDelay_FUN_005a9b40
+// Original: sound_sndmain.cpp_FUN_005a9b40
 // Address: 005a9b40
-undefined CallComputingDelay();
+int FUN_005a9b40(void);
 
 // Original: sound_sndmain.cpp_setSfxUserData_FUN_005a9ba0
 // Address: 005a9ba0
@@ -387,13 +387,13 @@ undefined setSfxUserData();
 // Address: 005a9c10
 undefined FUN_005a9c10();
 
-// Original: sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// Original: sound_sndmain.cpp_FUN_005a9c40
 // Address: 005a9c40
-undefined RelatedToSoundSlotKill();
+int FUN_005a9c40(void);
 
-// Original: sound_sndmain.cpp_DoSomethingANdLockUnlockSound_FUN_005a9c70
+// Original: sound_sndmain.cpp_FUN_005a9c70
 // Address: 005a9c70
-undefined DoSomethingANdLockUnlockSound();
+int FUN_005a9c70(void);
 
 // Original: sound_sndmain.cpp_killAllSoundSlots_FUN_005a9cc0
 // Address: 005a9cc0
@@ -421,35 +421,35 @@ int isSfxChannelEnabled(int channel_index);
 
 // Original: sound_sndmain.cpp_FUN_005a9ef0
 // Address: 005a9ef0
-undefined FUN_005a9ef0();
+uint FUN_005a9ef0(void);
 
 // Original: sound_sndmain.cpp_FUN_005a9f30
 // Address: 005a9f30
-undefined FUN_005a9f30();
+uint FUN_005a9f30(void);
 
 // Original: sound_sndmain.cpp_FUN_005a9f80
 // Address: 005a9f80
-undefined FUN_005a9f80();
+void FUN_005a9f80(void);
 
 // Original: sound_sndmain.cpp_FUN_005a9ff0
 // Address: 005a9ff0
-undefined FUN_005a9ff0();
+int FUN_005a9ff0(void);
 
-// Original: sound_sndmain.cpp_FUN_005aa020
+// Original: sound_sndmain.cpp_set3DListenerPos_FUN_005aa020
 // Address: 005aa020
-undefined FUN_005aa020();
+void set3DListenerPos(double pos_x, double pos_y, double pos_z);
 
-// Original: sound_sndmain.cpp_FUN_005aa0a0
+// Original: sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0
 // Address: 005aa0a0
-undefined FUN_005aa0a0();
+void set3DListenerOrient(double front_x, double front_y, double front_z, double up_x, double up_y, double up_z, double right_x, double right_y, double right_z);
 
-// Original: sound_sndmain.cpp_FUN_005aa1c0
+// Original: sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0
 // Address: 005aa1c0
-undefined FUN_005aa1c0();
+void set3DListenerVelocity(double x_velocity, double y_velocity, double z_velocity);
 
-// Original: sound_sndmain.cpp_FUN_005aa240
+// Original: sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_005aa240
 // Address: 005aa240
-undefined FUN_005aa240();
+void set3DListenerDistanceFactor(double distance_in_feet);
 
 // Original: sound_sndmain.cpp_FUN_005aa290
 // Address: 005aa290
@@ -459,25 +459,25 @@ undefined FUN_005aa290();
 // Address: 005aa2f0
 undefined FUN_005aa2f0();
 
-// Original: sound_sndmain.cpp_FUN_005aa340
+// Original: sound_sndmain.cpp_setMemoryBudget_FUN_005aa340
 // Address: 005aa340
-undefined FUN_005aa340();
+void setMemoryBudget(int min_bytes, int max_bytes);
 
 // Original: sound_sndmain.cpp_FUN_005aa360
 // Address: 005aa360
-undefined FUN_005aa360();
+void FUN_005aa360(void);
 
 // Original: sound_sndmain.cpp_FUN_005aa3c0
 // Address: 005aa3c0
-undefined FUN_005aa3c0();
+int FUN_005aa3c0(void);
 
 // Original: sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0
 // Address: 005aa3f0
-int getSampleInfo(char * filename);
+int getSampleInfo(CSfxSample * out_sample);
 
-// Original: sound_sndmain.cpp_LockFreeSampleAndUnlock_FUN_005aa660
+// Original: sound_sndmain.cpp_FUN_005aa660
 // Address: 005aa660
-undefined LockFreeSampleAndUnlock();
+void FUN_005aa660(void);
 
 // Original: sound_sndmain.cpp_FUN_005aa6a0
 // Address: 005aa6a0
@@ -497,7 +497,7 @@ undefined FUN_005aa7f0();
 
 // Original: sound_sndmain.cpp_FUN_005aae00
 // Address: 005aae00
-undefined FUN_005aae00();
+void FUN_005aae00(void);
 
 // Original: sound_sndmain.cpp_FUN_005aaeb0
 // Address: 005aaeb0
@@ -531,17 +531,17 @@ int getAudioSampleRate(void);
 // Address: 005ab270
 int getAudioChannelCount(void);
 
-// Original: sound_sndmain.cpp_CallToSetSoundMode_FUN_005ab280
+// Original: sound_sndmain.cpp_FUN_005ab280
 // Address: 005ab280
-undefined CallToSetSoundMode();
+void FUN_005ab280(void);
 
-// Original: sound_sndmain.cpp_CallToSetSoundOutputMode2_FUN_005ab2a0
+// Original: sound_sndmain.cpp_FUN_005ab2a0
 // Address: 005ab2a0
-undefined CallToSetSoundOutputMode2();
+void FUN_005ab2a0(void);
 
-// Original: sound_sndmain.cpp_CallToSetSoundOutputMode3_FUN_005ab2c0
+// Original: sound_sndmain.cpp_FUN_005ab2c0
 // Address: 005ab2c0
-undefined CallToSetSoundOutputMode3();
+void FUN_005ab2c0(void);
 
 // Original: sound_sndmain.cpp_getSoundDeviceCount_FUN_005ab2e0
 // Address: 005ab2e0
@@ -549,7 +549,7 @@ int getSoundDeviceCount(void);
 
 // Original: sound_sndmain.cpp_getSoundDeviceInfo_FUN_005ab370
 // Address: 005ab370
-void getSoundDeviceInfo(int device_id, SSoundDeviceInfo * dest_buffer);
+void getSoundDeviceInfo(int device_id, SSoundDeviceInfo * device_info);
 
 // Original: sound_sndmain.cpp_findBestSoundDevice_FUN_005ab3d0
 // Address: 005ab3d0
@@ -605,15 +605,15 @@ int getRecordingDeviceCount(void);
 
 // Original: sound_sndmain.cpp_getRecordingDeviceInfo_FUN_005ab780
 // Address: 005ab780
-undefined getRecordingDeviceInfo();
+void getRecordingDeviceInfo(int index, SRecordingDeviceInfo * device_info);
 
-// Original: sound_sndmain.cpp_GetAllRecordingDevices_FUN_005ab7e0
+// Original: sound_sndmain.cpp_findBestRecordingDevice_FUN_005ab7e0
 // Address: 005ab7e0
-undefined GetAllRecordingDevices();
+int findBestRecordingDevice(void);
 
 // Original: sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860
 // Address: 005ab860
-undefined selectRecordingDevice();
+void selectRecordingDevice(int device_id);
 
 // Original: sound_sndmain.cpp_FUN_005ab8d0
 // Address: 005ab8d0
@@ -623,17 +623,17 @@ undefined FUN_005ab8d0();
 // Address: 005ab930
 int releaseRecordingDevice(void);
 
-// Original: sound_sndmain.cpp_FUN_005ab970
+// Original: sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970
 // Address: 005ab970
-undefined FUN_005ab970();
+int isRecordingSystemActive(void);
 
 // Original: sound_sndmain.cpp_FUN_005ab980
 // Address: 005ab980
 undefined FUN_005ab980();
 
-// Original: sound_sndmain.cpp_FUN_005ab990
+// Original: sound_sndmain.cpp_getCurrentRecordingDevice_FUN_005ab990
 // Address: 005ab990
-undefined FUN_005ab990();
+int getCurrentRecordingDevice(void);
 
 // Original: sound_sndmain.cpp_setRecordingFormat_FUN_005ab9a0
 // Address: 005ab9a0
@@ -697,7 +697,7 @@ void writeIni(CIniFile * ini_file);
 
 // Original: sound_sndmain.cpp_FUN_005ac400
 // Address: 005ac400
-undefined FUN_005ac400();
+int FUN_005ac400(void);
 
 // Original: sound_sndmain.cpp_FUN_005ac990
 // Address: 005ac990
@@ -707,13 +707,13 @@ undefined FUN_005ac990();
 // Address: 005aca90
 void pollAndMixSfx(LPVOID * channel_buffers, int bits_per_sample, int num_channels, int samples_per_sec, int samples_per_block, int block_align);
 
-// Original: sound_sndmain.cpp_CSfxSlot_kill_FUN_005acdb0
+// Original: sound_sndmain.cpp_FUN_005acdb0
 // Address: 005acdb0
-void CSfxSlot::kill(CSfxSlot * this_ptr);
+void FUN_005acdb0(void);
 
-// Original: sound_sndmain.cpp_lockSound_PollStream_FUN_005ace90
+// Original: sound_sndmain.cpp_FUN_005ace90
 // Address: 005ace90
-undefined lockSound::PollStream();
+void FUN_005ace90(void);
 
 // Original: sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20
 // Address: 005acf20
@@ -721,7 +721,7 @@ void convertMp3ToSfxMetadata(char * mp3_filename);
 
 // Original: sound_sndmain.cpp_FUN_005ad3b0
 // Address: 005ad3b0
-undefined FUN_005ad3b0();
+char * FUN_005ad3b0(char * param_1);
 
 // Original: sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0
 // Address: 005ad5c0
@@ -741,23 +741,23 @@ int CSfxSample(CSfxSample * this_ptr);
 
 // Original: sound_sndmain.cpp_FUN_005addb0
 // Address: 005addb0
-undefined FUN_005addb0();
+int FUN_005addb0(void);
 
 // Original: sound_sndmain.cpp_FUN_005addc0
 // Address: 005addc0
-undefined FUN_005addc0();
+int FUN_005addc0(void);
 
 // Original: sound_sndmain.cpp_FUN_005addd0
 // Address: 005addd0
-undefined FUN_005addd0();
+int FUN_005addd0(void);
 
 // Original: sound_sndmain.cpp_FUN_005adde0
 // Address: 005adde0
-undefined FUN_005adde0();
+void FUN_005adde0(void);
 
 // Original: sound_sndmain.cpp_FUN_005addf0
 // Address: 005addf0
-undefined FUN_005addf0();
+void FUN_005addf0(void);
 
 // Original: sound_sndmain.cpp_CSfxSlot_ctor_FUN_005ade00
 // Address: 005ade00

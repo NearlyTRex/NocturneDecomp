@@ -48,7 +48,7 @@
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 //   core_xform.cpp_eulerToQuaternion_FUN_005f7b20
 //   engine_console.cpp_CConsole_printf_FUN_00441890
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9660
 
 #include "nocturne.h"
 
@@ -226,7 +226,7 @@ switchD_004f8665_default:
                                 (&(in_stack_00000004->model).motion_controller);
             if (iVar4 != pSVar11->state_index) {
               if ((((iVar4 == 0xe) || (iVar4 == 0xf)) || (iVar4 == 0x10)) &&
-                 (iVar9 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar9 == 0)) {
+                 (iVar9 = sound_sndmain_cpp_FUN_005a9660(), iVar9 == 0)) {
                 uVar10 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                                    (&in_stack_00000004->base_actor,"icepick-miss?.wav");
                 *(undefined4 *)(in_stack_00000004[2].cloth_data + 0x54fc) = uVar10;
@@ -843,7 +843,7 @@ LAB_004f82f8:
 // 004f8542: MOV EDI,dword ptr [EBX + 0x1fbdc]
 //   Label: LAB_004f8542
 // 004f8548: PUSH EDI
-// 004f8549: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 004f8549: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004f854e: ADD ESP,0x4
 // 004f8551: TEST EAX,EAX

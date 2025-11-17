@@ -19,7 +19,7 @@
 //   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
 //   core_fire.cpp_CFireEffect_FUN_004c8c10
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+//   sound_sndmain.cpp_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -68,7 +68,7 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004c4000(CToss *this_ptr)
     }
     if (*(int *)this_ptr->field0_0x0 == 0) {
       core_fire_cpp_CFireEffect_FUN_004c8c10(g_CFireEffectPtr);
-      sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+      sound_sndmain_cpp_FUN_005a9c40();
       return;
     }
   }
@@ -131,7 +131,7 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004c4000(CToss *this_ptr)
 // 004c4072: ADD ESP,0x14
 // 004c4075: MOV ESI,dword ptr [EBX + 0x3e0]
 // 004c407b: PUSH ESI
-// 004c407c: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 004c407c: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004c4081: ADD ESP,0x4
 // 004c4084: ADD ESP,0x28

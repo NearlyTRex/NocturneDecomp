@@ -17,38 +17,38 @@
 //   int g_AudioBitsPerSample = 0x10
 //   int g_AudioChannelCount = 0x2
 //   int g_AudioSampleRate = 0x5622
-//   undefined4 DAT_00681b30
-//   undefined4 DAT_00681b34
-//   undefined4 DAT_03f68830
-//   undefined4 DAT_03f68834
-//   undefined4 DAT_03f68838
-//   undefined4 DAT_03f6883c
-//   undefined4 DAT_03f68840
-//   undefined4 DAT_03f68844
-//   undefined4 DAT_03f68848
-//   undefined4 DAT_03f6884c
-//   undefined4 DAT_03f68850
-//   undefined4 DAT_03f68854
-//   undefined4 DAT_03f68858
-//   undefined4 DAT_03f6885c
-//   undefined4 DAT_03f68860
-//   undefined4 DAT_03f68864
-//   undefined4 DAT_03f68868
-//   undefined4 DAT_03f6886c
-//   undefined4 DAT_03f68870
-//   undefined4 DAT_03f68874
-//   undefined4 DAT_03f68878
-//   undefined4 DAT_03f6887c
-//   undefined4 DAT_03f68880
-//   undefined4 DAT_03f68884
-//   undefined4 DAT_03f68888
-//   undefined4 DAT_03f6888c
-//   undefined4 DAT_03f68890
-//   undefined4 DAT_03f68894
-//   undefined4 DAT_03f68898
-//   undefined4 DAT_03f6889c
-//   undefined4 DAT_03f688a0
-//   undefined4 DAT_03f688a4
+//   double DOUBLE_00681b30 = 1
+//   undefined4 DOUBLE_00681b30+4
+//   CVector3d g_Cached3DListenerPos
+//   undefined4 g_Cached3DListenerPos.x+4
+//   undefined4 g_Cached3DListenerPos.y
+//   undefined4 g_Cached3DListenerPos.y+4
+//   undefined4 g_Cached3DListenerPos.z
+//   undefined4 g_Cached3DListenerPos.z+4
+//   CVector3d g_Cached3DListenerVelocity
+//   undefined4 g_Cached3DListenerVelocity.x+4
+//   undefined4 g_Cached3DListenerVelocity.y
+//   undefined4 g_Cached3DListenerVelocity.y+4
+//   undefined4 g_Cached3DListenerVelocity.z
+//   undefined4 g_Cached3DListenerVelocity.z+4
+//   CVector3d g_Cached3DListenerOrientFront
+//   undefined4 g_Cached3DListenerOrientFront.x+4
+//   undefined4 g_Cached3DListenerOrientFront.y
+//   undefined4 g_Cached3DListenerOrientFront.y+4
+//   undefined4 g_Cached3DListenerOrientFront.z
+//   undefined4 g_Cached3DListenerOrientFront.z+4
+//   CVector3d g_Cached3DListenerOrientUp
+//   undefined4 g_Cached3DListenerOrientUp.x+4
+//   undefined4 g_Cached3DListenerOrientUp.y
+//   undefined4 g_Cached3DListenerOrientUp.y+4
+//   undefined4 g_Cached3DListenerOrientUp.z
+//   undefined4 g_Cached3DListenerOrientUp.z+4
+//   CVector3d g_Cached3DListenerOrientRight
+//   undefined4 g_Cached3DListenerOrientRight.x+4
+//   undefined4 g_Cached3DListenerOrientRight.y
+//   undefined4 g_Cached3DListenerOrientRight.y+4
+//   undefined4 g_Cached3DListenerOrientRight.z
+//   undefined4 g_Cached3DListenerOrientRight.z+4
 //   CSoundDevice* g_CSoundDevicePtr
 //   int g_SoundBusyFlag
 //   int g_MixBufferReadIndex
@@ -73,8 +73,6 @@
 //   wincore_winrun.cpp_getTime_FUN_005f2dc0
 
 #include "nocturne.h"
-
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005aaef0() */
 
 int sound_sndmain_cpp_FUN_005aaef0(void)
 
@@ -113,13 +111,35 @@ int sound_sndmain_cpp_FUN_005aaef0(void)
     g_MixBufferReadIndex = 0;
     g_MixBufferWriteIndex = 0;
     (*g_CSoundDevicePtr->vtable->set3DListenerPos)
-              (g_CSoundDevicePtr,DAT_03f68830,DAT_03f68834,DAT_03f68838);
+              (g_CSoundDevicePtr,
+               (double)CONCAT44(g_Cached3DListenerPos.x._4_4_,g_Cached3DListenerPos.x._0_4_),
+               (double)CONCAT44(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),
+               (double)CONCAT44(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));
     (*g_CSoundDevicePtr->vtable->set3DListenerOrient)
-              (g_CSoundDevicePtr,DAT_03f68860,DAT_03f68864,DAT_03f68868,DAT_03f6886c,DAT_03f68870,
-               DAT_03f68874);
-    (*g_CSoundDevicePtr->vtable->setDopplerFactor)(g_CSoundDevicePtr,DAT_03f68848);
-    (*g_CSoundDevicePtr->vtable->setRolloffFactor)(g_CSoundDevicePtr,DAT_00681b30);
-    (*(code *)g_CSoundDevicePtr->vtable->func11)();
+              (g_CSoundDevicePtr,
+               (double)CONCAT44(g_Cached3DListenerOrientFront.x._4_4_,
+                                g_Cached3DListenerOrientFront.x._0_4_),
+               (double)CONCAT44(g_Cached3DListenerOrientFront.y._4_4_,
+                                g_Cached3DListenerOrientFront.y._0_4_),
+               (double)CONCAT44(g_Cached3DListenerOrientFront.z._4_4_,
+                                g_Cached3DListenerOrientFront.z._0_4_),
+               (double)CONCAT44(g_Cached3DListenerOrientUp.x._4_4_,
+                                g_Cached3DListenerOrientUp.x._0_4_),
+               (double)CONCAT44(g_Cached3DListenerOrientUp.y._4_4_,
+                                g_Cached3DListenerOrientUp.y._0_4_),
+               (double)CONCAT44(g_Cached3DListenerOrientUp.z._4_4_,
+                                g_Cached3DListenerOrientUp.z._0_4_));
+    (*g_CSoundDevicePtr->vtable->set3DListenerVelocity)
+              (g_CSoundDevicePtr,
+               (double)CONCAT44(g_Cached3DListenerVelocity.x._4_4_,
+                                g_Cached3DListenerVelocity.x._0_4_),
+               (double)CONCAT44(g_Cached3DListenerVelocity.y._4_4_,
+                                g_Cached3DListenerVelocity.y._0_4_),
+               (double)CONCAT44(g_Cached3DListenerVelocity.z._4_4_,
+                                g_Cached3DListenerVelocity.z._0_4_));
+    (*g_CSoundDevicePtr->vtable->set3DListenerDistanceFactor)
+              (g_CSoundDevicePtr,(double)CONCAT44(DOUBLE_00681b30._4_4_,DOUBLE_00681b30._0_4_));
+    (*g_CSoundDevicePtr->vtable->commitDeferredSettings)(g_CSoundDevicePtr);
     DAT_03f69410 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
     iVar3 = (*g_CSoundDevicePtr->vtable->start)(g_CSoundDevicePtr);
     if (iVar3 != 0) {

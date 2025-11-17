@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(CSfxSlot * this_ptr)
 // Cross-references:
-//   sound_sndmain.cpp_CSfxSlot_kill_FUN_005acdb0 (005acdb0) at 005ace03 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005acdb0 (005acdb0) at 005ace03 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_006504ad
 //   TerminatedCString s_SfxSlot_pollHwHandle_no__006504c2
@@ -25,9 +25,13 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(CSfxSlot *this
 
 {
   int iVar1;
-  uint uVar2;
+  uint update_flags;
+  CSfxSample *pCStack0000000c;
+  undefined4 uStack00000018;
+  int iStack00000020;
+  CSfxSample *pCStack00000024;
   
-  if (this_ptr->dsound_buffer == (void *)0x0) {
+  if (this_ptr->hardware_buffer_handle == 0) {
     return;
   }
   if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
@@ -39,38 +43,43 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(CSfxSlot *this
     g_CurrentLineNumber = 0xb71;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::pollHwHandle - no sample?");
   }
-  iVar1 = (*(code *)g_CSoundDevicePtr->vtable->func21)();
+  iVar1 = (*g_CSoundDevicePtr->vtable->isSfxPlaying)(g_CSoundDevicePtr,this_ptr);
   if (iVar1 == 0) {
     iVar1 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(this_ptr->sample);
     if (iVar1 != 0) {
-      sound_sndmain_cpp_logSoundError_FUN_005adba0
-                ("Killing looped sfx %s, which died??\n",this_ptr->sample);
+      pCStack0000000c = this_ptr->sample;
+      sound_sndmain_cpp_logSoundError_FUN_005adba0("Killing looped sfx %s, which died??\n");
     }
+    pCStack0000000c = (CSfxSample *)0x5a8078;
     sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(this_ptr);
     return;
   }
-  uVar2 = 0;
-  if (((this_ptr->options).field5_0x14[0x48] & 1U) == 0) {
-    if (*(int *)((this_ptr->options).field5_0x14 + 0xc) != 0) {
-      uVar2 = 2;
+  update_flags = 0;
+  if (((this_ptr->options).flags & 1) == 0) {
+    if ((this_ptr->options).position_format != 0) {
+      update_flags = 2;
     }
-    if (*(int *)((this_ptr->options).field5_0x14 + 0x2c) != 0) {
-      if ((uVar2 | 4) == 0) {
+    if ((this_ptr->options).velocity_format != 0) {
+      update_flags = update_flags | 4;
+      if (update_flags == 0) {
         return;
       }
       goto LAB_005a809a;
     }
   }
-  if (uVar2 == 0) {
+  if (update_flags == 0) {
     return;
   }
 LAB_005a809a:
-  iVar1 = (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr);
+  iVar1 = (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,this_ptr,update_flags);
   if (iVar1 != 0) {
     return;
   }
-  sound_sndmain_cpp_logSoundError_FUN_005adba0
-            ("Error setting hw sfx %d options (sample %s), killing.\n",this_ptr->dsound_buffer,this_ptr->sample);
+  pCStack00000024 = this_ptr->sample;
+  iStack00000020 = this_ptr->hardware_buffer_handle;
+  uStack00000018 = 0x5a80c1;
+  sound_sndmain_cpp_logSoundError_FUN_005adba0("Error setting hw sfx %d options (sample %s), killing.\n");
+  pCStack00000024 = (CSfxSample *)0x5a80ca;
   sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(this_ptr);
   return;
 }

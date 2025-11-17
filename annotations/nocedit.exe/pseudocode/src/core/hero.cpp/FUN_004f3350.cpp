@@ -10,7 +10,7 @@
 //   undefined4 g_CBoxActorClassInfo.name_hash
 // Function calls:
 //   core_actor.cpp_castToClassHash_FUN_0040c790
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+//   sound_sndmain.cpp_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -30,7 +30,7 @@ void core_hero_cpp_FUN_004f3350(void)
   ;
   if (in_stack_00000004 == pCVar1[2].was_created) {
     pCVar1[2].was_created = 0;
-    sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+    sound_sndmain_cpp_FUN_005a9c40();
   }
   *(undefined4 *)(in_stack_00000004 + 0x1fba4) = 0;
   return;
@@ -66,7 +66,7 @@ void core_hero_cpp_FUN_004f3350(void)
 // 004f337e: MOV EBP,dword ptr [EAX + 0x328]
 // 004f3384: PUSH EBP
 // 004f3385: MOV dword ptr [EAX + 0x320],0x0
-// 004f338f: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 004f338f: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004f3394: ADD ESP,0x4
 // 004f3397: MOV dword ptr [EBX + 0x1fba4],0x0

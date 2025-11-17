@@ -6,7 +6,7 @@
 // Function calls:
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
-//   sound_sndmain.cpp_somethingWithStack_FUN_005a8b90
+//   sound_sndmain.cpp_setNextSfxFlagBits_FUN_005a8b90
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
 
 #include "nocturne.h"
@@ -17,7 +17,7 @@ undefined4 sound_sndmain_cpp_FUN_005a9550(void)
   undefined4 uVar1;
   
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-  sound_sndmain_cpp_somethingWithStack_FUN_005a8b90();
+  sound_sndmain_cpp_setNextSfxFlagBits_FUN_005a8b90(1);
   uVar1 = sound_sndmain_cpp_startSfx_FUN_005a8e90();
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   return uVar1;
@@ -30,7 +30,7 @@ undefined4 sound_sndmain_cpp_FUN_005a9550(void)
 // 005a9551: CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   XREF to: 005a8c30 (UNCONDITIONAL_CALL)
 // 005a9556: PUSH 0x1
-// 005a9558: CALL sound_sndmain.cpp_somethingWithStack_FUN_005a8b90
+// 005a9558: CALL sound_sndmain.cpp_setNextSfxFlagBits_FUN_005a8b90
 //   XREF to: 005a8b90 (UNCONDITIONAL_CALL)
 // 005a955d: ADD ESP,0x4
 // 005a9560: MOV EDX,dword ptr [ESP + 0x8]

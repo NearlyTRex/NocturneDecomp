@@ -33,15 +33,13 @@ int __cdecl sound_sndmain_cpp_FUN_005ab5b0(void)
   if (-1 < g_CurrentSoundDevice) {
     if (g_SoundDevices[g_CurrentSoundDevice].api_type == 0) {
       g_CSoundDevicePtr =
-           (CSoundDevice *)
-           sound_sndwav_cpp_getWavOutDevice_FUN_005b1510
-                     (g_SoundDevices[g_CurrentSoundDevice].device_id);
+           &sound_sndwav_cpp_getWavOutDevice_FUN_005b1510
+                      (g_SoundDevices[g_CurrentSoundDevice].device_id)->base;
     }
     if (g_SoundDevices[g_CurrentSoundDevice].api_type == 1) {
       g_CSoundDevicePtr =
-           (CSoundDevice *)
-           sound_snddx_cpp_getDirectSoundDevice_FUN_005b0440
-                     (g_SoundDevices[g_CurrentSoundDevice].device_id);
+           &sound_snddx_cpp_getDirectSoundDevice_FUN_005b0440
+                      (g_SoundDevices[g_CurrentSoundDevice].device_id)->base;
     }
     if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
       return 0;

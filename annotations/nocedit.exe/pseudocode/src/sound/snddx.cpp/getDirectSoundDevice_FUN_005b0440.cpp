@@ -11,7 +11,7 @@
 //   TerminatedCString s_Set_cooperative_level_006522d5
 //   TerminatedCString s_Create_the_primary_buffe_006522eb
 //   TerminatedCString s_Create_the_primary_buffe_00652305
-//   undefined4 DAT_00686d58
+//   GUID DAT_00686d58
 //   SDirectSoundDeviceInfo[8] g_DirectSoundDevices
 //   undefined4 g_DirectSoundDevices[0].value1
 //   IDirectSound* g_DirectSound

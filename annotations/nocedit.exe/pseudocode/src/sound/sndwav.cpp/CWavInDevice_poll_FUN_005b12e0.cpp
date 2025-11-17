@@ -5,19 +5,19 @@
 // Signature: int sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice * this_ptr)
 // Globals:
 //   TerminatedCString s_WavInDevice_poll_queueWa_006524ac
-//   LPWAVEHDR[8] g_WaveInHeaders
-//   LPVOID[8] DAT_03f6aec0
+//   LPWAVEHDR[20] g_WaveInHeaders
+//   LPVOID[20] g_WaveInBuffers
 //   int g_WaveInBitsPerSample
 //   int g_WaveInChannels
 //   int g_WaveInSampleRate
 //   int g_WaveInBufferSizeSamples
 //   int g_WaveInNumBuffers
-//   int INT_03f6af28
-//   int INT_03f6af2c
-//   undefined4 DAT_03f6af30
-//   undefined4 DAT_03f6af34
-//   undefined4 DAT_03f6af38
-//   undefined4 DAT_03f6af3c
+//   int g_WaveInRequestedChannels
+//   int g_WaveInRequestedSampleRate
+//   int g_WaveInRequestedBitsPerSample
+//   int g_WaveInStereoRequested
+//   int g_WaveInCurrentBufferIndex
+//   int g_WaveInCurrentSampleOffset
 // Function calls:
 //   sound_sndmain.cpp_FUN_005aa7f0
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
@@ -41,23 +41,26 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_p
   iVar5 = 0;
   uVar1 = (uint)(g_WaveInBitsPerSample == 0x10);
   while( true ) {
-    if (DAT_03f6aec0[DAT_03f6af38] == (LPVOID)0x0) {
+    if (g_WaveInBuffers[g_WaveInCurrentBufferIndex] == (LPVOID)0x0) {
       return -1;
     }
-    iVar2 = ((g_WaveInBufferSizeSamples - DAT_03f6af3c) * DAT_03f6af30) / g_WaveInSampleRate;
+    iVar2 = ((g_WaveInBufferSizeSamples - g_WaveInCurrentSampleOffset) *
+            g_WaveInRequestedBitsPerSample) / g_WaveInSampleRate;
     if (in_stack_0000000c < iVar2) {
       iVar2 = in_stack_0000000c;
     }
     if (0 < iVar2) {
       sound_sndmain_cpp_FUN_005aa7f0();
       in_stack_0000000c = in_stack_0000000c - iVar2;
-      DAT_03f6af3c = DAT_03f6af3c + (g_WaveInSampleRate * iVar2) / DAT_03f6af30;
+      g_WaveInCurrentSampleOffset =
+           g_WaveInCurrentSampleOffset +
+           (g_WaveInSampleRate * iVar2) / g_WaveInRequestedBitsPerSample;
       iVar5 = iVar5 + iVar2;
     }
     if (in_stack_0000000c < 1) {
       return iVar5;
     }
-    iVar2 = DAT_03f6af38 + 1;
+    iVar2 = g_WaveInCurrentBufferIndex + 1;
     if (g_WaveInNumBuffers <= iVar2) {
       iVar2 = 0;
     }
@@ -69,8 +72,8 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_p
     }
     iVar3 = sound_sndwav_cpp_writeWavInBuffer_FUN_005b0cc0(iVar2);
     if (iVar3 == 0) break;
-    DAT_03f6af3c = 0;
-    DAT_03f6af38 = iVar2;
+    g_WaveInCurrentSampleOffset = 0;
+    g_WaveInCurrentBufferIndex = iVar2;
   }
   sound_sndmain_cpp_logSoundError_FUN_005adba0("WavInDevice::poll - queueWavInBuffer failed",uVar1,iVar4);
   return -1;

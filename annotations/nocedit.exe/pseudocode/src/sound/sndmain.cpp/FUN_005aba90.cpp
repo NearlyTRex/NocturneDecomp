@@ -11,8 +11,8 @@
 //   void* g_RecordingContext
 //   undefined4 DAT_03f69c5c
 // Function calls:
-//   sound_sndmain.cpp_FUN_005ab970
 //   sound_sndmain.cpp_FUN_005ab980
+//   sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
 //   sound_sndmain.cpp_setRecordingFormat_FUN_005ab9a0
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
@@ -25,7 +25,7 @@ undefined4 sound_sndmain_cpp_FUN_005aba90(void)
   int iVar1;
   DWORD DVar2;
   
-  iVar1 = sound_sndmain_cpp_FUN_005ab970();
+  iVar1 = sound_sndmain_cpp_isRecordingSystemActive_FUN_005ab970();
   if (iVar1 == 0) {
     return 0;
   }
@@ -52,7 +52,7 @@ undefined4 sound_sndmain_cpp_FUN_005aba90(void)
 // 005aba90: PUSH EBX
 //   Label: sound_sndmain.cpp_FUN_005aba90
 // 005aba91: PUSH ESI
-// 005aba92: CALL sound_sndmain.cpp_FUN_005ab970
+// 005aba92: CALL sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970
 //   XREF to: 005ab970 (UNCONDITIONAL_CALL)
 // 005aba97: TEST EAX,EAX
 // 005aba99: JNZ 0x005aba9e

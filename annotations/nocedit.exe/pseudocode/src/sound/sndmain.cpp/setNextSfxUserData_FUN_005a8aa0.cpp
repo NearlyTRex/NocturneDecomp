@@ -2,7 +2,7 @@
 // Address: 005a8aa0
 // Address Range: [[005a8aa0, 005a8aef]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_setNextSfxUserData_FUN_005a8aa0(int userdata_index)
+// Signature: void sound_sndmain.cpp_setNextSfxUserData_FUN_005a8aa0(int userdata_index, int userdata_value)
 // Cross-references:
 //   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b21e5 [UNCONDITIONAL_CALL]
 // Globals:
@@ -10,14 +10,15 @@
 //   TerminatedCString s_setNextSfxUserData_inval_00650827
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   undefined4 g_SfxLastSlot
+//   int g_SfxLastSlot
 //   undefined4 g_SfxLastSlot.field_20[68]
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 
 #include "nocturne.h"
 
-void __cdecl sound_sndmain_cpp_setNextSfxUserData_FUN_005a8aa0(int userdata_index)
+void __cdecl
+sound_sndmain_cpp_setNextSfxUserData_FUN_005a8aa0(int userdata_index,int userdata_value)
 
 {
   undefined4 in_stack_0000000c;

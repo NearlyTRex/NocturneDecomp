@@ -21,7 +21,7 @@
 //   CSoundDevice* g_CSoundDevicePtr
 //   int g_SoundBusyFlag
 // Function calls:
-//   sound_sndmain.cpp_FreeSomeSoundMemory_FUN_005a5900
+//   sound_sndmain.cpp_freeMixBuffers_FUN_005a5900
 //   sound_sndmain.cpp_killAllSoundSlots_FUN_005a9cc0
 
 #include "nocturne.h"
@@ -41,7 +41,7 @@ int __cdecl sound_sndmain_cpp_FUN_005ab130(void)
   }
   g_SoundBusyFlag = 0;
   uStack0000000c = 0x5ab15c;
-  sound_sndmain_cpp_FreeSomeSoundMemory_FUN_005a5900();
+  sound_sndmain_cpp_freeMixBuffers_FUN_005a5900();
   return 1;
 }
 
@@ -68,7 +68,7 @@ int __cdecl sound_sndmain_cpp_FUN_005ab130(void)
 //   Label: LAB_005ab14f
 // 005ab151: MOV dword ptr [0x03f6926c],ECX
 //   XREF to: 03f6926c (WRITE)
-// 005ab157: CALL sound_sndmain.cpp_FreeSomeSoundMemory_FUN_005a5900
+// 005ab157: CALL sound_sndmain.cpp_freeMixBuffers_FUN_005a5900
 //   XREF to: 005a5900 (UNCONDITIONAL_CALL)
 // 005ab15c: MOV EAX,0x1
 //   Label: LAB_005ab15c

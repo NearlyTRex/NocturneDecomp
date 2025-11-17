@@ -15,10 +15,10 @@
 //   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (0054f650) at 0054fe27 [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_CFileBitStream_init_FUN_0052ecf0 (0052ecf0) at 0052ed2c [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 (00534630) at 0053469b [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CalculateDistanceMaybe_FUN_005a45c0 (005a45c0) at 005a4764 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a5200 (005a5200) at 005a546c [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a4e2a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0 (005aa3f0) at 005aa504 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a4e2a [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200 (005a5200) at 005a546c [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_parseConfigFile_FUN_005a45c0 (005a45c0) at 005a4764 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a9448 [UNCONDITIONAL_CALL]
 //   support_newmsg.cpp_readMessageFile_FUN_00543e40 (00543e40) at 00543f40 [UNCONDITIONAL_CALL]
 // Globals:

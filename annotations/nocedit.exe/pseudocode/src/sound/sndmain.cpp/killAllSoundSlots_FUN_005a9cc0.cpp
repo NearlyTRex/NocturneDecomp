@@ -4,12 +4,12 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_killAllSoundSlots_FUN_005a9cc0(void)
 // Cross-references:
+//   sound_sndmain.cpp_FUN_005aa660 (005aa660) at 005aa66c [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005ab130 (005ab130) at 005ab130 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_LockFreeSampleAndUnlock_FUN_005aa660 (005aa660) at 005aa66c [UNCONDITIONAL_CALL]
 // Globals:
 //   CSfxSlot[64] g_SfxSlots
 //   undefined4 g_SfxSlots[1].status
-//   undefined4 g_SfxLastSlot
+//   int g_SfxLastSlot
 // Function calls:
 //   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
 //   sound_sndmain.cpp_lockSound_FUN_005abd30

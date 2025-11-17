@@ -12,8 +12,8 @@
 //   TerminatedCString s_waveOutPrepareHeader_fai_00652408
 //   TerminatedCString s_waveOutWrite_failed_00652425
 //   HWAVEIN g_WaveInHandle
-//   LPWAVEHDR[8] g_WaveInHeaders
-//   LPVOID[8] DAT_03f6aec0
+//   LPWAVEHDR[20] g_WaveInHeaders
+//   LPVOID[20] g_WaveInBuffers
 //   int g_WaveInBitsPerSample
 //   int g_WaveInChannels
 //   int g_WaveInBufferSizeSamples
@@ -30,7 +30,7 @@ int __cdecl sound_sndwav_cpp_writeWavInBuffer_FUN_005b0cc0(int buffer_index)
   MMRESULT MVar1;
   undefined4 uStack0000000c;
   
-  if ((DAT_03f6aec0[buffer_index] == (LPVOID)0x0) ||
+  if ((g_WaveInBuffers[buffer_index] == (LPVOID)0x0) ||
      (g_WaveInHeaders[buffer_index] == (LPWAVEHDR)0x0)) {
     return 0;
   }

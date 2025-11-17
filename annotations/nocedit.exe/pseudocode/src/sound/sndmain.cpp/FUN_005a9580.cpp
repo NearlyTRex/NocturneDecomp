@@ -4,10 +4,10 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005a9580()
 // Function calls:
-//   sound_sndmain.cpp_FUN_005a88e0
-//   sound_sndmain.cpp_FUN_005a8bb0
+//   sound_sndmain.cpp_clearNextSfxFlagBits_FUN_005a8bb0
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
+//   sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
 
 #include "nocturne.h"
@@ -16,10 +16,19 @@ undefined4 sound_sndmain_cpp_FUN_005a9580(void)
 
 {
   undefined4 uVar1;
+  undefined4 in_stack_00000010;
+  undefined4 in_stack_00000014;
+  undefined4 in_stack_00000018;
+  undefined4 in_stack_0000001c;
+  undefined4 in_stack_00000020;
+  undefined4 in_stack_00000024;
   
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-  sound_sndmain_cpp_FUN_005a8bb0();
-  sound_sndmain_cpp_FUN_005a88e0();
+  sound_sndmain_cpp_clearNextSfxFlagBits_FUN_005a8bb0(1);
+  sound_sndmain_cpp_setNextSfxStaticPosition_FUN_005a88e0
+            ((double)CONCAT44(in_stack_00000014,in_stack_00000010),
+             (double)CONCAT44(in_stack_0000001c,in_stack_00000018),
+             (double)CONCAT44(in_stack_00000024,in_stack_00000020));
   uVar1 = sound_sndmain_cpp_startSfx_FUN_005a8e90();
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   return uVar1;
@@ -35,7 +44,7 @@ undefined4 sound_sndmain_cpp_FUN_005a9580(void)
 // 005a9584: CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   XREF to: 005a8c30 (UNCONDITIONAL_CALL)
 // 005a9589: PUSH 0x1
-// 005a958b: CALL sound_sndmain.cpp_FUN_005a8bb0
+// 005a958b: CALL sound_sndmain.cpp_clearNextSfxFlagBits_FUN_005a8bb0
 //   XREF to: 005a8bb0 (UNCONDITIONAL_CALL)
 // 005a9590: ADD ESP,0x4
 // 005a9593: MOV EDX,dword ptr [ESP + 0x2c]
@@ -56,7 +65,7 @@ undefined4 sound_sndmain_cpp_FUN_005a9580(void)
 // 005a95ac: MOV EBP,dword ptr [ESP + 0x2c]
 //   XREF to: Stack[0x8] (READ)
 // 005a95b0: PUSH EBP
-// 005a95b1: CALL sound_sndmain.cpp_FUN_005a88e0
+// 005a95b1: CALL sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0
 //   XREF to: 005a88e0 (UNCONDITIONAL_CALL)
 // 005a95b6: ADD ESP,0x18
 // 005a95b9: MOV EAX,dword ptr [ESP + 0x14]

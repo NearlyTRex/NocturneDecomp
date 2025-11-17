@@ -2,26 +2,22 @@
 // Address: 005aee30
 // Address Range: [[005aee30, 005aee63]]
 // Convention: __cdecl
-// Signature: void sound_snddx.cpp_CDirectSoundDevice_set3DListenerPos_FUN_005aee30(CDirectSoundDevice * this_ptr)
+// Signature: void sound_snddx.cpp_CDirectSoundDevice_set3DListenerPos_FUN_005aee30(CDirectSoundDevice * this_ptr, double x, double y, double z)
 // Globals:
 //   IDirectSound3DListener* g_DirectSound3DListener
 
 #include "nocturne.h"
 
 void __cdecl
-sound_snddx_cpp_CDirectSoundDevice_set3DListenerPos_FUN_005aee30(CDirectSoundDevice *this_ptr)
+sound_snddx_cpp_CDirectSoundDevice_set3DListenerPos_FUN_005aee30
+          (CDirectSoundDevice *this_ptr,double x,double y,double z)
 
 {
-  double in_stack_00000008;
-  double in_stack_00000010;
-  double in_stack_00000018;
-  
   if (g_DirectSound3DListener == (IDirectSound3DListener *)0x0) {
     return;
   }
   (*g_DirectSound3DListener->vtable->SetPosition)
-            (g_DirectSound3DListener,(float)in_stack_00000008,(float)in_stack_00000010,
-             (float)in_stack_00000018,0);
+            (g_DirectSound3DListener,(float)x,(float)y,(float)z,0);
   return;
 }
 

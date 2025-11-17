@@ -6,8 +6,8 @@
 // Cross-references:
 //   sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530 (00534530) at 00534536 [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 (00534630) at 0053463c [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a4efd [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0 (005aa3f0) at 005aa5ea [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a4efd [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_mp3_cpp_0063ace1
 //   TerminatedCString s_sound_mp3_cpp_0063acf2

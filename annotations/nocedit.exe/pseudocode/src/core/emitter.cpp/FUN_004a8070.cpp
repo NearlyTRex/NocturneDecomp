@@ -43,9 +43,9 @@
 //   core_set.cpp_CDemonSet_FUN_0056d110
 //   crt_string.c_strcmp_FUN_005fef20
 //   crt_string.c_strnicmp_FUN_005ff070
+//   sound_sndmain.cpp_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9c40
 //   sound_sndmain.cpp_FUN_005aa290
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
 
 #include "nocturne.h"
 
@@ -124,11 +124,11 @@ void core_emitter_cpp_FUN_004a8070(void)
     else {
       iVar6 = 0;
     }
-    sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+    sound_sndmain_cpp_FUN_005a9c40();
   }
 LAB_004a811d:
   if (*(int *)(in_stack_00000004 + 0x168) == 0) {
-    sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+    sound_sndmain_cpp_FUN_005a9c40();
     goto LAB_004a8221;
   }
   fVar11 = *(float *)(in_stack_00000004 + 0x440) + in_stack_00000008;
@@ -261,7 +261,7 @@ LAB_004a81e2:
     }
   }
   if (((*(char *)(in_stack_00000004 + 0x3d4) != '\0') &&
-      (iVar6 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar6 == 0)) &&
+      (iVar6 = sound_sndmain_cpp_FUN_005a9660(), iVar6 == 0)) &&
      ((*(int *)(in_stack_00000004 + 0x43c) != 1 || (*(int *)(in_stack_00000004 + 0x490) == 0)))) {
     uVar5 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
     *(undefined4 *)(in_stack_00000004 + 0x438) = uVar5;
@@ -469,7 +469,7 @@ LAB_004a8221:
 //   XREF to: 004a8221 (CONDITIONAL_JUMP)
 // 004a820a: MOV ECX,dword ptr [EBX + 0x438]
 // 004a8210: PUSH ECX
-// 004a8211: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 004a8211: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004a8216: ADD ESP,0x4
 // 004a8219: TEST EAX,EAX
@@ -544,7 +544,7 @@ LAB_004a8221:
 // 004a82d2: MOV ECX,dword ptr [EBX + 0x438]
 //   Label: LAB_004a82d2
 // 004a82d8: PUSH ECX
-// 004a82d9: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 004a82d9: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004a82de: ADD ESP,0x4
 // 004a82e1: JMP 0x004a811d
@@ -1019,7 +1019,7 @@ LAB_004a8221:
 // 004a87a5: MOV EAX,dword ptr [EBX + 0x438]
 //   Label: LAB_004a87a5
 // 004a87ab: PUSH EAX
-// 004a87ac: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 004a87ac: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004a87b1: ADD ESP,0x4
 // 004a87b4: JMP 0x004a8221

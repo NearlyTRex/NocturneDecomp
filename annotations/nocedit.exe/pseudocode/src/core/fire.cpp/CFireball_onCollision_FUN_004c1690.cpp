@@ -14,11 +14,11 @@
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
 //   core_fire.cpp_CFireEffect_FUN_004c7db0
 //   core_set.cpp_CDemonSet_FUN_00570fa0
-//   sound_sndmain.cpp_FUN_005a88e0
-//   sound_sndmain.cpp_FUN_005a8a60
+//   sound_sndmain.cpp_FUN_005a9c40
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+//   sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0
+//   sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
 
 #include "nocturne.h"
@@ -29,7 +29,7 @@ core_fire_cpp_CFireball_onCollision_FUN_004c1690(CFireball *this_ptr,CVector3f *
 {
   int iVar1;
   
-  sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+  sound_sndmain_cpp_FUN_005a9c40();
   if (this_ptr->lighting_active == 0) {
     iVar1 = 0;
     do {
@@ -39,7 +39,9 @@ core_fire_cpp_CFireball_onCollision_FUN_004c1690(CFireball *this_ptr,CVector3f *
     } while (iVar1 < 8);
     core_set_cpp_CDemonSet_FUN_00570fa0(g_CDemonSetPtr);
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-    sound_sndmain_cpp_FUN_005a88e0();
+    sound_sndmain_cpp_setNextSfxStaticPosition_FUN_005a88e0
+              ((double)(this_ptr->base).position.x,(double)(this_ptr->base).position.y,
+               (double)(this_ptr->base).position.z);
   }
   else {
     if (this_ptr->lighting_active != 2) {
@@ -51,8 +53,10 @@ core_fire_cpp_CFireball_onCollision_FUN_004c1690(CFireball *this_ptr,CVector3f *
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
     } while (iVar1 < 8);
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-    sound_sndmain_cpp_FUN_005a88e0();
-    sound_sndmain_cpp_FUN_005a8a60();
+    sound_sndmain_cpp_setNextSfxStaticPosition_FUN_005a88e0
+              ((double)(this_ptr->base).position.x,(double)(this_ptr->base).position.y,
+               (double)(this_ptr->base).position.z);
+    sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(0.8);
   }
   sound_sndmain_cpp_startSfx_FUN_005a8e90();
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
@@ -70,7 +74,7 @@ core_fire_cpp_CFireball_onCollision_FUN_004c1690(CFireball *this_ptr,CVector3f *
 //   XREF to: Stack[0x4] (READ)
 // 004c1698: MOV EDX,dword ptr [EBX + 0x58]
 // 004c169b: PUSH EDX
-// 004c169c: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 004c169c: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004c16a1: MOV ECX,dword ptr [EBX + 0x44]
 // 004c16a4: ADD ESP,0x4
@@ -136,7 +140,7 @@ core_fire_cpp_CFireball_onCollision_FUN_004c1690(CFireball *this_ptr,CVector3f *
 // 004c1724: FLD float ptr [EBX]
 // 004c1726: FSTP double ptr [ESP]
 //   XREF to: Stack[-0x28] (DATA)
-// 004c1729: CALL sound_sndmain.cpp_FUN_005a88e0
+// 004c1729: CALL sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0
 //   XREF to: 005a88e0 (UNCONDITIONAL_CALL)
 // 004c172e: ADD ESP,0x18
 // 004c1731: PUSH 0x629cb3
@@ -191,11 +195,11 @@ core_fire_cpp_CFireball_onCollision_FUN_004c1690(CFireball *this_ptr,CVector3f *
 // 004c1794: FLD float ptr [EBX]
 // 004c1796: FSTP double ptr [ESP]
 //   XREF to: Stack[-0x28] (DATA)
-// 004c1799: CALL sound_sndmain.cpp_FUN_005a88e0
+// 004c1799: CALL sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0
 //   XREF to: 005a88e0 (UNCONDITIONAL_CALL)
 // 004c179e: ADD ESP,0x18
 // 004c17a1: PUSH 0x3f4ccccd
-// 004c17a6: CALL sound_sndmain.cpp_FUN_005a8a60
+// 004c17a6: CALL sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60
 //   XREF to: 005a8a60 (UNCONDITIONAL_CALL)
 // 004c17ab: ADD ESP,0x4
 // 004c17ae: PUSH 0x629cbe

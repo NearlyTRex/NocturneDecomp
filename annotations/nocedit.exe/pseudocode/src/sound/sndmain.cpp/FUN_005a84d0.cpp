@@ -1,14 +1,14 @@
 // Name: sound_sndmain.cpp_FUN_005a84d0
 // Address: 005a84d0
 // Address Range: [[005a84d0, 005a8514]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_FUN_005a84d0()
+// Convention: __cdecl
+// Signature: double sound_sndmain.cpp_FUN_005a84d0(void)
 // Cross-references:
 //   core_sound.cpp_CSound_FUN_005b3ba0 (005b3ba0) at 005b3c1f [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
-double sound_sndmain_cpp_FUN_005a84d0(void)
+double __cdecl sound_sndmain_cpp_FUN_005a84d0(void)
 
 {
   int in_stack_00000004;

@@ -4,14 +4,14 @@
 // Convention: __cdecl
 // Signature: CSfxSlot * sound_sndmain.cpp_CSfxSlot_ctor_FUN_005ade00(CSfxSlot * this_ptr)
 // Function calls:
-//   sound_sndmain.cpp_CSfxSlot_reset_FUN_005a8830
+//   sound_sndmain.cpp_CSfxOptions_reset_FUN_005a8830
 
 #include "nocturne.h"
 
 CSfxSlot * __cdecl sound_sndmain_cpp_CSfxSlot_ctor_FUN_005ade00(CSfxSlot *this_ptr)
 
 {
-  sound_sndmain_cpp_CSfxSlot_reset_FUN_005a8830(this_ptr);
+  sound_sndmain_cpp_CSfxOptions_reset_FUN_005a8830(&this_ptr->options);
   return this_ptr;
 }
 
@@ -22,7 +22,7 @@ CSfxSlot * __cdecl sound_sndmain_cpp_CSfxSlot_ctor_FUN_005ade00(CSfxSlot *this_p
 // 005ade01: MOV EBX,dword ptr [ESP + 0x8]
 //   XREF to: Stack[0x4] (READ)
 // 005ade05: PUSH EBX
-// 005ade06: CALL sound_sndmain.cpp_CSfxSlot_reset_FUN_005a8830
+// 005ade06: CALL sound_sndmain.cpp_CSfxOptions_reset_FUN_005a8830
 //   XREF to: 005a8830 (UNCONDITIONAL_CALL)
 // 005ade0b: ADD ESP,0x4
 // 005ade0e: MOV EAX,EBX

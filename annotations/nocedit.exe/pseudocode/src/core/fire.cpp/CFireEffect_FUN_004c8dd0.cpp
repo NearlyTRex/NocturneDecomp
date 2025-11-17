@@ -11,7 +11,7 @@
 //   undefined4 DAT_02d67cb0
 // Function calls:
 //   core_fire.cpp_CFireEffect_FUN_004c8e40
-//   sound_sndmain.cpp_YetAnother2ComputingDelayCall_FUN_005a98b0
+//   sound_sndmain.cpp_FUN_005a98b0
 
 #include "nocturne.h"
 
@@ -23,7 +23,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8dd0(CFireEffect *this_ptr)
   
   iVar1 = core_fire_cpp_CFireEffect_FUN_004c8e40(this_ptr);
   *(undefined4 *)(g_TossPool[iVar1].field0_0x0 + 0x3e0) = in_stack_0000001c;
-  sound_sndmain_cpp_YetAnother2ComputingDelayCall_FUN_005a98b0();
+  sound_sndmain_cpp_FUN_005a98b0();
   return;
 }
 
@@ -76,7 +76,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8dd0(CFireEffect *this_ptr)
 // 004c8e2b: MOV EBP,dword ptr [EAX + 0x2d67cb0]
 //   XREF to: 02d67cb0 (DATA)
 // 004c8e31: PUSH EBP
-// 004c8e32: CALL sound_sndmain.cpp_YetAnother2ComputingDelayCall_FUN_005a98b0
+// 004c8e32: CALL sound_sndmain.cpp_FUN_005a98b0
 //   XREF to: 005a98b0 (UNCONDITIONAL_CALL)
 // 004c8e37: ADD ESP,0x8
 // 004c8e3a: POP EBP

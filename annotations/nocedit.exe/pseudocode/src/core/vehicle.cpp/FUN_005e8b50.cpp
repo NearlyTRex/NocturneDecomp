@@ -10,10 +10,10 @@
 //   CSound g_CSoundInstance
 // Function calls:
 //   core_sound.cpp_CSound_FUN_005b3a70
-//   sound_sndmain.cpp_FUN_005a8940
-//   sound_sndmain.cpp_FUN_005a8a00
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
+//   sound_sndmain.cpp_setNextSfxTrackedPosition_FUN_005a8940
+//   sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a00
 
 #include "nocturne.h"
 
@@ -28,8 +28,9 @@ undefined4 core_vehicle_cpp_FUN_005e8b50(void)
   char *in_stack_00000014;
   
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-  sound_sndmain_cpp_FUN_005a8940();
-  sound_sndmain_cpp_FUN_005a8a00();
+  sound_sndmain_cpp_setNextSfxTrackedPosition_FUN_005a8940((CVector3f *)(in_stack_00000004 + 0x20));
+  sound_sndmain_cpp_setNextSfxTrackedVelocity_FUN_005a8a00
+            ((CVector3f *)(in_stack_00000004 + 0x1060));
   core_sound_cpp_CSound_FUN_005b3a70(g_CSoundPtr,in_stack_00000004,in_stack_00000014);
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   return extraout_EAX;
@@ -46,12 +47,12 @@ undefined4 core_vehicle_cpp_FUN_005e8b50(void)
 // 005e8b59: CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   XREF to: 005a8c30 (UNCONDITIONAL_CALL)
 // 005e8b5e: PUSH EBX
-// 005e8b5f: CALL sound_sndmain.cpp_FUN_005a8940
+// 005e8b5f: CALL sound_sndmain.cpp_setNextSfxTrackedPosition_FUN_005a8940
 //   XREF to: 005a8940 (UNCONDITIONAL_CALL)
 // 005e8b64: ADD ESP,0x4
 // 005e8b67: LEA EAX,[ESI + 0x1060]
 // 005e8b6d: PUSH EAX
-// 005e8b6e: CALL sound_sndmain.cpp_FUN_005a8a00
+// 005e8b6e: CALL sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a00
 //   XREF to: 005a8a00 (UNCONDITIONAL_CALL)
 // 005e8b73: ADD ESP,0x4
 // 005e8b76: PUSH EBX

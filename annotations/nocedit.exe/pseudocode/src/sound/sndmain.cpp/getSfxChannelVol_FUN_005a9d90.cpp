@@ -10,7 +10,7 @@
 //   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b3883 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b2d70 (005b2d70) at 005b2d8f [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750 (005af750) at 005af7ea [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CSfxSlot_FUN_005a6f00 (005a6f00) at 005a6f42 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00 (005a6f00) at 005a6f42 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005ac1ad [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_writeIni_FUN_005ac220 (005ac220) at 005ac3ab [UNCONDITIONAL_CALL]
 // Globals:

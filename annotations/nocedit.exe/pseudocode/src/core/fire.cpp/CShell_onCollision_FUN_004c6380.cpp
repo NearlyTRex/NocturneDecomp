@@ -36,7 +36,7 @@ core_fire_cpp_CShell_onCollision_FUN_004c6380(CShell *this_ptr,CVector3f *collis
     iVar4 = 0;
     iVar3 = 0;
     do {
-      iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+      iVar2 = sound_sndmain_cpp_FUN_005a9660();
       if (iVar2 == 0) break;
       iVar3 = iVar3 + 4;
       iVar4 = iVar4 + 1;

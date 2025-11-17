@@ -9,19 +9,17 @@
 //   TerminatedCString s_sound_sndmain_cpp_006501e7
 //   TerminatedCString s_SfxSlot_autoCalcDelayRem_006501fc
 //   double DOUBLE_00663140 = 1116.40000000000
-//   undefined4 DAT_00681b30
+//   double DOUBLE_00681b30 = 1
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   undefined4 DAT_03f68830
-//   undefined4 DAT_03f68838
-//   undefined4 DAT_03f68840
+//   CVector3d g_Cached3DListenerPos
+//   undefined4 g_Cached3DListenerPos.y
+//   undefined4 g_Cached3DListenerPos.z
 //   int g_SoundLockCount
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl sound_sndmain_cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070(CSfxSlot *this_ptr)
 
@@ -35,22 +33,16 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070(CSfx
     g_CurrentLineNumber = 0x942;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::autoCalcDelayRemaining - must be locked!");
   }
-  if (((this_ptr->options).field5_0x14[0x48] & 1U) != 0) {
-    (this_ptr->options).field5_0x14[0x38] = '\0';
-    (this_ptr->options).field5_0x14[0x39] = '\0';
-    (this_ptr->options).field5_0x14[0x3a] = '\0';
-    (this_ptr->options).field5_0x14[0x3b] = '\0';
-    (this_ptr->options).field5_0x14[0x3c] = '\0';
-    (this_ptr->options).field5_0x14[0x3d] = '\0';
-    (this_ptr->options).field5_0x14[0x3e] = '\0';
-    (this_ptr->options).field5_0x14[0x3f] = '\0';
+  if (((this_ptr->options).flags & 1) != 0) {
+    *(undefined4 *)&(this_ptr->options).delay_remaining = 0;
+    *(undefined4 *)((int)&(this_ptr->options).delay_remaining + 4) = 0;
     return;
   }
-  dVar1 = *(double *)&(this_ptr->options).sample_data - _DAT_03f68830;
-  dVar3 = *(double *)&(this_ptr->options).position - _DAT_03f68838;
-  dVar2 = *(double *)(this_ptr->options).field5_0x14 - _DAT_03f68840;
-  *(double *)((this_ptr->options).field5_0x14 + 0x38) =
-       (SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1) * _DAT_00681b30) / DOUBLE_00663140;
+  dVar1 = (this_ptr->options).position.x - g_Cached3DListenerPos.x;
+  dVar3 = (this_ptr->options).position.y - g_Cached3DListenerPos.y;
+  dVar2 = (this_ptr->options).position.z - g_Cached3DListenerPos.z;
+  (this_ptr->options).delay_remaining =
+       (SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1) * DOUBLE_00681b30) / DOUBLE_00663140;
   return;
 }
 

@@ -20,23 +20,23 @@
 //   int g_CurrentLineNumber
 //   CSfxSlot[64] g_SfxSlots
 //   undefined4 g_SfxSlots[1].status
-//   undefined4 g_SfxLastSlot
+//   int g_SfxLastSlot
 //   int g_MixBufferReadIndex
 //   int g_MixBufferWriteIndex
 //   int g_MixBufferSize
 //   int g_NumMixBuffers
 //   void*[8] g_ChannelPrimaryBuffers
 //   undefined4 g_ChannelPrimaryBuffers[1]
-//   undefined4 DAT_03f69320
+//   int g_MixBufferCount
 //   int g_SoundLockCount
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   crt_memory.c_memset_FUN_005fde40
 //   crt_string.c_memmove_FUN_005fe5e0
-//   sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80
+//   sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530
 //   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
 //   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
-//   sound_sndmain.cpp_FUN_005a5530
+//   sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80
 
 #include "nocturne.h"
 
@@ -47,57 +47,63 @@ sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90
 
 {
   int *piVar1;
-  int iVar2;
-  int iVar3;
-  CSfxSlot *this_ptr;
-  CSfxSlot *pCVar4;
+  SMixBuffer mix_ctx;
+  float fVar2;
+  float fVar3;
+  int iVar4;
   int iVar5;
-  int iVar6;
+  CSfxSlot *this_ptr;
+  CSfxSlot *pCVar6;
+  int iVar7;
+  int iVar8;
   BADSPACEBASE *in_ESP;
   ulong count;
-  undefined4 *puVar7;
-  undefined4 *puVar8;
-  byte bVar9;
+  undefined4 *puVar9;
+  undefined4 *puVar10;
+  byte bVar11;
   int in_stack_0000001c;
   int in_stack_00000020;
-  undefined4 auStack_90 [5];
-  undefined4 uStack_7c;
-  int iStack_78;
-  undefined4 uStack_74;
+  undefined1 in_stack_ffffff70 [20];
+  undefined4 in_stack_ffffff84;
+  float *in_stack_ffffff88;
+  void *in_stack_ffffff8c;
+  undefined4 uVar12;
+  CSfxSlot *pCVar13;
+  float fVar14;
   int aiStack_3c [9];
   int local_18;
   CSfxSlot *local_14;
   
-  bVar9 = 0;
+  bVar11 = 0;
   if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x16ce;
-    uStack_74 = 0x5acd6b;
+    in_stack_ffffff8c = (void *)0x5acd6b;
     core_main_c_displayErrorAndQuit_FUN_00506f10("pollSfx - must be locked!");
   }
   if (0 < samples_per_sec) {
-    iVar2 = 0;
+    iVar4 = 0;
     do {
-      if (*(int *)((int)g_ChannelPrimaryBuffers + iVar2) == 0) {
+      if (*(int *)((int)g_ChannelPrimaryBuffers + iVar4) == 0) {
         return;
       }
-      iVar2 = iVar2 + 4;
-    } while (SBORROW4(iVar2,samples_per_sec * 4) != iVar2 + samples_per_sec * -4 < 0);
+      iVar4 = iVar4 + 4;
+    } while (SBORROW4(iVar4,samples_per_sec * 4) != iVar4 + samples_per_sec * -4 < 0);
   }
   if (((num_channels == g_AudioBitsPerSample) && (samples_per_sec == g_AudioChannelCount)) &&
      (samples_per_block == g_AudioSampleRate)) {
-    sound_sndmain_cpp_FUN_005a5530();
-    iVar2 = 0;
+    sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_005a5530();
+    iVar4 = 0;
     if (0 < samples_per_block) {
       do {
-        iVar2 = iVar2 + 1;
-        aiStack_3c[iVar2] = *(int *)num_channels;
+        iVar4 = iVar4 + 1;
+        aiStack_3c[iVar4] = *(int *)num_channels;
         num_channels = num_channels + 4;
-      } while (iVar2 < samples_per_block);
+      } while (iVar4 < samples_per_block);
     }
     local_18 = samples_per_block << 2;
     local_14 = (CSfxSlot *)&g_SfxLastSlot;
-    for (; 0 < in_stack_0000001c; in_stack_0000001c = in_stack_0000001c - iVar3) {
+    for (; 0 < in_stack_0000001c; in_stack_0000001c = in_stack_0000001c - iVar5) {
       if (g_MixBufferReadIndex < 1) {
         if (g_SoundLockCount < 1) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -109,76 +115,95 @@ sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90
           g_CurrentLineNumber = 0x4e2;
           core_main_c_displayErrorAndQuit_FUN_00506f10("nextMixingBuffer - shouldn't have any data pending!");
         }
-        iVar2 = 0;
+        iVar4 = 0;
         count = g_MixBufferSize * 4;
         if (0 < g_AudioChannelCount) {
-          iVar3 = 0;
+          iVar5 = 0;
           do {
-            uStack_74 = 0x5acbca;
+            in_stack_ffffff8c = (void *)0x5acbca;
             crt_string_c_memmove_FUN_005fe5e0
-                      (*(void **)((int)g_ChannelPrimaryBuffers + iVar3),
+                      (*(void **)((int)g_ChannelPrimaryBuffers + iVar5),
                        (void *)(g_MixBufferSize * 4 +
-                               (int)*(void **)((int)g_ChannelPrimaryBuffers + iVar3)),
+                               (int)*(void **)((int)g_ChannelPrimaryBuffers + iVar5)),
                        (g_NumMixBuffers + -1) * count);
-            piVar1 = (int *)((int)g_ChannelPrimaryBuffers + iVar3);
-            iVar3 = iVar3 + 4;
-            iVar2 = iVar2 + 1;
+            piVar1 = (int *)((int)g_ChannelPrimaryBuffers + iVar5);
+            iVar5 = iVar5 + 4;
+            iVar4 = iVar4 + 1;
             crt_memory_c_memset_FUN_005fde40
                       ((void *)((g_NumMixBuffers + -1) * g_MixBufferSize * 4 + *piVar1),0,count);
-          } while (iVar2 < g_AudioChannelCount);
+          } while (iVar4 < g_AudioChannelCount);
         }
         aiStack_3c[0] = g_AudioSampleRate;
         if (0 < g_AudioChannelCount) {
-          iVar2 = 0;
+          iVar4 = 0;
           do {
-            iVar3 = iVar2 + 4;
-            *(undefined4 *)(&stack0xffffff9c + iVar2) =
-                 *(undefined4 *)((int)g_ChannelPrimaryBuffers + iVar2);
-            iVar2 = iVar3;
-          } while (iVar3 < g_AudioChannelCount * 4);
+            iVar5 = iVar4 + 4;
+            *(undefined4 *)(&stack0xffffff9c + iVar4) =
+                 *(undefined4 *)((int)g_ChannelPrimaryBuffers + iVar4);
+            iVar4 = iVar5;
+          } while (iVar5 < g_AudioChannelCount * 4);
         }
-        pCVar4 = local_14;
+        pCVar6 = local_14;
+        fVar3 = (float)g_MixBufferSize;
+        fVar2 = (float)g_AudioSampleRate;
         this_ptr = g_SfxSlots;
         do {
-          sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr);
+          uVar12 = 0x5acc5f;
+          pCVar13 = this_ptr;
+          fVar14 = fVar3 / fVar2;
+          sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,fVar3 / fVar2);
           this_ptr = this_ptr + 1;
-        } while (this_ptr != pCVar4);
-        pCVar4 = g_SfxSlots;
+        } while (this_ptr != pCVar6);
+        pCVar6 = g_SfxSlots;
         do {
-          puVar7 = (undefined4 *)&stack0xffffff9c;
-          puVar8 = auStack_90;
-          for (iVar2 = 0xb; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *puVar8 = *puVar7;
-            puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
-            puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
+          puVar9 = (undefined4 *)&stack0xffffff9c;
+          puVar10 = (undefined4 *)&stack0xffffff70;
+          for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
+            *puVar10 = *puVar9;
+            puVar9 = puVar9 + (uint)bVar11 * -2 + 1;
+            puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
           }
-          sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(pCVar4);
-          pCVar4 = pCVar4 + 1;
-        } while (pCVar4 != (CSfxSlot *)&g_SfxLastSlot);
+          mix_ctx.channel_buffers[5] = (float *)in_stack_ffffff84;
+          mix_ctx.channel_buffers[0] = (float *)in_stack_ffffff70._0_4_;
+          mix_ctx.channel_buffers[1] = (float *)in_stack_ffffff70._4_4_;
+          mix_ctx.channel_buffers[2] = (float *)in_stack_ffffff70._8_4_;
+          mix_ctx.channel_buffers[3] = (float *)in_stack_ffffff70._12_4_;
+          mix_ctx.channel_buffers[4] = (float *)in_stack_ffffff70._16_4_;
+          mix_ctx.channel_buffers[6] = in_stack_ffffff88;
+          mix_ctx.channel_buffers[7] = (float *)in_stack_ffffff8c;
+          mix_ctx.num_output_samples = uVar12;
+          mix_ctx.num_channels = (int)pCVar13;
+          mix_ctx.output_sample_rate = (int)fVar14;
+          sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(pCVar6,mix_ctx);
+          pCVar6 = pCVar6 + 1;
+        } while (pCVar6 != (CSfxSlot *)&g_SfxLastSlot);
         g_MixBufferReadIndex = g_MixBufferSize;
-        DAT_03f69320 = DAT_03f69320 + 1;
+        g_MixBufferCount = g_MixBufferCount + 1;
         g_MixBufferWriteIndex = 0;
       }
-      iVar2 = local_18;
-      iVar3 = g_MixBufferReadIndex;
+      iVar4 = local_18;
+      iVar5 = g_MixBufferReadIndex;
       if (in_stack_0000001c < g_MixBufferReadIndex) {
-        iVar3 = in_stack_0000001c;
+        iVar5 = in_stack_0000001c;
       }
       if (0 < samples_per_block) {
-        iVar5 = 0;
+        iVar7 = 0;
         do {
-          uStack_74 = *(undefined4 *)((int)aiStack_3c + iVar5 + 4);
-          iStack_78 = g_MixBufferWriteIndex * 4 + *(int *)((int)g_ChannelPrimaryBuffers + iVar5);
-          uStack_7c = 0x5acd06;
-          sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80();
-          iVar6 = iVar5 + 4;
-          *(int *)((int)aiStack_3c + iVar5 + 8) =
-               *(int *)((int)aiStack_3c + iVar5 + 8) + in_stack_00000020 * iVar3;
-          iVar5 = iVar6;
-        } while (iVar6 < iVar2);
+          in_stack_ffffff8c = *(void **)((int)aiStack_3c + iVar7 + 4);
+          in_stack_ffffff88 =
+               (float *)(g_MixBufferWriteIndex * 4 + *(int *)((int)g_ChannelPrimaryBuffers + iVar7))
+          ;
+          in_stack_ffffff84 = 0x5acd06;
+          sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80
+                    (in_stack_ffffff88,in_stack_ffffff8c,samples_per_sec,iVar5,in_stack_00000020);
+          iVar8 = iVar7 + 4;
+          *(int *)((int)aiStack_3c + iVar7 + 8) =
+               *(int *)((int)aiStack_3c + iVar7 + 8) + in_stack_00000020 * iVar5;
+          iVar7 = iVar8;
+        } while (iVar8 < iVar4);
       }
-      g_MixBufferReadIndex = g_MixBufferReadIndex - iVar3;
-      g_MixBufferWriteIndex = g_MixBufferWriteIndex + iVar3;
+      g_MixBufferReadIndex = g_MixBufferReadIndex - iVar5;
+      g_MixBufferWriteIndex = g_MixBufferWriteIndex + iVar5;
     }
   }
   return;
@@ -233,7 +258,7 @@ sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90
 //   XREF to: 00681b1c (READ)
 // 005acaf3: JNZ 0x005acd9b
 //   XREF to: 005acd9b (CONDITIONAL_JUMP)
-// 005acaf9: CALL sound_sndmain.cpp_FUN_005a5530
+// 005acaf9: CALL sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530
 //   XREF to: 005a5530 (UNCONDITIONAL_CALL)
 // 005acafe: MOV ECX,dword ptr [ESP + 0x78]
 //   XREF to: Stack[0xc] (READ)
@@ -479,7 +504,7 @@ sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90
 // 005accfd: PUSH ECX
 // 005accfe: ADD EAX,EDX
 // 005acd00: PUSH EAX
-// 005acd01: CALL sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80
+// 005acd01: CALL sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80
 //   XREF to: 005a5b80 (UNCONDITIONAL_CALL)
 // 005acd06: ADD ESP,0x14
 // 005acd09: MOV EAX,dword ptr [ESP + EBX*0x1 + 0x2c]

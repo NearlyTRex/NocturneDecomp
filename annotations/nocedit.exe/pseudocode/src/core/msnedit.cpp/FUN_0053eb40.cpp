@@ -25,10 +25,10 @@
 //   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
 //   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 //   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530
+//   sound_sndmain.cpp_FUN_005a9660
 //   sound_sndmain.cpp_FUN_005a9720
 //   sound_sndmain.cpp_FUN_005aaef0
 //   sound_sndmain.cpp_isSoundBusy_FUN_005ab540
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
 
 #include "nocturne.h"
 
@@ -52,7 +52,7 @@ void core_msnedit_cpp_FUN_0053eb40(void)
   else {
     core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,in_stack_00000008);
     engine_2d_c_clearInputAndWait_FUN_00403260();
-    iVar2 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+    iVar2 = sound_sndmain_cpp_FUN_005a9660();
     if (iVar2 == 0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"Failed to play \"%s\"",in_stack_00000008);
@@ -118,7 +118,7 @@ void core_msnedit_cpp_FUN_0053eb40(void)
 // 0053eb89: CALL engine_2d.c_clearInputAndWait_FUN_00403260
 //   XREF to: 00403260 (UNCONDITIONAL_CALL)
 // 0053eb8e: PUSH ESI
-// 0053eb8f: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 0053eb8f: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 0053eb94: ADD ESP,0x4
 // 0053eb97: TEST EAX,EAX

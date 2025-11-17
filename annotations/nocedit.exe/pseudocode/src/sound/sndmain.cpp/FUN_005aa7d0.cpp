@@ -8,8 +8,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005aa7d0(undefined4 param_1, undefined4 param_2) */
-
 void sound_sndmain_cpp_FUN_005aa7d0(void)
 
 {

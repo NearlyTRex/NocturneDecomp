@@ -12,14 +12,14 @@
 //   core_weapon.cpp_CWeapon_process_FUN_005ee110
 //   crt_math.c_floor_FUN_005feb90
 //   crt_math.c_round_FUN_005fe6b0
-//   sound_sndmain.cpp_CallToLockDoSomethingAndUnlockSound2_FUN_005a96e0
 //   sound_sndmain.cpp_FUN_005a8480
-//   sound_sndmain.cpp_FUN_005a8be0
+//   sound_sndmain.cpp_FUN_005a96e0
 //   sound_sndmain.cpp_FUN_005a9720
+//   sound_sndmain.cpp_FUN_005a9c40
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+//   sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
@@ -31,11 +31,10 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
 {
   int iVar1;
   undefined4 uVar2;
+  undefined4 extraout_EDX;
   BADSPACEBASE *in_ESP;
   float10 extraout_ST0;
   float10 fVar3;
-  undefined8 uVar4;
-  double dVar5;
   undefined8 uStack_1d8;
   float fStack_1d4;
   int iStack_1d0;
@@ -53,36 +52,36 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
       auStack_1c._0_8_ = (undefined8)(fStack_1d4 * _DAT_0065550d);
       crt_math_c_floor_FUN_005feb90((double)fVar3);
       sound_sndmain_cpp_FUN_005a8480();
-      uVar4 = sound_sndmain_cpp_CallToLockDoSomethingAndUnlockSound2_FUN_005a96e0();
-      if ((int)uVar4 != 0) {
-        dVar5 = crt_math_c_round_FUN_005fe6b0
-                          ((double)CONCAT44((int)((ulonglong)uVar4 >> 0x20),uStack_bc));
-        sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30
-                  (SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));
+      iVar1 = sound_sndmain_cpp_FUN_005a96e0();
+      if (iVar1 != 0) {
+        crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,uStack_bc));
+        sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
         if (0.0 < (double)iStack_1d0) {
-          sound_sndmain_cpp_FUN_005a8be0();
+          sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)iStack_1d0,0);
         }
         uVar2 = (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
                           ((CDemonActor *)this_ptr,"m-gun-t.wav");
         *(undefined4 *)(this_ptr->field1_0x578 + 8) = uVar2;
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       }
-      sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+      sound_sndmain_cpp_FUN_005a9c40();
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
       return;
     }
-    sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+    sound_sndmain_cpp_FUN_005a9c40();
     return;
   }
   *(int *)this_ptr->field1_0x578 = *(int *)this_ptr->field1_0x578 + -1;
   core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
-  iVar1 = sound_sndmain_cpp_CallComputingDelay_FUN_005a9b40();
+  iVar1 = sound_sndmain_cpp_FUN_005a9b40();
   if (iVar1 != 0) {
     return;
   }
-  sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_7c,"$@m-gun1.wav @ 2.3 * %f" + 2,(double)fStack_1d4);
-  sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+  sound_sndmain_cpp_FUN_005a9c40();
+  crt_stdio_c_sprintf_FUN_005fdbd0
+            (acStack_7c,"$@m-gun1.wav @ 2.3 * %f" + 2,SUB84((double)fStack_1d4,0),
+             (int)((ulonglong)(double)fStack_1d4 >> 0x20));
+  sound_sndmain_cpp_FUN_005a9c40();
   uVar2 = (*((this_ptr->base_weapon).base_actor.vtable)->playAmbientSound)
                     ((CDemonActor *)this_ptr,acStack_74);
   *(undefined4 *)(this_ptr->field1_0x578 + 4) = uVar2;
@@ -160,7 +159,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
 // 005de4d0: PUSH EAX
 // 005de4d1: MOV EDX,dword ptr [EBX + 0x57c]
 // 005de4d7: PUSH EDX
-// 005de4d8: CALL sound_sndmain.cpp_CallToLockDoSomethingAndUnlockSound2_FUN_005a96e0
+// 005de4d8: CALL sound_sndmain.cpp_FUN_005a96e0
 //   XREF to: 005a96e0 (UNCONDITIONAL_CALL)
 // 005de4dd: ADD ESP,0x8
 // 005de4e0: TEST EAX,EAX
@@ -192,7 +191,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
 // 005de53a: PUSH ECX
 // 005de53b: MOV ESI,dword ptr [ESP + 0x8]
 // 005de53f: PUSH ESI
-// 005de540: CALL sound_sndmain.cpp_FUN_005a8be0
+// 005de540: CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0
 //   XREF to: 005a8be0 (UNCONDITIONAL_CALL)
 // 005de545: ADD ESP,0xc
 // 005de548: PUSH 0x6554ff
@@ -208,7 +207,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
 // 005de565: MOV EDI,dword ptr [EBX + 0x57c]
 //   Label: LAB_005de565
 // 005de56b: PUSH EDI
-// 005de56c: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 005de56c: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005de571: ADD ESP,0x4
 // 005de574: CALL sound_sndmain.cpp_unlockSound_FUN_005abdc0
@@ -222,7 +221,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
 // 005de580: MOV ESI,dword ptr [EBX + 0x57c]
 //   Label: LAB_005de580
 // 005de586: PUSH ESI
-// 005de587: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 005de587: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005de58c: ADD ESP,0x4
 // 005de58f: MOV ESP,EBP

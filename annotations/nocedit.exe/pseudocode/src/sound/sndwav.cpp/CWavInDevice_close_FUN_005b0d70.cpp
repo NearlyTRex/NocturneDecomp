@@ -10,13 +10,13 @@
 //   GlobalFree* GlobalFree = 00211fe6
 //   TerminatedCString s_waveInClose_failed_0065243a
 //   HWAVEIN g_WaveInHandle
-//   HGLOBAL[8] g_WaveInHeaderHandles
+//   HGLOBAL[20] g_WaveInHeaderHandles
 //   undefined4 DAT_03f6add4
-//   LPWAVEHDR[8] g_WaveInHeaders
+//   LPWAVEHDR[20] g_WaveInHeaders
 //   undefined4 DAT_03f6ae24
-//   undefined4 DAT_03f6ae70
+//   HGLOBAL[20] g_WaveInBufferHandles
 //   undefined4 DAT_03f6ae74
-//   LPVOID[8] DAT_03f6aec0
+//   LPVOID[20] g_WaveInBuffers
 //   undefined4 DAT_03f6aec4
 // Function calls:
 //   GlobalFree
@@ -33,15 +33,15 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_close_FUN_005b0d70(CWavInDevice *this_
   int iVar3;
   uint uVar4;
   
-  iVar1 = (*this_ptr->vtable->reset)((CSoundDevice *)this_ptr);
+  iVar1 = (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
   uVar4 = (uint)(iVar1 != 0);
   iVar1 = 0;
   do {
-    if (*(HGLOBAL *)((int)&DAT_03f6ae70 + iVar1) != (HGLOBAL)0x0) {
-      (*GlobalFree)(*(HGLOBAL *)((int)&DAT_03f6ae70 + iVar1));
-      *(undefined4 *)((int)&DAT_03f6ae70 + iVar1) = 0;
+    if (*(HGLOBAL *)((int)g_WaveInBufferHandles + iVar1) != (HGLOBAL)0x0) {
+      (*GlobalFree)(*(HGLOBAL *)((int)g_WaveInBufferHandles + iVar1));
+      *(undefined4 *)((int)g_WaveInBufferHandles + iVar1) = 0;
     }
-    *(undefined4 *)((int)DAT_03f6aec0 + iVar1) = 0;
+    *(undefined4 *)((int)g_WaveInBuffers + iVar1) = 0;
     if (*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar1) != (HGLOBAL)0x0) {
       (*GlobalFree)(*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar1));
       *(undefined4 *)((int)g_WaveInHeaderHandles + iVar1) = 0;

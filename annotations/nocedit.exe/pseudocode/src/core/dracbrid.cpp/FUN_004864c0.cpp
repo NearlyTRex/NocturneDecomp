@@ -30,6 +30,7 @@ void core_dracbrid_cpp_FUN_004864c0
   BADSPACEBASE *in_ESP;
   float unaff_ESI;
   float unaff_EDI;
+  float in_stack_0000005c;
   float local_54;
   float local_50;
   float fStack_4c;
@@ -48,7 +49,7 @@ void core_dracbrid_cpp_FUN_004864c0
     pSVar7 = SFreaky_ARRAY_02c6d0c0;
     iVar2 = 0;
     do {
-      iVar3 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+      iVar3 = sound_sndmain_cpp_FUN_005a9660();
       bone_index = DAT_02c6d0a0;
       if (iVar3 == 0) {
         pSVar7->field0_0x0[0x1c] = '\0';
@@ -120,9 +121,11 @@ void core_dracbrid_cpp_FUN_004864c0
           *(undefined4 *)(pSVar7->field0_0x0 + 0x18) = puVar5[2];
         }
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-        sound_sndmain_cpp_FUN_005a8940();
-        sound_sndmain_cpp_FUN_005a8a00();
-        sound_sndmain_cpp_FUN_005a8a60();
+        sound_sndmain_cpp_setNextSfxTrackedPosition_FUN_005a8940
+                  ((CVector3f *)(pSVar7->field0_0x0 + 4));
+        sound_sndmain_cpp_setNextSfxTrackedVelocity_FUN_005a8a00
+                  ((CVector3f *)(pSVar7->field0_0x0 + 0x10));
+        sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(in_stack_0000005c);
         core_sound_cpp_CSound_FUN_005b1ed0(g_CSoundPtr);
         uVar6 = sound_sndmain_cpp_startSfx_FUN_005a8e90();
         *(undefined4 *)pSVar7->field0_0x0 = uVar6;

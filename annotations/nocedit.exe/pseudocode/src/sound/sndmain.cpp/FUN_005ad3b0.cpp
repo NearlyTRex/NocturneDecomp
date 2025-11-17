@@ -1,8 +1,8 @@
 // Name: sound_sndmain.cpp_FUN_005ad3b0
 // Address: 005ad3b0
 // Address Range: [[005ad3b0, 005ad5b8]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_FUN_005ad3b0()
+// Convention: __cdecl
+// Signature: char * sound_sndmain.cpp_FUN_005ad3b0(char * param_1)
 // Cross-references:
 //   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0 (005ad5c0) at 005adb55 [UNCONDITIONAL_CALL]
 // Globals:
@@ -12,27 +12,25 @@
 //   TerminatedCString s_Canceled_00651289
 //   CKeys* g_CKeysPtr = 02dcd7d4
 //   void* g_CKeysPtr
-//   undefined4 DAT_03f5d8a0
+//   char[220] DAT_03f5d8a0
 // Function calls:
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   sound_sndmain.cpp_FUN_005a8480
-//   sound_sndmain.cpp_FUN_005a88e0
-//   sound_sndmain.cpp_FUN_005a8a80
+//   sound_sndmain.cpp_FUN_005a9660
 //   sound_sndmain.cpp_FUN_005a9720
-//   sound_sndmain.cpp_FUN_005aa020
-//   sound_sndmain.cpp_FUN_005aa0a0
 //   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0
+//   sound_sndmain.cpp_set3DListenerPos_FUN_005aa020
+//   sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_005a8a80
+//   sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
 //   wincore_winrun.cpp_sleep_FUN_005f40e0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005ad3b0(undefined4 param_1) */
-
-char * sound_sndmain_cpp_FUN_005ad3b0(void)
+char * __cdecl sound_sndmain_cpp_FUN_005ad3b0(char *param_1)
 
 {
   char cVar1;
@@ -40,67 +38,51 @@ char * sound_sndmain_cpp_FUN_005ad3b0(void)
   int iVar3;
   BADSPACEBASE *in_ESP;
   char *pcVar4;
-  char *pcVar5;
-  char *in_stack_00000004;
+  undefined4 uStack00000008;
+  undefined4 uStack0000000c;
+  float fStack00000010;
   float in_stack_0000002c;
-  undefined4 uStack_16c;
-  undefined4 uStack_168;
-  undefined4 uStack_164;
-  undefined4 uStack_160;
-  undefined4 uStack_15c;
-  int iStack_58;
+  float fStack_58;
   
   sound_sndmain_cpp_FUN_005a8480();
-  pcVar5 = (char *)&uStack_16c;
-  pcVar4 = in_stack_00000004;
+  pcVar4 = &stack0xfffffe94;
   do {
-    cVar1 = *pcVar4;
-    *pcVar5 = cVar1;
+    cVar1 = *param_1;
+    *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
+    cVar1 = param_1[1];
+    param_1 = param_1 + 2;
+    pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  iVar3 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((char *)&uStack_16c);
+  iVar3 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)&stack0xfffffe94);
   if (iVar3 == 0) {
-    uStack_16c = in_stack_00000004;
-    crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03f5d8a0,"Can't get sample info for %s");
-    pcVar4 = &DAT_03f5d8a0;
+    crt_stdio_c_sprintf_FUN_005fdbd0(DAT_03f5d8a0,"Can't get sample info for %s");
+    pcVar4 = DAT_03f5d8a0;
   }
-  else if (iStack_58 < 1) {
-    uStack_16c = in_stack_00000004;
-    crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03f5d8a0,"Sample %s has unknown or invalid length");
-    pcVar4 = &DAT_03f5d8a0;
+  else if ((int)fStack_58 < 1) {
+    crt_stdio_c_sprintf_FUN_005fdbd0(DAT_03f5d8a0,"Sample %s has unknown or invalid length");
+    pcVar4 = DAT_03f5d8a0;
   }
   else {
-    uStack_16c = (char *)0x0;
-    sound_sndmain_cpp_FUN_005aa020();
-    uStack_168 = 0x3ff00000;
-    uStack_16c = (char *)0x0;
-    sound_sndmain_cpp_FUN_005aa0a0();
-    uStack_164 = 0x5ad458;
+    sound_sndmain_cpp_set3DListenerPos_FUN_005aa020(0.0,0.0,0.0);
+    sound_sndmain_cpp_set3DListenerOrient_FUN_005aa0a0(1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0);
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-    uStack_160 = 0x40340000;
-    uStack_164 = 0;
-    uStack_168 = 0;
-    uStack_16c = (char *)0x0;
-    sound_sndmain_cpp_FUN_005a88e0();
-    uStack_15c = 0x41200000;
-    uStack_160 = 0x5ad479;
-    sound_sndmain_cpp_FUN_005a8a80();
-    uStack_15c = 0x5ad485;
+    sound_sndmain_cpp_setNextSfxStaticPosition_FUN_005a88e0(0.0,0.0,20.0);
+    sound_sndmain_cpp_setNextSfxBaseFrequency_FUN_005a8a80(10.0);
     iVar3 = sound_sndmain_cpp_startSfx_FUN_005a8e90();
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     if (iVar3 == 0) {
-      uStack_15c = 0x5ad535;
-      crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03f5d8a0,"Error playing %s");
-      pcVar4 = &DAT_03f5d8a0;
+      crt_stdio_c_sprintf_FUN_005fdbd0(DAT_03f5d8a0,"Error playing %s");
+      pcVar4 = DAT_03f5d8a0;
     }
     else {
-      dVar2 = (double)sound_sndmain_cpp_FUN_005a9720();
-      if (0.0 <= (float)dVar2) {
-        while (iVar3 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660(), iVar3 != 0) {
+      _uStack00000008 = (double)sound_sndmain_cpp_FUN_005a9720();
+      fStack00000010 = (float)_uStack00000008;
+      if (0.0 <= fStack00000010) {
+        while( true ) {
+          iVar3 = sound_sndmain_cpp_FUN_005a9660();
+          if (iVar3 == 0) break;
           iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
           if (iVar3 != 0) {
             return "Canceled";
@@ -171,7 +153,7 @@ char * sound_sndmain_cpp_FUN_005ad3b0(void)
 // 005ad410: PUSH 0x0
 // 005ad412: PUSH 0x0
 // 005ad414: PUSH 0x0
-// 005ad416: CALL sound_sndmain.cpp_FUN_005aa020
+// 005ad416: CALL sound_sndmain.cpp_set3DListenerPos_FUN_005aa020
 //   XREF to: 005aa020 (UNCONDITIONAL_CALL)
 // 005ad41b: ADD ESP,0x18
 // 005ad41e: PUSH 0x3ff00000
@@ -192,7 +174,7 @@ char * sound_sndmain_cpp_FUN_005ad3b0(void)
 // 005ad442: PUSH 0x0
 // 005ad444: PUSH 0x3ff00000
 // 005ad449: PUSH 0x0
-// 005ad44b: CALL sound_sndmain.cpp_FUN_005aa0a0
+// 005ad44b: CALL sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0
 //   XREF to: 005aa0a0 (UNCONDITIONAL_CALL)
 // 005ad450: ADD ESP,0x48
 // 005ad453: CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
@@ -203,11 +185,11 @@ char * sound_sndmain_cpp_FUN_005ad3b0(void)
 // 005ad461: PUSH 0x0
 // 005ad463: PUSH 0x0
 // 005ad465: PUSH 0x0
-// 005ad467: CALL sound_sndmain.cpp_FUN_005a88e0
+// 005ad467: CALL sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0
 //   XREF to: 005a88e0 (UNCONDITIONAL_CALL)
 // 005ad46c: ADD ESP,0x18
 // 005ad46f: PUSH 0x41200000
-// 005ad474: CALL sound_sndmain.cpp_FUN_005a8a80
+// 005ad474: CALL sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_005a8a80
 //   XREF to: 005a8a80 (UNCONDITIONAL_CALL)
 // 005ad479: ADD ESP,0x4
 // 005ad47c: MOV EBX,dword ptr [EBP + 0x14]
@@ -247,7 +229,7 @@ char * sound_sndmain_cpp_FUN_005ad3b0(void)
 // 005ad4d0: XOR ESI,ESI
 // 005ad4d2: PUSH EBX
 //   Label: LAB_005ad4d2
-// 005ad4d3: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 005ad4d3: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005ad4d8: ADD ESP,0x4
 // 005ad4db: TEST EAX,EAX

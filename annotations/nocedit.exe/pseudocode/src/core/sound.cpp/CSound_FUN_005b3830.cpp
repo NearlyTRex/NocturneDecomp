@@ -10,14 +10,11 @@
 // Globals:
 //   TerminatedCString s_splash_music_44_wav_006527ee
 //   TerminatedCString s_splash_music_22_wav_00652802
-//   undefined4 DAT_00663310
-//   undefined4 DAT_00663314
-//   undefined4 DAT_00663318
+//   float FLOAT_00663310 = 0.25
+//   float FLOAT_00663314 = 0.25
+//   float FLOAT_00663318 = 1
 // Function calls:
 //   core_sound.cpp_CSound_FUN_005b39a0
-//   sound_sndmain.cpp_FUN_005aa020
-//   sound_sndmain.cpp_FUN_005aa0a0
-//   sound_sndmain.cpp_FUN_005aa1c0
 //   sound_sndmain.cpp_FUN_005aaef0
 //   sound_sndmain.cpp_FUN_005ab6e0
 //   sound_sndmain.cpp_getAudioSampleRate_FUN_005ab260
@@ -25,9 +22,12 @@
 //   sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
+//   sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0
+//   sound_sndmain.cpp_set3DListenerPos_FUN_005aa020
+//   sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0
 //   sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0
+//   sound_sndmain.cpp_setNextSfxFlagBits_FUN_005a8b90
 //   sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0
-//   sound_sndmain.cpp_somethingWithStack_FUN_005a8b90
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
 
 #include "nocturne.h"
@@ -37,59 +37,39 @@ void __cdecl core_sound_cpp_CSound_FUN_005b3830(CSound *this_ptr)
 {
   float fVar1;
   int iVar2;
-  float fStack00000010;
-  undefined4 uStack00000018;
-  undefined4 uStack0000001c;
   CSound *in_stack_00000020;
-  undefined4 uStack00000024;
   undefined4 uStack00000028;
   undefined4 uStack0000002c;
-  undefined4 uStack00000034;
   undefined4 uStack00000038;
   char *pcStack0000003c;
   undefined4 uStack00000040;
   
   fVar1 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(1);
-  if (DAT_00663310 < fVar1) {
-    sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(1,DAT_00663310);
+  if (FLOAT_00663310 < fVar1) {
+    sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(1,FLOAT_00663310);
   }
   fVar1 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(0);
-  if (DAT_00663314 < fVar1) {
-    sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(0,DAT_00663314);
+  if (FLOAT_00663314 < fVar1) {
+    sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(0,FLOAT_00663314);
   }
-  fStack00000010 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(2);
-  if (DAT_00663318 < fStack00000010) {
-    sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(2,DAT_00663318);
+  fVar1 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(2);
+  if (FLOAT_00663318 < fVar1) {
+    sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(2,FLOAT_00663318);
   }
-  fStack00000010 = 8.37737e-39;
   iVar2 = sound_sndmain_cpp_getSoundEnabled_FUN_005a96b0();
   if (iVar2 == 0) {
-    fStack00000010 = 8.377395e-39;
     core_sound_cpp_CSound_FUN_005b39a0(in_stack_00000020);
-    uStack00000018 = 0;
-    fStack00000010 = 0.0;
     sound_sndmain_cpp_FUN_005ab6e0();
-    uStack0000001c = 0;
-    uStack00000018 = 0;
-    fStack00000010 = 0.0;
-    sound_sndmain_cpp_FUN_005aa020();
-    uStack0000001c = 0;
-    uStack00000018 = 0;
-    fStack00000010 = 0.0;
-    sound_sndmain_cpp_FUN_005aa0a0();
-    uStack00000024 = 0;
-    uStack0000001c = 0;
-    uStack00000018 = 0;
-    fStack00000010 = 0.0;
-    sound_sndmain_cpp_FUN_005aa1c0();
+    sound_sndmain_cpp_set3DListenerPos_FUN_005aa020(0.0,0.0,0.0);
+    sound_sndmain_cpp_set3DListenerOrient_FUN_005aa0a0(1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0);
+    sound_sndmain_cpp_set3DListenerVelocity_FUN_005aa1c0(0.0,0.0,0.0);
     uStack00000028 = 0x5b3938;
     sound_sndmain_cpp_FUN_005aaef0();
     uStack0000002c = 0x5b393d;
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
     uStack0000002c = 0x5b3944;
     sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(1);
-    uStack00000034 = 1;
-    sound_sndmain_cpp_somethingWithStack_FUN_005a8b90();
+    sound_sndmain_cpp_setNextSfxFlagBits_FUN_005a8b90(1);
     uStack00000038 = 0x5b3956;
     iVar2 = sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260();
     if (iVar2 < 0x7531) {
@@ -193,7 +173,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b3830(CSound *this_ptr)
 // 005b38dc: PUSH 0x0
 // 005b38de: PUSH 0x0
 // 005b38e0: PUSH 0x0
-// 005b38e2: CALL sound_sndmain.cpp_FUN_005aa020
+// 005b38e2: CALL sound_sndmain.cpp_set3DListenerPos_FUN_005aa020
 //   XREF to: 005aa020 (UNCONDITIONAL_CALL)
 // 005b38e7: ADD ESP,0x18
 // 005b38ea: PUSH 0x3ff00000
@@ -214,7 +194,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b3830(CSound *this_ptr)
 // 005b390e: PUSH 0x0
 // 005b3910: PUSH 0x3ff00000
 // 005b3915: PUSH 0x0
-// 005b3917: CALL sound_sndmain.cpp_FUN_005aa0a0
+// 005b3917: CALL sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0
 //   XREF to: 005aa0a0 (UNCONDITIONAL_CALL)
 // 005b391c: ADD ESP,0x48
 // 005b391f: PUSH 0x0
@@ -223,7 +203,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b3830(CSound *this_ptr)
 // 005b3925: PUSH 0x0
 // 005b3927: PUSH 0x0
 // 005b3929: PUSH 0x0
-// 005b392b: CALL sound_sndmain.cpp_FUN_005aa1c0
+// 005b392b: CALL sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0
 //   XREF to: 005aa1c0 (UNCONDITIONAL_CALL)
 // 005b3930: ADD ESP,0x18
 // 005b3933: CALL sound_sndmain.cpp_FUN_005aaef0
@@ -235,7 +215,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b3830(CSound *this_ptr)
 //   XREF to: 005a8af0 (UNCONDITIONAL_CALL)
 // 005b3944: ADD ESP,0x4
 // 005b3947: PUSH 0x1
-// 005b3949: CALL sound_sndmain.cpp_somethingWithStack_FUN_005a8b90
+// 005b3949: CALL sound_sndmain.cpp_setNextSfxFlagBits_FUN_005a8b90
 //   XREF to: 005a8b90 (UNCONDITIONAL_CALL)
 // 005b394e: ADD ESP,0x4
 // 005b3951: CALL sound_sndmain.cpp_getAudioSampleRate_FUN_005ab260

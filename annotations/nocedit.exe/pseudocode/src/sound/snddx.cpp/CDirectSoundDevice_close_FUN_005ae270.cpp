@@ -13,7 +13,7 @@
 //   IKsPropertySet* g_DirectSoundPropertySet
 //   IDirectSoundBuffer*[25] g_DirectSoundSampleBuffers
 //   undefined4 g_DirectSoundSampleBuffers[1]
-//   IDirectSoundBuffer* g_DirectSoundSampleBuffersEnd
+//   IDirectSoundBuffer*[31] g_DirectSoundHardwareSfxBuffers
 
 #include "nocturne.h"
 
@@ -24,7 +24,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_005ae270(CDirectSoundDe
   int iVar1;
   IDirectSoundBuffer **ppIVar2;
   
-  iVar1 = (*this_ptr->vtable->reset)((CSoundDevice *)this_ptr);
+  iVar1 = (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
   ppIVar2 = g_DirectSoundSampleBuffers;
   do {
     this_ptr_00 = *ppIVar2;
@@ -33,7 +33,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_005ae270(CDirectSoundDe
       *ppIVar2 = (IDirectSoundBuffer *)0x0;
     }
     ppIVar2 = ppIVar2 + 1;
-  } while (ppIVar2 != &g_DirectSoundSampleBuffersEnd);
+  } while (ppIVar2 != g_DirectSoundHardwareSfxBuffers);
   if (g_DirectSound3DListener != (IDirectSound3DListener *)0x0) {
     (*g_DirectSound3DListener->vtable->Release)((IUnknown *)g_DirectSound3DListener);
     g_DirectSound3DListener = (IDirectSound3DListener *)0x0;

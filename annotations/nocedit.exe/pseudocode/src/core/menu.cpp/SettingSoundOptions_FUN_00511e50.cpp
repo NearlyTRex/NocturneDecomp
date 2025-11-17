@@ -84,13 +84,12 @@
 //   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 //   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
 //   shape_edittool.cpp_CStrList_add_FUN_004a2b80
-//   sound_sndmain.cpp_CallToSetSoundMode_FUN_005ab280
-//   sound_sndmain.cpp_CallToSetSoundOutputMode2_FUN_005ab2a0
-//   sound_sndmain.cpp_CallToSetSoundOutputMode3_FUN_005ab2c0
 //   sound_sndmain.cpp_enableHwSoundMixing_FUN_005ab550
 //   sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20
-//   sound_sndmain.cpp_FUN_005a8b70
 //   sound_sndmain.cpp_FUN_005ab130
+//   sound_sndmain.cpp_FUN_005ab280
+//   sound_sndmain.cpp_FUN_005ab2a0
+//   sound_sndmain.cpp_FUN_005ab2c0
 //   sound_sndmain.cpp_FUN_005ab5a0
 //   sound_sndmain.cpp_FUN_005ab5b0
 //   sound_sndmain.cpp_FUN_005ab660
@@ -109,6 +108,7 @@
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   sound_sndmain.cpp_selectSoundDevice_FUN_005ab4c0
+//   sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70
 //   sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0
 //   sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0
 //   sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170
@@ -683,7 +683,7 @@ LAB_00512841:
       }
       sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(0,(float)ppcStack_988 * _DAT_00661334);
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-      sound_sndmain_cpp_FUN_005a8b70();
+      sound_sndmain_cpp_setNextSfxFlags_FUN_005a8b70(1);
       sound_sndmain_cpp_startSfx_FUN_005a8e90();
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       break;
@@ -786,7 +786,7 @@ LAB_00512b46:
       uVar9 = sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260();
       if (uVar6 != uVar9) {
         sound_sndmain_cpp_FUN_005ab130();
-        sound_sndmain_cpp_CallToSetSoundOutputMode3_FUN_005ab2c0();
+        sound_sndmain_cpp_FUN_005ab2c0();
         in_stack_fffff668 = uVar6;
         goto LAB_005126f5;
       }
@@ -806,7 +806,7 @@ LAB_00512b46:
       uVar9 = sound_sndmain_cpp_getAudioBitsPerSample_FUN_005ab250();
       if (uVar6 != uVar9) {
         sound_sndmain_cpp_FUN_005ab130();
-        sound_sndmain_cpp_CallToSetSoundMode_FUN_005ab280();
+        sound_sndmain_cpp_FUN_005ab280();
         in_stack_fffff668 = uVar6;
         goto LAB_005126f5;
       }
@@ -821,7 +821,7 @@ LAB_00512b46:
       uVar9 = sound_sndmain_cpp_getAudioChannelCount_FUN_005ab270();
       if (uVar6 != uVar9) {
         sound_sndmain_cpp_FUN_005ab130();
-        sound_sndmain_cpp_CallToSetSoundOutputMode2_FUN_005ab2a0();
+        sound_sndmain_cpp_FUN_005ab2a0();
         in_stack_fffff668 = uVar6;
         goto LAB_005126f5;
       }
@@ -2191,7 +2191,7 @@ LAB_005126f5:
 // 00512863: CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   XREF to: 005a8c30 (UNCONDITIONAL_CALL)
 // 00512868: PUSH 0x1
-// 0051286a: CALL sound_sndmain.cpp_FUN_005a8b70
+// 0051286a: CALL sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70
 //   XREF to: 005a8b70 (UNCONDITIONAL_CALL)
 // 0051286f: ADD ESP,0x4
 // 00512872: PUSH 0x636d1b
@@ -2553,7 +2553,7 @@ LAB_005126f5:
 // 00512b66: CALL sound_sndmain.cpp_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 00512b6b: PUSH EBX
-// 00512b6c: CALL sound_sndmain.cpp_CallToSetSoundOutputMode3_FUN_005ab2c0
+// 00512b6c: CALL sound_sndmain.cpp_FUN_005ab2c0
 //   XREF to: 005ab2c0 (UNCONDITIONAL_CALL)
 // 00512b71: ADD ESP,0x4
 // 00512b74: MOV EDI,dword ptr [0x00681ef8]
@@ -2610,7 +2610,7 @@ LAB_005126f5:
 // 00512bdb: CALL sound_sndmain.cpp_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 00512be0: PUSH EBX
-// 00512be1: CALL sound_sndmain.cpp_CallToSetSoundMode_FUN_005ab280
+// 00512be1: CALL sound_sndmain.cpp_FUN_005ab280
 //   XREF to: 005ab280 (UNCONDITIONAL_CALL)
 // 00512be6: ADD ESP,0x4
 // 00512be9: MOV ECX,dword ptr [0x00681ef8]
@@ -2646,7 +2646,7 @@ LAB_005126f5:
 // 00512c2a: CALL sound_sndmain.cpp_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 00512c2f: PUSH EBX
-// 00512c30: CALL sound_sndmain.cpp_CallToSetSoundOutputMode2_FUN_005ab2a0
+// 00512c30: CALL sound_sndmain.cpp_FUN_005ab2a0
 //   XREF to: 005ab2a0 (UNCONDITIONAL_CALL)
 // 00512c35: ADD ESP,0x4
 // 00512c38: MOV EDX,dword ptr [0x00681ef8]

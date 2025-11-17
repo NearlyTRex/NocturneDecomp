@@ -47799,7 +47799,6 @@
         "start":"0050a4f0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_manpuz.cpp_FUN_0050a4f0(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6)",
     "importable":true,
     "name":"core_manpuz.cpp_FUN_0050a4f0",
     "ret":"undefined1",
@@ -71197,9 +71196,10 @@
         "start":"005a5e70"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005a5e70",
-    "ret":"undefined1",
+    "name":"sound_sndmain.cpp_mixResampleStereo_FUN_005a5e70",
+    "ret":"double",
     "vars":{
       "locals":[
         {
@@ -71363,8 +71363,117 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"sample_data",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"short*"
+        },
+        {
+          "name":"channel_buffers",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"SStereoBuffers*"
+        },
+        {
+          "name":"channel_gains",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"SStereoGains*"
+        },
+        {
+          "name":"resample_position",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"resample_delta",
+          "storage":{
+            "reg":"ST0",
+            "size":10,
+            "varnodes":[
+              {
+                "addr":"register:00001100",
+                "offset":4352,
+                "size":10
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"samples_to_process",
+          "storage":{
+            "offset":36,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x24]",
+                "offset":36,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "compound":true,
+        "size":8,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          },
+          {
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -71485,7 +71594,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_CSfxSlot_FUN_005a6df0",
+    "name":"sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -71816,13 +71925,29 @@
         "start":"005a8970"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005a8970",
-    "ret":"undefined1",
+    "name":"sound_sndmain.cpp_setNextSfxTrackedPosition_FUN_005a8970",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"position_source_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3d*"
+        }
+      ]
     }
   },
   {
@@ -71868,13 +71993,29 @@
         "start":"005a8b70"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005a8b70",
-    "ret":"undefined1",
+    "name":"sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"flags",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        }
+      ]
     }
   },
   {
@@ -71886,12 +72027,20 @@
         "start":"005a8cf0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"sound_sndmain.cpp_FUN_005a8cf0",
-    "ret":"undefined1",
+    "ret":"int",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -71940,10 +72089,10 @@
         "start":"005a9c70"
       }
     ],
-    "cmt":"Signature: undefined1 sound_sndmain.cpp_DoSomethingANdLockUnlockSound(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_DoSomethingANdLockUnlockSound_FUN_005a9c70",
-    "ret":"undefined1",
+    "name":"sound_sndmain.cpp_FUN_005a9c70",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -71964,7 +72113,14 @@
         }
       ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -72027,12 +72183,20 @@
         "start":"005a9ef0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"sound_sndmain.cpp_FUN_005a9ef0",
-    "ret":"undefined1",
+    "ret":"uint",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -72045,12 +72209,20 @@
         "start":"005a9ff0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"sound_sndmain.cpp_FUN_005a9ff0",
-    "ret":"undefined1",
+    "ret":"int",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -72138,7 +72310,7 @@
       ],
       "params":[
         {
-          "name":"filename",
+          "name":"out_sample",
           "storage":{
             "offset":4,
             "size":4,
@@ -72151,7 +72323,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"CSfxSample*"
         }
       ],
       "ret_storage":{
@@ -72175,7 +72347,6 @@
         "start":"005aa7f0"
       }
     ],
-    "cmt":"Signature: undefined1 sound_sndmain.cpp_FUN_005aa7f0(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined4 param_8, undefined4 param_9, undefined4 param_10, undefined4 param_11)",
     "importable":true,
     "name":"sound_sndmain.cpp_FUN_005aa7f0",
     "ret":"undefined1",
@@ -72500,7 +72671,6 @@
         "start":"005aaef0"
       }
     ],
-    "cmt":"Signature: undefined1 sound_sndmain.cpp_FUN_005aaef0()",
     "importable":true,
     "name":"sound_sndmain.cpp_FUN_005aaef0",
     "ret":"undefined1",
@@ -72644,7 +72814,7 @@
           "type":"int"
         },
         {
-          "name":"dest_buffer",
+          "name":"device_info",
           "storage":{
             "offset":8,
             "size":4,
@@ -72671,13 +72841,20 @@
         "start":"005ab970"
       }
     ],
-    "cmt":"Signature: undefined1 sound_sndmain.cpp_FUN_005ab970()",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005ab970",
-    "ret":"undefined1",
+    "name":"sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970",
+    "ret":"int",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -72734,14 +72911,10 @@
         "start":"005addf0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"sound_sndmain.cpp_FUN_005addf0",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "ret":"void"
   },
   {
     "addr":"005ade70",
@@ -73051,6 +73224,102 @@
             ]
           },
           "type":"CDirectSoundDevice*"
+        },
+        {
+          "name":"x_front",
+          "storage":{
+            "offset":8,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"y_front",
+          "storage":{
+            "offset":16,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"z_front",
+          "storage":{
+            "offset":24,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"x_top",
+          "storage":{
+            "offset":32,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x20]",
+                "offset":32,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"y_top",
+          "storage":{
+            "offset":40,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x28]",
+                "offset":40,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"z_top",
+          "storage":{
+            "offset":48,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x30]",
+                "offset":48,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
         }
       ]
     }
@@ -73205,6 +73474,70 @@
             ]
           },
           "type":"CWavInDevice*"
+        },
+        {
+          "name":"bits_per_sample",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"channels",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"sample_rate",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"out_samples_per_block",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
         }
       ],
       "ret_storage":{
@@ -73327,6 +73660,102 @@
             ]
           },
           "type":"CWavOutDevice*"
+        },
+        {
+          "name":"x_front",
+          "storage":{
+            "offset":8,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"y_front",
+          "storage":{
+            "offset":16,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"z_front",
+          "storage":{
+            "offset":24,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"x_top",
+          "storage":{
+            "offset":32,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x20]",
+                "offset":32,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"y_top",
+          "storage":{
+            "offset":40,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x28]",
+                "offset":40,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"z_top",
+          "storage":{
+            "offset":48,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x30]",
+                "offset":48,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
         }
       ]
     }
@@ -73361,6 +73790,22 @@
             ]
           },
           "type":"CWavOutDevice*"
+        },
+        {
+          "name":"sample_buffer_id",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{

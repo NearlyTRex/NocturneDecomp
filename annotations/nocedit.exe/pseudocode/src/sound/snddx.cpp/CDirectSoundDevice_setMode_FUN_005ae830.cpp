@@ -2,16 +2,16 @@
 // Address: 005ae830
 // Address Range: [[005ae830, 005aed41]]
 // Convention: __cdecl
-// Signature: int sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSoundDevice * this_ptr)
+// Signature: int sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSoundDevice * this_ptr, int bits_per_sample, int channels, int sample_rate, int * out_samples_per_block)
 // Globals:
 //   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c
 //   TerminatedCString s_Create_temp_secondary_bu_00651b5a
 //   TerminatedCString s_Set_Primary_buffer_forma_00651b91
 //   TerminatedCString s_Get_Primary_buffer_forma_00651bab
 //   TerminatedCString s_Create_the_secondary_buf_00651bc5
-//   undefined4 DAT_00681dd0
-//   undefined4 DAT_00681de0
-//   undefined4 DAT_00686d68
+//   GUID g_IID_IKsPropertySet
+//   GUID g_KSPROPSETID_DirectSound3DListener
+//   GUID g_IID_IDirectSound3DBuffer
 //   IDirectSound* g_DirectSound
 //   IDirectSoundBuffer* g_DirectSoundPrimaryBuffer
 //   IDirectSoundBuffer* g_DirectSoundSecondaryBuffer
@@ -35,7 +35,10 @@
 
 /* WARNING: Exceeded maximum restarts with more pending */
 
-int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSoundDevice *this_ptr)
+int __cdecl
+sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830
+          (CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,
+          int *out_samples_per_block)
 
 {
   uint uVar1;
@@ -43,25 +46,14 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
   undefined4 extraout_EDX;
   BADSPACEBASE *in_ESP;
   float10 fVar3;
-  int in_stack_00000008;
-  ushort in_stack_0000000c;
-  DWORD in_stack_00000010;
-  int *in_stack_00000014;
   char acStack_6b0 [400];
   char acStack_520 [400];
   char acStack_390 [400];
   char acStack_200 [400];
   DSBUFFERDESC DStack_70;
-  WAVEFORMATEX *pWStack_60;
   DSBUFFERDESC DStack_5c;
-  undefined2 *puStack_4c;
   WAVEFORMATEX local_48;
-  undefined2 uStack_34;
-  undefined2 uStack_32;
-  undefined4 uStack_30;
-  undefined4 uStack_2c;
-  undefined2 uStack_28;
-  undefined2 uStack_26;
+  tWAVEFORMATEX tStack_34;
   IDirectSoundBuffer *pIStack_20;
   int *piStack_1c;
   undefined4 uStack_18;
@@ -74,13 +66,13 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
   if (g_DirectSoundPrimaryBuffer != (IDirectSoundBuffer *)0x0) {
     crt_memory_c_memset_FUN_005fde40(&local_48,0,0x12);
     local_48.wFormatTag = 1;
-    local_48.nChannels = in_stack_0000000c;
-    local_48.nSamplesPerSec = in_stack_00000010;
+    local_48.nChannels = (WORD)channels;
+    local_48.nSamplesPerSec = sample_rate;
     local_48.nBlockAlign =
-         (short)((int)((in_stack_00000008 + (in_stack_00000008 >> 0x1f) * -8) -
-                      (uint)((in_stack_00000008 >> 0x1f) << 2 < 0)) >> 3) * in_stack_0000000c;
-    local_48.nAvgBytesPerSec = in_stack_00000010 * local_48.nBlockAlign;
-    local_48.wBitsPerSample = (WORD)in_stack_00000008;
+         (short)((int)((bits_per_sample + (bits_per_sample >> 0x1f) * -8) -
+                      (uint)((bits_per_sample >> 0x1f) << 2 < 0)) >> 3) * local_48.nChannels;
+    local_48.nAvgBytesPerSec = sample_rate * (uint)local_48.nBlockAlign;
+    local_48.wBitsPerSample = (WORD)bits_per_sample;
     uVar1 = (*g_DirectSoundPrimaryBuffer->vtable->SetFormat)(g_DirectSoundPrimaryBuffer,&local_48);
     if (uVar1 == 0) {
       uVar1 = (*g_DirectSoundPrimaryBuffer->vtable->GetFormat)
@@ -95,18 +87,18 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
         }
         pIStack_20 = (IDirectSoundBuffer *)0x0;
         piStack_1c = (int *)0x0;
-        crt_memory_c_memset_FUN_005fde40(&uStack_34,0,0x12);
-        uStack_34 = 1;
-        uStack_32 = 1;
-        uStack_30 = 0x5622;
-        uStack_26 = 0x10;
-        uStack_28 = 2;
-        uStack_2c = 0xac44;
+        crt_memory_c_memset_FUN_005fde40(&tStack_34,0,0x12);
+        tStack_34.wFormatTag = 1;
+        tStack_34.nChannels = 1;
+        tStack_34.nSamplesPerSec = 0x5622;
+        tStack_34.wBitsPerSample = 0x10;
+        tStack_34.nBlockAlign = 2;
+        tStack_34.nAvgBytesPerSec = 0xac44;
         crt_memory_c_memset_FUN_005fde40(&DStack_5c,0,0x14);
-        puStack_4c = &uStack_34;
-        DStack_5c.field0_0x0 = 0x14;
-        DStack_5c.field1_0x4 = 0x12;
-        DStack_5c.field2_0x8 = 0x400;
+        DStack_5c.lpwfxFormat = &tStack_34;
+        DStack_5c.dwSize = 0x14;
+        DStack_5c.dwFlags = 0x12;
+        DStack_5c.dwBufferBytes = 0x400;
         uVar1 = (*g_DirectSound->vtable->CreateSoundBuffer)
                           (g_DirectSound,&DStack_5c,&pIStack_20,(LPUNKNOWN)0x0);
         if (uVar1 == 0) {
@@ -139,10 +131,11 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
         if (g_DirectSoundPropertySet != (IKsPropertySet *)0x0) {
           uStack_18 = 1;
           (*g_DirectSoundPropertySet->vtable->Set)
-                    (g_DirectSoundPropertySet,(LPGUID)&DAT_00681de0,0,(LPVOID)0x0,0,&uStack_18,4);
+                    (g_DirectSoundPropertySet,&g_KSPROPSETID_DirectSound3DListener,0,(LPVOID)0x0,0,
+                     &uStack_18,4);
         }
         if (g_DirectSound3DListener != (IDirectSound3DListener *)0x0) {
-          *in_stack_00000014 = 0;
+          *out_samples_per_block = 0;
           return 1;
         }
         g_StreamBlockCount = 8;
@@ -156,10 +149,10 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
              ((int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -
                    (uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_StreamChannelCount;
         crt_memory_c_memset_FUN_005fde40(&DStack_70,0,0x14);
-        pWStack_60 = &local_48;
-        DStack_70.field2_0x8 = g_StreamBlockSizeBytes * g_StreamBlockCount;
-        DStack_70.field0_0x0 = 0x14;
-        DStack_70.field1_0x4 = 0;
+        DStack_70.lpwfxFormat = &local_48;
+        DStack_70.dwBufferBytes = g_StreamBlockSizeBytes * g_StreamBlockCount;
+        DStack_70.dwSize = 0x14;
+        DStack_70.dwFlags = 0;
         if (g_DirectSoundSecondaryBuffer != (IDirectSoundBuffer *)0x0) {
           (*g_DirectSoundSecondaryBuffer->vtable->Release)((IUnknown *)g_DirectSoundSecondaryBuffer)
           ;
@@ -168,7 +161,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
         uVar1 = (*g_DirectSound->vtable->CreateSoundBuffer)
                           (g_DirectSound,&DStack_70,&g_DirectSoundSecondaryBuffer,(LPUNKNOWN)0x0);
         if (uVar1 == 0) {
-          *in_stack_00000014 = g_StreamSamplesPerBlock;
+          *out_samples_per_block = g_StreamSamplesPerBlock;
           return 1;
         }
         pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);

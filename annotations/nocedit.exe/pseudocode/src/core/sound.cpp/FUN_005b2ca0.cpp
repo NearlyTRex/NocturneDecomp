@@ -9,7 +9,7 @@
 //   undefined4 DAT_03f6b870
 //   undefined4 DAT_03f6b874
 // Function calls:
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+//   sound_sndmain.cpp_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -21,10 +21,10 @@ void core_sound_cpp_FUN_005b2ca0(void)
   iVar1 = 0;
   do {
     iVar1 = iVar1 + 0x10;
-    sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+    sound_sndmain_cpp_FUN_005a9c40();
   } while (iVar1 != 0xa0);
-  sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
-  sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+  sound_sndmain_cpp_FUN_005a9c40();
+  sound_sndmain_cpp_FUN_005a9c40();
   return;
 }
 
@@ -39,7 +39,7 @@ void core_sound_cpp_FUN_005b2ca0(void)
 //   XREF to: 03f6b7d8 (READ)
 // 005b2ca9: PUSH EDX
 // 005b2caa: ADD EBX,0x10
-// 005b2cad: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 005b2cad: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005b2cb2: ADD ESP,0x4
 // 005b2cb5: CMP EBX,0xa0
@@ -48,13 +48,13 @@ void core_sound_cpp_FUN_005b2ca0(void)
 // 005b2cbd: MOV ECX,dword ptr [0x03f6b870]
 //   XREF to: 03f6b870 (READ)
 // 005b2cc3: PUSH ECX
-// 005b2cc4: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 005b2cc4: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005b2cc9: ADD ESP,0x4
 // 005b2ccc: MOV EBX,dword ptr [0x03f6b874]
 //   XREF to: 03f6b874 (READ)
 // 005b2cd2: PUSH EBX
-// 005b2cd3: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 005b2cd3: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005b2cd8: ADD ESP,0x4
 // 005b2cdb: POP EBX

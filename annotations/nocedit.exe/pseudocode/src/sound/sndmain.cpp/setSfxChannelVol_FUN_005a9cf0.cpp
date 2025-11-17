@@ -22,7 +22,7 @@
 //   undefined4 g_SfxSlots[1].status
 //   undefined4 g_SfxSlots[1].dsound_buffer
 //   undefined4 DAT_03f5dc40
-//   undefined4 g_SfxLastSlot
+//   int g_SfxLastSlot
 //   undefined4 DAT_03f688a8
 //   CSoundDevice* g_CSoundDevicePtr
 // Function calls:
@@ -38,7 +38,7 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(int channel_index,f
 {
   CSoundDevice *pCVar1;
   int iVar2;
-  CSfxSlot *pCVar3;
+  CSfxSlot *slot;
   undefined4 in_stack_0000000c;
   
   if ((channel_index < 0) || (0x1f < channel_index)) {
@@ -51,15 +51,15 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(int channel_index,f
   if (pCVar1 != (CSoundDevice *)0x0) {
     iVar2 = sound_sndmain_cpp_FUN_005ab5a0();
     if (iVar2 != 0) {
-      pCVar3 = g_SfxSlots;
+      slot = g_SfxSlots;
       sound_sndmain_cpp_lockSound_FUN_005abd30();
       do {
-        if (((pCVar3->field2_0x74 != 0) && (pCVar3->dsound_buffer != (void *)0x0)) &&
-           (channel_index == (pCVar3->options).status)) {
-          (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr);
+        if (((slot->playback_state != 0) && (slot->hardware_buffer_handle != 0)) &&
+           (channel_index == (slot->options).status)) {
+          (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,slot,8);
         }
-        pCVar3 = pCVar3 + 1;
-      } while (pCVar3 != (CSfxSlot *)&g_SfxLastSlot);
+        slot = slot + 1;
+      } while (slot != (CSfxSlot *)&g_SfxLastSlot);
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
       return;
     }

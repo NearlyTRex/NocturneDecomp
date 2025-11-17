@@ -18,9 +18,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005aa6a0(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6) */
-
 void sound_sndmain_cpp_FUN_005aa6a0(void)
 
 {
@@ -43,15 +40,15 @@ void sound_sndmain_cpp_FUN_005aa6a0(void)
   local_1c = 0;
   local_14 = 0;
   do {
-    if (0 < *(int *)g_SfxSamples[iVar3].field12_0x160) {
-      if ((g_SfxSamples[iVar3].ref_count == 0) && (g_SfxSamples[iVar3].field8_0x150 == 0)) {
+    if (0 < g_SfxSamples[iVar3].streaming_buffer_size) {
+      if ((g_SfxSamples[iVar3].ref_count == 0) && (g_SfxSamples[iVar3].taken == 0)) {
         local_1c = local_1c + 1;
         sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(g_SfxSamples + iVar3);
       }
       else {
         iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
         local_14 = local_14 + 1;
-        iVar2 = iVar2 + iVar1 * *(int *)this_ptr->field12_0x160;
+        iVar2 = iVar2 + iVar1 * this_ptr->streaming_buffer_size;
       }
     }
     iVar3 = iVar3 + 1;

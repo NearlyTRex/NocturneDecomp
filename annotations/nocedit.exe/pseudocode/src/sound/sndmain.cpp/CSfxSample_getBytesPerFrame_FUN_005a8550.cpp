@@ -11,8 +11,8 @@
 //   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0 (005a65a0) at 005a664c [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a6889 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005aa6a0 (005aa6a0) at 005aa762 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a4f84 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450 (005a4450) at 005a44f2 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a4f84 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

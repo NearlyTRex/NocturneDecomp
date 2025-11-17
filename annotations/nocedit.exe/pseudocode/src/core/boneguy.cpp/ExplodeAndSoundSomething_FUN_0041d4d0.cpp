@@ -7,7 +7,7 @@
 //   core_boneguy.cpp_CBoneGuy_FUN_0041d680
 //   core_enemy.cpp_FUN_004a9f10
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+//   sound_sndmain.cpp_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -21,7 +21,7 @@ void core_boneguy_cpp_ExplodeAndSoundSomething_FUN_0041d4d0(void)
   CBoneGuy *in_stack_00000004;
   int in_stack_0000000c;
   
-  sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+  sound_sndmain_cpp_FUN_005a9c40();
   fVar1 = (in_stack_00000004->base_enemy).base_character.hit_points -
           *(float *)(in_stack_0000000c + 4);
   (in_stack_00000004->base_enemy).base_character.hit_points = fVar1;
@@ -45,7 +45,7 @@ void core_boneguy_cpp_ExplodeAndSoundSomething_FUN_0041d4d0(void)
 //   XREF to: Stack[0x4] (READ)
 // 0041d4d5: MOV EDX,dword ptr [EBX + 0xbecc]
 // 0041d4db: PUSH EDX
-// 0041d4dc: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 0041d4dc: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 0041d4e1: ADD ESP,0x4
 // 0041d4e4: MOV EAX,dword ptr [ESP + 0xc]

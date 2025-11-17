@@ -27,9 +27,9 @@
 //   core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0
 //   core_xform.cpp_slerpQuaternion_FUN_005f77e0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
-//   sound_sndmain.cpp_CallComputingDelay_FUN_005a9b40
 //   sound_sndmain.cpp_FUN_005a9720
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+//   sound_sndmain.cpp_FUN_005a9b40
+//   sound_sndmain.cpp_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -89,7 +89,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
     }
     this_ptr->state = 1;
     this_ptr->timer = this_ptr->charge_time;
-    sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+    sound_sndmain_cpp_FUN_005a9c40();
     in_stack_ffffff0c = "?turret-ani?.wav" + 1;
     goto LAB_005e24c7;
   case 1:
@@ -160,7 +160,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
     }
     this_ptr->state = 4;
     this_ptr->timer = this_ptr->power_down_time;
-    sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+    sound_sndmain_cpp_FUN_005a9c40();
     in_stack_ffffff0c = "turret-ani?.wav";
 LAB_005e24c7:
     uVar5 = (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
@@ -236,7 +236,7 @@ LAB_005e24c7:
   if ((0 < iVar3) || (0.0 < *(float *)(this_ptr->field12_0x85c + 0x10))) {
     *(int *)(this_ptr->field12_0x85c + 0x54) = *(int *)(this_ptr->field12_0x85c + 0x54) + -1;
     core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
-    iVar3 = sound_sndmain_cpp_CallComputingDelay_FUN_005a9b40();
+    iVar3 = sound_sndmain_cpp_FUN_005a9b40();
     if (iVar3 == 0) {
       crt_stdio_c_sprintf_FUN_005fdbd0
                 (acStack_e8,"turret-loop.wav * %f",(double)in_stack_ffffff14);
@@ -249,7 +249,7 @@ LAB_005e24c7:
   else {
     local_1c = (double)sound_sndmain_cpp_FUN_005a9720();
     if (0.0 <= local_1c) {
-      sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+      sound_sndmain_cpp_FUN_005a9c40();
       (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
                 ((CDemonActor *)this_ptr,"turret-tail.wav");
       return;
@@ -313,7 +313,7 @@ LAB_005e24c7:
 // 005e24a9: MOV dword ptr [EBX + 0x700],0x1
 // 005e24b3: PUSH ECX
 // 005e24b4: FSTP float ptr [EBX + 0x77c]
-// 005e24ba: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 005e24ba: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005e24bf: ADD ESP,0x4
 // 005e24c2: PUSH 0x656600
@@ -374,7 +374,7 @@ LAB_005e24c7:
 // 005e256b: PUSH dword ptr [ESP]
 //   XREF to: Stack[-0xf8] (DATA)
 // 005e256e: PUSH ESI
-// 005e256f: CALL sound_sndmain.cpp_CallComputingDelay_FUN_005a9b40
+// 005e256f: CALL sound_sndmain.cpp_FUN_005a9b40
 //   XREF to: 005a9b40 (UNCONDITIONAL_CALL)
 // 005e2574: ADD ESP,0x8
 // 005e2577: TEST EAX,EAX
@@ -475,7 +475,7 @@ LAB_005e24c7:
 // 005e26bc: MOV dword ptr [EBX + 0x700],0x4
 // 005e26c6: PUSH EDI
 // 005e26c7: FSTP float ptr [EBX + 0x77c]
-// 005e26cd: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 005e26cd: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005e26d2: ADD ESP,0x4
 // 005e26d5: PUSH 0x656610
@@ -688,7 +688,7 @@ LAB_005e24c7:
 //   XREF to: 005e257f (CONDITIONAL_JUMP)
 // 005e28e5: MOV EDX,dword ptr [EBX + 0x8b4]
 // 005e28eb: PUSH EDX
-// 005e28ec: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 005e28ec: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005e28f1: ADD ESP,0x4
 // 005e28f4: PUSH 0x656669

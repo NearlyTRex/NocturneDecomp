@@ -11,7 +11,7 @@
 // Globals:
 //   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f629ac
-//   undefined4 DAT_03f6882c
+//   CSfxSample* g_SfxSamplesEnd
 //   CSoundDevice* g_CSoundDevicePtr
 //   undefined4 DAT_03f69270
 // Function calls:
@@ -32,7 +32,7 @@ int __cdecl sound_sndmain_cpp_FUN_005ab660(void)
     do {
       sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(this_ptr);
       this_ptr = this_ptr + 1;
-    } while (this_ptr != (CSfxSample *)&DAT_03f6882c);
+    } while (this_ptr != (CSfxSample *)&g_SfxSamplesEnd);
     if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
       iVar1 = 1;
     }

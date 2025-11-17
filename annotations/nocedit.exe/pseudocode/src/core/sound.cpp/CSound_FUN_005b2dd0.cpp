@@ -40,7 +40,6 @@
 //   core_sound.cpp_CSound_playSfx_FUN_005b3a20
 //   core_sound.cpp_FUN_005b1870
 //   sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20
-//   sound_sndmain.cpp_FUN_005aa1c0
 //   sound_sndmain.cpp_FUN_005aaef0
 //   sound_sndmain.cpp_FUN_005ab6e0
 //   sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90
@@ -48,6 +47,7 @@
 //   sound_sndmain.cpp_isSoundBusy_FUN_005ab540
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
+//   sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0
 //   sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0
 //   sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0
 
@@ -71,7 +71,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b2dd0(CSound *this_ptr)
   DAT_03f6af70 = 0x501502f9;
   DAT_03f6af74 = 0x501502f9;
   DAT_03f6af78 = 0x501502f9;
-  sound_sndmain_cpp_FUN_005aa1c0();
+  sound_sndmain_cpp_set3DListenerVelocity_FUN_005aa1c0(0.0,0.0,0.0);
   core_sound_cpp_FUN_005b1870();
   DAT_03f6af80 = 0;
   sound_sndmain_cpp_FUN_005ab6e0();
@@ -137,7 +137,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b2dd0(CSound *this_ptr)
 //   XREF to: 03f6af74 (WRITE)
 // 005b2dff: MOV dword ptr [0x03f6af78],ESI
 //   XREF to: 03f6af78 (WRITE)
-// 005b2e05: CALL sound_sndmain.cpp_FUN_005aa1c0
+// 005b2e05: CALL sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0
 //   XREF to: 005aa1c0 (UNCONDITIONAL_CALL)
 // 005b2e0a: ADD ESP,0x18
 // 005b2e0d: CALL core_sound.cpp_FUN_005b1870

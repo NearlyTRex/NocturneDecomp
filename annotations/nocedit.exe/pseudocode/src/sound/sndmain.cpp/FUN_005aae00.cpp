@@ -1,28 +1,30 @@
 // Name: sound_sndmain.cpp_FUN_005aae00
 // Address: 005aae00
 // Address Range: [[005aae00, 005aaeab]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_FUN_005aae00()
+// Convention: __cdecl
+// Signature: void sound_sndmain.cpp_FUN_005aae00(void)
 // Cross-references:
 //   core_sound.cpp_CSound_FUN_005b2ce0 (005b2ce0) at 005b2cf5 [UNCONDITIONAL_CALL]
 // Function calls:
 //   sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20
-//   sound_sndmain.cpp_FUN_005aa020
-//   sound_sndmain.cpp_FUN_005aa0a0
-//   sound_sndmain.cpp_FUN_005aa1c0
-//   sound_sndmain.cpp_FUN_005aa240
-//   sound_sndmain.cpp_FUN_005ab990
+//   sound_sndmain.cpp_getCurrentRecordingDevice_FUN_005ab990
 //   sound_sndmain.cpp_getCurrentSoundDevice_FUN_005ab6c0
 //   sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860
 //   sound_sndmain.cpp_selectSoundDevice_FUN_005ab4c0
+//   sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_005aa240
+//   sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0
+//   sound_sndmain.cpp_set3DListenerPos_FUN_005aa020
+//   sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0
 //   sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0
 
 #include "nocturne.h"
 
-void sound_sndmain_cpp_FUN_005aae00(void)
+void __cdecl sound_sndmain_cpp_FUN_005aae00(void)
 
 {
   int iVar1;
+  undefined4 uStack00000010;
+  undefined4 uStack00000018;
   
   iVar1 = 0;
   do {
@@ -30,14 +32,18 @@ void sound_sndmain_cpp_FUN_005aae00(void)
     sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(iVar1);
     iVar1 = iVar1 + 1;
   } while (iVar1 < 0x20);
-  sound_sndmain_cpp_FUN_005aa240();
-  sound_sndmain_cpp_FUN_005aa020();
-  sound_sndmain_cpp_FUN_005aa0a0();
-  sound_sndmain_cpp_FUN_005aa1c0();
+  sound_sndmain_cpp_set3DListenerDistanceFactor_FUN_005aa240(1.0);
+  sound_sndmain_cpp_set3DListenerPos_FUN_005aa020(0.0,0.0,0.0);
+  sound_sndmain_cpp_set3DListenerOrient_FUN_005aa0a0(1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0);
+  sound_sndmain_cpp_set3DListenerVelocity_FUN_005aa1c0(0.0,0.0,0.0);
+  uStack00000010 = 0x5aae93;
   iVar1 = sound_sndmain_cpp_getCurrentSoundDevice_FUN_005ab6c0();
+  uStack00000010 = 0x5aae99;
   sound_sndmain_cpp_selectSoundDevice_FUN_005ab4c0(iVar1);
-  sound_sndmain_cpp_FUN_005ab990();
-  sound_sndmain_cpp_selectRecordingDevice_FUN_005ab860();
+  uStack00000018 = 0x5aaea1;
+  iVar1 = sound_sndmain_cpp_getCurrentRecordingDevice_FUN_005ab990();
+  uStack00000018 = 0x5aaea7;
+  sound_sndmain_cpp_selectRecordingDevice_FUN_005ab860(iVar1);
   return;
 }
 
@@ -63,7 +69,7 @@ void sound_sndmain_cpp_FUN_005aae00(void)
 //   XREF to: 005aae03 (CONDITIONAL_JUMP)
 // 005aae22: PUSH 0x3ff00000
 // 005aae27: PUSH 0x0
-// 005aae29: CALL sound_sndmain.cpp_FUN_005aa240
+// 005aae29: CALL sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_005aa240
 //   XREF to: 005aa240 (UNCONDITIONAL_CALL)
 // 005aae2e: ADD ESP,0x8
 // 005aae31: PUSH 0x0
@@ -72,7 +78,7 @@ void sound_sndmain_cpp_FUN_005aae00(void)
 // 005aae37: PUSH 0x0
 // 005aae39: PUSH 0x0
 // 005aae3b: PUSH 0x0
-// 005aae3d: CALL sound_sndmain.cpp_FUN_005aa020
+// 005aae3d: CALL sound_sndmain.cpp_set3DListenerPos_FUN_005aa020
 //   XREF to: 005aa020 (UNCONDITIONAL_CALL)
 // 005aae42: ADD ESP,0x18
 // 005aae45: PUSH 0x3ff00000
@@ -93,7 +99,7 @@ void sound_sndmain_cpp_FUN_005aae00(void)
 // 005aae69: PUSH 0x0
 // 005aae6b: PUSH 0x3ff00000
 // 005aae70: PUSH 0x0
-// 005aae72: CALL sound_sndmain.cpp_FUN_005aa0a0
+// 005aae72: CALL sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0
 //   XREF to: 005aa0a0 (UNCONDITIONAL_CALL)
 // 005aae77: ADD ESP,0x48
 // 005aae7a: PUSH 0x0
@@ -102,7 +108,7 @@ void sound_sndmain_cpp_FUN_005aae00(void)
 // 005aae80: PUSH 0x0
 // 005aae82: PUSH 0x0
 // 005aae84: PUSH 0x0
-// 005aae86: CALL sound_sndmain.cpp_FUN_005aa1c0
+// 005aae86: CALL sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0
 //   XREF to: 005aa1c0 (UNCONDITIONAL_CALL)
 // 005aae8b: ADD ESP,0x18
 // 005aae8e: CALL sound_sndmain.cpp_getCurrentSoundDevice_FUN_005ab6c0
@@ -111,7 +117,7 @@ void sound_sndmain_cpp_FUN_005aae00(void)
 // 005aae94: CALL sound_sndmain.cpp_selectSoundDevice_FUN_005ab4c0
 //   XREF to: 005ab4c0 (UNCONDITIONAL_CALL)
 // 005aae99: ADD ESP,0x4
-// 005aae9c: CALL sound_sndmain.cpp_FUN_005ab990
+// 005aae9c: CALL sound_sndmain.cpp_getCurrentRecordingDevice_FUN_005ab990
 //   XREF to: 005ab990 (UNCONDITIONAL_CALL)
 // 005aaea1: PUSH EAX
 // 005aaea2: CALL sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860

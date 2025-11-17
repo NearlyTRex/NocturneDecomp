@@ -16,8 +16,8 @@
 //   core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530
 //   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
-//   sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9660
+//   sound_sndmain.cpp_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -52,7 +52,7 @@ void core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void)
     fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
     in_stack_00000004->hit_points = fVar1;
     if (0.0 < fVar1) {
-      iVar4 = sound_sndmain_cpp_SoundLockKillBlah_FUN_005a9660();
+      iVar4 = sound_sndmain_cpp_FUN_005a9660();
       if (iVar4 == 0) {
         uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                           (&in_stack_00000004->base_actor,"gargoyle-hurt?.wav");
@@ -62,7 +62,7 @@ void core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void)
       }
     }
     else {
-      sound_sndmain_cpp_RelatedToSoundSlotKill_FUN_005a9c40();
+      sound_sndmain_cpp_FUN_005a9c40();
       in_stack_00000004->hit_points = 0.0;
       pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&this_ptr->motion_controller);
@@ -150,7 +150,7 @@ void core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void)
 //   XREF to: 004e58e7 (CONDITIONAL_JUMP)
 // 004e5861: MOV EBP,dword ptr [ESI + 0xbefc]
 // 004e5867: PUSH EBP
-// 004e5868: CALL sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40
+// 004e5868: CALL sound_sndmain.cpp_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004e586d: ADD ESP,0x4
 // 004e5870: PUSH EBX
@@ -209,7 +209,7 @@ void core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void)
 // 004e58e7: MOV ECX,dword ptr [ESI + 0xbefc]
 //   Label: LAB_004e58e7
 // 004e58ed: PUSH ECX
-// 004e58ee: CALL sound_sndmain.cpp_SoundLockKillBlah_FUN_005a9660
+// 004e58ee: CALL sound_sndmain.cpp_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004e58f3: ADD ESP,0x4
 // 004e58f6: TEST EAX,EAX

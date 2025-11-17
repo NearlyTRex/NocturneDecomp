@@ -8,10 +8,10 @@
 //   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (005a75e0) at 005a7704 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0 (005a7fe0) at 005a8045 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a69e7 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005a9c40 (005a9c40) at 005a9c55 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005aa2f0 (005aa2f0) at 005aa333 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_RelatedToSoundSlotKill_FUN_005a9c40 (005a9c40) at 005a9c55 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00 (005a5d00) at 005a5d90 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20 (005a9e20) at 005a9e77 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00 (005a5d00) at 005a5d90 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_killAllSoundSlots_FUN_005a9cc0 (005a9cc0) at 005a9cd3 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a9524 [UNCONDITIONAL_CALL]
 // Globals:
@@ -57,14 +57,14 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot *slot)
     }
     engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Killing sfx %s\n",pCVar2);
   }
-  if (slot->dsound_buffer != (void *)0x0) {
+  if (slot->hardware_buffer_handle != 0) {
     if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
-      (*g_CSoundDevicePtr->vtable->killSfx)(g_CSoundDevicePtr);
+      (*g_CSoundDevicePtr->vtable->killSfx)(g_CSoundDevicePtr,slot);
     }
-    slot->dsound_buffer = (void *)0x0;
+    slot->hardware_buffer_handle = 0;
   }
   slot->is_active = 0;
-  slot->field2_0x74 = 0;
+  slot->playback_state = 0;
   if (slot->sample != (CSfxSample *)0x0) {
     if (slot->sample->ref_count < 1) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -81,8 +81,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot *slot)
         g_CurrentLineNumber = 0xb50;
         core_main_c_displayErrorAndQuit_FUN_00506f10("refCount for streaming Sfx %s > 1",pCVar2);
       }
-      if ((int)(slot[-0x36cd9].options.field5_0x14 + 0x30) / 0x128 != pCVar2->streaming_slot_index)
-      {
+      if ((int)&slot[-0x36cd9].options.current_volume / 0x128 != pCVar2->streaming_slot_index) {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
         g_CurrentLineNumber = 0xb51;
         core_main_c_displayErrorAndQuit_FUN_00506f10("streaming sample sfx index mismatch on %s");

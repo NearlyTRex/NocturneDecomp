@@ -10,7 +10,7 @@
 // Globals:
 //   void* g_RecordingContext
 // Function calls:
-//   sound_sndmain.cpp_FUN_005ab970
+//   sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970
 
 #include "nocturne.h"
 
@@ -19,7 +19,7 @@ void * sound_sndmain_cpp_FUN_005ab980(void)
 {
   void *pvVar1;
   
-  pvVar1 = (void *)sound_sndmain_cpp_FUN_005ab970();
+  pvVar1 = (void *)sound_sndmain_cpp_isRecordingSystemActive_FUN_005ab970();
   if (pvVar1 != (void *)0x0) {
     pvVar1 = g_RecordingContext;
   }
@@ -28,7 +28,7 @@ void * sound_sndmain_cpp_FUN_005ab980(void)
 
 
 // Assembly code:
-// 005ab980: CALL sound_sndmain.cpp_FUN_005ab970
+// 005ab980: CALL sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970
 //   Label: sound_sndmain.cpp_FUN_005ab980
 //   XREF to: 005ab970 (UNCONDITIONAL_CALL)
 // 005ab985: TEST EAX,EAX

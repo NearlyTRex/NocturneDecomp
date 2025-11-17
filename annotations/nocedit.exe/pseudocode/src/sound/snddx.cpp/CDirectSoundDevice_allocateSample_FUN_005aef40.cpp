@@ -2,7 +2,7 @@
 // Address: 005aef40
 // Address Range: [[005aef40, 005af14b]]
 // Convention: __cdecl
-// Signature: int sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDirectSoundDevice * this_ptr)
+// Signature: int sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDirectSoundDevice * this_ptr, int bits_per_sample, int channel_count, int sample_rate, int sample_count)
 // Globals:
 //   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c
 //   TerminatedCString s_Create_secondary_buffer_00651c0c
@@ -23,7 +23,9 @@
 #include "nocturne.h"
 
 int __cdecl
-sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDirectSoundDevice *this_ptr)
+sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40
+          (CDirectSoundDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate,
+          int sample_count)
 
 {
   IDirectSoundBuffer *this_ptr_00;
@@ -33,15 +35,11 @@ sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDirectSoundDevic
   char *pcVar3;
   int iVar4;
   BADSPACEBASE *in_ESP;
-  int in_stack_00000008;
-  short in_stack_00000010;
-  int in_stack_00000014;
   int in_stack_0000001c;
   int in_stack_00000028;
   undefined1 local_34 [4];
   DSBUFFERDESC local_30;
-  undefined4 local_20;
-  undefined1 local_1c [4];
+  int local_1c;
   int local_18;
   ushort uStack_14;
   undefined2 uStack_12;
@@ -58,18 +56,19 @@ sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDirectSoundDevic
       } while (*(int *)((int)g_DirectSoundSampleBuffers + iVar1) != 0);
     }
     if (iVar4 < 0x19) {
-      crt_memory_c_memset_FUN_005fde40(&local_30.field3_0xc,0,0x12);
-      local_20 = (undefined1 *)CONCAT22(in_stack_00000010,1);
-      iVar2 = (int)((in_stack_00000008 + (in_stack_00000008 >> 0x1f) * -8) -
-                   (uint)((in_stack_00000008 >> 0x1f) << 2 < 0)) >> 3;
-      uStack_14 = (short)iVar2 * in_stack_00000010;
-      local_18 = in_stack_00000014 * (uint)uStack_14;
-      uStack_12 = (undefined2)in_stack_00000008;
+      crt_memory_c_memset_FUN_005fde40(&local_30.dwReserved,0,0x12);
+      local_30.lpwfxFormat = (LPWAVEFORMATEX)CONCAT22((short)sample_rate,1);
+      local_1c = sample_count;
+      iVar2 = (int)((bits_per_sample + (bits_per_sample >> 0x1f) * -8) -
+                   (uint)((bits_per_sample >> 0x1f) << 2 < 0)) >> 3;
+      uStack_14 = (short)iVar2 * (short)sample_rate;
+      local_18 = sample_count * (uint)uStack_14;
+      uStack_12 = (undefined2)bits_per_sample;
       crt_memory_c_memset_FUN_005fde40(local_34,0,0x14);
-      local_20 = local_1c;
-      local_30.field2_0x8 = in_stack_00000014 * in_stack_0000001c * iVar2;
-      local_30.field0_0x0 = 0x14;
-      local_30.field1_0x4 = 0xb0;
+      local_30.lpwfxFormat = (LPWAVEFORMATEX)&local_1c;
+      local_30.dwBufferBytes = sample_count * in_stack_0000001c * iVar2;
+      local_30.dwSize = 0x14;
+      local_30.dwFlags = 0xb0;
       error_code = (*g_DirectSound->vtable->CreateSoundBuffer)
                              (g_DirectSound,&local_30,g_DirectSoundSampleBuffers + iVar4,
                               (LPUNKNOWN)0x0);

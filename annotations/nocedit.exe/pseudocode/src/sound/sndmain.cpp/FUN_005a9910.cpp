@@ -7,7 +7,7 @@
 //   CSoundDevice* g_CSoundDevicePtr
 // Function calls:
 //   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
-//   sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
+//   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
@@ -16,20 +16,18 @@ undefined4 sound_sndmain_cpp_FUN_005a9910(void)
 
 {
   CSfxSlot *this_ptr;
-  undefined4 in_stack_0000000c;
+  uint in_stack_00000004;
+  CVector3d *in_stack_0000000c;
   
-  this_ptr = (CSfxSlot *)sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
+  this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(in_stack_00000004,1);
   if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }
-  (this_ptr->options).field5_0x14[0xc] = '\x02';
-  (this_ptr->options).field5_0x14[0xd] = '\0';
-  (this_ptr->options).field5_0x14[0xe] = '\0';
-  (this_ptr->options).field5_0x14[0xf] = '\0';
-  *(undefined4 *)((this_ptr->options).field5_0x14 + 8) = in_stack_0000000c;
-  sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr);
-  if ((this_ptr->dsound_buffer != (void *)0x0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
-    (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr);
+  (this_ptr->options).position_format = 2;
+  (this_ptr->options).position_source_ptr = in_stack_0000000c;
+  sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,0.0);
+  if ((this_ptr->hardware_buffer_handle != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
+    (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,this_ptr,2);
   }
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 1;
@@ -43,7 +41,7 @@ undefined4 sound_sndmain_cpp_FUN_005a9910(void)
 // 005a9913: MOV EDX,dword ptr [ESP + 0xc]
 //   XREF to: Stack[0x4] (READ)
 // 005a9917: PUSH EDX
-// 005a9918: CALL sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
+// 005a9918: CALL sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00
 //   XREF to: 005a5d00 (UNCONDITIONAL_CALL)
 // 005a991d: MOV EBX,EAX
 // 005a991f: ADD ESP,0x8

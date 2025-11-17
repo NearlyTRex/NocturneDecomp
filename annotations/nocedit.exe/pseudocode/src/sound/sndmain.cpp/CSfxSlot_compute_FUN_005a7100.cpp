@@ -2,18 +2,18 @@
 // Address: 005a7100
 // Address Range: [[005a7100, 005a75dd]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot * this_ptr)
+// Signature: int sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot * this_ptr, float delta_time)
 // Cross-references:
-//   sound_sndmain.cpp_CSfxSlot_kill_FUN_005acdb0 (005acdb0) at 005acdf6 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CallComputingDelay2_FUN_005a9ae0 (005a9ae0) at 005a9b09 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CallComputingDelay_FUN_005a9b40 (005a9b40) at 005a9b63 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ComputingDelayBetweenLocks_FUN_005a9820 (005a9820) at 005a987a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a97e0 (005a97e0) at 005a97fc [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005a9820 (005a9820) at 005a987a [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005a98b0 (005a98b0) at 005a98da [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a9910 (005a9910) at 005a993a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a9970 (005a9970) at 005a99ca [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005a9a00 (005a9a00) at 005a9a30 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a9a70 (005a9a70) at 005a9aa0 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_SoundDelayComputeThing_FUN_005a9a00 (005a9a00) at 005a9a30 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_YetAnother2ComputingDelayCall_FUN_005a98b0 (005a98b0) at 005a98da [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005a9ae0 (005a9ae0) at 005a9b09 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005a9b40 (005a9b40) at 005a9b63 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_FUN_005acdb0 (005acdb0) at 005acdf6 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 (005aca90) at 005acc5a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a90fd [UNCONDITIONAL_CALL]
 // Globals:
@@ -33,38 +33,36 @@
 //   TerminatedCString s_effFreq_5_2f_0065035c
 //   double DOUBLE_00663138 = -1
 //   double DOUBLE_00663140 = 1116.40000000000
-//   uint UINT_00663148 = 0x0
-//   uint UINT_0066314c = 0x40100000
+//   double DOUBLE_00663148 = 4
+//   undefined4 DOUBLE_00663148+4
 //   double DOUBLE_00663150 = 20
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   int g_AudioChannelCount = 0x2
-//   undefined4 DAT_00681b30
+//   double DOUBLE_00681b30 = 1
 //   CConsole g_ConsolePtr
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   undefined4 DAT_03f68830
-//   undefined4 DAT_03f68838
-//   undefined4 DAT_03f68840
-//   undefined4 DAT_03f68848
-//   undefined4 DAT_03f68850
-//   undefined4 DAT_03f68858
+//   CVector3d g_Cached3DListenerPos
+//   undefined4 g_Cached3DListenerPos.y
+//   undefined4 g_Cached3DListenerPos.z
+//   CVector3d g_Cached3DListenerVelocity
+//   undefined4 g_Cached3DListenerVelocity.y
+//   undefined4 g_Cached3DListenerVelocity.z
 //   CSoundDevice* g_CSoundDevicePtr
 //   int g_SoundLockCount
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 //   sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070
-//   sound_sndmain.cpp_CSfxSlot_FUN_005a6df0
-//   sound_sndmain.cpp_CSfxSlot_FUN_005a6f00
+//   sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0
+//   sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00
+//   sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80
 //   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
-//   sound_sndmain.cpp_FUN_005a6ce0
-//   sound_sndmain.cpp_FUN_005a6d80
+//   sound_sndmain.cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_005a6ce0
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr)
+int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr,float delta_time)
 
 {
   float fVar1;
@@ -80,7 +78,6 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr)
   int iVar11;
   int iVar12;
   CSfxSlot *pCVar13;
-  float in_stack_00000008;
   undefined8 local_50;
   undefined4 local_28;
   
@@ -96,27 +93,23 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr)
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"SFXDBG: sample = %s\n",this_ptr->sample);
   }
-  if ((this_ptr->field2_0x74 != 0) && (0.0 <= *(double *)((this_ptr->options).field5_0x14 + 0x4c)))
-  {
-    if ((0.0 < in_stack_00000008) && (0.0 <= *(float *)(this_ptr->field4_0x7c + 0x94))) {
-      if (*(float *)(this_ptr->field4_0x7c + 0x94) <= in_stack_00000008) {
-        if ((*(uint *)(this_ptr->field4_0x7c + 0x98) & 0x7fffffff) != 0) goto LAB_005a73d3;
-        *(undefined4 *)((this_ptr->options).field5_0x14 + 0x30) =
-             *(undefined4 *)(this_ptr->field4_0x7c + 0x90);
+  if ((this_ptr->playback_state != 0) && (0.0 <= (this_ptr->options).trigger_time)) {
+    if ((0.0 < delta_time) && (0.0 <= this_ptr->fade_time_remaining)) {
+      if (this_ptr->fade_time_remaining <= delta_time) {
+        if ((this_ptr->stop_after_fade & 0x7fffffffU) != 0) goto LAB_005a73d3;
+        (this_ptr->options).current_volume = this_ptr->fade_target_volume;
       }
       else {
-        fVar1 = *(float *)((this_ptr->options).field5_0x14 + 0x30);
-        fVar2 = *(float *)(this_ptr->field4_0x7c + 0x94);
-        fVar3 = *(float *)((this_ptr->options).field5_0x14 + 0x30);
-        *(float *)(this_ptr->field4_0x7c + 0x94) =
-             *(float *)(this_ptr->field4_0x7c + 0x94) - in_stack_00000008;
-        *(float *)((this_ptr->options).field5_0x14 + 0x30) =
-             (in_stack_00000008 / fVar2) * (*(float *)(this_ptr->field4_0x7c + 0x90) - fVar1) +
-             fVar3;
+        fVar1 = (this_ptr->options).current_volume;
+        fVar2 = this_ptr->fade_time_remaining;
+        fVar3 = (this_ptr->options).current_volume;
+        this_ptr->fade_time_remaining = this_ptr->fade_time_remaining - delta_time;
+        (this_ptr->options).current_volume =
+             (delta_time / fVar2) * (this_ptr->fade_target_volume - fVar1) + fVar3;
       }
     }
-    sound_sndmain_cpp_FUN_005a6ce0();
-    if (*(double *)((this_ptr->options).field5_0x14 + 0x38) == DOUBLE_00663138) {
+    sound_sndmain_cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_005a6ce0(this_ptr);
+    if ((this_ptr->options).delay_remaining == DOUBLE_00663138) {
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"  auto computing delay...\n");
@@ -126,85 +119,84 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr)
     if (this_ptr->is_active == 1) {
       engine_console_cpp_CConsole_printf_FUN_00441890
                 (g_CConsolePtr,"  delayRemaining = %7.2fs\n",
-                 *(undefined4 *)((this_ptr->options).field5_0x14 + 0x38));
+                 *(undefined4 *)&(this_ptr->options).delay_remaining);
     }
-    *(undefined4 *)this_ptr->field4_0x7c = *(undefined4 *)((this_ptr->options).field5_0x14 + 0x34);
+    this_ptr->effective_frequency = (this_ptr->options).base_frequency;
     if (this_ptr->is_active == 1) {
       engine_console_cpp_CConsole_printf_FUN_00441890
-                (g_CConsolePtr,"  freq = %5.2f\n",(double)*(float *)this_ptr->field4_0x7c);
+                (g_CConsolePtr,"  freq = %5.2f\n",(double)this_ptr->effective_frequency);
     }
-    if (((this_ptr->options).field5_0x14[0x48] & 1U) == 0) {
-      dVar7 = *(double *)&(this_ptr->options).sample_data - _DAT_03f68830;
-      dVar5 = *(double *)&(this_ptr->options).position - _DAT_03f68838;
-      dVar6 = *(double *)(this_ptr->options).field5_0x14 - _DAT_03f68840;
+    if (((this_ptr->options).flags & 1) == 0) {
+      dVar7 = (this_ptr->options).position.x - g_Cached3DListenerPos.x;
+      dVar5 = (this_ptr->options).position.y - g_Cached3DListenerPos.y;
+      dVar6 = (this_ptr->options).position.z - g_Cached3DListenerPos.z;
       dVar4 = SQRT(dVar6 * dVar6 + dVar5 * dVar5 + dVar7 * dVar7);
       if (this_ptr->is_active == 1) {
         local_28 = SUB84(dVar4,0);
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"  distToEar = %7.2fs\n",local_28);
       }
-      dVar8 = _DAT_03f68848 - *(double *)((this_ptr->options).field5_0x14 + 0x10);
-      dVar9 = _DAT_03f68850 - *(double *)((this_ptr->options).field5_0x14 + 0x18);
-      dVar10 = _DAT_03f68858 - *(double *)((this_ptr->options).field5_0x14 + 0x20);
+      dVar8 = g_Cached3DListenerVelocity.x - (this_ptr->options).velocity.x;
+      dVar9 = g_Cached3DListenerVelocity.y - (this_ptr->options).velocity.y;
+      dVar10 = g_Cached3DListenerVelocity.z - (this_ptr->options).velocity.z;
       if (dVar4 <= 0.0) {
         dVar4 = SQRT(dVar10 * dVar10 + dVar9 * dVar9 + dVar8 * dVar8);
       }
       else {
         dVar4 = (dVar6 * dVar10 + dVar5 * dVar9 + dVar7 * dVar8) / dVar4;
       }
-      local_50 = (dVar4 * _DAT_00681b30 + DOUBLE_00663140) / DOUBLE_00663140;
+      local_50 = (dVar4 * DOUBLE_00681b30 + DOUBLE_00663140) / DOUBLE_00663140;
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"  doppler = %5.2f\n",(undefined4)local_50);
       }
-      dVar4 = 1.0 / (double)CONCAT44(UINT_0066314c,UINT_00663148);
+      dVar4 = 1.0 / (double)CONCAT44(DOUBLE_00663148._4_4_,DOUBLE_00663148._0_4_);
       if (local_50 < dVar4) {
         local_50 = dVar4;
       }
-      if ((double)CONCAT44(UINT_0066314c,UINT_00663148) < local_50) {
-        local_50 = (double)CONCAT44(UINT_0066314c,UINT_00663148);
+      if ((double)CONCAT44(DOUBLE_00663148._4_4_,DOUBLE_00663148._0_4_) < local_50) {
+        local_50 = (double)CONCAT44(DOUBLE_00663148._4_4_,DOUBLE_00663148._0_4_);
       }
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"  doppler (clamped) = %5.2f\n",(undefined4)local_50);
       }
-      *(float *)this_ptr->field4_0x7c = *(float *)this_ptr->field4_0x7c * (float)local_50;
+      this_ptr->effective_frequency = this_ptr->effective_frequency * (float)local_50;
     }
     else if (this_ptr->is_active == 1) {
       engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"  non spatialized\n");
     }
-    sound_sndmain_cpp_FUN_005a6d80();
-    sound_sndmain_cpp_CSfxSlot_FUN_005a6df0(this_ptr);
+    sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(this_ptr);
+    sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0(this_ptr);
     if (this_ptr->is_active == 1) {
       engine_console_cpp_CConsole_printf_FUN_00441890
-                (g_CConsolePtr,"  vol = %5.2f\n",
-                 (double)*(float *)((this_ptr->options).field5_0x14 + 0x30));
+                (g_CConsolePtr,"  vol = %5.2f\n",(double)(this_ptr->options).current_volume);
     }
-    sound_sndmain_cpp_CSfxSlot_FUN_005a6f00(this_ptr);
+    sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(this_ptr);
     if ((this_ptr->is_active == 1) && (iVar11 = 0, pCVar13 = this_ptr, 0 < g_AudioChannelCount)) {
       do {
         iVar12 = iVar11 + 1;
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"  channelVol[%d] = %5.2f\n","  channelVol[%d] = %5.2f\n",iVar11,
                    (double)((float)(1 << ((char)(this_ptr->sample->sample_info).bit_depth - 1U &
-                                         0x1f)) * *(float *)(pCVar13->field4_0x7c + 0x24)));
+                                         0x1f)) * pCVar13->channel_volumes[0]));
         iVar11 = iVar12;
-        pCVar13 = (CSfxSlot *)&(pCVar13->options).sample_data;
+        pCVar13 = (CSfxSlot *)&(pCVar13->options).position;
       } while (iVar12 < g_AudioChannelCount);
     }
-    if (*(float *)this_ptr->field4_0x7c < (float)(1.0 / DOUBLE_00663150)) {
-      *(float *)this_ptr->field4_0x7c = (float)(1.0 / DOUBLE_00663150);
+    if (this_ptr->effective_frequency < (float)(1.0 / DOUBLE_00663150)) {
+      this_ptr->effective_frequency = (float)(1.0 / DOUBLE_00663150);
     }
-    if ((float)DOUBLE_00663150 < *(float *)this_ptr->field4_0x7c) {
-      *(float *)this_ptr->field4_0x7c = (float)DOUBLE_00663150;
+    if ((float)DOUBLE_00663150 < this_ptr->effective_frequency) {
+      this_ptr->effective_frequency = (float)DOUBLE_00663150;
     }
     if (this_ptr->is_active == 1) {
       engine_console_cpp_CConsole_printf_FUN_00441890
-                (g_CConsolePtr,"  effFreq = %5.2f\n",(double)*(float *)this_ptr->field4_0x7c);
+                (g_CConsolePtr,"  effFreq = %5.2f\n",(double)this_ptr->effective_frequency);
     }
-    if (((in_stack_00000008 != 0.0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) &&
-       (this_ptr->dsound_buffer != (void *)0x0)) {
-      (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr);
+    if (((delta_time != 0.0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) &&
+       (this_ptr->hardware_buffer_handle != 0)) {
+      (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,this_ptr,(int)delta_time);
     }
     return 1;
   }
@@ -304,7 +296,7 @@ LAB_005a73d3:
 //   XREF to: Stack[-0x18] (READ_WRITE)
 // 005a71c3: PUSH ESI
 //   Label: LAB_005a71c3
-// 005a71c4: CALL sound_sndmain.cpp_FUN_005a6ce0
+// 005a71c4: CALL sound_sndmain.cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_005a6ce0
 //   XREF to: 005a6ce0 (UNCONDITIONAL_CALL)
 // 005a71c9: FLD double ptr [ESI + 0x4c]
 // 005a71cc: ADD ESP,0x4
@@ -372,11 +364,11 @@ LAB_005a73d3:
 // 005a7255: ADD ESP,0x8
 // 005a7258: PUSH ESI
 //   Label: LAB_005a7258
-// 005a7259: CALL sound_sndmain.cpp_FUN_005a6d80
+// 005a7259: CALL sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80
 //   XREF to: 005a6d80 (UNCONDITIONAL_CALL)
 // 005a725e: ADD ESP,0x4
 // 005a7261: PUSH ESI
-// 005a7262: CALL sound_sndmain.cpp_CSfxSlot_FUN_005a6df0
+// 005a7262: CALL sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0
 //   XREF to: 005a6df0 (UNCONDITIONAL_CALL)
 // 005a7267: MOV EBX,dword ptr [ESI + 0x118]
 // 005a726d: ADD ESP,0x4
@@ -398,7 +390,7 @@ LAB_005a73d3:
 // 005a728f: ADD ESP,0x10
 // 005a7292: PUSH ESI
 //   Label: LAB_005a7292
-// 005a7293: CALL sound_sndmain.cpp_CSfxSlot_FUN_005a6f00
+// 005a7293: CALL sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00
 //   XREF to: 005a6f00 (UNCONDITIONAL_CALL)
 // 005a7298: MOV EAX,dword ptr [ESI + 0x118]
 // 005a729e: ADD ESP,0x4

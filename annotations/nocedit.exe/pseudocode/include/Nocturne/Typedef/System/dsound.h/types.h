@@ -1,9 +1,5 @@
 #pragma once
 
-// Typedef: LP
-// pointer to DS3DBUFFER
-typedef DS3DBUFFER* LP;
-
 // Typedef: LPDIRECTSOUND
 // pointer to IDirectSound
 typedef IDirectSound* LPDIRECTSOUND;
@@ -11,6 +7,10 @@ typedef IDirectSound* LPDIRECTSOUND;
 // Typedef: LPDIRECTSOUNDBUFFER
 // pointer to IDirectSoundBuffer
 typedef IDirectSoundBuffer* LPDIRECTSOUNDBUFFER;
+
+// Typedef: LPDS3DBUFFER
+// pointer to DS3DBUFFER
+typedef DS3DBUFFER* LPDS3DBUFFER;
 
 // Typedef: LPDS3DLISTENER
 // pointer to DS3DLISTENER

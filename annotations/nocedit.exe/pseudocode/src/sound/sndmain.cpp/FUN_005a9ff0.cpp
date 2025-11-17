@@ -1,8 +1,8 @@
 // Name: sound_sndmain.cpp_FUN_005a9ff0
 // Address: 005a9ff0
 // Address Range: [[005a9ff0, 005aa015]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_FUN_005a9ff0()
+// Convention: __cdecl
+// Signature: int sound_sndmain.cpp_FUN_005a9ff0(void)
 // Cross-references:
 //   core_game.cpp_CGame_processFrame_FUN_004da100 (004da100) at 004da7fe [UNCONDITIONAL_CALL]
 // Globals:
@@ -11,11 +11,11 @@
 //   undefined4 DAT_03f5db1c
 //   undefined4 DAT_03f5dc40
 //   undefined4 DAT_03f5dc44
-//   undefined4 g_SfxLastSlot
+//   int g_SfxLastSlot
 
 #include "nocturne.h"
 
-int sound_sndmain_cpp_FUN_005a9ff0(void)
+int __cdecl sound_sndmain_cpp_FUN_005a9ff0(void)
 
 {
   CSfxSlot *pCVar1;
@@ -24,7 +24,7 @@ int sound_sndmain_cpp_FUN_005a9ff0(void)
   pCVar1 = g_SfxSlots;
   iVar2 = 0;
   do {
-    if ((pCVar1->sample != (CSfxSample *)0x0) && (pCVar1->field2_0x74 != 0)) {
+    if ((pCVar1->sample != (CSfxSample *)0x0) && (pCVar1->playback_state != 0)) {
       iVar2 = iVar2 + 1;
     }
     pCVar1 = pCVar1 + 1;

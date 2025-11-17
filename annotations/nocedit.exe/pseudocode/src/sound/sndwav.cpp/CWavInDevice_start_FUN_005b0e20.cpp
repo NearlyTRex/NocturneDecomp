@@ -7,15 +7,15 @@
 //   waveInStart* waveInStart = 002118f8
 //   TerminatedCString s_waveInStart_failed_0065244e
 //   HWAVEIN g_WaveInHandle
-//   LPWAVEHDR[8] g_WaveInHeaders
+//   LPWAVEHDR[20] g_WaveInHeaders
 //   undefined4 DAT_03f6ae24
-//   LPVOID[8] DAT_03f6aec0
+//   LPVOID[20] g_WaveInBuffers
 //   int g_WaveInBitsPerSample
 //   int g_WaveInChannels
 //   int g_WaveInBufferSizeSamples
 //   int g_WaveInNumBuffers
-//   undefined4 DAT_03f6af38
-//   undefined4 DAT_03f6af3c
+//   int g_WaveInCurrentBufferIndex
+//   int g_WaveInCurrentSampleOffset
 // Function calls:
 //   crt_memory.c_memset_FUN_005fde40
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
@@ -37,7 +37,8 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_start_FUN_005b0e20(CWavInDevice *this_
     iVar3 = 0;
     do {
       crt_memory_c_memset_FUN_005fde40(*(void **)((int)g_WaveInHeaders + iVar3),0,0x20);
-      **(undefined4 **)((int)g_WaveInHeaders + iVar3) = *(undefined4 *)((int)DAT_03f6aec0 + iVar3);
+      **(undefined4 **)((int)g_WaveInHeaders + iVar3) =
+           *(undefined4 *)((int)g_WaveInBuffers + iVar3);
       *(int *)(*(int *)((int)g_WaveInHeaders + iVar3) + 0xc) = buffer_index;
       *(int *)(*(int *)((int)g_WaveInHeaders + iVar3) + 4) =
            ((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -
@@ -45,21 +46,21 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_start_FUN_005b0e20(CWavInDevice *this_
            * g_WaveInChannels;
       iVar1 = sound_sndwav_cpp_writeWavInBuffer_FUN_005b0cc0(buffer_index);
       if (iVar1 == 0) {
-        (*this_ptr->vtable->reset)((CSoundDevice *)this_ptr);
+        (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
         return 0;
       }
       buffer_index = buffer_index + 1;
       iVar3 = iVar3 + 4;
     } while (buffer_index < g_WaveInNumBuffers);
   }
-  DAT_03f6af38 = g_WaveInNumBuffers + -1;
-  DAT_03f6af3c = g_WaveInBufferSizeSamples;
+  g_WaveInCurrentBufferIndex = g_WaveInNumBuffers + -1;
+  g_WaveInCurrentSampleOffset = g_WaveInBufferSizeSamples;
   MVar2 = (*waveInStart)(g_WaveInHandle);
   if (MVar2 == 0) {
     return 1;
   }
   sound_sndmain_cpp_logSoundError_FUN_005adba0("waveInStart failed!");
-  (*this_ptr->vtable->reset)((CSoundDevice *)this_ptr);
+  (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
   return 0;
 }
 

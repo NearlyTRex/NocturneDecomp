@@ -33,8 +33,8 @@
 //   shape_design.c_loadModelFile_FUN_00458ac0 (00458ac0) at 00458f09 [UNCONDITIONAL_CALL]
 //   shape_design.c_loadS3DModelFile_FUN_004593a0 (004593a0) at 0045973b [UNCONDITIONAL_CALL]
 //   shape_design.c_showHelpFile_FUN_00457f00 (00457f00) at 00457f4c [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CalculateDistanceMaybe_FUN_005a45c0 (005a45c0) at 005a4793 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 (005acf20) at 005ad0c7 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_parseConfigFile_FUN_005a45c0 (005a45c0) at 005a4793 [UNCONDITIONAL_CALL]
 //   support_newmsg.cpp_readMessageFile_FUN_00543e40 (00543e40) at 00543ee2 [UNCONDITIONAL_CALL]
 // Globals:
 //   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434

@@ -5,10 +5,10 @@
 // Signature: CMP3Decoder * sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0(CMP3Decoder * this_ptr)
 // Cross-references:
 //   sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210 (00534210) at 00534280 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a5200 (005a5200) at 005a52dc [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_ReadingOrDecodingSoundFile_FUN_005a4c80 (005a4c80) at 005a4d1c [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 (005acf20) at 005acfa5 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0 (005aa3f0) at 005aa598 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a4d1c [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200 (005a5200) at 005a52dc [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a92a0 [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_memory.c_memset_FUN_005fde40

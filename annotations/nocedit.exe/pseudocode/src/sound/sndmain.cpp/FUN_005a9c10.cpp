@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined sound_sndmain.cpp_FUN_005a9c10()
 // Function calls:
-//   sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
+//   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
@@ -12,14 +12,15 @@
 undefined4 sound_sndmain_cpp_FUN_005a9c10(void)
 
 {
-  int iVar1;
-  undefined4 in_stack_0000000c;
+  CSfxSlot *pCVar1;
+  uint in_stack_00000004;
+  int in_stack_0000000c;
   
-  iVar1 = sound_sndmain_cpp_SoundLockKillAndUnlock_FUN_005a5d00();
-  if (iVar1 == 0) {
+  pCVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(in_stack_00000004,1);
+  if (pCVar1 == (CSfxSlot *)0x0) {
     return 0;
   }
-  *(undefined4 *)(iVar1 + 0x118) = in_stack_0000000c;
+  pCVar1->is_active = in_stack_0000000c;
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 1;
 }
@@ -31,7 +32,7 @@ undefined4 sound_sndmain_cpp_FUN_005a9c10(void)
 // 005a9c12: MOV EDX,dword ptr [ESP + 0x8]
 //   XREF to: Stack[0x4] (READ)
 // 005a9c16: PUSH EDX
-// 005a9c17: CALL sound_sndmain.cpp_SoundLockKillAndUnlock_FUN_005a5d00
+// 005a9c17: CALL sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00
 //   XREF to: 005a5d00 (UNCONDITIONAL_CALL)
 // 005a9c1c: ADD ESP,0x8
 // 005a9c1f: TEST EAX,EAX

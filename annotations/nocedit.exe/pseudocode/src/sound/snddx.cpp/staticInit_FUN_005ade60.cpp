@@ -12,7 +12,7 @@
 void __cdecl sound_snddx_cpp_staticInit_FUN_005ade60(void)
 
 {
-  g_CDirectSoundDeviceInstance.vtable = &g_CDirectSoundDeviceVTable;
+  g_CDirectSoundDeviceInstance.base.vtable = (CSoundDevice)&g_CDirectSoundDeviceVTable;
   return;
 }
 

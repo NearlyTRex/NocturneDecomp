@@ -6,6 +6,60 @@ typedef HRESULT (*DirectSoundCreate)(LPGUID lpGuid, LPDIRECTSOUND* ppDS, LPUNKNO
 // Function Definition: DirectSoundEnumerateA
 typedef HRESULT (*DirectSoundEnumerateA)(LPDSENUMCALLBACKA lpDSEnumCallback, LPVOID lpContext);
 
+// Function Definition: IDirectSound3DBuffer_GetAllParameters
+typedef HRESULT (*IDirectSound3DBuffer_GetAllParameters)(IDirectSound3DBuffer* this_ptr, LPDS3DBUFFER pDs3dBuffer);
+
+// Function Definition: IDirectSound3DBuffer_GetConeAngles
+typedef HRESULT (*IDirectSound3DBuffer_GetConeAngles)(IDirectSound3DBuffer* this_ptr, LPDWORD pdwInsideConeAngle, LPDWORD pdwOutsideConeAngle);
+
+// Function Definition: IDirectSound3DBuffer_GetConeOrientation
+typedef HRESULT (*IDirectSound3DBuffer_GetConeOrientation)(IDirectSound3DBuffer* this_ptr, D3DVECTOR* pvOrientation);
+
+// Function Definition: IDirectSound3DBuffer_GetConeOutsideVolume
+typedef HRESULT (*IDirectSound3DBuffer_GetConeOutsideVolume)(IDirectSound3DBuffer* this_ptr, LPLONG plConeOutsideVolume);
+
+// Function Definition: IDirectSound3DBuffer_GetMaxDistance
+typedef HRESULT (*IDirectSound3DBuffer_GetMaxDistance)(IDirectSound3DBuffer* this_ptr, D3DVALUE* pflMaxDistance);
+
+// Function Definition: IDirectSound3DBuffer_GetMinDistance
+typedef HRESULT (*IDirectSound3DBuffer_GetMinDistance)(IDirectSound3DBuffer* this_ptr, D3DVALUE* pflMinDistance);
+
+// Function Definition: IDirectSound3DBuffer_GetMode
+typedef HRESULT (*IDirectSound3DBuffer_GetMode)(IDirectSound3DBuffer* this_ptr, LPDWORD pdwMode);
+
+// Function Definition: IDirectSound3DBuffer_GetPosition
+typedef HRESULT (*IDirectSound3DBuffer_GetPosition)(IDirectSound3DBuffer* this_ptr, D3DVECTOR* pvPosition);
+
+// Function Definition: IDirectSound3DBuffer_GetVelocity
+typedef HRESULT (*IDirectSound3DBuffer_GetVelocity)(IDirectSound3DBuffer* this_ptr, D3DVECTOR* pvVelocity);
+
+// Function Definition: IDirectSound3DBuffer_SetAllParameters
+typedef HRESULT (*IDirectSound3DBuffer_SetAllParameters)(IDirectSound3DBuffer* this_ptr, LPDS3DBUFFER pcDs3dBuffer, DWORD dwApply);
+
+// Function Definition: IDirectSound3DBuffer_SetConeAngles
+typedef HRESULT (*IDirectSound3DBuffer_SetConeAngles)(IDirectSound3DBuffer* this_ptr, DWORD dwInsideConeAngle, DWORD dwOutsideConeAngle, DWORD dwApply);
+
+// Function Definition: IDirectSound3DBuffer_SetConeOrientation
+typedef HRESULT (*IDirectSound3DBuffer_SetConeOrientation)(IDirectSound3DBuffer* this_ptr, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
+
+// Function Definition: IDirectSound3DBuffer_SetConeOutsideVolume
+typedef HRESULT (*IDirectSound3DBuffer_SetConeOutsideVolume)(IDirectSound3DBuffer* this_ptr, long lConeOutsideVolume, DWORD dwApply);
+
+// Function Definition: IDirectSound3DBuffer_SetMaxDistance
+typedef HRESULT (*IDirectSound3DBuffer_SetMaxDistance)(IDirectSound3DBuffer* this_ptr, D3DVALUE flMaxDistance, DWORD dwApply);
+
+// Function Definition: IDirectSound3DBuffer_SetMinDistance
+typedef HRESULT (*IDirectSound3DBuffer_SetMinDistance)(IDirectSound3DBuffer* this_ptr, D3DVALUE flMinDistance, DWORD dwApply);
+
+// Function Definition: IDirectSound3DBuffer_SetMode
+typedef HRESULT (*IDirectSound3DBuffer_SetMode)(IDirectSound3DBuffer* this_ptr, DWORD dwMode, DWORD dwApply);
+
+// Function Definition: IDirectSound3DBuffer_SetPosition
+typedef HRESULT (*IDirectSound3DBuffer_SetPosition)(IDirectSound3DBuffer* this_ptr, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
+
+// Function Definition: IDirectSound3DBuffer_SetVelocity
+typedef HRESULT (*IDirectSound3DBuffer_SetVelocity)(IDirectSound3DBuffer* this_ptr, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
+
 // Function Definition: IDirectSound3DListener_CommitDeferredSettings
 typedef HRESULT (*IDirectSound3DListener_CommitDeferredSettings)(IDirectSound3DListener* this_ptr);
 

@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot * this_ptr)
 // Cross-references:
-//   sound_sndmain.cpp_CSfxSlot_FUN_005a80e0 (005a80e0) at 005a8155 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (005a75e0) at 005a7970 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a80e0 (005a80e0) at 005a8155 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_00650563
 //   TerminatedCString s_SfxSlot_updatePlaybackPo_00650578
@@ -44,67 +44,58 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot 
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::updatePlaybackPos - no samplePtr");
   }
   if (((double)CONCAT44(in_stack_0000000c,in_stack_00000008) < 0.0) ||
-     ((double)*(int *)this_ptr->sample->field12_0x160 <
+     ((double)this_ptr->sample->streaming_buffer_size <
       (double)CONCAT44(in_stack_0000000c,in_stack_00000008))) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0xbc2;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::updatePlaybackPos - invalid buffer position");
   }
-  dVar1 = (double)CONCAT44(in_stack_0000000c,in_stack_00000008) - *(double *)this_ptr->field6_0x11c;
+  dVar1 = (double)CONCAT44(in_stack_0000000c,in_stack_00000008) - *(double *)this_ptr->field16_0x11c
+  ;
   if (dVar1 < 0.0) {
-    dVar1 = (double)*(int *)this_ptr->sample->field12_0x160 + dVar1;
+    dVar1 = (double)this_ptr->sample->streaming_buffer_size + dVar1;
   }
   local_20 = (undefined4)((ulonglong)dVar1 >> 0x20);
   uStack_24 = SUB84(dVar1,0);
-  if ((dVar1 < 0.0) || ((double)*(int *)this_ptr->sample->field12_0x160 + DOUBLE_0065064f < dVar1))
+  if ((dVar1 < 0.0) || ((double)this_ptr->sample->streaming_buffer_size + DOUBLE_0065064f < dVar1))
   {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0xbd0;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)",in_stack_00000008,in_stack_0000000c,
-               *(undefined4 *)this_ptr->field6_0x11c,*(undefined4 *)(this_ptr->field6_0x11c + 4),
-               uStack_24,local_20,*(undefined4 *)this_ptr->sample->field12_0x160,this_ptr->sample);
+               *(undefined4 *)this_ptr->field16_0x11c,*(undefined4 *)(this_ptr->field16_0x11c + 4),
+               uStack_24,local_20,this_ptr->sample->streaming_buffer_size,this_ptr->sample);
   }
-  if ((*(double *)((this_ptr->options).field5_0x14 + 0x4c) != *(double *)this_ptr->field6_0x11c) ||
-     ((double)CONCAT44(in_stack_0000000c,in_stack_00000008) <
-      *(double *)((this_ptr->options).field5_0x14 + 0x4c))) {
-    *(double *)((this_ptr->options).field5_0x14 + 0x4c) =
-         *(double *)((this_ptr->options).field5_0x14 + 0x4c) + dVar1;
+  if (((this_ptr->options).trigger_time != *(double *)this_ptr->field16_0x11c) ||
+     ((double)CONCAT44(in_stack_0000000c,in_stack_00000008) < (this_ptr->options).trigger_time)) {
+    (this_ptr->options).trigger_time = (this_ptr->options).trigger_time + dVar1;
   }
   else {
-    *(undefined4 *)((this_ptr->options).field5_0x14 + 0x4c) = in_stack_00000008;
-    *(undefined4 *)((this_ptr->options).field5_0x14 + 0x50) = in_stack_0000000c;
+    *(undefined4 *)&(this_ptr->options).trigger_time = in_stack_00000008;
+    *(undefined4 *)((int)&(this_ptr->options).trigger_time + 4) = in_stack_0000000c;
   }
-  if (*(double *)((this_ptr->options).field5_0x14 + 0x4c) < 0.0) {
-    (this_ptr->options).field5_0x14[0x4c] = '\0';
-    (this_ptr->options).field5_0x14[0x4d] = '\0';
-    (this_ptr->options).field5_0x14[0x4e] = '\0';
-    (this_ptr->options).field5_0x14[0x4f] = '\0';
-    (this_ptr->options).field5_0x14[0x50] = '\0';
-    (this_ptr->options).field5_0x14[0x51] = '\0';
-    (this_ptr->options).field5_0x14[0x52] = '\0';
-    (this_ptr->options).field5_0x14[0x53] = '\0';
+  if ((this_ptr->options).trigger_time < 0.0) {
+    *(undefined4 *)&(this_ptr->options).trigger_time = 0;
+    *(undefined4 *)((int)&(this_ptr->options).trigger_time + 4) = 0;
   }
   this_ptr_00 = this_ptr->sample;
-  if ((-1 < (this_ptr_00->sample_info).total_bytes) &&
-     ((double)(this_ptr_00->sample_info).total_bytes <=
-      *(double *)((this_ptr->options).field5_0x14 + 0x4c))) {
+  if ((-1 < (this_ptr_00->sample_info).sample_count) &&
+     ((double)(this_ptr_00->sample_info).sample_count <= (this_ptr->options).trigger_time)) {
     iVar2 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(this_ptr_00);
     if (iVar2 == 0) {
-      *(double *)((this_ptr->options).field5_0x14 + 0x4c) =
-           (double)(this_ptr->sample->sample_info).total_bytes;
+      (this_ptr->options).trigger_time = (double)(this_ptr->sample->sample_info).sample_count;
     }
     else {
-      iVar2 = (this_ptr->sample->sample_info).total_bytes;
+      iVar2 = (this_ptr->sample->sample_info).sample_count;
       crt_math_c_floor_FUN_005feb90((double)in_ST0);
-      *(double *)((this_ptr->options).field5_0x14 + 0x4c) =
-           *(double *)((this_ptr->options).field5_0x14 + 0x4c) -
+      (this_ptr->options).trigger_time =
+           (this_ptr->options).trigger_time -
            (double)CONCAT44(extraout_EDX,extraout_EAX) *
            (double)CONCAT44(SUB84((double)iVar2,0),uStack_14);
     }
   }
-  *(undefined4 *)this_ptr->field6_0x11c = in_stack_00000008;
-  *(undefined4 *)(this_ptr->field6_0x11c + 4) = in_stack_0000000c;
+  *(undefined4 *)this_ptr->field16_0x11c = in_stack_00000008;
+  *(undefined4 *)(this_ptr->field16_0x11c + 4) = in_stack_0000000c;
   return;
 }
 

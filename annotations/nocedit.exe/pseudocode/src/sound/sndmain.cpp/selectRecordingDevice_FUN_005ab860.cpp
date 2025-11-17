@@ -1,8 +1,8 @@
 // Name: sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860
 // Address: 005ab860
 // Address Range: [[005ab860, 005ab8c0]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860()
+// Convention: __cdecl
+// Signature: void sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860(int device_id)
 // Cross-references:
 //   sound_sndmain.cpp_FUN_005aae00 (005aae00) at 005aaea2 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005ab8d0 (005ab8d0) at 005ab8e1 [UNCONDITIONAL_CALL]
@@ -10,40 +10,37 @@
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_00650d68
 //   TerminatedCString s_selectRecordingDevice_de_00650d7d
-//   undefined4 DAT_00681b50
+//   int g_CurrentRecordingDevice = -0x1
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   sound_sndmain.cpp_FUN_005ab970
-//   sound_sndmain.cpp_GetAllRecordingDevices_FUN_005ab7e0
+//   sound_sndmain.cpp_findBestRecordingDevice_FUN_005ab7e0
 //   sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720
+//   sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970
 
 #include "nocturne.h"
 
-/* Signature: undefined1 sound_sndmain.cpp_selectRecordingDevice(undefined4 param_1) */
-
-void sound_sndmain_cpp_selectRecordingDevice_FUN_005ab860(void)
+void __cdecl sound_sndmain_cpp_selectRecordingDevice_FUN_005ab860(int device_id)
 
 {
   int iVar1;
-  int in_stack_00000004;
   
-  iVar1 = sound_sndmain_cpp_FUN_005ab970();
+  iVar1 = sound_sndmain_cpp_isRecordingSystemActive_FUN_005ab970();
   if (iVar1 != 0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x1447;
     core_main_c_displayErrorAndQuit_FUN_00506f10("selectRecordingDevice - device already open.");
   }
-  if (in_stack_00000004 < 0) {
-    in_stack_00000004 = DAT_00681b50;
+  if (device_id < 0) {
+    device_id = g_CurrentRecordingDevice;
   }
   iVar1 = sound_sndmain_cpp_getRecordingDeviceCount_FUN_005ab720();
-  if ((in_stack_00000004 < iVar1) && (-1 < in_stack_00000004)) {
-    DAT_00681b50 = in_stack_00000004;
+  if ((device_id < iVar1) && (-1 < device_id)) {
+    g_CurrentRecordingDevice = device_id;
     return;
   }
-  DAT_00681b50 = sound_sndmain_cpp_GetAllRecordingDevices_FUN_005ab7e0();
+  g_CurrentRecordingDevice = sound_sndmain_cpp_findBestRecordingDevice_FUN_005ab7e0();
   return;
 }
 
@@ -53,7 +50,7 @@ void sound_sndmain_cpp_selectRecordingDevice_FUN_005ab860(void)
 //   Label: sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860
 // 005ab861: MOV EBX,dword ptr [ESP + 0x8]
 //   XREF to: Stack[0x4] (READ)
-// 005ab865: CALL sound_sndmain.cpp_FUN_005ab970
+// 005ab865: CALL sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970
 //   XREF to: 005ab970 (UNCONDITIONAL_CALL)
 // 005ab86a: TEST EAX,EAX
 // 005ab86c: JNZ 0x005ab890
@@ -70,7 +67,7 @@ void sound_sndmain_cpp_selectRecordingDevice_FUN_005ab860(void)
 // 005ab87d: CMP EBX,EAX
 // 005ab87f: JL 0x005ab8b5
 //   XREF to: 005ab8b5 (CONDITIONAL_JUMP)
-// 005ab881: CALL sound_sndmain.cpp_GetAllRecordingDevices_FUN_005ab7e0
+// 005ab881: CALL sound_sndmain.cpp_findBestRecordingDevice_FUN_005ab7e0
 //   Label: LAB_005ab881
 //   XREF to: 005ab7e0 (UNCONDITIONAL_CALL)
 // 005ab886: MOV EBX,EAX

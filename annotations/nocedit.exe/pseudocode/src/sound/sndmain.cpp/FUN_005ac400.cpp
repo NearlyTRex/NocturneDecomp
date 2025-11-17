@@ -1,8 +1,8 @@
 // Name: sound_sndmain.cpp_FUN_005ac400
 // Address: 005ac400
 // Address Range: [[005ac400, 005ac985]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_FUN_005ac400()
+// Convention: __cdecl
+// Signature: int sound_sndmain.cpp_FUN_005ac400(void)
 // Cross-references:
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 005125ff [UNCONDITIONAL_CALL]
 // Globals:
@@ -12,8 +12,8 @@
 //   undefined4 DAT_03f5d880
 //   int g_MixBufferSize
 //   void*[8] g_ChannelPrimaryBuffers
-//   void*[8] g_ChannelSecondaryBuffersA
-//   void*[8] g_ChannelSecondaryBuffersB
+//   float*[8] g_ChannelSecondaryBuffersA
+//   float*[8] g_ChannelSecondaryBuffersB
 // Function calls:
 //   crt_math.c_floor_FUN_005feb90
 //   crt_math.c_round_FUN_005fe6b0
@@ -22,194 +22,185 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x005ac957) */
-/* Signature: undefined1 sound_sndmain.cpp_FUN_005ac400(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3) */
 
-longlong sound_sndmain_cpp_FUN_005ac400
-                   (undefined4 param_1,uint param_2,undefined4 param_3,undefined4 param_4,
-                   int param_5)
+int __cdecl sound_sndmain_cpp_FUN_005ac400(void)
 
 {
-  float fVar1;
+  int iVar1;
   float fVar2;
-  double dVar3;
-  void *pvVar4;
-  void *pvVar5;
-  float fVar6;
+  float fVar3;
+  double dVar4;
+  float fVar5;
+  double dVar6;
   double dVar7;
   double dVar8;
   double dVar9;
-  double dVar10;
-  int iVar11;
-  uint uVar12;
-  float *pfVar13;
-  undefined4 uVar14;
-  int iVar15;
+  int iVar10;
+  uint uVar11;
+  float *pfVar12;
+  undefined4 uVar13;
   undefined4 extraout_EAX;
   undefined4 extraout_EAX_00;
-  int iVar16;
+  float *pfVar14;
+  float *pfVar15;
+  uint uVar16;
   float *pfVar17;
-  uint uVar18;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
+  float *pfVar18;
   float *pfVar19;
-  float *pfVar20;
-  uint uVar21;
-  int iVar22;
-  undefined4 *puVar23;
+  uint uVar20;
+  int iVar21;
   float10 extraout_ST0;
+  float10 fVar22;
+  float10 fVar23;
   float10 fVar24;
   float10 fVar25;
   float10 fVar26;
   float10 fVar27;
   float10 fVar28;
-  float10 fVar29;
-  float10 fVar30;
   float10 extraout_ST0_00;
-  float10 fVar31;
-  double dVar32;
+  float10 fVar29;
+  double dVar30;
+  int in_stack_00000004;
   undefined8 uStack_48;
-  float *local_34;
+  int local_34;
   int local_30;
   int local_2c;
   int local_28;
   int local_18;
   
-  if ((((g_ChannelPrimaryBuffers[param_5] == (void *)0x0) ||
-       (g_ChannelSecondaryBuffersA[param_5] == (void *)0x0)) ||
-      (g_ChannelSecondaryBuffersB[param_5] == (void *)0x0)) || (g_MixBufferSize < 1)) {
-    return (ulonglong)param_2 << 0x20;
+  if ((((g_ChannelPrimaryBuffers[in_stack_00000004] == (void *)0x0) ||
+       (g_ChannelSecondaryBuffersA[in_stack_00000004] == (float *)0x0)) ||
+      (g_ChannelSecondaryBuffersB[in_stack_00000004] == (float *)0x0)) || (g_MixBufferSize < 1)) {
+    return 0;
   }
-  iVar11 = sound_sndmain_cpp_FUN_005ab6d0();
-  iVar15 = g_MixBufferSize;
-  fVar31 = extraout_ST0;
-  if (iVar11 != *(int *)(&DAT_03f5d880 + param_5 * 4)) {
-    pvVar4 = g_ChannelSecondaryBuffersA[param_5];
-    pvVar5 = g_ChannelSecondaryBuffersB[param_5];
-    puVar23 = (undefined4 *)g_ChannelPrimaryBuffers[param_5];
+  iVar10 = sound_sndmain_cpp_FUN_005ab6d0();
+  iVar1 = g_MixBufferSize;
+  fVar29 = extraout_ST0;
+  if (iVar10 != *(int *)(&DAT_03f5d880 + in_stack_00000004 * 4)) {
+    pfVar15 = g_ChannelSecondaryBuffersA[in_stack_00000004];
+    pfVar18 = g_ChannelSecondaryBuffersB[in_stack_00000004];
+    pfVar12 = (float *)g_ChannelPrimaryBuffers[in_stack_00000004];
     for (local_28 = 1; 1 << ((byte)local_28 & 0x1f) < g_MixBufferSize; local_28 = local_28 + 1) {
     }
-    uVar21 = 0;
+    uVar20 = 0;
     if (0 < g_MixBufferSize) {
       do {
-        iVar11 = 0;
-        uVar12 = 0;
-        uVar18 = uVar21;
+        iVar10 = 0;
+        uVar11 = 0;
+        uVar16 = uVar20;
         if (0 < local_28) {
           do {
-            iVar11 = iVar11 + 1;
-            uVar12 = uVar12 * 2 | uVar18 & 1;
-            uVar18 = (int)uVar18 >> 1;
-          } while (iVar11 < local_28);
+            iVar10 = iVar10 + 1;
+            uVar11 = uVar11 * 2 | uVar16 & 1;
+            uVar16 = (int)uVar16 >> 1;
+          } while (iVar10 < local_28);
         }
-        *(undefined4 *)((int)pvVar4 + uVar12 * 4) = *puVar23;
-        *(undefined4 *)(uVar12 * 4 + (int)pvVar5) = 0;
-        uVar21 = uVar21 + 1;
-        puVar23 = puVar23 + 1;
-      } while ((int)uVar21 < iVar15);
+        pfVar15[uVar11] = *pfVar12;
+        pfVar18[uVar11] = 0.0;
+        uVar20 = uVar20 + 1;
+        pfVar12 = pfVar12 + 1;
+      } while ((int)uVar20 < iVar1);
     }
     local_2c = 2;
-    if (1 < iVar15) {
+    if (1 < iVar1) {
       do {
-        iVar11 = local_2c / 2;
-        fVar24 = (float10)DOUBLE_00651017 / (float10)iVar11;
-        fVar31 = (float10)fcos(fVar24);
-        fVar25 = (float10)fsin(fVar24);
-        fVar26 = (float10)DOUBLE_0065100f;
-        fVar24 = fVar24 * fVar26;
-        fVar27 = (float10)fsin(fVar24);
-        fVar24 = (float10)fcos(fVar24);
+        iVar10 = local_2c / 2;
+        fVar22 = (float10)DOUBLE_00651017 / (float10)iVar10;
+        fVar29 = (float10)fcos(fVar22);
+        fVar23 = (float10)fsin(fVar22);
+        fVar24 = (float10)DOUBLE_0065100f;
+        fVar22 = fVar22 * fVar24;
+        fVar25 = (float10)fsin(fVar22);
+        fVar22 = (float10)fcos(fVar22);
         local_18 = 0;
-        if (0 < iVar15) {
+        if (0 < iVar1) {
           do {
-            iVar22 = 0;
-            if (0 < iVar11) {
-              fVar28 = (float10)(double)((float10)(double)fVar31 * fVar26);
-              iVar16 = local_18 * 4;
-              pfVar13 = (float *)((int)pvVar4 + iVar16);
-              pfVar19 = (float *)((int)pvVar4 + iVar16 + iVar11 * 4);
-              pfVar17 = (float *)((int)pvVar5 + iVar16);
-              pfVar20 = (float *)((int)pvVar5 + iVar16 + iVar11 * 4);
-              dVar32 = (double)fVar31;
-              dVar3 = (double)fVar25;
-              dVar9 = (double)fVar27;
-              dVar10 = (double)fVar24;
+            iVar21 = 0;
+            if (0 < iVar10) {
+              fVar26 = (float10)(double)((float10)(double)fVar29 * fVar24);
+              pfVar12 = pfVar15 + local_18;
+              pfVar14 = pfVar15 + iVar10 + local_18;
+              pfVar17 = pfVar18 + local_18;
+              pfVar19 = pfVar18 + iVar10 + local_18;
+              dVar30 = (double)fVar29;
+              dVar4 = (double)fVar23;
+              dVar8 = (double)fVar25;
+              dVar9 = (double)fVar22;
               do {
-                dVar8 = dVar3;
-                dVar7 = dVar32;
-                fVar29 = fVar28 * (float10)dVar7 - (float10)dVar10;
-                dVar32 = (double)fVar29;
-                fVar30 = fVar28 * (float10)dVar8 - (float10)dVar9;
-                dVar3 = (double)fVar30;
-                iVar22 = iVar22 + 1;
-                fVar30 = fVar29 * (float10)*pfVar19 - fVar30 * (float10)*pfVar20;
-                fVar29 = (float10)dVar3 * (float10)*pfVar19 + (float10)dVar32 * (float10)*pfVar20;
-                *pfVar19 = (float)((float10)*pfVar13 - fVar30);
-                *pfVar20 = (float)((float10)*pfVar17 - fVar29);
-                *pfVar13 = (float)((float10)*pfVar13 + fVar30);
-                *pfVar17 = (float)(fVar29 + (float10)*pfVar17);
-                pfVar13 = pfVar13 + 1;
-                pfVar19 = pfVar19 + 1;
+                dVar7 = dVar4;
+                dVar6 = dVar30;
+                fVar27 = fVar26 * (float10)dVar6 - (float10)dVar9;
+                dVar30 = (double)fVar27;
+                fVar28 = fVar26 * (float10)dVar7 - (float10)dVar8;
+                dVar4 = (double)fVar28;
+                iVar21 = iVar21 + 1;
+                fVar28 = fVar27 * (float10)*pfVar14 - fVar28 * (float10)*pfVar19;
+                fVar27 = (float10)dVar4 * (float10)*pfVar14 + (float10)dVar30 * (float10)*pfVar19;
+                *pfVar14 = (float)((float10)*pfVar12 - fVar28);
+                *pfVar19 = (float)((float10)*pfVar17 - fVar27);
+                *pfVar12 = (float)((float10)*pfVar12 + fVar28);
+                *pfVar17 = (float)(fVar27 + (float10)*pfVar17);
+                pfVar12 = pfVar12 + 1;
+                pfVar14 = pfVar14 + 1;
                 pfVar17 = pfVar17 + 1;
-                pfVar20 = pfVar20 + 1;
-                dVar9 = dVar8;
-                dVar10 = dVar7;
-              } while (iVar22 < iVar11);
+                pfVar19 = pfVar19 + 1;
+                dVar8 = dVar7;
+                dVar9 = dVar6;
+              } while (iVar21 < iVar10);
             }
             local_18 = local_18 + local_2c;
-          } while (local_18 < iVar15);
+          } while (local_18 < iVar1);
         }
         local_2c = local_2c * 2;
-      } while (local_2c <= iVar15);
+      } while (local_2c <= iVar1);
     }
-    uVar14 = sound_sndmain_cpp_FUN_005ab6d0();
-    *(undefined4 *)(&DAT_03f5d880 + param_5 * 4) = uVar14;
-    fVar31 = extraout_ST0_00;
+    uVar13 = sound_sndmain_cpp_FUN_005ab6d0();
+    *(undefined4 *)(&DAT_03f5d880 + in_stack_00000004 * 4) = uVar13;
+    fVar29 = extraout_ST0_00;
   }
-  iVar15 = g_MixBufferSize / 2;
-  pfVar13 = (float *)(iVar15 + 1);
-  dVar32 = crt_math_c_floor_FUN_005feb90((double)fVar31);
-  fVar31 = (float10)dVar32;
+  iVar10 = g_MixBufferSize / 2;
+  iVar1 = iVar10 + 1;
+  dVar30 = crt_math_c_floor_FUN_005feb90((double)fVar29);
+  fVar29 = (float10)dVar30;
   uStack_48 = (double)CONCAT44(extraout_EDX,extraout_EAX);
-  fVar25 = (float10)uStack_48;
+  fVar23 = (float10)uStack_48;
   crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,extraout_EAX));
-  local_30 = (int)ROUND(fVar25);
-  crt_math_c_floor_FUN_005feb90((double)fVar31);
+  local_30 = (int)ROUND(fVar23);
+  crt_math_c_floor_FUN_005feb90((double)fVar29);
   uStack_48 = (double)CONCAT44(extraout_EDX_00,extraout_EAX_00);
-  fVar31 = (float10)uStack_48;
-  dVar32 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX_00,extraout_EAX_00));
-  pfVar19 = (float *)(int)ROUND(fVar31);
-  pfVar17 = (float *)((ulonglong)dVar32 >> 0x20);
-  if ((local_30 < (int)pfVar13) && (pfVar17 = pfVar19, 0 < (int)pfVar19)) {
-    local_34 = pfVar19;
-    if ((int)pfVar13 <= (int)pfVar19) {
-      local_34 = pfVar13;
+  fVar29 = (float10)uStack_48;
+  crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX_00,extraout_EAX_00));
+  local_34 = (int)ROUND(fVar29);
+  if ((local_30 < iVar1) && (0 < local_34)) {
+    if (iVar1 <= local_34) {
+      local_34 = iVar1;
     }
     if (local_30 < 0) {
       local_30 = 0;
     }
-    iVar11 = (int)local_34 - local_30;
-    if ((iVar11 < 1) && (iVar11 = 1, pfVar19 = local_34, (int)pfVar13 <= (int)local_34)) {
-      local_30 = iVar15;
+    iVar21 = local_34 - local_30;
+    if ((iVar21 < 1) && (iVar21 = 1, iVar1 <= local_34)) {
+      local_30 = iVar10;
     }
-    iVar15 = 0;
-    fVar6 = 0.0;
-    if (0 < iVar11) {
-      pfVar19 = (float *)((int)g_ChannelSecondaryBuffersB[param_5] + local_30 * 4);
-      pfVar17 = (float *)((int)g_ChannelSecondaryBuffersA[param_5] + local_30 * 4);
+    iVar10 = 0;
+    fVar5 = 0.0;
+    if (0 < iVar21) {
+      pfVar18 = g_ChannelSecondaryBuffersB[in_stack_00000004] + local_30;
+      pfVar15 = g_ChannelSecondaryBuffersA[in_stack_00000004] + local_30;
       do {
-        fVar1 = *pfVar17;
-        fVar2 = *pfVar19;
-        pfVar19 = pfVar19 + 1;
-        pfVar17 = pfVar17 + 1;
-        iVar15 = iVar15 + 1;
-        fVar6 = SQRT(fVar2 * fVar2 + fVar1 * fVar1) + fVar6;
-      } while (iVar15 < iVar11);
+        fVar2 = *pfVar15;
+        fVar3 = *pfVar18;
+        pfVar18 = pfVar18 + 1;
+        pfVar15 = pfVar15 + 1;
+        iVar10 = iVar10 + 1;
+        fVar5 = SQRT(fVar3 * fVar3 + fVar2 * fVar2) + fVar5;
+      } while (iVar10 < iVar21);
     }
-    return CONCAT44(pfVar19,SQRT((fVar6 / (float)iVar11) / (float)(int)pfVar13) *
-                            (float)DOUBLE_0065100f);
+    return (int)(SQRT((fVar5 / (float)iVar21) / (float)iVar1) * (float)DOUBLE_0065100f);
   }
-  return ZEXT48(pfVar17) << 0x20;
+  return 0;
 }
 
 

@@ -945,10 +945,6 @@
       "type":"struct"
     },
     {
-      "name":"CSfxOptions",
-      "type":"struct"
-    },
-    {
       "name":"CSoundDevice_allocateSample",
       "type":"function_definition"
     },
@@ -961,6 +957,10 @@
       "type":"function_definition"
     },
     {
+      "name":"CSoundDevice_commitDeferredSettings",
+      "type":"function_definition"
+    },
+    {
       "name":"CSoundDevice_freeSample",
       "type":"function_definition"
     },
@@ -970,6 +970,10 @@
     },
     {
       "name":"CSoundDevice_hasHardware3D",
+      "type":"function_definition"
+    },
+    {
+      "name":"CSoundDevice_isSfxPlaying",
       "type":"function_definition"
     },
     {
@@ -989,6 +993,10 @@
       "type":"function_definition"
     },
     {
+      "name":"CSoundDevice_set3DListenerDistanceFactor",
+      "type":"function_definition"
+    },
+    {
       "name":"CSoundDevice_set3DListenerOrient",
       "type":"function_definition"
     },
@@ -997,15 +1005,11 @@
       "type":"function_definition"
     },
     {
-      "name":"CSoundDevice_setDopplerFactor",
+      "name":"CSoundDevice_set3DListenerVelocity",
       "type":"function_definition"
     },
     {
       "name":"CSoundDevice_setMode",
-      "type":"function_definition"
-    },
-    {
-      "name":"CSoundDevice_setRolloffFactor",
       "type":"function_definition"
     },
     {
@@ -1033,11 +1037,11 @@
       "type":"struct"
     },
     {
-      "name":"CDirectSoundDevice",
+      "name":"CSoundDevice",
       "type":"struct"
     },
     {
-      "name":"CSoundDevice",
+      "name":"CDirectSoundDevice",
       "type":"struct"
     },
     {
@@ -1138,6 +1142,14 @@
     },
     {
       "name":"CVector2i",
+      "type":"struct"
+    },
+    {
+      "name":"CVector3d",
+      "type":"struct"
+    },
+    {
+      "name":"CSfxOptions",
       "type":"struct"
     },
     {
@@ -1557,10 +1569,6 @@
       "type":"struct"
     },
     {
-      "name":"DSBUFFERDESC",
-      "type":"struct"
-    },
-    {
       "name":"DSCAPS",
       "type":"struct"
     },
@@ -1921,14 +1929,6 @@
       "type":"struct"
     },
     {
-      "name":"IDirectSound3DBuffer_vtable",
-      "type":"struct"
-    },
-    {
-      "name":"IDirectSound3DBuffer",
-      "type":"struct"
-    },
-    {
       "name":"IDirectSoundBuffer",
       "type":"struct"
     },
@@ -2189,6 +2189,58 @@
       "type":"function_definition"
     },
     {
+      "name":"IDirectSound3DBuffer_GetConeOrientation",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DBuffer_GetMaxDistance",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DBuffer_GetMinDistance",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DBuffer_GetPosition",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DBuffer_GetVelocity",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DBuffer_SetConeAngles",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DBuffer_SetConeOrientation",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DBuffer_SetConeOutsideVolume",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DBuffer_SetMaxDistance",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DBuffer_SetMinDistance",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DBuffer_SetMode",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DBuffer_SetPosition",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DBuffer_SetVelocity",
+      "type":"function_definition"
+    },
+    {
       "name":"IDirectSound3DListener_CommitDeferredSettings",
       "type":"function_definition"
     },
@@ -2266,10 +2318,6 @@
     },
     {
       "name":"LONG_PTR",
-      "type":"typedef"
-    },
-    {
-      "name":"LP",
       "type":"typedef"
     },
     {
@@ -2377,6 +2425,18 @@
       "type":"function_definition"
     },
     {
+      "name":"LPDS3DBUFFER",
+      "type":"typedef"
+    },
+    {
+      "name":"IDirectSound3DBuffer_GetAllParameters",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DBuffer_SetAllParameters",
+      "type":"function_definition"
+    },
+    {
       "name":"LPDS3DLISTENER",
       "type":"typedef"
     },
@@ -2401,14 +2461,6 @@
       "type":"typedef"
     },
     {
-      "name":"LPDSBUFFERDESC",
-      "type":"typedef"
-    },
-    {
-      "name":"IDirectSoundBuffer_Initialize",
-      "type":"function_definition"
-    },
-    {
       "name":"LPDSCAPS",
       "type":"typedef"
     },
@@ -2426,6 +2478,14 @@
     },
     {
       "name":"GetExitCodeProcess",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DBuffer_GetConeAngles",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DBuffer_GetMode",
       "type":"function_definition"
     },
     {
@@ -2471,6 +2531,18 @@
     {
       "name":"LPLONG",
       "type":"typedef"
+    },
+    {
+      "name":"IDirectSound3DBuffer_GetConeOutsideVolume",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DBuffer_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"IDirectSound3DBuffer",
+      "type":"struct"
     },
     {
       "name":"IDirectSoundBuffer_GetPan",
@@ -2535,10 +2607,6 @@
     {
       "name":"LPUNKNOWN",
       "type":"typedef"
-    },
-    {
-      "name":"IDirectSound_CreateSoundBuffer",
-      "type":"function_definition"
     },
     {
       "name":"LPVOID",
@@ -2766,6 +2834,10 @@
     },
     {
       "name":"SAnimatedTexture",
+      "type":"struct"
+    },
+    {
+      "name":"SAudioFormatDescriptor",
       "type":"struct"
     },
     {
@@ -3233,6 +3305,10 @@
       "type":"struct"
     },
     {
+      "name":"SMixBuffer",
+      "type":"struct"
+    },
+    {
       "name":"SModelPartName",
       "type":"struct"
     },
@@ -3490,6 +3566,14 @@
     },
     {
       "name":"SSpatialTreeNode",
+      "type":"struct"
+    },
+    {
+      "name":"SStereoBuffers",
+      "type":"struct"
+    },
+    {
+      "name":"SStereoGains",
       "type":"struct"
     },
     {
@@ -4349,10 +4433,6 @@
       "type":"function_definition"
     },
     {
-      "name":"IDirectSound_vtable",
-      "type":"struct"
-    },
-    {
       "name":"IKsPropertySet_Get",
       "type":"function_definition"
     },
@@ -4941,8 +5021,28 @@
       "type":"typedef"
     },
     {
+      "name":"DSBUFFERDESC",
+      "type":"struct"
+    },
+    {
       "name":"IDirectSoundBuffer_GetFormat",
       "type":"function_definition"
+    },
+    {
+      "name":"LPDSBUFFERDESC",
+      "type":"typedef"
+    },
+    {
+      "name":"IDirectSoundBuffer_Initialize",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound_CreateSoundBuffer",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound_vtable",
+      "type":"struct"
     },
     {
       "name":"WAVEFORMATEX",
@@ -8799,6 +8899,22 @@
         {
           "name":"this_ptr",
           "type":"CSoundDevice*"
+        },
+        {
+          "name":"bits_per_sample",
+          "type":"int"
+        },
+        {
+          "name":"channel_count",
+          "type":"int"
+        },
+        {
+          "name":"sample_rate",
+          "type":"int"
+        },
+        {
+          "name":"sample_count",
+          "type":"int"
         }
       ],
       "return_type":"int",
@@ -8813,6 +8929,10 @@
         {
           "name":"this_ptr",
           "type":"CSoundDevice*"
+        },
+        {
+          "name":"sample_buffer_id",
+          "type":"int"
         }
       ],
       "return_type":"int",
@@ -8836,6 +8956,20 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CSoundDevice_commitDeferredSettings",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CSoundDevice*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CSoundDevice_freeSample",
       "parameters":[
         {
@@ -8843,7 +8977,7 @@
           "type":"CSoundDevice*"
         },
         {
-          "name":"sample_handle",
+          "name":"buffer_id",
           "type":"int"
         }
       ],
@@ -8859,9 +8993,13 @@
         {
           "name":"this_ptr",
           "type":"CSoundDevice*"
+        },
+        {
+          "name":"slot",
+          "type":"CSfxSlot*"
         }
       ],
-      "return_type":"int",
+      "return_type":"double",
       "type":"function_definition"
     },
     {
@@ -8882,11 +9020,33 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CSoundDevice_isSfxPlaying",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CSoundDevice*"
+        },
+        {
+          "name":"slot",
+          "type":"CSfxSlot*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CSoundDevice_killSfx",
       "parameters":[
         {
           "name":"this_ptr",
           "type":"CSoundDevice*"
+        },
+        {
+          "name":"slot",
+          "type":"CSfxSlot*"
         }
       ],
       "return_type":"void",
@@ -8901,6 +9061,18 @@
         {
           "name":"this_ptr",
           "type":"CSoundDevice*"
+        },
+        {
+          "name":"buffer_id",
+          "type":"int"
+        },
+        {
+          "name":"offset",
+          "type":"int"
+        },
+        {
+          "name":"size",
+          "type":"int"
         }
       ],
       "return_type":"int",
@@ -8938,6 +9110,24 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CSoundDevice_set3DListenerDistanceFactor",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CSoundDevice*"
+        },
+        {
+          "name":"distance_in_feet",
+          "type":"double"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CSoundDevice_set3DListenerOrient",
       "parameters":[
         {
@@ -8945,28 +9135,28 @@
           "type":"CSoundDevice*"
         },
         {
-          "name":"fwd_x",
-          "type":"float"
+          "name":"x_front",
+          "type":"double"
         },
         {
-          "name":"fwd_y",
-          "type":"float"
+          "name":"y_front",
+          "type":"double"
         },
         {
-          "name":"fwd_z",
-          "type":"float"
+          "name":"z_front",
+          "type":"double"
         },
         {
-          "name":"up_x",
-          "type":"float"
+          "name":"x_top",
+          "type":"double"
         },
         {
-          "name":"up_y",
-          "type":"float"
+          "name":"y_top",
+          "type":"double"
         },
         {
-          "name":"up_z",
-          "type":"float"
+          "name":"z_top",
+          "type":"double"
         }
       ],
       "return_type":"void",
@@ -8984,15 +9174,15 @@
         },
         {
           "name":"x",
-          "type":"float"
+          "type":"double"
         },
         {
           "name":"y",
-          "type":"float"
+          "type":"double"
         },
         {
           "name":"z",
-          "type":"float"
+          "type":"double"
         }
       ],
       "return_type":"void",
@@ -9002,15 +9192,23 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"CSoundDevice_setDopplerFactor",
+      "name":"CSoundDevice_set3DListenerVelocity",
       "parameters":[
         {
           "name":"this_ptr",
           "type":"CSoundDevice*"
         },
         {
-          "name":"doppler",
-          "type":"float"
+          "name":"x_velocity",
+          "type":"double"
+        },
+        {
+          "name":"y_velocity",
+          "type":"double"
+        },
+        {
+          "name":"z_velocity",
+          "type":"double"
         }
       ],
       "return_type":"void",
@@ -9032,36 +9230,18 @@
         },
         {
           "name":"channels",
-          "type":"ushort"
+          "type":"int"
         },
         {
           "name":"sample_rate",
           "type":"int"
         },
         {
-          "name":"out_buffer_size",
-          "type":"uint*"
+          "name":"out_samples_per_block",
+          "type":"int*"
         }
       ],
       "return_type":"int",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__cdecl",
-      "cat":"/Nocturne/FunctionDefinition/Game",
-      "importable":true,
-      "name":"CSoundDevice_setRolloffFactor",
-      "parameters":[
-        {
-          "name":"this_ptr",
-          "type":"CSoundDevice*"
-        },
-        {
-          "name":"rolloff",
-          "type":"float"
-        }
-      ],
-      "return_type":"void",
       "type":"function_definition"
     },
     {
@@ -9073,9 +9253,17 @@
         {
           "name":"this_ptr",
           "type":"CSoundDevice*"
+        },
+        {
+          "name":"slot",
+          "type":"CSfxSlot*"
+        },
+        {
+          "name":"update_flags",
+          "type":"int"
         }
       ],
-      "return_type":"void",
+      "return_type":"int",
       "type":"function_definition"
     },
     {
@@ -9101,9 +9289,13 @@
         {
           "name":"this_ptr",
           "type":"CSoundDevice*"
+        },
+        {
+          "name":"slot",
+          "type":"CSfxSlot*"
         }
       ],
-      "return_type":"void",
+      "return_type":"int",
       "type":"function_definition"
     },
     {
@@ -9115,6 +9307,10 @@
         {
           "name":"this_ptr",
           "type":"CSoundDevice*"
+        },
+        {
+          "name":"buffer_id",
+          "type":"int"
         }
       ],
       "return_type":"int",
@@ -11500,6 +11696,398 @@
         {
           "name":"reference_surface",
           "type":"IDirectDrawSurface*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_GetAllParameters",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"pDs3dBuffer",
+          "type":"LPDS3DBUFFER"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_GetConeAngles",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"pdwInsideConeAngle",
+          "type":"LPDWORD"
+        },
+        {
+          "name":"pdwOutsideConeAngle",
+          "type":"LPDWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_GetConeOrientation",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"pvOrientation",
+          "type":"D3DVECTOR*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_GetConeOutsideVolume",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"plConeOutsideVolume",
+          "type":"LPLONG"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_GetMaxDistance",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"pflMaxDistance",
+          "type":"D3DVALUE*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_GetMinDistance",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"pflMinDistance",
+          "type":"D3DVALUE*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_GetMode",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"pdwMode",
+          "type":"LPDWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_GetPosition",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"pvPosition",
+          "type":"D3DVECTOR*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_GetVelocity",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"pvVelocity",
+          "type":"D3DVECTOR*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_SetAllParameters",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"pcDs3dBuffer",
+          "type":"LPDS3DBUFFER"
+        },
+        {
+          "name":"dwApply",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_SetConeAngles",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"dwInsideConeAngle",
+          "type":"DWORD"
+        },
+        {
+          "name":"dwOutsideConeAngle",
+          "type":"DWORD"
+        },
+        {
+          "name":"dwApply",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_SetConeOrientation",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"x",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"y",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"z",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"dwApply",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_SetConeOutsideVolume",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"lConeOutsideVolume",
+          "type":"long"
+        },
+        {
+          "name":"dwApply",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_SetMaxDistance",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"flMaxDistance",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"dwApply",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_SetMinDistance",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"flMinDistance",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"dwApply",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_SetMode",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"dwMode",
+          "type":"DWORD"
+        },
+        {
+          "name":"dwApply",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_SetPosition",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"x",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"y",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"z",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"dwApply",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DBuffer_SetVelocity",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DBuffer*"
+        },
+        {
+          "name":"x",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"y",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"z",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"dwApply",
+          "type":"DWORD"
         }
       ],
       "return_type":"HRESULT",
@@ -22141,9 +22729,9 @@
       "fields":[
         {
           "len":4,
-          "name":"vtable",
+          "name":"base",
           "offset":0,
-          "type":"CSoundDeviceFull_vtable*"
+          "type":"CSoundDevice"
         }
       ],
       "importable":true,
@@ -30643,7 +31231,7 @@
         },
         {
           "len":4,
-          "name":"field_256",
+          "name":"streaming_flag",
           "offset":256,
           "type":"int"
         },
@@ -30667,21 +31255,21 @@
         },
         {
           "len":4,
-          "name":"total_bytes",
+          "name":"sample_count",
           "offset":272,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_276",
+          "name":"reference_distance",
           "offset":276,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
-          "name":"field_280",
+          "name":"reference_volume_distance",
           "offset":280,
-          "type":"int"
+          "type":"float"
         }
       ],
       "importable":true,
@@ -30879,34 +31467,88 @@
           "type":"int"
         },
         {
-          "len":4,
-          "name":"sample_data",
-          "offset":4,
-          "type":"void*"
-        },
-        {
-          "len":4,
-          "name":"volume",
-          "offset":8,
-          "type":"int"
-        },
-        {
-          "len":4,
+          "len":24,
           "name":"position",
-          "offset":12,
+          "offset":4,
+          "type":"CVector3d"
+        },
+        {
+          "len":4,
+          "name":"position_source_ptr",
+          "offset":28,
+          "type":"CVector3d*"
+        },
+        {
+          "len":4,
+          "name":"position_format",
+          "offset":32,
+          "type":"int"
+        },
+        {
+          "len":24,
+          "name":"velocity",
+          "offset":36,
+          "type":"CVector3d"
+        },
+        {
+          "len":4,
+          "name":"velocity_source_ptr",
+          "offset":60,
+          "type":"CVector3d*"
+        },
+        {
+          "len":4,
+          "name":"velocity_format",
+          "offset":64,
           "type":"int"
         },
         {
           "len":4,
-          "name":"loop_count",
-          "offset":16,
+          "name":"current_volume",
+          "offset":68,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"base_frequency",
+          "offset":72,
+          "type":"float"
+        },
+        {
+          "len":8,
+          "name":"delay_remaining",
+          "offset":76,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"userdata",
+          "offset":84,
+          "type":"int[2]"
+        },
+        {
+          "len":4,
+          "name":"flags",
+          "offset":92,
+          "type":"uint"
+        },
+        {
+          "len":8,
+          "name":"trigger_time",
+          "offset":96,
+          "type":"double"
+        },
+        {
+          "len":4,
+          "name":"trigger_id",
+          "offset":104,
           "type":"int"
         },
         {
-          "len":92,
-          "name":"field_20",
-          "offset":20,
-          "type":"char[92]"
+          "len":4,
+          "name":"field_108",
+          "offset":108,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -30928,9 +31570,9 @@
         },
         {
           "len":4,
-          "name":"playback_mode",
+          "name":"max_distance",
           "offset":284,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
@@ -30940,13 +31582,13 @@
         },
         {
           "len":4,
-          "name":"field_292",
+          "name":"loop_flags",
           "offset":292,
           "type":"int"
         },
         {
           "len":4,
-          "name":"expected_size",
+          "name":"loop_length",
           "offset":296,
           "type":"int"
         },
@@ -30958,7 +31600,7 @@
         },
         {
           "len":4,
-          "name":"loop_counter",
+          "name":"loop_start_marker",
           "offset":316,
           "type":"int"
         },
@@ -30970,7 +31612,7 @@
         },
         {
           "len":4,
-          "name":"field_336",
+          "name":"taken",
           "offset":336,
           "type":"int"
         },
@@ -30984,7 +31626,7 @@
           "len":4,
           "name":"buffer_id",
           "offset":344,
-          "type":"void*"
+          "type":"int"
         },
         {
           "len":4,
@@ -30993,10 +31635,22 @@
           "type":"int"
         },
         {
-          "len":12,
-          "name":"field_352",
+          "len":4,
+          "name":"streaming_buffer_size",
           "offset":352,
-          "type":"char[12]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_356",
+          "offset":356,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_360",
+          "offset":360,
+          "type":"int"
         },
         {
           "len":4,
@@ -31006,7 +31660,7 @@
         },
         {
           "len":4,
-          "name":"field_368",
+          "name":"file_offset",
           "offset":368,
           "type":"int"
         },
@@ -31048,13 +31702,13 @@
         },
         {
           "len":4,
-          "name":"dsound_buffer",
+          "name":"hardware_buffer_handle",
           "offset":112,
-          "type":"void*"
+          "type":"int"
         },
         {
           "len":4,
-          "name":"field_116",
+          "name":"playback_state",
           "offset":116,
           "type":"int"
         },
@@ -31065,10 +31719,70 @@
           "type":"CSfxSample*"
         },
         {
-          "len":156,
-          "name":"field_124",
+          "len":4,
+          "name":"effective_frequency",
           "offset":124,
-          "type":"char[156]"
+          "type":"float"
+        },
+        {
+          "len":32,
+          "name":"distance_to_speakers",
+          "offset":128,
+          "type":"float[8]"
+        },
+        {
+          "len":32,
+          "name":"channel_volumes",
+          "offset":160,
+          "type":"float[8]"
+        },
+        {
+          "len":32,
+          "name":"channel_target_buffer_offsets",
+          "offset":192,
+          "type":"int[8]"
+        },
+        {
+          "len":32,
+          "name":"channel_current_buffer_offsets",
+          "offset":224,
+          "type":"int[8]"
+        },
+        {
+          "len":4,
+          "name":"reference_distance",
+          "offset":256,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"min_distance",
+          "offset":260,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"max_distance",
+          "offset":264,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"fade_target_volume",
+          "offset":268,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"fade_time_remaining",
+          "offset":272,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"stop_after_fade",
+          "offset":276,
+          "type":"int"
         },
         {
           "len":4,
@@ -31600,21 +32314,21 @@
         },
         {
           "len":4,
-          "name":"setDopplerFactor",
+          "name":"set3DListenerVelocity",
           "offset":32,
-          "type":"CSoundDevice_setDopplerFactor*"
+          "type":"CSoundDevice_set3DListenerVelocity*"
         },
         {
           "len":4,
-          "name":"setRolloffFactor",
+          "name":"set3DListenerDistanceFactor",
           "offset":36,
-          "type":"CSoundDevice_setRolloffFactor*"
+          "type":"CSoundDevice_set3DListenerDistanceFactor*"
         },
         {
           "len":4,
-          "name":"func11",
+          "name":"commitDeferredSettings",
           "offset":40,
-          "type":"void*"
+          "type":"CSoundDevice_commitDeferredSettings*"
         },
         {
           "len":4,
@@ -31672,9 +32386,9 @@
         },
         {
           "len":4,
-          "name":"func21",
+          "name":"isSfxPlaying",
           "offset":80,
-          "type":"void*"
+          "type":"CSoundDevice_isSfxPlaying*"
         }
       ],
       "importable":true,
@@ -32901,6 +33615,36 @@
       "desc":"",
       "fields":[
         {
+          "len":8,
+          "name":"x",
+          "offset":0,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"y",
+          "offset":8,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"z",
+          "offset":16,
+          "type":"double"
+        }
+      ],
+      "importable":true,
+      "len":24,
+      "name":"CVector3d",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":4,
           "name":"x",
           "offset":0,
@@ -33268,9 +34012,9 @@
       "fields":[
         {
           "len":4,
-          "name":"vtable",
+          "name":"base",
           "offset":0,
-          "type":"CSoundDeviceBasic_vtable*"
+          "type":"CSoundDevice"
         }
       ],
       "importable":true,
@@ -33286,9 +34030,9 @@
       "fields":[
         {
           "len":4,
-          "name":"vtable",
+          "name":"base",
           "offset":0,
-          "type":"CSoundDeviceFull_vtable*"
+          "type":"CSoundDevice"
         }
       ],
       "importable":true,
@@ -34252,31 +34996,37 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"dwSize",
           "offset":0,
           "type":"DWORD"
         },
         {
           "len":4,
-          "name":"field_4",
+          "name":"dwFlags",
           "offset":4,
           "type":"DWORD"
         },
         {
           "len":4,
-          "name":"field_8",
+          "name":"dwBufferBytes",
           "offset":8,
           "type":"DWORD"
         },
         {
           "len":4,
-          "name":"field_12",
+          "name":"dwReserved",
           "offset":12,
           "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"lpwfxFormat",
+          "offset":16,
+          "type":"LPWAVEFORMATEX"
         }
       ],
       "importable":true,
-      "len":16,
+      "len":20,
       "name":"DSBUFFERDESC",
       "pack":false,
       "type":"struct"
@@ -36148,13 +36898,133 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"QueryInterface",
           "offset":0,
-          "type":"void*"
+          "type":"IUnknown_QueryInterface*"
+        },
+        {
+          "len":4,
+          "name":"AddRef",
+          "offset":4,
+          "type":"IUnknown_AddRef*"
+        },
+        {
+          "len":4,
+          "name":"Release",
+          "offset":8,
+          "type":"IUnknown_Release*"
+        },
+        {
+          "len":4,
+          "name":"GetAllParameters",
+          "offset":12,
+          "type":"IDirectSound3DBuffer_GetAllParameters*"
+        },
+        {
+          "len":4,
+          "name":"GetConeAngles",
+          "offset":16,
+          "type":"IDirectSound3DBuffer_GetConeAngles*"
+        },
+        {
+          "len":4,
+          "name":"GetConeOrientation",
+          "offset":20,
+          "type":"IDirectSound3DBuffer_GetConeOrientation*"
+        },
+        {
+          "len":4,
+          "name":"GetConeOutsideVolume",
+          "offset":24,
+          "type":"IDirectSound3DBuffer_GetConeOutsideVolume*"
+        },
+        {
+          "len":4,
+          "name":"GetMaxDistance",
+          "offset":28,
+          "type":"IDirectSound3DBuffer_GetMaxDistance*"
+        },
+        {
+          "len":4,
+          "name":"GetMinDistance",
+          "offset":32,
+          "type":"IDirectSound3DBuffer_GetMinDistance*"
+        },
+        {
+          "len":4,
+          "name":"GetMode",
+          "offset":36,
+          "type":"IDirectSound3DBuffer_GetMode*"
+        },
+        {
+          "len":4,
+          "name":"GetPosition",
+          "offset":40,
+          "type":"IDirectSound3DBuffer_GetPosition*"
+        },
+        {
+          "len":4,
+          "name":"GetVelocity",
+          "offset":44,
+          "type":"IDirectSound3DBuffer_GetVelocity*"
+        },
+        {
+          "len":4,
+          "name":"SetAllParameters",
+          "offset":48,
+          "type":"IDirectSound3DBuffer_SetAllParameters*"
+        },
+        {
+          "len":4,
+          "name":"SetConeAngles",
+          "offset":52,
+          "type":"IDirectSound3DBuffer_SetConeAngles*"
+        },
+        {
+          "len":4,
+          "name":"SetConeOrientation",
+          "offset":56,
+          "type":"IDirectSound3DBuffer_SetConeOrientation*"
+        },
+        {
+          "len":4,
+          "name":"SetConeOutsideVolume",
+          "offset":60,
+          "type":"IDirectSound3DBuffer_SetConeOutsideVolume*"
+        },
+        {
+          "len":4,
+          "name":"SetMaxDistance",
+          "offset":64,
+          "type":"IDirectSound3DBuffer_SetMaxDistance*"
+        },
+        {
+          "len":4,
+          "name":"SetMinDistance",
+          "offset":68,
+          "type":"IDirectSound3DBuffer_SetMinDistance*"
+        },
+        {
+          "len":4,
+          "name":"SetMode",
+          "offset":72,
+          "type":"IDirectSound3DBuffer_SetMode*"
+        },
+        {
+          "len":4,
+          "name":"SetPosition",
+          "offset":76,
+          "type":"IDirectSound3DBuffer_SetPosition*"
+        },
+        {
+          "len":4,
+          "name":"SetVelocity",
+          "offset":80,
+          "type":"IDirectSound3DBuffer_SetVelocity*"
         }
       ],
       "importable":true,
-      "len":4,
+      "len":84,
       "name":"IDirectSound3DBuffer_vtable",
       "pack":false,
       "type":"struct"
@@ -38030,6 +38900,42 @@
       "importable":true,
       "len":28,
       "name":"SAnimatedTexture",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"format_flags",
+          "offset":0,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"bits_per_sample",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"channels",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"sample_rate",
+          "offset":12,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"SAudioFormatDescriptor",
       "pack":false,
       "type":"struct"
     },
@@ -41147,6 +42053,42 @@
       "desc":"",
       "fields":[
         {
+          "len":32,
+          "name":"channel_buffers",
+          "offset":0,
+          "type":"float*[8]"
+        },
+        {
+          "len":4,
+          "name":"num_output_samples",
+          "offset":32,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"num_channels",
+          "offset":36,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"output_sample_rate",
+          "offset":40,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":44,
+      "name":"SMixBuffer",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":20,
           "name":"name",
           "offset":0,
@@ -43538,6 +44480,54 @@
       "importable":true,
       "len":32,
       "name":"SSpatialTreeNode",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"left_channel",
+          "offset":0,
+          "type":"float*"
+        },
+        {
+          "len":4,
+          "name":"right_channel",
+          "offset":4,
+          "type":"float*"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"SStereoBuffers",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"left_gain",
+          "offset":0,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"right_gain",
+          "offset":4,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"SStereoGains",
       "pack":false,
       "type":"struct"
     },
@@ -47615,13 +48605,6 @@
       "type":"typedef"
     },
     {
-      "base":"DS3DBUFFER*",
-      "cat":"/Nocturne/Typedef/System/dsound.h",
-      "importable":true,
-      "name":"LP",
-      "type":"typedef"
-    },
-    {
       "base":"LONG_PTR",
       "cat":"/Nocturne/Typedef/System/windef.h",
       "importable":true,
@@ -47717,6 +48700,13 @@
       "cat":"/Nocturne/Typedef/System/dsound.h",
       "importable":true,
       "name":"LPDIRECTSOUNDBUFFER",
+      "type":"typedef"
+    },
+    {
+      "base":"DS3DBUFFER*",
+      "cat":"/Nocturne/Typedef/System/dsound.h",
+      "importable":true,
+      "name":"LPDS3DBUFFER",
       "type":"typedef"
     },
     {
