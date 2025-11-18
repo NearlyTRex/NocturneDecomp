@@ -13,8 +13,8 @@
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_bat.cpp_FUN_00414ce0
 //   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-//   sound_sndmain.cpp_FUN_005a9660
-//   sound_sndmain.cpp_FUN_005aa290
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
+//   sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290
 
 #include "nocturne.h"
 
@@ -24,23 +24,22 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr)
   CKeyFramedModel *pCVar1;
   int iVar2;
   undefined4 uVar3;
-  float fVar4;
   float in_stack_00000008;
-  float local_34;
+  float fVar4;
   
   fVar4 = (this_ptr->base_actor).location.position.z;
   this_ptr->param = this_ptr->course_speed * in_stack_00000008 + this_ptr->param;
   core_bat_cpp_FUN_00414ce0();
-  local_34 = (((this_ptr->base_actor).location.position.y - fVar4) * (float)DOUBLE_00615366) /
-             in_stack_00000008 + (float)DOUBLE_0061536e;
-  if (local_34 < (float)DOUBLE_00615376) {
-    local_34 = 10.0;
+  fVar4 = (((this_ptr->base_actor).location.position.y - fVar4) * (float)DOUBLE_00615366) /
+          in_stack_00000008 + (float)DOUBLE_0061536e;
+  if (fVar4 < (float)DOUBLE_00615376) {
+    fVar4 = 10.0;
   }
-  if ((float)DOUBLE_0061537e < local_34) {
-    local_34 = 60.0;
+  if ((float)DOUBLE_0061537e < fVar4) {
+    fVar4 = 60.0;
   }
   *(float *)this_ptr->field6_0x310 =
-       (local_34 - *(float *)this_ptr->field6_0x310) * (float)DOUBLE_00615386 +
+       (fVar4 - *(float *)this_ptr->field6_0x310) * (float)DOUBLE_00615386 +
        *(float *)this_ptr->field6_0x310;
   *(float *)(this_ptr->course_filename + 0x2c) =
        in_stack_00000008 * *(float *)this_ptr->field6_0x310 * this_ptr->speed +
@@ -61,9 +60,12 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr)
   if ((this_ptr->unused[0] != '\0') &&
      (fVar4 = *(float *)(this_ptr->field10_0x380 + 4) - in_stack_00000008,
      *(float *)(this_ptr->field10_0x380 + 4) = fVar4, fVar4 <= 0.0)) {
-    iVar2 = sound_sndmain_cpp_FUN_005a9660();
+    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)this_ptr->field10_0x380);
     if (iVar2 == 0) {
-      iVar2 = sound_sndmain_cpp_FUN_005aa290();
+      iVar2 = sound_sndmain_cpp_isWithinListenerRadius_FUN_005aa290
+                        ((double)(this_ptr->base_actor).location.position.x,
+                         (double)(this_ptr->base_actor).location.position.y,
+                         (double)(this_ptr->base_actor).location.position.z,50.0);
       if (iVar2 != 0) {
         uVar3 = (*((this_ptr->base_actor).vtable)->playAmbientSound)
                           (&this_ptr->base_actor,this_ptr->unused);
@@ -207,7 +209,7 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr)
 // 00414b64: MOV ESI,dword ptr [EBX + 0x380]
 //   Label: LAB_00414b64
 // 00414b6a: PUSH ESI
-// 00414b6b: CALL sound_sndmain.cpp_FUN_005a9660
+// 00414b6b: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00414b70: ADD ESP,0x4
 // 00414b73: TEST EAX,EAX
@@ -224,7 +226,7 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr)
 // 00414b8f: SUB ESP,0x8
 // 00414b92: FLD float ptr [EBX + 0x20]
 // 00414b95: FSTP double ptr [ESP]
-// 00414b98: CALL sound_sndmain.cpp_FUN_005aa290
+// 00414b98: CALL sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290
 //   XREF to: 005aa290 (UNCONDITIONAL_CALL)
 // 00414b9d: ADD ESP,0x20
 // 00414ba0: TEST EAX,EAX

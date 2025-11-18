@@ -9,7 +9,7 @@
 //   core_sound.cpp_CSound_FUN_005b3ba0 (005b3ba0) at 005b3bb1 [UNCONDITIONAL_CALL]
 //   core_tommygun.cpp_CTommyGun_process_FUN_005de360 (005de360) at 005de4c4 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSample_ctor_FUN_005a60f0 (005a60f0) at 005a60f5 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005ad3b0 (005ad3b0) at 005ad3c2 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0 (005ad3b0) at 005ad3c2 [UNCONDITIONAL_CALL]
 // Globals:
 //   float g_SoundReferenceDistanceConstant = 20
 //   float FLOAT_00663160 = 10000

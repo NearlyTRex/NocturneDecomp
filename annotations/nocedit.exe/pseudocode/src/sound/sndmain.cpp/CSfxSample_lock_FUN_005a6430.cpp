@@ -60,7 +60,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(CSfxSample *this_ptr)
   }
   if (pvVar2 != (void *)0x0) {
     this_ptr->sound_buffer = in_stack_0000000c;
-    this_ptr->field18_0x178 = in_stack_00000008;
+    this_ptr->field24_0x178 = in_stack_00000008;
   }
   return (int)pvVar2;
 }

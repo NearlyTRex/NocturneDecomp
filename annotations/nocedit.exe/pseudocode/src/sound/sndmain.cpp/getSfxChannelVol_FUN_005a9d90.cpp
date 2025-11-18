@@ -18,7 +18,7 @@
 //   TerminatedCString s_getSfxChannelVol_invalid_00650a47
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   undefined4 DAT_03f688a8
+//   float[32] g_SfxChannelVolumes
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 
@@ -28,12 +28,12 @@ float __cdecl sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(int channel_index)
 
 {
   if ((-1 < channel_index) && (channel_index < 0x20)) {
-    return *(float *)(&DAT_03f688a8 + channel_index * 4);
+    return g_SfxChannelVolumes[channel_index];
   }
   g_CurrentFilename = "..\\sound\\sndmain.cpp";
   g_CurrentLineNumber = 0xf96;
   core_main_c_displayErrorAndQuit_FUN_00506f10("getSfxChannelVol - invalid channel index: %d",channel_index);
-  return *(float *)(&DAT_03f688a8 + channel_index * 4);
+  return g_SfxChannelVolumes[channel_index];
 }
 
 

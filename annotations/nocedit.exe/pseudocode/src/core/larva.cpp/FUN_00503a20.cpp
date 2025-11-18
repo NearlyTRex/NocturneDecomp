@@ -18,8 +18,8 @@
 //   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   crt_stdio.c_sprintf_FUN_005fdbd0
-//   sound_sndmain.cpp_FUN_005a9660
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -49,8 +49,8 @@ void core_larva_cpp_FUN_00503a20(void)
            ((float)in_stack_00000004[0x1a].next_actor - *(float *)((int)in_stack_00000008 + 4));
   in_stack_00000004[0x1a].next_actor = pCVar1;
   if (0.0 < (float)pCVar1) {
-    sound_sndmain_cpp_FUN_005a9c40();
-    iVar5 = sound_sndmain_cpp_FUN_005a9660();
+    sound_sndmain_cpp_killSfx_FUN_005a9c40((uint)in_stack_00000004[0x8d].next_actor);
+    iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr[0x8d].field26_0x148);
     if (iVar5 == 0) {
       if ((float)DOUBLE_00630ffb <= *(float *)(this_ptr[0x1c].create_event + 4)) {
         if (DOUBLE_00631003 <= (double)*(float *)(this_ptr[0x1c].create_event + 4)) {
@@ -79,8 +79,8 @@ void core_larva_cpp_FUN_00503a20(void)
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 ((CMotionController *)pCVar1,4,1);
     }
-    sound_sndmain_cpp_FUN_005a9c40();
-    sound_sndmain_cpp_FUN_005a9c40();
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr[0x8d].field26_0x148);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40((uint)this_ptr[0x8d].next_actor);
     if ((float)DOUBLE_00630ffb <= *(float *)(this_ptr[0x1c].create_event + 4)) {
       if (DOUBLE_00631003 <= (double)*(float *)(this_ptr[0x1c].create_event + 4)) {
         pcVar4 = "big";
@@ -151,12 +151,12 @@ void core_larva_cpp_FUN_00503a20(void)
 // 00503a84: MOV ESI,dword ptr [EBX + 0xbec0]
 //   Label: LAB_00503a84
 // 00503a8a: PUSH ESI
-// 00503a8b: CALL sound_sndmain.cpp_FUN_005a9c40
+// 00503a8b: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 00503a90: ADD ESP,0x4
 // 00503a93: MOV EAX,dword ptr [EBX + 0xbec4]
 // 00503a99: PUSH EAX
-// 00503a9a: CALL sound_sndmain.cpp_FUN_005a9c40
+// 00503a9a: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 00503a9f: ADD ESP,0x4
 // 00503aa2: MOV EAX,dword ptr [EBX + 0x261c]
@@ -250,12 +250,12 @@ void core_larva_cpp_FUN_00503a20(void)
 // 00503b58: MOV EDX,dword ptr [EBX + 0xbec4]
 //   Label: LAB_00503b58
 // 00503b5e: PUSH EDX
-// 00503b5f: CALL sound_sndmain.cpp_FUN_005a9c40
+// 00503b5f: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 00503b64: ADD ESP,0x4
 // 00503b67: MOV ECX,dword ptr [EBX + 0xbec0]
 // 00503b6d: PUSH ECX
-// 00503b6e: CALL sound_sndmain.cpp_FUN_005a9660
+// 00503b6e: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00503b73: ADD ESP,0x4
 // 00503b76: TEST EAX,EAX

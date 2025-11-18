@@ -32,7 +32,7 @@
 //   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004a35b0 (004a35b0) at 004a3694 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0 (004a37b0) at 004a3894 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0 (004a39e0) at 004a3a40 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_parseConfigFile_FUN_005a45c0 (005a45c0) at 005a4657 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0 (005a45c0) at 005a4657 [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_file.c_makepath_FUN_005febfc
 

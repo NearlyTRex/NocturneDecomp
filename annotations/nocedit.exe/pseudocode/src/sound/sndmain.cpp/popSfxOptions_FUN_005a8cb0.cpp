@@ -30,11 +30,11 @@
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bdc83 [UNCONDITIONAL_CALL]
 //   core_tommygun.cpp_CTommyGun_process_FUN_005de360 (005de360) at 005de560 [UNCONDITIONAL_CALL]
 //   core_vehicle.cpp_FUN_005e8b50 (005e8b50) at 005e8b8e [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9550 (005a9550) at 005a956f [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9580 (005a9580) at 005a95c8 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a95e0 (005a95e0) at 005a960c [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9620 (005a9620) at 005a964c [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005ad3b0 (005ad3b0) at 005ad48c [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_startNonPositionalSfx_FUN_005a9550 (005a9550) at 005a956f [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_startSfxAtStaticPosition_FUN_005a9580 (005a9580) at 005a95c8 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_startSfxTrackedDoublePosition_FUN_005a9620 (005a9620) at 005a964c [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_startSfxTrackedFloatPosition_FUN_005a95e0 (005a95e0) at 005a960c [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0 (005ad3b0) at 005ad48c [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_006508cc
 //   TerminatedCString s_popSfxOptions_stack_empt_006508e1

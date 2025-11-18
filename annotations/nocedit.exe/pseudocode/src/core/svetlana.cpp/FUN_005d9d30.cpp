@@ -17,8 +17,8 @@
 //   core_gore.cpp_CGore_FUN_004ee030
 //   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   sound_sndmain.cpp_FUN_005a9660
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -61,7 +61,8 @@ void core_svetlana_cpp_FUN_005d9d30(void)
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr->motion_controller,8,1);
         core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);
-        sound_sndmain_cpp_FUN_005a9c40();
+        sound_sndmain_cpp_killSfx_FUN_005a9c40
+                  (*(uint *)(in_stack_00000004[0xd].cloth_data + 0x2650));
         uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                           (&in_stack_00000004->base_actor,"svet-die.wav");
         *(undefined4 *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar3;
@@ -79,7 +80,8 @@ void core_svetlana_cpp_FUN_005d9d30(void)
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&this_ptr->motion_controller,iVar4,1);
-    iVar4 = sound_sndmain_cpp_FUN_005a9660();
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                      (*(uint *)(in_stack_00000004[0xd].cloth_data + 0x2650));
     if (iVar4 == 0) {
       uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                         (&in_stack_00000004->base_actor,"svet-hurt?.wav");
@@ -154,7 +156,7 @@ void core_svetlana_cpp_FUN_005d9d30(void)
 // 005d9dbf: ADD ESP,0xc
 // 005d9dc2: MOV EAX,dword ptr [EBX + 0x9f8bc]
 // 005d9dc8: PUSH EAX
-// 005d9dc9: CALL sound_sndmain.cpp_FUN_005a9660
+// 005d9dc9: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005d9dce: ADD ESP,0x4
 // 005d9dd1: TEST EAX,EAX
@@ -217,7 +219,7 @@ void core_svetlana_cpp_FUN_005d9d30(void)
 // 005d9e54: ADD ESP,0x14
 // 005d9e57: MOV ECX,dword ptr [EBX + 0x9f8bc]
 // 005d9e5d: PUSH ECX
-// 005d9e5e: CALL sound_sndmain.cpp_FUN_005a9c40
+// 005d9e5e: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005d9e63: ADD ESP,0x4
 // 005d9e66: PUSH 0x654b69

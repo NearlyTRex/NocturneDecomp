@@ -14,8 +14,8 @@
 //   core_mobster.cpp_FUN_00527380
 //   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   sound_sndmain.cpp_FUN_005a9660
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -34,8 +34,8 @@ void core_mobster_cpp_FUN_00527740(void)
   int in_stack_00000004;
   int in_stack_00000008;
   
-  sound_sndmain_cpp_FUN_005a9c40();
-  sound_sndmain_cpp_FUN_005a9c40();
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004 + 0xbf5c));
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004 + 0xbf54));
   core_mobster_cpp_FUN_00527380();
   if ((*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbf64) * 4) == 0) &&
      (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbf6c) * 4) == 0)) {
@@ -51,7 +51,7 @@ void core_mobster_cpp_FUN_00527740(void)
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr,4,1);
       (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x13c))();
       if (*(int *)(in_stack_00000004 + 0xbf58) == 0) {
-        sound_sndmain_cpp_FUN_005a9c40();
+        sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004 + 0xbf50));
         uVar5 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
         *(undefined4 *)(in_stack_00000004 + 0xbf58) = 1;
         *(undefined4 *)(in_stack_00000004 + 0xbf50) = uVar5;
@@ -71,7 +71,7 @@ LAB_005277e1:
     iVar3 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
     if (iVar3 != 0) goto LAB_005277e1;
   }
-  iVar3 = sound_sndmain_cpp_FUN_005a9660();
+  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(in_stack_00000004 + 0xbf50));
   if (iVar3 == 0) {
     uVar5 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
     *(undefined4 *)(in_stack_00000004 + 0xbf50) = uVar5;
@@ -96,12 +96,12 @@ LAB_00527805:
 //   XREF to: Stack[0x8] (READ)
 // 0052774c: MOV EDX,dword ptr [EBX + 0xbf5c]
 // 00527752: PUSH EDX
-// 00527753: CALL sound_sndmain.cpp_FUN_005a9c40
+// 00527753: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 00527758: ADD ESP,0x4
 // 0052775b: MOV ECX,dword ptr [EBX + 0xbf54]
 // 00527761: PUSH ECX
-// 00527762: CALL sound_sndmain.cpp_FUN_005a9c40
+// 00527762: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 00527767: ADD ESP,0x4
 // 0052776a: PUSH EDI
@@ -158,7 +158,7 @@ LAB_00527805:
 // 005277ee: MOV ECX,dword ptr [EBX + 0xbf50]
 //   Label: LAB_005277ee
 // 005277f4: PUSH ECX
-// 005277f5: CALL sound_sndmain.cpp_FUN_005a9660
+// 005277f5: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005277fa: ADD ESP,0x4
 // 005277fd: TEST EAX,EAX
@@ -206,7 +206,7 @@ LAB_00527805:
 //   XREF to: 00527805 (CONDITIONAL_JUMP)
 // 0052785f: MOV EBP,dword ptr [EBX + 0xbf50]
 // 00527865: PUSH EBP
-// 00527866: CALL sound_sndmain.cpp_FUN_005a9c40
+// 00527866: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 0052786b: ADD ESP,0x4
 // 0052786e: PUSH 0x6399d6

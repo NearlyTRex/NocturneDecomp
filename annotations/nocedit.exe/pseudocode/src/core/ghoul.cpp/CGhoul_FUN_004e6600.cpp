@@ -114,7 +114,7 @@
 //   crt_math.c_round_FUN_005fe6b0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   engine_console.cpp_CConsole_printf_FUN_00441890
-//   sound_sndmain.cpp_FUN_005a9660
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 
 #include "nocturne.h"
 
@@ -483,8 +483,13 @@ switchD_004e6f9a_caseD_e:
           if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) != 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(in_stack_00000004->base_character).model.motion_controller,1,1);
-            iVar12 = sound_sndmain_cpp_FUN_005a9660();
-            if ((iVar12 == 0) || (iVar12 = sound_sndmain_cpp_FUN_005a9660(), iVar12 == 0)) {
+            iVar12 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                               ((uint)in_stack_00000004[1].base_character.base_actor.orient_matrix.m
+                                      [2].y);
+            if ((iVar12 == 0) ||
+               (iVar12 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                                   ((uint)in_stack_00000004[1].base_character.base_actor.
+                                          orient_matrix.m[2].z), iVar12 == 0)) {
               fVar15 = (float)(*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
                                         ((CDemonActor *)in_stack_00000004,"ghoul-alert-?.wav"
                                         );
@@ -2848,7 +2853,7 @@ LAB_004e6754:
 // 004e75c2: ADD ESP,0xc
 // 004e75c5: MOV EAX,dword ptr [EBX + 0xbf0c]
 // 004e75cb: PUSH EAX
-// 004e75cc: CALL sound_sndmain.cpp_FUN_005a9660
+// 004e75cc: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004e75d1: ADD ESP,0x4
 // 004e75d4: TEST EAX,EAX
@@ -2856,7 +2861,7 @@ LAB_004e6754:
 //   XREF to: 004e75ef (CONDITIONAL_JUMP)
 // 004e75d8: MOV EDX,dword ptr [EBX + 0xbf10]
 // 004e75de: PUSH EDX
-// 004e75df: CALL sound_sndmain.cpp_FUN_005a9660
+// 004e75df: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004e75e4: ADD ESP,0x4
 // 004e75e7: TEST EAX,EAX

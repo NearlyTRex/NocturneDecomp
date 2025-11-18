@@ -55,7 +55,7 @@
 //   core_trigger.cpp_FUN_005e0ac0
 //   core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00
 //   engine_console.cpp_CConsole_printf_FUN_00441890
-//   sound_sndmain.cpp_FUN_005a9ae0
+//   sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0
 
 #include "nocturne.h"
 
@@ -177,7 +177,8 @@ undefined4 core_lightgun_cpp_FUN_00505c70(void)
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
       core_sound_cpp_CSound_FUN_005b3a40
                 (g_CSoundPtr,in_stack_00000004->actor_name,"cre-fire.wav");
-      sound_sndmain_cpp_FUN_005a9ae0();
+      sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0
+                (*(uint *)(in_stack_00000004[4].actor_name + 0x1c),DAT_00660a48);
       in_stack_00000004[4].actor_name[0x18] = '\x01';
       in_stack_00000004[4].actor_name[0x19] = '\0';
       in_stack_00000004[4].actor_name[0x1a] = '\0';
@@ -982,7 +983,7 @@ undefined4 core_lightgun_cpp_FUN_00505c70(void)
 // 00506414: PUSH dword ptr [0x00660a48]
 //   XREF to: 00660a48 (READ)
 // 0050641a: PUSH EDX
-// 0050641b: CALL sound_sndmain.cpp_FUN_005a9ae0
+// 0050641b: CALL sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0
 //   XREF to: 005a9ae0 (UNCONDITIONAL_CALL)
 // 00506420: MOV EAX,0x1
 // 00506425: MOV dword ptr [EDI + 0x578],0x1

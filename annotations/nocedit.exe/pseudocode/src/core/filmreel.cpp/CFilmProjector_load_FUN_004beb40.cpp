@@ -23,8 +23,8 @@
 //   core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730
 //   core_event.cpp_CEventList_FUN_004aabe0
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   sound_sndmain.cpp_FUN_005a9660
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -44,7 +44,7 @@ void core_filmreel_cpp_CFilmProjector_load_FUN_004beb40(void)
   if (*(int *)(in_stack_00000004 + 0x184) == 0) {
     if (*(int *)(in_stack_00000004 + 0x3dc) != 0) {
       core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(g_CFilterFXPtr,(char *)0x0);
-      sound_sndmain_cpp_FUN_005a9c40();
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004 + 0x3e0));
       uVar4 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
       *(undefined4 *)(in_stack_00000004 + 0x3e0) = uVar4;
     }
@@ -66,12 +66,12 @@ void core_filmreel_cpp_CFilmProjector_load_FUN_004beb40(void)
       }
       core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730
                 (g_CFilterFXPtr,(char *)&pCVar3[2].location.position.z);
-      sound_sndmain_cpp_FUN_005a9c40();
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004 + 0x3e0));
       uVar4 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
       *(undefined4 *)(in_stack_00000004 + 0x3e0) = uVar4;
     }
     else {
-      iVar2 = sound_sndmain_cpp_FUN_005a9660();
+      iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(in_stack_00000004 + 0x3e0));
       if (iVar2 == 0) {
         uVar4 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
         *(undefined4 *)(in_stack_00000004 + 0x3e0) = uVar4;
@@ -140,7 +140,7 @@ void core_filmreel_cpp_CFilmProjector_load_FUN_004beb40(void)
 //   XREF to: 004bec11 (CONDITIONAL_JUMP)
 // 004bebbb: MOV EDX,dword ptr [EBX + 0x3e0]
 // 004bebc1: PUSH EDX
-// 004bebc2: CALL sound_sndmain.cpp_FUN_005a9660
+// 004bebc2: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004bebc7: ADD ESP,0x4
 // 004bebca: TEST EAX,EAX
@@ -209,7 +209,7 @@ void core_filmreel_cpp_CFilmProjector_load_FUN_004beb40(void)
 // 004bec62: ADD ESP,0x8
 // 004bec65: MOV EAX,dword ptr [EBX + 0x3e0]
 // 004bec6b: PUSH EAX
-// 004bec6c: CALL sound_sndmain.cpp_FUN_005a9c40
+// 004bec6c: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004bec71: ADD ESP,0x4
 // 004bec74: PUSH 0x629ba8
@@ -232,7 +232,7 @@ void core_filmreel_cpp_CFilmProjector_load_FUN_004beb40(void)
 // 004bec9e: ADD ESP,0x8
 // 004beca1: MOV EDI,dword ptr [EBX + 0x3e0]
 // 004beca7: PUSH EDI
-// 004beca8: CALL sound_sndmain.cpp_FUN_005a9c40
+// 004beca8: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004becad: ADD ESP,0x4
 // 004becb0: PUSH 0x629bb5

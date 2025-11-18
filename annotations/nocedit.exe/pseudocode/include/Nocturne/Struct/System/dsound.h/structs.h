@@ -72,6 +72,33 @@ typedef struct DSCAPS {
     DWORD dwReserved2;
 } DSCAPS;
 
+// Structure: DSCBCAPS
+typedef struct DSCBCAPS {
+    DWORD dwSize;
+    DWORD dwFlags;
+    DWORD dwBufferBytes;
+    DWORD dwReserved;
+} DSCBCAPS;
+
+// Structure: DSCBUFFERDESC
+typedef struct DSCBUFFERDESC {
+    DWORD dwSize;
+    DWORD dwFlags;
+    DWORD dwBufferBytes;
+    DWORD dwReserved;
+    LPWAVEFORMATEX lpwfxFormat;
+    DWORD dwFXCount;
+    LPVOID lpDSCFXDesc;
+} DSCBUFFERDESC;
+
+// Structure: DSCCAPS
+typedef struct DSCCAPS {
+    DWORD dwSize;
+    DWORD dwFlags;
+    DWORD dwFormats;
+    DWORD dwChannels;
+} DSCCAPS;
+
 // Structure: IDirectSound
 typedef struct IDirectSound {
     IDirectSound_vtable* vtable;
@@ -178,11 +205,35 @@ typedef struct IDirectSoundCapture {
     IDirectSoundCapture_vtable* vtable;
 } IDirectSoundCapture;
 
+// Structure: IDirectSoundCaptureBuffer
+typedef struct IDirectSoundCaptureBuffer {
+    IDirectSoundCaptureBuffer_vtable* vtable;
+} IDirectSoundCaptureBuffer;
+
+// Structure: IDirectSoundCaptureBuffer_vtable
+typedef struct IDirectSoundCaptureBuffer_vtable {
+    IUnknown_QueryInterface* QueryInterface;
+    IUnknown_AddRef* AddRef;
+    IUnknown_Release* Release;
+    IDirectSoundCaptureBuffer_GetCaps* GetCaps;
+    IDirectSoundCaptureBuffer_GetCurrentPosition* GetCurrentPosition;
+    IDirectSoundCaptureBuffer_GetFormat* GetFormat;
+    IDirectSoundCaptureBuffer_GetStatus* GetStatus;
+    IDirectSoundCaptureBuffer_Initialize* Initialize;
+    IDirectSoundCaptureBuffer_Lock* Lock;
+    IDirectSoundCaptureBuffer_Start* Start;
+    IDirectSoundCaptureBuffer_Stop* Stop;
+    IDirectSoundCaptureBuffer_Unlock* Unlock;
+} IDirectSoundCaptureBuffer_vtable;
+
 // Structure: IDirectSoundCapture_vtable
 typedef struct IDirectSoundCapture_vtable {
     IUnknown_QueryInterface* QueryInterface;
     IUnknown_AddRef* AddRef;
     IUnknown_Release* Release;
+    IDirectSoundCapture_CreateCaptureBuffer* CreateCaptureBuffer;
+    IDirectSoundCapture_GetCaps* GetCaps;
+    IDirectSoundCapture_Initialize* Initialize;
 } IDirectSoundCapture_vtable;
 
 // Structure: IDirectSound_vtable

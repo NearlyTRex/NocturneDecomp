@@ -9,7 +9,7 @@
 // Globals:
 //   undefined4 DAT_02c14cd8
 // Function calls:
-//   sound_sndmain.cpp_FUN_005a9660
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 
 #include "nocturne.h"
 
@@ -18,7 +18,7 @@ void __cdecl core_door_cpp_CDoor_FUN_00481210(CDoor *this_ptr)
 {
   int iVar1;
   
-  iVar1 = sound_sndmain_cpp_FUN_005a9660();
+  iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(DAT_02c14cd8);
   if (iVar1 != 0) {
     return;
   }
@@ -36,7 +36,7 @@ void __cdecl core_door_cpp_CDoor_FUN_00481210(CDoor *this_ptr)
 // 00481215: MOV EDX,dword ptr [0x02c14cd8]
 //   XREF to: 02c14cd8 (READ)
 // 0048121b: PUSH EDX
-// 0048121c: CALL sound_sndmain.cpp_FUN_005a9660
+// 0048121c: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00481221: ADD ESP,0x4
 // 00481224: TEST EAX,EAX

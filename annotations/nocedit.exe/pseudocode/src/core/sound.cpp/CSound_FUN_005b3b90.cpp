@@ -12,14 +12,16 @@
 //   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b3549 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_FUN_005b39b0 (005b39b0) at 005b39be [UNCONDITIONAL_CALL]
 // Function calls:
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
 #include "nocturne.h"
 
 void __cdecl core_sound_cpp_CSound_FUN_005b3b90(CSound *this_ptr)
 
 {
-  sound_sndmain_cpp_FUN_005a9c40();
+  uint in_stack_00000008;
+  
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(in_stack_00000008);
   return;
 }
 
@@ -29,7 +31,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b3b90(CSound *this_ptr)
 //   Label: core_sound.cpp_CSound_FUN_005b3b90
 //   XREF to: Stack[0x8] (READ)
 // 005b3b94: PUSH EDX
-// 005b3b95: CALL sound_sndmain.cpp_FUN_005a9c40
+// 005b3b95: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005b3b9a: ADD ESP,0x4
 // 005b3b9d: RET

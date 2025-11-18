@@ -124,7 +124,7 @@
 //   core_zombie.cpp_CZombie_FUN_005fca10
 //   core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530
 //   engine_console.cpp_CConsole_printf_FUN_00441890
-//   sound_sndmain.cpp_FUN_005a9660
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 
 #include "nocturne.h"
 
@@ -638,7 +638,8 @@ LAB_005f9541:
         }
         if (*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) != 0) {
           core_zombie_cpp_CZombie_FUN_005fca10();
-          iVar7 = sound_sndmain_cpp_FUN_005a9660();
+          iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                            (*(uint *)(this_ptr->field4_0xbf48 + 0x58));
           if (iVar7 == 0) {
             if (*(int *)this_ptr->field4_0xbf48 == 0) {
               uVar26 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
@@ -672,7 +673,8 @@ LAB_005f9541:
           }
         }
         else if (iVar7 == 0) {
-          iVar7 = sound_sndmain_cpp_FUN_005a9660();
+          iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                            (*(uint *)(this_ptr->field4_0xbf48 + 0x58));
           if (iVar7 == 0) {
             if (*(int *)this_ptr->field4_0xbf48 == 0) {
               pcVar19 = "zom-a0?.wav";
@@ -2845,7 +2847,7 @@ LAB_005f9f22:
 // 005fa6e9: ADD ESP,0x4
 // 005fa6ec: MOV EAX,dword ptr [EBX + 0xbfa0]
 // 005fa6f2: PUSH EAX
-// 005fa6f3: CALL sound_sndmain.cpp_FUN_005a9660
+// 005fa6f3: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005fa6f8: ADD ESP,0x4
 // 005fa6fb: TEST EAX,EAX
@@ -2949,7 +2951,7 @@ LAB_005f9f22:
 //   XREF to: 005fa8a1 (CONDITIONAL_JUMP)
 // 005fa82a: MOV EAX,dword ptr [EBX + 0xbfa0]
 // 005fa830: PUSH EAX
-// 005fa831: CALL sound_sndmain.cpp_FUN_005a9660
+// 005fa831: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005fa836: ADD ESP,0x4
 // 005fa839: TEST EAX,EAX

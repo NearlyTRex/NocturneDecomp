@@ -5,7 +5,7 @@
 // Signature: void sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot * this_ptr)
 // Cross-references:
 //   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (005a75e0) at 005a7970 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a80e0 (005a80e0) at 005a8155 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0 (005a80e0) at 005a8155 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_00650563
 //   TerminatedCString s_SfxSlot_updatePlaybackPo_00650578

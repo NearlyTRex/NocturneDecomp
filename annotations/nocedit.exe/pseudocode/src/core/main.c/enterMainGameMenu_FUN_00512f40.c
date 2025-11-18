@@ -161,7 +161,7 @@ LAB_005131d5:
     iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
     if ((iVar4 != 0) && (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x32), iVar4 != 0))
     {
-      iVar4 = sound_sndmain_cpp_getSoundEnabled_FUN_005a96b0();
+      iVar4 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
       sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0((uint)(iVar4 == 0));
       core_sound_cpp_CSound_FUN_005b3830(g_CSoundPtr);
     }

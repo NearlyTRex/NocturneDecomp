@@ -53,7 +53,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(CSfxSlot *this_ptr)
   }
   dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(iVar2,pCVar1));
   sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(SUB84(dVar3,0));
-  *(double *)this_ptr->field16_0x11c = (double)this_ptr->sample->field14_0x168;
+  *(double *)this_ptr->field16_0x11c = (double)this_ptr->sample->field20_0x168;
   return;
 }
 

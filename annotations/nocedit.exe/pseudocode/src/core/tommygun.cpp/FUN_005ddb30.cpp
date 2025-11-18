@@ -51,7 +51,7 @@
 //   core_trigger.cpp_FUN_005e0ac0
 //   core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00
 //   core_weapon.cpp_FUN_005ee6e0
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -121,7 +121,7 @@ undefined4 core_tommygun_cpp_FUN_005ddb30(void)
     in_stack_00000004[4].actor_name[0x1a] = '\0';
     in_stack_00000004[4].actor_name[0x1b] = '\0';
     (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"45-dry-!.wav @2.0");
-    sound_sndmain_cpp_FUN_005a9c40();
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[4].actor_name + 0x1c));
     in_stack_00000004[4].actor_name[0x1c] = '\0';
     in_stack_00000004[4].actor_name[0x1d] = '\0';
     in_stack_00000004[4].actor_name[0x1e] = '\0';
@@ -502,7 +502,7 @@ LAB_005ddd4e:
 // 005ddee0: ADD ESP,0x8
 // 005ddee3: MOV EDX,dword ptr [EBX + 0x57c]
 // 005ddee9: PUSH EDX
-// 005ddeea: CALL sound_sndmain.cpp_FUN_005a9c40
+// 005ddeea: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005ddeef: ADD ESP,0x4
 // 005ddef2: MOV dword ptr [EBX + 0x57c],0x0

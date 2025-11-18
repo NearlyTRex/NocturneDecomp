@@ -4,11 +4,11 @@
 // Convention: __cdecl
 // Signature: int sound_sndmain.cpp_stopRecordingDevice_FUN_005abb60(void)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005aaeb0 (005aaeb0) at 005aaece [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930 (005ab930) at 005ab930 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0 (005aaeb0) at 005aaece [UNCONDITIONAL_CALL]
 // Globals:
 //   IDirectSoundCapture* g_RecordingDeviceInterface
-//   void* g_RecordingContext
+//   int isRecordingStarted
 // Function calls:
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
@@ -30,7 +30,7 @@ int __cdecl sound_sndmain_cpp_stopRecordingDevice_FUN_005abb60(void)
       return 0;
     }
   }
-  g_RecordingContext = (void *)0x0;
+  isRecordingStarted = 0;
   uStack0000000c = 0x5abb8b;
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 1;

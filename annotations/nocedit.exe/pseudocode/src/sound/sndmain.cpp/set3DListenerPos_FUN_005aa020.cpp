@@ -7,8 +7,8 @@
 //   core_setedit.cpp_DementedFogEditor_FUN_00580730 (00580730) at 00580f97 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b38e2 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b1870 (005b1870) at 005b19ab [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005aae00 (005aae00) at 005aae3d [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005ad3b0 (005ad3b0) at 005ad416 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00 (005aae00) at 005aae3d [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0 (005ad3b0) at 005ad416 [UNCONDITIONAL_CALL]
 // Globals:
 //   CVector3d g_Cached3DListenerPos
 //   undefined4 g_Cached3DListenerPos.x+4

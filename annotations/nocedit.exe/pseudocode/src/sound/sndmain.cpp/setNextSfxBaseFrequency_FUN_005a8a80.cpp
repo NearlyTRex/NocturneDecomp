@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 (00506450) at 00506634 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b21fc [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005ad3b0 (005ad3b0) at 005ad474 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0 (005ad3b0) at 005ad474 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_SfxLastSlot
 //   undefined4 g_SfxLastSlot.field_20[56]

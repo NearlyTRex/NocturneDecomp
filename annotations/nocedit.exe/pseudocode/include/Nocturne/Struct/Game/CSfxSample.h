@@ -8,9 +8,15 @@ typedef struct CSfxSample {
     void* sample_data; // 0x120
     int loop_flags; // 0x124
     int loop_length; // 0x128
-    char field_300[16]; // 0x12c
+    int field_300; // 0x12c
+    int field_304; // 0x130
+    int field_308; // 0x134
+    int field_312; // 0x138
     int loop_start_marker; // 0x13c
-    char field_320[16]; // 0x140
+    int field_320; // 0x140
+    int field_324; // 0x144
+    int field_328; // 0x148
+    int field_332; // 0x14c
     int taken; // 0x150
     int ref_count; // 0x154
     int buffer_id; // 0x158

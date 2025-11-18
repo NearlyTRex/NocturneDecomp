@@ -5,7 +5,7 @@
 // Signature: int sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0(CSfxSample * out_sample)
 // Cross-references:
 //   core_sound.cpp_CSound_FUN_005b3ba0 (005b3ba0) at 005b3bd5 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005ad3b0 (005ad3b0) at 005ad3ec [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0 (005ad3b0) at 005ad3ec [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_00650b55
 //   TerminatedCString s_wav_00650b5b
@@ -24,7 +24,7 @@
 //   CMP3Decoder g_CMP3DecoderInstance
 //   undefined4 g_CMP3DecoderInstance.sample_rate
 //   undefined4 g_CMP3DecoderInstance.num_channels
-//   undefined1 DAT_03f5d878
+//   uchar g_GlobalMP3DecoderInitialized
 //   CSfxSample[64] g_SfxSamples
 //   undefined4 DAT_03f6293c
 //   undefined4 DAT_03f629ac
@@ -43,8 +43,8 @@
 //   sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0
 //   sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0
 //   sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550
+//   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
-//   sound_sndmain.cpp_parseConfigFile_FUN_005a45c0
 //   sound_sndmain.cpp_parseWavFile_FUN_005a3fe0
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
@@ -68,7 +68,7 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
   sound_sndmain_cpp_lockSound_FUN_005abd30();
   iVar3 = 0;
   do {
-    if (0 < *(int *)(g_SfxSamples[0].field5_0x12c + iVar3 + -0x1c)) {
+    if (0 < *(int *)((int)&g_SfxSamples[0].sample_info.sample_count + iVar3)) {
       pcVar4 = g_SfxSamples[0].sample_info.name + iVar3;
       iVar1 = crt_string_c_stricmp_FUN_005fe7f0(pcVar4,(char *)out_sample);
       if (iVar1 == 0) {
@@ -104,8 +104,8 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
     if (iVar3 != 0) {
       iVar3 = crt_string_c_stricmp_FUN_005fe7f0(&stack0xffffff04,"mp3");
       if (iVar3 == 0) {
-        if ((DAT_03f5d878 & 1) == 0) {
-          DAT_03f5d878 = DAT_03f5d878 | 1;
+        if ((g_GlobalMP3DecoderInitialized & 1) == 0) {
+          g_GlobalMP3DecoderInitialized = g_GlobalMP3DecoderInitialized | 1;
           sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(&g_CMP3DecoderInstance);
           crt_stdlib_c_atexit_FUN_005ff060(&g_CMP3DecoderDestructorNode);
         }
@@ -123,7 +123,7 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
         core_main_c_displayErrorAndQuit_FUN_00506f10("Unknown sample file format extension: %s");
       }
 LAB_005aa53c:
-      sound_sndmain_cpp_parseConfigFile_FUN_005a45c0(out_sample);
+      sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(out_sample);
       if ((out_sample->sample_info).sample_count < 1) {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
         g_CurrentLineNumber = 0x10de;
@@ -319,7 +319,7 @@ LAB_005aa53c:
 // 005aa539: ADD ESP,0xc
 // 005aa53c: PUSH EBP
 //   Label: LAB_005aa53c
-// 005aa53d: CALL sound_sndmain.cpp_parseConfigFile_FUN_005a45c0
+// 005aa53d: CALL sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
 //   XREF to: 005a45c0 (UNCONDITIONAL_CALL)
 // 005aa542: MOV ESI,dword ptr [EBP + 0x110]
 // 005aa548: ADD ESP,0x4

@@ -4,15 +4,15 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0(CSfxSample * this_ptr)
 // Cross-references:
-//   sound_sndmain.cpp_CSfxSample_FUN_005a6170 (005a6170) at 005a6258 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170 (005a6170) at 005a6258 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSample_dtor_FUN_005a6150 (005a6150) at 005a6156 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 (005a7e60) at 005a7f78 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a69f0 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005aa360 (005aa360) at 005aa394 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005aa660 (005aa660) at 005aa678 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005ab660 (005ab660) at 005ab677 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_allocateHwSample_FUN_005a5620 (005a5620) at 005a56a9 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_closeSoundDevice_FUN_005ab660 (005ab660) at 005ab677 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450 (005a4450) at 005a4504 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_freeAllSamples_FUN_005aa660 (005aa660) at 005aa678 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_freeSampleByName_FUN_005aa360 (005aa360) at 005aa394 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a4f06 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200 (005a5200) at 005a5506 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a9504 [UNCONDITIONAL_CALL]

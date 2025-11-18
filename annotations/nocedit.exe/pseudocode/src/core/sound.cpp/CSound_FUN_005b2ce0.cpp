@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_sound.cpp_staticInit_FUN_005b1760 (005b1760) at 005b1765 [UNCONDITIONAL_CALL]
 // Function calls:
-//   sound_sndmain.cpp_FUN_005aae00
+//   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00
 //   sound_sndmain.cpp_setNumberOfSfxChannels_FUN_005a9de0
 
 #include "nocturne.h"
@@ -14,9 +14,9 @@
 CSound * __cdecl core_sound_cpp_CSound_FUN_005b2ce0(CSound *this_ptr)
 
 {
-  this_ptr->vtable = (CSound_vtable *)0x1400;
+  this_ptr->field0_0x0 = 0x1400;
   sound_sndmain_cpp_setNumberOfSfxChannels_FUN_005a9de0(3);
-  sound_sndmain_cpp_FUN_005aae00();
+  sound_sndmain_cpp_resetSoundSystemDefaults_FUN_005aae00();
   return this_ptr;
 }
 
@@ -31,7 +31,7 @@ CSound * __cdecl core_sound_cpp_CSound_FUN_005b2ce0(CSound *this_ptr)
 // 005b2ced: CALL sound_sndmain.cpp_setNumberOfSfxChannels_FUN_005a9de0
 //   XREF to: 005a9de0 (UNCONDITIONAL_CALL)
 // 005b2cf2: ADD ESP,0x4
-// 005b2cf5: CALL sound_sndmain.cpp_FUN_005aae00
+// 005b2cf5: CALL sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00
 //   XREF to: 005aae00 (UNCONDITIONAL_CALL)
 // 005b2cfa: MOV EAX,EBX
 // 005b2cfc: POP EBX

@@ -9,8 +9,8 @@
 //   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b325f [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b38a6 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b2d70 (005b2d70) at 005b2dad [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005aae00 (005aae00) at 005aae09 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005ac1eb [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00 (005aae00) at 005aae09 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_006509f0
 //   TerminatedCString s_setSfxChannelVol_invalid_00650a05
@@ -23,11 +23,11 @@
 //   undefined4 g_SfxSlots[1].dsound_buffer
 //   undefined4 DAT_03f5dc40
 //   int g_SfxLastSlot
-//   undefined4 DAT_03f688a8
+//   float[32] g_SfxChannelVolumes
 //   CSoundDevice* g_CSoundDevicePtr
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   sound_sndmain.cpp_FUN_005ab5a0
+//   sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
@@ -37,9 +37,9 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(int channel_index,f
 
 {
   CSoundDevice *pCVar1;
-  int iVar2;
+  uint uVar2;
   CSfxSlot *slot;
-  undefined4 in_stack_0000000c;
+  float in_stack_0000000c;
   
   if ((channel_index < 0) || (0x1f < channel_index)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -47,15 +47,15 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(int channel_index,f
     core_main_c_displayErrorAndQuit_FUN_00506f10("setSfxChannelVol - invalid channel index: %d",channel_index);
   }
   pCVar1 = g_CSoundDevicePtr;
-  *(undefined4 *)(&DAT_03f688a8 + channel_index * 4) = in_stack_0000000c;
+  g_SfxChannelVolumes[channel_index] = in_stack_0000000c;
   if (pCVar1 != (CSoundDevice *)0x0) {
-    iVar2 = sound_sndmain_cpp_FUN_005ab5a0();
-    if (iVar2 != 0) {
+    uVar2 = sound_sndmain_cpp_hasHardware3DSound_FUN_005ab5a0();
+    if (uVar2 != 0) {
       slot = g_SfxSlots;
       sound_sndmain_cpp_lockSound_FUN_005abd30();
       do {
         if (((slot->playback_state != 0) && (slot->hardware_buffer_handle != 0)) &&
-           (channel_index == (slot->options).status)) {
+           (channel_index == (slot->options).channel_index)) {
           (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,slot,8);
         }
         slot = slot + 1;
@@ -108,7 +108,7 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(int channel_index,f
 //   Label: LAB_005a9d38
 // 005a9d39: POP EBX
 // 005a9d3a: RET
-// 005a9d3b: CALL sound_sndmain.cpp_FUN_005ab5a0
+// 005a9d3b: CALL sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0
 //   Label: LAB_005a9d3b
 //   XREF to: 005ab5a0 (UNCONDITIONAL_CALL)
 // 005a9d40: TEST EAX,EAX

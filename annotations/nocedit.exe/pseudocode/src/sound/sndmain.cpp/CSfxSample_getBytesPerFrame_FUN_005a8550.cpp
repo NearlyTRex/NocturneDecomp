@@ -5,14 +5,14 @@
 // Signature: int sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(CSfxSample * this_ptr)
 // Cross-references:
 //   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60 (005afd60) at 005afdcd [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CSfxSample_FUN_005a6170 (005a6170) at 005a6267 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSample_FUN_005add90 (005add90) at 005add95 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170 (005a6170) at 005a6267 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSample_lock_FUN_005a6430 (005a6430) at 005a64ba [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0 (005a65a0) at 005a664c [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a6889 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005aa6a0 (005aa6a0) at 005aa762 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450 (005a4450) at 005a44f2 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a4f84 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSoundMemoryStats_FUN_005aa6a0 (005aa6a0) at 005aa762 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

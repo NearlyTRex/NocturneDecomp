@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_005aa240(double distance_in_feet)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005aae00 (005aae00) at 005aae29 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00 (005aae00) at 005aae29 [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_00681b30 = 1
 //   undefined4 DOUBLE_00681b30+4

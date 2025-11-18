@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_freeMixBuffers_FUN_005a5900(void)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005ab130 (005ab130) at 005ab157 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_resetSoundDevice_FUN_005ab130 (005ab130) at 005ab157 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_0064fb5b
 //   TerminatedCString s_sound_sndmain_cpp_0064fb70

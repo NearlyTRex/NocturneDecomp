@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_005a6400(CSfxSample * this_ptr)
 // Cross-references:
-//   sound_sndmain.cpp_CSfxSample_FUN_005a6170 (005a6170) at 005a6189 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170 (005a6170) at 005a6189 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0 (005a62c0) at 005a62de [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_0064fd42

@@ -320,8 +320,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
       sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(this_ptr);
       if (local_48 != 0) {
         iVar11 = *(int *)(this_ptr->field16_0x11c + 8) + 1;
-        iVar8 = *(int *)(this_ptr->sample->field7_0x140 +
-                        *(int *)(this_ptr->field16_0x11c + 8) * 4 + -4);
+        iVar8 = (&this_ptr->sample->loop_start_marker)[*(int *)(this_ptr->field16_0x11c + 8)];
         *(int *)(this_ptr->field16_0x11c + 8) = iVar11;
         pCVar6 = this_ptr->sample;
         (this_ptr->options).trigger_time = (double)iVar8;

@@ -14,8 +14,8 @@
 //   undefined4 DAT_03f6b870
 //   undefined4 DAT_03f6b874
 // Function calls:
-//   sound_sndmain.cpp_FUN_005a9c40
-//   sound_sndmain.cpp_FUN_005ab130
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
+//   sound_sndmain.cpp_resetSoundDevice_FUN_005ab130
 
 #include "nocturne.h"
 
@@ -23,16 +23,19 @@ void __cdecl core_sound_cpp_CSound_FUN_005b2f70(CSound *this_ptr)
 
 {
   int iVar1;
+  int iVar2;
   
-  iVar1 = 0;
+  iVar2 = 0;
   DAT_03f6b7ac = 0;
   do {
-    iVar1 = iVar1 + 0x10;
-    sound_sndmain_cpp_FUN_005a9c40();
-  } while (iVar1 != 0xa0);
-  sound_sndmain_cpp_FUN_005a9c40();
-  sound_sndmain_cpp_FUN_005a9c40();
-  sound_sndmain_cpp_FUN_005ab130();
+    iVar1 = iVar2 + 0xc;
+    iVar2 = iVar2 + 0x10;
+    sound_sndmain_cpp_killSfx_FUN_005a9c40
+              (*(uint *)(STrainNoise_ARRAY_03f6b7bc[0].field0_0x0 + iVar1));
+  } while (iVar2 != 0xa0);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(DAT_03f6b870);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(DAT_03f6b874);
+  sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
   return;
 }
 
@@ -51,7 +54,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b2f70(CSound *this_ptr)
 //   XREF to: 03f6b7d8 (READ)
 // 005b2f82: PUSH ECX
 // 005b2f83: ADD EBX,0x10
-// 005b2f86: CALL sound_sndmain.cpp_FUN_005a9c40
+// 005b2f86: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005b2f8b: ADD ESP,0x4
 // 005b2f8e: CMP EBX,0xa0
@@ -60,16 +63,16 @@ void __cdecl core_sound_cpp_CSound_FUN_005b2f70(CSound *this_ptr)
 // 005b2f96: MOV EBX,dword ptr [0x03f6b870]
 //   XREF to: 03f6b870 (READ)
 // 005b2f9c: PUSH EBX
-// 005b2f9d: CALL sound_sndmain.cpp_FUN_005a9c40
+// 005b2f9d: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005b2fa2: ADD ESP,0x4
 // 005b2fa5: MOV ESI,dword ptr [0x03f6b874]
 //   XREF to: 03f6b874 (READ)
 // 005b2fab: PUSH ESI
-// 005b2fac: CALL sound_sndmain.cpp_FUN_005a9c40
+// 005b2fac: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005b2fb1: ADD ESP,0x4
-// 005b2fb4: CALL sound_sndmain.cpp_FUN_005ab130
+// 005b2fb4: CALL sound_sndmain.cpp_resetSoundDevice_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 005b2fb9: POP ESI
 // 005b2fba: POP EBX

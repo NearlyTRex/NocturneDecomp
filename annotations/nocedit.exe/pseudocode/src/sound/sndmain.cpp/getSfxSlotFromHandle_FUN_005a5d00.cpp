@@ -4,22 +4,22 @@
 // Convention: __cdecl
 // Signature: CSfxSlot * sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00(uint sfx_handle, int check_hardware_playback)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005a9660 (005a9660) at 005a968e [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a96e0 (005a96e0) at 005a96e7 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9720 (005a9720) at 005a9732 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a97e0 (005a97e0) at 005a97e8 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9820 (005a9820) at 005a9828 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a98b0 (005a98b0) at 005a98b8 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9910 (005a9910) at 005a9918 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9970 (005a9970) at 005a9978 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9a00 (005a9a00) at 005a9a08 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9a70 (005a9a70) at 005a9a78 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9ae0 (005a9ae0) at 005a9ae8 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9b40 (005a9b40) at 005a9b48 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9c10 (005a9c10) at 005a9c17 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9c40 (005a9c40) at 005a9c47 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9c70 (005a9c70) at 005a9c7a [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxOptions_FUN_005a97e0 (005a97e0) at 005a97e8 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720 (005a9720) at 005a9732 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0 (005a96e0) at 005a96e7 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660 (005a9660) at 005a968e [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40 (005a9c40) at 005a9c47 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40 (005a9b40) at 005a9b48 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxFade_FUN_005a9c70 (005a9c70) at 005a9c7a [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxIsActive_FUN_005a9c10 (005a9c10) at 005a9c17 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxPosition_FUN_005a9820 (005a9820) at 005a9828 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxTrackedDoublePosition_FUN_005a9910 (005a9910) at 005a9918 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxTrackedDoubleVelocity_FUN_005a9a70 (005a9a70) at 005a9a78 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0 (005a98b0) at 005a98b8 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_005a9a00 (005a9a00) at 005a9a08 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setSfxUserData_FUN_005a9ba0 (005a9ba0) at 005a9bda [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxVelocity_FUN_005a9970 (005a9970) at 005a9978 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0 (005a9ae0) at 005a9ae8 [UNCONDITIONAL_CALL]
 // Globals:
 //   CSfxSlot[64] g_SfxSlots
 //   undefined4 DAT_03f5db14

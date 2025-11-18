@@ -2,14 +2,14 @@
 // Address: 005a9e20
 // Address Range: [[005a9e20, 005a9e94]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20(int channel_index)
+// Signature: void sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20(int channel_index, int enable_state)
 // Cross-references:
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512841 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2e76 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b3231 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b2d70 (005b2d70) at 005b2d85 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005aae00 (005aae00) at 005aae14 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005ac18e [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00 (005aae00) at 005aae14 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_00650aac
 //   TerminatedCString s_enableSfxChannel_invalid_00650ac1
@@ -17,7 +17,7 @@
 //   int g_CurrentLineNumber
 //   CSfxSlot[64] g_SfxSlots
 //   undefined4 g_SfxSlots[1].status
-//   undefined4 DAT_03f68928
+//   int[32] g_SfxChannelEnabled
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
@@ -26,19 +26,18 @@
 
 #include "nocturne.h"
 
-void __cdecl sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(int channel_index)
+void __cdecl sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(int channel_index,int enable_state)
 
 {
   int iVar1;
-  int in_stack_00000008;
   
   if ((channel_index < 0) || (0x1f < channel_index)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0xfa1;
     core_main_c_displayErrorAndQuit_FUN_00506f10("enableSfxChannel - invalid channel index: %d",channel_index);
   }
-  *(int *)(&DAT_03f68928 + channel_index * 4) = in_stack_00000008;
-  if (in_stack_00000008 == 0) {
+  g_SfxChannelEnabled[channel_index] = enable_state;
+  if (enable_state == 0) {
     sound_sndmain_cpp_lockSound_FUN_005abd30();
     iVar1 = 0;
     do {

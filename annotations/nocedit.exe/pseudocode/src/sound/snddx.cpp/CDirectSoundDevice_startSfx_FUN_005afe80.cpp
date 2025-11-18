@@ -46,7 +46,7 @@ sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80
     g_CurrentLineNumber = 1000;
     core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - invalid handle: %d",iVar1);
   }
-  iVar2 = (**(code **)((slot->options).status + 0x40))((CSoundDevice *)slot,slot,-1);
+  iVar2 = (**(code **)((slot->options).channel_index + 0x40))((CSoundDevice *)slot,slot,-1);
   if (iVar2 != 0) {
     uStack0000000c = 0;
     if (slot->sample == (CSfxSample *)0x0) {

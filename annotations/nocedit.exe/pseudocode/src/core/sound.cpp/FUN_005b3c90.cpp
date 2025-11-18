@@ -10,21 +10,22 @@
 //   undefined4 DAT_03f6af8c
 //   undefined4 DAT_03f6af90
 // Function calls:
-//   sound_sndmain.cpp_FUN_005ab6e0
+//   sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0
 
 #include "nocturne.h"
 
 void __cdecl core_sound_cpp_FUN_005b3c90(int index)
 
 {
-  undefined4 in_stack_00000008;
-  undefined4 in_stack_0000000c;
-  undefined4 in_stack_00000010;
+  float in_stack_00000008;
+  float in_stack_0000000c;
+  float in_stack_00000010;
   
   DAT_03f6af88 = in_stack_00000008;
   DAT_03f6af8c = in_stack_0000000c;
   DAT_03f6af90 = in_stack_00000010;
-  sound_sndmain_cpp_FUN_005ab6e0();
+  sound_sndmain_cpp_set3DListenerOrientRight_FUN_005ab6e0
+            (in_stack_00000008,in_stack_0000000c,in_stack_00000010);
   return;
 }
 
@@ -48,7 +49,7 @@ void __cdecl core_sound_cpp_FUN_005b3c90(int index)
 //   XREF to: Stack[0x8] (READ)
 // 005b3caf: MOV [0x03f6af90],EAX
 //   XREF to: 03f6af90 (WRITE)
-// 005b3cb4: CALL sound_sndmain.cpp_FUN_005ab6e0
+// 005b3cb4: CALL sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0
 //   XREF to: 005ab6e0 (UNCONDITIONAL_CALL)
 // 005b3cb9: ADD ESP,0xc
 // 005b3cbc: RET

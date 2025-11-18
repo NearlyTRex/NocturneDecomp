@@ -22,8 +22,8 @@
 //   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_werewolf.cpp_FUN_005f11e0
-//   sound_sndmain.cpp_FUN_005a9660
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -44,7 +44,7 @@ void core_werewolf_cpp_FUN_005f1ac0(void)
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
   
-  sound_sndmain_cpp_FUN_005a9c40();
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[0x8e].actor_name + 8));
   if (*(int *)(in_stack_00000008 + 0x30) == 0x6c) {
     core_werewolf_cpp_FUN_005f11e0();
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -86,7 +86,7 @@ void core_werewolf_cpp_FUN_005f1ac0(void)
           (in_stack_00000004->orient).bank = -1.5707964;
         }
       }
-      sound_sndmain_cpp_FUN_005a9c40();
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[0x8e].actor_name + 0x10));
       uVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"werewolf-die?.wav")
       ;
       *(undefined4 *)(in_stack_00000004[0x8e].actor_name + 0x10) = uVar4;
@@ -132,7 +132,8 @@ LAB_005f1cdd:
       }
     }
   }
-  iVar5 = sound_sndmain_cpp_FUN_005a9660();
+  iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                    (*(uint *)(in_stack_00000004[0x8e].actor_name + 0x10));
   if (iVar5 == 0) {
     uVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"werewolf-hurt?.wav");
     *(undefined4 *)(in_stack_00000004[0x8e].actor_name + 0x10) = uVar4;
@@ -160,7 +161,7 @@ LAB_005f1bc9:
 //   XREF to: Stack[0x8] (READ)
 // 005f1ad2: MOV EDX,dword ptr [ESI + 0xbed8]
 // 005f1ad8: PUSH EDX
-// 005f1ad9: CALL sound_sndmain.cpp_FUN_005a9c40
+// 005f1ad9: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005f1ade: MOV ECX,dword ptr [EDI + 0x30]
 // 005f1ae1: ADD ESP,0x4
@@ -225,7 +226,7 @@ LAB_005f1bc9:
 // 005f1b8b: MOV ECX,dword ptr [ESI + 0xbee0]
 //   Label: LAB_005f1b8b
 // 005f1b91: PUSH ECX
-// 005f1b92: CALL sound_sndmain.cpp_FUN_005a9c40
+// 005f1b92: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005f1b97: ADD ESP,0x4
 // 005f1b9a: PUSH 0x657e2f
@@ -383,7 +384,7 @@ LAB_005f1bc9:
 // 005f1cec: MOV ECX,dword ptr [ESI + 0xbee0]
 //   Label: LAB_005f1cec
 // 005f1cf2: PUSH ECX
-// 005f1cf3: CALL sound_sndmain.cpp_FUN_005a9660
+// 005f1cf3: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005f1cf8: ADD ESP,0x4
 // 005f1cfb: TEST EAX,EAX

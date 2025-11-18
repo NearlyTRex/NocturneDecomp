@@ -11,8 +11,8 @@
 //   core_enemy.cpp_FUN_004a9f10
 //   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   sound_sndmain.cpp_FUN_005a9660
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -46,7 +46,7 @@ void core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 ((CMotionController *)(in_stack_00000004 + 0x158),7,1);
     }
-    iVar4 = sound_sndmain_cpp_FUN_005a9660();
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(in_stack_00000004 + 0xbebc));
     if (iVar4 != 0) goto LAB_00568d4d;
   }
   else {
@@ -54,7 +54,7 @@ void core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
     if ((pSVar2->state_index == 8) || (pSVar2->state_index == 9)) goto LAB_00568d4d;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr,8,1);
-    sound_sndmain_cpp_FUN_005a9c40();
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004 + 0xbebc));
   }
   uVar3 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
   *(undefined4 *)(in_stack_00000004 + 0xbebc) = uVar3;
@@ -103,7 +103,7 @@ LAB_00568d4d:
 // 00568d23: ADD ESP,0xc
 // 00568d26: MOV ECX,dword ptr [EBX + 0xbebc]
 // 00568d2c: PUSH ECX
-// 00568d2d: CALL sound_sndmain.cpp_FUN_005a9c40
+// 00568d2d: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 00568d32: ADD ESP,0x4
 // 00568d35: PUSH 0x6458b3
@@ -167,7 +167,7 @@ LAB_00568d4d:
 // 00568dad: MOV EDX,dword ptr [EBX + 0xbebc]
 //   Label: LAB_00568dad
 // 00568db3: PUSH EDX
-// 00568db4: CALL sound_sndmain.cpp_FUN_005a9660
+// 00568db4: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 00568db9: ADD ESP,0x4
 // 00568dbc: TEST EAX,EAX

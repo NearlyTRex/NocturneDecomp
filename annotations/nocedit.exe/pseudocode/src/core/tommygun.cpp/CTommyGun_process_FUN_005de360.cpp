@@ -13,9 +13,9 @@
 //   crt_math.c_floor_FUN_005feb90
 //   crt_math.c_round_FUN_005fe6b0
 //   sound_sndmain.cpp_FUN_005a8480
-//   sound_sndmain.cpp_FUN_005a96e0
-//   sound_sndmain.cpp_FUN_005a9720
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720
+//   sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
@@ -29,32 +29,38 @@
 void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_ptr)
 
 {
+  float base_frequency;
   int iVar1;
   undefined4 uVar2;
   undefined4 extraout_EDX;
   BADSPACEBASE *in_ESP;
-  float10 extraout_ST0;
-  float10 fVar3;
+  float10 in_ST0;
+  double dVar3;
+  uint in_stack_fffffe14;
   undefined8 uStack_1d8;
   float fStack_1d4;
   int iStack_1d0;
-  undefined4 uStack_bc;
+  char acStack_1c4 [4];
+  float fStack_bc;
   char acStack_7c [8];
   char acStack_74 [88];
-  undefined1 auStack_1c [12];
+  undefined8 uStack_1c;
+  undefined4 uStack_14;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base_weapon);
   if (*(int *)this_ptr->field1_0x578 < 1) {
-    auStack_1c._4_8_ = sound_sndmain_cpp_FUN_005a9720();
-    if (0.0 <= (float)(double)auStack_1c._4_8_) {
-      fVar3 = extraout_ST0;
+    dVar3 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe14);
+    uStack_1c._4_4_ = SUB84(dVar3,0);
+    uStack_14 = (undefined4)((ulonglong)dVar3 >> 0x20);
+    if (0.0 <= (float)dVar3) {
       sound_sndmain_cpp_lockSound_FUN_005abd30();
-      auStack_1c._0_8_ = (undefined8)(fStack_1d4 * _DAT_0065550d);
-      crt_math_c_floor_FUN_005feb90((double)fVar3);
+      uStack_1c = (double)(fStack_1d4 * _DAT_0065550d);
+      crt_math_c_floor_FUN_005feb90((double)in_ST0);
       sound_sndmain_cpp_FUN_005a8480();
-      iVar1 = sound_sndmain_cpp_FUN_005a96e0();
+      iVar1 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0
+                        (*(uint *)(this_ptr->field1_0x578 + 4),(CSfxSample *)&iStack_1d0);
       if (iVar1 != 0) {
-        crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,uStack_bc));
+        crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,fStack_bc));
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
         if (0.0 < (double)iStack_1d0) {
           sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)iStack_1d0,0);
@@ -62,26 +68,35 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
         uVar2 = (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
                           ((CDemonActor *)this_ptr,"m-gun-t.wav");
         *(undefined4 *)(this_ptr->field1_0x578 + 8) = uVar2;
+        acStack_1c4[0] = 'e';
+        acStack_1c4[1] = -0x1b;
+        acStack_1c4[2] = ']';
+        acStack_1c4[3] = '\0';
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       }
-      sound_sndmain_cpp_FUN_005a9c40();
+      acStack_1c4[0] = 'q';
+      acStack_1c4[1] = -0x1b;
+      acStack_1c4[2] = ']';
+      acStack_1c4[3] = '\0';
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field1_0x578 + 4));
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
       return;
     }
-    sound_sndmain_cpp_FUN_005a9c40();
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field1_0x578 + 4));
     return;
   }
   *(int *)this_ptr->field1_0x578 = *(int *)this_ptr->field1_0x578 + -1;
-  core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
-  iVar1 = sound_sndmain_cpp_FUN_005a9b40();
+  base_frequency = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
+  iVar1 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40
+                    (*(uint *)(this_ptr->field1_0x578 + 4),base_frequency);
   if (iVar1 != 0) {
     return;
   }
-  sound_sndmain_cpp_FUN_005a9c40();
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field1_0x578 + 4));
   crt_stdio_c_sprintf_FUN_005fdbd0
             (acStack_7c,"$@m-gun1.wav @ 2.3 * %f" + 2,SUB84((double)fStack_1d4,0),
              (int)((ulonglong)(double)fStack_1d4 >> 0x20));
-  sound_sndmain_cpp_FUN_005a9c40();
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field1_0x578 + 8));
   uVar2 = (*((this_ptr->base_weapon).base_actor.vtable)->playAmbientSound)
                     ((CDemonActor *)this_ptr,acStack_74);
   *(undefined4 *)(this_ptr->field1_0x578 + 4) = uVar2;
@@ -118,7 +133,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
 //   Label: LAB_005de436
 // 005de438: MOV ECX,dword ptr [EBX + 0x57c]
 // 005de43e: PUSH ECX
-// 005de43f: CALL sound_sndmain.cpp_FUN_005a9720
+// 005de43f: CALL sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720
 //   XREF to: 005a9720 (UNCONDITIONAL_CALL)
 // 005de444: MOV dword ptr [ESP + 0x1d8],EAX
 // 005de44b: MOV dword ptr [ESP + 0x1dc],EDX
@@ -159,7 +174,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
 // 005de4d0: PUSH EAX
 // 005de4d1: MOV EDX,dword ptr [EBX + 0x57c]
 // 005de4d7: PUSH EDX
-// 005de4d8: CALL sound_sndmain.cpp_FUN_005a96e0
+// 005de4d8: CALL sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0
 //   XREF to: 005a96e0 (UNCONDITIONAL_CALL)
 // 005de4dd: ADD ESP,0x8
 // 005de4e0: TEST EAX,EAX
@@ -207,7 +222,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
 // 005de565: MOV EDI,dword ptr [EBX + 0x57c]
 //   Label: LAB_005de565
 // 005de56b: PUSH EDI
-// 005de56c: CALL sound_sndmain.cpp_FUN_005a9c40
+// 005de56c: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005de571: ADD ESP,0x4
 // 005de574: CALL sound_sndmain.cpp_unlockSound_FUN_005abdc0
@@ -221,7 +236,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
 // 005de580: MOV ESI,dword ptr [EBX + 0x57c]
 //   Label: LAB_005de580
 // 005de586: PUSH ESI
-// 005de587: CALL sound_sndmain.cpp_FUN_005a9c40
+// 005de587: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005de58c: ADD ESP,0x4
 // 005de58f: MOV ESP,EBP

@@ -60,15 +60,15 @@
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   crt_stdlib.c_rand_FUN_005feb5c
 //   crt_string.c_stricmp_FUN_005fe7f0
-//   sound_sndmain.cpp_FUN_005a9660
-//   sound_sndmain.cpp_FUN_005a9ae0
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0
 //   sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70
 //   sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a00
 //   sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60
+//   sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
 
 #include "nocturne.h"
@@ -99,7 +99,8 @@ ushort core_sound_cpp_FUN_005b2770(void)
   BADSPACEBASE *in_ESP;
   STrainNoise *in_stack_00000034;
   float in_stack_00000038;
-  float fStack_e4;
+  float in_stack_ffffff1c;
+  float in_stack_ffffff28;
   CVector3f local_48;
   CVector3f local_3c;
   undefined4 local_30;
@@ -142,28 +143,29 @@ ushort core_sound_cpp_FUN_005b2770(void)
   sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(3);
   iVar5 = crt_string_c_stricmp_FUN_005fe7f0((char *)PTR_s_int_00681ef0,"int");
   if (iVar5 == 0) {
-    sound_sndmain_cpp_FUN_005a9c40();
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(DAT_03f6b874);
   }
   else {
-    iVar5 = sound_sndmain_cpp_FUN_005a9660();
+    iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(DAT_03f6b874);
     if (iVar5 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(0.4);
-      DAT_03f6b874 = sound_sndmain_cpp_startSfx_FUN_005a8e90();
+      DAT_03f6b874 = sound_sndmain_cpp_startSfx_FUN_005a8e90("trainext.wav");
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     }
   }
-  iVar5 = sound_sndmain_cpp_FUN_005a9660();
+  iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(DAT_03f6b870);
   if (iVar5 == 0) {
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-    sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(fStack_e4 * (float)DOUBLE_0065275e);
-    DAT_03f6b870 = sound_sndmain_cpp_startSfx_FUN_005a8e90();
+    sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(in_stack_ffffff1c * (float)DOUBLE_0065275e);
+    DAT_03f6b870 = sound_sndmain_cpp_startSfx_FUN_005a8e90("railnoiz.wav");
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   }
   else {
     iVar5 = crt_string_c_stricmp_FUN_005fe7f0((char *)PTR_s_x_00681ef4,(char *)PTR_s_int_00681ef0);
     if (iVar5 != 0) {
-      sound_sndmain_cpp_FUN_005a9ae0();
+      sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0
+                (DAT_03f6b870,in_stack_ffffff28 * (float)DOUBLE_0065275e);
     }
   }
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
@@ -174,7 +176,8 @@ ushort core_sound_cpp_FUN_005b2770(void)
   _DAT_03f6b860 = 0.0;
   _DAT_03f6b864 = 30.0;
   do {
-    iVar6 = sound_sndmain_cpp_FUN_005a9660();
+    iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                      (*(uint *)(STrainNoise_ARRAY_03f6b7bc[iVar5].field0_0x0 + 0xc));
     pSVar4 = pSVar7;
     if (iVar6 != 0) {
       fVar2 = _DAT_03f6b860 * in_stack_00000038;
@@ -187,7 +190,8 @@ ushort core_sound_cpp_FUN_005b2770(void)
       pSVar4 = in_stack_00000034;
       if ((float)DOUBLE_00652776 < ABS(*(float *)(STrainNoise_ARRAY_03f6b7bc[iVar5].field0_0x0 + 8))
          ) {
-        sound_sndmain_cpp_FUN_005a9c40();
+        sound_sndmain_cpp_killSfx_FUN_005a9c40
+                  (*(uint *)(STrainNoise_ARRAY_03f6b7bc[iVar5].field0_0x0 + 0xc));
       }
     }
     in_stack_00000034 = pSVar4;
@@ -337,7 +341,7 @@ ushort core_sound_cpp_FUN_005b2770(void)
 //   XREF to: 03f6b874 (READ)
 // 005b28c9: PUSH ESI
 // 005b28ca: MOV EDI,0x3ecccccd
-// 005b28cf: CALL sound_sndmain.cpp_FUN_005a9c40
+// 005b28cf: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005b28d4: ADD ESP,0x4
 // 005b28d7: MOV dword ptr [ESP],EDI
@@ -346,7 +350,7 @@ ushort core_sound_cpp_FUN_005b2770(void)
 //   Label: LAB_005b28da
 //   XREF to: 03f6b870 (READ)
 // 005b28df: PUSH EAX
-// 005b28e0: CALL sound_sndmain.cpp_FUN_005a9660
+// 005b28e0: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005b28e5: ADD ESP,0x4
 // 005b28e8: TEST EAX,EAX
@@ -392,7 +396,7 @@ ushort core_sound_cpp_FUN_005b2770(void)
 //   XREF to: 03f6b7c8 (READ)
 //   XREF to: 03f6b7d8 (READ)
 // 005b294c: PUSH ECX
-// 005b294d: CALL sound_sndmain.cpp_FUN_005a9660
+// 005b294d: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005b2952: ADD ESP,0x4
 // 005b2955: TEST EAX,EAX
@@ -448,7 +452,7 @@ ushort core_sound_cpp_FUN_005b2770(void)
 // 005b29cf: MOV EAX,dword ptr [EDI + 0x3f6b7c8]
 //   XREF to: 03f6b7c8 (READ)
 // 005b29d5: PUSH EAX
-// 005b29d6: CALL sound_sndmain.cpp_FUN_005a9c40
+// 005b29d6: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005b29db: ADD ESP,0x4
 // 005b29de: INC ESI
@@ -504,7 +508,7 @@ ushort core_sound_cpp_FUN_005b2770(void)
 // 005b2a50: PUSH EBX
 // 005b2a51: MOV dword ptr [ESP + 0x4],ECX
 //   XREF to: Stack[-0x120] (WRITE)
-// 005b2a55: CALL sound_sndmain.cpp_FUN_005a9660
+// 005b2a55: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005b2a5a: ADD ESP,0x4
 // 005b2a5d: TEST EAX,EAX
@@ -562,7 +566,7 @@ ushort core_sound_cpp_FUN_005b2770(void)
 // 005b2add: FSTP float ptr [ESP]
 //   XREF to: Stack[-0x124] (DATA)
 // 005b2ae0: PUSH EBX
-// 005b2ae1: CALL sound_sndmain.cpp_FUN_005a9ae0
+// 005b2ae1: CALL sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0
 //   XREF to: 005a9ae0 (UNCONDITIONAL_CALL)
 // 005b2ae6: ADD ESP,0x8
 // 005b2ae9: JMP 0x005b290e

@@ -14,7 +14,7 @@
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
 //   core_fire.cpp_CFireEffect_FUN_004c7db0
 //   core_set.cpp_CDemonSet_FUN_00570fa0
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0
@@ -28,8 +28,9 @@ core_fire_cpp_CFireball_onCollision_FUN_004c1690(CFireball *this_ptr,CVector3f *
 
 {
   int iVar1;
+  char *filename;
   
-  sound_sndmain_cpp_FUN_005a9c40();
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->field9_0x58);
   if (this_ptr->lighting_active == 0) {
     iVar1 = 0;
     do {
@@ -42,6 +43,7 @@ core_fire_cpp_CFireball_onCollision_FUN_004c1690(CFireball *this_ptr,CVector3f *
     sound_sndmain_cpp_setNextSfxStaticPosition_FUN_005a88e0
               ((double)(this_ptr->base).position.x,(double)(this_ptr->base).position.y,
                (double)(this_ptr->base).position.z);
+    filename = "rock-x.wav";
   }
   else {
     if (this_ptr->lighting_active != 2) {
@@ -57,8 +59,9 @@ core_fire_cpp_CFireball_onCollision_FUN_004c1690(CFireball *this_ptr,CVector3f *
               ((double)(this_ptr->base).position.x,(double)(this_ptr->base).position.y,
                (double)(this_ptr->base).position.z);
     sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(0.8);
+    filename = "rock-x.wav";
   }
-  sound_sndmain_cpp_startSfx_FUN_005a8e90();
+  sound_sndmain_cpp_startSfx_FUN_005a8e90(filename);
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   return 1;
 }
@@ -74,7 +77,7 @@ core_fire_cpp_CFireball_onCollision_FUN_004c1690(CFireball *this_ptr,CVector3f *
 //   XREF to: Stack[0x4] (READ)
 // 004c1698: MOV EDX,dword ptr [EBX + 0x58]
 // 004c169b: PUSH EDX
-// 004c169c: CALL sound_sndmain.cpp_FUN_005a9c40
+// 004c169c: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004c16a1: MOV ECX,dword ptr [EBX + 0x44]
 // 004c16a4: ADD ESP,0x4

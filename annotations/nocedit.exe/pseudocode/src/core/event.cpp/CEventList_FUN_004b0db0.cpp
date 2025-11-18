@@ -12,8 +12,8 @@
 // Function calls:
 //   crt_string.c_memmove_FUN_005fe5e0
 //   sound_sndmain.cpp_FUN_005a8480
-//   sound_sndmain.cpp_FUN_005a96e0
-//   sound_sndmain.cpp_FUN_005a9720
+//   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720
+//   sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0
 
 #include "nocturne.h"
 
@@ -21,14 +21,15 @@ void __cdecl core_event_cpp_CEventList_FUN_004b0db0(CEventList *this_ptr)
 
 {
   CEvent CVar1;
-  undefined8 uVar2;
-  int iVar3;
+  int iVar2;
   CEvent *dest;
   BADSPACEBASE *in_ESP;
   int unaff_ESI;
-  CEvent *pCVar4;
+  CEvent *pCVar3;
   void *unaff_EDI;
-  CEvent *pCVar5;
+  CEvent *pCVar4;
+  double dVar5;
+  CEvent *in_stack_fffffe90;
   CEvent aCStack_164 [328];
   undefined8 local_1c;
   int local_14;
@@ -36,39 +37,42 @@ void __cdecl core_event_cpp_CEventList_FUN_004b0db0(CEventList *this_ptr)
   local_14 = 0;
   if (0 < this_ptr[1].event_count) {
     dest = this_ptr[1].event_list;
-    local_1c._4_4_ = this_ptr[1].field2_0x68 + 0xbc;
+    local_1c = (double)CONCAT44(this_ptr[1].field2_0x68 + 0xbc,(uint)local_1c);
     do {
-      local_1c = sound_sndmain_cpp_FUN_005a9720();
-      *(undefined8 *)(dest + 0x118) = local_1c;
+      dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(1,(uint)in_stack_fffffe90);
+      local_1c._0_4_ = SUB84(dVar5,0);
+      *(uint *)(dest + 0x118) = (uint)local_1c;
+      local_1c._4_4_ = (uint)((ulonglong)dVar5 >> 0x20);
+      *(uint *)(dest + 0x11c) = local_1c._4_4_;
+      local_1c = dVar5;
       if (0.0 <= *(double *)(dest + 0x118)) {
         sound_sndmain_cpp_FUN_005a8480();
-        iVar3 = sound_sndmain_cpp_FUN_005a96e0();
-        pCVar4 = aCStack_164;
-        if (iVar3 == 0) goto LAB_004b0e30;
-        pCVar5 = dest + 0x18;
+        in_stack_fffffe90 = *(CEvent **)dest;
+        iVar2 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0
+                          ((uint)in_stack_fffffe90,(CSfxSample *)&stack0xfffffe98);
+        pCVar3 = aCStack_164;
+        if (iVar2 == 0) goto LAB_004b0e30;
+        pCVar4 = dest + 0x18;
         do {
-          CVar1 = *pCVar4;
-          *pCVar5 = CVar1;
+          CVar1 = *pCVar3;
+          *pCVar4 = CVar1;
           if (CVar1 == (CEvent)0x0) break;
-          CVar1 = pCVar4[1];
+          CVar1 = pCVar3[1];
+          pCVar3 = pCVar3 + 2;
+          pCVar4[1] = CVar1;
           pCVar4 = pCVar4 + 2;
-          pCVar5[1] = CVar1;
-          pCVar5 = pCVar5 + 2;
         } while (CVar1 != (CEvent)0x0);
         dest = dest + 0x120;
         unaff_EDI = (void *)((int)unaff_EDI + 0x120);
         unaff_ESI = unaff_ESI + 1;
-        uVar2 = local_1c;
       }
       else {
 LAB_004b0e30:
-        iVar3 = this_ptr[1].event_count + -1;
-        this_ptr[1].event_count = iVar3;
-        crt_string_c_memmove_FUN_005fe5e0(dest,unaff_EDI,(iVar3 - unaff_ESI) * 0x120);
-        uVar2 = local_1c;
+        iVar2 = this_ptr[1].event_count + -1;
+        this_ptr[1].event_count = iVar2;
+        in_stack_fffffe90 = dest;
+        crt_string_c_memmove_FUN_005fe5e0(dest,unaff_EDI,(iVar2 - unaff_ESI) * 0x120);
       }
-      local_1c._4_4_ = (char *)((ulonglong)uVar2 >> 0x20);
-      local_1c._0_4_ = (undefined4)uVar2;
     } while (local_14 < this_ptr[1].event_count);
   }
   return;
@@ -103,7 +107,7 @@ LAB_004b0e30:
 // 004b0dee: MOV EAX,dword ptr [EBX]
 // 004b0df0: PUSH EAX
 // 004b0df1: XOR ESI,ESI
-// 004b0df3: CALL sound_sndmain.cpp_FUN_005a9720
+// 004b0df3: CALL sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720
 //   XREF to: 005a9720 (UNCONDITIONAL_CALL)
 // 004b0df8: MOV dword ptr [ESP + 0x158],EAX
 //   XREF to: Stack[-0x20] (WRITE)
@@ -163,7 +167,7 @@ LAB_004b0e30:
 // 004b0e8a: PUSH EAX
 // 004b0e8b: MOV EDX,dword ptr [EBX]
 // 004b0e8d: PUSH EDX
-// 004b0e8e: CALL sound_sndmain.cpp_FUN_005a96e0
+// 004b0e8e: CALL sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0
 //   XREF to: 005a96e0 (UNCONDITIONAL_CALL)
 // 004b0e93: ADD ESP,0x8
 // 004b0e96: TEST EAX,EAX

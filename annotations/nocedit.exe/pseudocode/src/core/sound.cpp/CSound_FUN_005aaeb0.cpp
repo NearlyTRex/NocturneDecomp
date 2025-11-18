@@ -12,7 +12,7 @@
 void __cdecl core_sound_cpp_CSound_FUN_005aaeb0(void)
 
 {
-  sound_sndmain_cpp_FUN_005aaeb0();
+  sound_sndmain_cpp_shutdownSoundSystem_FUN_005aaeb0();
   return;
 }
 

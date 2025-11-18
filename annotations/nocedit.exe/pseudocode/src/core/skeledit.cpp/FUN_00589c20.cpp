@@ -47,8 +47,8 @@
 //   shape_meshlod.cpp_FUN_0051b6f0
 //   shape_meshlod.cpp_FUN_0051b770
 //   shape_meshlod.cpp_FUN_0051d520
-//   sound_sndmain.cpp_FUN_005aaef0
-//   sound_sndmain.cpp_FUN_005ab130
+//   sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
+//   sound_sndmain.cpp_resetSoundDevice_FUN_005ab130
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
 
 #include "nocturne.h"
@@ -120,11 +120,11 @@ int core_skeledit_cpp_FUN_00589c20(void)
         }
         core_skeledit_cpp_FUN_0058a0f0();
         shape_meshlod_cpp_CLodMesh_FUN_00516ba0(in_stack_0000000c);
-        sound_sndmain_cpp_FUN_005aaef0();
-        sound_sndmain_cpp_startSfx_FUN_005a8e90();
+        sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
+        sound_sndmain_cpp_startSfx_FUN_005a8e90("dixie.wav");
         shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                   (g_CEditorToolsPtr,"LOD generation complete!");
-        sound_sndmain_cpp_FUN_005ab130();
+        sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
         return 1;
       }
       pFVar2 = (FILE *)shape_meshlod_cpp_FUN_0051b770();
@@ -154,11 +154,11 @@ int core_skeledit_cpp_FUN_00589c20(void)
                       (g_CEditorToolsPtr,format_string);
     if (iVar1 != 0) {
       shape_meshlod_cpp_CLodMesh_FUN_00516ba0(in_stack_0000000c);
-      sound_sndmain_cpp_FUN_005aaef0();
-      sound_sndmain_cpp_startSfx_FUN_005a8e90();
+      sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
+      sound_sndmain_cpp_startSfx_FUN_005a8e90("dixie.wav");
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                 (g_CEditorToolsPtr,"LOD generation complete!");
-      sound_sndmain_cpp_FUN_005ab130();
+      sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
       return 1;
     }
   }
@@ -438,7 +438,7 @@ int core_skeledit_cpp_FUN_00589c20(void)
 // 00589e84: CALL shape_meshlod.cpp_CLodMesh_FUN_00516ba0
 //   XREF to: 00516ba0 (UNCONDITIONAL_CALL)
 // 00589e89: ADD ESP,0xc
-// 00589e8c: CALL sound_sndmain.cpp_FUN_005aaef0
+// 00589e8c: CALL sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
 //   XREF to: 005aaef0 (UNCONDITIONAL_CALL)
 // 00589e91: PUSH 0x649df5
 //   XREF to: 00649df5 (DATA)
@@ -454,7 +454,7 @@ int core_skeledit_cpp_FUN_00589c20(void)
 // 00589eaa: CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
 //   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)
 // 00589eaf: ADD ESP,0x8
-// 00589eb2: CALL sound_sndmain.cpp_FUN_005ab130
+// 00589eb2: CALL sound_sndmain.cpp_resetSoundDevice_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 00589eb7: MOV EAX,0x1
 // 00589ebc: ADD ESP,0xa60
@@ -492,7 +492,7 @@ int core_skeledit_cpp_FUN_00589c20(void)
 // 00589ef7: CALL shape_meshlod.cpp_CLodMesh_FUN_00516ba0
 //   XREF to: 00516ba0 (UNCONDITIONAL_CALL)
 // 00589efc: ADD ESP,0xc
-// 00589eff: CALL sound_sndmain.cpp_FUN_005aaef0
+// 00589eff: CALL sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
 //   XREF to: 005aaef0 (UNCONDITIONAL_CALL)
 // 00589f04: PUSH 0x649df5
 //   XREF to: 00649df5 (DATA)
@@ -508,7 +508,7 @@ int core_skeledit_cpp_FUN_00589c20(void)
 // 00589f1d: CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
 //   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)
 // 00589f22: ADD ESP,0x8
-// 00589f25: CALL sound_sndmain.cpp_FUN_005ab130
+// 00589f25: CALL sound_sndmain.cpp_resetSoundDevice_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 00589f2a: MOV EAX,0x1
 // 00589f2f: ADD ESP,0xa60

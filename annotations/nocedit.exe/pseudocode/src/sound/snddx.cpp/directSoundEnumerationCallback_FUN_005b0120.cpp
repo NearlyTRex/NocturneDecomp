@@ -18,8 +18,8 @@
 //   undefined4 DAT_03f69b59
 //   undefined4 g_RecordingDevices[7].device_name[14]
 //   undefined4 g_RecordingDevices[7].device_name[15]
-//   void* g_RecordingContext
-//   undefined4 DAT_03f69c5c
+//   int isRecordingStarted
+//   int g_RecordingSamplesSigned
 //   SDirectSoundDeviceInfo[8] g_DirectSoundDevices
 // Function calls:
 //   crt_dsound.c_DirectSoundCreate

@@ -31,15 +31,15 @@
 //   core_weapon.cpp_CWeapon_process_FUN_005ee110
 //   core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
 //   crt_math.c_round_FUN_005fe6b0
-//   sound_sndmain.cpp_FUN_005a9660
-//   sound_sndmain.cpp_FUN_005a9ae0
-//   sound_sndmain.cpp_FUN_005a9b40
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_005a8a80
-//   sound_sndmain.cpp_setNextSfxTrackedPosition_FUN_005a8940
+//   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
 //   sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60
+//   sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40
+//   sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
 
 #include "nocturne.h"
@@ -53,52 +53,59 @@ void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
 {
   float fVar1;
   float fVar2;
-  float fVar3;
-  int iVar4;
+  int iVar3;
   CDemonFilter *filter_ptr;
-  undefined4 uVar5;
-  float10 fVar6;
-  double dVar7;
+  uint uVar4;
+  float10 fVar5;
+  double dVar6;
   CWeapon *in_stack_00000004;
   float in_stack_0000000c;
   float in_stack_00000010;
+  float in_stack_00000014;
+  float fVar7;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004);
-  fVar3 = core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0
+  fVar2 = core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0
                     (&g_HeroActors[g_LocalHeroIndex]->inventory,DAT_00660a40);
-  fVar1 = (DAT_00660a40 / fVar3) * in_stack_00000010 +
+  fVar7 = (DAT_00660a40 / fVar2) * in_stack_00000010 +
           *(float *)(in_stack_00000004[1].base_actor.actor_name + 8);
-  *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = fVar1;
-  fVar2 = DAT_00660a40;
-  fVar3 = (float)CONCAT22((short)((uint)fVar3 >> 0x10),
-                          (ushort)(fVar1 < DAT_00660a40) << 8 |
-                          (ushort)(NAN(fVar1) || NAN(DAT_00660a40)) << 10 |
-                          (ushort)(fVar1 == DAT_00660a40) << 0xe);
-  if (fVar1 >= DAT_00660a40 && (fVar1 == DAT_00660a40) == 0) {
+  *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = fVar7;
+  fVar1 = DAT_00660a40;
+  fVar2 = (float)CONCAT22((short)((uint)fVar2 >> 0x10),
+                          (ushort)(fVar7 < DAT_00660a40) << 8 |
+                          (ushort)(NAN(fVar7) || NAN(DAT_00660a40)) << 10 |
+                          (ushort)(fVar7 == DAT_00660a40) << 0xe);
+  if (fVar7 >= DAT_00660a40 && (fVar7 == DAT_00660a40) == 0) {
     *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = DAT_00660a40;
-    fVar3 = fVar2;
+    fVar2 = fVar1;
   }
-  fVar6 = (float10)*(float *)(in_stack_00000004[1].base_actor.actor_name + 8) /
+  fVar5 = (float10)*(float *)(in_stack_00000004[1].base_actor.actor_name + 8) /
           (float10)DAT_00660a40;
-  *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) = (float)fVar6;
-  fVar6 = fVar6 * (float10)DOUBLE_00631516;
-  dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(in_stack_00000004->weapon_state,fVar3));
-  in_stack_00000004->ammo_count = (int)ROUND(fVar6);
-  if ((int)((ulonglong)dVar7 >> 0x20) == 2) {
-    iVar4 = sound_sndmain_cpp_FUN_005a9660();
-    if (iVar4 == 0) {
+  *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) = (float)fVar5;
+  fVar5 = fVar5 * (float10)DOUBLE_00631516;
+  dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(in_stack_00000004->weapon_state,fVar2));
+  in_stack_00000004->ammo_count = (int)ROUND(fVar5);
+  if ((int)((ulonglong)dVar6 >> 0x20) == 2) {
+    fVar7 = _DAT_00660a50 +
+            (_DAT_00660a54 - _DAT_00660a50) *
+            *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc);
+    iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                      (*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4));
+    if (iVar3 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-      sound_sndmain_cpp_setNextSfxTrackedPosition_FUN_005a8940
+      sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
                 (&(in_stack_00000004->base_actor).location.position);
       sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60((float)in_stack_00000004);
       sound_sndmain_cpp_setNextSfxBaseFrequency_FUN_005a8a80(in_stack_0000000c);
-      uVar5 = sound_sndmain_cpp_startSfx_FUN_005a8e90();
-      *(undefined4 *)(in_stack_00000004[1].base_actor.actor_name + 4) = uVar5;
+      uVar4 = sound_sndmain_cpp_startSfx_FUN_005a8e90("cre-charge.wav");
+      *(uint *)(in_stack_00000004[1].base_actor.actor_name + 4) = uVar4;
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     }
     else {
-      sound_sndmain_cpp_FUN_005a9ae0();
-      sound_sndmain_cpp_FUN_005a9b40();
+      sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0
+                (*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4),fVar7);
+      sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40
+                (*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4),in_stack_00000014);
     }
     core_lightgun_cpp_FUN_00505ac0();
     if (*(int *)in_stack_00000004[1].base_actor.actor_name == 0) {
@@ -119,7 +126,7 @@ void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
     in_stack_00000004[1].base_actor.actor_name[3] = '\0';
     return;
   }
-  sound_sndmain_cpp_FUN_005a9c40();
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4));
   in_stack_00000004[1].base_actor.actor_name[0] = '\0';
   in_stack_00000004[1].base_actor.actor_name[1] = '\0';
   in_stack_00000004[1].base_actor.actor_name[2] = '\0';
@@ -206,7 +213,7 @@ void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
 //   XREF to: Stack[-0x14] (WRITE)
 // 00506522: FSTP float ptr [ESP + 0x10]
 //   XREF to: Stack[-0x10] (WRITE)
-// 00506526: CALL sound_sndmain.cpp_FUN_005a9660
+// 00506526: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 0050652b: ADD ESP,0x4
 // 0050652e: TEST EAX,EAX
@@ -216,14 +223,14 @@ void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
 // 0050653c: PUSH dword ptr [ESP + 0x8]
 //   XREF to: Stack[-0x14] (READ)
 // 00506540: PUSH ESI
-// 00506541: CALL sound_sndmain.cpp_FUN_005a9ae0
+// 00506541: CALL sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0
 //   XREF to: 005a9ae0 (UNCONDITIONAL_CALL)
 // 00506546: ADD ESP,0x8
 // 00506549: MOV EDI,dword ptr [EBX + 0x57c]
 // 0050654f: PUSH dword ptr [ESP + 0xc]
 //   XREF to: Stack[-0x10] (READ)
 // 00506553: PUSH EDI
-// 00506554: CALL sound_sndmain.cpp_FUN_005a9b40
+// 00506554: CALL sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40
 //   XREF to: 005a9b40 (UNCONDITIONAL_CALL)
 // 00506559: ADD ESP,0x8
 // 0050655c: PUSH EBX
@@ -293,7 +300,7 @@ void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
 // 005065f4: MOV EBP,dword ptr [EBX + 0x57c]
 //   Label: LAB_005065f4
 // 005065fa: PUSH EBP
-// 005065fb: CALL sound_sndmain.cpp_FUN_005a9c40
+// 005065fb: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 00506600: ADD ESP,0x4
 // 00506603: MOV dword ptr [EBX + 0x578],0x0
@@ -306,7 +313,7 @@ void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
 //   XREF to: 005a8c30 (UNCONDITIONAL_CALL)
 // 00506618: LEA EAX,[EBX + 0x20]
 // 0050661b: PUSH EAX
-// 0050661c: CALL sound_sndmain.cpp_setNextSfxTrackedPosition_FUN_005a8940
+// 0050661c: CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
 //   XREF to: 005a8940 (UNCONDITIONAL_CALL)
 // 00506621: ADD ESP,0x4
 // 00506624: PUSH dword ptr [ESP + 0x8]

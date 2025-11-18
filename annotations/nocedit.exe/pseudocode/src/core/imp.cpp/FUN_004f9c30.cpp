@@ -65,7 +65,7 @@
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 //   crt_math.c_round_FUN_005fe6b0
 //   engine_console.cpp_CConsole_printf_FUN_00441890
-//   sound_sndmain.cpp_FUN_005a9660
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 
 #include "nocturne.h"
 
@@ -373,7 +373,9 @@ LAB_004f9c99:
                  (iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.1), iVar7 != 0)) {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                           (&(in_stack_00000004->base_character).model.motion_controller,8,1);
-                iVar7 = sound_sndmain_cpp_FUN_005a9660();
+                iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                                  (*(uint *)(in_stack_00000004[1].base_character.base_actor.
+                                             actor_name + 8));
                 if (iVar7 == 0) {
                   uVar13 = (*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
                                      ((CDemonActor *)in_stack_00000004,"imp-jump?.wav");
@@ -412,13 +414,17 @@ LAB_004f9c99:
                     in_stack_00000008;
             *(float *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x10) = fVar3;
             if (fVar3 < 0.0) {
+              uVar8 = *(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name + 8);
               pCVar6 = &in_stack_00000004[1].base_character;
               (pCVar6->base_actor).actor_name[0x10] = '\0';
               (pCVar6->base_actor).actor_name[0x11] = '\0';
               (pCVar6->base_actor).actor_name[0x12] = '\0';
               (pCVar6->base_actor).actor_name[0x13] = '\0';
-              iVar7 = sound_sndmain_cpp_FUN_005a9660();
-              if ((iVar7 == 0) && (iVar7 = sound_sndmain_cpp_FUN_005a9660(), iVar7 == 0)) {
+              iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(uVar8);
+              if ((iVar7 == 0) &&
+                 (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                                    (*(uint *)(in_stack_00000004[1].base_character.base_actor.
+                                               actor_name + 0xc)), iVar7 == 0)) {
                 uVar13 = (*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
                                    ((CDemonActor *)in_stack_00000004,"imp-laugh?.wav");
                 *(undefined4 *)(in_stack_00000004[1].base_character.base_actor.actor_name + 8) =
@@ -441,13 +447,17 @@ LAB_004f9c99:
               in_stack_00000008 * FLOAT_0062f9f6;
       *(float *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x10) = fVar3;
       if (fVar3 < 0.0) {
+        uVar8 = *(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name + 8);
         pCVar6 = &in_stack_00000004[1].base_character;
         (pCVar6->base_actor).actor_name[0x10] = '\0';
         (pCVar6->base_actor).actor_name[0x11] = '\0';
         (pCVar6->base_actor).actor_name[0x12] = '\0';
         (pCVar6->base_actor).actor_name[0x13] = '\0';
-        iVar7 = sound_sndmain_cpp_FUN_005a9660();
-        if ((iVar7 == 0) && (iVar7 = sound_sndmain_cpp_FUN_005a9660(), iVar7 == 0)) {
+        iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(uVar8);
+        if ((iVar7 == 0) &&
+           (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                              (*(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name +
+                                        0xc)), iVar7 == 0)) {
           uVar13 = (*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
                              ((CDemonActor *)in_stack_00000004,"imp-laugh?.wav");
           *(undefined4 *)(in_stack_00000004[1].base_character.base_actor.actor_name + 8) = uVar13;
@@ -1736,7 +1746,7 @@ switchD_004fa8ed_caseD_8:
 // 004fa6c3: ADD ESP,0xc
 // 004fa6c6: MOV ESI,dword ptr [EBX + 0xbebc]
 // 004fa6cc: PUSH ESI
-// 004fa6cd: CALL sound_sndmain.cpp_FUN_005a9660
+// 004fa6cd: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004fa6d2: ADD ESP,0x4
 // 004fa6d5: TEST EAX,EAX
@@ -1837,7 +1847,7 @@ switchD_004fa8ed_caseD_8:
 // 004fa7bc: MOV EDI,dword ptr [EBX + 0xbebc]
 // 004fa7c2: PUSH EDI
 // 004fa7c3: MOV dword ptr [EBX + 0xbec4],0x0
-// 004fa7cd: CALL sound_sndmain.cpp_FUN_005a9660
+// 004fa7cd: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004fa7d2: ADD ESP,0x4
 // 004fa7d5: TEST EAX,EAX
@@ -1845,7 +1855,7 @@ switchD_004fa8ed_caseD_8:
 //   XREF to: 004f9fef (CONDITIONAL_JUMP)
 // 004fa7dd: MOV EAX,dword ptr [EBX + 0xbec0]
 // 004fa7e3: PUSH EAX
-// 004fa7e4: CALL sound_sndmain.cpp_FUN_005a9660
+// 004fa7e4: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004fa7e9: ADD ESP,0x4
 // 004fa7ec: TEST EAX,EAX
@@ -1896,7 +1906,7 @@ switchD_004fa8ed_caseD_8:
 // 004fa871: MOV ESI,dword ptr [EBX + 0xbebc]
 // 004fa877: PUSH ESI
 // 004fa878: MOV dword ptr [EBX + 0xbec4],0x0
-// 004fa882: CALL sound_sndmain.cpp_FUN_005a9660
+// 004fa882: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004fa887: ADD ESP,0x4
 // 004fa88a: TEST EAX,EAX
@@ -1904,7 +1914,7 @@ switchD_004fa8ed_caseD_8:
 //   XREF to: 004f9fef (CONDITIONAL_JUMP)
 // 004fa892: MOV EDI,dword ptr [EBX + 0xbec0]
 // 004fa898: PUSH EDI
-// 004fa899: CALL sound_sndmain.cpp_FUN_005a9660
+// 004fa899: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004fa89e: ADD ESP,0x4
 // 004fa8a1: TEST EAX,EAX

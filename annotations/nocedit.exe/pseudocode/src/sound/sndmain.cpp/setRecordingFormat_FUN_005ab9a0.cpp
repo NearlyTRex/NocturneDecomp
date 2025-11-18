@@ -1,49 +1,50 @@
 // Name: sound_sndmain.cpp_setRecordingFormat_FUN_005ab9a0
 // Address: 005ab9a0
 // Address Range: [[005ab9a0, 005aba3a]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_setRecordingFormat_FUN_005ab9a0()
+// Convention: __cdecl
+// Signature: int sound_sndmain.cpp_setRecordingFormat_FUN_005ab9a0(int bits_per_sample, int channels, int sample_rate, int signed_samples)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005aba90 (005aba90) at 005abad0 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_startRecording_FUN_005aba90 (005aba90) at 005abad0 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_00650daa
 //   TerminatedCString s_setRecordingFormat_can_t_00650dbf
-//   undefined4 DAT_00681b54
-//   undefined4 DAT_00681b58
-//   undefined4 DAT_00681b5c
+//   int g_RecordingBitsPerSample = 0x8
+//   int g_RecordingChannelCount = 0x1
+//   int g_RecordingSampleRate = 0x2b11
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 //   IDirectSoundCapture* g_RecordingDeviceInterface
-//   undefined4 DAT_03f69c5c
+//   int g_RecordingSamplesSigned
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   sound_sndmain.cpp_FUN_005ab980
+//   sound_sndmain.cpp_isRecordingStarted_FUN_005ab980
 
 #include "nocturne.h"
 
-undefined4 sound_sndmain_cpp_setRecordingFormat_FUN_005ab9a0(void)
+int __cdecl
+sound_sndmain_cpp_setRecordingFormat_FUN_005ab9a0
+          (int bits_per_sample,int channels,int sample_rate,int signed_samples)
 
 {
   int iVar1;
   HRESULT HVar2;
-  void *in_stack_0000000c;
-  void **in_stack_00000010;
-  undefined4 in_stack_00000014;
+  LPUNKNOWN in_stack_00000014;
   int in_stack_00000018;
   
-  iVar1 = sound_sndmain_cpp_FUN_005ab980();
+  iVar1 = sound_sndmain_cpp_isRecordingStarted_FUN_005ab980();
   if (iVar1 != 0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x14ad;
     core_main_c_displayErrorAndQuit_FUN_00506f10("setRecordingFormat - can't do this while recording active!");
   }
-  DAT_00681b54 = in_stack_0000000c;
-  DAT_00681b58 = in_stack_00000010;
-  DAT_00681b5c = in_stack_00000014;
-  DAT_03f69c5c = (uint)(in_stack_00000018 != 0);
+  g_RecordingBitsPerSample = sample_rate;
+  g_RecordingChannelCount = signed_samples;
+  g_RecordingSampleRate = (int)in_stack_00000014;
+  g_RecordingSamplesSigned = (int)(in_stack_00000018 != 0);
   if (g_RecordingDeviceInterface != (IDirectSoundCapture *)0x0) {
-    HVar2 = (*g_RecordingDeviceInterface->vtable[1].QueryInterface)
-                      ((IUnknown *)g_RecordingDeviceInterface,in_stack_0000000c,in_stack_00000010);
+    HVar2 = (*g_RecordingDeviceInterface->vtable->CreateCaptureBuffer)
+                      (g_RecordingDeviceInterface,(void *)sample_rate,
+                       (LPDIRECTSOUNDCAPTUREBUFFER *)signed_samples,in_stack_00000014);
     if (HVar2 == 0) {
       return 0;
     }
@@ -58,7 +59,7 @@ undefined4 sound_sndmain_cpp_setRecordingFormat_FUN_005ab9a0(void)
 // 005ab9a1: PUSH ESI
 // 005ab9a2: PUSH EDI
 // 005ab9a3: PUSH EBP
-// 005ab9a4: CALL sound_sndmain.cpp_FUN_005ab980
+// 005ab9a4: CALL sound_sndmain.cpp_isRecordingStarted_FUN_005ab980
 //   XREF to: 005ab980 (UNCONDITIONAL_CALL)
 // 005ab9a9: TEST EAX,EAX
 // 005ab9ab: JNZ 0x005ab9ef

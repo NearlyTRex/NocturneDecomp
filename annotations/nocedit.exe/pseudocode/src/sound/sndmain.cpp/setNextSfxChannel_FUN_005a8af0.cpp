@@ -31,7 +31,7 @@ void __cdecl sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(int channel_index)
     g_CurrentLineNumber = 0xcf8;
     core_main_c_displayErrorAndQuit_FUN_00506f10("setNextSfxChannel - invalid channel index: %d",channel_index);
   }
-  g_SfxOptions[g_SfxLastSlot].status = channel_index;
+  g_SfxOptions[g_SfxLastSlot].channel_index = channel_index;
   return;
 }
 

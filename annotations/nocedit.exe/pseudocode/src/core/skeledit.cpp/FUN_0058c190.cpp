@@ -131,8 +131,8 @@
 //   shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920
 //   shape_meshlod.cpp_FUN_0051b770
 //   shape_meshlod.cpp_FUN_0051bcc0
-//   sound_sndmain.cpp_FUN_005aaef0
-//   sound_sndmain.cpp_FUN_005ab130
+//   sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
+//   sound_sndmain.cpp_resetSoundDevice_FUN_005ab130
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
 //   wincore_winrun.cpp_getTime_FUN_005f2dc0
 
@@ -717,8 +717,8 @@ LAB_0058c601:
     }
     core_skeledit_cpp_FUN_0058a0f0();
     shape_meshlod_cpp_CLodMesh_FUN_00516ba0((CLodMesh *)auStack_298);
-    sound_sndmain_cpp_FUN_005aaef0();
-    sound_sndmain_cpp_startSfx_FUN_005a8e90();
+    sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
+    sound_sndmain_cpp_startSfx_FUN_005a8e90("dixie.wav");
     shape_edittool_cpp_CEditorTools_createCenteredDialog_FUN_0049e940(g_CEditorToolsPtr,(char *)0x0)
     ;
     shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
@@ -733,7 +733,7 @@ LAB_0058c601:
       iVar15 = iVar10;
     } while (iVar9 < 0x360000);
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-    sound_sndmain_cpp_FUN_005ab130();
+    sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
     shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950((CLodMesh *)(auStack_298 + 0x24));
     shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&CStack_114);
     return 1;
@@ -2490,7 +2490,7 @@ LAB_0058d5ef:
 // 0058d1ec: CALL shape_meshlod.cpp_CLodMesh_FUN_00516ba0
 //   XREF to: 00516ba0 (UNCONDITIONAL_CALL)
 // 0058d1f1: ADD ESP,0xc
-// 0058d1f4: CALL sound_sndmain.cpp_FUN_005aaef0
+// 0058d1f4: CALL sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
 //   XREF to: 005aaef0 (UNCONDITIONAL_CALL)
 // 0058d1f9: PUSH 0x649df5
 //   XREF to: 00649df5 (DATA)
@@ -2539,7 +2539,7 @@ LAB_0058d5ef:
 // 0058d254: CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 //   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)
 // 0058d259: ADD ESP,0x4
-// 0058d25c: CALL sound_sndmain.cpp_FUN_005ab130
+// 0058d25c: CALL sound_sndmain.cpp_resetSoundDevice_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 0058d261: PUSH 0x0
 // 0058d263: LEA EAX,[ESP + 0x9edc]

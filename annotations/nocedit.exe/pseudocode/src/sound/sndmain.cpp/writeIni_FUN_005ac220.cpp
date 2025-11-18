@@ -25,13 +25,13 @@
 //   engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90
 //   engine_ini.cpp_CIniFile_setString_FUN_004fbbb0
 //   sound_sndmain.cpp_getAudioFormat_FUN_005ab210
-//   sound_sndmain.cpp_getHardwareMixingEnabled_FUN_005ab590
 //   sound_sndmain.cpp_getMaxSwLatency_FUN_005abea0
 //   sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90
 //   sound_sndmain.cpp_getSoundDeviceCount_FUN_005ab2e0
 //   sound_sndmain.cpp_getSoundDeviceInfo_FUN_005ab370
-//   sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0
+//   sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005ab590
 //   sound_sndmain.cpp_isSfxChannelEnabled_FUN_005a9ea0
+//   sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0
 
 #include "nocturne.h"
 
@@ -89,12 +89,12 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_005ac220(CIniFile *ini_file)
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(ini_file,"Bits",unaff_ESI);
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(ini_file,"Channels",unaff_EDI);
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(ini_file,"Hz",unaff_EBX);
-  iVar2 = sound_sndmain_cpp_getHardwareMixingEnabled_FUN_005ab590();
+  iVar2 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005ab590();
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(ini_file,"HwMixingEnabled",iVar2);
   fStack00000014 = sound_sndmain_cpp_getMaxSwLatency_FUN_005abea0();
   engine_ini_cpp_CIniFile_setFloatValue_FUN_004fbd30
             (ini_file,"MaxSwLatency",fStack00000014);
-  iVar2 = sound_sndmain_cpp_getSoundEnabled_FUN_005a96b0();
+  iVar2 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
   channel_index = 0;
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(ini_file,"Mute",iVar2);
   if (0 < g_MaxSoundChannels) {
@@ -219,7 +219,7 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_005ac220(CIniFile *ini_file)
 // 005ac2fc: CALL engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90
 //   XREF to: 004fbc90 (UNCONDITIONAL_CALL)
 // 005ac301: ADD ESP,0xc
-// 005ac304: CALL sound_sndmain.cpp_getHardwareMixingEnabled_FUN_005ab590
+// 005ac304: CALL sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005ab590
 //   XREF to: 005ab590 (UNCONDITIONAL_CALL)
 // 005ac309: PUSH EAX
 // 005ac30a: PUSH 0x650fc9
@@ -243,7 +243,7 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_005ac220(CIniFile *ini_file)
 // 005ac337: CALL engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30
 //   XREF to: 004fbd30 (UNCONDITIONAL_CALL)
 // 005ac33c: ADD ESP,0xc
-// 005ac33f: CALL sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0
+// 005ac33f: CALL sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0
 //   XREF to: 005a96b0 (UNCONDITIONAL_CALL)
 // 005ac344: PUSH EAX
 // 005ac345: PUSH 0x650fe6

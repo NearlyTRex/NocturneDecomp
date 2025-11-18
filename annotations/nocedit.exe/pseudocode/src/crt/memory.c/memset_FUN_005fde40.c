@@ -127,7 +127,7 @@
 //   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (005a75e0) at 005a76dc [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a6c06 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005a8480 (005a8480) at 005a848d [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005aaef0 (005aaef0) at 005aaf86 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0 (005aaef0) at 005aaf86 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_generateSilence_FUN_005a5db0 (005a5db0) at 005a5dcf [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 (005aca90) at 005acbef [UNCONDITIONAL_CALL]
 //   sound_sndwav.cpp_CWavInDevice_start_FUN_005b0e20 (005b0e20) at 005b0e41 [UNCONDITIONAL_CALL]

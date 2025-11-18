@@ -123,12 +123,12 @@
 //   shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380
 //   shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40
 //   shape_memdbg.cpp_closeFile_FUN_0050f9b0
+//   sound_sndmain.cpp_countActiveSfx_FUN_005a9ff0
 //   sound_sndmain.cpp_FUN_005a8480
-//   sound_sndmain.cpp_FUN_005a96e0
-//   sound_sndmain.cpp_FUN_005a9ef0
-//   sound_sndmain.cpp_FUN_005a9f30
-//   sound_sndmain.cpp_FUN_005a9ff0
-//   sound_sndmain.cpp_FUN_005aa6a0
+//   sound_sndmain.cpp_getFirstActiveSfx_FUN_005a9ef0
+//   sound_sndmain.cpp_getNextActiveSfx_FUN_005a9f30
+//   sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0
+//   sound_sndmain.cpp_getSoundMemoryStats_FUN_005aa6a0
 //   support_newmsg.cpp_getLocalizedString_FUN_005441f0
 //   wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630
 //   wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580
@@ -158,7 +158,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   uint *puVar10;
   int iVar11;
   BADSPACEBASE *in_ESP;
-  SCollisionInfo *y_pos;
+  CSfxSample *y_pos;
   int iVar12;
   byte bVar13;
   int aiStackY_107c [644];
@@ -167,7 +167,6 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   CVector3i *in_stack_fffff9c4;
   char *pcVar14;
   int iStack_5d8;
-  undefined4 uStack_5cc;
   char local_4dc [256];
   char local_3dc [256];
   char local_2dc [256];
@@ -179,8 +178,13 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   int local_94;
   int aiStack_90 [5];
   CVector3f local_7c;
-  CVector3i local_70 [2];
+  CVector3i local_70;
+  int local_5c;
   int local_58;
+  int local_54;
+  int local_50;
+  int local_4c;
+  int local_48;
   int local_44;
   int local_40;
   int local_3c;
@@ -244,21 +248,21 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       if (((byte)g_MouseButtonFlags & 1) != 0) {
         core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                   (&g_CDemonCameraInstance,(CVector3i *)g_MouseX,g_MouseY,iVar4);
-        output_ptr = local_70;
-        local_70[0].x = aiStack_90[2];
-        *(int *)((int)local_70 + ((uint)bVar13 * -2 + -1) * 4 + 8) =
+        output_ptr = &local_70;
+        local_70.x = aiStack_90[2];
+        *(int *)((int)&local_70 + ((uint)bVar13 * -2 + -1) * 4 + 8) =
              aiStack_90[(uint)bVar13 * -2 + 3];
-        *(int *)((int)local_70 + ((uint)bVar13 * -2 + (uint)bVar13 * -2) * 4 + 8) =
+        *(int *)((int)&local_70 + ((uint)bVar13 * -2 + (uint)bVar13 * -2) * 4 + 8) =
              aiStack_90[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 4];
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
                   (&g_CDemonCameraInstance,output_ptr,in_stack_fffff9c4);
-        local_70[0].x = local_94;
-        *(int *)((int)local_70 + ((uint)bVar13 * -2 + -1) * 4 + 8) = aiStack_90[(uint)bVar13 * -2];
-        *(int *)((int)local_70 + ((uint)bVar13 * -2 + (uint)bVar13 * -2) * 4 + 8) =
+        local_70.x = local_94;
+        *(int *)((int)&local_70 + ((uint)bVar13 * -2 + -1) * 4 + 8) = aiStack_90[(uint)bVar13 * -2];
+        *(int *)((int)&local_70 + ((uint)bVar13 * -2 + (uint)bVar13 * -2) * 4 + 8) =
              aiStack_90[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1];
-        local_7c.x = (float)local_70[0].x * FLOAT_0065e9bc;
-        local_7c.y = (float)local_70[0].y * FLOAT_0065e9bc;
-        local_7c.z = (float)local_70[0].z * FLOAT_0065e9bc;
+        local_7c.x = (float)local_70.x * FLOAT_0065e9bc;
+        local_7c.y = (float)local_70.y * FLOAT_0065e9bc;
+        local_7c.z = (float)local_70.z * FLOAT_0065e9bc;
         pCVar3 = g_HeroActors[g_LocalHeroIndex];
         (*((pCVar3->base_character).base_actor.vtable)->setPositionAndOrientation)
                   ((CDemonActor *)pCVar3,&local_7c,
@@ -408,9 +412,10 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
           crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"Fudge: %g,%g,%g");
           engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x4d);
         }
-        sound_sndmain_cpp_FUN_005aa6a0();
+        sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0
+                  (&local_5c,&local_58,&local_54,&local_50,&local_4c,&local_48);
         local_14 = local_58;
-        sound_sndmain_cpp_FUN_005a9ff0();
+        sound_sndmain_cpp_countActiveSfx_FUN_005a9ff0();
         pcVar14 = "SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk Total alloc: %.1fk Free: %.1fk";
         crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk Total alloc: %.1fk Free: %.1fk");
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x42);
@@ -427,23 +432,21 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
           iStack_5d8 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x40);
           iStack_5d8 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x20);
           crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d");
-          uStack_5cc = 0x4da91e;
           engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0x2c);
         }
       }
       if (_DAT_02d831c0 != 0) {
-        uVar5 = sound_sndmain_cpp_FUN_005a9ef0();
-        y_pos = (SCollisionInfo *)0x37;
-        while (uVar5 != 0) {
+        uVar5 = sound_sndmain_cpp_getFirstActiveSfx_FUN_005a9ef0();
+        y_pos = (CSfxSample *)0x37;
+        for (; uVar5 != 0; uVar5 = sound_sndmain_cpp_getNextActiveSfx_FUN_005a9f30(uVar5)) {
           sound_sndmain_cpp_FUN_005a8480();
           pcVar14 = &stack0xfffff9d4;
-          iVar4 = sound_sndmain_cpp_FUN_005a96e0();
+          iVar4 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0(uVar5,(CSfxSample *)pcVar14);
           if (iVar4 != 0) {
             pcVar14 = (char *)y_pos;
             engine_2d_c_drawTextXY_FUN_00402130(0,(int)y_pos,&stack0xfffff9d4);
-            y_pos = (SCollisionInfo *)((int)&y_pos->field2_0x8 + 3);
+            y_pos = (CSfxSample *)((y_pos->sample_info).name + 0xb);
           }
-          uVar5 = sound_sndmain_cpp_FUN_005a9f30();
         }
       }
       if (this_ptr->event_processing_enabled != 0) {
@@ -1250,7 +1253,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 // 004da79e: LEA EAX,[EBP + 0x32]
 //   XREF to: Stack[-0x5c] (DATA)
 // 004da7a1: PUSH EAX
-// 004da7a2: CALL sound_sndmain.cpp_FUN_005aa6a0
+// 004da7a2: CALL sound_sndmain.cpp_getSoundMemoryStats_FUN_005aa6a0
 //   XREF to: 005aa6a0 (UNCONDITIONAL_CALL)
 // 004da7a7: MOV EAX,dword ptr [EBP + 0x46]
 //   XREF to: Stack[-0x48] (READ)
@@ -1298,7 +1301,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 // 004da7fa: MOV EDI,dword ptr [EBP + 0x32]
 //   XREF to: Stack[-0x5c] (READ)
 // 004da7fd: PUSH EDI
-// 004da7fe: CALL sound_sndmain.cpp_FUN_005a9ff0
+// 004da7fe: CALL sound_sndmain.cpp_countActiveSfx_FUN_005a9ff0
 //   XREF to: 005a9ff0 (UNCONDITIONAL_CALL)
 // 004da803: PUSH EAX
 // 004da804: PUSH 0x62b528
@@ -1422,7 +1425,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 //   XREF to: 02d831c0 (READ)
 // 004da928: JZ 0x004da981
 //   XREF to: 004da981 (CONDITIONAL_JUMP)
-// 004da92a: CALL sound_sndmain.cpp_FUN_005a9ef0
+// 004da92a: CALL sound_sndmain.cpp_getFirstActiveSfx_FUN_005a9ef0
 //   XREF to: 005a9ef0 (UNCONDITIONAL_CALL)
 // 004da92f: MOV ESI,0x37
 // 004da934: MOV EBX,EAX
@@ -1440,7 +1443,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 //   XREF to: Stack[-0x62c] (DATA)
 // 004da94f: PUSH EAX
 // 004da950: PUSH EBX
-// 004da951: CALL sound_sndmain.cpp_FUN_005a96e0
+// 004da951: CALL sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0
 //   XREF to: 005a96e0 (UNCONDITIONAL_CALL)
 // 004da956: ADD ESP,0x8
 // 004da959: TEST EAX,EAX
@@ -1457,7 +1460,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 // 004da96f: ADD ESP,0xc
 // 004da972: PUSH EBX
 //   Label: LAB_004da972
-// 004da973: CALL sound_sndmain.cpp_FUN_005a9f30
+// 004da973: CALL sound_sndmain.cpp_getNextActiveSfx_FUN_005a9f30
 //   XREF to: 005a9f30 (UNCONDITIONAL_CALL)
 // 004da978: ADD ESP,0x4
 // 004da97b: MOV EBX,EAX

@@ -19,8 +19,8 @@
 //   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-//   sound_sndmain.cpp_FUN_005a9660
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -42,8 +42,10 @@ void core_batcreat_cpp_FUN_00416030(void)
   CVector3f CStack_20;
   CCharacter *pCStack_14;
   
-  sound_sndmain_cpp_FUN_005a9c40();
-  sound_sndmain_cpp_FUN_005a9c40();
+  sound_sndmain_cpp_killSfx_FUN_005a9c40
+            (*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x60));
+  sound_sndmain_cpp_killSfx_FUN_005a9c40
+            (*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x58));
   if (*(int *)((int)in_stack_00000008 + 0x28) == 7) {
     iVar2 = 0;
     *(float *)((int)in_stack_00000008 + 4) =
@@ -75,7 +77,8 @@ void core_batcreat_cpp_FUN_00416030(void)
     if ((pSVar3->state_index != 7) && (pSVar3->state_index != 8)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr->motion_controller,7,1);
-      sound_sndmain_cpp_FUN_005a9c40();
+      sound_sndmain_cpp_killSfx_FUN_005a9c40
+                (*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x5c));
       uVar4 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                         (&in_stack_00000004->base_actor,"batman-die.wav");
       *(undefined4 *)(in_stack_00000004[1].base_actor.create_event + 0x5c) = uVar4;
@@ -99,7 +102,8 @@ void core_batcreat_cpp_FUN_00416030(void)
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(in_stack_00000004->model).motion_controller,6,1);
     }
-    iVar2 = sound_sndmain_cpp_FUN_005a9660();
+    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                      (*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x5c));
     if (iVar2 == 0) {
       uVar4 = (*((in_stack_00000004->base_actor).vtable)->playSound)
                         (&in_stack_00000004->base_actor,"batman-hurt?.wav");
@@ -129,12 +133,12 @@ void core_batcreat_cpp_FUN_00416030(void)
 //   XREF to: Stack[0x8] (READ)
 // 0041603f: MOV EDX,dword ptr [ESI + 0xbefc]
 // 00416045: PUSH EDX
-// 00416046: CALL sound_sndmain.cpp_FUN_005a9c40
+// 00416046: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 0041604b: ADD ESP,0x4
 // 0041604e: MOV ECX,dword ptr [ESI + 0xbef4]
 // 00416054: PUSH ECX
-// 00416055: CALL sound_sndmain.cpp_FUN_005a9c40
+// 00416055: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 0041605a: MOV EBX,dword ptr [EDI + 0x28]
 // 0041605d: ADD ESP,0x4
@@ -231,7 +235,7 @@ void core_batcreat_cpp_FUN_00416030(void)
 // 0041612e: MOV ECX,dword ptr [ESI + 0xbef8]
 //   Label: LAB_0041612e
 // 00416134: PUSH ECX
-// 00416135: CALL sound_sndmain.cpp_FUN_005a9660
+// 00416135: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 0041613a: ADD ESP,0x4
 // 0041613d: TEST EAX,EAX
@@ -311,7 +315,7 @@ void core_batcreat_cpp_FUN_00416030(void)
 // 004161d7: ADD ESP,0xc
 // 004161da: MOV EBX,dword ptr [ESI + 0xbef8]
 // 004161e0: PUSH EBX
-// 004161e1: CALL sound_sndmain.cpp_FUN_005a9c40
+// 004161e1: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 004161e6: ADD ESP,0x4
 // 004161e9: PUSH 0x615691

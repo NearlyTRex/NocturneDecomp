@@ -8,6 +8,14 @@ typedef IDirectSound* LPDIRECTSOUND;
 // pointer to IDirectSoundBuffer
 typedef IDirectSoundBuffer* LPDIRECTSOUNDBUFFER;
 
+// Typedef: LPDIRECTSOUNDCAPTURE
+// pointer to IDirectSoundCapture
+typedef IDirectSoundCapture* LPDIRECTSOUNDCAPTURE;
+
+// Typedef: LPDIRECTSOUNDCAPTUREBUFFER
+// pointer to IDirectSoundCaptureBuffer
+typedef IDirectSoundCaptureBuffer* LPDIRECTSOUNDCAPTUREBUFFER;
+
 // Typedef: LPDS3DBUFFER
 // pointer to DS3DBUFFER
 typedef DS3DBUFFER* LPDS3DBUFFER;
@@ -27,6 +35,14 @@ typedef DSBUFFERDESC* LPDSBUFFERDESC;
 // Typedef: LPDSCAPS
 // pointer to DSCAPS
 typedef DSCAPS* LPDSCAPS;
+
+// Typedef: LPDSCBUFFERDESC
+// pointer to DSCBUFFERDESC
+typedef DSCBUFFERDESC* LPDSCBUFFERDESC;
+
+// Typedef: LPDSCCAPS
+// pointer to DSCCAPS
+typedef DSCCAPS* LPDSCCAPS;
 
 // Typedef: LPDSENUMCALLBACKA
 // pointer to LPDSENUMCALLBACKA_FUNC

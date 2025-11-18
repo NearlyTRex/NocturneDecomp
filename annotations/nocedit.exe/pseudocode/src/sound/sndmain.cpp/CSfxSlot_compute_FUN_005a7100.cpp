@@ -4,17 +4,17 @@
 // Convention: __cdecl
 // Signature: int sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot * this_ptr, float delta_time)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005a97e0 (005a97e0) at 005a97fc [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9820 (005a9820) at 005a987a [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a98b0 (005a98b0) at 005a98da [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9910 (005a9910) at 005a993a [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9970 (005a9970) at 005a99ca [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9a00 (005a9a00) at 005a9a30 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9a70 (005a9a70) at 005a9aa0 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9ae0 (005a9ae0) at 005a9b09 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9b40 (005a9b40) at 005a9b63 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_FUN_005acdb0 (005acdb0) at 005acdf6 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxOptions_FUN_005a97e0 (005a97e0) at 005a97fc [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 (005aca90) at 005acc5a [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40 (005a9b40) at 005a9b63 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxPosition_FUN_005a9820 (005a9820) at 005a987a [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxTrackedDoublePosition_FUN_005a9910 (005a9910) at 005a993a [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxTrackedDoubleVelocity_FUN_005a9a70 (005a9a70) at 005a9aa0 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0 (005a98b0) at 005a98da [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_005a9a00 (005a9a00) at 005a9a30 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxVelocity_FUN_005a9970 (005a9970) at 005a99ca [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0 (005a9ae0) at 005a9b09 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a90fd [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_0065022e

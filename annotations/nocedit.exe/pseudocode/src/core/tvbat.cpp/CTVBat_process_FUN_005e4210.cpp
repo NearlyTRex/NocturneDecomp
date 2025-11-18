@@ -44,8 +44,8 @@
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 //   crt_math.c_atan2_FUN_006013b1
-//   sound_sndmain.cpp_FUN_005a9660
-//   sound_sndmain.cpp_FUN_005aa290
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
+//   sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290
 
 #include "nocturne.h"
 
@@ -389,8 +389,15 @@ LAB_005e4342:
   if ((this_ptr->field13_0xc07c[0] != '\0') &&
      (fVar13 = *(float *)(this_ptr->field16_0xc0e8 + 4) - in_stack_00000008,
      *(float *)(this_ptr->field16_0xc0e8 + 4) = fVar13, fVar13 <= 0.0)) {
-    iVar14 = sound_sndmain_cpp_FUN_005a9660();
-    if ((iVar14 == 0) && (iVar14 = sound_sndmain_cpp_FUN_005aa290(), iVar14 != 0)) {
+    iVar14 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)this_ptr->field16_0xc0e8);
+    if ((iVar14 == 0) &&
+       (iVar14 = sound_sndmain_cpp_isWithinListenerRadius_FUN_005aa290
+                           ((double)(this_ptr->base_enemy).base_character.base_actor.location.
+                                    position.x,
+                            (double)(this_ptr->base_enemy).base_character.base_actor.location.
+                                    position.y,
+                            (double)(this_ptr->base_enemy).base_character.base_actor.location.
+                                    position.z,50.0), iVar14 != 0)) {
       uVar12 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playAmbientSound)
                          ((CDemonActor *)this_ptr,this_ptr->field13_0xc07c);
       *(undefined4 *)this_ptr->field16_0xc0e8 = uVar12;
@@ -1199,7 +1206,7 @@ LAB_005e4342:
 // 005e4cdc: MOV EAX,dword ptr [EBX + 0xc0e8]
 //   Label: LAB_005e4cdc
 // 005e4ce2: PUSH EAX
-// 005e4ce3: CALL sound_sndmain.cpp_FUN_005a9660
+// 005e4ce3: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005e4ce8: ADD ESP,0x4
 // 005e4ceb: TEST EAX,EAX
@@ -1216,7 +1223,7 @@ LAB_005e4342:
 // 005e4d07: SUB ESP,0x8
 // 005e4d0a: FLD float ptr [EBX + 0x20]
 // 005e4d0d: FSTP double ptr [ESP]
-// 005e4d10: CALL sound_sndmain.cpp_FUN_005aa290
+// 005e4d10: CALL sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290
 //   XREF to: 005aa290 (UNCONDITIONAL_CALL)
 // 005e4d15: ADD ESP,0x20
 // 005e4d18: TEST EAX,EAX

@@ -19,8 +19,8 @@
 //   int g_WaveInCurrentBufferIndex
 //   int g_WaveInCurrentSampleOffset
 // Function calls:
-//   sound_sndmain.cpp_FUN_005aa7f0
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
+//   sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0
 //   sound_sndwav.cpp_writeWavInBuffer_FUN_005b0cc0
 
 #include "nocturne.h"
@@ -28,54 +28,63 @@
 int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_ptr)
 
 {
-  uint uVar1;
+  int iVar1;
   int iVar2;
   int iVar3;
   int iVar4;
-  int iVar5;
+  bool bVar5;
+  short *in_stack_00000008;
   int in_stack_0000000c;
+  int iVar6;
   
-  iVar4 = g_WaveInChannels *
+  iVar3 = g_WaveInChannels *
           ((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -
                 (uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3);
-  iVar5 = 0;
-  uVar1 = (uint)(g_WaveInBitsPerSample == 0x10);
+  iVar4 = 0;
+  bVar5 = g_WaveInBitsPerSample == 0x10;
+  iVar6 = iVar3;
   while( true ) {
     if (g_WaveInBuffers[g_WaveInCurrentBufferIndex] == (LPVOID)0x0) {
       return -1;
     }
-    iVar2 = ((g_WaveInBufferSizeSamples - g_WaveInCurrentSampleOffset) *
+    iVar1 = ((g_WaveInBufferSizeSamples - g_WaveInCurrentSampleOffset) *
             g_WaveInRequestedBitsPerSample) / g_WaveInSampleRate;
-    if (in_stack_0000000c < iVar2) {
-      iVar2 = in_stack_0000000c;
+    if (in_stack_0000000c < iVar1) {
+      iVar1 = in_stack_0000000c;
     }
-    if (0 < iVar2) {
-      sound_sndmain_cpp_FUN_005aa7f0();
-      in_stack_0000000c = in_stack_0000000c - iVar2;
+    if (0 < iVar1) {
+      sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
+                (g_WaveInBitsPerSample,g_WaveInChannels,g_WaveInSampleRate,(uint)bVar5,
+                 (short *)(g_WaveInCurrentSampleOffset * iVar3 +
+                          (int)g_WaveInBuffers[g_WaveInCurrentBufferIndex]),
+                 g_WaveInRequestedChannels,g_WaveInRequestedSampleRate,
+                 g_WaveInRequestedBitsPerSample,g_WaveInStereoRequested,in_stack_00000008,iVar1);
+      in_stack_00000008 = (short *)((int)in_stack_00000008 + iVar6 * iVar1);
+      in_stack_0000000c = in_stack_0000000c - iVar1;
       g_WaveInCurrentSampleOffset =
            g_WaveInCurrentSampleOffset +
-           (g_WaveInSampleRate * iVar2) / g_WaveInRequestedBitsPerSample;
-      iVar5 = iVar5 + iVar2;
+           (g_WaveInSampleRate * iVar1) / g_WaveInRequestedBitsPerSample;
+      iVar4 = iVar4 + iVar1;
     }
     if (in_stack_0000000c < 1) {
-      return iVar5;
+      return iVar4;
     }
-    iVar2 = g_WaveInCurrentBufferIndex + 1;
-    if (g_WaveInNumBuffers <= iVar2) {
-      iVar2 = 0;
+    iVar1 = g_WaveInCurrentBufferIndex + 1;
+    if (g_WaveInNumBuffers <= iVar1) {
+      iVar1 = 0;
     }
-    if (g_WaveInHeaders[iVar2] == (LPWAVEHDR)0x0) {
+    if (g_WaveInHeaders[iVar1] == (LPWAVEHDR)0x0) {
       return -1;
     }
-    if ((g_WaveInHeaders[iVar2]->dwFlags & 1) == 0) {
-      return iVar5;
+    if ((g_WaveInHeaders[iVar1]->dwFlags & 1) == 0) {
+      return iVar4;
     }
-    iVar3 = sound_sndwav_cpp_writeWavInBuffer_FUN_005b0cc0(iVar2);
-    if (iVar3 == 0) break;
+    iVar2 = sound_sndwav_cpp_writeWavInBuffer_FUN_005b0cc0(iVar1);
+    if (iVar2 == 0) break;
     g_WaveInCurrentSampleOffset = 0;
-    g_WaveInCurrentBufferIndex = iVar2;
+    g_WaveInCurrentBufferIndex = iVar1;
   }
-  sound_sndmain_cpp_logSoundError_FUN_005adba0("WavInDevice::poll - queueWavInBuffer failed",uVar1,iVar4);
+  sound_sndmain_cpp_logSoundError_FUN_005adba0("WavInDevice::poll - queueWavInBuffer failed");
   return -1;
 }
 
@@ -179,7 +188,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_p
 // 005b13b9: MOV EAX,[0x03f6af10]
 //   XREF to: 03f6af10 (READ)
 // 005b13be: PUSH EAX
-// 005b13bf: CALL sound_sndmain.cpp_FUN_005aa7f0
+// 005b13bf: CALL sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0
 //   XREF to: 005aa7f0 (UNCONDITIONAL_CALL)
 // 005b13c4: MOV EDX,dword ptr [0x03f6af18]
 //   XREF to: 03f6af18 (READ)

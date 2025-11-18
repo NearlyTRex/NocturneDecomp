@@ -16,7 +16,7 @@
 //   core_manpuz.cpp_FUN_0050aee0
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
-//   sound_sndmain.cpp_setNextSfxTrackedPosition_FUN_005a8940
+//   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
 
 #include "nocturne.h"
@@ -42,8 +42,8 @@ void core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40(void)
   }
   piVar1[2] = 0x3f800000;
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-  sound_sndmain_cpp_setNextSfxTrackedPosition_FUN_005a8940((CVector3f *)(piVar1 + 0x16));
-  sound_sndmain_cpp_startSfx_FUN_005a8e90();
+  sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940((CVector3f *)(piVar1 + 0x16));
+  sound_sndmain_cpp_startSfx_FUN_005a8e90("manpuz-doorslide.wav");
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   return;
 }
@@ -96,7 +96,7 @@ void core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40(void)
 // 0050ada7: CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   XREF to: 005a8c30 (UNCONDITIONAL_CALL)
 // 0050adac: PUSH EBX
-// 0050adad: CALL sound_sndmain.cpp_setNextSfxTrackedPosition_FUN_005a8940
+// 0050adad: CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
 //   XREF to: 005a8940 (UNCONDITIONAL_CALL)
 // 0050adb2: ADD ESP,0x4
 // 0050adb5: PUSH 0x635879

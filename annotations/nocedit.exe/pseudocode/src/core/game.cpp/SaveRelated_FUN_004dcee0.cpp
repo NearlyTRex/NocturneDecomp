@@ -60,7 +60,7 @@
 //   engine_dosio.c_getFile_FUN_00481a50
 //   shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
 //   shape_memdbg.cpp_closeFile_FUN_0050f9b0
-//   sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0
+//   sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0
 //   sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0
 //   support_newmsg.cpp_getLocalizedString_FUN_005441f0
 
@@ -153,7 +153,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
         (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3f), iVar4 != 0)) ||
        ((iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d), iVar4 != 0 &&
         (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x32), iVar4 != 0)))) {
-      iVar4 = sound_sndmain_cpp_getSoundEnabled_FUN_005a96b0();
+      iVar4 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
       if (iVar4 == 0) {
         core_sound_cpp_CSound_FUN_005b2f70(g_CSoundPtr);
         sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(1);
@@ -482,7 +482,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
 // 004dd01d: TEST EAX,EAX
 // 004dd01f: JZ 0x004dd047
 //   XREF to: 004dd047 (CONDITIONAL_JUMP)
-// 004dd021: CALL sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0
+// 004dd021: CALL sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0
 //   Label: LAB_004dd021
 //   XREF to: 005a96b0 (UNCONDITIONAL_CALL)
 // 004dd026: TEST EAX,EAX

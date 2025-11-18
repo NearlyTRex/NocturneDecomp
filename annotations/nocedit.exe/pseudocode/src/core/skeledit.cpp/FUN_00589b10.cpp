@@ -15,8 +15,8 @@
 //   shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
 //   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 //   shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
-//   sound_sndmain.cpp_FUN_005aaef0
-//   sound_sndmain.cpp_FUN_005ab130
+//   sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
+//   sound_sndmain.cpp_resetSoundDevice_FUN_005ab130
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
 //   wincore_winrun.cpp_getTime_FUN_005f2dc0
 
@@ -31,8 +31,8 @@ void core_skeledit_cpp_FUN_00589b10(void)
   int in_stack_00000014;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x10);
-  sound_sndmain_cpp_FUN_005aaef0();
-  sound_sndmain_cpp_startSfx_FUN_005a8e90();
+  sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
+  sound_sndmain_cpp_startSfx_FUN_005a8e90("dixie.wav");
   if (in_stack_00000014 == 0) {
     shape_edittool_cpp_CEditorTools_createCenteredDialog_FUN_0049e940(g_CEditorToolsPtr,(char *)0x0)
     ;
@@ -48,12 +48,12 @@ void core_skeledit_cpp_FUN_00589b10(void)
       iVar1 = iVar2;
     } while (iVar3 < 0x360000);
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-    sound_sndmain_cpp_FUN_005ab130();
+    sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
     return;
   }
   shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
             (g_CEditorToolsPtr,"LOD generation complete!");
-  sound_sndmain_cpp_FUN_005ab130();
+  sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
   return;
 }
 
@@ -64,7 +64,7 @@ void core_skeledit_cpp_FUN_00589b10(void)
 // 00589b15: CALL crt_stack.c_stack_probe_FUN_005ff9f3
 //   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)
 // 00589b1a: PUSH ESI
-// 00589b1b: CALL sound_sndmain.cpp_FUN_005aaef0
+// 00589b1b: CALL sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
 //   XREF to: 005aaef0 (UNCONDITIONAL_CALL)
 // 00589b20: PUSH 0x649df5
 //   XREF to: 00649df5 (DATA)
@@ -122,7 +122,7 @@ void core_skeledit_cpp_FUN_00589b10(void)
 // 00589b89: ADD ESP,0x4
 // 00589b8c: POP EBX
 // 00589b8d: POP EDI
-// 00589b8e: CALL sound_sndmain.cpp_FUN_005ab130
+// 00589b8e: CALL sound_sndmain.cpp_resetSoundDevice_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 00589b93: POP ESI
 // 00589b94: RET
@@ -136,7 +136,7 @@ void core_skeledit_cpp_FUN_00589b10(void)
 // 00589ba1: CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
 //   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)
 // 00589ba6: ADD ESP,0x8
-// 00589ba9: CALL sound_sndmain.cpp_FUN_005ab130
+// 00589ba9: CALL sound_sndmain.cpp_resetSoundDevice_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 00589bae: POP ESI
 // 00589baf: RET

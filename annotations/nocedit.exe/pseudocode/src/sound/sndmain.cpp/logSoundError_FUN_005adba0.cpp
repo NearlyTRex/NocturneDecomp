@@ -23,9 +23,9 @@
 //   sound_snddx.cpp_fillStreamBuffer_FUN_005adff0 (005adff0) at 005ae161 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440 (005b0440) at 005b0600 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_005ae1c0 (005ae1c0) at 005ae24e [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CSfxSample_FUN_005a6170 (005a6170) at 005a621b [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170 (005a6170) at 005a621b [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0 (005a7fe0) at 005a806a [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a80e0 (005a80e0) at 005a813a [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0 (005a80e0) at 005a813a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a6a4a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_allocateHwSample_FUN_005a5620 (005a5620) at 005a5681 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a4ef0 [UNCONDITIONAL_CALL]
@@ -74,7 +74,7 @@
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 //   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 //   shape_memdbg.cpp_openFile_FUN_0050f7a0
-//   sound_sndmain.cpp_getAudioBitsPerSample_FUN_005ab250
+//   sound_sndmain.cpp_getAudioBitDepth_FUN_005ab250
 //   sound_sndmain.cpp_getAudioChannelCount_FUN_005ab270
 //   sound_sndmain.cpp_getAudioSampleRate_FUN_005ab260
 //   sound_sndmain.cpp_getCurrentSoundDevice_FUN_005ab6c0
@@ -130,7 +130,7 @@ void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...)
     sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar2,device_info);
     crt_stdio_c_fprintf_FUN_005fe6d0(file,"Device: %s.\n");
   }
-  sound_sndmain_cpp_getAudioBitsPerSample_FUN_005ab250();
+  sound_sndmain_cpp_getAudioBitDepth_FUN_005ab250();
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"Bits: %d\n");
   sound_sndmain_cpp_getAudioChannelCount_FUN_005ab270();
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"Channels: %d\n");
@@ -299,7 +299,7 @@ void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...)
 // 005adcfe: CALL crt_stdio.c_fprintf_FUN_005fe6d0
 //   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
 // 005add03: ADD ESP,0xc
-// 005add06: CALL sound_sndmain.cpp_getAudioBitsPerSample_FUN_005ab250
+// 005add06: CALL sound_sndmain.cpp_getAudioBitDepth_FUN_005ab250
 //   Label: LAB_005add06
 //   XREF to: 005ab250 (UNCONDITIONAL_CALL)
 // 005add0b: PUSH EAX

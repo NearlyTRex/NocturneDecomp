@@ -25,9 +25,9 @@
 //   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
 //   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 //   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530
-//   sound_sndmain.cpp_FUN_005a9660
-//   sound_sndmain.cpp_FUN_005a9720
-//   sound_sndmain.cpp_FUN_005aaef0
+//   sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
+//   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   sound_sndmain.cpp_isSoundBusy_FUN_005ab540
 
 #include "nocturne.h"
@@ -37,23 +37,25 @@
 void core_msnedit_cpp_FUN_0053eb40(void)
 
 {
-  double dVar1;
-  int iVar2;
+  int iVar1;
+  uint sfx_handle;
   BADSPACEBASE *in_ESP;
+  double dVar2;
   char *in_stack_00000008;
+  CKeys *in_stack_fffffecc;
   
   core_sound_cpp_CSound_FUN_005b2f70(g_CSoundPtr);
-  sound_sndmain_cpp_FUN_005aaef0();
-  iVar2 = sound_sndmain_cpp_isSoundBusy_FUN_005ab540();
-  if (iVar2 == 0) {
+  sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
+  iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_005ab540();
+  if (iVar1 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't start sound output.  (Maybe muted, or other problem?)");
   }
   else {
     core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,in_stack_00000008);
     engine_2d_c_clearInputAndWait_FUN_00403260();
-    iVar2 = sound_sndmain_cpp_FUN_005a9660();
-    if (iVar2 == 0) {
+    iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(sfx_handle);
+    if (iVar1 == 0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"Failed to play \"%s\"",in_stack_00000008);
     }
@@ -62,12 +64,13 @@ void core_msnedit_cpp_FUN_0053eb40(void)
       shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                 (g_CEditorToolsPtr,&stack0xfffffecc);
       do {
-        dVar1 = (double)sound_sndmain_cpp_FUN_005a9720();
-        if ((float)dVar1 < 0.0) break;
+        dVar2 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,(uint)in_stack_fffffecc);
+        if ((float)dVar2 < 0.0) break;
         shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                  (g_CEditorToolsPtr,(float)dVar1,1.0);
-        iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
-      } while (iVar2 == 0);
+                  (g_CEditorToolsPtr,(float)dVar2,1.0);
+        in_stack_fffffecc = g_CKeysPtr;
+        iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
+      } while (iVar1 == 0);
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
     }
   }
@@ -96,7 +99,7 @@ void core_msnedit_cpp_FUN_0053eb40(void)
 // 0053eb59: CALL core_sound.cpp_CSound_FUN_005b2f70
 //   XREF to: 005b2f70 (UNCONDITIONAL_CALL)
 // 0053eb5e: ADD ESP,0x4
-// 0053eb61: CALL sound_sndmain.cpp_FUN_005aaef0
+// 0053eb61: CALL sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
 //   XREF to: 005aaef0 (UNCONDITIONAL_CALL)
 // 0053eb66: CALL sound_sndmain.cpp_isSoundBusy_FUN_005ab540
 //   XREF to: 005ab540 (UNCONDITIONAL_CALL)
@@ -118,7 +121,7 @@ void core_msnedit_cpp_FUN_0053eb40(void)
 // 0053eb89: CALL engine_2d.c_clearInputAndWait_FUN_00403260
 //   XREF to: 00403260 (UNCONDITIONAL_CALL)
 // 0053eb8e: PUSH ESI
-// 0053eb8f: CALL sound_sndmain.cpp_FUN_005a9660
+// 0053eb8f: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 0053eb94: ADD ESP,0x4
 // 0053eb97: TEST EAX,EAX
@@ -146,7 +149,7 @@ void core_msnedit_cpp_FUN_0053eb40(void)
 // 0053ebc6: PUSH 0x2
 //   Label: LAB_0053ebc6
 // 0053ebc8: PUSH EBX
-// 0053ebc9: CALL sound_sndmain.cpp_FUN_005a9720
+// 0053ebc9: CALL sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720
 //   XREF to: 005a9720 (UNCONDITIONAL_CALL)
 // 0053ebce: MOV dword ptr [ESP + 0x138],EAX
 //   XREF to: Stack[-0x18] (WRITE)

@@ -62,9 +62,9 @@
 //   core_xform.cpp_slerpQuaternion_FUN_005f77e0
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 //   engine_console.cpp_CConsole_printf_FUN_00441890
-//   sound_sndmain.cpp_FUN_005a9660
-//   sound_sndmain.cpp_FUN_005a9c40
-//   sound_sndmain.cpp_FUN_005aa290
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
+//   sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0
@@ -99,9 +99,10 @@ void core_boneguy_cpp_FUN_0041bf90(void)
   byte bVar15;
   CBoneGuy *in_stack_00000004;
   float in_stack_00000008;
-  float afStackY_1908 [1486];
+  float afStackY_1908 [1484];
   CQuaternion4f *quat_ptr;
   float in_stack_fffffe44;
+  int iStack_1b4;
   SDamageInfo local_180;
   CBoundingBox3D local_144;
   CQuaternion4f local_12c;
@@ -359,7 +360,8 @@ void core_boneguy_cpp_FUN_0041bf90(void)
               }
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&pCVar1->motion_controller,iVar8,1);
-              sound_sndmain_cpp_FUN_005a9c40();
+              sound_sndmain_cpp_killSfx_FUN_005a9c40
+                        (*(uint *)(in_stack_00000004->field1_0xbeb4 + 0x18));
               (*((in_stack_00000004->base_enemy).base_character.base_actor.vtable)->playSound)
                         ((CDemonActor *)in_stack_00000004,"boneguy-swing?.wav");
               (in_stack_00000004->base_enemy).field6_0xbe38[0] = '\0';
@@ -516,8 +518,16 @@ LAB_0041c60c:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(in_stack_00000004->base_enemy).base_character.model);
   core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)in_stack_00000004);
-  if ((local_34 == 1) && (iVar8 = sound_sndmain_cpp_FUN_005aa290(), iVar8 != 0)) {
-    iVar8 = sound_sndmain_cpp_FUN_005a9660();
+  if ((local_34 == 1) &&
+     (iVar8 = sound_sndmain_cpp_isWithinListenerRadius_FUN_005aa290
+                        ((double)(in_stack_00000004->base_enemy).base_character.base_actor.location.
+                                 position.x,
+                         (double)(in_stack_00000004->base_enemy).base_character.base_actor.location.
+                                 position.y,
+                         (double)(in_stack_00000004->base_enemy).base_character.base_actor.location.
+                                 position.z,100.0), iVar8 != 0)) {
+    iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                      (*(uint *)(in_stack_00000004->field1_0xbeb4 + 0x18));
     if (iVar8 != 0) {
       return;
     }
@@ -528,11 +538,12 @@ LAB_0041c60c:
     uVar12 = (*((in_stack_00000004->base_enemy).base_character.base_actor.vtable)->playAmbientSound)
                        ((CDemonActor *)in_stack_00000004,"boneGuy-walkloop.wav");
     *(undefined4 *)(in_stack_00000004->field1_0xbeb4 + 0x18) = uVar12;
+    iStack_1b4 = 0x41c5d5;
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     return;
   }
 LAB_0041c220:
-  sound_sndmain_cpp_FUN_005a9c40();
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004->field1_0xbeb4 + 0x18));
   return;
 }
 
@@ -831,7 +842,7 @@ LAB_0041c220:
 // 0041c220: MOV ESI,dword ptr [EBX + 0xbecc]
 //   Label: LAB_0041c220
 // 0041c226: PUSH ESI
-// 0041c227: CALL sound_sndmain.cpp_FUN_005a9c40
+// 0041c227: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 0041c22c: ADD ESP,0x4
 // 0041c22f: LEA ESP,[EBP + 0x7a]
@@ -1163,7 +1174,7 @@ LAB_0041c220:
 // 0041c55e: SUB ESP,0x8
 // 0041c561: FLD float ptr [EBX + 0x20]
 // 0041c564: FSTP double ptr [ESP]
-// 0041c567: CALL sound_sndmain.cpp_FUN_005aa290
+// 0041c567: CALL sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290
 //   XREF to: 005aa290 (UNCONDITIONAL_CALL)
 // 0041c56c: ADD ESP,0x20
 // 0041c56f: TEST EAX,EAX
@@ -1171,7 +1182,7 @@ LAB_0041c220:
 //   XREF to: 0041c220 (CONDITIONAL_JUMP)
 // 0041c577: MOV EDI,dword ptr [EBX + 0xbecc]
 // 0041c57d: PUSH EDI
-// 0041c57e: CALL sound_sndmain.cpp_FUN_005a9660
+// 0041c57e: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 0041c583: ADD ESP,0x4
 // 0041c586: TEST EAX,EAX
@@ -1651,7 +1662,7 @@ LAB_0041c220:
 // 0041c9cd: ADD ESP,0xc
 // 0041c9d0: MOV EAX,dword ptr [EBX + 0xbecc]
 // 0041c9d6: PUSH EAX
-// 0041c9d7: CALL sound_sndmain.cpp_FUN_005a9c40
+// 0041c9d7: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 0041c9dc: ADD ESP,0x4
 // 0041c9df: PUSH 0x616102

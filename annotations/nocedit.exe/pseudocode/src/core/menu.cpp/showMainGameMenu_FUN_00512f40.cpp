@@ -75,7 +75,7 @@
 //   engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0
 //   engine_alphabit.cpp_CAlphaBitmap_scale_FUN_00410c20
 //   engine_texture.cpp_clearTextureCache_FUN_005dd8e0
-//   sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0
+//   sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0
 //   sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0
 //   support_newmsg.cpp_getLocalizedString_FUN_005441f0
 //   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
@@ -237,7 +237,7 @@ LAB_005131d5:
     iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
     if ((iVar4 != 0) && (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x32), iVar4 != 0))
     {
-      iVar4 = sound_sndmain_cpp_getSoundEnabled_FUN_005a96b0();
+      iVar4 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
       sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0((uint)(iVar4 == 0));
       core_sound_cpp_CSound_FUN_005b3830(g_CSoundPtr);
     }
@@ -672,7 +672,7 @@ LAB_005131d5:
 // 00513219: TEST EAX,EAX
 // 0051321b: JZ 0x00513243
 //   XREF to: 00513243 (CONDITIONAL_JUMP)
-// 0051321d: CALL sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0
+// 0051321d: CALL sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0
 //   XREF to: 005a96b0 (UNCONDITIONAL_CALL)
 // 00513222: TEST EAX,EAX
 // 00513224: SETZ AL

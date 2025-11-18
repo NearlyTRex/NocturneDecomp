@@ -10,7 +10,7 @@
 // Function calls:
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
-//   sound_sndmain.cpp_setNextSfxTrackedPosition_FUN_005a8940
+//   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
 
 #include "nocturne.h"
@@ -24,13 +24,14 @@ void core_frankgen_cpp_SoundPushPlayPopAgain_FUN_004d1f20(void)
 {
   int in_stack_00000004;
   float in_stack_00000008;
+  char *in_stack_00000014;
   
   if ((_DAT_02d7b7f0 <= in_stack_00000008) &&
      (in_stack_00000008 < *(float *)(in_stack_00000004 + 0x15c))) {
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-    sound_sndmain_cpp_setNextSfxTrackedPosition_FUN_005a8940
+    sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
               ((CVector3f *)((int)in_stack_00000008 + 0x490));
-    sound_sndmain_cpp_startSfx_FUN_005a8e90();
+    sound_sndmain_cpp_startSfx_FUN_005a8e90(in_stack_00000014);
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     return;
   }
@@ -66,7 +67,7 @@ void core_frankgen_cpp_SoundPushPlayPopAgain_FUN_004d1f20(void)
 //   XREF to: Stack[0x4] (READ)
 // 004d1f4c: ADD EAX,0x490
 // 004d1f51: PUSH EAX
-// 004d1f52: CALL sound_sndmain.cpp_setNextSfxTrackedPosition_FUN_005a8940
+// 004d1f52: CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
 //   XREF to: 005a8940 (UNCONDITIONAL_CALL)
 // 004d1f57: ADD ESP,0x4
 // 004d1f5a: MOV EDX,dword ptr [ESP + 0xc]

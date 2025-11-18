@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CDirectSoundDevice * sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440(UINT device_id)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005ab5b0 (005ab5b0) at 005ab62c [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_initializeSoundDevice_FUN_005ab5b0 (005ab5b0) at 005ab62c [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c
 //   TerminatedCString s_create_DirectSound_objec_006522bb
@@ -26,7 +26,7 @@
 //   sound_snddx.cpp_CDirectSoundDevice_close_FUN_005ae270
 //   sound_snddx.cpp_enumerateDirectSoundDevice_FUN_005b0390
 //   sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
-//   sound_sndmain.cpp_getHardwareMixingEnabled_FUN_005ab590
+//   sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005ab590
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
@@ -90,7 +90,7 @@ CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_005b0440(U
               goto LAB_005b04e1;
             }
           }
-          iVar4 = sound_sndmain_cpp_getHardwareMixingEnabled_FUN_005ab590();
+          iVar4 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005ab590();
           if ((iVar4 != 0) && (g_DirectSoundDevices[device_id].value1 != 0)) {
             (*g_DirectSoundPrimaryBuffer->vtable->QueryInterface)
                       ((IUnknown *)g_DirectSoundPrimaryBuffer,&DAT_00686d58,&g_DirectSound3DListener
@@ -246,7 +246,7 @@ LAB_005b04e1:
 // 005b0564: TEST EAX,EAX
 // 005b0566: JNZ 0x005b05dc
 //   XREF to: 005b05dc (CONDITIONAL_JUMP)
-// 005b0568: CALL sound_sndmain.cpp_getHardwareMixingEnabled_FUN_005ab590
+// 005b0568: CALL sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005ab590
 //   Label: LAB_005b0568
 //   XREF to: 005ab590 (UNCONDITIONAL_CALL)
 // 005b056d: TEST EAX,EAX

@@ -8,22 +8,22 @@
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 005132c0 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b38c0 [UNCONDITIONAL_CALL]
 // Function calls:
-//   sound_sndmain.cpp_FUN_005aa660
-//   sound_sndmain.cpp_FUN_005ab130
+//   sound_sndmain.cpp_freeAllSamples_FUN_005aa660
+//   sound_sndmain.cpp_resetSoundDevice_FUN_005ab130
 
 #include "nocturne.h"
 
 void __cdecl core_sound_cpp_CSound_FUN_005b39a0(CSound *this_ptr)
 
 {
-  sound_sndmain_cpp_FUN_005ab130();
-  sound_sndmain_cpp_FUN_005aa660();
+  sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
+  sound_sndmain_cpp_freeAllSamples_FUN_005aa660();
   return;
 }
 
 
 // Assembly code:
-// 005b39a0: CALL sound_sndmain.cpp_FUN_005ab130
+// 005b39a0: CALL sound_sndmain.cpp_resetSoundDevice_FUN_005ab130
 //   Label: core_sound.cpp_CSound_FUN_005b39a0
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 005b39a5: JMP 0x005aa660

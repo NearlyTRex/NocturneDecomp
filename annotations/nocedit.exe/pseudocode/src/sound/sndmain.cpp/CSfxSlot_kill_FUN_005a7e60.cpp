@@ -8,11 +8,11 @@
 //   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (005a75e0) at 005a7704 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0 (005a7fe0) at 005a8045 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a69e7 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9c40 (005a9c40) at 005a9c55 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005aa2f0 (005aa2f0) at 005aa333 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20 (005a9e20) at 005a9e77 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00 (005a5d00) at 005a5d90 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_killAllSoundSlots_FUN_005a9cc0 (005a9cc0) at 005a9cd3 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_killAllSfx_FUN_005a9cc0 (005a9cc0) at 005a9cd3 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_killSfxByName_FUN_005aa2f0 (005aa2f0) at 005aa333 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40 (005a9c40) at 005a9c55 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a9524 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_006503a3

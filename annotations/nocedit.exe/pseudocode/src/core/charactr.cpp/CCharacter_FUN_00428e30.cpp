@@ -8,7 +8,7 @@
 // Function calls:
 //   core_charactr.cpp_CCharacter_FUN_0042d060
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -28,7 +28,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428e30(CCharacter *this_ptr)
   if (0 < iVar1) {
     return;
   }
-  sound_sndmain_cpp_FUN_005a9c40();
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->cloth_data + 0x8d3c));
   core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffffd4);
   if ((in_stack_0000000c != (float *)0x0) && (&fStack_1c != in_stack_0000000c)) {
     fStack_1c = *in_stack_0000000c;
@@ -66,7 +66,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428e30(CCharacter *this_ptr)
 // 00428e57: MOV EDX,dword ptr [EBX + 0xb7d4]
 //   Label: LAB_00428e57
 // 00428e5d: PUSH EDX
-// 00428e5e: CALL sound_sndmain.cpp_FUN_005a9c40
+// 00428e5e: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 00428e63: ADD ESP,0x4
 // 00428e66: MOV EAX,ESP

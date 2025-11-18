@@ -44,7 +44,7 @@
 //   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 //   engine_console.cpp_CConsole_printf_FUN_00441890
-//   sound_sndmain.cpp_FUN_005a9660
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 
 #include "nocturne.h"
 
@@ -146,7 +146,9 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
         in_stack_00000004[1].base_character.base_actor.runtime_state = (int)local_14;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar1->motion_controller,5,1);
-        iVar5 = sound_sndmain_cpp_FUN_005a9660();
+        iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                          ((uint)in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].y
+                          );
         if (iVar5 == 0) {
           fVar9 = (float)(*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
                                    ((CDemonActor *)in_stack_00000004,"gargoyle-stone.wav");
@@ -213,7 +215,9 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
         in_stack_00000004[1].base_character.base_actor.runtime_state = (int)local_14;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar1->motion_controller,5,1);
-        iVar5 = sound_sndmain_cpp_FUN_005a9660();
+        iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                          ((uint)in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].y
+                          );
         if (iVar5 == 0) {
           fVar9 = (float)(*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
                                    ((CDemonActor *)in_stack_00000004,"gargoyle-stone.wav");
@@ -333,7 +337,9 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
         in_stack_00000004[1].base_character.base_actor.runtime_state = 0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar1->motion_controller,0,1);
-        iVar5 = sound_sndmain_cpp_FUN_005a9660();
+        iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                          ((uint)in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].y
+                          );
         if (iVar5 == 0) {
           fVar9 = (float)(*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
                                    ((CDemonActor *)in_stack_00000004,"gargoyle-alive?.wav");
@@ -913,7 +919,7 @@ switchD_004e531f_caseD_4:
 // 004e4e39: ADD ESP,0xc
 // 004e4e3c: MOV EDX,dword ptr [EBX + 0xbf00]
 // 004e4e42: PUSH EDX
-// 004e4e43: CALL sound_sndmain.cpp_FUN_005a9660
+// 004e4e43: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004e4e48: ADD ESP,0x4
 // 004e4e4b: TEST EAX,EAX
@@ -1033,7 +1039,7 @@ switchD_004e531f_caseD_4:
 // 004e4f60: ADD ESP,0xc
 // 004e4f63: MOV EDI,dword ptr [EBX + 0xbf00]
 // 004e4f69: PUSH EDI
-// 004e4f6a: CALL sound_sndmain.cpp_FUN_005a9660
+// 004e4f6a: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004e4f6f: ADD ESP,0x4
 // 004e4f72: TEST EAX,EAX
@@ -1187,7 +1193,7 @@ switchD_004e531f_caseD_4:
 // 004e50da: ADD ESP,0xc
 // 004e50dd: MOV ECX,dword ptr [EBX + 0xbf00]
 // 004e50e3: PUSH ECX
-// 004e50e4: CALL sound_sndmain.cpp_FUN_005a9660
+// 004e50e4: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 004e50e9: ADD ESP,0x4
 // 004e50ec: TEST EAX,EAX

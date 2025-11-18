@@ -65205,7 +65205,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0",
+    "name":"sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0",
     "ret":"int",
     "vars":{
       "ret_storage":{
@@ -65231,9 +65231,43 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005a98b0",
+    "name":"sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"sfx_handle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"position_source_ptr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -65257,9 +65291,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005a9f30",
+    "name":"sound_sndmain.cpp_getNextActiveSfx_FUN_005a9f30",
     "ret":"uint",
     "vars":{
+      "params":[
+        {
+          "name":"current_sfx_handle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -65281,13 +65333,45 @@
         "start":"005aa7b0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005aa7b0",
-    "ret":"undefined1",
+    "name":"sound_sndmain.cpp_convert8BitAudioSignedness_FUN_005aa7b0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"buffer",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"byte*"
+        },
+        {
+          "name":"num_bytes",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -65301,7 +65385,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005aaeb0",
+    "name":"sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0",
     "ret":"void"
   },
   {
@@ -65315,7 +65399,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005ab130",
+    "name":"sound_sndmain.cpp_resetSoundDevice_FUN_005ab130",
     "ret":"int",
     "vars":{
       "ret_storage":{
@@ -65367,7 +65451,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005ab5b0",
+    "name":"sound_sndmain.cpp_initializeSoundDevice_FUN_005ab5b0",
     "ret":"int",
     "vars":{
       "ret_storage":{
@@ -65543,7 +65627,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005ad3b0",
+    "name":"sound_sndmain.cpp_testSoundFile_FUN_005ad3b0",
     "ret":"char*",
     "vars":{
       "locals":[
@@ -65630,7 +65714,7 @@
       ],
       "params":[
         {
-          "name":"param_1",
+          "name":"sample_name",
           "storage":{
             "offset":4,
             "size":4,

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CSfxSample * sound_sndmain.cpp_getSfxSample_FUN_005a4c80(char * filename)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005aa3c0 (005aa3c0) at 005aa3cd [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_isSampleLoaded_FUN_005aa3c0 (005aa3c0) at 005aa3cd [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a920e [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_0064f907
@@ -53,13 +53,13 @@
 //   sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0
 //   sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550
 //   sound_mp3.cpp_CMP3Decoder_read_FUN_00534a60
+//   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170
 //   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
-//   sound_sndmain.cpp_CSfxSample_FUN_005a6170
 //   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
 //   sound_sndmain.cpp_CSfxSample_lock_FUN_005a6430
+//   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
 //   sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
-//   sound_sndmain.cpp_parseConfigFile_FUN_005a45c0
 //   sound_sndmain.cpp_parseWavFile_FUN_005a3fe0
 
 #include "nocturne.h"
@@ -171,16 +171,16 @@ LAB_005a4cea:
     iVar8 = sound_sndmain_cpp_parseWavFile_FUN_005a3fe0
                       (in_stack_0000001c,&pCVar7->file_offset,pCVar7);
     if (iVar8 == 0) goto LAB_005a4ef8;
-    sound_sndmain_cpp_parseConfigFile_FUN_005a45c0(pCVar7);
+    sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(pCVar7);
     pCVar7->taken = 0;
     pCVar7->ref_count = 0;
     pCVar7->buffer_id = 0;
     pCVar7->streaming_slot_index = -1;
     iVar8 = (pCVar7->sample_info).sample_count;
     pCVar7->streaming_buffer_size = iVar8;
-    pCVar7->field13_0x164 = iVar8;
-    pCVar7->field14_0x168 = iVar8;
-    iVar8 = sound_sndmain_cpp_CSfxSample_FUN_005a6170(pCVar7);
+    pCVar7->field19_0x164 = iVar8;
+    pCVar7->field20_0x168 = iVar8;
+    iVar8 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar7);
     if (iVar8 == 0) goto LAB_005a4ef8;
     crt_stdio_c_fseek_FUN_005ffacc(in_stack_00000028,pCVar7->file_offset,0);
     buffer = (void *)sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(pCVar7);
@@ -216,7 +216,7 @@ LAB_005a4cea:
     iVar8 = g_CMP3DecoderInstance.sample_rate;
     (pCVar7->sample_info).sample_count = -1;
     (pCVar7->sample_info).sample_rate = iVar8;
-    sound_sndmain_cpp_parseConfigFile_FUN_005a45c0(pCVar7);
+    sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(pCVar7);
     if ((pCVar7->sample_info).sample_count < 0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x34d;
@@ -228,9 +228,9 @@ LAB_005a4cea:
     pCVar7->streaming_slot_index = -1;
     iVar8 = (pCVar7->sample_info).sample_count;
     pCVar7->streaming_buffer_size = iVar8;
-    pCVar7->field13_0x164 = iVar8;
-    pCVar7->field14_0x168 = iVar8;
-    iVar8 = sound_sndmain_cpp_CSfxSample_FUN_005a6170(pCVar7);
+    pCVar7->field19_0x164 = iVar8;
+    pCVar7->field20_0x168 = iVar8;
+    iVar8 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar7);
     if (iVar8 == 0) goto LAB_005a4ef8;
     output_buffer = (short *)sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(pCVar7);
     if (output_buffer == (short *)0x0) {
@@ -470,7 +470,7 @@ LAB_005a4ef8:
 // 005a4e52: JZ 0x005a4ef8
 //   XREF to: 005a4ef8 (CONDITIONAL_JUMP)
 // 005a4e58: PUSH EBP
-// 005a4e59: CALL sound_sndmain.cpp_parseConfigFile_FUN_005a45c0
+// 005a4e59: CALL sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
 //   XREF to: 005a45c0 (UNCONDITIONAL_CALL)
 // 005a4e5e: MOV dword ptr [EBP + 0x150],0x0
 // 005a4e68: MOV dword ptr [EBP + 0x154],0x0
@@ -482,7 +482,7 @@ LAB_005a4ef8:
 // 005a4e95: MOV dword ptr [EBP + 0x164],EAX
 // 005a4e9b: PUSH EBP
 // 005a4e9c: MOV dword ptr [EBP + 0x168],EAX
-// 005a4ea2: CALL sound_sndmain.cpp_CSfxSample_FUN_005a6170
+// 005a4ea2: CALL sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170
 //   XREF to: 005a6170 (UNCONDITIONAL_CALL)
 // 005a4ea7: ADD ESP,0x4
 // 005a4eaa: TEST EAX,EAX
@@ -660,7 +660,7 @@ LAB_005a4ef8:
 // 005a5044: MOV dword ptr [EBP + 0x110],0xffffffff
 // 005a504e: PUSH EBP
 // 005a504f: MOV dword ptr [EBP + 0x10c],EAX
-// 005a5055: CALL sound_sndmain.cpp_parseConfigFile_FUN_005a45c0
+// 005a5055: CALL sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
 //   XREF to: 005a45c0 (UNCONDITIONAL_CALL)
 // 005a505a: MOV ECX,dword ptr [EBP + 0x110]
 // 005a5060: ADD ESP,0x4
@@ -692,7 +692,7 @@ LAB_005a4ef8:
 // 005a50c6: MOV dword ptr [EBP + 0x164],EAX
 // 005a50cc: PUSH EBP
 // 005a50cd: MOV dword ptr [EBP + 0x168],EAX
-// 005a50d3: CALL sound_sndmain.cpp_CSfxSample_FUN_005a6170
+// 005a50d3: CALL sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170
 //   XREF to: 005a6170 (UNCONDITIONAL_CALL)
 // 005a50d8: ADD ESP,0x4
 // 005a50db: TEST EAX,EAX

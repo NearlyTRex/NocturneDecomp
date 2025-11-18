@@ -5,7 +5,7 @@
 // Signature: undefined core_tommygun.cpp_FUN_005de5a0()
 // Function calls:
 //   core_weapon.cpp_CWeapon_FUN_005ee640
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -15,9 +15,10 @@
 void core_tommygun_cpp_FUN_005de5a0(void)
 
 {
+  int in_stack_00000004;
   CWeapon *in_stack_00000008;
   
-  sound_sndmain_cpp_FUN_005a9c40();
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004 + 0x57c));
   core_weapon_cpp_CWeapon_FUN_005ee640(in_stack_00000008);
   return;
 }
@@ -30,7 +31,7 @@ void core_tommygun_cpp_FUN_005de5a0(void)
 //   XREF to: Stack[0x4] (READ)
 // 005de5a5: MOV EDX,dword ptr [EAX + 0x57c]
 // 005de5ab: PUSH EDX
-// 005de5ac: CALL sound_sndmain.cpp_FUN_005a9c40
+// 005de5ac: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005de5b1: ADD ESP,0x4
 // 005de5b4: MOV ECX,dword ptr [ESP + 0xc]

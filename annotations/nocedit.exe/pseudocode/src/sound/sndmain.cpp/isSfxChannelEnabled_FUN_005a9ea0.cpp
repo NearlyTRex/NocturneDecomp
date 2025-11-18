@@ -18,7 +18,7 @@
 //   TerminatedCString s_isSfxChannelEnabled_inva_00650b03
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   undefined4 DAT_03f68928
+//   int[32] g_SfxChannelEnabled
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 
@@ -28,12 +28,12 @@ int __cdecl sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(int channel_index
 
 {
   if ((-1 < channel_index) && (channel_index < 0x20)) {
-    return *(int *)(&DAT_03f68928 + channel_index * 4);
+    return g_SfxChannelEnabled[channel_index];
   }
   g_CurrentFilename = "..\\sound\\sndmain.cpp";
   g_CurrentLineNumber = 0xfb0;
   core_main_c_displayErrorAndQuit_FUN_00506f10("isSfxChannelEnabled - invalid channel index: %d",channel_index);
-  return *(int *)(&DAT_03f68928 + channel_index * 4);
+  return g_SfxChannelEnabled[channel_index];
 }
 
 

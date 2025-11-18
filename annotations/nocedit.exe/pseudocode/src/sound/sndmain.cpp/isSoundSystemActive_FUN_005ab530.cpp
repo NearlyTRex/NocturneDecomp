@@ -4,9 +4,9 @@
 // Convention: __cdecl
 // Signature: uint sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530(void)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005aaef0 (005aaef0) at 005aaef4 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005ab5a0 (005ab5a0) at 005ab5a0 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_enableHwSoundMixing_FUN_005ab550 (005ab550) at 005ab550 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0 (005aaef0) at 005aaef4 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0 (005ab5a0) at 005ab5a0 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_isSoundBusy_FUN_005ab540 (005ab540) at 005ab540 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_selectSoundDevice_FUN_005ab4c0 (005ab4c0) at 005ab4c5 [UNCONDITIONAL_CALL]
 // Globals:

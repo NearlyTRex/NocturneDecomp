@@ -6,7 +6,7 @@
 // Cross-references:
 //   sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0 (005a86f0) at 005a870d [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390 (005a8390) at 005a83d6 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9720 (005a9720) at 005a9770 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720 (005a9720) at 005a9770 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_00650688
 //   TerminatedCString s_SampleInfo_cvtPlaybackPo_0065069d

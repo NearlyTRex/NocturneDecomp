@@ -20,7 +20,7 @@ void __cdecl sound_sndmain_cpp_CSfxOptions_reset_FUN_005a8830(CSfxOptions *this_
 {
   double dVar1;
   
-  this_ptr->status = 0;
+  this_ptr->channel_index = 0;
   *(undefined4 *)&(this_ptr->position).z = 0;
   *(undefined4 *)((int)&(this_ptr->position).z + 4) = 0;
   this_ptr->position_source_ptr = (CVector3d *)0x0;

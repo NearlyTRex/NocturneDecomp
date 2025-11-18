@@ -49,7 +49,7 @@
 //   sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680 (00531680) at 00531963 [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30 (00533d30) at 00533db8 [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_initializeHuffmanTables_FUN_00533f80 (00533f80) at 00534018 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_parseConfigFile_FUN_005a45c0 (005a45c0) at 005a4a01 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0 (005a45c0) at 005a4a01 [UNCONDITIONAL_CALL]
 //   support_trisock.cpp_parseIPComponents_FUN_005e1800 (005e1800) at 005e1822 [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_stdio.c_vsscanf_FUN_00600100

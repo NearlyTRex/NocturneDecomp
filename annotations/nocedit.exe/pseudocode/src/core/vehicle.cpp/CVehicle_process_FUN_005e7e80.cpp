@@ -54,8 +54,8 @@
 //   core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90
 //   core_vehicle.cpp_FUN_005e8b50
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
-//   sound_sndmain.cpp_FUN_005a9660
-//   sound_sndmain.cpp_FUN_005a9b40
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
+//   sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40
 
 #include "nocturne.h"
 
@@ -203,7 +203,8 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
           (*pCVar11->vtable[1].playAmbientSoundWithVolume)(pCVar11,auStack_f4,fVar14);
         }
         else if ((fVar14 < local_7c + (float)DOUBLE_00656ef6) &&
-                (iVar9 = sound_sndmain_cpp_FUN_005a9660(), iVar9 == 0)) {
+                (iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                                   (*(uint *)(this_ptr->field6_0x1034 + 0x20)), iVar9 == 0)) {
           uVar10 = core_vehicle_cpp_FUN_005e8b50();
           *(undefined4 *)(this_ptr->field6_0x1034 + 0x20) = uVar10;
         }
@@ -327,14 +328,15 @@ joined_r0x005e8664:
   core_mission_cpp_CDemonMission_FUN_00523b70(g_CDemonMissionPtr);
   core_mission_cpp_CDemonMission_FUN_00523b70(g_CDemonMissionPtr);
 LAB_005e82f4:
-  iVar12 = sound_sndmain_cpp_FUN_005a9660();
+  iVar12 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->field6_0x1034 + 0x24));
   if (iVar12 == 0) {
     uVar10 = core_vehicle_cpp_FUN_005e8b50();
     *(undefined4 *)(this_ptr->field6_0x1034 + 0x24) = uVar10;
   }
-  sound_sndmain_cpp_FUN_005a9b40();
+  sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40(*(uint *)(this_ptr->field6_0x1034 + 0x24),1.0);
   if (((float)DOUBLE_00656eee < ABS(*(float *)(this_ptr->field1_0x158 + 0x778))) &&
-     (iVar12 = sound_sndmain_cpp_FUN_005a9660(), iVar12 == 0)) {
+     (iVar12 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                         (*(uint *)(this_ptr->field6_0x1034 + 0x28)), iVar12 == 0)) {
     uVar10 = core_vehicle_cpp_FUN_005e8b50();
     *(undefined4 *)(this_ptr->field6_0x1034 + 0x28) = uVar10;
     return;
@@ -710,7 +712,7 @@ LAB_005e82f4:
 //   XREF to: 005e816d (CONDITIONAL_JUMP)
 // 005e8281: MOV EDX,dword ptr [EBX + 0x1054]
 // 005e8287: PUSH EDX
-// 005e8288: CALL sound_sndmain.cpp_FUN_005a9660
+// 005e8288: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005e828d: ADD ESP,0x4
 // 005e8290: TEST EAX,EAX
@@ -751,7 +753,7 @@ LAB_005e82f4:
 // 005e82f4: MOV ECX,dword ptr [EBX + 0x1058]
 //   Label: LAB_005e82f4
 // 005e82fa: PUSH ECX
-// 005e82fb: CALL sound_sndmain.cpp_FUN_005a9660
+// 005e82fb: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005e8300: ADD ESP,0x4
 // 005e8303: TEST EAX,EAX
@@ -768,7 +770,7 @@ LAB_005e82f4:
 //   Label: LAB_005e831b
 // 005e8321: PUSH 0x3f800000
 // 005e8326: PUSH ESI
-// 005e8327: CALL sound_sndmain.cpp_FUN_005a9b40
+// 005e8327: CALL sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40
 //   XREF to: 005a9b40 (UNCONDITIONAL_CALL)
 // 005e832c: FLD float ptr [EBX + 0x8d0]
 // 005e8332: FABS
@@ -1098,7 +1100,7 @@ LAB_005e82f4:
 // 005e869b: MOV EDI,dword ptr [EBX + 0x105c]
 //   Label: LAB_005e869b
 // 005e86a1: PUSH EDI
-// 005e86a2: CALL sound_sndmain.cpp_FUN_005a9660
+// 005e86a2: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005e86a7: ADD ESP,0x4
 // 005e86aa: TEST EAX,EAX

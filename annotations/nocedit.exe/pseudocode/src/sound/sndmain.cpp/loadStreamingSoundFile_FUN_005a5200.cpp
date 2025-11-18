@@ -32,10 +32,10 @@
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 //   sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0
 //   sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550
+//   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170
 //   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
-//   sound_sndmain.cpp_CSfxSample_FUN_005a6170
+//   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
 //   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
-//   sound_sndmain.cpp_parseConfigFile_FUN_005a45c0
 //   sound_sndmain.cpp_parseWavFile_FUN_005a3fe0
 
 #include "nocturne.h"
@@ -113,18 +113,18 @@ LAB_005a5242:
     iVar5 = local_14->mp3_data->sample_rate;
     (local_14->sample_info).sample_count = -1;
     (local_14->sample_info).sample_rate = iVar5;
-    sound_sndmain_cpp_parseConfigFile_FUN_005a45c0(local_14);
+    sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(local_14);
     local_14->taken = 0;
     local_14->ref_count = 0;
     iVar5 = (local_14->sample_info).sample_rate;
     local_14->buffer_id = 0;
     fVar7 = (float10)iVar5 * (float10)FLOAT_00663164;
-    local_14->field13_0x164 = 0;
-    local_14->field14_0x168 = 0;
+    local_14->field19_0x164 = 0;
+    local_14->field20_0x168 = 0;
     dVar8 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,in_stack_00000020));
     local_14->streaming_buffer_size = (int)ROUND(fVar7);
     local_14->streaming_slot_index = SUB84(dVar8,0);
-    iVar5 = sound_sndmain_cpp_CSfxSample_FUN_005a6170(in_stack_ffffff08);
+    iVar5 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(in_stack_ffffff08);
   }
   else {
     pFVar3 = engine_dosio_c_getFile_FUN_00481a50("sound",in_stack_00000008,"rb");
@@ -145,18 +145,18 @@ LAB_005a5242:
     iVar5 = sound_sndmain_cpp_parseWavFile_FUN_005a3fe0
                       (local_14->file_handle,&local_14->file_offset,local_14);
     if (iVar5 == 0) goto LAB_005a5505;
-    sound_sndmain_cpp_parseConfigFile_FUN_005a45c0(local_14);
+    sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(local_14);
     local_14->taken = 0;
     local_14->ref_count = 0;
     iVar5 = (local_14->sample_info).sample_rate;
     local_14->buffer_id = 0;
     fVar7 = (float10)iVar5 * (float10)FLOAT_00663164;
-    local_14->field13_0x164 = 0;
-    local_14->field14_0x168 = 0;
+    local_14->field19_0x164 = 0;
+    local_14->field20_0x168 = 0;
     dVar8 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX_00,in_stack_00000020));
     local_14->streaming_buffer_size = (int)ROUND(fVar7);
     local_14->streaming_slot_index = SUB84(dVar8,0);
-    iVar5 = sound_sndmain_cpp_CSfxSample_FUN_005a6170(in_stack_ffffff08);
+    iVar5 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(in_stack_ffffff08);
   }
   if (iVar5 != 0) {
     sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(local_14);
@@ -329,7 +329,7 @@ LAB_005a5505:
 // 005a536e: MOV dword ptr [EBP + 0x110],0xffffffff
 // 005a5378: PUSH EBP
 // 005a5379: MOV dword ptr [EBP + 0x10c],EAX
-// 005a537f: CALL sound_sndmain.cpp_parseConfigFile_FUN_005a45c0
+// 005a537f: CALL sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
 //   XREF to: 005a45c0 (UNCONDITIONAL_CALL)
 // 005a5384: MOV dword ptr [EBP + 0x150],0x0
 // 005a538e: MOV dword ptr [EBP + 0x154],0x0
@@ -347,7 +347,7 @@ LAB_005a5505:
 //   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
 // 005a53d2: FISTP dword ptr [EBP + 0x160]
 // 005a53d8: MOV dword ptr [EBP + 0x15c],EAX
-// 005a53de: CALL sound_sndmain.cpp_CSfxSample_FUN_005a6170
+// 005a53de: CALL sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170
 //   XREF to: 005a6170 (UNCONDITIONAL_CALL)
 // 005a53e3: ADD ESP,0x4
 // 005a53e6: TEST EAX,EAX
@@ -428,7 +428,7 @@ LAB_005a5505:
 // 005a5493: JZ 0x005a5505
 //   XREF to: 005a5505 (CONDITIONAL_JUMP)
 // 005a5495: PUSH EBP
-// 005a5496: CALL sound_sndmain.cpp_parseConfigFile_FUN_005a45c0
+// 005a5496: CALL sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
 //   XREF to: 005a45c0 (UNCONDITIONAL_CALL)
 // 005a549b: MOV dword ptr [EBP + 0x150],0x0
 // 005a54a5: MOV dword ptr [EBP + 0x154],0x0
@@ -446,7 +446,7 @@ LAB_005a5505:
 //   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
 // 005a54e9: FISTP dword ptr [EBP + 0x160]
 // 005a54ef: MOV dword ptr [EBP + 0x15c],EAX
-// 005a54f5: CALL sound_sndmain.cpp_CSfxSample_FUN_005a6170
+// 005a54f5: CALL sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170
 //   XREF to: 005a6170 (UNCONDITIONAL_CALL)
 // 005a54fa: ADD ESP,0x4
 // 005a54fd: TEST EAX,EAX

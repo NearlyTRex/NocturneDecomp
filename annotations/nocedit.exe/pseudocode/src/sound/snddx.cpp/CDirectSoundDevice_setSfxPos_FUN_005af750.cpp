@@ -102,7 +102,7 @@ sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
     local_28 = slot->reference_distance;
     local_24 = slot->max_distance;
     pIStack_14 = (IDirectSoundBuffer *)
-                 sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90((slot->options).status);
+                 sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90((slot->options).channel_index);
     error_code = pIStack_14;
     apIStack_cb4[0] = pIStack_14;
     if ((((slot->options).flags & 1) == 0) &&

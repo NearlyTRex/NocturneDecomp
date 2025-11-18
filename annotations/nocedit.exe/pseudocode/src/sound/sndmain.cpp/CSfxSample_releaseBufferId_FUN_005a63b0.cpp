@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_005a63b0(CSfxSample * this_ptr)
 // Cross-references:
-//   sound_sndmain.cpp_CSfxSample_FUN_005a6170 (005a6170) at 005a617c [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170 (005a6170) at 005a617c [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0 (005a62c0) at 005a62f1 [UNCONDITIONAL_CALL]
 // Globals:
 //   CSoundDevice* g_CSoundDevicePtr

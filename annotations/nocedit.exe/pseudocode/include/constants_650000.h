@@ -1816,6 +1816,7 @@ const double g_MinLatencyThreshold = 0.050000000000000003;
 const double g_MaxLatencyThreshold = 2;
 const double DOUBLE_0065100f = 2;
 const double DOUBLE_00651017 = 3.1415926535000001;
+const double DOUBLE_00651087 = 8.4771050347222196e-07;
 const double DOUBLE_0065108f = 0.25;
 const double DOUBLE_00651097 = -0.29999999999999999;
 const double DOUBLE_0065109f = -0.10000000000000001;

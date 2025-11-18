@@ -56,10 +56,10 @@
 //   shape_edittool.cpp_CStrList_dtor_FUN_004a2a40
 //   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
 //   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
-//   sound_sndmain.cpp_FUN_005aaef0
-//   sound_sndmain.cpp_FUN_005ab130
-//   sound_sndmain.cpp_FUN_005ad3b0
+//   sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
 //   sound_sndmain.cpp_isSoundBusy_FUN_005ab540
+//   sound_sndmain.cpp_resetSoundDevice_FUN_005ab130
+//   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0
 
 #include "nocturne.h"
 
@@ -147,7 +147,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
       iVar3 = iVar3 + 1;
     } while (iVar3 < (int)ppcStack_24);
   }
-  sound_sndmain_cpp_FUN_005aaef0();
+  sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
   iVar3 = sound_sndmain_cpp_isSoundBusy_FUN_005ab540();
   if (iVar3 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -221,7 +221,8 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
                  shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                            ((CStrList *)&stack0x00000000,iVar3);
             in_stack_fffff100 = (char **)0x5adadb;
-            string_data = (char **)sound_sndmain_cpp_FUN_005ad3b0((char *)in_stack_fffff104);
+            string_data = (char **)sound_sndmain_cpp_testSoundFile_FUN_005ad3b0
+                                             ((char *)in_stack_fffff104);
             pCVar5 = (CStrList_vtable *)&stack0xfffff0c4;
             if (string_data != (char **)0x0) {
               in_stack_fffff100 = (char **)0x5adaed;
@@ -249,7 +250,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
         shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                   (g_CEditorToolsPtr,(float)iVar3,(float)(int)CStack_48.vtable);
         pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)auStack_38,iVar3);
-        pcVar4 = sound_sndmain_cpp_FUN_005ad3b0(pcVar4);
+        pcVar4 = sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(pcVar4);
         if (pcVar4 != (char *)0x0) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff0d4,pcVar4);
           pcVar1 = pcVar4;
@@ -258,7 +259,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
       } while (iVar3 < (int)pCStack_50);
     }
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-    sound_sndmain_cpp_FUN_005ab130();
+    sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
     (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
     if ((int)pcVar1 < 1) {
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
@@ -391,7 +392,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
 // 005ad6c9: CMP EBX,ESI
 // 005ad6cb: JL 0x005ad624
 //   XREF to: 005ad624 (CONDITIONAL_JUMP)
-// 005ad6d1: CALL sound_sndmain.cpp_FUN_005aaef0
+// 005ad6d1: CALL sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
 //   Label: LAB_005ad6d1
 //   XREF to: 005aaef0 (UNCONDITIONAL_CALL)
 // 005ad6d6: CALL sound_sndmain.cpp_isSoundBusy_FUN_005ab540
@@ -498,7 +499,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
 // 005ad7bd: CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 //   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)
 // 005ad7c2: ADD ESP,0x4
-// 005ad7c5: CALL sound_sndmain.cpp_FUN_005ab130
+// 005ad7c5: CALL sound_sndmain.cpp_resetSoundDevice_FUN_005ab130
 //   XREF to: 005ab130 (UNCONDITIONAL_CALL)
 // 005ad7ca: PUSH 0x1
 // 005ad7cc: MOV EAX,[0x0067cf44]
@@ -781,7 +782,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
 //   XREF to: 004a2f70 (UNCONDITIONAL_CALL)
 // 005adad2: ADD ESP,0x8
 // 005adad5: PUSH EAX
-// 005adad6: CALL sound_sndmain.cpp_FUN_005ad3b0
+// 005adad6: CALL sound_sndmain.cpp_testSoundFile_FUN_005ad3b0
 //   XREF to: 005ad3b0 (UNCONDITIONAL_CALL)
 // 005adadb: ADD ESP,0x4
 // 005adade: TEST EAX,EAX
@@ -826,7 +827,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
 //   XREF to: 004a2f70 (UNCONDITIONAL_CALL)
 // 005adb51: ADD ESP,0x8
 // 005adb54: PUSH EAX
-// 005adb55: CALL sound_sndmain.cpp_FUN_005ad3b0
+// 005adb55: CALL sound_sndmain.cpp_testSoundFile_FUN_005ad3b0
 //   XREF to: 005ad3b0 (UNCONDITIONAL_CALL)
 // 005adb5a: ADD ESP,0x4
 // 005adb5d: TEST EAX,EAX

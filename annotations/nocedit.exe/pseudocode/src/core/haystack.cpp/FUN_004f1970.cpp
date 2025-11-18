@@ -16,7 +16,7 @@
 //   core_charactr.cpp_CCharacter_FUN_0042ec40
 //   core_haystack.cpp_FUN_004f1ab0
 //   core_motion.cpp_CMotionController_advance_FUN_0052d610
-//   sound_sndmain.cpp_FUN_005aa290
+//   sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290
 
 #include "nocturne.h"
 
@@ -47,7 +47,10 @@ LAB_004f19bc:
     case 0x67:
     case 0x69:
     case 0x6b:
-      iVar1 = sound_sndmain_cpp_FUN_005aa290();
+      iVar1 = sound_sndmain_cpp_isWithinListenerRadius_FUN_005aa290
+                        ((double)(in_stack_00000004->base_actor).location.position.x,
+                         (double)(in_stack_00000004->base_actor).location.position.y,
+                         (double)(in_stack_00000004->base_actor).location.position.z,40.0);
       if (iVar1 != 0) {
         (*((in_stack_00000004->base_actor).vtable)->playSound)
                   (&in_stack_00000004->base_actor,"box-swing?.wav");
@@ -56,7 +59,10 @@ LAB_004f19bc:
     case 0x68:
     case 0x6a:
     case 0x6c:
-      iVar1 = sound_sndmain_cpp_FUN_005aa290();
+      iVar1 = sound_sndmain_cpp_isWithinListenerRadius_FUN_005aa290
+                        ((double)(in_stack_00000004->base_actor).location.position.x,
+                         (double)(in_stack_00000004->base_actor).location.position.y,
+                         (double)(in_stack_00000004->base_actor).location.position.z,40.0);
       if ((iVar1 != 0) && (iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.4), iVar1 != 0)) {
         (*((in_stack_00000004->base_actor).vtable)->playSound)
                   (&in_stack_00000004->base_actor,"box-punch?.wav");
@@ -159,7 +165,7 @@ LAB_004f19bc:
 // 004f1a13: FLD float ptr [EBX + 0x20]
 // 004f1a16: FSTP double ptr [ESP]
 //   XREF to: Stack[-0x30] (DATA)
-// 004f1a19: CALL sound_sndmain.cpp_FUN_005aa290
+// 004f1a19: CALL sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290
 //   XREF to: 005aa290 (UNCONDITIONAL_CALL)
 // 004f1a1e: ADD ESP,0x20
 // 004f1a21: TEST EAX,EAX
@@ -188,7 +194,7 @@ LAB_004f19bc:
 // 004f1a55: FLD float ptr [EBX + 0x20]
 // 004f1a58: FSTP double ptr [ESP]
 //   XREF to: Stack[-0x30] (DATA)
-// 004f1a5b: CALL sound_sndmain.cpp_FUN_005aa290
+// 004f1a5b: CALL sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290
 //   XREF to: 005aa290 (UNCONDITIONAL_CALL)
 // 004f1a60: ADD ESP,0x20
 // 004f1a63: TEST EAX,EAX

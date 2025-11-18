@@ -20,7 +20,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(CSfxSa
       (*g_CSoundDevicePtr->vtable->unlockSample)(g_CSoundDevicePtr,sample->buffer_id);
     }
     sample->sound_buffer = (void *)0x0;
-    sample->field18_0x178 = (void *)0x0;
+    sample->field24_0x178 = (void *)0x0;
   }
   return;
 }

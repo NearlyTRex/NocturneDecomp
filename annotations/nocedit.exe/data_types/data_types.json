@@ -945,6 +945,10 @@
       "type":"struct"
     },
     {
+      "name":"CSound",
+      "type":"struct"
+    },
+    {
       "name":"CSoundDevice_allocateSample",
       "type":"function_definition"
     },
@@ -1058,10 +1062,6 @@
     },
     {
       "name":"CSound_vtable",
-      "type":"struct"
-    },
-    {
-      "name":"CSound",
       "type":"struct"
     },
     {
@@ -1573,6 +1573,14 @@
       "type":"struct"
     },
     {
+      "name":"DSCBCAPS",
+      "type":"struct"
+    },
+    {
+      "name":"DSCCAPS",
+      "type":"struct"
+    },
+    {
       "name":"DWORD",
       "type":"typedef"
     },
@@ -1941,6 +1949,10 @@
       "type":"function_definition"
     },
     {
+      "name":"IDirectSoundCapture",
+      "type":"struct"
+    },
+    {
       "name":"IMAGE_DOS_HEADER",
       "type":"struct"
     },
@@ -2293,16 +2305,16 @@
       "type":"function_definition"
     },
     {
-      "name":"IUnknown_QueryInterface",
+      "name":"IDirectSoundCaptureBuffer_Start",
       "type":"function_definition"
     },
     {
-      "name":"IDirectSoundCapture_vtable",
-      "type":"struct"
+      "name":"IDirectSoundCaptureBuffer_Stop",
+      "type":"function_definition"
     },
     {
-      "name":"IDirectSoundCapture",
-      "type":"struct"
+      "name":"IUnknown_QueryInterface",
+      "type":"function_definition"
     },
     {
       "name":"IUnknown_vtable",
@@ -2425,6 +2437,14 @@
       "type":"function_definition"
     },
     {
+      "name":"LPDIRECTSOUNDCAPTURE",
+      "type":"typedef"
+    },
+    {
+      "name":"IDirectSoundCaptureBuffer_Initialize",
+      "type":"function_definition"
+    },
+    {
       "name":"LPDS3DBUFFER",
       "type":"typedef"
     },
@@ -2469,6 +2489,18 @@
       "type":"function_definition"
     },
     {
+      "name":"LPDSCCAPS",
+      "type":"typedef"
+    },
+    {
+      "name":"IDirectSoundCaptureBuffer_GetCaps",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSoundCapture_GetCaps",
+      "type":"function_definition"
+    },
+    {
       "name":"LPDWORD",
       "type":"typedef"
     },
@@ -2502,6 +2534,18 @@
     },
     {
       "name":"IDirectSoundBuffer_Lock",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSoundCaptureBuffer_GetCurrentPosition",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSoundCaptureBuffer_GetStatus",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSoundCaptureBuffer_Lock",
       "type":"function_definition"
     },
     {
@@ -2626,6 +2670,10 @@
     },
     {
       "name":"IDirectSoundBuffer_Unlock",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSoundCaptureBuffer_Unlock",
       "type":"function_definition"
     },
     {
@@ -4429,6 +4477,10 @@
       "type":"function_definition"
     },
     {
+      "name":"IDirectSoundCapture_Initialize",
+      "type":"function_definition"
+    },
+    {
       "name":"IDirectSound_Initialize",
       "type":"function_definition"
     },
@@ -5025,8 +5077,36 @@
       "type":"struct"
     },
     {
+      "name":"DSCBUFFERDESC",
+      "type":"struct"
+    },
+    {
       "name":"IDirectSoundBuffer_GetFormat",
       "type":"function_definition"
+    },
+    {
+      "name":"IDirectSoundCaptureBuffer_GetFormat",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSoundCaptureBuffer_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"IDirectSoundCaptureBuffer",
+      "type":"struct"
+    },
+    {
+      "name":"IDirectSoundCapture_CreateCaptureBuffer",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSoundCapture_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"LPDIRECTSOUNDCAPTUREBUFFER",
+      "type":"typedef"
     },
     {
       "name":"LPDSBUFFERDESC",
@@ -5043,6 +5123,10 @@
     {
       "name":"IDirectSound_vtable",
       "type":"struct"
+    },
+    {
+      "name":"LPDSCBUFFERDESC",
+      "type":"typedef"
     },
     {
       "name":"WAVEFORMATEX",
@@ -12938,6 +13022,278 @@
         {
           "name":"this_ptr",
           "type":"LPDIRECTSOUNDBUFFER"
+        },
+        {
+          "name":"pvAudioPtr1",
+          "type":"LPVOID"
+        },
+        {
+          "name":"dwAudioBytes1",
+          "type":"DWORD"
+        },
+        {
+          "name":"pvAudioPtr2",
+          "type":"LPVOID"
+        },
+        {
+          "name":"dwAudioBytes2",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSoundCapture_CreateCaptureBuffer",
+      "parameters":[
+        {
+          "name":"this",
+          "type":"IDirectSoundCapture*"
+        },
+        {
+          "name":"pcDSCBufferDesc",
+          "type":"void*"
+        },
+        {
+          "name":"ppDSCBuffer",
+          "type":"LPDIRECTSOUNDCAPTUREBUFFER*"
+        },
+        {
+          "name":"pUnkOuter",
+          "type":"LPUNKNOWN"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSoundCapture_GetCaps",
+      "parameters":[
+        {
+          "name":"this",
+          "type":"IDirectSoundCapture*"
+        },
+        {
+          "name":"pDSCCaps",
+          "type":"LPDSCCAPS"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSoundCapture_Initialize",
+      "parameters":[
+        {
+          "name":"this",
+          "type":"IDirectSoundCapture*"
+        },
+        {
+          "name":"pcGuidDevice",
+          "type":"LPGUID"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSoundCaptureBuffer_GetCaps",
+      "parameters":[
+        {
+          "name":"this",
+          "type":"IDirectSoundCaptureBuffer*"
+        },
+        {
+          "name":"pDSCBCaps",
+          "type":"LPDSCCAPS"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSoundCaptureBuffer_GetCurrentPosition",
+      "parameters":[
+        {
+          "name":"this",
+          "type":"IDirectSoundCaptureBuffer*"
+        },
+        {
+          "name":"pdwCapturePosition",
+          "type":"LPDWORD"
+        },
+        {
+          "name":"pdwReadPosition",
+          "type":"LPDWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSoundCaptureBuffer_GetFormat",
+      "parameters":[
+        {
+          "name":"this",
+          "type":"IDirectSoundCaptureBuffer*"
+        },
+        {
+          "name":"pwfxFormat",
+          "type":"LPWAVEFORMATEX"
+        },
+        {
+          "name":"dwSizeAllocated",
+          "type":"DWORD"
+        },
+        {
+          "name":"pdwSizeWritten",
+          "type":"LPDWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSoundCaptureBuffer_GetStatus",
+      "parameters":[
+        {
+          "name":"this",
+          "type":"IDirectSoundCaptureBuffer*"
+        },
+        {
+          "name":"pdwStatus",
+          "type":"LPDWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSoundCaptureBuffer_Initialize",
+      "parameters":[
+        {
+          "name":"this",
+          "type":"IDirectSoundCaptureBuffer*"
+        },
+        {
+          "name":"pDirectSoundCapture",
+          "type":"LPDIRECTSOUNDCAPTURE"
+        },
+        {
+          "name":"pcDSCBufferDesc",
+          "type":"void*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSoundCaptureBuffer_Lock",
+      "parameters":[
+        {
+          "name":"this",
+          "type":"IDirectSoundCaptureBuffer*"
+        },
+        {
+          "name":"dwOffset",
+          "type":"DWORD"
+        },
+        {
+          "name":"dwBytes",
+          "type":"DWORD"
+        },
+        {
+          "name":"ppvAudioPtr1",
+          "type":"LPVOID*"
+        },
+        {
+          "name":"pdwAudioBytes1",
+          "type":"LPDWORD"
+        },
+        {
+          "name":"ppvAudioPtr2",
+          "type":"LPVOID*"
+        },
+        {
+          "name":"pdwAudioBytes2",
+          "type":"LPDWORD"
+        },
+        {
+          "name":"dwFlags",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSoundCaptureBuffer_Start",
+      "parameters":[
+        {
+          "name":"this",
+          "type":"IDirectSoundCaptureBuffer*"
+        },
+        {
+          "name":"dwFlags",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSoundCaptureBuffer_Stop",
+      "parameters":[
+        {
+          "name":"this",
+          "type":"IDirectSoundCaptureBuffer*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSoundCaptureBuffer_Unlock",
+      "parameters":[
+        {
+          "name":"this",
+          "type":"IDirectSoundCaptureBuffer*"
         },
         {
           "name":"pvAudioPtr1",
@@ -31462,7 +31818,7 @@
       "fields":[
         {
           "len":4,
-          "name":"status",
+          "name":"channel_index",
           "offset":0,
           "type":"int"
         },
@@ -31593,10 +31949,28 @@
           "type":"int"
         },
         {
-          "len":16,
+          "len":4,
           "name":"field_300",
           "offset":300,
-          "type":"char[16]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_304",
+          "offset":304,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_308",
+          "offset":308,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_312",
+          "offset":312,
+          "type":"int"
         },
         {
           "len":4,
@@ -31605,10 +31979,28 @@
           "type":"int"
         },
         {
-          "len":16,
+          "len":4,
           "name":"field_320",
           "offset":320,
-          "type":"char[16]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_324",
+          "offset":324,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_328",
+          "offset":328,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_332",
+          "offset":332,
+          "type":"int"
         },
         {
           "len":4,
@@ -32086,9 +32478,9 @@
       "fields":[
         {
           "len":4,
-          "name":"vtable",
+          "name":"field_0",
           "offset":0,
-          "type":"CSound_vtable*"
+          "type":"int"
         }
       ],
       "importable":true,
@@ -35188,6 +35580,132 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/dsound.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"dwSize",
+          "offset":0,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwFlags",
+          "offset":4,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwBufferBytes",
+          "offset":8,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwReserved",
+          "offset":12,
+          "type":"DWORD"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"DSCBCAPS",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/dsound.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"dwSize",
+          "offset":0,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwFlags",
+          "offset":4,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwBufferBytes",
+          "offset":8,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwReserved",
+          "offset":12,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"lpwfxFormat",
+          "offset":16,
+          "type":"LPWAVEFORMATEX"
+        },
+        {
+          "len":4,
+          "name":"dwFXCount",
+          "offset":20,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"lpDSCFXDesc",
+          "offset":24,
+          "type":"LPVOID"
+        }
+      ],
+      "importable":true,
+      "len":28,
+      "name":"DSCBUFFERDESC",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/dsound.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"dwSize",
+          "offset":0,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwFlags",
+          "offset":4,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwFormats",
+          "offset":8,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwChannels",
+          "offset":12,
+          "type":"DWORD"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"DSCCAPS",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Struct/System/time.h",
       "desc":"",
@@ -37483,11 +38001,131 @@
           "name":"Release",
           "offset":8,
           "type":"IUnknown_Release*"
+        },
+        {
+          "len":4,
+          "name":"CreateCaptureBuffer",
+          "offset":12,
+          "type":"IDirectSoundCapture_CreateCaptureBuffer*"
+        },
+        {
+          "len":4,
+          "name":"GetCaps",
+          "offset":16,
+          "type":"IDirectSoundCapture_GetCaps*"
+        },
+        {
+          "len":4,
+          "name":"Initialize",
+          "offset":20,
+          "type":"IDirectSoundCapture_Initialize*"
         }
       ],
       "importable":true,
-      "len":12,
+      "len":24,
       "name":"IDirectSoundCapture_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/dsound.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"vtable",
+          "offset":0,
+          "type":"IDirectSoundCaptureBuffer_vtable*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"IDirectSoundCaptureBuffer",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/dsound.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"QueryInterface",
+          "offset":0,
+          "type":"IUnknown_QueryInterface*"
+        },
+        {
+          "len":4,
+          "name":"AddRef",
+          "offset":4,
+          "type":"IUnknown_AddRef*"
+        },
+        {
+          "len":4,
+          "name":"Release",
+          "offset":8,
+          "type":"IUnknown_Release*"
+        },
+        {
+          "len":4,
+          "name":"GetCaps",
+          "offset":12,
+          "type":"IDirectSoundCaptureBuffer_GetCaps*"
+        },
+        {
+          "len":4,
+          "name":"GetCurrentPosition",
+          "offset":16,
+          "type":"IDirectSoundCaptureBuffer_GetCurrentPosition*"
+        },
+        {
+          "len":4,
+          "name":"GetFormat",
+          "offset":20,
+          "type":"IDirectSoundCaptureBuffer_GetFormat*"
+        },
+        {
+          "len":4,
+          "name":"GetStatus",
+          "offset":24,
+          "type":"IDirectSoundCaptureBuffer_GetStatus*"
+        },
+        {
+          "len":4,
+          "name":"Initialize",
+          "offset":28,
+          "type":"IDirectSoundCaptureBuffer_Initialize*"
+        },
+        {
+          "len":4,
+          "name":"Lock",
+          "offset":32,
+          "type":"IDirectSoundCaptureBuffer_Lock*"
+        },
+        {
+          "len":4,
+          "name":"Start",
+          "offset":36,
+          "type":"IDirectSoundCaptureBuffer_Start*"
+        },
+        {
+          "len":4,
+          "name":"Stop",
+          "offset":40,
+          "type":"IDirectSoundCaptureBuffer_Stop*"
+        },
+        {
+          "len":4,
+          "name":"Unlock",
+          "offset":44,
+          "type":"IDirectSoundCaptureBuffer_Unlock*"
+        }
+      ],
+      "importable":true,
+      "len":48,
+      "name":"IDirectSoundCaptureBuffer_vtable",
       "pack":false,
       "type":"struct"
     },
@@ -48703,6 +49341,20 @@
       "type":"typedef"
     },
     {
+      "base":"IDirectSoundCapture*",
+      "cat":"/Nocturne/Typedef/System/dsound.h",
+      "importable":true,
+      "name":"LPDIRECTSOUNDCAPTURE",
+      "type":"typedef"
+    },
+    {
+      "base":"IDirectSoundCaptureBuffer*",
+      "cat":"/Nocturne/Typedef/System/dsound.h",
+      "importable":true,
+      "name":"LPDIRECTSOUNDCAPTUREBUFFER",
+      "type":"typedef"
+    },
+    {
       "base":"DS3DBUFFER*",
       "cat":"/Nocturne/Typedef/System/dsound.h",
       "importable":true,
@@ -48735,6 +49387,20 @@
       "cat":"/Nocturne/Typedef/System/dsound.h",
       "importable":true,
       "name":"LPDSCAPS",
+      "type":"typedef"
+    },
+    {
+      "base":"DSCBUFFERDESC*",
+      "cat":"/Nocturne/Typedef/System/dsound.h",
+      "importable":true,
+      "name":"LPDSCBUFFERDESC",
+      "type":"typedef"
+    },
+    {
+      "base":"DSCCAPS*",
+      "cat":"/Nocturne/Typedef/System/dsound.h",
+      "importable":true,
+      "name":"LPDSCCAPS",
       "type":"typedef"
     },
     {

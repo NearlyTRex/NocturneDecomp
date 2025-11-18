@@ -73133,7 +73133,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_parseConfigFile_FUN_005a45c0",
+    "name":"sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -73691,7 +73691,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_setNextSfxTrackedPosition_FUN_005a8940",
+    "name":"sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940",
     "ret":"void",
     "vars":{
       "params":[
@@ -73803,9 +73803,43 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005a9b40",
+    "name":"sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"sfx_handle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"base_frequency",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -73829,9 +73863,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005a9c40",
+    "name":"sound_sndmain.cpp_killSfx_FUN_005a9c40",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"sfx_handle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -73855,7 +73907,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_killAllSoundSlots_FUN_005a9cc0",
+    "name":"sound_sndmain.cpp_killAllSfx_FUN_005a9cc0",
     "ret":"void"
   },
   {
@@ -74019,9 +74071,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005aa3c0",
+    "name":"sound_sndmain.cpp_isSampleLoaded_FUN_005aa3c0",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"sample_name",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -74045,8 +74115,28 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005ab2c0",
-    "ret":"void"
+    "name":"sound_sndmain.cpp_setAudioSampleRate_FUN_005ab2c0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"sample_rate",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
+    }
   },
   {
     "addr":"005ab4c0",
@@ -74143,13 +74233,77 @@
         "start":"005aba40"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005aba40",
-    "ret":"undefined1",
+    "name":"sound_sndmain.cpp_getRecordingFormat_FUN_005aba40",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"out_bits_per_sample",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"out_channels",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"out_sample_rate",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"out_signed",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        }
+      ]
     }
   },
   {

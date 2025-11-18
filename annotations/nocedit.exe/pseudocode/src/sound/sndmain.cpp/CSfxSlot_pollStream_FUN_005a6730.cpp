@@ -52,7 +52,7 @@
 //   sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540
 //   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
 //   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
-//   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a80e0
+//   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
 
 #include "nocturne.h"
@@ -128,7 +128,7 @@ int sound_sndmain_cpp_CSfxSlot_pollStream_FUN_005a6730(CSfxSlot *this_ptr)
       in_EDX = extraout_EDX_00;
     }
     if (g_SfxSlots[iVar5].hardware_buffer_handle != 0) {
-      iVar5 = sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005a80e0(pCVar6);
+      iVar5 = sound_sndmain_cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0(pCVar6);
       if (iVar5 == 0) {
         sound_sndmain_cpp_logSoundError_FUN_005adba0("SfxSample::pollStream - error querrying hw playback position\n");
         goto LAB_005a69e2;
@@ -147,7 +147,7 @@ int sound_sndmain_cpp_CSfxSlot_pollStream_FUN_005a6730(CSfxSlot *this_ptr)
       }
     }
     dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(in_EDX,pCVar6));
-    fVar13 = (float10)in_stack_00000004->field14_0x168 - (float10)*(double *)local_28->field16_0x11c
+    fVar13 = (float10)in_stack_00000004->field20_0x168 - (float10)*(double *)local_28->field16_0x11c
     ;
     dVar14 = crt_math_c_round_FUN_005fe6b0
                        ((double)CONCAT44((int)((ulonglong)dVar14 >> 0x20),local_28));
@@ -178,16 +178,16 @@ int sound_sndmain_cpp_CSfxSlot_pollStream_FUN_005a6730(CSfxSlot *this_ptr)
       if ((int)pCVar6 < 1) {
         return 1;
       }
-      if ((in_stack_00000004->field14_0x168 < 0) ||
-         (in_stack_00000004->streaming_buffer_size <= in_stack_00000004->field14_0x168)) {
+      if ((in_stack_00000004->field20_0x168 < 0) ||
+         (in_stack_00000004->streaming_buffer_size <= in_stack_00000004->field20_0x168)) {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
         g_CurrentLineNumber = 0x827;
         core_main_c_displayErrorAndQuit_FUN_00506f10
-                  ("nextLoadSampleDest = %d, allocLength = %d",in_stack_00000004->field14_0x168,
+                  ("nextLoadSampleDest = %d, allocLength = %d",in_stack_00000004->field20_0x168,
                    in_stack_00000004->streaming_buffer_size,file,uVar15);
       }
       samples_requested =
-           (CSfxSlot *)(in_stack_00000004->streaming_buffer_size - in_stack_00000004->field14_0x168)
+           (CSfxSlot *)(in_stack_00000004->streaming_buffer_size - in_stack_00000004->field20_0x168)
       ;
       if ((int)pCVar6 < (int)samples_requested) {
         samples_requested = pCVar6;
@@ -198,8 +198,8 @@ int sound_sndmain_cpp_CSfxSlot_pollStream_FUN_005a6730(CSfxSlot *this_ptr)
       iVar5 = (in_stack_00000004->sample_info).sample_count;
       bVar2 = false;
       if (-1 < iVar5) {
-        if (in_stack_00000004->field13_0x164 < iVar5) {
-          pCVar7 = (CSfxSlot *)(iVar5 - in_stack_00000004->field13_0x164);
+        if (in_stack_00000004->field19_0x164 < iVar5) {
+          pCVar7 = (CSfxSlot *)(iVar5 - in_stack_00000004->field19_0x164);
           if ((int)pCVar7 < (int)samples_requested) {
             samples_requested = pCVar7;
           }
@@ -293,15 +293,15 @@ LAB_005a6b5d:
       }
       if (samples_requested != local_14) {
         (in_stack_00000004->sample_info).sample_count =
-             (int)(local_14->options).userdata + in_stack_00000004->field13_0x164 + -0x54;
+             (int)(local_14->options).userdata + in_stack_00000004->field19_0x164 + -0x54;
       }
       pCVar6 = (CSfxSlot *)((int)pCVar6 - (int)local_14);
-      iVar5 = (int)(local_14->options).userdata + in_stack_00000004->field14_0x168 + -0x54;
-      in_stack_00000004->field13_0x164 =
-           (int)(local_14->options).userdata + in_stack_00000004->field13_0x164 + -0x54;
-      in_stack_00000004->field14_0x168 = iVar5;
+      iVar5 = (int)(local_14->options).userdata + in_stack_00000004->field20_0x168 + -0x54;
+      in_stack_00000004->field19_0x164 =
+           (int)(local_14->options).userdata + in_stack_00000004->field19_0x164 + -0x54;
+      in_stack_00000004->field20_0x168 = iVar5;
       if (in_stack_00000004->streaming_buffer_size <= iVar5) {
-        in_stack_00000004->field14_0x168 = 0;
+        in_stack_00000004->field20_0x168 = 0;
       }
     }
     output_buffer = (short *)sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(in_stack_00000004);
@@ -396,7 +396,7 @@ LAB_005a69e2:
 // 005a67e1: JZ 0x005a6820
 //   XREF to: 005a6820 (CONDITIONAL_JUMP)
 // 005a67e3: PUSH EAX
-// 005a67e4: CALL sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a80e0
+// 005a67e4: CALL sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0
 //   XREF to: 005a80e0 (UNCONDITIONAL_CALL)
 // 005a67e9: ADD ESP,0x4
 // 005a67ec: TEST EAX,EAX

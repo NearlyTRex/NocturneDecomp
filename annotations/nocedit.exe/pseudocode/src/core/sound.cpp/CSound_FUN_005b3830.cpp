@@ -15,14 +15,14 @@
 //   float FLOAT_00663318 = 1
 // Function calls:
 //   core_sound.cpp_CSound_FUN_005b39a0
-//   sound_sndmain.cpp_FUN_005aaef0
-//   sound_sndmain.cpp_FUN_005ab6e0
+//   sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
 //   sound_sndmain.cpp_getAudioSampleRate_FUN_005ab260
 //   sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90
-//   sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0
+//   sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0
+//   sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0
 //   sound_sndmain.cpp_set3DListenerPos_FUN_005aa020
 //   sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0
 //   sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0
@@ -41,7 +41,6 @@ void __cdecl core_sound_cpp_CSound_FUN_005b3830(CSound *this_ptr)
   undefined4 uStack00000028;
   undefined4 uStack0000002c;
   undefined4 uStack00000038;
-  char *pcStack0000003c;
   undefined4 uStack00000040;
   
   fVar1 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(1);
@@ -56,15 +55,15 @@ void __cdecl core_sound_cpp_CSound_FUN_005b3830(CSound *this_ptr)
   if (FLOAT_00663318 < fVar1) {
     sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(2,FLOAT_00663318);
   }
-  iVar2 = sound_sndmain_cpp_getSoundEnabled_FUN_005a96b0();
+  iVar2 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
   if (iVar2 == 0) {
     core_sound_cpp_CSound_FUN_005b39a0(in_stack_00000020);
-    sound_sndmain_cpp_FUN_005ab6e0();
+    sound_sndmain_cpp_set3DListenerOrientRight_FUN_005ab6e0(0.0,0.0,0.0);
     sound_sndmain_cpp_set3DListenerPos_FUN_005aa020(0.0,0.0,0.0);
     sound_sndmain_cpp_set3DListenerOrient_FUN_005aa0a0(1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0);
     sound_sndmain_cpp_set3DListenerVelocity_FUN_005aa1c0(0.0,0.0,0.0);
     uStack00000028 = 0x5b3938;
-    sound_sndmain_cpp_FUN_005aaef0();
+    sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
     uStack0000002c = 0x5b393d;
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
     uStack0000002c = 0x5b3944;
@@ -73,16 +72,14 @@ void __cdecl core_sound_cpp_CSound_FUN_005b3830(CSound *this_ptr)
     uStack00000038 = 0x5b3956;
     iVar2 = sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260();
     if (iVar2 < 0x7531) {
-      pcStack0000003c = "splash-music-22.wav";
       uStack00000038 = 0x5b3992;
-      sound_sndmain_cpp_startSfx_FUN_005a8e90();
+      sound_sndmain_cpp_startSfx_FUN_005a8e90("splash-music-22.wav");
       uStack00000040 = 0x5b399a;
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       return;
     }
-    pcStack0000003c = "splash-music-44.wav";
     uStack00000038 = 0x5b3967;
-    sound_sndmain_cpp_startSfx_FUN_005a8e90();
+    sound_sndmain_cpp_startSfx_FUN_005a8e90("splash-music-44.wav");
     uStack00000040 = 0x5b396f;
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   }
@@ -149,7 +146,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b3830(CSound *this_ptr)
 // 005b38a6: CALL sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0
 //   XREF to: 005a9cf0 (UNCONDITIONAL_CALL)
 // 005b38ab: ADD ESP,0x8
-// 005b38ae: CALL sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0
+// 005b38ae: CALL sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0
 //   Label: LAB_005b38ae
 //   XREF to: 005a96b0 (UNCONDITIONAL_CALL)
 // 005b38b3: TEST EAX,EAX
@@ -164,7 +161,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b3830(CSound *this_ptr)
 // 005b38c8: PUSH 0x0
 // 005b38ca: PUSH 0x0
 // 005b38cc: PUSH 0x0
-// 005b38ce: CALL sound_sndmain.cpp_FUN_005ab6e0
+// 005b38ce: CALL sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0
 //   XREF to: 005ab6e0 (UNCONDITIONAL_CALL)
 // 005b38d3: ADD ESP,0xc
 // 005b38d6: PUSH 0x0
@@ -206,7 +203,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b3830(CSound *this_ptr)
 // 005b392b: CALL sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0
 //   XREF to: 005aa1c0 (UNCONDITIONAL_CALL)
 // 005b3930: ADD ESP,0x18
-// 005b3933: CALL sound_sndmain.cpp_FUN_005aaef0
+// 005b3933: CALL sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
 //   XREF to: 005aaef0 (UNCONDITIONAL_CALL)
 // 005b3938: CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   XREF to: 005a8c30 (UNCONDITIONAL_CALL)

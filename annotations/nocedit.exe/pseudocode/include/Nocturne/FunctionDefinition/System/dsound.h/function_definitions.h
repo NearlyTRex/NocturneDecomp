@@ -159,6 +159,42 @@ typedef HRESULT (*IDirectSoundBuffer_Stop)(LPDIRECTSOUNDBUFFER this_ptr);
 // Function Definition: IDirectSoundBuffer_Unlock
 typedef HRESULT (*IDirectSoundBuffer_Unlock)(LPDIRECTSOUNDBUFFER this_ptr, LPVOID pvAudioPtr1, DWORD dwAudioBytes1, LPVOID pvAudioPtr2, DWORD dwAudioBytes2);
 
+// Function Definition: IDirectSoundCaptureBuffer_GetCaps
+typedef HRESULT (*IDirectSoundCaptureBuffer_GetCaps)(IDirectSoundCaptureBuffer* this, LPDSCCAPS pDSCBCaps);
+
+// Function Definition: IDirectSoundCaptureBuffer_GetCurrentPosition
+typedef HRESULT (*IDirectSoundCaptureBuffer_GetCurrentPosition)(IDirectSoundCaptureBuffer* this, LPDWORD pdwCapturePosition, LPDWORD pdwReadPosition);
+
+// Function Definition: IDirectSoundCaptureBuffer_GetFormat
+typedef HRESULT (*IDirectSoundCaptureBuffer_GetFormat)(IDirectSoundCaptureBuffer* this, LPWAVEFORMATEX pwfxFormat, DWORD dwSizeAllocated, LPDWORD pdwSizeWritten);
+
+// Function Definition: IDirectSoundCaptureBuffer_GetStatus
+typedef HRESULT (*IDirectSoundCaptureBuffer_GetStatus)(IDirectSoundCaptureBuffer* this, LPDWORD pdwStatus);
+
+// Function Definition: IDirectSoundCaptureBuffer_Initialize
+typedef HRESULT (*IDirectSoundCaptureBuffer_Initialize)(IDirectSoundCaptureBuffer* this, LPDIRECTSOUNDCAPTURE pDirectSoundCapture, void* pcDSCBufferDesc);
+
+// Function Definition: IDirectSoundCaptureBuffer_Lock
+typedef HRESULT (*IDirectSoundCaptureBuffer_Lock)(IDirectSoundCaptureBuffer* this, DWORD dwOffset, DWORD dwBytes, LPVOID* ppvAudioPtr1, LPDWORD pdwAudioBytes1, LPVOID* ppvAudioPtr2, LPDWORD pdwAudioBytes2, DWORD dwFlags);
+
+// Function Definition: IDirectSoundCaptureBuffer_Start
+typedef HRESULT (*IDirectSoundCaptureBuffer_Start)(IDirectSoundCaptureBuffer* this, DWORD dwFlags);
+
+// Function Definition: IDirectSoundCaptureBuffer_Stop
+typedef HRESULT (*IDirectSoundCaptureBuffer_Stop)(IDirectSoundCaptureBuffer* this);
+
+// Function Definition: IDirectSoundCaptureBuffer_Unlock
+typedef HRESULT (*IDirectSoundCaptureBuffer_Unlock)(IDirectSoundCaptureBuffer* this, LPVOID pvAudioPtr1, DWORD dwAudioBytes1, LPVOID pvAudioPtr2, DWORD dwAudioBytes2);
+
+// Function Definition: IDirectSoundCapture_CreateCaptureBuffer
+typedef HRESULT (*IDirectSoundCapture_CreateCaptureBuffer)(IDirectSoundCapture* this, void* pcDSCBufferDesc, LPDIRECTSOUNDCAPTUREBUFFER* ppDSCBuffer, LPUNKNOWN pUnkOuter);
+
+// Function Definition: IDirectSoundCapture_GetCaps
+typedef HRESULT (*IDirectSoundCapture_GetCaps)(IDirectSoundCapture* this, LPDSCCAPS pDSCCaps);
+
+// Function Definition: IDirectSoundCapture_Initialize
+typedef HRESULT (*IDirectSoundCapture_Initialize)(IDirectSoundCapture* this, LPGUID pcGuidDevice);
+
 // Function Definition: IDirectSound_Compact
 typedef HRESULT (*IDirectSound_Compact)(LPDIRECTSOUND this_ptr);
 

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int sound_sndmain.cpp_getCurrentRecordingDevice_FUN_005ab990(void)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005aae00 (005aae00) at 005aae9c [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00 (005aae00) at 005aae9c [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_CurrentRecordingDevice = -0x1
 

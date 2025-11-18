@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CWavOutDevice * sound_sndwav.cpp_getWavOutDevice_FUN_005b1510(UINT device_id)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005ab5b0 (005ab5b0) at 005ab5f7 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_initializeSoundDevice_FUN_005ab5b0 (005ab5b0) at 005ab5f7 [UNCONDITIONAL_CALL]
 // Globals:
 //   waveOutGetDevCapsA* waveOutGetDevCapsA = 0021192e
 //   UINT g_WaveOutDeviceID = 0xffffffff

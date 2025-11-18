@@ -16,8 +16,8 @@
 //   undefined4 DAT_02d62f00
 // Function calls:
 //   core_actor.cpp_getRandomInt_FUN_0040cc70
-//   sound_sndmain.cpp_FUN_005a98b0
-//   sound_sndmain.cpp_FUN_005a9a00
+//   sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0
+//   sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_005a9a00
 
 #include "nocturne.h"
 
@@ -27,17 +27,13 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7db0(CFireEffect *this_ptr)
   char *pcVar1;
   CBulletTrail *pCVar2;
   int iVar3;
-  int iVar4;
   CFireball *this_ptr_00;
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
-  CFireball *pCStack00000010;
-  int iStack00000014;
   int in_stack_00000030;
-  int in_stack_00000034;
+  uint in_stack_00000034;
   
   pCVar2 = g_BulletTrailActiveListHead;
-  iVar4 = (int)g_BulletTrailActiveListHead * 0x9c;
   pcVar1 = g_BulletTrailActiveListHead->field0_0x0;
   this_ptr_00 = g_FireballPool + (int)g_BulletTrailActiveListHead;
   g_BulletTrailActiveListHead = (CBulletTrail *)(pcVar1 + 1);
@@ -57,11 +53,10 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7db0(CFireEffect *this_ptr)
   g_FireballPool[(int)pCVar2].lighting_active = in_stack_00000030;
   g_FireballPool[(int)pCVar2].first_update_flag = 0;
   g_FireballPool[(int)pCVar2].field9_0x58 = in_stack_00000034;
-  pCStack00000010 = this_ptr_00;
-  sound_sndmain_cpp_FUN_005a98b0();
-  iStack00000014 = iVar4 + 0x2d62eb4;
-  pCStack00000010 = (CFireball *)g_FireballPool[(int)pCVar2].field9_0x58;
-  sound_sndmain_cpp_FUN_005a9a00();
+  sound_sndmain_cpp_setSfxTrackedFloatPosition_FUN_005a98b0
+            (in_stack_00000034,(CVector3f *)this_ptr_00);
+  sound_sndmain_cpp_setSfxTrackedFloatVelocity_FUN_005a9a00
+            (g_FireballPool[(int)pCVar2].field9_0x58,&g_FireballPool[(int)pCVar2].base.velocity);
   return;
 }
 
@@ -126,7 +121,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7db0(CFireEffect *this_ptr)
 // 004c7e30: PUSH EAX
 // 004c7e31: MOV dword ptr [EBX + 0x58],EAX
 //   XREF to: 02d62f00 (DATA)
-// 004c7e34: CALL sound_sndmain.cpp_FUN_005a98b0
+// 004c7e34: CALL sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0
 //   XREF to: 005a98b0 (UNCONDITIONAL_CALL)
 // 004c7e39: ADD ESP,0x8
 // 004c7e3c: LEA EAX,[EBX + 0xc]
@@ -134,7 +129,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7db0(CFireEffect *this_ptr)
 // 004c7e40: MOV ECX,dword ptr [EBX + 0x58]
 //   XREF to: 02d62f00 (DATA)
 // 004c7e43: PUSH ECX
-// 004c7e44: CALL sound_sndmain.cpp_FUN_005a9a00
+// 004c7e44: CALL sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_005a9a00
 //   XREF to: 005a9a00 (UNCONDITIONAL_CALL)
 // 004c7e49: ADD ESP,0x8
 // 004c7e4c: POP EBP

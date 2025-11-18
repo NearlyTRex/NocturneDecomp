@@ -8,7 +8,7 @@
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_0065104e
 //   TerminatedCString s_SfxSlot_kill_must_be_loc_00651063
-//   undefined4 DAT_00651087
+//   double DOUBLE_00651087 = 8.47710503472222E-7
 //   double DOUBLE_0065108f = 0.25
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -16,23 +16,21 @@
 //   undefined4 g_SfxSlots[1].status
 //   int g_SfxLastSlot
 //   int g_SoundLockCount
-//   undefined4 DAT_03f69410
+//   int g_SoundStartTime
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530
 //   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
 //   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0
-//   sound_sndmain.cpp_FUN_005ab5a0
+//   sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0
 //   wincore_winrun.cpp_getTime_FUN_005f2dc0
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_FUN_005acdb0(void)
 
 {
-  int iVar1;
+  uint uVar1;
   int iVar2;
   CSfxSlot *this_ptr;
   CSfxSlot *unaff_ESI;
@@ -43,11 +41,11 @@ void __cdecl sound_sndmain_cpp_FUN_005acdb0(void)
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::kill - must be locked!");
   }
   sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_005a5530();
-  iVar2 = DAT_03f69410;
-  DAT_03f69410 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-  iVar1 = sound_sndmain_cpp_FUN_005ab5a0();
-  if (iVar1 != 0) {
-    unaff_ESI = (CSfxSlot *)((float)(DAT_03f69410 - iVar2) * (float)_DAT_00651087);
+  iVar2 = g_SoundStartTime;
+  g_SoundStartTime = wincore_winrun_cpp_getTime_FUN_005f2dc0();
+  uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_005ab5a0();
+  if (uVar1 != 0) {
+    unaff_ESI = (CSfxSlot *)((float)(g_SoundStartTime - iVar2) * (float)DOUBLE_00651087);
     if ((float)unaff_ESI < 0.0) {
       unaff_ESI = (CSfxSlot *)0x0;
     }
@@ -92,7 +90,7 @@ void __cdecl sound_sndmain_cpp_FUN_005acdb0(void)
 //   XREF to: Stack[-0x18] (DATA)
 // 005acdd9: MOV [0x03f69410],EAX
 //   XREF to: 03f69410 (WRITE)
-// 005acdde: CALL sound_sndmain.cpp_FUN_005ab5a0
+// 005acdde: CALL sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0
 //   XREF to: 005ab5a0 (UNCONDITIONAL_CALL)
 // 005acde3: TEST EAX,EAX
 // 005acde5: JNZ 0x005ace40

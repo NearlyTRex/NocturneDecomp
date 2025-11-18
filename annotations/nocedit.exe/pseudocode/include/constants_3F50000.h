@@ -5,5 +5,5 @@
 // =============================================================================
 
 // char[220] constants
-const char[220] DAT_03f5d8a0 = {};
+const char[220] g_SoundTestErrorBuffer = {};
 

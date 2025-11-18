@@ -6,6 +6,7 @@
 
 CSfxOptions[8] g_SfxOptions = {};
 CSfxSample[64] g_SfxSamples = {};
+int[32] g_SfxChannelEnabled = {};
 SSoundDeviceInfo[8] g_SoundDevices = {};
 void*[8] g_ChannelPrimaryBuffers = {};
 SRecordingDeviceInfo[8] g_RecordingDevices = {};

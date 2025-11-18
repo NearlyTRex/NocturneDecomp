@@ -4,9 +4,9 @@
 // Convention: __cdecl
 // Signature: int sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930(void)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005aaeb0 (005aaeb0) at 005aaed3 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005ab8d0 (005ab8d0) at 005ab8d0 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_initializeRecordingDevice_FUN_005ab8d0 (005ab8d0) at 005ab8d0 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005abf95 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0 (005aaeb0) at 005aaed3 [UNCONDITIONAL_CALL]
 // Globals:
 //   IDirectSoundCapture* g_RecordingDeviceInterface
 // Function calls:

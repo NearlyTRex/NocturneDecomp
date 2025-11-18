@@ -23,7 +23,7 @@ int __cdecl sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(int enable)
   if (enable == 0) {
     return enable;
   }
-  sound_sndmain_cpp_killAllSoundSlots_FUN_005a9cc0();
+  sound_sndmain_cpp_killAllSfx_FUN_005a9cc0();
   if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
     iVar1 = (*g_CSoundDevicePtr->vtable->reset)(g_CSoundDevicePtr);
     if (iVar1 == 0) {

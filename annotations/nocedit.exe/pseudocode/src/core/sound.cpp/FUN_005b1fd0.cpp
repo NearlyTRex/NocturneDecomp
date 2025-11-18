@@ -72,13 +72,13 @@
 //   shape_edittool.cpp_CStrList_findString_FUN_004a3030
 //   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 //   shape_memdbg.cpp_openFile_FUN_0050f7a0
-//   sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0
+//   sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_005a8a80
 //   sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70
 //   sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0
-//   sound_sndmain.cpp_setNextSfxTrackedPosition_FUN_005a8940
+//   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
 //   sound_sndmain.cpp_setNextSfxUserData_FUN_005a8aa0
 //   sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90
@@ -93,17 +93,18 @@ int __cdecl core_sound_cpp_FUN_005b1fd0(void)
   char *pcVar1;
   CVector3f *position_source_ptr;
   int iVar2;
+  uint uVar3;
   FILE *file;
   tm *timeptr;
-  char *pcVar3;
-  char cVar4;
+  char *pcVar4;
+  char cVar5;
   BADSPACEBASE *in_ESP;
-  char *pcVar5;
   char *pcVar6;
-  undefined4 *puVar7;
-  char *pcVar8;
-  undefined4 *puVar9;
-  byte bVar10;
+  char *pcVar7;
+  undefined4 *puVar8;
+  char *pcVar9;
+  undefined4 *puVar10;
+  byte bVar11;
   int in_stack_00000004;
   char *in_stack_00000008;
   float in_stack_0000000c;
@@ -111,9 +112,9 @@ int __cdecl core_sound_cpp_FUN_005b1fd0(void)
   float in_stack_00000014;
   CVector3f *in_stack_00000018;
   uint in_stack_0000001c;
-  undefined8 uVar11;
-  float fVar12;
+  undefined8 uVar12;
   float fVar13;
+  float fVar14;
   float in_stack_fffffe9c;
   char acStack_110 [16];
   char acStack_100 [4];
@@ -121,6 +122,7 @@ int __cdecl core_sound_cpp_FUN_005b1fd0(void)
   undefined4 uStack_ac;
   char cStack_a8;
   char cStack_a4;
+  char acStack_90 [72];
   float local_48;
   float local_44;
   float local_40;
@@ -133,20 +135,20 @@ int __cdecl core_sound_cpp_FUN_005b1fd0(void)
   int local_18;
   char *pcStack_14;
   
-  bVar10 = 0;
-  iVar2 = sound_sndmain_cpp_getSoundEnabled_FUN_005a96b0();
+  bVar11 = 0;
+  iVar2 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
   if (iVar2 != 0) {
     return 0;
   }
-  iVar2 = 0;
+  uVar3 = 0;
   if ((in_stack_00000008 != (char *)0x0) && (*in_stack_00000008 != '\0')) {
-    cVar4 = *in_stack_00000008;
+    cVar5 = *in_stack_00000008;
     local_34 = in_stack_00000008;
-    pcVar6 = acStack_110;
-    while ((((cVar4 != '\0' && ((g_CharacterClassificationTable[(byte)(*local_34 + 1)] & 2U) == 0))
-            && (cVar4 = *local_34, cVar4 != '@')) && (cVar4 != '*'))) {
-      if (cVar4 == '[') {
-        uVar11 = CONCAT44(&local_30,local_28);
+    pcVar7 = acStack_110;
+    while ((((cVar5 != '\0' && ((g_CharacterClassificationTable[(byte)(*local_34 + 1)] & 2U) == 0))
+            && (cVar5 = *local_34, cVar5 != '@')) && (cVar5 != '*'))) {
+      if (cVar5 == '[') {
+        uVar12 = CONCAT44(&local_30,local_28);
         local_30 = (char *)0xffffffff;
         crt_stdio_c_sscanf_FUN_0060013c(local_34,"[%d,%d]%n");
         if (((int)local_38 < 5) || ((int)local_30 < (int)local_34)) {
@@ -154,76 +156,76 @@ int __cdecl core_sound_cpp_FUN_005b1fd0(void)
           g_CurrentLineNumber = 0x137;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid sfx string: %s");
         }
-        iVar2 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar6,&DAT_0065258d,uVar11);
-        pcVar5 = pcVar6 + iVar2;
+        iVar2 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7,&DAT_0065258d,uVar12);
+        pcVar6 = pcVar7 + iVar2;
         if (9 < (int)local_2c) {
-          iVar2 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar5,&DAT_0065258f);
-          pcVar5 = pcVar5 + iVar2;
+          iVar2 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar6,&DAT_0065258f);
+          pcVar6 = pcVar6 + iVar2;
         }
         local_34 = local_34 + (int)local_30;
       }
       else {
-        pcVar5 = pcVar6 + 1;
-        *pcVar6 = cVar4;
+        pcVar6 = pcVar7 + 1;
+        *pcVar7 = cVar5;
         local_34 = local_34 + 1;
       }
-      cVar4 = *local_34;
-      pcVar6 = pcVar5;
+      cVar5 = *local_34;
+      pcVar7 = pcVar6;
     }
-    *pcVar6 = '\0';
-    pcVar6 = acStack_110;
+    *pcVar7 = '\0';
+    pcVar7 = acStack_110;
     do {
-      pcVar5 = pcVar6;
+      pcVar6 = pcVar7;
+      if (*pcVar7 == '.') goto LAB_005b2052;
+      if (*pcVar7 == '\0') break;
+      pcVar6 = pcVar7 + 1;
       if (*pcVar6 == '.') goto LAB_005b2052;
-      if (*pcVar6 == '\0') break;
-      pcVar5 = pcVar6 + 1;
-      if (*pcVar5 == '.') goto LAB_005b2052;
-      pcVar6 = pcVar6 + 2;
-    } while (*pcVar5 != '\0');
-    pcVar5 = (char *)0x0;
+      pcVar7 = pcVar7 + 2;
+    } while (*pcVar6 != '\0');
+    pcVar6 = (char *)0x0;
 LAB_005b2052:
-    if (pcVar5 == (char *)0x0) {
-      pcVar5 = ".wav";
+    if (pcVar6 == (char *)0x0) {
+      pcVar6 = ".wav";
       iVar2 = -1;
-      pcVar6 = acStack_110;
+      pcVar7 = acStack_110;
       do {
-        pcVar8 = pcVar6;
+        pcVar9 = pcVar7;
         if (iVar2 == 0) break;
         iVar2 = iVar2 + -1;
-        pcVar8 = pcVar6 + (uint)bVar10 * -2 + 1;
-        cVar4 = *pcVar6;
-        pcVar6 = pcVar8;
-      } while (cVar4 != '\0');
-      pcVar8 = pcVar8 + -1;
+        pcVar9 = pcVar7 + (uint)bVar11 * -2 + 1;
+        cVar5 = *pcVar7;
+        pcVar7 = pcVar9;
+      } while (cVar5 != '\0');
+      pcVar9 = pcVar9 + -1;
       do {
-        cVar4 = *pcVar5;
-        *pcVar8 = cVar4;
-        if (cVar4 == '\0') break;
-        cVar4 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar8[1] = cVar4;
-        pcVar8 = pcVar8 + 2;
-      } while (cVar4 != '\0');
+        cVar5 = *pcVar6;
+        *pcVar9 = cVar5;
+        if (cVar5 == '\0') break;
+        cVar5 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar9[1] = cVar5;
+        pcVar9 = pcVar9 + 2;
+      } while (cVar5 != '\0');
     }
-    puVar7 = &DAT_006820b0;
-    puVar9 = &uStack_ac;
+    puVar8 = &DAT_006820b0;
+    puVar10 = &uStack_ac;
     for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar9 = *puVar7;
-      puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
-      puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
+      *puVar10 = *puVar8;
+      puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
+      puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
     }
-    pcVar6 = acStack_110;
+    pcVar7 = acStack_110;
     do {
-      pcVar5 = pcVar6;
+      pcVar6 = pcVar7;
+      if (*pcVar7 == '!') goto LAB_005b20b2;
+      if (*pcVar7 == '\0') break;
+      pcVar6 = pcVar7 + 1;
       if (*pcVar6 == '!') goto LAB_005b20b2;
-      if (*pcVar6 == '\0') break;
-      pcVar5 = pcVar6 + 1;
-      if (*pcVar5 == '!') goto LAB_005b20b2;
-      pcVar6 = pcVar6 + 2;
-    } while (*pcVar5 != '\0');
-    pcVar5 = (char *)0x0;
+      pcVar7 = pcVar7 + 2;
+    } while (*pcVar6 != '\0');
+    pcVar6 = (char *)0x0;
 LAB_005b20b2:
-    if (pcVar5 == (char *)0x0) {
+    if (pcVar6 == (char *)0x0) {
       core_sound_cpp_CSound_FUN_005b1ed0(g_CSoundPtr);
     }
     else {
@@ -235,33 +237,33 @@ LAB_005b20b2:
         local_44 = in_stack_00000010 + in_stack_00000018->y;
         local_40 = in_stack_00000014 + in_stack_00000018->z;
       }
-      pcVar6 = (char *)core_set_cpp_CDemonSet_FUN_0056fac0(g_CDemonSetPtr);
-      pcStack_14 = pcVar6;
-      local_38 = pcVar6 + 5;
+      pcVar7 = (char *)core_set_cpp_CDemonSet_FUN_0056fac0(g_CDemonSetPtr);
+      pcStack_14 = pcVar7;
+      local_38 = pcVar7 + 5;
       do {
         iVar2 = 0;
         local_34 = pcStack_14;
         do {
-          pcVar5 = pcVar6;
+          pcVar6 = pcVar7;
           if (iVar2 == 0) {
-            pcVar5 = local_34;
+            pcVar6 = local_34;
           }
-          if ((-1 < (int)pcVar5) && ((int)pcVar5 < 6)) {
-            pcVar8 = acStack_110 + 4;
-            pcVar3 = &stack0xfffffe90;
-            cVar4 = acStack_110[4];
-            while (cVar4 != '\0') {
-              cVar4 = *pcVar8;
-              if (cVar4 == '!') {
-                cVar4 = (char)pcVar5 + '0';
+          if ((-1 < (int)pcVar6) && ((int)pcVar6 < 6)) {
+            pcVar9 = acStack_110 + 4;
+            pcVar4 = &stack0xfffffe90;
+            cVar5 = acStack_110[4];
+            while (cVar5 != '\0') {
+              cVar5 = *pcVar9;
+              if (cVar5 == '!') {
+                cVar5 = (char)pcVar6 + '0';
               }
-              *pcVar3 = cVar4;
-              pcVar3 = pcVar3 + 1;
-              pcVar1 = pcVar8 + 1;
-              pcVar8 = pcVar8 + 1;
-              cVar4 = *pcVar1;
+              *pcVar4 = cVar5;
+              pcVar4 = pcVar4 + 1;
+              pcVar1 = pcVar9 + 1;
+              pcVar9 = pcVar9 + 1;
+              cVar5 = *pcVar1;
             }
-            *pcVar3 = '\0';
+            *pcVar4 = '\0';
             core_sound_cpp_CSound_FUN_005b1ed0(g_CSoundPtr);
             if (cStack_a4 != '\0') break;
           }
@@ -269,7 +271,7 @@ LAB_005b20b2:
         } while (iVar2 < 2);
         if (cStack_a8 != '\0') break;
         pcStack_14 = pcStack_14 + 1;
-        pcVar6 = pcVar6 + -1;
+        pcVar7 = pcVar7 + -1;
       } while ((int)pcStack_14 < (int)local_38);
     }
     if (cStack_a8 == '\0') {
@@ -294,12 +296,12 @@ LAB_005b20b2:
           timeptr = crt_time_c_localtime_FUN_00600288(&stack0x00000004);
           crt_time_c_asctime_FUN_00601768(timeptr);
           crt_stdio_c_fprintf_FUN_005fe6d0(file,"Time: %s");
-          pcVar6 = crt_env_c_getenv_FUN_006013f0("USERNAME");
-          if (pcVar6 != (char *)0x0) {
+          pcVar7 = crt_env_c_getenv_FUN_006013f0("USERNAME");
+          if (pcVar7 != (char *)0x0) {
             crt_stdio_c_fprintf_FUN_005fe6d0(file,"USERNAME: %s\n");
           }
-          pcVar6 = crt_env_c_getenv_FUN_006013f0("COMPUTERNAME");
-          if (pcVar6 != (char *)0x0) {
+          pcVar7 = crt_env_c_getenv_FUN_006013f0("COMPUTERNAME");
+          if (pcVar7 != (char *)0x0) {
             crt_stdio_c_fprintf_FUN_005fe6d0(file,"COMPUTERNAME: %s\n");
           }
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\sound.cpp",400);
@@ -308,18 +310,18 @@ LAB_005b20b2:
       }
       return 0;
     }
-    fVar12 = 1.0;
     fVar13 = 1.0;
-    cVar4 = *local_30;
+    fVar14 = 1.0;
+    cVar5 = *local_30;
     position_source_ptr = in_stack_00000018;
-    while (cVar4 != '\0') {
+    while (cVar5 != '\0') {
       in_stack_00000018 = position_source_ptr;
       if ((g_CharacterClassificationTable[(byte)(*local_30 + 1)] & 2U) == 0) {
         if (*local_30 == '@') {
           local_1c = -1;
           crt_stdio_c_sscanf_FUN_0060013c
                     (local_30,"@%f%n","@%f%n",&stack0xfffffe8c,&local_1c);
-          if ((local_1c < 2) || (fVar13 < 0.0)) {
+          if ((local_1c < 2) || (fVar14 < 0.0)) {
             g_CurrentFilename = "..\\core\\sound.cpp";
             g_CurrentLineNumber = 0x1a4;
             core_main_c_displayErrorAndQuit_FUN_00506f10
@@ -333,7 +335,7 @@ LAB_005b20b2:
         else if (*local_30 == '*') {
           local_18 = -1;
           crt_stdio_c_sscanf_FUN_0060013c(local_30,"*%f%n");
-          if ((local_18 < 2) || (fVar12 <= 0.0)) {
+          if ((local_18 < 2) || (fVar13 <= 0.0)) {
             g_CurrentFilename = "..\\core\\sound.cpp";
             g_CurrentLineNumber = 0x1aa;
             core_main_c_displayErrorAndQuit_FUN_00506f10
@@ -354,7 +356,7 @@ LAB_005b20b2:
         local_30 = local_30 + 1;
       }
       position_source_ptr = in_stack_00000018;
-      cVar4 = *local_30;
+      cVar5 = *local_30;
     }
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
     if (position_source_ptr == (CVector3f *)0x0) {
@@ -362,16 +364,16 @@ LAB_005b20b2:
                 ((double)in_stack_0000000c,(double)in_stack_00000010,(double)in_stack_00000014);
     }
     else {
-      sound_sndmain_cpp_setNextSfxTrackedPosition_FUN_005a8940(position_source_ptr);
+      sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940(position_source_ptr);
     }
     sound_sndmain_cpp_setNextSfxFlags_FUN_005a8b70(in_stack_0000001c);
     sound_sndmain_cpp_setNextSfxUserData_FUN_005a8aa0(0,in_stack_00000004);
     sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(in_stack_fffffe9c);
     sound_sndmain_cpp_setNextSfxBaseFrequency_FUN_005a8a80(in_stack_fffffe9c);
-    iVar2 = sound_sndmain_cpp_startSfx_FUN_005a8e90();
+    uVar3 = sound_sndmain_cpp_startSfx_FUN_005a8e90(acStack_90);
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   }
-  return iVar2;
+  return uVar3;
 }
 
 
@@ -384,7 +386,7 @@ LAB_005b20b2:
 // 005b1fd4: MOV EBP,ESP
 // 005b1fd6: SUB ESP,0x16c
 // 005b1fdc: AND ESP,0xfffffff8
-// 005b1fdf: CALL sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0
+// 005b1fdf: CALL sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0
 //   XREF to: 005a96b0 (UNCONDITIONAL_CALL)
 // 005b1fe4: TEST EAX,EAX
 // 005b1fe6: JNZ 0x005b2224
@@ -627,7 +629,7 @@ LAB_005b20b2:
 // 005b21c4: JZ 0x005b26c2
 //   XREF to: 005b26c2 (CONDITIONAL_JUMP)
 // 005b21ca: PUSH EBX
-// 005b21cb: CALL sound_sndmain.cpp_setNextSfxTrackedPosition_FUN_005a8940
+// 005b21cb: CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
 //   XREF to: 005a8940 (UNCONDITIONAL_CALL)
 // 005b21d0: ADD ESP,0x4
 // 005b21d3: MOV EDI,dword ptr [EBP + 0x2c]

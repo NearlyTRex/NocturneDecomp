@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450(int requested_bytes)
 // Cross-references:
-//   sound_sndmain.cpp_CSfxSample_FUN_005a6170 (005a6170) at 005a6277 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170 (005a6170) at 005a6277 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 (005a7e60) at 005a7f82 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setMemoryBudget_FUN_005aa340 (005aa340) at 005aa354 [UNCONDITIONAL_CALL]
 // Globals:
@@ -35,10 +35,10 @@ int __cdecl sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_005a4450(int reques
   iVar2 = 0;
   iVar4 = 0;
   do {
-    if (*(int *)(g_SfxSamples[0].field5_0x12c + iVar2 + -0xc) != 0) {
+    if (*(int *)((int)&g_SfxSamples[0].sample_data + iVar2) != 0) {
       iVar3 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
                         ((CSfxSample *)(g_SfxSamples[0].sample_info.name + iVar2));
-      iVar4 = iVar4 + iVar3 * *(int *)(g_SfxSamples[0].field7_0x140 + iVar2 + 0x20);
+      iVar4 = iVar4 + iVar3 * *(int *)((int)&g_SfxSamples[0].streaming_buffer_size + iVar2);
     }
     iVar2 = iVar2 + 0x180;
   } while (iVar2 != 0x6000);

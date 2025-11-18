@@ -56,7 +56,7 @@
 //   core_game.cpp_CGame_FUN_004e0bf0
 //   core_hero.cpp_FUN_004f22a0
 //   core_script.cpp_FUN_00560140
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -142,7 +142,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
     this_ptr->field2_0x240c[0xf] = '\0';
     if (((iVar3 == 0) && (*(int *)this_ptr->field11_0x25a0 == 0)) &&
        (iVar3 = core_hero_cpp_FUN_004f22a0(), iVar3 == 0)) {
-      sound_sndmain_cpp_FUN_005a9c40();
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->cloth_data + 0x8d3c));
       return 0;
     }
     iVar3 = 1;
@@ -362,7 +362,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
 //   XREF to: 00429a23 (CONDITIONAL_JUMP)
 // 00429a7d: MOV EBX,dword ptr [ESI + 0xb7d4]
 // 00429a83: PUSH EBX
-// 00429a84: CALL sound_sndmain.cpp_FUN_005a9c40
+// 00429a84: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 00429a89: ADD ESP,0x4
 // 00429a8c: XOR EAX,EAX

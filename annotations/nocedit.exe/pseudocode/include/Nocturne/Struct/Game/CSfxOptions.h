@@ -3,7 +3,7 @@
 // Structure: CSfxOptions
 // Ghidra size: 0x70 (112 bytes)
 typedef struct CSfxOptions {
-    int status; // 0x0
+    int channel_index; // 0x0
     CVector3d position; // 0x4
     CVector3d* position_source_ptr; // 0x1c
     int position_format; // 0x20

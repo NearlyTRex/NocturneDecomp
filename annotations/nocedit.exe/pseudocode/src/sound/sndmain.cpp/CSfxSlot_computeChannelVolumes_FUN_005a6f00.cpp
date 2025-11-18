@@ -38,7 +38,7 @@ float __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfx
     g_CurrentLineNumber = 0x924;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::kill - must be locked!");
   }
-  fVar4 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90((this_ptr->options).status);
+  fVar4 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90((this_ptr->options).channel_index);
   fVar3 = (fVar4 * (this_ptr->options).current_volume) / local_20;
   bVar1 = (byte)(this_ptr->options).flags;
   fVar4 = (float)CONCAT22((short)((uint)fVar4 >> 0x10),CONCAT11(bVar1,SUB41(fVar4,0)));

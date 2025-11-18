@@ -25,19 +25,19 @@
 //   engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0
 //   engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30
 //   engine_ini.cpp_CIniFile_getString_FUN_004fbb20
+//   sound_sndmain.cpp_closeSoundDevice_FUN_005ab660
 //   sound_sndmain.cpp_enableHwSoundMixing_FUN_005ab550
 //   sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20
-//   sound_sndmain.cpp_FUN_005ab660
 //   sound_sndmain.cpp_getAudioFormat_FUN_005ab210
-//   sound_sndmain.cpp_getHardwareMixingEnabled_FUN_005ab590
 //   sound_sndmain.cpp_getMaxSwLatency_FUN_005abea0
 //   sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720
 //   sound_sndmain.cpp_getRecordingDeviceInfo_FUN_005ab780
 //   sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90
 //   sound_sndmain.cpp_getSoundDeviceCount_FUN_005ab2e0
 //   sound_sndmain.cpp_getSoundDeviceInfo_FUN_005ab370
-//   sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0
+//   sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005ab590
 //   sound_sndmain.cpp_isSfxChannelEnabled_FUN_005a9ea0
+//   sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0
 //   sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930
 //   sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860
 //   sound_sndmain.cpp_selectSoundDevice_FUN_005ab4c0
@@ -65,6 +65,7 @@ void __cdecl sound_sndmain_cpp_readIni_FUN_005abf20(CIniFile *ini_file)
   int iStack00000040;
   int in_stack_00000044;
   int in_stack_00000054;
+  int in_stack_00000058;
   float in_stack_00000068;
   float in_stack_0000006c;
   char *in_stack_fffffc4c;
@@ -86,7 +87,7 @@ void __cdecl sound_sndmain_cpp_readIni_FUN_005abf20(CIniFile *ini_file)
   engine_ini_cpp_CIniFile_getString_FUN_004fbb20
             (ini_file,"DeviceName",SStack_278.device_name + 0xe4,0x100,in_stack_fffffc4c);
   iVar2 = 0;
-  sound_sndmain_cpp_FUN_005ab660();
+  sound_sndmain_cpp_closeSoundDevice_FUN_005ab660();
   while( true ) {
     iVar1 = sound_sndmain_cpp_getSoundDeviceCount_FUN_005ab2e0();
     if (iVar1 <= iVar2) break;
@@ -108,7 +109,7 @@ void __cdecl sound_sndmain_cpp_readIni_FUN_005abf20(CIniFile *ini_file)
     iVar1 = sound_sndmain_cpp_getRecordingDeviceCount_FUN_005ab720();
     if (iVar1 <= iVar2) {
 LAB_005ac012:
-      fStack00000014 = (float)sound_sndmain_cpp_getHardwareMixingEnabled_FUN_005ab590();
+      fStack00000014 = (float)sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005ab590();
       engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
                 (ini_file,"HwMixingEnabled",(int *)&stack0x00000014);
       sound_sndmain_cpp_enableHwSoundMixing_FUN_005ab550(in_stack_00000018);
@@ -127,7 +128,7 @@ LAB_005ac012:
                 (ini_file,"Hz",(int *)&stack0x0000002c);
       sound_sndmain_cpp_setSoundOutputMode_FUN_005ab170
                 (in_stack_00000034,(int)fStack0000002c,in_stack_00000030);
-      iStack00000040 = sound_sndmain_cpp_getSoundEnabled_FUN_005a96b0();
+      iStack00000040 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
       engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(ini_file,"Mute",&stack0x00000040);
       iVar2 = 0;
       sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(in_stack_00000044);
@@ -136,7 +137,7 @@ LAB_005ac012:
           crt_stdio_c_sprintf_FUN_005fdbd0(local_2c,"SfxChannel%dEnabled");
           in_stack_00000054 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(iVar2);
           engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(ini_file,local_24,&stack0x00000054);
-          sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(iVar2);
+          sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(iVar2,in_stack_00000058);
           crt_stdio_c_sprintf_FUN_005fdbd0(local_1c,"SfxChannel%dVol");
           in_stack_00000068 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(iVar2);
           in_stack_0000006c = in_stack_00000068;
@@ -186,7 +187,7 @@ LAB_005ac012:
 //   XREF to: 004fbb20 (UNCONDITIONAL_CALL)
 // 005abf5c: ADD ESP,0x10
 // 005abf5f: XOR EBX,EBX
-// 005abf61: CALL sound_sndmain.cpp_FUN_005ab660
+// 005abf61: CALL sound_sndmain.cpp_closeSoundDevice_FUN_005ab660
 //   XREF to: 005ab660 (UNCONDITIONAL_CALL)
 // 005abf66: CALL sound_sndmain.cpp_getSoundDeviceCount_FUN_005ab2e0
 //   Label: LAB_005abf66
@@ -273,7 +274,7 @@ LAB_005ac012:
 // 005ac00a: CALL sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860
 //   XREF to: 005ab860 (UNCONDITIONAL_CALL)
 // 005ac00f: ADD ESP,0x4
-// 005ac012: CALL sound_sndmain.cpp_getHardwareMixingEnabled_FUN_005ab590
+// 005ac012: CALL sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005ab590
 //   Label: LAB_005ac012
 //   XREF to: 005ab590 (UNCONDITIONAL_CALL)
 // 005ac017: MOV dword ptr [ESP + 0x394],EAX
@@ -366,7 +367,7 @@ LAB_005ac012:
 // 005ac0fd: CALL sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170
 //   XREF to: 005ab170 (UNCONDITIONAL_CALL)
 // 005ac102: ADD ESP,0xc
-// 005ac105: CALL sound_sndmain.cpp_getSoundEnabled_FUN_005a96b0
+// 005ac105: CALL sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0
 //   XREF to: 005a96b0 (UNCONDITIONAL_CALL)
 // 005ac10a: MOV dword ptr [ESP + 0x394],EAX
 //   XREF to: Stack[-0x20] (WRITE)

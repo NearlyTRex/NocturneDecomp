@@ -4,9 +4,9 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_clearNextSfxFlagBits_FUN_005a8bb0(uint flag_mask)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005a9580 (005a9580) at 005a958b [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a95e0 (005a95e0) at 005a95e8 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a9620 (005a9620) at 005a9628 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_startSfxAtStaticPosition_FUN_005a9580 (005a9580) at 005a958b [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_startSfxTrackedDoublePosition_FUN_005a9620 (005a9620) at 005a9628 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_startSfxTrackedFloatPosition_FUN_005a95e0 (005a95e0) at 005a95e8 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_SfxLastSlot
 //   undefined4 g_SfxLastSlot.field_20[76]

@@ -22,7 +22,7 @@
 //   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70
 //   core_script.cpp_CScript_step_FUN_0055a810
 //   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -81,7 +81,7 @@ LAB_005599d3:
     if (this_ptr->whoIsSpeaking != 0) {
       iVar4 = (**(code **)(*(int *)(this_ptr->whoIsSpeaking + 0x154) + 0x120))();
       if (0 < iVar4) {
-        sound_sndmain_cpp_FUN_005a9c40();
+        sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->padding_0x18 + 0xc));
         return;
       }
     }
@@ -253,7 +253,7 @@ LAB_005599d3:
 //   XREF to: 005599fe (CONDITIONAL_JUMP)
 // 00559aa7: MOV EDI,dword ptr [EBX + 0x24]
 // 00559aaa: PUSH EDI
-// 00559aab: CALL sound_sndmain.cpp_FUN_005a9c40
+// 00559aab: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 00559ab0: ADD ESP,0x4
 // 00559ab3: MOV ESP,EBP

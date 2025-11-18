@@ -1,8 +1,8 @@
 // Name: sound_sndmain.cpp_setSfxUserData_FUN_005a9ba0
 // Address: 005a9ba0
 // Address Range: [[005a9ba0, 005a9c01]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_setSfxUserData_FUN_005a9ba0()
+// Convention: __cdecl
+// Signature: int sound_sndmain.cpp_setSfxUserData_FUN_005a9ba0(uint sfx_handle, uint user_data_index, int user_data_value)
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_006509ae
 //   TerminatedCString s_setSfxUserData_invalid_u_006509c3
@@ -15,24 +15,25 @@
 
 #include "nocturne.h"
 
-undefined4 sound_sndmain_cpp_setSfxUserData_FUN_005a9ba0(void)
+int __cdecl
+sound_sndmain_cpp_setSfxUserData_FUN_005a9ba0
+          (uint sfx_handle,uint user_data_index,int user_data_value)
 
 {
   CSfxSlot *pCVar1;
-  uint in_stack_00000008;
   int in_stack_00000014;
   
-  if (((int)in_stack_00000008 < 0) || (1 < (int)in_stack_00000008)) {
+  if (((int)user_data_index < 0) || (1 < (int)user_data_index)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0xf40;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("setSfxUserData - invalid user data index: %d",in_stack_00000008);
+              ("setSfxUserData - invalid user data index: %d",user_data_index);
   }
-  pCVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(in_stack_00000008,1);
+  pCVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(user_data_index,1);
   if (pCVar1 == (CSfxSlot *)0x0) {
     return 0;
   }
-  (pCVar1->options).userdata[in_stack_00000008] = in_stack_00000014;
+  (pCVar1->options).userdata[user_data_index] = in_stack_00000014;
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 1;
 }

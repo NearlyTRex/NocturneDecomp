@@ -48,8 +48,8 @@
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
-//   sound_sndmain.cpp_FUN_005a9660
-//   sound_sndmain.cpp_FUN_005a9c40
+//   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
+//   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
 #include "nocturne.h"
 
@@ -178,6 +178,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
                     (this_ptr->base_enemy).base_character.base_actor.location.position.z,
             SQRT(fVar6 * fVar6 + fVar11 * fVar11 + fVar5 * fVar5) < FLOAT_00663934)) &&
            (*(int *)(this_ptr->field1_0xbeb4 + 0x2480) == 0)) {
+          uVar3 = *(uint *)(this_ptr->field1_0xbeb4 + 0x2478);
           this_ptr->field1_0xbeb4[0x2480] = '\x01';
           this_ptr->field1_0xbeb4[0x2481] = '\0';
           this_ptr->field1_0xbeb4[0x2482] = '\0';
@@ -186,7 +187,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
           this_ptr->field1_0xbeb4[0x2485] = '\0';
           this_ptr->field1_0xbeb4[0x2486] = '\0';
           this_ptr->field1_0xbeb4[0x2487] = '\0';
-          sound_sndmain_cpp_FUN_005a9c40();
+          sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar3);
           pCVar4 = (this_ptr->base_enemy).base_character.base_actor.vtable;
           this_ptr->field1_0xbeb4[0x247c] = -0x66;
           this_ptr->field1_0xbeb4[0x247d] = '?';
@@ -328,7 +329,8 @@ LAB_005c6fd0:
   iVar9 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,"succubusShutUp");
   if (iVar9 == 0) {
-    iVar9 = sound_sndmain_cpp_FUN_005a9660();
+    iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->field1_0xbeb4 + 0x2478))
+    ;
     if ((iVar9 == 0) &&
        (fVar11 = *(float *)(this_ptr->field1_0xbeb4 + 0x247c) - in_stack_00000008,
        *(float *)(this_ptr->field1_0xbeb4 + 0x247c) = fVar11, fVar11 < 0.0)) {
@@ -341,7 +343,7 @@ LAB_005c6fd0:
     }
     return;
   }
-  sound_sndmain_cpp_FUN_005a9c40();
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field1_0xbeb4 + 0x2478));
   return;
 }
 
@@ -743,7 +745,7 @@ LAB_005c6fd0:
 //   XREF to: 005c752e (CONDITIONAL_JUMP)
 // 005c72b5: MOV ECX,dword ptr [EBX + 0xe32c]
 // 005c72bb: PUSH ECX
-// 005c72bc: CALL sound_sndmain.cpp_FUN_005a9660
+// 005c72bc: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   XREF to: 005a9660 (UNCONDITIONAL_CALL)
 // 005c72c1: ADD ESP,0x4
 // 005c72c4: TEST EAX,EAX
@@ -954,7 +956,7 @@ LAB_005c6fd0:
 // 005c74ce: MOV dword ptr [EBX + 0xe334],0x1
 // 005c74d8: PUSH EAX
 // 005c74d9: MOV dword ptr [EBX + 0xe338],EDI
-// 005c74df: CALL sound_sndmain.cpp_FUN_005a9c40
+// 005c74df: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005c74e4: ADD ESP,0x4
 // 005c74e7: PUSH 0x65414f
@@ -986,7 +988,7 @@ LAB_005c6fd0:
 // 005c752e: MOV ESI,dword ptr [EBX + 0xe32c]
 //   Label: LAB_005c752e
 // 005c7534: PUSH ESI
-// 005c7535: CALL sound_sndmain.cpp_FUN_005a9c40
+// 005c7535: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
 // 005c753a: ADD ESP,0x4
 // 005c753d: MOV ESP,EBP

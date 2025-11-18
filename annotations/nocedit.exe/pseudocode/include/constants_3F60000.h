@@ -14,3 +14,6 @@ const float*[8] g_ChannelTertiaryBuffers = {};
 const float*[8] g_ChannelSecondaryBuffersA = {};
 const float*[8] g_ChannelSecondaryBuffersB = {};
 
+// float[32] constants
+const float[32] g_SfxChannelVolumes = {};
+
