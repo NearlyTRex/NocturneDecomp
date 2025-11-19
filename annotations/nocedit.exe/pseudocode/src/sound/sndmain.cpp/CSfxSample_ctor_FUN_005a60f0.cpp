@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CSfxSample * sound_sndmain.cpp_CSfxSample_ctor_FUN_005a60f0(CSfxSample * this_ptr)
 // Function calls:
-//   sound_sndmain.cpp_FUN_005a8480
+//   sound_sndmain.cpp_CSfxSample_init_FUN_005a8480
 
 #include "nocturne.h"
 
@@ -13,7 +13,7 @@ CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_ctor_FUN_005a60f0(CSfxSample *
 {
   CSfxSample *pCVar1;
   
-  pCVar1 = (CSfxSample *)sound_sndmain_cpp_FUN_005a8480();
+  pCVar1 = sound_sndmain_cpp_CSfxSample_init_FUN_005a8480(this_ptr);
   pCVar1->sample_data = (void *)0x0;
   pCVar1->ref_count = 0;
   pCVar1->buffer_id = 0;
@@ -21,7 +21,7 @@ CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_ctor_FUN_005a60f0(CSfxSample *
   pCVar1->streaming_slot_index = -1;
   pCVar1->file_handle = (FILE *)0x0;
   pCVar1->mp3_data = (CMP3Decoder *)0x0;
-  pCVar1->sound_buffer = (void *)0x0;
+  pCVar1->locked_length = 0;
   return pCVar1;
 }
 
@@ -31,7 +31,7 @@ CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_ctor_FUN_005a60f0(CSfxSample *
 //   Label: sound_sndmain.cpp_CSfxSample_ctor_FUN_005a60f0
 //   XREF to: Stack[0x4] (READ)
 // 005a60f4: PUSH EDX
-// 005a60f5: CALL sound_sndmain.cpp_FUN_005a8480
+// 005a60f5: CALL sound_sndmain.cpp_CSfxSample_init_FUN_005a8480
 //   XREF to: 005a8480 (UNCONDITIONAL_CALL)
 // 005a60fa: MOV dword ptr [EAX + 0x120],0x0
 // 005a6104: MOV dword ptr [EAX + 0x154],0x0

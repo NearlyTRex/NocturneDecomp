@@ -1,8 +1,8 @@
-// Name: sound_sndmain.cpp_FUN_005a8480
+// Name: sound_sndmain.cpp_CSfxSample_init_FUN_005a8480
 // Address: 005a8480
 // Address Range: [[005a8480, 005a84ca]]
 // Convention: __cdecl
-// Signature: void * sound_sndmain.cpp_FUN_005a8480(void)
+// Signature: CSfxSample * sound_sndmain.cpp_CSfxSample_init_FUN_005a8480(CSfxSample * this_ptr)
 // Cross-references:
 //   core_event.cpp_CEventList_FUN_004b0db0 (004b0db0) at 004b0e80 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_processFrame_FUN_004da100 (004da100) at 004da941 [UNCONDITIONAL_CALL]
@@ -20,28 +20,27 @@
 
 #include "nocturne.h"
 
-void * __cdecl sound_sndmain_cpp_FUN_005a8480(void)
+CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_init_FUN_005a8480(CSfxSample *this_ptr)
 
 {
   float fVar1;
   float fVar2;
   float fVar3;
-  void *in_stack_00000004;
   
-  crt_memory_c_memset_FUN_005fde40(in_stack_00000004,0,0x150);
+  crt_memory_c_memset_FUN_005fde40(this_ptr,0,0x150);
   fVar1 = (float)DOUBLE_00681b38;
   fVar2 = g_SoundReferenceVolumeDistance * fVar1;
   fVar3 = FLOAT_00663160 * fVar1;
-  *(float *)((int)in_stack_00000004 + 0x114) = g_SoundReferenceDistanceConstant * fVar1;
-  *(float *)((int)in_stack_00000004 + 0x118) = fVar2;
-  *(float *)((int)in_stack_00000004 + 0x11c) = fVar3;
-  return in_stack_00000004;
+  (this_ptr->sample_info).reference_distance = g_SoundReferenceDistanceConstant * fVar1;
+  (this_ptr->sample_info).reference_volume_distance = fVar2;
+  (this_ptr->sample_info).max_distance = fVar3;
+  return this_ptr;
 }
 
 
 // Assembly code:
 // 005a8480: PUSH EBX
-//   Label: sound_sndmain.cpp_FUN_005a8480
+//   Label: sound_sndmain.cpp_CSfxSample_init_FUN_005a8480
 // 005a8481: MOV EBX,dword ptr [ESP + 0x8]
 //   XREF to: Stack[0x4] (READ)
 // 005a8485: PUSH 0x150

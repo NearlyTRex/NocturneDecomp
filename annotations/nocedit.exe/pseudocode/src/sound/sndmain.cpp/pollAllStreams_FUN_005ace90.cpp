@@ -1,8 +1,8 @@
-// Name: sound_sndmain.cpp_FUN_005ace90
+// Name: sound_sndmain.cpp_pollAllStreams_FUN_005ace90
 // Address: 005ace90
 // Address Range: [[005ace90, 005acf13]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_FUN_005ace90(void)
+// Signature: void sound_sndmain.cpp_pollAllStreams_FUN_005ace90(int paused_mode)
 // Cross-references:
 //   sound_sndmain.cpp_processAudio_FUN_005abe20 (005abe20) at 005abe6f [UNCONDITIONAL_CALL]
 // Globals:
@@ -14,26 +14,33 @@
 //   undefined4 DAT_03f629ac
 //   CSfxSample* g_SfxSamplesEnd
 // Function calls:
-//   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730
+//   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
 //   sound_sndmain.cpp_lockSound_FUN_005abd30
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
 
-void __cdecl sound_sndmain_cpp_FUN_005ace90(void)
+void __cdecl sound_sndmain_cpp_pollAllStreams_FUN_005ace90(int paused_mode)
 
 {
-  CSfxSlot *extraout_EAX;
-  CSfxSlot *this_ptr;
-  CSfxSample *pCVar1;
+  double dVar1;
+  CSfxSample *this_ptr;
+  float local_14;
+  float fStack_10;
   
   sound_sndmain_cpp_lockSound_FUN_005abd30();
-  pCVar1 = g_SfxSamples;
-  this_ptr = extraout_EAX;
+  local_14 = FLOAT_00663164 + (float)DOUBLE_0065109f;
+  dVar1 = DOUBLE_00651097;
+  if (paused_mode != 0) {
+    local_14 = FLOAT_00663164;
+    dVar1 = DOUBLE_006510a7;
+  }
+  fStack_10 = FLOAT_00663164 + (float)dVar1;
+  this_ptr = g_SfxSamples;
   do {
-    this_ptr = (CSfxSlot *)sound_sndmain_cpp_CSfxSlot_pollStream_FUN_005a6730(this_ptr);
-    pCVar1 = pCVar1 + 1;
-  } while (pCVar1 != (CSfxSample *)&g_SfxSamplesEnd);
+    sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730(this_ptr,fStack_10,local_14);
+    this_ptr = this_ptr + 1;
+  } while (this_ptr != (CSfxSample *)&g_SfxSamplesEnd);
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return;
 }
@@ -41,7 +48,7 @@ void __cdecl sound_sndmain_cpp_FUN_005ace90(void)
 
 // Assembly code:
 // 005ace90: PUSH EBX
-//   Label: sound_sndmain.cpp_FUN_005ace90
+//   Label: sound_sndmain.cpp_pollAllStreams_FUN_005ace90
 // 005ace91: PUSH ESI
 // 005ace92: PUSH EBP
 // 005ace93: MOV EBP,ESP
@@ -82,7 +89,7 @@ void __cdecl sound_sndmain_cpp_FUN_005ace90(void)
 // 005acedd: PUSH EBX
 //   XREF to: 03f6282c (DATA)
 //   XREF to: 03f629ac (DATA)
-// 005acede: CALL sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730
+// 005acede: CALL sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
 //   XREF to: 005a6730 (UNCONDITIONAL_CALL)
 // 005acee3: ADD EBX,0x180
 //   XREF to: 03f629ac (PARAM)

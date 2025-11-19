@@ -15,8 +15,8 @@
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   sound_snddx.cpp_fillStreamBuffer_FUN_005adff0
 //   sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
-//   sound_sndmain.cpp_FUN_005acdb0
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0
+//   sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0
 
 #include "nocturne.h"
 
@@ -61,7 +61,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDev
     iVar1 = 0;
   }
   else {
-    sound_sndmain_cpp_FUN_005acdb0();
+    sound_sndmain_cpp_pollAllSfxSlots_FUN_005acdb0();
     iVar1 = 1;
   }
   return iVar1;
@@ -86,7 +86,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDev
 //   Label: LAB_005aed6c
 // 005aed72: POP EBX
 // 005aed73: RET
-// 005aed74: CALL sound_sndmain.cpp_FUN_005acdb0
+// 005aed74: CALL sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0
 //   Label: LAB_005aed74
 //   XREF to: 005acdb0 (UNCONDITIONAL_CALL)
 // 005aed79: MOV EAX,0x1

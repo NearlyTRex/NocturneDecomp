@@ -71198,7 +71198,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_mixResampleStereo_FUN_005a5e70",
+    "name":"sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70",
     "ret":"double",
     "vars":{
       "locals":[
@@ -71367,54 +71367,6 @@
         {
           "name":"sample_data",
           "storage":{
-            "offset":8,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x8]",
-                "offset":8,
-                "size":4
-              }
-            ]
-          },
-          "type":"short*"
-        },
-        {
-          "name":"channel_buffers",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"SStereoBuffers*"
-        },
-        {
-          "name":"channel_gains",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
-                "size":4
-              }
-            ]
-          },
-          "type":"SStereoGains*"
-        },
-        {
-          "name":"resample_position",
-          "storage":{
             "offset":20,
             "size":4,
             "stack":true,
@@ -71426,18 +71378,67 @@
               }
             ]
           },
-          "type":"int"
+          "type":"short*"
+        },
+        {
+          "name":"channel_buffers",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"SStereoBuffers*"
+        },
+        {
+          "name":"channel_gains",
+          "storage":{
+            "offset":28,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x1c]",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"SStereoGains*"
+        },
+        {
+          "name":"resample_position",
+          "storage":{
+            "offset":32,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x20]",
+                "offset":32,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
         },
         {
           "name":"resample_delta",
           "storage":{
-            "reg":"ST0",
-            "size":10,
+            "offset":40,
+            "size":8,
+            "stack":true,
             "varnodes":[
               {
-                "addr":"register:00001100",
-                "offset":4352,
-                "size":10
+                "addr":"Stack[0x28]",
+                "offset":40,
+                "size":8
               }
             ]
           },
@@ -71446,13 +71447,13 @@
         {
           "name":"samples_to_process",
           "storage":{
-            "offset":36,
+            "offset":48,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x24]",
-                "offset":36,
+                "addr":"Stack[0x30]",
+                "offset":48,
                 "size":4
               }
             ]
@@ -71465,12 +71466,12 @@
         "size":8,
         "varnodes":[
           {
-            "addr":"register:00000000",
+            "addr":"register:00000008",
+            "offset":8,
             "size":4
           },
           {
-            "addr":"register:00000008",
-            "offset":8,
+            "addr":"register:00000000",
             "size":4
           }
         ]
@@ -71781,6 +71782,22 @@
             ]
           },
           "type":"CSfxSlot*"
+        },
+        {
+          "name":"hardware_playback_pos",
+          "storage":{
+            "offset":8,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
         }
       ]
     }
@@ -73295,7 +73312,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005addf0",
+    "name":"sound_sndmain.cpp_doNothing_FUN_005addf0",
     "ret":"void"
   },
   {

@@ -1,8 +1,8 @@
-// Name: sound_sndmain.cpp_FUN_005a5fb0
+// Name: sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0
 // Address: 005a5fb0
 // Address Range: [[005a5fb0, 005a60ea]]
-// Convention: unknown
-// Signature: undefined sound_sndmain.cpp_FUN_005a5fb0()
+// Convention: __cdecl
+// Signature: double sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0(short * sample_data, SStereoBuffers * channel_buffers, SStereoGains * channel_gains, double resample_position, double resample_delta, int samples_to_process)
 // Cross-references:
 //   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (005a75e0) at 005a7cad [UNCONDITIONAL_CALL]
 // Globals:
@@ -15,7 +15,10 @@
 
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
-double sound_sndmain_cpp_FUN_005a5fb0(void)
+double __cdecl
+sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0
+          (short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,
+          double resample_position,double resample_delta,int samples_to_process)
 
 {
   int iVar1;
@@ -41,13 +44,9 @@ double sound_sndmain_cpp_FUN_005a5fb0(void)
   int *in_stack_00000008;
   float *in_stack_0000000c;
   undefined4 in_stack_00000010;
-  undefined4 in_stack_00000014;
-  undefined4 in_stack_00000018;
-  undefined4 in_stack_0000001c;
-  int in_stack_00000020;
   undefined8 local_34;
   
-  if (0 < in_stack_00000020) {
+  if (0 < resample_position._0_4_) {
     dVar14 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
     fVar13 = (float10)dVar14;
     local_34 = (double)CONCAT44(extraout_EDX,extraout_EAX);
@@ -67,8 +66,8 @@ double sound_sndmain_cpp_FUN_005a5fb0(void)
     local_34._0_4_ = (uint)(longlong)ROUND(fVar13);
     iVar7 = (uint)local_34;
     local_34 = (double)((longlong)ROUND(fVar13) & 0xffffffff);
-    fVar13 = ((float10)(double)CONCAT44(in_stack_0000001c,in_stack_00000018) -
-             (float10)(longlong)local_34) * (float10)DOUBLE_0064fcb7;
+    fVar13 = ((float10)(double)CONCAT44(channel_gains,channel_buffers) - (float10)(longlong)local_34
+             ) * (float10)DOUBLE_0064fcb7;
     crt_math_c_round_FUN_005fe6b0((double)CONCAT44((int)((ulonglong)dVar14 >> 0x20),iVar7));
     local_34._0_4_ = (uint)(longlong)ROUND(fVar13);
     fVar3 = *in_stack_0000000c;
@@ -86,9 +85,9 @@ double sound_sndmain_cpp_FUN_005a5fb0(void)
            (float)*(short *)(in_stack_00000004 + 2 + iVar1) * fVar3 + *(float *)(iVar6 + iVar9 * 4);
       *(float *)(iVar5 + iVar9 * 4) = (float)sVar2 * fVar4 + *(float *)(iVar5 + iVar9 * 4);
       iVar9 = iVar9 + 1;
-    } while (iVar9 < in_stack_00000020);
+    } while (iVar9 < resample_position._0_4_);
     _in_stack_00000010 =
-         (double)in_stack_00000020 * (double)CONCAT44(in_stack_0000001c,in_stack_00000018) +
+         (double)resample_position._0_4_ * (double)CONCAT44(channel_gains,channel_buffers) +
          _in_stack_00000010;
   }
   return _in_stack_00000010;
@@ -97,7 +96,7 @@ double sound_sndmain_cpp_FUN_005a5fb0(void)
 
 // Assembly code:
 // 005a5fb0: PUSH EBX
-//   Label: sound_sndmain.cpp_FUN_005a5fb0
+//   Label: sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0
 // 005a5fb1: PUSH ESI
 // 005a5fb2: PUSH EDI
 // 005a5fb3: PUSH EBP

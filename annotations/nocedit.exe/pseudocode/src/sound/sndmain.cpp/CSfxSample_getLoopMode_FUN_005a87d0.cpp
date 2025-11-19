@@ -6,8 +6,8 @@
 // Cross-references:
 //   sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0 (005a86f0) at 005a8726 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSample_hasAdvancedLoopMode_FUN_005a8810 (005a8810) at 005a8815 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730 (005a6730) at 005a67f5 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0 (005a7fe0) at 005a8055 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a67f5 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170 (005a8170) at 005a8329 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
@@ -15,9 +15,10 @@
 int __cdecl sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(CSfxSample *this_ptr)
 
 {
-  if (((this_ptr->loop_flags < 2) && ((this_ptr->sample_info).sample_count == this_ptr->loop_length)
-      ) && (this_ptr->loop_start_marker < 1)) {
-    if (this_ptr->loop_start_marker == 0) {
+  if (((this_ptr->loop_marker_count < 2) &&
+      ((this_ptr->sample_info).sample_count == this_ptr->loop_length)) &&
+     (this_ptr->loop_markers[0] < 1)) {
+    if (this_ptr->loop_markers[0] == 0) {
       return 1;
     }
     return 0;

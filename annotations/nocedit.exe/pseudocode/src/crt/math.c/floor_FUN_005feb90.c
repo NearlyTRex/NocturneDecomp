@@ -39,10 +39,10 @@
 //   sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0 (005a86f0) at 005a879d [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (005a75e0) at 005a7884 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170 (005a8170) at 005a8360 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005a5fb0 (005a5fb0) at 005a5fe0 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400 (005ac400) at 005ac7e5 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e10 (005a5e10) at 005a5e1e [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_mixResampleStereo_FUN_005a5e70 (005a5e70) at 005a5ea0 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70 (005a5e70) at 005a5ea0 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0 (005a5fb0) at 005a5fe0 [UNCONDITIONAL_CALL]
 // Globals:
 //   double g_MathDomainAdjustment = -1
 // Function calls:

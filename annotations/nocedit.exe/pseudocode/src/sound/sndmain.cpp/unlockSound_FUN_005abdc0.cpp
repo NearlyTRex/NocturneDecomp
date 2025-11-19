@@ -5,7 +5,6 @@
 // Signature: void sound_sndmain.cpp_unlockSound_FUN_005abdc0(void)
 // Cross-references:
 //   core_tommygun.cpp_CTommyGun_process_FUN_005de360 (005de360) at 005de574 [UNCONDITIONAL_CALL]
-//   sound_sndmain.cpp_FUN_005ace90 (005ace90) at 005acef0 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20 (005a9e20) at 005a9e8d [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0 (005aaef0) at 005ab10d [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_formatActiveSounds_FUN_005a9f80 (005a9f80) at 005a9fa6 [UNCONDITIONAL_CALL]
@@ -25,6 +24,7 @@
 //   sound_sndmain.cpp_killAllSfx_FUN_005a9cc0 (005a9cc0) at 005a9ce5 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_killSfxByName_FUN_005aa2f0 (005aa2f0) at 005aa315 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_killSfx_FUN_005a9c40 (005a9c40) at 005a9c5d [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_pollAllStreams_FUN_005ace90 (005ace90) at 005acef0 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40 (005a9b40) at 005a9b88 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0 (005a9cf0) at 005a9d65 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setSfxFade_FUN_005a9c70 (005a9c70) at 005a9cae [UNCONDITIONAL_CALL]

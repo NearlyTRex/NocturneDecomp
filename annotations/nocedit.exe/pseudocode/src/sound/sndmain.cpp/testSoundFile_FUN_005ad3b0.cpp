@@ -15,7 +15,7 @@
 //   char[220] g_SoundTestErrorBuffer
 // Function calls:
 //   crt_stdio.c_sprintf_FUN_005fdbd0
-//   sound_sndmain.cpp_FUN_005a8480
+//   sound_sndmain.cpp_CSfxSample_init_FUN_005a8480
 //   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0
 //   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720
 //   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
@@ -47,7 +47,7 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
   uint in_stack_fffffed0;
   float fStack_58;
   
-  sound_sndmain_cpp_FUN_005a8480();
+  sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffe90);
   pcVar4 = &stack0xfffffe94;
   pcVar3 = sample_name;
   do {
@@ -114,7 +114,7 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
 // 005ad3bc: AND ESP,0xfffffff8
 // 005ad3bf: MOV EAX,ESP
 // 005ad3c1: PUSH EAX
-// 005ad3c2: CALL sound_sndmain.cpp_FUN_005a8480
+// 005ad3c2: CALL sound_sndmain.cpp_CSfxSample_init_FUN_005a8480
 //   XREF to: 005a8480 (UNCONDITIONAL_CALL)
 // 005ad3c7: ADD ESP,0x4
 // 005ad3ca: MOV EDI,ESP

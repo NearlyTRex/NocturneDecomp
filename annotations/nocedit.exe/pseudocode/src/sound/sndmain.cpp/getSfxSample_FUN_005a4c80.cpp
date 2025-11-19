@@ -178,12 +178,13 @@ LAB_005a4cea:
     pCVar7->streaming_slot_index = -1;
     iVar8 = (pCVar7->sample_info).sample_count;
     pCVar7->streaming_buffer_size = iVar8;
-    pCVar7->field19_0x164 = iVar8;
-    pCVar7->field20_0x168 = iVar8;
+    pCVar7->stream_read_position = iVar8;
+    pCVar7->stream_write_position = iVar8;
     iVar8 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar7);
     if (iVar8 == 0) goto LAB_005a4ef8;
     crt_stdio_c_fseek_FUN_005ffacc(in_stack_00000028,pCVar7->file_offset,0);
-    buffer = (void *)sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(pCVar7);
+    buffer = sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430
+                       (pCVar7,0,(pCVar7->sample_info).sample_count);
     if (buffer == (void *)0x0) {
       pcVar13 = "Failed to lock sample %s\n";
     }
@@ -228,11 +229,13 @@ LAB_005a4cea:
     pCVar7->streaming_slot_index = -1;
     iVar8 = (pCVar7->sample_info).sample_count;
     pCVar7->streaming_buffer_size = iVar8;
-    pCVar7->field19_0x164 = iVar8;
-    pCVar7->field20_0x168 = iVar8;
+    pCVar7->stream_read_position = iVar8;
+    pCVar7->stream_write_position = iVar8;
     iVar8 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar7);
     if (iVar8 == 0) goto LAB_005a4ef8;
-    output_buffer = (short *)sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(pCVar7);
+    output_buffer =
+         (short *)sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430
+                            (pCVar7,0,(pCVar7->sample_info).sample_count);
     if (output_buffer == (short *)0x0) {
       pcVar13 = "Failed to lock sample %s\n";
     }

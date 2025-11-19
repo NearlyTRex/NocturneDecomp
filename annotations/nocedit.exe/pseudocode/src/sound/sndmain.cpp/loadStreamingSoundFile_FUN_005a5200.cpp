@@ -119,8 +119,8 @@ LAB_005a5242:
     iVar5 = (local_14->sample_info).sample_rate;
     local_14->buffer_id = 0;
     fVar7 = (float10)iVar5 * (float10)FLOAT_00663164;
-    local_14->field19_0x164 = 0;
-    local_14->field20_0x168 = 0;
+    local_14->stream_read_position = 0;
+    local_14->stream_write_position = 0;
     dVar8 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,in_stack_00000020));
     local_14->streaming_buffer_size = (int)ROUND(fVar7);
     local_14->streaming_slot_index = SUB84(dVar8,0);
@@ -151,15 +151,15 @@ LAB_005a5242:
     iVar5 = (local_14->sample_info).sample_rate;
     local_14->buffer_id = 0;
     fVar7 = (float10)iVar5 * (float10)FLOAT_00663164;
-    local_14->field19_0x164 = 0;
-    local_14->field20_0x168 = 0;
+    local_14->stream_read_position = 0;
+    local_14->stream_write_position = 0;
     dVar8 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX_00,in_stack_00000020));
     local_14->streaming_buffer_size = (int)ROUND(fVar7);
     local_14->streaming_slot_index = SUB84(dVar8,0);
     iVar5 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(in_stack_ffffff08);
   }
   if (iVar5 != 0) {
-    sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(local_14);
+    sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(local_14,0,0);
     return local_14;
   }
 LAB_005a5505:

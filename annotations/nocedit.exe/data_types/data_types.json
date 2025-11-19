@@ -3357,6 +3357,10 @@
       "type":"struct"
     },
     {
+      "name":"SMixResampleStereoParams",
+      "type":"struct"
+    },
+    {
       "name":"SModelPartName",
       "type":"struct"
     },
@@ -31576,7 +31580,7 @@
     },
     {
       "alig":1,
-      "cat":"/Nocturne/Struct/Game",
+      "cat":"/Nocturne/Class/Game",
       "desc":"",
       "fields":[
         {
@@ -31626,10 +31630,16 @@
           "name":"reference_volume_distance",
           "offset":280,
           "type":"float"
+        },
+        {
+          "len":4,
+          "name":"max_distance",
+          "offset":284,
+          "type":"float"
         }
       ],
       "importable":true,
-      "len":284,
+      "len":288,
       "name":"CSampleInfo",
       "pack":false,
       "type":"struct"
@@ -31813,7 +31823,7 @@
     },
     {
       "alig":1,
-      "cat":"/Nocturne/Struct/Game",
+      "cat":"/Nocturne/Class/Game",
       "desc":"",
       "fields":[
         {
@@ -31915,20 +31925,14 @@
     },
     {
       "alig":1,
-      "cat":"/Nocturne/Struct/Game",
+      "cat":"/Nocturne/Class/Game",
       "desc":"",
       "fields":[
         {
-          "len":284,
+          "len":288,
           "name":"sample_info",
           "offset":0,
           "type":"CSampleInfo"
-        },
-        {
-          "len":4,
-          "name":"max_distance",
-          "offset":284,
-          "type":"float"
         },
         {
           "len":4,
@@ -31938,7 +31942,7 @@
         },
         {
           "len":4,
-          "name":"loop_flags",
+          "name":"loop_marker_count",
           "offset":292,
           "type":"int"
         },
@@ -31950,57 +31954,33 @@
         },
         {
           "len":4,
-          "name":"field_300",
+          "name":"loop_reserved1",
           "offset":300,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_304",
+          "name":"loop_reserved2",
           "offset":304,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_308",
+          "name":"loop_reserved3",
           "offset":308,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_312",
+          "name":"loop_reserved4",
           "offset":312,
           "type":"int"
         },
         {
-          "len":4,
-          "name":"loop_start_marker",
+          "len":20,
+          "name":"loop_markers",
           "offset":316,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"field_320",
-          "offset":320,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"field_324",
-          "offset":324,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"field_328",
-          "offset":328,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"field_332",
-          "offset":332,
-          "type":"int"
+          "type":"int[5]"
         },
         {
           "len":4,
@@ -32034,13 +32014,13 @@
         },
         {
           "len":4,
-          "name":"field_356",
+          "name":"stream_read_position",
           "offset":356,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_360",
+          "name":"stream_write_position",
           "offset":360,
           "type":"int"
         },
@@ -32064,15 +32044,15 @@
         },
         {
           "len":4,
-          "name":"field_376",
+          "name":"locked_offset",
           "offset":376,
-          "type":"void*"
+          "type":"int"
         },
         {
           "len":4,
-          "name":"sound_buffer",
+          "name":"locked_length",
           "offset":380,
-          "type":"void*"
+          "type":"int"
         }
       ],
       "importable":true,
@@ -32083,7 +32063,7 @@
     },
     {
       "alig":1,
-      "cat":"/Nocturne/Struct/Game",
+      "cat":"/Nocturne/Class/Game",
       "desc":"",
       "fields":[
         {
@@ -32183,10 +32163,16 @@
           "type":"int"
         },
         {
-          "len":12,
-          "name":"field_284",
+          "len":8,
+          "name":"prev_hardware_playback_pos",
           "offset":284,
-          "type":"char[12]"
+          "type":"double"
+        },
+        {
+          "len":4,
+          "name":"loop_marker_index",
+          "offset":292,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -42718,6 +42704,54 @@
       "importable":true,
       "len":44,
       "name":"SMixBuffer",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"field_0",
+          "offset":0,
+          "type":"short*"
+        },
+        {
+          "len":4,
+          "name":"field_4",
+          "offset":4,
+          "type":"float**"
+        },
+        {
+          "len":4,
+          "name":"field_8",
+          "offset":8,
+          "type":"float*"
+        },
+        {
+          "len":8,
+          "name":"field_12",
+          "offset":12,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"field_20",
+          "offset":20,
+          "type":"double"
+        },
+        {
+          "len":4,
+          "name":"field_28",
+          "offset":28,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":32,
+      "name":"SMixResampleStereoParams",
       "pack":false,
       "type":"struct"
     },

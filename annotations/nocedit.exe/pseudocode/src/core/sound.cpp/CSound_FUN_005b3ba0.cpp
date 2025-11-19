@@ -9,8 +9,8 @@
 // Globals:
 //   char[256] g_CharacterClassificationTable
 // Function calls:
-//   sound_sndmain.cpp_FUN_005a8480
-//   sound_sndmain.cpp_FUN_005a84d0
+//   sound_sndmain.cpp_CSampleInfo_getSampleDuration_FUN_005a84d0
+//   sound_sndmain.cpp_CSfxSample_init_FUN_005a8480
 //   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0
 
 #include "nocturne.h"
@@ -25,9 +25,9 @@ float __cdecl core_sound_cpp_CSound_FUN_005b3ba0(CSound *this_ptr)
   double dVar4;
   char *in_stack_00000008;
   undefined1 *puStack_15c;
-  undefined1 auStack_158 [340];
+  CSampleInfo *in_stack_fffffea8;
   
-  sound_sndmain_cpp_FUN_005a8480();
+  sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffea0);
   ppuVar3 = &puStack_15c;
   cVar1 = *in_stack_00000008;
   while ((((cVar1 != '\0' && (cVar1 = *in_stack_00000008, cVar1 != '@')) && (cVar1 != '*')) &&
@@ -40,11 +40,11 @@ float __cdecl core_sound_cpp_CSound_FUN_005b3ba0(CSound *this_ptr)
   }
   *(char *)ppuVar3 = '\0';
   iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)&puStack_15c);
-  puStack_15c = auStack_158;
+  puStack_15c = &stack0xfffffea8;
   if (iVar2 == 0) {
     return -1.0;
   }
-  dVar4 = sound_sndmain_cpp_FUN_005a84d0();
+  dVar4 = sound_sndmain_cpp_CSampleInfo_getSampleDuration_FUN_005a84d0(in_stack_fffffea8);
   return (float)dVar4;
 }
 
@@ -57,7 +57,7 @@ float __cdecl core_sound_cpp_CSound_FUN_005b3ba0(CSound *this_ptr)
 //   XREF to: Stack[0x8] (READ)
 // 005b3bae: MOV EAX,ESP
 // 005b3bb0: PUSH EAX
-// 005b3bb1: CALL sound_sndmain.cpp_FUN_005a8480
+// 005b3bb1: CALL sound_sndmain.cpp_CSfxSample_init_FUN_005a8480
 //   XREF to: 005a8480 (UNCONDITIONAL_CALL)
 // 005b3bb6: LEA EAX,[ESP + 0x4]
 //   XREF to: Stack[-0x160] (DATA)
@@ -114,7 +114,7 @@ float __cdecl core_sound_cpp_CSound_FUN_005b3ba0(CSound *this_ptr)
 // 005b3c1c: MOV EAX,ESP
 //   Label: LAB_005b3c1c
 // 005b3c1e: PUSH EAX
-// 005b3c1f: CALL sound_sndmain.cpp_FUN_005a84d0
+// 005b3c1f: CALL sound_sndmain.cpp_CSampleInfo_getSampleDuration_FUN_005a84d0
 //   XREF to: 005a84d0 (UNCONDITIONAL_CALL)
 // 005b3c24: MOV dword ptr [ESP + 0x154],EAX
 //   XREF to: Stack[-0x10] (WRITE)

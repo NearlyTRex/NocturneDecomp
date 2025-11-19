@@ -1,10 +1,10 @@
-// Name: sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730
+// Name: sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
 // Address: 005a6730
 // Address Range: [[005a6730, 005a6cd8]]
-// Convention: __watcallRegister
-// Signature: int sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730(CSfxSlot * this_ptr)
+// Convention: __cdecl
+// Signature: int sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730(CSfxSample * this_ptr, float time_window, float update_interval)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005ace90 (005ace90) at 005acede [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_pollAllStreams_FUN_005ace90 (005ace90) at 005acede [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfx_FUN_005a8e90 (005a8e90) at 005a90ea [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_0064fc6b
@@ -28,9 +28,9 @@
 //   TerminatedCString s_MP3_decoded_more_than_ba_0065013e
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   undefined4 DAT_03f51648
-//   undefined1 DAT_03f5164c
-//   undefined1 DAT_03f5164d
+//   char[15360] g_SfxStreamReadBuffer
+//   undefined4 DAT_03f5164c
+//   undefined4 DAT_03f5164d
 //   CSfxSlot[64] g_SfxSlots
 //   undefined4 g_SfxSlots[0].field_20[76]
 //   undefined4 DAT_03f5db14
@@ -57,7 +57,9 @@
 
 #include "nocturne.h"
 
-int sound_sndmain_cpp_CSfxSlot_pollStream_FUN_005a6730(CSfxSlot *this_ptr)
+int __cdecl
+sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730
+          (CSfxSample *this_ptr,float time_window,float update_interval)
 
 {
   CSfxSample *this_ptr_00;
@@ -68,28 +70,24 @@ int sound_sndmain_cpp_CSfxSlot_pollStream_FUN_005a6730(CSfxSlot *this_ptr)
   int iVar5;
   CSfxSlot *pCVar6;
   CSfxSlot *pCVar7;
-  undefined4 *puVar8;
   SIZE_T size;
   ulong count;
-  uint uVar9;
+  uint uVar8;
   undefined4 in_EDX;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
   undefined4 extraout_EDX_01;
-  int iVar10;
+  int iVar9;
   undefined4 extraout_EDX_02;
-  CSfxSlot *samples_requested;
-  short *output_buffer;
-  undefined4 *puVar11;
+  CSfxSlot *lock_length;
+  char *pcVar10;
+  char *pcVar11;
   byte bVar12;
   float10 fVar13;
   double dVar14;
-  CSfxSample *in_stack_00000004;
-  float in_stack_00000008;
   char *in_stack_ffffffc8;
-  char *format;
   FILE *count_00;
-  FILE *file;
+  CSfxSample *file;
   undefined4 uVar15;
   int in_stack_ffffffd4;
   CSfxSlot *local_28;
@@ -104,12 +102,12 @@ int sound_sndmain_cpp_CSfxSlot_pollStream_FUN_005a6730(CSfxSlot *this_ptr)
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::pollStream - must be locked!");
     in_EDX = extraout_EDX_02;
   }
-  iVar5 = in_stack_00000004->streaming_slot_index;
+  iVar5 = this_ptr->streaming_slot_index;
   if (iVar5 < 0) {
     return 1;
   }
   pCVar6 = g_SfxSlots + iVar5;
-  if ((g_SfxSlots[iVar5].playback_state == 0) || (in_stack_00000004 != g_SfxSlots[iVar5].sample)) {
+  if ((g_SfxSlots[iVar5].playback_state == 0) || (this_ptr != g_SfxSlots[iVar5].sample)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x7d1;
     in_stack_ffffffc8 = (char *)0x5a679d;
@@ -120,11 +118,11 @@ int sound_sndmain_cpp_CSfxSlot_pollStream_FUN_005a6730(CSfxSlot *this_ptr)
     sound_sndmain_cpp_logSoundError_FUN_005adba0("SfxSample::pollStream - no sound device?\n");
   }
   else {
-    if (in_stack_00000004->loop_flags != 1) {
+    if (this_ptr->loop_marker_count != 1) {
       in_stack_ffffffc8 = "SfxSample::pollStream - cannot stream sample with exotic loop points: %s";
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x7e2;
-      core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::pollStream - cannot stream sample with exotic loop points: %s");
+      core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::pollStream - cannot stream sample with exotic loop points: %s",this_ptr);
       in_EDX = extraout_EDX_00;
     }
     if (g_SfxSlots[iVar5].hardware_buffer_handle != 0) {
@@ -134,10 +132,10 @@ int sound_sndmain_cpp_CSfxSlot_pollStream_FUN_005a6730(CSfxSlot *this_ptr)
         goto LAB_005a69e2;
       }
       in_stack_ffffffc8 = (char *)0x5a67fa;
-      pCVar6 = (CSfxSlot *)sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(in_stack_00000004);
+      pCVar6 = (CSfxSlot *)sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(this_ptr);
       in_EDX = extraout_EDX_01;
-      if ((pCVar6 == (CSfxSlot *)0x0) && (-1 < (in_stack_00000004->sample_info).sample_count)) {
-        dVar1 = (double)(in_stack_00000004->sample_info).sample_count;
+      if ((pCVar6 == (CSfxSlot *)0x0) && (-1 < (this_ptr->sample_info).sample_count)) {
+        dVar1 = (double)(this_ptr->sample_info).sample_count;
         dVar14 = (local_14->options).trigger_time;
         pCVar6 = (CSfxSlot *)
                  CONCAT22((short)((uint)local_14 >> 0x10),
@@ -147,29 +145,29 @@ int sound_sndmain_cpp_CSfxSlot_pollStream_FUN_005a6730(CSfxSlot *this_ptr)
       }
     }
     dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(in_EDX,pCVar6));
-    fVar13 = (float10)in_stack_00000004->field20_0x168 - (float10)*(double *)local_28->field16_0x11c
-    ;
+    fVar13 = (float10)this_ptr->stream_write_position -
+             (float10)local_28->prev_hardware_playback_pos;
     dVar14 = crt_math_c_round_FUN_005fe6b0
                        ((double)CONCAT44((int)((ulonglong)dVar14 >> 0x20),local_28));
-    iVar10 = (int)((ulonglong)dVar14 >> 0x20);
+    iVar9 = (int)((ulonglong)dVar14 >> 0x20);
     iVar5 = (int)ROUND(fVar13);
     if (iVar5 < 0) {
-      iVar10 = iVar5 + in_stack_00000004->streaming_buffer_size;
-      iVar5 = iVar10;
+      iVar9 = iVar5 + this_ptr->streaming_buffer_size;
+      iVar5 = iVar9;
     }
     if ((int)in_stack_ffffffc8 <= iVar5) {
       return 1;
     }
     uVar15 = 99999999;
-    if (in_stack_00000004->buffer_id != 0) {
-      iVar5 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(in_stack_00000004);
+    if (this_ptr->buffer_id != 0) {
+      iVar5 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
       in_stack_ffffffd4 = (int)(0x3c00 / (longlong)iVar5);
-      iVar10 = (int)(0x3c00 % (longlong)iVar5);
+      iVar9 = (int)(0x3c00 % (longlong)iVar5);
     }
-    fVar13 = (float10)(in_stack_00000004->sample_info).sample_rate * (float10)in_stack_00000008;
+    fVar13 = (float10)(this_ptr->sample_info).sample_rate * (float10)time_window;
     dVar14 = crt_math_c_round_FUN_005fe6b0
-                       ((double)CONCAT44(iVar10,in_stack_00000004->streaming_buffer_size + -1));
-    file = (FILE *)(int)ROUND(fVar13);
+                       ((double)CONCAT44(iVar9,this_ptr->streaming_buffer_size + -1));
+    file = (CSfxSample *)(int)ROUND(fVar13);
     if ((int)SUB84(dVar14,0) < (int)ROUND(fVar13)) {
       file = SUB84(dVar14,0);
     }
@@ -178,30 +176,28 @@ int sound_sndmain_cpp_CSfxSlot_pollStream_FUN_005a6730(CSfxSlot *this_ptr)
       if ((int)pCVar6 < 1) {
         return 1;
       }
-      if ((in_stack_00000004->field20_0x168 < 0) ||
-         (in_stack_00000004->streaming_buffer_size <= in_stack_00000004->field20_0x168)) {
+      if ((this_ptr->stream_write_position < 0) ||
+         (this_ptr->streaming_buffer_size <= this_ptr->stream_write_position)) {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
         g_CurrentLineNumber = 0x827;
         core_main_c_displayErrorAndQuit_FUN_00506f10
-                  ("nextLoadSampleDest = %d, allocLength = %d",in_stack_00000004->field20_0x168,
-                   in_stack_00000004->streaming_buffer_size,file,uVar15);
+                  ("nextLoadSampleDest = %d, allocLength = %d",this_ptr->stream_write_position,
+                   this_ptr->streaming_buffer_size,file,uVar15);
       }
-      samples_requested =
-           (CSfxSlot *)(in_stack_00000004->streaming_buffer_size - in_stack_00000004->field20_0x168)
-      ;
-      if ((int)pCVar6 < (int)samples_requested) {
-        samples_requested = pCVar6;
+      lock_length = (CSfxSlot *)(this_ptr->streaming_buffer_size - this_ptr->stream_write_position);
+      if ((int)pCVar6 < (int)lock_length) {
+        lock_length = pCVar6;
       }
-      if ((int)local_28 < (int)samples_requested) {
-        samples_requested = local_28;
+      if ((int)local_28 < (int)lock_length) {
+        lock_length = local_28;
       }
-      iVar5 = (in_stack_00000004->sample_info).sample_count;
+      iVar5 = (this_ptr->sample_info).sample_count;
       bVar2 = false;
       if (-1 < iVar5) {
-        if (in_stack_00000004->field19_0x164 < iVar5) {
-          pCVar7 = (CSfxSlot *)(iVar5 - in_stack_00000004->field19_0x164);
-          if ((int)pCVar7 < (int)samples_requested) {
-            samples_requested = pCVar7;
+        if (this_ptr->stream_read_position < iVar5) {
+          pCVar7 = (CSfxSlot *)(iVar5 - this_ptr->stream_read_position);
+          if ((int)pCVar7 < (int)lock_length) {
+            lock_length = pCVar7;
           }
         }
         else {
@@ -210,120 +206,124 @@ int sound_sndmain_cpp_CSfxSlot_pollStream_FUN_005a6730(CSfxSlot *this_ptr)
           if ((iVar5 == 0) ||
              (this_ptr_00 = *(CSfxSample **)(local_1c + 0x78),
              (this_ptr_00->sample_info).sample_count == this_ptr_00->streaming_buffer_size)) {
-            if (in_stack_00000004->buffer_id == 0) {
+            if (this_ptr->buffer_id == 0) {
               return 1;
             }
             bVar2 = true;
           }
           else {
-            sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(this_ptr_00);
+            sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0
+                      (this_ptr_00,0,this_ptr->stream_write_position);
           }
         }
       }
-      output_buffer = (short *)&DAT_03f51648;
+      pcVar10 = g_SfxStreamReadBuffer;
       bVar3 = false;
       bVar4 = true;
-      if (in_stack_00000004->buffer_id == 0) break;
+      if (this_ptr->buffer_id == 0) break;
 LAB_005a6ab8:
       if (bVar2) {
-        count = *(int *)(*(int *)(local_1c + 0x78) + 0x108) * (int)samples_requested;
-        uVar9 = *(uint *)(*(int *)(local_1c + 0x78) + 0x104);
-        local_14 = samples_requested;
-        if (uVar9 < 8) {
+        count = *(int *)(*(int *)(local_1c + 0x78) + 0x108) * (int)lock_length;
+        uVar8 = *(uint *)(*(int *)(local_1c + 0x78) + 0x104);
+        local_14 = lock_length;
+        if (uVar8 < 8) {
 LAB_005a6adf:
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
           g_CurrentLineNumber = 0x5ca;
           core_main_c_displayErrorAndQuit_FUN_00506f10("generateSilence - invalid bit depth!");
         }
-        else if (uVar9 < 9) {
-          crt_memory_c_memset_FUN_005fde40(output_buffer,0x80,count);
+        else if (uVar8 < 9) {
+          crt_memory_c_memset_FUN_005fde40(pcVar10,0x80,count);
         }
         else {
-          if (uVar9 != 0x10) goto LAB_005a6adf;
-          crt_memory_c_memset_FUN_005fde40(output_buffer,0,count * 2);
+          if (uVar8 != 0x10) goto LAB_005a6adf;
+          crt_memory_c_memset_FUN_005fde40(pcVar10,0,count * 2);
         }
       }
-      else if (in_stack_00000004->mp3_data == (CMP3Decoder *)0x0) {
-        if (in_stack_00000004->file_handle == (FILE *)0x0) {
+      else if (this_ptr->mp3_data == (CMP3Decoder *)0x0) {
+        if (this_ptr->file_handle == (FILE *)0x0) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
           g_CurrentLineNumber = 0x879;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't stream unless we have mp3 decoder or open wav file!");
         }
-        count_00 = in_stack_00000004->file_handle;
-        size = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(in_stack_00000004);
+        count_00 = this_ptr->file_handle;
+        size = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
         local_14 = (CSfxSlot *)
-                   crt_stdio_c_fread_FUN_005fd990(output_buffer,size,(SIZE_T)count_00,file);
-        if ((in_stack_00000004->file_handle->_flag & 0x20) != 0) {
-          sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(in_stack_00000004);
-          format = "Error reading %s while streaming\n";
+                   crt_stdio_c_fread_FUN_005fd990(pcVar10,size,(SIZE_T)count_00,(FILE *)file);
+        if ((this_ptr->file_handle->_flag & 0x20) != 0) {
+          sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(this_ptr);
+          pcVar10 = "Error reading %s while streaming\n";
+          file = this_ptr;
           goto LAB_005a69da;
         }
       }
       else {
         sound_mp3_cpp_CMP3Decoder_read_FUN_00534a60
-                  (in_stack_00000004->mp3_data,output_buffer,(int)samples_requested);
+                  (this_ptr->mp3_data,(short *)pcVar10,(int)lock_length);
       }
       if ((bVar4) && (0 < (int)local_14)) {
-        puVar8 = (undefined4 *)sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(in_stack_00000004);
-        if (puVar8 == (undefined4 *)0x0) {
-          format = "Error locking %s while streaming\n";
+        pcVar10 = (char *)sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430
+                                    (this_ptr,this_ptr->stream_write_position,(int)local_14);
+        if (pcVar10 == (char *)0x0) {
+          pcVar10 = "Error locking %s while streaming\n";
           goto LAB_005a69da;
         }
-        iVar5 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(in_stack_00000004);
-        puVar11 = &DAT_03f51648;
-        for (uVar9 = (uint)((int)local_14 * iVar5) >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-          *puVar8 = *puVar11;
-          puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
-          puVar8 = puVar8 + (uint)bVar12 * -2 + 1;
+        iVar5 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
+        pcVar11 = g_SfxStreamReadBuffer;
+        for (uVar8 = (uint)((int)local_14 * iVar5) >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+          *(undefined4 *)pcVar10 = *(undefined4 *)pcVar11;
+          pcVar11 = pcVar11 + ((uint)bVar12 * -2 + 1) * 4;
+          pcVar10 = pcVar10 + ((uint)bVar12 * -2 + 1) * 4;
         }
-        for (uVar9 = (int)local_14 * iVar5 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-          *(undefined1 *)puVar8 = *(undefined1 *)puVar11;
-          puVar11 = (undefined4 *)((int)puVar11 + (uint)bVar12 * -2 + 1);
-          puVar8 = (undefined4 *)((int)puVar8 + (uint)bVar12 * -2 + 1);
+        for (uVar8 = (int)local_14 * iVar5 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
+          *pcVar10 = *pcVar11;
+          pcVar11 = pcVar11 + (uint)bVar12 * -2 + 1;
+          pcVar10 = pcVar10 + (uint)bVar12 * -2 + 1;
         }
 LAB_005a6b5d:
-        sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(in_stack_00000004);
+        sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(this_ptr);
       }
       else if (bVar3) goto LAB_005a6b5d;
-      if ((int)samples_requested < (int)local_14) {
+      if ((int)lock_length < (int)local_14) {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
         g_CurrentLineNumber = 0x8a0;
         core_main_c_displayErrorAndQuit_FUN_00506f10
-                  ("MP3 decoded more than batch: r = %d, batch = %d",local_14,samples_requested);
+                  ("MP3 decoded more than batch: r = %d, batch = %d",local_14,lock_length);
       }
-      if (samples_requested != local_14) {
-        (in_stack_00000004->sample_info).sample_count =
-             (int)(local_14->options).userdata + in_stack_00000004->field19_0x164 + -0x54;
+      if (lock_length != local_14) {
+        (this_ptr->sample_info).sample_count =
+             (int)(local_14->options).userdata + this_ptr->stream_read_position + -0x54;
       }
       pCVar6 = (CSfxSlot *)((int)pCVar6 - (int)local_14);
-      iVar5 = (int)(local_14->options).userdata + in_stack_00000004->field20_0x168 + -0x54;
-      in_stack_00000004->field19_0x164 =
-           (int)(local_14->options).userdata + in_stack_00000004->field19_0x164 + -0x54;
-      in_stack_00000004->field20_0x168 = iVar5;
-      if (in_stack_00000004->streaming_buffer_size <= iVar5) {
-        in_stack_00000004->field20_0x168 = 0;
+      iVar5 = (int)(local_14->options).userdata + this_ptr->stream_write_position + -0x54;
+      this_ptr->stream_read_position =
+           (int)(local_14->options).userdata + this_ptr->stream_read_position + -0x54;
+      this_ptr->stream_write_position = iVar5;
+      if (this_ptr->streaming_buffer_size <= iVar5) {
+        this_ptr->stream_write_position = 0;
       }
     }
-    output_buffer = (short *)sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(in_stack_00000004);
-    if (output_buffer != (short *)0x0) {
+    pcVar10 = (char *)sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430
+                                (this_ptr,this_ptr->stream_write_position,(int)lock_length);
+    if ((short *)pcVar10 != (short *)0x0) {
       bVar4 = false;
       bVar3 = true;
       goto LAB_005a6ab8;
     }
-    format = "Error locking %s while streaming\n";
+    pcVar10 = "Error locking %s while streaming\n";
 LAB_005a69da:
-    sound_sndmain_cpp_logSoundError_FUN_005adba0(format);
+    sound_sndmain_cpp_logSoundError_FUN_005adba0(pcVar10,file);
   }
 LAB_005a69e2:
   sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(local_14);
-  sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(in_stack_00000004);
+  sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(this_ptr);
   return 0;
 }
 
 
 // Assembly code:
 // 005a6730: PUSH EBX
-//   Label: sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730
+//   Label: sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
 // 005a6731: PUSH ESI
 // 005a6732: PUSH EDI
 // 005a6733: PUSH EBP

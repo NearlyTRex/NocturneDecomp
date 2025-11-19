@@ -32,7 +32,7 @@ sound_sndmain_cpp_freeSampleByName_FUN_005aa360(char *sample_name,int kill_activ
   }
   iVar2 = 0;
   do {
-    if (*(int *)((int)&g_SfxSamples[0].ref_count + iVar2) == 0) {
+    if (*(int *)((int)g_SfxSamples[0].loop_markers + iVar2 + 0x18) == 0) {
       this_ptr = (CSfxSample *)(g_SfxSamples[0].sample_info.name + iVar2);
       iVar1 = crt_string_c_stricmp_FUN_005fe7f0((char *)this_ptr,sample_name);
       if (iVar1 == 0) {

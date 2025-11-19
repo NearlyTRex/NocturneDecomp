@@ -124,7 +124,7 @@
 //   shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40
 //   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 //   sound_sndmain.cpp_countActiveSfx_FUN_005a9ff0
-//   sound_sndmain.cpp_FUN_005a8480
+//   sound_sndmain.cpp_CSfxSample_init_FUN_005a8480
 //   sound_sndmain.cpp_getFirstActiveSfx_FUN_005a9ef0
 //   sound_sndmain.cpp_getNextActiveSfx_FUN_005a9f30
 //   sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0
@@ -439,7 +439,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         uVar5 = sound_sndmain_cpp_getFirstActiveSfx_FUN_005a9ef0();
         y_pos = (CSfxSample *)0x37;
         for (; uVar5 != 0; uVar5 = sound_sndmain_cpp_getNextActiveSfx_FUN_005a9f30(uVar5)) {
-          sound_sndmain_cpp_FUN_005a8480();
+          sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffff9d4);
           pcVar14 = &stack0xfffff9d4;
           iVar4 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0(uVar5,(CSfxSample *)pcVar14);
           if (iVar4 != 0) {
@@ -1436,7 +1436,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 //   Label: LAB_004da93a
 //   XREF to: Stack[-0x62c] (DATA)
 // 004da940: PUSH EAX
-// 004da941: CALL sound_sndmain.cpp_FUN_005a8480
+// 004da941: CALL sound_sndmain.cpp_CSfxSample_init_FUN_005a8480
 //   XREF to: 005a8480 (UNCONDITIONAL_CALL)
 // 004da946: ADD ESP,0x4
 // 004da949: LEA EAX,[EBP + 0xfffffa62]

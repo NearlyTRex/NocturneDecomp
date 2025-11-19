@@ -2,7 +2,7 @@
 // Address: 005a8170
 // Address Range: [[005a8170, 005a8382]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot * this_ptr)
+// Signature: void sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot * this_ptr, double hardware_playback_pos)
 // Cross-references:
 //   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (005a75e0) at 005a7970 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0 (005a80e0) at 005a8155 [UNCONDITIONAL_CALL]
@@ -23,7 +23,9 @@
 
 #include "nocturne.h"
 
-void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot *this_ptr)
+void __cdecl
+sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170
+          (CSfxSlot *this_ptr,double hardware_playback_pos)
 
 {
   CSfxSample *this_ptr_00;
@@ -32,8 +34,6 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot 
   undefined4 extraout_EAX;
   undefined4 extraout_EDX;
   float10 in_ST0;
-  undefined4 in_stack_00000008;
-  undefined4 in_stack_0000000c;
   undefined4 uStack_24;
   undefined4 local_20;
   undefined4 uStack_14;
@@ -43,15 +43,13 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot 
     g_CurrentLineNumber = 0xbbc;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::updatePlaybackPos - no samplePtr");
   }
-  if (((double)CONCAT44(in_stack_0000000c,in_stack_00000008) < 0.0) ||
-     ((double)this_ptr->sample->streaming_buffer_size <
-      (double)CONCAT44(in_stack_0000000c,in_stack_00000008))) {
+  if ((hardware_playback_pos < 0.0) ||
+     ((double)this_ptr->sample->streaming_buffer_size < hardware_playback_pos)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0xbc2;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::updatePlaybackPos - invalid buffer position");
   }
-  dVar1 = (double)CONCAT44(in_stack_0000000c,in_stack_00000008) - *(double *)this_ptr->field16_0x11c
-  ;
+  dVar1 = hardware_playback_pos - this_ptr->prev_hardware_playback_pos;
   if (dVar1 < 0.0) {
     dVar1 = (double)this_ptr->sample->streaming_buffer_size + dVar1;
   }
@@ -62,17 +60,17 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot 
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0xbd0;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)",in_stack_00000008,in_stack_0000000c,
-               *(undefined4 *)this_ptr->field16_0x11c,*(undefined4 *)(this_ptr->field16_0x11c + 4),
-               uStack_24,local_20,this_ptr->sample->streaming_buffer_size,this_ptr->sample);
+              ("SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)",hardware_playback_pos._0_4_,
+               hardware_playback_pos._4_4_,*(undefined4 *)&this_ptr->prev_hardware_playback_pos,
+               *(undefined4 *)((int)&this_ptr->prev_hardware_playback_pos + 4),uStack_24,local_20,
+               this_ptr->sample->streaming_buffer_size,this_ptr->sample);
   }
-  if (((this_ptr->options).trigger_time != *(double *)this_ptr->field16_0x11c) ||
-     ((double)CONCAT44(in_stack_0000000c,in_stack_00000008) < (this_ptr->options).trigger_time)) {
+  if (((this_ptr->options).trigger_time != this_ptr->prev_hardware_playback_pos) ||
+     (hardware_playback_pos < (this_ptr->options).trigger_time)) {
     (this_ptr->options).trigger_time = (this_ptr->options).trigger_time + dVar1;
   }
   else {
-    *(undefined4 *)&(this_ptr->options).trigger_time = in_stack_00000008;
-    *(undefined4 *)((int)&(this_ptr->options).trigger_time + 4) = in_stack_0000000c;
+    (this_ptr->options).trigger_time = hardware_playback_pos;
   }
   if ((this_ptr->options).trigger_time < 0.0) {
     *(undefined4 *)&(this_ptr->options).trigger_time = 0;
@@ -94,8 +92,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot 
            (double)CONCAT44(SUB84((double)iVar2,0),uStack_14);
     }
   }
-  *(undefined4 *)this_ptr->field16_0x11c = in_stack_00000008;
-  *(undefined4 *)(this_ptr->field16_0x11c + 4) = in_stack_0000000c;
+  this_ptr->prev_hardware_playback_pos = hardware_playback_pos;
   return;
 }
 

@@ -92,10 +92,10 @@
 //   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170
 //   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
 //   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
+//   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
 //   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
 //   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
 //   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
-//   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730
 //   sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390
 //   sound_sndmain.cpp_getSfxSample_FUN_005a4c80
 //   sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0
@@ -285,15 +285,15 @@ LAB_005a900a:
           iVar3 = (in_stack_0000000c->sample_info).sample_rate;
           in_stack_0000000c->buffer_id = 0;
           fVar17 = (float10)iVar3 * (float10)FLOAT_00663164;
-          in_stack_0000000c->field19_0x164 = 0;
-          in_stack_0000000c->field20_0x168 = 0;
+          in_stack_0000000c->stream_read_position = 0;
+          in_stack_0000000c->stream_write_position = 0;
           dVar18 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,unaff_retaddr));
           in_stack_0000000c->streaming_buffer_size = (int)ROUND(fVar17);
           in_stack_0000000c->streaming_slot_index = SUB84(dVar18,0);
           iVar3 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar19);
 joined_r0x005a94f6:
           if (iVar3 != 0) {
-            sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(pCStack00000010);
+            sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(pCStack00000010,0,0);
             goto LAB_005a9026;
           }
         }
@@ -336,8 +336,8 @@ joined_r0x005a94f6:
             dVar18 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(filename,filename));
             pCVar19 = (CSfxSample *)((ulonglong)dVar18 >> 0x20);
             *(int *)(SUB84(dVar18,0) + 0x160) = (int)ROUND(fVar17);
-            pCVar19->field19_0x164 = 0;
-            pCVar19->field20_0x168 = 0;
+            pCVar19->stream_read_position = 0;
+            pCVar19->stream_write_position = 0;
             pCVar19->streaming_slot_index = (int)unaff_retaddr;
             iVar3 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar19);
             goto joined_r0x005a94f6;
@@ -375,13 +375,14 @@ LAB_005a9026:
     pCVar15 = g_SfxSlots[(int)sfx_sample].sample;
     g_SfxPlaybackStateCounter = iVar3;
     g_SfxSlots[(int)sfx_sample].min_distance = (pCVar19->sample_info).reference_volume_distance;
-    g_SfxSlots[(int)sfx_sample].max_distance = pCVar15->max_distance;
+    g_SfxSlots[(int)sfx_sample].max_distance = (pCVar15->sample_info).max_distance;
     if (0xfffffe < iVar3) {
       g_SfxPlaybackStateCounter = 1;
     }
     iVar3 = g_SfxPlaybackStateCounter;
+    pCVar19 = g_SfxSlots[(int)sfx_sample].sample;
     g_SfxSlots[(int)sfx_sample].playback_state = g_SfxPlaybackStateCounter;
-    iVar5 = sound_sndmain_cpp_CSfxSlot_pollStream_FUN_005a6730((CSfxSlot *)pCVar15);
+    iVar5 = sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730(pCVar19,999.0,999.0);
     if (iVar5 != 0) {
       sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,0.0);
       uVar6 = sound_sndmain_cpp_hasHardware3DSound_FUN_005ab5a0();
@@ -666,7 +667,7 @@ LAB_005a9523:
 // 005a90e6: PUSH EDX
 // 005a90e7: MOV dword ptr [EBP + 0x74],ESI
 //   XREF to: 03f5dc40 (WRITE)
-// 005a90ea: CALL sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730
+// 005a90ea: CALL sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
 //   XREF to: 005a6730 (UNCONDITIONAL_CALL)
 // 005a90ef: ADD ESP,0xc
 // 005a90f2: TEST EAX,EAX

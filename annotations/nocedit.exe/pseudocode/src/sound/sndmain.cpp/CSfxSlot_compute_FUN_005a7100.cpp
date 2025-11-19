@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: int sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot * this_ptr, float delta_time)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005acdb0 (005acdb0) at 005acdf6 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSfxOptions_FUN_005a97e0 (005a97e0) at 005a97fc [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0 (005acdb0) at 005acdf6 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 (005aca90) at 005acc5a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40 (005a9b40) at 005a9b63 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setSfxPosition_FUN_005a9820 (005a9820) at 005a987a [UNCONDITIONAL_CALL]

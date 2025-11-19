@@ -11,7 +11,7 @@
 //   core_event.cpp_CEventList_setSfxHandle_FUN_004b0c80 (004b0c80) at 004b0d2a [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_string.c_memmove_FUN_005fe5e0
-//   sound_sndmain.cpp_FUN_005a8480
+//   sound_sndmain.cpp_CSfxSample_init_FUN_005a8480
 //   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720
 //   sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0
 
@@ -46,7 +46,7 @@ void __cdecl core_event_cpp_CEventList_FUN_004b0db0(CEventList *this_ptr)
       *(uint *)(dest + 0x11c) = local_1c._4_4_;
       local_1c = dVar5;
       if (0.0 <= *(double *)(dest + 0x118)) {
-        sound_sndmain_cpp_FUN_005a8480();
+        sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffe94);
         in_stack_fffffe90 = *(CEvent **)dest;
         iVar2 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0
                           ((uint)in_stack_fffffe90,(CSfxSample *)&stack0xfffffe98);
@@ -160,7 +160,7 @@ LAB_004b0e30:
 // 004b0e7d: MOV EAX,ESP
 //   Label: LAB_004b0e7d
 // 004b0e7f: PUSH EAX
-// 004b0e80: CALL sound_sndmain.cpp_FUN_005a8480
+// 004b0e80: CALL sound_sndmain.cpp_CSfxSample_init_FUN_005a8480
 //   XREF to: 005a8480 (UNCONDITIONAL_CALL)
 // 004b0e85: ADD ESP,0x4
 // 004b0e88: MOV EAX,ESP

@@ -1,8 +1,8 @@
-// Name: sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80
+// Name: sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80
 // Address: 005a5b80
 // Address Range: [[005a5b80, 005a5cf7]]
 // Convention: __cdecl
-// Signature: void sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80(float * input_samples, void * output_buffer, int bits_per_sample, int num_samples, int output_stride)
+// Signature: void sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80(float * input_samples, void * output_buffer, int bits_per_sample, int num_samples, int output_stride)
 // Cross-references:
 //   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 (005aca90) at 005acd01 [UNCONDITIONAL_CALL]
 // Globals:
@@ -90,7 +90,7 @@ LAB_005a5ccd:
 
 // Assembly code:
 // 005a5b80: PUSH EBX
-//   Label: sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80
+//   Label: sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80
 // 005a5b81: PUSH ESI
 // 005a5b82: PUSH EDI
 // 005a5b83: PUSH EBP

@@ -26,7 +26,7 @@
 void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
 
 {
-  SMixBuffer mix_ctx;
+  SMixBuffer mix_buffer;
   float fVar1;
   float fVar2;
   int iVar3;
@@ -111,18 +111,18 @@ void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
       puVar5 = puVar5 + (uint)bVar8 * -2 + 1;
       puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
     }
-    mix_ctx.channel_buffers[5] = (float *)in_stack_ffffffac;
-    mix_ctx.channel_buffers[0] = (float *)in_stack_ffffff98._0_4_;
-    mix_ctx.channel_buffers[1] = (float *)in_stack_ffffff98._4_4_;
-    mix_ctx.channel_buffers[2] = (float *)in_stack_ffffff98._8_4_;
-    mix_ctx.channel_buffers[3] = (float *)in_stack_ffffff98._12_4_;
-    mix_ctx.channel_buffers[4] = (float *)in_stack_ffffff98._16_4_;
-    mix_ctx.channel_buffers[6] = (float *)in_stack_ffffffb0;
-    mix_ctx.channel_buffers[7] = (float *)in_stack_ffffffb4;
-    mix_ctx.num_output_samples = uVar9;
-    mix_ctx.num_channels = (int)pCVar10;
-    mix_ctx.output_sample_rate = (int)fVar11;
-    sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(pCVar4,mix_ctx);
+    mix_buffer.channel_buffers[5] = (float *)in_stack_ffffffac;
+    mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff98._0_4_;
+    mix_buffer.channel_buffers[1] = (float *)in_stack_ffffff98._4_4_;
+    mix_buffer.channel_buffers[2] = (float *)in_stack_ffffff98._8_4_;
+    mix_buffer.channel_buffers[3] = (float *)in_stack_ffffff98._12_4_;
+    mix_buffer.channel_buffers[4] = (float *)in_stack_ffffff98._16_4_;
+    mix_buffer.channel_buffers[6] = (float *)in_stack_ffffffb0;
+    mix_buffer.channel_buffers[7] = (float *)in_stack_ffffffb4;
+    mix_buffer.num_output_samples = uVar9;
+    mix_buffer.num_channels = (int)pCVar10;
+    mix_buffer.output_sample_rate = (int)fVar11;
+    sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(pCVar4,mix_buffer);
     pCVar4 = pCVar4 + 1;
   } while (pCVar4 != (CSfxSlot *)&g_SfxLastSlot);
   g_MixBufferReadIndex = g_MixBufferSize;

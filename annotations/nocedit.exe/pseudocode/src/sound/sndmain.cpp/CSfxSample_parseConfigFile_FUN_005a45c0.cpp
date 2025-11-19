@@ -120,21 +120,21 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   fVar3 = g_SoundReferenceDistanceConstant * fVar4;
   fVar5 = g_SoundReferenceVolumeDistance * fVar4;
   fVar4 = FLOAT_00663160 * fVar4;
-  this_ptr->loop_flags = 1;
+  this_ptr->loop_marker_count = 1;
   (this_ptr->sample_info).reference_distance = fVar3;
   (this_ptr->sample_info).reference_volume_distance = fVar5;
-  this_ptr->max_distance = fVar4;
+  (this_ptr->sample_info).max_distance = fVar4;
   this_ptr->loop_length = (this_ptr->sample_info).sample_count;
-  this_ptr->loop_start_marker = -1;
+  this_ptr->loop_markers[0] = -1;
   engine_dosio_c_splitPath_FUN_00481f20
             ((char *)this_ptr,(char *)0x0,(char *)0x0,local_238,(char *)0x0);
   engine_dosio_c_makePath_FUN_00481f50
             (acStack_334,(char *)0x0,(char *)0x0,acStack_234,"klp");
   iVar8 = engine_dosio_c_getFileSize_FUN_00481880("sound",acStack_330);
   if (0 < iVar8) {
-    this_ptr->loop_flags = 1;
+    this_ptr->loop_marker_count = 1;
     iVar8 = (this_ptr->sample_info).sample_count;
-    this_ptr->loop_start_marker = 0;
+    this_ptr->loop_markers[0] = 0;
     this_ptr->loop_length = iVar8;
   }
   engine_dosio_c_makePath_FUN_00481f50
@@ -146,7 +146,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
     return;
   }
   crt_stdio_c_ftell_FUN_00601560(file_handle);
-  pfStack_14 = &this_ptr->max_distance;
+  pfStack_14 = &(this_ptr->sample_info).max_distance;
   pfVar9 = &(this_ptr->sample_info).reference_volume_distance;
   local_18 = &(this_ptr->sample_info).reference_distance;
   do {

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0(CSfxSlot * this_ptr)
 // Cross-references:
-//   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a67e4 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730 (005a6730) at 005a67e4 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_formatActiveSounds_FUN_005a9f80 (005a9f80) at 005a9fba [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720 (005a9720) at 005a9750 [UNCONDITIONAL_CALL]
 // Globals:
@@ -21,6 +21,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0(CSfxSlot *
 {
   double *pdVar1;
   undefined4 extraout_EDX;
+  undefined4 unaff_retaddr;
   CSfxSlot *in_stack_ffffffe0;
   
   if (((this_ptr->hardware_buffer_handle != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) &&
@@ -32,7 +33,8 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0(CSfxSlot *
                 ("Error polling hw playback pos %s\n",this_ptr->sample);
       return 0;
     }
-    sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(this_ptr);
+    sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170
+              (this_ptr,(double)CONCAT44(unaff_retaddr,pdVar1));
     return 1;
   }
   return 0;

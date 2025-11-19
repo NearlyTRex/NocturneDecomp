@@ -1,14 +1,14 @@
-// Name: sound_sndmain.cpp_FUN_005a84d0
+// Name: sound_sndmain.cpp_CSampleInfo_getSampleDuration_FUN_005a84d0
 // Address: 005a84d0
 // Address Range: [[005a84d0, 005a8514]]
 // Convention: __cdecl
-// Signature: double sound_sndmain.cpp_FUN_005a84d0(void)
+// Signature: double sound_sndmain.cpp_CSampleInfo_getSampleDuration_FUN_005a84d0(CSampleInfo * this_ptr)
 // Cross-references:
 //   core_sound.cpp_CSound_FUN_005b3ba0 (005b3ba0) at 005b3c1f [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
-double __cdecl sound_sndmain_cpp_FUN_005a84d0(void)
+double __cdecl sound_sndmain_cpp_CSampleInfo_getSampleDuration_FUN_005a84d0(CSampleInfo *this_ptr)
 
 {
   int in_stack_00000004;
@@ -23,7 +23,7 @@ double __cdecl sound_sndmain_cpp_FUN_005a84d0(void)
 
 // Assembly code:
 // 005a84d0: PUSH EBP
-//   Label: sound_sndmain.cpp_FUN_005a84d0
+//   Label: sound_sndmain.cpp_CSampleInfo_getSampleDuration_FUN_005a84d0
 // 005a84d1: MOV EBP,ESP
 // 005a84d3: SUB ESP,0x8
 // 005a84d6: AND ESP,0xfffffff8

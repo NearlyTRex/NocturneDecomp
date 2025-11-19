@@ -1,8 +1,8 @@
-// Name: sound_sndmain.cpp_FUN_005acdb0
+// Name: sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0
 // Address: 005acdb0
 // Address Range: [[005acdb0, 005ace81]]
 // Convention: __cdecl
-// Signature: void sound_sndmain.cpp_FUN_005acdb0(void)
+// Signature: void sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0(void)
 // Cross-references:
 //   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50 (005aed50) at 005aed74 [UNCONDITIONAL_CALL]
 // Globals:
@@ -27,7 +27,7 @@
 
 #include "nocturne.h"
 
-void __cdecl sound_sndmain_cpp_FUN_005acdb0(void)
+void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_005acdb0(void)
 
 {
   uint uVar1;
@@ -68,7 +68,7 @@ void __cdecl sound_sndmain_cpp_FUN_005acdb0(void)
 
 // Assembly code:
 // 005acdb0: PUSH EBX
-//   Label: sound_sndmain.cpp_FUN_005acdb0
+//   Label: sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0
 // 005acdb1: PUSH ESI
 // 005acdb2: PUSH EBP
 // 005acdb3: MOV EBP,ESP

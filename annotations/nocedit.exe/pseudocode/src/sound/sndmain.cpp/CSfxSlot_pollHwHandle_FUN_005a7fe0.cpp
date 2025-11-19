@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(CSfxSlot * this_ptr)
 // Cross-references:
-//   sound_sndmain.cpp_FUN_005acdb0 (005acdb0) at 005ace03 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0 (005acdb0) at 005ace03 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_006504ad
 //   TerminatedCString s_SfxSlot_pollHwHandle_no__006504c2

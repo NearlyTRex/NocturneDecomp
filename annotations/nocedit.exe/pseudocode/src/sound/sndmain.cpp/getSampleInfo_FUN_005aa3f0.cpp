@@ -68,7 +68,7 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
   sound_sndmain_cpp_lockSound_FUN_005abd30();
   iVar3 = 0;
   do {
-    if (0 < *(int *)((int)&g_SfxSamples[0].sample_info.sample_count + iVar3)) {
+    if (0 < *(int *)((int)g_SfxSamples[0].loop_markers + iVar3 + -0x2c)) {
       pcVar4 = g_SfxSamples[0].sample_info.name + iVar3;
       iVar1 = crt_string_c_stricmp_FUN_005fe7f0(pcVar4,(char *)out_sample);
       if (iVar1 == 0) {

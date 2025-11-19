@@ -2,9 +2,9 @@
 // Address: 005a6430
 // Address Range: [[005a6430, 005a6530]]
 // Convention: __cdecl
-// Signature: int sound_sndmain.cpp_CSfxSample_lock_FUN_005a6430(CSfxSample * this_ptr)
+// Signature: void * sound_sndmain.cpp_CSfxSample_lock_FUN_005a6430(CSfxSample * this_ptr, int lock_offset, int lock_length)
 // Cross-references:
-//   sound_sndmain.cpp_CSfxSlot_pollStream_FUN_005a6730 (005a6730) at 005a69c2 [UNCONDITIONAL_CALL]
+//   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730 (005a6730) at 005a69c2 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a50ed [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_0064fd57
@@ -22,21 +22,19 @@
 
 #include "nocturne.h"
 
-int __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(CSfxSample *this_ptr)
+void * __cdecl
+sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(CSfxSample *this_ptr,int lock_offset,int lock_length)
 
 {
   int iVar1;
   void *pvVar2;
-  void *in_stack_00000008;
-  void *in_stack_0000000c;
   
-  if (this_ptr->sound_buffer != (void *)0x0) {
+  if (this_ptr->locked_length != 0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x753;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::lock - already locked!");
   }
-  if (((int)in_stack_00000008 < 0) ||
-     (this_ptr->streaming_buffer_size < (int)in_stack_00000008 + (int)in_stack_0000000c)) {
+  if ((lock_offset < 0) || (this_ptr->streaming_buffer_size < lock_offset + lock_length)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x758;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::lock - invalid region");
@@ -48,21 +46,20 @@ int __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(CSfxSample *this_ptr)
       core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::lock - nothing allocated!");
     }
     iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
-    pvVar2 = (void *)(iVar1 * (int)in_stack_00000008 + (int)this_ptr->sample_data);
+    pvVar2 = (void *)(iVar1 * lock_offset + (int)this_ptr->sample_data);
   }
   else {
     if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
-      return 0;
+      return (void *)0x0;
     }
     pvVar2 = (void *)(*g_CSoundDevicePtr->vtable->lockSample)
-                               (g_CSoundDevicePtr,this_ptr->buffer_id,(int)in_stack_00000008,
-                                (int)in_stack_0000000c);
+                               (g_CSoundDevicePtr,this_ptr->buffer_id,lock_offset,lock_length);
   }
   if (pvVar2 != (void *)0x0) {
-    this_ptr->sound_buffer = in_stack_0000000c;
-    this_ptr->field24_0x178 = in_stack_00000008;
+    this_ptr->locked_length = lock_length;
+    this_ptr->locked_offset = lock_offset;
   }
-  return (int)pvVar2;
+  return pvVar2;
 }
 
 

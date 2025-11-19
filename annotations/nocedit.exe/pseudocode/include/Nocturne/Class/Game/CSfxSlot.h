@@ -19,6 +19,7 @@ typedef struct CSfxSlot {
     float fade_time_remaining; // 0x110
     int stop_after_fade; // 0x114
     int is_active; // 0x118
-    char field_284[12]; // 0x11c
+    double prev_hardware_playback_pos; // 0x11c
+    int loop_marker_index; // 0x124
 } CSfxSlot;
 
