@@ -7,10 +7,10 @@
 //   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ac560 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_rollCredits_FUN_004e4010 (004e4010) at 004e4391 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_0055ff00 (0055ff00) at 00560066 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2eac [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b3395 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b393f [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2770 (005b2770) at 005b289f [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_initializeAudioFrame_FUN_005b2dd0 (005b2dd0) at 005b2eac [UNCONDITIONAL_CALL]
+//   core_sound.cpp_processTrainSounds_FUN_005b2770 (005b2770) at 005b289f [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_00650858
 //   TerminatedCString s_setNextSfxChannel_invali_0065086d

@@ -335,6 +335,8 @@ const TerminatedCString s_castle_00652506 = "castle";
 const TerminatedCString s_d_d_n_0065255a = "[%d,%d]%n";
 const TerminatedCString s_core_sound_cpp_00652564 = "..\\core\\sound.cpp";
 const TerminatedCString s_Invalid_sfx_string_s_00652576 = "Invalid sfx string: %s";
+const TerminatedCString s_anon_0065258d = "?";
+const TerminatedCString s_anon_0065258f = "?";
 const TerminatedCString s_wav_00652591 = ".wav";
 const TerminatedCString s_Can_t_find_wav_s_00652596 = "Can't find wav: %s\n";
 const TerminatedCString s_core_sound_cpp_006525aa = "..\\core\\sound.cpp";
@@ -365,7 +367,7 @@ const TerminatedCString s_int_00652718 = "int";
 const TerminatedCString s_trainext_wav_0065271c = "trainext.wav";
 const TerminatedCString s_railnoiz_wav_00652729 = "railnoiz.wav";
 const TerminatedCString s_rail_s_wav_00652736 = "rail?%s.wav";
-const TerminatedCString s_mp_wav_00652744 = "mp?.wav";
+const TerminatedCString s_bump_wav_00652742 = "bump?.wav";
 const TerminatedCString s_s_g_0065274c = "%s @ %g";
 const TerminatedCString s_wind_ctl_wav_0065277e = "wind-ctl.wav";
 const TerminatedCString s_NDUN_0065278b = "NDUN";
@@ -2143,8 +2145,6 @@ const float FLOAT_0065e9bc = 0.00390625f;
 const float FLOAT_0065eed0 = 256f;
 
 // undefined1 constants
-const undefined1 DAT_00652742 = {0x30};
-const undefined1 DAT_00652743 = {0x30};
 const undefined1 DAT_00658bf4 = {0x30};
 const undefined1 DAT_00658c04 = {0x30};
 const undefined1 DAT_00658c08 = {0x30};

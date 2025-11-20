@@ -1,35 +1,39 @@
-// Name: core_sound.cpp_CSound_FUN_005b3b30
+// Name: core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30
 // Address: 005b3b30
 // Address Range: [[005b3b30, 005b3b71]]
 // Convention: __cdecl
-// Signature: int core_sound.cpp_CSound_FUN_005b3b30(CSound * this_ptr, char * actor_name, char * sound_name)
+// Signature: uint core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker, float delay)
 // Cross-references:
 //   core_actor.cpp_CDemonActor_playAmbientSoundWithVolume_FUN_00408fd0 (00408fd0) at 00408fea [UNCONDITIONAL_CALL]
 // Function calls:
-//   core_sound.cpp_FUN_005b1fd0
+//   core_sound.cpp_playSfxInternal_FUN_005b1fd0
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40
 
 #include "nocturne.h"
 
-int __cdecl core_sound_cpp_CSound_FUN_005b3b30(CSound *this_ptr,char *actor_name,char *sound_name)
+uint __cdecl
+core_sound_cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30
+          (CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position_tracker,
+          float delay)
 
 {
-  int iVar1;
-  float in_stack_00000018;
+  uint uVar1;
+  CVector3f *in_stack_00000018;
   
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-  sound_sndmain_cpp_setNextSfxDelay_FUN_005a8b40((double)in_stack_00000018);
-  iVar1 = core_sound_cpp_FUN_005b1fd0();
+  sound_sndmain_cpp_setNextSfxDelay_FUN_005a8b40((double)(float)in_stack_00000018);
+  uVar1 = core_sound_cpp_playSfxInternal_FUN_005b1fd0
+                    (position_tracker,(char *)delay,0.0,0.0,0.0,in_stack_00000018,0);
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
-  return iVar1;
+  return uVar1;
 }
 
 
 // Assembly code:
 // 005b3b30: PUSH EBX
-//   Label: core_sound.cpp_CSound_FUN_005b3b30
+//   Label: core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30
 // 005b3b31: CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   XREF to: 005a8c30 (UNCONDITIONAL_CALL)
 // 005b3b36: FLD float ptr [ESP + 0x18]
@@ -53,7 +57,7 @@ int __cdecl core_sound_cpp_CSound_FUN_005b3b30(CSound *this_ptr,char *actor_name
 // 005b3b5a: MOV EBX,dword ptr [ESP + 0x24]
 //   XREF to: Stack[0x8] (READ)
 // 005b3b5e: PUSH EBX
-// 005b3b5f: CALL core_sound.cpp_FUN_005b1fd0
+// 005b3b5f: CALL core_sound.cpp_playSfxInternal_FUN_005b1fd0
 //   XREF to: 005b1fd0 (UNCONDITIONAL_CALL)
 // 005b3b64: ADD ESP,0x1c
 // 005b3b67: MOV EBX,EAX

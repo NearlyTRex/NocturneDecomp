@@ -18,7 +18,7 @@
 
 void core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
                (undefined4 param_1,undefined4 param_2,float unaff_EBX,undefined4 param_4,
-               char *param_5,undefined4 param_6,int param_7)
+               CDemonActor *param_5,float param_6,int param_7)
 
 {
   CEventList *this_ptr;
@@ -26,7 +26,7 @@ void core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
   CVector3f *pCVar2;
   int iVar3;
   BADSPACEBASE *in_ESP;
-  float fStack_78;
+  float in_stack_ffffff88;
   CVector3f local_58;
   float local_4c;
   CVector3f local_48;
@@ -40,14 +40,12 @@ void core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
   float fStack_10;
   
   fStack_10 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,20.0);
-  *(float *)(param_5 + 0x20) = fStack_10;
-  fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,*(float *)(param_5 + 0x34));
-  *(undefined4 *)(param_5 + 0x28) = param_6;
-  param_5[0x24] = '\x01';
-  param_5[0x25] = '\0';
-  param_5[0x26] = '\0';
-  param_5[0x27] = '\0';
-  *(float *)(param_5 + 0x2c) = fVar1;
+  fVar1 = (param_5->orient).bank;
+  (param_5->location).position.x = fStack_10;
+  fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,fVar1);
+  (param_5->location).position.z = param_6;
+  (param_5->location).position.y = 1.4013e-45;
+  (param_5->location).area_id = (int)fVar1;
   core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00499b40(&g_CDemonRaytraceInstance,&local_28);
   core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_00499b70(&g_CDemonRaytraceInstance,&local_48);
   fStack_10 = (float)_DAT_00657bf4;
@@ -57,15 +55,15 @@ void core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
   local_4c = local_1c;
   local_14 = local_48.z - local_1c;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-            ((CMatrix3x3f *)&stack0xffffff7c,(CVector3f *)(param_5 + 0x14));
+            ((CMatrix3x3f *)&stack0xffffff7c,(CVector3f *)(param_5->actor_name + 0x14));
   local_58.x = 0.0;
   local_58.y = 0.0;
   local_58.z = unaff_EBX;
   pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                      ((CMatrix3x3f *)&stack0xffffff80,&local_28,&local_58);
-  local_30 = pCVar2->x + *(float *)(param_5 + 8);
-  local_2c = pCVar2->y + *(float *)(param_5 + 0xc);
-  local_28.x = pCVar2->z + *(float *)(param_5 + 0x10);
+  local_30 = pCVar2->x + *(float *)(param_5->actor_name + 8);
+  local_2c = pCVar2->y + *(float *)(param_5->actor_name + 0xc);
+  local_28.x = pCVar2->z + *(float *)(param_5->actor_name + 0x10);
   if (&local_58.y != &local_30) {
     local_58.y = local_30;
     local_58.z = local_2c;
@@ -75,17 +73,17 @@ void core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
     core_fire_cpp_CFireEffect_FUN_004c8f50(g_CFireEffectPtr);
   }
   this_ptr = g_CEventListPtr;
-  *(float *)(param_5 + 0x30) =
-       (float)g_CDemonCameraInstance.corona_blend_factor * (float)_DAT_00657bfc;
+  (param_5->orient).pitch = (float)g_CDemonCameraInstance.corona_blend_factor * (float)_DAT_00657bfc
+  ;
   iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (this_ptr,"BnoLightningFlash" + 1);
   if (iVar3 == 0) {
-    fStack_78 = fStack_78 + _DAT_00657c04;
-    if (1.0 < fStack_78) {
-      fStack_78 = 1.0;
+    in_stack_ffffff88 = in_stack_ffffff88 + _DAT_00657c04;
+    if (1.0 < in_stack_ffffff88) {
+      in_stack_ffffff88 = 1.0;
     }
-    core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(&g_CDemonCameraInstance,fStack_78)
-    ;
+    core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
+              (&g_CDemonCameraInstance,in_stack_ffffff88);
     if (param_7 == 0) {
       return;
     }
@@ -93,7 +91,8 @@ void core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
   else if (param_7 == 0) {
     return;
   }
-  core_sound_cpp_CSound_FUN_005b3a40(g_CSoundPtr,param_5,"light?.wav");
+  core_sound_cpp_CSound_playActorSound_FUN_005b3a40
+            (g_CSoundPtr,param_5,"light?.wav",&local_48);
   return;
 }
 

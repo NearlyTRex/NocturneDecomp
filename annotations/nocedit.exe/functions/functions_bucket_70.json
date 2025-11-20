@@ -75222,9 +75222,10 @@
         "start":"005b26f0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_FUN_005b26f0",
-    "ret":"undefined1",
+    "name":"core_sound.cpp_resetTrainSounds_FUN_005b26f0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -75275,10 +75276,7 @@
           },
           "type":"undefined4"
         }
-      ],
-      "ret_storage":{
-        "invalid":true
-      }
+      ]
     }
   },
   {
@@ -75290,9 +75288,10 @@
         "start":"005b2770"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_FUN_005b2770",
-    "ret":"undefined1",
+    "name":"core_sound.cpp_processTrainSounds_FUN_005b2770",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -75647,10 +75646,7 @@
           },
           "type":"undefined8"
         }
-      ],
-      "ret_storage":{
-        "invalid":true
-      }
+      ]
     }
   },
   {
@@ -75750,8 +75746,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_FUN_005b3a70",
-    "ret":"void",
+    "name":"core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70",
+    "ret":"uint",
     "vars":{
       "params":[
         {
@@ -75771,7 +75767,7 @@
           "type":"CSound*"
         },
         {
-          "name":"actor_name",
+          "name":"actor",
           "storage":{
             "offset":8,
             "size":4,
@@ -75784,7 +75780,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"CDemonActor*"
         },
         {
           "name":"sound_name",
@@ -75801,8 +75797,34 @@
             ]
           },
           "type":"char*"
+        },
+        {
+          "name":"position_tracker",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {

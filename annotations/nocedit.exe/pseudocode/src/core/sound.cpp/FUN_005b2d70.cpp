@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_sound.cpp_FUN_005b2d70()
 // Globals:
-//   undefined4 DAT_03f6b7b0
+//   float g_SoundVolumeMultiplier
 // Function calls:
 //   sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20
 //   sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90
@@ -12,8 +12,6 @@
 //   sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_sound_cpp_FUN_005b2d70(void)
 
@@ -25,7 +23,7 @@ void core_sound_cpp_FUN_005b2d70(void)
   if (iVar1 != 0) {
     sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(3,1);
     fVar2 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(0);
-    sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(3,fVar2 * _DAT_03f6b7b0);
+    sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(3,fVar2 * g_SoundVolumeMultiplier);
     return;
   }
   sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(3,0);

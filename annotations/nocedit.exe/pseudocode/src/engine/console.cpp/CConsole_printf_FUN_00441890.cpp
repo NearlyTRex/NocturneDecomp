@@ -63,7 +63,7 @@
 //   core_setutil.cpp_C3DSCamera_apply_FUN_00585870 (00585870) at 00585962 [UNCONDITIONAL_CALL]
 //   core_shovel.cpp_fire_FUN_00588c20 (00588c20) at 00588c31 [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a2800 (005a2800) at 005a2b79 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b241f [UNCONDITIONAL_CALL]
+//   core_sound.cpp_playSfxInternal_FUN_005b1fd0 (005b1fd0) at 005b241f [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bd722 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c1680 (005c1680) at 005c1e8b [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c1fe0 (005c1fe0) at 005c23df [UNCONDITIONAL_CALL]

@@ -1,8 +1,8 @@
-// Name: core_sound.cpp_FUN_005b2770
+// Name: core_sound.cpp_processTrainSounds_FUN_005b2770
 // Address: 005b2770
 // Address Range: [[005b2770, 005b2c93]]
-// Convention: unknown
-// Signature: undefined core_sound.cpp_FUN_005b2770()
+// Convention: __cdecl
+// Signature: void core_sound.cpp_processTrainSounds_FUN_005b2770(void)
 // Globals:
 //   void* switchdataD_005b275c = 005b2afa
 //   TerminatedCString s_x_0065270a
@@ -13,9 +13,9 @@
 //   TerminatedCString s_trainext_wav_0065271c
 //   TerminatedCString s_railnoiz_wav_00652729
 //   TerminatedCString s_rail_s_wav_00652736
-//   undefined1 DAT_00652742
-//   undefined1 DAT_00652743
-//   TerminatedCString s_mp_wav_00652744
+//   TerminatedCString s_bump_wav_00652742
+//   undefined4 s_ump?.wav_00652743
+//   undefined4 s_mp_wav_00652744
 //   undefined4 s_p?.wav_00652745
 //   TerminatedCString s_s_g_0065274c
 //   float FLOAT_00652756 = 20
@@ -25,38 +25,38 @@
 //   double DOUBLE_00652776 = 510
 //   CGame* g_CGamePtr = 02d81a9c
 //   CDemonSet* g_CDemonSetPtr = 03114278
-//   void* PTR_s_int_00681ef0 = 00652706
-//   void* PTR_s_x_00681ef4 = 0065270a
+//   char* PTR_s_int_00681ef0 = 00652706
+//   char* PTR_s_x_00681ef4 = 0065270a
 //   CSound* g_CSoundPtr = 03f6af64
-//   undefined4 DAT_00682118
+//   char[108] g_TrainSoundFilenameTemplate
 //   undefined4 DAT_0068211c
 //   undefined4 g_CGameInstance.block_auto_save
 //   undefined4 g_CGameInstance.delta_time_float
 //   CDemonSet g_CDemonSetInstance
 //   undefined4 g_CDemonSetInstance.selected_camera_index
 //   CSound g_CSoundInstance
-//   undefined4 DAT_03f6af70
-//   undefined4 DAT_03f6af74
-//   undefined4 DAT_03f6af78
-//   STrainNoise[10] STrainNoise_ARRAY_03f6b7bc
-//   undefined4 STrainNoise_ARRAY_03f6b7bc[0].field0_0x0[4]
-//   undefined4 STrainNoise_ARRAY_03f6b7bc[0].field0_0x0[8]
+//   CVector3f g_SoundListenerPrev
+//   undefined4 g_SoundListenerPrev.y
+//   undefined4 g_SoundListenerPrev.z
+//   STrainNoise[10] g_TrainNoiseArray
+//   undefined4 g_TrainNoiseArray[0].position.y
+//   undefined4 g_TrainNoiseArray[0].position.z
 //   undefined4 DAT_03f6b7c8
 //   undefined4 DAT_03f6b7cc
 //   undefined4 DAT_03f6b7d8
-//   undefined4 DAT_03f6b85c
-//   undefined4 DAT_03f6b860
-//   undefined4 DAT_03f6b864
-//   undefined4 DAT_03f6b868
-//   undefined4 DAT_03f6b86c
-//   undefined4 DAT_03f6b870
-//   undefined4 DAT_03f6b874
+//   CVector3f g_TrainVelocityVector
+//   undefined4 g_TrainVelocityVector.y
+//   undefined4 g_TrainVelocityVector.z
+//   float g_TrainNoiseCooldown
+//   int g_TrainLastCameraIndex
+//   uint g_TrainRailNoiseHandle
+//   uint g_TrainExteriorAmbientHandle
 // Function calls:
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_setcolid.cpp_CDemonSet_disableIgnore_FUN_00574210
 //   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
 //   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00572460
-//   core_sound.cpp_CSound_FUN_005b3a70
+//   core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   crt_stdlib.c_rand_FUN_005feb5c
 //   crt_string.c_stricmp_FUN_005fe7f0
@@ -73,34 +73,33 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x005b2c28) */
-/* WARNING: Removing unreachable block (ram,0x005b2c71) */
-/* WARNING: Removing unreachable block (ram,0x005b2c73) */
-/* WARNING: Removing unreachable block (ram,0x005b2c8d) */
-/* WARNING: Removing unreachable block (ram,0x005b2be7) */
-/* WARNING: Removing unreachable block (ram,0x005b2c0a) */
-/* WARNING: Removing unreachable block (ram,0x005b2c12) */
-/* WARNING: Removing unreachable block (ram,0x005b2c22) */
-/* WARNING: Removing unreachable block (ram,0x005b2afa) */
-/* WARNING: Removing unreachable block (ram,0x005b2b2b) */
-/* WARNING: Recovered jumptable eliminated as dead code */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-ushort core_sound_cpp_FUN_005b2770(void)
+void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
 
 {
-  float fVar1;
+  char cVar1;
   float fVar2;
   float fVar3;
   STrainNoise *pSVar4;
   int iVar5;
   int iVar6;
-  STrainNoise *pSVar7;
+  uint uVar7;
+  STrainNoise *pSVar8;
   BADSPACEBASE *in_ESP;
+  char *pcVar9;
+  char *pcVar10;
+  undefined4 *puVar11;
+  byte bVar12;
+  int iStack00000030;
   STrainNoise *in_stack_00000034;
-  float in_stack_00000038;
+  undefined4 *in_stack_00000038;
+  float fStack0000003c;
+  float fStack00000044;
+  CVector3f *in_stack_0000004c;
+  int in_stack_00000050;
   float in_stack_ffffff1c;
   float in_stack_ffffff28;
+  char local_50 [4];
+  char local_4c [4];
   CVector3f local_48;
   CVector3f local_3c;
   undefined4 local_30;
@@ -108,20 +107,21 @@ ushort core_sound_cpp_FUN_005b2770(void)
   undefined4 local_28;
   float local_18;
   
+  bVar12 = 0;
   local_18 = g_CGamePtr->delta_time_float;
   if (g_CGamePtr->block_auto_save == 0) {
-    if (DAT_03f6b86c != g_CDemonSetPtr->selected_camera_index) {
+    if (g_TrainLastCameraIndex != g_CDemonSetPtr->selected_camera_index) {
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_disableIgnore_FUN_00574210(g_CDemonSetPtr);
-      local_48.x = DAT_03f6af70;
-      local_48.y = DAT_03f6af74;
-      local_48.z = DAT_03f6af78;
+      local_48.x = g_SoundListenerPrev.x;
+      local_48.y = g_SoundListenerPrev.y;
+      local_48.z = g_SoundListenerPrev.z;
       local_30 = 0;
-      local_3c.x = DAT_03f6af70;
+      local_3c.x = g_SoundListenerPrev.x;
       local_2c = 0x41a00000;
-      local_3c.z = DAT_03f6af78;
+      local_3c.z = g_SoundListenerPrev.z;
       local_28 = 0;
-      local_3c.y = DAT_03f6af74 + FLOAT_00652756;
+      local_3c.y = g_SoundListenerPrev.y + FLOAT_00652756;
       iVar5 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00572460
                         (g_CDemonSetPtr,&local_48,&local_3c);
       if (iVar5 == 0) {
@@ -131,82 +131,129 @@ ushort core_sound_cpp_FUN_005b2770(void)
         PTR_s_int_00681ef0 = "int";
       }
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
-      DAT_03f6b86c = g_CDemonSetPtr->selected_camera_index;
+      g_TrainLastCameraIndex = g_CDemonSetPtr->selected_camera_index;
     }
   }
   else {
     PTR_s_int_00681ef0 = "ext";
-    DAT_03f6b86c = -1;
+    g_TrainLastCameraIndex = -1;
   }
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
   sound_sndmain_cpp_setNextSfxFlags_FUN_005a8b70(1);
   sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(3);
-  iVar5 = crt_string_c_stricmp_FUN_005fe7f0((char *)PTR_s_int_00681ef0,"int");
+  iVar5 = crt_string_c_stricmp_FUN_005fe7f0(PTR_s_int_00681ef0,"int");
   if (iVar5 == 0) {
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(DAT_03f6b874);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(g_TrainExteriorAmbientHandle);
   }
   else {
-    iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(DAT_03f6b874);
+    iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(g_TrainExteriorAmbientHandle);
     if (iVar5 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(0.4);
-      DAT_03f6b874 = sound_sndmain_cpp_startSfx_FUN_005a8e90("trainext.wav");
+      g_TrainExteriorAmbientHandle =
+           sound_sndmain_cpp_startSfx_FUN_005a8e90("trainext.wav");
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     }
   }
-  iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(DAT_03f6b870);
+  iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(g_TrainRailNoiseHandle);
   if (iVar5 == 0) {
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
     sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(in_stack_ffffff1c * (float)DOUBLE_0065275e);
-    DAT_03f6b870 = sound_sndmain_cpp_startSfx_FUN_005a8e90("railnoiz.wav");
+    g_TrainRailNoiseHandle = sound_sndmain_cpp_startSfx_FUN_005a8e90("railnoiz.wav");
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   }
   else {
-    iVar5 = crt_string_c_stricmp_FUN_005fe7f0((char *)PTR_s_x_00681ef4,(char *)PTR_s_int_00681ef0);
+    iVar5 = crt_string_c_stricmp_FUN_005fe7f0(PTR_s_x_00681ef4,PTR_s_int_00681ef0);
     if (iVar5 != 0) {
       sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0
-                (DAT_03f6b870,in_stack_ffffff28 * (float)DOUBLE_0065275e);
+                (g_TrainRailNoiseHandle,in_stack_ffffff28 * (float)DOUBLE_0065275e);
     }
   }
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
-  pSVar7 = STrainNoise_ARRAY_03f6b7bc;
+  pSVar8 = g_TrainNoiseArray;
   iVar5 = 0;
   PTR_s_x_00681ef4 = PTR_s_int_00681ef0;
-  _DAT_03f6b85c = 0.0;
-  _DAT_03f6b860 = 0.0;
-  _DAT_03f6b864 = 30.0;
+  g_TrainVelocityVector.x = 0.0;
+  g_TrainVelocityVector.y = 0.0;
+  iStack00000030 = 0;
+  g_TrainVelocityVector.z = 30.0;
   do {
-    iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
-                      (*(uint *)(STrainNoise_ARRAY_03f6b7bc[iVar5].field0_0x0 + 0xc));
-    pSVar4 = pSVar7;
+    iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(g_TrainNoiseArray[iVar5].sound_handle);
+    pSVar4 = pSVar8;
     if (iVar6 != 0) {
-      fVar2 = _DAT_03f6b860 * in_stack_00000038;
-      fVar3 = _DAT_03f6b864 * in_stack_00000038;
-      fVar1 = *(float *)(pSVar7->field0_0x0 + 4);
-      *(float *)pSVar7->field0_0x0 =
-           *(float *)pSVar7->field0_0x0 + _DAT_03f6b85c * in_stack_00000038;
-      *(float *)(pSVar7->field0_0x0 + 4) = fVar1 + fVar2;
-      *(float *)(pSVar7->field0_0x0 + 8) = *(float *)(pSVar7->field0_0x0 + 8) + fVar3;
+      fVar2 = g_TrainVelocityVector.y * (float)in_stack_00000038;
+      fVar3 = g_TrainVelocityVector.z * (float)in_stack_00000038;
+      (pSVar8->position).x =
+           (pSVar8->position).x + g_TrainVelocityVector.x * (float)in_stack_00000038;
+      (pSVar8->position).y = (pSVar8->position).y + fVar2;
+      (pSVar8->position).z = (pSVar8->position).z + fVar3;
       pSVar4 = in_stack_00000034;
-      if ((float)DOUBLE_00652776 < ABS(*(float *)(STrainNoise_ARRAY_03f6b7bc[iVar5].field0_0x0 + 8))
-         ) {
-        sound_sndmain_cpp_killSfx_FUN_005a9c40
-                  (*(uint *)(STrainNoise_ARRAY_03f6b7bc[iVar5].field0_0x0 + 0xc));
+      if ((float)DOUBLE_00652776 < ABS(g_TrainNoiseArray[iVar5].position.z)) {
+        sound_sndmain_cpp_killSfx_FUN_005a9c40(g_TrainNoiseArray[iVar5].sound_handle);
       }
     }
     in_stack_00000034 = pSVar4;
     iVar5 = iVar5 + 1;
-    pSVar7 = pSVar7 + 1;
+    pSVar8 = pSVar8 + 1;
   } while (iVar5 < 10);
-  _DAT_03f6b868 = _DAT_03f6b868 - (float)in_stack_00000034;
-  return (ushort)(0.0 < _DAT_03f6b868) << 8 | (ushort)NAN(_DAT_03f6b868) << 10 |
-         (ushort)(_DAT_03f6b868 == 0.0) << 0xe;
+  g_TrainNoiseCooldown = g_TrainNoiseCooldown - (float)in_stack_00000034;
+  if ((g_TrainNoiseCooldown <= 0.0) && (iStack00000030 != 0)) {
+    g_TrainNoiseCooldown = core_actor_cpp_getRandomFloat_FUN_0040cc10(1.0,5.0);
+    iStack00000030 = 0x41a00000;
+    pcVar10 = g_TrainSoundFilenameTemplate;
+    puVar11 = (undefined4 *)&stack0xffffff34;
+    for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
+      *puVar11 = *(undefined4 *)pcVar10;
+      pcVar10 = pcVar10 + ((uint)bVar12 * -2 + 1) * 4;
+      puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
+    }
+    fStack0000003c = g_TrainNoiseCooldown;
+    iVar5 = crt_stdlib_c_rand_FUN_005feb5c();
+    switch(iVar5 % 5) {
+    case 0:
+    case 1:
+      crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff3c,"rail?%s.wav",PTR_s_int_00681ef0);
+      break;
+    case 2:
+    case 3:
+      pcVar10 = &stack0xffffff3c;
+      pcVar9 = "bump?.wav";
+      do {
+        cVar1 = *pcVar9;
+        *pcVar10 = cVar1;
+        if (cVar1 == '\0') break;
+        cVar1 = pcVar9[1];
+        pcVar9 = pcVar9 + 2;
+        pcVar10[1] = cVar1;
+        pcVar10 = pcVar10 + 2;
+      } while (cVar1 != '\0');
+      break;
+    case 4:
+      goto switchD_005b2c8d_caseD_4;
+    }
+    *in_stack_00000038 = 0;
+    fStack00000044 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.0,2.0);
+    fVar2 = fStack00000044 * (float)in_stack_00000038 + g_SoundListenerPrev.z;
+    *(undefined4 *)((int)fStack0000003c + 4) = 0;
+    *(float *)((int)fStack0000003c + 8) = fVar2;
+    sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
+    sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(3);
+    sound_sndmain_cpp_setNextSfxTrackedVelocity_FUN_005a8a00(&g_TrainVelocityVector);
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_50,"%s @ %g");
+    uVar7 = core_sound_cpp_CSound_playTrackedActorSound_FUN_005b3a70
+                      (g_CSoundPtr,(CDemonActor *)0x0,local_4c,in_stack_0000004c);
+    *(uint *)(in_stack_00000050 + 0xc) = uVar7;
+    sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
+    return;
+  }
+switchD_005b2c8d_caseD_4:
+  return;
 }
 
 
 // Assembly code:
 // 005b2770: PUSH EBX
-//   Label: core_sound.cpp_FUN_005b2770
+//   Label: core_sound.cpp_processTrainSounds_FUN_005b2770
 // 005b2771: PUSH ESI
 // 005b2772: PUSH EDI
 // 005b2773: PUSH EBP
@@ -659,7 +706,7 @@ ushort core_sound_cpp_FUN_005b2770(void)
 //   XREF to: 03f6af64 (PARAM)
 // 005b2bc8: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 005b2bc9: CALL core_sound.cpp_CSound_FUN_005b3a70
+// 005b2bc9: CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70
 //   XREF to: 005b3a70 (UNCONDITIONAL_CALL)
 // 005b2bce: ADD ESP,0x10
 // 005b2bd1: MOV EDX,dword ptr [ESP + 0x104]

@@ -23,7 +23,7 @@
 //   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 //   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 //   core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
-//   core_sound.cpp_CSound_FUN_005b3b80
+//   core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
 //   crt_math.c_floor_FUN_005feb90
 //   crt_math.c_round_FUN_005fe6b0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
@@ -105,7 +105,8 @@ void core_boxactor_cpp_CBoxActor_process_FUN_004219e0(void)
   cVar5 = *(char *)&in_stack_00000004[2].location.position.y;
   (in_stack_00000004->orient).bank = fVar8;
   if (cVar5 != '\0') {
-    core_sound_cpp_CSound_FUN_005b3b80(g_CSoundPtr);
+    core_sound_cpp_CSound_isSfxPlaying_FUN_005b3b80
+              (g_CSoundPtr,(uint)in_stack_00000004[2].orient_matrix.m[1].y);
     if (extraout_EAX_00 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       in_stack_00000008 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
@@ -292,7 +293,7 @@ void core_boxactor_cpp_CBoxActor_process_FUN_004219e0(void)
 //   XREF to: 00681ef8 (READ)
 // 00421bb1: PUSH ESI
 //   XREF to: 03f6af64 (DATA)
-// 00421bb2: CALL core_sound.cpp_CSound_FUN_005b3b80
+// 00421bb2: CALL core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
 //   XREF to: 005b3b80 (UNCONDITIONAL_CALL)
 // 00421bb7: ADD ESP,0x8
 // 00421bba: TEST EAX,EAX

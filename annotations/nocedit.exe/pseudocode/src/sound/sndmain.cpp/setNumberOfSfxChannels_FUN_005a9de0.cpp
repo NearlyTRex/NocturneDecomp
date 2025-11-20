@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_setNumberOfSfxChannels_FUN_005a9de0(int channel_count)
 // Cross-references:
-//   core_sound.cpp_CSound_FUN_005b2ce0 (005b2ce0) at 005b2ced [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_ctor_FUN_005b2ce0 (005b2ce0) at 005b2ced [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_sndmain_cpp_00650a74
 //   TerminatedCString s_setNumberOfSfxChannels_t_00650a89

@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0(double x_velocity, double y_velocity, double z_velocity)
 // Cross-references:
-//   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2e05 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b392b [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_initializeAudioFrame_FUN_005b2dd0 (005b2dd0) at 005b2e05 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00 (005aae00) at 005aae86 [UNCONDITIONAL_CALL]
 // Globals:
 //   CVector3d g_Cached3DListenerVelocity

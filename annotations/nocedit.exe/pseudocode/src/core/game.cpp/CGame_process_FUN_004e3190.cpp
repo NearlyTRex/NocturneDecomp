@@ -66,7 +66,7 @@
 //   core_set.cpp_CDemonSet_FUN_0056b810
 //   core_set.cpp_CDemonSet_process_FUN_0056f940
 //   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
-//   core_sound.cpp_CSound_FUN_005b2dd0
+//   core_sound.cpp_CSound_initializeAudioFrame_FUN_005b2dd0
 //   core_terrain.cpp_CTerrain_process_FUN_005e2050
 //   core_water.cpp_CWater_process_FUN_005e9ed0
 //   core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0
@@ -128,7 +128,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
   if (this_ptr->cutscene_skippable != 0) {
     if (this_ptr->letterbox_mode == 0) {
       this_ptr->cutscene_skippable = 0;
-      core_sound_cpp_CSound_FUN_005b2dd0(this_ptr_00);
+      core_sound_cpp_CSound_initializeAudioFrame_FUN_005b2dd0(this_ptr_00);
       core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
                 (g_CDemonSetPtr,(CDemonActor *)g_CScriptPtr->focusActor,2);
       core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr,in_stack_00000014);
@@ -772,7 +772,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
 // 004e365b: PUSH EDX
 //   XREF to: 03f6af64 (DATA)
 // 004e365c: MOV dword ptr [EBX + 0xcc],EAX
-// 004e3662: CALL core_sound.cpp_CSound_FUN_005b2dd0
+// 004e3662: CALL core_sound.cpp_CSound_initializeAudioFrame_FUN_005b2dd0
 //   XREF to: 005b2dd0 (UNCONDITIONAL_CALL)
 // 004e3667: ADD ESP,0x4
 // 004e366a: MOV EAX,[0x00680d50]

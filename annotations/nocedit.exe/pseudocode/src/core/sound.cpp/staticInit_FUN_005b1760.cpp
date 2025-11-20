@@ -7,10 +7,10 @@
 //   WatcomTypeInfo g_STrainNoiseTypeInfo
 //   WatcomStaticDestructorNode DAT_00681ed0
 //   CSound g_CSoundInstance
-//   CStrList CStrList_03f6b128
-//   STrainNoise[10] STrainNoise_ARRAY_03f6b7bc
+//   CStrList g_SoundFileList
+//   STrainNoise[10] g_TrainNoiseArray
 // Function calls:
-//   core_sound.cpp_CSound_FUN_005b2ce0
+//   core_sound.cpp_CSound_ctor_FUN_005b2ce0
 //   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
 //   crt_stdlib.c_atexit_FUN_005ff060
 //   shape_edittool.cpp_CStrList_ctor_FUN_004a2a20
@@ -20,11 +20,11 @@
 void __cdecl core_sound_cpp_staticInit_FUN_005b1760(void)
 
 {
-  core_sound_cpp_CSound_FUN_005b2ce0(&g_CSoundInstance);
-  shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&CStrList_03f6b128);
+  core_sound_cpp_CSound_ctor_FUN_005b2ce0(&g_CSoundInstance);
+  shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&g_SoundFileList);
   crt_stdlib_c_atexit_FUN_005ff060(&DAT_00681ed0);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (STrainNoise_ARRAY_03f6b7bc,10,&g_STrainNoiseTypeInfo);
+            (g_TrainNoiseArray,10,&g_STrainNoiseTypeInfo);
   return;
 }
 
@@ -33,7 +33,7 @@ void __cdecl core_sound_cpp_staticInit_FUN_005b1760(void)
 // 005b1760: PUSH 0x3f6af64
 //   Label: core_sound.cpp_staticInit_FUN_005b1760
 //   XREF to: 03f6af64 (DATA)
-// 005b1765: CALL core_sound.cpp_CSound_FUN_005b2ce0
+// 005b1765: CALL core_sound.cpp_CSound_ctor_FUN_005b2ce0
 //   XREF to: 005b2ce0 (UNCONDITIONAL_CALL)
 // 005b176a: ADD ESP,0x4
 // 005b176d: PUSH 0x3f6b128

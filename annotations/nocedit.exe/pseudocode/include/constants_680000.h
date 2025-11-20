@@ -183,6 +183,12 @@ const char*[9] g_DirectionCharacters = {
     0xEB, 0xEA, 0x63, 0x00
 };
 
+// char[104] constants
+const char[104] g_SoundResultBufferTemplate = "";
+
+// char[108] constants
+const char[108] g_TrainSoundFilenameTemplate = "";
+
 // char[128] constants
 const char[128] g_OSFontName = "";
 
@@ -283,10 +289,6 @@ const undefined4 DAT_00681864 = {0x30, 0x78, 0x37, 0x00};
 const undefined4 DAT_006819fc = {0x2D, 0x30, 0x78, 0x66};
 const undefined4 DAT_00681a00 = {0x30, 0x78, 0x30, 0x00};
 const undefined4 DAT_00681a04 = {0x2D, 0x30, 0x78, 0x66};
-const undefined4 DAT_006820b0 = {0x30, 0x78, 0x30, 0x00};
-const undefined4 DAT_006820b4 = {0x30, 0x78, 0x30, 0x00};
-const undefined4 DAT_00682118 = {0x30, 0x78, 0x30, 0x00};
-const undefined4 DAT_0068211c = {0x30, 0x78, 0x30, 0x00};
 const undefined4 DAT_006844f4 = {0x30, 0x78, 0x32, 0x30};
 const undefined4 DAT_00684ccc = {0x30, 0x78, 0x30, 0x00};
 const undefined4 DAT_00684cd0 = {0x30, 0x78, 0x31, 0x00};
@@ -456,32 +458,6 @@ const void* DAT_006817F8 = 0x006491B6;
 const void* DAT_00681B04 = 0x0065153F;
 const void* DAT_00681B08 = 0x00651541;
 const void* DAT_00681B0C = 0x00651542;
-const void* DAT_00681F1C = 0x00652861;
-const void* DAT_00681F2C = 0x0065286C;
-const void* DAT_00681F3C = 0x00652871;
-const void* DAT_00681F4C = 0x0065287A;
-const void* DAT_00681F5C = 0x00652885;
-const void* DAT_00681F6C = 0x0065288F;
-const void* DAT_00681F75 = 0x004088ED;
-const void* DAT_00681F7C = 0x0065289A;
-const void* DAT_00681F8C = 0x006528A6;
-const void* DAT_00681F9C = 0x006528AB;
-const void* DAT_00681FAC = 0x006528B1;
-const void* DAT_00681FBC = 0x006528B8;
-const void* DAT_00681FCC = 0x006528C8;
-const void* DAT_00681FDC = 0x006528D0;
-const void* DAT_00681FEC = 0x006528DE;
-const void* DAT_00681FFC = 0x006528E4;
-const void* DAT_0068200C = 0x006528EB;
-const void* DAT_0068201C = 0x006528F0;
-const void* DAT_0068202C = 0x006528FA;
-const void* DAT_0068203C = 0x00652901;
-const void* DAT_0068204C = 0x00652907;
-const void* DAT_0068205C = 0x00652912;
-const void* DAT_0068206C = 0x0065291C;
-const void* DAT_0068207C = 0x00652927;
-const void* DAT_0068208C = 0x0065292F;
-const void* DAT_0068209C = 0x00652935;
 const void* DAT_00684128 = 0x00652EE7;
 const void* DAT_00684130 = 0x00652EEE;
 const void* DAT_00684140 = 0x00652F06;

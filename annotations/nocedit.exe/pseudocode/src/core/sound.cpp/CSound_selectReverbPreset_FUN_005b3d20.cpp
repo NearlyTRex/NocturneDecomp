@@ -1,15 +1,15 @@
-// Name: core_sound.cpp_CSound_FUN_005b3d20
+// Name: core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20
 // Address: 005b3d20
 // Address Range: [[005b3d20, 005b3db8]]
 // Convention: __cdecl
-// Signature: int core_sound.cpp_CSound_FUN_005b3d20(CSound * this_ptr)
+// Signature: int core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20(CSound * this_ptr, char * title, int * selection_inout)
 // Cross-references:
 //   core_setedit.cpp_DementedFogEditor_FUN_00580730 (00580730) at 00580f40 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_OFF_00652855
 //   TerminatedCString s_GENERIC_00652859
-//   void* PTR_s_OFF_00681efc = 00652855
-//   void* PTR_s_GENERIC_00681f0c = 00652859
+//   SSoundModeEntry[27] g_SoundModeTable
+//   undefined4 PTR_s_GENERIC_00681f0c
 // Function calls:
 //   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 //   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -18,7 +18,9 @@
 
 #include "nocturne.h"
 
-int __cdecl core_sound_cpp_CSound_FUN_005b3d20(CSound *this_ptr)
+int __cdecl
+core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20
+          (CSound *this_ptr,char *title,int *selection_inout)
 
 {
   undefined4 *puVar1;
@@ -36,7 +38,7 @@ int __cdecl core_sound_cpp_CSound_FUN_005b3d20(CSound *this_ptr)
   iVar2 = 0;
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffc54);
   do {
-    puVar1 = (undefined4 *)((int)&PTR_s_OFF_00681efc + iVar2);
+    puVar1 = (undefined4 *)((int)&g_SoundModeTable[0].name + iVar2);
     iVar2 = iVar2 + 0x10;
     shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffc58,(char *)*puVar1);
   } while (iVar2 != 0x1b0);
@@ -58,7 +60,7 @@ int __cdecl core_sound_cpp_CSound_FUN_005b3d20(CSound *this_ptr)
 
 // Assembly code:
 // 005b3d20: PUSH EBX
-//   Label: core_sound.cpp_CSound_FUN_005b3d20
+//   Label: core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20
 // 005b3d21: SUB ESP,0x3a8
 // 005b3d27: MOV EAX,ESP
 // 005b3d29: PUSH EAX

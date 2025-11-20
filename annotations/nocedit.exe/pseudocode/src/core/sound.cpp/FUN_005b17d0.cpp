@@ -4,12 +4,12 @@
 // Convention: unknown
 // Signature: undefined core_sound.cpp_FUN_005b17d0()
 // Globals:
-//   CStrList CStrList_03f6b128
-//   undefined4 DAT_03f6b138
-//   undefined1 DAT_03f6b140
-//   undefined1 DAT_03f6b141
-//   undefined1 DAT_03f6b142
-//   undefined1 DAT_03f6b143
+//   CStrList g_SoundFileList
+//   int g_SoundMatchCount
+//   char[40][40] g_SoundMatchedFilenames
+//   undefined4 DAT_03f6b141
+//   undefined4 DAT_03f6b142
+//   undefined4 DAT_03f6b143
 // Function calls:
 //   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
 //   shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20
@@ -28,19 +28,19 @@ void core_sound_cpp_FUN_005b17d0(void)
   char *in_stack_00000004;
   
   index = 0;
-  DAT_03f6b138 = 0;
-  if (CStrList_03f6b128.item_count < 1) {
-    DAT_03f6b138 = 0;
+  g_SoundMatchCount = 0;
+  if (g_SoundFileList.item_count < 1) {
+    g_SoundMatchCount = 0;
     return;
   }
   do {
-    pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStrList_03f6b128,index);
+    pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&g_SoundFileList,index);
     iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
                       (in_stack_00000004,pcVar2,(int)unaff_EBP);
     if (iVar3 != 0) {
-      unaff_EBP = &CStrList_03f6b128;
-      pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStrList_03f6b128,index);
-      pcVar4 = &DAT_03f6b140 + DAT_03f6b138 * 0x28;
+      unaff_EBP = &g_SoundFileList;
+      pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&g_SoundFileList,index);
+      pcVar4 = g_SoundMatchedFilenames[g_SoundMatchCount];
       do {
         cVar1 = *pcVar2;
         *pcVar4 = cVar1;
@@ -50,13 +50,13 @@ void core_sound_cpp_FUN_005b17d0(void)
         pcVar4[1] = cVar1;
         pcVar4 = pcVar4 + 2;
       } while (cVar1 != '\0');
-      DAT_03f6b138 = DAT_03f6b138 + 1;
-      if (0x27 < DAT_03f6b138) {
+      g_SoundMatchCount = g_SoundMatchCount + 1;
+      if (0x27 < g_SoundMatchCount) {
         return;
       }
     }
     index = index + 1;
-    if (CStrList_03f6b128.item_count <= index) {
+    if (g_SoundFileList.item_count <= index) {
       return;
     }
   } while( true );

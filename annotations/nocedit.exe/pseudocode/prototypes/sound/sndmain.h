@@ -257,7 +257,7 @@ void setNextSfxBaseFrequency(float base_frequency);
 
 // Original: sound_sndmain.cpp_setNextSfxUserData_FUN_005a8aa0
 // Address: 005a8aa0
-void setNextSfxUserData(int userdata_index, int userdata_value);
+void setNextSfxUserData(int index, void * userdata);
 
 // Original: sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0
 // Address: 005a8af0

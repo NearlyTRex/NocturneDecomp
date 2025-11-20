@@ -5,8 +5,8 @@
 // Signature: void sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20(int channel_index, int enable_state)
 // Cross-references:
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512841 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2e76 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b3231 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_initializeAudioFrame_FUN_005b2dd0 (005b2dd0) at 005b2e76 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b2d70 (005b2d70) at 005b2d85 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005ac18e [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00 (005aae00) at 005aae14 [UNCONDITIONAL_CALL]

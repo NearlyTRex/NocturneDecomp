@@ -6,21 +6,19 @@
 // Cross-references:
 //   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ab545 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_03f6b7b4
-//   undefined4 DAT_03f6b7b8
+//   float FLOAT_03f6b7b4
+//   float FLOAT_03f6b7b8
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_sound_cpp_CSound_FUN_005b3dc0(CSound *this_ptr)
 
 {
-  undefined4 in_stack_00000008;
-  undefined4 in_stack_0000000c;
+  float in_stack_00000008;
+  float in_stack_0000000c;
   
-  _DAT_03f6b7b4 = in_stack_00000008;
-  _DAT_03f6b7b8 = in_stack_0000000c;
+  FLOAT_03f6b7b4 = in_stack_00000008;
+  FLOAT_03f6b7b8 = in_stack_0000000c;
   return;
 }
 

@@ -45,14 +45,16 @@ core_fire_cpp_CShell_onCollision_FUN_004c6380(CShell *this_ptr,CVector3f *collis
       iVar3 = crt_string_c_stricmp_FUN_005fe7f0
                         (*(char **)(this_ptr->field1_0x38 + 0x1c),"shell.kfm");
       if (iVar3 == 0) {
-        core_sound_cpp_CSound_FUN_005b3a40
-                  (g_CSoundPtr,(char *)g_CFireEffectPtr,"sh-sh?c @ .15");
+        core_sound_cpp_CSound_playActorSound_FUN_005b3a40
+                  (g_CSoundPtr,(CDemonActor *)g_CFireEffectPtr,"sh-sh?c @ .15",
+                   (CVector3f *)this_ptr);
         *(undefined4 *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX;
         *(int *)(this_ptr->field1_0x38 + 0x18) = *(int *)(this_ptr->field1_0x38 + 0x18) + 1;
         return 0;
       }
-      core_sound_cpp_CSound_FUN_005b3a40
-                (g_CSoundPtr,(char *)g_CFireEffectPtr,"44-sh?c @ .2");
+      core_sound_cpp_CSound_playActorSound_FUN_005b3a40
+                (g_CSoundPtr,(CDemonActor *)g_CFireEffectPtr,"44-sh?c @ .2",
+                 (CVector3f *)this_ptr);
       *(undefined4 *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX_00;
       *(int *)(this_ptr->field1_0x38 + 0x18) = *(int *)(this_ptr->field1_0x38 + 0x18) + 1;
       return 0;

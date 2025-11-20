@@ -1,8 +1,8 @@
-// Name: core_sound.cpp_CSound_FUN_005b2ce0
+// Name: core_sound.cpp_CSound_ctor_FUN_005b2ce0
 // Address: 005b2ce0
 // Address Range: [[005b2ce0, 005b2cfd]]
 // Convention: __cdecl
-// Signature: CSound * core_sound.cpp_CSound_FUN_005b2ce0(CSound * this_ptr)
+// Signature: CSound * core_sound.cpp_CSound_ctor_FUN_005b2ce0(CSound * this_ptr)
 // Cross-references:
 //   core_sound.cpp_staticInit_FUN_005b1760 (005b1760) at 005b1765 [UNCONDITIONAL_CALL]
 // Function calls:
@@ -11,7 +11,7 @@
 
 #include "nocturne.h"
 
-CSound * __cdecl core_sound_cpp_CSound_FUN_005b2ce0(CSound *this_ptr)
+CSound * __cdecl core_sound_cpp_CSound_ctor_FUN_005b2ce0(CSound *this_ptr)
 
 {
   this_ptr->field0_0x0 = 0x1400;
@@ -23,7 +23,7 @@ CSound * __cdecl core_sound_cpp_CSound_FUN_005b2ce0(CSound *this_ptr)
 
 // Assembly code:
 // 005b2ce0: PUSH EBX
-//   Label: core_sound.cpp_CSound_FUN_005b2ce0
+//   Label: core_sound.cpp_CSound_ctor_FUN_005b2ce0
 // 005b2ce1: MOV EBX,dword ptr [ESP + 0x8]
 //   XREF to: Stack[0x4] (READ)
 // 005b2ce5: PUSH 0x3

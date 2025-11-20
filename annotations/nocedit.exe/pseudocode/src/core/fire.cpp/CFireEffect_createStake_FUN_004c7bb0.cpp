@@ -18,7 +18,7 @@
 //   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 //   core_fire.cpp_CStake_init_FUN_004bfe20
 //   core_fire.cpp_CStake_spawn_FUN_004bfe90
-//   core_sound.cpp_CSound_FUN_005b3ae0
+//   core_sound.cpp_CSound_playActorSoundWithDelay_FUN_005b3ae0
 
 #include "nocturne.h"
 
@@ -71,8 +71,9 @@ core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0
                ,in_stack_ffffffac,in_stack_ffffffb0);
   }
   else {
-    core_sound_cpp_CSound_FUN_005b3ae0(g_CSoundPtr,(char *)orientation_angles,"a-wood?.wav")
-    ;
+    core_sound_cpp_CSound_playActorSoundWithDelay_FUN_005b3ae0
+              (g_CSoundPtr,(CDemonActor *)orientation_angles,"a-wood?.wav",
+               (CVector3f *)&local_14,0.23);
     core_fire_cpp_CStake_init_FUN_004bfe20
               (g_StakePool + g_StakeAllocIndex,(CVector3f *)&stack0xfffffff0,orientation_angles);
   }
@@ -221,7 +222,7 @@ switchD_004c7bca_caseD_6:
 //   XREF to: 00681ef8 (READ)
 // 004c7cb2: PUSH EDX
 //   XREF to: 03f6af64 (DATA)
-// 004c7cb3: CALL core_sound.cpp_CSound_FUN_005b3ae0
+// 004c7cb3: CALL core_sound.cpp_CSound_playActorSoundWithDelay_FUN_005b3ae0
 //   XREF to: 005b3ae0 (UNCONDITIONAL_CALL)
 // 004c7cb8: ADD ESP,0x14
 // 004c7cbb: PUSH EDI

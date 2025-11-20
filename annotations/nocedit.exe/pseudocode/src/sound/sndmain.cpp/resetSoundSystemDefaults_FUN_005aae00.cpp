@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00(void)
 // Cross-references:
-//   core_sound.cpp_CSound_FUN_005b2ce0 (005b2ce0) at 005b2cf5 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_ctor_FUN_005b2ce0 (005b2ce0) at 005b2cf5 [UNCONDITIONAL_CALL]
 // Function calls:
 //   sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20
 //   sound_sndmain.cpp_getCurrentRecordingDevice_FUN_005ab990

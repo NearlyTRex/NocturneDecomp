@@ -67514,7 +67514,7 @@
     "vars":{
       "params":[
         {
-          "name":"userdata_index",
+          "name":"index",
           "storage":{
             "offset":4,
             "size":4,
@@ -67530,7 +67530,7 @@
           "type":"int"
         },
         {
-          "name":"userdata_value",
+          "name":"userdata",
           "storage":{
             "offset":8,
             "size":4,
@@ -67543,7 +67543,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"void*"
         }
       ]
     }
@@ -69917,14 +69917,10 @@
         "start":"005b2ca0"
       }
     ],
+    "conv":"__watcallRegister",
     "importable":true,
-    "name":"core_sound.cpp_FUN_005b2ca0",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"core_sound.cpp_stopTrainSounds_FUN_005b2ca0",
+    "ret":"void"
   },
   {
     "addr":"005b39a0",
@@ -69992,7 +69988,7 @@
           "type":"CSound*"
         },
         {
-          "name":"n",
+          "name":"user_data",
           "storage":{
             "offset":8,
             "size":4,
@@ -70167,7 +70163,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_FUN_005b3d20",
+    "name":"core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20",
     "ret":"int",
     "vars":{
       "locals":[
@@ -70204,6 +70200,38 @@
             ]
           },
           "type":"CSound*"
+        },
+        {
+          "name":"title",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"selection_inout",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
         }
       ],
       "ret_storage":{

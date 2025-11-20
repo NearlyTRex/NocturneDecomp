@@ -39,7 +39,7 @@
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
 //   core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0
 //   core_ground.cpp_getGroundTypeCode_FUN_004eece0
-//   core_sound.cpp_CSound_FUN_005b3ae0
+//   core_sound.cpp_CSound_playActorSoundWithDelay_FUN_005b3ae0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 
 #include "nocturne.h"
@@ -61,7 +61,8 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c76a0(CFireEffect *this_ptr)
   CVector3f *in_stack_0000000c;
   undefined4 in_stack_00000010;
   CDemonActor *in_stack_00000014;
-  undefined4 auStack_50 [2];
+  char cVar8;
+  undefined4 in_stack_ffffffb0;
   char acStack_48 [4];
   char acStack_44 [36];
   float local_20;
@@ -125,8 +126,8 @@ LAB_004c7785:
     }
   }
   puVar5 = &DAT_0067aeb8;
-  puVar6 = auStack_50;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+  puVar6 = (undefined4 *)&stack0xffffffb0;
+  for (iVar2 = 0xc; cVar8 = (char)in_stack_ffffffb0, iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar6 = *puVar5;
     puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
     puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
@@ -179,12 +180,12 @@ LAB_004c7785:
       goto LAB_004c79a0;
     }
   }
-  if ((char)auStack_50[0] == '\0') {
+  if (cVar8 == '\0') {
     return;
   }
 LAB_004c79a0:
-  auStack_50[0] = 0x3e2e147b;
-  core_sound_cpp_CSound_FUN_005b3ae0(g_CSoundPtr,(char *)0x0,acStack_44);
+  core_sound_cpp_CSound_playActorSoundWithDelay_FUN_005b3ae0
+            (g_CSoundPtr,(CDemonActor *)0x0,acStack_44,in_stack_00000008,0.17);
   return;
 }
 
@@ -556,7 +557,7 @@ LAB_004c79a0:
 //   XREF to: 00681ef8 (READ)
 // 004c79b2: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 004c79b3: CALL core_sound.cpp_CSound_FUN_005b3ae0
+// 004c79b3: CALL core_sound.cpp_CSound_playActorSoundWithDelay_FUN_005b3ae0
 //   XREF to: 005b3ae0 (UNCONDITIONAL_CALL)
 // 004c79b8: ADD ESP,0x14
 // 004c79bb: MOV ESP,EBP

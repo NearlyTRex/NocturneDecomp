@@ -13,7 +13,7 @@
 // Function calls:
 //   core_chain.cpp_FUN_0042fcc0
 //   core_chain.cpp_FUN_0042fed0
-//   core_sound.cpp_CSound_FUN_005b3a70
+//   core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70
 //   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
@@ -26,292 +26,271 @@
 void core_chain_cpp_FUN_004300d0(void)
 
 {
-  uint sfx_handle;
-  char *pcVar1;
-  char *pcVar2;
-  undefined4 extraout_EAX;
-  undefined4 extraout_EAX_00;
+  int *piVar1;
+  int *piVar2;
   float *pfVar3;
-  BADSPACEBASE *in_ESP;
-  int iVar4;
+  undefined4 *puVar4;
   float *pfVar5;
-  char *in_stack_00000004;
+  CVector3f *pCVar6;
+  CDemonActor **ppCVar7;
+  CDemonActor *pCVar8;
+  BADSPACEBASE *in_ESP;
+  int iVar9;
+  COrientation *pCVar10;
+  float *unaff_retaddr;
+  CDemonActor *in_stack_00000004;
   float in_stack_00000008;
-  float local_f0;
-  float local_ec;
-  float local_d0;
-  float local_cc;
-  float local_c8;
-  float local_c4;
-  float local_c0;
-  float local_bc;
-  float local_b8;
-  float local_b4;
+  float fVar11;
+  float in_stack_ffffff3c;
   float local_b0;
-  float local_a0;
+  float local_ac;
+  float fStack_a8;
   float local_9c;
   float local_98;
   float local_94;
   float local_90;
-  float local_8c;
-  float local_88;
-  float local_84;
-  float local_80;
-  float local_7c;
   float local_78;
   float local_74;
+  float local_70;
+  float fStack_6c;
+  float fStack_68;
   float local_64;
   float local_60;
   float local_5c;
-  char *local_58;
-  int local_54;
-  int local_50;
-  char *local_4c;
-  char *local_48;
-  float local_44;
-  float *local_40;
-  int local_3c;
-  char *local_38;
-  char *local_34;
-  int local_30;
-  char *local_2c;
-  char *local_28;
-  char *local_24;
+  float local_58;
+  int local_48;
+  undefined4 local_44;
+  undefined4 local_40;
+  float local_3c;
+  CVector3f *local_38;
+  float local_34;
+  float *local_2c;
+  CDemonActor *local_28;
+  float local_24;
   char *local_20;
-  int local_1c;
-  undefined4 uStack_18;
+  undefined4 local_1c;
+  CVector3f *pCStack_18;
+  float *pfStack_14;
   
-  if (*(float *)(in_stack_00000004 + 0x56c) < _DAT_006177d2) {
-    uStack_18 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x38))();
-    *(undefined4 *)(in_stack_00000004 + 0x56c) = uStack_18;
+  if (*(float *)(in_stack_00000004[4].actor_name + 0xc) < _DAT_006177d2) {
+    fVar11 = (*in_stack_00000004->vtable->cylinderGroundCheck)
+                       (in_stack_00000004,0.1,(CVector3f *)0x0);
+    *(float *)(in_stack_00000004[4].actor_name + 0xc) = fVar11;
   }
-  if (*(int *)(in_stack_00000004 + 0x574) != 0) {
-    pfVar5 = (float *)(in_stack_00000004 + 0x2b0);
-    local_ec = 0.0;
-    for (iVar4 = 0; iVar4 < *(int *)(in_stack_00000004 + 0x158) + -1; iVar4 = iVar4 + 1) {
-      local_7c = pfVar5[-9] - *pfVar5;
-      local_78 = pfVar5[-8] - pfVar5[1];
-      local_74 = pfVar5[-7] - pfVar5[2];
-      pfVar5 = pfVar5 + 9;
-      local_ec = SQRT(local_74 * local_74 + local_7c * local_7c + local_78 * local_78) + local_ec;
+  if (*(int *)(in_stack_00000004[4].actor_name + 0x14) != 0) {
+    pCVar8 = in_stack_00000004 + 2;
+    for (iVar9 = 0; iVar9 < *(int *)in_stack_00000004[1].actor_name + -1; iVar9 = iVar9 + 1) {
+      local_60 = pCVar8[-1].previous_transform_state.orientation.x - *(float *)pCVar8->actor_name;
+      local_5c = pCVar8[-1].previous_transform_state.orientation.y -
+                 *(float *)(pCVar8->actor_name + 4);
+      local_58 = pCVar8[-1].previous_transform_state.orientation.z -
+                 *(float *)(pCVar8->actor_name + 8);
+      pCVar8 = (CDemonActor *)&(pCVar8->location).position.y;
     }
   }
-  pfVar5 = (float *)(in_stack_00000004 + (*(int *)(in_stack_00000004 + 0x158) + -1) * 0x24 + 0x28c);
-  *(float *)(in_stack_00000004 + 0x570) = 1.0 / in_stack_00000008;
-  local_64 = *pfVar5;
-  local_60 = pfVar5[1];
-  local_5c = pfVar5[2];
-  pcVar1 = (char *)core_chain_cpp_FUN_0042fcc0();
-  pcVar2 = in_stack_00000004 + (*(int *)(in_stack_00000004 + 0x158) + -1) * 0x24 + 0x28c;
-  if (pcVar2 != pcVar1) {
-    *(undefined4 *)pcVar2 = *(undefined4 *)pcVar1;
-    *(undefined4 *)(pcVar2 + 4) = *(undefined4 *)(pcVar1 + 4);
-    *(undefined4 *)(pcVar2 + 8) = *(undefined4 *)(pcVar1 + 8);
+  piVar1 = &(&in_stack_00000004[1].scale)[*(int *)in_stack_00000004[1].actor_name * 3].z;
+  *(float *)(in_stack_00000004[4].actor_name + 0x10) = 1.0 / in_stack_00000008;
+  local_48 = *piVar1;
+  local_44 = piVar1[1];
+  local_40 = piVar1[2];
+  piVar1 = (int *)core_chain_cpp_FUN_0042fcc0();
+  piVar2 = &(&in_stack_00000004[1].scale)[*(int *)in_stack_00000004[1].actor_name * 3].z;
+  if (piVar2 != piVar1) {
+    *piVar2 = *piVar1;
+    piVar2[1] = piVar1[1];
+    piVar2[2] = piVar1[2];
   }
-  iVar4 = *(int *)(in_stack_00000004 + 0x158) + -1;
-  pcVar1 = in_stack_00000004 + iVar4 * 0x24 + 0x2a0;
-  pcVar1[0] = '\0';
-  pcVar1[1] = '\0';
-  pcVar1[2] = '\0';
-  pcVar1[3] = '\0';
-  *(undefined4 *)(in_stack_00000004 + iVar4 * 0x24 + 0x29c) =
-       *(undefined4 *)(in_stack_00000004 + iVar4 * 0x24 + 0x2a0);
-  *(undefined4 *)(in_stack_00000004 + iVar4 * 0x24 + 0x298) =
-       *(undefined4 *)(in_stack_00000004 + iVar4 * 0x24 + 0x29c);
-  if (in_stack_00000004 + 0x28c != in_stack_00000004 + 0x20) {
-    *(undefined4 *)(in_stack_00000004 + 0x28c) = *(undefined4 *)(in_stack_00000004 + 0x20);
-    *(undefined4 *)(in_stack_00000004 + 0x290) = *(undefined4 *)(in_stack_00000004 + 0x24);
-    *(undefined4 *)(in_stack_00000004 + 0x294) = *(undefined4 *)(in_stack_00000004 + 0x28);
+  iVar9 = *(int *)in_stack_00000004[1].actor_name;
+  pCVar6 = &in_stack_00000004[1].previous_transform_state.orientation;
+  (&in_stack_00000004[1].field23_0x124)[iVar9 * 9] = 0;
+  (&in_stack_00000004[1].field22_0x120)[iVar9 * 9] =
+       (&in_stack_00000004[1].field23_0x124)[iVar9 * 9];
+  (&in_stack_00000004[1].field21_0x11c)[iVar9 * 9] =
+       (&in_stack_00000004[1].field22_0x120)[iVar9 * 9];
+  if ((CLocation *)pCVar6 != &in_stack_00000004->location) {
+    pCVar6->x = (in_stack_00000004->location).position.x;
+    in_stack_00000004[1].previous_transform_state.orientation.y =
+         (in_stack_00000004->location).position.y;
+    in_stack_00000004[1].previous_transform_state.orientation.z =
+         (in_stack_00000004->location).position.z;
   }
-  in_stack_00000004[0x2a0] = '\0';
-  in_stack_00000004[0x2a1] = '\0';
-  in_stack_00000004[0x2a2] = '\0';
-  in_stack_00000004[0x2a3] = '\0';
-  *(undefined4 *)(in_stack_00000004 + 0x29c) = *(undefined4 *)(in_stack_00000004 + 0x2a0);
-  *(undefined4 *)(in_stack_00000004 + 0x298) = *(undefined4 *)(in_stack_00000004 + 0x29c);
-  local_58 = in_stack_00000004 + 0x28c;
-  local_40 = (float *)(in_stack_00000004 + 0x568);
-  local_34 = in_stack_00000004 + 0x2d4;
-  pfVar5 = (float *)(in_stack_00000004 + 700);
-  local_38 = local_58;
-  for (local_30 = 1; local_30 < *(int *)(in_stack_00000004 + 0x158) + -1; local_30 = local_30 + 1) {
-    *pfVar5 = *local_40 * *pfVar5;
-    pfVar5[1] = *local_40 * pfVar5[1];
-    pfVar5[2] = *local_40 * pfVar5[2];
-    local_44 = *(float *)(in_stack_00000004 + 0x55c) * (float)_DAT_006177da;
-    local_b8 = (1.0 / local_44) * 0.0;
-    local_b4 = (0.0 - *(float *)(in_stack_00000004 + 0x55c)) * (1.0 / local_44);
-    pfVar3 = (float *)(local_58 + local_30 * 0x24);
-    if (&local_d0 != &local_b8) {
-      local_d0 = local_b8;
-      local_cc = local_b4;
-      local_c8 = local_b8;
+  in_stack_00000004[1].field26_0x148 = 0;
+  in_stack_00000004[1].field25_0x144 = in_stack_00000004[1].field26_0x148;
+  in_stack_00000004[1].previous_transform_state.dirty_flags = in_stack_00000004[1].field25_0x144;
+  local_38 = &in_stack_00000004[1].previous_transform_state.orientation;
+  local_20 = in_stack_00000004[4].actor_name + 8;
+  pfStack_14 = &in_stack_00000004[2].location.position.y;
+  pCVar10 = (COrientation *)(in_stack_00000004[2].actor_name + 0xc);
+  pCStack_18 = local_38;
+  for (iVar9 = 1; iVar9 < *(int *)in_stack_00000004[1].actor_name + -1; iVar9 = iVar9 + 0x24) {
+    pCVar10->pitch = *(float *)local_20 * pCVar10->pitch;
+    pCVar10->bank = *(float *)local_20 * pCVar10->bank;
+    pCVar10->heading = *(float *)local_20 * pCVar10->heading;
+    local_24 = (float)in_stack_00000004[3].vtable * (float)_DAT_006177da;
+    local_98 = (1.0 / local_24) * 0.0;
+    local_94 = (0.0 - (float)in_stack_00000004[3].vtable) * (1.0 / local_24);
+    pCVar6 = local_38 + iVar9 * 3;
+    if (&local_b0 != &local_98) {
+      local_b0 = local_98;
+      local_ac = local_94;
+      fStack_a8 = local_98;
     }
-    local_88 = local_d0 * in_stack_00000008;
-    local_84 = local_cc * in_stack_00000008;
-    local_80 = local_c8 * in_stack_00000008;
-    local_94 = pfVar3[3] + local_88;
-    pfVar3[3] = local_94;
-    local_94 = local_94 * in_stack_00000008;
-    pfVar3[4] = pfVar3[4] + local_84;
-    pfVar3[5] = pfVar3[5] + local_80;
-    local_90 = pfVar3[4] * in_stack_00000008;
-    local_8c = in_stack_00000008 * pfVar3[5];
-    *pfVar3 = *pfVar3 + local_94;
-    pfVar3[1] = pfVar3[1] + local_90;
-    pfVar3[2] = pfVar3[2] + local_8c;
-    local_b0 = local_b8;
+    fStack_68 = local_b0 * in_stack_00000008;
+    local_64 = local_ac * in_stack_00000008;
+    local_60 = fStack_a8 * in_stack_00000008;
+    local_74 = pCVar6[1].x + fStack_68;
+    pCVar6[1].x = local_74;
+    local_74 = local_74 * in_stack_00000008;
+    *(float *)((int)(pCVar6 + 1) + 4) = *(float *)((int)(pCVar6 + 1) + 4) + local_64;
+    *(float *)((int)(pCVar6 + 1) + 8) = *(float *)((int)(pCVar6 + 1) + 8) + local_60;
+    local_70 = *(float *)((int)(pCVar6 + 1) + 4) * in_stack_00000008;
+    fStack_6c = in_stack_00000008 * *(float *)((int)(pCVar6 + 1) + 8);
+    pCVar6->x = pCVar6->x + local_74;
+    pCVar6->y = pCVar6->y + local_70;
+    pCVar6->z = pCVar6->z + fStack_6c;
+    local_90 = local_98;
     core_chain_cpp_FUN_0042fed0();
     core_chain_cpp_FUN_0042fed0();
-    pfVar5 = pfVar5 + 9;
-    local_34 = local_34 + 0x24;
-    local_38 = local_38 + 0x24;
+    pCVar10 = pCVar10 + 3;
   }
-  local_28 = in_stack_00000004 + 0x298;
-  local_24 = in_stack_00000004 + 0x28c;
-  local_2c = in_stack_00000004 + 0x20;
-  local_4c = in_stack_00000004 + 0x2d4;
-  local_48 = in_stack_00000004 + 0x2b0;
-  local_3c = 0;
+  piVar1 = &in_stack_00000004[1].previous_transform_state.dirty_flags;
+  pCVar6 = &in_stack_00000004[1].previous_transform_state.orientation;
+  local_2c = &in_stack_00000004[2].location.position.y;
+  local_28 = in_stack_00000004 + 2;
+  local_1c = 0;
   do {
-    pcVar1 = (char *)core_chain_cpp_FUN_0042fcc0();
-    pcVar2 = local_24 + (*(int *)(in_stack_00000004 + 0x158) + -1) * 0x24;
-    if (pcVar2 != pcVar1) {
-      *(undefined4 *)pcVar2 = *(undefined4 *)pcVar1;
-      *(undefined4 *)(pcVar2 + 4) = *(undefined4 *)(pcVar1 + 4);
-      *(undefined4 *)(pcVar2 + 8) = *(undefined4 *)(pcVar1 + 8);
+    pfVar3 = (float *)core_chain_cpp_FUN_0042fcc0();
+    pfVar5 = unaff_retaddr + (*(int *)in_stack_00000004[1].actor_name + -1) * 9;
+    if (pfVar5 != pfVar3) {
+      *pfVar5 = *pfVar3;
+      pfVar5[1] = pfVar3[1];
+      pfVar5[2] = pfVar3[2];
     }
-    iVar4 = *(int *)(in_stack_00000004 + 0x158) + -1;
-    pcVar1 = local_24 + iVar4 * 0x24 + 0x14;
-    pcVar1[0] = '\0';
-    pcVar1[1] = '\0';
-    pcVar1[2] = '\0';
-    pcVar1[3] = '\0';
-    *(undefined4 *)(local_24 + iVar4 * 0x24 + 0x10) =
-         *(undefined4 *)(local_24 + iVar4 * 0x24 + 0x14);
-    *(undefined4 *)(local_24 + iVar4 * 0x24 + 0xc) = *(undefined4 *)(local_24 + iVar4 * 0x24 + 0x10)
-    ;
-    if (local_24 != local_2c) {
-      *(undefined4 *)local_24 = *(undefined4 *)local_2c;
-      *(undefined4 *)(local_24 + 4) = *(undefined4 *)(local_2c + 4);
-      *(undefined4 *)(local_24 + 8) = *(undefined4 *)(local_2c + 8);
+    iVar9 = *(int *)in_stack_00000004[1].actor_name + -1;
+    unaff_retaddr[iVar9 * 9 + 5] = 0.0;
+    unaff_retaddr[iVar9 * 9 + 4] = unaff_retaddr[iVar9 * 9 + 5];
+    unaff_retaddr[iVar9 * 9 + 3] = unaff_retaddr[iVar9 * 9 + 4];
+    if (unaff_retaddr != (float *)piVar1) {
+      *unaff_retaddr = (float)*piVar1;
+      unaff_retaddr[1] = (float)in_stack_00000004[1].field25_0x144;
+      unaff_retaddr[2] = (float)in_stack_00000004[1].field26_0x148;
     }
-    local_28[8] = '\0';
-    local_28[9] = '\0';
-    local_28[10] = '\0';
-    local_28[0xb] = '\0';
-    local_1c = 1;
-    *(undefined4 *)(local_28 + 4) = *(undefined4 *)(local_28 + 8);
-    *(undefined4 *)local_28 = *(undefined4 *)(local_28 + 4);
-    local_20 = local_24;
-    for (; local_1c < *(int *)(in_stack_00000004 + 0x158) + -1; local_1c = local_1c + 1) {
+    in_stack_00000004[1].previous_transform_state.orientation.z = 0.0;
+    in_stack_00000004[1].previous_transform_state.orientation.y =
+         in_stack_00000004[1].previous_transform_state.orientation.z;
+    pCVar6->x = in_stack_00000004[1].previous_transform_state.orientation.y;
+    while (1 < *(int *)in_stack_00000004[1].actor_name + -1) {
       core_chain_cpp_FUN_0042fed0();
       core_chain_cpp_FUN_0042fed0();
-      local_20 = local_20 + 0x24;
     }
-    pcVar1 = (char *)core_chain_cpp_FUN_0042fcc0();
-    pcVar2 = local_24 + (*(int *)(in_stack_00000004 + 0x158) + -1) * 0x24;
-    if (pcVar2 != pcVar1) {
-      *(undefined4 *)pcVar2 = *(undefined4 *)pcVar1;
-      *(undefined4 *)(pcVar2 + 4) = *(undefined4 *)(pcVar1 + 4);
-      *(undefined4 *)(pcVar2 + 8) = *(undefined4 *)(pcVar1 + 8);
+    pfVar3 = (float *)core_chain_cpp_FUN_0042fcc0();
+    pfVar5 = unaff_retaddr + (*(int *)in_stack_00000004[1].actor_name + -1) * 9;
+    if (pfVar5 != pfVar3) {
+      *pfVar5 = *pfVar3;
+      pfVar5[1] = pfVar3[1];
+      pfVar5[2] = pfVar3[2];
     }
-    iVar4 = *(int *)(in_stack_00000004 + 0x158) + -1;
-    pcVar1 = local_24 + iVar4 * 0x24 + 0x14;
-    pcVar1[0] = '\0';
-    pcVar1[1] = '\0';
-    pcVar1[2] = '\0';
-    pcVar1[3] = '\0';
-    *(undefined4 *)(local_24 + iVar4 * 0x24 + 0x10) =
-         *(undefined4 *)(local_24 + iVar4 * 0x24 + 0x14);
-    *(undefined4 *)(local_24 + iVar4 * 0x24 + 0xc) = *(undefined4 *)(local_24 + iVar4 * 0x24 + 0x10)
-    ;
-    if (local_24 != local_2c) {
-      *(undefined4 *)local_24 = *(undefined4 *)local_2c;
-      *(undefined4 *)(local_24 + 4) = *(undefined4 *)(local_2c + 4);
-      *(undefined4 *)(local_24 + 8) = *(undefined4 *)(local_2c + 8);
+    iVar9 = *(int *)in_stack_00000004[1].actor_name + -1;
+    unaff_retaddr[iVar9 * 9 + 5] = 0.0;
+    unaff_retaddr[iVar9 * 9 + 4] = unaff_retaddr[iVar9 * 9 + 5];
+    unaff_retaddr[iVar9 * 9 + 3] = unaff_retaddr[iVar9 * 9 + 4];
+    if ((CVector3f *)unaff_retaddr != pCVar6) {
+      *unaff_retaddr = pCVar6->x;
+      unaff_retaddr[1] = in_stack_00000004[1].previous_transform_state.orientation.y;
+      unaff_retaddr[2] = in_stack_00000004[1].previous_transform_state.orientation.z;
     }
-    local_28[8] = '\0';
-    local_28[9] = '\0';
-    local_28[10] = '\0';
-    local_28[0xb] = '\0';
-    *(undefined4 *)(local_28 + 4) = *(undefined4 *)(local_28 + 8);
-    *(undefined4 *)local_28 = *(undefined4 *)(local_28 + 4);
-    local_3c = local_3c + 1;
-  } while (local_3c < 3);
-  iVar4 = 0;
-  if (0 < *(int *)(in_stack_00000004 + 0x158)) {
-    pcVar1 = in_stack_00000004 + 0x2a4;
+    unaff_retaddr[2] = 0.0;
+    unaff_retaddr[1] = unaff_retaddr[2];
+    *unaff_retaddr = unaff_retaddr[1];
+    pfStack_14 = (float *)((int)pfStack_14 + 1);
+  } while ((int)pfStack_14 < 3);
+  iVar9 = 0;
+  if (0 < *(int *)in_stack_00000004[1].actor_name) {
+    ppCVar7 = &in_stack_00000004[1].next_actor;
     do {
-      pcVar2 = in_stack_00000004 + iVar4 * 0x24 + 0x28c;
-      if (pcVar1 != pcVar2) {
-        *(undefined4 *)pcVar1 = *(undefined4 *)pcVar2;
-        *(undefined4 *)(pcVar1 + 4) = *(undefined4 *)(pcVar2 + 4);
-        *(undefined4 *)(pcVar1 + 8) = *(undefined4 *)(pcVar2 + 8);
+      puVar4 = (undefined4 *)
+               ((int)&in_stack_00000004[1].previous_transform_state + iVar9 * 0x24 + 0xc);
+      if (ppCVar7 != (CDemonActor **)puVar4) {
+        *ppCVar7 = (CDemonActor *)*puVar4;
+        ppCVar7[1] = (CDemonActor *)puVar4[1];
+        ppCVar7[2] = (CDemonActor *)puVar4[2];
       }
-      iVar4 = iVar4 + 1;
-      pcVar1 = pcVar1 + 0x24;
-    } while (iVar4 < *(int *)(in_stack_00000004 + 0x158));
+      iVar9 = iVar9 + 1;
+      ppCVar7 = ppCVar7 + 9;
+    } while (iVar9 < *(int *)in_stack_00000004[1].actor_name);
   }
-  local_54 = 0;
-  local_50 = 0;
-  if (*(int *)(in_stack_00000004 + 0x574) != 0) {
-    if (local_ec < *(float *)(in_stack_00000004 + 0x15c) * (float)_DAT_006177e2) {
-      pfVar5 = (float *)(in_stack_00000004 + 0x2b0);
-      local_f0 = 0.0;
-      for (iVar4 = 0; iVar4 < *(int *)(in_stack_00000004 + 0x158) + -1; iVar4 = iVar4 + 1) {
-        local_c4 = pfVar5[-9] - *pfVar5;
-        local_c0 = pfVar5[-8] - pfVar5[1];
-        local_bc = pfVar5[-7] - pfVar5[2];
-        pfVar5 = pfVar5 + 9;
-        local_f0 = SQRT(local_bc * local_bc + local_c4 * local_c4 + local_c0 * local_c0) + local_f0;
+  local_2c = (float *)0x0;
+  local_28 = (CDemonActor *)0x0;
+  if (*(int *)(in_stack_00000004[4].actor_name + 0x14) != 0) {
+    if (in_stack_ffffff3c < *(float *)(in_stack_00000004[1].actor_name + 4) * (float)_DAT_006177e2)
+    {
+      pCVar8 = in_stack_00000004 + 2;
+      fVar11 = 0.0;
+      for (iVar9 = 0; iVar9 < *(int *)in_stack_00000004[1].actor_name + -1; iVar9 = iVar9 + 1) {
+        local_9c = pCVar8[-1].previous_transform_state.orientation.x - *(float *)pCVar8->actor_name;
+        local_98 = pCVar8[-1].previous_transform_state.orientation.y -
+                   *(float *)(pCVar8->actor_name + 4);
+        local_94 = pCVar8[-1].previous_transform_state.orientation.z -
+                   *(float *)(pCVar8->actor_name + 8);
+        pCVar8 = (CDemonActor *)&(pCVar8->location).position.y;
+        fVar11 = SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98) + fVar11;
       }
-      if (*(float *)(in_stack_00000004 + 0x15c) * (float)_DAT_006177e2 < local_f0) {
-        local_50 = 1;
+      if (*(float *)(in_stack_00000004[1].actor_name + 4) * (float)_DAT_006177e2 < fVar11) {
+        local_28 = (CDemonActor *)0x1;
       }
     }
-    iVar4 = *(int *)(in_stack_00000004 + 0x158) + -1;
-    local_a0 = local_64 - *(float *)(in_stack_00000004 + iVar4 * 0x24 + 0x28c);
-    local_9c = local_60 - *(float *)(in_stack_00000004 + iVar4 * 0x24 + 0x290);
-    local_98 = local_5c - *(float *)(in_stack_00000004 + iVar4 * 0x24 + 0x294);
-    if (in_stack_00000008 * (float)_DAT_006177ea <
-        SQRT(local_98 * local_98 + local_a0 * local_a0 + local_9c * local_9c)) {
-      local_54 = 1;
+    iVar9 = *(int *)in_stack_00000004[1].actor_name;
+    local_78 = local_3c - (float)(&in_stack_00000004[1].scale)[iVar9 * 3].z;
+    local_74 = (float)local_38 - (float)(&in_stack_00000004[1].field19_0x114)[iVar9 * 9];
+    local_70 = local_34 - (float)(&in_stack_00000004[1].field20_0x118)[iVar9 * 9];
+    if ((float)_DAT_006177ea * 1.4013e-45 <
+        SQRT(local_70 * local_70 + local_78 * local_78 + local_74 * local_74)) {
+      local_2c = (float *)0x1;
     }
   }
-  if ((local_50 != 0) && (in_stack_00000004[0x1b4] != '\0')) {
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004 + 0x280));
-    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(in_stack_00000004 + 0x218));
-    if (iVar4 == 0) {
-      core_sound_cpp_CSound_FUN_005b3a70(g_CSoundPtr,in_stack_00000004,in_stack_00000004 + 0x1b4);
-      *(undefined4 *)(in_stack_00000004 + 0x280) = extraout_EAX;
+  if ((local_28 != (CDemonActor *)0x0) &&
+     (*(char *)&in_stack_00000004[1].orient_matrix.m[2].z != '\0')) {
+    sound_sndmain_cpp_killSfx_FUN_005a9c40
+              ((uint)in_stack_00000004[1].previous_transform_state.position.x);
+    iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                      (*(uint *)(in_stack_00000004[1].create_event + 0x48));
+    if (iVar9 == 0) {
+      fVar11 = (float)core_sound_cpp_CSound_playTrackedActorSound_FUN_005b3a70
+                                (g_CSoundPtr,in_stack_00000004,
+                                 (char *)&in_stack_00000004[1].orient_matrix.m[2].z,
+                                 (CVector3f *)
+                                 &(&in_stack_00000004[1].scale)
+                                  [*(int *)in_stack_00000004[1].actor_name * 3].z);
+      in_stack_00000004[1].previous_transform_state.position.x = fVar11;
     }
   }
-  *(float *)(in_stack_00000004 + 0x284) = *(float *)(in_stack_00000004 + 0x284) - in_stack_00000008;
-  if (local_54 == 0) {
-    if (0.0 <= *(float *)(in_stack_00000004 + 0x284)) {
+  in_stack_00000004[1].previous_transform_state.position.y =
+       in_stack_00000004[1].previous_transform_state.position.y - 1.4013e-45;
+  if (local_20 == (char *)0x0) {
+    if (0.0 <= in_stack_00000004[1].previous_transform_state.position.y) {
       return;
     }
-    sfx_handle = *(uint *)(in_stack_00000004 + 0x280);
-    in_stack_00000004[0x284] = '\0';
-    in_stack_00000004[0x285] = '\0';
-    in_stack_00000004[0x286] = '\0';
-    in_stack_00000004[0x287] = '\0';
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(sfx_handle);
+    fVar11 = in_stack_00000004[1].previous_transform_state.position.x;
+    in_stack_00000004[1].previous_transform_state.position.y = 0.0;
+    sound_sndmain_cpp_killSfx_FUN_005a9c40((uint)fVar11);
     return;
   }
-  iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(in_stack_00000004 + 0x218));
-  if (iVar4 == 0) {
-    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(in_stack_00000004 + 0x280));
-    if (iVar4 == 0) {
-      core_sound_cpp_CSound_FUN_005b3a70(g_CSoundPtr,in_stack_00000004,in_stack_00000004 + 0x21c);
-      *(undefined4 *)(in_stack_00000004 + 0x280) = extraout_EAX_00;
+  iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                    (*(uint *)(in_stack_00000004[1].create_event + 0x48));
+  if (iVar9 == 0) {
+    iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                      ((uint)in_stack_00000004[1].previous_transform_state.position.x);
+    if (iVar9 == 0) {
+      fVar11 = (float)core_sound_cpp_CSound_playTrackedActorSound_FUN_005b3a70
+                                (g_CSoundPtr,in_stack_00000004,
+                                 in_stack_00000004[1].create_event + 0x4c,
+                                 (CVector3f *)
+                                 &(&in_stack_00000004[1].scale)
+                                  [*(int *)in_stack_00000004[1].actor_name * 3].z);
+      in_stack_00000004[1].previous_transform_state.position.x = fVar11;
     }
   }
-  in_stack_00000004[0x284] = '\0';
-  in_stack_00000004[0x285] = '\0';
-  in_stack_00000004[0x286] = '\0';
-  in_stack_00000004[0x287] = '?';
+  in_stack_00000004[1].previous_transform_state.position.y = 0.5;
   return;
 }
 
@@ -1050,7 +1029,7 @@ void core_chain_cpp_FUN_004300d0(void)
 //   XREF to: 00681ef8 (READ)
 // 00430852: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 00430853: CALL core_sound.cpp_CSound_FUN_005b3a70
+// 00430853: CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70
 //   XREF to: 005b3a70 (UNCONDITIONAL_CALL)
 // 00430858: ADD ESP,0x10
 // 0043085b: MOV dword ptr [ESI + 0x280],EAX
@@ -1089,7 +1068,7 @@ void core_chain_cpp_FUN_004300d0(void)
 //   XREF to: 00681ef8 (READ)
 // 004308b2: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 004308b3: CALL core_sound.cpp_CSound_FUN_005b3a70
+// 004308b3: CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70
 //   XREF to: 005b3a70 (UNCONDITIONAL_CALL)
 // 004308b8: ADD ESP,0x10
 // 004308bb: MOV dword ptr [ESI + 0x280],EAX

@@ -15,7 +15,7 @@
 //   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_actor.cpp_randomChance_FUN_0040cd10
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
-//   core_sound.cpp_CSound_FUN_005b3b90
+//   core_sound.cpp_CSound_killSfx_FUN_005b3b90
 //   core_weapon.cpp_CWeapon_process_FUN_005ee110
 
 #include "nocturne.h"
@@ -27,6 +27,7 @@
 void core_dynamite_cpp_FUN_0049cfb0(void)
 
 {
+  uint sfx_handle;
   float fVar1;
   CWeapon *pCVar2;
   CSound *this_ptr;
@@ -45,11 +46,12 @@ void core_dynamite_cpp_FUN_0049cfb0(void)
     *(float *)pCVar2[1].base_actor.actor_name = fVar1;
     this_ptr = g_CSoundPtr;
     if (fVar1 < 0.0) {
+      sfx_handle = *(uint *)(pCVar2[1].base_actor.actor_name + 0x10);
       pCVar2[1].base_actor.actor_name[0] = '\0';
       pCVar2[1].base_actor.actor_name[1] = '\0';
       pCVar2[1].base_actor.actor_name[2] = '\0';
       pCVar2[1].base_actor.actor_name[3] = '\0';
-      core_sound_cpp_CSound_FUN_005b3b90(this_ptr);
+      core_sound_cpp_CSound_killSfx_FUN_005b3b90(this_ptr,sfx_handle);
       pCVar2 = pCVar2 + 1;
       (pCVar2->base_actor).actor_name[0x10] = '\0';
       (pCVar2->base_actor).actor_name[0x11] = '\0';
@@ -150,7 +152,7 @@ void core_dynamite_cpp_FUN_0049cfb0(void)
 // 0049d02e: PUSH ESI
 //   XREF to: 03f6af64 (DATA)
 // 0049d02f: MOV dword ptr [EBX + 0x578],0x0
-// 0049d039: CALL core_sound.cpp_CSound_FUN_005b3b90
+// 0049d039: CALL core_sound.cpp_CSound_killSfx_FUN_005b3b90
 //   XREF to: 005b3b90 (UNCONDITIONAL_CALL)
 // 0049d03e: ADD ESP,0x8
 // 0049d041: MOV dword ptr [EBX + 0x588],0x0

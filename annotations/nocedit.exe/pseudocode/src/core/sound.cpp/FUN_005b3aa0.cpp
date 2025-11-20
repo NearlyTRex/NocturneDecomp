@@ -4,24 +4,26 @@
 // Convention: unknown
 // Signature: undefined core_sound.cpp_FUN_005b3aa0()
 // Function calls:
-//   core_sound.cpp_FUN_005b1fd0
+//   core_sound.cpp_playSfxInternal_FUN_005b1fd0
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40
 
 #include "nocturne.h"
 
-int core_sound_cpp_FUN_005b3aa0(void)
+uint core_sound_cpp_FUN_005b3aa0(void)
 
 {
-  int iVar1;
-  float in_stack_00000014;
+  uint uVar1;
+  void *in_stack_00000010;
+  char *in_stack_00000014;
   
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-  sound_sndmain_cpp_setNextSfxDelay_FUN_005a8b40((double)in_stack_00000014);
-  iVar1 = core_sound_cpp_FUN_005b1fd0();
+  sound_sndmain_cpp_setNextSfxDelay_FUN_005a8b40((double)(float)in_stack_00000014);
+  uVar1 = core_sound_cpp_playSfxInternal_FUN_005b1fd0
+                    (in_stack_00000010,in_stack_00000014,0.0,0.0,0.0,(CVector3f *)0x0,1);
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
-  return iVar1;
+  return uVar1;
 }
 
 
@@ -49,7 +51,7 @@ int core_sound_cpp_FUN_005b3aa0(void)
 // 005b3ac7: MOV ECX,dword ptr [ESP + 0x24]
 //   XREF to: Stack[0x8] (READ)
 // 005b3acb: PUSH ECX
-// 005b3acc: CALL core_sound.cpp_FUN_005b1fd0
+// 005b3acc: CALL core_sound.cpp_playSfxInternal_FUN_005b1fd0
 //   XREF to: 005b1fd0 (UNCONDITIONAL_CALL)
 // 005b3ad1: ADD ESP,0x1c
 // 005b3ad4: MOV EBX,EAX

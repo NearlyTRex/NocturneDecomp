@@ -8,11 +8,11 @@
 //   core_game.cpp_SaveRelated_FUN_004dcee0 (004dcee0) at 004dcf63 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053eb40 (0053eb40) at 0053ec32 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_03f6b7ac
+//   int g_SoundAudioInitialized
 //   undefined4 DAT_03f6b7c8
 //   undefined4 DAT_03f6b7d8
-//   undefined4 DAT_03f6b870
-//   undefined4 DAT_03f6b874
+//   uint g_TrainRailNoiseHandle
+//   uint g_TrainExteriorAmbientHandle
 // Function calls:
 //   sound_sndmain.cpp_killSfx_FUN_005a9c40
 //   sound_sndmain.cpp_resetSoundDevice_FUN_005ab130
@@ -22,19 +22,18 @@
 void __cdecl core_sound_cpp_CSound_FUN_005b2f70(CSound *this_ptr)
 
 {
-  int iVar1;
+  uint *puVar1;
   int iVar2;
   
   iVar2 = 0;
-  DAT_03f6b7ac = 0;
+  g_SoundAudioInitialized = 0;
   do {
-    iVar1 = iVar2 + 0xc;
+    puVar1 = (uint *)((int)&g_TrainNoiseArray[0].sound_handle + iVar2);
     iVar2 = iVar2 + 0x10;
-    sound_sndmain_cpp_killSfx_FUN_005a9c40
-              (*(uint *)(STrainNoise_ARRAY_03f6b7bc[0].field0_0x0 + iVar1));
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(*puVar1);
   } while (iVar2 != 0xa0);
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(DAT_03f6b870);
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(DAT_03f6b874);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(g_TrainRailNoiseHandle);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(g_TrainExteriorAmbientHandle);
   sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
   return;
 }

@@ -4,9 +4,9 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0(float orient_right_x, float orient_right_y, float orient_right_z)
 // Cross-references:
-//   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2e2b [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b38ce [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b3c90 (005b3c90) at 005b3cb4 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_initializeAudioFrame_FUN_005b2dd0 (005b2dd0) at 005b2e2b [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90 (005b3c90) at 005b3cb4 [UNCONDITIONAL_CALL]
 // Globals:
 //   CSoundDevice* g_CSoundDevicePtr
 //   CVector3f g_DeferredOrientRight

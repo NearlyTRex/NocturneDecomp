@@ -7,7 +7,7 @@
 //   CSound* g_CSoundPtr = 03f6af64
 //   CSound g_CSoundInstance
 // Function calls:
-//   core_sound.cpp_CSound_FUN_005b3a40
+//   core_sound.cpp_CSound_playActorSound_FUN_005b3a40
 
 #include "nocturne.h"
 
@@ -15,7 +15,8 @@ void __cdecl
 core_actor_cpp_CDemonActor_playSound_FUN_00408f60(CDemonActor *this_ptr,char *sound_name)
 
 {
-  core_sound_cpp_CSound_FUN_005b3a40(g_CSoundPtr,this_ptr->actor_name,sound_name);
+  core_sound_cpp_CSound_playActorSound_FUN_005b3a40
+            (g_CSoundPtr,this_ptr,sound_name,&(this_ptr->location).position);
   return;
 }
 
@@ -36,7 +37,7 @@ core_actor_cpp_CDemonActor_playSound_FUN_00408f60(CDemonActor *this_ptr,char *so
 //   XREF to: 00681ef8 (READ)
 // 00408f75: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 00408f76: CALL core_sound.cpp_CSound_FUN_005b3a40
+// 00408f76: CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40
 //   XREF to: 005b3a40 (UNCONDITIONAL_CALL)
 // 00408f7b: ADD ESP,0x10
 // 00408f7e: POP EBX

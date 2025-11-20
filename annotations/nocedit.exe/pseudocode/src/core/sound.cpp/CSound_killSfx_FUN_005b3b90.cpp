@@ -1,8 +1,8 @@
-// Name: core_sound.cpp_CSound_FUN_005b3b90
+// Name: core_sound.cpp_CSound_killSfx_FUN_005b3b90
 // Address: 005b3b90
 // Address Range: [[005b3b90, 005b3b9d]]
 // Convention: __cdecl
-// Signature: void core_sound.cpp_CSound_FUN_005b3b90(CSound * this_ptr)
+// Signature: void core_sound.cpp_CSound_killSfx_FUN_005b3b90(CSound * this_ptr, uint sfx_handle)
 // Cross-references:
 //   core_dynamite.cpp_FUN_0049cfb0 (0049cfb0) at 0049d039 [UNCONDITIONAL_CALL]
 //   core_flame.cpp_FUN_004c9c00 (004c9c00) at 004c9fad [UNCONDITIONAL_CALL]
@@ -16,19 +16,17 @@
 
 #include "nocturne.h"
 
-void __cdecl core_sound_cpp_CSound_FUN_005b3b90(CSound *this_ptr)
+void __cdecl core_sound_cpp_CSound_killSfx_FUN_005b3b90(CSound *this_ptr,uint sfx_handle)
 
 {
-  uint in_stack_00000008;
-  
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(in_stack_00000008);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(sfx_handle);
   return;
 }
 
 
 // Assembly code:
 // 005b3b90: MOV EDX,dword ptr [ESP + 0x8]
-//   Label: core_sound.cpp_CSound_FUN_005b3b90
+//   Label: core_sound.cpp_CSound_killSfx_FUN_005b3b90
 //   XREF to: Stack[0x8] (READ)
 // 005b3b94: PUSH EDX
 // 005b3b95: CALL sound_sndmain.cpp_killSfx_FUN_005a9c40

@@ -159,7 +159,6 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor *
 // 004088e0: LEA EAX,[EBX + 0x20]
 // 004088e3: MOV dword ptr [EBX + 0x150],0x0
 // 004088ed: MOV dword ptr [EAX + 0x8],0x0
-//   Label: LAB_004088ed
 // 004088f4: ADD ESP,0x4
 // 004088f7: MOV EDX,dword ptr [EAX + 0x8]
 // 004088fa: MOV dword ptr [EAX + 0x4],EDX

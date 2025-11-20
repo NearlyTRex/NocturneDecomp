@@ -7,7 +7,7 @@
 //   core_setedit.cpp_DementedFogEditor_FUN_00580730 (00580730) at 00580b45 [UNCONDITIONAL_CALL]
 // Globals:
 //   float DAT_00652816 = 0.7470588
-//   void* PTR_s_OFF_00681efc = 00652855
+//   SSoundModeEntry[27] g_SoundModeTable
 
 #include "nocturne.h"
 
@@ -17,7 +17,7 @@ float * __cdecl core_sound_cpp_CSound_FUN_005b3c70(CSound *this_ptr)
   int in_stack_00000008;
   
   if ((-1 < in_stack_00000008) && (in_stack_00000008 < 0x1b)) {
-    return (float *)(&PTR_s_OFF_00681efc)[in_stack_00000008 * 4];
+    return (float *)g_SoundModeTable[in_stack_00000008].name;
   }
   return &DAT_00652816;
 }

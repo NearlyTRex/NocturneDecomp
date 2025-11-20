@@ -41,7 +41,7 @@
 //   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (00595fc0) at 00596782 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058afe0 (0058afe0) at 0058b113 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 00593811 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_CSound_FUN_005b1ed0 (005b1ed0) at 005b1f28 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_findRandomMatchingSoundFile_FUN_005b1ed0 (005b1ed0) at 005b1f28 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_FUN_005b17d0 (005b17d0) at 005b1814 [UNCONDITIONAL_CALL]
 //   core_teleport.cpp_CTeleportDest_FUN_005da870 (005da870) at 005da931 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50 (004b3f50) at 004b4139 [UNCONDITIONAL_CALL]

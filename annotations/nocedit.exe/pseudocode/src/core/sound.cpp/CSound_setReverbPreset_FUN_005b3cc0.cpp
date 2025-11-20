@@ -16,7 +16,7 @@
 //   int g_CurrentLineNumber
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_sound.cpp_FUN_005b3c90
+//   core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90
 
 #include "nocturne.h"
 
@@ -28,7 +28,9 @@ void __cdecl core_sound_cpp_CSound_setReverbPreset_FUN_005b3cc0(CSound *this_ptr
     g_CurrentLineNumber = 0x402;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CSound::setReverbPreset - invalid index");
   }
-  core_sound_cpp_FUN_005b3c90(index);
+  core_sound_cpp_CSound_set3DListenerOrientRight_FUN_005b3c90
+            ((CSound *)index,g_SoundModeTable[index].listener_orient.x,
+             g_SoundModeTable[index].listener_orient.y,g_SoundModeTable[index].listener_orient.z);
   return;
 }
 
@@ -56,7 +58,7 @@ void __cdecl core_sound_cpp_CSound_setReverbPreset_FUN_005b3cc0(CSound *this_ptr
 // 005b3ce3: PUSH dword ptr [EAX + 0x681f00]
 //   XREF to: 00681f00 (DATA)
 // 005b3ce9: PUSH EBX
-// 005b3cea: CALL core_sound.cpp_FUN_005b3c90
+// 005b3cea: CALL core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90
 //   XREF to: 005b3c90 (UNCONDITIONAL_CALL)
 // 005b3cef: ADD ESP,0x10
 // 005b3cf2: POP EBX

@@ -5,7 +5,7 @@
 // Signature: void sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a00(CVector3f * velocity_source_ptr)
 // Cross-references:
 //   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b3724 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2770 (005b2770) at 005b2b8a [UNCONDITIONAL_CALL]
+//   core_sound.cpp_processTrainSounds_FUN_005b2770 (005b2770) at 005b2b8a [UNCONDITIONAL_CALL]
 //   core_vehicle.cpp_FUN_005e8b50 (005e8b50) at 005e8b6e [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_SfxLastSlot

@@ -144,8 +144,19 @@ SAudioFormatDescriptor[12] g_WaveInFormatTable = {
     0x00, 0x08, 0x00, 0x00, 0x10, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x44, 0xAC, 0x00, 0x00
 };
 WatcomStaticDestructorNode DAT_00681ed0 = {0x00, 0x00, 0x00, 0x00, 0xE0, 0x32, 0x66, 0x00, 0x01, 0x00, 0x00, 0x00, 0x28, 0xB1, 0xF6, 0x03};
-WatcomStaticDestructorNode DAT_00681ee0 = {0x00, 0x00, 0x00, 0x00, 0xEC, 0x32, 0x66, 0x00, 0x01, 0x00, 0x00, 0x00, 0x50, 0xAF, 0xF6, 0x03};
+WatcomStaticDestructorNode g_MissingSoundsListDestructorNode = {0x00, 0x00, 0x00, 0x00, 0xEC, 0x32, 0x66, 0x00, 0x01, 0x00, 0x00, 0x00, 0x50, 0xAF, 0xF6, 0x03};
 CSound* g_CSoundPtr = 0x03F6AF64;
+SSoundModeEntry[27] g_SoundModeTable = /* Base64 encoded data (432 bytes):
+   "VShlAAAAAAAAAAAAAAAAAFkoZQAAAAA/oBq/PwAAAD9hKGUAAACAPs3MzD0AAAAA"
+   "bChlAAaB1T7NzMw++n4qP3EoZQACKyc/O9+/P+f7KT56KGUA9P1UPmq89D4AAAAA"
+   "hShlAAAAAD+oxhNA+FNjP48oZQAEVs4+ke2IQAAAAD+aKGUAAAAAPwaBfUAAAAA/"
+   "pihlAAAAAD85tDhAeemmP6soZQD+1Lg+hxbpQOf7qT6xKGUAAAAAPwAAIEGamZk+"
+   "uChlAAisHD6mm4Q+AAAAQMgoZQD+1Lg+oBq/PwAAAADQKGUA+FPjPqabLED4UyM/"
+   "3ihlAAAAgD6JQeA/8KdGP+QoZQD4U+M9rkdJQPyp8T7rKGUA+FPjPYcWMUBCYGU+"
+   "8ChlAPCnRj556fpA/KnxPvooZQAAAIA/O9+/PwAAAD8BKWUA8KfGPYcWMUBCYGU+"
+   "ByllAPT9VD68dNM/AADAPxIpZQB56SY/ObQ4QAAAgD4cKWUAAACAPzvfvz8AAAAA"
+   "JyllAAAAYD+iRQZB/KmxPy8pZQAEVg4+O9+JQfp+Kj81KWUA/tT4PhkE8kAEVk4/"
+*/;
 int g_ScanlinePixelCount = 0x0;
 int g_StartTextureU = 0x0;
 int g_StartTextureV = 0x0;

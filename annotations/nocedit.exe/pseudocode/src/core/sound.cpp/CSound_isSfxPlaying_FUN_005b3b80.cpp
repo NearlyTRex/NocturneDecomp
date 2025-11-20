@@ -1,8 +1,8 @@
-// Name: core_sound.cpp_CSound_FUN_005b3b80
+// Name: core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
 // Address: 005b3b80
 // Address Range: [[005b3b80, 005b3b8d]]
 // Convention: __cdecl
-// Signature: void core_sound.cpp_CSound_FUN_005b3b80(CSound * this_ptr)
+// Signature: void core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80(CSound * this_ptr, uint sfx_handle)
 // Cross-references:
 //   core_boxactor.cpp_CBoxActor_process_FUN_004219e0 (004219e0) at 00421bb2 [UNCONDITIONAL_CALL]
 //   core_cow.cpp_FUN_00444310 (00444310) at 004446da [UNCONDITIONAL_CALL]
@@ -19,19 +19,17 @@
 
 #include "nocturne.h"
 
-void __cdecl core_sound_cpp_CSound_FUN_005b3b80(CSound *this_ptr)
+void __cdecl core_sound_cpp_CSound_isSfxPlaying_FUN_005b3b80(CSound *this_ptr,uint sfx_handle)
 
 {
-  uint in_stack_00000008;
-  
-  sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(in_stack_00000008);
+  sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(sfx_handle);
   return;
 }
 
 
 // Assembly code:
 // 005b3b80: MOV EDX,dword ptr [ESP + 0x8]
-//   Label: core_sound.cpp_CSound_FUN_005b3b80
+//   Label: core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
 //   XREF to: Stack[0x8] (READ)
 // 005b3b84: PUSH EDX
 // 005b3b85: CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660

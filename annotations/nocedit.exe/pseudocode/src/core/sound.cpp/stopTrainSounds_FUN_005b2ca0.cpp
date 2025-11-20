@@ -1,40 +1,39 @@
-// Name: core_sound.cpp_FUN_005b2ca0
+// Name: core_sound.cpp_stopTrainSounds_FUN_005b2ca0
 // Address: 005b2ca0
 // Address Range: [[005b2ca0, 005b2cdc]]
-// Convention: unknown
-// Signature: undefined core_sound.cpp_FUN_005b2ca0()
+// Convention: __watcallRegister
+// Signature: void core_sound.cpp_stopTrainSounds_FUN_005b2ca0(void)
 // Globals:
 //   undefined4 DAT_03f6b7c8
 //   undefined4 DAT_03f6b7d8
-//   undefined4 DAT_03f6b870
-//   undefined4 DAT_03f6b874
+//   uint g_TrainRailNoiseHandle
+//   uint g_TrainExteriorAmbientHandle
 // Function calls:
 //   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
 #include "nocturne.h"
 
-void core_sound_cpp_FUN_005b2ca0(void)
+void core_sound_cpp_stopTrainSounds_FUN_005b2ca0(void)
 
 {
-  int iVar1;
+  uint *puVar1;
   int iVar2;
   
   iVar2 = 0;
   do {
-    iVar1 = iVar2 + 0xc;
+    puVar1 = (uint *)((int)&g_TrainNoiseArray[0].sound_handle + iVar2);
     iVar2 = iVar2 + 0x10;
-    sound_sndmain_cpp_killSfx_FUN_005a9c40
-              (*(uint *)(STrainNoise_ARRAY_03f6b7bc[0].field0_0x0 + iVar1));
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(*puVar1);
   } while (iVar2 != 0xa0);
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(DAT_03f6b870);
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(DAT_03f6b874);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(g_TrainRailNoiseHandle);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(g_TrainExteriorAmbientHandle);
   return;
 }
 
 
 // Assembly code:
 // 005b2ca0: PUSH EBX
-//   Label: core_sound.cpp_FUN_005b2ca0
+//   Label: core_sound.cpp_stopTrainSounds_FUN_005b2ca0
 // 005b2ca1: XOR EBX,EBX
 // 005b2ca3: MOV EDX,dword ptr [EBX + 0x3f6b7c8]
 //   Label: LAB_005b2ca3

@@ -26,7 +26,7 @@
 //   core_set.cpp_CDemonSet_ctor_FUN_005690c0 (005690c0) at 00569237 [UNCONDITIONAL_CALL]
 //   core_shotgun.cpp_FUN_00588060 (00588060) at 00588310 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b32ad [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2770 (005b2770) at 005b27b7 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_processTrainSounds_FUN_005b2770 (005b2770) at 005b27b7 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c2850 (005c2850) at 005c2f23 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c3150 (005c3150) at 005c31d4 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c3960 (005c3960) at 005c408f [UNCONDITIONAL_CALL]

@@ -9,8 +9,8 @@
 //   CSound* g_CSoundPtr = 03f6af64
 //   CSound g_CSoundInstance
 // Function calls:
-//   core_sound.cpp_CSound_FUN_005b3b80
-//   core_sound.cpp_CSound_FUN_005b3b90
+//   core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
+//   core_sound.cpp_CSound_killSfx_FUN_005b3b90
 //   core_weapon.cpp_CWeapon_process_FUN_005ee110
 
 #include "nocturne.h"
@@ -22,6 +22,7 @@
 void core_flamegun_cpp_FUN_004cb9b0(void)
 
 {
+  uint sfx_handle;
   float fVar1;
   CWeapon *pCVar2;
   int extraout_EAX;
@@ -32,8 +33,9 @@ void core_flamegun_cpp_FUN_004cb9b0(void)
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(pCStack00000004);
   if (*(int *)pCStack00000004[1].base_actor.actor_name == 0) {
-    if (*(int *)(pCStack00000004[1].base_actor.actor_name + 4) != 0) {
-      core_sound_cpp_CSound_FUN_005b3b90(g_CSoundPtr);
+    sfx_handle = *(uint *)(pCStack00000004[1].base_actor.actor_name + 4);
+    if (sfx_handle != 0) {
+      core_sound_cpp_CSound_killSfx_FUN_005b3b90(g_CSoundPtr,sfx_handle);
       pCVar2 = pCStack00000004 + 1;
       (pCVar2->base_actor).actor_name[4] = '\0';
       (pCVar2->base_actor).actor_name[5] = '\0';
@@ -42,7 +44,8 @@ void core_flamegun_cpp_FUN_004cb9b0(void)
     }
   }
   else {
-    core_sound_cpp_CSound_FUN_005b3b80(g_CSoundPtr);
+    core_sound_cpp_CSound_isSfxPlaying_FUN_005b3b80
+              (g_CSoundPtr,*(uint *)(pCStack00000004[1].base_actor.actor_name + 4));
     if (extraout_EAX == 0) {
       uVar3 = (*((pCStack00000004->base_actor).vtable)->playSound)
                         (&pCStack00000004->base_actor,"fl-throw.wav");
@@ -111,7 +114,7 @@ void core_flamegun_cpp_FUN_004cb9b0(void)
 //   XREF to: 00681ef8 (READ)
 // 004cba0b: PUSH EDX
 //   XREF to: 03f6af64 (DATA)
-// 004cba0c: CALL core_sound.cpp_CSound_FUN_005b3b80
+// 004cba0c: CALL core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
 //   XREF to: 005b3b80 (UNCONDITIONAL_CALL)
 // 004cba11: ADD ESP,0x8
 // 004cba14: TEST EAX,EAX
@@ -164,7 +167,7 @@ void core_flamegun_cpp_FUN_004cb9b0(void)
 //   XREF to: 00681ef8 (READ)
 // 004cba8a: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
-// 004cba8b: CALL core_sound.cpp_CSound_FUN_005b3b90
+// 004cba8b: CALL core_sound.cpp_CSound_killSfx_FUN_005b3b90
 //   XREF to: 005b3b90 (UNCONDITIONAL_CALL)
 // 004cba90: ADD ESP,0x8
 // 004cba93: MOV dword ptr [EBX + 0x57c],0x0

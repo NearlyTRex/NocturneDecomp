@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: void core_sound.cpp_FUN_005b1870(void)
 // Cross-references:
-//   core_sound.cpp_CSound_FUN_005b2dd0 (005b2dd0) at 005b2e0d [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b300f [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_initializeAudioFrame_FUN_005b2dd0 (005b2dd0) at 005b2e0d [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_castle_00652506
 //   double DOUBLE_0065250e = 0.000100000000000000
@@ -37,10 +37,10 @@
 //   undefined4 DAT_032758f8
 //   undefined4 g_ScreenHeightForFonts
 //   undefined4 g_CDemonCameraInstance.framebuffer_height
-//   undefined4 DAT_03f6af70
-//   undefined4 DAT_03f6af74
-//   undefined4 DAT_03f6af78
-//   undefined4 DAT_03f6af7c
+//   CVector3f g_SoundListenerPrev
+//   undefined4 g_SoundListenerPrev.y
+//   undefined4 g_SoundListenerPrev.z
+//   CVector3f CVector3f_03f6af7c
 // Function calls:
 //   core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
 //   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
@@ -51,8 +51,6 @@
 //   sound_sndmain.cpp_set3DListenerPos_FUN_005aa020
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_sound_cpp_FUN_005b1870(void)
 
@@ -110,9 +108,9 @@ void __cdecl core_sound_cpp_FUN_005b1870(void)
       local_c8.x = g_CDemonCameraInstance.base.position.y;
       local_c8.y = g_CDemonCameraInstance.base.position.z;
     }
-    local_6c._4_4_ = (float)local_c8.x - DAT_03f6af74;
-    local_6c._0_4_ = (float)local_d4._8_4_ - DAT_03f6af70;
-    local_6c._8_4_ = (float)local_c8.y - DAT_03f6af78;
+    local_6c._4_4_ = (float)local_c8.x - g_SoundListenerPrev.y;
+    local_6c._0_4_ = (float)local_d4._8_4_ - g_SoundListenerPrev.x;
+    local_6c._8_4_ = (float)local_c8.y - g_SoundListenerPrev.z;
     if (SQRT((float)local_6c._8_4_ * (float)local_6c._8_4_ +
              (float)local_6c._0_4_ * (float)local_6c._0_4_ +
              (float)local_6c._4_4_ * (float)local_6c._4_4_) < (float)DOUBLE_0065250e) {
@@ -175,7 +173,7 @@ void __cdecl core_sound_cpp_FUN_005b1870(void)
             ((double)fStack_20,(double)local_1c[0],(double)local_1c[1],(double)local_b8.z,
              (double)local_ac,(double)local_a8[0].x,(double)(float)local_6c._4_4_,
              (double)(float)local_6c._8_4_,(double)local_60);
-  _DAT_03f6af7c = 0.0;
+  CVector3f_03f6af7c.x = 0.0;
   if (g_CGamePtr->block_auto_save == 0) {
     iVar4 = crt_string_c_strnicmp_FUN_005ff070
                       (g_CDemonSetPtr->geometry_filename,"castle",6);
@@ -245,26 +243,26 @@ void __cdecl core_sound_cpp_FUN_005b1870(void)
           if (1.0 < fStack_148) {
             fStack_148 = 1.0;
           }
-          _DAT_03f6af7c = fStack_148 * FLOAT_0065252e + _DAT_03f6af7c;
+          CVector3f_03f6af7c.x = fStack_148 * FLOAT_0065252e + CVector3f_03f6af7c.x;
           iVar7 = iVar7 + 2;
         } while (iVar7 != 0x21);
         iVar4 = iVar4 + 2;
       } while (iVar4 != 0x21);
     }
-    _DAT_03f6af7c = _DAT_03f6af7c * _DAT_03f6af7c;
-    if (0.0 < _DAT_03f6af7c) {
-      _DAT_03f6af7c = _DAT_03f6af7c + FLOAT_00652532;
+    CVector3f_03f6af7c.x = CVector3f_03f6af7c.x * CVector3f_03f6af7c.x;
+    if (0.0 < CVector3f_03f6af7c.x) {
+      CVector3f_03f6af7c.x = CVector3f_03f6af7c.x + FLOAT_00652532;
     }
-    if (1.0 < _DAT_03f6af7c) {
-      _DAT_03f6af7c = 1.0;
+    if (1.0 < CVector3f_03f6af7c.x) {
+      CVector3f_03f6af7c.x = 1.0;
     }
   }
   if (&stack0x00000000 == (undefined1 *)0x3f6b024) {
     return;
   }
-  DAT_03f6af70 = local_b8.y;
-  DAT_03f6af74 = local_b8.z;
-  DAT_03f6af78 = local_ac;
+  g_SoundListenerPrev.x = local_b8.y;
+  g_SoundListenerPrev.y = local_b8.z;
+  g_SoundListenerPrev.z = local_ac;
   return;
 }
 

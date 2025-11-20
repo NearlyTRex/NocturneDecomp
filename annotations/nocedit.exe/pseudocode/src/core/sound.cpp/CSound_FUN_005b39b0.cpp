@@ -8,14 +8,14 @@
 //   core_script.cpp_FUN_0055a540 (0055a540) at 0055a673 [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonSet g_CDemonSetInstance
-//   undefined1 DAT_03f6b780
-//   undefined1 DAT_03f6b781
-//   undefined1 DAT_03f6b782
-//   undefined1 DAT_03f6b783
-//   undefined4 DAT_03f6b7a8
-//   undefined4 DAT_03f6b7ac
+//   char[40] g_SoundAmbientSoundName
+//   undefined4 DAT_03f6b781
+//   undefined4 DAT_03f6b782
+//   undefined4 DAT_03f6b783
+//   int g_SoundAmbientSfxHandle
+//   int g_SoundAudioInitialized
 // Function calls:
-//   core_sound.cpp_CSound_FUN_005b3b90
+//   core_sound.cpp_CSound_killSfx_FUN_005b3b90
 //   core_sound.cpp_CSound_playSfx_FUN_005b3a20
 
 #include "nocturne.h"
@@ -24,13 +24,13 @@ void __cdecl core_sound_cpp_CSound_FUN_005b39b0(CSound *this_ptr)
 
 {
   char cVar1;
-  undefined4 extraout_EAX;
+  int extraout_EAX;
   char *pcVar2;
   CSound *in_stack_00000008;
   char *in_stack_0000000c;
   
-  core_sound_cpp_CSound_FUN_005b3b90(this_ptr);
-  pcVar2 = &DAT_03f6b780;
+  core_sound_cpp_CSound_killSfx_FUN_005b3b90(this_ptr,g_SoundAmbientSfxHandle);
+  pcVar2 = g_SoundAmbientSoundName;
   do {
     cVar1 = *in_stack_0000000c;
     *pcVar2 = cVar1;
@@ -40,11 +40,12 @@ void __cdecl core_sound_cpp_CSound_FUN_005b39b0(CSound *this_ptr)
     pcVar2[1] = cVar1;
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
-  if (DAT_03f6b7ac == 0) {
+  if (g_SoundAudioInitialized == 0) {
     return;
   }
-  core_sound_cpp_CSound_playSfx_FUN_005b3a20(in_stack_00000008,(int)g_CDemonSetPtr,&DAT_03f6b780);
-  DAT_03f6b7a8 = extraout_EAX;
+  core_sound_cpp_CSound_playSfx_FUN_005b3a20
+            (in_stack_00000008,(int)g_CDemonSetPtr,g_SoundAmbientSoundName);
+  g_SoundAmbientSfxHandle = extraout_EAX;
   return;
 }
 
@@ -59,7 +60,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b39b0(CSound *this_ptr)
 // 005b39b9: MOV ECX,dword ptr [ESP + 0x10]
 //   XREF to: Stack[0x4] (READ)
 // 005b39bd: PUSH ECX
-// 005b39be: CALL core_sound.cpp_CSound_FUN_005b3b90
+// 005b39be: CALL core_sound.cpp_CSound_killSfx_FUN_005b3b90
 //   XREF to: 005b3b90 (UNCONDITIONAL_CALL)
 // 005b39c3: ADD ESP,0x8
 // 005b39c6: MOV EDI,0x3f6b780

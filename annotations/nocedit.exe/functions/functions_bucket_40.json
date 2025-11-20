@@ -75338,7 +75338,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_FUN_005b3a40",
+    "name":"core_sound.cpp_CSound_playActorSound_FUN_005b3a40",
     "ret":"void",
     "vars":{
       "params":[
@@ -75359,7 +75359,7 @@
           "type":"CSound*"
         },
         {
-          "name":"actor_name",
+          "name":"actor",
           "storage":{
             "offset":8,
             "size":4,
@@ -75372,7 +75372,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"CDemonActor*"
         },
         {
           "name":"sound_name",
@@ -75389,6 +75389,22 @@
             ]
           },
           "type":"char*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ]
     }

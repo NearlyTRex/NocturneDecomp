@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_script.cpp_FUN_00562920 (00562920) at 00562d60 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_005677a0 (005677a0) at 0056796e [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b243c [UNCONDITIONAL_CALL]
+//   core_sound.cpp_playSfxInternal_FUN_005b1fd0 (005b1fd0) at 005b243c [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (004b86b0) at 004b978c [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0 (004a37b0) at 004a38a5 [UNCONDITIONAL_CALL]
 // Function calls:

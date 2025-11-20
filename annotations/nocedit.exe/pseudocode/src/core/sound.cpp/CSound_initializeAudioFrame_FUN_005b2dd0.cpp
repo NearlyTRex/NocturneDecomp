@@ -1,8 +1,8 @@
-// Name: core_sound.cpp_CSound_FUN_005b2dd0
+// Name: core_sound.cpp_CSound_initializeAudioFrame_FUN_005b2dd0
 // Address: 005b2dd0
 // Address Range: [[005b2dd0, 005b2f66]]
 // Convention: __cdecl
-// Signature: void core_sound.cpp_CSound_FUN_005b2dd0(CSound * this_ptr)
+// Signature: void core_sound.cpp_CSound_initializeAudioFrame_FUN_005b2dd0(CSound * this_ptr)
 // Cross-references:
 //   core_game.cpp_CGame_process_FUN_004e3190 (004e3190) at 004e3662 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_runGameSession_FUN_004daf80 (004daf80) at 004dbba1 [UNCONDITIONAL_CALL]
@@ -16,25 +16,25 @@
 //   undefined4 DAT_0326eedc
 //   undefined4 DAT_0326eee0
 //   undefined4 g_CDemonSetInstance.field29_0x15aca8
-//   undefined4 DAT_03f6af70
-//   undefined4 DAT_03f6af74
-//   undefined4 DAT_03f6af78
-//   undefined4 DAT_03f6af7c
-//   undefined4 DAT_03f6af80
-//   undefined4 DAT_03f6af84
-//   undefined4 DAT_03f6af88
-//   undefined4 DAT_03f6af8c
-//   undefined4 DAT_03f6af90
-//   undefined1 DAT_03f6b780
-//   undefined4 DAT_03f6b7a8
-//   undefined4 DAT_03f6b7ac
-//   undefined4 DAT_03f6b7b0
-//   undefined4 DAT_03f6b7b4
-//   undefined4 DAT_03f6b7b8
-//   undefined4 DAT_03f6b85c
-//   undefined4 DAT_03f6b860
-//   undefined4 DAT_03f6b864
-//   undefined4 DAT_03f6b86c
+//   CVector3f g_SoundListenerPrev
+//   undefined4 g_SoundListenerPrev.y
+//   undefined4 g_SoundListenerPrev.z
+//   CVector3f CVector3f_03f6af7c
+//   undefined4 CVector3f_03f6af7c.y
+//   undefined4 CVector3f_03f6af7c.z
+//   CVector3f g_SoundListenerOrient
+//   undefined4 g_SoundListenerOrient.y
+//   undefined4 g_SoundListenerOrient.z
+//   char[40] g_SoundAmbientSoundName
+//   int g_SoundAmbientSfxHandle
+//   int g_SoundAudioInitialized
+//   float g_SoundVolumeMultiplier
+//   float FLOAT_03f6b7b4
+//   float FLOAT_03f6b7b8
+//   CVector3f g_TrainVelocityVector
+//   undefined4 g_TrainVelocityVector.y
+//   undefined4 g_TrainVelocityVector.z
+//   int g_TrainLastCameraIndex
 // Function calls:
 //   core_event.cpp_CEventList_FUN_004b0f00
 //   core_sound.cpp_CSound_playSfx_FUN_005b3a20
@@ -53,36 +53,35 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void __cdecl core_sound_cpp_CSound_FUN_005b2dd0(CSound *this_ptr)
+void __cdecl core_sound_cpp_CSound_initializeAudioFrame_FUN_005b2dd0(CSound *this_ptr)
 
 {
   int iVar1;
   float fVar2;
-  undefined4 extraout_EAX;
+  int extraout_EAX;
   BADSPACEBASE *in_ESP;
   undefined4 uStack00000008;
   CSound *in_stack_00000028;
   
-  _DAT_03f6af7c = 0;
-  DAT_03f6af80 = 0;
-  DAT_03f6af84 = 0;
-  DAT_03f6af70 = 0x501502f9;
-  DAT_03f6af74 = 0x501502f9;
-  DAT_03f6af78 = 0x501502f9;
+  CVector3f_03f6af7c.x = 0.0;
+  CVector3f_03f6af7c.y = 0.0;
+  CVector3f_03f6af7c.z = 0.0;
+  g_SoundListenerPrev.x = 1e+10;
+  g_SoundListenerPrev.y = 1e+10;
+  g_SoundListenerPrev.z = 1e+10;
   sound_sndmain_cpp_set3DListenerVelocity_FUN_005aa1c0(0.0,0.0,0.0);
   core_sound_cpp_FUN_005b1870();
-  DAT_03f6af80 = 0;
-  sound_sndmain_cpp_set3DListenerOrientRight_FUN_005ab6e0(DAT_03f6af88,DAT_03f6af8c,DAT_03f6af90);
+  CVector3f_03f6af7c.y = 0.0;
+  sound_sndmain_cpp_set3DListenerOrientRight_FUN_005ab6e0
+            (g_SoundListenerOrient.x,g_SoundListenerOrient.y,g_SoundListenerOrient.z);
   sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_005ab540();
   if (iVar1 == 0) {
     return;
   }
-  _DAT_03f6b7b0 = 1.0;
-  _DAT_03f6b7b4 = 0x3f800000;
-  _DAT_03f6b7b8 = 0;
+  g_SoundVolumeMultiplier = 1.0;
+  FLOAT_03f6b7b4 = 1.0;
+  FLOAT_03f6b7b8 = 0.0;
   iVar1 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(0);
   if (iVar1 == 0) {
     sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(3,0);
@@ -90,32 +89,33 @@ void __cdecl core_sound_cpp_CSound_FUN_005b2dd0(CSound *this_ptr)
   else {
     sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(3,1);
     fVar2 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(0);
-    sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(3,fVar2 * _DAT_03f6b7b0);
+    sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(3,fVar2 * g_SoundVolumeMultiplier);
   }
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
   sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(3);
-  core_sound_cpp_CSound_playSfx_FUN_005b3a20(in_stack_00000028,(int)g_CDemonSetPtr,&DAT_03f6b780);
+  core_sound_cpp_CSound_playSfx_FUN_005b3a20
+            (in_stack_00000028,(int)g_CDemonSetPtr,g_SoundAmbientSoundName);
   uStack00000008 = 0x5b2ed7;
-  DAT_03f6b7a8 = extraout_EAX;
+  g_SoundAmbientSfxHandle = extraout_EAX;
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   if (g_CDemonSetPtr->field29_0x15aca8 != 0) {
-    if (&stack0x00000000 != STrainNoise_ARRAY_03f6b7bc[8].field0_0x0 + 8) {
-      _DAT_03f6b85c = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc0);
-      _DAT_03f6b860 = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc4);
-      _DAT_03f6b864 = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc8);
+    if ((float *)&stack0x00000000 != &g_TrainNoiseArray[8].position.z) {
+      g_TrainVelocityVector.x = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc0);
+      g_TrainVelocityVector.y = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc4);
+      g_TrainVelocityVector.z = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc8);
     }
-    DAT_03f6b86c = 0xffffffff;
+    g_TrainLastCameraIndex = -1;
   }
   uStack00000008 = 0x5b2f45;
   core_event_cpp_CEventList_FUN_004b0f00(g_CEventListPtr);
-  DAT_03f6b7ac = 1;
+  g_SoundAudioInitialized = 1;
   return;
 }
 
 
 // Assembly code:
 // 005b2dd0: PUSH ESI
-//   Label: core_sound.cpp_CSound_FUN_005b2dd0
+//   Label: core_sound.cpp_CSound_initializeAudioFrame_FUN_005b2dd0
 // 005b2dd1: SUB ESP,0x10
 // 005b2dd4: XOR EDX,EDX
 // 005b2dd6: PUSH EDX

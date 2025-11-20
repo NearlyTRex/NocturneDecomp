@@ -1,17 +1,17 @@
-// Name: core_sound.cpp_CSound_FUN_005b1ed0
+// Name: core_sound.cpp_CSound_findRandomMatchingSoundFile_FUN_005b1ed0
 // Address: 005b1ed0
 // Address Range: [[005b1ed0, 005b1fc8]]
 // Convention: __cdecl
-// Signature: void core_sound.cpp_CSound_FUN_005b1ed0(CSound * this_ptr)
+// Signature: void core_sound.cpp_CSound_findRandomMatchingSoundFile_FUN_005b1ed0(CSound * this_ptr, char * out_result, char * wildcard_pattern)
 // Cross-references:
-//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b2401 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_playSfxInternal_FUN_005b1fd0 (005b1fd0) at 005b2401 [UNCONDITIONAL_CALL]
 // Globals:
-//   CStrList CStrList_03f6b128
-//   undefined4 DAT_03f6b138
-//   undefined1 DAT_03f6b140
-//   undefined1 DAT_03f6b141
-//   undefined1 DAT_03f6b142
-//   undefined1 DAT_03f6b143
+//   CStrList g_SoundFileList
+//   int g_SoundMatchCount
+//   char[40][40] g_SoundMatchedFilenames
+//   undefined4 DAT_03f6b141
+//   undefined4 DAT_03f6b142
+//   undefined4 DAT_03f6b143
 // Function calls:
 //   crt_stdlib.c_rand_FUN_005feb5c
 //   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
@@ -19,7 +19,9 @@
 
 #include "nocturne.h"
 
-void __cdecl core_sound_cpp_CSound_FUN_005b1ed0(CSound *this_ptr)
+void __cdecl
+core_sound_cpp_CSound_findRandomMatchingSoundFile_FUN_005b1ed0
+          (CSound *this_ptr,char *out_result,char *wildcard_pattern)
 
 {
   char cVar1;
@@ -28,19 +30,17 @@ void __cdecl core_sound_cpp_CSound_FUN_005b1ed0(CSound *this_ptr)
   CStrList *unaff_EBP;
   char *pcVar4;
   char *pcVar5;
-  undefined1 *in_stack_00000008;
-  char *in_stack_0000000c;
   
-  DAT_03f6b138 = 0;
-  *in_stack_00000008 = 0;
-  for (iVar3 = 0; iVar3 < CStrList_03f6b128.item_count; iVar3 = iVar3 + 1) {
-    pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStrList_03f6b128,iVar3);
+  g_SoundMatchCount = 0;
+  *out_result = '\0';
+  for (iVar3 = 0; iVar3 < g_SoundFileList.item_count; iVar3 = iVar3 + 1) {
+    pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&g_SoundFileList,iVar3);
     iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
-                      (in_stack_0000000c,pcVar4,(int)unaff_EBP);
+                      (wildcard_pattern,pcVar4,(int)unaff_EBP);
     if (iVar2 != 0) {
-      unaff_EBP = &CStrList_03f6b128;
-      pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStrList_03f6b128,iVar3);
-      pcVar5 = &DAT_03f6b140 + DAT_03f6b138 * 0x28;
+      unaff_EBP = &g_SoundFileList;
+      pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&g_SoundFileList,iVar3);
+      pcVar5 = g_SoundMatchedFilenames[g_SoundMatchCount];
       do {
         cVar1 = *pcVar4;
         *pcVar5 = cVar1;
@@ -50,25 +50,25 @@ void __cdecl core_sound_cpp_CSound_FUN_005b1ed0(CSound *this_ptr)
         pcVar5[1] = cVar1;
         pcVar5 = pcVar5 + 2;
       } while (cVar1 != '\0');
-      DAT_03f6b138 = DAT_03f6b138 + 1;
-      if (0x27 < DAT_03f6b138) break;
+      g_SoundMatchCount = g_SoundMatchCount + 1;
+      if (0x27 < g_SoundMatchCount) break;
     }
   }
-  if (DAT_03f6b138 < 1) {
+  if (g_SoundMatchCount < 1) {
     return;
   }
   iVar3 = crt_stdlib_c_rand_FUN_005feb5c();
-  pcVar4 = &DAT_03f6b140 + (iVar3 % DAT_03f6b138) * 0x28;
+  pcVar4 = g_SoundMatchedFilenames[iVar3 % g_SoundMatchCount];
   do {
     cVar1 = *pcVar4;
-    *in_stack_0000000c = cVar1;
+    *wildcard_pattern = cVar1;
     if (cVar1 == '\0') {
       return;
     }
     cVar1 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
-    in_stack_0000000c[1] = cVar1;
-    in_stack_0000000c = in_stack_0000000c + 2;
+    wildcard_pattern[1] = cVar1;
+    wildcard_pattern = wildcard_pattern + 2;
   } while (cVar1 != '\0');
   return;
 }
@@ -76,7 +76,7 @@ void __cdecl core_sound_cpp_CSound_FUN_005b1ed0(CSound *this_ptr)
 
 // Assembly code:
 // 005b1ed0: PUSH EBX
-//   Label: core_sound.cpp_CSound_FUN_005b1ed0
+//   Label: core_sound.cpp_CSound_findRandomMatchingSoundFile_FUN_005b1ed0
 // 005b1ed1: PUSH ESI
 // 005b1ed2: PUSH EDI
 // 005b1ed3: PUSH EBP

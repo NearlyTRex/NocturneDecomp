@@ -19,23 +19,24 @@
 // Function calls:
 //   core_fire.cpp_CExplosion_FUN_004c3970
 //   core_fire.cpp_CFireEffect_FUN_004c8ea0
-//   core_sound.cpp_CSound_FUN_005b3a40
+//   core_sound.cpp_CSound_playActorSound_FUN_005b3a40
 
 #include "nocturne.h"
 
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c8c10(CFireEffect *this_ptr)
 
 {
-  CFireEffect *in_stack_00000008;
+  CDemonActor *in_stack_00000008;
   
   core_fire_cpp_CExplosion_FUN_004c3970(g_ExplosionPool + (int)g_LaserBeamActiveListHead);
   g_LaserBeamActiveListHead = (CLaserBeam *)(g_LaserBeamActiveListHead->field0_0x0 + 1);
   if (9 < (int)g_LaserBeamActiveListHead) {
     g_LaserBeamActiveListHead = (CLaserBeam *)0x0;
   }
-  core_sound_cpp_CSound_FUN_005b3a40
-            (g_CSoundPtr,(char *)in_stack_00000008,"xplode?.wav @ 6.0");
-  core_fire_cpp_CFireEffect_FUN_004c8ea0(in_stack_00000008);
+  core_sound_cpp_CSound_playActorSound_FUN_005b3a40
+            (g_CSoundPtr,in_stack_00000008,"xplode?.wav @ 6.0",(CVector3f *)in_stack_00000008)
+  ;
+  core_fire_cpp_CFireEffect_FUN_004c8ea0((CFireEffect *)in_stack_00000008);
   return;
 }
 
@@ -88,7 +89,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8c10(CFireEffect *this_ptr)
 //   XREF to: 00681ef8 (READ)
 // 004c8c6a: PUSH EBP
 //   XREF to: 03f6af64 (DATA)
-// 004c8c6b: CALL core_sound.cpp_CSound_FUN_005b3a40
+// 004c8c6b: CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40
 //   XREF to: 005b3a40 (UNCONDITIONAL_CALL)
 // 004c8c70: ADD ESP,0x10
 // 004c8c73: PUSH dword ptr [ESP + 0x20]

@@ -8,7 +8,7 @@
 //   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 (00506450) at 0050661c [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 (0050aba0) at 0050acf7 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40 (0050ad40) at 0050adad [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b21cb [UNCONDITIONAL_CALL]
+//   core_sound.cpp_playSfxInternal_FUN_005b1fd0 (005b1fd0) at 005b21cb [UNCONDITIONAL_CALL]
 //   core_vehicle.cpp_FUN_005e8b50 (005e8b50) at 005e8b5f [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_startSfxTrackedFloatPosition_FUN_005a95e0 (005a95e0) at 005a95f5 [UNCONDITIONAL_CALL]
 // Globals:

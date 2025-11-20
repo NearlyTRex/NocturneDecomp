@@ -22,7 +22,7 @@
 // Function calls:
 //   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 //   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
-//   core_sound.cpp_CSound_FUN_005b3a70
+//   core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70
 //   crt_math.c_floor_FUN_005feb90
 
 #include "nocturne.h"
@@ -149,9 +149,9 @@ void core_pendulum_cpp_FUN_00549b90(void)
         local_50 = local_50 + FLOAT_0063ece9;
       }
       if (fStack_28 < local_50) {
-        core_sound_cpp_CSound_FUN_005b3a70
-                  (g_CSoundPtr,in_stack_00000004->actor_name,
-                   (char *)&in_stack_00000004[2].is_transparent);
+        core_sound_cpp_CSound_playTrackedActorSound_FUN_005b3a70
+                  (g_CSoundPtr,in_stack_00000004,(char *)&in_stack_00000004[2].is_transparent,
+                   (CVector3f *)(in_stack_00000004[3].actor_name + 0x14));
       }
     }
     local_38 = local_34.y;
@@ -204,9 +204,9 @@ void core_pendulum_cpp_FUN_00549b90(void)
         local_54 = local_54 + FLOAT_0063ece9;
       }
       if (local_24._0_4_ < local_54) {
-        core_sound_cpp_CSound_FUN_005b3a70
-                  (g_CSoundPtr,in_stack_00000004->actor_name,
-                   (char *)&in_stack_00000004[2].is_transparent);
+        core_sound_cpp_CSound_playTrackedActorSound_FUN_005b3a70
+                  (g_CSoundPtr,in_stack_00000004,(char *)&in_stack_00000004[2].is_transparent,
+                   (CVector3f *)(in_stack_00000004[3].actor_name + 0x14));
         return;
       }
     }
@@ -843,7 +843,7 @@ void core_pendulum_cpp_FUN_00549b90(void)
 //   XREF to: 00681ef8 (READ)
 // 0054a0a1: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 0054a0a2: CALL core_sound.cpp_CSound_FUN_005b3a70
+// 0054a0a2: CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70
 //   XREF to: 005b3a70 (UNCONDITIONAL_CALL)
 // 0054a0a7: ADD ESP,0x10
 // 0054a0aa: JMP 0x00549dee
@@ -942,7 +942,7 @@ void core_pendulum_cpp_FUN_00549b90(void)
 //   XREF to: 00681ef8 (READ)
 // 0054a166: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 0054a167: CALL core_sound.cpp_CSound_FUN_005b3a70
+// 0054a167: CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70
 //   XREF to: 005b3a70 (UNCONDITIONAL_CALL)
 // 0054a16c: ADD ESP,0x10
 // 0054a16f: MOV ESP,EBP

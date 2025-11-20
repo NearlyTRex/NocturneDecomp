@@ -66812,8 +66812,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_FUN_005b3b30",
-    "ret":"int",
+    "name":"core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30",
+    "ret":"uint",
     "vars":{
       "locals":[
         {
@@ -66851,7 +66851,7 @@
           "type":"CSound*"
         },
         {
-          "name":"actor_name",
+          "name":"actor",
           "storage":{
             "offset":8,
             "size":4,
@@ -66864,7 +66864,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"CDemonActor*"
         },
         {
           "name":"sound_name",
@@ -66881,6 +66881,38 @@
             ]
           },
           "type":"char*"
+        },
+        {
+          "name":"position_tracker",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"delay",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ],
       "ret_storage":{

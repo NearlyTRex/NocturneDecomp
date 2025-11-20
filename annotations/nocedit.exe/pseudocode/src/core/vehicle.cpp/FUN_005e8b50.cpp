@@ -9,7 +9,7 @@
 //   CSound* g_CSoundPtr = 03f6af64
 //   CSound g_CSoundInstance
 // Function calls:
-//   core_sound.cpp_CSound_FUN_005b3a70
+//   core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 //   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 //   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
@@ -20,21 +20,23 @@
 /* Signature: undefined1 actors_other_vehicle.cpp_FUN_005e8b50(undefined4 param_1, undefined4
    param_2) */
 
-undefined4 core_vehicle_cpp_FUN_005e8b50(void)
+uint core_vehicle_cpp_FUN_005e8b50(void)
 
 {
-  undefined4 extraout_EAX;
-  char *in_stack_00000004;
+  uint uVar1;
+  CDemonActor *in_stack_00000004;
   char *in_stack_00000014;
   
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
   sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
-            ((CVector3f *)(in_stack_00000004 + 0x20));
+            (&(in_stack_00000004->location).position);
   sound_sndmain_cpp_setNextSfxTrackedVelocity_FUN_005a8a00
-            ((CVector3f *)(in_stack_00000004 + 0x1060));
-  core_sound_cpp_CSound_FUN_005b3a70(g_CSoundPtr,in_stack_00000004,in_stack_00000014);
+            ((CVector3f *)&in_stack_00000004[0xc].orient_matrix.m[0].y);
+  uVar1 = core_sound_cpp_CSound_playTrackedActorSound_FUN_005b3a70
+                    (g_CSoundPtr,in_stack_00000004,in_stack_00000014,
+                     &(in_stack_00000004->location).position);
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
-  return extraout_EAX;
+  return uVar1;
 }
 
 
@@ -66,7 +68,7 @@ undefined4 core_vehicle_cpp_FUN_005e8b50(void)
 //   XREF to: 00681ef8 (READ)
 // 005e8b83: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 005e8b84: CALL core_sound.cpp_CSound_FUN_005b3a70
+// 005e8b84: CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70
 //   XREF to: 005b3a70 (UNCONDITIONAL_CALL)
 // 005e8b89: ADD ESP,0x10
 // 005e8b8c: MOV EBX,EAX

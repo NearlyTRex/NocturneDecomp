@@ -68,7 +68,7 @@
 //   core_setedit.cpp_CDemonSet_save_FUN_0057a2a0
 //   core_setedit.cpp_FUN_00581320
 //   core_sound.cpp_CSound_FUN_005b3c70
-//   core_sound.cpp_CSound_FUN_005b3d20
+//   core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20
 //   core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   crt_stdio.c_sscanf_FUN_0060013c
@@ -116,17 +116,17 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
   int iVar8;
   undefined4 *puVar9;
   int iVar10;
-  undefined4 *puVar11;
+  int *piVar11;
   BADSPACEBASE *in_ESP;
   char *pcVar12;
   char *pcVar13;
   byte bVar14;
   int in_stack_0000002c;
-  int in_stack_0000003c;
-  char *pcStack00000040;
-  undefined4 *in_stack_0000004c;
-  undefined4 *in_stack_00000050;
-  undefined4 *in_stack_0000005c;
+  int *in_stack_0000003c;
+  int *piStack00000040;
+  int *in_stack_0000004c;
+  int *in_stack_00000050;
+  int *in_stack_0000005c;
   undefined4 *in_stack_00000060;
   ulonglong uVar15;
   undefined4 uVar16;
@@ -255,18 +255,18 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
         if (iVar3 == iVar10) {
           *(uint *)((int)unk + iVar10 * 0x1a4 + 0x154) =
                (uint)(*(int *)((int)unk + iVar10 * 0x1a4 + 0x154) == 0);
-          iVar3 = *(int *)((int)unk + 0x15aea4) * 0x1a4 + in_stack_0000003c;
-          *(undefined4 *)(iVar3 + 0x154) = *(undefined4 *)pcStack00000040;
-          *(undefined4 *)(iVar3 + 0x158) = *(undefined4 *)(pcStack00000040 + 4);
-          *(undefined4 *)(iVar3 + 0x15c) = *(undefined4 *)(pcStack00000040 + 8);
-          if ((undefined4 *)(iVar3 + 0x160) != in_stack_0000004c) {
-            *(undefined4 *)(iVar3 + 0x160) = *in_stack_0000004c;
-            *(undefined4 *)(iVar3 + 0x164) = in_stack_0000004c[1];
-            *(undefined4 *)(iVar3 + 0x168) = in_stack_0000004c[2];
+          iVar3 = *(int *)((int)unk + 0x15aea4);
+          in_stack_0000003c[iVar3 * 0x69 + 0x55] = *piStack00000040;
+          in_stack_0000003c[iVar3 * 0x69 + 0x56] = piStack00000040[1];
+          in_stack_0000003c[iVar3 * 0x69 + 0x57] = piStack00000040[2];
+          if (in_stack_0000003c + iVar3 * 0x69 + 0x58 != in_stack_0000004c) {
+            in_stack_0000003c[iVar3 * 0x69 + 0x58] = *in_stack_0000004c;
+            in_stack_0000003c[iVar3 * 0x69 + 0x59] = in_stack_0000004c[1];
+            in_stack_0000003c[iVar3 * 0x69 + 0x5a] = in_stack_0000004c[2];
           }
-          *(undefined4 *)(iVar3 + 0x16c) = *(undefined4 *)(pcStack00000040 + 0x18);
-          *(undefined4 *)(iVar3 + 0x170) = *(undefined4 *)(pcStack00000040 + 0x1c);
-          *(undefined4 *)(iVar3 + 0x174) = *(undefined4 *)(pcStack00000040 + 0x20);
+          in_stack_0000003c[iVar3 * 0x69 + 0x5b] = piStack00000040[6];
+          in_stack_0000003c[iVar3 * 0x69 + 0x5c] = piStack00000040[7];
+          in_stack_0000003c[iVar3 * 0x69 + 0x5d] = piStack00000040[8];
         }
         else {
           *(int *)((int)unk + 0x15aea4) = iVar3;
@@ -345,8 +345,8 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
           pcVar6 = pcVar6 + (uint)bVar14 * -2 + 1;
         } while (cVar1 != '\0');
         if (iVar3 != -2) {
-          _pcStack00000040 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffa94);
-          *(float *)(iVar8 + 0x18) = (float)_pcStack00000040;
+          _piStack00000040 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffa94);
+          *(float *)(iVar8 + 0x18) = (float)_piStack00000040;
         }
       }
       else if (uVar7 < 0x36) {
@@ -362,8 +362,8 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
           pcVar6 = pcVar6 + (uint)bVar14 * -2 + 1;
         } while (cVar1 != '\0');
         if (iVar3 != -2) {
-          _pcStack00000040 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffa94);
-          *(float *)(iVar8 + 0x1c) = (float)_pcStack00000040;
+          _piStack00000040 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffa94);
+          *(float *)(iVar8 + 0x1c) = (float)_piStack00000040;
         }
       }
       else {
@@ -371,13 +371,13 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
                           (g_CEditorToolsPtr,"Reset all cameras to master fog setting?");
         if (iVar8 != 0) {
           puVar9 = (undefined4 *)(uVar7 + 0x160);
-          puVar11 = (undefined4 *)(uVar7 + 0x154);
+          piVar11 = (int *)(uVar7 + 0x154);
           pvVar5 = unk;
           do {
             *(undefined4 *)((int)pvVar5 + 0x154) = 1;
-            *puVar11 = *in_stack_0000005c;
-            puVar11[1] = in_stack_0000005c[1];
-            puVar11[2] = in_stack_0000005c[2];
+            *piVar11 = *in_stack_0000005c;
+            piVar11[1] = in_stack_0000005c[1];
+            piVar11[2] = in_stack_0000005c[2];
             if (puVar9 != in_stack_00000060) {
               *puVar9 = *in_stack_00000060;
               puVar9[1] = in_stack_00000060[1];
@@ -385,10 +385,10 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
             }
             puVar9 = puVar9 + 0x69;
             pvVar5 = (void *)((int)pvVar5 + 0x1a4);
-            puVar11[6] = in_stack_0000005c[6];
-            puVar11[7] = in_stack_0000005c[7];
-            puVar11[8] = in_stack_0000005c[8];
-            puVar11 = puVar11 + 0x69;
+            piVar11[6] = in_stack_0000005c[6];
+            piVar11[7] = in_stack_0000005c[7];
+            piVar11[8] = in_stack_0000005c[8];
+            piVar11 = piVar11 + 0x69;
           } while (pvVar5 != (void *)((int)unk + 0x19a28));
         }
       }
@@ -409,10 +409,13 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
         crt_stdio_c_sprintf_FUN_005fdbd0
                   (acStack_cc,"Edit reverb for camera %s",
                    in_stack_0000004c + *(int *)((int)unk + 0x15aea4) * 0x69);
-        core_sound_cpp_CSound_FUN_005b3d20(g_CSoundPtr);
+        core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20
+                  (g_CSoundPtr,acStack_c8,
+                   in_stack_0000004c + *(int *)((int)unk + 0x15aea4) * 0x69 + 0x5e);
       }
       else {
-        core_sound_cpp_CSound_FUN_005b3d20(g_CSoundPtr);
+        core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20
+                  (g_CSoundPtr,"Edit default set reverb",in_stack_0000003c);
       }
     }
     else if (uVar7 < 0x54) {
@@ -421,7 +424,7 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
       }
       else {
         engine_dosio_c_splitPath_FUN_00481f20
-                  (pcStack00000040,(char *)0x0,(char *)0x0,acStack_cc,(char *)0x0);
+                  ((char *)piStack00000040,(char *)0x0,(char *)0x0,acStack_cc,(char *)0x0);
         pcVar12 = ".set";
         iVar8 = -1;
         pcVar6 = acStack_d0;
@@ -465,8 +468,8 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
         pcVar6 = pcVar6 + (uint)bVar14 * -2 + 1;
       } while (cVar1 != '\0');
       if (iVar3 != -2) {
-        _pcStack00000040 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffa94);
-        *(float *)(iVar8 + 0x20) = (float)_pcStack00000040;
+        _piStack00000040 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffa94);
+        *(float *)(iVar8 + 0x20) = (float)_piStack00000040;
       }
     }
     else if (uVar7 == 0x56) {
@@ -1334,7 +1337,7 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
 //   XREF to: 00681ef8 (READ)
 // 00580eef: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
-// 00580ef0: CALL core_sound.cpp_CSound_FUN_005b3d20
+// 00580ef0: CALL core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20
 //   XREF to: 005b3d20 (UNCONDITIONAL_CALL)
 // 00580ef5: ADD ESP,0xc
 // 00580ef8: JMP 0x00580c22
@@ -1366,7 +1369,7 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
 //   XREF to: 00681ef8 (READ)
 // 00580f3f: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 00580f40: CALL core_sound.cpp_CSound_FUN_005b3d20
+// 00580f40: CALL core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20
 //   XREF to: 005b3d20 (UNCONDITIONAL_CALL)
 // 00580f45: ADD ESP,0xc
 // 00580f48: JMP 0x00580c22

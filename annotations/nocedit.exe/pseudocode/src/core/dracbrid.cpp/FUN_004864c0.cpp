@@ -30,7 +30,7 @@ void core_dracbrid_cpp_FUN_004864c0
   BADSPACEBASE *in_ESP;
   float unaff_ESI;
   float unaff_EDI;
-  float in_stack_0000005c;
+  char *in_stack_0000005c;
   char acStack_11c [188];
   float local_60;
   float local_5c;
@@ -133,8 +133,9 @@ void core_dracbrid_cpp_FUN_004864c0
                   ((CVector3f *)(pSVar7->field0_0x0 + 4));
         sound_sndmain_cpp_setNextSfxTrackedVelocity_FUN_005a8a00
                   ((CVector3f *)(pSVar7->field0_0x0 + 0x10));
-        sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(in_stack_0000005c);
-        core_sound_cpp_CSound_FUN_005b1ed0(g_CSoundPtr);
+        sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60((float)in_stack_0000005c);
+        core_sound_cpp_CSound_findRandomMatchingSoundFile_FUN_005b1ed0
+                  (g_CSoundPtr,&stack0xfffffee0,in_stack_0000005c);
         uVar6 = sound_sndmain_cpp_startSfx_FUN_005a8e90(acStack_11c);
         *(uint *)pSVar7->field0_0x0 = uVar6;
         acStack_11c[0] = -0x7c;

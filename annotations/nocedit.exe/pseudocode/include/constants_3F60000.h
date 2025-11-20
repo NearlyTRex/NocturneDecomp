@@ -4,6 +4,12 @@
 // CONSTANTS
 // =============================================================================
 
+// char[40] constants
+const char[40] g_SoundAmbientSoundName = {};
+
+// char[40][40] constants
+const char[40][40] g_SoundMatchedFilenames = {};
+
 // double[8] constants
 const double[8] g_VirtualSpeakerXPositions = {};
 const double[8] g_VirtualSpeakerYPositions = {};

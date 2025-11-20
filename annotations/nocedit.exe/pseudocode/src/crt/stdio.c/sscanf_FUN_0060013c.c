@@ -24,7 +24,7 @@
 //   core_skeledit.cpp_FUN_0058a1b0 (0058a1b0) at 0058a1e9 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592520 (00592520) at 00592582 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 0059310d [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b2282 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_playSfxInternal_FUN_005b1fd0 (005b1fd0) at 005b2282 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 (004bd190) at 004bd2b5 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_parseTimestampRecord_FUN_004b2270 (004b2270) at 004b22dd [UNCONDITIONAL_CALL]
 //   engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0 (004fbcd0) at 004fbd1a [UNCONDITIONAL_CALL]

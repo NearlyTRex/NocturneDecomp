@@ -91,7 +91,7 @@
 //   core_skeledit.cpp_viewModel_FUN_00598fc0 (00598fc0) at 00599461 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0 (0059b8d0) at 0059b92f [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CSkeleton_load_FUN_00599b10 (00599b10) at 00599b6f [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b2554 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_playSfxInternal_FUN_005b1fd0 (005b1fd0) at 005b2554 [UNCONDITIONAL_CALL]
 //   core_texlist.cpp_CTextureList_load_FUN_005dbe00 (005dbe00) at 005dc0a2 [UNCONDITIONAL_CALL]
 //   core_texlist.cpp_CTextureList_save_FUN_005dc0d0 (005dc0d0) at 005dc1f2 [UNCONDITIONAL_CALL]
 //   engine_2d.c_initGraphicsSystem_FUN_00401010 (00401010) at 00401118 [UNCONDITIONAL_CALL]

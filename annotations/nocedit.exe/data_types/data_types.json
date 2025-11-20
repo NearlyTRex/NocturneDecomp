@@ -3617,6 +3617,10 @@
       "type":"struct"
     },
     {
+      "name":"SSoundModeEntry",
+      "type":"struct"
+    },
+    {
       "name":"SSpatialTreeNode",
       "type":"struct"
     },
@@ -31890,7 +31894,7 @@
           "len":8,
           "name":"userdata",
           "offset":84,
-          "type":"int[2]"
+          "type":"void*[2]"
         },
         {
           "len":4,
@@ -45102,6 +45106,30 @@
       "fields":[
         {
           "len":4,
+          "name":"name",
+          "offset":0,
+          "type":"char*"
+        },
+        {
+          "len":12,
+          "name":"listener_orient",
+          "offset":4,
+          "type":"CVector3f"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"SSoundModeEntry",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
           "name":"child1",
           "offset":0,
           "type":"SSpatialTreeNode*"
@@ -46193,10 +46221,16 @@
       "desc":"",
       "fields":[
         {
-          "len":16,
-          "name":"field_0",
+          "len":12,
+          "name":"position",
           "offset":0,
-          "type":"char[16]"
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"sound_handle",
+          "offset":12,
+          "type":"uint"
         }
       ],
       "importable":true,

@@ -1,42 +1,40 @@
-// Name: core_sound.cpp_FUN_005b26f0
+// Name: core_sound.cpp_resetTrainSounds_FUN_005b26f0
 // Address: 005b26f0
 // Address Range: [[005b26f0, 005b2759]]
-// Convention: unknown
-// Signature: undefined core_sound.cpp_FUN_005b26f0()
+// Convention: __cdecl
+// Signature: void core_sound.cpp_resetTrainSounds_FUN_005b26f0(void)
 // Globals:
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 DAT_0326eed8
 //   undefined4 DAT_0326eedc
 //   undefined4 DAT_0326eee0
-//   undefined4 DAT_03f6b85c
-//   undefined4 DAT_03f6b860
-//   undefined4 DAT_03f6b864
-//   undefined4 DAT_03f6b86c
+//   CVector3f g_TrainVelocityVector
+//   undefined4 g_TrainVelocityVector.y
+//   undefined4 g_TrainVelocityVector.z
+//   int g_TrainLastCameraIndex
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void core_sound_cpp_FUN_005b26f0(void)
+void __cdecl core_sound_cpp_resetTrainSounds_FUN_005b26f0(void)
 
 {
   BADSPACEBASE *in_ESP;
   
-  if (&stack0x00000000 == &DAT_03f6b868) {
-    DAT_03f6b86c = 0xffffffff;
+  if ((float *)&stack0x00000000 == &g_TrainNoiseCooldown) {
+    g_TrainLastCameraIndex = -1;
     return;
   }
-  _DAT_03f6b85c = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc0);
-  _DAT_03f6b860 = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc4);
-  _DAT_03f6b864 = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc8);
-  DAT_03f6b86c = 0xffffffff;
+  g_TrainVelocityVector.x = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc0);
+  g_TrainVelocityVector.y = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc4);
+  g_TrainVelocityVector.z = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc8);
+  g_TrainLastCameraIndex = -1;
   return;
 }
 
 
 // Assembly code:
 // 005b26f0: SUB ESP,0xc
-//   Label: core_sound.cpp_FUN_005b26f0
+//   Label: core_sound.cpp_resetTrainSounds_FUN_005b26f0
 // 005b26f3: MOV EAX,[0x006810c8]
 //   XREF to: 006810c8 (READ)
 // 005b26f8: FLD float ptr [EAX + 0x15ac60]

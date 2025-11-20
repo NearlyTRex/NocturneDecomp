@@ -1,38 +1,36 @@
-// Name: core_sound.cpp_FUN_005b3c90
+// Name: core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90
 // Address: 005b3c90
 // Address Range: [[005b3c90, 005b3cbc]]
 // Convention: __cdecl
-// Signature: void core_sound.cpp_FUN_005b3c90(int index)
+// Signature: void core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90(CSound * this_ptr, float listener_orient_x, float listener_orient_y, float listener_orient_z)
 // Cross-references:
 //   core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0 (005b3cc0) at 005b3cea [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_03f6af88
-//   undefined4 DAT_03f6af8c
-//   undefined4 DAT_03f6af90
+//   CVector3f g_SoundListenerOrient
+//   undefined4 g_SoundListenerOrient.y
+//   undefined4 g_SoundListenerOrient.z
 // Function calls:
 //   sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0
 
 #include "nocturne.h"
 
-void __cdecl core_sound_cpp_FUN_005b3c90(int index)
+void __cdecl
+core_sound_cpp_CSound_set3DListenerOrientRight_FUN_005b3c90
+          (CSound *this_ptr,float listener_orient_x,float listener_orient_y,float listener_orient_z)
 
 {
-  float in_stack_00000008;
-  float in_stack_0000000c;
-  float in_stack_00000010;
-  
-  DAT_03f6af88 = in_stack_00000008;
-  DAT_03f6af8c = in_stack_0000000c;
-  DAT_03f6af90 = in_stack_00000010;
+  g_SoundListenerOrient.x = listener_orient_x;
+  g_SoundListenerOrient.y = listener_orient_y;
+  g_SoundListenerOrient.z = listener_orient_z;
   sound_sndmain_cpp_set3DListenerOrientRight_FUN_005ab6e0
-            (in_stack_00000008,in_stack_0000000c,in_stack_00000010);
+            (listener_orient_x,listener_orient_y,listener_orient_z);
   return;
 }
 
 
 // Assembly code:
 // 005b3c90: MOV EAX,dword ptr [ESP + 0x8]
-//   Label: core_sound.cpp_FUN_005b3c90
+//   Label: core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90
 //   XREF to: Stack[0x8] (READ)
 // 005b3c94: MOV [0x03f6af88],EAX
 //   XREF to: 03f6af88 (WRITE)

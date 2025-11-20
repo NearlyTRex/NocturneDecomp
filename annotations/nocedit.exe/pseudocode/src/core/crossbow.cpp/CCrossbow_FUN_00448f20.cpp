@@ -39,7 +39,7 @@
 //   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
 //   core_setcolid.cpp_CDemonSet_raycast_FUN_00572530
 //   core_setcolid.cpp_CDemonSet_setRayType_FUN_00574230
-//   core_sound.cpp_CSound_FUN_005b3a40
+//   core_sound.cpp_CSound_playActorSound_FUN_005b3a40
 //   core_trigger.cpp_FUN_005e0aa0
 //   core_trigger.cpp_FUN_005e0ac0
 //   core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00
@@ -80,9 +80,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_FUN_00448f20(CCrossbow *this_ptr)
   float fStack_40;
   float fStack_3c;
   float fStack_38;
-  float fStack_1c;
-  float fStack_18;
-  float fStack_14;
+  CVector3f CStack_1c;
   
   pCVar1 = (CVector3f *)
            (*(this_ptr->base_weapon).base_actor.vtable[1].renderOpaque)((CDemonActor *)this_ptr);
@@ -162,7 +160,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_FUN_00448f20(CCrossbow *this_ptr)
       iVar2 = (*pCVar4->vtable[1].renderOpaque)(pCVar4);
       this_ptr_00 = g_CDemonSetPtr;
       if (iVar2 != 0) {
-        if (fStack_14 == 0.0) {
+        if (CStack_1c.z == 0.0) {
           (this_ptr->base_weapon).ammo_count = (this_ptr->base_weapon).ammo_count + 1;
           core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(this_ptr_00);
           return 0;
@@ -181,9 +179,9 @@ int __cdecl core_crossbow_cpp_CCrossbow_FUN_00448f20(CCrossbow *this_ptr)
       fStack00000008 =
            (float)DOUBLE_00619b9a /
            SQRT(fStack_80 * fStack_80 + CStack_8c.y * CStack_8c.y + CStack_8c.z * CStack_8c.z);
-      fStack_1c = CStack_8c.y * fStack00000008;
-      fStack_18 = CStack_8c.z * fStack00000008;
-      fStack_14 = fStack_80 * fStack00000008;
+      CStack_1c.x = CStack_8c.y * fStack00000008;
+      CStack_1c.y = CStack_8c.z * fStack00000008;
+      CStack_1c.z = fStack_80 * fStack00000008;
       pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                          (pCVar4,(CVector3f *)&stack0xfffffff0,
                           &g_CDemonSetPtr->collision_impact_position);
@@ -207,7 +205,8 @@ int __cdecl core_crossbow_cpp_CCrossbow_FUN_00448f20(CCrossbow *this_ptr)
   CStack_64.x = fStack_40 + CStack_54.z * fStack_a4;
   CStack_64.y = fStack_3c + fStack_48 * fStack_a4;
   CStack_64.z = fStack_38 + fStack_44 * fStack_a4;
-  core_sound_cpp_CSound_FUN_005b3a40(g_CSoundPtr,(char *)this_ptr,"bow-!.wav");
+  core_sound_cpp_CSound_playActorSound_FUN_005b3a40
+            (g_CSoundPtr,(CDemonActor *)this_ptr,"bow-!.wav",&CStack_1c);
   (this_ptr->base_weapon).field7_0x2f4[0xc] = -6;
   (this_ptr->base_weapon).field7_0x2f4[0xd] = '~';
   (this_ptr->base_weapon).field7_0x2f4[0xe] = '*';
@@ -420,7 +419,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_FUN_00448f20(CCrossbow *this_ptr)
 // 0044918e: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
 // 0044918f: FSTP float ptr [ESP + 0x60]
-// 00449193: CALL core_sound.cpp_CSound_FUN_005b3a40
+// 00449193: CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40
 //   XREF to: 005b3a40 (UNCONDITIONAL_CALL)
 // 00449198: MOV EAX,0x1
 // 0044919d: ADD ESP,0x10

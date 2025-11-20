@@ -10,7 +10,7 @@
 //   TerminatedCString s_sound_006524f4
 //   TerminatedCString s_mp3_006524fa
 //   TerminatedCString s_sound_00652500
-//   CStrList CStrList_03f6b128
+//   CStrList g_SoundFileList
 // Function calls:
 //   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
 //   sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0
@@ -24,11 +24,11 @@ void __cdecl core_sound_cpp_CSound_findAllSoundFiles_FUN_005b2d00(CSound *this_p
 {
   uint uVar1;
   
-  if (CStrList_03f6b128.item_count == 0) {
+  if (g_SoundFileList.item_count == 0) {
     shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
-              (&CStrList_03f6b128,"sound","*.wav");
+              (&g_SoundFileList,"sound","*.wav");
     shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
-              (&CStrList_03f6b128,"sound","*.mp3");
+              (&g_SoundFileList,"sound","*.mp3");
   }
   sound_sndmain_cpp_initializeSoundDevice_FUN_005ab5b0();
   uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_005ab5a0();

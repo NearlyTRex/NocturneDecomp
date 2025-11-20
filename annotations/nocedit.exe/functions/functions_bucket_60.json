@@ -55514,7 +55514,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_FUN_005b2ce0",
+    "name":"core_sound.cpp_CSound_ctor_FUN_005b2ce0",
     "ret":"CSound*",
     "vars":{
       "params":[
@@ -55558,7 +55558,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_FUN_005aaeb0",
+    "name":"core_sound.cpp_CSound_shutdownSounds_FUN_005aaeb0",
     "ret":"void",
     "thtarget":"005aaeb0",
     "thunk":true
@@ -55574,8 +55574,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_FUN_005b3ae0",
-    "ret":"int",
+    "name":"core_sound.cpp_CSound_playActorSoundWithDelay_FUN_005b3ae0",
+    "ret":"uint",
     "vars":{
       "locals":[
         {
@@ -55613,7 +55613,7 @@
           "type":"CSound*"
         },
         {
-          "name":"actor_name",
+          "name":"actor",
           "storage":{
             "offset":8,
             "size":4,
@@ -55626,7 +55626,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"CDemonActor*"
         },
         {
           "name":"sound_name",
@@ -55643,6 +55643,38 @@
             ]
           },
           "type":"char*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"delay",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ],
       "ret_storage":{

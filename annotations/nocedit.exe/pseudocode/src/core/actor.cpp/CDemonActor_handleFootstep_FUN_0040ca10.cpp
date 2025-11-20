@@ -20,7 +20,7 @@
 //   core_gore.cpp_CGore_FUN_004ee0f0
 //   core_ground.cpp_getGroundTypeCode_FUN_004eece0
 //   core_setcolid.cpp_CDemonSet_FUN_00574580
-//   core_sound.cpp_CSound_FUN_005b3a40
+//   core_sound.cpp_CSound_playActorSound_FUN_005b3a40
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 
 #include "nocturne.h"
@@ -39,7 +39,6 @@ core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10
   BADSPACEBASE *in_ESP;
   float in_stack_0000001c;
   undefined4 uVar6;
-  CVector3f *pCStack_7c;
   char acStack_78 [80];
   int local_28;
   int local_24;
@@ -80,10 +79,8 @@ LAB_0040cb07:
   uVar6 = (undefined4)((ulonglong)(double)in_stack_0000001c >> 0x20);
   pcVar5 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(surface_type);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            ((char *)&pCStack_7c,"footstep-%s-!-%s-?.wav @ %f",&this_ptr->field21_0x11c,pcVar5,uVar6
-            );
-  pCStack_7c = position;
-  core_sound_cpp_CSound_FUN_005b3a40(g_CSoundPtr,this_ptr->actor_name,acStack_78);
+            (&stack0xffffff84,"footstep-%s-!-%s-?.wav @ %f",&this_ptr->field21_0x11c,pcVar5,uVar6);
+  core_sound_cpp_CSound_playActorSound_FUN_005b3a40(g_CSoundPtr,this_ptr,acStack_78,position);
   return extraout_EAX;
 }
 
@@ -229,7 +226,7 @@ LAB_0040cb07:
 //   XREF to: 00681ef8 (READ)
 // 0040cb44: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 0040cb45: CALL core_sound.cpp_CSound_FUN_005b3a40
+// 0040cb45: CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40
 //   XREF to: 005b3a40 (UNCONDITIONAL_CALL)
 // 0040cb4a: ADD ESP,0x10
 // 0040cb4d: ADD ESP,0x7c

@@ -73359,7 +73359,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_FUN_005b3b90",
+    "name":"core_sound.cpp_CSound_killSfx_FUN_005b3b90",
     "ret":"void",
     "vars":{
       "params":[
@@ -73378,6 +73378,22 @@
             ]
           },
           "type":"CSound*"
+        },
+        {
+          "name":"sfx_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ]
     }
@@ -73393,12 +73409,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_FUN_005b3c90",
+    "name":"core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"index",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -73411,7 +73427,55 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CSound*"
+        },
+        {
+          "name":"listener_orient_x",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"listener_orient_y",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"listener_orient_z",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }

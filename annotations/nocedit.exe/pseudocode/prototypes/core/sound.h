@@ -19,45 +19,45 @@ undefined FUN_005b17d0();
 // Address: 005b1870
 void FUN_005b1870(void);
 
-// Original: core_sound.cpp_CSound_FUN_005b1ed0
+// Original: core_sound.cpp_CSound_findRandomMatchingSoundFile_FUN_005b1ed0
 // Address: 005b1ed0
-void CSound(CSound * this_ptr);
+void CSound::findRandomMatchingSoundFile(CSound * this_ptr, char * out_result, char * wildcard_pattern);
 
-// Original: core_sound.cpp_FUN_005b1fd0
+// Original: core_sound.cpp_playSfxInternal_FUN_005b1fd0
 // Address: 005b1fd0
-int FUN_005b1fd0(void);
+uint playSfxInternal(void * user_data, char * sound_name, float x, float y, float z, CVector3f * position_tracker, uint flags);
 
-// Original: core_sound.cpp_FUN_005b26f0
+// Original: core_sound.cpp_resetTrainSounds_FUN_005b26f0
 // Address: 005b26f0
-undefined FUN_005b26f0();
+void resetTrainSounds(void);
 
-// Original: core_sound.cpp_FUN_005b2770
+// Original: core_sound.cpp_processTrainSounds_FUN_005b2770
 // Address: 005b2770
-undefined FUN_005b2770();
+void processTrainSounds(void);
 
-// Original: core_sound.cpp_FUN_005b2ca0
+// Original: core_sound.cpp_stopTrainSounds_FUN_005b2ca0
 // Address: 005b2ca0
-undefined FUN_005b2ca0();
+void stopTrainSounds(void);
 
-// Original: core_sound.cpp_CSound_FUN_005b2ce0
+// Original: core_sound.cpp_CSound_ctor_FUN_005b2ce0
 // Address: 005b2ce0
-CSound * CSound(CSound * this_ptr);
+CSound * CSound::ctor(CSound * this_ptr);
 
 // Original: core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00
 // Address: 005b2d00
 void CSound::findAllSoundFiles(CSound * this_ptr);
 
-// Original: core_sound.cpp_CSound_FUN_005aaeb0
+// Original: core_sound.cpp_CSound_shutdownSounds_FUN_005aaeb0
 // Address: 005b2d60
-void CSound(void);
+void CSound::shutdownSounds(void);
 
 // Original: core_sound.cpp_FUN_005b2d70
 // Address: 005b2d70
 undefined FUN_005b2d70();
 
-// Original: core_sound.cpp_CSound_FUN_005b2dd0
+// Original: core_sound.cpp_CSound_initializeAudioFrame_FUN_005b2dd0
 // Address: 005b2dd0
-void CSound(CSound * this_ptr);
+void CSound::initializeAudioFrame(CSound * this_ptr);
 
 // Original: core_sound.cpp_CSound_FUN_005b2f70
 // Address: 005b2f70
@@ -81,35 +81,35 @@ void CSound(CSound * this_ptr);
 
 // Original: core_sound.cpp_CSound_playSfx_FUN_005b3a20
 // Address: 005b3a20
-void CSound::playSfx(CSound * this_ptr, int n, char * sound_name);
+void CSound::playSfx(CSound * this_ptr, int user_data, char * sound_name);
 
-// Original: core_sound.cpp_CSound_FUN_005b3a40
+// Original: core_sound.cpp_CSound_playActorSound_FUN_005b3a40
 // Address: 005b3a40
-void CSound(CSound * this_ptr, char * actor_name, char * sound_name);
+void CSound::playActorSound(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position);
 
-// Original: core_sound.cpp_CSound_FUN_005b3a70
+// Original: core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70
 // Address: 005b3a70
-void CSound(CSound * this_ptr, char * actor_name, char * sound_name);
+uint CSound::playTrackedActorSound(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker);
 
 // Original: core_sound.cpp_FUN_005b3aa0
 // Address: 005b3aa0
 undefined FUN_005b3aa0();
 
-// Original: core_sound.cpp_CSound_FUN_005b3ae0
+// Original: core_sound.cpp_CSound_playActorSoundWithDelay_FUN_005b3ae0
 // Address: 005b3ae0
-int CSound(CSound * this_ptr, char * actor_name, char * sound_name);
+uint CSound::playActorSoundWithDelay(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, float delay);
 
-// Original: core_sound.cpp_CSound_FUN_005b3b30
+// Original: core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30
 // Address: 005b3b30
-int CSound(CSound * this_ptr, char * actor_name, char * sound_name);
+uint CSound::playTrackedActorSoundWithDelay(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker, float delay);
 
-// Original: core_sound.cpp_CSound_FUN_005b3b80
+// Original: core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
 // Address: 005b3b80
-void CSound(CSound * this_ptr);
+void CSound::isSfxPlaying(CSound * this_ptr, uint sfx_handle);
 
-// Original: core_sound.cpp_CSound_FUN_005b3b90
+// Original: core_sound.cpp_CSound_killSfx_FUN_005b3b90
 // Address: 005b3b90
-void CSound(CSound * this_ptr);
+void CSound::killSfx(CSound * this_ptr, uint sfx_handle);
 
 // Original: core_sound.cpp_CSound_FUN_005b3ba0
 // Address: 005b3ba0
@@ -123,17 +123,17 @@ undefined FUN_005b3c60();
 // Address: 005b3c70
 float * CSound(CSound * this_ptr);
 
-// Original: core_sound.cpp_FUN_005b3c90
+// Original: core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90
 // Address: 005b3c90
-void FUN_005b3c90(int index);
+void CSound::set3DListenerOrientRight(CSound * this_ptr, float listener_orient_x, float listener_orient_y, float listener_orient_z);
 
 // Original: core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0
 // Address: 005b3cc0
 void CSound::setReverbPreset(CSound * this_ptr, int index);
 
-// Original: core_sound.cpp_CSound_FUN_005b3d20
+// Original: core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20
 // Address: 005b3d20
-int CSound(CSound * this_ptr);
+int CSound::selectReverbPreset(CSound * this_ptr, char * title, int * selection_inout);
 
 // Original: core_sound.cpp_CSound_FUN_005b3dc0
 // Address: 005b3dc0

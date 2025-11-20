@@ -23,5 +23,5 @@ HGLOBAL[20] g_WaveInHeaderHandles = {};
 LPWAVEHDR[20] g_WaveInHeaders = {};
 HGLOBAL[20] g_WaveInBufferHandles = {};
 LPVOID[20] g_WaveInBuffers = {};
-STrainNoise[10] STrainNoise_ARRAY_03f6b7bc = {};
+STrainNoise[10] g_TrainNoiseArray = {};
 

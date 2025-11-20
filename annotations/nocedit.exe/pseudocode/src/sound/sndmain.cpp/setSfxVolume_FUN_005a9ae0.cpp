@@ -10,7 +10,7 @@
 //   core_lightgun.cpp_FUN_00505c70 (00505c70) at 0050641b [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_0050a4f0 (0050a4f0) at 0050a589 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b30b3 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2770 (005b2770) at 005b2ae1 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_processTrainSounds_FUN_005b2770 (005b2770) at 005b2ae1 [UNCONDITIONAL_CALL]
 // Globals:
 //   CSoundDevice* g_CSoundDevicePtr
 // Function calls:

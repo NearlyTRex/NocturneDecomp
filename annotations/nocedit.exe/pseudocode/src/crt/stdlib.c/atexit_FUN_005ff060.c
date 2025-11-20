@@ -32,7 +32,7 @@
 //   core_setedit.cpp_staticInit_FUN_00576930 (00576930) at 00576942 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00596ce0 [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_staticInit_FUN_00599670 (00599670) at 00599689 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b246e [UNCONDITIONAL_CALL]
+//   core_sound.cpp_playSfxInternal_FUN_005b1fd0 (005b1fd0) at 005b246e [UNCONDITIONAL_CALL]
 //   core_sound.cpp_staticInit_FUN_005b1760 (005b1760) at 005b177f [UNCONDITIONAL_CALL]
 //   core_texlist.cpp_staticInit_FUN_005dbdb0 (005dbdb0) at 005dbdc2 [UNCONDITIONAL_CALL]
 //   core_water.cpp_staticInit_FUN_005e9da0 (005e9da0) at 005e9db2 [UNCONDITIONAL_CALL]

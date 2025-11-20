@@ -21,7 +21,7 @@ sound_sndmain_cpp_setSfxUserData_FUN_005a9ba0
 
 {
   CSfxSlot *pCVar1;
-  int in_stack_00000014;
+  void *in_stack_00000014;
   
   if (((int)user_data_index < 0) || (1 < (int)user_data_index)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";

@@ -405,7 +405,7 @@
 //   core_skeleton.cpp_getDeformableModel_FUN_005a1cf0 (005a1cf0) at 005a1d6a [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_loadSkeleton_FUN_005a1df0 (005a1df0) at 005a1e62 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0 (005b3cc0) at 005b3d0f [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b1fd0 (005b1fd0) at 005b25c8 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_playSfxInternal_FUN_005b1fd0 (005b1fd0) at 005b25c8 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bfb60 (005bfb60) at 005bfb9c [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c07b0 (005c07b0) at 005c15fd [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c1680 (005c1680) at 005c1eed [UNCONDITIONAL_CALL]
@@ -767,7 +767,7 @@
 //   BOOL g_RecursiveCallFlag
 //   CSound g_CSoundInstance
 // Function calls:
-//   core_sound.cpp_CSound_FUN_005aaeb0
+//   core_sound.cpp_CSound_shutdownSounds_FUN_005aaeb0
 //   crt_errno.c_errno_FUN_00601450
 //   crt_startup.c_notifyAbnormalTermination_FUN_00601620
 //   crt_stdio.c_fprintf_FUN_005fe6d0
@@ -860,7 +860,7 @@ LAB_00506f71:
           in_stack_00000020 = pFVar1;
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar1,"..\\core\\main.c",0xad);
         }
-        core_sound_cpp_CSound_FUN_005aaeb0();
+        core_sound_cpp_CSound_shutdownSounds_FUN_005aaeb0();
         engine_2d_c_cleanupGraphicsSystem_FUN_005ecd90();
         wincore_winrun_cpp_endPeriod_FUN_005f2db0();
         wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005f3920(g_ErrorMessageBuffer);
@@ -1025,7 +1025,7 @@ LAB_00506f93:
 //   XREF to: 00681ef8 (READ)
 // 00507014: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 00507015: CALL core_sound.cpp_CSound_FUN_005aaeb0
+// 00507015: CALL core_sound.cpp_CSound_shutdownSounds_FUN_005aaeb0
 //   XREF to: 005b2d60 (UNCONDITIONAL_CALL)
 // 0050701a: ADD ESP,0x4
 // 0050701d: CALL engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90
