@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: double sound_sndmain.cpp_CSampleInfo_getSampleDuration_FUN_005a84d0(CSampleInfo * this_ptr)
 // Cross-references:
-//   core_sound.cpp_CSound_FUN_005b3ba0 (005b3ba0) at 005b3c1f [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_getSoundDuration_FUN_005b3ba0 (005b3ba0) at 005b3c1f [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

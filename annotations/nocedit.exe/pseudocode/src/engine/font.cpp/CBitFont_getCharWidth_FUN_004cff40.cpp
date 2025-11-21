@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_main.c_showDeveloperToolsMenu_FUN_005073a0 (005073a0) at 00507552 [UNCONDITIONAL_CALL]
 //   core_main.c_showLicenseAgreement_FUN_005070f0 (005070f0) at 00507167 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_GetGameMainMenuChoice_FUN_00510000 (00510000) at 005103a9 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_getGameMainMenuChoice_FUN_00510000 (00510000) at 005103a9 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEdButton_paint_FUN_004a65e0 (004a65e0) at 004a663b [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEdCheck_render_FUN_004a6c00 (004a6c00) at 004a6c5a [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEdCheck_setupWithText_FUN_004a6a60 (004a6a60) at 004a6ad5 [UNCONDITIONAL_CALL]

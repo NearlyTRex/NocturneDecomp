@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_game.cpp_CGame_ctor_FUN_004d7b40 (004d7b40) at 004d7b9f [UNCONDITIONAL_CALL]
 //   core_inivar.cpp_readIniData_FUN_004fbd90 (004fbd90) at 004fc017 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingCustomKeys_FUN_005138e0 (005138e0) at 005147a0 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (005138e0) at 005147a0 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

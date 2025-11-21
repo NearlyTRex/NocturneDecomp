@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CLeakChecker * shape_memdbg.cpp_CLeakChecker_ctor_FUN_0050fba0(CLeakChecker * this_ptr)
 // Cross-references:
-//   core_menu.cpp_staticInit_FUN_0050ee40 (0050ee40) at 0050ee45 [UNCONDITIONAL_CALL]
+//   shape_memdbg.cpp_staticInit_FUN_0050ee40 (0050ee40) at 0050ee45 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_ags_006363d9
 // Function calls:

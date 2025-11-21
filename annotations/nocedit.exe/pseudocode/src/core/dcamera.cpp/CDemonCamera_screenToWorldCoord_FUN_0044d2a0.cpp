@@ -12,7 +12,7 @@
 //   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 (0053e220) at 0053e5e6 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_005800d0 (005800d0) at 0058011a [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00 (0057fd00) at 0057fdc5 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b1870 (005b1870) at 005b1c1b [UNCONDITIONAL_CALL]
+//   core_sound.cpp_updateListeners_FUN_005b1870 (005b1870) at 005b1c1b [UNCONDITIONAL_CALL]
 // Globals:
 //   uint*[1024] g_ZBufferScanlineArray
 

@@ -34,8 +34,8 @@
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
 //   core_flamecan.cpp_FUN_004cad90
 //   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
-//   core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
-//   core_sound.cpp_CSound_killSfx_FUN_005b3b90
+//   core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
+//   core_sound.cpp_CSound_killSound_FUN_005b3b90
 //   crt_math.c_round_FUN_005fe6b0
 
 #include "nocturne.h"
@@ -109,13 +109,13 @@ void core_flame_cpp_FUN_004c9c00(void)
     core_flamecan_cpp_FUN_004cad90();
     if (*(int *)(in_stack_00000004 + 0x2a0) == 0) {
       if (*(uint *)(in_stack_00000004 + 0x1b0) != 0) {
-        core_sound_cpp_CSound_killSfx_FUN_005b3b90(g_CSoundPtr,*(uint *)(in_stack_00000004 + 0x1b0))
-        ;
+        core_sound_cpp_CSound_killSound_FUN_005b3b90
+                  (g_CSoundPtr,*(uint *)(in_stack_00000004 + 0x1b0));
         *(undefined4 *)(in_stack_00000004 + 0x1b0) = 0;
       }
     }
     else {
-      core_sound_cpp_CSound_isSfxPlaying_FUN_005b3b80
+      core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80
                 (g_CSoundPtr,*(uint *)(in_stack_00000004 + 0x1b0));
       if (extraout_EAX == 0) {
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.95,1.05);
@@ -344,7 +344,7 @@ void core_flame_cpp_FUN_004c9c00(void)
 //   XREF to: 03f6af64 (PARAM)
 // 004c9d8a: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 004c9d8b: CALL core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
+// 004c9d8b: CALL core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
 //   XREF to: 005b3b80 (UNCONDITIONAL_CALL)
 // 004c9d90: ADD ESP,0x8
 // 004c9d93: TEST EAX,EAX
@@ -484,7 +484,7 @@ void core_flame_cpp_FUN_004c9c00(void)
 //   XREF to: 03f6af64 (PARAM)
 // 004c9fac: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 004c9fad: CALL core_sound.cpp_CSound_killSfx_FUN_005b3b90
+// 004c9fad: CALL core_sound.cpp_CSound_killSound_FUN_005b3b90
 //   XREF to: 005b3b90 (UNCONDITIONAL_CALL)
 // 004c9fb2: ADD ESP,0x8
 // 004c9fb5: MOV dword ptr [ESI + 0x1b0],0x0

@@ -14,7 +14,7 @@
 //   core_main.c_initializeGameSystems_FUN_00507a60 (00507a60) at 005080e6 [UNCONDITIONAL_CALL]
 //   core_main.c_showPromoScreen_FUN_00508340 (00508340) at 005083b4 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_MonitorCalibrationPressAnyKeyToContinue_FUN_00510a50 (00510a50) at 00510aea [UNCONDITIONAL_CALL]
-//   core_moon.cpp_CMoon_FUN_00529ed0 (00529ed0) at 0052a293 [UNCONDITIONAL_CALL]
+//   core_moon.cpp_CMoon_render_FUN_00529ed0 (00529ed0) at 0052a293 [UNCONDITIONAL_CALL]
 //   support_newmsg.cpp_FUN_005445c0 (005445c0) at 0054461c [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_WindowWidth = 0x140

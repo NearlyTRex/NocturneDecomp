@@ -65,7 +65,7 @@
 //   core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0
 //   core_msnedit.cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0
 //   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
-//   core_sound.cpp_FUN_005b3de0
+//   core_sound.cpp_editSoundName_FUN_005b3de0
 //   crt_file.c_makepath_FUN_005febfc
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   crt_string.c_memmove_FUN_005fe5e0
@@ -96,6 +96,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
   int *piVar5;
   bool bVar6;
   undefined3 extraout_var;
+  int extraout_EAX;
   SMotion *pSVar7;
   char *pcVar8;
   uint uVar9;
@@ -386,8 +387,8 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                (uint)in_stack_ffffc820,in_stack_ffffc824);
     return 1;
   case 8:
-    iVar15 = core_sound_cpp_FUN_005b3de0();
-    return iVar15;
+    core_sound_cpp_editSoundName_FUN_005b3de0((char *)this_ptr->data_ptr,local_2a0);
+    return extraout_EAX;
   case 9:
     iVar15 = 0;
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)local_3444);
@@ -1637,7 +1638,7 @@ LAB_00410083:
 // 0040f624: PUSH EAX
 // 0040f625: MOV ESI,dword ptr [EBX + 0x68]
 // 0040f628: PUSH ESI
-// 0040f629: CALL core_sound.cpp_FUN_005b3de0
+// 0040f629: CALL core_sound.cpp_editSoundName_FUN_005b3de0
 //   XREF to: 005b3de0 (UNCONDITIONAL_CALL)
 // 0040f62e: ADD ESP,0x8
 // 0040f631: MOV ESI,EAX

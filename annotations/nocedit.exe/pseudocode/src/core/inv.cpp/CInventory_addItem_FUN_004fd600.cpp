@@ -89,7 +89,7 @@
 //   core_inv.cpp_CInventory_selectWeapon_FUN_004feb10
 //   core_inv.cpp_getItemDisplayName_FUN_004fcf00
 //   core_inv.cpp_getItemIconName_FUN_004fcf70
-//   core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+//   core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700
 //   core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0
 //   core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0
@@ -258,7 +258,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
         pcVar6[1] = cVar1;
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
-      pcVar12 = (char *)core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+      pcVar12 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_CGamePtr->key_next_item);
       iVar10 = -1;
       pcVar6 = &stack0xfffffcf4;
       do {
@@ -300,7 +300,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
         pcVar13[1] = cVar1;
         pcVar13 = pcVar13 + 2;
       } while (cVar1 != '\0');
-      pcVar12 = (char *)core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+      pcVar12 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_CGamePtr->key_prev_item);
       iVar10 = -1;
       pcVar6 = &stack0xfffffcfc;
       do {
@@ -343,7 +343,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
         pcVar13[1] = cVar1;
         pcVar13 = pcVar13 + 2;
       } while (cVar1 != '\0');
-      pcVar12 = (char *)core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+      pcVar12 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_CGamePtr->key_use_item);
       iVar10 = -1;
       pcVar6 = &stack0xfffffd04;
       do {
@@ -400,7 +400,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
         pcVar6[1] = cVar1;
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
-      pcVar12 = (char *)core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+      pcVar12 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_CGamePtr->key_next_item);
       iVar10 = -1;
       pcVar6 = &stack0xfffffd14;
       do {
@@ -442,7 +442,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
         pcVar13[1] = cVar1;
         pcVar13 = pcVar13 + 2;
       } while (cVar1 != '\0');
-      pcVar12 = (char *)core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+      pcVar12 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_CGamePtr->key_prev_item);
       iVar10 = -1;
       pcVar6 = &stack0xfffffd1c;
       do {
@@ -485,7 +485,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
         pcVar13[1] = cVar1;
         pcVar13 = pcVar13 + 2;
       } while (cVar1 != '\0');
-      pcVar12 = (char *)core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+      pcVar12 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_CGamePtr->key_use_item);
       iVar10 = -1;
       pcVar6 = &stack0xfffffd24;
       do {
@@ -543,7 +543,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
         pcVar6[1] = cVar1;
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
-      pcVar12 = (char *)core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+      pcVar12 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_CGamePtr->key_fire);
       iVar10 = -1;
       pcVar6 = &stack0xfffffd34;
       do {
@@ -600,7 +600,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
         pcVar6[1] = cVar1;
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
-      pcVar12 = (char *)core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+      pcVar12 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_CGamePtr->key_next_item);
       iVar10 = -1;
       pcVar6 = acStack_2c0 + 4;
       do {
@@ -642,7 +642,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
         pcVar13[1] = cVar1;
         pcVar13 = pcVar13 + 2;
       } while (cVar1 != '\0');
-      pcVar12 = (char *)core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+      pcVar12 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_CGamePtr->key_prev_item);
       iVar10 = -1;
       pcVar6 = acStack_2b4;
       do {
@@ -685,7 +685,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
         pcVar13[1] = cVar1;
         pcVar13 = pcVar13 + 2;
       } while (cVar1 != '\0');
-      pcVar12 = (char *)core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+      pcVar12 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_CGamePtr->key_use_item);
       iVar10 = -1;
       pcVar6 = acStack_2ac;
       do {
@@ -829,7 +829,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
         pcVar13[1] = cVar1;
         pcVar13 = pcVar13 + 2;
       } while (cVar1 != '\0');
-      pcVar12 = (char *)core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+      pcVar12 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_CGamePtr->key_next_weapon);
       iVar10 = -1;
       pcVar6 = acStack_284;
       do {
@@ -871,7 +871,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
         pcVar13[1] = cVar1;
         pcVar13 = pcVar13 + 2;
       } while (cVar1 != '\0');
-      pcVar12 = (char *)core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+      pcVar12 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_CGamePtr->key_prev_weapon);
       iVar10 = -1;
       pcVar6 = acStack_27c;
       do {
@@ -978,7 +978,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
         pcVar13[1] = cVar1;
         pcVar13 = pcVar13 + 2;
       } while (cVar1 != '\0');
-      pcVar12 = (char *)core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+      pcVar12 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_CGamePtr->key_next_weapon);
       iVar10 = -1;
       pcVar6 = acStack_218 + 4;
       do {
@@ -1020,7 +1020,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
         pcVar13[1] = cVar1;
         pcVar13 = pcVar13 + 2;
       } while (cVar1 != '\0');
-      pcVar12 = (char *)core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+      pcVar12 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(g_CGamePtr->key_prev_weapon);
       iVar10 = -1;
       pcVar6 = acStack_20c;
       do {
@@ -1485,7 +1485,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
 // 004fd7ec: MOV ECX,dword ptr [EAX + 0x84]
 //   XREF to: 02d81b20 (READ)
 // 004fd7f2: PUSH ECX
-// 004fd7f3: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004fd7f3: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004fd7f8: ADD ESP,0x4
 // 004fd7fb: LEA EDI,[ESP + 0x100]
@@ -1545,7 +1545,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
 // 004fd863: MOV EBX,dword ptr [EAX + 0x88]
 //   XREF to: 02d81b24 (READ)
 // 004fd869: PUSH EBX
-// 004fd86a: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004fd86a: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004fd86f: ADD ESP,0x4
 // 004fd872: LEA EDI,[ESP + 0x100]
@@ -1605,7 +1605,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
 // 004fd8da: MOV ESI,dword ptr [EAX + 0x4c]
 //   XREF to: 02d81ae8 (READ)
 // 004fd8dd: PUSH ESI
-// 004fd8de: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004fd8de: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004fd8e3: ADD ESP,0x4
 // 004fd8e6: LEA EDI,[ESP + 0x100]
@@ -1699,7 +1699,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
 // 004fd99b: MOV EDX,dword ptr [EAX + 0x84]
 //   XREF to: 02d81b20 (READ)
 // 004fd9a1: PUSH EDX
-// 004fd9a2: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004fd9a2: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004fd9a7: ADD ESP,0x4
 // 004fd9aa: LEA EDI,[ESP + 0x100]
@@ -1759,7 +1759,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
 // 004fda12: MOV ECX,dword ptr [EAX + 0x88]
 //   XREF to: 02d81b24 (READ)
 // 004fda18: PUSH ECX
-// 004fda19: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004fda19: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004fda1e: ADD ESP,0x4
 // 004fda21: LEA EDI,[ESP + 0x100]
@@ -1819,7 +1819,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
 // 004fda89: MOV EBX,dword ptr [EAX + 0x4c]
 //   XREF to: 02d81ae8 (READ)
 // 004fda8c: PUSH EBX
-// 004fda8d: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004fda8d: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004fda92: ADD ESP,0x4
 // 004fda95: LEA EDI,[ESP + 0x100]
@@ -1913,7 +1913,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
 // 004fdb4a: MOV EDI,dword ptr [EAX + 0x48]
 //   XREF to: 02d81ae4 (READ)
 // 004fdb4d: PUSH EDI
-// 004fdb4e: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004fdb4e: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004fdb53: ADD ESP,0x4
 // 004fdb56: LEA EDI,[ESP + 0x100]
@@ -2007,7 +2007,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
 // 004fdc0b: MOV EDX,dword ptr [EAX + 0x84]
 //   XREF to: 02d81b20 (READ)
 // 004fdc11: PUSH EDX
-// 004fdc12: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004fdc12: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004fdc17: ADD ESP,0x4
 // 004fdc1a: LEA EDI,[ESP + 0x100]
@@ -2067,7 +2067,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
 // 004fdc82: MOV ECX,dword ptr [EAX + 0x88]
 //   XREF to: 02d81b24 (READ)
 // 004fdc88: PUSH ECX
-// 004fdc89: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004fdc89: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004fdc8e: ADD ESP,0x4
 // 004fdc91: LEA EDI,[ESP + 0x100]
@@ -2127,7 +2127,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
 // 004fdcf9: MOV EBX,dword ptr [EAX + 0x4c]
 //   XREF to: 02d81ae8 (READ)
 // 004fdcfc: PUSH EBX
-// 004fdcfd: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004fdcfd: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004fdd02: ADD ESP,0x4
 // 004fdd05: LEA EDI,[ESP + 0x100]
@@ -2344,7 +2344,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
 // 004fdeb2: MOV EDX,dword ptr [EAX + 0x7c]
 //   XREF to: 02d81b18 (READ)
 // 004fdeb5: PUSH EDX
-// 004fdeb6: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004fdeb6: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004fdebb: ADD ESP,0x4
 // 004fdebe: LEA EDI,[ESP + 0x100]
@@ -2404,7 +2404,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
 // 004fdf26: MOV ECX,dword ptr [EAX + 0x80]
 //   XREF to: 02d81b1c (READ)
 // 004fdf2c: PUSH ECX
-// 004fdf2d: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004fdf2d: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004fdf32: ADD ESP,0x4
 // 004fdf35: LEA EDI,[ESP + 0x100]
@@ -2577,7 +2577,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
 // 004fe09b: MOV EBX,dword ptr [EAX + 0x7c]
 //   XREF to: 02d81b18 (READ)
 // 004fe09e: PUSH EBX
-// 004fe09f: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004fe09f: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004fe0a4: ADD ESP,0x4
 // 004fe0a7: LEA EDI,[ESP + 0x100]
@@ -2637,7 +2637,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
 // 004fe10f: MOV ESI,dword ptr [EAX + 0x80]
 //   XREF to: 02d81b1c (READ)
 // 004fe115: PUSH ESI
-// 004fe116: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004fe116: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004fe11b: ADD ESP,0x4
 // 004fe11e: LEA EDI,[ESP + 0x100]

@@ -4,12 +4,12 @@
 // Convention: __cdecl
 // Signature: uint core_sound.cpp_playSfxInternal_FUN_005b1fd0(void * user_data, char * sound_name, float x, float y, float z, CVector3f * position_tracker, uint flags)
 // Cross-references:
-//   core_sound.cpp_CSound_playActorSoundWithDelay_FUN_005b3ae0 (005b3ae0) at 005b3b12 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_005b3aa0 (005b3aa0) at 005b3acc [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0 (005b3ae0) at 005b3b12 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_playActorSound_FUN_005b3a40 (005b3a40) at 005b3a5a [UNCONDITIONAL_CALL]
-//   core_sound.cpp_CSound_playSfx_FUN_005b3a20 (005b3a20) at 005b3a34 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_playSound_FUN_005b3a20 (005b3a20) at 005b3a34 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30 (005b3b30) at 005b3b5f [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70 (005b3a70) at 005b3a88 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b3aa0 (005b3aa0) at 005b3acc [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_d_d_n_0065255a
 //   TerminatedCString s_core_sound_cpp_00652564
@@ -57,7 +57,7 @@
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_set.cpp_CDemonSet_FUN_0056fac0
-//   core_sound.cpp_CSound_findRandomMatchingSoundFile_FUN_005b1ed0
+//   core_sound.cpp_CSound_findRandomSoundFile_FUN_005b1ed0
 //   crt_env.c_getenv_FUN_006013f0
 //   crt_stdio.c_fprintf_FUN_005fe6d0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -220,8 +220,7 @@ LAB_005b2052:
     pcVar6 = (char *)0x0;
 LAB_005b20b2:
     if (pcVar6 == (char *)0x0) {
-      core_sound_cpp_CSound_findRandomMatchingSoundFile_FUN_005b1ed0
-                (g_CSoundPtr,acStack_ac,acStack_110);
+      core_sound_cpp_CSound_findRandomSoundFile_FUN_005b1ed0(g_CSoundPtr,acStack_ac,acStack_110);
     }
     else {
       local_48 = x;
@@ -259,7 +258,7 @@ LAB_005b20b2:
               cVar5 = *pcVar1;
             }
             *pcVar4 = '\0';
-            core_sound_cpp_CSound_findRandomMatchingSoundFile_FUN_005b1ed0
+            core_sound_cpp_CSound_findRandomSoundFile_FUN_005b1ed0
                       (g_CSoundPtr,acStack_a8,&stack0xfffffe90);
             if (cStack_a4 != '\0') break;
           }
@@ -861,7 +860,7 @@ LAB_005b20b2:
 //   XREF to: 03f6af64 (DATA)
 // 005b23cf: MOV byte ptr [EDX],0x0
 //   XREF to: Stack[-0x177] (DATA)
-// 005b23d2: CALL core_sound.cpp_CSound_findRandomMatchingSoundFile_FUN_005b1ed0
+// 005b23d2: CALL core_sound.cpp_CSound_findRandomSoundFile_FUN_005b1ed0
 //   XREF to: 005b1ed0 (UNCONDITIONAL_CALL)
 // 005b23d7: ADD ESP,0xc
 // 005b23da: CMP byte ptr [ESP + 0xd0],0x0
@@ -882,7 +881,7 @@ LAB_005b20b2:
 //   XREF to: 00681ef8 (READ)
 // 005b2400: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 005b2401: CALL core_sound.cpp_CSound_findRandomMatchingSoundFile_FUN_005b1ed0
+// 005b2401: CALL core_sound.cpp_CSound_findRandomSoundFile_FUN_005b1ed0
 //   XREF to: 005b1ed0 (UNCONDITIONAL_CALL)
 // 005b2406: ADD ESP,0xc
 // 005b2409: JMP 0x005b215b

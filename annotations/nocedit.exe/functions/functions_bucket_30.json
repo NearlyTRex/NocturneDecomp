@@ -42106,14 +42106,10 @@
         "start":"0050fdb0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_menu.cpp_staticInit_FUN_0050fdb0",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "ret":"void"
   },
   {
     "addr":"00512d30",
@@ -42124,7 +42120,6 @@
         "start":"00512d30"
       }
     ],
-    "cmt":"Signature: undefined1 core_menu.cpp_ShowOptionsScreen(undefined4 param_1)",
     "importable":true,
     "name":"core_menu.cpp_ShowOptionsScreen_FUN_00512d30",
     "ret":"undefined1",
@@ -45854,7 +45849,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_moon.cpp_FUN_00529ab0",
+    "name":"core_moon.cpp_CMoon_dtor_FUN_00529ab0",
     "ret":"CMoon*",
     "vars":{
       "params":[
@@ -66726,7 +66721,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_FUN_005b3830",
+    "name":"core_sound.cpp_CSound_configure_FUN_005b3830",
     "ret":"void",
     "vars":{
       "locals":[
@@ -66778,7 +66773,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_FUN_005b39b0",
+    "name":"core_sound.cpp_CSound_playAmbientSound_FUN_005b39b0",
     "ret":"void",
     "vars":{
       "params":[
@@ -66797,6 +66792,22 @@
             ]
           },
           "type":"CSound*"
+        },
+        {
+          "name":"sound_name",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ]
     }
@@ -66936,12 +66947,54 @@
         "start":"005b3e30"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_FUN_005b3e30",
-    "ret":"undefined1",
+    "name":"core_sound.cpp_assignInt_FUN_005b3e30",
+    "ret":"int*",
     "vars":{
+      "params":[
+        {
+          "name":"dest_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"src_ptr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

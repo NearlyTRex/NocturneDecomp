@@ -58,7 +58,7 @@
 //   core_manpuz.cpp_FUN_00509d50 (00509d50) at 0050a1b4 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_0050a1f0 (0050a1f0) at 0050a27d [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_CMimic_FUN_005205f0 (005205f0) at 005207fa [UNCONDITIONAL_CALL]
-//   core_moon.cpp_CMoon_FUN_00529ed0 (00529ed0) at 0052a0c6 [UNCONDITIONAL_CALL]
+//   core_moon.cpp_CMoon_render_FUN_00529ed0 (00529ed0) at 0052a0c6 [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_buildMirrorList_FUN_00570b70 (00570b70) at 00570c32 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_00581aa0 (00581aa0) at 00581db4 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_00583170 (00583170) at 0058362f [UNCONDITIONAL_CALL]

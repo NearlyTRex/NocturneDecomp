@@ -5,7 +5,7 @@
 // Signature: CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * inputVector)
 // Cross-references:
 //   core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0 (004effb0) at 004f00b1 [UNCONDITIONAL_CALL]
-//   core_moon.cpp_FUN_0052a2c0 (0052a2c0) at 0052a374 [UNCONDITIONAL_CALL]
+//   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0 (0052a2c0) at 0052a374 [UNCONDITIONAL_CALL]
 //   core_set.cpp_FUN_005702b0 (005702b0) at 005704b8 [UNCONDITIONAL_CALL]
 //   engine_light.cpp_calculatePhongLighting_FUN_00505530 (00505530) at 0050564f [UNCONDITIONAL_CALL]
 // Globals:

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0(CAlphaBitmap * this_ptr)
 // Cross-references:
-//   core_moon.cpp_CMoon_FUN_00529ed0 (00529ed0) at 0052a142 [UNCONDITIONAL_CALL]
+//   core_moon.cpp_CMoon_render_FUN_00529ed0 (00529ed0) at 0052a142 [UNCONDITIONAL_CALL]
 //   engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950 (00410950) at 00410990 [UNCONDITIONAL_CALL]
 //   engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00 (00410b00) at 00410b23 [UNCONDITIONAL_CALL]
 // Globals:

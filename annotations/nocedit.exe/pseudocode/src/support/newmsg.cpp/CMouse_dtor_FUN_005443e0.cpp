@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: CMouse * support_newmsg.cpp_CMouse_dtor_FUN_005443e0(CMouse * this_ptr)
 // Function calls:
-//   core_menu.cpp_freeBitmap_FUN_00514f50
+//   core_menu.cpp_freeBitmaps_FUN_00514f50
 //   support_newmsg.cpp_freeBitmap_FUN_00544730
 //   support_newmsg.cpp_freeSkullBitmaps_FUN_00544750
 
@@ -19,7 +19,7 @@ CMouse * __cdecl support_newmsg_cpp_CMouse_dtor_FUN_005443e0(CMouse *this_ptr)
   
   support_newmsg_cpp_freeSkullBitmaps_FUN_00544750(this_ptr->skulls);
   support_newmsg_cpp_freeBitmap_FUN_00544730((CAlphaBitmap **)(extraout_EAX + -0x8c));
-  core_menu_cpp_freeBitmap_FUN_00514f50((CAlphaBitmap **)(extraout_EAX_00 + -0xa0));
+  core_menu_cpp_freeBitmaps_FUN_00514f50((CAlphaBitmap **)(extraout_EAX_00 + -0xa0));
   return extraout_EAX_01;
 }
 
@@ -43,7 +43,7 @@ CMouse * __cdecl support_newmsg_cpp_CMouse_dtor_FUN_005443e0(CMouse *this_ptr)
 // 00544404: PUSH 0x0
 // 00544406: SUB EAX,0xa0
 // 0054440b: PUSH EAX
-// 0054440c: CALL core_menu.cpp_freeBitmap_FUN_00514f50
+// 0054440c: CALL core_menu.cpp_freeBitmaps_FUN_00514f50
 //   XREF to: 00514f50 (UNCONDITIONAL_CALL)
 // 00544411: ADD ESP,0x8
 // 00544414: RET

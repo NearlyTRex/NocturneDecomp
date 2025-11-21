@@ -5,10 +5,10 @@
 // Signature: void sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0(int channel_index, float volume)
 // Cross-references:
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512980 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b325f [UNCONDITIONAL_CALL]
-//   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b38a6 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_CSound_initializeAudioFrame_FUN_005b2dd0 (005b2dd0) at 005b2e9d [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2d70 (005b2d70) at 005b2dad [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_configure_FUN_005b3830 (005b3830) at 005b38a6 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_init_FUN_005b2dd0 (005b2dd0) at 005b2e9d [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_process_FUN_005b2fd0 (005b2fd0) at 005b325f [UNCONDITIONAL_CALL]
+//   core_sound.cpp_syncChannel3WithChannel0_FUN_005b2d70 (005b2d70) at 005b2dad [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005ac1eb [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00 (005aae00) at 005aae09 [UNCONDITIONAL_CALL]
 // Globals:

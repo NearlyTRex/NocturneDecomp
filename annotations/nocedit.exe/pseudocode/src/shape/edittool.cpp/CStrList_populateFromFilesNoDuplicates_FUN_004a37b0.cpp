@@ -5,7 +5,7 @@
 // Signature: void shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0(CStrList * this_ptr, char * directory_path, char * file_pattern)
 // Cross-references:
 //   core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00 (005b2d00) at 005b2d2f [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b17a0 (005b17a0) at 005b17af [UNCONDITIONAL_CALL]
+//   core_sound.cpp_populateSoundFiles_FUN_005b17a0 (005b17a0) at 005b17af [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CFileManager_managePodMounts_FUN_004bcec0 (004bcec0) at 004bcef3 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0 (005ad5c0) at 005ad705 [UNCONDITIONAL_CALL]
 // Globals:

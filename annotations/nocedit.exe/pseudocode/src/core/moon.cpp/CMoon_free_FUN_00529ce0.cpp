@@ -1,21 +1,21 @@
 // Name: core_moon.cpp_CMoon_free_FUN_00529ce0
 // Address: 00529ce0
 // Address Range: [[00529ce0, 00529d50]]
-// Convention: unknown
-// Signature: undefined core_moon.cpp_CMoon_free_FUN_00529ce0()
+// Convention: __cdecl
+// Signature: void core_moon.cpp_CMoon_free_FUN_00529ce0(CMoon * this_ptr)
 // Cross-references:
 //   core_menu.cpp_ShowOptionsScreen_FUN_00512d30 (00512d30) at 00512f04 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 00513161 [UNCONDITIONAL_CALL]
-//   core_moon.cpp_FUN_00529ab0 (00529ab0) at 00529ab6 [UNCONDITIONAL_CALL]
+//   core_moon.cpp_CMoon_dtor_FUN_00529ab0 (00529ab0) at 00529ab6 [UNCONDITIONAL_CALL]
 // Globals:
-//   CAlphaBitmap CAlphaBitmap_02f37f70
-//   CAlphaBitmap[30] DAT_02f37f84
+//   CAlphaBitmap g_MoonCloudTexture
+//   CAlphaBitmap[30] g_MoonAnimTextures
 //   undefined4 DAT_02f37f98
-//   undefined4 DAT_02f381dc
-//   CCourse[3] DAT_02f381e8
+//   int g_MoonCloudScrollX
+//   CCourse[3] g_MoonBatCourses
 //   undefined4 DAT_02f381f4
-//   SBat[30] DAT_02f3820c
-//   CKeyFramedModel DAT_02f384dc
+//   SBat[30] g_MoonBats
+//   CKeyFramedModel g_MoonBatModel
 // Function calls:
 //   core_course.cpp_CCourse_free_FUN_004426c0
 //   core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
@@ -23,31 +23,28 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_moon.cpp_CMoon_free(CMoon* param_1) */
-
-void core_moon_cpp_CMoon_free_FUN_00529ce0(void)
+void __cdecl core_moon_cpp_CMoon_free_FUN_00529ce0(CMoon *this_ptr)
 
 {
-  CCourse *this_ptr;
-  CAlphaBitmap *this_ptr_00;
-  int *in_stack_00000004;
+  CCourse *this_ptr_00;
+  CAlphaBitmap *this_ptr_01;
   
-  if (*in_stack_00000004 != 0) {
-    this_ptr_00 = DAT_02f37f84;
-    engine_alphabit_cpp_CAlphaBitmap_free_FUN_00410560(&CAlphaBitmap_02f37f70);
+  if (this_ptr->is_loaded != 0) {
+    this_ptr_01 = g_MoonAnimTextures;
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_00410560(&g_MoonCloudTexture);
     do {
-      engine_alphabit_cpp_CAlphaBitmap_free_FUN_00410560(this_ptr_00);
-      this_ptr_00 = this_ptr_00 + 1;
-    } while (this_ptr_00 != (CAlphaBitmap *)&DAT_02f381dc);
-    *in_stack_00000004 = 0;
+      engine_alphabit_cpp_CAlphaBitmap_free_FUN_00410560(this_ptr_01);
+      this_ptr_01 = this_ptr_01 + 1;
+    } while (this_ptr_01 != (CAlphaBitmap *)&g_MoonCloudScrollX);
+    this_ptr->is_loaded = 0;
   }
-  this_ptr = DAT_02f381e8;
+  this_ptr_00 = g_MoonBatCourses;
   do {
-    core_course_cpp_CCourse_free_FUN_004426c0(this_ptr);
-    this_ptr = this_ptr + 1;
-  } while (this_ptr != (CCourse *)DAT_02f3820c);
-  core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690((CKeyFramedModel *)(in_stack_00000004 + 2));
-  core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(&DAT_02f384dc);
+    core_course_cpp_CCourse_free_FUN_004426c0(this_ptr_00);
+    this_ptr_00 = this_ptr_00 + 1;
+  } while ((SBat *)this_ptr_00 != g_MoonBats);
+  core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(&this_ptr->moon);
+  core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(&g_MoonBatModel);
   return;
 }
 

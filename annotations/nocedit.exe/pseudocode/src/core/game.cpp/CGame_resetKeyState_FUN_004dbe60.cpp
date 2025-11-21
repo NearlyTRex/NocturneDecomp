@@ -6,9 +6,9 @@
 // Cross-references:
 //   core_game.cpp_CGame_openSomething_FUN_004e2910 (004e2910) at 004e2ef3 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CallToJoystickStuff_FUN_004dc230 (004dc230) at 004dc236 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_FUN_00513860 (00513860) at 00513896 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_SetUpGamepadControls_FUN_005104d0 (005104d0) at 005105a8 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingCustomKeys_FUN_005138e0 (005138e0) at 00514ac4 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (005138e0) at 00514ac4 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_getSinglePressedKey_FUN_00513860 (00513860) at 00513896 [UNCONDITIONAL_CALL]
 // Globals:
 //   CKeys* g_CKeysPtr = 02dcd7d4
 //   DWORD g_JoyXPos

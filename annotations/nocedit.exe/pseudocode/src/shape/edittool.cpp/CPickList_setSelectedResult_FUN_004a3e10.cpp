@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void shape_edittool.cpp_CPickList_setSelectedResult_FUN_004a3e10(CPickList * this_ptr, int result_value)
 // Cross-references:
-//   core_menu.cpp_SettingCustomKeys_FUN_005138e0 (005138e0) at 0051475e [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (005138e0) at 0051475e [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 (005381e0) at 005388d1 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_005677a0 (005677a0) at 00567954 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630 (00578630) at 00578677 [UNCONDITIONAL_CALL]

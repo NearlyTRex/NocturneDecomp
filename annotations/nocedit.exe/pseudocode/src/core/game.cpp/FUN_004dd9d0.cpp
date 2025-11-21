@@ -15,7 +15,7 @@
 // Function calls:
 //   core_game.cpp_CGame_displayMessage_FUN_004d7f20
 //   core_game.cpp_giveHeroWeapon_FUN_004dd870
-//   core_sound.cpp_CSound_playSfx_FUN_005b3a20
+//   core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   crt_ctype.c_toupper_FUN_005ff9e0
 
 #include "nocturne.h"
@@ -63,7 +63,7 @@ void core_game_cpp_FUN_004dd9d0(void)
   g_InputHistory[1] = '\0';
   core_game_cpp_giveHeroWeapon_FUN_004dd870(in_stack_00000008);
   core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,in_stack_00000010,5.0);
-  core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+  core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav");
   return;
 }
 
@@ -159,7 +159,7 @@ void core_game_cpp_FUN_004dd9d0(void)
 //   XREF to: 00681ef8 (READ)
 // 004dda6a: PUSH EBP
 //   XREF to: 03f6af64 (DATA)
-// 004dda6b: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004dda6b: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004dda70: ADD ESP,0xc
 // 004dda73: ADD ESP,0x8

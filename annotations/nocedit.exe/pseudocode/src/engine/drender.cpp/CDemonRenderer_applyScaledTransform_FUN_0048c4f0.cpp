@@ -50,7 +50,7 @@
 //   core_manpuz.cpp_FUN_00509d50 (00509d50) at 00509d90 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_0050a1f0 (0050a1f0) at 0050a23e [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_CMimic_FUN_005205f0 (005205f0) at 005207d6 [UNCONDITIONAL_CALL]
-//   core_moon.cpp_CMoon_FUN_00529ed0 (00529ed0) at 0052a094 [UNCONDITIONAL_CALL]
+//   core_moon.cpp_CMoon_render_FUN_00529ed0 (00529ed0) at 0052a094 [UNCONDITIONAL_CALL]
 //   core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 (00574ba0) at 00574c08 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_00581aa0 (00581aa0) at 00581d17 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_00583170 (00583170) at 005834a9 [UNCONDITIONAL_CALL]

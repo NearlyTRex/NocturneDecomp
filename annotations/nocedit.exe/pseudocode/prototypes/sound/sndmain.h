@@ -381,7 +381,7 @@ int setSfxBaseFrequency(uint sfx_handle, float base_frequency);
 
 // Original: sound_sndmain.cpp_setSfxUserData_FUN_005a9ba0
 // Address: 005a9ba0
-int setSfxUserData(uint sfx_handle, uint user_data_index, int user_data_value);
+int setSfxUserData(uint sfx_handle, int index, void * value);
 
 // Original: sound_sndmain.cpp_setSfxIsActive_FUN_005a9c10
 // Address: 005a9c10

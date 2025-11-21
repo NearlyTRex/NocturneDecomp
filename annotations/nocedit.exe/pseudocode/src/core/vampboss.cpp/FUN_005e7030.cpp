@@ -30,7 +30,7 @@
 //   core_inv.cpp_CInventory_removeItem_FUN_004fea70
 //   core_mission.cpp_CDemonMission_FUN_00523b70
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   core_sound.cpp_CSound_playSfx_FUN_005b3a20
+//   core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 //   sound_sndmain.cpp_killSfx_FUN_005a9c40
 
@@ -89,8 +89,8 @@ void core_vampboss_cpp_FUN_005e7030(void)
       core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
       sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[0x11].cloth_data + 0x1e04))
       ;
-      core_sound_cpp_CSound_playSfx_FUN_005b3a20
-                (g_CSoundPtr,(int)in_stack_00000004,"voicudeath.wav @ 2.5");
+      core_sound_cpp_CSound_playSound_FUN_005b3a20
+                (g_CSoundPtr,in_stack_00000004,"voicudeath.wav @ 2.5");
       in_stack_00000004->hit_points = 0.0;
       return;
     }
@@ -370,7 +370,7 @@ void core_vampboss_cpp_FUN_005e7030(void)
 //   XREF to: 00681ef8 (READ)
 // 005e7245: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 005e7246: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 005e7246: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 005e724b: ADD ESP,0xc
 // 005e724e: MOV dword ptr [ESI + 0x243c],0x0

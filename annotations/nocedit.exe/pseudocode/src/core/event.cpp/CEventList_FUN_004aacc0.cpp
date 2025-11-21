@@ -219,8 +219,8 @@
 //   core_setdir.cpp_CDemonSet_setPendingCamera_FUN_00575b00
 //   core_setutil.cpp_C3DSLight_advanceFilter_FUN_00586e70
 //   core_setutil.cpp_C3DSLight_setFilterFrame_FUN_00586f00
-//   core_sound.cpp_CSound_FUN_005b3dc0
-//   core_sound.cpp_CSound_playSfx_FUN_005b3a20
+//   core_sound.cpp_CSound_playSound_FUN_005b3a20
+//   core_sound.cpp_CSound_setVolumeFade_FUN_005b3dc0
 //   core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
 //   core_weather.cpp_CWeather_FUN_005ef8c0
 //   crt_ctype.c_toupper_FUN_005ff9e0
@@ -314,6 +314,8 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   int local_d8;
   int local_d4;
   int local_d0;
+  float local_cc;
+  float local_c8;
   int local_c4;
   float local_c0;
   float local_bc;
@@ -640,7 +642,7 @@ LAB_004aad41:
               }
               local_ec = local_ec + local_c4;
               if (local_f0 != 0) {
-                core_sound_cpp_CSound_FUN_005b3dc0(g_CSoundPtr);
+                core_sound_cpp_CSound_setVolumeFade_FUN_005b3dc0(g_CSoundPtr,local_cc,local_c8);
               }
             }
             else {
@@ -1283,8 +1285,8 @@ LAB_004aaf38:
                                           if (iVar5 != 0) {
                                             sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
                                             sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(1);
-                                            core_sound_cpp_CSound_playSfx_FUN_005b3a20
-                                                      (g_CSoundPtr,(int)this_ptr,local_13ad + 1);
+                                            core_sound_cpp_CSound_playSound_FUN_005b3a20
+                                                      (g_CSoundPtr,this_ptr,local_13ad + 1);
                                             sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
                                             if (local_b15[1] != '\0') {
                                               core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80
@@ -1293,8 +1295,8 @@ LAB_004aaf38:
                                           }
                                         }
                                         else {
-                                          core_sound_cpp_CSound_playSfx_FUN_005b3a20
-                                                    (g_CSoundPtr,(int)this_ptr,local_13ad + 1);
+                                          core_sound_cpp_CSound_playSound_FUN_005b3a20
+                                                    (g_CSoundPtr,this_ptr,local_13ad + 1);
                                           if (local_b15[1] != '\0') {
                                             core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80
                                                       (this_ptr);
@@ -3442,7 +3444,7 @@ LAB_004aace6:
 //   XREF to: Stack[-0xcc] (READ)
 // 004ab544: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 004ab545: CALL core_sound.cpp_CSound_FUN_005b3dc0
+// 004ab545: CALL core_sound.cpp_CSound_setVolumeFade_FUN_005b3dc0
 //   XREF to: 005b3dc0 (UNCONDITIONAL_CALL)
 // 004ab54a: ADD ESP,0xc
 // 004ab54d: JMP 0x004aaf1d
@@ -5571,7 +5573,7 @@ LAB_004aace6:
 //   XREF to: 00681ef8 (READ)
 // 004ac57c: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
-// 004ac57d: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004ac57d: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004ac582: ADD ESP,0xc
 // 004ac585: MOV EBX,EAX
@@ -5619,7 +5621,7 @@ LAB_004aace6:
 //   XREF to: 00681ef8 (READ)
 // 004ac5df: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 004ac5e0: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004ac5e0: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004ac5e5: MOV BL,byte ptr [EBP + 0xfffff57a]
 //   XREF to: Stack[-0xb14] (READ)

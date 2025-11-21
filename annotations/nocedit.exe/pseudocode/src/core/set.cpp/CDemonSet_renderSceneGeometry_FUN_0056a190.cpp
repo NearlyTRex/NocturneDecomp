@@ -120,7 +120,7 @@ LAB_0056a1fb:
          g_CWaterPtr->wave_animation_enabled == 0)) {
         core_water_cpp_CWater_render_FUN_005ea320(g_CWaterPtr,1);
       }
-      if (this_ptr->field29_0x15aca8 != 0) {
+      if (this_ptr->player_on_train != 0) {
         core_terrain_cpp_CTerrain_render_FUN_005e1f50(g_CTerrainPtr);
       }
     }

@@ -3,13 +3,9 @@
 // Function prototypes for core/menu.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_menu.cpp_staticInit_FUN_0050ee40
-// Address: 0050ee40
-undefined staticInit();
-
 // Original: core_menu.cpp_staticInit_FUN_0050fdb0
 // Address: 0050fdb0
-undefined staticInit();
+void staticInit(void);
 
 // Original: core_menu.cpp_FUN_0050fe60
 // Address: 0050fe60
@@ -19,9 +15,9 @@ undefined FUN_0050fe60();
 // Address: 0050fe70
 undefined FUN_0050fe70();
 
-// Original: core_menu.cpp_GetGameMainMenuChoice_FUN_00510000
+// Original: core_menu.cpp_getGameMainMenuChoice_FUN_00510000
 // Address: 00510000
-undefined GetGameMainMenuChoice();
+int getGameMainMenuChoice(void);
 
 // Original: core_menu.cpp_FUN_00510410
 // Address: 00510410
@@ -71,26 +67,26 @@ undefined ShowOptionsScreen();
 // Address: 00512f40
 int showMainGameMenu(void);
 
-// Original: core_menu.cpp_FUN_00513460
+// Original: core_menu.cpp_addCustomKeyBinding_FUN_00513460
 // Address: 00513460
-undefined FUN_00513460();
+void addCustomKeyBinding(int * key_code_ptr, char * key_name);
 
-// Original: core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// Original: core_menu.cpp_getKeyDisplayName_FUN_005134e0
 // Address: 005134e0
-undefined LocalizeMainGameControls();
+char * getKeyDisplayName(int key_code);
 
-// Original: core_menu.cpp_ValidateCustomKey_FUN_00513720
+// Original: core_menu.cpp_isKeyCodeValidForMode_FUN_00513720
 // Address: 00513720
-undefined ValidateCustomKey();
+int isKeyCodeValidForMode(int * key_code_ptr, char * description);
 
-// Original: core_menu.cpp_FUN_00513860
+// Original: core_menu.cpp_getSinglePressedKey_FUN_00513860
 // Address: 00513860
-undefined FUN_00513860();
+int getSinglePressedKey(void);
 
-// Original: core_menu.cpp_SettingCustomKeys_FUN_005138e0
+// Original: core_menu.cpp_configureCustomKeyBindings_FUN_005138e0
 // Address: 005138e0
-undefined SettingCustomKeys();
+void configureCustomKeyBindings(void);
 
-// Original: core_menu.cpp_freeBitmap_FUN_00514f50
+// Original: core_menu.cpp_freeBitmaps_FUN_00514f50
 // Address: 00514f50
-void freeBitmap(CAlphaBitmap * * objs);
+void freeBitmaps(CAlphaBitmap * * array);

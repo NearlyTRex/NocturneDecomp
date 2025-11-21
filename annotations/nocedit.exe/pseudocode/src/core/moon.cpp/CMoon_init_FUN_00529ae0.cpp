@@ -1,8 +1,8 @@
 // Name: core_moon.cpp_CMoon_init_FUN_00529ae0
 // Address: 00529ae0
 // Address Range: [[00529ae0, 00529b31] [00529bf0, 00529cd5]]
-// Convention: unknown
-// Signature: undefined core_moon.cpp_CMoon_init_FUN_00529ae0()
+// Convention: __cdecl
+// Signature: void core_moon.cpp_CMoon_init_FUN_00529ae0(CMoon * this_ptr)
 // Cross-references:
 //   core_menu.cpp_ShowOptionsScreen_FUN_00512d30 (00512d30) at 00512ea5 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 005131c6 [UNCONDITIONAL_CALL]
@@ -17,18 +17,18 @@
 //   TerminatedCString s_noc00000_00639fd1
 //   TerminatedCString s_noc00001_00639fda
 //   CGame* g_CGamePtr = 02d81a9c
-//   void* PTR_s_noc00000_0067d758 = 00639fd1
-//   void* PTR_s_noc00001_0067d75c = 00639fda
+//   char*[30] PTR_s_noc00000_0067d758
+//   undefined4 PTR_s_noc00001_0067d75c
 //   undefined4 DAT_02d81cb0
-//   CAlphaBitmap CAlphaBitmap_02f37f70
-//   CAlphaBitmap[30] DAT_02f37f84
+//   CAlphaBitmap g_MoonCloudTexture
+//   CAlphaBitmap[30] g_MoonAnimTextures
 //   undefined4 DAT_02f37f98
-//   CCourse[3] DAT_02f381e8
+//   CCourse[3] g_MoonBatCourses
 //   undefined4 DAT_02f381f4
 //   undefined4 DAT_02f38200
-//   SBat[30] DAT_02f3820c
+//   SBat[30] g_MoonBats
 //   undefined4 DAT_02f38224
-//   CKeyFramedModel DAT_02f384dc
+//   CKeyFramedModel g_MoonBatModel
 // Function calls:
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_course.cpp_CCourse_load_FUN_00442580
@@ -38,9 +38,7 @@
 
 #include "nocturne.h"
 
-/* Signature: void core_moon.cpp_CMoon_init(CMoon* pMoon, SIZE_T param_2, SIZE_T param_3) */
-
-void core_moon_cpp_CMoon_init_FUN_00529ae0(void)
+void __cdecl core_moon_cpp_CMoon_init_FUN_00529ae0(CMoon *this_ptr)
 
 {
   undefined4 *puVar1;
@@ -48,55 +46,52 @@ void core_moon_cpp_CMoon_init_FUN_00529ae0(void)
   float fVar3;
   float fVar4;
   int iVar5;
-  CAlphaBitmap *this_ptr;
-  int *in_stack_00000004;
+  CAlphaBitmap *this_ptr_00;
   
-  if (*in_stack_00000004 == 0) {
+  if (this_ptr->is_loaded == 0) {
     if (g_CGamePtr->head_of_horror_cheat == 0x29a) {
-      core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0
-                ((CKeyFramedModel *)(in_stack_00000004 + 2),"taylor_head.kfm");
+      core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(&this_ptr->moon,"taylor_head.kfm");
       g_CGamePtr->head_of_horror_cheat = 0;
     }
     else {
-      core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0
-                ((CKeyFramedModel *)(in_stack_00000004 + 2),"moon.kfm");
+      core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(&this_ptr->moon,"moon.kfm");
     }
-    core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(&DAT_02f384dc,"menubat.kfm");
-    this_ptr = DAT_02f37f84;
+    core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(&g_MoonBatModel,"menubat.kfm");
+    this_ptr_00 = g_MoonAnimTextures;
     iVar5 = 0;
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
-              (&CAlphaBitmap_02f37f70,"menucld2",0x100,0x100);
+              (&g_MoonCloudTexture,"menucld2",0x100,0x100);
     do {
-      puVar1 = (undefined4 *)((int)&PTR_s_noc00000_0067d758 + iVar5);
+      puVar1 = (undefined4 *)((int)PTR_s_noc00000_0067d758 + iVar5);
       iVar5 = iVar5 + 4;
-      engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(this_ptr,(char *)*puVar1,0x280,0x116);
-      this_ptr = this_ptr + 1;
+      engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(this_ptr_00,(char *)*puVar1,0x280,0x116);
+      this_ptr_00 = this_ptr_00 + 1;
     } while (iVar5 != 0x78);
-    *in_stack_00000004 = 1;
-    core_course_cpp_CCourse_load_FUN_00442580(DAT_02f381e8,"menu1.pth");
-    core_course_cpp_CCourse_load_FUN_00442580(DAT_02f381e8 + 1,"menu2.pth");
-    core_course_cpp_CCourse_load_FUN_00442580(DAT_02f381e8 + 2,"menu3.pth");
+    this_ptr->is_loaded = 1;
+    core_course_cpp_CCourse_load_FUN_00442580(g_MoonBatCourses,"menu1.pth");
+    core_course_cpp_CCourse_load_FUN_00442580(g_MoonBatCourses + 1,"menu2.pth");
+    core_course_cpp_CCourse_load_FUN_00442580(g_MoonBatCourses + 2,"menu3.pth");
   }
-  in_stack_00000004[1] = 0x3e800000;
+  this_ptr->rotation_phase = 0.25;
   iVar5 = 0;
   do {
     iVar2 = crt_stdlib_c_rand_FUN_005feb5c();
-    *(int *)(DAT_02f3820c[0].field0_0x0 + iVar5) = iVar2 % 3;
-    fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,(float)DAT_02f381e8[iVar2 % 3].len);
-    fVar4 = (float)DAT_02f384dc.frame_count;
-    *(float *)(DAT_02f3820c[0].field0_0x0 + iVar5 + 4) = -fVar3;
+    *(int *)((int)&g_MoonBats[0].course_index + iVar5) = iVar2 % 3;
+    fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,(float)g_MoonBatCourses[iVar2 % 3].len);
+    fVar4 = (float)g_MoonBatModel.frame_count;
+    *(float *)((int)&g_MoonBats[0].course_position + iVar5) = -fVar3;
     fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,fVar4);
-    *(float *)(DAT_02f3820c[0].field0_0x0 + iVar5 + 8) = fVar4;
+    *(float *)((int)&g_MoonBats[0].animation_frame + iVar5) = fVar4;
     fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
-    *(float *)(DAT_02f3820c[0].field0_0x0 + iVar5 + 0xc) = fVar4;
+    *(float *)((int)&g_MoonBats[0].random_offset.x + iVar5) = fVar4;
     fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
-    *(float *)(DAT_02f3820c[0].field0_0x0 + iVar5 + 0x10) = fVar4;
+    *(float *)((int)&g_MoonBats[0].random_offset.y + iVar5) = fVar4;
     fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
     iVar2 = iVar5 + 0x18;
-    *(float *)(DAT_02f3820c[0].field0_0x0 + iVar5 + 0x14) = fVar4;
+    *(float *)((int)&g_MoonBats[0].random_offset.z + iVar5) = fVar4;
     iVar5 = iVar2;
   } while (iVar2 != 0x2d0);
-  DAT_0067d7d0 = 0;
+  g_MoonBatsEnabled = 0;
   return;
 }
 

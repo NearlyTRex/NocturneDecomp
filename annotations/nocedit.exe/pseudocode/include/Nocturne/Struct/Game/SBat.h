@@ -3,6 +3,9 @@
 // Structure: SBat
 // Ghidra size: 0x18 (24 bytes)
 typedef struct SBat {
-    char field_0[24]; // 0x0
+    int course_index; // 0x0
+    float course_position; // 0x4
+    float animation_frame; // 0x8
+    CVector3f random_offset; // 0xc
 } SBat;
 

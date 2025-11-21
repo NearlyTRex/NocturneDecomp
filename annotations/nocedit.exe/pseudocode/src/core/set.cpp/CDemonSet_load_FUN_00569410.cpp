@@ -269,12 +269,12 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   iVar5 = crt_string_c_strnicmp_FUN_005ff070(acStack_dc,"train",5);
   this_ptr_00 = g_CTerrainPtr;
   if (iVar5 == 0) {
-    this_ptr->field29_0x15aca8 = 1;
+    this_ptr->player_on_train = 1;
     core_terrain_cpp_CTerrain_ctor_FUN_005e1ef0(this_ptr_00);
   }
   else {
     core_terrain_cpp_CTerrain_dtor_FUN_005e1f30(g_CTerrainPtr);
-    this_ptr->field29_0x15aca8 = 0;
+    this_ptr->player_on_train = 0;
   }
   if (10 < this_ptr->set_file_version) {
     crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffe2c,0xff,pFVar4);

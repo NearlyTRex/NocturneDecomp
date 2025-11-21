@@ -2,6 +2,11 @@
 
 // Equates / Constants
 
+// CONTROL Constants
+#define CONTROL_MODE_GAMEPAD                      2
+#define CONTROL_MODE_KEYBOARD                     0
+#define CONTROL_MODE_MOUSE                        1
+
 // GAME Constants
 #define GAME_BEEFDEAD                             0xBEEFDEAD  // -1091576147
 #define GAME_CLIP_BOTTOM                          0x80000004  // 2147483652
@@ -69,6 +74,6 @@
 #define RENDER_UV_WRAP_U                          5
 #define RENDER_VERTEX_LIGHTING                    3
 
-// Total equates: 59
-// Total references: 182
+// Total equates: 62
+// Total references: 185
 

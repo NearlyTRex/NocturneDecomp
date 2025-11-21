@@ -5,10 +5,10 @@
 // Signature: float sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90(int channel_index)
 // Cross-references:
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 005127e2 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b323b [UNCONDITIONAL_CALL]
-//   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b3883 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_CSound_initializeAudioFrame_FUN_005b2dd0 (005b2dd0) at 005b2e7f [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b2d70 (005b2d70) at 005b2d8f [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_configure_FUN_005b3830 (005b3830) at 005b3883 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_init_FUN_005b2dd0 (005b2dd0) at 005b2e7f [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_process_FUN_005b2fd0 (005b2fd0) at 005b323b [UNCONDITIONAL_CALL]
+//   core_sound.cpp_syncChannel3WithChannel0_FUN_005b2d70 (005b2d70) at 005b2d8f [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750 (005af750) at 005af7ea [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00 (005a6f00) at 005a6f42 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005ac1ad [UNCONDITIONAL_CALL]

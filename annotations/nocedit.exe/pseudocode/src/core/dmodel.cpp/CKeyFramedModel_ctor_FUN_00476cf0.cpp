@@ -8,7 +8,7 @@
 //   core_dmodel.cpp_writeModelDependencies_FUN_0047ee30 (0047ee30) at 0047eecd [UNCONDITIONAL_CALL]
 //   core_level.cpp_staticInit_FUN_00503d80 (00503d80) at 00503d92 [UNCONDITIONAL_CALL]
 //   core_main.c_showDeveloperToolsMenu_FUN_005073a0 (005073a0) at 005077c2 [UNCONDITIONAL_CALL]
-//   core_moon.cpp_FUN_00529a80 (00529a80) at 00529a88 [UNCONDITIONAL_CALL]
+//   core_moon.cpp_CMoon_ctor_FUN_00529a80 (00529a80) at 00529a88 [UNCONDITIONAL_CALL]
 //   core_moon.cpp_staticInit_FUN_005299f0 (005299f0) at 00529a65 [UNCONDITIONAL_CALL]
 //   core_set.cpp_staticInit_FUN_00569040 (00569040) at 00569093 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00596cd3 [UNCONDITIONAL_CALL]

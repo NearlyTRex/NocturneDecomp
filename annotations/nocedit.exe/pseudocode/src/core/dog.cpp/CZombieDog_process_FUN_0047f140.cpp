@@ -47,7 +47,7 @@
 //   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
-//   core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
+//   core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 
@@ -157,7 +157,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr)
           }
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar1->motion_controller,iVar7,1);
-          core_sound_cpp_CSound_isSfxPlaying_FUN_005b3b80
+          core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80
                     (g_CSoundPtr,*(uint *)(this_ptr->field1_0xbeb4 + 0x10));
           if (extraout_EAX_01 == 0) {
             uVar11 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
@@ -245,7 +245,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr)
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_8c,pCVar12);
       core_enemy_cpp_FUN_004a9880();
-      core_sound_cpp_CSound_isSfxPlaying_FUN_005b3b80
+      core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80
                 (g_CSoundPtr,*(uint *)(this_ptr->field1_0xbeb4 + 0x10));
       if (extraout_EAX == 0) {
         uVar11 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
@@ -694,7 +694,7 @@ switchD_0047f7a3_caseD_5:
 //   XREF to: 03f6af64 (PARAM)
 // 0047f47c: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 0047f47d: CALL core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
+// 0047f47d: CALL core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
 //   XREF to: 005b3b80 (UNCONDITIONAL_CALL)
 // 0047f482: ADD ESP,0x8
 // 0047f485: TEST EAX,EAX
@@ -831,7 +831,7 @@ switchD_0047f7a3_caseD_5:
 //   XREF to: 00681ef8 (READ)
 // 0047f5c2: PUSH ESI
 //   XREF to: 03f6af64 (DATA)
-// 0047f5c3: CALL core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
+// 0047f5c3: CALL core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
 //   XREF to: 005b3b80 (UNCONDITIONAL_CALL)
 // 0047f5c8: ADD ESP,0x8
 // 0047f5cb: TEST EAX,EAX

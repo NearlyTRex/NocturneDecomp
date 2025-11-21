@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_menu.cpp_CustomKeySettings_FUN_00511890 (00511890) at 00511de2 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_FUN_00511840 (00511840) at 00511855 [CONDITIONAL_JUMP]
-//   core_menu.cpp_SettingCustomKeys_FUN_005138e0 (005138e0) at 005147bc [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (005138e0) at 005147bc [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_d_d_x_006365f8
 //   TerminatedCString s_Center_gamepad_press_ENT_00636601
@@ -26,10 +26,10 @@
 //   undefined4 DAT_02d81b54
 //   undefined4 g_CGameInstance.game_control
 //   void* g_CKeysPtr
-//   undefined4 DAT_02f21590
+//   CMoon g_CMoonInstance
 // Function calls:
 //   core_game.cpp_CGame_resetKeyState_FUN_004dbe60
-//   core_moon.cpp_FUN_0052a2c0
+//   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   engine_2d.c_drawText_FUN_00401fd0
 //   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
@@ -39,8 +39,6 @@
 //   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 
 #include "nocturne.h"
-
-/* Signature: undefined4 core_menu.cpp_SetUpGamepadControls(int* param_1) */
 
 undefined4 core_menu_cpp_SetUpGamepadControls_FUN_005104d0(void)
 
@@ -67,7 +65,7 @@ undefined4 core_menu_cpp_SetUpGamepadControls_FUN_005104d0(void)
   DVar4 = 0;
   local_14 = 0x7fffffff;
   do {
-    core_moon_cpp_FUN_0052a2c0();
+    core_moon_cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0(&g_CMoonInstance);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Center gamepad, press ENTER")
     ;
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,pcVar2);
@@ -94,7 +92,7 @@ LAB_00510743:
   return 0;
 LAB_005105cd:
   while( true ) {
-    core_moon_cpp_FUN_0052a2c0();
+    core_moon_cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0(&g_CMoonInstance);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Move gamepad in all directions, press ENTER")
     ;
     engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,pcVar2);
@@ -149,7 +147,7 @@ LAB_005105cd:
 // 005104ea: PUSH 0x2f21590
 //   Label: LAB_005104ea
 //   XREF to: 02f21590 (DATA)
-// 005104ef: CALL core_moon.cpp_FUN_0052a2c0
+// 005104ef: CALL core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0
 //   XREF to: 0052a2c0 (UNCONDITIONAL_CALL)
 // 005104f4: ADD ESP,0x4
 // 005104f7: PUSH 0x636601
@@ -245,7 +243,7 @@ LAB_005105cd:
 // 005105cd: PUSH 0x2f21590
 //   Label: LAB_005105cd
 //   XREF to: 02f21590 (DATA)
-// 005105d2: CALL core_moon.cpp_FUN_0052a2c0
+// 005105d2: CALL core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0
 //   XREF to: 0052a2c0 (UNCONDITIONAL_CALL)
 // 005105d7: ADD ESP,0x4
 // 005105da: PUSH 0x63661d

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void engine_3d.c_setBlendMode_FUN_00406dd0(int blend_mode)
 // Cross-references:
-//   core_moon.cpp_CMoon_FUN_00529ed0 (00529ed0) at 0052a252 [UNCONDITIONAL_CALL]
+//   core_moon.cpp_CMoon_render_FUN_00529ed0 (00529ed0) at 0052a252 [UNCONDITIONAL_CALL]
 //   engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0 (004070c0) at 0040723b [UNCONDITIONAL_CALL]
 //   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50 (0048ca50) at 0048ca55 [UNCONDITIONAL_CALL]
 //   support_newmsg.cpp_FUN_005445c0 (005445c0) at 005446b3 [UNCONDITIONAL_CALL]

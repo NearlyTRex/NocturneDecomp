@@ -32,7 +32,7 @@ typedef struct CDemonSet {
     int unk_lighting_param4; // 0x15ac90
     int use_enviro_model; // 0x15ac94
     char enviro_model_name[16]; // 0x15ac98
-    int field_1420456; // 0x15aca8
+    int player_on_train; // 0x15aca8
     int set_file_version; // 0x15acac
     int actor_list_capacity; // 0x15acb0
     int mirror_glass_count; // 0x15acb4

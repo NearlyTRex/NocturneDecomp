@@ -17,8 +17,8 @@
 //   void* g_CKeysPtr
 //   CSound g_CSoundInstance
 // Function calls:
-//   core_sound.cpp_CSound_FUN_005b2f70
-//   core_sound.cpp_CSound_playSfx_FUN_005b3a20
+//   core_sound.cpp_CSound_playSound_FUN_005b3a20
+//   core_sound.cpp_CSound_shutdown_FUN_005b2f70
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   engine_2d.c_clearInputAndWait_FUN_00403260
 //   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
@@ -44,7 +44,7 @@ void core_msnedit_cpp_FUN_0053eb40(void)
   char *in_stack_00000008;
   CKeys *in_stack_fffffecc;
   
-  core_sound_cpp_CSound_FUN_005b2f70(g_CSoundPtr);
+  core_sound_cpp_CSound_shutdown_FUN_005b2f70(g_CSoundPtr);
   sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_005ab540();
   if (iVar1 == 0) {
@@ -52,7 +52,7 @@ void core_msnedit_cpp_FUN_0053eb40(void)
               (g_CEditorToolsPtr,"Can't start sound output.  (Maybe muted, or other problem?)");
   }
   else {
-    core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,in_stack_00000008);
+    core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,in_stack_00000008);
     engine_2d_c_clearInputAndWait_FUN_00403260();
     iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(sfx_handle);
     if (iVar1 == 0) {
@@ -74,7 +74,7 @@ void core_msnedit_cpp_FUN_0053eb40(void)
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
     }
   }
-  core_sound_cpp_CSound_FUN_005b2f70(g_CSoundPtr);
+  core_sound_cpp_CSound_shutdown_FUN_005b2f70(g_CSoundPtr);
   engine_2d_c_clearInputAndWait_FUN_00403260();
   return;
 }
@@ -96,7 +96,7 @@ void core_msnedit_cpp_FUN_0053eb40(void)
 //   XREF to: 00681ef8 (READ)
 // 0053eb58: PUSH EDX
 //   XREF to: 03f6af64 (DATA)
-// 0053eb59: CALL core_sound.cpp_CSound_FUN_005b2f70
+// 0053eb59: CALL core_sound.cpp_CSound_shutdown_FUN_005b2f70
 //   XREF to: 005b2f70 (UNCONDITIONAL_CALL)
 // 0053eb5e: ADD ESP,0x4
 // 0053eb61: CALL sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
@@ -113,7 +113,7 @@ void core_msnedit_cpp_FUN_0053eb40(void)
 //   XREF to: 00681ef8 (READ)
 // 0053eb7c: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 0053eb7d: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 0053eb7d: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 0053eb82: ADD ESP,0xc
 // 0053eb85: MOV ESI,EAX
@@ -204,7 +204,7 @@ void core_msnedit_cpp_FUN_0053eb40(void)
 //   XREF to: 00681ef8 (READ)
 // 0053ec31: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 0053ec32: CALL core_sound.cpp_CSound_FUN_005b2f70
+// 0053ec32: CALL core_sound.cpp_CSound_shutdown_FUN_005b2f70
 //   XREF to: 005b2f70 (UNCONDITIONAL_CALL)
 // 0053ec37: ADD ESP,0x4
 // 0053ec3a: CALL engine_2d.c_clearInputAndWait_FUN_00403260

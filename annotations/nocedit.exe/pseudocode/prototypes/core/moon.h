@@ -5,39 +5,39 @@
 
 // Original: core_moon.cpp_staticInit_FUN_005299f0
 // Address: 005299f0
-undefined staticInit();
+void staticInit(void);
 
-// Original: core_moon.cpp_FUN_00529a80
+// Original: core_moon.cpp_CMoon_ctor_FUN_00529a80
 // Address: 00529a80
-CMoon * FUN_00529a80(CMoon * this_ptr);
+CMoon * CMoon::ctor(CMoon * this_ptr);
 
-// Original: core_moon.cpp_FUN_00529ab0
+// Original: core_moon.cpp_CMoon_dtor_FUN_00529ab0
 // Address: 00529ab0
-CMoon * FUN_00529ab0(CMoon * this_ptr);
+CMoon * CMoon::dtor(CMoon * this_ptr);
 
 // Original: core_moon.cpp_CMoon_init_FUN_00529ae0
 // Address: 00529ae0
-undefined CMoon::init();
+void CMoon::init(CMoon * this_ptr);
 
 // Original: core_moon.cpp_CMoon_free_FUN_00529ce0
 // Address: 00529ce0
-undefined CMoon::free();
+void CMoon::free(CMoon * this_ptr);
 
-// Original: core_moon.cpp_CMoon_FUN_00529d60
+// Original: core_moon.cpp_CMoon_update_FUN_00529d60
 // Address: 00529d60
-undefined CMoon();
+void CMoon::update(CMoon * this_ptr, float delta_time);
 
-// Original: core_moon.cpp_CMoon_FUN_00529ed0
+// Original: core_moon.cpp_CMoon_render_FUN_00529ed0
 // Address: 00529ed0
-undefined CMoon();
+void CMoon::render(CMoon * this_ptr);
 
-// Original: core_moon.cpp_FUN_0052a2c0
+// Original: core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0
 // Address: 0052a2c0
-undefined FUN_0052a2c0();
+void CMoon::renderJoystickCalibration(CMoon * this_ptr);
 
-// Original: core_moon.cpp_FUN_0052a3f0
+// Original: core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_0052a3f0
 // Address: 0052a3f0
-undefined FUN_0052a3f0();
+int CMoon::isAnimationFirstHalf(CMoon * this_ptr);
 
 // Original: core_moon.cpp_SBat_ctor_FUN_0052a410
 // Address: 0052a410

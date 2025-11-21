@@ -3,6 +3,10 @@
 // Function prototypes for shape/memdbg.cpp
 // Generated from Ghidra function signatures
 
+// Original: shape_memdbg.cpp_staticInit_FUN_0050ee40
+// Address: 0050ee40
+void staticInit(void);
+
 // Original: shape_memdbg.cpp_acquireDebugMutex_FUN_0050ee5e
 // Address: 0050ee5e
 void acquireDebugMutex(void);

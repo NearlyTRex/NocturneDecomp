@@ -11,8 +11,8 @@
 //   core_fire.cpp_CRock_render_FUN_004c1870 (004c1870) at 004c192b [UNCONDITIONAL_CALL]
 //   core_fire.cpp_CShell_render_FUN_004c6200 (004c6200) at 004c62dd [UNCONDITIONAL_CALL]
 //   core_level.cpp_CLevelLoader_update_FUN_00504160 (00504160) at 00504580 [UNCONDITIONAL_CALL]
-//   core_moon.cpp_CMoon_FUN_00529ed0 (00529ed0) at 00529fbf [UNCONDITIONAL_CALL]
-//   core_moon.cpp_FUN_0052a2c0 (0052a2c0) at 0052a3c2 [UNCONDITIONAL_CALL]
+//   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0 (0052a2c0) at 0052a3c2 [UNCONDITIONAL_CALL]
+//   core_moon.cpp_CMoon_render_FUN_00529ed0 (00529ed0) at 00529fbf [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190 (0056a190) at 0056a29f [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 0059795b [UNCONDITIONAL_CALL]
 // Function calls:

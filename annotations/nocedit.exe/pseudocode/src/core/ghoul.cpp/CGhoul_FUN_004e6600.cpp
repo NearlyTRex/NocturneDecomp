@@ -108,8 +108,8 @@
 //   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
 //   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
-//   core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
-//   core_sound.cpp_CSound_killSfx_FUN_005b3b90
+//   core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
+//   core_sound.cpp_CSound_killSound_FUN_005b3b90
 //   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 //   crt_math.c_round_FUN_005fe6b0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -1141,7 +1141,7 @@ LAB_004e6754:
      fVar3 = *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x10),
      fVar4 = *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x18),
      (float)DOUBLE_0062ddf2 < SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar15 * fVar15))) {
-    core_sound_cpp_CSound_isSfxPlaying_FUN_005b3b80
+    core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80
               (g_CSoundPtr,*(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name + 8))
     ;
     if (extraout_EAX == 0) {
@@ -1153,7 +1153,7 @@ LAB_004e6754:
     }
   }
   else {
-    core_sound_cpp_CSound_killSfx_FUN_005b3b90
+    core_sound_cpp_CSound_killSound_FUN_005b3b90
               (g_CSoundPtr,*(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name + 8))
     ;
   }
@@ -1561,7 +1561,7 @@ LAB_004e6754:
 //   XREF to: 03f6af64 (PARAM)
 // 004e696c: PUSH EDX
 //   XREF to: 03f6af64 (DATA)
-// 004e696d: CALL core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
+// 004e696d: CALL core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
 //   XREF to: 005b3b80 (UNCONDITIONAL_CALL)
 // 004e6972: ADD ESP,0x8
 // 004e6975: TEST EAX,EAX
@@ -3899,7 +3899,7 @@ LAB_004e6754:
 //   XREF to: 00681ef8 (READ)
 // 004e8036: PUSH ESI
 //   XREF to: 03f6af64 (DATA)
-// 004e8037: CALL core_sound.cpp_CSound_killSfx_FUN_005b3b90
+// 004e8037: CALL core_sound.cpp_CSound_killSound_FUN_005b3b90
 //   XREF to: 005b3b90 (UNCONDITIONAL_CALL)
 // 004e803c: ADD ESP,0x8
 // 004e803f: JMP 0x004e697d

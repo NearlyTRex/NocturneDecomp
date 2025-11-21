@@ -36,8 +36,8 @@
 //   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 //   core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00575b20
 //   core_setdir.cpp_CDemonSet_setPendingCamera_FUN_00575b00
-//   core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
-//   core_sound.cpp_CSound_killSfx_FUN_005b3b90
+//   core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
+//   core_sound.cpp_CSound_killSound_FUN_005b3b90
 //   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
 //   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
 //   core_xform.cpp_matrixToEulerAngles_FUN_005f5690
@@ -251,11 +251,11 @@ LAB_0054cd70:
     return;
   }
   if ((iStack_24 == 0) || (in_stack_00000004[3].create_event[0x28] == '\0')) {
-    core_sound_cpp_CSound_killSfx_FUN_005b3b90
+    core_sound_cpp_CSound_killSound_FUN_005b3b90
               (g_CSoundPtr,*(uint *)(in_stack_00000004[3].create_event + 0x3c));
   }
   else {
-    core_sound_cpp_CSound_isSfxPlaying_FUN_005b3b80
+    core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80
               (g_CSoundPtr,*(uint *)(in_stack_00000004[3].create_event + 0x3c));
     if (extraout_EAX == 0) {
       uVar3 = (*in_stack_00000004->vtable->playAmbientSound)
@@ -593,7 +593,7 @@ LAB_0054d4f3:
 //   XREF to: 00681ef8 (READ)
 // 0054ce0d: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 0054ce0e: CALL core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
+// 0054ce0e: CALL core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
 //   XREF to: 005b3b80 (UNCONDITIONAL_CALL)
 // 0054ce13: ADD ESP,0x8
 // 0054ce16: TEST EAX,EAX
@@ -966,7 +966,7 @@ LAB_0054d4f3:
 //   XREF to: 00681ef8 (READ)
 // 0054d1d1: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
-// 0054d1d2: CALL core_sound.cpp_CSound_killSfx_FUN_005b3b90
+// 0054d1d2: CALL core_sound.cpp_CSound_killSound_FUN_005b3b90
 //   XREF to: 005b3b90 (UNCONDITIONAL_CALL)
 // 0054d1d7: ADD ESP,0x8
 // 0054d1da: JMP 0x0054ce1e

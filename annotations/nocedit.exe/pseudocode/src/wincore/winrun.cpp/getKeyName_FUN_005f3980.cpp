@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: char * wincore_winrun.cpp_getKeyName_FUN_005f3980(int keycode)
 // Cross-references:
-//   core_menu.cpp_LocalizeMainGameControls_FUN_005134e0 (005134e0) at 0051370d [UNCONDITIONAL_CALL]
+//   core_menu.cpp_getKeyDisplayName_FUN_005134e0 (005134e0) at 0051370d [UNCONDITIONAL_CALL]
 // Globals:
 //   GetKeyNameTextA* GetKeyNameTextA = 00211ae4
 //   TerminatedCString s_Esc_00657f9a

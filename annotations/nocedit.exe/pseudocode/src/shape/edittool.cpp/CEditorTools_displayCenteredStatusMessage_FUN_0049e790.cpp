@@ -13,7 +13,7 @@
 //   core_fileman.cpp_CDemonFileManager_addKeyframeModelToExtractList_FUN_004be230 (004be230) at 004be243 [UNCONDITIONAL_CALL]
 //   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 (004bda20) at 004bddac [UNCONDITIONAL_CALL]
 //   core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 (004bd750) at 004bd8bc [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingCustomKeys_FUN_005138e0 (005138e0) at 00514a64 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (005138e0) at 00514a64 [UNCONDITIONAL_CALL]
 //   core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (00523600) at 00523633 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052bd67 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 (005381e0) at 00538501 [UNCONDITIONAL_CALL]

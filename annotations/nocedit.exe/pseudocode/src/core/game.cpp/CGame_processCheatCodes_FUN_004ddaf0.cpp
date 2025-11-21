@@ -228,7 +228,7 @@
 //   core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0
 //   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 //   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
-//   core_sound.cpp_CSound_playSfx_FUN_005b3a20
+//   core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   core_weather.cpp_CWeather_FUN_005ef8c0
 //   crt_ctype.c_toupper_FUN_005ff9e0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -466,7 +466,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                           ("The horror has been unleashed.");
       core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
-      core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+      core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav");
     }
     if ((this_ptr->subtitle_system_enabled == 0) &&
        (iVar11 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x44), iVar11 != 0)) {
@@ -533,8 +533,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         uVar13 = (uint)(this_ptr->velocity_debug_enabled == 0);
         this_ptr->velocity_debug_enabled = uVar13;
         if (uVar13 != 0) {
-          core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"buy-fly-today.wav @ 4.0")
-          ;
+          core_sound_cpp_CSound_playSound_FUN_005b3a20
+                    (g_CSoundPtr,(void *)0x0,"buy-fly-today.wav @ 4.0");
         }
       }
       pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062ba90);
@@ -655,7 +655,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           fVar23 = 5.0;
           pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar12);
           core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
-          core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+          core_sound_cpp_CSound_playSound_FUN_005b3a20
+                    (g_CSoundPtr,(void *)0x0,"cheat-1.wav");
         }
       }
       if (this_ptr->velocity_debug_enabled != 0) {
@@ -702,7 +703,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
             this_ptr->screen_clear_enabled = 1;
           }
           core_set_cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0();
-          core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+          core_sound_cpp_CSound_playSound_FUN_005b3a20
+                    (g_CSoundPtr,(void *)0x0,"cheat-1.wav");
         }
       }
       if (this_ptr->velocity_debug_enabled != 0) {
@@ -743,7 +745,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           fVar23 = 5.0;
           pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar12);
           core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
-          core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+          core_sound_cpp_CSound_playSound_FUN_005b3a20
+                    (g_CSoundPtr,(void *)0x0,"cheat-1.wav");
         }
       }
       pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bc2d);
@@ -776,7 +779,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         this_ptr->aim_mode = 2;
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Manual aim enabled");
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
         *(int *)(g_HeroActors[g_LocalHeroIndex]->field3_0xbe2c + 0x13908) = this_ptr->aim_mode;
       }
       pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bc80);
@@ -809,7 +813,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         this_ptr->aim_mode = 0;
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Auto aim enabled");
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
         *(int *)(g_HeroActors[g_LocalHeroIndex]->field3_0xbe2c + 0x13908) = this_ptr->aim_mode;
       }
       if (this_ptr->velocity_debug_enabled != 0) {
@@ -934,7 +939,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
             pCVar16->actor_name[1] = cVar4;
             pCVar16 = (CDemonActor *)(pCVar16->actor_name + 2);
           } while (cVar4 != '\0');
-          core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+          core_sound_cpp_CSound_playSound_FUN_005b3a20
+                    (g_CSoundPtr,(void *)0x0,"cheat-1.wav");
           core_inv_cpp_CInventory_addItem_FUN_004fd600
                     (&g_HeroActors[g_LocalHeroIndex]->inventory,this_ptr_01,1);
           fVar23 = 5.0;
@@ -983,7 +989,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
           (g_HeroActors[g_LocalHeroIndex]->base_character).hit_points = 100.0;
         }
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
       }
       pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062be21);
       iVar11 = 0;
@@ -1022,7 +1029,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         fVar23 = 5.0;
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar12);
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
       }
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("You have the shotgun");
       pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062be9e);
@@ -1055,7 +1063,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         g_InputHistory[1] = (byte)iStack_230 ^ (byte)iStack_234;
         core_game_cpp_giveHeroWeapon_FUN_004dd870(pcStack_23c);
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcStack_238,5.0);
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
       }
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("You have the crossbow")
       ;
@@ -1089,7 +1098,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         g_InputHistory[1] = (byte)((uint)iStack_220 >> 8) ^ (byte)((uint)iStack_224 >> 8);
         core_game_cpp_giveHeroWeapon_FUN_004dd870(pcStack_22c);
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcStack_228,5.0);
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
       }
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("DY-NO-MITE");
       pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bf3e);
@@ -1122,7 +1132,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         g_InputHistory[1] = '\0';
         core_game_cpp_giveHeroWeapon_FUN_004dd870(pcStack_21c);
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcStack_218,5.0);
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
       }
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Fire! Fire! Fire!");
       pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062bf92);
@@ -1155,7 +1166,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         g_InputHistory[1] = '\0';
         core_game_cpp_giveHeroWeapon_FUN_004dd870(pcStack_20c);
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcStack_208,5.0);
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
       }
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                           ("You have the tommy gun");
@@ -1189,7 +1201,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         g_InputHistory[1] = '\0';
         core_game_cpp_giveHeroWeapon_FUN_004dd870(pcStack_1fc);
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcStack_1f8,5.0);
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
       }
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                           ("You can now summon the baron");
@@ -1223,7 +1236,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         g_InputHistory[1] = '\0';
         core_game_cpp_giveHeroWeapon_FUN_004dd870(pcStack_1ec);
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcStack_1e8,5.0);
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
       }
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                           ("You have the elephant gun");
@@ -1257,7 +1271,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         g_InputHistory[1] = '\0';
         core_game_cpp_giveHeroWeapon_FUN_004dd870(pcStack_1dc);
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcStack_1d8,5.0);
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
       }
       pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                           ("You have the charged radiance emitter");
@@ -1291,7 +1306,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         g_InputHistory[1] = '\0';
         core_game_cpp_giveHeroWeapon_FUN_004dd870(pcStack_1cc);
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcStack_1c8,5.0);
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
       }
       pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c141);
       iStack_1b8 = 0;
@@ -1338,7 +1354,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         this_ptr->field53_0x1d0 = 1;
         this_ptr_00 = g_CSoundPtr;
         (g_HeroActors[iVar11]->base_character).hit_points = 100.0;
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(this_ptr_00,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(this_ptr_00,(void *)0x0,"cheat-1.wav")
+        ;
       }
       pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c203);
       iStack_1b0 = 0;
@@ -1375,7 +1392,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             ("You just got 100 more bullets");
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
       }
       if (this_ptr->velocity_debug_enabled != 0) {
         pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c263);
@@ -1411,7 +1429,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
              (iVar11 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x13), iVar11 == 0))
           goto LAB_004df408;
         }
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
         while (iVar11 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                                   (g_CEditorToolsPtr,"Raise an event",&DAT_0067b5f0,100,1),
               iVar11 != 0) {
@@ -1450,7 +1469,8 @@ LAB_004df408:
       }
       if (iStack_1a0 == iStack_1a4) {
         g_InputHistory[1] = '\0';
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
         iStack_6c = 0;
         for (iVar11 = 0; iVar11 < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c);
             iVar11 = iVar11 + 1) {
@@ -1508,7 +1528,8 @@ LAB_004df408:
         fVar23 = 5.0;
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar12);
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
       }
       if (this_ptr->velocity_debug_enabled != 0) {
         pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c377);
@@ -1537,7 +1558,8 @@ LAB_004df408:
         }
         if (iStack_190 == local_194) {
           g_InputHistory[1] = '\0';
-          core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+          core_sound_cpp_CSound_playSound_FUN_005b3a20
+                    (g_CSoundPtr,(void *)0x0,"cheat-1.wav");
           shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                     (g_CEditorToolsPtr,"Enter time factor",pfStack_18c,true,0.01,4.0,true);
         }
@@ -1568,7 +1590,8 @@ LAB_004df408:
       }
       if (iVar11 == iStack_188) {
         g_InputHistory[1] = '\0';
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
         this_ptr->scripted_sequence_active = (uint)(this_ptr->scripted_sequence_active == 0);
       }
       pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c406);
@@ -1597,7 +1620,8 @@ LAB_004df408:
       }
       if (iStack_180 == iStack_184) {
         g_InputHistory[1] = '\0';
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
         this_ptr->field62_0x1f4 = (uint)(this_ptr->field62_0x1f4 == 0);
       }
       pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c445);
@@ -1651,7 +1675,8 @@ LAB_004df408:
           }
           core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
         }
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
       }
       if (this_ptr->velocity_debug_enabled != 0) {
         pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c4f0);
@@ -1682,7 +1707,8 @@ LAB_004df408:
           g_InputHistory[1] = (byte)((uint)iStack_170 >> 8) ^ (byte)((uint)iStack_174 >> 8);
           core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00453c90
                     (&g_CDemonCameraInstance,0xff00ff);
-          core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+          core_sound_cpp_CSound_playSound_FUN_005b3a20
+                    (g_CSoundPtr,(void *)0x0,"cheat-1.wav");
         }
       }
       if (this_ptr->velocity_debug_enabled != 0) {
@@ -1788,7 +1814,8 @@ LAB_004df408:
         pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             ("Flashlight battery restored");
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar12,fVar23);
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
+        ;
       }
       pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c61a);
       iStack_150 = 0;
@@ -1882,7 +1909,7 @@ LAB_004df408:
           pcVar12 = "burp2.wav";
           fStack_13c = 4.0;
         }
-        core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,pcVar12);
+        core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,pcVar12);
         iStack_38 = 0;
         for (iStack_14 = 0; iStack_14 < g_CDemonSetPtr->damage_listener_count;
             iStack_14 = iStack_14 + 1) {
@@ -2112,7 +2139,8 @@ LAB_004df408:
                     ((CKeyFramedModelInstance *)pfVar2,"oldhat.kfm");
           core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
                     ((CKeyFramedModelInstance *)pfVar2);
-          core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,0,"cheat-1.wav");
+          core_sound_cpp_CSound_playSound_FUN_005b3a20
+                    (g_CSoundPtr,(void *)0x0,"cheat-1.wav");
         }
       }
       pbVar15 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(&DAT_0062c830);
@@ -2299,7 +2327,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004ddb6e: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
-// 004ddb6f: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004ddb6f: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004ddb74: ADD ESP,0xc
 // 004ddb77: MOV EAX,dword ptr [EBP + 0x14]
@@ -2434,7 +2462,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004ddca1: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
-// 004ddca2: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004ddca2: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004ddca7: ADD ESP,0xc
 // 004ddcaa: PUSH 0x62ba90
@@ -2686,7 +2714,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004ddee9: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 004ddeea: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004ddeea: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004ddeef: ADD ESP,0xc
 // 004ddef2: MOV EAX,dword ptr [EBP + 0x14]
@@ -2800,7 +2828,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004ddff2: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 004ddff3: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004ddff3: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004ddff8: ADD ESP,0xc
 // 004ddffb: MOV EAX,dword ptr [EBP + 0x14]
@@ -2902,7 +2930,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004de0d9: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 004de0da: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004de0da: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004de0df: ADD ESP,0xc
 // 004de0e2: PUSH 0x62bc2d
@@ -2991,7 +3019,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004de19d: PUSH EDX
 //   XREF to: 03f6af64 (DATA)
-// 004de19e: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004de19e: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004de1a3: ADD ESP,0xc
 // 004de1a6: MOV EBX,dword ptr [0x02db87d0]
@@ -3088,7 +3116,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004de27d: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 004de27e: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004de27e: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004de283: ADD ESP,0xc
 // 004de286: MOV EAX,[0x02db87d0]
@@ -3455,7 +3483,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004de5bc: PUSH ESI
 //   XREF to: 03f6af64 (DATA)
-// 004de5bd: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004de5bd: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004de5c2: ADD ESP,0xc
 // 004de5c5: MOV EAX,[0x02db87d0]
@@ -3573,7 +3601,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004de6e4: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 004de6e5: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004de6e5: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004de6ea: ADD ESP,0xc
 // 004de6ed: PUSH 0x62be21
@@ -3661,7 +3689,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004de7b1: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 004de7b2: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004de7b2: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004de7b7: ADD ESP,0xc
 // 004de7ba: PUSH 0x62be80
@@ -3757,7 +3785,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004de899: PUSH EDX
 //   XREF to: 03f6af64 (DATA)
-// 004de89a: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004de89a: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004de89f: ADD ESP,0xc
 // 004de8a2: PUSH 0x62bed3
@@ -3851,7 +3879,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004de983: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
-// 004de984: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004de984: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004de989: ADD ESP,0xc
 // 004de98c: PUSH 0x62bf29
@@ -3947,7 +3975,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004dea6b: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 004dea6c: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004dea6c: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004dea71: ADD ESP,0xc
 // 004dea74: PUSH 0x62bf72
@@ -4042,7 +4070,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004deb52: PUSH EDX
 //   XREF to: 03f6af64 (DATA)
-// 004deb53: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004deb53: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004deb58: ADD ESP,0xc
 // 004deb5b: PUSH 0x62bfc8
@@ -4135,7 +4163,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004dec3a: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
-// 004dec3b: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004dec3b: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004dec40: ADD ESP,0xc
 // 004dec43: PUSH 0x62c021
@@ -4231,7 +4259,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004ded22: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 004ded23: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004ded23: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004ded28: ADD ESP,0xc
 // 004ded2b: PUSH 0x62c081
@@ -4326,7 +4354,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004dee09: PUSH EDX
 //   XREF to: 03f6af64 (DATA)
-// 004dee0a: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004dee0a: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004dee0f: ADD ESP,0xc
 // 004dee12: PUSH 0x62c0dc
@@ -4419,7 +4447,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004deef1: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
-// 004deef2: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004deef2: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004deef7: ADD ESP,0xc
 // 004deefa: PUSH 0x62c141
@@ -4563,7 +4591,7 @@ LAB_004df408:
 // 004df05a: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
 // 004df05b: MOV dword ptr [EAX + 0x243c],0x42c80000
-// 004df065: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004df065: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004df06a: ADD ESP,0xc
 // 004df06d: PUSH 0x62c203
@@ -4653,7 +4681,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004df139: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 004df13a: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004df13a: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004df13f: ADD ESP,0xc
 // 004df142: MOV EAX,dword ptr [EBP + 0x14]
@@ -4726,7 +4754,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004df1e7: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 004df1e8: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004df1e8: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004df1ed: ADD ESP,0xc
 // 004df1f0: MOV EDI,0x67b5f0
@@ -5026,7 +5054,7 @@ LAB_004df408:
 // 004df498: XOR EDI,EDI
 // 004df49a: MOV byte ptr [0x02d831d8],DH
 //   XREF to: 02d831d8 (WRITE)
-// 004df4a0: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004df4a0: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004df4a5: ADD ESP,0xc
 // 004df4a8: MOV dword ptr [ESP + 0x3ec],EDI
@@ -5192,7 +5220,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004df65f: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 004df660: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004df660: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004df665: ADD ESP,0xc
 // 004df668: MOV EAX,dword ptr [EBP + 0x14]
@@ -5263,7 +5291,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004df707: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 004df708: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004df708: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004df70d: ADD ESP,0xc
 // 004df710: PUSH 0x1
@@ -5344,7 +5372,7 @@ LAB_004df408:
 //   XREF to: 03f6af64 (DATA)
 // 004df7bd: MOV byte ptr [0x02d831d8],CL
 //   XREF to: 02d831d8 (WRITE)
-// 004df7c3: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004df7c3: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004df7c8: ADD ESP,0xc
 // 004df7cb: MOV EAX,dword ptr [EBP + 0x14]
@@ -5417,7 +5445,7 @@ LAB_004df408:
 //   XREF to: 03f6af64 (DATA)
 // 004df870: MOV byte ptr [0x02d831d8],CH
 //   XREF to: 02d831d8 (WRITE)
-// 004df876: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004df876: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004df87b: ADD ESP,0xc
 // 004df87e: MOV EAX,dword ptr [EBP + 0x14]
@@ -5519,7 +5547,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004df975: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 004df976: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004df976: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004df97b: ADD ESP,0xc
 // 004df97e: MOV EAX,dword ptr [EBP + 0x14]
@@ -5598,7 +5626,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004dfa31: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 004dfa32: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004dfa32: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004dfa37: ADD ESP,0xc
 // 004dfa3a: MOV EAX,dword ptr [EBP + 0x14]
@@ -5837,7 +5865,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004dfc82: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
-// 004dfc83: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004dfc83: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004dfc88: ADD ESP,0xc
 // 004dfc8b: PUSH 0x62c61a
@@ -6046,7 +6074,7 @@ LAB_004df408:
 // 004dfe79: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
 // 004dfe7a: MOV dword ptr [ESP + 0x328],EDX
-// 004dfe81: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004dfe81: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   Label: LAB_004dfe81
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004dfe86: ADD ESP,0xc
@@ -6664,7 +6692,7 @@ LAB_004df408:
 //   XREF to: 00681ef8 (READ)
 // 004e0517: PUSH EDI
 //   XREF to: 03f6af64 (DATA)
-// 004e0518: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 004e0518: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 004e051d: ADD ESP,0xc
 // 004e0520: PUSH 0x62c830

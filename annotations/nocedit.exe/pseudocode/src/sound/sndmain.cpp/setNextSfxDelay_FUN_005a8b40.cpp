@@ -4,9 +4,9 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40(double delay_seconds)
 // Cross-references:
-//   core_sound.cpp_CSound_playActorSoundWithDelay_FUN_005b3ae0 (005b3ae0) at 005b3af4 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_005b3aa0 (005b3aa0) at 005b3ab0 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0 (005b3ae0) at 005b3af4 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30 (005b3b30) at 005b3b40 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b3aa0 (005b3aa0) at 005b3ab0 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_SfxLastSlot
 //   undefined4 g_SfxLastSlot.field_20[60]

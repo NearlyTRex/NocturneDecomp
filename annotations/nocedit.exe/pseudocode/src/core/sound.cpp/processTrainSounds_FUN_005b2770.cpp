@@ -25,8 +25,8 @@
 //   double DOUBLE_00652776 = 510
 //   CGame* g_CGamePtr = 02d81a9c
 //   CDemonSet* g_CDemonSetPtr = 03114278
-//   char* PTR_s_int_00681ef0 = 00652706
-//   char* PTR_s_x_00681ef4 = 0065270a
+//   char* g_CurrentTrainMode = 00652706
+//   char* g_PreviousTrainMode = 0065270a
 //   CSound* g_CSoundPtr = 03f6af64
 //   char[108] g_TrainSoundFilenameTemplate
 //   undefined4 DAT_0068211c
@@ -125,23 +125,23 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
       iVar5 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00572460
                         (g_CDemonSetPtr,&local_48,&local_3c);
       if (iVar5 == 0) {
-        PTR_s_int_00681ef0 = "ext";
+        g_CurrentTrainMode = "ext";
       }
       else {
-        PTR_s_int_00681ef0 = "int";
+        g_CurrentTrainMode = "int";
       }
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
       g_TrainLastCameraIndex = g_CDemonSetPtr->selected_camera_index;
     }
   }
   else {
-    PTR_s_int_00681ef0 = "ext";
+    g_CurrentTrainMode = "ext";
     g_TrainLastCameraIndex = -1;
   }
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
   sound_sndmain_cpp_setNextSfxFlags_FUN_005a8b70(1);
   sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(3);
-  iVar5 = crt_string_c_stricmp_FUN_005fe7f0(PTR_s_int_00681ef0,"int");
+  iVar5 = crt_string_c_stricmp_FUN_005fe7f0(g_CurrentTrainMode,"int");
   if (iVar5 == 0) {
     sound_sndmain_cpp_killSfx_FUN_005a9c40(g_TrainExteriorAmbientHandle);
   }
@@ -163,7 +163,7 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   }
   else {
-    iVar5 = crt_string_c_stricmp_FUN_005fe7f0(PTR_s_x_00681ef4,PTR_s_int_00681ef0);
+    iVar5 = crt_string_c_stricmp_FUN_005fe7f0(g_PreviousTrainMode,g_CurrentTrainMode);
     if (iVar5 != 0) {
       sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0
                 (g_TrainRailNoiseHandle,in_stack_ffffff28 * (float)DOUBLE_0065275e);
@@ -172,7 +172,7 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   pSVar8 = g_TrainNoiseArray;
   iVar5 = 0;
-  PTR_s_x_00681ef4 = PTR_s_int_00681ef0;
+  g_PreviousTrainMode = g_CurrentTrainMode;
   g_TrainVelocityVector.x = 0.0;
   g_TrainVelocityVector.y = 0.0;
   iStack00000030 = 0;
@@ -212,7 +212,7 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
     switch(iVar5 % 5) {
     case 0:
     case 1:
-      crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff3c,"rail?%s.wav",PTR_s_int_00681ef0);
+      crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff3c,"rail?%s.wav",g_CurrentTrainMode);
       break;
     case 2:
     case 3:

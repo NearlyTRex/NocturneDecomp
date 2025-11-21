@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0(CSfxSample * out_sample)
 // Cross-references:
-//   core_sound.cpp_CSound_FUN_005b3ba0 (005b3ba0) at 005b3bd5 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_getSoundDuration_FUN_005b3ba0 (005b3ba0) at 005b3bd5 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0 (005ad3b0) at 005ad3ec [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_sound_00650b55

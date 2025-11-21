@@ -11,7 +11,7 @@
 //   core_game.cpp_CGame_rollCredits_FUN_004e4010 (004e4010) at 004e4163 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_showCustomizableKeys_FUN_004d89d0 (004d89d0) at 004d89ec [UNCONDITIONAL_CALL]
 //   core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (00500690) at 00500ee0 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_GetGameMainMenuChoice_FUN_00510000 (00510000) at 00510206 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_getGameMainMenuChoice_FUN_00510000 (00510000) at 00510206 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_00559b20 (00559b20) at 00559cc1 [UNCONDITIONAL_CALL]
 //   engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_004060a0 (004060a0) at 004060e7 [UNCONDITIONAL_CALL]
 //   engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290 (00406290) at 004062f0 [UNCONDITIONAL_CALL]

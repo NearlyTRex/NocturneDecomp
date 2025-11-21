@@ -30,7 +30,7 @@
 //   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00598883 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (0058f810) at 0058fdf2 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c484 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b3de0 (005b3de0) at 005b3df6 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_editSoundName_FUN_005b3de0 (005b3de0) at 005b3df6 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0 (004b7ac0) at 004b7adf [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40 (004b9f40) at 004b9fa6 [UNCONDITIONAL_CALL]
 //   engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (004b86b0) at 004b874f [UNCONDITIONAL_CALL]

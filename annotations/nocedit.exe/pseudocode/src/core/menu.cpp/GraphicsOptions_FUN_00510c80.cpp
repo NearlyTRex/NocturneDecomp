@@ -81,7 +81,7 @@
 //   undefined4 DAT_02d81abc
 //   undefined4 g_CGameInstance.delta_time_float
 //   void* g_CKeysPtr
-//   undefined4 DAT_02f21590
+//   CMoon g_CMoonInstance
 //   undefined4 DAT_02f26cac
 //   undefined4 DAT_02f26cd0
 //   undefined4 DAT_02f26dd0
@@ -116,10 +116,10 @@
 // Function calls:
 //   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 //   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
-//   core_menu.cpp_GetGameMainMenuChoice_FUN_00510000
+//   core_menu.cpp_getGameMainMenuChoice_FUN_00510000
 //   core_menu.cpp_RunCalibrationTest_FUN_00510ba0
-//   core_moon.cpp_CMoon_FUN_00529d60
-//   core_moon.cpp_CMoon_FUN_00529ed0
+//   core_moon.cpp_CMoon_render_FUN_00529ed0
+//   core_moon.cpp_CMoon_update_FUN_00529d60
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   crt_string.c_stricmp_FUN_005fe7f0
 //   support_newmsg.cpp_getLocalizedString_FUN_005441f0
@@ -139,7 +139,7 @@ void core_menu_cpp_GraphicsOptions_FUN_00510c80(void)
   CGame *pCVar2;
   int iVar3;
   int iVar4;
-  undefined4 uVar5;
+  int iVar5;
   undefined *puVar6;
   uint uVar7;
   BADSPACEBASE *in_ESP;
@@ -156,12 +156,12 @@ void core_menu_cpp_GraphicsOptions_FUN_00510c80(void)
   bVar12 = 0;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffec0);
   puVar6 = &DAT_02f26cd0;
-  iVar3 = 0;
+  iVar4 = 0;
   do {
-    *(undefined **)((int)&DAT_02f275d0 + iVar3) = puVar6;
-    iVar3 = iVar3 + 4;
+    *(undefined **)((int)&DAT_02f275d0 + iVar4) = puVar6;
+    iVar4 = iVar4 + 4;
     puVar6 = puVar6 + 0x100;
-  } while (iVar3 != 0x24);
+  } while (iVar4 != 0x24);
   wincore_windll_cpp_buildCardList_FUN_005b7db0
             (&DAT_02f275f8,0x2f275fc,&DAT_02f2763c,(char **)&DAT_02f2767c,0x2f276bc);
   if (DAT_02f275f8 <= g_GraphicsCardHandle) {
@@ -172,8 +172,8 @@ void core_menu_cpp_GraphicsOptions_FUN_00510c80(void)
             (&local_14,(int *)&stack0xfffffff0,(int *)&stack0xfffffff4);
   do {
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-    core_moon_cpp_CMoon_FUN_00529d60();
-    core_moon_cpp_CMoon_FUN_00529ed0();
+    core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,g_CGamePtr->delta_time_float);
+    core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
     pCVar2 = g_CGamePtr;
     if ((0 < DAT_02f275f8) && (g_FullscreenMode != 0)) {
       if (((&DAT_02f2767c)[g_GraphicsCardHandle] == 0x121a) &&
@@ -181,9 +181,9 @@ void core_menu_cpp_GraphicsOptions_FUN_00510c80(void)
         g_CGamePtr->game_bpp = 0x10;
         pCVar2->game_pixx = 0x280;
         pCVar2->game_pixy = 0x1e0;
-        iVar4 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","tri3dfx.dll");
-        iVar3 = DAT_02f275f8;
-        if (iVar4 != 0) {
+        iVar5 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","tri3dfx.dll");
+        iVar4 = DAT_02f275f8;
+        if (iVar5 != 0) {
           pcVar8 = "tri3dfx.dll";
           pcVar9 = "trid3d.dll";
           do {
@@ -197,21 +197,21 @@ void core_menu_cpp_GraphicsOptions_FUN_00510c80(void)
           } while (cVar1 != '\0');
           wincore_windll_cpp_kill_FUN_005b71e0();
           wincore_windll_cpp_loadExternalRenderer_FUN_005b6750((HWND)0x0);
-          iVar3 = g_FullscreenMode;
+          iVar4 = g_FullscreenMode;
           if (g_FullscreenMode != 0) {
 LAB_00510e1f:
             wincore_windll_cpp_buildCardList_FUN_005b7db0
                       (&DAT_02f275f8,0x2f275fc,&DAT_02f2763c,(char **)&DAT_02f2767c,0x2f276bc);
             wincore_windll_cpp_getVideoMemory_FUN_005b7d60
                       ((int *)&stack0x00000004,(int *)&stack0x00000008,(int *)&stack0x0000000c);
-            iVar3 = DAT_02f275f8;
+            iVar4 = DAT_02f275f8;
           }
         }
       }
       else {
-        iVar4 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","tri3dfx.dll");
-        iVar3 = DAT_02f275f8;
-        if (iVar4 == 0) {
+        iVar5 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","tri3dfx.dll");
+        iVar4 = DAT_02f275f8;
+        if (iVar5 == 0) {
           pcVar8 = "tridx6.dll";
           pcVar9 = "trid3d.dll";
           do {
@@ -227,10 +227,10 @@ LAB_00510e1f:
           wincore_windll_cpp_loadExternalRenderer_FUN_005b6750((HWND)0x0);
           if (g_FullscreenMode != 0) goto LAB_00510e1f;
           DAT_02f275f8 = g_FullscreenMode;
-          iVar3 = DAT_02f275f8;
+          iVar4 = DAT_02f275f8;
         }
       }
-      DAT_02f275f8 = iVar3;
+      DAT_02f275f8 = iVar4;
       pCVar2 = g_CGamePtr;
       if (((&DAT_02f2767c)[g_GraphicsCardHandle] == 0x8086) &&
          ((&DAT_02f276bc)[g_GraphicsCardHandle] == 0x7800)) {
@@ -258,26 +258,26 @@ LAB_00510e1f:
       g_CGamePtr->game_pixy = 0x1e0;
       pCVar2->game_pixx = 0x280;
     }
-    iVar3 = g_CGamePtr->game_pixy;
-    if (iVar3 == 0xf0) {
+    iVar4 = g_CGamePtr->game_pixy;
+    if (iVar4 == 0xf0) {
       pcVar8 = "Resolution : 320x240";
     }
-    else if (iVar3 == 300) {
+    else if (iVar4 == 300) {
       pcVar8 = "Resolution : 400x300";
     }
-    else if (iVar3 == 0x180) {
+    else if (iVar4 == 0x180) {
       pcVar8 = "Resolution : 512x384";
     }
-    else if (iVar3 == 0x1e0) {
+    else if (iVar4 == 0x1e0) {
       pcVar8 = "Resolution : 640x480";
     }
-    else if (iVar3 == 600) {
+    else if (iVar4 == 600) {
       pcVar8 = "Resolution : 800x600";
     }
-    else if (iVar3 == 0x300) {
+    else if (iVar4 == 0x300) {
       pcVar8 = "Resolution : 1024x768";
     }
-    else if (iVar3 == 0x400) {
+    else if (iVar4 == 0x400) {
       pcVar8 = "Resolution : 1280x1024";
     }
     else {
@@ -307,14 +307,14 @@ LAB_00510f71:
     ;
     crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02f26ed0,pcVar8);
     if (((("trid3d.dll"[0] != '\0') &&
-         (iVar3 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","trid3d.dll"),
-         iVar3 != 0)) &&
-        (iVar3 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","tridx6.dll"),
-        iVar3 != 0)) &&
-       (iVar3 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","tridx7.dll"),
-       iVar3 != 0)) {
-      iVar3 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","tri3dfx.dll");
-      if (iVar3 == 0) {
+         (iVar4 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","trid3d.dll"),
+         iVar4 != 0)) &&
+        (iVar4 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","tridx6.dll"),
+        iVar4 != 0)) &&
+       (iVar4 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","tridx7.dll"),
+       iVar4 != 0)) {
+      iVar4 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","tri3dfx.dll");
+      if (iVar4 == 0) {
         in_stack_ffffff08 = "3D API : Voodoo Blit Emulation";
       }
       else {
@@ -342,12 +342,12 @@ LAB_00510f71:
         pcVar9 = pcVar9 + 2;
       } while (cVar1 != '\0');
       pcVar8 = (char *)(&DAT_02f2763c)[g_GraphicsCardHandle];
-      iVar3 = -1;
+      iVar4 = -1;
       pcVar9 = &DAT_02f270d0;
       do {
         pcVar10 = pcVar9;
-        if (iVar3 == 0) break;
-        iVar3 = iVar3 + -1;
+        if (iVar4 == 0) break;
+        iVar4 = iVar4 + -1;
         pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
         cVar1 = *pcVar9;
         pcVar9 = pcVar10;
@@ -365,12 +365,12 @@ LAB_00510f71:
       in_stack_ffffff08 = (char *)0x5113ec;
       crt_stdio_c_sprintf_FUN_005fdbd0(&stack0x00000018," (%d)",g_GraphicsCardHandle);
       pcVar8 = &stack0x0000001c;
-      iVar3 = -1;
+      iVar4 = -1;
       pcVar9 = &DAT_02f270d0;
       do {
         pcVar10 = pcVar9;
-        if (iVar3 == 0) break;
-        iVar3 = iVar3 + -1;
+        if (iVar4 == 0) break;
+        iVar4 = iVar4 + -1;
         pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
         cVar1 = *pcVar9;
         pcVar9 = pcVar10;
@@ -399,12 +399,12 @@ LAB_00510f71:
     } while (cVar1 != '\0');
     crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff20,"%d",g_CGamePtr->game_bpp);
     pcVar9 = &stack0xffffff24;
-    iVar3 = -1;
+    iVar4 = -1;
     pcVar8 = &DAT_02f271d0;
     do {
       pcVar10 = pcVar8;
-      if (iVar3 == 0) break;
-      iVar3 = iVar3 + -1;
+      if (iVar4 == 0) break;
+      iVar4 = iVar4 + -1;
       pcVar10 = pcVar8 + (uint)bVar12 * -2 + 1;
       cVar1 = *pcVar8;
       pcVar8 = pcVar10;
@@ -467,91 +467,91 @@ LAB_00510f71:
       }
     }
     support_newmsg_cpp_getLocalizedString_FUN_005441f0("Graphic Options");
-    uVar5 = core_menu_cpp_GetGameMainMenuChoice_FUN_00510000();
+    iVar4 = core_menu_cpp_getGameMainMenuChoice_FUN_00510000();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar3 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","trid3d.dll");
+    iVar5 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","trid3d.dll");
     pCVar2 = g_CGamePtr;
-    bVar11 = iVar3 != 0;
+    bVar11 = iVar5 != 0;
     if ((!bVar11) && (0x1e0 < g_CGamePtr->game_pixy)) {
       g_CGamePtr->game_pixy = 0x1e0;
       pCVar2->game_pixx = 0x280;
     }
     pCVar2 = g_CGamePtr;
-    iVar3 = g_GraphicsCardHandle;
-    iVar4 = DAT_02f275f8;
-    switch(uVar5) {
+    iVar5 = g_GraphicsCardHandle;
+    iVar3 = DAT_02f275f8;
+    switch(iVar4) {
     case 0:
       if (DAT_02f26cac == 1) {
         if (((g_CGamePtr->game_pixy == 0xf0) && (24000000 < in_stack_00000068)) && (bVar11)) {
           g_CGamePtr->game_pixx = 0x500;
           pCVar2->game_pixy = 0x400;
-          iVar3 = g_GraphicsCardHandle;
-          iVar4 = DAT_02f275f8;
+          iVar5 = g_GraphicsCardHandle;
+          iVar3 = DAT_02f275f8;
         }
         else if (((g_CGamePtr->game_pixy == 0xf0) && (12000000 < in_stack_00000068)) && (bVar11)) {
 LAB_005114a9:
           g_CGamePtr->game_pixy = 0x300;
           pCVar2->game_pixx = 0x400;
-          iVar3 = g_GraphicsCardHandle;
-          iVar4 = DAT_02f275f8;
+          iVar5 = g_GraphicsCardHandle;
+          iVar3 = DAT_02f275f8;
         }
         else {
-          iVar3 = g_CGamePtr->game_pixy;
-          if (iVar3 == 0xf0) {
+          iVar4 = g_CGamePtr->game_pixy;
+          if (iVar4 == 0xf0) {
 LAB_005111c6:
             g_CGamePtr->game_pixy = 0x1e0;
             pCVar2->game_pixx = 0x280;
-            iVar3 = g_GraphicsCardHandle;
-            iVar4 = DAT_02f275f8;
+            iVar5 = g_GraphicsCardHandle;
+            iVar3 = DAT_02f275f8;
           }
-          else if (iVar3 == 300) {
+          else if (iVar4 == 300) {
             g_CGamePtr->game_pixy = 0xf0;
             pCVar2->game_pixx = 0x140;
-            iVar3 = g_GraphicsCardHandle;
-            iVar4 = DAT_02f275f8;
+            iVar5 = g_GraphicsCardHandle;
+            iVar3 = DAT_02f275f8;
           }
-          else if (iVar3 == 0x180) {
+          else if (iVar4 == 0x180) {
 LAB_005114dd:
             g_CGamePtr->game_pixy = 0xf0;
             pCVar2->game_pixx = 0x140;
-            iVar3 = g_GraphicsCardHandle;
-            iVar4 = DAT_02f275f8;
+            iVar5 = g_GraphicsCardHandle;
+            iVar3 = DAT_02f275f8;
           }
-          else if (iVar3 == 0x1e0) {
+          else if (iVar4 == 0x1e0) {
             g_CGamePtr->game_pixy = 0x180;
             pCVar2->game_pixx = 0x200;
-            iVar3 = g_GraphicsCardHandle;
-            iVar4 = DAT_02f275f8;
+            iVar5 = g_GraphicsCardHandle;
+            iVar3 = DAT_02f275f8;
           }
           else {
-            if (iVar3 == 600) goto LAB_005111c6;
-            if (iVar3 != 0x300) goto LAB_005114dd;
+            if (iVar4 == 600) goto LAB_005111c6;
+            if (iVar4 != 0x300) goto LAB_005114dd;
             g_CGamePtr->game_pixy = 600;
             pCVar2->game_pixx = 800;
-            iVar3 = g_GraphicsCardHandle;
-            iVar4 = DAT_02f275f8;
+            iVar5 = g_GraphicsCardHandle;
+            iVar3 = DAT_02f275f8;
           }
         }
       }
       else {
-        iVar3 = g_CGamePtr->game_pixy;
-        if (iVar3 == 0xf0) {
+        iVar4 = g_CGamePtr->game_pixy;
+        if (iVar4 == 0xf0) {
           g_CGamePtr->game_pixx = 0x200;
           pCVar2->game_pixy = 0x180;
-          iVar3 = g_GraphicsCardHandle;
-          iVar4 = DAT_02f275f8;
+          iVar5 = g_GraphicsCardHandle;
+          iVar3 = DAT_02f275f8;
         }
-        else if (iVar3 == 300) {
+        else if (iVar4 == 300) {
           g_CGamePtr->game_pixx = 0x200;
           pCVar2->game_pixy = 0x180;
-          iVar3 = g_GraphicsCardHandle;
-          iVar4 = DAT_02f275f8;
+          iVar5 = g_GraphicsCardHandle;
+          iVar3 = DAT_02f275f8;
         }
-        else if (iVar3 == 0x180) {
+        else if (iVar4 == 0x180) {
           g_CGamePtr->game_pixx = 0x280;
           pCVar2->game_pixy = 0x1e0;
-          iVar3 = g_GraphicsCardHandle;
-          iVar4 = DAT_02f275f8;
+          iVar5 = g_GraphicsCardHandle;
+          iVar3 = DAT_02f275f8;
         }
         else if (((in_stack_00000068 < 0xb71b01) || (g_CGamePtr->game_pixy != 0x1e0)) || (!bVar11))
         {
@@ -560,21 +560,21 @@ LAB_005114dd:
           if (((in_stack_00000068 < 0x16e3601) || (g_CGamePtr->game_pixy != 0x300)) || (!bVar11)) {
             g_CGamePtr->game_pixx = 0x140;
             pCVar2->game_pixy = 0xf0;
-            iVar3 = g_GraphicsCardHandle;
-            iVar4 = DAT_02f275f8;
+            iVar5 = g_GraphicsCardHandle;
+            iVar3 = DAT_02f275f8;
           }
           else {
             g_CGamePtr->game_pixy = 0x400;
             pCVar2->game_pixx = 0x500;
-            iVar3 = g_GraphicsCardHandle;
-            iVar4 = DAT_02f275f8;
+            iVar5 = g_GraphicsCardHandle;
+            iVar3 = DAT_02f275f8;
           }
         }
         else {
           g_CGamePtr->game_pixx = 800;
           pCVar2->game_pixy = 600;
-          iVar3 = g_GraphicsCardHandle;
-          iVar4 = DAT_02f275f8;
+          iVar5 = g_GraphicsCardHandle;
+          iVar3 = DAT_02f275f8;
         }
       }
       break;
@@ -582,42 +582,42 @@ LAB_005114dd:
       if (DAT_02f26cac == 1) {
         if (g_CGamePtr->halo_mode == 0) {
           g_CGamePtr->halo_mode = 2;
-          iVar3 = g_GraphicsCardHandle;
-          iVar4 = DAT_02f275f8;
+          iVar5 = g_GraphicsCardHandle;
+          iVar3 = DAT_02f275f8;
         }
         else if (g_CGamePtr->halo_mode == 1) {
 LAB_0051164c:
           g_CGamePtr->halo_mode = 0;
-          iVar3 = g_GraphicsCardHandle;
-          iVar4 = DAT_02f275f8;
+          iVar5 = g_GraphicsCardHandle;
+          iVar3 = DAT_02f275f8;
         }
         else {
           g_CGamePtr->halo_mode = 1;
-          iVar3 = g_GraphicsCardHandle;
-          iVar4 = DAT_02f275f8;
+          iVar5 = g_GraphicsCardHandle;
+          iVar3 = DAT_02f275f8;
         }
       }
       else if (g_CGamePtr->halo_mode == 0) {
         g_CGamePtr->halo_mode = 1;
-        iVar3 = g_GraphicsCardHandle;
-        iVar4 = DAT_02f275f8;
+        iVar5 = g_GraphicsCardHandle;
+        iVar3 = DAT_02f275f8;
       }
       else {
         if (g_CGamePtr->halo_mode != 1) goto LAB_0051164c;
         g_CGamePtr->halo_mode = 2;
-        iVar3 = g_GraphicsCardHandle;
-        iVar4 = DAT_02f275f8;
+        iVar5 = g_GraphicsCardHandle;
+        iVar3 = DAT_02f275f8;
       }
       break;
     case 2:
       DAT_02f275f8 = 0;
       g_FullscreenMode = 0;
-      iVar4 = DAT_02f275f8;
+      iVar3 = DAT_02f275f8;
       break;
     case 3:
       if ((&DAT_02f2767c)[g_GraphicsCardHandle] != 0x121a) {
-        iVar3 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","trid3d.dll");
-        if (iVar3 == 0) {
+        iVar4 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","trid3d.dll");
+        if (iVar4 == 0) {
           pcVar8 = "tridx6.dll";
 LAB_005116c3:
           pcVar9 = "trid3d.dll";
@@ -632,82 +632,82 @@ LAB_005116c3:
           } while (cVar1 != '\0');
         }
         else {
-          iVar3 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","tridx6.dll");
-          if (iVar3 == 0) {
+          iVar4 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","tridx6.dll");
+          if (iVar4 == 0) {
             pcVar8 = "tridx7.dll";
             goto LAB_005116c3;
           }
-          iVar3 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","tridx7.dll");
-          if (iVar3 == 0) {
+          iVar4 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","tridx7.dll");
+          if (iVar4 == 0) {
             pcVar8 = "trid3d.dll";
             goto LAB_005116c3;
           }
-          iVar3 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","tri3dfx.dll");
-          if (iVar3 == 0) {
+          iVar4 = crt_string_c_stricmp_FUN_005fe7f0("trid3d.dll","tri3dfx.dll");
+          if (iVar4 == 0) {
             pcVar8 = "trid3d.dll";
             goto LAB_005116c3;
           }
         }
         wincore_windll_cpp_kill_FUN_005b71e0();
         wincore_windll_cpp_loadExternalRenderer_FUN_005b6750((HWND)0x0);
-        iVar3 = g_GraphicsCardHandle;
-        iVar4 = g_FullscreenMode;
+        iVar5 = g_GraphicsCardHandle;
+        iVar3 = g_FullscreenMode;
         if (g_FullscreenMode != 0) {
           wincore_windll_cpp_buildCardList_FUN_005b7db0
                     (&DAT_02f275f8,0x2f275fc,&DAT_02f2763c,(char **)&DAT_02f2767c,0x2f276bc);
           wincore_windll_cpp_getVideoMemory_FUN_005b7d60
                     (&stack0x00000068,(int *)&stack0x0000006c,(int *)&stack0x00000070);
-          iVar3 = g_GraphicsCardHandle;
-          iVar4 = DAT_02f275f8;
+          iVar5 = g_GraphicsCardHandle;
+          iVar3 = DAT_02f275f8;
         }
       }
       break;
     case 4:
-      iVar3 = DAT_02f275f8;
+      iVar5 = DAT_02f275f8;
       if (DAT_02f275f8 != 0) {
         g_GraphicsCardHandle = g_GraphicsCardHandle + 1;
         if (DAT_02f275f8 <= g_GraphicsCardHandle) {
           g_GraphicsCardHandle = 0;
         }
         wincore_windll_cpp_selectCard_FUN_005b7d90(g_GraphicsCardHandle);
-        iVar3 = g_GraphicsCardHandle;
-        iVar4 = DAT_02f275f8;
+        iVar5 = g_GraphicsCardHandle;
+        iVar3 = DAT_02f275f8;
       }
       break;
     case 5:
       if (g_CGamePtr->game_bpp == 0x10) {
         g_CGamePtr->game_bpp = 0x20;
-        iVar3 = g_GraphicsCardHandle;
-        iVar4 = DAT_02f275f8;
+        iVar5 = g_GraphicsCardHandle;
+        iVar3 = DAT_02f275f8;
       }
       else {
         g_CGamePtr->game_bpp = 0x10;
-        iVar3 = g_GraphicsCardHandle;
-        iVar4 = DAT_02f275f8;
+        iVar5 = g_GraphicsCardHandle;
+        iVar3 = DAT_02f275f8;
       }
       break;
     case 6:
       core_menu_cpp_RunCalibrationTest_FUN_00510ba0();
-      iVar3 = g_GraphicsCardHandle;
-      iVar4 = DAT_02f275f8;
+      iVar5 = g_GraphicsCardHandle;
+      iVar3 = DAT_02f275f8;
       break;
     case 7:
       g_CGamePtr->subtitle_mode = (uint)(g_CGamePtr->subtitle_mode == 0);
-      iVar3 = g_GraphicsCardHandle;
-      iVar4 = DAT_02f275f8;
+      iVar5 = g_GraphicsCardHandle;
+      iVar3 = DAT_02f275f8;
       break;
     case 8:
       uVar7 = (uint)(g_CGamePtr->nudity_flag == 0);
       g_CGamePtr->nudity_flag = uVar7;
       pCVar2->blood_flag = uVar7;
       pCVar2->foul_language_flag = uVar7;
-      iVar3 = g_GraphicsCardHandle;
-      iVar4 = DAT_02f275f8;
+      iVar5 = g_GraphicsCardHandle;
+      iVar3 = DAT_02f275f8;
     }
-    DAT_02f275f8 = iVar4;
-    g_GraphicsCardHandle = iVar3;
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
-    if (iVar3 != 0) {
+    DAT_02f275f8 = iVar3;
+    g_GraphicsCardHandle = iVar5;
+    iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    if (iVar4 != 0) {
       return;
     }
   } while( true );
@@ -812,12 +812,12 @@ LAB_005116c3:
 //   XREF to: Stack[-0x144] (DATA)
 // 00510d53: PUSH 0x2f21590
 //   XREF to: 02f21590 (DATA)
-// 00510d58: CALL core_moon.cpp_CMoon_FUN_00529d60
+// 00510d58: CALL core_moon.cpp_CMoon_update_FUN_00529d60
 //   XREF to: 00529d60 (UNCONDITIONAL_CALL)
 // 00510d5d: ADD ESP,0x8
 // 00510d60: PUSH 0x2f21590
 //   XREF to: 02f21590 (DATA)
-// 00510d65: CALL core_moon.cpp_CMoon_FUN_00529ed0
+// 00510d65: CALL core_moon.cpp_CMoon_render_FUN_00529ed0
 //   XREF to: 00529ed0 (UNCONDITIONAL_CALL)
 // 00510d6a: MOV ECX,dword ptr [0x02f275f8]
 //   XREF to: 02f275f8 (READ)
@@ -1246,7 +1246,7 @@ LAB_005116c3:
 // 005110ff: PUSH ESI
 // 00511100: PUSH 0x2f275d0
 //   XREF to: 02f275d0 (DATA)
-// 00511105: CALL core_menu.cpp_GetGameMainMenuChoice_FUN_00510000
+// 00511105: CALL core_menu.cpp_getGameMainMenuChoice_FUN_00510000
 //   XREF to: 00510000 (UNCONDITIONAL_CALL)
 // 0051110a: ADD ESP,0x14
 // 0051110d: MOV ESI,EAX

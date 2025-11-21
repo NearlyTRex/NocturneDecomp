@@ -741,10 +741,6 @@
       "type":"struct"
     },
     {
-      "name":"CMoon",
-      "type":"struct"
-    },
-    {
       "name":"CMorph",
       "type":"struct"
     },
@@ -3266,6 +3262,10 @@
     },
     {
       "name":"CKeyActor",
+      "type":"struct"
+    },
+    {
+      "name":"CMoon",
       "type":"struct"
     },
     {
@@ -22703,7 +22703,7 @@
         },
         {
           "len":4,
-          "name":"field_1420456",
+          "name":"player_on_train",
           "offset":1420456,
           "type":"int"
         },
@@ -29414,27 +29414,21 @@
       "fields":[
         {
           "len":4,
-          "name":"isLoaded",
+          "name":"is_loaded",
           "offset":0,
           "type":"int"
         },
         {
           "len":4,
-          "name":"padding_0x4",
+          "name":"rotation_phase",
           "offset":4,
-          "type":"char[4]"
+          "type":"float"
         },
         {
-          "len":4,
+          "len":22232,
           "name":"moon",
           "offset":8,
-          "type":"int"
-        },
-        {
-          "len":22228,
-          "name":"field_12",
-          "offset":12,
-          "type":"char[22228]"
+          "type":"CKeyFramedModel"
         }
       ],
       "importable":true,
@@ -39573,10 +39567,28 @@
       "desc":"",
       "fields":[
         {
-          "len":24,
-          "name":"field_0",
+          "len":4,
+          "name":"course_index",
           "offset":0,
-          "type":"char[24]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"course_position",
+          "offset":4,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"animation_frame",
+          "offset":8,
+          "type":"float"
+        },
+        {
+          "len":12,
+          "name":"random_offset",
+          "offset":12,
+          "type":"CVector3f"
         }
       ],
       "importable":true,

@@ -10,7 +10,7 @@
 //   core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430 (004d2430) at 004d24ae [UNCONDITIONAL_CALL]
 //   core_marquee.cpp_FUN_0050bc30 (0050bc30) at 0050bca4 [UNCONDITIONAL_CALL]
 //   core_marquee.cpp_FUN_0050c050 (0050c050) at 0050c102 [UNCONDITIONAL_CALL]
-//   core_moon.cpp_CMoon_FUN_00529ed0 (00529ed0) at 0052a036 [UNCONDITIONAL_CALL]
+//   core_moon.cpp_CMoon_render_FUN_00529ed0 (00529ed0) at 0052a036 [UNCONDITIONAL_CALL]
 //   core_platfrm.cpp_FUN_0054cab0 (0054cab0) at 0054cbed [UNCONDITIONAL_CALL]
 //   core_vehicle.cpp_CVehicle_process_FUN_005e7e80 (005e7e80) at 005e7f48 [UNCONDITIONAL_CALL]
 // Function calls:

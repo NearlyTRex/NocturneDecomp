@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_freeAllSamples_FUN_005aa660(void)
 // Cross-references:
-//   core_sound.cpp_CSound_FUN_005b39a0 (005b39a0) at 005b39a5 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_reset_FUN_005b39a0 (005b39a0) at 005b39a5 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0 (005aaeb0) at 005aaed8 [UNCONDITIONAL_CALL]
 // Globals:
 //   CSfxSample[64] g_SfxSamples

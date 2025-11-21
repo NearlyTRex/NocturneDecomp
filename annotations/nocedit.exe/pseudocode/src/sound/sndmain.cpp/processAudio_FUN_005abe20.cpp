@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_processAudio_FUN_005abe20(void)
 // Cross-references:
-//   core_moon.cpp_CMoon_FUN_00529ed0 (00529ed0) at 00529edc [UNCONDITIONAL_CALL]
+//   core_moon.cpp_CMoon_render_FUN_00529ed0 (00529ed0) at 00529edc [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_audioThreadProc_FUN_005abba0 (005abba0) at 005abbb8 [UNCONDITIONAL_CALL]
 // Globals:
 //   double g_AudioLatencyMultiplier = 3

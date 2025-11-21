@@ -8,7 +8,7 @@
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512646 [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
-//   SMRGLTextureBasic DAT_0067d284
+//   SMRGLTextureBasic[8] DAT_0067d284
 //   undefined4 DAT_00f80000
 //   CDemonRenderer g_CDemonRendererInstance
 //   undefined4 DAT_02f26cb4
@@ -65,7 +65,7 @@ void core_menu_cpp_FUN_0050fe70(void)
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr,
-               &DAT_0067d284 +
+               DAT_0067d284 +
                (((int)((DAT_02f26cb4 + (DAT_02f26cb4 >> 0x1f) * -0x10000) -
                       (uint)((DAT_02f26cb4 >> 0x1f) << 0xf < 0)) >> 0x10) + in_stack_00000004 & 7));
     engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10

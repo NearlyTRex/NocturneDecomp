@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: float core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340(CDemonSet * this_ptr, CVector3f * position)
 // Cross-references:
-//   core_sound.cpp_FUN_005b1870 (005b1870) at 005b1e4f [UNCONDITIONAL_CALL]
+//   core_sound.cpp_updateListeners_FUN_005b1870 (005b1870) at 005b1e4f [UNCONDITIONAL_CALL]
 // Globals:
 //   float g_RayOffsetForStart = -1
 //   float g_RayOffsetForEnd = 150

@@ -53,7 +53,7 @@
 //   undefined4 DAT_02d831cc
 //   undefined4 DAT_02d831d0
 // Function calls:
-//   core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+//   core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   engine_3d.c_setRenderAlpha_FUN_00406d80
 //   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
@@ -69,8 +69,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 
 {
   char *pcVar1;
-  undefined4 uVar2;
-  int iVar3;
+  int iVar2;
   BADSPACEBASE *in_ESP;
   char acStack_19fc [4];
   char acStack_19f8 [108];
@@ -197,8 +196,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
   }
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Forward");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_17bc,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_walk);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_17bc,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_17b8,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -207,8 +206,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Back");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_10ac,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_backup);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_10ac,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_10a8,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -218,29 +217,29 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
   }
   if (g_CGamePtr->always_run == 0) {
     support_newmsg_cpp_getLocalizedString_FUN_005441f0("Run");
-    uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_59c,"%s = %s",uVar2);
+    pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_run);
+    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_59c,"%s = %s",pcVar1);
     engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
               (g_ThemeFont,acStack_598,DAT_02d831c4,DAT_02d831c8,7,-1);
     DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
-    iVar3 = g_WindowHeight + DAT_02d831cc * -4;
+    iVar2 = g_WindowHeight + DAT_02d831cc * -4;
   }
   else {
     support_newmsg_cpp_getLocalizedString_FUN_005441f0("Walk");
-    uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_89c,"%s = %s",uVar2);
+    pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_run);
+    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_89c,"%s = %s",pcVar1);
     engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
               (g_ThemeFont,acStack_898,DAT_02d831c4,DAT_02d831c8,7,-1);
     DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
-    iVar3 = g_WindowHeight + DAT_02d831cc * -4;
+    iVar2 = g_WindowHeight + DAT_02d831cc * -4;
   }
-  if (iVar3 < DAT_02d831c8) {
+  if (iVar2 < DAT_02d831c8) {
     DAT_02d831c8 = DAT_02d831cc * 6;
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Strafe on");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_198c,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_strafe);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_198c,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_1988,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -249,8 +248,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Strafe left");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_127c,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_strafe_left);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_127c,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_1278,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -259,8 +258,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Strafe right");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_b6c,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_strafe_right);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_b6c,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_b68,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -269,8 +268,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Turn left");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_45c,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_left);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_45c,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_458,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -279,8 +278,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Turn right");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_64c,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_right);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_64c,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_648,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -289,8 +288,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Fire / Action");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_73c,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_fire);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_73c,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_738,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -299,8 +298,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Use item");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_12c,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_use_item);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_12c,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_128,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -309,8 +308,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Light");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_91c,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_light);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_91c,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_918,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -319,8 +318,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Night Vision");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_20c,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_infrared);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_20c,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_208,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -329,8 +328,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Draw");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_19fc,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_draw);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_19fc,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_19f8,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -339,8 +338,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Point up");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_12ec,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_point_up);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_12ec,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_12e8,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -349,8 +348,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Point down");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_bdc,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_point_down);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_bdc,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_bd8,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -359,8 +358,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Jump");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_14cc,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_jump);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_14cc,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_14c8,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -369,8 +368,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Cycle pistol weapons");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_dbc,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_weapon_1);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_dbc,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_db8,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -379,8 +378,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Cycle assault weapons");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_17ac,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_weapon_2);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_17ac,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_17a8,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -389,8 +388,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Cycle flame weapons");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_109c,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_weapon_3);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_109c,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_1098,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -399,8 +398,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Cycle grenade weapons");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_98c,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_weapon_4);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_98c,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_988,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -409,8 +408,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Cycle melee weapons");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_27c,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_weapon_5);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_27c,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_278,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -419,8 +418,8 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Next weapon");
-  uVar2 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffe594,"%s = %s",uVar2);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_next_weapon);
+  crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffe594,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,&stack0xffffe598,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -429,7 +428,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Previous weapon");
-  core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+  core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_prev_weapon);
   crt_stdio_c_sprintf_FUN_005fdbd0(acStack_135c,"%s = %s");
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_1358,DAT_02d831c4,DAT_02d831c8,7,-1);
@@ -439,7 +438,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Next item");
-  core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+  core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_next_item);
   crt_stdio_c_sprintf_FUN_005fdbd0(acStack_c4c,"%s = %s");
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_c48,DAT_02d831c4,DAT_02d831c8,7,-1);
@@ -449,7 +448,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Previous item");
-  core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+  core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_prev_item);
   crt_stdio_c_sprintf_FUN_005fdbd0(acStack_153c,"%s = %s");
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_1538,DAT_02d831c4,DAT_02d831c8,7,-1);
@@ -459,7 +458,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Item description");
-  core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+  core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_item_desc);
   crt_stdio_c_sprintf_FUN_005fdbd0(acStack_e2c,"%s = %s");
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_e28,DAT_02d831c4,DAT_02d831c8,7,-1);
@@ -469,7 +468,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
     DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;
   }
   support_newmsg_cpp_getLocalizedString_FUN_005441f0("Next ammo");
-  core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
+  core_menu_cpp_getKeyDisplayName_FUN_005134e0(this_ptr->key_next_ammo);
   crt_stdio_c_sprintf_FUN_005fdbd0(&stack0x000000e4,"%s = %s");
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,&stack0x000000e8,DAT_02d831c4,DAT_02d831c8,7,-1);
@@ -950,7 +949,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d8e68: PUSH EAX
 // 004d8e69: MOV EDX,dword ptr [ESI + 0x28]
 // 004d8e6c: PUSH EDX
-// 004d8e6d: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d8e6d: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d8e72: ADD ESP,0x4
 // 004d8e75: PUSH EAX
@@ -1017,7 +1016,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d8f10: PUSH EAX
 // 004d8f11: MOV EDX,dword ptr [ESI + 0x2c]
 // 004d8f14: PUSH EDX
-// 004d8f15: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d8f15: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d8f1a: ADD ESP,0x4
 // 004d8f1d: PUSH EAX
@@ -1091,7 +1090,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d8fcc: PUSH EAX
 // 004d8fcd: MOV EDX,dword ptr [ESI + 0x30]
 // 004d8fd0: PUSH EDX
-// 004d8fd1: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d8fd1: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d8fd6: ADD ESP,0x4
 // 004d8fd9: PUSH EAX
@@ -1160,7 +1159,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d9076: PUSH EAX
 // 004d9077: MOV EDX,dword ptr [ESI + 0x34]
 // 004d907a: PUSH EDX
-// 004d907b: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d907b: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d9080: ADD ESP,0x4
 // 004d9083: PUSH EAX
@@ -1228,7 +1227,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d9120: PUSH EAX
 // 004d9121: MOV EDX,dword ptr [ESI + 0x38]
 // 004d9124: PUSH EDX
-// 004d9125: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d9125: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d912a: ADD ESP,0x4
 // 004d912d: PUSH EAX
@@ -1295,7 +1294,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d91c9: PUSH EAX
 // 004d91ca: MOV EDX,dword ptr [ESI + 0x3c]
 // 004d91cd: PUSH EDX
-// 004d91ce: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d91ce: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d91d3: ADD ESP,0x4
 // 004d91d6: PUSH EAX
@@ -1363,7 +1362,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d9273: PUSH EAX
 // 004d9274: MOV EDX,dword ptr [ESI + 0x44]
 // 004d9277: PUSH EDX
-// 004d9278: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d9278: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d927d: ADD ESP,0x4
 // 004d9280: PUSH EAX
@@ -1431,7 +1430,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d931d: PUSH EAX
 // 004d931e: MOV EDX,dword ptr [ESI + 0x40]
 // 004d9321: PUSH EDX
-// 004d9322: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d9322: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d9327: ADD ESP,0x4
 // 004d932a: PUSH EAX
@@ -1498,7 +1497,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d93c6: PUSH EAX
 // 004d93c7: MOV EDX,dword ptr [ESI + 0x48]
 // 004d93ca: PUSH EDX
-// 004d93cb: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d93cb: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d93d0: ADD ESP,0x4
 // 004d93d3: PUSH EAX
@@ -1566,7 +1565,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d9470: PUSH EAX
 // 004d9471: MOV EDX,dword ptr [ESI + 0x4c]
 // 004d9474: PUSH EDX
-// 004d9475: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d9475: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d947a: ADD ESP,0x4
 // 004d947d: PUSH EAX
@@ -1634,7 +1633,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d951a: PUSH EAX
 // 004d951b: MOV EDX,dword ptr [ESI + 0x50]
 // 004d951e: PUSH EDX
-// 004d951f: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d951f: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d9524: ADD ESP,0x4
 // 004d9527: PUSH EAX
@@ -1701,7 +1700,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d95c3: PUSH EAX
 // 004d95c4: MOV EDX,dword ptr [ESI + 0x54]
 // 004d95c7: PUSH EDX
-// 004d95c8: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d95c8: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d95cd: ADD ESP,0x4
 // 004d95d0: PUSH EAX
@@ -1769,7 +1768,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d966d: PUSH EAX
 // 004d966e: MOV EDX,dword ptr [ESI + 0x58]
 // 004d9671: PUSH EDX
-// 004d9672: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d9672: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d9677: ADD ESP,0x4
 // 004d967a: PUSH EAX
@@ -1837,7 +1836,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d9717: PUSH EAX
 // 004d9718: MOV EDX,dword ptr [ESI + 0x60]
 // 004d971b: PUSH EDX
-// 004d971c: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d971c: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d9721: ADD ESP,0x4
 // 004d9724: PUSH EAX
@@ -1904,7 +1903,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d97c0: PUSH EAX
 // 004d97c1: MOV EDX,dword ptr [ESI + 0x64]
 // 004d97c4: PUSH EDX
-// 004d97c5: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d97c5: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d97ca: ADD ESP,0x4
 // 004d97cd: PUSH EAX
@@ -1972,7 +1971,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d986a: PUSH EAX
 // 004d986b: MOV EDX,dword ptr [ESI + 0x5c]
 // 004d986e: PUSH EDX
-// 004d986f: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d986f: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d9874: ADD ESP,0x4
 // 004d9877: PUSH EAX
@@ -2040,7 +2039,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d9914: PUSH EAX
 // 004d9915: MOV EDX,dword ptr [ESI + 0x68]
 // 004d9918: PUSH EDX
-// 004d9919: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d9919: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d991e: ADD ESP,0x4
 // 004d9921: PUSH EAX
@@ -2107,7 +2106,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d99bd: PUSH EAX
 // 004d99be: MOV EDX,dword ptr [ESI + 0x6c]
 // 004d99c1: PUSH EDX
-// 004d99c2: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d99c2: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d99c7: ADD ESP,0x4
 // 004d99ca: PUSH EAX
@@ -2175,7 +2174,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d9a67: PUSH EAX
 // 004d9a68: MOV EDX,dword ptr [ESI + 0x70]
 // 004d9a6b: PUSH EDX
-// 004d9a6c: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d9a6c: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d9a71: ADD ESP,0x4
 // 004d9a74: PUSH EAX
@@ -2243,7 +2242,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d9b11: PUSH EAX
 // 004d9b12: MOV EDX,dword ptr [ESI + 0x74]
 // 004d9b15: PUSH EDX
-// 004d9b16: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d9b16: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d9b1b: ADD ESP,0x4
 // 004d9b1e: PUSH EAX
@@ -2310,7 +2309,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d9bba: PUSH EAX
 // 004d9bbb: MOV EDX,dword ptr [ESI + 0x78]
 // 004d9bbe: PUSH EDX
-// 004d9bbf: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d9bbf: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d9bc4: ADD ESP,0x4
 // 004d9bc7: PUSH EAX
@@ -2378,7 +2377,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d9c64: PUSH EAX
 // 004d9c65: MOV EDX,dword ptr [ESI + 0x7c]
 // 004d9c68: PUSH EDX
-// 004d9c69: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d9c69: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d9c6e: ADD ESP,0x4
 // 004d9c71: PUSH EAX
@@ -2446,7 +2445,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d9d08: PUSH EAX
 // 004d9d09: MOV EDX,dword ptr [ESI + 0x80]
 // 004d9d0f: PUSH EDX
-// 004d9d10: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d9d10: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d9d15: ADD ESP,0x4
 // 004d9d18: PUSH EAX
@@ -2513,7 +2512,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d9db4: PUSH EAX
 // 004d9db5: MOV EDX,dword ptr [ESI + 0x84]
 // 004d9dbb: PUSH EDX
-// 004d9dbc: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d9dbc: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d9dc1: ADD ESP,0x4
 // 004d9dc4: PUSH EAX
@@ -2581,7 +2580,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d9e61: PUSH EAX
 // 004d9e62: MOV EDX,dword ptr [ESI + 0x88]
 // 004d9e68: PUSH EDX
-// 004d9e69: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d9e69: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d9e6e: ADD ESP,0x4
 // 004d9e71: PUSH EAX
@@ -2649,7 +2648,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d9f0e: PUSH EAX
 // 004d9f0f: MOV EDX,dword ptr [ESI + 0x8c]
 // 004d9f15: PUSH EDX
-// 004d9f16: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d9f16: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d9f1b: ADD ESP,0x4
 // 004d9f1e: PUSH EAX
@@ -2716,7 +2715,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004d9fba: PUSH EAX
 // 004d9fbb: MOV EDX,dword ptr [ESI + 0x90]
 // 004d9fc1: PUSH EDX
-// 004d9fc2: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d9fc2: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d9fc7: ADD ESP,0x4
 // 004d9fca: PUSH EAX
@@ -2776,7 +2775,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_p
 // 004da04c: PUSH EAX
 // 004da04d: MOV EDX,dword ptr [ESI + 0x30]
 // 004da050: PUSH EDX
-// 004da051: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004da051: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004da056: ADD ESP,0x4
 // 004da059: PUSH EAX

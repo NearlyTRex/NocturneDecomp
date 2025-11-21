@@ -37,7 +37,7 @@
 //   core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
 //   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 //   core_fire.cpp_CFireEffect_FUN_004c9290
-//   core_sound.cpp_CSound_playSfx_FUN_005b3a20
+//   core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
 //   core_weather.cpp_CWeather_SomethingWithThunder_FUN_005ef140
 //   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
@@ -172,8 +172,8 @@ LAB_005eeb1c:
     }
     iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(DAT_03f96b40);
     if (iVar2 == 0) {
-      core_sound_cpp_CSound_playSfx_FUN_005b3a20
-                (g_CSoundPtr,(int)in_stack_00000004,"rain.wav @ .1");
+      core_sound_cpp_CSound_playSound_FUN_005b3a20
+                (g_CSoundPtr,in_stack_00000004,"rain.wav @ .1");
       DAT_03f96b40 = extraout_EAX;
       return;
     }
@@ -504,7 +504,7 @@ LAB_005eeb1c:
 //   XREF to: 00681ef8 (READ)
 // 005eee9a: PUSH ESI
 //   XREF to: 03f6af64 (DATA)
-// 005eee9b: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 005eee9b: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 005eeea0: ADD ESP,0xc
 // 005eeea3: MOV [0x03f96b40],EAX

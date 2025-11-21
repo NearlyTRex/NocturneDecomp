@@ -12,7 +12,7 @@
 //   core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 (0053e220) at 0053e617 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_FUN_005800d0 (005800d0) at 00580145 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00 (0057fd00) at 0057fdf4 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b1870 (005b1870) at 005b1d43 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_updateListeners_FUN_005b1870 (005b1870) at 005b1d43 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

@@ -39,7 +39,7 @@
 //   core_fire.cpp_CFireEffect_FUN_004c79d0
 //   core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0
 //   core_ground.cpp_getGroundTypeCode_FUN_004eece0
-//   core_sound.cpp_CSound_playActorSoundWithDelay_FUN_005b3ae0
+//   core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 
 #include "nocturne.h"
@@ -184,7 +184,7 @@ LAB_004c7785:
     return;
   }
 LAB_004c79a0:
-  core_sound_cpp_CSound_playActorSoundWithDelay_FUN_005b3ae0
+  core_sound_cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0
             (g_CSoundPtr,(CDemonActor *)0x0,acStack_44,in_stack_00000008,0.17);
   return;
 }
@@ -557,7 +557,7 @@ LAB_004c79a0:
 //   XREF to: 00681ef8 (READ)
 // 004c79b2: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 004c79b3: CALL core_sound.cpp_CSound_playActorSoundWithDelay_FUN_005b3ae0
+// 004c79b3: CALL core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0
 //   XREF to: 005b3ae0 (UNCONDITIONAL_CALL)
 // 004c79b8: ADD ESP,0x14
 // 004c79bb: MOV ESP,EBP

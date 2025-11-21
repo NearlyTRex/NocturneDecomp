@@ -18,8 +18,8 @@
 //   CSound g_CSoundInstance
 // Function calls:
 //   core_script.cpp_GetDemonActor_FUN_005594e0
-//   core_sound.cpp_CSound_FUN_005b3ba0
-//   core_sound.cpp_CSound_playSfx_FUN_005b3a20
+//   core_sound.cpp_CSound_getSoundDuration_FUN_005b3ba0
+//   core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   crt_stdio.c_sscanf_FUN_0060013c
 //   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 //   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
@@ -43,16 +43,18 @@ int core_script_cpp_FUN_0055ff00(void)
   int unaff_ESI;
   char *pcVar5;
   byte bVar6;
-  int in_stack_00000004;
+  void *in_stack_00000004;
   char *in_stack_0000000c;
   char *in_stack_00000010;
   int iVar7;
   
   bVar6 = 0;
   iVar7 = 0;
-  if (((*(float *)(in_stack_00000004 + 0x454) < 0.0) &&
+  if (((*(float *)((int)in_stack_00000004 + 0x454) < 0.0) &&
       (iVar2 = crt_stdio_c_sscanf_FUN_0060013c(in_stack_0000000c,&DAT_006431a0,&stack0xffffffd8),
-      iVar2 != 1)) && (fVar3 = core_sound_cpp_CSound_FUN_005b3ba0(g_CSoundPtr), fVar3 < 0.0)) {
+      iVar2 != 1)) &&
+     (fVar3 = core_sound_cpp_CSound_getSoundDuration_FUN_005b3ba0(g_CSoundPtr,in_stack_0000000c),
+     fVar3 < 0.0)) {
     shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&DAT_0310f4b0,in_stack_0000000c);
     uVar4 = 0xffffffff;
     pcVar5 = in_stack_00000010;
@@ -65,21 +67,21 @@ int core_script_cpp_FUN_0055ff00(void)
     iVar7 = ~uVar4 - 1;
   }
   iVar2 = core_script_cpp_GetDemonActor_FUN_005594e0();
-  *(int *)(in_stack_00000004 + 4) = iVar2;
+  *(int *)((int)in_stack_00000004 + 4) = iVar2;
   if (iVar2 == 0) {
     if (DAT_0310f4ac != 0) {
       return 0;
     }
     return -0x40800000;
   }
-  *(int *)(in_stack_00000004 + 8) = iVar2;
-  if ((*(int *)(in_stack_00000004 + 0x14) == 0) &&
-     (*(int *)(in_stack_00000004 + 4) != *(int *)(in_stack_00000004 + 0xc))) {
-    *(undefined4 *)(in_stack_00000004 + 0x10) = 1;
-    *(undefined4 *)(in_stack_00000004 + 0xc) = *(undefined4 *)(in_stack_00000004 + 4);
+  *(int *)((int)in_stack_00000004 + 8) = iVar2;
+  if ((*(int *)((int)in_stack_00000004 + 0x14) == 0) &&
+     (*(int *)((int)in_stack_00000004 + 4) != *(int *)((int)in_stack_00000004 + 0xc))) {
+    *(undefined4 *)((int)in_stack_00000004 + 0x10) = 1;
+    *(undefined4 *)((int)in_stack_00000004 + 0xc) = *(undefined4 *)((int)in_stack_00000004 + 4);
   }
   if (DAT_0310ec9c == 0) {
-    pcVar5 = (char *)(in_stack_00000004 + 0x54);
+    pcVar5 = (char *)((int)in_stack_00000004 + 0x54);
     do {
       cVar1 = *in_stack_00000010;
       *pcVar5 = cVar1;
@@ -89,14 +91,14 @@ int core_script_cpp_FUN_0055ff00(void)
       pcVar5[1] = cVar1;
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
-    if (*(int *)(in_stack_00000004 + 4) != 0) {
-      *(int *)(*(int *)(in_stack_00000004 + 4) + 0x2618) = iVar7;
+    if (*(int *)((int)in_stack_00000004 + 4) != 0) {
+      *(int *)(*(int *)((int)in_stack_00000004 + 4) + 0x2618) = iVar7;
     }
     if (unaff_ESI != 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(2);
-      core_sound_cpp_CSound_playSfx_FUN_005b3a20(g_CSoundPtr,in_stack_00000004,in_stack_0000000c);
-      *(undefined4 *)(in_stack_00000004 + 0x24) = extraout_EAX;
+      core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,in_stack_00000004,in_stack_0000000c);
+      *(undefined4 *)((int)in_stack_00000004 + 0x24) = extraout_EAX;
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     }
   }
@@ -181,7 +183,7 @@ int core_script_cpp_FUN_0055ff00(void)
 //   XREF to: 00681ef8 (READ)
 // 0055ff8f: PUSH EAX
 //   XREF to: 03f6af64 (DATA)
-// 0055ff90: CALL core_sound.cpp_CSound_FUN_005b3ba0
+// 0055ff90: CALL core_sound.cpp_CSound_getSoundDuration_FUN_005b3ba0
 //   XREF to: 005b3ba0 (UNCONDITIONAL_CALL)
 // 0055ff95: MOV dword ptr [ESP + 0x1c],EAX
 //   XREF to: Stack[-0x14] (WRITE)
@@ -300,7 +302,7 @@ int core_script_cpp_FUN_0055ff00(void)
 //   XREF to: 00681ef8 (READ)
 // 00560079: PUSH ESI
 //   XREF to: 03f6af64 (DATA)
-// 0056007a: CALL core_sound.cpp_CSound_playSfx_FUN_005b3a20
+// 0056007a: CALL core_sound.cpp_CSound_playSound_FUN_005b3a20
 //   XREF to: 005b3a20 (UNCONDITIONAL_CALL)
 // 0056007f: ADD ESP,0xc
 // 00560082: MOV dword ptr [EBX + 0x24],EAX

@@ -52618,14 +52618,10 @@
         "start":"005299f0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_moon.cpp_staticInit_FUN_005299f0",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "ret":"void"
   },
   {
     "addr":"0052a3f0",
@@ -52636,13 +52632,38 @@
         "start":"0052a3f0"
       }
     ],
-    "cmt":"Signature: undefined1 core_moon.cpp_FUN_0052a3f0()",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_moon.cpp_FUN_0052a3f0",
-    "ret":"undefined1",
+    "name":"core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_0052a3f0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMoon*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -74230,7 +74251,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_FUN_005b1870",
+    "name":"core_sound.cpp_updateListeners_FUN_005b1870",
     "ret":"void",
     "vars":{
       "locals":[
@@ -75658,9 +75679,10 @@
         "start":"005b2d70"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_FUN_005b2d70",
-    "ret":"undefined1",
+    "name":"core_sound.cpp_syncChannel3WithChannel0_FUN_005b2d70",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -75695,10 +75717,7 @@
           },
           "type":"undefined4"
         }
-      ],
-      "ret_storage":{
-        "invalid":true
-      }
+      ]
     }
   },
   {
@@ -75712,7 +75731,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_FUN_005b2f70",
+    "name":"core_sound.cpp_CSound_shutdown_FUN_005b2f70",
     "ret":"void",
     "vars":{
       "params":[
@@ -75838,8 +75857,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_FUN_005b3c70",
-    "ret":"float*",
+    "name":"core_sound.cpp_CSound_getSoundModeName_FUN_005b3c70",
+    "ret":"char*",
     "vars":{
       "params":[
         {
@@ -75857,6 +75876,22 @@
             ]
           },
           "type":"CSound*"
+        },
+        {
+          "name":"sound_mode_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{

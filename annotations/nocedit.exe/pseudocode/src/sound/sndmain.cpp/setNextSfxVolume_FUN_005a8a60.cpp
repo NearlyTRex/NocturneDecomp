@@ -8,7 +8,7 @@
 //   core_fire.cpp_CFireball_onCollision_FUN_004c1690 (004c1690) at 004c17a6 [UNCONDITIONAL_CALL]
 //   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 (00506450) at 00506628 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_0050a4f0 (0050a4f0) at 0050a5b5 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b3605 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_process_FUN_005b2fd0 (005b2fd0) at 005b3605 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_playSfxInternal_FUN_005b1fd0 (005b1fd0) at 005b21f1 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_processTrainSounds_FUN_005b2770 (005b2770) at 005b2a6f [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bdcd4 [UNCONDITIONAL_CALL]

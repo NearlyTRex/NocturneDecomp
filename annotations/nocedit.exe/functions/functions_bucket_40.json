@@ -50714,14 +50714,10 @@
         "start":"0050ee40"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_menu.cpp_staticInit_FUN_0050ee40",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"shape_memdbg.cpp_staticInit_FUN_0050ee40",
+    "ret":"void"
   },
   {
     "addr":"0050f540",
@@ -56815,10 +56811,10 @@
         "start":"0052a2c0"
       }
     ],
-    "cmt":"Signature: void core_moon.cpp_FUN_0052a2c0(int param_1, int* param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_moon.cpp_FUN_0052a2c0",
-    "ret":"undefined1",
+    "name":"core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -56934,9 +56930,24 @@
           "type":"undefined1"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMoon*"
+        }
+      ]
     }
   },
   {
@@ -75470,7 +75481,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_FUN_005b3dc0",
+    "name":"core_sound.cpp_CSound_setVolumeFade_FUN_005b3dc0",
     "ret":"void",
     "vars":{
       "params":[
@@ -75489,6 +75500,38 @@
             ]
           },
           "type":"CSound*"
+        },
+        {
+          "name":"target_volume",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"fade_time",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -75502,12 +75545,54 @@
         "start":"005b3e40"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_FUN_005b3e40",
-    "ret":"undefined1",
+    "name":"core_sound.cpp_assignInt_FUN_005b3e40",
+    "ret":"int*",
     "vars":{
+      "params":[
+        {
+          "name":"dest_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"src_ptr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

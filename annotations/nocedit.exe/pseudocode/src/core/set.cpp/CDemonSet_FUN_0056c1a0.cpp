@@ -249,7 +249,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr)
     core_water_cpp_CWater_render_FUN_005ea320(g_CWaterPtr,0);
   }
   core_set_cpp_CDemonSet_FUN_0056cf00(this_ptr);
-  if (this_ptr->field29_0x15aca8 != 0) {
+  if (this_ptr->player_on_train != 0) {
     core_terrain_cpp_CTerrain_render_FUN_005e1f50(g_CTerrainPtr);
   }
   iVar3 = 0;

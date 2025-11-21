@@ -1,8 +1,8 @@
 // Name: core_moon.cpp_staticInit_FUN_005299f0
 // Address: 005299f0
 // Address Range: [[005299f0, 00529a7a]]
-// Convention: unknown
-// Signature: undefined core_moon.cpp_staticInit_FUN_005299f0()
+// Convention: __cdecl
+// Signature: void core_moon.cpp_staticInit_FUN_005299f0(void)
 // Globals:
 //   WatcomTypeInfo g_CCourseTypeInfo
 //   WatcomTypeInfo g_CAlphaBitmapTypeInfo
@@ -11,11 +11,11 @@
 //   WatcomStaticDestructorNode DAT_0067d728
 //   WatcomStaticDestructorNode DAT_0067d738
 //   WatcomStaticDestructorNode DAT_0067d748
-//   CAlphaBitmap CAlphaBitmap_02f37f70
-//   CAlphaBitmap[30] DAT_02f37f84
-//   CCourse[3] DAT_02f381e8
-//   SBat[30] DAT_02f3820c
-//   CKeyFramedModel DAT_02f384dc
+//   CAlphaBitmap g_MoonCloudTexture
+//   CAlphaBitmap[30] g_MoonAnimTextures
+//   CCourse[3] g_MoonBatCourses
+//   SBat[30] g_MoonBats
+//   CKeyFramedModel g_MoonBatModel
 // Function calls:
 //   core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0
 //   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
@@ -24,18 +24,18 @@
 
 #include "nocturne.h"
 
-void core_moon_cpp_staticInit_FUN_005299f0(void)
+void __cdecl core_moon_cpp_staticInit_FUN_005299f0(void)
 
 {
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&CAlphaBitmap_02f37f70);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&g_MoonCloudTexture);
   crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d718);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (DAT_02f37f84,0x1e,&g_CAlphaBitmapTypeInfo);
+            (g_MoonAnimTextures,0x1e,&g_CAlphaBitmapTypeInfo);
   crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d728);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(DAT_02f381e8,3,&g_CCourseTypeInfo);
+  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(g_MoonBatCourses,3,&g_CCourseTypeInfo);
   crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d738);
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(DAT_02f3820c,0x1e,&g_SBatTypeInfo);
-  core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(&DAT_02f384dc);
+  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(g_MoonBats,0x1e,&g_SBatTypeInfo);
+  core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(&g_MoonBatModel);
   crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d748);
   return;
 }

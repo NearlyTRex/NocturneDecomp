@@ -5,7 +5,7 @@
 // Signature: void engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0(CKeys * this, int enableExtended)
 // Cross-references:
 //   core_game.cpp_CGame_runGameSession_FUN_004daf80 (004daf80) at 004db52c [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingCustomKeys_FUN_005138e0 (005138e0) at 00514b1a [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (005138e0) at 00514b1a [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_InputKeyMask = 0x7f
 

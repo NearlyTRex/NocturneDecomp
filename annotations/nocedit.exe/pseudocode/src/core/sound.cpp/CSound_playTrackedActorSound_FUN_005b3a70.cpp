@@ -7,7 +7,7 @@
 //   core_actor.cpp_CDemonActor_playAmbientSound_FUN_00408f80 (00408f80) at 00408f96 [UNCONDITIONAL_CALL]
 //   core_chain.cpp_FUN_004300d0 (004300d0) at 00430853 [UNCONDITIONAL_CALL]
 //   core_pendulum.cpp_FUN_00549b90 (00549b90) at 0054a0a2 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_CSound_FUN_005b2fd0 (005b2fd0) at 005b3762 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_process_FUN_005b2fd0 (005b2fd0) at 005b3762 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_processTrainSounds_FUN_005b2770 (005b2770) at 005b2bc9 [UNCONDITIONAL_CALL]
 //   core_vehicle.cpp_FUN_005e8b50 (005e8b50) at 005e8b84 [UNCONDITIONAL_CALL]
 // Function calls:

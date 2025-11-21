@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0(void)
 // Cross-references:
-//   core_sound.cpp_CSound_shutdownSounds_FUN_005aaeb0 (005b2d60) at 005b2d60 [UNCONDITIONAL_JUMP]
+//   core_sound.cpp_CSound_dtor_FUN_005aaeb0 (005b2d60) at 005b2d60 [UNCONDITIONAL_JUMP]
 // Globals:
 //   int g_ShutdownInProgress
 // Function calls:

@@ -12,7 +12,7 @@
 //   undefined4 DAT_02d831c8
 //   undefined4 DAT_02d831cc
 // Function calls:
-//   core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+//   core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
 
@@ -23,12 +23,13 @@
 void core_game_cpp_FUN_004d8910(void)
 
 {
-  undefined4 uVar1;
+  char *pcVar1;
   BADSPACEBASE *in_ESP;
+  int in_stack_00000004;
   char acStack_108 [248];
   
-  uVar1 = core_menu_cpp_LocalizeMainGameControls_FUN_005134e0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef4,"%s = %s",uVar1);
+  pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(in_stack_00000004);
+  crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef4,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_ThemeFont,acStack_108,DAT_02d831c4,DAT_02d831c8,7,-1);
   DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;
@@ -54,7 +55,7 @@ void core_game_cpp_FUN_004d8910(void)
 // 004d8922: MOV ECX,dword ptr [ESP + 0x118]
 //   XREF to: Stack[0x4] (READ)
 // 004d8929: PUSH ECX
-// 004d892a: CALL core_menu.cpp_LocalizeMainGameControls_FUN_005134e0
+// 004d892a: CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   XREF to: 005134e0 (UNCONDITIONAL_CALL)
 // 004d892f: ADD ESP,0x4
 // 004d8932: PUSH EAX

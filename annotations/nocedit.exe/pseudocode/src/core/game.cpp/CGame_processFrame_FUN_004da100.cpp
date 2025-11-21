@@ -106,7 +106,7 @@
 //   core_skeleton.cpp_getMemoryStats_FUN_005a1ed0
 //   core_slew.cpp_CSlew_init_FUN_005a2060
 //   core_slew.cpp_CSlew_processInput_FUN_005a20b0
-//   core_sound.cpp_CSound_FUN_005b2fd0
+//   core_sound.cpp_CSound_process_FUN_005b2fd0
 //   crt_env.c_getenv_FUN_006013f0
 //   crt_stdio.c_fputc_FUN_006007a0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -222,7 +222,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
     core_netgame_cpp_CNetGame_processClientFrame_FUN_005435a0(g_CNetGameInstance);
     if (this_ptr->is_paused == 0) {
       core_game_cpp_CGame_process_FUN_004e3190(this_ptr);
-      core_sound_cpp_CSound_FUN_005b2fd0(g_CSoundPtr);
+      core_sound_cpp_CSound_process_FUN_005b2fd0(g_CSoundPtr);
     }
     else {
       core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_b0);
@@ -1682,7 +1682,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 //   XREF to: 00681ef8 (READ)
 // 004dab50: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 004dab51: CALL core_sound.cpp_CSound_FUN_005b2fd0
+// 004dab51: CALL core_sound.cpp_CSound_process_FUN_005b2fd0
 //   XREF to: 005b2fd0 (UNCONDITIONAL_CALL)
 // 004dab56: ADD ESP,0x4
 // 004dab59: JMP 0x004da36d

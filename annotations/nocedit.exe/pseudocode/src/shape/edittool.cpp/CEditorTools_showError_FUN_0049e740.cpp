@@ -21,7 +21,7 @@
 //   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (004ddaf0) at 004df235 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_saveGame_FUN_004e0cd0 (004e0cd0) at 004e127b [UNCONDITIONAL_CALL]
 //   core_game.cpp_FUN_004e2f10 (004e2f10) at 004e2f9e [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingCustomKeys_FUN_005138e0 (005138e0) at 0051484d [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (005138e0) at 0051484d [UNCONDITIONAL_CALL]
 //   core_mission.cpp_CDemonMission_FUN_00524760 (00524760) at 0052484e [UNCONDITIONAL_CALL]
 //   core_mission.cpp_CDemonMission_createOneHero_FUN_00524920 (00524920) at 00524a6d [UNCONDITIONAL_CALL]
 //   core_mission.cpp_CDemonMission_loadActor_FUN_00523990 (00523990) at 00523ab0 [UNCONDITIONAL_CALL]

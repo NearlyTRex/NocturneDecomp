@@ -12,7 +12,7 @@
 //   core_enemy.cpp_FUN_004a9f10
 //   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 //   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-//   core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
+//   core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
 
 #include "nocturne.h"
 
@@ -46,8 +46,8 @@ void core_cow_cpp_FUN_00444b40(void)
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
             ((CMotionController *)(in_stack_00000004 + 0x158),desired_state_index,1);
 LAB_00444b80:
-  core_sound_cpp_CSound_isSfxPlaying_FUN_005b3b80(g_CSoundPtr,*(uint *)(in_stack_00000004 + 0xbec4))
-  ;
+  core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80
+            (g_CSoundPtr,*(uint *)(in_stack_00000004 + 0xbec4));
   if (extraout_EAX != 0) {
     core_enemy_cpp_FUN_004a9f10();
     return;
@@ -98,7 +98,7 @@ LAB_00444b80:
 //   XREF to: 00681ef8 (READ)
 // 00444b8d: PUSH ECX
 //   XREF to: 03f6af64 (DATA)
-// 00444b8e: CALL core_sound.cpp_CSound_isSfxPlaying_FUN_005b3b80
+// 00444b8e: CALL core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
 //   XREF to: 005b3b80 (UNCONDITIONAL_CALL)
 // 00444b93: ADD ESP,0x8
 // 00444b96: TEST EAX,EAX

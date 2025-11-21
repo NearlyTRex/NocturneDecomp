@@ -5,8 +5,8 @@
 // Signature: void sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0(double front_x, double front_y, double front_z, double up_x, double up_y, double up_z, double right_x, double right_y, double right_z)
 // Cross-references:
 //   core_setedit.cpp_DementedFogEditor_FUN_00580730 (00580730) at 00580fce [UNCONDITIONAL_CALL]
-//   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b3917 [UNCONDITIONAL_CALL]
-//   core_sound.cpp_FUN_005b1870 (005b1870) at 005b1acf [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_configure_FUN_005b3830 (005b3830) at 005b3917 [UNCONDITIONAL_CALL]
+//   core_sound.cpp_updateListeners_FUN_005b1870 (005b1870) at 005b1acf [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00 (005aae00) at 005aae72 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0 (005ad3b0) at 005ad44b [UNCONDITIONAL_CALL]
 // Globals:

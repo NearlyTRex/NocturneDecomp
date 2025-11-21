@@ -7,7 +7,7 @@
 //   core_game.cpp_SaveRelated_FUN_004dcee0 (004dcee0) at 004dd021 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00511f03 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 0051321d [UNCONDITIONAL_CALL]
-//   core_sound.cpp_CSound_FUN_005b3830 (005b3830) at 005b38ae [UNCONDITIONAL_CALL]
+//   core_sound.cpp_CSound_configure_FUN_005b3830 (005b3830) at 005b38ae [UNCONDITIONAL_CALL]
 //   core_sound.cpp_playSfxInternal_FUN_005b1fd0 (005b1fd0) at 005b1fdf [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0 (005aaef0) at 005aaf02 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005ac105 [UNCONDITIONAL_CALL]

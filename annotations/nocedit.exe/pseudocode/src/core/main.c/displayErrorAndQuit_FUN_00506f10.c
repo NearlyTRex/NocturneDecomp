@@ -209,8 +209,8 @@
 //   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 (0050aba0) at 0050ac15 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40 (0050ad40) at 0050ade5 [UNCONDITIONAL_CALL]
 //   core_melee.cpp_CMelee_fire_FUN_0050ea40 (0050ea40) at 0050ea5b [UNCONDITIONAL_CALL]
-//   core_menu.cpp_FUN_00513460 (00513460) at 005134cf [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingCustomKeys_FUN_005138e0 (005138e0) at 00514580 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_addCustomKeyBinding_FUN_00513460 (00513460) at 005134cf [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (005138e0) at 00514580 [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_CMimic_beginMorph_FUN_00520a80 (00520a80) at 00520b86 [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0 (00520ba0) at 00520c1b [UNCONDITIONAL_CALL]
 //   core_mimic.cpp_CMimic_setup2_FUN_0051f780 (0051f780) at 0051f832 [UNCONDITIONAL_CALL]
@@ -767,7 +767,7 @@
 //   BOOL g_RecursiveCallFlag
 //   CSound g_CSoundInstance
 // Function calls:
-//   core_sound.cpp_CSound_shutdownSounds_FUN_005aaeb0
+//   core_sound.cpp_CSound_dtor_FUN_005aaeb0
 //   crt_errno.c_errno_FUN_00601450
 //   crt_startup.c_notifyAbnormalTermination_FUN_00601620
 //   crt_stdio.c_fprintf_FUN_005fe6d0
@@ -860,7 +860,7 @@ LAB_00506f71:
           in_stack_00000020 = pFVar1;
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar1,"..\\core\\main.c",0xad);
         }
-        core_sound_cpp_CSound_shutdownSounds_FUN_005aaeb0();
+        core_sound_cpp_CSound_dtor_FUN_005aaeb0();
         engine_2d_c_cleanupGraphicsSystem_FUN_005ecd90();
         wincore_winrun_cpp_endPeriod_FUN_005f2db0();
         wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005f3920(g_ErrorMessageBuffer);
@@ -1025,7 +1025,7 @@ LAB_00506f93:
 //   XREF to: 00681ef8 (READ)
 // 00507014: PUSH EBX
 //   XREF to: 03f6af64 (DATA)
-// 00507015: CALL core_sound.cpp_CSound_shutdownSounds_FUN_005aaeb0
+// 00507015: CALL core_sound.cpp_CSound_dtor_FUN_005aaeb0
 //   XREF to: 005b2d60 (UNCONDITIONAL_CALL)
 // 0050701a: ADD ESP,0x4
 // 0050701d: CALL engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90

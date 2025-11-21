@@ -50459,7 +50459,6 @@
         "start":"005104d0"
       }
     ],
-    "cmt":"Signature: undefined4 core_menu.cpp_SetUpGamepadControls(int* param_1)",
     "importable":true,
     "name":"core_menu.cpp_SetUpGamepadControls_FUN_005104d0",
     "ret":"undefined1",
@@ -50581,7 +50580,6 @@
         "start":"00511e50"
       }
     ],
-    "cmt":"Signature: undefined1 core_menu.cpp_SettingSoundOptions()",
     "importable":true,
     "name":"core_menu.cpp_SettingSoundOptions_FUN_00511e50",
     "ret":"undefined1",
@@ -51148,12 +51146,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_menu.cpp_freeBitmap_FUN_00514f50",
+    "name":"core_menu.cpp_freeBitmaps_FUN_00514f50",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"objs",
+          "name":"array",
           "storage":{
             "offset":4,
             "size":4,
@@ -53406,10 +53404,10 @@
         "start":"0052a11f"
       }
     ],
-    "cmt":"Signature: undefined1 core_moon.cpp_CMoon_FUN_00529ed0(CMoon* param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_moon.cpp_CMoon_FUN_00529ed0",
-    "ret":"undefined1",
+    "name":"core_moon.cpp_CMoon_render_FUN_00529ed0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -53685,9 +53683,24 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMoon*"
+        }
+      ]
     }
   },
   {
@@ -67934,13 +67947,29 @@
         "start":"005b17d0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_FUN_005b17d0",
-    "ret":"undefined1",
+    "name":"core_sound.cpp_filterSoundFilesByPattern_FUN_005b17d0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"wildcard_pattern",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ]
     }
   },
   {
@@ -67954,7 +67983,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_findRandomMatchingSoundFile_FUN_005b1ed0",
+    "name":"core_sound.cpp_CSound_findRandomSoundFile_FUN_005b1ed0",
     "ret":"void",
     "vars":{
       "params":[
@@ -68546,7 +68575,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_initializeAudioFrame_FUN_005b2dd0",
+    "name":"core_sound.cpp_CSound_init_FUN_005b2dd0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -68662,7 +68691,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_FUN_005b2fd0",
+    "name":"core_sound.cpp_CSound_process_FUN_005b2fd0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -69176,13 +69205,29 @@
         "start":"005b3e50"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_FUN_005b3e50",
-    "ret":"undefined1",
+    "name":"core_sound.cpp_freeTrainNoises_FUN_005b3e50",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"array",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"STrainNoise**"
+        }
+      ]
     }
   },
   {

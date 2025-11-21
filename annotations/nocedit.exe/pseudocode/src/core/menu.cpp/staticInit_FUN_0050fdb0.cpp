@@ -1,8 +1,8 @@
 // Name: core_menu.cpp_staticInit_FUN_0050fdb0
 // Address: 0050fdb0
 // Address Range: [[0050fdb0, 0050fe53]]
-// Convention: unknown
-// Signature: undefined core_menu.cpp_staticInit_FUN_0050fdb0()
+// Convention: __cdecl
+// Signature: void core_menu.cpp_staticInit_FUN_0050fdb0(void)
 // Globals:
 //   WatcomTypeInfo g_CAlphaBitmapTypeInfo
 //   WatcomStaticDestructorNode DAT_0067d224
@@ -12,26 +12,26 @@
 //   WatcomStaticDestructorNode DAT_0067d264
 //   WatcomStaticDestructorNode DAT_0067d274
 //   CAlphaBitmap[8] CAlphaBitmap_ARRAY_02f214f0
-//   undefined4 DAT_02f21590
+//   CMoon g_CMoonInstance
 //   CAlphaBitmap CAlphaBitmap_02f26c70
 //   CAlphaBitmap CAlphaBitmap_02f26c84
 //   CAlphaBitmap CAlphaBitmap_02f26c98
 //   CAlphaBitmap CAlphaBitmap_02f26cbc
 // Function calls:
-//   core_moon.cpp_FUN_00529a80
+//   core_moon.cpp_CMoon_ctor_FUN_00529a80
 //   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
 //   crt_stdlib.c_atexit_FUN_005ff060
 //   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520
 
 #include "nocturne.h"
 
-void core_menu_cpp_staticInit_FUN_0050fdb0(void)
+void __cdecl core_menu_cpp_staticInit_FUN_0050fdb0(void)
 
 {
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
             (CAlphaBitmap_ARRAY_02f214f0,8,&g_CAlphaBitmapTypeInfo);
   crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d224);
-  core_moon_cpp_FUN_00529a80((CMoon *)&DAT_02f21590);
+  core_moon_cpp_CMoon_ctor_FUN_00529a80(&g_CMoonInstance);
   crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d234);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&CAlphaBitmap_02f26c70);
   crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d244);
@@ -62,7 +62,7 @@ void core_menu_cpp_staticInit_FUN_0050fdb0(void)
 // 0050fdce: ADD ESP,0x4
 // 0050fdd1: PUSH 0x2f21590
 //   XREF to: 02f21590 (DATA)
-// 0050fdd6: CALL core_moon.cpp_FUN_00529a80
+// 0050fdd6: CALL core_moon.cpp_CMoon_ctor_FUN_00529a80
 //   XREF to: 00529a80 (UNCONDITIONAL_CALL)
 // 0050fddb: ADD ESP,0x4
 // 0050fdde: PUSH 0x67d234
