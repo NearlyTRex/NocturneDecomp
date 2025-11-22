@@ -5,7 +5,7 @@
 // Signature: void core_game.cpp_CGame_rollCredits_FUN_004e4010(CGame * this_ptr)
 // Cross-references:
 //   core_game.cpp_CGame_finishAct_FUN_004e3b90 (004e3b90) at 004e3c5d [UNCONDITIONAL_CALL]
-//   core_menu.cpp_ShowOptionsScreen_FUN_00512d30 (00512d30) at 00512ee4 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_showOptionsScreen_FUN_00512d30 (00512d30) at 00512ee4 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_stats_0062d5d5
 //   TerminatedCString s_rt_0062d5db

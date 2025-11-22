@@ -1,8 +1,8 @@
-// Name: shape_meshlod.cpp_FUN_00515ca0
+// Name: shape_meshlod.cpp_addAdjacentTriangleToEdge_FUN_00515ca0
 // Address: 00515ca0
 // Address Range: [[00515ca0, 00515d05]]
-// Convention: unknown
-// Signature: undefined shape_meshlod.cpp_FUN_00515ca0()
+// Convention: __cdecl
+// Signature: void shape_meshlod.cpp_addAdjacentTriangleToEdge_FUN_00515ca0(SLodEdge * edge_ptr, int tri_index)
 // Cross-references:
 //   shape_meshlod.cpp_CLodMesh_FUN_00517630 (00517630) at 00517fba [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0 (00515ba0) at 00515c5d [UNCONDITIONAL_CALL]
@@ -20,17 +20,15 @@
 
 #include "nocturne.h"
 
-void shape_meshlod_cpp_FUN_00515ca0(void)
+void __cdecl
+shape_meshlod_cpp_addAdjacentTriangleToEdge_FUN_00515ca0(SLodEdge *edge_ptr,int tri_index)
 
 {
-  int in_stack_00000004;
-  undefined4 in_stack_00000008;
-  undefined4 in_stack_00000010;
+  int in_stack_00000010;
   
-  if (*(int *)(in_stack_00000004 + 0x24) < 0x32) {
-    *(undefined4 *)(in_stack_00000004 + 0x28 + *(int *)(in_stack_00000004 + 0x24) * 4) =
-         in_stack_00000008;
-    *(int *)(in_stack_00000004 + 0x24) = *(int *)(in_stack_00000004 + 0x24) + 1;
+  if (edge_ptr->adjacent_tri_count < 0x32) {
+    edge_ptr->adjacent_tri_indices[edge_ptr->adjacent_tri_count] = tri_index;
+    edge_ptr->adjacent_tri_count = edge_ptr->adjacent_tri_count + 1;
     return;
   }
   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -38,16 +36,15 @@ void shape_meshlod_cpp_FUN_00515ca0(void)
   g_CurrentFilename = "..\\shape\\meshlod.cpp";
   g_CurrentLineNumber = 0x281;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Too many adj faces!");
-  *(undefined4 *)(in_stack_00000004 + 0x28 + *(int *)(in_stack_00000004 + 0x24) * 4) =
-       in_stack_00000010;
-  *(int *)(in_stack_00000004 + 0x24) = *(int *)(in_stack_00000004 + 0x24) + 1;
+  edge_ptr->adjacent_tri_indices[edge_ptr->adjacent_tri_count] = in_stack_00000010;
+  edge_ptr->adjacent_tri_count = edge_ptr->adjacent_tri_count + 1;
   return;
 }
 
 
 // Assembly code:
 // 00515ca0: PUSH EBX
-//   Label: shape_meshlod.cpp_FUN_00515ca0
+//   Label: shape_meshlod.cpp_addAdjacentTriangleToEdge_FUN_00515ca0
 // 00515ca1: MOV EBX,dword ptr [ESP + 0x8]
 //   XREF to: Stack[0x4] (READ)
 // 00515ca5: CMP dword ptr [EBX + 0x24],0x32

@@ -42120,9 +42120,10 @@
         "start":"00512d30"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_menu.cpp_ShowOptionsScreen_FUN_00512d30",
-    "ret":"undefined1",
+    "name":"core_menu.cpp_showOptionsScreen_FUN_00512d30",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -42142,9 +42143,24 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"initialize_systems",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -42156,9 +42172,10 @@
         "start":"00517530"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_00517530",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -42354,9 +42371,88 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
+        },
+        {
+          "name":"tri_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"corner_idx",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"out_gradient",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"out_offset",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
+        }
+      ]
     }
   },
   {
@@ -67118,7 +67214,7 @@
     "vars":{
       "params":[
         {
-          "name":"card_list_buffer",
+          "name":"out_card_count",
           "storage":{
             "offset":4,
             "size":4,
@@ -67131,10 +67227,10 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"int*"
         },
         {
-          "name":"max_cards",
+          "name":"enum_data_buffer",
           "storage":{
             "offset":8,
             "size":4,
@@ -67147,10 +67243,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"void*"
         },
         {
-          "name":"card_count",
+          "name":"out_card_names",
           "storage":{
             "offset":12,
             "size":4,
@@ -67163,10 +67259,10 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"char**"
         },
         {
-          "name":"card_names",
+          "name":"out_vendor_ids",
           "storage":{
             "offset":16,
             "size":4,
@@ -67179,10 +67275,10 @@
               }
             ]
           },
-          "type":"char**"
+          "type":"int*"
         },
         {
-          "name":"buffer_size",
+          "name":"out_device_ids",
           "storage":{
             "offset":20,
             "size":4,
@@ -67195,7 +67291,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"int*"
         }
       ],
       "ret_storage":{

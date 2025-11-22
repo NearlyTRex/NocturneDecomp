@@ -13,7 +13,7 @@
 //   core_game.cpp_FUN_004e0aa0 (004e0aa0) at 004e0b78 [UNCONDITIONAL_CALL]
 //   core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (00500690) at 00500d1c [UNCONDITIONAL_CALL]
 //   core_level.cpp_CLevelLoader_update_FUN_00504160 (00504160) at 00504709 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingMouseSensitivity_FUN_005107c0 (005107c0) at 00510935 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_adjustMouseSensitivity_FUN_005107c0 (005107c0) at 00510935 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052bcb0 (0052bcb0) at 0052bfaf [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052ca90 (0052ca90) at 0052caff [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_00559b20 (00559b20) at 00559bea [UNCONDITIONAL_CALL]

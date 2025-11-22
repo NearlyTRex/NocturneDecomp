@@ -2,9 +2,9 @@
 // Address: 005b7db0
 // Address Range: [[005b7db0, 005b7de7]]
 // Convention: __cdecl
-// Signature: int wincore_windll.cpp_buildCardList_FUN_005b7db0(void * card_list_buffer, int max_cards, int * card_count, char * * card_names, int buffer_size)
+// Signature: int wincore_windll.cpp_buildCardList_FUN_005b7db0(int * out_card_count, void * enum_data_buffer, char * * out_card_names, int * out_vendor_ids, int * out_device_ids)
 // Cross-references:
-//   core_menu.cpp_GraphicsOptions_FUN_00510c80 (00510c80) at 00511769 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureGraphicsOptions_FUN_00510c80 (00510c80) at 00511769 [UNCONDITIONAL_CALL]
 // Globals:
 //   APIDLL_buildCardList* g_APIDLL_buildCardList
 //   int g_ExternalRendererActive
@@ -13,7 +13,8 @@
 
 int __cdecl
 wincore_windll_cpp_buildCardList_FUN_005b7db0
-          (void *card_list_buffer,int max_cards,int *card_count,char **card_names,int buffer_size)
+          (int *out_card_count,void *enum_data_buffer,char **out_card_names,int *out_vendor_ids,
+          int *out_device_ids)
 
 {
   int iVar1;
@@ -21,7 +22,8 @@ wincore_windll_cpp_buildCardList_FUN_005b7db0
   if (g_ExternalRendererActive == 0) {
     return 0;
   }
-  iVar1 = (*g_APIDLL_buildCardList)(card_list_buffer,max_cards,card_count,card_names,buffer_size);
+  iVar1 = (*g_APIDLL_buildCardList)
+                    (out_card_count,enum_data_buffer,out_card_names,out_vendor_ids,out_device_ids);
   return iVar1;
 }
 

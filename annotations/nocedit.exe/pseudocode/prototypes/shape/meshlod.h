@@ -27,9 +27,9 @@ undefined FUN_00515190();
 // Address: 005151c0
 undefined FUN_005151c0();
 
-// Original: shape_meshlod.cpp_FUN_005151e0
+// Original: shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
 // Address: 005151e0
-undefined FUN_005151e0();
+void fitLeastSquaresPlane(int point_count, CVector3f * positions, float * values, CVector3f * normal, CVector3f * out_gradient, float * out_offset);
 
 // Original: shape_meshlod.cpp_CLodMesh_ctor_FUN_00515840
 // Address: 00515840
@@ -59,45 +59,45 @@ void CLodMesh::allocate(CLodMesh * this_ptr, int vertex_count, int tri_count, in
 // Address: 00515ba0
 int CLodMesh::buildEdges(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_00515ca0
+// Original: shape_meshlod.cpp_addAdjacentTriangleToEdge_FUN_00515ca0
 // Address: 00515ca0
-undefined FUN_00515ca0();
+void addAdjacentTriangleToEdge(SLodEdge * edge_ptr, int tri_index);
 
-// Original: shape_meshlod.cpp_FUN_00515d10
+// Original: shape_meshlod.cpp_removeTriangleFromEdge_FUN_00515d10
 // Address: 00515d10
-undefined FUN_00515d10();
+void removeTriangleFromEdge(SLodEdge * edge_ptr, int tri_index);
 
-// Original: shape_meshlod.cpp_FUN_00515d60
+// Original: shape_meshlod.cpp_findTriangleInEdge_FUN_00515d60
 // Address: 00515d60
-undefined FUN_00515d60();
+int findTriangleInEdge(SLodEdge * edge_ptr, int tri_index);
 
 // Original: shape_meshlod.cpp_addAdjacentEdgeToVertex_FUN_00515d90
 // Address: 00515d90
 void addAdjacentEdgeToVertex(SLodVert * vertex_ptr, int edge_index);
 
-// Original: shape_meshlod.cpp_FUN_00515e00
+// Original: shape_meshlod.cpp_removeEdgeFromVertex_FUN_00515e00
 // Address: 00515e00
-undefined FUN_00515e00();
+void removeEdgeFromVertex(SLodVert * vertex_ptr, int edge_index);
 
-// Original: shape_meshlod.cpp_FUN_00515e50
+// Original: shape_meshlod.cpp_findEdgeInVertex_FUN_00515e50
 // Address: 00515e50
-undefined FUN_00515e50();
+int findEdgeInVertex(SLodVert * vertex_ptr, int edge_index);
 
-// Original: shape_meshlod.cpp_FUN_00515e90
+// Original: shape_meshlod.cpp_findVertexIndexInTriangle_FUN_00515e90
 // Address: 00515e90
-undefined FUN_00515e90();
+int findVertexIndexInTriangle(SLodTriangle * tri_ptr, int vertex_index);
 
-// Original: shape_meshlod.cpp_CLodMesh_FUN_00515ec0
+// Original: shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
 // Address: 00515ec0
-int CLodMesh(CLodMesh * this_ptr);
+int CLodMesh::findOrCreateEdge(CLodMesh * this_ptr, int vertex_idx_1, int vertex_idx_2, int create_if_missing);
 
-// Original: shape_meshlod.cpp_CLodMesh_FUN_00516000
+// Original: shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
 // Address: 00516000
-void CLodMesh(CLodMesh * this_ptr);
+void CLodMesh::evaluateEdgeCollapse(CLodMesh * this_ptr, int edge_index, int full_check);
 
-// Original: shape_meshlod.cpp_FUN_00516420
+// Original: shape_meshlod.cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420
 // Address: 00516420
-undefined FUN_00516420();
+int CLodMesh::countNonCollapsibleEdgesForVertex(CLodMesh * this_ptr, int vertex_index);
 
 // Original: shape_meshlod.cpp_FUN_00516480
 // Address: 00516480
@@ -159,9 +159,9 @@ undefined FUN_005172c0();
 // Address: 005173f0
 void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_00517530
+// Original: shape_meshlod.cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530
 // Address: 00517530
-undefined FUN_00517530();
+void CLodMesh::extractTriangleTexCoordGradient(CLodMesh * this_ptr, int tri_index, int corner_idx, CVector3f * out_gradient, float * out_offset);
 
 // Original: shape_meshlod.cpp_CLodMesh_FUN_00517630
 // Address: 00517630
@@ -171,9 +171,9 @@ void CLodMesh(CLodMesh * this_ptr);
 // Address: 00518300
 void CLodMesh(CLodMesh * this_ptr);
 
-// Original: shape_meshlod.cpp_FUN_005183e0
+// Original: shape_meshlod.cpp_CLodMesh_removeEdgeFromTriangle_FUN_005183e0
 // Address: 005183e0
-undefined FUN_005183e0();
+void CLodMesh::removeEdgeFromTriangle(CLodMesh * this_ptr, int tri_index, int edge_index);
 
 // Original: shape_meshlod.cpp_CLodMesh_FUN_00518490
 // Address: 00518490
@@ -183,9 +183,9 @@ int CLodMesh(CLodMesh * this_ptr);
 // Address: 00518740
 undefined FUN_00518740();
 
-// Original: shape_meshlod.cpp_ReallocSomething_FUN_00518790
+// Original: shape_meshlod.cpp_CLodMesh_FUN_00518790
 // Address: 00518790
-undefined ReallocSomething();
+int CLodMesh(CLodMesh * this_ptr);
 
 // Original: shape_meshlod.cpp_FUN_00518870
 // Address: 00518870

@@ -82,7 +82,7 @@
 //   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 (004a2050) at 004a2074 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodFace_ctor_FUN_0051ef00 (0051ef00) at 0051ef0f [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_FUN_00518910 (00518910) at 00518ae2 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_00517530 (00517530) at 0051755f [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530 (00517530) at 0051755f [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_00519870 (00519870) at 005199c9 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_staticInit_FUN_00514f70 (00514f70) at 00514f7f [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_FUN_005cc620 (005cc620) at 005cc630 [UNCONDITIONAL_CALL]

@@ -29,7 +29,7 @@
 //   core_level.cpp_CLevelLoader_show_FUN_00503dc0 (00503dc0) at 00503e74 [UNCONDITIONAL_CALL]
 //   core_main.c_finalizeGameSystems_FUN_00508570 (00508570) at 005085ca [UNCONDITIONAL_CALL]
 //   core_main.c_showPromoScreen_FUN_00508340 (00508340) at 00508369 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_getGameMainMenuChoice_FUN_00510000 (00510000) at 005100ac [UNCONDITIONAL_CALL]
+//   core_menu.cpp_renderMenuAndGetChoice_FUN_00510000 (00510000) at 005100ac [UNCONDITIONAL_CALL]
 //   core_mobster.cpp_FUN_00527380 (00527380) at 005273a3 [UNCONDITIONAL_CALL]
 //   core_moon.cpp_CMoon_init_FUN_00529ae0 (00529ae0) at 00529b02 [UNCONDITIONAL_CALL]
 //   core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 (00543150) at 005433a1 [UNCONDITIONAL_CALL]

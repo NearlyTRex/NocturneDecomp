@@ -4,11 +4,11 @@
 // Convention: __cdecl
 // Signature: void core_moon.cpp_CMoon_render_FUN_00529ed0(CMoon * this_ptr)
 // Cross-references:
-//   core_menu.cpp_CustomKeySettings_FUN_00511890 (00511890) at 005118ff [UNCONDITIONAL_CALL]
-//   core_menu.cpp_GraphicsOptions_FUN_00510c80 (00510c80) at 00510d65 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00511ec4 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_ShowOptionsScreen_FUN_00512d30 (00512d30) at 00512da0 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureCustomKeys_FUN_00511890 (00511890) at 005118ff [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureGraphicsOptions_FUN_00510c80 (00510c80) at 00510d65 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 00511ec4 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 00513042 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_showOptionsScreen_FUN_00512d30 (00512d30) at 00512da0 [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_00639f99 = -0.5
 //   double DOUBLE_00639fa1 = 48

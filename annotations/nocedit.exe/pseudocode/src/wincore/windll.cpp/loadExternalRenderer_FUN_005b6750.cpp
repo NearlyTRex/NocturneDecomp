@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int wincore_windll.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
 // Cross-references:
-//   core_menu.cpp_GraphicsOptions_FUN_00510c80 (00510c80) at 00511245 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureGraphicsOptions_FUN_00510c80 (00510c80) at 00511245 [UNCONDITIONAL_CALL]
 //   wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10 (005ecc10) at 005ecd39 [UNCONDITIONAL_CALL]
 //   wincore_windll.cpp_setResolutionAndColorTable_FUN_005b7460 (005b7460) at 005b748a [UNCONDITIONAL_CALL]
 //   wincore_windll.cpp_switchRenderer_FUN_005b8140 (005b8140) at 005b817a [UNCONDITIONAL_CALL]
@@ -73,7 +73,7 @@
 //   int g_CurrentTextureDimension = 0x100
 //   int g_CurrentAlphaValue = 0xff
 //   int g_RenderingQuality = 0x1
-//   TerminatedCString s_trid3d_dll_00684010
+//   TerminatedCString g_RendererDllName
 //   int g_SystemInitialized = 0x1
 //   int g_VideoMemorySize = 0x1
 //   int g_MaxTextureSize = 0x40
@@ -196,7 +196,7 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
   if (g_FullscreenMode == 0) {
     return 0;
   }
-  g_RendererDLLHandle = wincore_wddvmem_cpp_loadLibrary_FUN_005ede10("trid3d.dll");
+  g_RendererDLLHandle = wincore_wddvmem_cpp_loadLibrary_FUN_005ede10(g_RendererDllName);
   if (g_RendererDLLHandle == (HMODULE)0x0) {
     g_FullscreenMode = (int)g_RendererDLLHandle;
     return 0;

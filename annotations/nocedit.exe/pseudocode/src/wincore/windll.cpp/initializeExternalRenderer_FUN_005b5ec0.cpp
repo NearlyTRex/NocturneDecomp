@@ -64,7 +64,7 @@
 //   TerminatedCString s_APIDLLenableClipping_00652d8b
 //   TerminatedCString s_APIDLLsetTextureClamp_00652da0
 //   TerminatedCString s_APIDLLsetFog_00652db6
-//   TerminatedCString s_trid3d_dll_00684010
+//   TerminatedCString g_RendererDllName
 //   int g_FullscreenMode
 //   APIDLL_init* g_APIDLL_init
 //   APIDLL_kill* g_APIDLL_kill
@@ -146,7 +146,7 @@ int __cdecl wincore_windll_cpp_initializeExternalRenderer_FUN_005b5ec0(void)
   BADSPACEBASE *in_ESP;
   CExternalRenderer CStack_3ba0;
   
-  g_RendererDLLHandle = wincore_wddvmem_cpp_loadLibrary_FUN_005ede10("trid3d.dll");
+  g_RendererDLLHandle = wincore_wddvmem_cpp_loadLibrary_FUN_005ede10(g_RendererDllName);
   if (g_RendererDLLHandle == (HMODULE)0x0) {
     g_FullscreenMode = (int)g_RendererDLLHandle;
     return 0;

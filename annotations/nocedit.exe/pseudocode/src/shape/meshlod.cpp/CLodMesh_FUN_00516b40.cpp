@@ -22,14 +22,14 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00516b40(CLodMesh *this_ptr)
     iVar4 = 0;
     do {
       pSVar2 = this_ptr->triangle_data;
-      if (*(int *)(pSVar2->field9_0x44 + iVar4 + -4) == 0) {
+      if (*(int *)(pSVar2->field10_0x50 + iVar4 + -0x10) == 0) {
         if (((*(int *)(pSVar2->field4_0x1c + iVar4 + -0xc) ==
               *(int *)(pSVar2->field4_0x1c + iVar4 + -8)) ||
             (*(int *)(pSVar2->field4_0x1c + iVar4 + -0xc) ==
              *(int *)(pSVar2->field4_0x1c + iVar4 + -4))) ||
            (*(int *)(pSVar2->field4_0x1c + iVar4 + -8) == *(int *)(pSVar2->field4_0x1c + iVar4 + -4)
            )) {
-          pcVar1 = pSVar2->field9_0x44 + iVar4 + -4;
+          pcVar1 = pSVar2->field10_0x50 + iVar4 + -0x10;
           pcVar1[0] = '\x01';
           pcVar1[1] = '\0';
           pcVar1[2] = '\0';

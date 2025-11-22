@@ -1,8 +1,8 @@
-// Name: core_menu.cpp_FUN_00510410
+// Name: core_menu.cpp_showJoystickCalibrationScreen_FUN_00510410
 // Address: 00510410
 // Address Range: [[00510410, 005104c0]]
-// Convention: unknown
-// Signature: undefined core_menu.cpp_FUN_00510410()
+// Convention: __cdecl
+// Signature: void core_menu.cpp_showJoystickCalibrationScreen_FUN_00510410(char * instruction_text, char * message_text)
 // Globals:
 //   TerminatedCString s_d_d_x_006365f8
 //   CBitFont* g_MediumFont
@@ -18,17 +18,17 @@
 
 #include "nocturne.h"
 
-void core_menu_cpp_FUN_00510410(void)
+void __cdecl
+core_menu_cpp_showJoystickCalibrationScreen_FUN_00510410(char *instruction_text,char *message_text)
 
 {
   int iVar1;
   int iVar2;
   BADSPACEBASE *in_ESP;
-  char *in_stack_00000004;
   char *in_stack_0000000c;
   char acStack_100 [240];
   
-  iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,in_stack_00000004);
+  iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,instruction_text);
   iVar2 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_MediumFont,0x58);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_MediumFont,in_stack_0000000c,0x140 - iVar1 / 2,0xf0 - iVar2 / 2,7,0);
@@ -41,7 +41,7 @@ void core_menu_cpp_FUN_00510410(void)
 
 // Assembly code:
 // 00510410: PUSH EBX
-//   Label: core_menu.cpp_FUN_00510410
+//   Label: core_menu.cpp_showJoystickCalibrationScreen_FUN_00510410
 // 00510411: PUSH ESI
 // 00510412: PUSH EDI
 // 00510413: PUSH EBP

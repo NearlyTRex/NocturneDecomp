@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: uint sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0(void)
 // Cross-references:
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512bc0 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 00512bc0 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00 (005b2d00) at 005b2d3c [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170 (005a6170) at 005a6191 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660 (005a9660) at 005a9660 [UNCONDITIONAL_CALL]

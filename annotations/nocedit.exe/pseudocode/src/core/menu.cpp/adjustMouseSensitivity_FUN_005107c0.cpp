@@ -1,13 +1,13 @@
-// Name: core_menu.cpp_SettingMouseSensitivity_FUN_005107c0
+// Name: core_menu.cpp_adjustMouseSensitivity_FUN_005107c0
 // Address: 005107c0
 // Address Range: [[005107c0, 00510a4f]]
-// Convention: unknown
-// Signature: undefined core_menu.cpp_SettingMouseSensitivity_FUN_005107c0()
+// Convention: __cdecl
+// Signature: void core_menu.cpp_adjustMouseSensitivity_FUN_005107c0(int * sensitivity_value_ptr, char * window_title)
 // Cross-references:
-//   core_menu.cpp_CustomKeySettings_FUN_00511890 (00511890) at 00511da1 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureCustomKeys_FUN_00511890 (00511890) at 00511da1 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_s_4_2f_00636649
-//   double DOUBLE_0063664f = 0.0000152587890625
+//   double g_MouseSensitivityScale = 0.0000152587890625
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   int g_WindowWidth = 0x140
 //   CKeys* g_CKeysPtr = 02dcd7d4
@@ -34,10 +34,8 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_menu.cpp_SettingMouseSensitivity(undefined4 param_1, undefined4
-   param_2) */
-
-void core_menu_cpp_SettingMouseSensitivity_FUN_005107c0(void)
+void __cdecl
+core_menu_cpp_adjustMouseSensitivity_FUN_005107c0(int *sensitivity_value_ptr,char *window_title)
 
 {
   double dVar1;
@@ -46,29 +44,27 @@ void core_menu_cpp_SettingMouseSensitivity_FUN_005107c0(void)
   int iVar4;
   int unaff_ESI;
   int iVar5;
-  int *in_stack_00000004;
-  char *in_stack_00000008;
   int in_stack_00000020;
   
   iVar3 = g_WindowWidth * 3 >> 0x1f;
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890
             (g_CEditorToolsPtr,(int)((g_WindowWidth * 3 + iVar3 * -4) - (uint)(iVar3 << 1 < 0)) >> 2
-             ,0x2c,in_stack_00000008,0);
-  iVar3 = *in_stack_00000004;
+             ,0x2c,window_title,0);
+  iVar3 = *sensitivity_value_ptr;
   if (iVar3 < 0x4000) {
-    *in_stack_00000004 = 0x4000;
+    *sensitivity_value_ptr = 0x4000;
     goto LAB_00510823;
   }
   if (iVar3 < 0x40001) {
     if (iVar3 < 0x4000) {
-      *in_stack_00000004 = 0x4000;
+      *sensitivity_value_ptr = 0x4000;
       goto LAB_00510823;
     }
     if (iVar3 < 0x40001) goto LAB_00510823;
   }
-  *in_stack_00000004 = 0x40000;
+  *sensitivity_value_ptr = 0x40000;
 LAB_00510823:
-  iVar3 = *in_stack_00000004;
+  iVar3 = *sensitivity_value_ptr;
   engine_2d_c_clearInputAndWait_FUN_00403260();
   wincore_winrun_cpp_setCursorPosition_FUN_005f30d0
             ((int)(((longlong)(g_WindowWidth + -1) * (longlong)(iVar3 + -0x4000)) / 0x3c000),
@@ -101,7 +97,7 @@ LAB_00510823:
               (iVar5,iVar2,
                (int)(((longlong)(iVar4 - iVar5) * (longlong)(iVar3 + -0x4000)) / 0x3c000) + iVar5,
                in_stack_00000020,4);
-    dVar1 = (double)iVar3 * DOUBLE_0063664f;
+    dVar1 = (double)iVar3 * g_MouseSensitivityScale;
     iVar5 = g_ClipBottom + g_ClipTop;
     iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_EditorFont,0x41);
     iVar2 = g_ClipLeft;
@@ -123,7 +119,7 @@ LAB_005109f5:
 
 // Assembly code:
 // 005107c0: PUSH EBX
-//   Label: core_menu.cpp_SettingMouseSensitivity_FUN_005107c0
+//   Label: core_menu.cpp_adjustMouseSensitivity_FUN_005107c0
 // 005107c1: PUSH ESI
 // 005107c2: PUSH EDI
 // 005107c3: PUSH EBP

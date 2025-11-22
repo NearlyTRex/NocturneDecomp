@@ -30,7 +30,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_005197c0(CLodMesh *this_ptr)
   if (0 < this_ptr->tri_count) {
     iVar2 = 0;
     do {
-      if (*(int *)(this_ptr->triangle_data->field9_0x44 + iVar2 + -4) == 0) {
+      if (*(int *)(this_ptr->triangle_data->field10_0x50 + iVar2 + -0x10) == 0) {
         iVar1 = shape_meshlod_cpp_FUN_00519830();
         if (iVar1 == 0) {
           iVar3 = iVar3 + 1;

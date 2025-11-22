@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int sound_sndmain.cpp_isSoundBusy_FUN_005ab540(void)
 // Cross-references:
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 0051251d [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 0051251d [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053eb40 (0053eb40) at 0053eb66 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_init_FUN_005b2dd0 (005b2dd0) at 005b2e38 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0 (005aaef0) at 005aaf0b [UNCONDITIONAL_CALL]

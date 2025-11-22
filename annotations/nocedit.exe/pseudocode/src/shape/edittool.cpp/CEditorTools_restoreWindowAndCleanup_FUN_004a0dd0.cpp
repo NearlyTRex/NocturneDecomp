@@ -12,7 +12,7 @@
 //   core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310 (00495310) at 00495829 [UNCONDITIONAL_CALL]
 //   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0 (004947a0) at 00494d73 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_runGameSession_FUN_004daf80 (004daf80) at 004db400 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingMouseSensitivity_FUN_005107c0 (005107c0) at 005109fc [UNCONDITIONAL_CALL]
+//   core_menu.cpp_adjustMouseSensitivity_FUN_005107c0 (005107c0) at 005109fc [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_0053eb40 (0053eb40) at 0053ec23 [UNCONDITIONAL_CALL]
 //   core_netgame.cpp_CNetGame_FUN_0053fd00 (0053fd00) at 005401c6 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0 (00576da0) at 00576f77 [UNCONDITIONAL_CALL]

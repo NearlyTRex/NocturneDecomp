@@ -6,7 +6,7 @@
 // Cross-references:
 //   wincore_windll.cpp_CExternalRenderer_switchRenderer_FUN_005b8117 (005b8117) at 005b812f [UNCONDITIONAL_CALL]
 // Globals:
-//   TerminatedCString s_trid3d_dll_00684010
+//   TerminatedCString g_RendererDllName
 //   undefined4 DAT_00684011
 //   undefined4 s_id3d_dll_00684012
 //   undefined4 s_d3d.dll_00684013
@@ -27,7 +27,7 @@ int __cdecl wincore_windll_cpp_switchRenderer_FUN_005b8140(char *new_dll_name,in
   int in_stack_0000000c;
   
   wincore_windll_cpp_kill_FUN_005b71e0();
-  pcVar3 = "trid3d.dll";
+  pcVar3 = g_RendererDllName;
   g_RendererHandle = in_stack_0000000c;
   do {
     cVar1 = *(char *)renderer_handle;

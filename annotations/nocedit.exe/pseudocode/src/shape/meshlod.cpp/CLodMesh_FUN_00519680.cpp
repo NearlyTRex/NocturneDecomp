@@ -30,8 +30,8 @@ int __cdecl shape_meshlod_cpp_CLodMesh_FUN_00519680(CLodMesh *this_ptr)
   if (0 < this_ptr->edge_count) {
     iVar3 = 0;
     do {
-      if (*(int *)(this_ptr->edges_ptr->field4_0x18 + iVar3 + -4) == 0) {
-        if (*(int *)(this_ptr->edges_ptr->field4_0x18 + iVar3 + 8) != 0) {
+      if (*(int *)(this_ptr->edges_ptr->field2_0x8 + iVar3 + 0xc) == 0) {
+        if (*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar3 + -8) != 0) {
           shape_meshlod_cpp_CLodMesh_FUN_00518910(this_ptr);
         }
         pSVar1 = this_ptr->edges_ptr;

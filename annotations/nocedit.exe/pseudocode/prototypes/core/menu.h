@@ -7,61 +7,61 @@
 // Address: 0050fdb0
 void staticInit(void);
 
-// Original: core_menu.cpp_FUN_0050fe60
+// Original: core_menu.cpp_cleanupMenuTransition_FUN_0050fe60
 // Address: 0050fe60
-undefined FUN_0050fe60();
+void cleanupMenuTransition(void);
 
-// Original: core_menu.cpp_FUN_0050fe70
+// Original: core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70
 // Address: 0050fe70
-undefined FUN_0050fe70();
+void renderAudioSpectrumBar(int x_center, int y_top, int height_half);
 
-// Original: core_menu.cpp_getGameMainMenuChoice_FUN_00510000
+// Original: core_menu.cpp_renderMenuAndGetChoice_FUN_00510000
 // Address: 00510000
-int getGameMainMenuChoice(void);
+int renderMenuAndGetChoice(char * * menu_text_array, int menu_count, int * selected_index_ptr, int y_position, int spacing_flag);
 
-// Original: core_menu.cpp_FUN_00510410
+// Original: core_menu.cpp_showJoystickCalibrationScreen_FUN_00510410
 // Address: 00510410
-undefined FUN_00510410();
+void showJoystickCalibrationScreen(char * instruction_text, char * message_text);
 
-// Original: core_menu.cpp_SetUpGamepadControls_FUN_005104d0
+// Original: core_menu.cpp_calibrateGamepad_FUN_005104d0
 // Address: 005104d0
-undefined SetUpGamepadControls();
+int calibrateGamepad(void);
 
-// Original: core_menu.cpp_SettingMouseSensitivity_FUN_005107c0
+// Original: core_menu.cpp_adjustMouseSensitivity_FUN_005107c0
 // Address: 005107c0
-undefined SettingMouseSensitivity();
+void adjustMouseSensitivity(int * sensitivity_value_ptr, char * window_title);
 
-// Original: core_menu.cpp_MonitorCalibrationPressAnyKeyToContinue_FUN_00510a50
+// Original: core_menu.cpp_showCalibrationTestPattern_FUN_00510a50
 // Address: 00510a50
-undefined MonitorCalibrationPressAnyKeyToContinue();
+void showCalibrationTestPattern(char * message_text);
 
-// Original: core_menu.cpp_RunCalibrationTest_FUN_00510ba0
+// Original: core_menu.cpp_showCalibrationTest_FUN_00510ba0
 // Address: 00510ba0
-undefined RunCalibrationTest();
+void showCalibrationTest(void);
 
-// Original: core_menu.cpp_GraphicsOptions_FUN_00510c80
+// Original: core_menu.cpp_configureGraphicsOptions_FUN_00510c80
 // Address: 00510c80
-undefined GraphicsOptions();
+void configureGraphicsOptions(void);
 
-// Original: core_menu.cpp_FUN_00511840
+// Original: core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840
 // Address: 00511840
-undefined FUN_00511840();
+int checkAndCalibrateGamepad(void);
 
-// Original: core_menu.cpp_CustomKeySettings_FUN_00511890
+// Original: core_menu.cpp_configureCustomKeys_FUN_00511890
 // Address: 00511890
-undefined CustomKeySettings();
+void configureCustomKeys(void);
 
-// Original: core_menu.cpp_FUN_00511e00
+// Original: core_menu.cpp_renderAudioSpectrumBarByBounds_FUN_00511e00
 // Address: 00511e00
-undefined FUN_00511e00();
+void renderAudioSpectrumBarByBounds(int x_center, int y_bottom, int y_top);
 
-// Original: core_menu.cpp_SettingSoundOptions_FUN_00511e50
+// Original: core_menu.cpp_configureSoundOptions_FUN_00511e50
 // Address: 00511e50
-undefined SettingSoundOptions();
+void configureSoundOptions(void);
 
-// Original: core_menu.cpp_ShowOptionsScreen_FUN_00512d30
+// Original: core_menu.cpp_showOptionsScreen_FUN_00512d30
 // Address: 00512d30
-undefined ShowOptionsScreen();
+void showOptionsScreen(int initialize_systems);
 
 // Original: core_menu.cpp_showMainGameMenu_FUN_00512f40
 // Address: 00512f40

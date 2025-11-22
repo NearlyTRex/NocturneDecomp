@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ac549 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_rollCredits_FUN_004e4010 (004e4010) at 004e4109 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 005128a1 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 005128a1 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_init_FUN_005b2dd0 (005b2dd0) at 005b2e62 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_process_FUN_005b2fd0 (005b2fd0) at 005b321d [UNCONDITIONAL_CALL]
 //   core_sound.cpp_syncChannel3WithChannel0_FUN_005b2d70 (005b2d70) at 005b2d75 [UNCONDITIONAL_CALL]

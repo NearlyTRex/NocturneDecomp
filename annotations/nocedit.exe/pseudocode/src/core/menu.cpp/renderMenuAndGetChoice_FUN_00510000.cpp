@@ -1,18 +1,18 @@
-// Name: core_menu.cpp_getGameMainMenuChoice_FUN_00510000
+// Name: core_menu.cpp_renderMenuAndGetChoice_FUN_00510000
 // Address: 00510000
 // Address Range: [[00510000, 0051040d]]
 // Convention: __cdecl
-// Signature: int core_menu.cpp_getGameMainMenuChoice_FUN_00510000(void)
+// Signature: int core_menu.cpp_renderMenuAndGetChoice_FUN_00510000(char * * menu_text_array, int menu_count, int * selected_index_ptr, int y_position, int spacing_flag)
 // Cross-references:
-//   core_menu.cpp_CustomKeySettings_FUN_00511890 (00511890) at 00511b81 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_GraphicsOptions_FUN_00510c80 (00510c80) at 00511105 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 005126a7 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_ShowOptionsScreen_FUN_00512d30 (00512d30) at 00512e42 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureCustomKeys_FUN_00511890 (00511890) at 00511b81 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureGraphicsOptions_FUN_00510c80 (00510c80) at 00511105 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 005126a7 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 00513130 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_showOptionsScreen_FUN_00512d30 (00512d30) at 00512e42 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_Nocturne_c_1999_Terminal_00636547
 //   TerminatedCString s_Nocturne_1999_Terminal_R_00636580
-//   undefined4 DAT_006365b6
+//   char[2] g_MenuVersionText
 //   TerminatedCString s_NON_RELEASE_EDITOR_BUILD_006365b8
 //   TerminatedCString s_Press_CTRL_D_to_access_t_006365d1
 //   CKeys* g_CKeysPtr = 02dcd7d4
@@ -20,8 +20,8 @@
 //   CBitFont* g_SmallEditorFont
 //   void* g_CKeysPtr
 //   CMoon g_CMoonInstance
-//   undefined4 DAT_02f26cac
-//   int INT_02f26cb8
+//   int g_MenuLeftRightPressed
+//   int g_MenuInputHappened
 //   int g_MessageCount
 // Function calls:
 //   core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_0052a3f0
@@ -34,7 +34,10 @@
 
 #include "nocturne.h"
 
-int __cdecl core_menu_cpp_getGameMainMenuChoice_FUN_00510000(void)
+int __cdecl
+core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
+          (char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,
+          int spacing_flag)
 
 {
   int iVar1;
@@ -46,10 +49,6 @@ int __cdecl core_menu_cpp_getGameMainMenuChoice_FUN_00510000(void)
   undefined4 *unaff_ESI;
   char *pcVar5;
   CBitFont *unaff_EDI;
-  int *in_stack_00000008;
-  undefined4 *in_stack_0000000c;
-  int in_stack_00000010;
-  char *in_stack_00000014;
   int in_stack_0000001c;
   int in_stack_00000030;
   int *in_stack_00000038;
@@ -67,20 +66,20 @@ int __cdecl core_menu_cpp_getGameMainMenuChoice_FUN_00510000(void)
   CBitFont *pCVar8;
   
   pCVar8 = g_ThemeFont;
-  iVar4 = in_stack_00000010;
-  if (in_stack_00000014 != (char *)0x0) {
+  iVar4 = y_position;
+  if (spacing_flag != 0) {
     engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-              (g_ThemeFont,in_stack_00000014,0xa0,in_stack_00000010,7,0);
+              (g_ThemeFont,(char *)spacing_flag,0xa0,y_position,7,0);
     iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(pCVar8,0x58);
-    iVar4 = in_stack_00000010 + iVar4 * 2;
+    iVar4 = y_position + iVar4 * 2;
   }
   pCVar8 = (CBitFont *)0x0;
-  if (0 < in_stack_00000010) {
+  if (0 < y_position) {
     do {
-      engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(unaff_EDI,(char *)*in_stack_0000000c);
+      engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(unaff_EDI,(char *)*selected_index_ptr);
       engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(in_stack_ffffffe4,0x58);
       iVar7 = 0xf8;
-      if (in_stack_ffffffdc == *in_stack_00000008) {
+      if (in_stack_ffffffdc == *(int *)menu_count) {
         iVar1 = core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_0052a3f0(&g_CMoonInstance);
         if (iVar1 == 0) {
           in_stack_ffffffdc = 0xff;
@@ -111,30 +110,30 @@ int __cdecl core_menu_cpp_getGameMainMenuChoice_FUN_00510000(void)
       if (in_stack_0000001c == 0) {
         iVar4 = iVar4 + in_stack_ffffffe0;
       }
-      in_stack_0000000c = in_stack_0000000c + 1;
+      selected_index_ptr = selected_index_ptr + 1;
       pCVar8 = (CBitFont *)((int)&pCVar8->bitmap_count + 1);
-    } while ((int)pCVar8 < in_stack_00000010);
+    } while ((int)pCVar8 < y_position);
   }
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   if (g_MessageCount == 0) {
-    iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
+    iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
                       (g_SmallEditorFont,"[binary_data_00636580]");
-    iVar7 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40
+    iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40
                       (g_SmallEditorFont,"[binary_data_00636580]");
     pcVar6 = "[binary_data_00636580]";
   }
   else {
-    iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
+    iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
                       (g_SmallEditorFont,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
-    iVar7 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40
+    iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40
                       (g_SmallEditorFont,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
     pcVar6 = "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.";
   }
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-            (g_SmallEditorFont,pcVar6,0x27f - iVar4,0x1df - iVar7,0xf8,0);
+            (g_SmallEditorFont,pcVar6,0x27f - iVar7,0x1df - iVar4,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00406d80(0x8000);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-            (g_SmallEditorFont,&DAT_006365b6,0x206,99,0xf8,0);
+            (g_SmallEditorFont,g_MenuVersionText,0x206,99,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_SmallEditorFont,"NON-RELEASE EDITOR BUILD",0,0,0xf8,0);
@@ -151,11 +150,11 @@ int __cdecl core_menu_cpp_getGameMainMenuChoice_FUN_00510000(void)
   } while (*pcVar5 != '\0');
   pcVar5 = (char *)0x0;
 LAB_00510279:
-  INT_02f26cb8 = 0;
+  g_MenuInputHappened = 0;
   iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x48);
   if (iVar4 != 0) {
     iVar4 = *in_stack_0000004c;
-    INT_02f26cb8 = 1;
+    g_MenuInputHappened = 1;
     *in_stack_0000004c = iVar4 + -1;
     if (iVar4 + -1 < 0) {
       *in_stack_0000004c = in_stack_00000048 + -1;
@@ -163,7 +162,7 @@ LAB_00510279:
   }
   iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x50);
   if (iVar4 != 0) {
-    INT_02f26cb8 = 1;
+    g_MenuInputHappened = 1;
     iVar4 = *in_stack_00000060;
     *in_stack_00000060 = iVar4 + 1;
     if (in_stack_0000005c <= iVar4 + 1) {
@@ -171,10 +170,10 @@ LAB_00510279:
     }
   }
   if (pcVar5 != (char *)0x0) {
-    DAT_02f26cac = 0;
+    g_MenuLeftRightPressed = 0;
     iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4b);
     if (iVar4 != 0) {
-      DAT_02f26cac = 1;
+      g_MenuLeftRightPressed = 1;
       return *in_stack_00000074;
     }
     iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4d);
@@ -191,7 +190,7 @@ LAB_00510340:
 
 // Assembly code:
 // 00510000: PUSH EBX
-//   Label: core_menu.cpp_getGameMainMenuChoice_FUN_00510000
+//   Label: core_menu.cpp_renderMenuAndGetChoice_FUN_00510000
 // 00510001: PUSH ESI
 // 00510002: PUSH EDI
 // 00510003: PUSH EBP

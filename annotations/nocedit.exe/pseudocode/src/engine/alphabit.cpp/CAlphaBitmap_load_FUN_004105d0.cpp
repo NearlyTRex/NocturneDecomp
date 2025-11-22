@@ -13,7 +13,7 @@
 //   core_main.c_finalizeGameSystems_FUN_00508570 (00508570) at 005085fa [UNCONDITIONAL_CALL]
 //   core_main.c_initializeGameSystems_FUN_00507a60 (00507a60) at 005080cd [UNCONDITIONAL_CALL]
 //   core_main.c_showPromoScreen_FUN_00508340 (00508340) at 00508399 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_RunCalibrationTest_FUN_00510ba0 (00510ba0) at 00510bb4 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_showCalibrationTest_FUN_00510ba0 (00510ba0) at 00510bb4 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 00512fa8 [UNCONDITIONAL_CALL]
 //   core_moon.cpp_CMoon_init_FUN_00529ae0 (00529ae0) at 00529c55 [UNCONDITIONAL_CALL]
 //   support_newmsg.cpp_CMouse_load_FUN_00544420 (00544420) at 00544482 [UNCONDITIONAL_CALL]

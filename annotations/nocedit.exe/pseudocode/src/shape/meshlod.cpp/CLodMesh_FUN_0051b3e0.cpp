@@ -36,7 +36,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_0051b3e0(CLodMesh *this_ptr)
   local_18 = 0;
   if (0 < this_ptr->tri_count) {
     do {
-      if (*(int *)(this_ptr->triangle_data->field9_0x44 + iVar3 + -4) == 0) {
+      if (*(int *)(this_ptr->triangle_data->field10_0x50 + iVar3 + -0x10) == 0) {
         iVar2 = 0;
         do {
           iVar4 = iVar2 + iVar3;
@@ -74,7 +74,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_0051b3e0(CLodMesh *this_ptr)
   if (0 < this_ptr->tri_count) {
     iVar3 = 0;
     do {
-      if (*(int *)(this_ptr->triangle_data->field9_0x44 + iVar3 + -4) == 0) {
+      if (*(int *)(this_ptr->triangle_data->field10_0x50 + iVar3 + -0x10) == 0) {
         iVar2 = 0;
         do {
           iVar4 = iVar2 + 4;

@@ -5,7 +5,7 @@
 // Signature: void engine_texture.cpp_clearTextureCache_FUN_005dd8e0(void)
 // Cross-references:
 //   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (0047a3e0) at 0047a7fc [UNCONDITIONAL_CALL]
-//   core_menu.cpp_FUN_0050fe60 (0050fe60) at 0050fe65 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_cleanupMenuTransition_FUN_0050fe60 (0050fe60) at 0050fe65 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 00512fe2 [UNCONDITIONAL_CALL]
 //   core_mission.cpp_FUN_005248e0 (005248e0) at 005248f2 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058de70 (0058de70) at 0058e09b [UNCONDITIONAL_CALL]

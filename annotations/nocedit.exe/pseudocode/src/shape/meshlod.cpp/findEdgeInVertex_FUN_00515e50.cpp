@@ -1,31 +1,29 @@
-// Name: shape_meshlod.cpp_FUN_00515e50
+// Name: shape_meshlod.cpp_findEdgeInVertex_FUN_00515e50
 // Address: 00515e50
 // Address Range: [[00515e50, 00515e85]]
-// Convention: unknown
-// Signature: undefined shape_meshlod.cpp_FUN_00515e50()
+// Convention: __cdecl
+// Signature: int shape_meshlod.cpp_findEdgeInVertex_FUN_00515e50(SLodVert * vertex_ptr, int edge_index)
 // Cross-references:
-//   shape_meshlod.cpp_FUN_00515e00 (00515e00) at 00515e0b [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_removeEdgeFromVertex_FUN_00515e00 (00515e00) at 00515e0b [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
-int shape_meshlod_cpp_FUN_00515e50(void)
+int __cdecl shape_meshlod_cpp_findEdgeInVertex_FUN_00515e50(SLodVert *vertex_ptr,int edge_index)
 
 {
   int iVar1;
-  int iVar2;
-  int in_stack_00000004;
-  int in_stack_00000008;
+  SLodVert *pSVar2;
   
   iVar1 = 0;
-  iVar2 = in_stack_00000004;
-  if (0 < *(int *)(in_stack_00000004 + 0x3f8)) {
+  pSVar2 = vertex_ptr;
+  if (0 < vertex_ptr->adjacent_edge_count) {
     do {
-      if (in_stack_00000008 == *(int *)(iVar2 + 0x3fc)) {
+      if (edge_index == pSVar2->adjacent_edge_indices[0]) {
         return iVar1;
       }
       iVar1 = iVar1 + 1;
-      iVar2 = iVar2 + 4;
-    } while (iVar1 < *(int *)(in_stack_00000004 + 0x3f8));
+      pSVar2 = (SLodVert *)(pSVar2->field0_0x0 + 4);
+    } while (iVar1 < vertex_ptr->adjacent_edge_count);
   }
   return -1;
 }
@@ -33,7 +31,7 @@ int shape_meshlod_cpp_FUN_00515e50(void)
 
 // Assembly code:
 // 00515e50: PUSH EBX
-//   Label: shape_meshlod.cpp_FUN_00515e50
+//   Label: shape_meshlod.cpp_findEdgeInVertex_FUN_00515e50
 // 00515e51: PUSH ESI
 // 00515e52: MOV ECX,dword ptr [ESP + 0xc]
 //   XREF to: Stack[0x4] (READ)

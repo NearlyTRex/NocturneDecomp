@@ -5,7 +5,7 @@
 // Signature: void sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70(uint flags)
 // Cross-references:
 //   core_game.cpp_CGame_rollCredits_FUN_004e4010 (004e4010) at 004e439b [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 0051286a [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 0051286a [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_process_FUN_005b2fd0 (005b2fd0) at 005b338b [UNCONDITIONAL_CALL]
 //   core_sound.cpp_playSfxInternal_FUN_005b1fd0 (005b1fd0) at 005b21d7 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_processTrainSounds_FUN_005b2770 (005b2770) at 005b2895 [UNCONDITIONAL_CALL]

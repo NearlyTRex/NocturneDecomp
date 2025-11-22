@@ -11,12 +11,12 @@
 //   WatcomStaticDestructorNode DAT_0067d254
 //   WatcomStaticDestructorNode DAT_0067d264
 //   WatcomStaticDestructorNode DAT_0067d274
-//   CAlphaBitmap[8] CAlphaBitmap_ARRAY_02f214f0
+//   CAlphaBitmap[8] g_MenuBitmaps
 //   CMoon g_CMoonInstance
-//   CAlphaBitmap CAlphaBitmap_02f26c70
-//   CAlphaBitmap CAlphaBitmap_02f26c84
-//   CAlphaBitmap CAlphaBitmap_02f26c98
-//   CAlphaBitmap CAlphaBitmap_02f26cbc
+//   CAlphaBitmap g_MenuBlurLeft
+//   CAlphaBitmap g_MenuBlurMiddle
+//   CAlphaBitmap g_MenuBlurRight
+//   CAlphaBitmap g_CalibrationBitmap
 // Function calls:
 //   core_moon.cpp_CMoon_ctor_FUN_00529a80
 //   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
@@ -29,17 +29,17 @@ void __cdecl core_menu_cpp_staticInit_FUN_0050fdb0(void)
 
 {
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (CAlphaBitmap_ARRAY_02f214f0,8,&g_CAlphaBitmapTypeInfo);
+            (g_MenuBitmaps,8,&g_CAlphaBitmapTypeInfo);
   crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d224);
   core_moon_cpp_CMoon_ctor_FUN_00529a80(&g_CMoonInstance);
   crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d234);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&CAlphaBitmap_02f26c70);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&g_MenuBlurLeft);
   crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d244);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&CAlphaBitmap_02f26c84);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&g_MenuBlurMiddle);
   crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d254);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&CAlphaBitmap_02f26c98);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&g_MenuBlurRight);
   crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d264);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&CAlphaBitmap_02f26cbc);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&g_CalibrationBitmap);
   crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d274);
   return;
 }

@@ -229,7 +229,7 @@ int selectCard(int card_index);
 
 // Original: wincore_windll.cpp_buildCardList_FUN_005b7db0
 // Address: 005b7db0
-int buildCardList(void * card_list_buffer, int max_cards, int * card_count, char * * card_names, int buffer_size);
+int buildCardList(int * out_card_count, void * enum_data_buffer, char * * out_card_names, int * out_vendor_ids, int * out_device_ids);
 
 // Original: wincore_windll.cpp_lockHoldBuffer_FUN_005b7df0
 // Address: 005b7df0

@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: void core_moon.cpp_CMoon_free_FUN_00529ce0(CMoon * this_ptr)
 // Cross-references:
-//   core_menu.cpp_ShowOptionsScreen_FUN_00512d30 (00512d30) at 00512f04 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 00513161 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_showOptionsScreen_FUN_00512d30 (00512d30) at 00512f04 [UNCONDITIONAL_CALL]
 //   core_moon.cpp_CMoon_dtor_FUN_00529ab0 (00529ab0) at 00529ab6 [UNCONDITIONAL_CALL]
 // Globals:
 //   CAlphaBitmap g_MoonCloudTexture

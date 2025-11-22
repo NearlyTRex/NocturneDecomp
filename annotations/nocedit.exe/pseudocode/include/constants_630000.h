@@ -2451,6 +2451,9 @@ const char s_EmptyChar_0063564e =  ;
 const char s_empty_0063e145 =  ;
 const char s_empty_0063e149 =  ;
 
+// char[2] constants
+const char[2] g_MenuVersionText = "";
+
 // double constants
 const double g_InventoryRandPiFactor = 3.1415926535000001;
 const double g_InventoryRandTwoFactor = 2;
@@ -2519,7 +2522,7 @@ const double g_NormalizationScale = 65535;
 const double g_InverseTwoPi = 0.31830988619288902;
 const double g_FixedPointScale = 32768;
 const double DOUBLE_00635ce5 = 1.1499999999999999;
-const double DOUBLE_0063664f = 1.52587890625e-05;
+const double g_MouseSensitivityScale = 1.52587890625e-05;
 const double DOUBLE_00636bff = 1.52587890625e-05;
 const double DOUBLE_00636d47 = 0.001;
 const double DOUBLE_00636d4f = 50;

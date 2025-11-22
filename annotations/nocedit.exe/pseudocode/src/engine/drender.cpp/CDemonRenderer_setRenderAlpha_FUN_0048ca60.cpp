@@ -33,7 +33,7 @@
 //   core_inv.cpp_drawItemIconBackground_FUN_005001e0 (005001e0) at 00500207 [UNCONDITIONAL_CALL]
 //   core_inv.cpp_drawWeaponIconBackground_FUN_00500050 (00500050) at 00500077 [UNCONDITIONAL_CALL]
 //   core_marquee.cpp_FUN_0050c050 (0050c050) at 0050c092 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_FUN_0050fe70 (0050fe70) at 0050ff68 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70 (0050fe70) at 0050ff68 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052b160 (0052b160) at 0052b1ce [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_FUN_0056aca0 (0056aca0) at 0056ad59 [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_FUN_0056cd60 (0056cd60) at 0056ce4d [UNCONDITIONAL_CALL]

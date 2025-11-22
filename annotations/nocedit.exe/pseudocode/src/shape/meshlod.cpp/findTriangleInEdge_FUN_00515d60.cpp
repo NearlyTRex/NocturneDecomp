@@ -1,31 +1,29 @@
-// Name: shape_meshlod.cpp_FUN_00515d60
+// Name: shape_meshlod.cpp_findTriangleInEdge_FUN_00515d60
 // Address: 00515d60
 // Address Range: [[00515d60, 00515d8c]]
-// Convention: unknown
-// Signature: undefined shape_meshlod.cpp_FUN_00515d60()
+// Convention: __cdecl
+// Signature: int shape_meshlod.cpp_findTriangleInEdge_FUN_00515d60(SLodEdge * edge_ptr, int tri_index)
 // Cross-references:
-//   shape_meshlod.cpp_FUN_00515d10 (00515d10) at 00515d1b [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_removeTriangleFromEdge_FUN_00515d10 (00515d10) at 00515d1b [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
-int shape_meshlod_cpp_FUN_00515d60(void)
+int __cdecl shape_meshlod_cpp_findTriangleInEdge_FUN_00515d60(SLodEdge *edge_ptr,int tri_index)
 
 {
   int iVar1;
-  int iVar2;
-  int in_stack_00000004;
-  int in_stack_00000008;
+  SLodEdge *pSVar2;
   
   iVar1 = 0;
-  iVar2 = in_stack_00000004;
-  if (0 < *(int *)(in_stack_00000004 + 0x24)) {
+  pSVar2 = edge_ptr;
+  if (0 < edge_ptr->adjacent_tri_count) {
     do {
-      if (in_stack_00000008 == *(int *)(iVar2 + 0x28)) {
+      if (tri_index == pSVar2->adjacent_tri_indices[0]) {
         return iVar1;
       }
       iVar1 = iVar1 + 1;
-      iVar2 = iVar2 + 4;
-    } while (iVar1 < *(int *)(in_stack_00000004 + 0x24));
+      pSVar2 = (SLodEdge *)&pSVar2->vertex_idx_2;
+    } while (iVar1 < edge_ptr->adjacent_tri_count);
   }
   return -1;
 }
@@ -33,7 +31,7 @@ int shape_meshlod_cpp_FUN_00515d60(void)
 
 // Assembly code:
 // 00515d60: PUSH EBX
-//   Label: shape_meshlod.cpp_FUN_00515d60
+//   Label: shape_meshlod.cpp_findTriangleInEdge_FUN_00515d60
 // 00515d61: PUSH ESI
 // 00515d62: MOV ECX,dword ptr [ESP + 0xc]
 //   XREF to: Stack[0x4] (READ)

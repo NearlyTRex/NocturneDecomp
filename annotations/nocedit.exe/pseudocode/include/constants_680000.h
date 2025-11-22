@@ -56,7 +56,6 @@ const TerminatedCString s_SfxSample_00681d84 = "$SfxSample$$";
 const TerminatedCString s_SfxOptions_00681da4 = "$SfxOptions$$";
 const TerminatedCString s_SfxSlot_00681dc4 = "$SfxSlot$$";
 const TerminatedCString s_STrainNoise_00682184 = "$STrainNoise$$";
-const TerminatedCString s_trid3d_dll_00684010 = "trid3d.dll";
 const TerminatedCString s_CSpike_00684160 = "$CSpike$$";
 const TerminatedCString s_CStairs_00684198 = "$CStairs$$";
 const TerminatedCString s_CTempleStone_006841ac = "$CTempleStone$$";

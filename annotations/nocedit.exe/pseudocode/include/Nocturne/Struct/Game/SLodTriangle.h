@@ -12,6 +12,7 @@ typedef struct SLodTriangle {
     int edge_idx_1; // 0x38
     int edge_idx_2; // 0x3c
     int processed_flag; // 0x40
-    char field_68[72]; // 0x44
+    CVector3f normal; // 0x44
+    char field_80[60]; // 0x50
 } SLodTriangle;
 

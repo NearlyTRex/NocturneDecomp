@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int wincore_windll.cpp_kill_FUN_005b71e0(void)
 // Cross-references:
-//   core_menu.cpp_GraphicsOptions_FUN_00510c80 (00510c80) at 00510e03 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureGraphicsOptions_FUN_00510c80 (00510c80) at 00510e03 [UNCONDITIONAL_CALL]
 //   wincore_wddvmem.cpp_cleanupGraphicsSystem_FUN_005ecd90 (005ecd90) at 005ecdc6 [UNCONDITIONAL_CALL]
 //   wincore_windll.cpp_switchRenderer_FUN_005b8140 (005b8140) at 005b8142 [UNCONDITIONAL_CALL]
 // Globals:

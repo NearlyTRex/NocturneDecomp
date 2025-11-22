@@ -27,7 +27,7 @@
 //   core_level.cpp_CLevelLoader_update_FUN_00504160 (00504160) at 0050456a [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_00509d50 (00509d50) at 0050a172 [UNCONDITIONAL_CALL]
 //   core_marquee.cpp_FUN_0050c050 (0050c050) at 0050c157 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_FUN_0050fe70 (0050fe70) at 0050ffd8 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70 (0050fe70) at 0050ffd8 [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_FUN_00570040 (00570040) at 0057028c [UNCONDITIONAL_CALL]
 //   core_set.cpp_FUN_005702b0 (005702b0) at 005706a1 [UNCONDITIONAL_CALL]
 //   core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50 (00587b50) at 00587d2d [UNCONDITIONAL_CALL]

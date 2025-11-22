@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0(CMoon * this_ptr)
 // Cross-references:
-//   core_menu.cpp_SetUpGamepadControls_FUN_005104d0 (005104d0) at 005104ef [UNCONDITIONAL_CALL]
+//   core_menu.cpp_calibrateGamepad_FUN_005104d0 (005104d0) at 005104ef [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonSet* g_CDemonSetPtr = 03114278

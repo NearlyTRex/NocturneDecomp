@@ -142,10 +142,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00518910(CLodMesh *this_ptr)
   
   local_58 = this_ptr->edges_ptr + in_stack_00000008;
   *(undefined8 *)local_58->field2_0x8 = _DAT_00661388;
-  local_58->field4_0x18[8] = '\0';
-  local_58->field4_0x18[9] = '\0';
-  local_58->field4_0x18[10] = '\0';
-  local_58->field4_0x18[0xb] = '\0';
+  local_58->field6_0x20 = 0;
   iVar9 = shape_meshlod_cpp_CLodMesh_FUN_00518490(this_ptr);
   if (iVar9 == in_stack_00000008) {
     iVar9 = shape_meshlod_cpp_CLodMesh_FUN_00519480(this_ptr);
@@ -207,10 +204,10 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00518910(CLodMesh *this_ptr)
                 pSVar2 = this_ptr->triangle_data;
                 iVar19 = iVar10;
                 local_18 = iVar12;
-                if (DAT_02f33334 != *(int *)(pSVar2[iVar12].field9_0x44 + 0x40)) {
-                  *(int *)(pSVar2[iVar12].field9_0x44 + 0x44) = DAT_02f33338;
+                if (DAT_02f33334 != *(int *)(pSVar2[iVar12].field10_0x50 + 0x34)) {
+                  *(int *)(pSVar2[iVar12].field10_0x50 + 0x38) = DAT_02f33338;
                   iVar3 = pSVar2[iVar12].vertex_idx_0;
-                  *(int *)(pSVar2[iVar12].field9_0x44 + 0x40) = iVar8;
+                  *(int *)(pSVar2[iVar12].field10_0x50 + 0x34) = iVar8;
                   if (((iVar3 != iStack_14) && (iStack_14 != pSVar2[iVar12].vertex_idx_1)) &&
                      (iStack_14 != pSVar2[iVar12].vertex_idx_2)) {
                     if (199 < iVar9) {
@@ -387,9 +384,9 @@ LAB_0051919d:
               iVar22 = DAT_02f2a4d0[iVar17].field16_0x84;
               pSVar2 = this_ptr->triangle_data;
               dVar20 = local_78;
-              if ((float)piVar16[2] * *(float *)(pSVar2[iVar22].field9_0x44 + 8) +
-                  (float)*piVar16 * *(float *)pSVar2[iVar22].field9_0x44 +
-                  (float)piVar16[1] * *(float *)(pSVar2[iVar22].field9_0x44 + 4) < 0.0) break;
+              if ((float)piVar16[2] * pSVar2[iVar22].normal.z +
+                  (float)*piVar16 * pSVar2[iVar22].normal.x +
+                  (float)piVar16[1] * pSVar2[iVar22].normal.y < 0.0) break;
               iVar17 = iVar17 + 1;
               piVar16 = piVar16 + 0x23;
             } while (iVar17 < iVar9);
@@ -404,8 +401,8 @@ LAB_0051919d:
                 do {
                   local_20 = local_38 + (int)this_ptr->sample_points_ptr;
                   if (DAT_02f33338 ==
-                      *(int *)(this_ptr->triangle_data[*(int *)(local_20 + 0xc)].field9_0x44 + 0x44)
-                     ) {
+                      *(int *)(this_ptr->triangle_data[*(int *)(local_20 + 0xc)].field10_0x50 + 0x38
+                              )) {
                     dVar7 = 9.999999999999999e+29;
                     dVar6 = 9.999999999999999e+29;
                     iVar17 = 0;

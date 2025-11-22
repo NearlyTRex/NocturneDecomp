@@ -35,12 +35,12 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_0051b570(CLodMesh *this_ptr)
     iVar5 = 0;
     do {
       pSVar1 = this_ptr->triangle_data;
-      if (*(int *)(pSVar1->field9_0x44 + iVar5 + -4) == 0) {
-        *(int *)(pSVar1->field9_0x44 + iVar5 + -4) = local_1c;
+      if (*(int *)(pSVar1->field10_0x50 + iVar5 + -0x10) == 0) {
+        *(int *)(pSVar1->field10_0x50 + iVar5 + -0x10) = local_1c;
         local_1c = local_1c + 1;
       }
       else {
-        pcVar2 = pSVar1->field9_0x44 + iVar5 + -4;
+        pcVar2 = pSVar1->field10_0x50 + iVar5 + -0x10;
         pcVar2[0] = -1;
         pcVar2[1] = -1;
         pcVar2[2] = -1;
@@ -86,10 +86,10 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_0051b570(CLodMesh *this_ptr)
           *(undefined4 *)(pcVar4 + ((uint)bVar8 * -2 + 0xe) * 4 + ((uint)bVar8 * -2 + 1) * 4) =
                *(undefined4 *)(pcVar2 + ((uint)bVar8 * -2 + 0xe) * 4 + ((uint)bVar8 * -2 + 1) * 4);
           *(int *)(pcVar4 + 0x40) = *(int *)(pcVar2 + 0x40);
-          if (pcVar4 + 0x44 != pcVar2 + 0x44) {
-            *(undefined4 *)(pcVar4 + 0x44) = *(undefined4 *)(pcVar2 + 0x44);
-            *(undefined4 *)(pcVar4 + 0x48) = *(undefined4 *)(pcVar2 + 0x48);
-            *(undefined4 *)(pcVar4 + 0x4c) = *(undefined4 *)(pcVar2 + 0x4c);
+          if ((CVector3f *)(pcVar4 + 0x44) != (CVector3f *)(pcVar2 + 0x44)) {
+            ((CVector3f *)(pcVar4 + 0x44))->x = ((CVector3f *)(pcVar2 + 0x44))->x;
+            *(float *)(pcVar4 + 0x48) = *(float *)(pcVar2 + 0x48);
+            *(float *)(pcVar4 + 0x4c) = *(float *)(pcVar2 + 0x4c);
           }
           *(undefined4 *)(pcVar4 + 0x50) = *(undefined4 *)(pcVar2 + 0x50);
           crt_memory_c_copyArrayWithFunction_FUN_006020c2
@@ -103,7 +103,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_0051b570(CLodMesh *this_ptr)
           *(undefined4 *)(pcVar4 + 0x88) = *(undefined4 *)(pcVar2 + 0x88);
         }
         local_20 = local_20 + 1;
-        pcVar2 = this_ptr->triangle_data->field9_0x44 + local_18 + -4;
+        pcVar2 = this_ptr->triangle_data->field10_0x50 + local_18 + -0x10;
         pcVar2[0] = '\0';
         pcVar2[1] = '\0';
         pcVar2[2] = '\0';

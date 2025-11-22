@@ -1,10 +1,10 @@
-// Name: shape_meshlod.cpp_FUN_005151e0
+// Name: shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
 // Address: 005151e0
 // Address Range: [[005151e0, 00515836]]
-// Convention: unknown
-// Signature: undefined shape_meshlod.cpp_FUN_005151e0()
+// Convention: __cdecl
+// Signature: void shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0(int point_count, CVector3f * positions, float * values, CVector3f * normal, CVector3f * out_gradient, float * out_offset)
 // Cross-references:
-//   shape_meshlod.cpp_FUN_00517530 (00517530) at 00517605 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530 (00517530) at 00517605 [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_00637345 = 2
 // Function calls:
@@ -13,7 +13,10 @@
 
 #include "nocturne.h"
 
-void shape_meshlod_cpp_FUN_005151e0(void)
+void __cdecl
+shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0
+          (int point_count,CVector3f *positions,float *values,CVector3f *normal,
+          CVector3f *out_gradient,float *out_offset)
 
 {
   double dVar1;
@@ -42,12 +45,6 @@ void shape_meshlod_cpp_FUN_005151e0(void)
   float10 fVar23;
   float10 fVar24;
   float10 fVar25;
-  int in_stack_00000004;
-  CVector3f *in_stack_00000008;
-  float *in_stack_0000000c;
-  float *in_stack_00000010;
-  CVector3f *in_stack_00000014;
-  float *in_stack_00000018;
   undefined4 uStack_f4;
   undefined4 local_f0;
   undefined4 uStack_ec;
@@ -81,15 +78,15 @@ void shape_meshlod_cpp_FUN_005151e0(void)
   float local_18;
   int local_14;
   
-  local_98.m[0].z = *in_stack_00000010;
-  local_98.m[1].z = in_stack_00000010[1];
-  local_98.m[2].z = in_stack_00000010[2];
-  local_18 = ABS(in_stack_00000010[1]);
-  local_1c = ABS(in_stack_00000010[2]);
-  local_2c = ABS(*in_stack_00000010);
-  fVar9 = *in_stack_00000010;
-  fVar10 = in_stack_00000010[1];
-  local_70.z = in_stack_00000010[2];
+  local_98.m[0].z = normal->x;
+  local_98.m[1].z = normal->y;
+  local_98.m[2].z = normal->z;
+  local_18 = ABS(normal->y);
+  local_1c = ABS(normal->z);
+  local_2c = ABS(normal->x);
+  fVar9 = normal->x;
+  fVar10 = normal->y;
+  local_70.z = normal->z;
   if ((local_2c < local_18) || (local_2c < local_1c)) {
     if ((local_18 < local_2c) || (local_18 < local_1c)) {
       local_70.z = -local_70.z;
@@ -111,9 +108,9 @@ void shape_meshlod_cpp_FUN_005151e0(void)
     local_70.y = local_70.x;
     local_70.x = fVar10;
   }
-  local_58.x = in_stack_00000010[1] * local_70.z - in_stack_00000010[2] * local_70.y;
-  local_58.y = in_stack_00000010[2] * local_70.x - *in_stack_00000010 * local_70.z;
-  local_58.z = *in_stack_00000010 * local_70.y - in_stack_00000010[1] * local_70.x;
+  local_58.x = normal->y * local_70.z - normal->z * local_70.y;
+  local_58.y = normal->z * local_70.x - normal->x * local_70.z;
+  local_58.z = normal->x * local_70.y - normal->y * local_70.x;
   if (&local_70 != &local_58) {
     local_70.x = local_58.x;
     local_70.y = local_58.y;
@@ -122,9 +119,9 @@ void shape_meshlod_cpp_FUN_005151e0(void)
   local_98.m[0].x = local_70.x;
   local_98.m[1].x = local_70.y;
   local_98.m[2].x = local_70.z;
-  local_64.x = in_stack_00000010[1] * local_70.z - in_stack_00000010[2] * local_70.y;
-  local_64.y = in_stack_00000010[2] * local_70.x - *in_stack_00000010 * local_70.z;
-  local_64.z = *in_stack_00000010 * local_70.y - in_stack_00000010[1] * local_70.x;
+  local_64.x = normal->y * local_70.z - normal->z * local_70.y;
+  local_64.y = normal->z * local_70.x - normal->x * local_70.z;
+  local_64.z = normal->x * local_70.y - normal->y * local_70.x;
   if (&local_70 != &local_64) {
     local_70.x = local_64.x;
     local_70.y = local_64.y;
@@ -150,18 +147,18 @@ void shape_meshlod_cpp_FUN_005151e0(void)
   dVar18 = 0.0;
   dVar8 = 0.0;
   local_98.m[2].y = local_70.z;
-  pfVar20 = in_stack_0000000c;
-  if (0 < in_stack_00000004) {
+  pfVar20 = values;
+  if (0 < point_count) {
     do {
       pCVar19 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                          (&local_98,&local_4c,in_stack_00000008);
+                          (&local_98,&local_4c,positions);
       if (&local_70 != pCVar19) {
         local_70.x = pCVar19->x;
         local_70.y = pCVar19->y;
         local_70.z = pCVar19->z;
       }
       dVar1 = (double)(local_70.x + (float)dVar11);
-      in_stack_00000008 = in_stack_00000008 + 1;
+      positions = positions + 1;
       iVar21 = iVar21 + 1;
       dVar2 = (double)(local_70.y + (float)dVar12);
       dVar3 = (double)(*pfVar20 + (float)dVar13);
@@ -179,7 +176,7 @@ void shape_meshlod_cpp_FUN_005151e0(void)
       dVar16 = dVar6;
       dVar17 = dVar7;
       dVar18 = dVar8;
-    } while (iVar21 < in_stack_00000004);
+    } while (iVar21 < point_count);
   }
   uStack_f4 = (undefined4)((ulonglong)dVar8 >> 0x20);
   uStack_c4 = (undefined4)((ulonglong)dVar7 >> 0x20);
@@ -196,39 +193,39 @@ void shape_meshlod_cpp_FUN_005151e0(void)
   local_f0 = SUB84(dVar2,0);
   uStack_dc = (undefined4)((ulonglong)dVar1 >> 0x20);
   local_e0 = SUB84(dVar1,0);
-  local_14 = in_stack_00000004;
-  local_b8 = SUB84((double)in_stack_00000004,0);
+  local_14 = point_count;
+  local_b8 = SUB84((double)point_count,0);
   dVar11 = dVar2 * dVar2 * dVar4 +
            dVar5 * dVar1 * dVar1 +
-           (((double)in_stack_00000004 * dVar6 * dVar6 - dVar6 * DOUBLE_00637345 * dVar1 * dVar2) -
-           dVar5 * (double)in_stack_00000004 * dVar4);
+           (((double)point_count * dVar6 * dVar6 - dVar6 * DOUBLE_00637345 * dVar1 * dVar2) -
+           dVar5 * (double)point_count * dVar4);
   local_a0 = SUB84(dVar11,0);
   uStack_9c = (undefined4)((ulonglong)dVar11 >> 0x20);
   if ((((ulonglong)dVar11 & 0x7fffffff00000000) == 0) && (local_a0 == 0)) {
-    in_stack_00000014->z = 0.0;
-    in_stack_00000014->y = in_stack_00000014->z;
-    in_stack_00000014->x = in_stack_00000014->y;
+    out_gradient->z = 0.0;
+    out_gradient->y = out_gradient->z;
+    out_gradient->x = out_gradient->y;
     iVar21 = 0;
-    *in_stack_00000018 = 0.0;
-    if (0 < in_stack_00000004) {
+    *out_offset = 0.0;
+    if (0 < point_count) {
       do {
-        fVar9 = *in_stack_0000000c;
-        in_stack_0000000c = in_stack_0000000c + 1;
+        fVar9 = *values;
+        values = values + 1;
         iVar21 = iVar21 + 1;
-        *in_stack_00000018 = fVar9 + *in_stack_00000018;
-      } while (iVar21 < in_stack_00000004);
+        *out_offset = fVar9 + *out_offset;
+      } while (iVar21 < point_count);
     }
-    *in_stack_00000018 = *in_stack_00000018 / (float)in_stack_00000004;
+    *out_offset = *out_offset / (float)point_count;
     return;
   }
   fVar22 = (float10)dVar1;
   local_34 = (double)(fVar22 * (float10)dVar2);
   fVar23 = (float10)dVar3;
-  fVar24 = (float10)((double)in_stack_00000004 * dVar6);
+  fVar24 = (float10)((double)point_count * dVar6);
   fVar25 = (float10)dVar7;
   local_70.z = 0.0;
   local_70.x = (float)(-((float10)dVar2 * (float10)dVar6 * fVar23 +
-                        fVar25 * (float10)in_stack_00000004 * (float10)dVar5 +
+                        fVar25 * (float10)point_count * (float10)dVar5 +
                         (((fVar22 * (float10)dVar2 * (float10)dVar8 -
                           fVar22 * fVar23 * (float10)dVar5) - fVar24 * (float10)dVar8) -
                         (float10)(dVar2 * dVar2) * fVar25)) * ((float10)1 / (float10)dVar11));
@@ -236,38 +233,37 @@ void shape_meshlod_cpp_FUN_005151e0(void)
                        (((float10)dVar2 * fVar23 * (float10)dVar4 +
                         ((fVar24 * fVar25 + -(float10)dVar6 * fVar22 * fVar23) -
                         (float10)local_34 * fVar25)) -
-                       (float10)dVar8 * (float10)in_stack_00000004 * (float10)dVar4)) *
+                       (float10)dVar8 * (float10)point_count * (float10)dVar4)) *
                       ((float10)1 / (float10)dVar11));
   pCVar19 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(&local_98,&local_40,&local_70);
-  if (pCVar19 != in_stack_00000014) {
-    in_stack_00000014->x = pCVar19->x;
-    in_stack_00000014->y = pCVar19->y;
-    in_stack_00000014->z = pCVar19->z;
+  if (pCVar19 != out_gradient) {
+    out_gradient->x = pCVar19->x;
+    out_gradient->y = pCVar19->y;
+    out_gradient->z = pCVar19->z;
   }
   fVar22 = (float10)(double)CONCAT44(local_e0,uStack_e4);
-  *in_stack_00000018 =
-       (float)(-((float10)(double)CONCAT44(local_d0,uStack_d4) *
-                 (float10)(double)CONCAT44(local_c8,uStack_cc) *
-                 (float10)(double)CONCAT44(local_b8,uStack_bc) +
-                ((((float10)(double)CONCAT44(local_e8,uStack_ec) * fVar22 *
-                   (float10)(double)CONCAT44(local_c0,uStack_c4) +
-                  ((float10)(double)CONCAT44(local_d8,uStack_dc) * fVar22 *
-                   (float10)(double)CONCAT44(local_f0,uStack_f4) -
-                  (float10)(double)CONCAT44(local_d8,uStack_dc) *
-                  (float10)(double)CONCAT44(local_c0,uStack_c4) *
-                  (float10)(double)CONCAT44(local_c8,uStack_cc))) -
-                 (float10)(double)CONCAT44(local_e8,uStack_ec) *
-                 (float10)(double)CONCAT44(local_f0,uStack_f4) *
-                 (float10)(double)CONCAT44(local_b8,uStack_bc)) -
-                (float10)(double)CONCAT44(local_d0,uStack_d4) * fVar22 * fVar22)) /
-              (float10)(double)CONCAT44(local_98.m[0].x,uStack_9c));
+  *out_offset = (float)(-((float10)(double)CONCAT44(local_d0,uStack_d4) *
+                          (float10)(double)CONCAT44(local_c8,uStack_cc) *
+                          (float10)(double)CONCAT44(local_b8,uStack_bc) +
+                         ((((float10)(double)CONCAT44(local_e8,uStack_ec) * fVar22 *
+                            (float10)(double)CONCAT44(local_c0,uStack_c4) +
+                           ((float10)(double)CONCAT44(local_d8,uStack_dc) * fVar22 *
+                            (float10)(double)CONCAT44(local_f0,uStack_f4) -
+                           (float10)(double)CONCAT44(local_d8,uStack_dc) *
+                           (float10)(double)CONCAT44(local_c0,uStack_c4) *
+                           (float10)(double)CONCAT44(local_c8,uStack_cc))) -
+                          (float10)(double)CONCAT44(local_e8,uStack_ec) *
+                          (float10)(double)CONCAT44(local_f0,uStack_f4) *
+                          (float10)(double)CONCAT44(local_b8,uStack_bc)) -
+                         (float10)(double)CONCAT44(local_d0,uStack_d4) * fVar22 * fVar22)) /
+                       (float10)(double)CONCAT44(local_98.m[0].x,uStack_9c));
   return;
 }
 
 
 // Assembly code:
 // 005151e0: PUSH EBX
-//   Label: shape_meshlod.cpp_FUN_005151e0
+//   Label: shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
 // 005151e1: PUSH ESI
 // 005151e2: PUSH EDI
 // 005151e3: PUSH EBP

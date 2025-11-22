@@ -50962,10 +50962,10 @@
         "start":"005107c0"
       }
     ],
-    "cmt":"Signature: undefined1 core_menu.cpp_SettingMouseSensitivity(undefined4 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_menu.cpp_SettingMouseSensitivity_FUN_005107c0",
-    "ret":"undefined1",
+    "name":"core_menu.cpp_adjustMouseSensitivity_FUN_005107c0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -50985,9 +50985,40 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"sensitivity_value_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"window_title",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ]
     }
   },
   {
@@ -50999,12 +51030,20 @@
         "start":"00511840"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_menu.cpp_FUN_00511840",
-    "ret":"undefined1",
+    "name":"core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840",
+    "ret":"int",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -51239,7 +51278,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_CLodMesh_FUN_00515ec0",
+    "name":"shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0",
     "ret":"int",
     "vars":{
       "params":[
@@ -51258,6 +51297,54 @@
             ]
           },
           "type":"CLodMesh*"
+        },
+        {
+          "name":"vertex_idx_1",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"vertex_idx_2",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"create_if_missing",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{

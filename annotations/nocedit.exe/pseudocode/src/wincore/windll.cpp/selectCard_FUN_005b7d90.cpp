@@ -5,7 +5,7 @@
 // Signature: int wincore_windll.cpp_selectCard_FUN_005b7d90(int card_index)
 // Cross-references:
 //   core_game.cpp_CGame_setGameRes_FUN_004dade0 (004dade0) at 004dae99 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_GraphicsOptions_FUN_00510c80 (00510c80) at 005117c8 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureGraphicsOptions_FUN_00510c80 (00510c80) at 005117c8 [UNCONDITIONAL_CALL]
 //   wincore_windll.cpp_loadExternalRenderer_FUN_005b6750 (005b6750) at 005b71c0 [UNCONDITIONAL_CALL]
 // Globals:
 //   APIDLL_selectCard* g_APIDLL_selectCard

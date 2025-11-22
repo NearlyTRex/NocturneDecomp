@@ -104,8 +104,8 @@
 //   shape_meshlod.cpp_CLodMesh_FUN_00518910 (00518910) at 0051914d [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_FUN_005197c0 (005197c0) at 00519815 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051e594 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_00515ca0 (00515ca0) at 00515cc9 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_addAdjacentEdgeToVertex_FUN_00515d90 (00515d90) at 00515dc5 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_addAdjacentTriangleToEdge_FUN_00515ca0 (00515ca0) at 00515cc9 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0 (005ad5c0) at 005ad8b2 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_Error_00623018

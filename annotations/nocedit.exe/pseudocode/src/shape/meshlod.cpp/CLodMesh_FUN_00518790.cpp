@@ -1,8 +1,8 @@
-// Name: shape_meshlod.cpp_ReallocSomething_FUN_00518790
+// Name: shape_meshlod.cpp_CLodMesh_FUN_00518790
 // Address: 00518790
 // Address Range: [[00518790, 00518863]]
-// Convention: unknown
-// Signature: undefined shape_meshlod.cpp_ReallocSomething_FUN_00518790()
+// Convention: __cdecl
+// Signature: int shape_meshlod.cpp_CLodMesh_FUN_00518790(CLodMesh * this_ptr)
 // Cross-references:
 //   shape_meshlod.cpp_CLodMesh_FUN_0051b080 (0051b080) at 0051b0c8 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (0051bac0) at 0051bcb3 [UNCONDITIONAL_CALL]
@@ -19,7 +19,7 @@
 
 #include "nocturne.h"
 
-int shape_meshlod_cpp_ReallocSomething_FUN_00518790(void)
+int __cdecl shape_meshlod_cpp_CLodMesh_FUN_00518790(CLodMesh *this_ptr)
 
 {
   char cVar1;
@@ -28,35 +28,31 @@ int shape_meshlod_cpp_ReallocSomething_FUN_00518790(void)
   int iVar4;
   int iVar5;
   char *pcVar6;
-  int in_stack_00000004;
   char *in_stack_00000008;
   
   iVar4 = 0;
-  if (0 < *(int *)(in_stack_00000004 + 0x10)) {
+  if (0 < this_ptr->submesh_count) {
     iVar5 = 0;
     do {
       iVar2 = crt_string_c_stricmp_FUN_005fe7f0
-                        ((char *)(*(int *)(in_stack_00000004 + 0x14) + iVar5 + 8),in_stack_00000008)
-      ;
+                        ((char *)((int)this_ptr->submesh_data + iVar5 + 8),in_stack_00000008);
       if (iVar2 == 0) {
         return iVar4;
       }
       iVar4 = iVar4 + 1;
       iVar5 = iVar5 + 0x48;
-    } while (iVar4 < *(int *)(in_stack_00000004 + 0x10));
+    } while (iVar4 < this_ptr->submesh_count);
   }
   pvVar3 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (*(void **)(in_stack_00000004 + 0x14),
-                      (*(int *)(in_stack_00000004 + 0x10) + 1) * 0x48,"..\\shape\\meshlod.cpp",
-                      0xb6d);
-  *(void **)(in_stack_00000004 + 0x14) = pvVar3;
+                     (this_ptr->submesh_data,(this_ptr->submesh_count + 1) * 0x48,
+                      "..\\shape\\meshlod.cpp",0xb6d);
+  this_ptr->submesh_data = pvVar3;
   if (pvVar3 == (void *)0x0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
     g_CurrentLineNumber = 0xb6e;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory.");
   }
-  pcVar6 = (char *)(*(int *)(in_stack_00000004 + 0x10) * 0x48 + *(int *)(in_stack_00000004 + 0x14) +
-                   8);
+  pcVar6 = (char *)((int)this_ptr->submesh_data + this_ptr->submesh_count * 0x48 + 8);
   do {
     cVar1 = *in_stack_00000008;
     *pcVar6 = cVar1;
@@ -66,15 +62,15 @@ int shape_meshlod_cpp_ReallocSomething_FUN_00518790(void)
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  iVar4 = *(int *)(in_stack_00000004 + 0x10);
-  *(int *)(in_stack_00000004 + 0x10) = iVar4 + 1;
+  iVar4 = this_ptr->submesh_count;
+  this_ptr->submesh_count = iVar4 + 1;
   return iVar4;
 }
 
 
 // Assembly code:
 // 00518790: PUSH EBX
-//   Label: shape_meshlod.cpp_ReallocSomething_FUN_00518790
+//   Label: shape_meshlod.cpp_CLodMesh_FUN_00518790
 // 00518791: PUSH ESI
 // 00518792: PUSH EDI
 // 00518793: PUSH EBP

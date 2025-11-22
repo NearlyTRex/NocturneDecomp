@@ -33,15 +33,15 @@
 // Function calls:
 //   shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0
 //   shape_meshlod.cpp_CLodMesh_free_FUN_00515970
+//   shape_meshlod.cpp_CLodMesh_FUN_00518790
 //   shape_meshlod.cpp_CLodMesh_FUN_0051b330
-//   shape_meshlod.cpp_ReallocSomething_FUN_00518790
 
 #include "nocturne.h"
 
 void __cdecl shape_meshlod_cpp_CLodMesh_FUN_0051b080(CLodMesh *this_ptr)
 
 {
-  undefined4 uVar1;
+  int iVar1;
   int iVar2;
   char *pcVar3;
   int iVar4;
@@ -59,7 +59,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_0051b080(CLodMesh *this_ptr)
     do {
       iVar6 = iVar6 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2 + -0x14) + -2;
       if (g_ModelPolygonData[0].texture_name[iVar2] != '\0') {
-        shape_meshlod_cpp_ReallocSomething_FUN_00518790();
+        shape_meshlod_cpp_CLodMesh_FUN_00518790(in_stack_00000008);
       }
       iVar5 = iVar5 + 1;
       iVar2 = iVar2 + 0x184;
@@ -104,8 +104,8 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_0051b080(CLodMesh *this_ptr)
             pcVar3[3] = -1;
           }
           else {
-            uVar1 = shape_meshlod_cpp_ReallocSomething_FUN_00518790();
-            *(undefined4 *)pcVar3 = uVar1;
+            iVar1 = shape_meshlod_cpp_CLodMesh_FUN_00518790(in_stack_0000000c);
+            *(int *)pcVar3 = iVar1;
           }
           *(uint *)(pcVar3 + 4) = g_ModelPolygonData[local_14].part_assignment;
           *(uint *)(pcVar3 + 0x10) = g_ModelPolygonData[local_14].vertex_indices[0];
@@ -113,16 +113,15 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_0051b080(CLodMesh *this_ptr)
           *(float *)(pcVar3 + 0x20) = g_ModelPolygonData[local_14].uv_coordinates[0];
           *(int *)(pcVar3 + 0x14) = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + -4)
           ;
-          *(undefined4 *)(pcVar3 + 0x24) =
-               *(undefined4 *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 0x3c);
-          *(undefined4 *)(pcVar3 + 0x28) =
-               *(undefined4 *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 0x7c);
+          *(int *)(pcVar3 + 0x24) =
+               *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 0x3c);
+          *(int *)(pcVar3 + 0x28) =
+               *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 0x7c);
           *(int *)(pcVar3 + 0x18) = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5);
-          *(undefined4 *)(pcVar3 + 0x2c) =
-               *(undefined4 *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 0x40);
+          *(int *)(pcVar3 + 0x2c) =
+               *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 0x40);
           iVar2 = iVar2 + 1;
-          *(undefined4 *)(pcVar3 + 0x30) =
-               *(undefined4 *)((int)g_ModelPolygonData[0].uv_coordinates + iVar5);
+          *(int *)(pcVar3 + 0x30) = *(int *)((int)g_ModelPolygonData[0].uv_coordinates + iVar5);
           iVar5 = iVar5 + 4;
         } while (iVar2 < (int)g_ModelPolygonData[local_14].vertex_indices_count);
       }
@@ -181,7 +180,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_0051b080(CLodMesh *this_ptr)
 // 0051b0c3: MOV EBP,dword ptr [ESP + 0x28]
 //   XREF to: Stack[0x4] (READ)
 // 0051b0c7: PUSH EBP
-// 0051b0c8: CALL shape_meshlod.cpp_ReallocSomething_FUN_00518790
+// 0051b0c8: CALL shape_meshlod.cpp_CLodMesh_FUN_00518790
 //   XREF to: 00518790 (UNCONDITIONAL_CALL)
 // 0051b0cd: ADD ESP,0x8
 // 0051b0d0: MOV EBP,dword ptr [0x016e990c]
@@ -376,7 +375,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_0051b080(CLodMesh *this_ptr)
 // 0051b28f: MOV EDX,dword ptr [ESP + 0x28]
 //   XREF to: Stack[0x4] (READ)
 // 0051b293: PUSH EDX
-// 0051b294: CALL shape_meshlod.cpp_ReallocSomething_FUN_00518790
+// 0051b294: CALL shape_meshlod.cpp_CLodMesh_FUN_00518790
 //   XREF to: 00518790 (UNCONDITIONAL_CALL)
 // 0051b299: ADD ESP,0x8
 // 0051b29c: MOV dword ptr [EBX],EAX

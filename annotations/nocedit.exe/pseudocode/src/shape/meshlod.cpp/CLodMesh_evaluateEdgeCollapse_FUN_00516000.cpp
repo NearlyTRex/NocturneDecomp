@@ -1,8 +1,8 @@
-// Name: shape_meshlod.cpp_CLodMesh_FUN_00516000
+// Name: shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
 // Address: 00516000
 // Address Range: [[00516000, 0051641d]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_CLodMesh_FUN_00516000(CLodMesh * this_ptr)
+// Signature: void shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000(CLodMesh * this_ptr, int edge_index, int full_check)
 // Cross-references:
 //   shape_meshlod.cpp_CLodMesh_FUN_00517630 (00517630) at 005181d5 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_FUN_00519710 (00519710) at 0051972c [UNCONDITIONAL_CALL]
@@ -14,172 +14,164 @@
 //   double DOUBLE_00637535 = 3
 //   undefined4 DAT_02f33330
 // Function calls:
-//   shape_meshlod.cpp_FUN_00515e90
-//   shape_meshlod.cpp_FUN_00517530
+//   shape_meshlod.cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530
+//   shape_meshlod.cpp_findVertexIndexInTriangle_FUN_00515e90
 
 #include "nocturne.h"
 
-void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00516000(CLodMesh *this_ptr)
+void __cdecl
+shape_meshlod_cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
+          (CLodMesh *this_ptr,int edge_index,int full_check)
 
 {
   SLodTriangle *pSVar1;
-  SLodEdge *pSVar2;
-  int iVar3;
+  float fVar2;
+  SLodEdge *pSVar3;
   int iVar4;
-  float fVar5;
-  int iVar6;
-  CLodMesh *pCVar7;
-  int iVar8;
+  int iVar5;
+  CLodMesh *pCVar6;
+  int corner_idx;
   BADSPACEBASE *in_ESP;
   int unaff_ESI;
-  char *pcVar9;
-  int in_stack_00000008;
-  int in_stack_0000000c;
-  float fStack_68;
-  float fStack_64;
+  char *pcVar7;
+  SLodTriangle *tri_ptr;
+  float *out_offset;
+  undefined1 local_6c [12];
   float local_60;
   float local_5c;
   float local_58;
+  float fStack_54;
   SLodTriangle *local_50;
   SLodEdge *local_4c;
   int local_48;
-  int local_44;
+  float local_44;
   SLodTriangle *local_40;
-  char *local_3c;
+  CVector3f *local_3c;
   char *local_38;
   int local_34;
   SLodTriangle *local_30;
   SLodEdge *local_2c;
   int local_28;
+  int *local_24;
   int local_20;
   int local_1c;
+  int local_18;
   char *pcStack_14;
   
-  local_4c = this_ptr->edges_ptr + in_stack_00000008;
-  if (in_stack_0000000c == 0) {
-    if (*(int *)local_4c->field4_0x18 < 2) {
-      local_4c->field4_0x18[0] = '\0';
-      local_4c->field4_0x18[1] = '\0';
-      local_4c->field4_0x18[2] = '\0';
-      local_4c->field4_0x18[3] = '\0';
+  local_4c = this_ptr->edges_ptr + edge_index;
+  if (full_check == 0) {
+    if (local_4c->collapse_viability < 2) {
+      local_4c->collapse_viability = 0;
     }
   }
   else {
-    local_4c->field4_0x18[0] = '\0';
-    local_4c->field4_0x18[1] = '\0';
-    local_4c->field4_0x18[2] = '\0';
-    local_4c->field4_0x18[3] = '\0';
-    local_4c->field4_0x18[4] = '\0';
-    local_4c->field4_0x18[5] = '\0';
-    local_4c->field4_0x18[6] = '\0';
-    local_4c->field4_0x18[7] = '\0';
+    local_4c->collapse_viability = 0;
+    local_4c->collapse_curvature = 0;
   }
   if (local_4c->adjacent_tri_count < 2) {
-    local_4c->field4_0x18[4] = '\x02';
-    local_4c->field4_0x18[5] = '\0';
-    local_4c->field4_0x18[6] = '\0';
-    local_4c->field4_0x18[7] = '\0';
+    local_4c->collapse_curvature = 2;
     return;
   }
-  if (*(int *)local_4c->field4_0x18 < 2) {
+  if (local_4c->collapse_viability < 2) {
     pSVar1 = this_ptr->triangle_data;
     local_40 = pSVar1 + local_4c->adjacent_tri_indices[0];
-    if ((DAT_02f33330 == 0) && (local_48 = 1, pSVar2 = local_4c, 1 < local_4c->adjacent_tri_count))
+    if ((DAT_02f33330 == 0) && (local_48 = 1, pSVar3 = local_4c, 1 < local_4c->adjacent_tri_count))
     {
       do {
-        iVar3 = 0;
-        pCVar7 = this_ptr;
+        iVar4 = 0;
+        pCVar6 = this_ptr;
         if (0 < this_ptr->field6_0x18) {
           do {
-            if ((*(int *)pCVar7->field9_0x24 != 0) &&
-               (*(int *)(local_40->field0_0x0 + iVar3 * 4) !=
-                *(int *)(pSVar1[pSVar2->adjacent_tri_indices[1]].field0_0x0 + iVar3 * 4))) {
-              local_4c->field4_0x18[0] = '\x01';
-              local_4c->field4_0x18[1] = '\0';
-              local_4c->field4_0x18[2] = '\0';
-              local_4c->field4_0x18[3] = '\0';
+            if ((*(int *)pCVar6->field9_0x24 != 0) &&
+               (*(int *)(local_40->field0_0x0 + iVar4 * 4) !=
+                *(int *)(pSVar1[pSVar3->adjacent_tri_indices[1]].field0_0x0 + iVar4 * 4))) {
+              local_4c->collapse_viability = 1;
               return;
             }
-            iVar3 = iVar3 + 1;
-            pCVar7 = (CLodMesh *)&pCVar7->vertex_data;
-          } while (iVar3 < this_ptr->field6_0x18);
+            iVar4 = iVar4 + 1;
+            pCVar6 = (CLodMesh *)&pCVar6->vertex_data;
+          } while (iVar4 < this_ptr->field6_0x18);
         }
         local_48 = local_48 + 1;
-        pSVar2 = (SLodEdge *)&pSVar2->vertex_idx_2;
+        pSVar3 = (SLodEdge *)&pSVar3->vertex_idx_2;
         local_50 = pSVar1;
       } while (local_48 < local_4c->adjacent_tri_count);
     }
-    if ((in_stack_0000000c != 0) &&
-       (local_44 = 0, local_2c = local_4c, 0 < local_4c->adjacent_tri_count)) {
+    if ((full_check != 0) && (local_44 = 0.0, local_2c = local_4c, 0 < local_4c->adjacent_tri_count)
+       ) {
       do {
         local_28 = local_4c->adjacent_tri_indices[0];
         local_30 = this_ptr->triangle_data + local_28;
-        local_34 = local_44 + 1;
+        local_34 = (int)local_44 + 1;
         if (local_34 < local_2c->adjacent_tri_count) {
-          local_3c = local_30->field9_0x44;
-          local_38 = local_2c->field2_0x8 + local_44 * 4 + -4;
+          local_3c = &local_30->normal;
+          local_38 = local_2c->field2_0x8 + (int)local_44 * 4 + -4;
           do {
-            iVar3 = *(int *)(local_38 + 0x28);
-            pSVar1 = this_ptr->triangle_data;
-            fVar5 = *(float *)(local_3c + 8) * *(float *)(pSVar1[iVar3].field9_0x44 + 8) +
-                    *(float *)local_3c * *(float *)pSVar1[iVar3].field9_0x44 +
-                    *(float *)(local_3c + 4) * *(float *)(pSVar1[iVar3].field9_0x44 + 4);
-            if (*(int *)(local_2c->field4_0x18 + 4) < 2) {
-              if (fVar5 <= (float)DOUBLE_00637525) {
-                local_2c->field4_0x18[4] = '\x01';
-                local_2c->field4_0x18[5] = '\0';
-                local_2c->field4_0x18[6] = '\0';
-                local_2c->field4_0x18[7] = '\0';
+            pSVar1 = local_30;
+            local_1c = *(int *)(local_38 + 0x28);
+            tri_ptr = this_ptr->triangle_data + local_1c;
+            fVar2 = local_3c->z * (tri_ptr->normal).z +
+                    local_3c->x * (tri_ptr->normal).x + local_3c->y * (tri_ptr->normal).y;
+            if (local_2c->collapse_curvature < 2) {
+              if (fVar2 <= (float)DOUBLE_00637525) {
+                local_2c->collapse_curvature = 1;
               }
-              if (fVar5 <= (float)DOUBLE_0063752d) {
-                local_2c->field4_0x18[4] = '\x02';
-                local_2c->field4_0x18[5] = '\0';
-                local_2c->field4_0x18[6] = '\0';
-                local_2c->field4_0x18[7] = '\0';
+              if (fVar2 <= (float)DOUBLE_0063752d) {
+                local_2c->collapse_curvature = 2;
               }
             }
             if (((DAT_02f33330 == 0) && (*(int *)this_ptr->field9_0x24 != 0)) &&
-               (*(int *)local_2c->field4_0x18 < 2)) {
-              local_1c = iVar3;
-              pcStack_14 = (char *)shape_meshlod_cpp_FUN_00515e90();
-              iVar4 = shape_meshlod_cpp_FUN_00515e90();
-              fVar5 = (float)shape_meshlod_cpp_FUN_00515e90();
-              iVar8 = 0;
-              iVar6 = shape_meshlod_cpp_FUN_00515e90();
+               (local_2c->collapse_viability < 2)) {
+              pcStack_14 = (char *)shape_meshlod_cpp_findVertexIndexInTriangle_FUN_00515e90
+                                             (local_30,local_2c->vertex_idx_1);
+              iVar4 = shape_meshlod_cpp_findVertexIndexInTriangle_FUN_00515e90
+                                (pSVar1,*(int *)(local_28 + 4));
+              fStack_54 = (float)shape_meshlod_cpp_findVertexIndexInTriangle_FUN_00515e90
+                                           (tri_ptr,*local_24);
+              corner_idx = 0;
+              iVar5 = shape_meshlod_cpp_findVertexIndexInTriangle_FUN_00515e90
+                                (tri_ptr,*(int *)(local_20 + 4));
               iVar4 = local_20 + iVar4 * 8;
-              pcStack_14 = pSVar1[iVar3].field0_0x0 + iVar6 * 8;
-              iVar6 = unaff_ESI * 8 + local_20;
-              pcVar9 = pSVar1[iVar3].field0_0x0 + (int)local_50 * 8;
+              pcStack_14 = tri_ptr->field0_0x0 + iVar5 * 8;
+              iVar5 = unaff_ESI * 8 + local_20;
+              pcVar7 = tri_ptr->field0_0x0 + (int)local_50 * 8;
               do {
                 if (((float)DOUBLE_00637535 <
-                     ABS(*(float *)(iVar6 + 0x1c) - *(float *)(pcVar9 + 0x1c))) ||
+                     ABS(*(float *)(iVar5 + 0x1c) - *(float *)(pcVar7 + 0x1c))) ||
                    ((float)DOUBLE_00637535 <
-                    ABS(*(float *)(iVar4 + iVar8 * 4 + 0x1c) -
-                        *(float *)(pcStack_14 + iVar8 * 4 + 0x1c)))) {
+                    ABS(*(float *)(iVar4 + corner_idx * 4 + 0x1c) -
+                        *(float *)(pcStack_14 + corner_idx * 4 + 0x1c)))) {
                   *(undefined4 *)(local_1c + 0x18) = 2;
                   break;
                 }
-                shape_meshlod_cpp_FUN_00517530();
-                shape_meshlod_cpp_FUN_00517530();
-                if (fVar5 * local_60 + local_5c * fStack_68 + local_58 * fStack_64 <=
-                    SQRT(local_60 * local_60 + fStack_68 * fStack_68 + fStack_64 * fStack_64) *
-                    SQRT(fVar5 * fVar5 + local_5c * local_5c + local_58 * local_58) *
-                    (float)&local_44 * (float)DOUBLE_0063751d) {
+                shape_meshlod_cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530
+                          (this_ptr,local_18,corner_idx,(CVector3f *)(local_6c + 8),
+                           (float *)&local_4c);
+                out_offset = &local_44;
+                shape_meshlod_cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530
+                          (this_ptr,unaff_ESI,corner_idx,(CVector3f *)local_6c,out_offset);
+                if (fStack_54 * local_60 +
+                    local_5c * (float)local_6c._4_4_ + local_58 * (float)local_6c._8_4_ <=
+                    SQRT(local_60 * local_60 +
+                         (float)local_6c._4_4_ * (float)local_6c._4_4_ +
+                         (float)local_6c._8_4_ * (float)local_6c._8_4_) *
+                    SQRT(fStack_54 * fStack_54 + local_5c * local_5c + local_58 * local_58) *
+                    (float)out_offset * (float)DOUBLE_0063751d) {
                   *(int *)(pcStack_14 + 0x18) = 2;
                   break;
                 }
-                iVar6 = iVar6 + 4;
-                iVar8 = iVar8 + 1;
-                pcVar9 = pcVar9 + 4;
-              } while (iVar8 < 2);
+                iVar5 = iVar5 + 4;
+                corner_idx = corner_idx + 1;
+                pcVar7 = pcVar7 + 4;
+              } while (corner_idx < 2);
             }
             local_38 = local_38 + 4;
             local_34 = local_34 + 1;
           } while (local_34 < local_2c->adjacent_tri_count);
         }
         local_4c = (SLodEdge *)&local_4c->vertex_idx_2;
-        local_44 = local_44 + 1;
-      } while (local_44 < local_2c->adjacent_tri_count);
+        local_44 = (float)((int)local_44 + 1);
+      } while ((int)local_44 < local_2c->adjacent_tri_count);
     }
   }
   return;
@@ -188,7 +180,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00516000(CLodMesh *this_ptr)
 
 // Assembly code:
 // 00516000: PUSH EBX
-//   Label: shape_meshlod.cpp_CLodMesh_FUN_00516000
+//   Label: shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
 // 00516001: PUSH ESI
 // 00516002: PUSH EDI
 // 00516003: PUSH EBP
@@ -441,7 +433,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00516000(CLodMesh *this_ptr)
 // 0051620f: MOV EDX,dword ptr [EBP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 00516212: PUSH EDX
-// 00516213: CALL shape_meshlod.cpp_FUN_00517530
+// 00516213: CALL shape_meshlod.cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530
 //   XREF to: 00517530 (UNCONDITIONAL_CALL)
 // 00516218: ADD ESP,0x14
 // 0051621b: LEA EDX,[ESP + 0x30]
@@ -457,7 +449,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00516000(CLodMesh *this_ptr)
 // 0051622b: MOV EAX,dword ptr [EBP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 0051622e: PUSH EAX
-// 0051622f: CALL shape_meshlod.cpp_FUN_00517530
+// 0051622f: CALL shape_meshlod.cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530
 //   XREF to: 00517530 (UNCONDITIONAL_CALL)
 // 00516234: ADD ESP,0x14
 // 00516237: FLD float ptr [ESP + 0x18]
@@ -609,7 +601,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00516000(CLodMesh *this_ptr)
 // 00516378: MOV EDI,dword ptr [ESP + 0x5c]
 //   XREF to: Stack[-0x30] (READ)
 // 0051637c: PUSH EDI
-// 0051637d: CALL shape_meshlod.cpp_FUN_00515e90
+// 0051637d: CALL shape_meshlod.cpp_findVertexIndexInTriangle_FUN_00515e90
 //   XREF to: 00515e90 (UNCONDITIONAL_CALL)
 // 00516382: MOV dword ptr [ESP + 0x78],EAX
 //   XREF to: Stack[-0x18] (WRITE)
@@ -619,7 +611,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00516000(CLodMesh *this_ptr)
 // 0051638d: MOV EDX,dword ptr [EAX + 0x4]
 // 00516390: PUSH EDX
 // 00516391: PUSH EDI
-// 00516392: CALL shape_meshlod.cpp_FUN_00515e90
+// 00516392: CALL shape_meshlod.cpp_findVertexIndexInTriangle_FUN_00515e90
 //   XREF to: 00515e90 (UNCONDITIONAL_CALL)
 // 00516397: ADD ESP,0x8
 // 0051639a: MOV EDI,EAX
@@ -628,7 +620,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00516000(CLodMesh *this_ptr)
 // 005163a0: MOV EBX,dword ptr [EAX]
 // 005163a2: PUSH EBX
 // 005163a3: PUSH ESI
-// 005163a4: CALL shape_meshlod.cpp_FUN_00515e90
+// 005163a4: CALL shape_meshlod.cpp_findVertexIndexInTriangle_FUN_00515e90
 //   XREF to: 00515e90 (UNCONDITIONAL_CALL)
 // 005163a9: MOV dword ptr [ESP + 0x30],EAX
 //   XREF to: Stack[-0x60] (WRITE)
@@ -640,7 +632,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00516000(CLodMesh *this_ptr)
 // 005163b8: PUSH ESI
 // 005163b9: SHL EDI,0x3
 // 005163bc: XOR EBX,EBX
-// 005163be: CALL shape_meshlod.cpp_FUN_00515e90
+// 005163be: CALL shape_meshlod.cpp_findVertexIndexInTriangle_FUN_00515e90
 //   XREF to: 00515e90 (UNCONDITIONAL_CALL)
 // 005163c3: ADD ESP,0x8
 // 005163c6: SHL EAX,0x3

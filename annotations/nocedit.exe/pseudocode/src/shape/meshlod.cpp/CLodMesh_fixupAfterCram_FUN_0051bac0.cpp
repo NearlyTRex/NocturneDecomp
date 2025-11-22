@@ -22,7 +22,7 @@
 //   shape_design.c_getAtlasMapIndex_FUN_0046e030
 //   shape_design.c_getLastTextureProcessIndex_FUN_0046a860
 //   shape_design.c_getTextureName_FUN_0046e060
-//   shape_meshlod.cpp_ReallocSomething_FUN_00518790
+//   shape_meshlod.cpp_CLodMesh_FUN_00518790
 
 #include "nocturne.h"
 
@@ -109,7 +109,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(CLodMesh *th
     if (iVar1 <= iVar2) break;
     pcStack_30 = shape_design_c_getTextureName_FUN_0046e060(iVar2);
     iVar2 = iVar2 + 1;
-    shape_meshlod_cpp_ReallocSomething_FUN_00518790();
+    shape_meshlod_cpp_CLodMesh_FUN_00518790(this_ptr);
   }
   engine_texture_cpp_clearTextureCache_FUN_005dd8e0();
   return;
@@ -358,7 +358,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(CLodMesh *th
 // 0051bcb0: PUSH EAX
 // 0051bcb1: PUSH ESI
 // 0051bcb2: INC EBX
-// 0051bcb3: CALL shape_meshlod.cpp_ReallocSomething_FUN_00518790
+// 0051bcb3: CALL shape_meshlod.cpp_CLodMesh_FUN_00518790
 //   XREF to: 00518790 (UNCONDITIONAL_CALL)
 // 0051bcb8: ADD ESP,0x8
 // 0051bcbb: JMP 0x0051bb22

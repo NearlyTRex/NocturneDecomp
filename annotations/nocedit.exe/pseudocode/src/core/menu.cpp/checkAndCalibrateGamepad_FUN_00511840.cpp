@@ -1,8 +1,8 @@
-// Name: core_menu.cpp_FUN_00511840
+// Name: core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840
 // Address: 00511840
 // Address Range: [[00511840, 00511860]]
-// Convention: unknown
-// Signature: undefined core_menu.cpp_FUN_00511840()
+// Convention: __cdecl
+// Signature: int core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840(void)
 // Globals:
 //   CGame* g_CGamePtr = 02d81a9c
 //   CGame g_CGameInstance
@@ -11,7 +11,7 @@
 
 #include "nocturne.h"
 
-undefined4 core_menu_cpp_FUN_00511840(void)
+int __cdecl core_menu_cpp_checkAndCalibrateGamepad_FUN_00511840(void)
 
 {
   CGame *pCVar1;
@@ -109,7 +109,7 @@ LAB_005105cd:
 
 // Assembly code:
 // 00511840: MOV EAX,[0x0067b654]
-//   Label: core_menu.cpp_FUN_00511840
+//   Label: core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840
 //   XREF to: 0067b654 (READ)
 //   XREF to: 02d81a9c (PARAM)
 // 00511845: CMP dword ptr [EAX + 0xbc],0x2

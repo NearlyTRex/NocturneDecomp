@@ -1,8 +1,8 @@
-// Name: shape_meshlod.cpp_CLodMesh_FUN_00515ec0
+// Name: shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
 // Address: 00515ec0
 // Address Range: [[00515ec0, 00515ffe]]
 // Convention: __cdecl
-// Signature: int shape_meshlod.cpp_CLodMesh_FUN_00515ec0(CLodMesh * this_ptr)
+// Signature: int shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0(CLodMesh * this_ptr, int vertex_idx_1, int vertex_idx_2, int create_if_missing)
 // Cross-references:
 //   shape_meshlod.cpp_CLodMesh_FUN_00517630 (00517630) at 00517655 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_FUN_00518490 (00518490) at 005184ac [UNCONDITIONAL_CALL]
@@ -20,34 +20,33 @@
 
 #include "nocturne.h"
 
-int __cdecl shape_meshlod_cpp_CLodMesh_FUN_00515ec0(CLodMesh *this_ptr)
+int __cdecl
+shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
+          (CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2,int create_if_missing)
 
 {
   SLodEdge *pSVar1;
   int iVar2;
   int iVar3;
-  int in_stack_00000008;
-  int in_stack_0000000c;
-  int in_stack_00000010;
   
-  iVar3 = in_stack_00000008;
-  if (in_stack_0000000c < in_stack_00000008) {
-    iVar3 = in_stack_0000000c;
-    in_stack_0000000c = in_stack_00000008;
+  iVar3 = vertex_idx_1;
+  if (vertex_idx_2 < vertex_idx_1) {
+    iVar3 = vertex_idx_2;
+    vertex_idx_2 = vertex_idx_1;
   }
   iVar2 = 0;
   if (0 < this_ptr->edge_count) {
     pSVar1 = this_ptr->edges_ptr;
     do {
       if (((pSVar1->deletion_flag == 0) && (iVar3 == pSVar1->vertex_idx_1)) &&
-         (in_stack_0000000c == pSVar1->vertex_idx_2)) {
+         (vertex_idx_2 == pSVar1->vertex_idx_2)) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
       pSVar1 = pSVar1 + 1;
     } while (iVar2 < this_ptr->edge_count);
   }
-  if (in_stack_00000010 == 0) {
+  if (create_if_missing == 0) {
     return -1;
   }
   pSVar1 = (SLodEdge *)
@@ -61,13 +60,13 @@ int __cdecl shape_meshlod_cpp_CLodMesh_FUN_00515ec0(CLodMesh *this_ptr)
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
   this_ptr->edges_ptr[this_ptr->edge_count].vertex_idx_1 = iVar3;
-  this_ptr->edges_ptr[this_ptr->edge_count].vertex_idx_2 = in_stack_0000000c;
+  this_ptr->edges_ptr[this_ptr->edge_count].vertex_idx_2 = vertex_idx_2;
   this_ptr->edges_ptr[this_ptr->edge_count].deletion_flag = 0;
   this_ptr->edges_ptr[this_ptr->edge_count].adjacent_tri_count = 0;
   shape_meshlod_cpp_addAdjacentEdgeToVertex_FUN_00515d90
             (this_ptr->vertex_data + iVar3,this_ptr->edge_count);
   shape_meshlod_cpp_addAdjacentEdgeToVertex_FUN_00515d90
-            (this_ptr->vertex_data + in_stack_0000000c,this_ptr->edge_count);
+            (this_ptr->vertex_data + vertex_idx_2,this_ptr->edge_count);
   iVar3 = this_ptr->edge_count;
   this_ptr->edge_count = iVar3 + 1;
   return iVar3;
@@ -76,7 +75,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_FUN_00515ec0(CLodMesh *this_ptr)
 
 // Assembly code:
 // 00515ec0: PUSH EBX
-//   Label: shape_meshlod.cpp_CLodMesh_FUN_00515ec0
+//   Label: shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
 // 00515ec1: PUSH ESI
 // 00515ec2: PUSH EDI
 // 00515ec3: PUSH EBP

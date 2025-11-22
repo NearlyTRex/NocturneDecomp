@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int sound_sndmain.cpp_getAudioBitDepth_FUN_005ab250(void)
 // Cross-references:
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512344 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 00512344 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0 (005adba0) at 005add06 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setAudioChannelCount_FUN_005ab2a0 (005ab2a0) at 005ab2ab [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_setAudioSampleRate_FUN_005ab2c0 (005ab2c0) at 005ab2cb [UNCONDITIONAL_CALL]

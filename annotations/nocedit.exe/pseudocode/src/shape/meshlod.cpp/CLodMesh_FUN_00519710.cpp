@@ -14,7 +14,7 @@
 //   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 //   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
 //   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530
-//   shape_meshlod.cpp_CLodMesh_FUN_00516000
+//   shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
 //   shape_meshlod.cpp_CLodMesh_FUN_00518910
 
 #include "nocturne.h"
@@ -28,7 +28,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00519710(CLodMesh *this_ptr)
   iVar2 = 0;
   if (0 < this_ptr->edge_count) {
     do {
-      shape_meshlod_cpp_CLodMesh_FUN_00516000(this_ptr);
+      shape_meshlod_cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000(this_ptr,iVar2,1);
       iVar2 = iVar2 + 1;
     } while (iVar2 < this_ptr->edge_count);
   }
@@ -69,7 +69,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00519710(CLodMesh *this_ptr)
 //   Label: LAB_00519728
 // 0051972a: PUSH ESI
 // 0051972b: PUSH EBX
-// 0051972c: CALL shape_meshlod.cpp_CLodMesh_FUN_00516000
+// 0051972c: CALL shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
 //   XREF to: 00516000 (UNCONDITIONAL_CALL)
 // 00519731: INC ESI
 // 00519732: MOV ECX,dword ptr [EBX + 0x44]

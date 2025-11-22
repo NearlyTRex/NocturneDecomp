@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: void core_moon.cpp_CMoon_init_FUN_00529ae0(CMoon * this_ptr)
 // Cross-references:
-//   core_menu.cpp_ShowOptionsScreen_FUN_00512d30 (00512d30) at 00512ea5 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 005131c6 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_showOptionsScreen_FUN_00512d30 (00512d30) at 00512ea5 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_taylor_head_kfm_00639f11
 //   TerminatedCString s_moon_kfm_00639f21

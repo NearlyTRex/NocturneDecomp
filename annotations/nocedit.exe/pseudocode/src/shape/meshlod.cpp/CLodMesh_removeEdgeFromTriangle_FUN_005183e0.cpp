@@ -1,52 +1,59 @@
-// Name: shape_meshlod.cpp_FUN_005183e0
+// Name: shape_meshlod.cpp_CLodMesh_removeEdgeFromTriangle_FUN_005183e0
 // Address: 005183e0
 // Address Range: [[005183e0, 00518481]]
-// Convention: unknown
-// Signature: undefined shape_meshlod.cpp_FUN_005183e0()
+// Convention: __cdecl
+// Signature: void shape_meshlod.cpp_CLodMesh_removeEdgeFromTriangle_FUN_005183e0(CLodMesh * this_ptr, int tri_index, int edge_index)
 // Cross-references:
 //   shape_meshlod.cpp_CLodMesh_FUN_00517630 (00517630) at 00517acf [UNCONDITIONAL_CALL]
 // Function calls:
-//   shape_meshlod.cpp_FUN_00515d10
-//   shape_meshlod.cpp_FUN_00515e00
+//   shape_meshlod.cpp_removeEdgeFromVertex_FUN_00515e00
+//   shape_meshlod.cpp_removeTriangleFromEdge_FUN_00515d10
 
 #include "nocturne.h"
 
-void shape_meshlod_cpp_FUN_005183e0(void)
+void __cdecl
+shape_meshlod_cpp_CLodMesh_removeEdgeFromTriangle_FUN_005183e0
+          (CLodMesh *this_ptr,int tri_index,int edge_index)
 
 {
-  int iVar1;
+  char *pcVar1;
   int iVar2;
-  int iVar3;
+  SLodTriangle *pSVar3;
   int iVar4;
-  int in_stack_00000004;
-  int in_stack_00000008;
-  int in_stack_0000000c;
+  SLodEdge *edge_ptr;
+  SLodTriangle *pSVar5;
   
-  iVar4 = *(int *)(in_stack_00000004 + 0xc) + in_stack_00000008 * 0x8c;
-  iVar3 = *(int *)(in_stack_00000004 + 0x48) + in_stack_0000000c * 0xf0;
-  shape_meshlod_cpp_FUN_00515d10();
-  if (*(int *)(iVar3 + 0x24) == 0) {
-    *(undefined4 *)(iVar3 + 0x14) = 1;
-    shape_meshlod_cpp_FUN_00515e00();
-    shape_meshlod_cpp_FUN_00515e00();
+  pSVar5 = this_ptr->triangle_data + tri_index;
+  edge_ptr = this_ptr->edges_ptr + edge_index;
+  shape_meshlod_cpp_removeTriangleFromEdge_FUN_00515d10(edge_ptr,tri_index);
+  if (edge_ptr->adjacent_tri_count == 0) {
+    edge_ptr->deletion_flag = 1;
+    shape_meshlod_cpp_removeEdgeFromVertex_FUN_00515e00
+              (this_ptr->vertex_data + edge_ptr->vertex_idx_1,edge_index);
+    shape_meshlod_cpp_removeEdgeFromVertex_FUN_00515e00
+              (this_ptr->vertex_data + edge_ptr->vertex_idx_2,edge_index);
   }
-  iVar2 = 0;
-  iVar3 = *(int *)(iVar4 + 0x34);
-  iVar1 = iVar4;
-  while (in_stack_0000000c != iVar3) {
-    iVar2 = iVar2 + 1;
-    if (2 < iVar2) break;
-    iVar3 = *(int *)(iVar1 + 0x38);
-    iVar1 = iVar1 + 4;
+  iVar4 = 0;
+  iVar2 = pSVar5->edge_idx_0;
+  pSVar3 = pSVar5;
+  while (edge_index != iVar2) {
+    iVar4 = iVar4 + 1;
+    if (2 < iVar4) break;
+    iVar2 = pSVar3->edge_idx_1;
+    pSVar3 = (SLodTriangle *)(pSVar3->field0_0x0 + 4);
   }
-  *(undefined4 *)(iVar4 + 0x34 + iVar2 * 4) = 0xffffffff;
+  pcVar1 = pSVar5->field4_0x1c + iVar4 * 4 + 0x18;
+  pcVar1[0] = -1;
+  pcVar1[1] = -1;
+  pcVar1[2] = -1;
+  pcVar1[3] = -1;
   return;
 }
 
 
 // Assembly code:
 // 005183e0: PUSH EBX
-//   Label: shape_meshlod.cpp_FUN_005183e0
+//   Label: shape_meshlod.cpp_CLodMesh_removeEdgeFromTriangle_FUN_005183e0
 // 005183e1: PUSH ESI
 // 005183e2: PUSH EDI
 // 005183e3: PUSH EBP
@@ -72,7 +79,7 @@ void shape_meshlod_cpp_FUN_005183e0(void)
 // 00518415: PUSH ECX
 // 00518416: ADD ESI,EAX
 // 00518418: PUSH ESI
-// 00518419: CALL shape_meshlod.cpp_FUN_00515d10
+// 00518419: CALL shape_meshlod.cpp_removeTriangleFromEdge_FUN_00515d10
 //   XREF to: 00515d10 (UNCONDITIONAL_CALL)
 // 0051841e: MOV EDX,dword ptr [ESI + 0x24]
 // 00518421: ADD ESP,0x8
@@ -109,7 +116,7 @@ void shape_meshlod_cpp_FUN_005183e0(void)
 // 0051845e: PUSH EBX
 // 0051845f: ADD EAX,EDX
 // 00518461: PUSH EAX
-// 00518462: CALL shape_meshlod.cpp_FUN_00515e00
+// 00518462: CALL shape_meshlod.cpp_removeEdgeFromVertex_FUN_00515e00
 //   XREF to: 00515e00 (UNCONDITIONAL_CALL)
 // 00518467: IMUL EAX,dword ptr [ESI + 0x4],0x4c4
 // 0051846e: ADD ESP,0x8
@@ -117,7 +124,7 @@ void shape_meshlod_cpp_FUN_005183e0(void)
 // 00518474: PUSH EBX
 // 00518475: ADD EAX,EDX
 // 00518477: PUSH EAX
-// 00518478: CALL shape_meshlod.cpp_FUN_00515e00
+// 00518478: CALL shape_meshlod.cpp_removeEdgeFromVertex_FUN_00515e00
 //   XREF to: 00515e00 (UNCONDITIONAL_CALL)
 // 0051847d: ADD ESP,0x8
 // 00518480: JMP 0x00518428

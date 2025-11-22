@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70 (004dce70) at 004dcec6 [UNCONDITIONAL_CALL]
 //   core_game.cpp_SettingCursorPos_FUN_004dccc0 (004dccc0) at 004dcd2b [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingMouseSensitivity_FUN_005107c0 (005107c0) at 0051084a [UNCONDITIONAL_CALL]
+//   core_menu.cpp_adjustMouseSensitivity_FUN_005107c0 (005107c0) at 0051084a [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0 (004a5fc0) at 004a61e3 [UNCONDITIONAL_CALL]
 // Globals:
 //   SetCursorPos* SetCursorPos = 00211bb8

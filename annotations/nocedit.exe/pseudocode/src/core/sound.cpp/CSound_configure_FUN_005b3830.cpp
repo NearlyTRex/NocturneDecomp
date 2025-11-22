@@ -4,9 +4,9 @@
 // Convention: __cdecl
 // Signature: void core_sound.cpp_CSound_configure_FUN_005b3830(CSound * this_ptr)
 // Cross-references:
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512aa1 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_ShowOptionsScreen_FUN_00512d30 (00512d30) at 00512ef2 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 00512aa1 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 00513341 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_showOptionsScreen_FUN_00512d30 (00512d30) at 00512ef2 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_splash_music_44_wav_006527ee
 //   TerminatedCString s_splash_music_22_wav_00652802

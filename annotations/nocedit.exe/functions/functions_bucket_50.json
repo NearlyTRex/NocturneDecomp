@@ -50459,9 +50459,10 @@
         "start":"005104d0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_menu.cpp_SetUpGamepadControls_FUN_005104d0",
-    "ret":"undefined1",
+    "name":"core_menu.cpp_calibrateGamepad_FUN_005104d0",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -50514,7 +50515,14 @@
         }
       ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -50527,10 +50535,10 @@
         "start":"00510a50"
       }
     ],
-    "cmt":"Signature: undefined1 core_menu.cpp_MonitorCalibrationPressAnyKeyToContinue(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_menu.cpp_MonitorCalibrationPressAnyKeyToContinue_FUN_00510a50",
-    "ret":"undefined1",
+    "name":"core_menu.cpp_showCalibrationTestPattern_FUN_00510a50",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -50566,9 +50574,24 @@
           "type":"undefined1"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"message_text",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ]
     }
   },
   {
@@ -50580,9 +50603,10 @@
         "start":"00511e50"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_menu.cpp_SettingSoundOptions_FUN_00511e50",
-    "ret":"undefined1",
+    "name":"core_menu.cpp_configureSoundOptions_FUN_00511e50",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -51129,10 +51153,7 @@
           },
           "type":"undefined4"
         }
-      ],
-      "ret_storage":{
-        "invalid":true
-      }
+      ]
     }
   },
   {
@@ -51222,12 +51243,54 @@
         "start":"00515e50"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_00515e50",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_findEdgeInVertex_FUN_00515e50",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"vertex_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SLodVert*"
+        },
+        {
+          "name":"edge_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

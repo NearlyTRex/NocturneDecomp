@@ -1,15 +1,15 @@
-// Name: core_menu.cpp_MonitorCalibrationPressAnyKeyToContinue_FUN_00510a50
+// Name: core_menu.cpp_showCalibrationTestPattern_FUN_00510a50
 // Address: 00510a50
 // Address Range: [[00510a50, 00510b95]]
-// Convention: unknown
-// Signature: undefined core_menu.cpp_MonitorCalibrationPressAnyKeyToContinue_FUN_00510a50()
+// Convention: __cdecl
+// Signature: void core_menu.cpp_showCalibrationTestPattern_FUN_00510a50(char * message_text)
 // Cross-references:
-//   core_menu.cpp_RunCalibrationTest_FUN_00510ba0 (00510ba0) at 00510c07 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_showCalibrationTest_FUN_00510ba0 (00510ba0) at 00510c07 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_Press_any_key_to_continu_00636657
 //   TerminatedCString s_Monitor_calibration_00636674
 //   CBitFont* g_SmallEditorFont
-//   CAlphaBitmap CAlphaBitmap_02f26cbc
+//   CAlphaBitmap g_CalibrationBitmap
 // Function calls:
 //   engine_2d.c_clearInputAndWait_FUN_00403260
 //   engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950
@@ -23,10 +23,7 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_menu.cpp_MonitorCalibrationPressAnyKeyToContinue(undefined4 param_1)
-    */
-
-void core_menu_cpp_MonitorCalibrationPressAnyKeyToContinue_FUN_00510a50(void)
+void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_00510a50(char *message_text)
 
 {
   char cVar1;
@@ -37,16 +34,15 @@ void core_menu_cpp_MonitorCalibrationPressAnyKeyToContinue_FUN_00510a50(void)
   char *pcVar5;
   char *pcVar6;
   byte bVar7;
-  char *in_stack_00000004;
   
   bVar7 = 0;
   pcVar5 = &stack0xfffffef0;
   do {
-    cVar1 = *in_stack_00000004;
+    cVar1 = *message_text;
     *pcVar5 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = in_stack_00000004[1];
-    in_stack_00000004 = in_stack_00000004 + 2;
+    cVar1 = message_text[1];
+    message_text = message_text + 2;
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
@@ -74,7 +70,7 @@ void core_menu_cpp_MonitorCalibrationPressAnyKeyToContinue_FUN_00510a50(void)
   iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_SmallEditorFont,0x58);
   iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_SmallEditorFont,&stack0xfffffef8);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&CAlphaBitmap_02f26cbc,0,0,0xffff);
+  engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&g_CalibrationBitmap,0,0,0xffff);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_SmallEditorFont,&stack0xffffff04,0x140 - iVar3 / 2,iVar4 * -3 + 0x1e0,0xf8,-1);
   pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Monitor calibration");
@@ -90,7 +86,7 @@ void core_menu_cpp_MonitorCalibrationPressAnyKeyToContinue_FUN_00510a50(void)
 
 // Assembly code:
 // 00510a50: PUSH EBX
-//   Label: core_menu.cpp_MonitorCalibrationPressAnyKeyToContinue_FUN_00510a50
+//   Label: core_menu.cpp_showCalibrationTestPattern_FUN_00510a50
 // 00510a51: PUSH ESI
 // 00510a52: PUSH EDI
 // 00510a53: PUSH EBP

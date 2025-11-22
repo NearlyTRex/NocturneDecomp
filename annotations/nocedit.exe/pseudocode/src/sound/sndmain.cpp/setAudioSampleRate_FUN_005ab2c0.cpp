@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_setAudioSampleRate_FUN_005ab2c0(int sample_rate)
 // Cross-references:
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512b6c [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 00512b6c [UNCONDITIONAL_CALL]
 // Function calls:
 //   sound_sndmain.cpp_getAudioBitDepth_FUN_005ab250
 //   sound_sndmain.cpp_getAudioChannelCount_FUN_005ab270

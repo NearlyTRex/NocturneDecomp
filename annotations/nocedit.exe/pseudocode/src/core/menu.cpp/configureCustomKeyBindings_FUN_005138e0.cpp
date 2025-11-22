@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: void core_menu.cpp_configureCustomKeyBindings_FUN_005138e0(void)
 // Cross-references:
-//   core_menu.cpp_CustomKeySettings_FUN_00511890 (00511890) at 00511cec [UNCONDITIONAL_CALL]
-//   core_menu.cpp_ShowOptionsScreen_FUN_00512d30 (00512d30) at 00512ed6 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureCustomKeys_FUN_00511890 (00511890) at 00511cec [UNCONDITIONAL_CALL]
+//   core_menu.cpp_showOptionsScreen_FUN_00512d30 (00512d30) at 00512ed6 [UNCONDITIONAL_CALL]
 // Globals:
 //   void* switchdataD_005138c0 = 00514869
 //   TerminatedCString s_core_menu_cpp_00636e40
@@ -252,9 +252,9 @@
 //   core_game.cpp_CGame_resetKeyState_FUN_004dbe60
 //   core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
+//   core_menu.cpp_calibrateGamepad_FUN_005104d0
 //   core_menu.cpp_getKeyDisplayName_FUN_005134e0
 //   core_menu.cpp_isKeyCodeValidForMode_FUN_00513720
-//   core_menu.cpp_SetUpGamepadControls_FUN_005104d0
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   engine_2d.c_clearInputAndWait_FUN_00403260
 //   engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0
@@ -326,7 +326,7 @@ void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void)
   
   bVar35 = 0;
   if (((g_CGamePtr->game_control == 2) && (g_CGamePtr->x_center == 0)) &&
-     (iVar30 = core_menu_cpp_SetUpGamepadControls_FUN_005104d0(), iVar30 == 0)) {
+     (iVar30 = core_menu_cpp_calibrateGamepad_FUN_005104d0(), iVar30 == 0)) {
     return;
   }
 LAB_0051390e:
@@ -3004,7 +3004,7 @@ LAB_00514a9c:
 // 005147b4: ADD ESP,0x8
 // 005147b7: JMP 0x0051390e
 //   XREF to: 0051390e (UNCONDITIONAL_JUMP)
-// 005147bc: CALL core_menu.cpp_SetUpGamepadControls_FUN_005104d0
+// 005147bc: CALL core_menu.cpp_calibrateGamepad_FUN_005104d0
 //   Label: LAB_005147bc
 //   XREF to: 005104d0 (UNCONDITIONAL_CALL)
 // 005147c1: TEST EAX,EAX

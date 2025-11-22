@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEditorTools * this_ptr)
 // Cross-references:
-//   core_menu.cpp_SettingMouseSensitivity_FUN_005107c0 (005107c0) at 0051085f [UNCONDITIONAL_CALL]
+//   core_menu.cpp_adjustMouseSensitivity_FUN_005107c0 (005107c0) at 0051085f [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870 (0049e870) at 0049e8cc [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 (0049fb70) at 0049fc5a [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 (004a0530) at 004a05e1 [UNCONDITIONAL_CALL]

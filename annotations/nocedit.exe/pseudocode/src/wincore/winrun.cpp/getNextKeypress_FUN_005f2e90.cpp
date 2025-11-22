@@ -11,7 +11,7 @@
 //   core_main.c_finalizeGameSystems_FUN_00508570 (00508570) at 00508786 [UNCONDITIONAL_CALL]
 //   core_main.c_showDeveloperToolsMenu_FUN_005073a0 (005073a0) at 005074f2 [UNCONDITIONAL_CALL]
 //   core_main.c_showPromoScreen_FUN_00508340 (00508340) at 00508514 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_MonitorCalibrationPressAnyKeyToContinue_FUN_00510a50 (00510a50) at 00510b86 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_showCalibrationTestPattern_FUN_00510a50 (00510a50) at 00510b86 [UNCONDITIONAL_CALL]
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 005132ac [UNCONDITIONAL_CALL]
 //   core_mission.cpp_CDemonMission_run_FUN_00524420 (00524420) at 005245ed [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 (005381e0) at 00538786 [UNCONDITIONAL_CALL]

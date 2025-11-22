@@ -32,7 +32,7 @@ float * shape_meshlod_cpp_FUN_0051a300(void)
   if (0 < in_stack_00000004->tri_count) {
     do {
       dVar3 = (double)CONCAT44(local_38,uStack_3c);
-      if (*(int *)(in_stack_00000004->triangle_data->field9_0x44 + iVar4 + -4) == 0) {
+      if (*(int *)(in_stack_00000004->triangle_data->field10_0x50 + iVar4 + -0x10) == 0) {
         shape_meshlod_cpp_FUN_0051a6b0(in_stack_00000004);
         fVar2 = SQRT((in_stack_0000000c[2] - fStack_24) * (in_stack_0000000c[2] - fStack_24) +
                      (in_stack_0000000c[1] - local_28) * (in_stack_0000000c[1] - local_28) +

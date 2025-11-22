@@ -1,12 +1,12 @@
-// Name: core_menu.cpp_SetUpGamepadControls_FUN_005104d0
+// Name: core_menu.cpp_calibrateGamepad_FUN_005104d0
 // Address: 005104d0
 // Address Range: [[005104d0, 005107b6]]
-// Convention: unknown
-// Signature: undefined core_menu.cpp_SetUpGamepadControls_FUN_005104d0()
+// Convention: __cdecl
+// Signature: int core_menu.cpp_calibrateGamepad_FUN_005104d0(void)
 // Cross-references:
-//   core_menu.cpp_CustomKeySettings_FUN_00511890 (00511890) at 00511de2 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_FUN_00511840 (00511840) at 00511855 [CONDITIONAL_JUMP]
+//   core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840 (00511840) at 00511855 [CONDITIONAL_JUMP]
 //   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (005138e0) at 005147bc [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureCustomKeys_FUN_00511890 (00511890) at 00511de2 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_d_d_x_006365f8
 //   TerminatedCString s_Center_gamepad_press_ENT_00636601
@@ -40,7 +40,7 @@
 
 #include "nocturne.h"
 
-undefined4 core_menu_cpp_SetUpGamepadControls_FUN_005104d0(void)
+int __cdecl core_menu_cpp_calibrateGamepad_FUN_005104d0(void)
 
 {
   CGame *pCVar1;
@@ -135,7 +135,7 @@ LAB_005105cd:
 
 // Assembly code:
 // 005104d0: PUSH EBX
-//   Label: core_menu.cpp_SetUpGamepadControls_FUN_005104d0
+//   Label: core_menu.cpp_calibrateGamepad_FUN_005104d0
 // 005104d1: PUSH ESI
 // 005104d2: PUSH EDI
 // 005104d3: PUSH EBP

@@ -5,7 +5,7 @@
 // Signature: int sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0(int enable)
 // Cross-references:
 //   core_game.cpp_SaveRelated_FUN_004dcee0 (004dcee0) at 004dd030 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 005126de [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 005126de [UNCONDITIONAL_CALL]
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 0051322d [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005ac131 [UNCONDITIONAL_CALL]
 // Globals:

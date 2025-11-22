@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_selectSoundDevice_FUN_005ab4c0(int device_id)
 // Cross-references:
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512cab [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 00512cab [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_initializeSoundDevice_FUN_005ab5b0 (005ab5b0) at 005ab5c3 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005abffc [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00 (005aae00) at 005aae94 [UNCONDITIONAL_CALL]

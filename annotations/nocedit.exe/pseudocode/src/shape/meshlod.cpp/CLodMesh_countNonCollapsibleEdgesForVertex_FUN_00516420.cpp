@@ -1,40 +1,40 @@
-// Name: shape_meshlod.cpp_FUN_00516420
+// Name: shape_meshlod.cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420
 // Address: 00516420
 // Address Range: [[00516420, 00516471]]
-// Convention: unknown
-// Signature: undefined shape_meshlod.cpp_FUN_00516420()
+// Convention: __cdecl
+// Signature: int shape_meshlod.cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420(CLodMesh * this_ptr, int vertex_index)
 // Cross-references:
 //   shape_meshlod.cpp_CLodMesh_FUN_00518490 (00518490) at 00518686 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
-int shape_meshlod_cpp_FUN_00516420(void)
+int __cdecl
+shape_meshlod_cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420
+          (CLodMesh *this_ptr,int vertex_index)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
-  int iVar4;
-  int in_stack_00000004;
-  int in_stack_00000008;
   
-  iVar4 = 0;
   iVar3 = 0;
-  for (iVar1 = 0; iVar2 = *(int *)(in_stack_00000004 + 4) + in_stack_00000008 * 0x4c4,
-      iVar1 < *(int *)(iVar2 + 0x3f8); iVar1 = iVar1 + 1) {
-    if (*(int *)(*(int *)(iVar2 + 0x3fc + iVar3) * 0xf0 + 0x18 + *(int *)(in_stack_00000004 + 0x48))
-        != 0) {
-      iVar4 = iVar4 + 1;
+  iVar2 = 0;
+  for (iVar1 = 0; iVar1 < this_ptr->vertex_data[vertex_index].adjacent_edge_count; iVar1 = iVar1 + 1
+      ) {
+    if (this_ptr->edges_ptr
+        [*(int *)((int)this_ptr->vertex_data[vertex_index].adjacent_edge_indices + iVar2)].
+        collapse_viability != 0) {
+      iVar3 = iVar3 + 1;
     }
-    iVar3 = iVar3 + 4;
+    iVar2 = iVar2 + 4;
   }
-  return iVar4;
+  return iVar3;
 }
 
 
 // Assembly code:
 // 00516420: PUSH EBX
-//   Label: shape_meshlod.cpp_FUN_00516420
+//   Label: shape_meshlod.cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420
 // 00516421: PUSH ESI
 // 00516422: PUSH EDI
 // 00516423: SUB ESP,0x4

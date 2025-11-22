@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20(int channel_index, int enable_state)
 // Cross-references:
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512841 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 00512841 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_init_FUN_005b2dd0 (005b2dd0) at 005b2e76 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_process_FUN_005b2fd0 (005b2fd0) at 005b3231 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_syncChannel3WithChannel0_FUN_005b2d70 (005b2d70) at 005b2d85 [UNCONDITIONAL_CALL]

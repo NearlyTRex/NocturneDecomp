@@ -47,7 +47,7 @@
 //   core_stranger.cpp_CStranger_FUN_005c3960 (005c3960) at 005c3cac [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c51c0 (005c51c0) at 005c5216 [UNCONDITIONAL_CALL]
 //   core_wateract.cpp_FUN_005eafa0 (005eafa0) at 005eafe7 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_005151e0 (005151e0) at 005157a9 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0 (005151e0) at 005157a9 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

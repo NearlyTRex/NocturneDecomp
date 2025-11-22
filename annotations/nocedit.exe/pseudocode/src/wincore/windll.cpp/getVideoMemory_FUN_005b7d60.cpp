@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int wincore_windll.cpp_getVideoMemory_FUN_005b7d60(int * total_memory, int * available_memory, int * memory_type)
 // Cross-references:
-//   core_menu.cpp_GraphicsOptions_FUN_00510c80 (00510c80) at 00510d24 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureGraphicsOptions_FUN_00510c80 (00510c80) at 00510d24 [UNCONDITIONAL_CALL]
 // Globals:
 //   APIDLL_getVideoMemory* g_APIDLL_getVideoMemory
 //   int g_ExternalRendererActive

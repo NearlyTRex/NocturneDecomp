@@ -5,7 +5,7 @@
 // Signature: void core_inivar.cpp_writeIniData_FUN_004fc510(void)
 // Cross-references:
 //   core_main.c_finalizeGameSystems_FUN_00508570 (00508570) at 00508821 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_ShowOptionsScreen_FUN_00512d30 (00512d30) at 00512e85 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_showOptionsScreen_FUN_00512d30 (00512d30) at 00512e85 [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_DementedMissionEditorSomething_FUN_00537680 (00537680) at 005378b4 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_gamePIXX_00630069
@@ -76,7 +76,7 @@
 //   TerminatedCString s_Editor_0067cd58
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   CDemonSet* g_CDemonSetPtr = 03114278
-//   TerminatedCString s_trid3d_dll_00684010
+//   TerminatedCString g_RendererDllName
 //   CConsole g_ConsolePtr
 //   CGame g_CGameInstance
 //   undefined4 g_CGameInstance.game_pixy
@@ -165,7 +165,7 @@ void __cdecl core_inivar_cpp_writeIniData_FUN_004fc510(void)
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
             ((CIniFile *)&stack0xfffffe04,"useAGPFlag",g_PodSystemVersion);
   engine_ini_cpp_CIniFile_setString_FUN_004fbbb0
-            ((CIniFile *)&stack0xfffffe08,"rendererDLLPath","trid3d.dll");
+            ((CIniFile *)&stack0xfffffe08,"rendererDLLPath",g_RendererDllName);
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
             ((CIniFile *)&stack0xfffffe0c,"gamma",g_CGamePtr->gamma);
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90

@@ -17,7 +17,7 @@
 //   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 (0050aba0) at 0050acf1 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40 (0050ad40) at 0050ada7 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_0050a4f0 (0050a4f0) at 0050a5ad [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512863 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 00512863 [UNCONDITIONAL_CALL]
 //   core_script.cpp_FUN_0055ff00 (0055ff00) at 0056005f [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_DementedFogEditor_FUN_00580730 (00580730) at 00581106 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_configure_FUN_005b3830 (005b3830) at 005b3938 [UNCONDITIONAL_CALL]

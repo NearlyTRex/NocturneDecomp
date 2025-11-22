@@ -1,32 +1,28 @@
-// Name: shape_meshlod.cpp_FUN_00515e90
+// Name: shape_meshlod.cpp_findVertexIndexInTriangle_FUN_00515e90
 // Address: 00515e90
 // Address Range: [[00515e90, 00515eba]]
-// Convention: unknown
-// Signature: undefined shape_meshlod.cpp_FUN_00515e90()
+// Convention: __cdecl
+// Signature: int shape_meshlod.cpp_findVertexIndexInTriangle_FUN_00515e90(SLodTriangle * tri_ptr, int vertex_index)
 // Cross-references:
-//   shape_meshlod.cpp_CLodMesh_FUN_00516000 (00516000) at 005163a4 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_FUN_00517630 (00517630) at 005182d0 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_FUN_00518490 (00518490) at 0051856b [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000 (00516000) at 005163a4 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_FUN_0051ee30 (0051ee30) at 0051ee3a [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
-/* Signature: undefined1 shape_meshlod.cpp_FUN_00515e90(undefined4 param_1, undefined4 param_2) */
-
-undefined4 shape_meshlod_cpp_FUN_00515e90(void)
+int __cdecl
+shape_meshlod_cpp_findVertexIndexInTriangle_FUN_00515e90(SLodTriangle *tri_ptr,int vertex_index)
 
 {
-  int in_stack_00000004;
-  int in_stack_00000008;
-  
-  if (in_stack_00000008 == *(int *)(in_stack_00000004 + 0x10)) {
+  if (vertex_index == tri_ptr->vertex_idx_0) {
     return 0;
   }
-  if (in_stack_00000008 != *(int *)(in_stack_00000004 + 0x14)) {
-    if (in_stack_00000008 == *(int *)(in_stack_00000004 + 0x18)) {
+  if (vertex_index != tri_ptr->vertex_idx_1) {
+    if (vertex_index == tri_ptr->vertex_idx_2) {
       return 2;
     }
-    return 0xffffffff;
+    return -1;
   }
   return 1;
 }
@@ -34,7 +30,7 @@ undefined4 shape_meshlod_cpp_FUN_00515e90(void)
 
 // Assembly code:
 // 00515e90: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: shape_meshlod.cpp_FUN_00515e90
+//   Label: shape_meshlod.cpp_findVertexIndexInTriangle_FUN_00515e90
 //   XREF to: Stack[0x4] (READ)
 // 00515e94: MOV EDX,dword ptr [ESP + 0x8]
 //   XREF to: Stack[0x8] (READ)

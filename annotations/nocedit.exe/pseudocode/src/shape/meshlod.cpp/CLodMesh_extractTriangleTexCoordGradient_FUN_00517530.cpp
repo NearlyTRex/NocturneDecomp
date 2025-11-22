@@ -1,73 +1,71 @@
-// Name: shape_meshlod.cpp_FUN_00517530
+// Name: shape_meshlod.cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530
 // Address: 00517530
 // Address Range: [[00517530, 0051762a]]
-// Convention: unknown
-// Signature: undefined shape_meshlod.cpp_FUN_00517530()
+// Convention: __cdecl
+// Signature: void shape_meshlod.cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530(CLodMesh * this_ptr, int tri_index, int corner_idx, CVector3f * out_gradient, float * out_offset)
 // Cross-references:
-//   shape_meshlod.cpp_CLodMesh_FUN_00516000 (00516000) at 0051622f [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_FUN_00517630 (00517630) at 00517b87 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000 (00516000) at 0051622f [UNCONDITIONAL_CALL]
 // Globals:
 //   WatcomTypeInfo g_CVectorTypeInfo
 // Function calls:
 //   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
-//   shape_meshlod.cpp_FUN_005151e0
+//   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
 
 #include "nocturne.h"
 
-void shape_meshlod_cpp_FUN_00517530(void)
+void __cdecl
+shape_meshlod_cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530
+          (CLodMesh *this_ptr,int tri_index,int corner_idx,CVector3f *out_gradient,float *out_offset
+          )
 
 {
-  undefined4 *puVar1;
-  int iVar2;
+  SLodTriangle *pSVar1;
+  SLodVert *pSVar2;
   BADSPACEBASE *in_ESP;
-  int in_stack_00000004;
-  int in_stack_00000008;
-  int in_stack_00000010;
-  undefined4 in_stack_00000018;
-  undefined4 local_38;
-  undefined4 local_34;
-  undefined4 local_30;
-  undefined4 local_2c;
-  undefined4 local_28;
-  undefined4 local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
+  float *in_stack_00000018;
+  CVector3f local_34;
+  char local_28 [4];
+  char local_24 [4];
+  char local_20 [4];
+  char local_1c [4];
+  char local_18 [4];
+  char local_14 [4];
+  float local_10;
+  char local_c [4];
   
-  iVar2 = *(int *)(in_stack_00000004 + 0xc) + in_stack_00000008 * 0x8c;
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&local_38,3,&g_CVectorTypeInfo);
-  puVar1 = (undefined4 *)(*(int *)(iVar2 + 0x10) * 0x4c4 + *(int *)(in_stack_00000004 + 4));
-  if (&local_34 != puVar1) {
-    local_34 = *puVar1;
-    local_30 = puVar1[1];
-    local_2c = puVar1[2];
+  pSVar1 = this_ptr->triangle_data;
+  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&stack0xffffffc8,3,&g_CVectorTypeInfo);
+  pSVar2 = this_ptr->vertex_data + pSVar1[tri_index].vertex_idx_0;
+  if ((SLodVert *)&local_34 != pSVar2) {
+    local_34.x = *(float *)pSVar2->field0_0x0;
+    local_34.y = *(float *)((int)pSVar2->field0_0x0 + 4);
+    local_34.z = *(float *)((int)pSVar2->field0_0x0 + 8);
   }
-  puVar1 = (undefined4 *)(*(int *)(iVar2 + 0x14) * 0x4c4 + *(int *)(in_stack_00000004 + 4));
-  if (&local_28 != puVar1) {
-    local_28 = *puVar1;
-    local_24 = puVar1[1];
-    local_20 = puVar1[2];
+  pSVar2 = this_ptr->vertex_data + pSVar1[tri_index].vertex_idx_1;
+  if ((SLodVert *)local_28 != pSVar2) {
+    local_28 = *(char (*) [4])pSVar2->field0_0x0;
+    local_24 = *(char (*) [4])(pSVar2->field0_0x0 + 4);
+    local_20 = *(char (*) [4])(pSVar2->field0_0x0 + 8);
   }
-  puVar1 = (undefined4 *)(*(int *)(in_stack_00000004 + 4) + *(int *)(iVar2 + 0x18) * 0x4c4);
-  if (&local_1c != puVar1) {
-    local_1c = *puVar1;
-    local_18 = puVar1[1];
-    local_14 = puVar1[2];
+  pSVar2 = this_ptr->vertex_data + pSVar1[tri_index].vertex_idx_2;
+  if ((SLodVert *)local_1c != pSVar2) {
+    local_1c = *(char (*) [4])pSVar2->field0_0x0;
+    local_18 = *(char (*) [4])(pSVar2->field0_0x0 + 4);
+    local_14 = *(char (*) [4])(pSVar2->field0_0x0 + 8);
   }
-  local_10 = *(undefined4 *)(iVar2 + 0x1c + in_stack_00000010 * 4);
-  local_c = *(undefined4 *)(iVar2 + 0x24 + in_stack_00000010 * 4);
-  local_38 = in_stack_00000018;
-  shape_meshlod_cpp_FUN_005151e0();
+  local_10 = *(float *)(pSVar1[tri_index].field4_0x1c + (int)out_gradient * 4);
+  local_c = *(char (*) [4])(pSVar1[tri_index].field4_0x1c + (int)out_gradient * 4 + 8);
+  shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0
+            (3,&local_34,&local_10,&pSVar1[tri_index].normal,(CVector3f *)out_offset,
+             in_stack_00000018);
   return;
 }
 
 
 // Assembly code:
 // 00517530: PUSH EBX
-//   Label: shape_meshlod.cpp_FUN_00517530
+//   Label: shape_meshlod.cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530
 // 00517531: PUSH ESI
 // 00517532: SUB ESP,0x30
 // 00517535: MOV ESI,dword ptr [ESP + 0x3c]
@@ -161,7 +159,7 @@ void shape_meshlod_cpp_FUN_00517530(void)
 //   XREF to: Stack[-0x38] (DATA)
 // 00517602: PUSH EAX
 // 00517603: PUSH 0x3
-// 00517605: CALL shape_meshlod.cpp_FUN_005151e0
+// 00517605: CALL shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
 //   XREF to: 005151e0 (UNCONDITIONAL_CALL)
 // 0051760a: ADD ESP,0x18
 // 0051760d: ADD ESP,0x30

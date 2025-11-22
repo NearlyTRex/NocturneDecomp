@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: char * wincore_windll.cpp_getCurrentRenderer_FUN_005b8185(int * renderer)
 // Globals:
-//   TerminatedCString s_trid3d_dll_00684010
+//   TerminatedCString g_RendererDllName
 //   int g_RendererHandle
 
 #include "nocturne.h"
@@ -13,7 +13,7 @@ char * __cdecl wincore_windll_cpp_getCurrentRenderer_FUN_005b8185(int *renderer)
 
 {
   *renderer = g_RendererHandle;
-  return "trid3d.dll";
+  return g_RendererDllName;
 }
 
 

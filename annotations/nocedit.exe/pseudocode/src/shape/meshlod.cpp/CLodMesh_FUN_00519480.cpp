@@ -55,10 +55,10 @@ int __cdecl shape_meshlod_cpp_CLodMesh_FUN_00519480(CLodMesh *this_ptr)
     do {
       if (pSVar7->adjacent_edge_indices[0] != in_stack_00000008) {
         pSVar6 = this_ptr->edges_ptr + pSVar7->adjacent_edge_indices[0];
-        if ((1 < *(int *)pSVar6->field4_0x18) || (1 < *(int *)(pSVar6->field4_0x18 + 4))) {
+        if ((1 < pSVar6->collapse_viability) || (1 < pSVar6->collapse_curvature)) {
           return 1;
         }
-        if ((*(int *)pSVar6->field4_0x18 != 0) || (*(int *)(pSVar6->field4_0x18 + 4) != 0)) {
+        if ((pSVar6->collapse_viability != 0) || (pSVar6->collapse_curvature != 0)) {
           iVar2 = pSVar6->vertex_idx_2;
           iVar3 = pSVar6->vertex_idx_1;
           pSVar4 = this_ptr->vertex_data;

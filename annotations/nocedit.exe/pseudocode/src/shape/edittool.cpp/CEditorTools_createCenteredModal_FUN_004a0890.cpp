@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, int modal_flags)
 // Cross-references:
-//   core_menu.cpp_SettingMouseSensitivity_FUN_005107c0 (005107c0) at 005107f8 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_adjustMouseSensitivity_FUN_005107c0 (005107c0) at 005107f8 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0049e940 (0049e940) at 0049e98f [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 (004a0430) at 004a04b4 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 (0049fb70) at 0049fc00 [UNCONDITIONAL_CALL]

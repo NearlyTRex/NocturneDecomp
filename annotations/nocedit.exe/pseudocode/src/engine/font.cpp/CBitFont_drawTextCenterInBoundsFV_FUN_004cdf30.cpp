@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30(CBitFont * this_ptr, int left_x, int right_x, int y_pos, int color_mode, int color_value, char * format_string, ...)
 // Cross-references:
-//   core_menu.cpp_SettingMouseSensitivity_FUN_005107c0 (005107c0) at 0051099e [UNCONDITIONAL_CALL]
+//   core_menu.cpp_adjustMouseSensitivity_FUN_005107c0 (005107c0) at 0051099e [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 (004a0530) at 004a0624 [UNCONDITIONAL_CALL]
 // Function calls:
 //   engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf80

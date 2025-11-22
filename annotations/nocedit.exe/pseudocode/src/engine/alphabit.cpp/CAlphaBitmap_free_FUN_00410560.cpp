@@ -7,7 +7,7 @@
 //   core_inv.cpp_freeInventory_FUN_004fd510 (004fd510) at 004fd522 [UNCONDITIONAL_CALL]
 //   core_main.c_finalizeGameSystems_FUN_00508570 (00508570) at 005087a2 [UNCONDITIONAL_CALL]
 //   core_main.c_showPromoScreen_FUN_00508340 (00508340) at 00508523 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_RunCalibrationTest_FUN_00510ba0 (00510ba0) at 00510c40 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_showCalibrationTest_FUN_00510ba0 (00510ba0) at 00510c40 [UNCONDITIONAL_CALL]
 //   core_moon.cpp_CMoon_free_FUN_00529ce0 (00529ce0) at 00529d2b [UNCONDITIONAL_CALL]
 //   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540 (00410540) at 00410546 [UNCONDITIONAL_CALL]
 //   engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0 (004105d0) at 004105e2 [UNCONDITIONAL_CALL]

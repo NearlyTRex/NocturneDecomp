@@ -129,7 +129,7 @@
 //   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 (00506450) at 005064d1 [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_00509d50 (00509d50) at 00509e00 [UNCONDITIONAL_CALL]
 //   core_marquee.cpp_FUN_0050c050 (0050c050) at 0050c184 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 005121c2 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 005121c2 [UNCONDITIONAL_CALL]
 //   core_moon.cpp_CMoon_render_FUN_00529ed0 (00529ed0) at 0052a0a4 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052b160 (0052b160) at 0052b1b0 [UNCONDITIONAL_CALL]
 //   core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0 (0052e4c0) at 0052e541 [UNCONDITIONAL_CALL]

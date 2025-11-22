@@ -1,17 +1,17 @@
-// Name: core_menu.cpp_FUN_0050fe70
+// Name: core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70
 // Address: 0050fe70
 // Address Range: [[0050fe70, 0050fffb]]
-// Convention: unknown
-// Signature: undefined core_menu.cpp_FUN_0050fe70()
+// Convention: __cdecl
+// Signature: void core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center, int y_top, int height_half)
 // Cross-references:
-//   core_menu.cpp_FUN_00511e00 (00511e00) at 00511e15 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512646 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 00512646 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_renderAudioSpectrumBarByBounds_FUN_00511e00 (00511e00) at 00511e15 [UNCONDITIONAL_CALL]
 // Globals:
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
-//   SMRGLTextureBasic[8] DAT_0067d284
+//   SMRGLTextureBasic[8] g_AudioSpectrumTextures
 //   undefined4 DAT_00f80000
 //   CDemonRenderer g_CDemonRendererInstance
-//   undefined4 DAT_02f26cb4
+//   int g_AudioVisualizationCounter
 // Function calls:
 //   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 //   engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
@@ -20,29 +20,27 @@
 
 #include "nocturne.h"
 
-void core_menu_cpp_FUN_0050fe70(void)
+void __cdecl
+core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int y_top,int height_half)
 
 {
   CDemonRenderer *this_ptr;
   int iVar1;
   int iVar2;
   BADSPACEBASE *in_ESP;
-  int in_stack_00000004;
-  int in_stack_00000008;
-  int in_stack_0000000c;
   SMRGLHeaderPrimitive local_20;
   undefined4 local_8;
   
   this_ptr = g_CDemonRendererPtr;
-  if (0 < in_stack_0000000c * 2) {
-    iVar1 = (in_stack_00000004 + -0x10) * 0x10000;
+  if (0 < height_half * 2) {
+    iVar1 = (x_center + -0x10) * 0x10000;
     (g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x = iVar1;
-    (this_ptr->vertex_buffer_ptr->projected_vertex).screen_y = in_stack_00000008 << 0x10;
-    iVar2 = (in_stack_00000004 + 0x10) * 0x10000;
+    (this_ptr->vertex_buffer_ptr->projected_vertex).screen_y = y_top << 0x10;
+    iVar2 = (x_center + 0x10) * 0x10000;
     this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_x = iVar2;
-    this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_y = in_stack_00000008 << 0x10;
+    this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_y = y_top << 0x10;
     this_ptr->vertex_buffer_ptr[2].projected_vertex.screen_x = iVar2;
-    iVar2 = (in_stack_00000008 + in_stack_0000000c * -2) * 0x10000;
+    iVar2 = (y_top + height_half * -2) * 0x10000;
     this_ptr->vertex_buffer_ptr[2].projected_vertex.screen_y = iVar2;
     this_ptr->vertex_buffer_ptr[3].projected_vertex.screen_x = iVar1;
     this_ptr->vertex_buffer_ptr[3].projected_vertex.screen_y = iVar2;
@@ -65,9 +63,11 @@ void core_menu_cpp_FUN_0050fe70(void)
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr,
-               DAT_0067d284 +
-               (((int)((DAT_02f26cb4 + (DAT_02f26cb4 >> 0x1f) * -0x10000) -
-                      (uint)((DAT_02f26cb4 >> 0x1f) << 0xf < 0)) >> 0x10) + in_stack_00000004 & 7));
+               g_AudioSpectrumTextures +
+               (((int)((g_AudioVisualizationCounter +
+                       (g_AudioVisualizationCounter >> 0x1f) * -0x10000) -
+                      (uint)((g_AudioVisualizationCounter >> 0x1f) << 0xf < 0)) >> 0x10) + x_center
+               & 7));
     engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
               (g_CDemonRendererPtr,&local_20,0x23);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
@@ -79,7 +79,7 @@ void core_menu_cpp_FUN_0050fe70(void)
 
 // Assembly code:
 // 0050fe70: PUSH EBP
-//   Label: core_menu.cpp_FUN_0050fe70
+//   Label: core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70
 // 0050fe71: SUB ESP,0x28
 // 0050fe74: MOV EBP,dword ptr [ESP + 0x30]
 //   XREF to: Stack[0x4] (READ)

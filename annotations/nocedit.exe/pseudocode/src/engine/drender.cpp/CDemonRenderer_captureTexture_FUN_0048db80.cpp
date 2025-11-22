@@ -54,7 +54,7 @@
 //   core_level.cpp_CLevelLoader_update_FUN_00504160 (00504160) at 0050453f [UNCONDITIONAL_CALL]
 //   core_manpuz.cpp_FUN_00509d50 (00509d50) at 0050a150 [UNCONDITIONAL_CALL]
 //   core_marquee.cpp_FUN_0050c050 (0050c050) at 0050c0a6 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_FUN_0050fe70 (0050fe70) at 0050ffb2 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70 (0050fe70) at 0050ffb2 [UNCONDITIONAL_CALL]
 //   core_morph.cpp_FUN_0052b160 (0052b160) at 0052b207 [UNCONDITIONAL_CALL]
 //   core_path.cpp_FUN_00547fc0 (00547fc0) at 0054803a [UNCONDITIONAL_CALL]
 //   core_set.cpp_CDemonSet_FUN_00570040 (00570040) at 0057005d [UNCONDITIONAL_CALL]

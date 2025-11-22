@@ -78,7 +78,7 @@
 //   TerminatedCString s_Editor_0067cd58
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
 //   CDemonSet* g_CDemonSetPtr = 03114278
-//   TerminatedCString s_trid3d_dll_00684010
+//   TerminatedCString g_RendererDllName
 //   CConsole g_ConsolePtr
 //   CGame g_CGameInstance
 //   undefined4 g_CGameInstance.game_pixy
@@ -184,7 +184,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             ((CIniFile *)&stack0xfffffe1c,"useAGPFlag",&g_PodSystemVersion);
   engine_ini_cpp_CIniFile_getString_FUN_004fbb20
-            ((CIniFile *)&stack0xfffffe20,"rendererDLLPath","trid3d.dll",0xfa,
+            ((CIniFile *)&stack0xfffffe20,"rendererDLLPath",g_RendererDllName,0xfa,
              in_stack_fffffe14);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             ((CIniFile *)&stack0xfffffe24,"gamma",&g_CGamePtr->gamma);

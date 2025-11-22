@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: void shape_meshlod.cpp_addAdjacentEdgeToVertex_FUN_00515d90(SLodVert * vertex_ptr, int edge_index)
 // Cross-references:
-//   shape_meshlod.cpp_CLodMesh_FUN_00515ec0 (00515ec0) at 00515fe9 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_FUN_00517630 (00517630) at 005181bd [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0 (00515ec0) at 00515fe9 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_Too_many_adj_edges_006374a3
 //   TerminatedCString s_shape_meshlod_cpp_006374b7

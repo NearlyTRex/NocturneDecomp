@@ -5,7 +5,7 @@
 // Signature: int sound_sndmain.cpp_resetSoundDevice_FUN_005ab130(void)
 // Cross-references:
 //   core_game.cpp_CGame_rollCredits_FUN_004e4010 (004e4010) at 004e40f4 [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512b66 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 00512b66 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_DementedFogEditor_FUN_00580730 (00580730) at 00581161 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00589b10 (00589b10) at 00589b8e [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_00589c20 (00589c20) at 00589eb2 [UNCONDITIONAL_CALL]

@@ -8,9 +8,9 @@
 // Globals:
 //   undefined4 DAT_02f33330
 // Function calls:
-//   shape_meshlod.cpp_CLodMesh_FUN_00515ec0
-//   shape_meshlod.cpp_FUN_00515e90
-//   shape_meshlod.cpp_FUN_00516420
+//   shape_meshlod.cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420
+//   shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
+//   shape_meshlod.cpp_findVertexIndexInTriangle_FUN_00515e90
 //   shape_meshlod.cpp_FUN_00518740
 //   shape_meshlod.cpp_FUN_0051a980
 
@@ -23,14 +23,17 @@ int __cdecl shape_meshlod_cpp_CLodMesh_FUN_00518490(CLodMesh *this_ptr)
   int iVar2;
   int iVar3;
   int iVar4;
-  int iVar5;
-  SLodTriangle *pSVar6;
+  SLodTriangle *pSVar5;
   int unaff_ESI;
+  int iVar6;
   int in_stack_00000008;
+  int in_stack_0000000c;
   int in_stack_00000014;
+  int local_2c;
   int local_18;
   
-  iVar2 = shape_meshlod_cpp_CLodMesh_FUN_00515ec0(this_ptr);
+  iVar2 = shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
+                    (this_ptr,in_stack_00000008,in_stack_0000000c,0);
   if (iVar2 < 0) {
     return -1;
   }
@@ -44,15 +47,21 @@ int __cdecl shape_meshlod_cpp_CLodMesh_FUN_00518490(CLodMesh *this_ptr)
       local_18 = local_18 + 1) {
     iVar2 = shape_meshlod_cpp_FUN_0051a980();
     if ((iVar2 != in_stack_00000014) &&
-       (iVar2 = shape_meshlod_cpp_CLodMesh_FUN_00515ec0(this_ptr), -1 < iVar2)) {
-      iVar5 = 0;
+       (iVar2 = shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
+                          (this_ptr,iVar2,in_stack_00000014,0), -1 < iVar2)) {
+      iVar4 = 0;
+      iVar6 = 0;
       while( true ) {
-        if (this_ptr->edges_ptr[iVar2].adjacent_tri_count <= iVar5) {
+        if (this_ptr->edges_ptr[iVar2].adjacent_tri_count <= iVar4) {
           return -1;
         }
-        iVar3 = shape_meshlod_cpp_FUN_00515e90();
+        iVar3 = shape_meshlod_cpp_findVertexIndexInTriangle_FUN_00515e90
+                          (this_ptr->triangle_data +
+                           *(int *)((int)this_ptr->edges_ptr[iVar2].adjacent_tri_indices + iVar6),
+                           in_stack_00000008);
         if (-1 < iVar3) break;
-        iVar5 = iVar5 + 1;
+        iVar4 = iVar4 + 1;
+        iVar6 = iVar6 + 4;
       }
     }
   }
@@ -66,57 +75,59 @@ int __cdecl shape_meshlod_cpp_CLodMesh_FUN_00518490(CLodMesh *this_ptr)
   }
   iVar2 = 0;
   if (0 < *(int *)(local_18 + 0x24)) {
-    iVar5 = local_18;
+    iVar4 = local_18;
     do {
-      pSVar6 = this_ptr->triangle_data + *(int *)(iVar5 + 0x28);
-      iVar4 = 0;
-      iVar3 = pSVar6->edge_idx_0;
-      pSVar1 = pSVar6;
-      while (iVar3 != unaff_ESI) {
-        iVar4 = iVar4 + 1;
-        if (2 < iVar4) goto LAB_0051865b;
-        iVar3 = pSVar1->edge_idx_1;
+      pSVar5 = this_ptr->triangle_data + *(int *)(iVar4 + 0x28);
+      iVar3 = 0;
+      iVar6 = pSVar5->edge_idx_0;
+      pSVar1 = pSVar5;
+      while (iVar6 != unaff_ESI) {
+        iVar3 = iVar3 + 1;
+        if (2 < iVar3) goto LAB_0051865b;
+        iVar6 = pSVar1->edge_idx_1;
         pSVar1 = (SLodTriangle *)(pSVar1->field0_0x0 + 4);
       }
-      iVar3 = iVar4 + -1;
-      if (iVar3 < 0) {
-        iVar3 = 2;
+      iVar6 = iVar3 + -1;
+      if (iVar6 < 0) {
+        iVar6 = 2;
       }
-      iVar4 = iVar4 + 1;
-      if (2 < iVar4) {
-        iVar4 = 0;
+      iVar6 = *(int *)(pSVar5->field4_0x1c + iVar6 * 4 + 0x18);
+      local_2c = iVar6 * 0xf0;
+      iVar3 = iVar3 + 1;
+      if (2 < iVar3) {
+        iVar3 = 0;
       }
-      if ((*(int *)this_ptr->edges_ptr[*(int *)(pSVar6->field9_0x44 + iVar3 * 4 + -0x10)].
-                   field4_0x18 != 0) &&
-         (*(int *)this_ptr->edges_ptr[*(int *)(pSVar6->field9_0x44 + iVar4 * 4 + -0x10)].field4_0x18
+      if ((this_ptr->edges_ptr[iVar6].collapse_viability != 0) &&
+         (this_ptr->edges_ptr[*(int *)(pSVar5->field4_0x1c + iVar3 * 4 + 0x18)].collapse_viability
           != 0)) {
         return -1;
       }
-      if (1 < *(int *)this_ptr->edges_ptr[*(int *)(pSVar6->field9_0x44 + iVar3 * 4 + -0x10)].
-                      field4_0x18) {
+      if (1 < this_ptr->edges_ptr[iVar6].collapse_viability) {
         return -1;
       }
-      if (1 < *(int *)this_ptr->edges_ptr[*(int *)(pSVar6->field9_0x44 + iVar4 * 4 + -0x10)].
-                      field4_0x18) {
+      if (1 < this_ptr->edges_ptr[*(int *)(pSVar5->field4_0x1c + iVar3 * 4 + 0x18)].
+              collapse_viability) {
         return -1;
       }
 LAB_0051865b:
       iVar2 = iVar2 + 1;
-      iVar5 = iVar5 + 4;
+      iVar4 = iVar4 + 4;
     } while (iVar2 < *(int *)(local_18 + 0x24));
   }
-  iVar2 = shape_meshlod_cpp_FUN_00516420();
-  iVar5 = shape_meshlod_cpp_FUN_00516420();
+  iVar2 = shape_meshlod_cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420
+                    (this_ptr,in_stack_00000008);
+  iVar4 = shape_meshlod_cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420
+                    (this_ptr,local_2c);
   if (*(int *)(local_18 + 0x18) == 0) {
-    if (iVar5 < 1) {
+    if (iVar4 < 1) {
       return unaff_ESI;
     }
     if (iVar2 < 1) {
       return unaff_ESI;
     }
   }
-  else if (((iVar2 < 3) || (iVar5 < 3)) && ((iVar2 != 1 || (iVar5 == 2)))) {
-    if (iVar5 != 1) {
+  else if (((iVar2 < 3) || (iVar4 < 3)) && ((iVar2 != 1 || (iVar4 == 2)))) {
+    if (iVar4 != 1) {
       return unaff_ESI;
     }
     if (iVar2 == 2) {
@@ -147,7 +158,7 @@ LAB_0051865b:
 // 005184a9: PUSH EDX
 // 005184aa: PUSH EBP
 // 005184ab: PUSH EDI
-// 005184ac: CALL shape_meshlod.cpp_CLodMesh_FUN_00515ec0
+// 005184ac: CALL shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
 //   XREF to: 00515ec0 (UNCONDITIONAL_CALL)
 // 005184b1: ADD ESP,0x10
 // 005184b4: MOV dword ptr [ESP + 0x24],EAX
@@ -214,7 +225,7 @@ LAB_0051865b:
 // 0051852b: PUSH EBX
 // 0051852c: PUSH EAX
 // 0051852d: PUSH EDI
-// 0051852e: CALL shape_meshlod.cpp_CLodMesh_FUN_00515ec0
+// 0051852e: CALL shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
 //   XREF to: 00515ec0 (UNCONDITIONAL_CALL)
 // 00518533: ADD ESP,0x10
 // 00518536: TEST EAX,EAX
@@ -241,7 +252,7 @@ LAB_0051865b:
 // 00518567: PUSH EBP
 // 00518568: ADD EAX,EDX
 // 0051856a: PUSH EAX
-// 0051856b: CALL shape_meshlod.cpp_FUN_00515e90
+// 0051856b: CALL shape_meshlod.cpp_findVertexIndexInTriangle_FUN_00515e90
 //   XREF to: 00515e90 (UNCONDITIONAL_CALL)
 // 00518570: ADD ESP,0x8
 // 00518573: TEST EAX,EAX
@@ -367,7 +378,7 @@ LAB_0051865b:
 //   XREF to: Stack[-0x30] (READ)
 // 00518672: PUSH ESI
 // 00518673: PUSH EDI
-// 00518674: CALL shape_meshlod.cpp_FUN_00516420
+// 00518674: CALL shape_meshlod.cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420
 //   XREF to: 00516420 (UNCONDITIONAL_CALL)
 // 00518679: ADD ESP,0x8
 // 0051867c: MOV EBP,dword ptr [ESP + 0x4]
@@ -376,7 +387,7 @@ LAB_0051865b:
 // 00518681: PUSH EDI
 // 00518682: MOV EBX,EAX
 // 00518684: MOV ESI,EAX
-// 00518686: CALL shape_meshlod.cpp_FUN_00516420
+// 00518686: CALL shape_meshlod.cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420
 //   XREF to: 00516420 (UNCONDITIONAL_CALL)
 // 0051868b: ADD ESP,0x8
 // 0051868e: MOV ECX,dword ptr [ESP + 0x14]

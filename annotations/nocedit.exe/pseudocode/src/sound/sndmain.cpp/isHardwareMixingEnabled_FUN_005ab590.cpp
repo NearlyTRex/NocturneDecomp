@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005ab590(void)
 // Cross-references:
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 005124b1 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 005124b1 [UNCONDITIONAL_CALL]
 //   sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440 (005b0440) at 005b0568 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_readIni_FUN_005abf20 (005abf20) at 005ac012 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_writeIni_FUN_005ac220 (005ac220) at 005ac304 [UNCONDITIONAL_CALL]

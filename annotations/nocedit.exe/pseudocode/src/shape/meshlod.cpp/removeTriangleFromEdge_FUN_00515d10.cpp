@@ -1,46 +1,45 @@
-// Name: shape_meshlod.cpp_FUN_00515d10
+// Name: shape_meshlod.cpp_removeTriangleFromEdge_FUN_00515d10
 // Address: 00515d10
 // Address Range: [[00515d10, 00515d50]]
-// Convention: unknown
-// Signature: undefined shape_meshlod.cpp_FUN_00515d10()
+// Convention: __cdecl
+// Signature: void shape_meshlod.cpp_removeTriangleFromEdge_FUN_00515d10(SLodEdge * edge_ptr, int tri_index)
 // Cross-references:
-//   shape_meshlod.cpp_FUN_005183e0 (005183e0) at 00518419 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_removeEdgeFromTriangle_FUN_005183e0 (005183e0) at 00518419 [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_string.c_memmove_FUN_005fe5e0
-//   shape_meshlod.cpp_FUN_00515d60
+//   shape_meshlod.cpp_findTriangleInEdge_FUN_00515d60
 
 #include "nocturne.h"
 
-void shape_meshlod_cpp_FUN_00515d10(void)
+void __cdecl shape_meshlod_cpp_removeTriangleFromEdge_FUN_00515d10(SLodEdge *edge_ptr,int tri_index)
 
 {
   int iVar1;
   int iVar2;
-  int in_stack_00000004;
   
-  iVar1 = shape_meshlod_cpp_FUN_00515d60();
+  iVar1 = shape_meshlod_cpp_findTriangleInEdge_FUN_00515d60(edge_ptr,tri_index);
   if (iVar1 < 0) {
     return;
   }
-  iVar2 = *(int *)(in_stack_00000004 + 0x24) + -1;
-  *(int *)(in_stack_00000004 + 0x24) = iVar2;
+  iVar2 = edge_ptr->adjacent_tri_count + -1;
+  edge_ptr->adjacent_tri_count = iVar2;
   crt_string_c_memmove_FUN_005fe5e0
-            ((void *)(iVar1 * 4 + in_stack_00000004 + 0x28),
-             (void *)(iVar1 * 4 + 4 + in_stack_00000004 + 0x28),(iVar2 - iVar1) * 4);
+            (edge_ptr->adjacent_tri_indices + iVar1,edge_ptr->adjacent_tri_indices + iVar1 + 1,
+             (iVar2 - iVar1) * 4);
   return;
 }
 
 
 // Assembly code:
 // 00515d10: PUSH EBX
-//   Label: shape_meshlod.cpp_FUN_00515d10
+//   Label: shape_meshlod.cpp_removeTriangleFromEdge_FUN_00515d10
 // 00515d11: MOV EBX,dword ptr [ESP + 0x8]
 //   XREF to: Stack[0x4] (READ)
 // 00515d15: MOV EDX,dword ptr [ESP + 0xc]
 //   XREF to: Stack[0x8] (READ)
 // 00515d19: PUSH EDX
 // 00515d1a: PUSH EBX
-// 00515d1b: CALL shape_meshlod.cpp_FUN_00515d60
+// 00515d1b: CALL shape_meshlod.cpp_findTriangleInEdge_FUN_00515d60
 //   XREF to: 00515d60 (UNCONDITIONAL_CALL)
 // 00515d20: ADD ESP,0x8
 // 00515d23: TEST EAX,EAX

@@ -28,7 +28,7 @@
 //   crt_stdio.c_fscanf_FUN_005fe7c0
 //   shape_memdbg.cpp_debugCalloc_FUN_0050f350
 //   shape_memdbg.cpp_debugFree_FUN_0050f460
-//   shape_meshlod.cpp_CLodMesh_FUN_00516000
+//   shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
 //   shape_meshlod.cpp_CLodMesh_FUN_00519710
 
 #include "nocturne.h"
@@ -123,11 +123,7 @@ LAB_0051d075:
         *(undefined4 *)(pSVar1[iVar7].field2_0x8 + 4) = *(undefined4 *)((int)pvVar2 + 0xc);
         *(undefined4 *)(this_ptr->edges_ptr[iVar7].field2_0x8 + 8) =
              *(undefined4 *)((int)pvVar2 + 0x10);
-        pSVar1 = this_ptr->edges_ptr + iVar7;
-        pSVar1->field4_0x18[8] = '\0';
-        pSVar1->field4_0x18[9] = '\0';
-        pSVar1->field4_0x18[10] = '\0';
-        pSVar1->field4_0x18[0xb] = '\0';
+        this_ptr->edges_ptr[iVar7].field6_0x20 = 0;
         iVar7 = iVar7 + 1;
         pvVar2 = (void *)((int)pvVar2 + 0xf0);
       } while (iVar7 < this_ptr->edge_count);
@@ -135,7 +131,7 @@ LAB_0051d075:
     iVar7 = 0;
     if (0 < this_ptr->edge_count) {
       do {
-        shape_meshlod_cpp_CLodMesh_FUN_00516000(this_ptr);
+        shape_meshlod_cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000(this_ptr,iVar7,1);
         iVar7 = iVar7 + 1;
       } while (iVar7 < this_ptr->edge_count);
     }
@@ -401,7 +397,7 @@ LAB_0051d075:
 //   Label: LAB_0051d019
 // 0051d01b: PUSH EBX
 // 0051d01c: PUSH EDI
-// 0051d01d: CALL shape_meshlod.cpp_CLodMesh_FUN_00516000
+// 0051d01d: CALL shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
 //   XREF to: 00516000 (UNCONDITIONAL_CALL)
 // 0051d022: INC EBX
 // 0051d023: MOV ESI,dword ptr [EDI + 0x44]

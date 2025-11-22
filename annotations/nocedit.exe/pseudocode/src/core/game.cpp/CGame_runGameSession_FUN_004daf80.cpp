@@ -107,7 +107,7 @@
 //   core_game.cpp_SaveRelated_FUN_004dcee0
 //   core_inv.cpp_freeInventory_FUN_004fd510
 //   core_level.cpp_CLevelLoader_cleanup_FUN_00504720
-//   core_menu.cpp_ShowOptionsScreen_FUN_00512d30
+//   core_menu.cpp_showOptionsScreen_FUN_00512d30
 //   core_mission.cpp_CDemonMission_FUN_00524e00
 //   core_netgame.cpp_CNetGame_FUN_0053fd00
 //   core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
@@ -397,7 +397,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
               in_stack_fffff868 = g_CKeysPtr;
               engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,0);
               core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(this_ptr);
-              core_menu_cpp_ShowOptionsScreen_FUN_00512d30();
+              core_menu_cpp_showOptionsScreen_FUN_00512d30(1);
               core_game_cpp_CGame_setGameRes_FUN_004dade0(this_ptr);
               engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0
                         (g_CKeysPtr,(uint)(this_ptr->is_paused == 0));
@@ -1493,7 +1493,7 @@ LAB_004db434:
 //   XREF to: 004daed0 (UNCONDITIONAL_CALL)
 // 004db88b: ADD ESP,0x4
 // 004db88e: PUSH EDI
-// 004db88f: CALL core_menu.cpp_ShowOptionsScreen_FUN_00512d30
+// 004db88f: CALL core_menu.cpp_showOptionsScreen_FUN_00512d30
 //   XREF to: 00512d30 (UNCONDITIONAL_CALL)
 // 004db894: ADD ESP,0x4
 // 004db897: PUSH ESI

@@ -1,8 +1,8 @@
-// Name: core_menu.cpp_ShowOptionsScreen_FUN_00512d30
+// Name: core_menu.cpp_showOptionsScreen_FUN_00512d30
 // Address: 00512d30
 // Address Range: [[00512d30, 00512f26]]
-// Convention: unknown
-// Signature: undefined core_menu.cpp_ShowOptionsScreen_FUN_00512d30()
+// Convention: __cdecl
+// Signature: void core_menu.cpp_showOptionsScreen_FUN_00512d30(int initialize_systems)
 // Cross-references:
 //   core_game.cpp_CGame_runGameSession_FUN_004daf80 (004daf80) at 004db88f [UNCONDITIONAL_CALL]
 //   core_menu.cpp_showMainGameMenu_FUN_00512f40 (00512f40) at 0051342b [UNCONDITIONAL_CALL]
@@ -22,11 +22,11 @@
 //   undefined4 g_CGameInstance.delta_time_float
 //   void* g_CKeysPtr
 //   CMoon g_CMoonInstance
-//   undefined4 DAT_02f28a50
+//   char[4][256] g_OptionsMenuTextBuffers
 //   undefined4 DAT_02f28b50
 //   undefined4 DAT_02f28c50
 //   undefined4 DAT_02f28d50
-//   undefined4 DAT_02f28e50
+//   char*[4] g_OptionsMenuPointers
 //   undefined4 DAT_02f28e54
 //   CSound g_CSoundInstance
 // Function calls:
@@ -35,10 +35,10 @@
 //   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
 //   core_inivar.cpp_writeIniData_FUN_004fc510
 //   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0
-//   core_menu.cpp_CustomKeySettings_FUN_00511890
-//   core_menu.cpp_getGameMainMenuChoice_FUN_00510000
-//   core_menu.cpp_GraphicsOptions_FUN_00510c80
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50
+//   core_menu.cpp_configureCustomKeys_FUN_00511890
+//   core_menu.cpp_configureGraphicsOptions_FUN_00510c80
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50
+//   core_menu.cpp_renderMenuAndGetChoice_FUN_00510000
 //   core_moon.cpp_CMoon_free_FUN_00529ce0
 //   core_moon.cpp_CMoon_init_FUN_00529ae0
 //   core_moon.cpp_CMoon_render_FUN_00529ed0
@@ -51,67 +51,75 @@
 
 #include "nocturne.h"
 
-void core_menu_cpp_ShowOptionsScreen_FUN_00512d30(void)
+void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems)
 
 {
   int iVar1;
   char *pcVar2;
-  undefined *puVar3;
+  char (*pacVar3) [256];
+  BADSPACEBASE *in_ESP;
   CGame *unaff_ESI;
-  int in_stack_00000004;
+  int in_stack_0000002c;
+  undefined4 uStack00000048;
+  undefined4 uStack00000054;
   int in_stack_00000064;
   
-  if (in_stack_00000004 != 0) {
+  if (initialize_systems != 0) {
     core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     core_moon_cpp_CMoon_init_FUN_00529ae0(&g_CMoonInstance);
   }
-  puVar3 = &DAT_02f28a50;
+  pacVar3 = g_OptionsMenuTextBuffers;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,unaff_ESI);
   iVar1 = 0;
   do {
-    *(undefined **)((int)&DAT_02f28e50 + iVar1) = puVar3;
+    *(char (**) [256])((int)g_OptionsMenuPointers + iVar1) = pacVar3;
     iVar1 = iVar1 + 4;
-    puVar3 = puVar3 + 0x100;
+    pacVar3 = pacVar3 + 1;
   } while (iVar1 != 0x10);
   do {
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,g_CGamePtr->delta_time_float);
     core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Graphic options");
-    crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02f28a50,pcVar2);
+    crt_stdio_c_sprintf_FUN_005fdbd0(g_OptionsMenuTextBuffers[0],pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Sound options");
-    crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02f28b50,pcVar2);
+    crt_stdio_c_sprintf_FUN_005fdbd0(g_OptionsMenuTextBuffers[1],pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Control options");
-    crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02f28c50,pcVar2);
+    crt_stdio_c_sprintf_FUN_005fdbd0(g_OptionsMenuTextBuffers[2],pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Credits");
-    crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02f28d50,pcVar2);
+    crt_stdio_c_sprintf_FUN_005fdbd0(g_OptionsMenuTextBuffers[3],pcVar2);
     g_CGamePtr->hero_number = 2;
-    support_newmsg_cpp_getLocalizedString_FUN_005441f0("Option Menu");
-    iVar1 = core_menu_cpp_getGameMainMenuChoice_FUN_00510000();
+    pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Option Menu");
+    iVar1 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
+                      (g_OptionsMenuPointers,4,&stack0x0000002c,0xfa,(int)pcVar2);
+    in_stack_0000002c = 0x512e51;
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     switch(iVar1) {
     case 0:
-      core_menu_cpp_GraphicsOptions_FUN_00510c80();
+      core_menu_cpp_configureGraphicsOptions_FUN_00510c80();
       break;
     case 1:
-      core_menu_cpp_SettingSoundOptions_FUN_00511e50();
+      core_menu_cpp_configureSoundOptions_FUN_00511e50();
       break;
     case 2:
       iVar1 = g_CGamePtr->game_control;
-      core_menu_cpp_CustomKeySettings_FUN_00511890();
+      core_menu_cpp_configureCustomKeys_FUN_00511890();
       if (iVar1 != g_CGamePtr->game_control) {
         core_menu_cpp_configureCustomKeyBindings_FUN_005138e0();
       }
       break;
     case 3:
+      in_stack_0000002c = 0x512ee9;
       core_game_cpp_CGame_rollCredits_FUN_004e4010(g_CGamePtr);
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
     iVar1 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
   } while (iVar1 == 0);
   if (in_stack_00000064 != 0) {
+    uStack00000048 = 0x512f09;
     core_moon_cpp_CMoon_free_FUN_00529ce0(&g_CMoonInstance);
     core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
+    uStack00000054 = 0x512f20;
     core_inivar_cpp_writeIniData_FUN_004fc510();
     return;
   }
@@ -122,7 +130,7 @@ void core_menu_cpp_ShowOptionsScreen_FUN_00512d30(void)
 
 // Assembly code:
 // 00512d30: PUSH EBX
-//   Label: core_menu.cpp_ShowOptionsScreen_FUN_00512d30
+//   Label: core_menu.cpp_showOptionsScreen_FUN_00512d30
 // 00512d31: PUSH EDI
 // 00512d32: PUSH EBP
 // 00512d33: SUB ESP,0x4
@@ -244,7 +252,7 @@ void core_menu_cpp_ShowOptionsScreen_FUN_00512d30(void)
 // 00512e3b: PUSH 0x4
 // 00512e3d: PUSH 0x2f28e50
 //   XREF to: 02f28e50 (DATA)
-// 00512e42: CALL core_menu.cpp_getGameMainMenuChoice_FUN_00510000
+// 00512e42: CALL core_menu.cpp_renderMenuAndGetChoice_FUN_00510000
 //   XREF to: 00510000 (UNCONDITIONAL_CALL)
 // 00512e47: ADD ESP,0x14
 // 00512e4a: MOV EBX,EAX
@@ -260,7 +268,7 @@ void core_menu_cpp_ShowOptionsScreen_FUN_00512d30(void)
 //   XREF to: 00512eb9 (COMPUTED_JUMP)
 //   XREF to: 00512edd (COMPUTED_JUMP)
 //   XREF to: 00512d1c (DATA)
-// 00512e5d: CALL core_menu.cpp_GraphicsOptions_FUN_00510c80
+// 00512e5d: CALL core_menu.cpp_configureGraphicsOptions_FUN_00510c80
 //   Label: caseD_0
 //   XREF to: 00510c80 (UNCONDITIONAL_CALL)
 // 00512e62: PUSH 0x1
@@ -302,7 +310,7 @@ void core_menu_cpp_ShowOptionsScreen_FUN_00512d30(void)
 // 00512eaa: ADD ESP,0x4
 // 00512ead: JMP 0x00512d47
 //   XREF to: 00512d47 (UNCONDITIONAL_JUMP)
-// 00512eb2: CALL core_menu.cpp_SettingSoundOptions_FUN_00511e50
+// 00512eb2: CALL core_menu.cpp_configureSoundOptions_FUN_00511e50
 //   Label: caseD_1
 //   XREF to: 00511e50 (UNCONDITIONAL_CALL)
 // 00512eb7: JMP 0x00512e62
@@ -313,7 +321,7 @@ void core_menu_cpp_ShowOptionsScreen_FUN_00512d30(void)
 //   XREF to: 0067b654 (READ)
 // 00512ebe: MOV EBX,dword ptr [EAX + 0xbc]
 //   XREF to: 02d81b58 (READ)
-// 00512ec4: CALL core_menu.cpp_CustomKeySettings_FUN_00511890
+// 00512ec4: CALL core_menu.cpp_configureCustomKeys_FUN_00511890
 //   XREF to: 00511890 (UNCONDITIONAL_CALL)
 // 00512ec9: MOV EAX,[0x0067b654]
 //   XREF to: 02d81a9c (PARAM)

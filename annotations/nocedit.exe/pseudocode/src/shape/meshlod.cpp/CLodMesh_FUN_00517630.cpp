@@ -20,16 +20,16 @@
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   shape_meshlod.cpp_addAdjacentEdgeToVertex_FUN_00515d90
-//   shape_meshlod.cpp_CLodMesh_FUN_00515ec0
-//   shape_meshlod.cpp_CLodMesh_FUN_00516000
+//   shape_meshlod.cpp_addAdjacentTriangleToEdge_FUN_00515ca0
+//   shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
+//   shape_meshlod.cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530
+//   shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
 //   shape_meshlod.cpp_CLodMesh_FUN_00518300
-//   shape_meshlod.cpp_FUN_00515ca0
-//   shape_meshlod.cpp_FUN_00515e00
-//   shape_meshlod.cpp_FUN_00515e90
-//   shape_meshlod.cpp_FUN_00517530
-//   shape_meshlod.cpp_FUN_005183e0
+//   shape_meshlod.cpp_CLodMesh_removeEdgeFromTriangle_FUN_005183e0
+//   shape_meshlod.cpp_findVertexIndexInTriangle_FUN_00515e90
 //   shape_meshlod.cpp_FUN_00519830
 //   shape_meshlod.cpp_FUN_0051a980
+//   shape_meshlod.cpp_removeEdgeFromVertex_FUN_00515e00
 
 #include "nocturne.h"
 
@@ -42,6 +42,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
   int iVar4;
   int iVar5;
   SLodTriangle *pSVar6;
+  int extraout_EAX;
   int iVar7;
   int iVar8;
   SLodVert *pSVar9;
@@ -52,19 +53,17 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
   int in_stack_00000008;
   int in_stack_0000000c;
   float in_stack_00000010;
-  float fStack_4e0;
+  float in_stack_fffffb20;
   float fStack_4dc;
   int aiStack_4d8 [2];
   float afStack_4d0 [198];
-  float afStack_1b8 [51];
-  float local_ec;
-  float local_e8;
+  float afStack_1b8 [50];
+  CVector3f local_f0;
   float local_e4;
   float local_e0;
   float local_dc;
   float local_d8;
-  float local_c8;
-  float local_c4;
+  CVector3f local_cc;
   float local_c0;
   float local_bc;
   float local_b8;
@@ -78,9 +77,11 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
   SLodEdge *local_98;
   int local_94;
   int local_90;
+  float local_8c;
   SLodEdge *local_88;
   int local_84;
   int local_80;
+  float local_7c;
   float local_78;
   int local_74;
   SLodTriangle *local_70;
@@ -107,27 +108,30 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
   int local_14;
   
   local_c0 = 0.0;
-  local_b8 = (float)shape_meshlod_cpp_CLodMesh_FUN_00515ec0(this_ptr);
+  local_b8 = (float)shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
+                              (this_ptr,in_stack_00000008,in_stack_0000000c,0);
   if ((int)local_b8 < 0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
     g_CurrentLineNumber = 0x824;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Tried to collapse edge that doesn't exist!");
   }
   pSVar9 = this_ptr->vertex_data;
-  local_ec = *(float *)pSVar9[in_stack_0000000c].field0_0x0 * in_stack_00000010;
-  local_e8 = *(float *)(pSVar9[in_stack_0000000c].field0_0x0 + 4) * in_stack_00000010;
+  local_f0.y = *(float *)pSVar9[in_stack_0000000c].field0_0x0 * in_stack_00000010;
+  local_f0.z = *(float *)(pSVar9[in_stack_0000000c].field0_0x0 + 4) * in_stack_00000010;
   local_e4 = *(float *)(pSVar9[in_stack_0000000c].field0_0x0 + 8) * in_stack_00000010;
   local_d8 = 1.0 - in_stack_00000010;
   pSVar9 = this_ptr->vertex_data;
   local_e0 = *(float *)pSVar9[in_stack_00000008].field0_0x0 * local_d8;
   local_dc = *(float *)(pSVar9[in_stack_00000008].field0_0x0 + 4) * local_d8;
   local_d8 = *(float *)(pSVar9[in_stack_00000008].field0_0x0 + 8) * local_d8;
-  local_c8 = local_e0 + local_ec;
-  local_c4 = local_dc + local_e8;
+  local_cc.y = local_e0 + local_f0.y;
+  local_cc.z = local_dc + local_f0.z;
   local_c0 = local_d8 + local_e4;
   local_b0 = this_ptr->edges_ptr + (int)local_b4;
-  shape_meshlod_cpp_FUN_00515e00();
-  shape_meshlod_cpp_FUN_00515e00();
+  shape_meshlod_cpp_removeEdgeFromVertex_FUN_00515e00
+            (this_ptr->vertex_data + local_b0->vertex_idx_1,(int)local_b4);
+  shape_meshlod_cpp_removeEdgeFromVertex_FUN_00515e00
+            (this_ptr->vertex_data + *(int *)(local_ac + 4),(int)local_b4);
   local_a4 = 0;
   local_b4 = 0.0;
   *(undefined4 *)(local_a8 + 0x14) = 1;
@@ -161,13 +165,14 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
         pSVar2 = local_40;
         fVar1 = fStack_4dc;
         if ((pSVar6->vertex_idx_0 == in_stack_00000008) ||
-           (fVar1 = fStack_4e0, pSVar6->vertex_idx_0 == in_stack_0000000c)) {
+           (fVar1 = in_stack_fffffb20, pSVar6->vertex_idx_0 == in_stack_0000000c)) {
           afStack_4d0[iVar7 * 4] = *(float *)local_40->field4_0x1c * fVar1 + afStack_4d0[iVar7 * 4];
           afStack_4d0[iVar7 * 4 + 1] =
                fVar1 * *(float *)(pSVar2->field4_0x1c + 4) + afStack_4d0[iVar7 * 4 + 1];
         }
         if (pSVar6->edge_idx_0 != local_ac) {
-          shape_meshlod_cpp_FUN_005183e0();
+          shape_meshlod_cpp_CLodMesh_removeEdgeFromTriangle_FUN_005183e0
+                    (this_ptr,local_a0,pSVar6->edge_idx_0);
         }
         pSVar6 = (SLodTriangle *)(pSVar6->field0_0x0 + 4);
         local_40 = (SLodTriangle *)(local_40->field0_0x0 + 8);
@@ -194,7 +199,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
     } while (iVar4 < iVar3);
   }
   DAT_02f33334 = DAT_02f33334 + 1;
-  if (0.0 < fStack_4e0) {
+  if (0.0 < in_stack_fffffb20) {
     local_2c = 0;
     local_4c = in_stack_00000008 * 0x4c4;
     for (iVar7 = 0;
@@ -208,9 +213,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
         do {
           local_90 = local_30->adjacent_tri_indices[0];
           pSVar6 = this_ptr->triangle_data + local_30->adjacent_tri_indices[0];
-          if (DAT_02f33334 != *(int *)(pSVar6->field9_0x44 + 0x40)) {
+          if (DAT_02f33334 != *(int *)(pSVar6->field10_0x50 + 0x34)) {
             iVar3 = pSVar6->vertex_idx_0;
-            *(int *)(pSVar6->field9_0x44 + 0x40) = DAT_02f33334;
+            *(int *)(pSVar6->field10_0x50 + 0x34) = DAT_02f33334;
             iVar8 = 0;
             pSVar2 = pSVar6;
             while (iVar3 != in_stack_00000008) {
@@ -239,10 +244,11 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
             }
             pcVar11 = pSVar6->field0_0x0 + iVar3 * 4 + iVar8 * 8;
             for (; iVar3 < this_ptr->field7_0x1c; iVar3 = iVar3 + 1) {
-              shape_meshlod_cpp_FUN_00517530();
+              shape_meshlod_cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530
+                        (this_ptr,local_90,iVar3,&local_f0,&local_8c);
               *(float *)(pcVar11 + 0x1c) =
-                   local_b4 * local_e4 + local_bc * local_ec + local_b8 * local_e8 + (float)local_88
-              ;
+                   local_b4 * local_e4 + local_bc * local_f0.y + local_b8 * local_f0.z +
+                   (float)local_88;
               pcVar11 = pcVar11 + 4;
             }
           }
@@ -268,9 +274,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
         do {
           local_80 = local_24->adjacent_tri_indices[0];
           pSVar6 = this_ptr->triangle_data + local_24->adjacent_tri_indices[0];
-          if (DAT_02f33334 != *(int *)(pSVar6->field9_0x44 + 0x40)) {
+          if (DAT_02f33334 != *(int *)(pSVar6->field10_0x50 + 0x34)) {
             iVar3 = pSVar6->vertex_idx_0;
-            *(int *)(pSVar6->field9_0x44 + 0x40) = DAT_02f33334;
+            *(int *)(pSVar6->field10_0x50 + 0x34) = DAT_02f33334;
             iVar8 = 0;
             pSVar2 = pSVar6;
             while (iVar3 != in_stack_0000000c) {
@@ -299,9 +305,10 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
             }
             pcVar11 = pSVar6->field0_0x0 + iVar3 * 4 + iVar8 * 8;
             for (; iVar3 < this_ptr->field7_0x1c; iVar3 = iVar3 + 1) {
-              shape_meshlod_cpp_FUN_00517530();
+              shape_meshlod_cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530
+                        (this_ptr,local_80,iVar3,&local_cc,&local_7c);
               *(float *)(pcVar11 + 0x1c) =
-                   local_b4 * local_c0 + local_bc * local_c8 + local_b8 * local_c4 + local_78;
+                   local_b4 * local_c0 + local_bc * local_cc.y + local_b8 * local_cc.z + local_78;
               pcVar11 = pcVar11 + 4;
             }
           }
@@ -350,13 +357,15 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
       }
       local_74 = -1;
       if (pSVar12->vertex_idx_1 == in_stack_0000000c) {
-        local_74 = shape_meshlod_cpp_CLodMesh_FUN_00515ec0(this_ptr);
+        local_74 = shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
+                             (this_ptr,in_stack_00000008,pSVar12->vertex_idx_2,0);
         if (local_74 < 0) {
           pSVar12->vertex_idx_1 = in_stack_00000008;
         }
       }
       else if (in_stack_0000000c == pSVar12->vertex_idx_2) {
-        local_74 = shape_meshlod_cpp_CLodMesh_FUN_00515ec0(this_ptr);
+        local_74 = shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
+                             (this_ptr,pSVar12->vertex_idx_1,in_stack_00000008,0);
         if (local_74 < 0) {
           pSVar12->vertex_idx_2 = in_stack_00000008;
         }
@@ -381,11 +390,14 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
         iVar8 = local_74 * 0xf0;
         iVar7 = local_6c;
         while (local_6c = iVar8, 0 < iVar3) {
-          fStack_4e0 = (float)pSVar12->adjacent_tri_indices[0];
-          local_70 = this_ptr->triangle_data + (int)fStack_4e0;
-          iVar7 = shape_meshlod_cpp_FUN_005183e0();
-          *(SLodTriangle **)(iVar7 * 4 + local_6c + 0x34) = local_70;
-          shape_meshlod_cpp_FUN_00515ca0();
+          in_stack_fffffb20 = (float)pSVar12->adjacent_tri_indices[0];
+          local_70 = this_ptr->triangle_data + (int)in_stack_fffffb20;
+          shape_meshlod_cpp_CLodMesh_removeEdgeFromTriangle_FUN_005183e0
+                    (this_ptr,(int)in_stack_fffffb20,(int)local_78);
+          *(SLodTriangle **)(extraout_EAX * 4 + local_6c + 0x34) = local_70;
+          shape_meshlod_cpp_addAdjacentTriangleToEdge_FUN_00515ca0
+                    ((SLodEdge *)(this_ptr->edges_ptr->field2_0x8 + local_68 + -8),
+                     (int)in_stack_fffffb20);
           iVar8 = local_6c;
           iVar7 = local_6c;
           iVar3 = pSVar12->adjacent_tri_count;
@@ -408,7 +420,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
       pSVar9 = this_ptr->vertex_data;
       iVar7 = iVar7 + 1;
       *(float *)(pSVar9[in_stack_00000008].field0_0x0 + iVar3 + 0xc) =
-           *(float *)(pSVar9[in_stack_0000000c].field0_0x0 + iVar3 + 0xc) * fStack_4e0 +
+           *(float *)(pSVar9[in_stack_0000000c].field0_0x0 + iVar3 + 0xc) * in_stack_fffffb20 +
            *(float *)(pSVar9[in_stack_00000008].field0_0x0 + iVar3 + 0xc) * fStack_4dc;
       iVar3 = iVar3 + 4;
       local_60 = local_64;
@@ -430,11 +442,8 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
       pcVar11 = local_40->field0_0x0 + iVar3;
       iVar3 = iVar3 + 4;
       iVar7 = iVar7 + 1;
-      pSVar10 = this_ptr->edges_ptr + *(int *)((int)pSVar9->adjacent_edge_indices + (int)pcVar11);
-      pSVar10->field4_0x18[8] = '\x01';
-      pSVar10->field4_0x18[9] = '\0';
-      pSVar10->field4_0x18[10] = '\0';
-      pSVar10->field4_0x18[0xb] = '\0';
+      this_ptr->edges_ptr[*(int *)((int)pSVar9->adjacent_edge_indices + (int)pcVar11)].field6_0x20 =
+           1;
     }
     local_54 = *(int *)((int)pSVar9->adjacent_edge_indices + local_4c);
     pSVar10 = this_ptr->edges_ptr + local_54;
@@ -443,9 +452,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
     if (0 < pSVar10->adjacent_tri_count) {
       do {
         if (DAT_02f33334 !=
-            *(int *)(this_ptr->triangle_data[pSVar10->adjacent_tri_indices[0]].field9_0x44 + 0x40))
+            *(int *)(this_ptr->triangle_data[pSVar10->adjacent_tri_indices[0]].field10_0x50 + 0x34))
         {
-          *(int *)(this_ptr->triangle_data[pSVar10->adjacent_tri_indices[0]].field9_0x44 + 0x40) =
+          *(int *)(this_ptr->triangle_data[pSVar10->adjacent_tri_indices[0]].field10_0x50 + 0x34) =
                DAT_02f33334;
           shape_meshlod_cpp_FUN_00519830();
         }
@@ -453,14 +462,18 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
         pSVar10 = (SLodEdge *)&pSVar10->vertex_idx_2;
       } while (iVar7 < local_50->adjacent_tri_count);
     }
-    shape_meshlod_cpp_CLodMesh_FUN_00516000(this_ptr);
+    shape_meshlod_cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000(this_ptr,local_54,0);
   }
   iVar7 = 0;
   if (0 < this_ptr->sample_point_count) {
     iVar3 = 0;
     do {
       if ((this_ptr->triangle_data[*(int *)(iVar3 + 0xc + (int)this_ptr->sample_points_ptr)].
-           processed_flag != 0) || (iVar8 = shape_meshlod_cpp_FUN_00515e90(), -1 < iVar8)) {
+           processed_flag != 0) ||
+         (iVar8 = shape_meshlod_cpp_findVertexIndexInTriangle_FUN_00515e90
+                            (this_ptr->triangle_data +
+                             *(int *)(iVar3 + 0xc + (int)this_ptr->sample_points_ptr),
+                             in_stack_00000008), -1 < iVar8)) {
         shape_meshlod_cpp_CLodMesh_FUN_00518300(this_ptr);
       }
       iVar7 = iVar7 + 1;
@@ -496,7 +509,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
 // 0051764d: PUSH EBX
 // 0051764e: MOV dword ptr [ESP + 0x440],EDX
 //   XREF to: Stack[-0xc0] (WRITE)
-// 00517655: CALL shape_meshlod.cpp_CLodMesh_FUN_00515ec0
+// 00517655: CALL shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
 //   XREF to: 00515ec0 (UNCONDITIONAL_CALL)
 // 0051765a: ADD ESP,0x10
 // 0051765d: MOV dword ptr [ESP + 0x434],EAX
@@ -593,7 +606,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
 // 00517760: PUSH ESI
 // 00517761: ADD EAX,EDX
 // 00517763: PUSH EAX
-// 00517764: CALL shape_meshlod.cpp_FUN_00515e00
+// 00517764: CALL shape_meshlod.cpp_removeEdgeFromVertex_FUN_00515e00
 //   XREF to: 00515e00 (UNCONDITIONAL_CALL)
 // 00517769: ADD ESP,0x8
 // 0051776c: MOV EAX,dword ptr [ESP + 0x438]
@@ -603,7 +616,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
 // 0051777d: PUSH ESI
 // 0051777e: ADD EAX,EDX
 // 00517780: PUSH EAX
-// 00517781: CALL shape_meshlod.cpp_FUN_00515e00
+// 00517781: CALL shape_meshlod.cpp_removeEdgeFromVertex_FUN_00515e00
 //   XREF to: 00515e00 (UNCONDITIONAL_CALL)
 // 00517786: ADD ESP,0x8
 // 00517789: XOR ECX,ECX
@@ -904,7 +917,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
 //   XREF to: Stack[-0xb0] (READ)
 // 00517acd: PUSH EAX
 // 00517ace: PUSH EBX
-// 00517acf: CALL shape_meshlod.cpp_FUN_005183e0
+// 00517acf: CALL shape_meshlod.cpp_CLodMesh_removeEdgeFromTriangle_FUN_005183e0
 //   XREF to: 005183e0 (UNCONDITIONAL_CALL)
 // 00517ad4: ADD ESP,0xc
 // 00517ad7: JMP 0x0051787b
@@ -979,7 +992,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
 //   XREF to: Stack[-0xa0] (READ)
 // 00517b85: PUSH ECX
 // 00517b86: PUSH EBX
-// 00517b87: CALL shape_meshlod.cpp_FUN_00517530
+// 00517b87: CALL shape_meshlod.cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530
 //   XREF to: 00517530 (UNCONDITIONAL_CALL)
 // 00517b8c: ADD ESP,0x14
 // 00517b8f: FLD float ptr [ESP + 0x424]
@@ -1181,7 +1194,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
 //   XREF to: Stack[-0x90] (READ)
 // 00517da3: PUSH ECX
 // 00517da4: PUSH EBX
-// 00517da5: CALL shape_meshlod.cpp_FUN_00517530
+// 00517da5: CALL shape_meshlod.cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530
 //   XREF to: 00517530 (UNCONDITIONAL_CALL)
 // 00517daa: ADD ESP,0x14
 // 00517dad: FLD float ptr [ESP + 0x424]
@@ -1320,7 +1333,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
 //   XREF to: Stack[0x8] (READ)
 // 00517f11: PUSH ESI
 // 00517f12: PUSH EBX
-// 00517f13: CALL shape_meshlod.cpp_CLodMesh_FUN_00515ec0
+// 00517f13: CALL shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
 //   XREF to: 00515ec0 (UNCONDITIONAL_CALL)
 // 00517f18: ADD ESP,0x10
 // 00517f1b: MOV dword ptr [ESP + 0x46c],EAX
@@ -1367,7 +1380,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
 // 00517f88: PUSH EBX
 // 00517f89: MOV dword ptr [ESP + 0x47c],EDX
 //   XREF to: Stack[-0x80] (WRITE)
-// 00517f90: CALL shape_meshlod.cpp_FUN_005183e0
+// 00517f90: CALL shape_meshlod.cpp_CLodMesh_removeEdgeFromTriangle_FUN_005183e0
 //   XREF to: 005183e0 (UNCONDITIONAL_CALL)
 // 00517f95: ADD ESP,0xc
 // 00517f98: SHL EAX,0x2
@@ -1382,7 +1395,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
 // 00517fb6: PUSH ESI
 // 00517fb7: ADD EAX,ECX
 // 00517fb9: PUSH EAX
-// 00517fba: CALL shape_meshlod.cpp_FUN_00515ca0
+// 00517fba: CALL shape_meshlod.cpp_addAdjacentTriangleToEdge_FUN_00515ca0
 //   XREF to: 00515ca0 (UNCONDITIONAL_CALL)
 // 00517fbf: MOV ESI,dword ptr [EDI + 0x24]
 // 00517fc2: ADD ESP,0x8
@@ -1533,7 +1546,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
 // 00518148: MOV EDX,dword ptr [EDI]
 // 0051814a: PUSH EDX
 // 0051814b: PUSH EBX
-// 0051814c: CALL shape_meshlod.cpp_CLodMesh_FUN_00515ec0
+// 0051814c: CALL shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
 //   XREF to: 00515ec0 (UNCONDITIONAL_CALL)
 // 00518151: ADD ESP,0x10
 // 00518154: MOV dword ptr [ESP + 0x46c],EAX
@@ -1591,7 +1604,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
 //   XREF to: Stack[-0x68] (READ)
 // 005181d3: PUSH ECX
 // 005181d4: PUSH EBX
-// 005181d5: CALL shape_meshlod.cpp_CLodMesh_FUN_00516000
+// 005181d5: CALL shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
 //   XREF to: 00516000 (UNCONDITIONAL_CALL)
 // 005181da: ADD ESP,0xc
 // 005181dd: MOV ESI,dword ptr [ESP + 0x4d0]
@@ -1701,7 +1714,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_FUN_00517630(CLodMesh *this_ptr)
 //   XREF to: Stack[0x8] (READ)
 // 005182ce: PUSH ECX
 // 005182cf: PUSH EAX
-// 005182d0: CALL shape_meshlod.cpp_FUN_00515e90
+// 005182d0: CALL shape_meshlod.cpp_findVertexIndexInTriangle_FUN_00515e90
 //   XREF to: 00515e90 (UNCONDITIONAL_CALL)
 // 005182d5: ADD ESP,0x8
 // 005182d8: TEST EAX,EAX

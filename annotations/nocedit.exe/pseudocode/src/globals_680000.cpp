@@ -245,6 +245,7 @@ SAlphaEntry[256] g_AlphaTable = /* Base64 encoded data (2048 bytes):
    "9gD2APYAAAD3APcA9wAAAPgA+AD4AAAA+QD5APkAAAD6APoA+gAAAPsA+wD7AAAA"
    "/AD8APwAAAD9AP0A/QAAAP4A/gD+AAAA/wD/AP8AAAA="
 */;
+TerminatedCString g_RendererDllName = "trid3d.dll";
 int g_SystemInitialized = 0x1;
 int g_VideoMemorySize = 0x1;
 int g_MaxTextureSize = 0x40;

@@ -108,7 +108,7 @@
 //   core_flamegun.cpp_initializeFlamegun_FUN_004cbce0
 //   core_inivar.cpp_readIniData_FUN_004fbd90
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_menu.cpp_RunCalibrationTest_FUN_00510ba0
+//   core_menu.cpp_showCalibrationTest_FUN_00510ba0
 //   core_mission.cpp_CDemonMission_clearMaybe_FUN_00522c80
 //   core_mmx.c_detectCPUFeatures_FUN_00524f10
 //   core_netgame.cpp_CNetGame_FUN_0053f780
@@ -608,7 +608,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
     pCVar4->game_pixy = GAME_WINDOW_RESOLUTION_480;
     g_FullscreenMode = 0;
     pCVar4->game_bpp = 0x20;
-    core_menu_cpp_RunCalibrationTest_FUN_00510ba0();
+    core_menu_cpp_showCalibrationTest_FUN_00510ba0();
   }
   wincore_winvideo_cpp_playMovie_FUN_005f4a00("video","opening.avi");
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -1603,7 +1603,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
 //   XREF to: 03f6b878 (WRITE)
 // 00508234: MOV dword ptr [EAX + 0x8],0x20
 //   XREF to: 02d81aa4 (WRITE)
-// 0050823b: CALL core_menu.cpp_RunCalibrationTest_FUN_00510ba0
+// 0050823b: CALL core_menu.cpp_showCalibrationTest_FUN_00510ba0
 //   XREF to: 00510ba0 (UNCONDITIONAL_CALL)
 // 00508240: JMP 0x00508037
 //   XREF to: 00508037 (UNCONDITIONAL_JUMP)

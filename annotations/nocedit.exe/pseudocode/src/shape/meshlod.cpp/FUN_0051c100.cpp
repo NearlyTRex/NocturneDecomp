@@ -48,7 +48,7 @@ int shape_meshlod_cpp_FUN_0051c100(void)
     iVar3 = 0;
     do {
       pSVar1 = in_stack_00000004->triangle_data;
-      if (*(int *)(pSVar1->field9_0x44 + iVar3 + -4) == 0) {
+      if (*(int *)(pSVar1->field10_0x50 + iVar3 + -0x10) == 0) {
         crt_stdio_c_fprintf_FUN_005fe6d0
                   (in_stack_00000008,"%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\n","%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\n",
                    0xffffffff,*(undefined4 *)(pSVar1->field4_0x1c + iVar3 + -0xc),

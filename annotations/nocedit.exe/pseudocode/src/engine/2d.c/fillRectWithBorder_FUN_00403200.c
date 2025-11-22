@@ -7,7 +7,7 @@
 //   core_actor.cpp_CActorPropertyList_FUN_0040e850 (0040e850) at 0040e910 [UNCONDITIONAL_CALL]
 //   core_game.cpp_CGame_renderOverlay_FUN_004d8040 (004d8040) at 004d8328 [UNCONDITIONAL_CALL]
 //   core_game.cpp_FUN_004d7fa0 (004d7fa0) at 004d7fec [UNCONDITIONAL_CALL]
-//   core_menu.cpp_SettingMouseSensitivity_FUN_005107c0 (005107c0) at 0051090a [UNCONDITIONAL_CALL]
+//   core_menu.cpp_adjustMouseSensitivity_FUN_005107c0 (005107c0) at 0051090a [UNCONDITIONAL_CALL]
 //   core_msnedit.cpp_FUN_00536e20 (00536e20) at 00536ef9 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10 (004a5c10) at 004a5c4b [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80 (004a0f80) at 004a104c [UNCONDITIONAL_CALL]

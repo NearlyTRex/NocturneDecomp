@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_0052a3f0(CMoon * this_ptr)
 // Cross-references:
-//   core_menu.cpp_getGameMainMenuChoice_FUN_00510000 (00510000) at 0051008e [UNCONDITIONAL_CALL]
+//   core_menu.cpp_renderMenuAndGetChoice_FUN_00510000 (00510000) at 0051008e [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_00639fc9 = 30
 //   float g_MoonAnimationTimer

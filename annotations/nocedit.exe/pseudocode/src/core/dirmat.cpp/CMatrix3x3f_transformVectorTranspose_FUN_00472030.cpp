@@ -33,7 +33,7 @@
 //   core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_00585970 (00585970) at 005859ac [UNCONDITIONAL_CALL]
 //   core_wateract.cpp_FUN_005eb040 (005eb040) at 005eb0b4 [UNCONDITIONAL_CALL]
 //   core_weapon.cpp_CWeapon_FUN_005ee3f0 (005ee3f0) at 005ee443 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_005151e0 (005151e0) at 00515475 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0 (005151e0) at 00515475 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

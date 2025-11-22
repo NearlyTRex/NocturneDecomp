@@ -8,57 +8,64 @@
 //   shape_meshlod.cpp_CLodMesh_FUN_0051b8a0 (0051b8a0) at 0051b8e4 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 (0051b920) at 0051b94d [UNCONDITIONAL_CALL]
 // Function calls:
-//   shape_meshlod.cpp_CLodMesh_FUN_00515ec0
-//   shape_meshlod.cpp_FUN_00515ca0
+//   shape_meshlod.cpp_addAdjacentTriangleToEdge_FUN_00515ca0
+//   shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
 
 #include "nocturne.h"
 
 int __cdecl shape_meshlod_cpp_CLodMesh_buildEdges_FUN_00515ba0(CLodMesh *this_ptr)
 
 {
-  SLodTriangle *pSVar1;
+  int iVar1;
   int iVar2;
   int iVar3;
-  int iVar4;
-  int iVar5;
-  int local_1c;
+  char *pcVar4;
+  char *pcVar5;
   int local_18;
   
-  local_1c = 0;
+  iVar1 = 0;
   if (0 < this_ptr->vertex_count) {
-    iVar4 = 0;
+    iVar3 = 0;
     do {
-      *(undefined4 *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar4 + -4) = 0;
-      local_1c = local_1c + 1;
-      iVar4 = iVar4 + 0x4c4;
-    } while (local_1c < this_ptr->vertex_count);
+      *(undefined4 *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar3 + -4) = 0;
+      iVar1 = iVar1 + 1;
+      iVar3 = iVar3 + 0x4c4;
+    } while (iVar1 < this_ptr->vertex_count);
   }
   this_ptr->edge_count = 0;
   local_18 = 0;
   if (0 < this_ptr->tri_count) {
-    local_1c = 0;
+    iVar1 = 0;
     do {
-      iVar4 = local_1c;
-      pSVar1 = this_ptr->triangle_data;
-      if (*(int *)(pSVar1->field9_0x44 + local_1c + -4) == 0) {
-        iVar5 = 0;
+      pcVar4 = this_ptr->triangle_data->field0_0x0 + iVar1;
+      if (*(int *)(pcVar4 + 0x40) == 0) {
+        iVar3 = 0;
+        pcVar5 = pcVar4;
         do {
-          iVar2 = shape_meshlod_cpp_CLodMesh_FUN_00515ec0(this_ptr);
-          iVar3 = iVar5 + -1;
-          if (iVar3 < 0) {
-            iVar3 = 2;
+          iVar1 = iVar3 + 1;
+          if (2 < iVar1) {
+            iVar1 = 0;
           }
-          *(int *)(pSVar1->field9_0x44 + iVar3 * 4 + iVar4 + -0x10) = iVar2;
-          local_1c = local_18;
-          iVar5 = iVar5 + 1;
-          shape_meshlod_cpp_FUN_00515ca0();
-        } while (iVar5 < 3);
+          iVar2 = shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
+                            (this_ptr,*(int *)(pcVar5 + 0x10),*(int *)(pcVar4 + iVar1 * 4 + 0x10),1)
+          ;
+          iVar1 = iVar3 + -1;
+          if (iVar1 < 0) {
+            iVar1 = 2;
+          }
+          *(int *)(pcVar4 + iVar1 * 4 + 0x34) = iVar2;
+          pcVar5 = pcVar5 + 4;
+          iVar3 = iVar3 + 1;
+          iVar1 = local_18;
+          shape_meshlod_cpp_addAdjacentTriangleToEdge_FUN_00515ca0
+                    (this_ptr->edges_ptr + iVar2,local_18);
+        } while (iVar3 < 3);
       }
-      local_1c = local_1c + 0x8c;
+      iVar1 = iVar1 + 0x8c;
       local_18 = local_18 + 1;
     } while (local_18 < this_ptr->tri_count);
   }
-  return local_1c;
+  return iVar1;
 }
 
 
@@ -131,7 +138,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_buildEdges_FUN_00515ba0(CLodMesh *this_pt
 // 00515c28: MOV EAX,dword ptr [ESI + 0x10]
 // 00515c2b: PUSH EAX
 // 00515c2c: PUSH EDI
-// 00515c2d: CALL shape_meshlod.cpp_CLodMesh_FUN_00515ec0
+// 00515c2d: CALL shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
 //   XREF to: 00515ec0 (UNCONDITIONAL_CALL)
 // 00515c32: MOV EDX,EAX
 // 00515c34: LEA EAX,[EBX + -0x1]
@@ -154,7 +161,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_buildEdges_FUN_00515ba0(CLodMesh *this_pt
 // 00515c58: PUSH EAX
 // 00515c59: ADD ESI,0x4
 // 00515c5c: INC EBX
-// 00515c5d: CALL shape_meshlod.cpp_FUN_00515ca0
+// 00515c5d: CALL shape_meshlod.cpp_addAdjacentTriangleToEdge_FUN_00515ca0
 //   XREF to: 00515ca0 (UNCONDITIONAL_CALL)
 // 00515c62: ADD ESP,0x8
 // 00515c65: CMP EBX,0x3

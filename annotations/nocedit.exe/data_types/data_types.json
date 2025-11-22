@@ -3105,6 +3105,10 @@
       "type":"struct"
     },
     {
+      "name":"SGraphicsCardEnumeration",
+      "type":"struct"
+    },
+    {
       "name":"SHORT",
       "type":"typedef"
     },
@@ -5842,24 +5846,24 @@
       "name":"APIDLL_buildCardList",
       "parameters":[
         {
-          "name":"card_list_buffer",
-          "type":"void*"
-        },
-        {
-          "name":"max_cards",
-          "type":"int"
-        },
-        {
-          "name":"card_count",
+          "name":"out_card_count",
           "type":"int*"
         },
         {
-          "name":"card_names",
+          "name":"enum_data_buffer",
+          "type":"void*"
+        },
+        {
+          "name":"out_card_names",
           "type":"char**"
         },
         {
-          "name":"buffer_size",
-          "type":"int"
+          "name":"out_vendor_ids",
+          "type":"int*"
+        },
+        {
+          "name":"out_device_ids",
+          "type":"int*"
         }
       ],
       "return_type":"int",
@@ -41608,6 +41612,48 @@
       "fields":[
         {
           "len":4,
+          "name":"card_count",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":64,
+          "name":"enum_buffer",
+          "offset":4,
+          "type":"char[64]"
+        },
+        {
+          "len":64,
+          "name":"card_names",
+          "offset":68,
+          "type":"char*[16]"
+        },
+        {
+          "len":64,
+          "name":"vendor_ids",
+          "offset":132,
+          "type":"int[16]"
+        },
+        {
+          "len":64,
+          "name":"device_ids",
+          "offset":196,
+          "type":"int[16]"
+        }
+      ],
+      "importable":true,
+      "len":260,
+      "name":"SGraphicsCardEnumeration",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
           "name":"y_min",
           "offset":0,
           "type":"int"
@@ -42423,10 +42469,22 @@
           "type":"int"
         },
         {
-          "len":12,
-          "name":"field_24",
+          "len":4,
+          "name":"collapse_viability",
           "offset":24,
-          "type":"char[12]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"collapse_curvature",
+          "offset":28,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_32",
+          "offset":32,
+          "type":"int"
         },
         {
           "len":4,
@@ -42507,10 +42565,16 @@
           "type":"int"
         },
         {
-          "len":72,
-          "name":"field_68",
+          "len":12,
+          "name":"normal",
           "offset":68,
-          "type":"char[72]"
+          "type":"CVector3f"
+        },
+        {
+          "len":60,
+          "name":"field_80",
+          "offset":80,
+          "type":"char[60]"
         }
       ],
       "importable":true,

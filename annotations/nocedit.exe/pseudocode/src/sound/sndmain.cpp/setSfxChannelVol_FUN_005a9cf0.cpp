@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0(int channel_index, float volume)
 // Cross-references:
-//   core_menu.cpp_SettingSoundOptions_FUN_00511e50 (00511e50) at 00512980 [UNCONDITIONAL_CALL]
+//   core_menu.cpp_configureSoundOptions_FUN_00511e50 (00511e50) at 00512980 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_configure_FUN_005b3830 (005b3830) at 005b38a6 [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_init_FUN_005b2dd0 (005b2dd0) at 005b2e9d [UNCONDITIONAL_CALL]
 //   core_sound.cpp_CSound_process_FUN_005b2fd0 (005b2fd0) at 005b325f [UNCONDITIONAL_CALL]
