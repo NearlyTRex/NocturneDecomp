@@ -11,8 +11,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 shape_superopt.cpp_FUN_005c7dc0(undefined4 param_1) */
-
 void shape_superopt_cpp_FUN_005c7dc0(void)
 
 {

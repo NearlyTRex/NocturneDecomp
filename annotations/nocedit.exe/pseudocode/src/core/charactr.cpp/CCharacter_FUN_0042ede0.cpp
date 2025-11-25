@@ -10,16 +10,16 @@
 //   core_svetlana.cpp_FUN_005d9260 (005d9260) at 005d974c [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_s_was_in_the_way_but_cou_00617626
-//   undefined4 DAT_00617662
-//   undefined4 DAT_0061766a
-//   undefined4 DAT_00617672
-//   undefined4 DAT_0061767a
-//   undefined4 DAT_00617682
-//   undefined4 DAT_0061768a
-//   undefined4 DAT_00617692
-//   undefined4 DAT_0061769a
-//   undefined4 DAT_006176a2
-//   undefined4 DAT_006176aa
+//   double DOUBLE_00617662 = 0.785398163375000
+//   double DOUBLE_0061766a = 1.5
+//   double DOUBLE_00617672 = 4
+//   double DOUBLE_0061767a = 0.523598775583333
+//   double DOUBLE_00617682 = 4.5
+//   double DOUBLE_0061768a = 1.75
+//   double DOUBLE_00617692 = 1.57079632675000
+//   double DOUBLE_0061769a = 0.25
+//   double DOUBLE_006176a2 = 2.40000000000000
+//   float FLOAT_006176aa = -1
 //   undefined4 DAT_0066e740
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   CConsole g_ConsolePtr
@@ -34,8 +34,6 @@
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
 
@@ -89,7 +87,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
                        (&CStack_80,&CStack_38);
     fStack_14 = pCVar5->y;
     iVar4 = (*this_ptr_00->vtable[1].processMeleeHit)(this_ptr_00,(int)fVar6);
-    if ((iVar4 != 0) && (fStack_f0 < (float)_DAT_00617662)) {
+    if ((iVar4 != 0) && (fStack_f0 < (float)DOUBLE_00617662)) {
       bVar1 = CStack_80.x < 0.0;
       in_stack_00000008 = 0.0;
       do {
@@ -102,7 +100,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
         CStack_5c.z = 0.0;
         CStack_5c.y = fStack00000010;
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&CStack_e8,&CStack_5c);
-        while ((float)_DAT_006176a2 < 6.5) {
+        while ((float)DOUBLE_006176a2 < 6.5) {
           local_8c.z = 6.5;
           local_8c.x = 0.0;
           local_8c.y = 0.0;
@@ -129,24 +127,25 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
             pCVar3->cloth_data[0x32f] = -0x40;
             return 2;
           }
-          CStack_e8.m[0].y = CStack_e8.m[0].y + _DAT_006176aa;
+          CStack_e8.m[0].y = CStack_e8.m[0].y + FLOAT_006176aa;
         }
         in_stack_00000008 = (float)((int)in_stack_00000008 + 1);
       } while ((int)in_stack_00000008 < 6);
     }
-    if (((ABS(CStack_80.y) <= (float)_DAT_00617672) && (fStack_f0 <= (float)_DAT_0061767a)) &&
+    if (((ABS(CStack_80.y) <= (float)DOUBLE_00617672) && (fStack_f0 <= (float)DOUBLE_0061767a)) &&
        (SQRT(CStack_80.z * CStack_80.z + CStack_80.x * CStack_80.x + CStack_80.y * CStack_80.y) <=
-        (float)_DAT_00617682)) {
+        (float)DOUBLE_00617682)) {
       fVar6 = *(float *)(this_ptr->cloth_data + 0x32c) + in_stack_00000008;
       *(float *)(this_ptr->cloth_data + 0x32c) = fVar6;
-      if (fVar6 < (float)_DAT_0061768a) {
+      if (fVar6 < (float)DOUBLE_0061768a) {
         return 0;
       }
       pcVar2 = this_ptr->cloth_data;
       uStack0000000c = 0;
       do {
         this_ptr = (CCharacter *)
-                   ((float)((int)uStack0000000c / 2) * (float)_DAT_00617692 * (float)_DAT_0061769a);
+                   ((float)((int)uStack0000000c / 2) * (float)DOUBLE_00617692 *
+                   (float)DOUBLE_0061769a);
         if ((uStack0000000c & 1) != 0) {
           this_ptr = (CCharacter *)-(float)this_ptr;
         }
@@ -156,7 +155,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
         CStack_38.y = fStack00000010;
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                   ((CMatrix3x3f *)auStack_c0,&CStack_38);
-        while ((float)_DAT_006176a2 < fStack_f4) {
+        while ((float)DOUBLE_006176a2 < fStack_f4) {
           fStack_14 = 0.0;
           pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                              ((CMatrix3x3f *)auStack_c0,local_2c,(CVector3f *)&fStack_14);
@@ -180,7 +179,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
             pCVar3->cloth_data[0x32f] = -0x40;
             return 1;
           }
-          fStack_f4 = _DAT_006176aa + 0.0;
+          fStack_f4 = FLOAT_006176aa + 0.0;
         }
         uStack0000000c = uStack0000000c + 1;
         if (8 < (int)uStack0000000c) {
@@ -198,7 +197,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
   else {
     fVar6 = *(float *)(this_ptr->cloth_data + 0x32c) + in_stack_00000008;
     *(float *)(this_ptr->cloth_data + 0x32c) = fVar6;
-    if (((fVar6 < 0.0) && (*(float *)(this_ptr->cloth_data + 0x33c) <= (float)_DAT_0061766a)) &&
+    if (((fVar6 < 0.0) && (*(float *)(this_ptr->cloth_data + 0x33c) <= (float)DOUBLE_0061766a)) &&
        (iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(this_ptr), iVar4 == 0)) {
       return 1;
     }

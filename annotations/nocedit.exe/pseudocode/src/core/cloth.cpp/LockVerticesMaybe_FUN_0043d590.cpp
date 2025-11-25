@@ -14,7 +14,7 @@
 //   TerminatedCString s_Use_mouse_to_unlock_vert_00618913
 //   TerminatedCString s_L_Toggle_locking_unlocki_00618931
 //   TerminatedCString s_N_Toggle_vertex_numbers_00618956
-//   undefined4 DAT_00618972
+//   float FLOAT_00618972 = 0.5
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   int g_WindowWidth = 0x140
@@ -44,9 +44,6 @@
 //   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 //   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
-//   core_stairs.cpp_FUN_005b9620
-//   core_stairs.cpp_FUN_005b9670
-//   core_stairs.cpp_FUN_005b9a20
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   engine_2d.c_clearInputAndWait_FUN_00403260
 //   engine_2d.c_drawLine_FUN_004011b0
@@ -59,19 +56,21 @@
 //   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
 //   shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380
 //   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
+//   shape_spotview.cpp_CSpotView_FUN_005b9620
+//   shape_spotview.cpp_CSpotView_FUN_005b9670
+//   shape_spotview.cpp_CSpotView_FUN_005b9a20
 //   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 //   wincore_windll.cpp_clearZBuffer_FUN_005b3ed4
 //   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 core_cloth.cpp_LockVerticesMaybe(undefined4 param_1) */
 
 void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
 
 {
-  CSpotView **ppCVar1;
+  float *pfVar1;
   SRenderVertex *pSVar2;
   float fVar3;
   float fVar4;
@@ -100,10 +99,10 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
   int in_stack_00000020;
   int in_stack_00000028;
   CGame *in_stack_ffffff84;
-  CSpotView *local_74;
+  float in_stack_ffffff8c;
   float in_stack_ffffff90;
   float in_stack_ffffff94;
-  CSpotView *in_stack_ffffff98;
+  float in_stack_ffffff98;
   float in_stack_ffffff9c;
   float in_stack_ffffffa0;
   char *text;
@@ -112,17 +111,17 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
   
   iVar6 = in_stack_00000004;
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  core_stairs_cpp_FUN_005b9620();
+  shape_spotview_cpp_CSpotView_FUN_005b9620(g_CSpotViewPtr);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffff84);
   core_cloth_cpp_FUN_00439710();
-  ppCVar1 = (CSpotView **)(in_stack_00000004 + 0x56d8);
-  if (&local_74 != ppCVar1) {
-    local_74 = *ppCVar1;
+  pfVar1 = (float *)(in_stack_00000004 + 0x56d8);
+  if ((float *)&stack0xffffff8c != pfVar1) {
+    in_stack_ffffff8c = *pfVar1;
     in_stack_ffffff90 = *(float *)(in_stack_00000004 + 0x56dc);
     in_stack_ffffff94 = *(float *)(in_stack_00000004 + 0x56e0);
   }
-  if ((CSpotView **)&stack0xffffff98 != ppCVar1) {
-    in_stack_ffffff98 = *ppCVar1;
+  if ((float *)&stack0xffffff98 != pfVar1) {
+    in_stack_ffffff98 = *pfVar1;
     in_stack_ffffff9c = *(float *)(in_stack_00000004 + 0x56dc);
     in_stack_ffffffa0 = *(float *)(in_stack_00000004 + 0x56e0);
   }
@@ -131,26 +130,24 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
     point = (CVector3f *)(in_stack_00000004 + 0x57f4);
     do {
       iVar10 = iVar10 + 1;
-      core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)&local_74,point);
+      core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)&stack0xffffff8c,point);
       point = (CVector3f *)&point[0x17].z;
     } while (iVar10 < *(int *)(in_stack_00000004 + 0x104));
   }
   pCVar5 = g_CSpotViewPtr;
-  fVar3 = (in_stack_ffffff90 + in_stack_ffffff9c) * _DAT_00618972;
-  fVar4 = (in_stack_ffffff94 + in_stack_ffffffa0) * _DAT_00618972;
+  fVar3 = (in_stack_ffffff90 + in_stack_ffffff9c) * FLOAT_00618972;
+  fVar4 = (in_stack_ffffff94 + in_stack_ffffffa0) * FLOAT_00618972;
   if (g_CSpotViewPtr->field0_0x0 + 0x18 != &stack0xffffffb8) {
     *(float *)(g_CSpotViewPtr->field0_0x0 + 0x18) =
-         ((float)local_74 + (float)in_stack_ffffff98) * _DAT_00618972;
+         (in_stack_ffffff8c + in_stack_ffffff98) * FLOAT_00618972;
     *(float *)(pCVar5->field0_0x0 + 0x1c) = fVar3;
     *(float *)(pCVar5->field0_0x0 + 0x20) = fVar4;
   }
   while( true ) {
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xf8);
-    local_74 = (CSpotView *)0x43d6de;
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
-    local_74 = g_CSpotViewPtr;
-    core_stairs_cpp_FUN_005b9670();
-    core_stairs_cpp_FUN_005b9a20();
+    shape_spotview_cpp_CSpotView_FUN_005b9670(g_CSpotViewPtr);
+    shape_spotview_cpp_CSpotView_FUN_005b9a20(g_CSpotViewPtr);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr,&g_ZeroVector);
     iStack0000000c = 0;
@@ -248,7 +245,6 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
         if ((int)(g_CDemonRendererPtr->vertex_buffer_ptr[iVar11].projected_vertex.screen_x &
                  -0x80000000) == 0) {
           iVar11 = g_CDemonRendererPtr->vertex_buffer_ptr[iVar11].projected_vertex.screen_x;
-          local_74 = (CSpotView *)0x43dbc1;
           crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffbc,"%d");
           engine_2d_c_drawText_FUN_00401fd0(&stack0xffffffb8,iVar11 >> 0x10,local_1c);
         }
@@ -348,7 +344,7 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
     unaff_EBP = g_CKeysPtr;
     (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x31);
   }
-  core_stairs_cpp_FUN_005b9620();
+  shape_spotview_cpp_CSpotView_FUN_005b9620(g_CSpotViewPtr);
   pCVar5 = g_CSpotViewPtr;
   pCVar5->field0_0x0[0x20] = '\0';
   pCVar5->field0_0x0[0x21] = '\0';
@@ -388,7 +384,7 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
 //   XREF to: Stack[-0x30] (WRITE)
 // 0043d5c4: MOV dword ptr [ESP + 0x50],ESI
 //   XREF to: Stack[-0x3c] (WRITE)
-// 0043d5c8: CALL core_stairs.cpp_FUN_005b9620
+// 0043d5c8: CALL shape_spotview.cpp_CSpotView_FUN_005b9620
 //   XREF to: 005b9620 (UNCONDITIONAL_CALL)
 // 0043d5cd: ADD ESP,0x8
 // 0043d5d0: MOV EAX,[0x0067b654]
@@ -519,14 +515,14 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
 //   XREF to: 0068416c (READ)
 // 0043d6e6: PUSH EBX
 //   XREF to: 03f6b9e0 (DATA)
-// 0043d6e7: CALL core_stairs.cpp_FUN_005b9670
+// 0043d6e7: CALL shape_spotview.cpp_CSpotView_FUN_005b9670
 //   XREF to: 005b9670 (UNCONDITIONAL_CALL)
 // 0043d6ec: ADD ESP,0x8
 // 0043d6ef: MOV ESI,dword ptr [0x0068416c]
 //   XREF to: 0068416c (READ)
 // 0043d6f5: PUSH ESI
 //   XREF to: 03f6b9e0 (DATA)
-// 0043d6f6: CALL core_stairs.cpp_FUN_005b9a20
+// 0043d6f6: CALL shape_spotview.cpp_CSpotView_FUN_005b9a20
 //   XREF to: 005b9a20 (UNCONDITIONAL_CALL)
 // 0043d6fb: ADD ESP,0x4
 // 0043d6fe: PUSH 0x3f87558
@@ -1162,7 +1158,7 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
 //   XREF to: 0068416c (READ)
 // 0043dc8f: PUSH ECX
 //   XREF to: 03f6b9e0 (DATA)
-// 0043dc90: CALL core_stairs.cpp_FUN_005b9620
+// 0043dc90: CALL shape_spotview.cpp_CSpotView_FUN_005b9620
 //   XREF to: 005b9620 (UNCONDITIONAL_CALL)
 // 0043dc95: MOV EAX,[0x0068416c]
 //   XREF to: 0068416c (READ)

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_tentacle.cpp_CTentacle_serialize_FUN_005db880(CTentacle * this_ptr)
 // Globals:
-//   undefined4 s_modelName_00654e4c
+//   TerminatedCString s_modelName_00654e4c
 //   TerminatedCString s_guardDistance_00654e56
 //   TerminatedCString s_motion_state_00654e64
 //   TerminatedCString s_partStatus_00654e71
@@ -27,7 +27,7 @@ void __cdecl core_tentacle_cpp_CTentacle_serialize_FUN_005db880(CTentacle *this_
   
   core_enemy_cpp_CEnemy_serialize_FUN_004a9660(&this_ptr->base_enemy);
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970
-            (&(this_ptr->base_enemy).base_character.model,"0@modelName" + 2);
+            (&(this_ptr->base_enemy).base_character.model,"modelName");
   if (g_CTentacleClassVersion < 2) {
     core_actor_cpp_serializeFloat_FUN_0040b770
               (&(this_ptr->base_enemy).guard_distance,"guardDistance");

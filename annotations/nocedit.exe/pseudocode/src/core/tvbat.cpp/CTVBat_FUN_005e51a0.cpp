@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_tvbat.cpp_CTVBat_FUN_005e51a0(CTVBat * this_ptr)
 // Globals:
-//   undefined4 s_Model_file_(.kfm)_006569f6
+//   TerminatedCString s_Model_file_kfm_006569f6
 //   TerminatedCString s_Rotation_speed_00656a08
 //   TerminatedCString s_Movement_speed_00656a17
 //   TerminatedCString s_Follow_orders_00656a26

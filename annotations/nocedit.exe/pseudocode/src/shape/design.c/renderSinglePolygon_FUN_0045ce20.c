@@ -114,12 +114,12 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
       for (local_18 = 0; local_18 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;
           local_18 = local_18 + 1) {
         local_14 = g_ModelPolygonData[polygon_index].vertex_indices[local_18];
-        fVar4 = (float10)(float)g_ModelPolygonData[polygon_index].vertex_indices[local_18 + 0x10] *
+        fVar4 = (float10)g_ModelPolygonData[polygon_index].uv_u[local_18] *
                 (float10)g_UVCoordinateFixedMultiplier;
         crt_math_c_round_FUN_005fe6b0
                   ((double)CONCAT44(polygon_index * 0x184,local_18 * 4 + polygon_index * 0x184));
         g_RenderVertexBuffer[local_14].u = (float)(int)ROUND(fVar4);
-        fVar4 = (float10)g_ModelPolygonData[polygon_index].uv_coordinates[local_18] *
+        fVar4 = (float10)g_ModelPolygonData[polygon_index].uv_v[local_18] *
                 (float10)g_UVCoordinateFixedMultiplier;
         crt_math_c_round_FUN_005fe6b0
                   ((double)CONCAT44(polygon_index * 0x184,local_18 * 4 + polygon_index * 0x184));

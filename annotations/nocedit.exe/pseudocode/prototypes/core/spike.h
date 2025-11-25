@@ -5,15 +5,15 @@
 
 // Original: core_spike.cpp_staticInit_FUN_005b81b0
 // Address: 005b81b0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
 // Original: core_spike.cpp_FUN_005b81e0
 // Address: 005b81e0
 undefined FUN_005b81e0();
 
-// Original: core_spike.cpp_ClassStart_FUN_005b8210
+// Original: core_spike.cpp_CSpike_getActorType_FUN_005b8210
 // Address: 005b8210
-undefined ClassStart();
+CDemonActorType * CSpike::getActorType(CSpike * this_ptr);
 
 // Original: core_spike.cpp_CSpike_ctor_FUN_005b8220
 // Address: 005b8220
@@ -39,9 +39,9 @@ undefined FUN_005b87a0();
 // Address: 005b87f0
 undefined CSpike::load();
 
-// Original: core_spike.cpp_FUN_005b8940
+// Original: core_spike.cpp_CSpike_FUN_005b8940
 // Address: 005b8940
-undefined FUN_005b8940();
+int CSpike(CSpike * this_ptr);
 
 // Original: core_spike.cpp_FUN_005b8950
 // Address: 005b8950
@@ -51,13 +51,13 @@ undefined FUN_005b8950();
 // Address: 005b8e90
 undefined FUN_005b8e90();
 
-// Original: core_spike.cpp_FUN_005b9020
+// Original: core_spike.cpp_CSpike_FUN_005b9020
 // Address: 005b9020
-undefined FUN_005b9020();
+void CSpike(CSpike * this_ptr);
 
-// Original: core_spike.cpp_FUN_005b9030
+// Original: core_spike.cpp_CSpike_FUN_005b9030
 // Address: 005b9030
-undefined FUN_005b9030();
+void CSpike(CSpike * this_ptr);
 
 // Original: core_spike.cpp_CSpike_dtor_FUN_005b9050
 // Address: 005b9050

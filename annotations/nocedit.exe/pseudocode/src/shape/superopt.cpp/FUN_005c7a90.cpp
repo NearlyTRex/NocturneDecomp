@@ -4,13 +4,11 @@
 // Convention: unknown
 // Signature: undefined shape_superopt.cpp_FUN_005c7a90()
 // Cross-references:
-//   shape_superopt.cpp_FUN_005d7350 (005d7350) at 005d73df [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_COptimize_FUN_005d7350 (005d7350) at 005d73df [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_memory.c_realloc_FUN_00601df0
 
 #include "nocturne.h"
-
-/* Signature: undefined1 shape_superopt.cpp_FUN_005c7a90(undefined4 param_1, undefined4 param_2) */
 
 undefined1 * shape_superopt_cpp_FUN_005c7a90(void)
 

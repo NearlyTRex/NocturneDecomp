@@ -80,7 +80,7 @@
 //   core_water.cpp_CWater_render_FUN_005ea320 (005ea320) at 005ea492 [UNCONDITIONAL_CALL]
 //   core_weather.cpp_CWeather_FUN_005ef190 (005ef190) at 005ef353 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051dcbe [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d5b3 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (0051d520) at 0051d5b3 [UNCONDITIONAL_CALL]
 // Globals:
 //   double g_WorldToCameraScale = 256
 // Function calls:

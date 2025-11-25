@@ -12,19 +12,15 @@
 //   TerminatedCString s_Uneven_number_of_edges_00654252
 //   TerminatedCString s_Uneven_number_of_edges_00654269
 //   TerminatedCString s_Complex_split_edge_list__00654280
-//   undefined4 DAT_006542c2
-//   undefined4 DAT_006542ca
+//   double DOUBLE_006542c2 = 10
+//   double DOUBLE_006542ca = 1.00000000000000E-7
 // Function calls:
 //   crt_memory.c_free_FUN_005fe659
 //   crt_memory.c_malloc_FUN_006021da
 //   crt_string.c_memmove_FUN_005fe5e0
-//   shape_superopt.cpp_SomethingAboutLogTXTCreate_FUN_005c7910
+//   shape_superopt.cpp_logToFile_FUN_005c7910
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck(undefined1 param_1,
-   undefined4 param_2, undefined4 param_3, undefined4 param_4) */
 
 undefined4 shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590(void)
 
@@ -200,7 +196,7 @@ LAB_005ca66d:
   }
   if (local_1c == 0) {
     if (in_stack_00000010 == 0) {
-      shape_superopt_cpp_SomethingAboutLogTXTCreate_FUN_005c7910();
+      shape_superopt_cpp_logToFile_FUN_005c7910("Uneven number of edges");
     }
     crt_memory_c_free_FUN_005fe659(local_14);
     return 0;
@@ -310,7 +306,7 @@ LAB_005ca66d:
       pdVar15 = (double *)((int)pdVar15 + (uint)bVar18 * -8 + 4);
       pdVar17 = (double *)((int)pdVar17 + (uint)bVar18 * -8 + 4);
     }
-    dVar2 = ((double)CONCAT44(local_310,uStack_314) * _DAT_006542c2) /
+    dVar2 = ((double)CONCAT44(local_310,uStack_314) * DOUBLE_006542c2) /
             SQRT(dStack_18c * dStack_18c + dStack_19c * dStack_19c + dStack_194 * dStack_194);
     local_24 = local_1c - 1;
     dStack_13c = dStack_19c * dVar2;
@@ -473,7 +469,7 @@ LAB_005ca66d:
           dVar8 = (double)CONCAT44(local_168,uStack_16c) - (double)CONCAT44(local_258,uStack_25c);
           dVar3 = (double)CONCAT44(local_160,uStack_164) - (double)CONCAT44(local_250,uStack_254);
           dVar2 = (double)CONCAT44(local_158,uStack_15c) - (double)CONCAT44(local_248,uStack_24c);
-          if (_DAT_006542ca <= SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar8 * dVar8)) {
+          if (DOUBLE_006542ca <= SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar8 * dVar8)) {
             uVar1 = *puVar10;
             uVar14 = uVar1 + 1;
             crt_string_c_memmove_FUN_005fe5e0
@@ -520,11 +516,11 @@ LAB_005ca66d:
       crt_memory_c_free_FUN_005fe659(local_18);
       return 1;
     }
-    shape_superopt_cpp_SomethingAboutLogTXTCreate_FUN_005c7910();
+    shape_superopt_cpp_logToFile_FUN_005c7910("Complex (split) edge list does not have proper vertex arrangement");
     crt_memory_c_free_FUN_005fe659(local_14);
     return 0;
   }
-  shape_superopt_cpp_SomethingAboutLogTXTCreate_FUN_005c7910();
+  shape_superopt_cpp_logToFile_FUN_005c7910("Uneven number of edges");
   crt_memory_c_free_FUN_005fe659(local_14);
   return 0;
 }
@@ -1564,7 +1560,7 @@ LAB_005ca66d:
 //   XREF to: 005cb06a (CONDITIONAL_JUMP)
 // 005cb05d: PUSH 0x654252
 //   XREF to: 00654252 (DATA)
-// 005cb062: CALL shape_superopt.cpp_SomethingAboutLogTXTCreate_FUN_005c7910
+// 005cb062: CALL shape_superopt.cpp_logToFile_FUN_005c7910
 //   XREF to: 005c7910 (UNCONDITIONAL_CALL)
 // 005cb067: ADD ESP,0x4
 // 005cb06a: MOV EDX,dword ptr [ESP + 0x314]
@@ -1585,7 +1581,7 @@ LAB_005ca66d:
 // 005cb085: PUSH 0x654269
 //   Label: LAB_005cb085
 //   XREF to: 00654269 (DATA)
-// 005cb08a: CALL shape_superopt.cpp_SomethingAboutLogTXTCreate_FUN_005c7910
+// 005cb08a: CALL shape_superopt.cpp_logToFile_FUN_005c7910
 //   XREF to: 005c7910 (UNCONDITIONAL_CALL)
 // 005cb08f: ADD ESP,0x4
 // 005cb092: MOV EDX,dword ptr [ESP + 0x314]
@@ -1730,7 +1726,7 @@ LAB_005ca66d:
 // 005cb210: PUSH 0x654280
 //   Label: LAB_005cb210
 //   XREF to: 00654280 (DATA)
-// 005cb215: CALL shape_superopt.cpp_SomethingAboutLogTXTCreate_FUN_005c7910
+// 005cb215: CALL shape_superopt.cpp_logToFile_FUN_005c7910
 //   XREF to: 005c7910 (UNCONDITIONAL_CALL)
 // 005cb21a: ADD ESP,0x4
 // 005cb21d: MOV EBX,dword ptr [ESP + 0x314]

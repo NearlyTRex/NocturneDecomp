@@ -7,8 +7,8 @@
 //   core_turret.cpp_FUN_005e2d50 (005e2d50) at 005e321d [UNCONDITIONAL_CALL]
 //   core_turret.cpp_FUN_005e3560 (005e3560) at 005e35c4 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00656788
-//   undefined4 DAT_00656790
+//   double DOUBLE_00656788 = 0.0174532925194444
+//   double DOUBLE_00656790 = 0.00100000000000000
 //   undefined4 DAT_00664b6c
 //   undefined4 DAT_00664b70
 // Function calls:
@@ -18,7 +18,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_weapon_turret.cpp_FUN_005e3280(undefined4 param_1, undefined4
    param_2, undefined4 param_3) */
 
@@ -44,7 +43,7 @@ undefined4 core_turret_cpp_FUN_005e3280(void)
                        (fStack_28 - (in_stack_00000004->orient).pitch);
   in_stack_0000000c =
        in_stack_0000000c *
-       *(float *)(in_stack_00000004[5].create_event + 0x48) * (float)_DAT_00656788;
+       *(float *)(in_stack_00000004[5].create_event + 0x48) * (float)DOUBLE_00656788;
   local_c = -in_stack_0000000c;
   if (fStack_28 < local_c) {
     fStack_28 = local_c;
@@ -61,8 +60,8 @@ undefined4 core_turret_cpp_FUN_005e3280(void)
   (in_stack_00000004->orient).bank = (in_stack_00000004->orient).bank + fStack_28;
   (in_stack_00000004->orient).pitch = (in_stack_00000004->orient).pitch + local_2c;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
-  if (((float10)0 != ABS((float10)(local_24[0].x < (float)_DAT_00656790))) &&
-     ((float10)0 != ABS((float10)(fStack_28 < (float)_DAT_00656790)))) {
+  if (((float10)0 != ABS((float10)(local_24[0].x < (float)DOUBLE_00656790))) &&
+     ((float10)0 != ABS((float10)(fStack_28 < (float)DOUBLE_00656790)))) {
     return 1;
   }
   return 0;

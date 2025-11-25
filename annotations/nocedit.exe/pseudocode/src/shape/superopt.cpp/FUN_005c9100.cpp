@@ -7,11 +7,10 @@
 //   shape_superopt.cpp_FUN_005c8b50 (005c8b50) at 005c8e2b [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_FUN_005c8e70 (005c8e70) at 005c9064 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00654222
+//   double DOUBLE_00654222 = 0.5
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 shape_superopt.cpp_FUN_005c9100(undefined1 param_1, undefined4 param_2,
    undefined4 param_3) */
 
@@ -56,9 +55,9 @@ double shape_superopt_cpp_FUN_005c9100(void)
       pdVar9 = pdVar13 + 1;
       pdVar10 = pdVar13 + 3;
       pdVar13 = pdVar13 + 0xc;
-      local_20 = (*pdVar3 - dVar11) * (*pdVar1 + *pdVar2) * _DAT_00654222 + local_20;
-      local_28 = (*pdVar8 - *pdVar9) * (*pdVar5 + *pdVar6) * _DAT_00654222 + local_28;
-      local_18 = (dVar12 + *pdVar10) * (*pdVar4 - *pdVar7) * _DAT_00654222 + local_18;
+      local_20 = (*pdVar3 - dVar11) * (*pdVar1 + *pdVar2) * DOUBLE_00654222 + local_20;
+      local_28 = (*pdVar8 - *pdVar9) * (*pdVar5 + *pdVar6) * DOUBLE_00654222 + local_28;
+      local_18 = (dVar12 + *pdVar10) * (*pdVar4 - *pdVar7) * DOUBLE_00654222 + local_18;
     } while (pdVar13 < (double *)(in_stack_0000000c * 0x60 + 0x10 + in_stack_00000008));
   }
   return SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20);

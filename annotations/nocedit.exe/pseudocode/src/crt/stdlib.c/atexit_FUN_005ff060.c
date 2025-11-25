@@ -38,7 +38,7 @@
 //   engine_console.cpp_staticInit_FUN_004417e0 (004417e0) at 004417fa [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_staticInit_FUN_0049d170 (0049d170) at 0049d182 [UNCONDITIONAL_CALL]
 //   shape_memdbg.cpp_staticInit_FUN_0050ee40 (0050ee40) at 0050ee52 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_00518910 (00518910) at 00518aef [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (00518910) at 00518aef [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0 (005aa3f0) at 005aa5a5 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (005a4c80) at 005a4d29 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_staticInit_FUN_005a3940 (005a3940) at 005a3993 [UNCONDITIONAL_CALL]

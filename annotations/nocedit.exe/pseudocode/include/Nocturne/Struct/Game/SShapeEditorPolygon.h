@@ -9,8 +9,9 @@ typedef struct SShapeEditorPolygon {
     uint vertex_indices_count; // 0xa4
     CVector3f normal; // 0xa8
     float plane_distance; // 0xb4
-    uint vertex_indices[32]; // 0xb8
-    float uv_coordinates[16]; // 0x138
+    uint vertex_indices[16]; // 0xb8
+    float uv_u[16]; // 0xf8
+    float uv_v[16]; // 0x138
     uint part_assignment; // 0x178
     uint material_id; // 0x17c
     uint material_id_backup; // 0x180

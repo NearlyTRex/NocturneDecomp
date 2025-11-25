@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_filmreel.cpp_CFilmProjector_load_FUN_004beb40 (004beb40) at 004beb73 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0061e3a2
+//   double DOUBLE_0061e3a2 = 0.25
 //   double DOUBLE_0061e3aa = 0.100000000000000
 //   CEventList* g_CEventListPtr = 02d05310
 //   CDemonSet* g_CDemonSetPtr = 03114278
@@ -21,7 +21,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_dest.cpp_FUN_0046f9b0(undefined4 param_1) */
 
 void core_dest_cpp_FUN_0046f9b0(void)
@@ -64,8 +63,8 @@ void core_dest_cpp_FUN_0046f9b0(void)
       local_1c = local_34;
       local_18 = local_30;
     }
-    if ((((float)_DAT_0061e3a2 <= ABS(local_20)) || ((float)_DAT_0061e3a2 <= ABS(local_1c))) ||
-       ((float)_DAT_0061e3a2 <= ABS(local_18))) {
+    if ((((float)DOUBLE_0061e3a2 <= ABS(local_20)) || ((float)DOUBLE_0061e3a2 <= ABS(local_1c))) ||
+       ((float)DOUBLE_0061e3a2 <= ABS(local_18))) {
       *(undefined4 *)(in_stack_00000004 + 0x184) = 0;
       *(undefined4 *)(in_stack_00000004 + 0x1f0) = 0;
       return;

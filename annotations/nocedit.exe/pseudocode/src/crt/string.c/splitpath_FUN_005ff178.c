@@ -33,9 +33,9 @@
 //   engine_dosio.c_splitPath_FUN_00481f20 (00481f20) at 00481f3c [UNCONDITIONAL_CALL]
 //   shape_design.c_loadS3DModelFile_FUN_004593a0 (004593a0) at 004597ae [UNCONDITIONAL_CALL]
 //   shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0 (0050eea0) at 0050eedb [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_0051aa60 (0051aa60) at 0051ac21 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_0051adf0 (0051adf0) at 0051af41 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051b770 (0051b770) at 0051b79d [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770 (0051b770) at 0051b79d [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0 (0051adf0) at 0051af41 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60 (0051aa60) at 0051ac21 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 (005acf20) at 005ad03a [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0 (005ad5c0) at 005ad94f [UNCONDITIONAL_CALL]
 // Function calls:

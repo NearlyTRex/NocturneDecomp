@@ -2450,6 +2450,12 @@ const char s_EmptyChar_006304c1 =  ;
 const char s_EmptyChar_0063564e =  ;
 const char s_empty_0063e145 =  ;
 const char s_empty_0063e149 =  ;
+const char s_EmptyChar_0063e5a6 =  ;
+const char s_EmptyChar_0063e5c1 =  ;
+const char s_EmptyChar_0063e5cc =  ;
+
+// char[14616] constants
+const char[14616] g_LicenseAgreement = "";
 
 // char[2] constants
 const char[2] g_MenuVersionText = "";

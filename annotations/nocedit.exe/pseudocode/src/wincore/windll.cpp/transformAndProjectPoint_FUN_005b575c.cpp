@@ -87,7 +87,7 @@
 //   engine_3d.c_transformAndBufferVertices_FUN_00403840 (00403840) at 004038a5 [UNCONDITIONAL_CALL]
 //   engine_matrix.c_transformToCache_FUN_0050cd70 (0050cd70) at 0050cd8c [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0 (004a28a0) at 004a28d8 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051e6b0 (0051e6b0) at 0051e721 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0 (0051e6b0) at 0051e721 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_TempX = 0x0
 //   int g_TempY = 0x0

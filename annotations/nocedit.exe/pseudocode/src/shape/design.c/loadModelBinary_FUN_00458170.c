@@ -262,10 +262,10 @@ LAB_004584f3:
           g_ModelPolygonData[g_PolygonCount].vertex_indices[local_28] =
                g_ModelPolygonData[g_PolygonCount].vertex_indices[local_28] - local_68;
           crt_stdio_c_fread_FUN_005fd990(&local_34,1,4,local_38);
-          g_ModelPolygonData[g_PolygonCount].vertex_indices[local_28 + 0x10] =
-               (uint)((float)local_34 * (float)g_UVCoordinateScale);
+          g_ModelPolygonData[g_PolygonCount].uv_u[local_28] =
+               (float)local_34 * (float)g_UVCoordinateScale;
           crt_stdio_c_fread_FUN_005fd990(&local_34,1,4,local_38);
-          g_ModelPolygonData[g_PolygonCount].uv_coordinates[local_28] =
+          g_ModelPolygonData[g_PolygonCount].uv_v[local_28] =
                (float)local_34 * (float)g_UVCoordinateScale;
         }
         g_PolygonCount = g_PolygonCount + 1;

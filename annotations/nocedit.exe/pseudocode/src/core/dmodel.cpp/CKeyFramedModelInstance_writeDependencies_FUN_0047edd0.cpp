@@ -22,7 +22,7 @@
 //   core_pendulum.cpp_FUN_0054a7b0 (0054a7b0) at 0054a7bf [UNCONDITIONAL_CALL]
 //   core_platfrm.cpp_FUN_0054f2a0 (0054f2a0) at 0054f2b1 [UNCONDITIONAL_CALL]
 //   core_simbox.cpp_CSimBox_FUN_005893c0 (005893c0) at 005893cf [UNCONDITIONAL_CALL]
-//   core_spike.cpp_FUN_005b9030 (005b9030) at 005b903f [UNCONDITIONAL_CALL]
+//   core_spike.cpp_CSpike_FUN_005b9030 (005b9030) at 005b903f [UNCONDITIONAL_CALL]
 //   core_trash.cpp_CTrash_FUN_005df720 (005df720) at 005df742 [UNCONDITIONAL_CALL]
 //   core_weapon.cpp_CWeapon_FUN_005eea60 (005eea60) at 005eea6f [UNCONDITIONAL_CALL]
 // Globals:

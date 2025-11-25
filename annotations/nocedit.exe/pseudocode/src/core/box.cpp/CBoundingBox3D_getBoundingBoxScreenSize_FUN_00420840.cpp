@@ -7,7 +7,7 @@
 //   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 0059777f [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40 (0059ce40) at 0059ce72 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051dcce [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d763 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (0051d520) at 0051d763 [UNCONDITIONAL_CALL]
 // Globals:
 //   float g_BoundingBoxCenterScaleFactor = 0.5
 //   double g_BoundingBoxFixedPointScaleFactor = 0.00390625

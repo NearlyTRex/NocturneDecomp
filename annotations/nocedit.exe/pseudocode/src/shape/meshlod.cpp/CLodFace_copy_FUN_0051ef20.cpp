@@ -15,44 +15,45 @@ void __cdecl shape_meshlod_cpp_CLodFace_copy_FUN_0051ef20(CLodFace *this_ptr,CLo
 {
   void *pvVar1;
   int iVar2;
-  char *pcVar3;
+  float (*pafVar3) [2];
   undefined4 *puVar4;
-  char *pcVar5;
+  float (*pafVar5) [2];
   undefined4 *puVar6;
   byte bVar7;
   
   bVar7 = 0;
-  this_ptr->vertex_indices[0] = other->vertex_indices[0];
-  this_ptr->vertex_indices[1] = other->vertex_indices[1];
-  this_ptr->vertex_indices[2] = other->vertex_indices[2];
-  this_ptr->field1_0xc = other->field1_0xc;
-  this_ptr->field2_0x10 = other->field2_0x10;
-  this_ptr->field3_0x14 = other->field3_0x14;
-  this_ptr->field4_0x18 = other->field4_0x18;
-  pcVar3 = other->field5_0x1c;
-  pcVar5 = this_ptr->field5_0x1c;
+  this_ptr->attribute_indices[0] = other->attribute_indices[0];
+  this_ptr->attribute_indices[1] = other->attribute_indices[1];
+  this_ptr->attribute_indices[2] = other->attribute_indices[2];
+  this_ptr->submesh_id = other->submesh_id;
+  this_ptr->vertex_idx_0 = other->vertex_idx_0;
+  this_ptr->vertex_idx_1 = other->vertex_idx_1;
+  this_ptr->vertex_idx_2 = other->vertex_idx_2;
+  pafVar3 = other->uv_coords;
+  pafVar5 = this_ptr->uv_coords;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(undefined4 *)pcVar5 = *(undefined4 *)pcVar3;
-    pcVar3 = pcVar3 + 4;
-    pcVar5 = pcVar5 + 4;
+    (*pafVar5)[0] = (*pafVar3)[0];
+    pafVar3 = (float (*) [2])(*pafVar3 + 1);
+    pafVar5 = (float (*) [2])(*pafVar5 + 1);
   }
-  this_ptr->field6_0x34 = other->field6_0x34;
-  this_ptr->field7_0x38 = other->field7_0x38;
-  this_ptr->field8_0x3c = other->field8_0x3c;
-  this_ptr->field9_0x40 = other->field9_0x40;
-  this_ptr->field10_0x44 = other->field10_0x44;
-  this_ptr->field11_0x48 = other->field11_0x48;
-  this_ptr->field12_0x4c = other->field12_0x4c;
-  this_ptr->field13_0x50 = other->field13_0x50;
+  this_ptr->edge_idx_0 = other->edge_idx_0;
+  this_ptr->edge_idx_1 = other->edge_idx_1;
+  this_ptr->edge_idx_2 = other->edge_idx_2;
+  this_ptr->processed_flag = other->processed_flag;
+  (this_ptr->normal).x = (other->normal).x;
+  (this_ptr->normal).y = (other->normal).y;
+  (this_ptr->normal).z = (other->normal).z;
+  this_ptr->plane_distance = other->plane_distance;
   pvVar1 = crt_memory_c_copyObjectArray_FUN_00600bc2
-                     (this_ptr->vertices,other->vertices,3,&g_CVectorTypeInfo);
+                     (this_ptr->edge_perpendiculars,other->edge_perpendiculars,3,&g_CVectorTypeInfo)
+  ;
   puVar6 = (undefined4 *)((int)pvVar1 + (uint)bVar7 * -8 + 0x28);
   puVar4 = (undefined4 *)((int)other + (uint)bVar7 * -8 + 0x7c);
-  *(float *)((int)pvVar1 + 0x24) = (other->field15_0x78).x;
+  *(float *)((int)pvVar1 + 0x24) = other->edge_dot_products[0];
   *puVar6 = *puVar4;
   puVar6[(uint)bVar7 * -2 + 1] = puVar4[(uint)bVar7 * -2 + 1];
-  *(int *)((int)pvVar1 + 0x30) = other->field16_0x84;
-  *(int *)((int)pvVar1 + 0x34) = other->field17_0x88;
+  *(int *)((int)pvVar1 + 0x30) = other->visited_stamp;
+  *(int *)((int)pvVar1 + 0x34) = other->affected_by_edge_stamp;
   return;
 }
 

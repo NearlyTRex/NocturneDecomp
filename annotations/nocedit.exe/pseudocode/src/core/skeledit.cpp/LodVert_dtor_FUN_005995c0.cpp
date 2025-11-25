@@ -2,14 +2,14 @@
 // Address: 005995c0
 // Address Range: [[005995c0, 005995ce]]
 // Convention: __cdecl
-// Signature: SLodVert * core_skeledit.cpp_LodVert_dtor_FUN_005995c0(SLodVert * this_ptr, SLodVert * other, SLodVert * other2)
+// Signature: CLodVert * core_skeledit.cpp_LodVert_dtor_FUN_005995c0(CLodVert * this_ptr, CLodVert * other, CLodVert * other2)
 // Function calls:
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 
 #include "nocturne.h"
 
-SLodVert * __cdecl
-core_skeledit_cpp_LodVert_dtor_FUN_005995c0(SLodVert *this_ptr,SLodVert *other,SLodVert *other2)
+CLodVert * __cdecl
+core_skeledit_cpp_LodVert_dtor_FUN_005995c0(CLodVert *this_ptr,CLodVert *other,CLodVert *other2)
 
 {
   crt_stack_c_stack_probe_FUN_005ff9f3(4);

@@ -7,7 +7,7 @@
 //   core_scat.cpp_FUN_00558060 (00558060) at 00558111 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c5270 (005c5270) at 005c530f [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\charactr.cpp_006174de
+//   TerminatedCString s_core_charactr_cpp_006174de
 //   TerminatedCString s_CCharacter_advanceLayerA_006174f3
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -30,7 +30,7 @@ int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharac
   
   if ((*(int *)(this_ptr->field13_0x2620 + 0x46c) < 0) ||
      (*(int *)(this_ptr->field13_0x2620 + 8) <= *(int *)(this_ptr->field13_0x2620 + 0x46c))) {
-    g_CurrentFilename = "A..\\core\\charactr.cpp" + 1;
+    g_CurrentFilename = "..\\core\\charactr.cpp";
     g_CurrentLineNumber = 0xeec;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::advanceLayerAction - invalid layerActionIndex");
   }

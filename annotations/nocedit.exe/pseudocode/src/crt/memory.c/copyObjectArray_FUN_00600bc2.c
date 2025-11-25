@@ -7,7 +7,7 @@
 //   core_dmodel.cpp_CDemonTriangle_copy_FUN_0047ef10 (0047ef10) at 0047ef49 [UNCONDITIONAL_CALL]
 //   core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (0047a820) at 0047a918 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20 (0051ef20) at 0051ef8c [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051bd30 (0051bd30) at 0051beae [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30 (0051bd30) at 0051beae [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

@@ -7,9 +7,9 @@
 //   core_turret.cpp_CTurret_process_FUN_005e2430 (005e2430) at 005e2626 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_s_has_no_guard_trigger_0065675b
-//   undefined4 DAT_00656778
-//   undefined4 DAT_0065677c
-//   undefined4 DAT_00656780
+//   float FLOAT_00656778 = -15
+//   float FLOAT_0065677c = 15
+//   float FLOAT_00656780 = 0.5
 //   WatcomTypeInfo g_CVectorTypeInfo
 //   undefined4 DAT_00664b6c
 //   undefined4 DAT_00664b70
@@ -35,7 +35,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_weapon_turret.cpp_FUN_005e2d50(undefined4 param_1) */
 
 void core_turret_cpp_FUN_005e2d50(void)
@@ -97,12 +96,12 @@ void core_turret_cpp_FUN_005e2d50(void)
   CStack_90.x = 999.0;
   CStack_90.y = 999.0;
   CStack_90.z = 999.0;
-  auStack_d8._12_4_ = (float)auStack_d8._12_4_ + _DAT_00656778;
-  fStack_c8 = fStack_c8 + _DAT_00656778;
-  fStack_c4 = fStack_c4 + _DAT_00656778;
-  fStack_c0 = fStack_c0 + _DAT_0065677c;
-  fStack_bc = fStack_bc + _DAT_0065677c;
-  fStack_b8 = fStack_b8 + _DAT_0065677c;
+  auStack_d8._12_4_ = (float)auStack_d8._12_4_ + FLOAT_00656778;
+  fStack_c8 = fStack_c8 + FLOAT_00656778;
+  fStack_c4 = fStack_c4 + FLOAT_00656778;
+  fStack_c0 = fStack_c0 + FLOAT_0065677c;
+  fStack_bc = fStack_bc + FLOAT_0065677c;
+  fStack_b8 = fStack_b8 + FLOAT_0065677c;
   iVar5 = 0;
   iVar4 = 0;
   do {
@@ -140,10 +139,10 @@ LAB_005e2ed6:
       pCVar3 = (*actor_ptr->vtable->getBoundingBox)(actor_ptr,(CBoundingBox3D *)auStack_d8);
       CStack_24.z = (pCVar3->min).x + (pCVar3->max).x;
       fStack_18 = (pCVar3->min).y + (pCVar3->max).y;
-      CStack_54.z = CStack_24.z * _DAT_00656780;
+      CStack_54.z = CStack_24.z * FLOAT_00656780;
       pcStack_14 = (char *)((pCVar3->min).z + (pCVar3->max).z);
-      CStack_48.x = fStack_18 * _DAT_00656780;
-      CStack_48.y = (float)pcStack_14 * _DAT_00656780;
+      CStack_48.x = fStack_18 * FLOAT_00656780;
+      CStack_48.y = (float)pcStack_14 * FLOAT_00656780;
       if (&fStack_148 != &CStack_54.z) {
         fStack_148 = CStack_54.z;
         fStack_144 = CStack_48.x;

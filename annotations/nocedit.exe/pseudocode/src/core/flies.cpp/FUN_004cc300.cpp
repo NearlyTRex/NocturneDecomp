@@ -27,8 +27,8 @@
 //   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 //   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 //   core_flies.cpp_FUN_004cc230
-//   core_stairs.cpp_FUN_005b90a0
-//   core_stairs.cpp_FUN_005b92d0
+//   core_spline.cpp_FUN_005b90a0
+//   core_spline.cpp_FUN_005b92d0
 //   crt_math.c_round_FUN_005fe6b0
 //   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 //   engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
@@ -77,7 +77,7 @@ int core_flies_cpp_FUN_004cc300
         iVar3 = 0;
         do {
           iVar3 = iVar3 + 1;
-          core_stairs_cpp_FUN_005b90a0();
+          core_spline_cpp_FUN_005b90a0();
         } while (iVar3 < 0x40);
         INT_02d7a7c0 = 1;
       }
@@ -114,7 +114,7 @@ int core_flies_cpp_FUN_004cc300
         pCVar7 = *(CDemonActor **)(param_5[1].actor_name + 0xc);
         do {
           crt_math_c_round_FUN_005fe6b0((double)CONCAT44(pCVar7,pfVar11));
-          core_stairs_cpp_FUN_005b92d0();
+          core_spline_cpp_FUN_005b92d0();
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,
                      (CVector3i *)&stack0xfffffff4);
@@ -245,7 +245,7 @@ int core_flies_cpp_FUN_004cc300
 //   XREF to: 02d7a808 (DATA)
 //   XREF to: 02d7a828 (DATA)
 // 004cc3ac: INC EBX
-// 004cc3ad: CALL core_stairs.cpp_FUN_005b90a0
+// 004cc3ad: CALL core_spline.cpp_FUN_005b90a0
 //   XREF to: 005b90a0 (UNCONDITIONAL_CALL)
 // 004cc3b2: ADD ESP,0xc
 // 004cc3b5: ADD ESI,0x20
@@ -380,7 +380,7 @@ int core_flies_cpp_FUN_004cc300
 // 004cc52e: PUSH EAX
 //   XREF to: 02d7afe8 (DATA)
 // 004cc52f: LEA EBX,[ESP + 0x84]
-// 004cc536: CALL core_stairs.cpp_FUN_005b92d0
+// 004cc536: CALL core_spline.cpp_FUN_005b92d0
 //   XREF to: 005b92d0 (UNCONDITIONAL_CALL)
 // 004cc53b: ADD ESP,0x18
 // 004cc53e: LEA EAX,[ESP + 0x60]

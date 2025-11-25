@@ -6,11 +6,11 @@
 // Cross-references:
 //   core_charactr.cpp_CCharacter_FUN_0042f730 (0042f730) at 0042f780 [DATA]
 // Globals:
-//   undefined1 DAT_006176ae
-//   undefined1 DAT_006176af
-//   undefined1 DAT_006176b0
-//   undefined1 DAT_006176b1
-//   undefined4 DAT_006176b5
+//   TerminatedCString s_none_006176ae
+//   undefined4 DAT_006176af
+//   undefined4 DAT_006176b0
+//   undefined4 DAT_006176b1
+//   TerminatedCString s_anon_006176b5
 //   TerminatedCString s_s_006176b8
 //   undefined4 g_CCharacterClassInfo.name_hash
 // Function calls:
@@ -29,7 +29,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042f340(CCharacter *this_ptr)
   char *pcVar5;
   char *in_stack_0000000c;
   
-  pcVar4 = &DAT_006176ae;
+  pcVar4 = "(none)";
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (&this_ptr->base_actor,g_CCharacterClassInfo.name_hash);
   pcVar5 = in_stack_0000000c;
@@ -52,7 +52,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042f340(CCharacter *this_ptr)
       }
     }
     if (in_stack_0000000c < pcVar4) {
-      iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar4,&DAT_006176b5);
+      iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar4,", ");
       pcVar4 = pcVar4 + iVar3;
     }
     iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar4,"%s",pCVar2[0x1b].field7_0x6c);

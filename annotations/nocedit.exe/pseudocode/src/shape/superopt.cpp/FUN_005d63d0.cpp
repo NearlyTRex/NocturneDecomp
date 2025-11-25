@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined shape_superopt.cpp_FUN_005d63d0()
 // Cross-references:
-//   shape_superopt.cpp_FUN_005d5800 (005d5800) at 005d59f9 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_FUN_005d5800 (005d5800) at 005d59f9 [UNCONDITIONAL_CALL]
 // Function calls:
 //   shape_superopt.cpp_FUN_005d6500
 

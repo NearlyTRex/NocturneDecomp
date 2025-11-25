@@ -21,7 +21,7 @@
 //   core_manpuz.cpp_FUN_0050b440 (0050b440) at 0050b7b5 [UNCONDITIONAL_CALL]
 //   core_pendulum.cpp_FUN_0054a790 (0054a790) at 0054a795 [UNCONDITIONAL_CALL]
 //   core_platfrm.cpp_FUN_0054ea00 (0054ea00) at 0054ec00 [UNCONDITIONAL_CALL]
-//   core_spike.cpp_FUN_005b9020 (005b9020) at 005b9025 [UNCONDITIONAL_CALL]
+//   core_spike.cpp_CSpike_FUN_005b9020 (005b9020) at 005b9025 [UNCONDITIONAL_CALL]
 //   core_stairs.cpp_FUN_005ba900 (005ba900) at 005ba939 [UNCONDITIONAL_CALL]
 //   core_teleport.cpp_CTeleportDest_FUN_005da870 (005da870) at 005da95d [UNCONDITIONAL_CALL]
 //   core_teleport.cpp_CTeleport_FUN_005dabe0 (005dabe0) at 005dadad [UNCONDITIONAL_CALL]

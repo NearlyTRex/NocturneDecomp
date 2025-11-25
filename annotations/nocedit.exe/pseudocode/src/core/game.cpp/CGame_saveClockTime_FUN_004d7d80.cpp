@@ -29,7 +29,7 @@
 //   core_setedit.cpp_UserInputCreate_FUN_0057d660 (0057d660) at 0057d952 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00596907 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051db1e [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d546 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (0051d520) at 0051d546 [UNCONDITIONAL_CALL]
 // Function calls:
 //   wincore_winrun.cpp_getTime_FUN_005f2dc0
 

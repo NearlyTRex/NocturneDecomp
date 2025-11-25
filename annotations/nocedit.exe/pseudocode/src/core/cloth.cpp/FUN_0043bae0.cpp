@@ -12,7 +12,7 @@
 //   core_svetlana.cpp_CSvetlana_FUN_005d9bc0 (005d9bc0) at 005d9d0a [UNCONDITIONAL_CALL]
 //   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0 (005e6da0) at 005e6e2e [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0061855a
+//   double DOUBLE_0061855a = 65535
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 DAT_00827500
@@ -38,8 +38,6 @@
 //   engine_texture.cpp_ensureTextureLoaded_FUN_005dd800
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_cloth_cpp_FUN_0043bae0(void)
 
@@ -67,7 +65,7 @@ void core_cloth_cpp_FUN_0043bae0(void)
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,1);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xffff);
   iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
-  fVar9 = (float10)*(float *)(in_stack_00000004 + 0x3ce88) * (float10)_DAT_0061855a;
+  fVar9 = (float10)*(float *)(in_stack_00000004 + 0x3ce88) * (float10)DOUBLE_0061855a;
   crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,iVar3));
   iVar3 = (int)ROUND(fVar9);
   if (iVar3 < 1000) {

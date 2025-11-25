@@ -6,8 +6,8 @@
 // Cross-references:
 //   core_boneguy.cpp_FUN_0041bf90 (0041bf90) at 0041c803 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0062439a
-//   undefined4 DAT_006243a2
+//   double DOUBLE_0062439a = 1.20000000000000
+//   double DOUBLE_006243a2 = 0.25
 //   CGore* g_CGorePtr = 02d83364
 //   CGore g_CGoreInstance
 // Function calls:
@@ -15,8 +15,6 @@
 //   crt_math.c_round_FUN_005fe6b0
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 undefined4 core_enemy_cpp_FUN_004a9930(void)
 

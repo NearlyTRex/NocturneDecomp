@@ -24,7 +24,7 @@
 //   core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 (0059abf0) at 0059aecc [UNCONDITIONAL_CALL]
 //   core_wateract.cpp_CWaterActor_FUN_005eb280 (005eb280) at 005eb458 [UNCONDITIONAL_CALL]
 //   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80 (0048da80) at 0048daf6 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051e990 (0051e990) at 0051ea0c [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990 (0051e990) at 0051ea0c [UNCONDITIONAL_CALL]
 // Function calls:
 //   engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0
 //   engine_prim.c_setCullingMode_FUN_00551b90

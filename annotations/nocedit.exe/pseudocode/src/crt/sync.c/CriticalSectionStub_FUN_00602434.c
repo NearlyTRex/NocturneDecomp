@@ -45,12 +45,12 @@
 //   crt_tls.c_getThreadLocalData_FUN_0060caf8 (0060caf8) at 0060cbc0 [COMPUTED_CALL]
 //   crt_tls.c_register_thread_data_FUN_0060cbd0 (0060cbd0) at 0060cc30 [COMPUTED_CALL]
 //   crt_tls.c_unregister_thread_data_FUN_0060cc3c (0060cc3c) at 0060cc43 [COMPUTED_CALL]
-//   crt_unknown.c_FUN_006008f0 (006008f0) at 006008f2 [COMPUTED_CALL]
-//   crt_unknown.c_FUN_00600940 (00600940) at 00600942 [COMPUTED_CALL]
-//   crt_unknown.c_FUN_00600ad0 (00600ad0) at 00600ad4 [COMPUTED_CALL]
 //   crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94 (00601a94) at 00601ac0 [COMPUTED_CALL]
 //   crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930 (0060e930) at 0060ea21 [COMPUTED_CALL]
 //   crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c (00608a1c) at 00608a32 [COMPUTED_CALL]
+//   crt_watcom.c_heapchk_FUN_00600ad0 (00600ad0) at 00600ad4 [COMPUTED_CALL]
+//   crt_watcom.c_memavl_FUN_006008f0 (006008f0) at 006008f2 [COMPUTED_CALL]
+//   crt_watcom.c_memmax_FUN_00600940 (00600940) at 00600942 [COMPUTED_CALL]
 
 #include "nocturne.h"
 

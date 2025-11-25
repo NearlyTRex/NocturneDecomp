@@ -22,8 +22,8 @@
 //   TerminatedCString s_SPOOKHOUSE_0062b95d
 //   TerminatedCString s_Gamma_f_0062b968
 //   TerminatedCString s_Gamma_f_0062b973
-//   undefined4 DAT_0062b985
-//   undefined4 DAT_0062b98d
+//   double DOUBLE_0062b985 = 0.0000152587890625
+//   double DOUBLE_0062b98d = 0.0000152590218966964
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   int g_WindowHeight = 0xc8
 //   CKeys* g_CKeysPtr = 02dcd7d4
@@ -66,7 +66,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: int core_game.cpp_SaveRelated_FUN_004dcee0(CGame* pGame, CDemonSet* param_2) */
 
 void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
@@ -286,7 +285,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
         this_ptr_00->gamma = 0x8000;
       }
       crt_stdio_c_sprintf_FUN_005fdbd0
-                ((char *)&this_ptr,"Gamma : %f",(double)this_ptr_00->gamma * _DAT_0062b985);
+                ((char *)&this_ptr,"Gamma : %f",(double)this_ptr_00->gamma * DOUBLE_0062b985);
       core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr_00,&stack0x00000008,1.0);
       core_set_cpp_CDemonSet_setGamma_FUN_00570d60(g_CDemonSetPtr,this_ptr_00->gamma);
     }
@@ -298,7 +297,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
         this_ptr_00->gamma = 0x10000;
       }
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (&stack0xffffff24,"Gamma : %f",(double)this_ptr_00->gamma * _DAT_0062b985);
+                (&stack0xffffff24,"Gamma : %f",(double)this_ptr_00->gamma * DOUBLE_0062b985);
       core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr_00,&stack0xffffff28,1.0);
       core_set_cpp_CDemonSet_setGamma_FUN_00570d60(g_CDemonSetPtr,this_ptr_00->gamma);
     }

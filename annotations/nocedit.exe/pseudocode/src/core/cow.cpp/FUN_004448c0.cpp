@@ -8,9 +8,9 @@
 // Globals:
 //   void* switchdataD_004448b0 = 004448fd
 //   TerminatedCString s_limb_wav_00619588
-//   undefined4 DAT_00619595
-//   undefined4 DAT_0061959d
-//   undefined4 DAT_006195a5
+//   double DOUBLE_00619595 = 7
+//   double DOUBLE_0061959d = 0.5
+//   double DOUBLE_006195a5 = 2.5
 //   CGame* g_CGamePtr = 02d81a9c
 //   CGame g_CGameInstance
 //   undefined4 g_CGameInstance.blood_flag
@@ -26,7 +26,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_cow.cpp_FUN_004448c0(undefined4 param_1, undefined4 param_2)
     */
 
@@ -97,14 +96,14 @@ switchD_004448f6_default:
           [*(int *)(in_stack_00000004[1].base_actor.create_event + 0x48)] == 0) {
         in_stack_00000008[1] = 0x461c3c00;
       }
-      in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)_DAT_00619595);
+      in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)DOUBLE_00619595);
     }
   }
   if (*(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c) != *in_stack_00000008) {
-    in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)_DAT_0061959d);
+    in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)DOUBLE_0061959d);
     return;
   }
-  in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)_DAT_006195a5);
+  in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)DOUBLE_006195a5);
   return;
 }
 

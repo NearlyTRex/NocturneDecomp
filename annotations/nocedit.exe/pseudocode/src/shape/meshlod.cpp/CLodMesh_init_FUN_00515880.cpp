@@ -17,30 +17,30 @@ void __cdecl shape_meshlod_cpp_CLodMesh_init_FUN_00515880(CLodMesh *this_ptr)
 {
   this_ptr->vertex_count = 0;
   this_ptr->max_vertex_count = 0;
-  this_ptr->vertex_data = (SLodVert *)0x0;
+  this_ptr->vertex_data = (CLodVert *)0x0;
   this_ptr->tri_count = 0;
   this_ptr->max_tri_count = 0;
-  this_ptr->triangle_data = (SLodTriangle *)0x0;
+  this_ptr->tri_data = (CLodFace *)0x0;
   this_ptr->next_lod = (CLodMesh *)0x0;
   this_ptr->sample_point_count = 0;
-  this_ptr->sample_points_ptr = (void *)0x0;
+  this_ptr->sample_points_ptr = (SLodSamplePoint *)0x0;
   this_ptr->edge_count = 0;
-  this_ptr->edges_ptr = (SLodEdge *)0x0;
+  this_ptr->edges_ptr = (CLodEdge *)0x0;
   this_ptr->lod_level_count = 0;
-  this_ptr->lod_levels_ptr = (void *)0x0;
-  this_ptr->field6_0x18 = 0;
-  crt_memory_c_memset_FUN_005fde40(this_ptr->field9_0x24,0,0x10);
-  this_ptr->field7_0x1c = 0;
-  this_ptr->field8_0x20 = 0;
+  this_ptr->lod_levels_ptr = (CLodEdge *)0x0;
+  this_ptr->active_attribute_count = 0;
+  crt_memory_c_memset_FUN_005fde40(this_ptr->attribute_enabled_flags,0,0x10);
+  this_ptr->sort_attribute_count = 0;
+  this_ptr->reserved_attribute_count = 0;
   this_ptr->submesh_count = 0;
-  this_ptr->submesh_data = (void *)0x0;
-  this_ptr->field18_0x54 = (void *)0x0;
-  this_ptr->field19_0x58 = (void *)0x0;
+  this_ptr->submesh_data = (SLodSubmesh *)0x0;
+  this_ptr->spatial_grid_ptr = (SSpatialGrid *)0x0;
+  this_ptr->spatial_grid_data = (int *)0x0;
   this_ptr->scale_factor = 1.0;
   (this_ptr->center_offset).z = 0.0;
   (this_ptr->center_offset).y = (this_ptr->center_offset).z;
   (this_ptr->center_offset).x = (this_ptr->center_offset).y;
-  this_ptr->field11_0x38 = (FILE *)0x0;
+  this_ptr->precompute_file = (FILE *)0x0;
   return;
 }
 

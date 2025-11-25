@@ -5,7 +5,7 @@
 // Signature: undefined core_cloth.cpp_FUN_0043ddf0()
 // Globals:
 //   void* switchdataD_0043ddd4 = 0043decc
-//   undefined4 s_Demented(R)_Cloth_Editor_00618976
+//   TerminatedCString s_Demented_R_Cloth_Editor_00618976
 //   TerminatedCString s_s_1_Load_cloth_file_0061898f
 //   TerminatedCString s_s_2_Save_cloth_file_006189a3
 //   TerminatedCString s_s_3_Locked_vertex_editor_006189b7
@@ -26,10 +26,10 @@
 //   TerminatedCString s_kfm_00618a9c
 //   TerminatedCString s_models_00618aa2
 //   TerminatedCString s_Create_cloth_file_from_K_00618aa9
-//   undefined1 DAT_00618ac4
-//   undefined1 DAT_00618ac5
-//   undefined1 DAT_00618ac6
-//   undefined1 DAT_00618ac7
+//   TerminatedCString s_cth_00618ac4
+//   undefined4 s_cth_00618ac5
+//   undefined4 s_th_00618ac6
+//   undefined4 DAT_00618ac7
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 //   CKeys* g_CKeysPtr = 02dcd7d4
 //   CDeformableModelInstance g_CDeformableModelInstanceInstance
@@ -82,7 +82,7 @@ void core_cloth_cpp_FUN_0043ddf0(void)
   local_14 = in_stack_00000004->padding_0x0 + 0x3ce88;
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    engine_2d_c_drawText_FUN_00401fd0("?Demented(R) Cloth Editor" + 1,0,0);
+    engine_2d_c_drawText_FUN_00401fd0("Demented(R) Cloth Editor",0,0);
     engine_2d_c_drawText_FUN_00401fd0("1.  Load cloth file",0,0x16);
     engine_2d_c_drawText_FUN_00401fd0("2.  Save cloth file",0,0x21);
     engine_2d_c_drawText_FUN_00401fd0("3.  Locked vertex editor",0,0x2c);
@@ -143,7 +143,7 @@ void core_cloth_cpp_FUN_0043ddf0(void)
       if (iVar4 != 0) {
         crt_string_c_splitpath_FUN_005ff178
                   (acStack_48,(char *)0x0,(char *)0x0,acStack_148,(char *)0x0);
-        pcVar5 = &DAT_00618ac4;
+        pcVar5 = ".cth";
         iVar4 = -1;
         pcVar7 = acStack_144;
         do {

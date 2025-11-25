@@ -7,9 +7,9 @@
 //   void* switchdataD_004a8044 = 004a8178
 //   TerminatedCString s_none_0062409e
 //   TerminatedCString s_mob_006240a3
-//   undefined4 DAT_006240aa
-//   undefined4 DAT_006240b2
-//   undefined4 DAT_006240ba
+//   float FLOAT_006240aa = 0.5
+//   double DOUBLE_006240b2 = 0.5
+//   double DOUBLE_006240ba = 2.5
 //   CEventList* g_CEventListPtr = 02d05310
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CGame* g_CGamePtr = 02d81a9c
@@ -50,7 +50,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_emitter.cpp_FUN_004a8070(undefined4 param_1, undefined4
    param_2) */
 
@@ -199,8 +198,8 @@ LAB_004a811d:
                *(float *)(in_stack_00000004 + 0x24);
     local_a4 = (this_ptr->base_character).base_actor.location.position.z -
                *(float *)(in_stack_00000004 + 0x28);
-    if (SQRT(local_a4 * local_a4 + local_ac * local_ac + local_a8 * local_a8) < (float)_DAT_006240ba
-       ) {
+    if (SQRT(local_a4 * local_a4 + local_ac * local_ac + local_a8 * local_a8) <
+        (float)DOUBLE_006240ba) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                 ((CDemonActor *)this_ptr,&local_a0,(CVector3f *)(in_stack_00000004 + 0x20));
       core_charactr_cpp_CCharacter_FUN_0042b5b0(&g_HeroActors[g_LocalHeroIndex]->base_character);
@@ -219,7 +218,7 @@ LAB_004a811d:
       local_4c[0].g = *(float *)(in_stack_00000004 + 0x24);
       local_4c[0].b = *(float *)(in_stack_00000004 + 0x28);
     }
-    local_4c[0].g = *(float *)(in_stack_00000004 + 0x160) * (float)_DAT_006240b2 + local_4c[0].g;
+    local_4c[0].g = *(float *)(in_stack_00000004 + 0x160) * (float)DOUBLE_006240b2 + local_4c[0].g;
     core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310
               ((CDemonGlobe *)(in_stack_00000004 + 0x44c),local_4c);
     iVar6 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,0x7fff);
@@ -245,10 +244,10 @@ LAB_004a81e2:
                                   ();
       fStack_c4 = *pfVar3 + pfVar3[3];
       fStack_c0 = pfVar3[1] + pfVar3[4];
-      CStack_88.x = fStack_c4 * _DAT_006240aa;
+      CStack_88.x = fStack_c4 * FLOAT_006240aa;
       fStack_bc = pfVar3[2] + pfVar3[5];
-      CStack_88.y = fStack_c0 * _DAT_006240aa;
-      CStack_88.z = fStack_bc * _DAT_006240aa;
+      CStack_88.y = fStack_c0 * FLOAT_006240aa;
+      CStack_88.z = fStack_bc * FLOAT_006240aa;
       pCVar4 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                          (*(CDemonActor **)(in_stack_00000004 + 0x3d0),&CStack_64,&CStack_88);
       iVar6 = *(int *)(in_stack_00000004 + 0x3d0);

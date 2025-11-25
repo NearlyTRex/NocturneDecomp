@@ -5,8 +5,8 @@
 // Signature: int crt_stdio.c_vfprintf_FUN_00604850(FILE * file, char * format, va_list_t args)
 // Cross-references:
 //   crt_stdio.c_fprintf_FUN_005fe6d0 (005fe6d0) at 005fe6e8 [UNCONDITIONAL_CALL]
+//   crt_stdio.c_fprintf_FUN_006021c0 (006021c0) at 006021d0 [UNCONDITIONAL_CALL]
 //   crt_unknown.c_FUN_005ff0d0 (005ff0d0) at 005ff0e7 [UNCONDITIONAL_CALL]
-//   crt_unknown.c_FUN_006021c0 (006021c0) at 006021d0 [UNCONDITIONAL_CALL]
 // Globals:
 //   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 //   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434

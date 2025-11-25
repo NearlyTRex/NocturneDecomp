@@ -25,9 +25,9 @@
 //   engine_fileio.cpp_copyFileWithProgress_FUN_004b2030 (004b2030) at 004b21ab [UNCONDITIONAL_CALL]
 //   engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230 (00550230) at 00550499 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 (004a0430) at 004a04f5 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_005173f0 (005173f0) at 005174b4 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_00519710 (00519710) at 00519789 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_00516620 (00516620) at 005168ba [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620 (00516620) at 005168ba [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_computeAllEdgeCollapseCosts_FUN_00519710 (00519710) at 00519789 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0 (005173f0) at 005174b4 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0 (005ad5c0) at 005ad8f2 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_shape_edittool_cpp_006232ee

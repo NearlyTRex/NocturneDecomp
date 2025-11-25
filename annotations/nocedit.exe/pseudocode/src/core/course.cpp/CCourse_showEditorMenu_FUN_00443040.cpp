@@ -26,16 +26,16 @@
 //   TerminatedCString s_Save_course_006192e8
 //   TerminatedCString s_crs_006192f4
 //   TerminatedCString s_Import_CRS_file_006192fa
-//   undefined1 DAT_0061930b
-//   undefined1 DAT_0061930c
-//   undefined1 DAT_0061930d
-//   undefined1 DAT_0061930e
+//   TerminatedCString s_pth_0061930b
+//   undefined4 DAT_0061930c
+//   undefined4 DAT_0061930d
+//   undefined4 DAT_0061930e
 //   TerminatedCString s_bon_00619310
 //   TerminatedCString s_Import_BON_file_00619316
-//   undefined1 DAT_00619327
-//   undefined1 DAT_00619328
-//   undefined1 DAT_00619329
-//   undefined1 DAT_0061932a
+//   TerminatedCString s_pth_00619327
+//   undefined4 DAT_00619328
+//   undefined4 DAT_00619329
+//   undefined4 DAT_0061932a
 //   TerminatedCString s_No_course_to_view_0061932c
 //   TerminatedCString s_kfm_0061933f
 //   TerminatedCString s_models_00619345
@@ -205,7 +205,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
         in_stack_fffffb48 = (CQuaternion4f *)0x0;
         crt_string_c_splitpath_FUN_005ff178
                   (&stack0xfffffb4c,(char *)0x0,(char *)0x0,acStack_1a8,(char *)0x0);
-        pcVar4 = &DAT_0061930b;
+        pcVar4 = ".pth";
         in_stack_fffffb4c = aCStack_1a4;
         iVar6 = -1;
         pCVar13 = in_stack_fffffb4c;
@@ -245,7 +245,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
         in_stack_fffffb48 = (CQuaternion4f *)0x0;
         crt_string_c_splitpath_FUN_005ff178
                   (acStack_3b0,(char *)0x0,(char *)0x0,acStack_1a8,(char *)0x0);
-        pcVar4 = &DAT_00619327;
+        pcVar4 = ".pth";
         in_stack_fffffb4c = aCStack_1a4;
         iVar6 = -1;
         pCVar13 = in_stack_fffffb4c;

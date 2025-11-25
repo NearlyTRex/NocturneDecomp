@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_tvbat.cpp_CTVBat_FUN_005e5400(CTVBat * this_ptr)
 // Globals:
-//   undefined4 s_With_CTRL_held_down,_use_slew_ke_00656a72
+//   TerminatedCString s_With_CTRL_held_down_use__00656a72
 //   int g_ClipLeft
 // Function calls:
 //   core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150
@@ -23,7 +23,7 @@ void __cdecl core_tvbat_cpp_CTVBat_FUN_005e5400(CTVBat *this_ptr)
   x_pos = g_ClipLeft;
   iVar1 = *in_stack_00000008;
   *in_stack_00000008 = iVar1 + 0xb;
-  engine_2d_c_drawText_FUN_00401fd0("@With CTRL held down, use slew keys to size cage." + 1,x_pos,iVar1 + 0xb);
+  engine_2d_c_drawText_FUN_00401fd0("With CTRL held down, use slew keys to size cage.",x_pos,iVar1 + 0xb);
   *in_stack_00000008 = *in_stack_00000008 + 0xb;
   return;
 }

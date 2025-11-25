@@ -8,8 +8,8 @@
 //   core_dtri.cpp_CDemonTriangle_render_FUN_0049cbd0 (0049cbd0) at 0049cd0d [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 (0059abf0) at 0059b381 [UNCONDITIONAL_CALL]
 //   core_water.cpp_CWater_render_FUN_005ea320 (005ea320) at 005ea7eb [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051e990 (0051e990) at 0051ea5a [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051ead0 (0051ead0) at 0051ecbd [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990 (0051e990) at 0051ea5a [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 (0051ead0) at 0051ecbd [UNCONDITIONAL_CALL]
 // Globals:
 //   int[16] g_VertexIndexBuffer
 //   undefined4 g_VertexIndexBuffer[1]

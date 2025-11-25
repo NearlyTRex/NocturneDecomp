@@ -66,10 +66,10 @@
 //   shape_design.c_loadTextureData_FUN_0046b060 (0046b060) at 0046b0f0 [UNCONDITIONAL_CALL]
 //   shape_design.c_readPixelRowFromFile_FUN_0046abf0 (0046abf0) at 0046ac06 [UNCONDITIONAL_CALL]
 //   shape_design.c_skipLines_FUN_00459360 (00459360) at 00459376 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_0051aa60 (0051aa60) at 0051aa80 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_0051adf0 (0051adf0) at 0051af88 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0 (0051cdf0) at 0051cf14 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_00515160 (00515160) at 0051516f [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0 (0051adf0) at 0051af88 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60 (0051aa60) at 0051aa80 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_skipLines_FUN_00515160 (00515160) at 0051516f [UNCONDITIONAL_CALL]
 // Globals:
 //   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 //   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434

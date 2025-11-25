@@ -209,7 +209,7 @@
 //   shape_memdbg.cpp_debugFree_FUN_0050f460
 //   shape_memdbg.cpp_debugMalloc_FUN_0050f250
 //   shape_memdbg.cpp_openFile_FUN_0050f7a0
-//   shape_quantize.cpp_ColorQuantizationMaybe_FUN_00556490
+//   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
 //   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 //   wincore_windll.cpp_clearScreen_FUN_005b3e70
 //   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
@@ -258,8 +258,8 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCramConfig *cram_config
   char local_8c [4];
   undefined4 uStack_88;
   char acStack_84 [4];
-  void **local_80;
-  char **local_7c;
+  uchar **local_80;
+  uchar **local_7c;
   int local_78;
   uint local_74;
   int local_70;
@@ -279,19 +279,19 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCramConfig *cram_config
   int local_38;
   int local_34;
   int local_30;
-  void *local_2c;
+  uchar *local_2c;
   char *local_28;
-  void *local_24;
-  char *local_20;
+  uchar *local_24;
+  uchar *local_20;
   int local_1c;
   int local_18;
   int local_14;
   
   bVar14 = 0;
-  local_2c = (void *)0x0;
+  local_2c = (uchar *)0x0;
   local_28 = (char *)0x0;
-  local_24 = (void *)0x0;
-  local_20 = (char *)0x0;
+  local_24 = (uchar *)0x0;
+  local_20 = (uchar *)0x0;
   if (g_TextureProcessedCount < 1) {
     g_CurrentFilename = "..\\shape\\design.c";
     g_CurrentLineNumber = 0x28ed;
@@ -967,13 +967,13 @@ LAB_0046cf33:
           pcVar12[1] = cVar2;
           pcVar12 = pcVar12 + 2;
         } while (cVar2 != '\0');
-        local_2c = shape_memdbg_cpp_debugCalloc_FUN_0050f350
-                             (g_TextureAtlasDimension * g_TextureAtlasDimension * 3,1,
-                              "..\\shape\\design.c",0x2aed);
+        local_2c = (uchar *)shape_memdbg_cpp_debugCalloc_FUN_0050f350
+                                      (g_TextureAtlasDimension * g_TextureAtlasDimension * 3,1,
+                                       "..\\shape\\design.c",0x2aed);
         local_28 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                                      (g_TextureAtlasDimension * g_TextureAtlasDimension,
                                       "..\\shape\\design.c",0x2aee);
-        if ((local_2c == (void *)0x0) || (local_28 == (char *)0x0)) {
+        if ((local_2c == (uchar *)0x0) || (local_28 == (char *)0x0)) {
           g_CurrentFilename = "..\\shape\\design.c";
           g_CurrentLineNumber = 0x2aef;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to get bitmap!");
@@ -998,7 +998,9 @@ LAB_0046cf33:
         }
         local_80 = &local_24;
         local_7c = &local_20;
-        iVar4 = shape_quantize_cpp_ColorQuantizationMaybe_FUN_00556490();
+        iVar4 = shape_quantize_cpp_quantizeRawPixelData_FUN_00556490
+                          (local_2c,local_80,local_7c,(short)g_TextureAtlasDimension,
+                           (short)g_TextureAtlasDimension,0x18,2,1);
         if (iVar4 == 0) {
           g_CurrentFilename = "..\\shape\\design.c";
           g_CurrentLineNumber = 0x2b1b;
@@ -1023,9 +1025,8 @@ LAB_0046cf33:
                   iVar6 = local_a40 + local_44;
                   if ((((-1 < iVar6) && (iVar6 <= g_TextureAtlasDimension + -1)) && (-1 < iVar4)) &&
                      (iVar4 <= g_TextureAtlasDimension + -1)) {
-                    *(undefined1 *)((int)local_24 + iVar4 * g_TextureAtlasDimension + iVar6) =
-                         *(undefined1 *)
-                          ((int)local_24 + local_a44 * g_TextureAtlasDimension + iVar6);
+                    local_24[iVar4 * g_TextureAtlasDimension + iVar6] =
+                         local_24[local_a44 * g_TextureAtlasDimension + iVar6];
                     local_28[iVar4 * g_TextureAtlasDimension + iVar6] =
                          local_28[local_a44 * g_TextureAtlasDimension + iVar6];
                   }
@@ -1035,9 +1036,8 @@ LAB_0046cf33:
                   iVar6 = local_a40 + local_44;
                   if (((-1 < iVar6) && (iVar6 <= g_TextureAtlasDimension + -1)) &&
                      ((-1 < iVar4 && (iVar4 <= g_TextureAtlasDimension + -1)))) {
-                    *(undefined1 *)((int)local_24 + iVar4 * g_TextureAtlasDimension + iVar6) =
-                         *(undefined1 *)
-                          ((int)local_24 + (iVar4 + -1) * g_TextureAtlasDimension + iVar6);
+                    local_24[iVar4 * g_TextureAtlasDimension + iVar6] =
+                         local_24[(iVar4 + -1) * g_TextureAtlasDimension + iVar6];
                     local_28[iVar4 * g_TextureAtlasDimension + iVar6] =
                          local_28[(iVar4 + -1) * g_TextureAtlasDimension + iVar6];
                   }
@@ -1047,9 +1047,8 @@ LAB_0046cf33:
                   iVar6 = local_a44 + local_40;
                   if (((-1 < iVar4) && (iVar4 <= g_TextureAtlasDimension + -1)) &&
                      ((-1 < iVar6 && (iVar6 <= g_TextureAtlasDimension + -1)))) {
-                    *(undefined1 *)((int)local_24 + iVar6 * g_TextureAtlasDimension + iVar4) =
-                         *(undefined1 *)
-                          ((int)local_24 + iVar6 * g_TextureAtlasDimension + iVar4 + 1);
+                    local_24[iVar6 * g_TextureAtlasDimension + iVar4] =
+                         local_24[iVar6 * g_TextureAtlasDimension + iVar4 + 1];
                     local_28[iVar6 * g_TextureAtlasDimension + iVar4] =
                          local_28[iVar6 * g_TextureAtlasDimension + iVar4 + 1];
                   }
@@ -1059,9 +1058,8 @@ LAB_0046cf33:
                   iVar6 = local_a44 + local_40;
                   if ((((-1 < iVar4) && (iVar4 <= g_TextureAtlasDimension + -1)) && (-1 < iVar6)) &&
                      (iVar6 <= g_TextureAtlasDimension + -1)) {
-                    *(undefined1 *)((int)local_24 + iVar6 * g_TextureAtlasDimension + iVar4) =
-                         *(undefined1 *)
-                          ((int)local_24 + iVar6 * g_TextureAtlasDimension + iVar4 + -1);
+                    local_24[iVar6 * g_TextureAtlasDimension + iVar4] =
+                         local_24[iVar6 * g_TextureAtlasDimension + iVar4 + -1];
                     local_28[iVar6 * g_TextureAtlasDimension + iVar4] =
                          local_28[iVar6 * g_TextureAtlasDimension + iVar4 + -1];
                   }
@@ -1070,9 +1068,8 @@ LAB_0046cf33:
                 iVar6 = local_a44 + -1;
                 if (((-1 < iVar4) && (iVar4 <= g_TextureAtlasDimension + -1)) &&
                    ((-1 < iVar6 && (iVar6 <= g_TextureAtlasDimension + -1)))) {
-                  *(undefined1 *)((int)local_24 + iVar6 * g_TextureAtlasDimension + iVar4) =
-                       *(undefined1 *)
-                        ((int)local_24 + local_a44 * g_TextureAtlasDimension + iVar4 + 1);
+                  local_24[iVar6 * g_TextureAtlasDimension + iVar4] =
+                       local_24[local_a44 * g_TextureAtlasDimension + iVar4 + 1];
                   local_28[iVar6 * g_TextureAtlasDimension + iVar4] =
                        local_28[local_a44 * g_TextureAtlasDimension + iVar4 + 1];
                 }
@@ -1080,9 +1077,8 @@ LAB_0046cf33:
                 iVar6 = local_a44 + -1;
                 if (((-1 < iVar4) && (iVar4 <= g_TextureAtlasDimension + -1)) &&
                    ((-1 < iVar6 && (iVar6 <= g_TextureAtlasDimension + -1)))) {
-                  *(undefined1 *)((int)local_24 + iVar6 * g_TextureAtlasDimension + iVar4) =
-                       *(undefined1 *)
-                        ((int)local_24 + local_a44 * g_TextureAtlasDimension + iVar4 + -1);
+                  local_24[iVar6 * g_TextureAtlasDimension + iVar4] =
+                       local_24[local_a44 * g_TextureAtlasDimension + iVar4 + -1];
                   local_28[iVar6 * g_TextureAtlasDimension + iVar4] =
                        local_28[local_a44 * g_TextureAtlasDimension + iVar4 + -1];
                 }
@@ -1090,9 +1086,8 @@ LAB_0046cf33:
                 iVar6 = local_a44 + local_a3c;
                 if ((((-1 < iVar4) && (iVar4 <= g_TextureAtlasDimension + -1)) && (-1 < iVar6)) &&
                    (iVar6 <= g_TextureAtlasDimension + -1)) {
-                  *(undefined1 *)((int)local_24 + iVar6 * g_TextureAtlasDimension + iVar4) =
-                       *(undefined1 *)
-                        ((int)local_24 + (iVar6 + -1) * g_TextureAtlasDimension + iVar4 + -1);
+                  local_24[iVar6 * g_TextureAtlasDimension + iVar4] =
+                       local_24[(iVar6 + -1) * g_TextureAtlasDimension + iVar4 + -1];
                   local_28[iVar6 * g_TextureAtlasDimension + iVar4] =
                        local_28[(iVar6 + -1) * g_TextureAtlasDimension + iVar4 + -1];
                 }
@@ -1100,9 +1095,8 @@ LAB_0046cf33:
                 iVar6 = local_a44 + local_a3c;
                 if (((-1 < iVar4) && (iVar4 <= g_TextureAtlasDimension + -1)) &&
                    ((-1 < iVar6 && (iVar6 <= g_TextureAtlasDimension + -1)))) {
-                  *(undefined1 *)((int)local_24 + iVar6 * g_TextureAtlasDimension + iVar4) =
-                       *(undefined1 *)
-                        ((int)local_24 + (iVar6 + -1) * g_TextureAtlasDimension + iVar4 + 1);
+                  local_24[iVar6 * g_TextureAtlasDimension + iVar4] =
+                       local_24[(iVar6 + -1) * g_TextureAtlasDimension + iVar4 + 1];
                   local_28[iVar6 * g_TextureAtlasDimension + iVar4] =
                        local_28[(iVar6 + -1) * g_TextureAtlasDimension + iVar4 + 1];
                 }
@@ -1115,7 +1109,7 @@ LAB_0046cf33:
           }
         }
         shape_design_c_embedCopyrightWatermark_FUN_0046b9a0
-                  (local_24,local_20,g_TextureAtlasDimension);
+                  (local_24,(char *)local_20,g_TextureAtlasDimension);
         pFVar7 = engine_dosio_c_getFile_FUN_00481a50("art",local_258,"wb");
         if (pFVar7 == (FILE *)0x0) {
           g_CurrentFilename = "..\\shape\\design.c";
@@ -1171,9 +1165,9 @@ LAB_0046dbbf:
           core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to open output for .ACT file!");
         }
         for (local_5c = 0; local_5c < 0x100; local_5c = local_5c + 1) {
-          crt_stdio_c_fputc_FUN_006007a0((uint)(byte)local_20[local_5c * 3 + 2],pFVar7);
-          crt_stdio_c_fputc_FUN_006007a0((uint)(byte)local_20[local_5c * 3 + 1],pFVar7);
-          crt_stdio_c_fputc_FUN_006007a0((uint)(byte)local_20[local_5c * 3],pFVar7);
+          crt_stdio_c_fputc_FUN_006007a0((uint)local_20[local_5c * 3 + 2],pFVar7);
+          crt_stdio_c_fputc_FUN_006007a0((uint)local_20[local_5c * 3 + 1],pFVar7);
+          crt_stdio_c_fputc_FUN_006007a0((uint)local_20[local_5c * 3],pFVar7);
         }
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar7,"..\\shape\\design.c",0x2b92);
         crt_stdio_c_sprintf_FUN_005fdbd0((char *)local_154,"Saved %s                    ");
@@ -1247,11 +1241,11 @@ LAB_0046dd49:
                   (local_2c,g_TextureAtlasDimension * 3,g_TextureAtlasDimension,pFVar7);
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar7,"..\\shape\\design.c",0x2bbb);
         shape_memdbg_cpp_debugFree_FUN_0050f460(local_20,"..\\shape\\design.c",0x2bbf);
-        local_20 = (char *)0x0;
+        local_20 = (uchar *)0x0;
         shape_memdbg_cpp_debugFree_FUN_0050f460(local_24,"..\\shape\\design.c",0x2bc1);
-        local_24 = (void *)0x0;
+        local_24 = (uchar *)0x0;
         shape_memdbg_cpp_debugFree_FUN_0050f460(local_2c,"..\\shape\\design.c",0x2bc3);
-        local_2c = (void *)0x0;
+        local_2c = (uchar *)0x0;
         shape_memdbg_cpp_debugFree_FUN_0050f460(local_28,"..\\shape\\design.c",0x2bc5);
         local_28 = (char *)0x0;
       }
@@ -4234,7 +4228,7 @@ LAB_0046dd49:
 // 0046d2dc: MOV EAX,dword ptr [EBP + -0x1c]
 //   XREF to: Stack[-0x2c] (READ)
 // 0046d2df: PUSH EAX
-// 0046d2e0: CALL shape_quantize.cpp_ColorQuantizationMaybe_FUN_00556490
+// 0046d2e0: CALL shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
 //   XREF to: 00556490 (UNCONDITIONAL_CALL)
 // 0046d2e5: ADD ESP,0x20
 // 0046d2e8: TEST EAX,EAX

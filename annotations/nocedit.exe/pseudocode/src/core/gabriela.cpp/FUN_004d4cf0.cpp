@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_gabriela.cpp_FUN_004d2ea0 (004d2ea0) at 004d3564 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0062af6d
+//   float FLOAT_0062af6d = 0.5
 //   undefined4 DAT_02d7b888
 //   undefined4 DAT_02d7b88c
 // Function calls:
@@ -14,7 +14,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_hero_gabriella.cpp_FUN_004d4cf0(undefined4 param_1, undefined4
    param_2) */
 
@@ -38,12 +37,12 @@ float * core_gabriela_cpp_FUN_004d4cf0(void)
   pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                      ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),
                       (CVector3f *)&stack0xffffffec,DAT_02d7b888);
-  fVar5 = _DAT_0062af6d;
+  fVar5 = FLOAT_0062af6d;
   fVar1 = pCVar7->y;
   fVar2 = pCVar6->y;
   fVar3 = pCVar7->z;
   fVar4 = pCVar6->z;
-  *in_stack_00000008 = (pCVar7->x + pCVar6->x) * _DAT_0062af6d;
+  *in_stack_00000008 = (pCVar7->x + pCVar6->x) * FLOAT_0062af6d;
   in_stack_00000008[1] = (fVar1 + fVar2) * fVar5;
   in_stack_00000008[2] = fVar5 * (fVar3 + fVar4);
   return in_stack_00000008;

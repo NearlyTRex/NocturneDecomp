@@ -370,6 +370,7 @@ const double[8] g_Mp3AntiAliasCSSource = {
 const float g_DashAnimationThreshold = 0.1f;
 const float g_SkyDomeVertexScale = 5f;
 const float g_MovieRecordingTargetFPS = 30f;
+const float g_SamplePointWeight = 0.75f;
 
 // float[16][32] constants
 const float[16][32] g_MpegSynthesisWindow = /* Base64 encoded data (2048 bytes):
@@ -511,9 +512,6 @@ const undefined4 DAT_0067ce48 = {0x30, 0x78, 0x30, 0x00};
 const undefined4 DAT_0067ce4c = {0x30, 0x78, 0x30, 0x00};
 const undefined4 DAT_0067ceb0 = {0x30, 0x78, 0x30, 0x00};
 const undefined4 DAT_0067ceb4 = {0x30, 0x78, 0x30, 0x00};
-const undefined4 DAT_0067d390 = {0x2D, 0x30, 0x78, 0x31};
-const undefined4 DAT_0067d394 = {0x30, 0x78, 0x31, 0x00};
-const undefined4 DAT_0067d39c = {0x30, 0x78, 0x31, 0x00};
 const undefined4 DAT_0067d5c0 = {0x30, 0x78, 0x30, 0x00};
 const undefined4 DAT_0067d5c4 = {0x30, 0x78, 0x30, 0x00};
 const undefined4 DAT_0067d628 = {0x30, 0x78, 0x30, 0x00};

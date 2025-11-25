@@ -4,9 +4,9 @@
 // Convention: __cdecl
 // Signature: void * crt_memory.c_copyArrayWithFunction_FUN_006020c2(void * dest, void * source, int count, int element_size, void * copy_func)
 // Cross-references:
-//   shape_meshlod.cpp_CLodMesh_FUN_0051b570 (0051b570) at 0051b6c1 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051bd30 (0051bd30) at 0051bf63 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051efe0 (0051efe0) at 0051f04a [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0 (0051efe0) at 0051f04a [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 (0051b570) at 0051b6c1 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30 (0051bd30) at 0051bf63 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_TriListSomething_FUN_005d77a0 (005d77a0) at 005d7b27 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"

@@ -22,9 +22,9 @@
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 00592e6c [UNCONDITIONAL_CALL]
 //   crt_process.c_spawnvp_FUN_0060f39c (0060f39c) at 0060f617 [UNCONDITIONAL_CALL]
 //   engine_dosio.c_makePath_FUN_00481f50 (00481f50) at 00481f6c [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_0051aa60 (0051aa60) at 0051ac50 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_0051adf0 (0051adf0) at 0051af67 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051b770 (0051b770) at 0051b7c7 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770 (0051b770) at 0051b7c7 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0 (0051adf0) at 0051af67 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60 (0051aa60) at 0051ac50 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 (005acf20) at 005ad067 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0 (005ad5c0) at 005ad970 [UNCONDITIONAL_CALL]
 // Function calls:

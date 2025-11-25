@@ -96,10 +96,10 @@
 //   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130 (0049e130) at 0049e3d7 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0 (0049e9d0) at 0049ed70 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_showTextInputDialog_FUN_0049db10 (0049db10) at 0049ddeb [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d834 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051ed60 (0051ed60) at 0051ed9a [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (0051d520) at 0051d834 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_testLodGeneration_FUN_0051ed60 (0051ed60) at 0051ed9a [UNCONDITIONAL_CALL]
 //   shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70 (0053ee70) at 0053f2f9 [UNCONDITIONAL_CALL]
-//   shape_quantize.cpp_ColorQuantizationMaybe_FUN_00556490 (00556490) at 005565fb [UNCONDITIONAL_CALL]
+//   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490 (00556490) at 005565fb [UNCONDITIONAL_CALL]
 //   wincore_winrun.cpp_mainWindowProc_FUN_005f3150 (005f3150) at 005f326e [UNCONDITIONAL_CALL]
 //   wincore_winvideo.cpp_playMovie_FUN_005f4a00 (005f4a00) at 005f4dab [UNCONDITIONAL_CALL]
 // Globals:

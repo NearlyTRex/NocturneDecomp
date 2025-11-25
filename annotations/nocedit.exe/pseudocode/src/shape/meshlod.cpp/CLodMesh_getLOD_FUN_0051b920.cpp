@@ -12,65 +12,97 @@
 //   double DOUBLE_00637db5 = 0.000100000000000000
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
-//   undefined4 DAT_02f33330
+//   int g_LodReplayMode
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0
-//   shape_meshlod.cpp_CLodMesh_FUN_005164d0
-//   shape_meshlod.cpp_CLodMesh_FUN_00516500
-//   shape_meshlod.cpp_CLodMesh_FUN_00516a40
-//   shape_meshlod.cpp_CLodMesh_FUN_00516b40
-//   shape_meshlod.cpp_CLodMesh_FUN_00517630
-//   shape_meshlod.cpp_CLodMesh_FUN_0051a150
-//   shape_meshlod.cpp_CLodMesh_FUN_0051a8c0
-//   shape_meshlod.cpp_CLodMesh_FUN_0051b3e0
-//   shape_meshlod.cpp_CLodMesh_FUN_0051b570
-//   shape_meshlod.cpp_FUN_00516570
-//   shape_meshlod.cpp_FUN_005165c0
+//   shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
+//   shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570
+//   shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500
+//   shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0
+//   shape_meshlod.cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0
+//   shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40
+//   shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40
+//   shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0
+//   shape_meshlod.cpp_CLodMesh_scaleVertices_FUN_005165c0
+//   shape_meshlod.cpp_CLodMesh_translateVertices_FUN_00516570
+//   shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150
 
 #include "nocturne.h"
 
 void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr)
 
 {
-  int iVar1;
-  undefined4 unaff_EBX;
-  int iVar2;
+  CLodEdge *pCVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  int iVar5;
+  int iVar6;
+  CLodMesh *pCVar7;
+  CLodMesh *this_ptr_00;
+  int iVar8;
+  CBoundingBox3D *pCVar9;
+  int unaff_EBX;
+  int iVar10;
+  BADSPACEBASE *in_ESP;
+  int iVar11;
   float fStack00000008;
   CLodMesh *in_stack_0000000c;
   float fStack00000010;
   float fStack00000014;
-  int in_stack_00000018;
+  float in_stack_00000018;
   
+  this_ptr_00 = in_stack_0000000c;
+  pCVar7 = this_ptr;
   if ((this_ptr->next_lod == (CLodMesh *)0x0) || (this_ptr->lod_level_count < 1)) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
     g_CurrentLineNumber = 0x1279;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't call LodMesh::getLOD until after simplify() has been called!");
   }
-  shape_meshlod_cpp_CLodMesh_FUN_0051a8c0(in_stack_0000000c);
-  iVar2 = 0;
+  shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(in_stack_0000000c,pCVar7->next_lod);
+  iVar11 = 0;
+  iVar10 = 0;
   shape_meshlod_cpp_CLodMesh_buildEdges_FUN_00515ba0(in_stack_0000000c);
-  DAT_02f33330 = 1;
+  g_LodReplayMode = 1;
   while( true ) {
-    iVar1 = shape_meshlod_cpp_CLodMesh_FUN_005164d0(in_stack_0000000c);
-    if ((iVar1 <= in_stack_00000018) || (this_ptr->lod_level_count <= iVar2)) break;
-    iVar2 = iVar2 + 1;
-    shape_meshlod_cpp_CLodMesh_FUN_00517630(in_stack_0000000c);
+    iVar8 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(in_stack_0000000c);
+    if ((iVar8 <= (int)in_stack_00000018) || (pCVar7->lod_level_count <= iVar11)) break;
+    pCVar1 = pCVar7->lod_levels_ptr;
+    iVar8 = iVar10 + -0x24;
+    iVar5 = iVar10 + -0x18;
+    iVar6 = iVar10 + -0x28;
+    iVar10 = iVar10 + 0xf0;
+    iVar11 = iVar11 + 1;
+    shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630
+              (in_stack_0000000c,*(int *)((int)pCVar1->adjacent_tri_indices + iVar6),
+               *(int *)((int)pCVar1->adjacent_tri_indices + iVar8),
+               *(float *)((int)pCVar1->adjacent_tri_indices + iVar5));
   }
-  DAT_02f33330 = unaff_EBX;
-  shape_meshlod_cpp_CLodMesh_FUN_0051b3e0(in_stack_0000000c);
-  shape_meshlod_cpp_CLodMesh_FUN_00516a40(in_stack_0000000c);
-  shape_meshlod_cpp_CLodMesh_FUN_00516b40(in_stack_0000000c);
-  shape_meshlod_cpp_CLodMesh_FUN_00516500(in_stack_0000000c);
-  shape_meshlod_cpp_CLodMesh_FUN_0051a150(in_stack_0000000c);
-  shape_meshlod_cpp_CLodMesh_FUN_00516b40(in_stack_0000000c);
-  shape_meshlod_cpp_CLodMesh_FUN_0051b570(in_stack_0000000c);
-  shape_meshlod_cpp_CLodMesh_FUN_0051b3e0(in_stack_0000000c);
-  fStack00000010 = 1.0 / this_ptr->scale_factor;
-  fStack00000014 = fStack00000010;
-  shape_meshlod_cpp_FUN_005165c0();
-  fStack00000008 = -(this_ptr->center_offset).y;
-  shape_meshlod_cpp_FUN_00516570();
+  g_LodReplayMode = unaff_EBX;
+  shape_meshlod_cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0(in_stack_0000000c);
+  shape_meshlod_cpp_CLodMesh_markDuplicateFaces_FUN_00516a40(in_stack_0000000c);
+  shape_meshlod_cpp_CLodMesh_markDegenerateFaces_FUN_00516b40(in_stack_0000000c);
+  pCVar9 = shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500
+                     (in_stack_0000000c,(CBoundingBox3D *)&stack0xffffffc8);
+  fVar2 = (pCVar9->max).x - (pCVar9->min).x;
+  fVar3 = (pCVar9->max).y - (pCVar9->min).y;
+  fVar4 = (pCVar9->max).z - (pCVar9->min).z;
+  shape_meshlod_cpp_CLodMesh_weldVertices_FUN_0051a150
+            (in_stack_0000000c,
+             SQRT(fVar4 * fVar4 + fVar2 * fVar2 + fVar3 * fVar3) * (float)DOUBLE_00637db5);
+  shape_meshlod_cpp_CLodMesh_markDegenerateFaces_FUN_00516b40(in_stack_0000000c);
+  shape_meshlod_cpp_CLodMesh_compactFaces_FUN_0051b570(in_stack_0000000c);
+  shape_meshlod_cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0(in_stack_0000000c);
+  in_stack_0000000c = (CLodMesh *)(1.0 / pCVar7->scale_factor);
+  fStack00000010 = (float)in_stack_0000000c;
+  fStack00000014 = (float)in_stack_0000000c;
+  in_stack_00000018 = (float)in_stack_0000000c;
+  shape_meshlod_cpp_CLodMesh_scaleVertices_FUN_005165c0(this_ptr_00,(CVector3f *)&stack0x0000000c);
+  this_ptr = (CLodMesh *)-(pCVar7->center_offset).x;
+  fStack00000008 = -(pCVar7->center_offset).y;
+  in_stack_0000000c = (CLodMesh *)-(pCVar7->center_offset).z;
+  shape_meshlod_cpp_CLodMesh_translateVertices_FUN_00516570(this_ptr_00,(CVector3f *)&this_ptr);
   return;
 }
 
@@ -96,7 +128,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr)
 //   Label: LAB_0051b93b
 // 0051b93e: PUSH EAX
 // 0051b93f: PUSH EDI
-// 0051b940: CALL shape_meshlod.cpp_CLodMesh_FUN_0051a8c0
+// 0051b940: CALL shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0
 //   XREF to: 0051a8c0 (UNCONDITIONAL_CALL)
 // 0051b945: ADD ESP,0x8
 // 0051b948: PUSH EDI
@@ -114,7 +146,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr)
 //   XREF to: 02f33330 (WRITE)
 // 0051b969: PUSH EDI
 //   Label: LAB_0051b969
-// 0051b96a: CALL shape_meshlod.cpp_CLodMesh_FUN_005164d0
+// 0051b96a: CALL shape_meshlod.cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0
 //   XREF to: 005164d0 (UNCONDITIONAL_CALL)
 // 0051b96f: ADD ESP,0x4
 // 0051b972: CMP EAX,dword ptr [ESP + 0x5c]
@@ -133,7 +165,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr)
 // 0051b98d: PUSH EDI
 // 0051b98e: ADD EBX,0xf0
 // 0051b994: INC ESI
-// 0051b995: CALL shape_meshlod.cpp_CLodMesh_FUN_00517630
+// 0051b995: CALL shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
 //   XREF to: 00517630 (UNCONDITIONAL_CALL)
 // 0051b99a: ADD ESP,0x10
 // 0051b99d: JMP 0x0051b969
@@ -159,21 +191,21 @@ void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr)
 // 0051b9cb: PUSH EDI
 // 0051b9cc: MOV [0x02f33330],EAX
 //   XREF to: 02f33330 (WRITE)
-// 0051b9d1: CALL shape_meshlod.cpp_CLodMesh_FUN_0051b3e0
+// 0051b9d1: CALL shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0
 //   XREF to: 0051b3e0 (UNCONDITIONAL_CALL)
 // 0051b9d6: ADD ESP,0x4
 // 0051b9d9: PUSH EDI
-// 0051b9da: CALL shape_meshlod.cpp_CLodMesh_FUN_00516a40
+// 0051b9da: CALL shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40
 //   XREF to: 00516a40 (UNCONDITIONAL_CALL)
 // 0051b9df: ADD ESP,0x4
 // 0051b9e2: PUSH EDI
-// 0051b9e3: CALL shape_meshlod.cpp_CLodMesh_FUN_00516b40
+// 0051b9e3: CALL shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40
 //   XREF to: 00516b40 (UNCONDITIONAL_CALL)
 // 0051b9e8: ADD ESP,0x4
 // 0051b9eb: MOV EAX,ESP
 // 0051b9ed: PUSH EAX
 // 0051b9ee: PUSH EDI
-// 0051b9ef: CALL shape_meshlod.cpp_CLodMesh_FUN_00516500
+// 0051b9ef: CALL shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500
 //   XREF to: 00516500 (UNCONDITIONAL_CALL)
 // 0051b9f4: LEA EBX,[EAX + 0xc]
 // 0051b9f7: FLD float ptr [EBX]
@@ -206,19 +238,19 @@ void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr)
 // 0051ba35: FSTP float ptr [ESP]
 //   XREF to: Stack[-0x58] (DATA)
 // 0051ba38: PUSH EDI
-// 0051ba39: CALL shape_meshlod.cpp_CLodMesh_FUN_0051a150
+// 0051ba39: CALL shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150
 //   XREF to: 0051a150 (UNCONDITIONAL_CALL)
 // 0051ba3e: ADD ESP,0x8
 // 0051ba41: PUSH EDI
-// 0051ba42: CALL shape_meshlod.cpp_CLodMesh_FUN_00516b40
+// 0051ba42: CALL shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40
 //   XREF to: 00516b40 (UNCONDITIONAL_CALL)
 // 0051ba47: ADD ESP,0x4
 // 0051ba4a: PUSH EDI
-// 0051ba4b: CALL shape_meshlod.cpp_CLodMesh_FUN_0051b570
+// 0051ba4b: CALL shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570
 //   XREF to: 0051b570 (UNCONDITIONAL_CALL)
 // 0051ba50: ADD ESP,0x4
 // 0051ba53: PUSH EDI
-// 0051ba54: CALL shape_meshlod.cpp_CLodMesh_FUN_0051b3e0
+// 0051ba54: CALL shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0
 //   XREF to: 0051b3e0 (UNCONDITIONAL_CALL)
 // 0051ba59: FLD float ptr [EBP + 0x70]
 // 0051ba5c: FLD1
@@ -238,7 +270,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr)
 //   XREF to: Stack[-0x24] (DATA)
 // 0051ba7b: PUSH EAX
 // 0051ba7c: PUSH EDI
-// 0051ba7d: CALL shape_meshlod.cpp_FUN_005165c0
+// 0051ba7d: CALL shape_meshlod.cpp_CLodMesh_scaleVertices_FUN_005165c0
 //   XREF to: 005165c0 (UNCONDITIONAL_CALL)
 // 0051ba82: FLD float ptr [EBP + 0x64]
 // 0051ba85: LEA EAX,[ESP + 0x2c]
@@ -257,7 +289,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr)
 // 0051baa0: FCHS
 // 0051baa2: FSTP float ptr [ESP + 0x34]
 //   XREF to: Stack[-0x28] (WRITE)
-// 0051baa6: CALL shape_meshlod.cpp_FUN_00516570
+// 0051baa6: CALL shape_meshlod.cpp_CLodMesh_translateVertices_FUN_00516570
 //   XREF to: 00516570 (UNCONDITIONAL_CALL)
 // 0051baab: ADD ESP,0x8
 // 0051baae: ADD ESP,0x44

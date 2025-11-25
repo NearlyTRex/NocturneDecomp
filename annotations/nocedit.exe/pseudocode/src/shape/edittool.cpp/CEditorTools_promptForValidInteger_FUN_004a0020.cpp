@@ -13,7 +13,7 @@
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058cb1a [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051e148 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined1 DAT_006231b1
+//   TerminatedCString s_d_006231b1
 //   TerminatedCString s_d_006231b4
 //   TerminatedCString s_Please_enter_a_valid_int_006231b7
 //   TerminatedCString s_Please_enter_a_valid_int_006231d5
@@ -37,7 +37,7 @@ shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
   undefined3 in_stack_0000001d;
   
   if (show_current_value) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffcc,&DAT_006231b1,*result_ptr);
+    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffcc,"%d",*result_ptr);
   }
   while( true ) {
     while( true ) {

@@ -35,10 +35,10 @@
 //   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130 (0049e130) at 0049e3e3 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0 (0049e9d0) at 0049f041 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_showTextInputDialog_FUN_0049db10 (0049db10) at 0049dde3 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_005173f0 (005173f0) at 005174e0 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_00519710 (00519710) at 005197a7 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_00516620 (00516620) at 005168fd [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d82c [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620 (00516620) at 005168fd [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_computeAllEdgeCollapseCosts_FUN_00519710 (00519710) at 005197a7 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (0051d520) at 0051d82c [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0 (005173f0) at 005174e0 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0 (005ad5c0) at 005ad74c [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_WindowWidth = 0x140

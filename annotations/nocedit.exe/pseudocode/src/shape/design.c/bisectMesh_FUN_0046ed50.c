@@ -95,21 +95,21 @@ void __cdecl shape_design_c_bisectMesh_FUN_0046ed50(void)
         g_LoadedVertices[g_VertexCount].vertex.z =
              (g_LoadedVertices[uVar3].vertex.z + g_LoadedVertices[uVar1].vertex.z) *
              (float)DOUBLE_0061e0e6;
-        fVar4 = ((float)g_ModelPolygonData[local_18].vertex_indices[0x12] +
-                (float)g_ModelPolygonData[local_18].vertex_indices[0x10]) * (float)DOUBLE_0061e0e6;
-        fVar5 = (g_ModelPolygonData[local_18].uv_coordinates[2] +
-                g_ModelPolygonData[local_18].uv_coordinates[0]) * (float)DOUBLE_0061e0e6;
+        fVar4 = (g_ModelPolygonData[local_18].uv_u[2] + g_ModelPolygonData[local_18].uv_u[0]) *
+                (float)DOUBLE_0061e0e6;
+        fVar5 = (g_ModelPolygonData[local_18].uv_v[2] + g_ModelPolygonData[local_18].uv_v[0]) *
+                (float)DOUBLE_0061e0e6;
         for (iVar15 = 0x61; iVar15 != 0; iVar15 = iVar15 + -1) {
           pSVar17->polygon_type = pSVar16->polygon_type;
           pSVar16 = (SShapeEditorPolygon *)((int)pSVar16 + ((uint)bVar18 * -2 + 1) * 4);
           pSVar17 = (SShapeEditorPolygon *)((int)pSVar17 + ((uint)bVar18 * -2 + 1) * 4);
         }
         g_ModelPolygonData[local_18].vertex_indices[0] = g_VertexCount;
-        g_ModelPolygonData[local_18].vertex_indices[0x10] = (uint)fVar4;
-        g_ModelPolygonData[local_18].uv_coordinates[0] = fVar5;
+        g_ModelPolygonData[local_18].uv_u[0] = fVar4;
+        g_ModelPolygonData[local_18].uv_v[0] = fVar5;
         g_ModelPolygonData[iVar14].vertex_indices[2] = g_VertexCount;
-        g_ModelPolygonData[iVar14].vertex_indices[0x12] = (uint)fVar4;
-        g_ModelPolygonData[iVar14].uv_coordinates[2] = fVar5;
+        g_ModelPolygonData[iVar14].uv_u[2] = fVar4;
+        g_ModelPolygonData[iVar14].uv_v[2] = fVar5;
         g_VertexCount = g_VertexCount + 1;
         g_PolygonCount = g_PolygonCount + 1;
       }
@@ -123,21 +123,21 @@ void __cdecl shape_design_c_bisectMesh_FUN_0046ed50(void)
         g_LoadedVertices[g_VertexCount].vertex.z =
              (g_LoadedVertices[uVar2].vertex.z + g_LoadedVertices[uVar3].vertex.z) *
              (float)DOUBLE_0061e0de;
-        fVar4 = ((float)g_ModelPolygonData[local_18].vertex_indices[0x11] +
-                (float)g_ModelPolygonData[local_18].vertex_indices[0x12]) * (float)DOUBLE_0061e0de;
-        fVar5 = (g_ModelPolygonData[local_18].uv_coordinates[1] +
-                g_ModelPolygonData[local_18].uv_coordinates[2]) * (float)DOUBLE_0061e0de;
+        fVar4 = (g_ModelPolygonData[local_18].uv_u[1] + g_ModelPolygonData[local_18].uv_u[2]) *
+                (float)DOUBLE_0061e0de;
+        fVar5 = (g_ModelPolygonData[local_18].uv_v[1] + g_ModelPolygonData[local_18].uv_v[2]) *
+                (float)DOUBLE_0061e0de;
         for (iVar15 = 0x61; iVar15 != 0; iVar15 = iVar15 + -1) {
           pSVar17->polygon_type = pSVar16->polygon_type;
           pSVar16 = (SShapeEditorPolygon *)((int)pSVar16 + ((uint)bVar18 * -2 + 1) * 4);
           pSVar17 = (SShapeEditorPolygon *)((int)pSVar17 + ((uint)bVar18 * -2 + 1) * 4);
         }
         g_ModelPolygonData[local_18].vertex_indices[2] = g_VertexCount;
-        g_ModelPolygonData[local_18].vertex_indices[0x12] = (uint)fVar4;
-        g_ModelPolygonData[local_18].uv_coordinates[2] = fVar5;
+        g_ModelPolygonData[local_18].uv_u[2] = fVar4;
+        g_ModelPolygonData[local_18].uv_v[2] = fVar5;
         g_ModelPolygonData[iVar14].vertex_indices[1] = g_VertexCount;
-        g_ModelPolygonData[iVar14].vertex_indices[0x11] = (uint)fVar4;
-        g_ModelPolygonData[iVar14].uv_coordinates[1] = fVar5;
+        g_ModelPolygonData[iVar14].uv_u[1] = fVar4;
+        g_ModelPolygonData[iVar14].uv_v[1] = fVar5;
         g_VertexCount = g_VertexCount + 1;
         g_PolygonCount = g_PolygonCount + 1;
       }
@@ -152,21 +152,21 @@ void __cdecl shape_design_c_bisectMesh_FUN_0046ed50(void)
       g_LoadedVertices[g_VertexCount].vertex.z =
            (g_LoadedVertices[uVar1].vertex.z + g_LoadedVertices[uVar2].vertex.z) *
            (float)DOUBLE_0061e0d6;
-      fVar4 = ((float)g_ModelPolygonData[local_18].vertex_indices[0x10] +
-              (float)g_ModelPolygonData[local_18].vertex_indices[0x11]) * (float)DOUBLE_0061e0d6;
-      fVar5 = (g_ModelPolygonData[local_18].uv_coordinates[0] +
-              g_ModelPolygonData[local_18].uv_coordinates[1]) * (float)DOUBLE_0061e0d6;
+      fVar4 = (g_ModelPolygonData[local_18].uv_u[0] + g_ModelPolygonData[local_18].uv_u[1]) *
+              (float)DOUBLE_0061e0d6;
+      fVar5 = (g_ModelPolygonData[local_18].uv_v[0] + g_ModelPolygonData[local_18].uv_v[1]) *
+              (float)DOUBLE_0061e0d6;
       for (iVar15 = 0x61; iVar15 != 0; iVar15 = iVar15 + -1) {
         pSVar17->polygon_type = pSVar16->polygon_type;
         pSVar16 = (SShapeEditorPolygon *)((int)pSVar16 + ((uint)bVar18 * -2 + 1) * 4);
         pSVar17 = (SShapeEditorPolygon *)((int)pSVar17 + ((uint)bVar18 * -2 + 1) * 4);
       }
       g_ModelPolygonData[local_18].vertex_indices[1] = g_VertexCount;
-      g_ModelPolygonData[local_18].vertex_indices[0x11] = (uint)fVar4;
-      g_ModelPolygonData[local_18].uv_coordinates[1] = fVar5;
+      g_ModelPolygonData[local_18].uv_u[1] = fVar4;
+      g_ModelPolygonData[local_18].uv_v[1] = fVar5;
       g_ModelPolygonData[iVar14].vertex_indices[0] = g_VertexCount;
-      g_ModelPolygonData[iVar14].vertex_indices[0x10] = (uint)fVar4;
-      g_ModelPolygonData[iVar14].uv_coordinates[0] = fVar5;
+      g_ModelPolygonData[iVar14].uv_u[0] = fVar4;
+      g_ModelPolygonData[iVar14].uv_v[0] = fVar5;
       g_VertexCount = g_VertexCount + 1;
       g_PolygonCount = g_PolygonCount + 1;
     }

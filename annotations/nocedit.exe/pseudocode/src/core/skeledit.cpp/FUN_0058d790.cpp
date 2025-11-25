@@ -24,43 +24,45 @@
 //   crt_math.c_round_FUN_005fe6b0
 //   crt_stack.c_stack_probe_FUN_005ff9f3
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
-//   shape_meshlod.cpp_FUN_0051bd30
+//   shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
 
 #include "nocturne.h"
 
 void core_skeledit_cpp_FUN_0058d790(void)
 
 {
-  CSkeleton *pCVar1;
-  float *pfVar2;
-  CVector3f *pCVar3;
-  int *piVar4;
-  int iVar5;
+  float *pfVar1;
+  CSkeleton *pCVar2;
+  float *pfVar3;
+  CVector3f *pCVar4;
+  int *piVar5;
   int iVar6;
+  int iVar7;
   int extraout_ECX;
-  undefined4 *puVar7;
-  float *pfVar8;
-  CVector3f *pCVar9;
-  int iVar10;
+  undefined4 *puVar8;
+  char *pcVar9;
+  CVector3f *pCVar10;
+  int iVar11;
   BADSPACEBASE *in_ESP;
   int unaff_EBP;
-  float *pfVar11;
-  int iVar12;
-  undefined4 *puVar13;
-  byte bVar14;
-  float10 fVar15;
-  float10 fVar16;
-  double dVar17;
+  char *pcVar12;
+  float *pfVar13;
+  int iVar14;
+  undefined4 *puVar15;
+  byte bVar16;
+  float10 fVar17;
+  float10 fVar18;
+  double dVar19;
   int iStack00000008;
   CDeformableModel *in_stack_0000000c;
   int in_stack_00000010;
-  int *in_stack_00000014;
+  CLodMesh *in_stack_00000014;
   int in_stack_00000018;
-  float fVar18;
-  float fVar19;
+  float fVar20;
+  float fVar21;
   float afStack_518 [250];
-  float fStack_130;
-  float fStack_12c;
+  int iStack_130;
+  int iStack_12c;
   float afStack_128 [50];
   CVector3f aCStack_60 [2];
   int local_48;
@@ -75,122 +77,124 @@ void core_skeledit_cpp_FUN_0058d790(void)
   int iStack_10;
   int iStack_c;
   
-  bVar14 = 0;
+  bVar16 = 0;
   crt_stack_c_stack_probe_FUN_005ff9f3(0x558);
-  pCVar1 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(in_stack_0000000c);
-  iStack_c = pCVar1->bone_count;
+  pCVar2 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(in_stack_0000000c);
+  iStack_c = pCVar2->bone_count;
   core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510
-            (in_stack_0000000c,in_stack_00000010,*in_stack_00000014,in_stack_00000014[2],0);
+            (in_stack_0000000c,in_stack_00000010,in_stack_00000014->vertex_count,
+             in_stack_00000014->tri_count,0);
   local_28 = 0;
   local_3c = 0;
   local_2c = 0;
   local_48 = in_stack_00000010 * 4;
   do {
-    iVar10 = local_48;
+    iVar11 = local_48;
     if (*(int *)((int)in_stack_0000000c->vertex_count + local_48) <= local_28) {
-      shape_meshlod_cpp_FUN_0051bd30();
-      shape_meshlod_cpp_FUN_0051bd30();
-      shape_meshlod_cpp_FUN_0051bd30();
-      iVar5 = 0;
-      iVar10 = (int)in_stack_0000000c->lod_info + in_stack_00000010 * 4 + -4;
+      shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(in_stack_00000014,0);
+      shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(in_stack_00000014,1);
+      shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(in_stack_00000014,2);
+      iVar6 = 0;
+      iVar11 = (int)in_stack_0000000c->lod_info + in_stack_00000010 * 4 + -4;
       if (0 < in_stack_0000000c->num_parts) {
         do {
-          *(undefined4 *)(iVar10 + 0x7178) = 0;
-          *(undefined4 *)(iVar10 + 0x7164) = 0;
-          iVar5 = iVar5 + 1;
-          iVar10 = iVar10 + 0x60;
-        } while (iVar5 < in_stack_0000000c->num_parts);
+          *(undefined4 *)(iVar11 + 0x7178) = 0;
+          *(undefined4 *)(iVar11 + 0x7164) = 0;
+          iVar6 = iVar6 + 1;
+          iVar11 = iVar11 + 0x60;
+        } while (iVar6 < in_stack_0000000c->num_parts);
       }
       in_stack_0000000c->tri_count[in_stack_00000010] = 0;
       in_stack_0000000c->cap_tri_count[in_stack_00000010] = 0;
       local_14 = (float *)0x0;
-      if (0 < in_stack_00000014[2]) {
+      if (0 < in_stack_00000014->tri_count) {
         iStack_10 = in_stack_00000010 * 4;
         local_2c = 0;
         local_24 = 0;
         local_38 = (int)in_stack_0000000c->lod_info + iStack_10 + -4;
         local_34 = 0;
         do {
-          puVar13 = (undefined4 *)(in_stack_00000014[3] + local_34);
-          iVar10 = *(int *)(local_38 + 0x7c) + local_24;
-          dVar17 = (double)CONCAT44(puVar13,iVar10);
-          *(undefined4 *)(local_2c + *(int *)(local_38 + 0x90)) = *puVar13;
-          fVar15 = (float10)DOUBLE_0064aeba;
-          puVar7 = puVar13;
+          puVar15 = (undefined4 *)((int)in_stack_00000014->tri_data->attribute_indices + local_34);
+          iVar11 = *(int *)(local_38 + 0x7c) + local_24;
+          dVar19 = (double)CONCAT44(puVar15,iVar11);
+          *(undefined4 *)(local_2c + *(int *)(local_38 + 0x90)) = *puVar15;
+          fVar17 = (float10)DOUBLE_0064aeba;
+          puVar8 = puVar15;
           do {
-            *SUB84(dVar17,0) = *(undefined2 *)(puVar7 + 4);
-            fVar16 = (float10)*(float *)((int)((ulonglong)dVar17 >> 0x20) + 0x1c) * fVar15;
-            dVar17 = crt_math_c_round_FUN_005fe6b0(dVar17);
-            iVar5 = (int)((ulonglong)dVar17 >> 0x20);
-            in_stack_0000000c = (CDeformableModel *)(int)ROUND(fVar16);
-            *(short *)(SUB84(dVar17,0) + 6) = (short)in_stack_0000000c;
-            fVar16 = (float10)*(float *)(iVar5 + 0x20) * fVar15;
-            dVar17 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(iVar5 + 8,SUB84(dVar17,0) + 2));
-            puVar7 = (undefined4 *)(extraout_ECX + 4);
-            *(short *)(SUB84(dVar17,0) + 10) = (short)(int)ROUND(fVar16);
-          } while (SUB84(dVar17,0) != iVar10 + 6);
-          if (puVar13[2] == 0) {
-            piVar4 = (int *)((int)in_stack_0000000c->parts[puVar13[1]].tri_counts + iStack_10);
-            *piVar4 = *piVar4 + 1;
-            piVar4 = (int *)((int)in_stack_0000000c->tri_count + iStack_10);
-            *piVar4 = *piVar4 + 1;
+            *SUB84(dVar19,0) = *(undefined2 *)(puVar8 + 4);
+            fVar18 = (float10)*(float *)((int)((ulonglong)dVar19 >> 0x20) + 0x1c) * fVar17;
+            dVar19 = crt_math_c_round_FUN_005fe6b0(dVar19);
+            iVar6 = (int)((ulonglong)dVar19 >> 0x20);
+            in_stack_0000000c = (CDeformableModel *)(int)ROUND(fVar18);
+            *(short *)(SUB84(dVar19,0) + 6) = (short)in_stack_0000000c;
+            fVar18 = (float10)*(float *)(iVar6 + 0x20) * fVar17;
+            dVar19 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(iVar6 + 8,SUB84(dVar19,0) + 2));
+            puVar8 = (undefined4 *)(extraout_ECX + 4);
+            *(short *)(SUB84(dVar19,0) + 10) = (short)(int)ROUND(fVar18);
+          } while (SUB84(dVar19,0) != iVar11 + 6);
+          if (puVar15[2] == 0) {
+            piVar5 = (int *)((int)in_stack_0000000c->parts[puVar15[1]].tri_counts + iStack_10);
+            *piVar5 = *piVar5 + 1;
+            piVar5 = (int *)((int)in_stack_0000000c->tri_count + iStack_10);
+            *piVar5 = *piVar5 + 1;
           }
           else {
-            piVar4 = (int *)((int)in_stack_0000000c->parts[puVar13[1]].cap_tri_counts + iStack_10);
-            *piVar4 = *piVar4 + 1;
-            piVar4 = (int *)((int)in_stack_0000000c->cap_tri_count + iStack_10);
-            *piVar4 = *piVar4 + 1;
+            piVar5 = (int *)((int)in_stack_0000000c->parts[puVar15[1]].cap_tri_counts + iStack_10);
+            *piVar5 = *piVar5 + 1;
+            piVar5 = (int *)((int)in_stack_0000000c->cap_tri_count + iStack_10);
+            *piVar5 = *piVar5 + 1;
           }
           local_2c = local_2c + 4;
           local_24 = local_24 + 0x12;
           local_34 = local_34 + 0x8c;
           local_14 = (float *)((int)local_14 + 1);
-        } while ((int)local_14 < in_stack_00000014[2]);
+        } while ((int)local_14 < in_stack_00000014->tri_count);
       }
-      iVar12 = 0;
+      iVar14 = 0;
+      iVar7 = 0;
       iVar6 = 0;
-      iVar5 = 0;
-      iVar10 = (int)in_stack_0000000c->lod_info + in_stack_00000010 * 4 + -4;
+      iVar11 = (int)in_stack_0000000c->lod_info + in_stack_00000010 * 4 + -4;
       if (0 < in_stack_0000000c->num_parts) {
         do {
-          iVar5 = iVar5 + *(int *)(iVar10 + 0x7164);
-          iVar12 = iVar12 + *(int *)(iVar10 + 0x7178);
-          iVar6 = iVar6 + 1;
-          iVar10 = iVar10 + 0x60;
-        } while (iVar6 < in_stack_0000000c->num_parts);
+          iVar6 = iVar6 + *(int *)(iVar11 + 0x7164);
+          iVar14 = iVar14 + *(int *)(iVar11 + 0x7178);
+          iVar7 = iVar7 + 1;
+          iVar11 = iVar11 + 0x60;
+        } while (iVar7 < in_stack_0000000c->num_parts);
       }
-      if ((iVar5 != in_stack_0000000c->tri_count[in_stack_00000010]) ||
-         (iVar12 != in_stack_0000000c->cap_tri_count[in_stack_00000010])) {
+      if ((iVar6 != in_stack_0000000c->tri_count[in_stack_00000010]) ||
+         (iVar14 != in_stack_0000000c->cap_tri_count[in_stack_00000010])) {
         g_CurrentFilename = "..\\core\\skeledit.cpp";
         g_CurrentLineNumber = 0x89c;
         core_main_c_displayErrorAndQuit_FUN_00506f10("BUG! Count mismatch!!");
       }
       if (0 < in_stack_0000000c->cap_tri_count[in_stack_00000010]) {
-        piVar4 = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+        piVar5 = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                                   (in_stack_0000000c->cap_tri_count[in_stack_00000010] * 4,
                                    "..\\core\\skeledit.cpp",0x8a1);
-        in_stack_0000000c->cap_index_ptr[in_stack_00000010] = piVar4;
-        if (piVar4 == (int *)0x0) {
+        in_stack_0000000c->cap_index_ptr[in_stack_00000010] = piVar5;
+        if (piVar5 == (int *)0x0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0x8a2;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
         }
         iStack00000008 = 0;
         iStack_10 = 0;
-        iVar10 = in_stack_0000000c->tri_count[in_stack_00000010];
+        iVar11 = in_stack_0000000c->tri_count[in_stack_00000010];
         if (0 < in_stack_0000000c->num_parts) {
           local_20 = in_stack_0000000c;
           do {
-            iVar12 = iStack00000008 << 2;
-            iVar5 = iVar10 * 0x8c;
-            for (iVar6 = 0; iVar6 < local_20->parts[0].cap_tri_counts[in_stack_00000010];
-                iVar6 = iVar6 + 1) {
-              iVar10 = iVar10 + 1;
-              *(undefined4 *)((int)in_stack_0000000c->cap_index_ptr[in_stack_00000010] + iVar12) =
-                   *(undefined4 *)(in_stack_00000014[3] + iVar5 + 0xc);
-              iVar5 = iVar5 + 0x8c;
+            iVar14 = iStack00000008 << 2;
+            iVar6 = iVar11 * 0x8c;
+            for (iVar7 = 0; iVar7 < local_20->parts[0].cap_tri_counts[in_stack_00000010];
+                iVar7 = iVar7 + 1) {
+              iVar11 = iVar11 + 1;
+              *(undefined4 *)((int)in_stack_0000000c->cap_index_ptr[in_stack_00000010] + iVar14) =
+                   *(undefined4 *)
+                    ((int)in_stack_00000014->tri_data->attribute_indices + iVar6 + 0xc);
+              iVar6 = iVar6 + 0x8c;
               iStack00000008 = iStack00000008 + 1;
-              iVar12 = iVar12 + 4;
+              iVar14 = iVar14 + 4;
             }
             local_20 = (CDeformableModel *)(local_20->tri_count + 3);
             iStack_10 = iStack_10 + 1;
@@ -199,69 +203,69 @@ void core_skeledit_cpp_FUN_0058d790(void)
       }
       return;
     }
-    pfVar8 = (float *)(in_stack_00000014[1] + local_2c);
-    fVar19 = *pfVar8;
-    pfVar11 = pfVar8 + 3;
-    pfVar2 = afStack_518;
-    for (iVar5 = 0xfa; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *pfVar2 = *pfVar11;
-      pfVar11 = pfVar11 + (uint)bVar14 * -2 + 1;
-      pfVar2 = pfVar2 + (uint)bVar14 * -2 + 1;
+    pcVar9 = in_stack_00000014->vertex_data->lod_workspace + local_2c + -0x10;
+    fVar21 = *(float *)pcVar9;
+    pcVar12 = pcVar9 + 0xc;
+    pfVar13 = afStack_518;
+    for (iVar6 = 0xfa; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *pfVar13 = *(float *)pcVar12;
+      pcVar12 = pcVar12 + ((uint)bVar16 * -2 + 1) * 4;
+      pfVar13 = pfVar13 + (uint)bVar16 * -2 + 1;
     }
-    fStack_130 = pfVar8[0xfd];
-    fStack_12c = pfVar8[0xfe];
-    pfVar11 = pfVar8 + 0xff;
-    pfVar2 = afStack_128;
-    for (iVar5 = 0x32; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *pfVar2 = *pfVar11;
-      pfVar11 = pfVar11 + (uint)bVar14 * -2 + 1;
-      pfVar2 = pfVar2 + (uint)bVar14 * -2 + 1;
+    iStack_130 = *(int *)(pcVar9 + 0x3f4);
+    iStack_12c = *(int *)(pcVar9 + 0x3f8);
+    piVar5 = (int *)(pcVar9 + 0x3fc);
+    pfVar13 = afStack_128;
+    for (iVar6 = 0x32; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *pfVar13 = (float)*piVar5;
+      piVar5 = piVar5 + (uint)bVar16 * -2 + 1;
+      pfVar13 = pfVar13 + (uint)bVar16 * -2 + 1;
     }
-    pfVar11 = (float *)(*(int *)((int)in_stack_0000000c->vertex_data_ptr + iVar10) + local_3c);
-    dVar17 = 0.0;
-    *(byte *)pfVar11 = 0;
-    local_14 = pfVar11 + 4;
-    while (*(byte *)pfVar11 < 3) {
-      iVar10 = -1;
-      iVar5 = 0;
-      fVar18 = 0.0;
+    pfVar13 = (float *)(*(int *)((int)in_stack_0000000c->vertex_data_ptr + iVar11) + local_3c);
+    dVar19 = 0.0;
+    *(byte *)pfVar13 = 0;
+    local_14 = pfVar13 + 4;
+    while (*(byte *)pfVar13 < 3) {
+      iVar11 = -1;
+      iVar6 = 0;
+      fVar20 = 0.0;
       if (0 < unaff_EBP) {
-        iVar6 = 0;
+        iVar7 = 0;
         do {
-          if (fVar18 < *(float *)((int)afStack_518 + iVar6)) {
-            fVar18 = *(float *)((int)afStack_518 + iVar6);
-            iVar10 = iVar5;
+          if (fVar20 < *(float *)((int)afStack_518 + iVar7)) {
+            fVar20 = *(float *)((int)afStack_518 + iVar7);
+            iVar11 = iVar6;
           }
-          iVar5 = iVar5 + 1;
-          iVar6 = iVar6 + 4;
-        } while (iVar5 < unaff_EBP);
+          iVar6 = iVar6 + 1;
+          iVar7 = iVar7 + 4;
+        } while (iVar6 < unaff_EBP);
       }
-      if (fVar18 <= 0.0) break;
-      *(byte *)((int)pfVar11 + *(byte *)pfVar11 + 1) = (byte)iVar10;
-      pfVar11[*(byte *)pfVar11 + 1] = fVar18;
-      pCVar3 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+      if (fVar20 <= 0.0) break;
+      *(byte *)((int)pfVar13 + *(byte *)pfVar13 + 1) = (byte)iVar11;
+      pfVar13[*(byte *)pfVar13 + 1] = fVar20;
+      pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (aCStack_60,(CVector3f *)&stack0xfffffadc,
-                          (CMatrix3x4f *)(iVar10 * 0x30 + in_stack_00000018));
-      pCVar9 = (CVector3f *)((uint)*(byte *)pfVar11 * 0xc + iStack_10);
-      if (pCVar9 != pCVar3) {
-        pCVar9->x = pCVar3->x;
-        pCVar9->y = pCVar3->y;
-        pCVar9->z = pCVar3->z;
+                          (CMatrix3x4f *)(iVar11 * 0x30 + in_stack_00000018));
+      pCVar10 = (CVector3f *)((uint)*(byte *)pfVar13 * 0xc + iStack_10);
+      if (pCVar10 != pCVar4) {
+        pCVar10->x = pCVar4->x;
+        pCVar10->y = pCVar4->y;
+        pCVar10->z = pCVar4->z;
       }
-      afStack_518[iVar10 + 1] = 0.0;
-      dVar17 = (double)(fVar19 + (float)dVar17);
-      *(byte *)pfVar11 = *(byte *)pfVar11 + 1;
+      afStack_518[iVar11 + 1] = 0.0;
+      dVar19 = (double)(fVar21 + (float)dVar19);
+      *(byte *)pfVar13 = *(byte *)pfVar13 + 1;
     }
-    if (*(byte *)pfVar11 == 0) {
+    if (*(byte *)pfVar13 == 0) {
       g_CurrentFilename = "..\\core\\skeledit.cpp";
       g_CurrentLineNumber = 0x856;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find any bones influencing vertex!");
     }
-    pfVar2 = pfVar11;
-    for (iVar10 = 0; iVar10 < (int)(uint)*(byte *)pfVar11; iVar10 = iVar10 + 1) {
-      pfVar8 = pfVar2 + 1;
-      pfVar2 = pfVar2 + 1;
-      *pfVar2 = *pfVar8 / (float)dVar17;
+    pfVar3 = pfVar13;
+    for (iVar11 = 0; iVar11 < (int)(uint)*(byte *)pfVar13; iVar11 = iVar11 + 1) {
+      pfVar1 = pfVar3 + 1;
+      pfVar3 = pfVar3 + 1;
+      *pfVar3 = *pfVar1 / (float)dVar19;
     }
     local_2c = local_2c + 0x4c4;
     local_28 = local_28 + 1;
@@ -536,21 +540,21 @@ void core_skeledit_cpp_FUN_0058d790(void)
 // 0058d9f6: MOV EAX,dword ptr [EBP + 0x1c]
 //   XREF to: Stack[0xc] (READ)
 // 0058d9f9: PUSH EAX
-// 0058d9fa: CALL shape_meshlod.cpp_FUN_0051bd30
+// 0058d9fa: CALL shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
 //   XREF to: 0051bd30 (UNCONDITIONAL_CALL)
 // 0058d9ff: ADD ESP,0x8
 // 0058da02: PUSH 0x1
 // 0058da04: MOV EDX,dword ptr [EBP + 0x1c]
 //   XREF to: Stack[0xc] (READ)
 // 0058da07: PUSH EDX
-// 0058da08: CALL shape_meshlod.cpp_FUN_0051bd30
+// 0058da08: CALL shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
 //   XREF to: 0051bd30 (UNCONDITIONAL_CALL)
 // 0058da0d: ADD ESP,0x8
 // 0058da10: PUSH 0x2
 // 0058da12: MOV ECX,dword ptr [EBP + 0x1c]
 //   XREF to: Stack[0xc] (READ)
 // 0058da15: PUSH ECX
-// 0058da16: CALL shape_meshlod.cpp_FUN_0051bd30
+// 0058da16: CALL shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
 //   XREF to: 0051bd30 (UNCONDITIONAL_CALL)
 // 0058da1b: ADD ESP,0x8
 // 0058da1e: XOR ECX,ECX

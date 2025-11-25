@@ -4,9 +4,9 @@
 // Convention: __cdecl
 // Signature: int core_tvbat.cpp_CTVBat_FUN_005e4d80(CTVBat * this_ptr)
 // Globals:
-//   undefined4 DAT_006569e2
-//   undefined4 DAT_006569ea
-//   undefined4 DAT_006569f2
+//   double DOUBLE_006569e2 = 0.00555555555555555
+//   double DOUBLE_006569ea = 3.14159265350000
+//   float FLOAT_006569f2 = 0.005555556
 //   undefined4 DAT_00664cb0
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
@@ -73,7 +73,7 @@ int __cdecl core_tvbat_cpp_CTVBat_FUN_005e4d80(CTVBat *this_ptr)
       iVar2 = 0;
       engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(g_CDemonRendererPtr,1);
       do {
-        fVar3 = (float10)iVar2 * (float10)_DAT_006569e2 * (float10)_DAT_006569ea;
+        fVar3 = (float10)iVar2 * (float10)DOUBLE_006569e2 * (float10)DOUBLE_006569ea;
         fStack00000014 = (float)fVar3;
         fVar4 = (float10)fsin(fVar3);
         fcos(fVar3);
@@ -92,7 +92,7 @@ int __cdecl core_tvbat_cpp_CTVBat_FUN_005e4d80(CTVBat *this_ptr)
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,
                    (CVector3i *)&this_ptr);
-        fVar3 = (float10)iVar2 * (float10)_DAT_006569f2 * (float10)_DAT_006569ea;
+        fVar3 = (float10)iVar2 * (float10)FLOAT_006569f2 * (float10)DOUBLE_006569ea;
         fStack0000001c = (float)fVar3;
         fVar4 = (float10)fsin(fVar3);
         fVar3 = (float10)fcos(fVar3);

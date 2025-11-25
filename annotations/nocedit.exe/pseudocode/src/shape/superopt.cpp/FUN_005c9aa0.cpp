@@ -9,12 +9,11 @@
 //   shape_superopt.cpp_FUN_005c8e70 (005c8e70) at 005c8fcf [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_FUN_005c9500 (005c9500) at 005c976c [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00654242
-//   undefined4 DAT_0065424a
+//   double DOUBLE_00654242 = 1.00000000000000E-10
+//   double DOUBLE_0065424a = -1.00000000000000E-10
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 shape_superopt.cpp_FUN_005c9aa0(undefined4 param_1, undefined4 param_2,
    undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4
    param_7) */
@@ -140,10 +139,10 @@ void shape_superopt_cpp_FUN_005c9aa0(void)
       }
       local_1d8 = dVar3 + local_118 + local_1e0;
       local_1e0 = local_188 + local_180 + local_178 + local_1e0;
-      if ((local_1d8 < _DAT_00654242) && (_DAT_0065424a < local_1d8)) {
+      if ((local_1d8 < DOUBLE_00654242) && (DOUBLE_0065424a < local_1d8)) {
         local_1d8 = 0.0;
       }
-      if ((local_1e0 < _DAT_00654242) && (_DAT_0065424a < local_1e0)) {
+      if ((local_1e0 < DOUBLE_00654242) && (DOUBLE_0065424a < local_1e0)) {
         local_1e0 = 0.0;
       }
       if ((((((ulonglong)local_1d8 & 0x7fffffff00000000) != 0) || (local_1d8._0_4_ != 0)) ||

@@ -7,14 +7,13 @@
 //   core_turret.cpp_CTurret_process_FUN_005e2430 (005e2430) at 005e26e3 [UNCONDITIONAL_CALL]
 //   core_turret.cpp_FUN_005e2d50 (005e2d50) at 005e3261 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00656798
+//   double DOUBLE_00656798 = 0.333333333333333
 // Function calls:
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_turret.cpp_FUN_005e3280
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_weapon_turret.cpp_FUN_005e3560(undefined4 param_1, undefined4
    param_2) */
 
@@ -72,7 +71,7 @@ void core_turret_cpp_FUN_005e3560(void)
           fVar4 = input_local_point->x - fVar1;
           fVar6 = *(float *)(in_stack_00000004 + 0x850) - fVar2;
           fVar5 = *(float *)(in_stack_00000004 + 0x854) - fVar3;
-          if (_DAT_006567a0 < fVar5 * fVar5 + fVar6 * fVar6 + fVar4 * fVar4) break;
+          if (FLOAT_006567a0 < fVar5 * fVar5 + fVar6 * fVar6 + fVar4 * fVar4) break;
           iVar7 = iVar7 + 1;
           if (4 < iVar7) {
             return;

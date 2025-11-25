@@ -8,7 +8,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_crate.cpp_FUN_00448530(undefined4 param_1) */
 
 void core_crate_cpp_FUN_00448530(void)
@@ -26,8 +25,8 @@ void core_crate_cpp_FUN_00448530(void)
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
   (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_1c);
-  fVar1 = ((float)in_stack_00000004 - CStack_1c.max.z) * (float)_DAT_00619b02;
-  fVar2 = (in_stack_0000000c - unaff_retaddr) * (float)_DAT_00619b02;
+  fVar1 = ((float)in_stack_00000004 - CStack_1c.max.z) * (float)DOUBLE_00619b02;
+  fVar2 = (in_stack_0000000c - unaff_retaddr) * (float)DOUBLE_00619b02;
   if (fVar1 < fVar2) {
     fVar2 = fVar1;
   }

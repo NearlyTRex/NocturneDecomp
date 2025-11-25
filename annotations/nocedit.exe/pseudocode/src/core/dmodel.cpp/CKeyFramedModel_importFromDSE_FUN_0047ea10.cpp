@@ -112,15 +112,14 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFram
         do {
           *(undefined4 *)((int)this_ptr->poly_vert_list + iVar5 + local_c + 0x18) =
                *(undefined4 *)((int)g_ModelPolygonData[0].vertex_indices + iVar4);
-          fVar11 = (float10)*(float *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 0x40) *
-                   fVar10;
+          fVar11 = (float10)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar4) * fVar10;
           dVar12 = crt_math_c_round_FUN_005fe6b0
                              ((double)CONCAT44(iVar4,(int)this_ptr->poly_vert_list + iVar5 + local_c
                                               ));
           iVar4 = (int)((ulonglong)dVar12 >> 0x20);
           iVar1 = (int)ROUND(fVar11);
           *(int *)(local_24 + 0x1c) = iVar1;
-          fVar11 = (float10)*(float *)((int)g_ModelPolygonData[0].uv_coordinates + iVar4) * fVar10;
+          fVar11 = (float10)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar4) * fVar10;
           dVar12 = crt_math_c_round_FUN_005fe6b0
                              ((double)CONCAT44(iVar4,(int)this_ptr->poly_vert_list + local_c));
           *(int *)(SUB84(dVar12,0) + extraout_ECX_02 + 0x20) = (int)ROUND(fVar11);

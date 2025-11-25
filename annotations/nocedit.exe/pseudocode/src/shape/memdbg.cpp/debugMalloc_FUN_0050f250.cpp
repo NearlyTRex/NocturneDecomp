@@ -48,7 +48,7 @@
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1d0 (0050f1d0) at 0050f1dc [UNCONDITIONAL_CALL]
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 (0050f1f0) at 0050f200 [UNCONDITIONAL_CALL]
 //   shape_memdbg.cpp_debugRealloc_FUN_0050f540 (0050f540) at 0050f63c [UNCONDITIONAL_CALL]
-//   shape_quantize.cpp_ColorQuantizationMaybe_FUN_00556490 (00556490) at 0055670e [UNCONDITIONAL_CALL]
+//   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490 (00556490) at 0055670e [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_CFileBitStream_init_FUN_0052ecf0 (0052ecf0) at 0052ed50 [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 (00534630) at 005346bf [UNCONDITIONAL_CALL]
 //   wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005ecac0 (005ecac0) at 005ecaef [UNCONDITIONAL_CALL]

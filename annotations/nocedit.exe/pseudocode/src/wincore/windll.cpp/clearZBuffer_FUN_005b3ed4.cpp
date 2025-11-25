@@ -22,7 +22,7 @@
 //   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (005968b0) at 00596ba6 [UNCONDITIONAL_CALL]
 //   shape_design.c_showFacetPartEditor_FUN_0045f1d0 (0045f1d0) at 0045f338 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051dbaa [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d590 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (0051d520) at 0051d590 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_WindowWidth = 0x140
 //   double g_SelectedClearColor = 0.0

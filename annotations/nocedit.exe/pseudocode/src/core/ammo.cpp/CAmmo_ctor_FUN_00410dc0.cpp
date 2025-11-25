@@ -10,10 +10,10 @@
 //   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900 (004fe900) at 004fe92e [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_bullet_kfm_00614934
-//   undefined1 DAT_0061493f
-//   undefined1 DAT_00614940
-//   undefined1 DAT_00614941
-//   undefined1 DAT_00614942
+//   TerminatedCString s_CGun_0061493f
+//   undefined4 DAT_00614940
+//   undefined4 DAT_00614941
+//   undefined4 DAT_00614942
 //   CDemonActor_vtable g_CAmmoVTable
 // Function calls:
 //   core_actor.cpp_CDemonActor_ctor_FUN_004088b0
@@ -37,7 +37,7 @@ CAmmo * __cdecl core_ammo_cpp_CAmmo_ctor_FUN_00410dc0(CAmmo *this_ptr)
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAmmoVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"bullet.kfm");
-  pcVar3 = &DAT_0061493f;
+  pcVar3 = "CGun";
   pCVar4 = this_ptr_00 + 1;
   do {
     cVar1 = *pcVar3;

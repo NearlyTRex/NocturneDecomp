@@ -6,8 +6,8 @@
 // Cross-references:
 //   core_enemy.cpp_CEnemy_FUN_004a9fd0 (004a9fd0) at 004aa002 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_006174d2
-//   undefined4 DAT_006174da
+//   double DOUBLE_006174d2 = 4
+//   float FLOAT_006174da = 20
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 DAT_032690dc
 //   undefined4 DAT_032690e0
@@ -21,8 +21,6 @@
 //   shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_charactr_cpp_CCharacter_FUN_0042e050(CCharacter *this_ptr)
 
@@ -69,7 +67,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042e050(CCharacter *this_ptr)
      (fVar6 = *(float *)(iVar5 + 0x20) - (this_ptr->base_actor).location.position.x,
      fVar1 = *(float *)(iVar5 + 0x24) - (this_ptr->base_actor).location.position.y,
      fVar7 = *(float *)(iVar5 + 0x28) - (this_ptr->base_actor).location.position.z,
-     (float)_DAT_006174d2 <= SQRT(fVar7 * fVar7 + fVar1 * fVar1 + fVar6 * fVar6))) {
+     (float)DOUBLE_006174d2 <= SQRT(fVar7 * fVar7 + fVar1 * fVar1 + fVar6 * fVar6))) {
     if (*(int *)(this_ptr->field11_0x25a0 + 0x50) == 0) goto LAB_0042e0e4;
     if (*(int *)(this_ptr->field11_0x25a0 + 0x4c) == 0) goto LAB_0042e0ee;
     uVar3 = core_waypoint_cpp_FUN_005ec320();
@@ -104,7 +102,7 @@ LAB_0042e0ee:
          (fVar6 = (local_1c->position).x - *(float *)(target_string + 0x20),
          fVar1 = (local_1c->position).y - *(float *)(target_string + 0x24),
          fVar7 = (local_1c->position).z - *(float *)(target_string + 0x28),
-         _DAT_006174da <= SQRT(fVar7 * fVar7 + fVar1 * fVar1 + fVar6 * fVar6))) {
+         FLOAT_006174da <= SQRT(fVar7 * fVar7 + fVar1 * fVar1 + fVar6 * fVar6))) {
         iVar4 = iVar5 + 4;
         local_28 = local_28 + 1;
         *(char **)((int)local_1f80 + iVar5) = target_string;

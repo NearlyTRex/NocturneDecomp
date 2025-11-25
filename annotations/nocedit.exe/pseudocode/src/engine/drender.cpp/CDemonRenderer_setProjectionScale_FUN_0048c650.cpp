@@ -15,7 +15,7 @@
 //   core_set.cpp_CDemonSet_FUN_0056c990 (0056c990) at 0056ccc1 [UNCONDITIONAL_CALL]
 //   core_set.cpp_FUN_00570af0 (00570af0) at 00570b14 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310 (00580310) at 00580407 [UNCONDITIONAL_CALL]
-//   core_stairs.cpp_FUN_005b9a20 (005b9a20) at 005b9a35 [UNCONDITIONAL_CALL]
+//   shape_spotview.cpp_CSpotView_FUN_005b9a20 (005b9a20) at 005b9a35 [UNCONDITIONAL_CALL]
 // Globals:
 //   double g_ProjectionDivisor = 18
 //   double g_ProjectionMultiplier = 65536

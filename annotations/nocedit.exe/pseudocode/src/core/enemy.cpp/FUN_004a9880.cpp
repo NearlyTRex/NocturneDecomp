@@ -19,8 +19,8 @@
 //   core_sentinel.cpp_FUN_00568030 (00568030) at 00568607 [UNCONDITIONAL_CALL]
 //   core_smiley.cpp_FUN_005a2800 (005a2800) at 005a2c46 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0062438a
-//   undefined4 DAT_00624392
+//   double DOUBLE_0062438a = 1.20000000000000
+//   double DOUBLE_00624392 = 0.25
 //   CGore* g_CGorePtr = 02d83364
 //   CGore g_CGoreInstance
 // Function calls:
@@ -28,8 +28,6 @@
 //   crt_math.c_round_FUN_005fe6b0
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 undefined4 core_enemy_cpp_FUN_004a9880(void)
 
@@ -50,8 +48,8 @@ undefined4 core_enemy_cpp_FUN_004a9880(void)
     (**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0xbe3c) + 0x154) + 0x114))();
     if (0.0 < *(float *)(in_stack_00000010 + 4)) {
       uStack_20 = *in_stack_00000008;
-      fVar1 = (float10)*(float *)(in_stack_00000010 + 4) * (float10)_DAT_0062438a *
-              (float10)_DAT_00624392;
+      fVar1 = (float10)*(float *)(in_stack_00000010 + 4) * (float10)DOUBLE_0062438a *
+              (float10)DOUBLE_00624392;
       dVar2 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX,in_stack_00000008[1]));
       uStack_1c = SUB84(dVar2,0);
       iStack_14 = (int)ROUND(fVar1);

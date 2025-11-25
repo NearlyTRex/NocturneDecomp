@@ -100,6 +100,7 @@ const char[300] g_LocalizationTemplate = "";
 const char[80] g_LoadedModelName = "";
 
 // double constants
+const double g_InfiniteCollapseCost = 9.9999999999999997e+34;
 const double DOUBLE_00663138 = -1;
 const double DOUBLE_00663140 = 1116.4000000000001;
 const double DOUBLE_00663148 = 4;
@@ -168,8 +169,6 @@ const undefined4 DAT_006605e8 = {0x30, 0x78, 0x33, 0x66};
 const undefined4 DAT_0066071c = {0x30, 0x78, 0x34, 0x31};
 const undefined4 DAT_00660a40 = {0x30, 0x78, 0x34, 0x31};
 const undefined4 DAT_00660a48 = {0x30, 0x78, 0x34, 0x30};
-const undefined4 DAT_00661388 = {0x30, 0x78, 0x37, 0x32};
-const undefined4 DAT_0066138c = {0x30, 0x78, 0x34, 0x37};
 const undefined4 DAT_00661408 = {0x30, 0x78, 0x34, 0x30};
 const undefined4 DAT_00661778 = {0x30, 0x78, 0x34, 0x30};
 const undefined4 DAT_0066177c = {0x30, 0x78, 0x34, 0x31};

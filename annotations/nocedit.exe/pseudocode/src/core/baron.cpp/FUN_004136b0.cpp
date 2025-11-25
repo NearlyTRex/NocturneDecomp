@@ -6,9 +6,9 @@
 // Cross-references:
 //   core_baron.cpp_FUN_00413a00 (00413a00) at 00413a36 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_baron-attack.wav_00615041
-//   undefined4 DAT_00615059
-//   undefined4 DAT_00615061
+//   TerminatedCString s_baron_attack_wav_00615041
+//   double DOUBLE_00615059 = -0.785398163375000
+//   double DOUBLE_00615061 = 0.785398163375000
 //   WatcomTypeInfo g_CVectorTypeInfo
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   undefined4 DAT_008224cc
@@ -31,7 +31,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_hero_baron.cpp_FUN_004136b0(undefined4 param_1) */
 
 void core_baron_cpp_FUN_004136b0(void)
@@ -72,8 +71,8 @@ void core_baron_cpp_FUN_004136b0(void)
     auStack_34._8_4_ = pCVar1->z;
   }
   auStack_34._8_4_ = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((float)auStack_34._4_4_);
-  if (((float)auStack_34._8_4_ < (float)_DAT_00615059) ||
-     (_DAT_00615061 < (double)(float)auStack_34._8_4_)) {
+  if (((float)auStack_34._8_4_ < (float)DOUBLE_00615059) ||
+     (DOUBLE_00615061 < (double)(float)auStack_34._8_4_)) {
     core_fire_cpp_CFireEffect_FUN_004c8f50(g_CFireEffectPtr);
     core_fire_cpp_CFireEffect_FUN_004c8ea0(g_CFireEffectPtr);
   }
@@ -110,7 +109,7 @@ void core_baron_cpp_FUN_004136b0(void)
               (in_stack_00000004,(CVector3f *)&stack0x00000010,pCVar1);
     core_fire_cpp_CFireEffect_FUN_004c8fd0(g_CFireEffectPtr);
     core_fire_cpp_CFireEffect_FUN_004c8fd0(g_CFireEffectPtr);
-    (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"@@baron-attack.wav" + 2);
+    (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"baron-attack.wav");
   }
   core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)(auStack_74 + 8));
   local_3c._4_4_ = 8.40779e-45;

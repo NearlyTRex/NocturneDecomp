@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_baron.cpp_CBaron_serialize_FUN_00413a70(CBaron * this_ptr)
 // Globals:
-//   undefined4 s_summonEvent_00615069
+//   TerminatedCString s_summonEvent_00615069
 //   TerminatedCString s_goAwayEvent_00615075
 //   TerminatedCString s_summoned_00615081
 //   undefined4 g_CBaronClassVersion
@@ -23,7 +23,7 @@ void __cdecl core_baron_cpp_CBaron_serialize_FUN_00413a70(CBaron *this_ptr)
     return;
   }
   core_actor_cpp_serializeString_FUN_0040b5c0
-            ((char **)this_ptr->field1_0x1fbd4,"?summonEvent" + 1);
+            ((char **)this_ptr->field1_0x1fbd4,"summonEvent");
   core_actor_cpp_serializeString_FUN_0040b5c0
             ((char **)(this_ptr->field1_0x1fbd4 + 100),"goAwayEvent");
   core_actor_cpp_serializeInteger_FUN_0040b7f0

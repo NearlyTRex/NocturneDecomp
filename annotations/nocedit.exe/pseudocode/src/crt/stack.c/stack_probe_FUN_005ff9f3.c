@@ -97,7 +97,7 @@
 //   shape_cramtex.cpp_renderTextureEntry_FUN_00447c20 (00447c20) at 00447c25 [UNCONDITIONAL_CALL]
 //   shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160 (00446160) at 00446165 [UNCONDITIONAL_CALL]
 //   shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20 (00447f20) at 00447f25 [UNCONDITIONAL_CALL]
-//   shape_quantize.cpp_FUN_00554900 (00554900) at 00554905 [UNCONDITIONAL_CALL]
+//   shape_quantize.cpp_CColorQuantizer_ctor_FUN_00554900 (00554900) at 00554905 [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_stack.c_check_stack_target_FUN_005ffa03
 

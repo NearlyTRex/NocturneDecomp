@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320 (0043c320) at 0043c346 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\cloth.cpp_006184ca
+//   TerminatedCString s_core_cloth_cpp_006184ca
 //   TerminatedCString s_CCloth_saveJoinedLight_C_006184dc
 //   TerminatedCString s_core_cloth_cpp_00618516
 //   TerminatedCString s_CCloth_saveJoinedLight_M_00618528
@@ -31,7 +31,7 @@ int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043b9f0(CCloth *this_ptr)
   int in_stack_00000008;
   
   if (in_stack_00000008 == 0) {
-    g_CurrentFilename = "?..\\core\\cloth.cpp" + 1;
+    g_CurrentFilename = "..\\core\\cloth.cpp";
     g_CurrentLineNumber = 0x4e3;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCloth::saveJoinedLight - Can't save light with no model!");
   }

@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_waypoint.cpp_CWayPoint_FUN_005ec4d0 (005ec4d0) at 005ec4da [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_On_event_00655854
+//   TerminatedCString s_On_event_00655854
 //   TerminatedCString s_Off_event_0065585d
 //   TerminatedCString s_Event_type_00655893
 //   TerminatedCString s_What_triggers_me_0065596f

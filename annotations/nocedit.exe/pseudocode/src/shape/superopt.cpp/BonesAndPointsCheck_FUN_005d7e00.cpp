@@ -6,7 +6,7 @@
 // Cross-references:
 //   shape_superopt.cpp_TriListSomething_FUN_005d77a0 (005d77a0) at 005d7cf3 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\shape\superopt.cpp_00654882
+//   TerminatedCString s_shape_superopt_cpp_00654882
 //   TerminatedCString s_Too_many_points_00654898
 //   TerminatedCString s_shape_superopt_cpp_006548a9
 //   TerminatedCString s_Too_many_polys_006548bf
@@ -101,7 +101,7 @@ LAB_005d7e9e:
         uVar3 = local_24[1];
         uVar4 = *local_24;
         if (20000 < g_VertexCount + uVar4) {
-          g_CurrentFilename = "p?..\\shape\\superopt.cpp" + 2;
+          g_CurrentFilename = "..\\shape\\superopt.cpp";
           g_CurrentLineNumber = 0x25b3;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many points!");
         }
@@ -162,25 +162,23 @@ LAB_005d7e9e:
           iVar8 = g_PolygonCount * 0x184;
           g_ModelPolygonData[g_PolygonCount].vertex_indices[0] = g_VertexCount;
           fVar16 = (float10)DOUBLE_006548d2;
-          g_ModelPolygonData[iVar6].vertex_indices[0x10] =
-               (uint)(float)((float10)*(double *)(uVar3 + 0x40) * fVar16);
+          g_ModelPolygonData[iVar6].uv_u[0] = (float)((float10)*(double *)(uVar3 + 0x40) * fVar16);
           iVar5 = g_VertexCount;
           iVar11 = uVar9 * 0x60 + uVar3;
           iVar10 = uVar9 + g_VertexCount;
           uVar9 = 1;
-          g_ModelPolygonData[iVar6].uv_coordinates[0] =
-               (float)((float10)*(double *)(uVar3 + 0x48) * fVar16);
+          g_ModelPolygonData[iVar6].uv_v[0] = (float)((float10)*(double *)(uVar3 + 0x48) * fVar16);
           if (iVar10 <= (int)(iVar5 + uVar13)) {
             fVar16 = (float10)DOUBLE_006548d2;
             do {
               *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar8 + 4) = iVar10;
-              *(float *)((int)g_ModelPolygonData[0].vertex_indices + iVar8 + 0x44) =
+              *(float *)((int)g_ModelPolygonData[0].uv_u + iVar8 + 4) =
                    (float)((float10)*(double *)(iVar11 + 0x40) * fVar16);
               pdVar1 = (double *)(iVar11 + 0x48);
               uVar9 = uVar9 + 1;
               iVar11 = iVar11 + 0x60;
               iVar10 = iVar10 + 1;
-              *(float *)((int)g_ModelPolygonData[0].uv_coordinates + iVar8 + 4) =
+              *(float *)((int)g_ModelPolygonData[0].uv_v + iVar8 + 4) =
                    (float)((float10)*pdVar1 * fVar16);
               iVar8 = iVar8 + 4;
             } while (iVar10 <= (int)(iVar5 + uVar13));

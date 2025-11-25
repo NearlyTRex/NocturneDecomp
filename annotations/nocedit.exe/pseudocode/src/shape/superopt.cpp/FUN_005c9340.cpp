@@ -6,13 +6,12 @@
 // Cross-references:
 //   shape_superopt.cpp_FUN_005c91e0 (005c91e0) at 005c9217 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00654232
+//   double DOUBLE_00654232 = 1.00000000000000E-10
 // Function calls:
 //   crt_string.c_memmove_FUN_005fe5e0
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 shape_superopt.cpp_FUN_005c9340(undefined1 param_1, undefined4 param_2,
    undefined4 param_3) */
 
@@ -55,7 +54,7 @@ void shape_superopt_cpp_FUN_005c9340(void)
       dVar1 = *(double *)((int)pvVar6 + 0x28) - *(double *)((int)pvVar6 + 0x10);
       dVar3 = *(double *)((int)pvVar6 + 0x30) - *(double *)((int)pvVar6 + 0x18);
       dVar2 = *(double *)((int)pvVar6 + 0x38) - *(double *)((int)pvVar6 + 0x20);
-      if (SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1) < _DAT_00654232) {
+      if (SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1) < DOUBLE_00654232) {
         crt_string_c_memmove_FUN_005fe5e0
                   (pvVar6,(void *)((uVar7 + 1) * 0x60 + in_stack_00000008),
                    ((*in_stack_0000000c - uVar7) + -1) * 0x60);
@@ -102,8 +101,8 @@ void shape_superopt_cpp_FUN_005c9340(void)
       puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
       pdVar9 = (double *)((int)pdVar9 + (uint)bVar10 * -8 + 4);
     }
-    if ((_DAT_00654232 < SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1)) ||
-       (_DAT_00654232 <
+    if ((DOUBLE_00654232 < SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1)) ||
+       (DOUBLE_00654232 <
         SQRT((local_80 - local_b0) * (local_80 - local_b0) +
              (local_88 - local_b8) * (local_88 - local_b8) +
              (local_90 - local_c0) * (local_90 - local_c0)))) {

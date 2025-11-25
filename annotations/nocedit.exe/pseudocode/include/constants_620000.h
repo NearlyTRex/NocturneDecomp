@@ -611,6 +611,8 @@ const TerminatedCString s_Can_t_change_to_s_00623179 = "Can't change to %s";
 const TerminatedCString s_Directory_0062318d = "Directory: ";
 const TerminatedCString s_Filename_00623199 = "Filename: ";
 const TerminatedCString s_Filename_006231a4 = "Filename: ";
+const TerminatedCString s_anon_006231af = ".";
+const TerminatedCString s_d_006231b1 = "%d";
 const TerminatedCString s_d_006231b4 = "%d";
 const TerminatedCString s_Please_enter_a_valid_int_006231b7 = "Please enter a valid integer.";
 const TerminatedCString s_Please_enter_a_valid_int_006231d5 = "Please enter a valid integer between %d and %d.";
@@ -641,6 +643,7 @@ const TerminatedCString s_CEditorTools_popWindow_c_0062343c = "CEditorTools::pop
 const TerminatedCString s_shape_edittool_cpp_00623477 = "..\\shape\\edittool.cpp";
 const TerminatedCString s_shape_edittool_cpp_0062348d = "..\\shape\\edittool.cpp";
 const TerminatedCString s_CEditorTools_paintWindow_006234a3 = "CEditorTools::paintWindow() called but no window was opened!";
+const TerminatedCString s_j_006234e0 = "j";
 const TerminatedCString s_shape_edittool_cpp_006234e2 = "..\\shape\\edittool.cpp";
 const TerminatedCString s_CEditorTools_paintWindow_006234f8 = "CEditorTools::paintWindow() called but no window was opened!";
 const TerminatedCString s_shape_edittool_cpp_00623535 = "..\\shape\\edittool.cpp";
@@ -1650,14 +1653,17 @@ const TerminatedCString s_rt_0062962c = "rt";
 const TerminatedCString s_anon_0062962f = " %[^\n]\n";
 const TerminatedCString s_anon_00629637 = "//";
 const TerminatedCString s_s_0062963a = " %[^:]:%s";
+const TerminatedCString s_file_00629644 = "file";
 const TerminatedCString s_sounds_00629649 = "sounds";
 const TerminatedCString s_file_00629650 = "file";
 const TerminatedCString s_s_00629655 = "%s\n";
 const TerminatedCString s_msn_00629659 = "msn";
 const TerminatedCString s_Loading_s_0062965d = "Loading %s";
 const TerminatedCString s_WORLD_s_00629668 = "WORLD\\%s\n";
+const TerminatedCString s_scr_00629672 = ".scr";
 const TerminatedCString s_world_00629677 = "world";
 const TerminatedCString s_WORLD_s_0062967d = "WORLD\\%s\n";
+const TerminatedCString s_txt_00629687 = ".txt";
 const TerminatedCString s_world_0062968c = "world";
 const TerminatedCString s_WORLD_s_00629692 = "WORLD\\%s\n";
 const TerminatedCString s_Adding_to_file_list_0062969c = "Adding to file list.";
@@ -3052,24 +3058,14 @@ const TerminatedCString s_yMouseSensitivity_0062ffe8 = "yMouseSensitivity";
 const TerminatedCString s_xCenter_0062fffa = "xCenter";
 
 // char constants
+const char s_EmptyChar_0062318c =  ;
 const char s_EmptyChar_00623593 =  ;
 const char s_EmptyChar_00623594 =  ;
+const char s_EmpyStringLiteral_006238a5 =  ;
 const char s_EmptyString_00623fa1 =  ;
 const char s_EmptyString_00627d0c =  ;
 const char s_EmptyStr_006295ce =  ;
 const char s_EmptyStr_006295ed =  ;
-const char s_File_00629644 = f;
-const char DAT_00629645 = i;
-const char DAT_00629646 = l;
-const char DAT_00629647 = e;
-const char s_scr_00629672 = .;
-const char DAT_00629673 = s;
-const char DAT_00629674 = c;
-const char DAT_00629675 = r;
-const char s_txt_00629687 = .;
-const char DAT_00629688 = t;
-const char DAT_00629689 = x;
-const char DAT_0062968a = t;
 const char s_BackspaceChar_0062a766 = ;
 const char s_FormFeedChar_0062a76c = ;
 
@@ -3081,6 +3077,71 @@ const char[14] s_A_a_0062a86f = "Aa  \177";
 
 // char[21] constants
 const char[21] s_?_!_0062a87d = "  ?! ";
+
+// char[50] constants
+const char[50] DAT_0062bc80 = "";
+const char[50] DAT_0062c377 = "";
+const char[50] DAT_0062c52f = "";
+const char[50] DAT_0062c561 = "";
+const char[50] DAT_0062c869 = "";
+
+// char[51] constants
+const char[51] DAT_0062bb05 = "";
+const char[51] DAT_0062bccf = "";
+const char[51] DAT_0062c263 = "";
+const char[51] DAT_0062c3c7 = "";
+const char[51] DAT_0062c406 = "";
+const char[51] DAT_0062c4f0 = "";
+
+// char[52] constants
+const char[52] DAT_0062ba90 = "";
+const char[52] DAT_0062bb63 = "";
+const char[52] DAT_0062bbc4 = "";
+const char[52] DAT_0062bc2d = "";
+const char[52] DAT_0062bf3e = "";
+const char[52] DAT_0062c0a8 = "";
+const char[52] DAT_0062c710 = "";
+const char[52] DAT_0062c7a0 = "";
+const char[52] DAT_0062c7e5 = "";
+const char[52] DAT_0062c830 = "";
+
+// char[53] constants
+const char[53] DAT_0062bad0 = "";
+const char[53] DAT_0062be21 = "";
+const char[53] DAT_0062be9e = "";
+const char[53] DAT_0062c10c = "";
+const char[53] DAT_0062c2b1 = "";
+const char[53] DAT_0062c68b = {"^\262`Y2\230d@j", "a\321]6\225\302]\026{\b\201\261!\216.\n\025A\2626EO\375\0255\355\336\246\334f[z\327&#\034uMR\v"};
+const char[53] DAT_0062c744 = "";
+const char[53] DAT_0062c8a0 = "";
+
+// char[54] constants
+const char[54] DAT_0062ba32 = "";
+const char[54] DAT_0062bdbc = "";
+const char[54] DAT_0062bef3 = "";
+const char[54] DAT_0062bf92 = "";
+const char[54] DAT_0062c04b = "";
+const char[54] DAT_0062c141 = "";
+const char[54] DAT_0062c203 = "";
+const char[54] DAT_0062c2f2 = "";
+const char[54] DAT_0062c5bc = "";
+
+// char[55] constants
+const char[55] DAT_0062bd02 = "";
+const char[55] DAT_0062c654 = "";
+
+// char[56] constants
+const char[56] DAT_0062bfe9 = "";
+
+// char[57] constants
+const char[57] DAT_0062bd39 = "";
+
+// char[58] constants
+const char[58] DAT_0062c445 = "";
+const char[58] DAT_0062c61a = "";
+
+// char[59] constants
+const char[59] DAT_0062c8da = "";
 
 // double constants
 const double DOUBLE_0062000b = 256;
@@ -3205,8 +3266,16 @@ const double DOUBLE_00624042 = 0.0055555555555555497;
 const double DOUBLE_00624082 = -1.30899693895833;
 const double DOUBLE_0062408a = 32;
 const double DOUBLE_00624092 = 1.30899693895833;
+const double DOUBLE_006240b2 = 0.5;
+const double DOUBLE_006240ba = 2.5;
+const double DOUBLE_006240c2 = 0.5;
 const double DOUBLE_006240ca = 0.10000000000000001;
 const double DOUBLE_006242ca = 4;
+const double DOUBLE_00624382 = 0.29999999999999999;
+const double DOUBLE_0062438a = 1.2;
+const double DOUBLE_00624392 = 0.25;
+const double DOUBLE_0062439a = 1.2;
+const double DOUBLE_006243a2 = 0.25;
 const double DOUBLE_006243b2 = 0.16666666666666699;
 const double DOUBLE_00625299 = 0.017453292519444399;
 const double DOUBLE_006252a1 = 0.01;
@@ -3367,6 +3436,8 @@ const double DOUBLE_0062b89d = 0.20000000000000001;
 const double DOUBLE_0062b8a5 = 1.52587890625e-05;
 const double DOUBLE_0062b8ad = 0.75;
 const double DOUBLE_0062b8b5 = -1;
+const double DOUBLE_0062b985 = 1.52587890625e-05;
+const double DOUBLE_0062b98d = 1.5259021896696401e-05;
 const double DOUBLE_0062c915 = 0.055555555555555601;
 const double DOUBLE_0062c91d = 1.52587890625e-05;
 const double DOUBLE_0062c925 = 50;
@@ -3579,6 +3650,9 @@ const float FLOAT_006235ce = 0.5f;
 const float FLOAT_0062400a = -0.125f;
 const float FLOAT_0062407e = 5f;
 const float FLOAT_0062409a = 2f;
+const float FLOAT_006240aa = 0.5f;
+const float FLOAT_0062437e = 0.5f;
+const float FLOAT_006243aa = 0.5f;
 const float FLOAT_006243d6 = 3f;
 const float FLOAT_00629c0b = 30f;
 const float g_BulletHoleNormalOffset = 0.1f;
@@ -3630,6 +3704,7 @@ const float FLOAT_0062aead = 3.141593f;
 const float FLOAT_0062aebd = -3.141593f;
 const float FLOAT_0062af2d = 0.5f;
 const float FLOAT_0062af31 = 3f;
+const float FLOAT_0062af6d = 0.5f;
 const float FLOAT_0062af8d = 3.141593f;
 const float FLOAT_0062af91 = 180f;
 const float FLOAT_0062af95 = 0.005555556f;
@@ -3679,11 +3754,4 @@ const string s_Enter_new_path_0062316a = "Enter new path";
 const string s_Error_parsing_isSfxActive_parame_006258ae = "Error parsing isSfxActive parameters.";
 const string s_isTalking_006258d4 = "isTalking";
 const string s_Error_writing_%s_00626118 = "Error writing %s";
-
-// undefined1 constants
-const undefined1 DAT_006231af = {0x30};
-const undefined1 DAT_006231b0 = {0x30};
-const undefined1 DAT_006231b1 = {0x30};
-const undefined1 DAT_006231b2 = {0x30};
-const undefined1 s_EmpyStringLiteral_006238a5 = "0x0";
 

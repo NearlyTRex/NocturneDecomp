@@ -5,8 +5,8 @@
 // Signature: void core_tommygun.cpp_CTommyGun_process_FUN_005de360(CTommyGun * this_ptr)
 // Globals:
 //   TerminatedCString s_m_gun_t_wav_006554ff
-//   undefined4 DAT_0065550d
-//   undefined4 DAT_00655511
+//   float FLOAT_0065550d = 6
+//   float FLOAT_00655511 = 0.1666667
 // Function calls:
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
 //   core_weapon.cpp_CWeapon_process_FUN_005ee110
@@ -23,8 +23,6 @@
 //   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_ptr)
 
@@ -58,7 +56,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
     uStack_14 = (undefined4)((ulonglong)dVar4 >> 0x20);
     if (0.0 <= (float)dVar4) {
       sound_sndmain_cpp_lockSound_FUN_005abd30();
-      fStack_1d4 = fStack_1d4 * _DAT_0065550d;
+      fStack_1d4 = fStack_1d4 * FLOAT_0065550d;
       uStack_1c = (double)fStack_1d4;
       crt_math_c_floor_FUN_005feb90((double)in_ST0);
       dStack_1d8 = (double)CONCAT44(fStack_1d4,
@@ -69,7 +67,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
       iVar1 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0
                         (*(uint *)(this_ptr->field1_0x578 + 4),(CSfxSample *)&fStack_1d0);
       if (iVar1 != 0) {
-        fVar3 = (float10)(int)fStack_bc * (float10)fStack_1d0 * (float10)_DAT_00655511;
+        fVar3 = (float10)(int)fStack_bc * (float10)fStack_1d0 * (float10)FLOAT_00655511;
         crt_math_c_round_FUN_005fe6b0((double)CONCAT44(extraout_EDX_00,fStack_bc));
         dStack_1d8 = (double)CONCAT44((int)ROUND(fVar3),SUB84(dStack_1d8,0));
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
@@ -107,7 +105,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   }
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field1_0x578 + 4));
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (acStack_7c,"$@m-gun1.wav @ 2.3 * %f" + 2,SUB84((double)fStack_1d4,0),
+            (acStack_7c,"m-gun1.wav @ 2.3 * %f",SUB84((double)fStack_1d4,0),
              (int)((ulonglong)(double)fStack_1d4 >> 0x20));
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field1_0x578 + 8));
   uVar2 = (*((this_ptr->base_weapon).base_actor.vtable)->playAmbientSound)

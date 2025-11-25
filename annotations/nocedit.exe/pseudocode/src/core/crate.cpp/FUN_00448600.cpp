@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_crate.cpp_FUN_00448600()
 // Globals:
-//   undefined4 s_CHero_00619b0a
+//   TerminatedCString s_CHero_00619b0a
 // Function calls:
 //   core_actor.cpp_isOfClass_FUN_0040c6d0
 
@@ -19,7 +19,7 @@ int core_crate_cpp_FUN_00448600(void)
   int iVar1;
   CDemonActor *in_stack_00000008;
   
-  iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,"?CHero" + 1);
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,"CHero");
   if (iVar1 != 0) {
     iVar1 = 4;
   }

@@ -122,10 +122,10 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
           for (local_20 = 0; local_20 < (int)g_ModelPolygonData[local_1c].vertex_indices_count;
               local_20 = local_20 + 1) {
             uVar2 = g_ModelPolygonData[local_1c].vertex_indices[local_20];
-            g_ModelPolygonData[local_1c].vertex_indices[local_20 + 0x10] =
-                 (uint)(((g_LoadedVertices[uVar2].vertex.x - fVar9) * (float)g_TextureScalingFactor)
-                        / (fVar7 - fVar9) + 1.0);
-            g_ModelPolygonData[local_1c].uv_coordinates[local_20] =
+            g_ModelPolygonData[local_1c].uv_u[local_20] =
+                 ((g_LoadedVertices[uVar2].vertex.x - fVar9) * (float)g_TextureScalingFactor) /
+                 (fVar7 - fVar9) + 1.0;
+            g_ModelPolygonData[local_1c].uv_v[local_20] =
                  ((g_LoadedVertices[uVar2].vertex.y - fVar8) * (float)g_TextureScalingFactor) /
                  (fVar6 - fVar8) + 1.0;
           }
@@ -133,14 +133,14 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
       }
       else {
         for (local_1c = 0; local_1c < g_PolygonCount; local_1c = local_1c + 1) {
-          g_ModelPolygonData[local_1c].vertex_indices[0x10] = 0x3f800000;
-          g_ModelPolygonData[local_1c].vertex_indices[0x11] = 0x437f0000;
-          g_ModelPolygonData[local_1c].vertex_indices[0x12] = 0x437f0000;
-          g_ModelPolygonData[local_1c].vertex_indices[0x13] = 0x3f800000;
-          g_ModelPolygonData[local_1c].uv_coordinates[0] = 1.0;
-          g_ModelPolygonData[local_1c].uv_coordinates[1] = 1.0;
-          g_ModelPolygonData[local_1c].uv_coordinates[2] = 255.0;
-          g_ModelPolygonData[local_1c].uv_coordinates[3] = 255.0;
+          g_ModelPolygonData[local_1c].uv_u[0] = 1.0;
+          g_ModelPolygonData[local_1c].uv_u[1] = 255.0;
+          g_ModelPolygonData[local_1c].uv_u[2] = 255.0;
+          g_ModelPolygonData[local_1c].uv_u[3] = 1.0;
+          g_ModelPolygonData[local_1c].uv_v[0] = 1.0;
+          g_ModelPolygonData[local_1c].uv_v[1] = 1.0;
+          g_ModelPolygonData[local_1c].uv_v[2] = 255.0;
+          g_ModelPolygonData[local_1c].uv_v[3] = 255.0;
           g_ModelPolygonData[local_1c].polygon_type = 2;
           local_70[4] = -0x66;
           local_70[5] = 'v';

@@ -8,10 +8,10 @@
 // Globals:
 //   TerminatedCString s_Subdividing_histogram_ar_00618d41
 //   TerminatedCString s_s_6_6d_00618d79
-//   undefined4 DAT_00618d81
-//   undefined4 DAT_00618d89
-//   undefined4 DAT_00618d91
-//   undefined4 DAT_00618d99
+//   double DOUBLE_00618d81 = 0.577350270000000
+//   double DOUBLE_00618d89 = 0.590000000000000
+//   double DOUBLE_00618d91 = 0.300000000000000
+//   double DOUBLE_00618d99 = 0.110000000000000
 // Function calls:
 //   crt_math.c_round_FUN_005fe6b0
 //   crt_memory.c_memset_FUN_005fde40
@@ -25,8 +25,6 @@
 //   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int engine_colquant_c_FUN_004406c0(void)
 
@@ -69,7 +67,7 @@ int engine_colquant_c_FUN_004406c0(void)
   _uStack00000004[0x801] = _uStack00000008;
   *_uStack00000004 = in_stack_00000010;
   if (0 < in_stack_0000000c) {
-    fVar12 = (float10)_DAT_00618d81;
+    fVar12 = (float10)DOUBLE_00618d81;
     iVar7 = 0;
     do {
       iVar4 = _uStack00000004[0x801];
@@ -93,9 +91,9 @@ int engine_colquant_c_FUN_004406c0(void)
   engine_2d_c_drawText_FUN_00401fd0((char *)&iStack_138,0,0x16);
   do {
     while( true ) {
-      dVar3 = _DAT_00618d99;
-      dVar2 = _DAT_00618d91;
-      dVar15 = _DAT_00618d89;
+      dVar3 = DOUBLE_00618d99;
+      dVar2 = DOUBLE_00618d91;
+      dVar15 = DOUBLE_00618d89;
       if (*_uStack00000004 + -1 <= (int)uVar8) {
         iVar7 = 0;
         piVar6 = _uStack00000004;

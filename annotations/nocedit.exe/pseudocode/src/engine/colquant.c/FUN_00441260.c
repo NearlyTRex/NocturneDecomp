@@ -11,18 +11,16 @@
 //   engine_colquant.c_FUN_00440f00 (00440f00) at 00440ffc [UNCONDITIONAL_CALL]
 //   engine_colquant.c_FUN_00441110 (00441110) at 00441248 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00618dc1
-//   undefined4 DAT_00618dc9
-//   undefined4 DAT_00618dd1
-//   undefined4 DAT_00618dd9
-//   undefined4 DAT_00618de1
+//   double DOUBLE_00618dc1 = 0.300000000000000
+//   double DOUBLE_00618dc9 = 0.590000000000000
+//   double DOUBLE_00618dd1 = 0.110000000000000
+//   double DOUBLE_00618dd9 = 0.700000000000000
+//   double DOUBLE_00618de1 = 0.330000000000000
 // Function calls:
 //   crt_math.c_round_FUN_005fe6b0
 //   engine_colquant.c_FUN_00441790
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void engine_colquant_c_FUN_00441260(void)
 
@@ -152,16 +150,17 @@ void engine_colquant_c_FUN_00441260(void)
     iVar10 = iVar10 + 4;
     *(double *)(iVar9 + 0x4010) =
          (double)CONCAT44(extraout_ECX_00,local_60) * (double)CONCAT44(extraout_ECX_00,local_60) *
-         _DAT_00618dd1 +
-         (double)CONCAT44(uStack_64,local_68) * (double)CONCAT44(uStack_64,local_68) * _DAT_00618dc9
-         + (double)CONCAT44(iStack_14,local_80) * (double)CONCAT44(iStack_14,local_80) *
-           _DAT_00618dc1 + dVar13 * dVar13 * _DAT_00618dd9 + *(double *)(iVar9 + 0x4010);
+         DOUBLE_00618dd1 +
+         (double)CONCAT44(uStack_64,local_68) * (double)CONCAT44(uStack_64,local_68) *
+         DOUBLE_00618dc9 +
+         (double)CONCAT44(iStack_14,local_80) * (double)CONCAT44(iStack_14,local_80) *
+         DOUBLE_00618dc1 + dVar13 * dVar13 * DOUBLE_00618dd9 + *(double *)(iVar9 + 0x4010);
     iVar9 = local_80;
   }
-  dVar13 = *(double *)(iVar9 + 0x4018) * _DAT_00618de1;
-  dVar1 = *(double *)(iVar9 + 0x4028) * _DAT_00618dd1;
-  dVar2 = *(double *)(iVar9 + 0x4030) * _DAT_00618dd9;
-  *(double *)(iVar9 + 0x4020) = *(double *)(iVar9 + 0x4020) * _DAT_00618dc9 * local_48;
+  dVar13 = *(double *)(iVar9 + 0x4018) * DOUBLE_00618de1;
+  dVar1 = *(double *)(iVar9 + 0x4028) * DOUBLE_00618dd1;
+  dVar2 = *(double *)(iVar9 + 0x4030) * DOUBLE_00618dd9;
+  *(double *)(iVar9 + 0x4020) = *(double *)(iVar9 + 0x4020) * DOUBLE_00618dc9 * local_48;
   *(double *)(iVar9 + 0x4018) = dVar13 * (double)CONCAT44(uStack_54,extraout_ECX_00);
   *(double *)(iVar9 + 0x4028) = dVar1 * (double)CONCAT44(uStack_7c,local_80);
   *(double *)(iVar9 + 0x4030) = dVar2 * (double)CONCAT44(extraout_ECX_00,local_50);

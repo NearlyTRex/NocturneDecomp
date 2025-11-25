@@ -17,7 +17,7 @@
 //   engine_texture.cpp_loadTextureAndGetData_FUN_005dd8c0 (005dd8c0) at 005dd8c5 [UNCONDITIONAL_CALL]
 //   engine_texture.cpp_updateTextureWithPalette_FUN_005dd900 (005dd900) at 005dd906 [UNCONDITIONAL_CALL]
 //   shape_design.c_renderSinglePolygon_FUN_0045ce20 (0045ce20) at 0045cff9 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051ead0 (0051ead0) at 0051ec44 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 (0051ead0) at 0051ec44 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_TexturesDisabled
 //   byte* g_CurrentPalette

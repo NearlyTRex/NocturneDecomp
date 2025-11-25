@@ -55,9 +55,9 @@ void exportModelToMDL(char * mdl_filename);
 // Address: 0045a200
 void writeSpatialTree(STreeNode * node, FILE * output_file, int node_index);
 
-// Original: shape_design.c_FUN_0045a320
+// Original: shape_design.c_writePolygonModel_FUN_0045a320
 // Address: 0045a320
-undefined FUN_0045a320();
+void writePolygonModel(int polygon_index, FILE * output_file, float scale_factor);
 
 // Original: shape_design.c_exportVertexListFile_FUN_0045a610
 // Address: 0045a610
@@ -271,9 +271,9 @@ int isAngleBelowThreshold(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * 
 // Address: 00461d80
 int validatePolygonNormals(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * polygon2, double cos_tolerance);
 
-// Original: shape_design.c_FUN_00461df0
+// Original: shape_design.c_isNormalDotProductBelowThreshold_FUN_00461df0
 // Address: 00461df0
-undefined FUN_00461df0();
+int isNormalDotProductBelowThreshold(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * polygon2, double threshold);
 
 // Original: shape_design.c_normalizeVertex_FUN_00461e60
 // Address: 00461e60
@@ -383,13 +383,13 @@ void interactiveWeldVertices(int polygon_index, float tolerance);
 // Address: 00466040
 void interactiveGlobalWeld(float tolerance);
 
-// Original: shape_design.c_FUN_004661d0
+// Original: shape_design.c_qsortCompareByField4_FUN_004661d0
 // Address: 004661d0
-undefined FUN_004661d0();
+int qsortCompareByField4(void * element_a, void * element_b);
 
-// Original: shape_design.c_FUN_00466210
+// Original: shape_design.c_qsortCompareByField4Wrapper_FUN_00466210
 // Address: 00466210
-undefined FUN_00466210();
+int qsortCompareByField4Wrapper(void * element_a, void * element_b);
 
 // Original: shape_design.c_findClosestPolygonToMouse_FUN_00466250
 // Address: 00466250
@@ -623,13 +623,13 @@ undefined triangulateDSE();
 // Address: 0046e6b0
 void clearAllTextureNames(void);
 
-// Original: shape_design.c_FUN_0046e6f0
+// Original: shape_design.c_displayMemoryStatus_FUN_0046e6f0
 // Address: 0046e6f0
-undefined FUN_0046e6f0();
+void displayMemoryStatus(int line_number);
 
-// Original: shape_design.c_FUN_0046e760
+// Original: shape_design.c_displayHeapStatus_FUN_0046e760
 // Address: 0046e760
-undefined FUN_0046e760();
+void displayHeapStatus(int line_number);
 
 // Original: shape_design.c_loadPalette_FUN_0046e810
 // Address: 0046e810

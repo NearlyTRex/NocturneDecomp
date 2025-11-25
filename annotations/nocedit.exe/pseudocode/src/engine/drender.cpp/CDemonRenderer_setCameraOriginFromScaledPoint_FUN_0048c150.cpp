@@ -18,8 +18,8 @@
 //   core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70 (00574e70) at 00574ebe [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310 (00580310) at 005803f2 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 (0057ce80) at 0057d02e [UNCONDITIONAL_CALL]
-//   core_stairs.cpp_FUN_005b9a20 (005b9a20) at 005b9ad2 [UNCONDITIONAL_CALL]
 //   core_terrain.cpp_CTerrain_render_FUN_005e1f50 (005e1f50) at 005e2039 [UNCONDITIONAL_CALL]
+//   shape_spotview.cpp_CSpotView_FUN_005b9a20 (005b9a20) at 005b9ad2 [UNCONDITIONAL_CALL]
 // Globals:
 //   double g_CameraScaleFactor = 256
 // Function calls:

@@ -5,10 +5,10 @@
 // Signature: void shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh * this_ptr, int vertex_count, int tri_count, int submesh_count)
 // Cross-references:
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c552 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_0051a8c0 (0051a8c0) at 0051a8d9 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_0051aa60 (0051aa60) at 0051ab96 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_0051adf0 (0051adf0) at 0051aef3 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_0051b080 (0051b080) at 0051b0f4 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0 (0051a8c0) at 0051a8d9 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080 (0051b080) at 0051b0f4 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0 (0051adf0) at 0051aef3 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60 (0051aa60) at 0051ab96 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_shape_meshlod_cpp_0063740a
 //   TerminatedCString s_shape_meshlod_cpp_0063741f
@@ -29,9 +29,9 @@ shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0
           (CLodMesh *this_ptr,int vertex_count,int tri_count,int submesh_count)
 
 {
-  SLodVert *pSVar1;
-  SLodTriangle *pSVar2;
-  void *pvVar3;
+  CLodVert *pCVar1;
+  CLodFace *pCVar2;
+  SLodSubmesh *pSVar3;
   int in_stack_00000014;
   
   shape_meshlod_cpp_CLodMesh_free_FUN_00515970(this_ptr);
@@ -40,20 +40,21 @@ shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0
   this_ptr->max_tri_count = submesh_count;
   this_ptr->tri_count = submesh_count;
   this_ptr->submesh_count = in_stack_00000014;
-  pSVar1 = (SLodVert *)
+  pCVar1 = (CLodVert *)
            shape_memdbg_cpp_debugCalloc_FUN_0050f350
                      (this_ptr->max_vertex_count,0x4c4,"..\\shape\\meshlod.cpp",0x231);
-  this_ptr->vertex_data = pSVar1;
-  pSVar2 = (SLodTriangle *)
+  this_ptr->vertex_data = pCVar1;
+  pCVar2 = (CLodFace *)
            shape_memdbg_cpp_debugCalloc_FUN_0050f350
                      (this_ptr->max_tri_count,0x8c,"..\\shape\\meshlod.cpp",0x232);
-  this_ptr->triangle_data = pSVar2;
-  pvVar3 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
+  this_ptr->tri_data = pCVar2;
+  pSVar3 = (SLodSubmesh *)
+           shape_memdbg_cpp_debugCalloc_FUN_0050f350
                      (this_ptr->submesh_count,0x48,"..\\shape\\meshlod.cpp",0x233);
-  this_ptr->submesh_data = pvVar3;
-  if ((((this_ptr->max_vertex_count < 1) || (this_ptr->vertex_data != (SLodVert *)0x0)) &&
-      ((this_ptr->max_tri_count < 1 || (this_ptr->triangle_data != (SLodTriangle *)0x0)))) &&
-     ((this_ptr->submesh_count < 1 || (this_ptr->submesh_data != (void *)0x0)))) {
+  this_ptr->submesh_data = pSVar3;
+  if ((((this_ptr->max_vertex_count < 1) || (this_ptr->vertex_data != (CLodVert *)0x0)) &&
+      ((this_ptr->max_tri_count < 1 || (this_ptr->tri_data != (CLodFace *)0x0)))) &&
+     ((this_ptr->submesh_count < 1 || (this_ptr->submesh_data != (SLodSubmesh *)0x0)))) {
     return;
   }
   g_CurrentFilename = "..\\shape\\meshlod.cpp";

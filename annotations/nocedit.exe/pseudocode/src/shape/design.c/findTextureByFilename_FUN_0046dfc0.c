@@ -7,7 +7,7 @@
 //   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (0047a3e0) at 0047a634 [UNCONDITIONAL_CALL]
 //   shape_design.c_tileTextureMaps_FUN_0046a180 (0046a180) at 0046a4fb [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (0051bac0) at 0051bb53 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051ead0 (0051ead0) at 0051ec77 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 (0051ead0) at 0051ec77 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_TextureProcessedCount
 //   STextureAtlasEntry[250] g_TextureAtlasEntries

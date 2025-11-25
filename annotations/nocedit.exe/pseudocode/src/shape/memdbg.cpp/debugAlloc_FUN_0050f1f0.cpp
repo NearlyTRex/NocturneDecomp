@@ -40,8 +40,8 @@
 //   shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270 (004a3270) at 004a32bc [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0 (0049e9d0) at 0049ea63 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000 (00517000) at 00517045 [UNCONDITIONAL_CALL]
-//   shape_quantize.cpp_AllocateMemForSomething_FUN_00556a00 (00556a00) at 00556aa4 [UNCONDITIONAL_CALL]
-//   shape_quantize.cpp_FUN_00555500 (00555500) at 0055566c [UNCONDITIONAL_CALL]
+//   shape_quantize.cpp_CBitmap_ctor_FUN_00556a00 (00556a00) at 00556aa4 [UNCONDITIONAL_CALL]
+//   shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500 (00555500) at 0055566c [UNCONDITIONAL_CALL]
 // Function calls:
 //   shape_memdbg.cpp_debugMalloc_FUN_0050f250
 

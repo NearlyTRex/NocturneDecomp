@@ -549,8 +549,7 @@ shape_design_c_exportModelToBIN_FUN_0045aa80
             crt_math_c_round_FUN_005fe6b0
                       ((double)CONCAT44((int)local_28 * 0x184,local_24 * 4 + (int)local_28 * 0x184))
             ;
-            fVar9 = (float10)(float)g_ModelPolygonData[(int)local_28].vertex_indices
-                                    [local_24 + 0x10];
+            fVar9 = (float10)g_ModelPolygonData[(int)local_28].uv_u[local_24];
             crt_math_c_round_FUN_005fe6b0
                       ((double)CONCAT44((int)local_28 * 0x184,local_24 * 4 + (int)local_28 * 0x184))
             ;
@@ -566,14 +565,14 @@ shape_design_c_exportModelToBIN_FUN_0045aa80
           for (local_24 = 0; local_24 < (int)local_7c; local_24 = local_24 + 1) {
             crt_stdio_c_fwrite_FUN_005fdc00
                       ((void *)((int)local_28 * 0x184 + 0x16e99c8 + local_24 * 4),1,4,local_1c);
-            fVar9 = (float10)(float)g_ModelPolygonData[(int)local_28].vertex_indices
-                                    [local_24 + 0x10] * (float10)g_TextureCoordinateMultiplier;
+            fVar9 = (float10)g_ModelPolygonData[(int)local_28].uv_u[local_24] *
+                    (float10)g_TextureCoordinateMultiplier;
             crt_math_c_round_FUN_005fe6b0
                       ((double)CONCAT44((int)local_28 * 0x184,local_24 * 4 + (int)local_28 * 0x184))
             ;
             local_20 = (int)ROUND(fVar9);
             crt_stdio_c_fwrite_FUN_005fdc00(&local_20,1,4,local_1c);
-            fVar9 = (float10)g_ModelPolygonData[(int)local_28].uv_coordinates[local_24] *
+            fVar9 = (float10)g_ModelPolygonData[(int)local_28].uv_v[local_24] *
                     (float10)g_TextureCoordinateMultiplier;
             crt_math_c_round_FUN_005fe6b0
                       ((double)CONCAT44((int)local_28 * 0x184,local_24 * 4 + (int)local_28 * 0x184))

@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined shape_superopt.cpp_FUN_005c7b20()
 // Cross-references:
-//   shape_superopt.cpp_FUN_005d7350 (005d7350) at 005d740b [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_COptimize_FUN_005d7350 (005d7350) at 005d740b [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_memory.c_free_FUN_005fe659
 //   crt_memory.c_malloc_FUN_006021da
@@ -13,8 +13,6 @@
 //   shape_superopt.cpp_FUN_005c8280
 
 #include "nocturne.h"
-
-/* Signature: undefined1 shape_superopt.cpp_FUN_005c7b20(undefined4 param_1) */
 
 int * shape_superopt_cpp_FUN_005c7b20(void)
 

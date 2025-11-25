@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined shape_superopt.cpp_FUN_005c9500()
 // Globals:
-//   undefined4 DAT_0065423a
+//   double DOUBLE_0065423a = 0.5
 // Function calls:
 //   crt_memory.c_free_FUN_005fe659
 //   crt_memory.c_malloc_FUN_006021da
@@ -15,8 +15,6 @@
 //   shape_superopt.cpp_FUN_005c9aa0
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void * shape_superopt_cpp_FUN_005c9500(void)
 
@@ -173,7 +171,7 @@ void * shape_superopt_cpp_FUN_005c9500(void)
         crt_memory_c_free_FUN_005fe659(local_18);
         return (void *)0x0;
       }
-      if (*in_stack_00000008 + _DAT_0065423a <
+      if (*in_stack_00000008 + DOUBLE_0065423a <
           (double)CONCAT44(in_stack_fffffe7c,size) - (double)CONCAT44(local_e0[1],local_e0[0])) {
         local_80 = 0;
         local_78 = 0;
@@ -202,7 +200,7 @@ void * shape_superopt_cpp_FUN_005c9500(void)
         local_130 = 0;
         local_12c = 0;
       }
-      else if (in_stack_00000008[1] + _DAT_0065423a <
+      else if (in_stack_00000008[1] + DOUBLE_0065423a <
                (double)CONCAT44(in_stack_fffffe84,in_stack_fffffe80) -
                (double)CONCAT44(local_e0[3],local_e0[2])) {
         local_50 = 0;
@@ -235,7 +233,7 @@ void * shape_superopt_cpp_FUN_005c9500(void)
       }
       else {
         if ((double)CONCAT44(in_stack_fffffe8c,in_stack_fffffe88) -
-            (double)CONCAT44(uStack_cc,local_d0) <= in_stack_00000008[2] + _DAT_0065423a) {
+            (double)CONCAT44(uStack_cc,local_d0) <= in_stack_00000008[2] + DOUBLE_0065423a) {
           crt_memory_c_free_FUN_005fe659(local_18);
           crt_memory_c_free_FUN_005fe659(local_20);
           return (void *)0x0;

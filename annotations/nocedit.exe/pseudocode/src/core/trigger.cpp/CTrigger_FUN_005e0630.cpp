@@ -4,12 +4,10 @@
 // Convention: __cdecl
 // Signature: void core_trigger.cpp_CTrigger_FUN_005e0630(CTrigger * this_ptr)
 // Globals:
-//   undefined4 DAT_0065566c
-//   undefined4 DAT_00655674
+//   double DOUBLE_0065566c = 0.5
+//   double DOUBLE_00655674 = 0.100000000000000
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_trigger_cpp_CTrigger_FUN_005e0630(CTrigger *this_ptr)
 
@@ -19,12 +17,12 @@ void __cdecl core_trigger_cpp_CTrigger_FUN_005e0630(CTrigger *this_ptr)
   float *in_stack_00000008;
   
   fVar1 = *(float *)(this_ptr->field1_0x158 + 8);
-  fVar2 = (float)_DAT_0065566c;
+  fVar2 = (float)DOUBLE_0065566c;
   in_stack_00000008[1] = -0.1;
   *in_stack_00000008 = -fVar1 * fVar2;
   in_stack_00000008[2] = -*(float *)(this_ptr->field1_0x158 + 0x10) * fVar2;
   in_stack_00000008[3] = *(float *)(this_ptr->field1_0x158 + 8) * fVar2;
-  in_stack_00000008[4] = *(float *)(this_ptr->field1_0x158 + 0xc) + (float)_DAT_00655674;
+  in_stack_00000008[4] = *(float *)(this_ptr->field1_0x158 + 0xc) + (float)DOUBLE_00655674;
   in_stack_00000008[5] = fVar2 * *(float *)(this_ptr->field1_0x158 + 0x10);
   return;
 }

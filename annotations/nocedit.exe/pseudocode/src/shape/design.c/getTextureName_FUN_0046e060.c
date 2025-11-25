@@ -8,7 +8,7 @@
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058d53a [UNCONDITIONAL_CALL]
 //   shape_design.c_tileTextureMaps_FUN_0046a180 (0046a180) at 0046a5cd [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (0051bac0) at 0051bca8 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051ead0 (0051ead0) at 0051ec16 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 (0051ead0) at 0051ec16 [UNCONDITIONAL_CALL]
 // Globals:
 //   char[9][80] g_TextureNameArray
 

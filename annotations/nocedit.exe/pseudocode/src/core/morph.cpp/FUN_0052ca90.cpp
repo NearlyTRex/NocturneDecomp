@@ -24,12 +24,12 @@
 //   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 //   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
 //   core_morph.cpp_CMorphModel_FUN_0052bae0
-//   core_stairs.cpp_FUN_005b9620
-//   core_stairs.cpp_FUN_005b9670
-//   core_stairs.cpp_FUN_005b9a20
 //   engine_2d.c_clearInputAndWait_FUN_00403260
 //   engine_2d.c_fillRectColor_FUN_00403170
 //   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
+//   shape_spotview.cpp_CSpotView_FUN_005b9620
+//   shape_spotview.cpp_CSpotView_FUN_005b9670
+//   shape_spotview.cpp_CSpotView_FUN_005b9a20
 //   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 //   wincore_windll.cpp_clearZBuffer_FUN_005b3ed4
 
@@ -45,18 +45,18 @@ void core_morph_cpp_FUN_0052ca90(void)
   CGame *n2;
   
   n2 = (CGame *)0x0;
-  core_stairs_cpp_FUN_005b9620();
+  shape_spotview_cpp_CSpotView_FUN_005b9620(g_CSpotViewPtr);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,n2);
   while( true ) {
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,4);
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
-    core_stairs_cpp_FUN_005b9a20();
+    shape_spotview_cpp_CSpotView_FUN_005b9a20(g_CSpotViewPtr);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr,&g_ZeroVector);
     core_morph_cpp_CMorphModel_FUN_0052bae0(in_stack_00000004);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-    core_stairs_cpp_FUN_005b9670();
+    shape_spotview_cpp_CSpotView_FUN_005b9670(g_CSpotViewPtr);
     iVar1 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
     if (iVar1 != 0) break;
     (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x38);
@@ -88,7 +88,7 @@ void core_morph_cpp_FUN_0052ca90(void)
 //   XREF to: 03f6b9e0 (DATA)
 // 0052caaa: MOV dword ptr [ESP + 0xc],EDX
 //   XREF to: Stack[-0x14] (WRITE)
-// 0052caae: CALL core_stairs.cpp_FUN_005b9620
+// 0052caae: CALL shape_spotview.cpp_CSpotView_FUN_005b9620
 //   XREF to: 005b9620 (UNCONDITIONAL_CALL)
 // 0052cab3: ADD ESP,0x8
 // 0052cab6: MOV EBX,dword ptr [0x0067b654]
@@ -141,7 +141,7 @@ void core_morph_cpp_FUN_0052ca90(void)
 //   XREF to: 0068416c (READ)
 // 0052cb12: PUSH EDX
 //   XREF to: 03f6b9e0 (DATA)
-// 0052cb13: CALL core_stairs.cpp_FUN_005b9a20
+// 0052cb13: CALL shape_spotview.cpp_CSpotView_FUN_005b9a20
 //   XREF to: 005b9a20 (UNCONDITIONAL_CALL)
 // 0052cb18: ADD ESP,0x4
 // 0052cb1b: PUSH 0x3f87558
@@ -175,7 +175,7 @@ void core_morph_cpp_FUN_0052ca90(void)
 //   XREF to: 0068416c (READ)
 // 0052cb58: PUSH EDI
 //   XREF to: 03f6b9e0 (DATA)
-// 0052cb59: CALL core_stairs.cpp_FUN_005b9670
+// 0052cb59: CALL shape_spotview.cpp_CSpotView_FUN_005b9670
 //   XREF to: 005b9670 (UNCONDITIONAL_CALL)
 // 0052cb5e: ADD ESP,0x8
 // 0052cb61: MOV EAX,[0x0067cf44]

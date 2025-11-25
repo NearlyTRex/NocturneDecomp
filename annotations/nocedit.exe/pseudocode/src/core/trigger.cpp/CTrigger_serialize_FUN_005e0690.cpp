@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_waypoint.cpp_CWayPoint_FUN_005ec280 (005ec280) at 005ec28c [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_triggerState_0065567c
+//   TerminatedCString s_triggerState_0065567c
 //   TerminatedCString s_triggerSize_00655689
 //   TerminatedCString s_triggerType_00655695
 //   TerminatedCString s_onName_006556a1
@@ -47,7 +47,7 @@ void __cdecl core_trigger_cpp_CTrigger_serialize_FUN_005e0690(CTrigger *this_ptr
 {
   core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)(this_ptr->field1_0x158 + 0x14),"?triggerState" + 1);
+            ((int *)(this_ptr->field1_0x158 + 0x14),"triggerState");
   core_actor_cpp_serializeVector_FUN_0040b340
             ((CVector3f *)(this_ptr->field1_0x158 + 8),"triggerSize");
   core_actor_cpp_serializeInteger_FUN_0040b7f0

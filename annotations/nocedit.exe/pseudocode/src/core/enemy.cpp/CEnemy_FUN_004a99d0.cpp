@@ -4,12 +4,10 @@
 // Convention: __cdecl
 // Signature: float * core_enemy.cpp_CEnemy_FUN_004a99d0(CEnemy * this_ptr)
 // Globals:
-//   undefined4 DAT_006243aa
+//   float FLOAT_006243aa = 0.5
 //   double DOUBLE_006243b2 = 0.166666666666667
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 float * __cdecl core_enemy_cpp_CEnemy_FUN_004a99d0(CEnemy *this_ptr)
 
@@ -26,8 +24,8 @@ float * __cdecl core_enemy_cpp_CEnemy_FUN_004a99d0(CEnemy *this_ptr)
   
   (*((this_ptr->base_character).base_actor.vtable)->getBoundingBox)
             ((CDemonActor *)this_ptr,&CStack_30);
-  fVar1 = _DAT_006243aa;
-  *in_stack_00000008 = (CStack_30.max.z + fStack_10) * _DAT_006243aa;
+  fVar1 = FLOAT_006243aa;
+  *in_stack_00000008 = (CStack_30.max.z + fStack_10) * FLOAT_006243aa;
   in_stack_00000008[1] = (fStack_18 + fStack_c) * fVar1;
   in_stack_00000008[2] = fVar1 * (fStack_14 + unaff_EBP);
   in_stack_00000008[1] = fStack_c - (fStack_c - fStack_18) * (float)DOUBLE_006243b2;

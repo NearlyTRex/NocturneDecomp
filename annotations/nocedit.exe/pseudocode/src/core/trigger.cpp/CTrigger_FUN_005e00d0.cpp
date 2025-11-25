@@ -5,12 +5,12 @@
 // Signature: int core_trigger.cpp_CTrigger_FUN_005e00d0(CTrigger * this_ptr)
 // Globals:
 //   void* switchdataD_005e00a4 = 005e0159
-//   undefined4 DAT_0065563c
-//   undefined4 DAT_00655644
-//   undefined4 DAT_0065564c
-//   undefined4 DAT_00655654
-//   undefined4 DAT_0065565c
-//   undefined4 DAT_00655664
+//   double DOUBLE_0065563c = 0.100000000000000
+//   double DOUBLE_00655644 = 12
+//   double DOUBLE_0065564c = 0.5
+//   float FLOAT_00655654 = 256
+//   double DOUBLE_0065565c = 2
+//   double DOUBLE_00655664 = 3.14159265350000
 //   undefined4 DAT_00664a00
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CDemonMission* g_CDemonMissionPtr = 02f33740
@@ -137,8 +137,8 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
         CStack_28.x = 0;
         CStack_28.z = 0;
         CStack_28.y = iStack_48;
-        fVar9 = (float10)(*(float *)(this_ptr->field1_0x158 + 8) * (float)_DAT_0065564c) *
-                (float10)_DAT_00655654;
+        fVar9 = (float10)(*(float *)(this_ptr->field1_0x158 + 8) * (float)DOUBLE_0065564c) *
+                (float10)FLOAT_00655654;
         dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(g_CDemonRendererPtr,iStack_48));
         pCVar2 = (CDemonRenderer *)((ulonglong)dVar11 >> 0x20);
         iStack0000001c = (int)ROUND(fVar9);
@@ -173,7 +173,7 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
           do {
             pCVar2 = g_CDemonRendererPtr;
             in_stack_00000038 = auStack_80._0_4_;
-            fVar10 = ((float10)(int)fVar12 * (float10)_DAT_0065565c * (float10)_DAT_00655664) /
+            fVar10 = ((float10)(int)fVar12 * (float10)DOUBLE_0065565c * (float10)DOUBLE_00655664) /
                      (float10)(int)auStack_80._0_4_;
             fVar9 = (float10)fsin(fVar10);
             fcos(fVar10);

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_teleport.cpp_CTeleport_FUN_005daba0(CTeleport * this_ptr)
 // Globals:
-//   undefined4 s_CTeleportDest_00654ceb
+//   TerminatedCString s_CTeleportDest_00654ceb
 //   TerminatedCString s_Destination_00654cf9
 // Function calls:
 //   core_actor.cpp_CActorPropertyList_FUN_0040e350

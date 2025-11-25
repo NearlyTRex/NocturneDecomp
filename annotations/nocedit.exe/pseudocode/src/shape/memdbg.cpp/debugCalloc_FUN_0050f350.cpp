@@ -10,9 +10,9 @@
 //   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (004b5a50) at 004b5fae [UNCONDITIONAL_CALL]
 //   engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180 (00545180) at 005451dd [UNCONDITIONAL_CALL]
 //   shape_design.c_cramTextureList_FUN_0046bb80 (0046bb80) at 0046d15c [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_0051d180 (0051d180) at 0051d1bc [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0 (00515ac0) at 00515b37 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0 (0051cdf0) at 0051ce32 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180 (0051d180) at 0051d1bc [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_debugCalloc_d_d_s_d_00636078
 //   TerminatedCString s_Returns_NULL_00636094

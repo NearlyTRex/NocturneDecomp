@@ -8,11 +8,11 @@
 //   core_stranger.cpp_CStranger_FUN_005bb960 (005bb960) at 005bbaae [UNCONDITIONAL_CALL]
 //   core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0 (005d8ba0) at 005d8c0b [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_Bip01_head_006175ca
+//   TerminatedCString s_Bip01_head_006175ca
 //   TerminatedCString s_Bip01_head_006175d5
-//   undefined4 DAT_006175e2
-//   undefined4 DAT_006175ea
-//   undefined4 DAT_006175ee
+//   double DOUBLE_006175e2 = 32
+//   float FLOAT_006175ea = 0.2000000
+//   float FLOAT_006175ee = 1.5
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CFireEffect g_CFireEffectInstance
@@ -30,8 +30,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
 
 {
@@ -48,7 +46,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
   CVector3f local_1c;
   
   if ((*(int *)this_ptr->field13_0x2620 != 0) &&
-     (*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbd4) < (float)_DAT_006175e2)) {
+     (*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbd4) < (float)DOUBLE_006175e2)) {
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(this_ptr->model).motion_controller);
     if (pSVar2->state_index == 0) {
@@ -56,12 +54,12 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
          (fVar1 = *(float *)(this_ptr->cloth_data + 0x1b8) - in_stack_00000008,
          *(float *)(this_ptr->cloth_data + 0x1b8) = fVar1, fVar1 < 0.0)) {
         *(float *)(this_ptr->cloth_data + 0x1b8) =
-             *(float *)(this_ptr->cloth_data + 0x1b8) + _DAT_006175ea;
+             *(float *)(this_ptr->cloth_data + 0x1b8) + FLOAT_006175ea;
         core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                   (&this_ptr->base_actor,&local_1c,(CVector3f *)&stack0xffffffb4);
         pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                            (&this_ptr->model);
-        iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,"?Bip01 head" + 1);
+        iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,"Bip01 head");
         if (iVar4 != -1) {
           pCVar5 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                              ((CVector3f *)&stack0xffffffa8,(CVector3f *)&stack0xffffff9c,
@@ -76,7 +74,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
       *(float *)(this_ptr->cloth_data + 0x1bc) = fVar1;
       if (fVar1 < 0.0) {
         *(float *)(this_ptr->cloth_data + 0x1bc) =
-             *(float *)(this_ptr->cloth_data + 0x1bc) + _DAT_006175ee;
+             *(float *)(this_ptr->cloth_data + 0x1bc) + FLOAT_006175ee;
         pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                            (&this_ptr->model);
         iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,"Bip01 head");

@@ -18310,9 +18310,10 @@
         "start":"004661d0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_design.c_FUN_004661d0",
-    "ret":"undefined1",
+    "name":"shape_design.c_qsortCompareByField4_FUN_004661d0",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -18364,8 +18365,49 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"element_a",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"element_b",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -51245,12 +51287,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_findEdgeInVertex_FUN_00515e50",
+    "name":"shape_meshlod.cpp_CLodVert_findEdge_FUN_00515e50",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"vertex_ptr",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -51263,7 +51305,7 @@
               }
             ]
           },
-          "type":"SLodVert*"
+          "type":"CLodVert*"
         },
         {
           "name":"edge_index",
@@ -51305,7 +51347,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_CLodMesh_FUN_005164d0",
+    "name":"shape_meshlod.cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0",
     "ret":"int",
     "vars":{
       "params":[
@@ -51349,7 +51391,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_CLodMesh_FUN_00516d50",
+    "name":"shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50",
     "ret":"void",
     "vars":{
       "params":[
@@ -51383,7 +51425,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_CLodMesh_FUN_00516f50",
+    "name":"shape_meshlod.cpp_CLodMesh_createNextLOD_FUN_00516f50",
     "ret":"void",
     "vars":{
       "params":[
@@ -51415,9 +51457,10 @@
         "start":"00519b50"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_SamplePointsCheck_FUN_00519b50",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -51917,9 +51960,40 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
+        },
+        {
+          "name":"max_search_radius",
+          "storage":{
+            "offset":8,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        }
+      ]
     }
   },
   {
@@ -51933,7 +52007,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_CLodMesh_FUN_0051a150",
+    "name":"shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150",
     "ret":"int",
     "vars":{
       "locals":[
@@ -52082,6 +52156,22 @@
             ]
           },
           "type":"CLodMesh*"
+        },
+        {
+          "name":"weld_threshold",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ],
       "ret_storage":{
@@ -52105,13 +52195,45 @@
         "start":"0051a9d0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_0051a9d0",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_CLodMesh_importFromFile_FUN_0051a9d0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
+        },
+        {
+          "name":"filename",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ]
     }
   },
   {
@@ -52123,13 +52245,61 @@
         "start":"0051c350"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_0051c350",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_crc32UpdateBuffer_FUN_0051c350",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"crc_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint*"
+        },
+        {
+          "name":"data_ptr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uchar*"
+        },
+        {
+          "name":"byte_count",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -52143,7 +52313,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_CLodMesh_FUN_0051d250",
+    "name":"shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250",
     "ret":"void",
     "vars":{
       "locals":[
@@ -52180,6 +52350,22 @@
             ]
           },
           "type":"CLodMesh*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"FILE*"
         }
       ]
     }
@@ -52232,6 +52418,22 @@
             ]
           },
           "type":"CLodMesh*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"FILE*"
         }
       ]
     }
@@ -52245,9 +52447,10 @@
         "start":"0051ead0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_0051ead0",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -52459,9 +52662,56 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
+        },
+        {
+          "name":"enable_texture_lookup",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"use_atlas_mode",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -52473,10 +52723,10 @@
         "start":"0051ecd0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_meshlod.cpp_FUN_0051ecd0(undefined1 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_0051ecd0",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -52496,9 +52746,40 @@
           "type":"undefined1"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
+        },
+        {
+          "name":"vertex_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -52510,13 +52791,45 @@
         "start":"0051edd0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_0051edd0",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_divideVectorByScalar_FUN_0051edd0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"vector",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"divisor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
+        }
+      ]
     }
   },
   {
@@ -52528,13 +52841,45 @@
         "start":"0051ee50"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_0051ee50",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_copyVector_FUN_0051ee50",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"destination",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"source",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ]
     }
   },
   {
@@ -52546,12 +52891,38 @@
         "start":"0051eed0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_FUN_0051eed0",
-    "ret":"undefined1",
+    "name":"shape_meshlod.cpp_getNextTriangleVertexIndex_FUN_0051eed0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"vertex_index",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -59449,10 +59820,10 @@
         "start":"00554a50"
       }
     ],
-    "cmt":"Signature: undefined1 shape_quantize.cpp_AllocateMemoryForSomething(undefined4 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_quantize.cpp_AllocateMemoryForSomething_FUN_00554a50",
-    "ret":"undefined1",
+    "name":"shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -59584,8 +59955,49 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CColorQuantizer*"
+        },
+        {
+          "name":"bitmap",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBitmap*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -59598,13 +60010,70 @@
         "start":"005563d0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_quantize.cpp_FreeAndAllocate_ThenQuantize(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_quantize.cpp_FreeAndAllocate_ThenQuantize_FUN_005563d0",
-    "ret":"undefined1",
+    "name":"shape_quantize.cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CColorQuantizer*"
+        },
+        {
+          "name":"bitmap_count",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"bitmap_array",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBitmap**"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -59617,12 +60086,38 @@
         "start":"00556dd0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_quantize.cpp_FUN_00556dd0",
-    "ret":"undefined1",
+    "name":"shape_quantize.cpp_CBitmap_getRowTable_FUN_00556dd0",
+    "ret":"void**",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBitmap*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -64196,7 +64691,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_skeledit.cpp_LodVert_copy_FUN_00599550",
-    "ret":"SLodVert*",
+    "ret":"CLodVert*",
     "vars":{
       "params":[
         {
@@ -64245,7 +64740,7 @@
               }
             ]
           },
-          "type":"SLodVert*"
+          "type":"CLodVert*"
         },
         {
           "name":"other3",
@@ -64261,7 +64756,7 @@
               }
             ]
           },
-          "type":"SLodVert*"
+          "type":"CLodVert*"
         }
       ],
       "ret_storage":{
@@ -69747,9 +70242,8 @@
         "start":"005b92d0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_stairs.cpp_FUN_005b92d0(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6)",
     "importable":true,
-    "name":"core_stairs.cpp_FUN_005b92d0",
+    "name":"core_spline.cpp_FUN_005b92d0",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -70056,13 +70550,29 @@
         "start":"005b9950"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_stairs.cpp_FUN_005b9950",
-    "ret":"undefined1",
+    "name":"shape_spotview.cpp_CSpotView_FUN_005b9950",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CSpotView*"
+        }
+      ]
     }
   },
   {
@@ -71456,7 +71966,6 @@
         "start":"005c79d0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005c79d0(undefined4 param_1)",
     "importable":true,
     "name":"shape_superopt.cpp_FUN_005c79d0",
     "ret":"undefined1",
@@ -72056,14 +72565,29 @@
         "start":"005cd350"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005cd350(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005cd350",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CPoly_FUN_005cd350",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CPoly*"
+        }
+      ]
     }
   },
   {
@@ -72075,10 +72599,10 @@
         "start":"005cd7d0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005cd7d0(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005cd7d0",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CPoly_FUN_005cd7d0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -73298,9 +73822,24 @@
           "type":"undefined8"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CPoly*"
+        }
+      ]
     }
   },
   {
@@ -73312,13 +73851,38 @@
         "start":"005ce3d0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005ce3d0(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005ce3d0",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CPoly_FUN_005ce3d0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CPoly*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -73331,13 +73895,38 @@
         "start":"005d12d0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d12d0(undefined4 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d12d0",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CPoly_FUN_005d12d0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CPoly*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -73350,13 +73939,38 @@
         "start":"005d22d0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d22d0(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d22d0",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CObj_FUN_005d22d0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CObj*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -73369,13 +73983,38 @@
         "start":"005d2650"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_UnableToAllocateRamForObjectLogging(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_UnableToAllocateRamForObjectLogging_FUN_005d2650",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CObj_FUN_005d2650",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CObj*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -73388,14 +74027,29 @@
         "start":"005d28d0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d28d0(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d28d0",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CObj_FUN_005d28d0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CObj*"
+        }
+      ]
     }
   },
   {
@@ -73407,14 +74061,29 @@
         "start":"005d2dd0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d2dd0(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d2dd0",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CObj_FUN_005d2dd0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CObj*"
+        }
+      ]
     }
   },
   {
@@ -73426,13 +74095,38 @@
         "start":"005d2f50"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d2f50(undefined4 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d2f50",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CObj_FUN_005d2f50",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CObj*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -73445,13 +74139,38 @@
         "start":"005d3050"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d3050(undefined4 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d3050",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CObj_FUN_005d3050",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CObj*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -73464,13 +74183,38 @@
         "start":"005d3250"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d3250(undefined4 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d3250",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CObj_FUN_005d3250",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CObj*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -73483,13 +74227,38 @@
         "start":"005d3350"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d3350(undefined4 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d3350",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CObj_FUN_005d3350",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CObj*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -73502,13 +74271,38 @@
         "start":"005d33d0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d33d0(undefined4 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d33d0",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CObj_FUN_005d33d0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CObj*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -73521,14 +74315,29 @@
         "start":"005d34d0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d34d0(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d34d0",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CObj_FUN_005d34d0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CObj*"
+        }
+      ]
     }
   },
   {
@@ -73540,14 +74349,29 @@
         "start":"005d3650"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d3650(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d3650",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CObj_FUN_005d3650",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CObj*"
+        }
+      ]
     }
   },
   {
@@ -73559,14 +74383,29 @@
         "start":"005d3ed0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d3ed0(undefined4 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d3ed0",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CObj_FUN_005d3ed0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CObj*"
+        }
+      ]
     }
   },
   {
@@ -73578,10 +74417,10 @@
         "start":"005d44d0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d44d0(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d44d0",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_CObj_FUN_005d44d0",
+    "ret":"int*",
     "vars":{
       "locals":[
         {
@@ -73681,8 +74520,33 @@
           "type":"undefined1"
         }
       ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CObj*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -73936,14 +74800,29 @@
         "start":"005d70d0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d70d0(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d70d0",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_COptimize_FUN_005d70d0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"COptimize*"
+        }
+      ]
     }
   },
   {
@@ -73955,13 +74834,38 @@
         "start":"005d71d0"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d71d0(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d71d0",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_COptimize_FUN_005d71d0",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"COptimize*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -73974,13 +74878,38 @@
         "start":"005d7350"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d7350(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d7350",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_COptimize_FUN_005d7350",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"COptimize*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -79166,8 +80095,9 @@
         "start":"00600ad0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_FUN_00600ad0",
+    "name":"crt_watcom.c_heapchk_FUN_00600ad0",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{

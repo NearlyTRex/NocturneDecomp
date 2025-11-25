@@ -4,12 +4,11 @@
 // Convention: unknown
 // Signature: undefined core_emitter.cpp_FUN_004a8ad0()
 // Globals:
-//   undefined4 DAT_006240c2
+//   double DOUBLE_006240c2 = 0.5
 //   double DOUBLE_006240ca = 0.100000000000000
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_emitter.cpp_FUN_004a8ad0(undefined4 param_1, undefined4
    param_2) */
 
@@ -22,7 +21,7 @@ void core_emitter_cpp_FUN_004a8ad0(void)
   float *in_stack_00000008;
   
   fVar1 = *(float *)(in_stack_00000004 + 0x15c);
-  fVar2 = (float)_DAT_006240c2;
+  fVar2 = (float)DOUBLE_006240c2;
   in_stack_00000008[1] = -0.1;
   *in_stack_00000008 = -fVar1 * fVar2;
   in_stack_00000008[2] = -*(float *)(in_stack_00000004 + 0x164) * fVar2;

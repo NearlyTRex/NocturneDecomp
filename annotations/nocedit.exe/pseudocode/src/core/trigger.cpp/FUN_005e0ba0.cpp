@@ -8,13 +8,12 @@
 //   core_trigger.cpp_CTrigger_serialize_FUN_005e0690 (005e0690) at 005e0917 [UNCONDITIONAL_CALL]
 // Globals:
 //   void* switchdataD_005e0b78 = 005e0bba
-//   undefined4 DAT_006557cc
+//   double DOUBLE_006557cc = 10
 // Function calls:
 //   crt_math.c_ceil_FUN_006001b2
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_trigger.cpp_FUN_005e0ba0(undefined4 param_1) */
 
 void core_trigger_cpp_FUN_005e0ba0(void)
@@ -33,7 +32,7 @@ void core_trigger_cpp_FUN_005e0ba0(void)
               ((double)(SQRT((pfVar1[5] - pfVar1[2]) * (pfVar1[5] - pfVar1[2]) +
                              (pfVar1[3] - *pfVar1) * (pfVar1[3] - *pfVar1) +
                              (pfVar1[4] - pfVar1[1]) * (pfVar1[4] - pfVar1[1])) +
-                       (float)_DAT_006557cc));
+                       (float)DOUBLE_006557cc));
     *(float *)(in_stack_00000004 + 0x158) = (float)(double)CONCAT44(extraout_EDX,extraout_EAX);
   }
   return;

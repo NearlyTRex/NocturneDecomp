@@ -16,7 +16,7 @@ CLodFace * __cdecl shape_meshlod_cpp_CLodFace_ctor_FUN_0051ef00(CLodFace *this_p
   void *pvVar1;
   
   pvVar1 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     (this_ptr->vertices,3,&g_CVectorTypeInfo);
+                     (this_ptr->edge_perpendiculars,3,&g_CVectorTypeInfo);
   return (CLodFace *)((int)pvVar1 + -0x54);
 }
 

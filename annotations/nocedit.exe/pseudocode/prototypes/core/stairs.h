@@ -3,58 +3,6 @@
 // Function prototypes for core/stairs.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_stairs.cpp_FUN_005b90a0
-// Address: 005b90a0
-undefined FUN_005b90a0();
-
-// Original: core_stairs.cpp_FUN_005b9230
-// Address: 005b9230
-undefined FUN_005b9230();
-
-// Original: core_stairs.cpp_FUN_005b9270
-// Address: 005b9270
-undefined FUN_005b9270();
-
-// Original: core_stairs.cpp_FUN_005b92d0
-// Address: 005b92d0
-undefined FUN_005b92d0();
-
-// Original: core_stairs.cpp_FUN_005b93f0
-// Address: 005b93f0
-undefined FUN_005b93f0();
-
-// Original: core_stairs.cpp_FUN_005b9430
-// Address: 005b9430
-undefined FUN_005b9430();
-
-// Original: core_stairs.cpp_FUN_005b9490
-// Address: 005b9490
-undefined FUN_005b9490();
-
-// Original: core_stairs.cpp_staticInit_FUN_005b95b0
-// Address: 005b95b0
-undefined staticInit();
-
-// Original: core_stairs.cpp_CSpotView_FUN_005b95c0
-// Address: 005b95c0
-CSpotView * CSpotView(CSpotView * this_ptr);
-
-// Original: core_stairs.cpp_FUN_005b9620
-// Address: 005b9620
-undefined FUN_005b9620();
-
-// Original: core_stairs.cpp_FUN_005b9670
-// Address: 005b9670
-undefined FUN_005b9670();
-
-// Original: core_stairs.cpp_FUN_005b9950
-// Address: 005b9950
-undefined FUN_005b9950();
-
-// Original: core_stairs.cpp_FUN_005b9a20
-// Address: 005b9a20
-undefined FUN_005b9a20();
-
 // Original: core_stairs.cpp_staticInit_FUN_005b9b00
 // Address: 005b9b00
 CDemonActorType * staticInit(void);

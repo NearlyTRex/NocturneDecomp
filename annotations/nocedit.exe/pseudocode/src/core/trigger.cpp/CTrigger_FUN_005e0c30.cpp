@@ -4,11 +4,9 @@
 // Convention: __cdecl
 // Signature: int core_trigger.cpp_CTrigger_FUN_005e0c30(CTrigger * this_ptr)
 // Globals:
-//   undefined4 DAT_006557d4
+//   float FLOAT_006557d4 = 0.5
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_trigger_cpp_CTrigger_FUN_005e0c30(CTrigger *this_ptr)
 
@@ -25,10 +23,10 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e0c30(CTrigger *this_ptr)
     return 0;
   }
   pCVar3 = (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&CStack_34);
-  fVar1 = ((pCVar3->min).y + (pCVar3->max).y) * _DAT_006557d4;
-  fVar2 = ((pCVar3->min).z + (pCVar3->max).z) * _DAT_006557d4;
+  fVar1 = ((pCVar3->min).y + (pCVar3->max).y) * FLOAT_006557d4;
+  fVar2 = ((pCVar3->min).z + (pCVar3->max).z) * FLOAT_006557d4;
   if (in_stack_00000008 != &fStack_8) {
-    *in_stack_00000008 = ((pCVar3->min).x + (pCVar3->max).x) * _DAT_006557d4;
+    *in_stack_00000008 = ((pCVar3->min).x + (pCVar3->max).x) * FLOAT_006557d4;
     in_stack_00000008[1] = fVar1;
     in_stack_00000008[2] = fVar2;
   }

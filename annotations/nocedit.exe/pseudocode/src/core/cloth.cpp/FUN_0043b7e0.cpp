@@ -7,8 +7,8 @@
 //   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 (0043c880) at 0043cc57 [UNCONDITIONAL_CALL]
 //   core_cloth.cpp_FUN_0043b790 (0043b790) at 0043b7bb [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_006184ba
-//   undefined4 DAT_006184c2
+//   double DOUBLE_006184ba = 3.14159265350000
+//   double DOUBLE_006184c2 = 0.0833333333333333
 //   undefined4 DAT_0065bb3c
 //   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 //   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
@@ -64,7 +64,7 @@ void core_cloth_cpp_FUN_0043b7e0
   local_1c = 0xc;
   vertex_index1_00 = -1;
   do {
-    fVar3 = (float10)(int)vertex_index2 * (float10)_DAT_006184ba * (float10)_DAT_006184c2;
+    fVar3 = (float10)(int)vertex_index2 * (float10)DOUBLE_006184ba * (float10)DOUBLE_006184c2;
     fVar4 = (float10)fsin(fVar3);
     fVar3 = (float10)fcos(fVar3);
     local_40.z = (int)(float)(fVar4 * (float10)*(float *)(iVar2 + 0x14));

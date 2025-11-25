@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_succubus.cpp_CSuccubus_FUN_005c6b60 (005c6b60) at 005c6bd2 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\cloth.cpp_00618562
+//   TerminatedCString s_core_cloth_cpp_00618562
 //   TerminatedCString s_core_cloth_cpp_00618574
 //   TerminatedCString s_core_cloth_cpp_00618586
 //   TerminatedCString s_CClothList_load_out_of_m_00618598
@@ -39,7 +39,7 @@ void __cdecl core_cloth_cpp_CClothList_load_FUN_0043bfa0(CClothList *this_ptr)
     pCVar3 = this_ptr;
     do {
       g_CurrentDebugLine = 0x5a7;
-      g_CurrentDebugFilename = "@..\\core\\cloth.cpp" + 1;
+      g_CurrentDebugFilename = "..\\core\\cloth.cpp";
       if (*(int *)(pCVar3 + 0x194) != 0) {
         pvVar2 = (void *)core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
         shape_memdbg_cpp_debugFree_FUN_0050f210(pvVar2);

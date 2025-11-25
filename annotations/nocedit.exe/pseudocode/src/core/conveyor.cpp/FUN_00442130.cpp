@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_conveyor.cpp_FUN_00442130()
 // Globals:
-//   undefined4 s_Moving_00618e8b
+//   TerminatedCString s_Moving_00618e8b
 //   TerminatedCString s_Start_condition_00618e92
 //   string s_Stop_condition_00618ea2
 //   TerminatedCString s_Direction_00618eb1

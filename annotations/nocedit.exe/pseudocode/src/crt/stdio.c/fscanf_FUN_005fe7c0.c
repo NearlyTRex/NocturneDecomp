@@ -81,11 +81,11 @@
 //   shape_design.c_loadModelFile_FUN_00458ac0 (00458ac0) at 004591c5 [UNCONDITIONAL_CALL]
 //   shape_design.c_loadS3DModelFile_FUN_004593a0 (004593a0) at 004595a4 [UNCONDITIONAL_CALL]
 //   shape_design.c_parseSpatialTreeFromFile_FUN_004580a0 (004580a0) at 004580ce [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_0051aa60 (0051aa60) at 0051aaa4 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_0051adf0 (0051adf0) at 0051afe0 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_0051d180 (0051d180) at 0051d1a1 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0 (0051cdf0) at 0051ce16 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0 (0051d2d0) at 0051d30e [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180 (0051d180) at 0051d1a1 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0 (0051adf0) at 0051afe0 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60 (0051aa60) at 0051aaa4 [UNCONDITIONAL_CALL]
 //   support_newmsg.cpp_readMessageFile_FUN_00543e40 (00543e40) at 00543f29 [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_stdio.c_vfscanf_FUN_005fe738

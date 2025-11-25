@@ -4,8 +4,7 @@
 // Ghidra size: 0x560 (1376 bytes)
 typedef struct CSpike {
     CDemonActor base_actor; // 0x0
-    char* model_name; // 0x158
-    char field_348[376]; // 0x15c
+    CKeyFramedModelInstance model; // 0x158
     int spike_type; // 0x2d4
     int spike_state; // 0x2d8
     int are_we_active; // 0x2dc

@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_tentacle.cpp_CTentacle_process_FUN_005db050 (005db050) at 005db133 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00654e8c
+//   double DOUBLE_00654e8c = 3
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   CDemonSet g_CDemonSetInstance
 //   undefined4 g_CDemonSetInstance.damage_listener_count
@@ -17,7 +17,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_tentacle.cpp_FUN_005db900(undefined4 param_1, undefined4
    param_2) */
 
@@ -46,7 +45,7 @@ undefined4 core_tentacle_cpp_FUN_005db900(void)
       if (iVar4 != 0) {
         fVar1 = (actor_ptr->location).position.x - (in_stack_00000004->location).position.x;
         fVar2 = ((actor_ptr->location).position.y - (in_stack_00000004->location).position.y) *
-                (float)_DAT_00654e8c;
+                (float)DOUBLE_00654e8c;
         fVar3 = (actor_ptr->location).position.z - (in_stack_00000004->location).position.z;
         if (SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) <
             *(float *)(in_stack_00000004[0x8d].create_event + 0x44)) {

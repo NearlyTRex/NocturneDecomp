@@ -281,11 +281,11 @@ undefined FUN_00599480();
 
 // Original: core_skeledit.cpp_LodVert_copy_FUN_00599550
 // Address: 00599550
-SLodVert * LodVert::copy(void * n1, void * n2, SLodVert * other2, SLodVert * other3);
+CLodVert * LodVert::copy(void * n1, void * n2, CLodVert * other2, CLodVert * other3);
 
 // Original: core_skeledit.cpp_LodVert_dtor_FUN_005995c0
 // Address: 005995c0
-SLodVert * LodVert::dtor(SLodVert * this_ptr, SLodVert * other, SLodVert * other2);
+CLodVert * LodVert::dtor(CLodVert * this_ptr, CLodVert * other, CLodVert * other2);
 
 // Original: core_skeledit.cpp_FUN_005995d0
 // Address: 005995d0

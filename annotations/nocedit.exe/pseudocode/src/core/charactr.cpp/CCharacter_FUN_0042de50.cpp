@@ -5,15 +5,13 @@
 // Signature: int core_charactr.cpp_CCharacter_FUN_0042de50(CCharacter * this_ptr)
 // Globals:
 //   TerminatedCString s_STAND_006174c3
-//   undefined4 DAT_006174ca
+//   double DOUBLE_006174ca = 0.950000000000000
 // Function calls:
 //   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 //   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 //   core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_charactr_cpp_CCharacter_FUN_0042de50(CCharacter *this_ptr)
 
@@ -32,7 +30,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042de50(CCharacter *this_ptr)
       if (-1 < iVar1) {
         fVar2 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                           (&(this_ptr->model).motion_controller,iVar1);
-        if ((float)_DAT_006174ca < fVar2) {
+        if ((float)DOUBLE_006174ca < fVar2) {
           return 0;
         }
       }

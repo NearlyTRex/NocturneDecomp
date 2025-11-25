@@ -5,7 +5,7 @@
 // Signature: undefined core_bugs.cpp_FUN_00427ba0()
 // Cross-references:
 //   core_bugs.cpp_FUN_00425b70 (00425b70) at 00425c62 [UNCONDITIONAL_CALL]
-//   shape_quantize.cpp_FUN_00555090 (00555090) at 005552e5 [UNCONDITIONAL_CALL]
+//   shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090 (00555090) at 005552e5 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

@@ -46,7 +46,7 @@
 //   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 (004a0530) at 004a059e [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CInputString_draw_FUN_0049d9b0 (0049d9b0) at 0049da6d [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CPickList_handleDialogInput_FUN_004a4340 (004a4340) at 004a44cc [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_00516ba0 (00516ba0) at 00516bb8 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0 (00516ba0) at 00516bb8 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0 (005aaef0) at 005ab0e6 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0 (005acdb0) at 005acdd1 [UNCONDITIONAL_CALL]
 //   wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80 (005f2b80) at 005f2bd6 [UNCONDITIONAL_CALL]

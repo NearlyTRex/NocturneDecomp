@@ -48,22 +48,14 @@ shape_design_c_addQuadPolygon_FUN_004687c0
   g_ModelPolygonData[iVar1].vertex_indices[1] = vertex_index_1;
   g_ModelPolygonData[iVar1].vertex_indices[2] = vertex_index_2;
   g_ModelPolygonData[iVar1].vertex_indices[3] = vertex_index_3;
-  g_ModelPolygonData[iVar1].vertex_indices[0x10] =
-       (uint)(g_LoadedVertices[vertex_index_0].u * (float)g_TextureScale);
-  g_ModelPolygonData[iVar1].uv_coordinates[0] =
-       g_LoadedVertices[vertex_index_0].v * (float)g_TextureScale;
-  g_ModelPolygonData[iVar1].vertex_indices[0x11] =
-       (uint)(g_LoadedVertices[vertex_index_1].u * (float)g_TextureScale);
-  g_ModelPolygonData[iVar1].uv_coordinates[1] =
-       g_LoadedVertices[vertex_index_1].v * (float)g_TextureScale;
-  g_ModelPolygonData[iVar1].vertex_indices[0x12] =
-       (uint)(g_LoadedVertices[vertex_index_2].u * (float)g_TextureScale);
-  g_ModelPolygonData[iVar1].uv_coordinates[2] =
-       g_LoadedVertices[vertex_index_2].v * (float)g_TextureScale;
-  g_ModelPolygonData[iVar1].vertex_indices[0x13] =
-       (uint)(g_LoadedVertices[vertex_index_3].u * (float)g_TextureScale);
-  g_ModelPolygonData[iVar1].uv_coordinates[3] =
-       g_LoadedVertices[vertex_index_3].v * (float)g_TextureScale;
+  g_ModelPolygonData[iVar1].uv_u[0] = g_LoadedVertices[vertex_index_0].u * (float)g_TextureScale;
+  g_ModelPolygonData[iVar1].uv_v[0] = g_LoadedVertices[vertex_index_0].v * (float)g_TextureScale;
+  g_ModelPolygonData[iVar1].uv_u[1] = g_LoadedVertices[vertex_index_1].u * (float)g_TextureScale;
+  g_ModelPolygonData[iVar1].uv_v[1] = g_LoadedVertices[vertex_index_1].v * (float)g_TextureScale;
+  g_ModelPolygonData[iVar1].uv_u[2] = g_LoadedVertices[vertex_index_2].u * (float)g_TextureScale;
+  g_ModelPolygonData[iVar1].uv_v[2] = g_LoadedVertices[vertex_index_2].v * (float)g_TextureScale;
+  g_ModelPolygonData[iVar1].uv_u[3] = g_LoadedVertices[vertex_index_3].u * (float)g_TextureScale;
+  g_ModelPolygonData[iVar1].uv_v[3] = g_LoadedVertices[vertex_index_3].v * (float)g_TextureScale;
   return;
 }
 

@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_conveyor.cpp_FUN_004421c0()
 // Globals:
-//   undefined4 DAT_00618ed3
+//   double DOUBLE_00618ed3 = 4
 //   CGame* g_CGamePtr = 02d81a9c
 //   CKeys* g_CKeysPtr = 02dcd7d4
 //   undefined4 g_CGameInstance.delta_time_float
@@ -14,7 +14,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_conveyor.cpp_FUN_004421c0(undefined4 param_1) */
 
 void core_conveyor_cpp_FUN_004421c0(void)

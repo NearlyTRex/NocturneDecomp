@@ -4,15 +4,14 @@
 // Convention: unknown
 // Signature: undefined shape_superopt.cpp_FUN_005d6640()
 // Cross-references:
+//   shape_superopt.cpp_CPoly_FUN_005d0340 (005d0340) at 005d0c65 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_FUN_005cb3a0 (005cb3a0) at 005cb90e [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_FUN_005cbf90 (005cbf90) at 005cc2dc [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_FUN_005d0340 (005d0340) at 005d0c65 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00654552
+//   double DOUBLE_00654552 = 1.00000000000000E-10
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 shape_superopt.cpp_FUN_005d6640(undefined4 param_1, undefined4 param_2,
    undefined4 param_3) */
 
@@ -32,7 +31,7 @@ double shape_superopt_cpp_FUN_005d6640(void)
   if (dVar1 < 0.0) {
     local_20 = -dVar1;
   }
-  if (_DAT_00654552 <= local_20) {
+  if (DOUBLE_00654552 <= local_20) {
     return dVar1;
   }
   return 0.0;

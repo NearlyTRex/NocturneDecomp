@@ -67,7 +67,7 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
   int local_160 [20];
   float afStack_110 [16];
   uint auStack_d0 [16];
-  uint auStack_90 [17];
+  float afStack_90 [17];
   int local_4c;
   uint local_48;
   uint local_44;
@@ -212,59 +212,49 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
             if (g_ModelPolygonData[selected_polygon_index].vertex_indices_count == 4) {
               auStack_d0[local_4c * 2] =
                    g_ModelPolygonData[local_14[local_1c * 3]].vertex_indices[local_160[0]];
-              auStack_90[local_4c * 2] =
-                   g_ModelPolygonData[local_14[local_1c * 3]].vertex_indices
-                   [local_160[local_30 * 4] + 0x10];
+              afStack_90[local_4c * 2] =
+                   g_ModelPolygonData[local_14[local_1c * 3]].uv_u[local_160[local_30 * 4]];
               afStack_110[local_4c * 2] =
-                   g_ModelPolygonData[local_14[local_1c * 3]].uv_coordinates
-                   [local_160[local_30 * 4]];
+                   g_ModelPolygonData[local_14[local_1c * 3]].uv_v[local_160[local_30 * 4]];
               auStack_d0[local_4c * 2 + 1] =
                    g_ModelPolygonData[local_14[local_1c * 3]].vertex_indices
                    [local_160[local_30 * 4 + 1]];
-              auStack_90[local_4c * 2 + 1] =
-                   g_ModelPolygonData[local_14[local_1c * 3]].vertex_indices
-                   [local_160[local_30 * 4 + 1] + 0x10];
+              afStack_90[local_4c * 2 + 1] =
+                   g_ModelPolygonData[local_14[local_1c * 3]].uv_u[local_160[local_30 * 4 + 1]];
               afStack_110[local_4c * 2 + 1] =
-                   g_ModelPolygonData[local_14[local_1c * 3]].uv_coordinates
-                   [local_160[local_30 * 4 + 1]];
+                   g_ModelPolygonData[local_14[local_1c * 3]].uv_v[local_160[local_30 * 4 + 1]];
             }
             else if (g_ModelPolygonData[selected_polygon_index].vertex_indices_count == 3) {
               auStack_d0[local_4c] =
                    g_ModelPolygonData[local_14[local_1c * 3]].vertex_indices[local_160[0]];
-              auStack_90[local_4c] =
-                   g_ModelPolygonData[local_14[local_1c * 3]].vertex_indices
-                   [local_160[local_30 * 4] + 0x10];
+              afStack_90[local_4c] =
+                   g_ModelPolygonData[local_14[local_1c * 3]].uv_u[local_160[local_30 * 4]];
               afStack_110[local_4c] =
-                   g_ModelPolygonData[local_14[local_1c * 3]].uv_coordinates
-                   [local_160[local_30 * 4]];
+                   g_ModelPolygonData[local_14[local_1c * 3]].uv_v[local_160[local_30 * 4]];
             }
           }
           else if ((local_30 == 1) || (local_30 == 2)) {
             auStack_d0[local_4c] =
                  g_ModelPolygonData[local_14[local_1c * 3]].vertex_indices[local_160[local_30 * 4]];
-            auStack_90[local_4c] =
-                 g_ModelPolygonData[local_14[local_1c * 3]].vertex_indices
-                 [local_160[local_30 * 4] + 0x10];
+            afStack_90[local_4c] =
+                 g_ModelPolygonData[local_14[local_1c * 3]].uv_u[local_160[local_30 * 4]];
             afStack_110[local_4c] =
-                 g_ModelPolygonData[local_14[local_1c * 3]].uv_coordinates[local_160[local_30 * 4]];
+                 g_ModelPolygonData[local_14[local_1c * 3]].uv_v[local_160[local_30 * 4]];
           }
           else if ((local_30 == 3) || (local_30 == 4)) {
             auStack_d0[local_4c * 2] =
                  g_ModelPolygonData[local_14[local_1c * 3]].vertex_indices[local_160[local_30 * 4]];
-            auStack_90[local_4c * 2] =
-                 g_ModelPolygonData[local_14[local_1c * 3]].vertex_indices
-                 [local_160[local_30 * 4] + 0x10];
+            afStack_90[local_4c * 2] =
+                 g_ModelPolygonData[local_14[local_1c * 3]].uv_u[local_160[local_30 * 4]];
             afStack_110[local_4c * 2] =
-                 g_ModelPolygonData[local_14[local_1c * 3]].uv_coordinates[local_160[local_30 * 4]];
+                 g_ModelPolygonData[local_14[local_1c * 3]].uv_v[local_160[local_30 * 4]];
             auStack_d0[local_4c * 2 + 1] =
                  g_ModelPolygonData[local_14[local_1c * 3]].vertex_indices
                  [local_160[local_30 * 4 + 1]];
-            auStack_90[local_4c * 2 + 1] =
-                 g_ModelPolygonData[local_14[local_1c * 3]].vertex_indices
-                 [local_160[local_30 * 4 + 1] + 0x10];
+            afStack_90[local_4c * 2 + 1] =
+                 g_ModelPolygonData[local_14[local_1c * 3]].uv_u[local_160[local_30 * 4 + 1]];
             afStack_110[local_4c * 2 + 1] =
-                 g_ModelPolygonData[local_14[local_1c * 3]].uv_coordinates
-                 [local_160[local_30 * 4 + 1]];
+                 g_ModelPolygonData[local_14[local_1c * 3]].uv_v[local_160[local_30 * 4 + 1]];
           }
           local_34 = local_1c;
           local_1c = local_14[local_1c * 3 + 2];
@@ -276,21 +266,17 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
           auStack_d0[local_4c] =
                g_ModelPolygonData[local_14[local_34 * 3]].vertex_indices
                [local_160[local_30 * 4 + 2]];
-          auStack_90[local_4c] =
-               g_ModelPolygonData[local_14[local_34 * 3]].vertex_indices
-               [local_160[local_30 * 4 + 2] + 0x10];
+          afStack_90[local_4c] =
+               g_ModelPolygonData[local_14[local_34 * 3]].uv_u[local_160[local_30 * 4 + 2]];
           afStack_110[local_4c] =
-               g_ModelPolygonData[local_14[local_34 * 3]].uv_coordinates
-               [local_160[local_30 * 4 + 2]];
+               g_ModelPolygonData[local_14[local_34 * 3]].uv_v[local_160[local_30 * 4 + 2]];
           auStack_d0[local_4c + 1] =
                g_ModelPolygonData[local_14[local_34 * 3]].vertex_indices
                [local_160[local_30 * 4 + 3]];
-          auStack_90[local_4c + 1] =
-               g_ModelPolygonData[local_14[local_34 * 3]].vertex_indices
-               [local_160[local_30 * 4 + 3] + 0x10];
+          afStack_90[local_4c + 1] =
+               g_ModelPolygonData[local_14[local_34 * 3]].uv_u[local_160[local_30 * 4 + 3]];
           afStack_110[local_4c + 1] =
-               g_ModelPolygonData[local_14[local_34 * 3]].uv_coordinates
-               [local_160[local_30 * 4 + 3]];
+               g_ModelPolygonData[local_14[local_34 * 3]].uv_v[local_160[local_30 * 4 + 3]];
         }
         for (local_4c = 0; local_4c < (int)uVar2; local_4c = local_4c + 1) {
           auStack_22c[local_4c] = auStack_d0[local_4c];
@@ -305,10 +291,8 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
               local_4c = local_4c + 1) {
             g_ModelPolygonData[selected_polygon_index].vertex_indices[local_4c] =
                  auStack_d0[local_4c];
-            g_ModelPolygonData[selected_polygon_index].vertex_indices[local_4c + 0x10] =
-                 auStack_90[local_4c];
-            g_ModelPolygonData[selected_polygon_index].uv_coordinates[local_4c] =
-                 afStack_110[local_4c];
+            g_ModelPolygonData[selected_polygon_index].uv_u[local_4c] = afStack_90[local_4c];
+            g_ModelPolygonData[selected_polygon_index].uv_v[local_4c] = afStack_110[local_4c];
           }
           local_20 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                                (local_48 * 4 + -4,"..\\shape\\design.c",0x1a1b);

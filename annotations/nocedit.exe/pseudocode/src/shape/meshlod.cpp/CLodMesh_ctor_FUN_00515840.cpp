@@ -5,9 +5,9 @@
 // Signature: CLodMesh * shape_meshlod.cpp_CLodMesh_ctor_FUN_00515840(CLodMesh * this_ptr)
 // Cross-references:
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058c52e [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_00516f50 (00516f50) at 00516f8c [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051db2e [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051ed60 (0051ed60) at 0051ed7a [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_createNextLOD_FUN_00516f50 (00516f50) at 00516f8c [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_testLodGeneration_FUN_0051ed60 (0051ed60) at 0051ed7a [UNCONDITIONAL_CALL]
 // Function calls:
 //   shape_meshlod.cpp_CLodMesh_init_FUN_00515880
 

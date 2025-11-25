@@ -201,6 +201,10 @@
       "type":"struct"
     },
     {
+      "name":"CBitmap",
+      "type":"struct"
+    },
+    {
       "name":"CBloodParticle",
       "type":"struct"
     },
@@ -275,6 +279,10 @@
     {
       "name":"CColor3i",
       "type":"struct"
+    },
+    {
+      "name":"CColorQuantizer_ProgressCallback",
+      "type":"function_definition"
     },
     {
       "name":"CConsole",
@@ -733,6 +741,10 @@
       "type":"struct"
     },
     {
+      "name":"CLodEdge",
+      "type":"struct"
+    },
+    {
       "name":"CMatrix3x3i",
       "type":"struct"
     },
@@ -894,10 +906,6 @@
     },
     {
       "name":"CPod",
-      "type":"struct"
-    },
-    {
-      "name":"CPoly",
       "type":"struct"
     },
     {
@@ -1145,6 +1153,10 @@
       "type":"struct"
     },
     {
+      "name":"CPoly",
+      "type":"struct"
+    },
+    {
       "name":"CSfxOptions",
       "type":"struct"
     },
@@ -1198,6 +1210,10 @@
     },
     {
       "name":"CLodFace",
+      "type":"struct"
+    },
+    {
+      "name":"CLodVert",
       "type":"struct"
     },
     {
@@ -1422,10 +1438,6 @@
     },
     {
       "name":"CSimBox",
-      "type":"struct"
-    },
-    {
-      "name":"CSpike",
       "type":"struct"
     },
     {
@@ -3001,6 +3013,10 @@
       "type":"struct"
     },
     {
+      "name":"SColorBox",
+      "type":"struct"
+    },
+    {
       "name":"SCompactPolygonDescriptor",
       "type":"struct"
     },
@@ -3173,15 +3189,11 @@
       "type":"struct"
     },
     {
-      "name":"SLodEdge",
+      "name":"SLodSamplePoint",
       "type":"struct"
     },
     {
-      "name":"SLodTriangle",
-      "type":"struct"
-    },
-    {
-      "name":"SLodVert",
+      "name":"SLodSubmesh",
       "type":"struct"
     },
     {
@@ -3270,6 +3282,10 @@
     },
     {
       "name":"CMoon",
+      "type":"struct"
+    },
+    {
+      "name":"CSpike",
       "type":"struct"
     },
     {
@@ -3501,6 +3517,14 @@
       "type":"typedef"
     },
     {
+      "name":"SPaletteEntry",
+      "type":"struct"
+    },
+    {
+      "name":"CColorQuantizer",
+      "type":"struct"
+    },
+    {
       "name":"SPanel",
       "type":"struct"
     },
@@ -3625,6 +3649,10 @@
       "type":"struct"
     },
     {
+      "name":"SSpatialGrid",
+      "type":"struct"
+    },
+    {
       "name":"SSpatialTreeNode",
       "type":"struct"
     },
@@ -3634,6 +3662,10 @@
     },
     {
       "name":"SStereoGains",
+      "type":"struct"
+    },
+    {
+      "name":"SSuperOptVertex",
       "type":"struct"
     },
     {
@@ -6694,6 +6726,28 @@
         },
         {
           "name":"param5",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CColorQuantizer_ProgressCallback",
+      "parameters":[
+        {
+          "name":"label",
+          "type":"char*"
+        },
+        {
+          "name":"total",
+          "type":"int"
+        },
+        {
+          "name":"current",
           "type":"int"
         }
       ],
@@ -18649,6 +18703,72 @@
       "desc":"",
       "fields":[
         {
+          "len":20,
+          "name":"field_0",
+          "offset":0,
+          "type":"char[20]"
+        },
+        {
+          "len":2,
+          "name":"width",
+          "offset":20,
+          "type":"short"
+        },
+        {
+          "len":2,
+          "name":"height",
+          "offset":22,
+          "type":"short"
+        },
+        {
+          "len":2,
+          "name":"bytes_per_row",
+          "offset":24,
+          "type":"short"
+        },
+        {
+          "len":1,
+          "name":"bit_depth",
+          "offset":26,
+          "type":"char"
+        },
+        {
+          "len":1,
+          "name":"bytes_per_pixel",
+          "offset":27,
+          "type":"char"
+        },
+        {
+          "len":4,
+          "name":"pixel_data",
+          "offset":28,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"row_table",
+          "offset":32,
+          "type":"void**"
+        },
+        {
+          "len":4,
+          "name":"palette",
+          "offset":36,
+          "type":"void*"
+        }
+      ],
+      "importable":true,
+      "len":40,
+      "name":"CBitmap",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":64,
           "name":"field_0",
           "offset":0,
@@ -20031,6 +20151,144 @@
       "importable":true,
       "len":12,
       "name":"CColor3i",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"progress_callback",
+          "offset":0,
+          "type":"CColorQuantizer_ProgressCallback*"
+        },
+        {
+          "len":4,
+          "name":"pixel_data",
+          "offset":4,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"flags_buffer",
+          "offset":8,
+          "type":"uchar*"
+        },
+        {
+          "len":4,
+          "name":"scanline_buffer",
+          "offset":12,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"error_buffer_r",
+          "offset":16,
+          "type":"float*"
+        },
+        {
+          "len":4,
+          "name":"error_buffer_g",
+          "offset":20,
+          "type":"float*"
+        },
+        {
+          "len":4,
+          "name":"error_buffer_b",
+          "offset":24,
+          "type":"float*"
+        },
+        {
+          "len":4,
+          "name":"error_buffer_i",
+          "offset":28,
+          "type":"float*"
+        },
+        {
+          "len":4,
+          "name":"current_r",
+          "offset":32,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"current_g",
+          "offset":36,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"current_b",
+          "offset":40,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"current_i",
+          "offset":44,
+          "type":"float"
+        },
+        {
+          "len":4096,
+          "name":"field_48",
+          "offset":48,
+          "type":"char[4096]"
+        },
+        {
+          "len":4096,
+          "name":"palette",
+          "offset":4144,
+          "type":"SPaletteEntry[256]"
+        },
+        {
+          "len":10240,
+          "name":"boxes",
+          "offset":8240,
+          "type":"SColorBox[256]"
+        },
+        {
+          "len":768,
+          "name":"output_region",
+          "offset":18480,
+          "type":"char[768]"
+        },
+        {
+          "len":4,
+          "name":"serpentine_toggle",
+          "offset":19248,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"status",
+          "offset":19252,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"pixel_count",
+          "offset":19256,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"current_pixel_index",
+          "offset":19260,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"num_colors",
+          "offset":19264,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":19268,
+      "name":"CColorQuantizer",
       "pack":false,
       "type":"struct"
     },
@@ -28331,110 +28589,170 @@
       "desc":"",
       "fields":[
         {
-          "len":12,
-          "name":"vertex_indices",
+          "len":4,
+          "name":"vertex_idx_1",
           "offset":0,
-          "type":"int[3]"
-        },
-        {
-          "len":4,
-          "name":"field_12",
-          "offset":12,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_16",
+          "name":"vertex_idx_2",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":8,
+          "name":"collapse_cost",
+          "offset":8,
+          "type":"double"
+        },
+        {
+          "len":4,
+          "name":"collapse_error",
           "offset":16,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
-          "name":"field_20",
+          "name":"deletion_flag",
           "offset":20,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_24",
+          "name":"collapse_viability",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"collapse_curvature",
+          "offset":28,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"needs_recalc_flag",
+          "offset":32,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"adjacent_tri_count",
+          "offset":36,
+          "type":"int"
+        },
+        {
+          "len":200,
+          "name":"adjacent_tri_indices",
+          "offset":40,
+          "type":"int[50]"
+        }
+      ],
+      "importable":true,
+      "len":240,
+      "name":"CLodEdge",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":12,
+          "name":"attribute_indices",
+          "offset":0,
+          "type":"int[3]"
+        },
+        {
+          "len":4,
+          "name":"submesh_id",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"vertex_idx_0",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"vertex_idx_1",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"vertex_idx_2",
           "offset":24,
           "type":"int"
         },
         {
           "len":24,
-          "name":"field_28",
+          "name":"uv_coords",
           "offset":28,
-          "type":"char[24]"
+          "type":"float[3][2]"
         },
         {
           "len":4,
-          "name":"field_52",
+          "name":"edge_idx_0",
           "offset":52,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_56",
+          "name":"edge_idx_1",
           "offset":56,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_60",
+          "name":"edge_idx_2",
           "offset":60,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_64",
+          "name":"processed_flag",
           "offset":64,
           "type":"int"
         },
         {
-          "len":4,
-          "name":"field_68",
+          "len":12,
+          "name":"normal",
           "offset":68,
-          "type":"int"
+          "type":"CVector3f"
         },
         {
           "len":4,
-          "name":"field_72",
-          "offset":72,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"field_76",
-          "offset":76,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"field_80",
+          "name":"plane_distance",
           "offset":80,
           "type":"float"
         },
         {
           "len":36,
-          "name":"vertices",
+          "name":"edge_perpendiculars",
           "offset":84,
           "type":"CVector3f[3]"
         },
         {
           "len":12,
-          "name":"field_120",
+          "name":"edge_dot_products",
           "offset":120,
-          "type":"CVector3f"
+          "type":"float[3]"
         },
         {
           "len":4,
-          "name":"field_132",
+          "name":"visited_stamp",
           "offset":132,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_136",
+          "name":"affected_by_edge_stamp",
           "offset":136,
           "type":"int"
         }
@@ -28460,7 +28778,7 @@
           "len":4,
           "name":"vertex_data",
           "offset":4,
-          "type":"SLodVert*"
+          "type":"CLodVert*"
         },
         {
           "len":4,
@@ -28470,9 +28788,9 @@
         },
         {
           "len":4,
-          "name":"triangle_data",
+          "name":"tri_data",
           "offset":12,
-          "type":"SLodTriangle*"
+          "type":"CLodFace*"
         },
         {
           "len":4,
@@ -28484,31 +28802,31 @@
           "len":4,
           "name":"submesh_data",
           "offset":20,
-          "type":"void*"
+          "type":"SLodSubmesh*"
         },
         {
           "len":4,
-          "name":"field_24",
+          "name":"active_attribute_count",
           "offset":24,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_28",
+          "name":"sort_attribute_count",
           "offset":28,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_32",
+          "name":"reserved_attribute_count",
           "offset":32,
           "type":"int"
         },
         {
           "len":16,
-          "name":"field_36",
+          "name":"attribute_enabled_flags",
           "offset":36,
-          "type":"char[16]"
+          "type":"int[4]"
         },
         {
           "len":4,
@@ -28518,7 +28836,7 @@
         },
         {
           "len":4,
-          "name":"field_56",
+          "name":"precompute_file",
           "offset":56,
           "type":"FILE*"
         },
@@ -28544,7 +28862,7 @@
           "len":4,
           "name":"edges_ptr",
           "offset":72,
-          "type":"SLodEdge*"
+          "type":"CLodEdge*"
         },
         {
           "len":4,
@@ -28556,19 +28874,19 @@
           "len":4,
           "name":"lod_levels_ptr",
           "offset":80,
-          "type":"void*"
+          "type":"CLodEdge*"
         },
         {
           "len":4,
-          "name":"field_84",
+          "name":"spatial_grid_ptr",
           "offset":84,
-          "type":"void*"
+          "type":"SSpatialGrid*"
         },
         {
           "len":4,
-          "name":"field_88",
+          "name":"spatial_grid_data",
           "offset":88,
-          "type":"void*"
+          "type":"int*"
         },
         {
           "len":4,
@@ -28580,7 +28898,7 @@
           "len":4,
           "name":"sample_points_ptr",
           "offset":96,
-          "type":"void*"
+          "type":"SLodSamplePoint*"
         },
         {
           "len":12,
@@ -28598,6 +28916,66 @@
       "importable":true,
       "len":116,
       "name":"CLodMesh",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":12,
+          "name":"position",
+          "offset":0,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"material_id",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":980,
+          "name":"lod_workspace",
+          "offset":16,
+          "type":"char[980]"
+        },
+        {
+          "len":4,
+          "name":"deletion_flag",
+          "offset":996,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"optimized_position",
+          "offset":1000,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"vertex_remapping_index",
+          "offset":1012,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"adjacent_edge_count",
+          "offset":1016,
+          "type":"int"
+        },
+        {
+          "len":200,
+          "name":"adjacent_edge_indices",
+          "offset":1020,
+          "type":"int[50]"
+        }
+      ],
+      "importable":true,
+      "len":1220,
+      "name":"CLodVert",
       "pack":false,
       "type":"struct"
     },
@@ -29938,10 +30316,46 @@
       "desc":"",
       "fields":[
         {
-          "len":28,
+          "len":4,
           "name":"field_0",
           "offset":0,
-          "type":"char[28]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"vertex_data",
+          "offset":4,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"count",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"poly_array",
+          "offset":12,
+          "type":"CPoly*"
+        },
+        {
+          "len":4,
+          "name":"field_16",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_20",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"vtable",
+          "offset":24,
+          "type":"void*"
         }
       ],
       "importable":true,
@@ -29956,10 +30370,34 @@
       "desc":"",
       "fields":[
         {
-          "len":68,
-          "name":"field_0",
+          "len":28,
+          "name":"base",
           "offset":0,
-          "type":"char[68]"
+          "type":"CObj"
+        },
+        {
+          "len":28,
+          "name":"field_28",
+          "offset":28,
+          "type":"char[28]"
+        },
+        {
+          "len":4,
+          "name":"field_56",
+          "offset":56,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_60",
+          "offset":60,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"vtable",
+          "offset":64,
+          "type":"void*"
         }
       ],
       "importable":true,
@@ -30004,10 +30442,16 @@
       "desc":"",
       "fields":[
         {
-          "len":16,
-          "name":"field_0",
+          "len":8,
+          "name":"x",
           "offset":0,
-          "type":"char[16]"
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"y",
+          "offset":8,
+          "type":"double"
         }
       ],
       "importable":true,
@@ -30022,10 +30466,22 @@
       "desc":"",
       "fields":[
         {
-          "len":24,
-          "name":"field_0",
+          "len":8,
+          "name":"x",
           "offset":0,
-          "type":"char[24]"
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"y",
+          "offset":8,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"z",
+          "offset":16,
+          "type":"double"
         }
       ],
       "importable":true,
@@ -31382,10 +31838,64 @@
       "desc":"",
       "fields":[
         {
-          "len":104,
-          "name":"field_0",
+          "len":4,
+          "name":"parent_obj",
           "offset":0,
-          "type":"char[104]"
+          "type":"CObj*"
+        },
+        {
+          "len":4,
+          "name":"vertex_idx_0",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"vertex_idx_1",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"vertex_idx_2",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":48,
+          "name":"uv_coords",
+          "offset":16,
+          "type":"CP2D[3]"
+        },
+        {
+          "len":24,
+          "name":"normal",
+          "offset":64,
+          "type":"CVector3d"
+        },
+        {
+          "len":4,
+          "name":"field_88",
+          "offset":88,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_92",
+          "offset":92,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_96",
+          "offset":96,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"vtable",
+          "offset":100,
+          "type":"void*"
         }
       ],
       "importable":true,
@@ -32837,16 +33347,10 @@
           "type":"CDemonActor"
         },
         {
-          "len":4,
-          "name":"model_name",
+          "len":380,
+          "name":"model",
           "offset":344,
-          "type":"char*"
-        },
-        {
-          "len":376,
-          "name":"field_348",
-          "offset":348,
-          "type":"char[376]"
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":4,
@@ -33929,10 +34433,40 @@
       "desc":"",
       "fields":[
         {
-          "len":24,
+          "len":4,
           "name":"field_0",
           "offset":0,
-          "type":"char[24]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_4",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_8",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_12",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_16",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_20",
+          "offset":20,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -40454,6 +40988,90 @@
       "fields":[
         {
           "len":2,
+          "name":"avg_red",
+          "offset":0,
+          "type":"short"
+        },
+        {
+          "len":2,
+          "name":"avg_green",
+          "offset":2,
+          "type":"short"
+        },
+        {
+          "len":2,
+          "name":"avg_blue",
+          "offset":4,
+          "type":"short"
+        },
+        {
+          "len":2,
+          "name":"avg_intensity",
+          "offset":6,
+          "type":"short"
+        },
+        {
+          "len":4,
+          "name":"weighted_variance",
+          "offset":8,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"red_variance",
+          "offset":12,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"green_variance",
+          "offset":16,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"blue_variance",
+          "offset":20,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"intensity_variance",
+          "offset":24,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"final_metric",
+          "offset":28,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"start_index",
+          "offset":32,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"pixel_count",
+          "offset":36,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":40,
+      "name":"SColorBox",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":2,
           "name":"vertex_index1",
           "offset":0,
           "type":"ushort"
@@ -42445,141 +43063,33 @@
       "desc":"",
       "fields":[
         {
-          "len":4,
-          "name":"vertex_idx_1",
-          "offset":0,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"vertex_idx_2",
-          "offset":4,
-          "type":"int"
-        },
-        {
           "len":12,
-          "name":"field_8",
-          "offset":8,
-          "type":"char[12]"
-        },
-        {
-          "len":4,
-          "name":"deletion_flag",
-          "offset":20,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"collapse_viability",
-          "offset":24,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"collapse_curvature",
-          "offset":28,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"field_32",
-          "offset":32,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"adjacent_tri_count",
-          "offset":36,
-          "type":"int"
-        },
-        {
-          "len":200,
-          "name":"adjacent_tri_indices",
-          "offset":40,
-          "type":"int[50]"
-        }
-      ],
-      "importable":true,
-      "len":240,
-      "name":"SLodEdge",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":16,
-          "name":"field_0",
+          "name":"position",
           "offset":0,
-          "type":"char[16]"
-        },
-        {
-          "len":4,
-          "name":"vertex_idx_0",
-          "offset":16,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"vertex_idx_1",
-          "offset":20,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"vertex_idx_2",
-          "offset":24,
-          "type":"int"
-        },
-        {
-          "len":24,
-          "name":"field_28",
-          "offset":28,
-          "type":"char[24]"
-        },
-        {
-          "len":4,
-          "name":"edge_idx_0",
-          "offset":52,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"edge_idx_1",
-          "offset":56,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"edge_idx_2",
-          "offset":60,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"processed_flag",
-          "offset":64,
-          "type":"int"
-        },
-        {
-          "len":12,
-          "name":"normal",
-          "offset":68,
           "type":"CVector3f"
         },
         {
-          "len":60,
-          "name":"field_80",
-          "offset":80,
-          "type":"char[60]"
+          "len":4,
+          "name":"closest_triangle_idx",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":8,
+          "name":"distance_to_triangle",
+          "offset":16,
+          "type":"double"
+        },
+        {
+          "len":4,
+          "name":"weight",
+          "offset":24,
+          "type":"float"
         }
       ],
       "importable":true,
-      "len":140,
-      "name":"SLodTriangle",
+      "len":28,
+      "name":"SLodSamplePoint",
       "pack":false,
       "type":"struct"
     },
@@ -42589,27 +43099,21 @@
       "desc":"",
       "fields":[
         {
-          "len":1016,
+          "len":8,
           "name":"field_0",
           "offset":0,
-          "type":"char[1016]"
+          "type":"char[8]"
         },
         {
-          "len":4,
-          "name":"adjacent_edge_count",
-          "offset":1016,
-          "type":"int"
-        },
-        {
-          "len":200,
-          "name":"adjacent_edge_indices",
-          "offset":1020,
-          "type":"int[50]"
+          "len":64,
+          "name":"texture_filename",
+          "offset":8,
+          "type":"char[64]"
         }
       ],
       "importable":true,
-      "len":1220,
-      "name":"SLodVert",
+      "len":72,
+      "name":"SLodSubmesh",
       "pack":false,
       "type":"struct"
     },
@@ -44095,6 +44599,42 @@
       "desc":"",
       "fields":[
         {
+          "len":4,
+          "name":"r",
+          "offset":0,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"g",
+          "offset":4,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"b",
+          "offset":8,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"intensity",
+          "offset":12,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"SPaletteEntry",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":100,
           "name":"field_0",
           "offset":0,
@@ -44935,14 +45475,20 @@
           "type":"float"
         },
         {
-          "len":128,
+          "len":64,
           "name":"vertex_indices",
           "offset":184,
-          "type":"uint[32]"
+          "type":"uint[16]"
         },
         {
           "len":64,
-          "name":"uv_coordinates",
+          "name":"uv_u",
+          "offset":248,
+          "type":"float[16]"
+        },
+        {
+          "len":64,
+          "name":"uv_v",
           "offset":312,
           "type":"float[16]"
         },
@@ -45205,6 +45751,30 @@
       "desc":"",
       "fields":[
         {
+          "len":16384,
+          "name":"cell_start_indices",
+          "offset":0,
+          "type":"int[16][16][16]"
+        },
+        {
+          "len":4,
+          "name":"triangle_count",
+          "offset":16384,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":16388,
+      "name":"SSpatialGrid",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":4,
           "name":"child1",
           "offset":0,
@@ -45304,6 +45874,42 @@
       "importable":true,
       "len":8,
       "name":"SStereoGains",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":24,
+          "name":"position",
+          "offset":0,
+          "type":"CVector3d"
+        },
+        {
+          "len":24,
+          "name":"field_24",
+          "offset":24,
+          "type":"char[24]"
+        },
+        {
+          "len":4,
+          "name":"flags",
+          "offset":48,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"field_52",
+          "offset":52,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":56,
+      "name":"SSuperOptVertex",
       "pack":false,
       "type":"struct"
     },

@@ -31,14 +31,6 @@ undefined staticInit();
 // Address: 00600002
 undefined FUN_00600002();
 
-// Original: crt_unknown.c_FUN_006008f0
-// Address: 006008f0
-undefined FUN_006008f0();
-
-// Original: crt_unknown.c_FUN_00600940
-// Address: 00600940
-undefined FUN_00600940();
-
 // Original: crt_unknown.c_FUN_00600990
 // Address: 00600990
 undefined FUN_00600990();
@@ -46,10 +38,6 @@ undefined FUN_00600990();
 // Original: crt_unknown.c_FUN_00600a64
 // Address: 00600a64
 undefined FUN_00600a64();
-
-// Original: crt_unknown.c_FUN_00600ad0
-// Address: 00600ad0
-undefined FUN_00600ad0();
 
 // Original: crt_unknown.c_FUN_00600c80
 // Address: 00600c80
@@ -66,10 +54,6 @@ undefined AnotherFunctorCall2();
 // Original: crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94
 // Address: 00601a94
 undefined MultipleDoNothingCalls();
-
-// Original: crt_unknown.c_FUN_006021c0
-// Address: 006021c0
-undefined FUN_006021c0();
 
 // Original: crt_unknown.c_staticInit_FUN_0060240e
 // Address: 0060240e

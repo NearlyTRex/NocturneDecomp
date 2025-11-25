@@ -115,14 +115,14 @@ void core_dracbrid_cpp_FUN_004864c0
           pSVar7->field1_0x20[3].y = local_2c;
           pSVar7->field1_0x20[3].z = local_28;
         }
-        core_stairs_cpp_FUN_005b90a0();
-        puVar5 = (undefined4 *)core_stairs_cpp_FUN_005b92d0();
+        core_spline_cpp_FUN_005b90a0();
+        puVar5 = (undefined4 *)core_spline_cpp_FUN_005b92d0();
         if (pSVar7->field0_0x0 + 4 != (char *)puVar5) {
           *(undefined4 *)(pSVar7->field0_0x0 + 4) = *puVar5;
           *(undefined4 *)(pSVar7->field0_0x0 + 8) = puVar5[1];
           *(undefined4 *)(pSVar7->field0_0x0 + 0xc) = puVar5[2];
         }
-        puVar5 = (undefined4 *)core_stairs_cpp_FUN_005b9490();
+        puVar5 = (undefined4 *)core_spline_cpp_FUN_005b9490();
         if (pSVar7->field0_0x0 + 0x10 != (char *)puVar5) {
           *(undefined4 *)(pSVar7->field0_0x0 + 0x10) = *puVar5;
           *(undefined4 *)(pSVar7->field0_0x0 + 0x14) = puVar5[1];

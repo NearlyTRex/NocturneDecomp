@@ -1267,9 +1267,11 @@ joined_r0x0055f6da:
                                                           core_script_cpp_FUN_00567d00();
                                                 core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                                                           (&local_188,pCVar13);
-                                                core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                                                          (&local_188,local_13c,&local_154);
-                                                core_actor_cpp_FUN_00410360();
+                                                pCVar13 = 
+                                                  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+                                                            (&local_188,local_13c,&local_154);
+                                                core_actor_cpp_copyVector_FUN_00410360
+                                                          (&local_154,pCVar13);
                                               }
                                             }
                                             if (*local_11c != 0x29) {

@@ -6,9 +6,9 @@
 // Globals:
 //   void* switchdataD_00412e68 = 004133c2
 //   TerminatedCString s_s_confused_while_walking_00614ff9
-//   undefined4 DAT_00615029
-//   undefined4 DAT_00615031
-//   undefined4 DAT_00615039
+//   double DOUBLE_00615029 = 12.5663706140000
+//   double DOUBLE_00615031 = 0.333333333333333
+//   double DOUBLE_00615039 = 32
 //   SMRGLTextureBasic DAT_0066e460
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   CEventList* g_CEventListPtr = 02d05310
@@ -46,7 +46,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr)
 
@@ -121,11 +120,11 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr)
   }
   pCVar2 = g_CGamePtr;
   *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0x2c) =
-       in_stack_00000018 * (float)_DAT_00615029;
+       in_stack_00000018 * (float)DOUBLE_00615029;
   if (pCVar2->letterbox_mode != 0) {
     *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0x2c) =
          *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0x2c) *
-         (float)_DAT_00615031;
+         (float)DOUBLE_00615031;
   }
   fVar9 = (float)(this_ptr->field0_0x0).field1_0xbe24 - in_stack_00000018;
   (this_ptr->field0_0x0).field1_0xbe24 = (int)fVar9;
@@ -255,7 +254,7 @@ LAB_0041300c:
   }
 switchD_0041345d_default:
   pCVar4 = &(this_ptr->field0_0x0).base_character.model.accumulated_root_motion;
-  fVar9 = (float)_DAT_00615039;
+  fVar9 = (float)DOUBLE_00615039;
   local_50 = pCVar4->x;
   local_4c = (this_ptr->field0_0x0).base_character.model.accumulated_root_motion.y;
   local_48 = (this_ptr->field0_0x0).base_character.model.accumulated_root_motion.z;

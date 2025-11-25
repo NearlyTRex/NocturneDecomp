@@ -4,9 +4,9 @@
 // Convention: __cdecl
 // Signature: void shape_meshlod.cpp_CLodMesh_free_FUN_00515970(CLodMesh * this_ptr)
 // Cross-references:
-//   shape_meshlod.cpp_CLodMesh_FUN_0051b080 (0051b080) at 0051b090 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0 (00515ac0) at 00515ac9 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950 (00515950) at 00515956 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080 (0051b080) at 0051b090 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_shape_meshlod_cpp_0063734d
 //   TerminatedCString s_shape_meshlod_cpp_00637362
@@ -23,8 +23,8 @@
 //   crt_memory.c_free_FUN_005fe659
 //   shape_memdbg.cpp_debugFree_FUN_0050f210
 //   shape_memdbg.cpp_debugFree_FUN_0050f460
+//   shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870
 //   shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950
-//   shape_meshlod.cpp_CLodMesh_FUN_0051b870
 //   shape_meshlod.cpp_CLodMesh_init_FUN_00515880
 
 #include "nocturne.h"
@@ -34,38 +34,37 @@ void __cdecl shape_meshlod_cpp_CLodMesh_free_FUN_00515970(CLodMesh *this_ptr)
 {
   CLodMesh *ptr;
   
-  shape_meshlod_cpp_CLodMesh_FUN_0051b870(this_ptr);
-  if (this_ptr->vertex_data != (SLodVert *)0x0) {
+  shape_meshlod_cpp_CLodMesh_closePrecomputeFile_FUN_0051b870(this_ptr);
+  if (this_ptr->vertex_data != (CLodVert *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
               (this_ptr->vertex_data,"..\\shape\\meshlod.cpp",0x217);
   }
-  if (this_ptr->triangle_data != (SLodTriangle *)0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460
-              (this_ptr->triangle_data,"..\\shape\\meshlod.cpp",0x218);
+  if (this_ptr->tri_data != (CLodFace *)0x0) {
+    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->tri_data,"..\\shape\\meshlod.cpp",0x218);
   }
-  if (this_ptr->edges_ptr != (SLodEdge *)0x0) {
+  if (this_ptr->edges_ptr != (CLodEdge *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->edges_ptr,"..\\shape\\meshlod.cpp",0x219);
   }
-  if (this_ptr->field19_0x58 != (void *)0x0) {
+  if (this_ptr->spatial_grid_data != (int *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
-              (this_ptr->field19_0x58,"..\\shape\\meshlod.cpp",0x21a);
+              (this_ptr->spatial_grid_data,"..\\shape\\meshlod.cpp",0x21a);
   }
-  if (this_ptr->field18_0x54 != (void *)0x0) {
+  if (this_ptr->spatial_grid_ptr != (SSpatialGrid *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
-              (this_ptr->field18_0x54,"..\\shape\\meshlod.cpp",0x21b);
+              (this_ptr->spatial_grid_ptr,"..\\shape\\meshlod.cpp",0x21b);
   }
-  if (this_ptr->lod_levels_ptr != (void *)0x0) {
+  if (this_ptr->lod_levels_ptr != (CLodEdge *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
               (this_ptr->lod_levels_ptr,"..\\shape\\meshlod.cpp",0x21c);
   }
-  if (this_ptr->submesh_data != (void *)0x0) {
+  if (this_ptr->submesh_data != (SLodSubmesh *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
               (this_ptr->submesh_data,"..\\shape\\meshlod.cpp",0x21d);
   }
   g_CurrentDebugLine = 0x21f;
   g_CurrentDebugFilename = "..\\shape\\meshlod.cpp";
-  if (this_ptr->sample_points_ptr != (void *)0x0) {
-    crt_memory_c_free_FUN_005fe659((void *)((int)this_ptr->sample_points_ptr + -4));
+  if (this_ptr->sample_points_ptr != (SLodSamplePoint *)0x0) {
+    crt_memory_c_free_FUN_005fe659(&this_ptr->sample_points_ptr[-1].weight);
   }
   g_CurrentDebugLine = 0x220;
   g_CurrentDebugFilename = "..\\shape\\meshlod.cpp";
@@ -89,7 +88,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_free_FUN_00515970(CLodMesh *this_ptr)
 // 00515974: MOV EBX,dword ptr [ESP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 00515978: PUSH EBX
-// 00515979: CALL shape_meshlod.cpp_CLodMesh_FUN_0051b870
+// 00515979: CALL shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870
 //   XREF to: 0051b870 (UNCONDITIONAL_CALL)
 // 0051597e: MOV EDX,dword ptr [EBX + 0x4]
 // 00515981: ADD ESP,0x4

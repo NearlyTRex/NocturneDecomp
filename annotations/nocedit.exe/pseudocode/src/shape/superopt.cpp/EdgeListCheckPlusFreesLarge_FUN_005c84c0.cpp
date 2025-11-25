@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0()
 // Cross-references:
-//   shape_superopt.cpp_SplitPolygonToConvexButContinuing_FUN_005d7690 (005d7690) at 005d76aa [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_COptimize_FUN_005d7690 (005d7690) at 005d76aa [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_memory.c_free_FUN_005fe659
 //   crt_memory.c_malloc_FUN_006021da
@@ -15,8 +15,6 @@
 //   shape_superopt.cpp_FUN_005c9aa0
 
 #include "nocturne.h"
-
-/* Signature: undefined1 shape_superopt.cpp_EdgeListCheckPlusFreesLarge(undefined4 param_1) */
 
 undefined1 * shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
 

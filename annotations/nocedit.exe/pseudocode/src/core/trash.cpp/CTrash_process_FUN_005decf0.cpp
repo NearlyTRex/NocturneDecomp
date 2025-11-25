@@ -9,9 +9,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
 
 {
@@ -132,21 +129,21 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   }
   pcVar8 = this_ptr->field4_0x2e0 + 0x38;
   local_8c = (*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc0) - *(float *)pcVar8) *
-             _DAT_0065559e;
+             FLOAT_0065559e;
   local_88 = (*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc4) -
-             *(float *)(this_ptr->field4_0x2e0 + 0x3c)) * _DAT_0065559e;
+             *(float *)(this_ptr->field4_0x2e0 + 0x3c)) * FLOAT_0065559e;
   fStack_84 = (*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc8) -
-              *(float *)(this_ptr->field4_0x2e0 + 0x40)) * _DAT_0065559e;
+              *(float *)(this_ptr->field4_0x2e0 + 0x40)) * FLOAT_0065559e;
   pCVar7 = (CVector3f *)(this_ptr->field4_0x2e0 + 0x20);
   *(float *)pcVar8 = *(float *)pcVar8 + local_8c;
   *(float *)(this_ptr->field4_0x2e0 + 0x3c) = *(float *)(this_ptr->field4_0x2e0 + 0x3c) + local_88;
   *(float *)(this_ptr->field4_0x2e0 + 0x40) = *(float *)(this_ptr->field4_0x2e0 + 0x40) + fStack_84;
   local_74 = *(float *)pcVar8 - pCVar7->x;
   local_70 = *(float *)(this_ptr->field4_0x2e0 + 0x3c) - *(float *)(this_ptr->field4_0x2e0 + 0x24);
-  local_20 = local_74 * _DAT_006555a2;
+  local_20 = local_74 * FLOAT_006555a2;
   fStack_6c = *(float *)(this_ptr->field4_0x2e0 + 0x40) - *(float *)(this_ptr->field4_0x2e0 + 0x28);
-  local_1c = local_70 * _DAT_006555a2;
-  local_18 = fStack_6c * _DAT_006555a2;
+  local_1c = local_70 * FLOAT_006555a2;
+  local_18 = fStack_6c * FLOAT_006555a2;
   fVar6 = *(float *)(this_ptr->field4_0x2e0 + 0x24);
   pCVar7->x = pCVar7->x + local_20;
   *(float *)(this_ptr->field4_0x2e0 + 0x24) = fVar6 + local_1c;
@@ -168,13 +165,13 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   local_24 = local_b4;
   pCVar7 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                      (&this_ptr->base_actor,local_50.m,pCVar7);
-  local_7c = pCVar7->x * _DAT_006555a6;
-  local_78 = pCVar7->y * _DAT_006555a6;
-  local_74 = _DAT_006555a6 * pCVar7->z;
+  local_7c = pCVar7->x * FLOAT_006555a6;
+  local_78 = pCVar7->y * FLOAT_006555a6;
+  local_74 = FLOAT_006555a6 * pCVar7->z;
   pcVar1 = this_ptr->field4_0x2e0 + 0x14;
-  fVar6 = *(float *)(this_ptr->field4_0x2e0 + 0x18) * _DAT_006555aa;
-  fVar2 = *(float *)(this_ptr->field4_0x2e0 + 0x1c) * _DAT_006555aa;
-  *(float *)pcVar1 = *(float *)pcVar1 * _DAT_006555aa;
+  fVar6 = *(float *)(this_ptr->field4_0x2e0 + 0x18) * FLOAT_006555aa;
+  fVar2 = *(float *)(this_ptr->field4_0x2e0 + 0x1c) * FLOAT_006555aa;
+  *(float *)pcVar1 = *(float *)pcVar1 * FLOAT_006555aa;
   *(float *)(this_ptr->field4_0x2e0 + 0x18) = fVar6;
   *(float *)(this_ptr->field4_0x2e0 + 0x1c) = fVar2;
   *(float *)pcVar1 = *(float *)pcVar1 + local_7c;
@@ -190,7 +187,7 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   fVar6 = SQRT(*(float *)(this_ptr->field4_0x2e0 + 0x1c) * *(float *)(this_ptr->field4_0x2e0 + 0x1c)
                + *(float *)pcVar1 * *(float *)pcVar1 +
                  *(float *)(this_ptr->field4_0x2e0 + 0x18) *
-                 *(float *)(this_ptr->field4_0x2e0 + 0x18)) * (float)_DAT_006555ae;
+                 *(float *)(this_ptr->field4_0x2e0 + 0x18)) * (float)DOUBLE_006555ae;
   if (1.0 < fVar6) {
     fVar6 = 1.0 / fVar6;
     *(float *)pcVar1 = *(float *)pcVar1 * fVar6;
@@ -224,13 +221,13 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   fStack00000010 =
        core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                  (g_CDemonSetPtr,&position->position,
-                  *(float *)(this_ptr->field4_0x2e0 + 0x30) * (float)_DAT_006555b6);
+                  *(float *)(this_ptr->field4_0x2e0 + 0x30) * (float)DOUBLE_006555b6);
   if (fStack00000010 <= (this_ptr->base_actor).location.position.y) {
     if (!bVar3) goto LAB_005df3d0;
   }
   else {
     fVar6 = *(float *)(this_ptr->field4_0x2e0 + 0x30);
-    fVar2 = (float)_DAT_006555be;
+    fVar2 = (float)DOUBLE_006555be;
     (this_ptr->base_actor).location.position.y = fStack00000010;
     if (fVar6 * fVar2 + local_94 < (this_ptr->base_actor).location.position.y) {
       (position->position).x = local_98;
@@ -238,10 +235,10 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
       (this_ptr->base_actor).location.position.z = local_90;
     }
   }
-  fVar6 = *(float *)(this_ptr->field4_0x2e0 + 0x18) * (float)"?333?Model file (.kfm)"._1_4_;
-  fVar2 = *(float *)(this_ptr->field4_0x2e0 + 0x1c) * (float)"?333?Model file (.kfm)"._1_4_;
+  fVar6 = *(float *)(this_ptr->field4_0x2e0 + 0x18) * FLOAT_006555c6;
+  fVar2 = *(float *)(this_ptr->field4_0x2e0 + 0x1c) * FLOAT_006555c6;
   *(float *)(this_ptr->field4_0x2e0 + 0x14) =
-       *(float *)(this_ptr->field4_0x2e0 + 0x14) * (float)"?333?Model file (.kfm)"._1_4_;
+       *(float *)(this_ptr->field4_0x2e0 + 0x14) * FLOAT_006555c6;
   *(float *)(this_ptr->field4_0x2e0 + 0x18) = fVar6;
   *(float *)(this_ptr->field4_0x2e0 + 0x1c) = fVar2;
 LAB_005df3d0:

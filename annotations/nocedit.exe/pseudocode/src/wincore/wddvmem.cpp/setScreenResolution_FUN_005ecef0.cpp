@@ -9,7 +9,7 @@
 //   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0 (004daed0) at 004daefb [UNCONDITIONAL_CALL]
 //   core_main.c_initializeGameSystems_FUN_00507a60 (00507a60) at 00507bee [UNCONDITIONAL_CALL]
 //   engine_2d.c_initGraphicsSystem_FUN_00401010 (00401010) at 00401047 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051ed60 (0051ed60) at 0051ed6f [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_testLodGeneration_FUN_0051ed60 (0051ed60) at 0051ed6f [UNCONDITIONAL_CALL]
 //   wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005ed4b0 (005ed4b0) at 005ed571 [UNCONDITIONAL_CALL]
 //   wincore_wddvmem.cpp_resetGraphicsSystem_FUN_005ed2a0 (005ed2a0) at 005ed421 [UNCONDITIONAL_CALL]
 //   wincore_wddvmem.cpp_videoRestore_FUN_005edc80 (005edc80) at 005edd58 [UNCONDITIONAL_CALL]

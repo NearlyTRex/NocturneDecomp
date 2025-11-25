@@ -5,7 +5,7 @@
 // Signature: void shape_meshlod.cpp_staticInit_FUN_00514f70(void)
 // Globals:
 //   WatcomTypeInfo g_CVectorTypeInfo
-//   CVector3f[400] CVector3f_ARRAY_02f313f0
+//   CVector3f[400] g_SamplePointArray
 // Function calls:
 //   crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667
 
@@ -15,7 +15,7 @@ void __cdecl shape_meshlod_cpp_staticInit_FUN_00514f70(void)
 
 {
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-            (CVector3f_ARRAY_02f313f0,400,&g_CVectorTypeInfo);
+            (g_SamplePointArray,400,&g_CVectorTypeInfo);
   return;
 }
 

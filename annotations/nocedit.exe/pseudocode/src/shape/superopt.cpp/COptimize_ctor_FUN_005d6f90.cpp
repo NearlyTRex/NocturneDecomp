@@ -6,30 +6,24 @@
 // Cross-references:
 //   shape_superopt.cpp_TriListSomething_FUN_005d77a0 (005d77a0) at 005d7c38 [UNCONDITIONAL_CALL]
 // Globals:
-//   void* PTR_shape_superopt.cpp_FUN_005d7000_00663c44 = 005d7000
+//   void* g_COptimizeVTable = 005d7000
 // Function calls:
+//   shape_superopt.cpp_COptimize_FUN_005d7000
 //   shape_superopt.cpp_FUN_005d2230
-//   shape_superopt.cpp_FUN_005d7000
 
 #include "nocturne.h"
 
 COptimize * __cdecl shape_superopt_cpp_COptimize_ctor_FUN_005d6f90(COptimize *this_ptr)
 
 {
-  COptimize *pCVar1;
+  COptimize *this_ptr_00;
   
-  pCVar1 = (COptimize *)shape_superopt_cpp_FUN_005d2230();
-  *(void ***)(pCVar1->field0_0x0 + 0x40) = &PTR_shape_superopt_cpp_FUN_005d7000_00663c44;
-  pCVar1->field0_0x0[0x3c] = '\0';
-  pCVar1->field0_0x0[0x3d] = '\0';
-  pCVar1->field0_0x0[0x3e] = '\0';
-  pCVar1->field0_0x0[0x3f] = '\0';
-  pCVar1->field0_0x0[0x38] = '\0';
-  pCVar1->field0_0x0[0x39] = '\0';
-  pCVar1->field0_0x0[0x3a] = '\0';
-  pCVar1->field0_0x0[0x3b] = '\0';
-  shape_superopt_cpp_FUN_005d7000();
-  return pCVar1;
+  this_ptr_00 = (COptimize *)shape_superopt_cpp_FUN_005d2230();
+  this_ptr_00->vtable = &g_COptimizeVTable;
+  this_ptr_00->field3_0x3c = 0;
+  this_ptr_00->field2_0x38 = 0;
+  shape_superopt_cpp_COptimize_FUN_005d7000(this_ptr_00);
+  return this_ptr_00;
 }
 
 
@@ -50,7 +44,7 @@ COptimize * __cdecl shape_superopt_cpp_COptimize_ctor_FUN_005d6f90(COptimize *th
 // 005d6fb0: PUSH EAX
 // 005d6fb1: MOV EBX,EAX
 // 005d6fb3: MOV dword ptr [EAX + 0x38],0x0
-// 005d6fba: CALL shape_superopt.cpp_FUN_005d7000
+// 005d6fba: CALL shape_superopt.cpp_COptimize_FUN_005d7000
 //   XREF to: 005d7000 (UNCONDITIONAL_CALL)
 // 005d6fbf: ADD ESP,0x4
 // 005d6fc2: MOV EAX,EBX

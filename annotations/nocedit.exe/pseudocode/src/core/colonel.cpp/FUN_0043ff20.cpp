@@ -6,16 +6,16 @@
 // Cross-references:
 //   core_colonel.cpp_FUN_0043fa00 (0043fa00) at 0043fa7b [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00618cf1
-//   undefined4 DAT_00618cf9
-//   undefined4 DAT_00618d01
-//   undefined4 DAT_00618d09
-//   undefined4 DAT_00618d11
-//   undefined4 DAT_00618d19
-//   undefined4 DAT_00618d21
-//   undefined4 DAT_00618d29
-//   undefined4 DAT_00618d31
-//   undefined4 DAT_00618d39
+//   float FLOAT_00618cf1 = 20
+//   double DOUBLE_00618cf9 = 20
+//   double DOUBLE_00618d01 = 6
+//   double DOUBLE_00618d09 = 0.318309886192889
+//   double DOUBLE_00618d11 = 4
+//   double DOUBLE_00618d19 = 10
+//   double DOUBLE_00618d21 = -0.25
+//   double DOUBLE_00618d29 = 0.25
+//   double DOUBLE_00618d31 = 3.14159265350000
+//   double DOUBLE_00618d39 = -3.14159265350000
 //   CHero*[4] g_HeroActors
 //   int g_LocalHeroIndex
 // Function calls:
@@ -29,7 +29,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_hero_colonel.cpp_FUN_0043ff20(undefined4 param_1, undefined4
    param_2) */
 
@@ -81,10 +80,10 @@ void core_colonel_cpp_FUN_0043ff20(void)
          (pCVar2->base_character).base_actor.location.position.z;
     local_28 = SQRT((float)local_4c._4_4_ * (float)local_4c._4_4_ +
                     local_50 * local_50 + (float)local_4c._0_4_ * (float)local_4c._0_4_);
-    if ((((*(int *)(in_stack_00000004 + 130000) == 3) || (local_28 < _DAT_00618cf1)) &&
+    if ((((*(int *)(in_stack_00000004 + 130000) == 3) || (local_28 < FLOAT_00618cf1)) &&
         ((*(int *)(in_stack_00000004 + 130000) == 2 || (*(int *)(in_stack_00000004 + 130000) == 3)))
         ) && ((pCVar2 = (CHero *)core_hero_cpp_FUN_004f3960(), pCVar2 != (CHero *)0x0 &&
-              (local_80 < (float)_DAT_00618cf9)))) {
+              (local_80 < (float)DOUBLE_00618cf9)))) {
       bVar1 = true;
       pCVar7 = pCVar2;
     }
@@ -102,7 +101,7 @@ void core_colonel_cpp_FUN_0043ff20(void)
     local_28 = SQRT((float)local_4c._8_4_ * (float)local_4c._8_4_ +
                     (float)local_4c._0_4_ * (float)local_4c._0_4_ +
                     (float)local_4c._4_4_ * (float)local_4c._4_4_);
-    if ((float)_DAT_00618d01 <= local_28) {
+    if ((float)DOUBLE_00618d01 <= local_28) {
       this_ptr = (CPathMap *)0x0;
       if (!bVar1) {
         this_ptr = (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable)->
@@ -117,7 +116,7 @@ void core_colonel_cpp_FUN_0043ff20(void)
       if (iVar6 != 0) {
         fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (CStack_7c.z - *(float *)(in_stack_00000004 + 0x34));
-        fVar4 = fVar4 * (float)_DAT_00618d09 * (float)_DAT_00618d11;
+        fVar4 = fVar4 * (float)DOUBLE_00618d09 * (float)DOUBLE_00618d11;
         local_18 = -unaff_EDI;
         *(float *)(in_stack_00000004 + 0xbe50) = fVar4;
         if (fVar4 < local_18) {
@@ -126,7 +125,7 @@ void core_colonel_cpp_FUN_0043ff20(void)
         if (unaff_EDI < *(float *)(in_stack_00000004 + 0xbe50)) {
           *(float *)(in_stack_00000004 + 0xbe50) = unaff_EDI;
         }
-        if (((float)_DAT_00618d19 <= local_80) || (bVar1)) {
+        if (((float)DOUBLE_00618d19 <= local_80) || (bVar1)) {
           *(undefined4 *)(in_stack_00000004 + 0xbe34) = 1;
           *(undefined4 *)(in_stack_00000004 + 0xbe2c) = 1;
         }
@@ -157,7 +156,7 @@ void core_colonel_cpp_FUN_0043ff20(void)
                            (&CStack_34,(CVector3f *)local_4c);
         fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (pCVar3->y - *(float *)(in_stack_00000004 + 0x34));
-        fVar4 = fVar4 * (float)_DAT_00618d09 * (float)_DAT_00618d11;
+        fVar4 = fVar4 * (float)DOUBLE_00618d09 * (float)DOUBLE_00618d11;
         unaff_ESI = -unaff_EDI;
         *(float *)(in_stack_00000004 + 0xbe50) = fVar4;
         if (fVar4 < unaff_ESI) {
@@ -166,8 +165,8 @@ void core_colonel_cpp_FUN_0043ff20(void)
         if (unaff_EDI < *(float *)(in_stack_00000004 + 0xbe50)) {
           *(float *)(in_stack_00000004 + 0xbe50) = unaff_EDI;
         }
-        if ((((float)_DAT_00618d21 < *(float *)(in_stack_00000004 + 0xbe50)) &&
-            ((double)*(float *)(in_stack_00000004 + 0xbe50) < _DAT_00618d29)) &&
+        if ((((float)DOUBLE_00618d21 < *(float *)(in_stack_00000004 + 0xbe50)) &&
+            ((double)*(float *)(in_stack_00000004 + 0xbe50) < DOUBLE_00618d29)) &&
            (*(int *)(in_stack_00000004 + 0xbe38) != 0)) {
           *(undefined4 *)(in_stack_00000004 + 0xbe50) = 0;
         }
@@ -200,11 +199,11 @@ void core_colonel_cpp_FUN_0043ff20(void)
       CStack_34.z = -unaff_ESI;
     }
     CStack_7c.z = CStack_34.z - *(float *)(in_stack_00000004 + 0x1fbe0);
-    if (in_stack_00000008 * (float)_DAT_00618d31 < CStack_7c.z) {
-      CStack_7c.z = in_stack_00000008 * (float)_DAT_00618d31;
+    if (in_stack_00000008 * (float)DOUBLE_00618d31 < CStack_7c.z) {
+      CStack_7c.z = in_stack_00000008 * (float)DOUBLE_00618d31;
     }
-    if (CStack_7c.z < in_stack_00000008 * (float)_DAT_00618d39) {
-      CStack_7c.z = in_stack_00000008 * (float)_DAT_00618d39;
+    if (CStack_7c.z < in_stack_00000008 * (float)DOUBLE_00618d39) {
+      CStack_7c.z = in_stack_00000008 * (float)DOUBLE_00618d39;
     }
     *(float *)(in_stack_00000004 + 0x1fbe0) = *(float *)(in_stack_00000004 + 0x1fbe0) + CStack_7c.z;
   }

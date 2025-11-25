@@ -84,7 +84,7 @@
 //   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 (005a7e60) at 005a7e97 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_logSoundError_FUN_005adba0 (005adba0) at 005adbeb [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\engine\console.cpp_00618de9
+//   TerminatedCString s_engine_console_cpp_00618de9
 //   TerminatedCString s_at_00618dff
 //   TerminatedCString s_s_00618e02
 //   TerminatedCString s_engine_console_cpp_00618e05
@@ -132,8 +132,8 @@ void __cdecl engine_console_cpp_CConsole_printf_FUN_00441890(CConsole *this_ptr,
   engine_console_cpp_CConsole_writeChar_FUN_00441970(this_ptr,'\0');
   if (this_ptr->fileLoggingEnabled != 0) {
     file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     ("console.txt",(char *)0x0,"at",
-                      "?..\\engine\\console.cpp" + 1,0x4a);
+                     ("console.txt",(char *)0x0,"at","..\\engine\\console.cpp"
+                      ,0x4a);
     if (file != (FILE *)0x0) {
       crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s");
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\console.cpp",0x4d);

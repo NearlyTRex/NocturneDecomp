@@ -8,7 +8,7 @@
 //   core_turret.cpp_CTurret_FUN_005e2910 (005e2910) at 005e2929 [UNCONDITIONAL_CALL]
 // Globals:
 //   void* switchdataD_005e2b14 = 005e2bcd
-//   undefined4 s_..\core\turret.cpp_00656688
+//   TerminatedCString s_core_turret_cpp_00656688
 //   TerminatedCString s_CTurret_getCurFrame_inva_0065669b
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -42,7 +42,7 @@ float core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(void)
   case 4:
     break;
   default:
-    g_CurrentFilename = "@..\\core\\turret.cpp" + 1;
+    g_CurrentFilename = "..\\core\\turret.cpp";
     g_CurrentLineNumber = 0x1c1;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTurret::getCurFrame - invalid state");
   }

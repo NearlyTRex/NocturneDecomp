@@ -40,9 +40,9 @@
 //   undefined4 g_CDemonCameraInstance.base.position.z
 // Function calls:
 //   core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   core_stairs.cpp_FUN_005b90a0
-//   core_stairs.cpp_FUN_005b92d0
-//   core_stairs.cpp_FUN_005b9490
+//   core_spline.cpp_FUN_005b90a0
+//   core_spline.cpp_FUN_005b92d0
+//   core_spline.cpp_FUN_005b9490
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 //   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 
@@ -144,8 +144,8 @@ void core_dracbrid_cpp_FUN_004869a0(void)
             piVar4[0x13] = (int)local_2c;
           }
         }
-        core_stairs_cpp_FUN_005b90a0();
-        puVar8 = (undefined4 *)core_stairs_cpp_FUN_005b92d0();
+        core_spline_cpp_FUN_005b90a0();
+        puVar8 = (undefined4 *)core_spline_cpp_FUN_005b92d0();
         if ((undefined4 *)(iStack_14 + 4) != puVar8) {
           *(undefined4 *)(iStack_14 + 4) = *puVar8;
           *(undefined4 *)(iStack_14 + 8) = puVar8[1];
@@ -154,7 +154,7 @@ void core_dracbrid_cpp_FUN_004869a0(void)
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"%5.2f %5.2f %5.2f\n",(double)*(float *)(iStack_14 + 4),
                    (double)*(float *)(iStack_14 + 8));
-        puVar8 = (undefined4 *)core_stairs_cpp_FUN_005b9490();
+        puVar8 = (undefined4 *)core_spline_cpp_FUN_005b9490();
         if ((undefined4 *)((int)unaff_EDI + 0x10) != puVar8) {
           *(undefined4 *)((int)unaff_EDI + 0x10) = *puVar8;
           *(undefined4 *)((int)unaff_EDI + 0x14) = puVar8[1];
@@ -367,7 +367,7 @@ void core_dracbrid_cpp_FUN_004869a0(void)
 //   XREF to: 02c6d130 (READ)
 // 00486bb6: LEA EAX,[ESP + 0x8]
 // 00486bba: PUSH EAX
-// 00486bbb: CALL core_stairs.cpp_FUN_005b90a0
+// 00486bbb: CALL core_spline.cpp_FUN_005b90a0
 //   XREF to: 005b90a0 (UNCONDITIONAL_CALL)
 // 00486bc0: ADD ESP,0xc
 // 00486bc3: MOV EAX,dword ptr [ESP + 0x68]
@@ -387,7 +387,7 @@ void core_dracbrid_cpp_FUN_004869a0(void)
 // 00486bdd: PUSH EAX
 // 00486bde: LEA EAX,[ESP + 0x14]
 // 00486be2: PUSH EAX
-// 00486be3: CALL core_stairs.cpp_FUN_005b92d0
+// 00486be3: CALL core_spline.cpp_FUN_005b92d0
 //   XREF to: 005b92d0 (UNCONDITIONAL_CALL)
 // 00486be8: ADD ESP,0x18
 // 00486beb: MOV EBX,dword ptr [ESP + 0x68]
@@ -448,7 +448,7 @@ void core_dracbrid_cpp_FUN_004869a0(void)
 // 00486c5d: PUSH EAX
 // 00486c5e: LEA EAX,[ESP + 0x14]
 // 00486c62: PUSH EAX
-// 00486c63: CALL core_stairs.cpp_FUN_005b9490
+// 00486c63: CALL core_spline.cpp_FUN_005b9490
 //   XREF to: 005b9490 (UNCONDITIONAL_CALL)
 // 00486c68: ADD ESP,0x18
 // 00486c6b: MOV EBX,dword ptr [ESP + 0x68]

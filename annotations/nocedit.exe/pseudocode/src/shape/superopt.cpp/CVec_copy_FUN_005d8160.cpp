@@ -9,12 +9,12 @@
 CVec * __cdecl shape_superopt_cpp_CVec_copy_FUN_005d8160(CVec *this_ptr,CVec *other)
 
 {
-  *(undefined4 *)this_ptr->field0_0x0 = *(undefined4 *)other->field0_0x0;
-  *(undefined4 *)(this_ptr->field0_0x0 + 4) = *(undefined4 *)(other->field0_0x0 + 4);
-  *(undefined4 *)(this_ptr->field0_0x0 + 8) = *(undefined4 *)(other->field0_0x0 + 8);
-  *(undefined4 *)(this_ptr->field0_0x0 + 0xc) = *(undefined4 *)(other->field0_0x0 + 0xc);
-  *(undefined4 *)(this_ptr->field0_0x0 + 0x10) = *(undefined4 *)(other->field0_0x0 + 0x10);
-  *(undefined4 *)(this_ptr->field0_0x0 + 0x14) = *(undefined4 *)(other->field0_0x0 + 0x14);
+  this_ptr->field0_0x0 = other->field0_0x0;
+  this_ptr->field1_0x4 = other->field1_0x4;
+  this_ptr->field2_0x8 = other->field2_0x8;
+  this_ptr->field3_0xc = other->field3_0xc;
+  this_ptr->field4_0x10 = other->field4_0x10;
+  this_ptr->field5_0x14 = other->field5_0x14;
   return this_ptr;
 }
 

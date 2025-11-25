@@ -4,9 +4,9 @@
 // Convention: __cdecl
 // Signature: int shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0(CLodMesh * this_ptr, int vertex_idx_1, int vertex_idx_2, int create_if_missing)
 // Cross-references:
-//   shape_meshlod.cpp_CLodMesh_FUN_00517630 (00517630) at 00517655 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_00518490 (00518490) at 005184ac [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0 (00515ba0) at 00515c2d [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (00517630) at 00517655 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490 (00518490) at 005184ac [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_shape_meshlod_cpp_006374e0
 //   TerminatedCString s_shape_meshlod_cpp_006374f5
@@ -16,7 +16,7 @@
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   shape_memdbg.cpp_debugRealloc_FUN_0050f540
-//   shape_meshlod.cpp_addAdjacentEdgeToVertex_FUN_00515d90
+//   shape_meshlod.cpp_CLodVert_addAdjacentEdge_FUN_00515d90
 
 #include "nocturne.h"
 
@@ -25,7 +25,7 @@ shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
           (CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2,int create_if_missing)
 
 {
-  SLodEdge *pSVar1;
+  CLodEdge *pCVar1;
   int iVar2;
   int iVar3;
   
@@ -36,25 +36,25 @@ shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
   }
   iVar2 = 0;
   if (0 < this_ptr->edge_count) {
-    pSVar1 = this_ptr->edges_ptr;
+    pCVar1 = this_ptr->edges_ptr;
     do {
-      if (((pSVar1->deletion_flag == 0) && (iVar3 == pSVar1->vertex_idx_1)) &&
-         (vertex_idx_2 == pSVar1->vertex_idx_2)) {
+      if (((pCVar1->deletion_flag == 0) && (iVar3 == pCVar1->vertex_idx_1)) &&
+         (vertex_idx_2 == pCVar1->vertex_idx_2)) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      pSVar1 = pSVar1 + 1;
+      pCVar1 = pCVar1 + 1;
     } while (iVar2 < this_ptr->edge_count);
   }
   if (create_if_missing == 0) {
     return -1;
   }
-  pSVar1 = (SLodEdge *)
+  pCVar1 = (CLodEdge *)
            shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->edges_ptr,(this_ptr->edge_count + 1) * 0xf0,
                       "..\\shape\\meshlod.cpp",0x325);
-  this_ptr->edges_ptr = pSVar1;
-  if (pSVar1 == (SLodEdge *)0x0) {
+  this_ptr->edges_ptr = pCVar1;
+  if (pCVar1 == (CLodEdge *)0x0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
     g_CurrentLineNumber = 0x326;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
@@ -63,9 +63,9 @@ shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
   this_ptr->edges_ptr[this_ptr->edge_count].vertex_idx_2 = vertex_idx_2;
   this_ptr->edges_ptr[this_ptr->edge_count].deletion_flag = 0;
   this_ptr->edges_ptr[this_ptr->edge_count].adjacent_tri_count = 0;
-  shape_meshlod_cpp_addAdjacentEdgeToVertex_FUN_00515d90
+  shape_meshlod_cpp_CLodVert_addAdjacentEdge_FUN_00515d90
             (this_ptr->vertex_data + iVar3,this_ptr->edge_count);
-  shape_meshlod_cpp_addAdjacentEdgeToVertex_FUN_00515d90
+  shape_meshlod_cpp_CLodVert_addAdjacentEdge_FUN_00515d90
             (this_ptr->vertex_data + vertex_idx_2,this_ptr->edge_count);
   iVar3 = this_ptr->edge_count;
   this_ptr->edge_count = iVar3 + 1;
@@ -202,7 +202,7 @@ shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
 // 00515fd3: PUSH EDX
 // 00515fd4: ADD EAX,ESI
 // 00515fd6: PUSH EAX
-// 00515fd7: CALL shape_meshlod.cpp_addAdjacentEdgeToVertex_FUN_00515d90
+// 00515fd7: CALL shape_meshlod.cpp_CLodVert_addAdjacentEdge_FUN_00515d90
 //   XREF to: 00515d90 (UNCONDITIONAL_CALL)
 // 00515fdc: ADD ESP,0x8
 // 00515fdf: MOV ECX,dword ptr [EBX + 0x44]
@@ -210,7 +210,7 @@ shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
 // 00515fe5: PUSH ECX
 // 00515fe6: ADD EAX,EDI
 // 00515fe8: PUSH EAX
-// 00515fe9: CALL shape_meshlod.cpp_addAdjacentEdgeToVertex_FUN_00515d90
+// 00515fe9: CALL shape_meshlod.cpp_CLodVert_addAdjacentEdge_FUN_00515d90
 //   XREF to: 00515d90 (UNCONDITIONAL_CALL)
 // 00515fee: MOV EAX,dword ptr [EBX + 0x44]
 // 00515ff1: LEA EDX,[EAX + 0x1]

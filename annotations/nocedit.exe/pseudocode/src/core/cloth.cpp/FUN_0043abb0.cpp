@@ -6,9 +6,9 @@
 // Cross-references:
 //   core_cloth.cpp_FUN_0043ab80 (0043ab80) at 0043ab9e [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_006184a2
-//   undefined4 DAT_006184aa
-//   undefined4 DAT_006184b2
+//   double DOUBLE_006184a2 = 9999
+//   double DOUBLE_006184aa = 0.0100000000000000
+//   double DOUBLE_006184b2 = -1
 //   undefined4 DAT_0065bb3c
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 DAT_0326eed8
@@ -109,10 +109,10 @@ void core_cloth_cpp_FUN_0043abb0(void)
   float *local_1c;
   float local_14;
   
-  if ((float)_DAT_006184a2 <= in_stack_00000014) {
+  if ((float)DOUBLE_006184a2 <= in_stack_00000014) {
     in_stack_00000014 = -9999.0;
   }
-  if (in_stack_00000010 < (float)_DAT_006184aa) {
+  if (in_stack_00000010 < (float)DOUBLE_006184aa) {
     in_stack_00000010 = 0.01;
   }
   in_stack_00000004[0xff90] = 1.0 / in_stack_00000010;
@@ -218,7 +218,7 @@ void core_cloth_cpp_FUN_0043abb0(void)
   if (0.0 < local_14) {
     local_d4._8_4_ = 0.0;
   }
-  local_d4._8_4_ = (float)local_d4._8_4_ * (float)_DAT_006184b2;
+  local_d4._8_4_ = (float)local_d4._8_4_ * (float)DOUBLE_006184b2;
   local_d4._0_4_ = *(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc0) * (float)local_d4._8_4_;
   local_d4._4_4_ = *(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc4) * (float)local_d4._8_4_;
   local_d4._8_4_ = *(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc8) * (float)local_d4._8_4_;

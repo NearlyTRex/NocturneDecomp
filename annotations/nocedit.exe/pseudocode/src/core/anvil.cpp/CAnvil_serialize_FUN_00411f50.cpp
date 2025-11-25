@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_anvil.cpp_CAnvil_serialize_FUN_00411f50(CAnvil * this_ptr)
 // Globals:
-//   undefined4 s_modelName_00614d3b
+//   TerminatedCString s_modelName_00614d3b
 //   TerminatedCString s_dropCondition_00614d45
 //   TerminatedCString s_dropHeight_00614d53
 //   TerminatedCString s_triggered_00614d5e
@@ -23,7 +23,7 @@ void __cdecl core_anvil_cpp_CAnvil_serialize_FUN_00411f50(CAnvil *this_ptr)
 {
   core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
   core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
-            ((CKeyFramedModelInstance *)this_ptr->model_name,"@modelName" + 1);
+            ((CKeyFramedModelInstance *)this_ptr->model_name,"modelName");
   core_actor_cpp_serializeString_FUN_0040b5c0
             ((char **)this_ptr->drop_condition,"dropCondition");
   core_actor_cpp_serializeFloat_FUN_0040b770(&this_ptr->drop_height,"dropHeight");

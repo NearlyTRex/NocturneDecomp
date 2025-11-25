@@ -5,7 +5,7 @@
 // Signature: void shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools * this_ptr, CQuaternion4f * world_point, int line_length)
 // Cross-references:
 //   core_door.cpp_CDoor_renderOpaque_FUN_004807d0 (004807d0) at 00480946 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d65e [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (0051d520) at 0051d65e [UNCONDITIONAL_CALL]
 // Globals:
 //   float g_WorldToScreenScale2 = 256
 // Function calls:

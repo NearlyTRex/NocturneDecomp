@@ -6,13 +6,13 @@
 // Globals:
 //   void* switchdataD_0043f9e4 = 0043fce4
 //   TerminatedCString s_s_confused_while_walking_00618c8c
-//   undefined4 DAT_00618cb9
-//   undefined4 DAT_00618cc1
-//   undefined4 DAT_00618cc9
-//   undefined4 DAT_00618cd1
-//   undefined4 DAT_00618cd9
-//   undefined4 DAT_00618ce1
-//   undefined4 DAT_00618ce9
+//   double DOUBLE_00618cb9 = 12.5663706140000
+//   double DOUBLE_00618cc1 = 32
+//   double DOUBLE_00618cc9 = -1.57079632675000
+//   double DOUBLE_00618cd1 = 5.32864626443882E-315
+//   double DOUBLE_00618cd9 = 1.57079632675000
+//   float FLOAT_00618ce1 = -3.141593
+//   double DOUBLE_00618ce9 = 3.14159265350000
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   undefined4 DAT_0083b124
 //   CConsole g_ConsolePtr
@@ -44,7 +44,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_hero_colonel.cpp_FUN_0043fa00(undefined4 param_1, undefined4
    param_2) */
 
@@ -107,7 +106,7 @@ void core_colonel_cpp_FUN_0043fa00(void)
   if (*(int *)(in_stack_00000004[1].base_actor.actor_name + 4) == 2) {
     core_colonel_cpp_FUN_0043ff20();
   }
-  fVar7 = (float)_DAT_00618cb9;
+  fVar7 = (float)DOUBLE_00618cb9;
   *(float *)(in_stack_00000004->field2_0x240c + 0x28) =
        (in_stack_00000004->model).accumulated_root_motion.z;
   *(float *)(in_stack_00000004->field2_0x240c + 0x2c) = in_stack_00000008 * fVar7;
@@ -226,7 +225,7 @@ switchD_0043fe37_caseD_5:
   if (in_stack_00000004->grabbed_by == (CDemonActor *)0x0) {
     *(float *)(in_stack_00000004->field2_0x240c + 0x20) =
          *(float *)(in_stack_00000004->field2_0x240c + 0x20) -
-         in_stack_00000008 * (float)_DAT_00618cc1;
+         in_stack_00000008 * (float)DOUBLE_00618cc1;
     local_24 = *(float *)(in_stack_00000004->field2_0x240c + 0x1c) * in_stack_00000008;
     local_20 = *(float *)(in_stack_00000004->field2_0x240c + 0x20) * in_stack_00000008;
     local_1c = in_stack_00000008 * *(float *)(in_stack_00000004->field2_0x240c + 0x24);
@@ -262,13 +261,13 @@ switchD_0043fe37_caseD_5:
                           &(in_stack_00000004->grabbed_by->location).position);
       pCVar6 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(aCStack_3c,pCVar6);
       fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar6->y);
-      if (fVar7 < (float)_DAT_00618cc9) {
-        fVar7 = fVar7 + _DAT_00618cd1;
+      if (fVar7 < (float)DOUBLE_00618cc9) {
+        fVar7 = fVar7 + DOUBLE_00618cd1._0_4_;
       }
-      if ((float)_DAT_00618cd9 < fVar7) {
-        fVar7 = fVar7 + _DAT_00618ce1;
+      if ((float)DOUBLE_00618cd9 < fVar7) {
+        fVar7 = fVar7 + FLOAT_00618ce1;
       }
-      fVar3 = in_stack_00000008 * (float)_DAT_00618ce9;
+      fVar3 = in_stack_00000008 * (float)DOUBLE_00618ce9;
       if (fVar7 < -fVar3) {
         fVar7 = -fVar3;
       }

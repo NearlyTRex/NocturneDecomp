@@ -34,7 +34,7 @@
 //   shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40 (004a4d40) at 004a5046 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_draw3DBorder_FUN_004a58f0 (004a58f0) at 004a597f [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051dba2 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d588 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (0051d520) at 0051d588 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_ClipLeft
 //   int g_ClipTop

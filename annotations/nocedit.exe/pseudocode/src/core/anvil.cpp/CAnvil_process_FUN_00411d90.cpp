@@ -4,8 +4,8 @@
 // Convention: __cdecl
 // Signature: void core_anvil.cpp_CAnvil_process_FUN_00411d90(CAnvil * this_ptr)
 // Globals:
-//   undefined4 DAT_00614d2b
-//   undefined4 DAT_00614d33
+//   double DOUBLE_00614d2b = 32
+//   double DOUBLE_00614d33 = 6
 //   CEventList* g_CEventListPtr = 02d05310
 //   CEventList g_CEventListInstance
 //   CHero*[4] g_HeroActors
@@ -15,8 +15,6 @@
 //   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr)
 
@@ -48,7 +46,7 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr)
          this_ptr->drop_height + (this_ptr->base_actor).location.position.y;
   }
   if (this_ptr->triggered != 0) {
-    fVar2 = this_ptr->yvel - in_stack_0000000c * (float)_DAT_00614d2b;
+    fVar2 = this_ptr->yvel - in_stack_0000000c * (float)DOUBLE_00614d2b;
     this_ptr->yvel = fVar2;
     iVar3 = g_LocalHeroIndex;
     (this_ptr->base_actor).location.position.y = fVar2 + (this_ptr->base_actor).location.position.y;
@@ -60,7 +58,7 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr)
     }
     if ((this_ptr->base_actor).location.position.y <
         (g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.location.position.y +
-        (float)_DAT_00614d33) {
+        (float)DOUBLE_00614d33) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_44);
       local_44.damage_flags = 0x461c3f9a;
       local_44.attacker = (CDemonActor *)&DAT_00000008;

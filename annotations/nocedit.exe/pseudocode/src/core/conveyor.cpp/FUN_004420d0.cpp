@@ -4,12 +4,11 @@
 // Convention: unknown
 // Signature: undefined core_conveyor.cpp_FUN_004420d0()
 // Globals:
-//   undefined4 DAT_00618e7b
-//   undefined4 DAT_00618e83
+//   double DOUBLE_00618e7b = 0.5
+//   double DOUBLE_00618e83 = 0.100000000000000
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_conveyor.cpp_FUN_004420d0(undefined4 param_1, undefined4
    param_2) */
 
@@ -22,12 +21,12 @@ void core_conveyor_cpp_FUN_004420d0(void)
   float *in_stack_00000008;
   
   fVar1 = *(float *)(in_stack_00000004 + 0x72c);
-  fVar2 = (float)_DAT_00618e7b;
+  fVar2 = (float)DOUBLE_00618e7b;
   in_stack_00000008[1] = -0.1;
   *in_stack_00000008 = -fVar1 * fVar2;
   in_stack_00000008[2] = -*(float *)(in_stack_00000004 + 0x734) * fVar2;
   in_stack_00000008[3] = *(float *)(in_stack_00000004 + 0x72c) * fVar2;
-  in_stack_00000008[4] = *(float *)(in_stack_00000004 + 0x730) + (float)_DAT_00618e83;
+  in_stack_00000008[4] = *(float *)(in_stack_00000004 + 0x730) + (float)DOUBLE_00618e83;
   in_stack_00000008[5] = fVar2 * *(float *)(in_stack_00000004 + 0x734);
   return;
 }

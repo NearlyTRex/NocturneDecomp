@@ -4,7 +4,6 @@
 // Convention: __cdecl
 // Signature: void shape_design.c_calculatePolygonNormal_FUN_0045caa0(SShapeEditorPolygon * polygon)
 // Cross-references:
-//   shape_design.c_FUN_0045a320 (0045a320) at 0045a33b [UNCONDITIONAL_CALL]
 //   shape_design.c_calculateVertexNormals_FUN_0045be40 (0045be40) at 0045be75 [UNCONDITIONAL_CALL]
 //   shape_design.c_configureSpatialSplittingPlane_FUN_004617c0 (004617c0) at 0046190d [UNCONDITIONAL_CALL]
 //   shape_design.c_createPolygonFromVertexList_FUN_0045cc80 (0045cc80) at 0045cde2 [UNCONDITIONAL_CALL]
@@ -14,6 +13,7 @@
 //   shape_design.c_mergeAdjacentPolygons_FUN_00462b70 (00462b70) at 0046354f [UNCONDITIONAL_CALL]
 //   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 (00462190) at 00462888 [UNCONDITIONAL_CALL]
 //   shape_design.c_renderSinglePolygon_FUN_0045ce20 (0045ce20) at 0045ce91 [UNCONDITIONAL_CALL]
+//   shape_design.c_writePolygonModel_FUN_0045a320 (0045a320) at 0045a33b [UNCONDITIONAL_CALL]
 // Globals:
 //   SVertexData[20000] g_LoadedVertices
 //   undefined4 DAT_01626410

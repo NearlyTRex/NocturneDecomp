@@ -17,7 +17,7 @@
 //   TerminatedCString s_gEdFont_must_be_set_by_t_00622ec4
 //   TerminatedCString s_shape_edittool_cpp_0062348d
 //   TerminatedCString s_CEditorTools_paintWindow_006234a3
-//   undefined4 DAT_006234e0
+//   TerminatedCString s_j_006234e0
 //   CBitFont* g_EditorFont
 //   int g_WindowStackCount
 //   SWindow[5] g_WindowStack
@@ -121,7 +121,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
             (g_EditorFont,text,((iVar4 + iVar5) - iVar3) / 2,y_pos,color_mode,in_stack_00000018);
   iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,text);
   iVar4 = g_FontCharacterWidth + iVar4;
-  iVar5 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,&DAT_006234e0);
+  iVar5 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,"j");
   if (iVar4 < iVar5 + g_FontCharacterWidth) {
     iVar4 = iVar5 + g_FontCharacterWidth;
   }

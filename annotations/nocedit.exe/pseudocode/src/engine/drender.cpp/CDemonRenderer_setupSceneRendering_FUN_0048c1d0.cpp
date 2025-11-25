@@ -14,7 +14,7 @@
 //   core_set.cpp_FUN_00570af0 (00570af0) at 00570b28 [UNCONDITIONAL_CALL]
 //   core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70 (00574e70) at 00574ee3 [UNCONDITIONAL_CALL]
 //   core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310 (00580310) at 0058041b [UNCONDITIONAL_CALL]
-//   core_stairs.cpp_FUN_005b9a20 (005b9a20) at 005b9ae6 [UNCONDITIONAL_CALL]
+//   shape_spotview.cpp_CSpotView_FUN_005b9a20 (005b9a20) at 005b9ae6 [UNCONDITIONAL_CALL]
 // Function calls:
 //   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 //   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200

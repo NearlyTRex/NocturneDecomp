@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int shape_meshlod.cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420(CLodMesh * this_ptr, int vertex_index)
 // Cross-references:
-//   shape_meshlod.cpp_CLodMesh_FUN_00518490 (00518490) at 00518686 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490 (00518490) at 00518686 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

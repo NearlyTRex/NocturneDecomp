@@ -5,10 +5,10 @@
 // Signature: undefined core_tommygun.cpp_FUN_005ddb30()
 // Globals:
 //   TerminatedCString s_s_45_dry_wav_2_0_006554ad
-//   undefined4 DAT_006554cd
-//   undefined4 DAT_006554d1
-//   undefined4 DAT_006554d9
-//   undefined4 DAT_006554e1
+//   float FLOAT_006554cd = 0.1000000
+//   double DOUBLE_006554d1 = 2.5
+//   float FLOAT_006554d9 = -0.125
+//   double DOUBLE_006554e1 = 10
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 g_CCharacterClassInfo.name_hash
@@ -55,7 +55,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_weapon_tommygun.cpp_FUN_005ddb30(undefined4 param_1) */
 
 undefined4 core_tommygun_cpp_FUN_005ddb30(void)
@@ -110,7 +109,7 @@ undefined4 core_tommygun_cpp_FUN_005ddb30(void)
   }
   pCVar1 = in_stack_00000004->vtable;
   in_stack_00000004[2].orient_matrix.m[1].z =
-       in_stack_00000004[2].orient_matrix.m[1].z + _DAT_006554cd;
+       in_stack_00000004[2].orient_matrix.m[1].z + FLOAT_006554cd;
   pCVar2 = (CVector3f *)(*pCVar1[1].renderOpaque)(in_stack_00000004);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             (in_stack_00000004,(CVector3f *)auStack_78,pCVar2);
@@ -134,7 +133,7 @@ undefined4 core_tommygun_cpp_FUN_005ddb30(void)
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
             (in_stack_00000004,(CVector3f *)auStack_b8,(CVector3f *)auStack_ac);
   auStack_b8._0_4_ = fStack_64 + (float)auStack_ac._0_4_;
-  fStack_14 = (float)_DAT_006554d1 / in_stack_00000004[2].orient.heading;
+  fStack_14 = (float)DOUBLE_006554d1 / in_stack_00000004[2].orient.heading;
   CStack_38.z = (float)auStack_b8._4_4_ * fStack_14;
   fStack_2c = (float)auStack_b8._8_4_ * fStack_14;
   CStack_28.x = (float)auStack_ac._0_4_ * fStack_14;
@@ -225,7 +224,7 @@ undefined4 core_tommygun_cpp_FUN_005ddb30(void)
                     (g_CDemonSetPtr->collision_result_vec1).y;
       CStack_28.z = (g_CDemonSetPtr->collision_result_vec2).z -
                     (g_CDemonSetPtr->collision_result_vec1).z;
-      CStack_38.x = (float)_DAT_006554e1 /
+      CStack_38.x = (float)DOUBLE_006554e1 /
                     SQRT(CStack_28.z * CStack_28.z +
                          CStack_28.x * CStack_28.x + CStack_28.y * CStack_28.y);
       fStack_40 = CStack_28.x * CStack_38.x;
@@ -250,7 +249,7 @@ LAB_005ddd4e:
       if (*(int *)(in_stack_00000004[4].actor_name + 0x14) != 0) {
         fStack_40 = CStack_28.x;
         CStack_38.x = CStack_28.z;
-        fStack_3c = CStack_28.y + _DAT_006554d9;
+        fStack_3c = CStack_28.y + FLOAT_006554d9;
         core_fire_cpp_CFireEffect_FUN_004c7a60(g_CFireEffectPtr);
         CStack_a0.m[2].y = 5.0;
         CStack_a0.m[2].z = 6.0;

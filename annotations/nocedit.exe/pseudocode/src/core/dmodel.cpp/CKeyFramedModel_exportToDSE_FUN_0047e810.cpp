@@ -88,7 +88,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToDSE_FUN_0047e810(CKeyFramed
     iVar5 = 0;
     do {
       iVar7 = 0;
-      *(undefined4 *)((int)g_ModelPolygonData[0].uv_coordinates + iVar5 + 0x40) = 0;
+      *(undefined4 *)((int)g_ModelPolygonData[0].uv_v + iVar5 + 0x40) = 0;
       pcVar8 = g_ModelPolygonData[0].texture_name + iVar5 + -4;
       pcVar8[0] = '\x02';
       pcVar8[1] = '\0';
@@ -103,12 +103,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToDSE_FUN_0047e810(CKeyFramed
         do {
           *(undefined4 *)((int)g_ModelPolygonData[0].vertex_indices + iVar6) =
                *(undefined4 *)((int)this_ptr->poly_vert_list + iVar4 + local_14 + 0x18);
-          *(float *)((int)g_ModelPolygonData[0].vertex_indices + iVar6 + 0x40) =
+          *(float *)((int)g_ModelPolygonData[0].uv_u + iVar6) =
                (float)*(int *)((int)this_ptr->poly_vert_list + iVar4 + local_14 + 0x1c) * fVar2;
           iVar3 = iVar4 + local_14 + 0x20;
           iVar4 = iVar4 + 0xc;
           iVar7 = iVar7 + 1;
-          *(float *)((int)g_ModelPolygonData[0].uv_coordinates + iVar6) =
+          *(float *)((int)g_ModelPolygonData[0].uv_v + iVar6) =
                (float)*(int *)((int)this_ptr->poly_vert_list + iVar3) * fVar2;
           iVar6 = iVar6 + 4;
         } while (iVar7 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + -0x14));

@@ -22,7 +22,7 @@
 //   shape_design.c_getAtlasMapIndex_FUN_0046e030
 //   shape_design.c_getLastTextureProcessIndex_FUN_0046a860
 //   shape_design.c_getTextureName_FUN_0046e060
-//   shape_meshlod.cpp_CLodMesh_FUN_00518790
+//   shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790
 
 #include "nocturne.h"
 
@@ -32,71 +32,70 @@ void __cdecl shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(CLodMesh *th
   int iVar1;
   undefined4 extraout_EAX;
   undefined4 extraout_EAX_00;
+  char *texture_filename;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
   int iVar2;
   int *piVar3;
-  char *pcVar4;
-  char *pcVar5;
+  int *piVar4;
   BADSPACEBASE *in_ESP;
-  char *pcVar6;
+  int *piVar5;
   float10 in_ST0;
-  double dVar7;
-  char *pcStack_30;
+  double dVar6;
+  float fVar7;
   float local_2c [3];
   int local_20;
   float local_1c;
   float local_18;
   float local_14;
-  float fVar8;
   
   local_1c = 0.0;
   if (0 < this_ptr->tri_count) {
     local_20 = 0;
     do {
-      pcVar6 = this_ptr->triangle_data->field0_0x0 + local_20;
-      if ((*(int *)(pcVar6 + 0x40) == 0) && (-1 < *(int *)pcVar6)) {
+      piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);
+      if ((piVar5[0x10] == 0) && (-1 < *piVar5)) {
         iVar2 = shape_design_c_findTextureByFilename_FUN_0046dfc0
-                          ((char *)((int)this_ptr->submesh_data + *(int *)pcVar6 * 0x48 + 8));
+                          (this_ptr->submesh_data[*piVar5].texture_filename);
         if (iVar2 < 0) {
           g_CurrentLineNumber = 0x12c0;
           g_CurrentFilename = "..\\shape\\meshlod.cpp";
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("LodMesh::fixupAfterCram - texture %s not found in cram list.",
-                     (int)this_ptr->submesh_data + *(int *)pcVar6 * 0x48 + 8);
+                     this_ptr->submesh_data[*piVar5].texture_filename);
         }
-        local_14 = *(float *)(pcVar6 + 0x1c);
-        piVar3 = (int *)(pcVar6 + 8);
-        fVar8 = *(float *)(pcVar6 + 0x20);
+        local_14 = (float)piVar5[7];
+        piVar3 = piVar5 + 2;
+        fVar7 = (float)piVar5[8];
         local_20 = 0x40800000;
         do {
           if ((float)piVar3[7] < local_14) {
             local_14 = (float)piVar3[7];
           }
-          if ((float)piVar3[8] < fVar8) {
-            fVar8 = (float)piVar3[8];
+          if ((float)piVar3[8] < fVar7) {
+            fVar7 = (float)piVar3[8];
           }
           piVar3 = piVar3 + 2;
-        } while (piVar3 != (int *)(pcVar6 + 0x18));
-        dVar7 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
+        } while (piVar3 != piVar5 + 6);
+        dVar6 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
         local_18 = (float)((float10)(double)CONCAT44(extraout_EDX,extraout_EAX) *
                           (float10)DOUBLE_00637e1d);
-        dVar7 = crt_math_c_floor_FUN_005feb90(dVar7);
-        in_ST0 = (float10)dVar7;
+        dVar6 = crt_math_c_floor_FUN_005feb90(dVar6);
+        in_ST0 = (float10)dVar6;
         local_18 = (float)((float10)(double)CONCAT44(extraout_EDX_00,extraout_EAX_00) *
                           (float10)DOUBLE_00637e1d);
-        pcVar4 = pcVar6;
+        piVar3 = piVar5;
         do {
-          pcStack_30 = (char *)(*(float *)(pcVar4 + 0x1c) - local_1c);
-          local_2c[0] = *(float *)(pcVar4 + 0x20) - local_18;
-          shape_design_c_fixupCramUV_FUN_0046e090(iVar2,(float *)&pcStack_30,local_2c);
-          *(char **)(pcVar4 + 0x1c) = pcStack_30;
-          pcVar5 = pcVar4 + 8;
-          *(float *)(pcVar4 + 0x20) = local_2c[0];
-          pcVar4 = pcVar5;
-        } while (pcVar5 != pcVar6 + 0x18);
+          fVar7 = (float)piVar3[7] - local_1c;
+          local_2c[0] = (float)piVar3[8] - local_18;
+          shape_design_c_fixupCramUV_FUN_0046e090(iVar2,(float *)&stack0xffffffd0,local_2c);
+          piVar3[7] = (int)fVar7;
+          piVar4 = piVar3 + 2;
+          piVar3[8] = (int)local_2c[0];
+          piVar3 = piVar4;
+        } while (piVar4 != piVar5 + 6);
         iVar2 = shape_design_c_getAtlasMapIndex_FUN_0046e030(iVar2);
-        *(int *)pcVar6 = iVar2;
+        *piVar5 = iVar2;
       }
       local_20 = local_20 + 0x8c;
       local_1c = (float)((int)local_1c + 1);
@@ -107,9 +106,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(CLodMesh *th
   while( true ) {
     iVar1 = shape_design_c_getLastTextureProcessIndex_FUN_0046a860();
     if (iVar1 <= iVar2) break;
-    pcStack_30 = shape_design_c_getTextureName_FUN_0046e060(iVar2);
+    texture_filename = shape_design_c_getTextureName_FUN_0046e060(iVar2);
     iVar2 = iVar2 + 1;
-    shape_meshlod_cpp_CLodMesh_FUN_00518790(this_ptr);
+    shape_meshlod_cpp_CLodMesh_findOrAddSubmesh_FUN_00518790(this_ptr,texture_filename);
   }
   engine_texture_cpp_clearTextureCache_FUN_005dd8e0();
   return;
@@ -358,7 +357,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(CLodMesh *th
 // 0051bcb0: PUSH EAX
 // 0051bcb1: PUSH ESI
 // 0051bcb2: INC EBX
-// 0051bcb3: CALL shape_meshlod.cpp_CLodMesh_FUN_00518790
+// 0051bcb3: CALL shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790
 //   XREF to: 00518790 (UNCONDITIONAL_CALL)
 // 0051bcb8: ADD ESP,0x8
 // 0051bcbb: JMP 0x0051bb22

@@ -167,6 +167,10 @@ int closeAndDeallocateFile(FILE * file_handle, int close_flags);
 // Address: 00601fd0
 int fclose(FILE * file_handle, int force_close_flag);
 
+// Original: crt_stdio.c_fprintf_FUN_006021c0
+// Address: 006021c0
+void fprintf(FILE * stream, char * format, ...);
+
 // Original: crt_stdio.c_InitializeFileBuffer_FUN_006027e0
 // Address: 006027e0
 void InitializeFileBuffer(FILE * file);

@@ -4,19 +4,19 @@
 // Convention: __cdecl
 // Signature: CPoly * shape_superopt.cpp_CPoly_dtor_FUN_005cc660(CPoly * this_ptr)
 // Cross-references:
-//   shape_superopt.cpp_DeletingTJunctionsMaybe_FUN_005d47b0 (005d47b0) at 005d54c0 [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_FUN_005d2320 (005d2320) at 005d23fc [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_FUN_005d2410 (005d2410) at 005d24ed [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_FUN_005d2320 (005d2320) at 005d23fc [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_FUN_005d2410 (005d2410) at 005d24ed [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_FUN_005d47b0 (005d47b0) at 005d54c0 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_TriListSomething_FUN_005d77a0 (005d77a0) at 005d7bc5 [UNCONDITIONAL_CALL]
 // Globals:
-//   void* PTR_shape_superopt.cpp_FUN_005cc670_00663ad4 = 005cc670
+//   void* g_CPolyVTable = 005cc670
 
 #include "nocturne.h"
 
 CPoly * __cdecl shape_superopt_cpp_CPoly_dtor_FUN_005cc660(CPoly *this_ptr)
 
 {
-  *(void ***)(this_ptr->field0_0x0 + 100) = &PTR_shape_superopt_cpp_FUN_005cc670_00663ad4;
+  this_ptr->vtable = &g_CPolyVTable;
   return this_ptr;
 }
 

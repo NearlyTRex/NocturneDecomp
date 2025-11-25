@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_tvbat.cpp_CTVBat_FUN_005e5260(CTVBat * this_ptr)
 // Globals:
-//   undefined4 DAT_00656a6a
+//   double DOUBLE_00656a6a = 4
 //   CGame* g_CGamePtr = 02d81a9c
 //   CKeys* g_CKeysPtr = 02dcd7d4
 //   undefined4 g_CGameInstance.delta_time_float
@@ -13,8 +13,6 @@
 //   core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_tvbat_cpp_CTVBat_FUN_005e5260(CTVBat *this_ptr)
 
@@ -50,7 +48,7 @@ void __cdecl core_tvbat_cpp_CTVBat_FUN_005e5260(CTVBat *this_ptr)
     core_charactr_cpp_CCharacter_computePickupInLoop_FUN_0042f800((CCharacter *)this_ptr);
     return;
   }
-  fStack00000008 = g_CGamePtr->delta_time_float * (float)_DAT_00656a6a;
+  fStack00000008 = g_CGamePtr->delta_time_float * (float)DOUBLE_00656a6a;
   iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4b);
   if (iVar2 != 0) {
     this_ptr->max_distance = this_ptr->max_distance - in_stack_0000001c;

@@ -6,12 +6,12 @@
 // Cross-references:
 //   core_trigger.cpp_CTrigger_process_FUN_005dfac0 (005dfac0) at 005e0001 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_..\core\trigger.cpp_006557d8
+//   TerminatedCString s_core_trigger_cpp_006557d8
 //   TerminatedCString s_CTrigger_containsActor_i_006557ec
 //   TerminatedCString s_core_trigger_cpp_00655826
 //   TerminatedCString s_Hell_froze_0065583a
-//   undefined4 DAT_00655848
-//   undefined4 DAT_0065584c
+//   float FLOAT_00655848 = 0.5
+//   double DOUBLE_0065584c = 0.25
 //   undefined4 g_CCharacterClassInfo.name_hash
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
@@ -23,7 +23,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_trigger.cpp_CTrigger_containsActor(CTrigger* param_1,
    undefined4 param_2) */
 
@@ -52,10 +51,10 @@ core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0
     pCVar4 = (*param_6->vtable->getBoundingBox)(param_6,(CBoundingBox3D *)&stack0xffffff84);
     CStack_20.x = (pCVar4->min).x + (pCVar4->max).x;
     CStack_20.y = (pCVar4->min).y + (pCVar4->max).y;
-    CStack_44.max.x = CStack_20.x * _DAT_00655848;
-    CStack_44.max.y = CStack_20.y * _DAT_00655848;
+    CStack_44.max.x = CStack_20.x * FLOAT_00655848;
+    CStack_44.max.y = CStack_20.y * FLOAT_00655848;
     CStack_20.z = (pCVar4->min).z + (pCVar4->max).z;
-    CStack_44.max.z = CStack_20.z * _DAT_00655848;
+    CStack_44.max.z = CStack_20.z * FLOAT_00655848;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               (param_6,(CVector3f *)auStack_2c,&CStack_44.max);
     if (*(int *)(param_5[1].create_event + 0x48) != 0) {
@@ -88,7 +87,7 @@ core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0
       }
       else {
         if (*(int *)(param_5[1].actor_name + 0x18) != 1) {
-          g_CurrentFilename = "?..\\core\\trigger.cpp" + 1;
+          g_CurrentFilename = "..\\core\\trigger.cpp";
           g_CurrentLineNumber = 0x37d;
           core_main_c_displayErrorAndQuit_FUN_00506f10("CTrigger::containsActor - invalid trigger shape %d for %s");
           g_CurrentLineNumber = 899;
@@ -100,7 +99,7 @@ core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0
         if ((fStack_5c <= unaff_ESI) && (unaff_ESI <= fStack_50)) {
           if (unaff_EBP * unaff_EBP + unaff_EBX * unaff_EBX <=
               *(float *)(param_5[1].actor_name + 8) * *(float *)(param_5[1].actor_name + 0x10) *
-              (float)_DAT_0065584c) {
+              (float)DOUBLE_0065584c) {
             return 1;
           }
           return 0;

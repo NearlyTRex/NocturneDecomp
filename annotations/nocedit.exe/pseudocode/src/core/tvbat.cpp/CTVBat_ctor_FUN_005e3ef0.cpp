@@ -14,8 +14,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_005e3ef0(CTVBat *this_ptr)
 
 {
@@ -38,9 +36,9 @@ CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_005e3ef0(CTVBat *this_ptr)
   this_ptr_00[1].part_visibility_flags[6] = 0x40a00000;
   this_ptr_00[1].part_visibility_flags[5] = 0x41700000;
   fStack0000000c = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1);
-  this_ptr_00[1].part_visibility_flags[8] = (int)(fStack0000000c * _DAT_006568a6);
+  this_ptr_00[1].part_visibility_flags[8] = (int)(fStack0000000c * DAT_006568a6);
   fStack00000010 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1);
-  fStack0000000c = fStack00000010 * _DAT_006568aa;
+  fStack0000000c = fStack00000010 * DAT_006568aa;
   this_ptr_00[1].part_visibility_flags[7] = (int)fStack0000000c;
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
   this_ptr_00[1].part_visibility_flags[10] = 0;

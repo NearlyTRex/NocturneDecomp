@@ -13,20 +13,21 @@
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 //   core_skeledit.cpp_FUN_0058a0f0
 //   crt_stack.c_stack_probe_FUN_005ff9f3
-//   shape_meshlod.cpp_FUN_0051b770
+//   shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770
 
 #include "nocturne.h"
 
 void core_skeledit_cpp_FUN_00589bb0(void)
 
 {
-  int iVar1;
-  int in_stack_0000000c;
+  FILE *pFVar1;
+  CLodMesh *in_stack_0000000c;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x18);
-  iVar1 = shape_meshlod_cpp_FUN_0051b770();
-  *(int *)(in_stack_0000000c + 0x38) = iVar1;
-  if (iVar1 == 0) {
+  pFVar1 = shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770
+                     (in_stack_0000000c,"wt");
+  in_stack_0000000c->precompute_file = pFVar1;
+  if (pFVar1 == (FILE *)0x0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x179;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create mesh precompute file.");
@@ -49,7 +50,7 @@ void core_skeledit_cpp_FUN_00589bb0(void)
 // 00589bc1: PUSH 0x649e31
 //   XREF to: 00649e31 (DATA)
 // 00589bc6: PUSH EBX
-// 00589bc7: CALL shape_meshlod.cpp_FUN_0051b770
+// 00589bc7: CALL shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770
 //   XREF to: 0051b770 (UNCONDITIONAL_CALL)
 // 00589bcc: ADD ESP,0x8
 // 00589bcf: MOV dword ptr [EBX + 0x38],EAX

@@ -16,7 +16,7 @@
 //   engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40 (00552a40) at 00552a8d [UNCONDITIONAL_CALL]
 //   engine_prim.c_renderPolygonSoftware_FUN_00552510 (00552510) at 005526c0 [UNCONDITIONAL_CALL]
 //   engine_prim.c_renderScanlinePolygon_FUN_00553470 (00553470) at 00553523 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051e830 (0051e830) at 0051e8c5 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830 (0051e830) at 0051e8c5 [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_CullingMode
 

@@ -42,12 +42,12 @@
 //   core_simbox.cpp_CSimBox_process_FUN_00588f20 (00588f20) at 00588fbe [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0 (0059cec0) at 0059cf9d [UNCONDITIONAL_CALL]
 //   core_sound.cpp_updateListeners_FUN_005b1870 (005b1870) at 005b19e4 [UNCONDITIONAL_CALL]
-//   core_stairs.cpp_FUN_005b9a20 (005b9a20) at 005b9aa1 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005be520 (005be520) at 005bee29 [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c3960 (005c3960) at 005c3cac [UNCONDITIONAL_CALL]
 //   core_stranger.cpp_CStranger_FUN_005c51c0 (005c51c0) at 005c5216 [UNCONDITIONAL_CALL]
 //   core_wateract.cpp_FUN_005eafa0 (005eafa0) at 005eafe7 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0 (005151e0) at 005157a9 [UNCONDITIONAL_CALL]
+//   shape_spotview.cpp_CSpotView_FUN_005b9a20 (005b9a20) at 005b9aa1 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

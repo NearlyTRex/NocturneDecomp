@@ -7,19 +7,19 @@
 //   TerminatedCString s_CVampireBoss_0065692e
 //   TerminatedCString s_core_tvbat_cpp_0065693b
 //   TerminatedCString s_CTVBat_process_can_t_fol_0065694d
-//   undefined4 DAT_00656986
-//   undefined4 DAT_0065698a
-//   undefined4 DAT_00656992
-//   undefined4 DAT_0065699a
-//   undefined4 DAT_006569a2
-//   undefined4 DAT_006569aa
-//   undefined4 DAT_006569b2
-//   undefined4 DAT_006569ba
-//   undefined4 DAT_006569c2
-//   undefined4 DAT_006569ca
-//   undefined4 DAT_006569d2
-//   undefined4 DAT_006569d6
-//   undefined4 DAT_006569da
+//   float FLOAT_00656986 = 4
+//   double DOUBLE_0065698a = 4
+//   double DOUBLE_00656992 = 0.5
+//   double DOUBLE_0065699a = 2
+//   double DOUBLE_006569a2 = 0.333333333333333
+//   double DOUBLE_006569aa = 35
+//   double DOUBLE_006569b2 = 10
+//   double DOUBLE_006569ba = 60
+//   double DOUBLE_006569c2 = 0.700000000000000
+//   double DOUBLE_006569ca = -32
+//   float FLOAT_006569d2 = 2
+//   float FLOAT_006569d6 = 0.8000000
+//   double DOUBLE_006569da = 0.100000000000000
 //   CGore* g_CGorePtr = 02d83364
 //   CNetGame* g_CNetGameInstance = 02f7c740
 //   CDemonSet* g_CDemonSetPtr = 03114278
@@ -48,8 +48,6 @@
 //   sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr)
 
@@ -138,7 +136,7 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr)
       (this_ptr->home_pos).y = *(float *)(iVar14 + 0x24);
       (this_ptr->home_pos).z = *(float *)(iVar14 + 0x28);
     }
-    (this_ptr->home_pos).y = (this_ptr->home_pos).y + _DAT_00656986;
+    (this_ptr->home_pos).y = (this_ptr->home_pos).y + FLOAT_00656986;
   }
   iVar14 = this_ptr->state;
   if (iVar14 == 2) {
@@ -155,7 +153,7 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr)
     local_dc.y = *pfVar2;
     local_dc.z = *pfVar1;
     *(float *)(this_ptr->field11_0xc068 + 8) =
-         in_stack_00000008 * (float)_DAT_006569ca + *(float *)(this_ptr->field11_0xc068 + 8);
+         in_stack_00000008 * (float)DOUBLE_006569ca + *(float *)(this_ptr->field11_0xc068 + 8);
     local_94 = *(float *)(this_ptr->field11_0xc068 + 4) * in_stack_00000008;
     local_90 = *(float *)(this_ptr->field11_0xc068 + 8) * in_stack_00000008;
     local_8c = *(float *)(this_ptr->field11_0xc068 + 0xc) * in_stack_00000008;
@@ -165,18 +163,18 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr)
     (this_ptr->base_enemy).base_character.base_actor.location.position.y = fVar13 + local_90;
     (this_ptr->base_enemy).base_character.base_actor.location.position.z = fVar3 + local_8c;
     (this_ptr->base_enemy).base_character.base_actor.orient.heading =
-         in_stack_00000008 * this_ptr->rot_speed * _DAT_006569d2 +
+         in_stack_00000008 * this_ptr->rot_speed * FLOAT_006569d2 +
          (this_ptr->base_enemy).base_character.base_actor.orient.heading;
     fVar13 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
                        (&g_CDemonRaytraceInstance,&local_dc,&pCVar15->position,&local_a0,(int *)0x0)
     ;
     if ((0.0 <= fVar13) && (fVar13 < 1.0)) {
       fVar3 = ((this_ptr->base_enemy).base_character.base_actor.location.position.y - local_dc.y) *
-              fVar13 * _DAT_006569d6;
+              fVar13 * FLOAT_006569d6;
       fVar4 = ((this_ptr->base_enemy).base_character.base_actor.location.position.z - local_dc.z) *
-              fVar13 * _DAT_006569d6;
+              fVar13 * FLOAT_006569d6;
       (pCVar15->position).x =
-           local_dc.x + ((pCVar15->position).x - local_dc.x) * fVar13 * _DAT_006569d6;
+           local_dc.x + ((pCVar15->position).x - local_dc.x) * fVar13 * FLOAT_006569d6;
       (this_ptr->base_enemy).base_character.base_actor.location.position.y = local_dc.y + fVar3;
       (this_ptr->base_enemy).base_character.base_actor.location.position.z = local_dc.z + fVar4;
       this_ptr->field11_0xc068[0xc] = '\0';
@@ -192,7 +190,7 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr)
       local_84 = local_dc.y - (this_ptr->base_enemy).base_character.base_actor.location.position.y;
       local_80 = local_dc.z - (this_ptr->base_enemy).base_character.base_actor.location.position.z;
     }
-    if ((float)_DAT_006569da <=
+    if ((float)DOUBLE_006569da <=
         SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) {
       return;
     }
@@ -213,8 +211,8 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr)
         local_50 = (pCVar9->base_character).base_actor.location.position.z;
       }
       local_18 = (this_ptr->base_enemy).base_character.base_actor.field7_0x6c % 8 + -4;
-      local_54 = (float)local_18 * (float)_DAT_00656992 +
-                 *(float *)this_ptr->field9_0xc060 + (float)_DAT_0065698a + local_54;
+      local_54 = (float)local_18 * (float)DOUBLE_00656992 +
+                 *(float *)this_ptr->field9_0xc060 + (float)DOUBLE_0065698a + local_54;
       goto LAB_005e4342;
     }
   }
@@ -269,7 +267,7 @@ LAB_005e4342:
       local_54 = (pCVar9->base_character).base_actor.location.position.y;
       local_50 = (pCVar9->base_character).base_actor.location.position.z;
     }
-    local_54 = *(float *)this_ptr->field9_0xc060 + (float)_DAT_0065698a + local_54;
+    local_54 = *(float *)this_ptr->field9_0xc060 + (float)DOUBLE_0065698a + local_54;
     *(CHero **)((this_ptr->base_enemy).field6_0xbe38 + 4) = g_HeroActors[g_LocalHeroIndex];
   }
   local_70 = local_58 - (this_ptr->base_enemy).base_character.base_actor.location.position.x;
@@ -303,7 +301,7 @@ LAB_005e4342:
       local_88 = fStack_e8;
     }
     if (((local_130.cylinder_bottom_y <= local_8c) && (local_8c <= local_130.cylinder_top_y)) &&
-       (local_178 < (float)_DAT_0065699a)) {
+       (local_178 < (float)DOUBLE_0065699a)) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_16c);
       local_16c.damage_amount = 1.0;
       local_16c.attacker = (CDemonActor *)this_ptr;
@@ -335,7 +333,7 @@ LAB_005e4342:
   fVar3 = this_ptr->move_speed;
   fVar4 = this_ptr->move_speed;
   fVar5 = this_ptr->move_speed;
-  fVar8 = (float)_DAT_006569a2;
+  fVar8 = (float)DOUBLE_006569a2;
   fVar6 = this_ptr->rot_speed;
   *(float *)(this_ptr->field11_0xc068 + 4) = this_ptr->move_speed * local_3c;
   fVar7 = this_ptr->move_speed;
@@ -357,15 +355,15 @@ LAB_005e4342:
   local_cc = (this_ptr->base_enemy).base_character.base_actor.location.position.x - local_84;
   local_c8 = (this_ptr->base_enemy).base_character.base_actor.location.position.y - local_80;
   fStack_c4 = (this_ptr->base_enemy).base_character.base_actor.location.position.z - local_7c;
-  local_170 = (local_c8 * (float)_DAT_0065698a) / in_stack_00000008 + (float)_DAT_006569aa;
-  if (local_170 < (float)_DAT_006569b2) {
+  local_170 = (local_c8 * (float)DOUBLE_0065698a) / in_stack_00000008 + (float)DOUBLE_006569aa;
+  if (local_170 < (float)DOUBLE_006569b2) {
     local_170 = 10.0;
   }
-  if ((float)_DAT_006569ba < local_170) {
+  if ((float)DOUBLE_006569ba < local_170) {
     local_170 = 60.0;
   }
   *(float *)this_ptr->field3_0xc040 =
-       (local_170 - *(float *)this_ptr->field3_0xc040) * (float)_DAT_006569c2 +
+       (local_170 - *(float *)this_ptr->field3_0xc040) * (float)DOUBLE_006569c2 +
        *(float *)this_ptr->field3_0xc040;
   *(float *)(this_ptr->field1_0xbeb4 + 8) =
        in_stack_00000008 * *(float *)this_ptr->field3_0xc040 * this_ptr->speed +

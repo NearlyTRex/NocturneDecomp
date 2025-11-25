@@ -6,7 +6,7 @@
 // Cross-references:
 //   shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0 (005c84c0) at 005c8729 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0065422a
+//   double DOUBLE_0065422a = 1.00000000000000E-10
 // Function calls:
 //   crt_string.c_memmove_FUN_005fe5e0
 //   shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20
@@ -17,7 +17,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 shape_superopt.cpp_FUN_005c91e0(undefined4 param_1, undefined4 param_2,
    undefined4 param_3) */
 
@@ -54,7 +53,7 @@ uint shape_superopt_cpp_FUN_005c91e0(void)
         dVar1 = *(double *)(iVar4 + 0x10) - *pdVar7;
         dVar3 = *(double *)(iVar4 + 0x18) - pdVar7[1];
         dVar2 = *(double *)(iVar4 + 0x20) - pdVar7[2];
-        if (SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1) < _DAT_0065422a) break;
+        if (SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1) < DOUBLE_0065422a) break;
         uVar6 = uVar6 + 1;
         pdVar7 = pdVar7 + 0xc;
       } while (uVar6 < *in_stack_0000000c);

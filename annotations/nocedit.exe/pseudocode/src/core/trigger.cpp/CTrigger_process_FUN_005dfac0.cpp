@@ -7,8 +7,8 @@
 //   void* switchdataD_005dfa84 = 005dfaf3
 //   void* switchdataD_005dfaac = 005dfb6a
 //   TerminatedCString s_core_trigger_cpp_00655616
-//   undefined4 DAT_0065562c
-//   undefined4 DAT_00655634
+//   float FLOAT_0065562c = 0.5
+//   double DOUBLE_00655634 = 65536
 //   undefined4 DAT_00664a00
 //   CEventList* g_CEventListPtr = 02d05310
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
@@ -132,10 +132,10 @@ LAB_005dfb52:
                          (&this_ptr->base_actor,(CBoundingBox3D *)local_b8);
       fStack_80 = (pCVar6->min).x + (pCVar6->max).x;
       fStack_7c = (pCVar6->min).y + (pCVar6->max).y;
-      CStack_68.x = fStack_80 * _DAT_0065562c;
-      CStack_68.y = fStack_7c * _DAT_0065562c;
+      CStack_68.x = fStack_80 * FLOAT_0065562c;
+      CStack_68.y = fStack_7c * FLOAT_0065562c;
       fStack_78 = (pCVar6->min).z + (pCVar6->max).z;
-      CStack_68.z = fStack_78 * _DAT_0065562c;
+      CStack_68.z = fStack_78 * FLOAT_0065562c;
       pCVar7 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          (&this_ptr->base_actor,&CStack_5c,&CStack_68);
       if (aCStack_50 != pCVar7) {
@@ -149,8 +149,8 @@ LAB_005dfb52:
       iVar9 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
                         (g_CDemonSetPtr,&CStack_74,(CVector3i *)0x0);
       local_b8[0] = (double)iVar9;
-      if ((*(float *)(this_ptr->field1_0x158 + 0xc4) * (float)_DAT_00655634 <= (float)iVar9) &&
-         ((float)iVar9 <= *(float *)(this_ptr->field1_0x158 + 200) * (float)_DAT_00655634)) {
+      if ((*(float *)(this_ptr->field1_0x158 + 0xc4) * (float)DOUBLE_00655634 <= (float)iVar9) &&
+         ((float)iVar9 <= *(float *)(this_ptr->field1_0x158 + 200) * (float)DOUBLE_00655634)) {
         local_2c = &DAT_00000001;
       }
     }

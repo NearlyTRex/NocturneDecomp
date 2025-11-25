@@ -4,16 +4,15 @@
 // Convention: unknown
 // Signature: undefined shape_superopt.cpp_FUN_005d6c10()
 // Cross-references:
-//   shape_superopt.cpp_DeletingTJunctionsMaybe_FUN_005d47b0 (005d47b0) at 005d54e5 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_FUN_005d47b0 (005d47b0) at 005d54e5 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00654562
-//   undefined4 DAT_0065456a
+//   double DOUBLE_00654562 = -0.000100000000000000
+//   double DOUBLE_0065456a = 0.000100000000000000
 // Function calls:
 //   shape_superopt.cpp_FUN_005d66e0
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 shape_superopt.cpp_FUN_005d6c10(undefined4 param_1, undefined4 param_2,
    undefined4 param_3) */
 
@@ -120,12 +119,12 @@ undefined4 shape_superopt_cpp_FUN_005d6c10(void)
     local_b8 = *(undefined4 *)(in_stack_00000008 + 2);
     uVar5 = *(undefined4 *)((int)in_stack_00000008 + 0x14);
   }
-  if ((((double)CONCAT44(uVar6,local_b0) + _DAT_00654562 <= *in_stack_00000004) &&
-      (*in_stack_00000004 <= (double)CONCAT44(uVar3,local_a8) + _DAT_0065456a)) &&
-     (((double)CONCAT44(uVar1,local_c0) + _DAT_00654562 <= in_stack_00000004[1] &&
-      (((in_stack_00000004[1] <= (double)CONCAT44(uVar4,local_f0) + _DAT_0065456a &&
-        ((double)CONCAT44(uVar2,local_f8) + _DAT_00654562 <= in_stack_00000004[2])) &&
-       (in_stack_00000004[2] <= (double)CONCAT44(uVar5,local_b8) + _DAT_0065456a)))))) {
+  if ((((double)CONCAT44(uVar6,local_b0) + DOUBLE_00654562 <= *in_stack_00000004) &&
+      (*in_stack_00000004 <= (double)CONCAT44(uVar3,local_a8) + DOUBLE_0065456a)) &&
+     (((double)CONCAT44(uVar1,local_c0) + DOUBLE_00654562 <= in_stack_00000004[1] &&
+      (((in_stack_00000004[1] <= (double)CONCAT44(uVar4,local_f0) + DOUBLE_0065456a &&
+        ((double)CONCAT44(uVar2,local_f8) + DOUBLE_00654562 <= in_stack_00000004[2])) &&
+       (in_stack_00000004[2] <= (double)CONCAT44(uVar5,local_b8) + DOUBLE_0065456a)))))) {
     local_a0 = *in_stack_00000004 - *in_stack_00000008;
     local_98 = in_stack_00000004[1] - in_stack_00000008[1];
     local_90 = in_stack_00000004[2] - in_stack_00000008[2];

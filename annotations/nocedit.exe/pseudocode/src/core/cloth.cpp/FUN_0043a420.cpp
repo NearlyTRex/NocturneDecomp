@@ -6,7 +6,7 @@
 // Cross-references:
 //   core_cloth.cpp_FUN_0043abb0 (0043abb0) at 0043b76e [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_0061849a
+//   double DOUBLE_0061849a = 1.05000000000000
 //   undefined4 DAT_02d7a7b8
 //   int g_LightAttenuationMax
 // Function calls:
@@ -14,7 +14,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 core_cloth.cpp_FUN_0043a420(undefined4 param_1, undefined4 param_2) */
 
 void core_cloth_cpp_FUN_0043a420(void)
@@ -194,8 +193,8 @@ void core_cloth_cpp_FUN_0043a420(void)
         if (local_54 < 1.0) {
           local_48 = local_ac * local_ac + local_a8 * local_a8;
           local_44 = (float)(g_LightAttenuationMax - ((int)local_48 >> 1));
-          local_88.x = *(float *)(iVar6 + 0x14) * (float)_DAT_0061849a * local_ac * local_44;
-          local_88.y = (float)_DAT_0061849a * *(float *)(iVar6 + 0x18) * local_a8 * local_44;
+          local_88.x = *(float *)(iVar6 + 0x14) * (float)DOUBLE_0061849a * local_ac * local_44;
+          local_88.y = (float)DOUBLE_0061849a * *(float *)(iVar6 + 0x18) * local_a8 * local_44;
           local_88.z = local_a4;
           pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                              ((CMatrix3x3f *)(iVar6 + 0x78),&local_10c,&local_88);

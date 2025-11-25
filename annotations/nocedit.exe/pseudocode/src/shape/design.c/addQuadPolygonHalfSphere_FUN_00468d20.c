@@ -37,7 +37,7 @@ shape_design_c_addQuadPolygonHalfSphere_FUN_00468d20
 {
   int iVar1;
   SShapeEditorPolygon *pSVar2;
-  uint local_20;
+  float local_20;
   float local_1c;
   int local_18;
   
@@ -51,30 +51,22 @@ shape_design_c_addQuadPolygonHalfSphere_FUN_00468d20
   g_ModelPolygonData[iVar1].vertex_indices[1] = vertex_index_2;
   g_ModelPolygonData[iVar1].vertex_indices[2] = vertex_index_3;
   g_ModelPolygonData[iVar1].vertex_indices[3] = vertex_index_4;
-  g_ModelPolygonData[iVar1].vertex_indices[0x10] =
-       (uint)(g_LoadedVertices[vertex_index_1].u * (float)g_UVScaleFactor);
-  g_ModelPolygonData[iVar1].uv_coordinates[0] =
-       g_LoadedVertices[vertex_index_1].v * (float)g_UVScaleFactor;
-  g_ModelPolygonData[iVar1].vertex_indices[0x11] =
-       (uint)(g_LoadedVertices[vertex_index_2].u * (float)g_UVScaleFactor);
-  g_ModelPolygonData[iVar1].uv_coordinates[1] =
-       g_LoadedVertices[vertex_index_2].v * (float)g_UVScaleFactor;
-  g_ModelPolygonData[iVar1].vertex_indices[0x12] =
-       (uint)(g_LoadedVertices[vertex_index_3].u * (float)g_UVScaleFactor);
-  g_ModelPolygonData[iVar1].uv_coordinates[2] =
-       g_LoadedVertices[vertex_index_3].v * (float)g_UVScaleFactor;
-  g_ModelPolygonData[iVar1].vertex_indices[0x13] =
-       (uint)(g_LoadedVertices[vertex_index_4].u * (float)g_UVScaleFactor);
-  g_ModelPolygonData[iVar1].uv_coordinates[3] =
-       g_LoadedVertices[vertex_index_4].v * (float)g_UVScaleFactor;
+  g_ModelPolygonData[iVar1].uv_u[0] = g_LoadedVertices[vertex_index_1].u * (float)g_UVScaleFactor;
+  g_ModelPolygonData[iVar1].uv_v[0] = g_LoadedVertices[vertex_index_1].v * (float)g_UVScaleFactor;
+  g_ModelPolygonData[iVar1].uv_u[1] = g_LoadedVertices[vertex_index_2].u * (float)g_UVScaleFactor;
+  g_ModelPolygonData[iVar1].uv_v[1] = g_LoadedVertices[vertex_index_2].v * (float)g_UVScaleFactor;
+  g_ModelPolygonData[iVar1].uv_u[2] = g_LoadedVertices[vertex_index_3].u * (float)g_UVScaleFactor;
+  g_ModelPolygonData[iVar1].uv_v[2] = g_LoadedVertices[vertex_index_3].v * (float)g_UVScaleFactor;
+  g_ModelPolygonData[iVar1].uv_u[3] = g_LoadedVertices[vertex_index_4].u * (float)g_UVScaleFactor;
+  g_ModelPolygonData[iVar1].uv_v[3] = g_LoadedVertices[vertex_index_4].v * (float)g_UVScaleFactor;
   for (local_18 = 0; local_18 < 4; local_18 = local_18 + 1) {
-    local_20 = pSVar2->vertex_indices[local_18 + 0x10];
-    local_1c = pSVar2->uv_coordinates[local_18];
+    local_20 = pSVar2->uv_u[local_18];
+    local_1c = pSVar2->uv_v[local_18];
     if ((int)local_20 < 0x40800000) {
-      local_20 = 0x40800000;
+      local_20 = 4.0;
     }
     if (0x437b0000 < (int)local_20) {
-      local_20 = 0x437b0000;
+      local_20 = 251.0;
     }
     if ((int)local_1c < 0x40800000) {
       local_1c = 4.0;
@@ -82,8 +74,8 @@ shape_design_c_addQuadPolygonHalfSphere_FUN_00468d20
     if (0x437b0000 < (int)local_1c) {
       local_1c = 251.0;
     }
-    pSVar2->vertex_indices[local_18 + 0x10] = local_20;
-    pSVar2->uv_coordinates[local_18] = local_1c;
+    pSVar2->uv_u[local_18] = local_20;
+    pSVar2->uv_v[local_18] = local_1c;
   }
   return;
 }

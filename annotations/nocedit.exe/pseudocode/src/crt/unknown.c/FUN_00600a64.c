@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined crt_unknown.c_FUN_00600a64()
 // Cross-references:
-//   crt_unknown.c_FUN_00600ad0 (00600ad0) at 00600b36 [UNCONDITIONAL_CALL]
+//   crt_watcom.c_heapchk_FUN_00600ad0 (00600ad0) at 00600b36 [UNCONDITIONAL_CALL]
 // Globals:
 //   undefined4 DAT_03f9b1f0
 

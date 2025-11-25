@@ -4,12 +4,10 @@
 // Convention: __cdecl
 // Signature: int core_enemy.cpp_CEnemy_FUN_004a97c0(CEnemy * this_ptr)
 // Globals:
-//   undefined4 DAT_0062437e
-//   undefined4 DAT_00624382
+//   float FLOAT_0062437e = 0.5
+//   double DOUBLE_00624382 = 0.300000000000000
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_enemy_cpp_CEnemy_FUN_004a97c0(CEnemy *this_ptr)
 
@@ -29,13 +27,13 @@ int __cdecl core_enemy_cpp_CEnemy_FUN_004a97c0(CEnemy *this_ptr)
   
   (*((this_ptr->base_character).base_actor.vtable)->getBoundingBox)
             ((CDemonActor *)this_ptr,&CStack_40);
-  fVar3 = (float)_DAT_00624382;
-  fVar1 = (fStack_28 + fStack_1c) * _DAT_0062437e;
-  fVar2 = (fStack_24 + fStack_18) * _DAT_0062437e;
+  fVar3 = (float)DOUBLE_00624382;
+  fVar1 = (fStack_28 + fStack_1c) * FLOAT_0062437e;
+  fVar2 = (fStack_24 + fStack_18) * FLOAT_0062437e;
   if (in_stack_00000008 == afStack_14) {
     return 1;
   }
-  *in_stack_00000008 = (CStack_40.max.z + fStack_20) * _DAT_0062437e;
+  *in_stack_00000008 = (CStack_40.max.z + fStack_20) * FLOAT_0062437e;
   in_stack_00000008[1] = (fStack_1c - fStack_28) * fVar3 + fVar1;
   in_stack_00000008[2] = fVar2;
   return 1;

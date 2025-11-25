@@ -100,12 +100,12 @@
 //   shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300 (004a0300) at 004a03be [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 (0049f420) at 0049f721 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 (0049f270) at 0049f3ed [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_005173f0 (005173f0) at 0051751c [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_00518910 (00518910) at 0051914d [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_005197c0 (005197c0) at 00519815 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodEdge_addAdjacentFace_FUN_00515ca0 (00515ca0) at 00515cc9 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051e594 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_addAdjacentEdgeToVertex_FUN_00515d90 (00515d90) at 00515dc5 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_addAdjacentTriangleToEdge_FUN_00515ca0 (00515ca0) at 00515cc9 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (00518910) at 0051914d [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0 (005173f0) at 0051751c [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0 (005197c0) at 00519815 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodVert_addAdjacentEdge_FUN_00515d90 (00515d90) at 00515dc5 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0 (005ad5c0) at 005ad8b2 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_Error_00623018

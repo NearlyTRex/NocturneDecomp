@@ -4,8 +4,8 @@
 // Convention: unknown
 // Signature: undefined core_turret.cpp_FUN_005e3750()
 // Globals:
-//   undefined4 DAT_006567a4
-//   undefined4 DAT_006567a8
+//   float FLOAT_006567a4 = -0.125
+//   double DOUBLE_006567a8 = 10
 //   CFireEffect* g_CFireEffectPtr = 02d12db0
 //   CDemonSet* g_CDemonSetPtr = 03114278
 //   undefined4 g_CCharacterClassInfo.name_hash
@@ -47,7 +47,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_weapon_turret.cpp_FUN_005e3750(undefined4 param_1) */
 
 undefined4 core_turret_cpp_FUN_005e3750(void)
@@ -155,7 +154,7 @@ undefined4 core_turret_cpp_FUN_005e3750(void)
            (g_CDemonSetPtr->collision_result_vec2).y - (g_CDemonSetPtr->collision_result_vec1).y;
       auStack_98._52_4_ =
            (g_CDemonSetPtr->collision_result_vec2).z - (g_CDemonSetPtr->collision_result_vec1).z;
-      CStack_28.x = (float)_DAT_006567a8 /
+      CStack_28.x = (float)DOUBLE_006567a8 /
                     SQRT((float)auStack_98._52_4_ * (float)auStack_98._52_4_ +
                          (float)auStack_98._44_4_ * (float)auStack_98._44_4_ +
                          (float)auStack_98._48_4_ * (float)auStack_98._48_4_);

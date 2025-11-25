@@ -4,10 +4,10 @@
 // Convention: unknown
 // Signature: undefined core_chain.cpp_FUN_004300d0()
 // Globals:
-//   undefined4 DAT_006177d2
-//   undefined4 DAT_006177da
-//   undefined4 DAT_006177e2
-//   undefined4 DAT_006177ea
+//   float FLOAT_006177d2 = -9900
+//   double DOUBLE_006177da = 0.03125
+//   double DOUBLE_006177e2 = 0.900000000000000
+//   double DOUBLE_006177ea = 0.100000000000000
 //   CSound* g_CSoundPtr = 03f6af64
 //   CSound g_CSoundInstance
 // Function calls:
@@ -19,7 +19,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_other_chain.cpp_FUN_004300d0(undefined4 param_1, undefined4 param_2)
     */
 
@@ -72,7 +71,7 @@ void core_chain_cpp_FUN_004300d0(void)
   CVector3f *pCStack_18;
   float *pfStack_14;
   
-  if (*(float *)(in_stack_00000004[4].actor_name + 0xc) < _DAT_006177d2) {
+  if (*(float *)(in_stack_00000004[4].actor_name + 0xc) < FLOAT_006177d2) {
     fVar11 = (*in_stack_00000004->vtable->cylinderGroundCheck)
                        (in_stack_00000004,0.1,(CVector3f *)0x0);
     *(float *)(in_stack_00000004[4].actor_name + 0xc) = fVar11;
@@ -126,7 +125,7 @@ void core_chain_cpp_FUN_004300d0(void)
     pCVar10->pitch = *(float *)local_20 * pCVar10->pitch;
     pCVar10->bank = *(float *)local_20 * pCVar10->bank;
     pCVar10->heading = *(float *)local_20 * pCVar10->heading;
-    local_24 = (float)in_stack_00000004[3].vtable * (float)_DAT_006177da;
+    local_24 = (float)in_stack_00000004[3].vtable * (float)DOUBLE_006177da;
     local_98 = (1.0 / local_24) * 0.0;
     local_94 = (0.0 - (float)in_stack_00000004[3].vtable) * (1.0 / local_24);
     pCVar6 = local_38 + iVar9 * 3;
@@ -222,8 +221,8 @@ void core_chain_cpp_FUN_004300d0(void)
   local_2c = (float *)0x0;
   local_28 = (CDemonActor *)0x0;
   if (*(int *)(in_stack_00000004[4].actor_name + 0x14) != 0) {
-    if (in_stack_ffffff3c < *(float *)(in_stack_00000004[1].actor_name + 4) * (float)_DAT_006177e2)
-    {
+    if (in_stack_ffffff3c < *(float *)(in_stack_00000004[1].actor_name + 4) * (float)DOUBLE_006177e2
+       ) {
       pCVar8 = in_stack_00000004 + 2;
       fVar11 = 0.0;
       for (iVar9 = 0; iVar9 < *(int *)in_stack_00000004[1].actor_name + -1; iVar9 = iVar9 + 1) {
@@ -235,7 +234,7 @@ void core_chain_cpp_FUN_004300d0(void)
         pCVar8 = (CDemonActor *)&(pCVar8->location).position.y;
         fVar11 = SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98) + fVar11;
       }
-      if (*(float *)(in_stack_00000004[1].actor_name + 4) * (float)_DAT_006177e2 < fVar11) {
+      if (*(float *)(in_stack_00000004[1].actor_name + 4) * (float)DOUBLE_006177e2 < fVar11) {
         local_28 = (CDemonActor *)0x1;
       }
     }
@@ -243,7 +242,7 @@ void core_chain_cpp_FUN_004300d0(void)
     local_78 = local_3c - (float)(&in_stack_00000004[1].scale)[iVar9 * 3].z;
     local_74 = (float)local_38 - (float)(&in_stack_00000004[1].field19_0x114)[iVar9 * 9];
     local_70 = local_34 - (float)(&in_stack_00000004[1].field20_0x118)[iVar9 * 9];
-    if ((float)_DAT_006177ea * 1.4013e-45 <
+    if ((float)DOUBLE_006177ea * 1.4013e-45 <
         SQRT(local_70 * local_70 + local_78 * local_78 + local_74 * local_74)) {
       local_2c = (float *)0x1;
     }

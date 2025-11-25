@@ -6,15 +6,15 @@
 // Globals:
 //   void* switchdataD_005d8b6c = 005d8f7e
 //   TerminatedCString s_s_confused_while_walking_00654a51
-//   undefined4 DAT_00654a82
-//   undefined4 DAT_00654a8a
-//   undefined4 DAT_00654a92
-//   undefined4 DAT_00654a9a
-//   undefined4 DAT_00654aa2
-//   undefined4 DAT_00654aaa
-//   undefined4 DAT_00654ab2
-//   undefined4 DAT_00654aba
-//   undefined4 DAT_00654ac2
+//   double DOUBLE_00654a82 = 100
+//   double DOUBLE_00654a8a = 12.5663706140000
+//   double DOUBLE_00654a92 = 32
+//   double DOUBLE_00654a9a = 3
+//   double DOUBLE_00654aa2 = -1.57079632675000
+//   float FLOAT_00654aaa = 3.141593
+//   double DOUBLE_00654ab2 = 1.57079632675000
+//   float FLOAT_00654aba = -3.141593
+//   double DOUBLE_00654ac2 = 3.14159265350000
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   CConsole g_ConsolePtr
 //   undefined4 DAT_03f6cb90
@@ -47,8 +47,6 @@
 //   engine_console.cpp_CConsole_printf_FUN_00441890
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_ptr)
 
@@ -85,9 +83,9 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_pt
   float afStack_1c [3];
   
   bVar11 = 0;
-  if (((this_ptr->base_hero).base_character.hit_points < (float)_DAT_00654a82) &&
+  if (((this_ptr->base_hero).base_character.hit_points < (float)DOUBLE_00654a82) &&
      (fVar8 = (this_ptr->base_hero).base_character.hit_points + in_stack_00000008,
-     (this_ptr->base_hero).base_character.hit_points = fVar8, (float)_DAT_00654a82 < fVar8)) {
+     (this_ptr->base_hero).base_character.hit_points = fVar8, (float)DOUBLE_00654a82 < fVar8)) {
     (this_ptr->base_hero).base_character.hit_points = 100.0;
   }
   iVar5 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
@@ -97,7 +95,7 @@ switchD_005d8f77_caseD_9:
   }
   core_charactr_cpp_CCharacter_FUN_0042ea40((CCharacter *)this_ptr);
   fVar8 = (float)(this_ptr->base_hero).field1_0xbe24 - in_stack_00000008;
-  fVar4 = (float)_DAT_00654a8a;
+  fVar4 = (float)DOUBLE_00654a8a;
   (this_ptr->base_hero).field1_0xbe24 = (int)fVar8;
   *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x2c) = in_stack_00000008 * fVar4;
   if (fVar8 < 0.0) {
@@ -249,7 +247,7 @@ switchD_005d8f77_caseD_8:
     if (pSVar6->state_index != 0x1a) {
       *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x20) =
            *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x20) -
-           in_stack_00000008 * (float)_DAT_00654a92;
+           in_stack_00000008 * (float)DOUBLE_00654a92;
     }
     in_stack_ffffffc8 =
          (CDeformableModel_MotionBlendWeightFunc *)
@@ -275,7 +273,7 @@ switchD_005d8f77_caseD_8:
                        (&(this_ptr->base_hero).base_character.model.motion_controller);
     if (pSVar6->state_index == 0x1a) {
       (this_ptr->base_hero).base_character.base_actor.location.position.y =
-           in_stack_00000008 * (float)_DAT_00654a9a +
+           in_stack_00000008 * (float)DOUBLE_00654a9a +
            (this_ptr->base_hero).base_character.base_actor.location.position.y;
     }
     goto LAB_005d8e27;
@@ -286,13 +284,13 @@ switchD_005d8f77_caseD_8:
                        );
     pCVar7 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_28,pCVar7);
     fVar8 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar7->y);
-    if (fVar8 < (float)_DAT_00654aa2) {
-      fVar8 = fVar8 + _DAT_00654aaa;
+    if (fVar8 < (float)DOUBLE_00654aa2) {
+      fVar8 = fVar8 + FLOAT_00654aaa;
     }
-    if ((float)_DAT_00654ab2 < fVar8) {
-      fVar8 = fVar8 + _DAT_00654aba;
+    if ((float)DOUBLE_00654ab2 < fVar8) {
+      fVar8 = fVar8 + FLOAT_00654aba;
     }
-    fVar4 = in_stack_00000008 * (float)_DAT_00654ac2;
+    fVar4 = in_stack_00000008 * (float)DOUBLE_00654ac2;
     if (fVar8 < -fVar4) {
       fVar8 = -fVar4;
     }

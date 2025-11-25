@@ -13,8 +13,8 @@
 //   engine_fileio.cpp_establishUserIdentity_FUN_004b1c00 (004b1c00) at 004b1d02 [UNCONDITIONAL_CALL]
 //   engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (00550ce0) at 00550e4a [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CInputString_init_FUN_0049d3d0 (0049d3d0) at 0049d43c [UNCONDITIONAL_CALL]
-//   shape_quantize.cpp_FUN_00556180 (00556180) at 0055635d [UNCONDITIONAL_CALL]
-//   shape_quantize.cpp_FUN_00556d70 (00556d70) at 00556d7c [UNCONDITIONAL_CALL]
+//   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 (00556180) at 0055635d [UNCONDITIONAL_CALL]
+//   shape_quantize.cpp_copyString_FUN_00556d70 (00556d70) at 00556d7c [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

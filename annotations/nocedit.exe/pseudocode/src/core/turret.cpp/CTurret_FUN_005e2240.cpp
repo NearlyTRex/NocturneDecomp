@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_turret.cpp_CTurret_FUN_005e2240(CTurret * this_ptr)
 // Globals:
-//   undefined4 DAT_006565f8
+//   double DOUBLE_006565f8 = 0.200000000000000
 //   undefined4 DAT_00664b58
 // Function calls:
 //   core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890
@@ -34,7 +34,7 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e2240(CTurret *this_ptr)
                      (this_ptr_00,this_ptr_00->frame_count + -1);
   fVar4 = -1e+30;
   for (iVar3 = 0; iVar3 < this_ptr_00->vertex_count; iVar3 = iVar3 + 1) {
-    fVar1 = (float)pCVar2->z + (float)pCVar2->y * (float)_DAT_006565f8;
+    fVar1 = (float)pCVar2->z + (float)pCVar2->y * (float)DOUBLE_006565f8;
     if (fVar4 < fVar1) {
       *(float *)(this_ptr->field12_0x85c + 4) = (float)pCVar2->x * _DAT_00664b58;
       *(float *)(this_ptr->field12_0x85c + 8) = (float)pCVar2->y * _DAT_00664b58;

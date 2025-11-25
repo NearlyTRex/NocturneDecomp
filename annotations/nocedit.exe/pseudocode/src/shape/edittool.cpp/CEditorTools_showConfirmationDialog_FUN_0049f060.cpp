@@ -21,7 +21,7 @@
 //   core_skeledit.cpp_FUN_00592690 (00592690) at 005933f7 [UNCONDITIONAL_CALL]
 //   core_teleport.cpp_CTeleport_FUN_005dabe0 (005dabe0) at 005dad67 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (0051d990) at 0051e195 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d844 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (0051d520) at 0051d844 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_Yes_I_know_what_I_m_doin_00623058
 //   TerminatedCString s_No_please_I_didn_t_mean__00623097

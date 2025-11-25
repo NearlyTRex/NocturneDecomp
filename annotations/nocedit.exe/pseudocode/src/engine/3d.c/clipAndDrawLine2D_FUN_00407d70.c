@@ -19,8 +19,8 @@
 //   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 (004a1ca0) at 004a1d4e [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 (004a2050) at 004a2240 [UNCONDITIONAL_CALL]
 //   shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40 (004a1f40) at 004a2040 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051e770 (0051e770) at 0051e7ee [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051e830 (0051e830) at 0051e927 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830 (0051e830) at 0051e927 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770 (0051e770) at 0051e7ee [UNCONDITIONAL_CALL]
 // Globals:
 //   SRenderVertex g_QuadVertex2
 //   undefined4 g_QuadVertex2_Y

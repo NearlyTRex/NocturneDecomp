@@ -106,14 +106,13 @@ void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
             pcVar6 = pcVar6 + 2;
           } while (cVar2 != '\0');
           for (local_3c = 0; local_3c < 4; local_3c = local_3c + 1) {
-            fVar1 = g_ModelPolygonData[local_34].uv_coordinates[local_3c];
+            fVar1 = g_ModelPolygonData[local_34].uv_v[local_3c];
             fVar3 = (float)g_ColorNormalizationFactor;
-            g_ModelPolygonData[local_34].vertex_indices[local_3c + 0x10] =
-                 (uint)(((local_18 *
-                          (float)g_ModelPolygonData[local_34].vertex_indices[local_3c + 0x10] *
-                          (float)g_ColorNormalizationFactor + local_20) / local_30) *
-                       (float)g_ColorScaleFactor);
-            g_ModelPolygonData[local_34].uv_coordinates[local_3c] =
+            g_ModelPolygonData[local_34].uv_u[local_3c] =
+                 ((local_18 *
+                   g_ModelPolygonData[local_34].uv_u[local_3c] * (float)g_ColorNormalizationFactor +
+                  local_20) / local_30) * (float)g_ColorScaleFactor;
+            g_ModelPolygonData[local_34].uv_v[local_3c] =
                  ((local_14 * fVar1 * fVar3 + local_1c) / local_2c) * (float)g_ColorScaleFactor;
           }
         }

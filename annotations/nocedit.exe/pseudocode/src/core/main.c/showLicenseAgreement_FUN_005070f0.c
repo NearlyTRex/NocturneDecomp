@@ -7,7 +7,7 @@
 //   TerminatedCString s_Editor_0063169a
 //   TerminatedCString s_system_nocturne_ini_006316a1
 //   TerminatedCString s_AcceptedLicenseAgreement_006316b7
-//   SEncryptedMessage g_LicenseAgreement
+//   char[14616] g_LicenseAgreement
 //   TerminatedCString s_I_accept_the_terms_of_th_00634fe8
 //   TerminatedCString s_I_DO_NOT_accept_the_term_00635014
 //   TerminatedCString s_AcceptedLicenseAgreement_00635047
@@ -72,7 +72,8 @@ int __cdecl core_main_c_showLicenseAgreement_FUN_005070f0(void)
   if (unaff_EDI != 0) {
     return 1;
   }
-  text_string = support_newmsg_cpp_decryptMessage_FUN_00544270(&g_LicenseAgreement);
+  text_string = support_newmsg_cpp_decryptMessage_FUN_00544270
+                          ((SEncryptedMessage *)g_LicenseAgreement);
   iVar1 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,text_string);
   shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0((CEdScrollBar *)(CStack_f4.button_text + 0xa0));
   iVar3 = g_ClipRight;

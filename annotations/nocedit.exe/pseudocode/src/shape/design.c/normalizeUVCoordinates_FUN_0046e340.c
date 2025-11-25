@@ -38,11 +38,11 @@ void __cdecl shape_design_c_normalizeUVCoordinates_FUN_0046e340(void)
     local_20 = 1e+30;
     for (local_14 = 0; local_14 < (int)g_ModelPolygonData[local_18].vertex_indices_count;
         local_14 = local_14 + 1) {
-      if ((float)g_ModelPolygonData[local_18].vertex_indices[local_14 + 0x10] < local_24) {
-        local_24 = (float)g_ModelPolygonData[local_18].vertex_indices[local_14 + 0x10];
+      if (g_ModelPolygonData[local_18].uv_u[local_14] < local_24) {
+        local_24 = g_ModelPolygonData[local_18].uv_u[local_14];
       }
-      if (g_ModelPolygonData[local_18].uv_coordinates[local_14] < local_20) {
-        local_20 = g_ModelPolygonData[local_18].uv_coordinates[local_14];
+      if (g_ModelPolygonData[local_18].uv_v[local_14] < local_20) {
+        local_20 = g_ModelPolygonData[local_18].uv_v[local_14];
       }
     }
     dVar3 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
@@ -52,11 +52,11 @@ void __cdecl shape_design_c_normalizeUVCoordinates_FUN_0046e340(void)
     fVar2 = (float10)g_UvOffsetMultiplier;
     for (local_14 = 0; local_14 < (int)g_ModelPolygonData[local_18].vertex_indices_count;
         local_14 = local_14 + 1) {
-      g_ModelPolygonData[local_18].vertex_indices[local_14 + 0x10] =
-           (uint)((float)g_ModelPolygonData[local_18].vertex_indices[local_14 + 0x10] -
-                 (float)((float10)(double)CONCAT44(extraout_EDX,extraout_EAX) * fVar1));
-      g_ModelPolygonData[local_18].uv_coordinates[local_14] =
-           g_ModelPolygonData[local_18].uv_coordinates[local_14] -
+      g_ModelPolygonData[local_18].uv_u[local_14] =
+           g_ModelPolygonData[local_18].uv_u[local_14] -
+           (float)((float10)(double)CONCAT44(extraout_EDX,extraout_EAX) * fVar1);
+      g_ModelPolygonData[local_18].uv_v[local_14] =
+           g_ModelPolygonData[local_18].uv_v[local_14] -
            (float)((float10)(double)CONCAT44(extraout_EDX_00,extraout_EAX_00) * fVar2);
     }
   }

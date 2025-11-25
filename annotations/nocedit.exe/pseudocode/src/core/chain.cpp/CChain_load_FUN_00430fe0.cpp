@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined core_chain.cpp_CChain_load_FUN_00430fe0()
 // Globals:
-//   undefined4 s_vertexCount_006177f2
+//   TerminatedCString s_vertexCount_006177f2
 //   TerminatedCString s_chainLength_006177fe
 //   TerminatedCString s_target_0061780a
 //   TerminatedCString s_targetBone_00617811
@@ -36,7 +36,7 @@ void core_chain_cpp_CChain_load_FUN_00430fe0(void)
   
   core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);
   core_actor_cpp_serializeInteger_FUN_0040b7f0
-            ((int *)(in_stack_00000004 + 1),"?vertexCount" + 1);
+            ((int *)(in_stack_00000004 + 1),"vertexCount");
   core_actor_cpp_serializeFloat_FUN_0040b770
             ((float *)(in_stack_00000004[1].actor_name + 4),"chainLength");
   core_actor_cpp_serializeActor_FUN_0040b870

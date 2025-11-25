@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_tvbat.cpp_CTVBat_serialize_FUN_005e40c0(CTVBat * this_ptr)
 // Globals:
-//   undefined4 s_homePos_006568ae
+//   TerminatedCString s_homePos_006568ae
 //   TerminatedCString s_modelName_006568b6
 //   TerminatedCString s_speed_006568c0
 //   TerminatedCString s_maxDistance_006568c6
@@ -36,7 +36,7 @@ void __cdecl core_tvbat_cpp_CTVBat_serialize_FUN_005e40c0(CTVBat *this_ptr)
   else {
     core_enemy_cpp_CEnemy_serialize_FUN_004a9660(&this_ptr->base_enemy);
   }
-  core_actor_cpp_serializeVector_FUN_0040b340(&this_ptr->home_pos,"@homePos" + 1);
+  core_actor_cpp_serializeVector_FUN_0040b340(&this_ptr->home_pos,"homePos");
   core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
             ((CKeyFramedModelInstance *)(this_ptr->field1_0xbeb4 + 0xc),"modelName");
   if (1 < g_CTVBatClassVersion) {

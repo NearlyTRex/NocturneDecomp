@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0(int point_count, CVector3f * positions, float * values, CVector3f * normal, CVector3f * out_gradient, float * out_offset)
 // Cross-references:
-//   shape_meshlod.cpp_CLodMesh_extractTriangleTexCoordGradient_FUN_00517530 (00517530) at 00517605 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_extractFaceTexCoordGradient_FUN_00517530 (00517530) at 00517605 [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_00637345 = 2
 // Function calls:

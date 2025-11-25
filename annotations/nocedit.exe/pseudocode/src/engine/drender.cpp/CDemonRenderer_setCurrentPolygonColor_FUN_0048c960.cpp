@@ -14,8 +14,8 @@
 //   core_setedit.cpp_FUN_00582930 (00582930) at 00582bda [UNCONDITIONAL_CALL]
 //   core_tvbat.cpp_CTVBat_FUN_005e4d80 (005e4d80) at 005e4e42 [UNCONDITIONAL_CALL]
 //   core_water.cpp_CWater_render_FUN_005ea320 (005ea320) at 005ea7d8 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051e990 (0051e990) at 0051e9c6 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051ead0 (0051ead0) at 0051ecab [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990 (0051e990) at 0051e9c6 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 (0051ead0) at 0051ecab [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_CurrentPolygonColor
 

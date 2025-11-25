@@ -5,7 +5,7 @@
 // Signature: int crt_heap.c_heapWalk_FUN_006012d0(HeapState * heap_state_ptr, Heap * heap_ptr)
 // Cross-references:
 //   crt_heap.c_heapCheck_FUN_00601374 (00601374) at 00601387 [UNCONDITIONAL_CALL]
-//   crt_unknown.c_FUN_00600ad0 (00600ad0) at 00600b1d [UNCONDITIONAL_CALL]
+//   crt_watcom.c_heapchk_FUN_00600ad0 (00600ad0) at 00600b1d [UNCONDITIONAL_CALL]
 // Globals:
 //   Heap* g_MainHeap = 00000000
 

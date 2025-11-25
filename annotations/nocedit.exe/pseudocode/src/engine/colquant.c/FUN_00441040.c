@@ -6,14 +6,12 @@
 // Cross-references:
 //   engine_colquant.c_FUN_00441110 (00441110) at 00441162 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 DAT_00618da1
-//   undefined4 DAT_00618da9
-//   undefined4 DAT_00618db1
-//   undefined4 DAT_00618db9
+//   double DOUBLE_00618da1 = 0.300000000000000
+//   double DOUBLE_00618da9 = 0.590000000000000
+//   double DOUBLE_00618db1 = 0.110000000000000
+//   double DOUBLE_00618db9 = 0.700000000000000
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 double engine_colquant_c_FUN_00441040(void)
 
@@ -33,9 +31,9 @@ double engine_colquant_c_FUN_00441040(void)
   dVar3 = (double)(int)((uint)pbVar5[1] - (*(int *)(in_stack_00000004 + 0x4008) >> 0x10));
   dVar2 = (double)(int)((uint)pbVar5[2] - (*(int *)(in_stack_00000004 + 0x400a) >> 0x10));
   dVar1 = (double)(int)((uint)pbVar5[3] - (*(int *)(in_stack_00000004 + 0x400c) >> 0x10));
-  return dVar1 * dVar1 * _DAT_00618db9 +
-         dVar2 * dVar2 * _DAT_00618db1 +
-         dVar3 * dVar3 * _DAT_00618da9 + dVar4 * dVar4 * _DAT_00618da1;
+  return dVar1 * dVar1 * DOUBLE_00618db9 +
+         dVar2 * dVar2 * DOUBLE_00618db1 +
+         dVar3 * dVar3 * DOUBLE_00618da9 + dVar4 * dVar4 * DOUBLE_00618da1;
 }
 
 

@@ -2,10 +2,10 @@
 // Address: 0051cdf0
 // Address Range: [[0051cdf0, 0051d0d5]]
 // Convention: __cdecl
-// Signature: void shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh * this_ptr)
+// Signature: void shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh * this_ptr, FILE * file_handle)
 // Cross-references:
-//   shape_meshlod.cpp_CLodMesh_FUN_005173f0 (005173f0) at 005174ea [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_CLodMesh_FUN_0051b8a0 (0051b8a0) at 0051b903 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0 (0051b8a0) at 0051b903 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0 (005173f0) at 005174ea [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_d_00637fd4
 //   TerminatedCString s_shape_meshlod_cpp_00637fd8
@@ -18,8 +18,8 @@
 //   TerminatedCString s_LodMesh_eqLoad_EQ_is_not_0063806c
 //   TerminatedCString s_shape_meshlod_cpp_00638098
 //   double DOUBLE_006380ad = 0.950000000000000
-//   undefined4 DAT_00661388
-//   undefined4 DAT_0066138c
+//   double g_InfiniteCollapseCost = 1.00000000000000E+35
+//   undefined4 g_InfiniteCollapseCost+4
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
@@ -28,21 +28,20 @@
 //   crt_stdio.c_fscanf_FUN_005fe7c0
 //   shape_memdbg.cpp_debugCalloc_FUN_0050f350
 //   shape_memdbg.cpp_debugFree_FUN_0050f460
+//   shape_meshlod.cpp_CLodMesh_computeAllEdgeCollapseCosts_FUN_00519710
 //   shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
-//   shape_meshlod.cpp_CLodMesh_FUN_00519710
 
 #include "nocturne.h"
 
-void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr)
+void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,FILE *file_handle)
 
 {
-  SLodEdge *pSVar1;
+  CLodEdge *pCVar1;
   void *pvVar2;
   int *piVar3;
   int iVar4;
   int iVar5;
   BADSPACEBASE *in_ESP;
-  FILE *in_stack_00000008;
   SIZE_T in_stack_ffffffcc;
   double dVar6;
   void *local_28;
@@ -52,7 +51,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr)
   int iStack_14;
   int iVar7;
   
-  crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,"%d\n",&stack0xffffffc8);
+  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&stack0xffffffc8);
   pvVar2 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
                      (in_stack_ffffffcc,0xf0,"..\\shape\\meshlod.cpp",0x13e4);
   if (pvVar2 == (void *)0x0) {
@@ -66,14 +65,15 @@ void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr)
   local_18 = 0;
   if (0 < (int)pvVar2) {
     local_20 = (int)local_28 + 4;
-    dVar6 = (double)CONCAT44(DAT_0066138c,DAT_00661388) * DOUBLE_006380ad;
+    dVar6 = (double)CONCAT44(g_InfiniteCollapseCost._4_4_,g_InfiniteCollapseCost._0_4_) *
+            DOUBLE_006380ad;
     local_1c = (int)local_28 + 8;
     iVar7 = 0;
     do {
       piVar3 = (int *)((int)local_28 + iVar7);
       iVar4 = crt_stdio_c_fscanf_FUN_005fe7c0
-                        (in_stack_00000008,"%d,%d,%lf,%f\n",in_stack_00000008,"%d,%d,%lf,%f\n"
-                         ,piVar3,local_20,local_1c);
+                        (file_handle,"%d,%d,%lf,%f\n",file_handle,"%d,%d,%lf,%f\n",piVar3,
+                         local_20,local_1c);
       if (*(double *)(iVar7 + 8) <= dVar6) {
 LAB_0051d075:
         if (iVar4 != 4) {
@@ -83,21 +83,21 @@ LAB_0051d075:
         }
       }
       else {
-        *(undefined4 *)(iVar7 + 8) = DAT_00661388;
-        *(undefined4 *)(iVar7 + 0xc) = DAT_0066138c;
+        *(undefined4 *)(iVar7 + 8) = g_InfiniteCollapseCost._0_4_;
+        *(undefined4 *)(iVar7 + 0xc) = g_InfiniteCollapseCost._4_4_;
         *(undefined4 *)(iVar7 + 0x10) = 0;
         if (iVar4 != 3) goto LAB_0051d075;
         iVar4 = 1;
         do {
-          iVar5 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000008);
+          iVar5 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
           if (iVar5 < 0) break;
         } while ((iVar5 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
       }
       if (iStack_14 != 0) {
-        if (*(int *)(this_ptr->edges_ptr->field2_0x8 + iVar7 + -8) != *piVar3) {
+        if (*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar7 + -0x28) != *piVar3) {
           iStack_14 = 0;
         }
-        if (piVar3[1] != *(int *)(this_ptr->edges_ptr->field2_0x8 + iVar7 + -4)) {
+        if (piVar3[1] != *(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar7 + -0x24)) {
           iStack_14 = 0;
         }
       }
@@ -111,19 +111,18 @@ LAB_0051d075:
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
     g_CurrentLineNumber = 0x1419;
     core_main_c_displayErrorAndQuit_FUN_00506f10("LodMesh::eqLoad - EQ is not not up to date.");
-    shape_meshlod_cpp_CLodMesh_FUN_00519710(this_ptr);
+    shape_meshlod_cpp_CLodMesh_computeAllEdgeCollapseCosts_FUN_00519710(this_ptr);
   }
   else {
     iVar7 = 0;
     pvVar2 = local_28;
     if (0 < this_ptr->edge_count) {
       do {
-        pSVar1 = this_ptr->edges_ptr;
-        *(undefined4 *)pSVar1[iVar7].field2_0x8 = *(undefined4 *)((int)pvVar2 + 8);
-        *(undefined4 *)(pSVar1[iVar7].field2_0x8 + 4) = *(undefined4 *)((int)pvVar2 + 0xc);
-        *(undefined4 *)(this_ptr->edges_ptr[iVar7].field2_0x8 + 8) =
-             *(undefined4 *)((int)pvVar2 + 0x10);
-        this_ptr->edges_ptr[iVar7].field6_0x20 = 0;
+        pCVar1 = this_ptr->edges_ptr;
+        *(undefined4 *)&pCVar1[iVar7].collapse_cost = *(undefined4 *)((int)pvVar2 + 8);
+        *(undefined4 *)((int)&pCVar1[iVar7].collapse_cost + 4) = *(undefined4 *)((int)pvVar2 + 0xc);
+        this_ptr->edges_ptr[iVar7].collapse_error = *(float *)((int)pvVar2 + 0x10);
+        this_ptr->edges_ptr[iVar7].needs_recalc_flag = 0;
         iVar7 = iVar7 + 1;
         pvVar2 = (void *)((int)pvVar2 + 0xf0);
       } while (iVar7 < this_ptr->edge_count);
@@ -469,7 +468,7 @@ LAB_0051d075:
 //   XREF to: 00506f10 (UNCONDITIONAL_CALL)
 // 0051d0c5: ADD ESP,0x4
 // 0051d0c8: PUSH EDI
-// 0051d0c9: CALL shape_meshlod.cpp_CLodMesh_FUN_00519710
+// 0051d0c9: CALL shape_meshlod.cpp_CLodMesh_computeAllEdgeCollapseCosts_FUN_00519710
 //   XREF to: 00519710 (UNCONDITIONAL_CALL)
 // 0051d0ce: ADD ESP,0x4
 // 0051d0d1: JMP 0x0051d030

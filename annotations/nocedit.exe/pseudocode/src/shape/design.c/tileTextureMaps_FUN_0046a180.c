@@ -139,23 +139,23 @@ void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int pr
   shape_design_c_normalizeUVCoordinates_FUN_0046e340();
   for (local_14 = 0; local_14 < g_PolygonCount; local_14 = local_14 + 1) {
     if (g_ModelPolygonData[local_14].texture_name[0] != '\0') {
-      fVar11 = (float)g_ModelPolygonData[local_14].vertex_indices[0x10];
-      local_1b8 = g_ModelPolygonData[local_14].uv_coordinates[0];
-      local_1bc = (float)g_ModelPolygonData[local_14].vertex_indices[0x10];
-      fVar10 = g_ModelPolygonData[local_14].uv_coordinates[0];
+      fVar11 = g_ModelPolygonData[local_14].uv_u[0];
+      local_1b8 = g_ModelPolygonData[local_14].uv_v[0];
+      local_1bc = g_ModelPolygonData[local_14].uv_u[0];
+      fVar10 = g_ModelPolygonData[local_14].uv_v[0];
       for (local_1c = 1; local_1c < (int)g_ModelPolygonData[local_14].vertex_indices_count;
           local_1c = local_1c + 1) {
-        if ((float)g_ModelPolygonData[local_14].vertex_indices[local_1c + 0x10] < fVar11) {
-          fVar11 = (float)g_ModelPolygonData[local_14].vertex_indices[local_1c + 0x10];
+        if (g_ModelPolygonData[local_14].uv_u[local_1c] < fVar11) {
+          fVar11 = g_ModelPolygonData[local_14].uv_u[local_1c];
         }
-        if (g_ModelPolygonData[local_14].uv_coordinates[local_1c] < local_1b8) {
-          local_1b8 = g_ModelPolygonData[local_14].uv_coordinates[local_1c];
+        if (g_ModelPolygonData[local_14].uv_v[local_1c] < local_1b8) {
+          local_1b8 = g_ModelPolygonData[local_14].uv_v[local_1c];
         }
-        if (local_1bc < (float)g_ModelPolygonData[local_14].vertex_indices[local_1c + 0x10]) {
-          local_1bc = (float)g_ModelPolygonData[local_14].vertex_indices[local_1c + 0x10];
+        if (local_1bc < g_ModelPolygonData[local_14].uv_u[local_1c]) {
+          local_1bc = g_ModelPolygonData[local_14].uv_u[local_1c];
         }
-        if (fVar10 < g_ModelPolygonData[local_14].uv_coordinates[local_1c]) {
-          fVar10 = g_ModelPolygonData[local_14].uv_coordinates[local_1c];
+        if (fVar10 < g_ModelPolygonData[local_14].uv_v[local_1c]) {
+          fVar10 = g_ModelPolygonData[local_14].uv_v[local_1c];
         }
       }
       dVar9 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(local_14 * 0x184,local_1c));

@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void core_trash.cpp_CTrash_FUN_005df6e0(CTrash * this_ptr)
 // Globals:
-//   undefined4 s_Model_file_(.kfm)_006555ca
+//   TerminatedCString s_Model_file_kfm_006555ca
 // Function calls:
 //   core_actor.cpp_CActorPropertyList_FUN_0040e3b0
 //   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290

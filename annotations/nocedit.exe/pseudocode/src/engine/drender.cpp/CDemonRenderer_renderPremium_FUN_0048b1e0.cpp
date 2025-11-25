@@ -7,7 +7,7 @@
 //   core_set.cpp_CDemonSet_FUN_00570040 (00570040) at 0057021f [UNCONDITIONAL_CALL]
 //   core_set.cpp_FUN_005702b0 (005702b0) at 00570640 [UNCONDITIONAL_CALL]
 //   core_water.cpp_CWater_render_FUN_005ea320 (005ea320) at 005ea7c8 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051ead0 (0051ead0) at 0051ec5a [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 (0051ead0) at 0051ec5a [UNCONDITIONAL_CALL]
 // Globals:
 //   int g_BitsPerPixel = 0x8
 //   int[16] g_VertexIndexBuffer

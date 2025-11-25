@@ -9,16 +9,14 @@
 // Globals:
 //   TerminatedCString s_core_charactr_cpp_00617568
 //   TerminatedCString s_CCharacter_chooseNextLay_0061757d
-//   undefined4 DAT_006175ba
-//   undefined4 DAT_006175c2
+//   double DOUBLE_006175ba = 0.0000100000000000000
+//   double DOUBLE_006175c2 = 0.999990000000000
 //   char* g_CurrentFilename
 //   int g_CurrentLineNumber
 // Function calls:
 //   core_main.c_displayErrorAndQuit_FUN_00506f10
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCharacter *this_ptr)
 
@@ -36,8 +34,8 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCh
     g_CurrentLineNumber = 4000;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::chooseNextLayerAction - invalid layerActionIndex");
   }
-  if ((float)_DAT_006175ba <= *(float *)(this_ptr->field13_0x2620 + 0x470)) {
-    if (*(float *)(this_ptr->field13_0x2620 + 0x470) <= (float)_DAT_006175c2) {
+  if ((float)DOUBLE_006175ba <= *(float *)(this_ptr->field13_0x2620 + 0x470)) {
+    if (*(float *)(this_ptr->field13_0x2620 + 0x470) <= (float)DOUBLE_006175c2) {
       return;
     }
     iVar2 = *(int *)(this_ptr->field13_0x2620 +

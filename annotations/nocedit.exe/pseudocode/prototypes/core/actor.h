@@ -679,9 +679,9 @@ CVector3f * CVector::ctor(CVector3f * this_ptr);
 // Address: 00410350
 CVector3f * CVector::dtor(CVector3f * this_ptr);
 
-// Original: core_actor.cpp_FUN_00410360
+// Original: core_actor.cpp_copyVector_FUN_00410360
 // Address: 00410360
-undefined FUN_00410360();
+void copyVector(CVector3f * dst_ptr, CVector3f * src_ptr);
 
 // Original: core_actor.cpp_FUN_00410380
 // Address: 00410380

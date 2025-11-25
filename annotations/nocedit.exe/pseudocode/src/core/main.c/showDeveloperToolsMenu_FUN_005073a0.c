@@ -9,7 +9,7 @@
 //   TerminatedCString s_Editor_0063169a
 //   TerminatedCString s_system_nocturne_ini_006316a1
 //   TerminatedCString s_AcceptedLicenseAgreement_006316b7
-//   SEncryptedMessage g_LicenseAgreement
+//   char[14616] g_LicenseAgreement
 //   TerminatedCString s_I_accept_the_terms_of_th_00634fe8
 //   TerminatedCString s_I_DO_NOT_accept_the_term_00635014
 //   TerminatedCString s_AcceptedLicenseAgreement_00635047
@@ -287,7 +287,7 @@ LAB_0050740e:
     engine_2d_c_clearInputAndWait_FUN_00403260();
     return;
   }
-  pcVar3 = support_newmsg_cpp_decryptMessage_FUN_00544270(&g_LicenseAgreement);
+  pcVar3 = support_newmsg_cpp_decryptMessage_FUN_00544270((SEncryptedMessage *)g_LicenseAgreement);
   iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,pcVar3);
   shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0((CEdScrollBar *)(auStack_f8 + 0xac));
   iVar1 = g_ClipRight;

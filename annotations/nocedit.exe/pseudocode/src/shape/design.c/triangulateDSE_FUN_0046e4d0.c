@@ -65,8 +65,8 @@ void shape_design_c_triangulateDSE_FUN_0046e4d0(void)
           pSVar7 = (SShapeEditorPolygon *)((int)pSVar7 + ((uint)bVar8 * -2 + 1) * 4);
         }
         g_ModelPolygonData[iVar2].vertex_indices[1] = pSVar4->vertex_indices[local_1c];
-        g_ModelPolygonData[iVar2].vertex_indices[0x11] = pSVar4->vertex_indices[local_1c + 0x10];
-        g_ModelPolygonData[iVar2].uv_coordinates[1] = pSVar4->uv_coordinates[local_1c];
+        g_ModelPolygonData[iVar2].uv_u[1] = pSVar4->uv_u[local_1c];
+        g_ModelPolygonData[iVar2].uv_v[1] = pSVar4->uv_v[local_1c];
         g_ModelPolygonData[iVar2].vertex_indices_count =
              (g_ModelPolygonData[local_14].vertex_indices_count - local_1c) + 1;
         if ((int)in_stack_00000004 < (int)g_ModelPolygonData[iVar2].vertex_indices_count) {
@@ -75,8 +75,8 @@ void shape_design_c_triangulateDSE_FUN_0046e4d0(void)
         for (local_24 = 2; local_24 < (int)g_ModelPolygonData[iVar2].vertex_indices_count;
             local_24 = local_24 + 1) {
           pSVar5->vertex_indices[local_24] = pSVar4->vertex_indices[local_1c + 1];
-          pSVar5->vertex_indices[local_24 + 0x10] = pSVar4->vertex_indices[local_1c + 0x11];
-          pSVar5->uv_coordinates[local_24] = pSVar4->uv_coordinates[local_1c + 1];
+          pSVar5->uv_u[local_24] = pSVar4->uv_u[local_1c + 1];
+          pSVar5->uv_v[local_24] = pSVar4->uv_v[local_1c + 1];
           local_1c = local_1c + 1;
         }
       }

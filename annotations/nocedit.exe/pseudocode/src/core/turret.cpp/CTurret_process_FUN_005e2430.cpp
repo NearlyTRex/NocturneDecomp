@@ -5,13 +5,13 @@
 // Signature: void core_turret.cpp_CTurret_process_FUN_005e2430(CTurret * this_ptr)
 // Globals:
 //   void* switchdataD_005e241c = 005e2462
-//   undefined4 s_turret-ani?.wav_00656600
+//   TerminatedCString s_turret_ani_wav_00656600
 //   TerminatedCString s_turret_ani_wav_00656610
 //   TerminatedCString s_core_turret_cpp_00656620
 //   TerminatedCString s_CTurret_process_invalid__00656633
 //   TerminatedCString s_turret_loop_wav_f_00656654
 //   TerminatedCString s_turret_tail_wav_00656669
-//   undefined4 DAT_00656680
+//   double DOUBLE_00656680 = 2
 //   CEventList* g_CEventListPtr = 02d05310
 //   CEventList g_CEventListInstance
 //   char* g_CurrentFilename
@@ -32,8 +32,6 @@
 //   sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
 
@@ -93,7 +91,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
     this_ptr->state = 1;
     this_ptr->timer = this_ptr->charge_time;
     sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar3);
-    in_stack_ffffff0c = "?turret-ani?.wav" + 1;
+    in_stack_ffffff0c = "turret-ani?.wav";
     goto LAB_005e24c7;
   case 1:
     fVar5 = this_ptr->timer - in_stack_00000008;
@@ -195,8 +193,8 @@ LAB_005e24c7:
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
                 (&CStack_98,&CStack_58,
                  (CQuaternion4f *)
-                 ((in_stack_00000008 / (this_ptr->timer + in_stack_00000008)) * (float)_DAT_00656680
-                 ),fVar5);
+                 ((in_stack_00000008 / (this_ptr->timer + in_stack_00000008)) *
+                 (float)DOUBLE_00656680),fVar5);
       quat_ptr = &CStack_84;
       pCVar7 = &CStack_34;
       CStack_84.w = fStack_64;

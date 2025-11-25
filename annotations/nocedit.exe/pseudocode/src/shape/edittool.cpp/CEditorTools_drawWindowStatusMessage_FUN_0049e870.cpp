@@ -7,7 +7,7 @@
 //   core_skeledit.cpp_FUN_00589b10 (00589b10) at 00589b53 [UNCONDITIONAL_CALL]
 //   core_skeledit.cpp_FUN_0058c190 (0058c190) at 0058d223 [UNCONDITIONAL_CALL]
 //   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 (005dc2a0) at 005dc3d5 [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051d520 (0051d520) at 0051d805 [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (0051d520) at 0051d805 [UNCONDITIONAL_CALL]
 // Globals:
 //   TerminatedCString s_shape_edittool_cpp_00622eae
 //   TerminatedCString s_gEdFont_must_be_set_by_t_00622ec4

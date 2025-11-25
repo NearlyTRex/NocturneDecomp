@@ -9,9 +9,9 @@
 //   TerminatedCString s_s_confused_while_walking_006194ea
 //   TerminatedCString s_cow_wav_00619514
 //   TerminatedCString s_s_gave_up_chase_I_m_conf_0061951d
-//   undefined4 DAT_00619545
-//   undefined4 DAT_0061954d
-//   undefined4 DAT_00619555
+//   double DOUBLE_00619545 = 3.14159265350000
+//   double DOUBLE_0061954d = 0.25
+//   double DOUBLE_00619555 = 32
 //   undefined4 DAT_0065c098
 //   CConsole* g_CConsolePtr = 0083b1a4
 //   CGore* g_CGorePtr = 02d83364
@@ -49,7 +49,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: undefined1 actors_enemy_cow.cpp_FUN_00444310(undefined4 param_1, undefined4 param_2)
     */
 
@@ -110,8 +109,8 @@ void core_cow_cpp_FUN_00444310(void)
     core_charactr_cpp_CCharacter_FUN_0042ec40(&in_stack_00000004->base_character);
   }
   fVar2 = in_stack_00000004->speed;
-  fVar5 = (float)_DAT_00619545;
-  fVar4 = (float)_DAT_0061954d;
+  fVar5 = (float)DOUBLE_00619545;
+  fVar4 = (float)DOUBLE_0061954d;
   *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x28) =
        (in_stack_00000004->base_character).model.accumulated_root_motion.z;
   *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x2c) =
@@ -191,11 +190,10 @@ void core_cow_cpp_FUN_00444310(void)
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
       pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_3c,&g_ZeroVector,
-                           (CMatrix3x4f *)
                            (in_stack_00000004->base_character).model.bone_transform.
-                           bone_world_matrices
-                           [*(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc
-                                    )].m);
+                           bone_world_matrices +
+                           *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc)
+                          );
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)in_stack_00000004,&local_30,pCVar10);
       core_enemy_cpp_FUN_004a9880();
@@ -255,7 +253,7 @@ switchD_0044482d_caseD_3:
     }
     *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x20) =
          *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x20) -
-         in_stack_00000008 * (float)_DAT_00619555;
+         in_stack_00000008 * (float)DOUBLE_00619555;
     local_48 = *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x1c) *
                in_stack_00000008;
     local_44 = *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x20) *

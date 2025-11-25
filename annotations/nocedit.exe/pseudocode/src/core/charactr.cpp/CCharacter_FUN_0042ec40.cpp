@@ -36,7 +36,7 @@
 //   core_werewolf.cpp_CWerewolf_process_FUN_005efde0 (005efde0) at 005efe68 [UNCONDITIONAL_CALL]
 //   core_zombie.cpp_CZombie_process_FUN_005f9470 (005f9470) at 005f9543 [UNCONDITIONAL_CALL]
 // Globals:
-//   undefined4 s_Bip01_L_Foot_006175f2
+//   TerminatedCString s_Bip01_L_Foot_006175f2
 //   TerminatedCString s_Bip01_R_Foot_006175ff
 //   TerminatedCString s_Bip01_L_Foot_0061760c
 //   TerminatedCString s_Bip01_R_Foot_00617619

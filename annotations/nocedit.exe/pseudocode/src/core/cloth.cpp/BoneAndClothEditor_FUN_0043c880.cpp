@@ -54,8 +54,6 @@
 //   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 //   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 //   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
-//   core_stairs.cpp_FUN_005b9620
-//   core_stairs.cpp_FUN_005b9a20
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   engine_2d.c_fillRectColor_FUN_00403170
 //   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
@@ -64,6 +62,8 @@
 //   engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
 //   engine_pcx.c_saveScreenshotGeneral_FUN_005490c0
 //   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
+//   shape_spotview.cpp_CSpotView_FUN_005b9620
+//   shape_spotview.cpp_CSpotView_FUN_005b9a20
 //   wincore_windll.cpp_clearScreen_FUN_005b3e70
 //   wincore_windll.cpp_clearZBuffer_FUN_005b3ed4
 //   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
@@ -164,7 +164,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
   _DAT_00838e54 = 0;
   _DAT_00838e50 = 0;
   _DAT_00838e4c = 0;
-  core_stairs_cpp_FUN_005b9620();
+  shape_spotview_cpp_CSpotView_FUN_005b9620(g_CSpotViewPtr);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffaac);
   core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
             (&g_CDeformableModelInstanceInstance.motion_controller,0,0.0);
@@ -236,7 +236,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
       }
     }
     (*g_CKeysPtr->vtable[1].isKeyDown)(g_CKeysPtr,in_stack_fffffad0);
-    core_stairs_cpp_FUN_005b9a20();
+    shape_spotview_cpp_CSpotView_FUN_005b9a20(g_CSpotViewPtr);
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xf8);
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
@@ -326,7 +326,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
     in_stack_fffffb48 = (char **)0x13;
     iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x13);
     if (iVar4 != 0) {
-      core_stairs_cpp_FUN_005b9620();
+      shape_spotview_cpp_CSpotView_FUN_005b9620(g_CSpotViewPtr);
     }
     in_stack_fffffb54 = &pcStack_f0;
     in_stack_fffffb50 = (CStrList_vtable *)0x43cdb8;
@@ -392,13 +392,13 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
       engine_2d_c_drawText_FUN_00401fd0(acStack_e4,0,g_WindowHeight + -0x16);
       iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
       if (iVar4 == 0) {
-        core_stairs_cpp_FUN_005b9670();
+        shape_spotview_cpp_CSpotView_FUN_005b9670(g_CSpotViewPtr);
       }
       else {
         core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0x00000034);
-        in_stack_00000068 = *(float *)(iVar6 + 0x1c) * _DAT_006188ba;
-        in_stack_0000006c = *(float *)(iVar6 + 0x20) * _DAT_006188ba;
-        in_stack_00000070 = _DAT_006188ba * *(float *)(iVar6 + 0x24);
+        in_stack_00000068 = *(float *)(iVar6 + 0x1c) * FLOAT_006188ba;
+        in_stack_0000006c = *(float *)(iVar6 + 0x20) * FLOAT_006188ba;
+        in_stack_00000070 = FLOAT_006188ba * *(float *)(iVar6 + 0x24);
         in_stack_00000090 = 0x41200000;
         if (&stack0x00000040 != &stack0x00000068) {
           in_stack_00000040 = in_stack_00000068;
@@ -472,7 +472,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
       }
     }
     else {
-      core_stairs_cpp_FUN_005b9670();
+      shape_spotview_cpp_CSpotView_FUN_005b9670(g_CSpotViewPtr);
     }
     iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2c);
     if (iVar4 != 0) {
@@ -532,7 +532,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
 // 0043c8ee: MOV [0x00838e4c],EAX
 //   XREF to: 00838e4c (WRITE)
 // 0043c8f3: XOR EBX,EDX
-// 0043c8f5: CALL core_stairs.cpp_FUN_005b9620
+// 0043c8f5: CALL shape_spotview.cpp_CSpotView_FUN_005b9620
 //   XREF to: 005b9620 (UNCONDITIONAL_CALL)
 // 0043c8fa: ADD ESP,0x8
 // 0043c8fd: MOV EAX,[0x0067b654]
@@ -662,7 +662,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
 //   XREF to: 03f6b9e0 (PARAM)
 // 0043ca72: PUSH EBX
 //   XREF to: 03f6b9e0 (DATA)
-// 0043ca73: CALL core_stairs.cpp_FUN_005b9a20
+// 0043ca73: CALL shape_spotview.cpp_CSpotView_FUN_005b9a20
 //   XREF to: 005b9a20 (UNCONDITIONAL_CALL)
 // 0043ca78: ADD ESP,0x4
 // 0043ca7b: CALL wincore_windll.cpp_clearScreen_FUN_005b3e70

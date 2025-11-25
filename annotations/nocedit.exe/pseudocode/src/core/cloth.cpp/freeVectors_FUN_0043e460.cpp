@@ -9,7 +9,7 @@
 //   core_fire.cpp_CGlassParticle_dtor_FUN_004c9660 (004c9660) at 004c966a [UNCONDITIONAL_CALL]
 //   core_skeleton.cpp_SVert_dtor_FUN_005a1f90 (005a1f90) at 005a1f9a [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodFace_dtor_FUN_0051efc0 (0051efc0) at 0051efca [UNCONDITIONAL_CALL]
-//   shape_meshlod.cpp_FUN_0051bd30 (0051bd30) at 0051c05c [UNCONDITIONAL_CALL]
+//   shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30 (0051bd30) at 0051c05c [UNCONDITIONAL_CALL]
 // Globals:
 //   WatcomTypeInfo g_CVectorTypeInfo
 // Function calls:
