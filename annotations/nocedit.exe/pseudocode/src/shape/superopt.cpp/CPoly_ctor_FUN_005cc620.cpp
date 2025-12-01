@@ -1,8 +1,8 @@
-// Name: shape_superopt.cpp_FUN_005cc620
+// Name: shape_superopt.cpp_CPoly_ctor_FUN_005cc620
 // Address: 005cc620
 // Address Range: [[005cc620, 005cc653]]
-// Convention: unknown
-// Signature: undefined shape_superopt.cpp_FUN_005cc620()
+// Convention: __cdecl
+// Signature: CPoly * shape_superopt.cpp_CPoly_ctor_FUN_005cc620(CPoly * this_ptr)
 // Cross-references:
 //   shape_superopt.cpp_CObj_FUN_005d2320 (005d2320) at 005d2393 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_CObj_FUN_005d2410 (005d2410) at 005d2457 [UNCONDITIONAL_CALL]
@@ -17,14 +17,13 @@
 
 #include "nocturne.h"
 
-CPoly * shape_superopt_cpp_FUN_005cc620(void)
+CPoly * __cdecl shape_superopt_cpp_CPoly_ctor_FUN_005cc620(CPoly *this_ptr)
 
 {
   void *pvVar1;
-  int in_stack_00000004;
   
   pvVar1 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-                     ((void *)(in_stack_00000004 + 0x10),3,&g_CP2DTypeInfo);
+                     (this_ptr->uv_coords,3,&g_CP2DTypeInfo);
   *(void ***)((int)pvVar1 + 0x54) = &g_CPolyVTable;
   shape_superopt_cpp_CPoly_FUN_005cc670((CPoly *)((int)pvVar1 + -0x10));
   return (CPoly *)((int)pvVar1 + -0x10);
@@ -33,7 +32,7 @@ CPoly * shape_superopt_cpp_FUN_005cc620(void)
 
 // Assembly code:
 // 005cc620: PUSH EBX
-//   Label: shape_superopt.cpp_FUN_005cc620
+//   Label: shape_superopt.cpp_CPoly_ctor_FUN_005cc620
 // 005cc621: MOV EBX,dword ptr [ESP + 0x8]
 //   XREF to: Stack[0x4] (READ)
 // 005cc625: PUSH 0x663ca0

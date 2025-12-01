@@ -1,8 +1,8 @@
-// Name: shape_superopt.cpp_FUN_005d2230
+// Name: shape_superopt.cpp_CObj_ctor_FUN_005d2230
 // Address: 005d2230
 // Address Range: [[005d2230, 005d225b]]
-// Convention: unknown
-// Signature: undefined shape_superopt.cpp_FUN_005d2230()
+// Convention: __cdecl
+// Signature: CObj * shape_superopt.cpp_CObj_ctor_FUN_005d2230(CObj * this_ptr)
 // Cross-references:
 //   shape_superopt.cpp_COptimize_ctor_FUN_005d6f90 (005d6f90) at 005d6f9a [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_TriListSomething_FUN_005d77a0 (005d77a0) at 005d7882 [UNCONDITIONAL_CALL]
@@ -14,21 +14,19 @@
 
 #include "nocturne.h"
 
-CObj * shape_superopt_cpp_FUN_005d2230(void)
+CObj * __cdecl shape_superopt_cpp_CObj_ctor_FUN_005d2230(CObj *this_ptr)
 
 {
-  CObj *in_stack_00000004;
-  
-  in_stack_00000004->vtable = &g_CObjVTable;
-  shape_superopt_cpp_CObj_FUN_005d2280(in_stack_00000004);
-  shape_superopt_cpp_CObj_FUN_005d22d0(in_stack_00000004);
-  return in_stack_00000004;
+  this_ptr->vtable = &g_CObjVTable;
+  shape_superopt_cpp_CObj_FUN_005d2280(this_ptr);
+  shape_superopt_cpp_CObj_FUN_005d22d0(this_ptr);
+  return this_ptr;
 }
 
 
 // Assembly code:
 // 005d2230: PUSH EBX
-//   Label: shape_superopt.cpp_FUN_005d2230
+//   Label: shape_superopt.cpp_CObj_ctor_FUN_005d2230
 // 005d2231: MOV EBX,dword ptr [ESP + 0x8]
 //   XREF to: Stack[0x4] (READ)
 // 005d2235: PUSH EBX

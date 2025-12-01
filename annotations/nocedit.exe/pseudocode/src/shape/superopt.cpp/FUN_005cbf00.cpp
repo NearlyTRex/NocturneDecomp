@@ -8,8 +8,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 shape_superopt.cpp_FUN_005cbf00(undefined4 param_1) */
-
 undefined4 shape_superopt_cpp_FUN_005cbf00(void)
 
 {

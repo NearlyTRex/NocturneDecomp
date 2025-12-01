@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: void shape_superopt.cpp_CPoly_FUN_005cc670(CPoly * this_ptr)
 // Cross-references:
-//   shape_superopt.cpp_FUN_005cc620 (005cc620) at 005cc648 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CPoly_ctor_FUN_005cc620 (005cc620) at 005cc648 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 

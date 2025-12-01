@@ -69,6 +69,7 @@
 //   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 //   shape_memdbg.cpp_openFile_FUN_0050f7a0
 //   shape_superopt.cpp_BonesAndPointsCheck_FUN_005d7e00
+//   shape_superopt.cpp_CObj_ctor_FUN_005d2230
 //   shape_superopt.cpp_CObj_dtor_FUN_005d2260
 //   shape_superopt.cpp_CObj_FUN_005d22d0
 //   shape_superopt.cpp_CObj_FUN_005d2600
@@ -80,36 +81,36 @@
 //   shape_superopt.cpp_COptimize_FUN_005d71c0
 //   shape_superopt.cpp_COptimize_FUN_005d71e0
 //   shape_superopt.cpp_COptimize_FUN_005d7290
+//   shape_superopt.cpp_CPoly_ctor_FUN_005cc620
 //   shape_superopt.cpp_CPoly_dtor_FUN_005cc660
 //   shape_superopt.cpp_CPoly_FUN_005cd7d0
-//   shape_superopt.cpp_FUN_005cc620
-//   shape_superopt.cpp_FUN_005d2230
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x005d7ac1) */
-/* Signature: undefined1 shape_superopt.cpp_TriListSomething() */
 
 void shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
 
 {
   char cVar1;
+  undefined4 uVar2;
   FILE *file;
-  int iVar2;
-  int *piVar3;
-  int iVar4;
-  int *piVar5;
+  int iVar3;
+  undefined4 *puVar4;
+  int iVar5;
+  int *piVar6;
   BADSPACEBASE *in_ESP;
-  int iVar6;
-  char *pcVar7;
-  FILE *unaff_EDI;
+  int iVar7;
   char *pcVar8;
-  byte bVar9;
-  float10 fVar10;
+  FILE *unaff_EDI;
+  char *pcVar9;
+  byte bVar10;
+  float10 fVar11;
   FILE *unaff_retaddr;
   FILE *in_stack_00000004;
   int in_stack_0000000c;
-  int aiStackY_112c [1006];
+  undefined4 auStackY_112c [1006];
+  CObj *pCVar12;
   undefined4 local_10c;
   undefined4 local_108;
   undefined4 uStack_104;
@@ -123,13 +124,15 @@ void shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
   undefined1 auStack_7c [8];
   undefined1 auStack_74 [8];
   undefined1 auStack_6c [8];
-  undefined1 auStack_64 [36];
-  CObj CStack_40;
+  undefined1 auStack_64 [32];
+  undefined1 auStack_44 [16];
+  void *local_34;
+  void *local_2c;
   undefined8 local_18;
   char *str2;
-  CPoly *pCVar11;
+  CPoly *pCVar13;
   
-  bVar9 = 0;
+  bVar10 = 0;
   shape_design_c_removeDegeneratePolygons_FUN_00465310();
   if ((g_PolygonCount < 1) || (g_VertexCount < 1)) {
     return;
@@ -139,100 +142,100 @@ void shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
                    ((char *)&uStack_f8,(char *)0x0,"wt","..\\shape\\superopt.cpp",
                     0x252f);
   if (0 < g_PolygonCount) {
-    iVar2 = 0;
+    iVar3 = 0;
     do {
-      iVar2 = iVar2 + 0x184;
-    } while (iVar2 < g_PolygonCount * 0x184);
+      iVar3 = iVar3 + 0x184;
+    } while (iVar3 < g_PolygonCount * 0x184);
   }
   if (file != (FILE *)0x0) {
     crt_stdio_c_fprintf_FUN_005fe6d0(file,"// npoint, ntri\n");
     crt_stdio_c_fprintf_FUN_005fe6d0(unaff_EDI,"%d %d\n",g_VertexCount);
   }
-  shape_superopt_cpp_FUN_005d2230();
-  shape_superopt_cpp_CObj_FUN_005d22d0(&CStack_40);
+  shape_superopt_cpp_CObj_ctor_FUN_005d2230((CObj *)auStack_44);
+  shape_superopt_cpp_CObj_FUN_005d22d0((CObj *)(auStack_44 + 4));
   if (unaff_retaddr != (FILE *)0x0) {
     crt_stdio_c_fprintf_FUN_005fe6d0(unaff_retaddr,"// pointList\n");
   }
-  iVar2 = 0;
+  iVar3 = 0;
   if (0 < g_VertexCount) {
-    iVar4 = 0;
-    iVar6 = 0;
+    iVar5 = 0;
+    iVar7 = 0;
     do {
-      *(double *)((int)&((CPoly *)((CStack_40.poly_array)->uv_coords + -1))->parent_obj + iVar6) =
-           (double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar4);
-      *(double *)((int)(CStack_40.poly_array)->uv_coords + iVar6 + -8) =
-           (double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar4);
-      *(double *)((int)&(CStack_40.poly_array)->uv_coords[0].x + iVar6) =
-           (double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar4);
+      *(double *)((int)local_34 + iVar7) =
+           (double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar5);
+      *(double *)((int)local_34 + iVar7 + 8) =
+           (double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar5);
+      *(double *)((int)local_34 + iVar7 + 0x10) =
+           (double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar5);
       if (in_stack_00000004 != (FILE *)0x0) {
         crt_stdio_c_fprintf_FUN_005fe6d0
                   (in_stack_00000004,"%g %g %g\n","%g %g %g\n",
-                   (double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar4),
-                   (double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar4),
-                   (double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar4));
+                   (double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar5),
+                   (double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar5),
+                   (double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar5));
       }
-      iVar6 = iVar6 + 0x38;
-      iVar2 = iVar2 + 1;
-      iVar4 = iVar4 + 0x14;
-    } while (iVar2 < g_VertexCount);
+      iVar7 = iVar7 + 0x38;
+      iVar3 = iVar3 + 1;
+      iVar5 = iVar5 + 0x14;
+    } while (iVar3 < g_VertexCount);
   }
   if (in_stack_00000004 != (FILE *)0x0) {
     crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000004,"// triList\n");
   }
   str2 = (char *)0x0;
   if (0 < g_PolygonCount) {
-    pCVar11 = (CPoly *)g_ModelPolygonData[0].texture_name;
+    pCVar13 = (CPoly *)g_ModelPolygonData[0].texture_name;
     do {
-      shape_superopt_cpp_FUN_005cc620();
-      iVar2 = pCVar11[0x38666].field6_0x58;
-      iVar4 = 0;
+      shape_superopt_cpp_CPoly_ctor_FUN_005cc620((CPoly *)&stack0xfffffeb8);
+      pCVar12 = (CObj *)pCVar13[0x38666].field6_0x58;
+      iVar3 = 0;
       if (0 < DAT_03f6bbe8) {
-        pcVar7 = &DAT_03f6bbf0;
+        pcVar8 = &DAT_03f6bbf0;
         do {
-          iVar6 = crt_string_c_stricmp_FUN_005fe7f0(pcVar7,str2);
-          if (iVar6 == 0) goto LAB_005d7a1a;
-          iVar4 = iVar4 + 1;
-          pcVar7 = pcVar7 + 0x50;
-        } while (iVar4 < DAT_03f6bbe8);
+          iVar5 = crt_string_c_stricmp_FUN_005fe7f0(pcVar8,str2);
+          if (iVar5 == 0) goto LAB_005d7a1a;
+          iVar3 = iVar3 + 1;
+          pcVar8 = pcVar8 + 0x50;
+        } while (iVar3 < DAT_03f6bbe8);
       }
-      iVar4 = -1;
+      iVar3 = -1;
 LAB_005d7a1a:
-      if (iVar4 < 0) {
+      if (iVar3 < 0) {
         if (0x31 < DAT_03f6bbe8) {
           g_CurrentFilename = "..\\shape\\superopt.cpp";
           g_CurrentLineNumber = 0x255b;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many textures!");
         }
-        iVar4 = DAT_03f6bbe8;
-        pcVar8 = &DAT_03f6bbf0 + DAT_03f6bbe8 * 0x50;
-        pcVar7 = str2;
+        iVar3 = DAT_03f6bbe8;
+        pcVar9 = &DAT_03f6bbf0 + DAT_03f6bbe8 * 0x50;
+        pcVar8 = str2;
         do {
-          cVar1 = *pcVar7;
-          *pcVar8 = cVar1;
+          cVar1 = *pcVar8;
+          *pcVar9 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar7[1];
-          pcVar7 = pcVar7 + 2;
-          pcVar8[1] = cVar1;
+          cVar1 = pcVar8[1];
           pcVar8 = pcVar8 + 2;
+          pcVar9[1] = cVar1;
+          pcVar9 = pcVar9 + 2;
         } while (cVar1 != '\0');
         DAT_03f6bbe8 = DAT_03f6bbe8 + 1;
       }
       in_stack_00000004 = (FILE *)&DAT_00000002;
-      piVar5 = &pCVar11->vertex_idx_1;
-      iStack_f0 = iVar4;
-      if (2 < *(int *)((int)&pCVar11[0x38666].normal.x + 4)) {
+      piVar6 = &pCVar13->vertex_idx_1;
+      iStack_f0 = iVar3;
+      if (2 < *(int *)((int)&pCVar13[0x38666].normal.x + 4)) {
         do {
-          iVar4 = piVar5[0x5ba671];
+          uVar2 = piVar6[0x5ba671];
           shape_superopt_cpp_CPoly_FUN_005cd7d0((CPoly *)&stack0xfffffeb4);
-          piVar3 = (int *)(CStack_40.field5_0x14 + in_stack_0000000c);
-          local_18._4_4_ = piVar3;
-          *piVar3 = iVar2;
-          piVar3[1] = iVar4;
-          piVar3[(uint)bVar9 * -2 + 2] = *(int *)(&stack0xfffffec0 + (uint)bVar9 * -8);
-          (piVar3 + (uint)bVar9 * -2 + 2)[(uint)bVar9 * -2 + 1] =
-               *(int *)(&stack0xfffffec4 + ((uint)bVar9 * -2 + (uint)bVar9 * -2) * 4);
+          puVar4 = (undefined4 *)((int)local_2c + in_stack_0000000c);
+          local_18._4_4_ = puVar4;
+          *puVar4 = pCVar12;
+          puVar4[1] = uVar2;
+          puVar4[(uint)bVar10 * -2 + 2] = *(undefined4 *)(&stack0xfffffec0 + (uint)bVar10 * -8);
+          (puVar4 + (uint)bVar10 * -2 + 2)[(uint)bVar10 * -2 + 1] =
+               *(undefined4 *)(&stack0xfffffec4 + ((uint)bVar10 * -2 + (uint)bVar10 * -2) * 4);
           crt_memory_c_copyArrayWithFunction_FUN_006020c2
-                    (piVar3 + 4,&stack0xfffffec8,3,0x10,shape_superopt_cpp_FUN_005d8330);
+                    (puVar4 + 4,&stack0xfffffec8,3,0x10,shape_superopt_cpp_FUN_005d8330);
           *(undefined4 *)((int)local_18 + 0x40) = local_10c;
           *(undefined4 *)((int)local_18 + 0x44) = local_108;
           *(undefined4 *)((int)local_18 + 0x48) = uStack_104;
@@ -243,11 +246,11 @@ LAB_005d7a1a:
           *(int *)((int)local_18 + 0x5c) = iStack_f0;
           *(int *)((int)local_18 + 0x60) = iStack_ec;
           in_stack_00000004 = (FILE *)((int)&in_stack_00000004->_ptr + 1);
-          piVar5 = piVar5 + 1;
-        } while ((int)in_stack_00000004 < *(int *)((int)&pCVar11[0x38666].normal.x + 4));
+          piVar6 = piVar6 + 1;
+        } while ((int)in_stack_00000004 < *(int *)((int)&pCVar13[0x38666].normal.x + 4));
       }
       shape_superopt_cpp_CPoly_dtor_FUN_005cc660((CPoly *)&stack0xfffffeb4);
-      pCVar11 = (CPoly *)((int)&pCVar11[3].normal.y + 4);
+      pCVar13 = (CPoly *)((int)&pCVar13[3].normal.y + 4);
       str2 = str2 + 1;
     } while ((int)str2 < g_PolygonCount);
   }
@@ -255,15 +258,15 @@ LAB_005d7a1a:
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000004,"..\\shape\\superopt.cpp",0x2571);
   }
   shape_superopt_cpp_COptimize_ctor_FUN_005d6f90((COptimize *)auStack_7c);
-  fVar10 = (float10)fcos((float10)DOUBLE_00654872);
-  local_18 = (double)((float10)1 - fVar10);
+  fVar11 = (float10)fcos((float10)DOUBLE_00654872);
+  local_18 = (double)((float10)1 - fVar11);
   shape_superopt_cpp_COptimize_FUN_005d70d0((COptimize *)(auStack_7c + 4));
   shape_superopt_cpp_COptimize_FUN_005d7120((COptimize *)auStack_74);
   shape_superopt_cpp_COptimize_FUN_005d7170((COptimize *)(auStack_74 + 4));
   shape_superopt_cpp_COptimize_FUN_005d71c0((COptimize *)auStack_6c);
   shape_superopt_cpp_COptimize_FUN_005d71e0((COptimize *)(auStack_6c + 4));
-  iVar2 = shape_superopt_cpp_COptimize_FUN_005d7290((COptimize *)auStack_64);
-  if (iVar2 == 0) {
+  iVar3 = shape_superopt_cpp_COptimize_FUN_005d7290((COptimize *)auStack_64);
+  if (iVar3 == 0) {
     shape_design_c_optimizePolygonMesh_FUN_004658e0(1.0,0,-1);
     DAT_03f6bbe4 = DAT_03f6bbe4 + 1;
   }
@@ -384,7 +387,7 @@ LAB_005d7a1a:
 // 005d787a: LEA EAX,[ESP + 0x118]
 //   XREF to: Stack[-0x58] (DATA)
 // 005d7881: PUSH EAX
-// 005d7882: CALL shape_superopt.cpp_FUN_005d2230
+// 005d7882: CALL shape_superopt.cpp_CObj_ctor_FUN_005d2230
 //   XREF to: 005d2230 (UNCONDITIONAL_CALL)
 // 005d7887: ADD ESP,0xc
 // 005d788a: MOV ESI,dword ptr [0x01626408]
@@ -509,7 +512,7 @@ LAB_005d7a1a:
 // 005d799e: LEA EAX,[ESP + 0x4]
 //   XREF to: Stack[-0x168] (DATA)
 // 005d79a2: PUSH EAX
-// 005d79a3: CALL shape_superopt.cpp_FUN_005cc620
+// 005d79a3: CALL shape_superopt.cpp_CPoly_ctor_FUN_005cc620
 //   XREF to: 005cc620 (UNCONDITIONAL_CALL)
 // 005d79a8: LEA EAX,[ESP + 0x118]
 //   XREF to: Stack[-0x58] (DATA)

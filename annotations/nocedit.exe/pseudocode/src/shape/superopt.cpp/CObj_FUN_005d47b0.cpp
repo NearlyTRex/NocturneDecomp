@@ -13,9 +13,9 @@
 //   crt_stdio.c_sprintf_FUN_005fdbd0
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1d0
 //   shape_memdbg.cpp_debugFree_FUN_0050f210
+//   shape_superopt.cpp_CPoly_ctor_FUN_005cc620
 //   shape_superopt.cpp_CPoly_dtor_FUN_005cc660
 //   shape_superopt.cpp_CPoly_FUN_005cc6a0
-//   shape_superopt.cpp_FUN_005cc620
 //   shape_superopt.cpp_FUN_005d6c10
 
 #include "nocturne.h"
@@ -413,7 +413,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d47b0(CObj *this_ptr)
                 shape_memdbg_cpp_debugFree_FUN_0050f210(local_54);
                 return 0;
               }
-              shape_superopt_cpp_FUN_005cc620();
+              shape_superopt_cpp_CPoly_ctor_FUN_005cc620(&local_200);
               shape_superopt_cpp_CPoly_FUN_005cc6a0(&local_200);
               pCVar10 = local_30;
               dVar2 = (double)CONCAT44(uStack_138,local_13c) -
@@ -1502,7 +1502,7 @@ LAB_005d4d06:
 // 005d5206: LEA EAX,[ESP + 0xe4]
 //   XREF to: Stack[-0x200] (DATA)
 // 005d520d: PUSH EAX
-// 005d520e: CALL shape_superopt.cpp_FUN_005cc620
+// 005d520e: CALL shape_superopt.cpp_CPoly_ctor_FUN_005cc620
 //   XREF to: 005cc620 (UNCONDITIONAL_CALL)
 // 005d5213: ADD ESP,0x8
 // 005d5216: MOV EDI,dword ptr [EBP + 0x14]

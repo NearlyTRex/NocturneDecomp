@@ -12,9 +12,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 shape_superopt.cpp_CondCallDebugMallocUnknownString(undefined4 param_1,
-   undefined4 param_2, undefined4 param_3) */
-
 void shape_superopt_cpp_CondCallDebugMallocUnknownString_FUN_005cbe20(void)
 
 {

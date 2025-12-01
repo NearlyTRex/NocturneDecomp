@@ -4,7 +4,7 @@
 // Convention: __cdecl
 // Signature: int shape_superopt.cpp_CObj_FUN_005d22d0(CObj * this_ptr)
 // Cross-references:
-//   shape_superopt.cpp_FUN_005d2230 (005d2230) at 005d2250 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_ctor_FUN_005d2230 (005d2230) at 005d2250 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_TriListSomething_FUN_005d77a0 (005d77a0) at 005d789a [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"

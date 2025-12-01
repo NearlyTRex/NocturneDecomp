@@ -119,9 +119,9 @@ undefined FUN_005cbf20();
 // Address: 005cbf90
 undefined FUN_005cbf90();
 
-// Original: shape_superopt.cpp_FUN_005cc620
+// Original: shape_superopt.cpp_CPoly_ctor_FUN_005cc620
 // Address: 005cc620
-undefined FUN_005cc620();
+CPoly * CPoly::ctor(CPoly * this_ptr);
 
 // Original: shape_superopt.cpp_CPoly_dtor_FUN_005cc660
 // Address: 005cc660
@@ -267,9 +267,9 @@ double CPoly(CPoly * this_ptr);
 // Address: 005d1ff0
 int CPoly(CPoly * this_ptr);
 
-// Original: shape_superopt.cpp_FUN_005d2230
+// Original: shape_superopt.cpp_CObj_ctor_FUN_005d2230
 // Address: 005d2230
-undefined FUN_005d2230();
+CObj * CObj::ctor(CObj * this_ptr);
 
 // Original: shape_superopt.cpp_CObj_dtor_FUN_005d2260
 // Address: 005d2260

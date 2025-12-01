@@ -7,8 +7,8 @@
 //   TerminatedCString s_Unable_to_add_polygons_t_00654355
 // Function calls:
 //   crt_memory.c_realloc_FUN_00601df0
+//   shape_superopt.cpp_CPoly_ctor_FUN_005cc620
 //   shape_superopt.cpp_CPoly_dtor_FUN_005cc660
-//   shape_superopt.cpp_FUN_005cc620
 //   shape_superopt.cpp_logToFile_FUN_005c7910
 
 #include "nocturne.h"
@@ -32,7 +32,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d2410(CObj *this_ptr)
                               (this_ptr->poly_array,(this_ptr->count + in_stack_00000008) * 0x68);
   if (pCVar1 != (CPoly *)0x0) {
     this_ptr->poly_array = pCVar1;
-    shape_superopt_cpp_FUN_005cc620();
+    shape_superopt_cpp_CPoly_ctor_FUN_005cc620(&local_78);
     iVar3 = this_ptr->count * 0x68;
     for (local_10 = this_ptr->count; uVar4 = this_ptr->count + in_stack_00000008, local_10 < uVar4;
         local_10 = local_10 + 1) {
@@ -93,7 +93,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d2410(CObj *this_ptr)
 // 005d2452: LEA EAX,[ESP + 0x8]
 //   XREF to: Stack[-0x78] (DATA)
 // 005d2456: PUSH EAX
-// 005d2457: CALL shape_superopt.cpp_FUN_005cc620
+// 005d2457: CALL shape_superopt.cpp_CPoly_ctor_FUN_005cc620
 //   XREF to: 005cc620 (UNCONDITIONAL_CALL)
 // 005d245c: ADD ESP,0x8
 // 005d245f: MOV EAX,dword ptr [EBX + 0x8]
