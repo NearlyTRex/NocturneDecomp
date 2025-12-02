@@ -32,23 +32,23 @@ core_dcamera_cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90
   local_18 = output_vector->x - (this_ptr->camera_origin).x;
   local_14 = output_vector->y - (this_ptr->camera_origin).y;
   local_10 = output_vector->z - (this_ptr->camera_origin).z;
-  lVar2 = (longlong)(this_ptr->source_matrix).m[0][2] * (longlong)local_18;
-  lVar3 = (longlong)(this_ptr->source_matrix).m[1][2] * (longlong)local_14;
-  lVar4 = (longlong)(this_ptr->source_matrix).m[2][2] * (longlong)local_10;
+  lVar2 = (longlong)(this_ptr->source_matrix).m[0].z * (longlong)local_18;
+  lVar3 = (longlong)(this_ptr->source_matrix).m[1].z * (longlong)local_14;
+  lVar4 = (longlong)(this_ptr->source_matrix).m[2].z * (longlong)local_10;
   local_30.z = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
                ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
                ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
   if (0 < local_30.z) {
-    lVar2 = (longlong)(this_ptr->source_matrix).m[0][0] * (longlong)local_18;
-    lVar3 = (longlong)(this_ptr->source_matrix).m[1][0] * (longlong)local_14;
-    lVar4 = (longlong)(this_ptr->source_matrix).m[2][0] * (longlong)local_10;
+    lVar2 = (longlong)(this_ptr->source_matrix).m[0].x * (longlong)local_18;
+    lVar3 = (longlong)(this_ptr->source_matrix).m[1].x * (longlong)local_14;
+    lVar4 = (longlong)(this_ptr->source_matrix).m[2].x * (longlong)local_10;
     local_30.x = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
                  ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
                  ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
     if ((local_30.x < local_30.z) && (-local_30.z < local_30.x)) {
-      lVar2 = (longlong)(this_ptr->source_matrix).m[0][1] * (longlong)local_18;
-      lVar3 = (longlong)(this_ptr->source_matrix).m[1][1] * (longlong)local_14;
-      lVar4 = (longlong)(this_ptr->source_matrix).m[2][1] * (longlong)local_10;
+      lVar2 = (longlong)(this_ptr->source_matrix).m[0].y * (longlong)local_18;
+      lVar3 = (longlong)(this_ptr->source_matrix).m[1].y * (longlong)local_14;
+      lVar4 = (longlong)(this_ptr->source_matrix).m[2].y * (longlong)local_10;
       local_30.y = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
                    ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
                    ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);

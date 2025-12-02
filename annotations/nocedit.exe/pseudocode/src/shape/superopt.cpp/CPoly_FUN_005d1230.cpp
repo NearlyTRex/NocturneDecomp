@@ -9,7 +9,7 @@
 int __cdecl shape_superopt_cpp_CPoly_FUN_005d1230(CPoly *this_ptr)
 
 {
-  void *pvVar1;
+  CPoly_vtable *pCVar1;
   int iVar2;
   BADSPACEBASE *in_ESP;
   undefined4 *puVar3;
@@ -20,12 +20,12 @@ int __cdecl shape_superopt_cpp_CPoly_FUN_005d1230(CPoly *this_ptr)
   undefined4 auStack_5c [6];
   undefined4 local_44 [6];
   undefined4 auStack_2c [6];
-  void *local_14;
+  CPoly_vtable *local_14;
   
   bVar5 = 0;
   local_14 = this_ptr->vtable;
   (**(code **)(*(int *)(in_stack_00000008 + 100) + 0x6c))();
-  pvVar1 = local_14;
+  pCVar1 = local_14;
   puVar3 = local_74;
   puVar4 = local_44;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -33,11 +33,11 @@ int __cdecl shape_superopt_cpp_CPoly_FUN_005d1230(CPoly *this_ptr)
     puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
     puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
-  iVar2 = (**(code **)((int)pvVar1 + 100))();
+  iVar2 = (*(code *)pCVar1->field25_0x64)();
   if (iVar2 == 0) {
-    local_14 = *(void **)(in_stack_00000008 + 100);
-    (**(code **)((int)this_ptr->vtable + 0x6c))();
-    pvVar1 = local_14;
+    local_14 = *(CPoly_vtable **)(in_stack_00000008 + 100);
+    (*(code *)this_ptr->vtable->field27_0x6c)();
+    pCVar1 = local_14;
     puVar3 = auStack_5c;
     puVar4 = auStack_2c;
     for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -45,7 +45,7 @@ int __cdecl shape_superopt_cpp_CPoly_FUN_005d1230(CPoly *this_ptr)
       puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
       puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
     }
-    iVar2 = (**(code **)((int)pvVar1 + 100))();
+    iVar2 = (**(code **)((int)pCVar1 + 100))();
     if (iVar2 == 0) {
       return 0;
     }

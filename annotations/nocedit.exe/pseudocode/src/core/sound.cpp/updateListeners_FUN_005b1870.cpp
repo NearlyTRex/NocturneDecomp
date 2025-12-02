@@ -33,7 +33,7 @@
 //   undefined4 DAT_032758e8
 //   undefined4 g_CDemonCameraInstance.base.position.y
 //   undefined4 g_CDemonCameraInstance.base.position.z
-//   undefined4 g_CDemonCameraInstance.base.rotation_matrix.m[0][0]
+//   undefined4 g_CDemonCameraInstance.base.rotation_matrix.m[0].x
 //   undefined4 DAT_032758f8
 //   undefined4 g_ScreenHeightForFonts
 //   undefined4 g_CDemonCameraInstance.framebuffer_height
@@ -119,8 +119,8 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
     pCVar8 = &g_CDemonCameraInstance.base.rotation_matrix;
     piVar10 = local_10c;
     for (iVar4 = 10; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *piVar10 = pCVar8->m[0][0];
-      pCVar8 = (CMatrix3x3i *)(pCVar8->m[0] + 1);
+      *piVar10 = pCVar8->m[0].x;
+      pCVar8 = (CMatrix3x3i *)&pCVar8->m[0].y;
       piVar10 = piVar10 + 1;
     }
     iVar4 = 10;
@@ -139,8 +139,8 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
     pCVar8 = &g_CDemonLightInstance.base.base.rotation_matrix;
     piVar10 = local_134;
     for (iVar4 = 10; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *piVar10 = pCVar8->m[0][0];
-      pCVar8 = (CMatrix3x3i *)(pCVar8->m[0] + 1);
+      *piVar10 = pCVar8->m[0].x;
+      pCVar8 = (CMatrix3x3i *)&pCVar8->m[0].y;
       piVar10 = piVar10 + 1;
     }
     iVar4 = 10;

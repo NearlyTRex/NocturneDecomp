@@ -41,7 +41,7 @@
 //   undefined4 DAT_032758e8
 //   undefined4 g_CDemonCameraInstance.base.position.y
 //   undefined4 g_CDemonCameraInstance.base.position.z
-//   undefined4 g_CDemonCameraInstance.base.rotation_matrix.m[0][0]
+//   undefined4 g_CDemonCameraInstance.base.rotation_matrix.m[0].x
 //   undefined4 DAT_032758f8
 //   CDemonLight*[96] g_MasterLightList
 //   int g_ActiveLightCount
@@ -360,7 +360,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   pCVar8 = &g_CDemonCameraInstance.base.rotation_matrix;
   pfVar9 = afStack_c4;
   for (iVar5 = 10; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *pfVar9 = (float)pCVar8->m[0][0];
+    *pfVar9 = (float)pCVar8->m[0].x;
     pCVar8 = (CMatrix3x3i *)((int)pCVar8 + ((uint)bVar17 * -2 + 1) * 4);
     pfVar9 = pfVar9 + (uint)bVar17 * -2 + 1;
   }

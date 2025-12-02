@@ -9,28 +9,21 @@
 void __cdecl shape_superopt_cpp_CPoly_FUN_005cd220(CPoly *this_ptr)
 
 {
-  uint *puVar1;
-  void *pvVar2;
-  uint uVar3;
+  CVert *pCVar1;
+  uint uVar2;
   uint in_stack_00000008;
   uint in_stack_0000000c;
   
-  pvVar2 = this_ptr->parent_obj->vertex_data;
-  puVar1 = (uint *)((int)pvVar2 + this_ptr->vertex_idx_0 * 0x38 + 0x34);
-  *puVar1 = *puVar1 & in_stack_0000000c;
-  puVar1 = (uint *)((int)pvVar2 + this_ptr->vertex_idx_0 * 0x38 + 0x34);
-  *puVar1 = *puVar1 | in_stack_00000008;
-  puVar1 = (uint *)((int)pvVar2 + this_ptr->vertex_idx_1 * 0x38 + 0x34);
-  *puVar1 = *puVar1 & in_stack_0000000c;
-  puVar1 = (uint *)((int)pvVar2 + this_ptr->vertex_idx_1 * 0x38 + 0x34);
-  *puVar1 = *puVar1 | in_stack_00000008;
-  puVar1 = (uint *)((int)pvVar2 + this_ptr->vertex_idx_2 * 0x38 + 0x34);
-  *puVar1 = *puVar1 & in_stack_0000000c;
-  puVar1 = (uint *)((int)pvVar2 + this_ptr->vertex_idx_2 * 0x38 + 0x34);
-  *puVar1 = *puVar1 | in_stack_00000008;
-  uVar3 = this_ptr->field8_0x60 & in_stack_0000000c;
-  this_ptr->field8_0x60 = uVar3;
-  this_ptr->field8_0x60 = uVar3 | in_stack_00000008;
+  pCVar1 = this_ptr->parent_obj->vertex_data;
+  pCVar1[this_ptr->vertex_idx_0].flags = pCVar1[this_ptr->vertex_idx_0].flags & in_stack_0000000c;
+  pCVar1[this_ptr->vertex_idx_0].flags = pCVar1[this_ptr->vertex_idx_0].flags | in_stack_00000008;
+  pCVar1[this_ptr->vertex_idx_1].flags = pCVar1[this_ptr->vertex_idx_1].flags & in_stack_0000000c;
+  pCVar1[this_ptr->vertex_idx_1].flags = pCVar1[this_ptr->vertex_idx_1].flags | in_stack_00000008;
+  pCVar1[this_ptr->vertex_idx_2].flags = pCVar1[this_ptr->vertex_idx_2].flags & in_stack_0000000c;
+  pCVar1[this_ptr->vertex_idx_2].flags = pCVar1[this_ptr->vertex_idx_2].flags | in_stack_00000008;
+  uVar2 = this_ptr->flags & in_stack_0000000c;
+  this_ptr->flags = uVar2;
+  this_ptr->flags = uVar2 | in_stack_00000008;
   return;
 }
 

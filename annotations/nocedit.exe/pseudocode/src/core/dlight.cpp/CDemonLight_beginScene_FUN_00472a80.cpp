@@ -70,12 +70,12 @@ core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *this_ptr,int sk
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
             (g_CDemonRendererPtr,(CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,
              (CVector3f *)this_ptr);
-  lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[0][1];
-  g_TransformMatrix.m[0][1] = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[1][1];
-  g_TransformMatrix.m[1][1] = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[2][1];
-  g_TransformMatrix.m[2][1] = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+  lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[0].y;
+  g_TransformMatrix.m[0].y = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+  lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[1].y;
+  g_TransformMatrix.m[1].y = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+  lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[2].y;
+  g_TransformMatrix.m[2].y = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   if (in_stack_0000000c == 0) {
     core_event_cpp_FUN_004b19d0();
   }

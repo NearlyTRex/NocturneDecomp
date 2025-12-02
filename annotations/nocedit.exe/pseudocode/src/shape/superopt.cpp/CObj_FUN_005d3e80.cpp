@@ -15,19 +15,19 @@ void __cdecl shape_superopt_cpp_CObj_FUN_005d3e80(CObj *this_ptr)
   
   pCVar1 = this_ptr->poly_array;
   uVar2 = 0;
-  if (this_ptr->count != 0) {
+  if (this_ptr->poly_count != 0) {
     do {
-      while ((pCVar1->field8_0x60 & in_stack_0000000c) == in_stack_0000000c) {
-        (**(code **)((int)pCVar1->vtable + 0x4c))();
+      while ((pCVar1->flags & in_stack_0000000c) == in_stack_0000000c) {
+        (*(code *)pCVar1->vtable->field19_0x4c)();
         uVar2 = uVar2 + 1;
         pCVar1 = pCVar1 + 1;
-        if ((uint)this_ptr->count <= uVar2) {
+        if ((uint)this_ptr->poly_count <= uVar2) {
           return;
         }
       }
       uVar2 = uVar2 + 1;
       pCVar1 = pCVar1 + 1;
-    } while (uVar2 < (uint)this_ptr->count);
+    } while (uVar2 < (uint)this_ptr->poly_count);
   }
   return;
 }

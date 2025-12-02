@@ -44,7 +44,7 @@ void core_elephant_cpp_FUN_004a7070(void)
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               (&in_stack_00000004->base_actor,(CVector3f *)&local_14,input_local_point);
     g_CDemonLightInstance.field17_0x1cbc = 0;
-    if ((int *)&stack0x00000000 != g_CDemonLightInstance.base.base.rotation_matrix.m[0] + 1) {
+    if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[0].y) {
       g_CDemonLightInstance.base.base.position.x = (int)fStack_10;
       g_CDemonLightInstance.base.base.position.y = (int)in_stack_fffffff4;
       g_CDemonLightInstance.base.base.position.z = unaff_EBP;

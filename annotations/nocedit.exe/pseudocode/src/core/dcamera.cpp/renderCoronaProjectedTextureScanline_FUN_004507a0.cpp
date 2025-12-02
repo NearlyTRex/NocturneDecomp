@@ -10,9 +10,9 @@
 //   int g_CoronaMaxDepth
 //   int g_CoronaDepthShift
 //   CDemonLight* g_CurrentLightForCorona
-//   undefined4 g_CoronaCameraRotationMatrix.m[0][2]
-//   undefined4 g_CoronaCameraRotationMatrix.m[1][2]
-//   undefined4 g_CoronaCameraRotationMatrix.m[2][2]
+//   undefined4 g_CoronaCameraRotationMatrix.m[0].z
+//   undefined4 g_CoronaCameraRotationMatrix.m[1].z
+//   undefined4 g_CoronaCameraRotationMatrix.m[2].z
 //   int g_CameraDownscaleIterations
 //   int[240][320] g_CoronaDepthBuffer
 //   uint*[1024] g_ZBufferScanlineArray
@@ -53,9 +53,9 @@ core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0
   if (x_start < x_end) {
     do {
       if ((*local_20 < (uint)*local_1c) &&
-         (0.0 <= pCVar2->z * (float)g_CoronaCameraRotationMatrix.m[2][2] +
-                 pCVar2->x * (float)g_CoronaCameraRotationMatrix.m[0][2] +
-                 pCVar2->y * (float)g_CoronaCameraRotationMatrix.m[1][2])) {
+         (0.0 <= pCVar2->z * (float)g_CoronaCameraRotationMatrix.m[2].z +
+                 pCVar2->x * (float)g_CoronaCameraRotationMatrix.m[0].z +
+                 pCVar2->y * (float)g_CoronaCameraRotationMatrix.m[1].z)) {
         core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
                   (&g_CurrentLightForCorona->base,apCStack_2c[2],in_stack_ffffffc0);
         in_stack_ffffffc0 = pCStack_30;

@@ -28,9 +28,9 @@
 //   CDemonLight* g_CurrentLightForCorona
 //   CMatrix3x3i g_CoronaCameraRotationMatrix
 //   undefined4 DAT_013bc23c
-//   undefined4 g_CoronaCameraRotationMatrix.m[0][2]
-//   undefined4 g_CoronaCameraRotationMatrix.m[1][2]
-//   undefined4 g_CoronaCameraRotationMatrix.m[2][2]
+//   undefined4 g_CoronaCameraRotationMatrix.m[0].z
+//   undefined4 g_CoronaCameraRotationMatrix.m[1].z
+//   undefined4 g_CoronaCameraRotationMatrix.m[2].z
 //   int g_CameraDownscaleIterations
 //   int[240] g_CoronaLeftExtent
 //   undefined4 DAT_01576fac
@@ -93,8 +93,8 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
   pCVar5 = &(light_source->base).base.rotation_matrix;
   piVar6 = (int *)&g_CoronaCameraRotationMatrix;
   for (iVar3 = 10; iVar2 = 0, iVar3 != 0; iVar3 = iVar3 + -1) {
-    *piVar6 = pCVar5->m[0][0];
-    pCVar5 = (CMatrix3x3i *)(pCVar5->m[0] + 1);
+    *piVar6 = pCVar5->m[0].x;
+    pCVar5 = (CMatrix3x3i *)&pCVar5->m[0].y;
     piVar6 = piVar6 + 1;
   }
   do {
@@ -142,9 +142,9 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
         bVar8 = SBORROW4(iVar3,local_18);
         while (bVar8 != iVar2 < 0) {
           if ((*puVar12 < (uint)*local_14) &&
-             (0.0 <= pCVar4->z * (float)g_CoronaCameraRotationMatrix.m[2][2] +
-                     pCVar4->x * (float)g_CoronaCameraRotationMatrix.m[0][2] +
-                     pCVar4->y * (float)g_CoronaCameraRotationMatrix.m[1][2])) {
+             (0.0 <= pCVar4->z * (float)g_CoronaCameraRotationMatrix.m[2].z +
+                     pCVar4->x * (float)g_CoronaCameraRotationMatrix.m[0].z +
+                     pCVar4->y * (float)g_CoronaCameraRotationMatrix.m[1].z)) {
             uStack_5c = 0x450d1b;
             core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
                       (&g_CurrentLightForCorona->base,output_ptr,in_stack_ffffffb0);

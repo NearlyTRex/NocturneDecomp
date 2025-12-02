@@ -13,29 +13,29 @@ uint __cdecl shape_superopt_cpp_CObj_FUN_005d35e0(CObj *this_ptr)
 
 {
   uint in_EAX;
-  void *pvVar1;
+  CVert *pCVar1;
   CPoly *pCVar2;
   uint uVar3;
   uint in_stack_00000008;
   
-  pvVar1 = this_ptr->vertex_data;
+  pCVar1 = this_ptr->vertex_data;
   uVar3 = 0;
-  if (this_ptr->field0_0x0 != 0) {
+  if (this_ptr->vertex_count != 0) {
     do {
-      *(uint *)((int)pvVar1 + 0x34) = *(uint *)((int)pvVar1 + 0x34) & ~in_stack_00000008;
+      pCVar1->flags = pCVar1->flags & ~in_stack_00000008;
       uVar3 = uVar3 + 1;
-      in_EAX = this_ptr->field0_0x0;
-      pvVar1 = (void *)((int)pvVar1 + 0x38);
+      in_EAX = this_ptr->vertex_count;
+      pCVar1 = pCVar1 + 1;
     } while (uVar3 < in_EAX);
   }
   pCVar2 = this_ptr->poly_array;
   uVar3 = 0;
-  if (this_ptr->count != 0) {
+  if (this_ptr->poly_count != 0) {
     do {
       uVar3 = uVar3 + 1;
-      in_EAX = (**(code **)((int)pCVar2->vtable + 0x2c))();
+      in_EAX = (*(code *)pCVar2->vtable->field11_0x2c)();
       pCVar2 = pCVar2 + 1;
-    } while (uVar3 < (uint)this_ptr->count);
+    } while (uVar3 < (uint)this_ptr->poly_count);
   }
   this_ptr->field4_0x10 = this_ptr->field4_0x10 & ~in_stack_00000008;
   return in_EAX;

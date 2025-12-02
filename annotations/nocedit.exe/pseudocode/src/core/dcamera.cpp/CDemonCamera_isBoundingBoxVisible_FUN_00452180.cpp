@@ -84,24 +84,24 @@ core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   fVar5 = ((float10)(float)(this_ptr->base).position.x - (float10)position->x) * fVar4;
   fVar6 = ((float10)(float)(this_ptr->base).position.y - (float10)position->y) * fVar4;
   fVar4 = ((float10)(float)(this_ptr->base).position.z - (float10)position->z) * fVar4;
-  g_TransformMatrix.m[0][0] = (this_ptr->source_matrix).m[0][0];
-  g_TransformMatrix.m[0][1] = (this_ptr->source_matrix).m[0][1];
-  g_TransformMatrix.m[0][2] = (this_ptr->source_matrix).m[0][2];
-  g_TransformMatrix.m[1][0] = (this_ptr->source_matrix).m[1][0];
+  g_TransformMatrix.m[0].x = (this_ptr->source_matrix).m[0].x;
+  g_TransformMatrix.m[0].y = (this_ptr->source_matrix).m[0].y;
+  g_TransformMatrix.m[0].z = (this_ptr->source_matrix).m[0].z;
+  g_TransformMatrix.m[1].x = (this_ptr->source_matrix).m[1].x;
   dVar7 = crt_math_c_round_FUN_005fe6b0
-                    ((double)CONCAT44(extraout_EDX,(this_ptr->source_matrix).m[1][1]));
-  g_TransformMatrix.m[1][1] = SUB84(dVar7,0);
-  dVar7 = crt_math_c_round_FUN_005fe6b0
-                    ((double)CONCAT44((int)((ulonglong)dVar7 >> 0x20),
-                                      (this_ptr->source_matrix).m[1][2]));
-  g_TransformMatrix.m[1][2] = SUB84(dVar7,0);
+                    ((double)CONCAT44(extraout_EDX,(this_ptr->source_matrix).m[1].y));
+  g_TransformMatrix.m[1].y = SUB84(dVar7,0);
   dVar7 = crt_math_c_round_FUN_005fe6b0
                     ((double)CONCAT44((int)((ulonglong)dVar7 >> 0x20),
-                                      (this_ptr->source_matrix).m[2][0]));
-  g_TransformMatrix.m[2][0] = SUB84(dVar7,0);
-  g_TransformMatrix.m[2][1] = (this_ptr->source_matrix).m[2][1];
+                                      (this_ptr->source_matrix).m[1].z));
+  g_TransformMatrix.m[1].z = SUB84(dVar7,0);
+  dVar7 = crt_math_c_round_FUN_005fe6b0
+                    ((double)CONCAT44((int)((ulonglong)dVar7 >> 0x20),
+                                      (this_ptr->source_matrix).m[2].x));
+  g_TransformMatrix.m[2].x = SUB84(dVar7,0);
+  g_TransformMatrix.m[2].y = (this_ptr->source_matrix).m[2].y;
   g_RelativeX = (int)ROUND(fVar5);
-  g_TransformMatrix.m[2][2] = (this_ptr->source_matrix).m[2][2];
+  g_TransformMatrix.m[2].z = (this_ptr->source_matrix).m[2].z;
   g_RelativeY = (int)ROUND(fVar6);
   g_RelativeZ = (int)ROUND(fVar4);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

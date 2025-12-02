@@ -38,14 +38,14 @@ core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600
   local_24 = output_ptr->y;
   iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr);
   if (iVar4 == 0) {
-    lVar1 = (longlong)local_20 * (longlong)(this_ptr->inverted_matrix).m[1][0] +
-            (longlong)local_24 * (longlong)(this_ptr->inverted_matrix).m[0][0] +
-            (longlong)local_1c * (longlong)(this_ptr->inverted_matrix).m[2][0];
+    lVar1 = (longlong)local_20 * (longlong)(this_ptr->inverted_matrix).m[1].x +
+            (longlong)local_24 * (longlong)(this_ptr->inverted_matrix).m[0].x +
+            (longlong)local_1c * (longlong)(this_ptr->inverted_matrix).m[2].x;
     local_18 = (this_ptr->camera_origin).x +
                ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    lVar1 = (longlong)local_20 * (longlong)(this_ptr->inverted_matrix).m[1][1] +
-            (longlong)local_24 * (longlong)(this_ptr->inverted_matrix).m[0][1] +
-            (longlong)local_1c * (longlong)(this_ptr->inverted_matrix).m[2][1];
+    lVar1 = (longlong)local_20 * (longlong)(this_ptr->inverted_matrix).m[1].y +
+            (longlong)local_24 * (longlong)(this_ptr->inverted_matrix).m[0].y +
+            (longlong)local_1c * (longlong)(this_ptr->inverted_matrix).m[2].y;
     local_14 = (this_ptr->camera_origin).y +
                ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   }
@@ -62,8 +62,8 @@ core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600
     lVar1 = (longlong)this_ptr->alpha_transform_matrices[10][iVar4] * (longlong)local_24;
     lVar2 = (longlong)this_ptr->alpha_transform_matrices[0xd][iVar4] * (longlong)local_20;
     lVar3 = (longlong)
-            *(int *)((int)((this_ptr->transform_state).saved_source_matrix.m + -8) + 8 + iVar4 * 4)
-            * (longlong)local_1c;
+            *(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + iVar4 * 4 + -0x58) *
+            (longlong)local_1c;
     local_14 = this_ptr->alpha_translations[iVar4].y +
                ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
                ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +

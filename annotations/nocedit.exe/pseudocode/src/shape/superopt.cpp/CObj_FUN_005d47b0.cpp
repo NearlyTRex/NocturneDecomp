@@ -23,7 +23,7 @@
 int __cdecl shape_superopt_cpp_CObj_FUN_005d47b0(CObj *this_ptr)
 
 {
-  void *pvVar1;
+  double dVar1;
   double dVar2;
   double dVar3;
   double dVar4;
@@ -31,22 +31,20 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d47b0(CObj *this_ptr)
   double dVar6;
   double dVar7;
   double dVar8;
-  double dVar9;
-  CPoly *pCVar10;
-  double *pdVar11;
-  undefined4 uVar12;
+  CPoly *pCVar9;
+  CVert *pCVar10;
+  undefined4 uVar11;
+  int iVar12;
   int iVar13;
-  int iVar14;
-  uint uVar15;
-  CP2D *pCVar16;
+  uint uVar14;
+  CP2D *pCVar15;
   BADSPACEBASE *in_ESP;
-  undefined4 *puVar17;
-  CP2D *pCVar18;
+  undefined4 *puVar16;
+  CP2D *pCVar17;
+  double *pdVar18;
   byte bVar19;
   int in_stack_00000008;
-  undefined4 auStackY_18d0 [1401];
-  undefined4 local_2e0;
-  undefined4 uStack_2dc;
+  int aiStackY_18d0 [1401];
   undefined4 local_2d8;
   undefined4 uStack_2d4;
   undefined4 local_2d0;
@@ -79,7 +77,20 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d47b0(CObj *this_ptr)
   undefined4 local_238;
   undefined4 local_210;
   undefined4 local_208;
-  CPoly local_200;
+  undefined1 local_200 [12];
+  int local_1f4;
+  undefined4 local_1f0;
+  int local_1ec;
+  undefined4 local_1e8;
+  undefined4 local_1e4;
+  undefined4 local_1e0;
+  undefined4 local_1dc;
+  undefined4 local_1d8;
+  undefined4 local_1d4;
+  undefined4 local_1d0;
+  undefined4 local_1cc;
+  undefined4 local_1c8;
+  undefined4 local_1c4;
   char local_198 [92];
   undefined4 local_13c;
   undefined4 uStack_138;
@@ -99,7 +110,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d47b0(CObj *this_ptr)
   undefined8 local_f4;
   double local_ec;
   undefined4 local_e4;
-  undefined4 local_e0 [4];
+  int local_e0 [4];
   undefined4 uStack_d0;
   double local_cc;
   undefined4 local_c4;
@@ -111,7 +122,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d47b0(CObj *this_ptr)
   double local_9c [9];
   void *local_54;
   int local_50;
-  int local_4c;
+  void *local_4c;
   int local_48;
   CP2D *local_44;
   int local_40;
@@ -122,26 +133,26 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d47b0(CObj *this_ptr)
   uint local_2c;
   uint local_28;
   uint local_24;
-  double *local_20;
+  CVert *local_20;
   int local_1c;
-  double *local_18;
-  double *local_14;
+  CVert *local_18;
+  CVert *local_14;
   
   bVar19 = 0;
   if (in_stack_00000008 != 0) {
-    iVar14 = (**(code **)((int)this_ptr->vtable + 200))();
-    if (iVar14 == 0) {
+    iVar13 = (*(code *)this_ptr->vtable->field50_0xc8)();
+    if (iVar13 == 0) {
       return 0;
     }
   }
   local_54 = (void *)0x0;
-  if (1000 < (uint)this_ptr->count) {
+  if (1000 < (uint)this_ptr->poly_count) {
     local_54 = shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(4);
   }
-  local_4c = this_ptr->field0_0x0;
+  local_4c = (void *)this_ptr->vertex_count;
   local_34 = 0;
   local_50 = 0;
-  if (this_ptr->count != 0) {
+  if (this_ptr->poly_count != 0) {
     do {
       if ((local_54 != (void *)0x0) && ((char)local_34 == '\0')) {
         crt_stdio_c_sprintf_FUN_005fdbd0(local_198,"Deleting T-Junctions (%d deleted so far)",local_50);
@@ -150,294 +161,293 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d47b0(CObj *this_ptr)
       local_28 = local_30->vertex_idx_0;
       local_24 = local_30->vertex_idx_1;
       local_2c = local_30->vertex_idx_2;
-      pvVar1 = this_ptr->vertex_data;
-      local_14 = (double *)((int)pvVar1 + local_28 * 0x38);
-      local_18 = (double *)((int)pvVar1 + local_24 * 0x38);
-      local_20 = (double *)((int)pvVar1 + local_2c * 0x38);
-      if (*local_18 <= *local_14) {
-        local_288 = *(undefined4 *)local_18;
-        uVar12 = *(undefined4 *)((int)local_18 + 4);
+      local_20 = this_ptr->vertex_data;
+      local_14 = local_20 + local_28;
+      local_18 = local_20 + local_24;
+      local_20 = local_20 + local_2c;
+      if ((local_18->position).impl.x <= (local_14->position).impl.x) {
+        local_288 = *(undefined4 *)&(local_18->position).impl.x;
+        uVar11 = *(undefined4 *)((int)&(local_18->position).impl.x + 4);
       }
       else {
-        local_288 = *(undefined4 *)local_14;
-        uVar12 = *(undefined4 *)((int)local_14 + 4);
+        local_288 = *(undefined4 *)&(local_14->position).impl.x;
+        uVar11 = *(undefined4 *)((int)&(local_14->position).impl.x + 4);
       }
-      if (*local_20 <= (double)CONCAT44(uVar12,local_288)) {
-        local_280 = *(undefined4 *)local_20;
-        uVar12 = *(undefined4 *)((int)local_20 + 4);
+      if ((local_20->position).impl.x <= (double)CONCAT44(uVar11,local_288)) {
+        local_280 = *(undefined4 *)&(local_20->position).impl.x;
+        uVar11 = *(undefined4 *)((int)&(local_20->position).impl.x + 4);
       }
       else {
-        if (*local_18 <= *local_14) {
-          local_2b0 = *(undefined4 *)local_18;
-          pdVar11 = local_18;
+        if ((local_18->position).impl.x <= (local_14->position).impl.x) {
+          local_2b0 = *(undefined4 *)&(local_18->position).impl.x;
+          pCVar10 = local_18;
         }
         else {
-          local_2b0 = *(undefined4 *)local_14;
-          pdVar11 = local_14;
+          local_2b0 = *(undefined4 *)&(local_14->position).impl.x;
+          pCVar10 = local_14;
         }
-        uVar12 = *(undefined4 *)((int)pdVar11 + 4);
+        uVar11 = *(undefined4 *)((int)&(pCVar10->position).impl.x + 4);
         local_280 = local_2b0;
-        local_2ac = uVar12;
+        local_2ac = uVar11;
       }
-      dVar2 = (double)CONCAT44(uVar12,local_280) + DOUBLE_0065452a;
-      if (local_18[1] <= local_14[1]) {
-        local_2c8 = *(undefined4 *)(local_18 + 1);
-        pdVar11 = local_18;
-      }
-      else {
-        local_2c8 = *(undefined4 *)(local_14 + 1);
-        pdVar11 = local_14;
-      }
-      uStack_2c4 = *(undefined4 *)((int)pdVar11 + 0xc);
-      if (local_20[1] <= (double)CONCAT44(uStack_2c4,local_2c8)) {
-        local_260 = *(undefined4 *)(local_20 + 1);
-        uVar12 = *(undefined4 *)((int)local_20 + 0xc);
+      dVar1 = (double)CONCAT44(uVar11,local_280) + DOUBLE_0065452a;
+      if ((local_18->position).impl.y <= (local_14->position).impl.y) {
+        local_2c8 = *(undefined4 *)&(local_18->position).impl.y;
+        pCVar10 = local_18;
       }
       else {
-        if (local_18[1] <= local_14[1]) {
-          local_210 = *(undefined4 *)(local_18 + 1);
-          pdVar11 = local_18;
+        local_2c8 = *(undefined4 *)&(local_14->position).impl.y;
+        pCVar10 = local_14;
+      }
+      uStack_2c4 = *(undefined4 *)((int)&(pCVar10->position).impl.y + 4);
+      if ((local_20->position).impl.y <= (double)CONCAT44(uStack_2c4,local_2c8)) {
+        local_260 = *(undefined4 *)&(local_20->position).impl.y;
+        uVar11 = *(undefined4 *)((int)&(local_20->position).impl.y + 4);
+      }
+      else {
+        if ((local_18->position).impl.y <= (local_14->position).impl.y) {
+          local_210 = *(undefined4 *)&(local_18->position).impl.y;
+          pCVar10 = local_18;
         }
         else {
-          local_210 = *(undefined4 *)(local_14 + 1);
-          pdVar11 = local_14;
+          local_210 = *(undefined4 *)&(local_14->position).impl.y;
+          pCVar10 = local_14;
         }
-        uVar12 = *(undefined4 *)((int)pdVar11 + 0xc);
+        uVar11 = *(undefined4 *)((int)&(pCVar10->position).impl.y + 4);
         local_260 = local_210;
       }
-      dVar3 = (double)CONCAT44(uVar12,local_260) + DOUBLE_0065452a;
-      if (local_18[2] <= local_14[2]) {
-        local_298 = *(undefined4 *)(local_18 + 2);
-        pdVar11 = local_18;
+      dVar2 = (double)CONCAT44(uVar11,local_260) + DOUBLE_0065452a;
+      if ((local_18->position).impl.z <= (local_14->position).impl.z) {
+        local_298 = *(undefined4 *)&(local_18->position).impl.z;
+        pCVar10 = local_18;
       }
       else {
-        local_298 = *(undefined4 *)(local_14 + 2);
-        pdVar11 = local_14;
+        local_298 = *(undefined4 *)&(local_14->position).impl.z;
+        pCVar10 = local_14;
       }
-      uStack_294 = *(undefined4 *)((int)pdVar11 + 0x14);
-      if (local_20[2] <= (double)CONCAT44(uStack_294,local_298)) {
-        local_238 = *(undefined4 *)(local_20 + 2);
-        uVar12 = *(undefined4 *)((int)local_20 + 0x14);
+      uStack_294 = *(undefined4 *)((int)&(pCVar10->position).impl.z + 4);
+      if ((local_20->position).impl.z <= (double)CONCAT44(uStack_294,local_298)) {
+        local_238 = *(undefined4 *)&(local_20->position).impl.z;
+        uVar11 = *(undefined4 *)((int)&(local_20->position).impl.z + 4);
       }
       else {
-        if (local_18[2] <= local_14[2]) {
-          local_208 = *(undefined4 *)(local_18 + 2);
-          pdVar11 = local_18;
+        if ((local_18->position).impl.z <= (local_14->position).impl.z) {
+          local_208 = *(undefined4 *)&(local_18->position).impl.z;
+          pCVar10 = local_18;
         }
         else {
-          local_208 = *(undefined4 *)(local_14 + 2);
-          pdVar11 = local_14;
+          local_208 = *(undefined4 *)&(local_14->position).impl.z;
+          pCVar10 = local_14;
         }
-        uVar12 = *(undefined4 *)((int)pdVar11 + 0x14);
+        uVar11 = *(undefined4 *)((int)&(pCVar10->position).impl.z + 4);
         local_238 = local_208;
       }
-      dVar4 = (double)CONCAT44(uVar12,local_238) + DOUBLE_0065452a;
-      if (*local_14 <= *local_18) {
-        local_2a0 = *(undefined4 *)local_18;
-        pdVar11 = local_18;
+      dVar3 = (double)CONCAT44(uVar11,local_238) + DOUBLE_0065452a;
+      if ((local_14->position).impl.x <= (local_18->position).impl.x) {
+        local_2a0 = *(undefined4 *)&(local_18->position).impl.x;
+        pCVar10 = local_18;
       }
       else {
-        local_2a0 = *(undefined4 *)local_14;
-        pdVar11 = local_14;
+        local_2a0 = *(undefined4 *)&(local_14->position).impl.x;
+        pCVar10 = local_14;
       }
-      uStack_29c = *(undefined4 *)((int)pdVar11 + 4);
-      if ((double)CONCAT44(uStack_29c,local_2a0) <= *local_20) {
-        local_270 = *(undefined4 *)local_20;
-        uVar12 = *(undefined4 *)((int)local_20 + 4);
+      uStack_29c = *(undefined4 *)((int)&(pCVar10->position).impl.x + 4);
+      if ((double)CONCAT44(uStack_29c,local_2a0) <= (local_20->position).impl.x) {
+        local_270 = *(undefined4 *)&(local_20->position).impl.x;
+        uVar11 = *(undefined4 *)((int)&(local_20->position).impl.x + 4);
       }
       else {
-        if (*local_14 <= *local_18) {
-          local_268 = *(undefined4 *)local_18;
-          pdVar11 = local_18;
+        if ((local_14->position).impl.x <= (local_18->position).impl.x) {
+          local_268 = *(undefined4 *)&(local_18->position).impl.x;
+          pCVar10 = local_18;
         }
         else {
-          local_268 = *(undefined4 *)local_14;
-          pdVar11 = local_14;
+          local_268 = *(undefined4 *)&(local_14->position).impl.x;
+          pCVar10 = local_14;
         }
-        uVar12 = *(undefined4 *)((int)pdVar11 + 4);
+        uVar11 = *(undefined4 *)((int)&(pCVar10->position).impl.x + 4);
         local_270 = local_268;
       }
-      dVar5 = (double)CONCAT44(uVar12,local_270) + DOUBLE_00654532;
-      if (local_14[1] <= local_18[1]) {
-        local_2d8 = *(undefined4 *)(local_18 + 1);
-        pdVar11 = local_18;
+      dVar4 = (double)CONCAT44(uVar11,local_270) + DOUBLE_00654532;
+      if ((local_14->position).impl.y <= (local_18->position).impl.y) {
+        local_2d8 = *(undefined4 *)&(local_18->position).impl.y;
+        pCVar10 = local_18;
       }
       else {
-        local_2d8 = *(undefined4 *)(local_14 + 1);
-        pdVar11 = local_14;
+        local_2d8 = *(undefined4 *)&(local_14->position).impl.y;
+        pCVar10 = local_14;
       }
-      uStack_2d4 = *(undefined4 *)((int)pdVar11 + 0xc);
-      if ((double)CONCAT44(uStack_2d4,local_2d8) <= local_20[1]) {
-        local_2c0 = *(undefined4 *)(local_20 + 1);
-        uStack_2bc = *(undefined4 *)((int)local_20 + 0xc);
+      uStack_2d4 = *(undefined4 *)((int)&(pCVar10->position).impl.y + 4);
+      if ((double)CONCAT44(uStack_2d4,local_2d8) <= (local_20->position).impl.y) {
+        local_2c0 = *(undefined4 *)&(local_20->position).impl.y;
+        uStack_2bc = *(undefined4 *)((int)&(local_20->position).impl.y + 4);
       }
       else {
-        if (local_14[1] <= local_18[1]) {
-          local_2a8 = *(undefined4 *)(local_18 + 1);
-          pdVar11 = local_18;
+        if ((local_14->position).impl.y <= (local_18->position).impl.y) {
+          local_2a8 = *(undefined4 *)&(local_18->position).impl.y;
+          pCVar10 = local_18;
         }
         else {
-          local_2a8 = *(undefined4 *)(local_14 + 1);
-          pdVar11 = local_14;
+          local_2a8 = *(undefined4 *)&(local_14->position).impl.y;
+          pCVar10 = local_14;
         }
-        uStack_2bc = *(undefined4 *)((int)pdVar11 + 0xc);
+        uStack_2bc = *(undefined4 *)((int)&(pCVar10->position).impl.y + 4);
         local_2c0 = local_2a8;
         local_2a4 = uStack_2bc;
       }
-      dVar6 = (double)CONCAT44(uStack_2bc,local_2c0) + DOUBLE_00654532;
-      if (local_14[2] <= local_18[2]) {
-        local_2b8 = *(undefined4 *)(local_18 + 2);
-        pdVar11 = local_18;
+      dVar5 = (double)CONCAT44(uStack_2bc,local_2c0) + DOUBLE_00654532;
+      if ((local_14->position).impl.z <= (local_18->position).impl.z) {
+        local_2b8 = *(undefined4 *)&(local_18->position).impl.z;
+        pCVar10 = local_18;
       }
       else {
-        local_2b8 = *(undefined4 *)(local_14 + 2);
-        pdVar11 = local_14;
+        local_2b8 = *(undefined4 *)&(local_14->position).impl.z;
+        pCVar10 = local_14;
       }
-      uStack_2b4 = *(undefined4 *)((int)pdVar11 + 0x14);
-      if ((double)CONCAT44(uStack_2b4,local_2b8) <= local_20[2]) {
-        local_2e0 = *(undefined4 *)(local_20 + 2);
-        uStack_2dc = *(undefined4 *)((int)local_20 + 0x14);
+      uStack_2b4 = *(undefined4 *)((int)&(pCVar10->position).impl.z + 4);
+      if ((double)CONCAT44(uStack_2b4,local_2b8) <= (local_20->position).impl.z) {
+        local_278 = *(undefined4 *)&(local_20->position).impl.z;
+        uVar11 = *(undefined4 *)((int)&(local_20->position).impl.z + 4);
       }
       else {
-        if (local_14[2] <= local_18[2]) {
-          local_278 = *(undefined4 *)(local_18 + 2);
-          pdVar11 = local_18;
+        if ((local_14->position).impl.z <= (local_18->position).impl.z) {
+          local_278 = *(undefined4 *)&(local_18->position).impl.z;
+          pCVar10 = local_18;
         }
         else {
-          local_278 = *(undefined4 *)(local_14 + 2);
-          pdVar11 = local_14;
+          local_278 = *(undefined4 *)&(local_14->position).impl.z;
+          pCVar10 = local_14;
         }
-        uStack_2dc = *(undefined4 *)((int)pdVar11 + 0x14);
-        local_2e0 = local_278;
+        uVar11 = *(undefined4 *)((int)&(pCVar10->position).impl.z + 4);
       }
-      uVar15 = 0;
-      dVar7 = (double)CONCAT44(uStack_2dc,local_2e0) + DOUBLE_00654532;
-      if (this_ptr->field0_0x0 != 0) {
+      uVar14 = 0;
+      dVar6 = (double)CONCAT44(uVar11,local_278) + DOUBLE_00654532;
+      if (this_ptr->vertex_count != 0) {
         local_3c = local_30->uv_coords + 2;
         local_38 = local_30->uv_coords + 1;
         local_44 = local_30->uv_coords;
         local_1c = 0;
         do {
-          if (((uVar15 != local_28) && (uVar15 != local_24)) && (uVar15 != local_2c)) {
-            puVar17 = (undefined4 *)((int)this_ptr->vertex_data + local_1c);
-            pdVar11 = &local_10c;
-            for (iVar14 = 6; iVar14 != 0; iVar14 = iVar14 + -1) {
-              *(undefined4 *)pdVar11 = *puVar17;
-              puVar17 = puVar17 + (uint)bVar19 * -2 + 1;
-              pdVar11 = (double *)((int)pdVar11 + (uint)bVar19 * -8 + 4);
+          if (((uVar14 != local_28) && (uVar14 != local_24)) && (uVar14 != local_2c)) {
+            puVar16 = (undefined4 *)((int)&(this_ptr->vertex_data->position).impl.x + local_1c);
+            pdVar18 = &local_10c;
+            for (iVar13 = 6; iVar13 != 0; iVar13 = iVar13 + -1) {
+              *(undefined4 *)pdVar18 = *puVar16;
+              puVar16 = puVar16 + (uint)bVar19 * -2 + 1;
+              pdVar18 = (double *)((int)pdVar18 + (uint)bVar19 * -8 + 4);
             }
-            if ((((dVar2 <= local_10c) && (local_10c <= dVar5)) &&
-                ((dVar3 <= local_104 && ((local_104 <= dVar6 && (dVar4 <= local_fc)))))) &&
-               (local_fc <= dVar7)) {
-              iVar14 = shape_superopt_cpp_FUN_005d6c10();
-              if (iVar14 == 0) {
-                iVar14 = shape_superopt_cpp_FUN_005d6c10();
-                pdVar11 = local_14;
-                if (iVar14 == 0) {
-                  iVar14 = shape_superopt_cpp_FUN_005d6c10();
-                  if (iVar14 == 0) goto LAB_005d4d06;
-                  local_124 = *(undefined4 *)local_20;
-                  uStack_120 = *(undefined4 *)((int)local_20 + 4);
-                  local_11c = *(undefined4 *)(local_20 + 1);
-                  uStack_118 = *(undefined4 *)((int)local_20 + 0xc);
-                  local_114 = *(undefined4 *)(local_20 + 2);
-                  uStack_110 = *(undefined4 *)((int)local_20 + 0x14);
+            if ((((dVar1 <= local_10c) && (local_10c <= dVar4)) &&
+                ((dVar2 <= local_104 && ((local_104 <= dVar5 && (dVar3 <= local_fc)))))) &&
+               (local_fc <= dVar6)) {
+              iVar13 = shape_superopt_cpp_FUN_005d6c10();
+              if (iVar13 == 0) {
+                iVar13 = shape_superopt_cpp_FUN_005d6c10();
+                pCVar10 = local_14;
+                if (iVar13 == 0) {
+                  iVar13 = shape_superopt_cpp_FUN_005d6c10();
+                  if (iVar13 == 0) goto LAB_005d4d06;
+                  local_124 = *(undefined4 *)&(local_20->position).impl.x;
+                  uStack_120 = *(undefined4 *)((int)&(local_20->position).impl.x + 4);
+                  local_11c = *(undefined4 *)&(local_20->position).impl.y;
+                  uStack_118 = *(undefined4 *)((int)&(local_20->position).impl.y + 4);
+                  local_114 = *(undefined4 *)&(local_20->position).impl.z;
+                  uStack_110 = *(undefined4 *)((int)&(local_20->position).impl.z + 4);
                   local_248 = *(undefined4 *)&local_3c->x;
                   uStack_244 = *(undefined4 *)((int)&local_3c->x + 4);
                   local_2d0 = *(undefined4 *)&local_3c->y;
                   uStack_2cc = *(undefined4 *)((int)&local_3c->y + 4);
-                  local_13c = *(undefined4 *)pdVar11;
-                  uStack_138 = *(undefined4 *)((int)pdVar11 + 4);
-                  local_134 = *(undefined4 *)(pdVar11 + 1);
-                  uStack_130 = *(undefined4 *)((int)pdVar11 + 0xc);
-                  local_12c = *(undefined4 *)(pdVar11 + 2);
-                  uStack_128 = *(undefined4 *)((int)pdVar11 + 0x14);
+                  local_13c = *(undefined4 *)&(pCVar10->position).impl.x;
+                  uStack_138 = *(undefined4 *)((int)&(pCVar10->position).impl.x + 4);
+                  local_134 = *(undefined4 *)&(pCVar10->position).impl.y;
+                  uStack_130 = *(undefined4 *)((int)&(pCVar10->position).impl.y + 4);
+                  local_12c = *(undefined4 *)&(pCVar10->position).impl.z;
+                  uStack_128 = *(undefined4 *)((int)&(pCVar10->position).impl.z + 4);
                   local_240 = *(undefined4 *)&local_44->x;
                   uStack_23c = *(undefined4 *)((int)&local_44->x + 4);
                   local_258 = *(undefined4 *)&local_44->y;
                   local_48 = 1;
-                  uVar12 = *(undefined4 *)((int)&local_44->y + 4);
+                  uVar11 = *(undefined4 *)((int)&local_44->y + 4);
                   local_40 = 0;
                 }
                 else {
-                  local_124 = *(undefined4 *)local_18;
-                  uStack_120 = *(undefined4 *)((int)local_18 + 4);
-                  local_11c = *(undefined4 *)(local_18 + 1);
-                  uStack_118 = *(undefined4 *)((int)local_18 + 0xc);
-                  local_114 = *(undefined4 *)(local_18 + 2);
-                  uStack_110 = *(undefined4 *)((int)local_18 + 0x14);
+                  local_124 = *(undefined4 *)&(local_18->position).impl.x;
+                  uStack_120 = *(undefined4 *)((int)&(local_18->position).impl.x + 4);
+                  local_11c = *(undefined4 *)&(local_18->position).impl.y;
+                  uStack_118 = *(undefined4 *)((int)&(local_18->position).impl.y + 4);
+                  local_114 = *(undefined4 *)&(local_18->position).impl.z;
+                  uStack_110 = *(undefined4 *)((int)&(local_18->position).impl.z + 4);
                   local_248 = *(undefined4 *)&local_38->x;
                   uStack_244 = *(undefined4 *)((int)&local_38->x + 4);
                   local_2d0 = *(undefined4 *)&local_38->y;
                   uStack_2cc = *(undefined4 *)((int)&local_38->y + 4);
-                  local_13c = *(undefined4 *)local_20;
-                  uStack_138 = *(undefined4 *)((int)local_20 + 4);
-                  local_134 = *(undefined4 *)(local_20 + 1);
-                  uStack_130 = *(undefined4 *)((int)local_20 + 0xc);
-                  local_12c = *(undefined4 *)(local_20 + 2);
-                  uStack_128 = *(undefined4 *)((int)local_20 + 0x14);
+                  local_13c = *(undefined4 *)&(local_20->position).impl.x;
+                  uStack_138 = *(undefined4 *)((int)&(local_20->position).impl.x + 4);
+                  local_134 = *(undefined4 *)&(local_20->position).impl.y;
+                  uStack_130 = *(undefined4 *)((int)&(local_20->position).impl.y + 4);
+                  local_12c = *(undefined4 *)&(local_20->position).impl.z;
+                  uStack_128 = *(undefined4 *)((int)&(local_20->position).impl.z + 4);
                   local_240 = *(undefined4 *)&local_3c->x;
                   uStack_23c = *(undefined4 *)((int)&local_3c->x + 4);
                   local_258 = *(undefined4 *)&local_3c->y;
                   local_48 = 0;
-                  uVar12 = *(undefined4 *)((int)&local_3c->y + 4);
+                  uVar11 = *(undefined4 *)((int)&local_3c->y + 4);
                   local_40 = 2;
                 }
               }
               else {
                 local_40 = 1;
-                local_124 = *(undefined4 *)local_14;
-                uStack_120 = *(undefined4 *)((int)local_14 + 4);
-                local_11c = *(undefined4 *)(local_14 + 1);
-                uStack_118 = *(undefined4 *)((int)local_14 + 0xc);
-                local_114 = *(undefined4 *)(local_14 + 2);
-                uStack_110 = *(undefined4 *)((int)local_14 + 0x14);
+                local_124 = *(undefined4 *)&(local_14->position).impl.x;
+                uStack_120 = *(undefined4 *)((int)&(local_14->position).impl.x + 4);
+                local_11c = *(undefined4 *)&(local_14->position).impl.y;
+                uStack_118 = *(undefined4 *)((int)&(local_14->position).impl.y + 4);
+                local_114 = *(undefined4 *)&(local_14->position).impl.z;
+                uStack_110 = *(undefined4 *)((int)&(local_14->position).impl.z + 4);
                 local_248 = *(undefined4 *)&local_44->x;
                 uStack_244 = *(undefined4 *)((int)&local_44->x + 4);
                 local_2d0 = *(undefined4 *)&local_44->y;
                 uStack_2cc = *(undefined4 *)((int)&local_44->y + 4);
-                local_13c = *(undefined4 *)local_18;
-                uStack_138 = *(undefined4 *)((int)local_18 + 4);
-                local_134 = *(undefined4 *)(local_18 + 1);
-                uStack_130 = *(undefined4 *)((int)local_18 + 0xc);
-                local_12c = *(undefined4 *)(local_18 + 2);
-                uStack_128 = *(undefined4 *)((int)local_18 + 0x14);
+                local_13c = *(undefined4 *)&(local_18->position).impl.x;
+                uStack_138 = *(undefined4 *)((int)&(local_18->position).impl.x + 4);
+                local_134 = *(undefined4 *)&(local_18->position).impl.y;
+                uStack_130 = *(undefined4 *)((int)&(local_18->position).impl.y + 4);
+                local_12c = *(undefined4 *)&(local_18->position).impl.z;
+                uStack_128 = *(undefined4 *)((int)&(local_18->position).impl.z + 4);
                 local_240 = *(undefined4 *)&local_38->x;
                 uStack_23c = *(undefined4 *)((int)&local_38->x + 4);
                 local_258 = *(undefined4 *)&local_38->y;
-                uVar12 = *(undefined4 *)((int)&local_38->y + 4);
+                uVar11 = *(undefined4 *)((int)&local_38->y + 4);
                 local_48 = 2;
               }
-              local_4c = local_4c + -1;
-              if (local_4c < 1) {
+              local_4c = (void *)((int)local_4c + -1);
+              if ((int)local_4c < 1) {
                 shape_memdbg_cpp_debugFree_FUN_0050f210(local_54);
                 return 0;
               }
-              shape_superopt_cpp_CPoly_ctor_FUN_005cc620(&local_200);
-              shape_superopt_cpp_CPoly_FUN_005cc6a0(&local_200);
-              pCVar10 = local_30;
-              dVar2 = (double)CONCAT44(uStack_138,local_13c) -
+              shape_superopt_cpp_CPoly_ctor_FUN_005cc620((CPoly *)local_200);
+              shape_superopt_cpp_CPoly_FUN_005cc6a0((CPoly *)local_200);
+              pCVar9 = local_30;
+              dVar1 = (double)CONCAT44(uStack_138,local_13c) -
                       (double)CONCAT44(uStack_120,local_124);
-              local_200.vertex_idx_0 = uVar15;
-              dVar7 = (double)CONCAT44(uStack_130,local_134) -
+              local_200._4_4_ = uVar14;
+              dVar6 = (double)CONCAT44(uStack_130,local_134) -
                       (double)CONCAT44(uStack_118,local_11c);
-              local_200.vertex_idx_1 = *(int *)((int)local_30->uv_coords + local_40 * 4 + -0xc);
-              dVar6 = (double)CONCAT44(uStack_128,local_12c) -
+              local_200._8_4_ = *(int *)((int)local_30->uv_coords + local_40 * 4 + -0xc);
+              dVar5 = (double)CONCAT44(uStack_128,local_12c) -
                       (double)CONCAT44(uStack_110,local_114);
-              local_200.vertex_idx_2 = *(int *)((int)local_30->uv_coords + local_48 * 4 + -0xc);
-              *(uint *)((int)local_30->uv_coords + local_40 * 4 + -0xc) = uVar15;
-              dVar3 = local_10c - (double)CONCAT44(uStack_120,local_124);
-              dVar4 = local_104 - (double)CONCAT44(uStack_118,local_11c);
-              dVar5 = local_fc - (double)CONCAT44(uStack_110,local_114);
+              local_1f4 = *(int *)((int)local_30->uv_coords + local_48 * 4 + -0xc);
+              *(uint *)((int)local_30->uv_coords + local_40 * 4 + -0xc) = uVar14;
+              dVar2 = local_10c - (double)CONCAT44(uStack_120,local_124);
+              dVar3 = local_104 - (double)CONCAT44(uStack_118,local_11c);
+              dVar4 = local_fc - (double)CONCAT44(uStack_110,local_114);
               local_f4 = (double)CONCAT44(uStack_23c,local_240) -
                          (double)CONCAT44(uStack_244,local_248);
-              dVar8 = (double)CONCAT44(uStack_2cc,local_2d0);
-              dVar9 = local_f4;
-              local_ec = (double)CONCAT44(uVar12,local_258) - dVar8;
+              dVar7 = (double)CONCAT44(uStack_2cc,local_2d0);
+              dVar8 = local_f4;
+              local_ec = (double)CONCAT44(uVar11,local_258) - dVar7;
               local_c4 = (undefined4)local_f4;
               (&uStack_c0)[(uint)bVar19 * -2] =
                    *(undefined4 *)((int)&local_f4 + (uint)bVar19 * -8 + 4);
-              local_f4 = dVar9;
+              local_f4 = dVar8;
               *(undefined4 *)(&local_bc + (-(uint)bVar19 - (uint)bVar19)) =
                    *(undefined4 *)(&local_ec + (-(uint)bVar19 - (uint)bVar19));
               *(undefined4 *)
@@ -445,15 +455,14 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d47b0(CObj *this_ptr)
                    *(undefined4 *)
                     ((int)(&local_ec + (-(uint)bVar19 - (uint)bVar19)) + ((uint)bVar19 * -2 + 1) * 4
                     );
-              dVar2 = SQRT(dVar5 * dVar5 + dVar4 * dVar4 + dVar3 * dVar3) /
-                      SQRT(dVar6 * dVar6 + dVar7 * dVar7 + dVar2 * dVar2);
-              local_a4 = (double)CONCAT44(uStack_c0,local_c4) * dVar2;
-              dVar3 = local_a4;
-              local_9c[0] = local_bc * dVar2;
+              dVar1 = SQRT(dVar4 * dVar4 + dVar3 * dVar3 + dVar2 * dVar2) /
+                      SQRT(dVar5 * dVar5 + dVar6 * dVar6 + dVar1 * dVar1);
+              local_a4 = (double)CONCAT44(uStack_c0,local_c4) * dVar1;
+              dVar2 = local_a4;
+              local_9c[0] = local_bc * dVar1;
               local_e0[3] = (undefined4)local_a4;
-              local_a4 = dVar3;
-              local_e0[(uint)bVar19 * -2 + 4] =
-                   *(undefined4 *)((int)&local_a4 + (uint)bVar19 * -8 + 4);
+              local_a4 = dVar2;
+              local_e0[(uint)bVar19 * -2 + 4] = *(int *)((int)&local_a4 + (uint)bVar19 * -8 + 4);
               *(undefined4 *)(&local_cc + (-(uint)bVar19 - (uint)bVar19)) =
                    *(undefined4 *)(local_9c + (-(uint)bVar19 - (uint)bVar19));
               *(undefined4 *)
@@ -463,56 +472,55 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d47b0(CObj *this_ptr)
               ;
               local_b4 = (double)CONCAT44(uStack_244,local_248) +
                          (double)CONCAT44(uStack_d0,local_e0[3]);
-              dVar2 = local_b4;
-              local_ac = dVar8 + local_cc;
+              dVar1 = local_b4;
+              local_ac = dVar7 + local_cc;
               local_e4 = (undefined4)local_b4;
-              local_b4 = dVar2;
-              local_e0[(uint)bVar19 * -2] = *(undefined4 *)((int)&local_b4 + (uint)bVar19 * -8 + 4);
+              local_b4 = dVar1;
+              local_e0[(uint)bVar19 * -2] = *(int *)((int)&local_b4 + (uint)bVar19 * -8 + 4);
               local_e0[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 1] =
-                   *(undefined4 *)(&local_ac + (-(uint)bVar19 - (uint)bVar19));
+                   *(int *)(&local_ac + (-(uint)bVar19 - (uint)bVar19));
               (local_e0 + (uint)bVar19 * -2 + (uint)bVar19 * -2 + 1)[(uint)bVar19 * -2 + 1] =
-                   *(undefined4 *)
-                    ((int)(&local_ac + (-(uint)bVar19 - (uint)bVar19)) + ((uint)bVar19 * -2 + 1) * 4
-                    );
-              local_200.uv_coords[0].x._0_4_ = local_e4;
-              local_200.uv_coords[0].x._4_4_ = local_e0[0];
-              local_200.uv_coords[0].y._0_4_ = local_e0[1];
-              pCVar16 = pCVar10->uv_coords + local_40;
-              local_200.uv_coords[0].y._4_4_ = local_e0[2];
-              local_200.uv_coords[1].x._0_4_ = *(undefined4 *)&pCVar16->x;
-              local_200.uv_coords[1].x._4_4_ = *(undefined4 *)((int)&pCVar16->x + 4);
-              local_200.uv_coords[1].y._0_4_ = *(undefined4 *)&pCVar16->y;
-              local_200.uv_coords[1].y._4_4_ = *(undefined4 *)((int)&pCVar16->y + 4);
-              pCVar18 = pCVar10->uv_coords + local_48;
-              local_200.uv_coords[2].x._0_4_ = *(undefined4 *)&pCVar18->x;
-              local_200.uv_coords[2].x._4_4_ = *(undefined4 *)((int)&pCVar18->x + 4);
-              local_200.uv_coords[2].y._0_4_ = *(undefined4 *)&pCVar18->y;
-              local_200.uv_coords[2].y._4_4_ = *(undefined4 *)((int)&pCVar18->y + 4);
-              *(undefined4 *)&pCVar16->x = local_e4;
-              *(undefined4 *)((int)&pCVar16->x + 4) = local_e0[0];
-              *(undefined4 *)&pCVar16->y = local_e0[1];
-              *(undefined4 *)((int)&pCVar16->y + 4) = local_e0[2];
-              iVar14 = this_ptr->count;
-              iVar13 = (**(code **)((int)this_ptr->vtable + 0x10))();
-              if (iVar13 == 0) {
-                shape_memdbg_cpp_debugFree_FUN_0050f210(local_54);
-                shape_superopt_cpp_CPoly_dtor_FUN_005cc660(&local_200);
+                   *(int *)((int)(&local_ac + (-(uint)bVar19 - (uint)bVar19)) +
+                           ((uint)bVar19 * -2 + 1) * 4);
+              local_1f0 = local_e4;
+              local_1ec = local_e0[0];
+              local_1e8 = local_e0[1];
+              pCVar15 = pCVar9->uv_coords + local_40;
+              local_1e4 = local_e0[2];
+              local_1e0 = *(undefined4 *)&pCVar15->x;
+              local_1dc = *(undefined4 *)((int)&pCVar15->x + 4);
+              local_1d8 = *(undefined4 *)&pCVar15->y;
+              local_1d4 = *(undefined4 *)((int)&pCVar15->y + 4);
+              pCVar17 = pCVar9->uv_coords + local_48;
+              local_1d0 = *(undefined4 *)&pCVar17->x;
+              local_1cc = *(undefined4 *)((int)&pCVar17->x + 4);
+              local_1c8 = *(undefined4 *)&pCVar17->y;
+              local_1c4 = *(undefined4 *)((int)&pCVar17->y + 4);
+              *(undefined4 *)&pCVar15->x = local_e4;
+              *(int *)((int)&pCVar15->x + 4) = local_e0[0];
+              *(int *)&pCVar15->y = local_e0[1];
+              *(int *)((int)&pCVar15->y + 4) = local_e0[2];
+              iVar13 = this_ptr->poly_count;
+              iVar12 = (*this_ptr->vtable->addPolygons)(this_ptr,1);
+              if (iVar12 == 0) {
+                shape_memdbg_cpp_debugFree_FUN_0050f210(local_4c);
+                shape_superopt_cpp_CPoly_dtor_FUN_005cc660((CPoly *)(local_200 + 8));
                 return 0;
               }
-              (**(code **)((int)this_ptr->poly_array[iVar14].vtable + 4))();
+              (*(code *)(this_ptr->poly_array[iVar13].vtable)->field1_0x4)();
               local_34 = local_34 - 1;
               local_50 = local_50 + 1;
-              shape_superopt_cpp_CPoly_dtor_FUN_005cc660(&local_200);
+              shape_superopt_cpp_CPoly_dtor_FUN_005cc660((CPoly *)local_200);
               break;
             }
           }
 LAB_005d4d06:
-          uVar15 = uVar15 + 1;
+          uVar14 = uVar14 + 1;
           local_1c = local_1c + 0x38;
-        } while (uVar15 < (uint)this_ptr->field0_0x0);
+        } while (uVar14 < (uint)this_ptr->vertex_count);
       }
       local_34 = local_34 + 1;
-    } while (local_34 < (uint)this_ptr->count);
+    } while (local_34 < (uint)this_ptr->poly_count);
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(local_54);
   return 1;

@@ -9,56 +9,68 @@
 void __cdecl shape_superopt_cpp_CObj_FUN_005d3f60(CObj *this_ptr)
 
 {
-  double *pdVar1;
-  double *pdVar2;
+  CVert *pCVar1;
+  CVert *pCVar2;
   uint uVar3;
   double *in_stack_00000008;
   double *in_stack_0000000c;
   
-  pdVar1 = (double *)this_ptr->vertex_data;
+  pCVar1 = this_ptr->vertex_data;
   uVar3 = 1;
-  *(undefined4 *)in_stack_00000008 = *(undefined4 *)pdVar1;
-  *(undefined4 *)((int)in_stack_00000008 + 4) = *(undefined4 *)((int)pdVar1 + 4);
-  *(undefined4 *)(in_stack_00000008 + 1) = *(undefined4 *)(pdVar1 + 1);
-  *(undefined4 *)((int)in_stack_00000008 + 0xc) = *(undefined4 *)((int)pdVar1 + 0xc);
-  *(undefined4 *)(in_stack_00000008 + 2) = *(undefined4 *)(pdVar1 + 2);
-  *(undefined4 *)((int)in_stack_00000008 + 0x14) = *(undefined4 *)((int)pdVar1 + 0x14);
-  *(undefined4 *)in_stack_0000000c = *(undefined4 *)pdVar1;
-  *(undefined4 *)((int)in_stack_0000000c + 4) = *(undefined4 *)((int)pdVar1 + 4);
-  *(undefined4 *)(in_stack_0000000c + 1) = *(undefined4 *)(pdVar1 + 1);
-  *(undefined4 *)((int)in_stack_0000000c + 0xc) = *(undefined4 *)((int)pdVar1 + 0xc);
-  *(undefined4 *)(in_stack_0000000c + 2) = *(undefined4 *)(pdVar1 + 2);
-  *(undefined4 *)((int)in_stack_0000000c + 0x14) = *(undefined4 *)((int)pdVar1 + 0x14);
-  if (1 < (uint)this_ptr->field0_0x0) {
+  *(undefined4 *)in_stack_00000008 = *(undefined4 *)&(pCVar1->position).impl.x;
+  *(undefined4 *)((int)in_stack_00000008 + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.x + 4)
+  ;
+  *(undefined4 *)(in_stack_00000008 + 1) = *(undefined4 *)&(pCVar1->position).impl.y;
+  *(undefined4 *)((int)in_stack_00000008 + 0xc) =
+       *(undefined4 *)((int)&(pCVar1->position).impl.y + 4);
+  *(undefined4 *)(in_stack_00000008 + 2) = *(undefined4 *)&(pCVar1->position).impl.z;
+  *(undefined4 *)((int)in_stack_00000008 + 0x14) =
+       *(undefined4 *)((int)&(pCVar1->position).impl.z + 4);
+  *(undefined4 *)in_stack_0000000c = *(undefined4 *)&(pCVar1->position).impl.x;
+  *(undefined4 *)((int)in_stack_0000000c + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.x + 4)
+  ;
+  *(undefined4 *)(in_stack_0000000c + 1) = *(undefined4 *)&(pCVar1->position).impl.y;
+  *(undefined4 *)((int)in_stack_0000000c + 0xc) =
+       *(undefined4 *)((int)&(pCVar1->position).impl.y + 4);
+  *(undefined4 *)(in_stack_0000000c + 2) = *(undefined4 *)&(pCVar1->position).impl.z;
+  *(undefined4 *)((int)in_stack_0000000c + 0x14) =
+       *(undefined4 *)((int)&(pCVar1->position).impl.z + 4);
+  if (1 < (uint)this_ptr->vertex_count) {
     do {
-      pdVar2 = pdVar1 + 7;
-      if (*pdVar2 < *in_stack_00000008) {
-        *(undefined4 *)in_stack_00000008 = *(undefined4 *)pdVar2;
-        *(undefined4 *)((int)in_stack_00000008 + 4) = *(undefined4 *)((int)pdVar1 + 0x3c);
+      pCVar2 = pCVar1 + 1;
+      if ((pCVar2->position).impl.x < *in_stack_00000008) {
+        *(undefined4 *)in_stack_00000008 = *(undefined4 *)&(pCVar2->position).impl.x;
+        *(undefined4 *)((int)in_stack_00000008 + 4) =
+             *(undefined4 *)((int)&pCVar1[1].position.impl.x + 4);
       }
-      if (pdVar1[8] < in_stack_00000008[1]) {
-        *(undefined4 *)(in_stack_00000008 + 1) = *(undefined4 *)(pdVar1 + 8);
-        *(undefined4 *)((int)in_stack_00000008 + 0xc) = *(undefined4 *)((int)pdVar1 + 0x44);
+      if (pCVar1[1].position.impl.y < in_stack_00000008[1]) {
+        *(undefined4 *)(in_stack_00000008 + 1) = *(undefined4 *)&pCVar1[1].position.impl.y;
+        *(undefined4 *)((int)in_stack_00000008 + 0xc) =
+             *(undefined4 *)((int)&pCVar1[1].position.impl.y + 4);
       }
-      if (pdVar1[9] < in_stack_00000008[2]) {
-        *(undefined4 *)(in_stack_00000008 + 2) = *(undefined4 *)(pdVar1 + 9);
-        *(undefined4 *)((int)in_stack_00000008 + 0x14) = *(undefined4 *)((int)pdVar1 + 0x4c);
+      if (pCVar1[1].position.impl.z < in_stack_00000008[2]) {
+        *(undefined4 *)(in_stack_00000008 + 2) = *(undefined4 *)&pCVar1[1].position.impl.z;
+        *(undefined4 *)((int)in_stack_00000008 + 0x14) =
+             *(undefined4 *)((int)&pCVar1[1].position.impl.z + 4);
       }
-      if (*in_stack_0000000c < *pdVar2) {
-        *(undefined4 *)in_stack_0000000c = *(undefined4 *)pdVar2;
-        *(undefined4 *)((int)in_stack_0000000c + 4) = *(undefined4 *)((int)pdVar1 + 0x3c);
+      if (*in_stack_0000000c < (pCVar2->position).impl.x) {
+        *(undefined4 *)in_stack_0000000c = *(undefined4 *)&(pCVar2->position).impl.x;
+        *(undefined4 *)((int)in_stack_0000000c + 4) =
+             *(undefined4 *)((int)&pCVar1[1].position.impl.x + 4);
       }
-      if (in_stack_0000000c[1] < pdVar1[8]) {
-        *(undefined4 *)(in_stack_0000000c + 1) = *(undefined4 *)(pdVar1 + 8);
-        *(undefined4 *)((int)in_stack_0000000c + 0xc) = *(undefined4 *)((int)pdVar1 + 0x44);
+      if (in_stack_0000000c[1] < pCVar1[1].position.impl.y) {
+        *(undefined4 *)(in_stack_0000000c + 1) = *(undefined4 *)&pCVar1[1].position.impl.y;
+        *(undefined4 *)((int)in_stack_0000000c + 0xc) =
+             *(undefined4 *)((int)&pCVar1[1].position.impl.y + 4);
       }
-      if (in_stack_0000000c[2] < pdVar1[9]) {
-        *(undefined4 *)(in_stack_0000000c + 2) = *(undefined4 *)(pdVar1 + 9);
-        *(undefined4 *)((int)in_stack_0000000c + 0x14) = *(undefined4 *)((int)pdVar1 + 0x4c);
+      if (in_stack_0000000c[2] < pCVar1[1].position.impl.z) {
+        *(undefined4 *)(in_stack_0000000c + 2) = *(undefined4 *)&pCVar1[1].position.impl.z;
+        *(undefined4 *)((int)in_stack_0000000c + 0x14) =
+             *(undefined4 *)((int)&pCVar1[1].position.impl.z + 4);
       }
       uVar3 = uVar3 + 1;
-      pdVar1 = pdVar2;
-    } while (uVar3 < (uint)this_ptr->field0_0x0);
+      pCVar1 = pCVar2;
+    } while (uVar3 < (uint)this_ptr->vertex_count);
   }
   return;
 }

@@ -9,16 +9,13 @@
 int __cdecl shape_superopt_cpp_CPoly_FUN_005cd0b0(CPoly *this_ptr)
 
 {
-  void *pvVar1;
+  CVert *pCVar1;
   uint in_stack_00000008;
   
-  pvVar1 = this_ptr->parent_obj->vertex_data;
-  if ((((*(uint *)((int)pvVar1 + this_ptr->vertex_idx_0 * 0x38 + 0x30) & in_stack_00000008) ==
-        in_stack_00000008) &&
-      ((*(uint *)((int)pvVar1 + this_ptr->vertex_idx_1 * 0x38 + 0x30) & in_stack_00000008) ==
-       in_stack_00000008)) &&
-     ((*(uint *)((int)pvVar1 + this_ptr->vertex_idx_2 * 0x38 + 0x30) & in_stack_00000008) ==
-      in_stack_00000008)) {
+  pCVar1 = this_ptr->parent_obj->vertex_data;
+  if ((((pCVar1[this_ptr->vertex_idx_0].flags2 & in_stack_00000008) == in_stack_00000008) &&
+      ((pCVar1[this_ptr->vertex_idx_1].flags2 & in_stack_00000008) == in_stack_00000008)) &&
+     ((pCVar1[this_ptr->vertex_idx_2].flags2 & in_stack_00000008) == in_stack_00000008)) {
     return 1;
   }
   return 0;

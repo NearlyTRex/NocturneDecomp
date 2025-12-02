@@ -24,23 +24,23 @@ int * __cdecl shape_superopt_cpp_CObj_FUN_005d44d0(CObj *this_ptr)
   int *piVar2;
   void *ptr;
   int *piVar3;
-  undefined8 *puVar4;
+  CVert *pCVar4;
   uint uVar5;
   int iVar6;
-  undefined8 *puVar7;
+  double *pdVar7;
   BADSPACEBASE *in_ESP;
   int unaff_ESI;
   int iVar8;
   void *pvVar9;
   
-  dest = (int *)crt_memory_c_malloc_FUN_006021da(this_ptr->field0_0x0 << 2);
+  dest = (int *)crt_memory_c_malloc_FUN_006021da(this_ptr->vertex_count << 2);
   if (dest != (int *)0x0) {
-    if (1000 < (uint)this_ptr->field0_0x0) {
+    if (1000 < (uint)this_ptr->vertex_count) {
       shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(4);
     }
-    crt_memory_c_memset_FUN_005fde40(dest,0xff,this_ptr->field0_0x0 << 2);
+    crt_memory_c_memset_FUN_005fde40(dest,0xff,this_ptr->vertex_count << 2);
     uVar5 = 0;
-    if (this_ptr->count != 0) {
+    if (this_ptr->poly_count != 0) {
       iVar8 = 0;
       do {
         pCVar1 = this_ptr->poly_array;
@@ -52,12 +52,12 @@ int * __cdecl shape_superopt_cpp_CObj_FUN_005d44d0(CObj *this_ptr)
         uVar5 = uVar5 + 1;
         dest[iVar6] = iVar6;
         iVar8 = iVar8 + 0x68;
-      } while (uVar5 < (uint)this_ptr->count);
+      } while (uVar5 < (uint)this_ptr->poly_count);
     }
     iVar8 = 0;
     uVar5 = 0;
     piVar2 = dest;
-    if (this_ptr->field0_0x0 != 0) {
+    if (this_ptr->vertex_count != 0) {
       do {
         if (*piVar2 == -1) {
           iVar8 = iVar8 + 1;
@@ -67,10 +67,10 @@ int * __cdecl shape_superopt_cpp_CObj_FUN_005d44d0(CObj *this_ptr)
         }
         uVar5 = uVar5 + 1;
         piVar2 = piVar2 + 1;
-      } while (uVar5 < (uint)this_ptr->field0_0x0);
+      } while (uVar5 < (uint)this_ptr->vertex_count);
     }
     uVar5 = 0;
-    if (this_ptr->count != 0) {
+    if (this_ptr->poly_count != 0) {
       iVar6 = 0;
       do {
         pCVar1 = this_ptr->poly_array;
@@ -84,10 +84,10 @@ int * __cdecl shape_superopt_cpp_CObj_FUN_005d44d0(CObj *this_ptr)
         *piVar2 = *piVar2 - dest[*(int *)((int)pCVar1->uv_coords + iVar6 + -4)];
         iVar6 = iVar6 + 0x68;
         uVar5 = uVar5 + 1;
-      } while (uVar5 < (uint)this_ptr->count);
+      } while (uVar5 < (uint)this_ptr->poly_count);
     }
     crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff90,"Deleting %d disjoing vertices",iVar8);
-    ptr = (void *)(this_ptr->field0_0x0 - iVar8);
+    ptr = (void *)(this_ptr->vertex_count - iVar8);
     pvVar9 = (void *)0x0;
     if (ptr != (void *)0x0) {
       unaff_ESI = 0;
@@ -98,27 +98,26 @@ int * __cdecl shape_superopt_cpp_CObj_FUN_005d44d0(CObj *this_ptr)
           piVar2 = piVar3 + 1;
         } while (*piVar3 == -1);
         iVar8 = (int)piVar3 - (int)dest >> 0x1f;
-        puVar4 = (undefined8 *)
-                 (((int)((((int)piVar3 - (int)dest) + iVar8 * -4) - (uint)(iVar8 << 1 < 0)) >> 2) *
-                  0x38 + (int)this_ptr->vertex_data);
-        puVar7 = (undefined8 *)((int)this_ptr->vertex_data + unaff_ESI);
-        *puVar7 = *puVar4;
-        puVar7[1] = puVar4[1];
-        puVar7[2] = puVar4[2];
-        puVar7[3] = puVar4[3];
-        puVar7[4] = puVar4[4];
-        puVar7[5] = puVar4[5];
-        *(undefined4 *)(puVar7 + 6) = *(undefined4 *)(puVar4 + 6);
-        *(undefined4 *)((int)puVar7 + 0x34) = *(undefined4 *)((int)puVar4 + 0x34);
+        pCVar4 = this_ptr->vertex_data +
+                 ((int)((((int)piVar3 - (int)dest) + iVar8 * -4) - (uint)(iVar8 << 1 < 0)) >> 2);
+        pdVar7 = (double *)((int)&(this_ptr->vertex_data->position).impl.x + unaff_ESI);
+        *pdVar7 = (pCVar4->position).impl.x;
+        pdVar7[1] = (pCVar4->position).impl.y;
+        pdVar7[2] = (pCVar4->position).impl.z;
+        pdVar7[3] = (pCVar4->orig_position).impl.x;
+        pdVar7[4] = (pCVar4->orig_position).impl.y;
+        pdVar7[5] = (pCVar4->orig_position).impl.z;
+        *(uint *)(pdVar7 + 6) = pCVar4->flags2;
+        *(uint *)((int)pdVar7 + 0x34) = pCVar4->flags;
         pvVar9 = (void *)((int)pvVar9 + 1);
         unaff_ESI = unaff_ESI + 0x38;
       } while (pvVar9 < ptr);
     }
-    pvVar9 = crt_memory_c_realloc_FUN_00601df0(this_ptr->vertex_data,(int)ptr * 0x38);
-    if (pvVar9 != (void *)0x0) {
-      this_ptr->vertex_data = pvVar9;
+    pCVar4 = (CVert *)crt_memory_c_realloc_FUN_00601df0(this_ptr->vertex_data,(int)ptr * 0x38);
+    if (pCVar4 != (CVert *)0x0) {
+      this_ptr->vertex_data = pCVar4;
     }
-    this_ptr->field0_0x0 = unaff_ESI;
+    this_ptr->vertex_count = unaff_ESI;
     shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
     crt_memory_c_free_FUN_005fe659(dest);
     dest = (int *)&DAT_00000001;

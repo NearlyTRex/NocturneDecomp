@@ -35,16 +35,16 @@ core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
                 ) / (longlong)(this_ptr->saved_viewport_rect).left);
   iVar7 = (int)(((longlong)(output_ptr->y - (this_ptr->saved_viewport_rect).bottom) *
                 (longlong)iVar1) / (longlong)(this_ptr->saved_viewport_rect).top);
-  lVar3 = (longlong)iVar7 * (longlong)(this_ptr->inverted_matrix).m[1][0] +
-          (longlong)iVar6 * (longlong)(this_ptr->inverted_matrix).m[0][0] +
-          (longlong)iVar1 * (longlong)(this_ptr->inverted_matrix).m[2][0];
-  lVar4 = (longlong)iVar7 * (longlong)(this_ptr->inverted_matrix).m[1][1] +
-          (longlong)iVar6 * (longlong)(this_ptr->inverted_matrix).m[0][1] +
-          (longlong)iVar1 * (longlong)(this_ptr->inverted_matrix).m[2][1];
+  lVar3 = (longlong)iVar7 * (longlong)(this_ptr->inverted_matrix).m[1].x +
+          (longlong)iVar6 * (longlong)(this_ptr->inverted_matrix).m[0].x +
+          (longlong)iVar1 * (longlong)(this_ptr->inverted_matrix).m[2].x;
+  lVar4 = (longlong)iVar7 * (longlong)(this_ptr->inverted_matrix).m[1].y +
+          (longlong)iVar6 * (longlong)(this_ptr->inverted_matrix).m[0].y +
+          (longlong)iVar1 * (longlong)(this_ptr->inverted_matrix).m[2].y;
   iVar2 = (this_ptr->camera_origin).y;
-  lVar5 = (longlong)iVar7 * (longlong)(this_ptr->inverted_matrix).m[1][2] +
-          (longlong)iVar6 * (longlong)(this_ptr->inverted_matrix).m[0][2] +
-          (longlong)iVar1 * (longlong)(this_ptr->inverted_matrix).m[2][2];
+  lVar5 = (longlong)iVar7 * (longlong)(this_ptr->inverted_matrix).m[1].z +
+          (longlong)iVar6 * (longlong)(this_ptr->inverted_matrix).m[0].z +
+          (longlong)iVar1 * (longlong)(this_ptr->inverted_matrix).m[2].z;
   iVar1 = (this_ptr->camera_origin).z;
   unaff_ESI->x = (this_ptr->camera_origin).x +
                  ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);

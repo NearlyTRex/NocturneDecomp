@@ -80,7 +80,7 @@ double core_gore_cpp_FUN_004eb9d0(void)
   pCVar2 = &(g_CurrentSceneCamera->base).rotation_matrix;
   piVar3 = aiStack_3c;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *piVar3 = pCVar2->m[0][0];
+    *piVar3 = pCVar2->m[0].x;
     pCVar2 = (CMatrix3x3i *)((int)pCVar2 + (uint)bVar5 * -8 + 4);
     piVar3 = piVar3 + (uint)bVar5 * -2 + 1;
   }

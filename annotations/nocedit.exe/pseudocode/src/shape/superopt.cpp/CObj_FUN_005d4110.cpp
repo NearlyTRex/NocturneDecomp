@@ -15,7 +15,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d4110(CObj *this_ptr)
   int in_stack_00000008;
   
   uVar3 = 0;
-  if (this_ptr->count != 0) {
+  if (this_ptr->poly_count != 0) {
     iVar2 = 0;
     do {
       iVar1 = (**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar2 + 4) + 0x54))
@@ -25,7 +25,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d4110(CObj *this_ptr)
       }
       uVar3 = uVar3 + 1;
       iVar2 = iVar2 + 0x68;
-    } while (uVar3 < (uint)this_ptr->count);
+    } while (uVar3 < (uint)this_ptr->poly_count);
   }
   return 0;
 }

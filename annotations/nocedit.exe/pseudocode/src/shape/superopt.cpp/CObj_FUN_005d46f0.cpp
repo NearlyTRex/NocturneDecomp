@@ -18,6 +18,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d46f0(CObj *this_ptr)
 
 {
   int iVar1;
+  uint index;
   uint uVar2;
   BADSPACEBASE *in_ESP;
   void *ptr;
@@ -25,31 +26,32 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d46f0(CObj *this_ptr)
   char local_6c [92];
   
   ptr = (void *)0x0;
-  if (1000 < (uint)this_ptr->count) {
+  if (1000 < (uint)this_ptr->poly_count) {
     ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(4);
   }
-  uVar2 = 0;
+  index = 0;
   iVar3 = 0;
-  if (this_ptr->count != 0) {
+  if (this_ptr->poly_count != 0) {
     do {
-      if ((ptr != (void *)0x0) && ((char)uVar2 == '\0')) {
+      if ((ptr != (void *)0x0) && ((char)index == '\0')) {
         crt_stdio_c_sprintf_FUN_005fdbd0(local_6c,"Deleting invalid polygons (%d deleted so far)",iVar3);
       }
-      iVar1 = (**(code **)((int)this_ptr->poly_array[uVar2].vtable + 0x88))();
+      iVar1 = (*(code *)(this_ptr->poly_array[index].vtable)->field34_0x88)();
+      uVar2 = index;
       if (iVar1 == 0) {
-        uVar2 = uVar2 - 1;
-        iVar1 = (**(code **)((int)this_ptr->vtable + 0x40))();
+        uVar2 = index - 1;
+        iVar1 = (*this_ptr->vtable->removePolygon)(this_ptr,index);
         if (iVar1 == 0) {
           shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
           return 0;
         }
         iVar3 = iVar3 + 1;
       }
-      uVar2 = uVar2 + 1;
-    } while (uVar2 < (uint)this_ptr->count);
+      index = uVar2 + 1;
+    } while (index < (uint)this_ptr->poly_count);
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
-  iVar3 = (**(code **)((int)this_ptr->vtable + 0xcc))();
+  iVar3 = (*(code *)this_ptr->vtable->field51_0xcc)();
   return iVar3;
 }
 

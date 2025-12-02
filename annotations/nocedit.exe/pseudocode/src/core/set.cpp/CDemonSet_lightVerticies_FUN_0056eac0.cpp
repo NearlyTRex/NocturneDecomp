@@ -504,92 +504,92 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               if (0 < vertex_count) {
                 do {
                   iVar22 = iVar16 * 0xc;
-                  local_d4 = ((uint)((longlong)g_TransformMatrix.m[0][0] * (longlong)*(int *)flags)
+                  local_d4 = ((uint)((longlong)g_TransformMatrix.m[0].x * (longlong)*(int *)flags)
                               >> 0x10 |
                              (int)((ulonglong)
-                                   ((longlong)g_TransformMatrix.m[0][0] * (longlong)*(int *)flags)
-                                  >> 0x20) << 0x10) +
-                             ((uint)((longlong)g_TransformMatrix.m[1][0] *
+                                   ((longlong)g_TransformMatrix.m[0].x * (longlong)*(int *)flags) >>
+                                  0x20) << 0x10) +
+                             ((uint)((longlong)g_TransformMatrix.m[1].x *
                                     (longlong)*(int *)(flags + 4)) >> 0x10 |
                              (int)((ulonglong)
-                                   ((longlong)g_TransformMatrix.m[1][0] *
+                                   ((longlong)g_TransformMatrix.m[1].x *
                                    (longlong)*(int *)(flags + 4)) >> 0x20) << 0x10) +
-                             ((uint)((longlong)g_TransformMatrix.m[2][0] *
+                             ((uint)((longlong)g_TransformMatrix.m[2].x *
                                     (longlong)*(int *)(flags + 8)) >> 0x10 |
                              (int)((ulonglong)
-                                   ((longlong)g_TransformMatrix.m[2][0] *
+                                   ((longlong)g_TransformMatrix.m[2].x *
                                    (longlong)*(int *)(flags + 8)) >> 0x20) << 0x10);
-                  iStack_d0 = ((uint)((longlong)g_TransformMatrix.m[0][1] * (longlong)*(int *)flags)
+                  iStack_d0 = ((uint)((longlong)g_TransformMatrix.m[0].y * (longlong)*(int *)flags)
                                >> 0x10 |
                               (int)((ulonglong)
-                                    ((longlong)g_TransformMatrix.m[0][1] * (longlong)*(int *)flags)
+                                    ((longlong)g_TransformMatrix.m[0].y * (longlong)*(int *)flags)
                                    >> 0x20) << 0x10) +
-                              ((uint)((longlong)g_TransformMatrix.m[1][1] *
+                              ((uint)((longlong)g_TransformMatrix.m[1].y *
                                      (longlong)*(int *)(flags + 4)) >> 0x10 |
                               (int)((ulonglong)
-                                    ((longlong)g_TransformMatrix.m[1][1] *
+                                    ((longlong)g_TransformMatrix.m[1].y *
                                     (longlong)*(int *)(flags + 4)) >> 0x20) << 0x10) +
-                              ((uint)((longlong)g_TransformMatrix.m[2][1] *
+                              ((uint)((longlong)g_TransformMatrix.m[2].y *
                                      (longlong)*(int *)(flags + 8)) >> 0x10 |
                               (int)((ulonglong)
-                                    ((longlong)g_TransformMatrix.m[2][1] *
+                                    ((longlong)g_TransformMatrix.m[2].y *
                                     (longlong)*(int *)(flags + 8)) >> 0x20) << 0x10);
-                  local_cc = ((uint)((longlong)g_TransformMatrix.m[0][2] * (longlong)*(int *)flags)
+                  local_cc = ((uint)((longlong)g_TransformMatrix.m[0].z * (longlong)*(int *)flags)
                               >> 0x10 |
                              (int)((ulonglong)
-                                   ((longlong)g_TransformMatrix.m[0][2] * (longlong)*(int *)flags)
-                                  >> 0x20) << 0x10) +
-                             ((uint)((longlong)g_TransformMatrix.m[1][2] *
+                                   ((longlong)g_TransformMatrix.m[0].z * (longlong)*(int *)flags) >>
+                                  0x20) << 0x10) +
+                             ((uint)((longlong)g_TransformMatrix.m[1].z *
                                     (longlong)*(int *)(flags + 4)) >> 0x10 |
                              (int)((ulonglong)
-                                   ((longlong)g_TransformMatrix.m[1][2] *
+                                   ((longlong)g_TransformMatrix.m[1].z *
                                    (longlong)*(int *)(flags + 4)) >> 0x20) << 0x10) +
-                             ((uint)((longlong)g_TransformMatrix.m[2][2] *
+                             ((uint)((longlong)g_TransformMatrix.m[2].z *
                                     (longlong)*(int *)(flags + 8)) >> 0x10 |
                              (int)((ulonglong)
-                                   ((longlong)g_TransformMatrix.m[2][2] *
+                                   ((longlong)g_TransformMatrix.m[2].z *
                                    (longlong)*(int *)(flags + 8)) >> 0x20) << 0x10);
-                  local_11c = (float)(((uint)((longlong)g_InverseMatrix.m[0][0] * (longlong)local_d4
+                  local_11c = (float)(((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)local_d4)
+                                       >> 0x10 |
+                                      (int)((ulonglong)
+                                            ((longlong)g_InverseMatrix.m[0].x * (longlong)local_d4)
+                                           >> 0x20) << 0x10) +
+                                      ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)iStack_d0
                                              ) >> 0x10 |
                                       (int)((ulonglong)
-                                            ((longlong)g_InverseMatrix.m[0][0] * (longlong)local_d4)
+                                            ((longlong)g_InverseMatrix.m[1].x * (longlong)iStack_d0)
                                            >> 0x20) << 0x10) +
-                                      ((uint)((longlong)g_InverseMatrix.m[1][0] *
-                                             (longlong)iStack_d0) >> 0x10 |
-                                      (int)((ulonglong)
-                                            ((longlong)g_InverseMatrix.m[1][0] * (longlong)iStack_d0
-                                            ) >> 0x20) << 0x10) +
-                                     ((uint)((longlong)g_InverseMatrix.m[2][0] * (longlong)local_cc)
+                                     ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)local_cc)
                                       >> 0x10 |
                                      (int)((ulonglong)
-                                           ((longlong)g_InverseMatrix.m[2][0] * (longlong)local_cc)
+                                           ((longlong)g_InverseMatrix.m[2].x * (longlong)local_cc)
                                           >> 0x20) << 0x10));
-                  local_118 = ((uint)((longlong)g_InverseMatrix.m[0][1] * (longlong)local_d4) >>
+                  local_118 = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)local_d4) >> 0x10
+                              | (int)((ulonglong)
+                                      ((longlong)g_InverseMatrix.m[0].y * (longlong)local_d4) >>
+                                     0x20) << 0x10) +
+                              ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)iStack_d0) >>
                                0x10 | (int)((ulonglong)
-                                            ((longlong)g_InverseMatrix.m[0][1] * (longlong)local_d4)
+                                            ((longlong)g_InverseMatrix.m[1].y * (longlong)iStack_d0)
                                            >> 0x20) << 0x10) +
-                              ((uint)((longlong)g_InverseMatrix.m[1][1] * (longlong)iStack_d0) >>
-                               0x10 | (int)((ulonglong)
-                                            ((longlong)g_InverseMatrix.m[1][1] * (longlong)iStack_d0
-                                            ) >> 0x20) << 0x10) +
-                              ((uint)((longlong)g_InverseMatrix.m[2][1] * (longlong)local_cc) >>
-                               0x10 | (int)((ulonglong)
-                                            ((longlong)g_InverseMatrix.m[2][1] * (longlong)local_cc)
-                                           >> 0x20) << 0x10);
+                              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)local_cc) >> 0x10
+                              | (int)((ulonglong)
+                                      ((longlong)g_InverseMatrix.m[2].y * (longlong)local_cc) >>
+                                     0x20) << 0x10);
                   flags = flags + 0xc;
                   pCVar9 = (CDemonSet *)
-                           ((uint)((longlong)g_InverseMatrix.m[2][2] * (longlong)local_cc) >> 0x10 |
-                           (int)((ulonglong)((longlong)g_InverseMatrix.m[2][2] * (longlong)local_cc)
+                           ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)local_cc) >> 0x10 |
+                           (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)local_cc)
                                 >> 0x20) << 0x10);
                   pCVar19 = g_VertexNormalArray + iVar16;
                   pcStack_114 = pCVar9->cameras[0].name +
-                                ((uint)((longlong)g_InverseMatrix.m[0][2] * (longlong)local_d4) >>
+                                ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)local_d4) >>
                                  0x10 | (int)((ulonglong)
-                                              ((longlong)g_InverseMatrix.m[0][2] *
-                                              (longlong)local_d4) >> 0x20) << 0x10) +
-                                ((uint)((longlong)g_InverseMatrix.m[1][2] * (longlong)iStack_d0) >>
+                                              ((longlong)g_InverseMatrix.m[0].z * (longlong)local_d4
+                                              ) >> 0x20) << 0x10) +
+                                ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)iStack_d0) >>
                                  0x10 | (int)((ulonglong)
-                                              ((longlong)g_InverseMatrix.m[1][2] *
+                                              ((longlong)g_InverseMatrix.m[1].z *
                                               (longlong)iStack_d0) >> 0x20) << 0x10) + -4;
                   iVar16 = iVar16 + 1;
                   piVar18 = (int *)(iVar22 + 0x33081d0 + (uint)bVar20 * -8);

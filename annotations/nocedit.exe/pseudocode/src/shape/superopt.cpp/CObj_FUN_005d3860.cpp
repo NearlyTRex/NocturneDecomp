@@ -14,10 +14,10 @@ void __cdecl shape_superopt_cpp_CObj_FUN_005d3860(CObj *this_ptr)
   int iVar3;
   
   uVar2 = 0;
-  if (this_ptr->field0_0x0 != 0) {
+  if (this_ptr->vertex_count != 0) {
     iVar3 = 0;
     do {
-      puVar1 = (undefined4 *)((int)this_ptr->vertex_data + iVar3);
+      puVar1 = (undefined4 *)((int)&(this_ptr->vertex_data->position).impl.x + iVar3);
       uVar2 = uVar2 + 1;
       *puVar1 = puVar1[6];
       puVar1[1] = puVar1[7];
@@ -26,7 +26,7 @@ void __cdecl shape_superopt_cpp_CObj_FUN_005d3860(CObj *this_ptr)
       puVar1[4] = puVar1[10];
       puVar1[5] = puVar1[0xb];
       iVar3 = iVar3 + 0x38;
-    } while (uVar2 < (uint)this_ptr->field0_0x0);
+    } while (uVar2 < (uint)this_ptr->vertex_count);
   }
   return;
 }

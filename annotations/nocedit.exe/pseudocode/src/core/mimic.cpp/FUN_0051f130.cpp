@@ -20,9 +20,9 @@ void core_mimic_cpp_FUN_0051f130(void)
   engine_matrix_c_matrixPush_FUN_0050d620();
   g_RelativeX = -g_RelativeX;
   g_LightDirectionX = -g_LightDirectionX;
-  g_TransformMatrix.m[0][0] = -g_TransformMatrix.m[0][0];
-  g_TransformMatrix.m[0][1] = -g_TransformMatrix.m[0][1];
-  g_TransformMatrix.m[0][2] = -g_TransformMatrix.m[0][2];
+  g_TransformMatrix.m[0].x = -g_TransformMatrix.m[0].x;
+  g_TransformMatrix.m[0].y = -g_TransformMatrix.m[0].y;
+  g_TransformMatrix.m[0].z = -g_TransformMatrix.m[0].z;
   return;
 }
 

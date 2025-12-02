@@ -9,21 +9,16 @@
 void __cdecl shape_superopt_cpp_CPoly_FUN_005cd3c0(CPoly *this_ptr)
 
 {
-  uint *puVar1;
-  void *pvVar2;
-  int iVar3;
-  uint uVar4;
+  CVert *pCVar1;
+  uint uVar2;
   uint in_stack_00000008;
   
-  pvVar2 = this_ptr->parent_obj->vertex_data;
-  iVar3 = this_ptr->vertex_idx_0 * 0x38;
-  uVar4 = ~in_stack_00000008;
-  *(uint *)((int)pvVar2 + iVar3 + 0x34) = *(uint *)((int)pvVar2 + iVar3 + 0x34) & uVar4;
-  puVar1 = (uint *)((int)pvVar2 + this_ptr->vertex_idx_1 * 0x38 + 0x34);
-  *puVar1 = *puVar1 & uVar4;
-  puVar1 = (uint *)((int)pvVar2 + this_ptr->vertex_idx_2 * 0x38 + 0x34);
-  *puVar1 = *puVar1 & uVar4;
-  this_ptr->field8_0x60 = this_ptr->field8_0x60 & uVar4;
+  pCVar1 = this_ptr->parent_obj->vertex_data;
+  uVar2 = ~in_stack_00000008;
+  pCVar1[this_ptr->vertex_idx_0].flags = pCVar1[this_ptr->vertex_idx_0].flags & uVar2;
+  pCVar1[this_ptr->vertex_idx_1].flags = pCVar1[this_ptr->vertex_idx_1].flags & uVar2;
+  pCVar1[this_ptr->vertex_idx_2].flags = pCVar1[this_ptr->vertex_idx_2].flags & uVar2;
+  this_ptr->flags = this_ptr->flags & uVar2;
   return;
 }
 

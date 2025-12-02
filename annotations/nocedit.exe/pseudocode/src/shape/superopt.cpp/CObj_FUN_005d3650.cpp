@@ -9,26 +9,26 @@
 void __cdecl shape_superopt_cpp_CObj_FUN_005d3650(CObj *this_ptr)
 
 {
-  void *pvVar1;
+  CVert *pCVar1;
   uint uVar2;
   uint in_stack_00000008;
   uint in_stack_0000000c;
   
-  pvVar1 = this_ptr->vertex_data;
+  pCVar1 = this_ptr->vertex_data;
   uVar2 = 0;
-  if (this_ptr->field0_0x0 != 0) {
+  if (this_ptr->vertex_count != 0) {
     do {
-      if ((*(uint *)((int)pvVar1 + 0x30) & in_stack_0000000c) == in_stack_0000000c) {
-        *(uint *)((int)pvVar1 + 0x34) = *(uint *)((int)pvVar1 + 0x34) | in_stack_00000008;
+      if ((pCVar1->flags2 & in_stack_0000000c) == in_stack_0000000c) {
+        pCVar1->flags = pCVar1->flags | in_stack_00000008;
       }
       else {
-        *(uint *)((int)pvVar1 + 0x34) = *(uint *)((int)pvVar1 + 0x34) & ~in_stack_00000008;
+        pCVar1->flags = pCVar1->flags & ~in_stack_00000008;
       }
       uVar2 = uVar2 + 1;
-      pvVar1 = (void *)((int)pvVar1 + 0x38);
-    } while (uVar2 < (uint)this_ptr->field0_0x0);
+      pCVar1 = pCVar1 + 1;
+    } while (uVar2 < (uint)this_ptr->vertex_count);
   }
-  (**(code **)((int)this_ptr->vtable + 0x8c))();
+  (*(code *)this_ptr->vtable->field35_0x8c)();
   return;
 }
 

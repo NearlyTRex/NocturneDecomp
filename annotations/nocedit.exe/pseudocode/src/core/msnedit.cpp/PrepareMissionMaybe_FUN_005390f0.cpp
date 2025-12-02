@@ -107,7 +107,7 @@
 //   undefined4 DAT_032758e8
 //   undefined4 g_CDemonCameraInstance.base.position.y
 //   undefined4 g_CDemonCameraInstance.base.position.z
-//   undefined4 g_CDemonCameraInstance.base.rotation_matrix.m[0][0]
+//   undefined4 g_CDemonCameraInstance.base.rotation_matrix.m[0].x
 //   undefined4 DAT_032758f8
 //   undefined4 g_CDemonCameraInstance.base.projection_scale
 //   undefined4 DAT_03275924
@@ -429,7 +429,7 @@ undefined4 core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
         pCVar9 = &g_CDemonCameraInstance.base.rotation_matrix;
         pfVar3 = local_1e8;
         for (iVar10 = 10; iVar10 != 0; iVar10 = iVar10 + -1) {
-          *pfVar3 = (float)pCVar9->m[0][0];
+          *pfVar3 = (float)pCVar9->m[0].x;
           pCVar9 = (CMatrix3x3i *)((int)pCVar9 + ((uint)bVar13 * -2 + 1) * 4);
           pfVar3 = pfVar3 + (uint)bVar13 * -2 + 1;
         }

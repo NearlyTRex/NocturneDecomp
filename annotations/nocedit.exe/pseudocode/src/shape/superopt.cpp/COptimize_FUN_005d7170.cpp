@@ -14,8 +14,8 @@ void __cdecl shape_superopt_cpp_COptimize_FUN_005d7170(COptimize *this_ptr)
   undefined4 in_stack_00000008;
   undefined4 in_stack_0000000c;
   
-  *(undefined4 *)(this_ptr->field1_0x1c + 0x10) = in_stack_00000008;
-  *(undefined4 *)(this_ptr->field1_0x1c + 0x14) = in_stack_0000000c;
+  *(undefined4 *)&this_ptr->field3_0x2c = in_stack_00000008;
+  *(undefined4 *)((int)&this_ptr->field3_0x2c + 4) = in_stack_0000000c;
   return;
 }
 

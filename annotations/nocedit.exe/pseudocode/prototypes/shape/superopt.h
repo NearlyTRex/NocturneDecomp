@@ -127,9 +127,9 @@ CPoly * CPoly::ctor(CPoly * this_ptr);
 // Address: 005cc660
 CPoly * CPoly::dtor(CPoly * this_ptr);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cc670
+// Original: shape_superopt.cpp_CPoly_init_FUN_005cc670
 // Address: 005cc670
-void CPoly(CPoly * this_ptr);
+void CPoly::init(CPoly * this_ptr, CObj * parent_obj);
 
 // Original: shape_superopt.cpp_CPoly_FUN_005cc6a0
 // Address: 005cc6a0
@@ -275,117 +275,117 @@ CObj * CObj::ctor(CObj * this_ptr);
 // Address: 005d2260
 CObj * CObj::dtor(CObj * this_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d2280
+// Original: shape_superopt.cpp_CObj_reset_FUN_005d2280
 // Address: 005d2280
-void CObj(CObj * this_ptr);
+void CObj::reset(CObj * this_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d22b0
+// Original: shape_superopt.cpp_CObj_isValid_FUN_005d22b0
 // Address: 005d22b0
-int CObj(CObj * this_ptr);
+int CObj::isValid(CObj * this_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d22d0
+// Original: shape_superopt.cpp_CObj_init_FUN_005d22d0
 // Address: 005d22d0
-int CObj(CObj * this_ptr);
+int CObj::init(CObj * this_ptr, int poly_count, int vertex_count);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d2320
+// Original: shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
 // Address: 005d2320
-int CObj(CObj * this_ptr);
+int CObj::allocatePolygons(CObj * this_ptr, int poly_count);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d2410
+// Original: shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
 // Address: 005d2410
-int CObj(CObj * this_ptr);
+int CObj::addPolygons(CObj * this_ptr, int add_count);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d2500
+// Original: shape_superopt.cpp_CObj_allocateVertices_FUN_005d2500
 // Address: 005d2500
-int CObj(CObj * this_ptr);
+int CObj::allocateVertices(CObj * this_ptr, int vertex_count);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d2580
+// Original: shape_superopt.cpp_CObj_addVertices_FUN_005d2580
 // Address: 005d2580
-int CObj(CObj * this_ptr);
+int CObj::addVertices(CObj * this_ptr, int add_count);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d2600
+// Original: shape_superopt.cpp_CObj_free_FUN_005d2600
 // Address: 005d2600
-void CObj(CObj * this_ptr);
+void CObj::free(CObj * this_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d2650
+// Original: shape_superopt.cpp_CObj_copyFrom_FUN_005d2650
 // Address: 005d2650
-int CObj(CObj * this_ptr);
+int CObj::copyFrom(CObj * this_ptr, CObj * source);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d2720
+// Original: shape_superopt.cpp_CObj_appendTo_FUN_005d2720
 // Address: 005d2720
-ulonglong CObj(CObj * this_ptr);
+int CObj::appendTo(CObj * this_ptr, CObj * dest_obj);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d2880
+// Original: shape_superopt.cpp_CObj_translate_FUN_005d2880
 // Address: 005d2880
-void CObj(CObj * this_ptr);
+void CObj::translate(CObj * this_ptr, CVec * offset);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d28d0
+// Original: shape_superopt.cpp_CObj_translateMasked_FUN_005d28d0
 // Address: 005d28d0
-void CObj(CObj * this_ptr);
+void CObj::translateMasked(CObj * this_ptr, uint flag_mask, CVec * offset);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d2940
+// Original: shape_superopt.cpp_CObj_scale_FUN_005d2940
 // Address: 005d2940
-uint * CObj(CObj * this_ptr);
+void CObj::scale(CObj * this_ptr, CVec * scale, CVec * pivot);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d2ac0
+// Original: shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
 // Address: 005d2ac0
-void CObj(CObj * this_ptr);
+void CObj::scaleMasked(CObj * this_ptr, uint flag_mask, CVec * scale, CVec * pivot);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d2c40
+// Original: shape_superopt.cpp_CObj_transform_FUN_005d2c40
 // Address: 005d2c40
-uint * CObj(CObj * this_ptr);
+void CObj::transform(CObj * this_ptr, CMatrix3x3d * matrix, CVec * pivot);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d2dd0
+// Original: shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
 // Address: 005d2dd0
-void CObj(CObj * this_ptr);
+void CObj::transformMasked(CObj * this_ptr, uint flag_mask, CMatrix3x3d * matrix, CVec * pivot);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d2f50
+// Original: shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50
 // Address: 005d2f50
-int CObj(CObj * this_ptr);
+int CObj::removePolygon(CObj * this_ptr, uint index);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3020
+// Original: shape_superopt.cpp_CObj_findAndRemovePolygon_FUN_005d3020
 // Address: 005d3020
-int CObj(CObj * this_ptr);
+int CObj::findAndRemovePolygon(CObj * this_ptr, CPoly * poly_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3050
+// Original: shape_superopt.cpp_CObj_removePolygonsAtVertex_FUN_005d3050
 // Address: 005d3050
-int CObj(CObj * this_ptr);
+int CObj::removePolygonsAtVertex(CObj * this_ptr, int vertex_index);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d30c0
+// Original: shape_superopt.cpp_CObj_findAndRemovePolygonsUsingVertex_FUN_005d30c0
 // Address: 005d30c0
-int CObj(CObj * this_ptr);
+int CObj::findAndRemovePolygonsUsingVertex(CObj * this_ptr, CVert * vert_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d30f0
+// Original: shape_superopt.cpp_CObj_removePolygonsByFlag_FUN_005d30f0
 // Address: 005d30f0
-int CObj(CObj * this_ptr);
+int CObj::removePolygonsByFlag(CObj * this_ptr, uint flag_mask);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3140
+// Original: shape_superopt.cpp_CObj_removeVertex_FUN_005d3140
 // Address: 005d3140
-int CObj(CObj * this_ptr);
+int CObj::removeVertex(CObj * this_ptr, uint index);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3250
+// Original: shape_superopt.cpp_CObj_findAndRemoveVertex_FUN_005d3250
 // Address: 005d3250
-int CObj(CObj * this_ptr);
+int CObj::findAndRemoveVertex(CObj * this_ptr, CVert * vertex_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3280
+// Original: shape_superopt.cpp_CObj_removeVerticesByFlag_FUN_005d3280
 // Address: 005d3280
-void CObj(CObj * this_ptr);
+void CObj::removeVerticesByFlag(CObj * this_ptr, uint flag_mask);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d32e0
+// Original: shape_superopt.cpp_CObj_findVertexIndex_FUN_005d32e0
 // Address: 005d32e0
-int CObj(CObj * this_ptr);
+int CObj::findVertexIndex(CObj * this_ptr, CVert * vertex_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3320
+// Original: shape_superopt.cpp_CObj_getVertex_FUN_005d3320
 // Address: 005d3320
-int CObj(CObj * this_ptr);
+CVert * CObj::getVertex(CObj * this_ptr, uint index);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3350
+// Original: shape_superopt.cpp_CObj_containsVertex_FUN_005d3350
 // Address: 005d3350
-int CObj(CObj * this_ptr);
+int CObj::containsVertex(CObj * this_ptr, CVert * vertex_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3380
+// Original: shape_superopt.cpp_CObj_findPolygonIndex_FUN_005d3380
 // Address: 005d3380
-int CObj(CObj * this_ptr);
+int CObj::findPolygonIndex(CObj * this_ptr, CPoly * poly_ptr);
 
 // Original: shape_superopt.cpp_CObj_FUN_005d33d0
 // Address: 005d33d0

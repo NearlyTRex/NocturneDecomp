@@ -18,11 +18,11 @@ void * __cdecl shape_superopt_cpp_CObj_FUN_005d38b0(CObj *this_ptr)
   
   puVar2 = (undefined4 *)(this_ptr->field4_0x10 & (uint)in_stack_00000008);
   if (puVar2 == in_stack_00000008) {
-    pvVar3 = (void *)(**(code **)((int)this_ptr->vtable + 0x98))();
+    pvVar3 = (void *)(*(code *)this_ptr->vtable->field38_0x98)();
     return pvVar3;
   }
   uVar4 = 0;
-  if (this_ptr->count != 0) {
+  if (this_ptr->poly_count != 0) {
     iVar5 = 0;
     do {
       iVar1 = iVar5 + 4;
@@ -30,13 +30,13 @@ void * __cdecl shape_superopt_cpp_CObj_FUN_005d38b0(CObj *this_ptr)
       iVar5 = iVar5 + 0x68;
       puVar2 = (undefined4 *)
                (**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar1) + 0x40))();
-    } while (uVar4 < (uint)this_ptr->count);
+    } while (uVar4 < (uint)this_ptr->poly_count);
   }
   uVar4 = 0;
-  if (this_ptr->field0_0x0 != 0) {
+  if (this_ptr->vertex_count != 0) {
     iVar5 = 0;
     do {
-      while (puVar2 = (undefined4 *)((int)this_ptr->vertex_data + iVar5),
+      while (puVar2 = (undefined4 *)((int)&(this_ptr->vertex_data->position).impl.x + iVar5),
             (undefined4 *)(puVar2[0xd] & (uint)in_stack_00000008) == in_stack_00000008) {
         *puVar2 = puVar2[6];
         puVar2[1] = puVar2[7];
@@ -46,13 +46,13 @@ void * __cdecl shape_superopt_cpp_CObj_FUN_005d38b0(CObj *this_ptr)
         puVar2[5] = puVar2[0xb];
         uVar4 = uVar4 + 1;
         iVar5 = iVar5 + 0x38;
-        if ((uint)this_ptr->field0_0x0 <= uVar4) {
+        if ((uint)this_ptr->vertex_count <= uVar4) {
           return puVar2;
         }
       }
       uVar4 = uVar4 + 1;
       iVar5 = iVar5 + 0x38;
-    } while (uVar4 < (uint)this_ptr->field0_0x0);
+    } while (uVar4 < (uint)this_ptr->vertex_count);
   }
   return puVar2;
 }

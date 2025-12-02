@@ -10,33 +10,33 @@ void __cdecl shape_superopt_cpp_CObj_FUN_005d34d0(CObj *this_ptr)
 
 {
   uint uVar1;
-  void *pvVar2;
+  CVert *pCVar2;
   CPoly *pCVar3;
   uint in_stack_00000008;
   uint in_stack_0000000c;
   
   uVar1 = 0;
-  pvVar2 = this_ptr->vertex_data;
-  if (this_ptr->field0_0x0 != 0) {
+  pCVar2 = this_ptr->vertex_data;
+  if (this_ptr->vertex_count != 0) {
     do {
-      if ((*(uint *)((int)pvVar2 + 0x34) & in_stack_0000000c) == in_stack_0000000c) {
-        *(uint *)((int)pvVar2 + 0x34) = *(uint *)((int)pvVar2 + 0x34) | in_stack_00000008;
+      if ((pCVar2->flags & in_stack_0000000c) == in_stack_0000000c) {
+        pCVar2->flags = pCVar2->flags | in_stack_00000008;
       }
       else {
-        *(uint *)((int)pvVar2 + 0x34) = *(uint *)((int)pvVar2 + 0x34) & ~in_stack_00000008;
+        pCVar2->flags = pCVar2->flags & ~in_stack_00000008;
       }
       uVar1 = uVar1 + 1;
-      pvVar2 = (void *)((int)pvVar2 + 0x38);
-    } while (uVar1 < (uint)this_ptr->field0_0x0);
+      pCVar2 = pCVar2 + 1;
+    } while (uVar1 < (uint)this_ptr->vertex_count);
   }
   uVar1 = 0;
   pCVar3 = this_ptr->poly_array;
-  if (this_ptr->count != 0) {
+  if (this_ptr->poly_count != 0) {
     do {
-      (**(code **)((int)pCVar3->vtable + 0x20))();
+      (*(code *)pCVar3->vtable->field8_0x20)();
       uVar1 = uVar1 + 1;
       pCVar3 = pCVar3 + 1;
-    } while (uVar1 < (uint)this_ptr->count);
+    } while (uVar1 < (uint)this_ptr->poly_count);
   }
   if ((this_ptr->field4_0x10 & in_stack_0000000c) == in_stack_0000000c) {
     this_ptr->field4_0x10 = this_ptr->field4_0x10 | in_stack_00000008;

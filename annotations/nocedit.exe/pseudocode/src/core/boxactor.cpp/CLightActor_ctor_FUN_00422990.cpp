@@ -13,8 +13,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 CLightActor * __cdecl core_boxactor_cpp_CLightActor_ctor_FUN_00422990(CLightActor *this_ptr)
 
 {
@@ -29,10 +27,10 @@ CLightActor * __cdecl core_boxactor_cpp_CLightActor_ctor_FUN_00422990(CLightActo
   pCVar2[1].base.base.position.y = 0;
   pCVar2[1].base.base.position.x = pCVar2[1].base.base.position.y;
   pCVar2[1].base.base.field0_0x0 = (void *)pCVar2[1].base.base.position.x;
-  pCVar2[1].base.base.rotation_matrix.m[0][1] = 0;
-  pCVar2[1].base.base.rotation_matrix.m[0][0] = pCVar2[1].base.base.rotation_matrix.m[0][1];
-  pCVar2[1].base.base.position.z = pCVar2[1].base.base.rotation_matrix.m[0][0];
-  pCVar2[1].base.base.rotation_matrix.m[0][2] = 0;
+  pCVar2[1].base.base.rotation_matrix.m[0].y = 0;
+  pCVar2[1].base.base.rotation_matrix.m[0].x = pCVar2[1].base.base.rotation_matrix.m[0].y;
+  pCVar2[1].base.base.position.z = pCVar2[1].base.base.rotation_matrix.m[0].x;
+  pCVar2[1].base.base.rotation_matrix.m[0].z = 0;
   pCVar2[-1].volumetric_intensity = 1.4013e-45;
   return (CLightActor *)(pCVar2[-1].saved_screen_buffer_rows + 0x31a);
 }

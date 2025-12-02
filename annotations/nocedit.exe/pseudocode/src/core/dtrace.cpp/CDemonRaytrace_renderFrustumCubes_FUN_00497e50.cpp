@@ -190,111 +190,111 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
   uStack_1a4 = 0x497f68;
   local_134[1] = local_134[0];
   local_134[2] = local_134[0];
-  dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(local_134[0],g_InverseMatrix.m[0][0]));
+  dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(local_134[0],g_InverseMatrix.m[0].x));
   iStack_11c = (int)ROUND(fVar12);
   lVar1 = (longlong)SUB84(dVar14,0) * (longlong)(int)((ulonglong)dVar14 >> 0x20);
   local_184 = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[1][0] * (longlong)local_134[1]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[1][0] * (longlong)local_134[1]) >> 0x20)
+              ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)local_134[1]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)local_134[1]) >> 0x20)
               << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2][0] * (longlong)local_134[1]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2][0] * (longlong)local_134[1]) >> 0x20)
+              ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)local_134[1]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)local_134[1]) >> 0x20)
               << 0x10);
-  local_180 = ((uint)((longlong)g_InverseMatrix.m[0][1] * (longlong)local_134[1]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[0][1] * (longlong)local_134[1]) >> 0x20)
+  local_180 = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)local_134[1]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)local_134[1]) >> 0x20)
               << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[1][1] * (longlong)local_134[1]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[1][1] * (longlong)local_134[1]) >> 0x20)
+              ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)local_134[1]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)local_134[1]) >> 0x20)
               << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2][1] * (longlong)local_134[1]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2][1] * (longlong)local_134[1]) >> 0x20)
+              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)local_134[1]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)local_134[1]) >> 0x20)
               << 0x10);
-  local_17c = ((uint)((longlong)g_InverseMatrix.m[0][2] * (longlong)local_134[1]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[0][2] * (longlong)local_134[1]) >> 0x20)
+  local_17c = ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)local_134[1]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)local_134[1]) >> 0x20)
               << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[1][2] * (longlong)local_134[1]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[1][2] * (longlong)local_134[1]) >> 0x20)
+              ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)local_134[1]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[1].z * (longlong)local_134[1]) >> 0x20)
               << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2][2] * (longlong)local_134[1]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2][2] * (longlong)local_134[1]) >> 0x20)
+              ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)local_134[1]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)local_134[1]) >> 0x20)
               << 0x10);
   iVar7 = -local_134[1];
-  local_178 = ((uint)((longlong)g_InverseMatrix.m[0][0] * (longlong)iVar7) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[0][0] * (longlong)iVar7) >> 0x20) <<
-              0x10) + ((uint)((longlong)g_InverseMatrix.m[1][0] * (longlong)local_134[2]) >> 0x10 |
-                      (int)((ulonglong)((longlong)g_InverseMatrix.m[1][0] * (longlong)local_134[2])
-                           >> 0x20) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2][0] * (longlong)local_134[3]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2][0] * (longlong)local_134[3]) >> 0x20)
+  local_178 = ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar7) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar7) >> 0x20) << 0x10
+              ) + ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)local_134[2]) >> 0x10 |
+                  (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)local_134[2]) >>
+                       0x20) << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)local_134[3]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)local_134[3]) >> 0x20)
               << 0x10);
-  local_174 = ((uint)((longlong)g_InverseMatrix.m[0][1] * (longlong)iVar7) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[0][1] * (longlong)iVar7) >> 0x20) <<
-              0x10) + ((uint)((longlong)g_InverseMatrix.m[1][1] * (longlong)local_134[2]) >> 0x10 |
-                      (int)((ulonglong)((longlong)g_InverseMatrix.m[1][1] * (longlong)local_134[2])
-                           >> 0x20) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2][1] * (longlong)local_134[3]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2][1] * (longlong)local_134[3]) >> 0x20)
+  local_174 = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar7) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar7) >> 0x20) << 0x10
+              ) + ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)local_134[2]) >> 0x10 |
+                  (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)local_134[2]) >>
+                       0x20) << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)local_134[3]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)local_134[3]) >> 0x20)
               << 0x10);
   lVar1 = (longlong)local_134[2];
   local_134[2] = -local_134[2];
-  local_170 = ((uint)((longlong)g_InverseMatrix.m[0][2] * (longlong)iVar7) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[0][2] * (longlong)iVar7) >> 0x20) <<
-              0x10) + ((uint)(g_InverseMatrix.m[1][2] * lVar1) >> 0x10 |
-                      (int)((ulonglong)(g_InverseMatrix.m[1][2] * lVar1) >> 0x20) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2][2] * (longlong)local_134[3]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2][2] * (longlong)local_134[3]) >> 0x20)
+  local_170 = ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar7) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar7) >> 0x20) << 0x10
+              ) + ((uint)(g_InverseMatrix.m[1].z * lVar1) >> 0x10 |
+                  (int)((ulonglong)(g_InverseMatrix.m[1].z * lVar1) >> 0x20) << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)local_134[3]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)local_134[3]) >> 0x20)
               << 0x10);
-  local_16c = ((uint)((longlong)g_InverseMatrix.m[0][0] * (longlong)iVar7) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[0][0] * (longlong)iVar7) >> 0x20) <<
-              0x10) + ((uint)((longlong)g_InverseMatrix.m[1][0] * (longlong)local_134[2]) >> 0x10 |
-                      (int)((ulonglong)((longlong)g_InverseMatrix.m[1][0] * (longlong)local_134[2])
-                           >> 0x20) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2][0] * (longlong)local_134[3]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2][0] * (longlong)local_134[3]) >> 0x20)
+  local_16c = ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar7) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar7) >> 0x20) << 0x10
+              ) + ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)local_134[2]) >> 0x10 |
+                  (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)local_134[2]) >>
+                       0x20) << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)local_134[3]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)local_134[3]) >> 0x20)
               << 0x10);
-  local_168 = ((uint)((longlong)g_InverseMatrix.m[0][1] * (longlong)iVar7) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[0][1] * (longlong)iVar7) >> 0x20) <<
-              0x10) + ((uint)((longlong)g_InverseMatrix.m[1][1] * (longlong)local_134[2]) >> 0x10 |
-                      (int)((ulonglong)((longlong)g_InverseMatrix.m[1][1] * (longlong)local_134[2])
-                           >> 0x20) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2][1] * (longlong)local_134[3]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2][1] * (longlong)local_134[3]) >> 0x20)
+  local_168 = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar7) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar7) >> 0x20) << 0x10
+              ) + ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)local_134[2]) >> 0x10 |
+                  (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)local_134[2]) >>
+                       0x20) << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)local_134[3]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)local_134[3]) >> 0x20)
               << 0x10);
-  local_164 = ((uint)((longlong)g_InverseMatrix.m[0][2] * (longlong)iVar7) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[0][2] * (longlong)iVar7) >> 0x20) <<
-              0x10) + ((uint)((longlong)g_InverseMatrix.m[1][2] * (longlong)local_134[2]) >> 0x10 |
-                      (int)((ulonglong)((longlong)g_InverseMatrix.m[1][2] * (longlong)local_134[2])
-                           >> 0x20) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2][2] * (longlong)local_134[3]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2][2] * (longlong)local_134[3]) >> 0x20)
+  local_164 = ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar7) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar7) >> 0x20) << 0x10
+              ) + ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)local_134[2]) >> 0x10 |
+                  (int)((ulonglong)((longlong)g_InverseMatrix.m[1].z * (longlong)local_134[2]) >>
+                       0x20) << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)local_134[3]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)local_134[3]) >> 0x20)
               << 0x10);
-  local_160 = ((uint)((longlong)g_InverseMatrix.m[0][0] * (longlong)local_134[1]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[0][0] * (longlong)local_134[1]) >> 0x20)
+  local_160 = ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)local_134[1]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].x * (longlong)local_134[1]) >> 0x20)
               << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[1][0] * (longlong)local_134[2]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[1][0] * (longlong)local_134[2]) >> 0x20)
+              ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)local_134[2]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)local_134[2]) >> 0x20)
               << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2][0] * (longlong)local_134[3]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2][0] * (longlong)local_134[3]) >> 0x20)
+              ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)local_134[3]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)local_134[3]) >> 0x20)
               << 0x10);
-  local_15c = ((uint)((longlong)g_InverseMatrix.m[0][1] * (longlong)local_134[1]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[0][1] * (longlong)local_134[1]) >> 0x20)
+  local_15c = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)local_134[1]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)local_134[1]) >> 0x20)
               << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[1][1] * (longlong)local_134[2]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[1][1] * (longlong)local_134[2]) >> 0x20)
+              ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)local_134[2]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)local_134[2]) >> 0x20)
               << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2][1] * (longlong)local_134[3]) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2][1] * (longlong)local_134[3]) >> 0x20)
+              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)local_134[3]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)local_134[3]) >> 0x20)
               << 0x10);
-  local_158 = (float)(((uint)((longlong)g_InverseMatrix.m[0][2] * (longlong)local_134[1]) >> 0x10 |
-                      (int)((ulonglong)((longlong)g_InverseMatrix.m[0][2] * (longlong)local_134[1])
+  local_158 = (float)(((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)local_134[1]) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)local_134[1])
                            >> 0x20) << 0x10) +
-                      ((uint)((longlong)g_InverseMatrix.m[1][2] * (longlong)local_134[2]) >> 0x10 |
-                      (int)((ulonglong)((longlong)g_InverseMatrix.m[1][2] * (longlong)local_134[2])
+                      ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)local_134[2]) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_InverseMatrix.m[1].z * (longlong)local_134[2])
                            >> 0x20) << 0x10) +
-                     ((uint)((longlong)g_InverseMatrix.m[2][2] * (longlong)local_134[3]) >> 0x10 |
-                     (int)((ulonglong)((longlong)g_InverseMatrix.m[2][2] * (longlong)local_134[3])
-                          >> 0x20) << 0x10));
+                     ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)local_134[3]) >> 0x10 |
+                     (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)local_134[3]) >>
+                          0x20) << 0x10));
   local_154 = 0.0;
   local_150 = 0.0;
   fStack_14c = 0.0;
@@ -380,12 +380,12 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
   if ((4 < this_ptr->rendering_mode) || (this_ptr->rendering_mode < 0)) {
     this_ptr->rendering_mode = 1;
   }
-  local_d4 = (g_InverseMatrix.m[2][0] ^ g_InverseMatrix.m[2][0] >> 0x1f) -
-             (g_InverseMatrix.m[2][0] >> 0x1f);
-  iVar7 = (g_InverseMatrix.m[2][1] ^ g_InverseMatrix.m[2][1] >> 0x1f) -
-          (g_InverseMatrix.m[2][1] >> 0x1f);
-  iVar8 = (g_InverseMatrix.m[2][2] ^ g_InverseMatrix.m[2][2] >> 0x1f) -
-          (g_InverseMatrix.m[2][2] >> 0x1f);
+  local_d4 = (g_InverseMatrix.m[2].x ^ g_InverseMatrix.m[2].x >> 0x1f) -
+             (g_InverseMatrix.m[2].x >> 0x1f);
+  iVar7 = (g_InverseMatrix.m[2].y ^ g_InverseMatrix.m[2].y >> 0x1f) -
+          (g_InverseMatrix.m[2].y >> 0x1f);
+  iVar8 = (g_InverseMatrix.m[2].z ^ g_InverseMatrix.m[2].z >> 0x1f) -
+          (g_InverseMatrix.m[2].z >> 0x1f);
   if ((local_d4 < iVar7) || (local_d4 < iVar8)) {
     if ((iVar7 < local_d4) || (iVar7 < iVar8)) {
       if (local_108 <= (this_ptr->grid_bounds_max).z) {

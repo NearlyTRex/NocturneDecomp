@@ -15,12 +15,12 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d3db0(CObj *this_ptr)
   
   pCVar1 = this_ptr->poly_array;
   uVar2 = 0;
-  if (this_ptr->count != 0) {
+  if (this_ptr->poly_count != 0) {
     do {
       uVar2 = uVar2 + 1;
-      in_EAX = (**(code **)((int)pCVar1->vtable + 0x48))();
+      in_EAX = (*(code *)pCVar1->vtable->field18_0x48)();
       pCVar1 = pCVar1 + 1;
-    } while (uVar2 < (uint)this_ptr->count);
+    } while (uVar2 < (uint)this_ptr->poly_count);
   }
   return in_EAX;
 }

@@ -4,12 +4,12 @@
 // Convention: __cdecl
 // Signature: void shape_superopt.cpp_logToFile_FUN_005c7910(char * format, ...)
 // Cross-references:
-//   shape_superopt.cpp_CObj_FUN_005d2320 (005d2320) at 005d236f [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_CObj_FUN_005d2410 (005d2410) at 005d24cb [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_CObj_FUN_005d2500 (005d2500) at 005d2541 [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_CObj_FUN_005d2580 (005d2580) at 005d25ec [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_CObj_FUN_005d2650 (005d2650) at 005d2709 [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_CObj_FUN_005d2720 (005d2720) at 005d2861 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410 (005d2410) at 005d24cb [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_addVertices_FUN_005d2580 (005d2580) at 005d25ec [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320 (005d2320) at 005d236f [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_allocateVertices_FUN_005d2500 (005d2500) at 005d2541 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_appendTo_FUN_005d2720 (005d2720) at 005d2861 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_copyFrom_FUN_005d2650 (005d2650) at 005d2709 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_COptimize_FUN_005d71e0 (005d71e0) at 005d7261 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_COptimize_FUN_005d7290 (005d7290) at 005d730c [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_COptimize_FUN_005d7350 (005d7350) at 005d7420 [UNCONDITIONAL_CALL]

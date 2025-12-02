@@ -132,17 +132,17 @@ wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex *outpu
     iVar2 = input->x - g_RelativeX;
     iVar7 = input->y - g_RelativeY;
     iVar8 = input->z - g_RelativeZ;
-    lVar1 = (longlong)iVar7 * (longlong)g_TransformMatrix.m[1][0] +
-            (longlong)iVar2 * (longlong)g_TransformMatrix.m[0][0] +
-            (longlong)iVar8 * (longlong)g_TransformMatrix.m[2][0];
+    lVar1 = (longlong)iVar7 * (longlong)g_TransformMatrix.m[1].x +
+            (longlong)iVar2 * (longlong)g_TransformMatrix.m[0].x +
+            (longlong)iVar8 * (longlong)g_TransformMatrix.m[2].x;
     uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)iVar7 * (longlong)g_TransformMatrix.m[1][1] +
-            (longlong)iVar2 * (longlong)g_TransformMatrix.m[0][1] +
-            (longlong)iVar8 * (longlong)g_TransformMatrix.m[2][1];
+    lVar1 = (longlong)iVar7 * (longlong)g_TransformMatrix.m[1].y +
+            (longlong)iVar2 * (longlong)g_TransformMatrix.m[0].y +
+            (longlong)iVar8 * (longlong)g_TransformMatrix.m[2].y;
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)iVar7 * (longlong)g_TransformMatrix.m[1][2] +
-            (longlong)iVar2 * (longlong)g_TransformMatrix.m[0][2] +
-            (longlong)iVar8 * (longlong)g_TransformMatrix.m[2][2];
+    lVar1 = (longlong)iVar7 * (longlong)g_TransformMatrix.m[1].z +
+            (longlong)iVar2 * (longlong)g_TransformMatrix.m[0].z +
+            (longlong)iVar8 * (longlong)g_TransformMatrix.m[2].z;
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     uVar6 = 0;
     if ((int)uVar5 < (int)uVar3) {
@@ -179,17 +179,17 @@ wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex *outpu
   g_TempX = input->x - g_RelativeX;
   g_TempY = input->y - g_RelativeY;
   g_TempZ = input->z - g_RelativeZ;
-  lVar1 = (longlong)g_TempY * (longlong)g_TransformMatrix.m[1][0] +
-          (longlong)g_TempX * (longlong)g_TransformMatrix.m[0][0] +
-          (longlong)g_TempZ * (longlong)g_TransformMatrix.m[2][0];
+  lVar1 = (longlong)g_TempY * (longlong)g_TransformMatrix.m[1].x +
+          (longlong)g_TempX * (longlong)g_TransformMatrix.m[0].x +
+          (longlong)g_TempZ * (longlong)g_TransformMatrix.m[2].x;
   g_TempTransformedX = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)g_TempY * (longlong)g_TransformMatrix.m[1][1] +
-          (longlong)g_TempX * (longlong)g_TransformMatrix.m[0][1] +
-          (longlong)g_TempZ * (longlong)g_TransformMatrix.m[2][1];
+  lVar1 = (longlong)g_TempY * (longlong)g_TransformMatrix.m[1].y +
+          (longlong)g_TempX * (longlong)g_TransformMatrix.m[0].y +
+          (longlong)g_TempZ * (longlong)g_TransformMatrix.m[2].y;
   uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)g_TempY * (longlong)g_TransformMatrix.m[1][2] +
-          (longlong)g_TempX * (longlong)g_TransformMatrix.m[0][2] +
-          (longlong)g_TempZ * (longlong)g_TransformMatrix.m[2][2];
+  lVar1 = (longlong)g_TempY * (longlong)g_TransformMatrix.m[1].z +
+          (longlong)g_TempX * (longlong)g_TransformMatrix.m[0].z +
+          (longlong)g_TempZ * (longlong)g_TransformMatrix.m[2].z;
   uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   uVar5 = 0;
   if ((int)uVar4 < g_TempTransformedX) {

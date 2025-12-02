@@ -9,7 +9,7 @@
 int __cdecl shape_superopt_cpp_COptimize_FUN_005d71d0(COptimize *this_ptr)
 
 {
-  return *(int *)(this_ptr->field1_0x1c + 0x18);
+  return this_ptr->field4_0x34;
 }
 
 

@@ -28,8 +28,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemonLight *this_ptr)
 
 {
@@ -93,9 +91,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
     local_44 = local_8c;
     local_40 = local_88;
   }
-  local_3c = (float)(this_ptr->base).base.rotation_matrix.m[0][2];
-  local_38 = (float)(this_ptr->base).base.rotation_matrix.m[1][2];
-  local_34 = (float)(this_ptr->base).base.rotation_matrix.m[2][2];
+  local_3c = (float)(this_ptr->base).base.rotation_matrix.m[0].z;
+  local_38 = (float)(this_ptr->base).base.rotation_matrix.m[1].z;
+  local_34 = (float)(this_ptr->base).base.rotation_matrix.m[2].z;
   fVar2 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);
   if (fVar2 <= 0.0) {
     local_44 = 0.0;

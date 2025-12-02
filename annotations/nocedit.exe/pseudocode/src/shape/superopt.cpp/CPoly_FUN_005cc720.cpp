@@ -9,29 +9,23 @@
 void __cdecl shape_superopt_cpp_CPoly_FUN_005cc720(CPoly *this_ptr)
 
 {
-  void *pvVar1;
-  int iVar2;
+  int iVar1;
+  CVert *pCVar2;
   double *in_stack_00000008;
   
-  pvVar1 = this_ptr->parent_obj->vertex_data;
-  iVar2 = this_ptr->vertex_idx_0 * 0x38;
-  *(double *)((int)pvVar1 + iVar2) = *in_stack_00000008 + *(double *)((int)pvVar1 + iVar2);
-  *(double *)((int)pvVar1 + iVar2 + 8) = in_stack_00000008[1] + *(double *)((int)pvVar1 + iVar2 + 8)
-  ;
-  *(double *)((int)pvVar1 + iVar2 + 0x10) =
-       in_stack_00000008[2] + *(double *)((int)pvVar1 + iVar2 + 0x10);
-  iVar2 = this_ptr->vertex_idx_1 * 0x38;
-  *(double *)((int)pvVar1 + iVar2) = *in_stack_00000008 + *(double *)((int)pvVar1 + iVar2);
-  *(double *)((int)pvVar1 + iVar2 + 8) = in_stack_00000008[1] + *(double *)((int)pvVar1 + iVar2 + 8)
-  ;
-  *(double *)((int)pvVar1 + iVar2 + 0x10) =
-       in_stack_00000008[2] + *(double *)((int)pvVar1 + iVar2 + 0x10);
-  iVar2 = this_ptr->vertex_idx_2 * 0x38;
-  *(double *)((int)pvVar1 + iVar2) = *in_stack_00000008 + *(double *)((int)pvVar1 + iVar2);
-  *(double *)((int)pvVar1 + iVar2 + 8) = in_stack_00000008[1] + *(double *)((int)pvVar1 + iVar2 + 8)
-  ;
-  *(double *)((int)pvVar1 + iVar2 + 0x10) =
-       in_stack_00000008[2] + *(double *)((int)pvVar1 + iVar2 + 0x10);
+  iVar1 = this_ptr->vertex_idx_0;
+  pCVar2 = this_ptr->parent_obj->vertex_data;
+  pCVar2[iVar1].position.impl.x = *in_stack_00000008 + pCVar2[iVar1].position.impl.x;
+  pCVar2[iVar1].position.impl.y = in_stack_00000008[1] + pCVar2[iVar1].position.impl.y;
+  pCVar2[iVar1].position.impl.z = in_stack_00000008[2] + pCVar2[iVar1].position.impl.z;
+  iVar1 = this_ptr->vertex_idx_1;
+  pCVar2[iVar1].position.impl.x = *in_stack_00000008 + pCVar2[iVar1].position.impl.x;
+  pCVar2[iVar1].position.impl.y = in_stack_00000008[1] + pCVar2[iVar1].position.impl.y;
+  pCVar2[iVar1].position.impl.z = in_stack_00000008[2] + pCVar2[iVar1].position.impl.z;
+  iVar1 = this_ptr->vertex_idx_2;
+  pCVar2[iVar1].position.impl.x = *in_stack_00000008 + pCVar2[iVar1].position.impl.x;
+  pCVar2[iVar1].position.impl.y = in_stack_00000008[1] + pCVar2[iVar1].position.impl.y;
+  pCVar2[iVar1].position.impl.z = in_stack_00000008[2] + pCVar2[iVar1].position.impl.z;
   return;
 }
 

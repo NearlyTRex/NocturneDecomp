@@ -43,7 +43,7 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cc6a0(CPoly *this_ptr)
     pCVar4 = (CP2D *)((int)&pCVar4->x + 1);
   }
   this_ptr->field7_0x5c = in_stack_00000008[0x17];
-  this_ptr->field8_0x60 = in_stack_00000008[0x18];
+  this_ptr->flags = in_stack_00000008[0x18];
   *(int *)&(this_ptr->normal).x = in_stack_00000008[0x10];
   *(int *)((int)&(this_ptr->normal).x + 4) = in_stack_00000008[0x11];
   *(int *)&(this_ptr->normal).y = in_stack_00000008[0x12];

@@ -22,15 +22,15 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreTransform_FUN_0044f1e0(CDemonC
     (this_ptr->base).position.y = (this_ptr->transform_state).saved_camera_position.y;
     (this_ptr->base).position.z = (this_ptr->transform_state).saved_camera_position.z;
   }
-  (this_ptr->source_matrix).m[0][0] = (this_ptr->transform_state).saved_source_matrix.m[0][0];
-  (this_ptr->source_matrix).m[0][1] = (this_ptr->transform_state).saved_source_matrix.m[0][1];
-  (this_ptr->source_matrix).m[0][2] = (this_ptr->transform_state).saved_source_matrix.m[0][2];
-  (this_ptr->source_matrix).m[1][0] = (this_ptr->transform_state).saved_source_matrix.m[1][0];
-  (this_ptr->source_matrix).m[1][1] = (this_ptr->transform_state).saved_source_matrix.m[1][1];
-  (this_ptr->source_matrix).m[1][2] = (this_ptr->transform_state).saved_source_matrix.m[1][2];
-  (this_ptr->source_matrix).m[2][0] = (this_ptr->transform_state).saved_source_matrix.m[2][0];
-  (this_ptr->source_matrix).m[2][1] = (this_ptr->transform_state).saved_source_matrix.m[2][1];
-  (this_ptr->source_matrix).m[2][2] = (this_ptr->transform_state).saved_source_matrix.m[2][2];
+  (this_ptr->source_matrix).m[0].x = (this_ptr->transform_state).saved_source_matrix.m[0].x;
+  (this_ptr->source_matrix).m[0].y = (this_ptr->transform_state).saved_source_matrix.m[0].y;
+  (this_ptr->source_matrix).m[0].z = (this_ptr->transform_state).saved_source_matrix.m[0].z;
+  (this_ptr->source_matrix).m[1].x = (this_ptr->transform_state).saved_source_matrix.m[1].x;
+  (this_ptr->source_matrix).m[1].y = (this_ptr->transform_state).saved_source_matrix.m[1].y;
+  (this_ptr->source_matrix).m[1].z = (this_ptr->transform_state).saved_source_matrix.m[1].z;
+  (this_ptr->source_matrix).m[2].x = (this_ptr->transform_state).saved_source_matrix.m[2].x;
+  (this_ptr->source_matrix).m[2].y = (this_ptr->transform_state).saved_source_matrix.m[2].y;
+  (this_ptr->source_matrix).m[2].z = (this_ptr->transform_state).saved_source_matrix.m[2].z;
   return;
 }
 

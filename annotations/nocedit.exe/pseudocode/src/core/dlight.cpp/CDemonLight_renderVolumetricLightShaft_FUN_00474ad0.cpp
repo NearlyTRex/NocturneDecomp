@@ -36,8 +36,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl
 core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight *this_ptr)
 
@@ -138,11 +136,11 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
           do {
             local_9c.z = (int)((float)iVar4 * FLOAT_0061f1ff * (this_ptr->base).max_distance);
-            local_a8 = (float)(this_ptr->base).base.rotation_matrix.m[0][2];
+            local_a8 = (float)(this_ptr->base).base.rotation_matrix.m[0].z;
             local_9c.x = (int)(local_a8 * (float)local_9c.z);
-            local_a4 = (float)(this_ptr->base).base.rotation_matrix.m[1][2];
+            local_a4 = (float)(this_ptr->base).base.rotation_matrix.m[1].z;
             local_9c.y = (int)(local_a4 * (float)local_9c.z);
-            local_a0 = (float)(this_ptr->base).base.rotation_matrix.m[2][2];
+            local_a0 = (float)(this_ptr->base).base.rotation_matrix.m[2].z;
             local_9c.z = (int)(local_a0 * (float)local_9c.z);
             fStack_90 = (float)(this_ptr->base).base.position.x + (float)local_9c.x;
             local_8c = (float)(this_ptr->base).base.position.y + (float)local_9c.y;

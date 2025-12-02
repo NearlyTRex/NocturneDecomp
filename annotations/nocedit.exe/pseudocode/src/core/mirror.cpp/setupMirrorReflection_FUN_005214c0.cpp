@@ -379,15 +379,15 @@ void __cdecl core_mirror_cpp_setupMirrorReflection_FUN_005214c0(SMirrorReflectio
   CStack_3a0.m[1].y = -(float)(reflection->camera_origin).y;
   CStack_3a0.m[2].y = -(float)(reflection->camera_origin).z;
   core_xform_cpp_setIdentityMatrix3x4_FUN_005f5100((CMatrix3x4f *)auStack_284);
-  auStack_284._4_4_ = (float)g_TransformMatrix.m[0][0] * (float)DOUBLE_00638995;
-  fStack_270 = (float)g_TransformMatrix.m[0][1] * (float)DOUBLE_00638995;
-  fStack_260 = (float)g_TransformMatrix.m[0][2] * (float)DOUBLE_00638995;
-  fStack_27c = (float)g_TransformMatrix.m[1][0] * (float)DOUBLE_00638995;
-  fStack_26c = (float)g_TransformMatrix.m[1][1] * (float)DOUBLE_00638995;
-  fStack_25c = (float)g_TransformMatrix.m[1][2] * (float)DOUBLE_00638995;
-  fStack_278 = (float)g_TransformMatrix.m[2][0] * (float)DOUBLE_00638995;
-  fStack_268 = (float)g_TransformMatrix.m[2][1] * (float)DOUBLE_00638995;
-  fStack_258 = (float)g_TransformMatrix.m[2][2] * (float)DOUBLE_00638995;
+  auStack_284._4_4_ = (float)g_TransformMatrix.m[0].x * (float)DOUBLE_00638995;
+  fStack_270 = (float)g_TransformMatrix.m[0].y * (float)DOUBLE_00638995;
+  fStack_260 = (float)g_TransformMatrix.m[0].z * (float)DOUBLE_00638995;
+  fStack_27c = (float)g_TransformMatrix.m[1].x * (float)DOUBLE_00638995;
+  fStack_26c = (float)g_TransformMatrix.m[1].y * (float)DOUBLE_00638995;
+  fStack_25c = (float)g_TransformMatrix.m[1].z * (float)DOUBLE_00638995;
+  fStack_278 = (float)g_TransformMatrix.m[2].x * (float)DOUBLE_00638995;
+  fStack_268 = (float)g_TransformMatrix.m[2].y * (float)DOUBLE_00638995;
+  fStack_258 = (float)g_TransformMatrix.m[2].z * (float)DOUBLE_00638995;
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             (&CStack_3a0,(CMatrix3x4f *)(auStack_284 + 4),in_stack_fffffb74);
   puVar6 = &uStack_45c;

@@ -57,15 +57,15 @@ void __cdecl engine_matrix_c_matrixPush_FUN_0050d620(void)
   g_MatrixStack_Unk1[g_MatrixStackIndex] = g_LightDirectionX;
   g_MatrixStack_Unk2[g_MatrixStackIndex] = g_LightDirectionY;
   g_MatrixStack_Unk3[g_MatrixStackIndex] = g_LightDirectionZ;
-  g_MatrixStack_M00[g_MatrixStackIndex] = g_TransformMatrix.m[0][0];
-  g_MatrixStack_M01[g_MatrixStackIndex] = g_TransformMatrix.m[0][1];
-  g_MatrixStack_M02[g_MatrixStackIndex] = g_TransformMatrix.m[0][2];
-  g_MatrixStack_M10[g_MatrixStackIndex] = g_TransformMatrix.m[1][0];
-  g_MatrixStack_M11[g_MatrixStackIndex] = g_TransformMatrix.m[1][1];
-  g_MatrixStack_M12[g_MatrixStackIndex] = g_TransformMatrix.m[1][2];
-  g_MatrixStack_M20[g_MatrixStackIndex] = g_TransformMatrix.m[2][0];
-  g_MatrixStack_M21[g_MatrixStackIndex] = g_TransformMatrix.m[2][1];
-  g_MatrixStack_M22[g_MatrixStackIndex] = g_TransformMatrix.m[2][2];
+  g_MatrixStack_M00[g_MatrixStackIndex] = g_TransformMatrix.m[0].x;
+  g_MatrixStack_M01[g_MatrixStackIndex] = g_TransformMatrix.m[0].y;
+  g_MatrixStack_M02[g_MatrixStackIndex] = g_TransformMatrix.m[0].z;
+  g_MatrixStack_M10[g_MatrixStackIndex] = g_TransformMatrix.m[1].x;
+  g_MatrixStack_M11[g_MatrixStackIndex] = g_TransformMatrix.m[1].y;
+  g_MatrixStack_M12[g_MatrixStackIndex] = g_TransformMatrix.m[1].z;
+  g_MatrixStack_M20[g_MatrixStackIndex] = g_TransformMatrix.m[2].x;
+  g_MatrixStack_M21[g_MatrixStackIndex] = g_TransformMatrix.m[2].y;
+  g_MatrixStack_M22[g_MatrixStackIndex] = g_TransformMatrix.m[2].z;
   g_MatrixStackIndex = g_MatrixStackIndex + 1;
   if (g_MatrixStackIndex < 10) {
     return;

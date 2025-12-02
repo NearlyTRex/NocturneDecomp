@@ -81814,8 +81814,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d2940",
-    "ret":"uint*",
+    "name":"shape_superopt.cpp_CObj_scale_FUN_005d2940",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -82235,18 +82235,40 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"scale",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVec*"
+        },
+        {
+          "name":"pivot",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVec*"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -82260,7 +82282,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d2ac0",
+    "name":"shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -82681,6 +82703,54 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"flag_mask",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"scale",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVec*"
+        },
+        {
+          "name":"pivot",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVec*"
         }
       ]
     }
@@ -82696,8 +82766,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d2c40",
-    "ret":"uint*",
+    "name":"shape_superopt.cpp_CObj_transform_FUN_005d2c40",
+    "ret":"void",
     "vars":{
       "params":[
         {
@@ -82715,18 +82785,40 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"matrix",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMatrix3x3d*"
+        },
+        {
+          "name":"pivot",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVec*"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -82740,7 +82832,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d30c0",
+    "name":"shape_superopt.cpp_CObj_findAndRemovePolygonsUsingVertex_FUN_005d30c0",
     "ret":"int",
     "vars":{
       "params":[
@@ -82759,6 +82851,22 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"vert_ptr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVert*"
         }
       ],
       "ret_storage":{
@@ -82784,7 +82892,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d3140",
+    "name":"shape_superopt.cpp_CObj_removeVertex_FUN_005d3140",
     "ret":"int",
     "vars":{
       "params":[
@@ -82803,6 +82911,22 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ],
       "ret_storage":{

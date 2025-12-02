@@ -65,10 +65,10 @@ void __cdecl engine_matrix_c_buildRotationMatrix_FUN_0050c920(ushort pitch,ushor
           (int)((uint)((longlong)iVar8 * (longlong)iVar6) >> 0x10 |
                (int)((ulonglong)((longlong)iVar8 * (longlong)iVar6) >> 0x20) << 0x10) *
           (longlong)iVar9;
-  g_TransformMatrix.m[0][2] =
+  g_TransformMatrix.m[0].z =
        (uint)((longlong)_yaw * (longlong)iVar9) >> 0x10 |
        (int)((ulonglong)((longlong)_yaw * (longlong)iVar9) >> 0x20) << 0x10;
-  g_TransformMatrix.m[1][2] = -iVar6;
+  g_TransformMatrix.m[1].z = -iVar6;
   lVar3 = (longlong)
           (int)((uint)((longlong)iVar7 * (longlong)iVar6) >> 0x10 |
                (int)((ulonglong)((longlong)iVar7 * (longlong)iVar6) >> 0x20) << 0x10) *
@@ -77,7 +77,7 @@ void __cdecl engine_matrix_c_buildRotationMatrix_FUN_0050c920(ushort pitch,ushor
           (int)((uint)((longlong)iVar8 * (longlong)iVar6) >> 0x10 |
                (int)((ulonglong)((longlong)iVar8 * (longlong)iVar6) >> 0x20) << 0x10) *
           (longlong)iVar10;
-  g_TransformMatrix.m[2][2] =
+  g_TransformMatrix.m[2].z =
        (uint)((longlong)_yaw * (longlong)iVar10) >> 0x10 |
        (int)((ulonglong)((longlong)_yaw * (longlong)iVar10) >> 0x20) << 0x10;
   if (199 < (uint)g_WindowHeight) {
@@ -113,27 +113,27 @@ LAB_0050ca9c:
           (((g_ClipBottom - g_ClipTop) * 0x1e0) / g_WindowHeight);
   iVar11 = iVar6 >> 0x1f;
   iVar6 = (int)((iVar6 + iVar11 * -4) - (uint)(iVar11 << 1 < 0)) >> 2;
-  g_TransformMatrix.m[0][0] =
+  g_TransformMatrix.m[0].x =
        (int)(((longlong)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) *
              (longlong)iVar6) / (longlong)g_ProjectionScale);
-  g_TransformMatrix.m[0][1] =
+  g_TransformMatrix.m[0].y =
        (int)(((longlong)
               (int)(((uint)((longlong)iVar7 * (longlong)-iVar10) >> 0x10 |
                     (int)((ulonglong)((longlong)iVar7 * (longlong)-iVar10) >> 0x20) << 0x10) +
                    ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10)) *
              (longlong)iVar6) / (longlong)g_ProjectionScale);
-  g_TransformMatrix.m[1][0] =
+  g_TransformMatrix.m[1].x =
        (int)(((longlong)(int)((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) *
              (longlong)iVar6) / (longlong)g_ProjectionScale);
-  g_TransformMatrix.m[1][1] =
+  g_TransformMatrix.m[1].y =
        (int)(((longlong)
               (int)((uint)((longlong)_yaw * (longlong)iVar8) >> 0x10 |
                    (int)((ulonglong)((longlong)_yaw * (longlong)iVar8) >> 0x20) << 0x10) *
              (longlong)iVar6) / (longlong)g_ProjectionScale);
-  g_TransformMatrix.m[2][0] =
+  g_TransformMatrix.m[2].x =
        (int)(((longlong)(int)((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) *
              (longlong)iVar6) / (longlong)g_ProjectionScale);
-  g_TransformMatrix.m[2][1] =
+  g_TransformMatrix.m[2].y =
        (int)(((longlong)
               (int)(((uint)((longlong)iVar9 * (longlong)iVar7) >> 0x10 |
                     (int)((ulonglong)((longlong)iVar9 * (longlong)iVar7) >> 0x20) << 0x10) +

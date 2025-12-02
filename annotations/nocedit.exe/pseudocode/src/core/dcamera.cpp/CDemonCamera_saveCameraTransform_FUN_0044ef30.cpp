@@ -41,15 +41,15 @@ core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30
     (this_ptr->transform_state).saved_camera_position.y = (this_ptr->base).position.y;
     (this_ptr->transform_state).saved_camera_position.z = (this_ptr->base).position.z;
   }
-  (this_ptr->transform_state).saved_source_matrix.m[0][0] = (this_ptr->source_matrix).m[0][0];
-  (this_ptr->transform_state).saved_source_matrix.m[0][1] = (this_ptr->source_matrix).m[0][1];
-  (this_ptr->transform_state).saved_source_matrix.m[0][2] = (this_ptr->source_matrix).m[0][2];
-  (this_ptr->transform_state).saved_source_matrix.m[1][0] = (this_ptr->source_matrix).m[1][0];
-  (this_ptr->transform_state).saved_source_matrix.m[1][1] = (this_ptr->source_matrix).m[1][1];
-  (this_ptr->transform_state).saved_source_matrix.m[1][2] = (this_ptr->source_matrix).m[1][2];
-  (this_ptr->transform_state).saved_source_matrix.m[2][0] = (this_ptr->source_matrix).m[2][0];
-  (this_ptr->transform_state).saved_source_matrix.m[2][1] = (this_ptr->source_matrix).m[2][1];
-  (this_ptr->transform_state).saved_source_matrix.m[2][2] = (this_ptr->source_matrix).m[2][2];
+  (this_ptr->transform_state).saved_source_matrix.m[0].x = (this_ptr->source_matrix).m[0].x;
+  (this_ptr->transform_state).saved_source_matrix.m[0].y = (this_ptr->source_matrix).m[0].y;
+  (this_ptr->transform_state).saved_source_matrix.m[0].z = (this_ptr->source_matrix).m[0].z;
+  (this_ptr->transform_state).saved_source_matrix.m[1].x = (this_ptr->source_matrix).m[1].x;
+  (this_ptr->transform_state).saved_source_matrix.m[1].y = (this_ptr->source_matrix).m[1].y;
+  (this_ptr->transform_state).saved_source_matrix.m[1].z = (this_ptr->source_matrix).m[1].z;
+  (this_ptr->transform_state).saved_source_matrix.m[2].x = (this_ptr->source_matrix).m[2].x;
+  (this_ptr->transform_state).saved_source_matrix.m[2].y = (this_ptr->source_matrix).m[2].y;
+  (this_ptr->transform_state).saved_source_matrix.m[2].z = (this_ptr->source_matrix).m[2].z;
   pCVar1 = &(this_ptr->base).position;
   local_1c.x = new_position->x - (float)pCVar1->x;
   local_1c.y = new_position->y - (float)(this_ptr->base).position.y;
@@ -69,82 +69,82 @@ core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30
        (int)ROUND((float)(this_ptr->base).position.y * g_CameraFixedPointScale);
   (this_ptr->camera_origin).z =
        (int)ROUND((float)(this_ptr->base).position.z * g_CameraFixedPointScale);
-  fVar8 = (float10)(this_ptr->transform_state).saved_source_matrix.m[0][2] *
+  fVar8 = (float10)(this_ptr->transform_state).saved_source_matrix.m[0].z *
           (float10)transform_matrix->m[2].x +
-          (float10)(this_ptr->transform_state).saved_source_matrix.m[0][0] *
+          (float10)(this_ptr->transform_state).saved_source_matrix.m[0].x *
           (float10)transform_matrix->m[0].x +
-          (float10)(this_ptr->transform_state).saved_source_matrix.m[0][1] *
+          (float10)(this_ptr->transform_state).saved_source_matrix.m[0].y *
           (float10)transform_matrix->m[1].x;
-  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[0][0];
+  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[0].x;
   local_1c.x = 6.331086e-39;
   dVar9 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(fVar6,transform_matrix));
   iVar4 = SUB84(dVar9,0);
-  (this_ptr->source_matrix).m[0][0] = (int)ROUND(fVar8);
-  fVar8 = (float10)(this_ptr->transform_state).saved_source_matrix.m[0][2] *
+  (this_ptr->source_matrix).m[0].x = (int)ROUND(fVar8);
+  fVar8 = (float10)(this_ptr->transform_state).saved_source_matrix.m[0].z *
           (float10)*(float *)(iVar4 + 0x1c) +
-          (float10)(this_ptr->transform_state).saved_source_matrix.m[0][1] *
+          (float10)(this_ptr->transform_state).saved_source_matrix.m[0].y *
           (float10)*(float *)(iVar4 + 0x10) + fVar7 * (float10)*(float *)(iVar4 + 4);
-  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[0][0];
+  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[0].x;
   local_1c.y = 6.331148e-39;
   dVar9 = crt_math_c_round_FUN_005fe6b0(dVar9);
   iVar4 = SUB84(dVar9,0);
-  (this_ptr->source_matrix).m[0][1] = (int)ROUND(fVar8);
-  fVar8 = (float10)(this_ptr->transform_state).saved_source_matrix.m[0][2] *
+  (this_ptr->source_matrix).m[0].y = (int)ROUND(fVar8);
+  fVar8 = (float10)(this_ptr->transform_state).saved_source_matrix.m[0].z *
           (float10)*(float *)(iVar4 + 0x20) +
-          (float10)(this_ptr->transform_state).saved_source_matrix.m[0][1] *
+          (float10)(this_ptr->transform_state).saved_source_matrix.m[0].y *
           (float10)*(float *)(iVar4 + 0x14) + fVar7 * (float10)*(float *)(iVar4 + 8);
-  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[1][1];
+  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[1].y;
   local_1c.z = 6.33121e-39;
   dVar9 = crt_math_c_round_FUN_005fe6b0(dVar9);
   pfVar5 = SUB84(dVar9,0);
-  (this_ptr->source_matrix).m[0][2] = (int)ROUND(fVar8);
-  fVar8 = (float10)(this_ptr->transform_state).saved_source_matrix.m[1][2] * (float10)pfVar5[6] +
-          (float10)(this_ptr->transform_state).saved_source_matrix.m[1][0] * (float10)*pfVar5 +
+  (this_ptr->source_matrix).m[0].z = (int)ROUND(fVar8);
+  fVar8 = (float10)(this_ptr->transform_state).saved_source_matrix.m[1].z * (float10)pfVar5[6] +
+          (float10)(this_ptr->transform_state).saved_source_matrix.m[1].x * (float10)*pfVar5 +
           fVar7 * (float10)pfVar5[3];
-  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[1][0];
+  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[1].x;
   local_10.x = 6.33127e-39;
   dVar9 = crt_math_c_round_FUN_005fe6b0(dVar9);
   iVar4 = SUB84(dVar9,0);
-  (this_ptr->source_matrix).m[1][0] = (int)ROUND(fVar8);
-  fVar8 = (float10)(this_ptr->transform_state).saved_source_matrix.m[1][2] *
+  (this_ptr->source_matrix).m[1].x = (int)ROUND(fVar8);
+  fVar8 = (float10)(this_ptr->transform_state).saved_source_matrix.m[1].z *
           (float10)*(float *)(iVar4 + 0x1c) +
-          (float10)(this_ptr->transform_state).saved_source_matrix.m[1][1] *
+          (float10)(this_ptr->transform_state).saved_source_matrix.m[1].y *
           (float10)*(float *)(iVar4 + 0x10) + fVar7 * (float10)*(float *)(iVar4 + 4);
-  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[1][0];
+  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[1].x;
   local_10.y = 6.331331e-39;
   dVar9 = crt_math_c_round_FUN_005fe6b0(dVar9);
   iVar4 = SUB84(dVar9,0);
-  (this_ptr->source_matrix).m[1][1] = (int)ROUND(fVar8);
-  fVar8 = (float10)(this_ptr->transform_state).saved_source_matrix.m[1][2] *
+  (this_ptr->source_matrix).m[1].y = (int)ROUND(fVar8);
+  fVar8 = (float10)(this_ptr->transform_state).saved_source_matrix.m[1].z *
           (float10)*(float *)(iVar4 + 0x20) +
-          (float10)(this_ptr->transform_state).saved_source_matrix.m[1][1] *
+          (float10)(this_ptr->transform_state).saved_source_matrix.m[1].y *
           (float10)*(float *)(iVar4 + 0x14) + fVar7 * (float10)*(float *)(iVar4 + 8);
-  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[2][1];
+  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[2].y;
   local_10.z = 6.331393e-39;
   dVar9 = crt_math_c_round_FUN_005fe6b0(dVar9);
   pfVar5 = SUB84(dVar9,0);
-  (this_ptr->source_matrix).m[1][2] = (int)ROUND(fVar8);
-  fVar8 = (float10)(this_ptr->transform_state).saved_source_matrix.m[2][2] * (float10)pfVar5[6] +
-          (float10)(this_ptr->transform_state).saved_source_matrix.m[2][0] * (float10)*pfVar5 +
+  (this_ptr->source_matrix).m[1].z = (int)ROUND(fVar8);
+  fVar8 = (float10)(this_ptr->transform_state).saved_source_matrix.m[2].z * (float10)pfVar5[6] +
+          (float10)(this_ptr->transform_state).saved_source_matrix.m[2].x * (float10)*pfVar5 +
           fVar7 * (float10)pfVar5[3];
-  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[2][0];
+  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[2].x;
   dVar9 = crt_math_c_round_FUN_005fe6b0(dVar9);
   iVar4 = SUB84(dVar9,0);
-  (this_ptr->source_matrix).m[2][0] = (int)ROUND(fVar8);
-  fVar8 = (float10)(this_ptr->transform_state).saved_source_matrix.m[2][2] *
+  (this_ptr->source_matrix).m[2].x = (int)ROUND(fVar8);
+  fVar8 = (float10)(this_ptr->transform_state).saved_source_matrix.m[2].z *
           (float10)*(float *)(iVar4 + 0x1c) +
-          (float10)(this_ptr->transform_state).saved_source_matrix.m[2][1] *
+          (float10)(this_ptr->transform_state).saved_source_matrix.m[2].y *
           (float10)*(float *)(iVar4 + 0x10) + fVar7 * (float10)*(float *)(iVar4 + 4);
-  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[2][0];
+  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[2].x;
   dVar9 = crt_math_c_round_FUN_005fe6b0(dVar9);
   iVar4 = SUB84(dVar9,0);
-  (this_ptr->source_matrix).m[2][1] = (int)ROUND(fVar8);
-  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[2][2] *
+  (this_ptr->source_matrix).m[2].y = (int)ROUND(fVar8);
+  fVar7 = (float10)(this_ptr->transform_state).saved_source_matrix.m[2].z *
           (float10)*(float *)(iVar4 + 0x20) +
-          (float10)(this_ptr->transform_state).saved_source_matrix.m[2][1] *
+          (float10)(this_ptr->transform_state).saved_source_matrix.m[2].y *
           (float10)*(float *)(iVar4 + 0x14) + fVar7 * (float10)*(float *)(iVar4 + 8);
   crt_math_c_round_FUN_005fe6b0(dVar9);
-  (this_ptr->source_matrix).m[2][2] = (int)ROUND(fVar7);
+  (this_ptr->source_matrix).m[2].z = (int)ROUND(fVar7);
   return;
 }
 

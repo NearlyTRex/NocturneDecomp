@@ -10,8 +10,8 @@
 //   TerminatedCString s_Unable_to_copy_object_fo_006545a0
 //   TerminatedCString s_Unable_to_copy_merge_wit_006545c3
 // Function calls:
-//   shape_superopt.cpp_CObj_FUN_005d2650
-//   shape_superopt.cpp_CObj_FUN_005d2720
+//   shape_superopt.cpp_CObj_appendTo_FUN_005d2720
+//   shape_superopt.cpp_CObj_copyFrom_FUN_005d2650
 //   shape_superopt.cpp_logToFile_FUN_005c7910
 
 #include "nocturne.h"
@@ -20,29 +20,29 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d71e0(COptimize *this_ptr)
 
 {
   int iVar1;
-  CObj *this_ptr_00;
-  ulonglong uVar2;
-  int in_stack_00000008;
+  int iVar2;
+  CObj *dest_obj;
+  CObj *in_stack_00000008;
   uint in_stack_0000000c;
   
-  if ((in_stack_00000008 != 0) && (in_stack_0000000c != 0)) {
-    iVar1 = shape_superopt_cpp_CObj_FUN_005d2650(&this_ptr->base);
+  if ((in_stack_00000008 != (CObj *)0x0) && (in_stack_0000000c != 0)) {
+    iVar1 = shape_superopt_cpp_CObj_copyFrom_FUN_005d2650(&this_ptr->obj,in_stack_00000008);
     if (iVar1 == 0) {
       shape_superopt_cpp_logToFile_FUN_005c7910("Unable to copy object for optimize");
       return 0;
     }
     iVar1 = 1;
     if (1 < in_stack_0000000c) {
-      this_ptr_00 = (CObj *)(in_stack_0000000c + 0x1c);
+      dest_obj = (CObj *)(in_stack_0000000c + 0x1c);
       do {
-        uVar2 = shape_superopt_cpp_CObj_FUN_005d2720(this_ptr_00);
-        if ((int)uVar2 == 0) {
+        iVar2 = shape_superopt_cpp_CObj_appendTo_FUN_005d2720(&this_ptr->obj,dest_obj);
+        if (iVar2 == 0) {
           shape_superopt_cpp_logToFile_FUN_005c7910("Unable to copy merge with object %d for optimize",iVar1);
           return 0;
         }
-        this_ptr_00 = this_ptr_00 + 1;
+        dest_obj = dest_obj + 1;
         iVar1 = iVar1 + 1;
-      } while (this_ptr_00 < (CObj *)(in_stack_0000000c * 0x1d));
+      } while (dest_obj < (CObj *)(in_stack_0000000c * 0x1d));
     }
     return 1;
   }
@@ -71,7 +71,7 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d71e0(COptimize *this_ptr)
 //   XREF to: 005d7248 (CONDITIONAL_JUMP)
 // 005d71f8: PUSH EDX
 // 005d71f9: PUSH EBP
-// 005d71fa: CALL shape_superopt.cpp_CObj_FUN_005d2650
+// 005d71fa: CALL shape_superopt.cpp_CObj_copyFrom_FUN_005d2650
 //   XREF to: 005d2650 (UNCONDITIONAL_CALL)
 // 005d71ff: ADD ESP,0x8
 // 005d7202: TEST EAX,EAX
@@ -93,7 +93,7 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d71e0(COptimize *this_ptr)
 // 005d7228: PUSH EBX
 //   Label: LAB_005d7228
 // 005d7229: PUSH EBP
-// 005d722a: CALL shape_superopt.cpp_CObj_FUN_005d2720
+// 005d722a: CALL shape_superopt.cpp_CObj_appendTo_FUN_005d2720
 //   XREF to: 005d2720 (UNCONDITIONAL_CALL)
 // 005d722f: ADD ESP,0x8
 // 005d7232: TEST EAX,EAX

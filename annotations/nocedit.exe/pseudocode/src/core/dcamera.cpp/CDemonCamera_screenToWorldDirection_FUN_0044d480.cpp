@@ -23,17 +23,17 @@ core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480
                (longlong)(this_ptr->saved_viewport_rect).left);
   iVar4 = (int)(((longlong)(screen_y * 0x10000 - (this_ptr->saved_viewport_rect).bottom) * 0x10000)
                / (longlong)(this_ptr->saved_viewport_rect).top);
-  lVar1 = (longlong)iVar4 * (longlong)(this_ptr->inverted_matrix).m[1][0] +
-          (longlong)iVar3 * (longlong)(this_ptr->inverted_matrix).m[0][0] +
-          (longlong)(this_ptr->inverted_matrix).m[2][0] * 0x10000;
+  lVar1 = (longlong)iVar4 * (longlong)(this_ptr->inverted_matrix).m[1].x +
+          (longlong)iVar3 * (longlong)(this_ptr->inverted_matrix).m[0].x +
+          (longlong)(this_ptr->inverted_matrix).m[2].x * 0x10000;
   output_ptr->x = (float)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-  lVar1 = (longlong)iVar4 * (longlong)(this_ptr->inverted_matrix).m[1][1] +
-          (longlong)iVar3 * (longlong)(this_ptr->inverted_matrix).m[0][1] +
-          (longlong)(this_ptr->inverted_matrix).m[2][1] * 0x10000;
+  lVar1 = (longlong)iVar4 * (longlong)(this_ptr->inverted_matrix).m[1].y +
+          (longlong)iVar3 * (longlong)(this_ptr->inverted_matrix).m[0].y +
+          (longlong)(this_ptr->inverted_matrix).m[2].y * 0x10000;
   output_ptr->y = (float)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-  lVar1 = (longlong)iVar4 * (longlong)(this_ptr->inverted_matrix).m[1][2] +
-          (longlong)iVar3 * (longlong)(this_ptr->inverted_matrix).m[0][2] +
-          (longlong)(this_ptr->inverted_matrix).m[2][2] * 0x10000;
+  lVar1 = (longlong)iVar4 * (longlong)(this_ptr->inverted_matrix).m[1].z +
+          (longlong)iVar3 * (longlong)(this_ptr->inverted_matrix).m[0].z +
+          (longlong)(this_ptr->inverted_matrix).m[2].z * 0x10000;
   fVar2 = (float)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   output_ptr->z = fVar2;
   fVar2 = SQRT(fVar2 * output_ptr->z + output_ptr->x * output_ptr->x + output_ptr->y * output_ptr->y

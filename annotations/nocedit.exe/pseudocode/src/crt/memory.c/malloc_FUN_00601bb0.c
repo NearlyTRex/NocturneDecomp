@@ -27,8 +27,8 @@
 //   crt_unknown.c_staticInit_FUN_00608f20 (00608f20) at 00608f5b [UNCONDITIONAL_CALL]
 //   shape_memdbg.cpp_debugCalloc_FUN_0050f350 (0050f350) at 0050f3ab [UNCONDITIONAL_CALL]
 //   shape_memdbg.cpp_debugMalloc_FUN_0050f250 (0050f250) at 0050f2a3 [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_CObj_FUN_005d2320 (005d2320) at 005d2344 [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_CObj_FUN_005d2500 (005d2500) at 005d2516 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320 (005d2320) at 005d2344 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_allocateVertices_FUN_005d2500 (005d2500) at 005d2516 [UNCONDITIONAL_CALL]
 // Function calls:
 //   crt_heap.c_InternalHeapAlloc_FUN_00601bc0
 

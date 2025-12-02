@@ -11,12 +11,13 @@
 void __cdecl shape_superopt_cpp_CPoly_FUN_005d0d30(CPoly *this_ptr)
 
 {
-  void *pvVar1;
-  int iVar2;
+  CVert *pCVar1;
+  CVert *pCVar2;
+  int iVar3;
   BADSPACEBASE *in_ESP;
   undefined4 *unaff_ESI;
-  double *pdVar3;
   double *pdVar4;
+  double *pdVar5;
   double local_88;
   double local_80;
   double local_78;
@@ -32,39 +33,39 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005d0d30(CPoly *this_ptr)
   double local_28;
   double local_20;
   double local_18;
-  double *local_10;
+  CVert *local_10;
   
-  pvVar1 = this_ptr->parent_obj->vertex_data;
-  local_10 = (double *)((int)pvVar1 + this_ptr->vertex_idx_2 * 0x38);
-  pdVar3 = (double *)((int)pvVar1 + this_ptr->vertex_idx_1 * 0x38);
-  iVar2 = this_ptr->vertex_idx_0 * 0x38;
-  local_40 = *(double *)((int)pvVar1 + iVar2) + *pdVar3;
-  local_38 = *(double *)((int)pvVar1 + iVar2 + 8) + pdVar3[1];
-  local_30 = *(double *)((int)pvVar1 + iVar2 + 0x10) + pdVar3[2];
-  pdVar3 = &local_40;
-  pdVar4 = &local_58;
-  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(undefined4 *)pdVar4 = *(undefined4 *)pdVar3;
-    pdVar3 = (double *)((int)pdVar3 + 4);
+  pCVar2 = this_ptr->parent_obj->vertex_data;
+  local_10 = pCVar2 + this_ptr->vertex_idx_2;
+  pCVar1 = pCVar2 + this_ptr->vertex_idx_1;
+  iVar3 = this_ptr->vertex_idx_0;
+  local_40 = pCVar2[iVar3].position.impl.x + (pCVar1->position).impl.x;
+  local_38 = pCVar2[iVar3].position.impl.y + (pCVar1->position).impl.y;
+  local_30 = pCVar2[iVar3].position.impl.z + (pCVar1->position).impl.z;
+  pdVar4 = &local_40;
+  pdVar5 = &local_58;
+  for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *(undefined4 *)pdVar5 = *(undefined4 *)pdVar4;
     pdVar4 = (double *)((int)pdVar4 + 4);
+    pdVar5 = (double *)((int)pdVar5 + 4);
   }
-  local_88 = local_58 + *local_10;
-  local_80 = local_50 + local_10[1];
-  local_78 = local_48 + local_10[2];
-  pdVar3 = &local_88;
-  pdVar4 = &local_28;
-  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(undefined4 *)pdVar4 = *(undefined4 *)pdVar3;
-    pdVar3 = (double *)((int)pdVar3 + 4);
+  local_88 = local_58 + (local_10->position).impl.x;
+  local_80 = local_50 + (local_10->position).impl.y;
+  local_78 = local_48 + (local_10->position).impl.z;
+  pdVar4 = &local_88;
+  pdVar5 = &local_28;
+  for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *(undefined4 *)pdVar5 = *(undefined4 *)pdVar4;
     pdVar4 = (double *)((int)pdVar4 + 4);
+    pdVar5 = (double *)((int)pdVar5 + 4);
   }
   local_70 = local_28 * DOUBLE_0065430a;
   local_68 = local_20 * DOUBLE_0065430a;
   local_60 = local_18 * DOUBLE_0065430a;
-  pdVar3 = &local_70;
-  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *unaff_ESI = *(undefined4 *)pdVar3;
-    pdVar3 = (double *)((int)pdVar3 + 4);
+  pdVar4 = &local_70;
+  for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *unaff_ESI = *(undefined4 *)pdVar4;
+    pdVar4 = (double *)((int)pdVar4 + 4);
     unaff_ESI = unaff_ESI + 1;
   }
   return;

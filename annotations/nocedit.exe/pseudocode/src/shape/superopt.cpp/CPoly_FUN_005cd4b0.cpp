@@ -9,31 +9,40 @@
 void __cdecl shape_superopt_cpp_CPoly_FUN_005cd4b0(CPoly *this_ptr)
 
 {
-  void *pvVar1;
-  undefined4 *puVar2;
+  CVert *pCVar1;
+  CVert *pCVar2;
   
-  pvVar1 = this_ptr->parent_obj->vertex_data;
-  puVar2 = (undefined4 *)(this_ptr->vertex_idx_0 * 0x38 + (int)pvVar1);
-  puVar2[6] = *puVar2;
-  puVar2[7] = puVar2[1];
-  puVar2[8] = puVar2[2];
-  puVar2[9] = puVar2[3];
-  puVar2[10] = puVar2[4];
-  puVar2[0xb] = puVar2[5];
-  puVar2 = (undefined4 *)(this_ptr->vertex_idx_1 * 0x38 + (int)pvVar1);
-  puVar2[6] = *puVar2;
-  puVar2[7] = puVar2[1];
-  puVar2[8] = puVar2[2];
-  puVar2[9] = puVar2[3];
-  puVar2[10] = puVar2[4];
-  puVar2[0xb] = puVar2[5];
-  puVar2 = (undefined4 *)(this_ptr->vertex_idx_2 * 0x38 + (int)pvVar1);
-  puVar2[6] = *puVar2;
-  puVar2[7] = puVar2[1];
-  puVar2[8] = puVar2[2];
-  puVar2[9] = puVar2[3];
-  puVar2[10] = puVar2[4];
-  puVar2[0xb] = puVar2[5];
+  pCVar2 = this_ptr->parent_obj->vertex_data;
+  pCVar1 = pCVar2 + this_ptr->vertex_idx_0;
+  *(undefined4 *)&(pCVar1->orig_position).impl.x = *(undefined4 *)&(pCVar1->position).impl.x;
+  *(undefined4 *)((int)&(pCVar1->orig_position).impl.x + 4) =
+       *(undefined4 *)((int)&(pCVar1->position).impl.x + 4);
+  *(undefined4 *)&(pCVar1->orig_position).impl.y = *(undefined4 *)&(pCVar1->position).impl.y;
+  *(undefined4 *)((int)&(pCVar1->orig_position).impl.y + 4) =
+       *(undefined4 *)((int)&(pCVar1->position).impl.y + 4);
+  *(undefined4 *)&(pCVar1->orig_position).impl.z = *(undefined4 *)&(pCVar1->position).impl.z;
+  *(undefined4 *)((int)&(pCVar1->orig_position).impl.z + 4) =
+       *(undefined4 *)((int)&(pCVar1->position).impl.z + 4);
+  pCVar1 = pCVar2 + this_ptr->vertex_idx_1;
+  *(undefined4 *)&(pCVar1->orig_position).impl.x = *(undefined4 *)&(pCVar1->position).impl.x;
+  *(undefined4 *)((int)&(pCVar1->orig_position).impl.x + 4) =
+       *(undefined4 *)((int)&(pCVar1->position).impl.x + 4);
+  *(undefined4 *)&(pCVar1->orig_position).impl.y = *(undefined4 *)&(pCVar1->position).impl.y;
+  *(undefined4 *)((int)&(pCVar1->orig_position).impl.y + 4) =
+       *(undefined4 *)((int)&(pCVar1->position).impl.y + 4);
+  *(undefined4 *)&(pCVar1->orig_position).impl.z = *(undefined4 *)&(pCVar1->position).impl.z;
+  *(undefined4 *)((int)&(pCVar1->orig_position).impl.z + 4) =
+       *(undefined4 *)((int)&(pCVar1->position).impl.z + 4);
+  pCVar2 = pCVar2 + this_ptr->vertex_idx_2;
+  *(undefined4 *)&(pCVar2->orig_position).impl.x = *(undefined4 *)&(pCVar2->position).impl.x;
+  *(undefined4 *)((int)&(pCVar2->orig_position).impl.x + 4) =
+       *(undefined4 *)((int)&(pCVar2->position).impl.x + 4);
+  *(undefined4 *)&(pCVar2->orig_position).impl.y = *(undefined4 *)&(pCVar2->position).impl.y;
+  *(undefined4 *)((int)&(pCVar2->orig_position).impl.y + 4) =
+       *(undefined4 *)((int)&(pCVar2->position).impl.y + 4);
+  *(undefined4 *)&(pCVar2->orig_position).impl.z = *(undefined4 *)&(pCVar2->position).impl.z;
+  *(undefined4 *)((int)&(pCVar2->orig_position).impl.z + 4) =
+       *(undefined4 *)((int)&(pCVar2->position).impl.z + 4);
   return;
 }
 

@@ -40,24 +40,24 @@ void __cdecl shape_superopt_cpp_CObj_FUN_005d3960(CObj *this_ptr)
   
   local_68 = (void *)0x0;
   pCVar12 = this_ptr->poly_array;
-  if (2000 < (uint)this_ptr->count) {
+  if (2000 < (uint)this_ptr->poly_count) {
     local_68 = shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(4);
   }
   uVar14 = 0;
-  if (this_ptr->count != 0) {
+  if (this_ptr->poly_count != 0) {
     do {
-      (**(code **)((int)pCVar12->vtable + 0x44))();
+      (*(code *)pCVar12->vtable->field17_0x44)();
       if (in_stack_00000008 != 0) {
         pCVar12->field6_0x58 = 7;
       }
       uVar14 = uVar14 + 1;
       pCVar12 = pCVar12 + 1;
-    } while (uVar14 < (uint)this_ptr->count);
+    } while (uVar14 < (uint)this_ptr->poly_count);
   }
   if (in_stack_00000008 != 0) {
     local_54 = this_ptr->poly_array;
     local_5c = 0;
-    if (this_ptr->count != 0) {
+    if (this_ptr->poly_count != 0) {
       local_64 = 0x68;
       pCStack_60 = &local_54->normal;
       local_58 = &local_54->field6_0x58;
@@ -68,7 +68,7 @@ void __cdecl shape_superopt_cpp_CObj_FUN_005d3960(CObj *this_ptr)
           iVar2 = local_54->vertex_idx_1;
           iVar3 = local_54->vertex_idx_2;
           uStack_2c = local_5c + 1;
-          if (uStack_2c < (uint)this_ptr->count) {
+          if (uStack_2c < (uint)this_ptr->poly_count) {
             puVar13 = (uint *)((int)(pCVar12->uv_coords + 4) + local_64 + 8);
             pdStack_1c = (double *)((int)&((CVector3d *)(pCVar12->uv_coords + 3))->x + local_64);
             piVar15 = (int *)((int)pCVar12->uv_coords + local_64 + -0xc);
@@ -150,7 +150,7 @@ void __cdecl shape_superopt_cpp_CObj_FUN_005d3960(CObj *this_ptr)
               uStack_2c = uStack_2c + 1;
               pdStack_1c = pdStack_1c + 0xd;
               piVar15 = piVar15 + 0x1a;
-            } while (uStack_2c < (uint)this_ptr->count);
+            } while (uStack_2c < (uint)this_ptr->poly_count);
           }
         }
         local_64 = local_64 + 0x68;
@@ -159,7 +159,7 @@ void __cdecl shape_superopt_cpp_CObj_FUN_005d3960(CObj *this_ptr)
         local_54 = local_54 + 1;
         local_5c = local_5c + 1;
         local_58 = local_58 + 0x1a;
-      } while (local_5c < (uint)this_ptr->count);
+      } while (local_5c < (uint)this_ptr->poly_count);
     }
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(local_68);

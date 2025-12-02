@@ -39,26 +39,26 @@ core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790
     iVar8 = world_pos->x - (light_source->base).camera_origin.x;
     iVar9 = world_pos->y - (light_source->base).camera_origin.y;
     iVar6 = world_pos->z - (light_source->base).camera_origin.z;
-    lVar2 = (longlong)(light_source->base).source_matrix.m[0][2] * (longlong)iVar8;
-    lVar3 = (longlong)(light_source->base).source_matrix.m[1][2] * (longlong)iVar9;
-    lVar4 = (longlong)(light_source->base).source_matrix.m[2][2] * (longlong)iVar6;
+    lVar2 = (longlong)(light_source->base).source_matrix.m[0].z * (longlong)iVar8;
+    lVar3 = (longlong)(light_source->base).source_matrix.m[1].z * (longlong)iVar9;
+    lVar4 = (longlong)(light_source->base).source_matrix.m[2].z * (longlong)iVar6;
     g_TempProjectedCoord.z =
          ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
          ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
          ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
     if (((g_TempProjectedCoord.z < 1) ||
-        (lVar2 = (longlong)(light_source->base).source_matrix.m[0][0] * (longlong)iVar8,
-        lVar3 = (longlong)(light_source->base).source_matrix.m[1][0] * (longlong)iVar9,
-        lVar4 = (longlong)(light_source->base).source_matrix.m[2][0] * (longlong)iVar6,
+        (lVar2 = (longlong)(light_source->base).source_matrix.m[0].x * (longlong)iVar8,
+        lVar3 = (longlong)(light_source->base).source_matrix.m[1].x * (longlong)iVar9,
+        lVar4 = (longlong)(light_source->base).source_matrix.m[2].x * (longlong)iVar6,
         g_TempProjectedCoord.x =
              ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
              ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
              ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10),
         g_TempProjectedCoord.z <= g_TempProjectedCoord.x)) ||
        ((g_TempProjectedCoord.x <= -g_TempProjectedCoord.z ||
-        ((lVar2 = (longlong)(light_source->base).source_matrix.m[0][1] * (longlong)iVar8,
-         lVar3 = (longlong)(light_source->base).source_matrix.m[1][1] * (longlong)iVar9,
-         lVar4 = (longlong)(light_source->base).source_matrix.m[2][1] * (longlong)iVar6,
+        ((lVar2 = (longlong)(light_source->base).source_matrix.m[0].y * (longlong)iVar8,
+         lVar3 = (longlong)(light_source->base).source_matrix.m[1].y * (longlong)iVar9,
+         lVar4 = (longlong)(light_source->base).source_matrix.m[2].y * (longlong)iVar6,
          g_TempProjectedCoord.y =
               ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
               ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
@@ -92,26 +92,26 @@ core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790
   iVar8 = world_pos->x - (light_source->base).camera_origin.x;
   iVar9 = world_pos->y - (light_source->base).camera_origin.y;
   iVar6 = world_pos->z - (light_source->base).camera_origin.z;
-  lVar2 = (longlong)(light_source->base).source_matrix.m[0][2] * (longlong)iVar8;
-  lVar3 = (longlong)(light_source->base).source_matrix.m[1][2] * (longlong)iVar9;
-  lVar4 = (longlong)(light_source->base).source_matrix.m[2][2] * (longlong)iVar6;
+  lVar2 = (longlong)(light_source->base).source_matrix.m[0].z * (longlong)iVar8;
+  lVar3 = (longlong)(light_source->base).source_matrix.m[1].z * (longlong)iVar9;
+  lVar4 = (longlong)(light_source->base).source_matrix.m[2].z * (longlong)iVar6;
   g_TempProjectedCoord.z =
        ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
        ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
        ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
   if ((((g_TempProjectedCoord.z < 1) ||
-       (lVar2 = (longlong)(light_source->base).source_matrix.m[0][0] * (longlong)iVar8,
-       lVar3 = (longlong)(light_source->base).source_matrix.m[1][0] * (longlong)iVar9,
-       lVar4 = (longlong)(light_source->base).source_matrix.m[2][0] * (longlong)iVar6,
+       (lVar2 = (longlong)(light_source->base).source_matrix.m[0].x * (longlong)iVar8,
+       lVar3 = (longlong)(light_source->base).source_matrix.m[1].x * (longlong)iVar9,
+       lVar4 = (longlong)(light_source->base).source_matrix.m[2].x * (longlong)iVar6,
        g_TempProjectedCoord.x =
             ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
             ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
             ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10),
        g_TempProjectedCoord.z <= g_TempProjectedCoord.x)) ||
       (g_TempProjectedCoord.x <= -g_TempProjectedCoord.z)) ||
-     ((lVar2 = (longlong)(light_source->base).source_matrix.m[0][1] * (longlong)iVar8,
-      lVar3 = (longlong)(light_source->base).source_matrix.m[1][1] * (longlong)iVar9,
-      lVar4 = (longlong)(light_source->base).source_matrix.m[2][1] * (longlong)iVar6,
+     ((lVar2 = (longlong)(light_source->base).source_matrix.m[0].y * (longlong)iVar8,
+      lVar3 = (longlong)(light_source->base).source_matrix.m[1].y * (longlong)iVar9,
+      lVar4 = (longlong)(light_source->base).source_matrix.m[2].y * (longlong)iVar6,
       g_TempProjectedCoord.y =
            ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
            ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +

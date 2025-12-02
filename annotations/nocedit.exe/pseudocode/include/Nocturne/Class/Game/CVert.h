@@ -1,0 +1,11 @@
+#pragma once
+
+// Structure: CVert
+// Ghidra size: 0x38 (56 bytes)
+typedef struct CVert {
+    CVec position; // 0x0
+    CVec orig_position; // 0x18
+    uint flags2; // 0x30
+    uint flags; // 0x34
+} CVert;
+

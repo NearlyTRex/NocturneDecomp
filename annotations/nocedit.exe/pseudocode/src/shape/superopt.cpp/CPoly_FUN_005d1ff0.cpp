@@ -12,15 +12,16 @@
 int __cdecl shape_superopt_cpp_CPoly_FUN_005d1ff0(CPoly *this_ptr)
 
 {
-  double dVar1;
+  CVert *pCVar1;
   double dVar2;
   double dVar3;
-  int iVar4;
-  void *pvVar5;
-  int iVar6;
+  double dVar4;
+  int iVar5;
+  CVert *pCVar6;
+  int iVar7;
   BADSPACEBASE *in_ESP;
-  double *pdVar7;
   double *pdVar8;
+  double *pdVar9;
   double local_e0;
   double local_c8;
   double local_c0;
@@ -41,54 +42,52 @@ int __cdecl shape_superopt_cpp_CPoly_FUN_005d1ff0(CPoly *this_ptr)
   double local_48;
   double local_40;
   
-  iVar6 = this_ptr->vertex_idx_0;
-  if (((iVar6 != this_ptr->vertex_idx_1) && (iVar4 = this_ptr->vertex_idx_2, iVar6 != iVar4)) &&
-     (this_ptr->vertex_idx_1 != iVar4)) {
-    iVar6 = iVar6 * 0x38;
-    pvVar5 = this_ptr->parent_obj->vertex_data;
-    iVar4 = iVar4 * 0x38;
-    local_68 = *(double *)((int)pvVar5 + iVar4) - *(double *)((int)pvVar5 + iVar6);
-    local_60 = *(double *)((int)pvVar5 + iVar4 + 8) - *(double *)((int)pvVar5 + iVar6 + 8);
-    local_58 = *(double *)((int)pvVar5 + iVar4 + 0x10) - *(double *)((int)pvVar5 + iVar6 + 0x10);
-    pdVar7 = &local_68;
-    pdVar8 = &local_50;
-    for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *(undefined4 *)pdVar8 = *(undefined4 *)pdVar7;
-      pdVar7 = (double *)((int)pdVar7 + 4);
+  iVar7 = this_ptr->vertex_idx_0;
+  if (((iVar7 != this_ptr->vertex_idx_1) && (iVar5 = this_ptr->vertex_idx_2, iVar7 != iVar5)) &&
+     (this_ptr->vertex_idx_1 != iVar5)) {
+    pCVar6 = this_ptr->parent_obj->vertex_data;
+    local_68 = pCVar6[iVar5].position.impl.x - pCVar6[iVar7].position.impl.x;
+    local_60 = pCVar6[iVar5].position.impl.y - pCVar6[iVar7].position.impl.y;
+    local_58 = pCVar6[iVar5].position.impl.z - pCVar6[iVar7].position.impl.z;
+    pdVar8 = &local_68;
+    pdVar9 = &local_50;
+    for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+      *(undefined4 *)pdVar9 = *(undefined4 *)pdVar8;
       pdVar8 = (double *)((int)pdVar8 + 4);
+      pdVar9 = (double *)((int)pdVar9 + 4);
     }
-    dVar1 = 1.0 / SQRT(local_40 * local_40 + local_50 * local_50 + local_48 * local_48);
-    local_b0 = local_50 * dVar1;
-    local_a8 = local_48 * dVar1;
-    local_a0 = local_40 * dVar1;
-    pdVar7 = (double *)((int)pvVar5 + this_ptr->vertex_idx_0 * 0x38);
-    iVar6 = this_ptr->vertex_idx_1 * 0x38;
-    local_c8 = *(double *)((int)pvVar5 + iVar6) - *pdVar7;
-    local_c0 = *(double *)((int)pvVar5 + iVar6 + 8) - pdVar7[1];
-    local_b8 = *(double *)((int)pvVar5 + iVar6 + 0x10) - pdVar7[2];
-    pdVar7 = &local_c8;
-    pdVar8 = &local_80;
-    for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *(undefined4 *)pdVar8 = *(undefined4 *)pdVar7;
-      pdVar7 = (double *)((int)pdVar7 + 4);
+    dVar2 = 1.0 / SQRT(local_40 * local_40 + local_50 * local_50 + local_48 * local_48);
+    local_b0 = local_50 * dVar2;
+    local_a8 = local_48 * dVar2;
+    local_a0 = local_40 * dVar2;
+    pCVar1 = pCVar6 + this_ptr->vertex_idx_0;
+    iVar7 = this_ptr->vertex_idx_1;
+    local_c8 = pCVar6[iVar7].position.impl.x - (pCVar1->position).impl.x;
+    local_c0 = pCVar6[iVar7].position.impl.y - (pCVar1->position).impl.y;
+    local_b8 = pCVar6[iVar7].position.impl.z - (pCVar1->position).impl.z;
+    pdVar8 = &local_c8;
+    pdVar9 = &local_80;
+    for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+      *(undefined4 *)pdVar9 = *(undefined4 *)pdVar8;
       pdVar8 = (double *)((int)pdVar8 + 4);
+      pdVar9 = (double *)((int)pdVar9 + 4);
     }
     local_88 = 1.0 / SQRT(local_70 * local_70 + local_80 * local_80 + local_78 * local_78);
     local_98 = local_80 * local_88;
     local_90 = local_78 * local_88;
     local_88 = local_70 * local_88;
-    local_e0 = local_50 * dVar1 * local_98 + local_48 * dVar1 * local_90 +
-               local_40 * dVar1 * local_88;
+    local_e0 = local_50 * dVar2 * local_98 + local_48 * dVar2 * local_90 +
+               local_40 * dVar2 * local_88;
     if (local_e0 < 0.0) {
       local_e0 = -local_e0;
     }
     if (local_e0 <= DOUBLE_0065431a) {
-      (**(code **)((int)this_ptr->vtable + 0x44))();
-      dVar1 = (this_ptr->normal).y;
-      dVar2 = (this_ptr->normal).x;
-      dVar3 = (this_ptr->normal).z;
-      dVar1 = SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1);
-      if ((DOUBLE_0065431a <= dVar1) && (dVar1 <= DOUBLE_00654322)) {
+      (*(code *)this_ptr->vtable->field17_0x44)();
+      dVar2 = (this_ptr->normal).y;
+      dVar3 = (this_ptr->normal).x;
+      dVar4 = (this_ptr->normal).z;
+      dVar2 = SQRT(dVar4 * dVar4 + dVar3 * dVar3 + dVar2 * dVar2);
+      if ((DOUBLE_0065431a <= dVar2) && (dVar2 <= DOUBLE_00654322)) {
         return 1;
       }
     }

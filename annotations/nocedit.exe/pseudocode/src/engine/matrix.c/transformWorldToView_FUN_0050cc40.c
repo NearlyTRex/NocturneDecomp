@@ -38,19 +38,19 @@ void __cdecl engine_matrix_c_transformWorldToView_FUN_0050cc40(int *input_coords
   iVar9 = *input_coords - g_RelativeX;
   iVar8 = input_coords[2] - g_RelativeZ;
   iVar7 = input_coords[1] - g_RelativeY;
-  lVar1 = (longlong)g_TransformMatrix.m[0][1];
-  lVar2 = (longlong)g_TransformMatrix.m[1][1];
-  lVar3 = (longlong)g_TransformMatrix.m[2][1];
-  lVar4 = (longlong)g_TransformMatrix.m[0][2];
-  lVar5 = (longlong)g_TransformMatrix.m[1][2];
-  lVar6 = (longlong)g_TransformMatrix.m[2][2];
-  *unaff_ESI = ((uint)((longlong)g_TransformMatrix.m[0][0] * (longlong)iVar9) >> 0x10 |
-               (int)((ulonglong)((longlong)g_TransformMatrix.m[0][0] * (longlong)iVar9) >> 0x20) <<
-               0x10) + ((uint)((longlong)g_TransformMatrix.m[1][0] * (longlong)iVar7) >> 0x10 |
-                       (int)((ulonglong)((longlong)g_TransformMatrix.m[1][0] * (longlong)iVar7) >>
+  lVar1 = (longlong)g_TransformMatrix.m[0].y;
+  lVar2 = (longlong)g_TransformMatrix.m[1].y;
+  lVar3 = (longlong)g_TransformMatrix.m[2].y;
+  lVar4 = (longlong)g_TransformMatrix.m[0].z;
+  lVar5 = (longlong)g_TransformMatrix.m[1].z;
+  lVar6 = (longlong)g_TransformMatrix.m[2].z;
+  *unaff_ESI = ((uint)((longlong)g_TransformMatrix.m[0].x * (longlong)iVar9) >> 0x10 |
+               (int)((ulonglong)((longlong)g_TransformMatrix.m[0].x * (longlong)iVar9) >> 0x20) <<
+               0x10) + ((uint)((longlong)g_TransformMatrix.m[1].x * (longlong)iVar7) >> 0x10 |
+                       (int)((ulonglong)((longlong)g_TransformMatrix.m[1].x * (longlong)iVar7) >>
                             0x20) << 0x10) +
-               ((uint)((longlong)g_TransformMatrix.m[2][0] * (longlong)iVar8) >> 0x10 |
-               (int)((ulonglong)((longlong)g_TransformMatrix.m[2][0] * (longlong)iVar8) >> 0x20) <<
+               ((uint)((longlong)g_TransformMatrix.m[2].x * (longlong)iVar8) >> 0x10 |
+               (int)((ulonglong)((longlong)g_TransformMatrix.m[2].x * (longlong)iVar8) >> 0x20) <<
                0x10);
   unaff_ESI[1] = ((uint)(lVar1 * iVar9) >> 0x10 | (int)((ulonglong)(lVar1 * iVar9) >> 0x20) << 0x10)
                  + ((uint)(lVar2 * iVar7) >> 0x10 |

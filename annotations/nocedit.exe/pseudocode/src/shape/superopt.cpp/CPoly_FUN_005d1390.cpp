@@ -11,15 +11,14 @@
 int __cdecl shape_superopt_cpp_CPoly_FUN_005d1390(CPoly *this_ptr)
 
 {
-  undefined4 *puVar1;
-  undefined4 *puVar2;
-  int *piVar3;
+  CVert *pCVar1;
+  CVert *pCVar2;
+  undefined4 *puVar3;
   undefined4 *puVar4;
-  undefined4 *puVar5;
-  void *pvVar6;
-  undefined4 uVar7;
-  int iVar8;
-  undefined4 *puVar9;
+  CVert *pCVar5;
+  undefined4 uVar6;
+  int iVar7;
+  undefined4 *puVar8;
   int *in_stack_00000008;
   double local_1d0;
   double local_1c8;
@@ -68,140 +67,140 @@ int __cdecl shape_superopt_cpp_CPoly_FUN_005d1390(CPoly *this_ptr)
   else {
     local_1b0 = (this_ptr->normal).z;
   }
-  pvVar6 = this_ptr->parent_obj->vertex_data;
-  puVar1 = (undefined4 *)((int)pvVar6 + this_ptr->vertex_idx_0 * 0x38);
-  puVar2 = (undefined4 *)((int)pvVar6 + this_ptr->vertex_idx_1 * 0x38);
-  piVar3 = (int *)((int)pvVar6 + this_ptr->vertex_idx_2 * 0x38);
-  iVar8 = *(int *)(*in_stack_00000008 + 4);
-  puVar4 = (undefined4 *)(iVar8 + in_stack_00000008[1] * 0x38);
-  puVar5 = (undefined4 *)(iVar8 + in_stack_00000008[2] * 0x38);
-  puVar9 = (undefined4 *)(iVar8 + in_stack_00000008[3] * 0x38);
+  pCVar5 = this_ptr->parent_obj->vertex_data;
+  pCVar1 = pCVar5 + this_ptr->vertex_idx_0;
+  pCVar2 = pCVar5 + this_ptr->vertex_idx_1;
+  pCVar5 = pCVar5 + this_ptr->vertex_idx_2;
+  iVar7 = *(int *)(*in_stack_00000008 + 4);
+  puVar3 = (undefined4 *)(iVar7 + in_stack_00000008[1] * 0x38);
+  puVar4 = (undefined4 *)(iVar7 + in_stack_00000008[2] * 0x38);
+  puVar8 = (undefined4 *)(iVar7 + in_stack_00000008[3] * 0x38);
   if ((local_1d0 < local_1c8) || (local_1d0 < local_1b0)) {
     if ((local_1c8 < local_1d0) || (local_1c8 < local_1b0)) {
-      local_180 = *puVar1;
-      uStack_17c = puVar1[1];
-      local_178 = puVar1[2];
-      uStack_174 = puVar1[3];
-      local_1a0 = *puVar2;
-      uStack_19c = puVar2[1];
-      local_198 = puVar2[2];
-      uStack_194 = puVar2[3];
-      local_190 = *piVar3;
-      local_18c = piVar3[1];
-      local_188 = piVar3[2];
-      local_184 = piVar3[3];
-      local_150 = *puVar4;
-      uStack_14c = puVar4[1];
-      local_148 = puVar4[2];
-      uStack_144 = puVar4[3];
-      local_170 = *puVar5;
-      uStack_16c = puVar5[1];
-      local_168 = puVar5[2];
-      uStack_164 = puVar5[3];
-      local_160 = *puVar9;
-      uStack_15c = puVar9[1];
-      local_158 = puVar9[2];
-      uVar7 = puVar9[3];
+      local_180 = *(undefined4 *)&(pCVar1->position).impl.x;
+      uStack_17c = *(undefined4 *)((int)&(pCVar1->position).impl.x + 4);
+      local_178 = *(undefined4 *)&(pCVar1->position).impl.y;
+      uStack_174 = *(undefined4 *)((int)&(pCVar1->position).impl.y + 4);
+      local_1a0 = *(undefined4 *)&(pCVar2->position).impl.x;
+      uStack_19c = *(undefined4 *)((int)&(pCVar2->position).impl.x + 4);
+      local_198 = *(undefined4 *)&(pCVar2->position).impl.y;
+      uStack_194 = *(undefined4 *)((int)&(pCVar2->position).impl.y + 4);
+      local_190 = *(int *)&(pCVar5->position).impl.x;
+      local_18c = *(int *)((int)&(pCVar5->position).impl.x + 4);
+      local_188 = *(int *)&(pCVar5->position).impl.y;
+      local_184 = *(int *)((int)&(pCVar5->position).impl.y + 4);
+      local_150 = *puVar3;
+      uStack_14c = puVar3[1];
+      local_148 = puVar3[2];
+      uStack_144 = puVar3[3];
+      local_170 = *puVar4;
+      uStack_16c = puVar4[1];
+      local_168 = puVar4[2];
+      uStack_164 = puVar4[3];
+      local_160 = *puVar8;
+      uStack_15c = puVar8[1];
+      local_158 = puVar8[2];
+      uVar6 = puVar8[3];
     }
     else {
-      local_180 = *puVar1;
-      uStack_17c = puVar1[1];
-      local_178 = puVar1[4];
-      uStack_174 = puVar1[5];
-      local_1a0 = *puVar2;
-      uStack_19c = puVar2[1];
-      local_198 = puVar2[4];
-      uStack_194 = puVar2[5];
-      local_190 = *piVar3;
-      local_18c = piVar3[1];
-      local_188 = piVar3[4];
-      local_184 = piVar3[5];
-      local_150 = *puVar4;
-      uStack_14c = puVar4[1];
-      local_148 = puVar4[4];
-      uStack_144 = puVar4[5];
-      local_170 = *puVar5;
-      uStack_16c = puVar5[1];
-      local_168 = puVar5[4];
-      uStack_164 = puVar5[5];
-      local_160 = *puVar9;
-      uStack_15c = puVar9[1];
-      local_158 = puVar9[4];
-      uVar7 = puVar9[5];
+      local_180 = *(undefined4 *)&(pCVar1->position).impl.x;
+      uStack_17c = *(undefined4 *)((int)&(pCVar1->position).impl.x + 4);
+      local_178 = *(undefined4 *)&(pCVar1->position).impl.z;
+      uStack_174 = *(undefined4 *)((int)&(pCVar1->position).impl.z + 4);
+      local_1a0 = *(undefined4 *)&(pCVar2->position).impl.x;
+      uStack_19c = *(undefined4 *)((int)&(pCVar2->position).impl.x + 4);
+      local_198 = *(undefined4 *)&(pCVar2->position).impl.z;
+      uStack_194 = *(undefined4 *)((int)&(pCVar2->position).impl.z + 4);
+      local_190 = *(int *)&(pCVar5->position).impl.x;
+      local_18c = *(int *)((int)&(pCVar5->position).impl.x + 4);
+      local_188 = *(int *)&(pCVar5->position).impl.z;
+      local_184 = *(int *)((int)&(pCVar5->position).impl.z + 4);
+      local_150 = *puVar3;
+      uStack_14c = puVar3[1];
+      local_148 = puVar3[4];
+      uStack_144 = puVar3[5];
+      local_170 = *puVar4;
+      uStack_16c = puVar4[1];
+      local_168 = puVar4[4];
+      uStack_164 = puVar4[5];
+      local_160 = *puVar8;
+      uStack_15c = puVar8[1];
+      local_158 = puVar8[4];
+      uVar6 = puVar8[5];
       local_140 = local_170;
     }
   }
   else {
-    local_180 = puVar1[2];
-    uStack_17c = puVar1[3];
-    local_178 = puVar1[4];
-    uStack_174 = puVar1[5];
-    local_1a0 = puVar2[2];
-    uStack_19c = puVar2[3];
-    local_198 = puVar2[4];
-    uStack_194 = puVar2[5];
-    local_190 = piVar3[2];
-    local_18c = piVar3[3];
-    local_188 = piVar3[4];
-    local_184 = piVar3[5];
-    local_150 = puVar4[2];
-    uStack_14c = puVar4[3];
-    local_148 = puVar4[4];
-    uStack_144 = puVar4[5];
-    local_170 = puVar5[2];
-    uStack_16c = puVar5[3];
-    local_168 = puVar5[4];
-    uStack_164 = puVar5[5];
-    local_160 = puVar9[2];
-    uStack_15c = puVar9[3];
-    local_158 = puVar9[4];
-    uVar7 = puVar9[5];
+    local_180 = *(undefined4 *)&(pCVar1->position).impl.y;
+    uStack_17c = *(undefined4 *)((int)&(pCVar1->position).impl.y + 4);
+    local_178 = *(undefined4 *)&(pCVar1->position).impl.z;
+    uStack_174 = *(undefined4 *)((int)&(pCVar1->position).impl.z + 4);
+    local_1a0 = *(undefined4 *)&(pCVar2->position).impl.y;
+    uStack_19c = *(undefined4 *)((int)&(pCVar2->position).impl.y + 4);
+    local_198 = *(undefined4 *)&(pCVar2->position).impl.z;
+    uStack_194 = *(undefined4 *)((int)&(pCVar2->position).impl.z + 4);
+    local_190 = *(int *)&(pCVar5->position).impl.y;
+    local_18c = *(int *)((int)&(pCVar5->position).impl.y + 4);
+    local_188 = *(int *)&(pCVar5->position).impl.z;
+    local_184 = *(int *)((int)&(pCVar5->position).impl.z + 4);
+    local_150 = puVar3[2];
+    uStack_14c = puVar3[3];
+    local_148 = puVar3[4];
+    uStack_144 = puVar3[5];
+    local_170 = puVar4[2];
+    uStack_16c = puVar4[3];
+    local_168 = puVar4[4];
+    uStack_164 = puVar4[5];
+    local_160 = puVar8[2];
+    uStack_15c = puVar8[3];
+    local_158 = puVar8[4];
+    uVar6 = puVar8[5];
   }
   if ((((((((double)CONCAT44(uStack_17c,local_180) == (double)CONCAT44(uStack_16c,local_170)) &&
           ((double)CONCAT44(uStack_174,local_178) == (double)CONCAT44(uStack_164,local_168))) ||
          (((double)CONCAT44(uStack_19c,local_1a0) == (double)CONCAT44(uStack_14c,local_150) &&
           ((double)CONCAT44(uStack_194,local_198) == (double)CONCAT44(uStack_144,local_148))))) ||
-        (iVar8 = shape_superopt_cpp_FUN_005d5bb0(), iVar8 == 0)) &&
+        (iVar7 = shape_superopt_cpp_FUN_005d5bb0(), iVar7 == 0)) &&
        ((((double)CONCAT44(local_178,uStack_17c) == (double)CONCAT44(local_158,uStack_15c) &&
-         ((double)CONCAT44(local_170,uStack_174) == (double)CONCAT44(local_150,uVar7))) ||
+         ((double)CONCAT44(local_170,uStack_174) == (double)CONCAT44(local_150,uVar6))) ||
         ((((double)CONCAT44(local_198,uStack_19c) == (double)CONCAT44(local_168,uStack_16c) &&
           ((double)CONCAT44(local_190,uStack_194) == (double)CONCAT44(local_160,uStack_164))) ||
-         (iVar8 = shape_superopt_cpp_FUN_005d5bb0(), iVar8 == 0)))))) &&
+         (iVar7 = shape_superopt_cpp_FUN_005d5bb0(), iVar7 == 0)))))) &&
       (((((((double)CONCAT44(local_178,uStack_17c) == (double)CONCAT44(local_148,uStack_14c) &&
            ((double)CONCAT44(local_170,uStack_174) == (double)CONCAT44(local_140,uStack_144))) ||
           (((double)CONCAT44(local_198,uStack_19c) == (double)CONCAT44(local_158,uStack_15c) &&
-           ((double)CONCAT44(local_190,uStack_194) == (double)CONCAT44(local_150,uVar7))))) ||
-         (iVar8 = shape_superopt_cpp_FUN_005d5bb0(), iVar8 == 0)) &&
+           ((double)CONCAT44(local_190,uStack_194) == (double)CONCAT44(local_150,uVar6))))) ||
+         (iVar7 = shape_superopt_cpp_FUN_005d5bb0(), iVar7 == 0)) &&
         (((((double)CONCAT44(local_198,uStack_19c) == (double)CONCAT44(local_158,uStack_15c) &&
-           ((double)CONCAT44(local_190,uStack_194) == (double)CONCAT44(local_150,uVar7))) ||
+           ((double)CONCAT44(local_190,uStack_194) == (double)CONCAT44(local_150,uVar6))) ||
           ((((double)CONCAT44(local_188,local_18c) == (double)CONCAT44(local_168,uStack_16c) &&
             ((double)CONCAT44(local_180,local_184) == (double)CONCAT44(local_160,uStack_164))) ||
-           (iVar8 = shape_superopt_cpp_FUN_005d5bb0(), iVar8 == 0)))) &&
+           (iVar7 = shape_superopt_cpp_FUN_005d5bb0(), iVar7 == 0)))) &&
          ((((((double)CONCAT44(local_198,uStack_19c) == (double)CONCAT44(local_148,uStack_14c) &&
              ((double)CONCAT44(local_190,uStack_194) == (double)CONCAT44(local_140,uStack_144))) ||
             (((double)CONCAT44(local_188,local_18c) == (double)CONCAT44(local_158,uStack_15c) &&
-             ((double)CONCAT44(local_180,local_184) == (double)CONCAT44(local_150,uVar7))))) ||
-           (iVar8 = shape_superopt_cpp_FUN_005d5bb0(), iVar8 == 0)) &&
+             ((double)CONCAT44(local_180,local_184) == (double)CONCAT44(local_150,uVar6))))) ||
+           (iVar7 = shape_superopt_cpp_FUN_005d5bb0(), iVar7 == 0)) &&
           ((((((double)CONCAT44(local_198,uStack_19c) == (double)CONCAT44(local_168,uStack_16c) &&
               ((double)CONCAT44(local_190,uStack_194) == (double)CONCAT44(local_160,uStack_164))) ||
              (((double)CONCAT44(local_188,local_18c) == (double)CONCAT44(local_148,uStack_14c) &&
               ((double)CONCAT44(local_180,local_184) == (double)CONCAT44(local_140,uStack_144)))))
-            || (iVar8 = shape_superopt_cpp_FUN_005d5bb0(), iVar8 == 0)) &&
+            || (iVar7 = shape_superopt_cpp_FUN_005d5bb0(), iVar7 == 0)) &&
            (((((double)CONCAT44(local_188,local_18c) == (double)CONCAT44(local_148,uStack_14c) &&
               ((double)CONCAT44(local_180,local_184) == (double)CONCAT44(local_140,uStack_144))) ||
              (((double)CONCAT44(local_178,uStack_17c) == (double)CONCAT44(local_158,uStack_15c) &&
-              ((double)CONCAT44(local_170,uStack_174) == (double)CONCAT44(local_150,uVar7))))) ||
-            (iVar8 = shape_superopt_cpp_FUN_005d5bb0(), iVar8 == 0)))))))))) &&
+              ((double)CONCAT44(local_170,uStack_174) == (double)CONCAT44(local_150,uVar6))))) ||
+            (iVar7 = shape_superopt_cpp_FUN_005d5bb0(), iVar7 == 0)))))))))) &&
        ((((double)CONCAT44(local_188,local_18c) == (double)CONCAT44(local_168,uStack_16c) &&
          ((double)CONCAT44(local_180,local_184) == (double)CONCAT44(local_160,uStack_164))) ||
         ((((double)CONCAT44(local_178,uStack_17c) == (double)CONCAT44(local_148,uStack_14c) &&
           ((double)CONCAT44(local_170,uStack_174) == (double)CONCAT44(local_140,uStack_144))) ||
-         (iVar8 = shape_superopt_cpp_FUN_005d5bb0(), iVar8 == 0)))))))) &&
+         (iVar7 = shape_superopt_cpp_FUN_005d5bb0(), iVar7 == 0)))))))) &&
      (((((double)CONCAT44(local_188,local_18c) == (double)CONCAT44(local_158,uStack_15c) &&
-        ((double)CONCAT44(local_180,local_184) == (double)CONCAT44(local_150,uVar7))) ||
+        ((double)CONCAT44(local_180,local_184) == (double)CONCAT44(local_150,uVar6))) ||
        (((double)CONCAT44(local_178,uStack_17c) == (double)CONCAT44(local_168,uStack_16c) &&
         ((double)CONCAT44(local_170,uStack_174) == (double)CONCAT44(local_160,uStack_164))))) ||
-      (iVar8 = shape_superopt_cpp_FUN_005d5bb0(), iVar8 == 0)))) {
+      (iVar7 = shape_superopt_cpp_FUN_005d5bb0(), iVar7 == 0)))) {
     return 0;
   }
   return 1;

@@ -79,34 +79,31 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundi
       local_14 = *(int *)((int)&(pSVar1->projected_vertex).transformed_z + iVar5);
       local_1c = iVar2;
       *(uint *)((int)local_94 + iVar6) =
-           ((uint)((longlong)g_InverseMatrix.m[2][0] * (longlong)local_14) >> 0x10 |
-           (int)((ulonglong)((longlong)g_InverseMatrix.m[2][0] * (longlong)local_14) >> 0x20) <<
-           0x10) + ((uint)((longlong)g_InverseMatrix.m[0][0] * (longlong)iVar2) >> 0x10 |
-                   (int)((ulonglong)((longlong)g_InverseMatrix.m[0][0] * (longlong)iVar2) >> 0x20)
-                   << 0x10) +
-                   ((uint)((longlong)g_InverseMatrix.m[1][0] * (longlong)local_18) >> 0x10 |
-                   (int)((ulonglong)((longlong)g_InverseMatrix.m[1][0] * (longlong)local_18) >> 0x20
-                        ) << 0x10) + g_CameraOriginX;
+           ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)local_14) >> 0x10 |
+           (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)local_14) >> 0x20) << 0x10
+           ) + ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar2) >> 0x10 |
+               (int)((ulonglong)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar2) >> 0x20) <<
+               0x10) + ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)local_18) >> 0x10 |
+                       (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)local_18) >>
+                            0x20) << 0x10) + g_CameraOriginX;
       iVar3 = local_1c;
       *(uint *)((int)local_94 + iVar6 + 4) =
-           ((uint)((longlong)g_InverseMatrix.m[2][1] * (longlong)local_14) >> 0x10 |
-           (int)((ulonglong)((longlong)g_InverseMatrix.m[2][1] * (longlong)local_14) >> 0x20) <<
-           0x10) + ((uint)((longlong)g_InverseMatrix.m[0][1] * (longlong)iVar2) >> 0x10 |
-                   (int)((ulonglong)((longlong)g_InverseMatrix.m[0][1] * (longlong)iVar2) >> 0x20)
-                   << 0x10) +
-                   ((uint)((longlong)g_InverseMatrix.m[1][1] * (longlong)local_18) >> 0x10 |
-                   (int)((ulonglong)((longlong)g_InverseMatrix.m[1][1] * (longlong)local_18) >> 0x20
-                        ) << 0x10) + g_CameraOriginY;
+           ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)local_14) >> 0x10 |
+           (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)local_14) >> 0x20) << 0x10
+           ) + ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar2) >> 0x10 |
+               (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar2) >> 0x20) <<
+               0x10) + ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)local_18) >> 0x10 |
+                       (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)local_18) >>
+                            0x20) << 0x10) + g_CameraOriginY;
       iVar5 = iVar5 + 0x30;
       *(uint *)((int)local_94 + iVar6 + 8) =
-           ((uint)((longlong)g_InverseMatrix.m[2][2] * (longlong)local_14) >> 0x10 |
-           (int)((ulonglong)((longlong)g_InverseMatrix.m[2][2] * (longlong)local_14) >> 0x20) <<
-           0x10) + ((uint)((longlong)g_InverseMatrix.m[0][2] * (longlong)iVar3) >> 0x10 |
-                   (int)((ulonglong)((longlong)g_InverseMatrix.m[0][2] * (longlong)iVar3) >> 0x20)
-                   << 0x10) +
-                   ((uint)((longlong)g_InverseMatrix.m[1][2] * (longlong)local_18) >> 0x10 |
-                   (int)((ulonglong)((longlong)g_InverseMatrix.m[1][2] * (longlong)local_18) >> 0x20
-                        ) << 0x10) + g_CameraOriginZ;
+           ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)local_14) >> 0x10 |
+           (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)local_14) >> 0x20) << 0x10
+           ) + ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar3) >> 0x10 |
+               (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar3) >> 0x20) <<
+               0x10) + ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)local_18) >> 0x10 |
+                       (int)((ulonglong)((longlong)g_InverseMatrix.m[1].z * (longlong)local_18) >>
+                            0x20) << 0x10) + g_CameraOriginZ;
       iVar6 = iVar6 + 0xc;
     } while (iVar5 != 0x180);
     iVar6 = (*(code *)((g_CurrentSceneCamera->base).vtable)->isVisible)();

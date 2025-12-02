@@ -18,7 +18,7 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7690(COptimize *this_ptr)
   uint uVar2;
   
   uVar2 = 0;
-  if (this_ptr->field2_0x38 != 0) {
+  if (this_ptr->field5_0x38 != 0) {
     do {
       iVar1 = shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0();
       if (iVar1 == 0) {
@@ -26,7 +26,7 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7690(COptimize *this_ptr)
         return 0;
       }
       uVar2 = uVar2 + 1;
-    } while (uVar2 < (uint)this_ptr->field2_0x38);
+    } while (uVar2 < (uint)this_ptr->field5_0x38);
   }
   return 1;
 }

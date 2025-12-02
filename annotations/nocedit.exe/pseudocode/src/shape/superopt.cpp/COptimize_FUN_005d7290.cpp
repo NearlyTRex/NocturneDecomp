@@ -25,25 +25,25 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7290(COptimize *this_ptr)
 {
   int iVar1;
   
-  iVar1 = shape_superopt_cpp_CObj_FUN_005d4160(&this_ptr->base);
+  iVar1 = shape_superopt_cpp_CObj_FUN_005d4160(&this_ptr->obj);
   if (iVar1 == 0) {
     shape_superopt_cpp_logToFile_FUN_005c7910("Unable to optimize vertices with given threshold");
     return 0;
   }
-  iVar1 = shape_superopt_cpp_CObj_FUN_005d46f0(&this_ptr->base);
+  iVar1 = shape_superopt_cpp_CObj_FUN_005d46f0(&this_ptr->obj);
   if (iVar1 == 0) {
     shape_superopt_cpp_logToFile_FUN_005c7910("Unable to remove invalid polygons from scene");
     return 0;
   }
-  iVar1 = shape_superopt_cpp_CObj_FUN_005d47b0(&this_ptr->base);
+  iVar1 = shape_superopt_cpp_CObj_FUN_005d47b0(&this_ptr->obj);
   if (iVar1 == 0) {
     shape_superopt_cpp_logToFile_FUN_005c7910("Unable to remove T-Juntions from scene");
     return 0;
   }
-  shape_superopt_cpp_CObj_FUN_005d35e0(&this_ptr->base);
-  iVar1 = (**(code **)((int)this_ptr->vtable + 0x2c))();
+  shape_superopt_cpp_CObj_FUN_005d35e0(&this_ptr->obj);
+  iVar1 = (*(code *)this_ptr->vtable->field11_0x2c)();
   if (iVar1 != 0) {
-    iVar1 = (**(code **)((int)this_ptr->vtable + 0x34))();
+    iVar1 = (*(code *)this_ptr->vtable->field13_0x34)();
     if (iVar1 != 0) {
       return 1;
     }

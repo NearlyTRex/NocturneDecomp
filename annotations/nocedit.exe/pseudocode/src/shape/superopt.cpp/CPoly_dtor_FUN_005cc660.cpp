@@ -4,12 +4,12 @@
 // Convention: __cdecl
 // Signature: CPoly * shape_superopt.cpp_CPoly_dtor_FUN_005cc660(CPoly * this_ptr)
 // Cross-references:
-//   shape_superopt.cpp_CObj_FUN_005d2320 (005d2320) at 005d23fc [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_CObj_FUN_005d2410 (005d2410) at 005d24ed [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_CObj_FUN_005d47b0 (005d47b0) at 005d54c0 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410 (005d2410) at 005d24ed [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320 (005d2320) at 005d23fc [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_TriListSomething_FUN_005d77a0 (005d77a0) at 005d7bc5 [UNCONDITIONAL_CALL]
 // Globals:
-//   void* g_CPolyVTable = 005cc670
+//   CPoly_vtable g_CPolyVTable
 
 #include "nocturne.h"
 

@@ -41,16 +41,16 @@ core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0(CDemonCamera 
   int iStack_14;
   
   bVar2 = 0;
-  (this_ptr->source_matrix).m[0][0] = g_TransformMatrix.m[0][0];
-  (this_ptr->source_matrix).m[0][1] = g_TransformMatrix.m[0][1];
-  (this_ptr->source_matrix).m[0][2] = g_TransformMatrix.m[0][2];
-  (this_ptr->source_matrix).m[1][0] = g_TransformMatrix.m[1][0];
-  (this_ptr->source_matrix).m[1][1] = g_TransformMatrix.m[1][1];
-  (this_ptr->source_matrix).m[1][2] = g_TransformMatrix.m[1][2];
-  (this_ptr->source_matrix).m[2][0] = g_TransformMatrix.m[2][0];
+  (this_ptr->source_matrix).m[0].x = g_TransformMatrix.m[0].x;
+  (this_ptr->source_matrix).m[0].y = g_TransformMatrix.m[0].y;
+  (this_ptr->source_matrix).m[0].z = g_TransformMatrix.m[0].z;
+  (this_ptr->source_matrix).m[1].x = g_TransformMatrix.m[1].x;
+  (this_ptr->source_matrix).m[1].y = g_TransformMatrix.m[1].y;
+  (this_ptr->source_matrix).m[1].z = g_TransformMatrix.m[1].z;
+  (this_ptr->source_matrix).m[2].x = g_TransformMatrix.m[2].x;
   this_ptr_00 = g_CDemonRendererPtr;
-  (this_ptr->source_matrix).m[2][1] = g_TransformMatrix.m[2][1];
-  (this_ptr->source_matrix).m[2][2] = g_TransformMatrix.m[2][2];
+  (this_ptr->source_matrix).m[2].y = g_TransformMatrix.m[2].y;
+  (this_ptr->source_matrix).m[2].z = g_TransformMatrix.m[2].z;
   engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
             (this_ptr_00,in_stack_ffffffe8);
   puVar1 = (undefined4 *)((int)this_ptr + (uint)bVar2 * -8 + 0x170);

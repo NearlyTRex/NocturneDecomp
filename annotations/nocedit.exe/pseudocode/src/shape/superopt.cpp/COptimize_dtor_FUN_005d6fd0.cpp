@@ -6,7 +6,7 @@
 // Cross-references:
 //   shape_superopt.cpp_TriListSomething_FUN_005d77a0 (005d77a0) at 005d7d36 [UNCONDITIONAL_CALL]
 // Globals:
-//   void* g_COptimizeVTable = 005d7000
+//   COptimize_vtable g_COptimizeVTable
 // Function calls:
 //   shape_superopt.cpp_CObj_dtor_FUN_005d2260
 //   shape_superopt.cpp_COptimize_FUN_005d7000
@@ -20,7 +20,7 @@ COptimize * __cdecl shape_superopt_cpp_COptimize_dtor_FUN_005d6fd0(COptimize *th
   
   this_ptr->vtable = &g_COptimizeVTable;
   shape_superopt_cpp_COptimize_FUN_005d7000(this_ptr);
-  pCVar1 = (COptimize *)shape_superopt_cpp_CObj_dtor_FUN_005d2260(&this_ptr->base);
+  pCVar1 = (COptimize *)shape_superopt_cpp_CObj_dtor_FUN_005d2260(&this_ptr->obj);
   return pCVar1;
 }
 

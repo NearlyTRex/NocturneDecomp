@@ -9,39 +9,32 @@
 void __cdecl shape_superopt_cpp_CPoly_FUN_005cd410(CPoly *this_ptr)
 
 {
-  uint *puVar1;
-  int iVar2;
-  void *pvVar3;
+  int iVar1;
+  CVert *pCVar2;
   uint in_stack_00000008;
   uint in_stack_0000000c;
   
-  iVar2 = this_ptr->vertex_idx_0;
-  pvVar3 = this_ptr->parent_obj->vertex_data;
-  if ((*(uint *)((int)pvVar3 + iVar2 * 0x38 + 0x30) & in_stack_0000000c) == in_stack_0000000c) {
-    puVar1 = (uint *)((int)pvVar3 + iVar2 * 0x38 + 0x34);
-    *puVar1 = *puVar1 | in_stack_00000008;
+  iVar1 = this_ptr->vertex_idx_0;
+  pCVar2 = this_ptr->parent_obj->vertex_data;
+  if ((pCVar2[iVar1].flags2 & in_stack_0000000c) == in_stack_0000000c) {
+    pCVar2[iVar1].flags = pCVar2[iVar1].flags | in_stack_00000008;
   }
   else {
-    *(uint *)((int)pvVar3 + iVar2 * 0x38 + 0x34) =
-         *(uint *)((int)pvVar3 + iVar2 * 0x38 + 0x34) & ~in_stack_00000008;
+    pCVar2[iVar1].flags = pCVar2[iVar1].flags & ~in_stack_00000008;
   }
-  iVar2 = this_ptr->vertex_idx_1;
-  if ((*(uint *)((int)pvVar3 + iVar2 * 0x38 + 0x30) & in_stack_0000000c) == in_stack_0000000c) {
-    puVar1 = (uint *)((int)pvVar3 + iVar2 * 0x38 + 0x34);
-    *puVar1 = *puVar1 | in_stack_00000008;
+  iVar1 = this_ptr->vertex_idx_1;
+  if ((pCVar2[iVar1].flags2 & in_stack_0000000c) == in_stack_0000000c) {
+    pCVar2[iVar1].flags = pCVar2[iVar1].flags | in_stack_00000008;
   }
   else {
-    *(uint *)((int)pvVar3 + iVar2 * 0x38 + 0x34) =
-         *(uint *)((int)pvVar3 + iVar2 * 0x38 + 0x34) & ~in_stack_00000008;
+    pCVar2[iVar1].flags = pCVar2[iVar1].flags & ~in_stack_00000008;
   }
-  iVar2 = this_ptr->vertex_idx_2;
-  if ((*(uint *)((int)pvVar3 + iVar2 * 0x38 + 0x30) & in_stack_0000000c) == in_stack_0000000c) {
-    puVar1 = (uint *)((int)pvVar3 + iVar2 * 0x38 + 0x34);
-    *puVar1 = *puVar1 | in_stack_00000008;
+  iVar1 = this_ptr->vertex_idx_2;
+  if ((pCVar2[iVar1].flags2 & in_stack_0000000c) == in_stack_0000000c) {
+    pCVar2[iVar1].flags = pCVar2[iVar1].flags | in_stack_00000008;
     return;
   }
-  puVar1 = (uint *)((int)pvVar3 + iVar2 * 0x38 + 0x34);
-  *puVar1 = *puVar1 & ~in_stack_00000008;
+  pCVar2[iVar1].flags = pCVar2[iVar1].flags & ~in_stack_00000008;
   return;
 }
 

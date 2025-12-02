@@ -26,8 +26,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void * __cdecl
 core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10
           (CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect)
@@ -153,7 +151,7 @@ core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10
     local_38 = (int)pCStack_6c * 0x500;
     local_44 = g_PrecomputedWorldPositions + (int)pCStack_6c * 0x140;
     local_48 = g_PrecomputedSurfaceNormals + (int)pCStack_6c * 0x140;
-    local_3c = (int)((light_source->base).base.rotation_matrix.m + -2) + 8 + (int)pCStack_6c * 4;
+    local_3c = (int)(light_source->base).base.rotation_matrix.m + (int)pCStack_6c * 4 + -0x10;
     do {
       local_24 = (CVector3i *)((int)&local_44->x + local_54.z);
       local_28 = 999;
@@ -172,10 +170,10 @@ core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10
                (iVar9 = (int)local_20 * this_ptr->scale_factor,
                iVar1 = this_ptr->framebuffer_height + -2, iVar9 - iVar1 != 0 && iVar1 <= iVar9))))
              || ((local_30 == 0 &&
-                 ((float)local_1c->z * (float)(light_source->base).base.rotation_matrix.m[2][2] +
-                  (float)local_1c->x * (float)(light_source->base).base.rotation_matrix.m[0][2] +
-                  (float)local_1c->y * (float)(light_source->base).base.rotation_matrix.m[1][2] <
-                  0.0)))) {
+                 ((float)local_1c->z * (float)(light_source->base).base.rotation_matrix.m[2].z +
+                  (float)local_1c->x * (float)(light_source->base).base.rotation_matrix.m[0].z +
+                  (float)local_1c->y * (float)(light_source->base).base.rotation_matrix.m[1].z < 0.0
+                 )))) {
 LAB_0044e06f:
             *puStack_14 = 0;
             *piVar7 = 0;

@@ -51,20 +51,20 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d4160(CObj *this_ptr)
   uint uStack_18;
   
   bVar9 = 0;
-  (**(code **)((int)this_ptr->vtable + 0x84))();
+  (*(code *)this_ptr->vtable->field33_0x84)();
   iStack_20 = 0;
   pvStack_28 = (void *)0x0;
-  if (1000 < (uint)this_ptr->field0_0x0) {
+  if (1000 < (uint)this_ptr->vertex_count) {
     pvStack_28 = shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(4);
   }
   uStack_18 = 0;
-  if (this_ptr->field0_0x0 != 0) {
+  if (this_ptr->vertex_count != 0) {
     iStack_24 = 0;
     do {
       if ((pvStack_28 != (void *)0x0) && ((char)uStack_18 == '\0')) {
         crt_stdio_c_sprintf_FUN_005fdbd0(acStack_100,"Welding vertices (%d removed so far)",iStack_20);
       }
-      pdVar4 = (double *)(iStack_24 + (int)this_ptr->vertex_data);
+      pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).impl.x + iStack_24);
       pdStack_1c = pdVar4;
       if ((*(byte *)((int)pdVar4 + 0x35) & 0x80) == 0) {
         dVar2 = (double)CONCAT44(in_stack_0000000c,in_stack_00000008);
@@ -90,17 +90,17 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d4160(CObj *this_ptr)
         }
         *(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;
         uVar5 = uStack_18 + 1;
-        if (uVar5 < (uint)this_ptr->field0_0x0) {
+        if (uVar5 < (uint)this_ptr->vertex_count) {
           iStack_2c = uVar5 * 0x38;
           do {
-            pdVar4 = (double *)((int)this_ptr->vertex_data + iStack_2c);
+            pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).impl.x + iStack_2c);
             if ((*(byte *)((int)pdVar4 + 0x35) & 0x80) == 0) {
               if (((in_stack_0000000c & 0x7fffffff) == 0) && (in_stack_00000008 == 0)) {
                 if (((*pdStack_1c == *pdVar4) && (pdStack_1c[1] == pdVar4[1])) &&
                    (pdStack_1c[2] == pdVar4[2])) {
 LAB_005d43a8:
                   uVar6 = 0;
-                  if (this_ptr->count != 0) {
+                  if (this_ptr->poly_count != 0) {
                     iVar3 = 0;
                     do {
                       pCVar1 = this_ptr->poly_array;
@@ -115,7 +115,7 @@ LAB_005d43a8:
                       }
                       uVar6 = uVar6 + 1;
                       iVar3 = iVar3 + 0x68;
-                    } while (uVar6 < (uint)this_ptr->count);
+                    } while (uVar6 < (uint)this_ptr->poly_count);
                   }
                   iStack_20 = iStack_20 + 1;
                   *(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;
@@ -132,16 +132,16 @@ LAB_005d43a8:
             }
             iStack_2c = iStack_2c + 0x38;
             uVar5 = uVar5 + 1;
-          } while (uVar5 < (uint)this_ptr->field0_0x0);
+          } while (uVar5 < (uint)this_ptr->vertex_count);
         }
       }
       uStack_18 = uStack_18 + 1;
       iStack_24 = iStack_24 + 0x38;
-    } while (uStack_18 < (uint)this_ptr->field0_0x0);
+    } while (uStack_18 < (uint)this_ptr->vertex_count);
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(pvStack_28);
   if (in_stack_00000010 != 0) {
-    iVar3 = (**(code **)((int)this_ptr->vtable + 0xcc))();
+    iVar3 = (*(code *)this_ptr->vtable->field51_0xcc)();
     return iVar3;
   }
   return 1;

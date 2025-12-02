@@ -41,15 +41,15 @@ core_dcamera_cpp_CDemonCamera_calculateInverseTransform_FUN_0044cf20(CDemonCamer
   float10 fVar21;
   double dVar22;
   
-  fVar2 = (float)(this_ptr->source_matrix).m[0][0] * (float)g_FixedPointToFloat;
-  fVar10 = (float)(this_ptr->source_matrix).m[0][1] * (float)g_FixedPointToFloat;
-  fVar12 = (float)(this_ptr->source_matrix).m[0][2] * (float)g_FixedPointToFloat;
-  fVar8 = (float)(this_ptr->source_matrix).m[1][0] * (float)g_FixedPointToFloat;
-  fVar3 = (float)(this_ptr->source_matrix).m[1][1] * (float)g_FixedPointToFloat;
-  fVar4 = (float)(this_ptr->source_matrix).m[1][2] * (float)g_FixedPointToFloat;
-  fVar11 = (float)(this_ptr->source_matrix).m[2][0] * (float)g_FixedPointToFloat;
-  fVar6 = (float)(this_ptr->source_matrix).m[2][1] * (float)g_FixedPointToFloat;
-  fVar7 = (float)(this_ptr->source_matrix).m[2][2] * (float)g_FixedPointToFloat;
+  fVar2 = (float)(this_ptr->source_matrix).m[0].x * (float)g_FixedPointToFloat;
+  fVar10 = (float)(this_ptr->source_matrix).m[0].y * (float)g_FixedPointToFloat;
+  fVar12 = (float)(this_ptr->source_matrix).m[0].z * (float)g_FixedPointToFloat;
+  fVar8 = (float)(this_ptr->source_matrix).m[1].x * (float)g_FixedPointToFloat;
+  fVar3 = (float)(this_ptr->source_matrix).m[1].y * (float)g_FixedPointToFloat;
+  fVar4 = (float)(this_ptr->source_matrix).m[1].z * (float)g_FixedPointToFloat;
+  fVar11 = (float)(this_ptr->source_matrix).m[2].x * (float)g_FixedPointToFloat;
+  fVar6 = (float)(this_ptr->source_matrix).m[2].y * (float)g_FixedPointToFloat;
+  fVar7 = (float)(this_ptr->source_matrix).m[2].z * (float)g_FixedPointToFloat;
   fVar5 = fVar3 * fVar7 - fVar4 * fVar6;
   fVar9 = fVar8 * fVar7 - fVar4 * fVar11;
   fVar1 = fVar8 * fVar6 - fVar3 * fVar11;

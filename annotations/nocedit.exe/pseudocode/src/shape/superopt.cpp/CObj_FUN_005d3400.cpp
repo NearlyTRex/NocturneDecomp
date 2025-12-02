@@ -12,7 +12,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d3400(CObj *this_ptr)
   CPoly *in_stack_00000008;
   
   if ((this_ptr->poly_array <= in_stack_00000008) &&
-     (in_stack_00000008 < this_ptr->poly_array + this_ptr->count)) {
+     (in_stack_00000008 < this_ptr->poly_array + this_ptr->poly_count)) {
     return 1;
   }
   return 0;

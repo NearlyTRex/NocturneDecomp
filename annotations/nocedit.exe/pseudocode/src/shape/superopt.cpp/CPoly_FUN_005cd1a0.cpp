@@ -10,24 +10,24 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cd1a0(CPoly *this_ptr)
 
 {
   int iVar1;
-  void *pvVar2;
+  CVert *pCVar2;
   uint uVar3;
   uint in_stack_00000008;
   
   iVar1 = this_ptr->vertex_idx_0;
-  pvVar2 = this_ptr->parent_obj->vertex_data;
+  pCVar2 = this_ptr->parent_obj->vertex_data;
   uVar3 = ~in_stack_00000008;
-  *(uint *)((int)pvVar2 + iVar1 * 0x38 + 0x30) =
-       ~(*(uint *)((int)pvVar2 + iVar1 * 0x38 + 0x30) & in_stack_00000008) & in_stack_00000008 |
-       *(uint *)((int)pvVar2 + iVar1 * 0x38 + 0x30) & uVar3;
+  pCVar2[iVar1].flags2 =
+       ~(pCVar2[iVar1].flags2 & in_stack_00000008) & in_stack_00000008 |
+       pCVar2[iVar1].flags2 & uVar3;
   iVar1 = this_ptr->vertex_idx_1;
-  *(uint *)((int)pvVar2 + iVar1 * 0x38 + 0x30) =
-       ~(*(uint *)((int)pvVar2 + iVar1 * 0x38 + 0x30) & in_stack_00000008) & in_stack_00000008 |
-       *(uint *)((int)pvVar2 + iVar1 * 0x38 + 0x30) & uVar3;
+  pCVar2[iVar1].flags2 =
+       ~(pCVar2[iVar1].flags2 & in_stack_00000008) & in_stack_00000008 |
+       pCVar2[iVar1].flags2 & uVar3;
   iVar1 = this_ptr->vertex_idx_2;
-  *(uint *)((int)pvVar2 + iVar1 * 0x38 + 0x30) =
-       ~(*(uint *)((int)pvVar2 + iVar1 * 0x38 + 0x30) & in_stack_00000008) & in_stack_00000008 |
-       uVar3 & *(uint *)((int)pvVar2 + iVar1 * 0x38 + 0x30);
+  pCVar2[iVar1].flags2 =
+       ~(pCVar2[iVar1].flags2 & in_stack_00000008) & in_stack_00000008 |
+       uVar3 & pCVar2[iVar1].flags2;
   return;
 }
 

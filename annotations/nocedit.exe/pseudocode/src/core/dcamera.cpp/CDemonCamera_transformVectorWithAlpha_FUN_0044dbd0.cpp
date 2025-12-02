@@ -41,17 +41,17 @@ core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0
   uint local_10;
   
   bVar5 = 0;
-  lVar1 = (longlong)input_vector->y * (longlong)g_TransformMatrix.m[1][0] +
-          (longlong)input_vector->x * (longlong)g_TransformMatrix.m[0][0] +
-          (longlong)input_vector->z * (longlong)g_TransformMatrix.m[2][0];
+  lVar1 = (longlong)input_vector->y * (longlong)g_TransformMatrix.m[1].x +
+          (longlong)input_vector->x * (longlong)g_TransformMatrix.m[0].x +
+          (longlong)input_vector->z * (longlong)g_TransformMatrix.m[2].x;
   local_24 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)input_vector->y * (longlong)g_TransformMatrix.m[1][1] +
-          (longlong)input_vector->x * (longlong)g_TransformMatrix.m[0][1] +
-          (longlong)input_vector->z * (longlong)g_TransformMatrix.m[2][1];
+  lVar1 = (longlong)input_vector->y * (longlong)g_TransformMatrix.m[1].y +
+          (longlong)input_vector->x * (longlong)g_TransformMatrix.m[0].y +
+          (longlong)input_vector->z * (longlong)g_TransformMatrix.m[2].y;
   local_20 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)input_vector->y * (longlong)g_TransformMatrix.m[1][2] +
-          (longlong)input_vector->x * (longlong)g_TransformMatrix.m[0][2] +
-          (longlong)input_vector->z * (longlong)g_TransformMatrix.m[2][2];
+  lVar1 = (longlong)input_vector->y * (longlong)g_TransformMatrix.m[1].z +
+          (longlong)input_vector->x * (longlong)g_TransformMatrix.m[0].z +
+          (longlong)input_vector->z * (longlong)g_TransformMatrix.m[2].z;
   local_1c = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr);
   if (iVar4 == 0) {

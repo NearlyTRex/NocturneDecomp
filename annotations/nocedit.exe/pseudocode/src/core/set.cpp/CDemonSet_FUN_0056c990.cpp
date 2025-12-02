@@ -111,7 +111,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
   local_38.m[2].x = local_38.m[0].x + (float)DOUBLE_00645dbb;
   g_CDemonLightInstance.field17_0x1cbc = 0;
   local_38.m[2].y = local_38.m[0].y + (this_ptr_00->base_character).base_actor.orient.bank;
-  if ((int *)&stack0x00000000 != g_CDemonLightInstance.base.base.rotation_matrix.m[2] + 2) {
+  if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[2].z) {
     g_CDemonLightInstance.base.base.position.x = (int)local_38.m[1].x;
     g_CDemonLightInstance.base.base.position.y = (int)local_38.m[1].y;
     g_CDemonLightInstance.base.base.position.z = (int)local_38.m[1].z;
@@ -123,7 +123,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(local_14,1.0);
   this_ptr_01 = local_14;
   iVar3 = g_UseExternalRenderer;
-  if ((int *)&stack0x00000000 != g_CDemonCameraInstance.base.rotation_matrix.m[2] + 2) {
+  if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.base.rotation_matrix.m[2].z) {
     g_CDemonCameraInstance.base.position.x = (int)local_38.m[1].x;
     g_CDemonCameraInstance.base.position.y = (int)local_38.m[1].y;
     g_CDemonCameraInstance.base.position.z = (int)local_38.m[1].z;

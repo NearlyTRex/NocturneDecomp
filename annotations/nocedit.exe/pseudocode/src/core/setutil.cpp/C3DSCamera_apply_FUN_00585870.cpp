@@ -53,7 +53,7 @@ core_setutil_cpp_C3DSCamera_apply_FUN_00585870(C3DSCamera *this_ptr,CDemonCamera
   pCVar4 = &this_ptr->rotation_matrix;
   pCVar6 = &(camera->base).rotation_matrix;
   for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pCVar6->m[0][0] = (int)pCVar4->m[0].x;
+    pCVar6->m[0].x = (int)pCVar4->m[0].x;
     pCVar4 = (CMatrix3x3f *)((int)pCVar4 + (uint)bVar8 * -8 + 4);
     pCVar6 = (CMatrix3x3i *)((int)pCVar6 + (uint)bVar8 * -8 + 4);
   }

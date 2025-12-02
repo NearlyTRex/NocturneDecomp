@@ -13,7 +13,7 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cc7c0(CPoly *this_ptr)
   double dVar2;
   double dVar3;
   int iVar4;
-  double *pdVar5;
+  CVert *pCVar5;
   BADSPACEBASE *in_ESP;
   double *pdVar6;
   double *pdVar7;
@@ -92,7 +92,7 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cc7c0(CPoly *this_ptr)
   double local_30;
   double local_28;
   double local_20;
-  void *local_18;
+  CVert *local_18;
   
   local_18 = this_ptr->parent_obj->vertex_data;
   local_c0 = *(undefined4 *)in_stack_00000008;
@@ -101,10 +101,10 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cc7c0(CPoly *this_ptr)
   uStack_b4 = *(undefined4 *)((int)in_stack_00000008 + 0xc);
   local_b0 = *(undefined4 *)(in_stack_00000008 + 2);
   uStack_ac = *(undefined4 *)((int)in_stack_00000008 + 0x14);
-  pdVar5 = (double *)((int)local_18 + this_ptr->vertex_idx_0 * 0x38);
-  local_108 = *pdVar5 - *in_stack_0000000c;
-  local_100 = pdVar5[1] - in_stack_0000000c[1];
-  local_f8 = pdVar5[2] - in_stack_0000000c[2];
+  pCVar5 = local_18 + this_ptr->vertex_idx_0;
+  local_108 = (pCVar5->position).impl.x - *in_stack_0000000c;
+  local_100 = (pCVar5->position).impl.y - in_stack_0000000c[1];
+  local_f8 = (pCVar5->position).impl.z - in_stack_0000000c[2];
   pdVar6 = &local_108;
   pdVar7 = &local_210;
   for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -132,12 +132,12 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cc7c0(CPoly *this_ptr)
     pdVar6 = (double *)((int)pdVar6 + 4);
     puVar8 = puVar8 + 1;
   }
-  *(undefined4 *)pdVar5 = local_90[0];
-  *(undefined4 *)((int)pdVar5 + 4) = local_90[1];
-  *(undefined4 *)(pdVar5 + 1) = local_90[2];
-  *(undefined4 *)((int)pdVar5 + 0xc) = local_90[3];
-  *(undefined4 *)(pdVar5 + 2) = local_80;
-  *(undefined4 *)((int)pdVar5 + 0x14) = local_7c;
+  *(undefined4 *)&(pCVar5->position).impl.x = local_90[0];
+  *(undefined4 *)((int)&(pCVar5->position).impl.x + 4) = local_90[1];
+  *(undefined4 *)&(pCVar5->position).impl.y = local_90[2];
+  *(undefined4 *)((int)&(pCVar5->position).impl.y + 4) = local_90[3];
+  *(undefined4 *)&(pCVar5->position).impl.z = local_80;
+  *(undefined4 *)((int)&(pCVar5->position).impl.z + 4) = local_7c;
   local_180 = *(undefined4 *)in_stack_00000008;
   dVar1 = *in_stack_00000008;
   uStack_17c = *(undefined4 *)((int)in_stack_00000008 + 4);
@@ -147,10 +147,10 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cc7c0(CPoly *this_ptr)
   local_170 = *(undefined4 *)(in_stack_00000008 + 2);
   dVar3 = in_stack_00000008[2];
   uStack_16c = *(undefined4 *)((int)in_stack_00000008 + 0x14);
-  pdVar5 = (double *)((int)local_18 + this_ptr->vertex_idx_1 * 0x38);
-  local_168 = *pdVar5 - *in_stack_0000000c;
-  local_160 = pdVar5[1] - in_stack_0000000c[1];
-  local_158 = pdVar5[2] - in_stack_0000000c[2];
+  pCVar5 = local_18 + this_ptr->vertex_idx_1;
+  local_168 = (pCVar5->position).impl.x - *in_stack_0000000c;
+  local_160 = (pCVar5->position).impl.y - in_stack_0000000c[1];
+  local_158 = (pCVar5->position).impl.z - in_stack_0000000c[2];
   pdVar6 = &local_168;
   pdVar7 = &local_78;
   for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -178,12 +178,12 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cc7c0(CPoly *this_ptr)
     pdVar6 = (double *)((int)pdVar6 + 4);
     puVar8 = puVar8 + 1;
   }
-  *(undefined4 *)pdVar5 = local_150[0];
-  *(undefined4 *)((int)pdVar5 + 4) = local_150[1];
-  *(undefined4 *)(pdVar5 + 1) = local_150[2];
-  *(undefined4 *)((int)pdVar5 + 0xc) = local_150[3];
-  *(undefined4 *)(pdVar5 + 2) = local_140;
-  *(undefined4 *)((int)pdVar5 + 0x14) = local_13c;
+  *(undefined4 *)&(pCVar5->position).impl.x = local_150[0];
+  *(undefined4 *)((int)&(pCVar5->position).impl.x + 4) = local_150[1];
+  *(undefined4 *)&(pCVar5->position).impl.y = local_150[2];
+  *(undefined4 *)((int)&(pCVar5->position).impl.y + 4) = local_150[3];
+  *(undefined4 *)&(pCVar5->position).impl.z = local_140;
+  *(undefined4 *)((int)&(pCVar5->position).impl.z + 4) = local_13c;
   local_1b0 = *(undefined4 *)in_stack_00000008;
   dVar1 = *in_stack_00000008;
   uStack_1ac = *(undefined4 *)((int)in_stack_00000008 + 4);
@@ -193,10 +193,10 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cc7c0(CPoly *this_ptr)
   local_1a0 = *(undefined4 *)(in_stack_00000008 + 2);
   dVar3 = in_stack_00000008[2];
   uStack_19c = *(undefined4 *)((int)in_stack_00000008 + 0x14);
-  pdVar5 = (double *)((int)local_18 + this_ptr->vertex_idx_2 * 0x38);
-  local_1f8 = *pdVar5 - *in_stack_0000000c;
-  local_1f0 = pdVar5[1] - in_stack_0000000c[1];
-  local_1e8 = pdVar5[2] - in_stack_0000000c[2];
+  pCVar5 = local_18 + this_ptr->vertex_idx_2;
+  local_1f8 = (pCVar5->position).impl.x - *in_stack_0000000c;
+  local_1f0 = (pCVar5->position).impl.y - in_stack_0000000c[1];
+  local_1e8 = (pCVar5->position).impl.z - in_stack_0000000c[2];
   pdVar6 = &local_1f8;
   pdVar7 = &local_30;
   for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -224,12 +224,12 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cc7c0(CPoly *this_ptr)
     pdVar6 = (double *)((int)pdVar6 + 4);
     puVar8 = puVar8 + 1;
   }
-  *(undefined4 *)pdVar5 = local_1c8[0];
-  *(undefined4 *)((int)pdVar5 + 4) = local_1c8[1];
-  *(undefined4 *)(pdVar5 + 1) = local_1c8[2];
-  *(undefined4 *)((int)pdVar5 + 0xc) = local_1c8[3];
-  *(undefined4 *)(pdVar5 + 2) = local_1b8;
-  *(undefined4 *)((int)pdVar5 + 0x14) = local_1b4;
+  *(undefined4 *)&(pCVar5->position).impl.x = local_1c8[0];
+  *(undefined4 *)((int)&(pCVar5->position).impl.x + 4) = local_1c8[1];
+  *(undefined4 *)&(pCVar5->position).impl.y = local_1c8[2];
+  *(undefined4 *)((int)&(pCVar5->position).impl.y + 4) = local_1c8[3];
+  *(undefined4 *)&(pCVar5->position).impl.z = local_1b8;
+  *(undefined4 *)((int)&(pCVar5->position).impl.z + 4) = local_1b4;
   return;
 }
 

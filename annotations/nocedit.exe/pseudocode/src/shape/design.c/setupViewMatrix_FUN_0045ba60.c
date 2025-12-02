@@ -53,15 +53,15 @@ void __cdecl shape_design_c_setupViewMatrix_FUN_0045ba60(void)
     g_RelativeZ = g_ZoomLevel * -0x10;
   }
   engine_matrix_c_buildRotationMatrix_FUN_0050c920(local_20,local_1c,local_18);
-  g_TransformMatrix.m[0][2] =
-       (int)((g_TransformMatrix.m[0][2] + (g_TransformMatrix.m[0][2] >> 0x1f) * -0x10) -
-            (uint)((g_TransformMatrix.m[0][2] >> 0x1f) << 3 < 0)) >> 4;
-  g_TransformMatrix.m[1][2] =
-       (int)((g_TransformMatrix.m[1][2] + (g_TransformMatrix.m[1][2] >> 0x1f) * -0x10) -
-            (uint)((g_TransformMatrix.m[1][2] >> 0x1f) << 3 < 0)) >> 4;
-  g_TransformMatrix.m[2][2] =
-       (int)((g_TransformMatrix.m[2][2] + (g_TransformMatrix.m[2][2] >> 0x1f) * -0x10) -
-            (uint)((g_TransformMatrix.m[2][2] >> 0x1f) << 3 < 0)) >> 4;
+  g_TransformMatrix.m[0].z =
+       (int)((g_TransformMatrix.m[0].z + (g_TransformMatrix.m[0].z >> 0x1f) * -0x10) -
+            (uint)((g_TransformMatrix.m[0].z >> 0x1f) << 3 < 0)) >> 4;
+  g_TransformMatrix.m[1].z =
+       (int)((g_TransformMatrix.m[1].z + (g_TransformMatrix.m[1].z >> 0x1f) * -0x10) -
+            (uint)((g_TransformMatrix.m[1].z >> 0x1f) << 3 < 0)) >> 4;
+  g_TransformMatrix.m[2].z =
+       (int)((g_TransformMatrix.m[2].z + (g_TransformMatrix.m[2].z >> 0x1f) * -0x10) -
+            (uint)((g_TransformMatrix.m[2].z >> 0x1f) << 3 < 0)) >> 4;
   return;
 }
 

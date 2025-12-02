@@ -11,14 +11,14 @@
 void __cdecl shape_superopt_cpp_CPoly_FUN_005cd7d0(CPoly *this_ptr)
 
 {
-  double dVar1;
-  double dVar2;
+  CVert *pCVar1;
+  CVert *pCVar2;
   double dVar3;
-  void *pvVar4;
-  int iVar5;
+  double dVar4;
+  double dVar5;
+  CVert *pCVar6;
+  int iVar7;
   BADSPACEBASE *in_ESP;
-  double *pdVar6;
-  double *pdVar7;
   double *pdVar8;
   double *pdVar9;
   undefined4 local_2f0;
@@ -83,37 +83,37 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cd7d0(CPoly *this_ptr)
   double local_b0;
   double local_a8;
   double local_a0;
-  double *local_18;
+  CVert *local_18;
   
   uStack_2ec = 0x3ff00000;
   local_2f0 = 0;
-  pvVar4 = this_ptr->parent_obj->vertex_data;
-  pdVar7 = (double *)((int)pvVar4 + this_ptr->vertex_idx_0 * 0x38);
-  pdVar9 = (double *)((int)pvVar4 + this_ptr->vertex_idx_1 * 0x38);
-  local_158 = *pdVar9 - *pdVar7;
-  local_150 = pdVar9[1] - pdVar7[1];
-  local_18 = (double *)((int)pvVar4 + this_ptr->vertex_idx_2 * 0x38);
-  local_148 = pdVar9[2] - pdVar7[2];
-  pdVar6 = &local_158;
-  pdVar8 = &local_248;
-  for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(undefined4 *)pdVar8 = *(undefined4 *)pdVar6;
-    pdVar6 = (double *)((int)pdVar6 + 4);
+  pCVar6 = this_ptr->parent_obj->vertex_data;
+  pCVar1 = pCVar6 + this_ptr->vertex_idx_0;
+  pCVar2 = pCVar6 + this_ptr->vertex_idx_1;
+  local_158 = (pCVar2->position).impl.x - (pCVar1->position).impl.x;
+  local_150 = (pCVar2->position).impl.y - (pCVar1->position).impl.y;
+  local_18 = pCVar6 + this_ptr->vertex_idx_2;
+  local_148 = (pCVar2->position).impl.z - (pCVar1->position).impl.z;
+  pdVar8 = &local_158;
+  pdVar9 = &local_248;
+  for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *(undefined4 *)pdVar9 = *(undefined4 *)pdVar8;
     pdVar8 = (double *)((int)pdVar8 + 4);
+    pdVar9 = (double *)((int)pdVar9 + 4);
   }
   local_190 = 1.0 / SQRT(local_238 * local_238 + local_248 * local_248 + local_240 * local_240);
   local_1a0 = local_248 * local_190;
   local_198 = local_240 * local_190;
   local_190 = local_238 * local_190;
-  local_278 = *local_18 - *pdVar9;
-  local_270 = local_18[1] - pdVar9[1];
-  local_268 = local_18[2] - pdVar9[2];
-  pdVar6 = &local_278;
-  pdVar8 = &local_188;
-  for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(undefined4 *)pdVar8 = *(undefined4 *)pdVar6;
-    pdVar6 = (double *)((int)pdVar6 + 4);
+  local_278 = (local_18->position).impl.x - (pCVar2->position).impl.x;
+  local_270 = (local_18->position).impl.y - (pCVar2->position).impl.y;
+  local_268 = (local_18->position).impl.z - (pCVar2->position).impl.z;
+  pdVar8 = &local_278;
+  pdVar9 = &local_188;
+  for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *(undefined4 *)pdVar9 = *(undefined4 *)pdVar8;
     pdVar8 = (double *)((int)pdVar8 + 4);
+    pdVar9 = (double *)((int)pdVar9 + 4);
   }
   local_250 = 1.0 / SQRT(local_178 * local_178 + local_188 * local_188 + local_180 * local_180);
   local_260 = local_188 * local_250;
@@ -133,29 +133,29 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cd7d0(CPoly *this_ptr)
     (this_ptr->normal).y = local_1e0;
     (this_ptr->normal).z = local_1d8;
   }
-  local_110 = *local_18 - *pdVar9;
-  local_108 = local_18[1] - pdVar9[1];
-  local_100 = local_18[2] - pdVar9[2];
-  pdVar6 = &local_110;
-  pdVar8 = &local_170;
-  for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(undefined4 *)pdVar8 = *(undefined4 *)pdVar6;
-    pdVar6 = (double *)((int)pdVar6 + 4);
+  local_110 = (local_18->position).impl.x - (pCVar2->position).impl.x;
+  local_108 = (local_18->position).impl.y - (pCVar2->position).impl.y;
+  local_100 = (local_18->position).impl.z - (pCVar2->position).impl.z;
+  pdVar8 = &local_110;
+  pdVar9 = &local_170;
+  for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *(undefined4 *)pdVar9 = *(undefined4 *)pdVar8;
     pdVar8 = (double *)((int)pdVar8 + 4);
+    pdVar9 = (double *)((int)pdVar9 + 4);
   }
-  dVar1 = 1.0 / SQRT(local_160 * local_160 + local_170 * local_170 + local_168 * local_168);
-  local_f8 = local_170 * dVar1;
-  local_f0 = local_168 * dVar1;
-  local_e8 = local_160 * dVar1;
-  local_1d0 = *pdVar7 - *local_18;
-  local_1c8 = pdVar7[1] - local_18[1];
-  local_1c0 = pdVar7[2] - local_18[2];
-  pdVar6 = &local_1d0;
-  pdVar8 = &local_200;
-  for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(undefined4 *)pdVar8 = *(undefined4 *)pdVar6;
-    pdVar6 = (double *)((int)pdVar6 + 4);
+  dVar3 = 1.0 / SQRT(local_160 * local_160 + local_170 * local_170 + local_168 * local_168);
+  local_f8 = local_170 * dVar3;
+  local_f0 = local_168 * dVar3;
+  local_e8 = local_160 * dVar3;
+  local_1d0 = (pCVar1->position).impl.x - (local_18->position).impl.x;
+  local_1c8 = (pCVar1->position).impl.y - (local_18->position).impl.y;
+  local_1c0 = (pCVar1->position).impl.z - (local_18->position).impl.z;
+  pdVar8 = &local_1d0;
+  pdVar9 = &local_200;
+  for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *(undefined4 *)pdVar9 = *(undefined4 *)pdVar8;
     pdVar8 = (double *)((int)pdVar8 + 4);
+    pdVar9 = (double *)((int)pdVar9 + 4);
   }
   local_118 = 1.0 / SQRT(local_1f0 * local_1f0 + local_200 * local_200 + local_1f8 * local_1f8);
   local_128 = local_200 * local_118;
@@ -175,50 +175,50 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cd7d0(CPoly *this_ptr)
     (this_ptr->normal).y = local_a8;
     (this_ptr->normal).z = local_a0;
   }
-  local_140 = *pdVar7 - *local_18;
-  local_138 = pdVar7[1] - local_18[1];
-  local_130 = pdVar7[2] - local_18[2];
-  pdVar6 = &local_140;
-  pdVar8 = &local_230;
-  for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(undefined4 *)pdVar8 = *(undefined4 *)pdVar6;
-    pdVar6 = (double *)((int)pdVar6 + 4);
+  local_140 = (pCVar1->position).impl.x - (local_18->position).impl.x;
+  local_138 = (pCVar1->position).impl.y - (local_18->position).impl.y;
+  local_130 = (pCVar1->position).impl.z - (local_18->position).impl.z;
+  pdVar8 = &local_140;
+  pdVar9 = &local_230;
+  for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *(undefined4 *)pdVar9 = *(undefined4 *)pdVar8;
     pdVar8 = (double *)((int)pdVar8 + 4);
-  }
-  dVar1 = 1.0 / SQRT(local_220 * local_220 + local_230 * local_230 + local_228 * local_228);
-  local_218 = local_230 * dVar1;
-  local_210 = local_228 * dVar1;
-  local_208 = local_220 * dVar1;
-  local_e0 = *pdVar9 - *pdVar7;
-  local_d8 = pdVar9[1] - pdVar7[1];
-  local_d0 = pdVar9[2] - pdVar7[2];
-  pdVar7 = &local_e0;
-  pdVar9 = &local_290;
-  for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(undefined4 *)pdVar9 = *(undefined4 *)pdVar7;
-    pdVar7 = (double *)((int)pdVar7 + 4);
     pdVar9 = (double *)((int)pdVar9 + 4);
   }
-  dVar3 = 1.0 / SQRT(local_280 * local_280 + local_290 * local_290 + local_288 * local_288);
-  dVar1 = local_290 * dVar3;
-  dVar2 = local_288 * dVar3;
-  dVar3 = local_280 * dVar3;
-  local_2a8 = local_218 * dVar1 + local_210 * dVar2 + local_208 * dVar3;
+  dVar3 = 1.0 / SQRT(local_220 * local_220 + local_230 * local_230 + local_228 * local_228);
+  local_218 = local_230 * dVar3;
+  local_210 = local_228 * dVar3;
+  local_208 = local_220 * dVar3;
+  local_e0 = (pCVar2->position).impl.x - (pCVar1->position).impl.x;
+  local_d8 = (pCVar2->position).impl.y - (pCVar1->position).impl.y;
+  local_d0 = (pCVar2->position).impl.z - (pCVar1->position).impl.z;
+  pdVar8 = &local_e0;
+  pdVar9 = &local_290;
+  for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *(undefined4 *)pdVar9 = *(undefined4 *)pdVar8;
+    pdVar8 = (double *)((int)pdVar8 + 4);
+    pdVar9 = (double *)((int)pdVar9 + 4);
+  }
+  dVar5 = 1.0 / SQRT(local_280 * local_280 + local_290 * local_290 + local_288 * local_288);
+  dVar3 = local_290 * dVar5;
+  dVar4 = local_288 * dVar5;
+  dVar5 = local_280 * dVar5;
+  local_2a8 = local_218 * dVar3 + local_210 * dVar4 + local_208 * dVar5;
   if (local_2a8 < 0.0) {
     local_2a8 = -local_2a8;
   }
   if (local_2a8 < (double)CONCAT44(uStack_2ec,local_2f0)) {
-    (this_ptr->normal).x = local_210 * dVar3 - local_208 * dVar2;
-    (this_ptr->normal).y = local_208 * dVar1 - local_218 * dVar3;
-    (this_ptr->normal).z = local_218 * dVar2 - local_210 * dVar1;
+    (this_ptr->normal).x = local_210 * dVar5 - local_208 * dVar4;
+    (this_ptr->normal).y = local_208 * dVar3 - local_218 * dVar5;
+    (this_ptr->normal).z = local_218 * dVar4 - local_210 * dVar3;
   }
-  dVar1 = (this_ptr->normal).y;
-  dVar2 = (this_ptr->normal).x;
-  dVar3 = (this_ptr->normal).z;
-  dVar1 = 1.0 / SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1);
-  (this_ptr->normal).x = (this_ptr->normal).x * dVar1;
-  (this_ptr->normal).y = (this_ptr->normal).y * dVar1;
-  (this_ptr->normal).z = (this_ptr->normal).z * dVar1;
+  dVar3 = (this_ptr->normal).y;
+  dVar4 = (this_ptr->normal).x;
+  dVar5 = (this_ptr->normal).z;
+  dVar3 = 1.0 / SQRT(dVar5 * dVar5 + dVar4 * dVar4 + dVar3 * dVar3);
+  (this_ptr->normal).x = (this_ptr->normal).x * dVar3;
+  (this_ptr->normal).y = (this_ptr->normal).y * dVar3;
+  (this_ptr->normal).z = (this_ptr->normal).z * dVar3;
   return;
 }
 

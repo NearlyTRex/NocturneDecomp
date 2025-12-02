@@ -9,76 +9,91 @@
 void __cdecl shape_superopt_cpp_CPoly_FUN_005ce3e0(CPoly *this_ptr)
 
 {
-  double *pdVar1;
-  void *pvVar2;
+  CVert *pCVar1;
+  CVert *pCVar2;
   int iVar3;
-  double *pdVar4;
+  CVert *pCVar4;
   double *in_stack_00000008;
   double *in_stack_0000000c;
   
-  pvVar2 = this_ptr->parent_obj->vertex_data;
-  pdVar4 = (double *)((int)pvVar2 + this_ptr->vertex_idx_0 * 0x38);
-  pdVar1 = (double *)((int)pvVar2 + this_ptr->vertex_idx_1 * 0x38);
+  pCVar4 = this_ptr->parent_obj->vertex_data;
+  pCVar1 = pCVar4 + this_ptr->vertex_idx_0;
+  pCVar2 = pCVar4 + this_ptr->vertex_idx_1;
   iVar3 = this_ptr->vertex_idx_2;
-  *in_stack_00000008 = *pdVar4;
-  *(undefined4 *)(in_stack_00000008 + 1) = *(undefined4 *)(pdVar4 + 1);
-  *(undefined4 *)((int)in_stack_00000008 + 0xc) = *(undefined4 *)((int)pdVar4 + 0xc);
-  *(undefined4 *)(in_stack_00000008 + 2) = *(undefined4 *)(pdVar4 + 2);
-  *(undefined4 *)((int)in_stack_00000008 + 0x14) = *(undefined4 *)((int)pdVar4 + 0x14);
-  *(undefined4 *)in_stack_0000000c = *(undefined4 *)pdVar4;
-  *(undefined4 *)((int)in_stack_0000000c + 4) = *(undefined4 *)((int)pdVar4 + 4);
-  in_stack_0000000c[1] = pdVar4[1];
-  in_stack_0000000c[2] = pdVar4[2];
-  pdVar4 = (double *)(iVar3 * 0x38 + (int)pvVar2);
-  if (*pdVar1 < *in_stack_00000008) {
-    *(undefined4 *)in_stack_00000008 = *(undefined4 *)pdVar1;
-    *(undefined4 *)((int)in_stack_00000008 + 4) = *(undefined4 *)((int)pdVar1 + 4);
+  *in_stack_00000008 = (pCVar1->position).impl.x;
+  *(undefined4 *)(in_stack_00000008 + 1) = *(undefined4 *)&(pCVar1->position).impl.y;
+  *(undefined4 *)((int)in_stack_00000008 + 0xc) =
+       *(undefined4 *)((int)&(pCVar1->position).impl.y + 4);
+  *(undefined4 *)(in_stack_00000008 + 2) = *(undefined4 *)&(pCVar1->position).impl.z;
+  *(undefined4 *)((int)in_stack_00000008 + 0x14) =
+       *(undefined4 *)((int)&(pCVar1->position).impl.z + 4);
+  *(undefined4 *)in_stack_0000000c = *(undefined4 *)&(pCVar1->position).impl.x;
+  *(undefined4 *)((int)in_stack_0000000c + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.x + 4)
+  ;
+  in_stack_0000000c[1] = (pCVar1->position).impl.y;
+  in_stack_0000000c[2] = (pCVar1->position).impl.z;
+  pCVar4 = pCVar4 + iVar3;
+  if ((pCVar2->position).impl.x < *in_stack_00000008) {
+    *(undefined4 *)in_stack_00000008 = *(undefined4 *)&(pCVar2->position).impl.x;
+    *(undefined4 *)((int)in_stack_00000008 + 4) =
+         *(undefined4 *)((int)&(pCVar2->position).impl.x + 4);
   }
-  if (pdVar1[1] < in_stack_00000008[1]) {
-    *(undefined4 *)(in_stack_00000008 + 1) = *(undefined4 *)(pdVar1 + 1);
-    *(undefined4 *)((int)in_stack_00000008 + 0xc) = *(undefined4 *)((int)pdVar1 + 0xc);
+  if ((pCVar2->position).impl.y < in_stack_00000008[1]) {
+    *(undefined4 *)(in_stack_00000008 + 1) = *(undefined4 *)&(pCVar2->position).impl.y;
+    *(undefined4 *)((int)in_stack_00000008 + 0xc) =
+         *(undefined4 *)((int)&(pCVar2->position).impl.y + 4);
   }
-  if (pdVar1[2] < in_stack_00000008[2]) {
-    *(undefined4 *)(in_stack_00000008 + 2) = *(undefined4 *)(pdVar1 + 2);
-    *(undefined4 *)((int)in_stack_00000008 + 0x14) = *(undefined4 *)((int)pdVar1 + 0x14);
+  if ((pCVar2->position).impl.z < in_stack_00000008[2]) {
+    *(undefined4 *)(in_stack_00000008 + 2) = *(undefined4 *)&(pCVar2->position).impl.z;
+    *(undefined4 *)((int)in_stack_00000008 + 0x14) =
+         *(undefined4 *)((int)&(pCVar2->position).impl.z + 4);
   }
-  if (*in_stack_0000000c < *pdVar1) {
-    *(undefined4 *)in_stack_0000000c = *(undefined4 *)pdVar1;
-    *(undefined4 *)((int)in_stack_0000000c + 4) = *(undefined4 *)((int)pdVar1 + 4);
+  if (*in_stack_0000000c < (pCVar2->position).impl.x) {
+    *(undefined4 *)in_stack_0000000c = *(undefined4 *)&(pCVar2->position).impl.x;
+    *(undefined4 *)((int)in_stack_0000000c + 4) =
+         *(undefined4 *)((int)&(pCVar2->position).impl.x + 4);
   }
-  if (in_stack_0000000c[1] < pdVar1[1]) {
-    *(undefined4 *)(in_stack_0000000c + 1) = *(undefined4 *)(pdVar1 + 1);
-    *(undefined4 *)((int)in_stack_0000000c + 0xc) = *(undefined4 *)((int)pdVar1 + 0xc);
+  if (in_stack_0000000c[1] < (pCVar2->position).impl.y) {
+    *(undefined4 *)(in_stack_0000000c + 1) = *(undefined4 *)&(pCVar2->position).impl.y;
+    *(undefined4 *)((int)in_stack_0000000c + 0xc) =
+         *(undefined4 *)((int)&(pCVar2->position).impl.y + 4);
   }
-  if (in_stack_0000000c[2] < pdVar1[2]) {
-    *(undefined4 *)(in_stack_0000000c + 2) = *(undefined4 *)(pdVar1 + 2);
-    *(undefined4 *)((int)in_stack_0000000c + 0x14) = *(undefined4 *)((int)pdVar1 + 0x14);
+  if (in_stack_0000000c[2] < (pCVar2->position).impl.z) {
+    *(undefined4 *)(in_stack_0000000c + 2) = *(undefined4 *)&(pCVar2->position).impl.z;
+    *(undefined4 *)((int)in_stack_0000000c + 0x14) =
+         *(undefined4 *)((int)&(pCVar2->position).impl.z + 4);
   }
-  if (*pdVar4 < *in_stack_00000008) {
-    *(undefined4 *)in_stack_00000008 = *(undefined4 *)pdVar4;
-    *(undefined4 *)((int)in_stack_00000008 + 4) = *(undefined4 *)((int)pdVar4 + 4);
+  if ((pCVar4->position).impl.x < *in_stack_00000008) {
+    *(undefined4 *)in_stack_00000008 = *(undefined4 *)&(pCVar4->position).impl.x;
+    *(undefined4 *)((int)in_stack_00000008 + 4) =
+         *(undefined4 *)((int)&(pCVar4->position).impl.x + 4);
   }
-  if (pdVar4[1] < in_stack_00000008[1]) {
-    *(undefined4 *)(in_stack_00000008 + 1) = *(undefined4 *)(pdVar4 + 1);
-    *(undefined4 *)((int)in_stack_00000008 + 0xc) = *(undefined4 *)((int)pdVar4 + 0xc);
+  if ((pCVar4->position).impl.y < in_stack_00000008[1]) {
+    *(undefined4 *)(in_stack_00000008 + 1) = *(undefined4 *)&(pCVar4->position).impl.y;
+    *(undefined4 *)((int)in_stack_00000008 + 0xc) =
+         *(undefined4 *)((int)&(pCVar4->position).impl.y + 4);
   }
-  if (pdVar4[2] < in_stack_00000008[2]) {
-    *(undefined4 *)(in_stack_00000008 + 2) = *(undefined4 *)(pdVar4 + 2);
-    *(undefined4 *)((int)in_stack_00000008 + 0x14) = *(undefined4 *)((int)pdVar4 + 0x14);
+  if ((pCVar4->position).impl.z < in_stack_00000008[2]) {
+    *(undefined4 *)(in_stack_00000008 + 2) = *(undefined4 *)&(pCVar4->position).impl.z;
+    *(undefined4 *)((int)in_stack_00000008 + 0x14) =
+         *(undefined4 *)((int)&(pCVar4->position).impl.z + 4);
   }
-  if (*in_stack_0000000c < *pdVar4) {
-    *(undefined4 *)in_stack_0000000c = *(undefined4 *)pdVar4;
-    *(undefined4 *)((int)in_stack_0000000c + 4) = *(undefined4 *)((int)pdVar4 + 4);
+  if (*in_stack_0000000c < (pCVar4->position).impl.x) {
+    *(undefined4 *)in_stack_0000000c = *(undefined4 *)&(pCVar4->position).impl.x;
+    *(undefined4 *)((int)in_stack_0000000c + 4) =
+         *(undefined4 *)((int)&(pCVar4->position).impl.x + 4);
   }
-  if (in_stack_0000000c[1] < pdVar4[1]) {
-    *(undefined4 *)(in_stack_0000000c + 1) = *(undefined4 *)(pdVar4 + 1);
-    *(undefined4 *)((int)in_stack_0000000c + 0xc) = *(undefined4 *)((int)pdVar4 + 0xc);
+  if (in_stack_0000000c[1] < (pCVar4->position).impl.y) {
+    *(undefined4 *)(in_stack_0000000c + 1) = *(undefined4 *)&(pCVar4->position).impl.y;
+    *(undefined4 *)((int)in_stack_0000000c + 0xc) =
+         *(undefined4 *)((int)&(pCVar4->position).impl.y + 4);
   }
-  if (pdVar4[2] <= in_stack_0000000c[2]) {
+  if ((pCVar4->position).impl.z <= in_stack_0000000c[2]) {
     return;
   }
-  *(undefined4 *)(in_stack_0000000c + 2) = *(undefined4 *)(pdVar4 + 2);
-  *(undefined4 *)((int)in_stack_0000000c + 0x14) = *(undefined4 *)((int)pdVar4 + 0x14);
+  *(undefined4 *)(in_stack_0000000c + 2) = *(undefined4 *)&(pCVar4->position).impl.z;
+  *(undefined4 *)((int)in_stack_0000000c + 0x14) =
+       *(undefined4 *)((int)&(pCVar4->position).impl.z + 4);
   return;
 }
 

@@ -3,10 +3,13 @@
 // Structure: COptimize
 // Ghidra size: 0x44 (68 bytes)
 typedef struct COptimize {
-    CObj base; // 0x0
-    char field_28[28]; // 0x1c
+    CObj obj; // 0x0
+    double field_28; // 0x1c
+    double field_36; // 0x24
+    double field_44; // 0x2c
+    int field_52; // 0x34
     int field_56; // 0x38
-    int field_60; // 0x3c
-    void* vtable; // 0x40
+    void* field_60; // 0x3c
+    COptimize_vtable* vtable; // 0x40
 } COptimize;
 

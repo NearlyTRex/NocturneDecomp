@@ -56,7 +56,7 @@
 //   undefined4 DAT_032758e8
 //   undefined4 g_CDemonCameraInstance.base.position.y
 //   undefined4 g_CDemonCameraInstance.base.position.z
-//   undefined4 g_CDemonCameraInstance.base.rotation_matrix.m[0][0]
+//   undefined4 g_CDemonCameraInstance.base.rotation_matrix.m[0].x
 //   undefined4 g_CDemonCameraInstance.base.projection_scale
 // Function calls:
 //   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940

@@ -70,15 +70,15 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005ccc30(CPoly *this_ptr)
   double local_38;
   double local_30;
   double local_28;
-  void *local_20;
-  double *local_1c;
-  double *local_18;
+  CVert *local_20;
+  CVert *local_1c;
+  CVert *local_18;
   
   local_20 = this_ptr->parent_obj->vertex_data;
-  local_18 = (double *)((int)local_20 + this_ptr->vertex_idx_0 * 0x38);
-  local_68 = *local_18 - *in_stack_0000000c;
-  local_60 = local_18[1] - in_stack_0000000c[1];
-  local_58 = local_18[2] - in_stack_0000000c[2];
+  local_18 = local_20 + this_ptr->vertex_idx_0;
+  local_68 = (local_18->position).impl.x - *in_stack_0000000c;
+  local_60 = (local_18->position).impl.y - in_stack_0000000c[1];
+  local_58 = (local_18->position).impl.z - in_stack_0000000c[2];
   pdVar2 = &local_68;
   pdVar3 = &local_158;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -109,16 +109,16 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005ccc30(CPoly *this_ptr)
     pdVar2 = (double *)((int)pdVar2 + 4);
     puVar4 = puVar4 + 1;
   }
-  *(undefined4 *)local_18 = local_128[0];
-  *(undefined4 *)((int)local_18 + 4) = local_128[1];
-  *(undefined4 *)(local_18 + 1) = local_128[2];
-  *(undefined4 *)((int)local_18 + 0xc) = local_128[3];
-  *(undefined4 *)(local_18 + 2) = local_118;
-  *(undefined4 *)((int)local_18 + 0x14) = local_114;
-  local_18 = (double *)((int)local_20 + this_ptr->vertex_idx_1 * 0x38);
-  local_1b8 = *local_18 - *in_stack_0000000c;
-  local_1b0 = local_18[1] - in_stack_0000000c[1];
-  local_1a8 = local_18[2] - in_stack_0000000c[2];
+  *(undefined4 *)&(local_18->position).impl.x = local_128[0];
+  *(undefined4 *)((int)&(local_18->position).impl.x + 4) = local_128[1];
+  *(undefined4 *)&(local_18->position).impl.y = local_128[2];
+  *(undefined4 *)((int)&(local_18->position).impl.y + 4) = local_128[3];
+  *(undefined4 *)&(local_18->position).impl.z = local_118;
+  *(undefined4 *)((int)&(local_18->position).impl.z + 4) = local_114;
+  local_18 = local_20 + this_ptr->vertex_idx_1;
+  local_1b8 = (local_18->position).impl.x - *in_stack_0000000c;
+  local_1b0 = (local_18->position).impl.y - in_stack_0000000c[1];
+  local_1a8 = (local_18->position).impl.z - in_stack_0000000c[2];
   pdVar2 = &local_1b8;
   pdVar3 = &local_b0;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -149,16 +149,16 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005ccc30(CPoly *this_ptr)
     pdVar2 = (double *)((int)pdVar2 + 4);
     puVar4 = puVar4 + 1;
   }
-  *(undefined4 *)local_18 = local_e0[0];
-  *(undefined4 *)((int)local_18 + 4) = local_e0[1];
-  *(undefined4 *)(local_18 + 1) = local_e0[2];
-  *(undefined4 *)((int)local_18 + 0xc) = local_e0[3];
-  *(undefined4 *)(local_18 + 2) = local_d0;
-  *(undefined4 *)((int)local_18 + 0x14) = local_cc;
-  local_1c = (double *)((int)local_20 + this_ptr->vertex_idx_2 * 0x38);
-  local_170 = *local_1c - *in_stack_0000000c;
-  local_168 = local_1c[1] - in_stack_0000000c[1];
-  local_160 = local_1c[2] - in_stack_0000000c[2];
+  *(undefined4 *)&(local_18->position).impl.x = local_e0[0];
+  *(undefined4 *)((int)&(local_18->position).impl.x + 4) = local_e0[1];
+  *(undefined4 *)&(local_18->position).impl.y = local_e0[2];
+  *(undefined4 *)((int)&(local_18->position).impl.y + 4) = local_e0[3];
+  *(undefined4 *)&(local_18->position).impl.z = local_d0;
+  *(undefined4 *)((int)&(local_18->position).impl.z + 4) = local_cc;
+  local_1c = local_20 + this_ptr->vertex_idx_2;
+  local_170 = (local_1c->position).impl.x - *in_stack_0000000c;
+  local_168 = (local_1c->position).impl.y - in_stack_0000000c[1];
+  local_160 = (local_1c->position).impl.z - in_stack_0000000c[2];
   pdVar2 = &local_170;
   pdVar3 = &local_80;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -189,12 +189,12 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005ccc30(CPoly *this_ptr)
     pdVar2 = (double *)((int)pdVar2 + 4);
     puVar4 = puVar4 + 1;
   }
-  *(undefined4 *)local_1c = local_1a0[0];
-  *(undefined4 *)((int)local_1c + 4) = local_1a0[1];
-  *(undefined4 *)(local_1c + 1) = local_1a0[2];
-  *(undefined4 *)((int)local_1c + 0xc) = local_1a0[3];
-  *(undefined4 *)(local_1c + 2) = local_190;
-  *(undefined4 *)((int)local_1c + 0x14) = local_18c;
+  *(undefined4 *)&(local_1c->position).impl.x = local_1a0[0];
+  *(undefined4 *)((int)&(local_1c->position).impl.x + 4) = local_1a0[1];
+  *(undefined4 *)&(local_1c->position).impl.y = local_1a0[2];
+  *(undefined4 *)((int)&(local_1c->position).impl.y + 4) = local_1a0[3];
+  *(undefined4 *)&(local_1c->position).impl.z = local_190;
+  *(undefined4 *)((int)&(local_1c->position).impl.z + 4) = local_18c;
   return;
 }
 

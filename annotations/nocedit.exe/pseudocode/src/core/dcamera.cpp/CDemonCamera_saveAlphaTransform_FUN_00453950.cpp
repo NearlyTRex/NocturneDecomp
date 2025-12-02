@@ -50,24 +50,24 @@ core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_00453950
   *puVar3 = *(undefined4 *)((int)&CStack_14 + (uint)bVar4 * -8 + 8);
   puVar3[(uint)bVar4 * -2 + 1] =
        *(undefined4 *)(&stack0xfffffff8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  *(int *)(iVar2 + 0x124c) = g_TransformMatrix.m[0][0];
-  *(int *)(iVar2 + 0x126c) = g_TransformMatrix.m[0][1];
-  *(int *)(iVar2 + 0x128c) = g_TransformMatrix.m[0][2];
-  *(int *)(iVar2 + 0x12ac) = g_TransformMatrix.m[1][0];
-  *(int *)(iVar2 + 0x12cc) = g_TransformMatrix.m[1][1];
-  *(int *)(iVar2 + 0x12ec) = g_TransformMatrix.m[1][2];
-  *(int *)(iVar2 + 0x130c) = g_TransformMatrix.m[2][0];
-  *(int *)(iVar2 + 0x132c) = g_TransformMatrix.m[2][1];
-  *(int *)(iVar2 + 0x134c) = g_TransformMatrix.m[2][2];
-  *(int *)(iVar2 + 0x136c) = g_InverseMatrix.m[0][0];
-  *(int *)(iVar2 + 0x138c) = g_InverseMatrix.m[0][1];
-  *(int *)(iVar2 + 0x13ac) = g_InverseMatrix.m[0][2];
-  *(int *)(iVar2 + 0x13cc) = g_InverseMatrix.m[1][0];
-  *(int *)(iVar2 + 0x13ec) = g_InverseMatrix.m[1][1];
-  *(int *)(iVar2 + 0x140c) = g_InverseMatrix.m[1][2];
-  *(int *)(iVar2 + 0x142c) = g_InverseMatrix.m[2][0];
-  *(int *)(iVar2 + 0x144c) = g_InverseMatrix.m[2][1];
-  *(int *)(iVar2 + 0x146c) = g_InverseMatrix.m[2][2];
+  *(int *)(iVar2 + 0x124c) = g_TransformMatrix.m[0].x;
+  *(int *)(iVar2 + 0x126c) = g_TransformMatrix.m[0].y;
+  *(int *)(iVar2 + 0x128c) = g_TransformMatrix.m[0].z;
+  *(int *)(iVar2 + 0x12ac) = g_TransformMatrix.m[1].x;
+  *(int *)(iVar2 + 0x12cc) = g_TransformMatrix.m[1].y;
+  *(int *)(iVar2 + 0x12ec) = g_TransformMatrix.m[1].z;
+  *(int *)(iVar2 + 0x130c) = g_TransformMatrix.m[2].x;
+  *(int *)(iVar2 + 0x132c) = g_TransformMatrix.m[2].y;
+  *(int *)(iVar2 + 0x134c) = g_TransformMatrix.m[2].z;
+  *(int *)(iVar2 + 0x136c) = g_InverseMatrix.m[0].x;
+  *(int *)(iVar2 + 0x138c) = g_InverseMatrix.m[0].y;
+  *(int *)(iVar2 + 0x13ac) = g_InverseMatrix.m[0].z;
+  *(int *)(iVar2 + 0x13cc) = g_InverseMatrix.m[1].x;
+  *(int *)(iVar2 + 0x13ec) = g_InverseMatrix.m[1].y;
+  *(int *)(iVar2 + 0x140c) = g_InverseMatrix.m[1].z;
+  *(int *)(iVar2 + 0x142c) = g_InverseMatrix.m[2].x;
+  *(int *)(iVar2 + 0x144c) = g_InverseMatrix.m[2].y;
+  *(int *)(iVar2 + 0x146c) = g_InverseMatrix.m[2].z;
   return;
 }
 

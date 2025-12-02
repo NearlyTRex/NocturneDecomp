@@ -9,28 +9,21 @@
 void __cdecl shape_superopt_cpp_CPoly_FUN_005cd350(CPoly *this_ptr)
 
 {
-  uint *puVar1;
-  void *pvVar2;
+  CVert *pCVar1;
   uint in_stack_00000008;
   uint in_stack_0000000c;
   
-  pvVar2 = this_ptr->parent_obj->vertex_data;
-  if ((*(uint *)((int)pvVar2 + this_ptr->vertex_idx_0 * 0x38 + 0x30) & in_stack_0000000c) ==
-      in_stack_0000000c) {
-    puVar1 = (uint *)((int)pvVar2 + this_ptr->vertex_idx_0 * 0x38 + 0x34);
-    *puVar1 = *puVar1 | in_stack_00000008;
+  pCVar1 = this_ptr->parent_obj->vertex_data;
+  if ((pCVar1[this_ptr->vertex_idx_0].flags2 & in_stack_0000000c) == in_stack_0000000c) {
+    pCVar1[this_ptr->vertex_idx_0].flags = pCVar1[this_ptr->vertex_idx_0].flags | in_stack_00000008;
   }
-  if ((*(uint *)((int)pvVar2 + this_ptr->vertex_idx_1 * 0x38 + 0x30) & in_stack_0000000c) ==
-      in_stack_0000000c) {
-    puVar1 = (uint *)((int)pvVar2 + this_ptr->vertex_idx_1 * 0x38 + 0x34);
-    *puVar1 = *puVar1 | in_stack_00000008;
+  if ((pCVar1[this_ptr->vertex_idx_1].flags2 & in_stack_0000000c) == in_stack_0000000c) {
+    pCVar1[this_ptr->vertex_idx_1].flags = pCVar1[this_ptr->vertex_idx_1].flags | in_stack_00000008;
   }
-  if ((*(uint *)((int)pvVar2 + this_ptr->vertex_idx_2 * 0x38 + 0x30) & in_stack_0000000c) !=
-      in_stack_0000000c) {
+  if ((pCVar1[this_ptr->vertex_idx_2].flags2 & in_stack_0000000c) != in_stack_0000000c) {
     return;
   }
-  puVar1 = (uint *)((int)pvVar2 + this_ptr->vertex_idx_2 * 0x38 + 0x34);
-  *puVar1 = *puVar1 | in_stack_00000008;
+  pCVar1[this_ptr->vertex_idx_2].flags = pCVar1[this_ptr->vertex_idx_2].flags | in_stack_00000008;
   return;
 }
 

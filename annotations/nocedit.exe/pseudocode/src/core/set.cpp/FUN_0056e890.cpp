@@ -30,34 +30,34 @@ void core_set_cpp_FUN_0056e890(void)
   int *in_stack_00000004;
   
   iVar1 = g_CameraOriginY +
-          ((uint)((longlong)g_InverseMatrix.m[2][1] * (longlong)in_stack_00000004[2]) >> 0x10 |
-          (int)((ulonglong)((longlong)g_InverseMatrix.m[2][1] * (longlong)in_stack_00000004[2]) >>
+          ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)in_stack_00000004[2]) >> 0x10 |
+          (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)in_stack_00000004[2]) >>
                0x20) << 0x10) +
-          ((uint)((longlong)g_InverseMatrix.m[0][1] * (longlong)*in_stack_00000004) >> 0x10 |
-          (int)((ulonglong)((longlong)g_InverseMatrix.m[0][1] * (longlong)*in_stack_00000004) >>
-               0x20) << 0x10) +
-          ((uint)((longlong)g_InverseMatrix.m[1][1] * (longlong)in_stack_00000004[1]) >> 0x10 |
-          (int)((ulonglong)((longlong)g_InverseMatrix.m[1][1] * (longlong)in_stack_00000004[1]) >>
+          ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)*in_stack_00000004) >> 0x10 |
+          (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)*in_stack_00000004) >> 0x20
+               ) << 0x10) +
+          ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)in_stack_00000004[1]) >> 0x10 |
+          (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)in_stack_00000004[1]) >>
                0x20) << 0x10);
   iVar2 = g_CameraOriginZ +
-          ((uint)((longlong)g_InverseMatrix.m[2][2] * (longlong)in_stack_00000004[2]) >> 0x10 |
-          (int)((ulonglong)((longlong)g_InverseMatrix.m[2][2] * (longlong)in_stack_00000004[2]) >>
+          ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)in_stack_00000004[2]) >> 0x10 |
+          (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)in_stack_00000004[2]) >>
                0x20) << 0x10) +
-          ((uint)((longlong)g_InverseMatrix.m[0][2] * (longlong)*in_stack_00000004) >> 0x10 |
-          (int)((ulonglong)((longlong)g_InverseMatrix.m[0][2] * (longlong)*in_stack_00000004) >>
-               0x20) << 0x10) +
-          ((uint)((longlong)g_InverseMatrix.m[1][2] * (longlong)in_stack_00000004[1]) >> 0x10 |
-          (int)((ulonglong)((longlong)g_InverseMatrix.m[1][2] * (longlong)in_stack_00000004[1]) >>
+          ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)*in_stack_00000004) >> 0x10 |
+          (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)*in_stack_00000004) >> 0x20
+               ) << 0x10) +
+          ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)in_stack_00000004[1]) >> 0x10 |
+          (int)((ulonglong)((longlong)g_InverseMatrix.m[1].z * (longlong)in_stack_00000004[1]) >>
                0x20) << 0x10);
   *unaff_ESI = g_CameraOriginX +
-               ((uint)((longlong)g_InverseMatrix.m[2][0] * (longlong)in_stack_00000004[2]) >> 0x10 |
-               (int)((ulonglong)((longlong)g_InverseMatrix.m[2][0] * (longlong)in_stack_00000004[2])
+               ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)in_stack_00000004[2]) >> 0x10 |
+               (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)in_stack_00000004[2])
                     >> 0x20) << 0x10) +
-               ((uint)((longlong)g_InverseMatrix.m[0][0] * (longlong)*in_stack_00000004) >> 0x10 |
-               (int)((ulonglong)((longlong)g_InverseMatrix.m[0][0] * (longlong)*in_stack_00000004)
-                    >> 0x20) << 0x10) +
-               ((uint)((longlong)g_InverseMatrix.m[1][0] * (longlong)in_stack_00000004[1]) >> 0x10 |
-               (int)((ulonglong)((longlong)g_InverseMatrix.m[1][0] * (longlong)in_stack_00000004[1])
+               ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)*in_stack_00000004) >> 0x10 |
+               (int)((ulonglong)((longlong)g_InverseMatrix.m[0].x * (longlong)*in_stack_00000004) >>
+                    0x20) << 0x10) +
+               ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)in_stack_00000004[1]) >> 0x10 |
+               (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)in_stack_00000004[1])
                     >> 0x20) << 0x10);
   unaff_ESI[1] = iVar1;
   unaff_ESI[2] = iVar2;

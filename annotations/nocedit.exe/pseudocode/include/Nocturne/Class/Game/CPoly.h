@@ -11,7 +11,7 @@ typedef struct CPoly {
     CVector3d normal; // 0x40
     int field_88; // 0x58
     int field_92; // 0x5c
-    int field_96; // 0x60
-    void* vtable; // 0x64
+    uint flags; // 0x60
+    CPoly_vtable* vtable; // 0x64
 } CPoly;
 

@@ -9,7 +9,7 @@
 // Function calls:
 //   crt_memory.c_free_FUN_00601cd0
 //   shape_memdbg.cpp_debugFree_FUN_0050f210
-//   shape_superopt.cpp_CObj_FUN_005d2600
+//   shape_superopt.cpp_CObj_free_FUN_005d2600
 //   shape_superopt.cpp_FUN_005c79d0
 //   shape_superopt.cpp_FUN_005c79f0
 
@@ -22,29 +22,29 @@ void __cdecl shape_superopt_cpp_COptimize_FUN_005d7000(COptimize *this_ptr)
   int iVar1;
   uint uVar2;
   
-  shape_superopt_cpp_CObj_FUN_005d2600(&this_ptr->base);
+  shape_superopt_cpp_CObj_free_FUN_005d2600(&this_ptr->obj);
   uVar2 = 0;
-  if (this_ptr->field2_0x38 != 0) {
+  if (this_ptr->field5_0x38 != 0) {
     iVar1 = 0;
     do {
       shape_superopt_cpp_FUN_005c79f0();
-      if (*(int *)(iVar1 + this_ptr->field3_0x3c) != 0) {
+      if (*(int *)(iVar1 + (int)this_ptr->field6_0x3c) != 0) {
         ptr = (void *)shape_superopt_cpp_FUN_005c79d0();
         shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
       }
       uVar2 = uVar2 + 1;
       iVar1 = iVar1 + 4;
-    } while (uVar2 < (uint)this_ptr->field2_0x38);
+    } while (uVar2 < (uint)this_ptr->field5_0x38);
   }
-  if ((void *)this_ptr->field3_0x3c != (void *)0x0) {
-    crt_memory_c_free_FUN_00601cd0((void *)this_ptr->field3_0x3c);
+  if (this_ptr->field6_0x3c != (void *)0x0) {
+    crt_memory_c_free_FUN_00601cd0(this_ptr->field6_0x3c);
   }
-  this_ptr->field3_0x3c = 0;
-  this_ptr->field2_0x38 = 0;
-  (**(code **)((int)this_ptr->vtable + 4))();
-  (**(code **)((int)this_ptr->vtable + 0xc))();
-  (**(code **)((int)this_ptr->vtable + 0x14))();
-  (**(code **)((int)this_ptr->vtable + 0x1c))();
+  this_ptr->field6_0x3c = (void *)0x0;
+  this_ptr->field5_0x38 = 0;
+  (*(code *)this_ptr->vtable->field1_0x4)();
+  (*(code *)this_ptr->vtable->field3_0xc)();
+  (*(code *)this_ptr->vtable->field5_0x14)();
+  (*(code *)this_ptr->vtable->field7_0x1c)();
   return;
 }
 
@@ -58,7 +58,7 @@ void __cdecl shape_superopt_cpp_COptimize_FUN_005d7000(COptimize *this_ptr)
 // 005d7004: MOV ESI,dword ptr [ESP + 0x14]
 //   XREF to: Stack[0x4] (READ)
 // 005d7008: PUSH ESI
-// 005d7009: CALL shape_superopt.cpp_CObj_FUN_005d2600
+// 005d7009: CALL shape_superopt.cpp_CObj_free_FUN_005d2600
 //   XREF to: 005d2600 (UNCONDITIONAL_CALL)
 // 005d700e: XOR EDI,EDI
 // 005d7010: MOV EDX,dword ptr [ESI + 0x38]

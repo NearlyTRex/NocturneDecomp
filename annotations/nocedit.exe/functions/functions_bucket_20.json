@@ -78368,7 +78368,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d2320",
+    "name":"shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320",
     "ret":"int",
     "vars":{
       "locals":[
@@ -78421,6 +78421,22 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"poly_count",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -78446,8 +78462,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d2720",
-    "ret":"ulonglong",
+    "name":"shape_superopt.cpp_CObj_appendTo_FUN_005d2720",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -78487,6 +78503,22 @@
         {
           "name":"this_ptr",
           "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CObj*"
+        },
+        {
+          "name":"dest_obj",
+          "storage":{
             "offset":8,
             "size":4,
             "stack":true,
@@ -78502,14 +78534,9 @@
         }
       ],
       "ret_storage":{
-        "compound":true,
-        "size":8,
+        "reg":"EAX",
+        "size":4,
         "varnodes":[
-          {
-            "addr":"register:00000008",
-            "offset":8,
-            "size":4
-          },
           {
             "addr":"register:00000000",
             "size":4
@@ -78529,7 +78556,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d3020",
+    "name":"shape_superopt.cpp_CObj_findAndRemovePolygon_FUN_005d3020",
     "ret":"int",
     "vars":{
       "params":[
@@ -78548,6 +78575,22 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"poly_ptr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CPoly*"
         }
       ],
       "ret_storage":{
@@ -78573,8 +78616,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d3320",
-    "ret":"int",
+    "name":"shape_superopt.cpp_CObj_getVertex_FUN_005d3320",
+    "ret":"CVert*",
     "vars":{
       "params":[
         {
@@ -78592,6 +78635,22 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ],
       "ret_storage":{

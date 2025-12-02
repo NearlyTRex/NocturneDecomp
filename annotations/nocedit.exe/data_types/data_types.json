@@ -745,10 +745,6 @@
       "type":"struct"
     },
     {
-      "name":"CMatrix3x3i",
-      "type":"struct"
-    },
-    {
       "name":"CMemoryBitStream",
       "type":"struct"
     },
@@ -785,11 +781,123 @@
       "type":"struct"
     },
     {
-      "name":"CObj",
+      "name":"CObj_addPolygons",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_addVertices",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_allocatePolygons",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_allocateVertices",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_appendTo",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_containsVertex",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_copyFrom",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_findAndRemovePolygon",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_findAndRemovePolygonsUsingVertex",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_findAndRemoveVertex",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_findPolygonIndex",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_findVertexIndex",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_free",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_getVertex",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_init",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_isValid",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_removePolygon",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_removePolygonsAtVertex",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_removePolygonsByFlag",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_removeVertex",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_removeVerticesByFlag",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_reset",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_scale",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_scaleMasked",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_transform",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_transformMasked",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_translate",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_translateMasked",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_vtable",
       "type":"struct"
     },
     {
-      "name":"COptimize",
+      "name":"COptimize_vtable",
       "type":"struct"
     },
     {
@@ -906,6 +1014,14 @@
     },
     {
       "name":"CPod",
+      "type":"struct"
+    },
+    {
+      "name":"CPoly_init",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_vtable",
       "type":"struct"
     },
     {
@@ -1137,10 +1253,6 @@
       "type":"struct"
     },
     {
-      "name":"CVec",
-      "type":"struct"
-    },
-    {
       "name":"CVector2f",
       "type":"struct"
     },
@@ -1153,11 +1265,15 @@
       "type":"struct"
     },
     {
-      "name":"CPoly",
+      "name":"CMatrix3x3d",
       "type":"struct"
     },
     {
       "name":"CSfxOptions",
+      "type":"struct"
+    },
+    {
+      "name":"CVec",
       "type":"struct"
     },
     {
@@ -1261,14 +1377,6 @@
       "type":"struct"
     },
     {
-      "name":"CCameraTransformState",
-      "type":"struct"
-    },
-    {
-      "name":"CCameraView",
-      "type":"struct"
-    },
-    {
       "name":"CDemonActor",
       "type":"struct"
     },
@@ -1326,14 +1434,6 @@
     },
     {
       "name":"CCurtain",
-      "type":"struct"
-    },
-    {
-      "name":"CDemonCamera",
-      "type":"struct"
-    },
-    {
-      "name":"CDemonLight",
       "type":"struct"
     },
     {
@@ -1413,6 +1513,26 @@
       "type":"struct"
     },
     {
+      "name":"CMatrix3x3i",
+      "type":"struct"
+    },
+    {
+      "name":"CCameraTransformState",
+      "type":"struct"
+    },
+    {
+      "name":"CCameraView",
+      "type":"struct"
+    },
+    {
+      "name":"CDemonCamera",
+      "type":"struct"
+    },
+    {
+      "name":"CDemonLight",
+      "type":"struct"
+    },
+    {
       "name":"CMirrorHack",
       "type":"struct"
     },
@@ -1474,6 +1594,22 @@
     },
     {
       "name":"CVehicle",
+      "type":"struct"
+    },
+    {
+      "name":"CVert",
+      "type":"struct"
+    },
+    {
+      "name":"CObj",
+      "type":"struct"
+    },
+    {
+      "name":"COptimize",
+      "type":"struct"
+    },
+    {
+      "name":"CPoly",
       "type":"struct"
     },
     {
@@ -8196,6 +8332,530 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CObj_addPolygons",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"add_count",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_addVertices",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"add_count",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_allocatePolygons",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"poly_count",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_allocateVertices",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"vertex_count",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_appendTo",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"dest_obj",
+          "type":"CObj*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_containsVertex",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"vertex_ptr",
+          "type":"CVert*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_copyFrom",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"source",
+          "type":"CObj*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_findAndRemovePolygon",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"poly_ptr",
+          "type":"CPoly*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_findAndRemovePolygonsUsingVertex",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"vert_ptr",
+          "type":"CVert*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_findAndRemoveVertex",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"vertex_ptr",
+          "type":"CVert*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_findPolygonIndex",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"poly_ptr",
+          "type":"CPoly*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_findVertexIndex",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"vertex_ptr",
+          "type":"CVert*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_free",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_getVertex",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"index",
+          "type":"uint"
+        }
+      ],
+      "return_type":"CVert*",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_init",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"poly_count",
+          "type":"int"
+        },
+        {
+          "name":"vertex_count",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_isValid",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_removePolygon",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"index",
+          "type":"uint"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_removePolygonsAtVertex",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"vertex_index",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_removePolygonsByFlag",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"flag_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_removeVertex",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"index",
+          "type":"uint"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_removeVerticesByFlag",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"flag_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_reset",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_scale",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"scale",
+          "type":"CVec*"
+        },
+        {
+          "name":"pivot",
+          "type":"CVec*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_scaleMasked",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"flag_mask",
+          "type":"uint"
+        },
+        {
+          "name":"scale",
+          "type":"CVec*"
+        },
+        {
+          "name":"pivot",
+          "type":"CVec*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_transform",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"matrix",
+          "type":"CMatrix3x3d*"
+        },
+        {
+          "name":"pivot",
+          "type":"CVec*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_transformMasked",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"flag_mask",
+          "type":"uint"
+        },
+        {
+          "name":"matrix",
+          "type":"CMatrix3x3d*"
+        },
+        {
+          "name":"pivot",
+          "type":"CVec*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_translate",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"offset",
+          "type":"CVec*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_translateMasked",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"flag_mask",
+          "type":"uint"
+        },
+        {
+          "name":"offset",
+          "type":"CVec*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"ColorConversionFunc",
       "parameters":[
         {
@@ -8381,6 +9041,24 @@
         {
           "name":"this_ptr",
           "type":"CPod*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_init",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"parent_obj",
+          "type":"CObj*"
         }
       ],
       "return_type":"void",
@@ -29381,6 +30059,24 @@
       "desc":"",
       "fields":[
         {
+          "len":72,
+          "name":"m",
+          "offset":0,
+          "type":"CVector3d[3]"
+        }
+      ],
+      "importable":true,
+      "len":72,
+      "name":"CMatrix3x3d",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":36,
           "name":"m",
           "offset":0,
@@ -29402,7 +30098,7 @@
           "len":36,
           "name":"m",
           "offset":0,
-          "type":"int[3][3]"
+          "type":"CVector3i[3]"
         }
       ],
       "importable":true,
@@ -30317,7 +31013,7 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"vertex_count",
           "offset":0,
           "type":"int"
         },
@@ -30325,11 +31021,11 @@
           "len":4,
           "name":"vertex_data",
           "offset":4,
-          "type":"void*"
+          "type":"CVert*"
         },
         {
           "len":4,
-          "name":"count",
+          "name":"poly_count",
           "offset":8,
           "type":"int"
         },
@@ -30347,7 +31043,7 @@
         },
         {
           "len":4,
-          "name":"field_20",
+          "name":"is_valid",
           "offset":20,
           "type":"int"
         },
@@ -30355,7 +31051,7 @@
           "len":4,
           "name":"vtable",
           "offset":24,
-          "type":"void*"
+          "type":"CObj_vtable*"
         }
       ],
       "importable":true,
@@ -30370,16 +31066,376 @@
       "desc":"",
       "fields":[
         {
+          "len":4,
+          "name":"reset",
+          "offset":0,
+          "type":"CObj_reset*"
+        },
+        {
+          "len":4,
+          "name":"isValid",
+          "offset":4,
+          "type":"CObj_isValid*"
+        },
+        {
+          "len":4,
+          "name":"init",
+          "offset":8,
+          "type":"CObj_init*"
+        },
+        {
+          "len":4,
+          "name":"allocatePolygons",
+          "offset":12,
+          "type":"CObj_allocatePolygons*"
+        },
+        {
+          "len":4,
+          "name":"addPolygons",
+          "offset":16,
+          "type":"CObj_addPolygons*"
+        },
+        {
+          "len":4,
+          "name":"allocateVertices",
+          "offset":20,
+          "type":"CObj_allocateVertices*"
+        },
+        {
+          "len":4,
+          "name":"addVertices",
+          "offset":24,
+          "type":"CObj_addVertices*"
+        },
+        {
+          "len":4,
+          "name":"free",
+          "offset":28,
+          "type":"CObj_free*"
+        },
+        {
+          "len":4,
+          "name":"copyFrom",
+          "offset":32,
+          "type":"CObj_copyFrom*"
+        },
+        {
+          "len":4,
+          "name":"appendTo",
+          "offset":36,
+          "type":"CObj_appendTo*"
+        },
+        {
+          "len":4,
+          "name":"translate",
+          "offset":40,
+          "type":"CObj_translate*"
+        },
+        {
+          "len":4,
+          "name":"translateMasked",
+          "offset":44,
+          "type":"CObj_translateMasked*"
+        },
+        {
+          "len":4,
+          "name":"transform",
+          "offset":48,
+          "type":"CObj_transform*"
+        },
+        {
+          "len":4,
+          "name":"transformMasked",
+          "offset":52,
+          "type":"CObj_transformMasked*"
+        },
+        {
+          "len":4,
+          "name":"scale",
+          "offset":56,
+          "type":"CObj_scale*"
+        },
+        {
+          "len":4,
+          "name":"scaleMasked",
+          "offset":60,
+          "type":"CObj_scaleMasked*"
+        },
+        {
+          "len":4,
+          "name":"removePolygon",
+          "offset":64,
+          "type":"CObj_removePolygon*"
+        },
+        {
+          "len":4,
+          "name":"findAndRemovePolygon",
+          "offset":68,
+          "type":"CObj_findAndRemovePolygon*"
+        },
+        {
+          "len":4,
+          "name":"removePolygonsAtVertex",
+          "offset":72,
+          "type":"CObj_removePolygonsAtVertex*"
+        },
+        {
+          "len":4,
+          "name":"findAndRemovePolygonsUsingVertex",
+          "offset":76,
+          "type":"CObj_findAndRemovePolygonsUsingVertex*"
+        },
+        {
+          "len":4,
+          "name":"removePolygonsByFlag",
+          "offset":80,
+          "type":"CObj_removePolygonsByFlag*"
+        },
+        {
+          "len":4,
+          "name":"removeVertex",
+          "offset":84,
+          "type":"CObj_removeVertex*"
+        },
+        {
+          "len":4,
+          "name":"findAndRemoveVertex",
+          "offset":88,
+          "type":"CObj_findAndRemoveVertex*"
+        },
+        {
+          "len":4,
+          "name":"removeVerticesByFlag",
+          "offset":92,
+          "type":"CObj_removeVerticesByFlag*"
+        },
+        {
+          "len":4,
+          "name":"findVertexIndex",
+          "offset":96,
+          "type":"CObj_findVertexIndex*"
+        },
+        {
+          "len":4,
+          "name":"getVertex",
+          "offset":100,
+          "type":"CObj_getVertex*"
+        },
+        {
+          "len":4,
+          "name":"containsVertex",
+          "offset":104,
+          "type":"CObj_containsVertex*"
+        },
+        {
+          "len":4,
+          "name":"findPolygonIndex",
+          "offset":108,
+          "type":"CObj_findPolygonIndex*"
+        },
+        {
+          "len":4,
+          "name":"field_112",
+          "offset":112,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_116",
+          "offset":116,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_120",
+          "offset":120,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_124",
+          "offset":124,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_128",
+          "offset":128,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_132",
+          "offset":132,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_136",
+          "offset":136,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_140",
+          "offset":140,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_144",
+          "offset":144,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_148",
+          "offset":148,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_152",
+          "offset":152,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_156",
+          "offset":156,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_160",
+          "offset":160,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_164",
+          "offset":164,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_168",
+          "offset":168,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_172",
+          "offset":172,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_176",
+          "offset":176,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_180",
+          "offset":180,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_184",
+          "offset":184,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_188",
+          "offset":188,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_192",
+          "offset":192,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_196",
+          "offset":196,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_200",
+          "offset":200,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_204",
+          "offset":204,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_208",
+          "offset":208,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_212",
+          "offset":212,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_216",
+          "offset":216,
+          "type":"void*"
+        }
+      ],
+      "importable":true,
+      "len":220,
+      "name":"CObj_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":28,
-          "name":"base",
+          "name":"obj",
           "offset":0,
           "type":"CObj"
         },
         {
-          "len":28,
+          "len":8,
           "name":"field_28",
           "offset":28,
-          "type":"char[28]"
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"field_36",
+          "offset":36,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"field_44",
+          "offset":44,
+          "type":"double"
+        },
+        {
+          "len":4,
+          "name":"field_52",
+          "offset":52,
+          "type":"int"
         },
         {
           "len":4,
@@ -30391,18 +31447,120 @@
           "len":4,
           "name":"field_60",
           "offset":60,
-          "type":"int"
+          "type":"void*"
         },
         {
           "len":4,
           "name":"vtable",
           "offset":64,
-          "type":"void*"
+          "type":"COptimize_vtable*"
         }
       ],
       "importable":true,
       "len":68,
       "name":"COptimize",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"g_COptimizeVTable",
+          "offset":0,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_4",
+          "offset":4,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_8",
+          "offset":8,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_12",
+          "offset":12,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_16",
+          "offset":16,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_20",
+          "offset":20,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_24",
+          "offset":24,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_28",
+          "offset":28,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_32",
+          "offset":32,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_36",
+          "offset":36,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_40",
+          "offset":40,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_44",
+          "offset":44,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_48",
+          "offset":48,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_52",
+          "offset":52,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_56",
+          "offset":56,
+          "type":"void*"
+        }
+      ],
+      "importable":true,
+      "len":60,
+      "name":"COptimize_vtable",
       "pack":false,
       "type":"struct"
     },
@@ -31887,20 +33045,242 @@
         },
         {
           "len":4,
-          "name":"field_96",
+          "name":"flags",
           "offset":96,
-          "type":"int"
+          "type":"uint"
         },
         {
           "len":4,
           "name":"vtable",
           "offset":100,
-          "type":"void*"
+          "type":"CPoly_vtable*"
         }
       ],
       "importable":true,
       "len":104,
       "name":"CPoly",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"init",
+          "offset":0,
+          "type":"CPoly_init*"
+        },
+        {
+          "len":4,
+          "name":"field_4",
+          "offset":4,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_8",
+          "offset":8,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_12",
+          "offset":12,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_16",
+          "offset":16,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_20",
+          "offset":20,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_24",
+          "offset":24,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_28",
+          "offset":28,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_32",
+          "offset":32,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_36",
+          "offset":36,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_40",
+          "offset":40,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_44",
+          "offset":44,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_48",
+          "offset":48,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_52",
+          "offset":52,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_56",
+          "offset":56,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_60",
+          "offset":60,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_64",
+          "offset":64,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_68",
+          "offset":68,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_72",
+          "offset":72,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_76",
+          "offset":76,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_80",
+          "offset":80,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_84",
+          "offset":84,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_88",
+          "offset":88,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_92",
+          "offset":92,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_96",
+          "offset":96,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_100",
+          "offset":100,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_104",
+          "offset":104,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_108",
+          "offset":108,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_112",
+          "offset":112,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_116",
+          "offset":116,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_120",
+          "offset":120,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_124",
+          "offset":124,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_128",
+          "offset":128,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_132",
+          "offset":132,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"field_136",
+          "offset":136,
+          "type":"void*"
+        }
+      ],
+      "importable":true,
+      "len":140,
+      "name":"CPoly_vtable",
       "pack":false,
       "type":"struct"
     },
@@ -34433,40 +35813,10 @@
       "desc":"",
       "fields":[
         {
-          "len":4,
-          "name":"field_0",
+          "len":24,
+          "name":"impl",
           "offset":0,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"field_4",
-          "offset":4,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"field_8",
-          "offset":8,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"field_12",
-          "offset":12,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"field_16",
-          "offset":16,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"field_20",
-          "offset":20,
-          "type":"int"
+          "type":"CVector3d"
         }
       ],
       "importable":true,
@@ -34736,6 +36086,42 @@
       "importable":true,
       "len":4216,
       "name":"CVehicle",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":24,
+          "name":"position",
+          "offset":0,
+          "type":"CVec"
+        },
+        {
+          "len":24,
+          "name":"orig_position",
+          "offset":24,
+          "type":"CVec"
+        },
+        {
+          "len":4,
+          "name":"flags2",
+          "offset":48,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"flags",
+          "offset":52,
+          "type":"uint"
+        }
+      ],
+      "importable":true,
+      "len":56,
+      "name":"CVert",
       "pack":false,
       "type":"struct"
     },

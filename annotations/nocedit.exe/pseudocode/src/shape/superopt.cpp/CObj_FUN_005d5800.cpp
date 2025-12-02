@@ -13,7 +13,7 @@
 int __cdecl shape_superopt_cpp_CObj_FUN_005d5800(CObj *this_ptr)
 
 {
-  undefined4 *puVar1;
+  CVert *pCVar1;
   int iVar2;
   int *piVar3;
   CPoly *pCVar4;
@@ -44,25 +44,25 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d5800(CObj *this_ptr)
   
   bVar11 = 0;
   if (in_stack_00000010 == 0) {
-    if (this_ptr->count == 0) {
+    if (this_ptr->poly_count == 0) {
       iVar2 = 0;
     }
     else {
-      (**(code **)((int)this_ptr->vtable + 0x84))();
-      iVar2 = (**(code **)((int)this_ptr->vtable + 0xd8))();
+      (*(code *)this_ptr->vtable->field33_0x84)();
+      iVar2 = (*(code *)this_ptr->vtable->field54_0xd8)();
     }
     return iVar2;
   }
   *(byte *)(in_stack_00000010 + 0x61) = *(byte *)(in_stack_00000010 + 0x61) | 0x20;
   local_18 = this_ptr->poly_array;
   local_20 = 0;
-  if (this_ptr->count != 0) {
+  if (this_ptr->poly_count != 0) {
     local_24 = (double *)(in_stack_00000010 + 0x40);
     pCVar6 = &local_18->normal;
     piVar9 = &local_18->vertex_idx_0;
     piVar3 = (int *)(in_stack_00000010 + 4);
     do {
-      if (((local_18->field8_0x60 & 0x2000) == 0) &&
+      if (((local_18->flags & 0x2000) == 0) &&
          (1.0 - (double)CONCAT44(in_stack_0000000c,in_stack_00000008) <=
           pCVar6->z * *(double *)(in_stack_00000010 + 0x50) +
           pCVar6->x * *local_24 + pCVar6->y * *(double *)(in_stack_00000010 + 0x48))) {
@@ -73,9 +73,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d5800(CObj *this_ptr)
            ((*piVar9 == *piVar3 && (piVar9[1] == *(int *)(in_stack_00000010 + 0xc))))) {
           local_28 = 2;
 LAB_005d59af:
-          puVar1 = (undefined4 *)
-                   ((int)this_ptr->vertex_data +
-                   *(int *)((int)local_18->uv_coords + local_28 * 4 + -0xc) * 0x38);
+          pCVar1 = this_ptr->vertex_data + *(int *)((int)local_18->uv_coords + local_28 * 4 + -0xc);
           local_14 = (double *)(in_stack_00000010 + 0x40);
           shape_superopt_cpp_FUN_005d63d0();
           puVar8 = local_40;
@@ -85,18 +83,18 @@ LAB_005d59af:
             puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
             puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
           }
-          *puVar1 = local_58;
-          puVar1[1] = local_54;
-          puVar1[2] = local_50;
-          puVar1[3] = local_4c;
-          puVar1[4] = local_48;
-          puVar1[5] = local_44;
+          *(undefined4 *)&(pCVar1->position).impl.x = local_58;
+          *(undefined4 *)((int)&(pCVar1->position).impl.x + 4) = local_54;
+          *(undefined4 *)&(pCVar1->position).impl.y = local_50;
+          *(undefined4 *)((int)&(pCVar1->position).impl.y + 4) = local_4c;
+          *(undefined4 *)&(pCVar1->position).impl.z = local_48;
+          *(undefined4 *)((int)&(pCVar1->position).impl.z + 4) = local_44;
           (local_18->normal).x = *local_14;
           *(undefined4 *)&(local_18->normal).y = *(undefined4 *)(local_14 + 1);
           *(undefined4 *)((int)&(local_18->normal).y + 4) = *(undefined4 *)((int)local_14 + 0xc);
           *(undefined4 *)&(local_18->normal).z = *(undefined4 *)(local_14 + 2);
           *(undefined4 *)((int)&(local_18->normal).z + 4) = *(undefined4 *)((int)local_14 + 0x14);
-          iVar2 = (**(code **)((int)this_ptr->vtable + 0xd8))();
+          iVar2 = (*(code *)this_ptr->vtable->field54_0xd8)();
           return iVar2;
         }
         if ((piVar9[1] == *(int *)(in_stack_00000010 + 0xc)) &&
@@ -130,42 +128,42 @@ LAB_005d59af:
       pCVar6 = (CVector3d *)((int)(pCVar6 + 4) + 8);
       piVar9 = piVar9 + 0x1a;
       local_20 = local_20 + 1;
-    } while (local_20 < (uint)this_ptr->count);
+    } while (local_20 < (uint)this_ptr->poly_count);
   }
   local_1c = 0;
   pCVar5 = this_ptr->poly_array;
-  if (this_ptr->count != 0) {
+  if (this_ptr->poly_count != 0) {
     do {
-      if ((pCVar5->field8_0x60 & 0x2000) != 0) {
+      if ((pCVar5->flags & 0x2000) != 0) {
         uVar7 = 0;
         pCVar4 = this_ptr->poly_array;
-        if (this_ptr->count != 0) {
+        if (this_ptr->poly_count != 0) {
           do {
-            if (((pCVar4->field8_0x60 & 0x2000) == 0) &&
-               (iVar2 = (**(code **)((int)pCVar5->vtable + 0x70))(), iVar2 != 0)) {
-              iVar2 = (**(code **)((int)this_ptr->vtable + 0xd8))();
+            if (((pCVar4->flags & 0x2000) == 0) &&
+               (iVar2 = (*(code *)pCVar5->vtable->field28_0x70)(), iVar2 != 0)) {
+              iVar2 = (*(code *)this_ptr->vtable->field54_0xd8)();
               return iVar2;
             }
             uVar7 = uVar7 + 1;
             pCVar4 = pCVar4 + 1;
-          } while (uVar7 < (uint)this_ptr->count);
+          } while (uVar7 < (uint)this_ptr->poly_count);
         }
       }
       pCVar5 = pCVar5 + 1;
       local_1c = local_1c + 1;
-    } while (local_1c < (uint)this_ptr->count);
+    } while (local_1c < (uint)this_ptr->poly_count);
   }
   uVar7 = 0;
   pCVar5 = this_ptr->poly_array;
-  if (this_ptr->count != 0) {
+  if (this_ptr->poly_count != 0) {
     do {
-      if ((pCVar5->field8_0x60 & 0x2000) == 0) {
-        iVar2 = (**(code **)((int)this_ptr->vtable + 0xd8))();
+      if ((pCVar5->flags & 0x2000) == 0) {
+        iVar2 = (*(code *)this_ptr->vtable->field54_0xd8)();
         return iVar2;
       }
       uVar7 = uVar7 + 1;
       pCVar5 = pCVar5 + 1;
-    } while (uVar7 < (uint)this_ptr->count);
+    } while (uVar7 < (uint)this_ptr->poly_count);
   }
   return 1;
 }

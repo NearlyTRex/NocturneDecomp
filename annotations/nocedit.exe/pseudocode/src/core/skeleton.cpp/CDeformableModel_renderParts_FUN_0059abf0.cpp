@@ -137,42 +137,40 @@ core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0
               pSVar8 = pSVar6 + *puVar11;
               pSVar1 = pSVar6 + puVar11[1];
               pSVar6 = pSVar6 + puVar11[2];
-              local_28 = (pSVar8->projected_vertex).transformed_x * g_InverseMatrix.m[0][0] +
-                         (pSVar8->projected_vertex).transformed_y * g_InverseMatrix.m[1][0] +
-                         (pSVar8->projected_vertex).transformed_z * g_InverseMatrix.m[2][0];
-              local_24 = (pSVar8->projected_vertex).transformed_x * g_InverseMatrix.m[0][1] +
-                         (pSVar8->projected_vertex).transformed_y * g_InverseMatrix.m[1][1] +
-                         (pSVar8->projected_vertex).transformed_z * g_InverseMatrix.m[2][1];
-              local_20 = (pSVar8->projected_vertex).transformed_z * g_InverseMatrix.m[2][2] +
-                         (pSVar8->projected_vertex).transformed_x * g_InverseMatrix.m[0][2] +
-                         (pSVar8->projected_vertex).transformed_y * g_InverseMatrix.m[1][2];
-              local_1c = (pSVar1->projected_vertex).transformed_z * g_InverseMatrix.m[2][0] +
-                         (pSVar1->projected_vertex).transformed_x * g_InverseMatrix.m[0][0] +
-                         g_InverseMatrix.m[1][0] * (pSVar1->projected_vertex).transformed_y;
-              local_18 = (pSVar1->projected_vertex).transformed_y * g_InverseMatrix.m[1][1] +
-                         (pSVar1->projected_vertex).transformed_x * g_InverseMatrix.m[0][1] +
-                         (pSVar1->projected_vertex).transformed_z * g_InverseMatrix.m[2][1];
-              local_14 = (pSVar1->projected_vertex).transformed_z * g_InverseMatrix.m[2][2] +
-                         (pSVar1->projected_vertex).transformed_x * g_InverseMatrix.m[0][2] +
-                         (pSVar1->projected_vertex).transformed_y * g_InverseMatrix.m[1][2];
-              iVar9 = (pSVar6->projected_vertex).transformed_x * g_InverseMatrix.m[0][2];
-              iVar10 = (pSVar6->projected_vertex).transformed_z * g_InverseMatrix.m[2][2];
+              local_28 = (pSVar8->projected_vertex).transformed_x * g_InverseMatrix.m[0].x +
+                         (pSVar8->projected_vertex).transformed_y * g_InverseMatrix.m[1].x +
+                         (pSVar8->projected_vertex).transformed_z * g_InverseMatrix.m[2].x;
+              local_24 = (pSVar8->projected_vertex).transformed_x * g_InverseMatrix.m[0].y +
+                         (pSVar8->projected_vertex).transformed_y * g_InverseMatrix.m[1].y +
+                         (pSVar8->projected_vertex).transformed_z * g_InverseMatrix.m[2].y;
+              local_20 = (pSVar8->projected_vertex).transformed_z * g_InverseMatrix.m[2].z +
+                         (pSVar8->projected_vertex).transformed_x * g_InverseMatrix.m[0].z +
+                         (pSVar8->projected_vertex).transformed_y * g_InverseMatrix.m[1].z;
+              local_1c = (pSVar1->projected_vertex).transformed_z * g_InverseMatrix.m[2].x +
+                         (pSVar1->projected_vertex).transformed_x * g_InverseMatrix.m[0].x +
+                         g_InverseMatrix.m[1].x * (pSVar1->projected_vertex).transformed_y;
+              local_18 = (pSVar1->projected_vertex).transformed_y * g_InverseMatrix.m[1].y +
+                         (pSVar1->projected_vertex).transformed_x * g_InverseMatrix.m[0].y +
+                         (pSVar1->projected_vertex).transformed_z * g_InverseMatrix.m[2].y;
+              local_14 = (pSVar1->projected_vertex).transformed_z * g_InverseMatrix.m[2].z +
+                         (pSVar1->projected_vertex).transformed_x * g_InverseMatrix.m[0].z +
+                         (pSVar1->projected_vertex).transformed_y * g_InverseMatrix.m[1].z;
+              iVar9 = (pSVar6->projected_vertex).transformed_x * g_InverseMatrix.m[0].z;
+              iVar10 = (pSVar6->projected_vertex).transformed_z * g_InverseMatrix.m[2].z;
               local_70 = (float)local_20;
               local_4c = (float)local_1c;
               local_48 = local_4c - (float)local_28;
               local_58 = (float)local_18;
               local_50 = local_58 - (float)local_24;
               local_54 = (float)local_14;
-              local_74 = (float)((pSVar6->projected_vertex).transformed_z * g_InverseMatrix.m[2][0]
-                                + (pSVar6->projected_vertex).transformed_x * g_InverseMatrix.m[0][0]
-                                  + (pSVar6->projected_vertex).transformed_y *
-                                    g_InverseMatrix.m[1][0]);
-              local_6c = (float)((pSVar6->projected_vertex).transformed_y * g_InverseMatrix.m[1][1]
-                                 + (pSVar6->projected_vertex).transformed_x *
-                                   g_InverseMatrix.m[0][1] +
-                                (pSVar6->projected_vertex).transformed_z * g_InverseMatrix.m[2][1]);
-              local_68 = (float)((pSVar6->projected_vertex).transformed_y * g_InverseMatrix.m[1][2]
-                                 + iVar9 + iVar10);
+              local_74 = (float)((pSVar6->projected_vertex).transformed_z * g_InverseMatrix.m[2].x +
+                                (pSVar6->projected_vertex).transformed_x * g_InverseMatrix.m[0].x +
+                                (pSVar6->projected_vertex).transformed_y * g_InverseMatrix.m[1].x);
+              local_6c = (float)((pSVar6->projected_vertex).transformed_y * g_InverseMatrix.m[1].y +
+                                 (pSVar6->projected_vertex).transformed_x * g_InverseMatrix.m[0].y +
+                                (pSVar6->projected_vertex).transformed_z * g_InverseMatrix.m[2].y);
+              local_68 = (float)((pSVar6->projected_vertex).transformed_y * g_InverseMatrix.m[1].z +
+                                 iVar9 + iVar10);
               local_c8 = local_68 - local_54;
               fVar2 = local_50 * local_c8 - (local_6c - local_58) * (local_54 - local_70);
               fVar3 = (local_74 - local_4c) * (local_54 - local_70) - local_48 * local_c8;
