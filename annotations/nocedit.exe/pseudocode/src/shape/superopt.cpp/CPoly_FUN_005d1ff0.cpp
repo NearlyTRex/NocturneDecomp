@@ -82,7 +82,7 @@ int __cdecl shape_superopt_cpp_CPoly_FUN_005d1ff0(CPoly *this_ptr)
       local_e0 = -local_e0;
     }
     if (local_e0 <= DOUBLE_0065431a) {
-      (*(code *)this_ptr->vtable->field17_0x44)();
+      (*(code *)this_ptr->vtable->computeNormalMaybe1)();
       dVar2 = (this_ptr->normal).y;
       dVar3 = (this_ptr->normal).x;
       dVar4 = (this_ptr->normal).z;

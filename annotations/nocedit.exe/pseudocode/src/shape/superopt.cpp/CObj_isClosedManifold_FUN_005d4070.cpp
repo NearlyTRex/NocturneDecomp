@@ -1,12 +1,12 @@
-// Name: shape_superopt.cpp_CObj_FUN_005d4070
+// Name: shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070
 // Address: 005d4070
 // Address Range: [[005d4070, 005d4101]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CObj_FUN_005d4070(CObj * this_ptr)
+// Signature: int shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070(CObj * this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl shape_superopt_cpp_CObj_FUN_005d4070(CObj *this_ptr)
+int __cdecl shape_superopt_cpp_CObj_isClosedManifold_FUN_005d4070(CObj *this_ptr)
 
 {
   int iVar1;
@@ -42,7 +42,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d4070(CObj *this_ptr)
 
 // Assembly code:
 // 005d4070: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_FUN_005d4070
+//   Label: shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070
 // 005d4071: PUSH ESI
 // 005d4072: PUSH EDI
 // 005d4073: PUSH EBP

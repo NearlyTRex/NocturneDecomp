@@ -15,7 +15,7 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cd6f0(CPoly *this_ptr)
   
   pCVar2 = this_ptr->parent_obj->vertex_data;
   pCVar1 = pCVar2 + this_ptr->vertex_idx_0;
-  if ((pCVar1->flags & in_stack_00000008) == in_stack_00000008) {
+  if ((pCVar1->state_flags & in_stack_00000008) == in_stack_00000008) {
     *(undefined4 *)&(pCVar1->position).impl.x = *(undefined4 *)&(pCVar1->orig_position).impl.x;
     *(undefined4 *)((int)&(pCVar1->position).impl.x + 4) =
          *(undefined4 *)((int)&(pCVar1->orig_position).impl.x + 4);
@@ -27,7 +27,7 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cd6f0(CPoly *this_ptr)
          *(undefined4 *)((int)&(pCVar1->orig_position).impl.z + 4);
   }
   pCVar1 = pCVar2 + this_ptr->vertex_idx_1;
-  if ((pCVar1->flags & in_stack_00000008) == in_stack_00000008) {
+  if ((pCVar1->state_flags & in_stack_00000008) == in_stack_00000008) {
     *(undefined4 *)&(pCVar1->position).impl.x = *(undefined4 *)&(pCVar1->orig_position).impl.x;
     *(undefined4 *)((int)&(pCVar1->position).impl.x + 4) =
          *(undefined4 *)((int)&(pCVar1->orig_position).impl.x + 4);
@@ -39,7 +39,7 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cd6f0(CPoly *this_ptr)
          *(undefined4 *)((int)&(pCVar1->orig_position).impl.z + 4);
   }
   pCVar2 = pCVar2 + this_ptr->vertex_idx_2;
-  if ((pCVar2->flags & in_stack_00000008) != in_stack_00000008) {
+  if ((pCVar2->state_flags & in_stack_00000008) != in_stack_00000008) {
     return;
   }
   *(undefined4 *)&(pCVar2->position).impl.x = *(undefined4 *)&(pCVar2->orig_position).impl.x;

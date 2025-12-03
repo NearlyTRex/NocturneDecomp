@@ -191,7 +191,7 @@ void shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
     pCVar14 = (CPoly *)g_ModelPolygonData[0].texture_name;
     do {
       shape_superopt_cpp_CPoly_ctor_FUN_005cc620((CPoly *)&stack0xfffffeb8);
-      pCVar13 = (CObj *)pCVar14[0x38666].field6_0x58;
+      pCVar13 = (CObj *)pCVar14[0x38666].adjacency_flags;
       iVar8 = 0;
       if (0 < DAT_03f6bbe8) {
         pcVar7 = &DAT_03f6bbf0;

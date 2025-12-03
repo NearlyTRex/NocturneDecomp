@@ -1,29 +1,29 @@
-// Name: shape_superopt.cpp_CObj_FUN_005d34d0
+// Name: shape_superopt.cpp_CObj_setStateFlagIfCondition_FUN_005d34d0
 // Address: 005d34d0
 // Address Range: [[005d34d0, 005d3583]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_FUN_005d34d0(CObj * this_ptr)
+// Signature: void shape_superopt.cpp_CObj_setStateFlagIfCondition_FUN_005d34d0(CObj * this_ptr, uint flag_to_set, uint condition_mask)
 
 #include "nocturne.h"
 
-void __cdecl shape_superopt_cpp_CObj_FUN_005d34d0(CObj *this_ptr)
+void __cdecl
+shape_superopt_cpp_CObj_setStateFlagIfCondition_FUN_005d34d0
+          (CObj *this_ptr,uint flag_to_set,uint condition_mask)
 
 {
   uint uVar1;
   CVert *pCVar2;
   CPoly *pCVar3;
-  uint in_stack_00000008;
-  uint in_stack_0000000c;
   
   uVar1 = 0;
   pCVar2 = this_ptr->vertex_data;
   if (this_ptr->vertex_count != 0) {
     do {
-      if ((pCVar2->flags & in_stack_0000000c) == in_stack_0000000c) {
-        pCVar2->flags = pCVar2->flags | in_stack_00000008;
+      if ((pCVar2->state_flags & condition_mask) == condition_mask) {
+        pCVar2->state_flags = pCVar2->state_flags | flag_to_set;
       }
       else {
-        pCVar2->flags = pCVar2->flags & ~in_stack_00000008;
+        pCVar2->state_flags = pCVar2->state_flags & ~flag_to_set;
       }
       uVar1 = uVar1 + 1;
       pCVar2 = pCVar2 + 1;
@@ -33,23 +33,23 @@ void __cdecl shape_superopt_cpp_CObj_FUN_005d34d0(CObj *this_ptr)
   pCVar3 = this_ptr->poly_array;
   if (this_ptr->poly_count != 0) {
     do {
-      (*(code *)pCVar3->vtable->field8_0x20)();
+      (*(code *)pCVar3->vtable->setFlags)();
       uVar1 = uVar1 + 1;
       pCVar3 = pCVar3 + 1;
     } while (uVar1 < (uint)this_ptr->poly_count);
   }
-  if ((this_ptr->field4_0x10 & in_stack_0000000c) == in_stack_0000000c) {
-    this_ptr->field4_0x10 = this_ptr->field4_0x10 | in_stack_00000008;
+  if ((this_ptr->flags & condition_mask) == condition_mask) {
+    this_ptr->flags = this_ptr->flags | flag_to_set;
     return;
   }
-  this_ptr->field4_0x10 = this_ptr->field4_0x10 & ~in_stack_00000008;
+  this_ptr->flags = this_ptr->flags & ~flag_to_set;
   return;
 }
 
 
 // Assembly code:
 // 005d34d0: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_FUN_005d34d0
+//   Label: shape_superopt.cpp_CObj_setStateFlagIfCondition_FUN_005d34d0
 // 005d34d1: PUSH ESI
 // 005d34d2: PUSH EDI
 // 005d34d3: PUSH EBP

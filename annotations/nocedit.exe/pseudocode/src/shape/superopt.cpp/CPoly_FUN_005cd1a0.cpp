@@ -17,17 +17,17 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cd1a0(CPoly *this_ptr)
   iVar1 = this_ptr->vertex_idx_0;
   pCVar2 = this_ptr->parent_obj->vertex_data;
   uVar3 = ~in_stack_00000008;
-  pCVar2[iVar1].flags2 =
-       ~(pCVar2[iVar1].flags2 & in_stack_00000008) & in_stack_00000008 |
-       pCVar2[iVar1].flags2 & uVar3;
+  pCVar2[iVar1].attrib_flags =
+       ~(pCVar2[iVar1].attrib_flags & in_stack_00000008) & in_stack_00000008 |
+       pCVar2[iVar1].attrib_flags & uVar3;
   iVar1 = this_ptr->vertex_idx_1;
-  pCVar2[iVar1].flags2 =
-       ~(pCVar2[iVar1].flags2 & in_stack_00000008) & in_stack_00000008 |
-       pCVar2[iVar1].flags2 & uVar3;
+  pCVar2[iVar1].attrib_flags =
+       ~(pCVar2[iVar1].attrib_flags & in_stack_00000008) & in_stack_00000008 |
+       pCVar2[iVar1].attrib_flags & uVar3;
   iVar1 = this_ptr->vertex_idx_2;
-  pCVar2[iVar1].flags2 =
-       ~(pCVar2[iVar1].flags2 & in_stack_00000008) & in_stack_00000008 |
-       uVar3 & pCVar2[iVar1].flags2;
+  pCVar2[iVar1].attrib_flags =
+       ~(pCVar2[iVar1].attrib_flags & in_stack_00000008) & in_stack_00000008 |
+       uVar3 & pCVar2[iVar1].attrib_flags;
   return;
 }
 

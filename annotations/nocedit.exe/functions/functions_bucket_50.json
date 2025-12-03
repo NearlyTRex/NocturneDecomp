@@ -74465,8 +74465,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d33d0",
-    "ret":"int",
+    "name":"shape_superopt.cpp_CObj_getPolygon_FUN_005d33d0",
+    "ret":"CPoly*",
     "vars":{
       "params":[
         {
@@ -74484,6 +74484,22 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ],
       "ret_storage":{
@@ -74509,7 +74525,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d34d0",
+    "name":"shape_superopt.cpp_CObj_setStateFlagIfCondition_FUN_005d34d0",
     "ret":"void",
     "vars":{
       "params":[
@@ -74528,6 +74544,38 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"flag_to_set",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"condition_mask",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ]
     }
@@ -74543,7 +74591,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d3650",
+    "name":"shape_superopt.cpp_CObj_setStateFlagToAttrib_FUN_005d3650",
     "ret":"void",
     "vars":{
       "params":[
@@ -74562,6 +74610,38 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"set_mask",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"attrib_test",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ]
     }
@@ -74577,7 +74657,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d3ed0",
+    "name":"shape_superopt.cpp_CObj_scaleAllUVs_FUN_005d3ed0",
     "ret":"void",
     "vars":{
       "params":[
@@ -74596,6 +74676,22 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"uv_scale",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector2d*"
         }
       ]
     }

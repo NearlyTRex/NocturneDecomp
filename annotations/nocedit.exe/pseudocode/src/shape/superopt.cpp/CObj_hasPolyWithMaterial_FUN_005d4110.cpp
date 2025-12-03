@@ -1,18 +1,17 @@
-// Name: shape_superopt.cpp_CObj_FUN_005d4110
+// Name: shape_superopt.cpp_CObj_hasPolyWithMaterial_FUN_005d4110
 // Address: 005d4110
 // Address Range: [[005d4110, 005d4155]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CObj_FUN_005d4110(CObj * this_ptr)
+// Signature: int shape_superopt.cpp_CObj_hasPolyWithMaterial_FUN_005d4110(CObj * this_ptr, int material_id)
 
 #include "nocturne.h"
 
-int __cdecl shape_superopt_cpp_CObj_FUN_005d4110(CObj *this_ptr)
+int __cdecl shape_superopt_cpp_CObj_hasPolyWithMaterial_FUN_005d4110(CObj *this_ptr,int material_id)
 
 {
   int iVar1;
   int iVar2;
   uint uVar3;
-  int in_stack_00000008;
   
   uVar3 = 0;
   if (this_ptr->poly_count != 0) {
@@ -20,7 +19,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d4110(CObj *this_ptr)
     do {
       iVar1 = (**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar2 + 4) + 0x54))
                         ();
-      if (iVar1 == in_stack_00000008) {
+      if (iVar1 == material_id) {
         return 1;
       }
       uVar3 = uVar3 + 1;
@@ -33,7 +32,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d4110(CObj *this_ptr)
 
 // Assembly code:
 // 005d4110: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_FUN_005d4110
+//   Label: shape_superopt.cpp_CObj_hasPolyWithMaterial_FUN_005d4110
 // 005d4111: PUSH ESI
 // 005d4112: PUSH EDI
 // 005d4113: PUSH EBP

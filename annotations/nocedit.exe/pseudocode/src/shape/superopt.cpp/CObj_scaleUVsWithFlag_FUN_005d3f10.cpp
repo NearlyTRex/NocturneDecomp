@@ -1,24 +1,25 @@
-// Name: shape_superopt.cpp_CObj_FUN_005d3f10
+// Name: shape_superopt.cpp_CObj_scaleUVsWithFlag_FUN_005d3f10
 // Address: 005d3f10
 // Address Range: [[005d3f10, 005d3f5f]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_FUN_005d3f10(CObj * this_ptr)
+// Signature: void shape_superopt.cpp_CObj_scaleUVsWithFlag_FUN_005d3f10(CObj * this_ptr, CVector2d * uv_scale, uint flag_mask)
 
 #include "nocturne.h"
 
-void __cdecl shape_superopt_cpp_CObj_FUN_005d3f10(CObj *this_ptr)
+void __cdecl
+shape_superopt_cpp_CObj_scaleUVsWithFlag_FUN_005d3f10
+          (CObj *this_ptr,CVector2d *uv_scale,uint flag_mask)
 
 {
   CPoly *pCVar1;
   uint uVar2;
-  uint in_stack_0000000c;
   
   pCVar1 = this_ptr->poly_array;
   uVar2 = 0;
   if (this_ptr->poly_count != 0) {
     do {
-      while ((pCVar1->flags & in_stack_0000000c) == in_stack_0000000c) {
-        (*(code *)pCVar1->vtable->field20_0x50)();
+      while ((pCVar1->flags & flag_mask) == flag_mask) {
+        (*(code *)pCVar1->vtable->scaleUVs)();
         uVar2 = uVar2 + 1;
         pCVar1 = pCVar1 + 1;
         if ((uint)this_ptr->poly_count <= uVar2) {
@@ -35,7 +36,7 @@ void __cdecl shape_superopt_cpp_CObj_FUN_005d3f10(CObj *this_ptr)
 
 // Assembly code:
 // 005d3f10: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_FUN_005d3f10
+//   Label: shape_superopt.cpp_CObj_scaleUVsWithFlag_FUN_005d3f10
 // 005d3f11: PUSH ESI
 // 005d3f12: PUSH EDI
 // 005d3f13: PUSH EBP

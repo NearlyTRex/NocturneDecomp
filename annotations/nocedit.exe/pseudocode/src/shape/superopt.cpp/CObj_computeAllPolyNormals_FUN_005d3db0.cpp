@@ -1,15 +1,14 @@
-// Name: shape_superopt.cpp_CObj_FUN_005d3db0
+// Name: shape_superopt.cpp_CObj_computeAllPolyNormals_FUN_005d3db0
 // Address: 005d3db0
 // Address Range: [[005d3db0, 005d3de3]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CObj_FUN_005d3db0(CObj * this_ptr)
+// Signature: void shape_superopt.cpp_CObj_computeAllPolyNormals_FUN_005d3db0(CObj * this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl shape_superopt_cpp_CObj_FUN_005d3db0(CObj *this_ptr)
+void __cdecl shape_superopt_cpp_CObj_computeAllPolyNormals_FUN_005d3db0(CObj *this_ptr)
 
 {
-  int in_EAX;
   CPoly *pCVar1;
   uint uVar2;
   
@@ -18,17 +17,17 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d3db0(CObj *this_ptr)
   if (this_ptr->poly_count != 0) {
     do {
       uVar2 = uVar2 + 1;
-      in_EAX = (*(code *)pCVar1->vtable->field18_0x48)();
+      (*(code *)pCVar1->vtable->computeNormalMaybe2)();
       pCVar1 = pCVar1 + 1;
     } while (uVar2 < (uint)this_ptr->poly_count);
   }
-  return in_EAX;
+  return;
 }
 
 
 // Assembly code:
 // 005d3db0: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_FUN_005d3db0
+//   Label: shape_superopt.cpp_CObj_computeAllPolyNormals_FUN_005d3db0
 // 005d3db1: PUSH ESI
 // 005d3db2: PUSH EDI
 // 005d3db3: MOV EDI,dword ptr [ESP + 0x10]

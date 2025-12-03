@@ -1,50 +1,47 @@
-// Name: shape_superopt.cpp_CObj_FUN_005d35e0
+// Name: shape_superopt.cpp_CObj_clearStateFlags_FUN_005d35e0
 // Address: 005d35e0
 // Address Range: [[005d35e0, 005d3649]]
 // Convention: __cdecl
-// Signature: uint shape_superopt.cpp_CObj_FUN_005d35e0(CObj * this_ptr)
+// Signature: void shape_superopt.cpp_CObj_clearStateFlags_FUN_005d35e0(CObj * this_ptr, uint mask)
 // Cross-references:
 //   shape_superopt.cpp_COptimize_FUN_005d7290 (005d7290) at 005d72cb [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_COptimize_FUN_005d7350 (005d7350) at 005d7361 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
-uint __cdecl shape_superopt_cpp_CObj_FUN_005d35e0(CObj *this_ptr)
+void __cdecl shape_superopt_cpp_CObj_clearStateFlags_FUN_005d35e0(CObj *this_ptr,uint mask)
 
 {
-  uint in_EAX;
   CVert *pCVar1;
   CPoly *pCVar2;
   uint uVar3;
-  uint in_stack_00000008;
   
   pCVar1 = this_ptr->vertex_data;
   uVar3 = 0;
   if (this_ptr->vertex_count != 0) {
     do {
-      pCVar1->flags = pCVar1->flags & ~in_stack_00000008;
+      pCVar1->state_flags = pCVar1->state_flags & ~mask;
       uVar3 = uVar3 + 1;
-      in_EAX = this_ptr->vertex_count;
       pCVar1 = pCVar1 + 1;
-    } while (uVar3 < in_EAX);
+    } while (uVar3 < (uint)this_ptr->vertex_count);
   }
   pCVar2 = this_ptr->poly_array;
   uVar3 = 0;
   if (this_ptr->poly_count != 0) {
     do {
       uVar3 = uVar3 + 1;
-      in_EAX = (*(code *)pCVar2->vtable->field11_0x2c)();
+      (*(code *)pCVar2->vtable->clearStateFlags)();
       pCVar2 = pCVar2 + 1;
     } while (uVar3 < (uint)this_ptr->poly_count);
   }
-  this_ptr->field4_0x10 = this_ptr->field4_0x10 & ~in_stack_00000008;
-  return in_EAX;
+  this_ptr->flags = this_ptr->flags & ~mask;
+  return;
 }
 
 
 // Assembly code:
 // 005d35e0: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_FUN_005d35e0
+//   Label: shape_superopt.cpp_CObj_clearStateFlags_FUN_005d35e0
 // 005d35e1: PUSH ESI
 // 005d35e2: PUSH EDI
 // 005d35e3: PUSH EBP

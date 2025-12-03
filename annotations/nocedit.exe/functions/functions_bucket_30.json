@@ -74050,7 +74050,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d36b0",
+    "name":"shape_superopt.cpp_CObj_updatePolyFlagsFromVerts_FUN_005d36b0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -74135,6 +74135,22 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"mask",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ]
     }
@@ -74150,8 +74166,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d37b0",
-    "ret":"void*",
+    "name":"shape_superopt.cpp_CObj_saveVertexPositionsWithFlag_FUN_005d37b0",
+    "ret":"void",
     "vars":{
       "params":[
         {
@@ -74169,18 +74185,24 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"flag_mask",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -74194,8 +74216,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d38b0",
-    "ret":"void*",
+    "name":"shape_superopt.cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0",
+    "ret":"void",
     "vars":{
       "params":[
         {
@@ -74213,18 +74235,24 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"flag_mask",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -74238,8 +74266,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d3db0",
-    "ret":"int",
+    "name":"shape_superopt.cpp_CObj_computeAllPolyNormals_FUN_005d3db0",
+    "ret":"void",
     "vars":{
       "params":[
         {
@@ -74258,17 +74286,7 @@
           },
           "type":"CObj*"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {

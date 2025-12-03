@@ -387,93 +387,93 @@ int CObj::containsVertex(CObj * this_ptr, CVert * vertex_ptr);
 // Address: 005d3380
 int CObj::findPolygonIndex(CObj * this_ptr, CPoly * poly_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d33d0
+// Original: shape_superopt.cpp_CObj_getPolygon_FUN_005d33d0
 // Address: 005d33d0
-int CObj(CObj * this_ptr);
+CPoly * CObj::getPolygon(CObj * this_ptr, uint index);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3400
+// Original: shape_superopt.cpp_CObj_containsPolygon_FUN_005d3400
 // Address: 005d3400
-int CObj(CObj * this_ptr);
+int CObj::containsPolygon(CObj * this_ptr, CPoly * poly_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3440
+// Original: shape_superopt.cpp_CObj_setStateFlags_FUN_005d3440
 // Address: 005d3440
-void CObj(CObj * this_ptr);
+void CObj::setStateFlags(CObj * this_ptr, uint set_mask, uint clear_mask);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d34d0
+// Original: shape_superopt.cpp_CObj_setStateFlagIfCondition_FUN_005d34d0
 // Address: 005d34d0
-void CObj(CObj * this_ptr);
+void CObj::setStateFlagIfCondition(CObj * this_ptr, uint flag_to_set, uint condition_mask);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3590
+// Original: shape_superopt.cpp_CObj_setStateFlagFromAttrib_FUN_005d3590
 // Address: 005d3590
-void CObj(CObj * this_ptr);
+void CObj::setStateFlagFromAttrib(CObj * this_ptr, uint flag_to_set, uint attrib_mask);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d35e0
+// Original: shape_superopt.cpp_CObj_clearStateFlags_FUN_005d35e0
 // Address: 005d35e0
-uint CObj(CObj * this_ptr);
+void CObj::clearStateFlags(CObj * this_ptr, uint mask);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3650
+// Original: shape_superopt.cpp_CObj_setStateFlagToAttrib_FUN_005d3650
 // Address: 005d3650
-void CObj(CObj * this_ptr);
+void CObj::setStateFlagToAttrib(CObj * this_ptr, uint set_mask, uint attrib_test);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d36b0
+// Original: shape_superopt.cpp_CObj_updatePolyFlagsFromVerts_FUN_005d36b0
 // Address: 005d36b0
-void CObj(CObj * this_ptr);
+void CObj::updatePolyFlagsFromVerts(CObj * this_ptr, uint mask);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3760
+// Original: shape_superopt.cpp_CObj_saveVertexPositions_FUN_005d3760
 // Address: 005d3760
-void CObj(CObj * this_ptr);
+void CObj::saveVertexPositions(CObj * this_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d37b0
+// Original: shape_superopt.cpp_CObj_saveVertexPositionsWithFlag_FUN_005d37b0
 // Address: 005d37b0
-void * CObj(CObj * this_ptr);
+void CObj::saveVertexPositionsWithFlag(CObj * this_ptr, uint flag_mask);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3860
+// Original: shape_superopt.cpp_CObj_restoreVertexPositions_FUN_005d3860
 // Address: 005d3860
-void CObj(CObj * this_ptr);
+void CObj::restoreVertexPositions(CObj * this_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d38b0
+// Original: shape_superopt.cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0
 // Address: 005d38b0
-void * CObj(CObj * this_ptr);
+void CObj::restoreVertexPositionsWithFlag(CObj * this_ptr, uint flag_mask);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3960
+// Original: shape_superopt.cpp_CObj_computeAdjacentEdges_FUN_005d3960
 // Address: 005d3960
-void CObj(CObj * this_ptr);
+void CObj::computeAdjacentEdges(CObj * this_ptr, int update_adjacency);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3db0
+// Original: shape_superopt.cpp_CObj_computeAllPolyNormals_FUN_005d3db0
 // Address: 005d3db0
-int CObj(CObj * this_ptr);
+void CObj::computeAllPolyNormals(CObj * this_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3df0
+// Original: shape_superopt.cpp_CObj_computePolyNormalsWithFlag_FUN_005d3df0
 // Address: 005d3df0
-void CObj(CObj * this_ptr);
+void CObj::computePolyNormalsWithFlag(CObj * this_ptr, uint flag_mask);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3e40
+// Original: shape_superopt.cpp_CObj_generateAllPlanarUVs_FUN_005d3e40
 // Address: 005d3e40
-void CObj(CObj * this_ptr);
+void CObj::generateAllPlanarUVs(CObj * this_ptr, CVector2d * uv_scale);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3e80
+// Original: shape_superopt.cpp_CObj_generatePlanarUVsWithFlag_FUN_005d3e80
 // Address: 005d3e80
-void CObj(CObj * this_ptr);
+void CObj::generatePlanarUVsWithFlag(CObj * this_ptr, CVector2d * uv_scale, uint flag_mask);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3ed0
+// Original: shape_superopt.cpp_CObj_scaleAllUVs_FUN_005d3ed0
 // Address: 005d3ed0
-void CObj(CObj * this_ptr);
+void CObj::scaleAllUVs(CObj * this_ptr, CVector2d * uv_scale);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3f10
+// Original: shape_superopt.cpp_CObj_scaleUVsWithFlag_FUN_005d3f10
 // Address: 005d3f10
-void CObj(CObj * this_ptr);
+void CObj::scaleUVsWithFlag(CObj * this_ptr, CVector2d * uv_scale, uint flag_mask);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d3f60
+// Original: shape_superopt.cpp_CObj_computeBoundingBox_FUN_005d3f60
 // Address: 005d3f60
-void CObj(CObj * this_ptr);
+void CObj::computeBoundingBox(CObj * this_ptr, CVector3d * out_min, CVector3d * out_max);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d4070
+// Original: shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070
 // Address: 005d4070
-int CObj(CObj * this_ptr);
+int CObj::isClosedManifold(CObj * this_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d4110
+// Original: shape_superopt.cpp_CObj_hasPolyWithMaterial_FUN_005d4110
 // Address: 005d4110
-int CObj(CObj * this_ptr);
+int CObj::hasPolyWithMaterial(CObj * this_ptr, int material_id);
 
 // Original: shape_superopt.cpp_CObj_FUN_005d4160
 // Address: 005d4160

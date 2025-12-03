@@ -9,7 +9,7 @@ typedef struct CPoly {
     int vertex_idx_2; // 0xc
     CP2D uv_coords[3]; // 0x10
     CVector3d normal; // 0x40
-    int field_88; // 0x58
+    int adjacency_flags; // 0x58
     int field_92; // 0x5c
     uint flags; // 0x60
     CPoly_vtable* vtable; // 0x64

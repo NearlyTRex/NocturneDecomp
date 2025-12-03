@@ -12,7 +12,7 @@
 //   TerminatedCString s_Unable_to_reduce_databas_0065468c
 //   TerminatedCString s_Unable_to_reduce_databas_006546b5
 // Function calls:
-//   shape_superopt.cpp_CObj_FUN_005d35e0
+//   shape_superopt.cpp_CObj_clearStateFlags_FUN_005d35e0
 //   shape_superopt.cpp_CObj_FUN_005d4160
 //   shape_superopt.cpp_CObj_FUN_005d46f0
 //   shape_superopt.cpp_CObj_FUN_005d47b0
@@ -40,7 +40,7 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7290(COptimize *this_ptr)
     shape_superopt_cpp_logToFile_FUN_005c7910("Unable to remove T-Juntions from scene");
     return 0;
   }
-  shape_superopt_cpp_CObj_FUN_005d35e0(&this_ptr->obj);
+  shape_superopt_cpp_CObj_clearStateFlags_FUN_005d35e0(&this_ptr->obj,0xffffffff);
   iVar1 = (*(code *)this_ptr->vtable->field11_0x2c)();
   if (iVar1 != 0) {
     iVar1 = (*(code *)this_ptr->vtable->field13_0x34)();
@@ -89,7 +89,7 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7290(COptimize *this_ptr)
 //   XREF to: 005d7318 (CONDITIONAL_JUMP)
 // 005d72c8: PUSH -0x1
 // 005d72ca: PUSH EBX
-// 005d72cb: CALL shape_superopt.cpp_CObj_FUN_005d35e0
+// 005d72cb: CALL shape_superopt.cpp_CObj_clearStateFlags_FUN_005d35e0
 //   XREF to: 005d35e0 (UNCONDITIONAL_CALL)
 // 005d72d0: ADD ESP,0x8
 // 005d72d3: MOV EAX,dword ptr [EBX + 0x40]

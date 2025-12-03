@@ -31,18 +31,18 @@ typedef struct CObj_vtable {
     CObj_getVertex* getVertex; // 0x64
     CObj_containsVertex* containsVertex; // 0x68
     CObj_findPolygonIndex* findPolygonIndex; // 0x6c
-    void* field_112; // 0x70
-    void* field_116; // 0x74
-    void* field_120; // 0x78
-    void* field_124; // 0x7c
-    void* field_128; // 0x80
-    void* field_132; // 0x84
-    void* field_136; // 0x88
-    void* field_140; // 0x8c
-    void* field_144; // 0x90
-    void* field_148; // 0x94
-    void* field_152; // 0x98
-    void* field_156; // 0x9c
+    CObj_getPolygon* getPolygon; // 0x70
+    CObj_containsPolygon* containsPolygon; // 0x74
+    CObj_setStateFlags* setStateFlags; // 0x78
+    CObj_setStateFlagIfCondition* setStateFlagIfCondition; // 0x7c
+    CObj_setStateFlagFromAttrib* setStateFlagFromAttrib; // 0x80
+    CObj_clearStateFlags* clearStateFlags; // 0x84
+    CObj_setStateFlagToAttrib* setStateFlagToAttrib; // 0x88
+    CObj_updatePolyFlagsFromVerts* updatePolyFlagsFromVerts; // 0x8c
+    CObj_saveVertexPositions* saveVertexPositions; // 0x90
+    CObj_saveVertexPositionsWithFlag* saveVertexPositionsWithFlag; // 0x94
+    CObj_restoreVertexPositions* restoreVertexPositions; // 0x98
+    CObj_restoreVertexPositionsWithFlag* restoreVertexPositionsWithFlag; // 0x9c
     void* field_160; // 0xa0
     void* field_164; // 0xa4
     void* field_168; // 0xa8

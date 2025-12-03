@@ -1,72 +1,66 @@
-// Name: shape_superopt.cpp_CObj_FUN_005d3f60
+// Name: shape_superopt.cpp_CObj_computeBoundingBox_FUN_005d3f60
 // Address: 005d3f60
 // Address Range: [[005d3f60, 005d4066]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_FUN_005d3f60(CObj * this_ptr)
+// Signature: void shape_superopt.cpp_CObj_computeBoundingBox_FUN_005d3f60(CObj * this_ptr, CVector3d * out_min, CVector3d * out_max)
 
 #include "nocturne.h"
 
-void __cdecl shape_superopt_cpp_CObj_FUN_005d3f60(CObj *this_ptr)
+void __cdecl
+shape_superopt_cpp_CObj_computeBoundingBox_FUN_005d3f60
+          (CObj *this_ptr,CVector3d *out_min,CVector3d *out_max)
 
 {
   CVert *pCVar1;
   CVert *pCVar2;
   uint uVar3;
-  double *in_stack_00000008;
-  double *in_stack_0000000c;
   
   pCVar1 = this_ptr->vertex_data;
   uVar3 = 1;
-  *(undefined4 *)in_stack_00000008 = *(undefined4 *)&(pCVar1->position).impl.x;
-  *(undefined4 *)((int)in_stack_00000008 + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.x + 4)
-  ;
-  *(undefined4 *)(in_stack_00000008 + 1) = *(undefined4 *)&(pCVar1->position).impl.y;
-  *(undefined4 *)((int)in_stack_00000008 + 0xc) =
-       *(undefined4 *)((int)&(pCVar1->position).impl.y + 4);
-  *(undefined4 *)(in_stack_00000008 + 2) = *(undefined4 *)&(pCVar1->position).impl.z;
-  *(undefined4 *)((int)in_stack_00000008 + 0x14) =
-       *(undefined4 *)((int)&(pCVar1->position).impl.z + 4);
-  *(undefined4 *)in_stack_0000000c = *(undefined4 *)&(pCVar1->position).impl.x;
-  *(undefined4 *)((int)in_stack_0000000c + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.x + 4)
-  ;
-  *(undefined4 *)(in_stack_0000000c + 1) = *(undefined4 *)&(pCVar1->position).impl.y;
-  *(undefined4 *)((int)in_stack_0000000c + 0xc) =
-       *(undefined4 *)((int)&(pCVar1->position).impl.y + 4);
-  *(undefined4 *)(in_stack_0000000c + 2) = *(undefined4 *)&(pCVar1->position).impl.z;
-  *(undefined4 *)((int)in_stack_0000000c + 0x14) =
-       *(undefined4 *)((int)&(pCVar1->position).impl.z + 4);
+  *(undefined4 *)&out_min->x = *(undefined4 *)&(pCVar1->position).impl.x;
+  *(undefined4 *)((int)&out_min->x + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.x + 4);
+  *(undefined4 *)&out_min->y = *(undefined4 *)&(pCVar1->position).impl.y;
+  *(undefined4 *)((int)&out_min->y + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.y + 4);
+  *(undefined4 *)&out_min->z = *(undefined4 *)&(pCVar1->position).impl.z;
+  *(undefined4 *)((int)&out_min->z + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.z + 4);
+  *(undefined4 *)&out_max->x = *(undefined4 *)&(pCVar1->position).impl.x;
+  *(undefined4 *)((int)&out_max->x + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.x + 4);
+  *(undefined4 *)&out_max->y = *(undefined4 *)&(pCVar1->position).impl.y;
+  *(undefined4 *)((int)&out_max->y + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.y + 4);
+  *(undefined4 *)&out_max->z = *(undefined4 *)&(pCVar1->position).impl.z;
+  *(undefined4 *)((int)&out_max->z + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.z + 4);
   if (1 < (uint)this_ptr->vertex_count) {
     do {
       pCVar2 = pCVar1 + 1;
-      if ((pCVar2->position).impl.x < *in_stack_00000008) {
-        *(undefined4 *)in_stack_00000008 = *(undefined4 *)&(pCVar2->position).impl.x;
-        *(undefined4 *)((int)in_stack_00000008 + 4) =
-             *(undefined4 *)((int)&pCVar1[1].position.impl.x + 4);
+      if ((pCVar2->position).impl.x < out_min->x) {
+        *(undefined4 *)&out_min->x = *(undefined4 *)&(pCVar2->position).impl.x;
+        *(undefined4 *)((int)&out_min->x + 4) = *(undefined4 *)((int)&pCVar1[1].position.impl.x + 4)
+        ;
       }
-      if (pCVar1[1].position.impl.y < in_stack_00000008[1]) {
-        *(undefined4 *)(in_stack_00000008 + 1) = *(undefined4 *)&pCVar1[1].position.impl.y;
-        *(undefined4 *)((int)in_stack_00000008 + 0xc) =
-             *(undefined4 *)((int)&pCVar1[1].position.impl.y + 4);
+      if (pCVar1[1].position.impl.y < out_min->y) {
+        *(undefined4 *)&out_min->y = *(undefined4 *)&pCVar1[1].position.impl.y;
+        *(undefined4 *)((int)&out_min->y + 4) = *(undefined4 *)((int)&pCVar1[1].position.impl.y + 4)
+        ;
       }
-      if (pCVar1[1].position.impl.z < in_stack_00000008[2]) {
-        *(undefined4 *)(in_stack_00000008 + 2) = *(undefined4 *)&pCVar1[1].position.impl.z;
-        *(undefined4 *)((int)in_stack_00000008 + 0x14) =
-             *(undefined4 *)((int)&pCVar1[1].position.impl.z + 4);
+      if (pCVar1[1].position.impl.z < out_min->z) {
+        *(undefined4 *)&out_min->z = *(undefined4 *)&pCVar1[1].position.impl.z;
+        *(undefined4 *)((int)&out_min->z + 4) = *(undefined4 *)((int)&pCVar1[1].position.impl.z + 4)
+        ;
       }
-      if (*in_stack_0000000c < (pCVar2->position).impl.x) {
-        *(undefined4 *)in_stack_0000000c = *(undefined4 *)&(pCVar2->position).impl.x;
-        *(undefined4 *)((int)in_stack_0000000c + 4) =
-             *(undefined4 *)((int)&pCVar1[1].position.impl.x + 4);
+      if (out_max->x < (pCVar2->position).impl.x) {
+        *(undefined4 *)&out_max->x = *(undefined4 *)&(pCVar2->position).impl.x;
+        *(undefined4 *)((int)&out_max->x + 4) = *(undefined4 *)((int)&pCVar1[1].position.impl.x + 4)
+        ;
       }
-      if (in_stack_0000000c[1] < pCVar1[1].position.impl.y) {
-        *(undefined4 *)(in_stack_0000000c + 1) = *(undefined4 *)&pCVar1[1].position.impl.y;
-        *(undefined4 *)((int)in_stack_0000000c + 0xc) =
-             *(undefined4 *)((int)&pCVar1[1].position.impl.y + 4);
+      if (out_max->y < pCVar1[1].position.impl.y) {
+        *(undefined4 *)&out_max->y = *(undefined4 *)&pCVar1[1].position.impl.y;
+        *(undefined4 *)((int)&out_max->y + 4) = *(undefined4 *)((int)&pCVar1[1].position.impl.y + 4)
+        ;
       }
-      if (in_stack_0000000c[2] < pCVar1[1].position.impl.z) {
-        *(undefined4 *)(in_stack_0000000c + 2) = *(undefined4 *)&pCVar1[1].position.impl.z;
-        *(undefined4 *)((int)in_stack_0000000c + 0x14) =
-             *(undefined4 *)((int)&pCVar1[1].position.impl.z + 4);
+      if (out_max->z < pCVar1[1].position.impl.z) {
+        *(undefined4 *)&out_max->z = *(undefined4 *)&pCVar1[1].position.impl.z;
+        *(undefined4 *)((int)&out_max->z + 4) = *(undefined4 *)((int)&pCVar1[1].position.impl.z + 4)
+        ;
       }
       uVar3 = uVar3 + 1;
       pCVar1 = pCVar2;
@@ -78,7 +72,7 @@ void __cdecl shape_superopt_cpp_CObj_FUN_005d3f60(CObj *this_ptr)
 
 // Assembly code:
 // 005d3f60: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_FUN_005d3f60
+//   Label: shape_superopt.cpp_CObj_computeBoundingBox_FUN_005d3f60
 // 005d3f61: PUSH ESI
 // 005d3f62: PUSH EDI
 // 005d3f63: PUSH EBP

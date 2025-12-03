@@ -15,9 +15,9 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cd3c0(CPoly *this_ptr)
   
   pCVar1 = this_ptr->parent_obj->vertex_data;
   uVar2 = ~in_stack_00000008;
-  pCVar1[this_ptr->vertex_idx_0].flags = pCVar1[this_ptr->vertex_idx_0].flags & uVar2;
-  pCVar1[this_ptr->vertex_idx_1].flags = pCVar1[this_ptr->vertex_idx_1].flags & uVar2;
-  pCVar1[this_ptr->vertex_idx_2].flags = pCVar1[this_ptr->vertex_idx_2].flags & uVar2;
+  pCVar1[this_ptr->vertex_idx_0].state_flags = pCVar1[this_ptr->vertex_idx_0].state_flags & uVar2;
+  pCVar1[this_ptr->vertex_idx_1].state_flags = pCVar1[this_ptr->vertex_idx_1].state_flags & uVar2;
+  pCVar1[this_ptr->vertex_idx_2].state_flags = pCVar1[this_ptr->vertex_idx_2].state_flags & uVar2;
   this_ptr->flags = this_ptr->flags & uVar2;
   return;
 }

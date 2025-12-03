@@ -48,7 +48,7 @@ shape_superopt_cpp_CObj_scaleMasked_FUN_005d2ac0
   pCVar3 = this_ptr->vertex_data;
   if (this_ptr->vertex_count != 0) {
     do {
-      if ((pCVar3->flags & flag_mask) == flag_mask) {
+      if ((pCVar3->state_flags & flag_mask) == flag_mask) {
         local_60 = *(undefined4 *)&(scale->impl).x;
         uStack_5c = *(undefined4 *)((int)&(scale->impl).x + 4);
         local_58 = *(undefined4 *)&(scale->impl).y;

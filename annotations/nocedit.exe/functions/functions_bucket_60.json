@@ -58976,8 +58976,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d35e0",
-    "ret":"uint",
+    "name":"shape_superopt.cpp_CObj_clearStateFlags_FUN_005d35e0",
+    "ret":"void",
     "vars":{
       "params":[
         {
@@ -58995,18 +58995,24 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"mask",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -59020,7 +59026,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d3760",
+    "name":"shape_superopt.cpp_CObj_saveVertexPositions_FUN_005d3760",
     "ret":"void",
     "vars":{
       "params":[
@@ -59054,7 +59060,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d3860",
+    "name":"shape_superopt.cpp_CObj_restoreVertexPositions_FUN_005d3860",
     "ret":"void",
     "vars":{
       "params":[
@@ -59088,7 +59094,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d3960",
+    "name":"shape_superopt.cpp_CObj_computeAdjacentEdges_FUN_005d3960",
     "ret":"void",
     "vars":{
       "locals":[
@@ -59221,6 +59227,22 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"update_adjacency",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -59236,7 +59258,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d3f60",
+    "name":"shape_superopt.cpp_CObj_computeBoundingBox_FUN_005d3f60",
     "ret":"void",
     "vars":{
       "params":[
@@ -59255,6 +59277,38 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"out_min",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3d*"
+        },
+        {
+          "name":"out_max",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3d*"
         }
       ]
     }

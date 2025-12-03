@@ -107,8 +107,8 @@ int * __cdecl shape_superopt_cpp_CObj_FUN_005d44d0(CObj *this_ptr)
         pdVar7[3] = (pCVar4->orig_position).impl.x;
         pdVar7[4] = (pCVar4->orig_position).impl.y;
         pdVar7[5] = (pCVar4->orig_position).impl.z;
-        *(uint *)(pdVar7 + 6) = pCVar4->flags2;
-        *(uint *)((int)pdVar7 + 0x34) = pCVar4->flags;
+        *(uint *)(pdVar7 + 6) = pCVar4->attrib_flags;
+        *(uint *)((int)pdVar7 + 0x34) = pCVar4->state_flags;
         pvVar9 = (void *)((int)pvVar9 + 1);
         unaff_ESI = unaff_ESI + 0x38;
       } while (pvVar9 < ptr);

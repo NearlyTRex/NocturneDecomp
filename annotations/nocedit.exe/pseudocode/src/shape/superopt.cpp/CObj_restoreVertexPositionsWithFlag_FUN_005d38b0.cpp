@@ -1,66 +1,63 @@
-// Name: shape_superopt.cpp_CObj_FUN_005d38b0
+// Name: shape_superopt.cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0
 // Address: 005d38b0
 // Address Range: [[005d38b0, 005d395c]]
 // Convention: __cdecl
-// Signature: void * shape_superopt.cpp_CObj_FUN_005d38b0(CObj * this_ptr)
+// Signature: void shape_superopt.cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0(CObj * this_ptr, uint flag_mask)
 
 #include "nocturne.h"
 
-void * __cdecl shape_superopt_cpp_CObj_FUN_005d38b0(CObj *this_ptr)
+void __cdecl
+shape_superopt_cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0(CObj *this_ptr,uint flag_mask)
 
 {
   int iVar1;
   undefined4 *puVar2;
-  void *pvVar3;
-  uint uVar4;
-  int iVar5;
-  undefined4 *in_stack_00000008;
+  uint uVar3;
+  int iVar4;
   
-  puVar2 = (undefined4 *)(this_ptr->field4_0x10 & (uint)in_stack_00000008);
-  if (puVar2 == in_stack_00000008) {
-    pvVar3 = (void *)(*(code *)this_ptr->vtable->field38_0x98)();
-    return pvVar3;
+  if ((this_ptr->flags & flag_mask) == flag_mask) {
+    (*this_ptr->vtable->restoreVertexPositions)(this_ptr);
+    return;
   }
-  uVar4 = 0;
+  uVar3 = 0;
   if (this_ptr->poly_count != 0) {
-    iVar5 = 0;
+    iVar4 = 0;
     do {
-      iVar1 = iVar5 + 4;
-      uVar4 = uVar4 + 1;
-      iVar5 = iVar5 + 0x68;
-      puVar2 = (undefined4 *)
-               (**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar1) + 0x40))();
-    } while (uVar4 < (uint)this_ptr->poly_count);
+      iVar1 = iVar4 + 4;
+      uVar3 = uVar3 + 1;
+      iVar4 = iVar4 + 0x68;
+      (**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar1) + 0x40))();
+    } while (uVar3 < (uint)this_ptr->poly_count);
   }
-  uVar4 = 0;
+  uVar3 = 0;
   if (this_ptr->vertex_count != 0) {
-    iVar5 = 0;
+    iVar4 = 0;
     do {
-      while (puVar2 = (undefined4 *)((int)&(this_ptr->vertex_data->position).impl.x + iVar5),
-            (undefined4 *)(puVar2[0xd] & (uint)in_stack_00000008) == in_stack_00000008) {
+      while (puVar2 = (undefined4 *)((int)&(this_ptr->vertex_data->position).impl.x + iVar4),
+            (puVar2[0xd] & flag_mask) == flag_mask) {
         *puVar2 = puVar2[6];
         puVar2[1] = puVar2[7];
         puVar2[2] = puVar2[8];
         puVar2[3] = puVar2[9];
         puVar2[4] = puVar2[10];
         puVar2[5] = puVar2[0xb];
-        uVar4 = uVar4 + 1;
-        iVar5 = iVar5 + 0x38;
-        if ((uint)this_ptr->vertex_count <= uVar4) {
-          return puVar2;
+        uVar3 = uVar3 + 1;
+        iVar4 = iVar4 + 0x38;
+        if ((uint)this_ptr->vertex_count <= uVar3) {
+          return;
         }
       }
-      uVar4 = uVar4 + 1;
-      iVar5 = iVar5 + 0x38;
-    } while (uVar4 < (uint)this_ptr->vertex_count);
+      uVar3 = uVar3 + 1;
+      iVar4 = iVar4 + 0x38;
+    } while (uVar3 < (uint)this_ptr->vertex_count);
   }
-  return puVar2;
+  return;
 }
 
 
 // Assembly code:
 // 005d38b0: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_FUN_005d38b0
+//   Label: shape_superopt.cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0
 // 005d38b1: PUSH ESI
 // 005d38b2: PUSH EDI
 // 005d38b3: PUSH EBP

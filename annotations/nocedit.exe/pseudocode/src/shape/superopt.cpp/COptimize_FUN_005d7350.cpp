@@ -8,7 +8,7 @@
 //   TerminatedCString s_Unable_to_add_shared_tri_0065471a
 //   TerminatedCString s_Unable_to_build_complex__00654749
 // Function calls:
-//   shape_superopt.cpp_CObj_FUN_005d35e0
+//   shape_superopt.cpp_CObj_clearStateFlags_FUN_005d35e0
 //   shape_superopt.cpp_FUN_005c7a90
 //   shape_superopt.cpp_FUN_005c7b20
 //   shape_superopt.cpp_logToFile_FUN_005c7910
@@ -25,7 +25,7 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7350(COptimize *this_ptr)
   int iVar5;
   uint uVar6;
   
-  shape_superopt_cpp_CObj_FUN_005d35e0(&this_ptr->obj);
+  shape_superopt_cpp_CObj_clearStateFlags_FUN_005d35e0(&this_ptr->obj,0xa000);
   do {
     uVar6 = 0;
     if ((this_ptr->obj).poly_count != 0) {
@@ -84,7 +84,7 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7350(COptimize *this_ptr)
 //   XREF to: Stack[0x4] (READ)
 // 005d735b: PUSH 0xa000
 // 005d7360: PUSH EDI
-// 005d7361: CALL shape_superopt.cpp_CObj_FUN_005d35e0
+// 005d7361: CALL shape_superopt.cpp_CObj_clearStateFlags_FUN_005d35e0
 //   XREF to: 005d35e0 (UNCONDITIONAL_CALL)
 // 005d7366: ADD ESP,0x8
 // 005d7369: MOV EDX,dword ptr [EDI + 0x8]

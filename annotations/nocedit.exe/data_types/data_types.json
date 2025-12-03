@@ -801,6 +801,14 @@
       "type":"function_definition"
     },
     {
+      "name":"CObj_clearStateFlags",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_containsPolygon",
+      "type":"function_definition"
+    },
+    {
       "name":"CObj_containsVertex",
       "type":"function_definition"
     },
@@ -830,6 +838,10 @@
     },
     {
       "name":"CObj_free",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_getPolygon",
       "type":"function_definition"
     },
     {
@@ -869,11 +881,43 @@
       "type":"function_definition"
     },
     {
+      "name":"CObj_restoreVertexPositions",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_restoreVertexPositionsWithFlag",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_saveVertexPositions",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_saveVertexPositionsWithFlag",
+      "type":"function_definition"
+    },
+    {
       "name":"CObj_scale",
       "type":"function_definition"
     },
     {
       "name":"CObj_scaleMasked",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_setStateFlagFromAttrib",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_setStateFlagIfCondition",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_setStateFlagToAttrib",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_setStateFlags",
       "type":"function_definition"
     },
     {
@@ -890,6 +934,10 @@
     },
     {
       "name":"CObj_translateMasked",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_updatePolyFlagsFromVerts",
       "type":"function_definition"
     },
     {
@@ -1250,6 +1298,10 @@
     },
     {
       "name":"CTrail",
+      "type":"struct"
+    },
+    {
+      "name":"CVector2d",
       "type":"struct"
     },
     {
@@ -8422,6 +8474,42 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CObj_clearStateFlags",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_containsPolygon",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"poly_ptr",
+          "type":"CPoly*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CObj_containsVertex",
       "parameters":[
         {
@@ -8556,6 +8644,24 @@
         }
       ],
       "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_getPolygon",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"index",
+          "type":"uint"
+        }
+      ],
+      "return_type":"CPoly*",
       "type":"function_definition"
     },
     {
@@ -8720,6 +8826,70 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CObj_restoreVertexPositions",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_restoreVertexPositionsWithFlag",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"flag_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_saveVertexPositions",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_saveVertexPositionsWithFlag",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"flag_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CObj_scale",
       "parameters":[
         {
@@ -8759,6 +8929,94 @@
         {
           "name":"pivot",
           "type":"CVec*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_setStateFlagFromAttrib",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"flag_to_set",
+          "type":"uint"
+        },
+        {
+          "name":"attrib_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_setStateFlagIfCondition",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"flag_to_set",
+          "type":"uint"
+        },
+        {
+          "name":"condition_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_setStateFlags",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"set_mask",
+          "type":"uint"
+        },
+        {
+          "name":"clear_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_setStateFlagToAttrib",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"set_mask",
+          "type":"uint"
+        },
+        {
+          "name":"attrib_test",
+          "type":"uint"
         }
       ],
       "return_type":"void",
@@ -8847,6 +9105,24 @@
         {
           "name":"offset",
           "type":"CVec*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_updatePolyFlagsFromVerts",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"mask",
+          "type":"uint"
         }
       ],
       "return_type":"void",
@@ -31037,7 +31313,7 @@
         },
         {
           "len":4,
-          "name":"field_16",
+          "name":"flags",
           "offset":16,
           "type":"int"
         },
@@ -31235,75 +31511,75 @@
         },
         {
           "len":4,
-          "name":"field_112",
+          "name":"getPolygon",
           "offset":112,
-          "type":"void*"
+          "type":"CObj_getPolygon*"
         },
         {
           "len":4,
-          "name":"field_116",
+          "name":"containsPolygon",
           "offset":116,
-          "type":"void*"
+          "type":"CObj_containsPolygon*"
         },
         {
           "len":4,
-          "name":"field_120",
+          "name":"setStateFlags",
           "offset":120,
-          "type":"void*"
+          "type":"CObj_setStateFlags*"
         },
         {
           "len":4,
-          "name":"field_124",
+          "name":"setStateFlagIfCondition",
           "offset":124,
-          "type":"void*"
+          "type":"CObj_setStateFlagIfCondition*"
         },
         {
           "len":4,
-          "name":"field_128",
+          "name":"setStateFlagFromAttrib",
           "offset":128,
-          "type":"void*"
+          "type":"CObj_setStateFlagFromAttrib*"
         },
         {
           "len":4,
-          "name":"field_132",
+          "name":"clearStateFlags",
           "offset":132,
-          "type":"void*"
+          "type":"CObj_clearStateFlags*"
         },
         {
           "len":4,
-          "name":"field_136",
+          "name":"setStateFlagToAttrib",
           "offset":136,
-          "type":"void*"
+          "type":"CObj_setStateFlagToAttrib*"
         },
         {
           "len":4,
-          "name":"field_140",
+          "name":"updatePolyFlagsFromVerts",
           "offset":140,
-          "type":"void*"
+          "type":"CObj_updatePolyFlagsFromVerts*"
         },
         {
           "len":4,
-          "name":"field_144",
+          "name":"saveVertexPositions",
           "offset":144,
-          "type":"void*"
+          "type":"CObj_saveVertexPositions*"
         },
         {
           "len":4,
-          "name":"field_148",
+          "name":"saveVertexPositionsWithFlag",
           "offset":148,
-          "type":"void*"
+          "type":"CObj_saveVertexPositionsWithFlag*"
         },
         {
           "len":4,
-          "name":"field_152",
+          "name":"restoreVertexPositions",
           "offset":152,
-          "type":"void*"
+          "type":"CObj_restoreVertexPositions*"
         },
         {
           "len":4,
-          "name":"field_156",
+          "name":"restoreVertexPositionsWithFlag",
           "offset":156,
-          "type":"void*"
+          "type":"CObj_restoreVertexPositionsWithFlag*"
         },
         {
           "len":4,
@@ -33033,7 +33309,7 @@
         },
         {
           "len":4,
-          "name":"field_88",
+          "name":"adjacency_flags",
           "offset":88,
           "type":"int"
         },
@@ -33117,7 +33393,7 @@
         },
         {
           "len":4,
-          "name":"field_32",
+          "name":"setFlags",
           "offset":32,
           "type":"void*"
         },
@@ -33135,7 +33411,7 @@
         },
         {
           "len":4,
-          "name":"field_44",
+          "name":"clearStateFlags",
           "offset":44,
           "type":"void*"
         },
@@ -33153,7 +33429,7 @@
         },
         {
           "len":4,
-          "name":"field_56",
+          "name":"saveVertexPositionsWithFlag",
           "offset":56,
           "type":"void*"
         },
@@ -33165,37 +33441,37 @@
         },
         {
           "len":4,
-          "name":"field_64",
+          "name":"restoreVertexPositionsWithFlag",
           "offset":64,
           "type":"void*"
         },
         {
           "len":4,
-          "name":"field_68",
+          "name":"computeNormalMaybe1",
           "offset":68,
           "type":"void*"
         },
         {
           "len":4,
-          "name":"field_72",
+          "name":"computeNormalMaybe2",
           "offset":72,
           "type":"void*"
         },
         {
           "len":4,
-          "name":"field_76",
+          "name":"generatePlanarUVs",
           "offset":76,
           "type":"void*"
         },
         {
           "len":4,
-          "name":"field_80",
+          "name":"scaleUVs",
           "offset":80,
           "type":"void*"
         },
         {
           "len":4,
-          "name":"field_84",
+          "name":"getMaterialId",
           "offset":84,
           "type":"void*"
         },
@@ -33237,7 +33513,7 @@
         },
         {
           "len":4,
-          "name":"field_112",
+          "name":"sharesEdgeWith",
           "offset":112,
           "type":"void*"
         },
@@ -35831,6 +36107,30 @@
       "desc":"",
       "fields":[
         {
+          "len":8,
+          "name":"x",
+          "offset":0,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"y",
+          "offset":8,
+          "type":"double"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"CVector2d",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":4,
           "name":"x",
           "offset":0,
@@ -36108,13 +36408,13 @@
         },
         {
           "len":4,
-          "name":"flags2",
+          "name":"attrib_flags",
           "offset":48,
           "type":"uint"
         },
         {
           "len":4,
-          "name":"flags",
+          "name":"state_flags",
           "offset":52,
           "type":"uint"
         }

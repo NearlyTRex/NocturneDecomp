@@ -1,15 +1,16 @@
-// Name: shape_superopt.cpp_CObj_FUN_005d3960
+// Name: shape_superopt.cpp_CObj_computeAdjacentEdges_FUN_005d3960
 // Address: 005d3960
 // Address Range: [[005d3960, 005d3da1]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_FUN_005d3960(CObj * this_ptr)
+// Signature: void shape_superopt.cpp_CObj_computeAdjacentEdges_FUN_005d3960(CObj * this_ptr, int update_adjacency)
 // Function calls:
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1d0
 //   shape_memdbg.cpp_debugFree_FUN_0050f210
 
 #include "nocturne.h"
 
-void __cdecl shape_superopt_cpp_CObj_FUN_005d3960(CObj *this_ptr)
+void __cdecl
+shape_superopt_cpp_CObj_computeAdjacentEdges_FUN_005d3960(CObj *this_ptr,int update_adjacency)
 
 {
   int iVar1;
@@ -28,7 +29,6 @@ void __cdecl shape_superopt_cpp_CObj_FUN_005d3960(CObj *this_ptr)
   uint uVar14;
   int *piVar15;
   uint uVar16;
-  int in_stack_00000008;
   void *local_68;
   int local_64;
   CVector3d *pCStack_60;
@@ -46,21 +46,21 @@ void __cdecl shape_superopt_cpp_CObj_FUN_005d3960(CObj *this_ptr)
   uVar14 = 0;
   if (this_ptr->poly_count != 0) {
     do {
-      (*(code *)pCVar12->vtable->field17_0x44)();
-      if (in_stack_00000008 != 0) {
-        pCVar12->field6_0x58 = 7;
+      (*(code *)pCVar12->vtable->computeNormalMaybe1)();
+      if (update_adjacency != 0) {
+        pCVar12->adjacency_flags = 7;
       }
       uVar14 = uVar14 + 1;
       pCVar12 = pCVar12 + 1;
     } while (uVar14 < (uint)this_ptr->poly_count);
   }
-  if (in_stack_00000008 != 0) {
+  if (update_adjacency != 0) {
     local_54 = this_ptr->poly_array;
     local_5c = 0;
     if (this_ptr->poly_count != 0) {
       local_64 = 0x68;
       pCStack_60 = &local_54->normal;
-      local_58 = &local_54->field6_0x58;
+      local_58 = &local_54->adjacency_flags;
       do {
         if ((*local_58 & 0x38U) != 0x38) {
           pCVar12 = this_ptr->poly_array;
@@ -169,7 +169,7 @@ void __cdecl shape_superopt_cpp_CObj_FUN_005d3960(CObj *this_ptr)
 
 // Assembly code:
 // 005d3960: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_FUN_005d3960
+//   Label: shape_superopt.cpp_CObj_computeAdjacentEdges_FUN_005d3960
 // 005d3961: PUSH ESI
 // 005d3962: PUSH EDI
 // 005d3963: PUSH EBP

@@ -46,7 +46,7 @@ shape_superopt_cpp_CObj_transformMasked_FUN_005d2dd0
     pCVar2 = this_ptr->vertex_data;
     if (this_ptr->vertex_count != 0) {
       do {
-        if ((pCVar2->flags & flag_mask) == flag_mask) {
+        if ((pCVar2->state_flags & flag_mask) == flag_mask) {
           dStack_3c = (pCVar2->position).impl.x - (pivot->impl).x;
           dStack_34 = (pCVar2->position).impl.y - (pivot->impl).y;
           dStack_2c = (pCVar2->position).impl.z - (pivot->impl).z;

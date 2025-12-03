@@ -15,12 +15,18 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cd220(CPoly *this_ptr)
   uint in_stack_0000000c;
   
   pCVar1 = this_ptr->parent_obj->vertex_data;
-  pCVar1[this_ptr->vertex_idx_0].flags = pCVar1[this_ptr->vertex_idx_0].flags & in_stack_0000000c;
-  pCVar1[this_ptr->vertex_idx_0].flags = pCVar1[this_ptr->vertex_idx_0].flags | in_stack_00000008;
-  pCVar1[this_ptr->vertex_idx_1].flags = pCVar1[this_ptr->vertex_idx_1].flags & in_stack_0000000c;
-  pCVar1[this_ptr->vertex_idx_1].flags = pCVar1[this_ptr->vertex_idx_1].flags | in_stack_00000008;
-  pCVar1[this_ptr->vertex_idx_2].flags = pCVar1[this_ptr->vertex_idx_2].flags & in_stack_0000000c;
-  pCVar1[this_ptr->vertex_idx_2].flags = pCVar1[this_ptr->vertex_idx_2].flags | in_stack_00000008;
+  pCVar1[this_ptr->vertex_idx_0].state_flags =
+       pCVar1[this_ptr->vertex_idx_0].state_flags & in_stack_0000000c;
+  pCVar1[this_ptr->vertex_idx_0].state_flags =
+       pCVar1[this_ptr->vertex_idx_0].state_flags | in_stack_00000008;
+  pCVar1[this_ptr->vertex_idx_1].state_flags =
+       pCVar1[this_ptr->vertex_idx_1].state_flags & in_stack_0000000c;
+  pCVar1[this_ptr->vertex_idx_1].state_flags =
+       pCVar1[this_ptr->vertex_idx_1].state_flags | in_stack_00000008;
+  pCVar1[this_ptr->vertex_idx_2].state_flags =
+       pCVar1[this_ptr->vertex_idx_2].state_flags & in_stack_0000000c;
+  pCVar1[this_ptr->vertex_idx_2].state_flags =
+       pCVar1[this_ptr->vertex_idx_2].state_flags | in_stack_00000008;
   uVar2 = this_ptr->flags & in_stack_0000000c;
   this_ptr->flags = uVar2;
   this_ptr->flags = uVar2 | in_stack_00000008;

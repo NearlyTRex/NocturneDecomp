@@ -81142,7 +81142,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d3590",
+    "name":"shape_superopt.cpp_CObj_setStateFlagFromAttrib_FUN_005d3590",
     "ret":"void",
     "vars":{
       "params":[
@@ -81161,6 +81161,38 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"flag_to_set",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"attrib_mask",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ]
     }
@@ -81176,7 +81208,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d3f10",
+    "name":"shape_superopt.cpp_CObj_scaleUVsWithFlag_FUN_005d3f10",
     "ret":"void",
     "vars":{
       "params":[
@@ -81195,6 +81227,38 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"uv_scale",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector2d*"
+        },
+        {
+          "name":"flag_mask",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ]
     }
@@ -81210,7 +81274,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d4110",
+    "name":"shape_superopt.cpp_CObj_hasPolyWithMaterial_FUN_005d4110",
     "ret":"int",
     "vars":{
       "params":[
@@ -81229,6 +81293,22 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"material_id",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{

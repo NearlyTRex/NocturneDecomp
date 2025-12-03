@@ -5,11 +5,11 @@
 // Signature: void * shape_memdbg.cpp_debugAlloc_FUN_0050f1d0(int size)
 // Cross-references:
 //   crt_memory.c_malloc_FUN_006021da (006021da) at 006021df [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_CObj_FUN_005d3960 (005d3960) at 005d3b2b [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_CObj_FUN_005d4160 (005d4160) at 005d4257 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_CObj_FUN_005d44d0 (005d44d0) at 005d4613 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_CObj_FUN_005d46f0 (005d46f0) at 005d475b [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_CObj_FUN_005d47b0 (005d47b0) at 005d4d90 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_computeAdjacentEdges_FUN_005d3960 (005d3960) at 005d3b2b [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_COptimize_FUN_005d76e0 (005d76e0) at 005d7724 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_FUN_005c9500 (005c9500) at 005c97f1 [UNCONDITIONAL_CALL]
 // Globals:

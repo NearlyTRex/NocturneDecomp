@@ -20,7 +20,7 @@ shape_superopt_cpp_CObj_translateMasked_FUN_005d28d0(CObj *this_ptr,uint flag_ma
     uVar3 = 0;
     if (this_ptr->vertex_count != 0) {
       do {
-        while ((pCVar2->flags & flag_mask) == flag_mask) {
+        while ((pCVar2->state_flags & flag_mask) == flag_mask) {
           (pCVar2->position).impl.x = (offset->impl).x + (pCVar2->position).impl.x;
           (pCVar2->position).impl.y = (offset->impl).y + (pCVar2->position).impl.y;
           (pCVar2->position).impl.z = (offset->impl).z + (pCVar2->position).impl.z;

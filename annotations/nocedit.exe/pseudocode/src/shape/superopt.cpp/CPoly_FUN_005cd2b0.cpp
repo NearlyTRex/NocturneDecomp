@@ -16,25 +16,25 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cd2b0(CPoly *this_ptr)
   
   iVar1 = this_ptr->vertex_idx_0;
   pCVar2 = this_ptr->parent_obj->vertex_data;
-  if ((pCVar2[iVar1].flags & in_stack_0000000c) == in_stack_0000000c) {
-    pCVar2[iVar1].flags = pCVar2[iVar1].flags | in_stack_00000008;
+  if ((pCVar2[iVar1].state_flags & in_stack_0000000c) == in_stack_0000000c) {
+    pCVar2[iVar1].state_flags = pCVar2[iVar1].state_flags | in_stack_00000008;
   }
   else {
-    pCVar2[iVar1].flags = pCVar2[iVar1].flags & ~in_stack_00000008;
+    pCVar2[iVar1].state_flags = pCVar2[iVar1].state_flags & ~in_stack_00000008;
   }
   iVar1 = this_ptr->vertex_idx_1;
-  if ((pCVar2[iVar1].flags & in_stack_0000000c) == in_stack_0000000c) {
-    pCVar2[iVar1].flags = pCVar2[iVar1].flags | in_stack_00000008;
+  if ((pCVar2[iVar1].state_flags & in_stack_0000000c) == in_stack_0000000c) {
+    pCVar2[iVar1].state_flags = pCVar2[iVar1].state_flags | in_stack_00000008;
   }
   else {
-    pCVar2[iVar1].flags = pCVar2[iVar1].flags & ~in_stack_00000008;
+    pCVar2[iVar1].state_flags = pCVar2[iVar1].state_flags & ~in_stack_00000008;
   }
   iVar1 = this_ptr->vertex_idx_2;
-  if ((pCVar2[iVar1].flags & in_stack_0000000c) == in_stack_0000000c) {
-    pCVar2[iVar1].flags = pCVar2[iVar1].flags | in_stack_00000008;
+  if ((pCVar2[iVar1].state_flags & in_stack_0000000c) == in_stack_0000000c) {
+    pCVar2[iVar1].state_flags = pCVar2[iVar1].state_flags | in_stack_00000008;
     return;
   }
-  pCVar2[iVar1].flags = pCVar2[iVar1].flags & ~in_stack_00000008;
+  pCVar2[iVar1].state_flags = pCVar2[iVar1].state_flags & ~in_stack_00000008;
   return;
 }
 

@@ -57,7 +57,7 @@ int __cdecl shape_superopt_cpp_CObj_copyFrom_FUN_005d2650(CObj *this_ptr,CObj *s
       (**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar1) + 4))();
     } while (uVar3 < (uint)this_ptr->poly_count);
   }
-  this_ptr->field4_0x10 = *(int *)(in_stack_0000001c + 0x10);
+  this_ptr->flags = *(int *)(in_stack_0000001c + 0x10);
   return 1;
 }
 

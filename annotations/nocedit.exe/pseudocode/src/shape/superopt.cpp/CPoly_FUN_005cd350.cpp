@@ -14,16 +14,19 @@ void __cdecl shape_superopt_cpp_CPoly_FUN_005cd350(CPoly *this_ptr)
   uint in_stack_0000000c;
   
   pCVar1 = this_ptr->parent_obj->vertex_data;
-  if ((pCVar1[this_ptr->vertex_idx_0].flags2 & in_stack_0000000c) == in_stack_0000000c) {
-    pCVar1[this_ptr->vertex_idx_0].flags = pCVar1[this_ptr->vertex_idx_0].flags | in_stack_00000008;
+  if ((pCVar1[this_ptr->vertex_idx_0].attrib_flags & in_stack_0000000c) == in_stack_0000000c) {
+    pCVar1[this_ptr->vertex_idx_0].state_flags =
+         pCVar1[this_ptr->vertex_idx_0].state_flags | in_stack_00000008;
   }
-  if ((pCVar1[this_ptr->vertex_idx_1].flags2 & in_stack_0000000c) == in_stack_0000000c) {
-    pCVar1[this_ptr->vertex_idx_1].flags = pCVar1[this_ptr->vertex_idx_1].flags | in_stack_00000008;
+  if ((pCVar1[this_ptr->vertex_idx_1].attrib_flags & in_stack_0000000c) == in_stack_0000000c) {
+    pCVar1[this_ptr->vertex_idx_1].state_flags =
+         pCVar1[this_ptr->vertex_idx_1].state_flags | in_stack_00000008;
   }
-  if ((pCVar1[this_ptr->vertex_idx_2].flags2 & in_stack_0000000c) != in_stack_0000000c) {
+  if ((pCVar1[this_ptr->vertex_idx_2].attrib_flags & in_stack_0000000c) != in_stack_0000000c) {
     return;
   }
-  pCVar1[this_ptr->vertex_idx_2].flags = pCVar1[this_ptr->vertex_idx_2].flags | in_stack_00000008;
+  pCVar1[this_ptr->vertex_idx_2].state_flags =
+       pCVar1[this_ptr->vertex_idx_2].state_flags | in_stack_00000008;
   return;
 }
 

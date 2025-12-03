@@ -48,7 +48,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d5800(CObj *this_ptr)
       iVar2 = 0;
     }
     else {
-      (*(code *)this_ptr->vtable->field33_0x84)();
+      (*this_ptr->vtable->clearStateFlags)(this_ptr,0x2000);
       iVar2 = (*(code *)this_ptr->vtable->field54_0xd8)();
     }
     return iVar2;
@@ -140,7 +140,7 @@ LAB_005d59af:
         if (this_ptr->poly_count != 0) {
           do {
             if (((pCVar4->flags & 0x2000) == 0) &&
-               (iVar2 = (*(code *)pCVar5->vtable->field28_0x70)(), iVar2 != 0)) {
+               (iVar2 = (*(code *)pCVar5->vtable->sharesEdgeWith)(), iVar2 != 0)) {
               iVar2 = (*(code *)this_ptr->vtable->field54_0xd8)();
               return iVar2;
             }

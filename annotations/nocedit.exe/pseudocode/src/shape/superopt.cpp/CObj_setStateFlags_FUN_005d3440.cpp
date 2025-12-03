@@ -1,28 +1,27 @@
-// Name: shape_superopt.cpp_CObj_FUN_005d3440
+// Name: shape_superopt.cpp_CObj_setStateFlags_FUN_005d3440
 // Address: 005d3440
 // Address Range: [[005d3440, 005d34c7]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_FUN_005d3440(CObj * this_ptr)
+// Signature: void shape_superopt.cpp_CObj_setStateFlags_FUN_005d3440(CObj * this_ptr, uint set_mask, uint clear_mask)
 
 #include "nocturne.h"
 
-void __cdecl shape_superopt_cpp_CObj_FUN_005d3440(CObj *this_ptr)
+void __cdecl
+shape_superopt_cpp_CObj_setStateFlags_FUN_005d3440(CObj *this_ptr,uint set_mask,uint clear_mask)
 
 {
   CVert *pCVar1;
   uint uVar2;
   uint uVar3;
   CPoly *pCVar4;
-  uint in_stack_00000008;
-  uint in_stack_0000000c;
   
   pCVar1 = this_ptr->vertex_data;
   uVar3 = 0;
   if (this_ptr->vertex_count != 0) {
     do {
-      uVar2 = pCVar1->flags & in_stack_0000000c;
-      pCVar1->flags = uVar2;
-      pCVar1->flags = uVar2 | in_stack_00000008;
+      uVar2 = pCVar1->state_flags & clear_mask;
+      pCVar1->state_flags = uVar2;
+      pCVar1->state_flags = uVar2 | set_mask;
       uVar3 = uVar3 + 1;
       pCVar1 = pCVar1 + 1;
     } while (uVar3 < (uint)this_ptr->vertex_count);
@@ -32,20 +31,20 @@ void __cdecl shape_superopt_cpp_CObj_FUN_005d3440(CObj *this_ptr)
   if (this_ptr->poly_count != 0) {
     do {
       uVar3 = uVar3 + 1;
-      (*(code *)pCVar4->vtable->field8_0x20)();
+      (*(code *)pCVar4->vtable->setFlags)();
       pCVar4 = pCVar4 + 1;
     } while (uVar3 < (uint)this_ptr->poly_count);
   }
-  uVar3 = this_ptr->field4_0x10 & in_stack_0000000c;
-  this_ptr->field4_0x10 = uVar3;
-  this_ptr->field4_0x10 = uVar3 | in_stack_00000008;
+  uVar3 = this_ptr->flags & clear_mask;
+  this_ptr->flags = uVar3;
+  this_ptr->flags = uVar3 | set_mask;
   return;
 }
 
 
 // Assembly code:
 // 005d3440: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_FUN_005d3440
+//   Label: shape_superopt.cpp_CObj_setStateFlags_FUN_005d3440
 // 005d3441: PUSH ESI
 // 005d3442: PUSH EDI
 // 005d3443: PUSH EBP

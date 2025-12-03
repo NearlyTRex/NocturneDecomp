@@ -1,18 +1,16 @@
-// Name: shape_superopt.cpp_CObj_FUN_005d3400
+// Name: shape_superopt.cpp_CObj_containsPolygon_FUN_005d3400
 // Address: 005d3400
 // Address Range: [[005d3400, 005d3433]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CObj_FUN_005d3400(CObj * this_ptr)
+// Signature: int shape_superopt.cpp_CObj_containsPolygon_FUN_005d3400(CObj * this_ptr, CPoly * poly_ptr)
 
 #include "nocturne.h"
 
-int __cdecl shape_superopt_cpp_CObj_FUN_005d3400(CObj *this_ptr)
+int __cdecl shape_superopt_cpp_CObj_containsPolygon_FUN_005d3400(CObj *this_ptr,CPoly *poly_ptr)
 
 {
-  CPoly *in_stack_00000008;
-  
-  if ((this_ptr->poly_array <= in_stack_00000008) &&
-     (in_stack_00000008 < this_ptr->poly_array + this_ptr->poly_count)) {
+  if ((this_ptr->poly_array <= poly_ptr) && (poly_ptr < this_ptr->poly_array + this_ptr->poly_count)
+     ) {
     return 1;
   }
   return 0;
@@ -21,7 +19,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d3400(CObj *this_ptr)
 
 // Assembly code:
 // 005d3400: MOV ECX,dword ptr [ESP + 0x4]
-//   Label: shape_superopt.cpp_CObj_FUN_005d3400
+//   Label: shape_superopt.cpp_CObj_containsPolygon_FUN_005d3400
 //   XREF to: Stack[0x4] (READ)
 // 005d3404: MOV EAX,dword ptr [ESP + 0x8]
 //   XREF to: Stack[0x8] (READ)

@@ -1,12 +1,12 @@
-// Name: shape_superopt.cpp_CObj_FUN_005d3760
+// Name: shape_superopt.cpp_CObj_saveVertexPositions_FUN_005d3760
 // Address: 005d3760
 // Address Range: [[005d3760, 005d37a8]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_FUN_005d3760(CObj * this_ptr)
+// Signature: void shape_superopt.cpp_CObj_saveVertexPositions_FUN_005d3760(CObj * this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl shape_superopt_cpp_CObj_FUN_005d3760(CObj *this_ptr)
+void __cdecl shape_superopt_cpp_CObj_saveVertexPositions_FUN_005d3760(CObj *this_ptr)
 
 {
   undefined4 *puVar1;
@@ -34,7 +34,7 @@ void __cdecl shape_superopt_cpp_CObj_FUN_005d3760(CObj *this_ptr)
 
 // Assembly code:
 // 005d3760: PUSH ESI
-//   Label: shape_superopt.cpp_CObj_FUN_005d3760
+//   Label: shape_superopt.cpp_CObj_saveVertexPositions_FUN_005d3760
 // 005d3761: MOV ESI,dword ptr [ESP + 0x8]
 //   XREF to: Stack[0x4] (READ)
 // 005d3765: MOV EDX,dword ptr [ESI]
