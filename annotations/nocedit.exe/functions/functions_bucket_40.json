@@ -78750,7 +78750,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005cc7c0",
+    "name":"shape_superopt.cpp_CPoly_scale_FUN_005cc7c0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -79939,6 +79939,38 @@
             ]
           },
           "type":"CPoly*"
+        },
+        {
+          "name":"scale",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3d*"
+        },
+        {
+          "name":"pivot",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3d*"
         }
       ]
     }
@@ -79954,7 +79986,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005cd3c0",
+    "name":"shape_superopt.cpp_CPoly_clearVertexStateFlags_FUN_005cd3c0",
     "ret":"void",
     "vars":{
       "params":[
@@ -79973,6 +80005,22 @@
             ]
           },
           "type":"CPoly*"
+        },
+        {
+          "name":"mask",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ]
     }
@@ -79988,7 +80036,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005cd640",
+    "name":"shape_superopt.cpp_CPoly_restoreVertexPositions_FUN_005cd640",
     "ret":"void",
     "vars":{
       "params":[
@@ -80022,7 +80070,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005ce3c0",
+    "name":"shape_superopt.cpp_CPoly_setMaterialId_FUN_005ce3c0",
     "ret":"void",
     "vars":{
       "params":[
@@ -80041,6 +80089,22 @@
             ]
           },
           "type":"CPoly*"
+        },
+        {
+          "name":"material_id",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -80056,7 +80120,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005d0340",
+    "name":"shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340",
     "ret":"int",
     "vars":{
       "locals":[
@@ -81789,6 +81853,22 @@
             ]
           },
           "type":"CPoly*"
+        },
+        {
+          "name":"point",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector2d*"
         }
       ],
       "ret_storage":{
@@ -82250,7 +82330,7 @@
               }
             ]
           },
-          "type":"CVec*"
+          "type":"CVector3d*"
         },
         {
           "name":"pivot",
@@ -82266,7 +82346,7 @@
               }
             ]
           },
-          "type":"CVec*"
+          "type":"CVector3d*"
         }
       ]
     }
@@ -82734,7 +82814,7 @@
               }
             ]
           },
-          "type":"CVec*"
+          "type":"CVector3d*"
         },
         {
           "name":"pivot",
@@ -82750,7 +82830,7 @@
               }
             ]
           },
-          "type":"CVec*"
+          "type":"CVector3d*"
         }
       ]
     }
@@ -82816,7 +82896,7 @@
               }
             ]
           },
-          "type":"CVec*"
+          "type":"CVector3d*"
         }
       ]
     }
@@ -83066,10 +83146,10 @@
         "start":"005d6640"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_FUN_005d6640(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d6640",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640",
+    "ret":"double",
     "vars":{
       "locals":[
         {
@@ -83137,8 +83217,70 @@
           "type":"undefined8"
         }
       ],
+      "params":[
+        {
+          "name":"p1",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector2d*"
+        },
+        {
+          "name":"p2",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector2d*"
+        },
+        {
+          "name":"p3",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector2d*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "compound":true,
+        "size":8,
+        "varnodes":[
+          {
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          },
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

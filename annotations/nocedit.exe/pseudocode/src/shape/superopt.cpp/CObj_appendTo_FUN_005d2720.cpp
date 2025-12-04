@@ -41,12 +41,12 @@ int __cdecl shape_superopt_cpp_CObj_appendTo_FUN_005d2720(CObj *this_ptr,CObj *d
   puVar5 = (undefined4 *)in_stack_00000010[1];
   pCVar6 = this_ptr->vertex_data + iVar2;
   for (uVar4 = (uint)(*in_stack_00000010 * 0x38) >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)&(pCVar6->position).impl.x = *puVar5;
+    *(undefined4 *)&(pCVar6->position).x = *puVar5;
     puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
     pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar7 * -8 + 4);
   }
   for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined1 *)&(pCVar6->position).impl.x = *(undefined1 *)puVar5;
+    *(undefined1 *)&(pCVar6->position).x = *(undefined1 *)puVar5;
     puVar5 = (undefined4 *)((int)puVar5 + (uint)bVar7 * -2 + 1);
     pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar7 * -2 + 1);
   }

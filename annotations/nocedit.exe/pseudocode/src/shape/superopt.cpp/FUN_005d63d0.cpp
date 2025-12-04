@@ -6,7 +6,7 @@
 // Cross-references:
 //   shape_superopt.cpp_CObj_FUN_005d5800 (005d5800) at 005d59f9 [UNCONDITIONAL_CALL]
 // Function calls:
-//   shape_superopt.cpp_FUN_005d6500
+//   shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500
 
 #include "nocturne.h"
 
@@ -26,7 +26,8 @@ undefined4 * shape_superopt_cpp_FUN_005d63d0(void)
   undefined4 *puVar6;
   byte bVar7;
   double *in_stack_00000004;
-  double *in_stack_0000000c;
+  CVector3d *in_stack_00000008;
+  CVector3d *in_stack_0000000c;
   double local_58;
   double local_50;
   double local_48;
@@ -36,10 +37,12 @@ undefined4 * shape_superopt_cpp_FUN_005d63d0(void)
   double local_18;
   
   bVar7 = 0;
-  local_18 = (double)shape_superopt_cpp_FUN_005d6500();
-  dVar1 = -*in_stack_0000000c;
-  dVar2 = -in_stack_0000000c[1];
-  dVar3 = -in_stack_0000000c[2];
+  local_18 = shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500
+                       ((CVector3d *)&stack0xffffff90,in_stack_00000008,in_stack_0000000c,
+                        SUB84(-in_stack_0000000c->x,0));
+  dVar1 = -in_stack_0000000c->x;
+  dVar2 = -in_stack_0000000c->y;
+  dVar3 = -in_stack_0000000c->z;
   local_18 = local_18 / SQRT(dVar3 * dVar3 + dVar1 * dVar1 + dVar2 * dVar2);
   local_40 = dVar1 * local_18;
   local_38 = dVar2 * local_18;
@@ -91,7 +94,7 @@ undefined4 * shape_superopt_cpp_FUN_005d63d0(void)
 // 005d63fe: PUSH ESI
 // 005d63ff: FSTP double ptr [EBP + -0x54]
 //   XREF to: Stack[-0x60] (WRITE)
-// 005d6402: CALL shape_superopt.cpp_FUN_005d6500
+// 005d6402: CALL shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500
 //   XREF to: 005d6500 (UNCONDITIONAL_CALL)
 // 005d6407: FLD double ptr [EBX]
 // 005d6409: FCHS

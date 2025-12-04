@@ -10,24 +10,24 @@ void __cdecl
 shape_superopt_cpp_CObj_computePolyNormalsWithFlag_FUN_005d3df0(CObj *this_ptr,uint flag_mask)
 
 {
-  CPoly *pCVar1;
-  uint uVar2;
+  CPoly *this_ptr_00;
+  uint uVar1;
   
-  pCVar1 = this_ptr->poly_array;
-  uVar2 = 0;
+  this_ptr_00 = this_ptr->poly_array;
+  uVar1 = 0;
   if (this_ptr->poly_count != 0) {
     do {
-      while ((pCVar1->flags & flag_mask) == flag_mask) {
-        (*(code *)pCVar1->vtable->computeNormalMaybe2)();
-        uVar2 = uVar2 + 1;
-        pCVar1 = pCVar1 + 1;
-        if ((uint)this_ptr->poly_count <= uVar2) {
+      while ((this_ptr_00->flags & flag_mask) == flag_mask) {
+        (*this_ptr_00->vtable->flipNormal)(this_ptr_00);
+        uVar1 = uVar1 + 1;
+        this_ptr_00 = this_ptr_00 + 1;
+        if ((uint)this_ptr->poly_count <= uVar1) {
           return;
         }
       }
-      uVar2 = uVar2 + 1;
-      pCVar1 = pCVar1 + 1;
-    } while (uVar2 < (uint)this_ptr->poly_count);
+      uVar1 = uVar1 + 1;
+      this_ptr_00 = this_ptr_00 + 1;
+    } while (uVar1 < (uint)this_ptr->poly_count);
   }
   return;
 }

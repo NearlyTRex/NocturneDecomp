@@ -33,7 +33,7 @@ shape_superopt_cpp_CObj_saveVertexPositionsWithFlag_FUN_005d37b0(CObj *this_ptr,
   if (this_ptr->vertex_count != 0) {
     iVar4 = 0;
     do {
-      while (puVar2 = (undefined4 *)((int)&(this_ptr->vertex_data->position).impl.x + iVar4),
+      while (puVar2 = (undefined4 *)((int)&(this_ptr->vertex_data->position).x + iVar4),
             (puVar2[0xd] & flag_mask) == flag_mask) {
         puVar2[6] = *puVar2;
         puVar2[7] = puVar2[1];

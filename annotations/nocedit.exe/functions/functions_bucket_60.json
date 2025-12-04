@@ -58477,7 +58477,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005cd560",
+    "name":"shape_superopt.cpp_CPoly_saveVertexPositionsWithFlag_FUN_005cd560",
     "ret":"void",
     "vars":{
       "params":[
@@ -58496,6 +58496,22 @@
             ]
           },
           "type":"CPoly*"
+        },
+        {
+          "name":"flag_mask",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ]
     }
@@ -58511,7 +58527,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005cdfe0",
+    "name":"shape_superopt.cpp_CPoly_flipNormal_FUN_005cdfe0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -58659,7 +58675,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005ce3e0",
+    "name":"shape_superopt.cpp_CPoly_getBounds_FUN_005ce3e0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -58696,6 +58712,38 @@
             ]
           },
           "type":"CPoly*"
+        },
+        {
+          "name":"out_min",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3d*"
+        },
+        {
+          "name":"out_max",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3d*"
         }
       ]
     }
@@ -58711,7 +58759,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005d0ce0",
+    "name":"shape_superopt.cpp_CPoly_rayPlaneIntersect_FUN_005d0ce0",
     "ret":"double",
     "vars":{
       "locals":[
@@ -58764,6 +58812,38 @@
             ]
           },
           "type":"CPoly*"
+        },
+        {
+          "name":"ray_origin",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVec*"
+        },
+        {
+          "name":"ray_dir",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVec*"
         }
       ],
       "ret_storage":{
@@ -58794,7 +58874,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005d0ee0",
+    "name":"shape_superopt.cpp_CPoly_hasSeamlessEdge_FUN_005d0ee0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -58842,6 +58922,22 @@
               {
                 "addr":"Stack[0x4]",
                 "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CPoly*"
+        },
+        {
+          "name":"other",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
                 "size":4
               }
             ]

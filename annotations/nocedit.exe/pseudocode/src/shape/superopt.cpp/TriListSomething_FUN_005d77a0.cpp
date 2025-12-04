@@ -81,9 +81,9 @@
 //   shape_superopt.cpp_COptimize_FUN_005d71c0
 //   shape_superopt.cpp_COptimize_FUN_005d71e0
 //   shape_superopt.cpp_COptimize_FUN_005d7290
+//   shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
 //   shape_superopt.cpp_CPoly_ctor_FUN_005cc620
 //   shape_superopt.cpp_CPoly_dtor_FUN_005cc660
-//   shape_superopt.cpp_CPoly_FUN_005cd7d0
 
 #include "nocturne.h"
 
@@ -230,18 +230,17 @@ LAB_005d7a1a:
       if (2 < *(int *)((int)&pCVar14[0x38666].normal.x + 4)) {
         do {
           uVar2 = piVar5[0x5ba671];
-          shape_superopt_cpp_CPoly_FUN_005cd7d0((CPoly *)&stack0xfffffeb4);
+          shape_superopt_cpp_CPoly_computeNormal_FUN_005cd7d0((CPoly *)&stack0xfffffeb4);
           pCVar4 = (CVert *)((int)&local_2c->reset + in_stack_0000000c);
           local_18._4_4_ = pCVar4;
-          *(CObj **)&(pCVar4->position).impl.x = pCVar13;
+          *(CObj **)&(pCVar4->position).x = pCVar13;
           puVar9 = (undefined4 *)((int)pCVar4 + (uint)bVar11 * -8 + 8);
-          *(undefined4 *)((int)&(pCVar4->position).impl.x + 4) = uVar2;
+          *(undefined4 *)((int)&(pCVar4->position).x + 4) = uVar2;
           *puVar9 = *(undefined4 *)(&stack0xfffffec0 + (uint)bVar11 * -8);
           puVar9[(uint)bVar11 * -2 + 1] =
                *(undefined4 *)(&stack0xfffffec4 + ((uint)bVar11 * -2 + (uint)bVar11 * -2) * 4);
           crt_memory_c_copyArrayWithFunction_FUN_006020c2
-                    (&(pCVar4->position).impl.z,&stack0xfffffec8,3,0x10,
-                     shape_superopt_cpp_FUN_005d8330);
+                    (&(pCVar4->position).z,&stack0xfffffec8,3,0x10,shape_superopt_cpp_FUN_005d8330);
           *(undefined4 *)((int)local_18 + 0x40) = local_10c;
           *(undefined4 *)((int)local_18 + 0x44) = local_108;
           *(undefined4 *)((int)local_18 + 0x48) = uStack_104;
@@ -654,7 +653,7 @@ LAB_005d7a1a:
 // 005d7ada: MOV EAX,ESP
 //   Label: LAB_005d7ada
 // 005d7adc: PUSH EAX
-// 005d7add: CALL shape_superopt.cpp_CPoly_FUN_005cd7d0
+// 005d7add: CALL shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
 //   XREF to: 005cd7d0 (UNCONDITIONAL_CALL)
 // 005d7ae2: ADD ESP,0x4
 // 005d7ae5: MOV EAX,dword ptr [ESP + 0x11c]

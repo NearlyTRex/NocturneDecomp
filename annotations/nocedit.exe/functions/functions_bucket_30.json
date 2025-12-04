@@ -72372,7 +72372,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005ccc30",
+    "name":"shape_superopt.cpp_CPoly_transform_FUN_005ccc30",
     "ret":"void",
     "vars":{
       "locals":[
@@ -73449,6 +73449,38 @@
             ]
           },
           "type":"CPoly*"
+        },
+        {
+          "name":"matrix",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMatrix3x3d*"
+        },
+        {
+          "name":"pivot",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3d*"
         }
       ]
     }
@@ -73464,7 +73496,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005cd0b0",
+    "name":"shape_superopt.cpp_CPoly_allVerticesHaveAttribFlags_FUN_005cd0b0",
     "ret":"int",
     "vars":{
       "params":[
@@ -73483,6 +73515,22 @@
             ]
           },
           "type":"CPoly*"
+        },
+        {
+          "name":"flag_mask",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ],
       "ret_storage":{
@@ -73508,7 +73556,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005cd2b0",
+    "name":"shape_superopt.cpp_CPoly_setVertexStateFlagIfCondition_FUN_005cd2b0",
     "ret":"void",
     "vars":{
       "params":[
@@ -73527,6 +73575,38 @@
             ]
           },
           "type":"CPoly*"
+        },
+        {
+          "name":"flag_to_set",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"condition_mask",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ]
     }
@@ -73542,7 +73622,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005cd4b0",
+    "name":"shape_superopt.cpp_CPoly_saveVertexPositions_FUN_005cd4b0",
     "ret":"void",
     "vars":{
       "params":[
@@ -73576,8 +73656,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005d0d30",
-    "ret":"void",
+    "name":"shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30",
+    "ret":"CVector3d*",
     "vars":{
       "locals":[
         {
@@ -73853,8 +73933,34 @@
             ]
           },
           "type":"CPoly*"
+        },
+        {
+          "name":"out_centroid",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3d*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -73868,7 +73974,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005d1230",
+    "name":"shape_superopt.cpp_CPoly_hasCentroidIntersection_FUN_005d1230",
     "ret":"int",
     "vars":{
       "locals":[
@@ -73932,6 +74038,22 @@
               {
                 "addr":"Stack[0x4]",
                 "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CPoly*"
+        },
+        {
+          "name":"other",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
                 "size":4
               }
             ]

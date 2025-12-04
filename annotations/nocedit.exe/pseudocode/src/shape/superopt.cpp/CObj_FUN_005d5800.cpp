@@ -16,15 +16,15 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d5800(CObj *this_ptr)
   CVert *pCVar1;
   int iVar2;
   int *piVar3;
+  CPoly *other;
   CPoly *pCVar4;
-  CPoly *pCVar5;
   BADSPACEBASE *in_ESP;
-  CVector3d *pCVar6;
-  uint uVar7;
-  undefined4 *puVar8;
-  int *piVar9;
-  undefined4 *puVar10;
-  byte bVar11;
+  CVector3d *pCVar5;
+  uint uVar6;
+  undefined4 *puVar7;
+  int *piVar8;
+  undefined4 *puVar9;
+  byte bVar10;
   undefined4 in_stack_00000008;
   undefined4 in_stack_0000000c;
   int in_stack_00000010;
@@ -42,7 +42,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d5800(CObj *this_ptr)
   CPoly *local_18;
   double *local_14;
   
-  bVar11 = 0;
+  bVar10 = 0;
   if (in_stack_00000010 == 0) {
     if (this_ptr->poly_count == 0) {
       iVar2 = 0;
@@ -58,37 +58,37 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d5800(CObj *this_ptr)
   local_20 = 0;
   if (this_ptr->poly_count != 0) {
     local_24 = (double *)(in_stack_00000010 + 0x40);
-    pCVar6 = &local_18->normal;
-    piVar9 = &local_18->vertex_idx_0;
+    pCVar5 = &local_18->normal;
+    piVar8 = &local_18->vertex_idx_0;
     piVar3 = (int *)(in_stack_00000010 + 4);
     do {
       if (((local_18->flags & 0x2000) == 0) &&
          (1.0 - (double)CONCAT44(in_stack_0000000c,in_stack_00000008) <=
-          pCVar6->z * *(double *)(in_stack_00000010 + 0x50) +
-          pCVar6->x * *local_24 + pCVar6->y * *(double *)(in_stack_00000010 + 0x48))) {
+          pCVar5->z * *(double *)(in_stack_00000010 + 0x50) +
+          pCVar5->x * *local_24 + pCVar5->y * *(double *)(in_stack_00000010 + 0x48))) {
         local_28 = 0xffffffff;
-        if ((((*piVar9 == *(int *)(in_stack_00000010 + 8)) && (piVar9[1] == *piVar3)) ||
-            ((*piVar9 == *(int *)(in_stack_00000010 + 0xc) &&
-             (piVar9[1] == *(int *)(in_stack_00000010 + 8))))) ||
-           ((*piVar9 == *piVar3 && (piVar9[1] == *(int *)(in_stack_00000010 + 0xc))))) {
+        if ((((*piVar8 == *(int *)(in_stack_00000010 + 8)) && (piVar8[1] == *piVar3)) ||
+            ((*piVar8 == *(int *)(in_stack_00000010 + 0xc) &&
+             (piVar8[1] == *(int *)(in_stack_00000010 + 8))))) ||
+           ((*piVar8 == *piVar3 && (piVar8[1] == *(int *)(in_stack_00000010 + 0xc))))) {
           local_28 = 2;
 LAB_005d59af:
           pCVar1 = this_ptr->vertex_data + *(int *)((int)local_18->uv_coords + local_28 * 4 + -0xc);
           local_14 = (double *)(in_stack_00000010 + 0x40);
           shape_superopt_cpp_FUN_005d63d0();
-          puVar8 = local_40;
-          puVar10 = &local_58;
+          puVar7 = local_40;
+          puVar9 = &local_58;
           for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *puVar10 = *puVar8;
-            puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
-            puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
+            *puVar9 = *puVar7;
+            puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
+            puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
           }
-          *(undefined4 *)&(pCVar1->position).impl.x = local_58;
-          *(undefined4 *)((int)&(pCVar1->position).impl.x + 4) = local_54;
-          *(undefined4 *)&(pCVar1->position).impl.y = local_50;
-          *(undefined4 *)((int)&(pCVar1->position).impl.y + 4) = local_4c;
-          *(undefined4 *)&(pCVar1->position).impl.z = local_48;
-          *(undefined4 *)((int)&(pCVar1->position).impl.z + 4) = local_44;
+          *(undefined4 *)&(pCVar1->position).x = local_58;
+          *(undefined4 *)((int)&(pCVar1->position).x + 4) = local_54;
+          *(undefined4 *)&(pCVar1->position).y = local_50;
+          *(undefined4 *)((int)&(pCVar1->position).y + 4) = local_4c;
+          *(undefined4 *)&(pCVar1->position).z = local_48;
+          *(undefined4 *)((int)&(pCVar1->position).z + 4) = local_44;
           (local_18->normal).x = *local_14;
           *(undefined4 *)&(local_18->normal).y = *(undefined4 *)(local_14 + 1);
           *(undefined4 *)((int)&(local_18->normal).y + 4) = *(undefined4 *)((int)local_14 + 0xc);
@@ -97,73 +97,73 @@ LAB_005d59af:
           iVar2 = (*(code *)this_ptr->vtable->field54_0xd8)();
           return iVar2;
         }
-        if ((piVar9[1] == *(int *)(in_stack_00000010 + 0xc)) &&
-           (piVar9[2] == *(int *)(in_stack_00000010 + 8))) {
+        if ((piVar8[1] == *(int *)(in_stack_00000010 + 0xc)) &&
+           (piVar8[2] == *(int *)(in_stack_00000010 + 8))) {
           local_28 = 0;
           goto LAB_005d59af;
         }
-        if ((piVar9[1] == *piVar3) && (piVar9[2] == *(int *)(in_stack_00000010 + 0xc))) {
+        if ((piVar8[1] == *piVar3) && (piVar8[2] == *(int *)(in_stack_00000010 + 0xc))) {
           local_28 = 0;
           goto LAB_005d59af;
         }
-        if ((piVar9[1] == *(int *)(in_stack_00000010 + 8)) && (piVar9[2] == *piVar3)) {
+        if ((piVar8[1] == *(int *)(in_stack_00000010 + 8)) && (piVar8[2] == *piVar3)) {
           local_28 = 0;
           goto LAB_005d59af;
         }
-        if ((piVar9[2] == *piVar3) && (*piVar9 == *(int *)(in_stack_00000010 + 0xc))) {
+        if ((piVar8[2] == *piVar3) && (*piVar8 == *(int *)(in_stack_00000010 + 0xc))) {
           local_28 = 1;
           goto LAB_005d59af;
         }
-        if ((piVar9[2] == *(int *)(in_stack_00000010 + 8)) && (*piVar9 == *piVar3)) {
+        if ((piVar8[2] == *(int *)(in_stack_00000010 + 8)) && (*piVar8 == *piVar3)) {
           local_28 = 1;
           goto LAB_005d59af;
         }
-        if ((piVar9[2] == *(int *)(in_stack_00000010 + 0xc)) &&
-           (*(int *)(in_stack_00000010 + 8) == *piVar9)) {
+        if ((piVar8[2] == *(int *)(in_stack_00000010 + 0xc)) &&
+           (*(int *)(in_stack_00000010 + 8) == *piVar8)) {
           local_28 = 1;
           goto LAB_005d59af;
         }
       }
       local_18 = local_18 + 1;
-      pCVar6 = (CVector3d *)((int)(pCVar6 + 4) + 8);
-      piVar9 = piVar9 + 0x1a;
+      pCVar5 = (CVector3d *)((int)(pCVar5 + 4) + 8);
+      piVar8 = piVar8 + 0x1a;
       local_20 = local_20 + 1;
     } while (local_20 < (uint)this_ptr->poly_count);
   }
   local_1c = 0;
-  pCVar5 = this_ptr->poly_array;
+  pCVar4 = this_ptr->poly_array;
   if (this_ptr->poly_count != 0) {
     do {
-      if ((pCVar5->flags & 0x2000) != 0) {
-        uVar7 = 0;
-        pCVar4 = this_ptr->poly_array;
+      if ((pCVar4->flags & 0x2000) != 0) {
+        uVar6 = 0;
+        other = this_ptr->poly_array;
         if (this_ptr->poly_count != 0) {
           do {
-            if (((pCVar4->flags & 0x2000) == 0) &&
-               (iVar2 = (*(code *)pCVar5->vtable->sharesEdgeWith)(), iVar2 != 0)) {
+            if (((other->flags & 0x2000) == 0) &&
+               (iVar2 = (*pCVar4->vtable->hasSharedEdge)(pCVar4,other), iVar2 != 0)) {
               iVar2 = (*(code *)this_ptr->vtable->field54_0xd8)();
               return iVar2;
             }
-            uVar7 = uVar7 + 1;
-            pCVar4 = pCVar4 + 1;
-          } while (uVar7 < (uint)this_ptr->poly_count);
+            uVar6 = uVar6 + 1;
+            other = other + 1;
+          } while (uVar6 < (uint)this_ptr->poly_count);
         }
       }
-      pCVar5 = pCVar5 + 1;
+      pCVar4 = pCVar4 + 1;
       local_1c = local_1c + 1;
     } while (local_1c < (uint)this_ptr->poly_count);
   }
-  uVar7 = 0;
-  pCVar5 = this_ptr->poly_array;
+  uVar6 = 0;
+  pCVar4 = this_ptr->poly_array;
   if (this_ptr->poly_count != 0) {
     do {
-      if ((pCVar5->flags & 0x2000) == 0) {
+      if ((pCVar4->flags & 0x2000) == 0) {
         iVar2 = (*(code *)this_ptr->vtable->field54_0xd8)();
         return iVar2;
       }
-      uVar7 = uVar7 + 1;
-      pCVar5 = pCVar5 + 1;
-    } while (uVar7 < (uint)this_ptr->poly_count);
+      uVar6 = uVar6 + 1;
+      pCVar4 = pCVar4 + 1;
+    } while (uVar6 < (uint)this_ptr->poly_count);
   }
   return 1;
 }

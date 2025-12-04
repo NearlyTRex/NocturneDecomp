@@ -85,8 +85,8 @@
 //   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (00518910) at 00518ae2 [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_CLodMesh_extractFaceTexCoordGradient_FUN_00517530 (00517530) at 0051755f [UNCONDITIONAL_CALL]
 //   shape_meshlod.cpp_staticInit_FUN_00514f70 (00514f70) at 00514f7f [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_CPoly_FUN_005ce580 (005ce580) at 005ce6f7 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_CPoly_ctor_FUN_005cc620 (005cc620) at 005cc630 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (005ce580) at 005ce6f7 [UNCONDITIONAL_CALL]
 //   sound_sndmain.cpp_staticInit_FUN_005a3940 (005a3940) at 005a3986 [UNCONDITIONAL_CALL]
 //   support_newmsg.cpp_CMouse_ctor_FUN_00544380 (00544380) at 005443a1 [UNCONDITIONAL_CALL]
 

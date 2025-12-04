@@ -17,7 +17,7 @@ void __cdecl shape_superopt_cpp_CObj_restoreVertexPositions_FUN_005d3860(CObj *t
   if (this_ptr->vertex_count != 0) {
     iVar3 = 0;
     do {
-      puVar1 = (undefined4 *)((int)&(this_ptr->vertex_data->position).impl.x + iVar3);
+      puVar1 = (undefined4 *)((int)&(this_ptr->vertex_data->position).x + iVar3);
       uVar2 = uVar2 + 1;
       *puVar1 = puVar1[6];
       puVar1[1] = puVar1[7];

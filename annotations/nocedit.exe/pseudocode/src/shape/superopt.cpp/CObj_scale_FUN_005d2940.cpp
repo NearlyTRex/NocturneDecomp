@@ -2,11 +2,12 @@
 // Address: 005d2940
 // Address Range: [[005d2940, 005d2ab6]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_scale_FUN_005d2940(CObj * this_ptr, CVec * scale, CVec * pivot)
+// Signature: void shape_superopt.cpp_CObj_scale_FUN_005d2940(CObj * this_ptr, CVector3d * scale, CVector3d * pivot)
 
 #include "nocturne.h"
 
-void __cdecl shape_superopt_cpp_CObj_scale_FUN_005d2940(CObj *this_ptr,CVec *scale,CVec *pivot)
+void __cdecl
+shape_superopt_cpp_CObj_scale_FUN_005d2940(CObj *this_ptr,CVector3d *scale,CVector3d *pivot)
 
 {
   double dVar1;
@@ -48,20 +49,18 @@ void __cdecl shape_superopt_cpp_CObj_scale_FUN_005d2940(CObj *this_ptr,CVec *sca
   pCVar5 = this_ptr->vertex_data;
   if (this_ptr->vertex_count != 0) {
     do {
-      local_90 = *(undefined4 *)&(scale->impl).x;
-      dVar1 = (scale->impl).x;
-      uStack_8c = *(undefined4 *)((int)&(scale->impl).x + 4);
-      pdVar6 = &(scale->impl).y;
-      local_88 = *(undefined4 *)pdVar6;
-      dVar2 = *pdVar6;
-      uStack_84 = *(undefined4 *)((int)&(scale->impl).y + 4);
-      local_78 = (pCVar5->position).impl.x - (pivot->impl).x;
-      pdVar6 = &(scale->impl).z;
-      local_70 = (pCVar5->position).impl.y - (pivot->impl).y;
-      local_80 = *(undefined4 *)pdVar6;
-      local_68 = (pCVar5->position).impl.z - (pivot->impl).z;
-      uStack_7c = *(undefined4 *)((int)&(scale->impl).z + 4);
-      dVar3 = *pdVar6;
+      local_90 = *(undefined4 *)&scale->x;
+      dVar1 = scale->x;
+      uStack_8c = *(undefined4 *)((int)&scale->x + 4);
+      local_88 = *(undefined4 *)&scale->y;
+      dVar2 = scale->y;
+      uStack_84 = *(undefined4 *)((int)&scale->y + 4);
+      local_78 = (pCVar5->position).x - pivot->x;
+      local_70 = (pCVar5->position).y - pivot->y;
+      local_80 = *(undefined4 *)&scale->z;
+      local_68 = (pCVar5->position).z - pivot->z;
+      uStack_7c = *(undefined4 *)((int)&scale->z + 4);
+      dVar3 = scale->z;
       pdVar6 = &local_78;
       pdVar7 = &local_60;
       for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -79,9 +78,9 @@ void __cdecl shape_superopt_cpp_CObj_scale_FUN_005d2940(CObj *this_ptr,CVec *sca
         pdVar6 = (double *)((int)pdVar6 + 4);
         pdVar7 = (double *)((int)pdVar7 + 4);
       }
-      local_a8 = local_c0 + (pivot->impl).x;
-      local_a0 = local_b8 + (pivot->impl).y;
-      local_98 = local_b0 + (pivot->impl).z;
+      local_a8 = local_c0 + pivot->x;
+      local_a0 = local_b8 + pivot->y;
+      local_98 = local_b0 + pivot->z;
       pdVar6 = &local_a8;
       puVar8 = local_30;
       for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -89,12 +88,12 @@ void __cdecl shape_superopt_cpp_CObj_scale_FUN_005d2940(CObj *this_ptr,CVec *sca
         pdVar6 = (double *)((int)pdVar6 + 4);
         puVar8 = puVar8 + 1;
       }
-      *(undefined4 *)&(pCVar5->position).impl.x = local_30[0];
-      *(undefined4 *)((int)&(pCVar5->position).impl.x + 4) = local_30[1];
-      *(undefined4 *)&(pCVar5->position).impl.y = local_30[2];
-      *(undefined4 *)((int)&(pCVar5->position).impl.y + 4) = local_30[3];
-      *(undefined4 *)&(pCVar5->position).impl.z = local_20;
-      *(undefined4 *)((int)&(pCVar5->position).impl.z + 4) = local_1c;
+      *(undefined4 *)&(pCVar5->position).x = local_30[0];
+      *(undefined4 *)((int)&(pCVar5->position).x + 4) = local_30[1];
+      *(undefined4 *)&(pCVar5->position).y = local_30[2];
+      *(undefined4 *)((int)&(pCVar5->position).y + 4) = local_30[3];
+      *(undefined4 *)&(pCVar5->position).z = local_20;
+      *(undefined4 *)((int)&(pCVar5->position).z + 4) = local_1c;
       local_18 = local_18 + 1;
       pCVar5 = pCVar5 + 1;
     } while (local_18 < (uint)this_ptr->vertex_count);

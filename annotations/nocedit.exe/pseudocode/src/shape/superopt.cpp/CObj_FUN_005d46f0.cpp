@@ -23,7 +23,6 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d46f0(CObj *this_ptr)
   BADSPACEBASE *in_ESP;
   void *ptr;
   int iVar3;
-  char local_6c [92];
   
   ptr = (void *)0x0;
   if (1000 < (uint)this_ptr->poly_count) {
@@ -34,9 +33,10 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d46f0(CObj *this_ptr)
   if (this_ptr->poly_count != 0) {
     do {
       if ((ptr != (void *)0x0) && ((char)index == '\0')) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_6c,"Deleting invalid polygons (%d deleted so far)",iVar3);
+        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff94,"Deleting invalid polygons (%d deleted so far)",iVar3)
+        ;
       }
-      iVar1 = (*(code *)(this_ptr->poly_array[index].vtable)->field34_0x88)();
+      iVar1 = (*(this_ptr->poly_array[index].vtable)->isValid)(this_ptr->poly_array + index);
       uVar2 = index;
       if (iVar1 == 0) {
         uVar2 = index - 1;

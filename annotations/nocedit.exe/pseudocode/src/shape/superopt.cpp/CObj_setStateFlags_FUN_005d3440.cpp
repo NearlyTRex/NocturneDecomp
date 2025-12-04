@@ -13,7 +13,7 @@ shape_superopt_cpp_CObj_setStateFlags_FUN_005d3440(CObj *this_ptr,uint set_mask,
   CVert *pCVar1;
   uint uVar2;
   uint uVar3;
-  CPoly *pCVar4;
+  CPoly *this_ptr_00;
   
   pCVar1 = this_ptr->vertex_data;
   uVar3 = 0;
@@ -26,13 +26,13 @@ shape_superopt_cpp_CObj_setStateFlags_FUN_005d3440(CObj *this_ptr,uint set_mask,
       pCVar1 = pCVar1 + 1;
     } while (uVar3 < (uint)this_ptr->vertex_count);
   }
-  pCVar4 = this_ptr->poly_array;
+  this_ptr_00 = this_ptr->poly_array;
   uVar3 = 0;
   if (this_ptr->poly_count != 0) {
     do {
       uVar3 = uVar3 + 1;
-      (*(code *)pCVar4->vtable->setFlags)();
-      pCVar4 = pCVar4 + 1;
+      (*this_ptr_00->vtable->setVertexStateFlags)(this_ptr_00,set_mask,clear_mask);
+      this_ptr_00 = this_ptr_00 + 1;
     } while (uVar3 < (uint)this_ptr->poly_count);
   }
   uVar3 = this_ptr->flags & clear_mask;

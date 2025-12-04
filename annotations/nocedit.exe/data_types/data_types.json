@@ -953,14 +953,6 @@
       "type":"struct"
     },
     {
-      "name":"CP2D",
-      "type":"struct"
-    },
-    {
-      "name":"CP3D",
-      "type":"struct"
-    },
-    {
       "name":"CPackedBitmap",
       "type":"struct"
     },
@@ -1065,7 +1057,143 @@
       "type":"struct"
     },
     {
+      "name":"CPoly_allVerticesHaveAttribFlags",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_clearVertexStateFlags",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_computeNormal",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_computePlaneDistance",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_containsPoint2D",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_copyFrom",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_flipNormal",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_getBounds",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_getCentroid",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_getMaterialId",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_hasCentroidIntersection",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_hasColinearEdge",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_hasEdgeIntersection",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_hasSeamlessEdge",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_hasSharedEdge",
+      "type":"function_definition"
+    },
+    {
       "name":"CPoly_init",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_intersectPoly",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_isValid",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_projectUVPlanar",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_rayIntersect",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_rayPlaneIntersect",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_restoreVertexPositions",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_restoreVertexPositionsWithFlag",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_saveVertexPositions",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_saveVertexPositionsWithFlag",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_scale",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_setMaterialId",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_setVertexAttribFlags",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_setVertexStateFlagFromAttrib",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_setVertexStateFlagIfCondition",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_setVertexStateFlagToAttrib",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_setVertexStateFlags",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_toggleVertexAttribFlags",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_transform",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPoly_translate",
       "type":"function_definition"
     },
     {
@@ -1305,6 +1433,10 @@
       "type":"struct"
     },
     {
+      "name":"CP2D",
+      "type":"struct"
+    },
+    {
       "name":"CVector2f",
       "type":"struct"
     },
@@ -1317,7 +1449,19 @@
       "type":"struct"
     },
     {
+      "name":"CClippedPoly",
+      "type":"struct"
+    },
+    {
       "name":"CMatrix3x3d",
+      "type":"struct"
+    },
+    {
+      "name":"CP3D",
+      "type":"struct"
+    },
+    {
+      "name":"CPolyIntersectResult",
       "type":"struct"
     },
     {
@@ -9326,6 +9470,268 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CPoly_allVerticesHaveAttribFlags",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"flag_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_clearVertexStateFlags",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_computeNormal",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_computePlaneDistance",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        }
+      ],
+      "return_type":"double",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_containsPoint2D",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"point",
+          "type":"CVector2d*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_copyFrom",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"source",
+          "type":"CPoly*"
+        },
+        {
+          "name":"parent_obj",
+          "type":"CObj*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_flipNormal",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_getBounds",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"out_min",
+          "type":"CVector3d*"
+        },
+        {
+          "name":"out_max",
+          "type":"CVector3d*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_getCentroid",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"out_centroid",
+          "type":"CVector3d*"
+        }
+      ],
+      "return_type":"CVector3d*",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_getMaterialId",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_hasCentroidIntersection",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"other",
+          "type":"CPoly*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_hasColinearEdge",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"other",
+          "type":"CPoly*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_hasEdgeIntersection",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"other",
+          "type":"CPoly*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_hasSeamlessEdge",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"other",
+          "type":"CPoly*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_hasSharedEdge",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"other",
+          "type":"CPoly*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CPoly_init",
       "parameters":[
         {
@@ -9335,6 +9741,380 @@
         {
           "name":"parent_obj",
           "type":"CObj*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_intersectPoly",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"other_poly",
+          "type":"CPoly*"
+        },
+        {
+          "name":"out_result",
+          "type":"CPolyIntersectResult*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_isValid",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_projectUVPlanar",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"uv_scale",
+          "type":"CVector2d*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_rayIntersect",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"ray_origin",
+          "type":"CVector3d*"
+        },
+        {
+          "name":"ray_end",
+          "type":"CVector3d*"
+        },
+        {
+          "name":"out_hit_point",
+          "type":"CVector3d*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_rayPlaneIntersect",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"ray_origin",
+          "type":"CVec*"
+        },
+        {
+          "name":"ray_dir",
+          "type":"CVec*"
+        }
+      ],
+      "return_type":"double",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_restoreVertexPositions",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_restoreVertexPositionsWithFlag",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"flag_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_saveVertexPositions",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_saveVertexPositionsWithFlag",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"flag_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_scale",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"scale",
+          "type":"CVector3d*"
+        },
+        {
+          "name":"pivot",
+          "type":"CVector3d*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_setMaterialId",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"material_id",
+          "type":"int"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_setVertexAttribFlags",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"set_mask",
+          "type":"uint"
+        },
+        {
+          "name":"clear_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_setVertexStateFlagFromAttrib",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"flag_to_set",
+          "type":"uint"
+        },
+        {
+          "name":"attrib_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_setVertexStateFlagIfCondition",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"flag_to_set",
+          "type":"uint"
+        },
+        {
+          "name":"condition_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_setVertexStateFlags",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"set_mask",
+          "type":"uint"
+        },
+        {
+          "name":"clear_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_setVertexStateFlagToAttrib",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"set_mask",
+          "type":"uint"
+        },
+        {
+          "name":"attrib_test",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_toggleVertexAttribFlags",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"flag_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_transform",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"matrix",
+          "type":"CMatrix3x3d*"
+        },
+        {
+          "name":"pivot",
+          "type":"CVector3d*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPoly_translate",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPoly*"
+        },
+        {
+          "name":"offset",
+          "type":"CVector3d*"
         }
       ],
       "return_type":"void",
@@ -20911,6 +21691,36 @@
       "desc":"",
       "fields":[
         {
+          "len":4,
+          "name":"vertex_count",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":96,
+          "name":"vertices",
+          "offset":4,
+          "type":"CVector3d[4]"
+        },
+        {
+          "len":64,
+          "name":"uvs",
+          "offset":100,
+          "type":"CVector2d[4]"
+        }
+      ],
+      "importable":true,
+      "len":164,
+      "name":"CClippedPoly",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":261728,
           "name":"padding_0x0",
           "offset":0,
@@ -31876,16 +32686,10 @@
       "desc":"",
       "fields":[
         {
-          "len":8,
-          "name":"x",
+          "len":16,
+          "name":"impl",
           "offset":0,
-          "type":"double"
-        },
-        {
-          "len":8,
-          "name":"y",
-          "offset":8,
-          "type":"double"
+          "type":"CVector2d"
         }
       ],
       "importable":true,
@@ -31900,22 +32704,10 @@
       "desc":"",
       "fields":[
         {
-          "len":8,
-          "name":"x",
+          "len":24,
+          "name":"impl",
           "offset":0,
-          "type":"double"
-        },
-        {
-          "len":8,
-          "name":"y",
-          "offset":8,
-          "type":"double"
-        },
-        {
-          "len":8,
-          "name":"z",
-          "offset":16,
-          "type":"double"
+          "type":"CVector3d"
         }
       ],
       "importable":true,
@@ -33299,7 +34091,7 @@
           "len":48,
           "name":"uv_coords",
           "offset":16,
-          "type":"CP2D[3]"
+          "type":"CVector2d[3]"
         },
         {
           "len":24,
@@ -33315,7 +34107,7 @@
         },
         {
           "len":4,
-          "name":"field_92",
+          "name":"material_id",
           "offset":92,
           "type":"int"
         },
@@ -33351,212 +34143,236 @@
         },
         {
           "len":4,
-          "name":"field_4",
+          "name":"copyFrom",
           "offset":4,
-          "type":"void*"
+          "type":"CPoly_copyFrom*"
         },
         {
           "len":4,
-          "name":"field_8",
+          "name":"translate",
           "offset":8,
-          "type":"void*"
+          "type":"CPoly_translate*"
         },
         {
           "len":4,
-          "name":"field_12",
+          "name":"scale",
           "offset":12,
-          "type":"void*"
+          "type":"CPoly_scale*"
         },
         {
           "len":4,
-          "name":"field_16",
+          "name":"transform",
           "offset":16,
-          "type":"void*"
+          "type":"CPoly_transform*"
         },
         {
           "len":4,
-          "name":"field_20",
+          "name":"allVerticesHaveFlags",
           "offset":20,
-          "type":"void*"
+          "type":"CPoly_allVerticesHaveAttribFlags*"
         },
         {
           "len":4,
-          "name":"field_24",
+          "name":"setVertexAttribFlags",
           "offset":24,
-          "type":"void*"
+          "type":"CPoly_setVertexAttribFlags*"
         },
         {
           "len":4,
-          "name":"field_28",
+          "name":"toggleVertexAttribFlags",
           "offset":28,
-          "type":"void*"
+          "type":"CPoly_toggleVertexAttribFlags*"
         },
         {
           "len":4,
-          "name":"setFlags",
+          "name":"setVertexStateFlags",
           "offset":32,
-          "type":"void*"
+          "type":"CPoly_setVertexStateFlags*"
         },
         {
           "len":4,
-          "name":"field_36",
+          "name":"setVertexStateFlagIfCondition",
           "offset":36,
-          "type":"void*"
+          "type":"CPoly_setVertexStateFlagIfCondition*"
         },
         {
           "len":4,
-          "name":"field_40",
+          "name":"setVertexStateFlagFromAttrib",
           "offset":40,
-          "type":"void*"
+          "type":"CPoly_setVertexStateFlagFromAttrib*"
         },
         {
           "len":4,
-          "name":"clearStateFlags",
+          "name":"clearVertexStateFlags",
           "offset":44,
-          "type":"void*"
+          "type":"CPoly_clearVertexStateFlags*"
         },
         {
           "len":4,
-          "name":"field_48",
+          "name":"setVertexStateFlagToAttrib",
           "offset":48,
-          "type":"void*"
+          "type":"CPoly_setVertexStateFlagToAttrib*"
         },
         {
           "len":4,
-          "name":"field_52",
+          "name":"saveVertexPositions",
           "offset":52,
-          "type":"void*"
+          "type":"CPoly_saveVertexPositions*"
         },
         {
           "len":4,
           "name":"saveVertexPositionsWithFlag",
           "offset":56,
-          "type":"void*"
+          "type":"CPoly_saveVertexPositionsWithFlag*"
         },
         {
           "len":4,
-          "name":"field_60",
+          "name":"restoreVertexPositions",
           "offset":60,
-          "type":"void*"
+          "type":"CPoly_restoreVertexPositions*"
         },
         {
           "len":4,
           "name":"restoreVertexPositionsWithFlag",
           "offset":64,
-          "type":"void*"
+          "type":"CPoly_restoreVertexPositionsWithFlag*"
         },
         {
           "len":4,
-          "name":"computeNormalMaybe1",
+          "name":"computeNormal",
           "offset":68,
-          "type":"void*"
+          "type":"CPoly_computeNormal*"
         },
         {
           "len":4,
-          "name":"computeNormalMaybe2",
+          "name":"flipNormal",
           "offset":72,
-          "type":"void*"
+          "type":"CPoly_flipNormal*"
         },
         {
           "len":4,
-          "name":"generatePlanarUVs",
+          "name":"projectUVPlanar",
           "offset":76,
-          "type":"void*"
+          "type":"CPoly_projectUVPlanar*"
         },
         {
           "len":4,
-          "name":"scaleUVs",
+          "name":"setMaterialId",
           "offset":80,
-          "type":"void*"
+          "type":"CPoly_setMaterialId*"
         },
         {
           "len":4,
           "name":"getMaterialId",
           "offset":84,
-          "type":"void*"
+          "type":"CPoly_getMaterialId*"
         },
         {
           "len":4,
-          "name":"field_88",
+          "name":"getBounds",
           "offset":88,
-          "type":"void*"
+          "type":"CPoly_getBounds*"
         },
         {
           "len":4,
-          "name":"field_92",
+          "name":"intersectPoly",
           "offset":92,
-          "type":"void*"
+          "type":"CPoly_intersectPoly*"
         },
         {
           "len":4,
-          "name":"field_96",
+          "name":"rayIntersect",
           "offset":96,
-          "type":"void*"
+          "type":"CPoly_rayIntersect*"
         },
         {
           "len":4,
-          "name":"field_100",
+          "name":"containsPoint2D",
           "offset":100,
-          "type":"void*"
+          "type":"CPoly_containsPoint2D*"
         },
         {
           "len":4,
-          "name":"field_104",
+          "name":"rayPlaneIntersect",
           "offset":104,
-          "type":"void*"
+          "type":"CPoly_rayPlaneIntersect*"
         },
         {
           "len":4,
-          "name":"field_108",
+          "name":"getCentroid",
           "offset":108,
-          "type":"void*"
+          "type":"CPoly_getCentroid*"
         },
         {
           "len":4,
-          "name":"sharesEdgeWith",
+          "name":"hasSharedEdge",
           "offset":112,
-          "type":"void*"
+          "type":"CPoly_hasSharedEdge*"
         },
         {
           "len":4,
-          "name":"field_116",
+          "name":"hasSeamlessEdge",
           "offset":116,
-          "type":"void*"
+          "type":"CPoly_hasSeamlessEdge*"
         },
         {
           "len":4,
-          "name":"field_120",
+          "name":"hasCentroidIntersection",
           "offset":120,
-          "type":"void*"
+          "type":"CPoly_hasCentroidIntersection*"
         },
         {
           "len":4,
-          "name":"field_124",
+          "name":"hasColinearEdge",
           "offset":124,
-          "type":"void*"
+          "type":"CPoly_hasColinearEdge*"
         },
         {
           "len":4,
-          "name":"field_128",
+          "name":"hasEdgeIntersection",
           "offset":128,
-          "type":"void*"
+          "type":"CPoly_hasEdgeIntersection*"
         },
         {
           "len":4,
-          "name":"field_132",
+          "name":"computePlaneDistance",
           "offset":132,
-          "type":"void*"
+          "type":"CPoly_computePlaneDistance*"
         },
         {
           "len":4,
-          "name":"field_136",
+          "name":"isValid",
           "offset":136,
-          "type":"void*"
+          "type":"CPoly_isValid*"
         }
       ],
       "importable":true,
       "len":140,
       "name":"CPoly_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":164,
+          "name":"poly1",
+          "offset":0,
+          "type":"CClippedPoly"
+        },
+        {
+          "len":164,
+          "name":"poly2",
+          "offset":164,
+          "type":"CClippedPoly"
+        }
+      ],
+      "importable":true,
+      "len":328,
+      "name":"CPolyIntersectResult",
       "pack":false,
       "type":"struct"
     },
@@ -36398,13 +37214,13 @@
           "len":24,
           "name":"position",
           "offset":0,
-          "type":"CVec"
+          "type":"CVector3d"
         },
         {
           "len":24,
           "name":"orig_position",
           "offset":24,
-          "type":"CVec"
+          "type":"CVector3d"
         },
         {
           "len":4,

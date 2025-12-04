@@ -2,11 +2,11 @@
 // Address: 005d2880
 // Address Range: [[005d2880, 005d28c9]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_translate_FUN_005d2880(CObj * this_ptr, CVec * offset)
+// Signature: void shape_superopt.cpp_CObj_translate_FUN_005d2880(CObj * this_ptr, CVector3d * offset)
 
 #include "nocturne.h"
 
-void __cdecl shape_superopt_cpp_CObj_translate_FUN_005d2880(CObj *this_ptr,CVec *offset)
+void __cdecl shape_superopt_cpp_CObj_translate_FUN_005d2880(CObj *this_ptr,CVector3d *offset)
 
 {
   int iVar1;
@@ -19,10 +19,10 @@ void __cdecl shape_superopt_cpp_CObj_translate_FUN_005d2880(CObj *this_ptr,CVec 
     uVar3 = 0;
     if (this_ptr->vertex_count != 0) {
       do {
-        (pCVar2->position).impl.x = (offset->impl).x + (pCVar2->position).impl.x;
-        (pCVar2->position).impl.y = (offset->impl).y + (pCVar2->position).impl.y;
+        (pCVar2->position).x = offset->x + (pCVar2->position).x;
+        (pCVar2->position).y = offset->y + (pCVar2->position).y;
         uVar3 = uVar3 + 1;
-        (pCVar2->position).impl.z = (offset->impl).z + (pCVar2->position).impl.z;
+        (pCVar2->position).z = offset->z + (pCVar2->position).z;
         pCVar2 = pCVar2 + 1;
       } while (uVar3 < (uint)this_ptr->vertex_count);
     }

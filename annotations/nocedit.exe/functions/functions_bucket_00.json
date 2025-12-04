@@ -66889,7 +66889,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CPoly_FUN_005ce580",
+    "name":"shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580",
     "ret":"int",
     "vars":{
       "locals":[
@@ -66942,6 +66942,38 @@
             ]
           },
           "type":"CPoly*"
+        },
+        {
+          "name":"other_poly",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CPoly*"
+        },
+        {
+          "name":"out_result",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CPolyIntersectResult*"
         }
       ],
       "ret_storage":{
@@ -67189,7 +67221,7 @@
               }
             ]
           },
-          "type":"CVec*"
+          "type":"CVector3d*"
         }
       ]
     }
@@ -67709,9 +67741,10 @@
         "start":"005d6500"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_FUN_005d6500",
-    "ret":"undefined1",
+    "name":"shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500",
+    "ret":"double",
     "vars":{
       "locals":[
         {
@@ -67891,8 +67924,86 @@
           "type":"undefined8"
         }
       ],
+      "params":[
+        {
+          "name":"ray_origin",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3d*"
+        },
+        {
+          "name":"ray_dir",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3d*"
+        },
+        {
+          "name":"plane_point",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3d*"
+        },
+        {
+          "name":"plane_normal",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3d*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "compound":true,
+        "size":8,
+        "varnodes":[
+          {
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          },
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

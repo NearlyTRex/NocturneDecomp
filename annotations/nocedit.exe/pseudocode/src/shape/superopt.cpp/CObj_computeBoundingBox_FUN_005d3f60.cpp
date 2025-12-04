@@ -17,50 +17,44 @@ shape_superopt_cpp_CObj_computeBoundingBox_FUN_005d3f60
   
   pCVar1 = this_ptr->vertex_data;
   uVar3 = 1;
-  *(undefined4 *)&out_min->x = *(undefined4 *)&(pCVar1->position).impl.x;
-  *(undefined4 *)((int)&out_min->x + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.x + 4);
-  *(undefined4 *)&out_min->y = *(undefined4 *)&(pCVar1->position).impl.y;
-  *(undefined4 *)((int)&out_min->y + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.y + 4);
-  *(undefined4 *)&out_min->z = *(undefined4 *)&(pCVar1->position).impl.z;
-  *(undefined4 *)((int)&out_min->z + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.z + 4);
-  *(undefined4 *)&out_max->x = *(undefined4 *)&(pCVar1->position).impl.x;
-  *(undefined4 *)((int)&out_max->x + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.x + 4);
-  *(undefined4 *)&out_max->y = *(undefined4 *)&(pCVar1->position).impl.y;
-  *(undefined4 *)((int)&out_max->y + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.y + 4);
-  *(undefined4 *)&out_max->z = *(undefined4 *)&(pCVar1->position).impl.z;
-  *(undefined4 *)((int)&out_max->z + 4) = *(undefined4 *)((int)&(pCVar1->position).impl.z + 4);
+  *(undefined4 *)&out_min->x = *(undefined4 *)&(pCVar1->position).x;
+  *(undefined4 *)((int)&out_min->x + 4) = *(undefined4 *)((int)&(pCVar1->position).x + 4);
+  *(undefined4 *)&out_min->y = *(undefined4 *)&(pCVar1->position).y;
+  *(undefined4 *)((int)&out_min->y + 4) = *(undefined4 *)((int)&(pCVar1->position).y + 4);
+  *(undefined4 *)&out_min->z = *(undefined4 *)&(pCVar1->position).z;
+  *(undefined4 *)((int)&out_min->z + 4) = *(undefined4 *)((int)&(pCVar1->position).z + 4);
+  *(undefined4 *)&out_max->x = *(undefined4 *)&(pCVar1->position).x;
+  *(undefined4 *)((int)&out_max->x + 4) = *(undefined4 *)((int)&(pCVar1->position).x + 4);
+  *(undefined4 *)&out_max->y = *(undefined4 *)&(pCVar1->position).y;
+  *(undefined4 *)((int)&out_max->y + 4) = *(undefined4 *)((int)&(pCVar1->position).y + 4);
+  *(undefined4 *)&out_max->z = *(undefined4 *)&(pCVar1->position).z;
+  *(undefined4 *)((int)&out_max->z + 4) = *(undefined4 *)((int)&(pCVar1->position).z + 4);
   if (1 < (uint)this_ptr->vertex_count) {
     do {
       pCVar2 = pCVar1 + 1;
-      if ((pCVar2->position).impl.x < out_min->x) {
-        *(undefined4 *)&out_min->x = *(undefined4 *)&(pCVar2->position).impl.x;
-        *(undefined4 *)((int)&out_min->x + 4) = *(undefined4 *)((int)&pCVar1[1].position.impl.x + 4)
-        ;
+      if ((pCVar2->position).x < out_min->x) {
+        *(undefined4 *)&out_min->x = *(undefined4 *)&(pCVar2->position).x;
+        *(undefined4 *)((int)&out_min->x + 4) = *(undefined4 *)((int)&pCVar1[1].position.x + 4);
       }
-      if (pCVar1[1].position.impl.y < out_min->y) {
-        *(undefined4 *)&out_min->y = *(undefined4 *)&pCVar1[1].position.impl.y;
-        *(undefined4 *)((int)&out_min->y + 4) = *(undefined4 *)((int)&pCVar1[1].position.impl.y + 4)
-        ;
+      if (pCVar1[1].position.y < out_min->y) {
+        *(undefined4 *)&out_min->y = *(undefined4 *)&pCVar1[1].position.y;
+        *(undefined4 *)((int)&out_min->y + 4) = *(undefined4 *)((int)&pCVar1[1].position.y + 4);
       }
-      if (pCVar1[1].position.impl.z < out_min->z) {
-        *(undefined4 *)&out_min->z = *(undefined4 *)&pCVar1[1].position.impl.z;
-        *(undefined4 *)((int)&out_min->z + 4) = *(undefined4 *)((int)&pCVar1[1].position.impl.z + 4)
-        ;
+      if (pCVar1[1].position.z < out_min->z) {
+        *(undefined4 *)&out_min->z = *(undefined4 *)&pCVar1[1].position.z;
+        *(undefined4 *)((int)&out_min->z + 4) = *(undefined4 *)((int)&pCVar1[1].position.z + 4);
       }
-      if (out_max->x < (pCVar2->position).impl.x) {
-        *(undefined4 *)&out_max->x = *(undefined4 *)&(pCVar2->position).impl.x;
-        *(undefined4 *)((int)&out_max->x + 4) = *(undefined4 *)((int)&pCVar1[1].position.impl.x + 4)
-        ;
+      if (out_max->x < (pCVar2->position).x) {
+        *(undefined4 *)&out_max->x = *(undefined4 *)&(pCVar2->position).x;
+        *(undefined4 *)((int)&out_max->x + 4) = *(undefined4 *)((int)&pCVar1[1].position.x + 4);
       }
-      if (out_max->y < pCVar1[1].position.impl.y) {
-        *(undefined4 *)&out_max->y = *(undefined4 *)&pCVar1[1].position.impl.y;
-        *(undefined4 *)((int)&out_max->y + 4) = *(undefined4 *)((int)&pCVar1[1].position.impl.y + 4)
-        ;
+      if (out_max->y < pCVar1[1].position.y) {
+        *(undefined4 *)&out_max->y = *(undefined4 *)&pCVar1[1].position.y;
+        *(undefined4 *)((int)&out_max->y + 4) = *(undefined4 *)((int)&pCVar1[1].position.y + 4);
       }
-      if (out_max->z < pCVar1[1].position.impl.z) {
-        *(undefined4 *)&out_max->z = *(undefined4 *)&pCVar1[1].position.impl.z;
-        *(undefined4 *)((int)&out_max->z + 4) = *(undefined4 *)((int)&pCVar1[1].position.impl.z + 4)
-        ;
+      if (out_max->z < pCVar1[1].position.z) {
+        *(undefined4 *)&out_max->z = *(undefined4 *)&pCVar1[1].position.z;
+        *(undefined4 *)((int)&out_max->z + 4) = *(undefined4 *)((int)&pCVar1[1].position.z + 4);
       }
       uVar3 = uVar3 + 1;
       pCVar1 = pCVar2;

@@ -2,13 +2,13 @@
 // Address: 005d2dd0
 // Address Range: [[005d2dd0, 005d2f4a]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0(CObj * this_ptr, uint flag_mask, CMatrix3x3d * matrix, CVec * pivot)
+// Signature: void shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0(CObj * this_ptr, uint flag_mask, CMatrix3x3d * matrix, CVector3d * pivot)
 
 #include "nocturne.h"
 
 void __cdecl
 shape_superopt_cpp_CObj_transformMasked_FUN_005d2dd0
-          (CObj *this_ptr,uint flag_mask,CMatrix3x3d *matrix,CVec *pivot)
+          (CObj *this_ptr,uint flag_mask,CMatrix3x3d *matrix,CVector3d *pivot)
 
 {
   int iVar1;
@@ -47,9 +47,9 @@ shape_superopt_cpp_CObj_transformMasked_FUN_005d2dd0
     if (this_ptr->vertex_count != 0) {
       do {
         if ((pCVar2->state_flags & flag_mask) == flag_mask) {
-          dStack_3c = (pCVar2->position).impl.x - (pivot->impl).x;
-          dStack_34 = (pCVar2->position).impl.y - (pivot->impl).y;
-          dStack_2c = (pCVar2->position).impl.z - (pivot->impl).z;
+          dStack_3c = (pCVar2->position).x - pivot->x;
+          dStack_34 = (pCVar2->position).y - pivot->y;
+          dStack_2c = (pCVar2->position).z - pivot->z;
           pdVar3 = &dStack_3c;
           pdVar4 = &dStack_9c;
           for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -70,8 +70,8 @@ shape_superopt_cpp_CObj_transformMasked_FUN_005d2dd0
             pdVar3 = (double *)((int)pdVar3 + (uint)bVar6 * -8 + 4);
             pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);
           }
-          dStack_24 = dStack_54 + (pivot->impl).x;
-          dStack_1c = dStack_4c + (pivot->impl).y;
+          dStack_24 = dStack_54 + pivot->x;
+          dStack_1c = dStack_4c + pivot->y;
           pdVar3 = &dStack_24;
           puVar5 = &uStack_84;
           for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -79,12 +79,12 @@ shape_superopt_cpp_CObj_transformMasked_FUN_005d2dd0
             pdVar3 = (double *)((int)pdVar3 + (uint)bVar6 * -8 + 4);
             puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
           }
-          *(undefined4 *)&(pCVar2->position).impl.x = uStack_84;
-          *(undefined4 *)((int)&(pCVar2->position).impl.x + 4) = uStack_80;
-          *(undefined4 *)&(pCVar2->position).impl.y = uStack_7c;
-          *(undefined4 *)((int)&(pCVar2->position).impl.y + 4) = uStack_78;
-          *(undefined4 *)&(pCVar2->position).impl.z = uStack_74;
-          *(undefined4 *)((int)&(pCVar2->position).impl.z + 4) = uStack_70;
+          *(undefined4 *)&(pCVar2->position).x = uStack_84;
+          *(undefined4 *)((int)&(pCVar2->position).x + 4) = uStack_80;
+          *(undefined4 *)&(pCVar2->position).y = uStack_7c;
+          *(undefined4 *)((int)&(pCVar2->position).y + 4) = uStack_78;
+          *(undefined4 *)&(pCVar2->position).z = uStack_74;
+          *(undefined4 *)((int)&(pCVar2->position).z + 4) = uStack_70;
         }
         pCVar2 = pCVar2 + 1;
         uVar7 = uVar7 + 1;

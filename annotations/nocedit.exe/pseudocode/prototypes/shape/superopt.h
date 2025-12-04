@@ -131,141 +131,141 @@ CPoly * CPoly::dtor(CPoly * this_ptr);
 // Address: 005cc670
 void CPoly::init(CPoly * this_ptr, CObj * parent_obj);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cc6a0
+// Original: shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
 // Address: 005cc6a0
-void CPoly(CPoly * this_ptr);
+void CPoly::copyFrom(CPoly * this_ptr, CPoly * source, CObj * parent_obj);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cc720
+// Original: shape_superopt.cpp_CPoly_translate_FUN_005cc720
 // Address: 005cc720
-void CPoly(CPoly * this_ptr);
+void CPoly::translate(CPoly * this_ptr, CVector3d * offset);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cc7c0
+// Original: shape_superopt.cpp_CPoly_scale_FUN_005cc7c0
 // Address: 005cc7c0
-void CPoly(CPoly * this_ptr);
+void CPoly::scale(CPoly * this_ptr, CVector3d * scale, CVector3d * pivot);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005ccc30
+// Original: shape_superopt.cpp_CPoly_transform_FUN_005ccc30
 // Address: 005ccc30
-void CPoly(CPoly * this_ptr);
+void CPoly::transform(CPoly * this_ptr, CMatrix3x3d * matrix, CVector3d * pivot);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cd0b0
+// Original: shape_superopt.cpp_CPoly_allVerticesHaveAttribFlags_FUN_005cd0b0
 // Address: 005cd0b0
-int CPoly(CPoly * this_ptr);
+int CPoly::allVerticesHaveAttribFlags(CPoly * this_ptr, uint flag_mask);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cd120
+// Original: shape_superopt.cpp_CPoly_setVertexAttribFlags_FUN_005cd120
 // Address: 005cd120
-void CPoly(CPoly * this_ptr);
+void CPoly::setVertexAttribFlags(CPoly * this_ptr, uint set_mask, uint clear_mask);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cd1a0
+// Original: shape_superopt.cpp_CPoly_toggleVertexAttribFlags_FUN_005cd1a0
 // Address: 005cd1a0
-void CPoly(CPoly * this_ptr);
+void CPoly::toggleVertexAttribFlags(CPoly * this_ptr, uint flag_mask);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cd220
+// Original: shape_superopt.cpp_CPoly_setVertexStateFlags_FUN_005cd220
 // Address: 005cd220
-void CPoly(CPoly * this_ptr);
+void CPoly::setVertexStateFlags(CPoly * this_ptr, uint set_mask, uint clear_mask);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cd2b0
+// Original: shape_superopt.cpp_CPoly_setVertexStateFlagIfCondition_FUN_005cd2b0
 // Address: 005cd2b0
-void CPoly(CPoly * this_ptr);
+void CPoly::setVertexStateFlagIfCondition(CPoly * this_ptr, uint flag_to_set, uint condition_mask);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cd350
+// Original: shape_superopt.cpp_CPoly_setVertexStateFlagFromAttrib_FUN_005cd350
 // Address: 005cd350
-void CPoly(CPoly * this_ptr);
+void CPoly::setVertexStateFlagFromAttrib(CPoly * this_ptr, uint flag_to_set, uint attrib_mask);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cd3c0
+// Original: shape_superopt.cpp_CPoly_clearVertexStateFlags_FUN_005cd3c0
 // Address: 005cd3c0
-void CPoly(CPoly * this_ptr);
+void CPoly::clearVertexStateFlags(CPoly * this_ptr, uint mask);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cd410
+// Original: shape_superopt.cpp_CPoly_setVertexStateFlagToAttrib_FUN_005cd410
 // Address: 005cd410
-void CPoly(CPoly * this_ptr);
+void CPoly::setVertexStateFlagToAttrib(CPoly * this_ptr, uint set_mask, uint attrib_test);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cd4b0
+// Original: shape_superopt.cpp_CPoly_saveVertexPositions_FUN_005cd4b0
 // Address: 005cd4b0
-void CPoly(CPoly * this_ptr);
+void CPoly::saveVertexPositions(CPoly * this_ptr);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cd560
+// Original: shape_superopt.cpp_CPoly_saveVertexPositionsWithFlag_FUN_005cd560
 // Address: 005cd560
-void CPoly(CPoly * this_ptr);
+void CPoly::saveVertexPositionsWithFlag(CPoly * this_ptr, uint flag_mask);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cd640
+// Original: shape_superopt.cpp_CPoly_restoreVertexPositions_FUN_005cd640
 // Address: 005cd640
-void CPoly(CPoly * this_ptr);
+void CPoly::restoreVertexPositions(CPoly * this_ptr);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cd6f0
+// Original: shape_superopt.cpp_CPoly_restoreVertexPositionsWithFlag_FUN_005cd6f0
 // Address: 005cd6f0
-void CPoly(CPoly * this_ptr);
+void CPoly::restoreVertexPositionsWithFlag(CPoly * this_ptr, uint flag_mask);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cd7d0
+// Original: shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
 // Address: 005cd7d0
-void CPoly(CPoly * this_ptr);
+void CPoly::computeNormal(CPoly * this_ptr);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005cdfe0
+// Original: shape_superopt.cpp_CPoly_flipNormal_FUN_005cdfe0
 // Address: 005cdfe0
-void CPoly(CPoly * this_ptr);
+void CPoly::flipNormal(CPoly * this_ptr);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005ce0a0
+// Original: shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
 // Address: 005ce0a0
-void CPoly(CPoly * this_ptr);
+void CPoly::projectUVPlanar(CPoly * this_ptr, CVector2d * uv_scale);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005ce3c0
+// Original: shape_superopt.cpp_CPoly_setMaterialId_FUN_005ce3c0
 // Address: 005ce3c0
-void CPoly(CPoly * this_ptr);
+void CPoly::setMaterialId(CPoly * this_ptr, int material_id);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005ce3d0
+// Original: shape_superopt.cpp_CPoly_getMaterialId_FUN_005ce3d0
 // Address: 005ce3d0
-int CPoly(CPoly * this_ptr);
+int CPoly::getMaterialId(CPoly * this_ptr);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005ce3e0
+// Original: shape_superopt.cpp_CPoly_getBounds_FUN_005ce3e0
 // Address: 005ce3e0
-void CPoly(CPoly * this_ptr);
+void CPoly::getBounds(CPoly * this_ptr, CVector3d * out_min, CVector3d * out_max);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005ce580
+// Original: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
 // Address: 005ce580
-int CPoly(CPoly * this_ptr);
+int CPoly::intersectPoly(CPoly * this_ptr, CPoly * other_poly, CPolyIntersectResult * out_result);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005d0010
+// Original: shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010
 // Address: 005d0010
-int CPoly(CPoly * this_ptr);
+int CPoly::rayIntersect(CPoly * this_ptr, CVector3d * ray_origin, CVector3d * ray_end, CVector3d * out_hit_point);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005d0340
+// Original: shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340
 // Address: 005d0340
-int CPoly(CPoly * this_ptr);
+int CPoly::containsPoint2D(CPoly * this_ptr, CVector2d * point);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005d0ce0
+// Original: shape_superopt.cpp_CPoly_rayPlaneIntersect_FUN_005d0ce0
 // Address: 005d0ce0
-double CPoly(CPoly * this_ptr);
+double CPoly::rayPlaneIntersect(CPoly * this_ptr, CVec * ray_origin, CVec * ray_dir);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005d0d30
+// Original: shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30
 // Address: 005d0d30
-void CPoly(CPoly * this_ptr);
+CVector3d * CPoly::getCentroid(CPoly * this_ptr, CVector3d * out_centroid);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005d0e20
+// Original: shape_superopt.cpp_CPoly_hasSharedEdge_FUN_005d0e20
 // Address: 005d0e20
-int CPoly(CPoly * this_ptr);
+int CPoly::hasSharedEdge(CPoly * this_ptr, CPoly * other);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005d0ee0
+// Original: shape_superopt.cpp_CPoly_hasSeamlessEdge_FUN_005d0ee0
 // Address: 005d0ee0
-int CPoly(CPoly * this_ptr);
+int CPoly::hasSeamlessEdge(CPoly * this_ptr, CPoly * other);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005d1230
+// Original: shape_superopt.cpp_CPoly_hasCentroidIntersection_FUN_005d1230
 // Address: 005d1230
-int CPoly(CPoly * this_ptr);
+int CPoly::hasCentroidIntersection(CPoly * this_ptr, CPoly * other);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005d12d0
+// Original: shape_superopt.cpp_CPoly_hasColinearEdge_FUN_005d12d0
 // Address: 005d12d0
-int CPoly(CPoly * this_ptr);
+int CPoly::hasColinearEdge(CPoly * this_ptr, CPoly * other);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005d1390
+// Original: shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390
 // Address: 005d1390
-int CPoly(CPoly * this_ptr);
+int CPoly::hasEdgeIntersection(CPoly * this_ptr, CPoly * other);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005d1fa0
+// Original: shape_superopt.cpp_CPoly_computePlaneDistance_FUN_005d1fa0
 // Address: 005d1fa0
-double CPoly(CPoly * this_ptr);
+double CPoly::computePlaneDistance(CPoly * this_ptr);
 
-// Original: shape_superopt.cpp_CPoly_FUN_005d1ff0
+// Original: shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0
 // Address: 005d1ff0
-int CPoly(CPoly * this_ptr);
+int CPoly::isValid(CPoly * this_ptr);
 
 // Original: shape_superopt.cpp_CObj_ctor_FUN_005d2230
 // Address: 005d2230
@@ -317,27 +317,27 @@ int CObj::appendTo(CObj * this_ptr, CObj * dest_obj);
 
 // Original: shape_superopt.cpp_CObj_translate_FUN_005d2880
 // Address: 005d2880
-void CObj::translate(CObj * this_ptr, CVec * offset);
+void CObj::translate(CObj * this_ptr, CVector3d * offset);
 
 // Original: shape_superopt.cpp_CObj_translateMasked_FUN_005d28d0
 // Address: 005d28d0
-void CObj::translateMasked(CObj * this_ptr, uint flag_mask, CVec * offset);
+void CObj::translateMasked(CObj * this_ptr, uint flag_mask, CVector3d * offset);
 
 // Original: shape_superopt.cpp_CObj_scale_FUN_005d2940
 // Address: 005d2940
-void CObj::scale(CObj * this_ptr, CVec * scale, CVec * pivot);
+void CObj::scale(CObj * this_ptr, CVector3d * scale, CVector3d * pivot);
 
 // Original: shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
 // Address: 005d2ac0
-void CObj::scaleMasked(CObj * this_ptr, uint flag_mask, CVec * scale, CVec * pivot);
+void CObj::scaleMasked(CObj * this_ptr, uint flag_mask, CVector3d * scale, CVector3d * pivot);
 
 // Original: shape_superopt.cpp_CObj_transform_FUN_005d2c40
 // Address: 005d2c40
-void CObj::transform(CObj * this_ptr, CMatrix3x3d * matrix, CVec * pivot);
+void CObj::transform(CObj * this_ptr, CMatrix3x3d * matrix, CVector3d * pivot);
 
 // Original: shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
 // Address: 005d2dd0
-void CObj::transformMasked(CObj * this_ptr, uint flag_mask, CMatrix3x3d * matrix, CVec * pivot);
+void CObj::transformMasked(CObj * this_ptr, uint flag_mask, CMatrix3x3d * matrix, CVector3d * pivot);
 
 // Original: shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50
 // Address: 005d2f50
@@ -519,13 +519,13 @@ undefined FUN_005d63d0();
 // Address: 005d64a0
 undefined FUN_005d64a0();
 
-// Original: shape_superopt.cpp_FUN_005d6500
+// Original: shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500
 // Address: 005d6500
-undefined FUN_005d6500();
+double rayPlaneIntersect(CVector3d * ray_origin, CVector3d * ray_dir, CVector3d * plane_point, CVector3d * plane_normal);
 
-// Original: shape_superopt.cpp_FUN_005d6640
+// Original: shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640
 // Address: 005d6640
-undefined FUN_005d6640();
+double getSignedTriangleArea2D(CVector2d * p1, CVector2d * p2, CVector2d * p3);
 
 // Original: shape_superopt.cpp_FUN_005d66e0
 // Address: 005d66e0

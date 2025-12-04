@@ -38,12 +38,12 @@ int __cdecl shape_superopt_cpp_CObj_copyFrom_FUN_005d2650(CObj *this_ptr,CObj *s
   puVar4 = *(undefined4 **)(in_stack_0000001c + 4);
   pCVar5 = this_ptr->vertex_data;
   for (uVar3 = (uint)(this_ptr->vertex_count * 0x38) >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *(undefined4 *)&(pCVar5->position).impl.x = *puVar4;
+    *(undefined4 *)&(pCVar5->position).x = *puVar4;
     puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
     pCVar5 = (CVert *)((int)pCVar5 + (uint)bVar6 * -8 + 4);
   }
   for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(undefined1 *)&(pCVar5->position).impl.x = *(undefined1 *)puVar4;
+    *(undefined1 *)&(pCVar5->position).x = *(undefined1 *)puVar4;
     puVar4 = (undefined4 *)((int)puVar4 + (uint)bVar6 * -2 + 1);
     pCVar5 = (CVert *)((int)pCVar5 + (uint)bVar6 * -2 + 1);
   }

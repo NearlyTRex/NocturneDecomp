@@ -64,7 +64,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d4160(CObj *this_ptr)
       if ((pvStack_20 != (void *)0x0) && ((char)uVar10 == '\0')) {
         crt_stdio_c_sprintf_FUN_005fdbd0(acStack_f8,"Welding vertices (%d removed so far)",iStack_18);
       }
-      pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).impl.x + iStack_1c);
+      pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_1c);
       pdStack_14 = pdVar4;
       if ((*(byte *)((int)pdVar4 + 0x35) & 0x80) == 0) {
         dVar2 = (double)CONCAT44(uStack_fc,iStack_100);
@@ -93,7 +93,7 @@ int __cdecl shape_superopt_cpp_CObj_FUN_005d4160(CObj *this_ptr)
         if (uVar5 < (uint)this_ptr->vertex_count) {
           iStack_24 = uVar5 * 0x38;
           do {
-            pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).impl.x + iStack_24);
+            pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_24);
             if ((*(byte *)((int)pdVar4 + 0x35) & 0x80) == 0) {
               if (((uStack_fc & 0x7fffffff) == 0) && (iStack_100 == 0)) {
                 if (((*pdStack_14 == *pdVar4) && (pdStack_14[1] == pdVar4[1])) &&

@@ -13,7 +13,9 @@ shape_superopt_cpp_CObj_setStateFlagIfCondition_FUN_005d34d0
 {
   uint uVar1;
   CVert *pCVar2;
-  CPoly *pCVar3;
+  CPoly *this_ptr_00;
+  uint set_mask;
+  uint clear_mask;
   
   uVar1 = 0;
   pCVar2 = this_ptr->vertex_data;
@@ -30,12 +32,20 @@ shape_superopt_cpp_CObj_setStateFlagIfCondition_FUN_005d34d0
     } while (uVar1 < (uint)this_ptr->vertex_count);
   }
   uVar1 = 0;
-  pCVar3 = this_ptr->poly_array;
+  this_ptr_00 = this_ptr->poly_array;
   if (this_ptr->poly_count != 0) {
     do {
-      (*(code *)pCVar3->vtable->setFlags)();
+      if ((this_ptr_00->flags & condition_mask) == condition_mask) {
+        clear_mask = 0xffffffff;
+        set_mask = flag_to_set;
+      }
+      else {
+        clear_mask = ~flag_to_set;
+        set_mask = 0;
+      }
+      (*this_ptr_00->vtable->setVertexStateFlags)(this_ptr_00,set_mask,clear_mask);
       uVar1 = uVar1 + 1;
-      pCVar3 = pCVar3 + 1;
+      this_ptr_00 = this_ptr_00 + 1;
     } while (uVar1 < (uint)this_ptr->poly_count);
   }
   if ((this_ptr->flags & condition_mask) == condition_mask) {

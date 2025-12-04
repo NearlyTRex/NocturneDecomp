@@ -100,13 +100,13 @@ int * __cdecl shape_superopt_cpp_CObj_FUN_005d44d0(CObj *this_ptr)
         iVar8 = (int)piVar3 - (int)dest >> 0x1f;
         pCVar4 = this_ptr->vertex_data +
                  ((int)((((int)piVar3 - (int)dest) + iVar8 * -4) - (uint)(iVar8 << 1 < 0)) >> 2);
-        pdVar7 = (double *)((int)&(this_ptr->vertex_data->position).impl.x + unaff_ESI);
-        *pdVar7 = (pCVar4->position).impl.x;
-        pdVar7[1] = (pCVar4->position).impl.y;
-        pdVar7[2] = (pCVar4->position).impl.z;
-        pdVar7[3] = (pCVar4->orig_position).impl.x;
-        pdVar7[4] = (pCVar4->orig_position).impl.y;
-        pdVar7[5] = (pCVar4->orig_position).impl.z;
+        pdVar7 = (double *)((int)&(this_ptr->vertex_data->position).x + unaff_ESI);
+        *pdVar7 = (pCVar4->position).x;
+        pdVar7[1] = (pCVar4->position).y;
+        pdVar7[2] = (pCVar4->position).z;
+        pdVar7[3] = (pCVar4->orig_position).x;
+        pdVar7[4] = (pCVar4->orig_position).y;
+        pdVar7[5] = (pCVar4->orig_position).z;
         *(uint *)(pdVar7 + 6) = pCVar4->attrib_flags;
         *(uint *)((int)pdVar7 + 0x34) = pCVar4->state_flags;
         pvVar9 = (void *)((int)pvVar9 + 1);

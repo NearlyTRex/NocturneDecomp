@@ -2,12 +2,13 @@
 // Address: 005d28d0
 // Address Range: [[005d28d0, 005d2937]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_translateMasked_FUN_005d28d0(CObj * this_ptr, uint flag_mask, CVec * offset)
+// Signature: void shape_superopt.cpp_CObj_translateMasked_FUN_005d28d0(CObj * this_ptr, uint flag_mask, CVector3d * offset)
 
 #include "nocturne.h"
 
 void __cdecl
-shape_superopt_cpp_CObj_translateMasked_FUN_005d28d0(CObj *this_ptr,uint flag_mask,CVec *offset)
+shape_superopt_cpp_CObj_translateMasked_FUN_005d28d0
+          (CObj *this_ptr,uint flag_mask,CVector3d *offset)
 
 {
   int iVar1;
@@ -21,9 +22,9 @@ shape_superopt_cpp_CObj_translateMasked_FUN_005d28d0(CObj *this_ptr,uint flag_ma
     if (this_ptr->vertex_count != 0) {
       do {
         while ((pCVar2->state_flags & flag_mask) == flag_mask) {
-          (pCVar2->position).impl.x = (offset->impl).x + (pCVar2->position).impl.x;
-          (pCVar2->position).impl.y = (offset->impl).y + (pCVar2->position).impl.y;
-          (pCVar2->position).impl.z = (offset->impl).z + (pCVar2->position).impl.z;
+          (pCVar2->position).x = offset->x + (pCVar2->position).x;
+          (pCVar2->position).y = offset->y + (pCVar2->position).y;
+          (pCVar2->position).z = offset->z + (pCVar2->position).z;
           uVar3 = uVar3 + 1;
           pCVar2 = pCVar2 + 1;
           if ((uint)this_ptr->vertex_count <= uVar3) {

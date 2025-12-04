@@ -4,7 +4,7 @@
 // Convention: unknown
 // Signature: undefined shape_superopt.cpp_FUN_005d5bb0()
 // Cross-references:
-//   shape_superopt.cpp_CPoly_FUN_005d1390 (005d1390) at 005d17a1 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390 (005d1390) at 005d17a1 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_FUN_005d5de0 (005d5de0) at 005d5e34 [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_0065453a = 1.00000000000000E-10

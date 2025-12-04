@@ -114,7 +114,7 @@
 //   shape_superopt.cpp_CObj_FUN_005d44d0 (005d44d0) at 005d4516 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_CObj_addVertices_FUN_005d2580 (005d2580) at 005d25d1 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_CObj_allocateVertices_FUN_005d2500 (005d2500) at 005d2568 [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_CPoly_FUN_005ce580 (005ce580) at 005ce6de [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (005ce580) at 005ce6de [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0 (005344f0) at 00534514 [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0 (00534ba0) at 00534c6a [UNCONDITIONAL_CALL]
 //   sound_mp3.cpp_applyPolyphaseWindow_FUN_00533690 (00533690) at 00533a4e [UNCONDITIONAL_CALL]
