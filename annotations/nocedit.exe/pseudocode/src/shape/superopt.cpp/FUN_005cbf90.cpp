@@ -1,8 +1,8 @@
 // Name: shape_superopt.cpp_FUN_005cbf90
 // Address: 005cbf90
 // Address Range: [[005cbf90, 005cc61f]]
-// Convention: unknown
-// Signature: undefined shape_superopt.cpp_FUN_005cbf90()
+// Convention: __cdecl
+// Signature: int shape_superopt.cpp_FUN_005cbf90(void)
 // Cross-references:
 //   shape_superopt.cpp_FUN_005c91e0 (005c91e0) at 005c92d6 [UNCONDITIONAL_CALL]
 // Function calls:
@@ -10,7 +10,7 @@
 
 #include "nocturne.h"
 
-undefined4 shape_superopt_cpp_FUN_005cbf90(void)
+int __cdecl shape_superopt_cpp_FUN_005cbf90(void)
 
 {
   bool bVar1;

@@ -805,6 +805,14 @@
       "type":"function_definition"
     },
     {
+      "name":"CObj_computeBoundingBox",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_computeCoplanarAdjacency",
+      "type":"function_definition"
+    },
+    {
       "name":"CObj_containsPolygon",
       "type":"function_definition"
     },
@@ -829,11 +837,23 @@
       "type":"function_definition"
     },
     {
+      "name":"CObj_findCoplanarPolygon",
+      "type":"function_definition"
+    },
+    {
       "name":"CObj_findPolygonIndex",
       "type":"function_definition"
     },
     {
       "name":"CObj_findVertexIndex",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_flipAllPolyNormals",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_flipPolyNormalsWithFlag",
       "type":"function_definition"
     },
     {
@@ -849,11 +869,31 @@
       "type":"function_definition"
     },
     {
+      "name":"CObj_hasPolyWithMaterial",
+      "type":"function_definition"
+    },
+    {
       "name":"CObj_init",
       "type":"function_definition"
     },
     {
+      "name":"CObj_isClosedManifold",
+      "type":"function_definition"
+    },
+    {
       "name":"CObj_isValid",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_projectAllPlanarUVs",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_projectPlanarUVsWithFlag",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_removeInvalidPolygons",
       "type":"function_definition"
     },
     {
@@ -866,6 +906,14 @@
     },
     {
       "name":"CObj_removePolygonsByFlag",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_removeTJunctions",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_removeUnusedVertices",
       "type":"function_definition"
     },
     {
@@ -905,6 +953,14 @@
       "type":"function_definition"
     },
     {
+      "name":"CObj_setAllPolyMaterialIds",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_setPolyMaterialIdsWithFlag",
+      "type":"function_definition"
+    },
+    {
       "name":"CObj_setStateFlagFromAttrib",
       "type":"function_definition"
     },
@@ -938,6 +994,10 @@
     },
     {
       "name":"CObj_updatePolyFlagsFromVerts",
+      "type":"function_definition"
+    },
+    {
+      "name":"CObj_weldVertices",
       "type":"function_definition"
     },
     {
@@ -8636,6 +8696,46 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CObj_computeBoundingBox",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"out_min",
+          "type":"CVector3d*"
+        },
+        {
+          "name":"out_max",
+          "type":"CVector3d*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_computeCoplanarAdjacency",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"update_adjacency",
+          "type":"int"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CObj_containsPolygon",
       "parameters":[
         {
@@ -8744,6 +8844,28 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CObj_findCoplanarPolygon",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"coplanar_threshold",
+          "type":"double"
+        },
+        {
+          "name":"search_polygon",
+          "type":"CPoly*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CObj_findPolygonIndex",
       "parameters":[
         {
@@ -8774,6 +8896,38 @@
         }
       ],
       "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_flipAllPolyNormals",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_flipPolyNormalsWithFlag",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"flag_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
       "type":"function_definition"
     },
     {
@@ -8830,6 +8984,24 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CObj_hasPolyWithMaterial",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"material_id",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CObj_init",
       "parameters":[
         {
@@ -8852,7 +9024,75 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CObj_isClosedManifold",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CObj_isValid",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_projectAllPlanarUVs",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"uv_scale",
+          "type":"CVector2d*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_projectPlanarUVsWithFlag",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"uv_scale",
+          "type":"CVector2d*"
+        },
+        {
+          "name":"flag_mask",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_removeInvalidPolygons",
       "parameters":[
         {
           "name":"this_ptr",
@@ -8911,6 +9151,38 @@
         {
           "name":"flag_mask",
           "type":"uint"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_removeTJunctions",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"validate_first",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_removeUnusedVertices",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
         }
       ],
       "return_type":"int",
@@ -9073,6 +9345,46 @@
         {
           "name":"pivot",
           "type":"CVec*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_setAllPolyMaterialIds",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"material_id",
+          "type":"int"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_setPolyMaterialIdsWithFlag",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"material_id",
+          "type":"int"
+        },
+        {
+          "name":"flag_mask",
+          "type":"uint"
         }
       ],
       "return_type":"void",
@@ -9270,6 +9582,28 @@
         }
       ],
       "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CObj_weldVertices",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CObj*"
+        },
+        {
+          "name":"weld_tolerance",
+          "type":"double"
+        },
+        {
+          "name":"remove_degenerate",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
       "type":"function_definition"
     },
     {
@@ -32393,93 +32727,93 @@
         },
         {
           "len":4,
-          "name":"field_160",
+          "name":"computeCoplanarAdjacency",
           "offset":160,
-          "type":"void*"
+          "type":"CObj_computeCoplanarAdjacency*"
         },
         {
           "len":4,
-          "name":"field_164",
+          "name":"flipAllPolyNormals",
           "offset":164,
-          "type":"void*"
+          "type":"CObj_flipAllPolyNormals*"
         },
         {
           "len":4,
-          "name":"field_168",
+          "name":"flipPolyNormalsWithFlag",
           "offset":168,
-          "type":"void*"
+          "type":"CObj_flipPolyNormalsWithFlag*"
         },
         {
           "len":4,
-          "name":"field_172",
+          "name":"projectAllPlanarUVs",
           "offset":172,
-          "type":"void*"
+          "type":"CObj_projectAllPlanarUVs*"
         },
         {
           "len":4,
-          "name":"field_176",
+          "name":"projectPlanarUVsWithFlag",
           "offset":176,
-          "type":"void*"
+          "type":"CObj_projectPlanarUVsWithFlag*"
         },
         {
           "len":4,
-          "name":"field_180",
+          "name":"setAllPolyMaterialIds",
           "offset":180,
-          "type":"void*"
+          "type":"CObj_setAllPolyMaterialIds*"
         },
         {
           "len":4,
-          "name":"field_184",
+          "name":"setPolyMaterialIdsWithFlag",
           "offset":184,
-          "type":"void*"
+          "type":"CObj_setPolyMaterialIdsWithFlag*"
         },
         {
           "len":4,
-          "name":"field_188",
+          "name":"computeBoundingBox",
           "offset":188,
-          "type":"void*"
+          "type":"CObj_computeBoundingBox*"
         },
         {
           "len":4,
-          "name":"field_192",
+          "name":"isClosedManifold",
           "offset":192,
-          "type":"void*"
+          "type":"CObj_isClosedManifold*"
         },
         {
           "len":4,
-          "name":"field_196",
+          "name":"hasPolyWithMaterial",
           "offset":196,
-          "type":"void*"
+          "type":"CObj_hasPolyWithMaterial*"
         },
         {
           "len":4,
-          "name":"field_200",
+          "name":"weldVertices",
           "offset":200,
-          "type":"void*"
+          "type":"CObj_weldVertices*"
         },
         {
           "len":4,
-          "name":"field_204",
+          "name":"removeUnusedVertices",
           "offset":204,
-          "type":"void*"
+          "type":"CObj_removeUnusedVertices*"
         },
         {
           "len":4,
-          "name":"field_208",
+          "name":"removeInvalidPolygons",
           "offset":208,
-          "type":"void*"
+          "type":"CObj_removeInvalidPolygons*"
         },
         {
           "len":4,
-          "name":"field_212",
+          "name":"removeTJunctions",
           "offset":212,
-          "type":"void*"
+          "type":"CObj_removeTJunctions*"
         },
         {
           "len":4,
-          "name":"field_216",
+          "name":"findCoplanarPolygon",
           "offset":216,
-          "type":"void*"
+          "type":"CObj_findCoplanarPolygon*"
         }
       ],
       "importable":true,

@@ -21,7 +21,7 @@ undefined FUN_005c79f0();
 
 // Original: shape_superopt.cpp_FUN_005c7a90
 // Address: 005c7a90
-undefined FUN_005c7a90();
+int FUN_005c7a90(void);
 
 // Original: shape_superopt.cpp_FUN_005c7b20
 // Address: 005c7b20
@@ -117,7 +117,7 @@ undefined FUN_005cbf20();
 
 // Original: shape_superopt.cpp_FUN_005cbf90
 // Address: 005cbf90
-undefined FUN_005cbf90();
+int FUN_005cbf90(void);
 
 // Original: shape_superopt.cpp_CPoly_ctor_FUN_005cc620
 // Address: 005cc620
@@ -435,33 +435,33 @@ void CObj::restoreVertexPositions(CObj * this_ptr);
 // Address: 005d38b0
 void CObj::restoreVertexPositionsWithFlag(CObj * this_ptr, uint flag_mask);
 
-// Original: shape_superopt.cpp_CObj_computeAdjacentEdges_FUN_005d3960
+// Original: shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
 // Address: 005d3960
-void CObj::computeAdjacentEdges(CObj * this_ptr, int update_adjacency);
+void CObj::computeCoplanarAdjacency(CObj * this_ptr, int update_adjacency);
 
-// Original: shape_superopt.cpp_CObj_computeAllPolyNormals_FUN_005d3db0
+// Original: shape_superopt.cpp_CObj_flipAllPolyNormals_FUN_005d3db0
 // Address: 005d3db0
-void CObj::computeAllPolyNormals(CObj * this_ptr);
+void CObj::flipAllPolyNormals(CObj * this_ptr);
 
-// Original: shape_superopt.cpp_CObj_computePolyNormalsWithFlag_FUN_005d3df0
+// Original: shape_superopt.cpp_CObj_flipPolyNormalsWithFlag_FUN_005d3df0
 // Address: 005d3df0
-void CObj::computePolyNormalsWithFlag(CObj * this_ptr, uint flag_mask);
+void CObj::flipPolyNormalsWithFlag(CObj * this_ptr, uint flag_mask);
 
-// Original: shape_superopt.cpp_CObj_generateAllPlanarUVs_FUN_005d3e40
+// Original: shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_005d3e40
 // Address: 005d3e40
-void CObj::generateAllPlanarUVs(CObj * this_ptr, CVector2d * uv_scale);
+void CObj::projectAllPlanarUVs(CObj * this_ptr, CVector2d * uv_scale);
 
-// Original: shape_superopt.cpp_CObj_generatePlanarUVsWithFlag_FUN_005d3e80
+// Original: shape_superopt.cpp_CObj_projectPlanarUVsWithFlag_FUN_005d3e80
 // Address: 005d3e80
-void CObj::generatePlanarUVsWithFlag(CObj * this_ptr, CVector2d * uv_scale, uint flag_mask);
+void CObj::projectPlanarUVsWithFlag(CObj * this_ptr, CVector2d * uv_scale, uint flag_mask);
 
-// Original: shape_superopt.cpp_CObj_scaleAllUVs_FUN_005d3ed0
+// Original: shape_superopt.cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0
 // Address: 005d3ed0
-void CObj::scaleAllUVs(CObj * this_ptr, CVector2d * uv_scale);
+void CObj::setAllPolyMaterialIds(CObj * this_ptr, int material_id);
 
-// Original: shape_superopt.cpp_CObj_scaleUVsWithFlag_FUN_005d3f10
+// Original: shape_superopt.cpp_CObj_setPolyMaterialIdsWithFlag_FUN_005d3f10
 // Address: 005d3f10
-void CObj::scaleUVsWithFlag(CObj * this_ptr, CVector2d * uv_scale, uint flag_mask);
+void CObj::setPolyMaterialIdsWithFlag(CObj * this_ptr, int material_id, uint flag_mask);
 
 // Original: shape_superopt.cpp_CObj_computeBoundingBox_FUN_005d3f60
 // Address: 005d3f60
@@ -475,49 +475,49 @@ int CObj::isClosedManifold(CObj * this_ptr);
 // Address: 005d4110
 int CObj::hasPolyWithMaterial(CObj * this_ptr, int material_id);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d4160
+// Original: shape_superopt.cpp_CObj_weldVertices_FUN_005d4160
 // Address: 005d4160
-int CObj(CObj * this_ptr);
+int CObj::weldVertices(CObj * this_ptr, double weld_tolerance, int remove_degenerate);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d44d0
+// Original: shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0
 // Address: 005d44d0
-int * CObj(CObj * this_ptr);
+int CObj::removeUnusedVertices(CObj * this_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d46f0
+// Original: shape_superopt.cpp_CObj_removeInvalidPolygons_FUN_005d46f0
 // Address: 005d46f0
-int CObj(CObj * this_ptr);
+int CObj::removeInvalidPolygons(CObj * this_ptr);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d47b0
+// Original: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
 // Address: 005d47b0
-int CObj(CObj * this_ptr);
+int CObj::removeTJunctions(CObj * this_ptr, int validate_first);
 
-// Original: shape_superopt.cpp_CObj_FUN_005d5800
+// Original: shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800
 // Address: 005d5800
-int CObj(CObj * this_ptr);
+int CObj::findCoplanarPolygon(CObj * this_ptr, double coplanar_threshold, CPoly * search_polygon);
 
-// Original: shape_superopt.cpp_FUN_005d5bb0
+// Original: shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0
 // Address: 005d5bb0
-undefined FUN_005d5bb0();
+int segmentsIntersect2D(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d);
 
-// Original: shape_superopt.cpp_FUN_005d5de0
+// Original: shape_superopt.cpp_segmentIntersectsPolygon2D_FUN_005d5de0
 // Address: 005d5de0
-undefined FUN_005d5de0();
+int segmentIntersectsPolygon2D(CVector2d * polyVerts, uint vertCount, CVector2d * segStart, CVector2d * segEnd, CVector2d * segStart2);
 
-// Original: shape_superopt.cpp_FUN_005d5e60
+// Original: shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
 // Address: 005d5e60
-undefined FUN_005d5e60();
+int pointInPolygon2D(CVector2d * vertices, uint vertex_count, CVector2d * test_point);
 
-// Original: shape_superopt.cpp_FUN_005d6020
+// Original: shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020
 // Address: 005d6020
-undefined FUN_005d6020();
+CVector2d * closestPointOnSegment3D(CVector3d * segment_start, CVector3d * segment_end, CVector3d * query_point);
 
-// Original: shape_superopt.cpp_FUN_005d63d0
+// Original: shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 // Address: 005d63d0
-undefined FUN_005d63d0();
+CVector3d * projectPointOntoPlane(CVector3d * point, CVector3d * plane_point, CVector3d * plane_normal);
 
-// Original: shape_superopt.cpp_FUN_005d64a0
+// Original: shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0
 // Address: 005d64a0
-undefined FUN_005d64a0();
+double distancePointToSegmentXY(CVector3d * segStart, CVector3d * segEnd, CVector3d * point);
 
 // Original: shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500
 // Address: 005d6500
@@ -527,13 +527,13 @@ double rayPlaneIntersect(CVector3d * ray_origin, CVector3d * ray_dir, CVector3d 
 // Address: 005d6640
 double getSignedTriangleArea2D(CVector2d * p1, CVector2d * p2, CVector2d * p3);
 
-// Original: shape_superopt.cpp_FUN_005d66e0
+// Original: shape_superopt.cpp_areVectorsCollinear_FUN_005d66e0
 // Address: 005d66e0
-undefined FUN_005d66e0();
+int areVectorsCollinear(CVector3d * vec1, CVector3d * vec2);
 
-// Original: shape_superopt.cpp_FUN_005d6c10
+// Original: shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10
 // Address: 005d6c10
-undefined FUN_005d6c10();
+int isPointOnLineSegment(CVector3d * point, CVector3d * segStart, CVector3d * segEnd);
 
 // Original: shape_superopt.cpp_COptimize_ctor_FUN_005d6f90
 // Address: 005d6f90

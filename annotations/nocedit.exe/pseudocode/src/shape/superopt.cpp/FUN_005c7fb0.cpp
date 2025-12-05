@@ -6,20 +6,20 @@
 // Cross-references:
 //   shape_superopt.cpp_FUN_005c7dc0 (005c7dc0) at 005c7e6f [UNCONDITIONAL_CALL]
 // Function calls:
-//   shape_superopt.cpp_FUN_005d66e0
+//   shape_superopt.cpp_areVectorsCollinear_FUN_005d66e0
 
 #include "nocturne.h"
 
-undefined4 shape_superopt_cpp_FUN_005c7fb0(void)
+int shape_superopt_cpp_FUN_005c7fb0(void)
 
 {
-  undefined4 uVar1;
-  int iVar2;
+  int iVar1;
   BADSPACEBASE *in_ESP;
-  double *pdVar3;
-  undefined4 *puVar4;
+  double *pdVar2;
+  undefined4 *puVar3;
   int in_stack_00000008;
   int in_stack_0000000c;
+  CVector3d local_a0;
   double local_88;
   double local_80;
   double local_78;
@@ -29,12 +29,7 @@ undefined4 shape_superopt_cpp_FUN_005c7fb0(void)
   undefined4 local_58 [4];
   undefined4 local_48;
   undefined4 uStack_44;
-  undefined4 local_40;
-  undefined4 local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
-  undefined4 local_30;
-  undefined4 local_2c;
+  CVector3d local_40;
   undefined4 local_28 [4];
   undefined4 local_18;
   undefined4 uStack_14;
@@ -50,35 +45,41 @@ undefined4 shape_superopt_cpp_FUN_005c7fb0(void)
   local_88 = *(double *)(in_stack_00000008 + 0x28) - *(double *)(in_stack_00000008 + 0x10);
   local_80 = *(double *)(in_stack_00000008 + 0x30) - *(double *)(in_stack_00000008 + 0x18);
   local_78 = *(double *)(in_stack_00000008 + 0x38) - *(double *)(in_stack_00000008 + 0x20);
-  pdVar3 = &local_88;
-  puVar4 = local_58;
-  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar4 = *(undefined4 *)pdVar3;
-    pdVar3 = (double *)((int)pdVar3 + 4);
-    puVar4 = puVar4 + 1;
+  pdVar2 = &local_88;
+  puVar3 = local_58;
+  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *puVar3 = *(undefined4 *)pdVar2;
+    pdVar2 = (double *)((int)pdVar2 + 4);
+    puVar3 = puVar3 + 1;
   }
-  local_40 = local_58[0];
-  local_3c = local_58[1];
-  local_38 = local_58[2];
-  local_34 = local_58[3];
-  local_30 = local_48;
-  local_2c = uStack_44;
+  local_40.x._0_4_ = local_58[0];
+  local_40.x._4_4_ = local_58[1];
+  local_40.y._0_4_ = local_58[2];
+  local_40.y._4_4_ = local_58[3];
+  local_40.z._0_4_ = local_48;
+  local_40.z._4_4_ = uStack_44;
   local_70 = *(double *)(in_stack_0000000c + 0x28) - *(double *)(in_stack_0000000c + 0x10);
   local_68 = *(double *)(in_stack_0000000c + 0x30) - *(double *)(in_stack_0000000c + 0x18);
   local_60 = *(double *)(in_stack_0000000c + 0x38) - *(double *)(in_stack_0000000c + 0x20);
-  pdVar3 = &local_70;
-  puVar4 = local_28;
-  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar4 = *(undefined4 *)pdVar3;
-    pdVar3 = (double *)((int)pdVar3 + 4);
-    puVar4 = puVar4 + 1;
+  pdVar2 = &local_70;
+  puVar3 = local_28;
+  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *puVar3 = *(undefined4 *)pdVar2;
+    pdVar2 = (double *)((int)pdVar2 + 4);
+    puVar3 = puVar3 + 1;
   }
+  local_a0.x._0_4_ = local_28[0];
+  local_a0.x._4_4_ = local_28[1];
+  local_a0.y._0_4_ = local_28[2];
+  local_a0.y._4_4_ = local_28[3];
+  local_a0.z._0_4_ = local_18;
+  local_a0.z._4_4_ = uStack_14;
   if (0.0 <= (double)CONCAT44(uStack_44,local_48) * (double)CONCAT44(uStack_14,local_18) +
              (double)CONCAT44(local_58[1],local_58[0]) * (double)CONCAT44(local_28[1],local_28[0]) +
              (double)CONCAT44(local_58[3],local_58[2]) * (double)CONCAT44(local_28[3],local_28[2]))
   {
-    uVar1 = shape_superopt_cpp_FUN_005d66e0();
-    return uVar1;
+    iVar1 = shape_superopt_cpp_areVectorsCollinear_FUN_005d66e0(&local_40,&local_a0);
+    return iVar1;
   }
   return 0;
 }
@@ -282,7 +283,7 @@ undefined4 shape_superopt_cpp_FUN_005c7fb0(void)
 // 005c8141: LEA EAX,[ESP + 0x64]
 //   XREF to: Stack[-0x40] (DATA)
 // 005c8145: PUSH EAX
-// 005c8146: CALL shape_superopt.cpp_FUN_005d66e0
+// 005c8146: CALL shape_superopt.cpp_areVectorsCollinear_FUN_005d66e0
 //   XREF to: 005d66e0 (UNCONDITIONAL_CALL)
 // 005c814b: ADD ESP,0x8
 // 005c814e: MOV ESP,EBP

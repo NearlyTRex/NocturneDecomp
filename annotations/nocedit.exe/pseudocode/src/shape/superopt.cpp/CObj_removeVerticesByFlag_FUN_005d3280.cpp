@@ -30,7 +30,7 @@ shape_superopt_cpp_CObj_removeVerticesByFlag_FUN_005d3280(CObj *this_ptr,uint fl
       index = index + 1;
     } while (index < (uint)this_ptr->vertex_count);
   }
-  (*(code *)this_ptr->vtable->field51_0xcc)();
+  (*this_ptr->vtable->removeUnusedVertices)(this_ptr);
   return;
 }
 

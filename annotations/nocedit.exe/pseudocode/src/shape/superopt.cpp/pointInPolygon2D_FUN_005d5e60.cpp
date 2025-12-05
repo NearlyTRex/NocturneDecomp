@@ -1,25 +1,26 @@
-// Name: shape_superopt.cpp_FUN_005d5e60
+// Name: shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
 // Address: 005d5e60
 // Address Range: [[005d5e60, 005d6019]]
-// Convention: unknown
-// Signature: undefined shape_superopt.cpp_FUN_005d5e60()
+// Convention: __cdecl
+// Signature: int shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60(CVector2d * vertices, uint vertex_count, CVector2d * test_point)
 // Cross-references:
-//   shape_superopt.cpp_FUN_005d5de0 (005d5de0) at 005d5df7 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_segmentIntersectsPolygon2D_FUN_005d5de0 (005d5de0) at 005d5df7 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
-byte shape_superopt_cpp_FUN_005d5e60(void)
+int __cdecl
+shape_superopt_cpp_pointInPolygon2D_FUN_005d5e60
+          (CVector2d *vertices,uint vertex_count,CVector2d *test_point)
 
 {
   undefined4 uVar1;
-  double dVar2;
-  double dVar3;
-  undefined4 *puVar4;
-  byte bVar5;
-  undefined4 *puVar6;
-  undefined4 *in_stack_00000004;
-  uint in_stack_00000008;
-  double *in_stack_0000000c;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  double dVar4;
+  double dVar5;
+  CVector2d *pCVar6;
+  byte bVar7;
+  CVector2d *pCVar8;
   double local_60;
   undefined4 local_58;
   undefined4 uStack_54;
@@ -33,65 +34,67 @@ byte shape_superopt_cpp_FUN_005d5e60(void)
   int local_30;
   uint local_18;
   
-  bVar5 = 0;
+  bVar7 = 0;
   local_18 = 0;
-  puVar6 = in_stack_00000004 + in_stack_00000008 * 4 + -4;
-  if (in_stack_00000008 != 0) {
+  pCVar8 = vertices + (vertex_count - 1);
+  if (vertex_count != 0) {
     do {
-      puVar4 = in_stack_00000004;
-      uVar1 = puVar6[2];
-      local_40 = puVar4[2];
-      local_58 = *puVar6;
-      uStack_54 = puVar6[1];
-      local_50 = uVar1;
-      uStack_4c = puVar6[3];
-      local_48 = *puVar4;
-      uStack_44 = puVar4[1];
-      uStack_3c = puVar4[3];
-      if (*(double *)(puVar4 + 2) < *(double *)(puVar6 + 2)) {
-        local_58 = *puVar4;
-        uStack_54 = puVar4[1];
+      pCVar6 = vertices;
+      uVar1 = *(undefined4 *)((int)&pCVar8->x + 4);
+      uVar2 = *(undefined4 *)&pCVar8->y;
+      uVar3 = *(undefined4 *)((int)&pCVar8->y + 4);
+      uStack_44 = *(undefined4 *)((int)&pCVar6->x + 4);
+      local_40 = *(undefined4 *)&pCVar6->y;
+      uStack_3c = *(undefined4 *)((int)&pCVar6->y + 4);
+      local_58 = *(undefined4 *)&pCVar8->x;
+      uStack_54 = uVar1;
+      local_50 = uVar2;
+      uStack_4c = uVar3;
+      local_48 = *(undefined4 *)&pCVar6->x;
+      if (pCVar6->y < pCVar8->y) {
+        local_58 = *(undefined4 *)&pCVar6->x;
+        uStack_54 = uStack_44;
         local_50 = local_40;
-        uStack_4c = puVar4[3];
-        local_48 = *puVar6;
-        uStack_44 = puVar6[1];
-        local_40 = uVar1;
-        uStack_3c = puVar6[3];
+        uStack_4c = uStack_3c;
+        local_48 = *(undefined4 *)&pCVar8->x;
+        uStack_44 = uVar1;
+        local_40 = uVar2;
+        uStack_3c = uVar3;
       }
-      if ((((double)CONCAT44(uStack_4c,local_50) <= in_stack_0000000c[1]) &&
-          (in_stack_0000000c[1] <= (double)CONCAT44(uStack_3c,local_40))) &&
-         ((in_stack_0000000c[1] != (double)CONCAT44(uStack_4c,local_50) ||
-          (in_stack_0000000c[1] != (double)CONCAT44(uStack_3c,local_40))))) {
-        if ((*in_stack_0000000c < (double)CONCAT44(uStack_54,local_58)) ||
-           (*in_stack_0000000c < (double)CONCAT44(uStack_44,local_48))) {
-          dVar2 = (double)CONCAT44(uStack_44,local_48) - (double)CONCAT44(uStack_54,local_58);
-          dVar3 = (double)CONCAT44(uStack_3c,local_40) - (double)CONCAT44(uStack_4c,local_50);
-          local_38 = SUB84(dVar2,0);
-          local_30 = SUB84(dVar3,0);
+      if ((((double)CONCAT44(uStack_4c,local_50) <= test_point->y) &&
+          (test_point->y <= (double)CONCAT44(uStack_3c,local_40))) &&
+         ((test_point->y != (double)CONCAT44(uStack_4c,local_50) ||
+          (test_point->y != (double)CONCAT44(uStack_3c,local_40))))) {
+        if ((test_point->x < (double)CONCAT44(uStack_54,local_58)) ||
+           (test_point->x < (double)CONCAT44(uStack_44,local_48))) {
+          dVar4 = (double)CONCAT44(uStack_44,local_48) - (double)CONCAT44(uStack_54,local_58);
+          dVar5 = (double)CONCAT44(uStack_3c,local_40) - (double)CONCAT44(uStack_4c,local_50);
+          local_38 = SUB84(dVar4,0);
+          local_30 = SUB84(dVar5,0);
           local_60 = 0.0;
-          if (((((ulonglong)dVar2 & 0x7fffffff00000000) != 0) || (local_38 != 0)) &&
-             ((((ulonglong)dVar3 & 0x7fffffff00000000) != 0 || (local_30 != 0)))) {
-            local_60 = dVar2 / dVar3;
+          if (((((ulonglong)dVar4 & 0x7fffffff00000000) != 0) || (local_38 != 0)) &&
+             ((((ulonglong)dVar5 & 0x7fffffff00000000) != 0 || (local_30 != 0)))) {
+            local_60 = dVar4 / dVar5;
           }
-          if (*in_stack_0000000c <=
-              (in_stack_0000000c[1] - (double)CONCAT44(uStack_4c,local_50)) * local_60 +
+          if (test_point->x <=
+              (test_point->y - (double)CONCAT44(uStack_4c,local_50)) * local_60 +
               (double)CONCAT44(uStack_54,local_58)) goto LAB_005d5ef4;
         }
-        bVar5 = bVar5 ^ 1;
+        bVar7 = bVar7 ^ 1;
       }
 LAB_005d5ef4:
       local_18 = local_18 + 1;
-      in_stack_00000004 = puVar4 + 4;
-      puVar6 = puVar4;
-    } while (local_18 < in_stack_00000008);
+      vertices = pCVar6 + 1;
+      pCVar8 = pCVar6;
+    } while (local_18 < vertex_count);
   }
-  return bVar5;
+  return (uint)bVar7;
 }
 
 
 // Assembly code:
 // 005d5e60: PUSH EBX
-//   Label: shape_superopt.cpp_FUN_005d5e60
+//   Label: shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
 // 005d5e61: PUSH ESI
 // 005d5e62: PUSH EDI
 // 005d5e63: PUSH EBP

@@ -1,8 +1,8 @@
 // Name: shape_superopt.cpp_FUN_005c7a90
 // Address: 005c7a90
 // Address Range: [[005c7a90, 005c7b18]]
-// Convention: unknown
-// Signature: undefined shape_superopt.cpp_FUN_005c7a90()
+// Convention: __cdecl
+// Signature: int shape_superopt.cpp_FUN_005c7a90(void)
 // Cross-references:
 //   shape_superopt.cpp_COptimize_FUN_005d7350 (005d7350) at 005d73df [UNCONDITIONAL_CALL]
 // Function calls:
@@ -10,7 +10,7 @@
 
 #include "nocturne.h"
 
-undefined1 * shape_superopt_cpp_FUN_005c7a90(void)
+int __cdecl shape_superopt_cpp_FUN_005c7a90(void)
 
 {
   int iVar1;
@@ -20,7 +20,7 @@ undefined1 * shape_superopt_cpp_FUN_005c7a90(void)
   
   if (((undefined4 *)in_stack_00000004[1] != (undefined4 *)0x0) &&
      (*in_stack_00000008 != **(int **)in_stack_00000004[1])) {
-    return (undefined1 *)0x0;
+    return 0;
   }
   if (in_stack_00000004[1] == 0) {
     in_stack_00000004[5] = in_stack_00000008[0x10];
@@ -41,7 +41,7 @@ undefined1 * shape_superopt_cpp_FUN_005c7a90(void)
     *(int **)(iVar1 * 4 + in_stack_00000004[1]) = in_stack_00000008;
     puVar2 = &DAT_00000001;
   }
-  return puVar2;
+  return (int)puVar2;
 }
 
 

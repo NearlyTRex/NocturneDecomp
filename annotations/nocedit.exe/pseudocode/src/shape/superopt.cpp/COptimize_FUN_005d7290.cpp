@@ -13,9 +13,9 @@
 //   TerminatedCString s_Unable_to_reduce_databas_006546b5
 // Function calls:
 //   shape_superopt.cpp_CObj_clearStateFlags_FUN_005d35e0
-//   shape_superopt.cpp_CObj_FUN_005d4160
-//   shape_superopt.cpp_CObj_FUN_005d46f0
-//   shape_superopt.cpp_CObj_FUN_005d47b0
+//   shape_superopt.cpp_CObj_removeInvalidPolygons_FUN_005d46f0
+//   shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
+//   shape_superopt.cpp_CObj_weldVertices_FUN_005d4160
 //   shape_superopt.cpp_logToFile_FUN_005c7910
 
 #include "nocturne.h"
@@ -25,17 +25,17 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7290(COptimize *this_ptr)
 {
   int iVar1;
   
-  iVar1 = shape_superopt_cpp_CObj_FUN_005d4160(&this_ptr->obj);
+  iVar1 = shape_superopt_cpp_CObj_weldVertices_FUN_005d4160(&this_ptr->obj,this_ptr->field1_0x1c,1);
   if (iVar1 == 0) {
     shape_superopt_cpp_logToFile_FUN_005c7910("Unable to optimize vertices with given threshold");
     return 0;
   }
-  iVar1 = shape_superopt_cpp_CObj_FUN_005d46f0(&this_ptr->obj);
+  iVar1 = shape_superopt_cpp_CObj_removeInvalidPolygons_FUN_005d46f0(&this_ptr->obj);
   if (iVar1 == 0) {
     shape_superopt_cpp_logToFile_FUN_005c7910("Unable to remove invalid polygons from scene");
     return 0;
   }
-  iVar1 = shape_superopt_cpp_CObj_FUN_005d47b0(&this_ptr->obj);
+  iVar1 = shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(&this_ptr->obj,0);
   if (iVar1 == 0) {
     shape_superopt_cpp_logToFile_FUN_005c7910("Unable to remove T-Juntions from scene");
     return 0;
@@ -66,14 +66,14 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7290(COptimize *this_ptr)
 // 005d729b: MOV ECX,dword ptr [EBX + 0x1c]
 // 005d729e: PUSH ECX
 // 005d729f: PUSH EBX
-// 005d72a0: CALL shape_superopt.cpp_CObj_FUN_005d4160
+// 005d72a0: CALL shape_superopt.cpp_CObj_weldVertices_FUN_005d4160
 //   XREF to: 005d4160 (UNCONDITIONAL_CALL)
 // 005d72a5: ADD ESP,0x10
 // 005d72a8: TEST EAX,EAX
 // 005d72aa: JZ 0x005d72f6
 //   XREF to: 005d72f6 (CONDITIONAL_JUMP)
 // 005d72ac: PUSH EBX
-// 005d72ad: CALL shape_superopt.cpp_CObj_FUN_005d46f0
+// 005d72ad: CALL shape_superopt.cpp_CObj_removeInvalidPolygons_FUN_005d46f0
 //   XREF to: 005d46f0 (UNCONDITIONAL_CALL)
 // 005d72b2: ADD ESP,0x4
 // 005d72b5: TEST EAX,EAX
@@ -81,7 +81,7 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7290(COptimize *this_ptr)
 //   XREF to: 005d7307 (CONDITIONAL_JUMP)
 // 005d72b9: PUSH 0x0
 // 005d72bb: PUSH EBX
-// 005d72bc: CALL shape_superopt.cpp_CObj_FUN_005d47b0
+// 005d72bc: CALL shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
 //   XREF to: 005d47b0 (UNCONDITIONAL_CALL)
 // 005d72c1: ADD ESP,0x8
 // 005d72c4: TEST EAX,EAX

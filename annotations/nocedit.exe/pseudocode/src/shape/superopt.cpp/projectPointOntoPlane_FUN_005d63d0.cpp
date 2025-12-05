@@ -1,19 +1,18 @@
-// Name: shape_superopt.cpp_FUN_005d63d0
+// Name: shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 // Address: 005d63d0
 // Address Range: [[005d63d0, 005d6492]]
-// Convention: unknown
-// Signature: undefined shape_superopt.cpp_FUN_005d63d0()
+// Convention: __cdecl
+// Signature: CVector3d * shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0(CVector3d * point, CVector3d * plane_point, CVector3d * plane_normal)
 // Cross-references:
-//   shape_superopt.cpp_CObj_FUN_005d5800 (005d5800) at 005d59f9 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800 (005d5800) at 005d59f9 [UNCONDITIONAL_CALL]
 // Function calls:
 //   shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500
 
 #include "nocturne.h"
 
-/* Signature: undefined1 shape_superopt.cpp_FUN_005d63d0(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3) */
-
-undefined4 * shape_superopt_cpp_FUN_005d63d0(void)
+CVector3d * __cdecl
+shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0
+          (CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal)
 
 {
   double dVar1;
@@ -21,13 +20,10 @@ undefined4 * shape_superopt_cpp_FUN_005d63d0(void)
   double dVar3;
   int iVar4;
   BADSPACEBASE *in_ESP;
-  undefined4 *unaff_ESI;
+  CVector3d *unaff_ESI;
   double *pdVar5;
-  undefined4 *puVar6;
+  CVector3d *pCVar6;
   byte bVar7;
-  double *in_stack_00000004;
-  CVector3d *in_stack_00000008;
-  CVector3d *in_stack_0000000c;
   double local_58;
   double local_50;
   double local_48;
@@ -38,24 +34,24 @@ undefined4 * shape_superopt_cpp_FUN_005d63d0(void)
   
   bVar7 = 0;
   local_18 = shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500
-                       ((CVector3d *)&stack0xffffff90,in_stack_00000008,in_stack_0000000c,
-                        SUB84(-in_stack_0000000c->x,0));
-  dVar1 = -in_stack_0000000c->x;
-  dVar2 = -in_stack_0000000c->y;
-  dVar3 = -in_stack_0000000c->z;
+                       ((CVector3d *)&stack0xffffff90,plane_point,plane_normal,
+                        SUB84(-plane_normal->x,0));
+  dVar1 = -plane_normal->x;
+  dVar2 = -plane_normal->y;
+  dVar3 = -plane_normal->z;
   local_18 = local_18 / SQRT(dVar3 * dVar3 + dVar1 * dVar1 + dVar2 * dVar2);
   local_40 = dVar1 * local_18;
   local_38 = dVar2 * local_18;
   local_30 = dVar3 * local_18;
-  local_58 = *in_stack_00000004 + dVar1 * local_18;
-  local_50 = in_stack_00000004[1] + dVar2 * local_18;
-  local_48 = in_stack_00000004[2] + dVar3 * local_18;
+  local_58 = point->x + dVar1 * local_18;
+  local_50 = point->y + dVar2 * local_18;
+  local_48 = point->z + dVar3 * local_18;
   pdVar5 = &local_58;
-  puVar6 = unaff_ESI;
+  pCVar6 = unaff_ESI;
   for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar6 = *(undefined4 *)pdVar5;
+    *(undefined4 *)&pCVar6->x = *(undefined4 *)pdVar5;
     pdVar5 = (double *)((int)pdVar5 + (uint)bVar7 * -8 + 4);
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    pCVar6 = (CVector3d *)((int)pCVar6 + (uint)bVar7 * -8 + 4);
   }
   return unaff_ESI;
 }
@@ -63,7 +59,7 @@ undefined4 * shape_superopt_cpp_FUN_005d63d0(void)
 
 // Assembly code:
 // 005d63d0: PUSH EBX
-//   Label: shape_superopt.cpp_FUN_005d63d0
+//   Label: shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 // 005d63d1: PUSH EDI
 // 005d63d2: PUSH EBP
 // 005d63d3: MOV EBP,ESP

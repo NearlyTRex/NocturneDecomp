@@ -1,14 +1,14 @@
-// Name: shape_superopt.cpp_CObj_scaleUVsWithFlag_FUN_005d3f10
+// Name: shape_superopt.cpp_CObj_setPolyMaterialIdsWithFlag_FUN_005d3f10
 // Address: 005d3f10
 // Address Range: [[005d3f10, 005d3f5f]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_scaleUVsWithFlag_FUN_005d3f10(CObj * this_ptr, CVector2d * uv_scale, uint flag_mask)
+// Signature: void shape_superopt.cpp_CObj_setPolyMaterialIdsWithFlag_FUN_005d3f10(CObj * this_ptr, int material_id, uint flag_mask)
 
 #include "nocturne.h"
 
 void __cdecl
-shape_superopt_cpp_CObj_scaleUVsWithFlag_FUN_005d3f10
-          (CObj *this_ptr,CVector2d *uv_scale,uint flag_mask)
+shape_superopt_cpp_CObj_setPolyMaterialIdsWithFlag_FUN_005d3f10
+          (CObj *this_ptr,int material_id,uint flag_mask)
 
 {
   CPoly *this_ptr_00;
@@ -19,7 +19,7 @@ shape_superopt_cpp_CObj_scaleUVsWithFlag_FUN_005d3f10
   if (this_ptr->poly_count != 0) {
     do {
       while ((this_ptr_00->flags & flag_mask) == flag_mask) {
-        (*this_ptr_00->vtable->setMaterialId)(this_ptr_00,(int)uv_scale);
+        (*this_ptr_00->vtable->setMaterialId)(this_ptr_00,material_id);
         uVar1 = uVar1 + 1;
         this_ptr_00 = this_ptr_00 + 1;
         if ((uint)this_ptr->poly_count <= uVar1) {
@@ -36,7 +36,7 @@ shape_superopt_cpp_CObj_scaleUVsWithFlag_FUN_005d3f10
 
 // Assembly code:
 // 005d3f10: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_scaleUVsWithFlag_FUN_005d3f10
+//   Label: shape_superopt.cpp_CObj_setPolyMaterialIdsWithFlag_FUN_005d3f10
 // 005d3f11: PUSH ESI
 // 005d3f12: PUSH EDI
 // 005d3f13: PUSH EBP

@@ -1,71 +1,62 @@
-// Name: shape_superopt.cpp_FUN_005d5bb0
+// Name: shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0
 // Address: 005d5bb0
 // Address Range: [[005d5bb0, 005d5ddc]]
-// Convention: unknown
-// Signature: undefined shape_superopt.cpp_FUN_005d5bb0()
+// Convention: __cdecl
+// Signature: int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
 // Cross-references:
 //   shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390 (005d1390) at 005d17a1 [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_FUN_005d5de0 (005d5de0) at 005d5e34 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_segmentIntersectsPolygon2D_FUN_005d5de0 (005d5de0) at 005d5e34 [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_0065453a = 1.00000000000000E-10
 //   double DOUBLE_00654542 = 0.999999999900000
 
 #include "nocturne.h"
 
-undefined4 shape_superopt_cpp_FUN_005d5bb0(void)
+int __cdecl
+shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0
+          (CVector2d *point_a,CVector2d *point_b,CVector2d *point_c,CVector2d *point_d)
 
 {
   double dVar1;
   double dVar2;
-  double *in_stack_00000004;
-  double *in_stack_00000008;
-  double *in_stack_0000000c;
-  double *in_stack_00000010;
+  double dVar3;
+  double dVar4;
   double local_48;
   double local_40;
   double local_38;
   
-  if (((((((*in_stack_0000000c <= *in_stack_00000004) || (*in_stack_0000000c <= *in_stack_00000008))
-         || (*in_stack_00000010 <= *in_stack_00000004)) ||
-        (*in_stack_00000010 <= *in_stack_00000008)) &&
-       (((*in_stack_00000004 <= *in_stack_0000000c || (*in_stack_00000008 <= *in_stack_0000000c)) ||
-        ((*in_stack_00000004 <= *in_stack_00000010 || (*in_stack_00000008 <= *in_stack_00000010)))))
-       ) && (((in_stack_0000000c[1] <= in_stack_00000004[1] ||
-              (in_stack_0000000c[1] <= in_stack_00000008[1])) ||
-             ((in_stack_00000010[1] <= in_stack_00000004[1] ||
-              (in_stack_00000010[1] <= in_stack_00000008[1])))))) &&
-     ((((in_stack_00000004[1] <= in_stack_0000000c[1] ||
-        (in_stack_00000008[1] <= in_stack_0000000c[1])) ||
-       (in_stack_00000004[1] <= in_stack_00000010[1])) ||
-      (in_stack_00000008[1] <= in_stack_00000010[1])))) {
-    dVar1 = (*in_stack_00000008 - *in_stack_00000004) *
-            (in_stack_00000010[1] - in_stack_0000000c[1]) -
-            (*in_stack_00000010 - *in_stack_0000000c) *
-            (in_stack_00000008[1] - in_stack_00000004[1]);
+  if (((((((point_c->x <= point_a->x) || (point_c->x <= point_b->x)) || (point_d->x <= point_a->x))
+        || (point_d->x <= point_b->x)) &&
+       (((point_a->x <= point_c->x || (point_b->x <= point_c->x)) ||
+        ((point_a->x <= point_d->x || (point_b->x <= point_d->x)))))) &&
+      (((point_c->y <= point_a->y || (point_c->y <= point_b->y)) ||
+       ((point_d->y <= point_a->y || (point_d->y <= point_b->y)))))) &&
+     ((((point_a->y <= point_c->y || (point_b->y <= point_c->y)) || (point_a->y <= point_d->y)) ||
+      (point_b->y <= point_d->y)))) {
+    dVar1 = (point_b->x - point_a->x) * (point_d->y - point_c->y) -
+            (point_d->x - point_c->x) * (point_b->y - point_a->y);
     local_38 = dVar1;
     if (dVar1 < 0.0) {
       local_38 = -dVar1;
     }
     if (DOUBLE_0065453a <= local_38) {
-      dVar2 = ((*in_stack_00000010 - *in_stack_0000000c) *
-               (in_stack_00000004[1] - in_stack_0000000c[1]) -
-              (in_stack_00000010[1] - in_stack_0000000c[1]) *
-              (*in_stack_00000004 - *in_stack_0000000c)) * (1.0 / dVar1);
-      dVar1 = ((*in_stack_00000008 - *in_stack_00000004) *
-               (in_stack_00000004[1] - in_stack_0000000c[1]) -
-              (in_stack_00000008[1] - in_stack_00000004[1]) *
-              (*in_stack_00000004 - *in_stack_0000000c)) * (1.0 / dVar1);
-      local_40 = dVar2;
-      if (dVar2 < 0.0) {
-        local_40 = -dVar2;
+      dVar2 = point_a->y - point_c->y;
+      dVar4 = point_a->x - point_c->x;
+      dVar3 = ((point_d->x - point_c->x) * dVar2 - (point_d->y - point_c->y) * dVar4) *
+              (1.0 / dVar1);
+      dVar1 = ((point_b->x - point_a->x) * dVar2 - (point_b->y - point_a->y) * dVar4) *
+              (1.0 / dVar1);
+      local_40 = dVar3;
+      if (dVar3 < 0.0) {
+        local_40 = -dVar3;
       }
       if (DOUBLE_0065453a <= local_40) {
         local_48 = dVar1;
         if (dVar1 < 0.0) {
           local_48 = -dVar1;
         }
-        if (((DOUBLE_0065453a <= local_48) && (0.0 <= dVar2)) &&
-           ((0.0 <= dVar1 && ((dVar2 <= DOUBLE_00654542 && (dVar1 <= DOUBLE_00654542)))))) {
+        if (((DOUBLE_0065453a <= local_48) && (0.0 <= dVar3)) &&
+           ((0.0 <= dVar1 && ((dVar3 <= DOUBLE_00654542 && (dVar1 <= DOUBLE_00654542)))))) {
           return 1;
         }
       }
@@ -77,7 +68,7 @@ undefined4 shape_superopt_cpp_FUN_005d5bb0(void)
 
 // Assembly code:
 // 005d5bb0: PUSH EBX
-//   Label: shape_superopt.cpp_FUN_005d5bb0
+//   Label: shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0
 // 005d5bb1: PUSH ESI
 // 005d5bb2: PUSH EBP
 // 005d5bb3: MOV EBP,ESP

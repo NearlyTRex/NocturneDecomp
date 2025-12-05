@@ -43,20 +43,20 @@ typedef struct CObj_vtable {
     CObj_saveVertexPositionsWithFlag* saveVertexPositionsWithFlag; // 0x94
     CObj_restoreVertexPositions* restoreVertexPositions; // 0x98
     CObj_restoreVertexPositionsWithFlag* restoreVertexPositionsWithFlag; // 0x9c
-    void* field_160; // 0xa0
-    void* field_164; // 0xa4
-    void* field_168; // 0xa8
-    void* field_172; // 0xac
-    void* field_176; // 0xb0
-    void* field_180; // 0xb4
-    void* field_184; // 0xb8
-    void* field_188; // 0xbc
-    void* field_192; // 0xc0
-    void* field_196; // 0xc4
-    void* field_200; // 0xc8
-    void* field_204; // 0xcc
-    void* field_208; // 0xd0
-    void* field_212; // 0xd4
-    void* field_216; // 0xd8
+    CObj_computeCoplanarAdjacency* computeCoplanarAdjacency; // 0xa0
+    CObj_flipAllPolyNormals* flipAllPolyNormals; // 0xa4
+    CObj_flipPolyNormalsWithFlag* flipPolyNormalsWithFlag; // 0xa8
+    CObj_projectAllPlanarUVs* projectAllPlanarUVs; // 0xac
+    CObj_projectPlanarUVsWithFlag* projectPlanarUVsWithFlag; // 0xb0
+    CObj_setAllPolyMaterialIds* setAllPolyMaterialIds; // 0xb4
+    CObj_setPolyMaterialIdsWithFlag* setPolyMaterialIdsWithFlag; // 0xb8
+    CObj_computeBoundingBox* computeBoundingBox; // 0xbc
+    CObj_isClosedManifold* isClosedManifold; // 0xc0
+    CObj_hasPolyWithMaterial* hasPolyWithMaterial; // 0xc4
+    CObj_weldVertices* weldVertices; // 0xc8
+    CObj_removeUnusedVertices* removeUnusedVertices; // 0xcc
+    CObj_removeInvalidPolygons* removeInvalidPolygons; // 0xd0
+    CObj_removeTJunctions* removeTJunctions; // 0xd4
+    CObj_findCoplanarPolygon* findCoplanarPolygon; // 0xd8
 } CObj_vtable;
 

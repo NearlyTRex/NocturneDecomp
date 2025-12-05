@@ -1,13 +1,13 @@
-// Name: shape_superopt.cpp_CObj_generatePlanarUVsWithFlag_FUN_005d3e80
+// Name: shape_superopt.cpp_CObj_projectPlanarUVsWithFlag_FUN_005d3e80
 // Address: 005d3e80
 // Address Range: [[005d3e80, 005d3ecf]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_generatePlanarUVsWithFlag_FUN_005d3e80(CObj * this_ptr, CVector2d * uv_scale, uint flag_mask)
+// Signature: void shape_superopt.cpp_CObj_projectPlanarUVsWithFlag_FUN_005d3e80(CObj * this_ptr, CVector2d * uv_scale, uint flag_mask)
 
 #include "nocturne.h"
 
 void __cdecl
-shape_superopt_cpp_CObj_generatePlanarUVsWithFlag_FUN_005d3e80
+shape_superopt_cpp_CObj_projectPlanarUVsWithFlag_FUN_005d3e80
           (CObj *this_ptr,CVector2d *uv_scale,uint flag_mask)
 
 {
@@ -36,7 +36,7 @@ shape_superopt_cpp_CObj_generatePlanarUVsWithFlag_FUN_005d3e80
 
 // Assembly code:
 // 005d3e80: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_generatePlanarUVsWithFlag_FUN_005d3e80
+//   Label: shape_superopt.cpp_CObj_projectPlanarUVsWithFlag_FUN_005d3e80
 // 005d3e81: PUSH ESI
 // 005d3e82: PUSH EDI
 // 005d3e83: PUSH EBP

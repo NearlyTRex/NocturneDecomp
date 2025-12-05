@@ -1,13 +1,13 @@
-// Name: shape_superopt.cpp_CObj_computePolyNormalsWithFlag_FUN_005d3df0
+// Name: shape_superopt.cpp_CObj_flipPolyNormalsWithFlag_FUN_005d3df0
 // Address: 005d3df0
 // Address Range: [[005d3df0, 005d3e3a]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_computePolyNormalsWithFlag_FUN_005d3df0(CObj * this_ptr, uint flag_mask)
+// Signature: void shape_superopt.cpp_CObj_flipPolyNormalsWithFlag_FUN_005d3df0(CObj * this_ptr, uint flag_mask)
 
 #include "nocturne.h"
 
 void __cdecl
-shape_superopt_cpp_CObj_computePolyNormalsWithFlag_FUN_005d3df0(CObj *this_ptr,uint flag_mask)
+shape_superopt_cpp_CObj_flipPolyNormalsWithFlag_FUN_005d3df0(CObj *this_ptr,uint flag_mask)
 
 {
   CPoly *this_ptr_00;
@@ -35,7 +35,7 @@ shape_superopt_cpp_CObj_computePolyNormalsWithFlag_FUN_005d3df0(CObj *this_ptr,u
 
 // Assembly code:
 // 005d3df0: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_computePolyNormalsWithFlag_FUN_005d3df0
+//   Label: shape_superopt.cpp_CObj_flipPolyNormalsWithFlag_FUN_005d3df0
 // 005d3df1: PUSH ESI
 // 005d3df2: PUSH EDI
 // 005d3df3: PUSH EBP

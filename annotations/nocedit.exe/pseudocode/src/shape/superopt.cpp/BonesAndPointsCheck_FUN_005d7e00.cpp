@@ -59,8 +59,6 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 shape_superopt.cpp_BonesAndPointsCheck(undefined4 param_1) */
-
 void shape_superopt_cpp_BonesAndPointsCheck_FUN_005d7e00(void)
 
 {

@@ -176,7 +176,7 @@
 //   shape_quantize.cpp_CColorQuantizer_dtor_FUN_00554940 (00554940) at 005549e1 [UNCONDITIONAL_CALL]
 //   shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500 (00555500) at 005555c1 [UNCONDITIONAL_CALL]
 //   shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40 (00554d40) at 00554de1 [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_CObj_FUN_005d44d0 (005d44d0) at 005d46d7 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0 (005d44d0) at 005d46d7 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590 (005ca590) at 005cb225 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0 (005c84c0) at 005c8783 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_FUN_005c79f0 (005c79f0) at 005c7a60 [UNCONDITIONAL_CALL]

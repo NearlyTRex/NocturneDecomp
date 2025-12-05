@@ -4,9 +4,9 @@
 // Convention: __cdecl
 // Signature: CPoly * shape_superopt.cpp_CPoly_ctor_FUN_005cc620(CPoly * this_ptr)
 // Cross-references:
-//   shape_superopt.cpp_CObj_FUN_005d47b0 (005d47b0) at 005d520e [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410 (005d2410) at 005d2457 [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320 (005d2320) at 005d2393 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 (005d47b0) at 005d520e [UNCONDITIONAL_CALL]
 //   shape_superopt.cpp_TriListSomething_FUN_005d77a0 (005d77a0) at 005d79a3 [UNCONDITIONAL_CALL]
 // Globals:
 //   CPoly_vtable g_CPolyVTable

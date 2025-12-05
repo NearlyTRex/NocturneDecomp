@@ -1,42 +1,47 @@
-// Name: shape_superopt.cpp_FUN_005d64a0
+// Name: shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0
 // Address: 005d64a0
 // Address Range: [[005d64a0, 005d64f7]]
-// Convention: unknown
-// Signature: undefined shape_superopt.cpp_FUN_005d64a0()
+// Convention: __cdecl
+// Signature: double shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0(CVector3d * segStart, CVector3d * segEnd, CVector3d * point)
 // Function calls:
-//   shape_superopt.cpp_FUN_005d6020
+//   shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020
 
 #include "nocturne.h"
 
-/* Signature: undefined1 shape_superopt.cpp_FUN_005d64a0(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3) */
-
-double shape_superopt_cpp_FUN_005d64a0(void)
+double __cdecl
+shape_superopt_cpp_distancePointToSegmentXY_FUN_005d64a0
+          (CVector3d *segStart,CVector3d *segEnd,CVector3d *point)
 
 {
   BADSPACEBASE *in_ESP;
   undefined4 *puVar1;
   byte bVar2;
-  double *in_stack_0000000c;
-  undefined4 auStack_1820 [1531];
+  CVector3d *in_stack_00000004;
+  undefined4 auStackY_1820 [1523];
+  undefined4 uStack_44;
+  undefined4 local_38;
   undefined8 uStack_34;
   double dStack_2c;
   
   bVar2 = 0;
-  shape_superopt_cpp_FUN_005d6020();
+  shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(in_stack_00000004,segStart,segEnd);
+  local_38 = uStack_44;
   puVar1 = (undefined4 *)((int)&uStack_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 4);
-  *(undefined4 *)(&uStack_34 + -(uint)bVar2) = auStack_1820[(uint)bVar2 * -2 + 0x5f8];
-  *puVar1 = auStack_1820[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x5f9];
+  *(undefined4 *)(&uStack_34 + -(uint)bVar2) = *(undefined4 *)(&stack0xffffffc0 + (uint)bVar2 * -8);
+  *puVar1 = *(undefined4 *)(&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
   puVar1[(uint)bVar2 * -2 + 1] =
-       (auStack_1820 + (uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x5f9)[(uint)bVar2 * -2 + 1];
-  return SQRT((in_stack_0000000c[1] - dStack_2c) * (in_stack_0000000c[1] - dStack_2c) +
-              (*in_stack_0000000c - uStack_34) * (*in_stack_0000000c - uStack_34));
+       *(undefined4 *)
+        ((int)(&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)
+  ;
+  uStack_34 = segEnd->x - uStack_34;
+  dStack_2c = segEnd->y - dStack_2c;
+  return SQRT(dStack_2c * dStack_2c + uStack_34 * uStack_34);
 }
 
 
 // Assembly code:
 // 005d64a0: PUSH EBX
-//   Label: shape_superopt.cpp_FUN_005d64a0
+//   Label: shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0
 // 005d64a1: PUSH ESI
 // 005d64a2: PUSH EDI
 // 005d64a3: PUSH EBP
@@ -56,7 +61,7 @@ double shape_superopt_cpp_FUN_005d64a0(void)
 //   XREF to: Stack[-0x48] (DATA)
 // 005d64bc: LEA EDI,[ESP + 0x1c]
 //   XREF to: Stack[-0x38] (DATA)
-// 005d64c0: CALL shape_superopt.cpp_FUN_005d6020
+// 005d64c0: CALL shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020
 //   XREF to: 005d6020 (UNCONDITIONAL_CALL)
 // 005d64c5: LEA ESI,[ESP + 0xc]
 //   XREF to: Stack[-0x48] (DATA)

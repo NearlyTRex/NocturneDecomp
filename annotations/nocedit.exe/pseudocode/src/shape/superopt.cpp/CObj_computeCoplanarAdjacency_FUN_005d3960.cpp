@@ -1,8 +1,8 @@
-// Name: shape_superopt.cpp_CObj_computeAdjacentEdges_FUN_005d3960
+// Name: shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
 // Address: 005d3960
 // Address Range: [[005d3960, 005d3da1]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_computeAdjacentEdges_FUN_005d3960(CObj * this_ptr, int update_adjacency)
+// Signature: void shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj * this_ptr, int update_adjacency)
 // Function calls:
 //   shape_memdbg.cpp_debugAlloc_FUN_0050f1d0
 //   shape_memdbg.cpp_debugFree_FUN_0050f210
@@ -10,7 +10,7 @@
 #include "nocturne.h"
 
 void __cdecl
-shape_superopt_cpp_CObj_computeAdjacentEdges_FUN_005d3960(CObj *this_ptr,int update_adjacency)
+shape_superopt_cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj *this_ptr,int update_adjacency)
 
 {
   int iVar1;
@@ -168,7 +168,7 @@ shape_superopt_cpp_CObj_computeAdjacentEdges_FUN_005d3960(CObj *this_ptr,int upd
 
 // Assembly code:
 // 005d3960: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_computeAdjacentEdges_FUN_005d3960
+//   Label: shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
 // 005d3961: PUSH ESI
 // 005d3962: PUSH EDI
 // 005d3963: PUSH EBP

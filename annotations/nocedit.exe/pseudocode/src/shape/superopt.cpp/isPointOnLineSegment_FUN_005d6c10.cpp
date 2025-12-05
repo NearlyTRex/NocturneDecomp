@@ -1,22 +1,21 @@
-// Name: shape_superopt.cpp_FUN_005d6c10
+// Name: shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10
 // Address: 005d6c10
 // Address Range: [[005d6c10, 005d6f80]]
-// Convention: unknown
-// Signature: undefined shape_superopt.cpp_FUN_005d6c10()
+// Convention: __cdecl
+// Signature: int shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d * point, CVector3d * segStart, CVector3d * segEnd)
 // Cross-references:
-//   shape_superopt.cpp_CObj_FUN_005d47b0 (005d47b0) at 005d54e5 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 (005d47b0) at 005d54e5 [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_00654562 = -0.000100000000000000
 //   double DOUBLE_0065456a = 0.000100000000000000
 // Function calls:
-//   shape_superopt.cpp_FUN_005d66e0
+//   shape_superopt.cpp_areVectorsCollinear_FUN_005d66e0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 shape_superopt.cpp_FUN_005d6c10(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3) */
-
-undefined4 shape_superopt_cpp_FUN_005d6c10(void)
+int __cdecl
+shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10
+          (CVector3d *point,CVector3d *segStart,CVector3d *segEnd)
 
 {
   undefined4 uVar1;
@@ -29,9 +28,6 @@ undefined4 shape_superopt_cpp_FUN_005d6c10(void)
   BADSPACEBASE *in_ESP;
   double *pdVar8;
   undefined4 *puVar9;
-  double *in_stack_00000004;
-  double *in_stack_00000008;
-  double *in_stack_0000000c;
   undefined4 local_f8;
   undefined4 local_f0;
   undefined4 local_c0;
@@ -41,12 +37,7 @@ undefined4 shape_superopt_cpp_FUN_005d6c10(void)
   double local_a0;
   double local_98;
   double local_90;
-  undefined4 local_88;
-  undefined4 local_84;
-  undefined4 local_80;
-  undefined4 local_7c;
-  undefined4 local_78;
-  undefined4 local_74;
+  CVector3d local_88;
   undefined4 local_70 [4];
   undefined4 local_60;
   undefined4 local_5c;
@@ -56,78 +47,71 @@ undefined4 shape_superopt_cpp_FUN_005d6c10(void)
   double local_40;
   double local_38;
   double local_30;
-  undefined4 local_28;
-  undefined4 local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
+  CVector3d local_28;
   
-  if (((*in_stack_00000004 == *in_stack_00000008) && (in_stack_00000004[1] == in_stack_00000008[1]))
-     && (in_stack_00000004[2] == in_stack_00000008[2])) {
+  if (((point->x == segStart->x) && (point->y == segStart->y)) && (point->z == segStart->z)) {
     return 1;
   }
-  if (((*in_stack_00000004 == *in_stack_0000000c) && (in_stack_00000004[1] == in_stack_0000000c[1]))
-     && (in_stack_00000004[2] == in_stack_0000000c[2])) {
+  if (((point->x == segEnd->x) && (point->y == segEnd->y)) && (point->z == segEnd->z)) {
     return 1;
   }
-  if (*in_stack_00000008 < *in_stack_0000000c) {
-    local_b0 = *(undefined4 *)in_stack_00000008;
-    uVar6 = *(undefined4 *)((int)in_stack_00000008 + 4);
+  if (segStart->x < segEnd->x) {
+    local_b0 = *(undefined4 *)&segStart->x;
+    uVar1 = *(undefined4 *)((int)&segStart->x + 4);
   }
   else {
-    local_b0 = *(undefined4 *)in_stack_0000000c;
-    uVar6 = *(undefined4 *)((int)in_stack_0000000c + 4);
+    local_b0 = *(undefined4 *)&segEnd->x;
+    uVar1 = *(undefined4 *)((int)&segEnd->x + 4);
   }
-  if (in_stack_0000000c[1] <= in_stack_00000008[1]) {
-    local_c0 = *(undefined4 *)(in_stack_0000000c + 1);
-    uVar1 = *(undefined4 *)((int)in_stack_0000000c + 0xc);
-  }
-  else {
-    local_c0 = *(undefined4 *)(in_stack_00000008 + 1);
-    uVar1 = *(undefined4 *)((int)in_stack_00000008 + 0xc);
-  }
-  if (in_stack_0000000c[2] <= in_stack_00000008[2]) {
-    local_f8 = *(undefined4 *)(in_stack_0000000c + 2);
-    uVar2 = *(undefined4 *)((int)in_stack_0000000c + 0x14);
+  if (segEnd->y <= segStart->y) {
+    local_c0 = *(undefined4 *)&segEnd->y;
+    uVar2 = *(undefined4 *)((int)&segEnd->y + 4);
   }
   else {
-    local_f8 = *(undefined4 *)(in_stack_00000008 + 2);
-    uVar2 = *(undefined4 *)((int)in_stack_00000008 + 0x14);
+    local_c0 = *(undefined4 *)&segStart->y;
+    uVar2 = *(undefined4 *)((int)&segStart->y + 4);
   }
-  if (*in_stack_00000008 <= *in_stack_0000000c) {
-    local_a8 = *(undefined4 *)in_stack_0000000c;
-    uVar3 = *(undefined4 *)((int)in_stack_0000000c + 4);
-  }
-  else {
-    local_a8 = *(undefined4 *)in_stack_00000008;
-    uVar3 = *(undefined4 *)((int)in_stack_00000008 + 4);
-  }
-  if (in_stack_00000008[1] <= in_stack_0000000c[1]) {
-    local_f0 = *(undefined4 *)(in_stack_0000000c + 1);
-    uVar4 = *(undefined4 *)((int)in_stack_0000000c + 0xc);
+  if (segEnd->z <= segStart->z) {
+    local_f8 = *(undefined4 *)&segEnd->z;
+    uVar3 = *(undefined4 *)((int)&segEnd->z + 4);
   }
   else {
-    local_f0 = *(undefined4 *)(in_stack_00000008 + 1);
-    uVar4 = *(undefined4 *)((int)in_stack_00000008 + 0xc);
+    local_f8 = *(undefined4 *)&segStart->z;
+    uVar3 = *(undefined4 *)((int)&segStart->z + 4);
   }
-  if (in_stack_00000008[2] <= in_stack_0000000c[2]) {
-    local_b8 = *(undefined4 *)(in_stack_0000000c + 2);
-    uVar5 = *(undefined4 *)((int)in_stack_0000000c + 0x14);
+  if (segStart->x <= segEnd->x) {
+    local_a8 = *(undefined4 *)&segEnd->x;
+    uVar4 = *(undefined4 *)((int)&segEnd->x + 4);
   }
   else {
-    local_b8 = *(undefined4 *)(in_stack_00000008 + 2);
-    uVar5 = *(undefined4 *)((int)in_stack_00000008 + 0x14);
+    local_a8 = *(undefined4 *)&segStart->x;
+    uVar4 = *(undefined4 *)((int)&segStart->x + 4);
   }
-  if ((((double)CONCAT44(uVar6,local_b0) + DOUBLE_00654562 <= *in_stack_00000004) &&
-      (*in_stack_00000004 <= (double)CONCAT44(uVar3,local_a8) + DOUBLE_0065456a)) &&
-     (((double)CONCAT44(uVar1,local_c0) + DOUBLE_00654562 <= in_stack_00000004[1] &&
-      (((in_stack_00000004[1] <= (double)CONCAT44(uVar4,local_f0) + DOUBLE_0065456a &&
-        ((double)CONCAT44(uVar2,local_f8) + DOUBLE_00654562 <= in_stack_00000004[2])) &&
-       (in_stack_00000004[2] <= (double)CONCAT44(uVar5,local_b8) + DOUBLE_0065456a)))))) {
-    local_a0 = *in_stack_00000004 - *in_stack_00000008;
-    local_98 = in_stack_00000004[1] - in_stack_00000008[1];
-    local_90 = in_stack_00000004[2] - in_stack_00000008[2];
+  if (segStart->y <= segEnd->y) {
+    local_f0 = *(undefined4 *)&segEnd->y;
+    uVar5 = *(undefined4 *)((int)&segEnd->y + 4);
+  }
+  else {
+    local_f0 = *(undefined4 *)&segStart->y;
+    uVar5 = *(undefined4 *)((int)&segStart->y + 4);
+  }
+  if (segStart->z <= segEnd->z) {
+    local_b8 = *(undefined4 *)&segEnd->z;
+    uVar6 = *(undefined4 *)((int)&segEnd->z + 4);
+  }
+  else {
+    local_b8 = *(undefined4 *)&segStart->z;
+    uVar6 = *(undefined4 *)((int)&segStart->z + 4);
+  }
+  if ((((double)CONCAT44(uVar1,local_b0) + DOUBLE_00654562 <= point->x) &&
+      (point->x <= (double)CONCAT44(uVar4,local_a8) + DOUBLE_0065456a)) &&
+     (((double)CONCAT44(uVar2,local_c0) + DOUBLE_00654562 <= point->y &&
+      (((point->y <= (double)CONCAT44(uVar5,local_f0) + DOUBLE_0065456a &&
+        ((double)CONCAT44(uVar3,local_f8) + DOUBLE_00654562 <= point->z)) &&
+       (point->z <= (double)CONCAT44(uVar6,local_b8) + DOUBLE_0065456a)))))) {
+    local_a0 = point->x - segStart->x;
+    local_98 = point->y - segStart->y;
+    local_90 = point->z - segStart->z;
     pdVar8 = &local_a0;
     puVar9 = local_58;
     for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -135,15 +119,15 @@ undefined4 shape_superopt_cpp_FUN_005d6c10(void)
       pdVar8 = (double *)((int)pdVar8 + 4);
       puVar9 = puVar9 + 1;
     }
-    local_88 = local_58[0];
-    local_84 = local_58[1];
-    local_80 = local_58[2];
-    local_7c = local_58[3];
-    local_78 = local_48;
-    local_74 = local_44;
-    local_40 = *in_stack_00000004 - *in_stack_0000000c;
-    local_38 = in_stack_00000004[1] - in_stack_0000000c[1];
-    local_30 = in_stack_00000004[2] - in_stack_0000000c[2];
+    local_88.x._0_4_ = local_58[0];
+    local_88.x._4_4_ = local_58[1];
+    local_88.y._0_4_ = local_58[2];
+    local_88.y._4_4_ = local_58[3];
+    local_88.z._0_4_ = local_48;
+    local_88.z._4_4_ = local_44;
+    local_40 = point->x - segEnd->x;
+    local_38 = point->y - segEnd->y;
+    local_30 = point->z - segEnd->z;
     pdVar8 = &local_40;
     puVar9 = local_70;
     for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -151,14 +135,14 @@ undefined4 shape_superopt_cpp_FUN_005d6c10(void)
       pdVar8 = (double *)((int)pdVar8 + 4);
       puVar9 = puVar9 + 1;
     }
-    local_28 = local_70[0];
-    local_24 = local_70[1];
-    local_20 = local_70[2];
-    local_1c = local_70[3];
-    local_18 = local_60;
-    local_14 = local_5c;
-    uVar6 = shape_superopt_cpp_FUN_005d66e0();
-    return uVar6;
+    local_28.x._0_4_ = local_70[0];
+    local_28.x._4_4_ = local_70[1];
+    local_28.y._0_4_ = local_70[2];
+    local_28.y._4_4_ = local_70[3];
+    local_28.z._0_4_ = local_60;
+    local_28.z._4_4_ = local_5c;
+    iVar7 = shape_superopt_cpp_areVectorsCollinear_FUN_005d66e0(&local_88,&local_28);
+    return iVar7;
   }
   return 0;
 }
@@ -166,7 +150,7 @@ undefined4 shape_superopt_cpp_FUN_005d6c10(void)
 
 // Assembly code:
 // 005d6c10: PUSH EBX
-//   Label: shape_superopt.cpp_FUN_005d6c10
+//   Label: shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10
 // 005d6c11: PUSH ESI
 // 005d6c12: PUSH EDI
 // 005d6c13: PUSH EBP
@@ -546,7 +530,7 @@ undefined4 shape_superopt_cpp_FUN_005d6c10(void)
 // 005d6f6d: LEA EAX,[ESP + 0x7c]
 //   XREF to: Stack[-0x88] (DATA)
 // 005d6f71: PUSH EAX
-// 005d6f72: CALL shape_superopt.cpp_FUN_005d66e0
+// 005d6f72: CALL shape_superopt.cpp_areVectorsCollinear_FUN_005d66e0
 //   XREF to: 005d66e0 (UNCONDITIONAL_CALL)
 // 005d6f77: ADD ESP,0x8
 // 005d6f7a: MOV ESP,EBP

@@ -1,17 +1,16 @@
-// Name: shape_superopt.cpp_FUN_005d6020
+// Name: shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020
 // Address: 005d6020
 // Address Range: [[005d6020, 005d63cb]]
-// Convention: unknown
-// Signature: undefined shape_superopt.cpp_FUN_005d6020()
+// Convention: __cdecl
+// Signature: CVector2d * shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020(CVector3d * segment_start, CVector3d * segment_end, CVector3d * query_point)
 // Cross-references:
-//   shape_superopt.cpp_FUN_005d64a0 (005d64a0) at 005d64c0 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0 (005d64a0) at 005d64c0 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
-/* Signature: undefined1 shape_superopt.cpp_FUN_005d6020(undefined4 param_1, undefined4 param_2,
-   undefined4 param_3) */
-
-void shape_superopt_cpp_FUN_005d6020(void)
+CVector2d * __cdecl
+shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020
+          (CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point)
 
 {
   undefined4 uVar1;
@@ -20,12 +19,9 @@ void shape_superopt_cpp_FUN_005d6020(void)
   double dVar4;
   int iVar5;
   BADSPACEBASE *in_ESP;
-  undefined4 *unaff_ESI;
+  CVector2d *unaff_ESI;
   double *pdVar6;
   undefined4 *puVar7;
-  double *in_stack_00000004;
-  double *in_stack_00000008;
-  undefined4 *in_stack_0000000c;
   undefined4 local_168;
   undefined4 uStack_164;
   int local_158;
@@ -84,28 +80,28 @@ void shape_superopt_cpp_FUN_005d6020(void)
   undefined4 local_18;
   undefined4 uStack_14;
   
-  local_18 = *(undefined4 *)in_stack_00000004;
-  uStack_14 = *(undefined4 *)((int)in_stack_00000004 + 4);
-  uVar1 = *(undefined4 *)(in_stack_00000004 + 1);
-  uStack_34 = *(undefined4 *)((int)in_stack_00000004 + 0xc);
-  local_68 = *(undefined4 *)in_stack_00000004;
-  uStack_64 = *(undefined4 *)((int)in_stack_00000004 + 4);
-  uStack_5c = *(undefined4 *)((int)in_stack_00000004 + 0xc);
+  local_18 = *(undefined4 *)&segment_start->x;
+  uStack_14 = *(undefined4 *)((int)&segment_start->x + 4);
+  uVar1 = *(undefined4 *)&segment_start->y;
+  uStack_34 = *(undefined4 *)((int)&segment_start->y + 4);
+  local_68 = *(undefined4 *)&segment_start->x;
+  uStack_64 = uStack_14;
+  uStack_5c = uStack_34;
   local_58 = 0;
   uStack_54 = 0;
-  local_20 = *(undefined4 *)in_stack_00000008;
+  local_20 = *(undefined4 *)&segment_end->x;
   local_38 = uVar1;
-  uStack_1c = *(undefined4 *)((int)in_stack_00000008 + 4);
-  local_30 = *(undefined4 *)(in_stack_00000008 + 1);
-  local_e0 = *in_stack_00000008 - *in_stack_00000004;
-  uStack_2c = *(undefined4 *)((int)in_stack_00000008 + 0xc);
+  uStack_1c = *(undefined4 *)((int)&segment_end->x + 4);
+  local_30 = *(undefined4 *)&segment_end->y;
+  local_e0 = segment_end->x - segment_start->x;
+  uStack_2c = *(undefined4 *)((int)&segment_end->y + 4);
   local_d0 = 0;
   local_cc = 0;
-  local_28 = *in_stack_0000000c;
-  uStack_24 = in_stack_0000000c[1];
-  local_40 = in_stack_0000000c[2];
-  local_d8 = in_stack_00000008[1] - in_stack_00000004[1];
-  uVar2 = in_stack_0000000c[3];
+  local_28 = *(undefined4 *)&query_point->x;
+  uStack_24 = *(undefined4 *)((int)&query_point->x + 4);
+  local_40 = *(undefined4 *)&query_point->y;
+  local_d8 = segment_end->y - segment_start->y;
+  uVar2 = *(undefined4 *)((int)&query_point->y + 4);
   pdVar6 = &local_e0;
   puVar7 = local_80;
   for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -182,17 +178,17 @@ void shape_superopt_cpp_FUN_005d6020(void)
     pdVar6 = (double *)((int)pdVar6 + 4);
     puVar7 = puVar7 + 1;
   }
-  *unaff_ESI = local_98[0];
-  unaff_ESI[1] = local_98[1];
-  unaff_ESI[2] = local_98[2];
-  unaff_ESI[3] = local_98[3];
-  return;
+  *(undefined4 *)&unaff_ESI->x = local_98[0];
+  *(undefined4 *)((int)&unaff_ESI->x + 4) = local_98[1];
+  *(undefined4 *)&unaff_ESI->y = local_98[2];
+  *(undefined4 *)((int)&unaff_ESI->y + 4) = local_98[3];
+  return unaff_ESI;
 }
 
 
 // Assembly code:
 // 005d6020: PUSH EBX
-//   Label: shape_superopt.cpp_FUN_005d6020
+//   Label: shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020
 // 005d6021: PUSH EDI
 // 005d6022: PUSH EBP
 // 005d6023: MOV EBP,ESP

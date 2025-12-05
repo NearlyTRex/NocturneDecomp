@@ -67407,7 +67407,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_generatePlanarUVsWithFlag_FUN_005d3e80",
+    "name":"shape_superopt.cpp_CObj_projectPlanarUVsWithFlag_FUN_005d3e80",
     "ret":"void",
     "vars":{
       "params":[
@@ -67473,7 +67473,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_superopt.cpp_CObj_FUN_005d5800",
+    "name":"shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800",
     "ret":"int",
     "vars":{
       "locals":[
@@ -67718,6 +67718,38 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"coplanar_threshold",
+          "storage":{
+            "offset":8,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"search_polygon",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CPoly*"
         }
       ],
       "ret_storage":{
@@ -68050,7 +68082,6 @@
         "start":"005d7e00"
       }
     ],
-    "cmt":"Signature: undefined1 shape_superopt.cpp_BonesAndPointsCheck(undefined4 param_1)",
     "importable":true,
     "name":"shape_superopt.cpp_BonesAndPointsCheck_FUN_005d7e00",
     "ret":"undefined1",

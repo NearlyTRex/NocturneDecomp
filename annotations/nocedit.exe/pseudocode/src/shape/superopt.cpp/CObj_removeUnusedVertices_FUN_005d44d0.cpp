@@ -1,8 +1,8 @@
-// Name: shape_superopt.cpp_CObj_FUN_005d44d0
+// Name: shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0
 // Address: 005d44d0
 // Address Range: [[005d44d0, 005d46eb]]
 // Convention: __cdecl
-// Signature: int * shape_superopt.cpp_CObj_FUN_005d44d0(CObj * this_ptr)
+// Signature: int shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0(CObj * this_ptr)
 // Globals:
 //   TerminatedCString s_Deleting_d_disjoing_vert_006544b0
 // Function calls:
@@ -16,7 +16,7 @@
 
 #include "nocturne.h"
 
-int * __cdecl shape_superopt_cpp_CObj_FUN_005d44d0(CObj *this_ptr)
+int __cdecl shape_superopt_cpp_CObj_removeUnusedVertices_FUN_005d44d0(CObj *this_ptr)
 
 {
   CPoly *pCVar1;
@@ -122,13 +122,13 @@ int * __cdecl shape_superopt_cpp_CObj_FUN_005d44d0(CObj *this_ptr)
     crt_memory_c_free_FUN_005fe659(dest);
     dest = (int *)&DAT_00000001;
   }
-  return dest;
+  return (int)dest;
 }
 
 
 // Assembly code:
 // 005d44d0: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_FUN_005d44d0
+//   Label: shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0
 // 005d44d1: PUSH ESI
 // 005d44d2: PUSH EBP
 // 005d44d3: SUB ESP,0x70

@@ -1,25 +1,21 @@
-// Name: shape_superopt.cpp_FUN_005d66e0
+// Name: shape_superopt.cpp_areVectorsCollinear_FUN_005d66e0
 // Address: 005d66e0
 // Address Range: [[005d66e0, 005d6c04]]
-// Convention: unknown
-// Signature: undefined shape_superopt.cpp_FUN_005d66e0()
+// Convention: __cdecl
+// Signature: int shape_superopt.cpp_areVectorsCollinear_FUN_005d66e0(CVector3d * vec1, CVector3d * vec2)
 // Cross-references:
 //   shape_superopt.cpp_FUN_005c7fb0 (005c7fb0) at 005c8146 [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_FUN_005d6c10 (005d6c10) at 005d6f72 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10 (005d6c10) at 005d6f72 [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_0065455a = 0.000100000000000000
 
 #include "nocturne.h"
 
-/* Signature: undefined1 shape_superopt.cpp_FUN_005d66e0(undefined4 param_1, undefined4 param_2) */
-
-undefined4 shape_superopt_cpp_FUN_005d66e0(void)
+int __cdecl shape_superopt_cpp_areVectorsCollinear_FUN_005d66e0(CVector3d *vec1,CVector3d *vec2)
 
 {
   double dVar1;
   double dVar2;
-  double *in_stack_00000004;
-  double *in_stack_00000008;
   double local_158;
   double local_150;
   double local_148;
@@ -33,12 +29,12 @@ undefined4 shape_superopt_cpp_FUN_005d66e0(void)
   double local_48;
   double local_40;
   
-  local_50 = *in_stack_00000004;
-  local_48 = in_stack_00000004[1];
-  local_40 = in_stack_00000004[2];
-  local_68 = *in_stack_00000008;
-  local_60 = in_stack_00000008[1];
-  local_58 = in_stack_00000008[2];
+  local_50 = vec1->x;
+  local_48 = vec1->y;
+  local_40 = vec1->z;
+  local_68 = vec2->x;
+  local_60 = vec2->y;
+  local_58 = vec2->z;
   dVar1 = SQRT(local_50 * local_50 + local_48 * local_48 + local_40 * local_40);
   dVar2 = SQRT(local_68 * local_68 + local_60 * local_60 + local_58 * local_58);
   if (dVar1 < dVar2) {
@@ -87,7 +83,7 @@ undefined4 shape_superopt_cpp_FUN_005d66e0(void)
 
 // Assembly code:
 // 005d66e0: PUSH EBP
-//   Label: shape_superopt.cpp_FUN_005d66e0
+//   Label: shape_superopt.cpp_areVectorsCollinear_FUN_005d66e0
 // 005d66e1: MOV EBP,ESP
 // 005d66e3: SUB ESP,0x150
 // 005d66e9: AND ESP,0xfffffff8

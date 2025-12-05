@@ -1,12 +1,13 @@
-// Name: shape_superopt.cpp_CObj_scaleAllUVs_FUN_005d3ed0
+// Name: shape_superopt.cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0
 // Address: 005d3ed0
 // Address Range: [[005d3ed0, 005d3f06]]
 // Convention: __cdecl
-// Signature: void shape_superopt.cpp_CObj_scaleAllUVs_FUN_005d3ed0(CObj * this_ptr, CVector2d * uv_scale)
+// Signature: void shape_superopt.cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0(CObj * this_ptr, int material_id)
 
 #include "nocturne.h"
 
-void __cdecl shape_superopt_cpp_CObj_scaleAllUVs_FUN_005d3ed0(CObj *this_ptr,CVector2d *uv_scale)
+void __cdecl
+shape_superopt_cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0(CObj *this_ptr,int material_id)
 
 {
   int iVar1;
@@ -29,7 +30,7 @@ void __cdecl shape_superopt_cpp_CObj_scaleAllUVs_FUN_005d3ed0(CObj *this_ptr,CVe
 
 // Assembly code:
 // 005d3ed0: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_scaleAllUVs_FUN_005d3ed0
+//   Label: shape_superopt.cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0
 // 005d3ed1: PUSH EDI
 // 005d3ed2: PUSH EBP
 // 005d3ed3: MOV EDI,dword ptr [ESP + 0x10]

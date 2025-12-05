@@ -5,7 +5,7 @@
 // Signature: double shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500(CVector3d * ray_origin, CVector3d * ray_dir, CVector3d * plane_point, CVector3d * plane_normal)
 // Cross-references:
 //   shape_superopt.cpp_CPoly_rayPlaneIntersect_FUN_005d0ce0 (005d0ce0) at 005d0d0c [UNCONDITIONAL_CALL]
-//   shape_superopt.cpp_FUN_005d63d0 (005d63d0) at 005d6402 [UNCONDITIONAL_CALL]
+//   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (005d63d0) at 005d6402 [UNCONDITIONAL_CALL]
 // Globals:
 //   double DOUBLE_0065454a = 1.00000000000000E-8
 

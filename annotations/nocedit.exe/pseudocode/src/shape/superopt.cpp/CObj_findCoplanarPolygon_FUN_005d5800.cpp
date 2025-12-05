@@ -1,169 +1,171 @@
-// Name: shape_superopt.cpp_CObj_FUN_005d5800
+// Name: shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800
 // Address: 005d5800
 // Address Range: [[005d5800, 005d5baf]]
 // Convention: __cdecl
-// Signature: int shape_superopt.cpp_CObj_FUN_005d5800(CObj * this_ptr)
+// Signature: int shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj * this_ptr, double coplanar_threshold, CPoly * search_polygon)
 // Function calls:
-//   shape_superopt.cpp_FUN_005d63d0
+//   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x005d5b52) */
 
-int __cdecl shape_superopt_cpp_CObj_FUN_005d5800(CObj *this_ptr)
+int __cdecl
+shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800
+          (CObj *this_ptr,double coplanar_threshold,CPoly *search_polygon)
 
 {
-  CVert *pCVar1;
-  int iVar2;
-  int *piVar3;
+  CVert *point;
+  int iVar1;
+  int *piVar2;
   CPoly *other;
-  CPoly *pCVar4;
+  CPoly *pCVar3;
   BADSPACEBASE *in_ESP;
-  CVector3d *pCVar5;
-  uint uVar6;
-  undefined4 *puVar7;
-  int *piVar8;
-  undefined4 *puVar9;
-  byte bVar10;
-  undefined4 in_stack_00000008;
-  undefined4 in_stack_0000000c;
-  int in_stack_00000010;
-  undefined4 local_58;
-  undefined4 local_54;
-  undefined4 local_50;
+  double *unaff_EBP;
+  CVector3d *pCVar4;
+  uint uVar5;
+  undefined4 *puVar6;
+  int *piVar7;
+  undefined4 *puVar8;
+  byte bVar9;
+  undefined4 in_stack_ffffffac;
+  undefined4 in_stack_ffffffb0;
   undefined4 local_4c;
   undefined4 local_48;
   undefined4 local_44;
-  undefined4 local_40 [6];
+  undefined4 local_40;
+  undefined4 auStack_3c [5];
   int local_28;
-  double *local_24;
+  CVector3d *local_24;
   uint local_20;
   uint local_1c;
   CPoly *local_18;
-  double *local_14;
+  CPoly *local_14;
   
-  bVar10 = 0;
-  if (in_stack_00000010 == 0) {
+  bVar9 = 0;
+  if (search_polygon == (CPoly *)0x0) {
     if (this_ptr->poly_count == 0) {
-      iVar2 = 0;
+      iVar1 = 0;
     }
     else {
       (*this_ptr->vtable->clearStateFlags)(this_ptr,0x2000);
-      iVar2 = (*(code *)this_ptr->vtable->field54_0xd8)();
+      iVar1 = (*this_ptr->vtable->findCoplanarPolygon)
+                        (this_ptr,coplanar_threshold,this_ptr->poly_array);
     }
-    return iVar2;
+    return iVar1;
   }
-  *(byte *)(in_stack_00000010 + 0x61) = *(byte *)(in_stack_00000010 + 0x61) | 0x20;
+  *(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)&search_polygon->flags + 1) | 0x20;
   local_18 = this_ptr->poly_array;
   local_20 = 0;
   if (this_ptr->poly_count != 0) {
-    local_24 = (double *)(in_stack_00000010 + 0x40);
-    pCVar5 = &local_18->normal;
-    piVar8 = &local_18->vertex_idx_0;
-    piVar3 = (int *)(in_stack_00000010 + 4);
+    local_24 = &search_polygon->normal;
+    pCVar4 = &local_18->normal;
+    piVar7 = &local_18->vertex_idx_0;
+    piVar2 = &search_polygon->vertex_idx_0;
     do {
       if (((local_18->flags & 0x2000) == 0) &&
-         (1.0 - (double)CONCAT44(in_stack_0000000c,in_stack_00000008) <=
-          pCVar5->z * *(double *)(in_stack_00000010 + 0x50) +
-          pCVar5->x * *local_24 + pCVar5->y * *(double *)(in_stack_00000010 + 0x48))) {
+         (1.0 - coplanar_threshold <=
+          pCVar4->z * (search_polygon->normal).z +
+          pCVar4->x * local_24->x + pCVar4->y * (search_polygon->normal).y)) {
         local_28 = 0xffffffff;
-        if ((((*piVar8 == *(int *)(in_stack_00000010 + 8)) && (piVar8[1] == *piVar3)) ||
-            ((*piVar8 == *(int *)(in_stack_00000010 + 0xc) &&
-             (piVar8[1] == *(int *)(in_stack_00000010 + 8))))) ||
-           ((*piVar8 == *piVar3 && (piVar8[1] == *(int *)(in_stack_00000010 + 0xc))))) {
+        if ((((*piVar7 == search_polygon->vertex_idx_1) && (piVar7[1] == *piVar2)) ||
+            ((*piVar7 == search_polygon->vertex_idx_2 && (piVar7[1] == search_polygon->vertex_idx_1)
+             ))) || ((*piVar7 == *piVar2 && (piVar7[1] == search_polygon->vertex_idx_2)))) {
           local_28 = 2;
 LAB_005d59af:
-          pCVar1 = this_ptr->vertex_data + *(int *)((int)local_18->uv_coords + local_28 * 4 + -0xc);
-          local_14 = (double *)(in_stack_00000010 + 0x40);
-          shape_superopt_cpp_FUN_005d63d0();
-          puVar7 = local_40;
-          puVar9 = &local_58;
-          for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *puVar9 = *puVar7;
-            puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
-            puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
+          point = this_ptr->vertex_data + *(int *)((int)local_18->uv_coords + local_28 * 4 + -0xc);
+          local_14 = (CPoly *)&search_polygon->normal;
+          shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0
+                    (&point->position,&this_ptr->vertex_data[search_polygon->vertex_idx_0].position,
+                     (CVector3d *)local_14);
+          puVar6 = auStack_3c;
+          puVar8 = (undefined4 *)&stack0xffffffa8;
+          for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+            *puVar8 = *puVar6;
+            puVar6 = puVar6 + (uint)bVar9 * -2 + 1;
+            puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
           }
-          *(undefined4 *)&(pCVar1->position).x = local_58;
-          *(undefined4 *)((int)&(pCVar1->position).x + 4) = local_54;
-          *(undefined4 *)&(pCVar1->position).y = local_50;
-          *(undefined4 *)((int)&(pCVar1->position).y + 4) = local_4c;
-          *(undefined4 *)&(pCVar1->position).z = local_48;
-          *(undefined4 *)((int)&(pCVar1->position).z + 4) = local_44;
-          (local_18->normal).x = *local_14;
-          *(undefined4 *)&(local_18->normal).y = *(undefined4 *)(local_14 + 1);
-          *(undefined4 *)((int)&(local_18->normal).y + 4) = *(undefined4 *)((int)local_14 + 0xc);
-          *(undefined4 *)&(local_18->normal).z = *(undefined4 *)(local_14 + 2);
-          *(undefined4 *)((int)&(local_18->normal).z + 4) = *(undefined4 *)((int)local_14 + 0x14);
-          iVar2 = (*(code *)this_ptr->vtable->field54_0xd8)();
-          return iVar2;
+          *(undefined4 *)&(point->position).x = in_stack_ffffffac;
+          *(undefined4 *)((int)&(point->position).x + 4) = in_stack_ffffffb0;
+          *(undefined4 *)&(point->position).y = local_4c;
+          *(undefined4 *)((int)&(point->position).y + 4) = local_48;
+          *(undefined4 *)&(point->position).z = local_44;
+          *(undefined4 *)((int)&(point->position).z + 4) = local_40;
+          (local_14->normal).x = *unaff_EBP;
+          *(undefined4 *)&(local_14->normal).y = *(undefined4 *)(unaff_EBP + 1);
+          *(undefined4 *)((int)&(local_14->normal).y + 4) = *(undefined4 *)((int)unaff_EBP + 0xc);
+          *(undefined4 *)&(local_14->normal).z = *(undefined4 *)(unaff_EBP + 2);
+          *(undefined4 *)((int)&(local_14->normal).z + 4) = *(undefined4 *)((int)unaff_EBP + 0x14);
+          iVar1 = (*this_ptr->vtable->findCoplanarPolygon)(this_ptr,coplanar_threshold,local_14);
+          return iVar1;
         }
-        if ((piVar8[1] == *(int *)(in_stack_00000010 + 0xc)) &&
-           (piVar8[2] == *(int *)(in_stack_00000010 + 8))) {
+        if ((piVar7[1] == search_polygon->vertex_idx_2) &&
+           (piVar7[2] == search_polygon->vertex_idx_1)) {
           local_28 = 0;
           goto LAB_005d59af;
         }
-        if ((piVar8[1] == *piVar3) && (piVar8[2] == *(int *)(in_stack_00000010 + 0xc))) {
+        if ((piVar7[1] == *piVar2) && (piVar7[2] == search_polygon->vertex_idx_2)) {
           local_28 = 0;
           goto LAB_005d59af;
         }
-        if ((piVar8[1] == *(int *)(in_stack_00000010 + 8)) && (piVar8[2] == *piVar3)) {
+        if ((piVar7[1] == search_polygon->vertex_idx_1) && (piVar7[2] == *piVar2)) {
           local_28 = 0;
           goto LAB_005d59af;
         }
-        if ((piVar8[2] == *piVar3) && (*piVar8 == *(int *)(in_stack_00000010 + 0xc))) {
+        if ((piVar7[2] == *piVar2) && (*piVar7 == search_polygon->vertex_idx_2)) {
           local_28 = 1;
           goto LAB_005d59af;
         }
-        if ((piVar8[2] == *(int *)(in_stack_00000010 + 8)) && (*piVar8 == *piVar3)) {
+        if ((piVar7[2] == search_polygon->vertex_idx_1) && (*piVar7 == *piVar2)) {
           local_28 = 1;
           goto LAB_005d59af;
         }
-        if ((piVar8[2] == *(int *)(in_stack_00000010 + 0xc)) &&
-           (*(int *)(in_stack_00000010 + 8) == *piVar8)) {
+        if ((piVar7[2] == search_polygon->vertex_idx_2) && (search_polygon->vertex_idx_1 == *piVar7)
+           ) {
           local_28 = 1;
           goto LAB_005d59af;
         }
       }
       local_18 = local_18 + 1;
-      pCVar5 = (CVector3d *)((int)(pCVar5 + 4) + 8);
-      piVar8 = piVar8 + 0x1a;
+      pCVar4 = (CVector3d *)((int)(pCVar4 + 4) + 8);
+      piVar7 = piVar7 + 0x1a;
       local_20 = local_20 + 1;
     } while (local_20 < (uint)this_ptr->poly_count);
   }
   local_1c = 0;
-  pCVar4 = this_ptr->poly_array;
+  pCVar3 = this_ptr->poly_array;
   if (this_ptr->poly_count != 0) {
     do {
-      if ((pCVar4->flags & 0x2000) != 0) {
-        uVar6 = 0;
+      if ((pCVar3->flags & 0x2000) != 0) {
+        uVar5 = 0;
         other = this_ptr->poly_array;
         if (this_ptr->poly_count != 0) {
           do {
             if (((other->flags & 0x2000) == 0) &&
-               (iVar2 = (*pCVar4->vtable->hasSharedEdge)(pCVar4,other), iVar2 != 0)) {
-              iVar2 = (*(code *)this_ptr->vtable->field54_0xd8)();
-              return iVar2;
+               (iVar1 = (*pCVar3->vtable->hasSharedEdge)(pCVar3,other), iVar1 != 0)) {
+              iVar1 = (*this_ptr->vtable->findCoplanarPolygon)(this_ptr,coplanar_threshold,other);
+              return iVar1;
             }
-            uVar6 = uVar6 + 1;
+            uVar5 = uVar5 + 1;
             other = other + 1;
-          } while (uVar6 < (uint)this_ptr->poly_count);
+          } while (uVar5 < (uint)this_ptr->poly_count);
         }
       }
-      pCVar4 = pCVar4 + 1;
+      pCVar3 = pCVar3 + 1;
       local_1c = local_1c + 1;
     } while (local_1c < (uint)this_ptr->poly_count);
   }
-  uVar6 = 0;
-  pCVar4 = this_ptr->poly_array;
+  uVar5 = 0;
+  pCVar3 = this_ptr->poly_array;
   if (this_ptr->poly_count != 0) {
     do {
-      if ((pCVar4->flags & 0x2000) == 0) {
-        iVar2 = (*(code *)this_ptr->vtable->field54_0xd8)();
-        return iVar2;
+      if ((pCVar3->flags & 0x2000) == 0) {
+        iVar1 = (*this_ptr->vtable->findCoplanarPolygon)(this_ptr,coplanar_threshold,pCVar3);
+        return iVar1;
       }
-      uVar6 = uVar6 + 1;
-      pCVar4 = pCVar4 + 1;
-    } while (uVar6 < (uint)this_ptr->poly_count);
+      uVar5 = uVar5 + 1;
+      pCVar3 = pCVar3 + 1;
+    } while (uVar5 < (uint)this_ptr->poly_count);
   }
   return 1;
 }
@@ -171,7 +173,7 @@ LAB_005d59af:
 
 // Assembly code:
 // 005d5800: PUSH EBX
-//   Label: shape_superopt.cpp_CObj_FUN_005d5800
+//   Label: shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800
 // 005d5801: PUSH ESI
 // 005d5802: PUSH EDI
 // 005d5803: PUSH EBP
@@ -434,7 +436,7 @@ LAB_005d59af:
 //   XREF to: Stack[-0x40] (DATA)
 // 005d59f5: LEA EDI,[ESP + 0x14]
 //   XREF to: Stack[-0x58] (DATA)
-// 005d59f9: CALL shape_superopt.cpp_FUN_005d63d0
+// 005d59f9: CALL shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 //   XREF to: 005d63d0 (UNCONDITIONAL_CALL)
 // 005d59fe: MOV ECX,0x6
 // 005d5a03: LEA ESI,[ESP + 0x2c]
