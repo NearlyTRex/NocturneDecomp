@@ -2,7 +2,14 @@ import os
 import re
 import json
 import base64
+import datetime
+from collections import defaultdict
 from java.io import File
+from java.util.concurrent import Executors
+from java.util.concurrent import Callable
+from java.util.concurrent import TimeUnit
+from java.util.concurrent.atomic import AtomicInteger
+from java.lang import Runtime
 from ghidra_annotations.annotations import *
 from ghidra_annotations.util import *
 from ghidra_annotations.util.string import is_string_data_type_obj, extract_string_value
@@ -16,6 +23,120 @@ from ghidra.program.model.data import FunctionDefinitionDataType
 from ghidra.program.model.data import Structure
 from ghidra.program.model.data import Union
 from ghidra.program.model.data import TypeDef
+
+# Default number of worker threads for parallel processing
+DEFAULT_NUM_THREADS = 4
+
+# Thread-local storage for decompiler interfaces
+from java.lang import ThreadLocal
+
+class DecompilerThreadLocal(ThreadLocal):
+    def __init__(self, currentProgram):
+        self.currentProgram = currentProgram
+
+    def initialValue(self):
+        interface = DecompInterface()
+        interface.setOptions(DecompileOptions())
+        interface.openProgram(self.currentProgram)
+        return interface
+
+class FunctionProcessorResult:
+    def __init__(self):
+        self.success = False
+        self.func_name = ""
+        self.func_addr = ""
+        self.suspect_count = 0
+        self.virtual_filename = None
+        self.function_group_entry = None
+        self.error = None
+
+class FunctionProcessor(Callable):
+    def __init__(self, func, currentProgram, decompiler_tls, pseudocode_src_dir,
+                 symbol_table, reference_manager, program_listing,
+                 string_map, constants_map, global_symbols):
+        self.func = func
+        self.currentProgram = currentProgram
+        self.decompiler_tls = decompiler_tls
+        self.pseudocode_src_dir = pseudocode_src_dir
+        self.symbol_table = symbol_table
+        self.reference_manager = reference_manager
+        self.program_listing = program_listing
+        self.string_map = string_map
+        self.constants_map = constants_map
+        self.global_symbols = global_symbols
+
+    def call(self):
+        result = FunctionProcessorResult()
+        try:
+            func = self.func
+            result.func_name = func.getName()
+            result.func_addr = str(func.getEntryPoint())
+
+            # Get thread-local decompiler interface
+            interface = self.decompiler_tls.get()
+
+            # Get function info
+            func_signature = func.getPrototypeString(True, False)
+            func_addr_range = func.getBody()
+            func_convention = func.getCallingConventionName()
+
+            # Group function for prototype generation
+            virtual_filename = extract_virtual_filename(result.func_name)
+            if virtual_filename:
+                result.virtual_filename = virtual_filename
+                result.function_group_entry = {
+                    'name': result.func_name,
+                    'address': result.func_addr,
+                    'signature': func_signature
+                }
+
+            # Get function cross-references
+            func_xrefs = get_function_xrefs(self.currentProgram, func)
+
+            # Get function globals
+            func_globals = get_function_globals(self.currentProgram, func)
+
+            # Get function calls
+            func_calls = get_function_calls(self.currentProgram, func)
+
+            # Generate decompiled code
+            decompiled_code = generate_decompilation_code(
+                interface, func, self.symbol_table, self.string_map, timeout=60)
+
+            # Replace constant references with their actual values
+            decompiled_code = replace_constants_in_code(decompiled_code, self.constants_map)
+
+            # Generate richly annotated assembly code with context
+            assembly_code = generate_assembly_code_rich(
+                self.currentProgram, func, self.symbol_table, self.reference_manager,
+                self.program_listing, self.string_map, self.global_symbols)
+
+            # Identify suspect patterns in the decompiled code
+            suspects = identify_suspect_lines(decompiled_code)
+            result.suspect_count = len(suspects)
+
+            # Export stack frame information
+            stack_frame = export_stack_frame(func)
+
+            # Calculate complexity metrics
+            complexity = calculate_complexity_metrics(
+                decompiled_code, assembly_code, suspects,
+                func_xrefs, func_globals, func_calls)
+
+            # Determine source file name
+            source_filename = generate_source_filename(result.func_name, decompiled_code)
+
+            # Write all three files (.cpp, .asm, .json)
+            files_written = write_function_files(
+                self.pseudocode_src_dir, source_filename, result.func_name, result.func_addr,
+                func_addr_range, func_convention, func_signature,
+                decompiled_code, assembly_code, func_xrefs, func_globals,
+                func_calls, stack_frame, suspects, complexity)
+            result.success = files_written
+        except Exception as e:
+            result.error = str(e)
+            result.success = False
+        return result
 
 def get_safe_str(val):
     if val is None:
@@ -319,19 +440,19 @@ def delete_pseudocode(currentProgram, path):
         log_info("No pseudocode directory found - nothing to delete")
         return
 
-    # Delete all pseudocode files
+    # Delete all pseudocode files (now includes .asm and .json)
     deleted_count = 0
-    log_info("Deleting all pseudocode files")
+    log_info("Deleting all pseudocode files (.cpp, .c, .h, .asm, .json)")
     for root, dirs, files in os.walk(pseudocode_dir):
         for file in files:
-            if file.lower().endswith(('.c', '.cpp', '.h')):
+            if file.lower().endswith(('.c', '.cpp', '.h', '.asm', '.json')):
                 file_path = os.path.join(root, file)
                 try:
                     os.remove(file_path)
-                    log_info("Deleted pseudocode file: %s" % os.path.relpath(file_path, pseudocode_dir))
+                    log_info("Deleted file: %s" % os.path.relpath(file_path, pseudocode_dir))
                     deleted_count += 1
                 except Exception as e:
-                    log_info("Failed to delete pseudocode file %s: %s" % (file, str(e)))
+                    log_info("Failed to delete file %s: %s" % (file, str(e)))
 
     # Remove empty directories
     for root, dirs, files in os.walk(pseudocode_dir, topdown=False):
@@ -343,7 +464,7 @@ def delete_pseudocode(currentProgram, path):
                     log_info("Removed empty directory: %s" % os.path.relpath(dir_path, pseudocode_dir))
             except Exception as e:
                 pass
-    log_info("Deleted %d pseudocode files" % deleted_count)
+    log_info("Deleted %d files" % deleted_count)
 
 def export_header_files(currentProgram, pseudocode_dir):
 
@@ -1261,6 +1382,111 @@ def replace_symbol(match, string_map):
     # If no string found, return original symbol
     return symbol_name
 
+# =============================================================================
+# Suspect Pattern Detection
+# =============================================================================
+
+# Patterns that indicate Ghidra decompiler artifacts that need fixing
+SUSPECT_PATTERNS = [
+    # BADSPACEBASE - Ghidra couldn't resolve the stack frame
+    (r'\bBADSPACEBASE\b', 'badspacebase', 'Ghidra failed to resolve stack frame'),
+    # in_stack_XXXX - Stack parameters that Ghidra couldn't properly identify
+    (r'\bin_stack_[0-9a-fA-Fx]+\b', 'stack_param', 'Unresolved stack parameter'),
+    # &stack0xXXXX - Direct stack address references
+    (r'&stack0x[0-9a-fA-F]+', 'stack_ref', 'Direct stack address reference'),
+    # undefined types - Ghidra couldn't determine the type
+    (r'\bundefined[0-9]*\s+\w+', 'undefined_type', 'Unresolved type'),
+    # Casts to undefined pointer types like (undefined1 *) or (undefined4 *)
+    (r'\(undefined[0-9]*\s*\*\)', 'undefined_ptr_cast', 'Cast to undefined pointer type'),
+    # Negative array indexing like pCVar[-10].x - usually wrong base type
+    (r'\w+\[-\d+\]\.', 'negative_offset', 'Negative struct offset (wrong base type)'),
+    # extraout_* - Extra output parameters Ghidra inferred
+    (r'\bextrout_[A-Z]+\b', 'extra_output', 'Inferred extra output parameter'),
+    # in_* register parameters that look suspicious
+    (r'\bin_[A-Z]{2,3}\b', 'register_param', 'Inferred register parameter'),
+    # unaff_* - Unaffected register variables
+    (r'\bunaff_[A-Z]+\b', 'unaffected_reg', 'Unaffected register variable'),
+    # Very small floats that are likely misinterpreted integers (e.g., 9.18355e-41)
+    (r'\b\d+\.\d+e-[3-9]\d\b', 'suspect_float', 'Likely misinterpreted integer as float'),
+    # Type casts to weird pointer arithmetic
+    (r'\(\w+\s*\*\s*\)\s*\(\s*\(int\)', 'pointer_cast', 'Complex pointer cast'),
+    # _._N_N_ field access patterns (mangled/unknown field names)
+    (r'\._\d+_\d+_', 'unknown_field', 'Unknown/mangled field access'),
+    # CONCAT44, CONCAT22, etc - Decompiler confused about double/long long composition
+    (r'\bCONCAT\d+\b', 'concat_artifact', 'Decompiler double/longlong composition artifact'),
+    # SUB84, SUB42, etc - Decompiler confused about extracting parts from double/long long
+    (r'\bSUB\d+\b', 'sub_artifact', 'Decompiler double/longlong extraction artifact'),
+    # SBORROW - Decompiler artifact for signed borrow detection
+    (r'\bSBORROW\b', 'sborrow_artifact', 'Decompiler signed borrow artifact'),
+]
+
+def identify_suspect_lines(decompiled_code):
+    suspects = []
+    lines = decompiled_code.split('\n')
+    for line_num, line in enumerate(lines, 1):
+        line_stripped = line.strip()
+        if line_stripped.startswith('//') or line_stripped.startswith('/*') or not line_stripped:
+            continue
+        for pattern, issue_type, description in SUSPECT_PATTERNS:
+            matches = re.finditer(pattern, line)
+            for match in matches:
+                suspects.append({
+                    'line': line_num,
+                    'type': issue_type,
+                    'match': match.group(),
+                    'text': line_stripped,
+                    'description': description
+                })
+    return suspects
+
+def calculate_complexity_metrics(decompiled_code, assembly_code, suspects, xrefs, globals_list, func_calls):
+    pseudocode_lines = len([l for l in decompiled_code.split('\n') if l.strip()])
+    assembly_lines = len([l for l in assembly_code.split('\n') if l.strip()])
+    suspect_types = set(s['type'] for s in suspects)
+    return {
+        'pseudocode_lines': pseudocode_lines,
+        'assembly_lines': assembly_lines,
+        'total_lines': pseudocode_lines + assembly_lines,
+        'suspect_count': len(suspects),
+        'suspect_types': list(suspect_types),
+        'cross_reference_count': len(xrefs) if xrefs else 0,
+        'global_count': len(globals_list) if globals_list else 0,
+        'function_call_count': len(func_calls) if func_calls else 0,
+        'complexity_score': (
+            pseudocode_lines +
+            (len(suspects) * 10) +  # Each suspect adds significant complexity
+            (len(suspect_types) * 5)  # Variety of issues adds complexity
+        )
+    }
+
+def export_stack_frame(func):
+    frame = func.getStackFrame()
+    if not frame:
+        return None
+    frame_info = {
+        'frame_size': frame.getFrameSize(),
+        'local_size': frame.getLocalSize(),
+        'param_offset': frame.getParameterOffset(),
+        'param_size': frame.getParameterSize(),
+        'return_addr_offset': frame.getReturnAddressOffset(),
+        'variables': []
+    }
+
+    # Export all stack variables
+    for var in frame.getStackVariables():
+        var_info = {
+            'name': var.getName(),
+            'offset': var.getStackOffset(),
+            'size': var.getLength(),
+            'type': str(var.getDataType()),
+            'is_param': var.getStackOffset() >= 0  # Positive offsets are typically parameters
+        }
+        frame_info['variables'].append(var_info)
+
+    # Sort by offset
+    frame_info['variables'].sort(key=lambda v: v['offset'])
+    return frame_info
+
 def generate_decompilation_code(interface, func, symbol_table, string_map, timeout=60):
 
     # Start decompilation
@@ -1280,6 +1506,182 @@ def generate_decompilation_code(interface, func, symbol_table, string_map, timeo
     except Exception as e:
         log_info("Warning: Failed to process string replacements: %s" % str(e))
     return decompiled_code
+
+def build_constants_map(constants_list):
+    constants_map = {}
+    for const in constants_list:
+        name = const.get('name', '')
+        initializer = const.get('initializer')
+        type_name = const.get('type', '').lower()
+
+        # Skip if no initializer value
+        if not initializer:
+            continue
+
+        # Skip complex initializers (arrays, base64, multi-line, empty braces)
+        init_str = str(initializer)
+        if ('\n' in init_str or init_str.startswith('{') or
+            'Base64' in init_str or init_str == '{}'):
+            continue
+
+        # Only include int, float, and double types
+        is_numeric = False
+        if 'float' in type_name or 'double' in type_name:
+            is_numeric = True
+        elif ('int' in type_name or 'long' in type_name or 'short' in type_name or
+              'byte' in type_name or 'word' in type_name or 'dword' in type_name or
+              'uint' in type_name or 'undefined' in type_name):
+            if (init_str.startswith('0x') or init_str.startswith('-0x') or
+                init_str.lstrip('-').isdigit()):
+                is_numeric = True
+        if is_numeric:
+            constants_map[name] = initializer
+    return constants_map
+
+def replace_constants_in_code(decompiled_code, constants_map):
+    if not constants_map:
+        return decompiled_code
+    sorted_names = sorted(constants_map.keys(), key=len, reverse=True)
+    for const_name in sorted_names:
+        const_value = constants_map[const_name]
+        pattern = r'\b' + re.escape(const_name) + r'\b'
+        decompiled_code = re.sub(pattern, const_value, decompiled_code)
+    return decompiled_code
+
+def build_global_symbols_map(symbol_table):
+    global_symbols = {}
+    for symbol in symbol_table.getAllSymbols(True):
+        if symbol.getSymbolType().toString() == "Label":
+            addr_str = str(symbol.getAddress()).lower()
+            global_symbols[addr_str] = {
+                'name': symbol.getName(),
+                'address': symbol.getAddress()
+            }
+    return global_symbols
+
+def generate_assembly_code_rich(currentProgram, func, symbol_table, reference_manager, program_listing, string_map, global_symbols):
+    function_manager = currentProgram.getFunctionManager()
+    asm_lines = []
+    for instr in program_listing.getInstructions(func.getBody(), True):
+        addr = instr.getAddress()
+        mnemonic = instr.getMnemonicString()
+        instr_str = str(instr)
+
+        # Build the basic instruction line
+        line = "// %s: %s" % (addr, instr_str)
+
+        # Collect end-of-line comments
+        eol_comments = []
+
+        # Process each operand for context
+        for i in range(instr.getNumOperands()):
+            operand_type = instr.getOperandType(i)
+            operand_repr = instr.getDefaultOperandRepresentation(i)
+
+            # Check if this operand references an address
+            ref_addr = None
+            try:
+                ref_addr = instr.getAddress(i)
+            except:
+                pass
+            if ref_addr:
+                ref_addr_str = str(ref_addr).lower()
+                ref_addr_hex = "%08x" % ref_addr.getOffset()
+
+                # Check for string at this address
+                if ref_addr_hex in string_map:
+                    string_val = string_map[ref_addr_hex]
+                    # Truncate long strings
+                    if len(string_val) > 40:
+                        string_val = string_val[:37] + "..."
+                    eol_comments.append('= "%s"' % string_val)
+
+                # Check for global variable
+                elif ref_addr_str in global_symbols:
+                    global_name = global_symbols[ref_addr_str]['name']
+                    # Try to get the data at this address for type info
+                    data_at = program_listing.getDefinedDataAt(ref_addr)
+                    if data_at:
+                        data_type = data_at.getDataType()
+                        eol_comments.append('%s %s' % (data_type.getName(), global_name))
+                    else:
+                        eol_comments.append(global_name)
+
+                # Check for function (for CALL instructions)
+                elif mnemonic == "CALL":
+                    target_func = function_manager.getFunctionAt(ref_addr)
+                    if target_func:
+                        # Get function signature
+                        ret_type = target_func.getReturnType()
+                        func_name = target_func.getName()
+                        params = target_func.getParameters()
+                        param_strs = []
+                        for param in params[:4]:  # Limit to first 4 params
+                            param_strs.append("%s %s" % (param.getDataType().getName(), param.getName()))
+                        if len(params) > 4:
+                            param_strs.append("...")
+                        sig = "%s %s(%s)" % (ret_type.getName(), func_name, ", ".join(param_strs))
+                        eol_comments.append(sig)
+                        # Also update the instruction representation
+                        addr_hex = "0x%s" % ref_addr
+                        if addr_hex in line:
+                            line = line.replace(addr_hex, func_name)
+
+        # Check for memory references that might be globals
+        refs_from = reference_manager.getReferencesFrom(addr)
+        for ref in refs_from:
+            to_addr = ref.getToAddress()
+            to_addr_str = str(to_addr).lower()
+            to_addr_hex = "%08x" % to_addr.getOffset()
+
+            # Check for string
+            if to_addr_hex in string_map and not any('= "' in c for c in eol_comments):
+                string_val = string_map[to_addr_hex]
+                if len(string_val) > 40:
+                    string_val = string_val[:37] + "..."
+                eol_comments.append('= "%s"' % string_val)
+
+            # Check for defined data (globals)
+            elif to_addr_str in global_symbols:
+                global_name = global_symbols[to_addr_str]['name']
+                if not any(global_name in c for c in eol_comments):
+                    data_at = program_listing.getDefinedDataAt(to_addr)
+                    if data_at:
+                        # Try to get the value
+                        try:
+                            value = data_at.getValue()
+                            if value is not None:
+                                eol_comments.append('%s = %s' % (global_name, str(value)))
+                            else:
+                                eol_comments.append(global_name)
+                        except:
+                            eol_comments.append(global_name)
+
+        # Add end-of-line comment if we have context
+        if eol_comments:
+            unique_comments = []
+            seen = set()
+            for c in eol_comments:
+                if c not in seen:
+                    unique_comments.append(c)
+                    seen.add(c)
+            line += "  ; " + " | ".join(unique_comments[:3])  # Limit to 3 comments
+
+        # Add symbol label for instruction if it has one
+        symbol = symbol_table.getPrimarySymbol(addr)
+        if symbol and symbol.getName() != instr.toString():
+            line += "\n//   Label: %s" % symbol.getName()
+
+        # Add cross references (keep for completeness but make them less verbose)
+        # Only add significant refs (calls, jumps)
+        for ref in refs_from:
+            ref_type = str(ref.getReferenceType())
+            if ref_type in ("UNCONDITIONAL_CALL", "CONDITIONAL_CALL", "UNCONDITIONAL_JUMP", "CONDITIONAL_JUMP"):
+                line += "\n//   XREF to: %s (%s)" % (ref.getToAddress(), ref_type)
+
+        # Append assembly line
+        asm_lines.append(line + "\n")
+    return "".join(asm_lines)
 
 def generate_assembly_code(func, symbol_table, reference_manager, program_listing):
 
@@ -1469,6 +1871,256 @@ def create_pseudocode_file_content(
         calls_section = calls_section.rstrip(),
         func_decomp_code = safe_decompiled,
         func_asm_code = safe_assembly).strip()
+
+# =============================================================================
+# New Export Functions: Lean .cpp, .asm, and .json
+# =============================================================================
+
+def create_lean_cpp_content(func_name, func_addr, func_addr_range, func_convention,
+                            func_signature, decompiled_code):
+    safe_decompiled = sanitize_for_ascii(decompiled_code)
+    safe_signature = sanitize_for_ascii(func_signature)
+    safe_func_name = sanitize_for_ascii(func_name)
+    safe_convention = sanitize_for_ascii(func_convention or "unknown")
+    safe_addr_range = sanitize_for_ascii(str(func_addr_range))
+    template_parts = [
+        "// Name: {func_name}",
+        "// Address: {func_addr}",
+        "// Address Range: {func_addr_range}",
+        "// Convention: {func_convention}",
+        "// Signature: {func_signature}",
+        "",
+        "#include \"nocturne.h\"",
+        "{func_decomp_code}"
+    ]
+    template = "\n".join(template_parts)
+    return template.format(
+        func_name = safe_func_name,
+        func_addr = func_addr,
+        func_addr_range = safe_addr_range,
+        func_convention = safe_convention,
+        func_signature = safe_signature,
+        func_decomp_code = safe_decompiled).strip()
+
+def create_asm_content(func_name, func_addr, func_addr_range, func_signature, func_convention,
+                       assembly_code, stack_frame, func_xrefs, func_globals, func_calls):
+    safe_func_name = sanitize_for_ascii(func_name)
+    safe_assembly = sanitize_for_ascii(assembly_code)
+    safe_addr_range = sanitize_for_ascii(str(func_addr_range))
+    safe_signature = sanitize_for_ascii(func_signature) if func_signature else "unknown"
+    asm_lines = []
+
+    # =========================================================================
+    # Function Header Block (like Ghidra's function header)
+    # =========================================================================
+    asm_lines.append("; " + "*" * 77)
+    asm_lines.append("; " + " " * 30 + "FUNCTION")
+    asm_lines.append("; " + "*" * 77)
+    asm_lines.append("; %s %s" % (func_convention or "__cdecl", safe_signature))
+    asm_lines.append(";")
+
+    # Parameters and locals from stack frame
+    if stack_frame:
+        params = []
+        locals_list = []
+        for var in stack_frame.get('variables', []):
+            var_type = var.get('type', 'undefined4')
+            var_name = var.get('name', 'unknown')
+            var_offset = var.get('offset', 0)
+            var_size = var.get('size', 4)
+
+            # Format: type    Stack[offset]:size  name
+            if var_offset >= 0:
+                # Parameters (positive offsets)
+                params.append("; %-16s Stack[0x%x]:%d   %s" % (var_type, var_offset, var_size, var_name))
+            else:
+                # Locals (negative offsets)
+                locals_list.append("; %-16s Stack[-0x%x]:%d  %s" % (var_type, abs(var_offset), var_size, var_name))
+
+        if params:
+            asm_lines.append("; Parameters:")
+            asm_lines.extend(params)
+        if locals_list:
+            asm_lines.append("; Local Variables:")
+            asm_lines.extend(locals_list)
+        asm_lines.append(";")
+
+    # Cross-references to this function
+    if func_xrefs:
+        xref_count = len(func_xrefs)
+        asm_lines.append("; XREF[%d]:" % xref_count)
+        for xref in func_xrefs[:10]:
+            asm_lines.append(";   %s at %s" % (sanitize_for_ascii(xref.get('name', 'unknown')), xref.get('from_addr', '?')))
+        if xref_count > 10:
+            asm_lines.append(";   ... and %d more" % (xref_count - 10))
+        asm_lines.append(";")
+
+    # Globals referenced
+    if func_globals:
+        asm_lines.append("; Referenced Globals:")
+        for glob in func_globals[:15]:
+            glob_type = sanitize_for_ascii(glob.get('type', 'undefined'))
+            glob_name = sanitize_for_ascii(glob.get('name', 'unknown'))
+            glob_value = glob.get('value')
+            if glob_value:
+                asm_lines.append(";   %s %s = %s" % (glob_type, glob_name, sanitize_for_ascii(str(glob_value))))
+            else:
+                asm_lines.append(";   %s %s" % (glob_type, glob_name))
+        if len(func_globals) > 15:
+            asm_lines.append(";   ... and %d more" % (len(func_globals) - 15))
+        asm_lines.append(";")
+
+    # Functions called
+    if func_calls:
+        asm_lines.append("; Called Functions:")
+        for call in func_calls[:15]:
+            asm_lines.append(";   %s" % sanitize_for_ascii(call.get('name', 'unknown')))
+        if len(func_calls) > 15:
+            asm_lines.append(";   ... and %d more" % (len(func_calls) - 15))
+        asm_lines.append(";")
+
+    asm_lines.append("; " + "*" * 77)
+    asm_lines.append("")
+    asm_lines.append("section .text")
+    asm_lines.append("")
+
+    # =========================================================================
+    # Assembly Instructions
+    # =========================================================================
+    for line in safe_assembly.split('\n'):
+        line = line.strip()
+        if not line:
+            asm_lines.append("")
+            continue
+
+        # Remove the leading // from assembly lines
+        if line.startswith('// '):
+            line = line[3:]
+        elif line.startswith('//'):
+            line = line[2:]
+
+        # Parse the line - format is usually "ADDR: INSTR" or "  Label: NAME" or "  XREF to: ..."
+        if line.startswith('Label: '):
+            # Convert label to asm format
+            label_name = line[7:]
+            asm_lines.append("")
+            asm_lines.append("%s:" % label_name)
+        elif line.startswith('XREF to: '):
+            # Keep XREFs as comments
+            asm_lines.append("        ; %s" % line)
+        elif ':' in line and not line.startswith(' '):
+            # This is an instruction line like "004088b0: PUSH EBX  ; comment"
+            # Split address from rest
+            colon_pos = line.find(': ')
+            if colon_pos > 0:
+                addr_part = line[:colon_pos].strip()
+                rest = line[colon_pos + 2:]
+
+                # Check if there's an end-of-line comment
+                if '  ; ' in rest:
+                    instr_part, comment_part = rest.split('  ; ', 1)
+                    # Format: instruction with address comment, then context comment
+                    asm_lines.append("    %-35s ; %s | %s" % (instr_part.strip(), addr_part, comment_part))
+                else:
+                    # Just instruction and address
+                    asm_lines.append("    %-35s ; %s" % (rest.strip(), addr_part))
+            else:
+                asm_lines.append("    %s" % line)
+        else:
+            # Other content, keep as is or as comment
+            if line.strip():
+                asm_lines.append("        ; %s" % line)
+
+    return "\n".join(asm_lines)
+
+def create_function_json(func_name, func_addr, func_addr_range, func_convention,
+                         func_signature, decompiled_code, assembly_code,
+                         func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity):
+
+    # Parse address range into structured format
+    addr_range_str = str(func_addr_range)
+
+    # Extract ranges from format like "[[0055a810, 0055c9e6] [0055ca7e, 0055fef3]]"
+    ranges = []
+    range_matches = re.findall(r'\[([0-9a-fA-F]+),\s*([0-9a-fA-F]+)\]', addr_range_str)
+    for start, end in range_matches:
+        ranges.append([start.strip(), end.strip()])
+    function_json = {
+        "function": {
+            "name": func_name,
+            "address": func_addr,
+            "address_range": ranges if ranges else [[func_addr, func_addr]],
+            "convention": func_convention or "unknown",
+            "signature": func_signature
+        },
+        "stack_frame": stack_frame,
+        "suspects": suspects,
+        "complexity": complexity,
+        "cross_references": func_xrefs if func_xrefs else [],
+        "globals": func_globals if func_globals else [],
+        "function_calls": func_calls if func_calls else []
+    }
+    return function_json
+
+def write_function_files(output_base_path, source_filename, func_name, func_addr,
+                         func_addr_range, func_convention, func_signature,
+                         decompiled_code, assembly_code, func_xrefs, func_globals,
+                         func_calls, stack_frame, suspects, complexity):
+
+    # Determine base path without extension
+    if source_filename.endswith('.cpp'):
+        base_name = source_filename[:-4]
+    elif source_filename.endswith('.c'):
+        base_name = source_filename[:-2]
+    else:
+        base_name = source_filename
+
+    cpp_path = os.path.join(output_base_path, source_filename)
+    asm_path = os.path.join(output_base_path, base_name + '.asm')
+    json_path = os.path.join(output_base_path, base_name + '.json')
+
+    # Ensure directory exists
+    make_dirs(os.path.dirname(cpp_path))
+    files_written = []
+
+    # Write lean .cpp file
+    try:
+        cpp_content = create_lean_cpp_content(
+            func_name, func_addr, func_addr_range, func_convention,
+            func_signature, decompiled_code)
+        with open(cpp_path, 'w') as f:
+            f.write(cpp_content + "\n")
+        files_written.append(cpp_path)
+        log_info("Wrote lean .cpp file: %s" % source_filename)
+    except Exception as e:
+        log_info("Failed to write .cpp file %s: %s" % (source_filename, str(e)))
+        return None
+
+    # Write .asm file with rich context
+    try:
+        asm_content = create_asm_content(
+            func_name, func_addr, func_addr_range, func_signature, func_convention,
+            assembly_code, stack_frame, func_xrefs, func_globals, func_calls)
+        with open(asm_path, 'w') as f:
+            f.write(asm_content + "\n")
+        files_written.append(asm_path)
+        log_info("Wrote .asm file: %s" % (base_name + '.asm'))
+    except Exception as e:
+        log_info("Failed to write .asm file %s: %s" % (base_name + '.asm', str(e)))
+
+    # Write .json file
+    try:
+        function_json = create_function_json(
+            func_name, func_addr, func_addr_range, func_convention,
+            func_signature, decompiled_code, assembly_code,
+            func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity)
+        with open(json_path, 'w') as f:
+            json.dump(function_json, f, indent=2)
+        files_written.append(json_path)
+        log_info("Wrote .json file: %s" % (base_name + '.json'))
+    except Exception as e:
+        log_info("Failed to write .json file %s: %s" % (base_name + '.json', str(e)))
+    return tuple(files_written) if files_written else None
 
 def extract_globals_and_constants(currentProgram):
     globals_list = []
@@ -2095,17 +2747,185 @@ def export_function_prototypes(currentProgram, pseudocode_dir, function_groups):
             log_info("Failed to write prototype header %s: %s" % (virtual_filename, str(e)))
     log_info("Created %d function prototype headers" % headers_created)
 
+def generate_analysis_report(pseudocode_src_dir, output_path):
+
+    # Find all JSON files
+    json_files = []
+    for root, dirs, files in os.walk(pseudocode_src_dir):
+        for filename in files:
+            if filename.endswith('.json'):
+                json_files.append(os.path.join(root, filename))
+    log_info("Found %d JSON files for analysis report" % len(json_files))
+
+    # Collect data from all JSON files
+    functions_data = []
+    suspect_type_counts = defaultdict(int)
+    total_suspects = 0
+    for json_file in json_files:
+        try:
+            with open(json_file, 'r') as f:
+                data = json.load(f)
+                functions_data.append({
+                    'json_path': json_file,
+                    'cpp_path': json_file.replace('.json', '.cpp'),
+                    'asm_path': json_file.replace('.json', '.asm'),
+                    'function': data.get('function', {}),
+                    'complexity': data.get('complexity', {}),
+                    'suspects': data.get('suspects', [])
+                })
+                for suspect in data.get('suspects', []):
+                    suspect_type_counts[suspect.get('type', 'unknown')] += 1
+                    total_suspects += 1
+        except Exception as e:
+            log_info("Warning: Failed to read %s: %s" % (json_file, str(e)))
+    if not functions_data:
+        log_info("No function data found for report")
+        return
+
+    # Sort by complexity score
+    functions_data.sort(key=lambda x: x.get('complexity', {}).get('complexity_score', 0))
+
+    # Calculate statistics
+    total_functions = len(functions_data)
+    zero_suspect_funcs = [f for f in functions_data if f.get('complexity', {}).get('suspect_count', 0) == 0]
+    zero_suspect_count = len(zero_suspect_funcs)
+    line_counts = [f.get('complexity', {}).get('pseudocode_lines', 0) for f in functions_data]
+    avg_lines = sum(line_counts) / len(line_counts) if line_counts else 0
+    max_lines = max(line_counts) if line_counts else 0
+    min_lines = min(line_counts) if line_counts else 0
+    scores = [f.get('complexity', {}).get('complexity_score', 0) for f in functions_data]
+    avg_score = sum(scores) / len(scores) if scores else 0
+
+    # Generate text report
+    report_lines = []
+    report_lines.append("=" * 80)
+    report_lines.append("NOCTURNE DECOMPILATION ANALYSIS REPORT")
+    report_lines.append("Generated: %s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    report_lines.append("=" * 80)
+    report_lines.append("")
+    report_lines.append("SUMMARY")
+    report_lines.append("-" * 40)
+    report_lines.append("Total functions: %d" % total_functions)
+    report_lines.append("Functions with zero suspects: %d (%.1f%%)" % (
+        zero_suspect_count, (zero_suspect_count * 100.0 / total_functions) if total_functions > 0 else 0))
+    report_lines.append("Functions with suspects: %d (%.1f%%)" % (
+        total_functions - zero_suspect_count,
+        ((total_functions - zero_suspect_count) * 100.0 / total_functions) if total_functions > 0 else 0))
+    report_lines.append("")
+    report_lines.append("Total suspect patterns: %d" % total_suspects)
+    report_lines.append("Average suspects per function: %.2f" % (total_suspects / total_functions if total_functions > 0 else 0))
+    report_lines.append("")
+    report_lines.append("Pseudocode lines:")
+    report_lines.append("  Min: %d, Max: %d, Average: %.1f" % (min_lines, max_lines, avg_lines))
+    report_lines.append("")
+    report_lines.append("Average complexity score: %.1f" % avg_score)
+    report_lines.append("")
+    report_lines.append("SUSPECT PATTERN BREAKDOWN")
+    report_lines.append("-" * 40)
+    for stype, count in sorted(suspect_type_counts.items(), key=lambda x: -x[1]):
+        report_lines.append("  %-25s %d" % (stype, count))
+    report_lines.append("")
+
+    # Sort zero-suspect functions by line count
+    report_lines.append("EASIEST FUNCTIONS (Zero Suspects, Sorted by Size)")
+    report_lines.append("-" * 40)
+    zero_suspect_funcs.sort(key=lambda x: x.get('complexity', {}).get('pseudocode_lines', 0))
+    for func in zero_suspect_funcs[:50]:
+        func_info = func.get('function', {})
+        complexity = func.get('complexity', {})
+        report_lines.append("  %s: %s (%d lines)" % (
+            func_info.get('address', '?'),
+            func_info.get('name', 'unknown'),
+            complexity.get('pseudocode_lines', 0)))
+    if len(zero_suspect_funcs) > 50:
+        report_lines.append("  ... and %d more" % (len(zero_suspect_funcs) - 50))
+    report_lines.append("")
+
+    # Get top 30 by complexity score (reversed)
+    report_lines.append("MOST COMPLEX FUNCTIONS (Highest Complexity Score)")
+    report_lines.append("-" * 40)
+    complex_funcs = sorted(functions_data, key=lambda x: x.get('complexity', {}).get('complexity_score', 0), reverse=True)
+    for func in complex_funcs[:30]:
+        func_info = func.get('function', {})
+        complexity = func.get('complexity', {})
+        report_lines.append("  %s: %s (score: %d, suspects: %d, lines: %d)" % (
+            func_info.get('address', '?'),
+            func_info.get('name', 'unknown'),
+            complexity.get('complexity_score', 0),
+            complexity.get('suspect_count', 0),
+            complexity.get('pseudocode_lines', 0)))
+    report_lines.append("")
+
+    # Group functions by their primary suspect type
+    report_lines.append("FUNCTIONS BY SUSPECT TYPE")
+    report_lines.append("-" * 40)
+    for stype in sorted(suspect_type_counts.keys(), key=lambda x: -suspect_type_counts[x]):
+        funcs_with_type = [f for f in functions_data
+                          if stype in f.get('complexity', {}).get('suspect_types', [])]
+        report_lines.append("")
+        report_lines.append("  %s (%d functions):" % (stype, len(funcs_with_type)))
+        for func in funcs_with_type[:10]:
+            func_info = func.get('function', {})
+            report_lines.append("    %s: %s" % (func_info.get('address', '?'), func_info.get('name', 'unknown')))
+        if len(funcs_with_type) > 10:
+            report_lines.append("    ... and %d more" % (len(funcs_with_type) - 10))
+
+    # Write text report
+    report_path = os.path.join(output_path, "analysis_report.txt")
+    try:
+        with open(report_path, 'w') as f:
+            f.write("\n".join(report_lines))
+        log_info("Wrote analysis report: %s" % report_path)
+    except Exception as e:
+        log_info("Failed to write analysis report: %s" % str(e))
+
+    # Find the git repo root (go up from output_path until we find .git)
+    repo_root = output_path
+    while repo_root and repo_root != '/':
+        if os.path.exists(os.path.join(repo_root, '.git')):
+            break
+        repo_root = os.path.dirname(repo_root)
+    if not repo_root or repo_root == '/':
+        repo_root = output_path
+        log_info("Warning: Could not find git repo root, using output_path for relative paths")
+
+    def make_relative(abs_path):
+        if abs_path and abs_path.startswith(repo_root):
+            rel = os.path.relpath(abs_path, repo_root)
+            return rel
+        return abs_path
+
+    # Generate file lists for easy batch processing
+    # List of zero-suspect function .cpp paths (sorted by name for consistency)
+    zero_suspect_list_path = os.path.join(output_path, "zero_suspect_functions.txt")
+    try:
+        # Sort by function name
+        zero_suspect_funcs_sorted = sorted(zero_suspect_funcs,
+            key=lambda x: x.get('function', {}).get('name', ''))
+        with open(zero_suspect_list_path, 'w') as f:
+            for func in zero_suspect_funcs_sorted:
+                rel_path = make_relative(func.get('cpp_path', ''))
+                f.write(rel_path + '\n')
+        log_info("Wrote zero-suspect function list: %s" % zero_suspect_list_path)
+    except Exception as e:
+        log_info("Failed to write zero-suspect list: %s" % str(e))
+
+    # List of all functions sorted by complexity (easiest first)
+    all_funcs_list_path = os.path.join(output_path, "functions_by_complexity.txt")
+    try:
+        with open(all_funcs_list_path, 'w') as f:
+            for func in functions_data:
+                rel_path = make_relative(func.get('cpp_path', ''))
+                f.write(rel_path + '\n')
+        log_info("Wrote functions-by-complexity list: %s" % all_funcs_list_path)
+    except Exception as e:
+        log_info("Failed to write functions-by-complexity list: %s" % str(e))
+
 def export_pseudocode(currentProgram, path):
 
     # Clean up existing pseudocode files first to handle renamed functions
     log_info("Cleaning up existing pseudocode files before export")
     delete_pseudocode(currentProgram, path)
-
-    # Initialize decompiler interface
-    log_info("Initializing decompiler interface")
-    interface = DecompInterface()
-    interface.setOptions(DecompileOptions())
-    interface.openProgram(currentProgram)
 
     # Create output directory
     pseudocode_dir = os.path.join(path, "pseudocode")
@@ -2184,79 +3004,108 @@ def export_pseudocode(currentProgram, path):
     defined_data = program_listing.getDefinedData(True)
     string_map = build_string_map(defined_data)
 
-    # Process all functions
+    # Build constants map for inline replacement of constant values
+    log_info("Building constants map for inline replacement")
+    constants_map = build_constants_map(constants_list)
+    log_info("Built constants map with %d inline-able constants" % len(constants_map))
+
+    # Build global symbols map once (expensive operation - don't do per-function)
+    log_info("Building global symbols map for assembly annotations")
+    global_symbols = build_global_symbols_map(symbol_table)
+    log_info("Built global symbols map with %d symbols" % len(global_symbols))
+
+    # Collect all non-external functions first
+    log_info("Collecting functions for parallel processing")
+    functions_to_process = []
+    for func in function_manager.getFunctions(True):
+        if not is_function_external(currentProgram, func):
+            functions_to_process.append(func)
+    log_info("Found %d functions to process" % len(functions_to_process))
+
+    # Determine number of threads
+    num_threads = min(DEFAULT_NUM_THREADS, max(1, len(functions_to_process)))
+    log_info("Using %d worker threads for parallel processing" % num_threads)
+
+    # Create thread-local decompiler storage
+    decompiler_tls = DecompilerThreadLocal(currentProgram)
+
+    # Create thread pool executor
+    executor = Executors.newFixedThreadPool(num_threads)
+
+    # Submit all function processing tasks
+    log_info("Submitting %d function processing tasks" % len(functions_to_process))
+    futures = []
+    for func in functions_to_process:
+        processor = FunctionProcessor(
+            func, currentProgram, decompiler_tls, pseudocode_src_dir,
+            symbol_table, reference_manager, program_listing,
+            string_map, constants_map, global_symbols)
+        futures.append(executor.submit(processor))
+
+    # Collect results
     files_created = 0
     function_groups = {}
-    log_info("Processing functions for pseudocode generation")
-    for func in function_manager.getFunctions(True):
-
-        # Skip external functions
-        if is_function_external(currentProgram, func):
-            continue
-
-        # Get function info
-        func_name = func.getName()
-        func_addr = str(func.getEntryPoint())
-        func_signature = func.getPrototypeString(True, False)
-        func_addr_range = func.getBody()
-        func_convention = func.getCallingConventionName()
-        log_info("Processing function: %s at %s" % (func_name, func_addr))
-
-        # Group function for prototype generation
-        virtual_filename = extract_virtual_filename(func_name)
-        if virtual_filename:
-            if virtual_filename not in function_groups:
-                function_groups[virtual_filename] = []
-            function_groups[virtual_filename].append({
-                'name': func_name,
-                'address': func_addr,
-                'signature': func_signature
-            })
-            log_info("Grouped function %s -> %s" % (func_name, virtual_filename))
-        else:
-            log_info("Skipped function (no virtual file match): %s" % func_name)
-
-        # Get function cross-references
-        func_xrefs = get_function_xrefs(currentProgram, func)
-
-        # Get function globals
-        func_globals = get_function_globals(currentProgram, func)
-
-        # Get function calls
-        func_calls = get_function_calls(currentProgram, func)
-
-        # Generate decompiled code
-        decompiled_code = generate_decompilation_code(
-            interface, func, symbol_table, string_map, timeout=60)
-
-        # Generate assembly code for reference
-        assembly_code = generate_assembly_code(func, symbol_table, reference_manager, program_listing)
-
-        # Determine source file name
-        source_filename = generate_source_filename(func_name, decompiled_code)
-
-        # Create the pseudocode file content
-        file_content = create_pseudocode_file_content(
-            func_name, func_addr, func_addr_range, func_convention,
-            func_signature, decompiled_code, assembly_code, func_xrefs, func_globals, func_calls)
-
-        # Write pseudocode file
-        output_path = os.path.join(pseudocode_src_dir, source_filename)
-
-        # Ensure the directory exists
-        make_dirs(os.path.dirname(output_path))
-
-        # Write pseudocode
+    total_suspects = 0
+    zero_suspect_count = 0
+    errors = []
+    log_info("Waiting for %d tasks to complete..." % len(futures))
+    processed_count = 0
+    for future in futures:
         try:
-            with open(output_path, 'w') as f:
-                f.write(file_content + "\n")
-            log_info("Wrote pseudocode file: %s" % source_filename)
-            files_created += 1
+            result = future.get(300, TimeUnit.SECONDS)  # 5 minute timeout per function
+            processed_count += 1
+            if result.success:
+                files_created += 1
+                total_suspects += result.suspect_count
+                if result.suspect_count == 0:
+                    zero_suspect_count += 1
+                elif result.suspect_count > 0:
+                    log_info("  Found %d suspect patterns in %s" % (result.suspect_count, result.func_name))
+
+                # Collect function groups for prototype generation
+                if result.virtual_filename and result.function_group_entry:
+                    if result.virtual_filename not in function_groups:
+                        function_groups[result.virtual_filename] = []
+                    function_groups[result.virtual_filename].append(result.function_group_entry)
+            else:
+                if result.error:
+                    errors.append("Failed %s: %s" % (result.func_name, result.error))
+                else:
+                    log_info("Failed to write files for function: %s" % result.func_name)
+
+            # Progress logging every 100 functions
+            if processed_count % 100 == 0:
+                log_info("Progress: %d/%d functions processed" % (processed_count, len(futures)))
         except Exception as e:
-            log_info("Failed to write pseudocode file %s: %s" % (source_filename, str(e)))
+            errors.append("Task exception: %s" % str(e))
+
+    # Shutdown executor
+    executor.shutdown()
+
+    # Log any errors
+    if errors:
+        log_info("Encountered %d errors during processing:" % len(errors))
+        for err in errors[:10]:  # Show first 10 errors
+            log_info("  %s" % err)
+        if len(errors) > 10:
+            log_info("  ... and %d more errors" % (len(errors) - 10))
+
+    # Log summary statistics
+    log_info("=" * 60)
+    log_info("EXPORT SUMMARY")
+    log_info("=" * 60)
+    log_info("Total functions processed: %d" % files_created)
+    log_info("Total suspect patterns found: %d" % total_suspects)
+    log_info("Functions with zero suspects: %d (%.1f%%)" % (
+        zero_suspect_count,
+        (zero_suspect_count * 100.0 / files_created) if files_created > 0 else 0))
 
     # Generate function prototype headers
     log_info("Generating function prototype headers")
     log_info("Found %d function groups: %s" % (len(function_groups), list(function_groups.keys())))
     export_function_prototypes(currentProgram, pseudocode_dir, function_groups)
+
+    # Generate analysis report
+    log_info("Generating analysis report...")
+    generate_analysis_report(pseudocode_src_dir, path)
     log_info("Export complete - created %d pseudocode files" % files_created)
