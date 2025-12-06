@@ -1,0 +1,471 @@
+# Output file generation for pseudocode export
+# Provides file writing for .cpp, .asm, and .json files
+
+import os
+import re
+import json
+from ghidra_annotations.util import make_dirs
+from ghidra_annotations.util.log import log_info
+from ghidra_annotations.annotations.pseudocode.strings import sanitize_for_ascii
+from ghidra_annotations.annotations.pseudocode.functions import (
+    extract_virtual_filename, extract_cpp_function_name, generate_function_prototype
+)
+
+
+def create_pseudocode_file_content(
+    func_name, func_addr, func_addr_range, func_convention,
+    func_signature, decompiled_code, assembly_code,
+    func_xrefs, func_globals, func_calls):
+    """Create the content for a combined pseudocode file (legacy format).
+
+    Args:
+        func_name: Function name
+        func_addr: Function address
+        func_addr_range: Function address range
+        func_convention: Calling convention
+        func_signature: Function signature
+        decompiled_code: Decompiled C code
+        assembly_code: Assembly code
+        func_xrefs: Cross-references
+        func_globals: Referenced globals
+        func_calls: Called functions
+
+    Returns:
+        File content as string
+    """
+    # Build XREFS section
+    xrefs_section = ""
+    if func_xrefs:
+        xrefs_section = "// Cross-references:\n"
+        for xref in func_xrefs:
+            xref_line = "//   %s (%s) at %s [%s]\n" % (
+                sanitize_for_ascii(xref['name']),
+                xref['addr'],
+                xref['from_addr'],
+                xref['type'])
+            xrefs_section += xref_line
+
+    # Build GLOBALS section
+    globals_section = ""
+    if func_globals:
+        globals_section = "// Globals:\n"
+        for global_ref in func_globals:
+            if global_ref.get('value') is not None:
+                global_line = "//   %s %s = %s\n" % (
+                    sanitize_for_ascii(global_ref['type']),
+                    sanitize_for_ascii(global_ref['name']),
+                    sanitize_for_ascii(global_ref['value']))
+            else:
+                global_line = "//   %s %s\n" % (
+                    sanitize_for_ascii(global_ref['type']),
+                    sanitize_for_ascii(global_ref['name']))
+            globals_section += global_line
+
+    # Build FUNCTION CALLS section
+    calls_section = ""
+    if func_calls:
+        calls_section = "// Function calls:\n"
+        for call in func_calls:
+            call_line = "//   %s\n" % sanitize_for_ascii(call['name'])
+            calls_section += call_line
+
+    # Function template - only include sections that have content
+    template_parts = [
+        "// Name: {func_name}",
+        "// Address: {func_addr}",
+        "// Address Range: {func_addr_range}",
+        "// Convention: {func_convention}",
+        "// Signature: {func_signature}"
+    ]
+
+    # Add sections only if they have content
+    if xrefs_section:
+        template_parts.append("{xrefs_section}")
+    if globals_section:
+        template_parts.append("{globals_section}")
+    if calls_section:
+        template_parts.append("{calls_section}")
+
+    # Add the rest of the template
+    template_parts.extend([
+        "",
+        "#include \"nocturne.h\"",
+        "{func_decomp_code}",
+        "// Assembly code:",
+        "{func_asm_code}"
+    ])
+    template = "\n".join(template_parts)
+
+    # Format from template
+    safe_decompiled = sanitize_for_ascii(decompiled_code)
+    safe_assembly = sanitize_for_ascii(assembly_code)
+    safe_signature = sanitize_for_ascii(func_signature)
+    safe_func_name = sanitize_for_ascii(func_name)
+    safe_convention = sanitize_for_ascii(func_convention or "unknown")
+    safe_addr_range = sanitize_for_ascii(str(func_addr_range))
+    return template.format(
+        func_name=safe_func_name,
+        func_addr=func_addr,
+        func_addr_range=safe_addr_range,
+        func_convention=safe_convention,
+        func_signature=safe_signature,
+        xrefs_section=xrefs_section.rstrip(),
+        globals_section=globals_section.rstrip(),
+        calls_section=calls_section.rstrip(),
+        func_decomp_code=safe_decompiled,
+        func_asm_code=safe_assembly).strip()
+
+
+def create_lean_cpp_content(func_name, func_addr, func_addr_range, func_convention,
+                            func_signature, decompiled_code):
+    """Create lean .cpp file content with just the pseudocode.
+
+    Args:
+        func_name: Function name
+        func_addr: Function address
+        func_addr_range: Function address range
+        func_convention: Calling convention
+        func_signature: Function signature
+        decompiled_code: Decompiled C code
+
+    Returns:
+        File content as string
+    """
+    safe_decompiled = sanitize_for_ascii(decompiled_code)
+    safe_signature = sanitize_for_ascii(func_signature)
+    safe_func_name = sanitize_for_ascii(func_name)
+    safe_convention = sanitize_for_ascii(func_convention or "unknown")
+    safe_addr_range = sanitize_for_ascii(str(func_addr_range))
+    template_parts = [
+        "// Name: {func_name}",
+        "// Address: {func_addr}",
+        "// Address Range: {func_addr_range}",
+        "// Convention: {func_convention}",
+        "// Signature: {func_signature}",
+        "",
+        "#include \"nocturne.h\"",
+        "{func_decomp_code}"
+    ]
+    template = "\n".join(template_parts)
+    return template.format(
+        func_name=safe_func_name,
+        func_addr=func_addr,
+        func_addr_range=safe_addr_range,
+        func_convention=safe_convention,
+        func_signature=safe_signature,
+        func_decomp_code=safe_decompiled).strip()
+
+
+def create_asm_content(func_name, func_addr, func_addr_range, func_signature, func_convention,
+                       assembly_code, stack_frame, func_xrefs, func_globals, func_calls):
+    """Create richly annotated .asm file content.
+
+    Args:
+        func_name: Function name
+        func_addr: Function address
+        func_addr_range: Function address range
+        func_signature: Function signature
+        func_convention: Calling convention
+        assembly_code: Assembly code
+        stack_frame: Stack frame info
+        func_xrefs: Cross-references
+        func_globals: Referenced globals
+        func_calls: Called functions
+
+    Returns:
+        File content as string
+    """
+    safe_func_name = sanitize_for_ascii(func_name)
+    safe_assembly = sanitize_for_ascii(assembly_code)
+    safe_addr_range = sanitize_for_ascii(str(func_addr_range))
+    safe_signature = sanitize_for_ascii(func_signature) if func_signature else "unknown"
+    asm_lines = []
+
+    # Function Header Block
+    asm_lines.append("; " + "*" * 77)
+    asm_lines.append("; " + " " * 30 + "FUNCTION")
+    asm_lines.append("; " + "*" * 77)
+    asm_lines.append("; %s %s" % (func_convention or "__cdecl", safe_signature))
+    asm_lines.append(";")
+
+    # Parameters and locals from stack frame
+    if stack_frame:
+        params = []
+        locals_list = []
+        for var in stack_frame.get('variables', []):
+            var_type = var.get('type', 'undefined4')
+            var_name = var.get('name', 'unknown')
+            var_offset = var.get('offset', 0)
+            var_size = var.get('size', 4)
+
+            if var_offset >= 0:
+                params.append("; %-16s Stack[0x%x]:%d   %s" % (var_type, var_offset, var_size, var_name))
+            else:
+                locals_list.append("; %-16s Stack[-0x%x]:%d  %s" % (var_type, abs(var_offset), var_size, var_name))
+
+        if params:
+            asm_lines.append("; Parameters:")
+            asm_lines.extend(params)
+        if locals_list:
+            asm_lines.append("; Local Variables:")
+            asm_lines.extend(locals_list)
+        asm_lines.append(";")
+
+    # Cross-references to this function
+    if func_xrefs:
+        xref_count = len(func_xrefs)
+        asm_lines.append("; XREF[%d]:" % xref_count)
+        for xref in func_xrefs[:10]:
+            asm_lines.append(";   %s at %s" % (sanitize_for_ascii(xref.get('name', 'unknown')), xref.get('from_addr', '?')))
+        if xref_count > 10:
+            asm_lines.append(";   ... and %d more" % (xref_count - 10))
+        asm_lines.append(";")
+
+    # Globals referenced
+    if func_globals:
+        asm_lines.append("; Referenced Globals:")
+        for glob in func_globals[:15]:
+            glob_type = sanitize_for_ascii(glob.get('type', 'undefined'))
+            glob_name = sanitize_for_ascii(glob.get('name', 'unknown'))
+            glob_value = glob.get('value')
+            if glob_value:
+                asm_lines.append(";   %s %s = %s" % (glob_type, glob_name, sanitize_for_ascii(str(glob_value))))
+            else:
+                asm_lines.append(";   %s %s" % (glob_type, glob_name))
+        if len(func_globals) > 15:
+            asm_lines.append(";   ... and %d more" % (len(func_globals) - 15))
+        asm_lines.append(";")
+
+    # Functions called
+    if func_calls:
+        asm_lines.append("; Called Functions:")
+        for call in func_calls[:15]:
+            asm_lines.append(";   %s" % sanitize_for_ascii(call.get('name', 'unknown')))
+        if len(func_calls) > 15:
+            asm_lines.append(";   ... and %d more" % (len(func_calls) - 15))
+        asm_lines.append(";")
+
+    asm_lines.append("; " + "*" * 77)
+    asm_lines.append("")
+    asm_lines.append("section .text")
+    asm_lines.append("")
+
+    # Assembly Instructions
+    for line in safe_assembly.split('\n'):
+        line = line.strip()
+        if not line:
+            asm_lines.append("")
+            continue
+
+        # Remove the leading // from assembly lines
+        if line.startswith('// '):
+            line = line[3:]
+        elif line.startswith('//'):
+            line = line[2:]
+
+        # Parse the line
+        if line.startswith('Label: '):
+            label_name = line[7:]
+            asm_lines.append("")
+            asm_lines.append("%s:" % label_name)
+        elif line.startswith('XREF to: '):
+            asm_lines.append("        ; %s" % line)
+        elif ':' in line and not line.startswith(' '):
+            colon_pos = line.find(': ')
+            if colon_pos > 0:
+                addr_part = line[:colon_pos].strip()
+                rest = line[colon_pos + 2:]
+
+                if '  ; ' in rest:
+                    instr_part, comment_part = rest.split('  ; ', 1)
+                    asm_lines.append("    %-35s ; %s | %s" % (instr_part.strip(), addr_part, comment_part))
+                else:
+                    asm_lines.append("    %-35s ; %s" % (rest.strip(), addr_part))
+            else:
+                asm_lines.append("    %s" % line)
+        else:
+            if line.strip():
+                asm_lines.append("        ; %s" % line)
+
+    return "\n".join(asm_lines)
+
+
+def create_function_json(func_name, func_addr, func_addr_range, func_convention,
+                         func_signature, decompiled_code, assembly_code,
+                         func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity):
+    """Create function metadata JSON.
+
+    Args:
+        func_name: Function name
+        func_addr: Function address
+        func_addr_range: Function address range
+        func_convention: Calling convention
+        func_signature: Function signature
+        decompiled_code: Decompiled C code
+        assembly_code: Assembly code
+        func_xrefs: Cross-references
+        func_globals: Referenced globals
+        func_calls: Called functions
+        stack_frame: Stack frame info
+        suspects: Suspect patterns found
+        complexity: Complexity metrics
+
+    Returns:
+        Dictionary for JSON serialization
+    """
+    addr_range_str = str(func_addr_range)
+
+    # Extract ranges from format like "[[0055a810, 0055c9e6] [0055ca7e, 0055fef3]]"
+    ranges = []
+    range_matches = re.findall(r'\[([0-9a-fA-F]+),\s*([0-9a-fA-F]+)\]', addr_range_str)
+    for start, end in range_matches:
+        ranges.append([start.strip(), end.strip()])
+    function_json = {
+        "function": {
+            "name": func_name,
+            "address": func_addr,
+            "address_range": ranges if ranges else [[func_addr, func_addr]],
+            "convention": func_convention or "unknown",
+            "signature": func_signature
+        },
+        "stack_frame": stack_frame,
+        "suspects": suspects,
+        "complexity": complexity,
+        "cross_references": func_xrefs if func_xrefs else [],
+        "globals": func_globals if func_globals else [],
+        "function_calls": func_calls if func_calls else []
+    }
+    return function_json
+
+
+def write_function_files(output_base_path, source_filename, func_name, func_addr,
+                         func_addr_range, func_convention, func_signature,
+                         decompiled_code, assembly_code, func_xrefs, func_globals,
+                         func_calls, stack_frame, suspects, complexity):
+    """Write all three output files for a function (.cpp, .asm, .json).
+
+    Args:
+        output_base_path: Base directory for output
+        source_filename: Source file name
+        func_name: Function name
+        func_addr: Function address
+        func_addr_range: Function address range
+        func_convention: Calling convention
+        func_signature: Function signature
+        decompiled_code: Decompiled C code
+        assembly_code: Assembly code
+        func_xrefs: Cross-references
+        func_globals: Referenced globals
+        func_calls: Called functions
+        stack_frame: Stack frame info
+        suspects: Suspect patterns found
+        complexity: Complexity metrics
+
+    Returns:
+        Tuple of written file paths, or None on failure
+    """
+    # Determine base path without extension
+    if source_filename.endswith('.cpp'):
+        base_name = source_filename[:-4]
+    elif source_filename.endswith('.c'):
+        base_name = source_filename[:-2]
+    else:
+        base_name = source_filename
+
+    cpp_path = os.path.join(output_base_path, source_filename)
+    asm_path = os.path.join(output_base_path, base_name + '.asm')
+    json_path = os.path.join(output_base_path, base_name + '.json')
+
+    # Ensure directory exists
+    make_dirs(os.path.dirname(cpp_path))
+    files_written = []
+
+    # Write lean .cpp file
+    try:
+        cpp_content = create_lean_cpp_content(
+            func_name, func_addr, func_addr_range, func_convention,
+            func_signature, decompiled_code)
+        with open(cpp_path, 'w') as f:
+            f.write(cpp_content + "\n")
+        files_written.append(cpp_path)
+        log_info("Wrote lean .cpp file: %s" % source_filename)
+    except Exception as e:
+        log_info("Failed to write .cpp file %s: %s" % (source_filename, str(e)))
+        return None
+
+    # Write .asm file with rich context
+    try:
+        asm_content = create_asm_content(
+            func_name, func_addr, func_addr_range, func_signature, func_convention,
+            assembly_code, stack_frame, func_xrefs, func_globals, func_calls)
+        with open(asm_path, 'w') as f:
+            f.write(asm_content + "\n")
+        files_written.append(asm_path)
+        log_info("Wrote .asm file: %s" % (base_name + '.asm'))
+    except Exception as e:
+        log_info("Failed to write .asm file %s: %s" % (base_name + '.asm', str(e)))
+
+    # Write .json file
+    try:
+        function_json = create_function_json(
+            func_name, func_addr, func_addr_range, func_convention,
+            func_signature, decompiled_code, assembly_code,
+            func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity)
+        with open(json_path, 'w') as f:
+            json.dump(function_json, f, indent=2)
+        files_written.append(json_path)
+        log_info("Wrote .json file: %s" % (base_name + '.json'))
+    except Exception as e:
+        log_info("Failed to write .json file %s: %s" % (base_name + '.json', str(e)))
+    return tuple(files_written) if files_written else None
+
+
+def export_function_prototypes(currentProgram, pseudocode_dir, function_groups):
+    """Export function prototype header files.
+
+    Args:
+        currentProgram: The Ghidra program
+        pseudocode_dir: Base directory for prototypes
+        function_groups: Dictionary mapping virtual filenames to function lists
+    """
+    prototypes_dir = os.path.join(pseudocode_dir, "prototypes")
+    make_dirs(prototypes_dir)
+
+    headers_created = 0
+    for virtual_filename, functions in function_groups.items():
+        if not virtual_filename:
+            continue
+
+        # Create the directory structure
+        header_path = os.path.join(prototypes_dir, virtual_filename)
+        header_dir = os.path.dirname(header_path)
+        make_dirs(header_dir)
+
+        # Generate header content
+        content = []
+        content.append("#pragma once")
+        content.append("")
+        content.append("// Function prototypes for %s" % virtual_filename.replace(".h", ".cpp"))
+        content.append("// Generated from Ghidra function signatures")
+        content.append("")
+
+        # Sort functions by address for consistent output
+        sorted_functions = sorted(functions, key=lambda f: f['address'])
+        for func_info in sorted_functions:
+            original_name = func_info['name']
+            cpp_name = extract_cpp_function_name(original_name)
+            content.append("// Original: %s" % original_name)
+            content.append("// Address: %s" % func_info['address'])
+            prototype = generate_function_prototype(func_info['signature'], original_name, cpp_name)
+            content.append(prototype)
+            content.append("")
+
+        # Write the header file
+        try:
+            with open(header_path, 'w') as f:
+                f.write("\n".join(content))
+            log_info("Created prototype header: %s with %d functions" % (virtual_filename, len(functions)))
+            headers_created += 1
+        except Exception as e:
+            log_info("Failed to write prototype header %s: %s" % (virtual_filename, str(e)))
+    log_info("Created %d function prototype headers" % headers_created)
