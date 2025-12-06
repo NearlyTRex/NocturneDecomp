@@ -12,7 +12,7 @@ from ghidra.program.model.data import TypeDef
 from ghidra_annotations.util import resolve_data_type_name, make_dirs
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations import is_standard_ghidra_category, get_primitive_data_types
-from ghidra_annotations.annotations.pseudocode.strings import sanitize_for_ascii
+from ghidra_annotations.annotations.pseudocode.strings import sanitize_file_content
 
 
 def is_function_definition_type(data_type):
@@ -94,7 +94,7 @@ def write_header_file(file_path, content):
     """
     try:
         with open(file_path, 'w') as f:
-            f.write(sanitize_for_ascii(content))
+            f.write(sanitize_file_content(content))
             f.write("\n")
     except Exception as e:
         log_info("Failed to write header file %s: %s" % (file_path, str(e)))

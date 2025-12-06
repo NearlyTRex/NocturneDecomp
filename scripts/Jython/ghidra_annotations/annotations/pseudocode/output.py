@@ -6,7 +6,7 @@ import re
 import json
 from ghidra_annotations.util import make_dirs
 from ghidra_annotations.util.log import log_info
-from ghidra_annotations.annotations.pseudocode.strings import sanitize_for_ascii
+from ghidra_annotations.annotations.pseudocode.strings import sanitize_for_ascii, sanitize_file_content
 from ghidra_annotations.annotations.pseudocode.functions import (
     extract_virtual_filename, extract_cpp_function_name, generate_function_prototype
 )
@@ -97,8 +97,10 @@ def create_pseudocode_file_content(
     template = "\n".join(template_parts)
 
     # Format from template
-    safe_decompiled = sanitize_for_ascii(decompiled_code)
-    safe_assembly = sanitize_for_ascii(assembly_code)
+    # Use sanitize_file_content for multi-line code blocks to preserve newlines
+    safe_decompiled = sanitize_file_content(decompiled_code)
+    safe_assembly = sanitize_file_content(assembly_code)
+    # Use sanitize_for_ascii for single-line metadata (escapes special chars)
     safe_signature = sanitize_for_ascii(func_signature)
     safe_func_name = sanitize_for_ascii(func_name)
     safe_convention = sanitize_for_ascii(func_convention or "unknown")
@@ -131,7 +133,9 @@ def create_lean_cpp_content(func_name, func_addr, func_addr_range, func_conventi
     Returns:
         File content as string
     """
-    safe_decompiled = sanitize_for_ascii(decompiled_code)
+    # Use sanitize_file_content for multi-line code blocks to preserve newlines
+    safe_decompiled = sanitize_file_content(decompiled_code)
+    # Use sanitize_for_ascii for single-line metadata
     safe_signature = sanitize_for_ascii(func_signature)
     safe_func_name = sanitize_for_ascii(func_name)
     safe_convention = sanitize_for_ascii(func_convention or "unknown")
@@ -176,7 +180,8 @@ def create_asm_content(func_name, func_addr, func_addr_range, func_signature, fu
         File content as string
     """
     safe_func_name = sanitize_for_ascii(func_name)
-    safe_assembly = sanitize_for_ascii(assembly_code)
+    # Use sanitize_file_content for multi-line assembly to preserve newlines
+    safe_assembly = sanitize_file_content(assembly_code)
     safe_addr_range = sanitize_for_ascii(str(func_addr_range))
     safe_signature = sanitize_for_ascii(func_signature) if func_signature else "unknown"
     asm_lines = []

@@ -81,7 +81,11 @@ def escape_for_c_string(s):
 
 
 def sanitize_for_ascii(text):
-    """Convert text to ASCII-safe representation, escaping non-ASCII characters."""
+    """Convert text to ASCII-safe representation, escaping non-ASCII characters.
+
+    Note: This function escapes newlines to \\n for use in C string literals.
+    For file content that should preserve newlines, use sanitize_file_content instead.
+    """
     if not text:
         return ""
 
@@ -109,6 +113,37 @@ def sanitize_for_ascii(text):
                 result.append(encoded)
             except:
                 result.append('\\u%04x' % code)
+    return ''.join(result)
+
+
+def sanitize_file_content(text):
+    """Convert text to ASCII-safe representation for file output, preserving newlines.
+
+    Unlike sanitize_for_ascii, this function preserves newlines, tabs, and other
+    whitespace characters that are valid in file content.
+    """
+    if not text:
+        return ""
+
+    result = []
+    for char in text:
+        code = ord(char)
+        if 32 <= code <= 126:
+            # Printable ASCII - keep as-is (don't escape quotes or backslashes)
+            result.append(char)
+        elif char in '\n\r\t':
+            # Preserve whitespace characters
+            result.append(char)
+        elif code < 128:
+            # Other control characters - replace with space
+            result.append(' ')
+        else:
+            # Non-ASCII - try to convert to ASCII representation
+            try:
+                encoded = char.encode('ascii', 'replace').decode('ascii')
+                result.append(encoded)
+            except:
+                result.append('?')
     return ''.join(result)
 
 

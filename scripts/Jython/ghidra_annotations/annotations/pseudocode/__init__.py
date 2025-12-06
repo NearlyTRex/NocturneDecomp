@@ -12,6 +12,7 @@ from ghidra_annotations.annotations.pseudocode.strings import (
     escape_c_string,
     escape_for_c_string,
     sanitize_for_ascii,
+    sanitize_file_content,
     format_char_array_as_c_strings,
     format_single_char_pointer,
     detect_char_array_pattern,
